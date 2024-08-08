@@ -1,4 +1,4 @@
-# Project for RAG-Scheduler
+# Project for Retrieval Scheduler
 
 
 <p align="center">
@@ -7,16 +7,15 @@
 
 Main contribution:
 
-- Leverage an RAG scheduler module to combine different retrieval methods (both neural-based unstructured retrieval and symbolic-based structured retrieval)
-- Salient features are:
-  1. Retrieval workflow orchestration, which includes:
-    - decompose the original query into chain of retrievals (plan-and-solve)
-    - reason upon the execution results or temporary retrieval, and determine the next action (execute-and-act)
-    - decide when to terminate the retrieval (when-to-stop)
-    - combine the chain-of-retrieval results (summarize-and-reflect)
-    - in a word, it treats the retrieval process as an **agentic** task
-  2. Retrieval model selection and external tools invoke
-    - classic vector-based neural retrieval
-    - specialized text-to-SQL symbolic retrieval
-    - external tools or API, e.g., Web search and PDF parsing utility
-
+- Leverage a retrieval scheduler module to combine different retrieval methods:
+  - vector-based neural retrieval
+  - text-to-SQL symbolic retrieval
+  - external tools, e.g., Web search, PDF parsing, image captioning, etc.
+- Treat retrieval as an **agentic** task, salient features include:
+  1. Retrieval module and external tools selection
+  2. Retrieval workflow orchestration, which includes:
+      - decompose the original query into chain of retrievals (plan-and-solve)
+      - reason upon temporary retrieval results, and determine the next action (interaction)
+      - decide when to terminate (when-to-stop)
+      - combine the chain-of-retrieval results (summarize-and-reflect)
+  3. Plug-and-play retrieval module extension
