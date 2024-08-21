@@ -10,7 +10,7 @@ The database folder should be organized into the following structure under `data
             - financial_report.duckdb
         - biology_paper/
             - biology_paper.json
-            - biology_paper.json
+            - biology_paper.sql
             - biology_paper.duckdb
         - ... new database name ...
 ```
