@@ -38,19 +38,22 @@ The database schema file is structured as: (for better readability and ease of d
             "columns": [
                 {
                     "column_name": "readable_name_for_this_column",
-                    "column_type": "upper_cased_data_type_string_of_DuckDB", // refer to official doc: https://duckdb.org/docs/sql/data_types/overview
+                    // refer to official doc: https://duckdb.org/docs/sql/data_types/overview, e.g., FLOAT, INTEGER[], MAP(INTEGER, VARCHAR)
+                    "column_type": "upper_cased_data_type_string_of_DuckDB",
                     "description": "A natural language description about this column, e.g., what is it about.",
-                    "primary_key": true, // whether this column is primary key, default to false [optional]
-                    "foreign_key": [
-                        "foreign_table_name",
-                        "foreign_column_name"
-                    ], // a tuple of (table, column), where the first element is the table name, and the second element is the column name [optional]. Please ensure the existence of the referencing table-column pair
-                    "default": null, // the default value which may depend on column_type [optional]
-                    "nullable": true // whether column value could be null, if not provided, primary key columns are not nullable while others can [optional]
                 },
                 {
                     ... // other columns
                 }
+            ],
+            "primary_keys": [
+                "column_name",
+                "composite_primary_key_column_name"
+            ], 
+            "foreign_keys": [
+                // List of triplets, allow composite foreign keys, e.g., ["stuname", "student", "student_name"], [["stuname", "stuclass"], "student", ["student_name", "class_name"]]
+                ["current_column_name_or_column_name_list", "reference_table_name", "reference_column_name_or_column_name_list"],
+                ... // other foreign keys
             ]
         },
         {
