@@ -11,8 +11,7 @@
                 {
                     "column_name": "report_id",
                     "column_type": "UUID",
-                    "description": "A unique identifier for each report.",
-                    "primary_key": true
+                    "description": "A unique identifier for each report."
                 },
                 {
                     "column_name": "company_name",
@@ -34,6 +33,64 @@
                     "column_type": "VARCHAR",
                     "description": "The URL link to the original report file."
                 }
+            ],
+            "primary_keys": [
+                "report_id"
+            ]
+        },
+        {
+            "table": {
+                "table_name": "sections",
+                "description": "This table stores sections of the reports, including their content and their order within the report."
+            },
+            "columns": [
+                {
+                    "column_name": "section_id",
+                    "column_type": "UUID",
+                    "description": "A unique identifier for each section within a report."
+                },
+                {
+                    "column_name": "report_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the report ID in the metadata table."
+                },
+
+                {
+                    "column_name": "section_name",
+                    "column_type": "VARCHAR",
+                    "description": "The name of the section."
+                },
+                {
+                    "column_name": "section_type",
+                    "column_type": "VARCHAR",
+                    "description": "The type of the section."
+                },
+
+                {
+                    "column_name": "ref_table",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the table ID in the tables table."
+                },
+                {
+                    "column_name": "section_order",
+                    "column_type": "INTEGER",
+                    "description": "The order of the section within the report."
+                },
+                {
+                    "column_name": "section_content",
+                    "column_type": "VARCHAR",
+                    "description": "The content of the section."
+                }
+            ],
+            "primary_keys": [
+                "section_id"
+            ],
+            "foreign_keys": [
+                [
+                    "report_id",
+                    "metadata",
+                    "report_id"
+                ]
             ]
         },
         {
@@ -45,26 +102,17 @@
                 {
                     "column_name": "table_id",
                     "column_type": "UUID",
-                    "description": "A unique identifier for each table within a report.",
-                    "primary_key": true
+                    "description": "A unique identifier for each table within a report."
                 },
                 {
                     "column_name": "report_id",
                     "column_type": "UUID",
-                    "description": "A foreign key linking to the report ID in the metadata table.",
-                    "foreign_key": [
-                        "metadata",
-                        "report_id"
-                    ]
+                    "description": "A foreign key linking to the report ID in the metadata table."
                 },
                 {
                     "column_name": "ref_section",
                     "column_type": "UUID",
-                    "description": "A foreign key linking to the section ID in the section table.",
-                    "foreign_key": [
-                        "sections",
-                        "section_id"
-                    ]
+                    "description": "A foreign key linking to the section ID in the section table."
                 },
                 {
                     "column_name": "table_name",
@@ -96,61 +144,21 @@
                     "column_type": "VARCHAR",
                     "description": "The content of the table, either as structured data or stored separately."
                 }
-            ]
-        },
-        {
-            "table": {
-                "table_name": "sections",
-                "description": "This table stores sections of the reports, including their content and their order within the report."
-            },
-            "columns": [
-                {
-                    "column_name": "section_id",
-                    "column_type": "UUID",
-                    "description": "A unique identifier for each section within a report.",
-                    "primary_key": true
-                },
-                {
-                    "column_name": "report_id",
-                    "column_type": "UUID",
-                    "description": "A foreign key linking to the report ID in the metadata table.",
-                    "foreign_key": [
-                        "metadata",
-                        "report_id"
-                    ]
-                },
-
-                {
-                    "column_name": "section_name",
-                    "column_type": "VARCHAR",
-                    "description": "The name of the section."
-                },
-                {
-                    "column_name": "section_type",
-                    "column_type": "VARCHAR",
-                    "description": "The type of the section."
-                },
-
-                {
-                    "column_name": "ref_table",
-                    "column_type": "UUID",
-                    "description": "A foreign key linking to the table ID in the tables table.",
-                    "foreign_key": [
-                        "tables",
-                        "table_id"
-                    ]
-                },
-
-                {
-                    "column_name": "section_order",
-                    "column_type": "INTEGER",
-                    "description": "The order of the section within the report."
-                },
-                {
-                    "column_name": "section_content",
-                    "column_type": "VARCHAR",
-                    "description": "The content of the section."
-                }
+            ],
+            "primary_keys": [
+                "table_id"
+            ],
+            "foreign_keys": [
+                [
+                    "report_id",
+                    "metadata",
+                    "report_id"
+                ],
+                [
+                    "ref_section",
+                    "sections",
+                    "section_id"
+                ]
             ]
         }
     ]

@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("database_utils")
 
 
-DATABASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'database')
+DATABASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'database')
 
 FEASIBLE_DATA_TYPES = ['INTEGER', 'BOOLEAN', 'BOOL', 'FLOAT', 'REAL', 'DOUBLE', 'UUID', 'VARCHAR', 'CHAR', 'TEXT', 'STRING', 'TIMESTAMPTZ', 'DATE', 'TIME', 'TIMESTAMP', 'DATETIME', 'MAP', 'STRUCT', 'UNION']
 
@@ -60,25 +60,26 @@ def convert_json_to_create_sql(json_path: str, sql_path: Optional[str] = None) -
         raise FileNotFoundError(f"File {json_path} not found.")
     
     sqls = []
-    database_name = schema.get('database_name', os.path.basename(os.path.splitext(json_path)[0]))
-    sqls.append(f"CREATE DATABASE IF NOT EXISTS {database_name};")
+    # DuckDB does not support CREATE DATABASE, only one database
+    # database_name = schema.get('database_name', os.path.basename(os.path.splitext(json_path)[0]))
+    # sqls.append(f"CREATE DATABASE IF NOT EXISTS {database_name};")
 
     def get_column_string(col: Dict[str, Union[Optional[str], List[str], bool, int]]):
         column_name = col['column_name']
         column_type = normalize_column_type(col['column_type'])
-        return f"{column_name} {column_type}"
+        return f"\t{column_name} {column_type}"
 
     def get_primary_and_foreign_key_string(table):
         primary_key_string = foreign_key_string = ''
         if 'primary_keys' in table:
             primary_key = ', '.join(table['primary_keys'])
-            primary_key_string += f"PRIMARY KEY ({primary_key})"
+            primary_key_string += f"\tPRIMARY KEY ({primary_key})"
         if 'foreign_keys' in table:
             foreign_keys = []
             for col, ref_tab, ref_col in table['foreign_keys']:
                 col = ', '.join(col) if type(col) == list else col
                 ref_col = ', '.join(ref_col) if type(ref_col) == list else ref_col
-                foreign_keys.append(f"FOREIGN KEY ({col}) REFERENCES {ref_tab}({ref_col})")
+                foreign_keys.append(f"\tFOREIGN KEY ({col}) REFERENCES {ref_tab}({ref_col})")
             foreign_key_string += ',\n'.join(foreign_keys)
         if not primary_key_string and not foreign_key_string:
             return ''
@@ -91,7 +92,7 @@ def convert_json_to_create_sql(json_path: str, sql_path: Optional[str] = None) -
 
     schema = schema['database_schema']
     for table in schema:
-        table_name = table['table_name']
+        table_name = table['table']['table_name']
         columns = table['columns']
         column_str = ',\n'.join([get_column_string(col) for col in columns])
         key_str = get_primary_and_foreign_key_string(table)
@@ -99,7 +100,6 @@ def convert_json_to_create_sql(json_path: str, sql_path: Optional[str] = None) -
             sqls.append(f"CREATE TABLE IF NOT EXISTS {table_name} (\n{column_str},\n{key_str}\n);")
         else:
             sqls.append(f"CREATE TABLE IF NOT EXISTS {table_name} (\n{column_str}\n);")
-    pass
 
     complete_sql = '\n'.join(sqls)
     if sql_path is not None:
@@ -118,7 +118,7 @@ def create_database_from_sql(sql_path: str, db_path: str) -> None:
 
     with open(sql_path, 'r') as f:
         sql = [line.strip() for line in f.read().split(';') if line.strip() != '']
-    conn: duckdb.DuckDBPyConnection = duckdb.connect()
+    conn: duckdb.DuckDBPyConnection = duckdb.connect(db_path)
     for stmt in sql:
         try:
             conn.sql(stmt)

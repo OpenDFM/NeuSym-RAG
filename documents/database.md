@@ -48,7 +48,7 @@ The database schema file is structured as: (for better readability and ease of d
             ],
             "primary_keys": [
                 "column_name",
-                "composite_primary_key_column_name"
+                "composite_primary_key_column_name" // composite primary keys
             ], 
             "foreign_keys": [
                 // List of triplets, allow composite foreign keys, e.g., ["stuname", "student", "student_name"], [["stuname", "stuclass"], "student", ["student_name", "class_name"]]
@@ -57,7 +57,7 @@ The database schema file is structured as: (for better readability and ease of d
             ]
         },
         {
-
+            ... // other tables
         }
     ]
 }
