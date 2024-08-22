@@ -1,5 +1,5 @@
 #coding=utf8
-import json, os, logging
+import json, os, re, logging
 import duckdb
 from typing import List, Dict, Union, Optional
 
@@ -11,14 +11,14 @@ DATABASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 
 
 FEASIBLE_DATA_TYPES = ['INTEGER', 'BOOLEAN', 'BOOL', 'FLOAT', 'REAL', 'DOUBLE', 'UUID', 'VARCHAR', 'CHAR', 'TEXT', 'STRING', 'TIMESTAMPTZ', 'DATE', 'TIME', 'TIMESTAMP', 'DATETIME', 'MAP', 'STRUCT', 'UNION']
 
-DATA_TYPE_MAPPINGS = {
-    'TIMESTAMP': 'DATETIME',
-    'BOOL': 'BOOLEAN',
-    'REAL': 'FLOAT',
-    'STRING': 'VARCHAR',
-    'TEXT': 'VARCHAR',
-    'CHAR': 'VARCHAR'
-}
+DATA_TYPE_REGEX_MAPPINGS = [
+    (r'BOOL(?!EAN)', 'BOOLEAN'),
+    (r'TIMESTAMP(?!TZ)', 'DATETIME'),
+    (r'REAL', 'FLOAT'),
+    (r'STRING', 'VARCHAR'),
+    (r'TEXT', 'VARCHAR'),
+    (r'(?<!VAR)CHAR', 'VARCHAR')
+]
 
 def normalize_column_type(column_type: str) -> str:
     """ Normalize the column type.
@@ -28,8 +28,8 @@ def normalize_column_type(column_type: str) -> str:
         normalized column type
     """
     column_type = column_type.upper()
-    if column_type in DATA_TYPE_MAPPINGS:
-        return DATA_TYPE_MAPPINGS[column_type]
+    for regex, replacement in DATA_TYPE_REGEX_MAPPINGS:
+        column_type = re.sub(regex, replacement, column_type)
     return column_type
 
 
