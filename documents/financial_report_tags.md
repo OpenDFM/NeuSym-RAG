@@ -1,4 +1,4 @@
-# Tags for the section of financial reports
+# tags for the section of financial reports
 
 ## 1. Business
 
@@ -63,27 +63,27 @@ Includes the Report of Independent Registered Public Accounting Firm, Consolidat
 ### 11.2. Accounting Policies and Estimates
 
 **Description:**  
-Describes the significant accounting policies and key accounting estimates used by the company, such as revenue recognition, inventory valuation, depreciation, and amortization methods.
+Describes the significant accounting policies and key accounting estimates used by the company, such as revenue recognition, Basis of Presentation, Critical Accounting Estimates and Judgements,  Summary of Accounting Policies.
 
 ### 11.3. Business Combinations and Restructuring
 
 **Description:**  
-Covers significant business combinations and restructuring activities during the reporting period, including acquisitions, divestitures, and the financial impacts of these changes.
+Covers significant business combinations and restructuring activities during the reporting period, including acquisitions, divestitures,Restructuring and Other Charges,Discontinued Operations and Other Divestitures, Investments in Joint Ventures , Variable Interest Entities.
 
 ### 11.4. Assets and Liabilities
 
 **Description:**  
-Includes detailed information on the company’s assets and liabilities, such as accounts receivable, accounts payable, inventory, fixed assets, intangible assets, and debt.
+Includes detailed information on the company’s assets and liabilities, such as Trade and Other Receivables, Inventories, inventory, good will,fixed assets, intangible assets, Loans and Other Borrowings, debt,Accrued and Other Current Liabilities.
 
 ### 11.5. Financial Instruments and Risk Management
 
 **Description:**  
-Describes the company’s use of financial instruments and its management of financial risks, including derivative instruments, fair value measurements, and risk mitigation strategies.
+Describes the company’s use of financial instruments and its management of financial risks, including derivative instruments, fair value measurements, Additional Disclosures on Financial Instruments, Financial Risk Management.
 
 ### 11.6. Equity and Capital
 
 **Description:**  
-Details changes in the company’s equity, including capital structure, stock buybacks, dividend payments, and other equity-related matters.
+Details changes in the company’s equity, including capital stock,Shareholders' Equity, and other equity-related matters.
 
 ### 11.7. Taxation
 
@@ -93,17 +93,17 @@ Provides information on income taxes, including pre-tax income, deferred tax ite
 ### 11.8. Employee Benefits and Compensation
 
 **Description:**  
-Describes employee benefit plans, pension plans, share-based payment arrangements, and other compensation-related matters.
+Describes employee benefit plans ,such as pension plans, share-based payment arrangements,Retirement Benefit Plans, Personnel Costs.
 
 ### 11.9. Legal and Commitments
 
 **Description:**  
-Includes commitments and contingencies related to legal matters, such as contingent liabilities and unresolved legal proceedings.
+Includes commitments and contingencies related to legal matters, such as Contingencies and Commitments , legal proceedings.
 
 ### 11.10. Financial Data and Disclosures
 
 **Description:**  
-Provides key financial data, quarterly financial data (unaudited), and other financial disclosures relevant to understanding the company’s financial status.
+Provides key financial data, such as quarterly financial data, Earnings Per Share,Segment and Geographic Data,Principal Accountant Fees and Services,Subsidiaries and Associated Companies.
 
 ### 11.11. Subsequent Events
 
@@ -113,7 +113,7 @@ Describes events occurring after the reporting period but before the report’s 
 ### 11.12. Corporate Governance and Others
 
 **Description:**  
-Includes information on corporate governance, board composition, internal controls, and other disclosures not covered in other sections.
+Includes information on corporate governance, board composition, internal controls ,such as Related Party Transactions.
 
 ## 12.Changes in and Disagreements with Accountants on Accounting and Financial Disclosure
 
