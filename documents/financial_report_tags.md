@@ -1,4 +1,4 @@
-# tags for the section of financial reports
+# Tags for the section of financial reports
 
 ## 1. Business
 
