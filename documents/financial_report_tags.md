@@ -54,6 +54,8 @@ This section provides a detailed analysis of market risks faced by the company, 
 
 **Description:**  
 This section is the core of the annual financial report and includes detailed financial statements and supplementary notes for a comprehensive assessment of the company’s financial position and performance.
+Important Note:
+Sub-sections are strictly limited to the "Financial Statements and Supplementary Data" section.The tags of sub_sections are as following 11.1-11.12. Any sub-section that does not fall under "Financial Statements and Supplementary Data" should be considered invalid and should not be added to the database.
 
 ### 11.1. Consolidated Financial Statements
 
