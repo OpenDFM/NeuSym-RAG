@@ -1,7 +1,9 @@
 #coding=utf8
-import json, os, re, logging
+import json, sys, os, re, logging
 import duckdb
-from typing import List, Dict, Union, Optional
+from typing import List, Dict, Union, Optional, Any
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("database_utils")
@@ -128,6 +130,22 @@ def create_database_from_sql(sql_path: str, db_path: str) -> None:
     return
 
 
+def populate_pdf_file_into_database(database_name: str, pdf_path: str) -> None:
+    """ Populate the PDF file into the database.
+    @param:
+        database_name: str, database name
+        pdf_path: str, path to the PDF file
+    """
+    from utils.database_population import DatabasePopulation
+    populator = DatabasePopulation(database_name)
+    config = os.path.join('configs', database_name + '_config.json')
+    with open(config, 'r') as inf:
+        config = json.load(inf)
+    populator.populate(pdf_path, config, log=True, on_conflict='replace')
+    populator.close()
+    return
+
+
 if __name__ == '__main__':
 
 
@@ -135,6 +153,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Database relevant utilities.')
     parser.add_argument('--database', type=str, required=True, help='Database name.')
     parser.add_argument('--function', type=str, required=True, help='Which function to run.')
+    parser.add_argument('--pdf_path', type=str, help='Path to the PDF file.')
     args = parser.parse_args()
 
     json_path = os.path.join(DATABASE_DIR, args.database, args.database + '.json')
@@ -143,5 +162,7 @@ if __name__ == '__main__':
     if args.function == 'create_db':
         convert_json_to_create_sql(json_path, sql_path)
         create_database_from_sql(sql_path, db_path)
+    elif args.function == 'populate_db':
+        populate_pdf_file_into_database(args.database, args.pdf_path)
     else:
         raise ValueError(f"Function {args.function} not implemented yet.")

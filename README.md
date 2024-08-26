@@ -19,3 +19,12 @@ Main contribution:
       - decide when to terminate (when-to-stop)
       - combine the chain-of-retrieval results (summarize-and-reflect)
   3. Plug-and-play retrieval module extension
+
+
+## Documents and Tutorials
+
+The documents for this project and fine-grained topics are discussed in the folder `documents/`. The checklist includes:
+
+- [`documents/database.md`](documents/database.md):
+  - How to define database schema and its format
+  - How to fill in database content with the generic `DatabasePopulation` Python class and `utils.functions` module

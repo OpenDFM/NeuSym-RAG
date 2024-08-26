@@ -91,4 +91,126 @@ python utils/database_utils.py --database biology_paper --function create_db
 
 ## Database Content Completion
 
-TODO: To be accomplished.
+To populate the database content given an input PDF file, we may utilize various database- or domain-specific functions to extract certain cell values. Thus, we propose a [`DatabasePopulation`](../utils/database_population.py) framework to formalize the data flow or processing pipeline. The entrance function for this class is `populate`:
+
+```python
+def populate(self, pdf_path: str, config: Dict[str, Any], log: bool = True, on_conflict: str = 'replace') -> None:
+    """ Given a path to the PDF file (`pdf_path`), try to parse the raw PDF according to the pipeline defined in `config` and insert values into the corresponding database based on the conflicting policy `on_conflict`. If `log = True`, also write the INSERT SQL statement into log files.
+    """
+    pass
+```
+The essence is how to formalize the `config` dict. Take a small testing database `test_domain` as an example:
+- The database schema and `.duckdb` file is stored in the folder `data/database/test_domain/`;
+```sh
+python utils/database_utils.py --database test_domain --function create_db
+```
+- The JSON dict (`config`) for this database is located in `configs/test_domain_config.json`. You can store your personal config file in the path `configs/{database_name}_config.json`. The `config` dict contains two JSON keys, `pipeline` and `aggregation`, where:
+    - `pipeline` defines the procedure of obtaining values for each columns;
+    - `aggregation` indicates how to aggregate the output of each function into row entries for each table.
+
+```json
+{
+    "pipeline": [
+        {
+            "function": "get_pdf_page_text",
+            "args": {
+                "deps": [
+                    0
+                ],
+                "kwargs": {
+                    "generate_uuid": true,
+                    "normalize_blank": true
+                }
+            }
+        },
+        {
+            "function": "get_text_summary",
+            "args": {
+                "deps": [
+                    1
+                ],
+                "kwargs": {
+                    "key": "page_contents",
+                    "max_length": 50,
+                    "model": "gpt-4o",
+                    "temperature": 0.7
+                }
+            }
+        }
+    ],
+    "aggregation": [
+        {
+            "function": "aggregate_test_domain_table_pdf_meta",
+            "table": "pdf_meta",
+            "columns": ["pdf_id", "pdf_name", "pdf_path"],
+            "args": {
+                "deps": [
+                    1
+                ]
+            }
+        },
+        {
+            "function": "aggregate_test_domain_table_pdf_pages",
+            "table": "pdf_pages",
+            "args": {
+                "deps": [
+                    1,
+                    2
+                ]
+            }
+        }
+    ]
+}
+```
+
+1. **Extract cell values:** for the first function dict in the field `pipeline`,
+```python
+{
+    "function": "get_pdf_page_text",
+    "args": {
+        "deps": [
+            0
+        ],
+        "kwargs": {
+            "generate_uuid": true,
+            "normalize_blank": true
+        }
+    }
+}
+```
+where `deps = [0]` means we use exactly the parameter `pdf_path` as the first position argument for function `get_pdf_page_text`. For the second pipeline function, `deps = [1]` means `get_text_summary` takes the output of the first function as the first input argument. For other keyword arguments, you can directly pass it into the `kwargs` dict.
+
+> **Best Practices and FAQ:**
+> - _Where can I define my personal functions?_ In the module `utils/functions/`, and remember to import them in `utils/functions/__init__.py`.
+> - _How do I name my function?_ It totally depends on yourself. Try to be straightforward and avoid duplication. You can follow some convention like always starting with the prefix `get_xxxx`.
+> - _Suggestion:_ If your pipeline function is universal or can be shared across different databases, consider putting it in a generic `.py` file like `common.py`. Otherwise, create a separate `{database_name}.py` file in the `functions/` folder.
+> - _Suggestion:_ For the output of each pipeline function, consider using a JSON dict `-> Dict[str, Any]` as the **output type**, such that it will be easier to chain the function pipeline.
+
+2. **Aggregate cell values**: each column value may be processed in distinct pipeline functions, we need some method to combine them together into a single table. This is exactly what the `aggregation` dict list does:
+```json
+{
+    "function": "aggregate_test_domain_table_pdf_meta",
+    "table": "pdf_meta",
+    "columns": ["pdf_id", "pdf_name", "pdf_path"], // this argument can be omitted, by default, we will insert all column values for the current table following their schema order
+    "args": {
+        "deps": [
+            1
+        ],
+        "kwargs": {}
+    }
+}
+```
+It takes almost the same format as `pipeline` (`deps` for input-output dependencies and `kwargs` for positional arguments), except a special argument `table` which denotes the table name to insert values. Note that, `deps` indexes the output of `pipeline` functions instead of `aggregation` functions.
+
+> **Best Practices and FAQ:**
+> - _Where should I put the aggregate function?_ In most cases, you should put it in a separate `utils/functions/{database_name}.py` for the current database, because this function can be hardly re-used by other domains.
+> - _How do I name the function?_ One suggestion is to name your function based on the database and the table to be populated, e.g., `aggregate_{database_name}_table_{table_name}`.
+> - _What should be the output format?_ The output **MUST BE** of the type `List[List[Any]]`, such that the follow-up functions `insert_values_to_database` in our population framework can automatically create the INSERT SQL statements for the database.
+> _Suggestion:_ See document for [Conversion between Python types and DuckDB data types](https://duckdb.org/docs/api/python/conversion).
+
+### Test Case
+
+Take the PDF file as an example, this file is parsed and populated into database `test_domain.duckdb` via:
+```sh
+python utils/database_utils.py --database test_domain --pdf_path data/dataset/test_pdf.pdf --function populate_db
+```
