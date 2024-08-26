@@ -54,7 +54,6 @@
                     "column_type": "UUID",
                     "description": "A foreign key linking to the report ID in the metadata table."
                 },
-
                 {
                     "column_name": "section_name",
                     "column_type": "VARCHAR",
@@ -65,7 +64,6 @@
                     "column_type": "VARCHAR",
                     "description": "The tag of the section."
                 },
-
                 {
                     "column_name": "ref_table",
                     "column_type": "UUID",
@@ -93,6 +91,57 @@
                 ]
             ]
         },
+
+
+        {
+            "table": {
+                "table_name": "sub_sections",
+                "description": "This table stores sub-sections of the main sections, including their content and their order within the section."
+            },
+            "columns": [
+                {
+                    "column_name": "sub_section_id",
+                    "column_type": "UUID",
+                    "description": "A unique identifier for each sub-section within a section."
+                },
+                {
+                    "column_name": "ref_section",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the section ID in the sections table."
+                },
+                {
+                    "column_name": "sub_section_name",
+                    "column_type": "VARCHAR",
+                    "description": "The name of the sub-section."
+                },
+                {
+                    "column_name": "sub_section_tag",
+                    "column_type": "VARCHAR",
+                    "description": "The tag of the sub-section."
+                },
+                {
+                    "column_name": "sub_section_order",
+                    "column_type": "INTEGER",
+                    "description": "The order of the sub-section within the section."
+                },
+                {
+                    "column_name": "sub_section_content",
+                    "column_type": "VARCHAR",
+                    "description": "The content of the sub-section."
+                }
+            ],
+            "primary_keys": [
+                "sub_section_id"
+            ],
+            "foreign_keys": [
+                [
+                    "ref_section",
+                    "sections",
+                    "section_id"
+                ]
+            ]
+        },
+
         {
             "table": {
                 "table_name": "tables",
@@ -162,5 +211,5 @@
             ]
         }
     ]
-}
 
+}
