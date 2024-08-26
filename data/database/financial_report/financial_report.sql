@@ -10,12 +10,22 @@ CREATE TABLE IF NOT EXISTS sections (
 	section_id UUID,
 	report_id UUID,
 	section_name VARCHAR,
-	section_type VARCHAR,
+	section_tag VARCHAR,
 	ref_table UUID,
 	section_order INTEGER,
 	section_content VARCHAR,
 	PRIMARY KEY (section_id),
 	FOREIGN KEY (report_id) REFERENCES metadata(report_id)
+);
+CREATE TABLE IF NOT EXISTS sub_sections (
+	sub_section_id UUID,
+	ref_section UUID,
+	sub_section_name VARCHAR,
+	sub_section_tag VARCHAR,
+	sub_section_order INTEGER,
+	sub_section_content VARCHAR,
+	PRIMARY KEY (sub_section_id),
+	FOREIGN KEY (ref_section) REFERENCES sections(section_id)
 );
 CREATE TABLE IF NOT EXISTS tables (
 	table_id UUID,
