@@ -137,16 +137,17 @@ def create_database_from_sql(sql_path: str, db_path: str) -> None:
     return
 
 
-def populate_pdf_file_into_database(database_name: str, pdf_path: str) -> None:
+def populate_pdf_file_into_database(database_name: str, pdf_path: str, config_path: Optional[str] = None) -> None:
     """ Populate the PDF file into the database.
     @param:
         database_name: str, database name
         pdf_path: str, path to the PDF file
+        config_path: str, path to the config file, optional
     """
     from utils.database_population import DatabasePopulation
     populator = DatabasePopulation(database_name)
-    config = os.path.join('configs', database_name + '_config.json')
-    with open(config, 'r') as inf:
+    config_path = config_path if config_path is not None else os.path.join('configs', f'{database_name}_config.json')
+    with open(config_path, 'r') as inf:
         config = json.load(inf)
     populator.populate(pdf_path, config, log=True, on_conflict='replace')
     populator.close()
@@ -160,6 +161,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Database relevant utilities.')
     parser.add_argument('--database', type=str, required=True, help='Database name.')
     parser.add_argument('--function', type=str, required=True, help='Which function to run.')
+    parser.add_argument('--config_path', type=str, help='Path to the config file.')
     parser.add_argument('--pdf_path', type=str, help='Path to the PDF file.')
     args = parser.parse_args()
 
@@ -170,6 +172,6 @@ if __name__ == '__main__':
         convert_json_to_create_sql(json_path, sql_path)
         create_database_from_sql(sql_path, db_path)
     elif args.function == 'populate_db':
-        populate_pdf_file_into_database(args.database, args.pdf_path)
+        populate_pdf_file_into_database(args.database, args.pdf_path, args.config_path)
     else:
         raise ValueError(f"Function {args.function} not implemented yet.")
