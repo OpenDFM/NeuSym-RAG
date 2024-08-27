@@ -1,7 +1,10 @@
 #coding=utf8
 
-from .common import (
+from .common_functions import (
     get_uuid,
+)
+
+from .pdf_functions import (
     get_pdf_page_text,
     get_text_summary
 )

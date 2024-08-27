@@ -99,14 +99,17 @@ def populate(self, pdf_path: str, config: Dict[str, Any], log: bool = True, on_c
     """
     pass
 ```
+
 The essence is how to formalize the `config` dict. Take a small testing database `test_domain` as an example:
 - The database schema and `.duckdb` file is stored in the folder `data/database/test_domain/`;
+
 ```sh
 python utils/database_utils.py --database test_domain --function create_db
 ```
+
 - The JSON dict (`config`) for this database is located in `configs/test_domain_config.json`. You can store your personal config file in the path `configs/{database_name}_config.json`. The `config` dict contains two JSON keys, `pipeline` and `aggregation`, where:
-    - `pipeline` defines the procedure of obtaining values for each columns;
-    - `aggregation` indicates how to aggregate the output of each function into row entries for each table.
+    - `pipeline` defines the procedure of obtaining values for different columns;
+    - `aggregation` indicates how to aggregate the output of all pipeline functions into row entries for each table.
 
 ```json
 {
@@ -146,7 +149,8 @@ python utils/database_utils.py --database test_domain --function create_db
             "args": {
                 "deps": [
                     1
-                ]
+                ],
+                "kwargs": {}
             }
         },
         {
@@ -156,14 +160,15 @@ python utils/database_utils.py --database test_domain --function create_db
                 "deps": [
                     1,
                     2
-                ]
+                ],
+                "kwargs": {}
             }
         }
     ]
 }
 ```
 
-1. **Extract cell values:** for the first function dict in the field `pipeline`,
+1. **Extract cell values:** For the first function dict in the field `pipeline`,
 ```python
 {
     "function": "get_pdf_page_text",
@@ -183,15 +188,16 @@ where `deps = [0]` means we use exactly the parameter `pdf_path` as the first po
 > **Best Practices and FAQ:**
 > - _Where can I define my personal functions?_ In the module `utils/functions/`, and remember to import them in `utils/functions/__init__.py`.
 > - _How do I name my function?_ It totally depends on yourself. Try to be straightforward and avoid duplication. You can follow some convention like always starting with the prefix `get_xxxx`.
-> - _Suggestion:_ If your pipeline function is universal or can be shared across different databases, consider putting it in a generic `.py` file like `common.py`. Otherwise, create a separate `{database_name}.py` file in the `functions/` folder.
+> - _Suggestion:_ If your pipeline function is universal or can be shared across different databases, consider putting it in a generic `.py` file like `common_functions.py` or `pdf_functions.py`. Otherwise, create a separate `{database_name}.py` file in the `functions/` folder.
 > - _Suggestion:_ For the output of each pipeline function, consider using a JSON dict `-> Dict[str, Any]` as the **output type**, such that it will be easier to chain the function pipeline.
 
-2. **Aggregate cell values**: each column value may be processed in distinct pipeline functions, we need some method to combine them together into a single table. This is exactly what the `aggregation` dict list does:
+
+2. **Aggregate cell values**: Each column value may be processed in distinct pipeline functions, we need some method to combine them together into a single table. This is exactly what the `aggregation` dict list does. For example,
 ```json
 {
     "function": "aggregate_test_domain_table_pdf_meta",
     "table": "pdf_meta",
-    "columns": ["pdf_id", "pdf_name", "pdf_path"], // this argument can be omitted, by default, we will insert all column values for the current table following their schema order
+    "columns": ["pdf_id", "pdf_name", "pdf_path"],
     "args": {
         "deps": [
             1
@@ -200,17 +206,21 @@ where `deps = [0]` means we use exactly the parameter `pdf_path` as the first po
     }
 }
 ```
-It takes almost the same format as `pipeline` (`deps` for input-output dependencies and `kwargs` for positional arguments), except a special argument `table` which denotes the table name to insert values. Note that, `deps` indexes the output of `pipeline` functions instead of `aggregation` functions.
+It takes almost the same format as `pipeline` functions (`deps` for input-output dependencies and `kwargs` for positional arguments), except two special fields:
+1. `table` which denotes the table name to insert values;
+2. `columns` which represents the list of column names in `table` to be inserted. This field can be omitted, and by default will insert values for all columns in the current `table` [suggested];
+Note that, `deps` indexes the output of `pipeline` functions instead of `aggregation` functions.
 
 > **Best Practices and FAQ:**
 > - _Where should I put the aggregate function?_ In most cases, you should put it in a separate `utils/functions/{database_name}.py` for the current database, because this function can be hardly re-used by other domains.
 > - _How do I name the function?_ One suggestion is to name your function based on the database and the table to be populated, e.g., `aggregate_{database_name}_table_{table_name}`.
-> - _What should be the output format?_ The output **MUST BE** of the type `List[List[Any]]`, such that the follow-up functions `insert_values_to_database` in our population framework can automatically create the INSERT SQL statements for the database.
-> _Suggestion:_ See document for [Conversion between Python types and DuckDB data types](https://duckdb.org/docs/api/python/conversion).
+> - _What should be the output format?_ The output **MUST BE** of the type `List[List[Any]]`, such that the follow-up function `insert_values_to_database` in our population framework can automatically create the `INSERT` SQL statements and execute them.
+> - _Suggestion:_ About the data type transformation between Python and SQL, see official document for [Conversion between Python types and DuckDB data types](https://duckdb.org/docs/api/python/conversion).
+
 
 ### Test Case
 
-Take the PDF file as an example, this file is parsed and populated into database `test_domain.duckdb` via:
+Take the sample PDF file as an example, this file is parsed and populated into database `test_domain.duckdb` via:
 ```sh
 python utils/database_utils.py --database test_domain --pdf_path data/dataset/test_pdf.pdf --function populate_db
 ```

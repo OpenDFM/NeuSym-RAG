@@ -26,5 +26,5 @@ Main contribution:
 The documents for this project and fine-grained topics are discussed in the folder `documents/`. The checklist includes:
 
 - [`documents/database.md`](documents/database.md):
-  - How to define database schema and its format
-  - How to fill in database content with the generic `DatabasePopulation` Python class and `utils.functions` module
+  - How to define database schema and its format;
+  - How to fill in database content with generic Python class `DatabasePopulation` and module `utils.functions`;

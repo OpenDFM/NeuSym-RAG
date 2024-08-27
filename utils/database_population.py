@@ -1,14 +1,22 @@
 #coding=utf8
-import duckdb, logging, json, os
+import duckdb, logging, json, sys, os
 from datetime import datetime
+from collections.abc import Iterable
 from typing import List, Dict, Any, Union, Optional
 from utils.database_schema import DatabaseSchema
 from utils.database_utils import DATABASE_DIR
 from utils import functions
 
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("database_population")
+logger = logging.getLogger(__name__)
+handler = logging.StreamHandler(sys.stdout)
+formatter = logging.Formatter(
+    fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 
 class  DatabasePopulation():
@@ -122,7 +130,7 @@ class  DatabasePopulation():
             assert table_name in self.database_schema.tables, f"Table {table_name} not found in the database schema of {self.database}."
 
             values = func_method(*position_args, **keyword_args)
-            columns = func_dict.get('columns', None) # if not provided, insert all columns of the current table in the database
+            columns = func_dict.get('columns', []) # if not provided, insert all columns of the current table in the database
             insert_sql = self.insert_values_to_database(table_name, values, columns, on_conflict=on_conflict)
 
             if log: # write SQL into log file
@@ -134,11 +142,22 @@ class  DatabasePopulation():
         return
 
 
+    def _validate_arguments(self, table_name: str, column_names: List[str], values: List[List[Any]]) -> None:
+        """ Validate the arguments.
+        """
+        assert table_name in self.database_schema.tables, f"Table {table_name} not found in the database schema of {self.database}."
+        assert isinstance(values, Iterable) and isinstance(values[0], Iterable)
+        assert len(column_names) == len(values[0]), f"Column names and values must have the same length, but got {len(column_names)} columns and {len(values[0])} values."
+        columns = self.database_schema.table2column(table_name)
+        assert all([col in columns for col in column_names]), f"Column names must be in the table {table_name}, but got {column_names}."
+        return
+
+
     def insert_values_to_database(
             self,
             table_name: Union[str, int],
             values: List[List[Any]],
-            columns: Optional[List[Union[int, str]]] = None,
+            columns: List[Union[int, str]] = [],
             on_conflict: str = 'replace'
             ) -> str:
         """ Given the table name, columns and values, return the INSERT INTO SQL statement.
@@ -159,10 +178,11 @@ class  DatabasePopulation():
         """
         assert on_conflict in ['raise', 'ignore', 'replace'], f"on_conflict argument must be chosen from 'raise', 'ignore', 'replace', but got {on_conflict}."
         table_name = self.database_schema.id2table(table_name) if type(table_name) == int else table_name
-        if columns is None:
+        if not columns:
             columns = self.database_schema.table2column(table_name)
         elif type(columns[0]) == int:
             columns = [self.database_schema.id2column(col) for col in columns]
+        self._validate_arguments(table_name, columns, values)
 
         # note that, the insertion of values must strictly follow the order of the columns
         column_str = ', '.join(columns)
@@ -182,9 +202,10 @@ class  DatabasePopulation():
         return insert_sql
 
 
-    def update_values_to_database(self,):
+    def update_values_to_database(self, ):
         """ Update the values in the database.
         """
+        # TODO: implement the update_values_to_database method
         pass
 
 
