@@ -19,6 +19,11 @@
                     "description": "The name of the company associated with the report."
                 },
                 {
+                    "column_name": "reort_pages",
+                    "column_type": "INTEGER",
+                    "description": "The number of pages in this report."
+                },
+                {
                     "column_name": "report_type",
                     "column_type": "VARCHAR",
                     "description": "The type of the report, such as FORM 10-K or non-standard format."
@@ -70,9 +75,9 @@
                     "description": "A foreign key linking to the table ID in the tables table."
                 },
                 {
-                    "column_name": "section_order",
+                    "column_name": "section_page",
                     "column_type": "INTEGER",
-                    "description": "The order of the section within the report."
+                    "description": "The page number on which this section is located in the report."
                 },
                 {
                     "column_name": "section_content",
@@ -120,9 +125,9 @@
                     "description": "The tag of the sub-section."
                 },
                 {
-                    "column_name": "sub_section_order",
+                    "column_name": "sub_section_page",
                     "column_type": "INTEGER",
-                    "description": "The order of the sub-section within the section."
+                    "description": "The page number on which this sub_section is located in the report."
                 },
                 {
                     "column_name": "sub_section_content",
@@ -174,9 +179,9 @@
                     "description": "A brief description or summary of the table."
                 },
                 {
-                    "column_name": "table_order",
+                    "column_name": "table_page",
                     "column_type": "INTEGER",
-                    "description": "The order of the table within the section."
+                    "description": "The page number on which this table is located in the report."
                 },
                 {
                     "column_name": "row_count",
