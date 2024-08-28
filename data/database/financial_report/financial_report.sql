@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS metadata (
 	report_type VARCHAR,
 	report_pages INTEGER,
 	fiscal_year INTEGER,
-	source_url VARCHAR,
+	report_path VARCHAR,
 	PRIMARY KEY (report_id)
 );
 CREATE TABLE IF NOT EXISTS sections (
