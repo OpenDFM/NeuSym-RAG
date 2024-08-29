@@ -15,6 +15,18 @@ __pycache__
 */*/*/__pycache__/*
 */*/*/*/__pycache__/*
 */*/*/*/*/__pycache__/*
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
+*/*/*/.DS_Store
+*/*/*/*/.DS_Store
+*/*/*/*/*/.DS_Store
 
 # ignore .duckdb files
 data/database/*/*.duckdb
+
+# raw dataset
+data/dataset/*/raw_data/*
+!data/dataset/*/raw_data/.gitkeep
+data/dataset/pdfvqa/processed_data/bbox_images
+data/dataset/pdfvqa/processed_data/test_images

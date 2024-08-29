@@ -28,3 +28,9 @@ The documents for this project and fine-grained topics are discussed in the fold
 - [`documents/database.md`](documents/database.md):
   - How to define database schema and its format;
   - How to fill in database content with generic Python class `DatabasePopulation` and module `utils.functions`;
+- [`documents/dataset.md`](documents/database.md):
+  - dataset selection:
+    - biology paper: [PDF-VQA: A New Dataset for Real-World VQA on PDF Documents](https://arxiv.org/pdf/2304.06447)
+    - financial report: [TAT-DQA: Towards Complex Document Understanding By Discrete Reasoning](https://arxiv.org/pdf/2207.11871)
+  - pre-processing:
+    - 

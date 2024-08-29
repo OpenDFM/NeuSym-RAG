@@ -51,10 +51,15 @@ class  DatabasePopulation():
             self.database_conn.close()
 
 
-    def populate(self, pdf: str, config: Dict[str, Any], log: bool = True, on_conflict: bool = 'replace') -> None:
+    def populate(self,
+            pdf_path_or_json_data: Union[str, Dict[str, Any]],
+            config: Dict[str, Any],
+            on_conflict: bool = 'replace',
+            log: bool = True
+        ) -> None:
         """ Populate the database with the given PDF file.
         @params:
-            `pdf`: str, path to the PDF file, e.g., data/dataset/tatdqa/../../xxx.pdf
+            `pdf_path_or_json_data`: Union[str, Dict[str, Any]], path to the PDF file, e.g., data/dataset/tatdqa/../../xxx.pdf, or JSON data containing detailed information.
             `config`: Dict[str, Any], this JSON configuration defines how to get the value content and populate them into the database.
                 It contains two JSON keys, namely `pipeline` and `aggregation`.
                 - `pipeline`: List[Dict[str, Any]], function dict list to extract cell values from the PDF file. Each function dict in the List should have the following format:
@@ -98,7 +103,7 @@ class  DatabasePopulation():
             `log`: bool, whether to write the insert_sql statement into the log file, default to True
             `on_conflict`: when primary key conflicts occurred, optional, default to 'replace', chosen from 'raise', 'ignore', 'replace'
         """
-        outputs = [pdf]
+        outputs = [pdf_path_or_json_data]
         for idx, func_dict in enumerate(config['pipeline']):
             idx = idx + 1 # 1-based index for output storage
             if idx == 1:
