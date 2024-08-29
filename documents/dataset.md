@@ -45,9 +45,57 @@ TODO: other benchmarks relevant to PDF.
 
 ### PDF-VQA
 We preprocess each example into folder `data/dataset/pdfvqa/processed_data/`. The entire dataset is splitted into 3 parts:
-- [bbox_images](../data/dataset/pdfvqa/bbox_images): which contains
-- test_data.jsonl:
-- pdf_data.jsonl:
-```txt
-
+- [bbox_images](../data/dataset/pdfvqa/processed_data/bbox_images): which contains images for each page (e.g., `15450119_1.png`) in one PDF with bounding boxes drawed.
+- [test_data.jsonl](../data/dataset/pdfvqa/processed_data/test_data.jsonl): JSON line file, each test example is represented with one JSON dict containing the following fields:
+```json
+{
+    "uuid": "xxx-xxx-xxx-xxx", // str, UUID of the test example
+    "task_type": "a", // str, chosen from a, b, c
+    "question": "Is it correct that there is no figure on the top left?",
+    "question_type": "existence", // str, chosen from ['existence', 'object_recognition', 'structural_understanding', 'parent_relationship_understanding', 'child_relationship_understanding']
+    "answer": true, // Union[bool, str, List[str]], three types of answers for different task types
+    "pdf_id": "15450119", // str, id of the PDF
+    "page_number": 3 // int, reference page number for this question, starting from 1. Note that this field is None for task c
+}
 ```
+- [pdf_data.jsonl](../data/dataset/pdfvqa/processed_data/pdf_data.jsonl): JSON line file, each PDF file is represented with one JSON dict.
+```json
+{
+    "pdf_id": "15450119", // str, id of the PDF file
+    "num_pages": 9, // int, total number of PDF pages
+    "page_infos": [ // List[Dict[str, Any]], information of each page
+        {
+            "page_number": 1, // int, the page number, starting from 1
+            "page_path": "data/dataset/pdfvqa/processed_data/bbox_images/15450119_1.png",
+            "width": 640, // width of the page image
+            "height": 780, // height of the page image
+            "bbox": [ // List[Tuple[float, float, float, float]], [x0, y0, width, height]
+                [32, 120, 612, 242],
+                ...
+            ], // OCR bounding boxes in the current page, 4-tuple List
+            "bbox_text": [
+                "Text content of the first bbox.",
+                ...
+            ], // List[str], OCR text content of each bbox, if not recognized, None
+            "bbox_label": [
+                1,
+                ...                            
+            ], // List[int], labels for each bbox, 1->main text, 2->section title, 3->
+            "relations": [ // List[Tuple[int, int]], parent-child relations between bounding boxes
+                [0, 1], // numbers represent bbox index, starting from 0
+                ... 
+            ] // the first element is the parent, and the second is the child
+        },
+        ... // other pages
+    ]
+}
+```
+> Special attention to PDFs with id `28649313` and `28181161`. PDF `28649313` missing the first 16 pages, only start from page 17. And PDF `28181161` missing text content for many bounding boxes in page 8-11.
+
+#### Running script:
+```sh
+python utils/dataset_utils.py --dataset pdfvqa
+```
+
+### TAT-DQA
+

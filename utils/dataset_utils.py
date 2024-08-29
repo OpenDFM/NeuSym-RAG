@@ -53,9 +53,11 @@ def process_pdfvqa(
                 "page_infos": [ // List[Dict[str, Any]], information of each page, which is a dictionary containing the following fields:
                     {
                         "page_number": 1, // int, the page number, starting from 1
+                        "width": 640, // int, the width of the page
+                        "height": 780, // int, the height of the page
                         "page_path": "data/dataset/pdfvqa/processed_data/bbox_images/15450119_1.png",
                         "bbox": [ // List[Tuple[float, float, float, float]], [x0, y0, width, height]
-                            [0, 0, 612, 792],
+                            [0, 0, 340, 230],
                             ...
                         ], // OCR bounding boxes in the current page, 4-tuple List
                         "bbox_text": [
