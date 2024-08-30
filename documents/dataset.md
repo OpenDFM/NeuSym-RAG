@@ -80,7 +80,7 @@ We preprocess each example into folder `data/dataset/pdfvqa/processed_data/`. Th
             "bbox_label": [
                 1,
                 ...                            
-            ], // List[int], labels for each bbox, 1->main text, 2->section title, 3->
+            ], // List[int], labels for each bbox, 1->main text, 2->section title, 3->list such as references, 4->tables, 5->figures
             "relations": [ // List[Tuple[int, int]], parent-child relations between bounding boxes
                 [0, 1], // numbers represent bbox index, starting from 0
                 ... 

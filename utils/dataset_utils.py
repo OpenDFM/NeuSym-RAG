@@ -67,7 +67,7 @@ def process_pdfvqa(
                         "bbox_label": [
                             1,
                             ...                            
-                        ], // List[int], labels for each bbox, 1->main text, 2->section title, 3->
+                        ], // List[int], labels for each bbox, 1->main text, 2->section title, 3->list such as references, 4->tables, 5->figures
                         "relations": [ // List[Tuple[int, int]], records the parent-child relations between different bbox in the current page
                             [0, 1], // numbers represent bbox index, starting from 0
                             ... 
@@ -92,13 +92,14 @@ def process_pdfvqa(
     pdf_data = []
     docs = pickle.load(open(os.path.join(raw_data_folder, 'test_doc_info_visual.pkl'), 'rb'))
 
+    empty_page_dict = lambda x: {"page_path": "", "width": 0, "height": 0, "page_number": x, "bbox": [], "bbox_text": [], "bbox_label": [], "relations": []}
     # preprocess images of each PDF page
     for pdf_id in docs:
         tmp_pdf_data = {}
         tmp_pdf_data['pdf_id'] = pdf_id
         # special care to pdf with id "28649313", missing the first 16 pages
         tmp_pdf_data['num_pages'] = len(docs[pdf_id]['pages']) if pdf_id != '28649313' else 21
-        tmp_pdf_data['page_infos'] = [] if pdf_id != '28649313' else [{} for _ in range(16)]
+        tmp_pdf_data['page_infos'] = [] if pdf_id != '28649313' else [empty_page_dict(idx + 1) for idx in range(16)]
         pdf_data.append(tmp_pdf_data)
 
         pages = docs[pdf_id]['pages']
@@ -114,7 +115,7 @@ def process_pdfvqa(
             bbox_ids = pages[page_id]['ordered_id']
             bboxes = [pages[page_id]['objects'][str(bid)]['bbox'] for bid in bbox_ids]
             assert bboxes == pages[page_id]['ordered_box'], f"Ordered bounding boxes are not consistent."
-            draw_image_with_bbox(image_path, bboxes, output_image_path, label_position=(-8, 0))
+            draw_image_with_bbox(image_path, bboxes, output_image_path, label_position=(-12, 0))
 
             # update the page information
             tmp_page_info = {}
@@ -230,7 +231,9 @@ def process_tatdqa(
     """ Process the TATDQA dataset.
     @param:
         raw_data_folder: str, the path to the raw data folder.
+        processed_data_folder: str, the path to the processed data folder.
     """
+    
     pass
 
 
