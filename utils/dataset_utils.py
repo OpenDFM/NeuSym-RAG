@@ -93,6 +93,7 @@ def process_pdfvqa(
     docs = pickle.load(open(os.path.join(raw_data_folder, 'test_doc_info_visual.pkl'), 'rb'))
 
     empty_page_dict = lambda x: {"page_path": "", "width": 0, "height": 0, "page_number": x, "bbox": [], "bbox_text": [], "bbox_label": [], "relations": []}
+    errata = json.load(open(os.path.join(processed_data_folder, 'errata.json'), 'r'))
     # preprocess images of each PDF page
     for pdf_id in docs:
         tmp_pdf_data = {}
@@ -115,7 +116,8 @@ def process_pdfvqa(
             bbox_ids = pages[page_id]['ordered_id']
             bboxes = [pages[page_id]['objects'][str(bid)]['bbox'] for bid in bbox_ids]
             assert bboxes == pages[page_id]['ordered_box'], f"Ordered bounding boxes are not consistent."
-            draw_image_with_bbox(image_path, bboxes, output_image_path, label_position=(-12, 0))
+            label_position = lambda x, y, text: (-6 * len(text), 0)
+            draw_image_with_bbox(image_path, bboxes, output_image_path, label_position=label_position)
 
             # update the page information
             tmp_page_info = {}
@@ -123,7 +125,10 @@ def process_pdfvqa(
             tmp_page_info['width'], tmp_page_info['height'] = pages[page_id]['width'], pages[page_id]['height']
             tmp_page_info['page_number'] = int(page_id) + 1 # starting from 1
             tmp_page_info['bbox'] = bboxes
-            tmp_page_info['bbox_text'] = [pages[page_id]['objects'][str(bid)]['text'] if 'text' in pages[page_id]['objects'][str(bid)] else None for bid in bbox_ids] # special care to pdf 28181161, no text
+            if pdf_id in errata and str(int(page_id) + 1) in errata[pdf_id]: # special care to pdf 28181161
+                tmp_page_info['bbox_text'] = errata[pdf_id][str(int(page_id) + 1)]
+            else:
+                tmp_page_info['bbox_text'] = [pages[page_id]['objects'][str(bid)]['text'] for bid in bbox_ids]
             tmp_page_info['bbox_label'] = [pages[page_id]['objects'][str(bid)]['category_id'] for bid in bbox_ids]
             assert tmp_page_info['bbox_label'] == pages[page_id]['ordered_label'], f"Ordered labels are not consistent."
 

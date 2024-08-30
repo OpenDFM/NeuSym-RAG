@@ -1,5 +1,5 @@
 #coding=utf8
-from typing import List, Tuple, Dict, Union, Optional, Any
+from typing import List, Tuple, Dict, Union, Optional, Any, Callable
 from PIL import Image, ImageDraw, ImageFont
 
 def draw_image_with_bbox(
@@ -12,7 +12,7 @@ def draw_image_with_bbox(
         label_color: str = 'black',
         lable_font: str = 'arial.ttf',
         label_size: int = 18,
-        label_position: Tuple[int, int] = (0, 0)
+        label_position: Optional[Callable[[float, float, str], Tuple[float, float]]] = None
     ) -> str:
     """ Draw the image with bounding boxes and numeric labels.
     @param:
@@ -25,7 +25,7 @@ def draw_image_with_bbox(
         label_color: str, the color of the numeric label, default is 'black'.
         label_font: str, the font of the numeric label, default is 'arial.ttf'.
         label_size: int, the size of the numeric label, default is 18.
-        label_position: Tuple[int, int], the position of the numeric label, default is (0, 0), meaning the top-left corner.
+        label_position: Callable[[float, float, float], Tuple[float, float]], where to position the numeric label, a callable function which accepts the position of top-left corner (x, y) and numeric label, and return the (dx, dy) shift. By default, dx = 0, dy = 0.
     @return:
         output_path: str, the path to the output image file.
     """
@@ -42,7 +42,10 @@ def draw_image_with_bbox(
         draw.rectangle([x0, y0, x0 + w, y0 + h], outline=bbox_color, width=bbox_width)
         if add_label:
             text = str(idx)
-            text_position = (x0 + label_position[0], y0 + label_position[1])
+            if label_position is None:
+                label_position = lambda x, y, text: (0, 0)
+            dx, dy = label_position(x0, y0, text)
+            text_position = (x0 + dx, y0 + dy)
             draw.text(text_position, text, font=font, fill=label_color)
 
     if output_path is None:
