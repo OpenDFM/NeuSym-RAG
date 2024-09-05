@@ -17,7 +17,11 @@ We choose and pre-process the following benchmarks for experiments:
             - test_doc_info_visual.pkl # layout structure information
         - processed_data/ # pre-processed dataset
     - tatdqa/
-        - raw_data/ # raw dataset, documents, images
+        - raw_data/ # raw dataset
+            - tat_qa.csv # QA in TatHybrid of dataset UDA
+            - tatdqa_dataset_test_gold.json # QA in tatdqa
+            - tat_docs.zip # source PDF files
+        - processed_data/ #pre_processed dataset
             
 ```
 
