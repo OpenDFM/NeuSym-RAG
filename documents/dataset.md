@@ -108,7 +108,6 @@ We preprocess each example into folder `data/dataset/tatdqa/processed_data/`. Th
 - [test_data.jsonl](../data/dataset/tatdqa/processed_data/test_data.jsonl): JSON line file, each test example is represented with one JSON dict containing the following fields:
 ```json
 {
-    "doc_uid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // str, UID of the PDF document
     "doc_name": "acura-pharmaceuticals-inc_2019", // str, name of the PDF document
     "question_uid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // str, UID of the question
     "question": "What is the decrease in licensing revenue from Zyla (Oxaydo) from 2018 to 2019?", // str, the question text
