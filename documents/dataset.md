@@ -21,7 +21,7 @@ We choose and pre-process the following benchmarks for experiments:
             - tat_qa.csv # QA in TatHybrid of dataset UDA
             - tatdqa_dataset_test_gold.json # QA in dataset tatdqa
             - tat_docs.zip # source PDF files
-        - processed_data/ #pre_processed dataset
+        - processed_data/ #pre-processed dataset
             
 ```
 
@@ -43,7 +43,7 @@ For TAT-DQA, please download them from the following links into folder `data/dat
 - [tat_docs.zip](https://huggingface.co/datasets/qinchuanhui/UDA-QA/resolve/main/src_doc_files/tat_docs.zip?download=true)
 
 
-> Notice, the original dataset only contains the specific or oracle PDF page instead of the complete PDF file for each instance, which we believe is not practical in real-world scenarios. Thus, we refer to [UDA-Benchmark](https://github.com/qinchuanhui/UDA-Benchmark?tab=readme-ov-file#book-dataset-uda-qa) and download the raw PDF files ([tat_docs.zip](https://huggingface.co/datasets/qinchuanhui/UDA-QA/resolve/main/src_doc_files/tat_docs.zip?download=true)).
+> Notice, the original dataset only contains the specific or oracle PDF page instead of the complete PDF file for each instance, which we believe is not practical in real-world scenarios. Thus, we refer to [UDA-Benchmark](https://github.com/qinchuanhui/UDA-Benchmark?tab=readme-ov-file#book-dataset-uda-qa) and download the raw PDF files ([tat_docs.zip](https://huggingface.co/datasets/qinchuanhui/UDA-QA/resolve/main/src_doc_files/tat_docs.zip?download=true)).To extract the list of reports with complete original file, we also introduce [tat_qa.csv](https://github.com/qinchuanhui/UDA-Benchmark/blob/main/dataset/qa/tat_qa.csv) from UDA.
 
 TODO: other benchmarks relevant to PDF.
 
