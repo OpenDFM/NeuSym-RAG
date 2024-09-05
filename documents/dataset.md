@@ -19,7 +19,7 @@ We choose and pre-process the following benchmarks for experiments:
     - tatdqa/
         - raw_data/ # raw dataset
             - tat_qa.csv # QA in TatHybrid of dataset UDA
-            - tatdqa_dataset_test_gold.json # QA in tatdqa
+            - tatdqa_dataset_test_gold.json # QA in dataset tatdqa
             - tat_docs.zip # source PDF files
         - processed_data/ #pre_processed dataset
             
