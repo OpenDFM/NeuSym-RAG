@@ -273,7 +273,6 @@ def process_tatdqa(
                 for question in questions:
                     #create the json object
                     json_obj = {
-                    "doc_uid": doc_info["uid"],
                     "doc_name": doc_info["source"].replace(".pdf", ""),
                     "question_uid": question["uid"],
                     "question": question["question"],
