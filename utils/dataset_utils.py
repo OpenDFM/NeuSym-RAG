@@ -231,15 +231,64 @@ def process_pdfvqa(
 
 def process_tatdqa(
         raw_data_folder: str = 'data/dataset/tatdqa/raw_data',
-        processed_data_folder: str = 'data/dataset/tatdqa/processed_data'
+        processed_data_folder: str = 'data/dataset/tatdqa/processed_data',
+        test_data_name: str = 'test_data.jsonl'
     ):
-    """ Process the TATDQA dataset.
+   
+    """ Process the TATDQA dataset into a unified format and filter out questions on documents without complete original file 
     @param:
         raw_data_folder: str, the path to the raw data folder.
         processed_data_folder: str, the path to the processed data folder.
+        test_data_name: str, the name of the processed test data file, default is 'test_data.jsonl'.
+    @return:
+        test_data: List[Dict[str, Any]], return the list of processed data, each data point is a dictionary containing the following fields:
+            {
+                "doc_uid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // str, UID of the PDF document
+                "doc_name": "marin-software-inc_2019", // str, name of the PDF document
+                "question_uid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // str, UID of the question
+                "question": "What is the decrease in licensing revenue from Zyla (Oxaydo) from 2018 to 2019?", // str, the question text
+                "answer": 35, // Union[List[str], float], two types
+                "answer_type": "arithmetic", // str, chosen from [span, multi-span, arithmetic, count]
+                "scale": "thousand", //unit for answer of float type, chosen from [ , thousand, million, percent]
+                "req_comparison": false // boolean, whether answering the question needs to compare the size of multiple numbers
+            }
     """
+    # extract document names from UDA-tat(tat_qa) of those who has the complete original file
+    tat_qa=os.path.join(raw_data_folder,'tat_qa.csv')
+    df = pd.read_csv(tat_qa,sep='|')  
+    doc_list = df['doc_name'].tolist()  
+    doc_list = list(set(doc_list))#deduplication
+
+    # preprocess the test data
+    test_data=[]
+    with open(os.path.join(raw_data_folder,'tatdqa_dataset_test_gold.json'), 'r') as tatdqa_test:
+        data = json.load(tatdqa_test)
+
+        # for each doc and question 
+        for doc in data:
+            doc_info = doc["doc"]
+            #retain those documents equipped with complete original file
+            if doc_info["source"].replace(".pdf", "") in doc_list: 
+                questions = doc["questions"]
+                for question in questions:
+                    #create the json object
+                    json_obj = {
+                    "doc_uid": doc_info["uid"],
+                    "doc_name": doc_info["source"].replace(".pdf", ""),
+                    "question_uid": question["uid"],
+                    "question": question["question"],
+                    "answer": question["answer"],
+                    "answer_type": question["answer_type"],
+                    "scale": question["scale"],
+                    "req_comparison": question["req_comparison"],
+                    }
+                    test_data.append(json_obj)
+        
+    with open(os.path.join(processed_data_folder, test_data_name), 'w') as of:
+        for data in test_data:
+            of.write(json.dumps(data, ensure_ascii=True) + '\n')         
     
-    pass
+    return {'test_data': test_data}
 
 
 if __name__ == '__main__':
