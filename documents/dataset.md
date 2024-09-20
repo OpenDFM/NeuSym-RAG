@@ -56,7 +56,7 @@ We preprocess each example into folder `data/dataset/pdfvqa/processed_data/`. Th
 ```json
 {
     "uuid": "xxx-xxx-xxx-xxx", // str, UUID of the test example
-    "task_type": "a", // str, chosen from a, b, c
+    // "task_type": "a", // str, chosen from a, b, c
     "question": "Is it correct that there is no figure on the top left?",
     "question_type": "existence", // str, chosen from ['existence', 'object_recognition', 'structural_understanding', 'parent_relationship_understanding', 'child_relationship_understanding']
     "answer": true, // Union[bool, str, List[str]], three types of answers for different task types
@@ -108,15 +108,41 @@ We preprocess each example into folder `data/dataset/tatdqa/processed_data/`. Th
 - [test_data.jsonl](../data/dataset/tatdqa/processed_data/test_data.jsonl): JSON line file, each test example is represented with one JSON dict containing the following fields:
 ```json
 {
-    "doc_name": "acura-pharmaceuticals-inc_2019", // str, name of the PDF document
-    "question_uid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // str, UID of the question
+    "pdf_id": "xxxx-xxxx-xxxx", // str, name of the PDF document
+    "uuid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // str, UID of the question
     "question": "What is the decrease in licensing revenue from Zyla (Oxaydo) from 2018 to 2019?", // str, the question text
-    "answer": 35, // Union[List[str], float], two types
-    "answer_type": "arithmetic", // str, chosen from [span, multi-span, arithmetic, count]
-    "scale": "thousand", //unit for answer of float type, chosen from [thousand, million, percent] 
-    "req_comparison": false // boolean, whether answering the question needs to compare the size of multiple data
+    "question_type": "arithmetic", // str, chosen from [span, multi-span, arithmetic, count]
+    "answer": [35, "thousand"], // Union[List[str], float], two types
+    // "scale": "thousand", //unit for answer of float type, chosen from [thousand, million, percent] 
+    // "req_comparison": false // boolean, whether answering the question needs to compare the size of multiple data
+    "page_number": int
 }
 ```
+- [pdf_data.jsonl]()
+```json
+{
+    "pdf_id": "xxxx-xxxx-xxxx", // str, id of the PDF file
+    "num_pages": 9, // int, total number of PDF pages
+    "page_infos": [ // List[Dict[str, Any]], information of each page
+        {
+            "page_number": xxx,
+            "bbox_text": [
+                "Text content of the first bbox.",
+                ...
+            ]
+            ...
+        } // already parsed page info
+    ]
+}
+```
+
+```
+def evaluate(pred: str, gold: data['answer'], question_type: enum) -> float:
+    if question_type == '?':
+        eval_func1()
+        pass
+    elif ...
+        eval_func2()
 
 #### Running script:
 ```sh
