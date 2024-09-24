@@ -1,11 +1,14 @@
 #coding=utf8
 import os, json, sys, logging, re, zipfile, pickle
 import pandas as pd
+import fitz  # PyMuPDF
+from fuzzywuzzy import fuzz  # For fuzzy matching 
 from PIL import Image, ImageDraw, ImageFont
 from typing import List, Dict, Union, Optional, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.functions.common_functions import get_uuid
 from utils.functions.image_functions import draw_image_with_bbox
+from utils.functions.pdf_functions import get_pdf_page_text
 
 
 logger = logging.getLogger(__name__)
