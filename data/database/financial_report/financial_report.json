@@ -14,12 +14,7 @@
                     "description": "A unique identifier for each report."
                 },
                 {
-                    "column_name": "company_name",
-                    "column_type": "VARCHAR",
-                    "description": "The name of the company associated with the report."
-                },
-                {
-                    "column_name": "reort_pages",
+                    "column_name": "report_pages",
                     "column_type": "INTEGER",
                     "description": "The number of pages in this report."
                 },
@@ -27,11 +22,6 @@
                     "column_name": "report_type",
                     "column_type": "VARCHAR",
                     "description": "The type of the report, such as FORM 10-K or non-standard format."
-                },
-                {
-                    "column_name": "fiscal_year",
-                    "column_type": "INTEGER",
-                    "description": "The fiscal year for which the report is filed."
                 },
                 {
                     "column_name": "report_path",
@@ -43,6 +33,51 @@
                 "report_id"
             ]
         },
+
+        {
+            "table": {
+                "table_name": "pages",
+                "description": "This table stores page content of the reports, including their content and their order within the report."
+            },
+            "columns": [
+                {
+                    "column_name": "page_id",
+                    "column_type": "UUID",
+                    "description": "A unique identifier for each page within a report."
+                },
+                {
+                    "column_name": "page_number",
+                    "column_type": "INTEGER",
+                    "description": "The page number on which this section is located in the report."
+                },
+                {
+                    "column_name": "report_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the report ID in the metadata table."
+                },
+                {
+                    "column_name": "page_description",
+                    "column_type": "VARCHAR",
+                    "description": "A brief description or summary of the table."
+                },
+                {
+                    "column_name": "page_content",
+                    "column_type": "VARCHAR",
+                    "description": "The content of the page."
+                }
+            ],
+            "primary_keys": [
+                "page_id"
+            ],
+            "foreign_keys": [
+                [
+                    "report_id",
+                    "metadata",
+                    "report_id"
+                ]
+            ]
+        },
+
         {
             "table": {
                 "table_name": "sections",
@@ -65,21 +100,6 @@
                     "description": "The name of the section."
                 },
                 {
-                    "column_name": "section_tag",
-                    "column_type": "VARCHAR",
-                    "description": "The tag of the section."
-                },
-                {
-                    "column_name": "ref_table",
-                    "column_type": "UUID",
-                    "description": "A foreign key linking to the table ID in the tables table."
-                },
-                {
-                    "column_name": "section_page",
-                    "column_type": "INTEGER",
-                    "description": "The page number on which this section is located in the report."
-                },
-                {
                     "column_name": "section_content",
                     "column_type": "VARCHAR",
                     "description": "The content of the section."
@@ -97,55 +117,6 @@
             ]
         },
 
-
-        {
-            "table": {
-                "table_name": "sub_sections",
-                "description": "This table stores sub-sections of the main sections, including their content and their order within the section."
-            },
-            "columns": [
-                {
-                    "column_name": "sub_section_id",
-                    "column_type": "UUID",
-                    "description": "A unique identifier for each sub-section within a section."
-                },
-                {
-                    "column_name": "ref_section",
-                    "column_type": "UUID",
-                    "description": "A foreign key linking to the section ID in the sections table."
-                },
-                {
-                    "column_name": "sub_section_name",
-                    "column_type": "VARCHAR",
-                    "description": "The name of the sub-section."
-                },
-                {
-                    "column_name": "sub_section_tag",
-                    "column_type": "VARCHAR",
-                    "description": "The tag of the sub-section."
-                },
-                {
-                    "column_name": "sub_section_page",
-                    "column_type": "INTEGER",
-                    "description": "The page number on which this sub_section is located in the report."
-                },
-                {
-                    "column_name": "sub_section_content",
-                    "column_type": "VARCHAR",
-                    "description": "The content of the sub-section."
-                }
-            ],
-            "primary_keys": [
-                "sub_section_id"
-            ],
-            "foreign_keys": [
-                [
-                    "ref_section",
-                    "sections",
-                    "section_id"
-                ]
-            ]
-        },
 
         {
             "table": {
@@ -174,24 +145,14 @@
                     "description": "The name or title of the table."
                 },
                 {
-                    "column_name": "description",
+                    "column_name": "table_description",
                     "column_type": "VARCHAR",
                     "description": "A brief description or summary of the table."
                 },
                 {
-                    "column_name": "table_page",
-                    "column_type": "INTEGER",
-                    "description": "The page number on which this table is located in the report."
-                },
-                {
-                    "column_name": "row_count",
-                    "column_type": "INTEGER",
-                    "description": "The number of rows in the table."
-                },
-                {
-                    "column_name": "column_count",
-                    "column_type": "INTEGER",
-                    "description": "The number of columns in the table."
+                    "column_name": "ref_page",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the page ID in the pages table."
                 },
                 {
                     "column_name": "table_content",
@@ -212,6 +173,11 @@
                     "ref_section",
                     "sections",
                     "section_id"
+                ],
+                [
+                    "ref_page",
+                    "pages",
+                    "page_id"
                 ]
             ]
         }
