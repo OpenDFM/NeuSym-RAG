@@ -229,10 +229,26 @@ def process_pdfvqa(
     return {'test_data': test_data, 'pdf_data': pdf_data}
 
 
+def fuzzy_match_page(json_page_text: str, pdf_pages_text: List[str]) -> int:
+    """Fuzzy match the JSON text content with the PDF pages and return the matched page number."""
+    best_score = -1
+    best_page = -1
+
+    # Iterate over each page's text in the PDF
+    for i, pdf_text in enumerate(pdf_pages_text):
+        # Calculate the similarity score between JSON page text and the current PDF page text
+        score = fuzz.partial_ratio(json_page_text, pdf_text)
+        if score > best_score:
+            best_score = score
+            best_page = i + 1  # Page number is 1-based
+    
+    return best_page 
+
 def process_tatdqa(
         raw_data_folder: str = 'data/dataset/tatdqa/raw_data',
         processed_data_folder: str = 'data/dataset/tatdqa/processed_data',
-        test_data_name: str = 'test_data.jsonl'
+        test_data_name: str = 'test_data.jsonl',
+        pdf_data_name: str = 'pdf_data.jsonl'
     ):
    
     """ Process the TATDQA dataset into a unified format and filter out questions on documents without complete original file 
@@ -240,54 +256,155 @@ def process_tatdqa(
         raw_data_folder: str, the path to the raw data folder.
         processed_data_folder: str, the path to the processed data folder.
         test_data_name: str, the name of the processed test data file, default is 'test_data.jsonl'.
+        pdf_data_name: str, the name of the processed pdf data file, default is 'pdf_data.jsonl'.
     @return:
         test_data: List[Dict[str, Any]], return the list of processed data, each data point is a dictionary containing the following fields:
             {
-                "doc_uid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // str, UID of the PDF document
-                "doc_name": "marin-software-inc_2019", // str, name of the PDF document
-                "question_uid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // str, UID of the question
+                "uuid": "xxx-xxx-xxx-xxx", // str, UUID of the question
                 "question": "What is the decrease in licensing revenue from Zyla (Oxaydo) from 2018 to 2019?", // str, the question text
+                "question_type": "arithmetic", // str, chosen from [span, multi-span, arithmetic, count]
                 "answer": 35, // Union[List[str], float], two types
-                "answer_type": "arithmetic", // str, chosen from [span, multi-span, arithmetic, count]
+                "pdf_id": "xxx-xxx-xxx-xxx", // str, UUID of the PDF file
                 "scale": "thousand", //unit for answer of float type, chosen from [ , thousand, million, percent]
                 "req_comparison": false // boolean, whether answering the question needs to compare the size of multiple numbers
             }
+        pdf_data: List[Dict[str, Any]], return the list of processed pdf files, each data point is a dictionary containing the following fields:
+            {
+                "pdf_id": "xxx-xxx-xxx-xxx", // str, UUID of the PDF file
+                "num_pages": 9, // int, number of PDF pages
+                "pdf_path": "data/dataset/tatdqa/raw_data/tat_docs/a10-networks-inc_2019.pdf",
+                "page_infos": [ // List[Dict[str, Any]], information of already parsed page, which is a dictionary containing the following fields:
+                    {
+                        "page_number": 1, // int, the page number, starting from 1
+                        "width": 640, // int, the width of the page
+                        "height": 780, // int, the height of the page
+                        "bbox": [ // List[Tuple[float, float, float, float]], [x0, y0, width, height]
+                            [0, 0, 340, 230],
+                            ...
+                        ], // OCR bounding boxes in the current page, 4-tuple List
+                        "bbox_text": [
+                            "Text content of the first bbox.",
+                            ...
+                        ], // List[str], the OCR text content of the current page
+                    
+                            ... 
+                        ] ,
+                        "words": [
+                            {
+                            "word_list":[ 
+                                "Text content of the first word in the first bbox.",
+                                ...
+                            ], // List[str]
+                            "bbox_list":[ 
+                                [73, 73 ,108, 92],
+                                ...
+                            ] // List[Tuple[float,float,float,float]], [x0, yo, width, height]
+                            },
+                            ... // other bbox
+                        ] // List[Dict[str, Any]], the detailed word information of every bbox
+                    },
+                    ... // other pages
+                ]
+            }
     """
-    # extract document names from UDA-tat(tat_qa) of those who has the complete original file
-    tat_qa=os.path.join(raw_data_folder,'tat_qa.csv')
-    df = pd.read_csv(tat_qa,sep='|')  
-    doc_list = df['doc_name'].tolist()  
-    doc_list = list(set(doc_list))#deduplication
+               
+    # Define paths
+    tatdqa_docs_folder = os.path.join(raw_data_folder, 'tatdqa_docs_test', 'test')
+    tatdqa_pdf_folder = os.path.join(raw_data_folder, 'tat_docs')
+    tatdqa_test_gold = os.path.join(raw_data_folder, 'tatdqa_dataset_test_gold.json')
 
-    # preprocess the test data
-    test_data=[]
-    with open(os.path.join(raw_data_folder,'tatdqa_dataset_test_gold.json'), 'r') as tatdqa_test:
-        data = json.load(tatdqa_test)
 
-        # for each doc and question 
-        for doc in data:
-            doc_info = doc["doc"]
-            #retain those documents equipped with complete original file
-            if doc_info["source"].replace(".pdf", "") in doc_list: 
-                questions = doc["questions"]
-                for question in questions:
-                    #create the json object
-                    json_obj = {
-                    "doc_name": doc_info["source"].replace(".pdf", ""),
-                    "question_uid": question["uid"],
-                    "question": question["question"],
-                    "answer": question["answer"],
-                    "answer_type": question["answer_type"],
-                    "scale": question["scale"],
-                    "req_comparison": question["req_comparison"],
-                    }
-                    test_data.append(json_obj)
-        
+    pdf_data = []
+    test_data = []
+
+    # Load test question-answer data
+    if not os.path.exists(tatdqa_test_gold):
+        raise FileNotFoundError(f"File {tatdqa_test_gold} not found.")
+    with open(tatdqa_test_gold, 'r') as f:
+        tatdqa_test = json.load(f)
+
+    # Process each document based on the question-answer dataset
+    for qa in tatdqa_test:  #for one file
+        doc_info = qa['doc']
+        pdf_filename = doc_info['source']
+        original_uid = doc_info['uid']
+        pdf_id = get_uuid(name=pdf_filename) #reset uuid for each pdf file
+        pdf_path = os.path.join(tatdqa_pdf_folder, pdf_filename)
+
+
+        # Check if the PDF file exists  
+        if os.path.exists(pdf_path):
+            # Extract all the text from the PDF pages
+            pdf_pages_text = get_pdf_page_text(pdf_path)["page_contents"]
+
+
+            # Construct the file path to the parsed JSON page
+            json_filename = f"{original_uid}.json"
+            json_filepath = os.path.join(tatdqa_docs_folder, json_filename)
+
+            # initialize the item in pdf_data
+            pdf_data_dict={
+                            "pdf_id": pdf_id,
+                            "num_pages": len(pdf_pages_text),
+                            "pdf_path": pdf_path,
+                            "page_infos": []
+                        } 
+
+            # read parsed JSON page
+            with open(json_filepath, 'r') as f:
+                page_data = json.load(f) 
+            
+            for json_page_index, json_page in enumerate(page_data['pages']):
+                # Extract text from the JSON file for fuzzy matching
+                json_page_text = ' '.join([block['text'] for block in json_page['blocks']])
+
+                # Fuzzy match the JSON page text with the original PDF text to get the page number
+                matched_page_number = fuzzy_match_page(json_page_text, pdf_pages_text)
+
+
+                page_dict = {
+                        "page_number": matched_page_number,
+                        "width": json_page['bbox'][2],  # page width
+                        "height": json_page['bbox'][3],  # page height
+                        "bbox": [block['bbox'] for block in json_page['blocks']],
+                        "bbox_text": [block['text'] for block in json_page['blocks']],
+                        "words": [
+                            {
+                                "word_list": block['words']['word_list'],
+                                "bbox_list": block['words']['bbox_list']
+                            } for block in json_page['blocks']
+                        ]
+                }
+
+               
+                pdf_data_dict['page_infos'].append(page_dict)
+
+            pdf_data.append(pdf_data_dict)
+
+            questions=qa['questions']
+            for question in questions:
+                        #create the json object
+                        test_data_dict = {
+                        "uuid": get_uuid(name= pdf_filename + question["question"].strip()), #reset uuid for each question
+                        "question": question["question"],
+                        "question_type": question["answer_type"],
+                        "answer": question["answer"],
+                        "pdf_id": pdf_id,
+                        "scale": question["scale"],
+                        "req_comparison": question["req_comparison"],
+                        }
+                        test_data.append(test_data_dict)
+
+
+                    
     with open(os.path.join(processed_data_folder, test_data_name), 'w') as of:
         for data in test_data:
-            of.write(json.dumps(data, ensure_ascii=True) + '\n')         
-    
-    return {'test_data': test_data}
+            of.write(json.dumps(data, ensure_ascii=False) + '\n')
+    with open(os.path.join(processed_data_folder, pdf_data_name), 'w') as of:
+        for data in pdf_data:
+            of.write(json.dumps(data, ensure_ascii=False) + '\n')
+
+    return {'test_data': test_data, 'pdf_data': pdf_data}
 
 
 if __name__ == '__main__':
