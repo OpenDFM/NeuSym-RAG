@@ -141,7 +141,7 @@ def populate_pdf_file_into_database(database_name: str, pdf_path: str, config_pa
     """ Populate the PDF file into the database.
     @param:
         database_name: str, database name
-        pdf_path: str, path to the PDF file
+        pdf_path: str, path to the PDF file or JSON line file
         config_path: str, path to the config file, optional
     """
     from utils.database_population import DatabasePopulation
@@ -149,7 +149,12 @@ def populate_pdf_file_into_database(database_name: str, pdf_path: str, config_pa
     config_path = config_path if config_path is not None else os.path.join('configs', f'{database_name}_config.json')
     with open(config_path, 'r') as inf:
         config = json.load(inf)
-    populator.populate(pdf_path, config, log=True, on_conflict='replace')
+    if pdf_path.endswith('.jsonl'):
+        with open(pdf_path, 'r') as inf:
+            for line in inf:
+                json_data = json.loads(line)
+                populator.populate(json_data, config, log=True, on_conflict='replace')
+    else: populator.populate(pdf_path, config, log=True, on_conflict='replace')
     populator.close()
     return
 
@@ -162,7 +167,7 @@ if __name__ == '__main__':
     parser.add_argument('--database', type=str, required=True, help='Database name.')
     parser.add_argument('--function', type=str, required=True, help='Which function to run.')
     parser.add_argument('--config_path', type=str, help='Path to the config file.')
-    parser.add_argument('--pdf_path', type=str, help='Path to the PDF file.')
+    parser.add_argument('--pdf_path', type=str, help='Path to the PDF file or JSON line file.')
     args = parser.parse_args()
 
     json_path = os.path.join(DATABASE_DIR, args.database, args.database + '.json')

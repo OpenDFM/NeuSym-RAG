@@ -1,0 +1,68 @@
+{
+    "log": true,
+    "pipeline": [
+        {
+            "function": "get_per_page_uuid",
+            "args": {
+                "deps": [
+                    0
+                ]
+            }
+        },
+        {
+            "function": "get_per_page_content_uuid",
+            "args": {
+                "deps": [
+                    0
+                ]
+            }
+        }
+    ],
+    "aggregation": [
+        {
+            "function": "aggregate_biology_paper_table_metadata",
+            "table": "metadata",
+            "args": {
+                "deps": [
+                    0
+                ]
+            }
+        },
+        {
+            "function": "aggregate_biology_paper_table_pages",
+            "table": "pages",
+            "args": {
+                "deps": [
+                    0,
+                    1
+                ]
+            }
+        },
+        {
+            "function": "aggregate_biology_paper_table_content_types",
+            "table": "content_types",
+            "args": {}
+        },
+        {
+            "function": "aggregate_biology_paper_table_content",
+            "table": "content",
+            "args": {
+                "deps": [
+                    0,
+                    1,
+                    2
+                ]
+            }
+        },
+        {
+            "function": "aggregate_biology_paper_table_parent_child_relations",
+            "table": "parent_child_relations",
+            "args": {
+                "deps": [
+                    0,
+                    2
+                ]
+            }
+        }
+    ]
+}

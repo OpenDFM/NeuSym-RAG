@@ -9,6 +9,16 @@ from .pdf_functions import (
     get_text_summary
 )
 
+from .biology_paper import (
+    get_per_page_uuid,
+    get_per_page_content_uuid,
+    aggregate_biology_paper_table_metadata,
+    aggregate_biology_paper_table_pages,
+    aggregate_biology_paper_table_content_types,
+    aggregate_biology_paper_table_content,
+    aggregate_biology_paper_table_parent_child_relations
+)
+
 from .test_domain import (
     aggregate_test_domain_table_pdf_meta,
     aggregate_test_domain_table_pdf_pages

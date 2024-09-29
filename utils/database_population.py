@@ -123,7 +123,7 @@ class  DatabasePopulation():
 
         # merge the outputs from all temporary results
         for idx, func_dict in enumerate(config['aggregation']):
-            deps = func_dict['args']['deps']
+            deps = func_dict['args']['deps'] if 'deps' in func_dict['args'] else []
             position_args = [outputs[idx] for idx in deps]
             keyword_args = func_dict['args'].get('kwargs', {})
 
