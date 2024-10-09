@@ -374,6 +374,7 @@ def process_tatdqa(
             # read parsed JSON page
             with open(json_filepath, 'r') as f:
                 page_data = json.load(f) 
+            logger.info(f"Extracted text from {len(page_data['pages'])} pages in the JSON file.")
             
             page_list = []
             for json_page in page_data['pages']:

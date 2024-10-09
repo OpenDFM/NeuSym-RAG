@@ -73,7 +73,20 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
         else:
             raise NotImplementedError(f"Question type {question_type} not supported.")
     elif database == 'financial_report':
-        pass
+        question, page = data['question'], data['page_number']
+        pdf_id = data['pdf_id']
+        question += f" (for page {page} in PDF with id {pdf_id})" if page is not None else f" (for PDF with id {pdf_id})"
+        question_type = data['question_type']
+        scale = data['answer'][1]
+        if question_type == 'count':
+            answer_format = 'Your answer should be a list containing a single integer number, e.g., 1, 2, 3, etc.'
+        elif question_type in ['span', 'multi-span', 'arithmetic']:
+            if scale == '' and question_type != 'arithmetic':
+                answer_format = 'Your answer should be verbose text from the raw PDF.'
+            else:
+                answer_format = 'Your answer should be data from the raw PDF or the result of the arithmetic operation of these data. If raw data have scale, or your operation may introduce scale like percent, you should also include scale in your output in the following format: [answer, scale]. Note that the scale should be one of the following: "percent", "thousand", "million", "".'
+        else:
+            raise NotImplementedError(f"Question type {question_type} not supported.")
     else:
         raise NotImplementedError(f"Dataset {database} not supported.")
     return question, answer_format
