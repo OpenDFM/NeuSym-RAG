@@ -1,5 +1,6 @@
 #coding=utf8
 import argparse, os, sys, json, logging
+from datetime import datetime
 from typing import Dict, List, Tuple, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from agents.envs import ENVIRONMENTS
@@ -8,14 +9,18 @@ from agents.frameworks import FRAMEWORKS
 from agents.prompts import convert_database_schema_to_prompt
 from utils.eval_utils import evaluate
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger()
 handler = logging.StreamHandler(sys.stdout)
+current_time = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+file_handler = logging.FileHandler(os.path.join('logs', f'text2sql_react_baseline-{current_time}.log'))
 formatter = logging.Formatter(
     fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 handler.setFormatter(formatter)
+file_handler.setFormatter(formatter)
 logger.addHandler(handler)
+logger.addHandler(file_handler)
 logger.setLevel(logging.INFO)
 
 parser = argparse.ArgumentParser()
@@ -86,6 +91,6 @@ output_path = os.path.join(args.result_dir, f'{args.dataset}_text2sql_react_{arg
 with open(output_path, 'w') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
-    logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")
+    logger.info(f"\n{len(preds)} predictions on {args.dataset} saved to {output_path}")
 eval_score = evaluate(preds, test_data, args.dataset, model=args.eval_llm, temperature=args.eval_temperature, top_p=args.eval_top_p, threshold=args.threshold, verbose=False)
-logger.info(f"Final evaluation score on {args.dataset}: {eval_score:.4f}")
+logger.info(f"\nFinal evaluation score on {args.dataset}: {eval_score:.4f}")

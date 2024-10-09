@@ -17,7 +17,7 @@ def evaluation(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs)
     if dataset == 'pdfvqa':
         score = evaluate_pdfvqa(pred_ans, gold_data, **kwargs)
     elif dataset == 'tatdqa':
-        pass
+        score = evaluate_tatdqa(pred_ans, gold_data, **kwargs)
     else:
         raise NotImplementedError(f"Dataset {dataset} not supported.")
     return score
@@ -80,6 +80,16 @@ def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], 
         return llm_semantic_equivalent(gold_data['question'], pred_ans, gold_data['answer'], model=model, temperature=temperature, top_p=top_p)
     else:
         raise NotImplementedError(f"Question type {question_type} not supported.")
+
+
+def evaluate_tatdqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], question_type: Optional[str] = None, **kwargs) -> float:
+    """ Evaluate the predicted answer for the TATDQA dataset.
+    @args:
+        pred_ans: LLM predicted str, predicted answer
+        gold_data: Dict[str, Any], gold data containing 'uuid', 'question', 'question_type', 'answer', etc.
+        question_type: str, question type, optional
+    """
+    pass
 
 
 def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset: str, **kwargs) -> float:
