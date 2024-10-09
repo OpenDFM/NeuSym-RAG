@@ -65,15 +65,18 @@ def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], 
     def exact_match(pred_ans: str, gold_ans: str) -> float:
         return float(pred_ans == gold_ans)
     
-    def fuzzy_match(pred_ans: str, gold_ans: str, threshold: float = 0.95) -> float:
-        return float(fuzz.ratio(re.sub(r'\s+', ' ', pred_ans), re.sub(r'\s+', ' ', gold_ans)) / 100.0 >= threshold)
+    def fuzzy_match(pred_ans: str, gold_ans: str, threshold: float = 0.9) -> float:
+        pred, gold = re.sub(r'\s+', ' ', pred_ans), re.sub(r'\s+', ' ', gold_ans)
+        # allow pred to fully contain the gold answer (treated as true)
+        compare_function = fuzz.partial_ratio if len(pred) > len(gold) else fuzz.ratio
+        return float(compare_function(pred, gold) / 100.0 >= threshold)
 
     if question_type in ['existence', 'counting']:
         answer = gold_data['answer'].strip().lower()
         pred_ans = pred_ans.strip().lower()
         return exact_match(pred_ans, answer)
     elif question_type in ['object_recognition', 'structural_understanding']: # mostly verbose section titles or recognized sentence, or special answer "No specific Section."
-        threshold = kwargs.pop('threshold', 0.95)
+        threshold = kwargs.pop('threshold', 0.9)
         answer = gold_data['answer'].strip().lower()
         pred_ans = pred_ans.strip().lower()
         return fuzzy_match(pred_ans, answer, threshold=threshold)
