@@ -1,10 +1,10 @@
 #coding=utf8
-import os, json, sys, logging, re, zipfile, pickle
+import os, json, sys, logging, re, tqdm, math, zipfile, pickle, random
 import pandas as pd
 import fitz  # PyMuPDF
 from fuzzywuzzy import fuzz  # For fuzzy matching 
 from PIL import Image, ImageDraw, ImageFont
-from typing import List, Dict, Union, Optional, Any
+from typing import List, Dict, Union, Optional, Tuple, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.functions.common_functions import get_uuid
 from utils.functions.image_functions import draw_image_with_bbox
@@ -240,12 +240,22 @@ def fuzzy_match_page(json_page_text: str, pdf_pages_text: List[str]) -> int:
     # Iterate over each page's text in the PDF
     for i, pdf_text in enumerate(pdf_pages_text):
         # Calculate the similarity score between JSON page text and the current PDF page text
-        score = fuzz.partial_ratio(json_page_text, pdf_text)
+        score = fuzz.ratio(json_page_text, pdf_text)
         if score > best_score:
             best_score = score
             best_page = i + 1  # Page number is 1-based
-    
-    return best_page 
+
+    return best_page
+
+
+def get_page_width_and_height(pdf_path: str, page_number: int) -> Tuple[int, int]:
+    doc = fitz.open(pdf_path)
+    page = doc[page_number - 1]
+    width = page.rect.width
+    height = page.rect.height
+    doc.close()
+    return (width, height)
+
 
 def process_tatdqa(
         raw_data_folder: str = 'data/dataset/tatdqa/raw_data',
@@ -292,14 +302,14 @@ def process_tatdqa(
                         ] ,
                         "words": [
                             {
-                            "word_list":[ 
-                                "Text content of the first word in the first bbox.",
-                                ...
-                            ], // List[str]
-                            "bbox_list":[ 
-                                [73, 73 ,108, 92],
-                                ...
-                            ] // List[Tuple[float,float,float,float]], [x0, yo, width, height]
+                                "word_list":[ 
+                                    "Text content of the first word in the first bbox.",
+                                    ...
+                                ], // List[str]
+                                "bbox_list":[ 
+                                    [73, 73 ,108, 92],
+                                    ...
+                                ] // List[Tuple[float,float,float,float]], [x0, y0, width, height]
                             },
                             ... // other bbox
                         ] // List[Dict[str, Any]], the detailed word information of every bbox
@@ -309,11 +319,16 @@ def process_tatdqa(
             }
     """
                
-    # Define paths
-    tatdqa_docs_folder = os.path.join(raw_data_folder, 'tatdqa_docs_test', 'test')
-    tatdqa_pdf_folder = os.path.join(raw_data_folder, 'tat_docs')
+    # define unpressed data folder
+    tatdqa_docs_folder = os.path.join(processed_data_folder, 'test')
+    if not os.path.exists(tatdqa_docs_folder) and not os.path.isdir(tatdqa_docs_folder):
+        with zipfile.ZipFile(os.path.join(raw_data_folder, 'tatdqa_docs_test.zip'), 'r') as zip_ref:
+            zip_ref.extractall(processed_data_folder)
+    tatdqa_pdf_folder = os.path.join(processed_data_folder, 'tat_docs')
+    if not os.path.exists(tatdqa_pdf_folder) and not os.path.isdir(tatdqa_pdf_folder):
+        with zipfile.ZipFile(os.path.join(raw_data_folder, 'tat_docs.zip'), 'r') as zip_ref:
+            zip_ref.extractall(processed_data_folder)
     tatdqa_test_gold = os.path.join(raw_data_folder, 'tatdqa_dataset_test_gold.json')
-
 
     pdf_data = []
     test_data = []
@@ -324,78 +339,83 @@ def process_tatdqa(
     with open(tatdqa_test_gold, 'r') as f:
         tatdqa_test = json.load(f)
 
+
+    def normalize_bbox(bbox, width_ratio, height_ratio):
+        # original: [x0, y0, x1, y1]
+        # after: [x0, y0, width, height]
+        x0, y0, x1, y1 = bbox
+        return [round(x0 * width_ratio, 1), round(y0 * height_ratio, 1), round((x1 - x0) * width_ratio, 1), round((y1 - y0) * height_ratio, 1)]
+
     # Process each document based on the question-answer dataset
-    for qa in tatdqa_test:  #for one file
+    for qa in tqdm.tqdm(tatdqa_test):  #for one file
         doc_info = qa['doc']
         pdf_filename = doc_info['source']
         original_uid = doc_info['uid']
-        pdf_id = get_uuid(name=pdf_filename) #reset uuid for each pdf file
+        pdf_id = get_uuid(name=pdf_filename) # reset uuid for each pdf file
         pdf_path = os.path.join(tatdqa_pdf_folder, pdf_filename)
 
-
-        # Check if the PDF file exists  
+        # Check if the PDF file exists, otherwise just skip the current test data group
         if os.path.exists(pdf_path):
             # Extract all the text from the PDF pages
-            pdf_pages_text = get_pdf_page_text(pdf_path)["page_contents"]
-
+            pdf_pages_text = get_pdf_page_text(pdf_path, generate_uuid=False)["page_contents"]
 
             # Construct the file path to the parsed JSON page
             json_filename = f"{original_uid}.json"
             json_filepath = os.path.join(tatdqa_docs_folder, json_filename)
 
             # initialize the item in pdf_data
-            pdf_data_dict={
-                            "pdf_id": pdf_id,
-                            "num_pages": len(pdf_pages_text),
-                            "pdf_path": pdf_path,
-                            "page_infos": []
-                        } 
+            pdf_data_dict = {
+                "pdf_id": pdf_id,
+                "num_pages": len(pdf_pages_text),
+                "pdf_path": pdf_path,
+                "page_infos": []
+            }
 
             # read parsed JSON page
             with open(json_filepath, 'r') as f:
                 page_data = json.load(f) 
             
-            for json_page_index, json_page in enumerate(page_data['pages']):
+            page_list = []
+            for json_page in page_data['pages']:
                 # Extract text from the JSON file for fuzzy matching
                 json_page_text = ' '.join([block['text'] for block in json_page['blocks']])
 
                 # Fuzzy match the JSON page text with the original PDF text to get the page number
                 matched_page_number = fuzzy_match_page(json_page_text, pdf_pages_text)
-
-
+                width, height = get_page_width_and_height(pdf_path, matched_page_number)
+                width_ratio, height_ratio = width / json_page['bbox'][2], height / json_page['bbox'][3]
                 page_dict = {
-                        "page_number": matched_page_number,
-                        "width": json_page['bbox'][2],  # page width
-                        "height": json_page['bbox'][3],  # page height
-                        "bbox": [block['bbox'] for block in json_page['blocks']],
-                        "bbox_text": [block['text'] for block in json_page['blocks']],
-                        "words": [
-                            {
-                                "word_list": block['words']['word_list'],
-                                "bbox_list": block['words']['bbox_list']
-                            } for block in json_page['blocks']
-                        ]
+                    "page_number": matched_page_number,
+                    "width": width,  # real page width
+                    "height": height,  # real page height
+                    "bbox": [normalize_bbox(block['bbox'], width_ratio, height_ratio) for block in json_page['blocks']],
+                    "bbox_text": [block['text'] for block in json_page['blocks']],
+                    "words": [
+                        {
+                            "word_list": block['words']['word_list'],
+                            "bbox_list": [normalize_bbox(bbox, width_ratio, height_ratio) for bbox in block['words']['bbox_list']]
+                        } for block in json_page['blocks']
+                    ]
                 }
 
-               
                 pdf_data_dict['page_infos'].append(page_dict)
+                page_list.append(matched_page_number)
 
             pdf_data.append(pdf_data_dict)
 
-            questions=qa['questions']
+            questions = qa['questions']
             for question in questions:
-                        #create the json object
-                        test_data_dict = {
-                        "uuid": get_uuid(name= pdf_filename + question["question"].strip()), #reset uuid for each question
-                        "question": question["question"],
-                        "question_type": question["answer_type"],
-                        "answer": [question["answer"],question["scale"]],
-                        "pdf_id": pdf_id
-                        }
-                        test_data.append(test_data_dict)
+                # create the json object
+                test_data_dict = {
+                    "uuid": get_uuid(name= pdf_filename + question["question"].strip()), # reset uuid for each question
+                    "question": question["question"],
+                    "question_type": question["answer_type"],
+                    "answer": [question["answer"], question["scale"]],
+                    "pdf_id": pdf_id,
+                    "page_number": page_list
+                }
+                test_data.append(test_data_dict)
 
-
-                    
     with open(os.path.join(processed_data_folder, test_data_name), 'w') as of:
         for data in test_data:
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
@@ -406,16 +426,63 @@ def process_tatdqa(
     return {'test_data': test_data, 'pdf_data': pdf_data}
 
 
+def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_file: str = None, random_seed: int = 2024):
+    """ Sample the dataset for testing purposes.
+    @param:
+        dataset: str, the dataset name.
+        sample_size: int, the sample size for the dataset.
+        output_file: str, the output file name for the sampling .jsonl file.
+    """
+    dataset_path = os.path.join(DATASET_DIR, dataset, 'processed_data', 'test_data.jsonl')
+    with open(dataset_path, 'r') as inf:
+        data = [json.loads(line) for line in inf]
+    typed_data = {}
+    for d in data:
+        if d['question_type'] not in typed_data:
+            typed_data[d['question_type']] = []
+        typed_data[d['question_type']].append(d)
+    # for different question types, sample the data in proportion
+    typed_sample_size = {tp: math.ceil(sample_size * 1.0 * len(typed_data[tp]) / len(data)) for tp in typed_data}
+    sampled_data = []
+    random.seed(random_seed)
+    for tp in typed_data:
+        if len(typed_data[tp]) <= typed_sample_size[tp]:
+            typed_sample_size[tp] = len(typed_data[tp])
+            sampled_data.extend(typed_data[tp])
+        else:
+            sampled_data.extend(random.sample(typed_data[tp], typed_sample_size[tp]))
+        logger.info(f'Sample {typed_sample_size[tp]} test data for type {tp}.')
+    
+    sample_size = len(sampled_data)
+    output_path = os.path.join(DATASET_DIR, dataset, 'processed_data', output_file) if output_file is not None else dataset_path.replace('test_data.jsonl', f'test_data_sample_{sample_size}.jsonl')
+    with open(output_path, 'w') as of:
+        for d in sampled_data:
+            of.write(json.dumps(d, ensure_ascii=False) + '\n')
+        logger.info(f"Sampled {sample_size} test data saved to {output_path} for dataset {dataset}.")
+    return sampled_data
+
+
 if __name__ == '__main__':
 
     import argparse
     parser = argparse.ArgumentParser(description='Dataset relevant utilities.')
     parser.add_argument('--dataset', type=str, required=True, help='Dataset name.')
+    parser.add_argument('--function', type=str, default='preprocess', choices=['preprocess', 'sampling'], help='Function name.')
+    parser.add_argument('--sample_size', type=int, default=300, help='Sample size for the dataset.')
+    parser.add_argument('--output_file', type=str, help='Output file name of the sampling .jsonl file.')
+    parser.add_argument('--random_seed', type=int, default=2024, help='Random seed for sampling.')
     args = parser.parse_args()
 
-    if args.dataset == 'pdfvqa':
-        process_pdfvqa()
-    elif args.dataset == 'tatdqa':
-        process_tatdqa()
+    FUNCTIONS = {
+        'preprocess': {
+            'pdfvqa': process_pdfvqa,
+            'tatdqa': process_tatdqa
+        },
+        'sampling': sampling_dataset,
+    }
+    if args.function == 'preprocess':
+        FUNCTIONS[args.function][args.dataset]()
+    elif args.function == 'sampling':
+        FUNCTIONS[args.function](args.dataset, sample_size=args.sample_size, output_file=args.output_file, random_seed=args.random_seed)
     else:
-        raise ValueError(f"Dataset {args.dataset} not supported.")
+        raise ValueError(f"Function {args.function} not supported for dataset {args.dataset}.")

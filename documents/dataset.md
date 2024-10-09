@@ -108,11 +108,12 @@ We preprocess each example into folder `data/dataset/tatdqa/processed_data/`. Th
 - [test_data.jsonl](../data/dataset/tatdqa/processed_data/test_data.jsonl): JSON line file, each test example is represented with one JSON dict containing the following fields:
 ```json
 {
-    "pdf_id": "xxxx-xxxx-xxxx", // str, name of the PDF document
     "uuid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // str, UID of the question
     "question": "What is the decrease in licensing revenue from Zyla (Oxaydo) from 2018 to 2019?", // str, the question text
     "question_type": "arithmetic", // str, chosen from [span, multi-span, arithmetic, count]
-    "answer": [35, "thousand"], // List[Union[str,List[str], float]],the last element is scale(unit for answer of float type)
+    "answer": [35, "thousand"], // Tuple[Union[str, int, float], str], the last element is scale (unit for answer of float type)
+    "pdf_id": "xxxx-xxxx-xxxx", // str, name of the PDF document
+    "page_number": [1, 2] // List[int], used page number for the current PDF
 }
 ```
 - [pdf_data.jsonl](../data/dataset/tatdqa/processed_data/pdf_data.jsonl): JSON line file, each PDF file is represented with one JSON dict.
@@ -120,7 +121,7 @@ We preprocess each example into folder `data/dataset/tatdqa/processed_data/`. Th
 {
     "pdf_id": "xxx-xxx-xxx-xxx", // str, UUID of the PDF file
     "num_pages": 121, // int, number of PDF pages
-    "pdf_path": "data/dataset/tatdqa/raw_data/tat_docs/a10-networks-inc_2019.pdf",
+    "pdf_path": "data/dataset/tatdqa/processed_data/tat_docs/a10-networks-inc_2019.pdf",
     "page_infos": [ // List[Dict[str, Any]], information of already parsed page, which is a dictionary containing the following fields:
         {
             "page_number": 23, // int, the page number, starting from 1
@@ -128,13 +129,12 @@ We preprocess each example into folder `data/dataset/tatdqa/processed_data/`. Th
             "height": 780, // int, the height of the page
             "bbox": [ // List[Tuple[float, float, float, float]], [x0, y0, width, height]
                 [0, 0, 340, 230],
-                            ...
+                ...
             ], // OCR bounding boxes in the current page, 4-tuple List
             "bbox_text": [
                 "Text content of the first bbox.",
                 ...
             ], // List[str], the OCR text content of the current page
-                    
             "words": [
                 {
                 "word_list":[ 
@@ -149,20 +149,15 @@ We preprocess each example into folder `data/dataset/tatdqa/processed_data/`. Th
                 ... // other bbox
             ] // List[Dict[str, Any]], the detailed word information of every bbox
         },
-                    ... // other pages
+        ... // other pages
     ]
 }
 ```
 
-```
-def evaluate(pred: str, gold: data['answer'], question_type: enum) -> float:
-    if question_type == '?':
-        eval_func1()
-        pass
-    elif ...
-        eval_func2()
+## Dataset Sampling
 
-#### Running script:
+The original dataset might be a little large for debugging or testing purposes. We can generate a small-sized dataset for testing.
 ```sh
-python utils/dataset_utils.py --dataset tatdqa
+python utils/dataset_utils.py --dataset pdfvqa --function sampling --sample_size 30 --output_file test_data_sample.jsonl
+python utils/dataset_utils.py --dataset tatdqa --function sampling --sample_size 30 --output_file test_data_sample.jsonl
 ```
