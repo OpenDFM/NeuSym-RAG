@@ -54,7 +54,7 @@ class Text2SQLRAGAgent():
                  temperature: float = 0.7,
                  top_p: float = 0.9,
                  max_tokens: int = 1500
-    ) -> List[Dict[str, str]]:
+    ) -> str:
         task_prompt = f'Question: {question}\nAnswer Format: {answer_format}\nDatabase Schema:\n{database_prompt}'
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
