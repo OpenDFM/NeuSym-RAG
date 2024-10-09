@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS pages (
 	PRIMARY KEY (page_id),
 	FOREIGN KEY (ref_paper_id) REFERENCES metadata(paper_id)
 );
-/* table content_types: This table defines the type id for each of the following content types: 1 -> main text, 2 -> section title, 3 -> reference list, 4 -> tables in the paper, 5 -> figures in the table.
+/* table content_types: This table defines the type id for each of the following content types: 1 -> main text, 2 -> section title, 3 -> reference list, 4 -> tables in the paper, 5 -> figures in the paper.
 */
 CREATE TABLE IF NOT EXISTS content_types (
 	type_id INTEGER, -- A unique identifier for each content type, only supporting 1 - 5.
