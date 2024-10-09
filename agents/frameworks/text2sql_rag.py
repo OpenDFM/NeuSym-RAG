@@ -69,7 +69,7 @@ class Text2SQLRAGAgent():
             if len(messages) > (window_size + 1) * 2: # each turn has two messages from assistant and user, respectively
                 current_messages = messages[:2] + messages[-window_size * 2:]
             else: current_messages = messages
-            logger.info(f'\n[Interaction Turn]: {turn + 1}')
+            logger.info(f'[Interaction Turn]: {turn + 1}')
 
             response = self.model.get_response(current_messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
             logger.info(f'[Response]: {response}')

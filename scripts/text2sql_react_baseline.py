@@ -67,9 +67,9 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
         elif question_type == 'counting':
             answer_format = 'Your answer should be a single integer number, e.g., 1, 2, 3, etc.'
         elif question_type in ['object_recognition', 'structural_understanding']:
-            answer_format = 'Your answer should be verbose text from the raw PDF, e.g., figure/table captions, section titles, or "No specific Section." if not found.'
+            answer_format = 'Your answer should be verbose text from the raw PDF, e.g., figure/table captions, section titles, or "No specific Section." if not found. Note that, for questions relevant to figures or tables, the answers are mostly the captions or paragraphs surrounding them.'
         elif question_type in ['parent_relationship_understanding', 'child_relationship_understanding']:
-            answer_format = 'Your answer should be a Python list of strings, where each string represents mostly a section or subsection. If not found, please return the default list ["No section!"] or ["No subsection!"].'
+            answer_format = 'Your answer should be a Python list of strings, where each string represents mostly a section or subsection title. Note that, some parent-children belongingships are not recorded and you may need to infer from the position or text content of different regions or bounding boxes. If not found, please return the list ["No section!"] or ["No subsection!"].'
         else:
             raise NotImplementedError(f"Question type {question_type} not supported.")
     elif database == 'financial_report':
@@ -85,6 +85,7 @@ for data in test_data:
     result = agent.interact(question, database_prompt, answer_format, window_size=args.window_size, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens)
     preds.append({
         'uuid': data['uuid'],
+        'question_type': data['question_type'],
         'answer': result
     })
 agent.close()
@@ -93,7 +94,7 @@ output_path = os.path.join(args.result_dir, f'{args.dataset}_text2sql_react_{arg
 with open(output_path, 'w') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
-    logger.info(f"\n{len(preds)} predictions on {args.dataset} saved to {output_path}")
+    logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")
 result = evaluate(preds, test_data, args.dataset, model=args.eval_llm, temperature=args.eval_temperature, top_p=args.eval_top_p, threshold=args.threshold, verbose=False)
 result_table = print_result(result)
-logger.info(f"\nFinal evaluation result on {args.dataset}:\n{result_table}")
+logger.info(f"Final evaluation result on {args.dataset}:\n{result_table}")
