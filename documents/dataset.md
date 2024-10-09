@@ -39,11 +39,11 @@ For PDF-VQA, please download them from the following links into folder `data/dat
 
 For TAT-DQA, please download them from the following links into folder `data/dataset/tatdqa/raw_data/`:
 - [tatdqa_dataset_test_gold.json](https://drive.google.com/drive/folders/1SGpZyRWqycMd_dZim1ygvWhl5KdJYDR2)
-- [tat_qa.csv](https://github.com/qinchuanhui/UDA-Benchmark/blob/main/dataset/qa/tat_qa.csv)
+- [tatdqa_docs_test.zip](https://drive.google.com/drive/folders/1SGpZyRWqycMd_dZim1ygvWhl5KdJYDR2)
 - [tat_docs.zip](https://huggingface.co/datasets/qinchuanhui/UDA-QA/resolve/main/src_doc_files/tat_docs.zip?download=true)
 
 
-> Notice, the original dataset only contains the specific or oracle PDF page instead of the complete PDF file for each instance, which we believe is not practical in real-world scenarios. Thus, we refer to [UDA-Benchmark](https://github.com/qinchuanhui/UDA-Benchmark?tab=readme-ov-file#book-dataset-uda-qa) and download the raw PDF files ([tat_docs.zip](https://huggingface.co/datasets/qinchuanhui/UDA-QA/resolve/main/src_doc_files/tat_docs.zip?download=true)).To extract the list of reports with complete original file, we also introduce [tat_qa.csv](https://github.com/qinchuanhui/UDA-Benchmark/blob/main/dataset/qa/tat_qa.csv) from UDA.
+> Notice, the original dataset only contains the specific or oracle PDF page instead of the complete PDF file for each instance, which we believe is not practical in real-world scenarios. Thus, we refer to [UDA-Benchmark](https://github.com/qinchuanhui/UDA-Benchmark?tab=readme-ov-file#book-dataset-uda-qa) and download the raw PDF files ([tat_docs.zip](https://huggingface.co/datasets/qinchuanhui/UDA-QA/resolve/main/src_doc_files/tat_docs.zip?download=true)).
 
 TODO: other benchmarks relevant to PDF.
 
@@ -112,27 +112,45 @@ We preprocess each example into folder `data/dataset/tatdqa/processed_data/`. Th
     "uuid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // str, UID of the question
     "question": "What is the decrease in licensing revenue from Zyla (Oxaydo) from 2018 to 2019?", // str, the question text
     "question_type": "arithmetic", // str, chosen from [span, multi-span, arithmetic, count]
-    "answer": [35, "thousand"], // Union[List[str], float], two types
-    // "scale": "thousand", //unit for answer of float type, chosen from [thousand, million, percent] 
-    // "req_comparison": false // boolean, whether answering the question needs to compare the size of multiple data
-    "page_number": int
+    "answer": [35, "thousand"], // List[Union[str,List[str], float]],the last element is scale(unit for answer of float type)
 }
 ```
 - [pdf_data.jsonl]()
 ```json
 {
-    "pdf_id": "xxxx-xxxx-xxxx", // str, id of the PDF file
-    "num_pages": 9, // int, total number of PDF pages
-    "page_infos": [ // List[Dict[str, Any]], information of each page
+    "pdf_id": "xxx-xxx-xxx-xxx", // str, UUID of the PDF file
+    "num_pages": 121, // int, number of PDF pages
+    "pdf_path": "data/dataset/tatdqa/raw_data/tat_docs/a10-networks-inc_2019.pdf",
+    "page_infos": [ // List[Dict[str, Any]], information of already parsed page, which is a dictionary containing the following fields:
         {
-            "page_number": xxx,
+            "page_number": 23, // int, the page number, starting from 1
+            "width": 640, // int, the width of the page
+            "height": 780, // int, the height of the page
+            "bbox": [ // List[Tuple[float, float, float, float]], [x0, y0, width, height]
+                [0, 0, 340, 230],
+                            ...
+            ], // OCR bounding boxes in the current page, 4-tuple List
             "bbox_text": [
                 "Text content of the first bbox.",
                 ...
-            ]
-            ...
-        } // already parsed page info
-    ]
+            ], // List[str], the OCR text content of the current page
+                    
+            "words": [
+                {
+                "word_list":[ 
+                    "Text content of the first word in the first bbox.",
+                    ...
+                ], // List[str]
+                "bbox_list":[ 
+                    [73, 73 ,108, 92],
+                    ...
+                ] // List[Tuple[float,float,float,float]], [x0, yo, width, height]
+                },
+                ... // other bbox
+            ] // List[Dict[str, Any]], the detailed word information of every bbox
+        },
+                    ... // other pages
+        ]
 }
 ```
 
