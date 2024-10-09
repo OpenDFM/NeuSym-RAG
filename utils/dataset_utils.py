@@ -266,11 +266,9 @@ def process_tatdqa(
                 "uuid": "xxx-xxx-xxx-xxx", // str, UUID of the question
                 "question": "What is the decrease in licensing revenue from Zyla (Oxaydo) from 2018 to 2019?", // str, the question text
                 "question_type": "arithmetic", // str, chosen from [span, multi-span, arithmetic, count]
-                "answer": 35, // Union[List[str], float], two types
+                "answer": [35,"thousand"] // List[Union[str,List[str], float]], the last element is scale(unit for answer of float type)
                 "pdf_id": "xxx-xxx-xxx-xxx", // str, UUID of the PDF file
-                "scale": "thousand", //unit for answer of float type, chosen from [ , thousand, million, percent]
-                "req_comparison": false // boolean, whether answering the question needs to compare the size of multiple numbers
-            }
+                }
         pdf_data: List[Dict[str, Any]], return the list of processed pdf files, each data point is a dictionary containing the following fields:
             {
                 "pdf_id": "xxx-xxx-xxx-xxx", // str, UUID of the PDF file
@@ -391,10 +389,8 @@ def process_tatdqa(
                         "uuid": get_uuid(name= pdf_filename + question["question"].strip()), #reset uuid for each question
                         "question": question["question"],
                         "question_type": question["answer_type"],
-                        "answer": question["answer"],
-                        "pdf_id": pdf_id,
-                        "scale": question["scale"],
-                        "req_comparison": question["req_comparison"],
+                        "answer": [question["answer"],question["scale"]],
+                        "pdf_id": pdf_id
                         }
                         test_data.append(test_data_dict)
 
