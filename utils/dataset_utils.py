@@ -325,18 +325,19 @@ def process_tatdqa(
         tatdqa_test = json.load(f)
 
     # Process each document based on the question-answer dataset
-    for qa in tatdqa_test:  #for one file
+    for (_, qa) in enumerate(tatdqa_test):  #for one file
         doc_info = qa['doc']
         pdf_filename = doc_info['source']
         original_uid = doc_info['uid']
         pdf_id = get_uuid(name=pdf_filename) #reset uuid for each pdf file
         pdf_path = os.path.join(tatdqa_pdf_folder, pdf_filename)
 
-
+        logger.info(f"Processing PDF file ({_ + 1}/{len(tatdqa_test)}) : {pdf_filename}")
         # Check if the PDF file exists  
         if os.path.exists(pdf_path):
             # Extract all the text from the PDF pages
             pdf_pages_text = get_pdf_page_text(pdf_path)["page_contents"]
+            logger.info(f"Extracted text from {len(pdf_pages_text)} pages in the PDF file.")
 
 
             # Construct the file path to the parsed JSON page
@@ -354,6 +355,7 @@ def process_tatdqa(
             # read parsed JSON page
             with open(json_filepath, 'r') as f:
                 page_data = json.load(f) 
+            logger.info(f"Extracted text from {len(page_data['pages'])} pages in the JSON file.")
             
             for json_page_index, json_page in enumerate(page_data['pages']):
                 # Extract text from the JSON file for fuzzy matching

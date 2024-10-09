@@ -87,14 +87,46 @@ def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], 
         raise NotImplementedError(f"Question type {question_type} not supported.")
 
 
-def evaluate_tatdqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], question_type: Optional[str] = None, **kwargs) -> float:
+def evaluate_tatdqa(pred_ans: List[Any], gold_data: Dict[str, Any], question_type: Optional[str] = None, **kwargs) -> float:
     """ Evaluate the predicted answer for the TATDQA dataset.
     @args:
         pred_ans: LLM predicted str, predicted answer
         gold_data: Dict[str, Any], gold data containing 'uuid', 'question', 'question_type', 'answer', etc.
         question_type: str, question type, optional
     """
-    pass
+    question_type, gold_scale, gold_answer = gold_data['question_type'], gold_data['answer'][1], gold_data['answer'][0]
+    pred_answer, pred_scale = pred_ans[0], pred_ans[1]
+    assert question_type in ['span', 'multi-span', 'arithmetic', 'count']
+
+    def to_float(gold_ans: Any) -> float:
+        allowed_characters = "0123456789-."
+        gold_ans = str(gold_ans).strip().lower()
+        gold_ans = ''.join([ch for ch in gold_ans if ch in allowed_characters])
+        return float(gold_ans)
+    
+    def exact_match(pred_ans: Any, gold_ans: Any) -> float:
+        pred_ans = to_float(pred_ans)
+        gold_ans = to_float(gold_ans)
+        return float(pred_ans == gold_ans)
+    
+    if question_type in ['arithmetic', 'count']:
+        return exact_match(pred_answer, gold_answer) * float(gold_scale == pred_scale)
+    elif question_type in ['span', 'multi-span']:
+        if gold_scale == '':
+            model, temperature, top_p = kwargs.get('model', 'gpt-4o'), kwargs.get('temperature', 0.7), kwargs.get('top_p', 0.95)
+            return llm_semantic_equivalent(gold_data['question'], pred_ans, gold_data['answer'], model=model, temperature=temperature, top_p=top_p)
+        elif gold_scale in ['percent', 'thousand', 'million']:
+            if question_type == 'multi-span':
+                for i in range(len(pred_answer)):
+                    if exact_match(pred_answer[i], gold_answer[i]) < 0.01:
+                        return 0.0
+                return float(gold_scale == pred_scale)
+            else:
+                return exact_match(pred_answer, gold_answer) * float(gold_scale == pred_scale)
+        else:
+            raise NotImplementedError(f"Gold scale {gold_scale} not supported.")
+    else:
+        raise NotImplementedError(f"Question type {question_type} not supported.")
 
 
 def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset: str, **kwargs) -> dict:
