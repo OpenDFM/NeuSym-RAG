@@ -7,7 +7,7 @@ from agents.envs import ENVIRONMENTS
 from agents.models import LLMS
 from agents.frameworks import FRAMEWORKS
 from agents.prompts import convert_database_schema_to_prompt
-from utils.eval_utils import evaluate
+from utils.eval_utils import evaluate, print_result
 
 logger = logging.getLogger()
 handler = logging.StreamHandler(sys.stdout)
@@ -94,5 +94,6 @@ with open(output_path, 'w') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"\n{len(preds)} predictions on {args.dataset} saved to {output_path}")
-eval_score = evaluate(preds, test_data, args.dataset, model=args.eval_llm, temperature=args.eval_temperature, top_p=args.eval_top_p, threshold=args.threshold, verbose=False)
-logger.info(f"\nFinal evaluation score on {args.dataset}: {eval_score:.4f}")
+result = evaluate(preds, test_data, args.dataset, model=args.eval_llm, temperature=args.eval_temperature, top_p=args.eval_top_p, threshold=args.threshold, verbose=False)
+result_table = print_result(result)
+logger.info(f"\nFinal evaluation result on {args.dataset}:\n{result_table}")

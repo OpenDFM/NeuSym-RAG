@@ -1,7 +1,9 @@
 #coding=utf8
 import os, openai, re
 from typing import Dict, Any, Optional, List, Union
+from collections import defaultdict
 from fuzzywuzzy import fuzz
+from tabulate import tabulate
 
 
 def evaluation(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs) -> float:
@@ -92,7 +94,7 @@ def evaluate_tatdqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], 
     pass
 
 
-def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset: str, **kwargs) -> float:
+def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset: str, **kwargs) -> dict:
     """ Evaluate the predicted answers on the entire dataset. Note that,
     both the gold and predict answers are stored in jsonl format.
     @args:
@@ -100,7 +102,13 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
         gold: Union[List[dict], str], JSONL path to gold answer or JSON list
         dataset: str, dataset name
     @return:
-        score: float, evaluation score
+        result: dict, each key contains the count, correct count, and score. The special key 'all' contains the overall evaluation score, e.g.,
+            {
+                "all": {"score": 0.8, "count": 100, "correct": 80},
+                "existence": {"score": 0.9, "count": 20, "correct": 18},
+                "counting": {"score": 0.7, "count": 20, "correct": 14},
+                ...
+            }
     """
 
     pred_data, gold_data = [], []
@@ -118,18 +126,38 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
     else: gold_data = gold
 
     assert len(pred_data) == len(gold_data)
-    total_score, count = 0.0, 0
+    result = defaultdict(lambda: {'score': 0.0, 'count': 0, 'correct': 0}) # (score, count)
     verbose = kwargs.pop('verbose', True)
     for pred, gold in zip(pred_data, gold_data):
         score = evaluation(dataset, pred['answer'], gold, **kwargs)
         if score < 0.5 and verbose:
-            print(f'[ERROR]: data with id {gold["uuid"]}')
-        total_score += score
-        count += 1
+            print(f'\n[ERROR]: data (type={gold["question_type"]}) with id {gold["uuid"]}')
+            print(f'Gold Answer: {gold["answer"]}')
+            print(f'Predicted Answer: {pred["answer"]}')
+        result['all']['count'] += 1
+        result['all']['correct'] += score
+        result[gold['question_type']]['count'] += 1
+        result[gold['question_type']]['correct'] += score
+
+    for key in result.keys():
+        score, count = result[key]['correct'], result[key]['count']
+        result[key]['score'] = score / count if count > 0 else 0.0
+
     if verbose:
-        print(f"Total evaluation score on {dataset}: {total_score / count:.4f}")
-    
-    return total_score / count
+        print('\n' + print_result(result))
+
+    return result
+
+
+def print_result(result: dict) -> str:
+    """ Print the evaluation result.
+    @args:
+        result: dict, evaluation result
+    """
+    table_data = [[key, values['correct'], values['count'], values['score']] for key, values in result.items() if key != 'all']
+    table_data += [['total', result['all']['correct'], result['all']['count'], result['all']['score']]]
+    headers = ["Question Type", "Correct", "Total", "Score"]
+    return tabulate(table_data, headers=headers, tablefmt='fancy_grid')
 
 
 if __name__ == '__main__':
