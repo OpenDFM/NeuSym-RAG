@@ -57,7 +57,7 @@ database_prompt = convert_database_schema_to_prompt(args.database, serialize_met
 
 
 def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
-    if database == 'pdfvqa':
+    if database == 'biology_paper':
         question, page = data['question'], data['page_number']
         pdf_id = data['pdf_id']
         question += f" (for page {page} in PDF with id {pdf_id})" if page is not None else f" (for PDF with id {pdf_id})"
@@ -72,6 +72,8 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
             answer_format = 'Your answer should be a Python list of strings, where each string represents mostly a section or subsection. If not found, please return the default list ["No section!"] or ["No subsection!"].'
         else:
             raise NotImplementedError(f"Question type {question_type} not supported.")
+    elif database == 'financial_report':
+        pass
     else:
         raise NotImplementedError(f"Dataset {database} not supported.")
     return question, answer_format
@@ -79,7 +81,7 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
 
 preds = []
 for data in test_data:
-    question, answer_format = formulate_input(args.dataset, data)
+    question, answer_format = formulate_input(args.database, data)
     result = agent.interact(question, database_prompt, answer_format, window_size=args.window_size, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens)
     preds.append({
         'uuid': data['uuid'],
