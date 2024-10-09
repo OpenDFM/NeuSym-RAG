@@ -115,7 +115,7 @@ We preprocess each example into folder `data/dataset/tatdqa/processed_data/`. Th
     "answer": [35, "thousand"], // List[Union[str,List[str], float]],the last element is scale(unit for answer of float type)
 }
 ```
-- [pdf_data.jsonl]()
+- [pdf_data.jsonl](../data/dataset/tatdqa/processed_data/pdf_data.jsonl): JSON line file, each PDF file is represented with one JSON dict.
 ```json
 {
     "pdf_id": "xxx-xxx-xxx-xxx", // str, UUID of the PDF file
@@ -150,7 +150,7 @@ We preprocess each example into folder `data/dataset/tatdqa/processed_data/`. Th
             ] // List[Dict[str, Any]], the detailed word information of every bbox
         },
                     ... // other pages
-        ]
+    ]
 }
 ```
 
