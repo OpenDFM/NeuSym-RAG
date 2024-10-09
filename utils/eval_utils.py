@@ -87,14 +87,17 @@ def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], 
         raise NotImplementedError(f"Question type {question_type} not supported.")
 
 
-def evaluate_tatdqa(pred_ans: List[Any], gold_data: Dict[str, Any], question_type: Optional[str] = None, **kwargs) -> float:
+def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Optional[str] = None, **kwargs) -> float:
     """ Evaluate the predicted answer for the TATDQA dataset.
     @args:
         pred_ans: LLM predicted str, predicted answer
         gold_data: Dict[str, Any], gold data containing 'uuid', 'question', 'question_type', 'answer', etc.
         question_type: str, question type, optional
     """
+    # TODO check all "count" tasks' scales are ""
     question_type, gold_scale, gold_answer = gold_data['question_type'], gold_data['answer'][1], gold_data['answer'][0]
+    if gold_scale == '' and question_type != 'arithmetic':
+        pred_ans = [pred_ans, '']
     pred_answer, pred_scale = pred_ans[0], pred_ans[1]
     assert question_type in ['span', 'multi-span', 'arithmetic', 'count']
 
