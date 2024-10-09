@@ -99,11 +99,18 @@ def convert_json_to_create_sql(json_path: str, sql_path: Optional[str] = None) -
         elif primary_key_string and foreign_key_string:
             return ',\n'.join([primary_key_string, foreign_key_string])
 
+    def get_column_comment(col):
+        column_desc = col.get('description', '').replace('\n', ' ')
+        return f" -- {column_desc}" if len(column_desc) > 0 else ""
+
+
+    sqls.append(f"/* database {schema['database_name']}: {schema['description'].replace(';', ',')}\n*/")
     schema = schema['database_schema']
     for table in schema:
+        sqls.append(f"/* table {table['table']['table_name']}: {table['table']['description'].replace(';', ',')}\n*/")
         table_name = table['table']['table_name']
         columns = table['columns']
-        column_str = ',\n'.join([get_column_string(col) for col in columns])
+        column_str = '\n'.join([get_column_string(col) + ',' + get_column_comment(col) for col in columns])
         key_str = get_primary_and_foreign_key_string(table)
         if key_str:
             sqls.append(f"CREATE TABLE IF NOT EXISTS {table_name} (\n{column_str},\n{key_str}\n);")

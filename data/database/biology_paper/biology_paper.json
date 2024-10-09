@@ -40,9 +40,9 @@
                     "description": "A unique identifier for each page within a paper."
                 },
                 {
-                    "column_name": "figure_path",
+                    "column_name": "page_path",
                     "column_type": "VARCHAR",
-                    "description": "The path to the .png figure image file of the current page."
+                    "description": "Path to the current page (each PDF page is stored as a .png screenshot file)."
                 },
                 {
                     "column_name": "page_number",

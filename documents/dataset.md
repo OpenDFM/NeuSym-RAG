@@ -58,7 +58,7 @@ We preprocess each example into folder `data/dataset/pdfvqa/processed_data/`. Th
     "uuid": "xxx-xxx-xxx-xxx", // str, UUID of the test example
     // "task_type": "a", // str, chosen from a, b, c
     "question": "Is it correct that there is no figure on the top left?",
-    "question_type": "existence", // str, chosen from ['existence', 'object_recognition', 'structural_understanding', 'parent_relationship_understanding', 'child_relationship_understanding']
+    "question_type": "existence", // str, chosen from ['existence', 'counting', 'object_recognition', 'structural_understanding', 'parent_relationship_understanding', 'child_relationship_understanding']
     "answer": true, // Union[bool, str, List[str]], three types of answers for different task types
     "pdf_id": "15450119", // str, id of the PDF
     "page_number": 3 // int, reference page number for this question, starting from 1. Note that this field is None for task c

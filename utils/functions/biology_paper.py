@@ -29,15 +29,15 @@ def aggregate_biology_paper_table_metadata(pdf_data: dict) -> List[Any]:
 
 def aggregate_biology_paper_table_pages(pdf_data: dict, uuids: List[int]) -> List[Any]:
     """ Output:
-        [ [ page_id, figure_path, page_number, page_width, page_height, page_content, ref_paper_id ] ]
+        [ [ page_id, page_path, page_number, page_width, page_height, page_content, ref_paper_id ] ]
     """
     results = []
     ref_paper_id = pdf_data['pdf_id']
     for page_info, uid in zip(pdf_data['page_infos'], uuids):
         page_number = int(page_info['page_number'])
-        figure_path = os.path.join('data', 'dataset', 'pdfvqa', 'processed_data', 'bbox_images', f'{ref_paper_id}_{page_number}.png')
-        if os.path.exists(figure_path):
-            results.append([uid, figure_path, page_number, page_info['width'], page_info['height'], "\n".join(page_info['bbox_text']), ref_paper_id])
+        page_path = os.path.join('data', 'dataset', 'pdfvqa', 'processed_data', 'bbox_images', f'{ref_paper_id}_{page_number}.png')
+        if os.path.exists(page_path):
+            results.append([uid, page_path, page_number, page_info['width'], page_info['height'], re.sub(r'\s+', ' ', " ".join(page_info['bbox_text'])), ref_paper_id])
     return results
 
 
@@ -56,7 +56,7 @@ def aggregate_biology_paper_table_content(pdf_data: dict, page_ids: List[str], c
     ref_paper_id = pdf_data['pdf_id']
     for idx, (page_info, page_id) in enumerate(zip(pdf_data['page_infos'], page_ids)):
         for ordinal, (content_id, content_type, bbox, text) in enumerate(zip(content_ids[idx], page_info['bbox_label'], page_info['bbox'], page_info['bbox_text'])):
-            results.append([content_id, content_type, text, json.dumps(bbox), ordinal, ref_paper_id, page_id])
+            results.append([content_id, content_type, re.sub(r'\s+', ' ', text), json.dumps(bbox), ordinal, ref_paper_id, page_id])
     return results
 
 
