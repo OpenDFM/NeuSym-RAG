@@ -374,7 +374,6 @@ def process_tatdqa(
             # read parsed JSON page
             with open(json_filepath, 'r') as f:
                 page_data = json.load(f) 
-            logger.info(f"Extracted text from {len(page_data['pages'])} pages in the JSON file.")
             
             page_list = []
             for json_page in page_data['pages']:
@@ -417,10 +416,10 @@ def process_tatdqa(
                 }
                 test_data.append(test_data_dict)
 
-    with open(os.path.join(processed_data_folder, test_data_name), 'w') as of:
+    with open(os.path.join(processed_data_folder, test_data_name), 'w', encoding='UTF-8') as of:
         for data in test_data:
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
-    with open(os.path.join(processed_data_folder, pdf_data_name), 'w') as of:
+    with open(os.path.join(processed_data_folder, pdf_data_name), 'w', encoding='UTF-8') as of:
         for data in pdf_data:
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
 

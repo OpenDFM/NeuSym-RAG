@@ -5,7 +5,7 @@
         {
             "table": {
                 "table_name": "metadata",
-                "description": "This table stores metadata about each report, including the company name, report type, fiscal year, and other relevant information."
+                "description": "This table stores metadata about each report, including the number of pages, report path and report id."
             },
             "columns": [
                 {
@@ -17,11 +17,6 @@
                     "column_name": "report_pages",
                     "column_type": "INTEGER",
                     "description": "The number of pages in this report."
-                },
-                {
-                    "column_name": "report_type",
-                    "column_type": "VARCHAR",
-                    "description": "The type of the report, such as FORM 10-K or non-standard format."
                 },
                 {
                     "column_name": "report_path",
@@ -51,19 +46,24 @@
                     "description": "The page number on which this section is located in the report."
                 },
                 {
-                    "column_name": "report_id",
-                    "column_type": "UUID",
-                    "description": "A foreign key linking to the report ID in the metadata table."
+                    "column_name": "page_width",
+                    "column_type": "INTEGER",
+                    "description": "The pixel width of the current page."
                 },
                 {
-                    "column_name": "page_description",
-                    "column_type": "VARCHAR",
-                    "description": "A brief description or summary of the table."
+                    "column_name": "page_height",
+                    "column_type": "INTEGER",
+                    "description": "The pixel height of the current page."
                 },
                 {
                     "column_name": "page_content",
                     "column_type": "VARCHAR",
                     "description": "The content of the page."
+                },
+                {
+                    "column_name": "ref_report_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the report ID in the metadata table."
                 }
             ],
             "primary_keys": [
@@ -71,7 +71,7 @@
             ],
             "foreign_keys": [
                 [
-                    "report_id",
+                    "ref_report_id",
                     "metadata",
                     "report_id"
                 ]
@@ -80,102 +80,52 @@
 
         {
             "table": {
-                "table_name": "sections",
-                "description": "This table stores sections of the reports, including their content and their order within the report."
+                "table_name": "content",
+                "description": "This table contains concrete content information for each recognized element in each page in one financial report."
             },
             "columns": [
                 {
-                    "column_name": "section_id",
+                    "column_name": "content_id",
                     "column_type": "UUID",
-                    "description": "A unique identifier for each section within a report."
+                    "description": "A unique identifier for each content element."
                 },
                 {
-                    "column_name": "report_id",
+                    "column_name": "text_content",
+                    "column_type": "VARCHAR",
+                    "description": "The text content of the current element."
+                },
+                {
+                    "column_name": "bounding_box",
+                    "column_type": "INTEGER[4]",
+                    "description": "The bounding box of the current element in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height which are used to determine the shape of the rectangle."
+                },
+                {
+                    "column_name": "ordinal",
+                    "column_type": "INTEGER",
+                    "description": "Each content element is labeled with one distinct integer number in the current page, which starts from 0."
+                },
+                {
+                    "column_name": "ref_report_id",
                     "column_type": "UUID",
-                    "description": "A foreign key linking to the report ID in the metadata table."
+                    "description": "A foreign key linking to the report ID in the `metadata` table."
                 },
                 {
-                    "column_name": "section_name",
-                    "column_type": "VARCHAR",
-                    "description": "The name of the section."
-                },
-                {
-                    "column_name": "section_content",
-                    "column_type": "VARCHAR",
-                    "description": "The content of the section."
+                    "column_name": "ref_page_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the page ID in the `pages` table."
                 }
             ],
             "primary_keys": [
-                "section_id"
+                "content_id"
             ],
             "foreign_keys": [
                 [
-                    "report_id",
-                    "metadata",
-                    "report_id"
-                ]
-            ]
-        },
-
-
-        {
-            "table": {
-                "table_name": "tables",
-                "description": "This table contains information about the individual tables extracted from the reports, including their name, description, and structure."
-            },
-            "columns": [
-                {
-                    "column_name": "table_id",
-                    "column_type": "UUID",
-                    "description": "A unique identifier for each table within a report."
-                },
-                {
-                    "column_name": "report_id",
-                    "column_type": "UUID",
-                    "description": "A foreign key linking to the report ID in the metadata table."
-                },
-                {
-                    "column_name": "ref_section",
-                    "column_type": "UUID",
-                    "description": "A foreign key linking to the section ID in the section table."
-                },
-                {
-                    "column_name": "table_name",
-                    "column_type": "VARCHAR",
-                    "description": "The name or title of the table."
-                },
-                {
-                    "column_name": "table_description",
-                    "column_type": "VARCHAR",
-                    "description": "A brief description or summary of the table."
-                },
-                {
-                    "column_name": "ref_page",
-                    "column_type": "UUID",
-                    "description": "A foreign key linking to the page ID in the pages table."
-                },
-                {
-                    "column_name": "table_content",
-                    "column_type": "VARCHAR",
-                    "description": "The content of the table, either as structured data or stored separately."
-                }
-            ],
-            "primary_keys": [
-                "table_id"
-            ],
-            "foreign_keys": [
-                [
-                    "report_id",
+                    "ref_report_id",
                     "metadata",
                     "report_id"
                 ],
                 [
-                    "ref_section",
-                    "sections",
-                    "section_id"
-                ],
-                [
-                    "ref_page",
+                    "ref_page_id",
                     "pages",
                     "page_id"
                 ]
