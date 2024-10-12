@@ -3,7 +3,7 @@ import os, sys, json, time
 import pandas as pd
 import duckdb
 from agents.envs.env_base import AgentEnv
-from timeout_decorator import timeout, TimeoutError
+from func_timeout import func_set_timeout, FunctionTimedOut
 from typing import Optional, List, Tuple, Dict, Union, Any
 
 
@@ -84,8 +84,8 @@ class Text2SQLEnv(AgentEnv):
             # restrict the output length, add column headers and exclude row indices
             formatter_kwargs = dict(self.format_kwargs)
 
-        @timeout(max_timeout)
-        def output_formatter(sql: str, output_format: str, format_kwargs: Dict[str, Any]) -> str:
+        @func_set_timeout(0, allowOverride=True)
+        def output_formatter(sql: str, output_format: str, format_kwargs: Dict[str, Any], **kwargs) -> str:
             result: pd.DataFrame = self.env.execute(sql).fetchdf()
             max_rows = format_kwargs.get('max_rows', 100)
             suffix = f'\n... # We only display {max_rows} rows, more are truncated due to length constraint' if \
@@ -106,9 +106,9 @@ class Text2SQLEnv(AgentEnv):
             return msg + suffix
 
         try:
-            msg = output_formatter(sql, output_format, formatter_kwargs)
+            msg = output_formatter(sql, output_format, formatter_kwargs, forceTimeout=max_timeout)
             return msg
-        except TimeoutError as e:
+        except FunctionTimedOut as e:
             msg = f"[TimeoutError]: The SQL execution is timeout given {max_timeout} seconds."
         except Exception as e:
             msg = f"[Error]: {str(e)}"
