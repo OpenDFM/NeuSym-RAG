@@ -96,7 +96,7 @@ def process_pdfvqa(
     docs = pickle.load(open(os.path.join(raw_data_folder, 'test_doc_info_visual.pkl'), 'rb'))
 
     empty_page_dict = lambda x: {"page_path": "", "width": 0, "height": 0, "page_number": x, "bbox": [], "bbox_text": [], "bbox_label": [], "relations": []}
-    errata = json.load(open(os.path.join(processed_data_folder, 'errata.json'), 'r', encoding='UTF-8'))
+    errata = json.load(open(os.path.join(processed_data_folder, 'errata.json'), 'r'))
     # preprocess images of each PDF page
     for pdf_id in docs:
         tmp_pdf_data = {}
@@ -223,10 +223,10 @@ def process_pdfvqa(
 
     logger.info(f"In total, {len(pdf_data)} PDFs and {len(test_data)} examples are processed.")
 
-    with open(os.path.join(processed_data_folder, test_data_name), 'w', encoding='UTF-8') as of:
+    with open(os.path.join(processed_data_folder, test_data_name), 'w') as of:
         for data in test_data:
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
-    with open(os.path.join(processed_data_folder, pdf_data_name), 'w', encoding='UTF-8') as of:
+    with open(os.path.join(processed_data_folder, pdf_data_name), 'w') as of:
         for data in pdf_data:
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
     return {'test_data': test_data, 'pdf_data': pdf_data}
@@ -321,11 +321,11 @@ def process_tatdqa(
                
     # define unpressed data folder
     tatdqa_docs_folder = os.path.join(processed_data_folder, 'test')
-    if not os.path.exists(tatdqa_docs_folder) or not os.path.isdir(tatdqa_docs_folder):
+    if not os.path.exists(tatdqa_docs_folder) and not os.path.isdir(tatdqa_docs_folder):
         with zipfile.ZipFile(os.path.join(raw_data_folder, 'tatdqa_docs_test.zip'), 'r') as zip_ref:
             zip_ref.extractall(processed_data_folder)
     tatdqa_pdf_folder = os.path.join(processed_data_folder, 'tat_docs')
-    if not os.path.exists(tatdqa_pdf_folder) or not os.path.isdir(tatdqa_pdf_folder):
+    if not os.path.exists(tatdqa_pdf_folder) and not os.path.isdir(tatdqa_pdf_folder):
         with zipfile.ZipFile(os.path.join(raw_data_folder, 'tat_docs.zip'), 'r') as zip_ref:
             zip_ref.extractall(processed_data_folder)
     tatdqa_test_gold = os.path.join(raw_data_folder, 'tatdqa_dataset_test_gold.json')
@@ -435,7 +435,7 @@ def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_fil
         output_file: str, the output file name for the sampling .jsonl file.
     """
     dataset_path = os.path.join(DATASET_DIR, dataset, 'processed_data', 'test_data.jsonl')
-    with open(dataset_path, 'r', encoding='UTF-8') as inf:
+    with open(dataset_path, 'r') as inf:
         data = [json.loads(line) for line in inf]
     typed_data = {}
     for d in data:
