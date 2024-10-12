@@ -3,6 +3,8 @@ import argparse, os, sys, json, logging
 from datetime import datetime
 from typing import Dict, List, Tuple, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+os.environ['OPENAI_API_KEY'] = 'sk-PJwJLdVQaBTW3kihBb940693BdE7421081C4A239291f21Ca'
+os.environ['OPENAI_BASE_URL'] = "https://api.keya.pw/v1/"
 from agents.envs import ENVIRONMENTS
 from agents.models import LLMS
 from agents.frameworks import FRAMEWORKS
@@ -11,7 +13,7 @@ from utils.eval_utils import evaluate, print_result
 
 logger = logging.getLogger()
 handler = logging.StreamHandler(sys.stdout)
-current_time = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 file_handler = logging.FileHandler(os.path.join('logs', f'text2sql_react_baseline-{current_time}.log'))
 formatter = logging.Formatter(
     fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
@@ -40,7 +42,7 @@ parser.add_argument('--eval_top_p', type=float, default=0.95, help='Evaluation t
 parser.add_argument('--threshold', type=float, default=0.95, help='Threshold for fuzzy matching during evaluation')
 parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
 args = parser.parse_args()
-if not os.path.exists(args.result_dir) and os.path.isdir(args.result_dir):
+if not os.path.exists(args.result_dir) or not os.path.isdir(args.result_dir):
     os.makedirs(args.result_dir, exist_ok=True)
 
 llm = LLMS['gpt']()
