@@ -157,7 +157,7 @@ def populate_pdf_file_into_database(database_name: str, pdf_path: str, config_pa
     with open(config_path, 'r') as inf:
         config = json.load(inf)
     if pdf_path.endswith('.jsonl'):
-        with open(pdf_path, 'r') as inf:
+        with open(pdf_path, 'r', encoding='UTF-8') as inf:
             for line in inf:
                 json_data = json.loads(line)
                 populator.populate(json_data, config, log=True, on_conflict='replace')

@@ -139,9 +139,9 @@ class  DatabasePopulation():
             insert_sql = self.insert_values_to_database(table_name, values, columns, on_conflict=on_conflict)
 
             if log: # write SQL into log file
-                current_time = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+                current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
                 output_path = os.path.join('logs', f"populate_{self.database}_table_{table_name}_{current_time}.log")
-                with open(output_path, 'w') as f:
+                with open(output_path, 'w', encoding='UTF-8') as f:
                     f.write(insert_sql + '\n\n')
                     f.write(f"Values: {values}")
         return
