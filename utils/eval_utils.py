@@ -1,5 +1,5 @@
 #coding=utf8
-import os, openai, re
+import ast, math, os, openai, re
 from typing import Dict, Any, Optional, List, Union
 from collections import defaultdict
 from fuzzywuzzy import fuzz
@@ -95,17 +95,36 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
         question_type: str, question type, optional
     """
     # TODO check all "count" tasks' scales are ""
+    
+    def extract_list_from_string(s):
+        match = re.search(r'(\[.*\])', s)
+        if match:
+            list_str = match.group(0)
+            try:
+                result = ast.literal_eval(list_str)
+                if isinstance(result, list):
+                    return result
+            except (ValueError, SyntaxError):
+                return None
+        return None
+    
     question_type, gold_scale, gold_answer = gold_data['question_type'], gold_data['answer'][1], gold_data['answer'][0]
+    if question_type == 'arithmetic' or question_type == 'multi-span':
+        pred_ans = extract_list_from_string(pred_ans)
     if gold_scale == '' and question_type != 'arithmetic':
         pred_ans = [pred_ans, '']
     pred_answer, pred_scale = pred_ans[0], pred_ans[1]
+    
     assert question_type in ['span', 'multi-span', 'arithmetic', 'count']
 
     def to_float(gold_ans: Any) -> float:
         allowed_characters = "0123456789-."
         gold_ans = str(gold_ans).strip().lower()
         gold_ans = ''.join([ch for ch in gold_ans if ch in allowed_characters])
-        return float(gold_ans)
+        try:
+            return float(gold_ans)
+        except ValueError:
+            return math.nan
     
     def exact_match(pred_ans: Any, gold_ans: Any) -> float:
         pred_ans = to_float(pred_ans)

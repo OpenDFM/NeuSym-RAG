@@ -11,6 +11,7 @@ from utils.functions.image_functions import draw_image_with_bbox
 from utils.functions.pdf_functions import get_pdf_page_text
 
 
+logging.basicConfig(encoding='utf-8')
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
 formatter = logging.Formatter(

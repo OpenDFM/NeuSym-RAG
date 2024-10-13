@@ -9,6 +9,8 @@ from agents.frameworks import FRAMEWORKS
 from agents.prompts import convert_database_schema_to_prompt
 from utils.eval_utils import evaluate, print_result
 
+
+logging.basicConfig(encoding='utf-8')
 logger = logging.getLogger()
 handler = logging.StreamHandler(sys.stdout)
 current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -81,10 +83,14 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
         if question_type == 'count':
             answer_format = 'Your answer should be a list containing a single integer number, e.g., 1, 2, 3, etc.'
         elif question_type in ['span', 'multi-span', 'arithmetic']:
-            if scale == '' and question_type != 'arithmetic':
-                answer_format = 'Your answer should be verbose text from the raw PDF.'
+            if scale != '' and question_type == 'multi-span':
+                answer_format = 'Your answer should be data from the raw PDF or the result of the arithmetic operation of these data. If raw data have scale, or your operation may introduce scale like percent, you should also include scale in your output in the following format: [[answer1, answer2, ...], scale]. Note that the scale should be one of the following: "percent", "thousand", "million", "", do not ignore the double quotes.'
+            elif scale != '' or question_type == 'arithmetic':
+                answer_format = 'Your answer should be data from the raw PDF or the result of the arithmetic operation of these data. If raw data have scale, or your operation may introduce scale like percent, you should also include scale in your output in the following format: [answer, scale]. Note that the scale should be one of the following: "percent", "thousand", "million", "", do not ignore the double quotes.'
+            elif question_type == 'multi-span':
+                answer_format = 'Your answers should be verbose texts from the raw PDF. You should print your answers in the following format: [answer1, answer2, ...].'
             else:
-                answer_format = 'Your answer should be data from the raw PDF or the result of the arithmetic operation of these data. If raw data have scale, or your operation may introduce scale like percent, you should also include scale in your output in the following format: [answer, scale]. Note that the scale should be one of the following: "percent", "thousand", "million", "".'
+                answer_format = 'Your answer should be verbose text from the raw PDF.'
         else:
             raise NotImplementedError(f"Question type {question_type} not supported.")
     else:

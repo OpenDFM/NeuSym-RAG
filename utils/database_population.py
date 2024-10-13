@@ -8,6 +8,7 @@ from utils.database_utils import DATABASE_DIR
 from utils import functions
 
 
+logging.basicConfig(encoding='utf-8')
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
 formatter = logging.Formatter(

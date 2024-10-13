@@ -7,6 +7,7 @@ from agents.prompts import SYSTEM_PROMPTS
 from agents.parsers import OUTPUT_PARSERS
 
 
+logging.basicConfig(encoding='utf-8')
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
 formatter = logging.Formatter(
