@@ -330,7 +330,7 @@ def process_tatdqa(
             zip_ref.extractall(processed_data_folder)
     tatdqa_test_gold = os.path.join(raw_data_folder, 'tatdqa_dataset_test_gold.json')
 
-    pdf_data = []
+    pdf_data = {}
     test_data = []
 
     # Load test question-answer data
@@ -346,7 +346,9 @@ def process_tatdqa(
         x0, y0, x1, y1 = bbox
         return [round(x0 * width_ratio, 1), round(y0 * height_ratio, 1), round((x1 - x0) * width_ratio, 1), round((y1 - y0) * height_ratio, 1)]
 
-    # Process each document based on the question-answer dataset
+
+    # Process each document based on the question-answer dataset, tatdqa_dataset_test_gold.json
+    # Note that, the same PDF may appear multiple times
     for qa in tqdm.tqdm(tatdqa_test):  #for one file
         doc_info = qa['doc']
         pdf_filename = doc_info['source']
@@ -363,25 +365,33 @@ def process_tatdqa(
             json_filename = f"{original_uid}.json"
             json_filepath = os.path.join(tatdqa_docs_folder, json_filename)
 
-            # initialize the item in pdf_data
-            pdf_data_dict = {
-                "pdf_id": pdf_id,
-                "num_pages": len(pdf_pages_text),
-                "pdf_path": pdf_path,
-                "page_infos": []
-            }
+            # initialize the item in pdf_data if not exists
+            if pdf_id not in pdf_data:
+                pdf_data_dict = {
+                    "pdf_id": pdf_id,
+                    "num_pages": len(pdf_pages_text),
+                    "pdf_path": pdf_path,
+                    "page_infos": []
+                }
+                pdf_data[pdf_id] = pdf_data_dict
+            else: pdf_data_dict = pdf_data[pdf_id]
 
             # read parsed JSON page
             with open(json_filepath, 'r') as f:
                 page_data = json.load(f) 
             
-            page_list = []
+            page_list, parsed_pages = [], [p['page_number'] for p in pdf_data_dict['page_infos']]
             for json_page in page_data['pages']:
                 # Extract text from the JSON file for fuzzy matching
-                json_page_text = ' '.join([block['text'] for block in json_page['blocks']])
+                json_page_text = '\n'.join([block['text'] for block in json_page['blocks']])
 
                 # Fuzzy match the JSON page text with the original PDF text to get the page number
                 matched_page_number = fuzzy_match_page(json_page_text, pdf_pages_text)
+                page_list.append(matched_page_number)
+
+                if matched_page_number in parsed_pages: # parsed before
+                    continue
+
                 width, height = get_page_width_and_height(pdf_path, matched_page_number)
                 width_ratio, height_ratio = width / json_page['bbox'][2], height / json_page['bbox'][3]
                 page_dict = {
@@ -399,15 +409,12 @@ def process_tatdqa(
                 }
 
                 pdf_data_dict['page_infos'].append(page_dict)
-                page_list.append(matched_page_number)
-
-            pdf_data.append(pdf_data_dict)
 
             questions = qa['questions']
             for question in questions:
                 # create the json object
                 test_data_dict = {
-                    "uuid": get_uuid(name= pdf_filename + question["question"].strip()), # reset uuid for each question
+                    "uuid": get_uuid(name= pdf_filename + str(page_list) + question["question"].strip()), # reset uuid for each question
                     "question": question["question"],
                     "question_type": question["answer_type"],
                     "answer": [question["answer"], question["scale"]],
@@ -419,6 +426,9 @@ def process_tatdqa(
     with open(os.path.join(processed_data_folder, test_data_name), 'w', encoding='UTF-8') as of:
         for data in test_data:
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
+    pdf_data = list(pdf_data.values())
+    for pdf in pdf_data:
+        pdf['page_infos'] = sorted(pdf['page_infos'], key=lambda x: x['page_number'])        
     with open(os.path.join(processed_data_folder, pdf_data_name), 'w', encoding='UTF-8') as of:
         for data in pdf_data:
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
