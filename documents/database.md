@@ -223,4 +223,5 @@ Note that, `deps` indexes the output of `pipeline` functions instead of `aggrega
 Take the sample PDF file as an example, this file is parsed and populated into database `test_domain.duckdb` via:
 ```sh
 python utils/database_utils.py --database test_domain --pdf_path data/dataset/test_pdf.pdf --config_path configs/test_domain_config.json --function populate_db
+python utils/database_utils.py --database financial_report --pdf_path data/dataset/tatdqa/processed_data/pdf_data.jsonl --config_path configs/financial_report_config.json --function populate_db
 ```

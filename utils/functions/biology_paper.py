@@ -4,7 +4,7 @@ from typing import List, Dict, Union, Optional, Any, Iterable
 from utils.functions.common_functions import get_uuid
 
 
-def get_per_page_uuid(pdf_data: dict) -> List[str]:
+def get_biology_paper_per_page_uuid(pdf_data: dict) -> List[str]:
     """ Output:
         [ page_uuid1, page_uuid2, ...  ]
     """
@@ -12,7 +12,7 @@ def get_per_page_uuid(pdf_data: dict) -> List[str]:
     return [get_uuid(f"{pdf_data['pdf_id']}_page_{page_num}") for page_num in range(1, num_pages + 1)]
 
 
-def get_per_page_content_uuid(pdf_data: dict) -> List[List[str]]:
+def get_biology_paper_per_page_content_uuid(pdf_data: dict) -> List[List[str]]:
     """ Output:
         [ [content_uuid1, content_uuid2, ...], [content_uuid1, content_uuid2, ...], ... ]
     """
@@ -27,17 +27,17 @@ def aggregate_biology_paper_table_metadata(pdf_data: dict) -> List[Any]:
     return [[pdf_data['pdf_id'], pdf_data['num_pages'], os.path.join('data', 'dataset', 'pdfvqa', 'processed_data', 'bbox_images')]]
 
 
-def aggregate_biology_paper_table_pages(pdf_data: dict, uuids: List[int]) -> List[Any]:
+def aggregate_biology_paper_table_pages(pdf_data: dict, page_ids: List[str]) -> List[Any]:
     """ Output:
         [ [ page_id, page_path, page_number, page_width, page_height, page_content, ref_paper_id ] ]
     """
     results = []
     ref_paper_id = pdf_data['pdf_id']
-    for page_info, uid in zip(pdf_data['page_infos'], uuids):
+    for page_info, page_id in zip(pdf_data['page_infos'], page_ids):
         page_number = int(page_info['page_number'])
         page_path = os.path.join('data', 'dataset', 'pdfvqa', 'processed_data', 'bbox_images', f'{ref_paper_id}_{page_number}.png')
         if os.path.exists(page_path):
-            results.append([uid, page_path, page_number, page_info['width'], page_info['height'], re.sub(r'\s+', ' ', " ".join(page_info['bbox_text'])), ref_paper_id])
+            results.append([page_id, page_path, page_number, page_info['width'], page_info['height'], re.sub(r'\s+', ' ', " ".join(page_info['bbox_text'])), ref_paper_id])
     return results
 
 

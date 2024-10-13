@@ -2,7 +2,7 @@
     "log": true,
     "pipeline": [
         {
-            "function": "get_biology_paper_per_page_uuid",
+            "function": "get_financial_report_per_page_uuid",
             "args": {
                 "deps": [
                     0
@@ -10,7 +10,7 @@
             }
         },
         {
-            "function": "get_biology_paper_per_page_content_uuid",
+            "function": "get_financial_report_per_page_content_uuid",
             "args": {
                 "deps": [
                     0
@@ -20,7 +20,7 @@
     ],
     "aggregation": [
         {
-            "function": "aggregate_biology_paper_table_metadata",
+            "function": "aggregate_financial_report_table_metadata",
             "table": "metadata",
             "args": {
                 "deps": [
@@ -29,7 +29,7 @@
             }
         },
         {
-            "function": "aggregate_biology_paper_table_pages",
+            "function": "aggregate_financial_report_table_pages",
             "table": "pages",
             "args": {
                 "deps": [
@@ -39,27 +39,12 @@
             }
         },
         {
-            "function": "aggregate_biology_paper_table_content_types",
-            "table": "content_types",
-            "args": {}
-        },
-        {
-            "function": "aggregate_biology_paper_table_content",
+            "function": "aggregate_financial_report_table_content",
             "table": "content",
             "args": {
                 "deps": [
                     0,
                     1,
-                    2
-                ]
-            }
-        },
-        {
-            "function": "aggregate_biology_paper_table_parent_child_relations",
-            "table": "parent_child_relations",
-            "args": {
-                "deps": [
-                    0,
                     2
                 ]
             }
