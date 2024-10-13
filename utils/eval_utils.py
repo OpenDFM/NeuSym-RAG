@@ -96,7 +96,7 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
     """
     # TODO check all "count" tasks' scales are ""
     
-    def extract_list_from_string(s):
+    def extract_list_from_string(s: str):
         match = re.search(r'(\[.*\])', s)
         if match:
             list_str = match.group(0)
@@ -105,12 +105,12 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
                 if isinstance(result, list):
                     return result
             except (ValueError, SyntaxError):
-                return None
-        return None
+                return s
+        return s
     
     question_type, gold_scale, gold_answer = gold_data['question_type'], gold_data['answer'][1], gold_data['answer'][0]
-    if question_type == 'arithmetic' or question_type == 'multi-span':
-        pred_ans = extract_list_from_string(pred_ans)
+    
+    pred_ans = extract_list_from_string(str(pred_ans))
     if gold_scale == '' and question_type != 'arithmetic':
         pred_ans = [pred_ans, '']
     pred_answer, pred_scale = pred_ans[0], pred_ans[1]
@@ -129,7 +129,7 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
     def exact_match(pred_ans: Any, gold_ans: Any) -> float:
         pred_ans = to_float(pred_ans)
         gold_ans = to_float(gold_ans)
-        return float(pred_ans == gold_ans)
+        return float(round(pred_ans) == round(gold_ans))
     
     if question_type in ['arithmetic', 'count']:
         return exact_match(pred_answer, gold_answer) * float(gold_scale == pred_scale)

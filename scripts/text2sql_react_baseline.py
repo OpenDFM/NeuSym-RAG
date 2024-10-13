@@ -88,7 +88,7 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
             elif scale != '' or question_type == 'arithmetic':
                 answer_format = 'Your answer should be data from the raw PDF or the result of the arithmetic operation of these data. If raw data have scale, or your operation may introduce scale like percent, you should also include scale in your output in the following format: [answer, scale]. Note that the scale should be one of the following: "percent", "thousand", "million", "", do not ignore the double quotes.'
             elif question_type == 'multi-span':
-                answer_format = 'Your answers should be verbose texts from the raw PDF. You should print your answers in the following format: [answer1, answer2, ...].'
+                answer_format = 'Your answers should be verbose texts from the raw PDF. You should print your answer in the following format: ["part1", "part2", ...], do not ignore the double quotes. Note that you should try to divide your answer into several parts based on the question.'
             else:
                 answer_format = 'Your answer should be verbose text from the raw PDF.'
         else:
