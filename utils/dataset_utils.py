@@ -170,6 +170,10 @@ def process_pdfvqa(
         if (row['file_name'], row['question'].strip()) in duplicate_set:
             duplicate_cnt += 1
             continue
+        
+        if isinstance(row['answer'], float) and math.isnan(row['answer']):
+            continue
+        
         duplicate_set.add((row['file_name'], row['question'].strip()))
 
         tmp_data = {}
@@ -190,6 +194,10 @@ def process_pdfvqa(
         if (row['file'], row['question'].strip()) in duplicate_set:
             duplicate_cnt += 1
             continue
+        
+        if isinstance(row['answer'], float) and math.isnan(row['answer']):
+            continue
+        
         duplicate_set.add((row['file'], row['question'].strip()))
 
         tmp_data = {}
@@ -210,6 +218,10 @@ def process_pdfvqa(
         if (row['pmcid'], row['question'].strip()) in duplicate_set:
             duplicate_cnt += 1
             continue
+        
+        if isinstance(row['answer'], float) and math.isnan(row['answer']):
+            continue
+        
         duplicate_set.add((row['pmcid'], row['question'].strip()))
 
         tmp_data = {}
