@@ -9,22 +9,6 @@ from agents.frameworks import FRAMEWORKS
 from agents.prompts import convert_database_schema_to_prompt
 from utils.eval_utils import evaluate, print_result
 
-
-logging.basicConfig(encoding='utf-8')
-logger = logging.getLogger()
-handler = logging.StreamHandler(sys.stdout)
-current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-file_handler = logging.FileHandler(os.path.join('logs', f'text2sql_baseline-{current_time}.log'))
-formatter = logging.Formatter(
-    fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
-handler.setFormatter(formatter)
-file_handler.setFormatter(formatter)
-logger.addHandler(handler)
-logger.addHandler(file_handler)
-logger.setLevel(logging.INFO)
-
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default='pdfvqa', help='which dataset to use')
 parser.add_argument('--database', type=str, default='biology_paper', help='which database to use')
@@ -43,9 +27,29 @@ parser.add_argument('--eval_temperature', type=float, default=0.7, help='Evaluat
 parser.add_argument('--eval_top_p', type=float, default=0.95, help='Evaluation top_p')
 parser.add_argument('--threshold', type=float, default=0.95, help='Threshold for fuzzy matching during evaluation')
 parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
+parser.add_argument('--log_dir', type=str, default='logs', help='Directory to save the interaction history')
 args = parser.parse_args()
-if not os.path.exists(args.result_dir) or not os.path.isdir(args.result_dir):
-    os.makedirs(args.result_dir, exist_ok=True)
+
+os.makedirs(args.result_dir, exist_ok=True)
+os.makedirs(args.log_dir, exist_ok=True)
+start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+# the filename can be customized
+filename = f'{args.dataset}_text2sql_{args.agent_method}_{args.llm}-{start_time}'
+
+logging.basicConfig(encoding='utf-8')
+logger = logging.getLogger()
+handler = logging.StreamHandler(sys.stdout)
+file_handler = logging.FileHandler(os.path.join('logs', f'{filename}.log'))
+formatter = logging.Formatter(
+    fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+handler.setFormatter(formatter)
+file_handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.addHandler(file_handler)
+logger.setLevel(logging.INFO)
+
 
 llm = infer_model_class(args.llm)()
 env = ENVIRONMENTS['text2sql'](args.database, action_format=args.action_format)
@@ -113,7 +117,7 @@ for data in test_data:
     })
 agent.close()
 
-output_path = os.path.join(args.result_dir, f'{args.dataset}_text2sql_{args.agent_method}_{args.llm}.json')
+output_path = os.path.join(args.result_dir, f'{filename}.jsonl')
 with open(output_path, 'w') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
