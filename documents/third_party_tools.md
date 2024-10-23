@@ -8,7 +8,10 @@ This document describes the detailed installation, use case, and useful links to
     - For MacOS: suggest using PyPi
         - brew install libmagic poppler tesseract
         - pip install "unstructured[all-docs]"
-    - For Windows: ?
+    - For Windows:
+        - pip install "unstructured[all-docs]"
+        - [tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
+        - [poppler](https://github.com/oschwartz10612/poppler-windows/releases/): After extraction, add the `bin/` directory to your [PATH](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/).
 - Core functions: [`partition_pdf`](https://docs.unstructured.io/open-source/core-functionality/partitioning#partition-pdf) and [`partition_image`](https://docs.unstructured.io/open-source/core-functionality/partitioning#partition-image)
 - For `partition_pdf`, actually it converts the raw PDF into images, keyword parameters include:
     - `languages: List[str]`, e.g., `languages=["eng"]`, see [Tesseract](https://github.com/tesseract-ocr/tessdata) for all choices
