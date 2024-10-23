@@ -85,7 +85,7 @@ class Text2SQLRAGAgent():
                 cost = self.model.get_cost() - prev_cost
                 logger.info(f'[Info]: early stop at interaction turn {turn}, cost ${cost:.6f}.')
                 break
-            messages.extend(self.model.convert_message_from_gpt_format(self.get_history_messages(action, obs)))
+            messages.extend(self.get_history_messages(action, obs))
         else:
             cost = self.model.get_cost() - prev_cost
             logger.info(f'[Warning]: exceeds the maximum interaction turns {self.max_turns}, cost ${cost:.6f}.')
