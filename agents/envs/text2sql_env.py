@@ -16,7 +16,7 @@ class Text2SQLEnv(AgentEnv):
     def __init__(self,
                  database: Optional[str] = None,
                  database_path: Optional[str] = None,
-                 database_type: str = 'duckdb',
+                 database_type: str = 'duckdb', # TODO: support more database types
                  action_format: str = 'markdown') -> None:
         super().__init__(action_format=action_format)
         self.database_conn = None

@@ -2,7 +2,11 @@
 
 REACT_PROMPT = """{system_prompt}
 
+--------
+
 {action_space_prompt}
+
+--------
 
 ## Interaction Framework
 
@@ -11,8 +15,8 @@ The main interaction procedure proceeds like this:
 ----
 
 [Thought]: ... reasoning process, why to take this action ...
-[Action]: ... which action to take, please strictly conform to the action space ...
-[Observation]: ... execution results afterOutput table or error message of the SQL execution ...
+[Action]: ... which action to take, please strictly conform to the action specification ...
+[Observation]: ... execution results or error message after taking the action ...
 
 ... # more interleaved triplets of ([Thought], [Action], [Observation])
 

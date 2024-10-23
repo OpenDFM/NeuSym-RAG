@@ -7,17 +7,7 @@ from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
 from agents.frameworks.agent_base import AgentBase
 
 
-logging.basicConfig(encoding='utf-8')
-logger = logging.getLogger(__name__)
-handler = logging.StreamHandler(sys.stdout)
-formatter = logging.Formatter(
-    fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
-handler.setFormatter(formatter)
-logger.addHandler(handler)
-logger.setLevel(logging.INFO)
-
+logger = logging.getLogger()
 
 class Text2SQLRAGAgent(AgentBase):
 
@@ -29,7 +19,7 @@ class Text2SQLRAGAgent(AgentBase):
             action_space_prompt=env.action_space_prompt,
             max_turn=max_turn
         )
-
+        logger.info(f'[AgentPrompt]: {self.agent_prompt}')
 
     def close(self):
         self.env.close()

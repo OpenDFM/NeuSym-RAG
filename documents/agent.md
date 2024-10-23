@@ -34,5 +34,5 @@ The predicted result is saved in folder `results/` in `.jsonl` format, and the l
     - `react`: [ReAct](https://arxiv.org/pdf/2210.03629)
 
 ```sh
-python scripts/text2sql_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt4-o-mini --max_turn 10
+python scripts/text2sql_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 10
 ```

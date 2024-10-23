@@ -3,7 +3,7 @@ import re, json
 import duckdb, xmltodict
 import pandas as pd
 import gymnasium as gym
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Optional, List, Tuple, Dict, Union, Any
 from abc import ABC, abstractmethod
 from func_timeout import func_set_timeout, FunctionTimedOut
@@ -16,13 +16,14 @@ class MismatchedActionError(ValueError):
     pass
 
 
+ACTION_FORMATS = ['markdown', 'json', 'xml'] # allowable action formats
+
 @dataclass
 class Action(ABC):
 
     thought: Optional[str] = None # reasoning process for popular agent frameworks like ReAct
-    observation_format_kwargs: Dict[str, Any] = {} # default keyword arguments for observation formatting
+    observation_format_kwargs: Dict[str, Any] = field(default_factory=dict) # default keyword arguments for observation formatting
     observation: Optional[str] = None # observation string for the action
-    ACTION_FORMATS = ['markdown', 'json', 'xml'] # allowable action formats
 
     @property
     def done(self) -> bool:
@@ -41,16 +42,16 @@ class Action(ABC):
         """
         pass
 
-    @abstractmethod
     @classmethod
+    @abstractmethod
     def _parse(cls, action_text: str, action_format: str = 'markdown') -> 'Action':
         """ Parse the action text into the concrete Action object based on the specified `action_format`.
         Note that, this is the real parsing function for the current Action class, which is internally invoked by the `parse_action` function.
         """
         pass
 
-    @abstractmethod
     @classmethod
+    @abstractmethod
     def _specification(cls, action_format: str = 'markdown') -> str:
         """ Return a human-readable specification of the action according to the specified `action_format`.
         This specification is usually inserted into the action space of the system prompt.
@@ -61,9 +62,9 @@ class Action(ABC):
     def get_action_space_prompt(cls, action_types: List[type], action_format: str = 'markdown') -> str:
         """ Return the entire action space prompt for all given action types (using function `_specification`) based on the `action_format`.
         """
-        assert action_format in Action.ACTION_FORMATS, f"Action format {action_format} not supported."
+        assert action_format in ACTION_FORMATS, f"Action format {action_format} not supported."
         action_names = [action_cls.__name__ for action_cls in action_types]
-        action_space_prompt = f"## Action and Observation Space\nAll allowable action types include {str(action_names)}. Here is the detailed specification in {action_format.upper()} format:\n\n"
+        action_space_prompt = f"## Action and Observation Space\nAll allowable action types include {str(action_names)}. Here is the detailed specification in {action_format.upper()} format:\n"
         actions = []
         for action_cls in action_types:
             actions.append(action_cls._specification(action_format))
@@ -78,12 +79,12 @@ class Action(ABC):
             [Observation]: ...
         TODO: maybe this should be combined with the `agent_method='react'` in the future to support more frameworks?
         """
-        assert action_format in Action.ACTION_FORMATS, f"Action format {action_format} not supported."
+        assert action_format in ACTION_FORMATS, f"Action format {action_format} not supported."
         # extract the real action text from raw LLM response, maybe dependent on agent frameworks
-        thought_pattern = r"\[Thought\]:\s*(.*?)\s+\[Action\]:"
+        thought_pattern = r"\[Thought\]:\s*(.*?)\s*\[Action\]:"
         matched_thought = re.search(thought_pattern, text, re.DOTALL)
         thought = matched_thought.group(1) if matched_thought else None
-        action_pattern = r"\[Action\]:\s*(.*?)\s+(\[Observation\]:|$)"
+        action_pattern = r"\[Action\]:\s*(.*?)\s*(\[Observation\]:|$)"
         matched_action = re.search(action_pattern, text, re.DOTALL)
         action_text = matched_action.group(1).strip() if matched_action else None
         if action_text is None:
@@ -95,7 +96,7 @@ class Action(ABC):
                 action_obj.thought = thought # add thought to the action object
                 return True, action_obj
             except ParseActionError:
-                return False, f"[Error]: Failed to parse valid parameters for action {action_cls.__name__} from the response, please check the specification."
+                return False, f"[Error]: Failed to parse valid parameters for action {action_cls.__name__} from the response, please check the specification for {action_cls.__name__}."
             # except MismatchedActionError:
                 # continue # try next action type
             except Exception as e:
@@ -107,15 +108,15 @@ class Action(ABC):
 @dataclass
 class GenerateSQL(Action):
 
-    sql: str # concrete SQL query, required
-    observation_format_kwargs: Dict[str, Any] = {
+    sql: str = '' # concrete SQL query, required
+    observation_format_kwargs: Dict[str, Any] = field(default_factory=lambda: {
         "output_format": "markdown", # output format for the SQL execution result, chosen from ['markdown', 'string', 'html'], default is 'markdown'
         "tablefmt": "pretty", # for markdown format, see doc https://pypi.org/project/tabulate/ for all options
         "max_rows": 50, # maximum rows to display in the output
         "index": False, # whether to include the row index in the output
         "header": True, # whether to include the column names in the output
         "max_timeout": 600 # the maximum timeout for the SQL execution is 10 minutes
-    } # keyword arguments for SQL execution formatting
+    }) # keyword arguments for SQL execution formatting
 
     def execute(self, env: gym.Env, **kwargs) -> str:
         """ Execute the SQL query in the environment and return the formatted observation string.
@@ -171,8 +172,9 @@ class GenerateSQL(Action):
     @classmethod
     def _specification(cls, action_format: str = 'markdown') -> str:
         if action_format == 'markdown': # Markdown format, more similar to raw text, default
-            action_format = """GenerateSQL:\n```sql\nconcrete sql query\n```"""
-            use_case = """GenerateSQL:\n```sql\nSELECT COUNT(*) FROM table_name;\n```"""
+            # Attention: must add [Action]: ... before, o.w., LLM may not predict action type
+            action_format = """[Action]: GenerateSQL:\n```sql\nconcrete sql query\n```"""
+            use_case = """[Action]: GenerateSQL:\n```sql\nSELECT COUNT(*) FROM table_name;\n```"""
         elif action_format == 'json': # JSON format
             action_format = '{\n    "action_type": "GenerateSQL",\n    "parameters": {\n        "sql": str // concrete sql query, required\n    }\n}'
             example = {
@@ -238,7 +240,7 @@ The observation space is the execution result of the SQL query. You do not need 
         """
         if action_format == 'markdown':
             action_type = re.search(r"(.*?):\s*```", action_text.strip())
-            if action_type is None or action_type.group(1).strip() != 'GenerateSQL:':
+            if action_type is None or action_type.group(1).strip() != 'GenerateSQL':
                 raise MismatchedActionError("Failed to parse GenerateSQL action from the response.")
             
             sql = re.search(r"GenerateSQL:\s*```(sql)?\s*(.*?)\s*```", action_text.strip(), flags=re.DOTALL)
@@ -284,7 +286,7 @@ The observation space is the execution result of the SQL query. You do not need 
 @dataclass
 class GenerateAnswer(Action):
 
-    answer: str # final answer, required
+    answer: str = '' # final answer, required
 
     def execute(self, env: gym.Env, **kwargs) -> str:
         """ Return the final answer as the observation string.
@@ -295,8 +297,9 @@ class GenerateAnswer(Action):
     @classmethod
     def _specification(cls, action_format = 'markdown') -> str:
         if action_format == 'markdown':
-            action_format = """GenerateAnswer:\n```txt\nfinal answer\n```"""
-            use_case = """GenerateAnswer:\n```txt\n42\n```"""
+            # Attention: must add [Action]: ... before, o.w., LLM may not predict action type
+            action_format = """[Action]: GenerateAnswer:\n```txt\nfinal answer\n```"""
+            use_case = """[Action]: GenerateAnswer:\n```txt\n42\n```"""
         elif action_format == 'json':
             action_format = '{\n    "action_type": "GenerateAnswer",\n    "parameters": {\n        "answer": Any // final answer, required\n    }\n}'
             example = {
@@ -361,7 +364,7 @@ There is no observation for this terminal action, since it indicates the complet
         """
         if action_format == 'markdown':
             action_type = re.search(r"(.*?):\s*```", action_text.strip())
-            if action_type is None or action_type.group(1).strip() != 'GenerateAnswer:':
+            if action_type is None or action_type.group(1).strip() != 'GenerateAnswer':
                 raise MismatchedActionError("Failed to parse GenerateAnswer action from the response.")
             
             answer = re.search(r"GenerateAnswer:\s*```(txt)?\s*(.*?)\s*```", action_text.strip(), flags=re.DOTALL)
