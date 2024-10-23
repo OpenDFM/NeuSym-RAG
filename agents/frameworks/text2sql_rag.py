@@ -3,8 +3,8 @@ import logging, sys, os
 from typing import List, Dict, Any, Union, Tuple, Optional
 from agents.envs import AgentEnv
 from agents.models import LLMClient
-from agents.prompts import SYSTEM_PROMPTS
-from agents.parsers import OUTPUT_PARSERS
+from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
+from agents.frameworks.agent_base import AgentBase
 
 
 logging.basicConfig(encoding='utf-8')
@@ -19,26 +19,16 @@ logger.addHandler(handler)
 logger.setLevel(logging.INFO)
 
 
-class Text2SQLRAGAgent():
+class Text2SQLRAGAgent(AgentBase):
 
-    def __init__(self, model: LLMClient, env: AgentEnv, method: str = 'text2sql+react', max_turns: int = 10) -> None:
-        self.model = model
-        self.env = env
-        self.system_prompt = SYSTEM_PROMPTS[method]
-        self.output_parser = OUTPUT_PARSERS[method]()
-        self.max_turns = max_turns
+    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'react', max_turn: int = 10) -> None:
+        super(Text2SQLRAGAgent, self).__init__(model, env, agent_method, max_turn)
 
-
-    def get_history_messages(self, action: Dict[str, Any], observation: str) -> List[Dict[str, str]]:
-        action_msg = {
-            "role": "assistant",
-            "content": self.env.serialize_action(action)
-        }
-        obs_msg = {
-            'role': "user",
-            "content": f'Observation:\n{observation}' if '\n' in observation else f'Observation: {observation}'
-        }
-        return [action_msg, obs_msg]
+        self.agent_prompt = AGENT_PROMPTS[agent_method].format(
+            system_prompt=SYSTEM_PROMPTS['text2sql'],
+            action_space_prompt=env.action_space_prompt,
+            max_turn=max_turn
+        )
 
 
     def close(self):
@@ -56,17 +46,17 @@ class Text2SQLRAGAgent():
                  top_p: float = 0.9,
                  max_tokens: int = 1500
     ) -> str:
-        task_prompt = f'Question: {question}\nAnswer Format: {answer_format}\nDatabase Schema:\n{database_prompt}'
+        task_prompt = f'[Question]: {question}\n[Answer Format]: {answer_format}\n[Database Schema]:\n{database_prompt}'
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
         messages = [
-            {'role': 'system', 'content': self.system_prompt},
+            {'role': 'system', 'content': self.agent_prompt},
             {'role': 'user', 'content': task_prompt}
         ]
         prev_cost = self.model.get_cost()
         self.env.reset()
-        
-        for turn in range(self.max_turns):
+
+        for turn in range(self.max_turn):
             if len(messages) > (window_size + 1) * 2: # each turn has two messages from assistant and user, respectively
                 current_messages = messages[:2] + messages[-window_size * 2:]
             else: current_messages = messages
@@ -75,18 +65,27 @@ class Text2SQLRAGAgent():
             response = self.model.get_response(current_messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
             logger.info(f'[Response]: {response}')
 
-            action = self.output_parser.parse(response)
-            logger.info(f'[Action]: {action}')
+            obs, reward, flag, info = self.env.step(response)
+            if info.get('parse_error', True):
+                action_str = f"[Action]: failed to parse action from \"{response}\""
+                logger.info(f'[ActionError]: failed to parse the Action from LLM response.')
+            else:
+                action = self.env.parsed_actions[-1]
+                action_str = action.serialize(self.env.action_format)
+                logger.info(action_str)
 
-            obs, reward, flag, info = self.env.step(action)
-            logger.info(f'[Observation]:\n{obs}' if '\n' in obs else f'[Observation]: {obs}')
-            # update history messages
-            if flag:
+            observation_str = f'[Observation]:\n{obs}' if '\n' in obs else f'[Observation]: {obs}'
+            logger.info(observation_str)
+
+            if flag: # whether task is completed
                 cost = self.model.get_cost() - prev_cost
                 logger.info(f'[Info]: early stop at interaction turn {turn}, cost ${cost:.6f}.')
                 break
-            messages.extend(self.model.convert_message_from_gpt_format(self.get_history_messages(action, obs)))
+
+            # update history messages
+            messages.append({'role': 'assistant', 'content': action_str})
+            messages.append({'role': 'user', 'content': observation_str})
         else:
             cost = self.model.get_cost() - prev_cost
-            logger.info(f'[Warning]: exceeds the maximum interaction turns {self.max_turns}, cost ${cost:.6f}.')
+            logger.info(f'[Warning]: exceeds the maximum interaction turn {self.max_turn}, cost ${cost:.6f}.')
         return obs

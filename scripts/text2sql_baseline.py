@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Dict, List, Tuple, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from agents.envs import ENVIRONMENTS
-from agents.models import LLMS
+from agents.models import infer_model_class
 from agents.frameworks import FRAMEWORKS
 from agents.prompts import convert_database_schema_to_prompt
 from utils.eval_utils import evaluate, print_result
@@ -14,7 +14,7 @@ logging.basicConfig(encoding='utf-8')
 logger = logging.getLogger()
 handler = logging.StreamHandler(sys.stdout)
 current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-file_handler = logging.FileHandler(os.path.join('logs', f'text2sql_react_baseline-{current_time}.log'))
+file_handler = logging.FileHandler(os.path.join('logs', f'text2sql_baseline-{current_time}.log'))
 formatter = logging.Formatter(
     fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
@@ -30,11 +30,13 @@ parser.add_argument('--dataset', type=str, default='pdfvqa', help='which dataset
 parser.add_argument('--database', type=str, default='biology_paper', help='which database to use')
 parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
 parser.add_argument('--db_format', type=str, choices=['create_sql', 'detailed_json'], default='create_sql', help='Database schema serialization format')
+parser.add_argument('--action_format', type=str, default='markdown', help='Action format for the environment')
+parser.add_argument('--agent_method', type=str, default='react', help='Agent method')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
 parser.add_argument('--temperature', type=float, default=0.7)
 parser.add_argument('--top_p', type=float, default=0.95)
 parser.add_argument('--max_tokens', type=int, default=1500)
-parser.add_argument('--max_turns', type=int, default=10, help='Maximum turns for the agent to interact with the environment')
+parser.add_argument('--max_turn', type=int, default=10, help='Maximum turns for the agent to interact with the environment')
 parser.add_argument('--window_size', type=int, default=3, help='History window size preserved in the prompt when calling LLMs')
 parser.add_argument('--eval_llm', type=str, default='gpt-4o', help='Evaluation LLM model')
 parser.add_argument('--eval_temperature', type=float, default=0.7, help='Evaluation temperature')
@@ -45,18 +47,19 @@ args = parser.parse_args()
 if not os.path.exists(args.result_dir) or not os.path.isdir(args.result_dir):
     os.makedirs(args.result_dir, exist_ok=True)
 
-llm = LLMS['gpt']()
-env = ENVIRONMENTS['text2sql'](args.database)
-agent = FRAMEWORKS['text2sql'](llm, env, method='text2sql+react', max_turns=args.max_turns)
+llm = infer_model_class(args.llm)()
+env = ENVIRONMENTS['text2sql'](args.database, action_format=args.action_format)
+agent = FRAMEWORKS['text2sql'](llm, env, agent_method=args.agent_method, max_turn=args.max_turn)
 
 test_data = []
-test_data_path = os.path.join('data', 'dataset', args.dataset, 'processed_data', args.test_data)
+if os.path.exists(args.test_data) and os.path.isfile(args.test_data):
+    test_data_path = args.test_data
+else: test_data_path = os.path.join('data', 'dataset', args.dataset, 'processed_data', args.test_data)
 with open(test_data_path, 'r') as inf:
     for line in inf:
         test_data.append(json.loads(line))
 
 database_prompt = convert_database_schema_to_prompt(args.database, serialize_method=args.db_format)
-
 
 def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
     if database == 'biology_paper':
@@ -100,6 +103,7 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
 
 preds = []
 for data in test_data:
+    logger.info(f"Processing question: {data['uuid']}")
     question, answer_format = formulate_input(args.database, data)
     result = agent.interact(question, database_prompt, answer_format, window_size=args.window_size, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens)
     preds.append({
@@ -109,7 +113,7 @@ for data in test_data:
     })
 agent.close()
 
-output_path = os.path.join(args.result_dir, f'{args.dataset}_text2sql_react_{args.llm}.json')
+output_path = os.path.join(args.result_dir, f'{args.dataset}_text2sql_{args.agent_method}_{args.llm}.json')
 with open(output_path, 'w') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
