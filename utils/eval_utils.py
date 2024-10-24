@@ -214,7 +214,7 @@ def print_result(result: dict) -> str:
     table_data = [[key, values['correct'], values['count'], values['score']] for key, values in result.items() if key != 'all']
     table_data += [['total', result['all']['correct'], result['all']['count'], result['all']['score']]]
     headers = ["Question Type", "Correct", "Total", "Score"]
-    return tabulate(table_data, headers=headers, tablefmt='fancy_grid')
+    return tabulate(table_data, headers=headers, tablefmt='pretty')
 
 
 if __name__ == '__main__':
