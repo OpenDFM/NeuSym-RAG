@@ -77,7 +77,7 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
         elif question_type in ['object_recognition', 'structural_understanding']:
             answer_format = 'Your answer should be verbose text from the raw PDF, e.g., figure/table captions, section titles, or "No specific Section." if not found. Note that, for questions relevant to figures or tables, the answers are mostly the captions or paragraphs surrounding them.'
         elif question_type in ['parent_relationship_understanding', 'child_relationship_understanding']:
-            answer_format = 'Your answer should be a Python list of strings, where each string represents mostly a section or subsection title. Note that, some parent-children belongingships are not recorded and you may need to infer from the position or text content of different regions or bounding boxes. If not found, please return the list ["No section!"] or ["No subsection!"].'
+            answer_format = 'Your answer should be a Python list of strings, where each string represents mostly a section or subsection title. Note that, some parent-children belongingships are not recorded and you may need to infer from the position or text content of different regions or bounding boxes. If not found, please return the list ["No Section!"] or ["No subsection!"].'
         else:
             raise NotImplementedError(f"Question type {question_type} not supported.")
     elif database == 'financial_report':
