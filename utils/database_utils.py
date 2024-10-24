@@ -5,7 +5,6 @@ from typing import List, Dict, Union, Optional, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-logging.basicConfig(encoding='utf-8')
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
 formatter = logging.Formatter(

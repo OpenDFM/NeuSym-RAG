@@ -11,7 +11,6 @@ from utils.functions.image_functions import draw_image_with_bbox
 from utils.functions.pdf_functions import get_pdf_page_text
 
 
-logging.basicConfig(encoding='utf-8')
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
 formatter = logging.Formatter(
@@ -448,6 +447,27 @@ def process_tatdqa(
 
     return {'test_data': test_data, 'pdf_data': pdf_data}
 
+def classify_question_type(data: Dict[str, Any], dataset: str) -> str:
+    """ Classify the type for each question.
+    @param:
+        data: dict, the data extracted from test_data.jsonl
+    """
+    if dataset == 'pdfvqa':
+        if data['question_type'] in ['existence', 'counting']:
+            return data['question_type']
+        if data['question_type'] in ['object_recognition', 'structural_understanding']:
+            if data['answer'] == "No specific Section.":
+                return f"{data['question_type']}_trivial"
+            return data['question_type']
+        if data['question_type'] in ['parent_relationship_understanding', 'child_relationship_understanding']:
+            if isinstance(data['answer'], list) and data['answer'][0] == "No subsection!":
+                return f"{data['question_type']}_trivial"
+            return data['question_type']
+        raise TypeError(f"Unknown question type {data['question_type']}.")
+    elif dataset == 'tatdqa':
+        return data['question_type']
+    else:
+        raise NotImplementedError(f"Dataset {dataset} not supported for question type classification.")
 
 def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_file: str = None, random_seed: int = 2024):
     """ Sample the dataset for testing purposes.
@@ -461,10 +481,13 @@ def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_fil
         data = [json.loads(line) for line in inf]
     typed_data = {}
     for d in data:
-        if d['question_type'] not in typed_data:
-            typed_data[d['question_type']] = []
-        typed_data[d['question_type']].append(d)
+        question_type = classify_question_type(d, dataset)
+        if question_type not in typed_data:
+            typed_data[question_type] = []
+        typed_data[question_type].append(d)
     # for different question types, sample the data in proportion
+    for k, v in typed_data.items():
+        logger.info(f"type = {k}, size = {len(v)}")
     typed_sample_size = {tp: math.ceil(sample_size * 1.0 * len(typed_data[tp]) / len(data)) for tp in typed_data}
     sampled_data = []
     random.seed(random_seed)
@@ -478,7 +501,7 @@ def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_fil
     
     sample_size = len(sampled_data)
     output_path = os.path.join(DATASET_DIR, dataset, 'processed_data', output_file) if output_file is not None else dataset_path.replace('test_data.jsonl', f'test_data_sample_{sample_size}.jsonl')
-    with open(output_path, 'w') as of:
+    with open(output_path, 'w', encoding='UTF-8') as of:
         for d in sampled_data:
             of.write(json.dumps(d, ensure_ascii=False) + '\n')
         logger.info(f"Sampled {sample_size} test data saved to {output_path} for dataset {dataset}.")

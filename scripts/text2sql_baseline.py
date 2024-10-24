@@ -38,7 +38,7 @@ filename = f'{args.dataset}_text2sql_{args.agent_method}_{args.llm}-{start_time}
 
 logger = logging.getLogger()
 handler = logging.StreamHandler(sys.stdout)
-file_handler = logging.FileHandler(os.path.join('logs', f'{filename}.log'))
+file_handler = logging.FileHandler(os.path.join('logs', f'{filename}.log'), encoding='utf-8')
 formatter = logging.Formatter(
     fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
@@ -114,6 +114,7 @@ for data in test_data:
         'question_type': data['question_type'],
         'answer': result
     })
+logger.info(f"Total cost: {llm.get_cost()}")
 agent.close()
 
 output_path = os.path.join(args.result_dir, f'{filename}.jsonl')
