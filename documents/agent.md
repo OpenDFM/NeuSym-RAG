@@ -28,11 +28,23 @@ The entire agent framework can be splitted into 4 parts under folder `agents/`:
 
 ### Running scripts
 
-The predicted result is saved in folder `results/` in `.jsonl` format, and the log history is saved in folder `logs/` in `.log` format.
+Some common arguments:
+- dataset and database:
+    - pdfvqa -> biology_paper
+    - tatdqa -> financial_report
+- the predicted result is saved in folder `results/` in `.jsonl` format
+- the log history is saved in folder `logs/` in `.log` format
+- `action_format`: chosen from `markdown`, `xml`, `json`
+- different `agent_method`, e.g., [`react`](https://arxiv.org/pdf/2210.03629)
 
-1. Text-to-SQL with interactive environment baseline + different agent frameworks:
-    - `react`: [ReAct](https://arxiv.org/pdf/2210.03629)
+1. Text-to-SQL with interactive database environment baseline:
 
 ```sh
 python scripts/text2sql_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 10
+```
+
+2. Text-to-Vector with interactive vectorstore environment baseline: (TODO: in one week)
+
+```sh
+python scripts/text2vec_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 10
 ```
