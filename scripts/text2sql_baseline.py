@@ -114,6 +114,7 @@ for data in test_data:
         'question_type': data['question_type'],
         'answer': result
     })
+logger.info(f"Total cost: {llm.get_cost()}")
 agent.close()
 
 output_path = os.path.join(args.result_dir, f'{filename}.jsonl')
