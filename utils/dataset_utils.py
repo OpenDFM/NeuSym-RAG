@@ -451,6 +451,7 @@ def classify_question_type(data: Dict[str, Any], dataset: str) -> str:
     """ Classify the type for each question.
     @param:
         data: dict, the data extracted from test_data.jsonl
+        dataset: str, the dataset name.
     """
     if dataset == 'pdfvqa':
         if data['question_type'] in ['existence', 'counting']:
@@ -460,7 +461,7 @@ def classify_question_type(data: Dict[str, Any], dataset: str) -> str:
                 return f"{data['question_type']}_trivial"
             return data['question_type']
         if data['question_type'] in ['parent_relationship_understanding', 'child_relationship_understanding']:
-            if isinstance(data['answer'], list) and data['answer'][0] == "No subsection!":
+            if isinstance(data['answer'], list) and (data['answer'][0] == 'No subsection!' or data['answer'][0] == 'No Section!'):
                 return f"{data['question_type']}_trivial"
             return data['question_type']
         raise TypeError(f"Unknown question type {data['question_type']}.")
