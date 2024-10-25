@@ -16,6 +16,18 @@
                     0
                 ]
             }
+        },
+        {
+            "function": "get_financial_report_per_page_chunk_uuid_and_text",
+            "args": {
+                "deps": [
+                    0
+                ],
+                "kwargs": {
+                    "chunk_size": 512,
+                    "chunk_overlap": 0
+                }
+            }
         }
     ],
     "aggregation": [
@@ -46,6 +58,17 @@
                     0,
                     1,
                     2
+                ]
+            }
+        },
+        {
+            "function": "aggregate_financial_report_table_chunks",
+            "table": "chunks",
+            "args": {
+                "deps": [
+                    0,
+                    1,
+                    3
                 ]
             }
         }

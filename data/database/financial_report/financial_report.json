@@ -28,7 +28,6 @@
                 "report_id"
             ]
         },
-
         {
             "table": {
                 "table_name": "pages",
@@ -77,7 +76,6 @@
                 ]
             ]
         },
-
         {
             "table": {
                 "table_name": "content",
@@ -130,7 +128,54 @@
                     "page_id"
                 ]
             ]
+        },
+        {
+            "table": {
+                "table_name": "chunks",
+                "description": "This table contains the text content of each chunk of text in each page in one financial report. A chunk is a sub-text that is extracted from the main text, such as a sentence or a paragraph."
+            },
+            "columns": [
+                {
+                    "column_name": "chunk_id",
+                    "column_type": "UUID",
+                    "description": "A unique identifier for each chunk of text."
+                },
+                {
+                    "column_name": "text_content",
+                    "column_type": "VARCHAR",
+                    "description": "The text content of the current chunk."
+                },
+                {
+                    "column_name": "ordinal",
+                    "column_type": "INTEGER",
+                    "description": "Each chunk is labeled with one distinct integer number in the current page, which starts from 0."
+                },
+                {
+                    "column_name": "ref_report_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the report ID in the `metadata` table."
+                },
+                {
+                    "column_name": "ref_page_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the page ID in the `pages` table."
+                }
+            ],
+            "primary_keys": [
+                "chunk_id"
+            ],
+            "foreign_keys": [
+                [
+                    "ref_report_id",
+                    "metadata",
+                    "report_id"
+                ],
+                [
+                    "ref_page_id",
+                    "pages",
+                    "page_id"
+                ]
+            ]
         }
     ]
-
 }

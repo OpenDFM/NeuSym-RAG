@@ -167,6 +167,54 @@
         },
         {
             "table": {
+                "table_name": "chunks",
+                "description": "This table contains the text content of each chunk of text in each page in one biology paper. A chunk is a sub-text that is extracted from the main text, such as a sentence or a paragraph."
+            },
+            "columns": [
+                {
+                    "column_name": "chunk_id",
+                    "column_type": "UUID",
+                    "description": "A unique identifier for each chunk of text."
+                },
+                {
+                    "column_name": "text_content",
+                    "column_type": "VARCHAR",
+                    "description": "The text content of the current chunk."
+                },
+                {
+                    "column_name": "ordinal",
+                    "column_type": "INTEGER",
+                    "description": "Each chunk is labeled with one distinct integer number in the current page, which starts from 0."
+                },
+                {
+                    "column_name": "ref_paper_id",
+                    "column_type": "VARCHAR",
+                    "description": "A foreign key linking to the paper ID in the `metadata` table."
+                },
+                {
+                    "column_name": "ref_page_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the page ID in the `pages` table."
+                }
+            ],
+            "primary_keys": [
+                "chunk_id"
+            ],
+            "foreign_keys": [
+                [
+                    "ref_paper_id",
+                    "metadata",
+                    "paper_id"
+                ],
+                [
+                    "ref_page_id",
+                    "pages",
+                    "page_id"
+                ]
+            ]
+        },
+        {
+            "table": {
                 "table_name": "parent_child_relations",
                 "description": "This table defines the parent-child relationships between different content elements, for example, some main texts belong to one section title."
             },

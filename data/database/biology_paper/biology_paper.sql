@@ -43,6 +43,18 @@ CREATE TABLE IF NOT EXISTS content (
 	FOREIGN KEY (ref_paper_id) REFERENCES metadata(paper_id),
 	FOREIGN KEY (ref_page_id) REFERENCES pages(page_id)
 );
+/* table chunks: This table contains the text content of each chunk of text in each page in one biology paper. A chunk is a sub-text that is extracted from the main text, such as a sentence or a paragraph.
+*/
+CREATE TABLE IF NOT EXISTS chunks (
+	chunk_id UUID, -- A unique identifier for each chunk of text.
+	text_content VARCHAR, -- The text content of the current chunk.
+	ordinal INTEGER, -- Each chunk is labeled with one distinct integer number in the current page, which starts from 0.
+	ref_paper_id VARCHAR, -- A foreign key linking to the paper ID in the `metadata` table.
+	ref_page_id UUID, -- A foreign key linking to the page ID in the `pages` table.,
+	PRIMARY KEY (chunk_id),
+	FOREIGN KEY (ref_paper_id) REFERENCES metadata(paper_id),
+	FOREIGN KEY (ref_page_id) REFERENCES pages(page_id)
+);
 /* table parent_child_relations: This table defines the parent-child relationships between different content elements, for example, some main texts belong to one section title.
 */
 CREATE TABLE IF NOT EXISTS parent_child_relations (

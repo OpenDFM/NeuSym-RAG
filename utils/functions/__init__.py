@@ -12,19 +12,23 @@ from .pdf_functions import (
 from .biology_paper import (
     get_biology_paper_per_page_uuid,
     get_biology_paper_per_page_content_uuid,
+    get_biology_paper_per_page_chunk_uuid_and_text,
     aggregate_biology_paper_table_metadata,
     aggregate_biology_paper_table_pages,
     aggregate_biology_paper_table_content_types,
     aggregate_biology_paper_table_content,
+    aggregate_biology_paper_table_chunks,
     aggregate_biology_paper_table_parent_child_relations
 )
 
 from .financial_report import (
     get_financial_report_per_page_content_uuid,
     get_financial_report_per_page_uuid,
+    get_financial_report_per_page_chunk_uuid_and_text,
     aggregate_financial_report_table_metadata,
     aggregate_financial_report_table_pages,
-    aggregate_financial_report_table_content
+    aggregate_financial_report_table_content,
+    aggregate_financial_report_table_chunks
 )
 
 from .test_domain import (
