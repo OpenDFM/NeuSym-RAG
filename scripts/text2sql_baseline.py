@@ -87,16 +87,16 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
         question_type = data['question_type']
         scale = data['answer'][1]
         if question_type == 'count':
-            answer_format = 'Your answer should be a list containing a single integer number, e.g., 1, 2, 3, etc.'
+            answer_format = 'Your answer should be a single integer number, e.g., 1, 2, 3, etc.'
         elif question_type in ['span', 'multi-span', 'arithmetic']:
             if scale != '' and question_type == 'multi-span':
-                answer_format = 'Your answer should be data from the raw PDF or the result of the arithmetic operation of these data. If raw data have scale, or your operation may introduce scale like percent, you should also include scale in your output in the following format: [[answer1, answer2, ...], scale]. Note that the scale should be one of the following: "percent", "thousand", "million", "", do not ignore the double quotes and the brackets.'
+                answer_format = 'Your answer should be in the following Python list format: [[answer1, answer2, ...], scale]. Note that each `answer` can be either str or float, `scale` should be one of the following: "percent", "thousand", "million" and "". Remember that: 1. even if you don\'t need a scale, use "" as `scale`; 2. do not ignore the double quotes and the brackets.'
             elif scale != '' or question_type == 'arithmetic':
-                answer_format = 'Your answer should be data from the raw PDF or the result of the arithmetic operation of these data. If raw data have scale, or your operation may introduce scale like percent, you should also include scale in your output in the following format: [answer, scale]. Note that the scale should be one of the following: "percent", "thousand", "million", "", do not ignore the double quotes and the brackets.'
+                answer_format = 'Your answer should be in the following Python list format: [answer, scale]. Note that `answer` can be either int, str or float, `scale` should be one of the following: "percent", "thousand", "million" and "". Remember that: 1. even if you don\'t need a scale, use "" as `scale`; 2. do not ignore the double quotes and the brackets.'
             elif question_type == 'multi-span':
-                answer_format = 'Your answers should be verbose texts as concise as possible from the raw PDF. You should print your answer in the following format: ["part1", "part2", ...], do not ignore the double quotes and the brackets. Note that you should try to divide your answer into several parts based on the question.'
-            else:
-                answer_format = 'Your answer should be verbose text as concise as possible from the raw PDF.'
+                answer_format = 'You should directly print your answer in the following Python list format: ["part1", "part2", ...], do not ignore the outer brackets and inner double quotes. Remember that: 1. even the answer is a single text string, please wrap it with a Python list of length one; 2. for an extremely long text answer, try to divide it into multiple concise bullet points and place them into the Python list; 3. FOR EACH ELEMENT IN THE PYTHON LIST, RETRIEVE IT FROM THE RAW PDF, AND MAKE IT AS CONCISE AS POSSIBLE.'
+            elif question_type == 'span':
+                answer_format = 'Your answer should be verbose text from the raw PDF. RETRIEVE IT FROM THE RAW PDF, AND MAKE IT AS CONCISE AS POSSIBLE.'
         else:
             raise NotImplementedError(f"Question type {question_type} not supported.")
     else:

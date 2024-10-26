@@ -55,7 +55,7 @@ def fuzzy_match_strs(pred_ans: str, gold_ans: str, threshold: float = 0.9) -> fl
     compare_function = fuzz.partial_ratio if len(pred) > len(gold) else fuzz.ratio
     return float(compare_function(pred, gold) / 100.0 >= threshold)
 
-def fuzzy_match_lists(pred_ans: List[str], gold_ans: List[str], threshold: float = 0.9, require_order = 0) -> float:
+def fuzzy_match_lists(pred_ans: List[str], gold_ans: List[str], threshold: float = 0.9, require_order: int = 0) -> float:
     if require_order:
         if len(pred_ans) != len(gold_ans):
             return 0.0
@@ -137,9 +137,12 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
     pred_ans = extract_list_from_str(str(pred_ans))
     if gold_scale == '' and question_type != 'arithmetic' or not isinstance(pred_ans, list):
         pred_ans = [pred_ans, '']
+    if len(pred_ans) != 2:
+        return 0.0
     pred_answer, pred_scale = pred_ans[0], pred_ans[1]
     
-    assert pred_scale in ['percent', 'thousand', 'million', '']
+    if pred_scale not in ['percent', 'thousand', 'million', '']:
+        return 0.0
     assert question_type in ['span', 'multi-span', 'arithmetic', 'count']
 
     def to_float(gold_ans: Any) -> float:
@@ -167,9 +170,12 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
                 pred_answer = [pred_answer]
             return fuzzy_match_lists(pred_answer, gold_answer, threshold=threshold, require_order=1)
         elif gold_scale in ['percent', 'thousand', 'million']:
+            threshold = kwargs.pop('threshold', 0.9)
             if question_type == 'multi-span':
+                if len(pred_answer) != len(gold_answer):
+                    return 0.0
                 for i in range(len(pred_answer)):
-                    if exact_match(pred_answer[i], gold_answer[i]) < 0.01:
+                    if exact_match(pred_answer[i], gold_answer[i]) < threshold:
                         return 0.0
                 return float(gold_scale == pred_scale)
             else:
