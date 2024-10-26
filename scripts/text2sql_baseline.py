@@ -77,7 +77,7 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
         elif question_type in ['object_recognition', 'structural_understanding']:
             answer_format = 'Your answer should be verbose text from the raw PDF, e.g., figure/table captions, section titles, or "No specific Section." if not found. Note that, for questions relevant to figures or tables, the answers are mostly the captions or paragraphs surrounding them.'
         elif question_type in ['parent_relationship_understanding', 'child_relationship_understanding']:
-            answer_format = 'Your answer should be a Python list of strings, where each string represents mostly a section or subsection title. Note that, some parent-children belongingships are not recorded and you may need to infer from the position or text content of different regions or bounding boxes. If not found, please return the list ["No Section!"] or ["No subsection!"].'
+            answer_format = 'Your answer should be a Python list of strings in the following format: ["str1", "str2", ...], where each string represents mostly a section or subsection title, do not ignore the double quotes. Note that, some parent-children belongingships are not recorded and you may need to infer from the position or text content of different regions or bounding boxes. If not found, please return the list ["No Section!"] or ["No subsection!"].'
         else:
             raise NotImplementedError(f"Question type {question_type} not supported.")
     elif database == 'financial_report':
@@ -90,13 +90,13 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
             answer_format = 'Your answer should be a list containing a single integer number, e.g., 1, 2, 3, etc.'
         elif question_type in ['span', 'multi-span', 'arithmetic']:
             if scale != '' and question_type == 'multi-span':
-                answer_format = 'Your answer should be data from the raw PDF or the result of the arithmetic operation of these data. If raw data have scale, or your operation may introduce scale like percent, you should also include scale in your output in the following format: [[answer1, answer2, ...], scale]. Note that the scale should be one of the following: "percent", "thousand", "million", "", do not ignore the double quotes.'
+                answer_format = 'Your answer should be data from the raw PDF or the result of the arithmetic operation of these data. If raw data have scale, or your operation may introduce scale like percent, you should also include scale in your output in the following format: [[answer1, answer2, ...], scale]. Note that the scale should be one of the following: "percent", "thousand", "million", "", do not ignore the double quotes and the brackets.'
             elif scale != '' or question_type == 'arithmetic':
-                answer_format = 'Your answer should be data from the raw PDF or the result of the arithmetic operation of these data. If raw data have scale, or your operation may introduce scale like percent, you should also include scale in your output in the following format: [answer, scale]. Note that the scale should be one of the following: "percent", "thousand", "million", "", do not ignore the double quotes.'
+                answer_format = 'Your answer should be data from the raw PDF or the result of the arithmetic operation of these data. If raw data have scale, or your operation may introduce scale like percent, you should also include scale in your output in the following format: [answer, scale]. Note that the scale should be one of the following: "percent", "thousand", "million", "", do not ignore the double quotes and the brackets.'
             elif question_type == 'multi-span':
-                answer_format = 'Your answers should be verbose texts from the raw PDF. You should print your answer in the following format: ["part1", "part2", ...], do not ignore the double quotes. Note that you should try to divide your answer into several parts based on the question.'
+                answer_format = 'Your answers should be verbose texts as concise as possible from the raw PDF. You should print your answer in the following format: ["part1", "part2", ...], do not ignore the double quotes and the brackets. Note that you should try to divide your answer into several parts based on the question.'
             else:
-                answer_format = 'Your answer should be verbose text from the raw PDF.'
+                answer_format = 'Your answer should be verbose text as concise as possible from the raw PDF.'
         else:
             raise NotImplementedError(f"Question type {question_type} not supported.")
     else:

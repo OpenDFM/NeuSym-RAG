@@ -2,7 +2,7 @@
 import ast, math, os, openai, re
 from typing import Dict, Any, Optional, List, Union
 from collections import defaultdict
-from fuzzywuzzy import fuzz
+from fuzzywuzzy import fuzz, process
 from tabulate import tabulate
 
 
@@ -49,6 +49,47 @@ Response:
         score = 0.0
     return score
 
+def fuzzy_match_strs(pred_ans: str, gold_ans: str, threshold: float = 0.9) -> float:
+    pred, gold = re.sub(r'\s+', ' ', pred_ans), re.sub(r'\s+', ' ', gold_ans)
+    # allow pred to fully contain the gold answer (treated as true)
+    compare_function = fuzz.partial_ratio if len(pred) > len(gold) else fuzz.ratio
+    return float(compare_function(pred, gold) / 100.0 >= threshold)
+
+def fuzzy_match_lists(pred_ans: List[str], gold_ans: List[str], threshold: float = 0.9, require_order = 0) -> float:
+    if require_order:
+        if len(pred_ans) != len(gold_ans):
+            return 0.0
+        for i in range(len(pred_ans)):
+            if fuzzy_match_strs(pred_ans[i], gold_ans[i], threshold=threshold) < threshold:
+                return 0.0
+        return 1.0
+    else:
+        gold_ans_copy = gold_ans[:]
+        for ans in pred_ans:
+            if not gold_ans_copy:
+                return 0.0
+            best_match = process.extractOne(
+                ans, 
+                gold_ans_copy, 
+                scorer = lambda x, y: fuzzy_match_strs(x, y, threshold=threshold) * 100.0
+            )
+            if best_match and best_match[1] / 100.0 >= threshold:
+                gold_ans_copy.remove(best_match[0]) 
+            else:
+                return 0.0
+        return 1.0
+
+def extract_list_from_str(s: str):
+    match = re.search(r'(\[.*\])', s)
+    if match:
+        list_str = match.group(0)
+        try:
+            result = ast.literal_eval(list_str)
+            if isinstance(result, list):
+                return result
+        except (ValueError, SyntaxError):
+            return s
+    return s
 
 def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], question_type: Optional[str] = None, **kwargs) -> float:
     """ Evaluate the predicted answer for the PDFVQA dataset.
@@ -64,12 +105,6 @@ def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], 
 
     def exact_match(pred_ans: str, gold_ans: str) -> float:
         return float(pred_ans == gold_ans)
-    
-    def fuzzy_match(pred_ans: str, gold_ans: str, threshold: float = 0.9) -> float:
-        pred, gold = re.sub(r'\s+', ' ', pred_ans), re.sub(r'\s+', ' ', gold_ans)
-        # allow pred to fully contain the gold answer (treated as true)
-        compare_function = fuzz.partial_ratio if len(pred) > len(gold) else fuzz.ratio
-        return float(compare_function(pred, gold) / 100.0 >= threshold)
 
     if question_type in ['existence', 'counting']:
         answer = gold_data['answer'].strip().lower()
@@ -79,10 +114,13 @@ def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], 
         threshold = kwargs.pop('threshold', 0.9)
         answer = gold_data['answer'].strip().lower()
         pred_ans = pred_ans.strip().lower()
-        return fuzzy_match(pred_ans, answer, threshold=threshold)
+        return fuzzy_match_strs(pred_ans, answer, threshold=threshold)
     elif question_type in ['parent_relationship_understanding', 'child_relationship_understanding']:
-        model, temperature, top_p = kwargs.get('model', 'gpt-4o'), kwargs.get('temperature', 0.7), kwargs.get('top_p', 0.95)
-        return llm_semantic_equivalent(gold_data['question'], pred_ans, gold_data['answer'], model=model, temperature=temperature, top_p=top_p)
+        threshold = kwargs.pop('threshold', 0.9)
+        pred_ans = extract_list_from_str(pred_ans)
+        if not isinstance(pred_ans, list):
+            pred_ans = [pred_ans]
+        return fuzzy_match_lists(pred_ans, gold_data['answer'], threshold=threshold)
     else:
         raise NotImplementedError(f"Question type {question_type} not supported.")
 
@@ -94,27 +132,14 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
         gold_data: Dict[str, Any], gold data containing 'uuid', 'question', 'question_type', 'answer', etc.
         question_type: str, question type, optional
     """
-    # TODO check all "count" tasks' scales are ""
-    
-    def extract_list_from_string(s: str):
-        match = re.search(r'(\[.*\])', s)
-        if match:
-            list_str = match.group(0)
-            try:
-                result = ast.literal_eval(list_str)
-                if isinstance(result, list):
-                    return result
-            except (ValueError, SyntaxError):
-                return s
-        return s
     
     question_type, gold_scale, gold_answer = gold_data['question_type'], gold_data['answer'][1], gold_data['answer'][0]
-    
-    pred_ans = extract_list_from_string(str(pred_ans))
-    if gold_scale == '' and question_type != 'arithmetic':
+    pred_ans = extract_list_from_str(str(pred_ans))
+    if gold_scale == '' and question_type != 'arithmetic' or not isinstance(pred_ans, list):
         pred_ans = [pred_ans, '']
     pred_answer, pred_scale = pred_ans[0], pred_ans[1]
     
+    assert pred_scale in ['percent', 'thousand', 'million', '']
     assert question_type in ['span', 'multi-span', 'arithmetic', 'count']
 
     def to_float(gold_ans: Any) -> float:
@@ -129,14 +154,18 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
     def exact_match(pred_ans: Any, gold_ans: Any) -> float:
         pred_ans = to_float(pred_ans)
         gold_ans = to_float(gold_ans)
+        if math.isnan(pred_ans) or math.isnan(gold_ans):
+            return 0.0
         return float(round(pred_ans) == round(gold_ans))
     
     if question_type in ['arithmetic', 'count']:
         return exact_match(pred_answer, gold_answer) * float(gold_scale == pred_scale)
     elif question_type in ['span', 'multi-span']:
         if gold_scale == '':
-            model, temperature, top_p = kwargs.get('model', 'gpt-4o'), kwargs.get('temperature', 0.7), kwargs.get('top_p', 0.95)
-            return llm_semantic_equivalent(gold_data['question'], pred_ans, gold_data['answer'], model=model, temperature=temperature, top_p=top_p)
+            threshold = kwargs.pop('threshold', 0.9)
+            if question_type == 'span':
+                pred_answer = [pred_answer]
+            return fuzzy_match_lists(pred_answer, gold_answer, threshold=threshold, require_order=1)
         elif gold_scale in ['percent', 'thousand', 'million']:
             if question_type == 'multi-span':
                 for i in range(len(pred_answer)):
