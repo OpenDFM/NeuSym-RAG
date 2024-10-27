@@ -2,6 +2,7 @@
 import logging, sys, os
 from typing import List, Dict, Any, Union, Tuple, Optional
 from agents.envs import AgentEnv
+from agents.envs.actions import GenerateSQL, GenerateAnswer
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
 from agents.frameworks.agent_base import AgentBase
@@ -9,15 +10,13 @@ from agents.frameworks.agent_base import AgentBase
 
 logger = logging.getLogger()
 
-class Text2SQLRAGAgent(AgentBase):
+class Text2SQL2STEPSRAGAgent(AgentBase):
 
-    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'react', max_turn: int = 10) -> None:
-        super(Text2SQLRAGAgent, self).__init__(model, env, agent_method, max_turn)
-
+    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = '2steps', max_turn: int = 2) -> None:
+        super(Text2SQL2STEPSRAGAgent, self).__init__(model, env, agent_method, max_turn)
+        self.action_order: List[type] = [GenerateSQL, GenerateAnswer]
         self.agent_prompt = AGENT_PROMPTS[agent_method].format(
-            system_prompt=SYSTEM_PROMPTS['text2sql'],
-            action_space_prompt=env.action_space_prompt,
-            max_turn=max_turn
+            system_prompt=SYSTEM_PROMPTS['text2sql']
         )
         logger.info(f'[AgentPrompt]: {self.agent_prompt}')
 
@@ -61,6 +60,8 @@ class Text2SQLRAGAgent(AgentBase):
                 logger.info(f'[ActionError]: failed to parse the Action from LLM response.')
             else:
                 action = self.env.parsed_actions[-1]
+                if not isinstance(action, self.action_order[turn]):
+                    logger.info(f'[ActionError]: performed wrong action on turn {turn + 1}')
                 action_str = action.serialize(self.env.action_format)
                 logger.info(action_str)
 

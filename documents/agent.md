@@ -48,3 +48,9 @@ python scripts/text2sql_baseline.py --dataset pdfvqa --database biology_paper --
 ```sh
 python scripts/text2vec_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 10
 ```
+
+3. Text-to-SQL (two steps) with interactive database environment baseline:
+
+```sh
+python scripts/text2sql_2steps_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --action_format markdown --agent_method '2steps' --llm gpt-4o-mini --max_turn 2
+```
