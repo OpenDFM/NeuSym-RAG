@@ -364,8 +364,7 @@ class GenerateAnswer(Action):
                 if type(parameters) != dict:
                     raise ParseActionError("Failed to parse the final answer from the response.")
                 answer = parameters.get('answer', None)
-
-            if not answer:
+            if answer is None or answer == '':
                 raise ParseActionError("Failed to parse the final answer from the response.")
             return cls(answer=answer)
         elif action_format == 'xml':
@@ -393,7 +392,7 @@ class GenerateAnswer(Action):
                     raise ParseActionError("Failed to parse the final answer from the response.")
                 answer = parameters.get('answer', None)
 
-            if not answer:
+            if answer is None or answer == '':
                 raise ParseActionError("Failed to parse the final answer from the response.")
             return cls(answer=answer)
         else:
