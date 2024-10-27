@@ -10,15 +10,19 @@ from agents.frameworks.agent_base import AgentBase
 
 logger = logging.getLogger()
 
-class Text2SQL2STEPSRAGAgent(AgentBase):
+class TwoStageText2SQLRAGAgent(AgentBase):
 
-    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = '2steps', max_turn: int = 2) -> None:
-        super(Text2SQL2STEPSRAGAgent, self).__init__(model, env, agent_method, max_turn)
+    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'twostage', max_turn: int = 2) -> None:
+        super(TwoStageText2SQLRAGAgent, self).__init__(model, env, agent_method, max_turn)
         self.action_order: List[type] = [GenerateSQL, GenerateAnswer]
-        self.agent_prompt = AGENT_PROMPTS[agent_method].format(
-            system_prompt=SYSTEM_PROMPTS['text2sql']
-        )
-        logger.info(f'[AgentPrompt]: {self.agent_prompt}')
+        self.agent_prompt = [
+            AGENT_PROMPTS[agent_method][turn].format(
+                system_prompt=SYSTEM_PROMPTS['twostage_text2sql'][turn]
+            )
+            for turn in range(max_turn)
+        ]
+        logger.info(f'[AgentPrompt_0]: {self.agent_prompt[0]}')
+        logger.info(f'[AgentPrompt_1]: {self.agent_prompt[1]}')
 
     def close(self):
         self.env.close()
@@ -35,21 +39,27 @@ class Text2SQL2STEPSRAGAgent(AgentBase):
                  top_p: float = 0.9,
                  max_tokens: int = 1500
     ) -> str:
-        task_prompt = f'[Question]: {question}\n[Answer Format]: {answer_format}\n[Database Schema]:\n{database_prompt}'
+        task_prompt = f'[Question]: {question}\n[Answer Format]: {answer_format}\n'
+        database_prompt = f'[Database Schema]:\n{database_prompt}\n'
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
-        messages = [
-            {'role': 'system', 'content': self.agent_prompt},
-            {'role': 'user', 'content': task_prompt}
-        ]
+        messages = []
         prev_cost = self.model.get_cost()
         self.env.reset()
 
         for turn in range(self.max_turn):
-            if len(messages) > (window_size + 1) * 2: # each turn has two messages from assistant and user, respectively
-                current_messages = messages[:2] + messages[-window_size * 2:]
-            else: current_messages = messages
+            if turn == 0:
+                current_messages = [
+                    {'role': 'system', 'content': self.agent_prompt[turn]},
+                    {'role': 'user', 'content': task_prompt + database_prompt}
+                ]
+            else:
+                current_messages = [
+                    {'role': 'system', 'content': self.agent_prompt[turn]},
+                    {'role': 'user', 'content': task_prompt}
+                ] + messages
             logger.info(f'[Interaction Turn]: {turn + 1}')
+            logger.info(f'[Messages]: {current_messages}')
 
             response = self.model.get_response(current_messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
             logger.info(f'[Response]: {response}')
@@ -65,7 +75,7 @@ class Text2SQL2STEPSRAGAgent(AgentBase):
                 action_str = action.serialize(self.env.action_format)
                 logger.info(action_str)
 
-            observation_str = f'[Observation]:\n{obs}' if '\n' in obs else f'[Observation]: {obs}'
+            observation_str = f'[Observation]:\n{obs}' if '\n' in str(obs) else f'[Observation]: {obs}'
             logger.info(observation_str)
 
             if flag: # whether task is completed

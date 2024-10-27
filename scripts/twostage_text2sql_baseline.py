@@ -15,7 +15,7 @@ parser.add_argument('--database', type=str, default='biology_paper', help='which
 parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
 parser.add_argument('--db_format', type=str, choices=['create_sql', 'detailed_json'], default='create_sql', help='Database schema serialization format')
 parser.add_argument('--action_format', type=str, default='markdown', choices=['markdown'], help='Action format for the environment')
-parser.add_argument('--agent_method', type=str, default='2steps', help='Agent method')
+parser.add_argument('--agent_method', type=str, default='twostage', help='Agent method')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
 parser.add_argument('--temperature', type=float, default=0.7)
 parser.add_argument('--top_p', type=float, default=0.95)
@@ -34,7 +34,7 @@ os.makedirs(args.result_dir, exist_ok=True)
 os.makedirs(args.log_dir, exist_ok=True)
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 # the filename can be customized
-filename = f'{args.dataset}_text2sql_2steps_{args.agent_method}_{args.llm}-{start_time}'
+filename = f'{args.dataset}_text2sql_{args.agent_method}_{args.llm}-{start_time}'
 
 logger = logging.getLogger()
 handler = logging.StreamHandler(sys.stdout)
@@ -52,7 +52,7 @@ logger.setLevel(logging.INFO)
 
 llm = infer_model_class(args.llm)()
 env = ENVIRONMENTS['text2sql'](args.database, action_format=args.action_format)
-agent = FRAMEWORKS['text2sql_2steps'](llm, env, agent_method=args.agent_method)
+agent = FRAMEWORKS['twostage_text2sql'](llm, env, agent_method=args.agent_method)
 
 test_data = []
 if os.path.exists(args.test_data) and os.path.isfile(args.test_data):
