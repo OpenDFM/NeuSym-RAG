@@ -47,6 +47,21 @@ class TwoStageText2SQLRAGAgent(AgentBase):
         prev_cost = self.model.get_cost()
         self.env.reset()
 
+
+        # 1. Generate SQL
+        prompt = ...   # system prompt + task prompt + cot thought hints
+        response = self.model.get_response()
+        sql = ... # parse SQL from response
+
+        # 2. Answer question
+        from envs.actions import GenerateSQL
+        action = GenerateSQL(sql='xxx', observation_format_kwargs={...})
+        observation = GenerateSQL.execute(action, self.env)
+        prompt = ... # system prompt + task prompt (insert SQL, observation) + cot thought hints
+        response = self.model.get_response()
+        answer = ... # extract answer from response
+        return answer
+
         for turn in range(self.max_turn):
             if turn == 0:
                 current_messages = [
