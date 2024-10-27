@@ -8,7 +8,7 @@ The entire agent framework can be splitted into 4 parts under folder `agents/`:
 ```txt
 - agents/
     - envs/ # responsible for gym-like environments and action specification/parse/serialization/execution
-        - actions.py # all allowable Action classes, must inherit class Action, and implement four methods: _specification, _parse, serialize, and execute.
+        - actions.py # all allowable Action classes, must inherit class Action, and implement three methods: _parse, serialize, and execute.
         - env_base.py # wrapper for OpenAI gym, automatically parse input text based on allowable actions
         - text2sql_env.py # class Text2SQLEnv, allowable actions [GenerateSQL, GenerateAnswer]
         - text2vec_env.py # class Text2VecEnv

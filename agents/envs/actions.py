@@ -1,5 +1,5 @@
 #coding=utf8
-import re, json
+import re, json, os
 import duckdb, xmltodict
 import pandas as pd
 import gymnasium as gym
@@ -7,6 +7,10 @@ from dataclasses import dataclass, field
 from typing import Optional, List, Tuple, Dict, Union, Any
 from abc import ABC, abstractmethod
 from func_timeout import func_set_timeout, FunctionTimedOut
+
+
+ACTIONS_FILE = os.path.join(os.path.dirname(__file__), 'actions.json')
+ACTIONS = json.load(open(ACTIONS_FILE, 'r'))
 
 
 class ParseActionError(ValueError):
@@ -17,6 +21,18 @@ class MismatchedActionError(ValueError):
 
 
 ACTION_FORMATS = ['markdown', 'json', 'xml'] # allowable action formats
+
+
+def extract_inner_text(text: str, prefix: str = '{', suffix: str = '}') -> str:
+    """ Extract the JSON or XML text from the raw LLM response.
+    """
+    if prefix not in text or suffix not in text:
+        return text
+    start = text.index(prefix)
+    end = text.rindex(suffix)
+    json_text = text[start: end + len(suffix)]
+    return json_text
+
 
 @dataclass
 class Action(ABC):
@@ -51,12 +67,41 @@ class Action(ABC):
         pass
 
     @classmethod
-    @abstractmethod
-    def _specification(cls, action_format: str = 'markdown') -> str:
+    def specification(cls, action_format: str = 'markdown') -> str:
         """ Return a human-readable specification of the action according to the specified `action_format`.
-        This specification is usually inserted into the action space of the system prompt.
+        This specification is usually inserted into the action space of the system prompt. For each action, it is automatically generated from file `actions.json`.
         """
-        pass
+        action_type = cls.__name__
+        if action_type not in ACTIONS:
+            raise ValueError(f"Action type `{action_type}` not found in file {ACTIONS_FILE}.")
+        if action_format not in ACTIONS[action_type]:
+            raise ValueError(f"Action format `{action_format}` not found in {action_type} specification.")
+        action_spec = ACTIONS[action_type][action_format]
+        action_type = action_spec['action_type']
+        description = action_spec['description']
+        observation = action_spec['observation']
+        action_format = action_spec['action_format']
+        use_case = action_spec['usage']
+        if len(use_case) == 1:
+            use_case = '### Use Case\n' + use_case[0]
+        else:
+            use_case = '### Use Cases' + '\n'.join([f'\n#### Case {cid}\n{case}\n' for cid, case in enumerate(use_case)])
+        action_prompt = f"""
+### Action Type
+{action_type}
+
+### Action Format
+{action_format}
+
+### Description
+{description}
+
+### Observation
+{observation}
+
+{use_case}
+"""
+        return action_prompt
 
     @classmethod
     def get_action_space_prompt(cls, action_types: List[type], action_format: str = 'markdown') -> str:
@@ -67,7 +112,7 @@ class Action(ABC):
         action_space_prompt = f"## Action and Observation Space\nAll allowable action types include {str(action_names)}. Here is the detailed specification in {action_format.upper()} format:\n"
         actions = []
         for action_cls in action_types:
-            actions.append(action_cls._specification(action_format))
+            actions.append(action_cls.specification(action_format))
         return action_space_prompt + '\n----\n'.join(actions)
 
     @classmethod
@@ -169,45 +214,6 @@ class GenerateSQL(Action):
         return msg
 
 
-    @classmethod
-    def _specification(cls, action_format: str = 'markdown') -> str:
-        if action_format == 'markdown': # Markdown format, more similar to raw text, default
-            # Attention: must add [Action]: ... before, o.w., LLM may not predict action type
-            action_format = """[Action]: GenerateSQL:\n```sql\nconcrete sql query\n```"""
-            use_case = """[Action]: GenerateSQL:\n```sql\nSELECT COUNT(*) FROM table_name;\n```"""
-        elif action_format == 'json': # JSON format
-            action_format = '{\n    "action_type": "GenerateSQL",\n    "parameters": {\n        "sql": str // concrete sql query, required\n    }\n}'
-            example = {
-                "action_type": "GenerateSQL",
-                "parameters": {
-                    "sql": "SELECT COUNT(*) FROM table_name;"
-                }
-            }
-            use_case = json.dumps(example, indent=4)
-        elif action_format == 'xml': # XML format
-            action_format = """<action><action_type>GenerateSQL</action_type><parameters><sql>concrete SQL query, this is a required tag</sql></parameters></action>"""
-            use_case = """<action><action_type>GenerateSQL</action_type><parameters><sql>SELECT COUNT(*) FROM table_name;</sql></parameters></action>"""
-        else:
-            raise ValueError(f"Action format {action_format} not supported for GenerateSQL.")
-        specification = f"""
-### Action Type
-GenerateSQL
-
-### Action Format
-{action_format}
-
-### Description
-Generate an SQL query to retrieve the desired information from the database. Please refer to the concrete database schema to produce the valid SQL.
-
-### Observation
-The observation space is the execution result of the SQL query. You do not need to worry about the actual execution, we will perform it for you. If the SQL failed to execute, we will return the error message. And extremely long SQL output will be truncated for further actions.
-
-### Use Case
-{use_case}
-"""
-        return specification
-
-
     def serialize(self, action_format = 'markdown') -> str:
         """ Serialize the action into a string according to the specified format.
         Attention: please conform to the specification.
@@ -248,6 +254,7 @@ The observation space is the execution result of the SQL query. You do not need 
                 raise ParseActionError("Failed to parse the SQL query from the response.")
             return cls(sql=sql.group(2).strip())
         elif action_format == 'json':
+            action_text = extract_inner_text(action_text, prefix='{', suffix='}')
             action_dict: dict = json.loads(action_text.strip())
             if action_dict.get('action_type', '') != 'GenerateSQL':
                 raise MismatchedActionError("Failed to parse GenerateSQL action from the response.")
@@ -264,6 +271,7 @@ The observation space is the execution result of the SQL query. You do not need 
                 raise ParseActionError("Failed to parse the SQL query from the response.")
             return cls(sql=sql)
         elif action_format == 'xml':
+            action_text = extract_inner_text(action_text, prefix='<action>', suffix='</action>')
             action_dict = xmltodict.parse(action_text.strip())['action']
             if action_dict.get('action_type', '') != 'GenerateSQL':
                 raise MismatchedActionError("Failed to parse GenerateSQL action from the response.")
@@ -292,45 +300,6 @@ class GenerateAnswer(Action):
         """ Return the final answer as the observation string.
         """
         return self.answer
-
-
-    @classmethod
-    def _specification(cls, action_format = 'markdown') -> str:
-        if action_format == 'markdown':
-            # Attention: must add [Action]: ... before, o.w., LLM may not predict action type
-            action_format = """[Action]: GenerateAnswer:\n```txt\nfinal answer\n```"""
-            use_case = """[Action]: GenerateAnswer:\n```txt\n42\n```"""
-        elif action_format == 'json':
-            action_format = '{\n    "action_type": "GenerateAnswer",\n    "parameters": {\n        "answer": Any // final answer, required\n    }\n}'
-            example = {
-                "action_type": "GenerateAnswer",
-                "parameters": {
-                    "answer": 42
-                }
-            }
-            use_case = json.dumps(example, indent=4)
-        elif action_format == 'xml':
-            action_format = """<action><action_type>GenerateAnswer</action_type><parameters><answer>final answer, this is a required tag and the answer format depends on concrete input question</answer></parameters></action>"""
-            use_case = """<action><action_type>GenerateAnswer</action_type><parameters><answer>42</answer></parameters></action>"""
-        else:
-            raise ValueError(f"Action format {action_format} not supported for GenerateAnswer.")
-        specification = f"""
-### Action Type
-GenerateAnswer
-
-### Action Format
-{action_format}
-
-### Description
-When you take this action, the retrieved results suffice to answer the user question. Please strictly adhere to the answer format of the current question.
-
-### Observation
-There is no observation for this terminal action, since it indicates the completion of the task and end of the interaction.
-
-### Use Case
-{use_case}
-"""
-        return specification
 
 
     def serialize(self, action_format = 'markdown') -> str:
@@ -372,6 +341,7 @@ There is no observation for this terminal action, since it indicates the complet
                 raise ParseActionError("Failed to parse the final answer from the response.")
             return cls(answer=answer.group(2).strip())
         elif action_format == 'json':
+            action_text = extract_inner_text(action_text, prefix='{', suffix='}')
             action_dict: dict = json.loads(action_text.strip())
             if action_dict.get('action_type', '') != 'GenerateAnswer':
                 raise MismatchedActionError("Failed to parse GenerateAnswer action from the response.")
@@ -388,6 +358,7 @@ There is no observation for this terminal action, since it indicates the complet
                 raise ParseActionError("Failed to parse the final answer from the response.")
             return cls(answer=answer)
         elif action_format == 'xml':
+            action_text = extract_inner_text(action_text, prefix='<action>', suffix='</action>')
             action_dict = xmltodict.parse(action_text.strip())['action']
             if action_dict.get('action_type', '') != 'GenerateAnswer':
                 raise MismatchedActionError("Failed to parse GenerateAnswer action from the response.")

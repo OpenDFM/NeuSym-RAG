@@ -107,17 +107,17 @@ def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], 
         return float(pred_ans == gold_ans)
 
     if question_type in ['existence', 'counting']:
-        answer = gold_data['answer'].strip().lower()
-        pred_ans = pred_ans.strip().lower()
+        answer = str(gold_data['answer']).strip().lower()
+        pred_ans = str(pred_ans).strip().lower()
         return exact_match(pred_ans, answer)
     elif question_type in ['object_recognition', 'structural_understanding']: # mostly verbose section titles or recognized sentence, or special answer "No specific Section."
         threshold = kwargs.pop('threshold', 0.9)
-        answer = gold_data['answer'].strip().lower()
-        pred_ans = pred_ans.strip().lower()
+        answer = str(gold_data['answer']).strip().lower()
+        pred_ans = str(pred_ans).strip().lower()
         return fuzzy_match_strs(pred_ans, answer, threshold=threshold)
     elif question_type in ['parent_relationship_understanding', 'child_relationship_understanding']:
         threshold = kwargs.pop('threshold', 0.9)
-        pred_ans = extract_list_from_str(pred_ans)
+        pred_ans = extract_list_from_str(str(pred_ans))
         if not isinstance(pred_ans, list):
             pred_ans = [pred_ans]
         return fuzzy_match_lists(pred_ans, gold_data['answer'], threshold=threshold)
@@ -136,7 +136,7 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
     question_type, gold_scale, gold_answer = gold_data['question_type'], gold_data['answer'][1], gold_data['answer'][0]
     pred_ans = extract_list_from_str(str(pred_ans))
     if gold_scale == '' and question_type != 'arithmetic' or not isinstance(pred_ans, list):
-        pred_ans = [pred_ans, '']
+        pred_ans = [str(pred_ans), '']
     if len(pred_ans) != 2:
         return 0.0
     pred_answer, pred_scale = pred_ans[0], pred_ans[1]
@@ -162,12 +162,12 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
         return float(round(pred_ans) == round(gold_ans))
     
     if question_type in ['arithmetic', 'count']:
-        return exact_match(pred_answer, gold_answer) * float(gold_scale == pred_scale)
+        return exact_match(pred_answer, gold_answer) * float(gold_scale == str(pred_scale))
     elif question_type in ['span', 'multi-span']:
         if gold_scale == '':
             threshold = kwargs.pop('threshold', 0.9)
             if question_type == 'span':
-                pred_answer = [pred_answer]
+                pred_answer = [str(pred_answer)]
             return fuzzy_match_lists(pred_answer, gold_answer, threshold=threshold, require_order=1)
         elif gold_scale in ['percent', 'thousand', 'million']:
             threshold = kwargs.pop('threshold', 0.9)
@@ -177,9 +177,9 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
                 for i in range(len(pred_answer)):
                     if exact_match(pred_answer[i], gold_answer[i]) < threshold:
                         return 0.0
-                return float(gold_scale == pred_scale)
+                return float(gold_scale == str(pred_scale))
             else:
-                return exact_match(pred_answer, gold_answer) * float(gold_scale == pred_scale)
+                return exact_match(str(pred_answer), gold_answer) * float(gold_scale == str(pred_scale))
         else:
             raise NotImplementedError(f"Gold scale {gold_scale} not supported.")
     else:

@@ -1,0 +1,66 @@
+{
+    "GenerateSQL": {
+        "json": {
+            "action_type": "GenerateSQL",
+            "description": "Generate an SQL query to retrieve the desired information from the database. Please refer to the concrete database schema to produce the valid SQL.",
+            "observation": "The observation space is the execution result of the SQL query. You do not need to worry about the actual execution, we will perform it for you. If the SQL failed to execute, we will return the error message. And extremely long SQL output will be truncated for further actions.",
+            "action_format": "{\n    \"action_type\": \"GenerateSQL\",\n    \"parameters\": {\n        \"sql\": str // concrete sql query, required field\n    }\n}",
+            "usage": [
+                "{\n    \"action_type\": \"GenerateSQL\",\n    \"parameters\": {\n        \"sql\": \"SELECT COUNT(*) FROM table_name;\"\n    }\n}"
+            ]
+        },
+        "markdown": {
+            "action_type": "GenerateSQL",
+            "description": "Generate an SQL query to retrieve the desired information from the database. Please refer to the concrete database schema to produce the valid SQL.",
+            "observation": "The observation space is the execution result of the SQL query. You do not need to worry about the actual execution, we will perform it for you. If the SQL failed to execute, we will return the error message. And extremely long SQL output will be truncated for further actions.",
+            "action_format": "[Action]: GenerateSQL:\n```sql\nconcrete sql query, remember to wrap it within three backtick\n```",
+            "usage": [
+                "[Action]: GenerateSQL:\n```sql\nSELECT COUNT(*) FROM table_name;\n```"
+            ]
+        },
+        "xml": {
+            "action_type": "GenerateSQL",
+            "description": "Generate an SQL query to retrieve the desired information from the database. Please refer to the concrete database schema to produce the valid SQL.",
+            "observation": "The observation space is the execution result of the SQL query. You do not need to worry about the actual execution, we will perform it for you. If the SQL failed to execute, we will return the error message. And extremely long SQL output will be truncated for further actions.",
+            "action_format": "<action><action_type>GenerateSQL</action_type><parameters><sql>the concrete SQL query, this is a required field</sql></parameters></action>",
+            "usage": [
+                "<action><action_type>GenerateSQL</action_type><parameters><sql>SELECT COUNT(*) FROM table_name;</sql></parameters></action>"
+            ]
+        }
+    },
+    "GenerateAnswer": {
+        "json": {
+            "action_type": "GenerateAnswer",
+            "description": "When you take this action, the retrieved results suffice to answer the user question. PLEASE STRICTLY ADHERE TO THE ANSWER FORMAT FOR THE CURRENT QUESTION.",
+            "observation": "There is no observation for this terminal action, since it indicates the completion of the task and end of the interaction.",
+            "action_format": "{\n    \"action_type\": \"GenerateAnswer\",\n    \"parameters\": {\n        \"answer\": Any // final answer, required field\n    }\n}",
+            "usage": [
+                "{\n    \"action_type\": \"GenerateAnswer\",\n    \"parameters\": {\n        \"answer\": 42\n    }\n}",
+                "{\n    \"action_type\": \"GenerateAnswer\",\n    \"parameters\": {\n        \"answer\": [\n            \"Results\",\n            \"Discussion\"\n        ]\n    }\n}",
+                "{\n    \"action_type\": \"GenerateAnswer\",\n    \"parameters\": {\n        \"answer\": [\n            134.74,\n            \"percent\"\n        ]\n    }\n}"
+            ]
+        },
+        "markdown": {
+            "action_type": "GenerateAnswer",
+            "description": "When you take this action, the retrieved results suffice to answer the user question. PLEASE STRICTLY ADHERE TO THE ANSWER FORMAT FOR THE CURRENT QUESTION.",
+            "observation": "There is no observation for this terminal action, since it indicates the completion of the task and end of the interaction.",
+            "action_format": "[Action]: GenerateAnswer:\n```txt\nfinal answer, please adhere to the answer format for the current question\n```",
+            "usage": [
+                "[Action]: GenerateAnswer:\n```txt\n42\n```",
+                "[Action]: GenerateAnswer:\n```txt\n[\"Results\", \"Discussion\"]\n```",
+                "[Action]: GenerateAnswer:\n```txt\n[134.74, \"percent\"]\n```"
+            ]
+        },
+        "xml": {
+            "action_type": "GenerateAnswer",
+            "description": "When you take this action, the retrieved results suffice to answer the user question. PLEASE STRICTLY ADHERE TO THE ANSWER FORMAT FOR THE CURRENT QUESTION.",
+            "observation": "There is no observation for this terminal action, since it indicates the completion of the task and end of the interaction.",
+            "action_format": "<action><action_type>GenerateAnswer</action_type><parameters><answer>final answer, this is a required field</answer></parameters></action>",
+            "usage": [
+                "<action><action_type>GenerateAnswer</action_type><parameters><answer>42</answer></parameters></action>",
+                "<action><action_type>GenerateAnswer</action_type><parameters><answer>[\"Results\", \"Discussion\"]</answer></parameters></action>",
+                "<action><action_type>GenerateAnswer</action_type><parameters><answer>[134.74, \"percent\"]</answer></parameters></action>"
+            ]
+        }
+    }
+}

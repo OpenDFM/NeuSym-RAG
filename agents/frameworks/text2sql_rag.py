@@ -64,7 +64,7 @@ class Text2SQLRAGAgent(AgentBase):
                 action_str = action.serialize(self.env.action_format)
                 logger.info(action_str)
 
-            observation_str = f'[Observation]:\n{obs}' if '\n' in obs else f'[Observation]: {obs}'
+            observation_str = f'[Observation]:\n{obs}' if '\n' in str(obs) else f'[Observation]: {obs}'
             logger.info(observation_str)
 
             if flag: # whether task is completed
