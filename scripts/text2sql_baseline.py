@@ -34,7 +34,7 @@ os.makedirs(args.result_dir, exist_ok=True)
 os.makedirs(args.log_dir, exist_ok=True)
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 # the filename can be customized
-filename = f'{args.dataset}_text2sql_{args.agent_method}_{args.llm}-{start_time}'
+filename = f'{args.dataset}_text2sql_{args.agent_method}_{args.action_format}_{args.llm}-{start_time}'
 
 logger = logging.getLogger()
 handler = logging.StreamHandler(sys.stdout)

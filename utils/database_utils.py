@@ -1,6 +1,6 @@
 #coding=utf8
 import json, sys, os, re, logging
-import duckdb
+import duckdb, tqdm
 from typing import List, Dict, Union, Optional, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -124,7 +124,7 @@ def convert_json_to_create_sql(json_path: str, sql_path: Optional[str] = None) -
     return complete_sql
 
 
-def create_database_from_sql(sql_path: str, db_path: str) -> None:
+def create_database_from_sql(sql_path: str, db_path: str, from_scratch: bool = True) -> None:
     """ Create the database from the SQL file.
     @param:
         sql_path: str, path to the SQL file
@@ -134,6 +134,8 @@ def create_database_from_sql(sql_path: str, db_path: str) -> None:
 
     with open(sql_path, 'r') as f:
         sql = [line.strip() for line in f.read().split(';') if line.strip() != '']
+    if from_scratch and os.path.exists(db_path):
+        os.remove(db_path)
     conn: duckdb.DuckDBPyConnection = duckdb.connect(db_path)
     for stmt in sql:
         try:
@@ -158,7 +160,7 @@ def populate_pdf_file_into_database(database_name: str, pdf_path: str, config_pa
         config = json.load(inf)
     if pdf_path.endswith('.jsonl'):
         with open(pdf_path, 'r', encoding='UTF-8') as inf:
-            for line in inf:
+            for line in tqdm.tqdm(inf):
                 json_data = json.loads(line)
                 populator.populate(json_data, config, log=True, on_conflict='replace')
     else: populator.populate(pdf_path, config, log=True, on_conflict='replace')
@@ -175,6 +177,7 @@ if __name__ == '__main__':
     parser.add_argument('--function', type=str, required=True, help='Which function to run.')
     parser.add_argument('--config_path', type=str, help='Path to the config file.')
     parser.add_argument('--pdf_path', type=str, help='Path to the PDF file or JSON line file.')
+    parser.add_argument('--from_scratch', action='store_true', help='Whether to create the empty database from scratch.')
     args = parser.parse_args()
 
     json_path = os.path.join(DATABASE_DIR, args.database, args.database + '.json')

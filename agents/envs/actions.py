@@ -272,7 +272,18 @@ class GenerateSQL(Action):
             return cls(sql=sql)
         elif action_format == 'xml':
             action_text = extract_inner_text(action_text, prefix='<action>', suffix='</action>')
-            action_dict = xmltodict.parse(action_text.strip())['action']
+            try:
+                action_dict = xmltodict.parse(action_text.strip())['action']
+            except:
+                action_type = re.search(r"<action_type>(.*?)</action_type>", action_text.strip())
+                if action_type is None or action_type.group(1).strip() != 'GenerateSQL':
+                    raise MismatchedActionError("Failed to parse GenerateSQL action from the response.")
+                
+                sql = re.search(r"<sql>(.*?)</sql>", action_text.strip())
+                if sql is None:
+                    raise ParseActionError("Failed to parse the SQL query from the response.")
+                return cls(sql=sql.group(1).strip())
+
             if action_dict.get('action_type', '') != 'GenerateSQL':
                 raise MismatchedActionError("Failed to parse GenerateSQL action from the response.")
         
@@ -359,7 +370,18 @@ class GenerateAnswer(Action):
             return cls(answer=answer)
         elif action_format == 'xml':
             action_text = extract_inner_text(action_text, prefix='<action>', suffix='</action>')
-            action_dict = xmltodict.parse(action_text.strip())['action']
+            try:
+                action_dict = xmltodict.parse(action_text.strip())['action']
+            except Exception as e:
+                action_type = re.search(r"<action_type>(.*?)</action_type>", action_text.strip())
+                if action_type is None or action_type.group(1).strip() != 'GenerateAnswer':
+                    raise MismatchedActionError("Failed to parse GenerateAnswer action from the response.")
+                
+                answer = re.search(r"<answer>(.*?)</answer>", action_text.strip())
+                if answer is None:
+                    raise ParseActionError("Failed to parse the final answer from the response.")
+                return cls(answer=answer.group(1).strip())
+
             if action_dict.get('action_type', '') != 'GenerateAnswer':
                 raise MismatchedActionError("Failed to parse GenerateAnswer action from the response.")
 
