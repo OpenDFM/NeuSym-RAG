@@ -1,11 +1,11 @@
 #coding=utf8
 from agents.frameworks.text2sql_rag import Text2SQLRAGAgent
 from agents.frameworks.text2vec_rag import Text2VecRAGAgent
-from agents.frameworks.twostage_text2sql_rag import TwoStageText2SQLRAGAgent
+from agents.frameworks.two_stage_text2sql_rag import TwoStageText2SQLRAGAgent
 
 
 FRAMEWORKS = {
     'text2sql': Text2SQLRAGAgent,
     'text2vec': Text2VecRAGAgent,
-    'twostage_text2sql': TwoStageText2SQLRAGAgent
+    'two_stage_text2sql': TwoStageText2SQLRAGAgent
 }
