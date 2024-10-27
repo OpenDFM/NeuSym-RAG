@@ -83,9 +83,11 @@ The database schema file is structured as: (for better readability and ease of d
 ## CREATE Database
 
 Given the `.json` file, we can invoke function in `utils/database_util.py` to automatically generate the `CREATE` SQL statement and execute it to create the database, and write the corresponding `.sql` CREATE statement and the resulting `.duckdb` file into the same folder.
+- argument `--from_scratch` will delete local database first to avoid any conflict
+
 ```pyhton
-python utils/database_utils.py --database financial_report --function create_db
-python utils/database_utils.py --database biology_paper --function create_db
+python utils/database_utils.py --database financial_report --function create_db --from_scratch
+python utils/database_utils.py --database biology_paper --function create_db --from_scratch
 ```
 
 
@@ -218,10 +220,10 @@ Note that, `deps` indexes the output of `pipeline` functions instead of `aggrega
 > - _Suggestion:_ About the data type transformation between Python and SQL, see official document for [Conversion between Python types and DuckDB data types](https://duckdb.org/docs/api/python/conversion).
 
 
-### Test Case
+### Usage
 
 Take the sample PDF file as an example, this file is parsed and populated into database `test_domain.duckdb` via:
 ```sh
-python utils/database_utils.py --database test_domain --pdf_path data/dataset/test_pdf.pdf --config_path configs/test_domain_config.json --function populate_db
+python utils/database_utils.py --database biology_paper --pdf_path data/dataset/pdfvqa/processed_data/pdf_data.jsonl --config_path configs/biology_paper_config.json --function populate_db
 python utils/database_utils.py --database financial_report --pdf_path data/dataset/tatdqa/processed_data/pdf_data.jsonl --config_path configs/financial_report_config.json --function populate_db
 ```
