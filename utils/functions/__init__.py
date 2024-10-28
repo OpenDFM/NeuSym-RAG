@@ -28,7 +28,10 @@ from .financial_report import (
     aggregate_financial_report_table_metadata,
     aggregate_financial_report_table_pages,
     aggregate_financial_report_table_content,
-    aggregate_financial_report_table_chunks
+    aggregate_financial_report_table_chunks,
+    get_financial_report_per_page_tableinpages,
+    get_financial_report_per_page_tableinpages_uuid,
+    aggregate_financial_report_table_tableinpages
 )
 
 from .test_domain import (
