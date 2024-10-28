@@ -3,6 +3,7 @@ import json, sys, os, re, logging
 from typing import List, Dict, Union, Optional, Any, Iterable
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from utils.functions.common_functions import get_uuid
+import fitz  # PyMuPDF
 
 
 def get_financial_report_per_page_uuid(pdf_data: dict) -> List[str]:
@@ -75,3 +76,93 @@ def aggregate_financial_report_table_chunks(pdf_data: dict, page_ids: List[str],
         for ordinal, chunk in enumerate(chunks[idx]):
             results.append([chunk['uuid'], chunk['text'], ordinal, ref_report_id, page_id])
     return results
+
+
+def get_financial_report_per_page_tableinpages(pdf_data: dict) -> List[dict]:
+    """
+    Process pdf_data to extract tables using pymupdf.
+    Output:
+        [ { "page_number": int, "table_md": str } ]
+    """
+    table_data = []
+    pdf_path=pdf_data['pdf_path']
+    
+    doc = fitz.open(pdf_path)
+
+    for page_info in pdf_data['page_infos']:
+        page_number = page_info['page_number']
+        
+        # extract tables in this page
+        page = doc[page_number-1] #starting from 0
+        tables = page.find_tables()
+        tables_thispage=[table.to_markdown() for table in tables]
+        
+
+        if not tables_thispage:
+            continue #skip page without tables
+
+        # Process each table on the page
+        for table in tables_thispage:
+        
+        
+            # Add the result to the output
+            table_data.append({
+                "page_number": page_number,
+                "table_md": table
+            })
+
+    doc.close()
+    return table_data
+
+
+def get_financial_report_per_page_tableinpages_uuid(pdf_data: dict, table_data: List[dict]) -> List[List[str]]:
+    """
+    Generate unique UUIDs for tables in each page.
+    Output:
+        [ [table_uuid1_page1, table_uuid2_page1, ...], [table_uuid1_page2, ...], ... ]
+    """
+    results = []
+    
+    for page_info in pdf_data['page_infos']:
+        page_number = page_info['page_number']
+        tables_in_page = [table for table in table_data if table['page_number'] == page_number]
+        
+        # Generate UUIDs only for tables in the current page
+        table_uuids = [
+            get_uuid(f"{pdf_data['pdf_id']}_page_{page_number}_table_{idx}") 
+            for idx, table in enumerate(tables_in_page)
+        ]
+        
+        results.append(table_uuids)
+    
+    return results
+
+
+
+
+def aggregate_financial_report_table_tableinpages(pdf_data: dict, table_data: List[dict], page_ids: List[str], table_ids: List[List[str]]) -> List[Any]:
+    """ 
+    Aggregate table data from multiple pages.
+    Output:
+        [ [ table_id, table_content,  table_ordinal, ref_paper_id, ref_page_id ] ]
+    """
+    results = []
+    ref_paper_id = pdf_data['pdf_id']  # The reference paper ID from the PDF data
+
+    for page_idx, (page_info, page_id) in enumerate(zip(pdf_data['page_infos'], page_ids)):
+        page_number = page_info['page_number']
+        tables_in_page = [table for table in table_data if table['page_number'] == page_number]
+
+        if not tables_in_page:
+            continue  # Skip if there are no tables in the current page
+
+        for table_idx, table in enumerate(tables_in_page):
+            table_id = table_ids[page_idx][table_idx]  # Use pre-generated table UUID from get_financial_report_per_page_tableinpages_uuid
+            table_content = table["table_md"]
+            ordinal = table_idx  # The order of the table on the page
+
+            # Append the result for the current table
+            results.append([table_id, table_content, ordinal, ref_paper_id, page_id])
+
+    return results
+
