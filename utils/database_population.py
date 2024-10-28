@@ -136,6 +136,8 @@ class  DatabasePopulation():
 
             values = func_method(*position_args, **keyword_args)
             columns = func_dict.get('columns', []) # if not provided, insert all columns of the current table in the database
+            if not values:
+                continue
             insert_sql = self.insert_values_to_database(table_name, values, columns, on_conflict=on_conflict)
 
             if log: # write SQL into log file
@@ -187,7 +189,8 @@ class  DatabasePopulation():
             columns = self.database_schema.table2column(table_name)
         elif type(columns[0]) == int:
             columns = [self.database_schema.id2column(col) for col in columns]
-        self._validate_arguments(table_name, columns, values)
+        if values:
+            self._validate_arguments(table_name, columns, values)
 
         # note that, the insertion of values must strictly follow the order of the columns
         column_str = ', '.join(columns)
