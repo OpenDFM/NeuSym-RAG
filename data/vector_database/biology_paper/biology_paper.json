@@ -1,0 +1,39 @@
+{
+    "database_name": "biology_paper_vector_database",
+    "description": "This database contains the embedded vectors and some other related attributes for the `biology_paper` database.",
+    "database_schema": [
+        {
+            "collection": {
+                "collection_name": "chunks_text_content",
+                "description": "This table stores the embedded vector of the `text_content` column for each row in the `biology_paper.chunks` table."
+            },
+            "fields": [
+                {
+                    "field_name": "id",
+                    "column_type": "INT64",
+                    "description": "A unique identifier for each vector."
+                },
+                {
+                    "field_name": "vector",
+                    "column_type": "FLOAT_VECTOR",
+                    "description": "The embedded vector of the `biology_paper.chunks.text_content` column.",
+                    "dimension": 768
+                },
+                {
+                    "field_name": "chunk_id",
+                    "column_type": "UUID",
+                    "description": "The row ID in the original `biology_paper.chunks` table."
+                }
+            ],
+            "primary_keys": [
+                "id"
+            ],
+            "foreign_keys": [
+                [
+                    "chunk_id",
+                    "biology_paper.chunks.chunk_id"
+                ]
+            ]
+        }
+    ]
+}

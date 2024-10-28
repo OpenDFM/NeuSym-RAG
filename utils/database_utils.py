@@ -1,6 +1,7 @@
 #coding=utf8
 import json, sys, os, re, logging
 import duckdb, tqdm
+from pymilvus import MilvusClient
 from typing import List, Dict, Union, Optional, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -17,6 +18,7 @@ logger.setLevel(logging.INFO)
 
 
 DATABASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'database')
+VECTOR_DATABASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'vector_database')
 
 FEASIBLE_DATA_TYPES = ['INTEGER', 'BOOLEAN', 'BOOL', 'FLOAT', 'REAL', 'DOUBLE', 'UUID', 'VARCHAR', 'CHAR', 'TEXT', 'STRING', 'TIMESTAMPTZ', 'DATE', 'TIME', 'TIMESTAMP', 'DATETIME', 'MAP', 'STRUCT', 'UNION']
 
@@ -128,6 +130,8 @@ def create_database_from_sql(sql_path: str, db_path: str, from_scratch: bool = T
     """ Create the database from the SQL file.
     @param:
         sql_path: str, path to the SQL file
+        db_path: str, path to the database file
+        from_scratch: remove the existed database file or not
     """
     if not os.path.exists(sql_path):
         raise FileNotFoundError(f"File {sql_path} not found.")
@@ -143,6 +147,34 @@ def create_database_from_sql(sql_path: str, db_path: str, from_scratch: bool = T
         except Exception as e:
             logger.error(f"Error in executing SQL statement: {stmt}\n{e}")
     conn.close()
+    return
+
+
+def create_vector_database_from_json(json_path: str, db_path: str, from_scratch: bool = True) -> None:
+    """ Create the vector database from the JSON file.
+    @param:
+        json_path: str, path to the JSON file
+        db_path: str, path to the database file
+        from_scratch: remove the existed database file or not
+    """
+    if not os.path.exists(json_path):
+        raise FileNotFoundError(f"File {json_path} not found.")
+
+    with open(json_path, 'r') as f:
+        schema = json.load(f)
+    if from_scratch and os.path.exists(db_path):
+        os.remove(db_path)
+    client = MilvusClient(db_path)
+    for collection in schema['database_schema']:
+        collection_name = collection['collection']['collection_name']
+        if not client.has_collection(collection_name=collection_name):
+            for field in collection['fields']:
+                if field['field_name'] == 'vector':
+                    client.create_collection(collection_name=collection_name, dimension=field['dimension'])
+                    break
+            else:
+                logger.error(f"Error in finding the vector field for the collection: {collection_name}")
+    client.close()
     return
 
 
@@ -183,9 +215,13 @@ if __name__ == '__main__':
     json_path = os.path.join(DATABASE_DIR, args.database, args.database + '.json')
     sql_path = os.path.join(DATABASE_DIR, args.database, args.database + '.sql')
     db_path = os.path.join(DATABASE_DIR, args.database, args.database + '.duckdb')
+    vector_json_path = os.path.join(VECTOR_DATABASE_DIR, args.database, args.database + '.json')
+    vector_db_path = os.path.join(VECTOR_DATABASE_DIR, args.database, args.database + '.db')
     if args.function == 'create_db':
         convert_json_to_create_sql(json_path, sql_path)
         create_database_from_sql(sql_path, db_path)
+    elif args.function == 'create_vector_db':
+        create_vector_database_from_json(vector_json_path, vector_db_path)
     elif args.function == 'populate_db':
         populate_pdf_file_into_database(args.database, args.pdf_path, args.config_path)
     else:
