@@ -62,7 +62,8 @@
                 {
                     "column_name": "page_content",
                     "column_type": "VARCHAR",
-                    "description": "The full text content of the current page, including all main texts, section titles, references, tables, and figures."
+                    "description": "The full text content of the current page, including all main texts, section titles, references, tables, and figures.",
+                    "encodable": true
                 },
                 {
                     "column_name": "ref_paper_id",
@@ -121,7 +122,8 @@
                 {
                     "column_name": "text_content",
                     "column_type": "VARCHAR",
-                    "description": "The text content of the current element."
+                    "description": "The text content of the current element.",
+                    "encodable": true
                 },
                 {
                     "column_name": "bounding_box",
@@ -168,7 +170,7 @@
         {
             "table": {
                 "table_name": "chunks",
-                "description": "This table contains the text content of each chunk of text in each page in one biology paper. A chunk is a sub-text that is extracted from the main text, such as a sentence or a paragraph."
+                "description": "This table contains the text content of each chunk of text (chunk size = 512 tokens with no overlapping) in each page in one biology paper. A chunk is a sub-text that is extracted from the main text, such as a sentence or a paragraph."
             },
             "columns": [
                 {
@@ -179,7 +181,8 @@
                 {
                     "column_name": "text_content",
                     "column_type": "VARCHAR",
-                    "description": "The text content of the current chunk."
+                    "description": "The text content of the current chunk.",
+                    "encodable": true
                 },
                 {
                     "column_name": "ordinal",

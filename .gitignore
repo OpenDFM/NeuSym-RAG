@@ -23,11 +23,13 @@ __pycache__
 */*/*/*/.DS_Store
 */*/*/*/*/.DS_Store
 
-# ignore .duckdb files
+# ignore duckdb files
 data/database/*/*.duckdb
 
-# ignore .milvus files
-data/vector_database/*/*.db
+# ignore vectorstore files
+data/vectorstore/*/*.db
+data/vectorstore/milvus/*
+!data/vectorstore/milvus/.gitkeep
 
 # raw dataset
 data/dataset/*/raw_data/*

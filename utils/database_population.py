@@ -2,7 +2,7 @@
 import duckdb, logging, json, sys, os
 from datetime import datetime
 from collections.abc import Iterable
-from typing import List, Dict, Any, Union, Optional
+from typing import List, Tuple, Dict, Any, Union, Optional
 from utils.database_schema import DatabaseSchema
 from utils.database_utils import DATABASE_DIR
 from utils import functions
@@ -217,7 +217,7 @@ class  DatabasePopulation():
         pass
 
 
-    def execute_sql_statement(self, sql: str) -> None:
+    def execute_sql_statement(self, sql: str, return_value: bool = True) -> Optional[List[Tuple[Any]]]:
         """ Execute the SQL statement.
         @param:
             sql: str, SQL statement
@@ -226,7 +226,8 @@ class  DatabasePopulation():
             for stmt in sql.split(';'):
                 if stmt.strip() == '':
                     continue
-                self.database_conn.sql(stmt)
+                result = self.database_conn.sql(stmt)
+                values = result.fetchall() if return_value else None
         except Exception as e:
             logger.error(f"Error in executing SQL statement: {stmt}\n{e}")
-        return
+        return values

@@ -57,7 +57,8 @@
                 {
                     "column_name": "page_content",
                     "column_type": "VARCHAR",
-                    "description": "The content of the page."
+                    "description": "The content of the page.",
+                    "encodable": true
                 },
                 {
                     "column_name": "ref_report_id",
@@ -90,7 +91,8 @@
                 {
                     "column_name": "text_content",
                     "column_type": "VARCHAR",
-                    "description": "The text content of the current element."
+                    "description": "The text content of the current element.",
+                    "encodable": true
                 },
                 {
                     "column_name": "bounding_box",
@@ -132,7 +134,7 @@
         {
             "table": {
                 "table_name": "chunks",
-                "description": "This table contains the text content of each chunk of text in each page in one financial report. A chunk is a sub-text that is extracted from the main text, such as a sentence or a paragraph."
+                "description": "This table contains the text content of each chunk of text (chunk size = 512 tokens with no overlapping) in each page in one financial report. A chunk is a sub-text that is extracted from the main text, such as a sentence or a paragraph."
             },
             "columns": [
                 {
@@ -143,7 +145,8 @@
                 {
                     "column_name": "text_content",
                     "column_type": "VARCHAR",
-                    "description": "The text content of the current chunk."
+                    "description": "The text content of the current chunk.",
+                    "encodable": true
                 },
                 {
                     "column_name": "ordinal",
@@ -191,7 +194,8 @@
                 {
                     "column_name": "table_content",
                     "column_type": "VARCHAR",
-                    "description": "The content of the table in markdown format."
+                    "description": "The content of the table in markdown format.",
+                    "encodable": true
                 },
                 {
                     "column_name": "ordinal",
