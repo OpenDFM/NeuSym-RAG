@@ -7,6 +7,7 @@ from dataclasses import dataclass, field
 from typing import Optional, List, Tuple, Dict, Union, Any
 from abc import ABC, abstractmethod
 from func_timeout import func_set_timeout, FunctionTimedOut
+from agents.envs.observation import Observation
 
 
 ACTIONS_FILE = os.path.join(os.path.dirname(__file__), 'actions.json')
@@ -39,15 +40,15 @@ class Action(ABC):
 
     thought: Optional[str] = None # reasoning process for popular agent frameworks like ReAct
     observation_format_kwargs: Dict[str, Any] = field(default_factory=dict) # default keyword arguments for observation formatting
-    observation: Optional[str] = None # observation string for the action
+    observation: Optional[Observation] = None # observation for the action
 
     @property
     def done(self) -> bool:
         return False
 
     @abstractmethod
-    def execute(self, env: gym.Env, **format_kwargs) -> str:
-        """ Execute the action in the environment and return the observation string.
+    def execute(self, env: gym.Env, **format_kwargs) -> Observation:
+        """ Execute the action in the environment and return the observation.
         """
         pass
 
@@ -163,8 +164,8 @@ class GenerateSQL(Action):
         "max_timeout": 600 # the maximum timeout for the SQL execution is 10 minutes
     }) # keyword arguments for SQL execution formatting
 
-    def execute(self, env: gym.Env, **kwargs) -> str:
-        """ Execute the SQL query in the environment and return the formatted observation string.
+    def execute(self, env: gym.Env, **kwargs) -> Observation:
+        """ Execute the SQL query in the environment and return the formatted observation.
         For different output formats, see the following references:
             1. pandas.DataFrame.to_markdown(): https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_markdown.html
             2. pandas.DataFrame.to_string(): https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html
@@ -206,12 +207,11 @@ class GenerateSQL(Action):
         try:
             max_timeout = output_kwargs.pop('max_timeout', 600)
             msg = output_formatter(self.sql, output_kwargs, forceTimeout=max_timeout)
-            return msg
         except FunctionTimedOut as e:
             msg = f"[TimeoutError]: The SQL execution is TIMEOUT given maximum {max_timeout} seconds."
         except Exception as e:
             msg = f"[Error]: {str(e)}"
-        return msg
+        return Observation(msg)
 
 
     def serialize(self, action_format = 'markdown') -> str:
@@ -307,10 +307,10 @@ class GenerateAnswer(Action):
 
     answer: str = '' # final answer, required
 
-    def execute(self, env: gym.Env, **kwargs) -> str:
-        """ Return the final answer as the observation string.
+    def execute(self, env: gym.Env, **kwargs) -> Observation:
+        """ Return the final answer as the observation.
         """
-        return self.answer
+        return Observation(self.answer)
 
 
     def serialize(self, action_format = 'markdown') -> str:

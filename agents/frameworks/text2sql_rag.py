@@ -64,8 +64,10 @@ class Text2SQLRAGAgent(AgentBase):
                 action_str = action.serialize(self.env.action_format)
                 logger.info(action_str)
 
-            observation_str = f'[Observation]:\n{obs}' if '\n' in str(obs) else f'[Observation]: {obs}'
-            logger.info(observation_str)
+            obs_msg = obs.convert_to_message()
+            for obs_msg_content_item in obs_msg['content']:
+                if obs_msg_content_item['type'] == 'text':
+                    logger.info(obs_msg_content_item['text'])
 
             if flag: # whether task is completed
                 cost = self.model.get_cost() - prev_cost
@@ -74,8 +76,8 @@ class Text2SQLRAGAgent(AgentBase):
 
             # update history messages
             messages.append({'role': 'assistant', 'content': action_str})
-            messages.append({'role': 'user', 'content': observation_str})
+            messages.append(obs_msg)
         else:
             cost = self.model.get_cost() - prev_cost
             logger.info(f'[Warning]: exceeds the maximum interaction turn {self.max_turn}, cost ${cost:.6f}.')
-        return obs
+        return obs.obs_content

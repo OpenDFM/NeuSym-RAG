@@ -1,8 +1,9 @@
 #coding=utf8
 from abc import ABC, abstractmethod
-from typing import List, Dict, Any, Union
+from typing import List, Dict, Any, Union, Tuple
 import gymnasium as gym
 from agents.envs.actions import Action
+from agents.envs.observation import Observation
 from functools import cached_property
 
 
@@ -16,12 +17,12 @@ class AgentEnv(gym.Env, ABC):
         self.parsed_actions: List[Action] = []
 
 
-    def step(self, action: Union[str, Action]) -> str:
+    def step(self, action: Union[str, Action]) -> Tuple[Observation, int, bool, Dict]:
         """ Execute the SQL query with the database env, get the result or error message and return it.
         @param:
             action: Union[str, Action], either raw LLM string or an Action object
         @return:
-            observations: string of formatted SQL exec result or error message
+            observation: Observation, the execution result or error message
             reward: int, default is 0 (not used)
             done: bool, whether the task is completed
             info: Dict, additional (not used)
