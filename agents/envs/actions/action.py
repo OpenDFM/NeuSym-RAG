@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from dataclasses import dataclass, field, fields
 from typing import Optional, List, Tuple, Dict, Union, Any
 from abc import ABC, abstractmethod
+from agents.envs.actions.observation import Observation
 
 
 ACTIONS_FILE = os.path.join(os.path.dirname(__file__), 'actions.json')
@@ -49,7 +50,7 @@ class Action(ABC):
 
     thought: str = field(default='', repr=False) # reasoning process for popular agent frameworks like ReAct
     observation_format_kwargs: Dict[str, Any] = field(default_factory=dict, repr=False) # default keyword arguments for observation formatting
-    observation: str = field(default='', repr=False) # observation string for the action
+    observation: Optional[Observation] = field(default=None, repr=False) # observation string for the action
 
     @property
     def done(self) -> bool:
@@ -60,7 +61,7 @@ class Action(ABC):
         return 'text'
 
     @abstractmethod
-    def execute(self, env: gym.Env, **format_kwargs) -> str:
+    def execute(self, env: gym.Env, **format_kwargs) -> Observation:
         """ Execute the action in the environment and return the observation string.
         """
         pass
@@ -256,9 +257,9 @@ class Action(ABC):
             raise ValueError(f"Action format {action_format} not supported for {class_name} yet.")
 
 
-    def serialize(self, action_format: str = 'markdown') -> str:
-        """ Serialize the action into a string according to the specified format.
-        This serialized action is usually used to log the interaction history message.
+    def convert_to_message(self, action_format: str = 'markdown') -> Dict[str, str]:
+        """ Convert the Action object into a message according to the specified format.
+        This message is used to record the interaction history.
         """
         action_str = ''
         if hasattr(self, 'thought') and self.thought is not None:
@@ -293,4 +294,4 @@ class Action(ABC):
                 action_str = action_str.split("?>", 1)[1].strip()
         else:
             raise ValueError(f"Action format {action_format} not supported for {cls_name}.")
-        return action_str
+        return {'role': 'assistant', 'content': action_str}

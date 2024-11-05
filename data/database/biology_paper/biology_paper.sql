@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS content (
 	FOREIGN KEY (ref_paper_id) REFERENCES metadata(paper_id),
 	FOREIGN KEY (ref_page_id) REFERENCES pages(page_id)
 );
-/* table chunks: This table contains the text content of each chunk of text in each page in one biology paper. A chunk is a sub-text that is extracted from the main text, such as a sentence or a paragraph.
+/* table chunks: This table contains the text content of each chunk of text (chunk size = 512 tokens with no overlapping) in each page in one biology paper. A chunk is a sub-text that is extracted from the main text, such as a sentence or a paragraph.
 */
 CREATE TABLE IF NOT EXISTS chunks (
 	chunk_id UUID, -- A unique identifier for each chunk of text.

@@ -53,19 +53,25 @@ class Text2SQLRAGAgent(AgentBase):
             logger.info(f'[Interaction Turn]: {turn + 1}')
 
             response = self.model.get_response(current_messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
-            logger.info(f'[Response]: {response}')
+            logger.debug(f'[Response]: {response}')
 
             obs, reward, flag, info = self.env.step(response)
             if info.get('parse_error', True):
-                action_str = f"[Action]: failed to parse action from \"{response}\""
+                action_msg = {'role': 'assistant', 'content': f"[Action]: failed to parse action from \"{response}\""}
                 logger.info(f'[ActionError]: failed to parse the Action from LLM response.')
             else:
                 action = self.env.parsed_actions[-1]
-                action_str = action.serialize(self.env.action_format)
-                logger.info(action_str)
+                action_msg = action.convert_to_message(self.env.action_format)
+                logger.info(action_msg['content'])
 
-            observation_str = f'[Observation]:\n{obs}' if '\n' in str(obs) else f'[Observation]: {obs}'
-            logger.info(observation_str)
+            obs_msg = obs.convert_to_message()
+            if action.observation_type != 'text':
+                for obs_msg_content_item in obs_msg['content']:
+                    if obs_msg_content_item['type'] == 'text':
+                        logger.info(obs_msg_content_item['text'])
+            else:
+                logger.info(obs_msg['content'])
+
 
             if flag: # whether task is completed
                 cost = self.model.get_cost() - prev_cost
@@ -73,9 +79,9 @@ class Text2SQLRAGAgent(AgentBase):
                 break
 
             # update history messages
-            messages.append({'role': 'assistant', 'content': action_str})
-            messages.append({'role': 'user', 'content': observation_str})
+            messages.append(action_msg)
+            messages.append(obs_msg)
         else:
             cost = self.model.get_cost() - prev_cost
             logger.info(f'[Warning]: exceeds the maximum interaction turn {self.max_turn}, cost ${cost:.6f}.')
-        return obs
+        return obs.obs_content

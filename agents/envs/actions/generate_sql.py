@@ -1,5 +1,6 @@
 #coding=utf8
 from agents.envs.actions.action import Action
+from agents.envs.actions.observation import Observation
 from dataclasses import dataclass, field
 import duckdb
 import pandas as pd
@@ -22,8 +23,8 @@ class GenerateSQL(Action):
         "max_timeout": 600 # the maximum timeout for the SQL execution is 10 minutes
     }, repr=False) # keyword arguments for SQL execution formatting
 
-    def execute(self, env: gym.Env, **kwargs) -> str:
-        """ Execute the SQL query in the environment and return the formatted observation string.
+    def execute(self, env: gym.Env, **kwargs) -> Observation:
+        """ Execute the SQL query in the environment and return the formatted Observation object.
         For different output formats, see the following references:
             1. pandas.DataFrame.to_markdown(): https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_markdown.html
             2. pandas.DataFrame.to_string(): https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html
@@ -65,9 +66,8 @@ class GenerateSQL(Action):
         try:
             max_timeout = output_kwargs.pop('max_timeout', 600)
             msg = output_formatter(self.sql, output_kwargs, forceTimeout=max_timeout)
-            return msg
         except FunctionTimedOut as e:
             msg = f"[TimeoutError]: The SQL execution is TIMEOUT given maximum {max_timeout} seconds."
         except Exception as e:
             msg = f"[Error]: {str(e)}"
-        return msg
+        return Observation(msg)
