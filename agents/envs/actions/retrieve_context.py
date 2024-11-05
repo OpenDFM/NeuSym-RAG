@@ -26,14 +26,14 @@ class RetrieveContext(Action):
             try:
                 self.limit = int(str(self.limit))
             except:
-                return "[Error]: Parameter `limit` should be an integer."
+                return "[Error]: Value of parameter `limit` should be an integer."
         is_valid_output_fields = lambda x: type(x) == list and all([type(field) == str for field in x])
         if not is_valid_output_fields(self.output_fields):
             try:
                 self.output_fields = eval(str(self.output_fields))
                 assert is_valid_output_fields(self.output_fields)
             except:
-                return "[Error]: Parameter `output_fields` should be a list of strings."
+                return "[Error]: Value of parameter `output_fields` should be a list of strings."
 
         vs_conn: MilvusClient = env.vectorstore_conn
         if not vs_conn:

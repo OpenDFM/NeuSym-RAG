@@ -1,6 +1,6 @@
 #coding=utf8
 import re, json, os, ast
-import xmltodict
+import xmltodict, yaml
 import gymnasium as gym
 from bs4 import BeautifulSoup
 from dataclasses import dataclass, field, fields
@@ -23,7 +23,7 @@ class MismatchedActionError(ValueError):
     pass
 
 
-ACTION_FORMATS = ['markdown', 'json', 'xml'] # allowable action formats
+ACTION_FORMATS = ['markdown', 'json', 'xml', 'yaml'] # allowable action formats
 
 
 def extract_inner_text(text: str, prefix: str = '{', suffix: str = '}') -> str:
@@ -31,10 +31,10 @@ def extract_inner_text(text: str, prefix: str = '{', suffix: str = '}') -> str:
     """
     if prefix not in text or suffix not in text:
         return text
-    start = text.index(prefix)
-    end = text.rindex(suffix)
-    json_text = text[start: end + len(suffix)]
-    return json_text
+    start = text.index(prefix) if prefix != '' else 0
+    end = text.rindex(suffix) if suffix != '' else len(text)
+    inner_text = text[start: end + len(suffix)]
+    return inner_text
 
 
 def soup_to_dict(element):
@@ -69,7 +69,7 @@ class Action(ABC):
 
 
     @classmethod
-    def specification(cls, action_format: str = 'markdown') -> str:
+    def specification(cls, action_format: str = 'json') -> str:
         """ Return a human-readable specification of the action according to the argument `action_format`.
         This specification is usually inserted into the action space of the system prompt. The checklist of all actions is defined in file `actions.json`, each as a json dict like the following example: (will be automatically converted into the specified `action_format`)
         {
@@ -115,6 +115,8 @@ class Action(ABC):
             syntax = xmltodict.unparse({'action': {'action_type': action_type, 'parameters': parameters}}, pretty=True, indent=4, encoding='utf-8')
             if syntax.startswith("<?xml"): # ignore the first line of <?xml>
                 syntax = syntax.split("?>", 1)[1].strip()
+        elif action_format == 'yaml':
+            syntax = yaml.dump({'action_type': action_type, 'parameters': parameters}, default_flow_style=False, allow_unicode=True, sort_keys=False, indent=4)
         else:
             raise ValueError(f"Action format {action_format} not supported yet.")
 
@@ -129,6 +131,8 @@ class Action(ABC):
                 action_str = xmltodict.unparse({'action': {'action_type': action_type, 'parameters': case['example']}}, encoding='utf-8')
                 if action_str.startswith("<?xml"):
                     action_str = action_str.split("?>", 1)[1].strip()
+            elif action_format == 'yaml':
+                action_str = '\n' + yaml.dump({'action_type': action_type, 'parameters': case['example']}, default_flow_style=False, allow_unicode=True, sort_keys=False, indent=4) + '\n'
             else:
                 raise ValueError(f"Action format {action_format} not supported yet.")
             action = f"[Action]: {action_str}"
@@ -146,7 +150,7 @@ class Action(ABC):
 ### Observation
 {observation}
 
-### Syntax and Parameters
+### Syntax and Parameters ({action_format.upper()} Format)
 {syntax}
 
 ### Use Cases
@@ -156,7 +160,7 @@ class Action(ABC):
 
 
     @classmethod
-    def get_action_space_prompt(cls, action_types: List[type], action_format: str = 'markdown') -> str:
+    def get_action_space_prompt(cls, action_types: List[type], action_format: str = 'json') -> str:
         """ Return the entire action space prompt for all given action types (using function `_specification`) based on the `action_format`.
         """
         assert action_format in ACTION_FORMATS, f"Action format {action_format} not supported."
@@ -169,7 +173,7 @@ class Action(ABC):
 
 
     @classmethod
-    def parse_action(cls, text: str, action_types: List[type], action_format: str = 'markdown') -> Tuple[bool, 'Action']:
+    def parse_action(cls, text: str, action_types: List[type], action_format: str = 'json') -> Tuple[bool, 'Action']:
         """ Parse the raw LLM response text into one concrete Action object based on the allowable action types and the specified action `format`.
         For a unified perspective, note that each action should be wrapped in (`Thought` is optional)
             [Thought]: ...
@@ -190,6 +194,8 @@ class Action(ABC):
             action_text = text.strip() # sometimes no "[Action]:" prefix, directly use the whole text
             # return False, "[Error]: Failed to parse the action text from the response."
 
+        from .error_action import ErrorAction
+
         action_names = [action_cls.__name__ for action_cls in action_types]
         for action_cls in action_types:
             try:
@@ -197,7 +203,6 @@ class Action(ABC):
                 action_obj.thought = thought # add thought to the action object
                 return True, action_obj
             except ParseActionError as e: # failed to parse the action structure, e.g., json, xml, etc.
-                from .error_action import ErrorAction
                 return False, ErrorAction(response=text, error=str(e))
             except ParseParametersError as e: # failed to parse the action parameters for a specific action
                 return False, ErrorAction(response=text, error=str(e))
@@ -205,11 +210,11 @@ class Action(ABC):
                 # continue # try next action type
             except Exception as e:
                 continue # try next action type
-        return False, ErrorAction(response=text, error=f"[Error]: Failed to parse a valid action from the response. Please check the specification for these actions {str(action_names)}.")
+        return False, ErrorAction(response=text, error=f"Failed to parse a valid action from the response. Please check the specification for these actions {str(action_names)}.")
 
 
     @classmethod
-    def _parse(cls, action_text: str, action_format: str = 'markdown') -> 'Action':
+    def _parse(cls, action_text: str, action_format: str = 'json') -> 'Action':
         """ Parse the action text into the concrete Action object based on the specified `action_format`.
         """
         class_name = cls.__name__
@@ -228,21 +233,21 @@ class Action(ABC):
                     keyword_args[kwarg.arg] = ast.literal_eval(kwarg.value)
                 return cls(*positional_args, **keyword_args)
             except Exception as e:
-                raise ParseParametersError(f"Failed to parse the parameters for action {class_name} from the response.")
+                raise ParseParametersError(f"Failed to parse the parameters for action {class_name} from the response. {str(e)}.")
 
         elif action_format == 'json':
             action_text = extract_inner_text(action_text, prefix='{', suffix='}')
             try:
                 action_dict: dict = json.loads(action_text.strip())
             except Exception as e:
-                raise ParseActionError(f"Failed to parse a valid JSON dict from the response.")
+                raise ParseActionError(f"Failed to parse a valid JSON dict from the response. {str(e)}.")
 
             if action_dict.get('action_type', '') != class_name:
                 raise MismatchedActionError(f"The current response does not match {class_name} action.")
             try:
                 return cls(**action_dict['parameters'])
             except Exception as e:
-                raise ParseParametersError(f"Failed to parse the parameters for action {class_name} from the response.")
+                raise ParseParametersError(f"Failed to parse the parameters for action {class_name} from the response. {str(e)}.")
 
         elif action_format == 'xml':
             action_text = extract_inner_text(action_text, prefix='<action>', suffix='</action>')
@@ -254,19 +259,32 @@ class Action(ABC):
                 # [Deprecated]: xmltodict.parse often with bugs
                 # action_dict = xmltodict.parse(action_text.strip())['action']
             except Exception as e:
-                raise ParseActionError(f"Failed to parse a valid XML object from the response.")
+                raise ParseActionError(f"Failed to parse a valid XML object from the response. {str(e)}.")
 
             if action_dict.get('action_type', '') != class_name:
                 raise MismatchedActionError(f"The current response does not match {class_name} action.")
             try:
                 return cls(**action_dict['parameters'])
             except Exception as e:
-                raise ParseParametersError(f"Failed to parse the parameters for action {class_name} from the response.")
+                raise ParseParametersError(f"Failed to parse the parameters for action {class_name} from the response. {str(e)}.")
+        
+        elif action_format == 'yaml':
+            action_text = extract_inner_text(action_text, prefix='action_type:', suffix='')
+            try:
+                action_dict: dict = yaml.safe_load(action_text.strip())
+            except Exception as e:
+                raise ParseActionError(f"Failed to parse a valid YAML object from the response. {str(e)}.")
+            if action_dict.get('action_type', '') != class_name:
+                raise MismatchedActionError(f"The current response does not match {class_name} action.")
+            try:
+                return cls(**action_dict['parameters'])
+            except Exception as e:
+                raise ParseParametersError(f"Failed to parse the parameters for action {class_name} from the response. {str(e)}.")
         else:
             raise ValueError(f"Action format {action_format} not supported for {class_name} action yet.")
 
 
-    def convert_to_message(self, action_format: str = 'markdown') -> Dict[str, str]:
+    def convert_to_message(self, action_format: str = 'json') -> Dict[str, str]:
         """ Convert the Action object into a message according to the specified format.
         This message is used to record the interaction history.
         """
@@ -301,6 +319,16 @@ class Action(ABC):
             action_str = xmltodict.unparse(json_dict, pretty=True, indent=4, encoding='utf-8')
             if action_str.startswith("<?xml"): # ignore the first line of <?xml>
                 action_str = action_str.split("?>", 1)[1].strip()
+        elif action_format == 'yaml':
+            json_dict = {
+                "action_type": cls_name,
+                "parameters": {
+                    field.name: getattr(self, field.name)
+                    for field in fields(cls_type)
+                    if field.repr
+                }
+            }
+            action_str = '\n' + yaml.dump(json_dict, default_flow_style=False, allow_unicode=True, sort_keys=False, indent=4)
         else:
             raise ValueError(f"Action format {action_format} not supported for {cls_name}.")
         return {'role': 'assistant', 'content': action_str}

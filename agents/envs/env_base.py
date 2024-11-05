@@ -11,7 +11,7 @@ class AgentEnv(gym.Env, ABC):
 
     action_space: List[Type] = []
 
-    def __init__(self, *args, action_format: str = 'markdown', action_space: Optional[List[Type]] = None) -> None:
+    def __init__(self, *args, action_format: str = 'json', action_space: Optional[List[Type]] = None) -> None:
         super(AgentEnv, self).__init__()
         self.action_format: str = action_format
         cls_space = self.__class__.action_space
