@@ -15,10 +15,6 @@ class TwoStageText2SQLRAGAgent(AgentBase):
     def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'two_stage_text2sql', max_turn: int = 2) -> None:
         super(TwoStageText2SQLRAGAgent, self).__init__(model, env, agent_method, max_turn)
 
-    def close(self):
-        self.env.close()
-        self.model.close()
-
 
     def interact(self,
                  question: str,
@@ -66,4 +62,7 @@ class TwoStageText2SQLRAGAgent(AgentBase):
         matched = re.search(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
         answer = '' if matched is None else matched.group(2).strip()
         logger.info(f'[Answer]: {answer}')
+        
+        cost = self.model.get_cost() - prev_cost
+        logger.info(f'[Info]: LLM API call costs ${cost:.6f}.')
         return answer
