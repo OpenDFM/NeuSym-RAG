@@ -1,6 +1,6 @@
 #coding=utf8
 from abc import ABC, abstractmethod
-from typing import List, Dict, Any, Union
+from typing import List, Dict, Any, Union, Optional, Type
 import gymnasium as gym
 from agents.envs.actions import Action
 from functools import cached_property
@@ -8,12 +8,30 @@ from functools import cached_property
 
 class AgentEnv(gym.Env, ABC):
 
-    action_space: List[type] = []
+    action_space: List[Type] = []
 
-    def __init__(self, action_format: str = 'markdown') -> None:
-        super().__init__()
+    def __init__(self, *args, action_format: str = 'markdown', action_space: Optional[List[Type]] = None) -> None:
+        super(AgentEnv, self).__init__()
         self.action_format: str = action_format
+        cls_space = self.__class__.action_space
+        if action_space is not None and len(action_space) > 0:
+            if all([t in cls_space for t in action_space]):
+                cls_space = action_space
         self.parsed_actions: List[Action] = []
+
+
+    def reset(self) -> None:
+        """ Reset the environment.
+        """
+        self.parsed_actions = []
+        return
+
+
+    def close(self) -> None:
+        """ Close the environment.
+        """
+        self.parsed_actions = []
+        return
 
 
     def step(self, action: Union[str, Action]) -> str:

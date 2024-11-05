@@ -11,7 +11,7 @@
                 "is_primary": false, // bool, optional field, whether is the primary key, default is `false`. Note that, if `is_primary=true`, we set `auto_id=true` if dtype == INT else `false` automatically according to the field type.
                 "dim": 384, // int, request field for VECTOR field type, not used for other field types
                 "max_length": 65535, // int, optional field, only used for VARCHAR field type, by default is 65535
-            } // more field dict can be added to the fields array
+            } // more field dict can be added to the fields array. Note that, these 3 fields must exist: id, vector, text.
         ], // required field, the fields of the collection schema
         "indexes": [
             {

@@ -21,7 +21,7 @@ logger.addHandler(handler)
 logger.setLevel(logging.INFO)
 
 
-def get_milvus_embedding_function(embed_type: str = 'sentence_transformers', embed_model: str = 'all-MiniLM-L6-v2') -> BaseEmbeddingFunction:
+def get_milvus_embedding_function(embed_type: str = 'sentence_transformers', embed_model: str = 'all-MiniLM-L6-v2', backup_json: str = None) -> BaseEmbeddingFunction:
     """ Note that, we only support open-source embedding models w/o the need of API keys.
     """
     device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
@@ -64,6 +64,16 @@ def get_milvus_embedding_function(embed_type: str = 'sentence_transformers', emb
         embed_func = BM25EmbeddingFunction(analyzer=en_analyzer)
         # need to invoke another function to gather statistics of the entire corpus before encoding
         # embed_func.fit(corpus: List[str])
+        # or, directly load the pre-stored BM25 statistics
+        if backup_json is not None and os.path.exists(backup_json):
+            logger.info(f"Load BM25 model from {backup_json} ...")
+            embed_func.load(backup_json)
+    elif embed_type == 'splade':
+        from milvus_model.sparse import SpladeEmbeddingFunction
+        embed_func = SpladeEmbeddingFunction(
+            model_name=embed_model,
+            device=device
+        )
     else:
         raise ValueError(f"Unsupported embedding model type: {embed_type}.")
     return embed_func
@@ -246,7 +256,7 @@ def encoding_database_content(vs_conn: MilvusClient, db_conn: DatabasePopulation
                 vectors: List[np.array] = text_embedder.encode_documents(documents)
                 logger.info(f"Insert {len(text_records)} text records into collection {collection_name} ...")
                 for i, record in enumerate(text_records):
-                    record['vector'] = vectors[i]
+                    record['vector'] = vectors[i] if text_embed_type != 'splade' else vectors[i:i+1]
                 vs_conn.insert(collection_name=collection_name, data=text_records)
             else: pass
 
@@ -274,7 +284,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('--vectorstore', type=str, help='which vectorstore, indeed the database name.')
-    parser.add_argument('--text_embed_type', type=str, default='sentence_transformers', choices=["sentence_transformers", "bge", "instructor", "mgte", "bm25"], help='which embedding model to use, chosen from ["sentence_transformers", "bge"].')
+    parser.add_argument('--text_embed_type', type=str, default='sentence_transformers', choices=["sentence_transformers", "bge", "instructor", "mgte", "bm25", "splade"], help='which embedding model to use, chosen from ["sentence_transformers", "bge"].')
     parser.add_argument('--text_embed_model', type=str, default=os.path.join('.cache', 'all-MiniLM-L6-v2'), help='which embedding model to use, you can pre-download the model in advance into ./.cache/ folder. For BM25 embedder, set it to the language type, e.g., `en`.')
     parser.add_argument('--launch_method', type=str, default='standalone', help='launch method for vectorstore, chosen from ["docker", "standalone"]. Note that, for Windows OS, can only choose "docker".')
     parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='host + port for milvus started from docker')

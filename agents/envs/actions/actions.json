@@ -1,0 +1,91 @@
+{
+    "GenerateSQL": {
+        "action_type": "GenerateSQL",
+        "description": "Generate an SQL query to retrieve the desired information from the DuckDB database. Please refer to the concrete database schema to produce a valid and executable SQL.",
+        "observation": "The observation space is the execution result of the SQL query. You do not need to worry about the actual execution, we will perform it for you. If the SQL failed to execute, we will return the error message. Extremely long SQL output will be truncated.",
+        "parameters": {
+            "sql": {
+                "type": "str",
+                "required": true,
+                "description": "The concrete DuckDB SQL query to execute and retrieve results."
+            }
+        },
+        "use_cases": [
+            {
+                "example": {
+                    "sql": "SELECT COUNT(DISTINCT pdf_id) FROM meta_data;"
+                },
+                "explanation": "Get the total number of unique PDFs in the database."
+            }
+        ]
+    },
+    "RetrieveContext": {
+        "action_type": "RetrieveContext",
+        "description": "Given a query text, retrieve relevant context from the Milvus vectorstore. Please refer the description for different collections and fields for each stored data entry.",
+        "observation": "The observation space is the retrieved top-ranked context from the Milvus vectorstore based on input parameters.",
+        "parameters": {
+            "query": {
+                "type": "str",
+                "required": true,
+                "description": "The query text will be encoded and used to search for relevant context."
+            },
+            "collection_name": {
+                "type": "str",
+                "required": true,
+                "description": "The name of the collection in the Milvus vectorstore to search for relevant context."
+            },
+            "filter": {
+                "type": "str",
+                "required": false,
+                "default": "",
+                "description": "The filter condition to narrow down the search space. Please refer to the syntax of filter condition."
+            },
+            "limit": {
+                "type": "int",
+                "required": false,
+                "default": 5,
+                "description": "The number of top-ranked context to retrieve. Please set it to a positive integer to limit the number of returned results."
+            },
+            "output_fields": {
+                "type": "List[str]",
+                "required": false,
+                "default": [
+                    "text"
+                ],
+                "description": "The fields to return in the output. By default, only the meaningful `text` field will be returned."
+            }
+        },
+        "use_cases": [
+
+        ]
+    },
+    "GenerateAnswer": {
+        "action_type": "GenerateAnswer",
+        "description": "When you take this action, the retrieved results suffice to answer the user question. PLEASE STRICTLY ADHERE TO THE ANSWER FORMAT FOR THE CURRENT QUESTION.",
+        "observation": "There is no observation for this terminal action, since it indicates the completion of the task and end of the interaction.",
+        "parameters": {
+            "answer": {
+                "type": "Any",
+                "required": true,
+                "description": "The final answer to the user question. Please adhere to the answer format for the current question."
+            }
+        },
+        "use_cases": [
+            {
+                "example": {
+                    "answer": 42
+                },
+                "explanation": "The answer to the user question is 42."
+            },
+            {
+                "example": {
+                    "answer": [
+                        "Results",
+                        "Discussion"
+                    ]
+                },
+                "explanation": "The answer to the user question is a list of strings: ['Results', 'Discussion']."
+            }
+        ]
+    }
+}

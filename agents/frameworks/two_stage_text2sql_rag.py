@@ -2,7 +2,7 @@
 import logging, sys, os, re
 from typing import List, Dict, Any, Union, Tuple, Optional
 from agents.envs import AgentEnv
-from agents.envs.actions import GenerateSQL, GenerateAnswer, ParseActionError
+from agents.envs.actions import GenerateSQL, GenerateAnswer
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
 from agents.frameworks.agent_base import AgentBase
@@ -48,7 +48,7 @@ class TwoStageText2SQLRAGAgent(AgentBase):
         logger.info(f'[Response]: {response}')
         sql = re.search(r"```(sql)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL) # parse SQL from response
         if sql is None:
-            raise ParseActionError("Failed to parse the SQL query from the response.")
+            raise ValueError("Failed to parse the SQL query from the response.")
         sql = sql.group(2).strip()
         logger.info(f'[ParsedSQL]: {sql}')
 
