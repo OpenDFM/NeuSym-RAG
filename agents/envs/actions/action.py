@@ -51,7 +51,6 @@ class Action(ABC):
     thought: str = field(default='', repr=False) # reasoning process for popular agent frameworks like ReAct
     observation_format_kwargs: Dict[str, Any] = field(default_factory=dict, repr=False) # default keyword arguments for observation formatting
 
-
     @property
     def done(self) -> bool:
         return False

@@ -29,7 +29,6 @@ In general, the main interaction loop consists of an interleaved of triplets ([T
 """
 
 TWO_STAGE_TEXT2SQL_PROMPT = [
-
 """{system_prompt}
 
 --------
@@ -43,7 +42,6 @@ You can firstly give your reasoning process, followed by the SQL query in the fo
 """
 
 ,
-
 
 """{system_prompt}
 

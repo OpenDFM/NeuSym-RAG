@@ -12,7 +12,7 @@ logger = logging.getLogger()
 
 class TwoStageText2SQLRAGAgent(AgentBase):
 
-    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'two_stage', max_turn: int = 2) -> None:
+    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'two_stage_text2sql', max_turn: int = 2) -> None:
         super(TwoStageText2SQLRAGAgent, self).__init__(model, env, agent_method, max_turn)
 
     def close(self):
