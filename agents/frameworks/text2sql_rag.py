@@ -2,6 +2,7 @@
 import logging, sys, os
 from typing import List, Dict, Any, Union, Tuple, Optional
 from agents.envs import AgentEnv
+from agents.envs.actions import Action, Observation
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
 from agents.frameworks.agent_base import AgentBase
@@ -56,31 +57,27 @@ class Text2SQLRAGAgent(AgentBase):
             logger.debug(f'[Response]: {response}')
 
             obs, reward, flag, info = self.env.step(response)
-            if info.get('parse_error', True):
-                action_msg = {'role': 'assistant', 'content': f"[Action]: failed to parse action from \"{response}\""}
-                logger.info(f'[ActionError]: failed to parse the Action from LLM response.')
-            else:
-                action = self.env.parsed_actions[-1]
-                action_msg = action.convert_to_message(self.env.action_format)
-                logger.info(action_msg['content'])
+            action: Action = self.env.parsed_actions[-1]
+            action_msg = action.convert_to_message(self.env.action_format)
+            logger.info(action_msg['content'])
 
+            obs: Observation
             obs_msg = obs.convert_to_message()
-            if action.observation_type != 'text':
+            if action.observation_type == 'image': # array of messages, see doc: https://platform.openai.com/docs/guides/vision#uploading-base64-encoded-images
                 for obs_msg_content_item in obs_msg['content']:
                     if obs_msg_content_item['type'] == 'text':
                         logger.info(obs_msg_content_item['text'])
             else:
                 logger.info(obs_msg['content'])
 
+            # update history messages
+            messages.append(action_msg)
+            messages.append(obs_msg)
 
             if flag: # whether task is completed
                 cost = self.model.get_cost() - prev_cost
                 logger.info(f'[Info]: early stop at interaction turn {turn + 1}, cost ${cost:.6f}.')
                 break
-
-            # update history messages
-            messages.append(action_msg)
-            messages.append(obs_msg)
         else:
             cost = self.model.get_cost() - prev_cost
             logger.info(f'[Warning]: exceeds the maximum interaction turn {self.max_turn}, cost ${cost:.6f}.')

@@ -24,7 +24,7 @@ class GenerateSQL(Action):
     }, repr=False) # keyword arguments for SQL execution formatting
 
     def execute(self, env: gym.Env, **kwargs) -> Observation:
-        """ Execute the SQL query in the environment and return the formatted Observation object.
+        """ Execute the SQL query in the environment and return an Observation object.
         For different output formats, see the following references:
             1. pandas.DataFrame.to_markdown(): https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_markdown.html
             2. pandas.DataFrame.to_string(): https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html

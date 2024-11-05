@@ -50,21 +50,24 @@ class Action(ABC):
 
     thought: str = field(default='', repr=False) # reasoning process for popular agent frameworks like ReAct
     observation_format_kwargs: Dict[str, Any] = field(default_factory=dict, repr=False) # default keyword arguments for observation formatting
-    observation: Optional[Observation] = field(default=None, repr=False) # observation string for the action
+
 
     @property
     def done(self) -> bool:
         return False
 
+
     @property
     def observation_type(self) -> str:
         return 'text'
 
+
     @abstractmethod
     def execute(self, env: gym.Env, **format_kwargs) -> Observation:
-        """ Execute the action in the environment and return the observation string.
+        """ Execute the action in the environment and return the Observation object.
         """
         pass
+
 
     @classmethod
     def specification(cls, action_format: str = 'markdown') -> str:
@@ -152,6 +155,7 @@ class Action(ABC):
 """
         return action_prompt
 
+
     @classmethod
     def get_action_space_prompt(cls, action_types: List[type], action_format: str = 'markdown') -> str:
         """ Return the entire action space prompt for all given action types (using function `_specification`) based on the `action_format`.
@@ -164,8 +168,9 @@ class Action(ABC):
             actions.append(action_cls.specification(action_format))
         return action_space_prompt + '\n----\n'.join(actions)
 
+
     @classmethod
-    def parse_action(cls, text: str, action_types: List[type], action_format: str = 'markdown') -> Tuple[bool, Union[str, 'Action']]:
+    def parse_action(cls, text: str, action_types: List[type], action_format: str = 'markdown') -> Tuple[bool, 'Action']:
         """ Parse the raw LLM response text into one concrete Action object based on the allowable action types and the specified action `format`.
         For a unified perspective, note that each action should be wrapped in (`Thought` is optional)
             [Thought]: ...
@@ -173,7 +178,8 @@ class Action(ABC):
             [Observation]: ...
         TODO: maybe this should be combined with the `agent_method='react'` in the future to support more frameworks?
         """
-        assert action_format in ACTION_FORMATS, f"Action format {action_format} not supported."
+        assert action_format in ACTION_FORMATS, f"Action format `{action_format}` is not supported."
+
         # extract the real action text from raw LLM response, maybe dependent on agent frameworks
         thought_pattern = r"\[Thought\]:\s*(.*?)\s*\[Action\]:"
         matched_thought = re.search(thought_pattern, text, re.DOTALL)
@@ -182,7 +188,7 @@ class Action(ABC):
         matched_action = re.search(action_pattern, text, re.DOTALL)
         action_text = matched_action.group(1).strip() if matched_action else None
         if action_text is None:
-            action_text = text.strip() # sometimes no "[Action]:" prefix
+            action_text = text.strip() # sometimes no "[Action]:" prefix, directly use the whole text
             # return False, "[Error]: Failed to parse the action text from the response."
 
         action_names = [action_cls.__name__ for action_cls in action_types]
@@ -191,15 +197,17 @@ class Action(ABC):
                 action_obj = action_cls._parse(action_text, action_format)
                 action_obj.thought = thought # add thought to the action object
                 return True, action_obj
-            except ParseActionError: # failed to parse the action structure, e.g., json, xml, etc.
-                return False, f"[Error]: Failed to parse valid action structure from the response, please check the specification for these actions {action_names}."
-            except ParseParametersError: # failed to parse the action parameters for a specific action
-                return False, f"[Error]: Failed to parse valid parameters for action {action_cls.__name__} from the response, please check the specification for {action_cls.__name__}."
+            except ParseActionError as e: # failed to parse the action structure, e.g., json, xml, etc.
+                from .error_action import ErrorAction
+                return False, ErrorAction(response=text, error=str(e))
+            except ParseParametersError as e: # failed to parse the action parameters for a specific action
+                return False, ErrorAction(response=text, error=str(e))
             # except MismatchedActionError:
                 # continue # try next action type
             except Exception as e:
                 continue # try next action type
-        return False, f"[Error]: Failed to parse valid action from the response, please check the specification for these actions {str(action_names)}."
+        return False, ErrorAction(response=text, error=f"[Error]: Failed to parse a valid action from the response. Please check the specification for these actions {str(action_names)}.")
+
 
     @classmethod
     def _parse(cls, action_text: str, action_format: str = 'markdown') -> 'Action':
@@ -209,33 +217,34 @@ class Action(ABC):
         if action_format == 'markdown':
             action_type = re.search(r"(.*?)\(", action_text.strip())
             if action_type is None or action_type.group(1).strip() != class_name:
-                raise MismatchedActionError(f"Failed to parse {class_name} action from the response.")
+                raise MismatchedActionError(f"The current response does not match {class_name} action.")
             try:
                 tree = ast.parse(action_text, mode='eval')
                 positional_args, keyword_args = [], {}
-                if isinstance(tree.body, ast.Call):
-                    for arg in tree.body.args:
-                        positional_args.append(ast.literal_eval(arg))
-                    for kwarg in tree.body.keywords:
-                        keyword_args[kwarg.arg] = ast.literal_eval(kwarg.value)
-                    return cls(*positional_args, **keyword_args)
-                else:
-                    raise ParseParametersError(f"Failed to parse the parameters for action {class_name} from the response.")
+
+                assert isinstance(tree.body, ast.Call)
+                for arg in tree.body.args:
+                    positional_args.append(ast.literal_eval(arg))
+                for kwarg in tree.body.keywords:
+                    keyword_args[kwarg.arg] = ast.literal_eval(kwarg.value)
+                return cls(*positional_args, **keyword_args)
             except Exception as e:
                 raise ParseParametersError(f"Failed to parse the parameters for action {class_name} from the response.")
+
         elif action_format == 'json':
             action_text = extract_inner_text(action_text, prefix='{', suffix='}')
             try:
                 action_dict: dict = json.loads(action_text.strip())
             except Exception as e:
-                raise ParseActionError(f"Failed to parse the JSON dict from the response.")
+                raise ParseActionError(f"Failed to parse a valid JSON dict from the response.")
 
             if action_dict.get('action_type', '') != class_name:
-                raise MismatchedActionError(f"Failed to parse {class_name} action from the response.")
+                raise MismatchedActionError(f"The current response does not match {class_name} action.")
             try:
                 return cls(**action_dict['parameters'])
             except Exception as e:
                 raise ParseParametersError(f"Failed to parse the parameters for action {class_name} from the response.")
+
         elif action_format == 'xml':
             action_text = extract_inner_text(action_text, prefix='<action>', suffix='</action>')
             try:
@@ -243,18 +252,19 @@ class Action(ABC):
                 soup = BeautifulSoup(action_text, "xml")
                 # Convert XML to dictionary
                 action_dict = {soup.find().name: soup_to_dict(soup.find())}['action']
-                # action_dict = xmltodict.parse(action_text.strip())['action'] # deprecated, often with bugs
+                # [Deprecated]: xmltodict.parse often with bugs
+                # action_dict = xmltodict.parse(action_text.strip())['action']
             except Exception as e:
-                raise ParseActionError(f"Failed to parse the XML from the response.")
+                raise ParseActionError(f"Failed to parse a valid XML object from the response.")
 
             if action_dict.get('action_type', '') != class_name:
-                raise MismatchedActionError(f"Failed to parse {class_name} action from the response.")
+                raise MismatchedActionError(f"The current response does not match {class_name} action.")
             try:
                 return cls(**action_dict['parameters'])
             except Exception as e:
                 raise ParseParametersError(f"Failed to parse the parameters for action {class_name} from the response.")
         else:
-            raise ValueError(f"Action format {action_format} not supported for {class_name} yet.")
+            raise ValueError(f"Action format {action_format} not supported for {class_name} action yet.")
 
 
     def convert_to_message(self, action_format: str = 'markdown') -> Dict[str, str]:

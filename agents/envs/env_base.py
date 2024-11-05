@@ -45,19 +45,18 @@ class AgentEnv(gym.Env, ABC):
             done: bool, whether the task is completed
             info: Dict, additional (not used)
         """
+        parse_error = False
         if isinstance(action, str):
-            flag, action = Action.parse_action(action, self.action_space, self.action_format)
-            if not flag: # failed to parse the action according to the action space and action format
-                return Observation(action), 0, False, {"parse_error": True}
+            flag, action = Action.parse_action(action, self.__class__.action_space, self.action_format)
+            if not flag: parse_error = True
         self.parsed_actions.append(action)
 
         # execute the action, the first parameter is the AgentEnv class itself
         observation = action.execute(self)
-        action.observation = observation
 
         # (obs, reward, done, info)
         flag = action.done
-        return observation, 0, flag, {"parse_error": False}
+        return observation, 0, flag, {"parse_error": parse_error}
 
 
     @cached_property
