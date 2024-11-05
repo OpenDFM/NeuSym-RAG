@@ -50,7 +50,7 @@ class Action(ABC):
 
     thought: str = field(default='', repr=False) # reasoning process for popular agent frameworks like ReAct
     observation_format_kwargs: Dict[str, Any] = field(default_factory=dict, repr=False) # default keyword arguments for observation formatting
-    observation: Optional[Observation] = field(default=None, repr=False) # observation string for the action
+    observation: Optional[Observation] = field(default=None, repr=False) # Observation object for the action
 
     @property
     def done(self) -> bool:
@@ -62,7 +62,7 @@ class Action(ABC):
 
     @abstractmethod
     def execute(self, env: gym.Env, **format_kwargs) -> Observation:
-        """ Execute the action in the environment and return the observation string.
+        """ Execute the action in the environment and return the Observation object.
         """
         pass
 

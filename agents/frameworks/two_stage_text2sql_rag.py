@@ -68,7 +68,7 @@ class TwoStageText2SQLRAGAgent(AgentBase):
         logger.info(f'[Response]: {response}')
         answer = re.search(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL) # extract answer from response
         if answer is None:
-            raise ParseActionError("Failed to parse the answer from the response.")
+            raise ValueError("Failed to parse the answer from the response.")
         answer = answer.group(2).strip()
         logger.info(f'[Answer]: {answer}')
         return answer

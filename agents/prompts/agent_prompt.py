@@ -28,8 +28,7 @@ The main interaction procedure proceeds like this:
 In general, the main interaction loop consists of an interleaved of triplets ([Thought], [Action], [Observation]), except the last `GenerateAnswer` action which does not have "[Observation]:". Remember that, for each question, you only have {max_turn} interaction turns at most. Now, let's start!
 """
 
-TWO_STAGE_PROMPT = [
-
+TWO_STAGE_TEXT2SQL_PROMPT = [
 """{system_prompt}
 
 --------
@@ -43,7 +42,6 @@ You can firstly give your reasoning process, followed by the SQL query in the fo
 """
 
 ,
-
 
 """{system_prompt}
 
