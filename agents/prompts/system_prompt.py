@@ -18,7 +18,7 @@ TWO_STAGE_TEXT2SQL_SYSTEM_PROMPT = [
 
 ,
 
-"""You are intelligent agent who is expert in answering user question given the context. You will be given a natural language question concerning a PDF file, and a context containing a SQL query about the question and its execution result. Your task is to predict the final answer based on given question and context. Please refer to the answer format to produce the valid answer.
+"""You are intelligent agent who is expert in answering user question given the retrieved context. You will be given a natural language question concerning a PDF file, and the retrieved execution result from the PDF related database using a SQL query. Your task is to predict the final answer based on given question and context. Please refer to the answer format to produce the valid answer.
 """
 ]
 

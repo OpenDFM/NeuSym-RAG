@@ -2,7 +2,7 @@
 import logging, sys, os, re
 from typing import List, Dict, Any, Union, Tuple, Optional
 from agents.envs import AgentEnv
-from agents.envs.actions import GenerateSQL, GenerateAnswer
+from agents.envs.actions import GenerateSQL
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
 from agents.frameworks.agent_base import AgentBase
@@ -36,39 +36,34 @@ class TwoStageText2SQLRAGAgent(AgentBase):
         self.env.reset()
 
         # 1. Generate SQL
-        prompt =  AGENT_PROMPTS[self.agent_method][0].format(
+        prompt = AGENT_PROMPTS[self.agent_method][0].format(
             system_prompt = SYSTEM_PROMPTS['two_stage_text2sql'][0],
             question = question,
             database_schema = database_prompt
         ) # system prompt + task prompt + cot thought hints
-        logger.info(f'[Stage]: {1}')
-        response = self.model.get_response([{
-            'role': 'user', 'content': prompt
-        }], model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
+        logger.info('[Stage]: Generate SQL ...')
+        messages = [{'role': 'user', 'content': prompt}]
+        response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
-        sql = re.search(r"```(sql)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL) # parse SQL from response
-        if sql is None:
-            raise ValueError("Failed to parse the SQL query from the response.")
-        sql = sql.group(2).strip()
+        matched = re.search(r"```(sql)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
+        sql = matched.group(2).strip() if matched is not None else response.strip()
         logger.info(f'[ParsedSQL]: {sql}')
 
         # 2. Answer question
         action = GenerateSQL(sql=sql)
-        observation = GenerateSQL.execute(action, self.env)
+        observation = action.execute(self.env)
         prompt = AGENT_PROMPTS[self.agent_method][1].format(
             system_prompt = SYSTEM_PROMPTS['two_stage_text2sql'][1],
             question = question,
-            context = [sql, observation],
+            sql = sql,
+            context = observation.obs_content,
             answer_format = answer_format
         ) # system prompt (without schema) + task prompt (insert SQL, observation) + cot thought hints
-        logger.info(f'[Stage]: {2}')
-        response = self.model.get_response([{
-            'role':'user', 'content': prompt
-        }], model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
+        logger.info(f'[Stage]: Generate Answer ...')
+        messages = [{'role': 'user', 'content': prompt}]
+        response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
-        answer = re.search(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL) # extract answer from response
-        if answer is None:
-            raise ParseActionError("Failed to parse the answer from the response.")
-        answer = answer.group(2).strip()
+        matched = re.search(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
+        answer = '' if matched is None else matched.group(2).strip()
         logger.info(f'[Answer]: {answer}')
         return answer
