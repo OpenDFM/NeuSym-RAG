@@ -13,8 +13,8 @@ class Text2VecEnv(AgentEnv):
 
     action_space: List[Type] = [RetrieveContext, GenerateAnswer]
 
-    def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, **kwargs) -> None:
-        super(Text2VecEnv, self).__init__(action_format=action_format, action_space=action_space)
+    def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, dataset: Optional[str] = None, **kwargs) -> None:
+        super(Text2VecEnv, self).__init__(action_format=action_format, action_space=action_space, dataset=dataset)
         self.vectorstore_conn = None
         self.vectorstore, self.launch_method = kwargs.get('vectorstore', None), kwargs.get('launch_method', 'standalone')
         if self.launch_method == 'standalone':
