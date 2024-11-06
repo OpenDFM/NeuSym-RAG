@@ -45,11 +45,13 @@ CREATE TABLE IF NOT EXISTS chunks (
 	FOREIGN KEY (ref_report_id) REFERENCES metadata(report_id),
 	FOREIGN KEY (ref_page_id) REFERENCES pages(page_id)
 );
-/* table table_in_pages: This table stores information about tables extracted from pages.
+/* table table_in_pages: This table stores information about tables extracted from pages using library unstructured,including content, bounding box and summary of each table. 
 */
 CREATE TABLE IF NOT EXISTS table_in_pages (
 	table_id UUID, -- A unique identifier for each table.
 	table_content VARCHAR, -- The content of the table in markdown format.
+	table_summary VARCHAR, -- A brief summary of the table content, focusing on key information and describing the table content.
+	bounding_box INTEGER[4], -- The bounding box of the table in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height.
 	ordinal INTEGER, -- Each table is labeled with one distinct integer number in the current page, which starts from 0.
 	ref_report_id UUID, -- A foreign key linking to the report ID in the `metadata` table.
 	ref_page_id UUID, -- A foreign key linking to the page ID in the `pages` table where this table is located.,
