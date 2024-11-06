@@ -3,7 +3,6 @@ from agents.envs.actions.action import Action
 from agents.envs.actions.observation import Observation
 from dataclasses import dataclass, field
 import gymnasium as gym
-from dataclasses import dataclass, field
 from typing import Optional, List, Tuple, Dict, Union, Any
 
 

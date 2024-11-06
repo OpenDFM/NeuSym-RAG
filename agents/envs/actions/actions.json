@@ -87,5 +87,25 @@
                 "explanation": "The answer to the user question is a list of strings: ['Results', 'Discussion']."
             }
         ]
+    },
+    "CalculateExpr": {
+        "action_type": "CalculateExpr",
+        "description": "Calculate the expression and return the result. The expression should be a Python-style arithmetic expression that can be correctly processed by eval().",
+        "observation": "The observation space is the result of the expression calculation. You do not need to worry about the actual calculation, we will perform it for you. If the calculation failed, we will return the error message.",
+        "parameters": {
+            "expr": {
+                "type": "str",
+                "required": true,
+                "description": "The expression to calculate."
+            }
+        },
+        "use_cases": [
+            {
+                "example": {
+                    "expr": "2 + 3 * 4"
+                },
+                "explanation": "Calculate the expression 2 + 3 * 4."
+            }
+        ]
     }
 }
