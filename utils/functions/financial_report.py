@@ -2,8 +2,11 @@
 import json, sys, os, re, logging
 from typing import List, Dict, Union, Optional, Any, Iterable
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from utils.functions.common_functions import get_uuid
+from utils.functions.common_functions import get_uuid,call_llm
 import fitz  # PyMuPDF
+from unstructured.partition.pdf import partition_pdf #table extraction
+import tempfile
+from pdf2image import convert_from_path
 
 
 def get_financial_report_per_page_uuid(pdf_data: dict) -> List[str]:
@@ -80,38 +83,67 @@ def aggregate_financial_report_table_chunks(pdf_data: dict, page_ids: List[str],
 
 def get_financial_report_per_page_tableinpages(pdf_data: dict) -> List[dict]:
     """
-    Process pdf_data to extract tables using pymupdf.
+    Process pdf_data to extract tables and their bounding boxes (bbox) using 'unstructured' library, and also give a summary of each table using llm
     Output:
-        [ { "page_number": int, "table_md": str } ]
+        [ { "page_number": int, "table_html": str, "table_bbox": list, "table_summary":str } ]
     """
     table_data = []
     pdf_path=pdf_data['pdf_path']
     
-    doc = fitz.open(pdf_path)
+    def normalize_bbox(bbox, width_ratio, height_ratio):
+        # original: [x0, y0, x1, y1]
+        # after: [x0, y0, width, height]
+        x0, y0, x1, y1 = bbox
+        return [round(x0 * width_ratio, 1), round(y0 * height_ratio, 1), round((x1 - x0) * width_ratio, 1), round((y1 - y0) * height_ratio, 1)]
+
+    images = convert_from_path(pdf_path) #pdf2image (provide page size information for library unstructured)
 
     for page_info in pdf_data['page_infos']:
         page_number = page_info['page_number']
+        width, height = page_info['width'], page_info['height']
         
         # extract tables in this page
-        page = doc[page_number-1] #starting from 0
-        tables = page.find_tables()
-        tables_thispage=[table.to_markdown() for table in tables]
+        new_pdf_document = fitz.open()
+        with fitz.open(pdf_path) as pdf_document:
+            new_pdf_document.insert_pdf(pdf_document, from_page=page_number - 1, to_page= page_number - 1)# fitz starting from 0
         
+        with tempfile.NamedTemporaryFile(delete=True, suffix='.pdf') as temp_pdf:
+            # write the new pdf to template file
+            new_pdf_document.save(temp_pdf.name)
+            new_pdf_document.close()
+
+            # extract tables using library unstructured
+            elements = partition_pdf(filename=temp_pdf.name, infer_table_structure=True, strategy='hi_res')
+            tables_thispage = [el for el in elements if el.category == "Table"]
 
         if not tables_thispage:
             continue #skip page without tables
 
         # Process each table on the page
         for table in tables_thispage:
-        
-        
+
+            # Extract table HTML 
+            table_html = table.metadata.text_as_html
+            # Extract table bounding boxes and adjust size
+            width_ratio, height_ratio = width / images[page_number-1].size[0], height / images[page_number-1].size[1] # PyMuPDF vs unstructured(starting from 0)
+            (x0,y0),_,(x1,y1),_ = table.metadata.coordinates.points
+            table_bbox=normalize_bbox((x0,y0,x1,y1), width_ratio, height_ratio) 
+            # Get table summary using llm
+            template = f"""You are an expert in summarizing data. Your task is to generate a concise summary for an HTML-formatted table, focusing on key information and describing the table content clearly and succinctly.
+            
+            Please generate a brief summary for the following HTML table content:
+            {table_html}
+            """
+            summary = call_llm(template=template, model='gpt-4o', top_p=0.9, temperature=0.7)
+
             # Add the result to the output
             table_data.append({
                 "page_number": page_number,
-                "table_md": table
+                "table_html": table_html,
+                "table_bbox": table_bbox,
+                "table_summary": summary
             })
 
-    doc.close()
     return table_data
 
 
@@ -144,7 +176,7 @@ def aggregate_financial_report_table_tableinpages(pdf_data: dict, table_data: Li
     """ 
     Aggregate table data from multiple pages.
     Output:
-        [ [ table_id, table_content,  table_ordinal, ref_paper_id, ref_page_id ] ]
+        [ [ table_id, table_html, table_bbox, table_ordinal, ref_paper_id, ref_page_id ] ]
     """
     results = []
     ref_paper_id = pdf_data['pdf_id']  # The reference paper ID from the PDF data
@@ -158,11 +190,14 @@ def aggregate_financial_report_table_tableinpages(pdf_data: dict, table_data: Li
 
         for table_idx, table in enumerate(tables_in_page):
             table_id = table_ids[page_idx][table_idx]  # Use pre-generated table UUID from get_financial_report_per_page_tableinpages_uuid
-            table_content = table["table_md"]
+            table_html = table["table_html"]
+            table_bbox = table["table_bbox"]
             ordinal = table_idx  # The order of the table on the page
+            table_summary = table["table_summary"]
 
             # Append the result for the current table
-            results.append([table_id, table_content, ordinal, ref_paper_id, page_id])
+            results.append([table_id, table_html, table_summary, json.dumps(table_bbox), ordinal, ref_paper_id, page_id])
 
     return results
+
 

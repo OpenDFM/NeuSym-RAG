@@ -14,19 +14,14 @@ class Text2VecEnv(AgentEnv):
 
     action_space: List[Type] = [RetrieveContext, GenerateAnswer]
 
-    def __init__(self,
-                 action_format: str = 'json',
-                 action_space: Optional[List[Type]] = None,
-                 vectorstore: Optional[str] = None,
-                 vectorstore_path: Optional[str] = None,
-                 launch_method: str = 'standalone') -> None:
-        super(Text2VecEnv, self).__init__(action_format=action_format, action_space=action_space)
+    def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, dataset: Optional[str] = None, **kwargs) -> None:
+        super(Text2VecEnv, self).__init__(action_format=action_format, action_space=action_space, dataset=dataset)
         self.vectorstore_conn, self.embedder_dict = None, {}
-        self.vectorstore, self.launch_method = vectorstore, launch_method
+        self.vectorstore, self.launch_method = kwargs.get('vectorstore', None), kwargs.get('launch_method', 'standalone')
         if self.launch_method == 'standalone':
-            self.vectorstore_path = vectorstore_path if vectorstore_path is not None else \
-                os.path.join('data', 'vectorstore', vectorstore, f'{vectorstore}.db')
-        else: self.vectorstore_path = vectorstore_path if vectorstore_path is not None else 'http://127.0.0.1:19530'
+            self.vectorstore_path = kwargs.get('vectorstore_path', os.path.join('data', 'vectorstore', self.vectorstore, f'{self.vectorstore}.db')) 
+        else:
+            self.vectorstore_path = kwargs.get('vectorstore_path', 'http://127.0.0.1:19530')
         self.reset()
 
 

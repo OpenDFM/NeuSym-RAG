@@ -59,6 +59,71 @@
 
         ]
     },
+    "CalculateExpr": {
+        "action_type": "CalculateExpr",
+        "description": "Calculate the expression and return the result. The expression should be a Python-style arithmetic expression that can be correctly processed by eval().",
+        "observation": "The observation space is the result of the expression calculation. You do not need to worry about the actual calculation, we will perform it for you. If the calculation failed, we will return the error message.",
+        "parameters": {
+            "expr": {
+                "type": "str",
+                "required": true,
+                "description": "The expression to calculate."
+            }
+        },
+        "use_cases": [
+            {
+                "example": {
+                    "expr": "2 + 3 * 4"
+                },
+                "explanation": "Calculate the expression 2 + 3 * 4."
+            }
+        ]
+    },
+    "ViewImage": {
+        "action_type": "ViewImage",
+        "description": "You can retrieve the visual information of the paper by taking this action. Please provide the paper id, the page number, and the optional bounding box.",
+        "observation": "The observation space is the image that you want to view. We will show you the image according to your parameters. The error message will be shown if there is any problem with the image retrieval.",
+        "parameters": {
+            "paper_id": {
+                "type": "str",
+                "required": true,
+                "description": "The paper id to retrieve the image."
+            },
+            "page_number": {
+                "type": "int",
+                "required": true,
+                "description": "The page number of the paper to retrieve the image."
+            },
+            "bounding_box": {
+                "type": "List[float]",
+                "required": false,
+                "default": [],
+                "description": "The bounding box of the image to retrieve. The format is [x_min, y_min, delta_x, delta_y]. The complete page will be retrieved if not provided."
+            }
+        },
+        "use_cases": [
+            {
+                "example": {
+                    "paper_id": "12345678",
+                    "page_number": 3
+                },
+                "explanation": "Retrieve the image of the third page of the paper with id 12345678."
+            },
+            {
+                "example": {
+                    "paper_id": "12345678",
+                    "page_number": 5,
+                    "bounding_box": [
+                        51.1,
+                        204.3,
+                        333.0,
+                        13.8
+                    ]
+                },
+                "explanation": "Retrieve the image of the fifth page of the paper with id 12345678, with a bounding box of [51.1, 204.3, 333.0, 13.8]."
+            }
+        ]
+    },
     "GenerateAnswer": {
         "action_type": "GenerateAnswer",
         "description": "When you take this action, the retrieved results suffice to answer the user question. PLEASE STRICTLY ADHERE TO THE ANSWER FORMAT FOR THE CURRENT QUESTION.",
@@ -85,26 +150,6 @@
                     ]
                 },
                 "explanation": "The answer to the user question is a list of strings: ['Results', 'Discussion']."
-            }
-        ]
-    },
-    "CalculateExpr": {
-        "action_type": "CalculateExpr",
-        "description": "Calculate the expression and return the result. The expression should be a Python-style arithmetic expression that can be correctly processed by eval().",
-        "observation": "The observation space is the result of the expression calculation. You do not need to worry about the actual calculation, we will perform it for you. If the calculation failed, we will return the error message.",
-        "parameters": {
-            "expr": {
-                "type": "str",
-                "required": true,
-                "description": "The expression to calculate."
-            }
-        },
-        "use_cases": [
-            {
-                "example": {
-                    "expr": "2 + 3 * 4"
-                },
-                "explanation": "Calculate the expression 2 + 3 * 4."
             }
         ]
     }

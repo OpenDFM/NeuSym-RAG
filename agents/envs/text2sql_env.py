@@ -5,25 +5,19 @@ import duckdb
 from agents.envs.env_base import AgentEnv
 from func_timeout import func_set_timeout, FunctionTimedOut
 from typing import Optional, List, Tuple, Dict, Union, Any, Type
-from agents.envs.actions import Action, GenerateSQL, GenerateAnswer, CalculateExpr
+from agents.envs.actions import Action, GenerateSQL, CalculateExpr, ViewImage, GenerateAnswer
 
 class Text2SQLEnv(AgentEnv):
     """ Responsible for managing the environment for the text2sql retrieval, which includes maintaining the connection to the database, executing the SQL query with the database and formatting the output result.
     """
 
-    action_space: List[Type] = [GenerateSQL, GenerateAnswer, CalculateExpr]
+    action_space: List[Type] = [GenerateSQL, CalculateExpr, ViewImage, GenerateAnswer]
 
-    def __init__(self,
-                 database: Optional[str] = None,
-                 database_path: Optional[str] = None,
-                 database_type: str = 'duckdb', # TODO: support more database types
-                 action_format: str = 'json',
-                 action_space: Optional[List[Type]] = None) -> None:
-        super(Text2SQLEnv, self).__init__(action_format=action_format, action_space=action_space)
+    def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, dataset: Optional[str] = None, **kwargs) -> None:
+        super(Text2SQLEnv, self).__init__(action_format=action_format, action_space=action_space, dataset=dataset)
         self.database_conn = None
-        self.database, self.database_type = database, database_type
-        self.database_path = database_path if database_path is not None else \
-            os.path.join('data', 'database', database, f'{database}.duckdb')
+        self.database, self.database_type = kwargs.get('database', None), kwargs.get('database_type', 'duckdb')
+        self.database_path = kwargs.get('database_path', os.path.join('data', 'database', self.database, f'{self.database}.duckdb'))
         self.database_conn: Optional[duckdb.DuckDBPyConnection] = self.reset()
 
 

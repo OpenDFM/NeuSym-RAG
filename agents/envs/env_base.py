@@ -11,16 +11,16 @@ class AgentEnv(gym.Env, ABC):
 
     action_space: List[Type] = []
 
-    def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, **kwargs) -> None:
+    def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, dataset: Optional[str] = None) -> None:
         super(AgentEnv, self).__init__()
         self.action_format: str = action_format
+        self.dataset: Optional[str] = dataset
         cls_space = self.__class__.action_space
         if action_space is not None and len(action_space) > 0:
             if all([t in cls_space for t in action_space]):
                 cls_space = action_space
             else:
                 raise ValueError(f"Invalid action space: {action_space}")
-        self.kwargs = kwargs
         self.parsed_actions: List[Action] = []
 
 
