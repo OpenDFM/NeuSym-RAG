@@ -183,7 +183,7 @@
         {
             "table": {
                 "table_name": "table_in_pages",
-                "description": "This table stores information about tables extracted from pages."
+                "description": "This table stores information about tables extracted from pages using library unstructured,including content(in html format) and bounding box."
             },
             "columns": [
                 {
@@ -194,8 +194,18 @@
                 {
                     "column_name": "table_content",
                     "column_type": "VARCHAR",
-                    "description": "The content of the table in markdown format.",
+                    "description": "The content of the table in html format.",
                     "encodable": true
+                },
+                {
+                    "column_name": "table_summary",
+                    "column_type": "VARCHAR",
+                    "description": "A brief summary of the table content, focusing on key information and describing the table content."
+                },
+                {
+                    "column_name": "bounding_box",
+                    "column_type": "INTEGER[4]",
+                    "description": "The bounding box of the table in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height."
                 },
                 {
                     "column_name": "ordinal",
