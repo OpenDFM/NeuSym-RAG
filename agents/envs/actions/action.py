@@ -271,6 +271,8 @@ class Action(ABC):
         elif action_format == 'yaml':
             action_text = extract_inner_text(action_text, prefix='action_type:', suffix='')
             try:
+                if 'action_type:' not in action_text:
+                    action_text = 'action_type: ' + action_text
                 action_dict: dict = yaml.safe_load(action_text.strip())
             except Exception as e:
                 raise ParseActionError(f"Failed to parse a valid YAML object from the response. {str(e)}.")
