@@ -10,7 +10,7 @@ from typing import Optional, Dict
 class ErrorAction(Action):
 
     response: str = field(default='', repr=True) # raw LLM response, required
-    error: str = field(default='', repr=False) # error message, required
+    error: str = field(default='', repr=False) # error message, optional
 
 
     def convert_to_message(self, action_format: Optional[str] = None) -> Dict[str, str]:

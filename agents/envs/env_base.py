@@ -18,6 +18,8 @@ class AgentEnv(gym.Env, ABC):
         if action_space is not None and len(action_space) > 0:
             if all([t in cls_space for t in action_space]):
                 cls_space = action_space
+            else:
+                raise ValueError(f"Invalid action space: {action_space}")
         self.parsed_actions: List[Action] = []
 
 

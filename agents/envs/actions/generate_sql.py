@@ -13,7 +13,7 @@ from func_timeout import func_set_timeout, FunctionTimedOut
 @dataclass
 class GenerateSQL(Action):
 
-    sql: int = field(default='', repr=True) # concrete SQL query, required
+    sql: str = field(default='', repr=True) # concrete SQL query, required
     observation_format_kwargs: Dict[str, Any] = field(default_factory=lambda: {
         "output_format": "markdown", # output format for the SQL execution result, chosen from ['markdown', 'string', 'html'], default is 'markdown'
         "tablefmt": "pretty", # for markdown format, see doc https://pypi.org/project/tabulate/ for all options
