@@ -41,16 +41,19 @@ Some common arguments:
 
 ```sh
 python scripts/text2sql_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 10
+python scripts/text2sql_baseline.py --dataset tatdqa --database financial_report --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 10
 ```
 
 2. Text-to-Vector with interactive vectorstore environment baseline: (TODO: in one week)
 
 ```sh
 python scripts/text2vec_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 10
+python scripts/text2vec_baseline.py --dataset tatdqa --database financial_report --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 10
 ```
 
 3. Text-to-SQL (two steps) with interactive database environment baseline:
 
 ```sh
 python scripts/two_stage_text2sql_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --action_format markdown --agent_method 'two_stage_text2sql' --llm gpt-4o-mini --max_turn 2
+python scripts/two_stage_text2sql_baseline.py --dataset tatdqa --database financial_report --test_data test_data_sample.jsonl --action_format markdown --agent_method 'two_stage_text2sql' --llm gpt-4o-mini --max_turn 2
 ```

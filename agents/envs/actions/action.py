@@ -107,7 +107,7 @@ class Action(ABC):
                 else f'{field_name}: {parameters[field_name]["type"]} = {repr(parameters[field_name]["default"])}'
                 for field_name in param_names
             ])
-            comments = [f'- {field_name}: {parameters[field_name]['type']}, {"required" if parameters[field_name].get("required", True) else "optional, default to " + repr(parameters[field_name]["default"])}. {parameters[field_name]["description"]}' for field_name in param_names]
+            comments = [f'- {field_name}: {parameters[field_name]["type"]}, {"required" if parameters[field_name].get("required", True) else "optional, default to " + repr(parameters[field_name]["default"])}. {parameters[field_name]["description"]}' for field_name in param_names]
             syntax = f"{action_type}({params})\n" + '\n'.join(comments)
         elif action_format == 'json':
             syntax = json.dumps({'action_type': action_type, 'parameters': parameters}, indent=4, ensure_ascii=False)
