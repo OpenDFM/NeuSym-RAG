@@ -51,7 +51,7 @@ logger.setLevel(logging.INFO)
 
 
 llm = infer_model_class(args.llm)()
-env = ENVIRONMENTS['text2sql'](args.database, action_format=args.action_format)
+env = ENVIRONMENTS['text2sql'](action_format=args.action_format, database=args.database)
 agent = FRAMEWORKS['text2sql'](llm, env, agent_method=args.agent_method, max_turn=args.max_turn)
 
 test_data = []

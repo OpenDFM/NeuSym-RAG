@@ -2,7 +2,8 @@
 import os, json, sys, logging, re, tqdm, math, zipfile, pickle, random
 import pandas as pd
 import fitz  # PyMuPDF
-from fuzzywuzzy import fuzz  # For fuzzy matching 
+import shutil
+from fuzzywuzzy import fuzz  # For fuzzy matching
 from PIL import Image, ImageDraw, ImageFont
 from typing import List, Dict, Union, Optional, Tuple, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -69,11 +70,11 @@ def process_pdfvqa(
                         ], // List[str], the OCR text content of the current page
                         "bbox_label": [
                             1,
-                            ...                            
+                            ...
                         ], // List[int], labels for each bbox, 1->main text, 2->section title, 3->list such as references, 4->tables, 5->figures
                         "relations": [ // List[Tuple[int, int]], records the parent-child relations between different bbox in the current page
                             [0, 1], // numbers represent bbox index, starting from 0
-                            ... 
+                            ...
                         ] // the first element is the parent, while the second is the child
                     },
                     ... // other pages
@@ -169,10 +170,10 @@ def process_pdfvqa(
         if (row['file_name'], row['question'].strip()) in duplicate_set:
             duplicate_cnt += 1
             continue
-        
+
         if isinstance(row['answer'], float) and math.isnan(row['answer']):
             continue
-        
+
         duplicate_set.add((row['file_name'], row['question'].strip()))
 
         tmp_data = {}
@@ -193,10 +194,10 @@ def process_pdfvqa(
         if (row['file'], row['question'].strip()) in duplicate_set:
             duplicate_cnt += 1
             continue
-        
+
         if isinstance(row['answer'], float) and math.isnan(row['answer']):
             continue
-        
+
         duplicate_set.add((row['file'], row['question'].strip()))
 
         tmp_data = {}
@@ -217,10 +218,10 @@ def process_pdfvqa(
         if (row['pmcid'], row['question'].strip()) in duplicate_set:
             duplicate_cnt += 1
             continue
-        
+
         if isinstance(row['answer'], float) and math.isnan(row['answer']):
             continue
-        
+
         duplicate_set.add((row['pmcid'], row['question'].strip()))
 
         tmp_data = {}
@@ -275,8 +276,8 @@ def process_tatdqa(
         test_data_name: str = 'test_data.jsonl',
         pdf_data_name: str = 'pdf_data.jsonl'
     ):
-   
-    """ Process the TATDQA dataset into a unified format and filter out questions on documents without complete original file 
+
+    """ Process the TATDQA dataset into a unified format and filter out questions on documents without complete original file
     @param:
         raw_data_folder: str, the path to the raw data folder.
         processed_data_folder: str, the path to the processed data folder.
@@ -309,16 +310,16 @@ def process_tatdqa(
                             "Text content of the first bbox.",
                             ...
                         ], // List[str], the OCR text content of the current page
-                    
-                            ... 
+
+                            ...
                         ] ,
                         "words": [
                             {
-                                "word_list":[ 
+                                "word_list":[
                                     "Text content of the first word in the first bbox.",
                                     ...
                                 ], // List[str]
-                                "bbox_list":[ 
+                                "bbox_list":[
                                     [73, 73 ,108, 92],
                                     ...
                                 ] // List[Tuple[float,float,float,float]], [x0, y0, width, height]
@@ -330,7 +331,7 @@ def process_tatdqa(
                 ]
             }
     """
-               
+
     # define unpressed data folder
     tatdqa_docs_folder = os.path.join(processed_data_folder, 'test')
     if not os.path.exists(tatdqa_docs_folder) or not os.path.isdir(tatdqa_docs_folder):
@@ -390,8 +391,8 @@ def process_tatdqa(
 
             # read parsed JSON page
             with open(json_filepath, 'r') as f:
-                page_data = json.load(f) 
-            
+                page_data = json.load(f)
+
             page_list, parsed_pages = [], [p['page_number'] for p in pdf_data_dict['page_infos']]
             for json_page in page_data['pages']:
                 # Extract text from the JSON file for fuzzy matching
@@ -440,10 +441,18 @@ def process_tatdqa(
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
     pdf_data = list(pdf_data.values())
     for pdf in pdf_data:
-        pdf['page_infos'] = sorted(pdf['page_infos'], key=lambda x: x['page_number'])        
+        pdf['page_infos'] = sorted(pdf['page_infos'], key=lambda x: x['page_number'])
     with open(os.path.join(processed_data_folder, pdf_data_name), 'w', encoding='UTF-8') as of:
         for data in pdf_data:
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
+
+    # rename PDF files to ID
+    tatdqa_test_docs_folder = os.path.join(processed_data_folder, 'test_docs')
+    os.makedirs(tatdqa_test_docs_folder, exist_ok=True)
+    for pdf in pdf_data:
+        test_doc_path = os.path.join(tatdqa_test_docs_folder, f"{pdf['pdf_id']}.pdf")
+        if not os.path.exists(test_doc_path):
+            shutil.copy(pdf['pdf_path'], test_doc_path)
 
     return {'test_data': test_data, 'pdf_data': pdf_data}
 
@@ -499,7 +508,7 @@ def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_fil
         else:
             sampled_data.extend(random.sample(typed_data[tp], typed_sample_size[tp]))
         logger.info(f'Sample {typed_sample_size[tp]} test data for type {tp}.')
-    
+
     sample_size = len(sampled_data)
     output_path = os.path.join(DATASET_DIR, dataset, 'processed_data', output_file) if output_file is not None else dataset_path.replace('test_data.jsonl', f'test_data_sample_{sample_size}.jsonl')
     with open(output_path, 'w', encoding='UTF-8') as of:
