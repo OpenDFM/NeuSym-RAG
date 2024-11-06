@@ -27,12 +27,12 @@
             "query": {
                 "type": "str",
                 "required": true,
-                "description": "The query text will be encoded and used to search for relevant context."
+                "description": "The query text will be encoded and used to search for relevant context. You can rephrase the original user question to obtain a clearer and more structured query requirement."
             },
             "collection_name": {
                 "type": "str",
                 "required": true,
-                "description": "The name of the collection in the Milvus vectorstore to search for relevant context."
+                "description": "The name of the collection in the Milvus vectorstore to search for relevant context. Please ensure this parameter value comes from the valid collection names."
             },
             "filter": {
                 "type": "str",
@@ -44,7 +44,7 @@
                 "type": "int",
                 "required": false,
                 "default": 5,
-                "description": "The number of top-ranked context to retrieve. Please set it to a positive integer to limit the number of returned results."
+                "description": "The number of top-ranked context to retrieve. Please set it to a positive integer to limit the number of returned results. Extremely large limit values may be truncated."
             },
             "output_fields": {
                 "type": "List[str]",
@@ -52,7 +52,7 @@
                 "default": [
                     "text"
                 ],
-                "description": "The fields to return in the output. By default, only the meaningful `text` field will be returned."
+                "description": "The fields to return in the output. By default, only the `text` field will be returned. The relevance score for each retrieved context will also be returned."
             }
         },
         "use_cases": [

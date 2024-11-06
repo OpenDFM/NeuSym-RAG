@@ -21,6 +21,49 @@ logger.addHandler(handler)
 logger.setLevel(logging.INFO)
 
 
+EMBED_TYPES = ['sentence_transformers', 'bge', 'instructor', 'mgte', 'bm25', 'splade']
+
+
+def get_embed_model_from_collection(
+        collection_name: Union[str, List[str]] = None,
+        client: Optional[MilvusClient] = None) -> Union[List[Dict[str, str]], Dict[str, str]]:
+    """ Get the embedding model type and name from the collection name.
+    @args:
+        collection_name: Union[str, List[str]], the collection name or name lsit to parse, e.g., `text_sentence_transformers_all-MiniLM-L6-v2`
+        client: MilvusClient, the connection to the vectorstore, used to get all collections if collection_name is None
+    @return:
+        embed_kwargs: Union[List[Dict[str, str]], Dict[str, str]], the parsed embedding model type and name, each encapulated in a dict
+    """
+    if collection_name is None:
+        collection_name = client.list_collections()
+    if isinstance(collection_name, str):
+        collection_name = [collection_name]
+
+    embed_kwargs = []
+    cached_models = {
+        re.sub(r'[^a-z0-9_]', '_', m.lower().rstrip(os.sep).strip()): m
+        for m in os.listdir('.cache') if os.path.isdir(m)
+    } # from normalized model name to the original model name
+    for collection in collection_name:
+        modality = 'text' if collection.startswith('text') else 'image'
+        embed_model = collection[len(modality) + 1:]
+        for et in EMBED_TYPES:
+            if embed_model.startswith(et):
+                embed_type = et
+                embed_model = embed_model[len(et) + 1:]
+                break
+        else: raise ValueError(f"Cannot determine embedding model type from collection name `{collection}`.")
+
+        if embed_type == 'bm25': pass
+        elif embed_model in cached_models:
+            embed_model = cached_models[embed_model]
+        else: raise ValueError(f"Embedding model `{embed_model}` of type `{embed_type}` not found in the local .cache/ folder.")
+        
+        embed_kwargs.append({'collection': collection, 'modality': modality, 'embed_type': embed_type, 'embed_model': embed_model})
+
+    return embed_kwargs if len(collection_name) > 1 else embed_kwargs[0]
+
+
 def get_milvus_embedding_function(embed_type: str = 'sentence_transformers', embed_model: str = 'all-MiniLM-L6-v2', backup_json: str = None) -> BaseEmbeddingFunction:
     """ Note that, we only support open-source embedding models w/o the need of API keys.
     """
@@ -75,7 +118,7 @@ def get_milvus_embedding_function(embed_type: str = 'sentence_transformers', emb
             device=device
         )
     else:
-        raise ValueError(f"Unsupported embedding model type: {embed_type}.")
+        raise ValueError(f"Unsupported embedding model type: {embed_type}. We only support {EMBED_TYPES}.")
     return embed_func
 
 
@@ -284,7 +327,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('--vectorstore', type=str, help='which vectorstore, indeed the database name.')
-    parser.add_argument('--text_embed_type', type=str, default='sentence_transformers', choices=["sentence_transformers", "bge", "instructor", "mgte", "bm25", "splade"], help='which embedding model to use, chosen from ["sentence_transformers", "bge"].')
+    parser.add_argument('--text_embed_type', type=str, default='sentence_transformers', choices=EMBED_TYPES, help=f'which embedding model to use, chosen from {EMBED_TYPES}.')
     parser.add_argument('--text_embed_model', type=str, default=os.path.join('.cache', 'all-MiniLM-L6-v2'), help='which embedding model to use, you can pre-download the model in advance into ./.cache/ folder. For BM25 embedder, set it to the language type, e.g., `en`.')
     parser.add_argument('--launch_method', type=str, default='standalone', help='launch method for vectorstore, chosen from ["docker", "standalone"]. Note that, for Windows OS, can only choose "docker".')
     parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='host + port for milvus started from docker')

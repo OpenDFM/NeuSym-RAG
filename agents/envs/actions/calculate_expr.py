@@ -15,7 +15,7 @@ class CalculateExpr(Action):
         """
         
         try:
-            msg = eval(self.expr)
+            msg = f"The calculated result is: {str(eval(str(self.expr)))}"
         except Exception as e:
             msg = f"[Error]: {str(e)}"
         return Observation(msg)
