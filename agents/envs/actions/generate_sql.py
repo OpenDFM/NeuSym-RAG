@@ -5,7 +5,6 @@ from dataclasses import dataclass, field
 import duckdb
 import pandas as pd
 import gymnasium as gym
-from dataclasses import dataclass, field
 from typing import Optional, List, Tuple, Dict, Union, Any
 from func_timeout import func_set_timeout, FunctionTimedOut
 
