@@ -2,7 +2,7 @@
 import logging, sys, os, re
 from typing import List, Dict, Any, Union, Tuple, Optional
 from agents.envs import AgentEnv
-from agents.envs.actions import GenerateSQL
+from agents.envs.actions import RetrieveFromDatabase
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
 from agents.frameworks.agent_base import AgentBase
@@ -46,7 +46,7 @@ class TwoStageText2SQLRAGAgent(AgentBase):
         logger.info(f'[ParsedSQL]: {sql}')
 
         # 2. Answer question
-        action = GenerateSQL(sql=sql)
+        action = RetrieveFromDatabase(sql=sql)
         observation = action.execute(self.env)
         prompt = AGENT_PROMPTS[self.agent_method][1].format(
             system_prompt = SYSTEM_PROMPTS['two_stage_text2sql'][1],

@@ -5,13 +5,13 @@ import duckdb
 from agents.envs.env_base import AgentEnv
 from func_timeout import func_set_timeout, FunctionTimedOut
 from typing import Optional, List, Tuple, Dict, Union, Any, Type
-from agents.envs.actions import Action, GenerateSQL, CalculateExpr, ViewImage, GenerateAnswer
+from agents.envs.actions import Action, RetrieveFromDatabase, CalculateExpr, ViewImage, GenerateAnswer
 
 class Text2SQLEnv(AgentEnv):
     """ Responsible for managing the environment for the text2sql retrieval, which includes maintaining the connection to the database, executing the SQL query with the database and formatting the output result.
     """
 
-    action_space: List[Type] = [GenerateSQL, CalculateExpr, ViewImage, GenerateAnswer]
+    action_space: List[Type] = [RetrieveFromDatabase, CalculateExpr, ViewImage, GenerateAnswer]
 
     def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, dataset: Optional[str] = None, **kwargs) -> None:
         super(Text2SQLEnv, self).__init__(action_format=action_format, action_space=action_space, dataset=dataset)

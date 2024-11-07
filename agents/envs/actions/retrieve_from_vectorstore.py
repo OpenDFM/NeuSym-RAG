@@ -11,7 +11,7 @@ from func_timeout import func_set_timeout, FunctionTimedOut
 
 
 @dataclass
-class RetrieveContext(Action):
+class RetrieveFromVectorstore(Action):
     query: str = field(default='', repr=True) # query string for retrieving the context, required
     collection_name: str = field(default='', repr=True) # collection name for the context retrieval, required
     filter: str = field(default='', repr=True) # filter condition for context retrieval, optional, by default no filter
@@ -109,7 +109,7 @@ class RetrieveContext(Action):
 
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
-                msg = df.to_markdown(table_fmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
+                msg = df.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string': # customize the result display
                 for index, row in df.iterrows():
                     id_, score = row['id'], row['distance/score']

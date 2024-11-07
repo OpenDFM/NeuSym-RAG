@@ -4,7 +4,7 @@ from pymilvus import MilvusClient
 from milvus_model.base import BaseEmbeddingFunction
 from agents.envs.env_base import AgentEnv
 from typing import Optional, List, Tuple, Dict, Union, Any, Type
-from agents.envs.actions import Action, RetrieveContext, GenerateAnswer
+from agents.envs.actions import Action, RetrieveFromVectorstore, GenerateAnswer, CalculateExpr, ViewImage, GenerateAnswer
 from utils.vectorstore_utils import get_vectorstore_connection, get_milvus_embedding_function, get_embed_model_from_collection
 
 
@@ -12,7 +12,7 @@ class Text2VecEnv(AgentEnv):
     """ Responsible for managing the environment for the text-to-vec retrieval, which includes maintaining the connection to the Milvus vectorstore, executing the search query and formatting the output result.
     """
 
-    action_space: List[Type] = [RetrieveContext, GenerateAnswer]
+    action_space: List[Type] = [RetrieveFromVectorstore, CalculateExpr, ViewImage, GenerateAnswer]
 
     def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, dataset: Optional[str] = None, **kwargs) -> None:
         super(Text2VecEnv, self).__init__(action_format=action_format, action_space=action_space, dataset=dataset)

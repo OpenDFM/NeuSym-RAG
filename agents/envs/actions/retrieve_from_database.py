@@ -10,7 +10,7 @@ from func_timeout import func_set_timeout, FunctionTimedOut
 
 
 @dataclass
-class GenerateSQL(Action):
+class RetrieveFromDatabase(Action):
 
     sql: str = field(default='', repr=True) # concrete SQL query, required
     observation_format_kwargs: Dict[str, Any] = field(default_factory=lambda: {
@@ -48,7 +48,7 @@ class GenerateSQL(Action):
             
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
-                msg = result.to_markdown(table_fmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
+                msg = result.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string':
                 msg = result.to_string(index=format_kwargs['index'])
             elif output_format == 'html':
