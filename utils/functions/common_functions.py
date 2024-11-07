@@ -3,7 +3,7 @@ import os, openai, uuid, re
 from typing import List, Dict, Union, Optional, Any, Iterable
 
 
-def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.9, temperature: float = 0.7) -> str:
+def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperature: float = 0.7) -> str:
     """ Automatically construct the message list from template and call LLM to generate the response. The `template` merely supports the following format:
     {{system_message}}
 

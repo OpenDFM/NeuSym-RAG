@@ -34,7 +34,7 @@ class LLMClient(abc.ABC):
         messages: List[Dict[str, str]],
         model: Optional[str] = None,
         temperature: float = 0.7,
-        top_p: float = 0.9,
+        top_p: float = 0.95,
         max_tokens: int = 1500,
         **kwargs
     ) -> str:
@@ -64,7 +64,7 @@ class LLMClient(abc.ABC):
         messages: List[Dict[str, str]],
         model: Optional[str] = None,
         temperature: float = 0.7,
-        top_p: float = 0.9,
+        top_p: float = 0.95,
         max_tokens: int = 1500,
         **kwargs
     ) -> str:

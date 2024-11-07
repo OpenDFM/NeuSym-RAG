@@ -25,7 +25,7 @@ def evaluation(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs)
     return score
 
 
-def llm_semantic_equivalent(question: str, pred_ans: str, gold_ans: str, model: str = 'gpt-4o', temperature: float = 0.7, top_p: float = 0.9) -> float:
+def llm_semantic_equivalent(question: str, pred_ans: str, gold_ans: str, model: str = 'gpt-4o', temperature: float = 0.7, top_p: float = 0.95) -> float:
     prompt = """You are given the following question and answer pair, please determine whether the predicted answer is semantically-equivalent to the gold answer. Your response should be a single integer number 0 or 1, with 1 for equivalent and 0 for not equivalent (no punctuation and formatting).
 Question: {question}
 Predicted Answer: {pred_ans}
@@ -49,13 +49,13 @@ Response:
         score = 0.0
     return score
 
-def fuzzy_match_strs(pred_ans: str, gold_ans: str, threshold: float = 0.9) -> float:
+def fuzzy_match_strs(pred_ans: str, gold_ans: str, threshold: float = 0.95) -> float:
     pred, gold = re.sub(r'\s+', ' ', pred_ans), re.sub(r'\s+', ' ', gold_ans)
     # allow pred to fully contain the gold answer (treated as true)
     compare_function = fuzz.partial_ratio if len(pred) > len(gold) else fuzz.ratio
     return float(compare_function(pred, gold) / 100.0 >= threshold)
 
-def fuzzy_match_lists(pred_ans: List[str], gold_ans: List[str], threshold: float = 0.9, require_order: int = 0) -> float:
+def fuzzy_match_lists(pred_ans: List[str], gold_ans: List[str], threshold: float = 0.95, require_order: int = 0) -> float:
     if require_order:
         if len(pred_ans) != len(gold_ans):
             return 0.0
@@ -111,12 +111,12 @@ def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], 
         pred_ans = str(pred_ans).strip().lower()
         return exact_match(pred_ans, answer)
     elif question_type in ['object_recognition', 'structural_understanding']: # mostly verbose section titles or recognized sentence, or special answer "No specific Section."
-        threshold = kwargs.pop('threshold', 0.9)
+        threshold = kwargs.pop('threshold', 0.95)
         answer = str(gold_data['answer']).strip().lower()
         pred_ans = str(pred_ans).strip().lower()
         return fuzzy_match_strs(pred_ans, answer, threshold=threshold)
     elif question_type in ['parent_relationship_understanding', 'child_relationship_understanding']:
-        threshold = kwargs.pop('threshold', 0.9)
+        threshold = kwargs.pop('threshold', 0.95)
         pred_ans = extract_list_from_str(str(pred_ans))
         if not isinstance(pred_ans, list):
             pred_ans = [pred_ans]
@@ -165,12 +165,12 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
         return exact_match(pred_answer, gold_answer) * float(gold_scale == str(pred_scale))
     elif question_type in ['span', 'multi-span']:
         if gold_scale == '':
-            threshold = kwargs.pop('threshold', 0.9)
+            threshold = kwargs.pop('threshold', 0.95)
             if question_type == 'span':
                 pred_answer = [str(pred_answer)]
             return fuzzy_match_lists(pred_answer, gold_answer, threshold=threshold, require_order=1)
         elif gold_scale in ['percent', 'thousand', 'million']:
-            threshold = kwargs.pop('threshold', 0.9)
+            threshold = kwargs.pop('threshold', 0.95)
             if question_type == 'multi-span':
                 if len(pred_answer) != len(gold_answer):
                     return 0.0
