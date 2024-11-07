@@ -53,7 +53,7 @@ def get_text_summary(
         max_length: int = 50,
         model: str = 'gpt-4o',
         temperature: float = 0.7,
-        top_p: float = 0.9
+        top_p: float = 0.95
     ) -> str:
     """ Get the content summary by extracting the first `num_sentences` sentences from the content.
     @args:

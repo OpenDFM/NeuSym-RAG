@@ -134,7 +134,7 @@ def get_financial_report_per_page_tableinpages(pdf_data: dict) -> List[dict]:
             Please generate a brief summary for the following HTML table content:
             {table_html}
             """
-            summary = call_llm(template=template, model='gpt-4o', top_p=0.9, temperature=0.7)
+            summary = call_llm(template=template, model='gpt-4o', top_p=0.95, temperature=0.7)
 
             # Add the result to the output
             table_data.append({
