@@ -29,3 +29,26 @@ def convert_database_schema_to_prompt(database: str, serialize_method: str = 'cr
     else:
         raise ValueError(f"Unsupported serialize method: {serialize_method}.")
     return prompt
+
+
+def convert_vectorstore_schema_to_prompt(vectorstore: str, serialize_method: str = 'detailed_json') -> str:
+    """ Convert the vectorstore schema to a prompt.
+    @param:
+        vectorstore: str, vectorstore name, also the database name
+    @return:
+        prompt: str, prompt
+    """
+    prompt = ''
+    db_schema = os.path.join('data', 'database', vectorstore, f'{vectorstore}.json')
+    with open(db_schema, 'r') as f:
+        db_schema = json.load(f) # extract encodable table-column pairs (encodable: true)
+    vs_schema = os.path.join('data', 'vectorstore', vectorstore, f'{vectorstore}.json')
+    with open(vs_schema, 'r') as f:
+        vs_schema = json.load(f) # get all collections and their corresponding fields (indexes can be ignored)
+    
+    pass
+
+    # also add the syntax/grammar for vectorstore filter conditions
+    pass
+
+    return prompt

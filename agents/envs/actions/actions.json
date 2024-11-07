@@ -21,24 +21,24 @@
     },
     "RetrieveContext": {
         "action_type": "RetrieveContext",
-        "description": "Given a query text, retrieve relevant context from the Milvus vectorstore. Please refer the description for different collections and fields for each stored data entry.",
-        "observation": "The observation space is the retrieved top-ranked context from the Milvus vectorstore based on input parameters.",
+        "description": "Given a query text, retrieve relevant context from the Milvus vectorstore. Please refer the schema of different collections and fields for each stored data entry.",
+        "observation": "The observation space is the retrieved top-ranked entries from the Milvus vectorstore based on input parameters.",
         "parameters": {
             "query": {
                 "type": "str",
                 "required": true,
-                "description": "The query text will be encoded and used to search for relevant context. You can rephrase the original user question to obtain a clearer and more structured query requirement."
+                "description": "The query text will be encoded and used to search for relevant context. You can rephrase the original user question to obtain a more clear and structured query requirement."
             },
             "collection_name": {
                 "type": "str",
                 "required": true,
-                "description": "The name of the collection in the Milvus vectorstore to search for relevant context. Please ensure this parameter value comes from the valid collection names."
+                "description": "The name of the collection in the Milvus vectorstore to search for relevant context. Please ensure the name comes from existing collection names."
             },
             "filter": {
                 "type": "str",
                 "required": false,
                 "default": "",
-                "description": "The filter condition to narrow down the search space. Please refer to the syntax of filter condition."
+                "description": "The filter condition to narrow down the search space. Please refer to the syntax of filter conditions. By default, no filter condition. It is suggested to restrict `table_name`, `column_name`, and even `primary_key` to refine search results."
             },
             "limit": {
                 "type": "int",
@@ -52,11 +52,33 @@
                 "default": [
                     "text"
                 ],
-                "description": "The fields to return in the output. By default, only the `text` field will be returned. The relevance score for each retrieved context will also be returned."
+                "description": "The fields to return in the output. By default, the `text` field will be returned for text type collections. And the id and distance/score for each retrieved entry will be returned even if this parameter is empty."
             }
         },
         "use_cases": [
-
+            {
+                "example": {
+                    "query": "Which paper discusses LLM-based agent?",
+                    "collection_name": "text_bm25_en",
+                    "limit": 10,
+                    "output_fields": [
+                        "text"
+                    ]
+                },
+                "explanation": "Search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with no filter condition and return the top 10 relevant context containing the `text` field."
+            },
+            {
+                "example": {
+                    "query": "Is there any work about the topic structured RAG?",
+                    "collection_name": "text_sentence_transformers_all_minilm_l6_v2",
+                    "filter": "table_name = 'papers' AND column_name = 'abstract'",
+                    "output_fields": [
+                        "text",
+                        "primary_key"
+                    ]
+                },
+                "explanation": "Perform a similarity search on all cell values from the `abstract` column of the `papers` table in the relational database, using the MiniLM-L6-v2 setence transformer embeddings. By default, the top 5 most relevant entries will be returned based on vector similarity. Each result includes the abstract text and the corresponding primary key from the `papers` table to uniquely identify the cell."
+            }
         ]
     },
     "CalculateExpr": {

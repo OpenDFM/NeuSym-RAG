@@ -36,6 +36,18 @@ class RetrieveContext(Action):
                 assert self.limit > 0
             except:
                 return "[Error]: Value of parameter `limit` should be a positive integer."
+
+        vs_conn: MilvusClient = env.vectorstore_conn
+        if not vs_conn:
+            msg = "[Error]: Milvus connection is not available."
+            return msg
+        if self.query == '' or self.query is None:
+            msg = "[Error]: Query string is empty."
+            return msg
+        if not vs_conn.has_collection(self.collection_name):
+            msg = "[Error]: Collection {} does not exist in the Milvus database. Please choose from these collections {}".format(repr(self.collection_name), vs_conn.list_collections())
+            return msg
+        
         is_valid_output_fields = lambda x: type(x) == list and all([type(field) == str for field in x])
         if not is_valid_output_fields(self.output_fields):
             try:
@@ -44,25 +56,13 @@ class RetrieveContext(Action):
             except:
                 return "[Error]: Value of parameter `output_fields` should be a list of strings."
         self.output_fields = [str(field) for field in self.output_fields if str(field).strip() not in ['id', 'vector', 'distance', '']] # filter useless fields
-
-        vs_conn: MilvusClient = env.vectorstore_conn
-        embedder_dict: Dict[str, BaseEmbeddingFunction] = env.embedder_dict
-        if not vs_conn:
-            msg = "[Error]: Milvus connection is not available."
-            return msg
-        if self.query == '' or self.query is None:
-            msg = "[Error]: Query string is empty."
-            return msg
-        if not vs_conn.has_collection(self.collection_name):
-            msg = "[Error]: Collection {} does not exist in the Milvus database.".format(repr(self.collection_name))
-            return msg
-
         valid_output_fields = [field['name'] for field in vs_conn.describe_collection(self.collection_name)['fields']]
         for field in self.output_fields:
             if field not in valid_output_fields:
-                msg = "[Error]: Output field `{}` is not available in the collection {} of Milvus vectorstore.".format(field, self.collection_name)
+                msg = "[Error]: Output field `{}` is not available in the collection {} of Milvus vectorstore. The available output fields include {}".format(field, self.collection_name, valid_output_fields)
                 return msg
 
+        embedder_dict: Dict[str, BaseEmbeddingFunction] = env.embedder_dict
         encoder: BaseEmbeddingFunction = embedder_dict[self.collection_name]['embedder']
         encoder_type: str = embedder_dict[self.collection_name]['embed_type']
         try:
