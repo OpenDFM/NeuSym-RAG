@@ -39,16 +39,23 @@ def convert_vectorstore_schema_to_prompt(vectorstore: str, serialize_method: str
         prompt: str, prompt
     """
     prompt = ''
-    db_schema = os.path.join('data', 'database', vectorstore, f'{vectorstore}.json')
-    with open(db_schema, 'r') as f:
-        db_schema = json.load(f) # extract encodable table-column pairs (encodable: true)
     vs_schema = os.path.join('data', 'vectorstore', vectorstore, f'{vectorstore}.json')
     with open(vs_schema, 'r') as f:
         vs_schema = json.load(f) # get all collections and their corresponding fields (indexes can be ignored)
-    
+
+    # 1. which collections are available and the description for them
     pass
 
-    # also add the syntax/grammar for vectorstore filter conditions
+    # 2. which fields are available for each collection and the description for them
+    # note that, for text and image collections respectively, the inner fields are almost the same, you can select one collection for each modality to shorten the prompt as an example
+    pass
+
+    # 3. which table, column pairs are encodable and can be leveraged for filtering or output fields
+    db_schema = os.path.join('data', 'database', vectorstore, f'{vectorstore}.json')
+    with open(db_schema, 'r') as f:
+        db_schema = json.load(f) # extract encodable table-column pairs (encodable: true)
+
+    # 4. also add the syntax/grammar for vectorstore filter conditions
     pass
 
     return prompt
