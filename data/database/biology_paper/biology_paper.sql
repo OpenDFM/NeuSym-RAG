@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS metadata (
 CREATE TABLE IF NOT EXISTS pages (
 	page_id UUID, -- A unique identifier for each page within a paper.
 	page_path VARCHAR, -- Path to the current page (each PDF page is stored as a .png screenshot file).
-	page_number INTEGER, -- The page number on which this table is located in the paper.
+	page_number INTEGER, -- The page number in the current paper, starting from 1.
 	page_width INTEGER, -- The pixel width of the current page.
 	page_height INTEGER, -- The pixel height of the current page.
 	page_content VARCHAR, -- The full text content of the current page, including all main texts, section titles, references, tables, and figures.

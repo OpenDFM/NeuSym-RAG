@@ -1,5 +1,4 @@
 {
-    "log": true,
     "pipeline": [
         {
             "function": "get_financial_report_per_page_uuid",
@@ -34,7 +33,12 @@
             "args": {
                 "deps": [
                     0
-                ]
+                ],
+                "kwargs": {
+                    "model": "gpt-4o-mini",
+                    "top_p": 0.95,
+                    "temperature": 0.7
+                }
             }
         },
         {

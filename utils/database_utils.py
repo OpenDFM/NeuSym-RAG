@@ -150,35 +150,12 @@ def create_database_from_sql(sql_path: str, db_path: str, from_scratch: bool = T
     return
 
 
-def create_vector_database_from_json(json_path: str, db_path: str, from_scratch: bool = True) -> None:
-    """ Create the vector database from the JSON file.
-    @param:
-        json_path: str, path to the JSON file
-        db_path: str, path to the database file
-        from_scratch: remove the existed database file or not
-    """
-    if not os.path.exists(json_path):
-        raise FileNotFoundError(f"File {json_path} not found.")
-
-    with open(json_path, 'r') as f:
-        schema = json.load(f)
-    if from_scratch and os.path.exists(db_path):
-        os.remove(db_path)
-    client = MilvusClient(db_path)
-    for collection in schema['database_schema']:
-        collection_name = collection['collection']['collection_name']
-        if not client.has_collection(collection_name=collection_name):
-            for field in collection['fields']:
-                if field['field_name'] == 'vector':
-                    client.create_collection(collection_name=collection_name, dimension=field['dimension'])
-                    break
-            else:
-                logger.error(f"Error in finding the vector field for the collection: {collection_name}")
-    client.close()
-    return
-
-
-def populate_pdf_file_into_database(database_name: str, pdf_path: str, config_path: Optional[str] = None) -> None:
+def populate_pdf_file_into_database(
+        database_name: str,
+        pdf_path: str,
+        config_path: Optional[str] = None,
+        on_conflict: str = 'replace'
+    ) -> None:
     """ Populate the PDF file into the database.
     @param:
         database_name: str, database name
@@ -190,12 +167,13 @@ def populate_pdf_file_into_database(database_name: str, pdf_path: str, config_pa
     config_path = config_path if config_path is not None else os.path.join('configs', f'{database_name}_config.json')
     with open(config_path, 'r') as inf:
         config = json.load(inf)
+    log_to_file = config.get('log', False)
     if pdf_path.endswith('.jsonl'):
         with open(pdf_path, 'r', encoding='UTF-8') as inf:
             for line in tqdm.tqdm(inf):
                 json_data = json.loads(line)
-                populator.populate(json_data, config, log=True, on_conflict='replace')
-    else: populator.populate(pdf_path, config, log=True, on_conflict='replace')
+                populator.populate(json_data, config, log=log_to_file, on_conflict=on_conflict)
+    else: populator.populate(pdf_path, config, log=log_to_file, on_conflict=on_conflict)
     populator.close()
     return
 
@@ -206,23 +184,20 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description='Database relevant utilities.')
     parser.add_argument('--database', type=str, required=True, help='Database name.')
-    parser.add_argument('--function', type=str, required=True, help='Which function to run.')
+    parser.add_argument('--function', type=str, required=True, choices=['create_db', 'populate_db'], help='Which function to run.')
     parser.add_argument('--config_path', type=str, help='Path to the config file.')
     parser.add_argument('--pdf_path', type=str, help='Path to the PDF file or JSON line file.')
+    parser.add_argument('--on_conflict', type=str, default='replace', choices=['replace', 'ignore', 'raise'], help='How to handle the conflict.')
     parser.add_argument('--from_scratch', action='store_true', help='Whether to create the empty database from scratch.')
     args = parser.parse_args()
 
     json_path = os.path.join(DATABASE_DIR, args.database, args.database + '.json')
     sql_path = os.path.join(DATABASE_DIR, args.database, args.database + '.sql')
     db_path = os.path.join(DATABASE_DIR, args.database, args.database + '.duckdb')
-    vector_json_path = os.path.join(VECTOR_DATABASE_DIR, args.database, args.database + '.json')
-    vector_db_path = os.path.join(VECTOR_DATABASE_DIR, args.database, args.database + '.db')
     if args.function == 'create_db':
         convert_json_to_create_sql(json_path, sql_path)
-        create_database_from_sql(sql_path, db_path)
-    elif args.function == 'create_vector_db':
-        create_vector_database_from_json(vector_json_path, vector_db_path)
+        create_database_from_sql(sql_path, db_path, from_scratch=args.from_scratch)
     elif args.function == 'populate_db':
-        populate_pdf_file_into_database(args.database, args.pdf_path, args.config_path)
+        populate_pdf_file_into_database(args.database, args.pdf_path, args.config_path, args.on_conflict)
     else:
         raise ValueError(f"Function {args.function} not implemented yet.")

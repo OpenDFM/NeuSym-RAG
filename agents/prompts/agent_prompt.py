@@ -1,5 +1,18 @@
 #coding=utf8
 
+CLASSIC_RAG_PROMPT = """ {system_prompt}
+
+--------
+
+[Question]: {question}
+[Retrieved Context]: {context}
+[Answer Format]: {answer_format}
+
+You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER IN THREE BACKTICKS):
+
+```txt\nfinal answer\n```
+"""
+
 REACT_PROMPT = """{system_prompt}
 
 --------
@@ -56,4 +69,8 @@ You can firstly give your reasoning process, followed by the final answer in the
 
 ```txt\nfinal answer\n```
 """
+]
+
+TWO_STAGE_TEXT2VEC_PROMPT = [
+
 ]

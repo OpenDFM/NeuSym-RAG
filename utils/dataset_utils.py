@@ -84,12 +84,14 @@ def process_pdfvqa(
     image_zip = os.path.join(raw_data_folder, 'test_images.zip')
     if not os.path.exists(image_zip):
         raise FileNotFoundError(f"File {image_zip} not found.")
-    with zipfile.ZipFile(image_zip, 'r') as zip_ref:
-        zip_ref.extractall(processed_data_folder) # data/dataset/pdfvqa/processed_data/test_images/
-    raw_image_folder = os.path.join(processed_data_folder, 'test_images')
 
+    # raw image folder: data/dataset/pdfvqa/processed_data/test_images/
+    raw_image_folder = os.path.join(processed_data_folder, 'test_images')
     # output image folder with bounding boxes: data/dataset/pdfvqa/processed_data/bbox_images/
     image_folder = os.path.join(processed_data_folder, image_folder_name)
+    if not (os.path.exists(raw_image_folder) and os.path.isdir(raw_image_folder) and len(os.listdir(raw_image_folder)) > 0):
+        with zipfile.ZipFile(image_zip, 'r') as zip_ref:
+            zip_ref.extractall(processed_data_folder)
     if not os.path.exists(image_folder):
         os.makedirs(image_folder)
 
@@ -334,11 +336,11 @@ def process_tatdqa(
 
     # define unpressed data folder
     tatdqa_docs_folder = os.path.join(processed_data_folder, 'test')
-    if not os.path.exists(tatdqa_docs_folder) or not os.path.isdir(tatdqa_docs_folder):
+    if not (os.path.exists(tatdqa_docs_folder) and os.path.isdir(tatdqa_docs_folder) and len(os.listdir(tatdqa_docs_folder)) > 0):
         with zipfile.ZipFile(os.path.join(raw_data_folder, 'tatdqa_docs_test.zip'), 'r') as zip_ref:
             zip_ref.extractall(processed_data_folder)
     tatdqa_pdf_folder = os.path.join(processed_data_folder, 'tat_docs')
-    if not os.path.exists(tatdqa_pdf_folder) or not os.path.isdir(tatdqa_pdf_folder):
+    if not (os.path.exists(tatdqa_pdf_folder) and os.path.isdir(tatdqa_pdf_folder) and len(os.listdir(tatdqa_pdf_folder)) > 0):
         with zipfile.ZipFile(os.path.join(raw_data_folder, 'tat_docs.zip'), 'r') as zip_ref:
             zip_ref.extractall(processed_data_folder)
     tatdqa_test_gold = os.path.join(raw_data_folder, 'tatdqa_dataset_test_gold.json')

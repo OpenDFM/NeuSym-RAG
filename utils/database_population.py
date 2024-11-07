@@ -55,7 +55,7 @@ class  DatabasePopulation():
             pdf_path_or_json_data: Union[str, Dict[str, Any]],
             config: Dict[str, Any],
             on_conflict: bool = 'replace',
-            log: bool = True
+            log: bool = False
         ) -> None:
         """ Populate the database with the given PDF file.
         @params:

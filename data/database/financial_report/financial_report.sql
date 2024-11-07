@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS metadata (
 */
 CREATE TABLE IF NOT EXISTS pages (
 	page_id UUID, -- A unique identifier for each page within a report.
-	page_number INTEGER, -- The page number on which this section is located in the report.
+	page_number INTEGER, -- The page number in the current paper, starting from 1.
 	page_width INTEGER, -- The pixel width of the current page.
 	page_height INTEGER, -- The pixel height of the current page.
 	page_content VARCHAR, -- The content of the page.
@@ -45,11 +45,11 @@ CREATE TABLE IF NOT EXISTS chunks (
 	FOREIGN KEY (ref_report_id) REFERENCES metadata(report_id),
 	FOREIGN KEY (ref_page_id) REFERENCES pages(page_id)
 );
-/* table table_in_pages: This table stores information about tables extracted from pages using library unstructured,including content, bounding box and summary of each table. 
+/* table table_in_pages: This table stores information about tables extracted from pages using library unstructured,including content(in html format), bounding box and summary of each table
 */
 CREATE TABLE IF NOT EXISTS table_in_pages (
 	table_id UUID, -- A unique identifier for each table.
-	table_content VARCHAR, -- The content of the table in markdown format.
+	table_content VARCHAR, -- The content of the table in html format.
 	table_summary VARCHAR, -- A brief summary of the table content, focusing on key information and describing the table content.
 	bounding_box INTEGER[4], -- The bounding box of the table in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height.
 	ordinal INTEGER, -- Each table is labeled with one distinct integer number in the current page, which starts from 0.

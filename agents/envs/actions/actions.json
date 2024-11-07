@@ -21,7 +21,7 @@
     },
     "RetrieveFromVectorstore": {
         "action_type": "RetrieveFromVectorstore",
-        "description": "Given a query text, retrieve relevant context from the Milvus vectorstore. Please refer the schema of different collections and fields for each stored data entry.",
+        "description": "Given a query text, retrieve relevant context from the Milvus vectorstore. Please refer to the schema of different collections and fields for each stored data entry.",
         "observation": "The observation space is the retrieved top-ranked entries from the Milvus vectorstore based on input parameters.",
         "parameters": {
             "query": {
@@ -38,7 +38,7 @@
                 "type": "str",
                 "required": false,
                 "default": "",
-                "description": "The filter condition to narrow down the search space. Please refer to the syntax of filter conditions. By default, no filter condition. It is suggested to restrict `table_name`, `column_name`, and even `primary_key` to refine search results."
+                "description": "The filter condition to narrow down the search space. Please refer to the syntax of filter conditions. By default, no filter condition. It is suggested to restrict `table_name`, `column_name`, `primary_key`, or `pdf_id` to refine search results."
             },
             "limit": {
                 "type": "int",
@@ -58,14 +58,15 @@
         "use_cases": [
             {
                 "example": {
-                    "query": "Which paper discusses LLM-based agent?",
+                    "query": "Does this paper discuss LLM-based agent? (paper id is '12345678')",
                     "collection_name": "text_bm25_en",
                     "limit": 10,
+                    "filter": "pdf_id = '12345678'",
                     "output_fields": [
                         "text"
                     ]
                 },
-                "explanation": "Search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with no filter condition and return the top 10 relevant context containing the `text` field."
+                "explanation": "Search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with one filter to restrict the content source and return the top 10 relevant context containing the `text` field."
             },
             {
                 "example": {
@@ -83,7 +84,7 @@
     },
     "CalculateExpr": {
         "action_type": "CalculateExpr",
-        "description": "Calculate the expression and return the result. The expression should be a Python-style arithmetic expression that can be correctly processed by eval().",
+        "description": "Calculate the expression and return the result. The expression should be a Python-style arithmetic expression that can be correctly processed by `eval()`.",
         "observation": "The observation space is the result of the expression calculation. You do not need to worry about the actual calculation, we will perform it for you. If the calculation failed, we will return the error message.",
         "parameters": {
             "expr": {

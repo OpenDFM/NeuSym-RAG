@@ -20,6 +20,17 @@
                 "description": "The text content or cell value from the relational database to encode."
             },
             {
+                "name": "pdf_id",
+                "dtype": "VARCHAR",
+                "max_length": 256,
+                "description": "The unique id of the PDF file stored in the relational database that the `text` field belongs to."
+            },
+            {
+                "field_name": "page_number",
+                "dtype": "INT32",
+                "description": "The page number in the PDF file that the `text` field belongs to (starting from 1). This field can be used to quickly filter the search space. Value -1 means unknown."
+            },
+            {
                 "name": "table_name",
                 "dtype": "VARCHAR",
                 "max_length": 256,
@@ -49,6 +60,14 @@
             },
             {
                 "field_name": "text",
+                "index_type": "INVERTED"
+            },
+            {
+                "field_name": "pdf_id",
+                "index_type": "INVERTED"
+            },
+            {
+                "field_name": "page_number",
                 "index_type": "INVERTED"
             },
             {
@@ -87,6 +106,17 @@
                 "description": "The text content or cell value from the relational database to encode."
             },
             {
+                "name": "pdf_id",
+                "dtype": "VARCHAR",
+                "max_length": 256,
+                "description": "The unique id of the PDF file stored in the relational database that the `text` field belongs to. This field can be used to quickly filter the search space."
+            },
+            {
+                "field_name": "page_number",
+                "dtype": "INT32",
+                "description": "The page number in the PDF file that the `text` field belongs to (starting from 1). This field can be used to quickly filter the search space. Value -1 means unknown."
+            },
+            {
                 "name": "table_name",
                 "dtype": "VARCHAR",
                 "max_length": 256,
@@ -113,6 +143,14 @@
             },
             {
                 "field_name": "text",
+                "index_type": "INVERTED"
+            },
+            {
+                "field_name": "pdf_id",
+                "index_type": "INVERTED"
+            },
+            {
+                "field_name": "page_number",
                 "index_type": "INVERTED"
             },
             {

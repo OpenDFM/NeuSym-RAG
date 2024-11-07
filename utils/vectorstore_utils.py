@@ -4,7 +4,7 @@ from scipy.sparse import csr_array
 import os, re, sys, json, logging, torch, tqdm, time
 from pymilvus import MilvusClient, FieldSchema, CollectionSchema, DataType
 from milvus_model.base import BaseEmbeddingFunction
-from typing import List, Dict, Any, Union, Optional
+from typing import List, Tuple, Dict, Any, Union, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.database_population import DatabasePopulation
 from utils.functions.common_functions import get_uuid
@@ -243,6 +243,74 @@ def initialize_vectorstore(conn: MilvusClient, schema: List[Dict[str, Any]]) -> 
     return conn
 
 
+def try_sql_with_extra_fields_returned(db_conn: DatabasePopulation, table_name: str, column_name: str, primary_keys: Union[str, List[str]], extra_fields: List[Union[str, Tuple[str]]] = []) -> Tuple[bool, List[Tuple[Any]]]:
+    """ Try to execute the SQL statement to retrieve all column values, and also obtain the primary key values and some extra fields (e.g., pdf_id). Since the extra field name may differ in different DB tables (e.g., paper_id, ref_paper_id), we need to try candidates.
+    @args:
+        db_conn: DatabasePopulation, the connection to the relational database
+        table_name: str, the table name to query
+        column_name: str, the column name to retrieve
+        primary_keys: Union[str, List[str]], the primary key names
+        extra_fields: List[Tuple[str]], candidates of different extra field names
+    @return:
+        Tuple[bool, List[Tuple[Any]]], whether the SQL statement including extra fields is executed successfully and the returned result
+    """
+    primary_keys = [primary_keys] if type(primary_keys) == str else primary_keys
+    for extra_fields in extra_fields:
+        try:
+            if type(extra_fields) == str:
+                select = f"SELECT {column_name}, {extra_fields}, {', '.join(primary_keys)} FROM {table_name};"
+                result = db_conn.execute_sql_statement(select)
+                return True, result
+            else:
+                select = f"SELECT {column_name}, {', '.join(extra_fields)}, {', '.join(primary_keys)} FROM {table_name};"
+                result = db_conn.execute_sql_statement(select)
+                return True, result
+        except Exception as e:
+            pass
+    select = f"SELECT {column_name}, {', '.join(primary_keys)} FROM {table_name};"
+    result = db_conn.execute_sql_statement(select)
+    return False, result
+
+
+def get_extra_fields(db_schema: Dict[str, Any]) -> List[Tuple[str]]:
+    """ Get all possible PDF and page column combinations for the relational database.
+    @args:
+        db_schema: Dict[str, Any], the .json schema of the relational database
+    @return:
+        List[Tuple[str]]
+    """
+    database = db_schema['database_name']
+    if database == 'biology_paper':
+        return [('ref_paper_id', 'ref_page_id'), ('ref_paper_id', 'page_id')]
+    elif database == 'financial_report':
+        return [('ref_report_id', 'ref_page_id'), ('ref_report_id', 'page_id')]
+    else:
+        raise ValueError(f"Database name {database} not recognized.")
+
+
+def get_page_number_from_id(db_schema: Dict[str, Any], db_conn: DatabasePopulation, pdf_id: str, page_id: str) -> int:
+    """ Get the page number from the relational database.
+    @args:
+        db_schema: Dict[str, Any], the schema of the relational database
+        db_conn: DatabasePopulation, the connection to the relational database
+        pdf_id: str, the PDF id
+        page_id: str, the page id
+    @return:
+        int, the page number (-1 means not found)
+    """
+    database = db_schema['database_name']
+    if database == 'biology_paper':
+        sql = f"SELECT page_number FROM pages WHERE ref_paper_id = '{pdf_id}' AND page_id = '{page_id}';"
+        result = db_conn.execute_sql_statement(sql)
+        return int(result[0][0]) if result else -1
+    elif database == 'financial_report':
+        sql = f"SELECT page_number FROM pages WHERE ref_report_id = '{pdf_id}' AND page_id = '{page_id}';"
+        result = db_conn.execute_sql_statement(sql)
+        return int(result[0][0]) if result else -1
+    else:
+        raise ValueError(f"Database name {database} not recognized.")
+
+
 def encoding_database_content(vs_conn: MilvusClient, db_conn: DatabasePopulation, db_schema: Dict[str, Any], text_embed_kwargs: Dict[str, Any] = {}, image_embed_kwargs: Dict[str, Any] = {}, skip_collections: List[str] = [], **kwargs) -> None:
     """ Encode the database content into vectors and insert them into the vectorstore.
     @args:
@@ -277,7 +345,8 @@ def encoding_database_content(vs_conn: MilvusClient, db_conn: DatabasePopulation
             if collection_name in skip_collections: continue
 
             logger.info(f"Extract table={table_name}, column={col['column_name']}, modality={modality} ...")
-            result = db_conn.execute_sql_statement(f"SELECT {column_name}, {', '.join(primary_keys)} FROM {table_name};")
+            extra_fields = get_extra_fields(db_schema)
+            contain_extra_fields, result = try_sql_with_extra_fields_returned(db_conn, table_name, column_name, primary_keys, extra_fields=extra_fields)
             if result is None or len(result) == 0: continue
 
             if modality == 'text' and text_embed_type != 'bm25':
@@ -288,7 +357,18 @@ def encoding_database_content(vs_conn: MilvusClient, db_conn: DatabasePopulation
                     text = str(row[0]).strip()
                     if text is None or text == '': continue
                     record = {'text': text, 'table_name': table_name, 'column_name': column_name}
-                    record['primary_key'] = str(row[1]) if len(row) == 2 else ','.join(row[1:])
+                    if contain_extra_fields:
+                        if len(extra_fields[0]) == 2: # two existing DBs, pdf_id + page_id
+                            pdf_id, page_id = str(row[1]), str(row[2])
+                            record['pdf_id'] = pdf_id
+                            record['page_number'] = get_page_number_from_id(db_schema, db_conn, pdf_id, page_id)
+                            record['primary_key'] = ','.join([v for v in row[3:]])
+                        else: # usually, only extra field pdf_id
+                            record['pdf_id'] = str(row[1])
+                            record['primary_key'] = ','.join([v for v in row[2:]])
+                    else:
+                        record['primary_key'] = ','.join([v for v in row[1:]])
+
                     documents.append(text)
                     text_records.append(record)
                 else: # TODO: other modality, e.g., image

@@ -81,7 +81,7 @@ def aggregate_financial_report_table_chunks(pdf_data: dict, page_ids: List[str],
     return results
 
 
-def get_financial_report_per_page_tableinpages(pdf_data: dict) -> List[dict]:
+def get_financial_report_per_page_tableinpages(pdf_data: dict, model='gpt-4o', top_p=0.95, temperature=0.7) -> List[dict]:
     """
     Process pdf_data to extract tables and their bounding boxes (bbox) using 'unstructured' library, and also give a summary of each table using llm
     Output:
@@ -94,7 +94,12 @@ def get_financial_report_per_page_tableinpages(pdf_data: dict) -> List[dict]:
         # original: [x0, y0, x1, y1]
         # after: [x0, y0, width, height]
         x0, y0, x1, y1 = bbox
-        return [round(x0 * width_ratio, 1), round(y0 * height_ratio, 1), round((x1 - x0) * width_ratio, 1), round((y1 - y0) * height_ratio, 1)]
+        return [
+            round(x0 * width_ratio, 1),
+            round(y0 * height_ratio, 1),
+            round((x1 - x0) * width_ratio, 1),
+            round((y1 - y0) * height_ratio, 1)
+        ]
 
     images = convert_from_path(pdf_path) #pdf2image (provide page size information for library unstructured)
 
@@ -125,16 +130,17 @@ def get_financial_report_per_page_tableinpages(pdf_data: dict) -> List[dict]:
             # Extract table HTML 
             table_html = table.metadata.text_as_html
             # Extract table bounding boxes and adjust size
-            width_ratio, height_ratio = width / images[page_number-1].size[0], height / images[page_number-1].size[1] # PyMuPDF vs unstructured(starting from 0)
-            (x0,y0),_,(x1,y1),_ = table.metadata.coordinates.points
-            table_bbox=normalize_bbox((x0,y0,x1,y1), width_ratio, height_ratio) 
+            width_ratio = width / images[page_number - 1].size[0]
+            height_ratio = height / images[page_number - 1].size[1] # PyMuPDF vs unstructured(starting from 0)
+            (x0, y0), _, (x1, y1), _ = table.metadata.coordinates.points
+            table_bbox = normalize_bbox((x0,y0,x1,y1), width_ratio, height_ratio) 
             # Get table summary using llm
             template = f"""You are an expert in summarizing data. Your task is to generate a concise summary for an HTML-formatted table, focusing on key information and describing the table content clearly and succinctly.
             
             Please generate a brief summary for the following HTML table content:
             {table_html}
             """
-            summary = call_llm(template=template, model='gpt-4o', top_p=0.9, temperature=0.7)
+            summary = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
 
             # Add the result to the output
             table_data.append({

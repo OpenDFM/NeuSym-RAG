@@ -35,7 +35,7 @@ class RetrieveFromVectorstore(Action):
                 self.limit = int(str(self.limit))
                 assert self.limit > 0
             except:
-                return "[Error]: Value of parameter `limit` should be a positive integer."
+                return Observation("[Error]: Value of parameter `limit` should be a positive integer.")
 
         vs_conn: MilvusClient = env.vectorstore_conn
         if not vs_conn:
