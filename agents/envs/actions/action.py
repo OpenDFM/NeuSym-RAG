@@ -56,11 +56,6 @@ class Action(ABC):
         return False
 
 
-    @property
-    def observation_type(self) -> str:
-        return 'text'
-
-
     @abstractmethod
     def execute(self, env: gym.Env, **format_kwargs) -> Observation:
         """ Execute the action in the environment and return the Observation object.
