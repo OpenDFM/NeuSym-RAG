@@ -1,7 +1,6 @@
 #coding=utf8
 import json, sys, os, re, logging
 import duckdb, tqdm
-from pymilvus import MilvusClient
 from typing import List, Dict, Union, Optional, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -18,7 +17,6 @@ logger.setLevel(logging.INFO)
 
 
 DATABASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'database')
-VECTOR_DATABASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'vector_database')
 
 FEASIBLE_DATA_TYPES = ['INTEGER', 'BOOLEAN', 'BOOL', 'FLOAT', 'REAL', 'DOUBLE', 'UUID', 'VARCHAR', 'CHAR', 'TEXT', 'STRING', 'TIMESTAMPTZ', 'DATE', 'TIME', 'TIMESTAMP', 'DATETIME', 'MAP', 'STRUCT', 'UNION']
 
@@ -126,6 +124,27 @@ def convert_json_to_create_sql(json_path: str, sql_path: Optional[str] = None) -
     return complete_sql
 
 
+def get_database_connection(database_name: str, database_type: str = 'duckdb'):
+    """ Get the database connection from the database name.
+    @param:
+        database_name: str, database name
+        database_type: str, database type, default is 'duckdb'
+    @return:
+        database connection
+    """
+    if database_type == 'duckdb':
+        if os.path.exists(database_name):
+            db_path = database_name
+        else:
+            db_path = os.path.join(DATABASE_DIR, database_name, database_name + '.duckdb')
+        if not os.path.exists(db_path):
+            raise FileNotFoundError(f"Database path {db_path} not found.")
+        conn: duckdb.DuckDBPyConnection = duckdb.connect(db_path)
+        return conn
+    else:
+        raise ValueError(f"Database type {database_type} not supported.")
+
+
 def create_database_from_sql(sql_path: str, db_path: str, from_scratch: bool = True) -> None:
     """ Create the database from the SQL file.
     @param:
@@ -168,12 +187,17 @@ def populate_pdf_file_into_database(
     with open(config_path, 'r') as inf:
         config = json.load(inf)
     log_to_file = config.get('log', False)
+    write_count = 0
     if pdf_path.endswith('.jsonl'):
         with open(pdf_path, 'r', encoding='UTF-8') as inf:
             for line in tqdm.tqdm(inf):
                 json_data = json.loads(line)
-                populator.populate(json_data, config, log=log_to_file, on_conflict=on_conflict)
-    else: populator.populate(pdf_path, config, log=log_to_file, on_conflict=on_conflict)
+                populator.populate(json_data, config, on_conflict=on_conflict, log=log_to_file)
+                write_count += 1
+    else:
+        populator.populate(pdf_path, config, on_conflict=on_conflict, log=log_to_file)
+        write_count += 1
+    logger.info(f"Total {write_count} PDF parsed and written into database {database_name}.")
     populator.close()
     return
 

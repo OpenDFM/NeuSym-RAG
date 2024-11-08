@@ -26,7 +26,7 @@
                 "description": "The unique id of the PDF file stored in the relational database that the `text` field belongs to."
             },
             {
-                "field_name": "page_number",
+                "name": "page_number",
                 "dtype": "INT32",
                 "description": "The page number in the PDF file that the `text` field belongs to (starting from 1). This field can be used to quickly filter the search space. Value -1 means unknown."
             },
@@ -112,7 +112,7 @@
                 "description": "The unique id of the PDF file stored in the relational database that the `text` field belongs to. This field can be used to quickly filter the search space."
             },
             {
-                "field_name": "page_number",
+                "name": "page_number",
                 "dtype": "INT32",
                 "description": "The page number in the PDF file that the `text` field belongs to (starting from 1). This field can be used to quickly filter the search space. Value -1 means unknown."
             },

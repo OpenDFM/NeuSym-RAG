@@ -22,7 +22,7 @@ We choose and pre-process the following benchmarks for experiments:
             - tatdqa_dataset_test_gold.json # QA in dataset tatdqa
             - tat_docs.zip # source PDF files
         - processed_data/ #pre-processed dataset
-            
+    - ... other datasets ...
 ```
 
 
@@ -35,7 +35,7 @@ For PDF-VQA, please download them from the following links into folder `data/dat
 - [test_images.zip](https://drive.google.com/drive/folders/1A2cI3uJUU_1ZliOKpHmYa07VfvZCwOo1?usp=drive_link)
 - [test_doc_info_visual.pkl](https://drive.google.com/file/d/1knSVmocw4-_FF98bFMdVSvhnUn3mPUvm/view?usp=drive_link)
 
-> Notice, it seems that the [official repository](https://github.com/adlnlp/pdfvqa?tab=readme-ov-file) swapped the download links for the validation set ([pdfvqa_taska_val_0509_clean.csv](https://drive.google.com/file/d/1HIYxpGCcXdQo42b79Eqfmji9U9-YmUjp/view?usp=drive_link))and test set ([pdfvqa_taska_test_0509_clean.csv](https://drive.google.com/file/d/1gGIzsSZHVokehACx7h-SOk5K1uEEXNpq/view?usp=drive_link)) of task A. We follow the file name to choose `pdfvqa_taska_test_0509_clean.csv` as the test set instead of `README.md`.
+> Notice, it seems that the [official repository](https://github.com/adlnlp/pdfvqa?tab=readme-ov-file) swapped the download links for the validation set ([pdfvqa_taska_val_0509_clean.csv](https://drive.google.com/file/d/1HIYxpGCcXdQo42b79Eqfmji9U9-YmUjp/view?usp=drive_link)) and test set ([pdfvqa_taska_test_0509_clean.csv](https://drive.google.com/file/d/1gGIzsSZHVokehACx7h-SOk5K1uEEXNpq/view?usp=drive_link)) of task A. We follow the file name to choose `pdfvqa_taska_test_0509_clean.csv` as the test set.
 
 For TAT-DQA, please download them from the following links into folder `data/dataset/tatdqa/raw_data/`:
 - [tatdqa_dataset_test_gold.json](https://drive.google.com/drive/folders/1SGpZyRWqycMd_dZim1ygvWhl5KdJYDR2)
@@ -43,15 +43,21 @@ For TAT-DQA, please download them from the following links into folder `data/dat
 - [tat_docs.zip](https://huggingface.co/datasets/qinchuanhui/UDA-QA/resolve/main/src_doc_files/tat_docs.zip?download=true)
 
 
-> Notice, the original dataset only contains the specific or oracle PDF page instead of the complete PDF file for each instance, which we believe is not practical in real-world scenarios. Thus, we refer to [UDA-Benchmark](https://github.com/qinchuanhui/UDA-Benchmark?tab=readme-ov-file#book-dataset-uda-qa) and download the raw PDF files ([tat_docs.zip](https://huggingface.co/datasets/qinchuanhui/UDA-QA/resolve/main/src_doc_files/tat_docs.zip?download=true)).
+> Notice, each data sample in the original dataset only contains a single PDF page instead of the complete PDF file, which we believe is not practical in real-world scenarios. Thus, we refer to [UDA-Benchmark](https://github.com/qinchuanhui/UDA-Benchmark?tab=readme-ov-file#book-dataset-uda-qa) and download the raw PDF files ([tat_docs.zip](https://huggingface.co/datasets/qinchuanhui/UDA-QA/resolve/main/src_doc_files/tat_docs.zip?download=true)).
 
 TODO: other benchmarks relevant to PDF.
 
 ## Pre-processing
 
+Running scripts for all datasets:
+```sh
+python utils/dataset_utils.py --dataset pdfvqa --function preprocess
+python utils/dataset_utils.py --dataset tatdqa --function preprocess
+```
+
 ### PDF-VQA
-We preprocess each example into folder `data/dataset/pdfvqa/processed_data/`. The entire dataset is splitted into 3 parts:
-- [bbox_images](../data/dataset/pdfvqa/processed_data/bbox_images): which contains images for each page (e.g., `15450119_1.png`) in one PDF with bounding boxes drawed.
+We preprocess each example into folder `data/dataset/pdfvqa/processed_data/`:
+- [bbox_images/](../data/dataset/pdfvqa/processed_data/bbox_images): which contains images for each page (e.g., `15450119_1.png`) in one PDF with bounding boxes drawed.
 - [test_data.jsonl](../data/dataset/pdfvqa/processed_data/test_data.jsonl): JSON line file, each test example is represented with one JSON dict containing the following fields:
 ```json
 {
@@ -96,15 +102,11 @@ We preprocess each example into folder `data/dataset/pdfvqa/processed_data/`. Th
     ]
 }
 ```
-> Special attention to PDFs with id `28649313` and `28181161`. PDF `28649313` missing the first 16 pages, only start from page 17. And PDF `28181161` missing text content for many bounding boxes in page 8-11.
+> Special attention to PDFs with id `28649313` and `28181161`. PDF `28649313` missing the first 16 pages, only start from page 17. And PDF `28181161` missing text content for many bounding boxes in page 8-11, thus we add [`errata.json`](../data/dataset/pdfvqa/processed_data/errata.json) to correct this error.
 
-#### Running script:
-```sh
-python utils/dataset_utils.py --dataset pdfvqa
-```
 
 ### TAT-DQA
-We preprocess each example into folder `data/dataset/tatdqa/processed_data/`. The entire dataset is processed as:
+We preprocess each example into folder `data/dataset/tatdqa/processed_data/`:
 - [test_data.jsonl](../data/dataset/tatdqa/processed_data/test_data.jsonl): JSON line file, each test example is represented with one JSON dict containing the following fields:
 ```json
 {
@@ -154,9 +156,11 @@ We preprocess each example into folder `data/dataset/tatdqa/processed_data/`. Th
 }
 ```
 
+
 ## Dataset Sampling
 
-The original dataset might be a little large for debugging or testing purposes. We can generate a small-sized dataset for testing.
+The original dataset might be a little large for debugging or testing purposes, especially when calling expensive LLM APIs. We can generate a small-sized dataset for evaluation.
+- note that, the sampling will consider balanced sampling across different question types
 ```sh
 python utils/dataset_utils.py --dataset pdfvqa --function sampling --sample_size 30 --output_file test_data_sample.jsonl
 python utils/dataset_utils.py --dataset tatdqa --function sampling --sample_size 30 --output_file test_data_sample.jsonl

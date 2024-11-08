@@ -1,12 +1,13 @@
 #coding=utf8
 import numpy as np
+import duckdb
 from scipy.sparse import csr_array
 import os, re, sys, json, logging, torch, tqdm, time
 from pymilvus import MilvusClient, FieldSchema, CollectionSchema, DataType
 from milvus_model.base import BaseEmbeddingFunction
 from typing import List, Tuple, Dict, Any, Union, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.database_population import DatabasePopulation
+from utils.database_utils import get_database_connection
 from utils.functions.common_functions import get_uuid
 
 
@@ -183,7 +184,7 @@ def initialize_vectorstore(conn: MilvusClient, schema: List[Dict[str, Any]]) -> 
             for schema_field in collection['fields']:
                 dtype = schema_field["dtype"].upper()
                 field_kwargs = {
-                    'name': schema_field['name'],
+                    'name': schema_field.get('name', 'field_name'),
                     'dtype': eval(f'DataType.{dtype}'),
                     'is_primary': schema_field.get('is_primary', False),
                     'description': schema_field.get('description', f"name: {schema_field['name']}; data_type: {dtype}")
@@ -243,33 +244,35 @@ def initialize_vectorstore(conn: MilvusClient, schema: List[Dict[str, Any]]) -> 
     return conn
 
 
-def try_sql_with_extra_fields_returned(db_conn: DatabasePopulation, table_name: str, column_name: str, primary_keys: Union[str, List[str]], extra_fields: List[Union[str, Tuple[str]]] = []) -> Tuple[bool, List[Tuple[Any]]]:
+def try_sql_with_extra_fields_returned(db_conn: duckdb.DuckDBPyConnection, table_name: str, column_name: str, primary_keys: Union[str, List[str]], extra_fields: List[Union[str, Tuple[str]]] = []) -> Tuple[int, List[Tuple[Any]]]:
     """ Try to execute the SQL statement to retrieve all column values, and also obtain the primary key values and some extra fields (e.g., pdf_id). Since the extra field name may differ in different DB tables (e.g., paper_id, ref_paper_id), we need to try candidates.
     @args:
-        db_conn: DatabasePopulation, the connection to the relational database
+        db_conn: duckdb.DuckDBPyConnection, the connection to the relational database
         table_name: str, the table name to query
         column_name: str, the column name to retrieve
-        primary_keys: Union[str, List[str]], the primary key names
+        primary_keys: Union[str, List[str]], the primary key names (`str` for single-column primary key)
         extra_fields: List[Tuple[str]], candidates of different extra field names
     @return:
-        Tuple[bool, List[Tuple[Any]]], whether the SQL statement including extra fields is executed successfully and the returned result
+        Tuple[int, List[Tuple[Any]]], the number of extra fields and the returned result
     """
     primary_keys = [primary_keys] if type(primary_keys) == str else primary_keys
     for extra_fields in extra_fields:
         try:
             if type(extra_fields) == str:
                 select = f"SELECT {column_name}, {extra_fields}, {', '.join(primary_keys)} FROM {table_name};"
-                result = db_conn.execute_sql_statement(select)
-                return True, result
+                result = db_conn.sql(select).fetchall()
+                return 1, result
             else:
                 select = f"SELECT {column_name}, {', '.join(extra_fields)}, {', '.join(primary_keys)} FROM {table_name};"
-                result = db_conn.execute_sql_statement(select)
-                return True, result
+                result = db_conn.sql(select).fetchall()
+                return len(extra_fields), result
         except Exception as e:
             pass
     select = f"SELECT {column_name}, {', '.join(primary_keys)} FROM {table_name};"
-    result = db_conn.execute_sql_statement(select)
-    return False, result
+    result = db_conn.sql(select).fetchall()
+    if len(extra_fields) > 0:
+        logger.warning(f"Try to get extra fields {extra_fields}, but not found in the table {table_name}.")
+    return 0, result
 
 
 def get_extra_fields(db_schema: Dict[str, Any]) -> List[Tuple[str]]:
@@ -288,30 +291,33 @@ def get_extra_fields(db_schema: Dict[str, Any]) -> List[Tuple[str]]:
         raise ValueError(f"Database name {database} not recognized.")
 
 
-def get_page_number_from_id(db_schema: Dict[str, Any], db_conn: DatabasePopulation, pdf_id: str, page_id: str) -> int:
-    """ Get the page number from the relational database.
+def get_page_number_from_id(db_schema: Dict[str, Any], db_conn: duckdb.DuckDBPyConnection, pdf_id: str, page_id: str) -> int:
+    """ Get the page number from the relational database (only used for biology_paper and financial_report).
     @args:
         db_schema: Dict[str, Any], the schema of the relational database
-        db_conn: DatabasePopulation, the connection to the relational database
+        db_conn: duckdb.DuckDBPyConnection, the connection to the relational database
         pdf_id: str, the PDF id
         page_id: str, the page id
     @return:
         int, the page number (-1 means not found)
     """
     database = db_schema['database_name']
-    if database == 'biology_paper':
-        sql = f"SELECT page_number FROM pages WHERE ref_paper_id = '{pdf_id}' AND page_id = '{page_id}';"
-        result = db_conn.execute_sql_statement(sql)
-        return int(result[0][0]) if result else -1
-    elif database == 'financial_report':
-        sql = f"SELECT page_number FROM pages WHERE ref_report_id = '{pdf_id}' AND page_id = '{page_id}';"
-        result = db_conn.execute_sql_statement(sql)
-        return int(result[0][0]) if result else -1
-    else:
-        raise ValueError(f"Database name {database} not recognized.")
+    sql_query = {
+        'biology_paper': f"SELECT page_number FROM pages WHERE ref_paper_id = '{pdf_id}' AND page_id = '{page_id}';",
+        'financial_report': f"SELECT page_number FROM pages WHERE ref_report_id = '{pdf_id}' AND page_id = '{page_id}';"
+    }
+    sql = sql_query.get(database, None)
+    if sql is None:
+        raise ValueError(f"Get page_number from page_id not supported for database name {database}.")
+    result = db_conn.sql(sql).fetchall()
+    try:
+        return int(result[0][0])
+    except:
+        logger.error(f"Get page_number from page_id {page_id} failed for {database} with pdf_id {pdf_id}.")
+        return -1
 
 
-def encoding_database_content(vs_conn: MilvusClient, db_conn: DatabasePopulation, db_schema: Dict[str, Any], text_embed_kwargs: Dict[str, Any] = {}, image_embed_kwargs: Dict[str, Any] = {}, skip_collections: List[str] = [], **kwargs) -> None:
+def encoding_database_content(vs_conn: MilvusClient, db_conn: duckdb.DuckDBPyConnection, db_schema: Dict[str, Any], text_embed_kwargs: Dict[str, Any] = {}, image_embed_kwargs: Dict[str, Any] = {}, skip_collections: List[str] = [], **kwargs) -> None:
     """ Encode the database content into vectors and insert them into the vectorstore.
     @args:
         vs_conn: MilvusClient, the connection to the vectorstore
@@ -346,7 +352,7 @@ def encoding_database_content(vs_conn: MilvusClient, db_conn: DatabasePopulation
 
             logger.info(f"Extract table={table_name}, column={col['column_name']}, modality={modality} ...")
             extra_fields = get_extra_fields(db_schema)
-            contain_extra_fields, result = try_sql_with_extra_fields_returned(db_conn, table_name, column_name, primary_keys, extra_fields=extra_fields)
+            extra_field_num, result = try_sql_with_extra_fields_returned(db_conn, table_name, column_name, primary_keys, extra_fields=extra_fields)
             if result is None or len(result) == 0: continue
 
             if modality == 'text' and text_embed_type != 'bm25':
@@ -357,17 +363,17 @@ def encoding_database_content(vs_conn: MilvusClient, db_conn: DatabasePopulation
                     text = str(row[0]).strip()
                     if text is None or text == '': continue
                     record = {'text': text, 'table_name': table_name, 'column_name': column_name}
-                    if contain_extra_fields:
-                        if len(extra_fields[0]) == 2: # two existing DBs, pdf_id + page_id
-                            pdf_id, page_id = str(row[1]), str(row[2])
-                            record['pdf_id'] = pdf_id
-                            record['page_number'] = get_page_number_from_id(db_schema, db_conn, pdf_id, page_id)
-                            record['primary_key'] = ','.join([v for v in row[3:]])
-                        else: # usually, only extra field pdf_id
-                            record['pdf_id'] = str(row[1])
-                            record['primary_key'] = ','.join([v for v in row[2:]])
+                    if extra_field_num == 2:
+                        pdf_id, page_id = str(row[1]), str(row[2])
+                        record['pdf_id'] = pdf_id
+                        record['page_number'] = get_page_number_from_id(db_schema, db_conn, pdf_id, page_id)
+                        record['primary_key'] = ','.join([str(v) for v in row[3:]])
+                    elif extra_field_num == 1: # usually, only extra field pdf_id
+                        record['pdf_id'] = str(row[1])
+                        record['primary_key'] = ','.join([str(v) for v in row[2:]])
                     else:
-                        record['primary_key'] = ','.join([v for v in row[1:]])
+                        assert extra_field_num == 0, "Currently, we only support extra field `pdf_id` and `page_number`."
+                        record['primary_key'] = ','.join([str(v) for v in row[1:]])
 
                     documents.append(text)
                     text_records.append(record)
@@ -415,15 +421,15 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # the schema of relational database records which column will be encoded into vectors
-    db_conn = DatabasePopulation(database=args.vectorstore)
+    db_conn: duckdb.DuckDBPyConnection = get_database_connection(args.vectorstore)
     db_schema_path = os.path.join('data', 'database', args.vectorstore, f'{args.vectorstore}.json')
     db_schema = json.load(open(db_schema_path, 'r'))
 
     if args.launch_method == 'standalone':
         vs_path = os.path.join(os.path.join('data', 'vectorstore', args.vectorstore, f'{args.vectorstore}.db'))
-        vs_conn = get_vectorstore_connection(uri=vs_path, from_scratch=args.from_scratch)
+        vs_conn: MilvusClient = get_vectorstore_connection(uri=vs_path, from_scratch=args.from_scratch)
     else:
-        vs_conn = get_vectorstore_connection(uri=args.docker_uri, db_name=args.vectorstore, from_scratch=args.from_scratch)
+        vs_conn: MilvusClient = get_vectorstore_connection(uri=args.docker_uri, db_name=args.vectorstore, from_scratch=args.from_scratch)
 
     # vectorstore schema to define the fields to be encoded into vectors
     vs_schema_path = os.path.join('data', 'vectorstore', args.vectorstore, f'{args.vectorstore}.json')

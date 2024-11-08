@@ -4,7 +4,7 @@ from datetime import datetime
 from collections.abc import Iterable
 from typing import List, Tuple, Dict, Any, Union, Optional
 from utils.database_schema import DatabaseSchema
-from utils.database_utils import DATABASE_DIR
+from utils.database_utils import get_database_connection
 from utils import functions
 
 
@@ -27,21 +27,7 @@ class  DatabasePopulation():
         """
         self.database = database
         self.database_schema: DatabaseSchema = DatabaseSchema(self.database)
-        self.database_conn = self._get_database_connection_from_name(self.database)
-
-
-    def _get_database_connection_from_name(self, database_name: str) -> duckdb.DuckDBPyConnection:
-        """ Get the database connection from the database name.
-        @param:
-            database_name: str, database name
-        @return:
-            database connection
-        """
-        db_path = os.path.join(DATABASE_DIR, database_name, database_name + '.duckdb')
-        if not os.path.exists(db_path):
-            raise FileNotFoundError(f"Database {database_name} not found.")
-        conn: duckdb.DuckDBPyConnection = duckdb.connect(db_path)
-        return conn
+        self.database_conn = get_database_connection(self.database)
 
 
     def close(self):
@@ -107,7 +93,7 @@ class  DatabasePopulation():
         for idx, func_dict in enumerate(config['pipeline']):
             idx = idx + 1 # 1-based index for output storage
             if idx == 1:
-                assert 0 in func_dict['args']['deps'], "The first function must take the `pdf` str as input."
+                assert 0 in func_dict['args']['deps'], "The first function must take the `pdf_path_or_json_data` as input."
             
             deps = func_dict['args']['deps']
             position_args = [outputs[idx] for idx in deps]
@@ -135,9 +121,8 @@ class  DatabasePopulation():
             assert table_name in self.database_schema.tables, f"Table {table_name} not found in the database schema of {self.database}."
 
             values = func_method(*position_args, **keyword_args)
+            if not values: continue
             columns = func_dict.get('columns', []) # if not provided, insert all columns of the current table in the database
-            if not values:
-                continue
             insert_sql = self.insert_values_to_database(table_name, values, columns, on_conflict=on_conflict)
 
             if log: # write SQL into log file

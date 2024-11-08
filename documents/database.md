@@ -12,7 +12,7 @@ The database folder should be organized into the following structure under `data
             - biology_paper.json
             - biology_paper.sql
             - biology_paper.duckdb
-        - ... new database name ...
+        - ... other databases ...
 ```
 
 Under each database folder, it at least contains the following three files:
@@ -20,6 +20,21 @@ Under each database folder, it at least contains the following three files:
 - `{database_name}.sql`: SQL CREATE statement to build the database
 - `{database_name}.duckdb`: the DuckDB file which stores the cell content
 - please use consistent, lowercased and underscore splitted (pythonic) naming convention to name your database
+
+## Quick Reference: Commands
+
+1. [**Create**] Build database from `.json` schema file:
+- add args `--from_scratch` will automatically delete existing `.duckdb` file
+```sh
+python utils/database_utils.py --database financial_report --function create_db --from_scratch
+python utils/database_utils.py --database biology_paper --function create_db --from_scratch
+```
+2. [**Populate**] Parse PDF content and write into database:
+- by default, writing strategy is `--on_conflict replace`. It means when writing rows whose primary key already exists in DB, the value will be updated without raising error. This value can be changed to `raise`, `ignore`.
+```sh
+python utils/database_utils.py --database biology_paper --pdf_path data/dataset/pdfvqa/processed_data/pdf_data.jsonl --config_path configs/biology_paper_config.json --function populate_db --on_conflict replace
+python utils/database_utils.py --database financial_report --pdf_path data/dataset/tatdqa/processed_data/pdf_data.jsonl --config_path configs/financial_report_config.json --function populate_db --on_conflict replace
+```
 
 
 ## Database Schema File
@@ -222,8 +237,8 @@ Note that, `deps` indexes the output of `pipeline` functions instead of `aggrega
 
 ### Usage
 
-Take the sample PDF file as an example, this file is parsed and populated into database `test_domain.duckdb` via:
+Take the two datasets as example, all PDFs in `pdf_data.jsonl` will be parsed and populated into their corresponding databases via:
 ```sh
-python utils/database_utils.py --database biology_paper --pdf_path data/dataset/pdfvqa/processed_data/pdf_data.jsonl --config_path configs/biology_paper_config.json --function populate_db
-python utils/database_utils.py --database financial_report --pdf_path data/dataset/tatdqa/processed_data/pdf_data.jsonl --config_path configs/financial_report_config.json --function populate_db
+python utils/database_utils.py --database biology_paper --pdf_path data/dataset/pdfvqa/processed_data/pdf_data.jsonl --config_path configs/biology_paper_config.json --function populate_db --on_conflict replace
+python utils/database_utils.py --database financial_report --pdf_path data/dataset/tatdqa/processed_data/pdf_data.jsonl --config_path configs/financial_report_config.json --function populate_db --on_conflict replace
 ```
