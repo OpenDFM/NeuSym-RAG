@@ -47,7 +47,7 @@ class AgentBase(ABC):
 
             obs: Observation
             obs_msg = obs.convert_to_message()
-            if action.observation_type == 'image': # array of messages, see doc: https://platform.openai.com/docs/guides/vision#uploading-base64-encoded-images
+            if isinstance(obs_msg['content'], list): # array of messages, see doc: https://platform.openai.com/docs/guides/vision#uploading-base64-encoded-images
                 for obs_msg_content_item in obs_msg['content']:
                     if obs_msg_content_item['type'] == 'text':
                         logger.info(obs_msg_content_item['text'])

@@ -22,12 +22,49 @@ class ViewImage(Action):
     def execute(self, env: gym.Env, **kwargs) -> Observation:
         """ Execute the action of retrieving the image.
         """
+        try:
+            self.paper_id = str(self.paper_id)
+        except:
+            return Observation('[Error]: paper id must be a string.')
+        try:
+            self.page_number = int(self.page_number)
+            assert self.page_number > 0
+        except:
+            return Observation('[Error]: page number must be a positive integer.')
+        if self.bounding_box is None:
+            self.bounding_box = []
+        try:
+            assert isinstance(self.bounding_box, list)
+            assert len(self.bounding_box) == 0 or len(self.bounding_box) == 4
+            for i in range(len(self.bounding_box)):
+                self.bounding_box[i] = float(self.bounding_box[i])
+        except:
+            return Observation('[Error]: bounding box must be a list of 0 or 4 floats.')
+
         if env.dataset == 'pdfvqa':
-            image = Image.open(os.path.join('data', 'dataset', 'pdfvqa', 'processed_data', 'test_images', f'{self.paper_id}.pdf_{self.page_number - 1}.png'))
+            pdf_page_dirname = os.path.join('data', 'dataset', 'pdfvqa', 'processed_data', 'test_images')
+            if not any(fn.startswith(f'{self.paper_id}.pdf') for fn in os.listdir(pdf_page_dirname)):
+                return Observation(f'[Error]: paper id {self.paper_id} does not exist.')
+            pdf_page_filename = os.path.join(pdf_page_dirname, f'{self.paper_id}.pdf_{self.page_number - 1}.png')
+            if not os.path.exists(pdf_page_filename):
+                return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
+            try:
+                image = Image.open(pdf_page_filename)
+            except Exception as e:
+                return Observation(f'[Error]: {str(e)}')
         elif env.dataset == 'tatdqa':
-            image = convert_from_path(os.path.join('data', 'dataset', 'tatdqa', 'processed_data', 'test_docs', f'{self.paper_id}.pdf'))[self.page_number - 1]
+            pdf_filename = os.path.join('data', 'dataset', 'tatdqa', 'processed_data', 'test_docs', f'{self.paper_id}.pdf')
+            if not os.path.exists(pdf_filename):
+                return Observation(f'[Error]: paper id {self.paper_id} does not exist.')
+            try:
+                image = convert_from_path(pdf_filename)[self.page_number - 1]
+            except IndexError:
+                return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
+            except Exception as e:
+                return Observation(f'[Error]: {str(e)}')
         else:
             raise ValueError(f'Unsupported dataset: {env.dataset}')
+
         try:
             if self.bounding_box:
                 box = copy.deepcopy(self.bounding_box)
@@ -42,7 +79,3 @@ class ViewImage(Action):
             return Observation(image_data, 'image')
         except Exception as e:
             return Observation(f'[Error]: {str(e)}')
-
-    @property
-    def observation_type(self) -> str:
-        return 'image'
