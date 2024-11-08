@@ -1,6 +1,9 @@
 #coding=utf8
-import os, openai, uuid, re
+import time, uuid
 from typing import List, Dict, Union, Optional, Any, Iterable
+from agents.models import infer_model_class
+
+GLOBAL_LLM = dict()
 
 
 def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperature: float = 0.7) -> str:
@@ -10,6 +13,9 @@ def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperat
     {{user_message}}
     Note that, the system and user messages should be separated by two consecutive newlines. And the first block is the system message, the other blocks are the user message. There is no assistant message or interaction history.
     """
+    model_class = infer_model_class(model)
+    if model_class.__name__ not in GLOBAL_LLM:
+        GLOBAL_LLM[model_class.__name__] = model_class()
     system_msg = template.split('\n\n')[0]
     user_msg = '\n\n'.join(template.split('\n\n')[1:])
     messages = [
@@ -22,17 +28,14 @@ def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperat
             "content": user_msg
         }
     ]
-    # TODO: support for other LLMs and other API keys
-    if os.environ.get('OPENAI_BASE_URL', None) is not None:
-        openai.base_url = os.environ['OPENAI_BASE_URL']
-    openai.api_key = os.environ['OPENAI_API_KEY']
-    response = openai.chat.completions.create(
-        model=model,
+    response = GLOBAL_LLM[model_class.__name__].get_response(
         messages=messages,
-        top_p=top_p,
-        temperature=temperature
+        model=model,
+        temperature=temperature,
+        top_p=top_p
     )
-    return response.choices[0].message.content
+    time.sleep(1)
+    return response
 
 
 def get_uuid(name: Optional[str] = None, uuid_type: str = 'uuid5', uuid_namespace: str = 'dns') -> str:

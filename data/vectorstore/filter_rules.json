@@ -2,13 +2,18 @@
     "operators": {
         "logical": [
             {
-                "symbol": "&&",
-                "example": "expr1 && expr2",
+                "symbol": "NOT",
+                "example": "NOT expr",
+                "description": "True if expr is false."
+            },
+            {
+                "symbol": "AND",
+                "example": "expr1 AND expr2",
                 "description": "True if both expr1 and expr2 are true."
             },
             {
-                "symbol": "||",
-                "example": "expr1 || expr2",
+                "symbol": "OR",
+                "example": "expr1 OR expr2",
                 "description": "True if either expr1 or expr2 are true."
             }
         ],
@@ -56,8 +61,8 @@
                 "description": "True if a is greater than b."
             },
             {
-                "symbol": "==",
-                "example": "a == b",
+                "symbol": "=",
+                "example": "a = b",
                 "description": "True if a is equal to b."
             },
             {
@@ -79,21 +84,26 @@
                 "symbol": "LIKE",
                 "example": "a LIKE b",
                 "description": "True if a matches the pattern specified by b."
+            },
+            {
+                "symbol": "IN",
+                "example": "a IN [b, c, ...]",
+                "description": "True if a is equal to any of the values in the list."
             }
         ]
     },
     "use cases": [
         {
-            "example": "table_name == \"chunks\"",
-            "description": "Filter the results with table_name equal to \"chunks\"."
+            "example": "table_name = 'chunks' AND column_name = 'text_content'",
+            "description": "Filter the results with table_name equal to 'chunks' and column_name equal to 'text_content'."
         },
         {
-            "example": "table_name == \"chunks\" && column_name == \"text_content\"",
-            "description": "Filter the results with table_name equal to \"chunks\" and column_name equal to \"text_content\"."
+            "example": "table_name = 'chunks' AND primary_key IN ['123', '456', '789']",
+            "description": "Filter the results with table_name equal to 'chunks' and primary_key equal to any of the values in the list ['123', '456', '789']."
         },
         {
-            "example": "text LIKE \"RAG%\" || text LIKE \"%RAG\"",
-            "description": "Filter the results with text starting with \"RAG\" or ending with \"RAG\"."
+            "example": "(text LIKE 'RAG%' OR text LIKE '%RAG') AND text NOT LIKE '%RAG%'",
+            "description": "Filter the results with text containing 'RAG' but not containing 'RAG' in the middle."
         }
     ]
 }

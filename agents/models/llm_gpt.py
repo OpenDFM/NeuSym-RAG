@@ -8,12 +8,12 @@ from collections import OrderedDict as OD
 
 GPT_PRICES = OD([
     ('claude-3-5-sonnet-20240620', (3e-6, 15e-6)),
-    ('gemini-1.5-pro', (1.25e-6, 5e-6)),
     ('gemini-1.5-flash', (0.075e-6, 0.3e-6)),
-    ('gpt-4o', (2.5e-6, 10e-6)),
+    ('gemini-1.5-pro', (1.25e-6, 5e-6)),
     ('gpt-4o-mini', (0.15e-6, 0.6e-6)),
-    ('o1-preview', (15e-6, 60e-6)),
-    ('o1-mini', (3e-6, 12e-6))
+    ('gpt-4o', (2.5e-6, 10e-6)),
+    ('o1-mini', (3e-6, 12e-6)),
+    ('o1-preview', (15e-6, 60e-6))
 ])
 
 class GPTClient(LLMClient):
