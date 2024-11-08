@@ -55,3 +55,9 @@ class Text2VecEnv(AgentEnv):
             self.vectorstore_conn.close()
         self.vectorstore_conn = None
         return
+
+
+    def get_collection_names(self) -> List[str]:
+        """ Get the collection names in the Milvus vectorstore.
+        """
+        return self.vectorstore_conn.list_collections() if self.vectorstore_conn else []

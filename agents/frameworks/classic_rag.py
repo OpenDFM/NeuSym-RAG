@@ -2,7 +2,7 @@
 import logging, sys, os, re
 from typing import List, Dict, Any, Union, Tuple, Optional
 from agents.envs import Text2VecEnv
-from agents.envs.actions import RetrieveFromVectorstore
+from agents.envs.actions import Observation, RetrieveFromVectorstore
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
 from agents.frameworks import AgentBase
@@ -19,15 +19,15 @@ class ClassicRAGAgent(AgentBase):
     def interact(self,
                  question: str,
                  answer_format: str,
-                 pdf_id: Optional[str] = None,
-                 page_id: Optional[str] = None,
                  table_name: Union[Optional[str], List[str]] = None,
                  column_name: Union[Optional[str], List[str]] = None,
+                 pdf_id: Optional[str] = None,
+                 page_number: Optional[Union[str, List[str]]] = None,
                  collection_name: str = 'text_bm25_en',
                  limit: int = 2,
                  model: str = 'gpt-4o-mini',
                  temperature: float = 0.7,
-                 top_p: float = 0.9,
+                 top_p: float = 0.95,
                  max_tokens: int = 1500
     ) -> str:
         logger.info(f'[Question]: {question}')
@@ -35,17 +35,21 @@ class ClassicRAGAgent(AgentBase):
         prev_cost = self.model.get_cost()
         self.env.reset()
 
-        # 1. Retrieve the result
+        assert collection_name in self.env.get_collection_names(), f'Collection {collection_name} not found in the vectorstore environment.'
+
+        # 1. Retrieve the result (hard coding)
         filter_conditions = []
         if pdf_id is not None:
             filter_conditions.append(f"pdf_id = '{pdf_id}'")
-        if page_id is not None:
-            filter_conditions.append(f"page_id = '{page_id}'")
+        if page_number is not None and page_number != []:
+            page_number_filter = f'page_number in {sorted(page_number)}' if isinstance(page_number, list) else \
+                f"page_number = {page_number}"
+            filter_conditions.append(page_number_filter)
         if table_name is not None:
             filter_conditions.append(f"table_name = '{table_name}'")
-            if column_name is not None:
-                filter_conditions.append(f" AND column_name = '{column_name}'")
-        filter_str = ' AND '.join(filter_conditions)
+        if column_name is not None:
+            filter_conditions.append(f"column_name = '{column_name}'")
+        filter_str = ' AND '.join(filter_conditions) if len(filter_conditions) > 0 else ''
         action = RetrieveFromVectorstore(
             query=question,
             collection_name=collection_name,
@@ -53,8 +57,10 @@ class ClassicRAGAgent(AgentBase):
             limit=limit,
             output_fields=['text']
         )
-        action.execute(self.env)
-        
+        observation: Observation = action.execute(self.env)
+        logger.info(f'[Stage 1]: Retrieve top {limit} context from {collection_name} with filter {filter_str} ...')
+        logger.debug(f'[Retrieved Context]: {observation.obs_content}')
+
         # 2. Answer the question
         prompt = AGENT_PROMPTS[self.agent_method].format(
             system_prompt = SYSTEM_PROMPTS[self.agent_method],
@@ -62,25 +68,7 @@ class ClassicRAGAgent(AgentBase):
             context = observation.obs_content,
             answer_format = answer_format
         ) # system prompt + task prompt + cot thought hints
-        logger.info('[Stage]: Generate Answer ...')
-        messages = [{'role': 'user', 'content': prompt}]
-        response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
-        logger.info(f'[Response]: {response}')
-        matched = re.search(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
-        answer = '' if matched is None else matched.group(2).strip()
-        logger.info(f'[Answer]: {answer}')
-
-        # 2. Answer question
-        action = RetrieveFromVectorstore(query=question)
-        observation = action.execute(self.env)
-        prompt = AGENT_PROMPTS[self.agent_method][1].format(
-            system_prompt = SYSTEM_PROMPTS['two_stage_text2sql'][1],
-            question = question,
-            sql = sql,
-            context = observation.obs_content,
-            answer_format = answer_format
-        ) # system prompt (without schema) + task prompt (insert SQL, observation) + cot thought hints
-        logger.info(f'[Stage]: Generate Answer ...')
+        logger.info('[Stage 2]: Generate Answer ...')
         messages = [{'role': 'user', 'content': prompt}]
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')

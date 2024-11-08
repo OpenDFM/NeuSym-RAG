@@ -74,7 +74,10 @@ python scripts/two_stage_text2vec_baseline.py --dataset tatdqa --vectorstore fin
 ```
 
 5. Classic RAG (pre-fetch the context and call LLM once) baseline: (TODO: coding in progress)
+- `--collection_name` can be changed to any other embedding models (see `data/vectorstore/*/*.json` for all available collections)
+- if `--table_name` and `--column_name` are not specified, all encodable text content will be used by default (see `data/database/*/*.json` for all available encodable columns)
+- `--limit` restricts the number of returned chunks
 ```sh
-python scripts/classic_rag_baseline.py --dataset pdfvqa --vectorstore biology_paper --test_data test_data_sample.jsonl --agent_method 'classic_rag' --llm gpt-4o-mini --max_turn 1
-python scripts/classic_rag_baseline.py --dataset tatdqa --vectorstore financial_report --test_data test_data_sample.jsonl --agent_method 'classic_rag' --llm gpt-4o-mini --max_turn 1
+python scripts/classic_rag_baseline.py --dataset pdfvqa --vectorstore biology_paper --test_data test_data_sample.jsonl --agent_method classic_rag --llm gpt-4o-mini --max_turn 1 --collection_name text_bm25_en --table_name chunks --column_name text_content --limit 2
+python scripts/classic_rag_baseline.py --dataset tatdqa --vectorstore financial_report --test_data test_data_sample.jsonl --agent_method classic_rag --llm gpt-4o-mini --max_turn 1 --collection_name text_bm25_en --table_name chunks --column_name text_content --limit 2
 ```

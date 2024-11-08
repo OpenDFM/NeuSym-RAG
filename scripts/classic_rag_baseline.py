@@ -3,9 +3,9 @@ import argparse, os, sys, json, logging
 from datetime import datetime
 from typing import Dict, List, Tuple, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from agents.envs import ENVIRONMENTS
-from agents.models import infer_model_class
-from agents.frameworks import FRAMEWORKS
+from agents.envs import ENVIRONMENTS, AgentEnv
+from agents.models import infer_model_class, LLMClient
+from agents.frameworks import FRAMEWORKS, AgentBase
 from agents.prompts import formulate_input
 from utils.eval_utils import evaluate, print_result
 
@@ -14,7 +14,8 @@ parser.add_argument('--dataset', type=str, default='pdfvqa', help='which dataset
 parser.add_argument('--vectorstore', type=str, default='biology_paper', help='which vectorstore to use')
 parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
 parser.add_argument('--table_name', type=str, default=None, help='which table to use, if not specified, use all tables under the database')
-parser.add_argument('--column_name', type=str, default=None, help='which column to use, if not specified, use all columns under the table')
+parser.add_argument('--column_name', type=str, default=None, help='which column to use, if not specified, use all encodable columns under the table')
+parser.add_argument('--collection_name', type=str, default='text_bm25_en', help='which collection to use')
 parser.add_argument('--limit', type=int, default=2, help='limit the number of returned results')
 parser.add_argument('--agent_method', type=str, default='classic_rag', help='Agent method')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
@@ -50,9 +51,9 @@ logger.addHandler(file_handler)
 logger.setLevel(logging.INFO)
 
 
-llm = infer_model_class(args.llm)()
-env = ENVIRONMENTS['text2vec'](action_format=args.action_format, dataset=args.dataset, vectorstore=args.vectorstore)
-agent = FRAMEWORKS['classic_rag'](llm, env, agent_method=args.agent_method)
+llm: LLMClient = infer_model_class(args.llm)()
+env: AgentEnv = ENVIRONMENTS['text2vec'](action_format=args.action_format, dataset=args.dataset, vectorstore=args.vectorstore)
+agent: AgentBase = FRAMEWORKS['classic_rag'](llm, env, agent_method=args.agent_method)
 
 test_data = []
 if os.path.exists(args.test_data) and os.path.isfile(args.test_data):
@@ -66,7 +67,13 @@ preds = []
 for data in test_data:
     logger.info(f"Processing question: {data['uuid']}")
     question, answer_format = formulate_input(args.vectorstore, data)
-    result = agent.interact(question, answer_format, table_name=args.table_name, column_name=args.column_name, limit=args.limit, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens)
+    result = agent.interact(
+        question, answer_format,
+        table_name=args.table_name, column_name=args.column_name,
+        pdf_id=data['pdf_id'], page_number=data['page_number'],
+        collection_name=args.collection_name, limit=args.limit,
+        model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens
+    )
     preds.append({
         'uuid': data['uuid'],
         'question_type': data['question_type'],

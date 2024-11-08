@@ -52,7 +52,7 @@
                 "default": [
                     "text"
                 ],
-                "description": "The fields to return in the output. By default, the `text` field will be returned for text type collections. And the id and distance/score for each retrieved entry will be returned even if this parameter is empty."
+                "description": "The fields to return in the output. By default, the `text` field will be returned for text type collections. And the `id` and `distance/score` for each retrieved entry will be returned even if this parameter is empty."
             }
         },
         "use_cases": [
@@ -66,7 +66,7 @@
                         "text"
                     ]
                 },
-                "explanation": "Search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with one filter to restrict the content source and return the top 10 relevant context containing the `text` field."
+                "explanation": "Search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with one filter to restrict the content source and return the top 10 relevant context with the `text` field."
             },
             {
                 "example": {

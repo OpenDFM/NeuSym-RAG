@@ -4,11 +4,13 @@ CLASSIC_RAG_PROMPT = """ {system_prompt}
 
 --------
 
+Here is the task input:
+
 [Question]: {question}
 [Retrieved Context]: {context}
 [Answer Format]: {answer_format}
 
-You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER IN THREE BACKTICKS):
+You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER WITH REQUIRED FORMAT IN THREE BACKTICKS):
 
 ```txt\nfinal answer\n```
 """
