@@ -20,7 +20,6 @@ class TwoStageText2SQLRAGAgent(AgentBase):
                  question: str,
                  database_prompt: str,
                  answer_format: str,
-                 window_size: int = 3,
                  model: str = 'gpt-4o-mini',
                  temperature: float = 0.7,
                  top_p: float = 0.95,

@@ -31,18 +31,18 @@ class TwoStageText2VecRAGAgent(AgentBase):
         self.env.reset()
 
         # 1. Generate RetriveFromVectorstore action
-        action_prompt = f"Your output should follow the action format below:\n{RetrieveFromVectorstore.specification(action_format=self.env.action_format)}"
+        action_prompt = f"Your output should follow the action format below:\n{RetrieveFromVectorstore.specification(action_format='json')}"
         prompt = AGENT_PROMPTS[self.agent_method][0].format(
             system_prompt = SYSTEM_PROMPTS[self.agent_method][0],
             action_prompt = action_prompt,
             question = question,
-            vectorstore_prompt = vectorstore_prompt
-        ) # system prompt + action_prompt + task prompt
-        logger.info('[Stage]: Generate RetriveFromVectorstore action ...')
+            vectorstore_schema = vectorstore_prompt
+        ) # system prompt + action_prompt + task prompt + cot thought hints
+        logger.info('[Stage 1]: Generate RetriveFromVectorstore action ...')
         messages = [{'role': 'user', 'content': prompt}]
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
-        action: Action = Action.parse_action(response, action_types=[RetrieveFromVectorstore], action_format=self.env.action_format)
+        _, action = Action.parse_action(response, action_types=[RetrieveFromVectorstore], action_format=self.env.action_format, agent_method='code_block')
         logger.info(f'[Action]: {repr(action)}')
 
         # 2. Answer question
@@ -52,8 +52,8 @@ class TwoStageText2VecRAGAgent(AgentBase):
             question = question,
             context = observation.obs_content,
             answer_format = answer_format
-        ) # system prompt (without schema) + task prompt (insert SQL, observation) + cot thought hints
-        logger.info(f'[Stage]: Generate Answer ...')
+        ) # system prompt + task prompt (insert retrived observation) + cot thought hints
+        logger.info(f'[Stage 2]: Generate Answer ...')
         messages = [{'role': 'user', 'content': prompt}]
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')

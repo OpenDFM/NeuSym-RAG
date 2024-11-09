@@ -58,15 +58,15 @@
         "use_cases": [
             {
                 "example": {
-                    "query": "Does this paper discuss LLM-based agent? (paper id is '12345678')",
+                    "query": "Does this paper discuss LLM-based agent on its first page? (paper id is '12345678')",
                     "collection_name": "text_bm25_en",
                     "limit": 10,
-                    "filter": "pdf_id == '12345678'",
+                    "filter": "pdf_id == '12345678' and page_number == 1",
                     "output_fields": [
                         "text"
                     ]
                 },
-                "explanation": "Search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with one filter to restrict the content source and return the top 10 relevant context with the `text` field."
+                "explanation": "Search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with two conjunctive filter conditions to restrict the content source and return the top 10 relevant context with the `text` field."
             },
             {
                 "example": {

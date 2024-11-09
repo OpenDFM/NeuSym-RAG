@@ -15,6 +15,7 @@ You can firstly give your reasoning process, followed by the final answer in the
 ```txt\nfinal answer\n```
 """
 
+
 REACT_PROMPT = """{system_prompt}
 
 --------
@@ -43,6 +44,7 @@ The main interaction procedure proceeds like this:
 In general, the main interaction loop consists of an interleaved of triplets ([Thought], [Action], [Observation]), except the last `GenerateAnswer` action which does not have "[Observation]:". Remember that, for each question, you only have {max_turn} interaction turns at most. Now, let's start!
 """
 
+
 TWO_STAGE_TEXT2SQL_PROMPT = [
 """{system_prompt}
 
@@ -54,6 +56,8 @@ TWO_STAGE_TEXT2SQL_PROMPT = [
 You can firstly give your reasoning process, followed by the SQL query in the following format (REMEMBER TO WRAP YOUR SQL IN THREE BACKTICKS):
 
 ```sql\nconcrete sql query\n```
+
+Here is your response:
 """
 
 ,
@@ -70,9 +74,51 @@ You can firstly give your reasoning process, followed by the SQL query in the fo
 You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER IN THREE BACKTICKS):
 
 ```txt\nfinal answer\n```
+
+Here is your response:
 """
 ]
 
-TWO_STAGE_TEXT2VEC_PROMPT = [
 
+TWO_STAGE_TEXT2VEC_PROMPT = [
+"""{system_prompt}
+
+--------
+
+Here is a detailed specification of the `RetrieveFromVectorstore` action that you need to predict:
+
+{action_prompt}
+
+--------
+
+The task input is:
+
+[Question]: {question}
+
+[Vectorstore Schema]:
+{vectorstore_schema}
+
+You can firstly give your reasoning process, followed by the `RetrieveFromVectorstore` action with pre-defined JSON format (REMEMBER TO WRAP YOUR ACTION IN THREE BACKTICKS):
+
+```json\nconcrete JSON-format action\n```
+
+Here is your response:
+"""
+
+,
+
+"""{system_prompt}
+
+--------
+
+[Question]: {question}
+[Retrieved Context]:\n{context}
+[Answer Format]: {answer_format}
+
+You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER IN THREE BACKTICKS):
+
+```txt\nfinal answer\n```
+
+Here is your response:
+"""
 ]

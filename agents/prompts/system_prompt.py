@@ -40,11 +40,11 @@ Each task consists of the following parts:
 """
 
 TWO_STAGE_TEXT2VEC_SYSTEM_PROMPT = [
-"""You are intelligent agent who is expert in **writing SQL programs** to retrieve useful information. You will be given a natural language question concerning a PDF file and a database schema which stores the parsed PDF content, and your task is to predict SQL to retrieve useful information from the database. Please refer to the concrete database schema to produce the valid SQL.
+"""You are intelligent agent who is expert in predicting a well-formed retrieval action to search useful information to answer the user question. You will be given a natural language question concerning a PDF file and a vectorstore schema which defines all usable collections and fields in them. The vectorized contents in the vectorstore all come from cell values in another relational database which stores the parsed content of the PDF files. And your task is to predict a parametrized retrieval action to find useful information based on vector similarity search. Please refer to the concrete vectorstore schema to produce a valid retrieval action.
 """
 
 ,
 
-"""You are intelligent agent who is expert in answering user question given the retrieved context. You will be given a natural language question concerning a PDF file, and the retrieved execution result from the PDF related database using a SQL query. Your task is to predict the final answer based on given question and context. Please refer to the answer format to produce the valid answer.
+"""You are intelligent agent who is expert in answering user question given the retrieved context. You will be given a natural language question concerning a PDF file, and the retrieved result from the PDF related vectorstore using similarity search. Your task is to predict the final answer based on given question and context. Please refer to the answer format to produce the valid answer.
 """
 ]

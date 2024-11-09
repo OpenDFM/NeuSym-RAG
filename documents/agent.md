@@ -66,14 +66,14 @@ python scripts/two_stage_text2sql_baseline.py --dataset pdfvqa --database biolog
 python scripts/two_stage_text2sql_baseline.py --dataset tatdqa --database financial_report --test_data test_data_sample.jsonl --agent_method 'two_stage_text2sql' --llm gpt-4o-mini --max_turn 2
 ```
 
-4. Two stage text-to-vector (non-interactive) baseline: (TODO: coding in progress)
+4. Two stage text-to-vector (non-interactive) baseline:
 
 ```sh
 python scripts/two_stage_text2vec_baseline.py --dataset pdfvqa --vectorstore biology_paper --test_data test_data_sample.jsonl --agent_method 'two_stage_text2vec' --llm gpt-4o-mini --max_turn 2
 python scripts/two_stage_text2vec_baseline.py --dataset tatdqa --vectorstore financial_report --test_data test_data_sample.jsonl --agent_method 'two_stage_text2vec' --llm gpt-4o-mini --max_turn 2
 ```
 
-5. Classic RAG (pre-fetch the context and call LLM once) baseline: (TODO: coding in progress)
+5. Classic RAG (pre-fetch the context and call LLM once) baseline:
 - `--collection_name` can be changed to any other embedding models (see `data/vectorstore/*/*.json` for all available collections)
 - if `--table_name` and `--column_name` are not specified, all encodable text content will be used by default (see `data/database/*/*.json` for all available encodable columns)
 - `--limit` restricts the number of returned chunks

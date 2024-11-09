@@ -15,8 +15,8 @@ class HybridEnv(AgentEnv):
 
     action_space: List[Type] = [RetrieveFromDatabase, RetrieveFromVectorstore, CalculateExpr, ViewImage, GenerateAnswer]
 
-    def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, dataset: Optional[str] = None, **kwargs) -> None:
-        super(HybridEnv, self).__init__(action_format=action_format, action_space=action_space, dataset=dataset)
+    def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, agent_method: Optional[str] = 'react', dataset: Optional[str] = None, **kwargs) -> None:
+        super(HybridEnv, self).__init__(action_format=action_format, action_space=action_space, agent_method=agent_method, dataset=dataset)
         # database and vectorstore name must be the same
         db, vs = kwargs.get('database', None), kwargs.get('vectorstore', None)
         assert db is not None or vs is not None

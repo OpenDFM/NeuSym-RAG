@@ -168,34 +168,46 @@ class Action(ABC):
 
 
     @classmethod
-    def parse_action(cls, text: str, action_types: List[type], action_format: str = 'json') -> Tuple[bool, 'Action']:
+    def parse_action(cls, text: str, action_types: List[type], action_format: str = 'json', agent_method: str = 'react') -> Tuple[bool, 'Action']:
         """ Parse the raw LLM response text into one concrete Action object based on the allowable action types and the specified action `format`.
-        For a unified perspective, note that each action should be wrapped in (`Thought` is optional)
-            [Thought]: ...
-            [Action]: ...
-            [Observation]: ...
-        TODO: maybe this should be combined with the `agent_method='react'` in the future to support more frameworks?
+        @args:
+            text: str, the raw LLM response text
+            action_types: List[type], a list of allowable action types, depending on the environment
+            action_format: str, the format of the action text, chosen from ['markdown', 'json', 'xml', 'yaml']
+            agent_method: str, the agent method for the response, used to extract the parsable action_text from raw LLM response text, chosen from ['react', 'code_block'], default to 'react'
+                - react: each action should be wrapped in the framework below (`Thought` is optional)
+                    [Thought]: ...
+                    [Action]: ...
+                    [Observation]: ...
+                - code_block: each action should be wrapped in the 3 backticks
+        @return:
+            flag: bool, whether the action is successfully parsed
+            action_obj: Action, the parsed action object
         """
         assert action_format in ACTION_FORMATS, f"Action format `{action_format}` is not supported."
 
-        # extract the real action text from raw LLM response, maybe dependent on agent frameworks
-        thought_pattern = r"\[Thought\]:\s*(.*?)\s*\[Action\]:"
-        matched_thought = re.search(thought_pattern, text, re.DOTALL)
-        thought = matched_thought.group(1) if matched_thought else None
-        action_pattern = r"\[Action\]:\s*(.*?)\s*(\[Observation\]:|$)"
-        matched_action = re.search(action_pattern, text, re.DOTALL)
-        action_text = matched_action.group(1).strip() if matched_action else None
-        if action_text is None:
-            action_text = text.strip() # sometimes no "[Action]:" prefix, directly use the whole text
-            # return False, "[Error]: Failed to parse the action text from the response."
+        # extract the real action_text from raw LLM response, maybe dependent on agent frameworks
+        # currently only support react and code_block styles
+        if agent_method not in ['react', 'code_block']: agent_method = 'react'
+        if agent_method == 'react':
+            thought_pattern = r"\[Thought\]:\s*(.*?)\s*\[Action\]:"
+            matched_thought = re.search(thought_pattern, text, re.DOTALL)
+            thought = matched_thought.group(1) if matched_thought else None
+            action_pattern = r"\[Action\]:\s*(.*?)\s*(\[Observation\]:|$)"
+            matched_action = re.search(action_pattern, text, re.DOTALL)
+            action_text = matched_action.group(1).strip() if matched_action else text.strip()
+        else: # agent_method == 'code_block':
+            thought = None
+            matching_list = re.findall(r"```(\S*)\s*(.*?)\s*```", text.strip(), flags=re.DOTALL)
+            action_text = matching_list[-1][1].strip() if len(matching_list) > 0 else text.strip()
 
         from .error_action import ErrorAction
-
         action_names = [action_cls.__name__ for action_cls in action_types]
         for action_cls in action_types:
             try:
                 action_obj = action_cls._parse(action_text, action_format)
-                action_obj.thought = thought # add thought to the action object
+                if thought is not None:
+                    action_obj.thought = thought # add thought to the action object
                 return True, action_obj
             except ParseActionError as e: # failed to parse the action structure, e.g., json, xml, etc.
                 return False, ErrorAction(response=text, error=str(e))

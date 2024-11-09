@@ -11,9 +11,15 @@ class AgentEnv(gym.Env, ABC):
 
     action_space: List[Type] = []
 
-    def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, dataset: Optional[str] = None) -> None:
+    def __init__(self,
+                 action_format: str = 'json',
+                 action_space: Optional[List[Type]] = None,
+                 agent_method: Optional[str] = 'react',
+                 dataset: Optional[str] = None
+    ) -> None:
         super(AgentEnv, self).__init__()
         self.action_format: str = action_format
+        self.agent_method: Optional[str] = agent_method
         self.dataset: Optional[str] = dataset
         cls_space = self.__class__.action_space
         if action_space is not None and len(action_space) > 0:
@@ -50,7 +56,12 @@ class AgentEnv(gym.Env, ABC):
         """
         parse_error = False
         if isinstance(action, str):
-            flag, action = Action.parse_action(action, self.__class__.action_space, self.action_format)
+            flag, action = Action.parse_action(
+                action,
+                action_types=self.__class__.action_space,
+                action_format=self.action_format,
+                agent_method=self.agent_method
+            )
             if not flag: parse_error = True
         self.parsed_actions.append(action)
 

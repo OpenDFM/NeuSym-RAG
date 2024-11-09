@@ -73,9 +73,9 @@ def convert_vectorstore_schema_to_prompt(vectorstore: str, serialize_method: str
                 encodable_pairs.append({'table_name': table_name, 'column_name': column_name})
 
     if serialize_method == 'detailed_json':
-        prompt = f"The vectorstore schema for {vectorstore} is as follows:\n{json.dumps(vs_schema, indent=4)}\n\n"
-        prompt += f"Following are the encodable table-column pairs in another relational database. You can leverage them for filtering or output fields in the vectorstore:\n{json.dumps(encodable_pairs, indent=4)}\n\n"
-        prompt += f"Following are the operators that you can use in the filtering condition for the vectorstore:\n{json.dumps(filter_rules, indent=4)}"
+        prompt = f"The vectorstore schema for {vectorstore} is as follows. Feel free to use any collection with different encoding models or modalities:\n{json.dumps(vs_schema, indent=4)}\n\n"
+        prompt += f"The following lists all encodable table-column pairs from another relational database, where the encoded vector entries are sourced. You can leverage them for filter condition or output fields during similarity search:\n{json.dumps(encodable_pairs, indent=4)}\n\n"
+        prompt += f"Here are the operators that you can use in the filtering condition for the vectorstore:\n{json.dumps(filter_rules, indent=4)}"
     else:
         raise ValueError(f"Unsupported serialize method: {serialize_method}.")
 
