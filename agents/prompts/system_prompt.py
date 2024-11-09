@@ -36,7 +36,7 @@ Each task consists of the following parts:
 
 [Question]: User question regarding the PDF, e.g., Is there any ...?
 [Answer Format]: it describes the format of the final answer, e.g., the answer is "Yes" or "No" without punctuation.
-[Vectorstore Schema]: detailed serialized vectorstore schema (including collections, fields, and meta information) for reference to generate executable retrieval actions with concrete parameters.
+[Vectorstore Schema]: detailed serialized Milvus vectorstore schema for reference to generate executable retrieval actions with concrete parameters. It includes 1) collections, 2) fields, 3) encodable (table, column) pairs in the relational database where the vectorized content arises from, and 4) grammar for valid filter rules.
 """
 
 TWO_STAGE_TEXT2VEC_SYSTEM_PROMPT = [

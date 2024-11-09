@@ -37,6 +37,7 @@ class Text2VecRAGAgent(AgentBase):
         task_prompt = f'[Question]: {question}\n[Answer Format]: {answer_format}\n[Vectorstore Schema]:\n{vectorstore_prompt}'
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
+        logger.info(f'[Vectorstore Schema]:\n{vectorstore_prompt}')
         messages = [
             {'role': 'system', 'content': self.agent_prompt},
             {'role': 'user', 'content': task_prompt}

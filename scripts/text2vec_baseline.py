@@ -5,7 +5,7 @@ from typing import Dict, List, Tuple, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from agents.envs import ENVIRONMENTS
 from agents.models import infer_model_class
-from agents.frameworks import FRAMEWORKS
+from agents.frameworks import FRAMEWORKS, Text2VecRAGAgent
 from agents.prompts import convert_vectorstore_schema_to_prompt, formulate_input
 from utils.eval_utils import evaluate, print_result
 
@@ -51,8 +51,8 @@ logger.setLevel(logging.INFO)
 
 
 llm = infer_model_class(args.llm)()
-env = ENVIRONMENTS['text2vec'](action_format=args.action_format, dataset=args.dataset, vectorstore=args.vectorstore)
-agent = FRAMEWORKS['text2vec'](llm, env, agent_method=args.agent_method, max_turn=args.max_turn)
+env = ENVIRONMENTS['text2vec'](action_format=args.action_format, agent_method=args.agent_method, dataset=args.dataset, vectorstore=args.vectorstore)
+agent: Text2VecRAGAgent = FRAMEWORKS['text2vec'](llm, env, agent_method=args.agent_method, max_turn=args.max_turn)
 
 test_data = []
 if os.path.exists(args.test_data) and os.path.isfile(args.test_data):
