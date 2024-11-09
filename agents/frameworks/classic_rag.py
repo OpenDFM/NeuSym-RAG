@@ -49,7 +49,7 @@ class ClassicRAGAgent(AgentBase):
             filter_conditions.append(f"table_name == '{table_name}'")
         if column_name is not None:
             filter_conditions.append(f"column_name == '{column_name}'")
-        filter_str = ' && '.join(filter_conditions) if len(filter_conditions) > 0 else ''
+        filter_str = ' and '.join(filter_conditions) if len(filter_conditions) > 0 else ''
         action = RetrieveFromVectorstore(
             query=question,
             collection_name=collection_name,
