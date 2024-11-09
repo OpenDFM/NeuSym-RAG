@@ -61,7 +61,7 @@
                     "query": "Does this paper discuss LLM-based agent? (paper id is '12345678')",
                     "collection_name": "text_bm25_en",
                     "limit": 10,
-                    "filter": "pdf_id = '12345678'",
+                    "filter": "pdf_id == '12345678'",
                     "output_fields": [
                         "text"
                     ]
@@ -72,7 +72,7 @@
                 "example": {
                     "query": "Is there any work about the topic structured RAG?",
                     "collection_name": "text_sentence_transformers_all_minilm_l6_v2",
-                    "filter": "table_name = 'papers' AND column_name = 'abstract'",
+                    "filter": "table_name == 'papers' && column_name == 'abstract'",
                     "output_fields": [
                         "text",
                         "primary_key"

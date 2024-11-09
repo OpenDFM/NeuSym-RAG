@@ -67,7 +67,7 @@ class TwoStageText2SQLRAGAgent(AgentBase):
             answer = response.strip()
         else:
             answer = matched_list[-1][1].strip()
-            logger.info(f'[Answer]: {answer}')
+        logger.info(f'[Answer]: {answer}')
         
         cost = self.model.get_cost() - prev_cost
         logger.info(f'[Info]: LLM API call costs ${cost:.6f}.')
