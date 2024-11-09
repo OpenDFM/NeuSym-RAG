@@ -41,9 +41,12 @@ class TwoStageText2SQLRAGAgent(AgentBase):
         messages = [{'role': 'user', 'content': prompt}]
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
-        matched = re.search(r"```(sql)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
-        sql = matched.group(2).strip() if matched is not None else response.strip()
-        logger.info(f'[ParsedSQL]: {sql}')
+        matched_list = re.findall(r"```(sql)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
+        if not matched_list:
+            sql = response.strip()
+        else:
+            sql = matched_list[-1][1].strip()
+            logger.info(f'[ParsedSQL]: {sql}')
 
         # 2. Answer question
         action = RetrieveFromDatabase(sql=sql)
@@ -59,9 +62,12 @@ class TwoStageText2SQLRAGAgent(AgentBase):
         messages = [{'role': 'user', 'content': prompt}]
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
-        matched = re.search(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
-        answer = '' if matched is None else matched.group(2).strip()
-        logger.info(f'[Answer]: {answer}')
+        matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
+        if not matched_list:
+            answer = response.strip()
+        else:
+            answer = matched_list[-1][1].strip()
+            logger.info(f'[Answer]: {answer}')
         
         cost = self.model.get_cost() - prev_cost
         logger.info(f'[Info]: LLM API call costs ${cost:.6f}.')

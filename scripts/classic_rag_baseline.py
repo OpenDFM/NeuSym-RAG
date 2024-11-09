@@ -52,7 +52,7 @@ logger.setLevel(logging.INFO)
 
 
 llm: LLMClient = infer_model_class(args.llm)()
-env: AgentEnv = ENVIRONMENTS['text2vec'](action_format=args.action_format, dataset=args.dataset, vectorstore=args.vectorstore)
+env: AgentEnv = ENVIRONMENTS['text2vec'](dataset=args.dataset, vectorstore=args.vectorstore)
 agent: AgentBase = FRAMEWORKS['classic_rag'](llm, env, agent_method=args.agent_method)
 
 test_data = []

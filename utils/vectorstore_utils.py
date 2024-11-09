@@ -43,7 +43,7 @@ def get_embed_model_from_collection(
     embed_kwargs = []
     cached_models = {
         re.sub(r'[^a-z0-9_]', '_', m.lower().rstrip(os.sep).strip()): m
-        for m in os.listdir('.cache') if os.path.isdir(m)
+        for m in os.listdir('.cache') if os.path.isdir(os.path.join('.cache', m))
     } # from normalized model name to the original model name
     for collection in collection_name:
         modality = 'text' if collection.startswith('text') else 'image'

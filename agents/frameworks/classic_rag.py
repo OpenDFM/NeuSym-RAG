@@ -40,16 +40,16 @@ class ClassicRAGAgent(AgentBase):
         # 1. Retrieve the result (hard coding)
         filter_conditions = []
         if pdf_id is not None:
-            filter_conditions.append(f"pdf_id = '{pdf_id}'")
+            filter_conditions.append(f"pdf_id == '{pdf_id}'")
         if page_number is not None and page_number != []:
             page_number_filter = f'page_number in {sorted(page_number)}' if isinstance(page_number, list) else \
-                f"page_number = {page_number}"
+                f"page_number == {page_number}"
             filter_conditions.append(page_number_filter)
         if table_name is not None:
-            filter_conditions.append(f"table_name = '{table_name}'")
+            filter_conditions.append(f"table_name == '{table_name}'")
         if column_name is not None:
-            filter_conditions.append(f"column_name = '{column_name}'")
-        filter_str = ' AND '.join(filter_conditions) if len(filter_conditions) > 0 else ''
+            filter_conditions.append(f"column_name == '{column_name}'")
+        filter_str = ' && '.join(filter_conditions) if len(filter_conditions) > 0 else ''
         action = RetrieveFromVectorstore(
             query=question,
             collection_name=collection_name,
@@ -59,7 +59,7 @@ class ClassicRAGAgent(AgentBase):
         )
         observation: Observation = action.execute(self.env)
         logger.info(f'[Stage 1]: Retrieve top {limit} context from {collection_name} with filter {filter_str} ...')
-        logger.debug(f'[Retrieved Context]: {observation.obs_content}')
+        logger.info(f'[Retrieved Context]:\n{observation.obs_content}')
 
         # 2. Answer the question
         prompt = AGENT_PROMPTS[self.agent_method].format(
@@ -72,9 +72,12 @@ class ClassicRAGAgent(AgentBase):
         messages = [{'role': 'user', 'content': prompt}]
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
-        matched = re.search(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
-        answer = '' if matched is None else matched.group(2).strip()
-        logger.info(f'[Answer]: {answer}')
+        matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
+        if not matched_list:
+            answer = response.strip()
+        else:
+            answer = matched_list[-1][1].strip()
+            logger.info(f'[Answer]: {answer}')
         
         cost = self.model.get_cost() - prev_cost
         logger.info(f'[Info]: LLM API call costs ${cost:.6f}.')
