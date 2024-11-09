@@ -64,9 +64,10 @@ with open(test_data_path, 'r') as inf:
 
 database_prompt = convert_database_schema_to_prompt(args.database, serialize_method=args.db_format)
 
+start_time = datetime.now()
 preds = []
-for data in test_data:
-    logger.info(f"Processing question: {data['uuid']}")
+for i, data in enumerate(test_data):
+    logger.info(f"Processing question {i+1}: {data['uuid']}")
     question, answer_format = formulate_input(args.database, data)
     result = agent.interact(question, database_prompt, answer_format, window_size=args.window_size, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens)
     preds.append({
@@ -74,7 +75,11 @@ for data in test_data:
         'question_type': data['question_type'],
         'answer': result
     })
-logger.info(f"Total cost: {llm.get_cost()}")
+    current_cost = llm.get_cost()
+    current_time = datetime.now()-start_time
+    logger.info(f"[Statistics]: Current Cost: {current_cost} | Current Time: {current_time}")
+    logger.info(f"[Estimate]: Total Cost: {current_cost / (i+1) * len(test_data)} | Total Time: {current_time / (i+1) * len(test_data)}")
+logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now()-start_time}")
 agent.close()
 
 output_path = os.path.join(args.result_dir, f'{filename}.jsonl')
