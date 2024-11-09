@@ -37,6 +37,7 @@ class Text2SQLRAGAgent(AgentBase):
         task_prompt = f'[Question]: {question}\n[Answer Format]: {answer_format}\n[Database Schema]:\n{database_prompt}'
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
+        # logger.info(f'[Database Schema]:\n{database_prompt}')
         messages = [
             {'role': 'system', 'content': self.agent_prompt},
             {'role': 'user', 'content': task_prompt}

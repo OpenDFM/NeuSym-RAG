@@ -53,7 +53,7 @@ python scripts/text2sql_baseline.py --dataset pdfvqa --database biology_paper --
 python scripts/text2sql_baseline.py --dataset tatdqa --database financial_report --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 10
 ```
 
-2. Text-to-vector with interactive vectorstore environment baseline: (TODO: debugging in progress)
+2. Text-to-vector with interactive vectorstore environment baseline:
 ```sh
 python scripts/text2vec_baseline.py --dataset pdfvqa --vectorstore biology_paper --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 10
 python scripts/text2vec_baseline.py --dataset tatdqa --vectorstore financial_report --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 10
