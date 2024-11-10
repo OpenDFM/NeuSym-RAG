@@ -1,4 +1,4 @@
-# Project for Retrieval Scheduler
+# Project for Hybrid Neural Symbolic Retrieval
 
 
 <p align="center">
@@ -10,7 +10,7 @@ Main contribution:
 - Leverage a retrieval scheduler module to combine different retrieval methods:
   - vector-based neural retrieval
   - text-to-SQL symbolic retrieval
-  - external tools, e.g., Web search, PDF parsing, image captioning, etc.
+  - external tools, e.g., image viewer, calculator, etc.
 - Treat retrieval as an **agentic** task, salient features include:
   1. Retrieval module and external tools selection
   2. Retrieval workflow orchestration, which includes:
@@ -45,7 +45,7 @@ The documents for this project and fine-grained topics are discussed in the fold
 
 - [`documents/database.md`](documents/database.md):
   - Folder structure of `data/database/`;
-  - How to define database schema and its format;
+  - How to define database schema and its format (two figures above are drawn with [DrawSQL](https://drawsql.app/diagrams));
   - How to fill in database content with generic Python class `DatabasePopulation` and module `utils.functions`;
   - Scripts on creating database schema and populating database content.
 - [`documents/vectorstore.md`](documents/vectorstore.md):

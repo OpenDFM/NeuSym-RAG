@@ -127,6 +127,7 @@ class  DatabasePopulation():
 
             if log: # write SQL into log file
                 current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+                os.makedirs('logs', exist_ok=True)
                 output_path = os.path.join('logs', f"populate_{self.database}_table_{table_name}_{current_time}.log")
                 with open(output_path, 'w', encoding='UTF-8') as f:
                     f.write(insert_sql + '\n\n')

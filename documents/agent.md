@@ -42,8 +42,7 @@ Here are some common arguments:
 - dataset and database:
     - `pdfvqa` -> `biology_paper`
     - `tatdqa` -> `financial_report`
-- the predicted result is saved in folder `results/` in `.jsonl` format
-- the log history is saved in folder `logs/` in `.log` format
+- the predicted result and log history are both saved in folder `results/`
 - `action_format`: chosen from [`json`, `markdown`, `xml`, `yaml`], by default is `json`
 - `output_format`: only used in action `RetrieveFromDatabase` and `RetrieveFromVectorstore`, chosen from [`markdown`, `json`, `html`, `string`], by default is `markdown` table. Currently, you need to modify this parameter in the action file, e.g., `agents/envs/actions/retrieve_from_database.py`
 

@@ -107,7 +107,7 @@ python utils/database_utils.py --database biology_paper --function create_db --f
 
 ### Database Schema Visualization
 
-After running the `create_db` script above, we will get the `.sql` DDL file under database folder. We can use free online tools (e.g., [DrawSQL](https://drawsql.app/diagrams)) to import this DDL file and obtain the visualization graph. For example:
+After running the `create_db` script above, we will get the `.sql` DDL file under database folder. We can use free online tools (e.g., [DrawSQL](https://drawsql.app/diagrams)) to import this DDL file and obtain the visualization graph (choose `PostgreSQL` as the database type). For example:
 
 <p align="center">
   <img src="../data/database/biology_paper/biology_paper.png" alt="Image Description" width="95%">

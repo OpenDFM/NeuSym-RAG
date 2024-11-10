@@ -1,5 +1,5 @@
 #coding=utf8
-import logging
+import logging, json
 from abc import ABC, abstractmethod
 from agents.envs import AgentEnv
 from agents.envs.actions import Action, Observation
@@ -27,7 +27,7 @@ class AgentBase(ABC):
         pass
 
 
-    def forward(self, messages: List[Dict[str, Any]], model: str = '', temperature: float = 0.7, top_p: float = 0.95, max_tokens: int = 1500, window_size: int = 3) -> str:
+    def forward(self, messages: List[Dict[str, Any]], model: str = '', temperature: float = 0.7, top_p: float = 0.95, max_tokens: int = 1500, window_size: int = 3, output_path: Optional[str] = None) -> str:
         prev_cost = self.model.get_cost()
         self.env.reset()
 
@@ -65,4 +65,8 @@ class AgentBase(ABC):
         else:
             cost = self.model.get_cost() - prev_cost
             logger.info(f'[Warning]: exceeds the maximum interaction turn {self.max_turn}, cost ${cost:.6f}.')
+        if output_path is not None:
+            with open(output_path, 'w') as f:
+                for m in messages:
+                    f.write(json.dumps(m, ensure_ascii=False) + '\n')
         return obs.obs_content

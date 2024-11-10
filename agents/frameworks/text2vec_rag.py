@@ -31,7 +31,8 @@ class Text2VecRAGAgent(AgentBase):
                  model: str = 'gpt-4o-mini',
                  temperature: float = 0.7,
                  top_p: float = 0.95,
-                 max_tokens: int = 1500
+                 max_tokens: int = 1500,
+                 output_path: Optional[str] = None
     ) -> str:
         # construct the initial prompt messages
         task_prompt = f'[Question]: {question}\n[Answer Format]: {answer_format}\n[Vectorstore Schema]:\n{vectorstore_prompt}'
@@ -48,6 +49,7 @@ class Text2VecRAGAgent(AgentBase):
             temperature=temperature,
             top_p=top_p,
             max_tokens=max_tokens,
-            window_size=window_size
+            window_size=window_size,
+            output_path=output_path
         )
         return answer

@@ -28,18 +28,16 @@ parser.add_argument('--eval_temperature', type=float, default=0.7, help='Evaluat
 parser.add_argument('--eval_top_p', type=float, default=0.95, help='Evaluation top_p')
 parser.add_argument('--threshold', type=float, default=0.95, help='Threshold for fuzzy matching during evaluation')
 parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
-parser.add_argument('--log_dir', type=str, default='logs', help='Directory to save the interaction history')
 args = parser.parse_args()
 
-os.makedirs(args.result_dir, exist_ok=True)
-os.makedirs(args.log_dir, exist_ok=True)
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-# the filename can be customized
 filename = f'{args.dataset}_{args.agent_method}_{args.llm}-{start_time}'
+result_dir = os.path.join(args.result_dir, filename)
+os.makedirs(result_dir, exist_ok=True)
 
 logger = logging.getLogger()
 handler = logging.StreamHandler(sys.stdout)
-file_handler = logging.FileHandler(os.path.join('logs', f'{filename}.log'), encoding='utf-8')
+file_handler = logging.FileHandler(os.path.join(result_dir, 'log.txt'), encoding='utf-8')
 formatter = logging.Formatter(
     fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
@@ -67,12 +65,14 @@ preds = []
 for data in test_data:
     logger.info(f"Processing question: {data['uuid']}")
     question, answer_format = formulate_input(args.vectorstore, data)
+    output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
     result = agent.interact(
         question, answer_format,
         table_name=args.table_name, column_name=args.column_name,
         pdf_id=data['pdf_id'], page_number=data['page_number'],
         collection_name=args.collection_name, limit=args.limit,
-        model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens
+        model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens,
+        output_path=output_path
     )
     preds.append({
         'uuid': data['uuid'],
@@ -82,7 +82,7 @@ for data in test_data:
 logger.info(f"Total cost: {llm.get_cost()}")
 agent.close()
 
-output_path = os.path.join(args.result_dir, f'{filename}.jsonl')
+output_path = os.path.join(result_dir, 'result.jsonl')
 with open(output_path, 'w') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')

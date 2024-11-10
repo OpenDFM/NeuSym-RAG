@@ -28,7 +28,8 @@ class ClassicRAGAgent(AgentBase):
                  model: str = 'gpt-4o-mini',
                  temperature: float = 0.7,
                  top_p: float = 0.95,
-                 max_tokens: int = 1500
+                 max_tokens: int = 1500,
+                 **kwargs
     ) -> str:
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')

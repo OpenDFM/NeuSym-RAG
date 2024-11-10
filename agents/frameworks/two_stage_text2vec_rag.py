@@ -23,7 +23,8 @@ class TwoStageText2VecRAGAgent(AgentBase):
                  model: str = 'gpt-4o-mini',
                  temperature: float = 0.7,
                  top_p: float = 0.95,
-                 max_tokens: int = 1500
+                 max_tokens: int = 1500,
+                 **kwargs
     ) -> str:
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
@@ -42,7 +43,7 @@ class TwoStageText2VecRAGAgent(AgentBase):
         messages = [{'role': 'user', 'content': prompt}]
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
-        _, action = Action.parse_action(response, action_types=[RetrieveFromVectorstore], action_format=self.env.action_format, agent_method='code_block')
+        _, action = Action.parse_action(response, action_types=[RetrieveFromVectorstore], action_format='json', agent_method='code_block')
         logger.info(f'[Action]: {repr(action)}')
 
         # 2. Answer question
