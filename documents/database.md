@@ -105,6 +105,16 @@ python utils/database_utils.py --database financial_report --function create_db 
 python utils/database_utils.py --database biology_paper --function create_db --from_scratch
 ```
 
+### Database Schema Visualization
+
+After running the `create_db` script above, we will get the `.sql` DDL file under database folder. We can use free online tools (e.g., [DrawSQL](https://drawsql.app/diagrams)) to import this DDL file and obtain the visualization graph. For example:
+
+<p align="center">
+  <img src="../data/database/biology_paper/biology_paper.png" alt="Image Description" width="95%">
+  <br>
+  <em>Database Schema for Biology Paper (PDFVQA)</em>
+</p>
+
 
 ## Database Content Completion
 
