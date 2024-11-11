@@ -56,7 +56,7 @@ test_data = []
 if os.path.exists(args.test_data) and os.path.isfile(args.test_data):
     test_data_path = args.test_data
 else: test_data_path = os.path.join('data', 'dataset', args.dataset, 'processed_data', args.test_data)
-with open(test_data_path, 'r') as inf:
+with open(test_data_path, 'r', encoding='UTF-8') as inf:
     for line in inf:
         test_data.append(json.loads(line))
 
