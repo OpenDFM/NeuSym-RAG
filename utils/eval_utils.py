@@ -221,7 +221,7 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
     assert len(pred_data) == len(gold_data)
     result = defaultdict(lambda: {'score': 0.0, 'count': 0, 'correct': 0}) # (score, count)
     output_path = kwargs.get('output_path', None)
-    with open(output_path, 'w') if output_path else nullcontext() as outfile:
+    with open(output_path, 'w', encoding='UTF-8') if output_path else nullcontext() as outfile:
         for pred, gold in zip(pred_data, gold_data):
             score = evaluation(dataset, pred['answer'], gold, **kwargs)
             if score < 0.5 and output_path is not None:

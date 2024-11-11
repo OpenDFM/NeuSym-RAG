@@ -19,7 +19,7 @@ class RetrieveFromVectorstore(Action):
     output_fields: List[str] = field(default_factory=lambda: ['text'], repr=True) # output fields for context retrieval. Optional, by default, return the `text` field
 
     observation_format_kwargs: Dict[str, Any] = field(default_factory=lambda: {
-        "output_format": "markdown", # output format for the SQL execution result, chosen from ['markdown', 'string', 'html', 'json'], default is 'markdown'
+        "output_format": "json", # output format for the SQL execution result, chosen from ['markdown', 'string', 'html', 'json'], default is 'markdown'
         "tablefmt": "pretty", # for markdown format, see doc https://pypi.org/project/tabulate/ for all options
         "max_rows": 10, # maximum rows to display in the output
         "index": False, # whether to include the row index in the output

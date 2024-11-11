@@ -14,7 +14,7 @@ class RetrieveFromDatabase(Action):
 
     sql: str = field(default='', repr=True) # concrete SQL query, required
     observation_format_kwargs: Dict[str, Any] = field(default_factory=lambda: {
-        "output_format": "markdown", # output format for the SQL execution result, chosen from ['markdown', 'string', 'html', 'json'], default is 'markdown'
+        "output_format": "json", # output format for the SQL execution result, chosen from ['markdown', 'string', 'html', 'json'], default is 'markdown'
         "tablefmt": "pretty", # for markdown format, see doc https://pypi.org/project/tabulate/ for all options
         "max_rows": 10, # maximum rows to display in the output
         "index": False, # whether to include the row index in the output
@@ -34,6 +34,11 @@ class RetrieveFromDatabase(Action):
             if key in output_kwargs:
                 output_kwargs[key] = kwargs[key] # update the argument if it exists
 
+        def convert_to_utf8(df):
+            for col in df.select_dtypes(include=['object']).columns:  # select only object-type columns
+                df[col] = df[col].astype(str).str.encode('utf-8', errors='ignore').str.decode('utf-8')
+            return df
+        
         @func_set_timeout(0, allowOverride=True)
         def output_formatter(sql: str, format_kwargs: Dict[str, Any], **kwargs) -> str:
             output_format = format_kwargs['output_format']
@@ -42,19 +47,22 @@ class RetrieveFromDatabase(Action):
             conn: duckdb.DuckDBPyConnection = env.database_conn # get the database connection
             result: pd.DataFrame = conn.execute(sql).fetchdf() # execute the SQL query and fetch the result
             max_rows = format_kwargs['max_rows']
-            result = result.head(max_rows)
             suffix = f'\n... # only display {max_rows} rows in {output_format.upper()} format, more are truncated due to length constraint' if \
                 result.shape[0] > max_rows else f'\nIn total, {result.shape[0]} rows are displayed in {output_format.upper()} format.'
+            result = result.head(max_rows)
             
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
                 msg = result.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string':
-                msg = result.to_string(index=format_kwargs['index'])
+                if result.empty:
+                    msg = '""'
+                else:
+                    msg = result.to_string(index=format_kwargs['index'])
             elif output_format == 'html':
                 msg = result.to_html(index=format_kwargs['index'])
             elif output_format == 'json':
-                msg = result.to_json(orient='records', lines=True, index=False) # indeed JSON Line format
+                msg = convert_to_utf8(result).to_json(orient='records', lines=True, index=False) # indeed JSON Line format
             else:
                 raise ValueError(f"SQL execution output format {output_format} not supported.")
             return msg + suffix
