@@ -4,6 +4,7 @@ from typing import Dict, Any, Optional, List, Union
 from collections import defaultdict
 from fuzzywuzzy import fuzz, process
 from tabulate import tabulate
+from contextlib import nullcontext
 
 
 def evaluation(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs) -> float:
@@ -219,24 +220,25 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
 
     assert len(pred_data) == len(gold_data)
     result = defaultdict(lambda: {'score': 0.0, 'count': 0, 'correct': 0}) # (score, count)
-    verbose = kwargs.pop('verbose', True)
-    for pred, gold in zip(pred_data, gold_data):
-        score = evaluation(dataset, pred['answer'], gold, **kwargs)
-        if score < 0.5 and verbose:
-            print(f'\n[ERROR]: data (type={gold["question_type"]}) with id {gold["uuid"]}')
-            print(f'Gold Answer: {gold["answer"]}')
-            print(f'Predicted Answer: {pred["answer"]}')
-        result['all']['count'] += 1
-        result['all']['correct'] += score
-        result[gold['question_type']]['count'] += 1
-        result[gold['question_type']]['correct'] += score
+    output_path = kwargs.get('output_path', None)
+    with open(output_path, 'w') if output_path else nullcontext() as outfile:
+        for pred, gold in zip(pred_data, gold_data):
+            score = evaluation(dataset, pred['answer'], gold, **kwargs)
+            if score < 0.5 and output_path is not None:
+                outfile.write(f'\n[ERROR]: data (type={gold["question_type"]}) with id {gold["uuid"]}\n')
+                outfile.write(f'Gold Answer: {gold["answer"]}\n')
+                outfile.write(f'Predicted Answer: {pred["answer"]}\n')
+            result['all']['count'] += 1
+            result['all']['correct'] += score
+            result[gold['question_type']]['count'] += 1
+            result[gold['question_type']]['correct'] += score
 
-    for key in result.keys():
-        score, count = result[key]['correct'], result[key]['count']
-        result[key]['score'] = score / count if count > 0 else 0.0
+        for key in result.keys():
+            score, count = result[key]['correct'], result[key]['count']
+            result[key]['score'] = score / count if count > 0 else 0.0
 
-    if verbose:
-        print('\n' + print_result(result))
+        if output_path is not None:
+            outfile.write('\n' + print_result(result))
 
     return result
 
@@ -261,4 +263,6 @@ if __name__ == '__main__':
     parser.add_argument('--gold', type=str, required=True, help='Path to gold answer')
     args = parser.parse_args()
 
-    evaluate(args.pred, args.gold, args.dataset)
+    result = evaluate(args.pred, args.gold, args.dataset)
+    result_table = print_result(result)
+    print(f"Final evaluation result on {args.dataset}:\n{result_table}")

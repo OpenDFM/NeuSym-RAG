@@ -79,6 +79,6 @@ with open(output_path, 'w') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")
-result = evaluate(preds, test_data, args.dataset, model=args.eval_llm, temperature=args.eval_temperature, top_p=args.eval_top_p, threshold=args.threshold, verbose=False)
+result = evaluate(preds, test_data, args.dataset, model=args.eval_llm, temperature=args.eval_temperature, top_p=args.eval_top_p, threshold=args.threshold, output_path=os.path.join(result_dir, 'evaluation.txt'))
 result_table = print_result(result)
 logger.info(f"Final evaluation result on {args.dataset}:\n{result_table}")
