@@ -80,7 +80,7 @@ logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime
 agent.close()
 
 output_path = os.path.join(result_dir, 'result.jsonl')
-with open(output_path, 'w') as ouf:
+with open(output_path, 'w', encoding='UTF-8') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")
