@@ -256,16 +256,16 @@ def try_sql_with_extra_fields_returned(db_conn: duckdb.DuckDBPyConnection, table
         Tuple[int, List[Tuple[Any]]], the number of extra fields and the returned result
     """
     primary_keys = [primary_keys] if type(primary_keys) == str else primary_keys
-    for extra_fields in extra_fields:
+    for extra_field in extra_fields:
         try:
-            if type(extra_fields) == str:
-                select = f"SELECT {column_name}, {extra_fields}, {', '.join(primary_keys)} FROM {table_name};"
+            if type(extra_field) == str:
+                select = f"SELECT {column_name}, {extra_field}, {', '.join(primary_keys)} FROM {table_name};"
                 result = db_conn.sql(select).fetchall()
                 return 1, result
             else:
-                select = f"SELECT {column_name}, {', '.join(extra_fields)}, {', '.join(primary_keys)} FROM {table_name};"
+                select = f"SELECT {column_name}, {', '.join(extra_field)}, {', '.join(primary_keys)} FROM {table_name};"
                 result = db_conn.sql(select).fetchall()
-                return len(extra_fields), result
+                return len(extra_field), result
         except Exception as e:
             pass
     select = f"SELECT {column_name}, {', '.join(primary_keys)} FROM {table_name};"
