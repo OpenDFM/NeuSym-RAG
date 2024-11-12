@@ -131,8 +131,8 @@ class Action(ABC):
             else:
                 raise ValueError(f"Action format {action_format} not supported yet.")
             action = f"[Action]: {action_str}"
-            explanation = f'[Explanation]: {case["explanation"]}'
-            use_cases_prompt.append(f"\n#### Case {idx + 1}\n{action}\n{explanation}\n")
+            explanation = f'{case["explanation"]}'
+            use_cases_prompt.append(f"\n#### Case {idx + 1}\n{explanation}\n\n{action}\n")
         use_cases_prompt = '\n'.join(use_cases_prompt)
 
         action_prompt = f"""
