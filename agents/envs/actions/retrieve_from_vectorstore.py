@@ -39,28 +39,24 @@ class RetrieveFromVectorstore(Action):
 
         vs_conn: MilvusClient = env.vectorstore_conn
         if not vs_conn:
-            msg = "[Error]: Milvus connection is not available."
-            return msg
+            return Observation("[Error]: Milvus connection is not available.")
         if self.query == '' or self.query is None:
-            msg = "[Error]: Query string is empty."
-            return msg
+            return Observation("[Error]: Query string is empty.")
         if not vs_conn.has_collection(self.collection_name):
-            msg = "[Error]: Collection {} does not exist in the Milvus database. Please choose from these collections {}".format(repr(self.collection_name), vs_conn.list_collections())
-            return msg
-        
+            return Observation("[Error]: Collection {} does not exist in the Milvus database. Please choose from these collections {}".format(repr(self.collection_name), vs_conn.list_collections()))
+
         is_valid_output_fields = lambda x: type(x) == list and all([type(field) == str for field in x])
         if not is_valid_output_fields(self.output_fields):
             try:
                 self.output_fields = eval(str(self.output_fields))
                 assert is_valid_output_fields(self.output_fields)
             except:
-                return "[Error]: Value of parameter `output_fields` should be a list of strings."
+                return Observation("[Error]: Value of parameter `output_fields` should be a list of strings.")
         self.output_fields = [str(field) for field in self.output_fields if str(field).strip() not in ['id', 'vector', 'distance', '']] # filter useless fields
         valid_output_fields = [field['name'] for field in vs_conn.describe_collection(self.collection_name)['fields']]
         for field in self.output_fields:
             if field not in valid_output_fields:
-                msg = "[Error]: Output field `{}` is not available in the collection {} of Milvus vectorstore. The available output fields include {}".format(field, self.collection_name, valid_output_fields)
-                return msg
+                return Observation("[Error]: Output field `{}` is not available in the collection {} of Milvus vectorstore. The available output fields include {}".format(field, self.collection_name, valid_output_fields))
 
         embedder_dict: Dict[str, BaseEmbeddingFunction] = env.embedder_dict
         encoder: BaseEmbeddingFunction = embedder_dict[self.collection_name]['embedder']
@@ -69,7 +65,7 @@ class RetrieveFromVectorstore(Action):
             query_embedding = encoder.encode_queries([self.query])
         except Exception as e:
             return Observation(f"[Error]: Failed to encode the query: {str(e)}")
-        
+
         @func_set_timeout(0, allowOverride=True)
         def output_formatter(query_embedding, format_kwargs: Dict[str, Any], **kwargs) -> str:
             """ Each dict in search_result is in the format:
