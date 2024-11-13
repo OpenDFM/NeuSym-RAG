@@ -1,5 +1,5 @@
 #coding=utf8
-import os, time
+import os, time, json
 import duckdb
 from pymilvus import MilvusClient
 from milvus_model.base import BaseEmbeddingFunction
@@ -30,10 +30,15 @@ class HybridEnv(AgentEnv):
         self.vectorstore_conn, self.embedder_dict = None, {}
         self.launch_method = kwargs.get('launch_method', 'standalone')
         if self.launch_method == 'standalone':
-            self.vectorstore_path = kwargs.get('vectorstore_path', os.path.join('data', 'vectorstore', self.vectorstore, f'{self.vectorstore}.db')) 
+            self.vectorstore_path = kwargs.get('vectorstore_path', os.path.join('data', 'vectorstore', self.vectorstore, f'{self.vectorstore}.db'))
         else:
             self.vectorstore_path = kwargs.get('vectorstore_path', 'http://127.0.0.1:19530')
         self.reset()
+
+        self.table2pk = dict()
+        with open(os.path.join('data', 'database', self.database, f'{self.database}.json'), 'r', encoding='utf-8') as fin:
+            for table in json.load(fin)['database_schema']:
+                self.table2pk[table['table']['table_name']] = table['primary_keys']
 
 
     def reset(self) -> None:
@@ -47,11 +52,11 @@ class HybridEnv(AgentEnv):
                 self.database_conn: duckdb.DuckDBPyConnection = duckdb.connect(self.database_path)
             else:
                 raise NotImplementedError(f"Database type {self.database_type} not supported.")
-        
+
         if not isinstance(self.vectorstore_conn, MilvusClient):
             self.vectorstore_conn = get_vectorstore_connection(self.vectorstore_path, self.vectorstore, from_scratch=False)
             time.sleep(3)
-        
+
         embed_kwargs = get_embed_model_from_collection(client=self.vectorstore_conn)
         for embed in embed_kwargs:
             collection = embed['collection']

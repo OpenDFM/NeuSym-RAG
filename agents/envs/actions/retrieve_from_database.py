@@ -34,11 +34,11 @@ class RetrieveFromDatabase(Action):
             if key in output_kwargs:
                 output_kwargs[key] = kwargs[key] # update the argument if it exists
 
-        def convert_to_utf8(df):
+        def convert_to_utf8(df: pd.DataFrame) -> pd.DataFrame:
             for col in df.select_dtypes(include=['object']).columns:  # select only object-type columns
                 df[col] = df[col].astype(str).str.encode('utf-8', errors='ignore').str.decode('utf-8')
             return df
-        
+
         @func_set_timeout(0, allowOverride=True)
         def output_formatter(sql: str, format_kwargs: Dict[str, Any], **kwargs) -> str:
             output_format = format_kwargs['output_format']
@@ -50,7 +50,7 @@ class RetrieveFromDatabase(Action):
             suffix = f'\n... # only display {max_rows} rows in {output_format.upper()} format, more are truncated due to length constraint' if \
                 result.shape[0] > max_rows else f'\nIn total, {result.shape[0]} rows are displayed in {output_format.upper()} format.'
             result = result.head(max_rows)
-            
+
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
                 msg = result.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])

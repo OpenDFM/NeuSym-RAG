@@ -38,7 +38,7 @@
                 "type": "str",
                 "required": false,
                 "default": "",
-                "description": "The filter condition to narrow down the search space. Please refer to the syntax of filter conditions. By default, no filter condition. It is suggested to restrict `table_name`, `column_name`, `primary_key`, or `pdf_id` to refine search results."
+                "description": "The filter condition to narrow down the search space. Please refer to the syntax of filter conditions. By default, no filter condition. It is suggested to restrict `table_name`, `column_name`, `primary_key`, `pdf_id`, or `page_number` to refine search results."
             },
             "limit": {
                 "type": "int",
@@ -79,6 +79,61 @@
                     ]
                 },
                 "explanation": "Perform a similarity search on all cell values from the `abstract` column of the `papers` table in the relational database, using the MiniLM-L6-v2 setence transformer embeddings. By default, the top 5 most relevant entries will be returned based on vector similarity. Each result includes the abstract text and the corresponding primary key from the `papers` table to uniquely identify the cell."
+            }
+        ]
+    },
+    "RetrieveFromDatabaseWithVectorFilter": {
+        "action_type": "RetrieveFromDatabaseWithVectorFilter",
+        "description": "This is a hybrid action. First, given a query text, retrieve relevant context from the Milvus vectorstore. Second, based on the retrieved context, perform a SQL query to retrieve the corresponding information from the DuckDB database.",
+        "observation": "The observation space is the execution result of the SQL query. You do not need to worry about the actual execution, we will perform it for you. If something goes wrong, we will return the error message. Extremely long SQL output will be truncated.",
+        "parameters": {
+            "query": {
+                "type": "str",
+                "required": true,
+                "description": "The query text will be encoded and used to search for relevant context. You can rephrase the original user question to obtain a more clear and structured query requirement."
+            },
+            "collection_name": {
+                "type": "str",
+                "required": true,
+                "description": "The name of the collection in the Milvus vectorstore to search for relevant context. Please ensure the name comes from existing collection names."
+            },
+            "table_name": {
+                "type": "str",
+                "required": true,
+                "description": "The name of the table in the DuckDB database to retrieve the corresponding information. Please ensure the name comes from existing table names."
+            },
+            "filter": {
+                "type": "str",
+                "required": false,
+                "default": "",
+                "description": "The filter condition to narrow down the search space. Please refer to the syntax of filter conditions. By default, no filter condition. It is suggested to restrict `column_name`, `pdf_id`, or `page_number` to refine search results. Note that you do not need to restrict `table_name` since it is already specified in the `table_name` parameter."
+            },
+            "limit": {
+                "type": "int",
+                "required": false,
+                "default": 5,
+                "description": "The number of top-ranked context to retrieve. Please set it to a positive integer to limit the number of returned results. Extremely large limit values may be truncated."
+            }
+        },
+        "use_cases": [
+            {
+                "example": {
+                    "query": "Does this paper discuss LLM-based agent on its first page? (paper id is '12345678')",
+                    "collection_name": "text_bm25_en",
+                    "table_name": "content",
+                    "filter": "pdf_id == '12345678' and page_number == 1",
+                    "limit": 10
+                },
+                "explanation": "Search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with two conjunctive filter conditions to restrict the content source and return the top 10 relevant context. Then, for those retrieved context, perform a SQL query to retrieve the corresponding information from the `content` table in the DuckDB database."
+            },
+            {
+                "example": {
+                    "query": "Is there any work about the topic structured RAG?",
+                    "collection_name": "text_sentence_transformers_all_minilm_l6_v2",
+                    "table_name": "papers",
+                    "filter": "column_name == 'abstract'"
+                },
+                "explanation": "Perform a similarity search on all cell values from the `abstract` column of the `papers` table in the relational database, using the MiniLM-L6-v2 setence transformer embeddings. By default, the top 5 most relevant entries will be returned based on vector similarity. For those retrieved entry, perform a SQL query to retrieve the corresponding information from the `papers` table in the DuckDB database."
             }
         ]
     },

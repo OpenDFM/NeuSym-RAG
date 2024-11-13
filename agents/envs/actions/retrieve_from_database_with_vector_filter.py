@@ -1,6 +1,7 @@
 #coding=utf8
 from agents.envs.actions.action import Action, Observation
 from dataclasses import dataclass, field
+from duckdb import DuckDBPyConnection
 from pymilvus import MilvusClient
 from milvus_model.base import BaseEmbeddingFunction
 import pandas as pd
@@ -11,12 +12,12 @@ from func_timeout import func_set_timeout, FunctionTimedOut
 
 
 @dataclass
-class RetrieveFromVectorstore(Action):
+class RetrieveFromDatabaseWithVectorFilter(Action):
     query: str = field(default='', repr=True) # query string for retrieving the context, required
     collection_name: str = field(default='', repr=True) # collection name for the context retrieval, required
+    table_name: str = field(default='', repr=True) # table name for the context retrieval, required
     filter: str = field(default='', repr=True) # filter condition for context retrieval, optional, by default no filter
     limit: int = field(default=5, repr=True) # maximum number of context records to retrieve, optional, by default 5
-    output_fields: List[str] = field(default_factory=lambda: ['text'], repr=True) # output fields for context retrieval. Optional, by default, return the `text` field
 
     observation_format_kwargs: Dict[str, Any] = field(default_factory=lambda: {
         "output_format": "json", # output format for the SQL execution result, chosen from ['markdown', 'string', 'html', 'json'], default is 'markdown'
@@ -27,15 +28,23 @@ class RetrieveFromVectorstore(Action):
     }, repr=False)
 
     def execute(self, env: gym.Env, **kwargs) -> Observation:
-        """ Execute the action of retrieving the context from the environment.
+        """ Execute the action of retrieving the data from the environment.
         """
-        self.query, self.collection_name, self.filter = str(self.query), str(self.collection_name), str(self.filter)
+        self.query, self.collection_name, self.table_name, self.filter = str(self.query), str(self.collection_name), str(self.table_name), str(self.filter)
         if type(self.limit) != int:
             try:
                 self.limit = int(str(self.limit))
                 assert self.limit > 0
             except:
                 return Observation("[Error]: Value of parameter `limit` should be a positive integer.")
+
+        db_conn: DuckDBPyConnection = env.database_conn
+        if not db_conn:
+            return Observation(f"[Error]: {env.database_type} connection is not available.")
+        try:
+            db_conn.execute(f"SELECT * FROM {self.table_name} LIMIT 1")
+        except:
+            return Observation(f"[Error]: Table {self.table_name} does not exist in the {env.database_type} database.")
 
         vs_conn: MilvusClient = env.vectorstore_conn
         if not vs_conn:
@@ -44,19 +53,6 @@ class RetrieveFromVectorstore(Action):
             return Observation("[Error]: Query string is empty.")
         if not vs_conn.has_collection(self.collection_name):
             return Observation("[Error]: Collection {} does not exist in the Milvus database. Please choose from these collections {}".format(repr(self.collection_name), vs_conn.list_collections()))
-
-        is_valid_output_fields = lambda x: type(x) == list and all([type(field) == str for field in x])
-        if not is_valid_output_fields(self.output_fields):
-            try:
-                self.output_fields = eval(str(self.output_fields))
-                assert is_valid_output_fields(self.output_fields)
-            except:
-                return Observation("[Error]: Value of parameter `output_fields` should be a list of strings.")
-        self.output_fields = [str(field) for field in self.output_fields if str(field).strip() not in ['id', 'vector', 'distance', '']] # filter useless fields
-        valid_output_fields = [field['name'] for field in vs_conn.describe_collection(self.collection_name)['fields']]
-        for field in self.output_fields:
-            if field not in valid_output_fields:
-                return Observation("[Error]: Output field `{}` is not available in the collection {} of Milvus vectorstore. The available output fields include {}".format(field, self.collection_name, valid_output_fields))
 
         embedder_dict: Dict[str, BaseEmbeddingFunction] = env.embedder_dict
         encoder: BaseEmbeddingFunction = embedder_dict[self.collection_name]['embedder']
@@ -73,10 +69,10 @@ class RetrieveFromVectorstore(Action):
 
         @func_set_timeout(0, allowOverride=True)
         def output_formatter(query_embedding, format_kwargs: Dict[str, Any], **kwargs) -> str:
-            """ Each dict in search_result is in the format:
+            """ Each dict in vs_search_result is in the format:
             {
                 "id": Union[str, int],
-                "distance": float, # rename to "distance/score" in the output
+                "distance": float,
                 "entity": {
                     "output_field1": value1,
                     "output_field2": value2,
@@ -84,47 +80,48 @@ class RetrieveFromVectorstore(Action):
                 }
             }
             """
-            search_result = vs_conn.search(self.collection_name, query_embedding, limit=self.limit, filter=self.filter, output_fields=self.output_fields)[0] # only one query
-            if len(search_result) == 0:
+            filter_condition = f"table_name == '{self.table_name}'"
+            if self.filter != '':
+                filter_condition += f" and ({self.filter})"
+            vs_search_result = vs_conn.search(self.collection_name, query_embedding, limit=self.limit, filter=filter_condition, output_fields=['primary_key'])[0] # only one query
+            if len(vs_search_result) == 0:
                 return f"[Warning]: No relevant context records found for the input query: {self.query}."
-
-            # by default, vector_index is the index name used to search the collection
-            metric_type = vs_conn.describe_index(self.collection_name, index_name='vector_index')['metric_type']
-            msg = f'The retrieved results are sorted from the most to least relevant based on metric type {metric_type}:\n'
 
             output_format = format_kwargs['output_format']
             assert output_format in ['markdown', 'string', 'html', 'json'], "Vectorstore search output format must be chosen from ['markdown', 'string', 'html', 'json']."
 
             max_rows = format_kwargs['max_rows']
-            suffix = f'\n... # only display {max_rows} retrieved entries in {output_format.upper()} format, more are truncated due to length constraint' if len(search_result) > max_rows else f'\nIn total, {len(search_result)} retrieved entries are displayed in {output_format.upper()} format.'
+            suffix = f'\n... # only display {max_rows} rows in {output_format.upper()} format, more are truncated due to length constraint' if len(vs_search_result) > max_rows else f'\nIn total, {len(vs_search_result)} rows are displayed in {output_format.upper()} format.'
 
-            # post-process the search result
-            df = pd.DataFrame(search_result)
-            df = df.head(max_rows)
-            if len(self.output_fields) == 0: # remove entity field
-                df = df.drop(columns=['entity'])
-            else: # resolve the nested entity field
-                df_entity = pd.json_normalize(df['entity'])
-                df = df.drop(columns=['entity']).join(df_entity)
-            df = df.rename(columns={'distance': 'distance/score'})
-            df['distance/score'] = df['distance/score'].round(4)
+            # post-process the vectorstore search result
+            vs_df = pd.DataFrame(vs_search_result)
+            vs_df = vs_df.head(max_rows)
+            vs_df_entity = pd.json_normalize(vs_df['entity'])
+            vs_df = vs_df.drop(columns=['entity']).join(vs_df_entity)
+
+            # execute SQL to retrieve the context records
+            db_df = pd.DataFrame()
+            pk_names = env.table2pk[self.table_name]
+            for _, row in vs_df.iterrows():
+                pk_values = row['primary_key'].split(',')
+                assert len(pk_values) == len(pk_names), f"Number of primary key values {pk_values} does not match the number of primary key names {pk_names}."
+                sql = f"SELECT * FROM {self.table_name} WHERE " + " AND ".join(f"{pk_name} = '{pk_value}'" for pk_name, pk_value in zip(pk_names, pk_values))
+                db_df = pd.concat([db_df, db_conn.execute(sql).fetch_df()], ignore_index=True)
 
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
-                msg = df.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
+                msg = db_df.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string': # customize the result display
-                for index, row in df.iterrows():
-                    id_, score = row['id'], row['distance/score']
-                    msg += f"Index: {index}, ID: {id_}, Distance/Score: {score}\n" if format_kwargs['index'] else f"ID: {id_}, Distance/Score: {score}\n"
-                    for field in self.output_fields:
-                        msg += f"    {field}: {row[field]}\n"
-                    msg += '\n'
+                if db_df.empty:
+                    msg = '""'
+                else:
+                    msg = db_df.to_string(index=format_kwargs['index'])
             elif output_format == 'html':
-                msg = df.to_html(index=format_kwargs['index'])
+                msg = db_df.to_html(index=format_kwargs['index'])
             elif output_format == 'json':
-                msg = convert_to_utf8(df).to_json(orient='records', lines=True, index=False) # indeed JSON Line format
+                msg = convert_to_utf8(db_df).to_json(orient='records', lines=True, index=False) # indeed JSON Line format
             else:
-                raise ValueError(f"Vectorstore search output format {output_format} not supported.")
+                raise ValueError(f"SQL execution output format {output_format} not supported.")
             return msg + suffix
 
         output_kwargs = dict(self.observation_format_kwargs)
@@ -136,8 +133,8 @@ class RetrieveFromVectorstore(Action):
         try:
             msg = output_formatter(query_embedding, output_kwargs, forceTimeout=max_timeout)
         except FunctionTimedOut as e:
-            msg = f"[TimeoutError]: Searching vectorstore for context is TIMEOUT given maximum {max_timeout} seconds."
+            msg = f"[TimeoutError]: Searching vectorstore for context or executing SQL is TIMEOUT given maximum {max_timeout} seconds."
         except Exception as e:
-            msg = f"[Error]: When searching the vectorstore for context: {str(e)}"
+            msg = f"[Error]: When searching the vectorstore for context or executing SQL: {str(e)}"
 
         return Observation(msg)
