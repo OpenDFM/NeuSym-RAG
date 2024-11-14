@@ -7,7 +7,7 @@ from milvus_model.base import BaseEmbeddingFunction
 import pandas as pd
 import gymnasium as gym
 from dataclasses import dataclass, field
-from typing import Optional, List, Tuple, Dict, Union, Any
+from typing import Optional, List, Tuple, Set, Dict, Union, Any
 from func_timeout import func_set_timeout, FunctionTimedOut
 
 
@@ -17,7 +17,7 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
     collection_name: str = field(default='', repr=True) # collection name for the context retrieval, required
     table_name: str = field(default='', repr=True) # table name for the context retrieval, required
     filter: str = field(default='', repr=True) # filter condition for context retrieval, optional, by default no filter
-    limit: int = field(default=5, repr=True) # maximum number of context records to retrieve, optional, by default 5
+    limit: int = field(default=20, repr=True) # maximum number of context records to retrieve, optional, by default 5
 
     observation_format_kwargs: Dict[str, Any] = field(default_factory=lambda: {
         "output_format": "json", # output format for the SQL execution result, chosen from ['markdown', 'string', 'html', 'json'], default is 'markdown'
@@ -87,26 +87,30 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
             if len(vs_search_result) == 0:
                 return f"[Warning]: No relevant context records found for the input query: {self.query}."
 
-            output_format = format_kwargs['output_format']
-            assert output_format in ['markdown', 'string', 'html', 'json'], "Vectorstore search output format must be chosen from ['markdown', 'string', 'html', 'json']."
-
-            max_rows = format_kwargs['max_rows']
-            suffix = f'\n... # only display {max_rows} rows in {output_format.upper()} format, more are truncated due to length constraint' if len(vs_search_result) > max_rows else f'\nIn total, {len(vs_search_result)} rows are displayed in {output_format.upper()} format.'
-
             # post-process the vectorstore search result
             vs_df = pd.DataFrame(vs_search_result)
-            vs_df = vs_df.head(max_rows)
             vs_df_entity = pd.json_normalize(vs_df['entity'])
             vs_df = vs_df.drop(columns=['entity']).join(vs_df_entity)
 
             # execute SQL to retrieve the context records
             db_df = pd.DataFrame()
-            pk_names = env.table2pk[self.table_name]
+            pk_names: List[str] = env.table2pk[self.table_name]
+            existed_pk_set: Set[str] = set()
             for _, row in vs_df.iterrows():
+                if row['primary_key'] in existed_pk_set:
+                    continue
+                existed_pk_set.add(row['primary_key'])
                 pk_values = row['primary_key'].split(',')
                 assert len(pk_values) == len(pk_names), f"Number of primary key values {pk_values} does not match the number of primary key names {pk_names}."
                 sql = f"SELECT * FROM {self.table_name} WHERE " + " AND ".join(f"{pk_name} = '{pk_value}'" for pk_name, pk_value in zip(pk_names, pk_values))
                 db_df = pd.concat([db_df, db_conn.execute(sql).fetch_df()], ignore_index=True)
+
+            output_format = format_kwargs['output_format']
+            assert output_format in ['markdown', 'string', 'html', 'json'], "Vectorstore search output format must be chosen from ['markdown', 'string', 'html', 'json']."
+
+            max_rows = format_kwargs['max_rows']
+            suffix = f'\n... # only display {max_rows} rows in {output_format.upper()} format, more are truncated due to length constraint' if db_df.shape[0] > max_rows else f'\nIn total, {db_df.shape[0]} rows are displayed in {output_format.upper()} format.'
+            db_df = db_df.head(max_rows)
 
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
