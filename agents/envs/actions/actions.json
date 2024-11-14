@@ -52,7 +52,7 @@
                 "default": [
                     "text"
                 ],
-                "description": "The fields to return in the output. By default, the `text` field will be returned for text type collections. And the `id` and `distance/score` for each retrieved entry will be returned even if this parameter is empty."
+                "description": "The fields to return in the output. By default, the `text` field will be returned for text type collections. And the `id` and `distance/score` for each retrieved entry will also be returned."
             }
         },
         "use_cases": [
@@ -84,13 +84,13 @@
     },
     "RetrieveFromDatabaseWithVectorFilter": {
         "action_type": "RetrieveFromDatabaseWithVectorFilter",
-        "description": "This is a hybrid action. First, given a query text, retrieve relevant context from the Milvus vectorstore. Second, based on the retrieved context, perform a SQL query to retrieve the corresponding information from the DuckDB database.",
-        "observation": "The observation space is the execution result of the SQL query. You do not need to worry about the actual execution, we will perform it for you. If something goes wrong, we will return the error message. Extremely long SQL output will be truncated.",
+        "description": "This is a hybrid two-stage action. First, given a query text, retrieve relevant context from the Milvus vectorstore. Second, based on the retrieved context, perform a SQL query to retrieve the corresponding information from the DuckDB database.",
+        "observation": "The observation space is the execution result of the SQL query. You do not need to worry about the actual execution, we will perform it for you. If something goes wrong, we will return the error message.",
         "parameters": {
             "query": {
                 "type": "str",
                 "required": true,
-                "description": "The query text will be encoded and used to search for relevant context. You can rephrase the original user question to obtain a more clear and structured query requirement."
+                "description": "The query text will be encoded and used to search for relevant context. You should try to express the search intention in a more clear and structured way."
             },
             "collection_name": {
                 "type": "str",
@@ -100,7 +100,7 @@
             "table_name": {
                 "type": "str",
                 "required": true,
-                "description": "The name of the table in the DuckDB database to retrieve the corresponding information. Please ensure the name comes from existing table names."
+                "description": "This parameter has two : table name is used to narrow the search space to retrieve the corresponding information. It is also used as the target table in the second stage to return filtered rows from the DuckDB database. Please ensure the name comes from existing table names."
             },
             "filter": {
                 "type": "str",
@@ -112,7 +112,7 @@
                 "type": "int",
                 "required": false,
                 "default": 5,
-                "description": "The number of top-ranked context to retrieve. Please set it to a positive integer to limit the number of returned results. Extremely large limit values may be truncated."
+                "description": "The number of top-ranked context to retrieve from the Milvus vectorstore in the first stage. Please set it to a positive integer to limit the number of returned results. Extremely large limit values may be truncated."
             }
         },
         "use_cases": [
@@ -134,6 +134,74 @@
                     "filter": "column_name == 'abstract'"
                 },
                 "explanation": "Perform a similarity search on all cell values from the `abstract` column of the `papers` table in the relational database, using the MiniLM-L6-v2 setence transformer embeddings. By default, the top 5 most relevant entries will be returned based on vector similarity. For those retrieved entry, perform a SQL query to retrieve the corresponding information from the `papers` table in the DuckDB database."
+            }
+        ]
+    },
+    "RetrieveFromVectorstoreWithSQLFilter": {
+        "action_type": "RetrieveFromVectorstoreWithSQLFilter",
+        "description": "This is a hybrid two-stage action. First, given a SQL program, retrieve SQL execution results from the DuckDB database which only return filtered primary key values of the specified `table_name`. Second, based on the retrieved primary keys (as the `filter` condition), perform a vector-based similarity search to retrieve the most relevant entries in the Milvus vectorstore.",
+        "observation": "The observation space is the retrieved top-ranked entries from the Milvus vectorstore in the second stage based on all input parameters.",
+        "parameters": {
+            "sql": {
+                "type": "str",
+                "required": true,
+                "description": "This SQL query is used in the first stage to retrieve the primary key values from the DuckDB database. The executed SQL should only return the primary key values of the specified `table_name` below (any other columns are forbidden). And we will automatically use the filtered primary key values as extra `filter` condition in the second stage."
+            },
+            "collection_name": {
+                "type": "str",
+                "required": true,
+                "description": "The name of the collection in the Milvus vectorstore to search for relevant context after SQL filtering. Please ensure the name comes from existing collection names."
+            },
+            "query": {
+                "type": "str",
+                "required": true,
+                "description": "The query text will be encoded and used to search for relevant context in the second stage from the Milvus vectorstore. You should try to express the search intention in a more clear and structured way."
+            },
+            "table_name": {
+                "type": "str",
+                "required": true,
+                "description": "This parameter specifies which table in the DuckDB database the returned primary key values are from during SQL execution in the first stage. It also restricts the search space of the Milvus vectorstore in the second stage, that is the `table_name` field for each data entry."
+            },
+            "filter": {
+                "type": "str",
+                "required": false,
+                "default": "",
+                "description": "Extra filter condition to further narrow down the search space in the second stage. Please refer to the syntax of filter conditions of Milvus vectorstore. The returned primary key values from the `sql` and the specified `table_name` value will be automatically included, even if this paramater is empty. You can also restrict `column_name`, `pdf_id`, or `page_number` to refine search results. Please ensure that the `column_name` field value exists and is encodable under `table_name`."
+            },
+            "limit": {
+                "type": "int",
+                "required": false,
+                "default": 5,
+                "description": "The number of top-ranked context from the Milvus vectorstore to return in the second stage. Please set it to a positive integer to limit the number of returned results. Extremely large limit values may be truncated."
+            },
+            "output_fields": {
+                "type": "List[str]",
+                "required": false,
+                "default": ["text"],
+                "description": "The fields to return in the output. By default, the `text` field will be returned for text type collections if this field is empty. And the `id` and `distance/score` for each retrieved entry will also be returned."
+            }
+        },
+        "use_cases": [
+            {
+                "example": {
+                    "sql": "SELECT chunk_id FROM chunks WHERE ref_paper_id IN (SELECT DISTINCT paper_id FROM meta_data WHERE year = 2021);",
+                    "query": "Is there any work about structured retrieval in year 2021?",
+                    "collection_name": "text_sentence_transformers_all_minilm_l6_v2",
+                    "table_name": "chunks",
+                    "filter": "column_name == 'text_content'",
+                    "output_fields": [
+                        "text",
+                        "primary_key"
+                    ]
+                },
+                "explanation": "Find the chunked text from Milvus vectorstore relevant to 'structured retrieval' with the SQL filter to restrict the `year` attribute of papers. Note that, `chunk_id` should be the primary key column of table `chunks`, and `text_content` is the encodable column under this table. Indeed, the complete filter should be like \"table_name == 'chunks' and column_name == 'text_content' and primary_key in [... list of chunk_id from SQL execution ...]\". Return the top-ranked chunk texts (use the default `limit` value) as well as their primary key fields for further processing."
+            },
+            {
+                "example": {
+                    "sql": "SELECT paper_id FROM metadata WHERE year = 2021;",
+                    "": ""
+                },
+                "explanation": ""
             }
         ]
     },
