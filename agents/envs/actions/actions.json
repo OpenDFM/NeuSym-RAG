@@ -145,7 +145,7 @@
     },
     "RetrieveFromVectorstoreWithSQLFilter": {
         "action_type": "RetrieveFromVectorstoreWithSQLFilter",
-        "description": "This is a hybrid two-stage action. First, given a SQL program, retrieve SQL execution results from the DuckDB database which only return filtered primary key values of the specified `table_name`. Second, based on the retrieved primary keys (as the `filter` condition), perform a vector-based similarity search to retrieve the most relevant entries in the Milvus vectorstore.",
+        "description": "This is a hybrid two-stage action. First, given a SQL program, retrieve SQL execution results from the DuckDB database which only return filtered primary key values of the specified `table_name`. Second, based on the retrieved primary key values (as extra `filter` condition), perform a vector-based similarity search to retrieve the most relevant entries in the Milvus vectorstore.",
         "observation": "The observation space is the retrieved top-ranked entries from the Milvus vectorstore in the second stage based on all input parameters.",
         "parameters": {
             "sql": {
@@ -172,7 +172,7 @@
                 "type": "str",
                 "required": false,
                 "default": "",
-                "description": "Extra filter condition to further narrow down the search space in the second stage. Please refer to the syntax of filter conditions of Milvus vectorstore. The returned primary key values from the `sql` and the specified `table_name` value will be automatically included, even if this paramater is empty. You can also restrict `column_name`, `pdf_id`, or `page_number` to refine search results. Please ensure that the `column_name` field value exists and is encodable under `table_name`."
+                "description": "Extra filter condition to further narrow down the search space in the second stage. Please refer to the syntax of filter conditions of Milvus vectorstore. The returned primary key values from the `sql` and the specified `table_name` value will be automatically included, even if this paramater is empty. You can also restrict `column_name`, `pdf_id`, or `page_number` to further refine search results using this field. Please ensure that the `column_name` field value exists and is encodable under `table_name`."
             },
             "limit": {
                 "type": "int",
@@ -192,7 +192,7 @@
                 "example": {
                     "sql": "SELECT chunk_id FROM chunks WHERE ref_paper_id IN (SELECT DISTINCT paper_id FROM meta_data WHERE year = 2021);",
                     "query": "Is there any work about structured retrieval in year 2021?",
-                    "collection_name": "text_sentence_transformers_all_minilm_l6_v2",
+                    "collection_name": "text_bm25_en",
                     "table_name": "chunks",
                     "filter": "column_name == 'text_content'",
                     "output_fields": [
@@ -204,10 +204,18 @@
             },
             {
                 "example": {
-                    "sql": "SELECT paper_id FROM metadata WHERE year = 2021;",
-                    "": ""
+                    "sql": "SELECT section_id FROM sections WHERE ref_paper_id IN (SELECT paper_id FROM metadata WHERE year = 2024 and conference = 'ACL');",
+                    "query": "Find me the papers that make some contribution in refining PPO algorithm in ACL 2024.",
+                    "collection_name": "text_sentence_transformers_all_minilm_l6_v2",
+                    "table_name": "sections",
+                    "filter": "column_name == 'abstract'",
+                    "limit": 10,
+                    "output_fields": [
+                        "text",
+                        "primary_key"
+                    ]
                 },
-                "explanation": ""
+                "explanation": "The contributions of papers should be mentioned in the abstract part. This action retrieves the top 10 scored abstract text with their section ids. In this case, for table `sections` in the DuckDB, there should be two columns `abstract` and `section_id` with `section_id` being the primary key. And the `sql` filter is used to restrict the `year` and `conference` attributes of papers. The complete filter should be like \"table_name == 'sections' and column_name == 'abstract' and primary_key in [... list of section_id from SQL execution ...]\"."
             }
         ]
     },
