@@ -1,0 +1,30 @@
+{
+    "uuid": "xxxx-xxxx-xxxx", // unique identifier for the data or task sample
+    "question": "user question about ai research papers", // user question
+    "answer_format": "specify answer format, e.g., a single float number, a list of strings", // text description on how to format the answer, can be inserted into prompt
+    "tags": [
+        "tag1",
+        "tag2"
+    ], // different tags for the data or task sample
+    "pdf_id": [
+        "xxx-xxx-xxx-xxx"
+    ], // unique ids of the PDF file, uuid5(namespace, 'paper title')
+    "conference": [
+        "acl2023",
+        "acl2024"
+    ], // conference names, format "{lowercase_conference_name}{year}"
+    "reasoning_step": [
+        "find the table related to xxx",
+        "check the table content about method A and method B",
+        "perform calculation with result(A) - result(B)"
+    ], // thought process or how to obtain the target answer
+    "evaluator": {
+        "eval_func": "function_name_to_call", // all eval functions are defined under `evaluation/` folder
+        "eval_kwargs": {
+            "score_points": [
+                "1.score point1",
+                "2.score point1"
+            ]
+        } // the gold answer or how to get the gold answer should be included in `eval_kwargs` dict. Other optional keyword arguments can be used for customization and function re-use.
+    } // A complex dict specifying the evaluation function and its parameters. The first parameter of the `eval_func` must be LLM predicted string.
+}
