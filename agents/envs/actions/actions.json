@@ -197,10 +197,10 @@
                     "filter": "column_name == 'text_content'",
                     "output_fields": [
                         "text",
-                        "primary_key"
+                        "pdf_id"
                     ]
                 },
-                "explanation": "Find the chunked text from Milvus vectorstore relevant to 'structured retrieval' with the SQL filter to restrict the `year` attribute of papers. Note that, `chunk_id` should be the primary key column of table `chunks`, and `text_content` is the encodable column under this table. Indeed, the complete filter should be like \"table_name == 'chunks' and column_name == 'text_content' and primary_key in [... list of chunk_id from SQL execution ...]\". Return the top-ranked chunk texts (use the default `limit` value) as well as their primary key fields for further processing."
+                "explanation": "Find the chunked text from Milvus vectorstore relevant to 'structured retrieval' with the SQL filter to restrict the `year` attribute of papers. Note that, `chunk_id` should be the primary key column of table `chunks`, and `text_content` is the encodable column under this table. Indeed, the complete filter should be like \"table_name == 'chunks' and column_name == 'text_content' and primary_key in [... list of chunk_id from SQL execution ...]\". Return the top-ranked chunk texts (use the default `limit` value) as well as the pdf_id field for further processing (`pdf_id` is a common field for each entry in the vectorstore schema)."
             },
             {
                 "example": {
@@ -212,10 +212,10 @@
                     "limit": 10,
                     "output_fields": [
                         "text",
-                        "primary_key"
+                        "pdf_id"
                     ]
                 },
-                "explanation": "The contributions of papers should be mentioned in the abstract part. This action retrieves the top 10 scored abstract text with their section ids. In this case, for table `sections` in the DuckDB, there should be two columns `abstract` and `section_id` with `section_id` being the primary key. And the `sql` filter is used to restrict the `year` and `conference` attributes of papers. The complete filter should be like \"table_name == 'sections' and column_name == 'abstract' and primary_key in [... list of section_id from SQL execution ...]\"."
+                "explanation": "The contributions of papers should be mentioned in the abstract part. This action retrieves the top 10 scored abstract text with their pdf ids (note that `pdf_id` is a common field for each entry in the vectorstore schema). In this case, for table `sections` in the DuckDB, there should be two columns `abstract` and `section_id` with `section_id` being the primary key. And the `sql` filter is used to restrict the `year` and `conference` attributes of papers. The complete filter should be like \"table_name == 'sections' and column_name == 'abstract' and primary_key in [... list of section_id from SQL execution ...]\"."
             }
         ]
     },

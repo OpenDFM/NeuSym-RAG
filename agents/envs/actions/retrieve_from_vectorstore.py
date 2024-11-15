@@ -12,8 +12,8 @@ from func_timeout import func_set_timeout, FunctionTimedOut
 
 @dataclass
 class RetrieveFromVectorstore(Action):
-    query: str = field(default='', repr=True) # query string for retrieving the context, required
-    collection_name: str = field(default='', repr=True) # collection name for the context retrieval, required
+    query: str = field(repr=True) # query string for retrieving the context, required
+    collection_name: str = field(repr=True) # collection name for the context retrieval, required
     filter: str = field(default='', repr=True) # filter condition for context retrieval, optional, by default no filter
     limit: int = field(default=5, repr=True) # maximum number of context records to retrieve, optional, by default 5
     output_fields: List[str] = field(default_factory=lambda: ['text'], repr=True) # output fields for context retrieval. Optional, by default, return the `text` field
@@ -26,24 +26,22 @@ class RetrieveFromVectorstore(Action):
         "max_timeout": 600 # the maximum timeout for the SQL execution is 10 minutes
     }, repr=False)
 
-    def execute(self, env: gym.Env, **kwargs) -> Observation:
-        """ Execute the action of retrieving the context from the environment.
-        """
+    def _validate_parameters(self, env: gym.Env) -> Tuple[bool, str]:
         self.query, self.collection_name, self.filter = str(self.query), str(self.collection_name), str(self.filter)
         if type(self.limit) != int:
             try:
                 self.limit = int(str(self.limit))
                 assert self.limit > 0
             except:
-                return Observation("[Error]: Value of parameter `limit` should be a positive integer.")
+                return False, "[Error]: Value of parameter `limit` should be a positive integer."
 
         vs_conn: MilvusClient = env.vectorstore_conn
         if not vs_conn:
-            return Observation("[Error]: Milvus connection is not available.")
+            return False, "[Error]: Milvus connection is not available."
         if self.query == '' or self.query is None:
-            return Observation("[Error]: Query string is empty.")
+            return False, "[Error]: Query string is empty."
         if not vs_conn.has_collection(self.collection_name):
-            return Observation("[Error]: Collection {} does not exist in the Milvus database. Please choose from these collections {}".format(repr(self.collection_name), vs_conn.list_collections()))
+            return False, "[Error]: Collection {} does not exist in the Milvus database. Please choose from these collections {}".format(repr(self.collection_name), vs_conn.list_collections())
 
         is_valid_output_fields = lambda x: type(x) == list and all([type(field) == str for field in x])
         if not is_valid_output_fields(self.output_fields):
@@ -51,13 +49,23 @@ class RetrieveFromVectorstore(Action):
                 self.output_fields = eval(str(self.output_fields))
                 assert is_valid_output_fields(self.output_fields)
             except:
-                return Observation("[Error]: Value of parameter `output_fields` should be a list of strings.")
+                return False, "[Error]: Value of parameter `output_fields` should be a list of strings."
         self.output_fields = [str(field) for field in self.output_fields if str(field).strip() not in ['id', 'vector', 'distance', '']] # filter useless fields
         valid_output_fields = [field['name'] for field in vs_conn.describe_collection(self.collection_name)['fields']]
         for field in self.output_fields:
             if field not in valid_output_fields:
-                return Observation("[Error]: Output field `{}` is not available in the collection {} of Milvus vectorstore. The available output fields include {}".format(field, self.collection_name, valid_output_fields))
+                return False, "[Error]: Output field `{}` is not available in the collection {} of Milvus vectorstore. The available output fields include {}".format(field, self.collection_name, valid_output_fields)
+        return True, "No error."
 
+
+    def execute(self, env: gym.Env, **kwargs) -> Observation:
+        """ Execute the action of retrieving the context from the environment.
+        """
+        flag, msg = self._validate_parameters(env)
+        if not flag:
+            return Observation(msg)
+
+        vs_conn: MilvusClient = env.vectorstore_conn
         embedder_dict: Dict[str, BaseEmbeddingFunction] = env.embedder_dict
         encoder: BaseEmbeddingFunction = embedder_dict[self.collection_name]['embedder']
         encoder_type: str = embedder_dict[self.collection_name]['embed_type']
@@ -96,7 +104,7 @@ class RetrieveFromVectorstore(Action):
             assert output_format in ['markdown', 'string', 'html', 'json'], "Vectorstore search output format must be chosen from ['markdown', 'string', 'html', 'json']."
 
             max_rows = format_kwargs['max_rows']
-            suffix = f'\n... # only display {max_rows} retrieved entries in {output_format.upper()} format, more are truncated due to length constraint' if len(search_result) > max_rows else f'\nIn total, {len(search_result)} retrieved entries are displayed in {output_format.upper()} format.'
+            suffix = f'\n... # only display {max_rows} retrieved entries from {len(search_result)} records in {output_format.upper()} format, more are truncated due to length constraint' if len(search_result) > max_rows else f'\nIn total, {len(search_result)} retrieved entries are displayed in {output_format.upper()} format.'
 
             # post-process the search result
             df = pd.DataFrame(search_result)

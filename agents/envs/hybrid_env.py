@@ -1,5 +1,6 @@
 #coding=utf8
 import os, time, json
+from collections import defaultdict
 import duckdb
 from pymilvus import MilvusClient
 from milvus_model.base import BaseEmbeddingFunction
@@ -35,10 +36,14 @@ class HybridEnv(AgentEnv):
             self.vectorstore_path = kwargs.get('vectorstore_path', 'http://127.0.0.1:19530')
         self.reset()
 
-        self.table2pk = dict()
+        self.table2pk, self.table2encodable = dict(), defaultdict(list)
         with open(os.path.join('data', 'database', self.database, f'{self.database}.json'), 'r', encoding='utf-8') as fin:
-            for table in json.load(fin)['database_schema']:
+            db_schema = json.load(fin)['database_schema']
+            for table in db_schema:
                 self.table2pk[table['table']['table_name']] = table['primary_keys']
+                for column in table['columns']:
+                    if column.get('encodable', False):
+                        self.table2encodable[table['table']['table_name']].append(column['column_name'])
 
 
     def reset(self) -> None:

@@ -47,7 +47,7 @@ class RetrieveFromDatabase(Action):
             conn: duckdb.DuckDBPyConnection = env.database_conn # get the database connection
             result: pd.DataFrame = conn.execute(sql).fetchdf() # execute the SQL query and fetch the result
             max_rows = format_kwargs['max_rows']
-            suffix = f'\n... # only display {max_rows} rows in {output_format.upper()} format, more are truncated due to length constraint' if \
+            suffix = f'\n... # only display {max_rows} rows from {result.shape[0]} returned rows in {output_format.upper()} format, more are truncated due to length constraint' if \
                 result.shape[0] > max_rows else f'\nIn total, {result.shape[0]} rows are displayed in {output_format.upper()} format.'
             result = result.head(max_rows)
 
