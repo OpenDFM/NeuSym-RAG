@@ -132,7 +132,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
                 result = [str(row[0]) for row in result]
 
         # 2. second stage: search the vectorstore based on the primary key values
-        embedder_dict: Dict[str, dict] = env.embedder_dict
+        embedder_dict: Dict[str, Any] = env.embedder_dict
         encoder: BaseEmbeddingFunction = embedder_dict[self.collection_name]['embedder']
         encoder_type: str = embedder_dict[self.collection_name]['embed_type']
         try:
