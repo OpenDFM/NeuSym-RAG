@@ -19,11 +19,11 @@ class RetrieveFromVectorstore(Action):
     output_fields: List[str] = field(default_factory=lambda: ['text'], repr=True) # output fields for context retrieval. Optional, by default, return the `text` field
 
     observation_format_kwargs: Dict[str, Any] = field(default_factory=lambda: {
-        "output_format": "json", # output format for the SQL execution result, chosen from ['markdown', 'string', 'html', 'json'], default is 'markdown'
+        "output_format": "json", # output format for the vectorstore search result, chosen from ['markdown', 'string', 'html', 'json'], default is 'markdown'
         "tablefmt": "pretty", # for markdown format, see doc https://pypi.org/project/tabulate/ for all options
         "max_rows": 10, # maximum rows to display in the output
         "index": False, # whether to include the row index in the output
-        "max_timeout": 600 # the maximum timeout for the SQL execution is 10 minutes
+        "max_timeout": 600 # the maximum timeout for the vectorstore search is 10 minutes
     }, repr=False)
 
     def execute(self, env: gym.Env, **kwargs) -> Observation:
@@ -58,7 +58,7 @@ class RetrieveFromVectorstore(Action):
             if field not in valid_output_fields:
                 return Observation("[Error]: Output field `{}` is not available in the collection {} of Milvus vectorstore. The available output fields include {}".format(field, self.collection_name, valid_output_fields))
 
-        embedder_dict: Dict[str, BaseEmbeddingFunction] = env.embedder_dict
+        embedder_dict: Dict[str, Dict[str, Union[str, BaseEmbeddingFunction]]] = env.embedder_dict
         encoder: BaseEmbeddingFunction = embedder_dict[self.collection_name]['embedder']
         encoder_type: str = embedder_dict[self.collection_name]['embed_type']
         try:

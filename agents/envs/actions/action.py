@@ -196,10 +196,12 @@ class Action(ABC):
             action_pattern = r"\[Action\]:\s*(.*?)\s*(\[Observation\]:|$)"
             matched_action = re.search(action_pattern, text, re.DOTALL)
             action_text = matched_action.group(1).strip() if matched_action else text.strip()
-        else: # agent_method == 'code_block':
+        elif agent_method == 'code_block':
             thought = None
             matching_list = re.findall(r"```(\S*)\s*(.*?)\s*```", text.strip(), flags=re.DOTALL)
             action_text = matching_list[-1][1].strip() if len(matching_list) > 0 else text.strip()
+        else:
+            raise ValueError(f"Agent method `{agent_method}` not supported yet.")
 
         from .error_action import ErrorAction
         action_names = [action_cls.__name__ for action_cls in action_types]
