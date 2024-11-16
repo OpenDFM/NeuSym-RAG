@@ -40,10 +40,18 @@ class HybridEnv(AgentEnv):
         with open(os.path.join('data', 'database', self.database, f'{self.database}.json'), 'r', encoding='utf-8') as fin:
             db_schema = json.load(fin)['database_schema']
             for table in db_schema:
-                self.table2pk[table['table']['table_name']] = table['primary_keys']
+                table_name = table['table']['table_name']
+                self.table2pk[table_name] = []
+                for pk_name in table['primary_keys']:
+                    for column in table['columns']:
+                        if column['column_name'] == pk_name:
+                            self.table2pk[table_name].append({'name': pk_name, 'type': column['column_type']})
+                            break
+                    else:
+                        raise ValueError(f"Primary key {pk_name} not found in table {table_name}.")
                 for column in table['columns']:
                     if column.get('encodable', False):
-                        self.table2encodable[table['table']['table_name']].append(column['column_name'])
+                        self.table2encodable[table_name].append(column['column_name'])
 
 
     def reset(self) -> None:
@@ -86,3 +94,14 @@ class HybridEnv(AgentEnv):
             self.vectorstore_conn.close()
         self.database_conn = self.vectorstore_conn = None
         return
+
+
+    def restart_database_conn(self) -> None:
+        """ Restart the database connection.
+        """
+        if hasattr(self.database_conn, 'close'):
+            self.database_conn.close()
+        if self.database_type == 'duckdb':
+            self.database_conn: duckdb.DuckDBPyConnection = duckdb.connect(self.database_path)
+        else:
+            raise NotImplementedError(f"Database type {self.database_type} not supported.")

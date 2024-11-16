@@ -13,10 +13,10 @@ from func_timeout import func_set_timeout, FunctionTimedOut
 
 @dataclass
 class RetrieveFromVectorstoreWithSQLFilter(Action):
-    sql: str = field(repr=True) # SQL for the first stage, required
-    table_name: str = field(repr=True) # table name for returned sql results, also used to restrict the vector search, required
-    query: str = field(repr=True) # query string for retrieving the context, required
-    collection_name: str = field(repr=True) # collection name for the context retrieval, required
+    sql: str = field(default='', repr=True) # SQL for the first stage, required
+    table_name: str = field(default='', repr=True) # table name for returned sql results, also used to restrict the vector search, required
+    query: str = field(default='', repr=True) # query string for retrieving the context, required
+    collection_name: str = field(default='', repr=True) # collection name for the context retrieval, required
     filter: str = field(default='', repr=True) # filter condition for context retrieval, optional, by default
     limit: int = field(default=5, repr=True) # maximum number of context records to retrieve, optional, by default 5
     output_fields: List[str] = field(default_factory=lambda: ['text'], repr=True) # output fields for context retrieval. Optional, by default, return the `text` field
