@@ -34,6 +34,10 @@ from .financial_report import (
     aggregate_financial_report_table_tableinpages
 )
 
+from .ai_research import (
+    get_ai_research_per_page_figure_uuid_and_summary
+)
+
 from .test_domain import (
     aggregate_test_domain_table_pdf_meta,
     aggregate_test_domain_table_pdf_pages

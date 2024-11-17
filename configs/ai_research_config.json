@@ -1,0 +1,43 @@
+{
+    "pipeline": [
+        {
+            "function": "get_ai_research_uuid",
+            "args": {
+                "deps": [
+                    0
+                ]
+            }
+        },
+        {
+            "function": "get_ai_research_per_page_uuid",
+            "args": {
+                "deps": [
+                    0,
+                    1
+                ]
+            }
+        },
+        {
+            "function": "get_ai_research_per_page_figure_uuid_and_summary",
+            "args": {
+                "deps": [
+                    0
+                ]
+            }
+        },
+        {
+            "function": "get_ai_research_per_page_figure_uuid",
+            "args": {
+                "deps": [
+                    0,
+                    2
+                ]
+            }
+        }
+    ],
+    "aggregation": [
+        {
+            "function": "aggregate_ai_research_table_figures"
+        }
+    ]
+}

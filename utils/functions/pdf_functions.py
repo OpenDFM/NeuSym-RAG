@@ -2,7 +2,13 @@
 
 import os, openai, uuid, re
 from typing import List, Dict, Union, Optional, Any, Iterable
+
 import fitz  # PyMuPDF
+import PyPDF2
+from PyPDF2 import PdfWriter, PageObject
+from pdf2image import convert_from_path
+from pdfminer.layout import LTImage, LTFigure, LTRect
+
 from utils.functions.common_functions import call_llm, get_uuid
 
 
@@ -79,3 +85,32 @@ Please directly return the summary without any extra information or formatting. 
         else:
             summary.append(text)
     return {'text_summary': summary if type(content[key]) == list else summary[0]}
+
+def crop_pdf(element: Union[LTFigure, LTImage], page_obj: PageObject, output_file: str):
+    """Crop a PDF file according to the bounding box of the element and save it to a new PDF file.
+
+    @args:
+        element: Union[LTFigure, LTImage], the element to be cropped.
+        page_obj: PageObject, PDF-page object resolved from PyPDF2.
+        output_file: str, path to output PDF file. 
+    """
+    [image_left, image_top, image_right, image_bottom] = [element.x0, element.y0, element.x1, element.y1]
+    page_obj.mediabox.upper_left = (image_left, image_top)
+    page_obj.mediabox.lower_right = (image_right, image_bottom)
+    cropped_pdf_writer = PdfWriter()
+    cropped_pdf_writer.add_page(page_obj)
+    with open(output_file, 'wb') as cropped_pdf_file:
+        cropped_pdf_writer.write(cropped_pdf_file)
+
+def convert_pdf_to_image(input_file: str, output_file: str, dpi: int = 1200):
+    """Convert a single-page PDF file to a PNG file.
+    @args:
+        input_file: str, the path to input PDF.
+        output_file: str, the path to output PNG.
+        dpi: int, image quality in DPI, default to 1200.
+    """
+    if not os.path.exists(input_file):
+        raise FileNotFoundError(f"PDF file {input_file} not found.")
+    images = convert_from_path(input_file, dpi=dpi)
+    image = images[0]
+    image.save(output_file, "PNG")
