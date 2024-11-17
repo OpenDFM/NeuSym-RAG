@@ -1,0 +1,73 @@
+{
+    "database_name": "ai_research",
+    "description": "This database contains information about AI research papers. Each PDF file is represented or parsed via different views, e.g., pages, sections, figures, tables, and references. We also extract the concrete content inside each concrete element via OCR.",
+    "database_schema": [
+        {
+            "table": {
+                "table_name": "metadata",
+                "description": "xxx"
+            },
+            "columns": []
+        },
+        {
+            "table": {
+                "table_name": "pages",
+                "description": "xxx"
+            },
+            "columns": []
+        },
+        {
+            "table": {
+                "table_name": "figures",
+                "description": "This table stores the information about figures in each paper."
+            },
+            "columns": [
+                {
+                    "column_name": "figure_id",
+                    "column_type": "UUID",
+                    "description": "The unique identifier of the figure."
+                },
+                {
+                    "column_name": "figure_summary",
+                    "column_type": "VARCHAR",
+                    "description": "A brief summary of the figure, focusing on key information and describing the figure."
+                },
+                {
+                    "column_name": "bounding_box",
+                    "column_type": "INTEGER[4]",
+                    "description": "The bounding box of the figure in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height which are used to determine the shape of the rectangle."
+                },
+                {
+                    "column_name": "ordinal",
+                    "column_type": "INTEGER",
+                    "description": "Each figure is labeled with one distinct integer number in the current page, which starts from 0."
+                },
+                {
+                    "column_name": "ref_paper_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the paper ID in the `metadata` table."
+                },
+                {
+                    "column_name": "ref_page_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the page ID in the `pages` table."
+                }
+            ],
+            "primary_keys": [
+                "figure_id"
+            ],
+            "foreign_keys": [
+                [
+                    "ref_paper_id",
+                    "metadata",
+                    "paper_id"
+                ],
+                [
+                    "ref_page_id",
+                    "pages",
+                    "page_id"
+                ]
+            ]
+        }
+    ]
+}
