@@ -14,9 +14,10 @@ from func_timeout import func_set_timeout, FunctionTimedOut
 @dataclass
 class RetrieveFromVectorstoreWithSQLFilter(Action):
     sql: str = field(default='', repr=True) # SQL for the first stage, required
-    table_name: str = field(default='', repr=True) # table name for returned sql results, also used to restrict the vector search, required
     query: str = field(default='', repr=True) # query string for retrieving the context, required
     collection_name: str = field(default='', repr=True) # collection name for the context retrieval, required
+    table_name: str = field(default='', repr=True) # table name for returned sql results, also used to restrict the vector search, required
+    column_name: str = field(default='', repr=True) # column name for the context retrieval, required
     filter: str = field(default='', repr=True) # filter condition for context retrieval, optional, by default
     limit: int = field(default=5, repr=True) # maximum number of context records to retrieve, optional, by default 5
     output_fields: List[str] = field(default_factory=lambda: ['text'], repr=True) # output fields for context retrieval. Optional, by default, return the `text` field
@@ -35,7 +36,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
     def _validate_parameters(self, env: gym.Env) -> Tuple[bool, str]:
         """ Validate the parameters of the action. If any parameter is invalid, return error message.
         """
-        self.sql, self.query, self.table_name = str(self.sql), str(self.query), str(self.table_name)
+        self.sql, self.query, self.table_name, self.column_name = str(self.sql), str(self.query), str(self.table_name), str(self.column_name)
         self.collection_name, self.filter = str(self.collection_name), str(self.filter)
         if type(self.limit) != int:
             try:
@@ -46,15 +47,14 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
 
         db_conn: duckdb.DuckDBPyConnection = env.database_conn
         if not db_conn:
-            return False, f"[Error]: {env.database_type} connection is not available."
+            return False, f"[Error]: DuckDB connection is not available."
         if self.sql == '':
             return False, "[Error]: SQL string is empty."
         if self.table_name == '' or self.table_name not in env.table2pk:
             return False, "[Error]: Table name `{}` is not available in the DuckDB database. Please choose from these tables {}.".format(self.table_name, list(env.table2pk.keys()))
-        encodable_columns = env.table2encodable[self.table_name]
-        if len(encodable_columns) == 0:
-            return False, "[Error]: Table `{}` does not have any encodable columns that are stored in the Milvus vectorstore.".format(self.table_name)
-        
+        if self.column_name == '' or self.column_name not in env.table2encodable[self.table_name]:
+            return False, "[Error]: Column name `{}` is either not available or not encodable in the table `{}`. Please choose from these columns {}.".format(self.column_name, self.table_name, env.table2encodable[self.table_name])
+
         vs_conn: MilvusClient = env.vectorstore_conn
         if not vs_conn:
             return False, "[Error]: Milvus connection is not available."
@@ -62,7 +62,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
             return False, "[Error]: Query string is empty."
         if not vs_conn.has_collection(self.collection_name):
             return False, "[Error]: Collection {} does not exist in the Milvus database. Please choose from these collections {}".format(repr(self.collection_name), vs_conn.list_collections())
-        
+
         is_valid_output_fields = lambda x: type(x) == list and all([type(field) == str for field in x])
         if not is_valid_output_fields(self.output_fields):
             try:
@@ -99,7 +99,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
         def execute_sql(db_conn: duckdb.DuckDBPyConnection, sql: str, **kwargs) -> str:
             result: List[Tuple[Any]] = db_conn.execute(sql).fetchall()
             return result
-        
+
         try:
             result: List[Tuple[Any]] = execute_sql(db_conn, self.sql, forceTimeout=max_timeout)
         except FunctionTimedOut as e:
@@ -140,8 +140,8 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
         except Exception as e:
             return Observation(f"[Error]: Failed to encode the query: {str(e)}")
 
-        filter_prefix = f"table_name == '{self.table_name}' and primary_key in " if self.filter == '' \
-            else f"table_name == '{self.table_name}' and ( {self.filter} ) and primary_key in "
+        filter_prefix = f"table_name == '{self.table_name}' and column_name == '{self.column_name}' and primary_key in " if self.filter == '' \
+            else f"table_name == '{self.table_name}' and column_name == '{self.column_name}' and ( {self.filter} ) and primary_key in "
         batch_size = output_kwargs['batch_size'] # batch size for vector search
         batches = (len(result) + batch_size - 1) // batch_size
         batch_limit = max(1, min(self.limit, self.limit * 2 // batches))
@@ -172,7 +172,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
                 return Observation(f"[TimeoutError]: The vector search in the second stage is TIMEOUT given maximum {max_timeout} seconds.")
             except Exception as e:
                 return Observation(f"[Error]: Runtime error during vector search in the second stage. {str(e)}")
-        
+
         if len(results) == 0: # no relevant context records found
             filter_tempalte = f'{filter_prefix}[ ... SQL exec result, which should be filtered list of primary key values from the table {self.table_name} ... ]'
             return Observation(f"[Warning]: No relevant context records found for the input query \"{self.query}\" during vector search in the second stage with filter template \"{filter_tempalte}\".")
