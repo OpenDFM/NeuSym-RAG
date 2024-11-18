@@ -18,7 +18,7 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
     table_name: str = field(default='', repr=True) # table name for the context retrieval, required
     column_name: str = field(default='', repr=True) # column name for the context retrieval, required
     filter: str = field(default='', repr=True) # filter condition for context retrieval, optional, by default no filter
-    limit: int = field(default=10000, repr=True) # maximum number of context records to retrieve, optional, by default 10000
+    limit: int = field(default=100, repr=True) # maximum number of context records to retrieve, optional, by default 100
     sql: str = field(default='', repr=True) # concrete SQL query, required
 
     observation_format_kwargs: Dict[str, Any] = field(default_factory=lambda: {
