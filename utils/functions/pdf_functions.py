@@ -86,7 +86,11 @@ Please directly return the summary without any extra information or formatting. 
             summary.append(text)
     return {'text_summary': summary if type(content[key]) == list else summary[0]}
 
-def crop_pdf(element: Union[LTFigure, LTImage], page_obj: PageObject, output_file: str):
+def crop_pdf(
+        element: Union[LTFigure, LTImage],
+        page_obj: PageObject,
+        output_file: str
+    ):
     """Crop a PDF file according to the bounding box of the element and save it to a new PDF file.
 
     @args:
@@ -102,7 +106,11 @@ def crop_pdf(element: Union[LTFigure, LTImage], page_obj: PageObject, output_fil
     with open(output_file, 'wb') as cropped_pdf_file:
         cropped_pdf_writer.write(cropped_pdf_file)
 
-def convert_pdf_to_image(input_file: str, output_file: str, dpi: int = 1200):
+def convert_pdf_to_image(
+        input_file: str,
+        output_file: str,
+        dpi: int = 1200
+    ):
     """Convert a single-page PDF file to a PNG file.
     @args:
         input_file: str, the path to input PDF.
