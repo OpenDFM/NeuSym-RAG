@@ -6,7 +6,7 @@ from pymilvus import MilvusClient
 from milvus_model.base import BaseEmbeddingFunction
 from agents.envs.env_base import AgentEnv
 from typing import Optional, List, Tuple, Dict, Union, Any, Type
-from agents.envs.actions import Action, RetrieveFromVectorstore, RetrieveFromDatabase, GenerateAnswer, CalculateExpr, ViewImage, GenerateAnswer
+from agents.envs.actions import Action, RetrieveFromDatabase, RetrieveFromVectorstore, RetrieveFromDatabaseWithVectorFilter, RetrieveFromVectorstoreWithSQLFilter, CalculateExpr, ViewImage, GenerateAnswer
 from utils.vectorstore_utils import get_vectorstore_connection, get_milvus_embedding_function, get_embed_model_from_collection
 
 
@@ -14,9 +14,19 @@ class HybridEnv(AgentEnv):
     """ Responsible for managing the environment for the text-to-vec retrieval, which includes maintaining the connection to the Milvus vectorstore, executing the search query and formatting the output result.
     """
 
-    action_space: List[Type] = [RetrieveFromDatabase, RetrieveFromVectorstore, CalculateExpr, ViewImage, GenerateAnswer]
+    action_space: List[Type] = [RetrieveFromDatabase, RetrieveFromVectorstore, RetrieveFromDatabaseWithVectorFilter, RetrieveFromVectorstoreWithSQLFilter, CalculateExpr, ViewImage, GenerateAnswer]
 
     def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, agent_method: Optional[str] = 'react', dataset: Optional[str] = None, **kwargs) -> None:
+        """ Initialize the environment with the given action format, action space, agent method, dataset and other parameters.
+        @param:
+            kwargs:
+                - database: str, the database name
+                - vectorstore: str, the vectorstore name, must be the same as the database name. Indeed, we only need to specify one of them.
+                - database_type: str, the database type, default is 'duckdb'. Other types are not supported yet.
+                - database_path: str, the path to the database file, default is 'data/database/{database}/{database}.duckdb'.
+                - launch_method: str, the launch method of the Milvus vectorstore, default is 'standalone', chosen from ['standalone', 'docker'].
+                - vectorstore_path: str, the local path or uri to the Milvus vectorstore, default is path 'data/vectorstore/{vectorstore}/{vectorstore}.db' if launch_method is 'standalone', otherwise the uri 'http://127.0.0.1:19530'.
+        """
         super(HybridEnv, self).__init__(action_format=action_format, action_space=action_space, agent_method=agent_method, dataset=dataset)
         # database and vectorstore name must be the same
         db, vs = kwargs.get('database', None), kwargs.get('vectorstore', None)
