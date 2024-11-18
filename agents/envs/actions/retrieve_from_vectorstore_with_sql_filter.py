@@ -27,9 +27,9 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
         "tablefmt": "pretty", # for markdown format, see doc https://pypi.org/project/tabulate/ for all options
         "batch_size": 512, # batch size for vector search, primary_key in [...batch_size values...]
         "max_filter": 512000, # maximum number of filter primary key values to use in vector search, number of batches (or vectorstore.search() function calls) should be max_filter // batch_size
-        "max_rows": 10, # maximum rows to display in the output
+        "max_rows": 20, # maximum rows to display in the output
         "index": False, # whether to include the row index in the output
-        "max_timeout": 600 # the maximum timeout for the SQL execution is 10 minutes
+        "max_timeout": 1200 # the maximum timeout for the SQL execution is 20 minutes
     }, repr=False)
 
 
@@ -92,7 +92,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
         for key in kwargs:
             if key in output_kwargs:
                 output_kwargs[key] = kwargs[key]
-        max_timeout = output_kwargs.pop('max_timeout', 600) # by default, 10 minutes timeout
+        max_timeout = output_kwargs.pop('max_timeout') # by default, 20 minutes timeout
 
         # 1. first stage: execute the SQL query to obtain the primary key values for table_name
         @func_set_timeout(0, allowOverride=True)
@@ -112,7 +112,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
         elif len(result) > output_kwargs['max_filter']:
             return Observation(f"[Warning]: SQL execution result contains {len(result)} rows, which is too large to further process (exceeding our capacity {output_kwargs['max_filter']}). Considering using more specific SQL conditions to reduce the result size or directly using RetrieveFromVectorstore action without SQL.")
 
-        msg = f"The intermediate SQL execution result contains {len(result)} rows/primary key values.\n"
+        msg = f"[Stage 1]: The intermediate SQL execution result contains {len(result)} rows/primary key values.\n"
 
         # check whether they are primary keys (only check returned column number)
         primary_keys = env.table2pk[self.table_name]
@@ -169,13 +169,13 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
             try:
                 results.extend(search_vectostore(vs_conn, filter_str, forceTimeout=batch_timeout))
             except FunctionTimedOut as e:
-                return Observation(f"[TimeoutError]: The vector search in the second stage is TIMEOUT given maximum {max_timeout} seconds.")
+                return Observation(msg + f"[TimeoutError]: The vector search in the second stage is TIMEOUT given maximum {max_timeout} seconds.")
             except Exception as e:
-                return Observation(f"[Error]: Runtime error during vector search in the second stage. {str(e)}")
+                return Observation(msg + f"[Error]: Runtime error during vector search in the second stage. {str(e)}")
 
         if len(results) == 0: # no relevant context records found
             filter_tempalte = f'{filter_prefix}[ ... SQL exec result, which should be filtered list of primary key values from the table {self.table_name} ... ]'
-            return Observation(f"[Warning]: No relevant context records found for the input query \"{self.query}\" during vector search in the second stage with filter template \"{filter_tempalte}\".")
+            return Observation(msg + f"[Warning]: No relevant context records found for the input query \"{self.query}\" during vector search in the second stage with filter template \"{filter_tempalte}\".")
 
 
         def convert_to_utf8(df: pd.DataFrame) -> pd.DataFrame:
@@ -197,7 +197,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
             """
             # by default, vector_index is the index name used to search the collection
             metric_type = vs_conn.describe_index(self.collection_name, index_name='vector_index')['metric_type'].upper()
-            msg = f'The retrieved results from the vectostore in the second stage are sorted from the most to least relevant based on metric type {metric_type}:\n'
+            msg = f'[Stage 2]: The retrieved results from the vectostore in the second stage are sorted from the most to least relevant based on metric type {metric_type}:\n'
 
             output_format = format_kwargs['output_format']
             assert output_format in ['markdown', 'string', 'html', 'json'], "Vectorstore search output format must be chosen from ['markdown', 'string', 'html', 'json']."
@@ -221,7 +221,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
 
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
-                msg = df.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
+                msg += df.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string': # customize the result display
                 for index, row in df.iterrows():
                     id_ = row['id']
@@ -234,16 +234,17 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
                         msg += f"    {field}: {row[field]}\n"
                     msg += '\n'
             elif output_format == 'html':
-                msg = df.to_html(index=format_kwargs['index'])
+                msg += df.to_html(index=format_kwargs['index'])
             elif output_format == 'json':
-                msg = convert_to_utf8(df).to_json(orient='records', lines=True, index=False) # indeed JSON Line format
+                msg += convert_to_utf8(df).to_json(orient='records', lines=True, index=False) # indeed JSON Line format
             else:
                 raise ValueError(f"Vectorstore search output format {output_format} not supported.")
             return msg + suffix
 
         # post-process the search result, combine different batches and take top `limit` records
-        metric_type = vs_conn.describe_index(self.collection_name, index_name='vector_index')['metric_type'].upper()
-        reverse = True if metric_type in ['IP', 'COSINE'] else False # true -> larger means more relevant
-        results = sorted(results, key=lambda x: x['distance'], reverse=reverse)[:self.limit]
+        if batches > 1:
+            metric_type = vs_conn.describe_index(self.collection_name, index_name='vector_index')['metric_type'].upper()
+            reverse = True if metric_type in ['IP', 'COSINE'] else False # true -> larger means more relevant
+            results = sorted(results, key=lambda x: x['distance'], reverse=reverse)[:self.limit]
         msg = msg + output_formatter(results, output_kwargs)
         return Observation(msg)
