@@ -144,13 +144,13 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
             insert_sql = f"INSERT INTO filtered_primary_keys({pk_names_str}) VALUES({', '.join(['?'] * len(env.table2pk[self.table_name]))})"
             db_conn.executemany(insert_sql, pk_values)
         except Exception as e:
-            db_conn.execute("DROP TABLE IF EXISTS TEMPORARY filtered_values;")
+            db_conn.execute("DROP TABLE IF EXISTS filtered_primary_keys;")
             return Observation(msg + f"[Error]: When inserting values into temporary {env.database_type} table `filtered_primary_keys`: {str(e)}")
 
         @func_set_timeout(0, allowOverride=True)
         def execute_sql(db_conn: duckdb.DuckDBPyConnection, sql: str, **kwargs) -> pd.DataFrame:
             result: pd.DataFrame = db_conn.execute(sql).fetchdf()
-            db_conn.execute("DROP TABLE IF EXISTS TEMPORARY filtered_values;")
+            db_conn.execute("DROP TABLE IF EXISTS filtered_primary_keys;")
             return result
 
         try:
@@ -165,7 +165,7 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
 
         def convert_to_utf8(df: pd.DataFrame) -> pd.DataFrame:
             for col in df.select_dtypes(include=['object']).columns:  # select only object-type columns
-                df[col] = df[col].astype(str).str.encode('utf-8', errors='ignore').str.decode('utf-8')
+                df.loc[:, col] = df[col].astype(str).str.encode('utf-8', errors='ignore').str.decode('utf-8')
             return df
 
         
@@ -191,5 +191,5 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
                 raise ValueError(f"SQL execution output format {output_format} not supported.")
             return msg + suffix
 
-        msg += output_formatter(query_embedding, output_kwargs)
+        msg += output_formatter(result, output_kwargs)
         return Observation(msg)

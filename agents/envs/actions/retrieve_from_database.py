@@ -36,7 +36,7 @@ class RetrieveFromDatabase(Action):
 
         def convert_to_utf8(df: pd.DataFrame) -> pd.DataFrame:
             for col in df.select_dtypes(include=['object']).columns:  # select only object-type columns
-                df[col] = df[col].astype(str).str.encode('utf-8', errors='ignore').str.decode('utf-8')
+                df.loc[:, col] = df[col].astype(str).str.encode('utf-8', errors='ignore').str.decode('utf-8')
             return df
 
         @func_set_timeout(0, allowOverride=True)
