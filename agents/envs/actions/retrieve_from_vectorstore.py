@@ -14,6 +14,8 @@ from func_timeout import func_set_timeout, FunctionTimedOut
 class RetrieveFromVectorstore(Action):
     query: str = field(default='', repr=True) # query string for retrieving the context, required
     collection_name: str = field(default='', repr=True) # collection name for the context retrieval, required
+    table_name: str = field(default='', repr=True) # table name for the context retrieval, required
+    column_name: str = field(default='', repr=True) # column name for the context retrieval, required
     filter: str = field(default='', repr=True) # filter condition for context retrieval, optional, by default no filter
     limit: int = field(default=5, repr=True) # maximum number of context records to retrieve, optional, by default 5
     output_fields: List[str] = field(default_factory=lambda: ['text'], repr=True) # output fields for context retrieval. Optional, by default, return the `text` field
@@ -27,13 +29,18 @@ class RetrieveFromVectorstore(Action):
     }, repr=False)
 
     def _validate_parameters(self, env: gym.Env) -> Tuple[bool, str]:
-        self.query, self.collection_name, self.filter = str(self.query), str(self.collection_name), str(self.filter)
+        self.query, self.collection_name, self.table_name, self.column_name, self.filter = str(self.query), str(self.collection_name), str(self.table_name), str(self.column_name), str(self.filter)
         if type(self.limit) != int:
             try:
                 self.limit = int(str(self.limit))
                 assert self.limit > 0
             except:
                 return False, "[Error]: Value of parameter `limit` should be a positive integer."
+
+        if self.table_name not in env.table2encodable or len(env.table2encodable[self.table_name]) == 0:
+            return False, f"[Error]: Table {self.table_name} does not have any encodable column in the Milvus vectorstore. Please choose from these tables {list(env.table2encodable.keys())}."
+        if self.column_name not in env.table2encodable[self.table_name]:
+            return False, "[Error]: Column name `{}` is not a valid encodable column in the table `{}`. Please choose from these columns {}.".format(self.column_name, self.table_name, env.table2encodable[self.table_name])
 
         vs_conn: MilvusClient = env.vectorstore_conn
         if not vs_conn:
@@ -95,7 +102,10 @@ class RetrieveFromVectorstore(Action):
                 }
             }
             """
-            search_result = vs_conn.search(self.collection_name, query_embedding, limit=self.limit, filter=self.filter, output_fields=self.output_fields)[0] # only one query
+            filter_condition = f"table_name == '{self.table_name}' and column_name == '{self.column_name}'"
+            if self.filter != '':
+                filter_condition += f" and ({self.filter})"
+            search_result = vs_conn.search(self.collection_name, query_embedding, limit=self.limit, filter=filter_condition, output_fields=self.output_fields)[0] # only one query
             if len(search_result) == 0:
                 return f"[Warning]: No relevant context records found for the input query: {self.query}."
 

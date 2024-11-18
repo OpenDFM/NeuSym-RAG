@@ -16,6 +16,7 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
     query: str = field(default='', repr=True) # query string for retrieving the context, required
     collection_name: str = field(default='', repr=True) # collection name for the context retrieval, required
     table_name: str = field(default='', repr=True) # table name for the context retrieval, required
+    column_name: str = field(default='', repr=True) # column name for the context retrieval, required
     filter: str = field(default='', repr=True) # filter condition for context retrieval, optional, by default no filter
     limit: int = field(default=10000, repr=True) # maximum number of context records to retrieve, optional, by default 10000
     sql: str = field(default='', repr=True) # concrete SQL query, required
@@ -33,7 +34,7 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
     def _validate_parameters(self, env) -> Tuple[bool, str]:
         """ Validate the parameters of the action.
         """
-        self.query, self.collection_name, self.table_name, self.filter, self.sql = str(self.query), str(self.collection_name), str(self.table_name), str(self.filter), str(self.sql)
+        self.query, self.collection_name, self.table_name, self.column_name, self.filter, self.sql = str(self.query), str(self.collection_name), str(self.table_name), str(self.column_name), str(self.filter), str(self.sql)
         if type(self.limit) != int:
             try:
                 self.limit = int(str(self.limit))
@@ -47,7 +48,9 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
         if self.sql == '' or self.sql is None:
             return False, "[Error]: SQL string is empty."
         if self.table_name not in env.table2encodable or len(env.table2encodable[self.table_name]) == 0:
-            return False, f"[Error]: Table {self.table_name} does not have any encodable column in the Milvus vectorstore."
+            return False, f"[Error]: Table {self.table_name} does not have any encodable column in the Milvus vectorstore. Please choose from these tables {list(env.table2encodable.keys())}."
+        if self.column_name not in env.table2encodable[self.table_name]:
+            return False, "[Error]: Column name `{}` is not a valid encodable column in the table `{}`. Please choose from these columns {}.".format(self.column_name, self.table_name, env.table2encodable[self.table_name])
 
         vs_conn: MilvusClient = env.vectorstore_conn
         if not vs_conn or not isinstance(vs_conn, MilvusClient):
@@ -97,7 +100,7 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
                 }
             }
             """
-            filter_condition = f"table_name == '{self.table_name}'"
+            filter_condition = f"table_name == '{self.table_name}' and column_name == '{self.column_name}'"
             if self.filter != '':
                 filter_condition += f" and ({self.filter})"
             vs_search_result: List[Dict[str, Any]] = vs_conn.search(self.collection_name, query_embedding, limit=self.limit, filter=filter_condition, output_fields=['primary_key'])[0] # only one query

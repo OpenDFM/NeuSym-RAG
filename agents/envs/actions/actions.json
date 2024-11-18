@@ -34,11 +34,21 @@
                 "required": true,
                 "description": "The name of the collection in the Milvus vectorstore to search for relevant context. Please ensure the name comes from existing collection names."
             },
+            "table_name": {
+                "type": "str",
+                "required": true,
+                "description": "The table name is used to narrow down the search space. It will be added to the filter condition. Please ensure it comes from existing table names which have encodable columns."
+            },
+            "column_name": {
+                "type": "str",
+                "required": true,
+                "description": "The column name is used to narrow down the search space. It will be added to the filter condition. Please ensure it comes from existing encodable columns in the specified `table_name`."
+            },
             "filter": {
                 "type": "str",
                 "required": false,
                 "default": "",
-                "description": "The filter condition to narrow down the search space. Please refer to the syntax of filter conditions. By default, no filter condition. It is suggested to restrict `table_name`, `column_name`, `primary_key`, `pdf_id`, or `page_number` to refine search results."
+                "description": "The filter condition to narrow down the search space. Please refer to the syntax of filter conditions. By default, no filter condition. It is suggested to restrict `primary_key`, `pdf_id`, or `page_number` to refine search results. Note that you do not need to restrict `table_name` and `column_name` since they are already specified in the `table_name` and `column_name` parameters. Thus, if the `filter` parameter is empty, the actual filter condition will be `table_name == '{table_name}' and column_name == '{column_name}'`."
             },
             "limit": {
                 "type": "int",
@@ -60,19 +70,22 @@
                 "example": {
                     "query": "Does this paper discuss LLM-based agent on its first page? (paper id is '12345678')",
                     "collection_name": "text_bm25_en",
-                    "limit": 10,
+                    "table_name": "chunks",
+                    "column_name": "text_content",
                     "filter": "pdf_id == '12345678' and page_number == 1",
+                    "limit": 10,
                     "output_fields": [
                         "text"
                     ]
                 },
-                "explanation": "Search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with two conjunctive filter conditions to restrict the content source and return the top 10 relevant context with the `text` field."
+                "explanation": "Search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with the filter condition `table_name == 'chunks' and column_name == 'text_content' and pdf_id == '12345678' and page_number == 1` to restrict the content source and return the top 10 relevant context with the `text` field."
             },
             {
                 "example": {
                     "query": "Is there any work about the topic structured RAG?",
                     "collection_name": "text_sentence_transformers_all_minilm_l6_v2",
-                    "filter": "table_name == 'papers' && column_name == 'abstract'",
+                    "table_name": "papers",
+                    "column_name": "abstract",
                     "output_fields": [
                         "text",
                         "primary_key"
@@ -84,40 +97,45 @@
     },
     "RetrieveFromDatabaseWithVectorFilter": {
         "action_type": "RetrieveFromDatabaseWithVectorFilter",
-        "description": "This is a hybrid two-stage action. First, given a query text, retrieve relevant context from the Milvus vectorstore. The primary keys of the retrieved entries will be stored in a temporary table named `filtered_primary_keys` in the DuckDB database. The column names in this temporary table are the same as the primary key columns in the original table. Second, perform a SQL query to retrieve the desired information from the DuckDB database. The SQL query can use the `filtered_primary_keys` table to filter the results.",
-        "observation": "The observation space is the execution result of the SQL query. You do not need to worry about the actual execution, we will perform it for you. If something goes wrong, we will return the error message.",
+        "description": "This is a hybrid two-stage action. First, given a query text, retrieve relevant context from the Milvus vectorstore. The primary keys of the retrieved entries will be stored in a temporary table named `filtered_primary_keys` in the DuckDB database. The column names in this temporary table are the same as the primary key columns in the original table. Second, perform a SQL query to retrieve the desired information from the DuckDB database. The SQL query can use the `filtered_primary_keys` table to restrict its search space.",
+        "observation": "The observation space is the execution result of the SQL query in the second stage based on all input parameters. You do not need to worry about the actual execution, we will perform it for you. If something goes wrong, we will return the error message.",
         "parameters": {
             "query": {
                 "type": "str",
                 "required": true,
-                "description": "The query text will be encoded and used to search for relevant context. You should try to express the search intention in a more clear and structured way."
+                "description": "The query text will be encoded and used to search for relevant context in the first stage. You should try to express the search intention in a more clear and structured way."
             },
             "collection_name": {
                 "type": "str",
                 "required": true,
-                "description": "The name of the collection in the Milvus vectorstore to search for relevant context. Please ensure the name comes from existing collection names."
+                "description": "The name of the collection in the Milvus vectorstore to search for relevant context in the first stage. Please ensure the name comes from existing collection names."
             },
             "table_name": {
                 "type": "str",
                 "required": true,
-                "description": "This parameter will be used in both two stages. In the first stage, it is used to narrow the search space in the Milvus vectorstore. In the second stage, it is used as the target table to return filtered rows from the DuckDB database. Please ensure that the name comes from existing table names."
+                "description": "This parameter will be used in both two stages. In the first stage, it is used to narrow the search space in the Milvus vectorstore. In the second stage, it is used as the target table to return filtered rows from the DuckDB database. Please ensure it comes from existing table names which have encodable columns."
+            },
+            "column_name": {
+                "type": "str",
+                "required": true,
+                "description": "This paramerter is used to narrow the search space of the Milvus vectorstore in the first stage. Please ensure it comes from encodable columns in the specified `table_name`."
             },
             "filter": {
                 "type": "str",
                 "required": false,
                 "default": "",
-                "description": "The filter condition to narrow down the search space in the Milvus vectorstore. Please refer to the syntax of filter conditions. By default, no filter condition. It is suggested to restrict `column_name` (must in the `table_name` table), `pdf_id`, or `page_number` to refine search results. Note that you do not need to restrict `table_name` since it is already specified in the `table_name` parameter. Thus, if the `filter` parameter is empty, the actual filter condition will be `table_name == 'table_name'`."
+                "description": "The filter condition to narrow down the search space of the Milvus vectorstore in the first stage. Please refer to the syntax of filter conditions. By default, no filter condition. It is suggested to restrict `pdf_id` or `page_number` to refine search results if needed. Note that you do not need to restrict `table_name` and `column_name` since they are already specified in the `table_name` and `column_name` parameters. Thus, if the `filter` parameter is empty, the actual filter condition will be `table_name == '{table_name}' and column_name == '{column_name}'`."
             },
             "limit": {
                 "type": "int",
                 "required": false,
                 "default": 10000,
-                "description": "The number of top-ranked context to retrieve from the Milvus vectorstore in the first stage. Please set it to a positive integer to limit the number of returned results."
+                "description": "The number of top-ranked context to retrieve from the Milvus vectorstore in the first stage (can be slightly larger). Please set it to a positive integer to limit the number of returned results."
             },
             "sql": {
                 "type": "str",
                 "required": true,
-                "description": "The SQL query to execute and retrieve results from the DuckDB database. The SQL query can use the `filtered_primary_keys` table to filter the results. Note that `filtered_primary_keys` is a temporary table and will be automatically dropped after the SQL query is executed."
+                "description": "The SQL query to execute and retrieve results from the DuckDB database in the second stage. It can use the temporary `filtered_primary_keys` table to filter the results. Note that `filtered_primary_keys` is a temporary table and will be automatically dropped after the SQL query is executed."
             }
         },
         "use_cases": [
@@ -126,21 +144,22 @@
                     "query": "Does any paper discuss LLM-based agent in its abstract on its first page?",
                     "collection_name": "text_bm25_en",
                     "table_name": "paper_content",
+                    "column_name": "text_content",
                     "filter": "page_number == 1",
                     "limit": 20000,
-                    "sql": "SELECT text_content FROM paper_content NATURAL JOIN filtered_primary_keys WHERE content_type = 'abstract'"
+                    "sql": "SELECT * FROM paper_content NATURAL JOIN filtered_primary_keys WHERE content_type = 'abstract'"
                 },
-                "explanation": "First, search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with filter conditions to restrict the content source and return the top 20000 relevant context. The primary keys of the retrieved entries will be stored in a temporary table named `filtered_primary_keys` in the DuckDB database. Second, perform a SQL query to retrieve the abstract information from the `paper_content` table in the DuckDB database. The SQL query uses the `filtered_primary_keys` table to only retain the abstracts relevant to \"LLM-based agent\"."
+                "explanation": "First, search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with the filter condition `table_name == 'paper_content' and column_name == 'text_content' and page_number == 1` to restrict the content source and return the top 20000 relevant context. The primary keys of the retrieved entries will be stored in a temporary table named `filtered_primary_keys` in the DuckDB database. Second, perform a SQL query to retrieve the abstract information from the `paper_content` table in the DuckDB database. The SQL query uses the `filtered_primary_keys` table to only retain the abstracts relevant to \"LLM-based agent\" based on BM25 vector search."
             },
             {
                 "example": {
                     "query": "Is there any work about the topic structured RAG?",
                     "collection_name": "text_sentence_transformers_all_minilm_l6_v2",
                     "table_name": "papers",
-                    "filter": "column_name == 'abstract'",
+                    "column_name": "abstract",
                     "sql": "SELECT title, authors, year, abstract FROM papers NATURAL JOIN filtered_primary_keys"
                 },
-                "explanation": "First, perform a similarity search on all cell values from the `abstract` column of the `papers` table in the Milvus vectorstore, using the MiniLM-L6-v2 setence transformer embeddings. By default, the top 10000 most relevant entries will be returned based on vector similarity. The primary keys of the retrieved entries will be stored in a temporary table named `filtered_primary_keys` in the DuckDB database. Second, perform a SQL query to retrieve the title, authors, year, and abstract information from the `papers` table in the DuckDB database. The SQL query uses the `filtered_primary_keys` table to only retain the papers relevant to \"structured RAG\"."
+                "explanation": "First, perform a similarity search on all cell values from the `abstract` column of the `papers` table in the Milvus vectorstore, using the MiniLM-L6-v2 setence transformer embeddings. By default, the top 10000 most relevant entries will be returned based on vector similarity. The primary keys of the retrieved entries will be stored in a temporary table named `filtered_primary_keys` in the DuckDB database. Second, perform a SQL query to retrieve the title, authors, year, and abstract information from the `papers` table in the DuckDB database. The SQL query uses the `filtered_primary_keys` table to only retain the papers relevant to \"structured RAG\" based on sentence transformer embeddings."
             }
         ]
     },
@@ -154,26 +173,31 @@
                 "required": true,
                 "description": "This SQL query is used in the first stage to retrieve the primary key values from the DuckDB database. The executed SQL should only return the primary key values of the specified `table_name` below (any other columns are forbidden). And we will automatically use the filtered primary key values as extra `filter` condition in the second stage."
             },
-            "collection_name": {
-                "type": "str",
-                "required": true,
-                "description": "The name of the collection in the Milvus vectorstore to search for relevant context after SQL filtering. Please ensure the name comes from existing collection names."
-            },
             "query": {
                 "type": "str",
                 "required": true,
                 "description": "The query text will be encoded and used to search for relevant context in the second stage from the Milvus vectorstore. You should try to express the search intention in a more clear and structured way."
+            },
+            "collection_name": {
+                "type": "str",
+                "required": true,
+                "description": "The name of the collection in the Milvus vectorstore to search for relevant context after SQL filtering. Please ensure the name comes from existing collection names."
             },
             "table_name": {
                 "type": "str",
                 "required": true,
                 "description": "This parameter specifies which table in the DuckDB database the returned primary key values are from during SQL execution in the first stage. It also restricts the search space of the Milvus vectorstore in the second stage, that is the `table_name` field for each data entry."
             },
+            "column_name": {
+                "type": "str",
+                "required": true,
+                "description": "This paramerter only restricts the search space of the Milvus vectorstore in the second stage, that is the `column_name` field for each data entry. Please ensure that the `column_name` value exists and is encodable under `table_name`."
+            },
             "filter": {
                 "type": "str",
                 "required": false,
                 "default": "",
-                "description": "Extra filter condition to further narrow down the search space in the second stage. Please refer to the syntax of filter conditions of Milvus vectorstore. The returned primary key values from the `sql` and the specified `table_name` value will be automatically included, even if this paramater is empty. You can also restrict `column_name`, `pdf_id`, or `page_number` to further refine search results using this field. Please ensure that the `column_name` field value exists and is encodable under `table_name`."
+                "description": "Extra filter condition to further narrow down the search space in the second stage. Please refer to the syntax of filter conditions of Milvus vectorstore. The returned primary key values from the `sql`, the specified `table_name` value, and the specified `column_name` value will be automatically included, even if this paramater is empty. You can also restrict `pdf_id` or `page_number` to further refine search results using this field."
             },
             "limit": {
                 "type": "int",
@@ -195,7 +219,7 @@
                     "query": "Is there any work about structured retrieval in year 2021?",
                     "collection_name": "text_bm25_en",
                     "table_name": "chunks",
-                    "filter": "column_name == 'text_content'",
+                    "column_name": "text_content",
                     "output_fields": [
                         "text",
                         "pdf_id"
@@ -209,7 +233,7 @@
                     "query": "Find me the papers that make some contribution in refining PPO algorithm in ACL 2024.",
                     "collection_name": "text_sentence_transformers_all_minilm_l6_v2",
                     "table_name": "sections",
-                    "filter": "column_name == 'abstract'",
+                    "column_name": "abstract",
                     "limit": 10,
                     "output_fields": [
                         "text",

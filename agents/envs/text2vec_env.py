@@ -1,6 +1,7 @@
 #coding=utf8
-import os, time
+import os, time, json
 from pymilvus import MilvusClient
+from collections import defaultdict
 from milvus_model.base import BaseEmbeddingFunction
 from agents.envs.env_base import AgentEnv
 from typing import Optional, List, Tuple, Dict, Union, Any, Type
@@ -23,6 +24,15 @@ class Text2VecEnv(AgentEnv):
         else:
             self.vectorstore_path = kwargs.get('vectorstore_path', 'http://127.0.0.1:19530')
         self.reset()
+
+        self.table2encodable = defaultdict(list)
+        with open(os.path.join('data', 'database', self.vectorstore, f'{self.vectorstore}.json'), 'r', encoding='utf-8') as fin:
+            db_schema = json.load(fin)['database_schema']
+            for table in db_schema:
+                table_name = table['table']['table_name']
+                for column in table['columns']:
+                    if column.get('encodable', False):
+                        self.table2encodable[table_name].append(column['column_name'])
 
 
     def reset(self) -> None:
