@@ -1,6 +1,6 @@
 #coding=utf8
 import os, json
-from typing import Dict, List
+from typing import Dict, List, Union, Tuple, Any
 
 
 def convert_database_schema_to_prompt(database: str, serialize_method: str = 'create_sql') -> str:
@@ -33,10 +33,11 @@ def convert_database_schema_to_prompt(database: str, serialize_method: str = 'cr
     return prompt
 
 
-def convert_vectorstore_schema_to_prompt(vectorstore: str, serialize_method: str = 'detailed_json') -> str:
+def convert_vectorstore_schema_to_prompt(vectorstore: str, serialize_method: str = 'detailed_json', add_description: bool = True) -> str:
     """ Convert the vectorstore schema to a prompt.
     @param:
         vectorstore: str, vectorstore name, also the database name
+        add_description: bool, whether to add the description of the encodable table-column pairs. Usually, set it to True if the complete database schema is not provided, and False otherwise.
     @return:
         prompt: str, prompt
     """
@@ -64,17 +65,28 @@ def convert_vectorstore_schema_to_prompt(vectorstore: str, serialize_method: str
             collection['fields'] = f"The fields of this collection are similar to the `{modal_primary_collection[modal]}` collection."
 
     # find encodable table-column pairs
-    encodable_pairs: List[Dict[str, str]] = []
+    encodable_pairs: List[Union[Dict[str, Any], Tuple[str, str]]] = []
     for table in db_schema:
         table_name = table['table']['table_name']
+        table_description = table['table']['description']
         for column in table['columns']:
+            column_name = column['column_name']
+            column_type = column['column_type']
+            column_description = column['description']
             if column.get('encodable', False):
-                column_name = column['column_name']
-                encodable_pairs.append({'table_name': table_name, 'column_name': column_name})
+                if add_description:
+                    if len(encodable_pairs) == 0 or encodable_pairs[-1]['table_name'] != table_name:
+                        table_obj = {'table_name': table_name, 'table_description': table_description, 'encoded_columns': []}
+                        encodable_pairs.append(table_obj)
+                    else:
+                        table_obj = encodable_pairs[-1]
+                    table_obj['encoded_columns'].append({'column_name': column_name, 'column_type': column_type, 'column_description': column_description})
+                else:
+                    encodable_pairs.append((table_name, column_name))
 
     if serialize_method == 'detailed_json':
         prompt = f"The vectorstore schema for {vectorstore} is as follows. Feel free to use any collection with different encoding models or modalities:\n{json.dumps(vs_schema, indent=4)}\n\n"
-        prompt += f"The following lists all encodable table-column pairs from another relational database, where the encoded vector entries are sourced. You can leverage them for filter condition or output fields during similarity search:\n{json.dumps(encodable_pairs, indent=4)}\n\n"
+        prompt += f"The following lists all encodable (table_name, column_name) pairs from the corresponding DuckDB database, where the encoded vector entries are sourced. You can leverage them for filter condition or output fields during similarity search:\n{json.dumps(encodable_pairs, indent=4)}\n\n"
         prompt += f"Here are the operators that you can use in the filtering condition for the vectorstore:\n{json.dumps(filter_rules, indent=4)}"
     else:
         raise ValueError(f"Unsupported serialize method: {serialize_method}.")
