@@ -51,14 +51,14 @@ class RetrieveFromDatabase(Action):
                 result.shape[0] > max_rows else f'\nIn total, {result.shape[0]} rows are displayed in {output_format.upper()} format.'
             result = result.head(max_rows)
 
+            if result.empty:
+                return "[Warning]: The SQL execution result is empty, please check the SQL first."
+
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
                 msg = result.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string':
-                if result.empty:
-                    msg = '""'
-                else:
-                    msg = result.to_string(index=format_kwargs['index'])
+                msg = result.to_string(index=format_kwargs['index'])
             elif output_format == 'html':
                 msg = result.to_html(index=format_kwargs['index'])
             elif output_format == 'json':
@@ -73,5 +73,5 @@ class RetrieveFromDatabase(Action):
         except FunctionTimedOut as e:
             msg = f"[TimeoutError]: The SQL execution is TIMEOUT given maximum {max_timeout} seconds."
         except Exception as e:
-            msg = f"[Error]: {str(e)}"
+            msg = f"[Error]: Runtime error during SQL execution and output formatting: {str(e)}"
         return Observation(msg)

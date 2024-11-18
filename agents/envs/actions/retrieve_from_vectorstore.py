@@ -51,6 +51,9 @@ class RetrieveFromVectorstore(Action):
             except:
                 return False, "[Error]: Value of parameter `output_fields` should be a list of strings."
         self.output_fields = [str(field) for field in self.output_fields if str(field).strip() not in ['id', 'vector', 'distance', '']] # filter useless fields
+        if len(self.output_fields) == 0:
+            # TODO: add default output fields, e.g., `text` for text collections, `bbox` for image collections, etc.
+            pass
         valid_output_fields = [field['name'] for field in vs_conn.describe_collection(self.collection_name)['fields']]
         for field in self.output_fields:
             if field not in valid_output_fields:
