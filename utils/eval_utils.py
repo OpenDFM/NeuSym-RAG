@@ -5,6 +5,7 @@ from collections import defaultdict
 from fuzzywuzzy import fuzz, process
 from tabulate import tabulate
 from contextlib import nullcontext
+from evaluation.evaluate import evaluate_airqa
 
 
 def evaluation(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs) -> float:
@@ -21,6 +22,8 @@ def evaluation(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs)
         score = evaluate_pdfvqa(pred_ans, gold_data, **kwargs)
     elif dataset == 'tatdqa':
         score = evaluate_tatdqa(pred_ans, gold_data, **kwargs)
+    elif dataset == 'airqa':
+        score = evaluate_airqa(pred_ans, gold_data)
     else:
         raise NotImplementedError(f"Dataset {dataset} not supported.")
     return score
@@ -187,6 +190,16 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Opt
         raise NotImplementedError(f"Question type {question_type} not supported.")
 
 
+def resolve_gold_answer(gold: Dict[str, Any]) -> str:
+    if 'answer' in gold:
+        return gold['answer']
+    assert 'evaluator' in gold and 'eval_kwargs' in gold['evaluator'], f"Please check the data format for {gold['uuid']}."
+    if 'answer' in gold['evaluator']['eval_kwargs']:
+        return gold['evaluator']['eval_kwargs']['answer']
+    # raise ValueError(f"Gold answer not found in evaluator: {str(gold['evaluator'])}.")
+    return str(json.dumps(gold['evaluator'], ensure_ascii=False))
+
+
 def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset: str, **kwargs) -> dict:
     """ Evaluate the predicted answers on the entire dataset. Note that,
     both the gold and predict answers are stored in jsonl format.
@@ -225,13 +238,18 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
         for pred, gold in zip(pred_data, gold_data):
             score = evaluation(dataset, pred['answer'], gold, **kwargs)
             if score < 0.5 and output_path is not None:
-                outfile.write(f'\n[ERROR]: data (type={gold["question_type"]}) with id {gold["uuid"]}\n')
-                outfile.write(f'Gold Answer: {gold["answer"]}\n')
+                outfile.write(f'\n[ERROR]: data (type={gold["question_type"] if "question_type" in gold else gold['tags']}) with id {gold["uuid"]}\n')
+                outfile.write(f'Gold Answer: {resolve_gold_answer(gold)}\n')
                 outfile.write(f'Predicted Answer: {pred["answer"]}\n')
             result['all']['count'] += 1
             result['all']['correct'] += score
-            result[gold['question_type']]['count'] += 1
-            result[gold['question_type']]['correct'] += score
+            if 'question_type' in gold:
+                result[gold['question_type']]['count'] += 1
+                result[gold['question_type']]['correct'] += score
+            else:
+                for tag in gold['tags']:
+                    result[tag]['count'] += 1
+                    result[tag]['correct'] += score
 
         for key in result.keys():
             score, count = result[key]['correct'], result[key]['count']
@@ -258,9 +276,9 @@ if __name__ == '__main__':
 
     import argparse, json
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='pdfvqa', choices=['pdfvqa', 'tatdqa'], help='Dataset name')
-    parser.add_argument('--pred', type=str, required=True, help='Path to predicted answer')
-    parser.add_argument('--gold', type=str, required=True, help='Path to gold answer')
+    parser.add_argument('--dataset', type=str, default='pdfvqa', choices=['pdfvqa', 'tatdqa', 'airqa'], help='Dataset name')
+    parser.add_argument('--pred', type=str, required=True, help='Path to predicted answer, .jsonl file')
+    parser.add_argument('--gold', type=str, required=True, help='Path to gold answer, .jsonl file')
     args = parser.parse_args()
 
     result = evaluate(args.pred, args.gold, args.dataset)

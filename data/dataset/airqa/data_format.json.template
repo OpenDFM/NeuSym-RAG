@@ -13,7 +13,7 @@
         "acl2023",
         "acl2024"
     ], // conference names, format "{lowercase_conference_name}{year}"
-    "reasoning_step": [
+    "reasoning_steps": [
         "find the table related to xxx",
         "check the table content about method A and method B",
         "perform calculation with result(A) - result(B)"
@@ -26,5 +26,9 @@
                 "2.score point1"
             ]
         } // the gold answer or how to get the gold answer should be included in `eval_kwargs` dict. Other optional keyword arguments can be used for customization and function re-use.
-    } // A complex dict specifying the evaluation function and its parameters. The first parameter of the `eval_func` must be LLM predicted string.
+    }, // A complex dict specifying the evaluation function and its parameters. The first parameter of the `eval_func` must be LLM predicted string.
+    "state": {
+        "gpt-4o-2024-05-13": false,
+        "gui-gpt-4o-2024-05-13": true
+    } // true or false represents whether this question can be resolved by the keyword model; the `gui-` prefix represents using the web browser interface instead of api
 }
