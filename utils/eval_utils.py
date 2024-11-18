@@ -5,10 +5,10 @@ from collections import defaultdict
 from fuzzywuzzy import fuzz, process
 from tabulate import tabulate
 from contextlib import nullcontext
-from evaluation.evaluate import evaluate_airqa
+from evaluation.evaluator import evaluate_airqa
 
 
-def evaluation(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs) -> float:
+def evaluate_dataset(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs) -> float:
     """ Given the dataset name and question type, evaluate whether the predicted answer is consistent with the gold data (only comparing one data point).
     @args:
         dataset: str, dataset name
@@ -95,7 +95,7 @@ def extract_list_from_str(s: str):
             return s
     return s
 
-def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], question_type: Optional[str] = None, **kwargs) -> float:
+def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], **kwargs) -> float:
     """ Evaluate the predicted answer for the PDFVQA dataset.
     @args:
         pred_ans: str, predicted answer
@@ -129,7 +129,7 @@ def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], 
         raise NotImplementedError(f"Question type {question_type} not supported.")
 
 
-def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], question_type: Optional[str] = None, **kwargs) -> float:
+def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], **kwargs) -> float:
     """ Evaluate the predicted answer for the TATDQA dataset.
     @args:
         pred_ans: LLM predicted str, predicted answer
@@ -207,6 +207,9 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
         pred: Union[List[dict], str], JSONL path to predicted answer or JSON list
         gold: Union[List[dict], str], JSONL path to gold answer or JSON list
         dataset: str, dataset name
+        kwargs: dict, additional arguments, e.g.,
+            output_path: str, path to save the evaluation result
+            threshold: float, threshold for fuzzy matching for pdfvqa and tatdqa, default 0.95
     @return:
         result: dict, each key contains the count, correct count, and score. The special key 'all' contains the overall evaluation score, e.g.,
             {
@@ -236,7 +239,7 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
     output_path = kwargs.get('output_path', None)
     with open(output_path, 'w', encoding='UTF-8') if output_path else nullcontext() as outfile:
         for pred, gold in zip(pred_data, gold_data):
-            score = evaluation(dataset, pred['answer'], gold, **kwargs)
+            score = evaluate_dataset(dataset, pred['answer'], gold, **kwargs)
             if score < 0.5 and output_path is not None:
                 outfile.write(f'\n[ERROR]: data (type={gold["question_type"] if "question_type" in gold else gold['tags']}) with id {gold["uuid"]}\n')
                 outfile.write(f'Gold Answer: {resolve_gold_answer(gold)}\n')

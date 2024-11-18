@@ -20,10 +20,6 @@ parser.add_argument('--temperature', type=float, default=0.7)
 parser.add_argument('--top_p', type=float, default=0.95)
 parser.add_argument('--max_tokens', type=int, default=1500)
 parser.add_argument('--max_turn', type=int, default=2, help='Maximum turns for the agent to interact with the environment')
-parser.add_argument('--eval_llm', type=str, default='gpt-4o', help='Evaluation LLM model')
-parser.add_argument('--eval_temperature', type=float, default=0.7, help='Evaluation temperature')
-parser.add_argument('--eval_top_p', type=float, default=0.95, help='Evaluation top_p')
-parser.add_argument('--threshold', type=float, default=0.95, help='Threshold for fuzzy matching during evaluation')
 parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
 args = parser.parse_args()
 
@@ -79,6 +75,6 @@ with open(output_path, 'w', encoding='UTF-8') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")
-result = evaluate(preds, test_data, args.dataset, model=args.eval_llm, temperature=args.eval_temperature, top_p=args.eval_top_p, threshold=args.threshold, output_path=os.path.join(result_dir, 'evaluation.txt'))
+result = evaluate(preds, test_data, args.dataset, output_path=os.path.join(result_dir, 'evaluation.txt'))
 result_table = print_result(result)
 logger.info(f"Final evaluation result on {args.dataset}:\n{result_table}")

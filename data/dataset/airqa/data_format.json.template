@@ -5,7 +5,7 @@
     "tags": [
         "tag1",
         "tag2"
-    ], // different tags for the data or task sample
+    ], // different tags for the data or task sample, see documents/airqa_tags.md for reference
     "pdf_id": [
         "xxx-xxx-xxx-xxx"
     ], // unique ids of the PDF file, uuid5(namespace, 'paper title')
@@ -21,11 +21,11 @@
     "evaluator": {
         "eval_func": "function_name_to_call", // all eval functions are defined under `evaluation/` folder
         "eval_kwargs": {
-            "score_points": [
+            "scoring_points": [
                 "1.score point1",
                 "2.score point1"
             ]
-        } // the gold answer or how to get the gold answer should be included in `eval_kwargs` dict. Other optional keyword arguments can be used for customization and function re-use.
+        } // the gold answer or how to get the gold answer should be included in `eval_kwargs` dict. Other optional keyword arguments can be used for customization and function re-use, e.g., `lowercase=True` and `threshold=0.95`.
     }, // A complex dict specifying the evaluation function and its parameters. The first parameter of the `eval_func` must be LLM predicted string.
     "state": {
         "gpt-4o-2024-05-13": false,
