@@ -165,7 +165,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
 
         batch_timeout = max(10, max_timeout // batches)
         for i in range(batches): # search result iteratively
-            filter_str = filter_prefix + "[]".format(', '.join([f"'{pk}'" for pk in result[i * batch_size: (i + 1) * batch_size]]))
+            filter_str = filter_prefix + "[{}]".format(', '.join([f"'{pk}'" for pk in result[i * batch_size: (i + 1) * batch_size]]))
             try:
                 results.extend(search_vectostore(vs_conn, filter_str, forceTimeout=batch_timeout))
             except FunctionTimedOut as e:
