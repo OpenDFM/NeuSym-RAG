@@ -187,7 +187,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
             """ Each dict in search_result is in the format:
             {
                 "id": Union[str, int],
-                "distance": float, # rename to "distance/score" in the output
+                "distance": float, # rename to "distance" or "score" in the output
                 "entity": {
                     "output_field1": value1,
                     "output_field2": value2,
@@ -196,7 +196,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
             }
             """
             # by default, vector_index is the index name used to search the collection
-            metric_type = vs_conn.describe_index(self.collection_name, index_name='vector_index')['metric_type']
+            metric_type = vs_conn.describe_index(self.collection_name, index_name='vector_index')['metric_type'].upper()
             msg = f'The retrieved results from the vectostore in the second stage are sorted from the most to least relevant based on metric type {metric_type}:\n'
 
             output_format = format_kwargs['output_format']
@@ -213,16 +213,23 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
             else: # resolve the nested entity field
                 df_entity = pd.json_normalize(df['entity'])
                 df = df.drop(columns=['entity']).join(df_entity)
-            df = df.rename(columns={'distance': 'distance/score'})
-            df['distance/score'] = df['distance/score'].round(4)
+            if metric_type in ['IP', 'COSINE']:
+                df = df.rename(columns={'distance': 'score'})
+                df['score'] = df['score'].round(4)
+            else:
+                df['distance'] = df['distance'].round(4)
 
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
                 msg = df.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string': # customize the result display
                 for index, row in df.iterrows():
-                    id_, score = row['id'], row['distance/score']
-                    msg += f"Index: {index}, ID: {id_}, Distance/Score: {score}\n" if format_kwargs['index'] else f"ID: {id_}, Distance/Score: {score}\n"
+                    id_ = row['id']
+                    score = row['score'] if metric_type in ['IP', 'COSINE'] else row['distance']
+                    header_msg = f"ID: {id_}, {'Score' if metric_type in ['IP', 'COSINE'] else 'Distance'}: {score}\n"
+                    if format_kwargs['index']:
+                        header_msg = f"Index: {index}, " + header_msg
+                    msg += header_msg
                     for field in self.output_fields:
                         msg += f"    {field}: {row[field]}\n"
                     msg += '\n'
@@ -235,8 +242,8 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
             return msg + suffix
 
         # post-process the search result, combine different batches and take top `limit` records
-        metric_type = vs_conn.describe_index(self.collection_name, index_name='vector_index')['metric_type']
-        reverse = True if metric_type.upper() in ['IP', 'COSINE'] else False # true -> larger means more relevant
+        metric_type = vs_conn.describe_index(self.collection_name, index_name='vector_index')['metric_type'].upper()
+        reverse = True if metric_type in ['IP', 'COSINE'] else False # true -> larger means more relevant
         results = sorted(results, key=lambda x: x['distance'], reverse=reverse)[:self.limit]
         msg = msg + output_formatter(results, output_kwargs)
         return Observation(msg)
