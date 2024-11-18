@@ -37,6 +37,20 @@ def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperat
     time.sleep(1)
     return response
 
+def call_llm_with_message(messages: List[Dict[str, Any]], model: str = 'gpt-4o', top_p: float = 0.95, temperature: float = 0.7) -> str:
+    """ Call LLM to generate the response directly using the message list.
+    """
+    model_class = infer_model_class(model)
+    if model_class.__name__ not in GLOBAL_LLM:
+        GLOBAL_LLM[model_class.__name__] = model_class()
+    response = GLOBAL_LLM[model_class.__name__].get_response(
+        messages=messages,
+        model=model,
+        temperature=temperature,
+        top_p=top_p
+    )
+    time.sleep(1)
+    return response
 
 def get_uuid(name: Optional[str] = None, uuid_type: str = 'uuid5', uuid_namespace: str = 'dns') -> str:
     """ Generate a UUID string given the input name.

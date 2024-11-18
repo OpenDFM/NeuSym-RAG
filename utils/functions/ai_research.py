@@ -1,6 +1,7 @@
 #coding=utf8
 import json, sys, os, re, logging
 from typing import List, Any
+import tempfile
 
 import PyPDF2
 from pdf2image import convert_from_path
@@ -9,6 +10,7 @@ from pdfminer.layout import LTFigure, LTImage, LTRect
 
 from utils.functions.common_functions import get_uuid
 from utils.functions.pdf_functions import crop_pdf, convert_pdf_to_image
+from utils.functions.image_functions import get_image_summary
 
 def get_ai_research_per_page_figure_uuid_and_summary(pdf_path: str) -> List[str]:
     """ Output:
@@ -16,18 +18,17 @@ def get_ai_research_per_page_figure_uuid_and_summary(pdf_path: str) -> List[str]
     """
     pdf_file_obj = open(pdf_path, 'rb')
     pdf_readed = PyPDF2.PdfReader(pdf_file_obj)
+    tmp_pdf_file = tempfile.NamedTemporaryFile(suffix='.pdf', dir=os.path.join(os.getcwd(), '.cache'))
+    tmp_png_file = tempfile.NamedTemporaryFile(suffix='.png', dir=os.path.join(os.getcwd(), '.cache'))
+    results = []
     
     for page_num, page in enumerate(extract_pages(pdf_path), start = 1):
         page_obj = pdf_readed.pages[page_num - 1]
         page_width = page_obj.mediabox.upper_right[0]
         page_height = page_obj.mediabox.upper_right[1]
+        page_data = []
         for element_num, element in enumerate(page._objs, start = 1):
-            output_pdf_dir = f'./tmp/page_{page_num}_figure_{element_num}.pdf'
-            output_png_dir = f'./tmp/page_{page_num}_figure_{element_num}.png'
-            if isinstance(element, LTImage):
-                crop_pdf(element, page_obj, output_pdf_dir)
-                convert_pdf_to_image(output_pdf_dir, output_png_dir)
-            elif isinstance(element, LTFigure):
+            if isinstance(element, LTFigure):
                 element.x1 = element.y1 = 0
                 for sub_element in element:
                     if not isinstance(sub_element, LTRect) and sub_element.x1 <= page_width and sub_element.y1 <= page_height:
@@ -36,7 +37,17 @@ def get_ai_research_per_page_figure_uuid_and_summary(pdf_path: str) -> List[str]
                 element.x1 = min(element.x1 + 5, page_width)
                 element.y1 = min(element.y1 + 5, page_height)
                 element.y0, element.y1 = element.y1, element.y0
-                crop_pdf(element, page_obj, output_pdf_dir)
-                convert_pdf_to_image(output_pdf_dir, output_png_dir)
+            if isinstance(element, (LTImage, LTFigure)):
+                crop_pdf(element, page_obj, tmp_pdf_file.name)
+                convert_pdf_to_image(tmp_pdf_file.name, tmp_png_file.name)
+                uuid = get_uuid(f"page_{page_num}_figure_{element_num}")
+                summary = get_image_summary(tmp_png_file.name)
+                bbox = [element.x0, page_height - element.y1, element.x1 - element.x0, element.y1 - element.y0]
+                page_data.append({'uuid': uuid, 'summary': summary, 'bbox': bbox})
+        results.append(page_data)
 
     pdf_file_obj.close()
+    tmp_pdf_file.close()
+    tmp_png_file.close()
+    
+    return results
