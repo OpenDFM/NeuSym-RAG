@@ -1,6 +1,6 @@
 #coding=utf8
 import json, sys, os, re, logging
-from typing import List, Union, Optional, Tuple, Any, Dict, Dict
+from typing import List, Union, Optional, Tuple, Any, Dict
 import tempfile
 import fitz  # PyMuPDF
 import PyPDF2
@@ -16,7 +16,7 @@ from utils.functions.image_functions import get_image_summary
 def load_json_from_processed_data(pdf_path: str) -> dict:
     """output:
     {  
-        "pdf_path": "data/dataset/airqa/papers/example.pdf",
+        "pdf_path": "data/dataset/airqa/papers/acl2023/example.pdf",
         "info_from_mineru": {
             
             "tables": [
@@ -63,13 +63,13 @@ def get_financial_report_per_page_chunk_uuid_and_text(pdf_path: str, page_data: 
             ...
         ]
     """
-    # Assuming text_splitter is a predefined function that splits text into chunks
+    
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     
     # Initialize an empty list to store the results
     results = []
     
-    # Extract the PDF name from the path (assuming the PDF name is the last part of the path, before extension)
+    # Extract the PDF name from the path (PDF name is the last part of the path)
     pdf_name = pdf_path.split('/')[-1].split('.')[0]
     
     # Iterate through each page's content and UUIDs
@@ -96,8 +96,6 @@ def get_financial_report_per_page_chunk_uuid_and_text(pdf_path: str, page_data: 
 
 def get_ai_research_per_page_table_uuid_and_info(pdf_path: str, pdf_data: dict) -> List[List[Dict[str, Any]]]:
     """
-    Extracts per-page table information with UUID and summary.
-
     input:
         pdf_data (dict): The processed JSON structure for a PDF, containing table data.
 
@@ -105,6 +103,7 @@ def get_ai_research_per_page_table_uuid_and_info(pdf_path: str, pdf_data: dict) 
         [ [ {'uuid': uuid1 of page1, 'table_content':table_html ,'table_caption':table caption1, 'bbox': bbox1, 'table_summary':table_summary}, {...} ], [ {...} ] ... ]
     """
     pdf_data_mineru=pdf_data["info_from_mineru"]
+    pdf_name = pdf_path.split('/')[-1].split('.')[0]
     output = []  # Final output containing tables grouped by pages
 
     # Group tables by page number
@@ -123,12 +122,12 @@ def get_ai_research_per_page_table_uuid_and_info(pdf_path: str, pdf_data: dict) 
 
             for ordinal, table in enumerate(page_tables, start=1):
                 # Generate UUID for the table
-                uuid = get_uuid(name=f"page_{page_num}_table_{ordinal}")
+                uuid = get_uuid(name=f"{pdf_name}_page_{page_num}_table_{ordinal}")
 
                 # Generate a summary for the table using LLM
                 messages = [
                     {"role": "system", "content": "You are an expert in summarizing data. Your task is to generate a concise summary for an HTML-formatted table, focusing on key information and describing the table content clearly and succinctly."},
-                    {"role": "user", "content": f"Please generate a brief summary for the following table without any extra information or formatting in no more than 50 words. \nTable Caption:{table[table_caption]}\nTable Content in html:{table[table_html]}"}
+                    {"role": "user", "content": f"Please generate a brief summary for the following table without any extra information or formatting in no more than 50 words. \nTable Caption:{table["table_caption"]}\nTable Content in html:{table["table_html"]}"}
                 ]
                 table_summary = call_llm_with_message(messages)
 
@@ -151,11 +150,10 @@ def get_ai_research_per_page_table_uuid_and_info(pdf_path: str, pdf_data: dict) 
 
 
 
-def get_ai_research_per_page_figure_uuid_and_summary(pdf_data: str) -> List[List[Dict[str, Any]]]:
+def get_ai_research_per_page_figure_uuid_and_summary(pdf_path: str) -> List[List[Dict[str, Any]]]:
     """ Output:
         [ [ {'uuid': uuid1, 'summary': summary1, 'bbox': bbox1}, {...} ], [ {...} ] ... ]
     """
-    pdf_path, pdf_uuid = pdf_data['pdf_path'], pdf_data['uuid']
     pdf_file_obj = open(pdf_path, 'rb')
     pdf_readed = PyPDF2.PdfReader(pdf_file_obj)
     tmp_pdf_file = tempfile.NamedTemporaryFile(suffix='.pdf', dir=os.path.join(os.getcwd(), '.cache'))
@@ -180,7 +178,7 @@ def get_ai_research_per_page_figure_uuid_and_summary(pdf_data: str) -> List[List
             if isinstance(element, (LTImage, LTFigure)):
                 crop_pdf(element, page_obj, tmp_pdf_file.name)
                 convert_pdf_to_image(tmp_pdf_file.name, tmp_png_file.name)
-                uuid = get_uuid(f"{pdf_uuid}_page_{page_num}_figure_{element_num}")
+                uuid = get_uuid(f"page_{page_num}_figure_{element_num}")
                 summary = get_image_summary(tmp_png_file.name)
                 bbox = [element.x0, page_height - element.y1, element.x1 - element.x0, element.y1 - element.y0]
                 page_data.append({'uuid': uuid, 'summary': summary, 'bbox': bbox})
@@ -189,22 +187,5 @@ def get_ai_research_per_page_figure_uuid_and_summary(pdf_data: str) -> List[List
     pdf_file_obj.close()
     tmp_pdf_file.close()
     tmp_png_file.close()
-    
-    return results
-
-def aggregate_ai_research_table_figures(
-        pdf_data: dict, 
-        page_ids: List[str], 
-        figures: List[List[Dict[str, Any]]]
-    ) -> List[List[Any]] :
-    """ Output:
-        [ [ figure_id, figure_summary, bounding_box, ordinal, ref_paper_id, ref_page_id ] ]
-    """
-    results = []
-    ref_paper_id = pdf_data['uuid']
-    
-    for idx, page_id in enumerate(page_ids):
-        for ordinal, figure in enumerate(figures[idx]):
-            results.append([figure['uuid'], figure['summary'], json.dumps(figure['bbox']), ordinal, ref_paper_id, page_id])
     
     return results

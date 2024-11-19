@@ -1,5 +1,5 @@
 #coding=utf8
-import os, json, sys, logging, re, tqdm, math, zipfile, pickle, random
+import os, json, sys, logging, re, tqdm, math, zipfile, pickle, random, subprocess
 import pandas as pd
 import fitz  # PyMuPDF
 import shutil
@@ -457,6 +457,145 @@ def process_tatdqa(
             shutil.copy(pdf['pdf_path'], test_doc_path)
 
     return {'test_data': test_data, 'pdf_data': pdf_data}
+
+
+def process_airqa(
+    raw_data_folder: str = 'data/dataset/airqa/papers',
+    processed_data_folder: str = 'data/dataset/airqa/processed_data'
+):
+    """
+    Output:
+    The function generates a JSON file for each PDF in airqa, containing the extracted table and figure information. 
+    The output JSON structure is as follows:
+
+    {
+        "pdf_path": <str>,  # Path to the input PDF file
+        "info_from_mineru": {
+            "tables": [  # A list of extracted table information
+                {
+                    "table_caption": <str>,  # The caption of the table (if available)
+                    "table_html": <str>,     # The table content in HTML format (if available)
+                    "table_bbox": [<float>, <float>, <float>, <float>],  # The bounding box of the table in [x1, y1, x2, y2]
+                    "page_number": <int>     # The page number where the table is located
+                },
+                ...
+            ],
+            "figures": [  # A list of extracted figure information
+                {
+                    "figure_caption": <str>,  # The caption of the figure (if available)
+                    "figure_path": <str>,     # Path to the extracted image file
+                    "figure_bbox": [<float>, <float>, <float>, <float>],  # The bounding box of the figure in [x1, y1, x2, y2]
+                    "page_number": <int>      # The page number where the figure is located
+                },
+                ...
+            ]
+        }
+    }
+
+    Each JSON file is saved with the same name as the corresponding PDF in the `processed_data_folder`.
+    For example, if the PDF is named `64148d31-f547-5f8c-a7a0-3cc080a195dd.pdf`, the output will be saved as `processed_data_folder/64148d31-f547-5f8c-a7a0-3cc080a195dd.json`.
+"""
+
+    # Construct the command
+    #Before this, please download models according to https://github.com/opendatalab/MinerU/blob/master/docs/how_to_download_models_en.md
+    #Before this, please modify magic-pdf.json in "C:\Users\username"(windows) or"/home/username"(linux)or"/Users/username"(macos) to set the table-config to true
+    command = [
+        "magic-pdf",
+        "-p", raw_data_folder,          # Path to the folder containing PDF files
+        "-o", processed_data_folder,   # Output directory
+        "-m", "auto"                   # Parsing method (ocr, txt, or auto)
+    ]
+
+    # Execute the command and capture the output
+    try:
+        result = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Command execution failed with error: {e.stderr}")
+        return  # Exit the function if the command fails
+
+    # Get all PDF file paths in the folder
+    pdf_files = []
+    for root, _, files in os.walk(raw_data_folder):
+        pdf_files.extend(
+            os.path.join(root, file) for file in files if file.endswith('.pdf')
+        )
+
+    for pdf_path in pdf_files:
+        pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
+        json_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_middle.json')
+
+        # Check if the JSON file exists
+        if not os.path.exists(json_path):
+            print(f"File {json_path} does not exist, skipping this file")
+            continue
+
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        # Initialize the output data structure
+        result = {
+            "pdf_path": pdf_path,
+            "info_from_mineru": {
+                "tables": [],
+                "figures": []
+            }
+        }
+
+        # Iterate through the parsed results for each page of the PDF
+        for page_number, page in enumerate(data.get("pdf_info", []), start=1):
+            # Extract information about tables
+            for block in page.get("tables", []):
+                if block.get("type") == "table":
+                    table_info = {
+                        "table_caption": "",
+                        "table_html": "",
+                        "table_bbox": block.get("bbox", []),
+                        "page_number": page_number
+                    }
+
+                    for sub_block in block.get("blocks", []):
+                        if sub_block.get("type") == "table_caption":
+                            table_info["table_caption"] += " ".join(
+                                span.get("content", "")
+                                for line in sub_block.get("lines", [])
+                                for span in line.get("spans", [])
+                            )
+                        elif sub_block.get("type") == "table_body":
+                            table_info["table_html"] = sub_block.get("lines", [{}])[0].get("spans", [{}])[0].get("html", "")
+
+                    result["info_from_mineru"]["tables"].append(table_info)
+
+            # Extract information about figures
+            for block in page.get("images", []):
+                if block.get("type") == "image":
+                    figure_info = {
+                        "figure_caption": "",
+                        "figure_path": "",
+                        "figure_bbox": block.get("bbox", []),
+                        "page_number": page_number
+                    }
+
+                    for sub_block in block.get("blocks", []):
+                        if sub_block.get("type") == "image_caption":
+                            figure_info["figure_caption"] += " ".join(
+                                span.get("content", "")
+                                for line in sub_block.get("lines", [])
+                                for span in line.get("spans", [])
+                            )
+                        elif sub_block.get("type") == "image_body":
+                            image_path = sub_block.get("lines", [{}])[0].get("spans", [{}])[0].get("image_path", "")
+                            figure_info["figure_path"] = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', 'images', image_path)
+
+                    result["info_from_mineru"]["figures"].append(figure_info)
+
+        # Write each paper's data into a separate JSON file
+        output_path = os.path.join(processed_data_folder, f'{pdf_name}.json')
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(result, f, ensure_ascii=False, indent=4)
+
+
+
+
 
 def classify_question_type(data: Dict[str, Any], dataset: str) -> str:
     """ Classify the type for each question.
