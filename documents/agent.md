@@ -24,10 +24,12 @@ The entire agent framework can be splitted into 4 parts under folder `agents/`:
     - prompts/ # different prompt templates
         - agent_prompt.py # different agent/interaction method, e.g., ReAct
         - system_prompt.py # for different interactive environments and task input
+        - hint_prompt.py # suggestions or hints for interactive agent framework
         - schema_prompt.py # for database and vectorstore serialization
         - task_prompt.py # for concrete datasets, specify the output formatting requirements
     - frameworks/ # agent frameworks which combine all stuff above, e.g., environments, models, and prompts
         - agent_base.py # base class
+        - hybrid_rag.py # final agentic framework: hybrid neural and symbolic retrieval
         - text2sql_rag.py # agentic baseline: text-to-SQL symbolic retrieval
         - text2vec_rag.py # agentic baseline: text-to-vector neural retrieval
         - two_stage_text2sql_rag.py # baseline: first generate SQL, then generate answer
@@ -42,9 +44,16 @@ Here are some common arguments:
 - dataset and database:
     - `pdfvqa` -> `biology_paper`
     - `tatdqa` -> `financial_report`
+    - `airqa` -> `ai_research`
 - the predicted result and log history are both saved in folder `results/`
 - `action_format`: chosen from [`json`, `markdown`, `xml`, `yaml`], by default is `json`
-- `output_format`: only used in action `RetrieveFromDatabase` and `RetrieveFromVectorstore`, chosen from [`markdown`, `json`, `html`, `string`], by default is `markdown` table. Currently, you need to modify this parameter in the action file, e.g., `agents/envs/actions/retrieve_from_database.py`
+- `output_format`: only used in actions `RetrieveFrom*`, chosen from [`markdown`, `json`, `html`, `string`], by default is `markdown` table. Currently, you need to modify this parameter in the action file, e.g., `agents/envs/actions/retrieve_from_database.py`
+
+0. Hybrid neural symbolic interactive retrieval framework:
+```sh
+python scripts/hybrid_neural_symbolic_rag.py --dataset pdfvqa --database biology_paper --vectorstore biology_paper --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 15
+python scripts/hybrid_neural_symbolic_rag.py --dataset tatdqa --database financial_report --vectorstore financial_report --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 15
+```
 
 1. Text-to-SQL with interactive database environment baseline:
 ```sh
@@ -74,9 +83,9 @@ python scripts/two_stage_text2vec_baseline.py --dataset tatdqa --vectorstore fin
 
 5. Classic RAG (pre-fetch the context and call LLM once) baseline:
 - `--collection_name` can be changed to any other embedding models (see `data/vectorstore/*/*.json` for all available collections)
-- if `--table_name` and `--column_name` are not specified, all encodable text content will be used by default (see `data/database/*/*.json` for all available encodable columns)
+- the arguments `--table_name` and `--column_name` must be specified (see `data/database/*/*.json` for all available encodable columns)
 - `--limit` restricts the number of returned chunks
 ```sh
-python scripts/classic_rag_baseline.py --dataset pdfvqa --vectorstore biology_paper --test_data test_data_sample.jsonl --agent_method classic_rag --llm gpt-4o-mini --max_turn 1 --collection_name text_bm25_en --table_name chunks --column_name text_content --limit 2
-python scripts/classic_rag_baseline.py --dataset tatdqa --vectorstore financial_report --test_data test_data_sample.jsonl --agent_method classic_rag --llm gpt-4o-mini --max_turn 1 --collection_name text_bm25_en --table_name chunks --column_name text_content --limit 2
+python scripts/classic_rag_baseline.py --dataset pdfvqa --vectorstore biology_paper --test_data test_data_sample.jsonl --agent_method classic_rag --llm gpt-4o-mini --max_turn 1 --collection_name text_sentence_transformers_all_minilm_l6_v2 --table_name chunks --column_name text_content --limit 2
+python scripts/classic_rag_baseline.py --dataset tatdqa --vectorstore financial_report --test_data test_data_sample.jsonl --agent_method classic_rag --llm gpt-4o-mini --max_turn 1 --collection_name text_sentence_transformers_all_minilm_l6_v2 --table_name chunks --column_name text_content --limit 2
 ```
