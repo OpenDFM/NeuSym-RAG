@@ -114,9 +114,9 @@ def crawl_acl_anthology_papers(
         errata_file: str, the file path to the errata JSON file.
     """
     # get UUID -> paper mappings
-    uuid2papers = os.path.join(output_dir, f'uuid2papers.json')
-    if os.path.exists(uuid2papers):
-        with open(uuid2papers, 'r', encoding='utf8') as inf:
+    uuid2papers_path = os.path.join(output_dir, f'uuid2papers.json')
+    if os.path.exists(uuid2papers_path):
+        with open(uuid2papers_path, 'r', encoding='utf8') as inf:
             uuid2papers = json.load(inf)
     else: uuid2papers = {}
 
@@ -204,7 +204,7 @@ def crawl_acl_anthology_papers(
                 else: skip_first_p = True
 
         # save the UUID -> paper mappings after finishing each volume
-        with open(uuid2papers, 'w', encoding='utf8') as ouf:
+        with open(uuid2papers_path, 'w', encoding='utf8') as ouf:
             json.dump(uuid2papers, ouf, ensure_ascii=False, indent=4)
     return uuid2papers
 
