@@ -1,6 +1,6 @@
 #coding=utf8
 import json, sys, os, re, logging
-from typing import List, Any
+from typing import List, Any, Dict
 import tempfile
 
 import PyPDF2
@@ -12,10 +12,15 @@ from utils.functions.common_functions import get_uuid
 from utils.functions.pdf_functions import crop_pdf, convert_pdf_to_image
 from utils.functions.image_functions import get_image_summary
 
-def get_ai_research_per_page_figure_uuid_and_summary(pdf_path: str) -> List[str]:
+
+def get_ai_research_per_page_uuid(pdf_data: dict) -> List[str]:
+    pass
+
+def get_ai_research_per_page_figure_uuid_and_summary(pdf_data: dict) -> List[List[Dict[str, Any]]]:
     """ Output:
         [ [ {'uuid': uuid1, 'summary': summary1, 'bbox': bbox1}, {...} ], [ {...} ] ... ]
     """
+    pdf_path, pdf_uuid = pdf_data['pdf_path'], pdf_data['uuid']
     pdf_file_obj = open(pdf_path, 'rb')
     pdf_readed = PyPDF2.PdfReader(pdf_file_obj)
     tmp_pdf_file = tempfile.NamedTemporaryFile(suffix='.pdf', dir=os.path.join(os.getcwd(), '.cache'))
@@ -40,7 +45,7 @@ def get_ai_research_per_page_figure_uuid_and_summary(pdf_path: str) -> List[str]
             if isinstance(element, (LTImage, LTFigure)):
                 crop_pdf(element, page_obj, tmp_pdf_file.name)
                 convert_pdf_to_image(tmp_pdf_file.name, tmp_png_file.name)
-                uuid = get_uuid(f"page_{page_num}_figure_{element_num}")
+                uuid = get_uuid(f"{pdf_uuid}_page_{page_num}_figure_{element_num}")
                 summary = get_image_summary(tmp_png_file.name)
                 bbox = [element.x0, page_height - element.y1, element.x1 - element.x0, element.y1 - element.y0]
                 page_data.append({'uuid': uuid, 'summary': summary, 'bbox': bbox})
@@ -49,5 +54,22 @@ def get_ai_research_per_page_figure_uuid_and_summary(pdf_path: str) -> List[str]
     pdf_file_obj.close()
     tmp_pdf_file.close()
     tmp_png_file.close()
+    
+    return results
+
+def aggregate_ai_research_table_figures(
+        pdf_data: dict, 
+        page_ids: List[str], 
+        figures: List[List[Dict[str, Any]]]
+    ) -> List[List[Any]] :
+    """ Output:
+        [ [ figure_id, figure_summary, bounding_box, ordinal, ref_paper_id, ref_page_id ] ]
+    """
+    results = []
+    ref_paper_id = pdf_data['uuid']
+    
+    for idx, page_id in enumerate(page_ids):
+        for ordinal, figure in enumerate(figures[idx]):
+            results.append([figure['uuid'], figure['summary'], json.dumps(figure['bbox']), ordinal, ref_paper_id, page_id])
     
     return results
