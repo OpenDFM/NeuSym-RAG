@@ -46,13 +46,11 @@ class ClassicRAGAgent(AgentBase):
             page_number_filter = f'page_number in {sorted(page_number)}' if isinstance(page_number, list) else \
                 f"page_number == {page_number}"
             filter_conditions.append(page_number_filter)
-        if table_name is not None:
-            filter_conditions.append(f"table_name == '{table_name}'")
-        if column_name is not None:
-            filter_conditions.append(f"column_name == '{column_name}'")
         filter_str = ' and '.join(filter_conditions) if len(filter_conditions) > 0 else ''
         action = RetrieveFromVectorstore(
             query=question,
+            table_name=table_name,
+            column_name=column_name,
             collection_name=collection_name,
             filter=filter_str,
             limit=limit,

@@ -48,9 +48,9 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
         if self.sql == '' or self.sql is None:
             return False, "[Error]: SQL string is empty."
         if self.table_name not in env.table2encodable or len(env.table2encodable[self.table_name]) == 0:
-            return False, f"[Error]: Table {self.table_name} does not have any encodable column in the Milvus vectorstore. Please choose from these tables {list(env.table2encodable.keys())}."
+            return False, f"[Error]: Table {repr(self.table_name)} does not have any encodable column in the Milvus vectorstore. Please choose from these tables {list(env.table2encodable.keys())}."
         if self.column_name not in env.table2encodable[self.table_name]:
-            return False, "[Error]: Column name `{}` is not a valid encodable column in the table `{}`. Please choose from these columns {}.".format(self.column_name, self.table_name, env.table2encodable[self.table_name])
+            return False, "[Error]: Column name {} is not a valid encodable column in the table {}. Please choose from these columns {}.".format(repr(self.column_name), repr(self.table_name), env.table2encodable[self.table_name])
 
         vs_conn: MilvusClient = env.vectorstore_conn
         if not vs_conn or not isinstance(vs_conn, MilvusClient):

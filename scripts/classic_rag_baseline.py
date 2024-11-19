@@ -13,9 +13,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default='pdfvqa', help='which dataset to use')
 parser.add_argument('--vectorstore', type=str, default='biology_paper', help='which vectorstore to use')
 parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
-parser.add_argument('--table_name', type=str, default=None, help='which table to use, if not specified, use all tables under the database')
-parser.add_argument('--column_name', type=str, default=None, help='which column to use, if not specified, use all encodable columns under the table')
-parser.add_argument('--collection_name', type=str, default='text_bm25_en', help='which collection to use')
+parser.add_argument('--table_name', type=str, default='chunks', help='which table to use, if not specified, use all tables under the database')
+parser.add_argument('--column_name', type=str, default='text_content', help='which column to use, if not specified, use all encodable columns under the table')
+parser.add_argument('--collection_name', type=str, default='text_sentence_transformers_all_minilm_l6_v2', help='which collection to use')
 parser.add_argument('--limit', type=int, default=2, help='limit the number of returned results')
 parser.add_argument('--agent_method', type=str, default='classic_rag', help='Agent method')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
@@ -25,6 +25,8 @@ parser.add_argument('--max_tokens', type=int, default=1500)
 parser.add_argument('--max_turn', type=int, default=1, help='Maximum turns for the agent to interact with the environment')
 parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
 args = parser.parse_args()
+
+assert args.table_name is not None and args.column_name is not None, "Table name and column name must be specified."
 
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 filename = f'{args.dataset}_{args.agent_method}_{args.llm}-{start_time}'
@@ -52,7 +54,10 @@ agent: AgentBase = FRAMEWORKS['classic_rag'](llm, env, agent_method=args.agent_m
 test_data = []
 if os.path.exists(args.test_data) and os.path.isfile(args.test_data):
     test_data_path = args.test_data
-else: test_data_path = os.path.join('data', 'dataset', args.dataset, 'processed_data', args.test_data)
+elif os.path.exists(os.path.join('data', 'dataset', args.dataset, args.test_data)):
+    test_data_path = os.path.join('data', 'dataset', args.dataset, args.test_data)
+else:
+    test_data_path = os.path.join('data', 'dataset', args.dataset, 'processed_data', args.test_data)
 with open(test_data_path, 'r') as inf:
     for line in inf:
         test_data.append(json.loads(line))
@@ -60,7 +65,7 @@ with open(test_data_path, 'r') as inf:
 preds = []
 for data in test_data:
     logger.info(f"Processing question: {data['uuid']}")
-    question, answer_format = formulate_input(args.vectorstore, data)
+    question, answer_format = formulate_input(args.dataset, data)
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
     result = agent.interact(
         question, answer_format,
@@ -70,11 +75,7 @@ for data in test_data:
         model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens,
         output_path=output_path
     )
-    preds.append({
-        'uuid': data['uuid'],
-        'question_type': data['question_type'],
-        'answer': result
-    })
+    preds.append({'uuid': data['uuid'], 'answer': result})
 logger.info(f"Total cost: {llm.get_cost()}")
 agent.close()
 

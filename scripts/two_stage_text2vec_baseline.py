@@ -49,7 +49,10 @@ agent: TwoStageText2VecRAGAgent = FRAMEWORKS['two_stage_text2vec'](llm, env, age
 test_data = []
 if os.path.exists(args.test_data) and os.path.isfile(args.test_data):
     test_data_path = args.test_data
-else: test_data_path = os.path.join('data', 'dataset', args.dataset, 'processed_data', args.test_data)
+elif os.path.exists(os.path.join('data', 'dataset', args.dataset, args.test_data)):
+    test_data_path = os.path.join('data', 'dataset', args.dataset, args.test_data)
+else:
+    test_data_path = os.path.join('data', 'dataset', args.dataset, 'processed_data', args.test_data)
 with open(test_data_path, 'r') as inf:
     for line in inf:
         test_data.append(json.loads(line))
@@ -59,14 +62,10 @@ vectorstore_prompt = convert_vectorstore_schema_to_prompt(args.vectorstore, seri
 preds = []
 for data in test_data:
     logger.info(f"Processing question: {data['uuid']}")
-    question, answer_format = formulate_input(args.vectorstore, data)
+    question, answer_format = formulate_input(args.dataset, data)
     output_path = os.path.join(result_dir, f'{data["uuid"]}.jsonl')
     result = agent.interact(question, vectorstore_prompt, answer_format, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path)
-    preds.append({
-        'uuid': data['uuid'],
-        'question_type': data['question_type'],
-        'answer': result
-    })
+    preds.append({'uuid': data['uuid'], 'answer': result})
 logger.info(f"Total cost: {llm.get_cost()}")
 agent.close()
 

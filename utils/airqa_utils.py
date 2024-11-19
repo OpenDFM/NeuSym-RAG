@@ -178,13 +178,16 @@ def crawl_acl_anthology_papers(
 
     def parse_acl_paper_abstract(node):
         # node is a <div> tag
-        return node.get_text().strip() if node.name == 'div' else None
-
+        return node.get_text().strip() if node is not None and node.name == 'div' else None
+    start = False
     for volume in soup.select('section#main h4 > a.align-middle'):
         volume_title = volume.get_text().strip()
         parent_node = volume.parent.parent
         skip_first_p = False # the first element is not a paper, more like an official summary or introduction
         logger.info(f"Processing volume: {volume_title}")
+        if not start and 'Proceedings of the 5th Workshop on Computational Approaches to Historical Language Change' not in volume_title:
+            continue
+        start = True
         for child in tqdm.tqdm(parent_node.find_all(recursive=False)):
             if child.name == 'p':
                 if skip_first_p:

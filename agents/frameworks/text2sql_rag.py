@@ -4,7 +4,7 @@ from typing import List, Dict, Any, Union, Tuple, Optional
 from agents.envs import AgentEnv
 from agents.envs.actions import Action, Observation
 from agents.models import LLMClient
-from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
+from agents.prompts import SYSTEM_PROMPTS, HINT_PROMPTS, AGENT_PROMPTS
 from agents.frameworks.agent_base import AgentBase
 
 
@@ -18,7 +18,8 @@ class Text2SQLRAGAgent(AgentBase):
         self.agent_prompt = AGENT_PROMPTS[agent_method].format(
             system_prompt=SYSTEM_PROMPTS['text2sql'],
             action_space_prompt=env.action_space_prompt,
-            max_turn=max_turn
+            max_turn=max_turn,
+            # hint_prompt=HINT_PROMPTS['text2sql']
         )
         logger.info(f'[AgentPrompt]: {self.agent_prompt}')
 

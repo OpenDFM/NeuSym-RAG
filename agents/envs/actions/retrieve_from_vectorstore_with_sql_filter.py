@@ -27,7 +27,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
         "tablefmt": "pretty", # for markdown format, see doc https://pypi.org/project/tabulate/ for all options
         "batch_size": 512, # batch size for vector search, primary_key in [...batch_size values...]
         "max_filter": 512000, # maximum number of filter primary key values to use in vector search, number of batches (or vectorstore.search() function calls) should be max_filter // batch_size
-        "max_rows": 20, # maximum rows to display in the output
+        "max_rows": 10, # maximum rows to display in the output
         "index": False, # whether to include the row index in the output
         "max_timeout": 1200 # the maximum timeout for the SQL execution is 20 minutes
     }, repr=False)
@@ -51,9 +51,9 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
         if self.sql == '':
             return False, "[Error]: SQL string is empty."
         if self.table_name not in env.table2encodable or len(env.table2encodable[self.table_name]) == 0:
-            return False, f"[Error]: Table {self.table_name} does not have any encodable column in the Milvus vectorstore. Please choose from these tables {list(env.table2encodable.keys())}."
+            return False, f"[Error]: Table {repr(self.table_name)} does not have any encodable column in the Milvus vectorstore. Please choose from these tables {list(env.table2encodable.keys())}."
         if self.column_name not in env.table2encodable[self.table_name]:
-            return False, "[Error]: Column name `{}` is not a valid encodable column in the table `{}`. Please choose from these columns {}.".format(self.column_name, self.table_name, env.table2encodable[self.table_name])
+            return False, "[Error]: Column name {} is not a valid encodable column in the table {}. Please choose from these columns {}.".format(repr(self.column_name), repr(self.table_name), env.table2encodable[self.table_name])
 
         vs_conn: MilvusClient = env.vectorstore_conn
         if not vs_conn:

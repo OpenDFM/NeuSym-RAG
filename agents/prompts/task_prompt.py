@@ -1,8 +1,8 @@
 #coding=utf8
 from typing import Any, Dict, Tuple
 
-def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
-    if database == 'biology_paper':
+def formulate_input(dataset: str, data: Dict[str, Any]) -> Tuple[str, str]:
+    if dataset == 'pdfvqa':
         question, page = data['question'], data['page_number']
         pdf_id = data['pdf_id']
         question += f" (for page {page} in PDF with id {pdf_id})" if page is not None else f" (for PDF with id {pdf_id})"
@@ -17,7 +17,7 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
             answer_format = 'Your answer should be a Python list of strings in the following format: ["str1", "str2", ...], where each string represents mostly a section or subsection title, do not ignore the double quotes. Note that, some parent-children belongingships are not recorded and you may need to infer from the position or text content of different regions or bounding boxes. If not found, please return the list ["No Section!"] or ["No subsection!"].'
         else:
             raise NotImplementedError(f"Question type {question_type} not supported.")
-    elif database == 'financial_report':
+    elif dataset == 'tatdqa':
         question, page = data['question'], data['page_number']
         pdf_id = data['pdf_id']
         question += f" (for page {page} in PDF with id {pdf_id})" if page is not None else f" (for PDF with id {pdf_id})"
@@ -37,5 +37,5 @@ def formulate_input(database: str, data: Dict[str, Any]) -> Tuple[str, str]:
         else:
             raise NotImplementedError(f"Question type {question_type} not supported.")
     else:
-        raise NotImplementedError(f"Dataset {database} not supported.")
+        raise NotImplementedError(f"Dataset {dataset} not supported.")
     return question, answer_format

@@ -100,7 +100,6 @@ def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], 
     @args:
         pred_ans: str, predicted answer
         gold_data: Dict[str, Any], gold data
-        question_type: str, question type, optional
     @return:
         score: float, evaluation score
     """
@@ -134,7 +133,6 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], **kwargs) -> float
     @args:
         pred_ans: LLM predicted str, predicted answer
         gold_data: Dict[str, Any], gold data containing 'uuid', 'question', 'question_type', 'answer', etc.
-        question_type: str, question type, optional
     """
     
     question_type, gold_scale, gold_answer = gold_data['question_type'], gold_data['answer'][1], gold_data['answer'][0]
@@ -222,13 +220,13 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
 
     pred_data, gold_data = [], []
     if isinstance(pred, str):
-        with open(pred, 'r') as f:
+        with open(pred, 'r', encoding='utf8') as f:
             for line in f:
                 pred = json.loads(line)
                 pred_data.append(pred)
     else: pred_data = pred
     if isinstance(gold, str):
-        with open(gold, 'r') as f:
+        with open(gold, 'r', encoding='utf8') as f:
             for line in f:
                 gold = json.loads(line)
                 gold_data.append(gold)
