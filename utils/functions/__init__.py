@@ -36,7 +36,7 @@ from .financial_report import (
 
 from .ai_research import (
     get_ai_research_per_page_figure_uuid_and_summary,
-    aggregate_ai_research_table_figures
+    # aggregate_ai_research_table_figures
 )
 
 from .test_domain import (
