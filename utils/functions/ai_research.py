@@ -151,11 +151,11 @@ def get_ai_research_per_page_table_uuid_and_info(pdf_path: str, pdf_data: dict) 
 
 
 
-def get_ai_research_per_page_figure_uuid_and_summary(pdf_path: str) -> List[List[Dict[str, Any]]]:
+def get_ai_research_per_page_figure_uuid_and_summary(pdf_data: str) -> List[List[Dict[str, Any]]]:
     """ Output:
         [ [ {'uuid': uuid1, 'summary': summary1, 'bbox': bbox1}, {...} ], [ {...} ] ... ]
     """
-    pdf_path, pdf_uuid = pdf_path['pdf_path'], pdf_path['uuid']
+    pdf_path, pdf_uuid = pdf_data['pdf_path'], pdf_data['uuid']
     pdf_file_obj = open(pdf_path, 'rb')
     pdf_readed = PyPDF2.PdfReader(pdf_file_obj)
     tmp_pdf_file = tempfile.NamedTemporaryFile(suffix='.pdf', dir=os.path.join(os.getcwd(), '.cache'))
