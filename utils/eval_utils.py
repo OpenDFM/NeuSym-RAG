@@ -1,5 +1,6 @@
 #coding=utf8
-import ast, math, os, openai, re
+import ast, math, os, openai, re, sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from typing import Dict, Any, Optional, List, Union
 from collections import defaultdict
 from fuzzywuzzy import fuzz, process
@@ -138,7 +139,7 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], **kwargs) -> float
     question_type, gold_scale, gold_answer = gold_data['question_type'], gold_data['answer'][1], gold_data['answer'][0]
     pred_ans = extract_list_from_str(str(pred_ans))
     if gold_scale == '' and question_type != 'arithmetic' or not isinstance(pred_ans, list):
-        pred_ans = [str(pred_ans), '']
+        pred_ans = [pred_ans, '']
     if len(pred_ans) != 2:
         return 0.0
     pred_answer, pred_scale = pred_ans[0], pred_ans[1]
