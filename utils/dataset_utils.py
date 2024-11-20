@@ -496,22 +496,32 @@ def process_airqa(
     For example, if the PDF is named `64148d31-f547-5f8c-a7a0-3cc080a195dd.pdf`, the output will be saved as `processed_data_folder/64148d31-f547-5f8c-a7a0-3cc080a195dd.json`.
 """
 
+    # get all the subfolders in raw_data_folder
+    subfolders = [
+        os.path.join(raw_data_folder, subfolder)
+        for subfolder in os.listdir(raw_data_folder)
+        if os.path.isdir(os.path.join(raw_data_folder, subfolder))
+    ]
+    
+    if not subfolders:
+        raise FileNotFoundError(f"No subfolder found in {raw_data_folder}")
+    
     # Construct the command
     #Before this, please download models according to https://github.com/opendatalab/MinerU/blob/master/docs/how_to_download_models_en.md
     #Before this, please modify magic-pdf.json in "C:\Users\username"(windows) or"/home/username"(linux)or"/Users/username"(macos) to set the table-config to true
-    command = [
-        "magic-pdf",
-        "-p", raw_data_folder,          # Path to the folder containing PDF files
-        "-o", processed_data_folder,   # Output directory
-        "-m", "auto"                   # Parsing method (ocr, txt, or auto)
-    ]
+    for subfolder in subfolders:
+        command = [
+            "magic-pdf",
+            "-p", subfolder,    # input folder
+            "-o", processed_data_folder,   # output folder
+            "-m", "auto"                   # method (ocr, txt, or auto)
+        ]
+        
+        try:
+            result = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='UTF-8')
+        except subprocess.CalledProcessError as e:
+            raise subprocess.CalledProcessError(f"Command execution failed for {subfolder} with error: {e.stderr}")
 
-    # Execute the command and capture the output
-    try:
-        result = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    except subprocess.CalledProcessError as e:
-        print(f"Command execution failed with error: {e.stderr}")
-        return  # Exit the function if the command fails
 
     # Get all PDF file paths in the folder
     pdf_files = []
@@ -526,8 +536,7 @@ def process_airqa(
 
         # Check if the JSON file exists
         if not os.path.exists(json_path):
-            print(f"File {json_path} does not exist, skipping this file")
-            continue
+            raise FileNotFoundError(f"File {json_path} does not exist")
 
         with open(json_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
