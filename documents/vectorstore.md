@@ -89,7 +89,7 @@ python utils/vectorstore_utils.py --vectorstore biology_paper --text_embed_type 
 python utils/vectorstore_utils.py --vectorstore biology_paper --image_embed --image_embed_model clip-vit-base-patch16 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
 
 # for financial_report vectorstore
-python utils/vectorstore_utils.py --vectorstore financial_report --text_embed_type bm25 --text_embed_model en --launch_method docker --docker_uri http://127.0.0.1:19530 
+python utils/vectorstore_utils.py --vectorstore financial_report --text_embed_type bm25 --text_embed_model en --launch_method docker --docker_uri http://127.0.0.1:19530 --from_scratch
 python utils/vectorstore_utils.py --vectorstore financial_report --text_embed_type sentence_transformers --text_embed_model all-MiniLM-L6-v2 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
 python utils/vectorstore_utils.py --vectorstore financial_report --image_embed --image_embed_model clip-vit-base-patch16 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
 ```
