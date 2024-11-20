@@ -51,18 +51,18 @@ def convert_vectorstore_schema_to_prompt(vectorstore: str, serialize_method: str
     with open(filter_rules, 'r') as f:
         filter_rules = json.load(f) # get all filter rules
 
-    # choose primary collection and remove redundant information for each modal
-    modal_primary_collection: Dict[str, str] = dict()
+    # choose primary collection and remove redundant information for each modality
+    modality_primary_collection: Dict[str, str] = dict()
     for collection in vs_schema:
         del collection['indexes']
-        modal = collection['collection_name'].split('_')[0]
-        if modal not in modal_primary_collection:
-            modal_primary_collection[modal] = collection['collection_name']
+        modality = collection['collection_name'].split('_')[0]
+        if modality not in modality_primary_collection:
+            modality_primary_collection[modality] = collection['collection_name']
             for field in collection['fields']:
                 if 'max_length' in field:
                     del field['max_length']
         else:
-            collection['fields'] = f"The fields of this collection are similar to the `{modal_primary_collection[modal]}` collection."
+            collection['fields'] = f"The fields of this collection are similar to the `{modality_primary_collection[modality]}` collection."
 
     # find encodable table-column pairs
     encodable_pairs: List[Union[Dict[str, Any], Tuple[str, str]]] = []
@@ -73,20 +73,21 @@ def convert_vectorstore_schema_to_prompt(vectorstore: str, serialize_method: str
             column_name = column['column_name']
             column_type = column['column_type']
             column_description = column['description']
-            if column.get('encodable', False):
+            encode_modality = column.get('encodable', None)
+            if encode_modality is not None:
                 if add_description:
                     if len(encodable_pairs) == 0 or encodable_pairs[-1]['table_name'] != table_name:
                         table_obj = {'table_name': table_name, 'table_description': table_description, 'encoded_columns': []}
                         encodable_pairs.append(table_obj)
                     else:
                         table_obj = encodable_pairs[-1]
-                    table_obj['encoded_columns'].append({'column_name': column_name, 'column_type': column_type, 'column_description': column_description})
+                    table_obj['encoded_columns'].append({'column_name': column_name, 'column_type': column_type, 'column_description': column_description, 'encode_modality': encode_modality})
                 else:
-                    encodable_pairs.append((table_name, column_name))
+                    encodable_pairs.append((table_name, column_name, encode_modality))
 
     if serialize_method == 'detailed_json':
         prompt = f"The vectorstore schema for {vectorstore} is as follows. Feel free to use any collection with different encoding models or modalities:\n{json.dumps(vs_schema, indent=4)}\n\n"
-        prompt += f"The following lists all encodable (table_name, column_name) pairs from the corresponding DuckDB database, where the encoded vector entries are sourced. You can leverage them for filter condition or output fields during similarity search:\n{json.dumps(encodable_pairs, indent=4)}\n\n"
+        prompt += f"The following lists all encodable (table_name, column_name, encode_modality) pairs from the corresponding DuckDB database, where the encoded vector entries are sourced. You can leverage them for filter condition or output fields during similarity search:\n{json.dumps(encodable_pairs, indent=4)}\n\n"
         prompt += f"Here are the operators that you can use in the filtering condition for the vectorstore:\n{json.dumps(filter_rules, indent=4)}"
     else:
         raise ValueError(f"Unsupported serialize method: {serialize_method}.")

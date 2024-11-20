@@ -3,6 +3,8 @@ from agents.envs.actions.action import Action, Observation
 from dataclasses import dataclass, field
 from pymilvus import MilvusClient
 from milvus_model.base import BaseEmbeddingFunction
+from towhee.runtime.runtime_pipeline import RuntimePipeline
+from towhee import DataCollection
 import pandas as pd
 import gymnasium as gym
 from dataclasses import dataclass, field
@@ -77,10 +79,13 @@ class RetrieveFromVectorstore(Action):
 
         vs_conn: MilvusClient = env.vectorstore_conn
         embedder_dict: Dict[str, Any] = env.embedder_dict
-        encoder: BaseEmbeddingFunction = embedder_dict[self.collection_name]['embedder']
-        encoder_type: str = embedder_dict[self.collection_name]['embed_type']
+        encoder: Union[BaseEmbeddingFunction, RuntimePipeline] = embedder_dict[self.collection_name]['embedder']
+        modality = self.collection_name.split('_')[0]
         try:
-            query_embedding = encoder.encode_queries([self.query])
+            if modality == 'text':
+                query_embedding = encoder.encode_queries([self.query])
+            else:
+                query_embedding = [DataCollection(encoder(self.query))[0]['vector']]
         except Exception as e:
             return Observation(f"[Error]: Failed to encode the query: {str(e)}")
 
