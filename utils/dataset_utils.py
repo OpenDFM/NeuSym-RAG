@@ -488,15 +488,30 @@ def process_airqa(
                     "page_number": <int>      # The page number where the figure is located
                 },
                 ...
+            ],
+            "equations": [  # A list of extracted equation information
+                {
+                    "eq_text": <str>,  # The content of the equation in latex
+                    "page_number": <int>      # The page number where the equation is located
+                },
+                ...
             ]
-        }
+        },
+        "TOC": [  # Table of Contents
+            {
+                "level": <int>,  # The level of the TOC entry
+                "title": <str>,  # The title of the TOC entry
+                "page_number": <int>  # The page number of the TOC entry
+            },
+            ...
+        ]
     }
 
     Each JSON file is saved with the same name as the corresponding PDF in the `processed_data_folder`.
     For example, if the PDF is named `64148d31-f547-5f8c-a7a0-3cc080a195dd.pdf`, the output will be saved as `processed_data_folder/64148d31-f547-5f8c-a7a0-3cc080a195dd.json`.
-"""
+    """
 
-    # get all the subfolders in raw_data_folder
+    # Get all the subfolders in raw_data_folder
     subfolders = [
         os.path.join(raw_data_folder, subfolder)
         for subfolder in os.listdir(raw_data_folder)
@@ -507,8 +522,8 @@ def process_airqa(
         raise FileNotFoundError(f"No subfolder found in {raw_data_folder}")
     
     # Construct the command
-    #Before this, please download models according to https://github.com/opendatalab/MinerU/blob/master/docs/how_to_download_models_en.md
-    #Before this, please modify magic-pdf.json in "C:\Users\username"(windows) or"/home/username"(linux)or"/Users/username"(macos) to set the table-config to true
+    # Before this, please download models according to https://github.com/opendatalab/MinerU/blob/master/docs/how_to_download_models_en.md
+    # Before this, please modify magic-pdf.json in "C:\Users\username"(windows) or "/home/username"(linux) or "/Users/username"(macos) to set the table-config to true
     for subfolder in subfolders:
         command = [
             "magic-pdf",
@@ -522,7 +537,6 @@ def process_airqa(
         except subprocess.CalledProcessError as e:
             raise subprocess.CalledProcessError(f"Command execution failed for {subfolder} with error: {e.stderr}")
 
-
     # Get all PDF file paths in the folder
     pdf_files = []
     for root, _, files in os.walk(raw_data_folder):
@@ -532,26 +546,44 @@ def process_airqa(
 
     for pdf_path in pdf_files:
         pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
-        json_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_middle.json')
+        json_mid_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_middle.json')
+        json_con_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_content_list.json')
 
         # Check if the JSON file exists
-        if not os.path.exists(json_path):
-            raise FileNotFoundError(f"File {json_path} does not exist")
-
-        with open(json_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+        if not os.path.exists(json_mid_path):
+            raise FileNotFoundError(f"File {json_mid_path} does not exist")
+        if not os.path.exists(json_con_path):
+            raise FileNotFoundError(f"File {json_con_path} does not exist")
+        with open(json_mid_path, 'r', encoding='utf-8') as f:
+            mid_data = json.load(f)
+        with open(json_con_path, 'r', encoding='utf-8') as g:
+            content_data = json.load(g)
 
         # Initialize the output data structure
         result = {
             "pdf_path": pdf_path,
             "info_from_mineru": {
                 "tables": [],
-                "figures": []
-            }
+                "figures": [],
+                "equations": []
+            },
+            "TOC": []  
         }
 
+        # Extract Table of Contents using PyMuPDF
+        doc = fitz.open(pdf_path)
+        toc = doc.get_toc()
+        for entry in toc:
+            level, title, page = entry
+            result["TOC"].append({
+                "level": level,
+                "title": title,
+                "page_number": page
+            })
+        doc.close()
+
         # Iterate through the parsed results for each page of the PDF
-        for page_number, page in enumerate(data.get("pdf_info", []), start=1):
+        for page_number, page in enumerate(mid_data.get("pdf_info", []), start=1):
             # Extract information about tables
             for block in page.get("tables", []):
                 if block.get("type") == "table":
@@ -597,10 +629,21 @@ def process_airqa(
 
                     result["info_from_mineru"]["figures"].append(figure_info)
 
+        # Extract information about equations
+        for content in content_data:
+            if content["type"]== "equation":
+                eq_info={
+                    "eq_text": content["text"],
+                    "page_number": content["page_idx"]+1
+                }
+                result["info_from_mineru"]["equations"].append(eq_info)
+
+
         # Write each paper's data into a separate JSON file
         output_path = os.path.join(processed_data_folder, f'{pdf_name}.json')
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(result, f, ensure_ascii=False, indent=4)
+
 
 
 
