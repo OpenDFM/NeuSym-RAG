@@ -19,7 +19,7 @@ class HybridRAGAgent(AgentBase):
             system_prompt=SYSTEM_PROMPTS['hybrid_rag'],
             action_space_prompt=env.action_space_prompt,
             max_turn=max_turn,
-            # hint_prompt=HINT_PROMPTS['hybrid_rag']
+            hint_prompt=HINT_PROMPTS['hybrid_rag']
         )
         logger.info(f'[AgentPrompt]: {self.agent_prompt}')
 

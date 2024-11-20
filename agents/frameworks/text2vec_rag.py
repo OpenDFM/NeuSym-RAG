@@ -19,7 +19,7 @@ class Text2VecRAGAgent(AgentBase):
             system_prompt=SYSTEM_PROMPTS['text2vec'],
             action_space_prompt=env.action_space_prompt,
             max_turn=max_turn,
-            # hint_prompt=HINT_PROMPTS['text2vec'] # useless, even worse
+            hint_prompt=HINT_PROMPTS['text2vec']
         )
         logger.info(f'[AgentPrompt]: {self.agent_prompt}')
 

@@ -41,7 +41,12 @@ The main interaction procedure proceeds like this:
 
 ----
 
-In general, the main interaction loop consists of an interleaved of triplets ([Thought], [Action], [Observation]), except the last `GenerateAnswer` action which does not have "[Observation]:". Remember that, for each question, you only have {max_turn} interaction turns at most. Now, let's start!
+In general, the main interaction loop consists of an interleaved of triplets ([Thought], [Action], [Observation]), except the last `GenerateAnswer` action which does not have "[Observation]:".
+
+--------
+{hint_prompt}
+
+Remember that, for each question, you only have {max_turn} interaction turns at most. Now, let's start!
 """
 
 
