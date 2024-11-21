@@ -19,7 +19,7 @@ class Text2SQLRAGAgent(AgentBase):
             system_prompt=SYSTEM_PROMPTS['text2sql'],
             action_space_prompt=env.action_space_prompt,
             max_turn=max_turn,
-            # hint_prompt=HINT_PROMPTS['text2sql']
+            hint_prompt=HINT_PROMPTS['text2sql']
         )
         logger.info(f'[AgentPrompt]: {self.agent_prompt}')
 

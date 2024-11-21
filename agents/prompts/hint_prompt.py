@@ -4,7 +4,7 @@ Note that, these hint prompts are only used in an interactive environment.
 """
 
 TEXT2SQL_HINT_PROMPT = """
-#### Suggestions or Hints for Agent Interaction
+## Suggestions or Hints for Agent Interaction
 
 1. Explore database content carefully. Before writing the final SQL query, examine the database schema, cell formats and value distribution to ensure accuracy. Pay special attention to string match conditions to avoid errors caused by differences in letter case, whitespace, or morphological variations.
 
@@ -16,7 +16,7 @@ TEXT2SQL_HINT_PROMPT = """
 """
 
 TEXT2VEC_HINT_PROMPT = """
-#### Suggestions or Hints for Agent Interaction
+## Suggestions or Hints for Agent Interaction
 
 1. Explore multiple retrieval strategies. For example:
 - Query various embedding models (collections) to find the most relevant context.
@@ -30,7 +30,7 @@ TEXT2VEC_HINT_PROMPT = """
 """
 
 HYBRDI_RAG_HINT_PROMPT = """
-#### Suggestions or Hints for Agent Interaction
+## Suggestions or Hints for Agent Interaction
 
 1. Explore multiple retrieval strategies. For example:
 - Experiment with different (table, column) pairs to extract diverse types of information.
