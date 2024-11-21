@@ -3,7 +3,7 @@
 import requests
 import tqdm
 import os, sys, re, json, logging
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.functions.common_functions import get_uuid
 from agents.models import get_single_instance
@@ -34,6 +34,25 @@ def get_airqa_paper_uuid(title: str, meta: str = 'acl2024') -> str:
     # normalize the paper title
     paper = title.strip() + '-' + meta.lower()
     return get_uuid(paper, uuid_type='uuid5', uuid_namespace='dns')
+
+
+def get_all_used_paper_uuids(
+        example_dir: str = os.path.join(AIRQA_DIR, 'examples'),
+        output_file: str = os.path.join(AIRQA_DIR, 'used_uuids.json')
+    ) -> List[str]:
+    """ Extract all used paper UUIDs from the AIR-QA examples.
+    """
+    uuids = set()
+    for file in os.listdir(example_dir):
+        if file.endswith('.json'):
+            with open(os.path.join(example_dir, file), 'r', encoding='utf8') as inf:
+                data = json.load(inf)
+                uuids.update(data['pdf_id'])
+    uuids = list(uuids)
+    if output_file is not None:
+        with open(output_file, 'w', encoding='utf8') as ouf:
+            json.dump(uuids, ouf, ensure_ascii=False, indent=4)
+    return uuids
 
 
 def get_answer_from_llm(question_uuid: Optional[str] = None, question: Optional[str] = None, add_answer_format: bool = True, model: str = 'gpt-4o', temperature: float = 0.7, top_p: float = 0.95) -> str:
