@@ -522,9 +522,16 @@ def process_airqa(
         raise FileNotFoundError(f"No subfolder found in {raw_data_folder}")
     
     # Construct the command
-    # Before this, please download models according to https://github.com/opendatalab/MinerU/blob/master/docs/how_to_download_models_en.md
-    # Before this, please modify magic-pdf.json in "C:\Users\username"(windows) or "/home/username"(linux) or "/Users/username"(macos) to set the table-config to true
+    # First, install magic-pdf package by `pip install -U magic-pdf[full] --extra-index-url https://wheels.myhloli.com`
+    # Second, download models according to https://github.com/opendatalab/MinerU/blob/master/docs/how_to_download_models_en.md
+    # Third, modify `magic-pdf.json` in 
+    #     "C:\Users\username" (windows) 
+    #  or "/home/username"    (linux) 
+    #  or "/Users/username"   (macos) 
+    # to set the table-config to true
+    
     for subfolder in subfolders:
+        logger.info(f"Processing folder {subfolder} with MinerU.")
         command = [
             "magic-pdf",
             "-p", subfolder,    # input folder
@@ -645,10 +652,6 @@ def process_airqa(
             json.dump(result, f, ensure_ascii=False, indent=4)
 
 
-
-
-
-
 def classify_question_type(data: Dict[str, Any], dataset: str) -> str:
     """ Classify the type for each question.
     @param:
@@ -725,7 +728,8 @@ if __name__ == '__main__':
     FUNCTIONS = {
         'preprocess': {
             'pdfvqa': process_pdfvqa,
-            'tatdqa': process_tatdqa
+            'tatdqa': process_tatdqa,
+            'airqa': process_airqa
         },
         'sampling': sampling_dataset,
     }

@@ -2,12 +2,15 @@
 
 import os, openai, uuid, re
 from typing import List, Dict, Union, Optional, Any, Iterable
+import tempfile
 
 import fitz  # PyMuPDF
 import PyPDF2
 from PyPDF2 import PdfWriter, PageObject
 from pdf2image import convert_from_path
 from pdfminer.layout import LTImage, LTFigure, LTRect
+from pix2text import Pix2Text
+from pix2text.layout_parser import ElementType
 
 from utils.functions.common_functions import call_llm, get_uuid
 
@@ -105,6 +108,7 @@ def crop_pdf(
     cropped_pdf_writer.add_page(page_obj)
     with open(output_file, 'wb') as cropped_pdf_file:
         cropped_pdf_writer.write(cropped_pdf_file)
+    cropped_pdf_writer.close()
 
 def convert_pdf_to_image(
         input_file: str,
@@ -122,3 +126,33 @@ def convert_pdf_to_image(
     images = convert_from_path(input_file, dpi=dpi)
     image = images[0]
     image.save(output_file, "PNG")
+
+ocr = None
+
+def get_pdf_formula(
+        pdf_path: str
+    ) -> List[str] :
+    """Get the list of all the formula in the pdf in latex format using pix2text.
+
+    @args:
+        pdf_path: str, the path to the pdf file.
+
+    @returns:
+        result: List[str], the list of all formula
+    """
+    
+    if ocr == None:
+        ocr = Pix2Text()
+    
+    result = []
+    tmp_png_file = tempfile.NamedTemporaryFile(suffix='.png', dir=os.path.join(os.getcwd(), '.cache'))
+    images = convert_from_path(pdf_path)
+    for image in images:
+        image.save(tmp_png_file.name, "PNG")
+        elements = ocr(tmp_png_file.name).elements
+        for element in elements:
+            if element.type == ElementType.FORMULA:
+                result.append(str(element.text))
+    tmp_png_file.close()
+    
+    return result
