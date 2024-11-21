@@ -5,7 +5,7 @@
         {
             "table": {
                 "table_name": "metadata",
-                "description": "This table stores metadata about each paper, including the number of pages, report path and report id."
+                "description": "This table stores metadata about each paper, including the number of pages, paper path and paper id."
             },
             "columns": [
                 {
@@ -257,6 +257,12 @@
                     "description": "A unique identifier for each section of text."
                 },
                 {
+                    "column_name": "section_title",
+                    "column_type": "VARCHAR",
+                    "description": "The title of the current section.",
+                    "encodable": true
+                },
+                {
                     "column_name": "section_content",
                     "column_type": "VARCHAR",
                     "description": "The text content of the current section.",
@@ -265,17 +271,17 @@
                 {
                     "column_name": "ordinal",
                     "column_type": "INTEGER",
-                    "description": "Each section is labeled with one distinct integer number in the paper, which starts from 1."
-                },
-                {
-                    "column_name": "ref_paper_id",
-                    "column_type": "UUID",
-                    "description": "A foreign key linking to the paper ID in the `metadata` table."
+                    "description": "Each section is labeled with one distinct integer number in the paper, which starts from 0."
                 },
                 {
                     "column_name": "page_numbers",
                     "column_type": "INTEGER[]",
                     "description": "A list of page numbers where current section is located in the relevant paper "
+                },
+                {
+                    "column_name": "ref_paper_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the paper ID in the `metadata` table."
                 }
             ],
             "primary_keys": [
@@ -286,6 +292,55 @@
                     "ref_paper_id",
                     "metadata",
                     "paper_id"
+                ]
+            ]
+        },
+        {
+            "table": {
+                "table_name": "equations",
+                "description": "This table stores information about equations extracted from pages using mineru(unimernet)."
+            },
+            "columns": [
+                {
+                    "column_name": "eq_id",
+                    "column_type": "UUID",
+                    "description": "A unique identifier for each equation."
+                },
+                {
+                    "column_name": "eq_content",
+                    "column_type": "VARCHAR",
+                    "description": "Content of the equation in latex format.",
+                    "encodable": true
+                },
+                {
+                    "column_name": "ordinal",
+                    "column_type": "INTEGER",
+                    "description": "Each equation is labeled with one distinct integer number in the current page, which starts from 0."
+                },
+                {
+                    "column_name": "ref_paper_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the paper ID in the `metadata` table."
+                },
+                {
+                    "column_name": "ref_page_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the page ID in the `pages` table where this equation is located."
+                }
+            ],
+            "primary_keys": [
+                "eq_id"
+            ],
+            "foreign_keys": [
+                [
+                    "ref_paper_id",
+                    "metadata",
+                    "paper_id"
+                ],
+                [
+                    "ref_page_id",
+                    "pages",
+                    "page_id"
                 ]
             ]
         }

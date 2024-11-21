@@ -1,10 +1,46 @@
 {
     "pipeline": [
         {
-            "function": "get_ai_research_per_page_uuid",
+            "function": "load_json_from_processed_data",
             "args": {
                 "deps": [
                     0
+                ]
+            }
+        },
+        {
+            "function": "get_ai_research_page_uuid_and_info",
+            "args": {
+                "deps": [
+                    0
+                ]
+            }
+        },
+        {
+            "function": "get_ai_research_per_page_chunk_uuid_and_text",
+            "args": {
+                "deps": [
+                    0,
+                    1
+                ]
+            }
+        },
+        {
+            "function": "get_ai_research_section_uuid_and_text",
+            "args": {
+                "deps": [
+                    0,
+                    1,
+                    2
+                ]
+            }
+        },
+        {
+            "function": "get_ai_research_per_page_table_uuid_and_info",
+            "args": {
+                "deps": [
+                    0,
+                    1
                 ]
             }
         },
@@ -15,15 +51,80 @@
                     0
                 ]
             }
+        },
+        {
+            "function": "get_ai_research_per_page_equation_uuid_and_info",
+            "args": {
+                "deps": [
+                    0,
+                    1
+                ]
+            }
         }
     ],
     "aggregation": [
+        {
+            "function": "aggregate_ai_research_table_metadata",
+            "agrs": {
+                "deps": [
+                    0
+                ]
+            }
+        },
+        {
+            "function": "aggregate_ai_research_table_pages",
+            "agrs": {
+                "deps": [
+                    0,
+                    2
+                ]
+            }
+        },
+        {
+            "function": "aggregate_ai_research_table_chunks",
+            "agrs": {
+                "deps": [
+                    0,
+                    3,
+                    2
+                ]
+            }
+        },
+        {
+            "function": "aggregate_ai_research_table_table_in_pages",
+            "agrs": {
+                "deps": [
+                    0,
+                    5,
+                    2
+                ]
+            }
+        },
+        {
+            "function": "aggregate_ai_research_table_sections",
+            "agrs": {
+                "deps": [
+                    0,
+                    4
+                ]
+            }
+        },
         {
             "function": "aggregate_ai_research_table_figures",
             "agrs": {
                 "deps": [
                     0,
                     1,
+                    6
+                ]
+            }
+        },
+        {
+            "function": "aggregate_ai_research_table_equations",
+            "agrs": {
+                "deps": [
+                    0,
+                    7,
                     2
                 ]
             }
