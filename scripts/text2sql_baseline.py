@@ -27,7 +27,7 @@ parser.add_argument('--result_dir', type=str, default='results', help='Directory
 args = parser.parse_args()
 
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-filename = f'{args.dataset}_text2sql_{args.agent_method}_{args.action_format}_{args.llm}-{start_time}'
+filename = f'{args.dataset}_text2sql_{args.agent_method}_{args.action_format}_{args.output_format}_{args.llm}-{start_time}'
 result_dir = os.path.join(args.result_dir, filename)
 os.makedirs(result_dir, exist_ok=True)
 

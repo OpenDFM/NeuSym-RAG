@@ -1,8 +1,7 @@
 #coding=utf8
 
-import os, openai, uuid, re
+import os, openai, uuid, re, sys, logging, subprocess, tempfile, json
 from typing import List, Dict, Union, Optional, Any, Iterable
-import tempfile
 
 import fitz  # PyMuPDF
 import PyPDF2
@@ -14,6 +13,15 @@ from pix2text.layout_parser import ElementType
 
 from utils.functions.common_functions import call_llm, get_uuid
 
+logger = logging.getLogger(__name__)
+handler = logging.StreamHandler(sys.stdout)
+formatter = logging.Formatter(
+    fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 def get_pdf_page_text(
         pdf_path: str,
@@ -156,3 +164,212 @@ def get_pdf_formula(
     tmp_png_file.close()
     
     return result
+
+def parse_pdf(
+        pdf_path: str,
+        processed_data_folder: str = 'data/dataset/airqa/processed_data'
+    ) -> bool:
+    """Parse a PDF file with MinerU.
+
+    @return:
+    `True` if the PDF has been fully parsed before. `False` otherwise.
+    
+    @output:
+    The function generates a JSON file for a PDF file, containing the extracted table and figure information. 
+    The output JSON structure is as follows:
+
+    {
+        "pdf_path": <str>,  # Path to the input PDF file
+        "info_from_mineru": {
+            "tables": [  # A list of extracted table information
+                {
+                    "table_caption": <str>,  # The caption of the table (if available)
+                    "table_html": <str>,     # The table content in HTML format (if available)
+                    "table_bbox": [<float>, <float>, <float>, <float>],  # The bounding box of the table in [x1, y1, x2, y2]
+                    "page_number": <int>     # The page number where the table is located
+                },
+                ...
+            ],
+            "figures": [  # A list of extracted figure information
+                {
+                    "figure_caption": <str>,  # The caption of the figure (if available)
+                    "figure_path": <str>,     # Path to the extracted image file
+                    "figure_bbox": [<float>, <float>, <float>, <float>],  # The bounding box of the figure in [x1, y1, x2, y2]
+                    "page_number": <int>      # The page number where the figure is located
+                },
+                ...
+            ],
+            "equations": [  # A list of extracted equation information
+                {
+                    "eq_text": <str>,  # The content of the equation in latex
+                    "page_number": <int>      # The page number where the equation is located
+                },
+                ...
+            ]
+        },
+        "TOC": [  # Table of Contents
+            {
+                "level": <int>,  # The level of the TOC entry
+                "title": <str>,  # The title of the TOC entry
+                "page_number": <int>  # The page number of the TOC entry
+            },
+            ...
+        ]
+    }
+
+    Each JSON file is saved with the same name as the corresponding PDF in the `processed_data_folder`.
+    For example, if the PDF is named `64148d31-f547-5f8c-a7a0-3cc080a195dd.pdf`, the output will be saved as `processed_data_folder/64148d31-f547-5f8c-a7a0-3cc080a195dd.json`.
+
+    """
+    
+    # 1. Construct the command
+    
+    # First, install magic-pdf package by `pip install -U magic-pdf[full] --extra-index-url https://wheels.myhloli.com`
+    # Second, download models according to https://github.com/opendatalab/MinerU/blob/master/docs/how_to_download_models_en.md
+    # Third, modify `magic-pdf.json` in 
+    #     "C:\Users\username" (windows) 
+    #  or "/home/username"    (linux) 
+    #  or "/Users/username"   (macos) 
+    # to set the table-config to true
+    
+    pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
+    output_path = os.path.join(processed_data_folder, f'{pdf_name}.json')
+    if os.path.exists(output_path):
+        logger.info(f"PDF {pdf_name} has been fully processed before.")
+        return True
+        
+    json_mid_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_middle.json')
+    json_con_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_content_list.json')
+    if os.path.exists(json_mid_path) and os.path.exists(json_con_path):
+        logger.info(f"PDF {pdf_name} has been partially processed before.")
+    else:
+        logger.info(f"Processing PDF {pdf_name} with MinerU.")
+        command = [
+            "magic-pdf",
+            "-p", pdf_path,                # input pdf_file
+            "-o", processed_data_folder,   # output folder
+            "-m", "auto"                   # method (ocr, txt, or auto)
+        ]
+        
+        try:
+            result = subprocess.run(command, check=True, text=True, encoding='UTF-8')
+        except subprocess.CalledProcessError as e:
+            raise subprocess.CalledProcessError(f"Command execution failed for {pdf_path} with error: {e.stderr}")
+    
+    
+    # 2. Generate the JSON file
+    pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
+    json_mid_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_middle.json')
+    json_con_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_content_list.json')
+
+    # Check if the JSON file exists
+    if not os.path.exists(json_mid_path):
+        raise FileNotFoundError(f"File {json_mid_path} does not exist")
+    if not os.path.exists(json_con_path):
+        raise FileNotFoundError(f"File {json_con_path} does not exist")
+    with open(json_mid_path, 'r', encoding='utf-8') as f:
+        mid_data = json.load(f)
+    with open(json_con_path, 'r', encoding='utf-8') as g:
+        content_data = json.load(g)
+
+    # Initialize the output data structure
+    result = {
+        "pdf_path": pdf_path,
+        "info_from_mineru": {
+            "tables": [],
+            "figures": [],
+            "equations": [],
+            "references": []
+        },
+        "TOC": []  
+    }
+
+    # Extract Table of Contents using PyMuPDF
+    doc = fitz.open(pdf_path)
+    toc = doc.get_toc()
+    for entry in toc:
+        level, title, page = entry
+        result["TOC"].append({
+            "level": level,
+            "title": title,
+            "page_number": page
+        })
+    doc.close()
+
+    # Iterate through the parsed results for each page of the PDF
+    for page_number, page in enumerate(mid_data.get("pdf_info", []), start=1):
+        # Extract information about tables
+        for block in page.get("tables", []):
+            if block.get("type") == "table":
+                table_info = {
+                    "table_caption": "",
+                    "table_html": "",
+                    "table_bbox": block.get("bbox", []),
+                    "page_number": page_number
+                }
+
+                for sub_block in block.get("blocks", []):
+                    if sub_block.get("type") == "table_caption":
+                        table_info["table_caption"] += " ".join(
+                            span.get("content", "")
+                            for line in sub_block.get("lines", [])
+                            for span in line.get("spans", [])
+                        )
+                    elif sub_block.get("type") == "table_body":
+                        table_info["table_html"] = sub_block.get("lines", [{}])[0].get("spans", [{}])[0].get("html", "")
+
+                result["info_from_mineru"]["tables"].append(table_info)
+
+        # Extract information about figures
+        for block in page.get("images", []):
+            if block.get("type") == "image":
+                figure_info = {
+                    "figure_caption": "",
+                    "figure_path": "",
+                    "figure_bbox": block.get("bbox", []),
+                    "page_number": page_number
+                }
+
+                for sub_block in block.get("blocks", []):
+                    if sub_block.get("type") == "image_caption":
+                        figure_info["figure_caption"] += " ".join(
+                            span.get("content", "")
+                            for line in sub_block.get("lines", [])
+                            for span in line.get("spans", [])
+                        )
+                    elif sub_block.get("type") == "image_body":
+                        image_path = sub_block.get("lines", [{}])[0].get("spans", [{}])[0].get("image_path", "")
+                        figure_info["figure_path"] = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', 'images', image_path)
+
+                result["info_from_mineru"]["figures"].append(figure_info)
+
+    # Extract information about equations
+    
+    references = []
+    record_reference = 0
+    
+    for content in content_data:
+        if content["type"]== "equation":
+            eq_info={
+                "eq_text": content["text"],
+                "page_number": content["page_idx"] + 1
+            }
+            result["info_from_mineru"]["equations"].append(eq_info)
+        if content["type"] == "text" and content.get("text_level", None) == 1:
+            if content["text"].lower().startswith("reference"):
+                record_reference = 1
+                continue
+            elif record_reference == 1:
+                record_reference = 0
+        if record_reference and content.get("text", None) != None:
+            reference_list = list(str(content["text"]).split("\n"))
+            if reference_list:
+                references.extend(reference_list)
+
+    result["info_from_mineru"]["references"] = [{"reference_text": reference} for reference in references if reference != ""]
+
+    # Write each paper's data into a separate JSON file
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(result, f, ensure_ascii=False, indent=4)
+    
+    return False
