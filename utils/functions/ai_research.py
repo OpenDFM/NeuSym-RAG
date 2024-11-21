@@ -10,7 +10,7 @@ from pdfminer.layout import LTFigure, LTImage, LTRect
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from difflib import SequenceMatcher
 from utils.functions.common_functions import get_uuid, call_llm_with_message
-from utils.functions.pdf_functions import crop_pdf, convert_pdf_to_image,get_pdf_page_text
+from utils.functions.pdf_functions import crop_pdf, convert_pdf_to_image, get_pdf_page_text, parse_pdf
 from utils.functions.image_functions import get_image_summary
 
 

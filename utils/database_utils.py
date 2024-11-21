@@ -195,13 +195,8 @@ def populate_pdf_file_into_database(
                 populator.populate(json_data, config, on_conflict=on_conflict, log=log_to_file)
                 write_count += 1
     else:
-        if os.path.exists(pdf_path) and os.path.isdir(pdf_path):
-            for root, dirs, files in os.walk(pdf_path):
-                for file in files:
-                    populator.populate(str(os.path.join(pdf_path, file)), config, on_conflict=on_conflict, log=log_to_file)
-                    write_count += 1
-        else:
-            logger.error(f"PDF path {pdf_path} not found.")
+        populator.populate(pdf_path, config, on_conflict=on_conflict, log=log_to_file)
+        write_count += 1
     logger.info(f"Total {write_count} PDF parsed and written into database {database_name}.")
     populator.close()
     return
