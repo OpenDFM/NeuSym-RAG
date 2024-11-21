@@ -27,7 +27,7 @@ class AgentBase(ABC):
         pass
 
 
-    def forward(self, messages: List[Dict[str, Any]], model: str = '', temperature: float = 0.7, top_p: float = 0.95, max_tokens: int = 1500, window_size: int = 3, output_path: Optional[str] = None) -> str:
+    def forward(self, messages: List[Dict[str, Any]], model: str = '', temperature: float = 0.7, top_p: float = 0.95, max_tokens: int = 1500, window_size: int = 3, output_path: Optional[str] = None, output_kwargs: Dict[str, Any] = {}) -> str:
         prev_cost = self.model.get_cost()
         self.env.reset()
 
@@ -40,7 +40,7 @@ class AgentBase(ABC):
             response = self.model.get_response(current_messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
             logger.debug(f'[Response]: {response}')
 
-            obs, reward, flag, info = self.env.step(response)
+            obs, reward, flag, info = self.env.step(response, **output_kwargs)
             action: Action = self.env.parsed_actions[-1]
             action_msg = action.convert_to_message(self.env.action_format)
             logger.info(action_msg['content'])

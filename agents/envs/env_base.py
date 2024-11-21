@@ -44,7 +44,7 @@ class AgentEnv(gym.Env, ABC):
         return
 
 
-    def step(self, action: Union[str, Action]) -> Tuple[Observation, int, bool, Dict]:
+    def step(self, action: Union[str, Action], **kwargs) -> Tuple[Observation, int, bool, Dict]:
         """ Execute the SQL query with the database env, get the result or error message and return it.
         @param:
             action: Union[str, Action], either raw LLM string or an Action object
@@ -66,7 +66,7 @@ class AgentEnv(gym.Env, ABC):
         self.parsed_actions.append(action)
 
         # execute the action, the first parameter is the AgentEnv class itself
-        observation = action.execute(self)
+        observation = action.execute(self, **kwargs)
 
         # (obs, reward, done, info)
         flag = action.done

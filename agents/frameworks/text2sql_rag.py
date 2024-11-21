@@ -33,7 +33,8 @@ class Text2SQLRAGAgent(AgentBase):
                  temperature: float = 0.7,
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
-                 output_path: Optional[str] = None
+                 output_path: Optional[str] = None,
+                 output_kwargs: Dict[str, Any] = {}
     ) -> str:
         # construct the initial prompt messages
         task_prompt = f'[Question]: {question}\n[Answer Format]: {answer_format}\n[Database Schema]:\n{database_prompt}'
@@ -51,6 +52,7 @@ class Text2SQLRAGAgent(AgentBase):
             top_p=top_p,
             max_tokens=max_tokens,
             window_size=window_size,
-            output_path=output_path
+            output_path=output_path,
+            output_kwargs=output_kwargs
         )
         return answer

@@ -15,6 +15,7 @@ parser.add_argument('--database', type=str, default='biology_paper', help='which
 parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
 parser.add_argument('--db_format', type=str, choices=['create_sql', 'detailed_json'], default='create_sql', help='Database schema serialization format')
 parser.add_argument('--action_format', type=str, default='json', choices=['markdown', 'json', 'xml', 'yaml'], help='Action format for the environment')
+parser.add_argument('--output_format', type=str, default='json', choices=['markdown', 'string', 'html', 'json'], help='Output format for the environment execution results')
 parser.add_argument('--agent_method', type=str, default='react', help='Agent method')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
 parser.add_argument('--temperature', type=float, default=0.7)
@@ -67,7 +68,7 @@ for i, data in enumerate(test_data):
     logger.info(f"Processing question {i+1}: {data['uuid']}")
     question, answer_format = formulate_input(args.dataset, data)
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
-    result = agent.interact(question, database_prompt, answer_format, window_size=args.window_size, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path)
+    result = agent.interact(question, database_prompt, answer_format, window_size=args.window_size, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, output_kwargs={'output_format': args.output_format})
     preds.append({'uuid': data['uuid'], 'answer': result})
     current_cost = llm.get_cost()
     current_time = datetime.now()-start_time
