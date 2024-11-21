@@ -5,16 +5,77 @@
         {
             "table": {
                 "table_name": "metadata",
-                "description": "xxx"
+                "description": "This table stores metadata about each paper, including the number of pages, report path and report id."
             },
-            "columns": []
+            "columns": [
+                {
+                    "column_name": "paper_id",
+                    "column_type": "UUID",
+                    "description": "A unique identifier for each report."
+                },
+                {
+                    "column_name": "paper_pages",
+                    "column_type": "INTEGER",
+                    "description": "The number of pages in this report."
+                },
+                {
+                    "column_name": "paper_path",
+                    "column_type": "VARCHAR",
+                    "description": "The path to the PDF file."
+                }
+            ],
+            "primary_keys": [
+                "paper_id"
+            ]
         },
         {
             "table": {
                 "table_name": "pages",
-                "description": "xxx"
+                "description": "This table stores page content of the papers, including their content and their order within the report."
             },
-            "columns": []
+            "columns": [
+                {
+                    "column_name": "page_id",
+                    "column_type": "UUID",
+                    "description": "A unique identifier for each page within a paper."
+                },
+                {
+                    "column_name": "page_number",
+                    "column_type": "INTEGER",
+                    "description": "The page number in the current paper, starting from 1."
+                },
+                {
+                    "column_name": "page_width",
+                    "column_type": "INTEGER",
+                    "description": "The pixel width of the current page."
+                },
+                {
+                    "column_name": "page_height",
+                    "column_type": "INTEGER",
+                    "description": "The pixel height of the current page."
+                },
+                {
+                    "column_name": "page_content",
+                    "column_type": "VARCHAR",
+                    "description": "The content of the page.",
+                    "encodable": true
+                },
+                {
+                    "column_name": "ref_paper_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the paper ID in the metadata table."
+                }
+            ],
+            "primary_keys": [
+                "page_id"
+            ],
+            "foreign_keys": [
+                [
+                    "ref_paper_id",
+                    "metadata",
+                    "paper_id"
+                ]
+            ]
         },
         {
             "table": {
@@ -68,6 +129,166 @@
                     "page_id"
                 ]
             ]
+        },
+        {
+            "table": {
+                "table_name": "chunks",
+                "description": "This table contains the text content of each chunk of text (chunk size = 512 tokens with no overlapping) in each page in one ai paper. A chunk is a sub-text that is extracted from the main text, such as a sentence or a paragraph."
+            },
+            "columns": [
+                {
+                    "column_name": "chunk_id",
+                    "column_type": "UUID",
+                    "description": "A unique identifier for each chunk of text."
+                },
+                {
+                    "column_name": "text_content",
+                    "column_type": "VARCHAR",
+                    "description": "The text content of the current chunk.",
+                    "encodable": true
+                },
+                {
+                    "column_name": "ordinal",
+                    "column_type": "INTEGER",
+                    "description": "Each chunk is labeled with one distinct integer number in the current page, which starts from 0."
+                },
+                {
+                    "column_name": "ref_paper_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the paper ID in the `metadata` table."
+                },
+                {
+                    "column_name": "ref_page_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the page ID in the `pages` table."
+                }
+            ],
+            "primary_keys": [
+                "chunk_id"
+            ],
+            "foreign_keys": [
+                [
+                    "ref_paper_id",
+                    "metadata",
+                    "paper_id"
+                ],
+                [
+                    "ref_page_id",
+                    "pages",
+                    "page_id"
+                ]
+            ]
+        },
+        {
+            "table": {
+                "table_name": "table_in_pages",
+                "description": "This table stores information about tables extracted from pages using mineru,including content(in html format), bounding box and summary of each table generated by gpt"
+            },
+            "columns": [
+                {
+                    "column_name": "table_id",
+                    "column_type": "UUID",
+                    "description": "A unique identifier for each table."
+                },
+                {
+                    "column_name": "table_caption",
+                    "column_type": "VARCHAR",
+                    "description": "Caption of the table, showing key information of the table.",
+                    "encodable": true
+                },
+                {
+                    "column_name": "table_content",
+                    "column_type": "VARCHAR",
+                    "description": "The content of the table in html format.",
+                    "encodable": true
+                },
+                {
+                    "column_name": "table_summary",
+                    "column_type": "VARCHAR",
+                    "description": "A brief summary of the table content generated by gpt, focusing on key information and describing the table content.",
+                    "encodable": true
+                },
+                {
+                    "column_name": "bounding_box",
+                    "column_type": "INTEGER[4]",
+                    "description": "The bounding box of the table in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height."
+                },
+                {
+                    "column_name": "ordinal",
+                    "column_type": "INTEGER",
+                    "description": "Each table is labeled with one distinct integer number in the current page, which starts from 0."
+                },
+                {
+                    "column_name": "ref_paper_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the paper ID in the `metadata` table."
+                },
+                {
+                    "column_name": "ref_page_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the page ID in the `pages` table where this table is located."
+                }
+            ],
+            "primary_keys": [
+                "table_id"
+            ],
+            "foreign_keys": [
+                [
+                    "ref_paper_id",
+                    "metadata",
+                    "paper_id"
+                ],
+                [
+                    "ref_page_id",
+                    "pages",
+                    "page_id"
+                ]
+            ]
+        },
+        {
+            "table": {
+                "table_name": "sections",
+                "description": "This table contains the text content of each section in one ai paper divided by content of table. A section is a sub-text extracted from the main text."
+            },
+            "columns": [
+                {
+                    "column_name": "section_id",
+                    "column_type": "UUID",
+                    "description": "A unique identifier for each section of text."
+                },
+                {
+                    "column_name": "section_content",
+                    "column_type": "VARCHAR",
+                    "description": "The text content of the current section.",
+                    "encodable": true
+                },
+                {
+                    "column_name": "ordinal",
+                    "column_type": "INTEGER",
+                    "description": "Each section is labeled with one distinct integer number in the paper, which starts from 1."
+                },
+                {
+                    "column_name": "ref_paper_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the paper ID in the `metadata` table."
+                },
+                {
+                    "column_name": "page_numbers",
+                    "column_type": "INTEGER[]",
+                    "description": "A list of page numbers where current section is located in the relevant paper "
+                }
+            ],
+            "primary_keys": [
+                "section_id"
+            ],
+            "foreign_keys": [
+                [
+                    "ref_paper_id",
+                    "metadata",
+                    "paper_id"
+                ]
+            ]
         }
+
     ]
 }

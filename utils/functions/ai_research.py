@@ -8,6 +8,7 @@ from pdf2image import convert_from_path
 from pdfminer.high_level import extract_pages
 from pdfminer.layout import LTFigure, LTImage, LTRect
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from difflib import SequenceMatcher
 from utils.functions.common_functions import get_uuid, call_llm_with_message
 from utils.functions.pdf_functions import crop_pdf, convert_pdf_to_image,get_pdf_page_text
 from utils.functions.image_functions import get_image_summary
@@ -42,7 +43,7 @@ def load_json_from_processed_data(pdf_path: str) -> dict:
         pdf_data = json.load(f)
     return pdf_data
 
-def get_financial_report_per_page_page_uuid_and_info(pdf_path: str) -> Dict[str,Any]:
+def get_ai_research_page_uuid_and_info(pdf_path: str) -> Dict[str,Any]:
     """ Output:
         Dict[str, Union[str, List[str]]], the output dictionary containing the following keys:
             - pdf_name: str, the name of the PDF file.
@@ -54,7 +55,7 @@ def get_financial_report_per_page_page_uuid_and_info(pdf_path: str) -> Dict[str,
 
 
 
-def get_financial_report_per_page_chunk_uuid_and_text(pdf_path: str, page_data: dict, chunk_size: int, chunk_overlap: int) -> List[List[Dict[str, str]]]:
+def get_ai_research_per_page_chunk_uuid_and_text(pdf_path: str, page_data: dict, chunk_size: int, chunk_overlap: int) -> List[List[Dict[str, str]]]:
     """ 
     Output:
         [
@@ -91,6 +92,99 @@ def get_financial_report_per_page_chunk_uuid_and_text(pdf_path: str, page_data: 
     
     return results
 
+
+    
+def get_ai_research_section_uuid_and_text(pdf_path: str, pdf_data: dict, page_data: dict):
+    """ 
+    Output:
+        [
+            {'uuid': uuid1, 'title': introduction, 'text': content of section1, 'page_numbers':[1,2]}, 
+            {'uuid': uuid2, 'title': background, 'text': content of section2, 'page_numbers':[3]}
+            ...
+        ]
+    """
+    sections = []
+    pdf_name = pdf_path.split('/')[-1].split('.')[0]
+    page_contents = page_data['page_contents']
+
+    # Fuzzy matching function, combining finding matches and returning positions
+    def find_fuzzy_match_positions(content: str, target: str) -> List[Tuple[int, int]]:
+        """
+        Perform fuzzy matching to find positions of the target in the content.
+        Returns a list of start and end positions for matches.
+        """
+        lines = content.splitlines()
+        matches = []
+        for line in lines:
+            # Use SequenceMatcher to compare similarity
+            similarity = SequenceMatcher(None, line.lower(), target.lower()).ratio()
+            if similarity > 0.9:  # Threshold for a match
+                match = re.search(re.escape(line), content)
+                if match:
+                    matches.append((match.start(), match.end()))  # Store start and end positions
+        return matches
+
+    # Extract all level 1 bookmarks
+    toc_entries = [entry for entry in pdf_data["TOC"] if entry["level"] == 1]
+
+    for i, toc_entry in enumerate(toc_entries):
+        # Get the title and page number of the current section
+        start_title = toc_entry["title"]
+        start_page = toc_entry["page_number"] - 1  # Adjust for zero-indexed
+        # Get the title and page number of the next section (if it exists)
+        if i + 1 < len(toc_entries):
+            end_title = toc_entries[i + 1]["title"]
+            end_page = toc_entries[i + 1]["page_number"] - 1  # Adjust for zero-indexed
+        else:
+            # If it is the last section, set it to the last page
+            end_page = len(page_contents) - 1
+
+        # Ensure start_page and end_page are within valid range
+        start_page = max(0, min(start_page, len(page_contents) - 1))
+        end_page = max(0, min(end_page, len(page_contents) - 1))
+
+        section_text = ""
+        page_numbers = []
+
+        # Iterate over the page range
+        for page_num in range(start_page, end_page + 1):
+            page_content = page_contents[page_num]
+            page_text = page_content.strip()
+
+            if page_num == start_page:
+                # Locate the starting point of the section
+                start_positions = find_fuzzy_match_positions(page_content, start_title)
+                if start_positions:
+                    start_pos = start_positions[0][0]
+                    section_text += page_content[start_pos:].strip() + "\n"
+                else:
+                    section_text += page_content.strip() + "\n"
+
+            if page_num == end_page:  # It may be both the start and end page
+                # Locate the ending point of the section
+                end_positions = []
+                if i < len(toc_entries) - 1:  # In case of the last TOC entry, there is no end_title
+                    end_positions = find_fuzzy_match_positions(page_content, end_title)
+                if end_positions:
+                    end_pos = end_positions[0][0]
+                    section_text += page_content[:end_pos].strip() + "\n"
+                else:
+                    section_text += page_content.strip() + "\n"
+            if (page_num != start_page) and (page_num != end_page):
+                # Middle pages, directly add the entire content
+                section_text += page_content.strip() + "\n"
+
+            page_numbers.append(page_num + 1)  # Store 1-indexed page numbers
+
+        # Add the section content to the returned sections list
+        sections.append({
+            'uuid': get_uuid(name=f"{pdf_name}_title{start_title}"),
+            'title': start_title,
+            'text': section_text.strip(),
+            'page_numbers': page_numbers
+        })
+
+    return sections
 
 
 
@@ -189,3 +283,42 @@ def get_ai_research_per_page_figure_uuid_and_summary(pdf_path: str) -> List[List
     tmp_png_file.close()
     
     return results
+
+
+def get_ai_research_per_page_equation_uuid_and_info(pdf_path: str, pdf_data: dict) -> List[List[Dict[str, str]]]:
+    """ 
+    Output:
+        [
+            [{'uuid': uuid, 'text': equation1 of page 1}, {'uuid': uuid, 'text': equation2 of page 1}, ...],
+            [{'uuid': uuid, 'text': equation1 of page 2}, {'uuid': uuid, 'text': equation2 of page 2}, ...],
+            ...
+        ]
+    """
+    # Initialize the output structure for all pages
+    result = []
+
+    # Open the PDF to get the number of pages
+    pdf_name = pdf_path.split('/')[-1].split('.')[0]
+    pdf_document = fitz.open(pdf_path)
+    total_pages = pdf_document.page_count  # Get the total number of pages
+    
+    # Extract equations from the PDF data
+    equations = pdf_data.get("info_from_mineru", {}).get("equations", [])
+
+    # Iterate over each page in the PDF
+    for page_num in range(1, total_pages + 1):  # Page numbers in PyMuPDF start from 1
+        page_result = []
+
+        # Iterate through equations and check if they belong to the current page
+        for eq in equations:
+            if eq.get("page_number") == page_num:
+                eq_text = eq.get("eq_text")
+                if eq_text:
+                    # Generate UUID for the equation text
+                    uuid_str = get_uuid(name=f"{pdf_name}_{eq_text}")
+                    page_result.append({'uuid': uuid_str, 'text': eq_text})
+
+        # Append the page result to the final output list
+        result.append(page_result)
+    
+    return result
