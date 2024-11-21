@@ -6,6 +6,7 @@ import os, sys, re, json, logging
 from typing import Dict, Any, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.functions.common_functions import get_uuid
+from agents.models import get_single_instance
 from bs4 import BeautifulSoup
 
 
@@ -33,6 +34,38 @@ def get_airqa_paper_uuid(title: str, meta: str = 'acl2024') -> str:
     # normalize the paper title
     paper = title.strip() + '-' + meta.lower()
     return get_uuid(paper, uuid_type='uuid5', uuid_namespace='dns')
+
+
+def get_answer_from_llm(question_uuid: Optional[str] = None, question: Optional[str] = None, add_answer_format: bool = True, model: str = 'gpt-4o', temperature: float = 0.7, top_p: float = 0.95) -> str:
+    """ Get the answer from the LLM model.
+    @param:
+        question_uuid: str, the UUID of the question
+        model: str, the LLM model name
+        temperature: float, the temperature parameter
+        top_p: float, the top-p parameter
+    @return:
+        str, the answer/response from the LLM model
+    """
+    assert question_uuid is not None or question is not None, "Either question_uuid or question must be provided."
+    if question_uuid is not None:
+        example = os.path.join('data', 'dataset', 'airqa', 'examples', question_uuid + '.json')
+        with open(example, 'r', encoding='utf8') as inf:
+            data = json.load(inf)
+            question = data['question'] + ' ' + data['answer_format'] if add_answer_format else data['question']
+    client = get_single_instance(model_name=model)
+    messages = [
+        {
+            "role": "system",
+            "content": "You are an intelligent agent who is expert in artificial intelligence. Please answer the following question with respect to AI research papers."
+        },
+        {
+            "role": "user",
+            "content": f"Here is the question: {question}\nLet's think step by step."
+        }
+    ]
+    response = client.get_response(messages, model=model, temperature=temperature, top_p=top_p)
+    logger.info(f"Response from LLM model: {response}")
+    return response
 
 
 def make_airqa_dataset(airqa_dir: str = AIRQA_DIR):
