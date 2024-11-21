@@ -1,9 +1,7 @@
 #coding=utf8
 import time, uuid
 from typing import List, Dict, Union, Optional, Any, Iterable
-from agents.models import infer_model_class
-
-GLOBAL_LLM = dict()
+from agents.models import get_single_instance
 
 
 def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperature: float = 0.7) -> str:
@@ -13,9 +11,7 @@ def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperat
     {{user_message}}
     Note that, the system and user messages should be separated by two consecutive newlines. And the first block is the system message, the other blocks are the user message. There is no assistant message or interaction history.
     """
-    model_class = infer_model_class(model)
-    if model_class.__name__ not in GLOBAL_LLM:
-        GLOBAL_LLM[model_class.__name__] = model_class()
+    model_client = get_single_instance(model)
     system_msg = template.split('\n\n')[0]
     user_msg = '\n\n'.join(template.split('\n\n')[1:])
     messages = [
@@ -28,7 +24,7 @@ def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperat
             "content": user_msg
         }
     ]
-    response = GLOBAL_LLM[model_class.__name__].get_response(
+    response = model_client.get_response(
         messages=messages,
         model=model,
         temperature=temperature,
@@ -37,13 +33,12 @@ def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperat
     time.sleep(1)
     return response
 
+
 def call_llm_with_message(messages: List[Dict[str, Any]], model: str = 'gpt-4o', top_p: float = 0.95, temperature: float = 0.7) -> str:
     """ Call LLM to generate the response directly using the message list.
     """
-    model_class = infer_model_class(model)
-    if model_class.__name__ not in GLOBAL_LLM:
-        GLOBAL_LLM[model_class.__name__] = model_class()
-    response = GLOBAL_LLM[model_class.__name__].get_response(
+    model_client = get_single_instance(model)
+    response = model_client.get_response(
         messages=messages,
         model=model,
         temperature=temperature,
@@ -51,6 +46,7 @@ def call_llm_with_message(messages: List[Dict[str, Any]], model: str = 'gpt-4o',
     )
     time.sleep(1)
     return response
+
 
 def get_uuid(name: Optional[str] = None, uuid_type: str = 'uuid5', uuid_namespace: str = 'dns') -> str:
     """ Generate a UUID string given the input name.
