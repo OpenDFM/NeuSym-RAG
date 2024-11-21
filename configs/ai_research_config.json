@@ -5,7 +5,10 @@
             "args": {
                 "deps": [
                     0
-                ]
+                ],
+                "kwargs": {
+                    "processed_data_folder": "data/dataset/airqa/processed_data"
+                }
             }
         },
         {
@@ -32,7 +35,10 @@
                     0,
                     1,
                     2
-                ]
+                ],
+                "kwargs": {
+                    "threshold": 0.9
+                }
             }
         },
         {

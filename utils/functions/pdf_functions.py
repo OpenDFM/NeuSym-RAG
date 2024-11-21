@@ -170,10 +170,6 @@ def parse_pdf(
         processed_data_folder: str = 'data/dataset/airqa/processed_data'
     ) -> bool:
     """Parse a PDF file with MinerU.
-
-    @return:
-    `True` if the PDF has been fully parsed before. `False` otherwise.
-    
     @output:
     The function generates a JSON file for a PDF file, containing the extracted table and figure information. 
     The output JSON structure is as follows:
@@ -236,7 +232,7 @@ def parse_pdf(
     output_path = os.path.join(processed_data_folder, f'{pdf_name}.json')
     if os.path.exists(output_path):
         logger.info(f"PDF {pdf_name} has been fully processed before.")
-        return True
+        return
         
     json_mid_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_middle.json')
     json_con_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_content_list.json')
@@ -371,5 +367,3 @@ def parse_pdf(
     # Write each paper's data into a separate JSON file
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=4)
-    
-    return False
