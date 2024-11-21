@@ -511,15 +511,22 @@ def process_airqa(
     For example, if the PDF is named `64148d31-f547-5f8c-a7a0-3cc080a195dd.pdf`, the output will be saved as `processed_data_folder/64148d31-f547-5f8c-a7a0-3cc080a195dd.json`.
     """
 
-    # Get all the subfolders in raw_data_folder
-    subfolders = [
-        os.path.join(raw_data_folder, subfolder)
-        for subfolder in os.listdir(raw_data_folder)
-        if os.path.isdir(os.path.join(raw_data_folder, subfolder))
-    ]
+    # # Get all the subfolders in raw_data_folder
+    # subfolders = [
+    #     os.path.join(raw_data_folder, subfolder)
+    #     for subfolder in os.listdir(raw_data_folder)
+    #     if os.path.isdir(os.path.join(raw_data_folder, subfolder))
+    # ]
     
-    if not subfolders:
-        raise FileNotFoundError(f"No subfolder found in {raw_data_folder}")
+    # if not subfolders:
+    #     raise FileNotFoundError(f"No subfolder found in {raw_data_folder}")
+    
+    # Get all PDF file paths in the folder
+    pdf_files = []
+    for root, _, files in os.walk(raw_data_folder):
+        pdf_files.extend(
+            os.path.join(root, file) for file in files if file.endswith('.pdf')
+        )
     
     # Construct the command
     # First, install magic-pdf package by `pip install -U magic-pdf[full] --extra-index-url https://wheels.myhloli.com`
@@ -530,27 +537,40 @@ def process_airqa(
     #  or "/Users/username"   (macos) 
     # to set the table-config to true
     
-    for subfolder in subfolders:
-        logger.info(f"Processing folder {subfolder} with MinerU.")
+    # for subfolder in subfolders:
+    #     logger.info(f"Processing folder {subfolder} with MinerU.")
+    #     command = [
+    #         "magic-pdf",
+    #         "-p", subfolder,    # input folder
+    #         "-o", processed_data_folder,   # output folder
+    #         "-m", "auto"                   # method (ocr, txt, or auto)
+    #     ]
+        
+    #     try:
+    #         result = subprocess.run(command, check=True, text=True, encoding='UTF-8')
+    #     except subprocess.CalledProcessError as e:
+    #         raise subprocess.CalledProcessError(f"Command execution failed for {subfolder} with error: {e.stderr}")
+
+    for pdf_path in pdf_files:
+        pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
+        json_mid_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_middle.json')
+        json_con_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_content_list.json')
+        if os.path.exists(json_mid_path) and os.path.exists(json_con_path):
+            logger.info(f"PDF {pdf_name} has been processed before.")
+            continue
+        logger.info(f"Processing PDF {pdf_name} with MinerU.")
         command = [
             "magic-pdf",
-            "-p", subfolder,    # input folder
+            "-p", pdf_path,                # input pdf_file
             "-o", processed_data_folder,   # output folder
             "-m", "auto"                   # method (ocr, txt, or auto)
         ]
         
         try:
-            result = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='UTF-8')
+            result = subprocess.run(command, check=True, text=True, encoding='UTF-8')
         except subprocess.CalledProcessError as e:
-            raise subprocess.CalledProcessError(f"Command execution failed for {subfolder} with error: {e.stderr}")
-
-    # Get all PDF file paths in the folder
-    pdf_files = []
-    for root, _, files in os.walk(raw_data_folder):
-        pdf_files.extend(
-            os.path.join(root, file) for file in files if file.endswith('.pdf')
-        )
-
+            raise subprocess.CalledProcessError(f"Command execution failed for {pdf_path} with error: {e.stderr}")
+    
     for pdf_path in pdf_files:
         pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
         json_mid_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_middle.json')
@@ -637,6 +657,10 @@ def process_airqa(
                     result["info_from_mineru"]["figures"].append(figure_info)
 
         # Extract information about equations
+        
+        references = []
+        record_reference = 1
+        
         for content in content_data:
             if content["type"]== "equation":
                 eq_info={
@@ -644,7 +668,18 @@ def process_airqa(
                     "page_number": content["page_idx"]+1
                 }
                 result["info_from_mineru"]["equations"].append(eq_info)
+            if content["type"] == "text" and content.get("text_level", None) == 1:
+                if content["text"].lower().startswith("reference"):
+                    record_reference = 1
+                    continue
+                elif record_reference == 1:
+                    record_reference = 0
+            if record_reference:
+                reference_list = list(str(content["text"]).split("\n"))
+                if reference_list:
+                    references.extend(reference_list)
 
+        result["info_from_mineru"]["references"] = [{"reference_text": reference} for reference in references if reference != ""]
 
         # Write each paper's data into a separate JSON file
         output_path = os.path.join(processed_data_folder, f'{pdf_name}.json')

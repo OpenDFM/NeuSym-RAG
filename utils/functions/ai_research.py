@@ -221,7 +221,7 @@ def get_ai_research_per_page_table_uuid_and_info(pdf_path: str, pdf_data: dict) 
                 # Generate a summary for the table using LLM
                 messages = [
                     {"role": "system", "content": "You are an expert in summarizing data. Your task is to generate a concise summary for an HTML-formatted table, focusing on key information and describing the table content clearly and succinctly."},
-                    {"role": "user", "content": f"Please generate a brief summary for the following table without any extra information or formatting in no more than 50 words. \nTable Caption:{table["table_caption"]}\nTable Content in html:{table["table_html"]}"}
+                    {"role": "user", "content": f"Please generate a brief summary for the following table without any extra information or formatting in no more than 50 words. \nTable Caption:{table['table_caption']}\nTable Content in html:{table['table_html']}"}
                 ]
                 table_summary = call_llm_with_message(messages)
 
