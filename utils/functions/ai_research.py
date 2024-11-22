@@ -1,7 +1,6 @@
 #coding=utf8
 import json, sys, os, re, logging
 from typing import List, Union, Optional, Tuple, Any, Dict
-import tempfile
 import fitz  # PyMuPDF
 import PyPDF2
 from pdf2image import convert_from_path
@@ -10,26 +9,43 @@ from pdfminer.layout import LTFigure, LTImage, LTRect
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from difflib import SequenceMatcher
 from utils.functions.common_functions import get_uuid, call_llm_with_message
-from utils.functions.pdf_functions import crop_pdf, convert_pdf_to_image, get_pdf_page_text, parse_pdf
+from utils.functions.pdf_functions import get_pdf_page_text, load_json_from_processed_data
 from utils.functions.image_functions import get_image_summary
 
 
-def load_json_from_processed_data(
+def get_ai_research_metadata(
+        pdf_path: str, 
+        metadata_path: str = 'data/dataset/airqa/uuid2papers.json'
+    ) -> Dict[str, Any]:
+    """ Output (metadata):
+        {}
+    """
+    pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
+    if not os.path.exists(metadata_path):
+        raise FileNotFoundError(f"Metadata file {metadata_path} not found.")
+    with open(metadata_path, 'r', encoding='utf-8') as inf:
+        metadata_file = json.load(inf)
+    metadata = metadata_file.get(pdf_name, {})
+    if metadata == {}:
+        raise ValueError(f"Metadata for {pdf_name} not found.")
+    if metadata.get("num_pages", None) == None:
+        pdf_document = fitz.open(pdf_path)
+        metadata["num_pages"] = pdf_document.page_count
+        pdf_document.close()
+    return metadata
+
+
+def get_ai_research_pdf_data(
         pdf_path: str, 
         processed_data_folder: str = 'data/dataset/airqa/processed_data'
     ) -> dict:
     """ Load the parsed JSON data from a PDF file. See `utils.function.pdf_functions.parse_pdf` for more details.
         Output (pdf_data)
     """
-    pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
-    json_path = os.path.join(processed_data_folder, f'{pdf_name}.json')
-    if not os.path.exists(json_path):
-        parse_pdf(pdf_path=pdf_path, processed_data_folder=processed_data_folder)
-    with open(json_path, 'r', encoding='utf-8') as f:
-        pdf_data = json.load(f)
-    return pdf_data
+    return load_json_from_processed_data(pdf_path=pdf_path, processed_data_folder=processed_data_folder)
 
-def get_ai_research_page_uuid_and_info(pdf_path: str) -> Dict[str,Any]:
+
+def get_ai_research_page_info(pdf_path: str) -> Dict[str, Union[str, List[str]]]:
     """ Output (page_data):
         Dict[str, Union[str, List[str]]], the output dictionary containing the following keys:
             - pdf_name: str, the name of the PDF file.
@@ -39,7 +55,8 @@ def get_ai_research_page_uuid_and_info(pdf_path: str) -> Dict[str,Any]:
     """
     return get_pdf_page_text(pdf_path)
 
-def get_ai_research_per_page_chunk_uuid_and_text(pdf_path: str, page_data: dict, chunk_size: int, chunk_overlap: int) -> List[List[Dict[str, str]]]:
+
+def get_ai_research_per_page_chunk_info(metadata: dict, page_data: dict, chunk_size: int, chunk_overlap: int) -> List[List[Dict[str, str]]]:
     """ Output (chunk_data):
         [
             [{'uuid': uuid1, 'text': text1 of page 1}, {'uuid': uuid2, 'text': text2 of page 1}, ...],
@@ -51,7 +68,7 @@ def get_ai_research_per_page_chunk_uuid_and_text(pdf_path: str, page_data: dict,
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     
     results = []
-    pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
+    pdf_name = metadata["uuid"]
     
     for page_idx, page_content in enumerate(page_data['page_contents'], start=1):
         page_chunks = text_splitter.create_documents([page_content])
@@ -65,9 +82,9 @@ def get_ai_research_per_page_chunk_uuid_and_text(pdf_path: str, page_data: dict,
     
     return results
 
-def get_ai_research_section_uuid_and_text(pdf_path: str, pdf_data: dict, page_data: dict, threshold: float = 0.9):
-    """ 
-    Output:
+
+def get_ai_research_section_info(metadata: dict, pdf_data: dict, page_data: dict, threshold: float = 0.9) -> List[Dict[str, Union[str, List[int]]]]:
+    """ Output (section_data):
         [
             {'uuid': uuid1, 'title': introduction, 'text': content of section1, 'page_numbers':[1,2]}, 
             {'uuid': uuid2, 'title': background, 'text': content of section2, 'page_numbers':[3]}
@@ -75,7 +92,7 @@ def get_ai_research_section_uuid_and_text(pdf_path: str, pdf_data: dict, page_da
         ]
     """
     sections = []
-    pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
+    pdf_name = metadata["uuid"]
     page_contents = page_data['page_contents']
 
     # Fuzzy matching function, combining finding matches and returning positions
@@ -120,7 +137,6 @@ def get_ai_research_section_uuid_and_text(pdf_path: str, pdf_data: dict, page_da
         # Iterate over the page range
         for page_num in range(start_page, end_page + 1):
             page_content = page_contents[page_num]
-            page_text = page_content.strip()
 
             if page_num == start_page:
                 # Locate the starting point of the section
@@ -141,6 +157,7 @@ def get_ai_research_section_uuid_and_text(pdf_path: str, pdf_data: dict, page_da
                     section_text += page_content[:end_pos].strip() + "\n"
                 else:
                     section_text += page_content.strip() + "\n"
+            
             if (page_num != start_page) and (page_num != end_page):
                 # Middle pages, directly add the entire content
                 section_text += page_content.strip() + "\n"
@@ -158,18 +175,14 @@ def get_ai_research_section_uuid_and_text(pdf_path: str, pdf_data: dict, page_da
     return sections
 
 
-
-def get_ai_research_per_page_table_uuid_and_info(pdf_path: str, pdf_data: dict) -> List[List[Dict[str, Any]]]:
+def get_ai_research_per_page_table_info(metadata: str, pdf_data: dict) -> List[List[Dict[str, Any]]]:
+    """ Output (table_data):
+        [ [ {'uuid': uuid1 of page1, 'table_content': table_html ,'table_caption': table caption1, 'bbox': bbox1, 'table_summary':table_summary}, {...} ], [ {...} ] ... ]
     """
-    input:
-        pdf_data (dict): The processed JSON structure for a PDF, containing table data.
-
-    output:
-        [ [ {'uuid': uuid1 of page1, 'table_content':table_html ,'table_caption':table caption1, 'bbox': bbox1, 'table_summary':table_summary}, {...} ], [ {...} ] ... ]
-    """
-    pdf_data_mineru=pdf_data["info_from_mineru"]
-    pdf_name = pdf_path.split('/')[-1].split('.')[0]
-    output = []  # Final output containing tables grouped by pages
+    pdf_data_mineru = pdf_data["info_from_mineru"]
+    pdf_path = metadata["pdf_path"]
+    pdf_name = metadata["uuid"]
+    output = []
 
     # Group tables by page number
     tables_by_page = {}
@@ -192,7 +205,7 @@ def get_ai_research_per_page_table_uuid_and_info(pdf_path: str, pdf_data: dict) 
                 # Generate a summary for the table using LLM
                 messages = [
                     {"role": "system", "content": "You are an expert in summarizing data. Your task is to generate a concise summary for an HTML-formatted table, focusing on key information and describing the table content clearly and succinctly."},
-                    {"role": "user", "content": f"Please generate a brief summary for the following table without any extra information or formatting in no more than 50 words. \nTable Caption:{table['table_caption']}\nTable Content in html:{table['table_html']}"}
+                    {"role": "user", "content": f"Please generate a brief summary for the following table without any extra information or formatting in no more than 50 words. \nTable Caption: {table['table_caption']}\nTable Content in html: {table['table_html']}"}
                 ]
                 table_summary = call_llm_with_message(messages)
 
@@ -213,50 +226,41 @@ def get_ai_research_per_page_table_uuid_and_info(pdf_path: str, pdf_data: dict) 
     return output
 
 
-
-
-def get_ai_research_per_page_figure_uuid_and_summary(pdf_path: str) -> List[List[Dict[str, Any]]]:
+def get_ai_research_per_page_image_info(metadata: dict, pdf_data: dict) -> List[List[Dict[str, Any]]]:
     """ Output:
         [ [ {'uuid': uuid1, 'summary': summary1, 'bbox': bbox1}, {...} ], [ {...} ] ... ]
     """
-    pdf_file_obj = open(pdf_path, 'rb')
-    pdf_readed = PyPDF2.PdfReader(pdf_file_obj)
-    tmp_pdf_file = tempfile.NamedTemporaryFile(suffix='.pdf', dir=os.path.join(os.getcwd(), '.cache'))
-    tmp_png_file = tempfile.NamedTemporaryFile(suffix='.png', dir=os.path.join(os.getcwd(), '.cache'))
-    results = []
+    pdf_data_mineru = pdf_data["info_from_mineru"]
+    pdf_name = metadata["uuid"]
+    num_pages = metadata["num_pages"]
     
-    for page_num, page in enumerate(extract_pages(pdf_path), start = 1):
-        page_obj = pdf_readed.pages[page_num - 1]
-        page_width = page_obj.mediabox.upper_right[0]
-        page_height = page_obj.mediabox.upper_right[1]
-        page_data = []
-        for element_num, element in enumerate(page._objs, start = 1):
-            if isinstance(element, LTFigure):
-                element.x1 = element.y1 = 0
-                for sub_element in element:
-                    if not isinstance(sub_element, LTRect) and sub_element.x1 <= page_width and sub_element.y1 <= page_height:
-                        element.x1 = max(element.x1, sub_element.x1)
-                        element.y1 = max(element.y1, sub_element.y1)
-                element.x1 = min(element.x1 + 5, page_width)
-                element.y1 = min(element.y1 + 5, page_height)
-                element.y0, element.y1 = element.y1, element.y0
-            if isinstance(element, (LTImage, LTFigure)):
-                crop_pdf(element, page_obj, tmp_pdf_file.name)
-                convert_pdf_to_image(tmp_pdf_file.name, tmp_png_file.name)
-                uuid = get_uuid(f"page_{page_num}_figure_{element_num}")
-                summary = get_image_summary(tmp_png_file.name)
-                bbox = [element.x0, page_height - element.y1, element.x1 - element.x0, element.y1 - element.y0]
-                page_data.append({'uuid': uuid, 'summary': summary, 'bbox': bbox})
-        results.append(page_data)
-
-    pdf_file_obj.close()
-    tmp_pdf_file.close()
-    tmp_png_file.close()
+    images_by_page = {}
+    for image in pdf_data_mineru.get("figures", []):
+        page_number = image.get("page_number", 0)
+        if page_number not in images_by_page:
+            images_by_page[page_number] = []
+        images_by_page[page_number].append(image)
+    
+    results = []
+    for page_num in range(1, num_pages + 1):
+        images = images_by_page.get(page_num, [])
+        result = []
+        for ordinal, image in enumerate(images, start=1):
+            uuid = get_uuid(name=f"{pdf_name}_page_{page_num}_image_{ordinal}")
+            image_summary = get_image_summary(image["figure_path"])
+            image_info = {
+                "uuid": uuid,
+                "image_caption": image["figure_caption"],
+                "bbox": image["figure_bbox"],
+                "image_summary": image_summary
+            }
+            result.append(image_info)
+        results.append(result)
     
     return results
 
 
-def get_ai_research_per_page_equation_uuid_and_info(pdf_path: str, pdf_data: dict) -> List[List[Dict[str, str]]]:
+def get_ai_research_per_page_equation_info(metadata: dict, pdf_data: dict) -> List[List[Dict[str, str]]]:
     """ 
     Output:
         [
@@ -266,52 +270,51 @@ def get_ai_research_per_page_equation_uuid_and_info(pdf_path: str, pdf_data: dic
         ]
     """
     # Initialize the output structure for all pages
-    result = []
+    results = []
 
     # Open the PDF to get the number of pages
-    pdf_name = pdf_path.split('/')[-1].split('.')[0]
-    pdf_document = fitz.open(pdf_path)
-    total_pages = pdf_document.page_count  # Get the total number of pages
-    pdf_document.close()
+    pdf_data_mineru = pdf_data["info_from_mineru"]
+    pdf_name = metadata["uuid"]
+    num_pages = metadata["num_pages"]
 
     # Extract equations from the PDF data
-    equations = pdf_data.get("info_from_mineru", {}).get("equations", [])
-
-    # Iterate over each page in the PDF
-    for page_num in range(1, total_pages + 1):  # Page numbers in PyMuPDF start from 1
-        page_result = []
-
-        # Iterate through equations and check if they belong to the current page
-        for eq in equations:
-            if eq.get("page_number") == page_num:
-                eq_text = eq.get("eq_text")
-                if eq_text:
-                    # Generate UUID for the equation text
-                    uuid_str = get_uuid(name=f"{pdf_name}_{eq_text}")
-                    page_result.append({'uuid': uuid_str, 'text': eq_text})
-
-        # Append the page result to the final output list
-        result.append(page_result)
     
-    return result
+    equations_by_page = {}
+    for equation in pdf_data_mineru.get("equations", []):
+        page_number = equation.get("page_number", 0)
+        if page_number not in equations_by_page:
+            equations_by_page[page_number] = []
+        equations_by_page[page_number].append(equation)
 
+    for page_num in range(1, num_pages + 1):
+        result = []
+        equations = equations_by_page.get(page_num, [])
+        for ordinal, equation in enumerate(equations, start=1):
+            equation_text = equation.get("eq_text", "")
+            if equation_text != "":
+                uuid = get_uuid(name=f"{pdf_name}_equation_{ordinal}")
+                result.append({'uuid': uuid, 'text': equation_text})
+        results.append(result)
+    
+    return results
 
-def aggregate_ai_research_table_metadata(pdf_path: str) -> List[Any]:
+# TODO: modify the following metadata function
+def aggregate_ai_research_metadata(metadata: dict) -> List[Any]:
     """ Output:
         [ [ paper_id, paper_pages, paper_path ] ]
     """
-    paper_id = pdf_path.split('/')[-1].split('.')[0]
+    paper_id = metadata["uuid"]
+    num_pages = metadata["num_pages"]
+    pdf_path = metadata["pdf_path"]
+    return [[paper_id, num_pages, pdf_path]]
 
-    pdf_document = fitz.open(pdf_path)
-    paper_pages = pdf_document.page_count  # Get the total number of pages
-    return[[paper_id, paper_pages, pdf_path]]
-
-def aggregate_ai_research_table_pages(pdf_path: str, page_data: dict) -> List[Any]:
+def aggregate_ai_research_table_pages(metadata: dict, page_data: dict) -> List[Any]:
     """ Output:
         [ [ page_id, page_number, page_width, page_height, page_content, ref_paper_id ] ]
     """
     
-    paper_id = pdf_path.split('/')[-1].split('.')[0]
+    pdf_path = metadata["pdf_path"]
+    pdf_name = metadata["uuid"]
     doc = fitz.open(pdf_path)
     aggregated_data = []
 
@@ -333,7 +336,7 @@ def aggregate_ai_research_table_pages(pdf_path: str, page_data: dict) -> List[An
             page_width,      # page_width
             page_height,     # page_height
             page_content,    # page_content
-            paper_id         # ref_paper_id
+            pdf_name         # ref_paper_id
         ])
 
     doc.close()
@@ -344,7 +347,7 @@ def aggregate_ai_research_table_chunks(pdf_path: str, chunk_data: dict, page_dat
     """ Output:
         [ [ chunk_id, text_content, ordinal, ref_paper_id, ref_page_id ] ]
     """
-    paper_id = pdf_path.split('/')[-1].split('.')[0]
+    paper_id = os.path.splitext(os.path.basename(pdf_path))[0]
     # Prepare the output list
     aggregated_data = []
 
@@ -373,7 +376,7 @@ def aggregate_ai_research_table_table_in_pages(pdf_path: str, table_data: list, 
     """
     
 
-    paper_id = pdf_path.split('/')[-1].split('.')[0]
+    paper_id = os.path.splitext(os.path.basename(pdf_path))[0]
 
     # Prepare the output list
     results = []
@@ -414,7 +417,7 @@ def aggregate_ai_research_table_sections(pdf_path: str, section_data: list ) -> 
         [ [ section_id, section_title, section_text, section_ordinal, page_numbers, ref_paper_id ] ]
     """
     
-    paper_id = pdf_path.split('/')[-1].split('.')[0]
+    paper_id = os.path.splitext(os.path.basename(pdf_path))[0]
 
     # Prepare the output list
     results = []
@@ -444,7 +447,7 @@ def aggregate_ai_research_table_figures(pdf_path: str, figure_data: list, page_d
     Output:
         [ [ figure_id, figure_summary, bounding_box, ordinal, ref_paper_id, ref_page_id ] ]
     """
-    paper_id = pdf_path.split('/')[-1].split('.')[0]
+    paper_id = os.path.splitext(os.path.basename(pdf_path))[0]
 
     # Prepare the output list
     results = []
@@ -482,7 +485,7 @@ def aggregate_ai_research_table_equations(pdf_path: str, eq_data: list, page_dat
     Output:
         [ [ eq_id, eq_content, ordinal, ref_paper_id, ref_page_id ] ]
     """
-    paper_id = pdf_path.split('/')[-1].split('.')[0]
+    paper_id = os.path.splitext(os.path.basename(pdf_path))[0]
 
     # Prepare the output list
     results = []

@@ -35,8 +35,13 @@ from .financial_report import (
 )
 
 from .ai_research import (
-    get_ai_research_per_page_figure_uuid_and_summary,
-    # aggregate_ai_research_table_figures
+    get_ai_research_metadata,
+    get_ai_research_pdf_data,
+    get_ai_research_page_info,
+    get_ai_research_per_page_chunk_info,
+    get_ai_research_section_info,
+    get_ai_research_per_page_table_info,
+    get_ai_research_per_page_image_info,
 )
 
 from .test_domain import (
