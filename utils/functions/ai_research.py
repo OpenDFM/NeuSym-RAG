@@ -13,32 +13,10 @@ from utils.functions.pdf_functions import get_pdf_page_text, load_json_from_proc
 from utils.functions.image_functions import get_image_summary
 
 
-def get_ai_research_metadata(
-        pdf_path: str, 
-        metadata_path: str = 'data/dataset/airqa/uuid2papers.json'
-    ) -> Dict[str, Any]:
-    """ Output (metadata):
-        {}
-    """
-    pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
-    if not os.path.exists(metadata_path):
-        raise FileNotFoundError(f"Metadata file {metadata_path} not found.")
-    with open(metadata_path, 'r', encoding='utf-8') as inf:
-        metadata_file = json.load(inf)
-    metadata = metadata_file.get(pdf_name, {})
-    if metadata == {}:
-        raise ValueError(f"Metadata for {pdf_name} not found.")
-    if metadata.get("num_pages", None) == None:
-        pdf_document = fitz.open(pdf_path)
-        metadata["num_pages"] = pdf_document.page_count
-        pdf_document.close()
-    return metadata
-
-
 def get_ai_research_pdf_data(
         pdf_path: str, 
         processed_data_folder: str = 'data/dataset/airqa/processed_data'
-    ) -> dict:
+    ) -> Dict[str, Any]:
     """ Load the parsed JSON data from a PDF file. See `utils.function.pdf_functions.parse_pdf` for more details.
         Output (pdf_data)
     """
@@ -56,7 +34,12 @@ def get_ai_research_page_info(pdf_path: str) -> Dict[str, Union[str, List[str]]]
     return get_pdf_page_text(pdf_path)
 
 
-def get_ai_research_per_page_chunk_info(metadata: dict, page_data: dict, chunk_size: int, chunk_overlap: int) -> List[List[Dict[str, str]]]:
+def get_ai_research_per_page_chunk_info(
+        metadata: Dict[str, Any], 
+        page_data: Dict[str, Any], 
+        chunk_size: int, 
+        chunk_overlap: int
+    ) -> List[List[Dict[str, str]]]:
     """ Output (chunk_data):
         [
             [{'uuid': uuid1, 'text': text1 of page 1}, {'uuid': uuid2, 'text': text2 of page 1}, ...],
@@ -75,7 +58,7 @@ def get_ai_research_per_page_chunk_info(metadata: dict, page_data: dict, chunk_s
         page_results = []
         
         for chunk_idx, chunk in enumerate(page_chunks, start=1):
-            chunk_uuid = f"{pdf_name}_page_{page_idx}_chunk_{chunk_idx}"
+            chunk_uuid = get_uuid(name=f"{pdf_name}_page_{page_idx}_chunk_{chunk_idx}")
             page_results.append({'uuid': chunk_uuid, 'text': chunk.page_content})
         
         results.append(page_results)
@@ -83,7 +66,12 @@ def get_ai_research_per_page_chunk_info(metadata: dict, page_data: dict, chunk_s
     return results
 
 
-def get_ai_research_section_info(metadata: dict, pdf_data: dict, page_data: dict, threshold: float = 0.9) -> List[Dict[str, Union[str, List[int]]]]:
+def get_ai_research_section_info(
+        metadata: Dict[str, Any], 
+        pdf_data: Dict[str, Any], 
+        page_data: Dict[str, Any], 
+        threshold: float = 0.9
+    ) -> List[Dict[str, Union[str, List[int]]]]:
     """ Output (section_data):
         [
             {'uuid': uuid1, 'title': introduction, 'text': content of section1, 'page_numbers':[1,2]}, 
@@ -175,14 +163,14 @@ def get_ai_research_section_info(metadata: dict, pdf_data: dict, page_data: dict
     return sections
 
 
-def get_ai_research_per_page_table_info(metadata: str, pdf_data: dict) -> List[List[Dict[str, Any]]]:
+def get_ai_research_per_page_table_info(metadata: str, pdf_data: Dict[str, Any]) -> List[List[Dict[str, Any]]]:
     """ Output (table_data):
         [ [ {'uuid': uuid1 of page1, 'table_content': table_html ,'table_caption': table caption1, 'bbox': bbox1, 'table_summary':table_summary}, {...} ], [ {...} ] ... ]
     """
     pdf_data_mineru = pdf_data["info_from_mineru"]
     pdf_path = metadata["pdf_path"]
     pdf_name = metadata["uuid"]
-    output = []
+    results = []
 
     # Group tables by page number
     tables_by_page = {}
@@ -219,16 +207,19 @@ def get_ai_research_per_page_table_info(metadata: str, pdf_data: dict) -> List[L
                 }
                 page_result.append(table_info)
 
-            output.append(page_result)  # Append tables for this page
+            results.append(page_result)  # Append tables for this page
         else:
-            output.append([])  # Append empty list if no tables on this page
+            results.append([])  # Append empty list if no tables on this page
 
-    return output
+    return results
 
 
-def get_ai_research_per_page_image_info(metadata: dict, pdf_data: dict) -> List[List[Dict[str, Any]]]:
-    """ Output:
-        [ [ {'uuid': uuid1, 'summary': summary1, 'bbox': bbox1}, {...} ], [ {...} ] ... ]
+def get_ai_research_per_page_image_info(
+        metadata: Dict[str, Any], 
+        pdf_data: Dict[str, Any]
+    ) -> List[List[Dict[str, Any]]]:
+    """ Output (image_data):
+        [ [ {'uuid': uuid, 'image_caption': image_caption, 'image_summary': immage_summary, 'bbox': bbox1}, {...} ], [ {...} ] ... ]
     """
     pdf_data_mineru = pdf_data["info_from_mineru"]
     pdf_name = metadata["uuid"]
@@ -251,8 +242,8 @@ def get_ai_research_per_page_image_info(metadata: dict, pdf_data: dict) -> List[
             image_info = {
                 "uuid": uuid,
                 "image_caption": image["figure_caption"],
-                "bbox": image["figure_bbox"],
-                "image_summary": image_summary
+                "image_summary": image_summary,
+                "bbox": image["figure_bbox"]
             }
             result.append(image_info)
         results.append(result)
@@ -260,24 +251,22 @@ def get_ai_research_per_page_image_info(metadata: dict, pdf_data: dict) -> List[
     return results
 
 
-def get_ai_research_per_page_equation_info(metadata: dict, pdf_data: dict) -> List[List[Dict[str, str]]]:
-    """ 
-    Output:
+def get_ai_research_per_page_equation_info(
+        metadata: Dict[str, Any], 
+        pdf_data: Dict[str, Any]
+    ) -> List[List[Dict[str, str]]]:
+    """ Output (equation_data):
         [
             [{'uuid': uuid, 'text': equation1 of page 1}, {'uuid': uuid, 'text': equation2 of page 1}, ...],
             [{'uuid': uuid, 'text': equation1 of page 2}, {'uuid': uuid, 'text': equation2 of page 2}, ...],
             ...
         ]
     """
-    # Initialize the output structure for all pages
     results = []
 
-    # Open the PDF to get the number of pages
     pdf_data_mineru = pdf_data["info_from_mineru"]
     pdf_name = metadata["uuid"]
     num_pages = metadata["num_pages"]
-
-    # Extract equations from the PDF data
     
     equations_by_page = {}
     for equation in pdf_data_mineru.get("equations", []):
@@ -292,14 +281,14 @@ def get_ai_research_per_page_equation_info(metadata: dict, pdf_data: dict) -> Li
         for ordinal, equation in enumerate(equations, start=1):
             equation_text = equation.get("eq_text", "")
             if equation_text != "":
-                uuid = get_uuid(name=f"{pdf_name}_equation_{ordinal}")
+                uuid = get_uuid(name=f"{pdf_name}_page_{page_num}_equation_{ordinal}")
                 result.append({'uuid': uuid, 'text': equation_text})
         results.append(result)
     
     return results
 
 # TODO: modify the following metadata function
-def aggregate_ai_research_metadata(metadata: dict) -> List[Any]:
+def aggregate_ai_research_metadata(metadata: Dict[str, Any]) -> List[List[Any]]:
     """ Output:
         [ [ paper_id, paper_pages, paper_path ] ]
     """
@@ -308,7 +297,7 @@ def aggregate_ai_research_metadata(metadata: dict) -> List[Any]:
     pdf_path = metadata["pdf_path"]
     return [[paper_id, num_pages, pdf_path]]
 
-def aggregate_ai_research_table_pages(metadata: dict, page_data: dict) -> List[Any]:
+def aggregate_ai_research_pages(metadata: Dict[str, Any], page_data: Dict[str, Any]) -> List[List[Any]]:
     """ Output:
         [ [ page_id, page_number, page_width, page_height, page_content, ref_paper_id ] ]
     """
@@ -316,50 +305,43 @@ def aggregate_ai_research_table_pages(metadata: dict, page_data: dict) -> List[A
     pdf_path = metadata["pdf_path"]
     pdf_name = metadata["uuid"]
     doc = fitz.open(pdf_path)
-    aggregated_data = []
+    results = []
 
-    # Iterate through the page data
-    for page_number, (page_content, page_uuid) in enumerate(
-        zip(page_data["page_contents"], page_data["page_uuids"]), start=1
-    ):
+    for page_number, page_content in enumerate(page_data["page_contents"], start=1):
         # Get the corresponding page from the PDF
         page = doc[page_number - 1]
-
-        # Extract page dimensions
+        page_uuid = get_uuid(name=f"{pdf_name}_page_{page_number}")
         page_width = page.rect.width
         page_height = page.rect.height
 
-        # Append the aggregated information
-        aggregated_data.append([
-            page_uuid,       # page_id
-            page_number,     # page_number (starts from 1)
-            page_width,      # page_width
-            page_height,     # page_height
-            page_content,    # page_content
-            pdf_name         # ref_paper_id
+        results.append([
+            page_uuid,        # page_id
+            page_number,      # page_number (starts from 1)
+            int(page_width),  # page_width
+            int(page_height), # page_height
+            page_content,     # page_content
+            pdf_name          # ref_paper_id
         ])
 
     doc.close()
 
-    return aggregated_data
+    return results
 
-def aggregate_ai_research_table_chunks(pdf_path: str, chunk_data: dict, page_data: dict) -> List[Any]:
+def aggregate_ai_research_chunks(
+        metadata: Dict[str, Any], 
+        chunk_data: List[List[Dict[str, str]]], 
+        page_data: Dict[str, Any]
+    ) -> List[List[Any]]:
     """ Output:
         [ [ chunk_id, text_content, ordinal, ref_paper_id, ref_page_id ] ]
     """
-    paper_id = os.path.splitext(os.path.basename(pdf_path))[0]
-    # Prepare the output list
-    aggregated_data = []
+    paper_id = metadata["uuid"]
+    results = []
 
-    # Iterate through the pages and chunks
     for page_index, page_chunks in enumerate(chunk_data):
-        # Get the corresponding page UUID from page_data
         ref_page_id = page_data["page_uuids"][page_index]
-
-        # Iterate through the chunks in the page
         for ordinal, chunk in enumerate(page_chunks, start=1):
-            # Append the aggregated chunk information
-            aggregated_data.append([
+            results.append([
                 chunk["uuid"],       # chunk_id
                 chunk["text"],       # text_content
                 ordinal,             # ordinal (order within the page)
@@ -367,151 +349,140 @@ def aggregate_ai_research_table_chunks(pdf_path: str, chunk_data: dict, page_dat
                 ref_page_id          # ref_page_id
             ])
 
-    return aggregated_data
+    return results
 
-def aggregate_ai_research_table_table_in_pages(pdf_path: str, table_data: list, page_data: dict ) -> List[Any]:
-    """ 
-    Output:
-        [ [ table_id, table_html, table_summary, table_bbox, table_ordinal, ref_paper_id, ref_page_id ] ]
+def aggregate_ai_research_tables(
+        metadata: Dict[str, Any], 
+        table_data: list, 
+        page_data: Dict[str, Any]
+    ) -> List[List[Any]]:
+    """ Output:
+        [ [ table_id, table_caption, table_html, table_summary, table_bbox, table_ordinal, ref_paper_id, ref_page_id ] ]
     """
     
-
-    paper_id = os.path.splitext(os.path.basename(pdf_path))[0]
-
-    # Prepare the output list
+    paper_id = metadata["uuid"]
     results = []
 
-    # Iterate through pages and their tables
     for page_idx, tables_in_page in enumerate(table_data):
-        # Skip if no tables are present on the current page
         if not tables_in_page:
             continue
 
-        # Get the page UUID (ref_page_id) from page_data
         ref_page_id = page_data["page_uuids"][page_idx]
 
-        # Iterate through the tables in the page
         for table_idx, table in enumerate(tables_in_page):
-            table_id = table["uuid"]  # Use pre-generated table UUID
+            table_id = table["uuid"]
+            table_caption = table["table_caption"]
             table_html = table["table_content"]
             table_summary = table["table_summary"]
-            table_bbox = table["bbox"]  # Bounding box of the table
+            table_bbox = table["bbox"]
             table_ordinal = table_idx 
 
-            # Append the result for the current table
             results.append([
-                table_id,                     # table_id
-                table_html,                   # table_html
-                table_summary,                # table_summary
-                json.dumps(table_bbox),       # table_bbox as JSON string
-                table_ordinal,                # table_ordinal
-                paper_id,                     # ref_paper_id
-                ref_page_id                   # ref_page_id
+                table_id,                   # table_id
+                table_caption,              # table_caption
+                table_html,                 # table_content
+                table_summary,              # table_summary
+                json.dumps(table_bbox),     # bounding_box
+                table_ordinal,              # ordinal
+                paper_id,                   # ref_paper_id
+                ref_page_id                 # ref_page_id
             ])
 
     return results
 
-def aggregate_ai_research_table_sections(pdf_path: str, section_data: list ) -> List[Any]:
+def aggregate_ai_research_sections(
+        metadata: Dict[str, Any], 
+        section_data: List[Dict[str, Union[str, List[int]]]]
+    ) -> List[List[Any]]:
     """ 
     Output:
         [ [ section_id, section_title, section_text, section_ordinal, page_numbers, ref_paper_id ] ]
     """
     
-    paper_id = os.path.splitext(os.path.basename(pdf_path))[0]
-
-    # Prepare the output list
+    paper_id = metadata["uuid"]
     results = []
 
-    # Iterate through sections
     for ordinal, section in enumerate(section_data):
-        # Extract section details
         section_id = section["uuid"]
         section_title = section["title"]
         section_text = section["text"]
         page_numbers = section["page_numbers"]
 
-        # Append the result for the current section
         results.append([
-            section_id,        # section_id
-            section_title,     # section_title
-            section_text,      # section_text
-            ordinal,           # section_ordinal
-            page_numbers,      # page_numbers
-            paper_id           # ref_paper_id
+            section_id,     # section_id
+            section_title,  # section_title
+            section_text,   # section_content
+            ordinal,        # ordinal
+            page_numbers,   # page_numbers
+            paper_id        # ref_paper_id
         ])
 
     return results
 
-def aggregate_ai_research_table_figures(pdf_path: str, figure_data: list, page_data: dict) -> List[Any]:
-    """ 
-    Output:
-        [ [ figure_id, figure_summary, bounding_box, ordinal, ref_paper_id, ref_page_id ] ]
+def aggregate_ai_research_images(
+        metadata: Dict[str, Any], 
+        image_data: List[List[Dict[str, Any]]], 
+        page_data: Dict[str, Any]
+    ) -> List[List[Any]]:
+    """ Output:
+        [ [ image_id, image_caption, image_summary, bounding_box, ordinal, ref_paper_id, ref_page_id ] ]
     """
-    paper_id = os.path.splitext(os.path.basename(pdf_path))[0]
-
-    # Prepare the output list
+    paper_id = metadata["uuid"]
     results = []
 
-    # Iterate through pages and their figures
-    for page_idx, figures_in_page in enumerate(figure_data):
-        # Skip if no figures are present on the current page
-        if not figures_in_page:
+    for page_idx, images_in_page in enumerate(image_data):
+        if not images_in_page:
             continue
 
-        # Get the page UUID (ref_page_id) from page_data
         ref_page_id = page_data["page_uuids"][page_idx]
 
-        # Iterate through the figures in the page
-        for figure_idx, figure in enumerate(figures_in_page):
-            figure_id = figure["uuid"]  # Unique identifier for the figure
-            figure_summary = figure["summary"]  # Summary of the figure
-            bounding_box = figure["bbox"]  # Bounding box of the figure
-            ordinal = figure_idx   # The order of the figure on the page
+        for image_idx, image in enumerate(images_in_page):
+            image_id = image["uuid"]
+            image_caption = image["image_caption"]
+            image_summary = image["image_summary"]
+            bounding_box = image["bbox"]
+            ordinal = image_idx
 
-            # Append the result for the current figure
             results.append([
-                figure_id,                # figure_id
-                figure_summary,           # figure_summary
-                json.dumps(bounding_box), # bounding_box as JSON string
-                ordinal,                  # ordinal
-                paper_id,                 # ref_paper_id
-                ref_page_id               # ref_page_id
+                image_id,                   # image_id
+                image_caption,              # image_caption
+                image_summary,              # image_summary
+                json.dumps(bounding_box),   # bounding_box
+                ordinal,                    # ordinal
+                paper_id,                   # ref_paper_id
+                ref_page_id                 # ref_page_id
             ])
 
     return results
 
-def aggregate_ai_research_table_equations(pdf_path: str, eq_data: list, page_data: dict) -> List[Any]:
-    """ 
-    Output:
-        [ [ eq_id, eq_content, ordinal, ref_paper_id, ref_page_id ] ]
+def aggregate_ai_research_equations(
+        metadata: Dict[str, Any], 
+        equation_data: List[List[Dict[str, str]]], 
+        page_data: Dict[str, Any]
+    ) -> List[List[Any]]:
+    """ Output:
+        [ [ equation_id, equation_content, ordinal, ref_paper_id, ref_page_id ] ]
     """
-    paper_id = os.path.splitext(os.path.basename(pdf_path))[0]
-
-    # Prepare the output list
+    paper_id = metadata["uuid"]
     results = []
 
-    # Iterate through pages and their equations
-    for page_idx, equations_in_page in enumerate(eq_data):
-        # Skip if no equations are present on the current page
+    for page_idx, equations_in_page in enumerate(equation_data):
         if not equations_in_page:
             continue
 
-        # Get the page UUID (ref_page_id) from page_data
         ref_page_id = page_data["page_uuids"][page_idx]
 
-        # Iterate through the equations in the page
-        for eq_idx, equation in enumerate(equations_in_page):
-            eq_id = equation["uuid"]         # Unique identifier for the equation
-            eq_content = equation["text"]   # Equation content
-            ordinal = eq_idx            # The order of the equation on the page
+        for idx, equation in enumerate(equations_in_page):
+            equation_id = equation["uuid"]
+            equation_content = equation["text"]
+            ordinal = idx
 
-            # Append the result for the current equation
             results.append([
-                eq_id,         # eq_id
-                eq_content,    # eq_content
-                ordinal,       # ordinal
-                paper_id,      # ref_paper_id
-                ref_page_id    # ref_page_id
+                equation_id,        # equation_id
+                equation_content,   # equation_content
+                ordinal,            # ordinal
+                paper_id,           # ref_paper_id
+                ref_page_id         # ref_page_id
             ])
 
     return results

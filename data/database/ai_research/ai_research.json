@@ -11,17 +11,17 @@
                 {
                     "column_name": "paper_id",
                     "column_type": "UUID",
-                    "description": "A unique identifier for each report."
+                    "description": "A unique identifier for this paper."
                 },
                 {
                     "column_name": "paper_pages",
                     "column_type": "INTEGER",
-                    "description": "The number of pages in this report."
+                    "description": "The number of pages in this paper."
                 },
                 {
                     "column_name": "paper_path",
                     "column_type": "VARCHAR",
-                    "description": "The path to the PDF file."
+                    "description": "The path to the PDF file of this paper."
                 }
             ],
             "primary_keys": [
@@ -31,13 +31,13 @@
         {
             "table": {
                 "table_name": "pages",
-                "description": "This table stores page content of the papers, including their content and their order within the report."
+                "description": "This table stores page content of the papers, including their content, size and their order within the paper."
             },
             "columns": [
                 {
                     "column_name": "page_id",
                     "column_type": "UUID",
-                    "description": "A unique identifier for each page within a paper."
+                    "description": "A unique identifier for each page."
                 },
                 {
                     "column_name": "page_number",
@@ -63,7 +63,7 @@
                 {
                     "column_name": "ref_paper_id",
                     "column_type": "UUID",
-                    "description": "A foreign key linking to the paper ID in the metadata table."
+                    "description": "A foreign key linking to the `paper_id` in the `metadata` table."
                 }
             ],
             "primary_keys": [
@@ -86,12 +86,17 @@
                 {
                     "column_name": "image_id",
                     "column_type": "UUID",
-                    "description": "The unique identifier of the figure."
+                    "description": "The unique identifier of the image."
                 },
                 {
-                    "column_name": "figure_summary",
+                    "column_name": "image_caption",
                     "column_type": "VARCHAR",
-                    "description": "A brief summary of the figure, focusing on key information and describing the figure."
+                    "description": "The caption of this image, \"\" if it doesn't have one."
+                },
+                {
+                    "column_name": "image_summary",
+                    "column_type": "VARCHAR",
+                    "description": "A brief summary of the image, focusing on key information and describing the image."
                 },
                 {
                     "column_name": "bounding_box",
@@ -106,16 +111,16 @@
                 {
                     "column_name": "ref_paper_id",
                     "column_type": "UUID",
-                    "description": "A foreign key linking to the paper ID in the `metadata` table."
+                    "description": "A foreign key linking to the `paper_id` in the `metadata` table."
                 },
                 {
                     "column_name": "ref_page_id",
                     "column_type": "UUID",
-                    "description": "A foreign key linking to the page ID in the `pages` table."
+                    "description": "A foreign key linking to the `page_id` in the `pages` table."
                 }
             ],
             "primary_keys": [
-                "figure_id"
+                "image_id"
             ],
             "foreign_keys": [
                 [
@@ -155,12 +160,12 @@
                 {
                     "column_name": "ref_paper_id",
                     "column_type": "UUID",
-                    "description": "A foreign key linking to the paper ID in the `metadata` table."
+                    "description": "A foreign key linking to the `paper_id` in the `metadata` table."
                 },
                 {
                     "column_name": "ref_page_id",
                     "column_type": "UUID",
-                    "description": "A foreign key linking to the page ID in the `pages` table."
+                    "description": "A foreign key linking to the `page_id` in the `pages` table."
                 }
             ],
             "primary_keys": [
@@ -181,8 +186,8 @@
         },
         {
             "table": {
-                "table_name": "table_in_pages",
-                "description": "This table stores information about tables extracted from pages using mineru,including content(in html format), bounding box and summary of each table generated by gpt"
+                "table_name": "tables",
+                "description": "This table stores information about tables extracted from pages using mineru, including content (in html format), bounding box and summary of each table generated by LLM."
             },
             "columns": [
                 {
@@ -205,7 +210,7 @@
                 {
                     "column_name": "table_summary",
                     "column_type": "VARCHAR",
-                    "description": "A brief summary of the table content generated by gpt, focusing on key information and describing the table content.",
+                    "description": "A brief summary of the table content generated by LLM, focusing on key information and describing the table content.",
                     "encodable": true
                 },
                 {
@@ -221,12 +226,12 @@
                 {
                     "column_name": "ref_paper_id",
                     "column_type": "UUID",
-                    "description": "A foreign key linking to the paper ID in the `metadata` table."
+                    "description": "A foreign key linking to the `paper_id` in the `metadata` table."
                 },
                 {
                     "column_name": "ref_page_id",
                     "column_type": "UUID",
-                    "description": "A foreign key linking to the page ID in the `pages` table where this table is located."
+                    "description": "A foreign key linking to the `page_id` in the `pages` table where this table is located."
                 }
             ],
             "primary_keys": [
@@ -281,7 +286,7 @@
                 {
                     "column_name": "ref_paper_id",
                     "column_type": "UUID",
-                    "description": "A foreign key linking to the paper ID in the `metadata` table."
+                    "description": "A foreign key linking to the `paper_id` in the `metadata` table."
                 }
             ],
             "primary_keys": [
@@ -302,12 +307,12 @@
             },
             "columns": [
                 {
-                    "column_name": "eq_id",
+                    "column_name": "equation_id",
                     "column_type": "UUID",
                     "description": "A unique identifier for each equation."
                 },
                 {
-                    "column_name": "eq_content",
+                    "column_name": "equation_content",
                     "column_type": "VARCHAR",
                     "description": "Content of the equation in latex format.",
                     "encodable": true
@@ -329,7 +334,7 @@
                 }
             ],
             "primary_keys": [
-                "eq_id"
+                "equation_id"
             ],
             "foreign_keys": [
                 [
