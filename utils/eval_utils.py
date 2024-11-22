@@ -55,7 +55,7 @@ Response:
     return score
 
 def fuzzy_match_strs(pred_ans: str, gold_ans: str, threshold: float = 0.95) -> float:
-    pred, gold = re.sub(r'\s+', ' ', pred_ans), re.sub(r'\s+', ' ', gold_ans)
+    pred, gold = re.sub(r'\s+', ' ', str(pred_ans)), re.sub(r'\s+', ' ', gold_ans)
     # allow pred to fully contain the gold answer (treated as true)
     compare_function = fuzz.partial_ratio if len(pred) > len(gold) else fuzz.ratio
     return float(compare_function(pred, gold) / 100.0 >= threshold)
