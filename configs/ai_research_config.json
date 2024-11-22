@@ -1,6 +1,14 @@
 {
     "pipeline": [
         {
+            "function": "get_ai_research_metadata",
+            "args": {
+                "deps": [
+                    0
+                ]
+            }
+        },
+        {
             "function": "get_ai_research_pdf_data",
             "args": {
                 "deps": [
@@ -12,7 +20,7 @@
             }
         },
         {
-            "function": "get_ai_research_page_uuid_and_info",
+            "function": "get_ai_research_page_info",
             "args": {
                 "deps": [
                     0
@@ -20,21 +28,25 @@
             }
         },
         {
-            "function": "get_ai_research_per_page_chunk_uuid_and_text",
+            "function": "get_ai_research_per_page_chunk_info",
             "args": {
                 "deps": [
-                    0,
-                    1
-                ]
+                    1,
+                    3
+                ],
+                "kwargs": {
+                    "chunk_size": 512,
+                    "chunk_overlap": 32
+                }
             }
         },
         {
-            "function": "get_ai_research_section_uuid_and_text",
+            "function": "get_ai_research_section_info",
             "args": {
                 "deps": [
-                    0,
                     1,
-                    2
+                    2,
+                    3
                 ],
                 "kwargs": {
                     "threshold": 0.9
@@ -42,28 +54,29 @@
             }
         },
         {
-            "function": "get_ai_research_per_page_table_uuid_and_info",
+            "function": "get_ai_research_per_page_table_info",
             "args": {
                 "deps": [
-                    0,
-                    1
+                    1,
+                    2
                 ]
             }
         },
         {
-            "function": "get_ai_research_per_page_figure_uuid_and_summary",
+            "function": "get_ai_research_per_page_image_info",
             "args": {
                 "deps": [
-                    0
+                    1,
+                    2
                 ]
             }
         },
         {
-            "function": "get_ai_research_per_page_equation_uuid_and_info",
+            "function": "get_ai_research_per_page_equation_info",
             "args": {
                 "deps": [
-                    0,
-                    1
+                    1,
+                    2
                 ]
             }
         }
@@ -71,67 +84,73 @@
     "aggregation": [
         {
             "function": "aggregate_ai_research_table_metadata",
-            "agrs": {
+            "args": {
                 "deps": [
                     0
                 ]
             }
         },
         {
-            "function": "aggregate_ai_research_table_pages",
-            "agrs": {
+            "function": "aggregate_ai_research_pages",
+            "table": "pages",
+            "args": {
                 "deps": [
-                    0,
-                    2
+                    1,
+                    3
                 ]
             }
         },
         {
             "function": "aggregate_ai_research_table_chunks",
-            "agrs": {
+            "table": "chunks",
+            "args": {
                 "deps": [
-                    0,
-                    3,
-                    2
-                ]
-            }
-        },
-        {
-            "function": "aggregate_ai_research_table_table_in_pages",
-            "agrs": {
-                "deps": [
-                    0,
-                    5,
-                    2
-                ]
-            }
-        },
-        {
-            "function": "aggregate_ai_research_table_sections",
-            "agrs": {
-                "deps": [
-                    0,
-                    4
-                ]
-            }
-        },
-        {
-            "function": "aggregate_ai_research_table_figures",
-            "agrs": {
-                "deps": [
-                    0,
                     1,
-                    6
+                    4,
+                    3
                 ]
             }
         },
         {
-            "function": "aggregate_ai_research_table_equations",
-            "agrs": {
+            "function": "aggregate_ai_research_tables",
+            "table": "tables",
+            "args": {
                 "deps": [
-                    0,
+                    1,
+                    6,
+                    3
+                ]
+            }
+        },
+        {
+            "function": "aggregate_ai_research_sections",
+            "table": "sections",
+            "args": {
+                "deps": [
+                    1,
+                    5
+                ]
+            }
+        },
+        {
+            "function": "aggregate_ai_research_images",
+            "table": "images",
+            "args": {
+                "deps": [
+                    1,
                     7,
-                    2
+                    3
+                ]
+            }
+        },
+        {
+            "function": "aggregate_ai_research_equations",
+            "table": "equations",
+            "args": {
+                "deps": [
+                    1,
+                    8,
+                    3
                 ]
             }
         }
