@@ -65,7 +65,7 @@ def extract_metadata_from_scholar_api(title: str, api_tool: str = 'google-schola
 def get_ai_research_metadata(
         pdf_path: str,
         metadata_path: str = os.path.join(AIRQA_DIR, 'uuid2papers.json'),
-        paper_subdir: str = 'uncategorized', # {conference}{year}, e.g., acl2024, neurips2024, or uncategorized
+        tmp_dir: str = os.path.join(AIRQA_DIR, 'uncategorized'),
         model: str = 'gpt-4o',
         temperature: float = 0.0,
         api_tool: str = 'google-scholar'
@@ -78,7 +78,7 @@ def get_ai_research_metadata(
             - the uuid of the paper (pre-fetch metadata of relevant papers)
             - the title of the paper (use scholar API calls to get the metadata)
         metadata_path: str, used to get the metadata of the given paper uuid
-        paper_subdir: str, the subdirectory to save the downloaded PDF file
+        tmp_dir: str, the folder to temporarily save the downloaded PDF file
         model and temperature: str, float, the language model and temperature for title inference
         api_tool: str, the Scholar API tool to use, chosen from ['google-scholar', 'semantic-scholar', 'dblp']
     @return: metadata dict
@@ -114,8 +114,8 @@ def get_ai_research_metadata(
     else:
         if pdf_path.endswith('.pdf'): # local file path or remote URL
             pdf_path = pdf_path.strip()
-            if pdf_path.startswith('http'): # remote URL, download to local path under `paper_subdir` with the same filename
-                output_path = os.path.join(AIRQA_DIR, paper_subdir, os.path.basename(pdf_path))
+            if pdf_path.startswith('http'): # remote URL, download to local path under `tmp_dir` with the same filename
+                output_path = os.path.join(tmp_dir, os.path.basename(pdf_path))
                 output_path = download_paper_pdf(pdf_path, output_path)
                 if output_path is None:
                     raise ValueError(f"Failed to download the PDF file from {pdf_path}.")
@@ -132,17 +132,18 @@ def get_ai_research_metadata(
         if not metadata:
             raise ValueError(f"Failed to extract metadata from the Scholar API {api_tool} for the paper with title: {title}.")
 
+        # metadata already exists, just skip
         if metadata["uuid"] in metadata_dict:
             logger.warning(f"Metadata for paper UUID {metadata['uuid']} already exists in {metadata_path}.")
             return metadata_dict[metadata['uuid']]
 
-        pdf_path_renamed = os.path.join(AIRQA_DIR, paper_subdir, f"{metadata['uuid']}.pdf")
+        pdf_path_renamed = metadata['pdf_path']
         if pdf_path.endswith('.pdf'): # already downloaded the PDF file, rename/move it
             os.rename(pdf_path, pdf_path_renamed)
         else: # not downloaded yet
             if not download_paper_pdf(metadata['pdf_url'], pdf_path_renamed):
                 raise ValueError(f"Failed to download the PDF file from {metadata['pdf_url']} into {pdf_path_renamed}.")
-        metadata["pdf_path"] = get_relative_path(pdf_path_renamed)
+        metadata['pdf_path'] = get_relative_path(pdf_path_renamed)
 
         # new entry added, serialize it
         with open(metadata_path, 'w', encoding='utf8') as of:
