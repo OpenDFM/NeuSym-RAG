@@ -42,7 +42,16 @@ def soup_to_dict(element):
     """
     if not element.find_all():
         return element.text.strip()
-    return {child.name: soup_to_dict(child) for child in element.find_all(recursive=False)}
+    output_dict = {}
+    for child in element.find_all(recursive=False):
+        if child.name in output_dict and type(output_dict[child.name]) != list:
+            output_dict[child.name] = [output_dict[child.name]]
+            output_dict[child.name].append(soup_to_dict(child))
+        elif child.name in output_dict:
+            output_dict[child.name].append(soup_to_dict(child))
+        else:
+            output_dict[child.name] = soup_to_dict(child)
+    return output_dict
 
 
 @dataclass
@@ -264,7 +273,7 @@ class Action(ABC):
                 # Attention: each value is parsed as a string
                 soup = BeautifulSoup(action_text, "xml")
                 # Convert XML to dictionary
-                action_dict = {soup.find().name: soup_to_dict(soup.find())}['action']
+                action_dict = soup_to_dict(soup)['action']
                 # [Deprecated]: xmltodict.parse often with bugs
                 # action_dict = xmltodict.parse(action_text.strip())['action']
             except Exception as e:

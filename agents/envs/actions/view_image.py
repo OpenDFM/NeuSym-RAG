@@ -31,7 +31,7 @@ class ViewImage(Action):
             assert self.page_number > 0
         except:
             return Observation('[Error]: page number must be a positive integer.')
-        if self.bounding_box is None:
+        if self.bounding_box is None or self.bounding_box == '':
             self.bounding_box = []
         try:
             assert isinstance(self.bounding_box, list)

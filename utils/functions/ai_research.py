@@ -1,16 +1,28 @@
 #coding=utf8
-import json, sys, os, re, logging
+import json, uuid, sys, os, re, logging
 from typing import List, Union, Optional, Tuple, Any, Dict
-import fitz  # PyMuPDF
+import fitz, pymupdf # PyMuPDF
 import PyPDF2
 from pdf2image import convert_from_path
 from pdfminer.high_level import extract_pages
 from pdfminer.layout import LTFigure, LTImage, LTRect
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from difflib import SequenceMatcher
-from utils.functions.common_functions import get_uuid, call_llm_with_message
+from utils.functions.common_functions import get_uuid, call_llm, call_llm_with_message
 from utils.functions.pdf_functions import get_pdf_page_text, load_json_from_processed_data
 from utils.functions.image_functions import get_image_summary
+from utils.airqa_utils import AIRQA_DIR, get_airqa_paper_uuid
+
+
+logger = logging.getLogger(__name__)
+handler = logging.StreamHandler(sys.stdout)
+formatter = logging.Formatter(
+    fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 
 def get_ai_research_pdf_data(
