@@ -1,7 +1,7 @@
 """ This module contains utility functions for the AIR-QA dataset.
 """
-import requests
-import tqdm
+import requests, shutil, subprocess
+import tqdm, fitz
 import os, sys, re, json, logging
 from typing import Dict, Any, Optional, List
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -27,12 +27,24 @@ AIRQA_DIR = os.path.join(
 )
 
 
-def get_airqa_paper_uuid(title: str, meta: str = 'acl2024') -> str:
+abbrev_mappings = {
+    "conll": "CoNLL",
+    "semeval": "SemEval",
+    "neurips": "NeurIPS",
+    "corl": "CoRL",
+    "interspeech": "Interspeech",
+    "recsys": "RecSys",
+    "automl": "AutoML",
+    "collas": "CoLLAs"
+}
+
+
+def get_airqa_paper_uuid(title: str, conference_year: str = 'uncategorized') -> str:
     """ Get the UUID of a paper in the AIR-QA dataset.
     `meta` is lowercase {conference}{year}, e.g., 'acl2024'.
     """
     # normalize the paper title
-    paper = title.strip() + '-' + meta.lower()
+    paper = title.strip() + '-' + conference_year.lower()
     return get_uuid(paper, uuid_type='uuid5', uuid_namespace='dns')
 
 
@@ -116,43 +128,55 @@ def download_html(url: str, html_path: str = None):
         return None
 
 
-def download_and_rename_pdf(metadata: Dict[str, Any], paper_dir: str = 'data/dataset/airqa/papers/acl2024'):
-    """ Download the PDF file from the URL in the metadata and rename it with the UUID.
-    Note that, use relative path instead of absolute path in the metadata.
+def download_paper_pdf(pdf_url: str, pdf_path: str) -> Optional[str]:
+    """ Download the PDF file from the `pdf_url` into `pdf_path`. Just return the relative `pdf_path` if succeeded.
     """
-    pdf_path = os.path.join(paper_dir, str(metadata['uuid']) + '.pdf')
-    working_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    relative_path = os.path.relpath(os.path.abspath(pdf_path), working_dir)
-    if os.path.exists(pdf_path): # PDF file already exists
-        metadata['pdf_path'] = relative_path
+    if os.path.exists(pdf_path) and os.path.isfile(pdf_path): # PDF file already exists
+        logger.warning(f"PDF file {pdf_path} already exists. Just ignore the download from {pdf_url}.")
         return pdf_path
-
-    pdf_url = metadata['pdf_url']
     try:
         response = requests.get(pdf_url, stream=True)
         if response.status_code == 200:
             with open(pdf_path, 'wb') as file:
                 for chunk in response.iter_content(chunk_size=8192):
                     file.write(chunk)
-            logger.debug(f"Downloaded paper `{metadata['title']}` successfully to: {pdf_path}")
+            logger.info(f"Downloaded paper `{pdf_url}` successfully to: {pdf_path}")
+            return pdf_path
         else:
-            logger.error(f"Failed to download paper `{metadata['title']}`. Status code: {response.status_code}")
+            logger.error(f"Failed to download paper `{pdf_url}`. Status code: {response.status_code}")
     except requests.exceptions.RequestException as e:
         logger.error(f"An error occurred while downloading PDF file: {e}")
-    metadata['pdf_path'] = relative_path
+    return None
+
+
+def get_relative_path(file_path: str) -> str:
+    """ Get the relative path of a file.
+    """
+    working_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    return os.path.relpath(os.path.abspath(file_path), working_dir)
+
+
+def repair_pdf_with_qpdf(pdf_path: str) -> str:
+    if shutil.which("qpdf") is not None:
+        subprocess.run(["qpdf", pdf_path, pdf_path + ".repaired.pdf"])
+        subprocess.run(["mv", pdf_path + ".repaired.pdf", pdf_path])
+    else:
+        logger.error(f"[Error]: Try to use `qpdf` to repair the PDF file {pdf_path}, but `qpdf` is not installed.")
     return pdf_path
 
 
-abbrev_mappings = {
-    "conll": "CoNLL",
-    "semeval": "SemEval",
-    "neurips": "NeurIPS",
-    "corl": "CoRL",
-    "interspeech": "Interspeech",
-    "recsys": "RecSys",
-    "automl": "AutoML",
-    "collas": "CoLLAs"
-}
+def get_num_pages(pdf_path: str) -> int:
+    """ Get the number of pages in a PDF file.
+    """
+    doc = fitz.open(pdf_path)
+    num_pages = doc.page_count
+    doc.close()
+    if num_pages == 0:
+        repair_pdf_with_qpdf(pdf_path)
+        doc = fitz.open(pdf_path)
+        num_pages = len(doc)
+        doc.close()
+    return num_pages
 
 
 def crawl_acl_anthology_papers(
@@ -172,7 +196,7 @@ def crawl_acl_anthology_papers(
             uuid2papers = json.load(inf)
     else: uuid2papers = {}
 
-    # errata file
+    # errata file, maybe deleted in future
     if os.path.exists(errata_file):
         with open(errata_file, 'r', encoding='utf8') as inf:
             errata = json.load(inf)
@@ -189,6 +213,7 @@ def crawl_acl_anthology_papers(
     conference, year = os.path.basename(url.rstrip('#').rstrip(os.sep)).lower().split('-')
     paper_dir = os.path.join(output_dir, 'papers', conference + year) # folder to save all paper PDFs
 
+
     def parse_acl_paper_meta(node):
         # node is a <p> tag
         meta = {
@@ -202,6 +227,7 @@ def crawl_acl_anthology_papers(
             "authors": [], # authors list
             "pdf_url": '', # URL to download the PDF
             "pdf_path": '', # local path to save the PDF, rename it with the UUID
+            "num_pages": -1, # number of pages in the PDF
             "abstract": None # paper abstract, will be assigned in another function
         }
         for idx, span in enumerate(node.children):
@@ -221,16 +247,36 @@ def crawl_acl_anthology_papers(
                     else: continue # ignore other links
             else:
                 # get title, authors
-                title = span.select_one('strong > a').get_text().strip()
-                meta['uuid'] = get_airqa_paper_uuid(title, meta['conference'] + str(meta['year']))
-                meta['title'] = title
+                meta['title'] = span.select_one('strong > a').get_text().strip()
+                meta['uuid'] = get_airqa_paper_uuid(meta['title'], meta['conference'] + str(meta['year']))
+                download_path = os.path.join(paper_dir, meta['uuid'] + '.pdf')
+                if not download_paper_pdf(meta['pdf_url'], download_path):
+                    logger.error(f'Failed to download the PDF file from {meta["pdf_url"]} into {download_path}.')
+
+                meta['num_pages'] = get_num_pages(download_path)
+                next_sibling = node.find_next_sibling()
+                if next_sibling is not None and next_sibling.name == 'div':
+                    meta['abstract'] = next_sibling.get_text().strip()
+                else: # try parse the abstract from first page, content between "\nAbstract\n" and "\n1\n"
+                    doc = fitz.open(download_path)
+                    page_content = doc[0].get_text()
+                    doc.close()
+                    abstract_content = re.search(r"\nAbstract\n(.*?)\n1\n", page_content, flags=re.DOTALL)
+                    if abstract_content:
+                        abstract_content = abstract_content.group(1).strip()
+                        abstract = ""
+                        for line in abstract_content.split('\n'):
+                            if abstract.endswith('-'):
+                                abstract = abstract[:-1] + line.strip()
+                            else:
+                                abstract += ' ' + line.strip()
+                        meta['abstract'] = abstract.strip()
+
+                meta['pdf_path'] = get_relative_path(download_path)
                 for author in span.select('a[href^="/people/"]'):
                     meta['authors'].append(author.get_text().strip())
         return meta
 
-    def parse_acl_paper_abstract(node):
-        # node is a <div> tag
-        return node.get_text().strip() if node is not None and node.name == 'div' else None
 
     for volume in soup.select('section#main h4 > a.align-middle'):
         volume_title = volume.get_text().strip()
@@ -241,18 +287,10 @@ def crawl_acl_anthology_papers(
             if child.name == 'p':
                 if skip_first_p:
                     meta = parse_acl_paper_meta(child)
-                    next_sibling = child.find_next_sibling()
-                    abstract = parse_acl_paper_abstract(next_sibling)
-                    if abstract is None:
-                        if meta['title'] in errata:
-                            abstract = errata[meta['title']]['abstract']
-                        else:
-                            logger.warning(f"Abstract not found for paper `{meta['title']}`.")
-                    meta['abstract'] = abstract
                     if meta['uuid'] in uuid2papers:
-                        logger.warning(f"UUID {meta['uuid']} already exists in the UUID -> paper mappings.")
+                        logger.warning(f"UUID {meta['uuid']} already exists in the UUID -> paper mappings {meta['title']}.")
+                        continue
                     uuid2papers[meta['uuid']] = meta
-                    download_and_rename_pdf(meta, paper_dir)
                 else: skip_first_p = True
 
         # save the UUID -> paper mappings after finishing each volume

@@ -70,3 +70,15 @@ def get_uuid(name: Optional[str] = None, uuid_type: str = 'uuid5', uuid_namespac
     else:
         uid = uuid.uuid4()
     return str(uid)
+
+
+def is_valid_uuid(string: str, version: Optional[int] = None) -> bool:
+    """ Determine whether a string is a valid UUID. The version parameter is optional.
+    """
+    try:
+        uuid_obj = uuid.UUID(string)
+        if version is not None:
+            return int(uuid_obj.version) == int(version)
+        return True
+    except Exception as e:
+        return False

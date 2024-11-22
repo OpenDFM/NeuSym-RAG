@@ -1,38 +1,28 @@
 #coding=utf8
-import json, sys, os, re, logging
+import json, uuid, sys, os, re, logging
 from typing import List, Union, Optional, Tuple, Any, Dict
-import fitz  # PyMuPDF
+import fitz, pymupdf # PyMuPDF
 import PyPDF2
 from pdf2image import convert_from_path
 from pdfminer.high_level import extract_pages
 from pdfminer.layout import LTFigure, LTImage, LTRect
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from difflib import SequenceMatcher
-from utils.functions.common_functions import get_uuid, call_llm_with_message
+from utils.functions.common_functions import get_uuid, call_llm, call_llm_with_message
 from utils.functions.pdf_functions import get_pdf_page_text, load_json_from_processed_data
 from utils.functions.image_functions import get_image_summary
+from utils.airqa_utils import AIRQA_DIR, get_airqa_paper_uuid
 
 
-def get_ai_research_metadata(
-        pdf_path: str, 
-        metadata_path: str = 'data/dataset/airqa/uuid2papers.json'
-    ) -> Dict[str, Any]:
-    """ Output (metadata):
-        {}
-    """
-    pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
-    if not os.path.exists(metadata_path):
-        raise FileNotFoundError(f"Metadata file {metadata_path} not found.")
-    with open(metadata_path, 'r', encoding='utf-8') as inf:
-        metadata_file = json.load(inf)
-    metadata = metadata_file.get(pdf_name, {})
-    if metadata == {}:
-        raise ValueError(f"Metadata for {pdf_name} not found.")
-    if metadata.get("num_pages", None) == None:
-        pdf_document = fitz.open(pdf_path)
-        metadata["num_pages"] = pdf_document.page_count
-        pdf_document.close()
-    return metadata
+logger = logging.getLogger(__name__)
+handler = logging.StreamHandler(sys.stdout)
+formatter = logging.Formatter(
+    fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 
 def get_ai_research_pdf_data(
