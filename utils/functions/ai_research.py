@@ -288,13 +288,31 @@ def get_ai_research_per_page_equation_info(
         result = []
         equations = equations_by_page.get(page_num, [])
         for ordinal, equation in enumerate(equations, start=1):
-            equation_text = equation.get("eq_text", "")
+            equation_text = equation.get("equation_text", "")
             if equation_text != "":
                 uuid = get_uuid(name=f"{pdf_name}_page_{page_num}_equation_{ordinal}")
                 result.append({'uuid': uuid, 'text': equation_text})
         results.append(result)
     
     return results
+
+
+def get_ai_research_reference_info(
+        metadata: Dict[str, Any],
+        pdf_data: Dict[str, Any]
+    ) -> List[Dict[str, str]]:
+    """ Output (reference_data):
+        [ {'uuid': uuid, 'text': text}, {...} ]
+    """
+    results = []
+    pdf_data_mineru = pdf_data["info_from_mineru"]
+    pdf_name = metadata["uuid"]
+    for idx, reference in enumerate(pdf_data_mineru.get("references", []), start=1):
+        uuid = get_uuid(name=f"{pdf_name}_reference_{idx}")
+        text = reference.get("reference_text", "")
+        results.append({'uuid': uuid, 'text': text})
+    return results
+
 
 # TODO: modify the following metadata function
 def aggregate_ai_research_metadata(metadata: Dict[str, Any]) -> List[List[Any]]:
@@ -500,4 +518,28 @@ def aggregate_ai_research_equations(
                 ref_page_id         # ref_page_id
             ])
 
+    return results
+
+
+def aggregate_ai_research_references(
+        metadata: Dict[str, Any],
+        reference_data: List[Dict[str, str]],
+    ) -> List[List[Any]]:
+    """ Output:
+        [ [ reference_id, reference_content, ordinal, ref_paper_id ] ]
+    """
+    paper_id = metadata["uuid"]
+    results = []
+    
+    for ordinal, reference in enumerate(reference_data):
+        reference_id = reference["uuid"]
+        reference_content = reference["text"]
+
+        results.append([
+            reference_id,       # reference_id
+            reference_content,  # reference_content
+            ordinal,            # ordinal
+            paper_id            # ref_paper_id
+        ])
+    
     return results

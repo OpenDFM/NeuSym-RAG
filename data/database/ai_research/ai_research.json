@@ -360,7 +360,45 @@
                     "page_id"
                 ]
             ]
+        },
+        {
+            "table": {
+                "table_name": "references",
+                "description": "This table stores information about references extracted using mineru(unimernet)."
+            },
+            "columns": [
+                {
+                    "column_name": "reference_id",
+                    "column_type": "UUID",
+                    "description": "A unique identifier for each reference."
+                },
+                {
+                    "column_name": "reference_content",
+                    "column_type": "VARCHAR",
+                    "description": "Content of the reference.",
+                    "encodable": true
+                },
+                {
+                    "column_name": "ordinal",
+                    "column_type": "INTEGER",
+                    "description": "Each reference is labeled with one distinct integer number according to its order in the paper, which starts from 0."
+                },
+                {
+                    "column_name": "ref_paper_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the `paper_id` in the `metadata` table."
+                }
+            ],
+            "primary_keys": [
+                "reference_id"
+            ],
+            "foreign_keys": [
+                [
+                    "ref_paper_id",
+                    "metadata",
+                    "paper_id"
+                ]
+            ]
         }
-
     ]
 }

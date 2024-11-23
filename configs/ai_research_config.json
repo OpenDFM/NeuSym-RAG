@@ -79,6 +79,15 @@
                     2
                 ]
             }
+        },
+        {
+            "function": "get_ai_research_reference_info",
+            "args": {
+                "deps": [
+                    1,
+                    2
+                ]
+            }
         }
     ],
     "aggregation": [
@@ -151,6 +160,16 @@
                     1,
                     8,
                     3
+                ]
+            }
+        },
+        {
+            "function": "aggregate_ai_research_references",
+            "table": "references",
+            "args": {
+                "deps": [
+                    1,
+                    9
                 ]
             }
         }
