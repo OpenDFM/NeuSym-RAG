@@ -53,7 +53,8 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
         if self.table_name not in env.table2encodable or len(env.table2encodable[self.table_name]) == 0:
             return False, f"[Error]: Table {repr(self.table_name)} does not have any encodable column in the Milvus vectorstore. Please choose from these tables {list(env.table2encodable.keys())}."
         if self.column_name not in env.table2encodable[self.table_name]:
-            return False, "[Error]: Column name {} is not a valid encodable column in the table {}. Please choose from these columns {}.".format(repr(self.column_name), repr(self.table_name), env.table2encodable[self.table_name])
+            valid_columns = list(env.table2encodable[self.table_name].keys())
+            return False, "[Error]: Column name {} is not a valid encodable column in the table {}. Please choose from these columns {}.".format(repr(self.column_name), repr(self.table_name), valid_columns)
 
         vs_conn: MilvusClient = env.vectorstore_conn
         if not vs_conn:
@@ -62,6 +63,10 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
             return False, "[Error]: Query string is empty."
         if not vs_conn.has_collection(self.collection_name):
             return False, "[Error]: Collection {} does not exist in the Milvus database. Please choose from these collections {}".format(repr(self.collection_name), vs_conn.list_collections())
+        modality = env.table2encodable[self.table_name][self.column_name]
+        if not self.collection_name.startswith(modality):
+            valid_collections = [collection for collection in vs_conn.list_collections() if collection.startswith(modality)]
+            return False, f"[Error]: Column '{self.table_name}.{self.column_name}' should be encoded as {modality} vectors, but the collection name {repr(self.collection_name)} does not match the modality {repr(modality)}. Please choose from these collections: {valid_collections}."
 
         is_valid_output_fields = lambda x: type(x) == list and all([type(field) == str for field in x])
         if not is_valid_output_fields(self.output_fields):
