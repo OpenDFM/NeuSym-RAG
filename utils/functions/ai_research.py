@@ -9,7 +9,7 @@ from pdfminer.layout import LTFigure, LTImage, LTRect
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from difflib import SequenceMatcher
 from utils.functions.common_functions import get_uuid, call_llm, call_llm_with_message
-from utils.functions.pdf_functions import get_pdf_page_text, load_json_from_processed_data
+from utils.functions.pdf_functions import get_pdf_page_text, load_json_from_processed_data, get_table_summary, get_text_summary
 from utils.functions.image_functions import get_image_summary
 from utils.airqa_utils import AIRQA_DIR, get_airqa_paper_uuid
 
@@ -41,9 +41,12 @@ def get_ai_research_page_info(pdf_path: str) -> Dict[str, Union[str, List[str]]]
             - pdf_name: str, the name of the PDF file.
             - pdf_path: str, the path to the PDF file.
             - page_contents: List[str], the list of strings, each string represents the content of each page.
+            - page_summaries: List[str], the list of text summaries for each page.
             - page_uuids: List[str], the list of UUIDs for each page.
     """
-    return get_pdf_page_text(pdf_path)
+    page_info = get_pdf_page_text(pdf_path)
+    page_info["page_summaries"] = get_text_summary(page_info["page_contents"]).get("text_summary", [])
+    return page_info
 
 
 def get_ai_research_per_page_chunk_info(
@@ -86,8 +89,8 @@ def get_ai_research_section_info(
     ) -> List[Dict[str, Union[str, List[int]]]]:
     """ Output (section_data):
         [
-            {'uuid': uuid1, 'title': introduction, 'text': content of section1, 'page_numbers':[1,2]}, 
-            {'uuid': uuid2, 'title': background, 'text': content of section2, 'page_numbers':[3]}
+            {'uuid': uuid1, 'title': introduction, 'text': content of section1, 'summary': summary of section1, 'page_numbers':[1,2]}, 
+            {'uuid': uuid2, 'title': background, 'text': content of section2, 'summary': summary of section2,'page_numbers':[3]}
             ...
         ]
     """
@@ -164,11 +167,13 @@ def get_ai_research_section_info(
 
             page_numbers.append(page_num + 1)  # Store 1-indexed page numbers
 
-        # Add the section content to the returned sections list
+        section_text = section_text.strip()
+        section_summary = get_text_summary({"section_text": section_text}, "section_text").get("text_summary", "")
         sections.append({
             'uuid': get_uuid(name=f"{pdf_name}_title_{start_title}"),
             'title': start_title,
-            'text': section_text.strip(),
+            'text': section_text,
+            'summary': section_summary,
             'page_numbers': page_numbers
         })
 
@@ -182,6 +187,7 @@ def get_ai_research_per_page_table_info(metadata: str, pdf_data: Dict[str, Any])
     pdf_data_mineru = pdf_data["info_from_mineru"]
     pdf_path = metadata["pdf_path"]
     pdf_name = metadata["uuid"]
+    num_pages = metadata["num_pages"]
     results = []
 
     # Group tables by page number
@@ -192,24 +198,15 @@ def get_ai_research_per_page_table_info(metadata: str, pdf_data: Dict[str, Any])
             tables_by_page[page_number] = []
         tables_by_page[page_number].append(table)
 
-    # Iterate through each page of the PDF
-    for page_num, page in enumerate(extract_pages(pdf_path), start=1):
-        if page_num in tables_by_page:  # If the page has tables
+    for page_num in range(1, num_pages + 1):
+        if page_num in tables_by_page:
             page_tables = tables_by_page[page_num]
             page_result = []
 
             for ordinal, table in enumerate(page_tables, start=1):
-                # Generate UUID for the table
                 uuid = get_uuid(name=f"{pdf_name}_page_{page_num}_table_{ordinal}")
+                table_summary = get_table_summary(table=table)
 
-                # Generate a summary for the table using LLM
-                messages = [
-                    {"role": "system", "content": "You are an expert in summarizing data. Your task is to generate a concise summary for an HTML-formatted table, focusing on key information and describing the table content clearly and succinctly."},
-                    {"role": "user", "content": f"Please generate a brief summary for the following table without any extra information or formatting in no more than 50 words. \nTable Caption: {table['table_caption']}\nTable Content in html: {table['table_html']}"}
-                ]
-                table_summary = call_llm_with_message(messages)
-
-                # Build the table info dictionary
                 table_info = {
                     "uuid": uuid,
                     "table_content": table["table_html"],
@@ -311,20 +308,23 @@ def aggregate_ai_research_metadata(metadata: Dict[str, Any]) -> List[List[Any]]:
 
 def aggregate_ai_research_pages(metadata: Dict[str, Any], page_data: Dict[str, Any]) -> List[List[Any]]:
     """ Output:
-        [ [ page_id, page_number, page_width, page_height, page_content, ref_paper_id ] ]
+        [ [ page_id, page_number, page_width, page_height, page_content, page_summary, ref_paper_id ] ]
     """
     
     pdf_path = metadata["pdf_path"]
     pdf_name = metadata["uuid"]
+    num_pages = metadata["num_pages"]
     doc = fitz.open(pdf_path)
     results = []
 
-    for page_number, page_content in enumerate(page_data["page_contents"], start=1):
+    for page_number in range(1, num_pages + 1):
         # Get the corresponding page from the PDF
         page = doc[page_number - 1]
-        page_uuid = get_uuid(name=f"{pdf_name}_page_{page_number}")
         page_width = page.rect.width
         page_height = page.rect.height
+        page_uuid = get_uuid(name=f"{pdf_name}_page_{page_number}")
+        page_content = page_data["page_contents"][page_number - 1]
+        page_summary = page_data["page_summaries"][page_number - 1]
 
         results.append([
             page_uuid,        # page_id
@@ -332,6 +332,7 @@ def aggregate_ai_research_pages(metadata: Dict[str, Any], page_data: Dict[str, A
             int(page_width),  # page_width
             int(page_height), # page_height
             page_content,     # page_content
+            page_summary,     # page_summary
             pdf_name          # ref_paper_id
         ])
 
@@ -408,7 +409,7 @@ def aggregate_ai_research_sections(
     ) -> List[List[Any]]:
     """ 
     Output:
-        [ [ section_id, section_title, section_text, section_ordinal, page_numbers, ref_paper_id ] ]
+        [ [ section_id, section_title, section_text, section_summary, ordinal, page_numbers, ref_paper_id ] ]
     """
     
     paper_id = metadata["uuid"]
@@ -418,12 +419,14 @@ def aggregate_ai_research_sections(
         section_id = section["uuid"]
         section_title = section["title"]
         section_text = section["text"]
+        section_summary = section["summary"]
         page_numbers = section["page_numbers"]
 
         results.append([
             section_id,     # section_id
             section_title,  # section_title
             section_text,   # section_content
+            section_summary,# section_summary
             ordinal,        # ordinal
             page_numbers,   # page_numbers
             paper_id        # ref_paper_id

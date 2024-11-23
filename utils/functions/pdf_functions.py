@@ -11,7 +11,7 @@ from pdfminer.layout import LTImage, LTFigure, LTRect
 from pix2text import Pix2Text
 from pix2text.layout_parser import ElementType
 
-from utils.functions.common_functions import call_llm, get_uuid
+from utils.functions.common_functions import call_llm, get_uuid, call_llm_with_message
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
@@ -96,6 +96,20 @@ Please directly return the summary without any extra information or formatting. 
         else:
             summary.append(text)
     return {'text_summary': summary if type(content[key]) == list else summary[0]}
+
+def get_table_summary(
+        table: Dict[str, Any],
+        max_length: int = 50,
+        model: str = 'gpt-4o',
+        temperature: float = 0.7,
+        top_p: float = 0.95
+    ) -> str:
+    prompt_template = """You are an expert in summarizing data. Your task is to generate a concise summary for an HTML-formatted table, focusing on key information and describing the table content clearly and succinctly.
+
+Please generate a brief summary for the following table without any extra information or formatting in no more than {max_length} words. \nTable Caption: {table_caption}\nTable Content in html: {table_html}\nHere is your summary:
+"""
+    table_summary = call_llm(prompt_template.format(max_length=max_length, table_caption=table['table_caption'], table_html=table['table_html']), model=model, top_p=top_p, temperature=temperature)
+    return table_summary
 
 def crop_pdf(
         element: Union[LTFigure, LTImage],

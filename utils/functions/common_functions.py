@@ -4,36 +4,6 @@ from typing import List, Dict, Union, Optional, Any, Iterable
 from agents.models import get_single_instance
 
 
-def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperature: float = 0.7) -> str:
-    """ Automatically construct the message list from template and call LLM to generate the response. The `template` merely supports the following format:
-    {{system_message}}
-
-    {{user_message}}
-    Note that, the system and user messages should be separated by two consecutive newlines. And the first block is the system message, the other blocks are the user message. There is no assistant message or interaction history.
-    """
-    model_client = get_single_instance(model)
-    system_msg = template.split('\n\n')[0]
-    user_msg = '\n\n'.join(template.split('\n\n')[1:])
-    messages = [
-        {
-            "role": 'system',
-            "content": system_msg
-        },
-        {
-            "role": 'user',
-            "content": user_msg
-        }
-    ]
-    response = model_client.get_response(
-        messages=messages,
-        model=model,
-        temperature=temperature,
-        top_p=top_p
-    )
-    time.sleep(1)
-    return response
-
-
 def call_llm_with_message(messages: List[Dict[str, Any]], model: str = 'gpt-4o', top_p: float = 0.95, temperature: float = 0.7) -> str:
     """ Call LLM to generate the response directly using the message list.
     """
@@ -46,6 +16,28 @@ def call_llm_with_message(messages: List[Dict[str, Any]], model: str = 'gpt-4o',
     )
     time.sleep(1)
     return response
+
+
+def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperature: float = 0.7) -> str:
+    """ Automatically construct the message list from template and call LLM to generate the response. The `template` merely supports the following format:
+    {{system_message}}
+
+    {{user_message}}
+    Note that, the system and user messages should be separated by two consecutive newlines. And the first block is the system message, the other blocks are the user message. There is no assistant message or interaction history.
+    """
+    system_msg = template.split('\n\n')[0]
+    user_msg = '\n\n'.join(template.split('\n\n')[1:])
+    messages = [
+        {
+            "role": 'system',
+            "content": system_msg
+        },
+        {
+            "role": 'user',
+            "content": user_msg
+        }
+    ]
+    return call_llm_with_message(messages=messages, model=model, top_p=top_p, temperature=temperature)
 
 
 def get_uuid(name: Optional[str] = None, uuid_type: str = 'uuid5', uuid_namespace: str = 'dns') -> str:

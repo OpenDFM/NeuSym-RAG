@@ -61,6 +61,12 @@
                     "encodable": true
                 },
                 {
+                    "column_name": "page_summary",
+                    "column_type": "VARCHAR",
+                    "description": "A brief summary of the page content, focusing on key information and describing the page content.",
+                    "encodable": true
+                },
+                {
                     "column_name": "ref_paper_id",
                     "column_type": "UUID",
                     "description": "A foreign key linking to the `paper_id` in the `metadata` table."
@@ -271,6 +277,12 @@
                     "column_name": "section_content",
                     "column_type": "VARCHAR",
                     "description": "The text content of the current section.",
+                    "encodable": true
+                },
+                {
+                    "column_name": "section_summary",
+                    "column_type": "VARCHAR",
+                    "description": "A brief summary of the section content, focusing on key information and describing the section content.",
                     "encodable": true
                 },
                 {
