@@ -20,7 +20,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
     column_name: str = field(default='', repr=True) # column name for the context retrieval, required
     filter: str = field(default='', repr=True) # filter condition for context retrieval, optional, by default
     limit: int = field(default=5, repr=True) # maximum number of context records to retrieve, optional, by default 5
-    output_fields: List[str] = field(default_factory=lambda: ['text'], repr=True) # output fields for context retrieval. Optional, by default, return the `text` field
+    output_fields: List[str] = field(default_factory=lambda: [], repr=True) # output fields for context retrieval. Optional, by default, return the `text` field
 
     observation_format_kwargs: Dict[str, Any] = field(default_factory=lambda: {
         "output_format": "json", # output format for the SQL execution result, chosen from ['markdown', 'string', 'html', 'json'], default is 'markdown'
