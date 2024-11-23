@@ -211,10 +211,15 @@ def parse_pdf(
             ],
             "equations": [  # A list of extracted equation information
                 {
-                    "eq_text": <str>,  # The content of the equation in latex
+                    "equation_text": <str>,   # The content of the equation in latex
                     "page_number": <int>      # The page number where the equation is located
                 },
                 ...
+            ],
+            "references": [
+                {
+                    "reference": <str>  # The content of the reference
+                }
             ]
         },
         "TOC": [  # Table of Contents
@@ -360,11 +365,11 @@ def parse_pdf(
     
     for content in content_data:
         if content["type"]== "equation":
-            eq_info={
-                "eq_text": content["text"],
+            equation_info={
+                "equation_text": content["text"],
                 "page_number": content["page_idx"] + 1
             }
-            result["info_from_mineru"]["equations"].append(eq_info)
+            result["info_from_mineru"]["equations"].append(equation_info)
         if content["type"] == "text" and content.get("text_level", None) == 1:
             if content["text"].lower().startswith("reference"):
                 record_reference = 1
