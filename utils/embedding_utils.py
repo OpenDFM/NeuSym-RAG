@@ -1,6 +1,7 @@
 #coding=utf8
 import os, tempfile
 import numpy as np
+import tqdm
 from typing import List, Dict, Union, Any
 from towhee import DataCollection, ops, pipe
 from towhee.runtime.runtime_pipeline import RuntimePipeline
@@ -13,14 +14,14 @@ from pdf2image import convert_from_path
 TEMP_CACHE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.cache')
 
 
-def get_clip_image_embedding_pipeline(embed_model: str = 'clip-vit-base-patch16') -> RuntimePipeline:
+def get_clip_image_embedding_pipeline(embed_model: str = 'clip-vit-base-patch32') -> RuntimePipeline:
     """ Note that, we only support open-source embedding models w/o the need of API keys.
     """
     embed_model = detect_embedding_model_path(embed_model)
     return pipe.input('path').map('path', 'image', ops.image_decode.cv2('rgb')).map('image', 'vector', ops.image_text_embedding.clip(model_name=embed_model, modality='image')).map('vector', 'vector', lambda x: x / np.linalg.norm(x)).output('vector')
 
 
-def get_clip_text_embedding_pipeline(embed_model: str = 'clip-vit-base-patch16') -> RuntimePipeline:
+def get_clip_text_embedding_pipeline(embed_model: str = 'clip-vit-base-patch32') -> RuntimePipeline:
     """ Note that, we only support open-source embedding models w/o the need of API keys.
     """
     embed_model = detect_embedding_model_path(embed_model)
@@ -29,7 +30,7 @@ def get_clip_text_embedding_pipeline(embed_model: str = 'clip-vit-base-patch16')
 
 class ClipEmbeddingFunction(BaseEmbeddingFunction):
 
-    def __init__(self, model_name: str = 'clip-vit-base-patch16'):
+    def __init__(self, model_name: str = 'clip-vit-base-patch32'):
         self.model_name = os.path.basename(model_name.rstrip(os.sep))
         self.image_embedding_pipeline = get_clip_image_embedding_pipeline(self.model_name)
         self.text_embedding_pipeline = get_clip_text_embedding_pipeline(self.model_name)
@@ -67,7 +68,7 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
         Note that, `page` starts from 1, and `bbox` is a tuple of length 4 representing (x0, y0, width, height).
         """
         embeddings = []
-        for image_obj in images:
+        for image_obj in tqdm.tqdm(images):
             image_path = image_obj["path"]
             if image_path.endswith('.pdf'): # PDF path, must specify the page number
                 page_number = int(image_obj["page"])
