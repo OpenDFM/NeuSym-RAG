@@ -89,6 +89,7 @@ class HybridEnv(AgentEnv):
                 embed['embed_model'],
                 backup_json=os.path.join('data', 'vectorstore', self.vectorstore, f'bm25.json')
             )
+            self.embedder_dict[collection] = embed
         return (self.database_conn, self.vectorstore_conn, self.embedder_dict)
 
 
