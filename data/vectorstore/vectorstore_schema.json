@@ -46,7 +46,7 @@
                 "name": "primary_key",
                 "dtype": "VARCHAR",
                 "max_length": 512,
-                "description": "The primary key value of `table_name.column_name` in the relational database that the `text` field belongs to. Note that, the triplet (`table_name`, `column_name`, `primary_key`) can be used to construct a one-to-one mapping between the `text` field in the current vectorstore and the cell entry in the relational database. For single column primary key in the relational database, we directly use its string value as this `primary_key` field value. For composite primary key, we concatenate the string values of all required columns using `,` as this `primary_key` field value."
+                "description": "The primary key value of `table_name` (or which row) in the relational database that the `text` field belongs to. Note that, the triplet (`table_name`, `column_name`, `primary_key`) can be used to construct a one-to-one mapping between the `text` field in the current vectorstore and the cell entry in the relational database. For single column primary key in the relational database, we directly use its string value as this `primary_key` field value. For composite primary keys, we concatenate the string values of all required columns using `,` symbol."
             }
         ],
         "indexes": [
@@ -132,7 +132,7 @@
                 "name": "primary_key",
                 "dtype": "VARCHAR",
                 "max_length": 512,
-                "description": "The primary key value of `table_name.column_name` in the relational database that the `text` field belongs to. Note that, the triplet (`table_name`, `column_name`, `primary_key`) can be used to construct a one-to-one mapping between the `text` field in the current vectorstore and the cell entry in the relational database. For single column primary key in the relational database, we directly use its string value as this `primary_key` field value. For composite primary key, we concatenate the string values of all required columns using `,` as this `primary_key` field value."
+                "description": "The primary key value of `table_name` (or which row) in the relational database that the `text` field belongs to. Note that, the triplet (`table_name`, `column_name`, `primary_key`) can be used to construct a one-to-one mapping between the `text` field in the current vectorstore and the cell entry in the relational database. For single column primary key in the relational database, we directly use its string value as this `primary_key` field value. For composite primary keys, we concatenate the string values of all required columns using `,` symbol."
             }
         ],
         "indexes": [
@@ -194,30 +194,30 @@
                 "name": "pdf_id",
                 "dtype": "VARCHAR",
                 "max_length": 256,
-                "description": "The unique id of the PDF file stored in the relational database that the image belongs to. This field can be used to quickly filter the search space."
+                "description": "The unique id of the PDF file stored in the relational database that the image `bbox` belongs to or is cropped from. This field can be used to quickly filter the search space."
             },
             {
                 "name": "page_number",
                 "dtype": "INT16",
-                "description": "The page number in the PDF file that the image belongs to (starting from 1). This field can be used to quickly filter the search space. Value -1 means unknown."
+                "description": "The page number in the PDF file that the image `bbox` belongs to or is cropped from (starting from 1). This field can be used to quickly filter the search space and must be a positive integer."
             },
             {
                 "name": "table_name",
                 "dtype": "VARCHAR",
                 "max_length": 256,
-                "description": "Which table in the relational database is the image from."
+                "description": "Which table in the relational database is the image `bbox` from."
             },
             {
                 "name": "column_name",
                 "dtype": "VARCHAR",
                 "max_length": 256,
-                "description": "Which column under `table_name` in the relational database is the image from."
+                "description": "Which column under `table_name` in the relational database is the image `bbox` from."
             },
             {
                 "name": "primary_key",
                 "dtype": "VARCHAR",
                 "max_length": 512,
-                "description": "The primary key value of `table_name.column_name` in the relational database that the image belongs to. Note that, the triplet (`table_name`, `column_name`, `primary_key`) can be used to construct a one-to-one mapping between the image in the current vectorstore and the cell entry in the relational database. For single column primary key in the relational database, we directly use its string value as this `primary_key` field value. For composite primary key, we concatenate the string values of all required columns using `,` as this `primary_key` field value."
+                "description": "The primary key value of `table_name` (or which row) in the relational database that the image `bbox` belongs to. Note that, the triplet (`table_name`, `column_name`, `primary_key`) can be used to construct a one-to-one mapping between the image `bbox` in the current vectorstore and the cell entry in the relational database. For single column primary key in the relational database, we directly use its string value as this `primary_key` field value. For composite primary keys, we concatenate the string values of all required columns using `,` symbol."
             }
         ],
         "indexes": [
