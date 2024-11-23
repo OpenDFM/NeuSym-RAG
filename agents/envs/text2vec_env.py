@@ -6,7 +6,7 @@ from milvus_model.base import BaseEmbeddingFunction
 from agents.envs.env_base import AgentEnv
 from typing import Optional, List, Tuple, Dict, Union, Any, Type
 from agents.envs.actions import Action, RetrieveFromVectorstore, GenerateAnswer, CalculateExpr, ViewImage, GenerateAnswer
-from utils.vectorstore_utils import get_vectorstore_connection, get_milvus_embedding_function, get_embed_model_from_collection
+from utils.vectorstore_utils import get_vectorstore_connection, get_embed_model_from_collection, get_milvus_embedding_function
 
 
 class Text2VecEnv(AgentEnv):
@@ -20,7 +20,7 @@ class Text2VecEnv(AgentEnv):
         self.vectorstore_conn, self.embedder_dict = None, {}
         self.vectorstore, self.launch_method = kwargs.get('vectorstore', None), kwargs.get('launch_method', 'standalone')
         if self.launch_method == 'standalone':
-            self.vectorstore_path = kwargs.get('vectorstore_path', os.path.join('data', 'vectorstore', self.vectorstore, f'{self.vectorstore}.db')) 
+            self.vectorstore_path = kwargs.get('vectorstore_path', os.path.join('data', 'vectorstore', self.vectorstore, f'{self.vectorstore}.db'))
         else:
             self.vectorstore_path = kwargs.get('vectorstore_path', 'http://127.0.0.1:19530')
         self.reset()
@@ -31,7 +31,7 @@ class Text2VecEnv(AgentEnv):
             for table in db_schema:
                 table_name = table['table']['table_name']
                 for column in table['columns']:
-                    if column.get('encodable', False):
+                    if column.get('encodable', None) is not None:
                         self.table2encodable[table_name].append(column['column_name'])
 
 
@@ -42,18 +42,16 @@ class Text2VecEnv(AgentEnv):
         if not isinstance(self.vectorstore_conn, MilvusClient):
             self.vectorstore_conn = get_vectorstore_connection(self.vectorstore_path, self.vectorstore, from_scratch=False)
             time.sleep(3)
-        
+
         embed_kwargs = get_embed_model_from_collection(client=self.vectorstore_conn)
         for embed in embed_kwargs:
             collection = embed['collection']
             if self.embedder_dict.get(collection, None) is not None: continue
-            et, em = embed['embed_type'], embed['embed_model']
-            backup_json = os.path.join('data', 'vectorstore', self.vectorstore, f'bm25.json') if et == 'bm25' else None
-            self.embedder_dict[collection] = {
-                "embed_type": et,
-                "embed_model": em,
-                "embedder": get_milvus_embedding_function(et, em, backup_json)
-            }
+            embed['embedder'] = get_milvus_embedding_function(
+                embed['embed_type'],
+                embed['embed_model'],
+                backup_json=os.path.join('data', 'vectorstore', self.vectorstore, f'bm25.json')
+            )
         return (self.vectorstore_conn, self.embedder_dict)
 
 

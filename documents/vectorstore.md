@@ -71,23 +71,27 @@ bash data/vectorstore/milvus/standalone_embed.sh start
 - For Milvus launched from standalone `.db` file:
 ```sh
 # for biology_paper vectorstore
-python utils/vectorstore_utils.py --vectorstore biology_paper --text_embed_type bm25 --text_embed_model en --launch_method standalone --from_scratch
-python utils/vectorstore_utils.py --vectorstore biology_paper --text_embed_type sentence_transformers --text_embed_model all-MiniLM-L6-v2 --launch_method standalone # do not add --from_scratch this time
+python utils/vectorstore_utils.py --vectorstore biology_paper --text_embed --text_embed_type bm25 --text_embed_model en --launch_method standalone --from_scratch
+python utils/vectorstore_utils.py --vectorstore biology_paper --text_embed --text_embed_type sentence_transformers --text_embed_model all-MiniLM-L6-v2 --launch_method standalone # do not add --from_scratch this time
+python utils/vectorstore_utils.py --vectorstore biology_paper --image_embed --image_embed_model clip-vit-base-patch16 --launch_method standalone # do not add --from_scratch this time
 
 # for financial_report vectorstore
-python utils/vectorstore_utils.py --vectorstore financial_report --text_embed_type bm25 --text_embed_model en --launch_method standalone --from_scratch
-python utils/vectorstore_utils.py --vectorstore financial_report --text_embed_type sentence_transformers --text_embed_model all-MiniLM-L6-v2 --launch_method standalone # do not add --from_scratch this time
+python utils/vectorstore_utils.py --vectorstore financial_report --text_embed --text_embed_type bm25 --text_embed_model en --launch_method standalone --from_scratch
+python utils/vectorstore_utils.py --vectorstore financial_report --text_embed --text_embed_type sentence_transformers --text_embed_model all-MiniLM-L6-v2 --launch_method standalone # do not add --from_scratch this time
+python utils/vectorstore_utils.py --vectorstore financial_report --image_embed --image_embed_model clip-vit-base-patch16 --launch_method standalone # do not add --from_scratch this time
 ```
 
 - For Milvus launched from Docker containers:
 ```sh
 # for biology_paper vectorstore
-python utils/vectorstore_utils.py --vectorstore biology_paper --text_embed_type bm25 --text_embed_model en --launch_method docker --docker_uri http://127.0.0.1:19530 --from_scratch
-python utils/vectorstore_utils.py --vectorstore biology_paper --text_embed_type sentence_transformers --text_embed_model all-MiniLM-L6-v2 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
+python utils/vectorstore_utils.py --vectorstore biology_paper --text_embed --text_embed_type bm25 --text_embed_model en --launch_method docker --docker_uri http://127.0.0.1:19530 --from_scratch
+python utils/vectorstore_utils.py --vectorstore biology_paper --text_embed --text_embed_type sentence_transformers --text_embed_model all-MiniLM-L6-v2 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
+python utils/vectorstore_utils.py --vectorstore biology_paper --image_embed --image_embed_model clip-vit-base-patch16 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
 
 # for financial_report vectorstore
-python utils/vectorstore_utils.py --vectorstore financial_report --text_embed_type bm25 --text_embed_model en --launch_method docker --docker_uri http://127.0.0.1:19530 
-python utils/vectorstore_utils.py --vectorstore financial_report --text_embed_type sentence_transformers --text_embed_model all-MiniLM-L6-v2 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
+python utils/vectorstore_utils.py --vectorstore financial_report --text_embed --text_embed_type bm25 --text_embed_model en --launch_method docker --docker_uri http://127.0.0.1:19530 --from_scratch
+python utils/vectorstore_utils.py --vectorstore financial_report --text_embed --text_embed_type sentence_transformers --text_embed_model all-MiniLM-L6-v2 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
+python utils/vectorstore_utils.py --vectorstore financial_report --image_embed --image_embed_model clip-vit-base-patch16 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
 ```
 
 - Note that, if the vectorstore is not created yet or you want to re-construct it, remember to add argument `--from_scratch`. But when you want to add another embedding model (indeed, a new collection) into an existing vectorstore, do not add this `from_scratch` parameter.

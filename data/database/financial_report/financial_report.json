@@ -58,7 +58,7 @@
                     "column_name": "page_content",
                     "column_type": "VARCHAR",
                     "description": "The content of the page.",
-                    "encodable": true
+                    "encodable": "text"
                 },
                 {
                     "column_name": "ref_report_id",
@@ -92,7 +92,7 @@
                     "column_name": "text_content",
                     "column_type": "VARCHAR",
                     "description": "The text content of the current element.",
-                    "encodable": true
+                    "encodable": "text"
                 },
                 {
                     "column_name": "bounding_box",
@@ -146,7 +146,7 @@
                     "column_name": "text_content",
                     "column_type": "VARCHAR",
                     "description": "The text content of the current chunk.",
-                    "encodable": true
+                    "encodable": "text"
                 },
                 {
                     "column_name": "ordinal",
@@ -195,18 +195,19 @@
                     "column_name": "table_content",
                     "column_type": "VARCHAR",
                     "description": "The content of the table in html format.",
-                    "encodable": true
+                    "encodable": "text"
                 },
                 {
                     "column_name": "table_summary",
                     "column_type": "VARCHAR",
                     "description": "A brief summary of the table content, focusing on key information and describing the table content.",
-                    "encodable": true
+                    "encodable": "text"
                 },
                 {
                     "column_name": "bounding_box",
                     "column_type": "INTEGER[4]",
-                    "description": "The bounding box of the table in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height."
+                    "description": "The bounding box of the table in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height.",
+                    "encodable": "image"
                 },
                 {
                     "column_name": "ordinal",

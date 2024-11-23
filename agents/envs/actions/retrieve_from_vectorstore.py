@@ -18,7 +18,7 @@ class RetrieveFromVectorstore(Action):
     column_name: str = field(default='', repr=True) # column name for the context retrieval, required
     filter: str = field(default='', repr=True) # filter condition for context retrieval, optional, by default no filter
     limit: int = field(default=5, repr=True) # maximum number of context records to retrieve, optional, by default 5
-    output_fields: List[str] = field(default_factory=lambda: ['text'], repr=True) # output fields for context retrieval. Optional, by default, return the `text` field
+    output_fields: List[str] = field(default_factory=lambda: [], repr=True) # output fields for context retrieval. Optional, by default, return the `text` field for text vectors and `bbox` for image vectors
 
     observation_format_kwargs: Dict[str, Any] = field(default_factory=lambda: {
         "output_format": "json", # output format for the vectorstore search result, chosen from ['markdown', 'string', 'html', 'json'], default is 'markdown'
@@ -60,12 +60,12 @@ class RetrieveFromVectorstore(Action):
                 # return False, "[Error]: Value of parameter `output_fields` should be a list of strings."
         self.output_fields = [str(field) for field in self.output_fields if str(field).strip() not in ['id', 'vector', 'distance', '']] # filter useless fields
         if len(self.output_fields) == 0:
-            # TODO: add default output fields, e.g., `text` for text collections, `bbox` for image collections, etc.
-            self.output_fields = ['text'] # by default, return the `text` field
-        valid_output_fields = [field['name'] for field in vs_conn.describe_collection(self.collection_name)['fields']]
+            # add default output fields, e.g., `text` for text collections, `bbox` for image collections, etc.
+            self.output_fields = ['text'] if self.collection_name.startswith('text') else ['bbox']
+        valid_output_fields = [field['name'] for field in vs_conn.describe_collection(self.collection_name)['fields'] if field['name'] not in ['id', 'vector', 'distance']]
         for field in self.output_fields:
             if field not in valid_output_fields:
-                return False, "[Error]: Output field `{}` is not available in the collection {} of Milvus vectorstore. The available output fields include {}".format(field, self.collection_name, valid_output_fields)
+                return False, "[Error]: Output field {} is not available in the collection {} of Milvus vectorstore. The available output fields include {}".format(repr(field), repr(self.collection_name), valid_output_fields)
         return True, "No error."
 
 
@@ -79,7 +79,6 @@ class RetrieveFromVectorstore(Action):
         vs_conn: MilvusClient = env.vectorstore_conn
         embedder_dict: Dict[str, Any] = env.embedder_dict
         encoder: BaseEmbeddingFunction = embedder_dict[self.collection_name]['embedder']
-        encoder_type: str = embedder_dict[self.collection_name]['embed_type']
         try:
             query_embedding = encoder.encode_queries([self.query])
         except Exception as e:

@@ -63,7 +63,7 @@
                     "column_name": "page_content",
                     "column_type": "VARCHAR",
                     "description": "The full text content of the current page, including all main texts, section titles, references, tables, and figures.",
-                    "encodable": true
+                    "encodable": "text"
                 },
                 {
                     "column_name": "ref_paper_id",
@@ -123,12 +123,13 @@
                     "column_name": "text_content",
                     "column_type": "VARCHAR",
                     "description": "The text content of the current element.",
-                    "encodable": true
+                    "encodable": "text"
                 },
                 {
                     "column_name": "bounding_box",
                     "column_type": "INTEGER[4]",
-                    "description": "The bounding box of the current element in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height which are used to determine the shape of the rectangle."
+                    "description": "The bounding box of the current element in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height which are used to determine the shape of the rectangle.",
+                    "encodable": "image"
                 },
                 {
                     "column_name": "ordinal",
@@ -182,7 +183,7 @@
                     "column_name": "text_content",
                     "column_type": "VARCHAR",
                     "description": "The text content of the current chunk.",
-                    "encodable": true
+                    "encodable": "text"
                 },
                 {
                     "column_name": "ordinal",
