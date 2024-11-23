@@ -72,9 +72,8 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
 
         db_conn: duckdb.DuckDBPyConnection = env.database_conn
         vs_conn: MilvusClient = env.vectorstore_conn
-        embedder_dict: Dict[str, BaseEmbeddingFunction] = env.embedder_dict
+        embedder_dict: Dict[str, Any] = env.embedder_dict
         encoder: BaseEmbeddingFunction = embedder_dict[self.collection_name]['embedder']
-        encoder_type: str = embedder_dict[self.collection_name]['embed_type']
         try:
             query_embedding = encoder.encode_queries([self.query])
         except Exception as e:

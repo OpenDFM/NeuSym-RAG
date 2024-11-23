@@ -90,6 +90,33 @@
                 "example": "a in [b, c, ...]",
                 "description": "True if a is equal to any of the values in the list."
             }
+        ],
+        "array operations": [
+            {
+                "symbol": "[]",
+                "example": "bbox[0]",
+                "description": "This expression gets the first element in array bbox. For example, 'bbox[0] < 50' evaluates to true if the value of bbox[0] is less than 50."
+            },
+            {
+                "symbol": "array_contains",
+                "example": "array_contains(bbox, 100)",
+                "description": "This expression evaluates to true if array bbox contains element 100."
+            },
+            {
+                "symbol": "array_contains_all",
+                "example": "array_contains_all(int_array, [1, 2, 3])",
+                "description": "This expression evaluates to true if int_array contains all elements 1, 2, and 3."
+            },
+            {
+                "symbol": "array_contains_any",
+                "example": "array_contains_any(var_array, [\"a\", \"b\", \"c\"])",
+                "description": "This expression evaluates to true if var_array contains any element of 'a', 'b', and 'c'."
+            },
+            {
+                "symbol": "array_length",
+                "example": "array_length(int_array) == 4",
+                "description": "This expression evaluates to true if int_array contains exactly 4 elements."
+            }
         ]
     },
     "use cases": [
@@ -103,7 +130,11 @@
         },
         {
             "example": "(text like 'RAG%' or text like '%RAG') and text not like '%rag%'",
-            "description": "Filter the results with text containing 'RAG' but not containing 'rag' in the middle. Note that, the filter condition for string value is case-sensitive."
+            "description": "For text modality, filter results with text content containing 'RAG' but not containing 'rag' in the middle. Note that, the filter condition for string value is case-sensitive."
+        },
+        {
+            "example": "bbox[0] + bbox[2] <= 100 and bbox[1] + bbox[3] <= 300 and pdf_id == '123456' and page_number == 1",
+            "description": "For image modality, filter results to include only image regions that are entirely within the upper-left quadrant of page 1 in the PDF with ID '123456', assuming the page dimensions are 200 (width) x 600 (height)."
         }
     ]
 }

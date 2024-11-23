@@ -73,12 +73,12 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
                 # return False, "[Error]: Value of parameter `output_fields` should be a list of strings."
         self.output_fields = [str(field) for field in self.output_fields if str(field).strip() not in ['id', 'vector', 'distance', '']] # filter useless fields
         if len(self.output_fields) == 0:
-            # TODO: add default output fields, e.g., `text` for text collections, `bbox` for image collections, etc.
-            self.output_fields = ['text'] # by default, return the `text` field
-        valid_output_fields = [field['name'] for field in vs_conn.describe_collection(self.collection_name)['fields']]
+            # add default output fields, e.g., `text` for text collections, `bbox` for image collections, etc.
+            self.output_fields = ['text'] if self.collection_name.startswith('text') else ['bbox']
+        valid_output_fields = [field['name'] for field in vs_conn.describe_collection(self.collection_name)['fields'] if field['name'] not in ['id', 'vector', 'distance']]
         for field in self.output_fields:
             if field not in valid_output_fields:
-                return False, "[Error]: Output field `{}` is not available in the collection {} of Milvus vectorstore. Valid output fields include {}".format(field, self.collection_name, valid_output_fields)
+                return False, "[Error]: Output field {} is not available in the collection {} of Milvus vectorstore. Valid output fields include {}".format(repr(field), repr(self.collection_name), valid_output_fields)
         return True, "No error."
 
 
@@ -138,7 +138,6 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
         # 2. second stage: search the vectorstore based on the primary key values
         embedder_dict: Dict[str, Any] = env.embedder_dict
         encoder: BaseEmbeddingFunction = embedder_dict[self.collection_name]['embedder']
-        encoder_type: str = embedder_dict[self.collection_name]['embed_type']
         try:
             query_embedding = encoder.encode_queries([self.query])
         except Exception as e:

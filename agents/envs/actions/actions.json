@@ -59,10 +59,8 @@
             "output_fields": {
                 "type": "List[str]",
                 "required": false,
-                "default": [
-                    "text"
-                ],
-                "description": "The fields to return in the output. By default, the `text` field will be returned for text type collections. And the `id` and `distance/score` for each retrieved entry will also be returned."
+                "default": [],
+                "description": "The fields to return in the output. By default, the `text` field will be returned for text type collections and the `bbox` field will be returned for image type collections if this parameter is empty. And the `id` and `distance/score` for each retrieved entry will also be returned."
             }
         },
         "use_cases": [
@@ -207,8 +205,8 @@
             "output_fields": {
                 "type": "List[str]",
                 "required": false,
-                "default": ["text"],
-                "description": "The fields to return in the output. By default, the `text` field will be returned for text type collections if this field is empty. And the `id` and `distance/score` for each retrieved entry will also be returned."
+                "default": [],
+                "description": "The fields to return in the output. By default, the `text` field will be returned for text type collections and the `bbox` field will be returned for image type collections if this parameter is empty. And the `id` and `distance/score` for each retrieved entry will also be returned."
             }
         },
         "use_cases": [

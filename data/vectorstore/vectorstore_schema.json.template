@@ -8,10 +8,12 @@
                 "name": "field_name", // str, required field, the name of the field
                 "dtype": "field_type", // str, required field, the type of the field, chosen from upper-cased string in doc "https://milvus.io/docs/schema.md", e.g., 'VARCHAR', 'INT64', 'FLOAT_VECTOR'
                 "description": "description", // [Suggested] str, optional field, a brief description of the field
-                "is_primary": false, // bool, optional field, whether is the primary key, default is `false`. Note that, if `is_primary=true`, we set `auto_id=true` if dtype == INT else `false` automatically according to the field type.
+                "is_primary": false, // bool, optional field, whether is the primary key, default is `false`. Note that, if `is_primary=true`, we set `auto_id=true` automatically for the field type.
                 "dim": 384, // int, request field for VECTOR field type, not used for other field types
-                "max_length": 65535, // int, optional field, only used for VARCHAR field type, by default is 65535
-            } // more field dict can be added to the fields array. Note that, these 3 fields must exist: id, vector, text.
+                "max_length": 65535, // int, optional field, used for VARCHAR field type, by default is 65535
+                "etype": "INT16", // str, optional field, used for DataType.ARRAY field type
+                "max_capacity": 5 // int, used for DataType.ARRAY field type
+            } // more field dict can be added to the fields list. Note that, these 3 fields must exist: id, vector, [text|bbox].
         ], // required field, the fields of the collection schema
         "indexes": [
             {

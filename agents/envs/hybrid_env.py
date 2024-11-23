@@ -7,7 +7,7 @@ from milvus_model.base import BaseEmbeddingFunction
 from agents.envs.env_base import AgentEnv
 from typing import Optional, List, Tuple, Dict, Union, Any, Type
 from agents.envs.actions import Action, RetrieveFromDatabase, RetrieveFromVectorstore, RetrieveFromDatabaseWithVectorFilter, RetrieveFromVectorstoreWithSQLFilter, CalculateExpr, ViewImage, GenerateAnswer
-from utils.vectorstore_utils import get_vectorstore_connection, get_milvus_embedding_function, get_embed_model_from_collection
+from utils.vectorstore_utils import get_vectorstore_connection, get_embed_model_from_collection, get_milvus_embedding_function
 
 
 class HybridEnv(AgentEnv):
@@ -60,7 +60,7 @@ class HybridEnv(AgentEnv):
                     else:
                         raise ValueError(f"Primary key {pk_name} not found in table {table_name}.")
                 for column in table['columns']:
-                    if column.get('encodable', False):
+                    if column.get('encodable', None) is not None:
                         self.table2encodable[table_name].append(column['column_name'])
 
 
@@ -84,13 +84,11 @@ class HybridEnv(AgentEnv):
         for embed in embed_kwargs:
             collection = embed['collection']
             if self.embedder_dict.get(collection, None) is not None: continue
-            et, em = embed['embed_type'], embed['embed_model']
-            backup_json = os.path.join('data', 'vectorstore', self.vectorstore, f'bm25.json') if et == 'bm25' else None
-            self.embedder_dict[collection] = {
-                "embed_type": et,
-                "embed_model": em,
-                "embedder": get_milvus_embedding_function(et, em, backup_json)
-            }
+            embed['embedder'] = get_milvus_embedding_function(
+                embed['embed_type'],
+                embed['embed_model'],
+                backup_json=os.path.join('data', 'vectorstore', self.vectorstore, f'bm25.json')
+            )
         return (self.database_conn, self.vectorstore_conn, self.embedder_dict)
 
 
@@ -104,14 +102,3 @@ class HybridEnv(AgentEnv):
             self.vectorstore_conn.close()
         self.database_conn = self.vectorstore_conn = None
         return
-
-
-    def restart_database_conn(self) -> None:
-        """ Restart the database connection.
-        """
-        if hasattr(self.database_conn, 'close'):
-            self.database_conn.close()
-        if self.database_type == 'duckdb':
-            self.database_conn: duckdb.DuckDBPyConnection = duckdb.connect(self.database_path)
-        else:
-            raise NotImplementedError(f"Database type {self.database_type} not supported.")

@@ -67,7 +67,7 @@ with open(test_data_path, 'r') as inf:
         test_data.append(json.loads(line))
 
 database_prompt = convert_database_schema_to_prompt(args.database, serialize_method=args.db_format)
-vectorstore_prompt = convert_vectorstore_schema_to_prompt(args.vectorstore, serialize_method=args.vs_format)
+vectorstore_prompt = convert_vectorstore_schema_to_prompt(args.vectorstore, serialize_method=args.vs_format, add_description=False)
 
 preds = []
 for data in test_data:
