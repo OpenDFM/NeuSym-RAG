@@ -6,7 +6,7 @@ import os, sys, re, json, logging
 from typing import Dict, Any, Optional, List
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.functions.common_functions import get_uuid
-from agents.models import get_single_instance
+from agents.models import get_llm_single_instance
 from bs4 import BeautifulSoup
 
 
@@ -83,7 +83,7 @@ def get_answer_from_llm(question_uuid: Optional[str] = None, question: Optional[
         with open(example, 'r', encoding='utf8') as inf:
             data = json.load(inf)
             question = data['question'] + ' ' + data['answer_format'] if add_answer_format else data['question']
-    client = get_single_instance(model_name=model)
+    client = get_llm_single_instance(model_name=model)
     messages = [
         {
             "role": "system",

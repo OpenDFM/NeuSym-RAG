@@ -1,13 +1,13 @@
 #coding=utf8
 import time, uuid
 from typing import List, Dict, Union, Optional, Any, Iterable
-from agents.models import get_single_instance
+from agents.models import get_llm_single_instance
 
 
 def call_llm_with_message(messages: List[Dict[str, Any]], model: str = 'gpt-4o', top_p: float = 0.95, temperature: float = 0.7) -> str:
     """ Call LLM to generate the response directly using the message list.
     """
-    model_client = get_single_instance(model)
+    model_client = get_llm_single_instance(model)
     response = model_client.get_response(
         messages=messages,
         model=model,

@@ -7,12 +7,14 @@ from agents.models.llm_debug import DebugClient
 LLM_MODELS = dict()
 
 
-def get_single_instance(model_name: str, **kwargs) -> LLMClient:
+def get_llm_single_instance(model_name: str, **kwargs) -> LLMClient:
     """ Get the single instance of the LLM model class.
     """
-    if model_name not in LLM_MODELS:
-        LLM_MODELS[model_name] = infer_model_class(model_name)(**kwargs)
-    return LLM_MODELS[model_name]
+    model_cls = infer_model_class(model_name)
+    model_cls_name = model_cls.__name__
+    if model_cls_name not in LLM_MODELS:
+        LLM_MODELS[model_cls_name] = model_cls(**kwargs)
+    return LLM_MODELS[model_cls_name]
 
 
 def infer_model_class(model_name: str) -> LLMClient:
