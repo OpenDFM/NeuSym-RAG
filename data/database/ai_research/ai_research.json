@@ -387,6 +387,11 @@
                     "column_name": "ref_paper_id",
                     "column_type": "UUID",
                     "description": "A foreign key linking to the `paper_id` in the `metadata` table."
+                },
+                {
+                    "column_name": "ref_page_id",
+                    "column_type": "UUID",
+                    "description": "A foreign key linking to the `page_id` in the `pages` table where this reference is located."
                 }
             ],
             "primary_keys": [
@@ -397,6 +402,11 @@
                     "ref_paper_id",
                     "metadata",
                     "paper_id"
+                ],
+                [
+                    "ref_page_id",
+                    "pages",
+                    "page_id"
                 ]
             ]
         }

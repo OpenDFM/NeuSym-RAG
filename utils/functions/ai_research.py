@@ -12,6 +12,7 @@ from utils.functions.common_functions import get_uuid, call_llm, call_llm_with_m
 from utils.functions.pdf_functions import get_pdf_page_text, load_json_from_processed_data, get_table_summary, get_text_summary
 from utils.functions.image_functions import get_image_summary
 from utils.airqa_utils import AIRQA_DIR, get_airqa_paper_uuid
+from utils.eval_utils import fuzzy_match_strs
 
 
 logger = logging.getLogger(__name__)
@@ -299,18 +300,26 @@ def get_ai_research_per_page_equation_info(
 
 def get_ai_research_reference_info(
         metadata: Dict[str, Any],
-        pdf_data: Dict[str, Any]
+        pdf_data: Dict[str, Any],
+        page_data: Dict[str, Any],
+        threshold: float = 0.9
     ) -> List[Dict[str, str]]:
     """ Output (reference_data):
-        [ {'uuid': uuid, 'text': text}, {...} ]
+        [ {'uuid': uuid, 'text': text, 'ref_page_id': page_id}, {...} ]
     """
     results = []
     pdf_data_mineru = pdf_data["info_from_mineru"]
     pdf_name = metadata["uuid"]
+    num_pages = metadata["num_pages"]
     for idx, reference in enumerate(pdf_data_mineru.get("references", []), start=1):
         uuid = get_uuid(name=f"{pdf_name}_reference_{idx}")
         text = reference.get("reference_text", "")
-        results.append({'uuid': uuid, 'text': text})
+        page_number = -1
+        for i in range(num_pages):
+            if fuzzy_match_strs(page_data["page_contents"][i], text, threshold=threshold) > threshold:
+                page_number = i
+        if page_number != -1:
+            results.append({'uuid': uuid, 'text': text, 'ref_page_id': page_data["page_uuids"][page_number]})
     return results
 
 
@@ -534,12 +543,14 @@ def aggregate_ai_research_references(
     for ordinal, reference in enumerate(reference_data):
         reference_id = reference["uuid"]
         reference_content = reference["text"]
+        ref_page_id = reference["ref_page_id"]
 
         results.append([
             reference_id,       # reference_id
             reference_content,  # reference_content
             ordinal,            # ordinal
-            paper_id            # ref_paper_id
+            paper_id,           # ref_paper_id
+            ref_page_id,        # ref_page_id
         ])
     
     return results
