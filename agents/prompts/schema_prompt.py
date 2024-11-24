@@ -41,7 +41,7 @@ def convert_vectorstore_schema_to_prompt(vectorstore: str, serialize_method: str
     @return:
         prompt: str, prompt
     """
-    vs_schema = os.path.join('data', 'vectorstore', vectorstore, f'{vectorstore}.json')
+    vs_schema = os.path.join('data', 'vectorstore', 'vectorstore_schema.json')
     with open(vs_schema, 'r') as f:
         vs_schema = json.load(f) # get all collections and their corresponding fields (indexes can be ignored)
     db_schema = os.path.join('data', 'database', vectorstore, f'{vectorstore}.json')

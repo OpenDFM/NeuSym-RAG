@@ -46,7 +46,7 @@ class HybridEnv(AgentEnv):
             self.vectorstore_path = kwargs.get('vectorstore_path', 'http://127.0.0.1:19530')
         self.reset()
 
-        self.table2pk, self.table2encodable = dict(), defaultdict(list)
+        self.table2pk, self.table2encodable = dict(), defaultdict(dict)
         with open(os.path.join('data', 'database', self.database, f'{self.database}.json'), 'r', encoding='utf-8') as fin:
             db_schema = json.load(fin)['database_schema']
             for table in db_schema:
@@ -61,7 +61,7 @@ class HybridEnv(AgentEnv):
                         raise ValueError(f"Primary key {pk_name} not found in table {table_name}.")
                 for column in table['columns']:
                     if column.get('encodable', None) is not None:
-                        self.table2encodable[table_name].append(column['column_name'])
+                        self.table2encodable[table_name][column['column_name']] = column['encodable']
 
 
     def reset(self) -> None:
@@ -89,6 +89,7 @@ class HybridEnv(AgentEnv):
                 embed['embed_model'],
                 backup_json=os.path.join('data', 'vectorstore', self.vectorstore, f'bm25.json')
             )
+            self.embedder_dict[collection] = embed
         return (self.database_conn, self.vectorstore_conn, self.embedder_dict)
 
 
