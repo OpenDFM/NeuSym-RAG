@@ -172,6 +172,10 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                 return None
     
             # Step 3: Parse the HTML to find PDF link
+            # for openreview link: https://openreview.net/forum?id={id} -> forum => pdf
+            if pdf_url.startswith('https://openreview.net/forum?'):
+                pdf_url = pdf_url.replace('/forum', '/pdf')
+                return pdf_url
             html = response.text
             soup = BeautifulSoup(html, 'html.parser')
             for link in soup.find_all('a', href=True):
