@@ -26,13 +26,17 @@ AIRQA_DIR = os.path.join(
     'data', 'dataset', 'airqa'
 )
 
+TMP_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    'tmp'
+)
+
 
 abbrev_mappings = {
     "conll": "CoNLL",
     "semeval": "SemEval",
     "neurips": "NeurIPS",
     "corl": "CoRL",
-    "interspeech": "Interspeech",
     "recsys": "RecSys",
     "automl": "AutoML",
     "collas": "CoLLAs"
@@ -135,6 +139,7 @@ def download_paper_pdf(pdf_url: str, pdf_path: str) -> Optional[str]:
         logger.warning(f"PDF file {pdf_path} already exists. Just ignore the download from {pdf_url}.")
         return pdf_path
     try:
+        os.makedirs(os.path.dirname(pdf_path), exist_ok=True)
         response = requests.get(pdf_url, stream=True)
         if response.status_code == 200:
             with open(pdf_path, 'wb') as file:
@@ -210,6 +215,7 @@ def crawl_acl_anthology_papers(
 
     soup = BeautifulSoup(html_doc, 'html.parser')
     conference_full = soup.select_one('h2#title').get_text().strip() # e.g., Annual Meeting of the Association for Computational Linguistics (2024)
+    conference_full = re.sub(r"\s+\(\d+\)", "", conference_full).strip() # remove the year in the conference title
     conference, year = os.path.basename(url.rstrip('#').rstrip(os.sep)).lower().split('-')
     paper_dir = os.path.join(output_dir, 'papers', conference + year) # folder to save all paper PDFs
 
