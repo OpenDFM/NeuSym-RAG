@@ -7,7 +7,6 @@ from pdf2image import convert_from_path
 from pdfminer.high_level import extract_pages
 from pdfminer.layout import LTFigure, LTImage, LTRect
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from difflib import SequenceMatcher
 from utils.functions.common_functions import get_uuid, call_llm, call_llm_with_message
 from utils.functions.pdf_functions import get_pdf_page_text, load_json_from_processed_data, get_table_summary, get_text_summary
 from utils.functions.image_functions import get_image_summary
@@ -28,12 +27,13 @@ logger.setLevel(logging.INFO)
 
 def get_ai_research_pdf_data(
         pdf_path: str, 
-        processed_data_folder: str = 'data/dataset/airqa/processed_data'
+        processed_data_folder: str = 'data/dataset/airqa/processed_data',
+        TOC_threshold: float = 0.9
     ) -> Dict[str, Any]:
     """ Load the parsed JSON data from a PDF file. See `utils.function.pdf_functions.parse_pdf` for more details.
         Output (pdf_data)
     """
-    return load_json_from_processed_data(pdf_path=pdf_path, processed_data_folder=processed_data_folder)
+    return load_json_from_processed_data(pdf_path=pdf_path, processed_data_folder=processed_data_folder, TOC_threshold=TOC_threshold)
 
 
 def get_ai_research_page_info(pdf_path: str) -> Dict[str, Union[str, List[str]]]:
@@ -84,9 +84,7 @@ def get_ai_research_per_page_chunk_info(
 
 def get_ai_research_section_info(
         metadata: Dict[str, Any], 
-        pdf_data: Dict[str, Any], 
-        page_data: Dict[str, Any], 
-        threshold: float = 0.9
+        pdf_data: Dict[str, Any]
     ) -> List[Dict[str, Union[str, List[int]]]]:
     """ Output (section_data):
         [
@@ -95,87 +93,18 @@ def get_ai_research_section_info(
             ...
         ]
     """
-    sections = []
     pdf_name = metadata["uuid"]
-    page_contents = page_data['page_contents']
-
-    # Fuzzy matching function, combining finding matches and returning positions
-    def find_fuzzy_match_positions(content: str, target: str) -> List[Tuple[int, int]]:
-        """
-        Perform fuzzy matching to find positions of the target in the content.
-        Returns a list of start and end positions for matches.
-        """
-        lines = content.splitlines()
-        matches = []
-        for line in lines:
-            # Use SequenceMatcher to compare similarity
-            similarity = SequenceMatcher(None, line.lower(), target.lower()).ratio()
-            if similarity > threshold:  # Threshold for a match
-                match = re.search(re.escape(line), content)
-                if match:
-                    matches.append((match.start(), match.end()))  # Store start and end positions
-        return matches
-
-    # Extract all level 1 bookmarks
-    toc_entries = [entry for entry in pdf_data["TOC"] if entry["level"] == 1]
-
-    for i, toc_entry in enumerate(toc_entries):
-        # Get the title and page number of the current section
-        start_title = toc_entry["title"]
-        start_page = toc_entry["page_number"] - 1  # Adjust for zero-indexed
-        # Get the title and page number of the next section (if it exists)
-        if i + 1 < len(toc_entries):
-            end_title = toc_entries[i + 1]["title"]
-            end_page = toc_entries[i + 1]["page_number"] - 1  # Adjust for zero-indexed
-        else:
-            # If it is the last section, set it to the last page
-            end_page = len(page_contents) - 1
-
-        # Ensure start_page and end_page are within valid range
-        start_page = max(0, min(start_page, len(page_contents) - 1))
-        end_page = max(0, min(end_page, len(page_contents) - 1))
-
-        section_text = ""
-        page_numbers = []
-
-        # Iterate over the page range
-        for page_num in range(start_page, end_page + 1):
-            page_content = page_contents[page_num]
-
-            if page_num == start_page:
-                # Locate the starting point of the section
-                start_positions = find_fuzzy_match_positions(page_content, start_title)
-                if start_positions:
-                    start_pos = start_positions[0][0]
-                    section_text += page_content[start_pos:].strip() + "\n"
-                else:
-                    section_text += page_content.strip() + "\n"
-
-            if page_num == end_page:  # It may be both the start and end page
-                # Locate the ending point of the section
-                end_positions = []
-                if i < len(toc_entries) - 1:  # In case of the last TOC entry, there is no end_title
-                    end_positions = find_fuzzy_match_positions(page_content, end_title)
-                if end_positions:
-                    end_pos = end_positions[0][0]
-                    section_text += page_content[:end_pos].strip() + "\n"
-                else:
-                    section_text += page_content.strip() + "\n"
-            
-            if (page_num != start_page) and (page_num != end_page):
-                # Middle pages, directly add the entire content
-                section_text += page_content.strip() + "\n"
-
-            page_numbers.append(page_num + 1)  # Store 1-indexed page numbers
-
-        section_text = section_text.strip()
+    sections=[]
+    for section_data in pdf_data["info_from_mineru"]["TOC"]:
+        title= section_data["title"]
+        section_text= section_data["text"]
         section_summary = get_text_summary({"section_text": section_text}, "section_text").get("text_summary", "")
         sections.append({
-            'uuid': get_uuid(name=f"{pdf_name}_title_{start_title}"),
-            'title': start_title,
+            'uuid': get_uuid(name=f"{pdf_name}_title_{title}"),
+            'title': title,
             'text': section_text,
             'summary': section_summary,
-            'page_numbers': page_numbers
+            'page_numbers': section_data["page_numbers"]
         })
 
     return sections
