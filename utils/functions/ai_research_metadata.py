@@ -94,6 +94,16 @@ def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
 
 
 def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
+    """ Given the title of one paper, extract its metadata from DBLP API.
+    @param:
+        title: str, the title of the paper
+        **kwargs: Dict[str, Any], other arguments that will be directly passed to the DBLP API
+            - limit: int, the maximum number of search results to return, by default 10
+            - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 95
+            - allow_arxiv: bool, whether to allow arxiv papers in the search results, by default False
+    @return: metadata dict
+        see doc in `get_ai_research_metadata`
+    """
     DBLP_BASE_URL = 'https://dblp.org/search/publ/api'
     options = {
         'q': title, # searching method for query: https://dblp.org/faq/1474589.html
@@ -121,7 +131,8 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
         hit['info']['title'] = title_hit
         hit['fuzzy-score'] = fuzz.ratio(title.lower(), title_hit.lower())
         hit['non-arxiv'] = 1 if hit.get('info', {}).get('venue', '') != 'CoRR' else 0 # non-arxiv with priority
-        if hit['fuzzy-score'] >= threshold and hit['non-arxiv']: # directly filter arxiv papers, use arxiv API for this category
+        allow_arxiv = True if kwargs.get('allow_arxiv', False) else hit['non-arxiv']
+        if hit['fuzzy-score'] >= threshold and allow_arxiv: # directly filter arxiv papers, use arxiv API for this category
             filtered_hits.append(hit)
 
     if not filtered_hits: # empty
@@ -151,13 +162,13 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                 headers = {
                     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
                     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
-                }
+                } # simulate user agent
                 response = requests.get(pdf_url, headers=headers, allow_redirects=True, timeout=10)
                 response.raise_for_status()
                 pdf_url = response.url
                 if pdf_url.endswith('.pdf'): return pdf_url
             except Exception as e:
-                logger.error(f'Failed to obtain the html file when parsing PDF URL: {pdf_url}')
+                # logger.error(f'Failed to obtain the html file when parsing PDF URL: {pdf_url}')
                 return None
     
             # Step 3: Parse the HTML to find PDF link
@@ -170,11 +181,11 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                     if not pdf_link.startswith('http'):
                         pdf_link = requests.compat.urljoin(pdf_url, pdf_link)
                     return pdf_link
-            logger.error(f"[Error]: Failed to find the PDF download link from the DBLP URL: {pdf_url}.")
+            # logger.error(f"[Error]: Failed to find the PDF download link from the DBLP URL: {pdf_url}.")
             return None
         
         except Exception as e:
-            logger.error(f"[Error]: Unexpected error occurred when finding the PDF download link from the DBLP URL: {pdf_url}.")
+            # logger.error(f"[Error]: Unexpected error occurred when finding the PDF download link from the DBLP URL: {pdf_url}.")
             return None
 
 
@@ -186,7 +197,7 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             response.raise_for_status()
             return response.text
         except requests.exceptions.RequestException as e:
-            logger.error(f"Failed to get the bibtex from URL: {bibtex_url}.")
+            # logger.error(f"Failed to get the bibtex from URL: {bibtex_url}.")
             return None
 
 
@@ -223,7 +234,9 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                 "abstract": None # not supported yet with DBLP
             }
             return metadata
-        except Exception as e: pass
+        except Exception as e:
+            # logger.error(f'Error occurred when trying to process hit: {json.dumps(hit)}\n{e}')
+            pass
 
     return
 
@@ -234,6 +247,7 @@ def get_ai_research_metadata(
         model: str = 'gpt-4o',
         temperature: float = 0.0,
         api_tools: List[str] = [],
+        write_to_json: bool = True,
         **kwargs
     ) -> Dict[str, Any]:
     """ Given input pdf_path, return the metadata of the paper.
@@ -314,7 +328,8 @@ def get_ai_research_metadata(
         metadata['num_pages'] = get_num_pages(pdf_path_renamed)
         metadata_dict[metadata['uuid']] = metadata
 
-        # new entry added, serialize it
-        with open(metadata_path, 'w', encoding='utf8') as of:
-            json.dump(metadata_dict, of, indent=4, ensure_ascii=False)
+        if write_to_json:
+            # new entry added, serialize it
+            with open(metadata_path, 'w', encoding='utf8') as of:
+                json.dump(metadata_dict, of, indent=4, ensure_ascii=False)
     return metadata

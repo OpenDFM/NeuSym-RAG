@@ -2,6 +2,43 @@
 
 This document describes the detailed installation, use case, and useful links to third party tools that may be utilized in this project, especially during PDF/image parsing.
 
+### Processing Logic of `get_ai_research_metadata`
+
+Core input argument: `pdf_path`. It can take the following 4 forms:
+- **uuid string**:
+    - In this case, the metadata dict should be pre-processed and stored in `data/dataset/airqa/uuid2papers.json`, directly return that dict.
+    - If not found in `uuid2papers.json`, raise ValueError.
+- **local pdf path**:
+    - Case 1: `data/dataset/airqa/papers/subfolder/{uuid}.pdf`. We will directly extract the UUID and reduce to situation **uuid string**.
+    - Case 2: `/path/to/any/folder/anyfilename.pdf`. Firstly, we assume the paper title MUST occur in top lines of the first page. We use LLM to get the paper title from these texts. Then, we resorts to scholar API to extract the paper metadata. After processing, the original local file will be moved and renamed to the field `pdf_path` in the metadata dict.
+- **remote URL starts with http**
+    - In this case, we will firstly download the PDF file to `TMP_DIR` (by default, ./tmp/). Then, it degenerates to situation **local pdf path** case 2.
+    - Similarly, after processing, the downloaded local PDF file will be moved and renamed to the field `pdf_path` in the metadata dict.
+- **paper title**:
+    - In this case, we will directly call scholar APIs to obtain the metadata.
+    - After getting the metadata, we will also download and rename the PDF file according to fields `pdf_url` and `pdf_path` in the metadata dict.
+Attention that, after calling `get_ai_research_metadata`, new paper UUID will be added into `data/dataset/airqa/uuid2papers.json` by default. If you want to prohibit the writing operation, add keyword argument 
+
+
+### DBLP Scholar API
+
+- No extra libs needed, `requests` + `urllib` + `bs4` is enough
+- Code snippets:
+```py
+from utils.functions.ai_research_metadata import dblp_scholar_api
+
+print("Obtained paper is:\n", dblp_scholar_api(
+    title="Spider2-V: How Far Are Multimodal Agents From Automating Data Science and Engineering Workflows?",
+    limit=10, # restrict the maximum number of hits by DBLP API
+    threshold=95, # DBLP search uses very weak matching criterion, we use fuzz.ratio to re-order the results ( only ratio score > threshold will be maintained )
+    allow_arxiv=True # by default, False, since we implement another arxiv scholar API, but can be changed to True, such that arxiv version of papers will not be ignored
+))
+```
+
+### More Scholar APIs like semantic-scholar and arxiv (TODO)
+
+
+
 ### Unstructured
 
 - Installation: [Github link](https://github.com/Unstructured-IO/unstructured?tab=readme-ov-file#installing-the-library)
