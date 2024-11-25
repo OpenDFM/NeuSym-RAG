@@ -240,7 +240,7 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
         for pred, gold in zip(pred_data, gold_data):
             score = evaluate_dataset(dataset, pred['answer'], gold, **kwargs)
             if score < 0.5 and output_path is not None:
-                outfile.write(f'\n[ERROR]: data (type={gold["question_type"] if "question_type" in gold else gold['tags']}) with id {gold["uuid"]}\n')
+                outfile.write(f'\n[ERROR]: data (type={gold["question_type"] if "question_type" in gold else gold["tags"]}) with id {gold["uuid"]}\n')
                 outfile.write(f'Gold Answer: {resolve_gold_answer(gold)}\n')
                 outfile.write(f'Predicted Answer: {pred["answer"]}\n')
             result['all']['count'] += 1
