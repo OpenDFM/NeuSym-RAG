@@ -1,4 +1,5 @@
 {
+    "log": 1,
     "pipeline": [
         {
             "function": "get_ai_research_metadata",
@@ -167,7 +168,7 @@
         },
         {
             "function": "aggregate_ai_research_references",
-            "table": "references",
+            "table": "reference",
             "args": {
                 "deps": [
                     "get_ai_research_metadata",

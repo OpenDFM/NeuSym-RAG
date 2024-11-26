@@ -184,7 +184,7 @@ def populate_pdf_file_into_database(
     from utils.database_population import DatabasePopulation
     populator = DatabasePopulation(database_name)
     config_path = config_path if config_path is not None else os.path.join('configs', f'{database_name}_config.json')
-    with open(config_path, 'r') as inf:
+    with open(config_path, 'r', encoding='UTF-8') as inf:
         config = json.load(inf)
     log_to_file = config.get('log', False)
     write_count = 0
@@ -192,7 +192,12 @@ def populate_pdf_file_into_database(
         with open(pdf_path, 'r', encoding='UTF-8') as inf:
             for line in tqdm.tqdm(inf):
                 json_data = json.loads(line)
-                populator.populate(json_data, config, on_conflict=on_conflict, log=log_to_file)
+                if database_name in ["biology_paper", "financial_report"]:
+                    populator.populate(json_data, config, on_conflict=on_conflict, log=log_to_file)
+                elif database_name in ["ai_research"]:
+                    populator.populate(json_data["pdf_path"], config, on_conflict=on_conflict, log=log_to_file)
+                else:
+                    raise ValueError(f"Database {database_name} not supported yet.")
                 write_count += 1
     else:
         populator.populate(pdf_path, config, on_conflict=on_conflict, log=log_to_file)

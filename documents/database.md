@@ -28,6 +28,7 @@ Under each database folder, it at least contains the following three files:
 ```sh
 python utils/database_utils.py --database financial_report --function create_db --from_scratch
 python utils/database_utils.py --database biology_paper --function create_db --from_scratch
+python utils/database_utils.py --database ai_research --function create_db --from_scratch
 ```
 2. [**Populate**] Parse PDF content and write into database:
 - by default, writing strategy is `--on_conflict replace`. It means when writing rows whose primary key already exists in DB, the value will be updated without raising error. This value can be changed to `raise`, `ignore`.
@@ -252,4 +253,5 @@ Take the two datasets as example, all PDFs in `pdf_data.jsonl` will be parsed an
 ```sh
 python utils/database_utils.py --database biology_paper --pdf_path data/dataset/pdfvqa/processed_data/pdf_data.jsonl --config_path configs/biology_paper_config.json --function populate_db --on_conflict replace
 python utils/database_utils.py --database financial_report --pdf_path data/dataset/tatdqa/processed_data/pdf_data.jsonl --config_path configs/financial_report_config.json --function populate_db --on_conflict replace
+python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/sample_pdf_data.jsonl --config_path configs/ai_research_config.json --function populate_db --on_conflict replace
 ```
