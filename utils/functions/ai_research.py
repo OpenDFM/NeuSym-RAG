@@ -252,16 +252,6 @@ def get_ai_research_reference_info(
     return results
 
 
-# TODO: modify the following metadata function
-def aggregate_ai_research_metadata(metadata: Dict[str, Any]) -> List[List[Any]]:
-    """ Output:
-        [ [ paper_id, paper_pages, paper_path ] ]
-    """
-    paper_id = metadata["uuid"]
-    num_pages = metadata["num_pages"]
-    pdf_path = metadata["pdf_path"]
-    return [[paper_id, num_pages, pdf_path]]
-
 def aggregate_ai_research_pages(metadata: Dict[str, Any], page_data: Dict[str, Any]) -> List[List[Any]]:
     """ Output:
         [ [ page_id, page_number, page_width, page_height, page_content, page_summary, ref_paper_id ] ]

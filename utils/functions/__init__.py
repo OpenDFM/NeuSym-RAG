@@ -54,7 +54,8 @@ from .ai_research import (
 )
 
 from .ai_research_metadata import (
-    get_ai_research_metadata
+    get_ai_research_metadata,
+    aggregate_ai_research_metadata
 )
 
 from .test_domain import (
