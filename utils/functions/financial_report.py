@@ -38,14 +38,14 @@ def get_financial_report_per_page_chunk_uuid_and_text(pdf_data: dict, chunk_size
     return results
 
 
-def aggregate_financial_report_table_metadata(pdf_data: dict) -> List[Any]:
+def aggregate_financial_report_table_metadata(pdf_data: dict) -> List[List[Any]]:
     """ Output:
         [ [ report_id, report_pages, report_path ] ]
     """
     return [[pdf_data['pdf_id'], pdf_data['num_pages'], pdf_data['pdf_path']]]
 
 
-def aggregate_financial_report_table_pages(pdf_data: dict, page_ids: List[str]) -> List[Any]:
+def aggregate_financial_report_table_pages(pdf_data: dict, page_ids: List[str]) -> List[List[Any]]:
     """ Output:
         [ [ page_id, page_number, page_width, page_height, page_content, ref_report_id ] ]
     """

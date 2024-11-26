@@ -4,7 +4,7 @@
             "function": "get_financial_report_per_page_uuid",
             "args": {
                 "deps": [
-                    0
+                    "pdf_path"
                 ]
             }
         },
@@ -12,7 +12,7 @@
             "function": "get_financial_report_per_page_content_uuid",
             "args": {
                 "deps": [
-                    0
+                    "pdf_path"
                 ]
             }
         },
@@ -20,7 +20,7 @@
             "function": "get_financial_report_per_page_chunk_uuid_and_text",
             "args": {
                 "deps": [
-                    0
+                    "pdf_path"
                 ],
                 "kwargs": {
                     "chunk_size": 512,
@@ -32,7 +32,7 @@
             "function": "get_financial_report_per_page_tableinpages",
             "args": {
                 "deps": [
-                    0
+                    "pdf_path"
                 ],
                 "kwargs": {
                     "model": "gpt-4o-mini",
@@ -45,8 +45,8 @@
             "function": "get_financial_report_per_page_tableinpages_uuid",
             "args": {
                 "deps": [
-                    0,
-                    4
+                    "pdf_path",
+                    "get_financial_report_per_page_tableinpages"
                 ]
             }
         }
@@ -57,7 +57,7 @@
             "table": "metadata",
             "args": {
                 "deps": [
-                    0
+                    "pdf_path"
                 ]
             }
         },
@@ -66,8 +66,8 @@
             "table": "pages",
             "args": {
                 "deps": [
-                    0,
-                    1
+                    "pdf_path",
+                    "get_financial_report_per_page_uuid"
                 ]
             }
         },
@@ -76,9 +76,9 @@
             "table": "content",
             "args": {
                 "deps": [
-                    0,
-                    1,
-                    2
+                    "pdf_path",
+                    "get_financial_report_per_page_uuid",
+                    "get_financial_report_per_page_content_uuid"
                 ]
             }
         },
@@ -87,9 +87,9 @@
             "table": "chunks",
             "args": {
                 "deps": [
-                    0,
-                    1,
-                    3
+                    "pdf_path",
+                    "get_financial_report_per_page_uuid",
+                    "get_financial_report_per_page_chunk_uuid_and_text"
                 ]
             }
         },
@@ -98,10 +98,10 @@
             "table": "table_in_pages",
             "args": {
                 "deps": [
-                    0,
-                    4,
-                    1,
-                    5
+                    "pdf_path",
+                    "get_financial_report_per_page_tableinpages",
+                    "get_financial_report_per_page_uuid",
+                    "get_financial_report_per_page_tableinpages_uuid"
                 ]
             }
         }
