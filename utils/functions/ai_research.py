@@ -10,7 +10,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from utils.functions.common_functions import get_uuid, call_llm, call_llm_with_message
 from utils.functions.pdf_functions import get_pdf_page_text, load_json_from_processed_data, get_table_summary, get_text_summary
 from utils.functions.image_functions import get_image_summary
-from utils.airqa_utils import AIRQA_DIR, get_airqa_paper_uuid
+from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid
 from utils.eval_utils import fuzzy_match_strs
 
 

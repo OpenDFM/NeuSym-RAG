@@ -1,13 +1,12 @@
 #coding=utf8
-import json, requests, uuid, tempfile, subprocess, sys, os, re, logging
+import json, requests, shutil, uuid, tempfile, subprocess, sys, os, re, logging
 from bs4 import BeautifulSoup
 from typing import List, Union, Optional, Tuple, Any, Dict
 import fitz, pymupdf # PyMuPDF
 from fuzzywuzzy import fuzz
 import pandas as pd
 from urllib.parse import urlencode
-from utils.airqa_utils import AIRQA_DIR, TMP_DIR, get_airqa_paper_uuid, download_paper_pdf, get_relative_path, get_num_pages
-from .common_functions import is_valid_uuid, call_llm
+from .common_functions import is_valid_uuid, get_uuid, call_llm
 
 
 logger = logging.getLogger(__name__)
@@ -19,6 +18,82 @@ formatter = logging.Formatter(
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.setLevel(logging.INFO)
+
+
+AIRQA_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    'data', 'dataset', 'airqa'
+)
+
+TMP_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    'tmp'
+)
+
+
+def get_airqa_paper_uuid(title: str, conference_year: str = 'uncategorized') -> str:
+    """ Get the UUID of a paper in the AIR-QA dataset.
+    - `title` should be normalized before getting UUID;
+    - `meta` is lowercase {conference}{year}, e.g., 'acl2024', or special 'unauthorized'.
+    """
+    # normalize the paper title
+    conference_year = conference_year.lower()
+    assert re.match(r'^[a-z\d]+$', conference_year), f"Invalid conference_year: `{conference_year}`, can only contain letters and digits."
+    title = re.sub(r'[^a-z\d]', '', title.lower())
+    paper = title + '-' + conference_year.lower()
+    return get_uuid(paper, uuid_type='uuid5', uuid_namespace='dns')
+
+
+def download_paper_pdf(pdf_url: str, pdf_path: str) -> Optional[str]:
+    """ Download the PDF file from the `pdf_url` into `pdf_path`. Just return the relative `pdf_path` if succeeded.
+    """
+    if os.path.exists(pdf_path) and os.path.isfile(pdf_path): # PDF file already exists
+        logger.warning(f"PDF file {pdf_path} already exists. Just ignore the download from {pdf_url}.")
+        return pdf_path
+    try:
+        os.makedirs(os.path.dirname(pdf_path), exist_ok=True)
+        response = requests.get(pdf_url, stream=True)
+        if response.status_code == 200:
+            with open(pdf_path, 'wb') as file:
+                for chunk in response.iter_content(chunk_size=8192):
+                    file.write(chunk)
+            logger.info(f"Downloaded paper `{pdf_url}` successfully to: {pdf_path}")
+            return pdf_path
+        else:
+            logger.error(f"Failed to download paper `{pdf_url}`. Status code: {response.status_code}")
+    except requests.exceptions.RequestException as e:
+        logger.error(f"An error occurred while downloading PDF file: {e}")
+    return None
+
+
+def get_airqa_relative_path(file_path: str) -> str:
+    """ Get the relative path of a file.
+    """
+    working_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    return os.path.relpath(os.path.abspath(file_path), working_dir)
+
+
+def repair_pdf_with_qpdf(pdf_path: str) -> str:
+    if shutil.which("qpdf") is not None:
+        subprocess.run(["qpdf", pdf_path, pdf_path + ".repaired.pdf"])
+        subprocess.run(["mv", pdf_path + ".repaired.pdf", pdf_path])
+    else:
+        logger.error(f"[Error]: Try to use `qpdf` to repair the PDF file {pdf_path}, but `qpdf` is not installed.")
+    return pdf_path
+
+
+def get_num_pages(pdf_path: str) -> int:
+    """ Get the number of pages in a PDF file.
+    """
+    doc = fitz.open(pdf_path)
+    num_pages = doc.page_count
+    doc.close()
+    if num_pages == 0:
+        repair_pdf_with_qpdf(pdf_path)
+        doc = fitz.open(pdf_path)
+        num_pages = len(doc)
+        doc.close()
+    return num_pages
 
 
 def get_ccf_conferences(ccf_file: str = os.path.join(AIRQA_DIR, 'ccf_catalog.csv')) -> pd.DataFrame:
@@ -322,13 +397,13 @@ def get_ai_research_metadata(
             return metadata_dict[metadata['uuid']]
 
         pdf_path_renamed = metadata['pdf_path']
-        if pdf_path.endswith('.pdf'): # already downloaded the PDF file, rename/move it
+        if pdf_path.startswith('http') or pdf_path.endswith('.pdf'): # already downloaded the PDF file, rename/move it
             os.makedirs(os.path.dirname(pdf_path_renamed), exist_ok=True)
             os.rename(pdf_path, pdf_path_renamed)
         else: # not downloaded yet
             if not download_paper_pdf(metadata['pdf_url'], pdf_path_renamed):
                 raise ValueError(f"Failed to download the PDF file from {metadata['pdf_url']} into {pdf_path_renamed}.")
-        metadata['pdf_path'] = get_relative_path(pdf_path_renamed)
+        metadata['pdf_path'] = get_airqa_relative_path(pdf_path_renamed)
         metadata['num_pages'] = get_num_pages(pdf_path_renamed)
         metadata_dict[metadata['uuid']] = metadata
 

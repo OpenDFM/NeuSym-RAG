@@ -5,8 +5,8 @@ import tqdm, fitz
 import os, sys, re, json, logging
 from typing import Dict, Any, Optional, List
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.functions.common_functions import get_uuid
 from agents.models import get_llm_single_instance
+from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid, get_num_pages, download_paper_pdf, get_airqa_relative_path
 from bs4 import BeautifulSoup
 
 
@@ -21,17 +21,6 @@ logger.addHandler(handler)
 logger.setLevel(logging.INFO)
 
 
-AIRQA_DIR = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-    'data', 'dataset', 'airqa'
-)
-
-TMP_DIR = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-    'tmp'
-)
-
-
 abbrev_mappings = {
     "conll": "CoNLL",
     "semeval": "SemEval",
@@ -41,15 +30,6 @@ abbrev_mappings = {
     "automl": "AutoML",
     "collas": "CoLLAs"
 }
-
-
-def get_airqa_paper_uuid(title: str, conference_year: str = 'uncategorized') -> str:
-    """ Get the UUID of a paper in the AIR-QA dataset.
-    `meta` is lowercase {conference}{year}, e.g., 'acl2024'.
-    """
-    # normalize the paper title
-    paper = title.strip() + '-' + conference_year.lower()
-    return get_uuid(paper, uuid_type='uuid5', uuid_namespace='dns')
 
 
 def get_all_used_paper_uuids(
@@ -132,58 +112,6 @@ def download_html(url: str, html_path: str = None):
         return None
 
 
-def download_paper_pdf(pdf_url: str, pdf_path: str) -> Optional[str]:
-    """ Download the PDF file from the `pdf_url` into `pdf_path`. Just return the relative `pdf_path` if succeeded.
-    """
-    if os.path.exists(pdf_path) and os.path.isfile(pdf_path): # PDF file already exists
-        logger.warning(f"PDF file {pdf_path} already exists. Just ignore the download from {pdf_url}.")
-        return pdf_path
-    try:
-        os.makedirs(os.path.dirname(pdf_path), exist_ok=True)
-        response = requests.get(pdf_url, stream=True)
-        if response.status_code == 200:
-            with open(pdf_path, 'wb') as file:
-                for chunk in response.iter_content(chunk_size=8192):
-                    file.write(chunk)
-            logger.info(f"Downloaded paper `{pdf_url}` successfully to: {pdf_path}")
-            return pdf_path
-        else:
-            logger.error(f"Failed to download paper `{pdf_url}`. Status code: {response.status_code}")
-    except requests.exceptions.RequestException as e:
-        logger.error(f"An error occurred while downloading PDF file: {e}")
-    return None
-
-
-def get_relative_path(file_path: str) -> str:
-    """ Get the relative path of a file.
-    """
-    working_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    return os.path.relpath(os.path.abspath(file_path), working_dir)
-
-
-def repair_pdf_with_qpdf(pdf_path: str) -> str:
-    if shutil.which("qpdf") is not None:
-        subprocess.run(["qpdf", pdf_path, pdf_path + ".repaired.pdf"])
-        subprocess.run(["mv", pdf_path + ".repaired.pdf", pdf_path])
-    else:
-        logger.error(f"[Error]: Try to use `qpdf` to repair the PDF file {pdf_path}, but `qpdf` is not installed.")
-    return pdf_path
-
-
-def get_num_pages(pdf_path: str) -> int:
-    """ Get the number of pages in a PDF file.
-    """
-    doc = fitz.open(pdf_path)
-    num_pages = doc.page_count
-    doc.close()
-    if num_pages == 0:
-        repair_pdf_with_qpdf(pdf_path)
-        doc = fitz.open(pdf_path)
-        num_pages = len(doc)
-        doc.close()
-    return num_pages
-
-
 def crawl_acl_anthology_papers(
         url: str = "https://aclanthology.org/events/acl-2024/",
         output_dir: str = AIRQA_DIR,
@@ -214,7 +142,7 @@ def crawl_acl_anthology_papers(
         os.remove('index.html')
 
     soup = BeautifulSoup(html_doc, 'html.parser')
-    conference_full = soup.select_one('h2#title').get_text().strip() # e.g., Annual Meeting of the Association for Computational Linguistics (2024)
+    conference_full = soup.select_one('h2#title').get_text().strip() # e.g., Annual Meeting of the Association for Computational Linguistics
     conference_full = re.sub(r"\s+\(\d+\)", "", conference_full).strip() # remove the year in the conference title
     conference, year = os.path.basename(url.rstrip('#').rstrip(os.sep)).lower().split('-')
     paper_dir = os.path.join(output_dir, 'papers', conference + year) # folder to save all paper PDFs
@@ -278,7 +206,7 @@ def crawl_acl_anthology_papers(
                                 abstract += ' ' + line.strip()
                         meta['abstract'] = abstract.strip()
 
-                meta['pdf_path'] = get_relative_path(download_path)
+                meta['pdf_path'] = get_airqa_relative_path(download_path)
                 for author in span.select('a[href^="/people/"]'):
                     meta['authors'].append(author.get_text().strip())
         return meta
