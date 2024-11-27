@@ -483,7 +483,8 @@ def parse_pdf(
                         image_path = sub_block.get("lines", [{}])[0].get("spans", [{}])[0].get("image_path", "")
                         figure_info["figure_path"] = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', 'images', image_path)
 
-                result["info_from_mineru"]["figures"].append(figure_info)
+                if figure_info["figure_path"] != "":
+                    result["info_from_mineru"]["figures"].append(figure_info)
 
     # Extract information about equations
     

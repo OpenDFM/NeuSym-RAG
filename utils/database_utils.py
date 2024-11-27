@@ -1,9 +1,10 @@
 #coding=utf8
 import json, sys, os, re, logging
+from datetime import datetime
 import duckdb, tqdm
 from typing import List, Dict, Union, Optional, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
+from agents.models import get_llm_single_instance
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
@@ -188,6 +189,7 @@ def populate_pdf_file_into_database(
         config = json.load(inf)
     log_to_file = config.get('log', False)
     write_count = 0
+    start_time = datetime.now()
     if pdf_path.endswith('.jsonl'):
         with open(pdf_path, 'r', encoding='UTF-8') as inf:
             for line in tqdm.tqdm(inf):
@@ -198,6 +200,9 @@ def populate_pdf_file_into_database(
                     populator.populate(json_data["pdf_path"], config, on_conflict=on_conflict, log=log_to_file)
                 else:
                     raise ValueError(f"Database {database_name} not supported yet.")
+                current_cost = get_llm_single_instance("gpt-4o").get_cost()
+                current_time = datetime.now() - start_time
+                logger.info(f"[Statistics]: Current Cost: {current_cost} | Current Time: {current_time}")
                 write_count += 1
     else:
         populator.populate(pdf_path, config, on_conflict=on_conflict, log=log_to_file)
