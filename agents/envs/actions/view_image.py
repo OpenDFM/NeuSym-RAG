@@ -71,11 +71,11 @@ class ViewImage(Action):
                 box[2] += box[0]
                 box[3] += box[1]
                 image = image.crop(box)
-            image_file = tempfile.NamedTemporaryFile(suffix='.png', dir=os.path.join(os.getcwd(), '.cache'))
-            image.save(image_file.name, 'PNG')
-            with open(image_file.name, 'rb') as f:
+            image_file = tempfile.mktemp(suffix='.png', dir=os.path.join(os.getcwd(), '.cache'))
+            image.save(image_file, 'PNG')
+            with open(image_file, 'rb') as f:
                 image_data = base64.b64encode(f.read()).decode('utf-8')
-            image_file.close()
+            os.remove(image_file)
             return Observation(image_data, 'image')
         except Exception as e:
             return Observation(f'[Error]: {str(e)}')

@@ -81,8 +81,9 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
                 bbox[3] = bbox[1] + bbox[3]
                 image = image.crop(bbox) # (x0, y0, x1, y1)
 
-            with tempfile.NamedTemporaryFile(suffix='.png', dir=TEMP_CACHE_DIR) as image_file:
-                image.save(image_file.name, 'PNG')
-                embeddings.append(DataCollection(self.image_embedding_pipeline(image_file.name))[0]['vector'])
+            image_file = tempfile.mktemp(suffix='.png', dir=TEMP_CACHE_DIR)
+            image.save(image_file, 'PNG')
+            embeddings.append(DataCollection(self.image_embedding_pipeline(image_file))[0]['vector'])
+            os.remove(image_file)
 
         return embeddings

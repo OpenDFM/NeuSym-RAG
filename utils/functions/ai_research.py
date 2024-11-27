@@ -36,7 +36,7 @@ def get_ai_research_pdf_data(
     return load_json_from_processed_data(pdf_path=pdf_path, processed_data_folder=processed_data_folder, TOC_threshold=TOC_threshold)
 
 
-def get_ai_research_page_info(pdf_path: str) -> Dict[str, Union[str, List[str]]]:
+def get_ai_research_page_info(metadata: Dict[str, Any]) -> Dict[str, Union[str, List[str]]]:
     """ Output (page_data):
         Dict[str, Union[str, List[str]]], the output dictionary containing the following keys:
             - pdf_name: str, the name of the PDF file.
@@ -45,8 +45,16 @@ def get_ai_research_page_info(pdf_path: str) -> Dict[str, Union[str, List[str]]]
             - page_summaries: List[str], the list of text summaries for each page.
             - page_uuids: List[str], the list of UUIDs for each page.
     """
+    pdf_path = metadata["pdf_path"]
+    pdf_name = metadata["uuid"]
+    num_pages = metadata["num_pages"]
     page_info = get_pdf_page_text(pdf_path)
-    page_info["page_summaries"] = get_text_summary(page_info["page_contents"]).get("text_summary", [])
+    page_info["page_summaries"] = get_text_summary({
+        "page_contents": page_info["page_contents"]
+    }).get("text_summary", [])
+    page_info["page_uuids"] = [
+        get_uuid(name=f"{pdf_name}_page_{page_number}") for page_number in range(1, num_pages + 1)
+    ]
     return page_info
 
 
@@ -95,12 +103,12 @@ def get_ai_research_section_info(
     """
     pdf_name = metadata["uuid"]
     sections=[]
-    for section_data in pdf_data["info_from_mineru"]["TOC"]:
+    for idx, section_data in enumerate(pdf_data["info_from_mineru"]["TOC"]):
         title= section_data["title"]
         section_text= section_data["text"]
         section_summary = get_text_summary({"section_text": section_text}, "section_text").get("text_summary", "")
         sections.append({
-            'uuid': get_uuid(name=f"{pdf_name}_title_{title}"),
+            'uuid': get_uuid(name=f"{pdf_name}_section_{idx}"),
             'title': title,
             'text': section_text,
             'summary': section_summary,
@@ -268,7 +276,7 @@ def aggregate_ai_research_pages(metadata: Dict[str, Any], page_data: Dict[str, A
         page = doc[page_number - 1]
         page_width = page.rect.width
         page_height = page.rect.height
-        page_uuid = get_uuid(name=f"{pdf_name}_page_{page_number}")
+        page_uuid = page_data["page_uuids"][page_number - 1]
         page_content = page_data["page_contents"][page_number - 1]
         page_summary = page_data["page_summaries"][page_number - 1]
 

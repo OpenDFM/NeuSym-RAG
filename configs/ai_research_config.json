@@ -25,7 +25,7 @@
             "function": "get_ai_research_page_info",
             "args": {
                 "deps": [
-                    "pdf_path"
+                    "get_ai_research_metadata"
                 ]
             }
         },
@@ -94,7 +94,7 @@
     ],
     "aggregation": [
         {
-            "function": "aggregate_ai_research_table_metadata",
+            "function": "aggregate_ai_research_metadata",
             "table": "metadata",
             "args": {
                 "deps": [
@@ -113,7 +113,7 @@
             }
         },
         {
-            "function": "aggregate_ai_research_table_chunks",
+            "function": "aggregate_ai_research_chunks",
             "table": "chunks",
             "args": {
                 "deps": [
