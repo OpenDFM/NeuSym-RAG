@@ -1,5 +1,9 @@
 #coding=utf8
 
+TRIVIAL_SYSTEM_PROMPT = """You are intelligent agent who is expert in answering user questions based on the retrieved context. You will be given a natural language question concerning a PDF file, and your task is to answer the input question with predefined output format using the relevant information.
+"""
+
+
 CLASSIC_RAG_SYSTEM_PROMPT = """You are intelligent agent who is expert in answering user questions based on the retrieved context. You will be given a natural language question concerning a PDF file, and your task is to answer the input question with predefined output format using the relevant information.
 """
 
