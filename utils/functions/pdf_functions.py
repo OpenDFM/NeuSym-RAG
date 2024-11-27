@@ -149,8 +149,6 @@ def convert_pdf_to_image(
     image = images[0]
     image.save(output_file, "PNG")
 
-ocr = None
-
 def get_pdf_formula(
         pdf_path: str
     ) -> List[str] :
@@ -163,19 +161,18 @@ def get_pdf_formula(
         result: List[str], the list of all formula
     """
     
-    if ocr == None:
-        ocr = Pix2Text()
+    ocr = Pix2Text()
     
     result = []
-    tmp_png_file = tempfile.NamedTemporaryFile(suffix='.png', dir=os.path.join(os.getcwd(), '.cache'))
+    tmp_png_file = tempfile.mktemp(suffix='.png', dir=os.path.join(os.getcwd(), '.cache'))
     images = convert_from_path(pdf_path)
     for image in images:
-        image.save(tmp_png_file.name, "PNG")
-        elements = ocr(tmp_png_file.name).elements
+        image.save(tmp_png_file, "PNG")
+        elements = ocr(tmp_png_file).elements
         for element in elements:
             if element.type == ElementType.FORMULA:
                 result.append(str(element.text))
-    tmp_png_file.close()
+    os.remove(tmp_png_file)
     
     return result
 
@@ -311,7 +308,7 @@ def parse_pdf(
         # Filter out level 1 entries directly while appending to result
         for entry in toc:
             level, title, page = entry
-            if level == 1:  # Only include level 1 entries
+            if level == 1 and title is not None and title != "":  # Only include level 1 entries
                 result["info_from_mineru"]["TOC"].append({
                     "title": title,
                     "level": level,
@@ -423,13 +420,15 @@ def parse_pdf(
                     page_numbers.add(entry["page_idx"] + 1)  # Convert to 1-based page number
 
             # Add the TOC entry to the result
-            result["info_from_mineru"]["TOC"].append({
-                "title": title,
-                "text": section_text.strip(),
-                "level": toc_entry["text_level"],
-                "page_number": start_page,
-                "page_numbers": sorted(page_numbers)  # Ensure page numbers are sorted
-            })
+            section_text = section_text.strip()
+            if (title is not None and title != "") or (section_text is not None and section_text != ""):
+                result["info_from_mineru"]["TOC"].append({
+                    "title": title,
+                    "text": section_text,
+                    "level": toc_entry["text_level"],
+                    "page_number": start_page,
+                    "page_numbers": sorted(page_numbers)  # Ensure page numbers are sorted
+                })
 
     doc.close()
 
@@ -447,6 +446,12 @@ def parse_pdf(
 
                 for sub_block in block.get("blocks", []):
                     if sub_block.get("type") == "table_caption":
+                        table_info["table_caption"] += " ".join(
+                            span.get("content", "")
+                            for line in sub_block.get("lines", [])
+                            for span in line.get("spans", [])
+                        )
+                    elif sub_block.get("type") == "table_footnote":
                         table_info["table_caption"] += " ".join(
                             span.get("content", "")
                             for line in sub_block.get("lines", [])
