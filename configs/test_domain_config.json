@@ -4,7 +4,7 @@
             "function": "get_pdf_page_text",
             "args": {
                 "deps": [
-                    0
+                    "pdf_path"
                 ],
                 "kwargs": {
                     "generate_uuid": true,
@@ -16,7 +16,7 @@
             "function": "get_text_summary",
             "args": {
                 "deps": [
-                    1
+                    "get_pdf_page_text"
                 ],
                 "kwargs": {
                     "key": "page_contents",
@@ -33,7 +33,7 @@
             "table": "pdf_meta",
             "args": {
                 "deps": [
-                    1
+                    "get_pdf_page_text"
                 ]
             }
         },
@@ -42,8 +42,8 @@
             "table": "pdf_pages",
             "args": {
                 "deps": [
-                    1,
-                    2
+                    "get_pdf_page_text",
+                    "get_text_summary"
                 ]
             }
         }

@@ -14,12 +14,44 @@
                     "description": "A unique identifier for this paper."
                 },
                 {
+                    "column_name": "title",
+                    "column_type": "VARCHAR",
+                    "description": "The title of this paper.",
+                    "encodable": "text"
+                },
+                {
+                    "column_name": "abstract",
+                    "column_type": "VARCHAR",
+                    "description": "The abstract of this paper.",
+                    "encodable": "text"
+                },
+                {
                     "column_name": "num_pages",
                     "column_type": "INTEGER",
                     "description": "The number of pages in this paper."
                 },
                 {
-                    "column_name": "paper_path",
+                    "column_name": "conference_full",
+                    "column_type": "VARCHAR",
+                    "description": "The full name of the conference where this paper was published. `uncategorized` if the paper has not been published yet."
+                },
+                {
+                    "column_name": "conference_abbreviation",
+                    "column_type": "VARCHAR",
+                    "description": "The abbreviation of the conference where this paper was published. `uncategorized` if the paper has not been published yet."
+                },
+                {
+                    "column_name": "year",
+                    "column_type": "INTEGER",
+                    "description": "The year when this paper was published."
+                },
+                {
+                    "column_name": "authors",
+                    "column_type": "VARCHAR[]",
+                    "description": "The full names of authors of this paper."
+                },
+                {
+                    "column_name": "pdf_path",
                     "column_type": "VARCHAR",
                     "description": "The path to the PDF file of this paper."
                 }
@@ -367,7 +399,7 @@
         },
         {
             "table": {
-                "table_name": "references",
+                "table_name": "reference",
                 "description": "This table stores information about references extracted using MinerU."
             },
             "columns": [

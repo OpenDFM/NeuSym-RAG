@@ -55,11 +55,11 @@ class  DatabasePopulation():
                         "function": "function_name",
                         "args": { // for each function, args separated into 2 parts: `deps` and `kwargs`, where `deps` is position args of input-output dependencies, and `kwargs` is a dict of keyword args.
                             "deps": [
-                                0,
-                                1,
-                                2
-                            ], // List[int], which defines the input-output dependencies of the function pipeline, where `0` means it uses the `pdf` str as input, `1` means it uses the output of the first function as input, and so on. 
-                            // Please pay attention to the order of the functions in the config list to ensure the validity of the function pipeline. The first function must take the `pdf` str as input, that is `deps` must contain 0.
+                                "pdf_path",
+                                "get_func_1",
+                                "get_func_2"
+                            ], // List[int], which defines the input-output dependencies of the function pipeline. The functions can use `pdf_path` and the outputs of previous functions as inputs.
+                            // Please pay attention to the order of the functions in the config list to ensure the validity of the function pipeline. The first function must take the `pdf_path` str as input.
                             // Besides, these deps arguments should appear first in the arguments of the current function, followed by keyword arguments in `kwargs` below.
 
                             "kwargs": {
@@ -76,10 +76,10 @@ class  DatabasePopulation():
                         "columns": ["column1", "column2", ...], // List[str], column names in the table, optional, if not provided, insert all columns of the current table in the database
                         "args": {
                             "deps": [
-                                1,
-                                4,
-                                6
-                            ], // List[int], similarly, it defines the dependencies of function outputs, where `1` means it uses the output of the first function in the pipeline, `4` means it uses the output of the 4th function in the pipeline, and so on. We use these outputs to create the `INSERT INTO` SQL statement.
+                                "get_func_1",
+                                "get_func_4",
+                                "get_func_6"
+                            ], // List[int], similarly, it defines the dependencies of function outputs, where `get_func_1`, `get_func_4` and `get_func_6` are the functions from the pipeline, of whom the function uses the outputs as inputs. We use these outputs to create the `INSERT INTO` SQL statement.
                             "kwargs": {
                                 "key1": "value1",
                                 "key2": "value2",
@@ -89,18 +89,27 @@ class  DatabasePopulation():
             `log`: bool, whether to write the insert_sql statement into the log file, default to True
             `on_conflict`: when primary key conflicts occurred, optional, default to 'replace', chosen from 'raise', 'ignore', 'replace'
         """
+        func_name_list = ['pdf_path']
+        func_name_dict = {'pdf_path': 0}
+        for idx, func_dict in enumerate(config['pipeline'], start=1):
+            func_name_list.append(func_dict['function'])
+            func_name_dict[func_dict['function']] = idx
         outputs = [pdf_path_or_json_data]
-        for idx, func_dict in enumerate(config['pipeline']):
-            idx = idx + 1 # 1-based index for output storage
+        for idx, func_dict in enumerate(config['pipeline'], start=1): # 1-based index for output storage
+            # Check the dependencies of the current function
+            func_name = func_dict['function']
+            deps = func_dict['args'].get('deps', [])
+            for dep in deps:
+                assert dep in func_name_dict, f"Function {func_name} depends on function {dep}, but function {dep} not found in the pipeline config."
+            deps = [func_name_dict[dep_func] for dep_func in deps]
             if idx == 1:
-                assert 0 in func_dict['args']['deps'], "The first function must take the `pdf_path_or_json_data` as input."
-            
-            deps = func_dict['args']['deps']
+                assert 0 in deps, "The first function must take the `pdf_path` as input."
+            for dep in deps:
+                assert dep < idx, f"Function {func_name} depends on function {func_name_list[dep]}, but function {func_name_list[dep]}({dep}) is after function {func_name}({idx}) in the pipeline config."
             position_args = [outputs[idx] for idx in deps]
             keyword_args = func_dict['args'].get('kwargs', {})
 
             # Call the specific function
-            func_name = func_dict['function']
             func_method = getattr(functions, func_name, None)
             assert func_method is not None, f"Function {func_name} not found in the functions module when trying to extract database content for {self.database}."
 
@@ -109,12 +118,15 @@ class  DatabasePopulation():
 
         # merge the outputs from all temporary results
         for idx, func_dict in enumerate(config['aggregation']):
+            func_name = func_dict['function']
             deps = func_dict['args']['deps'] if 'deps' in func_dict['args'] else []
+            for dep in deps:
+                assert dep in func_name_dict, f"Function {func_name} depends on function {dep}, but function {dep} not found in the pipeline config."
+            deps = [func_name_dict[dep_func] for dep_func in deps]
             position_args = [outputs[idx] for idx in deps]
             keyword_args = func_dict['args'].get('kwargs', {})
 
             # Call the specific function
-            func_name = func_dict['function']
             func_method = getattr(functions, func_name, None)
             assert func_method is not None, f"Function {func_name} not found in the functions module when trying to aggregate database content for {self.database}."
             table_name = func_dict['table']

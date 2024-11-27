@@ -4,7 +4,7 @@
             "function": "get_biology_paper_per_page_uuid",
             "args": {
                 "deps": [
-                    0
+                    "pdf_path"
                 ]
             }
         },
@@ -12,7 +12,7 @@
             "function": "get_biology_paper_per_page_content_uuid",
             "args": {
                 "deps": [
-                    0
+                    "pdf_path"
                 ]
             }
         },
@@ -20,7 +20,7 @@
             "function": "get_biology_paper_per_page_chunk_uuid_and_text",
             "args": {
                 "deps": [
-                    0
+                    "pdf_path"
                 ],
                 "kwargs": {
                     "chunk_size": 512,
@@ -35,7 +35,7 @@
             "table": "metadata",
             "args": {
                 "deps": [
-                    0
+                    "pdf_path"
                 ]
             }
         },
@@ -44,8 +44,8 @@
             "table": "pages",
             "args": {
                 "deps": [
-                    0,
-                    1
+                    "pdf_path",
+                    "get_biology_paper_per_page_uuid"
                 ]
             }
         },
@@ -59,9 +59,9 @@
             "table": "content",
             "args": {
                 "deps": [
-                    0,
-                    1,
-                    2
+                    "pdf_path",
+                    "get_biology_paper_per_page_uuid",
+                    "get_biology_paper_per_page_content_uuid"
                 ]
             }
         },
@@ -70,9 +70,9 @@
             "table": "chunks",
             "args": {
                 "deps": [
-                    0,
-                    1,
-                    3
+                    "pdf_path",
+                    "get_biology_paper_per_page_uuid",
+                    "get_biology_paper_per_page_chunk_uuid_and_text"
                 ]
             }
         },
@@ -81,8 +81,8 @@
             "table": "parent_child_relations",
             "args": {
                 "deps": [
-                    0,
-                    2
+                    "pdf_path",
+                    "get_biology_paper_per_page_content_uuid"
                 ]
             }
         }

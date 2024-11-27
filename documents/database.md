@@ -28,6 +28,7 @@ Under each database folder, it at least contains the following three files:
 ```sh
 python utils/database_utils.py --database financial_report --function create_db --from_scratch
 python utils/database_utils.py --database biology_paper --function create_db --from_scratch
+python utils/database_utils.py --database ai_research --function create_db --from_scratch
 ```
 2. [**Populate**] Parse PDF content and write into database:
 - by default, writing strategy is `--on_conflict replace`. It means when writing rows whose primary key already exists in DB, the value will be updated without raising error. This value can be changed to `raise`, `ignore`.
@@ -145,7 +146,7 @@ python utils/database_utils.py --database test_domain --function create_db
             "function": "get_pdf_page_text",
             "args": {
                 "deps": [
-                    0
+                    "pdf_path"
                 ],
                 "kwargs": {
                     "generate_uuid": true,
@@ -157,7 +158,7 @@ python utils/database_utils.py --database test_domain --function create_db
             "function": "get_text_summary",
             "args": {
                 "deps": [
-                    1
+                    "get_pdf_page_text"
                 ],
                 "kwargs": {
                     "key": "page_contents",
@@ -175,7 +176,7 @@ python utils/database_utils.py --database test_domain --function create_db
             "columns": ["pdf_id", "pdf_name", "pdf_path"],
             "args": {
                 "deps": [
-                    1
+                    "get_pdf_page_text"
                 ],
                 "kwargs": {}
             }
@@ -185,8 +186,8 @@ python utils/database_utils.py --database test_domain --function create_db
             "table": "pdf_pages",
             "args": {
                 "deps": [
-                    1,
-                    2
+                    "get_pdf_page_text",
+                    "get_text_summary"
                 ],
                 "kwargs": {}
             }
@@ -201,7 +202,7 @@ python utils/database_utils.py --database test_domain --function create_db
     "function": "get_pdf_page_text",
     "args": {
         "deps": [
-            0
+            "pdf_path"
         ],
         "kwargs": {
             "generate_uuid": true,
@@ -210,11 +211,12 @@ python utils/database_utils.py --database test_domain --function create_db
     }
 }
 ```
-where `deps = [0]` means we use exactly the parameter `pdf_path` as the first position argument for function `get_pdf_page_text`. For the second pipeline function, `deps = [1]` means `get_text_summary` takes the output of the first function as the first input argument. For other keyword arguments, you can directly pass it into the `kwargs` dict.
+where `deps = ["pdf_path"]` means we use exactly the parameter `pdf_path` as the first position argument for function `get_pdf_page_text`. For the second pipeline function, `deps = ["get_pdf_page_text"]` means `get_text_summary` takes the output of the first function `get_pdf_page_text` as the first input argument. For other keyword arguments, you can directly pass it into the `kwargs` dict.
 
 > **Best Practices and FAQ:**
 > - _Where can I define my personal functions?_ In the module `utils/functions/`, and remember to import them in `utils/functions/__init__.py`.
 > - _How do I name my function?_ It totally depends on yourself. Try to be straightforward and avoid duplication. You can follow some convention like always starting with the prefix `get_xxxx`.
+> - _Obligation:_ The first pipeline function **MUST** take `pdf_path` as one of its position argument.
 > - _Suggestion:_ If your pipeline function is universal or can be shared across different databases, consider putting it in a generic `.py` file like `common_functions.py` or `pdf_functions.py`. Otherwise, create a separate `{database_name}.py` file in the `functions/` folder.
 > - _Suggestion:_ For the output of each pipeline function, consider using a JSON dict `-> Dict[str, Any]` as the **output type**, such that it will be easier to chain the function pipeline.
 
@@ -227,7 +229,7 @@ where `deps = [0]` means we use exactly the parameter `pdf_path` as the first po
     "columns": ["pdf_id", "pdf_name", "pdf_path"],
     "args": {
         "deps": [
-            1
+            "get_pdf_page_text"
         ],
         "kwargs": {}
     }
@@ -251,4 +253,5 @@ Take the two datasets as example, all PDFs in `pdf_data.jsonl` will be parsed an
 ```sh
 python utils/database_utils.py --database biology_paper --pdf_path data/dataset/pdfvqa/processed_data/pdf_data.jsonl --config_path configs/biology_paper_config.json --function populate_db --on_conflict replace
 python utils/database_utils.py --database financial_report --pdf_path data/dataset/tatdqa/processed_data/pdf_data.jsonl --config_path configs/financial_report_config.json --function populate_db --on_conflict replace
+python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/sample_pdf_data.jsonl --config_path configs/ai_research_config.json --function populate_db --on_conflict replace
 ```
