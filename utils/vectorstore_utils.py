@@ -343,7 +343,7 @@ def get_extra_fields(column_names: List[str]) -> Tuple[str]:
 
 
 def get_page_number_from_id(db_schema: Dict[str, Any], db_conn: duckdb.DuckDBPyConnection, pdf_id: str, page_id: str) -> int:
-    """ Get the page number from the relational database (only used for biology_paper and financial_report).
+    """ Get the page number from the relational database (only used for biology_paper, financial_report and ai_research).
     @args:
         db_schema: Dict[str, Any], the schema of the relational database
         db_conn: duckdb.DuckDBPyConnection, the connection to the relational database
@@ -355,7 +355,8 @@ def get_page_number_from_id(db_schema: Dict[str, Any], db_conn: duckdb.DuckDBPyC
     database = db_schema['database_name']
     sql_query = {
         'biology_paper': f"SELECT page_number FROM pages WHERE ref_paper_id = '{pdf_id}' AND page_id = '{page_id}';",
-        'financial_report': f"SELECT page_number FROM pages WHERE ref_report_id = '{pdf_id}' AND page_id = '{page_id}';"
+        'financial_report': f"SELECT page_number FROM pages WHERE ref_report_id = '{pdf_id}' AND page_id = '{page_id}';",
+        'ai_research': f"SELECT page_number FROM pages WHERE ref_paper_id = '{pdf_id}' AND page_id = '{page_id}';"
     }
     sql = sql_query.get(database, None)
     if sql is None:
@@ -374,12 +375,46 @@ def get_image_or_pdf_path(database: str, pdf_id: str, page_number: int) -> str:
         database: str, the database name
         pdf_id: str, the PDF id
         page_number: int, the page number
+    @return:
+        str: The file path for the PDF or image.
     """
-    image_or_pdf_path = {
-        'biology_paper': os.path.join('data', 'dataset', 'pdfvqa', 'processed_data', 'test_images', f"{pdf_id}.pdf_{page_number - 1}.png"),
-        'financial_report': os.path.join('data', 'dataset', 'tatdqa', 'processed_data', 'test_docs', f"{pdf_id}.pdf")
-    }[database]
-    return image_or_pdf_path
+    if database == 'ai_research':
+        # Load the mapping file
+        uuid2papers_path = os.path.join('data', 'dataset', 'airqa', 'uuid2papers.json')
+        if not os.path.exists(uuid2papers_path):
+            raise FileNotFoundError(f"Mapping file of ai_research not found: {uuid2papers_path}")
+        
+        with open(uuid2papers_path, 'r', encoding='utf-8') as f:
+            uuid2papers = json.load(f)
+        
+        # Get the paper info
+        paper_info = uuid2papers.get(pdf_id)
+        if not paper_info:
+            raise ValueError(f"PDF ID '{pdf_id}' not found in the mapping file.")
+        
+        # Get the PDF path from the mapping
+        pdf_path = paper_info.get("pdf_path")
+        if not pdf_path or not os.path.exists(pdf_path):
+            raise FileNotFoundError(f"PDF file not found: {pdf_path}")
+        
+        return pdf_path
+
+    elif database == 'biology_paper':
+        # Handle biology_paper database where images are stored per page
+        return os.path.join(
+            'data', 'dataset', 'pdfvqa', 'processed_data', 'test_images', 
+            f"{pdf_id}.pdf_{page_number - 1}.png"
+        )
+    
+    elif database == 'financial_report':
+        # Handle financial_report database
+        return os.path.join(
+            'data', 'dataset', 'tatdqa', 'processed_data', 'test_docs', 
+            f"{pdf_id}.pdf"
+        )
+    
+    else:
+        raise ValueError(f"Database '{database}' is not supported.")
 
 
 def encoding_database_content(vs_conn: MilvusClient, db_conn: duckdb.DuckDBPyConnection, db_schema: Dict[str, Any], embed_kwargs: Optional[Dict[str, Any]] = None, skip_collections: List[str] = [], **kwargs) -> None:
