@@ -10,6 +10,21 @@
             }
         },
         {
+            "function": "get_ai_research_tldr_tags",
+            "args": {
+                "deps": [
+                    "get_ai_research_metadata"
+                ],
+                "kwargs": {
+                    "model": "gpt-4o",
+                    "tldr_max_length": 80,
+                    "tag_number": 5,
+                    "temperature": 0.7,
+                    "top_p" : 0.95
+                }
+            }
+        },
+        {
             "function": "get_ai_research_pdf_data",
             "args": {
                 "deps": [
@@ -122,7 +137,8 @@
             "table": "metadata",
             "args": {
                 "deps": [
-                    "get_ai_research_metadata"
+                    "get_ai_research_metadata",
+                    "get_ai_research_tldr_tags"
                 ]
             }
         },

@@ -70,6 +70,16 @@
                     "column_name": "pdf_path",
                     "column_type": "VARCHAR",
                     "description": "The path to the PDF file of this paper."
+                },
+                {
+                    "column_name": "tldr",
+                    "column_type": "VARCHAR",
+                    "description": "A brief summary of the paper's main idea or findings"
+                },
+                {
+                    "column_name": "tags",
+                    "column_type": "VARCHAR[]",
+                    "description": "Keywords representing the paper's topics, methods, or applications."
                 }
             ],
             "primary_keys": [

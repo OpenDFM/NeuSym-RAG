@@ -14,7 +14,9 @@ CREATE TABLE IF NOT EXISTS metadata (
 	download_url VARCHAR, -- The url from which the paper can be downloaded.
 	bibtex VARCHAR, -- The bibtex of this paper.
 	authors VARCHAR[], -- The full names of authors of this paper.
-	pdf_path VARCHAR, -- The path to the PDF file of this paper.,
+	pdf_path VARCHAR, -- The path to the PDF file of this paper.
+	tldr VARCHAR, -- A brief summary of the paper's main idea or findings
+	tags VARCHAR[], -- Keywords representing the paper's topics, methods, or applications.,
 	PRIMARY KEY (paper_id)
 );
 /* table pages: This table stores information of the pages in the papers, including their content, size and their order within the paper. The pagesare extracted using PyMuPDF.
