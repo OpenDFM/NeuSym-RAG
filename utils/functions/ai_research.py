@@ -11,7 +11,7 @@ from utils.functions.common_functions import get_uuid, call_llm, call_llm_with_m
 from utils.functions.pdf_functions import get_pdf_page_text, load_json_from_processed_data, get_table_summary, get_text_summary
 from utils.functions.image_functions import get_image_summary
 from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid
-from utils.eval_utils import fuzzy_match_strs
+from fuzzywuzzy.fuzz import partial_ratio
 
 
 logger = logging.getLogger(__name__)
@@ -36,7 +36,13 @@ def get_ai_research_pdf_data(
     return load_json_from_processed_data(pdf_path=pdf_path, processed_data_folder=processed_data_folder, TOC_threshold=TOC_threshold)
 
 
-def get_ai_research_page_info(metadata: Dict[str, Any]) -> Dict[str, Union[str, List[str]]]:
+def get_ai_research_page_info(
+        metadata: Dict[str, Any], 
+        max_length: int = 50,
+        model: str = 'gpt-4o', 
+        temperature: float = 0.7, 
+        top_p: float = 0.95
+    ) -> Dict[str, Union[str, List[str]]]:
     """ Output (page_data):
         Dict[str, Union[str, List[str]]], the output dictionary containing the following keys:
             - pdf_name: str, the name of the PDF file.
@@ -49,9 +55,13 @@ def get_ai_research_page_info(metadata: Dict[str, Any]) -> Dict[str, Union[str, 
     pdf_name = metadata["uuid"]
     num_pages = metadata["num_pages"]
     page_info = get_pdf_page_text(pdf_path)
-    page_info["page_summaries"] = get_text_summary({
-        "page_contents": page_info["page_contents"]
-    }).get("text_summary", [])
+    page_info["page_summaries"] = get_text_summary(
+        content={"page_contents": page_info["page_contents"]},
+        max_length=max_length,
+        model=model,
+        temperature=temperature,
+        top_p=top_p
+    ).get("text_summary", [])
     page_info["page_uuids"] = [
         get_uuid(name=f"{pdf_name}_page_{page_number}") for page_number in range(1, num_pages + 1)
     ]
@@ -92,7 +102,11 @@ def get_ai_research_per_page_chunk_info(
 
 def get_ai_research_section_info(
         metadata: Dict[str, Any], 
-        pdf_data: Dict[str, Any]
+        pdf_data: Dict[str, Any],
+        max_length: int = 50,
+        model: str = 'gpt-4o', 
+        temperature: float = 0.7, 
+        top_p: float = 0.95
     ) -> List[Dict[str, Union[str, List[int]]]]:
     """ Output (section_data):
         [
@@ -106,7 +120,14 @@ def get_ai_research_section_info(
     for idx, section_data in enumerate(pdf_data["info_from_mineru"]["TOC"]):
         title= section_data["title"]
         section_text= section_data["text"]
-        section_summary = get_text_summary({"section_text": section_text}, "section_text").get("text_summary", "")
+        section_summary = get_text_summary(
+            content={"section_text": section_text},
+            key="section_text",
+            max_length=max_length,
+            model=model,
+            temperature=temperature,
+            top_p=top_p
+        ).get("text_summary", "")
         sections.append({
             'uuid': get_uuid(name=f"{pdf_name}_section_{idx}"),
             'title': title,
@@ -118,7 +139,14 @@ def get_ai_research_section_info(
     return sections
 
 
-def get_ai_research_per_page_table_info(metadata: str, pdf_data: Dict[str, Any]) -> List[List[Dict[str, Any]]]:
+def get_ai_research_per_page_table_info(
+        metadata: str, 
+        pdf_data: Dict[str, Any],
+        max_length: int = 50,
+        model: str = 'gpt-4o', 
+        temperature: float = 0.7, 
+        top_p: float = 0.95
+    ) -> List[List[Dict[str, Any]]]:
     """ Output (table_data):
         [ [ {'uuid': uuid1 of page1, 'table_content': table_html ,'table_caption': table caption1, 'bbox': bbox1, 'table_summary':table_summary}, {...} ], [ {...} ] ... ]
     """
@@ -143,7 +171,13 @@ def get_ai_research_per_page_table_info(metadata: str, pdf_data: Dict[str, Any])
 
             for ordinal, table in enumerate(page_tables, start=1):
                 uuid = get_uuid(name=f"{pdf_name}_page_{page_num}_table_{ordinal}")
-                table_summary = get_table_summary(table=table)
+                table_summary = get_table_summary(
+                    table=table,
+                    max_length=max_length,
+                    model=model,
+                    temperature=temperature,
+                    top_p=top_p
+                )
 
                 table_info = {
                     "uuid": uuid,
@@ -163,7 +197,11 @@ def get_ai_research_per_page_table_info(metadata: str, pdf_data: Dict[str, Any])
 
 def get_ai_research_per_page_image_info(
         metadata: Dict[str, Any], 
-        pdf_data: Dict[str, Any]
+        pdf_data: Dict[str, Any],
+        max_length: int = 50,
+        model: str = 'gpt-4o', 
+        temperature: float = 0.7, 
+        top_p: float = 0.95
     ) -> List[List[Dict[str, Any]]]:
     """ Output (image_data):
         [ [ {'uuid': uuid, 'image_caption': image_caption, 'image_summary': immage_summary, 'bbox': bbox1}, {...} ], [ {...} ] ... ]
@@ -185,7 +223,13 @@ def get_ai_research_per_page_image_info(
         result = []
         for ordinal, image in enumerate(images, start=1):
             uuid = get_uuid(name=f"{pdf_name}_page_{page_num}_image_{ordinal}")
-            image_summary = get_image_summary(image["figure_path"])
+            image_summary = get_image_summary(
+                image_path=image["figure_path"],
+                max_length=max_length,
+                model=model,
+                temperature=temperature,
+                top_p=top_p
+            )
             image_info = {
                 "uuid": uuid,
                 "image_caption": image["figure_caption"],
@@ -253,7 +297,7 @@ def get_ai_research_reference_info(
         text = reference.get("reference_text", "")
         page_number = -1
         for i in range(num_pages):
-            if fuzzy_match_strs(page_data["page_contents"][i], text, threshold=threshold) > threshold:
+            if float(partial_ratio(page_data["page_contents"][i], text)) / 100.0 > threshold:
                 page_number = i
         if page_number != -1:
             results.append({'uuid': uuid, 'text': text, 'ref_page_id': page_data["page_uuids"][page_number]})

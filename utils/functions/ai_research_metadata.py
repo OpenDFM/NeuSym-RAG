@@ -415,7 +415,12 @@ def get_ai_research_metadata(
 
 def aggregate_ai_research_metadata(metadata: Dict[str, Any]) -> List[List[Any]]:
     """ Output:
-        [ [ paper_id, title, abstract, num_pages, conference_full, conference_abbreviation, year, authors, pdf_path ] ]
+        [ [ paper_id, title, abstract, num_pages, conference_full, conference_abbreviation, pub_year, volume, download_url, bibtex, authors, pdf_path ] ]
     """
-    columns = [ "uuid", "title", "abstract", "num_pages", "conference_full", "conference", "year", "authors", "pdf_path" ]
-    return [[metadata[column] for column in columns]]
+    columns = [ "uuid", "title", "abstract", "num_pages", "conference_full", "conference", "year", "volume", "pdf_url", "bibtex", "authors", "pdf_path" ]
+    defaults = [ "", "", "", 0, "", "", 0, "", "", "", [], "" ]
+    result = []
+    for i in range(len(columns)):
+        result.append(metadata.get(columns[i], defaults[i]))
+    result[7] = str(result[7]) # stringify `volume`
+    return [result]

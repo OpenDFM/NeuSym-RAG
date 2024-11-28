@@ -46,6 +46,22 @@
                     "description": "The year when this paper was published."
                 },
                 {
+                    "column_name": "volume",
+                    "column_type": "VARCHAR",
+                    "description": "The volume of the conference where this paper was published. e.g. findings."
+                },
+                {
+                    "column_name": "download_url",
+                    "column_type": "VARCHAR",
+                    "description": "The url from which the paper can be downloaded."
+                },
+                {
+                    "column_name": "bibtex",
+                    "column_type": "VARCHAR",
+                    "description": "The bibtex of this paper.",
+                    "encodable": "text"
+                },
+                {
                     "column_name": "authors",
                     "column_type": "VARCHAR[]",
                     "description": "The full names of authors of this paper."
