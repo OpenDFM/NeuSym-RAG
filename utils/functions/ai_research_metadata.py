@@ -141,8 +141,8 @@ def infer_paper_tldr_from_metadata(
     """ Use a language model to infer the TL;DR of a paper based on its title and abstract.
     """
     # Call the language model to infer the TL;DR
-    template = f"""You are an expert in academic papers. Your task is to write a TL;DR (Too Long; Didn't Read) summary for a research paper based on its title and abstract. The TL;DR should:\n1. Be concise and within {max_length} characters.\n2. Capture the main focus or contribution of the paper.\n3. Be written in a single line without extra formatting or context.\nTitle: {pdf_title}\nAbstract: {pdf_abstract}\nYour response is:
-"""
+    template = f"""You are an expert in academic papers. Your task is to write a TL;DR (Too Long; Didn't Read) summary for a research paper based on its title and abstract. The TL;DR should:\n1. Be concise and within {max_length} characters.\n2. Capture the main focus or contribution of the paper.\n3. Be written in a single line without extra formatting or context.\n\nHere are the title and abstract of the paper.\nTitle: {pdf_title}\nAbstract: {pdf_abstract}\n\nYour response is:
+    """
     tldr = call_llm(template, model=model, temperature=temperature, top_p=top_p).strip()
 
     return tldr
@@ -159,8 +159,8 @@ def infer_paper_tags_from_metadata(
     """ Use a language model to infer tags (keywords) of a paper based on its title and abstract.
     """
     # Call the language model to infer the tags
-    template = f"""You are an expert in academic papers. Your task is to generate a list of {tag_number} relevant tags (keywords) for a research paper based on its title and abstract. The tags should:\n1. Be concise and relevant to the paper's main focus.\n2. Be unique (avoid duplicates).\n3. Be written as a comma-separated list.\nTitle: {pdf_title}\nAbstract: {pdf_abstract}\nYour response is:
-"""
+    template = f"""You are an expert in academic papers. Your task is to generate a list of {tag_number} relevant tags (keywords) for a research paper based on its title and abstract. The tags should:\n1. Be concise and relevant to the paper's main focus.\n2. Be unique (avoid duplicates).\n3. Be written as a comma-separated list.\n\nHere are the title and abstract of the paper.\nTitle: {pdf_title}\nAbstract: {pdf_abstract}\nYour response is:
+    """
     tags = call_llm(template, model=model, temperature=temperature, top_p=top_p).strip()
     tag_list = [tag.strip() for tag in tags.split(',') if tag.strip()]
 
@@ -487,7 +487,7 @@ def get_ai_research_tldr_tags(
             tag_number=tag_number,
             model=model,
             temperature=temperature,
-            top_p =top_p
+            top_p=top_p
         )
 
         metadata_add["tldr"] = tldr
@@ -503,17 +503,13 @@ def aggregate_ai_research_metadata(metadata: Dict[str, Any], metadata_add: Dict[
     """ Output:
         [ [ paper_id, title, abstract, num_pages, conference_full, conference_abbreviation, pub_year, volume, download_url, bibtex, authors, pdf_path, tldr, tags ] ]
     """
-    columns = [ "uuid", "title", "abstract", "num_pages", "conference_full", "conference", "year", "volume", "pdf_url", "bibtex", "authors", "pdf_path" ]
-    defaults = [ "", "", "", 0, "", "", 0, "", "", "", [], ""]
     result = []
-
-    # Extract base metadata
+    metadata_all = {**metadata, **metadata_add}
+    columns = ["uuid", "title", "abstract", "num_pages", "conference_full", "conference", "year", "volume", "pdf_url", "bibtex", "authors", "pdf_path", "tldr", "tags"]
+    defaults = ["", "", "", 0, "", "", 0, "", "", "", [], "", "", []]
+    # Extract all metadata
     for i in range(len(columns)):
-        result.append(metadata.get(columns[i], defaults[i]))
-
-    # Add TL;DR and tags from metadata_add
-    result.append (metadata_add.get("tldr", ""))  # Add TL;DR
-    result.append (metadata_add.get("tags", []))  # Add tags
+        result.append(metadata_all.get(columns[i], defaults[i]))
 
     result[7] = str(result[7]) # stringify `volume`
     return [result]
