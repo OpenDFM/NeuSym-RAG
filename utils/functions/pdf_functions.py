@@ -308,7 +308,7 @@ def parse_pdf(
         # Filter out level 1 entries directly while appending to result
         for entry in toc:
             level, title, page = entry
-            if level == 1 and title is not None and title != "":  # Only include level 1 entries
+            if level == 1 and title:  # Only include level 1 entries
                 result["info_from_mineru"]["TOC"].append({
                     "title": title,
                     "level": level,
@@ -421,7 +421,7 @@ def parse_pdf(
 
             # Add the TOC entry to the result
             section_text = section_text.strip()
-            if (title is not None and title != "") or (section_text is not None and section_text != ""):
+            if title or section_text:
                 result["info_from_mineru"]["TOC"].append({
                     "title": title,
                     "text": section_text,
@@ -459,8 +459,9 @@ def parse_pdf(
                         )
                     elif sub_block.get("type") == "table_body":
                         table_info["table_html"] = sub_block.get("lines", [{}])[0].get("spans", [{}])[0].get("html", "")
-
-                result["info_from_mineru"]["tables"].append(table_info)
+                
+                if table_info["table_html"]:
+                    result["info_from_mineru"]["tables"].append(table_info)
 
         # Extract information about figures
         for block in page.get("images", []):
@@ -483,7 +484,7 @@ def parse_pdf(
                         image_path = sub_block.get("lines", [{}])[0].get("spans", [{}])[0].get("image_path", "")
                         figure_info["figure_path"] = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', 'images', image_path)
 
-                if figure_info["figure_path"] != "":
+                if figure_info["figure_path"]:
                     result["info_from_mineru"]["figures"].append(figure_info)
 
     # Extract information about equations
@@ -497,7 +498,8 @@ def parse_pdf(
                 "equation_text": content["text"],
                 "page_number": content["page_idx"] + 1
             }
-            result["info_from_mineru"]["equations"].append(equation_info)
+            if equation_info["equation_text"]:
+                result["info_from_mineru"]["equations"].append(equation_info)
         if content["type"] == "text" and content.get("text_level", None) == 1:
             if content["text"].lower().startswith("reference"):
                 record_reference = 1
@@ -506,10 +508,11 @@ def parse_pdf(
                 record_reference = 0
         if record_reference and content.get("text", None) != None:
             reference_list = list(str(content["text"]).split("\n"))
+            reference_list = [reference.strip() for reference in reference_list if reference.strip()]
             if reference_list:
                 references.extend(reference_list)
 
-    result["info_from_mineru"]["references"] = [{"reference_text": reference} for reference in references if reference != ""]
+    result["info_from_mineru"]["references"] = [{"reference_text": reference} for reference in references if reference]
 
     # Write each paper's data into a separate JSON file
     with open(output_path, 'w', encoding='utf-8') as f:
