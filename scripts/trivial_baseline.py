@@ -13,6 +13,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default='pdfvqa', help='which dataset to use')
 parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
 parser.add_argument('--agent_method', type=str, default='trivial', help='Agent method')
+parser.add_argument('--max_length', type=int, default=30, help='Maximum length (x 1000) of the input context or document, default is 32k')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
 parser.add_argument('--temperature', type=float, default=0.7)
 parser.add_argument('--top_p', type=float, default=0.95)
@@ -62,7 +63,7 @@ for data in test_data:
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
     result = agent.interact(
         question, answer_format,
-        pdf_id=data['pdf_id'], page_number=data['page_number'],
+        pdf_id=data['pdf_id'], page_number=data['page_number'], max_length=args.max_length,
         model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens,
         output_path=output_path
     )

@@ -20,6 +20,7 @@ class TrivialAgent(AgentBase):
                  answer_format: str,
                  pdf_id: Optional[str] = None,
                  page_number: Optional[Union[str, List[str]]] = None,
+                 max_length: int = 30,
                  model: str = 'gpt-4o-mini',
                  temperature: float = 0.7,
                  top_p: float = 0.95,
@@ -41,6 +42,7 @@ class TrivialAgent(AgentBase):
         else:
             observation = 'No context provided.'
         logger.info('[Stage 1]: Retrieve context ...')
+        observation = self.truncate_tokens(observation, max_tokens=max_length)
         logger.info(f'[Retrieved Context]: {observation}')
 
         # 2. Answer the question
