@@ -43,6 +43,12 @@ The documents for this project and fine-grained topics are discussed in the fold
   <em>Figure 2: Database Schema for Financial Report (TATDQA)</em>
 </p>
 
+<p align="center">
+  <img src="data/database/ai_research/ai_research.png" alt="Image Description" width="95%">
+  <br>
+  <em>Figure 3: Database Schema for AI Research (AIR-QA)</em>
+</p>
+
 - [`documents/database.md`](documents/database.md):
   - Folder structure of `data/database/`;
   - How to define database schema and its format (two figures above are drawn with [DrawSQL](https://drawsql.app/diagrams));
