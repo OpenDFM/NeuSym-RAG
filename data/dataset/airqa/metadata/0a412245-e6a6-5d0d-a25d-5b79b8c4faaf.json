@@ -1,0 +1,21 @@
+{
+    "uuid": "0a412245-e6a6-5d0d-a25d-5b79b8c4faaf",
+    "title": "MapGPT: Map-Guided Prompting with Adaptive Path Planning for Vision-and-Language Navigation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2024-mapgpt,\n    title = \"{M}ap{GPT}: Map-Guided Prompting with Adaptive Path Planning for Vision-and-Language Navigation\",\n    author = \"Chen, Jiaqi  and\n      Lin, Bingqian  and\n      Xu, Ran  and\n      Chai, Zhenhua  and\n      Liang, Xiaodan  and\n      Wong, Kwan-Yee\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.529\",\n    doi = \"10.18653/v1/2024.acl-long.529\",\n    pages = \"9796--9810\",\n    abstract = \"Embodied agents equipped with GPT as their brain have exhibited extraordinary decision-making and generalization abilities across various tasks. However, existing zero-shot agents for vision-and-language navigation (VLN) only prompt the GPT-4 to select potential locations within localized environments, without constructing an effective {``}global-view{''} for the agent to understand the overall environment. In this work, we present a novel **map**-guided **GPT**-based agent, dubbed **MapGPT**, which introduces an online linguistic-formed map to encourage the global exploration. Specifically, we build an online map and incorporate it into the prompts that include node information and topological relationships, to help GPT understand the spatial environment. Benefiting from this design, we further propose an adaptive planning mechanism to assist the agent in performing multi-step path planning based on a map, systematically exploring multiple candidate nodes or sub-goals step by step. Extensive experiments demonstrate that our MapGPT is applicable to both GPT-4 and GPT-4V, achieving state-of-the-art zero-shot performance on the R2R and REVERIE simultaneously ({\\textasciitilde}10{\\%} and {\\textasciitilde}12{\\%} improvements in SR), and showcasing the newly emergent global thinking and path planning abilities of the GPT.\",\n}\n",
+    "authors": [
+        "Jiaqi Chen",
+        "Bingqian Lin",
+        "Ran Xu",
+        "Zhenhua Chai",
+        "Xiaodan Liang",
+        "Kwan-Yee Wong"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.529.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0a412245-e6a6-5d0d-a25d-5b79b8c4faaf.pdf",
+    "abstract": "Embodied agents equipped with GPT as their brain have exhibited extraordinary decision-making and generalization abilities across various tasks. However, existing zero-shot agents for vision-and-language navigation (VLN) only prompt the GPT-4 to select potential locations within localized environments, without constructing an effective “global-view” for the agent to understand the overall environment. In this work, we present a novel **map**-guided **GPT**-based agent, dubbed **MapGPT**, which introduces an online linguistic-formed map to encourage the global exploration. Specifically, we build an online map and incorporate it into the prompts that include node information and topological relationships, to help GPT understand the spatial environment. Benefiting from this design, we further propose an adaptive planning mechanism to assist the agent in performing multi-step path planning based on a map, systematically exploring multiple candidate nodes or sub-goals step by step. Extensive experiments demonstrate that our MapGPT is applicable to both GPT-4 and GPT-4V, achieving state-of-the-art zero-shot performance on the R2R and REVERIE simultaneously (~10% and ~12% improvements in SR), and showcasing the newly emergent global thinking and path planning abilities of the GPT.",
+    "num_pages": 15
+}

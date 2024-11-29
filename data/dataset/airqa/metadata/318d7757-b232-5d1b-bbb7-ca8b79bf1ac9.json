@@ -1,0 +1,17 @@
+{
+    "uuid": "318d7757-b232-5d1b-bbb7-ca8b79bf1ac9",
+    "title": "NLU on Data Diets: Dynamic Data Subset Selection for NLP Classification Tasks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)",
+    "bibtex": "@inproceedings{attendu-corbeil-2023-nlu,\n    title = \"{NLU} on Data Diets: Dynamic Data Subset Selection for {NLP} Classification Tasks\",\n    author = \"Attendu, Jean-michel  and\n      Corbeil, Jean-philippe\",\n    editor = \"Sadat Moosavi, Nafise  and\n      Gurevych, Iryna  and\n      Hou, Yufang  and\n      Kim, Gyuwan  and\n      Kim, Young Jin  and\n      Schuster, Tal  and\n      Agrawal, Ameeta\",\n    booktitle = \"Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (Hybrid)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.sustainlp-1.9\",\n    doi = \"10.18653/v1/2023.sustainlp-1.9\",\n    pages = \"129--146\",\n}\n",
+    "authors": [
+        "Jean-michel Attendu",
+        "Jean-philippe Corbeil"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.sustainlp-1.9.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/318d7757-b232-5d1b-bbb7-ca8b79bf1ac9.pdf",
+    "abstract": "Finetuning large language models inflates the costs of NLU applications and remains the bottleneck of development cycles. Recent works in computer vision use data pruning to reduce training time. Pruned data selection with static methods is based on a score calculated for each training example prior to finetuning, which involves important computational overhead. Moreover, the score may not necessarily be representative of sample importance throughout the entire training duration. We propose to address these issues with a refined version of dynamic data pruning, a curriculum which periodically scores and discards unimportant examples during finetuning. Our method leverages an EL2N metric that we extend to the joint intent and slot classification task, and an initial finetuning phase on the full train set. Our results on the GLUE benchmark and four joint NLU datasets show a better timeaccuracy trade-off compared to static methods. Our method preserves full accuracy while training on 50% of the data points and reduces computational times by up to 41%. If we tolerate instead a minor drop of accuracy of 1%, we can prune 80% of the training examples for a reduction in finetuning time reaching 66%.",
+    "num_pages": 18
+}

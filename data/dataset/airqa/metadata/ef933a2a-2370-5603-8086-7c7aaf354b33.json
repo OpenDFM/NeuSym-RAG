@@ -1,0 +1,19 @@
+{
+    "uuid": "ef933a2a-2370-5603-8086-7c7aaf354b33",
+    "title": "How to Distill your BERT: An Empirical Study on the Impact of Weight Initialisation and Distillation Objectives",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{wang-etal-2023-distill,\n    title = \"How to Distill your {BERT}: An Empirical Study on the Impact of Weight Initialisation and Distillation Objectives\",\n    author = {Wang, Xinpeng  and\n      Weissweiler, Leonie  and\n      Sch{\\\"u}tze, Hinrich  and\n      Plank, Barbara},\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.157\",\n    doi = \"10.18653/v1/2023.acl-short.157\",\n    pages = \"1843--1852\",\n    abstract = \"Recently, various intermediate layer distillation (ILD) objectives have been shown to improve compression of BERT models via Knowledge Distillation (KD). However, a comprehensive evaluation of the objectives in both task-specific and task-agnostic settings is lacking. To the best of our knowledge, this is the first work comprehensively evaluating distillation objectives in both settings. We show that attention transfer gives the best performance overall. We also study the impact of layer choice when initializing the student from the teacher layers, finding a significant impact on the performance in task-specific distillation. For vanilla KD and hidden states transfer, initialisation with lower layers of the teacher gives a considerable improvement over higher layers, especially on the task of QNLI (up to an absolute percentage change of 17.8 in accuracy). Attention transfer behaves consistently under different initialisation settings. We release our code as an efficient transformer-based model distillation framework for further studies.\",\n}\n",
+    "authors": [
+        "Xinpeng Wang",
+        "Leonie Weissweiler",
+        "Hinrich Schütze",
+        "Barbara Plank"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.157.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ef933a2a-2370-5603-8086-7c7aaf354b33.pdf",
+    "abstract": "Recently, various intermediate layer distillation (ILD) objectives have been shown to improve compression of BERT models via Knowledge Distillation (KD). However, a comprehensive evaluation of the objectives in both task-specific and task-agnostic settings is lacking. To the best of our knowledge, this is the first work comprehensively evaluating distillation objectives in both settings. We show that attention transfer gives the best performance overall. We also study the impact of layer choice when initializing the student from the teacher layers, finding a significant impact on the performance in task-specific distillation. For vanilla KD and hidden states transfer, initialisation with lower layers of the teacher gives a considerable improvement over higher layers, especially on the task of QNLI (up to an absolute percentage change of 17.8 in accuracy). Attention transfer behaves consistently under different initialisation settings. We release our code as an efficient transformer-based model distillation framework for further studies.",
+    "num_pages": 10
+}

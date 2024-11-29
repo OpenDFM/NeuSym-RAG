@@ -1,0 +1,21 @@
+{
+    "uuid": "27631721-8d76-516d-a451-dc0b0c65e103",
+    "title": "Are AI-Generated Text Detectors Robust to Adversarial Perturbations?",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{huang-etal-2024-ai,\n    title = \"Are {AI}-Generated Text Detectors Robust to Adversarial Perturbations?\",\n    author = \"Huang, Guanhua  and\n      Zhang, Yuchen  and\n      Li, Zhe  and\n      You, Yongjian  and\n      Wang, Mingze  and\n      Yang, Zhouwang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.327\",\n    doi = \"10.18653/v1/2024.acl-long.327\",\n    pages = \"6005--6024\",\n    abstract = \"The widespread use of large language models (LLMs) has sparked concerns about the potential misuse of AI-generated text, as these models can produce content that closely resembles human-generated text. Current detectors for AI-generated text (AIGT) lack robustness against adversarial perturbations, with even minor changes in characters or words causing a reversal in distinguishing between human-created and AI-generated text. This paper investigates the robustness of existing AIGT detection methods and introduces a novel detector, the Siamese Calibrated Reconstruction Network (SCRN). The SCRN employs a reconstruction network to add and remove noise from text, extracting a semantic representation that is robust to local perturbations. We also propose a siamese calibration technique to train the model to make equally confident predictions under different noise, which improves the model{'}s robustness against adversarial perturbations. Experiments on four publicly available datasets show that the SCRN outperforms all baseline methods, achieving 6.5{\\%}-18.25{\\%} absolute accuracy improvement over the best baseline method under adversarial attacks. Moreover, it exhibits superior generalizability in cross-domain, cross-genre, and mixed-source scenarios. The code is available at \\url{https://github.com/CarlanLark/Robust-AIGC-Detector}.\",\n}\n",
+    "authors": [
+        "Guanhua Huang",
+        "Yuchen Zhang",
+        "Zhe Li",
+        "Yongjian You",
+        "Mingze Wang",
+        "Zhouwang Yang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.327.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/27631721-8d76-516d-a451-dc0b0c65e103.pdf",
+    "abstract": "The widespread use of large language models (LLMs) has sparked concerns about the potential misuse of AI-generated text, as these models can produce content that closely resembles human-generated text. Current detectors for AI-generated text (AIGT) lack robustness against adversarial perturbations, with even minor changes in characters or words causing a reversal in distinguishing between human-created and AI-generated text. This paper investigates the robustness of existing AIGT detection methods and introduces a novel detector, the Siamese Calibrated Reconstruction Network (SCRN). The SCRN employs a reconstruction network to add and remove noise from text, extracting a semantic representation that is robust to local perturbations. We also propose a siamese calibration technique to train the model to make equally confident predictions under different noise, which improves the model’s robustness against adversarial perturbations. Experiments on four publicly available datasets show that the SCRN outperforms all baseline methods, achieving 6.5%-18.25% absolute accuracy improvement over the best baseline method under adversarial attacks. Moreover, it exhibits superior generalizability in cross-domain, cross-genre, and mixed-source scenarios. The code is available at https://github.com/CarlanLark/Robust-AIGC-Detector.",
+    "num_pages": 20
+}

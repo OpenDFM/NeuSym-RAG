@@ -1,0 +1,22 @@
+{
+    "uuid": "0d612ef1-1b04-5d52-b78b-fcb2f57d0488",
+    "title": "Refining Corpora from a Model Calibration Perspective for Chinese Spelling Correction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{yu-etal-2024-refining,\n    title = \"Refining Corpora from a Model Calibration Perspective for {C}hinese Spelling Correction\",\n    author = \"Yu, Dingyao  and\n      An, Yang  and\n      Ye, Wei  and\n      Xiao, Xiongfeng  and\n      Mao, Shaoguang  and\n      Ge, Tao  and\n      Zhang, Shikun\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.914\",\n    doi = \"10.18653/v1/2024.findings-acl.914\",\n    pages = \"15468--15480\",\n    abstract = \"Chinese Spelling Correction (CSC) commonly lacks large-scale high-quality corpora, due to the labor-intensive labeling of spelling errors in real-life human writing or typing scenarios. Two data augmentation methods are widely adopted: (1) *Random Replacement* with the guidance of confusion sets and (2) *OCR/ASR-based Generation* that simulates character misusing. However, both methods inevitably introduce noisy data (e.g., false spelling errors), potentially leading to over-correction. By carefully analyzing the two types of corpora, we find that though the latter achieves more robust generalization performance, the former yields better-calibrated CSC models. We then provide a theoretical analysis of this empirical observation, based on which a corpus refining strategy is proposed. Specifically, OCR/ASR-based data samples are fed into a well-calibrated CSC model trained on random replacement-based corpora and then filtered based on prediction confidence. By learning a simple BERT-based model on the refined OCR/ASR-based corpus, we set up impressive state-of-the-art performance on three widely-used benchmarks, while significantly alleviating over-correction (e.g., lowering false positive predictions).\",\n}\n",
+    "authors": [
+        "Dingyao Yu",
+        "Yang An",
+        "Wei Ye",
+        "Xiongfeng Xiao",
+        "Shaoguang Mao",
+        "Tao Ge",
+        "Shikun Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.914.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0d612ef1-1b04-5d52-b78b-fcb2f57d0488.pdf",
+    "abstract": "Chinese Spelling Correction (CSC) commonly lacks large-scale high-quality corpora, due to the labor-intensive labeling of spelling errors in real-life human writing or typing scenarios. Two data augmentation methods are widely adopted: (1) *Random Replacement* with the guidance of confusion sets and (2) *OCR/ASR-based Generation* that simulates character misusing. However, both methods inevitably introduce noisy data (e.g., false spelling errors), potentially leading to over-correction. By carefully analyzing the two types of corpora, we find that though the latter achieves more robust generalization performance, the former yields better-calibrated CSC models. We then provide a theoretical analysis of this empirical observation, based on which a corpus refining strategy is proposed. Specifically, OCR/ASR-based data samples are fed into a well-calibrated CSC model trained on random replacement-based corpora and then filtered based on prediction confidence. By learning a simple BERT-based model on the refined OCR/ASR-based corpus, we set up impressive state-of-the-art performance on three widely-used benchmarks, while significantly alleviating over-correction (e.g., lowering false positive predictions).",
+    "num_pages": 13
+}

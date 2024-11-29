@@ -1,0 +1,18 @@
+{
+    "uuid": "57aaa406-5049-50ba-a560-69c16dd40b78",
+    "title": "Log-linear Guardedness and its Implications",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ravfogel-etal-2023-linear,\n    title = \"Log-linear Guardedness and its Implications\",\n    author = \"Ravfogel, Shauli  and\n      Goldberg, Yoav  and\n      Cotterell, Ryan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.523\",\n    doi = \"10.18653/v1/2023.acl-long.523\",\n    pages = \"9413--9431\",\n    abstract = \"Methods for erasing human-interpretable concepts from neural representations that assume linearity have been found to be tractable and useful. However, the impact of this removal on the behavior of downstream classifiers trained on the modified representations is not fully understood. In this work, we formally define the notion of linear guardedness as the inability of an adversary to predict the concept directly from the representation, and study its implications. We show that, in the binary case, under certain assumptions, a downstream log-linear model cannot recover the erased concept. However, we constructively demonstrate that a multiclass log-linear model \\textit{can} be constructed that indirectly recovers the concept in some cases, pointing to the inherent limitations of linear guardedness as a downstream bias mitigation technique.These findings shed light on the theoretical limitations of linear erasure methods and highlight the need for further research on the connections between intrinsic and extrinsic bias in neural models.\",\n}\n",
+    "authors": [
+        "Shauli Ravfogel",
+        "Yoav Goldberg",
+        "Ryan Cotterell"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.523.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/57aaa406-5049-50ba-a560-69c16dd40b78.pdf",
+    "abstract": "Methods for erasing human-interpretable concepts from neural representations that assume linearity have been found to be tractable and useful. However, the impact of this removal on the behavior of downstream classifiers trained on the modified representations is not fully understood. In this work, we formally define the notion of linear guardedness as the inability of an adversary to predict the concept directly from the representation, and study its implications. We show that, in the binary case, under certain assumptions, a downstream log-linear model cannot recover the erased concept. However, we constructively demonstrate that a multiclass log-linear model can be constructed that indirectly recovers the concept in some cases, pointing to the inherent limitations of linear guardedness as a downstream bias mitigation technique.These findings shed light on the theoretical limitations of linear erasure methods and highlight the need for further research on the connections between intrinsic and extrinsic bias in neural models.",
+    "num_pages": 17
+}

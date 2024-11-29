@@ -1,0 +1,20 @@
+{
+    "uuid": "a2d0df18-9595-5579-a47c-3b70085c03b3",
+    "title": "Zero- and Few-Shot Event Detection via Prompt-Based Meta Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yue-etal-2023-zero,\n    title = \"Zero- and Few-Shot Event Detection via Prompt-Based Meta Learning\",\n    author = \"Yue, Zhenrui  and\n      Zeng, Huimin  and\n      Lan, Mengfei  and\n      Ji, Heng  and\n      Wang, Dong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.440\",\n    doi = \"10.18653/v1/2023.acl-long.440\",\n    pages = \"7928--7943\",\n    abstract = \"With emerging online topics as a source for numerous new events, detecting unseen / rare event types presents an elusive challenge for existing event detection methods, where only limited data access is provided for training. To address the data scarcity problem in event detection, we propose MetaEvent, a meta learning-based framework for zero- and few-shot event detection. Specifically, we sample training tasks from existing event types and perform meta training to search for optimal parameters that quickly adapt to unseen tasks. In our framework, we propose to use the cloze-based prompt and a trigger-aware soft verbalizer to efficiently project output to unseen event types. Moreover, we design a contrastive meta objective based on maximum mean discrepancy (MMD) to learn class-separating features. As such, the proposed MetaEvent can perform zero-shot event detection by mapping features to event types without any prior knowledge. In our experiments, we demonstrate the effectiveness of MetaEvent in both zero-shot and few-shot scenarios, where the proposed method achieves state-of-the-art performance in extensive experiments on benchmark datasets FewEvent and MAVEN.\",\n}\n",
+    "authors": [
+        "Zhenrui Yue",
+        "Huimin Zeng",
+        "Mengfei Lan",
+        "Heng Ji",
+        "Dong Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.440.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a2d0df18-9595-5579-a47c-3b70085c03b3.pdf",
+    "abstract": "With emerging online topics as a source for numerous new events, detecting unseen / rare event types presents an elusive challenge for existing event detection methods, where only limited data access is provided for training. To address the data scarcity problem in event detection, we propose MetaEvent, a meta learning-based framework for zero- and few-shot event detection. Specifically, we sample training tasks from existing event types and perform meta training to search for optimal parameters that quickly adapt to unseen tasks. In our framework, we propose to use the cloze-based prompt and a trigger-aware soft verbalizer to efficiently project output to unseen event types. Moreover, we design a contrastive meta objective based on maximum mean discrepancy (MMD) to learn class-separating features. As such, the proposed MetaEvent can perform zero-shot event detection by mapping features to event types without any prior knowledge. In our experiments, we demonstrate the effectiveness of MetaEvent in both zero-shot and few-shot scenarios, where the proposed method achieves state-of-the-art performance in extensive experiments on benchmark datasets FewEvent and MAVEN.",
+    "num_pages": 16
+}

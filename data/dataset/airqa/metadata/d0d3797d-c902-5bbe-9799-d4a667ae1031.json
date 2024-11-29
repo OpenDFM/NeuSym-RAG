@@ -1,0 +1,18 @@
+{
+    "uuid": "d0d3797d-c902-5bbe-9799-d4a667ae1031",
+    "title": "Towards Distribution-shift Robust Text Classification of Emotional Content",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{bulla-etal-2023-towards,\n    title = \"Towards Distribution-shift Robust Text Classification of Emotional Content\",\n    author = \"Bulla, Luana  and\n      Gangemi, Aldo  and\n      Mongiovi{'}, Misael\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.524\",\n    doi = \"10.18653/v1/2023.findings-acl.524\",\n    pages = \"8256--8268\",\n    abstract = \"Supervised models based on Transformers have been shown to achieve impressive performances in many natural language processing tasks. However, besides requiring a large amount of costly manually annotated data, supervised models tend to adapt to the characteristics of the training dataset, which are usually created ad-hoc and whose data distribution often differs from the one in real applications, showing significant performance degradation in real-world scenarios. We perform an extensive assessment of the out-of-distribution performances of supervised models for classification in the emotion and hate-speech detection tasks and show that NLI-based zero-shot models often outperform them, making task-specific annotation useless when the characteristics of final-user data are not known in advance. To benefit from both supervised and zero-shot approaches, we propose to fine-tune an NLI-based model on the task-specific dataset. The resulting model often outperforms all available supervised models both in distribution and out of distribution, with only a few thousand training samples.\",\n}\n",
+    "authors": [
+        "Luana Bulla",
+        "Aldo Gangemi",
+        "Misael Mongiovi’"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.524.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d0d3797d-c902-5bbe-9799-d4a667ae1031.pdf",
+    "abstract": "Supervised models based on Transformers have been shown to achieve impressive performances in many natural language processing tasks. However, besides requiring a large amount of costly manually annotated data, supervised models tend to adapt to the characteristics of the training dataset, which are usually created ad-hoc and whose data distribution often differs from the one in real applications, showing significant performance degradation in real-world scenarios. We perform an extensive assessment of the out-of-distribution performances of supervised models for classification in the emotion and hate-speech detection tasks and show that NLI-based zero-shot models often outperform them, making task-specific annotation useless when the characteristics of final-user data are not known in advance. To benefit from both supervised and zero-shot approaches, we propose to fine-tune an NLI-based model on the task-specific dataset. The resulting model often outperforms all available supervised models both in distribution and out of distribution, with only a few thousand training samples.",
+    "num_pages": 13
+}

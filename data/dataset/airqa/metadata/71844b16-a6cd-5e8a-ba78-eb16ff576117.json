@@ -1,0 +1,23 @@
+{
+    "uuid": "71844b16-a6cd-5e8a-ba78-eb16ff576117",
+    "title": "Unexpected Phenomenon: LLMs’ Spurious Associations in Information Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhang-etal-2024-unexpected,\n    title = \"Unexpected Phenomenon: {LLM}s{'} Spurious Associations in Information Extraction\",\n    author = \"Zhang, Weiyan  and\n      Lu, Wanpeng  and\n      Wang, Jiacheng  and\n      Wang, Yating  and\n      Chen, Lihan  and\n      Jiang, Haiyun  and\n      Liu, Jingping  and\n      Ruan, Tong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.545\",\n    doi = \"10.18653/v1/2024.findings-acl.545\",\n    pages = \"9176--9190\",\n    abstract = \"Information extraction plays a critical role in natural language processing. When applying large language models (LLMs) to this domain, we discover an unexpected phenomenon: LLMs{'} spurious associations. In tasks such as relation extraction, LLMs can accurately identify entity pairs, even if the given relation (label) is semantically unrelated to the pre-defined original one. To find these labels, we design two strategies in this study, including forward label extension and backward label validation. We also leverage the extended labels to improve model performance. Our comprehensive experiments show that spurious associations occur consistently in both Chinese and English datasets across various LLM sizes. Moreover, the use of extended labels significantly enhances LLM performance in information extraction tasks. Remarkably, there is a performance increase of 9.55{\\%}, 11.42{\\%}, and 21.27{\\%} in F1 scores on the SciERC, ACE05, and DuEE datasets, respectively.\",\n}\n",
+    "authors": [
+        "Weiyan Zhang",
+        "Wanpeng Lu",
+        "Jiacheng Wang",
+        "Yating Wang",
+        "Lihan Chen",
+        "Haiyun Jiang",
+        "Jingping Liu",
+        "Tong Ruan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.545.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/71844b16-a6cd-5e8a-ba78-eb16ff576117.pdf",
+    "abstract": "Information extraction plays a critical role in natural language processing. When applying large language models (LLMs) to this domain, we discover an unexpected phenomenon: LLMs’ spurious associations. In tasks such as relation extraction, LLMs can accurately identify entity pairs, even if the given relation (label) is semantically unrelated to the pre-defined original one. To find these labels, we design two strategies in this study, including forward label extension and backward label validation. We also leverage the extended labels to improve model performance. Our comprehensive experiments show that spurious associations occur consistently in both Chinese and English datasets across various LLM sizes. Moreover, the use of extended labels significantly enhances LLM performance in information extraction tasks. Remarkably, there is a performance increase of 9.55%, 11.42%, and 21.27% in F1 scores on the SciERC, ACE05, and DuEE datasets, respectively.",
+    "num_pages": 15
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "8dfd6659-a72e-56a4-ab69-369de0baa984",
+    "title": "YNU-HPCC at SemEval-2023 Task 9: Pretrained Language Model for Multilingual Tweet Intimacy Analysis",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{cai-etal-2023-ynu,\n    title = \"{YNU}-{HPCC} at {S}em{E}val-2023 Task 9: Pretrained Language Model for Multilingual Tweet Intimacy Analysis\",\n    author = \"Cai, Qisheng  and\n      Wang, Jin  and\n      Zhang, Xuejie\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.100\",\n    doi = \"10.18653/v1/2023.semeval-1.100\",\n    pages = \"733--738\",\n    abstract = \"This paper describes our fine-tuned pretrained language model for task 9 (Multilingual Tweet Intimacy Analysis, MTIA) of the SemEval 2023 competition. MTIA aims to quantitatively analyze tweets in 6 languages for intimacy, giving a score from 1 to 5. The challenge of MTIA is in semantically extracting information from code-mixed texts. To alleviate this difficulty, we suggested a solution that combines attention and memory mechanisms. The preprocessed tweets are input to the XLM-T layer to get sentence embeddings and subsequently to the bidirectional GRU layer to obtain intimacy ratings. Experimental results show an improvement in the overall performance of our model in both seen and unseen languages.\",\n}\n",
+    "authors": [
+        "Qisheng Cai",
+        "Jin Wang",
+        "Xuejie Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.100.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8dfd6659-a72e-56a4-ab69-369de0baa984.pdf",
+    "abstract": "This paper describes our fine-tuned pretrained language model for task 9 (Multilingual Tweet Intimacy Analysis, MTIA) of the SemEval 2023 competition. MTIA aims to quantitatively analyze tweets in 6 languages for intimacy, giving a score from 1 to 5. The challenge of MTIA is in semantically extracting information from code-mixed texts. To alleviate this difficulty, we suggested a solution that combines attention and memory mechanisms. The preprocessed tweets are input to the XLM-T layer to get sentence embeddings and subsequently to the bidirectional GRU layer to obtain intimacy ratings. Experimental results show an improvement in the overall performance of our model in both seen and unseen languages.",
+    "num_pages": 6
+}

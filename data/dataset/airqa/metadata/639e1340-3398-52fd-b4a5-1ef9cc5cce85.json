@@ -1,0 +1,25 @@
+{
+    "uuid": "639e1340-3398-52fd-b4a5-1ef9cc5cce85",
+    "title": "On the Language Encoder of Contrastive Cross-modal Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhao-etal-2024-language,\n    title = \"On the Language Encoder of Contrastive Cross-modal Models\",\n    author = \"Zhao, Mengjie  and\n      Ono, Junya  and\n      Zhong, Zhi  and\n      Lai, Chieh-Hsin  and\n      Takida, Yuhta  and\n      Murata, Naoki  and\n      Liao, Wei-Hsiang  and\n      Shibuya, Takashi  and\n      Wakaki, Hiromi  and\n      Mitsufuji, Yuki\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.293\",\n    doi = \"10.18653/v1/2024.findings-acl.293\",\n    pages = \"4923--4940\",\n    abstract = \"Contrastive cross-modal models such as CLIP and CLAP aid various vision-language (VL) and audio-language (AL) tasks. However, there has been limited investigation of and improvement in their language encoder {--} the central component of encoding natural language descriptions of image/audio into vector representations. We extensively evaluate how unsupervised and supervised sentence embedding training affect language encoder quality and cross-modal task performance. In VL pretraining, we found that sentence embedding training enhances language encoder quality and aids in cross-modal tasks, improving contrastive VL models such as CyCLIP. Sentence embedding training benefits AL tasks when the amount of training data is large. We analyze the representation spaces to understand the strengths of sentence embedding training, and find that it improves text-space uniformity, at the cost of decreased cross-modal alignment.\",\n}\n",
+    "authors": [
+        "Mengjie Zhao",
+        "Junya Ono",
+        "Zhi Zhong",
+        "Chieh-Hsin Lai",
+        "Yuhta Takida",
+        "Naoki Murata",
+        "Wei-Hsiang Liao",
+        "Takashi Shibuya",
+        "Hiromi Wakaki",
+        "Yuki Mitsufuji"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.293.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/639e1340-3398-52fd-b4a5-1ef9cc5cce85.pdf",
+    "abstract": "Contrastive cross-modal models such as CLIP and CLAP aid various vision-language (VL) and audio-language (AL) tasks. However, there has been limited investigation of and improvement in their language encoder – the central component of encoding natural language descriptions of image/audio into vector representations. We extensively evaluate how unsupervised and supervised sentence embedding training affect language encoder quality and cross-modal task performance. In VL pretraining, we found that sentence embedding training enhances language encoder quality and aids in cross-modal tasks, improving contrastive VL models such as CyCLIP. Sentence embedding training benefits AL tasks when the amount of training data is large. We analyze the representation spaces to understand the strengths of sentence embedding training, and find that it improves text-space uniformity, at the cost of decreased cross-modal alignment.",
+    "num_pages": 18
+}

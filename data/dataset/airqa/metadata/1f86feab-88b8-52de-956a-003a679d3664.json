@@ -1,0 +1,25 @@
+{
+    "uuid": "1f86feab-88b8-52de-956a-003a679d3664",
+    "title": "Uni-Dubbing: Zero-Shot Speech Synthesis from Visual Articulation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{lei-etal-2024-uni,\n    title = \"Uni-Dubbing: Zero-Shot Speech Synthesis from Visual Articulation\",\n    author = \"Lei, Songju  and\n      Cheng, Xize  and\n      Lyu, Mengjiao  and\n      Hu, Jianqiao  and\n      Tan, Jintao  and\n      Liu, Runlin  and\n      Xiong, Lingyu  and\n      Jin, Tao  and\n      Li, Xiandong  and\n      Zhao, Zhou\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.543\",\n    doi = \"10.18653/v1/2024.acl-long.543\",\n    pages = \"10082--10099\",\n    abstract = \"In the field of speech synthesis, there is a growing emphasis on employing multimodal speech to enhance robustness. A key challenge in this area is the scarcity of datasets that pair audio with corresponding video. We employ a methodology that incorporates modality alignment during the pre-training phase on multimodal datasets, uniquely facilitating zero-shot generalization through the process of freezing the video modality feature extraction component and the encoder module within the pretrained weights, thereby enabling effective cross-modal and cross-lingual transfer. We have named this method {`}Uni-Dubbing{'}. Our method finely tunes with both multimodal and single-modality audio data. In multimodal scenarios, it achieves a reduced word error rate (WER) of 31.73{\\%}, surpassing the previous best of 33.9{\\%}. It also excels in metrics like tone quality and synchronization. With single-modality audio, it achieves a WER of 36.08{\\%}, demonstrating adaptability to limited data. Its domain generalization capabilities are proven across various language tasks in video translation and audio generation. Trained on 433 hours of audio data, it surpasses techniques using 200 hours of audiovisual data. The code and demo are available at https://diracer.github.io/unidubbing.\",\n}\n",
+    "authors": [
+        "Songju Lei",
+        "Xize Cheng",
+        "Mengjiao Lyu",
+        "Jianqiao Hu",
+        "Jintao Tan",
+        "Runlin Liu",
+        "Lingyu Xiong",
+        "Tao Jin",
+        "Xiandong Li",
+        "Zhou Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.543.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/1f86feab-88b8-52de-956a-003a679d3664.pdf",
+    "abstract": "In the field of speech synthesis, there is a growing emphasis on employing multimodal speech to enhance robustness. A key challenge in this area is the scarcity of datasets that pair audio with corresponding video. We employ a methodology that incorporates modality alignment during the pre-training phase on multimodal datasets, uniquely facilitating zero-shot generalization through the process of freezing the video modality feature extraction component and the encoder module within the pretrained weights, thereby enabling effective cross-modal and cross-lingual transfer. We have named this method ‘Uni-Dubbing’. Our method finely tunes with both multimodal and single-modality audio data. In multimodal scenarios, it achieves a reduced word error rate (WER) of 31.73%, surpassing the previous best of 33.9%. It also excels in metrics like tone quality and synchronization. With single-modality audio, it achieves a WER of 36.08%, demonstrating adaptability to limited data. Its domain generalization capabilities are proven across various language tasks in video translation and audio generation. Trained on 433 hours of audio data, it surpasses techniques using 200 hours of audiovisual data. The code and demo are available at https://diracer.github.io/unidubbing.",
+    "num_pages": 18
+}

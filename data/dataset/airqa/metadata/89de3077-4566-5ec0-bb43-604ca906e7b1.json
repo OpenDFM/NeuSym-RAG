@@ -1,0 +1,21 @@
+{
+    "uuid": "89de3077-4566-5ec0-bb43-604ca906e7b1",
+    "title": "Cold-Start Data Selection for Better Few-shot Language Model Fine-tuning: A Prompt-based Uncertainty Propagation Approach",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yu-etal-2023-cold,\n    title = \"Cold-Start Data Selection for Better Few-shot Language Model Fine-tuning: A Prompt-based Uncertainty Propagation Approach\",\n    author = \"Yu, Yue  and\n      Zhang, Rongzhi  and\n      Xu, Ran  and\n      Zhang, Jieyu  and\n      Shen, Jiaming  and\n      Zhang, Chao\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.141\",\n    doi = \"10.18653/v1/2023.acl-long.141\",\n    pages = \"2499--2521\",\n    abstract = \"We present PATRON, a prompt-based data selection method for pre-trained language model fine-tuning under cold-start scenarios, i.e., no initial labeled data are available. In PATRON, we design (1) a prompt-based uncertainty propagation approach to estimate the importance of data points and (2) a partition-then-rewrite (PTR) strategy to promote sample diversity when querying for annotations. Experiments on six text classification datasets show that PATRON outperforms the strongest cold-start data selection baselines by up to 6.9{\\%}. Besides, with 128 labels only, PATRON achieves 91.0{\\%} and 92.1{\\%} of the fully supervised performance based on vanilla fine-tuning and prompt-based learning respectively. Our implementation of PATRON will be published upon acceptance.\",\n}\n",
+    "authors": [
+        "Yue Yu",
+        "Rongzhi Zhang",
+        "Ran Xu",
+        "Jieyu Zhang",
+        "Jiaming Shen",
+        "Chao Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.141.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/89de3077-4566-5ec0-bb43-604ca906e7b1.pdf",
+    "abstract": "We present PATRON, a prompt-based data selection method for pre-trained language model fine-tuning under cold-start scenarios, i.e., no initial labeled data are available. In PATRON, we design (1) a prompt-based uncertainty propagation approach to estimate the importance of data points and (2) a partition-then-rewrite (PTR) strategy to promote sample diversity when querying for annotations. Experiments on six text classification datasets show that PATRON outperforms the strongest cold-start data selection baselines by up to 6.9%. Besides, with 128 labels only, PATRON achieves 91.0% and 92.1% of the fully supervised performance based on vanilla fine-tuning and prompt-based learning respectively. Our implementation of PATRON will be published upon acceptance.",
+    "num_pages": 23
+}

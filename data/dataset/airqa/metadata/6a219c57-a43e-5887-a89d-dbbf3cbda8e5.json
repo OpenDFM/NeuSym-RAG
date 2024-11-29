@@ -1,0 +1,19 @@
+{
+    "uuid": "6a219c57-a43e-5887-a89d-dbbf3cbda8e5",
+    "title": "PrecogIIITH@WASSA2023: Emotion Detection for Urdu-English Code-mixed Text",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 13th Workshop on Computational Approaches to Subjectivity, Sentiment, & Social Media Analysis",
+    "bibtex": "@inproceedings{vedula-etal-2023-precogiiith,\n    title = \"{P}recog{IIITH}@{WASSA}2023: Emotion Detection for {U}rdu-{E}nglish Code-mixed Text\",\n    author = \"Vedula, Bhaskara Hanuma  and\n      Kodali, Prashant  and\n      Shrivastava, Manish  and\n      Kumaraguru, Ponnurangam\",\n    editor = \"Barnes, Jeremy  and\n      De Clercq, Orph{\\'e}e  and\n      Klinger, Roman\",\n    booktitle = \"Proceedings of the 13th Workshop on Computational Approaches to Subjectivity, Sentiment, {\\&} Social Media Analysis\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.wassa-1.58\",\n    doi = \"10.18653/v1/2023.wassa-1.58\",\n    pages = \"601--605\",\n    abstract = \"Code-mixing refers to the phenomenon of using two or more languages interchangeably within a speech or discourse context. This practice is particularly prevalent on social media platforms, and determining the embedded affects in a code-mixed sentence remains as a challenging problem. In this submission we describe our system for WASSA 2023 Shared Task on Emotion Detection in English-Urdu code-mixed text. In our system we implement a multiclass emotion detection model with label space of 11 emotions. Samples are code-mixed English-Urdu text, where Urdu is written in romanised form. Our submission is limited to one of the subtasks - Multi Class classification and we leverage transformer-based Multilingual Large Language Models (MLLMs), XLM-RoBERTa and Indic-BERT. We fine-tune MLLMs on the released data splits, with and without pre-processing steps (translation to english), for classifying texts into the appropriate emotion category. Our methods did not surpass the baseline, and our submission is ranked sixth overall.\",\n}\n",
+    "authors": [
+        "Bhaskara Hanuma Vedula",
+        "Prashant Kodali",
+        "Manish Shrivastava",
+        "Ponnurangam Kumaraguru"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.wassa-1.58.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/6a219c57-a43e-5887-a89d-dbbf3cbda8e5.pdf",
+    "abstract": "Code-mixing refers to the phenomenon of using two or more languages interchangeably within a speech or discourse context. This practice is particularly prevalent on social media platforms, and determining the embedded affects in a code-mixed sentence remains as a challenging problem. In this submission we describe our system for WASSA 2023 Shared Task on Emotion Detection in English-Urdu code-mixed text. In our system we implement a multiclass emotion detection model with label space of 11 emotions. Samples are code-mixed English-Urdu text, where Urdu is written in romanised form. Our submission is limited to one of the subtasks - Multi Class classification and we leverage transformer-based Multilingual Large Language Models (MLLMs), XLM-RoBERTa and Indic-BERT. We fine-tune MLLMs on the released data splits, with and without pre-processing steps (translation to english), for classifying texts into the appropriate emotion category. Our methods did not surpass the baseline, and our submission is ranked sixth overall.",
+    "num_pages": 5
+}

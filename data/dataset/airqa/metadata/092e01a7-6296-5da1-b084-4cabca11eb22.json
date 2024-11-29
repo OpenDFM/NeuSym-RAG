@@ -1,0 +1,19 @@
+{
+    "uuid": "092e01a7-6296-5da1-b084-4cabca11eb22",
+    "title": "Rethinking Efficient Multilingual Text Summarization Meta-Evaluation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{han-etal-2024-rethinking,\n    title = \"Rethinking Efficient Multilingual Text Summarization Meta-Evaluation\",\n    author = \"Han, Rilyn  and\n      Chen, Jiawen  and\n      Liu, Yixin  and\n      Cohan, Arman\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.930\",\n    doi = \"10.18653/v1/2024.findings-acl.930\",\n    pages = \"15739--15746\",\n    abstract = \"Evaluating multilingual summarization evaluation metrics, i.e., meta-evaluation, is challenging because of the difficulty of human annotation collection. Therefore, we investigate an efficient multilingual meta-evaluation framework that uses machine translation systems to transform a monolingual meta-evaluation dataset into multilingual versions. To this end, we introduce a statistical test to verify the transformed dataset quality by checking the meta-evaluation result consistency on the original dataset and back-translated dataset. With this quality verification method, we transform an existing English summarization meta-evaluation dataset, RoSE, into 30 languages, and conduct a multilingual meta-evaluation of several representative automatic evaluation metrics. In our meta-evaluation, we find that metric performance varies in different languages and neural metrics generally outperform classical text-matching-based metrics in non-English languages. Moreover, we identify a two-stage evaluation method with superior performance, which first translates multilingual texts into English and then performs evaluation. We make the transformed datasets publicly available to facilitate future research.\",\n}\n",
+    "authors": [
+        "Rilyn Han",
+        "Jiawen Chen",
+        "Yixin Liu",
+        "Arman Cohan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.930.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/092e01a7-6296-5da1-b084-4cabca11eb22.pdf",
+    "abstract": "Evaluating multilingual summarization evaluation metrics, i.e., meta-evaluation, is challenging because of the difficulty of human annotation collection. Therefore, we investigate an efficient multilingual meta-evaluation framework that uses machine translation systems to transform a monolingual meta-evaluation dataset into multilingual versions. To this end, we introduce a statistical test to verify the transformed dataset quality by checking the meta-evaluation result consistency on the original dataset and back-translated dataset. With this quality verification method, we transform an existing English summarization meta-evaluation dataset, RoSE, into 30 languages, and conduct a multilingual meta-evaluation of several representative automatic evaluation metrics. In our meta-evaluation, we find that metric performance varies in different languages and neural metrics generally outperform classical text-matching-based metrics in non-English languages. Moreover, we identify a two-stage evaluation method with superior performance, which first translates multilingual texts into English and then performs evaluation. We make the transformed datasets publicly available to facilitate future research.",
+    "num_pages": 8
+}

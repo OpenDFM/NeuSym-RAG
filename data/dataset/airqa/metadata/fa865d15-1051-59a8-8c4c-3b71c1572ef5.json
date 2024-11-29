@@ -1,0 +1,21 @@
+{
+    "uuid": "fa865d15-1051-59a8-8c4c-3b71c1572ef5",
+    "title": "A Two-Stage Adaptation of Large Language Models for Text Ranking",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhang-etal-2024-two,\n    title = \"A Two-Stage Adaptation of Large Language Models for Text Ranking\",\n    author = \"Zhang, Longhui  and\n      Zhang, Yanzhao  and\n      Long, Dingkun  and\n      Xie, Pengjun  and\n      Zhang, Meishan  and\n      Zhang, Min\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.706\",\n    doi = \"10.18653/v1/2024.findings-acl.706\",\n    pages = \"11880--11891\",\n    abstract = \"Text ranking is a critical task in information retrieval. Recent advances in pre-trained language models (PLMs), especially large language models (LLMs), present new opportunities for applying them to text ranking. While supervised fine-tuning (SFT) with ranking data has been widely explored to better align PLMs with text ranking goals, previous studies have focused primarily on encoder-only and encoder-decoder PLMs. Research on leveraging decoder-only LLMs for text ranking remains scarce. An exception to this is RankLLaMA, which uses direct SFT to explore LLaMA{'}s potential for text ranking. In this work, we propose a two-stage progressive paradigm to better adapt LLMs to text ranking. First, we conduct continual pre-training (CPT) of LLMs on a large weakly-supervised corpus. Second, we perform SFT, and propose an improved optimization strategy building upon RankLLaMA. Our experimental results on multiple benchmarks show that our approach outperforms previous methods in both in-domain and out-domain scenarios.\",\n}\n",
+    "authors": [
+        "Longhui Zhang",
+        "Yanzhao Zhang",
+        "Dingkun Long",
+        "Pengjun Xie",
+        "Meishan Zhang",
+        "Min Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.706.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/fa865d15-1051-59a8-8c4c-3b71c1572ef5.pdf",
+    "abstract": "Text ranking is a critical task in information retrieval. Recent advances in pre-trained language models (PLMs), especially large language models (LLMs), present new opportunities for applying them to text ranking. While supervised fine-tuning (SFT) with ranking data has been widely explored to better align PLMs with text ranking goals, previous studies have focused primarily on encoder-only and encoder-decoder PLMs. Research on leveraging decoder-only LLMs for text ranking remains scarce. An exception to this is RankLLaMA, which uses direct SFT to explore LLaMA’s potential for text ranking. In this work, we propose a two-stage progressive paradigm to better adapt LLMs to text ranking. First, we conduct continual pre-training (CPT) of LLMs on a large weakly-supervised corpus. Second, we perform SFT, and propose an improved optimization strategy building upon RankLLaMA. Our experimental results on multiple benchmarks show that our approach outperforms previous methods in both in-domain and out-domain scenarios.",
+    "num_pages": 12
+}

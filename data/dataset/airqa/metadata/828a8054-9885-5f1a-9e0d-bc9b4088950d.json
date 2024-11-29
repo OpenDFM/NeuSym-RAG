@@ -1,0 +1,22 @@
+{
+    "uuid": "828a8054-9885-5f1a-9e0d-bc9b4088950d",
+    "title": "Towards Unifying Multi-Lingual and Cross-Lingual Summarization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2023-towards-unifying,\n    title = \"Towards Unifying Multi-Lingual and Cross-Lingual Summarization\",\n    author = \"Wang, Jiaan  and\n      Meng, Fandong  and\n      Zheng, Duo  and\n      Liang, Yunlong  and\n      Li, Zhixu  and\n      Qu, Jianfeng  and\n      Zhou, Jie\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.843\",\n    doi = \"10.18653/v1/2023.acl-long.843\",\n    pages = \"15127--15143\",\n    abstract = \"To adapt text summarization to the multilingual world, previous work proposes multi-lingual summarization (MLS) and cross-lingual summarization (CLS). However, these two tasks have been studied separately due to the different definitions, which limits the compatible and systematic research on both of them. In this paper, we aim to unify MLS and CLS into a more general setting, i.e., many-to-many summarization (M2MS), where a single model could process documents in any language and generate their summaries also in any language. As the first step towards M2MS, we conduct preliminary studies to show that M2MS can better transfer task knowledge across different languages than MLS and CLS. Furthermore, we propose Pisces, a pre-trained M2MS model that learns language modeling, cross-lingual ability and summarization ability via three-stage pre-training. Experimental results indicate that our Pisces significantly outperforms the state-of-the-art baselines, especially in the zero-shot directions, where there is no training data from the source-language documents to the target-language summaries.\",\n}\n",
+    "authors": [
+        "Jiaan Wang",
+        "Fandong Meng",
+        "Duo Zheng",
+        "Yunlong Liang",
+        "Zhixu Li",
+        "Jianfeng Qu",
+        "Jie Zhou"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.843.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/828a8054-9885-5f1a-9e0d-bc9b4088950d.pdf",
+    "abstract": "To adapt text summarization to the multilingual world, previous work proposes multi-lingual summarization (MLS) and cross-lingual summarization (CLS). However, these two tasks have been studied separately due to the different definitions, which limits the compatible and systematic research on both of them. In this paper, we aim to unify MLS and CLS into a more general setting, i.e., many-to-many summarization (M2MS), where a single model could process documents in any language and generate their summaries also in any language. As the first step towards M2MS, we conduct preliminary studies to show that M2MS can better transfer task knowledge across different languages than MLS and CLS. Furthermore, we propose Pisces, a pre-trained M2MS model that learns language modeling, cross-lingual ability and summarization ability via three-stage pre-training. Experimental results indicate that our Pisces significantly outperforms the state-of-the-art baselines, especially in the zero-shot directions, where there is no training data from the source-language documents to the target-language summaries.",
+    "num_pages": 17
+}

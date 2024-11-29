@@ -1,0 +1,21 @@
+{
+    "uuid": "8b3ff7b5-2425-5632-a465-df25a4a1fb56",
+    "title": "DIONYSUS: A Pre-trained Model for Low-Resource Dialogue Summarization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{li-etal-2023-dionysus,\n    title = \"{DIONYSUS}: A Pre-trained Model for Low-Resource Dialogue Summarization\",\n    author = \"Li, Yu  and\n      Peng, Baolin  and\n      He, Pengcheng  and\n      Galley, Michel  and\n      Yu, Zhou  and\n      Gao, Jianfeng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.76\",\n    doi = \"10.18653/v1/2023.acl-long.76\",\n    pages = \"1368--1386\",\n    abstract = \"Dialogue summarization has recently garnered significant attention due to its wide range of applications. However, existing methods for summarizing dialogues have limitations because they do not take into account the inherent structure of dialogue and rely heavily on labeled data, which can lead to poor performance in new domains. In this work, we propose DIONYSUS (dynamic input optimization in pre-training for dialogue summarization), a pre-trained encoder-decoder model for summarizing dialogues in any new domain. To pre-train DIONYSUS, we create two pseudo summaries for each dialogue example: one from a fine-tuned summarization model and the other from important dialogue turns. We then choose one of these pseudo summaries based on information distribution differences in different types of dialogues. This selected pseudo summary serves as the objective for pre-training DIONYSUS using a self-supervised approach on a large dialogue corpus. Our experiments show that DIONYSUS outperforms existing methods on six datasets, as demonstrated by its ROUGE scores in zero-shot and few-shot settings\",\n}\n",
+    "authors": [
+        "Yu Li",
+        "Baolin Peng",
+        "Pengcheng He",
+        "Michel Galley",
+        "Zhou Yu",
+        "Jianfeng Gao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.76.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8b3ff7b5-2425-5632-a465-df25a4a1fb56.pdf",
+    "abstract": "Dialogue summarization has recently garnered significant attention due to its wide range of applications. However, existing methods for summarizing dialogues have limitations because they do not take into account the inherent structure of dialogue and rely heavily on labeled data, which can lead to poor performance in new domains. In this work, we propose DIONYSUS (dynamic input optimization in pre-training for dialogue summarization), a pre-trained encoder-decoder model for summarizing dialogues in any new domain. To pre-train DIONYSUS, we create two pseudo summaries for each dialogue example: one from a fine-tuned summarization model and the other from important dialogue turns. We then choose one of these pseudo summaries based on information distribution differences in different types of dialogues. This selected pseudo summary serves as the objective for pre-training DIONYSUS using a self-supervised approach on a large dialogue corpus. Our experiments show that DIONYSUS outperforms existing methods on six datasets, as demonstrated by its ROUGE scores in zero-shot and few-shot settings",
+    "num_pages": 19
+}

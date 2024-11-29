@@ -1,0 +1,19 @@
+{
+    "uuid": "3048d6b8-d405-5d9d-9c69-14359275fbaf",
+    "title": "HyperCL: A Contrastive Learning Framework for Hyper-Relational Knowledge Graph Embedding with Hierarchical Ontology",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{lu-etal-2024-hypercl,\n    title = \"{H}yper{CL}: A Contrastive Learning Framework for Hyper-Relational Knowledge Graph Embedding with Hierarchical Ontology\",\n    author = \"Lu, Yuhuan  and\n      Yu, Weijian  and\n      Jing, Xin  and\n      Yang, Dingqi\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.171\",\n    doi = \"10.18653/v1/2024.findings-acl.171\",\n    pages = \"2918--2929\",\n}\n",
+    "authors": [
+        "Yuhuan Lu",
+        "Weijian Yu",
+        "Xin Jing",
+        "Dingqi Yang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.171.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/3048d6b8-d405-5d9d-9c69-14359275fbaf.pdf",
+    "abstract": "Knowledge Graph (KG) embeddings are essential for link prediction over KGs. Compared to triplets, hyper-relational facts consisting of a base triplet and an arbitrary number of keyvalue pairs, can better characterize real-world facts and have aroused various hyper-relational embedding techniques recently. Nevertheless, existing works seldom consider the ontology of KGs, which is beneficial to link prediction tasks. A few studies attempt to incorporate the ontology information, by either utilizing the ontology as constraints on entity representations or jointly learning from hyper-relational facts and the ontology. However, existing approaches mostly overlook the ontology hierarchy and suffer from the dominance issue of facts over ontology, resulting in suboptimal performance. Against this background, we propose a universal contrastive learning framework for hyper-relational KG embeddings (HyperCL), which is flexible to integrate different hyper-relational KG embedding methods and effectively boost their link prediction performance. HyperCL designs relationaware Graph Attention Networks to capture the hierarchical ontology and a concept-aware contrastive loss to alleviate the dominance issue. We evaluate HyperCL on three real-world datasets in different link prediction tasks. Experimental results show that HyperCL consistently boosts the performance of state-of-theart baselines with an average improvement of 3.1-7.4% across the three datasets.",
+    "num_pages": 12
+}

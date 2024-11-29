@@ -1,0 +1,22 @@
+{
+    "uuid": "135f4dc2-18b0-51a4-9a5c-a62c0425a2d1",
+    "title": "WatME: Towards Lossless Watermarking Through Lexical Redundancy",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2024-watme,\n    title = \"{W}at{ME}: Towards Lossless Watermarking Through Lexical Redundancy\",\n    author = \"Chen, Liang  and\n      Bian, Yatao  and\n      Deng, Yang  and\n      Cai, Deng  and\n      Li, Shuaiyi  and\n      Zhao, Peilin  and\n      Wong, Kam-Fai\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.496\",\n    doi = \"10.18653/v1/2024.acl-long.496\",\n    pages = \"9166--9180\",\n    abstract = \"Text watermarking has emerged as a pivotal technique for identifying machine-generated text. However, existing methods often rely on arbitrary vocabulary partitioning during decoding to embed watermarks, which compromises the availability of suitable tokens and significantly degrades the quality of responses. This study assesses the impact of watermarking on different capabilities of large language models (LLMs) from a cognitive science lens. Our finding highlights a significant disparity; knowledge recall and logical reasoning are more adversely affected than language generation. These results suggest a more profound effect of watermarking on LLMs than previously understood. To address these challenges, we introduce Watermarking with Mutual Exclusion (WatME), a novel approach leveraging linguistic prior knowledge of inherent lexical redundancy in LLM vocabularies to seamlessly integrate watermarks. Specifically, WatME dynamically optimizes token usage during the decoding process by applying a mutually exclusive rule to the identified lexical redundancies. This strategy effectively prevents the unavailability of appropriate tokens and preserves the expressive power of LLMs. We provide both theoretical analysis and empirical evidence showing that WatME effectively preserves the diverse capabilities of LLMs while ensuring watermark detectability.\",\n}\n",
+    "authors": [
+        "Liang Chen",
+        "Yatao Bian",
+        "Yang Deng",
+        "Deng Cai",
+        "Shuaiyi Li",
+        "Peilin Zhao",
+        "Kam-Fai Wong"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.496.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/135f4dc2-18b0-51a4-9a5c-a62c0425a2d1.pdf",
+    "abstract": "Text watermarking has emerged as a pivotal technique for identifying machine-generated text. However, existing methods often rely on arbitrary vocabulary partitioning during decoding to embed watermarks, which compromises the availability of suitable tokens and significantly degrades the quality of responses. This study assesses the impact of watermarking on different capabilities of large language models (LLMs) from a cognitive science lens. Our finding highlights a significant disparity; knowledge recall and logical reasoning are more adversely affected than language generation. These results suggest a more profound effect of watermarking on LLMs than previously understood. To address these challenges, we introduce Watermarking with Mutual Exclusion (WatME), a novel approach leveraging linguistic prior knowledge of inherent lexical redundancy in LLM vocabularies to seamlessly integrate watermarks. Specifically, WatME dynamically optimizes token usage during the decoding process by applying a mutually exclusive rule to the identified lexical redundancies. This strategy effectively prevents the unavailability of appropriate tokens and preserves the expressive power of LLMs. We provide both theoretical analysis and empirical evidence showing that WatME effectively preserves the diverse capabilities of LLMs while ensuring watermark detectability.",
+    "num_pages": 15
+}

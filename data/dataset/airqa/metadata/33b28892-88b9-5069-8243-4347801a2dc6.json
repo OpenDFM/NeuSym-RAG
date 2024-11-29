@@ -1,0 +1,19 @@
+{
+    "uuid": "33b28892-88b9-5069-8243-4347801a2dc6",
+    "title": "COSMIC: Mutual Information for Task-Agnostic Summarization Evaluation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{darrin-etal-2024-cosmic,\n    title = \"{COSMIC}: Mutual Information for Task-Agnostic Summarization Evaluation\",\n    author = \"Darrin, Maxime  and\n      Formont, Philippe  and\n      Cheung, Jackie  and\n      Piantanida, Pablo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.686\",\n    doi = \"10.18653/v1/2024.acl-long.686\",\n    pages = \"12696--12717\",\n    abstract = \"Assessing the quality of summarizers poses significant challenges{---}gold summaries are hard to obtain and their suitability depends on the use context of the summarization system. Who is the user of the system, and what do they intend to do with the summary? In response, we propose a novel task-oriented evaluation approach that assesses summarizers based on their capacity to produce summaries while preserving task outcomes. We theoretically establish both a lower and upper bound on the expected error rate of these tasks, which depends on the mutual information between source texts and generated summaries. We introduce COSMIC, a practical implementation of this metric, and demonstrate its strong correlation with human judgment-based metrics, as well as its effectiveness in predicting downstream task performance. Comparative analyses against established metrics like BERTScore and ROUGE highlight the competitive performance of COSMIC.\",\n}\n",
+    "authors": [
+        "Maxime Darrin",
+        "Philippe Formont",
+        "Jackie Cheung",
+        "Pablo Piantanida"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.686.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/33b28892-88b9-5069-8243-4347801a2dc6.pdf",
+    "abstract": "Assessing the quality of summarizers poses significant challenges—gold summaries are hard to obtain and their suitability depends on the use context of the summarization system. Who is the user of the system, and what do they intend to do with the summary? In response, we propose a novel task-oriented evaluation approach that assesses summarizers based on their capacity to produce summaries while preserving task outcomes. We theoretically establish both a lower and upper bound on the expected error rate of these tasks, which depends on the mutual information between source texts and generated summaries. We introduce COSMIC, a practical implementation of this metric, and demonstrate its strong correlation with human judgment-based metrics, as well as its effectiveness in predicting downstream task performance. Comparative analyses against established metrics like BERTScore and ROUGE highlight the competitive performance of COSMIC.",
+    "num_pages": 22
+}

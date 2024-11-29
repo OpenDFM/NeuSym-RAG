@@ -1,0 +1,19 @@
+{
+    "uuid": "cdc65848-a13b-56d5-974f-25850969bd3e",
+    "title": "Entailment as Robust Self-Learner",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ge-etal-2023-entailment,\n    title = \"Entailment as Robust Self-Learner\",\n    author = \"Ge, Jiaxin  and\n      Luo, Hongyin  and\n      Kim, Yoon  and\n      Glass, James\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.772\",\n    doi = \"10.18653/v1/2023.acl-long.772\",\n    pages = \"13803--13817\",\n    abstract = \"Entailment has been recognized as an important metric for evaluating natural language understanding (NLU) models, and recent studies have found that entailment pretraining benefits weakly supervised fine-tuning. In this work, we design a prompting strategy that formulates a number of different NLU tasks as contextual entailment. This approach improves the zero-shot adaptation of pretrained entailment models. Secondly, we notice that self-training entailment-based models with unlabeled data can significantly improve the adaptation performance on downstream tasks. To achieve more stable improvement, we propose the Simple Pseudo-Label Editing (SimPLE) algorithm for better pseudo-labeling quality in self-training. We also found that both pretrained entailment-based models and the self-trained models are robust against adversarial evaluation data. Experiments on binary and multi-class classification tasks show that SimPLE leads to more robust self-training results, indicating that the self-trained entailment models are more efficient and trustworthy than large language models on language understanding tasks.\",\n}\n",
+    "authors": [
+        "Jiaxin Ge",
+        "Hongyin Luo",
+        "Yoon Kim",
+        "James Glass"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.772.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/cdc65848-a13b-56d5-974f-25850969bd3e.pdf",
+    "abstract": "Entailment has been recognized as an important metric for evaluating natural language understanding (NLU) models, and recent studies have found that entailment pretraining benefits weakly supervised fine-tuning. In this work, we design a prompting strategy that formulates a number of different NLU tasks as contextual entailment. This approach improves the zero-shot adaptation of pretrained entailment models. Secondly, we notice that self-training entailment-based models with unlabeled data can significantly improve the adaptation performance on downstream tasks. To achieve more stable improvement, we propose the Simple Pseudo-Label Editing (SimPLE) algorithm for better pseudo-labeling quality in self-training. We also found that both pretrained entailment-based models and the self-trained models are robust against adversarial evaluation data. Experiments on binary and multi-class classification tasks show that SimPLE leads to more robust self-training results, indicating that the self-trained entailment models are more efficient and trustworthy than large language models on language understanding tasks.",
+    "num_pages": 15
+}

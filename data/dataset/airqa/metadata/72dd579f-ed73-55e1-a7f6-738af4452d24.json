@@ -1,0 +1,22 @@
+{
+    "uuid": "72dd579f-ed73-55e1-a7f6-738af4452d24",
+    "title": "Generate-then-Ground in Retrieval-Augmented Generation for Multi-hop Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{shi-etal-2024-generate,\n    title = \"Generate-then-Ground in Retrieval-Augmented Generation for Multi-hop Question Answering\",\n    author = \"Shi, Zhengliang  and\n      Zhang, Shuo  and\n      Sun, Weiwei  and\n      Gao, Shen  and\n      Ren, Pengjie  and\n      Chen, Zhumin  and\n      Ren, Zhaochun\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.397\",\n    doi = \"10.18653/v1/2024.acl-long.397\",\n    pages = \"7339--7353\",\n    abstract = \"Multi-Hop Question Answering (MHQA) task presents a significant challenge for large language models (LLMs) due to the intensive knowledge required. Current solutions, like Retrieval-Augmented Generation, typically retrieve potential documents from an external corpus to read an answer. However, the performance of this retrieve-then-read paradigm is constrained by the retriever and the inevitable noise in the retrieved documents. To mitigate these challenges, we introduce a novel generate-then-ground (GenGround) framework, synergizing the parametric knowledge of LLMs and external documents to solve a multi-hop question. GenGround empowers LLMs to alternate two phases until the final answer is derived: (1) formulate a simpler, single-hop question and directly generate the answer; (2) ground the question-answer pair into retrieved documents, amending any wrong predictions in the answer. We also propose an instructional grounding distillation method to generalize our method into smaller models. Extensive experiments conducted on four datasets illustrate the superiority of our method. To further facilitate future research, we have collected a dataset that traces the reasoning process.\",\n}\n",
+    "authors": [
+        "Zhengliang Shi",
+        "Shuo Zhang",
+        "Weiwei Sun",
+        "Shen Gao",
+        "Pengjie Ren",
+        "Zhumin Chen",
+        "Zhaochun Ren"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.397.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/72dd579f-ed73-55e1-a7f6-738af4452d24.pdf",
+    "abstract": "Multi-Hop Question Answering (MHQA) task presents a significant challenge for large language models (LLMs) due to the intensive knowledge required. Current solutions, like Retrieval-Augmented Generation, typically retrieve potential documents from an external corpus to read an answer. However, the performance of this retrieve-then-read paradigm is constrained by the retriever and the inevitable noise in the retrieved documents. To mitigate these challenges, we introduce a novel generate-then-ground (GenGround) framework, synergizing the parametric knowledge of LLMs and external documents to solve a multi-hop question. GenGround empowers LLMs to alternate two phases until the final answer is derived: (1) formulate a simpler, single-hop question and directly generate the answer; (2) ground the question-answer pair into retrieved documents, amending any wrong predictions in the answer. We also propose an instructional grounding distillation method to generalize our method into smaller models. Extensive experiments conducted on four datasets illustrate the superiority of our method. To further facilitate future research, we have collected a dataset that traces the reasoning process.",
+    "num_pages": 15
+}

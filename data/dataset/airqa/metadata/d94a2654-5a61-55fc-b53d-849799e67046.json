@@ -1,0 +1,18 @@
+{
+    "uuid": "d94a2654-5a61-55fc-b53d-849799e67046",
+    "title": "Table and Image Generation for Investigating Knowledge of Entities in Pre-trained Vision and Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{kamigaito-etal-2023-table,\n    title = \"Table and Image Generation for Investigating Knowledge of Entities in Pre-trained Vision and Language Models\",\n    author = \"Kamigaito, Hidetaka  and\n      Hayashi, Katsuhiko  and\n      Watanabe, Taro\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.162\",\n    doi = \"10.18653/v1/2023.acl-short.162\",\n    pages = \"1904--1917\",\n    abstract = \"In this paper, we propose a table and image generation task to verify how the knowledge about entities acquired from natural language is retained in Vision {\\&} Language (V {\\&} L) models. This task consists of two parts: the first is to generate a table containing knowledge about an entity and its related image, and the second is to generate an image from an entity with a caption and a table containing related knowledge of the entity. In both tasks, the model must know the entities used to perform the generation properly. We created the Wikipedia Table and Image Generation (WikiTIG) dataset from about 200,000 infoboxes in English Wikipedia articles to perform the proposed tasks. We evaluated the performance on the tasks with respect to the above research question using the V {\\&} L model OFA, which has achieved state-of-the-art results in multiple tasks. Experimental results show that OFA forgets part of its entity knowledge by pre-training as a complement to improve the performance of image related tasks.\",\n}\n",
+    "authors": [
+        "Hidetaka Kamigaito",
+        "Katsuhiko Hayashi",
+        "Taro Watanabe"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.162.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d94a2654-5a61-55fc-b53d-849799e67046.pdf",
+    "abstract": "In this paper, we propose a table and image generation task to verify how the knowledge about entities acquired from natural language is retained in Vision & Language (V & L) models. This task consists of two parts: the first is to generate a table containing knowledge about an entity and its related image, and the second is to generate an image from an entity with a caption and a table containing related knowledge of the entity. In both tasks, the model must know the entities used to perform the generation properly. We created the Wikipedia Table and Image Generation (WikiTIG) dataset from about 200,000 infoboxes in English Wikipedia articles to perform the proposed tasks. We evaluated the performance on the tasks with respect to the above research question using the V & L model OFA, which has achieved state-of-the-art results in multiple tasks. Experimental results show that OFA forgets part of its entity knowledge by pre-training as a complement to improve the performance of image related tasks.",
+    "num_pages": 12
+}

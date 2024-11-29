@@ -1,0 +1,23 @@
+{
+    "uuid": "9bddca07-a462-5ed4-b0fb-d856c6b409f4",
+    "title": "Improving LLM Generations via Fine-Grained Self-Endorsement",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{wang-etal-2024-improving,\n    title = \"Improving {LLM} Generations via Fine-Grained Self-Endorsement\",\n    author = \"Wang, Ante  and\n      Song, Linfeng  and\n      Peng, Baolin  and\n      Jin, Lifeng  and\n      Tian, Ye  and\n      Mi, Haitao  and\n      Su, Jinsong  and\n      Yu, Dong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.499\",\n    doi = \"10.18653/v1/2024.findings-acl.499\",\n    pages = \"8424--8436\",\n    abstract = \"This work studies mitigating fact-conflicting hallucinations for large language model (LLM) at inference time.Particularly, we propose a self-endorsement framework that leverages the fine-grained fact-level comparisons across multiple sampled responses.Compared with prior ensemble methods (e.g., self-consistency) that perform response-level selection, our approach can better alleviate hallucinations for knowledge-intensive tasks.Our approach can broadly benefit smaller and open-source LLMs as it mainly conducts simple content-based comparisons.Experiments on Biographies show that our method can effectively improve the factuality of generations with simple and intuitive prompts across different scales of LLMs.Besides, comprehensive analyses on TriviaQA and GSM8K demonstrate the potential of self-endorsement for broader application.\",\n}\n",
+    "authors": [
+        "Ante Wang",
+        "Linfeng Song",
+        "Baolin Peng",
+        "Lifeng Jin",
+        "Ye Tian",
+        "Haitao Mi",
+        "Jinsong Su",
+        "Dong Yu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.499.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/9bddca07-a462-5ed4-b0fb-d856c6b409f4.pdf",
+    "abstract": "This work studies mitigating fact-conflicting hallucinations for large language model (LLM) at inference time.Particularly, we propose a self-endorsement framework that leverages the fine-grained fact-level comparisons across multiple sampled responses.Compared with prior ensemble methods (e.g., self-consistency) that perform response-level selection, our approach can better alleviate hallucinations for knowledge-intensive tasks.Our approach can broadly benefit smaller and open-source LLMs as it mainly conducts simple content-based comparisons.Experiments on Biographies show that our method can effectively improve the factuality of generations with simple and intuitive prompts across different scales of LLMs.Besides, comprehensive analyses on TriviaQA and GSM8K demonstrate the potential of self-endorsement for broader application.",
+    "num_pages": 13
+}

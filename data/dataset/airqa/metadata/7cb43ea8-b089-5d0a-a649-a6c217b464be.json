@@ -1,0 +1,20 @@
+{
+    "uuid": "7cb43ea8-b089-5d0a-a649-a6c217b464be",
+    "title": "Making the Most Out of the Limited Context Length: Predictive Power Varies with Clinical Note Type and Note Section",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)",
+    "bibtex": "@inproceedings{zheng-etal-2023-making,\n    title = \"Making the Most Out of the Limited Context Length: Predictive Power Varies with Clinical Note Type and Note Section\",\n    author = \"Zheng, Hongyi  and\n      Zhu, Yixin  and\n      Jiang, Lavender  and\n      Cho, Kyunghyun  and\n      Oermann, Eric\",\n    editor = \"Padmakumar, Vishakh  and\n      Vallejo, Gisela  and\n      Fu, Yao\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-srw.18\",\n    doi = \"10.18653/v1/2023.acl-srw.18\",\n    pages = \"104--108\",\n    abstract = \"Recent advances in large language models have led to renewed interest in natural language processing in healthcare using the free text of clinical notes. One distinguishing characteristic of clinical notes is their long time span over multiple long documents. The unique structure of clinical notes creates a new design choice: when the context length for a language model predictor is limited, which part of clinical notes should we choose as the input? Existing studies either choose the inputs with domain knowledge or simply truncate them. We propose a framework to analyze the sections with high predictive power. Using MIMIC-III, we show that: 1) predictive power distribution is different between nursing notes and discharge notes and 2) combining different types of notes could improve performance when the context length is large. Our findings suggest that a carefully selected sampling function could enable more efficient information extraction from clinical notes.\",\n}\n",
+    "authors": [
+        "Hongyi Zheng",
+        "Yixin Zhu",
+        "Lavender Jiang",
+        "Kyunghyun Cho",
+        "Eric Oermann"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-srw.18.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/7cb43ea8-b089-5d0a-a649-a6c217b464be.pdf",
+    "abstract": "Recent advances in large language models have led to renewed interest in natural language processing in healthcare using the free text of clinical notes. One distinguishing characteristic of clinical notes is their long time span over multiple long documents. The unique structure of clinical notes creates a new design choice: when the context length for a language model predictor is limited, which part of clinical notes should we choose as the input? Existing studies either choose the inputs with domain knowledge or simply truncate them. We propose a framework to analyze the sections with high predictive power. Using MIMIC-III, we show that: 1) predictive power distribution is different between nursing notes and discharge notes and 2) combining different types of notes could improve performance when the context length is large. Our findings suggest that a carefully selected sampling function could enable more efficient information extraction from clinical notes.",
+    "num_pages": 5
+}

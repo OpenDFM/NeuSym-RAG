@@ -1,0 +1,20 @@
+{
+    "uuid": "702914f6-75d3-5984-a06f-d4526d2ec1c7",
+    "title": "Reward Gaming in Conditional Text Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{pang-etal-2023-reward,\n    title = \"Reward Gaming in Conditional Text Generation\",\n    author = \"Pang, Richard Yuanzhe  and\n      Padmakumar, Vishakh  and\n      Sellam, Thibault  and\n      Parikh, Ankur  and\n      He, He\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.262\",\n    doi = \"10.18653/v1/2023.acl-long.262\",\n    pages = \"4746--4763\",\n    abstract = \"To align conditional text generation model outputs with desired behaviors, there has been an increasing focus on training the model using reinforcement learning (RL) with reward functions learned from human annotations. Under this framework, we identify three common cases where high rewards are incorrectly assigned to undesirable patterns: noise-induced spurious correlation, naturally occurring spurious correlation, and covariate shift. We show that even though learned metrics achieve high performance on the distribution of the data used to train the reward function, the undesirable patterns may be amplified during RL training of the text generation model. While there has been discussion about reward gaming in the RL or safety community, in this discussion piece, we would like to highlight reward gaming in the natural language generation (NLG) community using concrete conditional text generation examples and discuss potential fixes and areas for future work.\",\n}\n",
+    "authors": [
+        "Richard Yuanzhe Pang",
+        "Vishakh Padmakumar",
+        "Thibault Sellam",
+        "Ankur Parikh",
+        "He He"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.262.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/702914f6-75d3-5984-a06f-d4526d2ec1c7.pdf",
+    "abstract": "To align conditional text generation model outputs with desired behaviors, there has been an increasing focus on training the model using reinforcement learning (RL) with reward functions learned from human annotations. Under this framework, we identify three common cases where high rewards are incorrectly assigned to undesirable patterns: noise-induced spurious correlation, naturally occurring spurious correlation, and covariate shift. We show that even though learned metrics achieve high performance on the distribution of the data used to train the reward function, the undesirable patterns may be amplified during RL training of the text generation model. While there has been discussion about reward gaming in the RL or safety community, in this discussion piece, we would like to highlight reward gaming in the natural language generation (NLG) community using concrete conditional text generation examples and discuss potential fixes and areas for future work.",
+    "num_pages": 18
+}

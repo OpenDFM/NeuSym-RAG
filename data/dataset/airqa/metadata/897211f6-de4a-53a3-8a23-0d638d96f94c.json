@@ -1,0 +1,21 @@
+{
+    "uuid": "897211f6-de4a-53a3-8a23-0d638d96f94c",
+    "title": "BLEURT Has Universal Translations: An Analysis of Automatic Metrics by Minimum Risk Training",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yan-etal-2023-bleurt,\n    title = \"{BLEURT} Has Universal Translations: An Analysis of Automatic Metrics by Minimum Risk Training\",\n    author = \"Yan, Yiming  and\n      Wang, Tao  and\n      Zhao, Chengqi  and\n      Huang, Shujian  and\n      Chen, Jiajun  and\n      Wang, Mingxuan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.297\",\n    doi = \"10.18653/v1/2023.acl-long.297\",\n    pages = \"5428--5443\",\n    abstract = \"Automatic metrics play a crucial role in machine translation. Despite the widespread use of n-gram-based metrics, there has been a recent surge in the development of pre-trained model-based metrics that focus on measuring sentence semantics. However, these neural metrics, while achieving higher correlations with human evaluations, are often considered to be black boxes with potential biases that are difficult to detect. In this study, we systematically analyze and compare various mainstream and cutting-edge automatic metrics from the perspective of their guidance for training machine translation systems. Through Minimum Risk Training (MRT), we find that certain metrics exhibit robustness defects, such as the presence of universal adversarial translations in BLEURT and BARTScore. In-depth analysis suggests two main causes of these robustness deficits: distribution biases in the training datasets, and the tendency of the metric paradigm. By incorporating token-level constraints, we enhance the robustness of evaluation metrics, which in turn leads to an improvement in the performance of machine translation systems. Codes are available at \\url{https://github.com/powerpuffpomelo/fairseq_mrt}.\",\n}\n",
+    "authors": [
+        "Yiming Yan",
+        "Tao Wang",
+        "Chengqi Zhao",
+        "Shujian Huang",
+        "Jiajun Chen",
+        "Mingxuan Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.297.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/897211f6-de4a-53a3-8a23-0d638d96f94c.pdf",
+    "abstract": "Automatic metrics play a crucial role in machine translation. Despite the widespread use of n-gram-based metrics, there has been a recent surge in the development of pre-trained model-based metrics that focus on measuring sentence semantics. However, these neural metrics, while achieving higher correlations with human evaluations, are often considered to be black boxes with potential biases that are difficult to detect. In this study, we systematically analyze and compare various mainstream and cutting-edge automatic metrics from the perspective of their guidance for training machine translation systems. Through Minimum Risk Training (MRT), we find that certain metrics exhibit robustness defects, such as the presence of universal adversarial translations in BLEURT and BARTScore. In-depth analysis suggests two main causes of these robustness deficits: distribution biases in the training datasets, and the tendency of the metric paradigm. By incorporating token-level constraints, we enhance the robustness of evaluation metrics, which in turn leads to an improvement in the performance of machine translation systems. Codes are available at https://github.com/powerpuffpomelo/fairseq_mrt.",
+    "num_pages": 16
+}

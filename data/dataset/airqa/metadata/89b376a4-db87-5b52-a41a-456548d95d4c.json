@@ -1,0 +1,22 @@
+{
+    "uuid": "89b376a4-db87-5b52-a41a-456548d95d4c",
+    "title": "Causality-aware Concept Extraction based on Knowledge-guided Prompting",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yuan-etal-2023-causality,\n    title = \"Causality-aware Concept Extraction based on Knowledge-guided Prompting\",\n    author = \"Yuan, Siyu  and\n      Yang, Deqing  and\n      Liu, Jinxi  and\n      Tian, Shuyu  and\n      Liang, Jiaqing  and\n      Xiao, Yanghua  and\n      Xie, Rui\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.514\",\n    doi = \"10.18653/v1/2023.acl-long.514\",\n    pages = \"9255--9272\",\n    abstract = \"Concepts benefit natural language understanding but are far from complete in existing knowledge graphs (KGs). Recently, pre-trained language models (PLMs) have been widely used in text-based concept extraction (CE). However, PLMs tend to mine the co-occurrence associations from massive corpus as pre-trained knowledge rather than the real causal effect between tokens. As a result, the pre-trained knowledge confounds PLMs to extract biased concepts based on spurious co-occurrence correlations, inevitably resulting in low precision. In this paper, through the lens of a Structural Causal Model (SCM), we propose equipping the PLM-based extractor with a knowledge-guided prompt as an intervention to alleviate concept bias. The prompt adopts the topic of the given entity from the existing knowledge in KGs to mitigate the spurious co-occurrence correlations between entities and biased concepts. Our extensive experiments on representative multilingual KG datasets justify that our proposed prompt can effectively alleviate concept bias and improve the performance of PLM-based CE models.\",\n}\n",
+    "authors": [
+        "Siyu Yuan",
+        "Deqing Yang",
+        "Jinxi Liu",
+        "Shuyu Tian",
+        "Jiaqing Liang",
+        "Yanghua Xiao",
+        "Rui Xie"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.514.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/89b376a4-db87-5b52-a41a-456548d95d4c.pdf",
+    "abstract": "Concepts benefit natural language understanding but are far from complete in existing knowledge graphs (KGs). Recently, pre-trained language models (PLMs) have been widely used in text-based concept extraction (CE). However, PLMs tend to mine the co-occurrence associations from massive corpus as pre-trained knowledge rather than the real causal effect between tokens. As a result, the pre-trained knowledge confounds PLMs to extract biased concepts based on spurious co-occurrence correlations, inevitably resulting in low precision. In this paper, through the lens of a Structural Causal Model (SCM), we propose equipping the PLM-based extractor with a knowledge-guided prompt as an intervention to alleviate concept bias. The prompt adopts the topic of the given entity from the existing knowledge in KGs to mitigate the spurious co-occurrence correlations between entities and biased concepts. Our extensive experiments on representative multilingual KG datasets justify that our proposed prompt can effectively alleviate concept bias and improve the performance of PLM-based CE models.",
+    "num_pages": 18
+}

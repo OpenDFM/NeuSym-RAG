@@ -1,0 +1,21 @@
+{
+    "uuid": "89ff8bbb-c2c2-5803-a2a7-d4e5359501f3",
+    "title": "Hypothetical Training for Robust Machine Reading Comprehension of Tabular Context",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{li-etal-2023-hypothetical,\n    title = \"Hypothetical Training for Robust Machine Reading Comprehension of Tabular Context\",\n    author = \"Li, Moxin  and\n      Wang, Wenjie  and\n      Feng, Fuli  and\n      Zhang, Hanwang  and\n      Wang, Qifan  and\n      Chua, Tat-Seng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.79\",\n    doi = \"10.18653/v1/2023.findings-acl.79\",\n    pages = \"1220--1236\",\n    abstract = \"Machine Reading Comprehension (MRC) models easily learn spurious correlations from complex contexts such as tabular data. Counterfactual training{---}using the factual and counterfactual data by augmentation{---}has become a promising solution. However, it is costly to construct faithful counterfactual examples because it is tricky to maintain the consistency and dependency of the tabular data. In this paper, we take a more efficient fashion to ask \\textbf{hypothetical questions} like \\textit{{``}in which year would the net profit be larger if the revenue in 2019 were {\\$}38,298?{''}}, whose effects on the answers are equivalent to those expensive counterfactual tables. We propose a hypothetical training framework that uses paired examples with different hypothetical questions to supervise the direction of model gradient towards the counterfactual answer change. The superior generalization results on tabular MRC datasets, including a newly constructed stress test and MultiHiertt, validate our effectiveness.\",\n}\n",
+    "authors": [
+        "Moxin Li",
+        "Wenjie Wang",
+        "Fuli Feng",
+        "Hanwang Zhang",
+        "Qifan Wang",
+        "Tat-Seng Chua"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.79.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/89ff8bbb-c2c2-5803-a2a7-d4e5359501f3.pdf",
+    "abstract": "Machine Reading Comprehension (MRC) models easily learn spurious correlations from complex contexts such as tabular data. Counterfactual training—using the factual and counterfactual data by augmentation—has become a promising solution. However, it is costly to construct faithful counterfactual examples because it is tricky to maintain the consistency and dependency of the tabular data. In this paper, we take a more efficient fashion to ask hypothetical questions like “in which year would the net profit be larger if the revenue in 2019 were $38,298?”, whose effects on the answers are equivalent to those expensive counterfactual tables. We propose a hypothetical training framework that uses paired examples with different hypothetical questions to supervise the direction of model gradient towards the counterfactual answer change. The superior generalization results on tabular MRC datasets, including a newly constructed stress test and MultiHiertt, validate our effectiveness.",
+    "num_pages": 17
+}

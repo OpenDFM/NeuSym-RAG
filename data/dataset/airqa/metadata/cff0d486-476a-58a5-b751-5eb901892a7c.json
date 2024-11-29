@@ -1,0 +1,18 @@
+{
+    "uuid": "cff0d486-476a-58a5-b751-5eb901892a7c",
+    "title": "Holographic CCG Parsing",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yamaki-etal-2023-holographic,\n    title = \"Holographic {CCG} Parsing\",\n    author = \"Yamaki, Ryosuke  and\n      Taniguchi, Tadahiro  and\n      Mochihashi, Daichi\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.15\",\n    doi = \"10.18653/v1/2023.acl-long.15\",\n    pages = \"262--276\",\n    abstract = \"We propose a method for formulating CCG as a recursive composition in a continuous vector space. Recent CCG supertagging and parsing models generally demonstrate high performance, yet rely on black-box neural architectures to implicitly model phrase structure dependencies. Instead, we leverage the method of holographic embeddings as a compositional operator to explicitly model the dependencies between words and phrase structures in the embedding space. Experimental results revealed that holographic composition effectively improves the supertagging accuracy to achieve state-of-the-art parsing performance when using a C{\\&}C parser. The proposed span-based parsing algorithm using holographic composition achieves performance comparable to state-of-the-art neural parsing with Transformers. Furthermore, our model can semantically and syntactically infill text at the phrase level due to the decomposability of holographic composition.\",\n}\n",
+    "authors": [
+        "Ryosuke Yamaki",
+        "Tadahiro Taniguchi",
+        "Daichi Mochihashi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.15.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/cff0d486-476a-58a5-b751-5eb901892a7c.pdf",
+    "abstract": "We propose a method for formulating CCG as a recursive composition in a continuous vector space. Recent CCG supertagging and parsing models generally demonstrate high performance, yet rely on black-box neural architectures to implicitly model phrase structure dependencies. Instead, we leverage the method of holographic embeddings as a compositional operator to explicitly model the dependencies between words and phrase structures in the embedding space. Experimental results revealed that holographic composition effectively improves the supertagging accuracy to achieve state-of-the-art parsing performance when using a C&C parser. The proposed span-based parsing algorithm using holographic composition achieves performance comparable to state-of-the-art neural parsing with Transformers. Furthermore, our model can semantically and syntactically infill text at the phrase level due to the decomposability of holographic composition.",
+    "num_pages": 15
+}

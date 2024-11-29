@@ -1,0 +1,25 @@
+{
+    "uuid": "88a7e018-d5f2-5d15-99dc-6b0301863ca1",
+    "title": "UnitY: Two-pass Direct Speech-to-speech Translation with Discrete Units",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{inaguma-etal-2023-unity,\n    title = \"{U}nit{Y}: Two-pass Direct Speech-to-speech Translation with Discrete Units\",\n    author = \"Inaguma, Hirofumi  and\n      Popuri, Sravya  and\n      Kulikov, Ilia  and\n      Chen, Peng-Jen  and\n      Wang, Changhan  and\n      Chung, Yu-An  and\n      Tang, Yun  and\n      Lee, Ann  and\n      Watanabe, Shinji  and\n      Pino, Juan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.872\",\n    doi = \"10.18653/v1/2023.acl-long.872\",\n    pages = \"15655--15680\",\n    abstract = \"Direct speech-to-speech translation (S2ST), in which all components can be optimized jointly, is advantageous over cascaded approaches to achieve fast inference with a simplified pipeline. We present a novel two-pass direct S2ST architecture, UnitY, which first generates textual representations and predicts discrete acoustic units subsequently. We enhance the model performance by subword prediction in the first-pass decoder, advanced two-pass decoder architecture design and search strategy, and better training regularization. To leverage large amounts of unlabeled text data, we pre-train the first-pass text decoder based on the self-supervised denoising auto-encoding task. Experimental evaluations on benchmark datasets at various data scales demonstrate that UnitY outperforms a single-pass speech-to-unit translation model by 2.5-4.2 ASR-BLEU with 2.83x decoding speed-up. We show that the proposed methods boost the performance even when predicting spectrogram in the second pass. However, predicting discrete units achieves 2.51x decoding speed-up compared to that case.\",\n}\n",
+    "authors": [
+        "Hirofumi Inaguma",
+        "Sravya Popuri",
+        "Ilia Kulikov",
+        "Peng-Jen Chen",
+        "Changhan Wang",
+        "Yu-An Chung",
+        "Yun Tang",
+        "Ann Lee",
+        "Shinji Watanabe",
+        "Juan Pino"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.872.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/88a7e018-d5f2-5d15-99dc-6b0301863ca1.pdf",
+    "abstract": "Direct speech-to-speech translation (S2ST), in which all components can be optimized jointly, is advantageous over cascaded approaches to achieve fast inference with a simplified pipeline. We present a novel two-pass direct S2ST architecture, UnitY, which first generates textual representations and predicts discrete acoustic units subsequently. We enhance the model performance by subword prediction in the first-pass decoder, advanced two-pass decoder architecture design and search strategy, and better training regularization. To leverage large amounts of unlabeled text data, we pre-train the first-pass text decoder based on the self-supervised denoising auto-encoding task. Experimental evaluations on benchmark datasets at various data scales demonstrate that UnitY outperforms a single-pass speech-to-unit translation model by 2.5-4.2 ASR-BLEU with 2.83x decoding speed-up. We show that the proposed methods boost the performance even when predicting spectrogram in the second pass. However, predicting discrete units achieves 2.51x decoding speed-up compared to that case.",
+    "num_pages": 26
+}

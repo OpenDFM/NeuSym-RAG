@@ -1,0 +1,19 @@
+{
+    "uuid": "6ca3bfad-b429-58f1-99f1-120ca424a7b6",
+    "title": "PruMUX: Augmenting Data Multiplexing with Model Compression",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{su-etal-2023-prumux,\n    title = \"{P}ru{MUX}: Augmenting Data Multiplexing with Model Compression\",\n    author = \"Su, Yushan  and\n      Murahari, Vishvak  and\n      Narasimhan, Karthik  and\n      Li, Kai\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.841\",\n    doi = \"10.18653/v1/2023.findings-acl.841\",\n    pages = \"13302--13315\",\n    abstract = \"As language models increase in size by the day, methods for efficient inference are critical to leveraging their capabilities for various applications. Prior work has investigated techniques like model pruning, knowledge distillation, and data multiplexing to increase model throughput without sacrificing accuracy. In this paper, we combine two such methods {--} structured pruning and data multiplexing {--} to compound the speedup gains obtained by either method. Our approach, PruMUX, obtains up to 7.5-29.5X throughput improvement over BERT-base model with accuracy threshold from 80{\\%} to 74{\\%}. We further study various combinations of parameters (such as sparsity and multiplexing factor) in the two techniques to provide a comprehensive analysis of the tradeoff between accuracy and throughput in the resulting models. We then propose Auto-PruMUX, a meta-level model that can predict the high-performance parameters for pruning and multiplexing given a desired accuracy loss budget, providing a practical method to leverage the combination effectively.\",\n}\n",
+    "authors": [
+        "Yushan Su",
+        "Vishvak Murahari",
+        "Karthik Narasimhan",
+        "Kai Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.841.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/6ca3bfad-b429-58f1-99f1-120ca424a7b6.pdf",
+    "abstract": "As language models increase in size by the day, methods for efficient inference are critical to leveraging their capabilities for various applications. Prior work has investigated techniques like model pruning, knowledge distillation, and data multiplexing to increase model throughput without sacrificing accuracy. In this paper, we combine two such methods – structured pruning and data multiplexing – to compound the speedup gains obtained by either method. Our approach, PruMUX, obtains up to 7.5-29.5X throughput improvement over BERT-base model with accuracy threshold from 80% to 74%. We further study various combinations of parameters (such as sparsity and multiplexing factor) in the two techniques to provide a comprehensive analysis of the tradeoff between accuracy and throughput in the resulting models. We then propose Auto-PruMUX, a meta-level model that can predict the high-performance parameters for pruning and multiplexing given a desired accuracy loss budget, providing a practical method to leverage the combination effectively.",
+    "num_pages": 14
+}

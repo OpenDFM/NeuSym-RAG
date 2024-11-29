@@ -1,0 +1,21 @@
+{
+    "uuid": "1af26a7d-73ee-53f4-a163-141da3ebdef9",
+    "title": "MediSwift: Efficient Sparse Pre-trained Biomedical Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{thangarasa-etal-2024-mediswift,\n    title = \"{M}edi{S}wift: Efficient Sparse Pre-trained Biomedical Language Models\",\n    author = \"Thangarasa, Vithursan  and\n      Salem, Mahmoud  and\n      Saxena, Shreyas  and\n      Leong, Chen-Yu  and\n      Hestness, Joel  and\n      Lie, Sean\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.14\",\n    doi = \"10.18653/v1/2024.findings-acl.14\",\n    pages = \"214--230\",\n    abstract = \"Large language models (LLMs) are typically trained on general source data forvarious domains, but a recent surge in domain-specific LLMs has shown theirpotential to outperform general-purpose models in domain-specific tasks (e.g.,biomedicine). Although domain-specific pre-training enhances efficiency andleads to smaller models, the computational costs of training these LLMs remainhigh, posing budgeting challenges. We introduce MediSwift, a suite of biomedicalLMs that leverage sparse pre-training on domain-specific biomedical text data.By inducing up to 75{\\%} weight sparsity during the pre-training phase, MediSwiftachieves a 2-2.5x reduction in training FLOPs. Notably, all sparse pre-trainingwas performed on the Cerebras CS-2 system, which is specifically designed torealize the acceleration benefits from unstructured weight sparsity, therebysignificantly enhancing the efficiency of the MediSwift models. Throughsubsequent dense fine-tuning and strategic soft prompting, MediSwift modelsoutperform existing LLMs up to 7B parameters on biomedical tasks, setting newbenchmarks w.r.t efficiency-accuracy on tasks such as PubMedQA. Our results showthat sparse pre-training, along with dense fine-tuning and soft prompting,offers an effective method for creating high-performing, computationallyefficient models in specialized domains.\",\n}\n",
+    "authors": [
+        "Vithursan Thangarasa",
+        "Mahmoud Salem",
+        "Shreyas Saxena",
+        "Chen-Yu Leong",
+        "Joel Hestness",
+        "Sean Lie"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.14.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/1af26a7d-73ee-53f4-a163-141da3ebdef9.pdf",
+    "abstract": "Large language models (LLMs) are typically trained on general source data forvarious domains, but a recent surge in domain-specific LLMs has shown theirpotential to outperform general-purpose models in domain-specific tasks (e.g.,biomedicine). Although domain-specific pre-training enhances efficiency andleads to smaller models, the computational costs of training these LLMs remainhigh, posing budgeting challenges. We introduce MediSwift, a suite of biomedicalLMs that leverage sparse pre-training on domain-specific biomedical text data.By inducing up to 75% weight sparsity during the pre-training phase, MediSwiftachieves a 2-2.5x reduction in training FLOPs. Notably, all sparse pre-trainingwas performed on the Cerebras CS-2 system, which is specifically designed torealize the acceleration benefits from unstructured weight sparsity, therebysignificantly enhancing the efficiency of the MediSwift models. Throughsubsequent dense fine-tuning and strategic soft prompting, MediSwift modelsoutperform existing LLMs up to 7B parameters on biomedical tasks, setting newbenchmarks w.r.t efficiency-accuracy on tasks such as PubMedQA. Our results showthat sparse pre-training, along with dense fine-tuning and soft prompting,offers an effective method for creating high-performing, computationallyefficient models in specialized domains.",
+    "num_pages": 17
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "1f055226-49dd-5cdc-9e5a-516a59af0c00",
+    "title": "SamToNe: Improving Contrastive Loss for Dual Encoder Retrieval Models with Same Tower Negatives",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{moiseev-etal-2023-samtone,\n    title = \"{S}am{T}o{N}e: Improving Contrastive Loss for Dual Encoder Retrieval Models with Same Tower Negatives\",\n    author = \"Moiseev, Fedor  and\n      Hernandez Abrego, Gustavo  and\n      Dornbach, Peter  and\n      Zitouni, Imed  and\n      Alfonseca, Enrique  and\n      Dong, Zhe\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.761\",\n    doi = \"10.18653/v1/2023.findings-acl.761\",\n    pages = \"12028--12037\",\n    abstract = \"Dual encoders have been used for retrieval tasks and representation learning with good results. A standard way to train dual encoders is using a contrastive loss with in-batch negatives. In this work, we propose an improved contrastive learning objective by adding queries or documents from the same encoder towers to the negatives, for which we name it as {``}contrastive loss with SAMe TOwer NEgatives{''} (SamToNe). By evaluating on question answering retrieval benchmarks from MS MARCO and MultiReQA, and heterogenous zero-shot information retrieval benchmarks (BEIR), we demonstrate that SamToNe can effectively improve the retrieval quality for both symmetric and asymmetric dual encoders. By directly probing the embedding spaces of the two encoding towers via the t-SNE algorithm (van der Maaten and Hinton, 2008), we observe that SamToNe ensures the alignment between the embedding spaces from the two encoder towers. Based on the analysis of the embedding distance distributions of the top-1 retrieved results, we further explain the efficacy of the method from the perspective of regularisation.\",\n}\n",
+    "authors": [
+        "Fedor Moiseev",
+        "Gustavo Hernandez Abrego",
+        "Peter Dornbach",
+        "Imed Zitouni",
+        "Enrique Alfonseca",
+        "Zhe Dong"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.761.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1f055226-49dd-5cdc-9e5a-516a59af0c00.pdf",
+    "abstract": "Dual encoders have been used for retrieval tasks and representation learning with good results. A standard way to train dual encoders is using a contrastive loss with in-batch negatives. In this work, we propose an improved contrastive learning objective by adding queries or documents from the same encoder towers to the negatives, for which we name it as “contrastive loss with SAMe TOwer NEgatives” (SamToNe). By evaluating on question answering retrieval benchmarks from MS MARCO and MultiReQA, and heterogenous zero-shot information retrieval benchmarks (BEIR), we demonstrate that SamToNe can effectively improve the retrieval quality for both symmetric and asymmetric dual encoders. By directly probing the embedding spaces of the two encoding towers via the t-SNE algorithm (van der Maaten and Hinton, 2008), we observe that SamToNe ensures the alignment between the embedding spaces from the two encoder towers. Based on the analysis of the embedding distance distributions of the top-1 retrieved results, we further explain the efficacy of the method from the perspective of regularisation.",
+    "num_pages": 10
+}

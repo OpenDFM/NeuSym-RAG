@@ -1,0 +1,27 @@
+{
+    "uuid": "27484563-fd00-58df-8e33-8e30df4ad38a",
+    "title": "Z-Code++: A Pre-trained Language Model Optimized for Abstractive Summarization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{he-etal-2023-z,\n    title = \"{Z}-Code++: A Pre-trained Language Model Optimized for Abstractive Summarization\",\n    author = \"He, Pengcheng  and\n      Peng, Baolin  and\n      Wang, Song  and\n      Liu, Yang  and\n      Xu, Ruochen  and\n      Hassan, Hany  and\n      Shi, Yu  and\n      Zhu, Chenguang  and\n      Xiong, Wayne  and\n      Zeng, Michael  and\n      Gao, Jianfeng  and\n      Huang, Xuedong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.279\",\n    doi = \"10.18653/v1/2023.acl-long.279\",\n    pages = \"5095--5112\",\n    abstract = \"This paper presents Z-Code++, a new pre-trained language model optimized for abstractive text summarization. The model extends the state-of-the-art encoder-decoder model using three techniques. First, we use a two-phase pre-training to improve the model{'}s performance on low-resource summarization tasks. The model is first pre-trained using text corpora for language understanding, then is continually pre-trained on summarization corpora for grounded text generation. Second, we replace self-attention layers in the encoder with disentangled attention layers, where each word is represented using two vectors that encode its content and position, respectively. Third, we use fusion-in-encoder, a simple yet effective method of encoding long sequences in a hierarchical manner. Z-Code++ createsa new state-of-the-art on 9 of 13 text summarization tasks across 5 languages. Our model is parameter-efficient in that it outperforms the 600x larger PaLM540B on XSum, and the finetuned 200x larger GPT3175B on SAMSum. In zero-shot and few-shot settings, our model substantially outperforms the competing models.\",\n}\n",
+    "authors": [
+        "Pengcheng He",
+        "Baolin Peng",
+        "Song Wang",
+        "Yang Liu",
+        "Ruochen Xu",
+        "Hany Hassan",
+        "Yu Shi",
+        "Chenguang Zhu",
+        "Wayne Xiong",
+        "Michael Zeng",
+        "Jianfeng Gao",
+        "Xuedong Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.279.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/27484563-fd00-58df-8e33-8e30df4ad38a.pdf",
+    "abstract": "This paper presents Z-Code++, a new pre-trained language model optimized for abstractive text summarization. The model extends the state-of-the-art encoder-decoder model using three techniques. First, we use a two-phase pre-training to improve the model’s performance on low-resource summarization tasks. The model is first pre-trained using text corpora for language understanding, then is continually pre-trained on summarization corpora for grounded text generation. Second, we replace self-attention layers in the encoder with disentangled attention layers, where each word is represented using two vectors that encode its content and position, respectively. Third, we use fusion-in-encoder, a simple yet effective method of encoding long sequences in a hierarchical manner. Z-Code++ createsa new state-of-the-art on 9 of 13 text summarization tasks across 5 languages. Our model is parameter-efficient in that it outperforms the 600x larger PaLM540B on XSum, and the finetuned 200x larger GPT3175B on SAMSum. In zero-shot and few-shot settings, our model substantially outperforms the competing models.",
+    "num_pages": 18
+}

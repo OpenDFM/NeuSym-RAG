@@ -1,0 +1,20 @@
+{
+    "uuid": "3c7d83ef-84c1-5f76-bfb4-3c975af3e313",
+    "title": "TAMS: Translation-Assisted Morphological Segmentation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{rice-etal-2024-tams,\n    title = \"{TAMS}: Translation-Assisted Morphological Segmentation\",\n    author = \"Rice, Enora  and\n      Marashian, Ali  and\n      Gessler, Luke  and\n      Palmer, Alexis  and\n      von der Wense, Katharina\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.366\",\n    doi = \"10.18653/v1/2024.acl-long.366\",\n    pages = \"6752--6765\",\n    abstract = \"Canonical morphological segmentation is the process of analyzing words into the standard (\\textit{aka} underlying) forms of their constituent morphemes.This is a core task in endangered language documentation, and NLP systems have the potential to dramatically speed up this process. In typical language documentation settings, training data for canonical morpheme segmentation is scarce, making it difficult to train high quality models. However, translation data is often much more abundant, and, in this work, we present a method that attempts to leverage translation data in the canonical segmentation task. We propose a character-level sequence-to-sequence model that incorporates representations of translations obtained from pretrained high-resource monolingual language models as an additional signal. Our model outperforms the baseline in a super-low resource setting but yields mixed results on training splits with more data. Additionally, we find that we can achieve strong performance even without needing difficult-to-obtain word level alignments. While further work is needed to make translations useful in higher-resource settings, our model shows promise in severely resource-constrained settings.\",\n}\n",
+    "authors": [
+        "Enora Rice",
+        "Ali Marashian",
+        "Luke Gessler",
+        "Alexis Palmer",
+        "Katharina von der Wense"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.366.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/3c7d83ef-84c1-5f76-bfb4-3c975af3e313.pdf",
+    "abstract": "Canonical morphological segmentation is the process of analyzing words into the standard (aka underlying) forms of their constituent morphemes.This is a core task in endangered language documentation, and NLP systems have the potential to dramatically speed up this process. In typical language documentation settings, training data for canonical morpheme segmentation is scarce, making it difficult to train high quality models. However, translation data is often much more abundant, and, in this work, we present a method that attempts to leverage translation data in the canonical segmentation task. We propose a character-level sequence-to-sequence model that incorporates representations of translations obtained from pretrained high-resource monolingual language models as an additional signal. Our model outperforms the baseline in a super-low resource setting but yields mixed results on training splits with more data. Additionally, we find that we can achieve strong performance even without needing difficult-to-obtain word level alignments. While further work is needed to make translations useful in higher-resource settings, our model shows promise in severely resource-constrained settings.",
+    "num_pages": 14
+}

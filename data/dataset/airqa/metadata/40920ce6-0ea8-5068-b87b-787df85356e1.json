@@ -1,0 +1,21 @@
+{
+    "uuid": "40920ce6-0ea8-5068-b87b-787df85356e1",
+    "title": "Can Rule-Based Insights Enhance LLMs for Radiology Report Classification? Introducing the RadPrompt Methodology.",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 23rd Workshop on Biomedical Natural Language Processing",
+    "bibtex": "@inproceedings{fytas-etal-2024-rule,\n    title = \"Can Rule-Based Insights Enhance {LLM}s for Radiology Report Classification? Introducing the {R}ad{P}rompt Methodology.\",\n    author = \"Fytas, Panagiotis  and\n      Breger, Anna  and\n      Selby, Ian  and\n      Baker, Simon  and\n      Shahipasand, Shahab  and\n      Korhonen, Anna\",\n    editor = \"Demner-Fushman, Dina  and\n      Ananiadou, Sophia  and\n      Miwa, Makoto  and\n      Roberts, Kirk  and\n      Tsujii, Junichi\",\n    booktitle = \"Proceedings of the 23rd Workshop on Biomedical Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.bionlp-1.17\",\n    doi = \"10.18653/v1/2024.bionlp-1.17\",\n    pages = \"212--235\",\n    abstract = \"Developing imaging models capable of detecting pathologies from chest X-rays can be cost and time-prohibitive for large datasets as it requires supervision to attain state-of-the-art performance. Instead, labels extracted from radiology reports may serve as distant supervision since these are routinely generated as part of clinical practice. Despite their widespread use, current rule-based methods for label extraction rely on extensive rule sets that are limited in their robustness to syntactic variability. To alleviate these limitations, we introduce RadPert, a rule-based system that integrates an uncertainty-aware information schema with a streamlined set of rules, enhancing performance. Additionally, we have developed RadPrompt, a multi-turn prompting strategy that leverages RadPert to bolster the zero-shot predictive capabilities of large language models, achieving a statistically significant improvement in weighted average F1 score over GPT-4 Turbo. Most notably, RadPrompt surpasses both its underlying models, showcasing the synergistic potential of LLMs with rule-based models. We have evaluated our methods on two English Corpora: the MIMIC-CXR gold-standard test set and a gold-standard dataset collected from the Cambridge University Hospitals.\",\n}\n",
+    "authors": [
+        "Panagiotis Fytas",
+        "Anna Breger",
+        "Ian Selby",
+        "Simon Baker",
+        "Shahab Shahipasand",
+        "Anna Korhonen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.bionlp-1.17.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/40920ce6-0ea8-5068-b87b-787df85356e1.pdf",
+    "abstract": "Developing imaging models capable of detecting pathologies from chest X-rays can be cost and time-prohibitive for large datasets as it requires supervision to attain state-of-the-art performance. Instead, labels extracted from radiology reports may serve as distant supervision since these are routinely generated as part of clinical practice. Despite their widespread use, current rule-based methods for label extraction rely on extensive rule sets that are limited in their robustness to syntactic variability. To alleviate these limitations, we introduce RadPert, a rule-based system that integrates an uncertainty-aware information schema with a streamlined set of rules, enhancing performance. Additionally, we have developed RadPrompt, a multi-turn prompting strategy that leverages RadPert to bolster the zero-shot predictive capabilities of large language models, achieving a statistically significant improvement in weighted average F1 score over GPT-4 Turbo. Most notably, RadPrompt surpasses both its underlying models, showcasing the synergistic potential of LLMs with rule-based models. We have evaluated our methods on two English Corpora: the MIMIC-CXR gold-standard test set and a gold-standard dataset collected from the Cambridge University Hospitals.",
+    "num_pages": 24
+}

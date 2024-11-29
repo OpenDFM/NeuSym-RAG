@@ -1,0 +1,22 @@
+{
+    "uuid": "67401b2f-3e6d-5966-a8e1-40525bd5a815",
+    "title": "CharacterEval: A Chinese Benchmark for Role-Playing Conversational Agent Evaluation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{tu-etal-2024-charactereval,\n    title = \"{C}haracter{E}val: A {C}hinese Benchmark for Role-Playing Conversational Agent Evaluation\",\n    author = \"Tu, Quan  and\n      Fan, Shilong  and\n      Tian, Zihang  and\n      Shen, Tianhao  and\n      Shang, Shuo  and\n      Gao, Xin  and\n      Yan, Rui\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.638\",\n    doi = \"10.18653/v1/2024.acl-long.638\",\n    pages = \"11836--11850\",\n    abstract = \"Recently, the advent of large language models (LLMs) has revolutionized generative agents. Among them, Role-Playing Conversational Agents (RPCAs) attract considerable attention due to their ability to emotionally engage users. However, the absence of a comprehensive benchmark impedes progress in this field. To bridge this gap, we introduce \\textit{CharacterEval}, a Chinese benchmark for comprehensive RPCA assessment, complemented by a tailored high-quality dataset. The dataset comprises 1,785 multi-turn role-playing dialogues, encompassing 11,376 examples and featuring 77 characters derived from Chinese novels and scripts. It was carefully constructed, beginning with initial dialogue extraction via GPT-4, followed by rigorous human-led quality control, and enhanced with in-depth character profiles sourced from Baidu Baike. \\textit{CharacterEval} employs a multifaceted evaluation approach, encompassing thirteen targeted metrics on four dimensions. To facilitate the convenient evaluation for these subjective metrics in \\textit{CharacterEval}, we further developed CharacterRM, a role-playing reward model based on human annotations, which has a higher correlation with human judgment compared to GPT-4. Comprehensive experiments on \\textit{CharacterEval} demonstrate that Chinese LLMs exhibit more promising capabilities than GPT-4 in Chinese role-playing conversation.\",\n}\n",
+    "authors": [
+        "Quan Tu",
+        "Shilong Fan",
+        "Zihang Tian",
+        "Tianhao Shen",
+        "Shuo Shang",
+        "Xin Gao",
+        "Rui Yan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.638.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/67401b2f-3e6d-5966-a8e1-40525bd5a815.pdf",
+    "abstract": "Recently, the advent of large language models (LLMs) has revolutionized generative agents. Among them, Role-Playing Conversational Agents (RPCAs) attract considerable attention due to their ability to emotionally engage users. However, the absence of a comprehensive benchmark impedes progress in this field. To bridge this gap, we introduce CharacterEval, a Chinese benchmark for comprehensive RPCA assessment, complemented by a tailored high-quality dataset. The dataset comprises 1,785 multi-turn role-playing dialogues, encompassing 11,376 examples and featuring 77 characters derived from Chinese novels and scripts. It was carefully constructed, beginning with initial dialogue extraction via GPT-4, followed by rigorous human-led quality control, and enhanced with in-depth character profiles sourced from Baidu Baike. CharacterEval employs a multifaceted evaluation approach, encompassing thirteen targeted metrics on four dimensions. To facilitate the convenient evaluation for these subjective metrics in CharacterEval, we further developed CharacterRM, a role-playing reward model based on human annotations, which has a higher correlation with human judgment compared to GPT-4. Comprehensive experiments on CharacterEval demonstrate that Chinese LLMs exhibit more promising capabilities than GPT-4 in Chinese role-playing conversation.",
+    "num_pages": 15
+}

@@ -1,0 +1,26 @@
+{
+    "uuid": "aa837a4d-24b1-5faf-9468-97cfc6bd2bd9",
+    "title": "Learning Fine-Grained Grounded Citations for Attributed Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{huang-etal-2024-learning,\n    title = \"Learning Fine-Grained Grounded Citations for Attributed Large Language Models\",\n    author = \"Huang, Lei  and\n      Feng, Xiaocheng  and\n      Ma, Weitao  and\n      Gu, Yuxuan  and\n      Zhong, Weihong  and\n      Feng, Xiachong  and\n      Yu, Weijiang  and\n      Peng, Weihua  and\n      Tang, Duyu  and\n      Tu, Dandan  and\n      Qin, Bing\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.838\",\n    doi = \"10.18653/v1/2024.findings-acl.838\",\n    pages = \"14095--14113\",\n    abstract = \"Despite the impressive performance on information-seeking tasks, large language models (LLMs) still struggle with hallucinations. Attributed LLMs, which augment generated text with in-line citations, demonstrate potential in mitigating hallucinations and improving verifiability. However, current approaches suffer from suboptimal citation quality due to their reliance on in-context learning. Furthermore, the practice of merely citing document identifiers complicates the process for users to pinpoint specific supporting evidence. In this work, we introduce FRONT, a training framework that teaches LLMs to generate Fine-grained grounded citations. By initially grounding fine-grained supporting quotes, which then guide the generation process, these quotes not only provide supervision signals to improve citation quality but also serve as fine-grained attributions. Experiments on the ALCE benchmark demonstrate the efficacy of FRONT in generating superior grounded responses and highly supportive citations. With LLaMA-2-7B, the framework significantly outperforms all the baselines, achieving an average of 14.21{\\%} improvement in citation quality across all datasets, even surpassing ChatGPT.\",\n}\n",
+    "authors": [
+        "Lei Huang",
+        "Xiaocheng Feng",
+        "Weitao Ma",
+        "Yuxuan Gu",
+        "Weihong Zhong",
+        "Xiachong Feng",
+        "Weijiang Yu",
+        "Weihua Peng",
+        "Duyu Tang",
+        "Dandan Tu",
+        "Bing Qin"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.838.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/aa837a4d-24b1-5faf-9468-97cfc6bd2bd9.pdf",
+    "abstract": "Despite the impressive performance on information-seeking tasks, large language models (LLMs) still struggle with hallucinations. Attributed LLMs, which augment generated text with in-line citations, demonstrate potential in mitigating hallucinations and improving verifiability. However, current approaches suffer from suboptimal citation quality due to their reliance on in-context learning. Furthermore, the practice of merely citing document identifiers complicates the process for users to pinpoint specific supporting evidence. In this work, we introduce FRONT, a training framework that teaches LLMs to generate Fine-grained grounded citations. By initially grounding fine-grained supporting quotes, which then guide the generation process, these quotes not only provide supervision signals to improve citation quality but also serve as fine-grained attributions. Experiments on the ALCE benchmark demonstrate the efficacy of FRONT in generating superior grounded responses and highly supportive citations. With LLaMA-2-7B, the framework significantly outperforms all the baselines, achieving an average of 14.21% improvement in citation quality across all datasets, even surpassing ChatGPT.",
+    "num_pages": 19
+}

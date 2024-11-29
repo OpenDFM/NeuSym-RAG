@@ -1,0 +1,20 @@
+{
+    "uuid": "92be50a8-8597-546f-8df7-aae9b81dff35",
+    "title": "Multi-Grained Knowledge Retrieval for End-to-End Task-Oriented Dialog",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wan-etal-2023-multi,\n    title = \"Multi-Grained Knowledge Retrieval for End-to-End Task-Oriented Dialog\",\n    author = \"Wan, Fanqi  and\n      Shen, Weizhou  and\n      Yang, Ke  and\n      Quan, Xiaojun  and\n      Bi, Wei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.627\",\n    doi = \"10.18653/v1/2023.acl-long.627\",\n    pages = \"11196--11210\",\n    abstract = \"Retrieving proper domain knowledge from an external database lies at the heart of end-to-end task-oriented dialog systems to generate informative responses. Most existing systems blend knowledge retrieval with response generation and optimize them with direct supervision from reference responses, leading to suboptimal retrieval performance when the knowledge base becomes large-scale. To address this, we propose to decouple knowledge retrieval from response generation and introduce a multi-grained knowledge retriever (MAKER) that includes an entity selector to search for relevant entities and an attribute selector to filter out irrelevant attributes. To train the retriever, we propose a novel distillation objective that derives supervision signals from the response generator. Experiments conducted on three standard benchmarks with both small and large-scale knowledge bases demonstrate that our retriever performs knowledge retrieval more effectively than existing methods. Our code has been made publicly available at \\url{https://github.com/18907305772/MAKER}.\",\n}\n",
+    "authors": [
+        "Fanqi Wan",
+        "Weizhou Shen",
+        "Ke Yang",
+        "Xiaojun Quan",
+        "Wei Bi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.627.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/92be50a8-8597-546f-8df7-aae9b81dff35.pdf",
+    "abstract": "Retrieving proper domain knowledge from an external database lies at the heart of end-to-end task-oriented dialog systems to generate informative responses. Most existing systems blend knowledge retrieval with response generation and optimize them with direct supervision from reference responses, leading to suboptimal retrieval performance when the knowledge base becomes large-scale. To address this, we propose to decouple knowledge retrieval from response generation and introduce a multi-grained knowledge retriever (MAKER) that includes an entity selector to search for relevant entities and an attribute selector to filter out irrelevant attributes. To train the retriever, we propose a novel distillation objective that derives supervision signals from the response generator. Experiments conducted on three standard benchmarks with both small and large-scale knowledge bases demonstrate that our retriever performs knowledge retrieval more effectively than existing methods. Our code has been made publicly available at https://github.com/18907305772/MAKER.",
+    "num_pages": 15
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "fb0bd7ec-4e2a-57aa-944b-bbae47d02858",
+    "title": "Grokking of Hierarchical Structure in Vanilla Transformers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{murty-etal-2023-grokking,\n    title = \"Grokking of Hierarchical Structure in Vanilla Transformers\",\n    author = \"Murty, Shikhar  and\n      Sharma, Pratyusha  and\n      Andreas, Jacob  and\n      Manning, Christopher\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.38\",\n    doi = \"10.18653/v1/2023.acl-short.38\",\n    pages = \"439--448\",\n    abstract = \"For humans, language production and comprehension is sensitive to the hierarchical structure of sentences. In natural language processing, past work has questioned how effectively neural sequence models like transformers capture this hierarchical structure when generalizing to structurally novel inputs. We show that transformer language models can learn to generalize hierarchically after training for extremely long periods{---}far beyond the point when in-domain accuracy has saturated. We call this phenomenon structural grokking. On multiple datasets, structural grokking exhibits inverted U-shaped scaling in model depth: intermediate-depth models generalize better than both very deep and very shallow transformers. When analyzing the relationship between model-internal properties and grokking, we find that optimal depth for grokking can be identified using the tree-structuredness metric of CITATION. Overall, our work provides strong evidence that, with extended training, vanilla transformers discover and use hierarchical structure.\",\n}\n",
+    "authors": [
+        "Shikhar Murty",
+        "Pratyusha Sharma",
+        "Jacob Andreas",
+        "Christopher Manning"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.38.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/fb0bd7ec-4e2a-57aa-944b-bbae47d02858.pdf",
+    "abstract": "For humans, language production and comprehension is sensitive to the hierarchical structure of sentences. In natural language processing, past work has questioned how effectively neural sequence models like transformers capture this hierarchical structure when generalizing to structurally novel inputs. We show that transformer language models can learn to generalize hierarchically after training for extremely long periods—far beyond the point when in-domain accuracy has saturated. We call this phenomenon structural grokking. On multiple datasets, structural grokking exhibits inverted U-shaped scaling in model depth: intermediate-depth models generalize better than both very deep and very shallow transformers. When analyzing the relationship between model-internal properties and grokking, we find that optimal depth for grokking can be identified using the tree-structuredness metric of CITATION. Overall, our work provides strong evidence that, with extended training, vanilla transformers discover and use hierarchical structure.",
+    "num_pages": 10
+}

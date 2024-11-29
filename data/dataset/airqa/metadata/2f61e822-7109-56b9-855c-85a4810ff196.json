@@ -1,0 +1,19 @@
+{
+    "uuid": "2f61e822-7109-56b9-855c-85a4810ff196",
+    "title": "Do not Mask Randomly: Effective Domain-adaptive Pre-training by Masking In-domain Keywords",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)",
+    "bibtex": "@inproceedings{golchin-etal-2023-mask,\n    title = \"Do not Mask Randomly: Effective Domain-adaptive Pre-training by Masking In-domain Keywords\",\n    author = \"Golchin, Shahriar  and\n      Surdeanu, Mihai  and\n      Tavabi, Nazgol  and\n      Kiapour, Ata\",\n    editor = \"Can, Burcu  and\n      Mozes, Maximilian  and\n      Cahyawijaya, Samuel  and\n      Saphra, Naomi  and\n      Kassner, Nora  and\n      Ravfogel, Shauli  and\n      Ravichander, Abhilasha  and\n      Zhao, Chen  and\n      Augenstein, Isabelle  and\n      Rogers, Anna  and\n      Cho, Kyunghyun  and\n      Grefenstette, Edward  and\n      Voita, Lena\",\n    booktitle = \"Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.repl4nlp-1.2\",\n    doi = \"10.18653/v1/2023.repl4nlp-1.2\",\n    pages = \"13--21\",\n    abstract = \"We propose a novel task-agnostic in-domain pre-training method that sits between generic pre-training and fine-tuning. Our approach selectively masks in-domain keywords, i.e., words that provide a compact representation of the target domain. We identify such keywords using KeyBERT (Grootendorst, 2020). We evaluate our approach using six different settings: three datasets combined with two distinct pre-trained language models (PLMs). Our results reveal that the fine-tuned PLMs adapted using our in-domain pre-training strategy outperform PLMs that used in-domain pre-training with random masking as well as those that followed the common pre-train-then-fine-tune paradigm. Further, the overhead of identifying in-domain keywords is reasonable, e.g., 7-15{\\%} of the pre-training time (for two epochs) for BERT Large (Devlin et al., 2019).\",\n}\n",
+    "authors": [
+        "Shahriar Golchin",
+        "Mihai Surdeanu",
+        "Nazgol Tavabi",
+        "Ata Kiapour"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.repl4nlp-1.2.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2f61e822-7109-56b9-855c-85a4810ff196.pdf",
+    "abstract": "We propose a novel task-agnostic in-domain pre-training method that sits between generic pre-training and fine-tuning. Our approach selectively masks in-domain keywords, i.e., words that provide a compact representation of the target domain. We identify such keywords using KeyBERT (Grootendorst, 2020). We evaluate our approach using six different settings: three datasets combined with two distinct pre-trained language models (PLMs). Our results reveal that the fine-tuned PLMs adapted using our in-domain pre-training strategy outperform PLMs that used in-domain pre-training with random masking as well as those that followed the common pre-train-then-fine-tune paradigm. Further, the overhead of identifying in-domain keywords is reasonable, e.g., 7-15% of the pre-training time (for two epochs) for BERT Large (Devlin et al., 2019).",
+    "num_pages": 9
+}

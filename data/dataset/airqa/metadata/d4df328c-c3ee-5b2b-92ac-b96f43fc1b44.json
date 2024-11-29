@@ -1,0 +1,19 @@
+{
+    "uuid": "d4df328c-c3ee-5b2b-92ac-b96f43fc1b44",
+    "title": "Synergizing Large Language Models and Pre-Trained Smaller Models for Conversational Intent Discovery",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{liang-etal-2024-synergizing,\n    title = \"Synergizing Large Language Models and Pre-Trained Smaller Models for Conversational Intent Discovery\",\n    author = \"Liang, Jinggui  and\n      Liao, Lizi  and\n      Fei, Hao  and\n      Jiang, Jing\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.840\",\n    doi = \"10.18653/v1/2024.findings-acl.840\",\n    pages = \"14133--14147\",\n    abstract = \"In Conversational Intent Discovery (CID), Small Language Models (SLMs) struggle with overfitting to familiar intents and fail to label newly discovered ones. This issue stems from their limited grasp of semantic nuances and their intrinsically discriminative framework. Therefore, we propose Synergizing Large Language Models (LLMs) with pre-trained SLMs for CID (SynCID). It harnesses the profound semantic comprehension of LLMs alongside the operational agility of SLMs. By utilizing LLMs to refine both utterances and existing intent labels, SynCID significantly enhances the semantic depth, subsequently realigning these enriched descriptors within the SLMs{'} feature space to correct cluster distortion and promote robust learning of representations. A key advantage is its capacity for the early identification of new intents, a critical aspect for deploying conversational agents successfully. Additionally, SynCID leverages the in-context learning strengths of LLMs to generate labels for new intents. Thorough evaluations across a wide array of datasets have demonstrated its superior performance over traditional CID methods.\",\n}\n",
+    "authors": [
+        "Jinggui Liang",
+        "Lizi Liao",
+        "Hao Fei",
+        "Jing Jiang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.840.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d4df328c-c3ee-5b2b-92ac-b96f43fc1b44.pdf",
+    "abstract": "In Conversational Intent Discovery (CID), Small Language Models (SLMs) struggle with overfitting to familiar intents and fail to label newly discovered ones. This issue stems from their limited grasp of semantic nuances and their intrinsically discriminative framework. Therefore, we propose Synergizing Large Language Models (LLMs) with pre-trained SLMs for CID (SynCID). It harnesses the profound semantic comprehension of LLMs alongside the operational agility of SLMs. By utilizing LLMs to refine both utterances and existing intent labels, SynCID significantly enhances the semantic depth, subsequently realigning these enriched descriptors within the SLMs’ feature space to correct cluster distortion and promote robust learning of representations. A key advantage is its capacity for the early identification of new intents, a critical aspect for deploying conversational agents successfully. Additionally, SynCID leverages the in-context learning strengths of LLMs to generate labels for new intents. Thorough evaluations across a wide array of datasets have demonstrated its superior performance over traditional CID methods.",
+    "num_pages": 15
+}

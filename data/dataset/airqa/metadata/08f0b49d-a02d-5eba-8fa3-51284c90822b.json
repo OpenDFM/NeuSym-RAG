@@ -1,0 +1,21 @@
+{
+    "uuid": "08f0b49d-a02d-5eba-8fa3-51284c90822b",
+    "title": "When Not to Trust Language Models: Investigating Effectiveness of Parametric and Non-Parametric Memories",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{mallen-etal-2023-trust,\n    title = \"When Not to Trust Language Models: Investigating Effectiveness of Parametric and Non-Parametric Memories\",\n    author = \"Mallen, Alex  and\n      Asai, Akari  and\n      Zhong, Victor  and\n      Das, Rajarshi  and\n      Khashabi, Daniel  and\n      Hajishirzi, Hannaneh\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.546\",\n    doi = \"10.18653/v1/2023.acl-long.546\",\n    pages = \"9802--9822\",\n    abstract = \"Despite their impressive performance on diverse tasks, large language models (LMs) still struggle with tasks requiring rich world knowledge, implying the difficulty of encoding a wealth of world knowledge in their parameters. This paper aims to understand LMs{'} strengths and limitations in memorizing factual knowledge, by conducting large-scale knowledge probing experiments on two open-domain entity-centric QA datasets: PopQA, our new dataset with 14k questions about long-tail entities, and EntityQuestions, a widely used open-domain QA dataset. We find that LMs struggle with less popular factual knowledge, and that retrieval augmentation helps significantly in these cases. Scaling, on the other hand, mainly improves memorization of popular knowledge, and fails to appreciably improve memorization of factual knowledge in the tail. Based on those findings, we devise a new method for retrieval-augmentation that improves performance and reduces inference costs by only retrieving non-parametric memories when necessary.\",\n}\n",
+    "authors": [
+        "Alex Mallen",
+        "Akari Asai",
+        "Victor Zhong",
+        "Rajarshi Das",
+        "Daniel Khashabi",
+        "Hannaneh Hajishirzi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.546.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/08f0b49d-a02d-5eba-8fa3-51284c90822b.pdf",
+    "abstract": "Despite their impressive performance on diverse tasks, large language models (LMs) still struggle with tasks requiring rich world knowledge, implying the difficulty of encoding a wealth of world knowledge in their parameters. This paper aims to understand LMs’ strengths and limitations in memorizing factual knowledge, by conducting large-scale knowledge probing experiments on two open-domain entity-centric QA datasets: PopQA, our new dataset with 14k questions about long-tail entities, and EntityQuestions, a widely used open-domain QA dataset. We find that LMs struggle with less popular factual knowledge, and that retrieval augmentation helps significantly in these cases. Scaling, on the other hand, mainly improves memorization of popular knowledge, and fails to appreciably improve memorization of factual knowledge in the tail. Based on those findings, we devise a new method for retrieval-augmentation that improves performance and reduces inference costs by only retrieving non-parametric memories when necessary.",
+    "num_pages": 21
+}

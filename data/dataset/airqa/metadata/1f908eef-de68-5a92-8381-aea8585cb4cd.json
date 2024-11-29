@@ -1,0 +1,20 @@
+{
+    "uuid": "1f908eef-de68-5a92-8381-aea8585cb4cd",
+    "title": "SAE-NTM: Sentence-Aware Encoder for Neural Topic Modeling",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 4th Workshop on Computational Approaches to Discourse (CODI 2023)",
+    "bibtex": "@inproceedings{liu-etal-2023-sae,\n    title = \"{SAE}-{NTM}: Sentence-Aware Encoder for Neural Topic Modeling\",\n    author = \"Liu, Hao  and\n      Gao, Jingsheng  and\n      Xiang, Suncheng  and\n      Liu, Ting  and\n      Fu, Yuzhuo\",\n    editor = \"Strube, Michael  and\n      Braud, Chloe  and\n      Hardmeier, Christian  and\n      Li, Junyi Jessy  and\n      Loaiciga, Sharid  and\n      Zeldes, Amir\",\n    booktitle = \"Proceedings of the 4th Workshop on Computational Approaches to Discourse (CODI 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.codi-1.14\",\n    doi = \"10.18653/v1/2023.codi-1.14\",\n    pages = \"106--111\",\n    abstract = \"Incorporating external knowledge, such as pre-trained language models (PLMs), into neural topic modeling has achieved great success in recent years. However, employing PLMs for topic modeling generally ignores the maximum sequence length of PLMs and the interaction between external knowledge and bag-of-words (BOW). To this end, we propose a sentence-aware encoder for neural topic modeling, which adopts fine-grained sentence embeddings as external knowledge to entirely utilize the semantic information of input documents. We introduce sentence-aware attention for document representation, where BOW enables the model to attend on topical sentences that convey topic-related cues. Experiments on three benchmark datasets show that our framework outperforms other state-of-the-art neural topic models in topic coherence. Further, we demonstrate that the proposed approach can yield better latent document-topic features through improvement on the document classification.\",\n}\n",
+    "authors": [
+        "Hao Liu",
+        "Jingsheng Gao",
+        "Suncheng Xiang",
+        "Ting Liu",
+        "Yuzhuo Fu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.codi-1.14.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1f908eef-de68-5a92-8381-aea8585cb4cd.pdf",
+    "abstract": "Incorporating external knowledge, such as pre-trained language models (PLMs), into neural topic modeling has achieved great success in recent years. However, employing PLMs for topic modeling generally ignores the maximum sequence length of PLMs and the interaction between external knowledge and bag-of-words (BOW). To this end, we propose a sentence-aware encoder for neural topic modeling, which adopts fine-grained sentence embeddings as external knowledge to entirely utilize the semantic information of input documents. We introduce sentence-aware attention for document representation, where BOW enables the model to attend on topical sentences that convey topic-related cues. Experiments on three benchmark datasets show that our framework outperforms other state-of-the-art neural topic models in topic coherence. Further, we demonstrate that the proposed approach can yield better latent document-topic features through improvement on the document classification.",
+    "num_pages": 6
+}

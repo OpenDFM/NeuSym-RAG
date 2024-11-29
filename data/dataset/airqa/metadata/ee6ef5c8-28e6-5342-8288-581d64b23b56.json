@@ -1,0 +1,22 @@
+{
+    "uuid": "ee6ef5c8-28e6-5342-8288-581d64b23b56",
+    "title": "A Customized Text Sanitization Mechanism with Differential Privacy",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{chen-etal-2023-customized,\n    title = \"A Customized Text Sanitization Mechanism with Differential Privacy\",\n    author = \"Chen, Sai  and\n      Mo, Fengran  and\n      Wang, Yanhao  and\n      Chen, Cen  and\n      Nie, Jian-Yun  and\n      Wang, Chengyu  and\n      Cui, Jamie\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.355\",\n    doi = \"10.18653/v1/2023.findings-acl.355\",\n    pages = \"5747--5758\",\n    abstract = \"As privacy issues are receiving increasing attention within the Natural Language Processing (NLP) community, numerous methods have been proposed to sanitize texts subject to differential privacy. However, the state-of-the-art text sanitization mechanisms based on a relaxed notion of metric local differential privacy (MLDP) do not apply to non-metric semantic similarity measures and cannot achieve good privacy-utility trade-offs. To address these limitations, we propose a novel Customized Text sanitization (CusText) mechanism based on the original $\\epsilon$-differential privacy (DP) definition, which is compatible with any similarity measure.Moreover, CusText assigns each input token a customized output set to provide more advanced privacy protection at the token level.Extensive experiments on several benchmark datasets show that CusText achieves a better trade-off between privacy and utility than existing mechanisms.The code is available at \\url{https://github.com/sai4july/CusText}.\",\n}\n",
+    "authors": [
+        "Sai Chen",
+        "Fengran Mo",
+        "Yanhao Wang",
+        "Cen Chen",
+        "Jian-Yun Nie",
+        "Chengyu Wang",
+        "Jamie Cui"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.355.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ee6ef5c8-28e6-5342-8288-581d64b23b56.pdf",
+    "abstract": "As privacy issues are receiving increasing attention within the Natural Language Processing (NLP) community, numerous methods have been proposed to sanitize texts subject to differential privacy. However, the state-of-the-art text sanitization mechanisms based on a relaxed notion of metric local differential privacy (MLDP) do not apply to non-metric semantic similarity measures and cannot achieve good privacy-utility trade-offs. To address these limitations, we propose a novel Customized Text sanitization (CusText) mechanism based on the original 𝜖-differential privacy (DP) definition, which is compatible with any similarity measure.Moreover, CusText assigns each input token a customized output set to provide more advanced privacy protection at the token level.Extensive experiments on several benchmark datasets show that CusText achieves a better trade-off between privacy and utility than existing mechanisms.The code is available at https://github.com/sai4july/CusText.",
+    "num_pages": 12
+}

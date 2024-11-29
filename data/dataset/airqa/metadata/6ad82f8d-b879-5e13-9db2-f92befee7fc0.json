@@ -1,0 +1,29 @@
+{
+    "uuid": "6ad82f8d-b879-5e13-9db2-f92befee7fc0",
+    "title": "EasyEdit: An Easy-to-use Knowledge Editing Framework for Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)",
+    "bibtex": "@inproceedings{wang-etal-2024-easyedit,\n    title = \"{E}asy{E}dit: An Easy-to-use Knowledge Editing Framework for Large Language Models\",\n    author = \"Wang, Peng  and\n      Zhang, Ningyu  and\n      Tian, Bozhong  and\n      Xi, Zekun  and\n      Yao, Yunzhi  and\n      Xu, Ziwen  and\n      Wang, Mengru  and\n      Mao, Shengyu  and\n      Wang, Xiaohan  and\n      Cheng, Siyuan  and\n      Liu, Kangwei  and\n      Ni, Yuansheng  and\n      Zheng, Guozhou  and\n      Chen, Huajun\",\n    editor = \"Cao, Yixin  and\n      Feng, Yang  and\n      Xiong, Deyi\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-demos.9\",\n    doi = \"10.18653/v1/2024.acl-demos.9\",\n    pages = \"82--93\",\n    abstract = \"Large Language Models (LLMs) usually suffer from knowledge cutoff or fallacy issues, which means they are unaware of unseen events or generate text with incorrect facts owing to outdated/noisy data. To this end, many knowledge editing approaches for LLMs have emerged {--} aiming to subtly inject/edit updated knowledge or adjust undesired behavior while minimizing the impact on unrelated inputs. Nevertheless, due to significant differences among various knowledge editing methods and the variations in task setups, there is no standard implementation framework available for the community, which hinders practitioners from applying knowledge editing to applications. To address these issues, we propose EasyEdit, an easy-to-use knowledge editing framework for LLMs. It supports various cutting-edge knowledge editing approaches and can be readily applied to many well-known LLMs such as T5, GPT-J, LlaMA, etc. Empirically, we report the knowledge editing results on LlaMA-2 with EasyEdit, demonstrating that knowledge editing surpasses traditional fine-tuning in terms of reliability and generalization. We have released the source code on GitHub, along with Google Colab tutorials and comprehensive documentation for beginners to get started. Besides, we present an online system for real-time knowledge editing, and a demo video.\",\n}\n",
+    "authors": [
+        "Peng Wang",
+        "Ningyu Zhang",
+        "Bozhong Tian",
+        "Zekun Xi",
+        "Yunzhi Yao",
+        "Ziwen Xu",
+        "Mengru Wang",
+        "Shengyu Mao",
+        "Xiaohan Wang",
+        "Siyuan Cheng",
+        "Kangwei Liu",
+        "Yuansheng Ni",
+        "Guozhou Zheng",
+        "Huajun Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-demos.9.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/6ad82f8d-b879-5e13-9db2-f92befee7fc0.pdf",
+    "abstract": "Large Language Models (LLMs) usually suffer from knowledge cutoff or fallacy issues, which means they are unaware of unseen events or generate text with incorrect facts owing to outdated/noisy data. To this end, many knowledge editing approaches for LLMs have emerged – aiming to subtly inject/edit updated knowledge or adjust undesired behavior while minimizing the impact on unrelated inputs. Nevertheless, due to significant differences among various knowledge editing methods and the variations in task setups, there is no standard implementation framework available for the community, which hinders practitioners from applying knowledge editing to applications. To address these issues, we propose EasyEdit, an easy-to-use knowledge editing framework for LLMs. It supports various cutting-edge knowledge editing approaches and can be readily applied to many well-known LLMs such as T5, GPT-J, LlaMA, etc. Empirically, we report the knowledge editing results on LlaMA-2 with EasyEdit, demonstrating that knowledge editing surpasses traditional fine-tuning in terms of reliability and generalization. We have released the source code on GitHub, along with Google Colab tutorials and comprehensive documentation for beginners to get started. Besides, we present an online system for real-time knowledge editing, and a demo video.",
+    "num_pages": 12
+}

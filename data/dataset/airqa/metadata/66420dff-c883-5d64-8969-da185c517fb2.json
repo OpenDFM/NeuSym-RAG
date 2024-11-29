@@ -1,0 +1,21 @@
+{
+    "uuid": "66420dff-c883-5d64-8969-da185c517fb2",
+    "title": "RORA: Robust Free-Text Rationale Evaluation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{jiang-etal-2024-rora,\n    title = \"{RORA}: Robust Free-Text Rationale Evaluation\",\n    author = \"Jiang, Zhengping  and\n      Lu, Yining  and\n      Chen, Hanjie  and\n      Khashabi, Daniel  and\n      Van Durme, Benjamin  and\n      Liu, Anqi\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.60\",\n    doi = \"10.18653/v1/2024.acl-long.60\",\n    pages = \"1070--1087\",\n    abstract = \"Free-text rationales play a pivotal role in explainable NLP, bridging the knowledge and reasoning gaps behind a model{'}s decision-making. However, due to the diversity of potential reasoning paths and a corresponding lack of definitive ground truth, their evaluation remains a challenge. Existing metrics rely on the degree to which a rationale \\textit{supports} a target label, but we find these fall short in evaluating rationales that inadvertently \\textit{leak the label}. To address this problem, we propose RORA, a RObust free-text RAtionale evaluation against label leakage. RORA quantifies the new information supplied by a rationale to justify the label. This is achieved by assessing the conditional $\\mathcal{V}$-information (Hewitt et al., 2021) with a predictive family robust against leaky features that can be exploited by a small model. RORA consistently outperforms existing approaches in evaluating human-written, synthetic, or model-generated rationales, particularly demonstrating robustness against label leakage. We also show that RORA aligns well with human judgment, providing a more reliable and accurate measurement across diverse free-text rationales.\",\n}\n",
+    "authors": [
+        "Zhengping Jiang",
+        "Yining Lu",
+        "Hanjie Chen",
+        "Daniel Khashabi",
+        "Benjamin Van Durme",
+        "Anqi Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.60.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/66420dff-c883-5d64-8969-da185c517fb2.pdf",
+    "abstract": "Free-text rationales play a pivotal role in explainable NLP, bridging the knowledge and reasoning gaps behind a model’s decision-making. However, due to the diversity of potential reasoning paths and a corresponding lack of definitive ground truth, their evaluation remains a challenge. Existing metrics rely on the degree to which a rationale supports a target label, but we find these fall short in evaluating rationales that inadvertently leak the label. To address this problem, we propose RORA, a RObust free-text RAtionale evaluation against label leakage. RORA quantifies the new information supplied by a rationale to justify the label. This is achieved by assessing the conditional 𝒱-information (Hewitt et al., 2021) with a predictive family robust against leaky features that can be exploited by a small model. RORA consistently outperforms existing approaches in evaluating human-written, synthetic, or model-generated rationales, particularly demonstrating robustness against label leakage. We also show that RORA aligns well with human judgment, providing a more reliable and accurate measurement across diverse free-text rationales.",
+    "num_pages": 18
+}

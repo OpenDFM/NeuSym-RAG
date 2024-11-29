@@ -1,0 +1,21 @@
+{
+    "uuid": "2d89810a-052e-518e-9e01-7a4473656575",
+    "title": "“Low-Resource” Text Classification: A Parameter-Free Classification Method with Compressors",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{jiang-etal-2023-low,\n    title = \"{``}Low-Resource{''} Text Classification: A Parameter-Free Classification Method with Compressors\",\n    author = \"Jiang, Zhiying  and\n      Yang, Matthew  and\n      Tsirlin, Mikhail  and\n      Tang, Raphael  and\n      Dai, Yiqin  and\n      Lin, Jimmy\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.426\",\n    doi = \"10.18653/v1/2023.findings-acl.426\",\n    pages = \"6810--6828\",\n    abstract = \"Deep neural networks (DNNs) are often used for text classification due to their high accuracy. However, DNNs can be computationally intensive, requiring millions of parameters and large amounts of labeled data, which can make them expensive to use, to optimize, and to transfer to out-of-distribution (OOD) cases in practice. In this paper, we propose a non-parametric alternative to DNNs that{'}s easy, lightweight, and universal in text classification: a combination of a simple compressor like \\textit{gzip} with a $k$-nearest-neighbor classifier. Without any training parameters, our method achieves results that are competitive with non-pretrained deep learning methods on six in-distribution datasets.It even outperforms BERT on all five OOD datasets, including four low-resource languages. Our method also excels in the few-shot setting, where labeled data are too scarce to train DNNs effectively.\",\n}\n",
+    "authors": [
+        "Zhiying Jiang",
+        "Matthew Yang",
+        "Mikhail Tsirlin",
+        "Raphael Tang",
+        "Yiqin Dai",
+        "Jimmy Lin"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.426.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2d89810a-052e-518e-9e01-7a4473656575.pdf",
+    "abstract": "Deep neural networks (DNNs) are often used for text classification due to their high accuracy. However, DNNs can be computationally intensive, requiring millions of parameters and large amounts of labeled data, which can make them expensive to use, to optimize, and to transfer to out-of-distribution (OOD) cases in practice. In this paper, we propose a non-parametric alternative to DNNs that’s easy, lightweight, and universal in text classification: a combination of a simple compressor like gzip with a k-nearest-neighbor classifier. Without any training parameters, our method achieves results that are competitive with non-pretrained deep learning methods on six in-distribution datasets.It even outperforms BERT on all five OOD datasets, including four low-resource languages. Our method also excels in the few-shot setting, where labeled data are too scarce to train DNNs effectively.",
+    "num_pages": 19
+}

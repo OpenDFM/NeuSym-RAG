@@ -1,0 +1,17 @@
+{
+    "uuid": "ae67ceea-8fbb-5712-bd87-199f472258d9",
+    "title": "Is Your Large Language Model Knowledgeable or a Choices-Only Cheater?",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 1st Workshop on Towards Knowledgeable Language Models (KnowLLM 2024)",
+    "bibtex": "@inproceedings{balepur-rudinger-2024-large,\n    title = \"Is Your Large Language Model Knowledgeable or a Choices-Only Cheater?\",\n    author = \"Balepur, Nishant  and\n      Rudinger, Rachel\",\n    editor = \"Li, Sha  and\n      Li, Manling  and\n      Zhang, Michael JQ  and\n      Choi, Eunsol  and\n      Geva, Mor  and\n      Hase, Peter  and\n      Ji, Heng\",\n    booktitle = \"Proceedings of the 1st Workshop on Towards Knowledgeable Language Models (KnowLLM 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.knowllm-1.2\",\n    doi = \"10.18653/v1/2024.knowllm-1.2\",\n    pages = \"15--26\",\n    abstract = \"Recent work shows that large language models (LLMs) can answer multiple-choice questions using only the choices, but does this mean that MCQA leaderboard rankings of LLMs are largely influenced by abilities in choices-only settings? To answer this, we use a contrast set that probes if LLMs over-rely on choices-only shortcuts in MCQA. While previous works build contrast sets via expensive human annotations or model-generated data which can be biased, we employ graph mining to extract contrast sets from existing MCQA datasets. We use our method on UnifiedQA, a group of six commonsense reasoning datasets with high choices-only accuracy, to build an 820-question contrast set. After validating our contrast set, we test 12 LLMs, finding that these models do not exhibit reliance on choice-only shortcuts when given both the question and choices. Thus, despite the susceptibility of MCQA to high choices-only accuracy, we argue that LLMs are not obtaining high ranks on MCQA leaderboards solely due to their ability to exploit choices-only shortcuts.\",\n}\n",
+    "authors": [
+        "Nishant Balepur",
+        "Rachel Rudinger"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.knowllm-1.2.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/ae67ceea-8fbb-5712-bd87-199f472258d9.pdf",
+    "abstract": "Recent work shows that large language models (LLMs) can answer multiple-choice questions using only the choices, but does this mean that MCQA leaderboard rankings of LLMs are largely influenced by abilities in choices-only settings? To answer this, we use a contrast set that probes if LLMs over-rely on choices-only shortcuts in MCQA. While previous works build contrast sets via expensive human annotations or model-generated data which can be biased, we employ graph mining to extract contrast sets from existing MCQA datasets. We use our method on UnifiedQA, a group of six commonsense reasoning datasets with high choices-only accuracy, to build an 820-question contrast set. After validating our contrast set, we test 12 LLMs, finding that these models do not exhibit reliance on choice-only shortcuts when given both the question and choices. Thus, despite the susceptibility of MCQA to high choices-only accuracy, we argue that LLMs are not obtaining high ranks on MCQA leaderboards solely due to their ability to exploit choices-only shortcuts.",
+    "num_pages": 12
+}

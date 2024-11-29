@@ -1,0 +1,19 @@
+{
+    "uuid": "a63a3e5f-5860-5008-ae0e-3ba7726b0615",
+    "title": "Socratic Pretraining: Question-Driven Pretraining for Controllable Summarization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{pagnoni-etal-2023-socratic,\n    title = \"Socratic Pretraining: Question-Driven Pretraining for Controllable Summarization\",\n    author = \"Pagnoni, Artidoro  and\n      Fabbri, Alex  and\n      Kryscinski, Wojciech  and\n      Wu, Chien-Sheng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.713\",\n    doi = \"10.18653/v1/2023.acl-long.713\",\n    pages = \"12737--12755\",\n    abstract = \"In long document controllable summarization, where labeled data is scarce, pretrained models struggle to adapt to the task and effectively respond to user queries. In this paper, we introduce Socratic pretraining, a question-driven, unsupervised pretraining objective specifically designed to improve controllability in summarization tasks. By training a model to generate and answer relevant questions in a given context, Socratic pretraining enables the model to more effectively adhere to user-provided queries and identify relevant content to be summarized. We demonstrate the effectiveness of this approach through extensive experimentation on two summarization domains, short stories and dialogue, and multiple control strategies: keywords, questions, and factoid QA pairs. Our pretraining method relies only on unlabeled documents and a question generation system and outperforms pre-finetuning approaches that use additional supervised data. Furthermore, our results show that Socratic pretraining cuts task-specific labeled data requirements in half, is more faithful to user-provided queries, and achieves state-of-the-art performance on QMSum and SQuALITY.\",\n}\n",
+    "authors": [
+        "Artidoro Pagnoni",
+        "Alex Fabbri",
+        "Wojciech Kryscinski",
+        "Chien-Sheng Wu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.713.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a63a3e5f-5860-5008-ae0e-3ba7726b0615.pdf",
+    "abstract": "In long document controllable summarization, where labeled data is scarce, pretrained models struggle to adapt to the task and effectively respond to user queries. In this paper, we introduce Socratic pretraining, a question-driven, unsupervised pretraining objective specifically designed to improve controllability in summarization tasks. By training a model to generate and answer relevant questions in a given context, Socratic pretraining enables the model to more effectively adhere to user-provided queries and identify relevant content to be summarized. We demonstrate the effectiveness of this approach through extensive experimentation on two summarization domains, short stories and dialogue, and multiple control strategies: keywords, questions, and factoid QA pairs. Our pretraining method relies only on unlabeled documents and a question generation system and outperforms pre-finetuning approaches that use additional supervised data. Furthermore, our results show that Socratic pretraining cuts task-specific labeled data requirements in half, is more faithful to user-provided queries, and achieves state-of-the-art performance on QMSum and SQuALITY.",
+    "num_pages": 19
+}

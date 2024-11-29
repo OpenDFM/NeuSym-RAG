@@ -1,0 +1,22 @@
+{
+    "uuid": "5fb0eccc-8342-58e3-ab8d-c3e72a29256d",
+    "title": "Your Transformer is Secretly Linear",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{razzhigaev-etal-2024-transformer,\n    title = \"Your Transformer is Secretly Linear\",\n    author = \"Razzhigaev, Anton  and\n      Mikhalchuk, Matvey  and\n      Goncharova, Elizaveta  and\n      Gerasimenko, Nikolai  and\n      Oseledets, Ivan  and\n      Dimitrov, Denis  and\n      Kuznetsov, Andrey\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.293\",\n    doi = \"10.18653/v1/2024.acl-long.293\",\n    pages = \"5376--5384\",\n    abstract = \"This paper reveals a novel linear characteristic exclusive to transformer decoders, including models like GPT, LLaMA, OPT, BLOOM and others. We analyze embedding transformations between sequential layers, uncovering an almost perfect linear relationship (Procrustes similarity score of 0.99). However, linearity decreases when the residual component is removed, due to a consistently low transformer layer output norm. Our experiments show that pruning or linearly approximating some of the layers does not impact loss or model performance significantly. Moreover, we introduce a cosine-similarity-based regularization in our pretraining experiments on smaller models, aimed at reducing layer linearity. This regularization not only improves performance metrics on benchmarks like Tiny Stories and SuperGLUE but as well successfully decreases the linearity of the models. This study challenges the existing understanding of transformer architectures, suggesting that their operation may be more linear than previously assumed.\",\n}\n",
+    "authors": [
+        "Anton Razzhigaev",
+        "Matvey Mikhalchuk",
+        "Elizaveta Goncharova",
+        "Nikolai Gerasimenko",
+        "Ivan Oseledets",
+        "Denis Dimitrov",
+        "Andrey Kuznetsov"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.293.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/5fb0eccc-8342-58e3-ab8d-c3e72a29256d.pdf",
+    "abstract": "This paper reveals a novel linear characteristic exclusive to transformer decoders, including models like GPT, LLaMA, OPT, BLOOM and others. We analyze embedding transformations between sequential layers, uncovering an almost perfect linear relationship (Procrustes similarity score of 0.99). However, linearity decreases when the residual component is removed, due to a consistently low transformer layer output norm. Our experiments show that pruning or linearly approximating some of the layers does not impact loss or model performance significantly. Moreover, we introduce a cosine-similarity-based regularization in our pretraining experiments on smaller models, aimed at reducing layer linearity. This regularization not only improves performance metrics on benchmarks like Tiny Stories and SuperGLUE but as well successfully decreases the linearity of the models. This study challenges the existing understanding of transformer architectures, suggesting that their operation may be more linear than previously assumed.",
+    "num_pages": 9
+}

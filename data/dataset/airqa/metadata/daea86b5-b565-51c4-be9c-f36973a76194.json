@@ -1,0 +1,21 @@
+{
+    "uuid": "daea86b5-b565-51c4-be9c-f36973a76194",
+    "title": "Domain-Aware k-Nearest-Neighbor Knowledge Distillation for Machine Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{wang-etal-2024-domain-aware,\n    title = \"Domain-Aware $k$-Nearest-Neighbor Knowledge Distillation for Machine Translation\",\n    author = \"Wang, Zhexuan  and\n      Liu, Shudong  and\n      Liu, Xuebo  and\n      Zhang, Miao  and\n      Wong, Derek  and\n      Zhang, Min\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.563\",\n    doi = \"10.18653/v1/2024.findings-acl.563\",\n    pages = \"9458--9469\",\n    abstract = \"$k$NN-MT has utilized neighborhood knowledge for auxiliary decoding, significantly improving translation performance. Subsequently, $k$NN-KD transitions the use of neighborhood knowledge from the decoding phase to the training phase, to address the temporal and spatial inefficiencies inherent in $k$NN-MT. However, $k$NN-KD transfers all the $k$NN knowledge arbitrarily, which has the potential to restrict the learning of student models. In this paper, we propose a novel domain-aware $k$NN-KD method, which filters out domain-relevant neighborhood knowledge for learning in the distillation process. Notably, this entire process exclusively utilizes the neighborhood knowledge of the original model, eliminating the need for establishing any additional datastores. Experiments on four domain translation tasks demonstrate that our method achieves state-of-the-art performance, realizing an average gain of 1.55 COMET and 1.42 BLEU scores, by further enhancing the translation of rare words. Source code can be accessed at https://github.com/wangzx1219/Dk-KD.\",\n}\n",
+    "authors": [
+        "Zhexuan Wang",
+        "Shudong Liu",
+        "Xuebo Liu",
+        "Miao Zhang",
+        "Derek Wong",
+        "Min Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.563.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/daea86b5-b565-51c4-be9c-f36973a76194.pdf",
+    "abstract": "kNN-MT has utilized neighborhood knowledge for auxiliary decoding, significantly improving translation performance. Subsequently, kNN-KD transitions the use of neighborhood knowledge from the decoding phase to the training phase, to address the temporal and spatial inefficiencies inherent in kNN-MT. However, kNN-KD transfers all the kNN knowledge arbitrarily, which has the potential to restrict the learning of student models. In this paper, we propose a novel domain-aware kNN-KD method, which filters out domain-relevant neighborhood knowledge for learning in the distillation process. Notably, this entire process exclusively utilizes the neighborhood knowledge of the original model, eliminating the need for establishing any additional datastores. Experiments on four domain translation tasks demonstrate that our method achieves state-of-the-art performance, realizing an average gain of 1.55 COMET and 1.42 BLEU scores, by further enhancing the translation of rare words. Source code can be accessed at https://github.com/wangzx1219/Dk-KD.",
+    "num_pages": 12
+}

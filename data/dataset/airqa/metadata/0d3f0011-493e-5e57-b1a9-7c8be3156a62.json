@@ -1,0 +1,19 @@
+{
+    "uuid": "0d3f0011-493e-5e57-b1a9-7c8be3156a62",
+    "title": "Whose Preferences? Differences in Fairness Preferences and Their Impact on the Fairness of AI Utilizing Human Feedback",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{lerner-etal-2024-whose,\n    title = \"Whose Preferences? Differences in Fairness Preferences and Their Impact on the Fairness of {AI} Utilizing Human Feedback\",\n    author = \"Lerner, Maria  and\n      Dorner, Florian  and\n      Ash, Elliott  and\n      Goel, Naman\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.509\",\n    doi = \"10.18653/v1/2024.acl-long.509\",\n    pages = \"9403--9425\",\n    abstract = \"There is a growing body of work on learning from human feedback to align various aspects of machine learning systems with human values and preferences. We consider the setting of fairness in content moderation, in which human feedback is used to determine how two comments {---} referencing different sensitive attribute groups {---} should be treated in comparison to one another. With a novel dataset collected from Prolific and MTurk, we find significant gaps in fairness preferences depending on the race, age, political stance, educational level, and LGBTQ+ identity of annotators. We also demonstrate that demographics mentioned in text have a strong influence on how users perceive individual fairness in moderation. Further, we find that differences also exist in downstream classifiers trained to predict human preferences. Finally, we observe that an ensemble, giving equal weight to classifiers trained on annotations from different demographics, performs better for different demographic intersections; compared to a single classifier that gives equal weight to each annotation.\",\n}\n",
+    "authors": [
+        "Maria Lerner",
+        "Florian Dorner",
+        "Elliott Ash",
+        "Naman Goel"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.509.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0d3f0011-493e-5e57-b1a9-7c8be3156a62.pdf",
+    "abstract": "There is a growing body of work on learning from human feedback to align various aspects of machine learning systems with human values and preferences. We consider the setting of fairness in content moderation, in which human feedback is used to determine how two comments — referencing different sensitive attribute groups — should be treated in comparison to one another. With a novel dataset collected from Prolific and MTurk, we find significant gaps in fairness preferences depending on the race, age, political stance, educational level, and LGBTQ+ identity of annotators. We also demonstrate that demographics mentioned in text have a strong influence on how users perceive individual fairness in moderation. Further, we find that differences also exist in downstream classifiers trained to predict human preferences. Finally, we observe that an ensemble, giving equal weight to classifiers trained on annotations from different demographics, performs better for different demographic intersections; compared to a single classifier that gives equal weight to each annotation.",
+    "num_pages": 23
+}

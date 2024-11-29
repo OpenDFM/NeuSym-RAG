@@ -1,0 +1,24 @@
+{
+    "uuid": "6df6b3b4-d4e2-5bc7-bc26-8bde9be0e3cc",
+    "title": "Pre-training Language Model as a Multi-perspective Course Learner",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{chen-etal-2023-pre,\n    title = \"Pre-training Language Model as a Multi-perspective Course Learner\",\n    author = \"Chen, Beiduo  and\n      Huang, Shaohan  and\n      Zhang, Zihan  and\n      Guo, Wu  and\n      Ling, Zhenhua  and\n      Huang, Haizhen  and\n      Wei, Furu  and\n      Deng, Weiwei  and\n      Zhang, Qi\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.9\",\n    doi = \"10.18653/v1/2023.findings-acl.9\",\n    pages = \"114--128\",\n    abstract = \"ELECTRA, the generator-discriminator pre-training framework, has achieved impressive semantic construction capability among various downstream tasks. Despite the convincing performance, ELECTRA still faces the challenges of monotonous training and deficient interaction. Generator with only masked language modeling (MLM) leads to biased learning and label imbalance for discriminator, decreasing learning efficiency; no explicit feedback loop from discriminator to generator results in the chasm between these two components, underutilizing the course learning. In this study, a multi-perspective course learning (MCL) method is proposed to fetch a many degrees and visual angles for sample-efficient pre-training, and to fully leverage the relationship between generator and discriminator. Concretely, three self-supervision courses are designed to alleviate inherent flaws of MLM and balance the label in a multi-perspective way. Besides, two self-correction courses are proposed to bridge the chasm between the two encoders by creating a {``}correction notebook{''} for secondary-supervision. Moreover, a course soups trial is conducted to solve the {``}tug-of-war{''} dynamics problem of MCL, evolving a stronger pre-trained model. Experimental results show that our method significantly improves ELECTRA{'}s average performance by 2.8{\\%} and 3.2{\\%} absolute points respectively on GLUE and SQuAD 2.0 benchmarks, and overshadows recent advanced ELECTRA-style models under the same settings. The pre-trained MCL model is available at \\url{https://huggingface.co/McmanusChen/MCL-base}.\",\n}\n",
+    "authors": [
+        "Beiduo Chen",
+        "Shaohan Huang",
+        "Zihan Zhang",
+        "Wu Guo",
+        "Zhenhua Ling",
+        "Haizhen Huang",
+        "Furu Wei",
+        "Weiwei Deng",
+        "Qi Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.9.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/6df6b3b4-d4e2-5bc7-bc26-8bde9be0e3cc.pdf",
+    "abstract": "ELECTRA, the generator-discriminator pre-training framework, has achieved impressive semantic construction capability among various downstream tasks. Despite the convincing performance, ELECTRA still faces the challenges of monotonous training and deficient interaction. Generator with only masked language modeling (MLM) leads to biased learning and label imbalance for discriminator, decreasing learning efficiency; no explicit feedback loop from discriminator to generator results in the chasm between these two components, underutilizing the course learning. In this study, a multi-perspective course learning (MCL) method is proposed to fetch a many degrees and visual angles for sample-efficient pre-training, and to fully leverage the relationship between generator and discriminator. Concretely, three self-supervision courses are designed to alleviate inherent flaws of MLM and balance the label in a multi-perspective way. Besides, two self-correction courses are proposed to bridge the chasm between the two encoders by creating a “correction notebook” for secondary-supervision. Moreover, a course soups trial is conducted to solve the “tug-of-war” dynamics problem of MCL, evolving a stronger pre-trained model. Experimental results show that our method significantly improves ELECTRA’s average performance by 2.8% and 3.2% absolute points respectively on GLUE and SQuAD 2.0 benchmarks, and overshadows recent advanced ELECTRA-style models under the same settings. The pre-trained MCL model is available at https://huggingface.co/McmanusChen/MCL-base.",
+    "num_pages": 15
+}

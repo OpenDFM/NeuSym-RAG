@@ -1,0 +1,18 @@
+{
+    "uuid": "8b3137f7-2a0a-5007-ab6a-4a57aa57d8e3",
+    "title": "Improving Factuality of Abstractive Summarization without Sacrificing Summary Quality",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{dixit-etal-2023-improving,\n    title = \"Improving Factuality of Abstractive Summarization without Sacrificing Summary Quality\",\n    author = \"Dixit, Tanay  and\n      Wang, Fei  and\n      Chen, Muhao\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.78\",\n    doi = \"10.18653/v1/2023.acl-short.78\",\n    pages = \"902--913\",\n    abstract = \"Improving factual consistency of abstractive summarization has been a widely studied topic. However, most of the prior works on training factuality-aware models have ignored the negative effect it has on summary quality. We propose {pasted macro {`}MODEL{'}}name (i.e. Effective Factual Summarization), a candidate summary generation and ranking technique to improve summary factuality without sacrificing quality. We show that using a contrastive learning framework with our refined candidate summaries leads to significant gains on both factuality and similarity-based metrics. Specifically, we propose a ranking strategy in which we effectively combine two metrics, thereby preventing any conflict during training. Models trained using our approach show up to 6 points of absolute improvement over the base model with respect to FactCC on XSUM and 11 points on CNN/DM, without negatively affecting either similarity-based metrics or absractiveness.\",\n}\n",
+    "authors": [
+        "Tanay Dixit",
+        "Fei Wang",
+        "Muhao Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.78.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8b3137f7-2a0a-5007-ab6a-4a57aa57d8e3.pdf",
+    "abstract": "Improving factual consistency of abstractive summarization has been a widely studied topic. However, most of the prior works on training factuality-aware models have ignored the negative effect it has on summary quality. We propose {pasted macro ‘MODEL’}name (i.e. Effective Factual Summarization), a candidate summary generation and ranking technique to improve summary factuality without sacrificing quality. We show that using a contrastive learning framework with our refined candidate summaries leads to significant gains on both factuality and similarity-based metrics. Specifically, we propose a ranking strategy in which we effectively combine two metrics, thereby preventing any conflict during training. Models trained using our approach show up to 6 points of absolute improvement over the base model with respect to FactCC on XSUM and 11 points on CNN/DM, without negatively affecting either similarity-based metrics or absractiveness.",
+    "num_pages": 12
+}

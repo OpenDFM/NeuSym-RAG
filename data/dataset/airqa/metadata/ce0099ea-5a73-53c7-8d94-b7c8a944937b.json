@@ -1,0 +1,17 @@
+{
+    "uuid": "ce0099ea-5a73-53c7-8d94-b7c8a944937b",
+    "title": "Semi-Supervised Domain Adaptation for Emotion-Related Tasks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{hosseini-caragea-2023-semi,\n    title = \"Semi-Supervised Domain Adaptation for Emotion-Related Tasks\",\n    author = \"Hosseini, Mahshid  and\n      Caragea, Cornelia\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.333\",\n    doi = \"10.18653/v1/2023.findings-acl.333\",\n    pages = \"5402--5410\",\n    abstract = \"Semi-supervised domain adaptation (SSDA) adopts a model trained from a label-rich source domain to a new but related domain with a few labels of target data. It is shown that, in an SSDA setting, a simple combination of domain adaptation (DA) with semi-supervised learning (SSL) techniques often fails to effectively utilize the target supervision and cannot address distribution shifts across different domains due to the training data bias toward the source-labeled samples. In this paper, inspired by the co-learning of multiple classifiers for the computer vision tasks, we propose to decompose the SSDA framework for emotion-related tasks into two subcomponents of unsupervised domain adaptation (UDA) from the source to the target domain and semi-supervised learning (SSL) in the target domain where the two models iteratively teach each other by interchanging their high confident predictions. We further propose a novel data cartography-based regularization technique for pseudo-label denoising that employs training dynamics to further hone our models{'} performance. We publicly release our code.\",\n}\n",
+    "authors": [
+        "Mahshid Hosseini",
+        "Cornelia Caragea"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.333.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ce0099ea-5a73-53c7-8d94-b7c8a944937b.pdf",
+    "abstract": "Semi-supervised domain adaptation (SSDA) adopts a model trained from a label-rich source domain to a new but related domain with a few labels of target data. It is shown that, in an SSDA setting, a simple combination of domain adaptation (DA) with semi-supervised learning (SSL) techniques often fails to effectively utilize the target supervision and cannot address distribution shifts across different domains due to the training data bias toward the source-labeled samples. In this paper, inspired by the co-learning of multiple classifiers for the computer vision tasks, we propose to decompose the SSDA framework for emotion-related tasks into two subcomponents of unsupervised domain adaptation (UDA) from the source to the target domain and semi-supervised learning (SSL) in the target domain where the two models iteratively teach each other by interchanging their high confident predictions. We further propose a novel data cartography-based regularization technique for pseudo-label denoising that employs training dynamics to further hone our models’ performance. We publicly release our code.",
+    "num_pages": 9
+}

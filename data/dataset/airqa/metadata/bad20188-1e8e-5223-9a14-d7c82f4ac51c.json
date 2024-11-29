@@ -1,0 +1,21 @@
+{
+    "uuid": "bad20188-1e8e-5223-9a14-d7c82f4ac51c",
+    "title": "Translatotron-V(ison): An End-to-End Model for In-Image Machine Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{lan-etal-2024-translatotron,\n    title = \"Translatotron-{V}(ison): An End-to-End Model for In-Image Machine Translation\",\n    author = \"Lan, Zhibin  and\n      Niu, Liqiang  and\n      Meng, Fandong  and\n      Zhou, Jie  and\n      Zhang, Min  and\n      Su, Jinsong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.325\",\n    doi = \"10.18653/v1/2024.findings-acl.325\",\n    pages = \"5472--5485\",\n}\n",
+    "authors": [
+        "Zhibin Lan",
+        "Liqiang Niu",
+        "Fandong Meng",
+        "Jie Zhou",
+        "Min Zhang",
+        "Jinsong Su"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.325.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/bad20188-1e8e-5223-9a14-d7c82f4ac51c.pdf",
+    "abstract": "In-image machine translation (IIMT) aims to translate an image containing texts in source language into an image containing translations in target language. In this regard, conventional cascaded methods suffer from issues such as error propagation, massive parameters, and difficulties in deployment and retaining visual characteristics of the input image. Thus, constructing end-to-end models has become an option, which, however, faces two main challenges: 1) the huge modeling burden, as it is required to simultaneously learn alignment across languages and preserve the visual characteristics of the input image; 2) the difficulties of directly predicting excessively lengthy pixel sequences. In this paper, we propose Translatotron-V(ision), an end-to-end IIMT model consisting of four modules. In addition to an image encoder, and an image decoder, our model contains a target text decoder and an image tokenizer. Among them, the target text decoder is used to alleviate the language alignment burden, and the image tokenizer converts long sequences of pixels into shorter sequences of visual tokens, preventing the model from focusing on low-level visual features. Besides, we present a two-stage training framework for our model to assist the model in learning alignment across modalities and languages. Finally, we propose a locationaware evaluation metric called Structure-BLEU to assess the translation quality of the generated images. Experimental results demonstrate that our model achieves competitive performance compared to cascaded models with only 70.9% of parameters, and significantly outperforms the pixel-level end-to-end IIMT model.1",
+    "num_pages": 14
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "5f9b19eb-cb94-5289-ba8d-7cc715ad03c9",
+    "title": "Description Boosting for Zero-Shot Entity and Relation Classification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{picco-etal-2024-description,\n    title = \"Description Boosting for Zero-Shot Entity and Relation Classification\",\n    author = \"Picco, Gabriele  and\n      Fuchs, Leopold  and\n      Mart{\\'\\i}nez Galindo, Marcos  and\n      Purpura, Alberto  and\n      L{\\'o}pez, Vanessa  and\n      Thanh Lam, Hoang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.562\",\n    doi = \"10.18653/v1/2024.findings-acl.562\",\n    pages = \"9441--9457\",\n    abstract = \"Zero-shot entity and relation classification models leverage available external information of unseen classes {--} e.g., textual descriptions {--} to annotate input text data. Thanks to the minimum data requirement, Zero-Shot Learning (ZSL) methods have high value in practice, especially in applications where labeled data is scarce. Even though recent research in ZSL has demonstrated significant results, our analysis reveals that those methods are sensitive to provided textual descriptions of entities (or relations). Even a minor modification of descriptions can lead to a change in the decision boundary between entity (or relation) classes. In this paper, we formally define the problem of identifying effective descriptions for zero shot inference. We propose a strategy for generating variations of an initial description, a heuristic for ranking them and an ensemble method capable of boosting the predictions of zero-shot models through description enhancement. Empirical results on four different entity and relation classification datasets show that our proposed method outperform existing approaches and achieve new SOTA results on these datasets under the ZSL settings. The source code of the proposed solutions and the evaluation framework are open-sourced.\",\n}\n",
+    "authors": [
+        "Gabriele Picco",
+        "Leopold Fuchs",
+        "Marcos Martínez Galindo",
+        "Alberto Purpura",
+        "Vanessa López",
+        "Hoang Thanh Lam"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.562.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/5f9b19eb-cb94-5289-ba8d-7cc715ad03c9.pdf",
+    "abstract": "Zero-shot entity and relation classification models leverage available external information of unseen classes – e.g., textual descriptions – to annotate input text data. Thanks to the minimum data requirement, Zero-Shot Learning (ZSL) methods have high value in practice, especially in applications where labeled data is scarce. Even though recent research in ZSL has demonstrated significant results, our analysis reveals that those methods are sensitive to provided textual descriptions of entities (or relations). Even a minor modification of descriptions can lead to a change in the decision boundary between entity (or relation) classes. In this paper, we formally define the problem of identifying effective descriptions for zero shot inference. We propose a strategy for generating variations of an initial description, a heuristic for ranking them and an ensemble method capable of boosting the predictions of zero-shot models through description enhancement. Empirical results on four different entity and relation classification datasets show that our proposed method outperform existing approaches and achieve new SOTA results on these datasets under the ZSL settings. The source code of the proposed solutions and the evaluation framework are open-sourced.",
+    "num_pages": 17
+}

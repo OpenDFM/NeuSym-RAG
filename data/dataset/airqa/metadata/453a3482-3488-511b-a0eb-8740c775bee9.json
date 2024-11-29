@@ -1,0 +1,20 @@
+{
+    "uuid": "453a3482-3488-511b-a0eb-8740c775bee9",
+    "title": "Finding the Pillars of Strength for Multi-Head Attention",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ni-etal-2023-finding,\n    title = \"Finding the Pillars of Strength for Multi-Head Attention\",\n    author = \"Ni, Jinjie  and\n      Mao, Rui  and\n      Yang, Zonglin  and\n      Lei, Han  and\n      Cambria, Erik\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.812\",\n    doi = \"10.18653/v1/2023.acl-long.812\",\n    pages = \"14526--14540\",\n    abstract = \"Recent studies have revealed some issues of Multi-Head Attention (MHA), e.g., redundancy and over-parameterization. Specifically, the heads of MHA were originally designed to attend to information from different representation subspaces, whereas prior studies found that some attention heads likely learn similar features and can be pruned without harming performance. Inspired by the minimum-redundancy feature selection, we assume that focusing on the most representative and distinctive features with minimum resources can mitigate the above issues and lead to more effective and efficient MHAs. In particular, we propose Grouped Head Attention, trained with a self-supervised group constraint that group attention heads, where each group focuses on an essential but distinctive feature subset. We additionally propose a Voting-to-Stay procedure to remove redundant heads, thus achieving a transformer with lighter weights. Extensive experiments are consistent with our hypothesis. Moreover, our method achieves significant performance gains on three well-established tasks while considerably compressing parameters.\",\n}\n",
+    "authors": [
+        "Jinjie Ni",
+        "Rui Mao",
+        "Zonglin Yang",
+        "Han Lei",
+        "Erik Cambria"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.812.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/453a3482-3488-511b-a0eb-8740c775bee9.pdf",
+    "abstract": "Recent studies have revealed some issues of Multi-Head Attention (MHA), e.g., redundancy and over-parameterization. Specifically, the heads of MHA were originally designed to attend to information from different representation subspaces, whereas prior studies found that some attention heads likely learn similar features and can be pruned without harming performance. Inspired by the minimum-redundancy feature selection, we assume that focusing on the most representative and distinctive features with minimum resources can mitigate the above issues and lead to more effective and efficient MHAs. In particular, we propose Grouped Head Attention, trained with a self-supervised group constraint that group attention heads, where each group focuses on an essential but distinctive feature subset. We additionally propose a Voting-to-Stay procedure to remove redundant heads, thus achieving a transformer with lighter weights. Extensive experiments are consistent with our hypothesis. Moreover, our method achieves significant performance gains on three well-established tasks while considerably compressing parameters.",
+    "num_pages": 15
+}

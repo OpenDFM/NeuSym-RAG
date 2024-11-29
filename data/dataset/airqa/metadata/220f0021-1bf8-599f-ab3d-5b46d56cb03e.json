@@ -1,0 +1,20 @@
+{
+    "uuid": "220f0021-1bf8-599f-ab3d-5b46d56cb03e",
+    "title": "VerifiNER: Verification-augmented NER via Knowledge-grounded Reasoning with Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{kim-etal-2024-verifiner,\n    title = \"{V}erifi{NER}: Verification-augmented {NER} via Knowledge-grounded Reasoning with Large Language Models\",\n    author = \"Kim, Seoyeon  and\n      Seo, Kwangwook  and\n      Chae, Hyungjoo  and\n      Yeo, Jinyoung  and\n      Lee, Dongha\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.134\",\n    doi = \"10.18653/v1/2024.acl-long.134\",\n    pages = \"2441--2461\",\n    abstract = \"Recent approaches in domain-specific named entity recognition (NER), such as biomedical NER, have shown remarkable advances. However, they still lack of faithfulness, producing erroneous predictions. We assume that knowledge of entities can be useful in verifying the correctness of the predictions. Despite the usefulness of knowledge, resolving such errors with knowledge is nontrivial, since the knowledge itself does not directly indicate the ground-truth label. To this end, we propose VerifiNER, a post-hoc verification framework that identifies errors from existing NER methods using knowledge and revises them into more faithful predictions. Our framework leverages the reasoning abilities of large language models to adequately ground on knowledge and the contextual information in the verification process. We validate effectiveness of VerifiNER through extensive experiments on biomedical datasets. The results suggest that VerifiNER can successfully verify errors from existing models as a model-agnostic approach. Further analyses on out-of-domain and low-resource settings show the usefulness of VerifiNER on real-world applications.\",\n}\n",
+    "authors": [
+        "Seoyeon Kim",
+        "Kwangwook Seo",
+        "Hyungjoo Chae",
+        "Jinyoung Yeo",
+        "Dongha Lee"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.134.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/220f0021-1bf8-599f-ab3d-5b46d56cb03e.pdf",
+    "abstract": "Recent approaches in domain-specific named entity recognition (NER), such as biomedical NER, have shown remarkable advances. However, they still lack of faithfulness, producing erroneous predictions. We assume that knowledge of entities can be useful in verifying the correctness of the predictions. Despite the usefulness of knowledge, resolving such errors with knowledge is nontrivial, since the knowledge itself does not directly indicate the ground-truth label. To this end, we propose VerifiNER, a post-hoc verification framework that identifies errors from existing NER methods using knowledge and revises them into more faithful predictions. Our framework leverages the reasoning abilities of large language models to adequately ground on knowledge and the contextual information in the verification process. We validate effectiveness of VerifiNER through extensive experiments on biomedical datasets. The results suggest that VerifiNER can successfully verify errors from existing models as a model-agnostic approach. Further analyses on out-of-domain and low-resource settings show the usefulness of VerifiNER on real-world applications.",
+    "num_pages": 21
+}

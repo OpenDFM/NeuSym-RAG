@@ -1,0 +1,20 @@
+{
+    "uuid": "e897ad23-81d4-55ea-aa69-64fa2842b451",
+    "title": "A Universal Discriminator for Zero-Shot Generalization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{xu-etal-2023-universal,\n    title = \"A Universal Discriminator for Zero-Shot Generalization\",\n    author = \"Xu, Haike  and\n      Lin, Zongyu  and\n      Zhou, Jing  and\n      Zheng, Yanan  and\n      Yang, Zhilin\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.589\",\n    doi = \"10.18653/v1/2023.acl-long.589\",\n    pages = \"10559--10575\",\n    abstract = \"Generative modeling has been the dominant approach for large-scale pretraining and zero-shot generalization. In this work, we challenge this convention by showing that discriminative approaches perform substantially better than generative ones on a large number of NLP tasks. Technically, we train a single discriminator to predict whether a text sample comes from the true data distribution, similar to GANs. Since many NLP tasks can be formulated as selecting from a few options, we use this discriminator to predict the concatenation of input and which option has the highest probability of coming from the true data distribution. This simple formulation achieves state-of-the-art zero-shot results on the T0 benchmark, outperforming T0 by 16.0{\\%}, 7.8{\\%}, and 11.5{\\%} respectively on different scales. In the finetuning setting, our approach also achieves new state-of-the-art results on a wide range of NLP tasks, with only 1/4 parameters of previous methods. Meanwhile, our approach requires minimal prompting efforts, which largely improves robustness and is essential for real-world applications. Furthermore, we also jointly train a generalized UD in combination with generative tasks, which maintains its advantage on discriminative tasks and simultaneously works on generative tasks.\",\n}\n",
+    "authors": [
+        "Haike Xu",
+        "Zongyu Lin",
+        "Jing Zhou",
+        "Yanan Zheng",
+        "Zhilin Yang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.589.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/e897ad23-81d4-55ea-aa69-64fa2842b451.pdf",
+    "abstract": "Generative modeling has been the dominant approach for large-scale pretraining and zero-shot generalization. In this work, we challenge this convention by showing that discriminative approaches perform substantially better than generative ones on a large number of NLP tasks. Technically, we train a single discriminator to predict whether a text sample comes from the true data distribution, similar to GANs. Since many NLP tasks can be formulated as selecting from a few options, we use this discriminator to predict the concatenation of input and which option has the highest probability of coming from the true data distribution. This simple formulation achieves state-of-the-art zero-shot results on the T0 benchmark, outperforming T0 by 16.0%, 7.8%, and 11.5% respectively on different scales. In the finetuning setting, our approach also achieves new state-of-the-art results on a wide range of NLP tasks, with only 1/4 parameters of previous methods. Meanwhile, our approach requires minimal prompting efforts, which largely improves robustness and is essential for real-world applications. Furthermore, we also jointly train a generalized UD in combination with generative tasks, which maintains its advantage on discriminative tasks and simultaneously works on generative tasks.",
+    "num_pages": 17
+}

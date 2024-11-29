@@ -1,0 +1,23 @@
+{
+    "uuid": "6823c24c-8053-5f80-b06f-819ea63903af",
+    "title": "DeCoT: Debiasing Chain-of-Thought for Knowledge-Intensive Tasks in Large Language Models via Causal Intervention",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wu-etal-2024-decot,\n    title = \"{D}e{C}o{T}: Debiasing Chain-of-Thought for Knowledge-Intensive Tasks in Large Language Models via Causal Intervention\",\n    author = \"Wu, Junda  and\n      Yu, Tong  and\n      Chen, Xiang  and\n      Wang, Haoliang  and\n      Rossi, Ryan  and\n      Kim, Sungchul  and\n      Rao, Anup  and\n      McAuley, Julian\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.758\",\n    doi = \"10.18653/v1/2024.acl-long.758\",\n    pages = \"14073--14087\",\n    abstract = \"Large language models (LLMs) often require task-relevant knowledge to augment their internal knowledge through prompts. However, simply injecting external knowledge into prompts does not guarantee that LLMs can identify and use relevant information in the prompts to conduct chain-of-thought reasoning, especially when the LLM{'}s internal knowledge is derived from biased information on the pretraining data. In this paper, we propose a novel causal view to formally explain the internal knowledge bias of LLMs via a Structural Causal Model (SCM). We review the chain-of-thought (CoT) prompting from a causal perspective and discover that the biased information from pretrained models can impair LLMs{'} reasoning abilities. When the CoT reasoning paths are misled by irrelevant information from prompts and are logically incorrect, simply editing factual information is insufficient to reach the correct answer. To estimate the confounding effect on CoT reasoning in LLMs, we use external knowledge as an instrumental variable. We further introduce CoT as a mediator to conduct front-door adjustment and generate logically correct CoTs where the spurious correlation between LLMs{'} pretrained knowledge and task queries is reduced. With extensive experiments, we validate that our approach enables more accurate CoT reasoning and enhances LLM generation on knowledge-intensive tasks.\",\n}\n",
+    "authors": [
+        "Junda Wu",
+        "Tong Yu",
+        "Xiang Chen",
+        "Haoliang Wang",
+        "Ryan Rossi",
+        "Sungchul Kim",
+        "Anup Rao",
+        "Julian McAuley"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.758.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/6823c24c-8053-5f80-b06f-819ea63903af.pdf",
+    "abstract": "Large language models (LLMs) often require task-relevant knowledge to augment their internal knowledge through prompts. However, simply injecting external knowledge into prompts does not guarantee that LLMs can identify and use relevant information in the prompts to conduct chain-of-thought reasoning, especially when the LLM’s internal knowledge is derived from biased information on the pretraining data. In this paper, we propose a novel causal view to formally explain the internal knowledge bias of LLMs via a Structural Causal Model (SCM). We review the chain-of-thought (CoT) prompting from a causal perspective and discover that the biased information from pretrained models can impair LLMs’ reasoning abilities. When the CoT reasoning paths are misled by irrelevant information from prompts and are logically incorrect, simply editing factual information is insufficient to reach the correct answer. To estimate the confounding effect on CoT reasoning in LLMs, we use external knowledge as an instrumental variable. We further introduce CoT as a mediator to conduct front-door adjustment and generate logically correct CoTs where the spurious correlation between LLMs’ pretrained knowledge and task queries is reduced. With extensive experiments, we validate that our approach enables more accurate CoT reasoning and enhances LLM generation on knowledge-intensive tasks.",
+    "num_pages": 15
+}

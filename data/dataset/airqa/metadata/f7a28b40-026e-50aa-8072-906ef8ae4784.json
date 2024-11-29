@@ -1,0 +1,22 @@
+{
+    "uuid": "f7a28b40-026e-50aa-8072-906ef8ae4784",
+    "title": "Answering Ambiguous Questions via Iterative Prompting",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{sun-etal-2023-answering,\n    title = \"Answering Ambiguous Questions via Iterative Prompting\",\n    author = \"Sun, Weiwei  and\n      Cai, Hengyi  and\n      Chen, Hongshen  and\n      Ren, Pengjie  and\n      Chen, Zhumin  and\n      de Rijke, Maarten  and\n      Ren, Zhaochun\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.424\",\n    doi = \"10.18653/v1/2023.acl-long.424\",\n    pages = \"7669--7683\",\n    abstract = \"In open-domain question answering, due to the ambiguity of questions, multiple plausible answers may exist. To provide feasible answers to an ambiguous question,one approach is to directly predict all valid answers, but this can struggle with balancing relevance and diversity. An alternative is to gather candidate answers and aggregate them, but this method can be computationally costly and may neglect dependencies among answers. In this paper, we present AmbigPrompt to address the imperfections of existing approaches to answering ambiguous questions. Specifically, we integrate an answering model with a prompting model in an iterative manner. The prompting model adaptively tracks the reading process and progressively triggers the answering model to compose distinct and relevant answers. Additionally, we develop a task-specific post-pretraining approach for both the answering model and the prompting model, which greatly improves the performance of our framework. Empirical studies on two commonly-used open benchmarks show that AmbigPrompt achieves state-of-the-art or competitive results while using less memory and having a lower inference latency than competing approaches. Additionally, AmbigPrompt also performs well in low-resource settings.\",\n}\n",
+    "authors": [
+        "Weiwei Sun",
+        "Hengyi Cai",
+        "Hongshen Chen",
+        "Pengjie Ren",
+        "Zhumin Chen",
+        "Maarten de Rijke",
+        "Zhaochun Ren"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.424.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f7a28b40-026e-50aa-8072-906ef8ae4784.pdf",
+    "abstract": "In open-domain question answering, due to the ambiguity of questions, multiple plausible answers may exist. To provide feasible answers to an ambiguous question,one approach is to directly predict all valid answers, but this can struggle with balancing relevance and diversity. An alternative is to gather candidate answers and aggregate them, but this method can be computationally costly and may neglect dependencies among answers. In this paper, we present AmbigPrompt to address the imperfections of existing approaches to answering ambiguous questions. Specifically, we integrate an answering model with a prompting model in an iterative manner. The prompting model adaptively tracks the reading process and progressively triggers the answering model to compose distinct and relevant answers. Additionally, we develop a task-specific post-pretraining approach for both the answering model and the prompting model, which greatly improves the performance of our framework. Empirical studies on two commonly-used open benchmarks show that AmbigPrompt achieves state-of-the-art or competitive results while using less memory and having a lower inference latency than competing approaches. Additionally, AmbigPrompt also performs well in low-resource settings.",
+    "num_pages": 15
+}

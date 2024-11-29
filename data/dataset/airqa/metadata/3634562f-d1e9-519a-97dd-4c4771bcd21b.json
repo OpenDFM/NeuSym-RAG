@@ -1,0 +1,20 @@
+{
+    "uuid": "3634562f-d1e9-519a-97dd-4c4771bcd21b",
+    "title": "Interactive Text-to-Image Retrieval with Large Language Models: A Plug-and-Play Approach",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{lee-etal-2024-interactive,\n    title = \"Interactive Text-to-Image Retrieval with Large Language Models: A Plug-and-Play Approach\",\n    author = \"Lee, Saehyung  and\n      Yu, Sangwon  and\n      Park, Junsung  and\n      Yi, Jihun  and\n      Yoon, Sungroh\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.46\",\n    doi = \"10.18653/v1/2024.acl-long.46\",\n    pages = \"791--809\",\n    abstract = \"In this paper, we primarily address the issue of dialogue-form context query within the interactive text-to-image retrieval task. Our methodology, PlugIR, actively utilizes the general instruction-following capability of LLMs in two ways. First, by reformulating the dialogue-form context, we eliminate the necessity of fine-tuning a retrieval model on existing visual dialogue data, thereby enabling the use of any arbitrary black-box model. Second, we construct the LLM questioner to generate non-redundant questions about the attributes of the target image, based on the information of retrieval candidate images in the current context. This approach mitigates the issues of noisiness and redundancy in the generated questions. Beyond our methodology, we propose a novel evaluation metric, Best log Rank Integral (BRI), for a comprehensive assessment of the interactive retrieval system. PlugIR demonstrates superior performance compared to both zero-shot and fine-tuned baselines in various benchmarks. Additionally, the two methodologies comprising PlugIR can be flexibly applied together or separately in various situations.\",\n}\n",
+    "authors": [
+        "Saehyung Lee",
+        "Sangwon Yu",
+        "Junsung Park",
+        "Jihun Yi",
+        "Sungroh Yoon"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.46.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/3634562f-d1e9-519a-97dd-4c4771bcd21b.pdf",
+    "abstract": "In this paper, we primarily address the issue of dialogue-form context query within the interactive text-to-image retrieval task. Our methodology, PlugIR, actively utilizes the general instruction-following capability of LLMs in two ways. First, by reformulating the dialogue-form context, we eliminate the necessity of fine-tuning a retrieval model on existing visual dialogue data, thereby enabling the use of any arbitrary black-box model. Second, we construct the LLM questioner to generate non-redundant questions about the attributes of the target image, based on the information of retrieval candidate images in the current context. This approach mitigates the issues of noisiness and redundancy in the generated questions. Beyond our methodology, we propose a novel evaluation metric, Best log Rank Integral (BRI), for a comprehensive assessment of the interactive retrieval system. PlugIR demonstrates superior performance compared to both zero-shot and fine-tuned baselines in various benchmarks. Additionally, the two methodologies comprising PlugIR can be flexibly applied together or separately in various situations.",
+    "num_pages": 19
+}

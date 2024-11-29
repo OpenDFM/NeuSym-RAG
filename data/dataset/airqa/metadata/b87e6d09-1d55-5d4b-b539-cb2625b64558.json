@@ -1,0 +1,20 @@
+{
+    "uuid": "b87e6d09-1d55-5d4b-b539-cb2625b64558",
+    "title": "SaFER: A Robust and Efficient Framework for Fine-tuning BERT-based Classifier with Noisy Labels",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{qi-etal-2023-safer,\n    title = \"{S}a{FER}: A Robust and Efficient Framework for Fine-tuning {BERT}-based Classifier with Noisy Labels\",\n    author = \"Qi, Zhenting  and\n      Tan, Xiaoyu  and\n      Qu, Chao  and\n      Xu, Yinghui  and\n      Qi, Yuan\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.38\",\n    doi = \"10.18653/v1/2023.acl-industry.38\",\n    pages = \"390--403\",\n    abstract = \"Learning on noisy datasets is a challenging problem when pre-trained language models are applied to real-world text classification tasks. In numerous industrial applications, acquiring task-specific datasets with 100{\\%} accurate labels is difficult, thus many datasets are accompanied by label noise at different levels. Previous work has shown that existing noise-handling methods could not improve the peak performance of BERT on noisy datasets, and might even deteriorate it. In this paper, we propose SaFER, a robust and efficient fine-tuning framework for BERT-based text classifiers, combating label noises without access to any clean data for training or validation. Utilizing a label-agnostic early-stopping strategy and self-supervised learning, our proposed framework achieves superior performance in terms of both accuracy and speed on multiple text classification benchmarks. The trained model is finally fully deployed in several industrial biomedical literature mining tasks and demonstrates high effectiveness and efficiency.\",\n}\n",
+    "authors": [
+        "Zhenting Qi",
+        "Xiaoyu Tan",
+        "Chao Qu",
+        "Yinghui Xu",
+        "Yuan Qi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.38.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b87e6d09-1d55-5d4b-b539-cb2625b64558.pdf",
+    "abstract": "Learning on noisy datasets is a challenging problem when pre-trained language models are applied to real-world text classification tasks. In numerous industrial applications, acquiring task-specific datasets with 100% accurate labels is difficult, thus many datasets are accompanied by label noise at different levels. Previous work has shown that existing noise-handling methods could not improve the peak performance of BERT on noisy datasets, and might even deteriorate it. In this paper, we propose SaFER, a robust and efficient fine-tuning framework for BERT-based text classifiers, combating label noises without access to any clean data for training or validation. Utilizing a label-agnostic early-stopping strategy and self-supervised learning, our proposed framework achieves superior performance in terms of both accuracy and speed on multiple text classification benchmarks. The trained model is finally fully deployed in several industrial biomedical literature mining tasks and demonstrates high effectiveness and efficiency.",
+    "num_pages": 14
+}

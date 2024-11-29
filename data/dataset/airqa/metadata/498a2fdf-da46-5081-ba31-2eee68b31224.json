@@ -1,0 +1,19 @@
+{
+    "uuid": "498a2fdf-da46-5081-ba31-2eee68b31224",
+    "title": "Gla-AI4BioMed at RRG24: Visual Instruction-tuned Adaptation for Radiology Report Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 23rd Workshop on Biomedical Natural Language Processing",
+    "bibtex": "@inproceedings{zhang-etal-2024-gla,\n    title = \"Gla-{AI}4{B}io{M}ed at {RRG}24: Visual Instruction-tuned Adaptation for Radiology Report Generation\",\n    author = \"Zhang, Xi  and\n      Meng, Zaiqiao  and\n      Lever, Jake  and\n      Ho, Edmond S.L.\",\n    editor = \"Demner-Fushman, Dina  and\n      Ananiadou, Sophia  and\n      Miwa, Makoto  and\n      Roberts, Kirk  and\n      Tsujii, Junichi\",\n    booktitle = \"Proceedings of the 23rd Workshop on Biomedical Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.bionlp-1.54\",\n    doi = \"10.18653/v1/2024.bionlp-1.54\",\n    pages = \"624--634\",\n    abstract = \"This paper introduces a radiology-focused visual language model designed to generate radiology reports from chest X-rays. Building on previous findings that large language models can acquire multimodal capabilities when aligned with pretrained vision encoders, we demonstrate similar potential with chest X-ray images. The model combines an image encoder (CLIP) with a fine-tuned large language model (LLM) based on the Vicuna-7B architecture. The training process involves a two-stage approach: initial alignment of chest X-ray features with the LLM, followed by fine-tuning for radiology report generation. The study highlights the importance of generating both FINDINGS and IMPRESSIONS sections in radiology reports and evaluates the model{'}s performance using various metrics, achieving notable accuracy in generating high-quality medical reports. The research also addresses the need for domain-specific fine-tuning to capture the intricate details necessary for accurate medical interpretations and reports.\",\n}\n",
+    "authors": [
+        "Xi Zhang",
+        "Zaiqiao Meng",
+        "Jake Lever",
+        "Edmond S.L. Ho"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.bionlp-1.54.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/498a2fdf-da46-5081-ba31-2eee68b31224.pdf",
+    "abstract": "This paper introduces a radiology-focused visual language model designed to generate radiology reports from chest X-rays. Building on previous findings that large language models can acquire multimodal capabilities when aligned with pretrained vision encoders, we demonstrate similar potential with chest X-ray images. The model combines an image encoder (CLIP) with a fine-tuned large language model (LLM) based on the Vicuna-7B architecture. The training process involves a two-stage approach: initial alignment of chest X-ray features with the LLM, followed by fine-tuning for radiology report generation. The study highlights the importance of generating both FINDINGS and IMPRESSIONS sections in radiology reports and evaluates the model’s performance using various metrics, achieving notable accuracy in generating high-quality medical reports. The research also addresses the need for domain-specific fine-tuning to capture the intricate details necessary for accurate medical interpretations and reports.",
+    "num_pages": 11
+}

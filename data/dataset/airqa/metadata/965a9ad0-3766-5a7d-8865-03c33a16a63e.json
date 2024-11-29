@@ -1,0 +1,20 @@
+{
+    "uuid": "965a9ad0-3766-5a7d-8865-03c33a16a63e",
+    "title": "Using Natural Language Explanations to Improve Robustness of In-context Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{he-etal-2024-using,\n    title = \"Using Natural Language Explanations to Improve Robustness of In-context Learning\",\n    author = \"He, Xuanli  and\n      Wu, Yuxiang  and\n      Camburu, Oana-Maria  and\n      Minervini, Pasquale  and\n      Stenetorp, Pontus\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.728\",\n    doi = \"10.18653/v1/2024.acl-long.728\",\n    pages = \"13477--13499\",\n    abstract = \"Recent studies demonstrated that large language models (LLMs) can excel in many tasks via in-context learning (ICL). However, recentworks show that ICL-prompted models tend to produce inaccurate results when presented with adversarial inputs. In this work, we investigate whether augmenting ICL with natural language explanations (NLEs) improves the robustness of LLMs on adversarial datasets covering natural language inference and paraphrasing identification. We prompt LLMs with a small set of human-generated NLEs to produce further NLEs, yielding more accurate results than both a zero-shot-ICL setting and using only human-generated NLEs. Our results on five popular LLMs (GPT3.5-turbo, Llama2, Vicuna, Zephyr, and Mistral) show that our approach yields over 6{\\%} improvement over baseline approaches for eight adversarial datasets: HANS, ISCS, NaN, ST, PICD, PISP, ANLI, and PAWS. Furthermore, previous studies have demonstrated that prompt selection strategies significantly enhance ICL on in-distribution test sets. However, our findings reveal that these strategies do not match the efficacy of our approach for robustness evaluations, resulting in an accuracy drop of 8{\\%} compared to the proposed approach.\",\n}\n",
+    "authors": [
+        "Xuanli He",
+        "Yuxiang Wu",
+        "Oana-Maria Camburu",
+        "Pasquale Minervini",
+        "Pontus Stenetorp"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.728.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/965a9ad0-3766-5a7d-8865-03c33a16a63e.pdf",
+    "abstract": "Recent studies demonstrated that large language models (LLMs) can excel in many tasks via in-context learning (ICL). However, recentworks show that ICL-prompted models tend to produce inaccurate results when presented with adversarial inputs. In this work, we investigate whether augmenting ICL with natural language explanations (NLEs) improves the robustness of LLMs on adversarial datasets covering natural language inference and paraphrasing identification. We prompt LLMs with a small set of human-generated NLEs to produce further NLEs, yielding more accurate results than both a zero-shot-ICL setting and using only human-generated NLEs. Our results on five popular LLMs (GPT3.5-turbo, Llama2, Vicuna, Zephyr, and Mistral) show that our approach yields over 6% improvement over baseline approaches for eight adversarial datasets: HANS, ISCS, NaN, ST, PICD, PISP, ANLI, and PAWS. Furthermore, previous studies have demonstrated that prompt selection strategies significantly enhance ICL on in-distribution test sets. However, our findings reveal that these strategies do not match the efficacy of our approach for robustness evaluations, resulting in an accuracy drop of 8% compared to the proposed approach.",
+    "num_pages": 23
+}

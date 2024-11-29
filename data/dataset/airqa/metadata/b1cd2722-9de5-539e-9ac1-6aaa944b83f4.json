@@ -1,0 +1,20 @@
+{
+    "uuid": "b1cd2722-9de5-539e-9ac1-6aaa944b83f4",
+    "title": "P-TA: Using Proximal Policy Optimization to Enhance Tabular Data Augmentation via Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{yang-etal-2024-p,\n    title = \"{P}-{TA}: Using Proximal Policy Optimization to Enhance Tabular Data Augmentation via Large Language Models\",\n    author = \"Yang, Shuo  and\n      Yuan, Chenchen  and\n      Rong, Yao  and\n      Steinbauer, Felix  and\n      Kasneci, Gjergji\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.16\",\n    doi = \"10.18653/v1/2024.findings-acl.16\",\n    pages = \"248--264\",\n    abstract = \"A multitude of industries depend on accurate and reasonable tabular data augmentation for their business processes. Contemporary methodologies in generating tabular data revolve around utilizing Generative Adversarial Networks (GAN) or fine-tuning Large Language Models (LLM). However, GAN-based approaches are documented to produce samples with common-sense errors attributed to the absence of external knowledge. On the other hand, LLM-based methods exhibit a limited capacity to capture the disparities between synthesized and actual data distribution due to the absence of feedback from a discriminator during training. Furthermore, the decoding of LLM-based generation introduces gradient breakpoints, impeding the backpropagation of loss from a discriminator, thereby complicating the integration of these two approaches. To solve this challenge, we propose using proximal policy optimization (PPO) to apply GANs, guiding LLMs to enhance the probability distribution of tabular features. This approach enables the utilization of LLMs as generators for GANs in synthesizing tabular data. Our experiments demonstrate that PPO leads to an approximately 4{\\%} improvement in the accuracy of models trained on synthetically generated data over state-of-the-art across three real-world datasets.\",\n}\n",
+    "authors": [
+        "Shuo Yang",
+        "Chenchen Yuan",
+        "Yao Rong",
+        "Felix Steinbauer",
+        "Gjergji Kasneci"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.16.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/b1cd2722-9de5-539e-9ac1-6aaa944b83f4.pdf",
+    "abstract": "A multitude of industries depend on accurate and reasonable tabular data augmentation for their business processes. Contemporary methodologies in generating tabular data revolve around utilizing Generative Adversarial Networks (GAN) or fine-tuning Large Language Models (LLM). However, GAN-based approaches are documented to produce samples with common-sense errors attributed to the absence of external knowledge. On the other hand, LLM-based methods exhibit a limited capacity to capture the disparities between synthesized and actual data distribution due to the absence of feedback from a discriminator during training. Furthermore, the decoding of LLM-based generation introduces gradient breakpoints, impeding the backpropagation of loss from a discriminator, thereby complicating the integration of these two approaches. To solve this challenge, we propose using proximal policy optimization (PPO) to apply GANs, guiding LLMs to enhance the probability distribution of tabular features. This approach enables the utilization of LLMs as generators for GANs in synthesizing tabular data. Our experiments demonstrate that PPO leads to an approximately 4% improvement in the accuracy of models trained on synthetically generated data over state-of-the-art across three real-world datasets.",
+    "num_pages": 17
+}

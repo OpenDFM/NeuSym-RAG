@@ -1,0 +1,21 @@
+{
+    "uuid": "ff9311e8-197e-5257-b4e9-e9b9c36f0dab",
+    "title": "Comparing Kaldi-Based Pipeline Elpis and Whisper for Čakavian Transcription",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 3rd Workshop on NLP Applications to Field Linguistics (Field Matters 2024)",
+    "bibtex": "@inproceedings{jones-etal-2024-comparing,\n    title = \"Comparing {K}aldi-Based Pipeline Elpis and Whisper for {\\v{C}}akavian Transcription\",\n    author = \"Jones, Austin  and\n      Zhang, Shulin  and\n      Hale, John  and\n      Renwick, Margaret  and\n      Vrzic, Zvjezdana  and\n      Langston, Keith\",\n    editor = \"Serikov, Oleg  and\n      Voloshina, Ekaterina  and\n      Postnikova, Anna  and\n      Muradoglu, Saliha  and\n      Le Ferrand, Eric  and\n      Klyachko, Elena  and\n      Vylomova, Ekaterina  and\n      Shavrina, Tatiana  and\n      Tyers, Francis\",\n    booktitle = \"Proceedings of the 3rd Workshop on NLP Applications to Field Linguistics (Field Matters 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.fieldmatters-1.8\",\n    doi = \"10.18653/v1/2024.fieldmatters-1.8\",\n    pages = \"61--68\",\n    abstract = \"Automatic speech recognition (ASR) has the potential to accelerate the documentation of endangered languages, but the dearth of resources poses a major obstacle. {\\v{C}}akavian, an endangered variety spoken primarily in Croatia, is a case in point, lacking transcription tools that could aid documentation efforts. We compare training a new ASR model on a limited dataset using the Kaldi-based ASR pipeline Elpis to using the same dataset to adapt the transformer-based pretrained multilingual model Whisper, to determine which is more practical in the documentation context. Results show that Whisper outperformed Elpis, achieving the lowest average Word Error Rate (WER) of 57.3{\\%} and median WER of 35.48{\\%}. While Elpis offers a less computationally expensive model and friendlier user experience, Whisper appears better at adapting to our collected {\\v{C}}akavian data.\",\n}\n",
+    "authors": [
+        "Austin Jones",
+        "Shulin Zhang",
+        "John Hale",
+        "Margaret Renwick",
+        "Zvjezdana Vrzic",
+        "Keith Langston"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.fieldmatters-1.8.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/ff9311e8-197e-5257-b4e9-e9b9c36f0dab.pdf",
+    "abstract": "Automatic speech recognition (ASR) has the potential to accelerate the documentation of endangered languages, but the dearth of resources poses a major obstacle. Čakavian, an endangered variety spoken primarily in Croatia, is a case in point, lacking transcription tools that could aid documentation efforts. We compare training a new ASR model on a limited dataset using the Kaldi-based ASR pipeline Elpis to using the same dataset to adapt the transformer-based pretrained multilingual model Whisper, to determine which is more practical in the documentation context. Results show that Whisper outperformed Elpis, achieving the lowest average Word Error Rate (WER) of 57.3% and median WER of 35.48%. While Elpis offers a less computationally expensive model and friendlier user experience, Whisper appears better at adapting to our collected Čakavian data.",
+    "num_pages": 8
+}

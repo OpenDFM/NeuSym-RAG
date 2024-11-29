@@ -1,0 +1,19 @@
+{
+    "uuid": "a4181dac-ef12-5b1f-9923-491a4771cb60",
+    "title": "Mitigating Hallucinations in Large Vision-Language Models with Instruction Contrastive Decoding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{wang-etal-2024-mitigating,\n    title = \"Mitigating Hallucinations in Large Vision-Language Models with Instruction Contrastive Decoding\",\n    author = \"Wang, Xintong  and\n      Pan, Jingheng  and\n      Ding, Liang  and\n      Biemann, Chris\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.937\",\n    doi = \"10.18653/v1/2024.findings-acl.937\",\n    pages = \"15840--15853\",\n    abstract = \"Large Vision-Language Models (LVLMs) are increasingly adept at generating contextually detailed and coherent responses from visual inputs. However, their application in multimodal decision-making and open-ended generation is hindered by a notable rate of hallucinations, where generated text inaccurately represents the visual contents. To address this issue, this paper introduces the Instruction Contrastive Decoding (ICD) method, a novel approach designed to reduce hallucinations during LVLM inference. Our method is inspired by our observation that what we call disturbance instructions significantly exacerbate hallucinations in multimodal fusion modules. ICD contrasts distributions from standard and instruction disturbance, thereby increasing alignment uncertainty and effectively subtracting hallucinated concepts from the original distribution. Through comprehensive experiments on discriminative benchmarks (POPE and MME) and a generative benchmark (LLaVa-Bench), we demonstrate that ICD significantly mitigates both object-level and attribute-level hallucinations. Moreover, our method not only addresses hallucinations but also significantly enhances the general perception and recognition capabilities of LVLMs.\",\n}\n",
+    "authors": [
+        "Xintong Wang",
+        "Jingheng Pan",
+        "Liang Ding",
+        "Chris Biemann"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.937.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a4181dac-ef12-5b1f-9923-491a4771cb60.pdf",
+    "abstract": "Large Vision-Language Models (LVLMs) are increasingly adept at generating contextually detailed and coherent responses from visual inputs. However, their application in multimodal decision-making and open-ended generation is hindered by a notable rate of hallucinations, where generated text inaccurately represents the visual contents. To address this issue, this paper introduces the Instruction Contrastive Decoding (ICD) method, a novel approach designed to reduce hallucinations during LVLM inference. Our method is inspired by our observation that what we call disturbance instructions significantly exacerbate hallucinations in multimodal fusion modules. ICD contrasts distributions from standard and instruction disturbance, thereby increasing alignment uncertainty and effectively subtracting hallucinated concepts from the original distribution. Through comprehensive experiments on discriminative benchmarks (POPE and MME) and a generative benchmark (LLaVa-Bench), we demonstrate that ICD significantly mitigates both object-level and attribute-level hallucinations. Moreover, our method not only addresses hallucinations but also significantly enhances the general perception and recognition capabilities of LVLMs.",
+    "num_pages": 14
+}

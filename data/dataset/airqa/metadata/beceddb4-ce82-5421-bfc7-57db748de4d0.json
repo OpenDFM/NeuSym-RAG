@@ -1,0 +1,17 @@
+{
+    "uuid": "beceddb4-ce82-5421-bfc7-57db748de4d0",
+    "title": "Kb at SemEval-2023 Task 3: On Multitask Hierarchical BERT Base Neural Network for Multi-label Persuasion Techniques Detection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{baraniak-sydow-2023-kb,\n    title = \"Kb at {S}em{E}val-2023 Task 3: On Multitask Hierarchical {BERT} Base Neural Network for Multi-label Persuasion Techniques Detection\",\n    author = \"Baraniak, Katarzyna  and\n      Sydow, M\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.193\",\n    doi = \"10.18653/v1/2023.semeval-1.193\",\n    pages = \"1395--1400\",\n    abstract = \"This paper presents a solution for Semeval 2023 subtask3 of task 3: persuasion techniques in paragraphs detection. The aim of this task is to identify all persuasion techniques in each paragraph of a given news article. We use hierarchical multitask neural networks combined with transformers. Span detection is an auxiliary task that helps in the main task: identifying propaganda techniques. Our experiments show that if we change the index of BERT embedding from the first token of the whole input to the first token of the identified span, it can improve performance. Span and label detection can be performed using one network, so we save data and, when data is limited, we can use more of it for training.\",\n}\n",
+    "authors": [
+        "Katarzyna Baraniak",
+        "M Sydow"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.193.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/beceddb4-ce82-5421-bfc7-57db748de4d0.pdf",
+    "abstract": "This paper presents a solution for Semeval 2023 subtask3 of task 3: persuasion techniques in paragraphs detection. The aim of this task is to identify all persuasion techniques in each paragraph of a given news article. We use hierarchical multitask neural networks combined with transformers. Span detection is an auxiliary task that helps in the main task: identifying propaganda techniques. Our experiments show that if we change the index of BERT embedding from the first token of the whole input to the first token of the identified span, it can improve performance. Span and label detection can be performed using one network, so we save data and, when data is limited, we can use more of it for training.",
+    "num_pages": 6
+}

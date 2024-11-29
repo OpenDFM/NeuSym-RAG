@@ -1,0 +1,23 @@
+{
+    "uuid": "9f82173b-cd19-58da-b13b-08d86b0a59ce",
+    "title": "Randomized Positional Encodings Boost Length Generalization of Transformers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{ruoss-etal-2023-randomized,\n    title = \"Randomized Positional Encodings Boost Length Generalization of Transformers\",\n    author = \"Ruoss, Anian  and\n      Del{\\'e}tang, Gr{\\'e}goire  and\n      Genewein, Tim  and\n      Grau-Moya, Jordi  and\n      Csord{\\'a}s, R{\\'o}bert  and\n      Bennani, Mehdi  and\n      Legg, Shane  and\n      Veness, Joel\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.161\",\n    doi = \"10.18653/v1/2023.acl-short.161\",\n    pages = \"1889--1903\",\n    abstract = \"Transformers have impressive generalization capabilities on tasks with a fixed context length. However, they fail to generalize to sequences of arbitrary length, even for seemingly simple tasks such as duplicating a string. Moreover, simply training on longer sequences is inefficient due to the quadratic computation complexity of the global attention mechanism. In this work, we demonstrate that this failure mode is linked to positional encodings being out-of-distribution for longer sequences (even for relative encodings) and introduce a novel family of positional encodings that can overcome this problem. Concretely, our randomized positional encoding scheme simulates the positions of longer sequences and randomly selects an ordered subset to fit the sequence{'}s length. Our large-scale empirical evaluation of 6000 models across 15 algorithmic reasoning tasks shows that our method allows Transformers to generalize to sequences of unseen length (increasing test accuracy by 12.0{\\%} on average).\",\n}\n",
+    "authors": [
+        "Anian Ruoss",
+        "Grégoire Delétang",
+        "Tim Genewein",
+        "Jordi Grau-Moya",
+        "Róbert Csordás",
+        "Mehdi Bennani",
+        "Shane Legg",
+        "Joel Veness"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.161.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9f82173b-cd19-58da-b13b-08d86b0a59ce.pdf",
+    "abstract": "Transformers have impressive generalization capabilities on tasks with a fixed context length. However, they fail to generalize to sequences of arbitrary length, even for seemingly simple tasks such as duplicating a string. Moreover, simply training on longer sequences is inefficient due to the quadratic computation complexity of the global attention mechanism. In this work, we demonstrate that this failure mode is linked to positional encodings being out-of-distribution for longer sequences (even for relative encodings) and introduce a novel family of positional encodings that can overcome this problem. Concretely, our randomized positional encoding scheme simulates the positions of longer sequences and randomly selects an ordered subset to fit the sequence’s length. Our large-scale empirical evaluation of 6000 models across 15 algorithmic reasoning tasks shows that our method allows Transformers to generalize to sequences of unseen length (increasing test accuracy by 12.0% on average).",
+    "num_pages": 15
+}

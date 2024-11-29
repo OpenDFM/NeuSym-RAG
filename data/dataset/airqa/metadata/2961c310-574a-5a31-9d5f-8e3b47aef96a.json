@@ -1,0 +1,19 @@
+{
+    "uuid": "2961c310-574a-5a31-9d5f-8e3b47aef96a",
+    "title": "Enhancing Continual Learning in Visual Question Answering with Modality-Aware Feature Distillation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 3rd Workshop on Advances in Language and Vision Research (ALVR)",
+    "bibtex": "@inproceedings{nikandrou-etal-2024-enhancing,\n    title = \"Enhancing Continual Learning in Visual Question Answering with Modality-Aware Feature Distillation\",\n    author = \"Nikandrou, Malvina  and\n      Pantazopoulos, Georgios  and\n      Konstas, Ioannis  and\n      Suglia, Alessandro\",\n    editor = \"Gu, Jing  and\n      Fu, Tsu-Jui (Ray)  and\n      Hudson, Drew  and\n      Celikyilmaz, Asli  and\n      Wang, William\",\n    booktitle = \"Proceedings of the 3rd Workshop on Advances in Language and Vision Research (ALVR)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.alvr-1.6\",\n    doi = \"10.18653/v1/2024.alvr-1.6\",\n    pages = \"73--85\",\n    abstract = \"Continual learning focuses on incrementally training a model on a sequence of tasks with the aim of learning new tasks while minimizing performance drop on previous tasks. Existing approaches at the intersection of Continual Learning and Visual Question Answering (VQA) do not study how the multimodal nature of the input affects the learning dynamics of a model. In this paper, we demonstrate that each modality evolves at different rates across a continuum of tasks and that this behavior occurs in established encoder-only models as well as modern recipes for developing Vision {\\&} Language (VL) models. Motivated by this observation, we propose a modality-aware feature distillation (MAFED) approach which outperforms existing baselines across models of varying scale in three multimodal continual learning settings. Furthermore, we provide ablations showcasing that modality-aware distillation complements experience replay. Overall, our results emphasize the importance of addressing modality-specific dynamics to prevent forgetting in multimodal continual learning.\",\n}\n",
+    "authors": [
+        "Malvina Nikandrou",
+        "Georgios Pantazopoulos",
+        "Ioannis Konstas",
+        "Alessandro Suglia"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.alvr-1.6.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/2961c310-574a-5a31-9d5f-8e3b47aef96a.pdf",
+    "abstract": "Continual learning focuses on incrementally training a model on a sequence of tasks with the aim of learning new tasks while minimizing performance drop on previous tasks. Existing approaches at the intersection of Continual Learning and Visual Question Answering (VQA) do not study how the multimodal nature of the input affects the learning dynamics of a model. In this paper, we demonstrate that each modality evolves at different rates across a continuum of tasks and that this behavior occurs in established encoder-only models as well as modern recipes for developing Vision & Language (VL) models. Motivated by this observation, we propose a modality-aware feature distillation (MAFED) approach which outperforms existing baselines across models of varying scale in three multimodal continual learning settings. Furthermore, we provide ablations showcasing that modality-aware distillation complements experience replay. Overall, our results emphasize the importance of addressing modality-specific dynamics to prevent forgetting in multimodal continual learning.",
+    "num_pages": 13
+}

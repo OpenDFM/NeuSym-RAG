@@ -1,0 +1,17 @@
+{
+    "uuid": "153b6350-f377-5637-b502-5ef0b11630c5",
+    "title": "Extracting Text Representations for Terms and Phrases in Technical Domains",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{fusco-antognini-2023-extracting,\n    title = \"Extracting Text Representations for Terms and Phrases in Technical Domains\",\n    author = \"Fusco, Francesco  and\n      Antognini, Diego\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.7\",\n    doi = \"10.18653/v1/2023.acl-industry.7\",\n    pages = \"61--70\",\n    abstract = \"Extracting dense representations for terms and phrases is a task of great importance for knowledge discovery platforms targeting highly-technical fields. Dense representations are used as features for downstream components and have multiple applications ranging from ranking results in search to summarization. Common approaches to create dense representations include training domain-specific embeddings with self-supervised setups or using sentence encoder models trained over similarity tasks. In contrast to static embeddings, sentence encoders do not suffer from the out-of-vocabulary (OOV) problem, but impose significant computational costs. In this paper, we propose a fully unsupervised approach to text encoding that consists of training small character-based models with the objective of reconstructing large pre-trained embedding matrices. Models trained with this approach can not only match the quality of sentence encoders in technical domains, but are 5 times smaller and up to 10 times faster, even on high-end GPUs.\",\n}\n",
+    "authors": [
+        "Francesco Fusco",
+        "Diego Antognini"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.7.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/153b6350-f377-5637-b502-5ef0b11630c5.pdf",
+    "abstract": "Extracting dense representations for terms and phrases is a task of great importance for knowledge discovery platforms targeting highly-technical fields. Dense representations are used as features for downstream components and have multiple applications ranging from ranking results in search to summarization. Common approaches to create dense representations include training domain-specific embeddings with self-supervised setups or using sentence encoder models trained over similarity tasks. In contrast to static embeddings, sentence encoders do not suffer from the out-of-vocabulary (OOV) problem, but impose significant computational costs. In this paper, we propose a fully unsupervised approach to text encoding that consists of training small character-based models with the objective of reconstructing large pre-trained embedding matrices. Models trained with this approach can not only match the quality of sentence encoders in technical domains, but are 5 times smaller and up to 10 times faster, even on high-end GPUs.",
+    "num_pages": 10
+}

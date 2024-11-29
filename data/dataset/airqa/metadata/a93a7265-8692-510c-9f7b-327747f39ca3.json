@@ -1,0 +1,21 @@
+{
+    "uuid": "a93a7265-8692-510c-9f7b-327747f39ca3",
+    "title": "MPCoder: Multi-user Personalized Code Generator with Explicit and Implicit Style Representation Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{dai-etal-2024-mpcoder,\n    title = \"{MPC}oder: Multi-user Personalized Code Generator with Explicit and Implicit Style Representation Learning\",\n    author = \"Dai, Zhenlong  and\n      Yao, Chang  and\n      Han, WenKang  and\n      Yuanying, Yuanying  and\n      Gao, Zhipeng  and\n      Chen, Jingyuan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.207\",\n    doi = \"10.18653/v1/2024.acl-long.207\",\n    pages = \"3765--3780\",\n    abstract = \"Large Language Models (LLMs) have demonstrated great potential for assisting developers in their daily development. However, most research focuses on generating correct code, how to use LLMs to generate personalized code has seldom been investigated. To bridge this gap, we proposed MPCoder (Multi-user Personalized Code Generator) to generate personalized code for multiple users. To better learn coding style features, we utilize explicit coding style residual learning to capture the syntax code style standards and implicit style learning to capture the semantic code style conventions. We train a multi-user style adapter to better differentiate the implicit feature representations of different users through contrastive learning, ultimately enabling personalized code generation for multiple users. We further propose a novel evaluation metric for estimating similarities between codes of different coding styles. The experimental results show the effectiveness of our approach for this novel task.\",\n}\n",
+    "authors": [
+        "Zhenlong Dai",
+        "Chang Yao",
+        "WenKang Han",
+        "Yuanying Yuanying",
+        "Zhipeng Gao",
+        "Jingyuan Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.207.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a93a7265-8692-510c-9f7b-327747f39ca3.pdf",
+    "abstract": "Large Language Models (LLMs) have demonstrated great potential for assisting developers in their daily development. However, most research focuses on generating correct code, how to use LLMs to generate personalized code has seldom been investigated. To bridge this gap, we proposed MPCoder (Multi-user Personalized Code Generator) to generate personalized code for multiple users. To better learn coding style features, we utilize explicit coding style residual learning to capture the syntax code style standards and implicit style learning to capture the semantic code style conventions. We train a multi-user style adapter to better differentiate the implicit feature representations of different users through contrastive learning, ultimately enabling personalized code generation for multiple users. We further propose a novel evaluation metric for estimating similarities between codes of different coding styles. The experimental results show the effectiveness of our approach for this novel task.",
+    "num_pages": 16
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "72849923-93b6-5f1c-a302-7fb9b5972d31",
+    "title": "Distantly Supervised Course Concept Extraction in MOOCs with Academic Discipline",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{lu-etal-2023-distantly,\n    title = \"Distantly Supervised Course Concept Extraction in {MOOC}s with Academic Discipline\",\n    author = \"Lu, Mengying  and\n      Wang, Yuquan  and\n      Yu, Jifan  and\n      Du, Yexing  and\n      Hou, Lei  and\n      Li, Juanzi\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.729\",\n    doi = \"10.18653/v1/2023.acl-long.729\",\n    pages = \"13044--13059\",\n    abstract = \"With the rapid growth of Massive Open Online Courses (MOOCs), it is expensive and time-consuming to extract high-quality knowledgeable concepts taught in the course by human effort to help learners grasp the essence of the course. In this paper, we propose to automatically extract course concepts using distant supervision to eliminate the heavy work of human annotations, which generates labels by matching them with an easily accessed dictionary. However, this matching process suffers from severe noisy and incomplete annotations because of the limited dictionary and diverse MOOCs. To tackle these challenges, we present a novel three-stage framework DS-MOCE, which leverages the power of pre-trained language models explicitly and implicitly and employs discipline-embedding models with a self-train strategy based on label generation refinement across different domains. We also provide an expert-labeled dataset spanning 20 academic disciplines. Experimental results demonstrate the superiority of DS-MOCE over the state-of-the-art distantly supervised methods (with 7{\\%} absolute F1 score improvement). Code and data are now available at \\url{https://github.com/THU-KEG/MOOC-NER}.\",\n}\n",
+    "authors": [
+        "Mengying Lu",
+        "Yuquan Wang",
+        "Jifan Yu",
+        "Yexing Du",
+        "Lei Hou",
+        "Juanzi Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.729.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/72849923-93b6-5f1c-a302-7fb9b5972d31.pdf",
+    "abstract": "With the rapid growth of Massive Open Online Courses (MOOCs), it is expensive and time-consuming to extract high-quality knowledgeable concepts taught in the course by human effort to help learners grasp the essence of the course. In this paper, we propose to automatically extract course concepts using distant supervision to eliminate the heavy work of human annotations, which generates labels by matching them with an easily accessed dictionary. However, this matching process suffers from severe noisy and incomplete annotations because of the limited dictionary and diverse MOOCs. To tackle these challenges, we present a novel three-stage framework DS-MOCE, which leverages the power of pre-trained language models explicitly and implicitly and employs discipline-embedding models with a self-train strategy based on label generation refinement across different domains. We also provide an expert-labeled dataset spanning 20 academic disciplines. Experimental results demonstrate the superiority of DS-MOCE over the state-of-the-art distantly supervised methods (with 7% absolute F1 score improvement). Code and data are now available at https://github.com/THU-KEG/MOOC-NER.",
+    "num_pages": 16
+}

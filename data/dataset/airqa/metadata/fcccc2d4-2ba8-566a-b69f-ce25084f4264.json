@@ -1,0 +1,23 @@
+{
+    "uuid": "fcccc2d4-2ba8-566a-b69f-ce25084f4264",
+    "title": "Language-Specific Neurons: The Key to Multilingual Capabilities in Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{tang-etal-2024-language,\n    title = \"Language-Specific Neurons: The Key to Multilingual Capabilities in Large Language Models\",\n    author = \"Tang, Tianyi  and\n      Luo, Wenyang  and\n      Huang, Haoyang  and\n      Zhang, Dongdong  and\n      Wang, Xiaolei  and\n      Zhao, Xin  and\n      Wei, Furu  and\n      Wen, Ji-Rong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.309\",\n    doi = \"10.18653/v1/2024.acl-long.309\",\n    pages = \"5701--5715\",\n    abstract = \"Large language models (LLMs) demonstrate remarkable multilingual capabilities without being pre-trained on specially curated multilingual parallel corpora.It remains a challenging problem to explain the underlying mechanisms by which LLMs process multilingual texts.In this paper, we delve into the composition of Transformer architectures in LLMs to pinpoint language-specific regions.Specially, we propose a novel detection method, language activation probability entropy (LAPE), to identify language-specific neurons within LLMs.Based on LAPE, we conduct comprehensive experiments on several representative LLMs, such as LLaMA-2, BLOOM, and Mistral. Our findings indicate that LLMs{'} proficiency in processing a particular language is predominantly due to a small subset of neurons, primarily situated in the models{'} top and bottom layers.Furthermore, we showcase the feasibility to {``}steer{''} the output language of LLMs by selectively activating or deactivating language-specific neurons. Our research provides important evidence to the understanding and exploration of the multilingual capabilities of LLMs.\",\n}\n",
+    "authors": [
+        "Tianyi Tang",
+        "Wenyang Luo",
+        "Haoyang Huang",
+        "Dongdong Zhang",
+        "Xiaolei Wang",
+        "Xin Zhao",
+        "Furu Wei",
+        "Ji-Rong Wen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.309.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/fcccc2d4-2ba8-566a-b69f-ce25084f4264.pdf",
+    "abstract": "Large language models (LLMs) demonstrate remarkable multilingual capabilities without being pre-trained on specially curated multilingual parallel corpora.It remains a challenging problem to explain the underlying mechanisms by which LLMs process multilingual texts.In this paper, we delve into the composition of Transformer architectures in LLMs to pinpoint language-specific regions.Specially, we propose a novel detection method, language activation probability entropy (LAPE), to identify language-specific neurons within LLMs.Based on LAPE, we conduct comprehensive experiments on several representative LLMs, such as LLaMA-2, BLOOM, and Mistral. Our findings indicate that LLMs’ proficiency in processing a particular language is predominantly due to a small subset of neurons, primarily situated in the models’ top and bottom layers.Furthermore, we showcase the feasibility to “steer” the output language of LLMs by selectively activating or deactivating language-specific neurons. Our research provides important evidence to the understanding and exploration of the multilingual capabilities of LLMs.",
+    "num_pages": 15
+}

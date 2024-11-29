@@ -1,0 +1,25 @@
+{
+    "uuid": "da5e76ed-465a-5ee2-a9d2-0db24929526f",
+    "title": "Dual-Alignment Pre-training for Cross-lingual Sentence Embedding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{li-etal-2023-dual,\n    title = \"Dual-Alignment Pre-training for Cross-lingual Sentence Embedding\",\n    author = \"Li, Ziheng  and\n      Huang, Shaohan  and\n      Zhang, Zihan  and\n      Deng, Zhi-Hong  and\n      Lou, Qiang  and\n      Huang, Haizhen  and\n      Jiao, Jian  and\n      Wei, Furu  and\n      Deng, Weiwei  and\n      Zhang, Qi\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.191\",\n    doi = \"10.18653/v1/2023.acl-long.191\",\n    pages = \"3466--3478\",\n    abstract = \"Recent studies have shown that dual encoder models trained with the sentence-level translation ranking task are effective methods for cross-lingual sentence embedding. However, our research indicates that token-level alignment is also crucial in multilingual scenarios, which has not been fully explored previously. Based on our findings, we propose a dual-alignment pre-training (DAP) framework for cross-lingual sentence embedding that incorporates both sentence-level and token-level alignment. To achieve this, we introduce a novel representation translation learning (RTL) task, where the model learns to use one-side contextualized token representation to reconstruct its translation counterpart. This reconstruction objective encourages the model to embed translation information into the token representation. Compared to other token-level alignment methods such as translation language modeling, RTL is more suitable for dual encoder architectures and is computationally efficient. Extensive experiments on three sentence-level cross-lingual benchmarks demonstrate that our approach can significantly improve sentence embedding. Our code is available at \\url{https://github.com/ChillingDream/DAP}.\",\n}\n",
+    "authors": [
+        "Ziheng Li",
+        "Shaohan Huang",
+        "Zihan Zhang",
+        "Zhi-Hong Deng",
+        "Qiang Lou",
+        "Haizhen Huang",
+        "Jian Jiao",
+        "Furu Wei",
+        "Weiwei Deng",
+        "Qi Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.191.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/da5e76ed-465a-5ee2-a9d2-0db24929526f.pdf",
+    "abstract": "Recent studies have shown that dual encoder models trained with the sentence-level translation ranking task are effective methods for cross-lingual sentence embedding. However, our research indicates that token-level alignment is also crucial in multilingual scenarios, which has not been fully explored previously. Based on our findings, we propose a dual-alignment pre-training (DAP) framework for cross-lingual sentence embedding that incorporates both sentence-level and token-level alignment. To achieve this, we introduce a novel representation translation learning (RTL) task, where the model learns to use one-side contextualized token representation to reconstruct its translation counterpart. This reconstruction objective encourages the model to embed translation information into the token representation. Compared to other token-level alignment methods such as translation language modeling, RTL is more suitable for dual encoder architectures and is computationally efficient. Extensive experiments on three sentence-level cross-lingual benchmarks demonstrate that our approach can significantly improve sentence embedding. Our code is available at https://github.com/ChillingDream/DAP.",
+    "num_pages": 13
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "9bec3eb2-78b3-5523-9571-accc65cb8408",
+    "title": "APOLLO: A Simple Approach for Adaptive Pretraining of Language Models for Logical Reasoning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{sanyal-etal-2023-apollo,\n    title = \"{APOLLO}: A Simple Approach for Adaptive Pretraining of Language Models for Logical Reasoning\",\n    author = \"Sanyal, Soumya  and\n      Xu, Yichong  and\n      Wang, Shuohang  and\n      Yang, Ziyi  and\n      Pryzant, Reid  and\n      Yu, Wenhao  and\n      Zhu, Chenguang  and\n      Ren, Xiang\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.347\",\n    doi = \"10.18653/v1/2023.acl-long.347\",\n    pages = \"6308--6321\",\n    abstract = \"Logical reasoning over text is an important ability that requires understanding the semantics of the text and reasoning through them to arrive at correct inferences. Prior works on pretraining language models to improve the logical reasoning ability require complex processing of training data (e.g., aligning symbolic knowledge to text), yielding task-specific data augmentation that is not easy to adapt to any general text corpus. In this work, we propose APOLLO, a simple adaptive pretraining approach to improve the logical reasoning skills of language models. We select a subset of Wikipedia for adaptive pretraining using a set of logical inference keywords as filter words. Further, we propose two self-supervised loss functions for training. First, we modify the masked language modeling loss only to mask specific parts-of-speech words that likely require higher-order reasoning to predict them. Second, we propose a sentence-level classification loss that teaches the model to distinguish between entailment and contradiction types of sentences. The proposed pretraining paradigm is both simple and independent of task formats. We demonstrate the effectiveness of APOLLO by comparing it with prior baselines on two logical reasoning datasets. APOLLO performs comparably on ReClor and outperforms baselines on LogiQA.\",\n}\n",
+    "authors": [
+        "Soumya Sanyal",
+        "Yichong Xu",
+        "Shuohang Wang",
+        "Ziyi Yang",
+        "Reid Pryzant",
+        "Wenhao Yu",
+        "Chenguang Zhu",
+        "Xiang Ren"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.347.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9bec3eb2-78b3-5523-9571-accc65cb8408.pdf",
+    "abstract": "Logical reasoning over text is an important ability that requires understanding the semantics of the text and reasoning through them to arrive at correct inferences. Prior works on pretraining language models to improve the logical reasoning ability require complex processing of training data (e.g., aligning symbolic knowledge to text), yielding task-specific data augmentation that is not easy to adapt to any general text corpus. In this work, we propose APOLLO, a simple adaptive pretraining approach to improve the logical reasoning skills of language models. We select a subset of Wikipedia for adaptive pretraining using a set of logical inference keywords as filter words. Further, we propose two self-supervised loss functions for training. First, we modify the masked language modeling loss only to mask specific parts-of-speech words that likely require higher-order reasoning to predict them. Second, we propose a sentence-level classification loss that teaches the model to distinguish between entailment and contradiction types of sentences. The proposed pretraining paradigm is both simple and independent of task formats. We demonstrate the effectiveness of APOLLO by comparing it with prior baselines on two logical reasoning datasets. APOLLO performs comparably on ReClor and outperforms baselines on LogiQA.",
+    "num_pages": 14
+}

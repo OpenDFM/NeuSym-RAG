@@ -1,0 +1,18 @@
+{
+    "uuid": "51b111fe-7c8b-57f7-87fe-9cf7d4888226",
+    "title": "Know Where You’re Going: Meta-Learning for Parameter-Efficient Fine-Tuning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{gheini-etal-2023-know,\n    title = \"Know Where You{'}re Going: Meta-Learning for Parameter-Efficient Fine-Tuning\",\n    author = \"Gheini, Mozhdeh  and\n      Ma, Xuezhe  and\n      May, Jonathan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.737\",\n    doi = \"10.18653/v1/2023.findings-acl.737\",\n    pages = \"11602--11612\",\n    abstract = \"A recent family of techniques, dubbed lightweight fine-tuning methods, facilitates parameter-efficient transfer by updating only a small set of additional parameters while keeping the parameters of the original model frozen. While proven to be an effective approach, there are no existing studies on if and how such knowledge of the downstream fine-tuning approach calls for complementary measures after pre-training and before fine-tuning. In this work, we show that taking the ultimate choice of fine-tuning into consideration boosts the performance of parameter-efficient fine-tuning. By relying on optimization-based meta-learning using MAML with certain modifications for our distinct purpose, we prime the pre-trained model specifically for parameter-efficient fine-tuning, resulting in gains of up to 4.96 points on cross-lingual NER fine-tuning. Our ablation settings and analyses further reveal that the specific approach we take to meta-learning is crucial for the attained gains.\",\n}\n",
+    "authors": [
+        "Mozhdeh Gheini",
+        "Xuezhe Ma",
+        "Jonathan May"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.737.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/51b111fe-7c8b-57f7-87fe-9cf7d4888226.pdf",
+    "abstract": "A recent family of techniques, dubbed lightweight fine-tuning methods, facilitates parameter-efficient transfer by updating only a small set of additional parameters while keeping the parameters of the original model frozen. While proven to be an effective approach, there are no existing studies on if and how such knowledge of the downstream fine-tuning approach calls for complementary measures after pre-training and before fine-tuning. In this work, we show that taking the ultimate choice of fine-tuning into consideration boosts the performance of parameter-efficient fine-tuning. By relying on optimization-based meta-learning using MAML with certain modifications for our distinct purpose, we prime the pre-trained model specifically for parameter-efficient fine-tuning, resulting in gains of up to 4.96 points on cross-lingual NER fine-tuning. Our ablation settings and analyses further reveal that the specific approach we take to meta-learning is crucial for the attained gains.",
+    "num_pages": 11
+}

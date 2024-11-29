@@ -1,0 +1,25 @@
+{
+    "uuid": "70a21cc7-9677-5e8d-8520-a60901ce6425",
+    "title": "Automatic Table Union Search with Tabular Representation Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{hu-etal-2023-automatic,\n    title = \"Automatic Table Union Search with Tabular Representation Learning\",\n    author = \"Hu, Xuming  and\n      Wang, Shen  and\n      Qin, Xiao  and\n      Lei, Chuan  and\n      Shen, Zhengyuan  and\n      Faloutsos, Christos  and\n      Katsifodimos, Asterios  and\n      Karypis, George  and\n      Wen, Lijie  and\n      Yu, Philip S.\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.233\",\n    doi = \"10.18653/v1/2023.findings-acl.233\",\n    pages = \"3786--3800\",\n    abstract = \"Given a data lake of tabular data as well as a query table, how can we retrieve all the tables in the data lake that can be unioned with the query table? Table union search constitutes an essential task in data discovery and preparation as it enables data scientists to navigate massive open data repositories. Existing methods identify uniability based on column representations (word surface forms or token embeddings) and column relation represented by column representation similarity. However, the semantic similarity obtained between column representations is often insufficient to reveal latent relational features to describe the column relation between pair of columns and not robust to the table noise. To address these issues, in this paper, we propose a multi-stage self-supervised table union search framework called AutoTUS, which represents column relation as a vector{--} column relational representation and learn column relational representation in a multi-stage manner that can better describe column relation for unionability prediction. In particular, the large language model powered contextualized column relation encoder is updated by adaptive clustering and pseudo label classification iteratively so that the better column relational representation can be learned. Moreover, to improve the robustness of the model against table noises, we propose table noise generator to add table noise to the training table data. Experiments on real-world datasets as well as synthetic test set augmented with table noise show that AutoTUS achieves 5.2{\\%} performance gain over the SOTA baseline.\",\n}\n",
+    "authors": [
+        "Xuming Hu",
+        "Shen Wang",
+        "Xiao Qin",
+        "Chuan Lei",
+        "Zhengyuan Shen",
+        "Christos Faloutsos",
+        "Asterios Katsifodimos",
+        "George Karypis",
+        "Lijie Wen",
+        "Philip S. Yu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.233.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/70a21cc7-9677-5e8d-8520-a60901ce6425.pdf",
+    "abstract": "Given a data lake of tabular data as well as a query table, how can we retrieve all the tables in the data lake that can be unioned with the query table? Table union search constitutes an essential task in data discovery and preparation as it enables data scientists to navigate massive open data repositories. Existing methods identify uniability based on column representations (word surface forms or token embeddings) and column relation represented by column representation similarity. However, the semantic similarity obtained between column representations is often insufficient to reveal latent relational features to describe the column relation between pair of columns and not robust to the table noise. To address these issues, in this paper, we propose a multi-stage self-supervised table union search framework called AutoTUS, which represents column relation as a vector– column relational representation and learn column relational representation in a multi-stage manner that can better describe column relation for unionability prediction. In particular, the large language model powered contextualized column relation encoder is updated by adaptive clustering and pseudo label classification iteratively so that the better column relational representation can be learned. Moreover, to improve the robustness of the model against table noises, we propose table noise generator to add table noise to the training table data. Experiments on real-world datasets as well as synthetic test set augmented with table noise show that AutoTUS achieves 5.2% performance gain over the SOTA baseline.",
+    "num_pages": 15
+}

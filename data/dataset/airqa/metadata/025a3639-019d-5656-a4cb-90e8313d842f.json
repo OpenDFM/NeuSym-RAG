@@ -1,0 +1,17 @@
+{
+    "uuid": "025a3639-019d-5656-a4cb-90e8313d842f",
+    "title": "Reinforcement Learning for Topic Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{costello-reformat-2023-reinforcement,\n    title = \"Reinforcement Learning for Topic Models\",\n    author = \"Costello, Jeremy  and\n      Reformat, Marek\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.265\",\n    doi = \"10.18653/v1/2023.findings-acl.265\",\n    pages = \"4332--4351\",\n    abstract = \"We apply reinforcement learning techniques to topic modeling by replacing the variational autoencoder in ProdLDA with a continuous action space reinforcement learning policy. We train the system with a policy gradient algorithm REINFORCE. Additionally, we introduced several modifications: modernize the neural network architecture, weight the ELBO loss, use contextual embeddings, and monitor the learning process via computing topic diversity and coherence for each training step. Experiments areperformed on 11 data sets. Our unsupervised model outperforms all other unsupervised models and performs on par with or better than most models using supervised labeling. Our model is outperformed on certain data sets by a model using supervised labeling and contrastive learning. We have also conducted an ablation study to provide empirical evidence of performance improvements from changes we made to ProdLDA and found that the reinforcement learning formulation boosts performance. We open-source our code implementation.\",\n}\n",
+    "authors": [
+        "Jeremy Costello",
+        "Marek Reformat"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.265.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/025a3639-019d-5656-a4cb-90e8313d842f.pdf",
+    "abstract": "We apply reinforcement learning techniques to topic modeling by replacing the variational autoencoder in ProdLDA with a continuous action space reinforcement learning policy. We train the system with a policy gradient algorithm REINFORCE. Additionally, we introduced several modifications: modernize the neural network architecture, weight the ELBO loss, use contextual embeddings, and monitor the learning process via computing topic diversity and coherence for each training step. Experiments areperformed on 11 data sets. Our unsupervised model outperforms all other unsupervised models and performs on par with or better than most models using supervised labeling. Our model is outperformed on certain data sets by a model using supervised labeling and contrastive learning. We have also conducted an ablation study to provide empirical evidence of performance improvements from changes we made to ProdLDA and found that the reinforcement learning formulation boosts performance. We open-source our code implementation.",
+    "num_pages": 20
+}

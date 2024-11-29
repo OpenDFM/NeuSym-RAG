@@ -1,0 +1,19 @@
+{
+    "uuid": "c550f9b8-62ff-5365-8987-b10b2938c5e2",
+    "title": "SELP: A Semantically-Driven Approach for Separated and Accurate Class Prototypes in Few-Shot Text Classification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{liang-etal-2024-selp,\n    title = \"{SELP}: A Semantically-Driven Approach for Separated and Accurate Class Prototypes in Few-Shot Text Classification\",\n    author = \"Liang, Wenxin  and\n      Zhang, Tingyu  and\n      Liu, Han  and\n      Zhang, Feng\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.579\",\n    doi = \"10.18653/v1/2024.findings-acl.579\",\n    pages = \"9732--9741\",\n}\n",
+    "authors": [
+        "Wenxin Liang",
+        "Tingyu Zhang",
+        "Han Liu",
+        "Feng Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.579.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/c550f9b8-62ff-5365-8987-b10b2938c5e2.pdf",
+    "abstract": "The meta-learning paradigm has demonstrated significant effectiveness in few-shot text classification. Currently, numerous efforts are grounded in metric-based learning, utilizing textual feature vectors for classification, with a common emphasis on enlarging inter-class distances to achieve improved classification effectiveness. However, many methods predominantly focus on enhancing the separation of prototypes without taking the semantic relationships between prototypes and class clusters into consideration. This oversight results in incomplete and inaccurate encoding of prototypes within the semantic space, affecting the generality of the learned metric space. In this paper, we propose the utilization of Semantically Enhanced Labels for calibrating class Prototypes (SELP), thereby obtaining prototypes that are more separated and semantically accurate. Additionally, we have devised a center loss to enhance intra-class compactness, coupled with the introduction of a simulated label distribution method to address the overfitting problem. Extensive experiments on eight few-shot text classification datasets show that the proposed method outperforms baselines significantly. Our code is available at https: //github.com/tttyyyzzz-zty/SELP.git.",
+    "num_pages": 10
+}

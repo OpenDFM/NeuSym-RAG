@@ -1,0 +1,20 @@
+{
+    "uuid": "1b674dd1-444b-5f51-91bf-775e44835b57",
+    "title": "Full Parameter Fine-tuning for Large Language Models with Limited Resources",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{lv-etal-2024-full,\n    title = \"Full Parameter Fine-tuning for Large Language Models with Limited Resources\",\n    author = \"Lv, Kai  and\n      Yang, Yuqing  and\n      Liu, Tengxiao  and\n      Guo, Qipeng  and\n      Qiu, Xipeng\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.445\",\n    doi = \"10.18653/v1/2024.acl-long.445\",\n    pages = \"8187--8198\",\n    abstract = \"Large Language Models (LLMs) have revolutionized Natural Language Processing (NLP) but demand massive GPU resources for training. Lowering the threshold for LLMs training would encourage greater participation from researchers, benefiting both academia and society. While existing approaches have focused on parameter-efficient fine-tuning, which tunes or adds a small number of parameters, few have addressed the challenge of tuning the full parameters of LLMs with limited resources. In this work, we propose a new optimizer, LOw-Memory Optimization (LOMO), which fuses the gradient computation and the parameter update in one step to reduce memory usage. By integrating LOMO with existing memory saving techniques, we reduce memory usage to 10.8{\\%} compared to the standard approach (DeepSpeed solution). Consequently, our approach enables the full parameter fine-tuning of a 65B model on a single machine with 8 $\\times$ RTX 3090, each with 24GB memory. Code and data are available at https://github.com/OpenLMLab/LOMO.\",\n}\n",
+    "authors": [
+        "Kai Lv",
+        "Yuqing Yang",
+        "Tengxiao Liu",
+        "Qipeng Guo",
+        "Xipeng Qiu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.445.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/1b674dd1-444b-5f51-91bf-775e44835b57.pdf",
+    "abstract": "Large Language Models (LLMs) have revolutionized Natural Language Processing (NLP) but demand massive GPU resources for training. Lowering the threshold for LLMs training would encourage greater participation from researchers, benefiting both academia and society. While existing approaches have focused on parameter-efficient fine-tuning, which tunes or adds a small number of parameters, few have addressed the challenge of tuning the full parameters of LLMs with limited resources. In this work, we propose a new optimizer, LOw-Memory Optimization (LOMO), which fuses the gradient computation and the parameter update in one step to reduce memory usage. By integrating LOMO with existing memory saving techniques, we reduce memory usage to 10.8% compared to the standard approach (DeepSpeed solution). Consequently, our approach enables the full parameter fine-tuning of a 65B model on a single machine with 8 × RTX 3090, each with 24GB memory. Code and data are available at https://github.com/OpenLMLab/LOMO.",
+    "num_pages": 12
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "5f1464b2-5d12-5400-aa68-6a46f18a2833",
+    "title": "Knowledge Context Modeling with Pre-trained Language Models for Contrastive Knowledge Graph Completion",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{yang-etal-2024-knowledge,\n    title = \"Knowledge Context Modeling with Pre-trained Language Models for Contrastive Knowledge Graph Completion\",\n    author = \"Yang, Guangqian  and\n      Liu, Yi  and\n      Zhang, Lei  and\n      Zhang, Licheng  and\n      Xie, Hongtao  and\n      Mao, Zhendong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.509\",\n    doi = \"10.18653/v1/2024.findings-acl.509\",\n    pages = \"8619--8630\",\n    abstract = \"Text-based knowledge graph completion (KGC) methods utilize pre-trained language models for triple encoding and further fine-tune the model to achieve completion. Despite their excellent performance, they neglect the knowledge context in inferring process. Intuitively, knowledge contexts, which refer to the neighboring triples around the target triples, are important information for triple inferring, since they provide additional detailed information about the entities. To this end, we propose a novel framework named KnowC, which models the knowledge context as additional prompts with pre-trained language models for knowledge graph completion. Given the substantial number of neighbors typically associated with entities, along with the constrained input token capacity of language models, we further devise several strategies to sample the neighbors. We conduct extensive experiments on common datasets FB15k-237, WN18RR and Wikidata5M, experiments show that KnowC achieves state-of-the-art performance.\",\n}\n",
+    "authors": [
+        "Guangqian Yang",
+        "Yi Liu",
+        "Lei Zhang",
+        "Licheng Zhang",
+        "Hongtao Xie",
+        "Zhendong Mao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.509.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/5f1464b2-5d12-5400-aa68-6a46f18a2833.pdf",
+    "abstract": "Text-based knowledge graph completion (KGC) methods utilize pre-trained language models for triple encoding and further fine-tune the model to achieve completion. Despite their excellent performance, they neglect the knowledge context in inferring process. Intuitively, knowledge contexts, which refer to the neighboring triples around the target triples, are important information for triple inferring, since they provide additional detailed information about the entities. To this end, we propose a novel framework named KnowC, which models the knowledge context as additional prompts with pre-trained language models for knowledge graph completion. Given the substantial number of neighbors typically associated with entities, along with the constrained input token capacity of language models, we further devise several strategies to sample the neighbors. We conduct extensive experiments on common datasets FB15k-237, WN18RR and Wikidata5M, experiments show that KnowC achieves state-of-the-art performance.",
+    "num_pages": 12
+}

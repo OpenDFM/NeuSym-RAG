@@ -1,0 +1,22 @@
+{
+    "uuid": "e0af04e3-c76b-5234-bf1b-a8daca1253bf",
+    "title": "Mitigating Boundary Ambiguity and Inherent Bias for Text Classification in the Era of Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{lu-etal-2024-mitigating,\n    title = \"Mitigating Boundary Ambiguity and Inherent Bias for Text Classification in the Era of Large Language Models\",\n    author = \"Lu, Zhenyi  and\n      Tian, Jie  and\n      Wei, Wei  and\n      Qu, Xiaoye  and\n      Cheng, Yu  and\n      Xie, Wenfeng  and\n      Chen, Dangyang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.467\",\n    doi = \"10.18653/v1/2024.findings-acl.467\",\n    pages = \"7841--7864\",\n    abstract = \"Text classification is a crucial task encountered frequently in practical scenarios, yet it is still under-explored in the era of large language models (LLMs). This study shows that LLMs are vulnerable to changes in the number and arrangement of options in text classification. Our extensive empirical analyses reveal that the key bottleneck arises from ambiguous decision boundaries and inherent biases towards specific tokens and positions.To mitigate these issues, we make the first attempt and propose a novel two-stage classification framework for LLMs. Our approach is grounded in the empirical observation that pairwise comparisons can effectively alleviate boundary ambiguity and inherent bias. Specifically, we begin with a self-reduction technique to efficiently narrow down numerous options, which contributes to reduced decision space and a faster comparison process. Subsequently, pairwise contrastive comparisons are employed in a chain-of-thought manner to draw out nuances and distinguish confusable options, thus refining the ambiguous decision boundary.Extensive experiments on four datasets (Banking77, HWU64, LIU54, and Clinic150) verify the effectiveness of our framework. Furthermore, benefitting from our framework, various LLMs can achieve consistent improvements. Our code and data are available in \\url{https://github.com/Chuge0335/PC-CoT}.\",\n}\n",
+    "authors": [
+        "Zhenyi Lu",
+        "Jie Tian",
+        "Wei Wei",
+        "Xiaoye Qu",
+        "Yu Cheng",
+        "Wenfeng Xie",
+        "Dangyang Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.467.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e0af04e3-c76b-5234-bf1b-a8daca1253bf.pdf",
+    "abstract": "Text classification is a crucial task encountered frequently in practical scenarios, yet it is still under-explored in the era of large language models (LLMs). This study shows that LLMs are vulnerable to changes in the number and arrangement of options in text classification. Our extensive empirical analyses reveal that the key bottleneck arises from ambiguous decision boundaries and inherent biases towards specific tokens and positions.To mitigate these issues, we make the first attempt and propose a novel two-stage classification framework for LLMs. Our approach is grounded in the empirical observation that pairwise comparisons can effectively alleviate boundary ambiguity and inherent bias. Specifically, we begin with a self-reduction technique to efficiently narrow down numerous options, which contributes to reduced decision space and a faster comparison process. Subsequently, pairwise contrastive comparisons are employed in a chain-of-thought manner to draw out nuances and distinguish confusable options, thus refining the ambiguous decision boundary.Extensive experiments on four datasets (Banking77, HWU64, LIU54, and Clinic150) verify the effectiveness of our framework. Furthermore, benefitting from our framework, various LLMs can achieve consistent improvements. Our code and data are available in https://github.com/Chuge0335/PC-CoT.",
+    "num_pages": 24
+}

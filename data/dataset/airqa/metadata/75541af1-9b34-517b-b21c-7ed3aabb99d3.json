@@ -1,0 +1,23 @@
+{
+    "uuid": "75541af1-9b34-517b-b21c-7ed3aabb99d3",
+    "title": "Towards Robust Ranker for Text Retrieval",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhou-etal-2023-towards-robust,\n    title = \"Towards Robust Ranker for Text Retrieval\",\n    author = \"Zhou, Yucheng  and\n      Shen, Tao  and\n      Geng, Xiubo  and\n      Tao, Chongyang  and\n      Xu, Can  and\n      Long, Guodong  and\n      Jiao, Binxing  and\n      Jiang, Daxin\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.332\",\n    doi = \"10.18653/v1/2023.findings-acl.332\",\n    pages = \"5387--5401\",\n    abstract = \"A neural ranker plays an indispensable role in the de facto {`}retrieval {\\&} rerank{'} pipeline, but its training still lags behind due to the weak negative mining during contrastive learning. Compared to retrievers boosted by self-adversarial (i.e., in-distribution) negative mining, the ranker{'}s heavy structure suffers from query-document combinatorial explosions, so it can only resort to the negative sampled by the fast yet out-of-distribution retriever. Thereby, the moderate negatives compose ineffective contrastive learning samples, becoming the main barrier to learning a robust ranker. To alleviate this, we propose a multi-adversarial training strategy that leverages multiple retrievers as generators to challenge a ranker, where i) diverse hard negatives from a joint distribution are prone to fool the ranker for more effective adversarial learning and ii) involving extensive out-of-distribution label noises renders the ranker against each noise distribution, leading to more challenging and robust contrastive learning. To evaluate our robust ranker (dubbed R2anker), we conduct experiments in various settings on the passage retrieval benchmarks, including BM25-reranking, full-ranking, retriever distillation, etc. The empirical results verify the new state-of-the-art effectiveness of our model.\",\n}\n",
+    "authors": [
+        "Yucheng Zhou",
+        "Tao Shen",
+        "Xiubo Geng",
+        "Chongyang Tao",
+        "Can Xu",
+        "Guodong Long",
+        "Binxing Jiao",
+        "Daxin Jiang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.332.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/75541af1-9b34-517b-b21c-7ed3aabb99d3.pdf",
+    "abstract": "A neural ranker plays an indispensable role in the de facto ‘retrieval & rerank’ pipeline, but its training still lags behind due to the weak negative mining during contrastive learning. Compared to retrievers boosted by self-adversarial (i.e., in-distribution) negative mining, the ranker’s heavy structure suffers from query-document combinatorial explosions, so it can only resort to the negative sampled by the fast yet out-of-distribution retriever. Thereby, the moderate negatives compose ineffective contrastive learning samples, becoming the main barrier to learning a robust ranker. To alleviate this, we propose a multi-adversarial training strategy that leverages multiple retrievers as generators to challenge a ranker, where i) diverse hard negatives from a joint distribution are prone to fool the ranker for more effective adversarial learning and ii) involving extensive out-of-distribution label noises renders the ranker against each noise distribution, leading to more challenging and robust contrastive learning. To evaluate our robust ranker (dubbed R2anker), we conduct experiments in various settings on the passage retrieval benchmarks, including BM25-reranking, full-ranking, retriever distillation, etc. The empirical results verify the new state-of-the-art effectiveness of our model.",
+    "num_pages": 15
+}

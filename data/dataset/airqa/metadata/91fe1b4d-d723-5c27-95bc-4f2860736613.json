@@ -1,0 +1,31 @@
+{
+    "uuid": "91fe1b4d-d723-5c27-95bc-4f2860736613",
+    "title": "FormNetV2: Multimodal Graph Contrastive Learning for Form Document Information Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{lee-etal-2023-formnetv2,\n    title = \"{F}orm{N}et{V}2: Multimodal Graph Contrastive Learning for Form Document Information Extraction\",\n    author = \"Lee, Chen-Yu  and\n      Li, Chun-Liang  and\n      Zhang, Hao  and\n      Dozat, Timothy  and\n      Perot, Vincent  and\n      Su, Guolong  and\n      Zhang, Xiang  and\n      Sohn, Kihyuk  and\n      Glushnev, Nikolay  and\n      Wang, Renshen  and\n      Ainslie, Joshua  and\n      Long, Shangbang  and\n      Qin, Siyang  and\n      Fujii, Yasuhisa  and\n      Hua, Nan  and\n      Pfister, Tomas\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.501\",\n    doi = \"10.18653/v1/2023.acl-long.501\",\n    pages = \"9011--9026\",\n    abstract = \"The recent advent of self-supervised pre-training techniques has led to a surge in the use of multimodal learning in form document understanding. However, existing approaches that extend the mask language modeling to other modalities require careful multi-task tuning, complex reconstruction target designs, or additional pre-training data. In FormNetV2, we introduce a centralized multimodal graph contrastive learning strategy to unify self-supervised pre-training for all modalities in one loss. The graph contrastive objective maximizes the agreement of multimodal representations, providing a natural interplay for all modalities without special customization. In addition, we extract image features within the bounding box that joins a pair of tokens connected by a graph edge, capturing more targeted visual cues without loading a sophisticated and separately pre-trained image embedder. FormNetV2 establishes new state-of-the-art performance on FUNSD, CORD, SROIE and Payment benchmarks with a more compact model size.\",\n}\n",
+    "authors": [
+        "Chen-Yu Lee",
+        "Chun-Liang Li",
+        "Hao Zhang",
+        "Timothy Dozat",
+        "Vincent Perot",
+        "Guolong Su",
+        "Xiang Zhang",
+        "Kihyuk Sohn",
+        "Nikolay Glushnev",
+        "Renshen Wang",
+        "Joshua Ainslie",
+        "Shangbang Long",
+        "Siyang Qin",
+        "Yasuhisa Fujii",
+        "Nan Hua",
+        "Tomas Pfister"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.501.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/91fe1b4d-d723-5c27-95bc-4f2860736613.pdf",
+    "abstract": "The recent advent of self-supervised pre-training techniques has led to a surge in the use of multimodal learning in form document understanding. However, existing approaches that extend the mask language modeling to other modalities require careful multi-task tuning, complex reconstruction target designs, or additional pre-training data. In FormNetV2, we introduce a centralized multimodal graph contrastive learning strategy to unify self-supervised pre-training for all modalities in one loss. The graph contrastive objective maximizes the agreement of multimodal representations, providing a natural interplay for all modalities without special customization. In addition, we extract image features within the bounding box that joins a pair of tokens connected by a graph edge, capturing more targeted visual cues without loading a sophisticated and separately pre-trained image embedder. FormNetV2 establishes new state-of-the-art performance on FUNSD, CORD, SROIE and Payment benchmarks with a more compact model size.",
+    "num_pages": 16
+}

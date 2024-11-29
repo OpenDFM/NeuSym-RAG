@@ -1,0 +1,23 @@
+{
+    "uuid": "0822042a-d714-5d27-a6fb-8dc68e9fcf97",
+    "title": "Pay Attention to Implicit Attribute Values: A Multi-modal Generative Framework for AVE Task",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhang-etal-2023-pay,\n    title = \"Pay Attention to Implicit Attribute Values: A Multi-modal Generative Framework for {AVE} Task\",\n    author = \"Zhang, Yupeng  and\n      Wang, Shensi  and\n      Li, Peiguang  and\n      Dong, Guanting  and\n      Wang, Sirui  and\n      Xian, Yunsen  and\n      Li, Zhoujun  and\n      Zhang, Hongzhi\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.831\",\n    doi = \"10.18653/v1/2023.findings-acl.831\",\n    pages = \"13139--13151\",\n    abstract = \"Attribute Value Extraction (AVE) boosts many e-commerce platform services such as targeted recommendation, product retrieval and question answering. Most previous studies adopt an extractive framework such as named entity recognition (NER) to capture subtokens in the product descriptions as the corresponding values of target attributes. However, in the real world scenario, there also exist implicit attribute values that are not mentioned explicitly but embedded in the image information and implied text meaning of products, for which the power of extractive methods is severely constrained. To address the above issues, we exploit a unified multi-modal AVE framework named DEFLATE (a multi-modal unifieD framEwork For impLicit And expliciT AVE) to acquire implicit attribute values in addition to the explicit ones. DEFLATE consists of a QA-based generation model to produce candidate attribute values from the product information of different modalities, and a discriminative model to ensure the credibility of the generated answers. Meanwhile, to provide a testbed that close to the real world, we collect and annotate a multi-modal dataset with parts of implicit attribute values. Extensive experiments conducted on multiple datasets demonstrate that DEFLATE significantly outperforms previous methods on the extraction of implicit attribute values, while achieving comparable performance for the explicit ones.\",\n}\n",
+    "authors": [
+        "Yupeng Zhang",
+        "Shensi Wang",
+        "Peiguang Li",
+        "Guanting Dong",
+        "Sirui Wang",
+        "Yunsen Xian",
+        "Zhoujun Li",
+        "Hongzhi Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.831.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/0822042a-d714-5d27-a6fb-8dc68e9fcf97.pdf",
+    "abstract": "Attribute Value Extraction (AVE) boosts many e-commerce platform services such as targeted recommendation, product retrieval and question answering. Most previous studies adopt an extractive framework such as named entity recognition (NER) to capture subtokens in the product descriptions as the corresponding values of target attributes. However, in the real world scenario, there also exist implicit attribute values that are not mentioned explicitly but embedded in the image information and implied text meaning of products, for which the power of extractive methods is severely constrained. To address the above issues, we exploit a unified multi-modal AVE framework named DEFLATE (a multi-modal unifieD framEwork For impLicit And expliciT AVE) to acquire implicit attribute values in addition to the explicit ones. DEFLATE consists of a QA-based generation model to produce candidate attribute values from the product information of different modalities, and a discriminative model to ensure the credibility of the generated answers. Meanwhile, to provide a testbed that close to the real world, we collect and annotate a multi-modal dataset with parts of implicit attribute values. Extensive experiments conducted on multiple datasets demonstrate that DEFLATE significantly outperforms previous methods on the extraction of implicit attribute values, while achieving comparable performance for the explicit ones.",
+    "num_pages": 13
+}

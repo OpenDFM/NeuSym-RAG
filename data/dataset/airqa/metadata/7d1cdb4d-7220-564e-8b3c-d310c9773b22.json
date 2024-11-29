@@ -1,0 +1,21 @@
+{
+    "uuid": "7d1cdb4d-7220-564e-8b3c-d310c9773b22",
+    "title": "Chain-of-Skills: A Configurable Model for Open-Domain Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ma-etal-2023-chain,\n    title = \"Chain-of-Skills: A Configurable Model for Open-Domain Question Answering\",\n    author = \"Ma, Kaixin  and\n      Cheng, Hao  and\n      Zhang, Yu  and\n      Liu, Xiaodong  and\n      Nyberg, Eric  and\n      Gao, Jianfeng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.89\",\n    doi = \"10.18653/v1/2023.acl-long.89\",\n    pages = \"1599--1618\",\n    abstract = \"The retrieval model is an indispensable component for real-world knowledge-intensive tasks, e.g., open-domain question answering (ODQA). As separate retrieval skills are annotated for different datasets, recent work focuses on customized methods, limiting the model transfer- ability and scalability. In this work, we propose a modular retriever where individual modules correspond to key skills that can be reused across datasets. Our approach supports flexible skill configurations based on the target domain to boost performance. To mitigate task interference, we design a novel modularization parameterization inspired by sparse Transformer. We demonstrate that our model can benefit from self-supervised pretraining on Wikipedia and fine-tuning using multiple ODQA datasets, both in a multi-task fashion. Our approach outperforms recent self-supervised retrievers in zero-shot evaluations and achieves state-of-the-art fine-tuned retrieval performance on NQ, HotpotQA and OTT-QA.\",\n}\n",
+    "authors": [
+        "Kaixin Ma",
+        "Hao Cheng",
+        "Yu Zhang",
+        "Xiaodong Liu",
+        "Eric Nyberg",
+        "Jianfeng Gao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.89.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/7d1cdb4d-7220-564e-8b3c-d310c9773b22.pdf",
+    "abstract": "The retrieval model is an indispensable component for real-world knowledge-intensive tasks, e.g., open-domain question answering (ODQA). As separate retrieval skills are annotated for different datasets, recent work focuses on customized methods, limiting the model transfer- ability and scalability. In this work, we propose a modular retriever where individual modules correspond to key skills that can be reused across datasets. Our approach supports flexible skill configurations based on the target domain to boost performance. To mitigate task interference, we design a novel modularization parameterization inspired by sparse Transformer. We demonstrate that our model can benefit from self-supervised pretraining on Wikipedia and fine-tuning using multiple ODQA datasets, both in a multi-task fashion. Our approach outperforms recent self-supervised retrievers in zero-shot evaluations and achieves state-of-the-art fine-tuned retrieval performance on NQ, HotpotQA and OTT-QA.",
+    "num_pages": 20
+}

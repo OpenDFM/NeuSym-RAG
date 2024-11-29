@@ -1,0 +1,17 @@
+{
+    "uuid": "2dfc2f5c-ddc4-5f9d-a6ac-7bf4c32d5cb5",
+    "title": "Split-NER: Named Entity Recognition via Two Question-Answering-based Classifications",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{arora-park-2023-split,\n    title = \"Split-{NER}: Named Entity Recognition via Two Question-Answering-based Classifications\",\n    author = \"Arora, Jatin  and\n      Park, Youngja\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.36\",\n    doi = \"10.18653/v1/2023.acl-short.36\",\n    pages = \"416--426\",\n    abstract = \"In this work, we address the NER problem by splitting it into two logical sub-tasks: (1) Span Detection which simply extracts entity mention spans irrespective of entity type; (2) Span Classification which classifies the spans into their entity types. Further, we formulate both sub-tasks as question-answering (QA) problems and produce two leaner models which can be optimized separately for each sub-task. Experiments with four cross-domain datasets demonstrate that this two-step approach is both effective and time efficient. Our system, SplitNER outperforms baselines on OntoNotes5.0, WNUT17 and a cybersecurity dataset and gives on-par performance on BioNLP13CG. In all cases, it achieves a significant reduction in training time compared to its QA baseline counterpart. The effectiveness of our system stems from fine-tuning the BERT model twice, separately for span detection and classification. The source code can be found at \\url{https://github.com/c3sr/split-ner}.\",\n}\n",
+    "authors": [
+        "Jatin Arora",
+        "Youngja Park"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.36.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2dfc2f5c-ddc4-5f9d-a6ac-7bf4c32d5cb5.pdf",
+    "abstract": "In this work, we address the NER problem by splitting it into two logical sub-tasks: (1) Span Detection which simply extracts entity mention spans irrespective of entity type; (2) Span Classification which classifies the spans into their entity types. Further, we formulate both sub-tasks as question-answering (QA) problems and produce two leaner models which can be optimized separately for each sub-task. Experiments with four cross-domain datasets demonstrate that this two-step approach is both effective and time efficient. Our system, SplitNER outperforms baselines on OntoNotes5.0, WNUT17 and a cybersecurity dataset and gives on-par performance on BioNLP13CG. In all cases, it achieves a significant reduction in training time compared to its QA baseline counterpart. The effectiveness of our system stems from fine-tuning the BERT model twice, separately for span detection and classification. The source code can be found at https://github.com/c3sr/split-ner.",
+    "num_pages": 11
+}

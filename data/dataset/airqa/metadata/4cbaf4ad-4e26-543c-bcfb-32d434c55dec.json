@@ -1,0 +1,22 @@
+{
+    "uuid": "4cbaf4ad-4e26-543c-bcfb-32d434c55dec",
+    "title": "KoRC: Knowledge Oriented Reading Comprehension Benchmark for Deep Text Understanding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{yao-etal-2023-korc,\n    title = \"{K}o{RC}: Knowledge Oriented Reading Comprehension Benchmark for Deep Text Understanding\",\n    author = \"Yao, Zijun  and\n      Liu, Yantao  and\n      Lv, Xin  and\n      Cao, Shulin  and\n      Yu, Jifan  and\n      Li, Juanzi  and\n      Hou, Lei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.743\",\n    doi = \"10.18653/v1/2023.findings-acl.743\",\n    pages = \"11689--11707\",\n    abstract = \"Deep text understanding, which requires the connections between a given document and prior knowledge beyond its text, has been highlighted by many benchmarks in recent years. However, these benchmarks have encountered two major limitations. On the one hand, most of them require human annotation of knowledge, which leads to limited knowledge coverage. On the other hand, they usually use choices or spans in the texts as the answers, which results in narrow answer space. To overcome these limitations, we build a new challenging benchmark named KoRC in this paper. Compared with previous benchmarks, KoRC has two advantages, i.e., broad knowledge coverage and flexible answer format. Specifically, we utilize massive knowledge bases to guide annotators or large language models (LLMs) to construct knowledgable questions. Moreover, we use labels in knowledge bases rather than spans or choices as the final answers. We test state-of-the-art models on KoRC and the experimental results show that the strongest baseline only achieves 68.3{\\%} and 30.0{\\%} F1 measure in the IID and OOD test set, respectively. These results indicate that deep text understanding is still an unsolved challenge. We will release our dataset and baseline methods upon acceptance.\",\n}\n",
+    "authors": [
+        "Zijun Yao",
+        "Yantao Liu",
+        "Xin Lv",
+        "Shulin Cao",
+        "Jifan Yu",
+        "Juanzi Li",
+        "Lei Hou"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.743.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4cbaf4ad-4e26-543c-bcfb-32d434c55dec.pdf",
+    "abstract": "Deep text understanding, which requires the connections between a given document and prior knowledge beyond its text, has been highlighted by many benchmarks in recent years. However, these benchmarks have encountered two major limitations. On the one hand, most of them require human annotation of knowledge, which leads to limited knowledge coverage. On the other hand, they usually use choices or spans in the texts as the answers, which results in narrow answer space. To overcome these limitations, we build a new challenging benchmark named KoRC in this paper. Compared with previous benchmarks, KoRC has two advantages, i.e., broad knowledge coverage and flexible answer format. Specifically, we utilize massive knowledge bases to guide annotators or large language models (LLMs) to construct knowledgable questions. Moreover, we use labels in knowledge bases rather than spans or choices as the final answers. We test state-of-the-art models on KoRC and the experimental results show that the strongest baseline only achieves 68.3% and 30.0% F1 measure in the IID and OOD test set, respectively. These results indicate that deep text understanding is still an unsolved challenge. We will release our dataset and baseline methods upon acceptance.",
+    "num_pages": 19
+}

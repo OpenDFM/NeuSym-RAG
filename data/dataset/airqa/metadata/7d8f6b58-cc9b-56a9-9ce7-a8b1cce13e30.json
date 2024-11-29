@@ -1,0 +1,17 @@
+{
+    "uuid": "7d8f6b58-cc9b-56a9-9ce7-a8b1cce13e30",
+    "title": "CLIP-based image captioning via unsupervised cycle-consistency in the latent space",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)",
+    "bibtex": "@inproceedings{bielawski-vanrullen-2023-clip,\n    title = \"{CLIP}-based image captioning via unsupervised cycle-consistency in the latent space\",\n    author = \"Bielawski, Romain  and\n      VanRullen, Rufin\",\n    editor = \"Can, Burcu  and\n      Mozes, Maximilian  and\n      Cahyawijaya, Samuel  and\n      Saphra, Naomi  and\n      Kassner, Nora  and\n      Ravfogel, Shauli  and\n      Ravichander, Abhilasha  and\n      Zhao, Chen  and\n      Augenstein, Isabelle  and\n      Rogers, Anna  and\n      Cho, Kyunghyun  and\n      Grefenstette, Edward  and\n      Voita, Lena\",\n    booktitle = \"Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.repl4nlp-1.22\",\n    doi = \"10.18653/v1/2023.repl4nlp-1.22\",\n    pages = \"266--275\",\n}\n",
+    "authors": [
+        "Romain Bielawski",
+        "Rufin VanRullen"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.repl4nlp-1.22.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/7d8f6b58-cc9b-56a9-9ce7-a8b1cce13e30.pdf",
+    "abstract": "Image captioning typically involves an image encoder to extract meaningful image features, and a text decoder to generate appropriate sentences. Powerful pretrained models can be used for both image encoding and text decoding; but in this case, a separate multimodal translation stage between image-encoder output features and text-decoder input features must be learned. One exception is when image and text features are already aligned by construction, as in the CLIP model (Contrastive Language and Image Pretraining – a bimodal network pretrained on 400M image-text pairs). Pretrained CLIPimage features can be directly fed to a textdecoder trained to reconstruct captions from their pretrained CLIP-text features. Here we show that this direct captioning method is in fact sub-optimal. Instead, we propose an alternative method to translate CLIP-image features into CLIP-text features in a strictly unsupervised way, using the CycleGAN architecture – originally designed for unpaired imageto-image translation. Our Latent CycleGAN, optimized solely for an unsupervised cycleconsistency objective, generates CLIP-text latent features conditioned on CLIP-image latent features and vice-versa. Using these CLIP-text latent features as input to the text decoder, our method largely outperforms the direct captioning method that uses CLIP-image features – despite the fact that CLIP’s large-scale pretraining should have already aligned the two feature spaces. This implies that cycle-consistency on unmatched multimodal data can be efficiently implemented in a bimodal latent space, and that CLIP-based image captioning can be improved without additional supervised training.",
+    "num_pages": 10
+}

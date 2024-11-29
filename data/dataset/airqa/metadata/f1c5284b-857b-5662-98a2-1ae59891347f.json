@@ -1,0 +1,24 @@
+{
+    "uuid": "f1c5284b-857b-5662-98a2-1ae59891347f",
+    "title": "The NPU-MSXF Speech-to-Speech Translation System for IWSLT 2023 Speech-to-Speech Translation Task",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)",
+    "bibtex": "@inproceedings{song-etal-2023-npu,\n    title = \"The {NPU}-{MSXF} Speech-to-Speech Translation System for {IWSLT} 2023 Speech-to-Speech Translation Task\",\n    author = \"Song, Kun  and\n      Lei, Yi  and\n      Chen, Peikun  and\n      Cao, Yiqing  and\n      Wei, Kun  and\n      Zhang, Yongmao  and\n      Xie, Lei  and\n      Jiang, Ning  and\n      Zhao, Guoqing\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.iwslt-1.29\",\n    doi = \"10.18653/v1/2023.iwslt-1.29\",\n    pages = \"311--320\",\n    abstract = \"This paper describes the NPU-MSXF system for the IWSLT 2023 speech-to-speech translation (S2ST) task which aims to translate from English speech of multi-source to Chinese speech. The system is built in a cascaded manner consisting of automatic speech recognition (ASR), machine translation (MT), and text-to-speech (TTS). We make tremendous efforts to handle the challenging multi-source input. Specifically, to improve the robustness to multi-source speech input, we adopt various data augmentation strategies and a ROVER-based score fusion on multiple ASR model outputs. To better handle the noisy ASR transcripts, we introduce a three-stage fine-tuning strategy to improve translation accuracy. Finally, we build a TTS model with high naturalness and sound quality, which leverages a two-stage framework, using network bottleneck features as a robust intermediate representation for speaker timbre and linguistic content disentanglement. Based on the two-stage framework, pre-trained speaker embedding is leveraged as a condition to transfer the speaker timbre in the source English speech to the translated Chinese speech. Experimental results show that our system has high translation accuracy, speech naturalness, sound quality, and speaker similarity. Moreover, it shows good robustness to multi-source data.\",\n}\n",
+    "authors": [
+        "Kun Song",
+        "Yi Lei",
+        "Peikun Chen",
+        "Yiqing Cao",
+        "Kun Wei",
+        "Yongmao Zhang",
+        "Lei Xie",
+        "Ning Jiang",
+        "Guoqing Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.iwslt-1.29.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f1c5284b-857b-5662-98a2-1ae59891347f.pdf",
+    "abstract": "This paper describes the NPU-MSXF system for the IWSLT 2023 speech-to-speech translation (S2ST) task which aims to translate from English speech of multi-source to Chinese speech. The system is built in a cascaded manner consisting of automatic speech recognition (ASR), machine translation (MT), and text-to-speech (TTS). We make tremendous efforts to handle the challenging multi-source input. Specifically, to improve the robustness to multi-source speech input, we adopt various data augmentation strategies and a ROVER-based score fusion on multiple ASR model outputs. To better handle the noisy ASR transcripts, we introduce a three-stage fine-tuning strategy to improve translation accuracy. Finally, we build a TTS model with high naturalness and sound quality, which leverages a two-stage framework, using network bottleneck features as a robust intermediate representation for speaker timbre and linguistic content disentanglement. Based on the two-stage framework, pre-trained speaker embedding is leveraged as a condition to transfer the speaker timbre in the source English speech to the translated Chinese speech. Experimental results show that our system has high translation accuracy, speech naturalness, sound quality, and speaker similarity. Moreover, it shows good robustness to multi-source data.",
+    "num_pages": 10
+}

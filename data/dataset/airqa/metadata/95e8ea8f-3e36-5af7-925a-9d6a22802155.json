@@ -1,0 +1,17 @@
+{
+    "uuid": "95e8ea8f-3e36-5af7-925a-9d6a22802155",
+    "title": "Empirical Sufficiency Lower Bounds for Language Modeling with Locally-Bootstrapped Semantic Structures",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 12th Joint Conference on Lexical and Computational Semantics (*SEM 2023)",
+    "bibtex": "@inproceedings{prange-chersoni-2023-empirical,\n    title = \"Empirical Sufficiency Lower Bounds for Language Modeling with Locally-Bootstrapped Semantic Structures\",\n    author = \"Prange, Jakob  and\n      Chersoni, Emmanuele\",\n    editor = \"Palmer, Alexis  and\n      Camacho-collados, Jose\",\n    booktitle = \"Proceedings of the 12th Joint Conference on Lexical and Computational Semantics (*SEM 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.starsem-1.40\",\n    doi = \"10.18653/v1/2023.starsem-1.40\",\n    pages = \"456--468\",\n    abstract = \"In this work we build upon negative results from an attempt at language modeling with predicted semantic structure, in order to establish empirical lower bounds on what could have made the attempt successful. More specifically, we design a concise binary vector representation of semantic structure at the lexical level and evaluate in-depth how good an incremental tagger needs to be in order to achieve better-than-baseline performance with an end-to-end semantic-bootstrapping language model. We envision such a system as consisting of a (pretrained) sequential-neural component and a hierarchical-symbolic component working together to generate text with low surprisal and high linguistic interpretability. We find that (a) dimensionality of the semantic vector representation can be dramatically reduced without losing its main advantages and (b) lower bounds on prediction quality cannot be established via a single score alone, but need to take the distributions of signal and noise into account.\",\n}\n",
+    "authors": [
+        "Jakob Prange",
+        "Emmanuele Chersoni"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.starsem-1.40.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/95e8ea8f-3e36-5af7-925a-9d6a22802155.pdf",
+    "abstract": "In this work we build upon negative results from an attempt at language modeling with predicted semantic structure, in order to establish empirical lower bounds on what could have made the attempt successful. More specifically, we design a concise binary vector representation of semantic structure at the lexical level and evaluate in-depth how good an incremental tagger needs to be in order to achieve better-than-baseline performance with an end-to-end semantic-bootstrapping language model. We envision such a system as consisting of a (pretrained) sequential-neural component and a hierarchical-symbolic component working together to generate text with low surprisal and high linguistic interpretability. We find that (a) dimensionality of the semantic vector representation can be dramatically reduced without losing its main advantages and (b) lower bounds on prediction quality cannot be established via a single score alone, but need to take the distributions of signal and noise into account.",
+    "num_pages": 13
+}

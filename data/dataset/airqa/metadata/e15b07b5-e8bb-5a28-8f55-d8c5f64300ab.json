@@ -1,0 +1,24 @@
+{
+    "uuid": "e15b07b5-e8bb-5a28-8f55-d8c5f64300ab",
+    "title": "Detecting Adversarial Samples through Sharpness of Loss Landscape",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zheng-etal-2023-detecting,\n    title = \"Detecting Adversarial Samples through Sharpness of Loss Landscape\",\n    author = \"Zheng, Rui  and\n      Dou, Shihan  and\n      Zhou, Yuhao  and\n      Liu, Qin  and\n      Gui, Tao  and\n      Zhang, Qi  and\n      Wei, Zhongyu  and\n      Huang, Xuanjing  and\n      Zhang, Menghan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.717\",\n    doi = \"10.18653/v1/2023.findings-acl.717\",\n    pages = \"11282--11298\",\n    abstract = \"Deep neural networks (DNNs) have been proven to be sensitive towards perturbations on input samples, and previous works highlight that adversarial samples are even more vulnerable than normal ones. In this work, this phenomenon is illustrated frWe first show that adversarial samples locate in steep and narrow local minima of the loss landscape (high sharpness) while normal samples, which differs distinctly from adversarial ones, reside in the loss surface that is more flatter (low sharpness).om the perspective of sharpness via visualizing the input loss landscape of models. Based on this, we propose a simple and effective sharpness-based detector to distinct adversarial samples by maximizing the loss increment within the region where the inference sample is located. Considering that the notion of sharpness of a loss landscape is relative, we further propose an adaptive optimization strategy in an attempt to fairly compare the relative sharpness among different samples. Experimental results show that our approach can outperform previous detection methods by large margins (average +6.6 F1 score) for four advanced attack strategies considered in this paper across three text classification tasks.\",\n}\n",
+    "authors": [
+        "Rui Zheng",
+        "Shihan Dou",
+        "Yuhao Zhou",
+        "Qin Liu",
+        "Tao Gui",
+        "Qi Zhang",
+        "Zhongyu Wei",
+        "Xuanjing Huang",
+        "Menghan Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.717.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/e15b07b5-e8bb-5a28-8f55-d8c5f64300ab.pdf",
+    "abstract": "Deep neural networks (DNNs) have been proven to be sensitive towards perturbations on input samples, and previous works highlight that adversarial samples are even more vulnerable than normal ones. In this work, this phenomenon is illustrated frWe first show that adversarial samples locate in steep and narrow local minima of the loss landscape (high sharpness) while normal samples, which differs distinctly from adversarial ones, reside in the loss surface that is more flatter (low sharpness).om the perspective of sharpness via visualizing the input loss landscape of models. Based on this, we propose a simple and effective sharpness-based detector to distinct adversarial samples by maximizing the loss increment within the region where the inference sample is located. Considering that the notion of sharpness of a loss landscape is relative, we further propose an adaptive optimization strategy in an attempt to fairly compare the relative sharpness among different samples. Experimental results show that our approach can outperform previous detection methods by large margins (average +6.6 F1 score) for four advanced attack strategies considered in this paper across three text classification tasks.",
+    "num_pages": 17
+}

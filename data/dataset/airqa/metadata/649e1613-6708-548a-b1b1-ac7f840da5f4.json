@@ -1,0 +1,21 @@
+{
+    "uuid": "649e1613-6708-548a-b1b1-ac7f840da5f4",
+    "title": "Generative Cross-Modal Retrieval: Memorizing Images in Multimodal Language Models for Retrieval and Beyond",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{li-etal-2024-generative,\n    title = \"Generative Cross-Modal Retrieval: Memorizing Images in Multimodal Language Models for Retrieval and Beyond\",\n    author = \"Li, Yongqi  and\n      Wang, Wenjie  and\n      Qu, Leigang  and\n      Nie, Liqiang  and\n      Li, Wenjie  and\n      Chua, Tat-Seng\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.639\",\n    doi = \"10.18653/v1/2024.acl-long.639\",\n    pages = \"11851--11861\",\n    abstract = \"The recent advancements in generative language models have demonstrated their ability to memorize knowledge from documents and recall knowledge to respond to user queries effectively. Building upon this capability, we propose to enable multimodal large language models (MLLMs) to memorize and recall images within their parameters. Given a user query for visual content, the MLLM is anticipated to {``}recall{''} the relevant image from its parameters as the response. Achieving this target presents notable challenges, including inbuilt visual memory and visual recall schemes within MLLMs. To address these challenges, we introduce a generative cross-modal retrieval framework, which assigns unique identifier strings to represent images and involves two training steps: learning to memorize and learning to retrieve. The first step focuses on training the MLLM to memorize the association between images and their respective identifiers. The latter step teaches the MLLM to generate the corresponding identifier of the target image, given the textual query input. By memorizing images in MLLMs, we introduce a new paradigm to cross-modal retrieval, distinct from previous discriminative approaches. The experiments demonstrate that the generative paradigm performs effectively and efficiently even with large-scale image candidate sets.\",\n}\n",
+    "authors": [
+        "Yongqi Li",
+        "Wenjie Wang",
+        "Leigang Qu",
+        "Liqiang Nie",
+        "Wenjie Li",
+        "Tat-Seng Chua"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.639.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/649e1613-6708-548a-b1b1-ac7f840da5f4.pdf",
+    "abstract": "The recent advancements in generative language models have demonstrated their ability to memorize knowledge from documents and recall knowledge to respond to user queries effectively. Building upon this capability, we propose to enable multimodal large language models (MLLMs) to memorize and recall images within their parameters. Given a user query for visual content, the MLLM is anticipated to “recall” the relevant image from its parameters as the response. Achieving this target presents notable challenges, including inbuilt visual memory and visual recall schemes within MLLMs. To address these challenges, we introduce a generative cross-modal retrieval framework, which assigns unique identifier strings to represent images and involves two training steps: learning to memorize and learning to retrieve. The first step focuses on training the MLLM to memorize the association between images and their respective identifiers. The latter step teaches the MLLM to generate the corresponding identifier of the target image, given the textual query input. By memorizing images in MLLMs, we introduce a new paradigm to cross-modal retrieval, distinct from previous discriminative approaches. The experiments demonstrate that the generative paradigm performs effectively and efficiently even with large-scale image candidate sets.",
+    "num_pages": 11
+}

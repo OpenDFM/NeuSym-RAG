@@ -1,0 +1,33 @@
+{
+    "uuid": "af55a7a5-6378-5787-b2ed-8ee724470a46",
+    "title": "AlignBench: Benchmarking Chinese Alignment of Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{liu-etal-2024-alignbench,\n    title = \"{A}lign{B}ench: Benchmarking {C}hinese Alignment of Large Language Models\",\n    author = \"Liu, Xiao  and\n      Lei, Xuanyu  and\n      Wang, Shengyuan  and\n      Huang, Yue  and\n      Feng, Andrew  and\n      Wen, Bosi  and\n      Cheng, Jiale  and\n      Ke, Pei  and\n      Xu, Yifan  and\n      Tam, Weng Lam  and\n      Zhang, Xiaohan  and\n      Sun, Lichao  and\n      Gu, Xiaotao  and\n      Wang, Hongning  and\n      Zhang, Jing  and\n      Huang, Minlie  and\n      Dong, Yuxiao  and\n      Tang, Jie\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.624\",\n    doi = \"10.18653/v1/2024.acl-long.624\",\n    pages = \"11621--11640\",\n    abstract = \"Alignment has become a critical step for instruction-tuned Large Language Models (LLMs) to become helpful assistants. However, effective evaluation of alignment for emerging Chinese LLMs is still significantly lacking, calling for real-scenario grounded, open-ended, challenging and automatic evaluations tailored for alignment. To fill in this gap, we introduce AlignBench, a comprehensive multi-dimensional benchmark for evaluating LLMs{'} alignment in Chinese. We tailor a human-in-the-loop data curation pipeline, containing 8 main categories, 683 real-scenario rooted queries and corresponding human verified references.To ensure references{'} correctness, each knowledge-intensive query is accompanied with evidences collected from reliable webpages (including the url and quotation) by our annotators.For automatic evaluation, our benchmark employs a rule-calibrated multi-dimensional LLM-as-Judge (CITATION) with Chain-of-Thought to generate explanations and final ratings as evaluations, ensuring high reliability and interpretability.All evaluation codes and data are publicly available at \\url{https://github.com/THUDM/AlignBench}\",\n}\n",
+    "authors": [
+        "Xiao Liu",
+        "Xuanyu Lei",
+        "Shengyuan Wang",
+        "Yue Huang",
+        "Andrew Feng",
+        "Bosi Wen",
+        "Jiale Cheng",
+        "Pei Ke",
+        "Yifan Xu",
+        "Weng Lam Tam",
+        "Xiaohan Zhang",
+        "Lichao Sun",
+        "Xiaotao Gu",
+        "Hongning Wang",
+        "Jing Zhang",
+        "Minlie Huang",
+        "Yuxiao Dong",
+        "Jie Tang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.624.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/af55a7a5-6378-5787-b2ed-8ee724470a46.pdf",
+    "abstract": "Alignment has become a critical step for instruction-tuned Large Language Models (LLMs) to become helpful assistants. However, effective evaluation of alignment for emerging Chinese LLMs is still significantly lacking, calling for real-scenario grounded, open-ended, challenging and automatic evaluations tailored for alignment. To fill in this gap, we introduce AlignBench, a comprehensive multi-dimensional benchmark for evaluating LLMs’ alignment in Chinese. We tailor a human-in-the-loop data curation pipeline, containing 8 main categories, 683 real-scenario rooted queries and corresponding human verified references.To ensure references’ correctness, each knowledge-intensive query is accompanied with evidences collected from reliable webpages (including the url and quotation) by our annotators.For automatic evaluation, our benchmark employs a rule-calibrated multi-dimensional LLM-as-Judge (CITATION) with Chain-of-Thought to generate explanations and final ratings as evaluations, ensuring high reliability and interpretability.All evaluation codes and data are publicly available at https://github.com/THUDM/AlignBench",
+    "num_pages": 20
+}

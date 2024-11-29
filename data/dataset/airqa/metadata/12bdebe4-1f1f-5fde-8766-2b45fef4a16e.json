@@ -1,0 +1,20 @@
+{
+    "uuid": "12bdebe4-1f1f-5fde-8766-2b45fef4a16e",
+    "title": "RAVEL: Evaluating Interpretability Methods on Disentangling Language Model Representations",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{huang-etal-2024-ravel,\n    title = \"{RAVEL}: Evaluating Interpretability Methods on Disentangling Language Model Representations\",\n    author = \"Huang, Jing  and\n      Wu, Zhengxuan  and\n      Potts, Christopher  and\n      Geva, Mor  and\n      Geiger, Atticus\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.470\",\n    doi = \"10.18653/v1/2024.acl-long.470\",\n    pages = \"8669--8687\",\n    abstract = \"Individual neurons participate in the representation of multiple high-level concepts. To what extent can different interpretability methods successfully disentangle these roles? To help address this question, we introduce RAVEL (Resolving Attribute-Value Entanglements in Language Models), a dataset that enables tightly controlled, quantitative comparisons between a variety of existing interpretability methods. We use the resulting conceptual framework to define the new method of Multi-task Distributed Alignment Search (MDAS), which allows us to find distributed representations satisfying multiple causal criteria. With Llama2-7B as the target language model, MDAS achieves state-of-the-art results on RAVEL, demonstrating the importance of going beyond neuron-level analyses to identify features distributed across activations. We release our benchmark at https://github.com/explanare/ravel.\",\n}\n",
+    "authors": [
+        "Jing Huang",
+        "Zhengxuan Wu",
+        "Christopher Potts",
+        "Mor Geva",
+        "Atticus Geiger"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.470.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/12bdebe4-1f1f-5fde-8766-2b45fef4a16e.pdf",
+    "abstract": "Individual neurons participate in the representation of multiple high-level concepts. To what extent can different interpretability methods successfully disentangle these roles? To help address this question, we introduce RAVEL (Resolving Attribute-Value Entanglements in Language Models), a dataset that enables tightly controlled, quantitative comparisons between a variety of existing interpretability methods. We use the resulting conceptual framework to define the new method of Multi-task Distributed Alignment Search (MDAS), which allows us to find distributed representations satisfying multiple causal criteria. With Llama2-7B as the target language model, MDAS achieves state-of-the-art results on RAVEL, demonstrating the importance of going beyond neuron-level analyses to identify features distributed across activations. We release our benchmark at https://github.com/explanare/ravel.",
+    "num_pages": 19
+}

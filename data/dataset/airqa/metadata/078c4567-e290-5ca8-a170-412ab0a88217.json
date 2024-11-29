@@ -1,0 +1,21 @@
+{
+    "uuid": "078c4567-e290-5ca8-a170-412ab0a88217",
+    "title": "K-QA: A Real-World Medical Q&A Benchmark",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 23rd Workshop on Biomedical Natural Language Processing",
+    "bibtex": "@inproceedings{manes-etal-2024-k,\n    title = \"K-{QA}: A Real-World Medical {Q}{\\&}{A} Benchmark\",\n    author = \"Manes, Itay  and\n      Ronn, Naama  and\n      Cohen, David  and\n      Ilan Ber, Ran  and\n      Horowitz-Kugler, Zehavi  and\n      Stanovsky, Gabriel\",\n    editor = \"Demner-Fushman, Dina  and\n      Ananiadou, Sophia  and\n      Miwa, Makoto  and\n      Roberts, Kirk  and\n      Tsujii, Junichi\",\n    booktitle = \"Proceedings of the 23rd Workshop on Biomedical Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.bionlp-1.22\",\n    doi = \"10.18653/v1/2024.bionlp-1.22\",\n    pages = \"277--294\",\n    abstract = \"Ensuring the accuracy of responses provided by large language models (LLMs) is crucial, particularly in clinical settings where incorrect information may directly impact patient health. To address this challenge, we construct K-QA, a dataset containing 1,212 patient questions originating from real-world conversations held on a popular clinical online platform. We employ a panel of in-house physicians to answer and manually decompose a subset of K-QA into self-contained statements. Additionally, we formulate two NLI-based evaluation metrics approximating recall and precision: (1) comprehensiveness, measuring the percentage of essential clinical information in the generated answer and (2) hallucination rate, measuring the number of statements from the physician-curated response contradicted by the LLM answer. Finally, we use K-QA along with these metrics to evaluate several state-of-the-art models, as well as the effect of in-context learning and medically-oriented augmented retrieval schemes developed by the authors. Our findings indicate that in-context learning improves the comprehensiveness of the models, and augmented retrieval is effective in reducing hallucinations. We will make K-QA available to to the community to spur research into medically accurate NLP applications.\",\n}\n",
+    "authors": [
+        "Itay Manes",
+        "Naama Ronn",
+        "David Cohen",
+        "Ran Ilan Ber",
+        "Zehavi Horowitz-Kugler",
+        "Gabriel Stanovsky"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.bionlp-1.22.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/078c4567-e290-5ca8-a170-412ab0a88217.pdf",
+    "abstract": "Ensuring the accuracy of responses provided by large language models (LLMs) is crucial, particularly in clinical settings where incorrect information may directly impact patient health. To address this challenge, we construct K-QA, a dataset containing 1,212 patient questions originating from real-world conversations held on a popular clinical online platform. We employ a panel of in-house physicians to answer and manually decompose a subset of K-QA into self-contained statements. Additionally, we formulate two NLI-based evaluation metrics approximating recall and precision: (1) comprehensiveness, measuring the percentage of essential clinical information in the generated answer and (2) hallucination rate, measuring the number of statements from the physician-curated response contradicted by the LLM answer. Finally, we use K-QA along with these metrics to evaluate several state-of-the-art models, as well as the effect of in-context learning and medically-oriented augmented retrieval schemes developed by the authors. Our findings indicate that in-context learning improves the comprehensiveness of the models, and augmented retrieval is effective in reducing hallucinations. We will make K-QA available to to the community to spur research into medically accurate NLP applications.",
+    "num_pages": 18
+}

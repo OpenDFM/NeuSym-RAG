@@ -1,0 +1,17 @@
+{
+    "uuid": "c8aa6a0d-70f8-518b-98c7-2c125e5381b9",
+    "title": "Annotation-Inspired Implicit Discourse Relation Classification with Auxiliary Discourse Connective Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{liu-strube-2023-annotation,\n    title = \"Annotation-Inspired Implicit Discourse Relation Classification with Auxiliary Discourse Connective Generation\",\n    author = \"Liu, Wei  and\n      Strube, Michael\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.874\",\n    doi = \"10.18653/v1/2023.acl-long.874\",\n    pages = \"15696--15712\",\n    abstract = \"Implicit discourse relation classification is a challenging task due to the absence of discourse connectives. To overcome this issue, we design an end-to-end neural model to explicitly generate discourse connectives for the task, inspired by the annotation process of PDTB. Specifically, our model jointly learns to generate discourse connectives between arguments and predict discourse relations based on the arguments and the generated connectives. To prevent our relation classifier from being misled by poor connectives generated at the early stage of training while alleviating the discrepancy between training and inference, we adopt Scheduled Sampling to the joint learning. We evaluate our method on three benchmarks, PDTB 2.0, PDTB 3.0, and PCC. Results show that our joint model significantly outperforms various baselines on three datasets, demonstrating its superiority for the task.\",\n}\n",
+    "authors": [
+        "Wei Liu",
+        "Michael Strube"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.874.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c8aa6a0d-70f8-518b-98c7-2c125e5381b9.pdf",
+    "abstract": "Implicit discourse relation classification is a challenging task due to the absence of discourse connectives. To overcome this issue, we design an end-to-end neural model to explicitly generate discourse connectives for the task, inspired by the annotation process of PDTB. Specifically, our model jointly learns to generate discourse connectives between arguments and predict discourse relations based on the arguments and the generated connectives. To prevent our relation classifier from being misled by poor connectives generated at the early stage of training while alleviating the discrepancy between training and inference, we adopt Scheduled Sampling to the joint learning. We evaluate our method on three benchmarks, PDTB 2.0, PDTB 3.0, and PCC. Results show that our joint model significantly outperforms various baselines on three datasets, demonstrating its superiority for the task.",
+    "num_pages": 17
+}

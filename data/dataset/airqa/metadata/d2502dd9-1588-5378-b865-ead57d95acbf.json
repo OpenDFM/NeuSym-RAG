@@ -1,0 +1,22 @@
+{
+    "uuid": "d2502dd9-1588-5378-b865-ead57d95acbf",
+    "title": "The NiuTrans End-to-End Speech Translation System for IWSLT23 English-to-Chinese Offline Task",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)",
+    "bibtex": "@inproceedings{han-etal-2023-niutrans,\n    title = \"The {N}iu{T}rans End-to-End Speech Translation System for {IWSLT}23 {E}nglish-to-{C}hinese Offline Task\",\n    author = \"Han, Yuchen  and\n      Liu, Xiaoqian  and\n      Chen, Hao  and\n      Zhang, Yuhao  and\n      Xu, Chen  and\n      Xiao, Tong  and\n      Zhu, Jingbo\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.iwslt-1.17\",\n    doi = \"10.18653/v1/2023.iwslt-1.17\",\n    pages = \"211--218\",\n    abstract = \"This paper describes the NiuTrans end-to-end speech translation system submitted for the IWSLT 2023 English-to-Chinese offline task. Our speech translation models are composed of pre-trained ASR and MT models under the SATE framework. Several pre-trained models with diverse architectures and input representations (e.g., log Mel-filterbank and waveform) were utilized. We proposed an IDA method to iteratively improve the performance of the MT models and generate the pseudo ST data through MT systems. We then trained ST models with different structures and data settings to enhance ensemble performance. Experimental results demonstrate that our NiuTrans system achieved a BLEU score of 29.22 on the MuST-C En-Zh tst-COMMON set, outperforming the previous year{'}s submission by 0.12 BLEU despite using less MT training data.\",\n}\n",
+    "authors": [
+        "Yuchen Han",
+        "Xiaoqian Liu",
+        "Hao Chen",
+        "Yuhao Zhang",
+        "Chen Xu",
+        "Tong Xiao",
+        "Jingbo Zhu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.iwslt-1.17.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d2502dd9-1588-5378-b865-ead57d95acbf.pdf",
+    "abstract": "This paper describes the NiuTrans end-to-end speech translation system submitted for the IWSLT 2023 English-to-Chinese offline task. Our speech translation models are composed of pre-trained ASR and MT models under the SATE framework. Several pre-trained models with diverse architectures and input representations (e.g., log Mel-filterbank and waveform) were utilized. We proposed an IDA method to iteratively improve the performance of the MT models and generate the pseudo ST data through MT systems. We then trained ST models with different structures and data settings to enhance ensemble performance. Experimental results demonstrate that our NiuTrans system achieved a BLEU score of 29.22 on the MuST-C En-Zh tst-COMMON set, outperforming the previous year’s submission by 0.12 BLEU despite using less MT training data.",
+    "num_pages": 8
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "7f4fa3c7-235c-5eff-9b29-8cd5d8957633",
+    "title": "Scaling Laws for BERT in Low-Resource Settings",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{urbizu-etal-2023-scaling,\n    title = \"Scaling Laws for {BERT} in Low-Resource Settings\",\n    author = \"Urbizu, Gorka  and\n      San Vicente, I{\\~n}aki  and\n      Saralegi, Xabier  and\n      Agerri, Rodrigo  and\n      Soroa, Aitor\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.492\",\n    doi = \"10.18653/v1/2023.findings-acl.492\",\n    pages = \"7771--7789\",\n    abstract = \"Large language models are very resource intensive, both financially and environmentally, and require an amount of training data which is simply unobtainable for the majority of NLP practitioners. Previous work has researched the scaling laws of such models, but optimal ratios of model parameters, dataset size, and computation costs focused on the large scale. In contrast, we analyze the effect those variables have on the performance of language models in constrained settings, by building three lightweight BERT models (16M/51M/124M parameters) trained over a set of small corpora (5M/25M/125M words).We experiment on four languages of different linguistic characteristics (Basque, Spanish, Swahili and Finnish), and evaluate the models on MLM and several NLU tasks. We conclude that the power laws for parameters, data and compute for low-resource settings differ from the optimal scaling laws previously inferred, and data requirements should be higher. Our insights are consistent across all the languages we study, as well as across the MLM and downstream tasks. Furthermore, we experimentally establish when the cost of using a Transformer-based approach is worth taking, instead of favouring other computationally lighter solutions.\",\n}\n",
+    "authors": [
+        "Gorka Urbizu",
+        "Iñaki San Vicente",
+        "Xabier Saralegi",
+        "Rodrigo Agerri",
+        "Aitor Soroa"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.492.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/7f4fa3c7-235c-5eff-9b29-8cd5d8957633.pdf",
+    "abstract": "Large language models are very resource intensive, both financially and environmentally, and require an amount of training data which is simply unobtainable for the majority of NLP practitioners. Previous work has researched the scaling laws of such models, but optimal ratios of model parameters, dataset size, and computation costs focused on the large scale. In contrast, we analyze the effect those variables have on the performance of language models in constrained settings, by building three lightweight BERT models (16M/51M/124M parameters) trained over a set of small corpora (5M/25M/125M words).We experiment on four languages of different linguistic characteristics (Basque, Spanish, Swahili and Finnish), and evaluate the models on MLM and several NLU tasks. We conclude that the power laws for parameters, data and compute for low-resource settings differ from the optimal scaling laws previously inferred, and data requirements should be higher. Our insights are consistent across all the languages we study, as well as across the MLM and downstream tasks. Furthermore, we experimentally establish when the cost of using a Transformer-based approach is worth taking, instead of favouring other computationally lighter solutions.",
+    "num_pages": 19
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "6672df62-cd9c-5057-b84a-8d2adbf28d35",
+    "title": "Continual Contrastive Finetuning Improves Low-Resource Relation Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhou-etal-2023-continual,\n    title = \"Continual Contrastive Finetuning Improves Low-Resource Relation Extraction\",\n    author = \"Zhou, Wenxuan  and\n      Zhang, Sheng  and\n      Naumann, Tristan  and\n      Chen, Muhao  and\n      Poon, Hoifung\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.739\",\n    doi = \"10.18653/v1/2023.acl-long.739\",\n    pages = \"13249--13263\",\n    abstract = \"Relation extraction (RE), which has relied on structurally annotated corpora for model training, has been particularly challenging in low-resource scenarios and domains. Recent literature has tackled low-resource RE by self-supervised learning, where the solution involves pretraining the entity pair embedding by RE-based objective and finetuning on labeled data by classification-based objective. However, a critical challenge to this approach is the gap in objectives, which prevents the RE model from fully utilizing the knowledge in pretrained representations. In this paper, we aim at bridging the gap and propose to pretrain and finetune the RE model using consistent objectives of contrastive learning. Since in this kind of representation learning paradigm, one relation may easily form multiple clusters in the representation space, we further propose a multi-center contrastive loss that allows one relation to form multiple clusters to better align with pretraining. Experiments on two document-level RE datasets, BioRED and Re-DocRED, demonstrate the effectiveness of our method. Particularly, when using 1{\\%} end-task training data, our method outperforms PLM-based RE classifier by 10.5{\\%} and 6.1{\\%} on the two datasets, respectively.\",\n}\n",
+    "authors": [
+        "Wenxuan Zhou",
+        "Sheng Zhang",
+        "Tristan Naumann",
+        "Muhao Chen",
+        "Hoifung Poon"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.739.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/6672df62-cd9c-5057-b84a-8d2adbf28d35.pdf",
+    "abstract": "Relation extraction (RE), which has relied on structurally annotated corpora for model training, has been particularly challenging in low-resource scenarios and domains. Recent literature has tackled low-resource RE by self-supervised learning, where the solution involves pretraining the entity pair embedding by RE-based objective and finetuning on labeled data by classification-based objective. However, a critical challenge to this approach is the gap in objectives, which prevents the RE model from fully utilizing the knowledge in pretrained representations. In this paper, we aim at bridging the gap and propose to pretrain and finetune the RE model using consistent objectives of contrastive learning. Since in this kind of representation learning paradigm, one relation may easily form multiple clusters in the representation space, we further propose a multi-center contrastive loss that allows one relation to form multiple clusters to better align with pretraining. Experiments on two document-level RE datasets, BioRED and Re-DocRED, demonstrate the effectiveness of our method. Particularly, when using 1% end-task training data, our method outperforms PLM-based RE classifier by 10.5% and 6.1% on the two datasets, respectively.",
+    "num_pages": 15
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "4fc1579d-3356-5efe-ae3d-c54f7db67109",
+    "title": "Characterizing the Impacts of Instances on Robustness",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zheng-etal-2023-characterizing,\n    title = \"Characterizing the Impacts of Instances on Robustness\",\n    author = \"Zheng, Rui  and\n      Xi, Zhiheng  and\n      Liu, Qin  and\n      Lai, Wenbin  and\n      Gui, Tao  and\n      Zhang, Qi  and\n      Huang, Xuanjing  and\n      Ma, Jin  and\n      Shan, Ying  and\n      Ge, Weifeng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.146\",\n    doi = \"10.18653/v1/2023.findings-acl.146\",\n    pages = \"2314--2332\",\n    abstract = \"Building robust deep neural networks (DNNs) against adversarial attacks is an important but challenging task. Previous defense approaches mainly focus on developing new model structures or training algorithms, but they do little to tap the potential of training instances, especially instances with robust patterns carring innate robustness. In this paper, we show that robust and non-robust instances in the training dataset, though are both important for test performance, have contrary impacts on robustness, which makes it possible to build a highly robust model by leveraging the training dataset in a more effective way. We propose a new method that can distinguish between robust instances from non-robust ones according to the model{'}s sensitivity to perturbations on individual instances during training. Surprisingly, we find that the model under standard training easily overfits the robust instances by relying on their simple patterns before the model completely learns their robust features. Finally, we propose a new mitigation algorithm to further release the potential of robust instances. Experimental results show that proper use of robust instances in the original dataset is a new line to achieve highly robust models.\",\n}\n",
+    "authors": [
+        "Rui Zheng",
+        "Zhiheng Xi",
+        "Qin Liu",
+        "Wenbin Lai",
+        "Tao Gui",
+        "Qi Zhang",
+        "Xuanjing Huang",
+        "Jin Ma",
+        "Ying Shan",
+        "Weifeng Ge"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.146.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4fc1579d-3356-5efe-ae3d-c54f7db67109.pdf",
+    "abstract": "Building robust deep neural networks (DNNs) against adversarial attacks is an important but challenging task. Previous defense approaches mainly focus on developing new model structures or training algorithms, but they do little to tap the potential of training instances, especially instances with robust patterns carring innate robustness. In this paper, we show that robust and non-robust instances in the training dataset, though are both important for test performance, have contrary impacts on robustness, which makes it possible to build a highly robust model by leveraging the training dataset in a more effective way. We propose a new method that can distinguish between robust instances from non-robust ones according to the model’s sensitivity to perturbations on individual instances during training. Surprisingly, we find that the model under standard training easily overfits the robust instances by relying on their simple patterns before the model completely learns their robust features. Finally, we propose a new mitigation algorithm to further release the potential of robust instances. Experimental results show that proper use of robust instances in the original dataset is a new line to achieve highly robust models.",
+    "num_pages": 19
+}

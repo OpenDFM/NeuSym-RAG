@@ -1,0 +1,19 @@
+{
+    "uuid": "64af4dfd-641c-5ec8-a6b1-b39c6582b02a",
+    "title": "Exploring Zero and Few-shot Techniques for Intent Classification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{parikh-etal-2023-exploring,\n    title = \"Exploring Zero and Few-shot Techniques for Intent Classification\",\n    author = \"Parikh, Soham  and\n      Tiwari, Mitul  and\n      Tumbade, Prashil  and\n      Vohra, Quaizar\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.71\",\n    doi = \"10.18653/v1/2023.acl-industry.71\",\n    pages = \"744--751\",\n    abstract = \"Conversational NLU providers often need to scale to thousands of intent-classification models where new customers often face the cold-start problem. Scaling to so many customers puts a constraint on storage space as well. In this paper, we explore four different zero and few-shot intent classification approaches with this low-resource constraint: 1) domain adaptation, 2) data augmentation, 3) zero-shot intent classification using descriptions large language models (LLMs), and 4) parameter-efficient fine-tuning of instruction-finetuned language models. Our results show that all these approaches are effective to different degrees in low-resource settings. Parameter-efficient fine-tuning using T-few recipe on Flan-T5 yields the best performance even with just one sample per intent. We also show that the zero-shot method of prompting LLMs using intent descriptions is also very competitive.\",\n}\n",
+    "authors": [
+        "Soham Parikh",
+        "Mitul Tiwari",
+        "Prashil Tumbade",
+        "Quaizar Vohra"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.71.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/64af4dfd-641c-5ec8-a6b1-b39c6582b02a.pdf",
+    "abstract": "Conversational NLU providers often need to scale to thousands of intent-classification models where new customers often face the cold-start problem. Scaling to so many customers puts a constraint on storage space as well. In this paper, we explore four different zero and few-shot intent classification approaches with this low-resource constraint: 1) domain adaptation, 2) data augmentation, 3) zero-shot intent classification using descriptions large language models (LLMs), and 4) parameter-efficient fine-tuning of instruction-finetuned language models. Our results show that all these approaches are effective to different degrees in low-resource settings. Parameter-efficient fine-tuning using T-few recipe on Flan-T5 yields the best performance even with just one sample per intent. We also show that the zero-shot method of prompting LLMs using intent descriptions is also very competitive.",
+    "num_pages": 8
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "aeed096e-b476-5194-90b4-488d46d0ed7a",
+    "title": "Generate-then-Retrieve: Intent-Aware FAQ Retrieval in Product Search",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{chen-etal-2023-generate,\n    title = \"Generate-then-Retrieve: Intent-Aware {FAQ} Retrieval in Product Search\",\n    author = \"Chen, Zhiyu  and\n      Choi, Jason  and\n      Fetahu, Besnik  and\n      Rokhlenko, Oleg  and\n      Malmasi, Shervin\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.73\",\n    doi = \"10.18653/v1/2023.acl-industry.73\",\n    pages = \"763--771\",\n    abstract = \"Frequently Asked Question (FAQ) retrieval aims at retrieving question-answer pairs for a given a user query. Integrating FAQ retrieval with product search can not only empower users to make more informed purchase decisions, but also enhance user retention through efficient post-purchase support. Providing FAQ content without disrupting user{'}s shopping experience poses challenges on deciding when and how to show FAQ results. Our proposed intent-aware FAQ retrieval consists of (1) an intent classifier that predicts whether the query is looking for an FAQ; (2) a reformulation model that rewrites query into a natural question. Offline evaluation demonstrates that our approach improves 12{\\%} in Hit@1 on retrieving ground-truth FAQs, while reducing latency by 95{\\%} compared to baseline systems. These improvements are further validated by real user feedback, where more than 99{\\%} of users consider FAQs displayed on top of product search results is helpful. Overall, our findings show promising directions for integrating FAQ retrieval into product search at scale.\",\n}\n",
+    "authors": [
+        "Zhiyu Chen",
+        "Jason Choi",
+        "Besnik Fetahu",
+        "Oleg Rokhlenko",
+        "Shervin Malmasi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.73.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/aeed096e-b476-5194-90b4-488d46d0ed7a.pdf",
+    "abstract": "Frequently Asked Question (FAQ) retrieval aims at retrieving question-answer pairs for a given a user query. Integrating FAQ retrieval with product search can not only empower users to make more informed purchase decisions, but also enhance user retention through efficient post-purchase support. Providing FAQ content without disrupting user’s shopping experience poses challenges on deciding when and how to show FAQ results. Our proposed intent-aware FAQ retrieval consists of (1) an intent classifier that predicts whether the query is looking for an FAQ; (2) a reformulation model that rewrites query into a natural question. Offline evaluation demonstrates that our approach improves 12% in Hit@1 on retrieving ground-truth FAQs, while reducing latency by 95% compared to baseline systems. These improvements are further validated by real user feedback, where more than 99% of users consider FAQs displayed on top of product search results is helpful. Overall, our findings show promising directions for integrating FAQ retrieval into product search at scale.",
+    "num_pages": 9
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "21875fa3-0ed1-5afe-81bd-0490f891a264",
+    "title": "Lon-eå at SemEval-2023 Task 11: A Comparison of Activation Functions for Soft and Hard Label Prediction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{hosseini-etal-2023-lon,\n    title = \"Lon-e{\\aa} at {S}em{E}val-2023 Task 11: A Comparison of Activation Functions for Soft and Hard Label Prediction\",\n    author = \"Hosseini, Peyman  and\n      Hosseini, Mehran  and\n      Al-azzawi, Sana  and\n      Liwicki, Marcus  and\n      Castro, Ignacio  and\n      Purver, Matthew\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.185\",\n    doi = \"10.18653/v1/2023.semeval-1.185\",\n    pages = \"1329--1334\",\n    abstract = \"We study the influence of different activation functions in the output layer of pre-trained transformer models for soft and hard label prediction in the learning with disagreement task. In this task, the goal is to quantify the amount of disagreement via predicting soft labels. To predict the soft labels, we use BERT-based preprocessors and encoders and vary the activation function used in the output layer, while keeping other parameters constant. The soft labels are then used for the hard label prediction. The activation functions considered are sigmoid as well as a step-function that is added to the model post-training and a sinusoidal activation function, which is introduced for the first time in this paper.\",\n}\n",
+    "authors": [
+        "Peyman Hosseini",
+        "Mehran Hosseini",
+        "Sana Al-azzawi",
+        "Marcus Liwicki",
+        "Ignacio Castro",
+        "Matthew Purver"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.185.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/21875fa3-0ed1-5afe-81bd-0490f891a264.pdf",
+    "abstract": "We study the influence of different activation functions in the output layer of pre-trained transformer models for soft and hard label prediction in the learning with disagreement task. In this task, the goal is to quantify the amount of disagreement via predicting soft labels. To predict the soft labels, we use BERT-based preprocessors and encoders and vary the activation function used in the output layer, while keeping other parameters constant. The soft labels are then used for the hard label prediction. The activation functions considered are sigmoid as well as a step-function that is added to the model post-training and a sinusoidal activation function, which is introduced for the first time in this paper.",
+    "num_pages": 6
+}

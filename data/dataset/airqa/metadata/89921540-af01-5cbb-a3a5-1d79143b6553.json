@@ -1,0 +1,26 @@
+{
+    "uuid": "89921540-af01-5cbb-a3a5-1d79143b6553",
+    "title": "Concept2Box: Joint Geometric Embeddings for Learning Two-View Knowledge Graphs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{huang-etal-2023-concept2box,\n    title = \"{C}oncept2{B}ox: Joint Geometric Embeddings for Learning Two-View Knowledge Graphs\",\n    author = \"Huang, Zijie  and\n      Wang, Daheng  and\n      Huang, Binxuan  and\n      Zhang, Chenwei  and\n      Shang, Jingbo  and\n      Liang, Yan  and\n      Wang, Zhengyang  and\n      Li, Xian  and\n      Faloutsos, Christos  and\n      Sun, Yizhou  and\n      Wang, Wei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.642\",\n    doi = \"10.18653/v1/2023.findings-acl.642\",\n    pages = \"10105--10118\",\n    abstract = \"Knowledge graph embeddings (KGE) have been extensively studied to embed large-scale relational data for many real-world applications. Existing methods have long ignored the fact many KGs contain two fundamentally different views: high-level ontology-view concepts and fine-grained instance-view entities. They usually embed all nodes as vectors in one latent space. However, a single geometric representation fails to capture the structural differences between two views and lacks probabilistic semantics towards concepts{'} granularity. We propose Concept2Box, a novel approach that jointly embeds the two views of a KG using dual geometric representations. We model concepts with box embeddings, which learn the hierarchy structure and complex relations such as overlap and disjoint among them. Box volumes can be interpreted as concepts{'} granularity. Different from concepts, we model entities as vectors. To bridge the gap between concept box embeddings and entity vector embeddings, we propose a novel vector-to-box distance metric and learn both embeddings jointly. Experiments on both the public DBpedia KG and a newly-created industrial KG showed the effectiveness of Concept2Box.\",\n}\n",
+    "authors": [
+        "Zijie Huang",
+        "Daheng Wang",
+        "Binxuan Huang",
+        "Chenwei Zhang",
+        "Jingbo Shang",
+        "Yan Liang",
+        "Zhengyang Wang",
+        "Xian Li",
+        "Christos Faloutsos",
+        "Yizhou Sun",
+        "Wei Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.642.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/89921540-af01-5cbb-a3a5-1d79143b6553.pdf",
+    "abstract": "Knowledge graph embeddings (KGE) have been extensively studied to embed large-scale relational data for many real-world applications. Existing methods have long ignored the fact many KGs contain two fundamentally different views: high-level ontology-view concepts and fine-grained instance-view entities. They usually embed all nodes as vectors in one latent space. However, a single geometric representation fails to capture the structural differences between two views and lacks probabilistic semantics towards concepts’ granularity. We propose Concept2Box, a novel approach that jointly embeds the two views of a KG using dual geometric representations. We model concepts with box embeddings, which learn the hierarchy structure and complex relations such as overlap and disjoint among them. Box volumes can be interpreted as concepts’ granularity. Different from concepts, we model entities as vectors. To bridge the gap between concept box embeddings and entity vector embeddings, we propose a novel vector-to-box distance metric and learn both embeddings jointly. Experiments on both the public DBpedia KG and a newly-created industrial KG showed the effectiveness of Concept2Box.",
+    "num_pages": 14
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "0689c805-fd3e-5164-b50e-25d9a3d023ec",
+    "title": "Accelerating Transformer Inference for Translation via Parallel Decoding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{santilli-etal-2023-accelerating,\n    title = \"Accelerating Transformer Inference for Translation via Parallel Decoding\",\n    author = \"Santilli, Andrea  and\n      Severino, Silvio  and\n      Postolache, Emilian  and\n      Maiorca, Valentino  and\n      Mancusi, Michele  and\n      Marin, Riccardo  and\n      Rodola, Emanuele\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.689\",\n    doi = \"10.18653/v1/2023.acl-long.689\",\n    pages = \"12336--12355\",\n    abstract = \"Autoregressive decoding limits the efficiency of transformers for Machine Translation (MT). The community proposed specific network architectures and learning-based methods to solve this issue, which are expensive and require changes to the MT model, trading inference speed at the cost of the translation quality. In this paper, we propose to address the problem from the point of view of decoding algorithms, as a less explored but rather compelling direction. We propose to reframe the standard greedy autoregressive decoding of MT with a parallel formulation leveraging Jacobi and Gauss-Seidel fixed-point iteration methods for fast inference. This formulation allows to speed up existing models without training or modifications while retaining translation quality. We present three parallel decoding algorithms and test them on different languages and models showing how the parallelization introduces a speedup up to 38{\\%} w.r.t. the standard autoregressive decoding and nearly 2x when scaling the method on parallel resources. Finally, we introduce a decoding dependency graph visualizer (DDGviz) that let us see how the model has learned the conditional dependence between tokens and inspect the decoding procedure.\",\n}\n",
+    "authors": [
+        "Andrea Santilli",
+        "Silvio Severino",
+        "Emilian Postolache",
+        "Valentino Maiorca",
+        "Michele Mancusi",
+        "Riccardo Marin",
+        "Emanuele Rodola"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.689.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/0689c805-fd3e-5164-b50e-25d9a3d023ec.pdf",
+    "abstract": "Autoregressive decoding limits the efficiency of transformers for Machine Translation (MT). The community proposed specific network architectures and learning-based methods to solve this issue, which are expensive and require changes to the MT model, trading inference speed at the cost of the translation quality. In this paper, we propose to address the problem from the point of view of decoding algorithms, as a less explored but rather compelling direction. We propose to reframe the standard greedy autoregressive decoding of MT with a parallel formulation leveraging Jacobi and Gauss-Seidel fixed-point iteration methods for fast inference. This formulation allows to speed up existing models without training or modifications while retaining translation quality. We present three parallel decoding algorithms and test them on different languages and models showing how the parallelization introduces a speedup up to 38% w.r.t. the standard autoregressive decoding and nearly 2x when scaling the method on parallel resources. Finally, we introduce a decoding dependency graph visualizer (DDGviz) that let us see how the model has learned the conditional dependence between tokens and inspect the decoding procedure.",
+    "num_pages": 20
+}

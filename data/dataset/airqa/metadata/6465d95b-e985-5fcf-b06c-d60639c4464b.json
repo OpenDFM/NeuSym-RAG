@@ -1,0 +1,22 @@
+{
+    "uuid": "6465d95b-e985-5fcf-b06c-d60639c4464b",
+    "title": "KG-Adapter: Enabling Knowledge Graph Integration in Large Language Models through Parameter-Efficient Fine-Tuning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{tian-etal-2024-kg,\n    title = \"{KG}-Adapter: Enabling Knowledge Graph Integration in Large Language Models through Parameter-Efficient Fine-Tuning\",\n    author = \"Tian, Shiyu  and\n      Luo, Yangyang  and\n      Xu, Tianze  and\n      Yuan, Caixia  and\n      Jiang, Huixing  and\n      Wei, Chen  and\n      Wang, Xiaojie\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.229\",\n    doi = \"10.18653/v1/2024.findings-acl.229\",\n    pages = \"3813--3828\",\n    abstract = \"Although large language models (LLMs) show remarkable capabilities and generalizability across various tasks, they are criticized for lack of expertise. One promising solution is to combine knowledge graphs (KGs) with LLMs, and recent studies focus on integrating KGs into LLMs through prompt-based methods. However, these approaches fail to use the structural information of the KGs, suffer from the problem of knowledge conflict, and over-reliance on super LLMs. To address these challenges, we propose KG-Adapter, a parameter-level KG integration method based on parameter-efficient fine-tuning (PEFT). Specifically, we introduce a novel adapter structure designed for decoder-only LLMs, which can encode KGs from both node-centered and relation-centered perspectives, and then perform joint reasoning with LLMs to generate responses end-to-end. Experiments with diverse models on four datasets for two different tasks all demonstrate significant improvements. With only 28M parameters trained, we make the 7B-parameter LLM outperform the previous full-parameter fine-tuned state-of-the-art method and comparable to the prompt-based ChatGPT methods.\",\n}\n",
+    "authors": [
+        "Shiyu Tian",
+        "Yangyang Luo",
+        "Tianze Xu",
+        "Caixia Yuan",
+        "Huixing Jiang",
+        "Chen Wei",
+        "Xiaojie Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.229.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/6465d95b-e985-5fcf-b06c-d60639c4464b.pdf",
+    "abstract": "Although large language models (LLMs) show remarkable capabilities and generalizability across various tasks, they are criticized for lack of expertise. One promising solution is to combine knowledge graphs (KGs) with LLMs, and recent studies focus on integrating KGs into LLMs through prompt-based methods. However, these approaches fail to use the structural information of the KGs, suffer from the problem of knowledge conflict, and over-reliance on super LLMs. To address these challenges, we propose KG-Adapter, a parameter-level KG integration method based on parameter-efficient fine-tuning (PEFT). Specifically, we introduce a novel adapter structure designed for decoder-only LLMs, which can encode KGs from both node-centered and relation-centered perspectives, and then perform joint reasoning with LLMs to generate responses end-to-end. Experiments with diverse models on four datasets for two different tasks all demonstrate significant improvements. With only 28M parameters trained, we make the 7B-parameter LLM outperform the previous full-parameter fine-tuned state-of-the-art method and comparable to the prompt-based ChatGPT methods.",
+    "num_pages": 16
+}

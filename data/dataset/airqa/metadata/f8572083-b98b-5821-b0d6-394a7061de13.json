@@ -1,0 +1,26 @@
+{
+    "uuid": "f8572083-b98b-5821-b0d6-394a7061de13",
+    "title": "Token Alignment via Character Matching for Subword Completion",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{athiwaratkun-etal-2024-token,\n    title = \"Token Alignment via Character Matching for Subword Completion\",\n    author = \"Athiwaratkun, Ben  and\n      Wang, Shiqi  and\n      Shang, Mingyue  and\n      Tian, Yuchen  and\n      Wang, Zijian  and\n      Gonugondla, Sujan Kumar  and\n      Gouda, Sanjay Krishna  and\n      Kwiatkowski, Robert  and\n      Nallapati, Ramesh  and\n      Bhatia, Parminder  and\n      Xiang, Bing\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.929\",\n    doi = \"10.18653/v1/2024.findings-acl.929\",\n    pages = \"15725--15738\",\n    abstract = \"Generative models, widely utilized in various applications, can often struggle with prompts corresponding to partial tokens. This struggle stems from tokenization, where partial tokens fall out of distribution during inference, leading to incorrect or nonsensical outputs. This paper examines a technique to alleviate the tokenization artifact on text completion in generative models, maintaining performance even in regular non-subword cases. The method, termed token alignment, involves backtracking to the last complete tokens and ensuring the model{'}s generation aligns with the prompt. This approach showcases marked improvement across many partial token scenarios, including nuanced cases like space-prefix and partial indentation, with only a minor time increase. The technique and analysis detailed in this paper contribute to the continuous advancement of generative models in handling partial inputs, bearing relevance for applications like code completion and text.\",\n}\n",
+    "authors": [
+        "Ben Athiwaratkun",
+        "Shiqi Wang",
+        "Mingyue Shang",
+        "Yuchen Tian",
+        "Zijian Wang",
+        "Sujan Kumar Gonugondla",
+        "Sanjay Krishna Gouda",
+        "Robert Kwiatkowski",
+        "Ramesh Nallapati",
+        "Parminder Bhatia",
+        "Bing Xiang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.929.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/f8572083-b98b-5821-b0d6-394a7061de13.pdf",
+    "abstract": "Generative models, widely utilized in various applications, can often struggle with prompts corresponding to partial tokens. This struggle stems from tokenization, where partial tokens fall out of distribution during inference, leading to incorrect or nonsensical outputs. This paper examines a technique to alleviate the tokenization artifact on text completion in generative models, maintaining performance even in regular non-subword cases. The method, termed token alignment, involves backtracking to the last complete tokens and ensuring the model’s generation aligns with the prompt. This approach showcases marked improvement across many partial token scenarios, including nuanced cases like space-prefix and partial indentation, with only a minor time increase. The technique and analysis detailed in this paper contribute to the continuous advancement of generative models in handling partial inputs, bearing relevance for applications like code completion and text.",
+    "num_pages": 14
+}

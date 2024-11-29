@@ -1,0 +1,19 @@
+{
+    "uuid": "fb357af9-65bd-51d9-95e3-115176c3b673",
+    "title": "Rationales for Answers to Simple Math Word Problems Confuse Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhang-etal-2024-rationales,\n    title = \"Rationales for Answers to Simple Math Word Problems Confuse Large Language Models\",\n    author = \"Zhang, Yidan  and\n      Xue, Mingfeng  and\n      Liu, Dayiheng  and\n      He, Zhenan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.524\",\n    doi = \"10.18653/v1/2024.findings-acl.524\",\n    pages = \"8853--8869\",\n    abstract = \"Recently, large language models (LLMs) have demonstrated breakthrough mathematical problem-solving capabilities in grade school math word problems (MWP). For example, on the MWP benchmark GSM8K, the accuracy of GPT-3.5-Turbo and MetaMath-70B reaches 80.80{\\%} and 82.30{\\%}, respectively. One question arises, does it mean that LLMs have truly mastered related mathematical problem-solving abilities? In this paper, by presenting two types of benchmarks, where MCGSM8K aims at selecting one correct solution from four solutions, while GSM8K-Judgement judges whether a solution to a given question is true or false, we demonstrate that the ability of most LLMs to evaluate the mathematical reasoning process of MWP is far from sufficient. To compensate for this issue, we propose hybrid supervised fine-tuning data from the training data of GSM8K, MCGSM8K, and GSM8K-Judgement, which significantly improves performance on the proposed reasoning process evaluation benchmarks. For example, fine-tuning improves the performance of LLaMA-2-13B from 33.51{\\%} to 70.89{\\%} on MCGSM8K. In conclusion, we experimentally demonstrate that most LLMs have limited ability to evaluate the mathematical reasoning process of MWP, which can be enhanced through fine-tuning.\",\n}\n",
+    "authors": [
+        "Yidan Zhang",
+        "Mingfeng Xue",
+        "Dayiheng Liu",
+        "Zhenan He"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.524.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/fb357af9-65bd-51d9-95e3-115176c3b673.pdf",
+    "abstract": "Recently, large language models (LLMs) have demonstrated breakthrough mathematical problem-solving capabilities in grade school math word problems (MWP). For example, on the MWP benchmark GSM8K, the accuracy of GPT-3.5-Turbo and MetaMath-70B reaches 80.80% and 82.30%, respectively. One question arises, does it mean that LLMs have truly mastered related mathematical problem-solving abilities? In this paper, by presenting two types of benchmarks, where MCGSM8K aims at selecting one correct solution from four solutions, while GSM8K-Judgement judges whether a solution to a given question is true or false, we demonstrate that the ability of most LLMs to evaluate the mathematical reasoning process of MWP is far from sufficient. To compensate for this issue, we propose hybrid supervised fine-tuning data from the training data of GSM8K, MCGSM8K, and GSM8K-Judgement, which significantly improves performance on the proposed reasoning process evaluation benchmarks. For example, fine-tuning improves the performance of LLaMA-2-13B from 33.51% to 70.89% on MCGSM8K. In conclusion, we experimentally demonstrate that most LLMs have limited ability to evaluate the mathematical reasoning process of MWP, which can be enhanced through fine-tuning.",
+    "num_pages": 17
+}

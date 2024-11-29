@@ -1,0 +1,23 @@
+{
+    "uuid": "08589569-79ba-51e3-8c81-ac994decdffc",
+    "title": "Adversarial Preference Optimization: Enhancing Your Alignment via RM-LLM Game",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{cheng-etal-2024-adversarial,\n    title = \"Adversarial Preference Optimization: Enhancing Your Alignment via {RM}-{LLM} Game\",\n    author = \"Cheng, Pengyu  and\n      Yang, Yifan  and\n      Li, Jian  and\n      Dai, Yong  and\n      Hu, Tianhao  and\n      Cao, Peixin  and\n      Du, Nan  and\n      Li, Xiaolong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.221\",\n    doi = \"10.18653/v1/2024.findings-acl.221\",\n    pages = \"3705--3716\",\n    abstract = \"Human preference alignment is essential to improve the interaction quality of large language models (LLMs). Existing alignment methods depend on manually annotated preference data to guide the LLM optimization directions. However, continuously updating LLMs for alignment raises a distribution gap between model-generated samples and human-annotated responses, hindering training effectiveness. To mitigate this issue, previous methods require additional preference annotation on newly generated samples to adapt to the shifted distribution, which consumes a large amount of annotation resources. Targeting more efficient human preference optimization, we propose an Adversarial Preference Optimization (APO) framework, in which the LLM and the reward model update alternatively via a min-max game. Through adversarial training, the reward model can adapt to the shifted generation distribution of the LLM without any additional annotation. With comprehensive experiments, we find the proposed adversarial training framework further enhances existing alignment baselines in terms of LLM helpfulness and harmlessness. The code is at https://github.com/Linear95/APO.\",\n}\n",
+    "authors": [
+        "Pengyu Cheng",
+        "Yifan Yang",
+        "Jian Li",
+        "Yong Dai",
+        "Tianhao Hu",
+        "Peixin Cao",
+        "Nan Du",
+        "Xiaolong Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.221.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/08589569-79ba-51e3-8c81-ac994decdffc.pdf",
+    "abstract": "Human preference alignment is essential to improve the interaction quality of large language models (LLMs). Existing alignment methods depend on manually annotated preference data to guide the LLM optimization directions. However, continuously updating LLMs for alignment raises a distribution gap between model-generated samples and human-annotated responses, hindering training effectiveness. To mitigate this issue, previous methods require additional preference annotation on newly generated samples to adapt to the shifted distribution, which consumes a large amount of annotation resources. Targeting more efficient human preference optimization, we propose an Adversarial Preference Optimization (APO) framework, in which the LLM and the reward model update alternatively via a min-max game. Through adversarial training, the reward model can adapt to the shifted generation distribution of the LLM without any additional annotation. With comprehensive experiments, we find the proposed adversarial training framework further enhances existing alignment baselines in terms of LLM helpfulness and harmlessness. The code is at https://github.com/Linear95/APO.",
+    "num_pages": 12
+}

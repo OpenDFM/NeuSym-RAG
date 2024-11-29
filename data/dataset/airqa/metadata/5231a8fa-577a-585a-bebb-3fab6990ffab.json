@@ -1,0 +1,17 @@
+{
+    "uuid": "5231a8fa-577a-585a-bebb-3fab6990ffab",
+    "title": "Unsupervised Mapping of Arguments of Deverbal Nouns to Their Corresponding Verbal Labels",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{weinstein-goldberg-2023-unsupervised,\n    title = \"Unsupervised Mapping of Arguments of Deverbal Nouns to Their Corresponding Verbal Labels\",\n    author = \"Weinstein, Aviv  and\n      Goldberg, Yoav\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.184\",\n    doi = \"10.18653/v1/2023.findings-acl.184\",\n    pages = \"2921--2935\",\n    abstract = \"Deverbal nouns are nominal forms of verbs commonly used in written English texts to describe events or actions, as well as their arguments. However, many NLP systems, and in particular pattern-based ones, neglect to handle such nominalized constructions. The solutions that do exist for handling arguments of nominalized constructions are based on semantic annotation and require semantic ontologies, making their applications restricted to a small set of nouns. We propose to adopt instead a more syntactic approach, which maps the arguments of deverbal nouns to the universal-dependency relations of the corresponding verbal construction. We present an unsupervised mechanism{---}based on contextualized word representations{---}which allows to enrich universal-dependency trees with dependency arcs denoting arguments of deverbal nouns, using the same labels as the corresponding verbal cases. By sharing the same label set as in the verbal case, patterns that were developed for verbs can be applied without modification but with high accuracy also to the nominal constructions.\",\n}\n",
+    "authors": [
+        "Aviv Weinstein",
+        "Yoav Goldberg"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.184.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/5231a8fa-577a-585a-bebb-3fab6990ffab.pdf",
+    "abstract": "Deverbal nouns are nominal forms of verbs commonly used in written English texts to describe events or actions, as well as their arguments. However, many NLP systems, and in particular pattern-based ones, neglect to handle such nominalized constructions. The solutions that do exist for handling arguments of nominalized constructions are based on semantic annotation and require semantic ontologies, making their applications restricted to a small set of nouns. We propose to adopt instead a more syntactic approach, which maps the arguments of deverbal nouns to the universal-dependency relations of the corresponding verbal construction. We present an unsupervised mechanism—based on contextualized word representations—which allows to enrich universal-dependency trees with dependency arcs denoting arguments of deverbal nouns, using the same labels as the corresponding verbal cases. By sharing the same label set as in the verbal case, patterns that were developed for verbs can be applied without modification but with high accuracy also to the nominal constructions.",
+    "num_pages": 15
+}

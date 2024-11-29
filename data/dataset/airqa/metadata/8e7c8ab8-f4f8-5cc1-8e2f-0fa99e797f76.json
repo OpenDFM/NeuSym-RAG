@@ -1,0 +1,20 @@
+{
+    "uuid": "8e7c8ab8-f4f8-5cc1-8e2f-0fa99e797f76",
+    "title": "LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{hashemi-etal-2024-llm,\n    title = \"{LLM}-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts\",\n    author = \"Hashemi, Helia  and\n      Eisner, Jason  and\n      Rosset, Corby  and\n      Van Durme, Benjamin  and\n      Kedzie, Chris\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.745\",\n    doi = \"10.18653/v1/2024.acl-long.745\",\n    pages = \"13806--13834\",\n    abstract = \"This paper introduces a framework for the automated evaluation of natural language texts. A manually constructed rubric describes how to assess multiple dimensions of interest. To evaluate a text, a large language model (LLM) is prompted with each rubric question and produces a distribution over potential responses. The LLM predictions often fail to agree well with human judges{---}indeed, the humans do not fully agree with one another. However, the multiple LLM distributions can be {\\_}combined{\\_} to {\\_}predict{\\_} each human judge{'}s annotations on all questions, including a summary question that assesses overall quality or relevance. LLM-Rubric accomplishes this by training a small feed-forward neural network that includes both judge-specific and judge-independent parameters. When evaluating dialogue systems in a human-AI information-seeking task, we find that LLM-Rubric with 9 questions (assessing dimensions such as naturalness, conciseness, and citation quality) predicts human judges{'} assessment of overall user satisfaction, on a scale of 1{--}4, with RMS error {\\textless} 0.5, a 2{\\mbox{$\\times$}} improvement over the uncalibrated baseline.\",\n}\n",
+    "authors": [
+        "Helia Hashemi",
+        "Jason Eisner",
+        "Corby Rosset",
+        "Benjamin Van Durme",
+        "Chris Kedzie"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.745.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/8e7c8ab8-f4f8-5cc1-8e2f-0fa99e797f76.pdf",
+    "abstract": "This paper introduces a framework for the automated evaluation of natural language texts. A manually constructed rubric describes how to assess multiple dimensions of interest. To evaluate a text, a large language model (LLM) is prompted with each rubric question and produces a distribution over potential responses. The LLM predictions often fail to agree well with human judges—indeed, the humans do not fully agree with one another. However, the multiple LLM distributions can be _combined_ to _predict_ each human judge’s annotations on all questions, including a summary question that assesses overall quality or relevance. LLM-Rubric accomplishes this by training a small feed-forward neural network that includes both judge-specific and judge-independent parameters. When evaluating dialogue systems in a human-AI information-seeking task, we find that LLM-Rubric with 9 questions (assessing dimensions such as naturalness, conciseness, and citation quality) predicts human judges’ assessment of overall user satisfaction, on a scale of 1–4, with RMS error < 0.5, a 2× improvement over the uncalibrated baseline.",
+    "num_pages": 29
+}

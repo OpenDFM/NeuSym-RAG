@@ -1,0 +1,19 @@
+{
+    "uuid": "b7bc7d5a-1c65-5820-908d-f982da49d007",
+    "title": "Constructing Code-mixed Universal Dependency Forest for Unbiased Cross-lingual Relation Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{fei-etal-2023-constructing,\n    title = \"Constructing Code-mixed {U}niversal {D}ependency Forest for Unbiased Cross-lingual Relation Extraction\",\n    author = \"Fei, Hao  and\n      Zhang, Meishan  and\n      Zhang, Min  and\n      Chua, Tat-Seng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.599\",\n    doi = \"10.18653/v1/2023.findings-acl.599\",\n    pages = \"9395--9408\",\n    abstract = \"Latest efforts on cross-lingual relation extraction (XRE) aggressively leverage the language-consistent structural features from the universal dependency (UD) resource, while they may largely suffer from biased transfer (e.g., either target-biased or source-biased) due to the inevitable linguistic disparity between languages. In this work, we investigate an unbiased UD- based XRE transfer by constructing a type of code-mixed UD forest. We first translate the sentence of the source language to the parallel target-side language, for both of which we parse the UD tree respectively. Then, we merge the source-/target-side UD structures as a unified code-mixed UD forest. With such forest features, the gaps of UD-based XRE between the training and predicting phases can be effectively closed. We conduct experiments on the ACE XRE benchmark datasets, where the results demonstrate that the proposed code-mixed UD forests help unbiased UD-based XRE transfer, with which we achieve significant XRE performance gains.\",\n}\n",
+    "authors": [
+        "Hao Fei",
+        "Meishan Zhang",
+        "Min Zhang",
+        "Tat-Seng Chua"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.599.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b7bc7d5a-1c65-5820-908d-f982da49d007.pdf",
+    "abstract": "Latest efforts on cross-lingual relation extraction (XRE) aggressively leverage the language-consistent structural features from the universal dependency (UD) resource, while they may largely suffer from biased transfer (e.g., either target-biased or source-biased) due to the inevitable linguistic disparity between languages. In this work, we investigate an unbiased UD- based XRE transfer by constructing a type of code-mixed UD forest. We first translate the sentence of the source language to the parallel target-side language, for both of which we parse the UD tree respectively. Then, we merge the source-/target-side UD structures as a unified code-mixed UD forest. With such forest features, the gaps of UD-based XRE between the training and predicting phases can be effectively closed. We conduct experiments on the ACE XRE benchmark datasets, where the results demonstrate that the proposed code-mixed UD forests help unbiased UD-based XRE transfer, with which we achieve significant XRE performance gains.",
+    "num_pages": 14
+}

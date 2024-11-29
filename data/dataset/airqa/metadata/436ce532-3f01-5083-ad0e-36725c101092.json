@@ -1,0 +1,25 @@
+{
+    "uuid": "436ce532-3f01-5083-ad0e-36725c101092",
+    "title": "Learning In-context Learning for Named Entity Recognition",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2023-learning,\n    title = \"Learning In-context Learning for Named Entity Recognition\",\n    author = \"Chen, Jiawei  and\n      Lu, Yaojie  and\n      Lin, Hongyu  and\n      Lou, Jie  and\n      Jia, Wei  and\n      Dai, Dai  and\n      Wu, Hua  and\n      Cao, Boxi  and\n      Han, Xianpei  and\n      Sun, Le\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.764\",\n    doi = \"10.18653/v1/2023.acl-long.764\",\n    pages = \"13661--13675\",\n    abstract = \"Named entity recognition in real-world applications suffers from the diversity of entity types, the emergence of new entity types, and the lack of high-quality annotations. To address the above problems, this paper proposes an in-context learning-based NER approach, which can effectively inject in-context NER ability into PLMs and recognize entities of novel types on-the-fly using only a few demonstrative instances. Specifically, we model PLMs as a meta-function Lambda{\\_}instruction, demonstrations, text.M, and a new entity extractor can be implicitly constructed by applying new instruction and demonstrations to PLMs, i.e., (Lambda . M) (instruction, demonstrations) -{\\textgreater}F where F will be a new entity extractor F: text -{\\textgreater} entities. To inject the above in-context NER ability into PLMs, we propose a meta-function pre-training algorithm, which pre-trains PLMs by comparing the (instruction, demonstration)-initialized extractor with a surrogate golden extractor. Experimental results on 4 few-shot NER datasets show that our method can effectively inject in-context NER ability into PLMs and significantly outperforms the PLMs+fine-tuning counterparts.\",\n}\n",
+    "authors": [
+        "Jiawei Chen",
+        "Yaojie Lu",
+        "Hongyu Lin",
+        "Jie Lou",
+        "Wei Jia",
+        "Dai Dai",
+        "Hua Wu",
+        "Boxi Cao",
+        "Xianpei Han",
+        "Le Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.764.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/436ce532-3f01-5083-ad0e-36725c101092.pdf",
+    "abstract": "Named entity recognition in real-world applications suffers from the diversity of entity types, the emergence of new entity types, and the lack of high-quality annotations. To address the above problems, this paper proposes an in-context learning-based NER approach, which can effectively inject in-context NER ability into PLMs and recognize entities of novel types on-the-fly using only a few demonstrative instances. Specifically, we model PLMs as a meta-function Lambda_instruction, demonstrations, text.M, and a new entity extractor can be implicitly constructed by applying new instruction and demonstrations to PLMs, i.e., (Lambda . M) (instruction, demonstrations) ->F where F will be a new entity extractor F: text -> entities. To inject the above in-context NER ability into PLMs, we propose a meta-function pre-training algorithm, which pre-trains PLMs by comparing the (instruction, demonstration)-initialized extractor with a surrogate golden extractor. Experimental results on 4 few-shot NER datasets show that our method can effectively inject in-context NER ability into PLMs and significantly outperforms the PLMs+fine-tuning counterparts.",
+    "num_pages": 15
+}

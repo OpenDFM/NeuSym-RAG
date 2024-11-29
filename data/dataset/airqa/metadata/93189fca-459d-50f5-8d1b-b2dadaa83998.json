@@ -1,0 +1,21 @@
+{
+    "uuid": "93189fca-459d-50f5-8d1b-b2dadaa83998",
+    "title": "Authorship Attribution of Late 19th Century Novels using GAN-BERT",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)",
+    "bibtex": "@inproceedings{silva-etal-2023-authorship,\n    title = \"Authorship Attribution of Late 19th Century Novels using {GAN}-{BERT}\",\n    author = \"Silva, Kanishka  and\n      Can, Burcu  and\n      Blain, Fr{\\'e}d{\\'e}ric  and\n      Sarwar, Raheem  and\n      Ugolini, Laura  and\n      Mitkov, Ruslan\",\n    editor = \"Padmakumar, Vishakh  and\n      Vallejo, Gisela  and\n      Fu, Yao\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-srw.44\",\n    doi = \"10.18653/v1/2023.acl-srw.44\",\n    pages = \"310--320\",\n    abstract = \"Authorship attribution aims to identify the author of an anonymous text. The task becomes even more worthwhile when it comes to literary works. For example, pen names were commonly used by female authors in the 19th century resulting in some literary works being incorrectly attributed or claimed. With this motivation, we collated a dataset of late 19th century novels in English. Due to the imbalance in the dataset and the unavailability of enough data per author, we employed the GANBERT model along with data sampling strategies to fine-tune a transformer-based model for authorship attribution. Differently from the earlier studies on the GAN-BERT model, we conducted transfer learning on comparatively smaller author subsets to train more focused author-specific models yielding performance over 0.88 accuracy and F1 scores. Furthermore, we observed that increasing the sample size has a negative impact on the model{'}s performance. Our research mainly contributes to the ongoing authorship attribution research using GAN-BERT architecture, especially in attributing disputed novelists in the late 19th century.\",\n}\n",
+    "authors": [
+        "Kanishka Silva",
+        "Burcu Can",
+        "Frédéric Blain",
+        "Raheem Sarwar",
+        "Laura Ugolini",
+        "Ruslan Mitkov"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-srw.44.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/93189fca-459d-50f5-8d1b-b2dadaa83998.pdf",
+    "abstract": "Authorship attribution aims to identify the author of an anonymous text. The task becomes even more worthwhile when it comes to literary works. For example, pen names were commonly used by female authors in the 19th century resulting in some literary works being incorrectly attributed or claimed. With this motivation, we collated a dataset of late 19th century novels in English. Due to the imbalance in the dataset and the unavailability of enough data per author, we employed the GANBERT model along with data sampling strategies to fine-tune a transformer-based model for authorship attribution. Differently from the earlier studies on the GAN-BERT model, we conducted transfer learning on comparatively smaller author subsets to train more focused author-specific models yielding performance over 0.88 accuracy and F1 scores. Furthermore, we observed that increasing the sample size has a negative impact on the model’s performance. Our research mainly contributes to the ongoing authorship attribution research using GAN-BERT architecture, especially in attributing disputed novelists in the late 19th century.",
+    "num_pages": 11
+}

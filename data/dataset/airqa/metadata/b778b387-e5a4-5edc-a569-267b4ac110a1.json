@@ -1,0 +1,23 @@
+{
+    "uuid": "b778b387-e5a4-5edc-a569-267b4ac110a1",
+    "title": "Can Watermarks Survive Translation? On the Cross-lingual Consistency of Text Watermark for Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{he-etal-2024-watermarks,\n    title = \"Can Watermarks Survive Translation? On the Cross-lingual Consistency of Text Watermark for Large Language Models\",\n    author = \"He, Zhiwei  and\n      Zhou, Binglin  and\n      Hao, Hongkun  and\n      Liu, Aiwei  and\n      Wang, Xing  and\n      Tu, Zhaopeng  and\n      Zhang, Zhuosheng  and\n      Wang, Rui\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.226\",\n    doi = \"10.18653/v1/2024.acl-long.226\",\n    pages = \"4115--4129\",\n    abstract = \"Text watermarking technology aims to tag and identify content produced by large language models (LLMs) to prevent misuse. In this study, we introduce the concept of cross-lingual consistency in text watermarking, which assesses the ability of text watermarks to maintain their effectiveness after being translated into other languages. Preliminary empirical results from two LLMs and three watermarking methods reveal that current text watermarking technologies lack consistency when texts are translated into various languages. Based on this observation, we propose a Cross-lingual Watermark Removal Attack (CWRA) to bypass watermarking by first obtaining a response from an LLM in a pivot language, which is then translated into the target language. CWRA can effectively remove watermarks, decreasing the AUCs to a random-guessing level without performance loss. Furthermore, we analyze two key factors that contribute to the cross-lingual consistency in text watermarking and propose X-SIR as a defense method against CWRA.\",\n}\n",
+    "authors": [
+        "Zhiwei He",
+        "Binglin Zhou",
+        "Hongkun Hao",
+        "Aiwei Liu",
+        "Xing Wang",
+        "Zhaopeng Tu",
+        "Zhuosheng Zhang",
+        "Rui Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.226.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/b778b387-e5a4-5edc-a569-267b4ac110a1.pdf",
+    "abstract": "Text watermarking technology aims to tag and identify content produced by large language models (LLMs) to prevent misuse. In this study, we introduce the concept of cross-lingual consistency in text watermarking, which assesses the ability of text watermarks to maintain their effectiveness after being translated into other languages. Preliminary empirical results from two LLMs and three watermarking methods reveal that current text watermarking technologies lack consistency when texts are translated into various languages. Based on this observation, we propose a Cross-lingual Watermark Removal Attack (CWRA) to bypass watermarking by first obtaining a response from an LLM in a pivot language, which is then translated into the target language. CWRA can effectively remove watermarks, decreasing the AUCs to a random-guessing level without performance loss. Furthermore, we analyze two key factors that contribute to the cross-lingual consistency in text watermarking and propose X-SIR as a defense method against CWRA.",
+    "num_pages": 15
+}

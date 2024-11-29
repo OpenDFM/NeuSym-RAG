@@ -1,0 +1,18 @@
+{
+    "uuid": "ebe74b20-8188-57dc-9d64-b39a21790e8c",
+    "title": "Improving Long Dialogue Summarization with Semantic Graph Representation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{hua-etal-2023-improving,\n    title = \"Improving Long Dialogue Summarization with Semantic Graph Representation\",\n    author = \"Hua, Yilun  and\n      Deng, Zhaoyuan  and\n      McKeown, Kathleen\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.871\",\n    doi = \"10.18653/v1/2023.findings-acl.871\",\n    pages = \"13851--13883\",\n    abstract = \"Although Large Language Models (LLMs) are successful in abstractive summarization of short dialogues, summarization of long dialogues remains challenging. To address this challenge, we propose a novel algorithm that processes complete dialogues comprising thousands of tokens into topic-segment-level Abstract Meaning Representation (AMR) graphs, which explicitly capture the dialogue structure, highlight salient semantics, and preserve high-level information. We also develop a new text-graph attention to leverage both graph semantics and a pretrained LLM that exploits the text. Finally, we propose an AMR node selection loss used jointly with conventional cross-entropy loss, to create additional training signals that facilitate graph feature encoding and content selection. Experiments show that our system outperforms the state-of-the-art models on multiple long dialogue summarization datasets, especially in low-resource settings, and generalizes well to out-of-domain data.\",\n}\n",
+    "authors": [
+        "Yilun Hua",
+        "Zhaoyuan Deng",
+        "Kathleen McKeown"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.871.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ebe74b20-8188-57dc-9d64-b39a21790e8c.pdf",
+    "abstract": "Although Large Language Models (LLMs) are successful in abstractive summarization of short dialogues, summarization of long dialogues remains challenging. To address this challenge, we propose a novel algorithm that processes complete dialogues comprising thousands of tokens into topic-segment-level Abstract Meaning Representation (AMR) graphs, which explicitly capture the dialogue structure, highlight salient semantics, and preserve high-level information. We also develop a new text-graph attention to leverage both graph semantics and a pretrained LLM that exploits the text. Finally, we propose an AMR node selection loss used jointly with conventional cross-entropy loss, to create additional training signals that facilitate graph feature encoding and content selection. Experiments show that our system outperforms the state-of-the-art models on multiple long dialogue summarization datasets, especially in low-resource settings, and generalizes well to out-of-domain data.",
+    "num_pages": 33
+}

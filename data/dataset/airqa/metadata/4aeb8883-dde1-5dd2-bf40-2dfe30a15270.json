@@ -1,0 +1,22 @@
+{
+    "uuid": "4aeb8883-dde1-5dd2-bf40-2dfe30a15270",
+    "title": "Revisiting Sample Size Determination in Natural Language Understanding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{chang-etal-2023-revisiting,\n    title = \"Revisiting Sample Size Determination in Natural Language Understanding\",\n    author = \"Chang, Ernie  and\n      Rashid, Muhammad Hassan  and\n      Lin, Pin-Jie  and\n      Zhao, Changsheng  and\n      Demberg, Vera  and\n      Shi, Yangyang  and\n      Chandra, Vikas\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.419\",\n    doi = \"10.18653/v1/2023.findings-acl.419\",\n    pages = \"6716--6724\",\n    abstract = \"Knowing exactly how many data points need to be labeled to achieve a certain model performance is a hugely beneficial step towards reducing the overall budgets for annotation. It pertains to both active learning and traditional data annotation, and is particularly beneficial for low resource scenarios. Nevertheless, it remains a largely under-explored area of research in NLP. We therefore explored various techniques for estimating the training sample size necessary to achieve a targeted performance value. We derived a simple yet effective approach to predict the maximum achievable model performance based on small amount of training samples {--} which serves as an early indicator during data annotation for data quality and sample size determination. We performed ablation studies on four language understanding tasks, and showed that the proposed approach allows us to forecast model performance within a small margin of mean absolute error ({\\textasciitilde}0.9{\\%}) with only 10{\\%} data.\",\n}\n",
+    "authors": [
+        "Ernie Chang",
+        "Muhammad Hassan Rashid",
+        "Pin-Jie Lin",
+        "Changsheng Zhao",
+        "Vera Demberg",
+        "Yangyang Shi",
+        "Vikas Chandra"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.419.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4aeb8883-dde1-5dd2-bf40-2dfe30a15270.pdf",
+    "abstract": "Knowing exactly how many data points need to be labeled to achieve a certain model performance is a hugely beneficial step towards reducing the overall budgets for annotation. It pertains to both active learning and traditional data annotation, and is particularly beneficial for low resource scenarios. Nevertheless, it remains a largely under-explored area of research in NLP. We therefore explored various techniques for estimating the training sample size necessary to achieve a targeted performance value. We derived a simple yet effective approach to predict the maximum achievable model performance based on small amount of training samples – which serves as an early indicator during data annotation for data quality and sample size determination. We performed ablation studies on four language understanding tasks, and showed that the proposed approach allows us to forecast model performance within a small margin of mean absolute error (~0.9%) with only 10% data.",
+    "num_pages": 9
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "19c25018-2116-5499-afec-4336c0366d47",
+    "title": "NaturalCodeBench: Examining Coding Performance Mismatch on HumanEval and Natural User Queries",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhang-etal-2024-naturalcodebench,\n    title = \"{N}atural{C}ode{B}ench: Examining Coding Performance Mismatch on {H}uman{E}val and Natural User Queries\",\n    author = \"Zhang, Shudan  and\n      Zhao, Hanlin  and\n      Liu, Xiao  and\n      Zheng, Qinkai  and\n      Qi, Zehan  and\n      Gu, Xiaotao  and\n      Dong, Yuxiao  and\n      Tang, Jie\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.471\",\n    doi = \"10.18653/v1/2024.findings-acl.471\",\n    pages = \"7907--7928\",\n    abstract = \"Large language models (LLMs) have manifested strong ability to generate codes for productive activities. However, current benchmarks for code synthesis, such as HumanEval, MBPP, and DS-1000, are predominantly oriented towards introductory tasks on algorithm and data science, insufficiently satisfying challenging requirements prevalent in real-world coding. To fill this gap, we propose NaturalCodeBench (NCB), a challenging code benchmark designed to mirror the complexity and variety of scenarios in real coding tasks. NCB comprises 402 high-quality problems in Python and Java, meticulously selected from natural user queries from online coding services, covering 6 different domains. Noting the extraordinary difficulty in creating testing cases for real-world queries, we also introduce a semi-automated pipeline to enhance the efficiency of test case construction. Comparing with manual solutions, it achieves an efficiency increase of more than 4 times. Our systematic experiments on 39 LLMs find that performance gaps on NCB between models with close HumanEval scores could still be significant, indicating a lack of focus on practical code synthesis scenarios or over-specified optimization on HumanEval. On the other hand, even the best-performing GPT-4 is still far from satisfying on NCB. The evaluation toolkit and development set are available at https://github.com/THUDM/NaturalCodeBench.\",\n}\n",
+    "authors": [
+        "Shudan Zhang",
+        "Hanlin Zhao",
+        "Xiao Liu",
+        "Qinkai Zheng",
+        "Zehan Qi",
+        "Xiaotao Gu",
+        "Yuxiao Dong",
+        "Jie Tang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.471.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/19c25018-2116-5499-afec-4336c0366d47.pdf",
+    "abstract": "Large language models (LLMs) have manifested strong ability to generate codes for productive activities. However, current benchmarks for code synthesis, such as HumanEval, MBPP, and DS-1000, are predominantly oriented towards introductory tasks on algorithm and data science, insufficiently satisfying challenging requirements prevalent in real-world coding. To fill this gap, we propose NaturalCodeBench (NCB), a challenging code benchmark designed to mirror the complexity and variety of scenarios in real coding tasks. NCB comprises 402 high-quality problems in Python and Java, meticulously selected from natural user queries from online coding services, covering 6 different domains. Noting the extraordinary difficulty in creating testing cases for real-world queries, we also introduce a semi-automated pipeline to enhance the efficiency of test case construction. Comparing with manual solutions, it achieves an efficiency increase of more than 4 times. Our systematic experiments on 39 LLMs find that performance gaps on NCB between models with close HumanEval scores could still be significant, indicating a lack of focus on practical code synthesis scenarios or over-specified optimization on HumanEval. On the other hand, even the best-performing GPT-4 is still far from satisfying on NCB. The evaluation toolkit and development set are available at https://github.com/THUDM/NaturalCodeBench.",
+    "num_pages": 22
+}

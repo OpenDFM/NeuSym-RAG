@@ -1,0 +1,19 @@
+{
+    "uuid": "7efdc49c-2b00-5526-926d-424b066459c0",
+    "title": "Dialogue State Tracking with Sparse Local Slot Attention",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 5th Workshop on NLP for Conversational AI (NLP4ConvAI 2023)",
+    "bibtex": "@inproceedings{yang-etal-2023-dialogue,\n    title = \"Dialogue State Tracking with Sparse Local Slot Attention\",\n    author = \"Yang, Longfei  and\n      Li, Jiyi  and\n      Li, Sheng  and\n      Shinozaki, Takahiro\",\n    editor = \"Chen, Yun-Nung  and\n      Rastogi, Abhinav\",\n    booktitle = \"Proceedings of the 5th Workshop on NLP for Conversational AI (NLP4ConvAI 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.nlp4convai-1.4\",\n    doi = \"10.18653/v1/2023.nlp4convai-1.4\",\n    pages = \"39--46\",\n    abstract = \"Dialogue state tracking (DST) is designed to track the dialogue state during the conversations between users and systems, which is the core of task-oriented dialogue systems. Mainstream models predict the values for each slot with fully token-wise slot attention from dialogue history. However, such operations may result in overlooking the neighboring relationship. Moreover, it may lead the model to assign probability mass to irrelevant parts, while these parts contribute little. It becomes severe with the increase in dialogue length. Therefore, we investigate sparse local slot attention for DST in this work. Slot-specific local semantic information is obtained at a sub-sampled temporal resolution capturing local dependencies for each slot. Then these local representations are attended with sparse attention weights to guide the model to pay attention to relevant parts of local information for subsequent state value prediction. The experimental results on MultiWOZ 2.0 and 2.4 datasets show that the proposed approach effectively improves the performance of ontology-based dialogue state tracking, and performs better than token-wise attention for long dialogues.\",\n}\n",
+    "authors": [
+        "Longfei Yang",
+        "Jiyi Li",
+        "Sheng Li",
+        "Takahiro Shinozaki"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.nlp4convai-1.4.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/7efdc49c-2b00-5526-926d-424b066459c0.pdf",
+    "abstract": "Dialogue state tracking (DST) is designed to track the dialogue state during the conversations between users and systems, which is the core of task-oriented dialogue systems. Mainstream models predict the values for each slot with fully token-wise slot attention from dialogue history. However, such operations may result in overlooking the neighboring relationship. Moreover, it may lead the model to assign probability mass to irrelevant parts, while these parts contribute little. It becomes severe with the increase in dialogue length. Therefore, we investigate sparse local slot attention for DST in this work. Slot-specific local semantic information is obtained at a sub-sampled temporal resolution capturing local dependencies for each slot. Then these local representations are attended with sparse attention weights to guide the model to pay attention to relevant parts of local information for subsequent state value prediction. The experimental results on MultiWOZ 2.0 and 2.4 datasets show that the proposed approach effectively improves the performance of ontology-based dialogue state tracking, and performs better than token-wise attention for long dialogues.",
+    "num_pages": 8
+}

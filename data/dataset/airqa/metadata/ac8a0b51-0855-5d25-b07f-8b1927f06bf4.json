@@ -1,0 +1,22 @@
+{
+    "uuid": "ac8a0b51-0855-5d25-b07f-8b1927f06bf4",
+    "title": "Unsupervised Information Refinement Training of Large Language Models for Retrieval-Augmented Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{xu-etal-2024-unsupervised,\n    title = \"Unsupervised Information Refinement Training of Large Language Models for Retrieval-Augmented Generation\",\n    author = \"Xu, Shicheng  and\n      Pang, Liang  and\n      Yu, Mo  and\n      Meng, Fandong  and\n      Shen, Huawei  and\n      Cheng, Xueqi  and\n      Zhou, Jie\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.9\",\n    doi = \"10.18653/v1/2024.acl-long.9\",\n    pages = \"133--145\",\n    abstract = \"Retrieval-augmented generation (RAG) enhances large language models (LLMs) by incorporating additional information from retrieval. However, studies have shown that LLMs still face challenges in effectively using the retrieved information, even ignore it or be misled by it. The key reason is that the training of LLMs does not clearly make LLMs learn how to utilize input retrieved texts with varied quality. In this paper, we propose a novel perspective that considers the role of LLMs in RAG as {``}Information Refiner{''}, which means that regardless of correctness, completeness, or usefulness of retrieved texts, LLMs can consistently integrate knowledge within the retrieved texts and model parameters to generate the texts that are more concise, accurate, and complete than the retrieved texts. To this end, we propose an information refinement training method named INFO-RAG that optimizes LLMs for RAG in an unsupervised manner. INFO-RAG is low-cost and general across various tasks. Extensive experiments on zero-shot prediction of 11 datasets in diverse tasks including Question Answering, Slot-Filling, Language Modeling, Dialogue, and Code Generation show that INFO-RAG improves the performance of LLaMA2 by an average of 9.39{\\%} relative points. INFO-RAG also shows advantages in in-context learning and robustness of RAG.\",\n}\n",
+    "authors": [
+        "Shicheng Xu",
+        "Liang Pang",
+        "Mo Yu",
+        "Fandong Meng",
+        "Huawei Shen",
+        "Xueqi Cheng",
+        "Jie Zhou"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.9.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/ac8a0b51-0855-5d25-b07f-8b1927f06bf4.pdf",
+    "abstract": "Retrieval-augmented generation (RAG) enhances large language models (LLMs) by incorporating additional information from retrieval. However, studies have shown that LLMs still face challenges in effectively using the retrieved information, even ignore it or be misled by it. The key reason is that the training of LLMs does not clearly make LLMs learn how to utilize input retrieved texts with varied quality. In this paper, we propose a novel perspective that considers the role of LLMs in RAG as “Information Refiner”, which means that regardless of correctness, completeness, or usefulness of retrieved texts, LLMs can consistently integrate knowledge within the retrieved texts and model parameters to generate the texts that are more concise, accurate, and complete than the retrieved texts. To this end, we propose an information refinement training method named INFO-RAG that optimizes LLMs for RAG in an unsupervised manner. INFO-RAG is low-cost and general across various tasks. Extensive experiments on zero-shot prediction of 11 datasets in diverse tasks including Question Answering, Slot-Filling, Language Modeling, Dialogue, and Code Generation show that INFO-RAG improves the performance of LLaMA2 by an average of 9.39% relative points. INFO-RAG also shows advantages in in-context learning and robustness of RAG.",
+    "num_pages": 13
+}

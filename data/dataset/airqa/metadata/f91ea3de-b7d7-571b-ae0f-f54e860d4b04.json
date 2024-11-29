@@ -1,0 +1,18 @@
+{
+    "uuid": "f91ea3de-b7d7-571b-ae0f-f54e860d4b04",
+    "title": "AMRs Assemble! Learning to Ensemble with Autoregressive Models for AMR Parsing",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{martinez-lorenzo-etal-2023-amrs,\n    title = \"{AMR}s Assemble! Learning to Ensemble with Autoregressive Models for {AMR} Parsing\",\n    author = \"Mart{\\'\\i}nez Lorenzo, Abelardo Carlos  and\n      Huguet Cabot, Pere Llu{\\'\\i}s  and\n      Navigli, Roberto\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.137\",\n    doi = \"10.18653/v1/2023.acl-short.137\",\n    pages = \"1595--1605\",\n    abstract = \"In this paper, we examine the current state-of-the-art in AMR parsing, which relies on ensemble strategies by merging multiple graph predictions. Our analysis reveals that the present models often violate AMR structural constraints. To address this issue, we develop a validation method, and show how ensemble models can exploit SMATCH metric weaknesses to obtain higher scores, but sometimes result in corrupted graphs. Additionally, we highlight the demanding need to compute the SMATCH score among all possible predictions. To overcome these challenges, we propose two novel ensemble strategies based on Transformer models, improving robustness to structural constraints, while also reducing the computational time. Our methods provide new insights for enhancing AMR parsers and metrics. Our code is available at [\\url{https://www.github.com/babelscape/AMRs-Assemble}](\\url{https://www.github.com/babelscape/AMRs-Assemble}).\",\n}\n",
+    "authors": [
+        "Abelardo Carlos Martínez Lorenzo",
+        "Pere Lluís Huguet Cabot",
+        "Roberto Navigli"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.137.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f91ea3de-b7d7-571b-ae0f-f54e860d4b04.pdf",
+    "abstract": "In this paper, we examine the current state-of-the-art in AMR parsing, which relies on ensemble strategies by merging multiple graph predictions. Our analysis reveals that the present models often violate AMR structural constraints. To address this issue, we develop a validation method, and show how ensemble models can exploit SMATCH metric weaknesses to obtain higher scores, but sometimes result in corrupted graphs. Additionally, we highlight the demanding need to compute the SMATCH score among all possible predictions. To overcome these challenges, we propose two novel ensemble strategies based on Transformer models, improving robustness to structural constraints, while also reducing the computational time. Our methods provide new insights for enhancing AMR parsers and metrics. Our code is available at [https://www.github.com/babelscape/AMRs-Assemble](https://www.github.com/babelscape/AMRs-Assemble).",
+    "num_pages": 11
+}

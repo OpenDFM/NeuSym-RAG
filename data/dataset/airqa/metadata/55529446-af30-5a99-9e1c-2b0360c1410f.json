@@ -1,0 +1,22 @@
+{
+    "uuid": "55529446-af30-5a99-9e1c-2b0360c1410f",
+    "title": "Domain Adaptation for Subjective Induction Questions Answering on Products by Adversarial Disentangled Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhang-etal-2024-domain,\n    title = \"Domain Adaptation for Subjective Induction Questions Answering on Products by Adversarial Disentangled Learning\",\n    author = \"Zhang, Yufeng  and\n      Yu, Jianxing  and\n      Rao, Yanghui  and\n      Zheng, Libin  and\n      Su, Qinliang  and\n      Zhu, Huaijie  and\n      Yin, Jian\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.491\",\n    doi = \"10.18653/v1/2024.acl-long.491\",\n    pages = \"9074--9089\",\n    abstract = \"This paper focuses on answering subjective questions about products. Different from the factoid question with a single answer span, this subjective one involves multiple viewpoints. For example, the question of {`}how the phone{'}s battery is?{'} not only involves facts of battery capacity but also contains users{'} opinions on the battery{'}s pros and cons. A good answer should be able to integrate these heterogeneous and even inconsistent viewpoints, which is formalized as a subjective induction QA task. For this task, the data distributions are often imbalanced across different product domains. It is hard for traditional methods to work well without considering the shift of domain patterns. To address this problem, we propose a novel domain-adaptive model. Concretely, for each sample in the source and target domain, we first retrieve answer-related knowledge and represent them independently. To facilitate knowledge transferring, we then disentangle the representations into domain-invariant and domain-specific latent factors. Moreover, we develop an adversarial discriminator with contrastive learning to reduce the impact of out-of-domain bias. Based on learned latent vectors in a target domain, we yield multi-perspective summaries as inductive answers. Experiments on popular datasets show the effectiveness of our method.\",\n}\n",
+    "authors": [
+        "Yufeng Zhang",
+        "Jianxing Yu",
+        "Yanghui Rao",
+        "Libin Zheng",
+        "Qinliang Su",
+        "Huaijie Zhu",
+        "Jian Yin"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.491.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/55529446-af30-5a99-9e1c-2b0360c1410f.pdf",
+    "abstract": "This paper focuses on answering subjective questions about products. Different from the factoid question with a single answer span, this subjective one involves multiple viewpoints. For example, the question of ‘how the phone’s battery is?’ not only involves facts of battery capacity but also contains users’ opinions on the battery’s pros and cons. A good answer should be able to integrate these heterogeneous and even inconsistent viewpoints, which is formalized as a subjective induction QA task. For this task, the data distributions are often imbalanced across different product domains. It is hard for traditional methods to work well without considering the shift of domain patterns. To address this problem, we propose a novel domain-adaptive model. Concretely, for each sample in the source and target domain, we first retrieve answer-related knowledge and represent them independently. To facilitate knowledge transferring, we then disentangle the representations into domain-invariant and domain-specific latent factors. Moreover, we develop an adversarial discriminator with contrastive learning to reduce the impact of out-of-domain bias. Based on learned latent vectors in a target domain, we yield multi-perspective summaries as inductive answers. Experiments on popular datasets show the effectiveness of our method.",
+    "num_pages": 16
+}

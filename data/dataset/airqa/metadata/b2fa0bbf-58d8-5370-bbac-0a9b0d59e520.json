@@ -1,0 +1,21 @@
+{
+    "uuid": "b2fa0bbf-58d8-5370-bbac-0a9b0d59e520",
+    "title": "ACUEval: Fine-grained Hallucination Evaluation and Correction for Abstractive Summarization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{wan-etal-2024-acueval,\n    title = \"{ACUE}val: Fine-grained Hallucination Evaluation and Correction for Abstractive Summarization\",\n    author = \"Wan, David  and\n      Sinha, Koustuv  and\n      Iyer, Srini  and\n      Celikyilmaz, Asli  and\n      Bansal, Mohit  and\n      Pasunuru, Ramakanth\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.597\",\n    doi = \"10.18653/v1/2024.findings-acl.597\",\n    pages = \"10036--10056\",\n    abstract = \"The impressive generation capabilities of large language models (LLMs) have made it harder to detect the subtle hallucinations they make in abstractive summarization, where generated summaries consist of a blend of correct and incorrect information w.r.t. a given document. Recently-proposed LLM-based evaluation metrics attempt to capture this, but still face challenges: (1) they are biased towards summaries generated from the same underlying LLM, and (2) they lack interpretability, offering only a single score. In this work, we present ACUEval, a metric that leverages the power of LLMs to perform two sub-tasks: decomposing summaries into atomic content units (ACUs), and validating them against the source document. Compared to current strong LLM-based metrics, our two-step evaluation strategy improves correlation with human judgments of faithfulness on three summarization evaluation benchmarks by 3{\\%} in balanced accuracy compared to the next-best metric, and also shows reduced preference bias towards LLM-generated summary. Further, we show that errors detected by ACUEval can be used to generate actionable feedback for refining the summary, improving the faithfulness scores by more than 10{\\%}.\",\n}\n",
+    "authors": [
+        "David Wan",
+        "Koustuv Sinha",
+        "Srini Iyer",
+        "Asli Celikyilmaz",
+        "Mohit Bansal",
+        "Ramakanth Pasunuru"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.597.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/b2fa0bbf-58d8-5370-bbac-0a9b0d59e520.pdf",
+    "abstract": "The impressive generation capabilities of large language models (LLMs) have made it harder to detect the subtle hallucinations they make in abstractive summarization, where generated summaries consist of a blend of correct and incorrect information w.r.t. a given document. Recently-proposed LLM-based evaluation metrics attempt to capture this, but still face challenges: (1) they are biased towards summaries generated from the same underlying LLM, and (2) they lack interpretability, offering only a single score. In this work, we present ACUEval, a metric that leverages the power of LLMs to perform two sub-tasks: decomposing summaries into atomic content units (ACUs), and validating them against the source document. Compared to current strong LLM-based metrics, our two-step evaluation strategy improves correlation with human judgments of faithfulness on three summarization evaluation benchmarks by 3% in balanced accuracy compared to the next-best metric, and also shows reduced preference bias towards LLM-generated summary. Further, we show that errors detected by ACUEval can be used to generate actionable feedback for refining the summary, improving the faithfulness scores by more than 10%.",
+    "num_pages": 21
+}

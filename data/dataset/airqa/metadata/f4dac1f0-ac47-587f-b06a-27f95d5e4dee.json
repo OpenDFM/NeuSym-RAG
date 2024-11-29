@@ -1,0 +1,22 @@
+{
+    "uuid": "f4dac1f0-ac47-587f-b06a-27f95d5e4dee",
+    "title": "Dialogue Summarization with Static-Dynamic Structure Fusion Graph",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{gao-etal-2023-dialogue,\n    title = \"Dialogue Summarization with Static-Dynamic Structure Fusion Graph\",\n    author = \"Gao, Shen  and\n      Cheng, Xin  and\n      Li, Mingzhe  and\n      Chen, Xiuying  and\n      Li, Jinpeng  and\n      Zhao, Dongyan  and\n      Yan, Rui\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.775\",\n    doi = \"10.18653/v1/2023.acl-long.775\",\n    pages = \"13858--13873\",\n    abstract = \"Dialogue, the most fundamental and specially privileged arena of language, gains increasing ubiquity across the Web in recent years. Quickly going through the long dialogue context and capturing salient information scattered over the whole dialogue session benefit users in many real-world Web applications such as email thread summarization and meeting minutes draft. Dialogue summarization is a challenging task in that dialogue has dynamic interaction nature and presumably inconsistent information flow among various speakers. Many researchers address this task by modeling dialogue with pre-computed static graph structure using external linguistic toolkits. However, such methods heavily depend on the reliability of external tools and the static graph construction is disjoint with the graph representation learning phase, which makes the graph can{'}t be dynamically adapted for the downstream summarization task. In this paper, we propose a Static-Dynamic graph-based Dialogue Summarization model (SDDS), which fuses prior knowledge from human expertise and adaptively learns the graph structure in an end-to-end learning fashion. To verify the effectiveness of SDDS, we conduct experiments on three benchmark datasets (SAMSum, MediaSum, and DialogSum) and the results verify the superiority of SDDS.\",\n}\n",
+    "authors": [
+        "Shen Gao",
+        "Xin Cheng",
+        "Mingzhe Li",
+        "Xiuying Chen",
+        "Jinpeng Li",
+        "Dongyan Zhao",
+        "Rui Yan"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.775.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f4dac1f0-ac47-587f-b06a-27f95d5e4dee.pdf",
+    "abstract": "Dialogue, the most fundamental and specially privileged arena of language, gains increasing ubiquity across the Web in recent years. Quickly going through the long dialogue context and capturing salient information scattered over the whole dialogue session benefit users in many real-world Web applications such as email thread summarization and meeting minutes draft. Dialogue summarization is a challenging task in that dialogue has dynamic interaction nature and presumably inconsistent information flow among various speakers. Many researchers address this task by modeling dialogue with pre-computed static graph structure using external linguistic toolkits. However, such methods heavily depend on the reliability of external tools and the static graph construction is disjoint with the graph representation learning phase, which makes the graph can’t be dynamically adapted for the downstream summarization task. In this paper, we propose a Static-Dynamic graph-based Dialogue Summarization model (SDDS), which fuses prior knowledge from human expertise and adaptively learns the graph structure in an end-to-end learning fashion. To verify the effectiveness of SDDS, we conduct experiments on three benchmark datasets (SAMSum, MediaSum, and DialogSum) and the results verify the superiority of SDDS.",
+    "num_pages": 16
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "27bfff80-6240-577c-bb4f-9db5870f6e48",
+    "title": "A Semantic Distance Metric Learning approach for Lexical Semantic Change Detection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{aida-bollegala-2024-semantic,\n    title = \"A Semantic Distance Metric Learning approach for Lexical Semantic Change Detection\",\n    author = \"Aida, Taichi  and\n      Bollegala, Danushka\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.451\",\n    doi = \"10.18653/v1/2024.findings-acl.451\",\n    pages = \"7570--7584\",\n    abstract = \"Detecting temporal semantic changes of words is an important task for various NLP applications that must make time-sensitive predictions.Lexical Semantic Change Detection (SCD) task involves predicting whether a given target word, $w$, changes its meaning between two different text corpora, $C_1$ and $C_2$.For this purpose, we propose a supervised two-staged SCD method that uses existing Word-in-Context (WiC) datasets.In the first stage, for a target word $w$, we learn two sense-aware encoders that represent the meaning of $w$ in a given sentence selected from a corpus.Next, in the second stage, we learn a sense-aware distance metric that compares the semantic representations of a target word across all of its occurrences in $C_1$ and $C_2$.Experimental results on multiple benchmark datasets for SCD show that our proposed method achieves strong performance in multiple languages.Additionally, our method achieves significant improvements on WiC benchmarks compared to a sense-aware encoder with conventional distance functions.\",\n}\n",
+    "authors": [
+        "Taichi Aida",
+        "Danushka Bollegala"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.451.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/27bfff80-6240-577c-bb4f-9db5870f6e48.pdf",
+    "abstract": "Detecting temporal semantic changes of words is an important task for various NLP applications that must make time-sensitive predictions.Lexical Semantic Change Detection (SCD) task involves predicting whether a given target word, w, changes its meaning between two different text corpora, C1 and C2.For this purpose, we propose a supervised two-staged SCD method that uses existing Word-in-Context (WiC) datasets.In the first stage, for a target word w, we learn two sense-aware encoders that represent the meaning of w in a given sentence selected from a corpus.Next, in the second stage, we learn a sense-aware distance metric that compares the semantic representations of a target word across all of its occurrences in C1 and C2.Experimental results on multiple benchmark datasets for SCD show that our proposed method achieves strong performance in multiple languages.Additionally, our method achieves significant improvements on WiC benchmarks compared to a sense-aware encoder with conventional distance functions.",
+    "num_pages": 15
+}

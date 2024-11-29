@@ -1,0 +1,20 @@
+{
+    "uuid": "9e3adda6-61f8-55c9-8bf1-cb473027c625",
+    "title": "FIREBALL: A Dataset of Dungeons and Dragons Actual-Play with Structured Game State Information",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhu-etal-2023-fireball,\n    title = \"{FIREBALL}: A Dataset of Dungeons and Dragons Actual-Play with Structured Game State Information\",\n    author = \"Zhu, Andrew  and\n      Aggarwal, Karmanya  and\n      Feng, Alexander  and\n      Martin, Lara J.  and\n      Callison-Burch, Chris\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.229\",\n    doi = \"10.18653/v1/2023.acl-long.229\",\n    pages = \"4171--4193\",\n    abstract = \"Dungeons {\\&} Dragons (D{\\&}D) is a tabletop roleplaying game with complex natural language interactions between players and hidden state information. Recent work has shown that large language models (LLMs) that have access to state information can generate higher quality game turns than LLMs that use dialog history alone. However, previous work used game state information that was heuristically created and was not a true gold standard game state. We present FIREBALL, a large dataset containing nearly 25,000 unique sessions from real D{\\&}D gameplay on Discord with true game state info. We recorded game play sessions of players who used the Avrae bot, which was developed to aid people in playing D{\\&}D online, capturing language, game commands and underlying game state information. We demonstrate that FIREBALL can improve natural language generation (NLG) by using Avrae state information, improving both automated metrics and human judgments of quality. Additionally, we show that LLMs can generate executable Avrae commands, particularly after finetuning.\",\n}\n",
+    "authors": [
+        "Andrew Zhu",
+        "Karmanya Aggarwal",
+        "Alexander Feng",
+        "Lara J. Martin",
+        "Chris Callison-Burch"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.229.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9e3adda6-61f8-55c9-8bf1-cb473027c625.pdf",
+    "abstract": "Dungeons & Dragons (D&D) is a tabletop roleplaying game with complex natural language interactions between players and hidden state information. Recent work has shown that large language models (LLMs) that have access to state information can generate higher quality game turns than LLMs that use dialog history alone. However, previous work used game state information that was heuristically created and was not a true gold standard game state. We present FIREBALL, a large dataset containing nearly 25,000 unique sessions from real D&D gameplay on Discord with true game state info. We recorded game play sessions of players who used the Avrae bot, which was developed to aid people in playing D&D online, capturing language, game commands and underlying game state information. We demonstrate that FIREBALL can improve natural language generation (NLG) by using Avrae state information, improving both automated metrics and human judgments of quality. Additionally, we show that LLMs can generate executable Avrae commands, particularly after finetuning.",
+    "num_pages": 23
+}

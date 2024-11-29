@@ -1,0 +1,25 @@
+{
+    "uuid": "313f5764-5a78-51c0-b5eb-09542c35ec45",
+    "title": "MixPAVE: Mix-Prompt Tuning for Few-shot Product Attribute Value Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{yang-etal-2023-mixpave,\n    title = \"{M}ix{PAVE}: Mix-Prompt Tuning for Few-shot Product Attribute Value Extraction\",\n    author = \"Yang, Li  and\n      Wang, Qifan  and\n      Wang, Jingang  and\n      Quan, Xiaojun  and\n      Feng, Fuli  and\n      Chen, Yu  and\n      Khabsa, Madian  and\n      Wang, Sinong  and\n      Xu, Zenglin  and\n      Liu, Dongfang\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.633\",\n    doi = \"10.18653/v1/2023.findings-acl.633\",\n    pages = \"9978--9991\",\n    abstract = \"The task of product attribute value extraction is to identify values of an attribute from product information. Product attributes are important features, which help improve online shopping experience of customers, such as product search, recommendation and comparison. Most existing works only focus on extracting values for a set of known attributes with sufficient training data. However, with the emerging nature of e-commerce, new products with their unique set of new attributes are constantly generated from different retailers and merchants. Collecting a large number of annotations for every new attribute is costly and time consuming. Therefore, it is an important research problem for product attribute value extraction with limited data. In this work, we propose a novel prompt tuning approach with \\textbf{Mix}ed \\textbf{P}rompts for few-shot \\textbf{A}ttribute \\textbf{V}alue \\textbf{E}xtraction, namely MixPAVE. Specifically, MixPAVE introduces only a small amount ({\\textless} 1{\\%}) of trainable parameters, i.e., a mixture of two learnable prompts, while keeping the existing extraction model frozen. In this way, MixPAVE not only benefits from parameter-efficient training, but also avoids model overfitting on limited training examples. Experimental results on two product benchmarks demonstrate the superior performance of the proposed approach over several state-of-the-art baselines. A comprehensive set of ablation studies validate the effectiveness of the prompt design, as well as the efficiency of our approach.\",\n}\n",
+    "authors": [
+        "Li Yang",
+        "Qifan Wang",
+        "Jingang Wang",
+        "Xiaojun Quan",
+        "Fuli Feng",
+        "Yu Chen",
+        "Madian Khabsa",
+        "Sinong Wang",
+        "Zenglin Xu",
+        "Dongfang Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.633.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/313f5764-5a78-51c0-b5eb-09542c35ec45.pdf",
+    "abstract": "The task of product attribute value extraction is to identify values of an attribute from product information. Product attributes are important features, which help improve online shopping experience of customers, such as product search, recommendation and comparison. Most existing works only focus on extracting values for a set of known attributes with sufficient training data. However, with the emerging nature of e-commerce, new products with their unique set of new attributes are constantly generated from different retailers and merchants. Collecting a large number of annotations for every new attribute is costly and time consuming. Therefore, it is an important research problem for product attribute value extraction with limited data. In this work, we propose a novel prompt tuning approach with Mixed Prompts for few-shot Attribute Value Extraction, namely MixPAVE. Specifically, MixPAVE introduces only a small amount (< 1%) of trainable parameters, i.e., a mixture of two learnable prompts, while keeping the existing extraction model frozen. In this way, MixPAVE not only benefits from parameter-efficient training, but also avoids model overfitting on limited training examples. Experimental results on two product benchmarks demonstrate the superior performance of the proposed approach over several state-of-the-art baselines. A comprehensive set of ablation studies validate the effectiveness of the prompt design, as well as the efficiency of our approach.",
+    "num_pages": 14
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "a0a38444-1010-557b-a394-7117291213c1",
+    "title": "Multi-hop Database Reasoning with Virtual Knowledge Graph",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 1st Workshop on Knowledge Graphs and Large Language Models (KaLLM 2024)",
+    "bibtex": "@inproceedings{son-etal-2024-multi,\n    title = \"Multi-hop Database Reasoning with Virtual Knowledge Graph\",\n    author = \"Son, Juhee  and\n      Seonwoo, Yeon  and\n      Yoon, Seunghyun  and\n      Thorne, James  and\n      Oh, Alice\",\n    editor = \"Biswas, Russa  and\n      Kaffee, Lucie-Aim{\\'e}e  and\n      Agarwal, Oshin  and\n      Minervini, Pasquale  and\n      Singh, Sameer  and\n      de Melo, Gerard\",\n    booktitle = \"Proceedings of the 1st Workshop on Knowledge Graphs and Large Language Models (KaLLM 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.kallm-1.1\",\n    doi = \"10.18653/v1/2024.kallm-1.1\",\n    pages = \"1--11\",\n    abstract = \"Application of LLM to database queries on natural language sentences has demonstrated impressive results in both single and multi-hop scenarios.In the existing methodologies, the requirement to re-encode query vectors at each stage for processing multi-hop queries presents a significant bottleneck to the inference speed.This paper proposes VKGFR (Virtual Knowledge Graph based Fact Retriever) that leverages large language models to extract representations corresponding to a sentence{'}s knowledge graph, significantly enhancing inference speed for multi-hop reasoning without performance loss.Given that both the queries and natural language database sentences can be structured as a knowledge graph, we suggest extracting a Virtual Knowledge Graph (VKG) representation from sentences with LLM.Over the pre-constructed VKG, our VKGFR conducts retrieval with a tiny model structure, showing performance improvements with higher computational efficiency. We evaluate VKGFR on the WikiNLDB and MetaQA dataset, designed for multi-hop database reasoning over text. The results indicate 13x faster inference speed on the WikiNLDB dataset without performance loss.\",\n}\n",
+    "authors": [
+        "Juhee Son",
+        "Yeon Seonwoo",
+        "Seunghyun Yoon",
+        "James Thorne",
+        "Alice Oh"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.kallm-1.1.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a0a38444-1010-557b-a394-7117291213c1.pdf",
+    "abstract": "Application of LLM to database queries on natural language sentences has demonstrated impressive results in both single and multi-hop scenarios.In the existing methodologies, the requirement to re-encode query vectors at each stage for processing multi-hop queries presents a significant bottleneck to the inference speed.This paper proposes VKGFR (Virtual Knowledge Graph based Fact Retriever) that leverages large language models to extract representations corresponding to a sentence’s knowledge graph, significantly enhancing inference speed for multi-hop reasoning without performance loss.Given that both the queries and natural language database sentences can be structured as a knowledge graph, we suggest extracting a Virtual Knowledge Graph (VKG) representation from sentences with LLM.Over the pre-constructed VKG, our VKGFR conducts retrieval with a tiny model structure, showing performance improvements with higher computational efficiency. We evaluate VKGFR on the WikiNLDB and MetaQA dataset, designed for multi-hop database reasoning over text. The results indicate 13x faster inference speed on the WikiNLDB dataset without performance loss.",
+    "num_pages": 11
+}

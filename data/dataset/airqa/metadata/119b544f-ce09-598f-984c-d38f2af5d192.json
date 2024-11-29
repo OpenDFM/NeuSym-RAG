@@ -1,0 +1,28 @@
+{
+    "uuid": "119b544f-ce09-598f-984c-d38f2af5d192",
+    "title": "MatPlotAgent: Method and Evaluation for LLM-Based Agentic Scientific Data Visualization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{yang-etal-2024-matplotagent,\n    title = \"{M}at{P}lot{A}gent: Method and Evaluation for {LLM}-Based Agentic Scientific Data Visualization\",\n    author = \"Yang, Zhiyu  and\n      Zhou, Zihan  and\n      Wang, Shuo  and\n      Cong, Xin  and\n      Han, Xu  and\n      Yan, Yukun  and\n      Liu, Zhenghao  and\n      Tan, Zhixing  and\n      Liu, Pengyuan  and\n      Yu, Dong  and\n      Liu, Zhiyuan  and\n      Shi, Xiaodong  and\n      Sun, Maosong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.701\",\n    doi = \"10.18653/v1/2024.findings-acl.701\",\n    pages = \"11789--11804\",\n    abstract = \"Scientific data visualization plays a crucial role in research by enabling the direct display of complex information and assisting researchers in identifying implicit patterns. Despite its importance, the use of Large Language Models (LLMs) for scientific data visualization remains rather unexplored. In this study, we introduce MatPlotAgent, an efficient model-agnostic LLM agent framework designed to automate scientific data visualization tasks. Leveraging the capabilities of both code LLMs and multi-modal LLMs, MatPlotAgent consists of three core modules: query understanding, code generation with iterative debugging, and a visual feedback mechanism for error correction. To address the lack of benchmarks in this field, we present MatPlotBench, a high-quality benchmark consisting of 100 human-verified test cases. Additionally, we introduce a scoring approach that utilizes GPT-4V for automatic evaluation. Experimental results demonstrate that MatPlotAgent can improve the performance of various LLMs, including both commercial and open-source models. Furthermore, the proposed evaluation method shows a strong correlation with human-annotated scores.\",\n}\n",
+    "authors": [
+        "Zhiyu Yang",
+        "Zihan Zhou",
+        "Shuo Wang",
+        "Xin Cong",
+        "Xu Han",
+        "Yukun Yan",
+        "Zhenghao Liu",
+        "Zhixing Tan",
+        "Pengyuan Liu",
+        "Dong Yu",
+        "Zhiyuan Liu",
+        "Xiaodong Shi",
+        "Maosong Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.701.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/119b544f-ce09-598f-984c-d38f2af5d192.pdf",
+    "abstract": "Scientific data visualization plays a crucial role in research by enabling the direct display of complex information and assisting researchers in identifying implicit patterns. Despite its importance, the use of Large Language Models (LLMs) for scientific data visualization remains rather unexplored. In this study, we introduce MatPlotAgent, an efficient model-agnostic LLM agent framework designed to automate scientific data visualization tasks. Leveraging the capabilities of both code LLMs and multi-modal LLMs, MatPlotAgent consists of three core modules: query understanding, code generation with iterative debugging, and a visual feedback mechanism for error correction. To address the lack of benchmarks in this field, we present MatPlotBench, a high-quality benchmark consisting of 100 human-verified test cases. Additionally, we introduce a scoring approach that utilizes GPT-4V for automatic evaluation. Experimental results demonstrate that MatPlotAgent can improve the performance of various LLMs, including both commercial and open-source models. Furthermore, the proposed evaluation method shows a strong correlation with human-annotated scores.",
+    "num_pages": 16
+}

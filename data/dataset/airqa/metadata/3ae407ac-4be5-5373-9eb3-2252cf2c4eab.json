@@ -1,0 +1,22 @@
+{
+    "uuid": "3ae407ac-4be5-5373-9eb3-2252cf2c4eab",
+    "title": "Retaining Key Information under High Compression Ratios: Query-Guided Compressor for LLMs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{cao-etal-2024-retaining,\n    title = \"Retaining Key Information under High Compression Ratios: Query-Guided Compressor for {LLM}s\",\n    author = \"Cao, Zhiwei  and\n      Cao, Qian  and\n      Lu, Yu  and\n      Peng, Ningxin  and\n      Huang, Luyang  and\n      Cheng, Shanbo  and\n      Su, Jinsong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.685\",\n    doi = \"10.18653/v1/2024.acl-long.685\",\n    pages = \"12685--12695\",\n    abstract = \"The growing popularity of Large Language Models has sparked interest in context compression for Large Language Models (LLMs). However, the performance of previous methods degrades dramatically as compression ratios increase, sometimes even falling to the closed-book level. This decline can be attributed to the loss of key information during the compression process. Our preliminary study supports this hypothesis, emphasizing the significance of retaining key information to maintain model performance under high compression ratios. As a result, we introduce Query-Guided Compressor (QGC), which leverages queries to guide the context compression process, effectively preserving key information within the compressed context. Additionally, we employ a dynamic compression strategy. We validate the effectiveness of our proposed QGC on the Question Answering task, including NaturalQuestions, TriviaQA, and HotpotQA datasets. Experimental results show that QGC can consistently perform well even at high compression ratios, which also offers significant benefits in terms of inference cost and throughput.\",\n}\n",
+    "authors": [
+        "Zhiwei Cao",
+        "Qian Cao",
+        "Yu Lu",
+        "Ningxin Peng",
+        "Luyang Huang",
+        "Shanbo Cheng",
+        "Jinsong Su"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.685.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/3ae407ac-4be5-5373-9eb3-2252cf2c4eab.pdf",
+    "abstract": "The growing popularity of Large Language Models has sparked interest in context compression for Large Language Models (LLMs). However, the performance of previous methods degrades dramatically as compression ratios increase, sometimes even falling to the closed-book level. This decline can be attributed to the loss of key information during the compression process. Our preliminary study supports this hypothesis, emphasizing the significance of retaining key information to maintain model performance under high compression ratios. As a result, we introduce Query-Guided Compressor (QGC), which leverages queries to guide the context compression process, effectively preserving key information within the compressed context. Additionally, we employ a dynamic compression strategy. We validate the effectiveness of our proposed QGC on the Question Answering task, including NaturalQuestions, TriviaQA, and HotpotQA datasets. Experimental results show that QGC can consistently perform well even at high compression ratios, which also offers significant benefits in terms of inference cost and throughput.",
+    "num_pages": 11
+}

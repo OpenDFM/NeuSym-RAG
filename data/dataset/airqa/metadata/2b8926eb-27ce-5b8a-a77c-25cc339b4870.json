@@ -1,0 +1,18 @@
+{
+    "uuid": "2b8926eb-27ce-5b8a-a77c-25cc339b4870",
+    "title": "Language Modeling with Latent Situations",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{li-etal-2023-language-modeling,\n    title = \"Language Modeling with Latent Situations\",\n    author = \"Li, Belinda Z.  and\n      Nye, Maxwell  and\n      Andreas, Jacob\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.795\",\n    doi = \"10.18653/v1/2023.findings-acl.795\",\n    pages = \"12556--12571\",\n    abstract = \"Language models (LMs) often generate incoherent outputs: they refer to events and entity states that are incompatible with the state of the world described in inputs. We introduce SITUATIONSUPERVISION, a family of approaches for improving coherence in LMs by training them to construct and condition on explicit representations of entities and their states. SITUATIONSUPERVISION has two components: an *auxiliary situation modeling* task that trains models to predict entity state representations in context, and a *latent state inference* procedure that imputes these states from partially annotated training data. SITUATIONSUPERVISION can be applied via fine-tuning (by supervising LMs to encode state variables in their hidden representations) and prompting (by inducing LMs to interleave textual descriptions of entity states with output text). In both cases, it requires only a small number of state annotations to produce substantial coherence improvements (up to an 16{\\%} reduction in errors), showing that standard LMs can be efficiently adapted to explicitly model language and aspects of its meaning.\",\n}\n",
+    "authors": [
+        "Belinda Z. Li",
+        "Maxwell Nye",
+        "Jacob Andreas"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.795.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2b8926eb-27ce-5b8a-a77c-25cc339b4870.pdf",
+    "abstract": "Language models (LMs) often generate incoherent outputs: they refer to events and entity states that are incompatible with the state of the world described in inputs. We introduce SITUATIONSUPERVISION, a family of approaches for improving coherence in LMs by training them to construct and condition on explicit representations of entities and their states. SITUATIONSUPERVISION has two components: an *auxiliary situation modeling* task that trains models to predict entity state representations in context, and a *latent state inference* procedure that imputes these states from partially annotated training data. SITUATIONSUPERVISION can be applied via fine-tuning (by supervising LMs to encode state variables in their hidden representations) and prompting (by inducing LMs to interleave textual descriptions of entity states with output text). In both cases, it requires only a small number of state annotations to produce substantial coherence improvements (up to an 16% reduction in errors), showing that standard LMs can be efficiently adapted to explicitly model language and aspects of its meaning.",
+    "num_pages": 16
+}

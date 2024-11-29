@@ -1,0 +1,20 @@
+{
+    "uuid": "9a2d6cef-6195-5814-846f-e0abe3fe4723",
+    "title": "On the Off-Target Problem of Zero-Shot Multilingual Neural Machine Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{chen-etal-2023-target,\n    title = \"On the Off-Target Problem of Zero-Shot Multilingual Neural Machine Translation\",\n    author = \"Chen, Liang  and\n      Ma, Shuming  and\n      Zhang, Dongdong  and\n      Wei, Furu  and\n      Chang, Baobao\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.608\",\n    doi = \"10.18653/v1/2023.findings-acl.608\",\n    pages = \"9542--9558\",\n    abstract = \"While multilingual neural machine translation has achieved great success, it suffers from the off-target issue, where the translation is in the wrong language. This problem is more pronounced on zero-shot translation tasks. In this work, we find that failing in encoding discriminative target language signal will lead to off-target and a closer lexical distance (i.e., KL-divergence) between two languages{'} vocabularies is related with a higher off-target rate. We also find that solely isolating the vocab of different languages in the decoder can alleviate the problem. Motivated by the findings, we propose Language Aware Vocabulary Sharing (LAVS), a simple and effective algorithm to construct the multilingual vocabulary, that greatly alleviates the off-target problem of the translation model by increasing the KL-divergence between languages. We conduct experiments on a multilingual machine translation benchmark in 11 languages. Experiments show that the off-target rate for 90 translation tasks is reduced from 29{\\%} to 8{\\%}, while the overall BLEU score is improved by an average of 1.9 points without extra training cost or sacrificing the supervised directions{'} performance. We release the code at \\url{https://github.com/PKUnlp-icler/Off-Target-MNMT} for reproduction.\",\n}\n",
+    "authors": [
+        "Liang Chen",
+        "Shuming Ma",
+        "Dongdong Zhang",
+        "Furu Wei",
+        "Baobao Chang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.608.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9a2d6cef-6195-5814-846f-e0abe3fe4723.pdf",
+    "abstract": "While multilingual neural machine translation has achieved great success, it suffers from the off-target issue, where the translation is in the wrong language. This problem is more pronounced on zero-shot translation tasks. In this work, we find that failing in encoding discriminative target language signal will lead to off-target and a closer lexical distance (i.e., KL-divergence) between two languages’ vocabularies is related with a higher off-target rate. We also find that solely isolating the vocab of different languages in the decoder can alleviate the problem. Motivated by the findings, we propose Language Aware Vocabulary Sharing (LAVS), a simple and effective algorithm to construct the multilingual vocabulary, that greatly alleviates the off-target problem of the translation model by increasing the KL-divergence between languages. We conduct experiments on a multilingual machine translation benchmark in 11 languages. Experiments show that the off-target rate for 90 translation tasks is reduced from 29% to 8%, while the overall BLEU score is improved by an average of 1.9 points without extra training cost or sacrificing the supervised directions’ performance. We release the code at https://github.com/PKUnlp-icler/Off-Target-MNMT for reproduction.",
+    "num_pages": 17
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "8aa2c7c1-eb20-5d4c-80bc-8ef1b76140bf",
+    "title": "BUMP: A Benchmark of Unfaithful Minimal Pairs for Meta-Evaluation of Faithfulness Metrics",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ma-etal-2023-bump,\n    title = \"{BUMP}: A Benchmark of Unfaithful Minimal Pairs for Meta-Evaluation of Faithfulness Metrics\",\n    author = \"Ma, Liang  and\n      Cao, Shuyang  and\n      Logan IV, Robert L  and\n      Lu, Di  and\n      Ran, Shihao  and\n      Zhang, Ke  and\n      Tetreault, Joel  and\n      Jaimes, Alejandro\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.716\",\n    doi = \"10.18653/v1/2023.acl-long.716\",\n    pages = \"12788--12812\",\n    abstract = \"The proliferation of automatic faithfulness metrics for summarization has produced a need for benchmarks to evaluate them. While existing benchmarks measure the correlation with human judgements of faithfulness on model-generated summaries, they are insufficient for diagnosing whether metrics are: 1) consistent, i.e., indicate lower faithfulness as errors are introduced into a summary, 2) effective on human-written texts, and 3) sensitive to different error types (as summaries can contain multiple errors). To address these needs, we present a benchmark of unfaithful minimal pairs (BUMP), a dataset of 889 human-written, minimally different summary pairs, where a single error is introduced to a summary from the CNN/DailyMail dataset to produce an unfaithful summary. We find BUMP complements existing benchmarks in a number of ways: 1) the summaries in BUMP are harder to discriminate and less probable under SOTA summarization models, 2) unlike non-pair-based datasets, BUMP can be used to measure the consistency of metrics, and reveals that the most discriminative metrics tend not to be the most consistent, and 3) unlike datasets containing generated summaries with multiple errors, BUMP enables the measurement of metrics{'} performance on individual error types.\",\n}\n",
+    "authors": [
+        "Liang Ma",
+        "Shuyang Cao",
+        "Robert L Logan IV",
+        "Di Lu",
+        "Shihao Ran",
+        "Ke Zhang",
+        "Joel Tetreault",
+        "Alejandro Jaimes"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.716.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8aa2c7c1-eb20-5d4c-80bc-8ef1b76140bf.pdf",
+    "abstract": "The proliferation of automatic faithfulness metrics for summarization has produced a need for benchmarks to evaluate them. While existing benchmarks measure the correlation with human judgements of faithfulness on model-generated summaries, they are insufficient for diagnosing whether metrics are: 1) consistent, i.e., indicate lower faithfulness as errors are introduced into a summary, 2) effective on human-written texts, and 3) sensitive to different error types (as summaries can contain multiple errors). To address these needs, we present a benchmark of unfaithful minimal pairs (BUMP), a dataset of 889 human-written, minimally different summary pairs, where a single error is introduced to a summary from the CNN/DailyMail dataset to produce an unfaithful summary. We find BUMP complements existing benchmarks in a number of ways: 1) the summaries in BUMP are harder to discriminate and less probable under SOTA summarization models, 2) unlike non-pair-based datasets, BUMP can be used to measure the consistency of metrics, and reveals that the most discriminative metrics tend not to be the most consistent, and 3) unlike datasets containing generated summaries with multiple errors, BUMP enables the measurement of metrics’ performance on individual error types.",
+    "num_pages": 25
+}

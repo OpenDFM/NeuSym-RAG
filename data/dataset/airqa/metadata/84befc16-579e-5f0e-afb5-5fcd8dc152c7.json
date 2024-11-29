@@ -1,0 +1,20 @@
+{
+    "uuid": "84befc16-579e-5f0e-afb5-5fcd8dc152c7",
+    "title": "Knowledgeable Parameter Efficient Tuning Network for Commonsense Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhao-etal-2023-knowledgeable,\n    title = \"Knowledgeable Parameter Efficient Tuning Network for Commonsense Question Answering\",\n    author = \"Zhao, Ziwang  and\n      Hu, Linmei  and\n      Zhao, Hanyu  and\n      Shao, Yingxia  and\n      Wang, Yequan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.503\",\n    doi = \"10.18653/v1/2023.acl-long.503\",\n    pages = \"9051--9063\",\n    abstract = \"Commonsense question answering is important for making decisions about everyday matters. Although existing commonsense question answering works based on fully fine-tuned PLMs have achieved promising results, they suffer from prohibitive computation costs as well as poor interpretability. Some works improve the PLMs by incorporating knowledge to provide certain evidence, via elaborately designed GNN modules which require expertise. In this paper, we propose a simple knowledgeable parameter efficient tuning network to couple PLMs with external knowledge for commonsense question answering. Specifically, we design a trainable parameter-sharing adapter attached to a parameter-freezing PLM to incorporate knowledge at a small cost. The adapter is equipped with both entity- and query-related knowledge via two auxiliary knowledge-related tasks (i.e., span masking and relation discrimination). To make the adapter focus on the relevant knowledge, we design gating and attention mechanisms to respectively filter and fuse the query information from the PLM. Extensive experiments on two benchmark datasets show that KPE is parameter-efficient and can effectively incorporate knowledge for improving commonsense question answering.\",\n}\n",
+    "authors": [
+        "Ziwang Zhao",
+        "Linmei Hu",
+        "Hanyu Zhao",
+        "Yingxia Shao",
+        "Yequan Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.503.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/84befc16-579e-5f0e-afb5-5fcd8dc152c7.pdf",
+    "abstract": "Commonsense question answering is important for making decisions about everyday matters. Although existing commonsense question answering works based on fully fine-tuned PLMs have achieved promising results, they suffer from prohibitive computation costs as well as poor interpretability. Some works improve the PLMs by incorporating knowledge to provide certain evidence, via elaborately designed GNN modules which require expertise. In this paper, we propose a simple knowledgeable parameter efficient tuning network to couple PLMs with external knowledge for commonsense question answering. Specifically, we design a trainable parameter-sharing adapter attached to a parameter-freezing PLM to incorporate knowledge at a small cost. The adapter is equipped with both entity- and query-related knowledge via two auxiliary knowledge-related tasks (i.e., span masking and relation discrimination). To make the adapter focus on the relevant knowledge, we design gating and attention mechanisms to respectively filter and fuse the query information from the PLM. Extensive experiments on two benchmark datasets show that KPE is parameter-efficient and can effectively incorporate knowledge for improving commonsense question answering.",
+    "num_pages": 13
+}

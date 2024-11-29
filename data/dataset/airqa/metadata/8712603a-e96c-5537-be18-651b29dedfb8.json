@@ -1,0 +1,22 @@
+{
+    "uuid": "8712603a-e96c-5537-be18-651b29dedfb8",
+    "title": "Dual-Gated Fusion with Prefix-Tuning for Multi-Modal Relation Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{li-etal-2023-dual-gated,\n    title = \"Dual-Gated Fusion with Prefix-Tuning for Multi-Modal Relation Extraction\",\n    author = \"Li, Qian  and\n      Guo, Shu  and\n      Ji, Cheng  and\n      Peng, Xutan  and\n      Cui, Shiyao  and\n      Li, Jianxin  and\n      Wang, Lihong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.572\",\n    doi = \"10.18653/v1/2023.findings-acl.572\",\n    pages = \"8982--8994\",\n    abstract = \"Multi-Modal Relation Extraction (MMRE) aims at identifying the relation between two entities in texts that contain visual clues. Rich visual content is valuable for the MMRE task, but existing works cannot well model finer associations among different modalities, failing to capture the truly helpful visual information and thus limiting relation extraction performance. In this paper, we propose a novel MMRE framework to better capture the deeper correlations of text, entity pair, and image/objects, so as to mine more helpful information for the task, termed as DGF-PT. We first propose a prompt-based autoregressive encoder, which builds the associations of intra-modal and inter-modal features related to the task, respectively by entity-oriented and object-oriented prefixes. To better integrate helpful visual information, we design a dual-gated fusion module to distinguish the importance of image/objects and further enrich text representations. In addition, a generative decoder is introduced with entity type restriction on relations, better filtering out candidates. Extensive experiments conducted on the benchmark dataset show that our approach achieves excellent performance compared to strong competitors, even in the few-shot situation.\",\n}\n",
+    "authors": [
+        "Qian Li",
+        "Shu Guo",
+        "Cheng Ji",
+        "Xutan Peng",
+        "Shiyao Cui",
+        "Jianxin Li",
+        "Lihong Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.572.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8712603a-e96c-5537-be18-651b29dedfb8.pdf",
+    "abstract": "Multi-Modal Relation Extraction (MMRE) aims at identifying the relation between two entities in texts that contain visual clues. Rich visual content is valuable for the MMRE task, but existing works cannot well model finer associations among different modalities, failing to capture the truly helpful visual information and thus limiting relation extraction performance. In this paper, we propose a novel MMRE framework to better capture the deeper correlations of text, entity pair, and image/objects, so as to mine more helpful information for the task, termed as DGF-PT. We first propose a prompt-based autoregressive encoder, which builds the associations of intra-modal and inter-modal features related to the task, respectively by entity-oriented and object-oriented prefixes. To better integrate helpful visual information, we design a dual-gated fusion module to distinguish the importance of image/objects and further enrich text representations. In addition, a generative decoder is introduced with entity type restriction on relations, better filtering out candidates. Extensive experiments conducted on the benchmark dataset show that our approach achieves excellent performance compared to strong competitors, even in the few-shot situation.",
+    "num_pages": 13
+}

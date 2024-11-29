@@ -1,0 +1,20 @@
+{
+    "uuid": "678d9670-520b-57f2-b16e-3494435792f6",
+    "title": "The Hidden Space of Transformer Language Adapters",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{alabi-etal-2024-hidden,\n    title = \"The Hidden Space of Transformer Language Adapters\",\n    author = \"Alabi, Jesujoba  and\n      Mosbach, Marius  and\n      Eyal, Matan  and\n      Klakow, Dietrich  and\n      Geva, Mor\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.356\",\n    doi = \"10.18653/v1/2024.acl-long.356\",\n    pages = \"6588--6607\",\n    abstract = \"We analyze the operation of transformer language adapters, which are small modules trained on top of a frozen language model to adapt its predictions to new target languages. We show that adapted predictions mostly evolve in the source language the model was trained on, while the target language becomes pronounced only in the very last layers of the model. Moreover, the adaptation process is gradual and distributed across layers, where it is possible to skip small groups of adapters without decreasing adaptation performance. Last, we show that adapters operate on top of the model{'}s frozen representation space while largely preserving its structure, rather than on an isolated subspace. Our findings provide a deeper view into the adaptation process of language models to new languages, showcasing the constraints imposed on it by the underlying model and introduces practical implications to enhance its efficiency.\",\n}\n",
+    "authors": [
+        "Jesujoba Alabi",
+        "Marius Mosbach",
+        "Matan Eyal",
+        "Dietrich Klakow",
+        "Mor Geva"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.356.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/678d9670-520b-57f2-b16e-3494435792f6.pdf",
+    "abstract": "We analyze the operation of transformer language adapters, which are small modules trained on top of a frozen language model to adapt its predictions to new target languages. We show that adapted predictions mostly evolve in the source language the model was trained on, while the target language becomes pronounced only in the very last layers of the model. Moreover, the adaptation process is gradual and distributed across layers, where it is possible to skip small groups of adapters without decreasing adaptation performance. Last, we show that adapters operate on top of the model’s frozen representation space while largely preserving its structure, rather than on an isolated subspace. Our findings provide a deeper view into the adaptation process of language models to new languages, showcasing the constraints imposed on it by the underlying model and introduces practical implications to enhance its efficiency.",
+    "num_pages": 20
+}

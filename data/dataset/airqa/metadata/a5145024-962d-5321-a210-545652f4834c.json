@@ -1,0 +1,27 @@
+{
+    "uuid": "a5145024-962d-5321-a210-545652f4834c",
+    "title": "An Experimental Design Framework for Label-Efficient Supervised Finetuning of Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{bhatt-etal-2024-experimental,\n    title = \"An Experimental Design Framework for Label-Efficient Supervised Finetuning of Large Language Models\",\n    author = \"Bhatt, Gantavya  and\n      Chen, Yifang  and\n      Das, Arnav  and\n      Zhang, Jifan  and\n      Truong, Sang  and\n      Mussmann, Stephen  and\n      Zhu, Yinglun  and\n      Bilmes, Jeff  and\n      Du, Simon  and\n      Jamieson, Kevin  and\n      Ash, Jordan  and\n      Nowak, Robert\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.390\",\n    doi = \"10.18653/v1/2024.findings-acl.390\",\n    pages = \"6549--6560\",\n    abstract = \"Supervised finetuning (SFT) on instruction datasets has played a crucial role in achieving the remarkable zero-shot generalization capabilities observed in modern large language models (LLMs). However, the annotation efforts required to produce high quality responses for instructions are becoming prohibitively expensive, especially as the number of tasks spanned by instruction datasets continues to increase. Active learning is effective in identifying useful subsets of samples to annotate from an unlabeled pool, but its high computational cost remains a barrier to its widespread applicability in the context of LLMs. To mitigate the annotation cost of SFT and circumvent the computational bottlenecks of active learning, we propose using experimental design. Experimental design techniques select the most informative samples to label, and typically maximize some notion of uncertainty and/or diversity. In our work, we implement a framework that evaluates several existing and novel experimental design techniques and find that these methods consistently yield significant gains in label efficiency with little computational overhead. On generative tasks, to reach the same generalization performance, our methods save 50{\\%} of the annotation cost compared to random sampling.\",\n}\n",
+    "authors": [
+        "Gantavya Bhatt",
+        "Yifang Chen",
+        "Arnav Das",
+        "Jifan Zhang",
+        "Sang Truong",
+        "Stephen Mussmann",
+        "Yinglun Zhu",
+        "Jeff Bilmes",
+        "Simon Du",
+        "Kevin Jamieson",
+        "Jordan Ash",
+        "Robert Nowak"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.390.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a5145024-962d-5321-a210-545652f4834c.pdf",
+    "abstract": "Supervised finetuning (SFT) on instruction datasets has played a crucial role in achieving the remarkable zero-shot generalization capabilities observed in modern large language models (LLMs). However, the annotation efforts required to produce high quality responses for instructions are becoming prohibitively expensive, especially as the number of tasks spanned by instruction datasets continues to increase. Active learning is effective in identifying useful subsets of samples to annotate from an unlabeled pool, but its high computational cost remains a barrier to its widespread applicability in the context of LLMs. To mitigate the annotation cost of SFT and circumvent the computational bottlenecks of active learning, we propose using experimental design. Experimental design techniques select the most informative samples to label, and typically maximize some notion of uncertainty and/or diversity. In our work, we implement a framework that evaluates several existing and novel experimental design techniques and find that these methods consistently yield significant gains in label efficiency with little computational overhead. On generative tasks, to reach the same generalization performance, our methods save 50% of the annotation cost compared to random sampling.",
+    "num_pages": 12
+}

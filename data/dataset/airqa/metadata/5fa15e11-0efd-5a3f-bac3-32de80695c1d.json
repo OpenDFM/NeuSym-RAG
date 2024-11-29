@@ -1,0 +1,20 @@
+{
+    "uuid": "5fa15e11-0efd-5a3f-bac3-32de80695c1d",
+    "title": "One-Shot Exemplification Modeling via Latent Sense Representations",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)",
+    "bibtex": "@inproceedings{harvill-etal-2023-one,\n    title = \"One-Shot Exemplification Modeling via Latent Sense Representations\",\n    author = \"Harvill, John  and\n      Hasegawa-Johnson, Mark  and\n      Yoon, Hee Suk  and\n      Yoo, Chang D.  and\n      Yoon, Eunseop\",\n    editor = \"Can, Burcu  and\n      Mozes, Maximilian  and\n      Cahyawijaya, Samuel  and\n      Saphra, Naomi  and\n      Kassner, Nora  and\n      Ravfogel, Shauli  and\n      Ravichander, Abhilasha  and\n      Zhao, Chen  and\n      Augenstein, Isabelle  and\n      Rogers, Anna  and\n      Cho, Kyunghyun  and\n      Grefenstette, Edward  and\n      Voita, Lena\",\n    booktitle = \"Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.repl4nlp-1.25\",\n    doi = \"10.18653/v1/2023.repl4nlp-1.25\",\n    pages = \"303--314\",\n}\n",
+    "authors": [
+        "John Harvill",
+        "Mark Hasegawa-Johnson",
+        "Hee Suk Yoon",
+        "Chang D. Yoo",
+        "Eunseop Yoon"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.repl4nlp-1.25.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/5fa15e11-0efd-5a3f-bac3-32de80695c1d.pdf",
+    "abstract": "Exemplification modeling is a recently proposed task that aims to produce a viable sentence using a target word that takes on a specific meaning. This task can be particularly challenging for polysemous words since they can have multiple meanings. In this paper, we propose a one-shot variant of the exemplification modeling task such that labeled data is not needed during training, making it possible to train our system using a raw text corpus. Given one example at test time, our proposed approach can generate diverse and fluent examples where the target word accurately matches its intended meaning. We compare our approach to a fully-supervised baseline trained with different amounts of data and focus our evaluation on polysemous words. We use both automatic and human evaluations to demonstrate how each model performs on both seen and unseen words. Our proposed approach performs similarly to the fully-supervised baseline despite not using labeled data during training.",
+    "num_pages": 12
+}

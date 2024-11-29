@@ -1,0 +1,27 @@
+{
+    "uuid": "10211443-f9b1-55ce-8b46-c7ed001207fc",
+    "title": "LMDX: Language Model-based Document Information Extraction and Localization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{perot-etal-2024-lmdx,\n    title = \"{LMDX}: Language Model-based Document Information Extraction and Localization\",\n    author = \"Perot, Vincent  and\n      Kang, Kai  and\n      Luisier, Florian  and\n      Su, Guolong  and\n      Sun, Xiaoyu  and\n      Boppana, Ramya Sree  and\n      Wang, Zilong  and\n      Wang, Zifeng  and\n      Mu, Jiaqi  and\n      Zhang, Hao  and\n      Lee, Chen-Yu  and\n      Hua, Nan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.899\",\n    doi = \"10.18653/v1/2024.findings-acl.899\",\n    pages = \"15140--15168\",\n    abstract = \"Large Language Models (LLM) have revolutionized Natural Language Processing (NLP), improving state-of-the-art and exhibiting emergent capabilities across various tasks. However, their application in extracting information from visually rich documents, which is at the core of many document processing workflows and involving the extraction of key entities from semi-structured documents, has not yet been successful. The main obstacles to adopting LLMs for this task include the absence of layout encoding within LLMs, which is critical for high quality extraction, and the lack of a grounding mechanism to localize the predicted entities within the document. In this paper, we introduce Language Model-based Document Information EXtraction and Localization (LMDX), a methodology to reframe the document information extraction task for a LLM. LMDX enables extraction of singular, repeated, and hierarchical entities, both with and without training data, while providing grounding guarantees and localizing the entities within the document. Finally, we apply LMDX to the PaLM 2-S and Gemini Pro LLMs and evaluate it on VRDU and CORD benchmarks, setting a new state-of-the-art and showing how LMDX enables the creation of high quality, data-efficient parsers.\",\n}\n",
+    "authors": [
+        "Vincent Perot",
+        "Kai Kang",
+        "Florian Luisier",
+        "Guolong Su",
+        "Xiaoyu Sun",
+        "Ramya Sree Boppana",
+        "Zilong Wang",
+        "Zifeng Wang",
+        "Jiaqi Mu",
+        "Hao Zhang",
+        "Chen-Yu Lee",
+        "Nan Hua"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.899.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/10211443-f9b1-55ce-8b46-c7ed001207fc.pdf",
+    "abstract": "Large Language Models (LLM) have revolutionized Natural Language Processing (NLP), improving state-of-the-art and exhibiting emergent capabilities across various tasks. However, their application in extracting information from visually rich documents, which is at the core of many document processing workflows and involving the extraction of key entities from semi-structured documents, has not yet been successful. The main obstacles to adopting LLMs for this task include the absence of layout encoding within LLMs, which is critical for high quality extraction, and the lack of a grounding mechanism to localize the predicted entities within the document. In this paper, we introduce Language Model-based Document Information EXtraction and Localization (LMDX), a methodology to reframe the document information extraction task for a LLM. LMDX enables extraction of singular, repeated, and hierarchical entities, both with and without training data, while providing grounding guarantees and localizing the entities within the document. Finally, we apply LMDX to the PaLM 2-S and Gemini Pro LLMs and evaluate it on VRDU and CORD benchmarks, setting a new state-of-the-art and showing how LMDX enables the creation of high quality, data-efficient parsers.",
+    "num_pages": 29
+}

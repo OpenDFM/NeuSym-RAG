@@ -1,0 +1,19 @@
+{
+    "uuid": "3e7d8b91-36f3-5a0c-a51c-7caf93f6ab88",
+    "title": "Interpreting Positional Information in Perspective of Word Order",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{xilong-etal-2023-interpreting,\n    title = \"Interpreting Positional Information in Perspective of Word Order\",\n    author = \"Xilong, Zhang  and\n      Ruochen, Liu  and\n      Jin, Liu  and\n      Xuefeng, Liang\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.534\",\n    doi = \"10.18653/v1/2023.acl-long.534\",\n    pages = \"9600--9613\",\n    abstract = \"The attention mechanism is a powerful and effective method utilized in natural language processing. However, it has been observed that this method is insensitive to positional information. Although several studies have attempted to improve positional encoding and investigate the influence of word order perturbation, it remains unclear how positional encoding impacts NLP models from the perspective of word order. In this paper, we aim to shed light on this problem by analyzing the working mechanism of the attention module and investigating the root cause of its inability to encode positional information. Our hypothesis is that the insensitivity can be attributed to the weight sum operation utilized in the attention module. To verify this hypothesis, we propose a novel weight concatenation operation and evaluate its efficacy in neural machine translation tasks. Our enhanced experimental results not only reveal that the proposed operation can effectively encode positional information but also confirm our hypothesis.\",\n}\n",
+    "authors": [
+        "Zhang Xilong",
+        "Liu Ruochen",
+        "Liu Jin",
+        "Liang Xuefeng"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.534.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/3e7d8b91-36f3-5a0c-a51c-7caf93f6ab88.pdf",
+    "abstract": "The attention mechanism is a powerful and effective method utilized in natural language processing. However, it has been observed that this method is insensitive to positional information. Although several studies have attempted to improve positional encoding and investigate the influence of word order perturbation, it remains unclear how positional encoding impacts NLP models from the perspective of word order. In this paper, we aim to shed light on this problem by analyzing the working mechanism of the attention module and investigating the root cause of its inability to encode positional information. Our hypothesis is that the insensitivity can be attributed to the weight sum operation utilized in the attention module. To verify this hypothesis, we propose a novel weight concatenation operation and evaluate its efficacy in neural machine translation tasks. Our enhanced experimental results not only reveal that the proposed operation can effectively encode positional information but also confirm our hypothesis.",
+    "num_pages": 14
+}

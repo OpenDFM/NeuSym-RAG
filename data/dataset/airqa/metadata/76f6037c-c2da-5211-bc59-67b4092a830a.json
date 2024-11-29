@@ -1,0 +1,22 @@
+{
+    "uuid": "76f6037c-c2da-5211-bc59-67b4092a830a",
+    "title": "PAI-Diffusion: Constructing and Serving a Family of Open Chinese Diffusion Models for Text-to-image Synthesis on the Cloud",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)",
+    "bibtex": "@inproceedings{wang-etal-2024-pai,\n    title = \"{PAI}-Diffusion: Constructing and Serving a Family of Open {C}hinese Diffusion Models for Text-to-image Synthesis on the Cloud\",\n    author = \"Wang, Chengyu  and\n      Duan, Zhongjie  and\n      Liu, Bingyan  and\n      Zou, Xinyi  and\n      Chen, Cen  and\n      Jia, Kui  and\n      Huang, Jun\",\n    editor = \"Cao, Yixin  and\n      Feng, Yang  and\n      Xiong, Deyi\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-demos.1\",\n    doi = \"10.18653/v1/2024.acl-demos.1\",\n    pages = \"1--8\",\n    abstract = \"Text-to-image synthesis for the Chinese language poses unique challenges due to its large vocabulary size, and intricate character relationships. While existing diffusion models have shown promise in generating images from textual descriptions, they often neglect domain-specific contexts and lack robustness in handling the Chinese language. This paper introduces PAI-Diffusion, a comprehensive framework that addresses these limitations. PAI-Diffusion incorporates both general and domain-specific Chinese diffusion models, enabling the generation of contextually relevant images. It explores the potential of using LoRA and ControlNet for fine-grained image style transfer and image editing, empowering users with enhanced control over image generation. Moreover, PAI-Diffusion seamlessly integrates with Alibaba Cloud{'}s Platform for AI, providing accessible and scalable solutions. All the Chinese diffusion model checkpoints, LoRAs, and ControlNets, including domain-specific ones, are publicly available. A user-friendly Chinese WebUI and the diffusers-api elastic inference toolkit, also open-sourced, further facilitate the easy deployment of PAI-Diffusion models in various local and cloud environments, making it a valuable resource for Chinese text-to-image synthesis.\",\n}\n",
+    "authors": [
+        "Chengyu Wang",
+        "Zhongjie Duan",
+        "Bingyan Liu",
+        "Xinyi Zou",
+        "Cen Chen",
+        "Kui Jia",
+        "Jun Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-demos.1.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/76f6037c-c2da-5211-bc59-67b4092a830a.pdf",
+    "abstract": "Text-to-image synthesis for the Chinese language poses unique challenges due to its large vocabulary size, and intricate character relationships. While existing diffusion models have shown promise in generating images from textual descriptions, they often neglect domain-specific contexts and lack robustness in handling the Chinese language. This paper introduces PAI-Diffusion, a comprehensive framework that addresses these limitations. PAI-Diffusion incorporates both general and domain-specific Chinese diffusion models, enabling the generation of contextually relevant images. It explores the potential of using LoRA and ControlNet for fine-grained image style transfer and image editing, empowering users with enhanced control over image generation. Moreover, PAI-Diffusion seamlessly integrates with Alibaba Cloud’s Platform for AI, providing accessible and scalable solutions. All the Chinese diffusion model checkpoints, LoRAs, and ControlNets, including domain-specific ones, are publicly available. A user-friendly Chinese WebUI and the diffusers-api elastic inference toolkit, also open-sourced, further facilitate the easy deployment of PAI-Diffusion models in various local and cloud environments, making it a valuable resource for Chinese text-to-image synthesis.",
+    "num_pages": 8
+}

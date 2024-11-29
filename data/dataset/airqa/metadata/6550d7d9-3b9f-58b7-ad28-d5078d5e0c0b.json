@@ -1,0 +1,17 @@
+{
+    "uuid": "6550d7d9-3b9f-58b7-ad28-d5078d5e0c0b",
+    "title": "Uniform Meaning Representation Parsing as a Pipelined Approach",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of TextGraphs-17: Graph-based Methods for Natural Language Processing",
+    "bibtex": "@inproceedings{chun-xue-2024-pipeline,\n    title = \"Uniform Meaning Representation Parsing as a Pipelined Approach\",\n    author = \"Chun, Jayeol  and\n      Xue, Nianwen\",\n    editor = \"Ustalov, Dmitry  and\n      Gao, Yanjun  and\n      Panchenko, Alexander  and\n      Tutubalina, Elena  and\n      Nikishina, Irina  and\n      Ramesh, Arti  and\n      Sakhovskiy, Andrey  and\n      Usbeck, Ricardo  and\n      Penn, Gerald  and\n      Valentino, Marco\",\n    booktitle = \"Proceedings of TextGraphs-17: Graph-based Methods for Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.textgraphs-1.3\",\n    pages = \"40--52\",\n    abstract = \"Uniform Meaning Representation (UMR) is the next phase of semantic formalism following Abstract Meaning Representation (AMR), with added focus on inter-sentential relations allowing the representational scope of UMR to cover a full document. This, in turn, greatly increases the complexity of its parsing task with the additional requirement of capturing document-level linguistic phenomena such as coreference, modal and temporal dependencies. In order to establish a strong baseline despite the small size of recently released UMR v1.0 corpus, we introduce a pipeline model that does not require any training. At the core of our method is a two-track strategy of obtaining UMR{'}s sentence and document graphs separately, with the document-level triples being compiled at the token level and the sentence graph being converted from AMR graphs. By leveraging alignment between AMR and its sentence, we are able to generate the first automatic English UMR parses.\",\n}\n",
+    "authors": [
+        "Jayeol Chun",
+        "Nianwen Xue"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.textgraphs-1.3.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/6550d7d9-3b9f-58b7-ad28-d5078d5e0c0b.pdf",
+    "abstract": "Uniform Meaning Representation (UMR) is the next phase of semantic formalism following Abstract Meaning Representation (AMR), with added focus on inter-sentential relations allowing the representational scope of UMR to cover a full document. This, in turn, greatly increases the complexity of its parsing task with the additional requirement of capturing document-level linguistic phenomena such as coreference, modal and temporal dependencies. In order to establish a strong baseline despite the small size of recently released UMR v1.0 corpus, we introduce a pipeline model that does not require any training. At the core of our method is a two-track strategy of obtaining UMR’s sentence and document graphs separately, with the document-level triples being compiled at the token level and the sentence graph being converted from AMR graphs. By leveraging alignment between AMR and its sentence, we are able to generate the first automatic English UMR parses.",
+    "num_pages": 13
+}

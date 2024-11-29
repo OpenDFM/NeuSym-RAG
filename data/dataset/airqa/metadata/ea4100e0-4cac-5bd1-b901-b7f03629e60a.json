@@ -1,0 +1,23 @@
+{
+    "uuid": "ea4100e0-4cac-5bd1-b901-b7f03629e60a",
+    "title": "Pay More Attention to Relation Exploration for Knowledge Base Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{cao-etal-2023-pay,\n    title = \"Pay More Attention to Relation Exploration for Knowledge Base Question Answering\",\n    author = \"Cao, Yong  and\n      Li, Xianzhi  and\n      Liu, Huiwen  and\n      Dai, Wen  and\n      Chen, Shuai  and\n      Wang, Bin  and\n      Chen, Min  and\n      Hershcovich, Daniel\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.133\",\n    doi = \"10.18653/v1/2023.findings-acl.133\",\n    pages = \"2119--2136\",\n    abstract = \"Knowledge base question answering (KBQA) is a challenging task that aims to retrieve correct answers from large-scale knowledge bases. Existing attempts primarily focus on entity representation and final answer reasoning, which results in limited supervision for this task. Moreover, the relations, which empirically determine the reasoning path selection, are not fully considered in recent advancements. In this study, we propose a novel framework, RE-KBQA, that utilizes relations in the knowledge base to enhance entity representation and introduce additional supervision. We explore guidance from relations in three aspects, including (1) distinguishing similar entities by employing a variational graph auto-encoder to learn relation importance; (2) exploring extra supervision by predicting relation distributions as soft labels with a multi-task scheme; (3) designing a relation-guided re-ranking algorithm for post-processing. Experimental results on two benchmark datasets demonstrate the effectiveness and superiority of our framework, improving the F1 score by 5.8{\\%} from 40.5 to 46.3 on CWQ and 5.7{\\%} from 62.8 to 68.5 on WebQSP, better or on par with state-of-the-art methods.\",\n}\n",
+    "authors": [
+        "Yong Cao",
+        "Xianzhi Li",
+        "Huiwen Liu",
+        "Wen Dai",
+        "Shuai Chen",
+        "Bin Wang",
+        "Min Chen",
+        "Daniel Hershcovich"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.133.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ea4100e0-4cac-5bd1-b901-b7f03629e60a.pdf",
+    "abstract": "Knowledge base question answering (KBQA) is a challenging task that aims to retrieve correct answers from large-scale knowledge bases. Existing attempts primarily focus on entity representation and final answer reasoning, which results in limited supervision for this task. Moreover, the relations, which empirically determine the reasoning path selection, are not fully considered in recent advancements. In this study, we propose a novel framework, RE-KBQA, that utilizes relations in the knowledge base to enhance entity representation and introduce additional supervision. We explore guidance from relations in three aspects, including (1) distinguishing similar entities by employing a variational graph auto-encoder to learn relation importance; (2) exploring extra supervision by predicting relation distributions as soft labels with a multi-task scheme; (3) designing a relation-guided re-ranking algorithm for post-processing. Experimental results on two benchmark datasets demonstrate the effectiveness and superiority of our framework, improving the F1 score by 5.8% from 40.5 to 46.3 on CWQ and 5.7% from 62.8 to 68.5 on WebQSP, better or on par with state-of-the-art methods.",
+    "num_pages": 18
+}

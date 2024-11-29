@@ -1,0 +1,21 @@
+{
+    "uuid": "78b4d9c0-84e9-58f4-a68d-c7a7a6b22ca1",
+    "title": "Defending Large Language Models Against Jailbreaking Attacks Through Goal Prioritization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhang-etal-2024-defending,\n    title = \"Defending Large Language Models Against Jailbreaking Attacks Through Goal Prioritization\",\n    author = \"Zhang, Zhexin  and\n      Yang, Junxiao  and\n      Ke, Pei  and\n      Mi, Fei  and\n      Wang, Hongning  and\n      Huang, Minlie\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.481\",\n    doi = \"10.18653/v1/2024.acl-long.481\",\n    pages = \"8865--8887\",\n    abstract = \"While significant attention has been dedicated to exploiting weaknesses in LLMs through jailbreaking attacks, there remains a paucity of effort in defending against these attacks. We point out a pivotal factor contributing to the success of jailbreaks: the intrinsic conflict between the goals of being helpful and ensuring safety. Accordingly, we propose to integrate goal prioritization at both training and inference stages to counteract. Implementing goal prioritization during inference substantially diminishes the Attack Success Rate (ASR) of jailbreaking from 66.4{\\%} to 3.6{\\%} for ChatGPT. And integrating goal prioritization into model training reduces the ASR from 71.0{\\%} to 6.6{\\%} for Llama2-13B. Remarkably, even in scenarios where no jailbreaking samples are included during training, our approach slashes the ASR by half. Additionally, our findings reveal that while stronger LLMs face greater safety risks, they also possess a greater capacity to be steered towards defending against such attacks, both because of their stronger ability in instruction following. Our work thus contributes to the comprehension of jailbreaking attacks and defenses, and sheds light on the relationship between LLMs{'} capability and safety. Our code is available at https://github.com/thu-coai/JailbreakDefense{\\_}GoalPriority.\",\n}\n",
+    "authors": [
+        "Zhexin Zhang",
+        "Junxiao Yang",
+        "Pei Ke",
+        "Fei Mi",
+        "Hongning Wang",
+        "Minlie Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.481.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/78b4d9c0-84e9-58f4-a68d-c7a7a6b22ca1.pdf",
+    "abstract": "While significant attention has been dedicated to exploiting weaknesses in LLMs through jailbreaking attacks, there remains a paucity of effort in defending against these attacks. We point out a pivotal factor contributing to the success of jailbreaks: the intrinsic conflict between the goals of being helpful and ensuring safety. Accordingly, we propose to integrate goal prioritization at both training and inference stages to counteract. Implementing goal prioritization during inference substantially diminishes the Attack Success Rate (ASR) of jailbreaking from 66.4% to 3.6% for ChatGPT. And integrating goal prioritization into model training reduces the ASR from 71.0% to 6.6% for Llama2-13B. Remarkably, even in scenarios where no jailbreaking samples are included during training, our approach slashes the ASR by half. Additionally, our findings reveal that while stronger LLMs face greater safety risks, they also possess a greater capacity to be steered towards defending against such attacks, both because of their stronger ability in instruction following. Our work thus contributes to the comprehension of jailbreaking attacks and defenses, and sheds light on the relationship between LLMs’ capability and safety. Our code is available at https://github.com/thu-coai/JailbreakDefense_GoalPriority.",
+    "num_pages": 23
+}

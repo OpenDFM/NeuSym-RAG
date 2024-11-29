@@ -1,0 +1,20 @@
+{
+    "uuid": "35872096-9362-503f-ac3d-97a52fd3d7e8",
+    "title": "Billy-Batson at SemEval-2023 Task 5: An Information Condensation based System for Clickbait Spoiling",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{sharma-etal-2023-billy,\n    title = \"Billy-Batson at {S}em{E}val-2023 Task 5: An Information Condensation based System for Clickbait Spoiling\",\n    author = \"Sharma, Anubhav  and\n      Joshi, Sagar  and\n      Abhishek, Tushar  and\n      Mamidi, Radhika  and\n      Varma, Vasudeva\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.259\",\n    doi = \"10.18653/v1/2023.semeval-1.259\",\n    pages = \"1878--1889\",\n    abstract = \"The Clickbait Challenge targets spoiling the clickbaits using short pieces of information known as spoilers to satisfy the curiosity induced by a clickbait post. The large context of the article associated with the clickbait and differences in the spoiler forms, make the task challenging. Hence, to tackle the large context, we propose an Information Condensation-based approach, which prunes down the unnecessary context. Given an article, our filtering module optimised with a contrastive learning objective first selects the parapraphs that are the most relevant to the corresponding clickbait.The resulting condensed article is then fed to the two downstream tasks of spoiler type classification and spoiler generation. We demonstrate and analyze the gains from this approach on both the tasks. Overall, we win the task of spoiler type classification and achieve competitive results on spoiler generation.\",\n}\n",
+    "authors": [
+        "Anubhav Sharma",
+        "Sagar Joshi",
+        "Tushar Abhishek",
+        "Radhika Mamidi",
+        "Vasudeva Varma"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.259.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/35872096-9362-503f-ac3d-97a52fd3d7e8.pdf",
+    "abstract": "The Clickbait Challenge targets spoiling the clickbaits using short pieces of information known as spoilers to satisfy the curiosity induced by a clickbait post. The large context of the article associated with the clickbait and differences in the spoiler forms, make the task challenging. Hence, to tackle the large context, we propose an Information Condensation-based approach, which prunes down the unnecessary context. Given an article, our filtering module optimised with a contrastive learning objective first selects the parapraphs that are the most relevant to the corresponding clickbait.The resulting condensed article is then fed to the two downstream tasks of spoiler type classification and spoiler generation. We demonstrate and analyze the gains from this approach on both the tasks. Overall, we win the task of spoiler type classification and achieve competitive results on spoiler generation.",
+    "num_pages": 12
+}

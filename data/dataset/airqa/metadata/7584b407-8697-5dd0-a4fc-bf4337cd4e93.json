@@ -1,0 +1,20 @@
+{
+    "uuid": "7584b407-8697-5dd0-a4fc-bf4337cd4e93",
+    "title": "Few Shot Rationale Generation using Self-Training with Dual Teachers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{veerubhotla-etal-2023-shot,\n    title = \"Few Shot Rationale Generation using Self-Training with Dual Teachers\",\n    author = {Veerubhotla, Aditya Srikanth  and\n      Poddar, Lahari  and\n      Yin, Jun  and\n      Szarvas, Gy{\\\"o}rgy  and\n      Eswaran, Sharanya},\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.297\",\n    doi = \"10.18653/v1/2023.findings-acl.297\",\n    pages = \"4825--4838\",\n    abstract = \"Self-rationalizing models that also generate a free-text explanation for their predicted labels are an important tool to build trustworthy AI applications. Since generating explanations for annotated labels is a laborious and costly process, recent models rely on large pretrained language models (PLMs) as their backbone and few-shot learning. In this work we explore a self-training approach leveraging both labeled and unlabeled data to further improve few-shot models, under the assumption that neither human written rationales nor annotated task labels are available at scale. We introduce a novel dual-teacher learning framework, which learns two specialized teacher models for task prediction and rationalization using self-training and distills their knowledge into a multi-tasking student model that can jointly generate the task label and rationale. Furthermore, we formulate a new loss function, Masked Label Regularization(MLR) which promotes explanations to be strongly conditioned on predicted labels. Evaluation on three public datasets demonstrate that the proposed methods are effective in modeling task labels and generating faithful rationales.\",\n}\n",
+    "authors": [
+        "Aditya Srikanth Veerubhotla",
+        "Lahari Poddar",
+        "Jun Yin",
+        "György Szarvas",
+        "Sharanya Eswaran"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.297.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/7584b407-8697-5dd0-a4fc-bf4337cd4e93.pdf",
+    "abstract": "Self-rationalizing models that also generate a free-text explanation for their predicted labels are an important tool to build trustworthy AI applications. Since generating explanations for annotated labels is a laborious and costly process, recent models rely on large pretrained language models (PLMs) as their backbone and few-shot learning. In this work we explore a self-training approach leveraging both labeled and unlabeled data to further improve few-shot models, under the assumption that neither human written rationales nor annotated task labels are available at scale. We introduce a novel dual-teacher learning framework, which learns two specialized teacher models for task prediction and rationalization using self-training and distills their knowledge into a multi-tasking student model that can jointly generate the task label and rationale. Furthermore, we formulate a new loss function, Masked Label Regularization(MLR) which promotes explanations to be strongly conditioned on predicted labels. Evaluation on three public datasets demonstrate that the proposed methods are effective in modeling task labels and generating faithful rationales.",
+    "num_pages": 14
+}

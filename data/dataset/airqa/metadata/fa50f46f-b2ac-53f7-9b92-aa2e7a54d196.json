@@ -1,0 +1,27 @@
+{
+    "uuid": "fa50f46f-b2ac-53f7-9b92-aa2e7a54d196",
+    "title": "Concise and Precise Context Compression for Tool-Using Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{xu-etal-2024-concise,\n    title = \"Concise and Precise Context Compression for Tool-Using Language Models\",\n    author = \"Xu, Yang  and\n      Feng, Yunlong  and\n      Mu, Honglin  and\n      Hou, Yutai  and\n      Li, Yitong  and\n      Wang, Xinghao  and\n      Zhong, Wanjun  and\n      Li, Zhongyang  and\n      Tu, Dandan  and\n      Zhu, Qingfu  and\n      Zhang, Min  and\n      Che, Wanxiang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.974\",\n    doi = \"10.18653/v1/2024.findings-acl.974\",\n    pages = \"16430--16441\",\n    abstract = \"Through reading the documentation in the context, tool-using language models can dynamically extend their capability using external tools. The cost is that we have to input lengthy documentation every time the model needs to use the tool, occupying the input window as well as slowing down the decoding process.Given the progress in general-purpose compression, soft context compression is a suitable approach to alleviate the problem. However, when compressing tool documentation, existing methods suffer from the weaknesses of key information loss (specifically, tool/parameter name errors) and difficulty in adjusting the length of compressed sequences based on documentation lengths.To address these problems, we propose two strategies for compressing tool documentation into concise and precise summary sequences for tool-using language models. 1) Selective compression strategy mitigates key information loss by deliberately retaining key information as raw text tokens. 2) Block compression strategy involves dividing tool documentation into short chunks and then employing a fixed-length compression model to achieve variable-length compression. This strategy facilitates the flexible adjustment of the compression ratio.Results on API-Bank and APIBench show that our approach reaches a performance comparable to the upper-bound baseline under up to 16x compression ratio.\",\n}\n",
+    "authors": [
+        "Yang Xu",
+        "Yunlong Feng",
+        "Honglin Mu",
+        "Yutai Hou",
+        "Yitong Li",
+        "Xinghao Wang",
+        "Wanjun Zhong",
+        "Zhongyang Li",
+        "Dandan Tu",
+        "Qingfu Zhu",
+        "Min Zhang",
+        "Wanxiang Che"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.974.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/fa50f46f-b2ac-53f7-9b92-aa2e7a54d196.pdf",
+    "abstract": "Through reading the documentation in the context, tool-using language models can dynamically extend their capability using external tools. The cost is that we have to input lengthy documentation every time the model needs to use the tool, occupying the input window as well as slowing down the decoding process.Given the progress in general-purpose compression, soft context compression is a suitable approach to alleviate the problem. However, when compressing tool documentation, existing methods suffer from the weaknesses of key information loss (specifically, tool/parameter name errors) and difficulty in adjusting the length of compressed sequences based on documentation lengths.To address these problems, we propose two strategies for compressing tool documentation into concise and precise summary sequences for tool-using language models. 1) Selective compression strategy mitigates key information loss by deliberately retaining key information as raw text tokens. 2) Block compression strategy involves dividing tool documentation into short chunks and then employing a fixed-length compression model to achieve variable-length compression. This strategy facilitates the flexible adjustment of the compression ratio.Results on API-Bank and APIBench show that our approach reaches a performance comparable to the upper-bound baseline under up to 16x compression ratio.",
+    "num_pages": 12
+}

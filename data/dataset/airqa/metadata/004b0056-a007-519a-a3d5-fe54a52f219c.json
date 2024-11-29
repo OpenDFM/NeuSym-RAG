@@ -1,0 +1,17 @@
+{
+    "uuid": "004b0056-a007-519a-a3d5-fe54a52f219c",
+    "title": "cTBLS: Augmenting Large Language Models with Conversational Tables",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 5th Workshop on NLP for Conversational AI (NLP4ConvAI 2023)",
+    "bibtex": "@inproceedings{sundar-heck-2023-ctbls,\n    title = \"c{TBLS}: Augmenting Large Language Models with Conversational Tables\",\n    author = \"Sundar, Anirudh S.  and\n      Heck, Larry\",\n    editor = \"Chen, Yun-Nung  and\n      Rastogi, Abhinav\",\n    booktitle = \"Proceedings of the 5th Workshop on NLP for Conversational AI (NLP4ConvAI 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.nlp4convai-1.6\",\n    doi = \"10.18653/v1/2023.nlp4convai-1.6\",\n    pages = \"59--70\",\n    abstract = \"Optimizing accuracy and performance while eliminating hallucinations of open-domain conversational large language models (LLMs) is an open research challenge. A particularly promising direction is to augment and ground LLMs with information from structured sources. This paper introduces Conversational Tables cTBLS, a three-step architecture to retrieve and generate dialogue responses grounded on retrieved tabular information. cTBLS uses Transformer encoder embeddings for Dense Table Retrieval and obtains up to 125{\\%} relative improvement over the retriever in the previous state-of-the-art system on the HyrbiDialogue dataset. cTBLS then uses a shared process between encoder and decoder models to perform a coarse+fine tabular knowledge (e.g., cell) ranking combined with a GPT-3.5 LLM response generator to yield a 2x relative improvement in ROUGE scores. Finally, human evaluators prefer cTBLs +80{\\%} of the time (coherency, fluency) and judge informativeness to be 4x better than the previous state-of-the-art.\",\n}\n",
+    "authors": [
+        "Anirudh S. Sundar",
+        "Larry Heck"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.nlp4convai-1.6.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/004b0056-a007-519a-a3d5-fe54a52f219c.pdf",
+    "abstract": "Optimizing accuracy and performance while eliminating hallucinations of open-domain conversational large language models (LLMs) is an open research challenge. A particularly promising direction is to augment and ground LLMs with information from structured sources. This paper introduces Conversational Tables cTBLS, a three-step architecture to retrieve and generate dialogue responses grounded on retrieved tabular information. cTBLS uses Transformer encoder embeddings for Dense Table Retrieval and obtains up to 125% relative improvement over the retriever in the previous state-of-the-art system on the HyrbiDialogue dataset. cTBLS then uses a shared process between encoder and decoder models to perform a coarse+fine tabular knowledge (e.g., cell) ranking combined with a GPT-3.5 LLM response generator to yield a 2x relative improvement in ROUGE scores. Finally, human evaluators prefer cTBLs +80% of the time (coherency, fluency) and judge informativeness to be 4x better than the previous state-of-the-art.",
+    "num_pages": 12
+}

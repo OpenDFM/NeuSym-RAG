@@ -1,0 +1,18 @@
+{
+    "uuid": "03a659ee-e48f-56e3-bb3d-95e0f533e96c",
+    "title": "Impacts of Misspelled Queries on Translation and Product Search",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{hanneman-etal-2024-impacts,\n    title = \"Impacts of Misspelled Queries on Translation and Product Search\",\n    author = \"Hanneman, Greg  and\n      Monaikul, Natawut  and\n      Nakatani, Taichi\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.750\",\n    doi = \"10.18653/v1/2024.acl-long.750\",\n    pages = \"13907--13920\",\n    abstract = \"Machine translation is used in e-commerce to translate second-language queries into the primary language of the store, to be matched by the search system against the product catalog. However, many queries contain spelling mistakes. We first present an analysis of the spelling-robustness of a population of MT systems, quantifying how spelling variations affect MT output, the list of returned products, and ultimately user behavior. We then present two sets of practical experiments illustrating how spelling-robustness may be specifically improved. For MT, reducing the number of BPE operations significantly improves spelling-robustness in six language pairs. In end-to-end e-commerce, the inclusion of a dedicated spelling correction model, and the augmentation of that model{'}s training data with language-relevant phenomena, each improve robustness and consistency of search results.\",\n}\n",
+    "authors": [
+        "Greg Hanneman",
+        "Natawut Monaikul",
+        "Taichi Nakatani"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.750.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/03a659ee-e48f-56e3-bb3d-95e0f533e96c.pdf",
+    "abstract": "Machine translation is used in e-commerce to translate second-language queries into the primary language of the store, to be matched by the search system against the product catalog. However, many queries contain spelling mistakes. We first present an analysis of the spelling-robustness of a population of MT systems, quantifying how spelling variations affect MT output, the list of returned products, and ultimately user behavior. We then present two sets of practical experiments illustrating how spelling-robustness may be specifically improved. For MT, reducing the number of BPE operations significantly improves spelling-robustness in six language pairs. In end-to-end e-commerce, the inclusion of a dedicated spelling correction model, and the augmentation of that model’s training data with language-relevant phenomena, each improve robustness and consistency of search results.",
+    "num_pages": 14
+}

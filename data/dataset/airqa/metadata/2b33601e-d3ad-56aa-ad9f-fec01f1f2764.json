@@ -1,0 +1,24 @@
+{
+    "uuid": "2b33601e-d3ad-56aa-ad9f-fec01f1f2764",
+    "title": "Boosting Event Extraction with Denoised Structure-to-Text Augmentation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wang-etal-2023-boosting,\n    title = \"Boosting Event Extraction with Denoised Structure-to-Text Augmentation\",\n    author = \"Wang, Bo  and\n      Huang, Heyan  and\n      Wei, Xiaochi  and\n      Shi, Ge  and\n      Liu, Xiao  and\n      Feng, Chong  and\n      Zhou, Tong  and\n      Wang, Shuaiqiang  and\n      Yin, Dawei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.716\",\n    doi = \"10.18653/v1/2023.findings-acl.716\",\n    pages = \"11267--11281\",\n    abstract = \"Event extraction aims to recognize pre-defined event triggers and arguments from texts, which suffer from the lack of high-quality annotations. In most NLP applications, involving a large scale of synthetic training data is a practical and effective approach to alleviate the problem of data scarcity. However, when applying to the task of event extraction, recent data augmentation methods often neglect the problem of grammatical incorrectness, structure misalignment, and semantic drifting, leading to unsatisfactory performances. In order to solve these problems, we propose a denoised structure-to-text augmentation framework for event extraction (DAEE), which generates additional training data through the knowledge-based structure-to-text generation model and selects the effective subset from the generated data iteratively with a deep reinforcement learning agent. Experimental results on several datasets demonstrate that the proposed method generates more diverse text representations for event extraction and achieves comparable results with the state-of-the-art.\",\n}\n",
+    "authors": [
+        "Bo Wang",
+        "Heyan Huang",
+        "Xiaochi Wei",
+        "Ge Shi",
+        "Xiao Liu",
+        "Chong Feng",
+        "Tong Zhou",
+        "Shuaiqiang Wang",
+        "Dawei Yin"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.716.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2b33601e-d3ad-56aa-ad9f-fec01f1f2764.pdf",
+    "abstract": "Event extraction aims to recognize pre-defined event triggers and arguments from texts, which suffer from the lack of high-quality annotations. In most NLP applications, involving a large scale of synthetic training data is a practical and effective approach to alleviate the problem of data scarcity. However, when applying to the task of event extraction, recent data augmentation methods often neglect the problem of grammatical incorrectness, structure misalignment, and semantic drifting, leading to unsatisfactory performances. In order to solve these problems, we propose a denoised structure-to-text augmentation framework for event extraction (DAEE), which generates additional training data through the knowledge-based structure-to-text generation model and selects the effective subset from the generated data iteratively with a deep reinforcement learning agent. Experimental results on several datasets demonstrate that the proposed method generates more diverse text representations for event extraction and achieves comparable results with the state-of-the-art.",
+    "num_pages": 15
+}

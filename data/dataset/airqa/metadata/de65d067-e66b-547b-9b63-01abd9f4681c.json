@@ -1,0 +1,21 @@
+{
+    "uuid": "de65d067-e66b-547b-9b63-01abd9f4681c",
+    "title": "DynaMiTE: Discovering Explosive Topic Evolutions with User Guidance",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{balepur-etal-2023-dynamite,\n    title = \"{D}yna{M}i{TE}: Discovering Explosive Topic Evolutions with User Guidance\",\n    author = \"Balepur, Nishant  and\n      Agarwal, Shivam  and\n      Venkat Ramanan, Karthik  and\n      Yoon, Susik  and\n      Yang, Diyi  and\n      Han, Jiawei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.14\",\n    doi = \"10.18653/v1/2023.findings-acl.14\",\n    pages = \"194--217\",\n    abstract = \"Dynamic topic models (DTMs) analyze text streams to capture the evolution of topics. Despite their popularity, existing DTMs are either fully supervised, requiring expensive human annotations, or fully unsupervised, producing topic evolutions that often do not cater to a user{'}s needs. Further, the topic evolutions produced by DTMs tend to contain generic terms that are not indicative of their designated time steps. To address these issues, we propose the task of discriminative dynamic topic discovery. This task aims to discover topic evolutions from temporal corpora that distinctly align with a set of user-provided category names and uniquely capture topics at each time step. We solve this task by developing DynaMiTE, a framework that ensembles semantic similarity, category indicative, and time indicative scores to produce informative topic evolutions. Through experiments on three diverse datasets, including the use of a newly-designed human evaluation experiment, we demonstrate that DynaMiTE is a practical and efficient framework for helping users discover high-quality topic evolutions suited to their interests.\",\n}\n",
+    "authors": [
+        "Nishant Balepur",
+        "Shivam Agarwal",
+        "Karthik Venkat Ramanan",
+        "Susik Yoon",
+        "Diyi Yang",
+        "Jiawei Han"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.14.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/de65d067-e66b-547b-9b63-01abd9f4681c.pdf",
+    "abstract": "Dynamic topic models (DTMs) analyze text streams to capture the evolution of topics. Despite their popularity, existing DTMs are either fully supervised, requiring expensive human annotations, or fully unsupervised, producing topic evolutions that often do not cater to a user’s needs. Further, the topic evolutions produced by DTMs tend to contain generic terms that are not indicative of their designated time steps. To address these issues, we propose the task of discriminative dynamic topic discovery. This task aims to discover topic evolutions from temporal corpora that distinctly align with a set of user-provided category names and uniquely capture topics at each time step. We solve this task by developing DynaMiTE, a framework that ensembles semantic similarity, category indicative, and time indicative scores to produce informative topic evolutions. Through experiments on three diverse datasets, including the use of a newly-designed human evaluation experiment, we demonstrate that DynaMiTE is a practical and efficient framework for helping users discover high-quality topic evolutions suited to their interests.",
+    "num_pages": 24
+}

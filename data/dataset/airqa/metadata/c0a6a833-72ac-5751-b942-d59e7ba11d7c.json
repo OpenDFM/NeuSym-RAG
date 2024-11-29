@@ -1,0 +1,20 @@
+{
+    "uuid": "c0a6a833-72ac-5751-b942-d59e7ba11d7c",
+    "title": "Faithful Question Answering with Monte-Carlo Planning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{hong-etal-2023-faithful,\n    title = \"Faithful Question Answering with {M}onte-{C}arlo Planning\",\n    author = \"Hong, Ruixin  and\n      Zhang, Hongming  and\n      Zhao, Hong  and\n      Yu, Dong  and\n      Zhang, Changshui\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.218\",\n    doi = \"10.18653/v1/2023.acl-long.218\",\n    pages = \"3944--3965\",\n    abstract = \"Although large language models demonstrate remarkable question-answering performances, revealing the intermediate reasoning steps that the models faithfully follow remains challenging. In this paper, we propose FAME (FAithful question answering with MontE-carlo planning) to answer questions based on faithful reasoning steps. The reasoning steps are organized as a structured entailment tree, which shows how premises are used to produce intermediate conclusions that can prove the correctness of the answer. We formulate the task as a discrete decision-making problem and solve it through the interaction of a reasoning environment and a controller. The environment is modular and contains several basic task-oriented modules, while the controller proposes actions to assemble the modules. Since the search space could be large, we introduce a Monte-Carlo planning algorithm to do a look-ahead search and select actions that will eventually lead to high-quality steps. FAME achieves advanced performance on the standard benchmark. It can produce valid and faithful reasoning steps compared with large language models with a much smaller model size.\",\n}\n",
+    "authors": [
+        "Ruixin Hong",
+        "Hongming Zhang",
+        "Hong Zhao",
+        "Dong Yu",
+        "Changshui Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.218.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c0a6a833-72ac-5751-b942-d59e7ba11d7c.pdf",
+    "abstract": "Although large language models demonstrate remarkable question-answering performances, revealing the intermediate reasoning steps that the models faithfully follow remains challenging. In this paper, we propose FAME (FAithful question answering with MontE-carlo planning) to answer questions based on faithful reasoning steps. The reasoning steps are organized as a structured entailment tree, which shows how premises are used to produce intermediate conclusions that can prove the correctness of the answer. We formulate the task as a discrete decision-making problem and solve it through the interaction of a reasoning environment and a controller. The environment is modular and contains several basic task-oriented modules, while the controller proposes actions to assemble the modules. Since the search space could be large, we introduce a Monte-Carlo planning algorithm to do a look-ahead search and select actions that will eventually lead to high-quality steps. FAME achieves advanced performance on the standard benchmark. It can produce valid and faithful reasoning steps compared with large language models with a much smaller model size.",
+    "num_pages": 22
+}

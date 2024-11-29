@@ -1,0 +1,20 @@
+{
+    "uuid": "93b1643f-0593-5a82-bc2b-e7a6db87f26e",
+    "title": "GNNavi: Navigating the Information Flow in Large Language Models by Graph Neural Network",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{yuan-etal-2024-gnnavi,\n    title = \"{GNN}avi: Navigating the Information Flow in Large Language Models by Graph Neural Network\",\n    author = {Yuan, Shuzhou  and\n      Nie, Ercong  and\n      F{\\\"a}rber, Michael  and\n      Schmid, Helmut  and\n      Schuetze, Hinrich},\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.237\",\n    doi = \"10.18653/v1/2024.findings-acl.237\",\n    pages = \"3987--4001\",\n    abstract = \"Large Language Models (LLMs) exhibit strong In-Context Learning (ICL) capabilities when prompts with demonstrations are used. However, fine-tuning still remains crucial to further enhance their adaptability. Prompt-based fine-tuning proves to be an effective fine-tuning method in low-data scenarios, but high demands on computing resources limit its practicality. We address this issue by introducing a prompt-based parameter-efficient fine-tuning (PEFT) approach. GNNavi leverages insights into ICL{'}s information flow dynamics, which indicates that label words act in prompts as anchors for information propagation. GNNavi employs a Graph Neural Network (GNN) layer to precisely guide the aggregation and distribution of information flow during the processing of prompts by hardwiring the desired information flow into the GNN. Our experiments on text classification tasks with GPT-2 and Llama2 show GNNavi surpasses standard prompt-based fine-tuning methods in few-shot settings by updating just 0.2{\\%} to 0.5{\\%} of parameters. We compare GNNavi with prevalent PEFT approaches, such as prefix tuning, LoRA and Adapter in terms of performance and efficiency. Our analysis reveals that GNNavi enhances information flow and ensures a clear aggregation process.\",\n}\n",
+    "authors": [
+        "Shuzhou Yuan",
+        "Ercong Nie",
+        "Michael Färber",
+        "Helmut Schmid",
+        "Hinrich Schuetze"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.237.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/93b1643f-0593-5a82-bc2b-e7a6db87f26e.pdf",
+    "abstract": "Large Language Models (LLMs) exhibit strong In-Context Learning (ICL) capabilities when prompts with demonstrations are used. However, fine-tuning still remains crucial to further enhance their adaptability. Prompt-based fine-tuning proves to be an effective fine-tuning method in low-data scenarios, but high demands on computing resources limit its practicality. We address this issue by introducing a prompt-based parameter-efficient fine-tuning (PEFT) approach. GNNavi leverages insights into ICL’s information flow dynamics, which indicates that label words act in prompts as anchors for information propagation. GNNavi employs a Graph Neural Network (GNN) layer to precisely guide the aggregation and distribution of information flow during the processing of prompts by hardwiring the desired information flow into the GNN. Our experiments on text classification tasks with GPT-2 and Llama2 show GNNavi surpasses standard prompt-based fine-tuning methods in few-shot settings by updating just 0.2% to 0.5% of parameters. We compare GNNavi with prevalent PEFT approaches, such as prefix tuning, LoRA and Adapter in terms of performance and efficiency. Our analysis reveals that GNNavi enhances information flow and ensures a clear aggregation process.",
+    "num_pages": 15
+}

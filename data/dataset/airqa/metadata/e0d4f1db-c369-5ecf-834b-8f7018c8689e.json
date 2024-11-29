@@ -1,0 +1,20 @@
+{
+    "uuid": "e0d4f1db-c369-5ecf-834b-8f7018c8689e",
+    "title": "Chunk, Align, Select: A Simple Long-sequence Processing Method for Transformers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{xie-etal-2024-chunk,\n    title = \"Chunk, Align, Select: A Simple Long-sequence Processing Method for Transformers\",\n    author = \"Xie, Jiawen  and\n      Cheng, Pengyu  and\n      Liang, Xiao  and\n      Dai, Yong  and\n      Du, Nan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.729\",\n    doi = \"10.18653/v1/2024.acl-long.729\",\n    pages = \"13500--13519\",\n    abstract = \"Although dominant in natural language processing, transformer-based models still struggle with long-sequence processing, due to the computational costs of their self-attention operations, which increase exponentially as the length of the input sequence grows. To address this challenge, we propose a **Sim**ple framework to enhance the long-content processing of off-the-shelf pre-trained transformers via three steps: **C**hunk, **A**lign, and **S**elect (SimCAS). More specifically, we first divide each long-sequence input into a batch of chunks, then align the inter-chunk information during the encoding steps, and finally, select the most representative hidden states from the encoder for the decoding process. With our SimCAS, the computation and memory costs can be reduced to linear complexity. In experiments, we demonstrate the effectiveness of the proposed method on various real-world long-text summarization and reading comprehension tasks, in which SimCAS significantly outperforms prior long-sequence processing baselines. The code is at [https://github.com/xjw-nlp/SimCAS](https://github.com/xjw-nlp/SimCAS).\",\n}\n",
+    "authors": [
+        "Jiawen Xie",
+        "Pengyu Cheng",
+        "Xiao Liang",
+        "Yong Dai",
+        "Nan Du"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.729.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e0d4f1db-c369-5ecf-834b-8f7018c8689e.pdf",
+    "abstract": "Although dominant in natural language processing, transformer-based models still struggle with long-sequence processing, due to the computational costs of their self-attention operations, which increase exponentially as the length of the input sequence grows. To address this challenge, we propose a **Sim**ple framework to enhance the long-content processing of off-the-shelf pre-trained transformers via three steps: **C**hunk, **A**lign, and **S**elect (SimCAS). More specifically, we first divide each long-sequence input into a batch of chunks, then align the inter-chunk information during the encoding steps, and finally, select the most representative hidden states from the encoder for the decoding process. With our SimCAS, the computation and memory costs can be reduced to linear complexity. In experiments, we demonstrate the effectiveness of the proposed method on various real-world long-text summarization and reading comprehension tasks, in which SimCAS significantly outperforms prior long-sequence processing baselines. The code is at [https://github.com/xjw-nlp/SimCAS](https://github.com/xjw-nlp/SimCAS).",
+    "num_pages": 20
+}

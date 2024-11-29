@@ -1,0 +1,17 @@
+{
+    "uuid": "cc054995-e26d-5778-b76d-3889569afb9a",
+    "title": "Understanding Demonstration-based Learning from a Causal Perspective",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{zhang-yu-2023-understanding,\n    title = \"Understanding Demonstration-based Learning from a Causal Perspective\",\n    author = \"Zhang, Ruiyi  and\n      Yu, Tong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.125\",\n    doi = \"10.18653/v1/2023.acl-short.125\",\n    pages = \"1465--1475\",\n    abstract = \"Demonstration-based learning has shown impressive performance in exploiting pretrained language models under few-shot learning settings. It is interesting to see that demonstrations, even those composed of random tokens, can still improve performance. In this paper, we build a Structural Causal Model (SCM) to understand demonstration-based learning from causal perspectives and interpret random demonstrations as interventions on the demonstration variable within the causal model. We investigate the causal effects and find that the concurrence of specific words in the demonstration will induce bias, while randomly sampled tokens in the demonstration do not. Based on this finding, we further propose simple ways to construct random demonstrations, which even outperform hand-crafted, meaningful demonstrations on public sequence labeling benchmarks.\",\n}\n",
+    "authors": [
+        "Ruiyi Zhang",
+        "Tong Yu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.125.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/cc054995-e26d-5778-b76d-3889569afb9a.pdf",
+    "abstract": "Demonstration-based learning has shown impressive performance in exploiting pretrained language models under few-shot learning settings. It is interesting to see that demonstrations, even those composed of random tokens, can still improve performance. In this paper, we build a Structural Causal Model (SCM) to understand demonstration-based learning from causal perspectives and interpret random demonstrations as interventions on the demonstration variable within the causal model. We investigate the causal effects and find that the concurrence of specific words in the demonstration will induce bias, while randomly sampled tokens in the demonstration do not. Based on this finding, we further propose simple ways to construct random demonstrations, which even outperform hand-crafted, meaningful demonstrations on public sequence labeling benchmarks.",
+    "num_pages": 11
+}

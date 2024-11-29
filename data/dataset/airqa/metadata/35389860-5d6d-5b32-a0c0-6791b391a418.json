@@ -1,0 +1,19 @@
+{
+    "uuid": "35389860-5d6d-5b32-a0c0-6791b391a418",
+    "title": "mOKB6: A Multilingual Open Knowledge Base Completion Benchmark",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{mittal-etal-2023-mokb6,\n    title = \"m{OKB}6: A Multilingual Open Knowledge Base Completion Benchmark\",\n    author = \"Mittal, Shubham  and\n      Kolluru, Keshav  and\n      Chakrabarti, Soumen  and\n      {Mausam}\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.19\",\n    doi = \"10.18653/v1/2023.acl-short.19\",\n    pages = \"201--214\",\n    abstract = \"Automated completion of open knowledge bases (Open KBs), which are constructed from triples of the form (subject phrase, relation phrase, object phrase), obtained via open information extraction (Open IE) system, are useful for discovering novel facts that may not be directly present in the text. However, research in Open KB completion (Open KBC) has so far been limited to resource-rich languages like English. Using the latest advances in multilingual Open IE, we construct the first multilingual Open KBC dataset, called mOKB6, containing facts from Wikipedia in six languages (including English). Improvingthe previous Open KB construction pipeline by doing multilingual coreference resolution andkeeping only entity-linked triples, we create a dense Open KB. We experiment with several models for the task and observe a consistent benefit of combining languages with the help of shared embedding space as well as translations of facts. We also observe that current multilingual models struggle to remember facts seen in languages of different scripts.\",\n}\n",
+    "authors": [
+        "Shubham Mittal",
+        "Keshav Kolluru",
+        "Soumen Chakrabarti",
+        "Mausam"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.19.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/35389860-5d6d-5b32-a0c0-6791b391a418.pdf",
+    "abstract": "Automated completion of open knowledge bases (Open KBs), which are constructed from triples of the form (subject phrase, relation phrase, object phrase), obtained via open information extraction (Open IE) system, are useful for discovering novel facts that may not be directly present in the text. However, research in Open KB completion (Open KBC) has so far been limited to resource-rich languages like English. Using the latest advances in multilingual Open IE, we construct the first multilingual Open KBC dataset, called mOKB6, containing facts from Wikipedia in six languages (including English). Improvingthe previous Open KB construction pipeline by doing multilingual coreference resolution andkeeping only entity-linked triples, we create a dense Open KB. We experiment with several models for the task and observe a consistent benefit of combining languages with the help of shared embedding space as well as translations of facts. We also observe that current multilingual models struggle to remember facts seen in languages of different scripts.",
+    "num_pages": 14
+}

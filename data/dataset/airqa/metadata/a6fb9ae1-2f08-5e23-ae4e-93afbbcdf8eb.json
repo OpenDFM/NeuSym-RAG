@@ -1,0 +1,29 @@
+{
+    "uuid": "a6fb9ae1-2f08-5e23-ae4e-93afbbcdf8eb",
+    "title": "ReCode: Robustness Evaluation of Code Generation Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2023-recode,\n    title = \"{R}e{C}ode: Robustness Evaluation of Code Generation Models\",\n    author = \"Wang, Shiqi  and\n      Li, Zheng  and\n      Qian, Haifeng  and\n      Yang, Chenghao  and\n      Wang, Zijian  and\n      Shang, Mingyue  and\n      Kumar, Varun  and\n      Tan, Samson  and\n      Ray, Baishakhi  and\n      Bhatia, Parminder  and\n      Nallapati, Ramesh  and\n      Ramanathan, Murali Krishna  and\n      Roth, Dan  and\n      Xiang, Bing\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.773\",\n    doi = \"10.18653/v1/2023.acl-long.773\",\n    pages = \"13818--13843\",\n    abstract = \"Code generation models have achieved impressive performance. However, they tend to be brittle as slight edits to a prompt could lead to very different generations; these robustness properties, critical for user experience when deployed in real-life applications, are not well understood. Most existing works on robustness in text or code tasks have focused on classification, while robustness in generation tasks is an uncharted area and to date there is no comprehensive benchmark for robustness in code generation. In this paper, we propose ReCode, a comprehensive robustness evaluation benchmark for code generation models. We customize over 30 transformations specifically for code on docstrings, function and variable names, code syntax, and code format. They are carefully designed to be natural in real-life coding practice, preserve the original semantic meaning, and thus provide multifaceted assessments of a model{'}s robustness performance. With human annotators, we verified that over 90{\\%} of the perturbed prompts do not alter the semantic meaning of the original prompt. In addition, we define robustness metrics for code generation models considering the worst-case behavior under each type of perturbation, taking advantage of the fact that executing the generated code can serve as objective evaluation. We demonstrate ReCode on SOTA models using HumanEval, MBPP, as well as function completion tasks derived from them. Interesting observations include: better robustness for CodeGen over InCoder and GPT-J; models are most sensitive to syntax perturbations; more challenging robustness evaluation on MBPP over HumanEval.\",\n}\n",
+    "authors": [
+        "Shiqi Wang",
+        "Zheng Li",
+        "Haifeng Qian",
+        "Chenghao Yang",
+        "Zijian Wang",
+        "Mingyue Shang",
+        "Varun Kumar",
+        "Samson Tan",
+        "Baishakhi Ray",
+        "Parminder Bhatia",
+        "Ramesh Nallapati",
+        "Murali Krishna Ramanathan",
+        "Dan Roth",
+        "Bing Xiang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.773.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a6fb9ae1-2f08-5e23-ae4e-93afbbcdf8eb.pdf",
+    "abstract": "Code generation models have achieved impressive performance. However, they tend to be brittle as slight edits to a prompt could lead to very different generations; these robustness properties, critical for user experience when deployed in real-life applications, are not well understood. Most existing works on robustness in text or code tasks have focused on classification, while robustness in generation tasks is an uncharted area and to date there is no comprehensive benchmark for robustness in code generation. In this paper, we propose ReCode, a comprehensive robustness evaluation benchmark for code generation models. We customize over 30 transformations specifically for code on docstrings, function and variable names, code syntax, and code format. They are carefully designed to be natural in real-life coding practice, preserve the original semantic meaning, and thus provide multifaceted assessments of a model’s robustness performance. With human annotators, we verified that over 90% of the perturbed prompts do not alter the semantic meaning of the original prompt. In addition, we define robustness metrics for code generation models considering the worst-case behavior under each type of perturbation, taking advantage of the fact that executing the generated code can serve as objective evaluation. We demonstrate ReCode on SOTA models using HumanEval, MBPP, as well as function completion tasks derived from them. Interesting observations include: better robustness for CodeGen over InCoder and GPT-J; models are most sensitive to syntax perturbations; more challenging robustness evaluation on MBPP over HumanEval.",
+    "num_pages": 26
+}

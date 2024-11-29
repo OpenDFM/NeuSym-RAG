@@ -1,0 +1,19 @@
+{
+    "uuid": "464e4fd4-70d3-5103-a8b0-e5e815767d1d",
+    "title": "Evaluating Factuality in Cross-lingual Summarization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{gao-etal-2023-evaluating,\n    title = \"Evaluating Factuality in Cross-lingual Summarization\",\n    author = \"Gao, Mingqi  and\n      Wang, Wenqing  and\n      Wan, Xiaojun  and\n      Xu, Yuemei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.786\",\n    doi = \"10.18653/v1/2023.findings-acl.786\",\n    pages = \"12415--12431\",\n    abstract = \"Cross-lingual summarization aims to help people efficiently grasp the core idea of the document written in a foreign language. Modern text summarization models generate highly fluent but often factually inconsistent outputs, which has received heightened attention in recent research. However, the factual consistency of cross-lingual summarization has not been investigated yet. In this paper, we propose a cross-lingual factuality dataset by collecting human annotations of reference summaries as well as generated summaries from models at both summary level and sentence level. Furthermore, we perform the fine-grained analysis and observe that over 50{\\%} of generated summaries and over 27{\\%} of reference summaries contain factual errors with characteristics different from monolingual summarization. Existing evaluation metrics for monolingual summarization require translation to evaluate the factuality of cross-lingual summarization and perform differently at different tasks and levels. Finally, we adapt the monolingual factuality metrics as an initial step towards the automatic evaluation of summarization factuality in cross-lingual settings. Our dataset and code are available at \\url{https://github.com/kite99520/Fact_CLS}.\",\n}\n",
+    "authors": [
+        "Mingqi Gao",
+        "Wenqing Wang",
+        "Xiaojun Wan",
+        "Yuemei Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.786.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/464e4fd4-70d3-5103-a8b0-e5e815767d1d.pdf",
+    "abstract": "Cross-lingual summarization aims to help people efficiently grasp the core idea of the document written in a foreign language. Modern text summarization models generate highly fluent but often factually inconsistent outputs, which has received heightened attention in recent research. However, the factual consistency of cross-lingual summarization has not been investigated yet. In this paper, we propose a cross-lingual factuality dataset by collecting human annotations of reference summaries as well as generated summaries from models at both summary level and sentence level. Furthermore, we perform the fine-grained analysis and observe that over 50% of generated summaries and over 27% of reference summaries contain factual errors with characteristics different from monolingual summarization. Existing evaluation metrics for monolingual summarization require translation to evaluate the factuality of cross-lingual summarization and perform differently at different tasks and levels. Finally, we adapt the monolingual factuality metrics as an initial step towards the automatic evaluation of summarization factuality in cross-lingual settings. Our dataset and code are available at https://github.com/kite99520/Fact_CLS.",
+    "num_pages": 17
+}

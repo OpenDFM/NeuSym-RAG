@@ -1,0 +1,20 @@
+{
+    "uuid": "d4c88fdc-47de-5b8f-8296-96b9ece4fdc4",
+    "title": "FineSurE: Fine-grained Summarization Evaluation using LLMs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{song-etal-2024-finesure,\n    title = \"{F}ine{S}ur{E}: Fine-grained Summarization Evaluation using {LLM}s\",\n    author = \"Song, Hwanjun  and\n      Su, Hang  and\n      Shalyminov, Igor  and\n      Cai, Jason  and\n      Mansour, Saab\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.51\",\n    doi = \"10.18653/v1/2024.acl-long.51\",\n    pages = \"906--922\",\n    abstract = \"Automated evaluation is crucial for streamlining text summarization benchmarking and model development, given the costly and time-consuming nature of human evaluation. Traditional methods like ROUGE do not correlate well with human judgment, while recently proposed LLM-based metrics provide only summary-level assessment using Likert-scale scores. This limits deeper model analysis, e.g., we can only assign one hallucination score at the summary level, while at the sentence level, we can count sentences containing hallucinations. To remedy those limitations, we propose FineSurE, a fine-grained evaluator specifically tailored for the summarization task using large language models (LLMs). It also employs completeness and conciseness criteria, in addition to faithfulness, enabling multi-dimensional assessment. We compare various open-source and proprietary LLMs as backbones for FineSurE. In addition, we conduct extensive benchmarking of FineSurE against SOTA methods including NLI-, QA-, and LLM-based methods, showing improved performance especially on the completeness and conciseness dimensions. The code is available at https://github.com/DISL-Lab/FineSurE.\",\n}\n",
+    "authors": [
+        "Hwanjun Song",
+        "Hang Su",
+        "Igor Shalyminov",
+        "Jason Cai",
+        "Saab Mansour"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.51.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d4c88fdc-47de-5b8f-8296-96b9ece4fdc4.pdf",
+    "abstract": "Automated evaluation is crucial for streamlining text summarization benchmarking and model development, given the costly and time-consuming nature of human evaluation. Traditional methods like ROUGE do not correlate well with human judgment, while recently proposed LLM-based metrics provide only summary-level assessment using Likert-scale scores. This limits deeper model analysis, e.g., we can only assign one hallucination score at the summary level, while at the sentence level, we can count sentences containing hallucinations. To remedy those limitations, we propose FineSurE, a fine-grained evaluator specifically tailored for the summarization task using large language models (LLMs). It also employs completeness and conciseness criteria, in addition to faithfulness, enabling multi-dimensional assessment. We compare various open-source and proprietary LLMs as backbones for FineSurE. In addition, we conduct extensive benchmarking of FineSurE against SOTA methods including NLI-, QA-, and LLM-based methods, showing improved performance especially on the completeness and conciseness dimensions. The code is available at https://github.com/DISL-Lab/FineSurE.",
+    "num_pages": 17
+}

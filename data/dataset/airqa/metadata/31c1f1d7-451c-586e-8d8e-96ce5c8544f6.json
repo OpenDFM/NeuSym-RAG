@@ -1,0 +1,20 @@
+{
+    "uuid": "31c1f1d7-451c-586e-8d8e-96ce5c8544f6",
+    "title": "D2LLM: Decomposed and Distilled Large Language Models for Semantic Search",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{liao-etal-2024-d2llm,\n    title = \"{D}2{LLM}: Decomposed and Distilled Large Language Models for Semantic Search\",\n    author = \"Liao, Zihan  and\n      Yu, Hang  and\n      Li, Jianguo  and\n      Wang, Jun  and\n      Zhang, Wei\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.791\",\n    doi = \"10.18653/v1/2024.acl-long.791\",\n    pages = \"14798--14814\",\n    abstract = \"The key challenge in semantic search is to create models that are both accurate and efficient in pinpointing relevant sentences for queries. While BERT-style bi-encoders excel in efficiency with pre-computed embeddings, they often miss subtle nuances in search tasks. Conversely, GPT-style LLMs with cross-encoder designs capture these nuances but are computationally intensive, hindering real-time applications. In this paper, we present D2LLMs{---}Decomposed and Distilled LLMs for semantic search{---}that combines the best of both worlds. We decompose a cross-encoder into an efficient bi-encoder integrated with Pooling by Multihead Attention and an Interaction Emulation Module, achieving nuanced understanding and pre-computability. Knowledge from the LLM is distilled into this model using contrastive, rank, and feature imitation techniques. Our experiments show that D2LLM surpasses five leading baselines in terms of all metrics across three tasks, particularly improving NLI task performance by at least 6.45{\\%}\",\n}\n",
+    "authors": [
+        "Zihan Liao",
+        "Hang Yu",
+        "Jianguo Li",
+        "Jun Wang",
+        "Wei Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.791.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/31c1f1d7-451c-586e-8d8e-96ce5c8544f6.pdf",
+    "abstract": "The key challenge in semantic search is to create models that are both accurate and efficient in pinpointing relevant sentences for queries. While BERT-style bi-encoders excel in efficiency with pre-computed embeddings, they often miss subtle nuances in search tasks. Conversely, GPT-style LLMs with cross-encoder designs capture these nuances but are computationally intensive, hindering real-time applications. In this paper, we present D2LLMs—Decomposed and Distilled LLMs for semantic search—that combines the best of both worlds. We decompose a cross-encoder into an efficient bi-encoder integrated with Pooling by Multihead Attention and an Interaction Emulation Module, achieving nuanced understanding and pre-computability. Knowledge from the LLM is distilled into this model using contrastive, rank, and feature imitation techniques. Our experiments show that D2LLM surpasses five leading baselines in terms of all metrics across three tasks, particularly improving NLI task performance by at least 6.45%",
+    "num_pages": 17
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "9eb9c474-b17e-5a5e-a6f2-378d1879740f",
+    "title": "RFiD: Towards Rational Fusion-in-Decoder for Open-Domain Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wang-etal-2023-rfid,\n    title = \"{RF}i{D}: Towards Rational Fusion-in-Decoder for Open-Domain Question Answering\",\n    author = \"Wang, Cunxiang  and\n      Yu, Haofei  and\n      Zhang, Yue\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.155\",\n    doi = \"10.18653/v1/2023.findings-acl.155\",\n    pages = \"2473--2481\",\n    abstract = \"Open-Domain Question Answering (ODQA) systems necessitate a reader model capable of generating answers by simultaneously referring to multiple passages. Although representative models like Fusion-in-Decoder (FiD) have been proposed to address this challenge, these systems can inadvertently rely on spurious features instead of genuine causal relationships between the question and the passages to generate answers. To counter this problem, we introduce the Rational Fusion-in-Decoder (RFiD) model. Our model leverages the encoders of FiD to differentiate between causal relationships and spurious features, subsequently guiding the decoder to generate answers informed by this discernment. Experimental results on two ODQA datasets, Natural Questions (NQ) and TriviaQA (TQ), demonstrate that our model surpasses previous methods, achieving improvements of up to 1.5 and 0.7 in Exact Match scores on NQ, and exhibits an enhanced ability to identify causal relationships.\",\n}\n",
+    "authors": [
+        "Cunxiang Wang",
+        "Haofei Yu",
+        "Yue Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.155.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9eb9c474-b17e-5a5e-a6f2-378d1879740f.pdf",
+    "abstract": "Open-Domain Question Answering (ODQA) systems necessitate a reader model capable of generating answers by simultaneously referring to multiple passages. Although representative models like Fusion-in-Decoder (FiD) have been proposed to address this challenge, these systems can inadvertently rely on spurious features instead of genuine causal relationships between the question and the passages to generate answers. To counter this problem, we introduce the Rational Fusion-in-Decoder (RFiD) model. Our model leverages the encoders of FiD to differentiate between causal relationships and spurious features, subsequently guiding the decoder to generate answers informed by this discernment. Experimental results on two ODQA datasets, Natural Questions (NQ) and TriviaQA (TQ), demonstrate that our model surpasses previous methods, achieving improvements of up to 1.5 and 0.7 in Exact Match scores on NQ, and exhibits an enhanced ability to identify causal relationships.",
+    "num_pages": 9
+}

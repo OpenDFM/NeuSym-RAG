@@ -1,0 +1,19 @@
+{
+    "uuid": "9190a505-3010-5d89-910b-080451fd57b4",
+    "title": "ScoNe: Benchmarking Negation Reasoning in Language Models With Fine-Tuning and In-Context Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{she-etal-2023-scone,\n    title = \"{S}co{N}e: Benchmarking Negation Reasoning in Language Models With Fine-Tuning and In-Context Learning\",\n    author = \"She, Jingyuan S.  and\n      Potts, Christopher  and\n      Bowman, Samuel R.  and\n      Geiger, Atticus\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.154\",\n    doi = \"10.18653/v1/2023.acl-short.154\",\n    pages = \"1803--1821\",\n    abstract = \"A number of recent benchmarks seek to assess how well models handle natural language negation. However, these benchmarks lack the controlled example paradigms that would allow us to infer whether a model had truly learned how negation morphemes semantically scope. To fill these analytical gaps, we present the Scoped Negation NLI (ScoNe-NLI) benchmark, which contains contrast sets of six examples with up to two negations where either zero, one, or both negative morphemes affect the NLI label. We use ScoNe-NLI to assess fine-tuning and in-context learning strategies. We find that RoBERTa and DeBERTa models solve ScoNe-NLI after many shot fine-tuning. For in-context learning, we test the latest InstructGPT models and find that most prompt strategies are not successful, including those using step-by-step reasoning. To better understand this result, we extend ScoNe with ScoNe-NLG, a sentence completion test set that embeds negation reasoning in short narratives. Here, InstructGPT is successful, which reveals the model can correctly reason about negation, but struggles to do so on NLI examples outside of its core pretraining regime.\",\n}\n",
+    "authors": [
+        "Jingyuan S. She",
+        "Christopher Potts",
+        "Samuel R. Bowman",
+        "Atticus Geiger"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.154.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9190a505-3010-5d89-910b-080451fd57b4.pdf",
+    "abstract": "A number of recent benchmarks seek to assess how well models handle natural language negation. However, these benchmarks lack the controlled example paradigms that would allow us to infer whether a model had truly learned how negation morphemes semantically scope. To fill these analytical gaps, we present the Scoped Negation NLI (ScoNe-NLI) benchmark, which contains contrast sets of six examples with up to two negations where either zero, one, or both negative morphemes affect the NLI label. We use ScoNe-NLI to assess fine-tuning and in-context learning strategies. We find that RoBERTa and DeBERTa models solve ScoNe-NLI after many shot fine-tuning. For in-context learning, we test the latest InstructGPT models and find that most prompt strategies are not successful, including those using step-by-step reasoning. To better understand this result, we extend ScoNe with ScoNe-NLG, a sentence completion test set that embeds negation reasoning in short narratives. Here, InstructGPT is successful, which reveals the model can correctly reason about negation, but struggles to do so on NLI examples outside of its core pretraining regime.",
+    "num_pages": 19
+}

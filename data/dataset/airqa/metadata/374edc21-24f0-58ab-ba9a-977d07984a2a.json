@@ -1,0 +1,21 @@
+{
+    "uuid": "374edc21-24f0-58ab-ba9a-977d07984a2a",
+    "title": "RadLing: Towards Efficient Radiology Report Understanding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{ghosh-etal-2023-radling,\n    title = \"{R}ad{L}ing: Towards Efficient Radiology Report Understanding\",\n    author = \"Ghosh, Rikhiya  and\n      Farri, Oladimeji  and\n      Karn, Sanjeev Kumar  and\n      Danu, Manuela  and\n      Vunikili, Ramya  and\n      Micu, Larisa\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.61\",\n    doi = \"10.18653/v1/2023.acl-industry.61\",\n    pages = \"640--651\",\n    abstract = \"Most natural language tasks in the radiology domain use language models pre-trained on biomedical corpus. There are few pretrained language models trained specifically for radiology, and fewer still that have been trained in a low data setting and gone on to produce comparable results in fine-tuning tasks. We present RadLing, a continuously pretrained language model using ELECTRA-small architecture, trained using over 500K radiology reports that can compete with state-of-the-art results for fine tuning tasks in radiology domain. Our main contribution in this paper is knowledge-aware masking which is an taxonomic knowledge-assisted pre-training task that dynamically masks tokens to inject knowledge during pretraining. In addition, we also introduce an knowledge base-aided vocabulary extension to adapt the general tokenization vocabulary to radiology domain.\",\n}\n",
+    "authors": [
+        "Rikhiya Ghosh",
+        "Oladimeji Farri",
+        "Sanjeev Kumar Karn",
+        "Manuela Danu",
+        "Ramya Vunikili",
+        "Larisa Micu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.61.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/374edc21-24f0-58ab-ba9a-977d07984a2a.pdf",
+    "abstract": "Most natural language tasks in the radiology domain use language models pre-trained on biomedical corpus. There are few pretrained language models trained specifically for radiology, and fewer still that have been trained in a low data setting and gone on to produce comparable results in fine-tuning tasks. We present RadLing, a continuously pretrained language model using ELECTRA-small architecture, trained using over 500K radiology reports that can compete with state-of-the-art results for fine tuning tasks in radiology domain. Our main contribution in this paper is knowledge-aware masking which is an taxonomic knowledge-assisted pre-training task that dynamically masks tokens to inject knowledge during pretraining. In addition, we also introduce an knowledge base-aided vocabulary extension to adapt the general tokenization vocabulary to radiology domain.",
+    "num_pages": 12
+}

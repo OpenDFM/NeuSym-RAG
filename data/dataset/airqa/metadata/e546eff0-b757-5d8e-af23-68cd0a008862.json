@@ -1,0 +1,18 @@
+{
+    "uuid": "e546eff0-b757-5d8e-af23-68cd0a008862",
+    "title": "Noise-Robust Training with Dynamic Loss and Contrastive Learning for Distantly-Supervised Named Entity Recognition",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{ma-etal-2023-noise,\n    title = \"Noise-Robust Training with Dynamic Loss and Contrastive Learning for Distantly-Supervised Named Entity Recognition\",\n    author = \"Ma, Zhiyuan  and\n      Du, Jintao  and\n      Zhou, Shuheng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.643\",\n    doi = \"10.18653/v1/2023.findings-acl.643\",\n    pages = \"10119--10128\",\n    abstract = \"Distantly-supervised named entity recognition (NER) aims at training networks with distantly-labeled data, which is automatically obtained by matching entity mentions in the raw text with entity types in a knowledge base. Distant supervision may induce incomplete and noisy labels, so recent state-of-the-art methods employ sample selection mechanism to separate clean data from noisy data based on the model{'}s prediction scores. However, they ignore the noise distribution change caused by data selection, and they simply excludes noisy data during training, resulting in information loss. We propose to (1) use a dynamic loss function to better adapt to the changing noise during the training process, and (2) incorporate token level contrastive learning to fully utilize the noisy data as well as facilitate feature learning without relying on labels. Our method achieves superior performance on three benchmark datasets, outperforming existing distantly supervised NER models by significant margins.\",\n}\n",
+    "authors": [
+        "Zhiyuan Ma",
+        "Jintao Du",
+        "Shuheng Zhou"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.643.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/e546eff0-b757-5d8e-af23-68cd0a008862.pdf",
+    "abstract": "Distantly-supervised named entity recognition (NER) aims at training networks with distantly-labeled data, which is automatically obtained by matching entity mentions in the raw text with entity types in a knowledge base. Distant supervision may induce incomplete and noisy labels, so recent state-of-the-art methods employ sample selection mechanism to separate clean data from noisy data based on the model’s prediction scores. However, they ignore the noise distribution change caused by data selection, and they simply excludes noisy data during training, resulting in information loss. We propose to (1) use a dynamic loss function to better adapt to the changing noise during the training process, and (2) incorporate token level contrastive learning to fully utilize the noisy data as well as facilitate feature learning without relying on labels. Our method achieves superior performance on three benchmark datasets, outperforming existing distantly supervised NER models by significant margins.",
+    "num_pages": 10
+}

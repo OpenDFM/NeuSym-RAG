@@ -1,0 +1,21 @@
+{
+    "uuid": "f531ff28-a2a1-505d-9294-348eb39b9e36",
+    "title": "A Study on Knowledge Distillation from Weak Teacher for Scaling Up Pre-trained Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{lee-etal-2023-study,\n    title = \"A Study on Knowledge Distillation from Weak Teacher for Scaling Up Pre-trained Language Models\",\n    author = \"Lee, Hayeon  and\n      Hou, Rui  and\n      Kim, Jongpil  and\n      Liang, Davis  and\n      Hwang, Sung Ju  and\n      Min, Alexander\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.714\",\n    doi = \"10.18653/v1/2023.findings-acl.714\",\n    pages = \"11239--11246\",\n    abstract = \"Distillation from Weak Teacher (DWT) is a method of transferring knowledge from a smaller, weaker teacher model to a larger student model to improve its performance. Previous studies have shown that DWT can be effective in the vision domain and natural language processing (NLP) pre-training stage. Specifically, DWT shows promise in practical scenarios, such as enhancing new generation or larger models using pre-trained yet older or smaller models and lacking a resource budget. However, the optimal conditions for using DWT have yet to be fully investigated in NLP pre-training. Therefore, this study examines three key factors to optimize DWT, distinct from those used in the vision domain or traditional knowledge distillation. These factors are:(i) the impact of teacher model quality on DWT effectiveness, (ii) guidelines for adjusting the weighting value for DWT loss, and (iii) the impact of parameter remapping as a student model initialization technique for DWT.\",\n}\n",
+    "authors": [
+        "Hayeon Lee",
+        "Rui Hou",
+        "Jongpil Kim",
+        "Davis Liang",
+        "Sung Ju Hwang",
+        "Alexander Min"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.714.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f531ff28-a2a1-505d-9294-348eb39b9e36.pdf",
+    "abstract": "Distillation from Weak Teacher (DWT) is a method of transferring knowledge from a smaller, weaker teacher model to a larger student model to improve its performance. Previous studies have shown that DWT can be effective in the vision domain and natural language processing (NLP) pre-training stage. Specifically, DWT shows promise in practical scenarios, such as enhancing new generation or larger models using pre-trained yet older or smaller models and lacking a resource budget. However, the optimal conditions for using DWT have yet to be fully investigated in NLP pre-training. Therefore, this study examines three key factors to optimize DWT, distinct from those used in the vision domain or traditional knowledge distillation. These factors are:(i) the impact of teacher model quality on DWT effectiveness, (ii) guidelines for adjusting the weighting value for DWT loss, and (iii) the impact of parameter remapping as a student model initialization technique for DWT.",
+    "num_pages": 8
+}

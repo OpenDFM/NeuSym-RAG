@@ -1,0 +1,26 @@
+{
+    "uuid": "fa5032ce-402b-552b-b62a-7488caa14e4f",
+    "title": "MLeVLM: Improve Multi-level Progressive Capabilities based on Multimodal Large Language Model for Medical Visual Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{xu-etal-2024-mlevlm,\n    title = \"{ML}e{VLM}: Improve Multi-level Progressive Capabilities based on Multimodal Large Language Model for Medical Visual Question Answering\",\n    author = \"Xu, Dexuan  and\n      Chen, Yanyuan  and\n      Wang, Jieyi  and\n      Huang, Yue  and\n      Wang, Hanpin  and\n      Jin, Zhi  and\n      Wang, Hongxing  and\n      Yue, Weihua  and\n      He, Jing  and\n      Li, Hang  and\n      Huang, Yu\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.296\",\n    doi = \"10.18653/v1/2024.findings-acl.296\",\n    pages = \"4977--4997\",\n    abstract = \"Medical visual question answering (MVQA) requires in-depth understanding of medical images and questions to provide reliable answers. We summarize multi-level progressive capabilities that models need to focus on in MVQA: recognition, details, diagnosis, knowledge, and reasoning. Existing MVQA models tend to ignore the above capabilities due to unspecific data and plain architecture. To address these issues, this paper proposes Multi-level Visual Language Model (MLeVLM) for MVQA. On the data side, we construct a high-quality multi-level instruction dataset MLe-VQA via GPT-4, which covers multi-level questions and answers as well as reasoning processes from visual clues to semantic cognition. On the architecture side, we propose a multi-level feature alignment module, including attention-based token selector and context merger, which can efficiently align features at different levels from visual to semantic. To better evaluate the model{'}s capabilities, we manually construct a multi-level MVQA evaluation benchmark named MLe-Bench. Extensive experiments demonstrate the effectiveness of our constructed multi-level instruction dataset and the multi-level feature alignment module. It also proves that MLeVLM outperforms existing medical multimodal large language models.\",\n}\n",
+    "authors": [
+        "Dexuan Xu",
+        "Yanyuan Chen",
+        "Jieyi Wang",
+        "Yue Huang",
+        "Hanpin Wang",
+        "Zhi Jin",
+        "Hongxing Wang",
+        "Weihua Yue",
+        "Jing He",
+        "Hang Li",
+        "Yu Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.296.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/fa5032ce-402b-552b-b62a-7488caa14e4f.pdf",
+    "abstract": "Medical visual question answering (MVQA) requires in-depth understanding of medical images and questions to provide reliable answers. We summarize multi-level progressive capabilities that models need to focus on in MVQA: recognition, details, diagnosis, knowledge, and reasoning. Existing MVQA models tend to ignore the above capabilities due to unspecific data and plain architecture. To address these issues, this paper proposes Multi-level Visual Language Model (MLeVLM) for MVQA. On the data side, we construct a high-quality multi-level instruction dataset MLe-VQA via GPT-4, which covers multi-level questions and answers as well as reasoning processes from visual clues to semantic cognition. On the architecture side, we propose a multi-level feature alignment module, including attention-based token selector and context merger, which can efficiently align features at different levels from visual to semantic. To better evaluate the model’s capabilities, we manually construct a multi-level MVQA evaluation benchmark named MLe-Bench. Extensive experiments demonstrate the effectiveness of our constructed multi-level instruction dataset and the multi-level feature alignment module. It also proves that MLeVLM outperforms existing medical multimodal large language models.",
+    "num_pages": 21
+}

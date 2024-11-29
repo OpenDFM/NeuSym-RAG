@@ -1,0 +1,19 @@
+{
+    "uuid": "b138c267-3977-5955-bd81-836d49add9b2",
+    "title": "PEER: Pre-training ELECTRA Extended by Ranking",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{he-etal-2023-peer,\n    title = \"{PEER}: Pre-training {ELECTRA} Extended by Ranking\",\n    author = \"He, Ru  and\n      Wang, Wei  and\n      Huang, Songfang  and\n      Huang, Fei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.405\",\n    doi = \"10.18653/v1/2023.findings-acl.405\",\n    pages = \"6475--6491\",\n    abstract = \"The BERT model and its variants have made great achievements in many downstream natural language processing tasks. The achievements of these models, however, demand highly expensive pre-training computation cost. To address this pre-training efficiency issue, the ELECTRA model is proposed to use a discriminator to perform replaced token detection (RTD) task, that is, to classify whether each input token is original or replaced by a generator. The RTD task performed by the ELECTRA accelerates pre-training so substantially, such that it is very challenging to further improve the pre-training efficiency established by the ELECTRA by using or adding other pre-training tasks, as the recent comprehensive study of Bajaj et al. (2022) summarizes. To further advance this pre-training efficiency frontier, in this paper we propose to extend the RTD task into a task of ranking input tokens according to K different quality levels. Essentially, we generalize the binary classifier in the ELECTRA into a K-level ranker to undertake a more precise task with negligible additional computation cost. Our extensive experiments show that our proposed method is able to outperform the state-of-the-art pre-training efficient models including ELECTRA in downstream GLUE tasks given the same computation cost.\",\n}\n",
+    "authors": [
+        "Ru He",
+        "Wei Wang",
+        "Songfang Huang",
+        "Fei Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.405.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b138c267-3977-5955-bd81-836d49add9b2.pdf",
+    "abstract": "The BERT model and its variants have made great achievements in many downstream natural language processing tasks. The achievements of these models, however, demand highly expensive pre-training computation cost. To address this pre-training efficiency issue, the ELECTRA model is proposed to use a discriminator to perform replaced token detection (RTD) task, that is, to classify whether each input token is original or replaced by a generator. The RTD task performed by the ELECTRA accelerates pre-training so substantially, such that it is very challenging to further improve the pre-training efficiency established by the ELECTRA by using or adding other pre-training tasks, as the recent comprehensive study of Bajaj et al. (2022) summarizes. To further advance this pre-training efficiency frontier, in this paper we propose to extend the RTD task into a task of ranking input tokens according to K different quality levels. Essentially, we generalize the binary classifier in the ELECTRA into a K-level ranker to undertake a more precise task with negligible additional computation cost. Our extensive experiments show that our proposed method is able to outperform the state-of-the-art pre-training efficient models including ELECTRA in downstream GLUE tasks given the same computation cost.",
+    "num_pages": 17
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "b82bcb78-ebc2-5837-ac66-77788b9f8e96",
+    "title": "Reasoning over Hierarchical Question Decomposition Tree for Explainable Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhang-etal-2023-reasoning,\n    title = \"Reasoning over Hierarchical Question Decomposition Tree for Explainable Question Answering\",\n    author = \"Zhang, Jiajie  and\n      Cao, Shulin  and\n      Zhang, Tingjian  and\n      Lv, Xin  and\n      Li, Juanzi  and\n      Hou, Lei  and\n      Shi, Jiaxin  and\n      Tian, Qi\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.814\",\n    doi = \"10.18653/v1/2023.acl-long.814\",\n    pages = \"14556--14570\",\n    abstract = \"Explainable question answering (XQA) aims to answer a given question and provide an explanation why the answer is selected. Existing XQA methods focus on reasoning on a single knowledge source, e.g., structured knowledge bases, unstructured corpora, etc. However, integrating information from heterogeneous knowledge sources is essential to answer complex questions. In this paper, we propose to leverage question decomposing for heterogeneous knowledge integration, by breaking down a complex question into simpler ones, and selecting the appropriate knowledge source for each sub-question. To facilitate reasoning, we propose a novel two-stage XQA framework, Reasoning over Hierarchical Question Decomposition Tree (RoHT). First, we build the Hierarchical Question Decomposition Tree (HQDT) to understand the semantics of a complex question; then, we conduct probabilistic reasoning over HQDT from root to leaves recursively, to aggregate heterogeneous knowledge at different tree levels and search for a best solution considering the decomposing and answering probabilities. The experiments on complex QA datasets KQA Pro and Musique show that our framework outperforms SOTA methods significantly, demonstrating the effectiveness of leveraging question decomposing for knowledge integration and our RoHT framework.\",\n}\n",
+    "authors": [
+        "Jiajie Zhang",
+        "Shulin Cao",
+        "Tingjian Zhang",
+        "Xin Lv",
+        "Juanzi Li",
+        "Lei Hou",
+        "Jiaxin Shi",
+        "Qi Tian"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.814.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b82bcb78-ebc2-5837-ac66-77788b9f8e96.pdf",
+    "abstract": "Explainable question answering (XQA) aims to answer a given question and provide an explanation why the answer is selected. Existing XQA methods focus on reasoning on a single knowledge source, e.g., structured knowledge bases, unstructured corpora, etc. However, integrating information from heterogeneous knowledge sources is essential to answer complex questions. In this paper, we propose to leverage question decomposing for heterogeneous knowledge integration, by breaking down a complex question into simpler ones, and selecting the appropriate knowledge source for each sub-question. To facilitate reasoning, we propose a novel two-stage XQA framework, Reasoning over Hierarchical Question Decomposition Tree (RoHT). First, we build the Hierarchical Question Decomposition Tree (HQDT) to understand the semantics of a complex question; then, we conduct probabilistic reasoning over HQDT from root to leaves recursively, to aggregate heterogeneous knowledge at different tree levels and search for a best solution considering the decomposing and answering probabilities. The experiments on complex QA datasets KQA Pro and Musique show that our framework outperforms SOTA methods significantly, demonstrating the effectiveness of leveraging question decomposing for knowledge integration and our RoHT framework.",
+    "num_pages": 15
+}

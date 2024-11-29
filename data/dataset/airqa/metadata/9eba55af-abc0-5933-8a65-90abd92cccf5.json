@@ -1,0 +1,21 @@
+{
+    "uuid": "9eba55af-abc0-5933-8a65-90abd92cccf5",
+    "title": "MELOV: Multimodal Entity Linking with Optimized Visual Features in Latent Space",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{sui-etal-2024-melov,\n    title = \"{MELOV}: Multimodal Entity Linking with Optimized Visual Features in Latent Space\",\n    author = \"Sui, Xuhui  and\n      Zhang, Ying  and\n      Zhao, Yu  and\n      Song, Kehui  and\n      Zhou, Baohang  and\n      Yuan, Xiaojie\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.46\",\n    doi = \"10.18653/v1/2024.findings-acl.46\",\n    pages = \"816--826\",\n    abstract = \"Multimodal entity linking (MEL), which aligns ambiguous mentions within multimodal contexts to referent entities from multimodal knowledge bases, is essential for many natural language processing applications. Previous MEL methods mainly focus on exploring complex multimodal interaction mechanisms to better capture coherence evidence between mentions and entities by mining complementary information. However, in real-world social media scenarios, vision modality often exhibits low quality, low value, or low relevance to the mention. Integrating such information directly will backfire, leading to a weakened consistency between mentions and their corresponding entities. In this paper, we propose a novel latent space vision feature optimization framework MELOV, which combines inter-modality and intra-modality optimizations to address these challenges. For the inter-modality optimization, we exploit the variational autoencoder to mine shared information and generate text-based visual features. For the intra-modality optimization, we consider the relationships between mentions and build graph convolutional network to aggregate the visual features of semantic similar neighbors. Extensive experiments on three benchmark datasets demonstrate the superiority of our proposed framework.\",\n}\n",
+    "authors": [
+        "Xuhui Sui",
+        "Ying Zhang",
+        "Yu Zhao",
+        "Kehui Song",
+        "Baohang Zhou",
+        "Xiaojie Yuan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.46.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/9eba55af-abc0-5933-8a65-90abd92cccf5.pdf",
+    "abstract": "Multimodal entity linking (MEL), which aligns ambiguous mentions within multimodal contexts to referent entities from multimodal knowledge bases, is essential for many natural language processing applications. Previous MEL methods mainly focus on exploring complex multimodal interaction mechanisms to better capture coherence evidence between mentions and entities by mining complementary information. However, in real-world social media scenarios, vision modality often exhibits low quality, low value, or low relevance to the mention. Integrating such information directly will backfire, leading to a weakened consistency between mentions and their corresponding entities. In this paper, we propose a novel latent space vision feature optimization framework MELOV, which combines inter-modality and intra-modality optimizations to address these challenges. For the inter-modality optimization, we exploit the variational autoencoder to mine shared information and generate text-based visual features. For the intra-modality optimization, we consider the relationships between mentions and build graph convolutional network to aggregate the visual features of semantic similar neighbors. Extensive experiments on three benchmark datasets demonstrate the superiority of our proposed framework.",
+    "num_pages": 11
+}

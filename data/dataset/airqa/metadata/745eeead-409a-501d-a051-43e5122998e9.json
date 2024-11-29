@@ -1,0 +1,26 @@
+{
+    "uuid": "745eeead-409a-501d-a051-43e5122998e9",
+    "title": "AV-TranSpeech: Audio-Visual Robust Speech-to-Speech Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{huang-etal-2023-av,\n    title = \"{AV}-{T}ran{S}peech: Audio-Visual Robust Speech-to-Speech Translation\",\n    author = \"Huang, Rongjie  and\n      Liu, Huadai  and\n      Cheng, Xize  and\n      Ren, Yi  and\n      Li, Linjun  and\n      Ye, Zhenhui  and\n      He, Jinzheng  and\n      Zhang, Lichao  and\n      Liu, Jinglin  and\n      Yin, Xiang  and\n      Zhao, Zhou\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.479\",\n    doi = \"10.18653/v1/2023.acl-long.479\",\n    pages = \"8590--8604\",\n    abstract = \"Direct speech-to-speech translation (S2ST) aims to convert speech from one language into another, and has demonstrated significant progress to date. Despite the recent success, current S2ST models still suffer from distinct degradation in noisy environments and fail to translate visual speech (i.e., the movement of lips and teeth). In this work, we present AV-TranSpeech, the first audio-visual speech-to-speech (AV-S2ST) translation model without relying on intermediate text. AV-TranSpeech complements the audio stream with visual information to promote system robustness and opens up a host of practical applications: dictation or dubbing archival films. To mitigate the data scarcity with limited parallel AV-S2ST data, we 1) explore self-supervised pre-training with unlabeled audio-visual data to learn contextual representation, and 2) introduce cross-modal distillation with S2ST models trained on the audio-only corpus to further reduce the requirements of visual data. Experimental results on two language pairs demonstrate that AV-TranSpeech outperforms audio-only models under all settings regardless of the type of noise. With low-resource audio-visual data (10h, 30h), cross-modal distillation yields an improvement of 7.6 BLEU on average compared with baselines. Audio samples are available at \\url{https://AV-TranSpeech.github.io/}.\",\n}\n",
+    "authors": [
+        "Rongjie Huang",
+        "Huadai Liu",
+        "Xize Cheng",
+        "Yi Ren",
+        "Linjun Li",
+        "Zhenhui Ye",
+        "Jinzheng He",
+        "Lichao Zhang",
+        "Jinglin Liu",
+        "Xiang Yin",
+        "Zhou Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.479.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/745eeead-409a-501d-a051-43e5122998e9.pdf",
+    "abstract": "Direct speech-to-speech translation (S2ST) aims to convert speech from one language into another, and has demonstrated significant progress to date. Despite the recent success, current S2ST models still suffer from distinct degradation in noisy environments and fail to translate visual speech (i.e., the movement of lips and teeth). In this work, we present AV-TranSpeech, the first audio-visual speech-to-speech (AV-S2ST) translation model without relying on intermediate text. AV-TranSpeech complements the audio stream with visual information to promote system robustness and opens up a host of practical applications: dictation or dubbing archival films. To mitigate the data scarcity with limited parallel AV-S2ST data, we 1) explore self-supervised pre-training with unlabeled audio-visual data to learn contextual representation, and 2) introduce cross-modal distillation with S2ST models trained on the audio-only corpus to further reduce the requirements of visual data. Experimental results on two language pairs demonstrate that AV-TranSpeech outperforms audio-only models under all settings regardless of the type of noise. With low-resource audio-visual data (10h, 30h), cross-modal distillation yields an improvement of 7.6 BLEU on average compared with baselines. Audio samples are available at https://AV-TranSpeech.github.io/.",
+    "num_pages": 15
+}

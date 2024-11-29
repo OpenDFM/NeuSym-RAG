@@ -1,0 +1,17 @@
+{
+    "uuid": "3c2b0313-0954-5b99-b8aa-3526d2a677ba",
+    "title": "Investigating the Saliency of Sentiment Expressions in Aspect-Based Sentiment Analysis",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wagner-foster-2023-investigating,\n    title = \"Investigating the Saliency of Sentiment Expressions in Aspect-Based Sentiment Analysis\",\n    author = \"Wagner, Joachim  and\n      Foster, Jennifer\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.807\",\n    doi = \"10.18653/v1/2023.findings-acl.807\",\n    pages = \"12751--12769\",\n    abstract = \"We examine the behaviour of an aspect-based sentiment classifier built by fine-tuning the BERT BASE model on the SemEval 2016 English dataset. In a set of masking experiments, we examine the extent to which the tokens identified as salient by LIME and a gradient-based method are being used by the classifier. We find that both methods are able to produce faithful rationales, with LIME outperforming the gradient-based method. We also identify a set of manually annotated sentiment expressions for this dataset, and carry out more masking experiments with these as human rationales. The enhanced performance of a classifier that only sees the relevant sentiment expressions suggests that they are not being used to their full potential. A comparison of the LIME and gradient rationales with the sentiment expressions reveals only a moderate level of agreement. Some disagreements are related to the fixed length of the rationales and the tendency of the rationales to contain content words related to the aspect itself.\",\n}\n",
+    "authors": [
+        "Joachim Wagner",
+        "Jennifer Foster"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.807.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/3c2b0313-0954-5b99-b8aa-3526d2a677ba.pdf",
+    "abstract": "We examine the behaviour of an aspect-based sentiment classifier built by fine-tuning the BERT BASE model on the SemEval 2016 English dataset. In a set of masking experiments, we examine the extent to which the tokens identified as salient by LIME and a gradient-based method are being used by the classifier. We find that both methods are able to produce faithful rationales, with LIME outperforming the gradient-based method. We also identify a set of manually annotated sentiment expressions for this dataset, and carry out more masking experiments with these as human rationales. The enhanced performance of a classifier that only sees the relevant sentiment expressions suggests that they are not being used to their full potential. A comparison of the LIME and gradient rationales with the sentiment expressions reveals only a moderate level of agreement. Some disagreements are related to the fixed length of the rationales and the tendency of the rationales to contain content words related to the aspect itself.",
+    "num_pages": 19
+}

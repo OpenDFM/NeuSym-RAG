@@ -1,0 +1,17 @@
+{
+    "uuid": "21d9ba39-472f-5662-a496-f4ac2452e168",
+    "title": "Linear-time Minimum Bayes Risk Decoding with Reference Aggregation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{vamvas-sennrich-2024-linear,\n    title = \"Linear-time Minimum {B}ayes Risk Decoding with Reference Aggregation\",\n    author = \"Vamvas, Jannis  and\n      Sennrich, Rico\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-short.71\",\n    doi = \"10.18653/v1/2024.acl-short.71\",\n    pages = \"790--801\",\n    abstract = \"Minimum Bayes Risk (MBR) decoding is a text generation technique that has been shown to improve the quality of machine translations, but is expensive, even if a sampling-based approximation is used. Besides requiring a large number of sampled sequences, it requires the pairwise calculation of a utility metric, which has quadratic complexity. In this paper, we propose to approximate pairwise metric scores with scores calculated against aggregated reference representations. This changes the complexity of utility estimation from $O(n^2)$ to $O(n)$, while empirically preserving most of the quality gains of MBR decoding. We release our source code.\",\n}\n",
+    "authors": [
+        "Jannis Vamvas",
+        "Rico Sennrich"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-short.71.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/21d9ba39-472f-5662-a496-f4ac2452e168.pdf",
+    "abstract": "Minimum Bayes Risk (MBR) decoding is a text generation technique that has been shown to improve the quality of machine translations, but is expensive, even if a sampling-based approximation is used. Besides requiring a large number of sampled sequences, it requires the pairwise calculation of a utility metric, which has quadratic complexity. In this paper, we propose to approximate pairwise metric scores with scores calculated against aggregated reference representations. This changes the complexity of utility estimation from O(n2) to O(n), while empirically preserving most of the quality gains of MBR decoding. We release our source code.",
+    "num_pages": 12
+}

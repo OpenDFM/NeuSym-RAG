@@ -1,0 +1,20 @@
+{
+    "uuid": "2709d686-f0d0-5569-afce-5be052bc221f",
+    "title": "Learning to Decode Collaboratively with Multiple Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{shen-etal-2024-learning,\n    title = \"Learning to Decode Collaboratively with Multiple Language Models\",\n    author = \"Shen, Zejiang  and\n      Lang, Hunter  and\n      Wang, Bailin  and\n      Kim, Yoon  and\n      Sontag, David\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.701\",\n    doi = \"10.18653/v1/2024.acl-long.701\",\n    pages = \"12974--12990\",\n    abstract = \"We propose a method to teach multiple large language models (LLM) to collaborate by interleaving their generations at the token level. We model the decision of which LLM generates the next token as a latent variable. By optimizing the marginal likelihood of a training set under our latent variable model, the base LLM automatically learns when to generate itself and when to call on one of the {``}assistant{''} language models to generate, all without direct supervision. Token-level collaboration during decoding allows for a fusion of each model{'}s expertise in a manner tailored to the specific task at hand. Our collaborative decoding is especially useful in cross-domain settings where a generalist base LLM learns to invoke domain expert models. On instruction-following, domain-specific QA, and reasoning tasks, we show that the performance of the joint system exceeds that of the individual models. Through qualitative analysis, we show models trained with our method exhibit several interesting collaboration patterns, e.g., template-filling, by visualizing the learned latent decisions.\",\n}\n",
+    "authors": [
+        "Zejiang Shen",
+        "Hunter Lang",
+        "Bailin Wang",
+        "Yoon Kim",
+        "David Sontag"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.701.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/2709d686-f0d0-5569-afce-5be052bc221f.pdf",
+    "abstract": "We propose a method to teach multiple large language models (LLM) to collaborate by interleaving their generations at the token level. We model the decision of which LLM generates the next token as a latent variable. By optimizing the marginal likelihood of a training set under our latent variable model, the base LLM automatically learns when to generate itself and when to call on one of the “assistant” language models to generate, all without direct supervision. Token-level collaboration during decoding allows for a fusion of each model’s expertise in a manner tailored to the specific task at hand. Our collaborative decoding is especially useful in cross-domain settings where a generalist base LLM learns to invoke domain expert models. On instruction-following, domain-specific QA, and reasoning tasks, we show that the performance of the joint system exceeds that of the individual models. Through qualitative analysis, we show models trained with our method exhibit several interesting collaboration patterns, e.g., template-filling, by visualizing the learned latent decisions.",
+    "num_pages": 17
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "962e167d-bbaa-50f1-98d0-daca9b4b3899",
+    "title": "DiscoPrompt: Path Prediction Prompt Tuning for Implicit Discourse Relation Recognition",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{chan-etal-2023-discoprompt,\n    title = \"{D}isco{P}rompt: Path Prediction Prompt Tuning for Implicit Discourse Relation Recognition\",\n    author = \"Chan, Chunkit  and\n      Liu, Xin  and\n      Cheng, Jiayang  and\n      Li, Zihan  and\n      Song, Yangqiu  and\n      Wong, Ginny  and\n      See, Simon\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.4\",\n    doi = \"10.18653/v1/2023.findings-acl.4\",\n    pages = \"35--57\",\n    abstract = \"Implicit Discourse Relation Recognition (IDRR) is a sophisticated and challenging task to recognize the discourse relations between the arguments with the absence of discourse connectives. The sense labels for each discourse relation follow a hierarchical classification scheme in the annotation process (Prasad et al., 2008), forming a hierarchy structure. Most existing works do not well incorporate the hierarchy structure but focus on the syntax features and the prior knowledge of connectives in the manner of pure text classification. We argue that it is more effective to predict the paths inside the hierarchical tree (e.g., {``}Comparison -{\\textgreater} Contrast -{\\textgreater} however{''}) rather than flat labels (e.g., Contrast) or connectives (e.g., however). We propose a prompt-based path prediction method to utilize the interactive information and intrinsic senses among the hierarchy in IDRR. This is the first work that injects such structure information into pre-trained language models via prompt tuning, and the performance of our solution shows significant and consistent improvement against competitive baselines.\",\n}\n",
+    "authors": [
+        "Chunkit Chan",
+        "Xin Liu",
+        "Jiayang Cheng",
+        "Zihan Li",
+        "Yangqiu Song",
+        "Ginny Wong",
+        "Simon See"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.4.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/962e167d-bbaa-50f1-98d0-daca9b4b3899.pdf",
+    "abstract": "Implicit Discourse Relation Recognition (IDRR) is a sophisticated and challenging task to recognize the discourse relations between the arguments with the absence of discourse connectives. The sense labels for each discourse relation follow a hierarchical classification scheme in the annotation process (Prasad et al., 2008), forming a hierarchy structure. Most existing works do not well incorporate the hierarchy structure but focus on the syntax features and the prior knowledge of connectives in the manner of pure text classification. We argue that it is more effective to predict the paths inside the hierarchical tree (e.g., “Comparison -> Contrast -> however”) rather than flat labels (e.g., Contrast) or connectives (e.g., however). We propose a prompt-based path prediction method to utilize the interactive information and intrinsic senses among the hierarchy in IDRR. This is the first work that injects such structure information into pre-trained language models via prompt tuning, and the performance of our solution shows significant and consistent improvement against competitive baselines.",
+    "num_pages": 23
+}

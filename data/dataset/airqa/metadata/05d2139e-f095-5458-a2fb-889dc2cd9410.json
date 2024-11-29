@@ -1,0 +1,20 @@
+{
+    "uuid": "05d2139e-f095-5458-a2fb-889dc2cd9410",
+    "title": "Privacy-Preserving Domain Adaptation of Semantic Parsers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{mireshghallah-etal-2023-privacy,\n    title = \"Privacy-Preserving Domain Adaptation of Semantic Parsers\",\n    author = \"Mireshghallah, Fatemehsadat  and\n      Su, Yu  and\n      Hashimoto, Tatsunori  and\n      Eisner, Jason  and\n      Shin, Richard\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.271\",\n    doi = \"10.18653/v1/2023.acl-long.271\",\n    pages = \"4950--4970\",\n    abstract = \"Task-oriented dialogue systems often assist users with personal or confidential matters. For this reason, the developers of such a system are generally prohibited from observing actual usage. So how can they know where the system is failing and needs more training data or new functionality? In this work, we study ways in which realistic user utterances can be generated synthetically, to help increase the linguistic and functional coverage of the system, without compromising the privacy of actual users. To this end, we propose a two-stage Differentially Private (DP) generation method which first generates latent semantic parses, and then generates utterances based on the parses. Our proposed approach improves MAUVE by 2.5X and parse tree function-type overlap by 1.3X relative to current approaches for private synthetic data generation, improving both on fluency and semantic coverage. We further validate our approach on a realistic domain adaptation task of adding new functionality from private user data to a semantic parser, and show overall gains of 8.5{\\%} points on its accuracy with the new feature.\",\n}\n",
+    "authors": [
+        "Fatemehsadat Mireshghallah",
+        "Yu Su",
+        "Tatsunori Hashimoto",
+        "Jason Eisner",
+        "Richard Shin"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.271.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/05d2139e-f095-5458-a2fb-889dc2cd9410.pdf",
+    "abstract": "Task-oriented dialogue systems often assist users with personal or confidential matters. For this reason, the developers of such a system are generally prohibited from observing actual usage. So how can they know where the system is failing and needs more training data or new functionality? In this work, we study ways in which realistic user utterances can be generated synthetically, to help increase the linguistic and functional coverage of the system, without compromising the privacy of actual users. To this end, we propose a two-stage Differentially Private (DP) generation method which first generates latent semantic parses, and then generates utterances based on the parses. Our proposed approach improves MAUVE by 2.5X and parse tree function-type overlap by 1.3X relative to current approaches for private synthetic data generation, improving both on fluency and semantic coverage. We further validate our approach on a realistic domain adaptation task of adding new functionality from private user data to a semantic parser, and show overall gains of 8.5% points on its accuracy with the new feature.",
+    "num_pages": 21
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "37cc4edb-1968-5a3f-bb9b-96f680516511",
+    "title": "DICE: Data-Efficient Clinical Event Extraction with Generative Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ma-etal-2023-dice,\n    title = \"{DICE}: Data-Efficient Clinical Event Extraction with Generative Models\",\n    author = \"Ma, Mingyu Derek  and\n      Taylor, Alexander  and\n      Wang, Wei  and\n      Peng, Nanyun\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.886\",\n    doi = \"10.18653/v1/2023.acl-long.886\",\n    pages = \"15898--15917\",\n    abstract = \"Event extraction for the clinical domain is an under-explored research area. The lack of training data along with the high volume of domain-specific terminologies with vague entity boundaries makes the task especially challenging. In this paper, we introduce DICE, a robust and data-efficient generative model for clinical event extraction. DICE frames event extraction as a conditional generation problem and introduces a contrastive learning objective to accurately decide the boundaries of biomedical mentions. DICE also trains an auxiliary mention identification task jointly with event extraction tasks to better identify entity mention boundaries, and further introduces special markers to incorporate identified entity mentions as trigger and argument candidates for their respective tasks. To benchmark clinical event extraction, we compose MACCROBAT-EE, the first clinical event extraction dataset with argument annotation, based on an existing clinical information extraction dataset MACCROBAT. Our experiments demonstrate state-of-the-art performances of DICE for clinical and news domain event extraction, especially under low data settings.\",\n}\n",
+    "authors": [
+        "Mingyu Derek Ma",
+        "Alexander Taylor",
+        "Wei Wang",
+        "Nanyun Peng"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.886.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/37cc4edb-1968-5a3f-bb9b-96f680516511.pdf",
+    "abstract": "Event extraction for the clinical domain is an under-explored research area. The lack of training data along with the high volume of domain-specific terminologies with vague entity boundaries makes the task especially challenging. In this paper, we introduce DICE, a robust and data-efficient generative model for clinical event extraction. DICE frames event extraction as a conditional generation problem and introduces a contrastive learning objective to accurately decide the boundaries of biomedical mentions. DICE also trains an auxiliary mention identification task jointly with event extraction tasks to better identify entity mention boundaries, and further introduces special markers to incorporate identified entity mentions as trigger and argument candidates for their respective tasks. To benchmark clinical event extraction, we compose MACCROBAT-EE, the first clinical event extraction dataset with argument annotation, based on an existing clinical information extraction dataset MACCROBAT. Our experiments demonstrate state-of-the-art performances of DICE for clinical and news domain event extraction, especially under low data settings.",
+    "num_pages": 20
+}

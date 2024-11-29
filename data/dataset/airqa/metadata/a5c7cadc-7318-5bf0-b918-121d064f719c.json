@@ -1,0 +1,17 @@
+{
+    "uuid": "a5c7cadc-7318-5bf0-b918-121d064f719c",
+    "title": "Evaluating Extrapolation Ability of Large Language Model in Chemical Domain",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 1st Workshop on Language + Molecules (L+M 2024)",
+    "bibtex": "@inproceedings{cha-lee-2024-evaluating,\n    title = \"Evaluating Extrapolation Ability of Large Language Model in Chemical Domain\",\n    author = \"Cha, Taehun  and\n      Lee, Donghun\",\n    editor = \"Edwards, Carl  and\n      Wang, Qingyun  and\n      Li, Manling  and\n      Zhao, Lawrence  and\n      Hope, Tom  and\n      Ji, Heng\",\n    booktitle = \"Proceedings of the 1st Workshop on Language + Molecules (L+M 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.langmol-1.4\",\n    doi = \"10.18653/v1/2024.langmol-1.4\",\n    pages = \"28--33\",\n    abstract = \"Solving a problem outside the training space, i.e. extrapolation, has been a long problem in the machine learning community. The current success of large language models demonstrates the LLM{'}s extrapolation ability to several unseen tasks. In line with these works, we evaluate the LLM{''}s extrapolation ability in the chemical domain. We construct a data set measuring the material properties of epoxy polymers depending on various raw materials and curing processes. LLM should predict the material property when novel raw material is introduced utilizing its chemical knowledge. Through experiments, LLM tends to choose the right direction of adjustment but fails to determine the exact degree, resulting in poor MAE on some properties. But LLM can successfully adjust the degree with only a one-shot example. The results show that LLM can extrapolate to new unseen material utilizing its chemical knowledge learned through massive pre-training.\",\n}\n",
+    "authors": [
+        "Taehun Cha",
+        "Donghun Lee"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.langmol-1.4.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a5c7cadc-7318-5bf0-b918-121d064f719c.pdf",
+    "abstract": "Solving a problem outside the training space, i.e. extrapolation, has been a long problem in the machine learning community. The current success of large language models demonstrates the LLM’s extrapolation ability to several unseen tasks. In line with these works, we evaluate the LLM”s extrapolation ability in the chemical domain. We construct a data set measuring the material properties of epoxy polymers depending on various raw materials and curing processes. LLM should predict the material property when novel raw material is introduced utilizing its chemical knowledge. Through experiments, LLM tends to choose the right direction of adjustment but fails to determine the exact degree, resulting in poor MAE on some properties. But LLM can successfully adjust the degree with only a one-shot example. The results show that LLM can extrapolate to new unseen material utilizing its chemical knowledge learned through massive pre-training.",
+    "num_pages": 6
+}

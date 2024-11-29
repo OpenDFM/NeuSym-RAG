@@ -1,0 +1,21 @@
+{
+    "uuid": "180afe43-e7db-55b9-a7da-392e3ffb73eb",
+    "title": "Retrieval-augmented generation in multilingual settings",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 1st Workshop on Towards Knowledgeable Language Models (KnowLLM 2024)",
+    "bibtex": "@inproceedings{chirkova-etal-2024-retrieval,\n    title = \"Retrieval-augmented generation in multilingual settings\",\n    author = \"Chirkova, Nadezhda  and\n      Rau, David  and\n      D{\\'e}jean, Herv{\\'e}  and\n      Formal, Thibault  and\n      Clinchant, St{\\'e}phane  and\n      Nikoulina, Vassilina\",\n    editor = \"Li, Sha  and\n      Li, Manling  and\n      Zhang, Michael JQ  and\n      Choi, Eunsol  and\n      Geva, Mor  and\n      Hase, Peter  and\n      Ji, Heng\",\n    booktitle = \"Proceedings of the 1st Workshop on Towards Knowledgeable Language Models (KnowLLM 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.knowllm-1.15\",\n    doi = \"10.18653/v1/2024.knowllm-1.15\",\n    pages = \"177--188\",\n    abstract = \"Retrieval-augmented generation (RAG) has recently emerged as a promising solution for incorporating up-to-date or domain-specific knowledge into large language models (LLMs) and improving LLM factuality, but is predominantly studied in English-only settings. In this work, we consider RAG in the multilingual setting (mRAG), i.e. with user queries and the datastore in 13 languages, and investigate which components and with which adjustments are needed to build a well-performing mRAG pipeline, that can be used as a strong baseline in future works. Our findings highlight that despite the availability of high-quality off-the-shelf multilingual retrievers and generators, task-specific prompt engineering is needed to enable generation in user languages. Moreover, current evaluation metrics need adjustments for multilingual setting, to account for variations in spelling named entities. The main limitations to be addressed in future works include frequent code-switching in non-Latin alphabet languages, occasional fluency errors, wrong reading of the provided documents, or irrelevant retrieval. We release the code for the resulting mRAG baseline pipeline at https://github.com/naver/bergen, Documentation: https://github.com/naver/bergen/blob/main/documentations/multilingual.md.\",\n}\n",
+    "authors": [
+        "Nadezhda Chirkova",
+        "David Rau",
+        "Hervé Déjean",
+        "Thibault Formal",
+        "Stéphane Clinchant",
+        "Vassilina Nikoulina"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.knowllm-1.15.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/180afe43-e7db-55b9-a7da-392e3ffb73eb.pdf",
+    "abstract": "Retrieval-augmented generation (RAG) has recently emerged as a promising solution for incorporating up-to-date or domain-specific knowledge into large language models (LLMs) and improving LLM factuality, but is predominantly studied in English-only settings. In this work, we consider RAG in the multilingual setting (mRAG), i.e. with user queries and the datastore in 13 languages, and investigate which components and with which adjustments are needed to build a well-performing mRAG pipeline, that can be used as a strong baseline in future works. Our findings highlight that despite the availability of high-quality off-the-shelf multilingual retrievers and generators, task-specific prompt engineering is needed to enable generation in user languages. Moreover, current evaluation metrics need adjustments for multilingual setting, to account for variations in spelling named entities. The main limitations to be addressed in future works include frequent code-switching in non-Latin alphabet languages, occasional fluency errors, wrong reading of the provided documents, or irrelevant retrieval. We release the code for the resulting mRAG baseline pipeline at https://github.com/naver/bergen, Documentation: https://github.com/naver/bergen/blob/main/documentations/multilingual.md.",
+    "num_pages": 12
+}

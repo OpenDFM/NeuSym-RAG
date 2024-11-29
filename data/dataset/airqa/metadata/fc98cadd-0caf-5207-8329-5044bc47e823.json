@@ -1,0 +1,21 @@
+{
+    "uuid": "fc98cadd-0caf-5207-8329-5044bc47e823",
+    "title": "Evaluating the Validity of Word-level Adversarial Attacks with Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhou-etal-2024-evaluating-validity,\n    title = \"Evaluating the Validity of Word-level Adversarial Attacks with Large Language Models\",\n    author = \"Zhou, Huichi  and\n      Wang, Zhaoyang  and\n      Wang, Hongtao  and\n      Chen, Dongping  and\n      Mu, Wenhan  and\n      Zhang, Fangyuan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.292\",\n    doi = \"10.18653/v1/2024.findings-acl.292\",\n    pages = \"4902--4922\",\n    abstract = \"Deep neural networks exhibit vulnerability to word-level adversarial attacks in natural language processing. Most of these attack methods adopt synonymous substitutions to perturb original samples for crafting adversarial examples while attempting to maintain semantic consistency with the originals. Some of them claim that they could achieve over 90{\\%} attack success rate, thereby raising serious safety concerns. However, our investigation reveals that many purportedly successful adversarial examples are actually invalid due to significant changes in semantic meanings compared to their originals. Even when equipped with semantic constraints such as BERTScore, existing attack methods can generate up to 87.9{\\%} invalid adversarial examples. Building on this insight, we first curate a 13K dataset for adversarial validity evaluation with the help of GPT-4. Then, an open-source large language model is fine-tuned to offer an interpretable validity score for assessing the semantic consistency between original and adversarial examples. Finally, this validity score can serve as a guide for existing adversarial attack methods to generate valid adversarial examples. Comprehensive experiments demonstrate the effectiveness of our method in evaluating and refining the quality of adversarial examples.\",\n}\n",
+    "authors": [
+        "Huichi Zhou",
+        "Zhaoyang Wang",
+        "Hongtao Wang",
+        "Dongping Chen",
+        "Wenhan Mu",
+        "Fangyuan Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.292.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/fc98cadd-0caf-5207-8329-5044bc47e823.pdf",
+    "abstract": "Deep neural networks exhibit vulnerability to word-level adversarial attacks in natural language processing. Most of these attack methods adopt synonymous substitutions to perturb original samples for crafting adversarial examples while attempting to maintain semantic consistency with the originals. Some of them claim that they could achieve over 90% attack success rate, thereby raising serious safety concerns. However, our investigation reveals that many purportedly successful adversarial examples are actually invalid due to significant changes in semantic meanings compared to their originals. Even when equipped with semantic constraints such as BERTScore, existing attack methods can generate up to 87.9% invalid adversarial examples. Building on this insight, we first curate a 13K dataset for adversarial validity evaluation with the help of GPT-4. Then, an open-source large language model is fine-tuned to offer an interpretable validity score for assessing the semantic consistency between original and adversarial examples. Finally, this validity score can serve as a guide for existing adversarial attack methods to generate valid adversarial examples. Comprehensive experiments demonstrate the effectiveness of our method in evaluating and refining the quality of adversarial examples.",
+    "num_pages": 21
+}

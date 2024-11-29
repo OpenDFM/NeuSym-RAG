@@ -1,0 +1,19 @@
+{
+    "uuid": "6ef68131-00b0-5b81-a123-fc28a777dafa",
+    "title": "Teaching Large Language Models an Unseen Language on the Fly",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhang-etal-2024-teaching,\n    title = \"Teaching Large Language Models an Unseen Language on the Fly\",\n    author = \"Zhang, Chen  and\n      Liu, Xiao  and\n      Lin, Jiuheng  and\n      Feng, Yansong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.519\",\n    doi = \"10.18653/v1/2024.findings-acl.519\",\n    pages = \"8783--8800\",\n    abstract = \"Existing large language models struggle to support numerous low-resource languages, particularly the extremely low-resource ones, for which there is minimal training data available for effective parameter updating. We thus investigate whether LLMs can learn a new language on the fly solely through prompting. To study this question, we collect a research suite for Zhuang, a language supported by no LLMs currently. We introduce DiPMT++, a framework for adapting LLMs to unseen languages by in-context learning. Using a dictionary and 5K parallel sentences only, DiPMT++ significantly enhances the performance of GPT-4 from 0 to 16 BLEU for Chinese-to-Zhuang translation and achieves 32 BLEU for Zhuang-to-Chinese translation. We also validate the effectiveness of our framework on Kalamang, another unseen language. Furthermore, we demonstrate the practical utility of DiPMT++ in aiding humans in translating completely unseen languages, which could contribute to the preservation of linguistic diversity.\",\n}\n",
+    "authors": [
+        "Chen Zhang",
+        "Xiao Liu",
+        "Jiuheng Lin",
+        "Yansong Feng"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.519.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/6ef68131-00b0-5b81-a123-fc28a777dafa.pdf",
+    "abstract": "Existing large language models struggle to support numerous low-resource languages, particularly the extremely low-resource ones, for which there is minimal training data available for effective parameter updating. We thus investigate whether LLMs can learn a new language on the fly solely through prompting. To study this question, we collect a research suite for Zhuang, a language supported by no LLMs currently. We introduce DiPMT++, a framework for adapting LLMs to unseen languages by in-context learning. Using a dictionary and 5K parallel sentences only, DiPMT++ significantly enhances the performance of GPT-4 from 0 to 16 BLEU for Chinese-to-Zhuang translation and achieves 32 BLEU for Zhuang-to-Chinese translation. We also validate the effectiveness of our framework on Kalamang, another unseen language. Furthermore, we demonstrate the practical utility of DiPMT++ in aiding humans in translating completely unseen languages, which could contribute to the preservation of linguistic diversity.",
+    "num_pages": 18
+}

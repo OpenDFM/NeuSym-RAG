@@ -1,0 +1,23 @@
+{
+    "uuid": "d504d30d-6b86-5066-972f-52608839f65c",
+    "title": "MARVEL: Unlocking the Multi-Modal Capability of Dense Retrieval via Visual Module Plugin",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhou-etal-2024-marvel,\n    title = \"{MARVEL}: Unlocking the Multi-Modal Capability of Dense Retrieval via Visual Module Plugin\",\n    author = \"Zhou, Tianshuo  and\n      Mei, Sen  and\n      Li, Xinze  and\n      Liu, Zhenghao  and\n      Xiong, Chenyan  and\n      Liu, Zhiyuan  and\n      Gu, Yu  and\n      Yu, Ge\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.783\",\n    doi = \"10.18653/v1/2024.acl-long.783\",\n    pages = \"14608--14624\",\n    abstract = \"This paper proposes Multi-modAl Retrieval model via Visual modulE pLugin (MARVEL), which learns an embedding space for queries and multi-modal documents to conduct retrieval. MARVEL encodes queries and multi-modal documents with a unified encoder model, which helps to alleviate the modality gap between images and texts. Specifically, we enable the image understanding ability of the well-trained dense retriever, T5-ANCE, by incorporating the visual module{'}s encoded image features as its inputs. To facilitate the multi-modal retrieval tasks, we build the ClueWeb22-MM dataset based on the ClueWeb22 dataset, which regards anchor texts as queries, and extracts the related text and image documents from anchor-linked web pages. Our experiments show that MARVEL significantly outperforms the state-of-the-art methods on the multi-modal retrieval dataset WebQA and ClueWeb22-MM. MARVEL provides an opportunity to broaden the advantages of text retrieval to the multi-modal scenario. Besides, we also illustrate that the language model has the ability to extract image semantics and partly map the image features to the input word embedding space. All codes are available at https://github.com/OpenMatch/MARVEL.\",\n}\n",
+    "authors": [
+        "Tianshuo Zhou",
+        "Sen Mei",
+        "Xinze Li",
+        "Zhenghao Liu",
+        "Chenyan Xiong",
+        "Zhiyuan Liu",
+        "Yu Gu",
+        "Ge Yu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.783.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d504d30d-6b86-5066-972f-52608839f65c.pdf",
+    "abstract": "This paper proposes Multi-modAl Retrieval model via Visual modulE pLugin (MARVEL), which learns an embedding space for queries and multi-modal documents to conduct retrieval. MARVEL encodes queries and multi-modal documents with a unified encoder model, which helps to alleviate the modality gap between images and texts. Specifically, we enable the image understanding ability of the well-trained dense retriever, T5-ANCE, by incorporating the visual module’s encoded image features as its inputs. To facilitate the multi-modal retrieval tasks, we build the ClueWeb22-MM dataset based on the ClueWeb22 dataset, which regards anchor texts as queries, and extracts the related text and image documents from anchor-linked web pages. Our experiments show that MARVEL significantly outperforms the state-of-the-art methods on the multi-modal retrieval dataset WebQA and ClueWeb22-MM. MARVEL provides an opportunity to broaden the advantages of text retrieval to the multi-modal scenario. Besides, we also illustrate that the language model has the ability to extract image semantics and partly map the image features to the input word embedding space. All codes are available at https://github.com/OpenMatch/MARVEL.",
+    "num_pages": 17
+}

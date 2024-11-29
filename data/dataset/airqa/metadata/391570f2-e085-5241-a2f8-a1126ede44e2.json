@@ -1,0 +1,22 @@
+{
+    "uuid": "391570f2-e085-5241-a2f8-a1126ede44e2",
+    "title": "Pinpointing Diffusion Grid Noise to Enhance Aspect Sentiment Quad Prediction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhu-etal-2024-pinpointing,\n    title = \"Pinpointing Diffusion Grid Noise to Enhance Aspect Sentiment Quad Prediction\",\n    author = \"Zhu, Linan  and\n      Chen, Xiangfan  and\n      Guo, Xiaolei  and\n      Zhang, Chenwei  and\n      Zhu, Zhechao  and\n      Zhou, Zehai  and\n      Kong, Xiangjie\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.222\",\n    doi = \"10.18653/v1/2024.findings-acl.222\",\n    pages = \"3717--3726\",\n    abstract = \"Aspect sentiment quad prediction (ASQP) has garnered significant attention in aspect-based sentiment analysis (ABSA). Current ASQP research primarily relies on pre-trained generative language models to produce templated sequences, often complemented by grid-based auxiliary methods. Despite these efforts, the persistent challenge of generation instability remains unresolved and the effectiveness of grid methods remains underexplored in current studies. To this end, we introduce \\textbf{G}rid Noise \\textbf{D}iffusion \\textbf{P}inpoint Network (\\textbf{GDP}), a T5-based generative model aiming to tackle the issue of generation instability. The model consists of three novel modules, including Diffusion Vague Learning (DVL) to facilitate effective model learning and enhance overall robustness; Consistency Likelihood Learning (CLL) to discern the characteristics and commonalities of sentiment elements and thus reduce the impact of distributed noise; and GDP-FOR, a novel generation template, to enable models to generate outputs in a more natural way. Extensive experiments on four datasets demonstrate the remarkable effectiveness of our approach in addressing ASQP tasks.\",\n}\n",
+    "authors": [
+        "Linan Zhu",
+        "Xiangfan Chen",
+        "Xiaolei Guo",
+        "Chenwei Zhang",
+        "Zhechao Zhu",
+        "Zehai Zhou",
+        "Xiangjie Kong"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.222.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/391570f2-e085-5241-a2f8-a1126ede44e2.pdf",
+    "abstract": "Aspect sentiment quad prediction (ASQP) has garnered significant attention in aspect-based sentiment analysis (ABSA). Current ASQP research primarily relies on pre-trained generative language models to produce templated sequences, often complemented by grid-based auxiliary methods. Despite these efforts, the persistent challenge of generation instability remains unresolved and the effectiveness of grid methods remains underexplored in current studies. To this end, we introduce Grid Noise Diffusion Pinpoint Network (GDP), a T5-based generative model aiming to tackle the issue of generation instability. The model consists of three novel modules, including Diffusion Vague Learning (DVL) to facilitate effective model learning and enhance overall robustness; Consistency Likelihood Learning (CLL) to discern the characteristics and commonalities of sentiment elements and thus reduce the impact of distributed noise; and GDP-FOR, a novel generation template, to enable models to generate outputs in a more natural way. Extensive experiments on four datasets demonstrate the remarkable effectiveness of our approach in addressing ASQP tasks.",
+    "num_pages": 10
+}

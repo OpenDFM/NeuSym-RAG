@@ -1,0 +1,21 @@
+{
+    "uuid": "62edd636-6161-511c-8d94-e8ac6176df28",
+    "title": "Contrastive Training Improves Zero-Shot Classification of Semi-structured Documents",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{khalifa-etal-2023-contrastive,\n    title = \"Contrastive Training Improves Zero-Shot Classification of Semi-structured Documents\",\n    author = \"Khalifa, Muhammad  and\n      Vyas, Yogarshi  and\n      Wang, Shuai  and\n      Horwood, Graham  and\n      Mallya, Sunil  and\n      Ballesteros, Miguel\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.473\",\n    doi = \"10.18653/v1/2023.findings-acl.473\",\n    pages = \"7499--7508\",\n    abstract = \"We investigate semi-structured document classification in a zero-shot setting. Classification of semi-structured documents is more challenging than that of standard unstructured documents, as positional, layout, and style information play a vital role in interpreting such documents. The standard classification setting where categories are fixed during both training and testing falls short in dynamic environments where new classification categories could potentially emerge. We focus exclusively on the zero-shot learning setting where inference is done on new unseen classes. To address this task, we propose a matching-based approach that relies on a pairwise contrastive objective for both pretraining and fine-tuning. Our results show a significant boost in Macro F1 from the proposed pretraining step and comparable performance of the contrastive fine-tuning to a standard prediction objective in both supervised and unsupervised zero-shot settings.\",\n}\n",
+    "authors": [
+        "Muhammad Khalifa",
+        "Yogarshi Vyas",
+        "Shuai Wang",
+        "Graham Horwood",
+        "Sunil Mallya",
+        "Miguel Ballesteros"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.473.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/62edd636-6161-511c-8d94-e8ac6176df28.pdf",
+    "abstract": "We investigate semi-structured document classification in a zero-shot setting. Classification of semi-structured documents is more challenging than that of standard unstructured documents, as positional, layout, and style information play a vital role in interpreting such documents. The standard classification setting where categories are fixed during both training and testing falls short in dynamic environments where new classification categories could potentially emerge. We focus exclusively on the zero-shot learning setting where inference is done on new unseen classes. To address this task, we propose a matching-based approach that relies on a pairwise contrastive objective for both pretraining and fine-tuning. Our results show a significant boost in Macro F1 from the proposed pretraining step and comparable performance of the contrastive fine-tuning to a standard prediction objective in both supervised and unsupervised zero-shot settings.",
+    "num_pages": 10
+}

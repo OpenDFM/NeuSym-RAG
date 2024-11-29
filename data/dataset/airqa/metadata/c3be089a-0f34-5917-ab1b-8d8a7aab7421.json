@@ -1,0 +1,23 @@
+{
+    "uuid": "c3be089a-0f34-5917-ab1b-8d8a7aab7421",
+    "title": "Direct Large Language Model Alignment Through Self-Rewarding Contrastive Prompt Distillation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{liu-etal-2024-direct,\n    title = \"Direct Large Language Model Alignment Through Self-Rewarding Contrastive Prompt Distillation\",\n    author = \"Liu, Aiwei  and\n      Bai, Haoping  and\n      Lu, Zhiyun  and\n      Kong, Xiang  and\n      Wang, Xiaoming  and\n      Shan, Jiulong  and\n      Cao, Meng  and\n      Wen, Lijie\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.523\",\n    doi = \"10.18653/v1/2024.acl-long.523\",\n    pages = \"9688--9712\",\n    abstract = \"Aligning large language models (LLMs) with human expectations without human-annotated preference data is an important problem. In this paper, we propose a method to evaluate the response preference by using the output probabilities of response pairs under contrastive prompt pairs, which could achieve better performance on LLaMA2-7B and LLaMA2-13B compared to RLAIF. Based on this, we propose an automatic alignment method, Direct Large Model Alignment (DLMA). First, we use contrastive prompt pairs to automatically generate preference data. Then, we continue to evaluate the generated preference data using contrastive prompt pairs and calculate a self-rewarding score. Finally, we use the DPO algorithm to effectively align LLMs by combining this self-rewarding score. In the experimental stage, our DLMA method could surpass the RLHF method without relying on human-annotated preference data.\",\n}\n",
+    "authors": [
+        "Aiwei Liu",
+        "Haoping Bai",
+        "Zhiyun Lu",
+        "Xiang Kong",
+        "Xiaoming Wang",
+        "Jiulong Shan",
+        "Meng Cao",
+        "Lijie Wen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.523.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/c3be089a-0f34-5917-ab1b-8d8a7aab7421.pdf",
+    "abstract": "Aligning large language models (LLMs) with human expectations without human-annotated preference data is an important problem. In this paper, we propose a method to evaluate the response preference by using the output probabilities of response pairs under contrastive prompt pairs, which could achieve better performance on LLaMA2-7B and LLaMA2-13B compared to RLAIF. Based on this, we propose an automatic alignment method, Direct Large Model Alignment (DLMA). First, we use contrastive prompt pairs to automatically generate preference data. Then, we continue to evaluate the generated preference data using contrastive prompt pairs and calculate a self-rewarding score. Finally, we use the DPO algorithm to effectively align LLMs by combining this self-rewarding score. In the experimental stage, our DLMA method could surpass the RLHF method without relying on human-annotated preference data.",
+    "num_pages": 25
+}

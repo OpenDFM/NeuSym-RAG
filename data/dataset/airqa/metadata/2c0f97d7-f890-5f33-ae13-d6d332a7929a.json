@@ -1,0 +1,24 @@
+{
+    "uuid": "2c0f97d7-f890-5f33-ae13-d6d332a7929a",
+    "title": "Proofread: Fixes All Errors with One Tap",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)",
+    "bibtex": "@inproceedings{liu-etal-2024-proofread,\n    title = \"Proofread: Fixes All Errors with One Tap\",\n    author = \"Liu, Renjie  and\n      Zhang, Yanxiang  and\n      Zhu, Yun  and\n      Sun, Haicheng  and\n      Zhang, Yuanbo  and\n      Huang, Michael  and\n      Cai, Shanqing  and\n      Meng, Lei  and\n      Zhai, Shumin\",\n    editor = \"Cao, Yixin  and\n      Feng, Yang  and\n      Xiong, Deyi\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-demos.27\",\n    doi = \"10.18653/v1/2024.acl-demos.27\",\n    pages = \"286--293\",\n    abstract = \"The impressive capabilities in Large Language Models (LLMs) provide a powerful approach to reimagine users{'} typing experience. This paper demonstrates the Proofread feature in Gboard, a virtual keyboard running on mobile phones. Proofread enables seamless sentence-level and paragraph-level corrections with a single tap. We describe the complete system in this paper, from data generation, metrics design to model tuning and deployment. To obtain models with sufficient quality, we implement a careful data synthetic pipeline tailored to online use cases, design multifaceted metrics, employ a two-stage tuning approach to acquire the dedicated LLM for the feature: the Supervised Fine Tuning (SFT) for foundational quality, followed by the Reinforcement Learning (RL) tuning approach for targeted refinement. Specifically, we find sequential tuning on Rewrite and proofread tasks yields the best quality in SFT stage, and propose global and direct rewards in the RL tuning stage to seek further improvement. Extensive experiments on a human-labeled golden set showed our tuned PaLM2-XS model achieved 85.56{\\%} good ratio. We launched the feature to Pixel 8 devices by serving the model on TPU v5 in Google Cloud, with thousands of daily active users. Serving latency was significantly reduced by quantization, bucket inference, text segmentation, and speculative decoding. Our demo could be seen in Youtube.\",\n}\n",
+    "authors": [
+        "Renjie Liu",
+        "Yanxiang Zhang",
+        "Yun Zhu",
+        "Haicheng Sun",
+        "Yuanbo Zhang",
+        "Michael Huang",
+        "Shanqing Cai",
+        "Lei Meng",
+        "Shumin Zhai"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-demos.27.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/2c0f97d7-f890-5f33-ae13-d6d332a7929a.pdf",
+    "abstract": "The impressive capabilities in Large Language Models (LLMs) provide a powerful approach to reimagine users’ typing experience. This paper demonstrates the Proofread feature in Gboard, a virtual keyboard running on mobile phones. Proofread enables seamless sentence-level and paragraph-level corrections with a single tap. We describe the complete system in this paper, from data generation, metrics design to model tuning and deployment. To obtain models with sufficient quality, we implement a careful data synthetic pipeline tailored to online use cases, design multifaceted metrics, employ a two-stage tuning approach to acquire the dedicated LLM for the feature: the Supervised Fine Tuning (SFT) for foundational quality, followed by the Reinforcement Learning (RL) tuning approach for targeted refinement. Specifically, we find sequential tuning on Rewrite and proofread tasks yields the best quality in SFT stage, and propose global and direct rewards in the RL tuning stage to seek further improvement. Extensive experiments on a human-labeled golden set showed our tuned PaLM2-XS model achieved 85.56% good ratio. We launched the feature to Pixel 8 devices by serving the model on TPU v5 in Google Cloud, with thousands of daily active users. Serving latency was significantly reduced by quantization, bucket inference, text segmentation, and speculative decoding. Our demo could be seen in Youtube.",
+    "num_pages": 8
+}

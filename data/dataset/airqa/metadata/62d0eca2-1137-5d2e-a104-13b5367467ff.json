@@ -1,0 +1,20 @@
+{
+    "uuid": "62d0eca2-1137-5d2e-a104-13b5367467ff",
+    "title": "KnowComp at DialAM-2024: Fine-tuning Pre-trained Language Models for Dialogical Argument Mining with Inference Anchoring Theory",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 11th Workshop on Argument Mining (ArgMining 2024)",
+    "bibtex": "@inproceedings{wu-etal-2024-knowcomp,\n    title = \"{K}now{C}omp at {D}ial{AM}-2024: Fine-tuning Pre-trained Language Models for Dialogical Argument Mining with Inference Anchoring Theory\",\n    author = \"Wu, Yuetong  and\n      Zhou, Yukai  and\n      Xu, Baixuan  and\n      Wang, Weiqi  and\n      Song, Yangqiu\",\n    editor = \"Ajjour, Yamen  and\n      Bar-Haim, Roy  and\n      El Baff, Roxanne  and\n      Liu, Zhexiong  and\n      Skitalinskaya, Gabriella\",\n    booktitle = \"Proceedings of the 11th Workshop on Argument Mining (ArgMining 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.argmining-1.10\",\n    doi = \"10.18653/v1/2024.argmining-1.10\",\n    pages = \"103--109\",\n    abstract = \"In this paper, we present our framework for DialAM-2024 TaskA: Identification of Propositional Relations and TaskB: Identification of Illocutionary Relations. The goal of task A is to detect argumentative relations between propositions in an argumentative dialogue. i.e., Inference, Conflict, Rephrase while task B aims to detect illocutionary relations between locutions and argumentative propositions in a dialogue. e.g., Asserting, Agreeing, Arguing, Disagreeing. Noticing the definition of the relations are strict and professional under the context of IAT framework, we meticulously curate prompts which not only incorporate formal definition of the relations, but also exhibit the subtle differences between them. The PTLMs are then fine-tuned on the human-designed prompts to enhance its discrimination capability in classifying different theoretical relations by learning from the human instruction and the ground truth samples. After extensive experiments, a fine-tuned DeBERTa-v3-base model exhibits the best performance among all PTLMs with an F1 score of 78.90{\\%} on Task B. It is worth noticing that our framework ranks {\\#}2 in the ILO - General official leaderboard.\",\n}\n",
+    "authors": [
+        "Yuetong Wu",
+        "Yukai Zhou",
+        "Baixuan Xu",
+        "Weiqi Wang",
+        "Yangqiu Song"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.argmining-1.10.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/62d0eca2-1137-5d2e-a104-13b5367467ff.pdf",
+    "abstract": "In this paper, we present our framework for DialAM-2024 TaskA: Identification of Propositional Relations and TaskB: Identification of Illocutionary Relations. The goal of task A is to detect argumentative relations between propositions in an argumentative dialogue. i.e., Inference, Conflict, Rephrase while task B aims to detect illocutionary relations between locutions and argumentative propositions in a dialogue. e.g., Asserting, Agreeing, Arguing, Disagreeing. Noticing the definition of the relations are strict and professional under the context of IAT framework, we meticulously curate prompts which not only incorporate formal definition of the relations, but also exhibit the subtle differences between them. The PTLMs are then fine-tuned on the human-designed prompts to enhance its discrimination capability in classifying different theoretical relations by learning from the human instruction and the ground truth samples. After extensive experiments, a fine-tuned DeBERTa-v3-base model exhibits the best performance among all PTLMs with an F1 score of 78.90% on Task B. It is worth noticing that our framework ranks #2 in the ILO - General official leaderboard.",
+    "num_pages": 7
+}

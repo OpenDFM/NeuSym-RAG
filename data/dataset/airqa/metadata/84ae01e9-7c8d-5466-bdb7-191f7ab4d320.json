@@ -1,0 +1,24 @@
+{
+    "uuid": "84ae01e9-7c8d-5466-bdb7-191f7ab4d320",
+    "title": "QueryForm: A Simple Zero-shot Form Entity Query Framework",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wang-etal-2023-queryform,\n    title = \"{Q}uery{F}orm: A Simple Zero-shot Form Entity Query Framework\",\n    author = \"Wang, Zifeng  and\n      Zhang, Zizhao  and\n      Devlin, Jacob  and\n      Lee, Chen-Yu  and\n      Su, Guolong  and\n      Zhang, Hao  and\n      Dy, Jennifer  and\n      Perot, Vincent  and\n      Pfister, Tomas\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.255\",\n    doi = \"10.18653/v1/2023.findings-acl.255\",\n    pages = \"4146--4159\",\n    abstract = \"Zero-shot transfer learning for document understanding is a crucial yet under-investigated scenario to help reduce the high cost involved in annotating document entities. We present a novel query-based framework, QueryForm, that extracts entity values from form-like documents in a zero-shot fashion. QueryForm contains a dual prompting mechanism that composes both the document schema and a specific entity type into a query, which is used to prompt a Transformer model to perform a single entity extraction task. Furthermore, we propose to leverage large-scale query-entity pairs generated from form-like webpages with weak HTML annotations to pre-train QueryForm. By unifying pre-training and fine-tuning into the same query-based framework, QueryForm enables models to learn from structured documents containing various entities and layouts, leading to better generalization to target document types without the need for target-specific training data. QueryForm sets new state-of-the-art average F1 score on both the XFUND (+4.6{\\%} 10.1{\\%}) and the Payment (+3.2{\\%} 9.5{\\%}) zero-shot benchmark, with a smaller model size and no additional image input.\",\n}\n",
+    "authors": [
+        "Zifeng Wang",
+        "Zizhao Zhang",
+        "Jacob Devlin",
+        "Chen-Yu Lee",
+        "Guolong Su",
+        "Hao Zhang",
+        "Jennifer Dy",
+        "Vincent Perot",
+        "Tomas Pfister"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.255.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/84ae01e9-7c8d-5466-bdb7-191f7ab4d320.pdf",
+    "abstract": "Zero-shot transfer learning for document understanding is a crucial yet under-investigated scenario to help reduce the high cost involved in annotating document entities. We present a novel query-based framework, QueryForm, that extracts entity values from form-like documents in a zero-shot fashion. QueryForm contains a dual prompting mechanism that composes both the document schema and a specific entity type into a query, which is used to prompt a Transformer model to perform a single entity extraction task. Furthermore, we propose to leverage large-scale query-entity pairs generated from form-like webpages with weak HTML annotations to pre-train QueryForm. By unifying pre-training and fine-tuning into the same query-based framework, QueryForm enables models to learn from structured documents containing various entities and layouts, leading to better generalization to target document types without the need for target-specific training data. QueryForm sets new state-of-the-art average F1 score on both the XFUND (+4.6% 10.1%) and the Payment (+3.2% 9.5%) zero-shot benchmark, with a smaller model size and no additional image input.",
+    "num_pages": 14
+}

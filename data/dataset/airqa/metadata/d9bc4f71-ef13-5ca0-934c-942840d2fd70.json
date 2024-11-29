@@ -1,0 +1,19 @@
+{
+    "uuid": "d9bc4f71-ef13-5ca0-934c-942840d2fd70",
+    "title": "Concept-Based Explanations to Test for False Causal Relationships Learned by Abusive Language Classifiers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "The 7th Workshop on Online Abuse and Harms (WOAH)",
+    "bibtex": "@inproceedings{nejadgholi-etal-2023-concept,\n    title = \"Concept-Based Explanations to Test for False Causal Relationships Learned by Abusive Language Classifiers\",\n    author = \"Nejadgholi, Isar  and\n      Kiritchenko, Svetlana  and\n      Fraser, Kathleen C.  and\n      Balkir, Esma\",\n    editor = {Chung, Yi-ling  and\n      R{{\\textbackslash}\"ottger}, Paul  and\n      Nozza, Debora  and\n      Talat, Zeerak  and\n      Mostafazadeh Davani, Aida},\n    booktitle = \"The 7th Workshop on Online Abuse and Harms (WOAH)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.woah-1.14\",\n    doi = \"10.18653/v1/2023.woah-1.14\",\n    pages = \"138--149\",\n    abstract = \"Classifiers tend to learn a false causal relationship between an over-represented concept and a label, which can result in over-reliance on the concept and compromised classification accuracy. It is imperative to have methods in place that can compare different models and identify over-reliances on specific concepts. We consider three well-known abusive language classifiers trained on large English datasets and focus on the concept of negative emotions, which is an important signal but should not be learned as a sufficient feature for the label of abuse. Motivated by the definition of global sufficiency, we first examine the unwanted dependencies learned by the classifiers by assessing their accuracy on a challenge set across all decision thresholds. Further, recognizing that a challenge set might not always be available, we introduce concept-based explanation metrics to assess the influence of the concept on the labels. These explanations allow us to compare classifiers regarding the degree of false global sufficiency they have learned between a concept and a label.\",\n}\n",
+    "authors": [
+        "Isar Nejadgholi",
+        "Svetlana Kiritchenko",
+        "Kathleen C. Fraser",
+        "Esma Balkir"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.woah-1.14.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d9bc4f71-ef13-5ca0-934c-942840d2fd70.pdf",
+    "abstract": "Classifiers tend to learn a false causal relationship between an over-represented concept and a label, which can result in over-reliance on the concept and compromised classification accuracy. It is imperative to have methods in place that can compare different models and identify over-reliances on specific concepts. We consider three well-known abusive language classifiers trained on large English datasets and focus on the concept of negative emotions, which is an important signal but should not be learned as a sufficient feature for the label of abuse. Motivated by the definition of global sufficiency, we first examine the unwanted dependencies learned by the classifiers by assessing their accuracy on a challenge set across all decision thresholds. Further, recognizing that a challenge set might not always be available, we introduce concept-based explanation metrics to assess the influence of the concept on the labels. These explanations allow us to compare classifiers regarding the degree of false global sufficiency they have learned between a concept and a label.",
+    "num_pages": 12
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "781092c3-d1f6-5288-8504-54a222ff0178",
+    "title": "Adversarial Knowledge Stimulated Contrastive Prompting for Few-shot Language Learners",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zheng-etal-2023-adversarial,\n    title = \"Adversarial Knowledge Stimulated Contrastive Prompting for Few-shot Language Learners\",\n    author = \"Zheng, Kai  and\n      Sun, Qingfeng  and\n      Yang, Yaming  and\n      Lv, Tengchao  and\n      Pi, Yeyong  and\n      Zhao, Changlin  and\n      Xu, Fei  and\n      Zhang, Qi\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.852\",\n    doi = \"10.18653/v1/2023.findings-acl.852\",\n    pages = \"13495--13507\",\n    abstract = \"Prompt-based fine-tuning has boosted the performance of Pre-trained Language Models(PLMs) on few-shot Natural Language Understanding (NLU) tasks by employing task-specific prompts. Yet, PLMsare unfamiliar with prompt-style expressionsduring pre-training, which limits the few-shotlearning performance on downstream tasks. It would be desirable if the models can stimulate prompting knowledge while adaptation to specific NLU tasks. We present the Adversarial Knowledge Stimulated Contrastive Prompting (AKSCP) framework, leading to better few-shot NLU tasks for language models by implicitly stimulate knowledge from pretrained language model. In AKSCP, a novel paradigm Cloze-driven prompt is proposed for joint prompt tuning across word cloze task and prompt-based learning, forcing PLMs to stimulate prompting knowledge. We further design an Adversarial Contrastive learning method to improve the generalization ability of PLM for different downstream tasks. Experiments over a variety of NLU tasks show that AKSCP consistently outperforms state-of-the-arts for prompt-based fine-tuning.\",\n}\n",
+    "authors": [
+        "Kai Zheng",
+        "Qingfeng Sun",
+        "Yaming Yang",
+        "Tengchao Lv",
+        "Yeyong Pi",
+        "Changlin Zhao",
+        "Fei Xu",
+        "Qi Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.852.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/781092c3-d1f6-5288-8504-54a222ff0178.pdf",
+    "abstract": "Prompt-based fine-tuning has boosted the performance of Pre-trained Language Models(PLMs) on few-shot Natural Language Understanding (NLU) tasks by employing task-specific prompts. Yet, PLMsare unfamiliar with prompt-style expressionsduring pre-training, which limits the few-shotlearning performance on downstream tasks. It would be desirable if the models can stimulate prompting knowledge while adaptation to specific NLU tasks. We present the Adversarial Knowledge Stimulated Contrastive Prompting (AKSCP) framework, leading to better few-shot NLU tasks for language models by implicitly stimulate knowledge from pretrained language model. In AKSCP, a novel paradigm Cloze-driven prompt is proposed for joint prompt tuning across word cloze task and prompt-based learning, forcing PLMs to stimulate prompting knowledge. We further design an Adversarial Contrastive learning method to improve the generalization ability of PLM for different downstream tasks. Experiments over a variety of NLU tasks show that AKSCP consistently outperforms state-of-the-arts for prompt-based fine-tuning.",
+    "num_pages": 13
+}

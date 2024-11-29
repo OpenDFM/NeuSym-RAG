@@ -1,0 +1,20 @@
+{
+    "uuid": "a0be01d6-83a4-5bea-a668-ddb63f121ef1",
+    "title": "Building a Buzzer-quiz Answering System",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)",
+    "bibtex": "@inproceedings{sugiura-etal-2023-building,\n    title = \"Building a Buzzer-quiz Answering System\",\n    author = \"Sugiura, Naoya  and\n      Yamada, Kosuke  and\n      Sasano, Ryohei  and\n      Takeda, Koichi  and\n      Toyama, Katsuhiko\",\n    editor = \"Padmakumar, Vishakh  and\n      Vallejo, Gisela  and\n      Fu, Yao\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-srw.29\",\n    doi = \"10.18653/v1/2023.acl-srw.29\",\n    pages = \"194--199\",\n    abstract = \"A buzzer quiz is a genre of quiz in which multiple players simultaneously listen to a quiz being read aloud and respond it by buzzing in as soon as they can predict the answer. Because incorrect answers often result in penalties, a buzzer-quiz answering system must not only predict the answer from only part of a question but also estimate the predicted answer{'}s accuracy. In this paper, we introduce two types of buzzer-quiz answering systems: (1) a system that directly generates an answer from part of a question by using an autoregressive language model; and (2) a system that first reconstructs the entire question by using an autoregressive language model and then determines the answer according to the reconstructed question. We then propose a method to estimate the accuracy of the answers for each system by using the internal scores of each model.\",\n}\n",
+    "authors": [
+        "Naoya Sugiura",
+        "Kosuke Yamada",
+        "Ryohei Sasano",
+        "Koichi Takeda",
+        "Katsuhiko Toyama"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-srw.29.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a0be01d6-83a4-5bea-a668-ddb63f121ef1.pdf",
+    "abstract": "A buzzer quiz is a genre of quiz in which multiple players simultaneously listen to a quiz being read aloud and respond it by buzzing in as soon as they can predict the answer. Because incorrect answers often result in penalties, a buzzer-quiz answering system must not only predict the answer from only part of a question but also estimate the predicted answer’s accuracy. In this paper, we introduce two types of buzzer-quiz answering systems: (1) a system that directly generates an answer from part of a question by using an autoregressive language model; and (2) a system that first reconstructs the entire question by using an autoregressive language model and then determines the answer according to the reconstructed question. We then propose a method to estimate the accuracy of the answers for each system by using the internal scores of each model.",
+    "num_pages": 6
+}

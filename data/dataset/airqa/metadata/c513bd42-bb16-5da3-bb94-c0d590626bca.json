@@ -1,0 +1,20 @@
+{
+    "uuid": "c513bd42-bb16-5da3-bb94-c0d590626bca",
+    "title": "Domain-Agnostic Neural Architecture for Class Incremental Continual Learning in Document Processing Platform",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{wojcik-etal-2023-domain,\n    title = \"Domain-Agnostic Neural Architecture for Class Incremental Continual Learning in Document Processing Platform\",\n    author = \"W{\\'o}jcik, Mateusz  and\n      Ko{\\'s}ciukiewicz, Witold  and\n      Baran, Mateusz  and\n      Kajdanowicz, Tomasz  and\n      Gonczarek, Adam\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.51\",\n    doi = \"10.18653/v1/2023.acl-industry.51\",\n    pages = \"527--537\",\n    abstract = \"Production deployments in complex systems require ML architectures to be highly efficient and usable against multiple tasks. Particularly demanding are classification problems in which data arrives in a streaming fashion and each class is presented separately. Recent methods with stochastic gradient learning have been shown to struggle in such setups or have limitations like memory buffers, and being restricted to specific domains that disable its usage in real-world scenarios. For this reason, we present a fully differentiable architecture based on the Mixture of Experts model, that enables the training of high-performance classifiers when examples from each class are presented separately. We conducted exhaustive experiments that proved its applicability in various domains and ability to learn online in production environments. The proposed technique achieves SOTA results without a memory buffer and clearly outperforms the reference methods.\",\n}\n",
+    "authors": [
+        "Mateusz Wójcik",
+        "Witold Kościukiewicz",
+        "Mateusz Baran",
+        "Tomasz Kajdanowicz",
+        "Adam Gonczarek"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.51.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c513bd42-bb16-5da3-bb94-c0d590626bca.pdf",
+    "abstract": "Production deployments in complex systems require ML architectures to be highly efficient and usable against multiple tasks. Particularly demanding are classification problems in which data arrives in a streaming fashion and each class is presented separately. Recent methods with stochastic gradient learning have been shown to struggle in such setups or have limitations like memory buffers, and being restricted to specific domains that disable its usage in real-world scenarios. For this reason, we present a fully differentiable architecture based on the Mixture of Experts model, that enables the training of high-performance classifiers when examples from each class are presented separately. We conducted exhaustive experiments that proved its applicability in various domains and ability to learn online in production environments. The proposed technique achieves SOTA results without a memory buffer and clearly outperforms the reference methods.",
+    "num_pages": 11
+}

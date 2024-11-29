@@ -1,0 +1,18 @@
+{
+    "uuid": "f8353844-0183-5225-816f-9023a5e67eaf",
+    "title": "Prompting Language Models for Linguistic Structure",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{blevins-etal-2023-prompting,\n    title = \"Prompting Language Models for Linguistic Structure\",\n    author = \"Blevins, Terra  and\n      Gonen, Hila  and\n      Zettlemoyer, Luke\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.367\",\n    doi = \"10.18653/v1/2023.acl-long.367\",\n    pages = \"6649--6663\",\n    abstract = \"Although pretrained language models (PLMs) can be prompted to perform a wide range of language tasks, it remains an open question how much this ability comes from generalizable linguistic understanding versus surface-level lexical patterns. To test this, we present a structured prompting approach for linguistic structured prediction tasks, allowing us to perform zero- and few-shot sequence tagging with autoregressive PLMs. We evaluate this approach on part-of-speech tagging, named entity recognition, and sentence chunking, demonstrating strong few-shot performance in all cases. We also find that while PLMs contain significant prior knowledge of task labels due to task leakage into the pretraining corpus, structured prompting can also retrieve linguistic structure with arbitrary labels. These findings indicate that the in-context learning ability and linguistic knowledge of PLMs generalizes beyond memorization of their training data.\",\n}\n",
+    "authors": [
+        "Terra Blevins",
+        "Hila Gonen",
+        "Luke Zettlemoyer"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.367.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f8353844-0183-5225-816f-9023a5e67eaf.pdf",
+    "abstract": "Although pretrained language models (PLMs) can be prompted to perform a wide range of language tasks, it remains an open question how much this ability comes from generalizable linguistic understanding versus surface-level lexical patterns. To test this, we present a structured prompting approach for linguistic structured prediction tasks, allowing us to perform zero- and few-shot sequence tagging with autoregressive PLMs. We evaluate this approach on part-of-speech tagging, named entity recognition, and sentence chunking, demonstrating strong few-shot performance in all cases. We also find that while PLMs contain significant prior knowledge of task labels due to task leakage into the pretraining corpus, structured prompting can also retrieve linguistic structure with arbitrary labels. These findings indicate that the in-context learning ability and linguistic knowledge of PLMs generalizes beyond memorization of their training data.",
+    "num_pages": 15
+}

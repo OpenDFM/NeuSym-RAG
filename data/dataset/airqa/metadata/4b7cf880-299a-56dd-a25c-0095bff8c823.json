@@ -1,0 +1,18 @@
+{
+    "uuid": "4b7cf880-299a-56dd-a25c-0095bff8c823",
+    "title": "Multi-Source Test-Time Adaptation as Dueling Bandits for Extractive Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ye-etal-2023-multi,\n    title = \"Multi-Source Test-Time Adaptation as Dueling Bandits for Extractive Question Answering\",\n    author = \"Ye, Hai  and\n      Xie, Qizhe  and\n      Ng, Hwee Tou\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.537\",\n    doi = \"10.18653/v1/2023.acl-long.537\",\n    pages = \"9647--9660\",\n    abstract = \"In this work, we study multi-source test-time model adaptation from user feedback, where $K$ distinct models are established for adaptation. To allow efficient adaptation, we cast the problem as a stochastic decision-making process, aiming to determine the best adapted model after adaptation. We discuss two frameworks: multi-armed bandit learning and multi-armed dueling bandits. Compared to multi-armed bandit learning, the dueling framework allows pairwise collaboration among $K$ models, which is solved by a novel method named Co-UCB proposed in this work. Experiments on six datasets of extractive question answering (QA) show that the dueling framework using Co-UCB is more effective than other strong baselines for our studied problem.\",\n}\n",
+    "authors": [
+        "Hai Ye",
+        "Qizhe Xie",
+        "Hwee Tou Ng"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.537.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4b7cf880-299a-56dd-a25c-0095bff8c823.pdf",
+    "abstract": "In this work, we study multi-source test-time model adaptation from user feedback, where K distinct models are established for adaptation. To allow efficient adaptation, we cast the problem as a stochastic decision-making process, aiming to determine the best adapted model after adaptation. We discuss two frameworks: multi-armed bandit learning and multi-armed dueling bandits. Compared to multi-armed bandit learning, the dueling framework allows pairwise collaboration among K models, which is solved by a novel method named Co-UCB proposed in this work. Experiments on six datasets of extractive question answering (QA) show that the dueling framework using Co-UCB is more effective than other strong baselines for our studied problem.",
+    "num_pages": 14
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "c63ded95-3ceb-588e-b67e-c96b4fb5992a",
+    "title": "Incremental pre-training from smaller language models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 10th SIGHAN Workshop on Chinese Language Processing (SIGHAN-10)",
+    "bibtex": "@inproceedings{zhang-etal-2024-incremental,\n    title = \"Incremental pre-training from smaller language models\",\n    author = \"Zhang, Han  and\n      Wang, Hui  and\n      Xu, Ruifeng\",\n    editor = \"Wong, Kam-Fai  and\n      Zhang, Min  and\n      Xu, Ruifeng  and\n      Li, Jing  and\n      Wei, Zhongyu  and\n      Gui, Lin  and\n      Liang, Bin  and\n      Zhao, Runcong\",\n    booktitle = \"Proceedings of the 10th SIGHAN Workshop on Chinese Language Processing (SIGHAN-10)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.sighan-1.5\",\n    pages = \"36--44\",\n    abstract = \"Large language models have recently become a new learning paradigm and led to state-of-the-art performance across a range of tasks. As explosive open-source pre-trained models are available, it is worth investigating how to better utilize existing models. We propose a simple yet effective method, Incr-Pretrain, for incrementally pre-training language models from smaller well-trained source models. Different layer-wise transfer strategies were introduced for model augmentation including parameter copying, initial value padding, and model distillation. Experiments on multiple zero-shot learning tasks demonstrate satisfying inference performance upon transferring and promising training efficiency during continuing pre-training. Compared to training from scratch, Incr-Pretrain can save up to half the training time to get a similar testing loss.\",\n}\n",
+    "authors": [
+        "Han Zhang",
+        "Hui Wang",
+        "Ruifeng Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.sighan-1.5.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/c63ded95-3ceb-588e-b67e-c96b4fb5992a.pdf",
+    "abstract": "Large language models have recently become a new learning paradigm and led to state-of-the-art performance across a range of tasks. As explosive open-source pre-trained models are available, it is worth investigating how to better utilize existing models. We propose a simple yet effective method, Incr-Pretrain, for incrementally pre-training language models from smaller well-trained source models. Different layer-wise transfer strategies were introduced for model augmentation including parameter copying, initial value padding, and model distillation. Experiments on multiple zero-shot learning tasks demonstrate satisfying inference performance upon transferring and promising training efficiency during continuing pre-training. Compared to training from scratch, Incr-Pretrain can save up to half the training time to get a similar testing loss.",
+    "num_pages": 9
+}

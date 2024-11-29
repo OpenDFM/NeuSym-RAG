@@ -1,0 +1,20 @@
+{
+    "uuid": "c694c35e-df03-55b0-8a52-2e75877a6f06",
+    "title": "From Zero to Hero: Cold-Start Anomaly Detection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{reiss-etal-2024-zero,\n    title = \"From Zero to Hero: Cold-Start Anomaly Detection\",\n    author = \"Reiss, Tal  and\n      Kour, George  and\n      Zwerdling, Naama  and\n      Anaby Tavor, Ateret  and\n      Hoshen, Yedid\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.453\",\n    doi = \"10.18653/v1/2024.findings-acl.453\",\n    pages = \"7607--7617\",\n}\n",
+    "authors": [
+        "Tal Reiss",
+        "George Kour",
+        "Naama Zwerdling",
+        "Ateret Anaby Tavor",
+        "Yedid Hoshen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.453.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/c694c35e-df03-55b0-8a52-2e75877a6f06.pdf",
+    "abstract": "When first deploying an anomaly detection system, e.g., to detect out-of-scope queries in chatbots, there are no observed data, making data-driven approaches ineffective. Zero-shot anomaly detection methods offer a solution to such \"cold-start\" cases, but unfortunately they are often not accurate enough. This paper studies the realistic but underexplored cold-start setting where an anomaly detection model is initialized using zero-shot guidance, but subsequently receives a small number of contaminated observations (namely, that may include anomalies). The goal is to make efficient use of both the zero-shot guidance and the observations. We propose ColdFusion, a method that effectively adapts the zero-shot anomaly detector to contaminated observations. To support future development of this new setting, we propose an evaluation suite consisting of evaluation protocols and metrics.",
+    "num_pages": 11
+}

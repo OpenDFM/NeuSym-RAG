@@ -1,0 +1,18 @@
+{
+    "uuid": "8aa1f1b4-07c6-5810-a0dd-f1a66996c121",
+    "title": "Cost-effective Distillation of Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{dasgupta-etal-2023-cost,\n    title = \"Cost-effective Distillation of Large Language Models\",\n    author = \"Dasgupta, Sayantan  and\n      Cohn, Trevor  and\n      Baldwin, Timothy\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.463\",\n    doi = \"10.18653/v1/2023.findings-acl.463\",\n    pages = \"7346--7354\",\n    abstract = \"Knowledge distillation (KD) involves training a small {``}student{''} model to replicate the strong performance of a high-capacity {``}teacher{''} model, enabling efficient deployment in resource-constrained settings. Top-performing methods tend to be task- or architecture-specific and lack generalizability. Several existing approaches require pretraining of the teacher on task-specific datasets, which can be costly for large and unstable for small datasets. Here we propose an approach for improving KD through a novel distillation loss agnostic to the task and model architecture. We successfully apply our method to the distillation of the BERT-base and achieve highly competitive results from the distilled student across a range of GLUE tasks, especially for tasks with smaller datasets.\",\n}\n",
+    "authors": [
+        "Sayantan Dasgupta",
+        "Trevor Cohn",
+        "Timothy Baldwin"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.463.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8aa1f1b4-07c6-5810-a0dd-f1a66996c121.pdf",
+    "abstract": "Knowledge distillation (KD) involves training a small “student” model to replicate the strong performance of a high-capacity “teacher” model, enabling efficient deployment in resource-constrained settings. Top-performing methods tend to be task- or architecture-specific and lack generalizability. Several existing approaches require pretraining of the teacher on task-specific datasets, which can be costly for large and unstable for small datasets. Here we propose an approach for improving KD through a novel distillation loss agnostic to the task and model architecture. We successfully apply our method to the distillation of the BERT-base and achieve highly competitive results from the distilled student across a range of GLUE tasks, especially for tasks with smaller datasets.",
+    "num_pages": 9
+}

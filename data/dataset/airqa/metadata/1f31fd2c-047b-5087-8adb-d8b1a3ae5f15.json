@@ -1,0 +1,18 @@
+{
+    "uuid": "1f31fd2c-047b-5087-8adb-d8b1a3ae5f15",
+    "title": "Ixa-Med at Discharge Me! Retrieval-Assisted Generation for Streamlining Discharge Documentation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 23rd Workshop on Biomedical Natural Language Processing",
+    "bibtex": "@inproceedings{koontz-etal-2024-ixa,\n    title = \"Ixa-{M}ed at Discharge Me! Retrieval-Assisted Generation for Streamlining Discharge Documentation\",\n    author = \"Koontz, Jordan C.  and\n      Oronoz, Maite  and\n      P{\\'e}rez, Alicia\",\n    editor = \"Demner-Fushman, Dina  and\n      Ananiadou, Sophia  and\n      Miwa, Makoto  and\n      Roberts, Kirk  and\n      Tsujii, Junichi\",\n    booktitle = \"Proceedings of the 23rd Workshop on Biomedical Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.bionlp-1.57\",\n    doi = \"10.18653/v1/2024.bionlp-1.57\",\n    pages = \"658--663\",\n    abstract = \"In this paper we present our system for the BioNLP ACL{'}24 {``}Discharge Me!{''} task on automating discharge summary section generation. Using Retrieval-Augmented Generation, we combine a Large Language Model (LLM) with external knowledge to guide the generation of the target sections. Our approach generates structured patient summaries from discharge notes using an instructed LLM, retrieves relevant {``}Brief Hospital Course{''} and {``}Discharge Instructions{''} examples via BM25 and SentenceBERT, and provides this context to a frozen LLM for generation. Our top system using SentenceBERT retrieval achieves an overall score of 0.183, outperforming zero-shot baselines. We analyze performance across different aspects, discussing limitations and future research directions.\",\n}\n",
+    "authors": [
+        "Jordan C. Koontz",
+        "Maite Oronoz",
+        "Alicia Pérez"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.bionlp-1.57.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/1f31fd2c-047b-5087-8adb-d8b1a3ae5f15.pdf",
+    "abstract": "In this paper we present our system for the BioNLP ACL’24 “Discharge Me!” task on automating discharge summary section generation. Using Retrieval-Augmented Generation, we combine a Large Language Model (LLM) with external knowledge to guide the generation of the target sections. Our approach generates structured patient summaries from discharge notes using an instructed LLM, retrieves relevant “Brief Hospital Course” and “Discharge Instructions” examples via BM25 and SentenceBERT, and provides this context to a frozen LLM for generation. Our top system using SentenceBERT retrieval achieves an overall score of 0.183, outperforming zero-shot baselines. We analyze performance across different aspects, discussing limitations and future research directions.",
+    "num_pages": 6
+}

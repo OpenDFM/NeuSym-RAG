@@ -1,0 +1,20 @@
+{
+    "uuid": "a7e1379b-3280-54d4-b9be-88e8f0fdc842",
+    "title": "A Causal Framework to Quantify the Robustness of Mathematical Reasoning with Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{stolfo-etal-2023-causal,\n    title = \"A Causal Framework to Quantify the Robustness of Mathematical Reasoning with Language Models\",\n    author = \"Stolfo, Alessandro  and\n      Jin, Zhijing  and\n      Shridhar, Kumar  and\n      Schoelkopf, Bernhard  and\n      Sachan, Mrinmaya\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.32\",\n    doi = \"10.18653/v1/2023.acl-long.32\",\n    pages = \"545--561\",\n    abstract = \"We have recently witnessed a number of impressive results on hard mathematical reasoning problems with language models. At the same time, the robustness of these models has also been called into question; recent works have shown that models can rely on shallow patterns in the problem description when generating a solution. Building on the idea of behavioral testing, we propose a novel framework, which pins down the causal effect of various factors in the input, e.g., the surface form of the problem text, the operands, and math operators on the output solution. By grounding the behavioral analysis in a causal graph describing an intuitive reasoning process, we study the behavior of language models in terms of robustness and sensitivity to direct interventions in the input space. We apply our framework on a test bed of math word problems. Our analysis shows that robustness does not appear to continuously improve as a function of size, but the GPT-3 Davinci models (175B) achieve a dramatic improvement in both robustness and sensitivity compared to all other GPT variants.\",\n}\n",
+    "authors": [
+        "Alessandro Stolfo",
+        "Zhijing Jin",
+        "Kumar Shridhar",
+        "Bernhard Schoelkopf",
+        "Mrinmaya Sachan"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.32.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a7e1379b-3280-54d4-b9be-88e8f0fdc842.pdf",
+    "abstract": "We have recently witnessed a number of impressive results on hard mathematical reasoning problems with language models. At the same time, the robustness of these models has also been called into question; recent works have shown that models can rely on shallow patterns in the problem description when generating a solution. Building on the idea of behavioral testing, we propose a novel framework, which pins down the causal effect of various factors in the input, e.g., the surface form of the problem text, the operands, and math operators on the output solution. By grounding the behavioral analysis in a causal graph describing an intuitive reasoning process, we study the behavior of language models in terms of robustness and sensitivity to direct interventions in the input space. We apply our framework on a test bed of math word problems. Our analysis shows that robustness does not appear to continuously improve as a function of size, but the GPT-3 Davinci models (175B) achieve a dramatic improvement in both robustness and sensitivity compared to all other GPT variants.",
+    "num_pages": 17
+}

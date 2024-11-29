@@ -1,0 +1,19 @@
+{
+    "uuid": "135351fc-0456-534b-9725-0436a642d1a3",
+    "title": "EcoRank: Budget-Constrained Text Re-ranking Using Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{rashid-etal-2024-ecorank,\n    title = \"{E}co{R}ank: Budget-Constrained Text Re-ranking Using Large Language Models\",\n    author = \"Rashid, Muhammad  and\n      Meem, Jannat  and\n      Dong, Yue  and\n      Hristidis, Vagelis\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.773\",\n    doi = \"10.18653/v1/2024.findings-acl.773\",\n    pages = \"13049--13063\",\n    abstract = \"Large Language Models (LLMs) have achieved state-of-the-art performance in text re-ranking. This process includes queries and candidate passages in the prompts, utilizing pointwise, listwise, and pairwise prompting strategies. A limitation of these ranking strategies with LLMs is their cost: the process can become expensive due to API charges, which are based on the number of input and output tokens. We study how to maximize the re-ranking performance given a budget, by navigating the vast search spaces of prompt choices, LLM APIs, and budget splits. We propose a suite of budget-constrained methods to perform text re-ranking using a set of LLM APIs. Our most efficient method, called EcoRank, is a two-layered pipeline that jointly optimizes decisions regarding budget allocation across prompt strategies and LLM APIs. Our experimental results on four popular QA and passage reranking datasets show that EcoRank outperforms other budget-aware supervised and unsupervised baselines.\",\n}\n",
+    "authors": [
+        "Muhammad Rashid",
+        "Jannat Meem",
+        "Yue Dong",
+        "Vagelis Hristidis"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.773.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/135351fc-0456-534b-9725-0436a642d1a3.pdf",
+    "abstract": "Large Language Models (LLMs) have achieved state-of-the-art performance in text re-ranking. This process includes queries and candidate passages in the prompts, utilizing pointwise, listwise, and pairwise prompting strategies. A limitation of these ranking strategies with LLMs is their cost: the process can become expensive due to API charges, which are based on the number of input and output tokens. We study how to maximize the re-ranking performance given a budget, by navigating the vast search spaces of prompt choices, LLM APIs, and budget splits. We propose a suite of budget-constrained methods to perform text re-ranking using a set of LLM APIs. Our most efficient method, called EcoRank, is a two-layered pipeline that jointly optimizes decisions regarding budget allocation across prompt strategies and LLM APIs. Our experimental results on four popular QA and passage reranking datasets show that EcoRank outperforms other budget-aware supervised and unsupervised baselines.",
+    "num_pages": 15
+}

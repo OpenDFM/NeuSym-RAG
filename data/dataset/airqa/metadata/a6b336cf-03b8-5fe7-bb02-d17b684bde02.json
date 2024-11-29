@@ -1,0 +1,20 @@
+{
+    "uuid": "a6b336cf-03b8-5fe7-bb02-d17b684bde02",
+    "title": "MLBMIKABR at “Discharge Me!”: Concept Based Clinical Text Description Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 23rd Workshop on Biomedical Natural Language Processing",
+    "bibtex": "@inproceedings{naskar-etal-2024-mlbmikabr,\n    title = \"{MLBMIKABR} at {``}Discharge Me!{''}: Concept Based Clinical Text Description Generation\",\n    author = \"Naskar, Abir  and\n      Hocking, Jane  and\n      Chondros, Patty  and\n      Boyle, Douglas  and\n      Conway, Mike\",\n    editor = \"Demner-Fushman, Dina  and\n      Ananiadou, Sophia  and\n      Miwa, Makoto  and\n      Roberts, Kirk  and\n      Tsujii, Junichi\",\n    booktitle = \"Proceedings of the 23rd Workshop on Biomedical Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.bionlp-1.66\",\n    doi = \"10.18653/v1/2024.bionlp-1.66\",\n    pages = \"740--747\",\n    abstract = \"This paper presents a method called Concept Based Description Generation, aimed at creating summaries (Brief Hospital Course and Discharge Instructions) using source (Discharge and Radiology) texts. We propose a rule-based approach for segmenting both the source and target texts. In the target text, we not only segment the content but also identify the concept of each segment based on text patterns. Our methodology involves creating a combined summarized version of each text segment, extracting important information, and then fine-tuning a Large Language Model (LLM) to generate aspects. Subsequently, we fine-tune a new LLM using a specific aspect, the combined summary, and a list of all aspects to generate detailed descriptions for each task. This approach integrates segmentation, concept identification, summarization, and language modeling to achieve accurate and informative descriptions for medical documentation tasks. Due to lack to time, We could only train on 10000 training data.\",\n}\n",
+    "authors": [
+        "Abir Naskar",
+        "Jane Hocking",
+        "Patty Chondros",
+        "Douglas Boyle",
+        "Mike Conway"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.bionlp-1.66.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a6b336cf-03b8-5fe7-bb02-d17b684bde02.pdf",
+    "abstract": "This paper presents a method called Concept Based Description Generation, aimed at creating summaries (Brief Hospital Course and Discharge Instructions) using source (Discharge and Radiology) texts. We propose a rule-based approach for segmenting both the source and target texts. In the target text, we not only segment the content but also identify the concept of each segment based on text patterns. Our methodology involves creating a combined summarized version of each text segment, extracting important information, and then fine-tuning a Large Language Model (LLM) to generate aspects. Subsequently, we fine-tune a new LLM using a specific aspect, the combined summary, and a list of all aspects to generate detailed descriptions for each task. This approach integrates segmentation, concept identification, summarization, and language modeling to achieve accurate and informative descriptions for medical documentation tasks. Due to lack to time, We could only train on 10000 training data.",
+    "num_pages": 8
+}

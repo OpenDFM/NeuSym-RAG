@@ -31,6 +31,9 @@ TMP_DIR = os.path.join(
 )
 
 
+UUID2PAPERS: Dict[str, Any] = {}
+
+
 def get_airqa_paper_uuid(title: str, conference_year: str = 'uncategorized') -> str:
     """ Get the UUID of a paper in the AIR-QA dataset.
     - `title` should be normalized before getting UUID;
@@ -42,6 +45,25 @@ def get_airqa_paper_uuid(title: str, conference_year: str = 'uncategorized') -> 
     title = re.sub(r'[^a-z\d]', '', title.lower())
     paper = title + '-' + conference_year.lower()
     return get_uuid(paper, uuid_type='uuid5', uuid_namespace='dns')
+
+
+def get_airqa_paper_metadata(uuid_str: Optional[str] = None) -> Dict[str, Any]:
+    """ Get the metadata dict of a paper in the AIR-QA dataset.
+    """
+    global UUID2PAPERS
+    if not UUID2PAPERS:
+        metadata_dir = os.path.join(AIRQA_DIR, 'metadata')
+        files = os.listdir(metadata_dir)
+        for f in files:
+            fp = os.path.join(metadata_dir, f)
+            if fp.endswith('.json') and is_valid_uuid(os.path.basename(fp).split('.')[0]):
+                with open(fp, 'r', encoding='utf-8') as inf:
+                    paper_dict = json.load(inf)
+                    UUID2PAPERS[paper_dict['uuid']] = paper_dict
+    if uuid_str is not None:
+        assert is_valid_uuid(uuid_str) and uuid_str in UUID2PAPERS, f"Invalid UUID string: {uuid_str}."
+        return UUID2PAPERS[uuid_str]
+    return UUID2PAPERS
 
 
 def download_paper_pdf(pdf_url: str, pdf_path: str) -> Optional[str]:
@@ -359,7 +381,6 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
 
 def get_ai_research_metadata(
         pdf_path: str,
-        metadata_path: str = os.path.join(AIRQA_DIR, 'uuid2papers.json'),
         model: str = 'gpt-4o',
         temperature: float = 0.0,
         api_tools: List[str] = [],
@@ -373,7 +394,6 @@ def get_ai_research_metadata(
             - the PDF URL to download the file, e.g., https://arxiv.org/pdf/2108.12212.pdf
             - the uuid of the paper (pre-fetch the metadata collection of conference papers, see utils/airqa_utils.py)
             - the title of the paper (use scholar API calls to get the metadata)
-        metadata_path: str, used to get the metadata of the given paper uuid
         model and temperature: str, float, the language model and temperature for title inference
         api_tools: List[str], the list of scholar APIs to use, see function `extract_metadata_from_scholar_api`
         **kwargs: Dict[str, Any], other arguments that will be directly passed to the scholar API functions
@@ -393,10 +413,7 @@ def get_ai_research_metadata(
             "abstract": "..." // paper abstract text
         }
     """
-    if not os.path.exists(metadata_path):
-        metadata_dict = {}
-    with open(metadata_path, 'r', encoding='utf-8') as inf:
-        metadata_dict = json.load(inf)
+    metadata_dict = get_airqa_paper_metadata()
 
     # pdf_path: "/path/to/paper/397f31e7-2b9f-5795-a843-e29ea6b28e7a.pdf" -> "397f31e7-2b9f-5795-a843-e29ea6b28e7a"
     if pdf_path.endswith('.pdf') and not pdf_path.startswith('http') and is_valid_uuid(os.path.basename(pdf_path).split('.')[0]):
@@ -406,7 +423,7 @@ def get_ai_research_metadata(
         # [Preferred]: for published conference papers, pre-fetch metadata of all papers
         metadata = metadata_dict.get(pdf_path, {})
         if metadata == {}:
-            raise ValueError(f"Metadata for paper UUID {pdf_path} not found in {metadata_path}.")
+            raise ValueError(f"Metadata for paper UUID {pdf_path} not found locally.")
     else:
         if pdf_path.startswith('http') or pdf_path.endswith('.pdf'): # local file path or remote URL
             pdf_path = pdf_path.strip()
@@ -446,8 +463,8 @@ def get_ai_research_metadata(
 
         if write_to_json:
             # new entry added, serialize it
-            with open(metadata_path, 'w', encoding='utf8') as of:
-                json.dump(metadata_dict, of, indent=4, ensure_ascii=False)
+            with open(os.path.join(AIRQA_DIR, 'metadata', f"{metadata['uuid']}.json"), 'w', encoding='utf8') as of:
+                json.dump(metadata, of, indent=4, ensure_ascii=False)
     return metadata
 
 

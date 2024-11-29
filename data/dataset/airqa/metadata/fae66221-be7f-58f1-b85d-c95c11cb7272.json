@@ -1,0 +1,20 @@
+{
+    "uuid": "fae66221-be7f-58f1-b85d-c95c11cb7272",
+    "title": "Safe-Embed: Unveiling the Safety-Critical Knowledge of Sentence Encoders",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 1st Workshop on Towards Knowledgeable Language Models (KnowLLM 2024)",
+    "bibtex": "@inproceedings{kim-etal-2024-safe,\n    title = \"Safe-Embed: Unveiling the Safety-Critical Knowledge of Sentence Encoders\",\n    author = \"Kim, Jinseok  and\n      Jung, Jaewon  and\n      Kim, Sangyeop  and\n      Park, Sohhyung  and\n      Cho, Sungzoon\",\n    editor = \"Li, Sha  and\n      Li, Manling  and\n      Zhang, Michael JQ  and\n      Choi, Eunsol  and\n      Geva, Mor  and\n      Hase, Peter  and\n      Ji, Heng\",\n    booktitle = \"Proceedings of the 1st Workshop on Towards Knowledgeable Language Models (KnowLLM 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.knowllm-1.13\",\n    doi = \"10.18653/v1/2024.knowllm-1.13\",\n    pages = \"156--170\",\n    abstract = \"Despite the impressive capabilities of Large Language Models (LLMs) in various tasks, their vulnerability to unsafe prompts remains a critical issue. These prompts can lead LLMs to generate responses on illegal or sensitive topics, posing a significant threat to their safe and ethical use. Existing approaches address this issue using classification models, divided into LLM-based and API-based methods. LLM based models demand substantial resources and large datasets, whereas API-based models are cost-effective but might overlook linguistic nuances. With the increasing complexity of unsafe prompts, similarity search-based techniques that identify specific features of unsafe content provide a more robust and effective solution to this evolving problem. This paper investigates the potential of sentence encoders to distinguish safe from unsafe content. We introduce new pairwise datasets and the Cate021 gorical Purity (CP) metric to measure this capability. Our findings reveal both the effectiveness and limitations of existing sentence encoders, proposing directions to improve sentence encoders to operate as robust safety detectors.\",\n}\n",
+    "authors": [
+        "Jinseok Kim",
+        "Jaewon Jung",
+        "Sangyeop Kim",
+        "Sohhyung Park",
+        "Sungzoon Cho"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.knowllm-1.13.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/fae66221-be7f-58f1-b85d-c95c11cb7272.pdf",
+    "abstract": "Despite the impressive capabilities of Large Language Models (LLMs) in various tasks, their vulnerability to unsafe prompts remains a critical issue. These prompts can lead LLMs to generate responses on illegal or sensitive topics, posing a significant threat to their safe and ethical use. Existing approaches address this issue using classification models, divided into LLM-based and API-based methods. LLM based models demand substantial resources and large datasets, whereas API-based models are cost-effective but might overlook linguistic nuances. With the increasing complexity of unsafe prompts, similarity search-based techniques that identify specific features of unsafe content provide a more robust and effective solution to this evolving problem. This paper investigates the potential of sentence encoders to distinguish safe from unsafe content. We introduce new pairwise datasets and the Cate021 gorical Purity (CP) metric to measure this capability. Our findings reveal both the effectiveness and limitations of existing sentence encoders, proposing directions to improve sentence encoders to operate as robust safety detectors.",
+    "num_pages": 15
+}

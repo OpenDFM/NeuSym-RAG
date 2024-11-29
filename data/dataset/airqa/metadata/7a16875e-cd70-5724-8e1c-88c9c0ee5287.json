@@ -1,0 +1,23 @@
+{
+    "uuid": "7a16875e-cd70-5724-8e1c-88c9c0ee5287",
+    "title": "Jailbreak Open-Sourced Large Language Models via Enforced Decoding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhang-etal-2024-jailbreak,\n    title = \"Jailbreak Open-Sourced Large Language Models via Enforced Decoding\",\n    author = \"Zhang, Hangfan  and\n      Guo, Zhimeng  and\n      Zhu, Huaisheng  and\n      Cao, Bochuan  and\n      Lin, Lu  and\n      Jia, Jinyuan  and\n      Chen, Jinghui  and\n      Wu, Dinghao\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.299\",\n    doi = \"10.18653/v1/2024.acl-long.299\",\n    pages = \"5475--5493\",\n    abstract = \"Large Language Models (LLMs) have achieved unprecedented performance in Natural Language Generation (NLG) tasks. However, many existing studies have shown that they could be misused to generate undesired content. In response, before releasing LLMs for public access, model developers usually align those language models through Supervised Fine-Tuning (SFT) or Reinforcement Learning with Human Feedback (RLHF). Consequently, those aligned large language models refuse to generate undesired content when facing potentially harmful/unethical requests. A natural question is {``}could alignment really prevent those open-sourced large language models from being misused to generate undesired content?{''}. In this work, we provide a negative answer to this question. In particular, we show those open-sourced, aligned large language models could be easily misguided to generate undesired content without heavy computations or careful prompt designs. Our key idea is to directly manipulate the generation process of open-sourced LLMs to misguide it to generate undesired content including harmful or biased information and even private data. We evaluate our method on 4 open-sourced LLMs accessible publicly and our finding highlights the need for more advanced mitigation strategies for open-sourced LLMs.\",\n}\n",
+    "authors": [
+        "Hangfan Zhang",
+        "Zhimeng Guo",
+        "Huaisheng Zhu",
+        "Bochuan Cao",
+        "Lu Lin",
+        "Jinyuan Jia",
+        "Jinghui Chen",
+        "Dinghao Wu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.299.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7a16875e-cd70-5724-8e1c-88c9c0ee5287.pdf",
+    "abstract": "Large Language Models (LLMs) have achieved unprecedented performance in Natural Language Generation (NLG) tasks. However, many existing studies have shown that they could be misused to generate undesired content. In response, before releasing LLMs for public access, model developers usually align those language models through Supervised Fine-Tuning (SFT) or Reinforcement Learning with Human Feedback (RLHF). Consequently, those aligned large language models refuse to generate undesired content when facing potentially harmful/unethical requests. A natural question is “could alignment really prevent those open-sourced large language models from being misused to generate undesired content?”. In this work, we provide a negative answer to this question. In particular, we show those open-sourced, aligned large language models could be easily misguided to generate undesired content without heavy computations or careful prompt designs. Our key idea is to directly manipulate the generation process of open-sourced LLMs to misguide it to generate undesired content including harmful or biased information and even private data. We evaluate our method on 4 open-sourced LLMs accessible publicly and our finding highlights the need for more advanced mitigation strategies for open-sourced LLMs.",
+    "num_pages": 19
+}

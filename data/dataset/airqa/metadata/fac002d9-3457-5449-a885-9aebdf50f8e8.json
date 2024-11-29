@@ -1,0 +1,23 @@
+{
+    "uuid": "fac002d9-3457-5449-a885-9aebdf50f8e8",
+    "title": "Long Context is Not Long at All: A Prospector of Long-Dependency Data for Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2024-long,\n    title = \"Long Context is Not Long at All: A Prospector of Long-Dependency Data for Large Language Models\",\n    author = \"Chen, Longze  and\n      Liu, Ziqiang  and\n      He, Wanwei  and\n      Zheng, Yinhe  and\n      Sun, Hao  and\n      Li, Yunshui  and\n      Luo, Run  and\n      Yang, Min\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.447\",\n    doi = \"10.18653/v1/2024.acl-long.447\",\n    pages = \"8222--8234\",\n    abstract = \"Long-context modeling capabilities are important for large language models (LLMs) in various applications. However, directly training LLMs with long context windows is insufficient to enhance this capability since some training samples do not exhibit strong semantic dependencies across long contexts.In this study, we propose a data mining framework ProLong that can assign each training sample with a long dependency score, which can be used to rank and filter samples that are more advantageous for enhancing long-context modeling abilities in LLM training. Specifically, we first use delta perplexity scores to measure the Dependency Strength between text segments in a given document. Then, we refine this metric based on the Dependency Distance of these segments to incorporate spatial relationships across long contexts. Final results are calibrated with a Dependency Specificity metric to prevent trivial dependencies introduced by repetitive patterns. Moreover, a random sampling approach is proposed to optimize the computational efficiency of ProLong. Comprehensive experiments on multiple benchmarks indicate that ProLong effectively identifies documents that carry long dependencies, and LLMs trained on these documents exhibit significantly enhanced long-context modeling capabilities.\",\n}\n",
+    "authors": [
+        "Longze Chen",
+        "Ziqiang Liu",
+        "Wanwei He",
+        "Yinhe Zheng",
+        "Hao Sun",
+        "Yunshui Li",
+        "Run Luo",
+        "Min Yang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.447.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/fac002d9-3457-5449-a885-9aebdf50f8e8.pdf",
+    "abstract": "Long-context modeling capabilities are important for large language models (LLMs) in various applications. However, directly training LLMs with long context windows is insufficient to enhance this capability since some training samples do not exhibit strong semantic dependencies across long contexts.In this study, we propose a data mining framework ProLong that can assign each training sample with a long dependency score, which can be used to rank and filter samples that are more advantageous for enhancing long-context modeling abilities in LLM training. Specifically, we first use delta perplexity scores to measure the Dependency Strength between text segments in a given document. Then, we refine this metric based on the Dependency Distance of these segments to incorporate spatial relationships across long contexts. Final results are calibrated with a Dependency Specificity metric to prevent trivial dependencies introduced by repetitive patterns. Moreover, a random sampling approach is proposed to optimize the computational efficiency of ProLong. Comprehensive experiments on multiple benchmarks indicate that ProLong effectively identifies documents that carry long dependencies, and LLMs trained on these documents exhibit significantly enhanced long-context modeling capabilities.",
+    "num_pages": 13
+}

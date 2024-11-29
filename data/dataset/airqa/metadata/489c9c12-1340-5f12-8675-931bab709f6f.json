@@ -1,0 +1,24 @@
+{
+    "uuid": "489c9c12-1340-5f12-8675-931bab709f6f",
+    "title": "Vision-Flan: Scaling Human-Labeled Tasks in Visual Instruction Tuning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{xu-etal-2024-vision,\n    title = \"Vision-Flan: Scaling Human-Labeled Tasks in Visual Instruction Tuning\",\n    author = \"Xu, Zhiyang  and\n      Feng, Chao  and\n      Shao, Rulin  and\n      Ashby, Trevor  and\n      Shen, Ying  and\n      Jin, Di  and\n      Cheng, Yu  and\n      Wang, Qifan  and\n      Huang, Lifu\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.905\",\n    doi = \"10.18653/v1/2024.findings-acl.905\",\n    pages = \"15271--15342\",\n    abstract = \"Despite vision-language models{'} (VLMs) remarkable capabilities as versatile visual assistants, two substantial challenges persist within the existing VLM frameworks: (1) lacking task diversity in pretraining and visual instruction tuning, and (2) annotation error and bias in GPT-4 synthesized instruction tuning data. Both challenges lead to issues such as poor generalizability, hallucination, and catastrophic forgetting. To address these challenges, we construct Vision-Flan, the most diverse publicly available visual instruction tuning dataset to date, comprising 187 diverse tasks and 1,664,261 instances sourced from academic datasets, and each task is accompanied by an expert-written instruction. In addition, we propose a two-stage instruction tuning framework, in which VLMs are firstly finetuned on Vision-Flan and further tuned on GPT-4 synthesized data. We find this two-stage tuning framework significantly outperforms the traditional single-stage visual instruction tuning framework and achieves the state-of-the-art performance across a wide range of multi-modal evaluation benchmarks. Finally, we conduct in-depth analyses to understand visual instruction tuning and our findings reveal that: (1) GPT-4 synthesized data does not substantially enhance VLMs{'} capabilities but rather modulates the model{'}s responses to human-preferred formats; (2) A minimal quantity (e.g., 1,000) of GPT-4 synthesized data can effectively align VLM responses with human-preference; (3) Visual instruction tuning mainly helps large-language models (LLMs) to understand visual features.\",\n}\n",
+    "authors": [
+        "Zhiyang Xu",
+        "Chao Feng",
+        "Rulin Shao",
+        "Trevor Ashby",
+        "Ying Shen",
+        "Di Jin",
+        "Yu Cheng",
+        "Qifan Wang",
+        "Lifu Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.905.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/489c9c12-1340-5f12-8675-931bab709f6f.pdf",
+    "abstract": "Despite vision-language models’ (VLMs) remarkable capabilities as versatile visual assistants, two substantial challenges persist within the existing VLM frameworks: (1) lacking task diversity in pretraining and visual instruction tuning, and (2) annotation error and bias in GPT-4 synthesized instruction tuning data. Both challenges lead to issues such as poor generalizability, hallucination, and catastrophic forgetting. To address these challenges, we construct Vision-Flan, the most diverse publicly available visual instruction tuning dataset to date, comprising 187 diverse tasks and 1,664,261 instances sourced from academic datasets, and each task is accompanied by an expert-written instruction. In addition, we propose a two-stage instruction tuning framework, in which VLMs are firstly finetuned on Vision-Flan and further tuned on GPT-4 synthesized data. We find this two-stage tuning framework significantly outperforms the traditional single-stage visual instruction tuning framework and achieves the state-of-the-art performance across a wide range of multi-modal evaluation benchmarks. Finally, we conduct in-depth analyses to understand visual instruction tuning and our findings reveal that: (1) GPT-4 synthesized data does not substantially enhance VLMs’ capabilities but rather modulates the model’s responses to human-preferred formats; (2) A minimal quantity (e.g., 1,000) of GPT-4 synthesized data can effectively align VLM responses with human-preference; (3) Visual instruction tuning mainly helps large-language models (LLMs) to understand visual features.",
+    "num_pages": 72
+}

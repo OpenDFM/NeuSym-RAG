@@ -1,0 +1,17 @@
+{
+    "uuid": "5b0765f4-2f82-579e-8b54-69957be7dc90",
+    "title": "The Butterfly Effect of Altering Prompts: How Small Changes and Jailbreaks Affect Large Language Model Performance",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{salinas-morstatter-2024-butterfly,\n    title = \"The Butterfly Effect of Altering Prompts: How Small Changes and Jailbreaks Affect Large Language Model Performance\",\n    author = \"Salinas, Abel  and\n      Morstatter, Fred\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.275\",\n    doi = \"10.18653/v1/2024.findings-acl.275\",\n    pages = \"4629--4651\",\n    abstract = \"Large Language Models (LLMs) are regularly being used to label data across many domains and for myriad tasks. By simply asking the LLM for an answer, or {``}prompting,{''} practitioners are able to use LLMs to quickly get a response for an arbitrary task. This prompting is done through a series of decisions by the practitioner, from simple wording of the prompt, to requesting the output in a certain data format, to jailbreaking in the case of prompts that address more sensitive topics. In this work, we ask: do variations in the way a prompt is constructed change the ultimate decision of the LLM? We answer this using a series of prompt variations across a variety of text classification tasks. We find that even the smallest of perturbations, such as adding a space at the end of a prompt, can cause the LLM to change its answer. Further, we find that requesting responses in XML and commonly used jailbreaks can have cataclysmic effects on the data labeled by LLMs.\",\n}\n",
+    "authors": [
+        "Abel Salinas",
+        "Fred Morstatter"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.275.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/5b0765f4-2f82-579e-8b54-69957be7dc90.pdf",
+    "abstract": "Large Language Models (LLMs) are regularly being used to label data across many domains and for myriad tasks. By simply asking the LLM for an answer, or “prompting,” practitioners are able to use LLMs to quickly get a response for an arbitrary task. This prompting is done through a series of decisions by the practitioner, from simple wording of the prompt, to requesting the output in a certain data format, to jailbreaking in the case of prompts that address more sensitive topics. In this work, we ask: do variations in the way a prompt is constructed change the ultimate decision of the LLM? We answer this using a series of prompt variations across a variety of text classification tasks. We find that even the smallest of perturbations, such as adding a space at the end of a prompt, can cause the LLM to change its answer. Further, we find that requesting responses in XML and commonly used jailbreaks can have cataclysmic effects on the data labeled by LLMs.",
+    "num_pages": 23
+}

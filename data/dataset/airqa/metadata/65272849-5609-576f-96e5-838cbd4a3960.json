@@ -1,0 +1,17 @@
+{
+    "uuid": "65272849-5609-576f-96e5-838cbd4a3960",
+    "title": "Multilingual Pre-training with Self-supervision from Global Co-occurrence Information",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{ai-fang-2023-multilingual,\n    title = \"Multilingual Pre-training with Self-supervision from Global Co-occurrence Information\",\n    author = \"Ai, Xi  and\n      Fang, Bin\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.475\",\n    doi = \"10.18653/v1/2023.findings-acl.475\",\n    pages = \"7526--7543\",\n    abstract = \"Global co-occurrence information is the primary source of structural information on multilingual corpora, and we find that analogical/parallel compound words across languages have similar co-occurrence counts/frequencies (normalized) giving weak but stable self-supervision for cross-lingual transfer. Following the observation, we aim at associating contextualized representations with relevant (contextualized) representations across languages with the help of co-occurrence counts. The result is MLM-GC (MLM with Global Co-occurrence) pre-training that the model learns local bidirectional information from MLM and global co-occurrence information from a log-bilinear regression. Experiments show that MLM-GC pre-training substantially outperforms MLM pre-training for 4 downstream cross-lingual tasks and 1 additional monolingual task, showing the advantages of forming isomorphic spaces across languages.\",\n}\n",
+    "authors": [
+        "Xi Ai",
+        "Bin Fang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.475.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/65272849-5609-576f-96e5-838cbd4a3960.pdf",
+    "abstract": "Global co-occurrence information is the primary source of structural information on multilingual corpora, and we find that analogical/parallel compound words across languages have similar co-occurrence counts/frequencies (normalized) giving weak but stable self-supervision for cross-lingual transfer. Following the observation, we aim at associating contextualized representations with relevant (contextualized) representations across languages with the help of co-occurrence counts. The result is MLM-GC (MLM with Global Co-occurrence) pre-training that the model learns local bidirectional information from MLM and global co-occurrence information from a log-bilinear regression. Experiments show that MLM-GC pre-training substantially outperforms MLM pre-training for 4 downstream cross-lingual tasks and 1 additional monolingual task, showing the advantages of forming isomorphic spaces across languages.",
+    "num_pages": 18
+}

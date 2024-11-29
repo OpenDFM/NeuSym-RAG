@@ -1,0 +1,19 @@
+{
+    "uuid": "48d3281a-1586-59b0-81a7-a6ded06bb10b",
+    "title": "Improving Embedding-based Unsupervised Keyphrase Extraction by Incorporating Structural Information",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{song-etal-2023-improving,\n    title = \"Improving Embedding-based Unsupervised Keyphrase Extraction by Incorporating Structural Information\",\n    author = \"Song, Mingyang  and\n      Liu, Huafeng  and\n      Feng, Yi  and\n      Jing, Liping\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.66\",\n    doi = \"10.18653/v1/2023.findings-acl.66\",\n    pages = \"1041--1048\",\n    abstract = \"Keyphrase extraction aims to extract a set of phrases with the central idea of the source document. In a structured document, there are certain locations (e.g., the title or the first sentence) where a keyphrase is most likely to appear. However, when extracting keyphrases from the document, most existing embedding-based unsupervised keyphrase extraction models ignore the indicative role of the highlights in certain locations, leading to wrong keyphrases extraction. In this paper, we propose a new Highlight-Guided Unsupervised Keyphrase Extraction model (HGUKE) to address the above issue. Specifically, HGUKE first models the phrase-document relevance via the highlights of the documents. Next, HGUKE calculates the cross-phrase relevance between all candidate phrases. Finally, HGUKE aggregates the above two relevance as the importance score of each candidate phrase to rank and extract keyphrases. The experimental results on three benchmarks demonstrate that HGUKE outperforms the state-of-the-art unsupervised keyphrase extraction baselines.\",\n}\n",
+    "authors": [
+        "Mingyang Song",
+        "Huafeng Liu",
+        "Yi Feng",
+        "Liping Jing"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.66.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/48d3281a-1586-59b0-81a7-a6ded06bb10b.pdf",
+    "abstract": "Keyphrase extraction aims to extract a set of phrases with the central idea of the source document. In a structured document, there are certain locations (e.g., the title or the first sentence) where a keyphrase is most likely to appear. However, when extracting keyphrases from the document, most existing embedding-based unsupervised keyphrase extraction models ignore the indicative role of the highlights in certain locations, leading to wrong keyphrases extraction. In this paper, we propose a new Highlight-Guided Unsupervised Keyphrase Extraction model (HGUKE) to address the above issue. Specifically, HGUKE first models the phrase-document relevance via the highlights of the documents. Next, HGUKE calculates the cross-phrase relevance between all candidate phrases. Finally, HGUKE aggregates the above two relevance as the importance score of each candidate phrase to rank and extract keyphrases. The experimental results on three benchmarks demonstrate that HGUKE outperforms the state-of-the-art unsupervised keyphrase extraction baselines.",
+    "num_pages": 8
+}

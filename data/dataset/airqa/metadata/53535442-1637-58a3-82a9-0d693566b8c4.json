@@ -1,0 +1,24 @@
+{
+    "uuid": "53535442-1637-58a3-82a9-0d693566b8c4",
+    "title": "Beyond Single-Event Extraction: Towards Efficient Document-Level Multi-Event Argument Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{liu-etal-2024-beyond-single,\n    title = \"Beyond Single-Event Extraction: Towards Efficient Document-Level Multi-Event Argument Extraction\",\n    author = \"Liu, Wanlong  and\n      Zhou, Li  and\n      Zeng, DingYi  and\n      Xiao, Yichen  and\n      Cheng, Shaohuan  and\n      Zhang, Chen  and\n      Lee, Grandee  and\n      Zhang, Malu  and\n      Chen, Wenyu\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.564\",\n    doi = \"10.18653/v1/2024.findings-acl.564\",\n    pages = \"9470--9487\",\n    abstract = \"Recent mainstream event argument extraction methods process each event in isolation, resulting in inefficient inference and ignoring the correlations among multiple events. To address these limitations, here we propose a multiple-event argument extraction model DEEIA (Dependency-guided Encoding and Event-specific Information Aggregation), capable of extracting arguments from all events within a document simultaneously. The proposed DEEIA model employs a multi-event prompt mechanism, comprising DE and EIA modules. The DE module is designed to improve the correlation between prompts and their corresponding event contexts, whereas the EIA module provides event-specific information to improve contextual understanding. Extensive experiments show that our method achieves new state-of-the-art performance on four public datasets (RAMS, WikiEvents, MLEE, and ACE05), while significantly saving the inference time compared to the baselines. Further analyses demonstrate the effectiveness of the proposed modules.\",\n}\n",
+    "authors": [
+        "Wanlong Liu",
+        "Li Zhou",
+        "DingYi Zeng",
+        "Yichen Xiao",
+        "Shaohuan Cheng",
+        "Chen Zhang",
+        "Grandee Lee",
+        "Malu Zhang",
+        "Wenyu Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.564.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/53535442-1637-58a3-82a9-0d693566b8c4.pdf",
+    "abstract": "Recent mainstream event argument extraction methods process each event in isolation, resulting in inefficient inference and ignoring the correlations among multiple events. To address these limitations, here we propose a multiple-event argument extraction model DEEIA (Dependency-guided Encoding and Event-specific Information Aggregation), capable of extracting arguments from all events within a document simultaneously. The proposed DEEIA model employs a multi-event prompt mechanism, comprising DE and EIA modules. The DE module is designed to improve the correlation between prompts and their corresponding event contexts, whereas the EIA module provides event-specific information to improve contextual understanding. Extensive experiments show that our method achieves new state-of-the-art performance on four public datasets (RAMS, WikiEvents, MLEE, and ACE05), while significantly saving the inference time compared to the baselines. Further analyses demonstrate the effectiveness of the proposed modules.",
+    "num_pages": 18
+}

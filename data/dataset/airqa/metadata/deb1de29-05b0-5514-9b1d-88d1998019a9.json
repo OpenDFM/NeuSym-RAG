@@ -1,0 +1,20 @@
+{
+    "uuid": "deb1de29-05b0-5514-9b1d-88d1998019a9",
+    "title": "WU_TLAXE at WASSA 2024 Explainability for Cross-Lingual Emotion in Tweets Shared Task 1: Emotion through Translation using TwHIN-BERT and GPT",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 14th Workshop on Computational Approaches to Subjectivity, Sentiment, & Social Media Analysis",
+    "bibtex": "@inproceedings{davenport-etal-2024-wu,\n    title = \"{WU}{\\_}{TLAXE} at {WASSA} 2024 Explainability for Cross-Lingual Emotion in Tweets Shared Task 1: Emotion through Translation using {T}w{HIN}-{BERT} and {GPT}\",\n    author = \"Davenport, Jon  and\n      Ruditsky, Keren  and\n      Batra, Anna  and\n      Lhawa, Yulha  and\n      Levow, Gina-Anne\",\n    editor = \"De Clercq, Orph{\\'e}e  and\n      Barriere, Valentin  and\n      Barnes, Jeremy  and\n      Klinger, Roman  and\n      Sedoc, Jo{\\~a}o  and\n      Tafreshi, Shabnam\",\n    booktitle = \"Proceedings of the 14th Workshop on Computational Approaches to Subjectivity, Sentiment, {\\&} Social Media Analysis\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.wassa-1.52\",\n    doi = \"10.18653/v1/2024.wassa-1.52\",\n    pages = \"523--527\",\n    abstract = \"This paper describes our task 1 submission for the WASSA 2024 shared task on Explainability for Cross-lingual Emotion in Tweets. Our task is to predict the correct emotion label (Anger, Sadness, Fear, Joy, Love, and Neutral) for a dataset of English, Dutch, French, Spanish, and Russian tweets, while training exclusively on English emotion labeled data, to reveal what kind of emotion detection information is transferable cross-language (Maladry et al., 2024). To that end, we used an ensemble of models with a GPT-4 decider. Our ensemble consisted of a few-shot GPT-4 prompt system and a TwHIN-BERT system fine-tuned on the EXALT and additional English data. We ranked 8th place under the name WU{\\_}TLAXE with an F1 Macro score of 0.573 on the test set. We also experimented with an English-only TwHIN-BERT model by translating the other languages into English for inference, which proved to be worse than the other models.\",\n}\n",
+    "authors": [
+        "Jon Davenport",
+        "Keren Ruditsky",
+        "Anna Batra",
+        "Yulha Lhawa",
+        "Gina-Anne Levow"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.wassa-1.52.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/deb1de29-05b0-5514-9b1d-88d1998019a9.pdf",
+    "abstract": "This paper describes our task 1 submission for the WASSA 2024 shared task on Explainability for Cross-lingual Emotion in Tweets. Our task is to predict the correct emotion label (Anger, Sadness, Fear, Joy, Love, and Neutral) for a dataset of English, Dutch, French, Spanish, and Russian tweets, while training exclusively on English emotion labeled data, to reveal what kind of emotion detection information is transferable cross-language (Maladry et al., 2024). To that end, we used an ensemble of models with a GPT-4 decider. Our ensemble consisted of a few-shot GPT-4 prompt system and a TwHIN-BERT system fine-tuned on the EXALT and additional English data. We ranked 8th place under the name WU_TLAXE with an F1 Macro score of 0.573 on the test set. We also experimented with an English-only TwHIN-BERT model by translating the other languages into English for inference, which proved to be worse than the other models.",
+    "num_pages": 5
+}

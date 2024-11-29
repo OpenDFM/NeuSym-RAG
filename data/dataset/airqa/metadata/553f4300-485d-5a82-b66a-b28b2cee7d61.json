@@ -1,0 +1,21 @@
+{
+    "uuid": "553f4300-485d-5a82-b66a-b28b2cee7d61",
+    "title": "Reasoning Implicit Sentiment with Chain-of-Thought Prompting",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{fei-etal-2023-reasoning,\n    title = \"Reasoning Implicit Sentiment with Chain-of-Thought Prompting\",\n    author = \"Fei, Hao  and\n      Li, Bobo  and\n      Liu, Qian  and\n      Bing, Lidong  and\n      Li, Fei  and\n      Chua, Tat-Seng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.101\",\n    doi = \"10.18653/v1/2023.acl-short.101\",\n    pages = \"1171--1182\",\n    abstract = \"While sentiment analysis systems try to determine the sentiment polarities of given targets based on the key opinion expressions in input texts, in implicit sentiment analysis (ISA) the opinion cues come in an implicit and obscure manner. Thus detecting implicit sentiment requires the common-sense and multi-hop reasoning ability to infer the latent intent of opinion. Inspired by the recent chain-of-thought (CoT) idea, in this work we introduce a Three-hop Reasoning (THOR) CoT framework to mimic the human-like reasoning process for ISA. We design a three-step prompting principle for THOR to step-by-step induce the implicit aspect, opinion, and finally the sentiment polarity. Our THOR+Flan-T5 (11B) pushes the state-of-the-art (SoTA) by over 6{\\%} F1 on supervised setup. More strikingly, THOR+GPT3 (175B) boosts the SoTA by over 50{\\%} F1 on zero-shot setting.\",\n}\n",
+    "authors": [
+        "Hao Fei",
+        "Bobo Li",
+        "Qian Liu",
+        "Lidong Bing",
+        "Fei Li",
+        "Tat-Seng Chua"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.101.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/553f4300-485d-5a82-b66a-b28b2cee7d61.pdf",
+    "abstract": "While sentiment analysis systems try to determine the sentiment polarities of given targets based on the key opinion expressions in input texts, in implicit sentiment analysis (ISA) the opinion cues come in an implicit and obscure manner. Thus detecting implicit sentiment requires the common-sense and multi-hop reasoning ability to infer the latent intent of opinion. Inspired by the recent chain-of-thought (CoT) idea, in this work we introduce a Three-hop Reasoning (THOR) CoT framework to mimic the human-like reasoning process for ISA. We design a three-step prompting principle for THOR to step-by-step induce the implicit aspect, opinion, and finally the sentiment polarity. Our THOR+Flan-T5 (11B) pushes the state-of-the-art (SoTA) by over 6% F1 on supervised setup. More strikingly, THOR+GPT3 (175B) boosts the SoTA by over 50% F1 on zero-shot setting.",
+    "num_pages": 12
+}

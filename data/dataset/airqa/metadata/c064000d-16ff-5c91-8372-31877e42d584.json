@@ -1,0 +1,20 @@
+{
+    "uuid": "c064000d-16ff-5c91-8372-31877e42d584",
+    "title": "Generative Data Augmentation for Aspect Sentiment Quad Prediction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 12th Joint Conference on Lexical and Computational Semantics (*SEM 2023)",
+    "bibtex": "@inproceedings{wang-etal-2023-generative,\n    title = \"Generative Data Augmentation for Aspect Sentiment Quad Prediction\",\n    author = \"Wang, An  and\n      Jiang, Junfeng  and\n      Ma, Youmi  and\n      Liu, Ao  and\n      Okazaki, Naoaki\",\n    editor = \"Palmer, Alexis  and\n      Camacho-collados, Jose\",\n    booktitle = \"Proceedings of the 12th Joint Conference on Lexical and Computational Semantics (*SEM 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.starsem-1.12\",\n    doi = \"10.18653/v1/2023.starsem-1.12\",\n    pages = \"128--140\",\n    abstract = \"Aspect sentiment quad prediction (ASQP) analyzes the aspect terms, opinion terms, sentiment polarity, and aspect categories in a text. One challenge in this task is the scarcity of data owing to the high annotation cost. Data augmentation techniques are commonly used to address this issue. However, existing approaches simply rewrite texts in the training data, restricting the semantic diversity of the generated data and impairing the quality due to the inconsistency between text and quads. To address these limitations, we augment quads and train a quads-to-text model to generate corresponding texts. Furthermore, we designed novel strategies to filter out low-quality data and balance the sample difficulty distribution of the augmented dataset. Empirical studies on two ASQP datasets demonstrate that our method outperforms other data augmentation methods and achieves state-of-the-art performance on the benchmarks. The source code will be released upon acceptance.\",\n}\n",
+    "authors": [
+        "An Wang",
+        "Junfeng Jiang",
+        "Youmi Ma",
+        "Ao Liu",
+        "Naoaki Okazaki"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.starsem-1.12.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c064000d-16ff-5c91-8372-31877e42d584.pdf",
+    "abstract": "Aspect sentiment quad prediction (ASQP) analyzes the aspect terms, opinion terms, sentiment polarity, and aspect categories in a text. One challenge in this task is the scarcity of data owing to the high annotation cost. Data augmentation techniques are commonly used to address this issue. However, existing approaches simply rewrite texts in the training data, restricting the semantic diversity of the generated data and impairing the quality due to the inconsistency between text and quads. To address these limitations, we augment quads and train a quads-to-text model to generate corresponding texts. Furthermore, we designed novel strategies to filter out low-quality data and balance the sample difficulty distribution of the augmented dataset. Empirical studies on two ASQP datasets demonstrate that our method outperforms other data augmentation methods and achieves state-of-the-art performance on the benchmarks. The source code will be released upon acceptance.",
+    "num_pages": 13
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "8274fbcc-fed1-5999-a778-bbbdc2db2837",
+    "title": "GRACE: Gradient-guided Controllable Retrieval for Augmenting Attribute-based Text Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wen-etal-2023-grace,\n    title = \"{GRACE}: Gradient-guided Controllable Retrieval for Augmenting Attribute-based Text Generation\",\n    author = \"Wen, Zhihua  and\n      Tian, Zhiliang  and\n      Huang, Zhen  and\n      Yang, Yuxin  and\n      Jian, Zexin  and\n      Wang, Changjian  and\n      Li, Dongsheng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.530\",\n    doi = \"10.18653/v1/2023.findings-acl.530\",\n    pages = \"8377--8398\",\n    abstract = \"Attribute-based generation methods are of growing significance in controlling the generation of large pre-trained language models (PLMs). Existing studies control the generation by (1) finetuning the model with attributes or (2) guiding the inference processing toward control signals while freezing the PLM. However, finetuning approaches infuse domain bias into generation, making it hard to generate out-of-domain texts. Besides, many methods guide the inference in its word-by-word generation, pushing the word probability to the target attributes, resulting in less fluent sentences. We argue that distilling controlling information from natural texts can produce fluent sentences while maintaining high controllability. In this paper, we propose \\textbf{GRA}dient-guided \\textbf{C}ontrollable r\\textbf{E}trieval (GRACE), a retrieval-augmented generation framework to facilitate the generation of fluent sentences with high attribute relevance. GRACE memorizes the semantic and attribute information from unlabeled corpora and applies a controllable retrieval to obtain desired information. For the generation, we design techniques to eliminate the domain bias from the retrieval results and integrate it into the generation model. Additionally, we propose a gradient-guided generation scheme that iteratively steers generation toward higher attribute relevance. Experimental results and quantities of examples verify the effectiveness of our method.\",\n}\n",
+    "authors": [
+        "Zhihua Wen",
+        "Zhiliang Tian",
+        "Zhen Huang",
+        "Yuxin Yang",
+        "Zexin Jian",
+        "Changjian Wang",
+        "Dongsheng Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.530.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8274fbcc-fed1-5999-a778-bbbdc2db2837.pdf",
+    "abstract": "Attribute-based generation methods are of growing significance in controlling the generation of large pre-trained language models (PLMs). Existing studies control the generation by (1) finetuning the model with attributes or (2) guiding the inference processing toward control signals while freezing the PLM. However, finetuning approaches infuse domain bias into generation, making it hard to generate out-of-domain texts. Besides, many methods guide the inference in its word-by-word generation, pushing the word probability to the target attributes, resulting in less fluent sentences. We argue that distilling controlling information from natural texts can produce fluent sentences while maintaining high controllability. In this paper, we propose GRAdient-guided Controllable rEtrieval (GRACE), a retrieval-augmented generation framework to facilitate the generation of fluent sentences with high attribute relevance. GRACE memorizes the semantic and attribute information from unlabeled corpora and applies a controllable retrieval to obtain desired information. For the generation, we design techniques to eliminate the domain bias from the retrieval results and integrate it into the generation model. Additionally, we propose a gradient-guided generation scheme that iteratively steers generation toward higher attribute relevance. Experimental results and quantities of examples verify the effectiveness of our method.",
+    "num_pages": 22
+}

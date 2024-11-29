@@ -1,0 +1,19 @@
+{
+    "uuid": "6ab0892c-ac45-5b92-9aa8-22a15e1f6d5d",
+    "title": "(QA)2: Question Answering with Questionable Assumptions",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{kim-etal-2023-qa,\n    title = \"({QA})$^2$: Question Answering with Questionable Assumptions\",\n    author = \"Kim, Najoung  and\n      Htut, Phu Mon  and\n      Bowman, Samuel R.  and\n      Petty, Jackson\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.472\",\n    doi = \"10.18653/v1/2023.acl-long.472\",\n    pages = \"8466--8487\",\n    abstract = \"Naturally occurring information-seeking questions often contain questionable assumptions{---}assumptions that are false or unverifiable. Questions containing questionable assumptions are challenging because they require a distinct answer strategy that deviates from typical answers for information-seeking questions. For instance, the question {``}When did Marie Curie discover Uranium?{''} cannot be answered as a typical {``}when{''} question without addressing the false assumption {``}Marie Curie discovered Uranium{''}. In this work, we propose (QA)2 (Question Answering with Questionable Assumptions), an open-domain evaluation dataset consisting of naturally occurring search engine queries that may or may not contain questionable assumptions. To be successful on (QA)2, systems must be able to detect questionable assumptions and also be able to produce adequate responses for both typical information-seeking questions and ones with questionable assumptions. Through human rater acceptability on end-to-end QA with (QA)2, we find that current models do struggle with handling questionable assumptions, leaving substantial headroom for progress.\",\n}\n",
+    "authors": [
+        "Najoung Kim",
+        "Phu Mon Htut",
+        "Samuel R. Bowman",
+        "Jackson Petty"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.472.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/6ab0892c-ac45-5b92-9aa8-22a15e1f6d5d.pdf",
+    "abstract": "Naturally occurring information-seeking questions often contain questionable assumptions—assumptions that are false or unverifiable. Questions containing questionable assumptions are challenging because they require a distinct answer strategy that deviates from typical answers for information-seeking questions. For instance, the question “When did Marie Curie discover Uranium?” cannot be answered as a typical “when” question without addressing the false assumption “Marie Curie discovered Uranium”. In this work, we propose (QA)2 (Question Answering with Questionable Assumptions), an open-domain evaluation dataset consisting of naturally occurring search engine queries that may or may not contain questionable assumptions. To be successful on (QA)2, systems must be able to detect questionable assumptions and also be able to produce adequate responses for both typical information-seeking questions and ones with questionable assumptions. Through human rater acceptability on end-to-end QA with (QA)2, we find that current models do struggle with handling questionable assumptions, leaving substantial headroom for progress.",
+    "num_pages": 22
+}

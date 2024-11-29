@@ -1,0 +1,22 @@
+{
+    "uuid": "bdd1c3f5-23d6-50bf-b3e8-6bea9d0ec145",
+    "title": "Integrating Physician Diagnostic Logic into Large Language Models: Preference Learning from Process Feedback",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{dou-etal-2024-integrating,\n    title = \"Integrating Physician Diagnostic Logic into Large Language Models: Preference Learning from Process Feedback\",\n    author = \"Dou, Chengfeng  and\n      Zhang, Ying  and\n      Jin, Zhi  and\n      Jiao, Wenpin  and\n      Zhao, Haiyan  and\n      Zhao, Yongqiang  and\n      Tao, Zhengwei\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.144\",\n    doi = \"10.18653/v1/2024.findings-acl.144\",\n    pages = \"2453--2473\",\n    abstract = \"The utilization of large language models for medical dialogue generation has attracted considerable attention due to its potential to enhance response richness and coherence. While previous studies have made strides in optimizing model performance, there is a pressing need to bolster the model{'}s capacity for diagnostic logic to ensure patient safety. In response to this need, we propose an approach termed preference learning from process feedback (PLPF), which involves integrating the doctor{'}s diagnostic logic into LLMs. PLPF encompasses three key components: rule modeling, preference data generation, and preference alignment. These components collectively serve to train the model to adhere to the diagnostic process. Our experimental results, utilizing Standardized Patient Testing, demonstrate that PLPF enhances the diagnostic accuracy of the baseline model in medical conversations by 17.6{\\%}, surpassing the performance of traditional approaches. Moreover, PLPF exhibits effectiveness in both multi-round and single-round dialogue tasks, thereby highlighting its potential in improving medical dialogue generation. Our dataset is available at https://github.com/Chengfeng-Dou/SpTesting.\",\n}\n",
+    "authors": [
+        "Chengfeng Dou",
+        "Ying Zhang",
+        "Zhi Jin",
+        "Wenpin Jiao",
+        "Haiyan Zhao",
+        "Yongqiang Zhao",
+        "Zhengwei Tao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.144.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/bdd1c3f5-23d6-50bf-b3e8-6bea9d0ec145.pdf",
+    "abstract": "The utilization of large language models for medical dialogue generation has attracted considerable attention due to its potential to enhance response richness and coherence. While previous studies have made strides in optimizing model performance, there is a pressing need to bolster the model’s capacity for diagnostic logic to ensure patient safety. In response to this need, we propose an approach termed preference learning from process feedback (PLPF), which involves integrating the doctor’s diagnostic logic into LLMs. PLPF encompasses three key components: rule modeling, preference data generation, and preference alignment. These components collectively serve to train the model to adhere to the diagnostic process. Our experimental results, utilizing Standardized Patient Testing, demonstrate that PLPF enhances the diagnostic accuracy of the baseline model in medical conversations by 17.6%, surpassing the performance of traditional approaches. Moreover, PLPF exhibits effectiveness in both multi-round and single-round dialogue tasks, thereby highlighting its potential in improving medical dialogue generation. Our dataset is available at https://github.com/Chengfeng-Dou/SpTesting.",
+    "num_pages": 21
+}

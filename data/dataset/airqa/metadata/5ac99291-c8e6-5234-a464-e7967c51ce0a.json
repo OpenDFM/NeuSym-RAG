@@ -1,0 +1,22 @@
+{
+    "uuid": "5ac99291-c8e6-5234-a464-e7967c51ce0a",
+    "title": "Adaptive Contrastive Knowledge Distillation for BERT Compression",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{guo-etal-2023-adaptive,\n    title = \"Adaptive Contrastive Knowledge Distillation for {BERT} Compression\",\n    author = \"Guo, Jinyang  and\n      Liu, Jiaheng  and\n      Wang, Zining  and\n      Ma, Yuqing  and\n      Gong, Ruihao  and\n      Xu, Ke  and\n      Liu, Xianglong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.569\",\n    doi = \"10.18653/v1/2023.findings-acl.569\",\n    pages = \"8941--8953\",\n    abstract = \"In this paper, we propose a new knowledge distillation approach called adaptive contrastive knowledge distillation (ACKD) for BERT compression. Different from existing knowledge distillation methods for BERT that implicitly learn discriminative student features by mimicking the teacher features, we first introduce a novel contrastive distillation loss (CDL) based on hidden state features in BERT as the explicit supervision to learn discriminative student features. We further observe sentences with similar features may have completely different meanings, which makes them hard to distinguish. Existing methods do not pay sufficient attention to these hard samples with less discriminative features. Therefore, we propose a new strategy called sample adaptive reweighting (SAR) to adaptively pay more attention to these hard samples and strengthen their discrimination abilities. We incorporate our SAR strategy into our CDL and form the adaptive contrastive distillation loss, based on which we construct our ACKD framework. Comprehensive experiments on multiple natural language processing tasks demonstrate the effectiveness of our ACKD framework.\",\n}\n",
+    "authors": [
+        "Jinyang Guo",
+        "Jiaheng Liu",
+        "Zining Wang",
+        "Yuqing Ma",
+        "Ruihao Gong",
+        "Ke Xu",
+        "Xianglong Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.569.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/5ac99291-c8e6-5234-a464-e7967c51ce0a.pdf",
+    "abstract": "In this paper, we propose a new knowledge distillation approach called adaptive contrastive knowledge distillation (ACKD) for BERT compression. Different from existing knowledge distillation methods for BERT that implicitly learn discriminative student features by mimicking the teacher features, we first introduce a novel contrastive distillation loss (CDL) based on hidden state features in BERT as the explicit supervision to learn discriminative student features. We further observe sentences with similar features may have completely different meanings, which makes them hard to distinguish. Existing methods do not pay sufficient attention to these hard samples with less discriminative features. Therefore, we propose a new strategy called sample adaptive reweighting (SAR) to adaptively pay more attention to these hard samples and strengthen their discrimination abilities. We incorporate our SAR strategy into our CDL and form the adaptive contrastive distillation loss, based on which we construct our ACKD framework. Comprehensive experiments on multiple natural language processing tasks demonstrate the effectiveness of our ACKD framework.",
+    "num_pages": 13
+}

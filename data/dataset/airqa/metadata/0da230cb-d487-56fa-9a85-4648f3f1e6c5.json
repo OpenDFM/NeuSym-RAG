@@ -1,0 +1,22 @@
+{
+    "uuid": "0da230cb-d487-56fa-9a85-4648f3f1e6c5",
+    "title": "ArtPrompt: ASCII Art-based Jailbreak Attacks against Aligned LLMs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{jiang-etal-2024-artprompt,\n    title = \"{A}rt{P}rompt: {ASCII} Art-based Jailbreak Attacks against Aligned {LLM}s\",\n    author = \"Jiang, Fengqing  and\n      Xu, Zhangchen  and\n      Niu, Luyao  and\n      Xiang, Zhen  and\n      Ramasubramanian, Bhaskar  and\n      Li, Bo  and\n      Poovendran, Radha\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.809\",\n    doi = \"10.18653/v1/2024.acl-long.809\",\n    pages = \"15157--15173\",\n    abstract = \"Safety is critical to the usage of large language models (LLMs). Multiple techniques such as data filtering and supervised fine-tuning have been developed to strengthen LLM safety. However, currently known techniques presume that corpora used for safety alignment of LLMs are solely interpreted by semantics. This assumption, however, does not hold in real-world applications, which leads to severe vulnerabilities in LLMs. For example, users of forums often use ASCII art, a form of text-based art, to convey image information. In this paper, we propose a novel ASCII art-based jailbreak attack and introduce a comprehensive benchmark Vision-in-Text Challenge (ViTC) to evaluate the capabilities of LLMs in recognizing prompts that cannot be solely interpreted by semantics. We show that five SOTA LLMs (GPT-3.5, GPT-4, Gemini, Claude, and Llama2) struggle to recognize prompts provided in the form of ASCII art. Based on this observation, we develop the jailbreak attack ArtPrompt, which leverages the poor performance of LLMs in recognizing ASCII art to bypass safety measures and elicit undesired behaviors from LLMs. ArtPrompt only requires black-box access to the victim LLMs, making it a practical attack. We evaluate ArtPrompt on five SOTA LLMs, and show that ArtPrompt can effectively and efficiently induce undesired behaviors from all five LLMs.\",\n}\n",
+    "authors": [
+        "Fengqing Jiang",
+        "Zhangchen Xu",
+        "Luyao Niu",
+        "Zhen Xiang",
+        "Bhaskar Ramasubramanian",
+        "Bo Li",
+        "Radha Poovendran"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.809.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0da230cb-d487-56fa-9a85-4648f3f1e6c5.pdf",
+    "abstract": "Safety is critical to the usage of large language models (LLMs). Multiple techniques such as data filtering and supervised fine-tuning have been developed to strengthen LLM safety. However, currently known techniques presume that corpora used for safety alignment of LLMs are solely interpreted by semantics. This assumption, however, does not hold in real-world applications, which leads to severe vulnerabilities in LLMs. For example, users of forums often use ASCII art, a form of text-based art, to convey image information. In this paper, we propose a novel ASCII art-based jailbreak attack and introduce a comprehensive benchmark Vision-in-Text Challenge (ViTC) to evaluate the capabilities of LLMs in recognizing prompts that cannot be solely interpreted by semantics. We show that five SOTA LLMs (GPT-3.5, GPT-4, Gemini, Claude, and Llama2) struggle to recognize prompts provided in the form of ASCII art. Based on this observation, we develop the jailbreak attack ArtPrompt, which leverages the poor performance of LLMs in recognizing ASCII art to bypass safety measures and elicit undesired behaviors from LLMs. ArtPrompt only requires black-box access to the victim LLMs, making it a practical attack. We evaluate ArtPrompt on five SOTA LLMs, and show that ArtPrompt can effectively and efficiently induce undesired behaviors from all five LLMs.",
+    "num_pages": 17
+}

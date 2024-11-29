@@ -1,0 +1,20 @@
+{
+    "uuid": "025255a9-9eb7-5177-ba16-365be9fb8d4b",
+    "title": "Analysing zero-shot temporal relation extraction on clinical notes using temporal consistency",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 23rd Workshop on Biomedical Natural Language Processing",
+    "bibtex": "@inproceedings{kougia-etal-2024-analysing,\n    title = \"Analysing zero-shot temporal relation extraction on clinical notes using temporal consistency\",\n    author = \"Kougia, Vasiliki  and\n      Sedova, Anastasiia  and\n      Stephan, Andreas Joseph  and\n      Zaporojets, Klim  and\n      Roth, Benjamin\",\n    editor = \"Demner-Fushman, Dina  and\n      Ananiadou, Sophia  and\n      Miwa, Makoto  and\n      Roberts, Kirk  and\n      Tsujii, Junichi\",\n    booktitle = \"Proceedings of the 23rd Workshop on Biomedical Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.bionlp-1.6\",\n    doi = \"10.18653/v1/2024.bionlp-1.6\",\n    pages = \"72--84\",\n    abstract = \"This paper presents the first study for temporal relation extraction in a zero-shot setting focusing on biomedical text. We employ two types of prompts and five Large Language Models (LLMs; GPT-3.5, Mixtral, Llama 2, Gemma, and PMC-LLaMA) to obtain responses about the temporal relations between two events. Our experiments demonstrate that LLMs struggle in the zero-shot setting, performing worse than fine-tuned specialized models in terms of F1 score. This highlights the challenging nature of this task and underscores the need for further research to enhance the performance of LLMs in this context. We further contribute a novel comprehensive temporal analysis by calculating consistency scores for each LLM. Our findings reveal that LLMs face challenges in providing responses consistent with the temporal properties of uniqueness and transitivity. Moreover, we study the relation between the temporal consistency of an LLM and its accuracy, and whether the latter can be improved by solving temporal inconsistencies. Our analysis shows that even when temporal consistency is achieved, the predictions can remain inaccurate.\",\n}\n",
+    "authors": [
+        "Vasiliki Kougia",
+        "Anastasiia Sedova",
+        "Andreas Joseph Stephan",
+        "Klim Zaporojets",
+        "Benjamin Roth"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.bionlp-1.6.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/025255a9-9eb7-5177-ba16-365be9fb8d4b.pdf",
+    "abstract": "This paper presents the first study for temporal relation extraction in a zero-shot setting focusing on biomedical text. We employ two types of prompts and five Large Language Models (LLMs; GPT-3.5, Mixtral, Llama 2, Gemma, and PMC-LLaMA) to obtain responses about the temporal relations between two events. Our experiments demonstrate that LLMs struggle in the zero-shot setting, performing worse than fine-tuned specialized models in terms of F1 score. This highlights the challenging nature of this task and underscores the need for further research to enhance the performance of LLMs in this context. We further contribute a novel comprehensive temporal analysis by calculating consistency scores for each LLM. Our findings reveal that LLMs face challenges in providing responses consistent with the temporal properties of uniqueness and transitivity. Moreover, we study the relation between the temporal consistency of an LLM and its accuracy, and whether the latter can be improved by solving temporal inconsistencies. Our analysis shows that even when temporal consistency is achieved, the predictions can remain inaccurate.",
+    "num_pages": 13
+}

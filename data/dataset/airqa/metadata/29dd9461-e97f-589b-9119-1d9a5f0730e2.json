@@ -1,0 +1,20 @@
+{
+    "uuid": "29dd9461-e97f-589b-9119-1d9a5f0730e2",
+    "title": "Towards Imperceptible Document Manipulations against Neural Ranking Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{chen-etal-2023-towards,\n    title = \"Towards Imperceptible Document Manipulations against Neural Ranking Models\",\n    author = \"Chen, Xuanang  and\n      He, Ben  and\n      Ye, Zheng  and\n      Sun, Le  and\n      Sun, Yingfei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.416\",\n    doi = \"10.18653/v1/2023.findings-acl.416\",\n    pages = \"6648--6664\",\n    abstract = \"Adversarial attacks have gained traction in order to identify vulnerabilities in neural ranking models (NRMs), but current attack methods often introduce noticeable errors. Moreover, current methods rely heavily on using a well-imitated surrogate NRM to guarantee the attack effect, making them difficult to use in practice. This paper proposes a framework called Imperceptible DocumEnt Manipulation (IDEM) to produce adversarial documents that are less noticeable to both algorithms and humans. IDEM instructs a well-established generative language model like BART to generate error-free connection sentences, and employs a separate position-wise merging strategy to balance between relevance and coherence of the perturbed text. Evaluation results on the MS MARCO benchmark demonstrate that IDEM outperforms strong baselines while preserving fluency and correctness of the target documents. Furthermore, the separation of adversarial text generation from the surrogate NRM makes IDEM more robust and less affected by the quality of the surrogate NRM.\",\n}\n",
+    "authors": [
+        "Xuanang Chen",
+        "Ben He",
+        "Zheng Ye",
+        "Le Sun",
+        "Yingfei Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.416.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/29dd9461-e97f-589b-9119-1d9a5f0730e2.pdf",
+    "abstract": "Adversarial attacks have gained traction in order to identify vulnerabilities in neural ranking models (NRMs), but current attack methods often introduce noticeable errors. Moreover, current methods rely heavily on using a well-imitated surrogate NRM to guarantee the attack effect, making them difficult to use in practice. This paper proposes a framework called Imperceptible DocumEnt Manipulation (IDEM) to produce adversarial documents that are less noticeable to both algorithms and humans. IDEM instructs a well-established generative language model like BART to generate error-free connection sentences, and employs a separate position-wise merging strategy to balance between relevance and coherence of the perturbed text. Evaluation results on the MS MARCO benchmark demonstrate that IDEM outperforms strong baselines while preserving fluency and correctness of the target documents. Furthermore, the separation of adversarial text generation from the surrogate NRM makes IDEM more robust and less affected by the quality of the surrogate NRM.",
+    "num_pages": 17
+}

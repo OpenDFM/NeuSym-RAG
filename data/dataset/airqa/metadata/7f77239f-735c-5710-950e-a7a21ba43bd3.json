@@ -1,0 +1,19 @@
+{
+    "uuid": "7f77239f-735c-5710-950e-a7a21ba43bd3",
+    "title": "PRP-Graph: Pairwise Ranking Prompting to LLMs with Graph Aggregation for Effective Text Re-ranking",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{luo-etal-2024-prp,\n    title = \"{PRP}-Graph: Pairwise Ranking Prompting to {LLM}s with Graph Aggregation for Effective Text Re-ranking\",\n    author = \"Luo, Jian  and\n      Chen, Xuanang  and\n      He, Ben  and\n      Sun, Le\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.313\",\n    doi = \"10.18653/v1/2024.acl-long.313\",\n    pages = \"5766--5776\",\n    abstract = \"Pairwise Ranking Prompting (PRP) demonstrates impressive effectiveness in zero-shot document re-ranking tasks with large language models (LLMs). However, in the existing methods, PRP only outputs the same label for the comparison results of different confidence intervals without considering the uncertainty of pairwise comparison, which implies an underutilization of the generation probability information of LLMs. To bridge this gap, we propose PRP-Graph, a novel pairwise re-ranking approach, based on a refined scoring PRP unit that exploits the output probabilities of target labels to capture the degree of certainty of the comparison results. Specifically, the PRP-Graph consists of two stages, namely ranking graph construction and ranking graph aggregation. Extensive experiments conducted on the BEIR benchmark demonstrate the superiority of our approach over existing PRP-based methods. Comprehensive analysis reveals that the PRP-Graph displays strong robustness towards the initial ranking order and delivers exceptional re-ranking results with acceptable efficiency. Our code and data are available at https://github.com/Memelank/PRP-Graph.\",\n}\n",
+    "authors": [
+        "Jian Luo",
+        "Xuanang Chen",
+        "Ben He",
+        "Le Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.313.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7f77239f-735c-5710-950e-a7a21ba43bd3.pdf",
+    "abstract": "Pairwise Ranking Prompting (PRP) demonstrates impressive effectiveness in zero-shot document re-ranking tasks with large language models (LLMs). However, in the existing methods, PRP only outputs the same label for the comparison results of different confidence intervals without considering the uncertainty of pairwise comparison, which implies an underutilization of the generation probability information of LLMs. To bridge this gap, we propose PRP-Graph, a novel pairwise re-ranking approach, based on a refined scoring PRP unit that exploits the output probabilities of target labels to capture the degree of certainty of the comparison results. Specifically, the PRP-Graph consists of two stages, namely ranking graph construction and ranking graph aggregation. Extensive experiments conducted on the BEIR benchmark demonstrate the superiority of our approach over existing PRP-based methods. Comprehensive analysis reveals that the PRP-Graph displays strong robustness towards the initial ranking order and delivers exceptional re-ranking results with acceptable efficiency. Our code and data are available at https://github.com/Memelank/PRP-Graph.",
+    "num_pages": 11
+}

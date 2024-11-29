@@ -1,0 +1,25 @@
+{
+    "uuid": "ef061e2b-a864-59e8-8e7c-3594effa268a",
+    "title": "Character-Aware Models Improve Visual Text Rendering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{liu-etal-2023-character,\n    title = \"Character-Aware Models Improve Visual Text Rendering\",\n    author = \"Liu, Rosanne  and\n      Garrette, Dan  and\n      Saharia, Chitwan  and\n      Chan, William  and\n      Roberts, Adam  and\n      Narang, Sharan  and\n      Blok, Irina  and\n      Mical, Rj  and\n      Norouzi, Mohammad  and\n      Constant, Noah\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.900\",\n    doi = \"10.18653/v1/2023.acl-long.900\",\n    pages = \"16270--16297\",\n    abstract = \"Current image generation models struggle to reliably produce well-formed visual text. In this paper, we investigate a key contributing factor: popular text-to-image models lack character-level input features, making it much harder to predict a word{'}s visual makeup as a series of glyphs. To quantify this effect, we conduct a series of experiments comparing character-aware vs. character-blind text encoders. In the text-only domain, we find that character-aware models provide large gains on a novel spelling task (WikiSpell). Applying our learnings to the visual domain, we train a suite of image generation models, and show that character-aware variants outperform their character-blind counterparts across a range of novel text rendering tasks (our DrawText benchmark). Our models set a much higher state-of-the-art on visual spelling, with 30+ point accuracy gains over competitors on rare words, despite training on far fewer examples.\",\n}\n",
+    "authors": [
+        "Rosanne Liu",
+        "Dan Garrette",
+        "Chitwan Saharia",
+        "William Chan",
+        "Adam Roberts",
+        "Sharan Narang",
+        "Irina Blok",
+        "Rj Mical",
+        "Mohammad Norouzi",
+        "Noah Constant"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.900.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ef061e2b-a864-59e8-8e7c-3594effa268a.pdf",
+    "abstract": "Current image generation models struggle to reliably produce well-formed visual text. In this paper, we investigate a key contributing factor: popular text-to-image models lack character-level input features, making it much harder to predict a word’s visual makeup as a series of glyphs. To quantify this effect, we conduct a series of experiments comparing character-aware vs. character-blind text encoders. In the text-only domain, we find that character-aware models provide large gains on a novel spelling task (WikiSpell). Applying our learnings to the visual domain, we train a suite of image generation models, and show that character-aware variants outperform their character-blind counterparts across a range of novel text rendering tasks (our DrawText benchmark). Our models set a much higher state-of-the-art on visual spelling, with 30+ point accuracy gains over competitors on rare words, despite training on far fewer examples.",
+    "num_pages": 28
+}

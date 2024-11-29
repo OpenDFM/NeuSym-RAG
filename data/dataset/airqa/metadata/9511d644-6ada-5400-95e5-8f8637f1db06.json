@@ -1,0 +1,18 @@
+{
+    "uuid": "9511d644-6ada-5400-95e5-8f8637f1db06",
+    "title": "Focal Training and Tagger Decouple for Grammatical Error Correction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{tan-etal-2023-focal,\n    title = \"Focal Training and Tagger Decouple for Grammatical Error Correction\",\n    author = \"Tan, Minghuan  and\n      Yang, Min  and\n      Xu, Ruifeng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.370\",\n    doi = \"10.18653/v1/2023.findings-acl.370\",\n    pages = \"5978--5985\",\n    abstract = \"In this paper, we investigate how to improve tagging-based Grammatical Error Correction models. We address two issues of current tagging-based approaches, label imbalance issue, and tagging entanglement issue. Then we propose to down-weight the loss of well-classified labels using Focal Loss and decouple the error detection layer from the label tagging layer through an extra self-attention-based matching module. Experiments over three latest Chinese Grammatical Error Correction datasets show that our proposed methods are effective. We further analyze choices of hyper-parameters for Focal Loss and inference tweaking.\",\n}\n",
+    "authors": [
+        "Minghuan Tan",
+        "Min Yang",
+        "Ruifeng Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.370.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9511d644-6ada-5400-95e5-8f8637f1db06.pdf",
+    "abstract": "In this paper, we investigate how to improve tagging-based Grammatical Error Correction models. We address two issues of current tagging-based approaches, label imbalance issue, and tagging entanglement issue. Then we propose to down-weight the loss of well-classified labels using Focal Loss and decouple the error detection layer from the label tagging layer through an extra self-attention-based matching module. Experiments over three latest Chinese Grammatical Error Correction datasets show that our proposed methods are effective. We further analyze choices of hyper-parameters for Focal Loss and inference tweaking.",
+    "num_pages": 8
+}

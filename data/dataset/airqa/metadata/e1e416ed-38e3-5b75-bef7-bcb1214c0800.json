@@ -1,0 +1,25 @@
+{
+    "uuid": "e1e416ed-38e3-5b75-bef7-bcb1214c0800",
+    "title": "An Information Bottleneck Perspective for Effective Noise Filtering on Retrieval-Augmented Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhu-etal-2024-information,\n    title = \"An Information Bottleneck Perspective for Effective Noise Filtering on Retrieval-Augmented Generation\",\n    author = \"Zhu, Kun  and\n      Feng, Xiaocheng  and\n      Du, Xiyuan  and\n      Gu, Yuxuan  and\n      Yu, Weijiang  and\n      Wang, Haotian  and\n      Chen, Qianglong  and\n      Chu, Zheng  and\n      Chen, Jingchang  and\n      Qin, Bing\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.59\",\n    doi = \"10.18653/v1/2024.acl-long.59\",\n    pages = \"1044--1069\",\n    abstract = \"Retrieval-augmented generation integrates the capabilities of large language models with relevant information retrieved from an extensive corpus, yet encounters challenges when confronted with real-world noisy data. One recent solution is to train a filter module to find relevant content but only achieve suboptimal noise compression. In this paper, we propose to introduce the information bottleneck theory into retrieval-augmented generation. Our approach involves the filtration of noise by simultaneously maximizing the mutual information between compression and ground output, while minimizing the mutual information between compression and retrieved passage. In addition, we derive the formula of information bottleneck to facilitate its application in novel comprehensive evaluations, the selection of supervised fine-tuning data, and the construction of reinforcement learning rewards. Experimental results demonstrate that our approach achieves significant improvements across various question answering datasets, not only in terms of the correctness of answer generation but also in the conciseness with 2.5{\\%} compression rate.\",\n}\n",
+    "authors": [
+        "Kun Zhu",
+        "Xiaocheng Feng",
+        "Xiyuan Du",
+        "Yuxuan Gu",
+        "Weijiang Yu",
+        "Haotian Wang",
+        "Qianglong Chen",
+        "Zheng Chu",
+        "Jingchang Chen",
+        "Bing Qin"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.59.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e1e416ed-38e3-5b75-bef7-bcb1214c0800.pdf",
+    "abstract": "Retrieval-augmented generation integrates the capabilities of large language models with relevant information retrieved from an extensive corpus, yet encounters challenges when confronted with real-world noisy data. One recent solution is to train a filter module to find relevant content but only achieve suboptimal noise compression. In this paper, we propose to introduce the information bottleneck theory into retrieval-augmented generation. Our approach involves the filtration of noise by simultaneously maximizing the mutual information between compression and ground output, while minimizing the mutual information between compression and retrieved passage. In addition, we derive the formula of information bottleneck to facilitate its application in novel comprehensive evaluations, the selection of supervised fine-tuning data, and the construction of reinforcement learning rewards. Experimental results demonstrate that our approach achieves significant improvements across various question answering datasets, not only in terms of the correctness of answer generation but also in the conciseness with 2.5% compression rate.",
+    "num_pages": 26
+}

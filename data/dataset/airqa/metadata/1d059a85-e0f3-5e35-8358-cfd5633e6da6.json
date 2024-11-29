@@ -1,0 +1,19 @@
+{
+    "uuid": "1d059a85-e0f3-5e35-8358-cfd5633e6da6",
+    "title": "Improving Gender Fairness of Pre-Trained Language Models without Catastrophic Forgetting",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{fatemi-etal-2023-improving,\n    title = \"Improving Gender Fairness of Pre-Trained Language Models without Catastrophic Forgetting\",\n    author = \"Fatemi, Zahra  and\n      Xing, Chen  and\n      Liu, Wenhao  and\n      Xiong, Caimming\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.108\",\n    doi = \"10.18653/v1/2023.acl-short.108\",\n    pages = \"1249--1262\",\n    abstract = \"Existing studies addressing gender bias of pre-trained language models, usually build a small gender-neutral data set and conduct a second phase pre-training on the model with such data. However, given the limited size and concentrated focus of the gender-neutral data, catastrophic forgetting would occur during second-phase pre-training. Forgetting information in the original training data may damage the model{'}s downstream performance by a large margin. In this work, we empirically show that catastrophic forgetting occurs in such methods by evaluating them with general NLP tasks in GLUE. Then, we propose a new method, GEnder Equality Prompt (GEEP), to improve gender fairness of pre-trained models with less forgetting. GEEP freezes the pre-trained model and learns gender-related prompts with gender-neutral data. Empirical results show that GEEP not only achieves SOTA performances on gender fairness tasks, but also forgets less and performs better on GLUE by a large margin.\",\n}\n",
+    "authors": [
+        "Zahra Fatemi",
+        "Chen Xing",
+        "Wenhao Liu",
+        "Caimming Xiong"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.108.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1d059a85-e0f3-5e35-8358-cfd5633e6da6.pdf",
+    "abstract": "Existing studies addressing gender bias of pre-trained language models, usually build a small gender-neutral data set and conduct a second phase pre-training on the model with such data. However, given the limited size and concentrated focus of the gender-neutral data, catastrophic forgetting would occur during second-phase pre-training. Forgetting information in the original training data may damage the model’s downstream performance by a large margin. In this work, we empirically show that catastrophic forgetting occurs in such methods by evaluating them with general NLP tasks in GLUE. Then, we propose a new method, GEnder Equality Prompt (GEEP), to improve gender fairness of pre-trained models with less forgetting. GEEP freezes the pre-trained model and learns gender-related prompts with gender-neutral data. Empirical results show that GEEP not only achieves SOTA performances on gender fairness tasks, but also forgets less and performs better on GLUE by a large margin.",
+    "num_pages": 14
+}

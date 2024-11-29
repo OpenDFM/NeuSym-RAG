@@ -1,0 +1,27 @@
+{
+    "uuid": "e5c707b8-83fb-5548-b935-5ea007d0bee1",
+    "title": "CANDLE: Iterative Conceptualization and Instantiation Distillation from Large Language Models for Commonsense Reasoning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2024-candle,\n    title = \"{CANDLE}: Iterative Conceptualization and Instantiation Distillation from Large Language Models for Commonsense Reasoning\",\n    author = \"Wang, Weiqi  and\n      Fang, Tianqing  and\n      Li, Chunyang  and\n      Shi, Haochen  and\n      Ding, Wenxuan  and\n      Xu, Baixuan  and\n      Wang, Zhaowei  and\n      Bai, Jiaxin  and\n      Liu, Xin  and\n      Jiayang, Cheng  and\n      Chan, Chunkit  and\n      Song, Yangqiu\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.128\",\n    doi = \"10.18653/v1/2024.acl-long.128\",\n    pages = \"2351--2374\",\n    abstract = \"The sequential process of conceptualization and instantiation is essential to generalizable commonsense reasoning as it allows the application of existing knowledge to unfamiliar scenarios. However, existing works tend to undervalue the step of instantiation and heavilyrely on pre-built concept taxonomies and human annotations to collect both types of knowledge, resulting in a lack of instantiated knowledge to complete reasoning, high cost, and limited scalability. To tackle these challenges, we introduce CANDLE (ConceptuAlizationand INstantiation Distillation from Large Language ModEls), a distillation framework that iteratively performs contextualized conceptualization and instantiation over commonsense knowledge bases by instructing large language models to generate both types of knowledge with critic filtering. By applying CANDLE to ATOMIC (Sap et al., 2019a), we construct a comprehensive knowledge base comprising six million conceptualizations and instantiated commonsense knowledge triples. Both types of knowledge are firmly rooted in the original ATOMIC dataset, and intrinsic evaluations demonstrate their exceptional quality and diversity. Empirical results indicate that distilling CANDLE on student models provides benefits across three downstream tasks. Our data and models are publicly available at https://github.com/HKUST-KnowComp/CANDLE.\",\n}\n",
+    "authors": [
+        "Weiqi Wang",
+        "Tianqing Fang",
+        "Chunyang Li",
+        "Haochen Shi",
+        "Wenxuan Ding",
+        "Baixuan Xu",
+        "Zhaowei Wang",
+        "Jiaxin Bai",
+        "Xin Liu",
+        "Cheng Jiayang",
+        "Chunkit Chan",
+        "Yangqiu Song"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.128.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e5c707b8-83fb-5548-b935-5ea007d0bee1.pdf",
+    "abstract": "The sequential process of conceptualization and instantiation is essential to generalizable commonsense reasoning as it allows the application of existing knowledge to unfamiliar scenarios. However, existing works tend to undervalue the step of instantiation and heavilyrely on pre-built concept taxonomies and human annotations to collect both types of knowledge, resulting in a lack of instantiated knowledge to complete reasoning, high cost, and limited scalability. To tackle these challenges, we introduce CANDLE (ConceptuAlizationand INstantiation Distillation from Large Language ModEls), a distillation framework that iteratively performs contextualized conceptualization and instantiation over commonsense knowledge bases by instructing large language models to generate both types of knowledge with critic filtering. By applying CANDLE to ATOMIC (Sap et al., 2019a), we construct a comprehensive knowledge base comprising six million conceptualizations and instantiated commonsense knowledge triples. Both types of knowledge are firmly rooted in the original ATOMIC dataset, and intrinsic evaluations demonstrate their exceptional quality and diversity. Empirical results indicate that distilling CANDLE on student models provides benefits across three downstream tasks. Our data and models are publicly available at https://github.com/HKUST-KnowComp/CANDLE.",
+    "num_pages": 24
+}

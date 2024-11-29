@@ -1,0 +1,23 @@
+{
+    "uuid": "d968dd22-e489-5e64-8b5e-94fbe7359203",
+    "title": "LEMON: Reviving Stronger and Smaller LMs from Larger LMs with Linear Parameter Fusion",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2024-lemon,\n    title = \"{LEMON}: Reviving Stronger and Smaller {LM}s from Larger {LM}s with Linear Parameter Fusion\",\n    author = \"Chen, Yilong  and\n      Shang, Junyuan  and\n      Zhang, Zhenyu  and\n      Cui, Shiyao  and\n      Liu, Tingwen  and\n      Wang, Shuohuan  and\n      Sun, Yu  and\n      Wu, Hua\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.434\",\n    doi = \"10.18653/v1/2024.acl-long.434\",\n    pages = \"8005--8019\",\n    abstract = \"In the new era of language models, small models (with billions of parameter sizes) are receiving increasing attention due to their flexibility and cost-effectiveness in deployment. However, limited by the model size, the performance of small models trained from scratch may often be unsatisfactory. Learning a stronger and smaller model with the help of larger models is an intuitive idea. Inspired by the observing modular structures in preliminary analysis, we propose LEMON to learn competent initial points for smaller models by fusing parameters from larger models, thereby laying a solid foundation for subsequent training. Specifically, the parameter fusion process involves two operators for layer and dimension, respectively, and we also introduce controllable receptive fields to model the prior parameter characteristics. In this way, the larger model could be transformed into any specific smaller scale and architecture. Starting from LLaMA 2-7B, we revive two stronger and smaller models with 1.3B and 2.7B. Experimental results demonstrate that the fusion-based method exhibits flexibility and outperforms a series of competitive baselines in terms of both effectiveness and efficiency.\",\n}\n",
+    "authors": [
+        "Yilong Chen",
+        "Junyuan Shang",
+        "Zhenyu Zhang",
+        "Shiyao Cui",
+        "Tingwen Liu",
+        "Shuohuan Wang",
+        "Yu Sun",
+        "Hua Wu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.434.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d968dd22-e489-5e64-8b5e-94fbe7359203.pdf",
+    "abstract": "In the new era of language models, small models (with billions of parameter sizes) are receiving increasing attention due to their flexibility and cost-effectiveness in deployment. However, limited by the model size, the performance of small models trained from scratch may often be unsatisfactory. Learning a stronger and smaller model with the help of larger models is an intuitive idea. Inspired by the observing modular structures in preliminary analysis, we propose LEMON to learn competent initial points for smaller models by fusing parameters from larger models, thereby laying a solid foundation for subsequent training. Specifically, the parameter fusion process involves two operators for layer and dimension, respectively, and we also introduce controllable receptive fields to model the prior parameter characteristics. In this way, the larger model could be transformed into any specific smaller scale and architecture. Starting from LLaMA 2-7B, we revive two stronger and smaller models with 1.3B and 2.7B. Experimental results demonstrate that the fusion-based method exhibits flexibility and outperforms a series of competitive baselines in terms of both effectiveness and efficiency.",
+    "num_pages": 15
+}

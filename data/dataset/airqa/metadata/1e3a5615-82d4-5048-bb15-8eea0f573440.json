@@ -1,0 +1,24 @@
+{
+    "uuid": "1e3a5615-82d4-5048-bb15-8eea0f573440",
+    "title": "Using Bottleneck Adapters to Identify Cancer in Clinical Notes under Low-Resource Constraints",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+    "bibtex": "@inproceedings{rohanian-etal-2023-using,\n    title = \"Using Bottleneck Adapters to Identify Cancer in Clinical Notes under Low-Resource Constraints\",\n    author = \"Rohanian, Omid  and\n      Jauncey, Hannah  and\n      Nouriborji, Mohammadmahdi  and\n      Kumar, Vinod  and\n      Gonalves, Bronner P.  and\n      Kartsonaki, Christiana  and\n      Clinical Characterisation Group, Isaric  and\n      Merson, Laura  and\n      Clifton, David\",\n    editor = \"Demner-fushman, Dina  and\n      Ananiadou, Sophia  and\n      Cohen, Kevin\",\n    booktitle = \"The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.bionlp-1.5\",\n    doi = \"10.18653/v1/2023.bionlp-1.5\",\n    pages = \"62--78\",\n    abstract = \"Processing information locked within clinical health records is a challenging task that remains an active area of research in biomedical NLP. In this work, we evaluate a broad set of machine learning techniques ranging from simple RNNs to specialised transformers such as BioBERT on a dataset containing clinical notes along with a set of annotations indicating whether a sample is cancer-related or not. Furthermore, we specifically employ efficient fine-tuning methods from NLP, namely, bottleneck adapters and prompt tuning, to adapt the models to our specialised task. Our evaluations suggest that fine-tuning a frozen BERT model pre-trained on natural language and with bottleneck adapters outperforms all other strategies, including full fine-tuning of the specialised BioBERT model. Based on our findings, we suggest that using bottleneck adapters in low-resource situations with limited access to labelled data or processing capacity could be a viable strategy in biomedical text mining.\",\n}\n",
+    "authors": [
+        "Omid Rohanian",
+        "Hannah Jauncey",
+        "Mohammadmahdi Nouriborji",
+        "Vinod Kumar",
+        "Bronner P. Gonalves",
+        "Christiana Kartsonaki",
+        "Isaric Clinical Characterisation Group",
+        "Laura Merson",
+        "David Clifton"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.bionlp-1.5.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1e3a5615-82d4-5048-bb15-8eea0f573440.pdf",
+    "abstract": "Processing information locked within clinical health records is a challenging task that remains an active area of research in biomedical NLP. In this work, we evaluate a broad set of machine learning techniques ranging from simple RNNs to specialised transformers such as BioBERT on a dataset containing clinical notes along with a set of annotations indicating whether a sample is cancer-related or not. Furthermore, we specifically employ efficient fine-tuning methods from NLP, namely, bottleneck adapters and prompt tuning, to adapt the models to our specialised task. Our evaluations suggest that fine-tuning a frozen BERT model pre-trained on natural language and with bottleneck adapters outperforms all other strategies, including full fine-tuning of the specialised BioBERT model. Based on our findings, we suggest that using bottleneck adapters in low-resource situations with limited access to labelled data or processing capacity could be a viable strategy in biomedical text mining.",
+    "num_pages": 17
+}

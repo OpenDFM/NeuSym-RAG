@@ -1,0 +1,23 @@
+{
+    "uuid": "1802eac7-b279-5c29-93c6-a152b5843f7b",
+    "title": "Augmentation Invariant Discrete Representation for Generative Spoken Language Modeling",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)",
+    "bibtex": "@inproceedings{gat-etal-2023-augmentation,\n    title = \"Augmentation Invariant Discrete Representation for Generative Spoken Language Modeling\",\n    author = \"Gat, Itai  and\n      Kreuk, Felix  and\n      Anh Nguyen, Tu  and\n      Lee, Ann  and\n      Copet, Jade  and\n      Synnaeve, Gabriel  and\n      Dupoux, Emmanuel  and\n      Adi, Yossi\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.iwslt-1.46\",\n    doi = \"10.18653/v1/2023.iwslt-1.46\",\n    pages = \"465--477\",\n    abstract = \"Generative Spoken Language Modeling research focuses on optimizing speech Language Models (LMs) using raw audio recordings without accessing any textual supervision. Such speech LMs usually operate over discrete units obtained from quantizing internal representations of self-supervised models. Although such units show impressive modeling results, their robustness capabilities have not been extensively investigated. This work focuses on improving the robustness of discrete input representations for generative spoken language modeling. First, we formally define how to measure the robustness of such representations to various signal variations that do not alter the spoken information (e.g., time-stretch). Next, we empirically demonstrate how current state-of-the-art representation models lack robustness to such variations. To overcome this, we propose an effective and efficient method to learn robust discrete speech representation for generative spoken language modeling. The proposed approach is based on applying a set of signal transformations to the speech signal and optimizing the model using an iterative pseudo-labeling scheme. Our method significantly improves over the evaluated baselines when considering encoding and modeling metrics. We additionally evaluate our method on the speech-to-speech translation task, considering Spanish-English and French-English translations, and show the proposed approach outperforms the evaluated baselines.\",\n}\n",
+    "authors": [
+        "Itai Gat",
+        "Felix Kreuk",
+        "Tu Anh Nguyen",
+        "Ann Lee",
+        "Jade Copet",
+        "Gabriel Synnaeve",
+        "Emmanuel Dupoux",
+        "Yossi Adi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.iwslt-1.46.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1802eac7-b279-5c29-93c6-a152b5843f7b.pdf",
+    "abstract": "Generative Spoken Language Modeling research focuses on optimizing speech Language Models (LMs) using raw audio recordings without accessing any textual supervision. Such speech LMs usually operate over discrete units obtained from quantizing internal representations of self-supervised models. Although such units show impressive modeling results, their robustness capabilities have not been extensively investigated. This work focuses on improving the robustness of discrete input representations for generative spoken language modeling. First, we formally define how to measure the robustness of such representations to various signal variations that do not alter the spoken information (e.g., time-stretch). Next, we empirically demonstrate how current state-of-the-art representation models lack robustness to such variations. To overcome this, we propose an effective and efficient method to learn robust discrete speech representation for generative spoken language modeling. The proposed approach is based on applying a set of signal transformations to the speech signal and optimizing the model using an iterative pseudo-labeling scheme. Our method significantly improves over the evaluated baselines when considering encoding and modeling metrics. We additionally evaluate our method on the speech-to-speech translation task, considering Spanish-English and French-English translations, and show the proposed approach outperforms the evaluated baselines.",
+    "num_pages": 13
+}

@@ -1,0 +1,24 @@
+{
+    "uuid": "9305024b-7f49-591d-b0a9-a19e6b9b7cd7",
+    "title": "Learn from Failure: Fine-tuning LLMs with Trial-and-Error Data for Intuitionistic Propositional Logic Proving",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{an-etal-2024-learn,\n    title = \"Learn from Failure: Fine-tuning {LLM}s with Trial-and-Error Data for Intuitionistic Propositional Logic Proving\",\n    author = \"An, Chenyang  and\n      Chen, Zhibo  and\n      Ye, Qihao  and\n      First, Emily  and\n      Peng, Letian  and\n      Zhang, Jiayun  and\n      Wang, Zihan  and\n      Lerner, Sorin  and\n      Shang, Jingbo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.45\",\n    doi = \"10.18653/v1/2024.acl-long.45\",\n    pages = \"776--790\",\n    abstract = \"Recent advances in Automated Theorem Proving have shown the effectiveness of leveraging a (large) language model that generates tactics (i.e. proof steps) to search through proof states. The current model, while trained solely on successful proof paths, faces a discrepancy at the inference stage, as it must sample and try various tactics at each proof state until finding success, unlike its training which does not incorporate learning from failed attempts. Intuitively, a tactic that leads to a failed search path would indicate that similar tactics should receive less attention during the following trials. In this paper, we demonstrate the benefit of training models that additionally learn from failed search paths. Facing the lack of such trial-and-error data in existing open-source theorem-proving datasets, we curate a dataset on intuitionistic propositional logic theorems and formalize it in Lean, such that we can reliably check the correctness of proofs. We compare our model trained on relatively short trial-and-error information (TrialMaster) with models trained only on the correct paths and discover that the former solves more unseen theorems with lower trial searches.\",\n}\n",
+    "authors": [
+        "Chenyang An",
+        "Zhibo Chen",
+        "Qihao Ye",
+        "Emily First",
+        "Letian Peng",
+        "Jiayun Zhang",
+        "Zihan Wang",
+        "Sorin Lerner",
+        "Jingbo Shang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.45.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/9305024b-7f49-591d-b0a9-a19e6b9b7cd7.pdf",
+    "abstract": "Recent advances in Automated Theorem Proving have shown the effectiveness of leveraging a (large) language model that generates tactics (i.e. proof steps) to search through proof states. The current model, while trained solely on successful proof paths, faces a discrepancy at the inference stage, as it must sample and try various tactics at each proof state until finding success, unlike its training which does not incorporate learning from failed attempts. Intuitively, a tactic that leads to a failed search path would indicate that similar tactics should receive less attention during the following trials. In this paper, we demonstrate the benefit of training models that additionally learn from failed search paths. Facing the lack of such trial-and-error data in existing open-source theorem-proving datasets, we curate a dataset on intuitionistic propositional logic theorems and formalize it in Lean, such that we can reliably check the correctness of proofs. We compare our model trained on relatively short trial-and-error information (TrialMaster) with models trained only on the correct paths and discover that the former solves more unseen theorems with lower trial searches.",
+    "num_pages": 15
+}

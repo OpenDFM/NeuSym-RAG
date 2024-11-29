@@ -1,0 +1,19 @@
+{
+    "uuid": "7a36698e-5bef-54cf-926f-2394776923da",
+    "title": "Enhancing Robustness of Retrieval-Augmented Language Models with In-Context Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 3rd Workshop on Knowledge Augmented Methods for NLP",
+    "bibtex": "@inproceedings{park-etal-2024-enhancing,\n    title = \"Enhancing Robustness of Retrieval-Augmented Language Models with In-Context Learning\",\n    author = \"Park, SeongIl  and\n      Choi, Seungwoo  and\n      Kim, Nahyun  and\n      Lee, Jay-Yoon\",\n    editor = \"Yu, Wenhao  and\n      Shi, Weijia  and\n      Yasunaga, Michihiro  and\n      Jiang, Meng  and\n      Zhu, Chenguang  and\n      Hajishirzi, Hannaneh  and\n      Zettlemoyer, Luke  and\n      Zhang, Zhihan\",\n    booktitle = \"Proceedings of the 3rd Workshop on Knowledge Augmented Methods for NLP\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.knowledgenlp-1.7\",\n    doi = \"10.18653/v1/2024.knowledgenlp-1.7\",\n    pages = \"93--102\",\n    abstract = \"Retrieval-Augmented Language Models (RALMs) have significantly improved performance in open-domain question answering (QA) by leveraging external knowledge. However, RALMs still struggle with unanswerable queries, where the retrieved contexts do not contain the correct answer, and with conflicting information, where different sources provide contradictory answers due to imperfect retrieval. This study introduces an in-context learning-based approach to enhance the reasoning capabilities of RALMs, making them more robust in imperfect retrieval scenarios. Our method incorporates Machine Reading Comprehension (MRC) demonstrations, referred to as $\\textit{cases}$, to boost the model{'}s capabilities to identify unanswerabilities and conflicts among the retrieved contexts. Experiments on two open-domain QA datasets show that our approach increases accuracy in identifying unanswerable and conflicting scenarios without requiring additional fine-tuning. This work demonstrates that in-context learning can effectively enhance the robustness of RALMs in open-domain QA tasks.\",\n}\n",
+    "authors": [
+        "SeongIl Park",
+        "Seungwoo Choi",
+        "Nahyun Kim",
+        "Jay-Yoon Lee"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.knowledgenlp-1.7.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7a36698e-5bef-54cf-926f-2394776923da.pdf",
+    "abstract": "Retrieval-Augmented Language Models (RALMs) have significantly improved performance in open-domain question answering (QA) by leveraging external knowledge. However, RALMs still struggle with unanswerable queries, where the retrieved contexts do not contain the correct answer, and with conflicting information, where different sources provide contradictory answers due to imperfect retrieval. This study introduces an in-context learning-based approach to enhance the reasoning capabilities of RALMs, making them more robust in imperfect retrieval scenarios. Our method incorporates Machine Reading Comprehension (MRC) demonstrations, referred to as cases, to boost the model’s capabilities to identify unanswerabilities and conflicts among the retrieved contexts. Experiments on two open-domain QA datasets show that our approach increases accuracy in identifying unanswerable and conflicting scenarios without requiring additional fine-tuning. This work demonstrates that in-context learning can effectively enhance the robustness of RALMs in open-domain QA tasks.",
+    "num_pages": 10
+}

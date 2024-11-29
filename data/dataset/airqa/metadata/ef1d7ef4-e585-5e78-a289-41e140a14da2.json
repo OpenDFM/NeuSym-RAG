@@ -1,0 +1,21 @@
+{
+    "uuid": "ef1d7ef4-e585-5e78-a289-41e140a14da2",
+    "title": "Interpreting Sentiment Composition with Latent Semantic Tree",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{jiang-etal-2023-interpreting,\n    title = \"Interpreting Sentiment Composition with Latent Semantic Tree\",\n    author = \"Jiang, Zhongtao  and\n      Zhang, Yuanzhe  and\n      Liu, Cao  and\n      Chen, Jiansong  and\n      Zhao, Jun  and\n      Liu, Kang\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.471\",\n    doi = \"10.18653/v1/2023.findings-acl.471\",\n    pages = \"7464--7478\",\n    abstract = \"As the key to sentiment analysis, sentiment composition considers the classification of a constituent via classifications of its contained sub-constituents and rules operated on them. Such compositionality has been widely studied previously in the form of hierarchical trees including untagged and sentiment ones, which are intrinsically suboptimal in our view. To address this, we propose semantic tree, a new tree form capable of interpreting the sentiment composition in a principled way. Semantic tree is a derivation of a context-free grammar (CFG) describing the specific composition rules on difference semantic roles, which is designed carefully following previous linguistic conclusions. However, semantic tree is a latent variable since there is no its annotation in regular datasets. Thus, in our method, it is marginalized out via inside algorithm and learned to optimize the classification performance. Quantitative and qualitative results demonstrate that our method not only achieves better or competitive results compared to baselines in the setting of regular and domain adaptation classification, and also generates plausible tree explanations.\",\n}\n",
+    "authors": [
+        "Zhongtao Jiang",
+        "Yuanzhe Zhang",
+        "Cao Liu",
+        "Jiansong Chen",
+        "Jun Zhao",
+        "Kang Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.471.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ef1d7ef4-e585-5e78-a289-41e140a14da2.pdf",
+    "abstract": "As the key to sentiment analysis, sentiment composition considers the classification of a constituent via classifications of its contained sub-constituents and rules operated on them. Such compositionality has been widely studied previously in the form of hierarchical trees including untagged and sentiment ones, which are intrinsically suboptimal in our view. To address this, we propose semantic tree, a new tree form capable of interpreting the sentiment composition in a principled way. Semantic tree is a derivation of a context-free grammar (CFG) describing the specific composition rules on difference semantic roles, which is designed carefully following previous linguistic conclusions. However, semantic tree is a latent variable since there is no its annotation in regular datasets. Thus, in our method, it is marginalized out via inside algorithm and learned to optimize the classification performance. Quantitative and qualitative results demonstrate that our method not only achieves better or competitive results compared to baselines in the setting of regular and domain adaptation classification, and also generates plausible tree explanations.",
+    "num_pages": 15
+}

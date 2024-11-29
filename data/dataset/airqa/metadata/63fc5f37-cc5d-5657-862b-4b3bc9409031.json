@@ -1,0 +1,26 @@
+{
+    "uuid": "63fc5f37-cc5d-5657-862b-4b3bc9409031",
+    "title": "RARR: Researching and Revising What Language Models Say, Using Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{gao-etal-2023-rarr,\n    title = \"{RARR}: Researching and Revising What Language Models Say, Using Language Models\",\n    author = \"Gao, Luyu  and\n      Dai, Zhuyun  and\n      Pasupat, Panupong  and\n      Chen, Anthony  and\n      Chaganty, Arun Tejasvi  and\n      Fan, Yicheng  and\n      Zhao, Vincent  and\n      Lao, Ni  and\n      Lee, Hongrae  and\n      Juan, Da-Cheng  and\n      Guu, Kelvin\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.910\",\n    doi = \"10.18653/v1/2023.acl-long.910\",\n    pages = \"16477--16508\",\n    abstract = \"Language models (LMs) now excel at many tasks such as question answering, reasoning, and dialog. However, they sometimes generate unsupported or misleading content. A user cannot easily determine whether their outputs are trustworthy or not, because most LMs do not have any built-in mechanism for attribution to external evidence. To enable attribution while still preserving all the powerful advantages of recent generation models, we propose RARR (Retrofit Attribution using Research and Revision), a system that 1) automatically finds attribution for the output of any text generation model, and 2) post-edits the output to fix unsupported content while preserving the original output as much as possible. When applied to the output of several state-of-the-art LMs on a diverse set of generation tasks, we find that RARR significantly improves attribution while otherwise preserving the original input to a much greater degree than previously explored edit models. Furthermore, the implementation of RARR requires only a handful of training examples, a large language model, and standard web search.\",\n}\n",
+    "authors": [
+        "Luyu Gao",
+        "Zhuyun Dai",
+        "Panupong Pasupat",
+        "Anthony Chen",
+        "Arun Tejasvi Chaganty",
+        "Yicheng Fan",
+        "Vincent Zhao",
+        "Ni Lao",
+        "Hongrae Lee",
+        "Da-Cheng Juan",
+        "Kelvin Guu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.910.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/63fc5f37-cc5d-5657-862b-4b3bc9409031.pdf",
+    "abstract": "Language models (LMs) now excel at many tasks such as question answering, reasoning, and dialog. However, they sometimes generate unsupported or misleading content. A user cannot easily determine whether their outputs are trustworthy or not, because most LMs do not have any built-in mechanism for attribution to external evidence. To enable attribution while still preserving all the powerful advantages of recent generation models, we propose RARR (Retrofit Attribution using Research and Revision), a system that 1) automatically finds attribution for the output of any text generation model, and 2) post-edits the output to fix unsupported content while preserving the original output as much as possible. When applied to the output of several state-of-the-art LMs on a diverse set of generation tasks, we find that RARR significantly improves attribution while otherwise preserving the original input to a much greater degree than previously explored edit models. Furthermore, the implementation of RARR requires only a handful of training examples, a large language model, and standard web search.",
+    "num_pages": 32
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "3d2fcb43-2cda-5645-99aa-da78c6cfd23f",
+    "title": "Revisiting Demonstration Selection Strategies in In-Context Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{peng-etal-2024-revisiting,\n    title = \"Revisiting Demonstration Selection Strategies in In-Context Learning\",\n    author = \"Peng, Keqin  and\n      Ding, Liang  and\n      Yuan, Yancheng  and\n      Liu, Xuebo  and\n      Zhang, Min  and\n      Ouyang, Yuanxin  and\n      Tao, Dacheng\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.492\",\n    doi = \"10.18653/v1/2024.acl-long.492\",\n    pages = \"9090--9101\",\n    abstract = \"Large language models (LLMs) have shown an impressive ability to perform a wide range of tasks using in-context learning (ICL), where a few examples are used to describe a task to the model. However, the performance of ICL varies significantly with the choice of demonstrations, and previous research usually focuses on the data aspect ignoring the model{'}s effect. In this work, we first revisit the factors contributing to this variance from the model aspect, and find that the demonstration choice is both data- and model-dependent. We further propose a conjecture that the performance of a demonstration positively correlates with its contribution to the model{'}s understanding of the test samples, and accordingly propose a data- and model-dependent demonstration selection method, TopK + ConE. Empirically, our method yields consistent improvements in both language understanding and generation tasks with different model scales. Further analyses confirm that, besides the generality and stability under different circumstances, our method provides a unified explanation for the effectiveness of previous methods. Code is publicly available at https://github.com/Romainpkq/revisit{\\_}demon{\\_}selection{\\_}in{\\_}ICL.\",\n}\n",
+    "authors": [
+        "Keqin Peng",
+        "Liang Ding",
+        "Yancheng Yuan",
+        "Xuebo Liu",
+        "Min Zhang",
+        "Yuanxin Ouyang",
+        "Dacheng Tao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.492.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/3d2fcb43-2cda-5645-99aa-da78c6cfd23f.pdf",
+    "abstract": "Large language models (LLMs) have shown an impressive ability to perform a wide range of tasks using in-context learning (ICL), where a few examples are used to describe a task to the model. However, the performance of ICL varies significantly with the choice of demonstrations, and previous research usually focuses on the data aspect ignoring the model’s effect. In this work, we first revisit the factors contributing to this variance from the model aspect, and find that the demonstration choice is both data- and model-dependent. We further propose a conjecture that the performance of a demonstration positively correlates with its contribution to the model’s understanding of the test samples, and accordingly propose a data- and model-dependent demonstration selection method, TopK + ConE. Empirically, our method yields consistent improvements in both language understanding and generation tasks with different model scales. Further analyses confirm that, besides the generality and stability under different circumstances, our method provides a unified explanation for the effectiveness of previous methods. Code is publicly available at https://github.com/Romainpkq/revisit_demon_selection_in_ICL.",
+    "num_pages": 12
+}

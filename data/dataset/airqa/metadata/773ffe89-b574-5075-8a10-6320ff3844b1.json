@@ -1,0 +1,18 @@
+{
+    "uuid": "773ffe89-b574-5075-8a10-6320ff3844b1",
+    "title": "Mind Your Format: Towards Consistent Evaluation of In-Context Learning Improvements",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{voronov-etal-2024-mind,\n    title = \"Mind Your Format: Towards Consistent Evaluation of In-Context Learning Improvements\",\n    author = \"Voronov, Anton  and\n      Wolf, Lena  and\n      Ryabinin, Max\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.375\",\n    doi = \"10.18653/v1/2024.findings-acl.375\",\n    pages = \"6287--6310\",\n}\n",
+    "authors": [
+        "Anton Voronov",
+        "Lena Wolf",
+        "Max Ryabinin"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.375.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/773ffe89-b574-5075-8a10-6320ff3844b1.pdf",
+    "abstract": "Large language models demonstrate a remarkable capability for learning to solve new tasks from a few examples. The prompt template, or the way the input examples are formatted to obtain the prompt, is an important yet often overlooked aspect of in-context learning. In this work, we conduct a comprehensive study of the template format’s influence on the in-context learning performance. We evaluate the impact of the prompt template across 21 models (from 770M to 70B parameters) and 4 standard classification datasets. We show that a poor choice of the template can reduce the performance of the strongest models and inference methods to a random guess level. More importantly, the best templates do not transfer between different setups and even between models of the same family. Our findings show that the currently prevalent approach to evaluation, which ignores template selection, may give misleading results due to different templates in different works. As a first step towards mitigating this issue, we propose Template Ensembles that aggregate model predictions across several templates. This simple test-time augmentation boosts average performance while being robust to the choice of random set of templates.",
+    "num_pages": 24
+}

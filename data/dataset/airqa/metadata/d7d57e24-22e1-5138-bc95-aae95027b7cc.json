@@ -1,0 +1,21 @@
+{
+    "uuid": "d7d57e24-22e1-5138-bc95-aae95027b7cc",
+    "title": "Improving Translation Quality Estimation with Bias Mitigation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{huang-etal-2023-improving,\n    title = \"Improving Translation Quality Estimation with Bias Mitigation\",\n    author = \"Huang, Hui  and\n      Wu, Shuangzhi  and\n      Chen, Kehai  and\n      Di, Hui  and\n      Yang, Muyun  and\n      Zhao, Tiejun\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.121\",\n    doi = \"10.18653/v1/2023.acl-long.121\",\n    pages = \"2175--2190\",\n    abstract = \"State-of-the-art translation Quality Estimation (QE) models are proven to be biased. More specifically, they over-rely on monolingual features while ignoring the bilingual semantic alignment. In this work, we propose a novel method to mitigate the bias of the QE model and improve estimation performance. Our method is based on the contrastive learning between clean and noisy sentence pairs. We first introduce noise to the target side of the parallel sentence pair, forming the negative samples. With the original parallel pairs as the positive sample, the QE model is contrastively trained to distinguish the positive samples from the negative ones. This objective is jointly trained with the regression-style quality estimation, so as to prevent the QE model from overfitting to monolingual features. Experiments on WMT QE evaluation datasets demonstrate that our method improves the estimation performance by a large margin while mitigating the bias.\",\n}\n",
+    "authors": [
+        "Hui Huang",
+        "Shuangzhi Wu",
+        "Kehai Chen",
+        "Hui Di",
+        "Muyun Yang",
+        "Tiejun Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.121.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d7d57e24-22e1-5138-bc95-aae95027b7cc.pdf",
+    "abstract": "State-of-the-art translation Quality Estimation (QE) models are proven to be biased. More specifically, they over-rely on monolingual features while ignoring the bilingual semantic alignment. In this work, we propose a novel method to mitigate the bias of the QE model and improve estimation performance. Our method is based on the contrastive learning between clean and noisy sentence pairs. We first introduce noise to the target side of the parallel sentence pair, forming the negative samples. With the original parallel pairs as the positive sample, the QE model is contrastively trained to distinguish the positive samples from the negative ones. This objective is jointly trained with the regression-style quality estimation, so as to prevent the QE model from overfitting to monolingual features. Experiments on WMT QE evaluation datasets demonstrate that our method improves the estimation performance by a large margin while mitigating the bias.",
+    "num_pages": 16
+}

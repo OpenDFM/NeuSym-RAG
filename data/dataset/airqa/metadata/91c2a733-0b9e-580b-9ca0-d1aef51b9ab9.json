@@ -1,0 +1,24 @@
+{
+    "uuid": "91c2a733-0b9e-580b-9ca0-d1aef51b9ab9",
+    "title": "AutoMoE: Heterogeneous Mixture-of-Experts with Adaptive Computation for Efficient Neural Machine Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{jawahar-etal-2023-automoe,\n    title = \"{A}uto{M}o{E}: Heterogeneous Mixture-of-Experts with Adaptive Computation for Efficient Neural Machine Translation\",\n    author = \"Jawahar, Ganesh  and\n      Mukherjee, Subhabrata  and\n      Liu, Xiaodong  and\n      Kim, Young Jin  and\n      Abdul-Mageed, Muhammad  and\n      Lakshmanan, V.S., Laks  and\n      Awadallah, Ahmed Hassan  and\n      Bubeck, Sebastien  and\n      Gao, Jianfeng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.580\",\n    doi = \"10.18653/v1/2023.findings-acl.580\",\n    pages = \"9116--9132\",\n    abstract = \"Mixture-of-Expert (MoE) models have obtained state-of-the-art performance in Neural Machine Translation (NMT) tasks. Existing works in MoE mostly consider a homogeneous design where the same number of experts of the same size are placed uniformly throughout the network. Furthermore, existing MoE works do not consider computational constraints (e.g., FLOPs, latency) to guide their design. To this end, we develop AutoMoE {--} a framework for designing heterogeneous MoE{'}s under computational constraints. AutoMoE leverages Neural Architecture Search (NAS) to obtain efficient sparse MoE sub-transformers with 4x inference speedup (CPU) and FLOPs reduction over manually designed Transformers, with parity in BLEU score over dense Transformer and within 1 BLEU point of MoE SwitchTransformer, on aggregate over benchmark datasets for NMT.Heterogeneous search space with dense and sparsely activated Transformer modules (e.g., how many experts? where to place them? what should be their sizes?) allows for adaptive compute {--} where different amounts of computations are used for different tokens in the input. Adaptivity comes naturally from routing decisions which send tokens to experts of different sizes. AutoMoE code, data, and trained models are available at \\url{https://aka.ms/AutoMoE}.\",\n}\n",
+    "authors": [
+        "Ganesh Jawahar",
+        "Subhabrata Mukherjee",
+        "Xiaodong Liu",
+        "Young Jin Kim",
+        "Muhammad Abdul-Mageed",
+        "Laks Lakshmanan, V.S.",
+        "Ahmed Hassan Awadallah",
+        "Sebastien Bubeck",
+        "Jianfeng Gao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.580.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/91c2a733-0b9e-580b-9ca0-d1aef51b9ab9.pdf",
+    "abstract": "Mixture-of-Expert (MoE) models have obtained state-of-the-art performance in Neural Machine Translation (NMT) tasks. Existing works in MoE mostly consider a homogeneous design where the same number of experts of the same size are placed uniformly throughout the network. Furthermore, existing MoE works do not consider computational constraints (e.g., FLOPs, latency) to guide their design. To this end, we develop AutoMoE – a framework for designing heterogeneous MoE’s under computational constraints. AutoMoE leverages Neural Architecture Search (NAS) to obtain efficient sparse MoE sub-transformers with 4x inference speedup (CPU) and FLOPs reduction over manually designed Transformers, with parity in BLEU score over dense Transformer and within 1 BLEU point of MoE SwitchTransformer, on aggregate over benchmark datasets for NMT.Heterogeneous search space with dense and sparsely activated Transformer modules (e.g., how many experts? where to place them? what should be their sizes?) allows for adaptive compute – where different amounts of computations are used for different tokens in the input. Adaptivity comes naturally from routing decisions which send tokens to experts of different sizes. AutoMoE code, data, and trained models are available at https://aka.ms/AutoMoE.",
+    "num_pages": 17
+}

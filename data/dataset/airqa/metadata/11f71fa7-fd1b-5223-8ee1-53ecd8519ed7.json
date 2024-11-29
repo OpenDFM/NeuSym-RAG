@@ -1,0 +1,21 @@
+{
+    "uuid": "11f71fa7-fd1b-5223-8ee1-53ecd8519ed7",
+    "title": "LangBridge: Multilingual Reasoning Without Multilingual Supervision",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yoon-etal-2024-langbridge,\n    title = \"{L}ang{B}ridge: Multilingual Reasoning Without Multilingual Supervision\",\n    author = \"Yoon, Dongkeun  and\n      Jang, Joel  and\n      Kim, Sungdong  and\n      Kim, Seungone  and\n      Shafayat, Sheikh  and\n      Seo, Minjoon\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.405\",\n    doi = \"10.18653/v1/2024.acl-long.405\",\n    pages = \"7502--7522\",\n    abstract = \"We introduce LangBridge, a $\\textit{zero-shot}$ approach to adapt language models for multilingual reasoning tasks without multilingual supervision. LangBridge operates by bridging two models, each specialized in different aspects: (1) one specialized in understanding multiple languages (e.g., mT5 encoder) and (2) one specialized in reasoning (e.g., MetaMath). LangBridge connects the two models by introducing minimal trainable parameters between them. Despite utilizing only English data for training, LangBridge considerably enhances the performance of language models on low-resource languages across mathematical reasoning, code completion, logical reasoning, and commonsense reasoning. Our analysis suggests that the efficacy of LangBridge stems from the language-agnostic characteristics of multilingual representations. We publicly release our code and models.\",\n}\n",
+    "authors": [
+        "Dongkeun Yoon",
+        "Joel Jang",
+        "Sungdong Kim",
+        "Seungone Kim",
+        "Sheikh Shafayat",
+        "Minjoon Seo"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.405.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/11f71fa7-fd1b-5223-8ee1-53ecd8519ed7.pdf",
+    "abstract": "We introduce LangBridge, a zero-shot approach to adapt language models for multilingual reasoning tasks without multilingual supervision. LangBridge operates by bridging two models, each specialized in different aspects: (1) one specialized in understanding multiple languages (e.g., mT5 encoder) and (2) one specialized in reasoning (e.g., MetaMath). LangBridge connects the two models by introducing minimal trainable parameters between them. Despite utilizing only English data for training, LangBridge considerably enhances the performance of language models on low-resource languages across mathematical reasoning, code completion, logical reasoning, and commonsense reasoning. Our analysis suggests that the efficacy of LangBridge stems from the language-agnostic characteristics of multilingual representations. We publicly release our code and models.",
+    "num_pages": 21
+}

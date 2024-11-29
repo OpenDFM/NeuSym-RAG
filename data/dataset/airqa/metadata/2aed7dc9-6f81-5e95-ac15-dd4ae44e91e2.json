@@ -1,0 +1,19 @@
+{
+    "uuid": "2aed7dc9-6f81-5e95-ac15-dd4ae44e91e2",
+    "title": "Selective Prefix Tuning for Pre-trained Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhang-etal-2024-selective,\n    title = \"Selective Prefix Tuning for Pre-trained Language Models\",\n    author = \"Zhang, Hongyi  and\n      Li, Zuchao  and\n      Wang, Ping  and\n      Zhao, Hai\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.164\",\n    doi = \"10.18653/v1/2024.findings-acl.164\",\n    pages = \"2806--2813\",\n    abstract = \"The prevalent approach for optimizing pre-trained language models in downstream tasks is fine-tuning. However, it is both time-consuming and memory-inefficient. In response, a more efficient method called Prefix Tuning, which insert learnable vectors into each Transformer layers, has been proposed and proven effective. Recent investigations reveal that prefix tokens carry context-specific information, prompting the hypothesis that enhancing their specialization can improve model performance. To address this, we propose Selective Prefix Tuning (SPT), integrating a selective mechanism inspired by selective self-attention. Additionally, we introduce Selective Loss (SL) to encourage diversity in prefix tokens. Extensive experiments validate the effectiveness of SPT in sentence and token classification tasks. We contribute insight into understanding the role of prefix in model adaptation.\",\n}\n",
+    "authors": [
+        "Hongyi Zhang",
+        "Zuchao Li",
+        "Ping Wang",
+        "Hai Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.164.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/2aed7dc9-6f81-5e95-ac15-dd4ae44e91e2.pdf",
+    "abstract": "The prevalent approach for optimizing pre-trained language models in downstream tasks is fine-tuning. However, it is both time-consuming and memory-inefficient. In response, a more efficient method called Prefix Tuning, which insert learnable vectors into each Transformer layers, has been proposed and proven effective. Recent investigations reveal that prefix tokens carry context-specific information, prompting the hypothesis that enhancing their specialization can improve model performance. To address this, we propose Selective Prefix Tuning (SPT), integrating a selective mechanism inspired by selective self-attention. Additionally, we introduce Selective Loss (SL) to encourage diversity in prefix tokens. Extensive experiments validate the effectiveness of SPT in sentence and token classification tasks. We contribute insight into understanding the role of prefix in model adaptation.",
+    "num_pages": 8
+}

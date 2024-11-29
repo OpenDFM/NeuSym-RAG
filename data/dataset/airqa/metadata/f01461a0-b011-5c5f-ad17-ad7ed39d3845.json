@@ -1,0 +1,21 @@
+{
+    "uuid": "f01461a0-b011-5c5f-ad17-ad7ed39d3845",
+    "title": "Learning to Imagine: Visually-Augmented Natural Language Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{tang-etal-2023-learning-imagine,\n    title = \"Learning to Imagine: Visually-Augmented Natural Language Generation\",\n    author = \"Tang, Tianyi  and\n      Chen, Yushuo  and\n      Du, Yifan  and\n      Li, Junyi  and\n      Zhao, Wayne Xin  and\n      Wen, Ji-Rong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.526\",\n    doi = \"10.18653/v1/2023.acl-long.526\",\n    pages = \"9468--9481\",\n    abstract = \"People often imagine relevant scenes to aid in the writing process. In this work, we aim to utilize visual information for composition in the same manner as humans. We propose a method, LIVE, that makes pre-trained language models (PLMs) Learn to Imagine for Visually-augmented natural language gEneration. First, we imagine the scene based on the text: we use a diffusion model to synthesize high-quality images conditioned on the input texts. Second, we use CLIP to determine whether the text can evoke the imagination in a posterior way. Finally, our imagination is dynamic, and we conduct synthesis for each sentence rather than generate only one image for an entire paragraph. Technically, we propose a novel plug-and-play fusion layer to obtain visually-augmented representations for each text. Our vision-text fusion layer is compatible with Transformer-based architecture. We have conducted extensive experiments on four generation tasks using BART and T5, and the automatic results and human evaluation demonstrate the effectiveness of our proposed method. We will release the code, model, and data at the link: \\url{https://github.com/RUCAIBox/LIVE}.\",\n}\n",
+    "authors": [
+        "Tianyi Tang",
+        "Yushuo Chen",
+        "Yifan Du",
+        "Junyi Li",
+        "Wayne Xin Zhao",
+        "Ji-Rong Wen"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.526.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f01461a0-b011-5c5f-ad17-ad7ed39d3845.pdf",
+    "abstract": "People often imagine relevant scenes to aid in the writing process. In this work, we aim to utilize visual information for composition in the same manner as humans. We propose a method, LIVE, that makes pre-trained language models (PLMs) Learn to Imagine for Visually-augmented natural language gEneration. First, we imagine the scene based on the text: we use a diffusion model to synthesize high-quality images conditioned on the input texts. Second, we use CLIP to determine whether the text can evoke the imagination in a posterior way. Finally, our imagination is dynamic, and we conduct synthesis for each sentence rather than generate only one image for an entire paragraph. Technically, we propose a novel plug-and-play fusion layer to obtain visually-augmented representations for each text. Our vision-text fusion layer is compatible with Transformer-based architecture. We have conducted extensive experiments on four generation tasks using BART and T5, and the automatic results and human evaluation demonstrate the effectiveness of our proposed method. We will release the code, model, and data at the link: https://github.com/RUCAIBox/LIVE.",
+    "num_pages": 14
+}

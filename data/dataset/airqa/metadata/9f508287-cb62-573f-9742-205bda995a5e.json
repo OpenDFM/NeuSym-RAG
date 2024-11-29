@@ -1,0 +1,18 @@
+{
+    "uuid": "9f508287-cb62-573f-9742-205bda995a5e",
+    "title": "Text Generation Model Enhanced with Semantic Information in Aspect Category Sentiment Analysis",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{tran-etal-2023-text,\n    title = \"Text Generation Model Enhanced with Semantic Information in Aspect Category Sentiment Analysis\",\n    author = \"Tran, Tu  and\n      Shirai, Kiyoaki  and\n      Kertkeidkachorn, Natthawut\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.323\",\n    doi = \"10.18653/v1/2023.findings-acl.323\",\n    pages = \"5256--5268\",\n    abstract = \"Aspect Category Sentiment Analysis (ACSA) is one of the main subtasks of sentiment analysis, which aims at predicting polarity over a given aspect category. Recently, generative methods emerge as an efficient way to utilize a pre-trained language model for solving ACSA. However, those methods fail to model relations of target words and opinion words in a sentence including multiple aspects. To tackle this problem, this paper proposes a method to incorporate Abstract Meaning Representation (AMR), which describes semantic representation of a sentence as a directed graph, into a text generation model. Furthermore, two regularizers are designed to guide cross attention weights allocation over AMR graphs. One is the identical regularizer that constrains attention weights of aligned nodes, the other is the entropy regularizer that helps the decoder generate tokens by heavily considering only a few related nodes in the AMR graph. Experimental results on three datasets show that the proposed method outperforms state-of-the-art methods, proving the effectiveness of our model.\",\n}\n",
+    "authors": [
+        "Tu Tran",
+        "Kiyoaki Shirai",
+        "Natthawut Kertkeidkachorn"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.323.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9f508287-cb62-573f-9742-205bda995a5e.pdf",
+    "abstract": "Aspect Category Sentiment Analysis (ACSA) is one of the main subtasks of sentiment analysis, which aims at predicting polarity over a given aspect category. Recently, generative methods emerge as an efficient way to utilize a pre-trained language model for solving ACSA. However, those methods fail to model relations of target words and opinion words in a sentence including multiple aspects. To tackle this problem, this paper proposes a method to incorporate Abstract Meaning Representation (AMR), which describes semantic representation of a sentence as a directed graph, into a text generation model. Furthermore, two regularizers are designed to guide cross attention weights allocation over AMR graphs. One is the identical regularizer that constrains attention weights of aligned nodes, the other is the entropy regularizer that helps the decoder generate tokens by heavily considering only a few related nodes in the AMR graph. Experimental results on three datasets show that the proposed method outperforms state-of-the-art methods, proving the effectiveness of our model.",
+    "num_pages": 13
+}

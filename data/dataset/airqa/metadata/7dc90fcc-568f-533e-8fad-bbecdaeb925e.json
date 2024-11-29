@@ -1,0 +1,18 @@
+{
+    "uuid": "7dc90fcc-568f-533e-8fad-bbecdaeb925e",
+    "title": "Bi-Chainer: Automated Large Language Models Reasoning with Bidirectional Chaining",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{liu-etal-2024-bi,\n    title = \"Bi-Chainer: Automated Large Language Models Reasoning with Bidirectional Chaining\",\n    author = \"Liu, Shuqi  and\n      He, Bowei  and\n      Song, Linqi\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.507\",\n    doi = \"10.18653/v1/2024.findings-acl.507\",\n    pages = \"8578--8598\",\n    abstract = \"Large Language Models (LLMs) have shown human-like reasoning abilities but still face challenges in solving complex logical problems. Existing unidirectional chaining methods, such as forward chaining and backward chaining, suffer from issues like low prediction accuracy and efficiency. To address these, we propose a bidirectional chaining method, Bi-Chainer, which dynamically switches to depth-first reasoning in the opposite reasoning direction when it encounters multiple branching options within the current direction. Thus, the intermediate reasoning results can be utilized as guidance to facilitate the reasoning process. We show that Bi-Chainer achieves sizable accuracy boots over unidirectional chaining frameworks on four challenging logical reasoning datasets. Moreover, Bi-Chainer enhances the accuracy of intermediate proof steps and reduces the average number of inference calls, resulting in more efficient and accurate reasoning.\",\n}\n",
+    "authors": [
+        "Shuqi Liu",
+        "Bowei He",
+        "Linqi Song"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.507.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7dc90fcc-568f-533e-8fad-bbecdaeb925e.pdf",
+    "abstract": "Large Language Models (LLMs) have shown human-like reasoning abilities but still face challenges in solving complex logical problems. Existing unidirectional chaining methods, such as forward chaining and backward chaining, suffer from issues like low prediction accuracy and efficiency. To address these, we propose a bidirectional chaining method, Bi-Chainer, which dynamically switches to depth-first reasoning in the opposite reasoning direction when it encounters multiple branching options within the current direction. Thus, the intermediate reasoning results can be utilized as guidance to facilitate the reasoning process. We show that Bi-Chainer achieves sizable accuracy boots over unidirectional chaining frameworks on four challenging logical reasoning datasets. Moreover, Bi-Chainer enhances the accuracy of intermediate proof steps and reduces the average number of inference calls, resulting in more efficient and accurate reasoning.",
+    "num_pages": 21
+}

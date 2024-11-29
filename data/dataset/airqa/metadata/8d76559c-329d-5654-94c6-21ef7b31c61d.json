@@ -1,0 +1,22 @@
+{
+    "uuid": "8d76559c-329d-5654-94c6-21ef7b31c61d",
+    "title": "Knowledge Crosswords: Geometric Knowledge Reasoning with Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{ding-etal-2024-knowledge,\n    title = \"Knowledge Crosswords: Geometric Knowledge Reasoning with Large Language Models\",\n    author = \"Ding, Wenxuan  and\n      Feng, Shangbin  and\n      Liu, Yuhan  and\n      Tan, Zhaoxuan  and\n      Balachandran, Vidhisha  and\n      He, Tianxing  and\n      Tsvetkov, Yulia\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.154\",\n    doi = \"10.18653/v1/2024.findings-acl.154\",\n    pages = \"2609--2636\",\n    abstract = \"We propose Knowledge Crosswords, a geometric knowledge reasoning benchmark consisting of incomplete knowledge networks bounded by structured factual constraints, where LLMs are tasked with inferring the missing facts to meet all constraints. The novel setting of geometric knowledge reasoning necessitates new LM abilities beyond existing atomic/linear multi-hop QA, such as backtracking, verifying facts and constraints, reasoning with uncertainty, and more. Knowledge Crosswords contains 2,101 individual problems, covering diverse knowledge domains, and is further divided into three difficulty levels. We conduct extensive experiments to evaluate existing LLMs and approaches on Knowledge Crosswords. Results demonstrate that baseline approaches struggle with larger knowledge networks and semantically-equivalent entity distractors. In light of their limitations, we propose two new approaches, Staged Prompting and Verify-All, to augment LLMs{'} abilities for error-aware backtracking and constraint verification. Our Verify-All significantly outperforms prior methods and is more robust towards problems in the hard subset. Further analysis shows that geometric knowledge reasoning poses new challenges to LLMs{'} knowledge abilities, particularly in robustness towards varying option orders, complex structural constraints in knowledge networks, {``}none of the above{''} scenarios, and more.\",\n}\n",
+    "authors": [
+        "Wenxuan Ding",
+        "Shangbin Feng",
+        "Yuhan Liu",
+        "Zhaoxuan Tan",
+        "Vidhisha Balachandran",
+        "Tianxing He",
+        "Yulia Tsvetkov"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.154.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/8d76559c-329d-5654-94c6-21ef7b31c61d.pdf",
+    "abstract": "We propose Knowledge Crosswords, a geometric knowledge reasoning benchmark consisting of incomplete knowledge networks bounded by structured factual constraints, where LLMs are tasked with inferring the missing facts to meet all constraints. The novel setting of geometric knowledge reasoning necessitates new LM abilities beyond existing atomic/linear multi-hop QA, such as backtracking, verifying facts and constraints, reasoning with uncertainty, and more. Knowledge Crosswords contains 2,101 individual problems, covering diverse knowledge domains, and is further divided into three difficulty levels. We conduct extensive experiments to evaluate existing LLMs and approaches on Knowledge Crosswords. Results demonstrate that baseline approaches struggle with larger knowledge networks and semantically-equivalent entity distractors. In light of their limitations, we propose two new approaches, Staged Prompting and Verify-All, to augment LLMs’ abilities for error-aware backtracking and constraint verification. Our Verify-All significantly outperforms prior methods and is more robust towards problems in the hard subset. Further analysis shows that geometric knowledge reasoning poses new challenges to LLMs’ knowledge abilities, particularly in robustness towards varying option orders, complex structural constraints in knowledge networks, “none of the above” scenarios, and more.",
+    "num_pages": 28
+}

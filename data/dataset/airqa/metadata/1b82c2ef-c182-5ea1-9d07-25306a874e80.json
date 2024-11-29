@@ -1,0 +1,16 @@
+{
+    "uuid": "1b82c2ef-c182-5ea1-9d07-25306a874e80",
+    "title": "Back-Transliteration of English Loanwords in Japanese",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the Workshop on Computation and Written Language (CAWL 2023)",
+    "bibtex": "@inproceedings{ren-2023-back,\n    title = \"Back-Transliteration of {E}nglish Loanwords in {J}apanese\",\n    author = \"Ren, Yuying\",\n    editor = \"Gorman, Kyle  and\n      Sproat, Richard  and\n      Roark, Brian\",\n    booktitle = \"Proceedings of the Workshop on Computation and Written Language (CAWL 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.cawl-1.6\",\n    doi = \"10.18653/v1/2023.cawl-1.6\",\n    pages = \"43--49\",\n    abstract = \"We propose methods for transliterating English loanwords in Japanese from their Japanese written form (katakana/romaji) to their original English written form. Our data is a Japanese-English loanwords dictionary that we have created ourselves. We employ two approaches: direct transliteration, which directly converts words from katakana to English, and indirect transliteration, which utilizes the English pronunciation as a means to convert katakana words into their corresponding English sound representations, which are subsequently converted into English words. Additionally, we compare the effectiveness of using katakana versus romaji as input characters. We develop 6 models of 2 types for our experiments: one with an English lexicon-filter, and the other without. For each type, we built 3 models, including a pair n-gram based on WFSTs and two sequence-to-sequence models leveraging LSTM and transformer. Our best performing model was the pair n-gram model with a lexicon-filter, directly transliterating from katakana to English.\",\n}\n",
+    "authors": [
+        "Yuying Ren"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.cawl-1.6.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1b82c2ef-c182-5ea1-9d07-25306a874e80.pdf",
+    "abstract": "We propose methods for transliterating English loanwords in Japanese from their Japanese written form (katakana/romaji) to their original English written form. Our data is a Japanese-English loanwords dictionary that we have created ourselves. We employ two approaches: direct transliteration, which directly converts words from katakana to English, and indirect transliteration, which utilizes the English pronunciation as a means to convert katakana words into their corresponding English sound representations, which are subsequently converted into English words. Additionally, we compare the effectiveness of using katakana versus romaji as input characters. We develop 6 models of 2 types for our experiments: one with an English lexicon-filter, and the other without. For each type, we built 3 models, including a pair n-gram based on WFSTs and two sequence-to-sequence models leveraging LSTM and transformer. Our best performing model was the pair n-gram model with a lexicon-filter, directly transliterating from katakana to English.",
+    "num_pages": 7
+}

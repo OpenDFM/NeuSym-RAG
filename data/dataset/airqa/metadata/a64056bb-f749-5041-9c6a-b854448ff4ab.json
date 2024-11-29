@@ -1,0 +1,26 @@
+{
+    "uuid": "a64056bb-f749-5041-9c6a-b854448ff4ab",
+    "title": "Unsupervised Melody-to-Lyrics Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{tian-etal-2023-unsupervised,\n    title = \"Unsupervised Melody-to-Lyrics Generation\",\n    author = \"Tian, Yufei  and\n      Narayan-Chen, Anjali  and\n      Oraby, Shereen  and\n      Cervone, Alessandra  and\n      Sigurdsson, Gunnar  and\n      Tao, Chenyang  and\n      Zhao, Wenbo  and\n      Chen, Yiwen  and\n      Chung, Tagyoung  and\n      Huang, Jing  and\n      Peng, Nanyun\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.513\",\n    doi = \"10.18653/v1/2023.acl-long.513\",\n    pages = \"9235--9254\",\n    abstract = \"Automatic melody-to-lyric generation is a task in which song lyrics are generated to go with a given melody. It is of significant practical interest and more challenging than unconstrained lyric generation as the music imposes additional constraints onto the lyrics. The training data is limited as most songs are copyrighted, resulting in models that underfit the complicated cross-modal relationship between melody and lyrics. In this work, we propose a method for generating high-quality lyrics without training on any aligned melody-lyric data. Specifically, we design a hierarchical lyric generation framework that first generates a song outline and second the complete lyrics. The framework enables disentanglement of training (based purely on text) from inference (melody-guided text generation) to circumvent the shortage of parallel data. We leverage the segmentation and rhythm alignment between melody and lyrics to compile the given melody into decoding constraints as guidance during inference. The two-step hierarchical design also enables content control via the lyric outline, a much-desired feature for democratizing collaborative song creation. Experimental results show that our model can generate high-quality lyrics that are more on-topic, singable, intelligible, and coherent than strong baselines, for example SongMASS, a SOTA model trained on a parallel dataset, with a 24{\\%} relative overall quality improvement based on human ratings. Our code is available at \\url{https://github.com/amazon-science/unsupervised-melody-to-lyrics-generation}.\",\n}\n",
+    "authors": [
+        "Yufei Tian",
+        "Anjali Narayan-Chen",
+        "Shereen Oraby",
+        "Alessandra Cervone",
+        "Gunnar Sigurdsson",
+        "Chenyang Tao",
+        "Wenbo Zhao",
+        "Yiwen Chen",
+        "Tagyoung Chung",
+        "Jing Huang",
+        "Nanyun Peng"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.513.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a64056bb-f749-5041-9c6a-b854448ff4ab.pdf",
+    "abstract": "Automatic melody-to-lyric generation is a task in which song lyrics are generated to go with a given melody. It is of significant practical interest and more challenging than unconstrained lyric generation as the music imposes additional constraints onto the lyrics. The training data is limited as most songs are copyrighted, resulting in models that underfit the complicated cross-modal relationship between melody and lyrics. In this work, we propose a method for generating high-quality lyrics without training on any aligned melody-lyric data. Specifically, we design a hierarchical lyric generation framework that first generates a song outline and second the complete lyrics. The framework enables disentanglement of training (based purely on text) from inference (melody-guided text generation) to circumvent the shortage of parallel data. We leverage the segmentation and rhythm alignment between melody and lyrics to compile the given melody into decoding constraints as guidance during inference. The two-step hierarchical design also enables content control via the lyric outline, a much-desired feature for democratizing collaborative song creation. Experimental results show that our model can generate high-quality lyrics that are more on-topic, singable, intelligible, and coherent than strong baselines, for example SongMASS, a SOTA model trained on a parallel dataset, with a 24% relative overall quality improvement based on human ratings. Our code is available at https://github.com/amazon-science/unsupervised-melody-to-lyrics-generation.",
+    "num_pages": 18
+}

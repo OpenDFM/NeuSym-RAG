@@ -1,0 +1,21 @@
+{
+    "uuid": "30bd26dd-32e0-5584-bb13-aeb4c16ddd89",
+    "title": "Controlled Text Generation with Hidden Representation Transformations",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{kumar-etal-2023-controlled,\n    title = \"Controlled Text Generation with Hidden Representation Transformations\",\n    author = \"Kumar, Vaibhav  and\n      Koorehdavoudi, Hana  and\n      Moshtaghi, Masud  and\n      Misra, Amita  and\n      Chadha, Ankit  and\n      Ferrara, Emilio\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.602\",\n    doi = \"10.18653/v1/2023.findings-acl.602\",\n    pages = \"9440--9455\",\n    abstract = \"We propose CHRT (Control HiddenRepresentation Transformation) {--} a con-trolled language generation framework thatsteers large language models to generatetext pertaining to certain attributes (such astoxicity). CHRT gains attribute control bymodifying the hidden representation of thebase model through learned transformations. We employ a contrastive-learning frameworkto learn these transformations that can becombined to gain multi-attribute control. Theeffectiveness of CHRT is experimentallyshown by comparing it with seven baselinesover three attributes. CHRT outperforms all thebaselines in the task of detoxification, positivesentiment steering, and text simplificationwhile minimizing the loss in linguistic qualities. Further, our approach has the lowest inferencelatency of only 0.01 seconds more than thebase model, making it the most suitable forhigh-performance production environments. We open-source our code and release two noveldatasets to further propel controlled languagegeneration research\",\n}\n",
+    "authors": [
+        "Vaibhav Kumar",
+        "Hana Koorehdavoudi",
+        "Masud Moshtaghi",
+        "Amita Misra",
+        "Ankit Chadha",
+        "Emilio Ferrara"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.602.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/30bd26dd-32e0-5584-bb13-aeb4c16ddd89.pdf",
+    "abstract": "We propose CHRT (Control HiddenRepresentation Transformation) – a con-trolled language generation framework thatsteers large language models to generatetext pertaining to certain attributes (such astoxicity). CHRT gains attribute control bymodifying the hidden representation of thebase model through learned transformations. We employ a contrastive-learning frameworkto learn these transformations that can becombined to gain multi-attribute control. Theeffectiveness of CHRT is experimentallyshown by comparing it with seven baselinesover three attributes. CHRT outperforms all thebaselines in the task of detoxification, positivesentiment steering, and text simplificationwhile minimizing the loss in linguistic qualities. Further, our approach has the lowest inferencelatency of only 0.01 seconds more than thebase model, making it the most suitable forhigh-performance production environments. We open-source our code and release two noveldatasets to further propel controlled languagegeneration research",
+    "num_pages": 16
+}

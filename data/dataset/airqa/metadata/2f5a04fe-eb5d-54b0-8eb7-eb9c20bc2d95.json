@@ -1,0 +1,19 @@
+{
+    "uuid": "2f5a04fe-eb5d-54b0-8eb7-eb9c20bc2d95",
+    "title": "An Ensemble-of-Experts Framework for Rehearsal-free Continual Relation Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhou-etal-2024-ensemble,\n    title = \"An Ensemble-of-Experts Framework for Rehearsal-free Continual Relation Extraction\",\n    author = \"Zhou, Shen  and\n      Li, Yongqi  and\n      Miao, Xin  and\n      Qian, Tieyun\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.83\",\n    doi = \"10.18653/v1/2024.findings-acl.83\",\n    pages = \"1410--1423\",\n    abstract = \"Continual relation extraction (CRE) aims to continuously learn relations in new tasks without forgetting old relations in previous tasks.Current CRE methods are all rehearsal-based which need to store samples and thus may encounter privacy and security issues.This paper targets rehearsal-free continual relation extraction for the first time and decomposes it into task identification and within-task prediction sub-problems. Existing rehearsal-free methods focus on training a model (expert) for within-task prediction yet neglect to enhance models{'} capability of task identification.In this paper, we propose an Ensemble-of-Experts (EoE) framework for rehearsal-free continual relation extraction. Specifically, we first discriminatively train each expert by augmenting analogous relations across tasks to enhance the expert{'}s task identification ability. We then propose a cascade voting mechanism to form an ensemble of experts for effectively aggregating their abilities.Extensive experiments demonstrate that our method outperforms current rehearsal-free methods and is even better than rehearsal-based CRE methods.\",\n}\n",
+    "authors": [
+        "Shen Zhou",
+        "Yongqi Li",
+        "Xin Miao",
+        "Tieyun Qian"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.83.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/2f5a04fe-eb5d-54b0-8eb7-eb9c20bc2d95.pdf",
+    "abstract": "Continual relation extraction (CRE) aims to continuously learn relations in new tasks without forgetting old relations in previous tasks.Current CRE methods are all rehearsal-based which need to store samples and thus may encounter privacy and security issues.This paper targets rehearsal-free continual relation extraction for the first time and decomposes it into task identification and within-task prediction sub-problems. Existing rehearsal-free methods focus on training a model (expert) for within-task prediction yet neglect to enhance models’ capability of task identification.In this paper, we propose an Ensemble-of-Experts (EoE) framework for rehearsal-free continual relation extraction. Specifically, we first discriminatively train each expert by augmenting analogous relations across tasks to enhance the expert’s task identification ability. We then propose a cascade voting mechanism to form an ensemble of experts for effectively aggregating their abilities.Extensive experiments demonstrate that our method outperforms current rehearsal-free methods and is even better than rehearsal-based CRE methods.",
+    "num_pages": 14
+}

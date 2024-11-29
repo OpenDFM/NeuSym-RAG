@@ -1,0 +1,18 @@
+{
+    "uuid": "dfd4d8e3-ef68-591b-9d20-c0584db18fc0",
+    "title": "Modeling User Satisfaction Dynamics in Dialogue via Hawkes Process",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ye-etal-2023-modeling,\n    title = \"Modeling User Satisfaction Dynamics in Dialogue via {H}awkes Process\",\n    author = \"Ye, Fanghua  and\n      Hu, Zhiyuan  and\n      Yilmaz, Emine\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.494\",\n    doi = \"10.18653/v1/2023.acl-long.494\",\n    pages = \"8875--8889\",\n    abstract = \"Dialogue systems have received increasing attention while automatically evaluating their performance remains challenging. User satisfaction estimation (USE) has been proposed as an alternative. It assumes that the performance of a dialogue system can be measured by user satisfaction and uses an estimator to simulate users. The effectiveness of USE depends heavily on the estimator. Existing estimators independently predict user satisfaction at each turn and ignore satisfaction dynamics across turns within a dialogue. In order to fully simulate users, it is crucial to take satisfaction dynamics into account. To fill this gap, we propose a new estimator ASAP (sAtisfaction eStimation via HAwkes Process) that treats user satisfaction across turns as an event sequence and employs a Hawkes process to effectively model the dynamics in this sequence. Experimental results on four benchmark dialogue datasets demonstrate that ASAP can substantially outperform state-of-the-art baseline estimators.\",\n}\n",
+    "authors": [
+        "Fanghua Ye",
+        "Zhiyuan Hu",
+        "Emine Yilmaz"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.494.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/dfd4d8e3-ef68-591b-9d20-c0584db18fc0.pdf",
+    "abstract": "Dialogue systems have received increasing attention while automatically evaluating their performance remains challenging. User satisfaction estimation (USE) has been proposed as an alternative. It assumes that the performance of a dialogue system can be measured by user satisfaction and uses an estimator to simulate users. The effectiveness of USE depends heavily on the estimator. Existing estimators independently predict user satisfaction at each turn and ignore satisfaction dynamics across turns within a dialogue. In order to fully simulate users, it is crucial to take satisfaction dynamics into account. To fill this gap, we propose a new estimator ASAP (sAtisfaction eStimation via HAwkes Process) that treats user satisfaction across turns as an event sequence and employs a Hawkes process to effectively model the dynamics in this sequence. Experimental results on four benchmark dialogue datasets demonstrate that ASAP can substantially outperform state-of-the-art baseline estimators.",
+    "num_pages": 15
+}

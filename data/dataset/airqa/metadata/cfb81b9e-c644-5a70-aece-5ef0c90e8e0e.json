@@ -1,0 +1,22 @@
+{
+    "uuid": "cfb81b9e-c644-5a70-aece-5ef0c90e8e0e",
+    "title": "Improving the Robustness of Distantly-Supervised Named Entity Recognition via Uncertainty-Aware Teacher Learning and Student-Student Collaborative Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{si-etal-2024-improving,\n    title = \"Improving the Robustness of Distantly-Supervised Named Entity Recognition via Uncertainty-Aware Teacher Learning and Student-Student Collaborative Learning\",\n    author = \"Si, Shuzheng  and\n      Hu, Helan  and\n      Zhao, Haozhe  and\n      Zeng, Shuang  and\n      An, Kaikai  and\n      Cai, Zefan  and\n      Chang, Baobao\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.329\",\n    doi = \"10.18653/v1/2024.findings-acl.329\",\n    pages = \"5533--5546\",\n    abstract = \"Distantly-Supervised Named Entity Recognition (DS-NER) effectively alleviates the burden of annotation, but meanwhile suffers from the label noise. Recent works attempt to adopt the teacher-student framework to gradually refine the training labels and improve the overall robustness. However, we argue that these teacher-student methods achieve limited performance because the poor calibration of the teacher network produces incorrectly pseudo-labeled samples, leading to error propagation. Therefore, we attempt to mitigate this issue by proposing: (1) Uncertainty-Aware Teacher Learning that leverages the prediction uncertainty to reduce the number of incorrect pseudo labels in the self-training stage; (2) Student-Student Collaborative Learning that allows the transfer of reliable labels between two student networks instead of indiscriminately relying on all pseudo labels from its teacher. This approach further enables a full exploration of mislabeled samples rather than simply filtering unreliable pseudo-labeled samples. We evaluate our proposed method on five DS-NER datasets, demonstrating that our method is superior to the state-of-the-art DS-NER denoising methods.\",\n}\n",
+    "authors": [
+        "Shuzheng Si",
+        "Helan Hu",
+        "Haozhe Zhao",
+        "Shuang Zeng",
+        "Kaikai An",
+        "Zefan Cai",
+        "Baobao Chang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.329.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/cfb81b9e-c644-5a70-aece-5ef0c90e8e0e.pdf",
+    "abstract": "Distantly-Supervised Named Entity Recognition (DS-NER) effectively alleviates the burden of annotation, but meanwhile suffers from the label noise. Recent works attempt to adopt the teacher-student framework to gradually refine the training labels and improve the overall robustness. However, we argue that these teacher-student methods achieve limited performance because the poor calibration of the teacher network produces incorrectly pseudo-labeled samples, leading to error propagation. Therefore, we attempt to mitigate this issue by proposing: (1) Uncertainty-Aware Teacher Learning that leverages the prediction uncertainty to reduce the number of incorrect pseudo labels in the self-training stage; (2) Student-Student Collaborative Learning that allows the transfer of reliable labels between two student networks instead of indiscriminately relying on all pseudo labels from its teacher. This approach further enables a full exploration of mislabeled samples rather than simply filtering unreliable pseudo-labeled samples. We evaluate our proposed method on five DS-NER datasets, demonstrating that our method is superior to the state-of-the-art DS-NER denoising methods.",
+    "num_pages": 14
+}

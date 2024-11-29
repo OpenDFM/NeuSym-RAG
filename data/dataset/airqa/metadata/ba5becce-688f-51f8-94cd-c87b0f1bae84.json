@@ -1,0 +1,18 @@
+{
+    "uuid": "ba5becce-688f-51f8-94cd-c87b0f1bae84",
+    "title": "PocketLLM: Enabling On-Device Fine-Tuning for Personalized LLMs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the Fifth Workshop on Privacy in Natural Language Processing",
+    "bibtex": "@inproceedings{peng-etal-2024-pocketllm,\n    title = \"{P}ocket{LLM}: Enabling On-Device Fine-Tuning for Personalized {LLM}s\",\n    author = \"Peng, Dan  and\n      Fu, Zhihui  and\n      Wang, Jun\",\n    editor = \"Habernal, Ivan  and\n      Ghanavati, Sepideh  and\n      Ravichander, Abhilasha  and\n      Jain, Vijayanta  and\n      Thaine, Patricia  and\n      Igamberdiev, Timour  and\n      Mireshghallah, Niloofar  and\n      Feyisetan, Oluwaseyi\",\n    booktitle = \"Proceedings of the Fifth Workshop on Privacy in Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.privatenlp-1.10\",\n    pages = \"91--96\",\n    abstract = \"Recent advancements in large language models (LLMs) have indeed showcased their impressive capabilities. On mobile devices, the wealth of valuable, non-public data generated daily holds great promise for locally fine-tuning personalized LLMs, while maintaining privacy through on-device processing. However, the constraints of mobile device resources pose challenges to direct on-device LLM fine-tuning, mainly due to the memory-intensive nature of derivative-based optimization required for saving gradients and optimizer states. To tackle this, we propose employing derivative-free optimization techniques to enable on-device fine-tuning of LLM, even on memory-limited mobile devices. Empirical results demonstrate that the RoBERTa-large model and OPT-1.3B can be fine-tuned locally on the OPPO Reno 6 smartphone using around 4GB and 6.5GB of memory respectively, using derivative-free optimization techniques. This highlights the feasibility of on-device LLM fine-tuning on mobile devices, paving the way for personalized LLMs on resource-constrained devices while safeguarding data privacy.\",\n}\n",
+    "authors": [
+        "Dan Peng",
+        "Zhihui Fu",
+        "Jun Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.privatenlp-1.10.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/ba5becce-688f-51f8-94cd-c87b0f1bae84.pdf",
+    "abstract": "Recent advancements in large language models (LLMs) have indeed showcased their impressive capabilities. On mobile devices, the wealth of valuable, non-public data generated daily holds great promise for locally fine-tuning personalized LLMs, while maintaining privacy through on-device processing. However, the constraints of mobile device resources pose challenges to direct on-device LLM fine-tuning, mainly due to the memory-intensive nature of derivative-based optimization required for saving gradients and optimizer states. To tackle this, we propose employing derivative-free optimization techniques to enable on-device fine-tuning of LLM, even on memory-limited mobile devices. Empirical results demonstrate that the RoBERTa-large model and OPT-1.3B can be fine-tuned locally on the OPPO Reno 6 smartphone using around 4GB and 6.5GB of memory respectively, using derivative-free optimization techniques. This highlights the feasibility of on-device LLM fine-tuning on mobile devices, paving the way for personalized LLMs on resource-constrained devices while safeguarding data privacy.",
+    "num_pages": 6
+}

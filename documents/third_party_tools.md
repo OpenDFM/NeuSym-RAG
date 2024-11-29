@@ -6,8 +6,8 @@ This document describes the detailed installation, use case, and useful links to
 
 Core input argument: `pdf_path`. It can take the following 4 forms:
 - **uuid string**:
-    - In this case, the metadata dict should be pre-processed and stored in `data/dataset/airqa/uuid2papers.json`, directly return that dict.
-    - If not found in `uuid2papers.json`, raise ValueError.
+    - In this case, the metadata dict should be pre-processed and stored in folder `data/dataset/airqa/metadata`, directly return that dict.
+    - If not found in processed paper dict, raise ValueError.
 - **local pdf path**:
     - Case 1: `data/dataset/airqa/papers/subfolder/{uuid}.pdf`. We will directly extract the UUID and reduce to situation **uuid string**.
     - Case 2: `/path/to/any/folder/anyfilename.pdf`. Firstly, we assume the paper title MUST occur in top lines of the first page. We use LLM to get the paper title from these texts. Then, we resorts to scholar API to extract the paper metadata. After processing, the original local file will be moved and renamed to the field `pdf_path` in the metadata dict.
@@ -17,7 +17,7 @@ Core input argument: `pdf_path`. It can take the following 4 forms:
 - **paper title**:
     - In this case, we will directly call scholar APIs to obtain the metadata.
     - After getting the metadata, we will also download and rename the PDF file according to fields `pdf_url` and `pdf_path` in the metadata dict.
-Attention that, after calling `get_ai_research_metadata`, new paper UUID will be added into `data/dataset/airqa/uuid2papers.json` by default. If you want to prohibit the writing operation, add keyword argument 
+Attention that, after calling `get_ai_research_metadata`, new paper UUID will be dumped into `data/dataset/airqa/metadata/` folder by default. If you want to prohibit the writing operation, add keyword argument `write_to_json=False`.
 
 
 ### DBLP Scholar API

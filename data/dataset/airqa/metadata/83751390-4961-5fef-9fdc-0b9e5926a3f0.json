@@ -1,0 +1,19 @@
+{
+    "uuid": "83751390-4961-5fef-9fdc-0b9e5926a3f0",
+    "title": "DynaSemble: Dynamic Ensembling of Textual and Structure-Based Models for Knowledge Graph Completion",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{nandi-etal-2024-dynasemble,\n    title = \"{D}yna{S}emble: Dynamic Ensembling of Textual and Structure-Based Models for Knowledge Graph Completion\",\n    author = \"Nandi, Ananjan  and\n      Kaur, Navdeep  and\n      Singla, Parag  and\n      ., Mausam\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-short.20\",\n    doi = \"10.18653/v1/2024.acl-short.20\",\n    pages = \"205--216\",\n    abstract = \"We consider two popular approaches to KnowledgeGraph Completion (KGC): textual modelsthat rely on textual entity descriptions, andstructure-based models that exploit the connectivitystructure of the Knowledge Graph(KG). Preliminary experiments show that theseapproaches have complementary strengths:structure-based models perform exceptionallywell when the gold answer is easily reachablefrom the query head in the KG, while textualmodels exploit descriptions to give goodperformance even when the gold answer isnot easily reachable. In response, we proposeDynaSemble, a novel method for learningquery-dependent ensemble weights to combinethese approaches by using the distributions ofscores assigned by the models in the ensembleto all candidate entities. DynaSemble achievesstate-of-the-art results on three standard KGCdatasets, with up to 6.8 pt MRR and 8.3 ptHits@1 gains over the best baseline model forthe WN18RR dataset.\",\n}\n",
+    "authors": [
+        "Ananjan Nandi",
+        "Navdeep Kaur",
+        "Parag Singla",
+        "Mausam ."
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-short.20.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/83751390-4961-5fef-9fdc-0b9e5926a3f0.pdf",
+    "abstract": "We consider two popular approaches to KnowledgeGraph Completion (KGC): textual modelsthat rely on textual entity descriptions, andstructure-based models that exploit the connectivitystructure of the Knowledge Graph(KG). Preliminary experiments show that theseapproaches have complementary strengths:structure-based models perform exceptionallywell when the gold answer is easily reachablefrom the query head in the KG, while textualmodels exploit descriptions to give goodperformance even when the gold answer isnot easily reachable. In response, we proposeDynaSemble, a novel method for learningquery-dependent ensemble weights to combinethese approaches by using the distributions ofscores assigned by the models in the ensembleto all candidate entities. DynaSemble achievesstate-of-the-art results on three standard KGCdatasets, with up to 6.8 pt MRR and 8.3 ptHits@1 gains over the best baseline model forthe WN18RR dataset.",
+    "num_pages": 12
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "5f14288f-53e6-5192-aeeb-6c4b1a294edc",
+    "title": "Residual Prompt Tuning: improving prompt tuning with residual reparameterization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{razdaibiedina-etal-2023-residual,\n    title = \"Residual Prompt Tuning: improving prompt tuning with residual reparameterization\",\n    author = \"Razdaibiedina, Anastasiia  and\n      Mao, Yuning  and\n      Khabsa, Madian  and\n      Lewis, Mike  and\n      Hou, Rui  and\n      Ba, Jimmy  and\n      Almahairi, Amjad\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.421\",\n    doi = \"10.18653/v1/2023.findings-acl.421\",\n    pages = \"6740--6757\",\n    abstract = \"Prompt tuning is one of the successful approaches for parameter-efficient tuning of pre-trained language models. Despite being arguably the most parameter-efficient (tuned soft prompts constitute {\\textless}0.1{\\%} of total parameters), it typically performs worse than other efficient tuning methods and is quite sensitive to hyper-parameters. In this work, we introduce Residual Prompt Tuning - a simple and efficient method that significantly improves the performance and stability of prompt tuning. We propose to reparameterize soft prompt embeddings using a shallow network with a residual connection. Our experiments show that Residual Prompt Tuning significantly outperforms prompt tuning across T5-Large, T5-Base and BERT-Base models. Notably, our method reaches +7 points improvement over prompt tuning on SuperGLUE benchmark with T5-Base model and allows to reduce the prompt length by 10 times without hurting performance. In addition, we show that our approach is robust to the choice of learning rate and prompt initialization, and is effective in few-shot settings.\",\n}\n",
+    "authors": [
+        "Anastasiia Razdaibiedina",
+        "Yuning Mao",
+        "Madian Khabsa",
+        "Mike Lewis",
+        "Rui Hou",
+        "Jimmy Ba",
+        "Amjad Almahairi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.421.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/5f14288f-53e6-5192-aeeb-6c4b1a294edc.pdf",
+    "abstract": "Prompt tuning is one of the successful approaches for parameter-efficient tuning of pre-trained language models. Despite being arguably the most parameter-efficient (tuned soft prompts constitute <0.1% of total parameters), it typically performs worse than other efficient tuning methods and is quite sensitive to hyper-parameters. In this work, we introduce Residual Prompt Tuning - a simple and efficient method that significantly improves the performance and stability of prompt tuning. We propose to reparameterize soft prompt embeddings using a shallow network with a residual connection. Our experiments show that Residual Prompt Tuning significantly outperforms prompt tuning across T5-Large, T5-Base and BERT-Base models. Notably, our method reaches +7 points improvement over prompt tuning on SuperGLUE benchmark with T5-Base model and allows to reduce the prompt length by 10 times without hurting performance. In addition, we show that our approach is robust to the choice of learning rate and prompt initialization, and is effective in few-shot settings.",
+    "num_pages": 18
+}

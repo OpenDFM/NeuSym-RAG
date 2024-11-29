@@ -1,0 +1,22 @@
+{
+    "uuid": "a8bbb1dd-c989-5d8d-aacf-72d411f09ad5",
+    "title": "Distinguish Before Answer: Generating Contrastive Explanation as Knowledge for Commonsense Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{chen-etal-2023-distinguish,\n    title = \"Distinguish Before Answer: Generating Contrastive Explanation as Knowledge for Commonsense Question Answering\",\n    author = \"Chen, Qianglong  and\n      Xu, Guohai  and\n      Yan, Ming  and\n      Zhang, Ji  and\n      Huang, Fei  and\n      Si, Luo  and\n      Zhang, Yin\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.835\",\n    doi = \"10.18653/v1/2023.findings-acl.835\",\n    pages = \"13207--13224\",\n    abstract = \"Existing knowledge-enhanced methods have achieved remarkable results in certain Q{\\&}A tasks via obtaining diverse knowledge from different knowledge bases. However, limited by the properties of retrieved knowledge, they still have trouble benefiting from both the knowledge relevance and distinguishment simultaneously. To address the challenge, we propose \\textbf{CPACE}, a \\textbf{C}oncept-centric \\textbf{P}rompt-b\\textbf{A}sed \\textbf{C}ontrastive \\textbf{E}xplanation Generation model, which aims to convert obtained symbolic knowledge into the contrastive explanation for better distinguishing the differences among given candidates. Firstly, following previous works, we retrieve different types of symbolic knowledge with a concept-centric knowledge extraction module. After that, we generate corresponding contrastive explanation using acquired symbolic knowledge and prompt as guidance for better modeling the knowledge distinguishment and interpretability. Finally, we regard the generated contrastive explanation as external knowledge for downstream task enhancement. We conduct a series of experiments on three widely-used question-answering datasets: CSQA, QASC, and OBQA. Experimental results demonstrate that with the help of generated contrastive explanation, our CPACE model achieves new SOTA on CSQA (89.8{\\%} on the testing set, 0.9{\\%} higher than human performance), and gains impressive improvement on QASC and OBQA (4.2{\\%} and 3.5{\\%}, respectively).\",\n}\n",
+    "authors": [
+        "Qianglong Chen",
+        "Guohai Xu",
+        "Ming Yan",
+        "Ji Zhang",
+        "Fei Huang",
+        "Luo Si",
+        "Yin Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.835.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a8bbb1dd-c989-5d8d-aacf-72d411f09ad5.pdf",
+    "abstract": "Existing knowledge-enhanced methods have achieved remarkable results in certain Q&A tasks via obtaining diverse knowledge from different knowledge bases. However, limited by the properties of retrieved knowledge, they still have trouble benefiting from both the knowledge relevance and distinguishment simultaneously. To address the challenge, we propose CPACE, a Concept-centric Prompt-bAsed Contrastive Explanation Generation model, which aims to convert obtained symbolic knowledge into the contrastive explanation for better distinguishing the differences among given candidates. Firstly, following previous works, we retrieve different types of symbolic knowledge with a concept-centric knowledge extraction module. After that, we generate corresponding contrastive explanation using acquired symbolic knowledge and prompt as guidance for better modeling the knowledge distinguishment and interpretability. Finally, we regard the generated contrastive explanation as external knowledge for downstream task enhancement. We conduct a series of experiments on three widely-used question-answering datasets: CSQA, QASC, and OBQA. Experimental results demonstrate that with the help of generated contrastive explanation, our CPACE model achieves new SOTA on CSQA (89.8% on the testing set, 0.9% higher than human performance), and gains impressive improvement on QASC and OBQA (4.2% and 3.5%, respectively).",
+    "num_pages": 18
+}

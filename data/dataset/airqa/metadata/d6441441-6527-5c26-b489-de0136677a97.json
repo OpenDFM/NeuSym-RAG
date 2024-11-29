@@ -1,0 +1,23 @@
+{
+    "uuid": "d6441441-6527-5c26-b489-de0136677a97",
+    "title": "On the Role of Long-tail Knowledge in Retrieval Augmented Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{li-etal-2024-role-long,\n    title = \"On the Role of Long-tail Knowledge in Retrieval Augmented Large Language Models\",\n    author = \"Li, Dongyang  and\n      Yan, Junbing  and\n      Zhang, Taolin  and\n      Wang, Chengyu  and\n      He, Xiaofeng  and\n      Huang, Longtao  and\n      Xue{'}, Hui  and\n      Huang, Jun\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-short.12\",\n    doi = \"10.18653/v1/2024.acl-short.12\",\n    pages = \"120--126\",\n    abstract = \"Retrieval augmented generation (RAG) exhibits outstanding performance in promoting the knowledge capabilities of large language models (LLMs) with retrieved documents related to user queries. However, RAG only focuses on improving the response quality of LLMs via enhancing queries indiscriminately with retrieved information, paying little attention to what type of knowledge LLMs really need to answer original queries more accurately. In this paper, we suggest that long-tail knowledge is crucial for RAG as LLMs have already remembered common world knowledge during large-scale pre-training. Based on our observation, we propose a simple but effective long-tail knowledge detection method for LLMs. Specifically, the novel Generative Expected Calibration Error (GECE) metric is derived to measure the {``}long-tailness{''} of knowledge based on both statistics and semantics. Hence, we retrieve relevant documents and infuse them into the model for patching knowledge loopholes only when the input query relates to long-tail knowledge. Experiments show that, compared to existing RAG pipelines, our method achieves over 4x speedup in average inference time and consistent performance improvement in downstream tasks.\",\n}\n",
+    "authors": [
+        "Dongyang Li",
+        "Junbing Yan",
+        "Taolin Zhang",
+        "Chengyu Wang",
+        "Xiaofeng He",
+        "Longtao Huang",
+        "Hui Xue’",
+        "Jun Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-short.12.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d6441441-6527-5c26-b489-de0136677a97.pdf",
+    "abstract": "Retrieval augmented generation (RAG) exhibits outstanding performance in promoting the knowledge capabilities of large language models (LLMs) with retrieved documents related to user queries. However, RAG only focuses on improving the response quality of LLMs via enhancing queries indiscriminately with retrieved information, paying little attention to what type of knowledge LLMs really need to answer original queries more accurately. In this paper, we suggest that long-tail knowledge is crucial for RAG as LLMs have already remembered common world knowledge during large-scale pre-training. Based on our observation, we propose a simple but effective long-tail knowledge detection method for LLMs. Specifically, the novel Generative Expected Calibration Error (GECE) metric is derived to measure the “long-tailness” of knowledge based on both statistics and semantics. Hence, we retrieve relevant documents and infuse them into the model for patching knowledge loopholes only when the input query relates to long-tail knowledge. Experiments show that, compared to existing RAG pipelines, our method achieves over 4x speedup in average inference time and consistent performance improvement in downstream tasks.",
+    "num_pages": 7
+}

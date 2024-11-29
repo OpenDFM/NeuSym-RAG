@@ -1,0 +1,19 @@
+{
+    "uuid": "55d8d822-7666-5b4e-adf7-6e1001c1642d",
+    "title": "AVATAR: A Parallel Corpus for Java-Python Program Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{ahmad-etal-2023-avatar,\n    title = \"{AVATAR}: A Parallel Corpus for {J}ava-Python Program Translation\",\n    author = \"Ahmad, Wasi Uddin  and\n      Tushar, Md Golam Rahman  and\n      Chakraborty, Saikat  and\n      Chang, Kai-Wei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.143\",\n    doi = \"10.18653/v1/2023.findings-acl.143\",\n    pages = \"2268--2281\",\n    abstract = \"Program translation refers to migrating source code from one programming language to another. It has tremendous practical value in software development, as porting software across languages is time-consuming and costly. Automating program translation is of paramount importance in software migration, and recently researchers explored unsupervised approaches due to the unavailability of parallel corpora. However, the availability of pre-trained language models for programming languages enables supervised fine-tuning with a small number of labeled examples. Therefore, we present AVATAR, a collection of 9,515 programming problems and their solutions written in two popular languages, Java and Python. AVATAR is collected from competitive programming sites, online platforms, and open-source repositories. Furthermore, AVATAR includes unit tests for 250 examples to facilitate functional correctness evaluation. We benchmark several pre-trained language models fine-tuned on AVATAR. Experiment results show that the models lack in generating functionally accurate code.\",\n}\n",
+    "authors": [
+        "Wasi Uddin Ahmad",
+        "Md Golam Rahman Tushar",
+        "Saikat Chakraborty",
+        "Kai-Wei Chang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.143.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/55d8d822-7666-5b4e-adf7-6e1001c1642d.pdf",
+    "abstract": "Program translation refers to migrating source code from one programming language to another. It has tremendous practical value in software development, as porting software across languages is time-consuming and costly. Automating program translation is of paramount importance in software migration, and recently researchers explored unsupervised approaches due to the unavailability of parallel corpora. However, the availability of pre-trained language models for programming languages enables supervised fine-tuning with a small number of labeled examples. Therefore, we present AVATAR, a collection of 9,515 programming problems and their solutions written in two popular languages, Java and Python. AVATAR is collected from competitive programming sites, online platforms, and open-source repositories. Furthermore, AVATAR includes unit tests for 250 examples to facilitate functional correctness evaluation. We benchmark several pre-trained language models fine-tuned on AVATAR. Experiment results show that the models lack in generating functionally accurate code.",
+    "num_pages": 14
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "8f2fb1f9-4eba-5c62-8832-4f0a1b365cc6",
+    "title": "Reasons to Reject? Aligning Language Models with Judgments",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{xu-etal-2024-reasons,\n    title = \"Reasons to Reject? Aligning Language Models with Judgments\",\n    author = \"Xu, Weiwen  and\n      Cai, Deng  and\n      Zhang, Zhisong  and\n      Lam, Wai  and\n      Shi, Shuming\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.730\",\n    doi = \"10.18653/v1/2024.findings-acl.730\",\n    pages = \"12288--12304\",\n    abstract = \"As humans, we consistently interact with our peers and receive feedback in the form of natural language. This language feedback allows us to maintain appropriate behavior, and rectify potential errors. The question arises naturally: can we use language feedback to align large language models (LLMs)? In contrast to previous research that aligns LLMs with scalar rewards, we present the first systematic exploration of alignment through the lens of language feedback (i.e., judgment). We start with an in-depth investigation of potential methods that can be adapted for aligning LLMs with judgments, revealing that these methods cannot fully capitalize on judgments. To facilitate more effective utilization of judgments, we propose a novel framework, Contrastive Unlikelihood Training (CUT), that allows for fine-grained inappropriate content detection and correction based on judgments. Our results show that, with merely 1317 off-the-shelf judgment data, CUT can beat the 175B DaVinci003 and surpass the best baseline by 50.84 points on AlpacaEval using LLaMA2-13b. CUT can also align LLMs in an iterative fashion using up-to-date model-specific judgments, improving performance from 81.09 to 91.68 points on AlpacaEval using LLaMA2-chat-13b. Further analysis suggests that judgments hold greater potential in LLM alignment than rewards.\",\n}\n",
+    "authors": [
+        "Weiwen Xu",
+        "Deng Cai",
+        "Zhisong Zhang",
+        "Wai Lam",
+        "Shuming Shi"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.730.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/8f2fb1f9-4eba-5c62-8832-4f0a1b365cc6.pdf",
+    "abstract": "As humans, we consistently interact with our peers and receive feedback in the form of natural language. This language feedback allows us to maintain appropriate behavior, and rectify potential errors. The question arises naturally: can we use language feedback to align large language models (LLMs)? In contrast to previous research that aligns LLMs with scalar rewards, we present the first systematic exploration of alignment through the lens of language feedback (i.e., judgment). We start with an in-depth investigation of potential methods that can be adapted for aligning LLMs with judgments, revealing that these methods cannot fully capitalize on judgments. To facilitate more effective utilization of judgments, we propose a novel framework, Contrastive Unlikelihood Training (CUT), that allows for fine-grained inappropriate content detection and correction based on judgments. Our results show that, with merely 1317 off-the-shelf judgment data, CUT can beat the 175B DaVinci003 and surpass the best baseline by 50.84 points on AlpacaEval using LLaMA2-13b. CUT can also align LLMs in an iterative fashion using up-to-date model-specific judgments, improving performance from 81.09 to 91.68 points on AlpacaEval using LLaMA2-chat-13b. Further analysis suggests that judgments hold greater potential in LLM alignment than rewards.",
+    "num_pages": 17
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "538d41dc-8003-5fac-9915-82f0ffd6119d",
+    "title": "CPIC at SemEval-2023 Task 7: GPT2-Based Model for Multi-evidence Natural Language Inference for Clinical Trial Data",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{huang-etal-2023-cpic,\n    title = \"{CPIC} at {S}em{E}val-2023 Task 7: {GPT}2-Based Model for Multi-evidence Natural Language Inference for Clinical Trial Data\",\n    author = \"Huang, Mingtong  and\n      Ren, Junxiang  and\n      Liu, Lang  and\n      Song, Ruilin  and\n      Yin, Wenbo\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.53\",\n    doi = \"10.18653/v1/2023.semeval-1.53\",\n    pages = \"397--401\",\n    abstract = \"This paper describes our system submitted for SemEval Task 7, Multi-Evidence Natural Language Inference for Clinical Trial Data. The task consists of 2 subtasks. Subtask 1 is to determine the relationships between clinical trial data (CTR) and statements. Subtask 2 is to output a set of supporting facts extracted from the premises with the input of CTR premises and statements. Through experiments, we found that our GPT2-based pre-trained models can obtain good results in Subtask 2. Therefore, we use the GPT2-based pre-trained model to fine-tune Subtask 2. We transform the evidence retrieval task into a binary class task by combining premises and statements as input, and the output is whether the premises and statements match. We obtain a top-5 score in the evaluation phase of Subtask 2.\",\n}\n",
+    "authors": [
+        "Mingtong Huang",
+        "Junxiang Ren",
+        "Lang Liu",
+        "Ruilin Song",
+        "Wenbo Yin"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.53.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/538d41dc-8003-5fac-9915-82f0ffd6119d.pdf",
+    "abstract": "This paper describes our system submitted for SemEval Task 7, Multi-Evidence Natural Language Inference for Clinical Trial Data. The task consists of 2 subtasks. Subtask 1 is to determine the relationships between clinical trial data (CTR) and statements. Subtask 2 is to output a set of supporting facts extracted from the premises with the input of CTR premises and statements. Through experiments, we found that our GPT2-based pre-trained models can obtain good results in Subtask 2. Therefore, we use the GPT2-based pre-trained model to fine-tune Subtask 2. We transform the evidence retrieval task into a binary class task by combining premises and statements as input, and the output is whether the premises and statements match. We obtain a top-5 score in the evaluation phase of Subtask 2.",
+    "num_pages": 5
+}

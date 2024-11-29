@@ -1,0 +1,21 @@
+{
+    "uuid": "594f32fc-c4bd-58f3-8857-0249e20e2b80",
+    "title": "UOR: Universal Backdoor Attacks on Pre-trained Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{du-etal-2024-uor,\n    title = \"{UOR}: Universal Backdoor Attacks on Pre-trained Language Models\",\n    author = \"Du, Wei  and\n      Li, Peixuan  and\n      Zhao, Haodong  and\n      Ju, Tianjie  and\n      Ren, Ge  and\n      Liu, Gongshen\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.468\",\n    doi = \"10.18653/v1/2024.findings-acl.468\",\n    pages = \"7865--7877\",\n    abstract = \"Task-agnostic and transferable backdoors implanted in pre-trained language models (PLMs) pose a severe security threat as they can be inherited to any downstream task. However, existing methods rely on manual selection of triggers and backdoor representations, hindering their effectiveness and universality across different PLMs or usage paradigms. In this paper, we propose a new backdoor attack method called UOR, which overcomes these limitations by turning manual selection into automatic optimization. Specifically, we design poisoned supervised contrastive learning, which can automatically learn more uniform and universal backdoor representations. This allows for more even coverage of the output space, thus hitting more labels in downstream tasks after fine-tuning. Furthermore, we utilize gradient search to select appropriate trigger words that can be adapted to different PLMs and vocabularies. Experiments show that UOR achieves better attack performance on various text classification tasks compared to manual methods. Moreover, we test on PLMs with different architectures, usage paradigms, and more challenging tasks, achieving higher scores for universality.\",\n}\n",
+    "authors": [
+        "Wei Du",
+        "Peixuan Li",
+        "Haodong Zhao",
+        "Tianjie Ju",
+        "Ge Ren",
+        "Gongshen Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.468.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/594f32fc-c4bd-58f3-8857-0249e20e2b80.pdf",
+    "abstract": "Task-agnostic and transferable backdoors implanted in pre-trained language models (PLMs) pose a severe security threat as they can be inherited to any downstream task. However, existing methods rely on manual selection of triggers and backdoor representations, hindering their effectiveness and universality across different PLMs or usage paradigms. In this paper, we propose a new backdoor attack method called UOR, which overcomes these limitations by turning manual selection into automatic optimization. Specifically, we design poisoned supervised contrastive learning, which can automatically learn more uniform and universal backdoor representations. This allows for more even coverage of the output space, thus hitting more labels in downstream tasks after fine-tuning. Furthermore, we utilize gradient search to select appropriate trigger words that can be adapted to different PLMs and vocabularies. Experiments show that UOR achieves better attack performance on various text classification tasks compared to manual methods. Moreover, we test on PLMs with different architectures, usage paradigms, and more challenging tasks, achieving higher scores for universality.",
+    "num_pages": 13
+}

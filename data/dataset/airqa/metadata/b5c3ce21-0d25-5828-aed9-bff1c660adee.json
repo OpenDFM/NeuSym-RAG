@@ -1,0 +1,21 @@
+{
+    "uuid": "b5c3ce21-0d25-5828-aed9-bff1c660adee",
+    "title": "Discerning and Resolving Knowledge Conflicts through Adaptive Decoding with Contextual Information-Entropy Constraint",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{yuan-etal-2024-discerning,\n    title = \"Discerning and Resolving Knowledge Conflicts through Adaptive Decoding with Contextual Information-Entropy Constraint\",\n    author = \"Yuan, Xiaowei  and\n      Yang, Zhao  and\n      Wang, Yequan  and\n      Liu, Shengping  and\n      Zhao, Jun  and\n      Liu, Kang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.234\",\n    doi = \"10.18653/v1/2024.findings-acl.234\",\n    pages = \"3903--3922\",\n    abstract = \"Large language models (LLMs) internalize enormous \\textit{parametric knowledge} during pre-training. Concurrently, realistic applications necessitate external \\textit{contextual knowledge} to aid models on the underlying tasks. This raises a crucial dilemma known as \\textit{knowledge conflicts}, where the contextual knowledge clashes with the parametric knowledge. However, existing decoding works are specialized in resolving knowledge conflicts and could inadvertently deteriorate performance in absence of conflicts. In this paper, we propose an adaptive decoding method, termed as contextual information-entropy constraint decoding (COIECD), to discern whether the knowledge conflicts occur and resolve them. It can improve the model{'}s faithfulness to conflicting context, and simultaneously maintain high performance among non-conflicting context. Our experiments show that COIECD exhibits strong performance and robustness over knowledge conflicts in realistic datasets.\",\n}\n",
+    "authors": [
+        "Xiaowei Yuan",
+        "Zhao Yang",
+        "Yequan Wang",
+        "Shengping Liu",
+        "Jun Zhao",
+        "Kang Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.234.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/b5c3ce21-0d25-5828-aed9-bff1c660adee.pdf",
+    "abstract": "Large language models (LLMs) internalize enormous parametric knowledge during pre-training. Concurrently, realistic applications necessitate external contextual knowledge to aid models on the underlying tasks. This raises a crucial dilemma known as knowledge conflicts, where the contextual knowledge clashes with the parametric knowledge. However, existing decoding works are specialized in resolving knowledge conflicts and could inadvertently deteriorate performance in absence of conflicts. In this paper, we propose an adaptive decoding method, termed as contextual information-entropy constraint decoding (COIECD), to discern whether the knowledge conflicts occur and resolve them. It can improve the model’s faithfulness to conflicting context, and simultaneously maintain high performance among non-conflicting context. Our experiments show that COIECD exhibits strong performance and robustness over knowledge conflicts in realistic datasets.",
+    "num_pages": 20
+}

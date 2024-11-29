@@ -1,0 +1,18 @@
+{
+    "uuid": "656c6968-1c2e-5cb6-92f3-1b5e7602ff06",
+    "title": "shefnlp at SemEval-2023 Task 10: Compute-Efficient Category Adapters",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{pickard-etal-2023-shefnlp,\n    title = \"shefnlp at {S}em{E}val-2023 Task 10: Compute-Efficient Category Adapters\",\n    author = \"Pickard, Thomas  and\n      Loakman, Tyler  and\n      Pandya, Mugdha\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.147\",\n    doi = \"10.18653/v1/2023.semeval-1.147\",\n    pages = \"1069--1075\",\n    abstract = \"As social media platforms grow, so too does the volume of hate speech and negative sentiment expressed towards particular social groups. In this paper, we describe our approach to SemEval-2023 Task 10, involving the detection and classification of online sexism (abuse directed towards women), with fine-grained categorisations intended to facilitate the development of a more nuanced understanding of the ideologies and processes through which online sexism is expressed. We experiment with several approaches involving language model finetuning, class-specific adapters, and pseudo-labelling. Our best-performing models involve the training of adapters specific to each subtask category (combined via fusion layers) using a weighted loss function, in addition to performing naive pseudo-labelling on a large quantity of unlabelled data. We successfully outperform the baseline models on all 3 subtasks, placing 56th (of 84) on Task A, 43rd (of 69) on Task B,and 37th (of 63) on Task C.\",\n}\n",
+    "authors": [
+        "Thomas Pickard",
+        "Tyler Loakman",
+        "Mugdha Pandya"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.147.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/656c6968-1c2e-5cb6-92f3-1b5e7602ff06.pdf",
+    "abstract": "As social media platforms grow, so too does the volume of hate speech and negative sentiment expressed towards particular social groups. In this paper, we describe our approach to SemEval-2023 Task 10, involving the detection and classification of online sexism (abuse directed towards women), with fine-grained categorisations intended to facilitate the development of a more nuanced understanding of the ideologies and processes through which online sexism is expressed. We experiment with several approaches involving language model finetuning, class-specific adapters, and pseudo-labelling. Our best-performing models involve the training of adapters specific to each subtask category (combined via fusion layers) using a weighted loss function, in addition to performing naive pseudo-labelling on a large quantity of unlabelled data. We successfully outperform the baseline models on all 3 subtasks, placing 56th (of 84) on Task A, 43rd (of 69) on Task B,and 37th (of 63) on Task C.",
+    "num_pages": 7
+}

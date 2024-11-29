@@ -1,0 +1,21 @@
+{
+    "uuid": "5459e7b9-be6e-5038-96d3-c7c4e38366bd",
+    "title": "Chain-of-History Reasoning for Temporal Knowledge Graph Forecasting",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{xia-etal-2024-chain,\n    title = \"Chain-of-History Reasoning for Temporal Knowledge Graph Forecasting\",\n    author = \"Xia, Yuwei  and\n      Wang, Ding  and\n      Liu, Qiang  and\n      Wang, Liang  and\n      Wu, Shu  and\n      Zhang, Xiao-Yu\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.955\",\n    doi = \"10.18653/v1/2024.findings-acl.955\",\n    pages = \"16144--16159\",\n    abstract = \"Temporal Knowledge Graph (TKG) forecasting aims to predict future facts based on given histories. Most recent graph-based models excel at capturing structural information within TKGs but lack semantic comprehension abilities. Nowadays, with the surge of LLMs, the LLM-based TKG prediction model has emerged. However, the existing LLM-based model exhibits three shortcomings: (1) It only focuses on the first-order history for prediction while ignoring high-order historical information, resulting in the provided information for LLMs being extremely limited. (2) LLMs struggle with optimal reasoning performance under heavy historical information loads. (3) For TKG prediction, the temporal reasoning capability of LLM alone is limited. To address the first two challenges, we propose Chain-of-History (CoH) reasoning which explores high-order histories step-by-step, achieving effective utilization of high-order historical information for LLMs on TKG prediction. To address the third issue, we design CoH as a plug-and-play module to enhance the performance of graph-based models for TKG prediction. Extensive experiments on three datasets and backbones demonstrate the effectiveness of CoH.\",\n}\n",
+    "authors": [
+        "Yuwei Xia",
+        "Ding Wang",
+        "Qiang Liu",
+        "Liang Wang",
+        "Shu Wu",
+        "Xiao-Yu Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.955.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/5459e7b9-be6e-5038-96d3-c7c4e38366bd.pdf",
+    "abstract": "Temporal Knowledge Graph (TKG) forecasting aims to predict future facts based on given histories. Most recent graph-based models excel at capturing structural information within TKGs but lack semantic comprehension abilities. Nowadays, with the surge of LLMs, the LLM-based TKG prediction model has emerged. However, the existing LLM-based model exhibits three shortcomings: (1) It only focuses on the first-order history for prediction while ignoring high-order historical information, resulting in the provided information for LLMs being extremely limited. (2) LLMs struggle with optimal reasoning performance under heavy historical information loads. (3) For TKG prediction, the temporal reasoning capability of LLM alone is limited. To address the first two challenges, we propose Chain-of-History (CoH) reasoning which explores high-order histories step-by-step, achieving effective utilization of high-order historical information for LLMs on TKG prediction. To address the third issue, we design CoH as a plug-and-play module to enhance the performance of graph-based models for TKG prediction. Extensive experiments on three datasets and backbones demonstrate the effectiveness of CoH.",
+    "num_pages": 16
+}

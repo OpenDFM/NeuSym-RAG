@@ -1,0 +1,18 @@
+{
+    "uuid": "8d9a910c-aece-5025-bea1-c586e7fd3306",
+    "title": "Quantifying Train-Evaluation Overlap with Nearest Neighbors",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{kambhatla-etal-2023-quantifying,\n    title = \"Quantifying Train-Evaluation Overlap with Nearest Neighbors\",\n    author = \"Kambhatla, Gauri  and\n      Nguyen, Thuy  and\n      Choi, Eunsol\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.183\",\n    doi = \"10.18653/v1/2023.findings-acl.183\",\n    pages = \"2905--2920\",\n    abstract = \"Characterizing benchmark datasets is crucial to interpreting model performance. In this work, we study train-evaluation overlap as a measure of an individual dataset{'}s adequacy to evaluate model generalization over a wide range of datasets. We quantify the overlap with a simple novel metric based on a nearest neighbors approach between the training and evaluation sets. We identify nearest training examples for each evaluation example by mapping instances with generic and task-specific embedding methods. Our study on eleven classification and extractive QA tasks reveals a wide range of train-evaluation overlap, and we show that the data collection method of the dataset and the difficulty of the task may play a role in the amount of overlap. Lastly, we use our nearest neighbor analysis to identify challenging or potentially mislabeled examples. Our analysis quantifies train-evaluation overlap, providing insights for constructing datasets to study generalization.\",\n}\n",
+    "authors": [
+        "Gauri Kambhatla",
+        "Thuy Nguyen",
+        "Eunsol Choi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.183.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8d9a910c-aece-5025-bea1-c586e7fd3306.pdf",
+    "abstract": "Characterizing benchmark datasets is crucial to interpreting model performance. In this work, we study train-evaluation overlap as a measure of an individual dataset’s adequacy to evaluate model generalization over a wide range of datasets. We quantify the overlap with a simple novel metric based on a nearest neighbors approach between the training and evaluation sets. We identify nearest training examples for each evaluation example by mapping instances with generic and task-specific embedding methods. Our study on eleven classification and extractive QA tasks reveals a wide range of train-evaluation overlap, and we show that the data collection method of the dataset and the difficulty of the task may play a role in the amount of overlap. Lastly, we use our nearest neighbor analysis to identify challenging or potentially mislabeled examples. Our analysis quantifies train-evaluation overlap, providing insights for constructing datasets to study generalization.",
+    "num_pages": 16
+}

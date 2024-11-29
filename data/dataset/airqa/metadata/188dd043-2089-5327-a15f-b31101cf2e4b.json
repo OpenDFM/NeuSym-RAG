@@ -1,0 +1,21 @@
+{
+    "uuid": "188dd043-2089-5327-a15f-b31101cf2e4b",
+    "title": "Speech-based Slot Filling using Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{sun-etal-2024-speech,\n    title = \"Speech-based Slot Filling using Large Language Models\",\n    author = \"Sun, Guangzhi  and\n      Feng, Shutong  and\n      Jiang, Dongcheng  and\n      Zhang, Chao  and\n      Gasic, Milica  and\n      Woodland, Phil\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.379\",\n    doi = \"10.18653/v1/2024.findings-acl.379\",\n    pages = \"6351--6362\",\n    abstract = \"Recently, advancements in large language models (LLMs) have shown an unprecedented ability across various language tasks. This paper investigates the potential application of LLMs to slot filling with noisy ASR transcriptions, via both in-context learning and task-specific fine-tuning. Dedicated prompt designs and noise-robust LoRA fine-tuning are proposed to improve the robustness of LLMs for slot filling with noisy ASR transcriptions. Moreover, a linearised knowledge injection (LKI) scheme is also proposed to integrate dynamic external knowledge into LLMs. Experiments were performed on SLURP to quantify the performance of LLMs, including GPT-3.5-turbo, GPT-4, LLaMA-13B, LLaMA-2-13B and Vicuna-13B (v1.1 and v1.5) with different ASR error rates. The use of the noise-robust fine-tuning together with LKI for Vicuna-13B-v1.5 achieved 6.7{\\%} and 17.6{\\%} absolute SLU-F1 improvements compared to a fully fine-tuned Flan-T5-XL model on the limited data setup and the zero-shot setup respectively.\",\n}\n",
+    "authors": [
+        "Guangzhi Sun",
+        "Shutong Feng",
+        "Dongcheng Jiang",
+        "Chao Zhang",
+        "Milica Gasic",
+        "Phil Woodland"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.379.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/188dd043-2089-5327-a15f-b31101cf2e4b.pdf",
+    "abstract": "Recently, advancements in large language models (LLMs) have shown an unprecedented ability across various language tasks. This paper investigates the potential application of LLMs to slot filling with noisy ASR transcriptions, via both in-context learning and task-specific fine-tuning. Dedicated prompt designs and noise-robust LoRA fine-tuning are proposed to improve the robustness of LLMs for slot filling with noisy ASR transcriptions. Moreover, a linearised knowledge injection (LKI) scheme is also proposed to integrate dynamic external knowledge into LLMs. Experiments were performed on SLURP to quantify the performance of LLMs, including GPT-3.5-turbo, GPT-4, LLaMA-13B, LLaMA-2-13B and Vicuna-13B (v1.1 and v1.5) with different ASR error rates. The use of the noise-robust fine-tuning together with LKI for Vicuna-13B-v1.5 achieved 6.7% and 17.6% absolute SLU-F1 improvements compared to a fully fine-tuned Flan-T5-XL model on the limited data setup and the zero-shot setup respectively.",
+    "num_pages": 12
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "67058ca8-a2cc-5d23-9cc4-f074ec0c85f1",
+    "title": "Multi-Row, Multi-Span Distant Supervision For Table+Text Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{kumar-etal-2023-multi,\n    title = \"Multi-Row, Multi-Span Distant Supervision For {T}able+{T}ext Question Answering\",\n    author = \"Kumar, Vishwajeet  and\n      Gupta, Yash  and\n      Chemmengath, Saneem  and\n      Sen, Jaydeep  and\n      Chakrabarti, Soumen  and\n      Bharadwaj, Samarth  and\n      Pan, Feifei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.449\",\n    doi = \"10.18653/v1/2023.acl-long.449\",\n    pages = \"8080--8094\",\n    abstract = \"Question answering (QA) over tables and linked text, also called TextTableQA, has witnessed significant research in recent years, as tables are often found embedded in documents along with related text. HybridQA and OTT-QA are the two best-known TextTableQA datasets, with questions that are best answered by combining information from both table cells and linked text passages. A common challenge in both datasets, and TextTableQA in general, is that the training instances include just the question and answer, where the gold answer may match not only multiple table cells across table rows but also multiple text spans within the scope of a table row and its associated text. This leads to a noisy multi-instance training regime. We present MITQA, a transformer-based TextTableQA system that is explicitly designed to cope with distant supervision along both these axes, through a multi-instance loss objective, together with careful curriculum design. Our experiments show that the proposed multi-instance distant supervision approach helps MITQA get sate-of-the-art results beating the existing baselines for both HybridQA and OTT-QA, putting MITQA at the top of HybridQA leaderboard with best EM and F1 scores on a held out test set.\",\n}\n",
+    "authors": [
+        "Vishwajeet Kumar",
+        "Yash Gupta",
+        "Saneem Chemmengath",
+        "Jaydeep Sen",
+        "Soumen Chakrabarti",
+        "Samarth Bharadwaj",
+        "Feifei Pan"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.449.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/67058ca8-a2cc-5d23-9cc4-f074ec0c85f1.pdf",
+    "abstract": "Question answering (QA) over tables and linked text, also called TextTableQA, has witnessed significant research in recent years, as tables are often found embedded in documents along with related text. HybridQA and OTT-QA are the two best-known TextTableQA datasets, with questions that are best answered by combining information from both table cells and linked text passages. A common challenge in both datasets, and TextTableQA in general, is that the training instances include just the question and answer, where the gold answer may match not only multiple table cells across table rows but also multiple text spans within the scope of a table row and its associated text. This leads to a noisy multi-instance training regime. We present MITQA, a transformer-based TextTableQA system that is explicitly designed to cope with distant supervision along both these axes, through a multi-instance loss objective, together with careful curriculum design. Our experiments show that the proposed multi-instance distant supervision approach helps MITQA get sate-of-the-art results beating the existing baselines for both HybridQA and OTT-QA, putting MITQA at the top of HybridQA leaderboard with best EM and F1 scores on a held out test set.",
+    "num_pages": 15
+}

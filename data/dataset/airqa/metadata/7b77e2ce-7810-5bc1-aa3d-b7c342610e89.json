@@ -1,0 +1,24 @@
+{
+    "uuid": "7b77e2ce-7810-5bc1-aa3d-b7c342610e89",
+    "title": "BigVideo: A Large-scale Video Subtitle Translation Dataset for Multimodal Machine Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{kang-etal-2023-bigvideo,\n    title = \"{B}ig{V}ideo: A Large-scale Video Subtitle Translation Dataset for Multimodal Machine Translation\",\n    author = \"Kang, Liyan  and\n      Huang, Luyang  and\n      Peng, Ningxin  and\n      Zhu, Peihao  and\n      Sun, Zewei  and\n      Cheng, Shanbo  and\n      Wang, Mingxuan  and\n      Huang, Degen  and\n      Su, Jinsong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.535\",\n    doi = \"10.18653/v1/2023.findings-acl.535\",\n    pages = \"8456--8473\",\n    abstract = \"We present a large-scale video subtitle translation dataset, *BigVideo*, to facilitate the study of multi-modality machine translation. Compared with the widely used *How2* and *VaTeX* datasets, *BigVideo* is more than 10 times larger, consisting of 4.5 million sentence pairs and 9,981 hours of videos. We also introduce two deliberately designed test sets to verify the necessity of visual information: *Ambiguous* with the presence of ambiguous words, and *Unambiguous* in which the text context is self-contained for translation. To better model the common semantics shared across texts and videos, we introduce a contrastive learning method in the cross-modal encoder. Extensive experiments on the *BigVideo* shows that: a) Visual information consistently improves the NMT model in terms of BLEU, BLEURT and COMET on both Ambiguous and Unambiguous test sets. b) Visual information helps disambiguation, compared to the strong text baseline on terminology-targeted scores and human evaluation.\",\n}\n",
+    "authors": [
+        "Liyan Kang",
+        "Luyang Huang",
+        "Ningxin Peng",
+        "Peihao Zhu",
+        "Zewei Sun",
+        "Shanbo Cheng",
+        "Mingxuan Wang",
+        "Degen Huang",
+        "Jinsong Su"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.535.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/7b77e2ce-7810-5bc1-aa3d-b7c342610e89.pdf",
+    "abstract": "We present a large-scale video subtitle translation dataset, *BigVideo*, to facilitate the study of multi-modality machine translation. Compared with the widely used *How2* and *VaTeX* datasets, *BigVideo* is more than 10 times larger, consisting of 4.5 million sentence pairs and 9,981 hours of videos. We also introduce two deliberately designed test sets to verify the necessity of visual information: *Ambiguous* with the presence of ambiguous words, and *Unambiguous* in which the text context is self-contained for translation. To better model the common semantics shared across texts and videos, we introduce a contrastive learning method in the cross-modal encoder. Extensive experiments on the *BigVideo* shows that: a) Visual information consistently improves the NMT model in terms of BLEU, BLEURT and COMET on both Ambiguous and Unambiguous test sets. b) Visual information helps disambiguation, compared to the strong text baseline on terminology-targeted scores and human evaluation.",
+    "num_pages": 18
+}

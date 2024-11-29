@@ -1,0 +1,19 @@
+{
+    "uuid": "aa38dddd-b470-5a5d-ab18-57e7f6d69fe7",
+    "title": "Instruction Induction: From Few Examples to Natural Language Task Descriptions",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{honovich-etal-2023-instruction,\n    title = \"Instruction Induction: From Few Examples to Natural Language Task Descriptions\",\n    author = \"Honovich, Or  and\n      Shaham, Uri  and\n      Bowman, Samuel R.  and\n      Levy, Omer\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.108\",\n    doi = \"10.18653/v1/2023.acl-long.108\",\n    pages = \"1935--1952\",\n    abstract = \"Large language models are able to perform a task by conditioning on a few input-output demonstrations - a paradigm known as in-context learning. We show that language models can explicitly infer an underlying task from a few demonstrations by prompting them to generate a natural language instruction that fits the examples. To explore this ability, we introduce the instruction induction challenge, compile a dataset consisting of 24 tasks, and define a novel evaluation metric based on executing the generated instruction. We discover that, to a large extent, the ability to generate instructions does indeed emerge when using a model that is both large enough and aligned to follow instructions; InstructGPT achieves 65.7{\\%} of human performance in our execution-based metric, while the original GPT-3 model reaches only 9.8{\\%} of human performance. This surprising result suggests that instruction induction might be a viable learning paradigm in and of itself, where instead of fitting a set of latent continuous parameters to the data, one searches for the best description in the natural language hypothesis space.\",\n}\n",
+    "authors": [
+        "Or Honovich",
+        "Uri Shaham",
+        "Samuel R. Bowman",
+        "Omer Levy"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.108.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/aa38dddd-b470-5a5d-ab18-57e7f6d69fe7.pdf",
+    "abstract": "Large language models are able to perform a task by conditioning on a few input-output demonstrations - a paradigm known as in-context learning. We show that language models can explicitly infer an underlying task from a few demonstrations by prompting them to generate a natural language instruction that fits the examples. To explore this ability, we introduce the instruction induction challenge, compile a dataset consisting of 24 tasks, and define a novel evaluation metric based on executing the generated instruction. We discover that, to a large extent, the ability to generate instructions does indeed emerge when using a model that is both large enough and aligned to follow instructions; InstructGPT achieves 65.7% of human performance in our execution-based metric, while the original GPT-3 model reaches only 9.8% of human performance. This surprising result suggests that instruction induction might be a viable learning paradigm in and of itself, where instead of fitting a set of latent continuous parameters to the data, one searches for the best description in the natural language hypothesis space.",
+    "num_pages": 18
+}

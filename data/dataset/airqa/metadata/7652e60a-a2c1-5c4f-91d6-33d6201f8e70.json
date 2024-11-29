@@ -1,0 +1,17 @@
+{
+    "uuid": "7652e60a-a2c1-5c4f-91d6-33d6201f8e70",
+    "title": "Deconstructing Classifiers: Towards A Data Reconstruction Attack Against Text Classification Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the Fifth Workshop on Privacy in Natural Language Processing",
+    "bibtex": "@inproceedings{elmahdy-salem-2024-deconstructing,\n    title = \"Deconstructing Classifiers: Towards A Data Reconstruction Attack Against Text Classification Models\",\n    author = \"Elmahdy, Adel  and\n      Salem, Ahmed\",\n    editor = \"Habernal, Ivan  and\n      Ghanavati, Sepideh  and\n      Ravichander, Abhilasha  and\n      Jain, Vijayanta  and\n      Thaine, Patricia  and\n      Igamberdiev, Timour  and\n      Mireshghallah, Niloofar  and\n      Feyisetan, Oluwaseyi\",\n    booktitle = \"Proceedings of the Fifth Workshop on Privacy in Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.privatenlp-1.15\",\n    pages = \"143--158\",\n    abstract = \"Natural language processing (NLP) models have become increasingly popular in real-world applications, such as text classification. However, they are vulnerable to privacy attacks, including data reconstruction attacks that aim to extract the data used to train the model. Most previous studies on data reconstruction attacks have focused on LLM, while classification models were assumed to be more secure. In this work, we propose a new targeted data reconstruction attack called the Mix And Match attack, which takes advantage of the fact that most classification models are based on LLM. The Mix And Match attack uses the base model of the target model to generate candidate tokens and then prunes them using the classification head. We extensively demonstrate the effectiveness of the attack using both random and organic canaries. This work highlights the importance of considering the privacy risks associated with data reconstruction attacks in classification models and offers insights into possible leakages.\",\n}\n",
+    "authors": [
+        "Adel Elmahdy",
+        "Ahmed Salem"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.privatenlp-1.15.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7652e60a-a2c1-5c4f-91d6-33d6201f8e70.pdf",
+    "abstract": "Natural language processing (NLP) models have become increasingly popular in real-world applications, such as text classification. However, they are vulnerable to privacy attacks, including data reconstruction attacks that aim to extract the data used to train the model. Most previous studies on data reconstruction attacks have focused on LLM, while classification models were assumed to be more secure. In this work, we propose a new targeted data reconstruction attack called the Mix And Match attack, which takes advantage of the fact that most classification models are based on LLM. The Mix And Match attack uses the base model of the target model to generate candidate tokens and then prunes them using the classification head. We extensively demonstrate the effectiveness of the attack using both random and organic canaries. This work highlights the importance of considering the privacy risks associated with data reconstruction attacks in classification models and offers insights into possible leakages.",
+    "num_pages": 16
+}

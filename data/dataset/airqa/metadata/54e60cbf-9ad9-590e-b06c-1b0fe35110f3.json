@@ -1,0 +1,22 @@
+{
+    "uuid": "54e60cbf-9ad9-590e-b06c-1b0fe35110f3",
+    "title": "Knowledge Graph Embeddings using Neural Ito Process: From Multiple Walks to Stochastic Trajectories",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{nayyeri-etal-2023-knowledge,\n    title = \"Knowledge Graph Embeddings using Neural {I}to Process: From Multiple Walks to Stochastic Trajectories\",\n    author = \"Nayyeri, Mojtaba  and\n      Xiong, Bo  and\n      Mohammadi, Majid  and\n      Akter, Mst. Mahfuja  and\n      Alam, Mirza Mohtashim  and\n      Lehmann, Jens  and\n      Staab, Steffen\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.448\",\n    doi = \"10.18653/v1/2023.findings-acl.448\",\n    pages = \"7165--7179\",\n    abstract = \"Knowledge graphs mostly exhibit a mixture of branching relations, e.g., hasFriend, and complex structures, e.g., hierarchy and loop. Most knowledge graph embeddings have problems expressing them, because they model a specific relation r from a head h to tails by starting at the node embedding of h and transitioning deterministically to exactly one other point in the embedding space. We overcome this issue in our novel framework ItCAREToE by modeling relations between nodes by relation-specific, stochastic transitions. Our framework is based on stochastic ItCARETo processes, which operate on low-dimensional manifolds. ItCAREToE is highly expressive and generic subsuming various state-of-the-art models operating on different, also non-Euclidean, manifolds. Experimental results show the superiority of ItCAREToE over other deterministic embedding models with regard to the KG completion task.\",\n}\n",
+    "authors": [
+        "Mojtaba Nayyeri",
+        "Bo Xiong",
+        "Majid Mohammadi",
+        "Mst. Mahfuja Akter",
+        "Mirza Mohtashim Alam",
+        "Jens Lehmann",
+        "Steffen Staab"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.448.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/54e60cbf-9ad9-590e-b06c-1b0fe35110f3.pdf",
+    "abstract": "Knowledge graphs mostly exhibit a mixture of branching relations, e.g., hasFriend, and complex structures, e.g., hierarchy and loop. Most knowledge graph embeddings have problems expressing them, because they model a specific relation r from a head h to tails by starting at the node embedding of h and transitioning deterministically to exactly one other point in the embedding space. We overcome this issue in our novel framework ItCAREToE by modeling relations between nodes by relation-specific, stochastic transitions. Our framework is based on stochastic ItCARETo processes, which operate on low-dimensional manifolds. ItCAREToE is highly expressive and generic subsuming various state-of-the-art models operating on different, also non-Euclidean, manifolds. Experimental results show the superiority of ItCAREToE over other deterministic embedding models with regard to the KG completion task.",
+    "num_pages": 15
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "c767b426-42dd-54f1-9f78-3ecf1d8741e8",
+    "title": "WaterBench: Towards Holistic Evaluation of Watermarks for Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{tu-etal-2024-waterbench,\n    title = \"{W}ater{B}ench: Towards Holistic Evaluation of Watermarks for Large Language Models\",\n    author = \"Tu, Shangqing  and\n      Sun, Yuliang  and\n      Bai, Yushi  and\n      Yu, Jifan  and\n      Hou, Lei  and\n      Li, Juanzi\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.83\",\n    doi = \"10.18653/v1/2024.acl-long.83\",\n    pages = \"1517--1542\",\n    abstract = \"To mitigate the potential misuse of large language models (LLMs), recent research has developed watermarking algorithms, which restrict the generation process to leave an invisible trace for watermark detection. Due to the two-stage nature of the task, most studies evaluate the generation and detection separately, thereby presenting a challenge in unbiased, thorough, and applicable evaluations. In this paper, we introduce WaterBench, the first comprehensive benchmark for LLM watermarks, in which we design three crucial factors: (1) For benchmarking procedure, to ensure an apples-to-apples comparison, we first adjust each watermarking method{'}s hyper-parameter to reach the same watermarking strength, then jointly evaluate their generation and detection performance. (2) For task selection, we diversify the input and output length to form a five-category taxonomy, covering 9 tasks. (3) For evaluation metric, we adopt the GPT4-Judge for automatically evaluating the decline of instruction-following abilities after watermarking. We evaluate 4 open-source watermarks on 2 LLMs under 2 watermarking strengths and observe the common struggles for current methods on maintaining the generation quality. The code and data are available at https://github.com/THU-KEG/WaterBench.\",\n}\n",
+    "authors": [
+        "Shangqing Tu",
+        "Yuliang Sun",
+        "Yushi Bai",
+        "Jifan Yu",
+        "Lei Hou",
+        "Juanzi Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.83.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/c767b426-42dd-54f1-9f78-3ecf1d8741e8.pdf",
+    "abstract": "To mitigate the potential misuse of large language models (LLMs), recent research has developed watermarking algorithms, which restrict the generation process to leave an invisible trace for watermark detection. Due to the two-stage nature of the task, most studies evaluate the generation and detection separately, thereby presenting a challenge in unbiased, thorough, and applicable evaluations. In this paper, we introduce WaterBench, the first comprehensive benchmark for LLM watermarks, in which we design three crucial factors: (1) For benchmarking procedure, to ensure an apples-to-apples comparison, we first adjust each watermarking method’s hyper-parameter to reach the same watermarking strength, then jointly evaluate their generation and detection performance. (2) For task selection, we diversify the input and output length to form a five-category taxonomy, covering 9 tasks. (3) For evaluation metric, we adopt the GPT4-Judge for automatically evaluating the decline of instruction-following abilities after watermarking. We evaluate 4 open-source watermarks on 2 LLMs under 2 watermarking strengths and observe the common struggles for current methods on maintaining the generation quality. The code and data are available at https://github.com/THU-KEG/WaterBench.",
+    "num_pages": 26
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "8ded6ac8-e301-5766-afa4-bbcb1039bb20",
+    "title": "Enhancing Educational Dialogues: A Reinforcement Learning Approach for Generating AI Teacher Responses",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 18th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2023)",
+    "bibtex": "@inproceedings{huber-etal-2023-enhancing,\n    title = \"Enhancing Educational Dialogues: A Reinforcement Learning Approach for Generating {AI} Teacher Responses\",\n    author = \"Huber, Thomas  and\n      Niklaus, Christina  and\n      Handschuh, Siegfried\",\n    editor = {Kochmar, Ekaterina  and\n      Burstein, Jill  and\n      Horbach, Andrea  and\n      Laarmann-Quante, Ronja  and\n      Madnani, Nitin  and\n      Tack, Ana{\\\"\\i}s  and\n      Yaneva, Victoria  and\n      Yuan, Zheng  and\n      Zesch, Torsten},\n    booktitle = \"Proceedings of the 18th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.bea-1.59\",\n    doi = \"10.18653/v1/2023.bea-1.59\",\n    pages = \"736--744\",\n    abstract = \"Reinforcement Learning remains an underutilized method of training and fine-tuning Language Models (LMs) despite recent successes. This paper presents a simple approach of fine-tuning a language model with Reinforcement Learning to achieve competitive performance on the BEA 2023 Shared Task whose goal is to automatically generate teacher responses in educational dialogues. We utilized the novel NLPO algorithm that masks out tokens during generation to direct the model towards generations that maximize a reward function. We show results for both the t5-base model with 220 million parameters from the HuggingFace repository submitted to the leaderboard that, despite its comparatively small size, has achieved a good performance on both test and dev set, as well as GPT-2 with 124 million parameters. The presented results show that despite maximizing only one of the metrics used in the evaluation as a reward function our model scores highly in the other metrics as well.\",\n}\n",
+    "authors": [
+        "Thomas Huber",
+        "Christina Niklaus",
+        "Siegfried Handschuh"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.bea-1.59.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8ded6ac8-e301-5766-afa4-bbcb1039bb20.pdf",
+    "abstract": "Reinforcement Learning remains an underutilized method of training and fine-tuning Language Models (LMs) despite recent successes. This paper presents a simple approach of fine-tuning a language model with Reinforcement Learning to achieve competitive performance on the BEA 2023 Shared Task whose goal is to automatically generate teacher responses in educational dialogues. We utilized the novel NLPO algorithm that masks out tokens during generation to direct the model towards generations that maximize a reward function. We show results for both the t5-base model with 220 million parameters from the HuggingFace repository submitted to the leaderboard that, despite its comparatively small size, has achieved a good performance on both test and dev set, as well as GPT-2 with 124 million parameters. The presented results show that despite maximizing only one of the metrics used in the evaluation as a reward function our model scores highly in the other metrics as well.",
+    "num_pages": 9
+}

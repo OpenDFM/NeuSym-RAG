@@ -1,0 +1,20 @@
+{
+    "uuid": "84efc59c-3a1d-5957-8b29-c45c9e39bd61",
+    "title": "Client-Customized Adaptation for Parameter-Efficient Federated Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{kim-etal-2023-client,\n    title = \"Client-Customized Adaptation for Parameter-Efficient Federated Learning\",\n    author = \"Kim, Yeachan  and\n      Kim, Junho  and\n      Mok, Wing-Lam  and\n      Park, Jun-Hyung  and\n      Lee, SangKeun\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.75\",\n    doi = \"10.18653/v1/2023.findings-acl.75\",\n    pages = \"1159--1172\",\n    abstract = \"Despite the versatility of pre-trained language models (PLMs) across domains, their large memory footprints pose significant challenges in federated learning (FL), where the training model has to be distributed between a server and clients. One potential solution to bypass such constraints might be the use of parameter-efficient fine-tuning (PEFT) in the context of FL. However, we have observed that typical PEFT tends to severely suffer from heterogeneity among clients in FL scenarios, resulting in unstable and slow convergence. In this paper, we propose Client-Customized Adaptation (C2A), a novel hypernetwork-based FL framework that generates client-specific adapters by conditioning the client information. With the effectiveness of the hypernetworks in generating customized weights through learning to adopt the different characteristics of inputs, C2A can maximize the utility of shared model parameters while minimizing the divergence caused by client heterogeneity. To verify the efficacy of C2A, we perform extensive evaluations on FL scenarios involving heterogeneity in label and language distributions. Comprehensive evaluation results clearly support the superiority of C2A in terms of both efficiency and effectiveness in FL scenarios.\",\n}\n",
+    "authors": [
+        "Yeachan Kim",
+        "Junho Kim",
+        "Wing-Lam Mok",
+        "Jun-Hyung Park",
+        "SangKeun Lee"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.75.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/84efc59c-3a1d-5957-8b29-c45c9e39bd61.pdf",
+    "abstract": "Despite the versatility of pre-trained language models (PLMs) across domains, their large memory footprints pose significant challenges in federated learning (FL), where the training model has to be distributed between a server and clients. One potential solution to bypass such constraints might be the use of parameter-efficient fine-tuning (PEFT) in the context of FL. However, we have observed that typical PEFT tends to severely suffer from heterogeneity among clients in FL scenarios, resulting in unstable and slow convergence. In this paper, we propose Client-Customized Adaptation (C2A), a novel hypernetwork-based FL framework that generates client-specific adapters by conditioning the client information. With the effectiveness of the hypernetworks in generating customized weights through learning to adopt the different characteristics of inputs, C2A can maximize the utility of shared model parameters while minimizing the divergence caused by client heterogeneity. To verify the efficacy of C2A, we perform extensive evaluations on FL scenarios involving heterogeneity in label and language distributions. Comprehensive evaluation results clearly support the superiority of C2A in terms of both efficiency and effectiveness in FL scenarios.",
+    "num_pages": 14
+}

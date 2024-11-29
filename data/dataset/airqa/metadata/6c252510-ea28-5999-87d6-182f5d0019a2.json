@@ -1,0 +1,20 @@
+{
+    "uuid": "6c252510-ea28-5999-87d6-182f5d0019a2",
+    "title": "Zero- and Few-Shots Knowledge Graph Triplet Extraction with Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 1st Workshop on Knowledge Graphs and Large Language Models (KaLLM 2024)",
+    "bibtex": "@inproceedings{papaluca-etal-2024-zero,\n    title = \"Zero- and Few-Shots Knowledge Graph Triplet Extraction with Large Language Models\",\n    author = \"Papaluca, Andrea  and\n      Krefl, Daniel  and\n      Rodr{\\'\\i}guez M{\\'e}ndez, Sergio  and\n      Lensky, Artem  and\n      Suominen, Hanna\",\n    editor = \"Biswas, Russa  and\n      Kaffee, Lucie-Aim{\\'e}e  and\n      Agarwal, Oshin  and\n      Minervini, Pasquale  and\n      Singh, Sameer  and\n      de Melo, Gerard\",\n    booktitle = \"Proceedings of the 1st Workshop on Knowledge Graphs and Large Language Models (KaLLM 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.kallm-1.2\",\n    doi = \"10.18653/v1/2024.kallm-1.2\",\n    pages = \"12--23\",\n    abstract = \"In this work, we tested the Triplet Extraction (TE) capabilities of a variety of Large Language Models (LLMs) of different sizes in the Zero- and Few-Shots settings. In detail, we proposed a pipeline that dynamically gathers contextual information from a Knowledge Base (KB), both in the form of context triplets and of (sentence, triplets) pairs as examples, and provides it to the LLM through a prompt. The additional context allowed the LLMs to be competitive with all the older fully trained baselines based on the Bidirectional Long Short-Term Memory (BiLSTM) Network architecture. We further conducted a detailed analysis of the quality of the gathered KB context, finding it to be strongly correlated with the final TE performance of the model. In contrast, the size of the model appeared to only logarithmically improve the TE capabilities of the LLMs. We release the code on GitHub for reproducibility.\",\n}\n",
+    "authors": [
+        "Andrea Papaluca",
+        "Daniel Krefl",
+        "Sergio Rodríguez Méndez",
+        "Artem Lensky",
+        "Hanna Suominen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.kallm-1.2.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/6c252510-ea28-5999-87d6-182f5d0019a2.pdf",
+    "abstract": "In this work, we tested the Triplet Extraction (TE) capabilities of a variety of Large Language Models (LLMs) of different sizes in the Zero- and Few-Shots settings. In detail, we proposed a pipeline that dynamically gathers contextual information from a Knowledge Base (KB), both in the form of context triplets and of (sentence, triplets) pairs as examples, and provides it to the LLM through a prompt. The additional context allowed the LLMs to be competitive with all the older fully trained baselines based on the Bidirectional Long Short-Term Memory (BiLSTM) Network architecture. We further conducted a detailed analysis of the quality of the gathered KB context, finding it to be strongly correlated with the final TE performance of the model. In contrast, the size of the model appeared to only logarithmically improve the TE capabilities of the LLMs. We release the code on GitHub for reproducibility.",
+    "num_pages": 12
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "ec360273-dfcb-587e-9d4a-38556e51af8c",
+    "title": "Bi-level Finetuning with Task-dependent Similarity Structure for Low-resource Training",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{somayajula-etal-2023-bi,\n    title = \"Bi-level Finetuning with Task-dependent Similarity Structure for Low-resource Training\",\n    author = \"Somayajula, Sai Ashish  and\n      Jin, Lifeng  and\n      Song, Linfeng  and\n      Mi, Haitao  and\n      Yu, Dong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.544\",\n    doi = \"10.18653/v1/2023.findings-acl.544\",\n    pages = \"8569--8588\",\n    abstract = \"Training a large language model in low-resource settings is challenging since they are susceptible to overfitting with limited generalization abilities. Previous work addresses this issue by approaches such as tunable parameters reduction or data augmentation. However, they either limit the trained models{'} expressiveness or rely on task-independent knowledge. In this paper, we propose the Bi-level Finetuning with Task-dependent Similarity Structure framework where all parameters, including the embeddings for unseen tokens, are finetuned with task-dependent information from the training data only. In this framework, a task-dependent similarity structure is learned in a data-driven fashion, which in turn is used to compose soft embeddings from conventional embeddings to be used in training to update all parameters. In order to learn the similarity structure and model parameters, we propose a bi-level optimization algorithm with two stages{---}search and finetune{---}to ensure successful learning. Results of experiments on several classification datasets in low-resource scenarios demonstrate that models trained with our method outperform strong baselines. Ablation experiments further support the effectiveness of different components in our framework. Code is available at \\url{https://github.com/Sai-Ashish/BFTSS}.\",\n}\n",
+    "authors": [
+        "Sai Ashish Somayajula",
+        "Lifeng Jin",
+        "Linfeng Song",
+        "Haitao Mi",
+        "Dong Yu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.544.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ec360273-dfcb-587e-9d4a-38556e51af8c.pdf",
+    "abstract": "Training a large language model in low-resource settings is challenging since they are susceptible to overfitting with limited generalization abilities. Previous work addresses this issue by approaches such as tunable parameters reduction or data augmentation. However, they either limit the trained models’ expressiveness or rely on task-independent knowledge. In this paper, we propose the Bi-level Finetuning with Task-dependent Similarity Structure framework where all parameters, including the embeddings for unseen tokens, are finetuned with task-dependent information from the training data only. In this framework, a task-dependent similarity structure is learned in a data-driven fashion, which in turn is used to compose soft embeddings from conventional embeddings to be used in training to update all parameters. In order to learn the similarity structure and model parameters, we propose a bi-level optimization algorithm with two stages—search and finetune—to ensure successful learning. Results of experiments on several classification datasets in low-resource scenarios demonstrate that models trained with our method outperform strong baselines. Ablation experiments further support the effectiveness of different components in our framework. Code is available at https://github.com/Sai-Ashish/BFTSS.",
+    "num_pages": 20
+}

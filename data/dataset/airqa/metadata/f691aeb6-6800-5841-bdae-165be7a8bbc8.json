@@ -1,0 +1,19 @@
+{
+    "uuid": "f691aeb6-6800-5841-bdae-165be7a8bbc8",
+    "title": "Can Language Models Be Specific? How?",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{huang-etal-2023-language,\n    title = \"Can Language Models Be Specific? How?\",\n    author = \"Huang, Jie  and\n      Chang, Kevin Chen-Chuan  and\n      Xiong, Jinjun  and\n      Hwu, Wen-mei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.45\",\n    doi = \"10.18653/v1/2023.findings-acl.45\",\n    pages = \"716--727\",\n    abstract = \"{``}He is a person{''}, {``}Paris is located on the earth{''}. Both statements are correct but meaningless - due to lack of specificity. In this paper, we propose to measure how specific the language of pre-trained language models (PLMs) is. To achieve this, we introduce a novel approach to build a benchmark for specificity testing by forming masked token prediction tasks with prompts. For instance, given {``}Toronto is located in [MASK].{''}, we want to test whether a more specific answer will be better filled in by PLMs, e.g., Ontario instead of Canada. From our evaluations, we show that existing PLMs have only a slight preference for more specific answers. We identify underlying factors affecting the specificity and design two prompt-based methods to improve the specificity. Results show that the specificity of the models can be improved by the proposed methods without additional training. We hope this work can bring to awareness the notion of specificity of language models and encourage the research community to further explore this important but understudied problem.\",\n}\n",
+    "authors": [
+        "Jie Huang",
+        "Kevin Chen-Chuan Chang",
+        "Jinjun Xiong",
+        "Wen-mei Hwu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.45.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f691aeb6-6800-5841-bdae-165be7a8bbc8.pdf",
+    "abstract": "“He is a person”, “Paris is located on the earth”. Both statements are correct but meaningless - due to lack of specificity. In this paper, we propose to measure how specific the language of pre-trained language models (PLMs) is. To achieve this, we introduce a novel approach to build a benchmark for specificity testing by forming masked token prediction tasks with prompts. For instance, given “Toronto is located in [MASK].”, we want to test whether a more specific answer will be better filled in by PLMs, e.g., Ontario instead of Canada. From our evaluations, we show that existing PLMs have only a slight preference for more specific answers. We identify underlying factors affecting the specificity and design two prompt-based methods to improve the specificity. Results show that the specificity of the models can be improved by the proposed methods without additional training. We hope this work can bring to awareness the notion of specificity of language models and encourage the research community to further explore this important but understudied problem.",
+    "num_pages": 12
+}

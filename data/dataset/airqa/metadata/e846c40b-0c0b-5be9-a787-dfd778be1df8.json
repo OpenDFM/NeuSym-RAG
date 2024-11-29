@@ -1,0 +1,21 @@
+{
+    "uuid": "e846c40b-0c0b-5be9-a787-dfd778be1df8",
+    "title": "Self-Training with Pseudo-Label Scorer for Aspect Sentiment Quad Prediction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhang-etal-2024-self-training,\n    title = \"Self-Training with Pseudo-Label Scorer for Aspect Sentiment Quad Prediction\",\n    author = \"Zhang, Yice  and\n      Zeng, Jie  and\n      Hu, Weiming  and\n      Wang, Ziyi  and\n      Chen, Shiwei  and\n      Xu, Ruifeng\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.640\",\n    doi = \"10.18653/v1/2024.acl-long.640\",\n    pages = \"11862--11875\",\n    abstract = \"Aspect Sentiment Quad Prediction (ASQP) aims to predict all quads (aspect term, aspect category, opinion term, sentiment polarity) for a given review, which is the most representative and challenging task in aspect-based sentiment analysis. A key challenge in the ASQP task is the scarcity of labeled data, which limits the performance of existing methods. To tackle this issue, we propose a self-training framework with a pseudo-label scorer, wherein a scorer assesses the match between reviews and their pseudo-labels, aiming to filter out mismatches and thereby enhance the effectiveness of self-training. We highlight two critical aspects to ensure the scorer{'}s effectiveness and reliability: the quality of the training dataset and its model architecture. To this end, we create a human-annotated comparison dataset and train a generative model on it using ranking-based objectives. Extensive experiments on public ASQP datasets reveal that using our scorer can greatly and consistently improve the effectiveness of self-training. Moreover, we explore the possibility of replacing humans with large language models for comparison dataset annotation, and experiments demonstrate its feasibility. We will release our code and data via GitHub.\",\n}\n",
+    "authors": [
+        "Yice Zhang",
+        "Jie Zeng",
+        "Weiming Hu",
+        "Ziyi Wang",
+        "Shiwei Chen",
+        "Ruifeng Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.640.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e846c40b-0c0b-5be9-a787-dfd778be1df8.pdf",
+    "abstract": "Aspect Sentiment Quad Prediction (ASQP) aims to predict all quads (aspect term, aspect category, opinion term, sentiment polarity) for a given review, which is the most representative and challenging task in aspect-based sentiment analysis. A key challenge in the ASQP task is the scarcity of labeled data, which limits the performance of existing methods. To tackle this issue, we propose a self-training framework with a pseudo-label scorer, wherein a scorer assesses the match between reviews and their pseudo-labels, aiming to filter out mismatches and thereby enhance the effectiveness of self-training. We highlight two critical aspects to ensure the scorer’s effectiveness and reliability: the quality of the training dataset and its model architecture. To this end, we create a human-annotated comparison dataset and train a generative model on it using ranking-based objectives. Extensive experiments on public ASQP datasets reveal that using our scorer can greatly and consistently improve the effectiveness of self-training. Moreover, we explore the possibility of replacing humans with large language models for comparison dataset annotation, and experiments demonstrate its feasibility. We will release our code and data via GitHub.",
+    "num_pages": 14
+}

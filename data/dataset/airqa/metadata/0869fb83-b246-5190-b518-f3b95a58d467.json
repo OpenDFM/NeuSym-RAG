@@ -1,0 +1,21 @@
+{
+    "uuid": "0869fb83-b246-5190-b518-f3b95a58d467",
+    "title": "Modality-Aware Integration with Large Language Models for Knowledge-Based Visual Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{dong-etal-2024-modality,\n    title = \"Modality-Aware Integration with Large Language Models for Knowledge-Based Visual Question Answering\",\n    author = \"Dong, Junnan  and\n      Zhang, Qinggang  and\n      Zhou, Huachi  and\n      Zha, Daochen  and\n      Zheng, Pai  and\n      Huang, Xiao\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.132\",\n    doi = \"10.18653/v1/2024.acl-long.132\",\n    pages = \"2417--2429\",\n    abstract = \"Knowledge-based visual question answering (KVQA) has been extensively studied to answer visual questions with external knowledge, e.g., knowledge graphs (KGs). While several attempts have been proposed to leverage large language models (LLMs) as an implicit knowledge source, it remains challenging since LLMs may generate hallucinations. Moreover, multiple knowledge sources, e.g., images, KGs and LLMs, cannot be readily aligned for complex scenarios. To tackle these, we present a novel modality-aware integration with LLMs for KVQA ($\\texttt{MAIL}$). It carefully leverages multimodal knowledge for both image understanding and knowledge reasoning. Specifically, $(i)$ we propose a two-stage prompting strategy with LLMs to densely embody the image into a *scene graph* with detailed visual features; $(ii)$ We construct a coupled *concept graph* by linking the mentioned entities with external facts. $(iii)$ A tailored pseudo-siamese graph medium fusion is designed for sufficient multimodal fusion. We utilize the shared mentioned entities in two graphs as mediums to bridge a tight inter-modal exchange, while maximally preserving insightful intra-modal learning by constraining the fusion within mediums. Extensive experiments show the superiority of $\\texttt{MAIL}$.\",\n}\n",
+    "authors": [
+        "Junnan Dong",
+        "Qinggang Zhang",
+        "Huachi Zhou",
+        "Daochen Zha",
+        "Pai Zheng",
+        "Xiao Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.132.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0869fb83-b246-5190-b518-f3b95a58d467.pdf",
+    "abstract": "Knowledge-based visual question answering (KVQA) has been extensively studied to answer visual questions with external knowledge, e.g., knowledge graphs (KGs). While several attempts have been proposed to leverage large language models (LLMs) as an implicit knowledge source, it remains challenging since LLMs may generate hallucinations. Moreover, multiple knowledge sources, e.g., images, KGs and LLMs, cannot be readily aligned for complex scenarios. To tackle these, we present a novel modality-aware integration with LLMs for KVQA (MAIL). It carefully leverages multimodal knowledge for both image understanding and knowledge reasoning. Specifically, (i) we propose a two-stage prompting strategy with LLMs to densely embody the image into a *scene graph* with detailed visual features; (ii) We construct a coupled *concept graph* by linking the mentioned entities with external facts. (iii) A tailored pseudo-siamese graph medium fusion is designed for sufficient multimodal fusion. We utilize the shared mentioned entities in two graphs as mediums to bridge a tight inter-modal exchange, while maximally preserving insightful intra-modal learning by constraining the fusion within mediums. Extensive experiments show the superiority of MAIL.",
+    "num_pages": 13
+}

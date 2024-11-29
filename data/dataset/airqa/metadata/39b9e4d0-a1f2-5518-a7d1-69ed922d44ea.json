@@ -1,0 +1,18 @@
+{
+    "uuid": "39b9e4d0-a1f2-5518-a7d1-69ed922d44ea",
+    "title": "Dependency Transformer Grammars: Integrating Dependency Structures into Transformer Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhao-etal-2024-dependency,\n    title = \"Dependency Transformer Grammars: Integrating Dependency Structures into Transformer Language Models\",\n    author = \"Zhao, Yida  and\n      Lou, Chao  and\n      Tu, Kewei\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.84\",\n    doi = \"10.18653/v1/2024.acl-long.84\",\n    pages = \"1543--1556\",\n    abstract = \"Syntactic Transformer language models aim to achieve better generalization through simultaneously modeling syntax trees and sentences. While prior work has been focusing on adding constituency-based structures to Transformers, we introduce Dependency Transformer Grammars (DTGs), a new class of Transformer language model with explicit dependency-based inductive bias. DTGs simulate dependency transition systems with constrained attention patterns by modifying attention masks, incorporate the stack information through relative positional encoding, and augment dependency arc representation with a combination of token embeddings and operation embeddings. When trained on a dataset of sentences annotated with dependency trees, DTGs achieve better generalization while maintaining comparable perplexity with Transformer language model baselines. DTGs also outperform recent constituency-based models, showing that dependency can better guide Transformer language models. Our code is released at https://github.com/zhaoyd1/Dep{\\_}Transformer{\\_}Grammars.\",\n}\n",
+    "authors": [
+        "Yida Zhao",
+        "Chao Lou",
+        "Kewei Tu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.84.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/39b9e4d0-a1f2-5518-a7d1-69ed922d44ea.pdf",
+    "abstract": "Syntactic Transformer language models aim to achieve better generalization through simultaneously modeling syntax trees and sentences. While prior work has been focusing on adding constituency-based structures to Transformers, we introduce Dependency Transformer Grammars (DTGs), a new class of Transformer language model with explicit dependency-based inductive bias. DTGs simulate dependency transition systems with constrained attention patterns by modifying attention masks, incorporate the stack information through relative positional encoding, and augment dependency arc representation with a combination of token embeddings and operation embeddings. When trained on a dataset of sentences annotated with dependency trees, DTGs achieve better generalization while maintaining comparable perplexity with Transformer language model baselines. DTGs also outperform recent constituency-based models, showing that dependency can better guide Transformer language models. Our code is released at https://github.com/zhaoyd1/Dep_Transformer_Grammars.",
+    "num_pages": 14
+}

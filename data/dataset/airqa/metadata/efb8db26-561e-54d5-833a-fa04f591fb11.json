@@ -1,0 +1,20 @@
+{
+    "uuid": "efb8db26-561e-54d5-833a-fa04f591fb11",
+    "title": "Enhanced BioT5+ for Molecule-Text Translation: A Three-Stage Approach with Data Distillation, Diverse Training, and Voting Ensemble",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 1st Workshop on Language + Molecules (L+M 2024)",
+    "bibtex": "@inproceedings{pei-etal-2024-enhanced,\n    title = \"Enhanced {B}io{T}5+ for Molecule-Text Translation: A Three-Stage Approach with Data Distillation, Diverse Training, and Voting Ensemble\",\n    author = \"Pei, Qizhi  and\n      Wu, Lijun  and\n      Gao, Kaiyuan  and\n      Zhu, Jinhua  and\n      Yan, Rui\",\n    editor = \"Edwards, Carl  and\n      Wang, Qingyun  and\n      Li, Manling  and\n      Zhao, Lawrence  and\n      Hope, Tom  and\n      Ji, Heng\",\n    booktitle = \"Proceedings of the 1st Workshop on Language + Molecules (L+M 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.langmol-1.6\",\n    doi = \"10.18653/v1/2024.langmol-1.6\",\n    pages = \"48--54\",\n    abstract = \"This paper presents our enhanced BioT5+ method for the Language + Molecules shared task at the ACL 2024 Workshop. The task involves {``}translating{''} between molecules and natural language, including molecule captioning and text-based molecule generation using the \\textit{L+M-24} dataset. Our method consists of three stages. In the first stage, we distill data from various models. In the second stage, combined with \\textit{extra} version of the provided dataset, we train diverse models for subsequent voting ensemble.We also adopt Transductive Ensemble Learning (TEL) to enhance these base models. Lastly, all models are integrated using a voting ensemble method. Experimental results demonstrate that BioT5+ achieves superior performance on \\textit{L+M-24} dataset. On the final leaderboard, our method (team name: \\textbf{qizhipei}) ranks \\textbf{first} in the text-based molecule generation task and \\textbf{second} in the molecule captioning task, highlighting its efficacy and robustness in translating between molecules and natural language. The pre-trained BioT5+ models are available at \\url{https://github.com/QizhiPei/BioT5}.\",\n}\n",
+    "authors": [
+        "Qizhi Pei",
+        "Lijun Wu",
+        "Kaiyuan Gao",
+        "Jinhua Zhu",
+        "Rui Yan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.langmol-1.6.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/efb8db26-561e-54d5-833a-fa04f591fb11.pdf",
+    "abstract": "This paper presents our enhanced BioT5+ method for the Language + Molecules shared task at the ACL 2024 Workshop. The task involves “translating” between molecules and natural language, including molecule captioning and text-based molecule generation using the L+M-24 dataset. Our method consists of three stages. In the first stage, we distill data from various models. In the second stage, combined with extra version of the provided dataset, we train diverse models for subsequent voting ensemble.We also adopt Transductive Ensemble Learning (TEL) to enhance these base models. Lastly, all models are integrated using a voting ensemble method. Experimental results demonstrate that BioT5+ achieves superior performance on L+M-24 dataset. On the final leaderboard, our method (team name: qizhipei) ranks first in the text-based molecule generation task and second in the molecule captioning task, highlighting its efficacy and robustness in translating between molecules and natural language. The pre-trained BioT5+ models are available at https://github.com/QizhiPei/BioT5.",
+    "num_pages": 7
+}

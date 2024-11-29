@@ -1,0 +1,24 @@
+{
+    "uuid": "95853579-bb62-550d-b5c1-92dd1e8fc756",
+    "title": "Self-Specialization: Uncovering Latent Expertise within Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{kang-etal-2024-self,\n    title = \"Self-Specialization: Uncovering Latent Expertise within Large Language Models\",\n    author = \"Kang, Junmo  and\n      Luo, Hongyin  and\n      Zhu, Yada  and\n      Hansen, Jacob  and\n      Glass, James  and\n      Cox, David  and\n      Ritter, Alan  and\n      Feris, Rogerio  and\n      Karlinsky, Leonid\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.157\",\n    doi = \"10.18653/v1/2024.findings-acl.157\",\n    pages = \"2681--2706\",\n    abstract = \"Recent works have demonstrated the effectiveness of self-alignment in which a large language model is aligned to follow general instructions using instructional data generated from the model itself starting from a handful of human-written seeds. Instead of general alignment, in this work, we focus on self-alignment for expert domain specialization (e.g., biomedicine, finance). As a preliminary, we quantitively show the marginal effect that generic instruction-following training has on downstream expert domains{'} performance. To remedy this, we propose self-specialization - allowing for effective model specialization while achieving cross-task generalization by leveraging only a few labeled seeds. Self-specialization offers a data- and parameter-efficient way of {``}carving out{''} an expert model out of a generalist pre-trained LLM. Exploring a variety of popular open large models as a base for specialization, our experimental results in both biomedical and financial domains show that our self-specialized models outperform their base models by a large margin, and even larger models that are generally instruction-tuned or that have been adapted to the target domain by other means.\",\n}\n",
+    "authors": [
+        "Junmo Kang",
+        "Hongyin Luo",
+        "Yada Zhu",
+        "Jacob Hansen",
+        "James Glass",
+        "David Cox",
+        "Alan Ritter",
+        "Rogerio Feris",
+        "Leonid Karlinsky"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.157.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/95853579-bb62-550d-b5c1-92dd1e8fc756.pdf",
+    "abstract": "Recent works have demonstrated the effectiveness of self-alignment in which a large language model is aligned to follow general instructions using instructional data generated from the model itself starting from a handful of human-written seeds. Instead of general alignment, in this work, we focus on self-alignment for expert domain specialization (e.g., biomedicine, finance). As a preliminary, we quantitively show the marginal effect that generic instruction-following training has on downstream expert domains’ performance. To remedy this, we propose self-specialization - allowing for effective model specialization while achieving cross-task generalization by leveraging only a few labeled seeds. Self-specialization offers a data- and parameter-efficient way of “carving out” an expert model out of a generalist pre-trained LLM. Exploring a variety of popular open large models as a base for specialization, our experimental results in both biomedical and financial domains show that our self-specialized models outperform their base models by a large margin, and even larger models that are generally instruction-tuned or that have been adapted to the target domain by other means.",
+    "num_pages": 26
+}

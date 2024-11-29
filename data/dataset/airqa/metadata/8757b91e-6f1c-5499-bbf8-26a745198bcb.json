@@ -1,0 +1,18 @@
+{
+    "uuid": "8757b91e-6f1c-5499-bbf8-26a745198bcb",
+    "title": "Scalable Performance Analysis for Vision-Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 12th Joint Conference on Lexical and Computational Semantics (*SEM 2023)",
+    "bibtex": "@inproceedings{castro-etal-2023-scalable,\n    title = \"Scalable Performance Analysis for Vision-Language Models\",\n    author = \"Castro, Santiago  and\n      Ignat, Oana  and\n      Mihalcea, Rada\",\n    editor = \"Palmer, Alexis  and\n      Camacho-collados, Jose\",\n    booktitle = \"Proceedings of the 12th Joint Conference on Lexical and Computational Semantics (*SEM 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.starsem-1.26\",\n    doi = \"10.18653/v1/2023.starsem-1.26\",\n    pages = \"284--294\",\n    abstract = \"Joint vision-language models have shown great performance over a diverse set of tasks. However, little is known about their limitations, as the high dimensional space learned by these models makes it difficult to identify semantic errors. Recent work has addressed this problem by designing highly controlled probing task benchmarks. Our paper introduces a more scalable solution that relies on already annotated benchmarks. Our method consists of extracting a large set of diverse features from a vision-language benchmark and measuring their correlation with the output of the target model. We confirm previous findings that CLIP behaves like a bag of words model and performs better with nouns and verbs; we also uncover novel insights such as CLIP getting confused by concrete words. Our framework is available at \\url{https://github.com/MichiganNLP/Scalable-VLM-Probing} and can be used with other multimodal models and benchmarks.\",\n}\n",
+    "authors": [
+        "Santiago Castro",
+        "Oana Ignat",
+        "Rada Mihalcea"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.starsem-1.26.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8757b91e-6f1c-5499-bbf8-26a745198bcb.pdf",
+    "abstract": "Joint vision-language models have shown great performance over a diverse set of tasks. However, little is known about their limitations, as the high dimensional space learned by these models makes it difficult to identify semantic errors. Recent work has addressed this problem by designing highly controlled probing task benchmarks. Our paper introduces a more scalable solution that relies on already annotated benchmarks. Our method consists of extracting a large set of diverse features from a vision-language benchmark and measuring their correlation with the output of the target model. We confirm previous findings that CLIP behaves like a bag of words model and performs better with nouns and verbs; we also uncover novel insights such as CLIP getting confused by concrete words. Our framework is available at https://github.com/MichiganNLP/Scalable-VLM-Probing and can be used with other multimodal models and benchmarks.",
+    "num_pages": 11
+}

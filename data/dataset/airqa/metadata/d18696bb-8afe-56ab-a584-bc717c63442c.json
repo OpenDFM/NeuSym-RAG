@@ -1,0 +1,17 @@
+{
+    "uuid": "d18696bb-8afe-56ab-a584-bc717c63442c",
+    "title": "HHS at SemEval-2023 Task 10: A Comparative Analysis of Sexism Detection Based on the RoBERTa Model",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{zhang-wang-2023-hhs,\n    title = \"{HHS} at {S}em{E}val-2023 Task 10: A Comparative Analysis of Sexism Detection Based on the {R}o{BERT}a Model\",\n    author = \"Zhang, Yao  and\n      Wang, Liqing\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.133\",\n    doi = \"10.18653/v1/2023.semeval-1.133\",\n    pages = \"963--968\",\n    abstract = \"This paper describes the methods and models applied by our team HHS in SubTask-A of SemEval-2023 Task 10 about sexism detection. In this task, we trained with the officially released data and analyzed the performance of five models, TextCNN, BERT, RoBERTa, XLNet, and Sup-SimCSE-RoBERTa. The experiments show that most of the models can achieve good results. Then, we tried data augmentation, model ensemble, dropout, and other operations on several of these models, and compared the results for analysis. In the end, the most effective approach that yielded the best results on the test set involved the following steps: enhancing the sexist data using dropout, feeding it as input to the Sup-SimCSE-RoBERTa model, and providing the raw data as input to the XLNet model. Then, combining the outputs of the two methods led to even better results. This method yielded a Macro-F1 score of 0.823 in the final evaluation phase of the SubTask-A of the competition.\",\n}\n",
+    "authors": [
+        "Yao Zhang",
+        "Liqing Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.133.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d18696bb-8afe-56ab-a584-bc717c63442c.pdf",
+    "abstract": "This paper describes the methods and models applied by our team HHS in SubTask-A of SemEval-2023 Task 10 about sexism detection. In this task, we trained with the officially released data and analyzed the performance of five models, TextCNN, BERT, RoBERTa, XLNet, and Sup-SimCSE-RoBERTa. The experiments show that most of the models can achieve good results. Then, we tried data augmentation, model ensemble, dropout, and other operations on several of these models, and compared the results for analysis. In the end, the most effective approach that yielded the best results on the test set involved the following steps: enhancing the sexist data using dropout, feeding it as input to the Sup-SimCSE-RoBERTa model, and providing the raw data as input to the XLNet model. Then, combining the outputs of the two methods led to even better results. This method yielded a Macro-F1 score of 0.823 in the final evaluation phase of the SubTask-A of the competition.",
+    "num_pages": 6
+}

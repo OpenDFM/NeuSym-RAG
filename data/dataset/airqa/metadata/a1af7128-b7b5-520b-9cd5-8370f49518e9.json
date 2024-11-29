@@ -1,0 +1,18 @@
+{
+    "uuid": "a1af7128-b7b5-520b-9cd5-8370f49518e9",
+    "title": "MELODI at SemEval-2023 Task 3: In-domain Pre-training for Low-resource Classification of News Articles",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{devatine-etal-2023-melodi,\n    title = \"{MELODI} at {S}em{E}val-2023 Task 3: In-domain Pre-training for Low-resource Classification of News Articles\",\n    author = \"Devatine, Nicolas  and\n      Muller, Philippe  and\n      Braud, Chlo{\\'e}\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.14\",\n    doi = \"10.18653/v1/2023.semeval-1.14\",\n    pages = \"108--113\",\n    abstract = \"This paper describes our approach to Subtask 1 {``}News Genre Categorization{''} of SemEval-2023 Task 3 {``}Detecting the Category, the Framing, and the Persuasion Techniques in Online News in a Multi-lingual Setup{''}, which aims to determine whether a given news article is an opinion piece, an objective report, or satirical. We fine-tuned the domain-specific language model POLITICS, which was pre-trained on a large-scale dataset of more than 3.6M English political news articles following ideology-driven pre-training objectives. In order to use it in the multilingual setup of the task, we added as a pre-processing step the translation of all documents into English. Our system ranked among the top systems overall in most language, and ranked 1st on the English dataset.\",\n}\n",
+    "authors": [
+        "Nicolas Devatine",
+        "Philippe Muller",
+        "Chloé Braud"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.14.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a1af7128-b7b5-520b-9cd5-8370f49518e9.pdf",
+    "abstract": "This paper describes our approach to Subtask 1 “News Genre Categorization” of SemEval-2023 Task 3 “Detecting the Category, the Framing, and the Persuasion Techniques in Online News in a Multi-lingual Setup”, which aims to determine whether a given news article is an opinion piece, an objective report, or satirical. We fine-tuned the domain-specific language model POLITICS, which was pre-trained on a large-scale dataset of more than 3.6M English political news articles following ideology-driven pre-training objectives. In order to use it in the multilingual setup of the task, we added as a pre-processing step the translation of all documents into English. Our system ranked among the top systems overall in most language, and ranked 1st on the English dataset.",
+    "num_pages": 6
+}

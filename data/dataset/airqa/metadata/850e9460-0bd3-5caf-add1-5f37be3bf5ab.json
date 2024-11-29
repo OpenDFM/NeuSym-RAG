@@ -1,0 +1,25 @@
+{
+    "uuid": "850e9460-0bd3-5caf-add1-5f37be3bf5ab",
+    "title": "Retrieval-free Knowledge Injection through Multi-Document Traversal for Dialogue Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2023-retrieval,\n    title = \"Retrieval-free Knowledge Injection through Multi-Document Traversal for Dialogue Models\",\n    author = \"Wang, Rui  and\n      Bao, Jianzhu  and\n      Mi, Fei  and\n      Chen, Yi  and\n      Wang, Hongru  and\n      Wang, Yasheng  and\n      Li, Yitong  and\n      Shang, Lifeng  and\n      Wong, Kam-Fai  and\n      Xu, Ruifeng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.364\",\n    doi = \"10.18653/v1/2023.acl-long.364\",\n    pages = \"6608--6619\",\n    abstract = \"Dialogue models are often enriched with extensive external knowledge to provide informative responses through a retrieval-augmented pipeline. Nevertheless, retrieval-augmented approaches rely on finely annotated retrieval training data and knowledge-grounded response generation data, making it costly to transfer. To tackle this challenge, this paper proposed a retrieval-free approach, KiDG, by automatically turning knowledge documents into simulated multi-turn dialogues through a Multi-Document Traversal algorithm. The simulated knowledge-intensive dialogues constructed by KiDG in one domain can be easily used to train and enhance pre-trained dialogue models{'} knowledge w.r.t. this domain without costly annotation. We conduct extensive experiments comparing retrieval-augmented models and a variety of retrieval-free models. We found that dialogue models enhanced with data simulated with KiDG largely outperform state-of-the-art retrieval-free methods, and it achieves comparable performance compared to retrieval-augmented methods while being better, and cheaper at domain transfer.\",\n}\n",
+    "authors": [
+        "Rui Wang",
+        "Jianzhu Bao",
+        "Fei Mi",
+        "Yi Chen",
+        "Hongru Wang",
+        "Yasheng Wang",
+        "Yitong Li",
+        "Lifeng Shang",
+        "Kam-Fai Wong",
+        "Ruifeng Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.364.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/850e9460-0bd3-5caf-add1-5f37be3bf5ab.pdf",
+    "abstract": "Dialogue models are often enriched with extensive external knowledge to provide informative responses through a retrieval-augmented pipeline. Nevertheless, retrieval-augmented approaches rely on finely annotated retrieval training data and knowledge-grounded response generation data, making it costly to transfer. To tackle this challenge, this paper proposed a retrieval-free approach, KiDG, by automatically turning knowledge documents into simulated multi-turn dialogues through a Multi-Document Traversal algorithm. The simulated knowledge-intensive dialogues constructed by KiDG in one domain can be easily used to train and enhance pre-trained dialogue models’ knowledge w.r.t. this domain without costly annotation. We conduct extensive experiments comparing retrieval-augmented models and a variety of retrieval-free models. We found that dialogue models enhanced with data simulated with KiDG largely outperform state-of-the-art retrieval-free methods, and it achieves comparable performance compared to retrieval-augmented methods while being better, and cheaper at domain transfer.",
+    "num_pages": 12
+}

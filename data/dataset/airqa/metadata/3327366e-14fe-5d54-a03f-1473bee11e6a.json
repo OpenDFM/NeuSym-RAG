@@ -1,0 +1,22 @@
+{
+    "uuid": "3327366e-14fe-5d54-a03f-1473bee11e6a",
+    "title": "From Discrimination to Generation: Low-Resource Intent Detection with Language Model Instruction Tuning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhang-etal-2024-discrimination,\n    title = \"From Discrimination to Generation: Low-Resource Intent Detection with Language Model Instruction Tuning\",\n    author = \"Zhang, Feng  and\n      Chen, Wei  and\n      Ding, Fei  and\n      Gao, Meng  and\n      Wang, Tengjiao  and\n      Yao, Jiahui  and\n      Zheng, Jiabin\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.605\",\n    doi = \"10.18653/v1/2024.findings-acl.605\",\n    pages = \"10167--10183\",\n    abstract = \"Intent detection aims to identify user goals from utterances, and is a ubiquitous step towards the satisfaction of user desired needs in many interaction systems. As dynamic and varied intents arise, models that are capable of identifying new intents promptly are required. However, existing studies usually fine-tune discriminative models on the specific defined intent classes, precluding them from being directly adopted to new intent domains. In this paper, we introduce a generative pre-trained intent model that can recognize new intents from different domains in low-resource scenarios. We reformulate intent detection into a generation task and design descriptive and regularized instructions to guide the model effectively to detect new intents in open domains with no parameter updates. To validate the proposed method, we introduce a new intent detection benchmark, including the Meta-Intent Dataset and three types of representative evaluation settings. We conduct extensive experiments which demonstrate that our method outperforms a range of strong baselines that needs further fine-tuning or domain-specific samples.\",\n}\n",
+    "authors": [
+        "Feng Zhang",
+        "Wei Chen",
+        "Fei Ding",
+        "Meng Gao",
+        "Tengjiao Wang",
+        "Jiahui Yao",
+        "Jiabin Zheng"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.605.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/3327366e-14fe-5d54-a03f-1473bee11e6a.pdf",
+    "abstract": "Intent detection aims to identify user goals from utterances, and is a ubiquitous step towards the satisfaction of user desired needs in many interaction systems. As dynamic and varied intents arise, models that are capable of identifying new intents promptly are required. However, existing studies usually fine-tune discriminative models on the specific defined intent classes, precluding them from being directly adopted to new intent domains. In this paper, we introduce a generative pre-trained intent model that can recognize new intents from different domains in low-resource scenarios. We reformulate intent detection into a generation task and design descriptive and regularized instructions to guide the model effectively to detect new intents in open domains with no parameter updates. To validate the proposed method, we introduce a new intent detection benchmark, including the Meta-Intent Dataset and three types of representative evaluation settings. We conduct extensive experiments which demonstrate that our method outperforms a range of strong baselines that needs further fine-tuning or domain-specific samples.",
+    "num_pages": 17
+}

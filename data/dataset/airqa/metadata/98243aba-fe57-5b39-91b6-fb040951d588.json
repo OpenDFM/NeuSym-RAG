@@ -1,0 +1,20 @@
+{
+    "uuid": "98243aba-fe57-5b39-91b6-fb040951d588",
+    "title": "Improving Low Resource Speech Translation with Data Augmentation and Ensemble Strategies",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)",
+    "bibtex": "@inproceedings{vishnu-kudlu-shanbhogue-etal-2023-improving,\n    title = \"Improving Low Resource Speech Translation with Data Augmentation and Ensemble Strategies\",\n    author = \"Shanbhogue, Akshaya Vishnu Kudlu  and\n      Xue, Ran  and\n      Saha, Soumya  and\n      Zhang, Daniel  and\n      Ganesan, Ashwinkumar\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.iwslt-1.21\",\n    doi = \"10.18653/v1/2023.iwslt-1.21\",\n    pages = \"241--250\",\n    abstract = \"This paper describes the speech translation system submitted as part of the IWSLT 2023 shared task on low resource speech translation. The low resource task aids in building models for language pairs where the training corpus is limited. In this paper, we focus on two language pairs, namely, Tamasheq-French (TmhâFra) and Marathi-Hindi (MrâHi) and implement a speech translation system that is unconstrained. We evaluate three strategies in our system: (a) Data augmentation where we perform different operations on audio as well as text samples, (b) an ensemble model that integrates a set of models trained using a combination of augmentation strategies, and (c) post-processing techniques where we explore the use of large language models (LLMs) to improve the quality of sentences that are generated. Experiments show how data augmentation can relatively improve the BLEU score by 5.2{\\%} over the baseline system for TmhâFra while an ensemble model further improves performance by 17{\\%} for TmhâFra and 23{\\%} for MrâHi task.\",\n}\n",
+    "authors": [
+        "Akshaya Vishnu Kudlu Shanbhogue",
+        "Ran Xue",
+        "Soumya Saha",
+        "Daniel Zhang",
+        "Ashwinkumar Ganesan"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.iwslt-1.21.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/98243aba-fe57-5b39-91b6-fb040951d588.pdf",
+    "abstract": "This paper describes the speech translation system submitted as part of the IWSLT 2023 shared task on low resource speech translation. The low resource task aids in building models for language pairs where the training corpus is limited. In this paper, we focus on two language pairs, namely, Tamasheq-French (Tmh→Fra) and Marathi-Hindi (Mr→Hi) and implement a speech translation system that is unconstrained. We evaluate three strategies in our system: (a) Data augmentation where we perform different operations on audio as well as text samples, (b) an ensemble model that integrates a set of models trained using a combination of augmentation strategies, and (c) post-processing techniques where we explore the use of large language models (LLMs) to improve the quality of sentences that are generated. Experiments show how data augmentation can relatively improve the BLEU score by 5.2% over the baseline system for Tmh→Fra while an ensemble model further improves performance by 17% for Tmh→Fra and 23% for Mr→Hi task.",
+    "num_pages": 10
+}

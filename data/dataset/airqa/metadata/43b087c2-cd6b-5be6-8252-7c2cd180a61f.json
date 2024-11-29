@@ -1,0 +1,21 @@
+{
+    "uuid": "43b087c2-cd6b-5be6-8252-7c2cd180a61f",
+    "title": "ListT5: Listwise Reranking with Fusion-in-Decoder Improves Zero-shot Retrieval",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yoon-etal-2024-listt5,\n    title = \"{L}ist{T}5: Listwise Reranking with Fusion-in-Decoder Improves Zero-shot Retrieval\",\n    author = \"Yoon, Soyoung  and\n      Choi, Eunbi  and\n      Kim, Jiyeon  and\n      Yun, Hyeongu  and\n      Kim, Yireun  and\n      Hwang, Seung-won\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.125\",\n    doi = \"10.18653/v1/2024.acl-long.125\",\n    pages = \"2287--2308\",\n    abstract = \"We propose ListT5, a novel reranking approach based on Fusion-in-Decoder (FiD) that handles multiple candidate passages at both train and inference time. We also introduce an efficient inference framework for listwise ranking based on m-ary tournament sort with output caching. We evaluate and compare our model on the BEIR benchmark for zero-shot retrieval task, demonstrating that ListT5 (1) outperforms the state-of-the-art RankT5 baseline with a notable +1.3 gain in the average NDCG@10 score, (2) has an efficiency comparable to pointwise ranking models and surpasses the efficiency of previous listwise ranking models, and (3) overcomes the lost-in-the-middle problem of previous listwise rerankers. Our code, model checkpoints, and the evaluation framework will be fully open-sourced.\",\n}\n",
+    "authors": [
+        "Soyoung Yoon",
+        "Eunbi Choi",
+        "Jiyeon Kim",
+        "Hyeongu Yun",
+        "Yireun Kim",
+        "Seung-won Hwang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.125.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/43b087c2-cd6b-5be6-8252-7c2cd180a61f.pdf",
+    "abstract": "We propose ListT5, a novel reranking approach based on Fusion-in-Decoder (FiD) that handles multiple candidate passages at both train and inference time. We also introduce an efficient inference framework for listwise ranking based on m-ary tournament sort with output caching. We evaluate and compare our model on the BEIR benchmark for zero-shot retrieval task, demonstrating that ListT5 (1) outperforms the state-of-the-art RankT5 baseline with a notable +1.3 gain in the average NDCG@10 score, (2) has an efficiency comparable to pointwise ranking models and surpasses the efficiency of previous listwise ranking models, and (3) overcomes the lost-in-the-middle problem of previous listwise rerankers. Our code, model checkpoints, and the evaluation framework will be fully open-sourced.",
+    "num_pages": 22
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "1b512b1f-4816-5768-a75b-997bd5e432aa",
+    "title": "Efficient Dynamic Hard Negative Sampling for Dialogue Selection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 6th Workshop on NLP for Conversational AI (NLP4ConvAI 2024)",
+    "bibtex": "@inproceedings{han-etal-2024-efficient,\n    title = \"Efficient Dynamic Hard Negative Sampling for Dialogue Selection\",\n    author = \"Han, Janghoon  and\n      Lee, Dongkyu  and\n      Shin, Joongbo  and\n      Bae, Hyunkyung  and\n      Bang, Jeesoo  and\n      Kim, Seonghwan  and\n      Choi, Stanley Jungkyu  and\n      Lee, Honglak\",\n    editor = \"Nouri, Elnaz  and\n      Rastogi, Abhinav  and\n      Spithourakis, Georgios  and\n      Liu, Bing  and\n      Chen, Yun-Nung  and\n      Li, Yu  and\n      Albalak, Alon  and\n      Wakaki, Hiromi  and\n      Papangelis, Alexandros\",\n    booktitle = \"Proceedings of the 6th Workshop on NLP for Conversational AI (NLP4ConvAI 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.nlp4convai-1.6\",\n    pages = \"89--100\",\n    abstract = \"Recent studies have demonstrated significant improvements in selection tasks, and a considerable portion of this success is attributed to incorporating informative negative samples during training. While traditional methods for constructing hard negatives provide meaningful supervision, they depend on static samples that do not evolve during training, leading to sub-optimal performance. Dynamic hard negative sampling addresses this limitation by continuously adapting to the model{'}s changing state throughout training. However, the high computational demands of this method restrict its applicability to certain model architectures. To overcome these challenges, we introduce an efficient dynamic hard negative sampling (EDHNS). EDHNS enhances efficiency by pre-filtering easily discriminable negatives, thereby reducing the number of candidates the model needs to compute during training. Additionally, it excludes question-candidate pairs where the model already exhibits high confidence from loss computations, further reducing training time. These approaches maintain learning quality while minimizing computation and streamlining the training process. Extensive experiments on DSTC9, DSTC10, Ubuntu, and E-commerce benchmarks demonstrate that EDHNS significantly outperforms baseline models, proving its effectiveness in dialogue selection tasks.\",\n}\n",
+    "authors": [
+        "Janghoon Han",
+        "Dongkyu Lee",
+        "Joongbo Shin",
+        "Hyunkyung Bae",
+        "Jeesoo Bang",
+        "Seonghwan Kim",
+        "Stanley Jungkyu Choi",
+        "Honglak Lee"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.nlp4convai-1.6.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/1b512b1f-4816-5768-a75b-997bd5e432aa.pdf",
+    "abstract": "Recent studies have demonstrated significant improvements in selection tasks, and a considerable portion of this success is attributed to incorporating informative negative samples during training. While traditional methods for constructing hard negatives provide meaningful supervision, they depend on static samples that do not evolve during training, leading to sub-optimal performance. Dynamic hard negative sampling addresses this limitation by continuously adapting to the model’s changing state throughout training. However, the high computational demands of this method restrict its applicability to certain model architectures. To overcome these challenges, we introduce an efficient dynamic hard negative sampling (EDHNS). EDHNS enhances efficiency by pre-filtering easily discriminable negatives, thereby reducing the number of candidates the model needs to compute during training. Additionally, it excludes question-candidate pairs where the model already exhibits high confidence from loss computations, further reducing training time. These approaches maintain learning quality while minimizing computation and streamlining the training process. Extensive experiments on DSTC9, DSTC10, Ubuntu, and E-commerce benchmarks demonstrate that EDHNS significantly outperforms baseline models, proving its effectiveness in dialogue selection tasks.",
+    "num_pages": 12
+}

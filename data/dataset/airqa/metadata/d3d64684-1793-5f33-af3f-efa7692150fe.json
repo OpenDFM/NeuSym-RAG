@@ -1,0 +1,22 @@
+{
+    "uuid": "d3d64684-1793-5f33-af3f-efa7692150fe",
+    "title": "Learning Geometry-Aware Representations for New Intent Discovery",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{tang-etal-2024-learning,\n    title = \"Learning Geometry-Aware Representations for New Intent Discovery\",\n    author = \"Tang, Kai  and\n      Zhao, Junbo  and\n      Ding, Xiao  and\n      Wu, Runze  and\n      Feng, Lei  and\n      Chen, Gang  and\n      Wang, Haobo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.306\",\n    doi = \"10.18653/v1/2024.acl-long.306\",\n    pages = \"5641--5654\",\n    abstract = \"New intent discovery (NID) is an important problem for deploying practical dialogue systems, which trains intent classifiers on a semi-supervised corpus where unlabeled user utterances contain both known and novel intents. Most existing NID algorithms place hope on the sample similarity to cluster unlabeled corpus to known or new samples. Lacking supervision on new intents, we experimentally find the intent classifier fails to fully distinguish new intents since they tend to assemble into intertwined centers.To address this problem, we propose a novel GeoID framework that learns geometry-aware representations to maximally separate all intents. Specifically, we are motivated by the recent findings on Neural Collapse (NC) in classification tasks to derive optimal intent center structure. Meanwhile, we devise a dual pseudo-labeling strategy based on optimal transport assignments and semi-supervised clustering, ensuring proper utterances-to-center arrangement.Extensive results show that our GeoID method establishes a new state-of-the-art performance, achieving a +3.49{\\%} average accuracy improvement on three standardized benchmarking datasets. We also verify its usefulness in assisting large language models for improved in-context performance.\",\n}\n",
+    "authors": [
+        "Kai Tang",
+        "Junbo Zhao",
+        "Xiao Ding",
+        "Runze Wu",
+        "Lei Feng",
+        "Gang Chen",
+        "Haobo Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.306.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d3d64684-1793-5f33-af3f-efa7692150fe.pdf",
+    "abstract": "New intent discovery (NID) is an important problem for deploying practical dialogue systems, which trains intent classifiers on a semi-supervised corpus where unlabeled user utterances contain both known and novel intents. Most existing NID algorithms place hope on the sample similarity to cluster unlabeled corpus to known or new samples. Lacking supervision on new intents, we experimentally find the intent classifier fails to fully distinguish new intents since they tend to assemble into intertwined centers.To address this problem, we propose a novel GeoID framework that learns geometry-aware representations to maximally separate all intents. Specifically, we are motivated by the recent findings on Neural Collapse (NC) in classification tasks to derive optimal intent center structure. Meanwhile, we devise a dual pseudo-labeling strategy based on optimal transport assignments and semi-supervised clustering, ensuring proper utterances-to-center arrangement.Extensive results show that our GeoID method establishes a new state-of-the-art performance, achieving a +3.49% average accuracy improvement on three standardized benchmarking datasets. We also verify its usefulness in assisting large language models for improved in-context performance.",
+    "num_pages": 14
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "2ad21c29-30d8-51cb-ae60-693d1eb0876d",
+    "title": "Team Bias Busters at WASSA 2023 Empathy, Emotion and Personality Shared Task: Emotion Detection with Generative Pretrained Transformers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 13th Workshop on Computational Approaches to Subjectivity, Sentiment, & Social Media Analysis",
+    "bibtex": "@inproceedings{nedilko-chu-2023-team,\n    title = \"Team Bias Busters at {WASSA} 2023 Empathy, Emotion and Personality Shared Task: Emotion Detection with Generative Pretrained Transformers\",\n    author = \"Nedilko, Andrew  and\n      Chu, Yi\",\n    editor = \"Barnes, Jeremy  and\n      De Clercq, Orph{\\'e}e  and\n      Klinger, Roman\",\n    booktitle = \"Proceedings of the 13th Workshop on Computational Approaches to Subjectivity, Sentiment, {\\&} Social Media Analysis\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.wassa-1.53\",\n    doi = \"10.18653/v1/2023.wassa-1.53\",\n    pages = \"569--573\",\n    abstract = \"This paper describes the approach that we used to take part in the multi-label multi-class emotion classification as Track 3 of the WASSA 2023 Empathy, Emotion and Personality Shared Task at ACL 2023. The overall goal of this track is to build models that can predict 8 classes (7 emotions + neutral) based on short English essays written in response to news article that talked about events perceived as harmful to people. We used OpenAI generative pretrained transformers with full-scale APIs for the emotion prediction task by fine-tuning a GPT-3 model and doing prompt engineering for zero-shot / few-shot learning with ChatGPT and GPT-4 models based on multiple experiments on the dev set. The most efficient method was fine-tuning a GPT-3 model which allowed us to beat our baseline character-based XGBoost Classifier and rank 2nd among all other participants by achieving a macro F1 score of 0.65 and a micro F1 score of 0.7 on the final blind test set.\",\n}\n",
+    "authors": [
+        "Andrew Nedilko",
+        "Yi Chu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.wassa-1.53.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2ad21c29-30d8-51cb-ae60-693d1eb0876d.pdf",
+    "abstract": "This paper describes the approach that we used to take part in the multi-label multi-class emotion classification as Track 3 of the WASSA 2023 Empathy, Emotion and Personality Shared Task at ACL 2023. The overall goal of this track is to build models that can predict 8 classes (7 emotions + neutral) based on short English essays written in response to news article that talked about events perceived as harmful to people. We used OpenAI generative pretrained transformers with full-scale APIs for the emotion prediction task by fine-tuning a GPT-3 model and doing prompt engineering for zero-shot / few-shot learning with ChatGPT and GPT-4 models based on multiple experiments on the dev set. The most efficient method was fine-tuning a GPT-3 model which allowed us to beat our baseline character-based XGBoost Classifier and rank 2nd among all other participants by achieving a macro F1 score of 0.65 and a micro F1 score of 0.7 on the final blind test set.",
+    "num_pages": 5
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "39685a17-64bd-507b-88cf-62fe51bc6358",
+    "title": "One Network, Many Masks: Towards More Parameter-Efficient Transfer Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zeng-etal-2023-one,\n    title = \"One Network, Many Masks: Towards More Parameter-Efficient Transfer Learning\",\n    author = \"Zeng, Guangtao  and\n      Zhang, Peiyuan  and\n      Lu, Wei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.418\",\n    doi = \"10.18653/v1/2023.acl-long.418\",\n    pages = \"7564--7580\",\n    abstract = \"Fine-tuning pre-trained language models for multiple tasks can be expensive in terms of storage. Parameter-efficient transfer learning (PETL) methods have been proposed to address this issue, but they still require a significant number of parameters when being applied to broader ranges of tasks. To achieve even greater storage reduction, we propose ProPETL, a novel method that enables efficient sharing of a single prototype PETL network (e.g. adapter, LoRA, and prefix-tuning) across layers and tasks. We learn binary masks to select different sub-networks from the prototype network and apply them as PETL modules into different layers. We find that the binary masks can determine crucial structural information from the network, which is often ignored in previous studies. Our work can also be seen as a type of pruning method, where we find that overparameterization also exists in the seemingly small PETL modules. We evaluate ProPETL on various downstream tasks and show that it can outperform other PETL methods with around 10{\\%} parameters required by the latter.\",\n}\n",
+    "authors": [
+        "Guangtao Zeng",
+        "Peiyuan Zhang",
+        "Wei Lu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.418.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/39685a17-64bd-507b-88cf-62fe51bc6358.pdf",
+    "abstract": "Fine-tuning pre-trained language models for multiple tasks can be expensive in terms of storage. Parameter-efficient transfer learning (PETL) methods have been proposed to address this issue, but they still require a significant number of parameters when being applied to broader ranges of tasks. To achieve even greater storage reduction, we propose ProPETL, a novel method that enables efficient sharing of a single prototype PETL network (e.g. adapter, LoRA, and prefix-tuning) across layers and tasks. We learn binary masks to select different sub-networks from the prototype network and apply them as PETL modules into different layers. We find that the binary masks can determine crucial structural information from the network, which is often ignored in previous studies. Our work can also be seen as a type of pruning method, where we find that overparameterization also exists in the seemingly small PETL modules. We evaluate ProPETL on various downstream tasks and show that it can outperform other PETL methods with around 10% parameters required by the latter.",
+    "num_pages": 17
+}

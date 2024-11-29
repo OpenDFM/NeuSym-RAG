@@ -1,0 +1,20 @@
+{
+    "uuid": "73ad8c6e-b81b-5186-b567-a2c2967a9464",
+    "title": "Diversity-Aware Coherence Loss for Improving Neural Topic Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{li-etal-2023-diversity,\n    title = \"Diversity-Aware Coherence Loss for Improving Neural Topic Models\",\n    author = \"Li, Raymond  and\n      Gonzalez-Pizarro, Felipe  and\n      Xing, Linzi  and\n      Murray, Gabriel  and\n      Carenini, Giuseppe\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.145\",\n    doi = \"10.18653/v1/2023.acl-short.145\",\n    pages = \"1710--1722\",\n    abstract = \"The standard approach for neural topic modeling uses a variational autoencoder (VAE) framework that jointly minimizes the KL divergence between the estimated posterior and prior, in addition to the reconstruction loss. Since neural topic models are trained by recreating individual input documents, they do not explicitly capture the coherence between words on the corpus level. In this work, we propose a novel diversity-aware coherence loss that encourages the model to learn corpus-level coherence scores while maintaining high diversity between topics. Experimental results on multiple datasets show that our method significantly improves the performance of neural topic models without requiring any pretraining or additional parameters.\",\n}\n",
+    "authors": [
+        "Raymond Li",
+        "Felipe Gonzalez-Pizarro",
+        "Linzi Xing",
+        "Gabriel Murray",
+        "Giuseppe Carenini"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.145.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/73ad8c6e-b81b-5186-b567-a2c2967a9464.pdf",
+    "abstract": "The standard approach for neural topic modeling uses a variational autoencoder (VAE) framework that jointly minimizes the KL divergence between the estimated posterior and prior, in addition to the reconstruction loss. Since neural topic models are trained by recreating individual input documents, they do not explicitly capture the coherence between words on the corpus level. In this work, we propose a novel diversity-aware coherence loss that encourages the model to learn corpus-level coherence scores while maintaining high diversity between topics. Experimental results on multiple datasets show that our method significantly improves the performance of neural topic models without requiring any pretraining or additional parameters.",
+    "num_pages": 13
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "a670c087-5da6-59aa-80f3-8fa41e97a324",
+    "title": "ConvRGX: Recognition, Generation, and Extraction for Self-trained Conversational Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the Third DialDoc Workshop on Document-grounded Dialogue and Conversational Question Answering",
+    "bibtex": "@inproceedings{zhang-etal-2023-convrgx,\n    title = \"{C}onv{RGX}: Recognition, Generation, and Extraction for Self-trained Conversational Question Answering\",\n    author = \"Zhang, Tianhua  and\n      Tang, Liping  and\n      Fang, Wei  and\n      Luo, Hongyin  and\n      Wu, Xixin  and\n      Meng, Helen  and\n      Glass, James\",\n    editor = \"Muresan, Smaranda  and\n      Chen, Vivian  and\n      Casey, Kennington  and\n      David, Vandyke  and\n      Nina, Dethlefs  and\n      Koji, Inoue  and\n      Erik, Ekstedt  and\n      Stefan, Ultes\",\n    booktitle = \"Proceedings of the Third DialDoc Workshop on Document-grounded Dialogue and Conversational Question Answering\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.dialdoc-1.10\",\n    doi = \"10.18653/v1/2023.dialdoc-1.10\",\n    pages = \"86--100\",\n    abstract = \"Collecting and constructing human-annotated corpora for training conversational question-answering (CQA) models has recently been shown to be inefficient and costly. To solve this problem, previous works have proposed training QA models with automatically generated QA data. In this work, we extend earlier studies on QA synthesis, and propose an efficient QA data generation algorithm under conversational settings. Our model recognizes potential dialogue topics, generates corresponding questions, and extracts answers from grounding passages. To improve the quality of generated QAs and downstream self-training of CQA models, we propose dropout and agreement-based QA selection methods. We conduct experiments on both data augmentation and domain adaptation settings. Experiments on the QuAC and Doc2Dial tasks show that the proposed method can significantly improve the quality of generated QA data, and also improves the accuracy of self-trained CQA models based on the constructed training corpora.\",\n}\n",
+    "authors": [
+        "Tianhua Zhang",
+        "Liping Tang",
+        "Wei Fang",
+        "Hongyin Luo",
+        "Xixin Wu",
+        "Helen Meng",
+        "James Glass"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.dialdoc-1.10.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a670c087-5da6-59aa-80f3-8fa41e97a324.pdf",
+    "abstract": "Collecting and constructing human-annotated corpora for training conversational question-answering (CQA) models has recently been shown to be inefficient and costly. To solve this problem, previous works have proposed training QA models with automatically generated QA data. In this work, we extend earlier studies on QA synthesis, and propose an efficient QA data generation algorithm under conversational settings. Our model recognizes potential dialogue topics, generates corresponding questions, and extracts answers from grounding passages. To improve the quality of generated QAs and downstream self-training of CQA models, we propose dropout and agreement-based QA selection methods. We conduct experiments on both data augmentation and domain adaptation settings. Experiments on the QuAC and Doc2Dial tasks show that the proposed method can significantly improve the quality of generated QA data, and also improves the accuracy of self-trained CQA models based on the constructed training corpora.",
+    "num_pages": 15
+}

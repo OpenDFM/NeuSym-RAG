@@ -1,0 +1,18 @@
+{
+    "uuid": "48bc9efe-9bb4-5863-af9f-964e8774c629",
+    "title": "Zero-shot Scientific Claim Verification Using LLMs and Citation Text",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the Fourth Workshop on Scholarly Document Processing (SDP 2024)",
+    "bibtex": "@inproceedings{alvarez-etal-2024-zero,\n    title = \"Zero-shot Scientific Claim Verification Using {LLM}s and Citation Text\",\n    author = \"Alvarez, Carlos  and\n      Bennett, Maxwell  and\n      Wang, Lucy\",\n    editor = \"Ghosal, Tirthankar  and\n      Singh, Amanpreet  and\n      Waard, Anita  and\n      Mayr, Philipp  and\n      Naik, Aakanksha  and\n      Weller, Orion  and\n      Lee, Yoonjoo  and\n      Shen, Shannon  and\n      Qin, Yanxia\",\n    booktitle = \"Proceedings of the Fourth Workshop on Scholarly Document Processing (SDP 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.sdp-1.25\",\n    pages = \"269--276\",\n    abstract = \"Due to rapidly changing and advancing science, it is important to check the veracity of scientific claims and whether they are supported by research evidence. Previous versions of this task depended on supervised training, where labeled datasets were constructed through manual claim writing and evidence identification, sometimes coupled with mining citation relationships in papers. In this work, we investigate whether zero-shot scientific claim verification could be enabled using large language models (LLMs) and distant supervision examples taken directly from citation texts. We derive an in-context learning (ICL) dataset, SCitance, consisting of citation sentences ({``}citances{''}), LLM-generated negations, evidence documents, and veracity labels, and find that prompting GPT-4 with ICL examples from this dataset yields comparable performance (within 1 point F1) to previous finetuned models trained on manually curated claim-evidence pairs. Our results suggest that prompting LLMs with citance-evidence pairs directly poses a viable alternative to finetuning scientific claim verification models with manually-curated data.\",\n}\n",
+    "authors": [
+        "Carlos Alvarez",
+        "Maxwell Bennett",
+        "Lucy Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.sdp-1.25.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/48bc9efe-9bb4-5863-af9f-964e8774c629.pdf",
+    "abstract": "Due to rapidly changing and advancing science, it is important to check the veracity of scientific claims and whether they are supported by research evidence. Previous versions of this task depended on supervised training, where labeled datasets were constructed through manual claim writing and evidence identification, sometimes coupled with mining citation relationships in papers. In this work, we investigate whether zero-shot scientific claim verification could be enabled using large language models (LLMs) and distant supervision examples taken directly from citation texts. We derive an in-context learning (ICL) dataset, SCitance, consisting of citation sentences (“citances”), LLM-generated negations, evidence documents, and veracity labels, and find that prompting GPT-4 with ICL examples from this dataset yields comparable performance (within 1 point F1) to previous finetuned models trained on manually curated claim-evidence pairs. Our results suggest that prompting LLMs with citance-evidence pairs directly poses a viable alternative to finetuning scientific claim verification models with manually-curated data.",
+    "num_pages": 8
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "5ecf1524-c3d3-5225-96d2-52a653bd20bb",
+    "title": "Vision Language Pre-training by Contrastive Learning with Cross-Modal Similarity Regulation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{jiang-etal-2023-vision,\n    title = \"Vision Language Pre-training by Contrastive Learning with Cross-Modal Similarity Regulation\",\n    author = \"Jiang, Chaoya  and\n      Ye, Wei  and\n      Xu, Haiyang  and\n      Huang, Songfang  and\n      Huang, Fei  and\n      Zhang, Shikun\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.819\",\n    doi = \"10.18653/v1/2023.acl-long.819\",\n    pages = \"14660--14679\",\n    abstract = \"In this paper, we reconsider the problem of (partial) false negative samples from the Mutual Information (MI) Maximization perspective, the traditional contrastive loss (like InfoNCE loss) will equally push away the anchor of all positive samples and negative samples regardless of their possible semantic similarities. We theoretically show that InfoNCE loss will not only maximize the MI between the anchor and positive samples but minimize the MI between the anchor and false negative samples even though they share similar semantic which could provide a possible theoretical explanation for the observation of the existence of false negative samples in the cross-modal contrastive learning will decrease the downstream task performance of VLP models. Above analysis motivate us to propose the VLP model with a novel Semantic Awared Contrastive Learning framework named SACL where different negative samples are assigned with different contrastive weights according to the semantic similarity between them and the anchor.\",\n}\n",
+    "authors": [
+        "Chaoya Jiang",
+        "Wei Ye",
+        "Haiyang Xu",
+        "Songfang Huang",
+        "Fei Huang",
+        "Shikun Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.819.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/5ecf1524-c3d3-5225-96d2-52a653bd20bb.pdf",
+    "abstract": "In this paper, we reconsider the problem of (partial) false negative samples from the Mutual Information (MI) Maximization perspective, the traditional contrastive loss (like InfoNCE loss) will equally push away the anchor of all positive samples and negative samples regardless of their possible semantic similarities. We theoretically show that InfoNCE loss will not only maximize the MI between the anchor and positive samples but minimize the MI between the anchor and false negative samples even though they share similar semantic which could provide a possible theoretical explanation for the observation of the existence of false negative samples in the cross-modal contrastive learning will decrease the downstream task performance of VLP models. Above analysis motivate us to propose the VLP model with a novel Semantic Awared Contrastive Learning framework named SACL where different negative samples are assigned with different contrastive weights according to the semantic similarity between them and the anchor.",
+    "num_pages": 20
+}

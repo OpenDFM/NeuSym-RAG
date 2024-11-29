@@ -1,0 +1,18 @@
+{
+    "uuid": "f13332c8-ed58-5e7c-8318-bc5218b59b79",
+    "title": "UoG Siephers at “Discharge Me!”: Exploring Ways to Generate Synthetic Patient Notes From Multi-Part Electronic Health Records",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 23rd Workshop on Biomedical Natural Language Processing",
+    "bibtex": "@inproceedings{frayling-etal-2024-uog,\n    title = \"{U}o{G} Siephers at {``}Discharge Me!{''}: Exploring Ways to Generate Synthetic Patient Notes From Multi-Part Electronic Health Records\",\n    author = \"Frayling, Erlend  and\n      Lever, Jake  and\n      McDonald, Graham\",\n    editor = \"Demner-Fushman, Dina  and\n      Ananiadou, Sophia  and\n      Miwa, Makoto  and\n      Roberts, Kirk  and\n      Tsujii, Junichi\",\n    booktitle = \"Proceedings of the 23rd Workshop on Biomedical Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.bionlp-1.62\",\n    doi = \"10.18653/v1/2024.bionlp-1.62\",\n    pages = \"712--718\",\n    abstract = \"This paper presents the UoG Siephers team participation at the Discharge Me! Shared Task on Streamlining Discharge Documentation. For our participation, we investigate appropriately selecting and encoding specific sections of Electronic Health Records (EHR) as input data for sequence-to-sequence models, to generate the discharge instructions and brief hospital course sections of a patient{'}s EHR. We found that, despite the large volume of disparate information that is often available in EHRs, selectively choosing an appropriate EHR section for training and prompting sequence-to-sequence models resulted in improved generative quality. In particular, we found that using only the history of present illness section of an EHR as input often led to better performance than using multiple EHR sections.\",\n}\n",
+    "authors": [
+        "Erlend Frayling",
+        "Jake Lever",
+        "Graham McDonald"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.bionlp-1.62.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/f13332c8-ed58-5e7c-8318-bc5218b59b79.pdf",
+    "abstract": "This paper presents the UoG Siephers team participation at the Discharge Me! Shared Task on Streamlining Discharge Documentation. For our participation, we investigate appropriately selecting and encoding specific sections of Electronic Health Records (EHR) as input data for sequence-to-sequence models, to generate the discharge instructions and brief hospital course sections of a patient’s EHR. We found that, despite the large volume of disparate information that is often available in EHRs, selectively choosing an appropriate EHR section for training and prompting sequence-to-sequence models resulted in improved generative quality. In particular, we found that using only the history of present illness section of an EHR as input often led to better performance than using multiple EHR sections.",
+    "num_pages": 7
+}

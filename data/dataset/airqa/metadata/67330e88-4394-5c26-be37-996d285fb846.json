@@ -1,0 +1,18 @@
+{
+    "uuid": "67330e88-4394-5c26-be37-996d285fb846",
+    "title": "Multi-Source (Pre-)Training for Cross-Domain Measurement, Unit and Context Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+    "bibtex": "@inproceedings{li-etal-2023-multi-source,\n    title = \"Multi-Source (Pre-)Training for Cross-Domain Measurement, Unit and Context Extraction\",\n    author = \"Li, Yueling  and\n      Martschat, Sebastian  and\n      Ponzetto, Simone Paolo\",\n    editor = \"Demner-fushman, Dina  and\n      Ananiadou, Sophia  and\n      Cohen, Kevin\",\n    booktitle = \"The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.bionlp-1.1\",\n    doi = \"10.18653/v1/2023.bionlp-1.1\",\n    pages = \"1--25\",\n    abstract = \"We present a cross-domain approach for automated measurement and context extraction based on pre-trained language models. We construct a multi-source, multi-domain corpus and train an end-to-end extraction pipeline. We then apply multi-source task-adaptive pre-training and fine-tuning to benchmark the cross-domain generalization capability of our model. Further, we conceptualize and apply a task-specific error analysis and derive insights for future work. Our results suggest that multi-source training leads to the best overall results, while single-source training yields the best results for the respective individual domain. While our setup is successful at extracting quantity values and units, more research is needed to improve the extraction of contextual entities. We make the cross-domain corpus used in this work available online.\",\n}\n",
+    "authors": [
+        "Yueling Li",
+        "Sebastian Martschat",
+        "Simone Paolo Ponzetto"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.bionlp-1.1.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/67330e88-4394-5c26-be37-996d285fb846.pdf",
+    "abstract": "We present a cross-domain approach for automated measurement and context extraction based on pre-trained language models. We construct a multi-source, multi-domain corpus and train an end-to-end extraction pipeline. We then apply multi-source task-adaptive pre-training and fine-tuning to benchmark the cross-domain generalization capability of our model. Further, we conceptualize and apply a task-specific error analysis and derive insights for future work. Our results suggest that multi-source training leads to the best overall results, while single-source training yields the best results for the respective individual domain. While our setup is successful at extracting quantity values and units, more research is needed to improve the extraction of contextual entities. We make the cross-domain corpus used in this work available online.",
+    "num_pages": 25
+}

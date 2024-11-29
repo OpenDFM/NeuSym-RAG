@@ -1,0 +1,19 @@
+{
+    "uuid": "07b89436-25d4-5a84-9a07-8fb1df0b06f3",
+    "title": "Bridging the Gap between Decision and Logits in Decision-based Knowledge Distillation for Pre-trained Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhou-etal-2023-bridging,\n    title = \"Bridging the Gap between Decision and Logits in Decision-based Knowledge Distillation for Pre-trained Language Models\",\n    author = \"Zhou, Qinhong  and\n      Yang, Zonghan  and\n      Li, Peng  and\n      Liu, Yang\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.738\",\n    doi = \"10.18653/v1/2023.acl-long.738\",\n    pages = \"13234--13248\",\n    abstract = \"Conventional knowledge distillation (KD) methods require access to the internal information of teachers, e.g., logits. However, such information may not always be accessible for large pre-trained language models (PLMs). In this work, we focus on decision-based KD for PLMs, where only teacher decisions (i.e., top-1 labels) are accessible. Considering the information gap between logits and decisions, we propose a novel method to estimate logits from the decision distributions. Specifically, decision distributions can be both derived as a function of logits theoretically and estimated with test-time data augmentation empirically. By combining the theoretical and empirical estimations of the decision distributions together, the estimation of logits can be successfully reduced to a simple root-finding problem. Extensive experiments show that our method significantly outperforms strong baselines on both natural language understanding and machine reading comprehension datasets.\",\n}\n",
+    "authors": [
+        "Qinhong Zhou",
+        "Zonghan Yang",
+        "Peng Li",
+        "Yang Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.738.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/07b89436-25d4-5a84-9a07-8fb1df0b06f3.pdf",
+    "abstract": "Conventional knowledge distillation (KD) methods require access to the internal information of teachers, e.g., logits. However, such information may not always be accessible for large pre-trained language models (PLMs). In this work, we focus on decision-based KD for PLMs, where only teacher decisions (i.e., top-1 labels) are accessible. Considering the information gap between logits and decisions, we propose a novel method to estimate logits from the decision distributions. Specifically, decision distributions can be both derived as a function of logits theoretically and estimated with test-time data augmentation empirically. By combining the theoretical and empirical estimations of the decision distributions together, the estimation of logits can be successfully reduced to a simple root-finding problem. Extensive experiments show that our method significantly outperforms strong baselines on both natural language understanding and machine reading comprehension datasets.",
+    "num_pages": 15
+}

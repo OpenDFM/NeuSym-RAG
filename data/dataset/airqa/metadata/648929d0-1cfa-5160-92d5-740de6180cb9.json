@@ -1,0 +1,23 @@
+{
+    "uuid": "648929d0-1cfa-5160-92d5-740de6180cb9",
+    "title": "Generating Coherent Sequences of Visual Illustrations for Real-World Manual Tasks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{bordalo-etal-2024-generating,\n    title = \"Generating Coherent Sequences of Visual Illustrations for Real-World Manual Tasks\",\n    author = \"Bordalo, Jo{\\~a}o  and\n      Ramos, Vasco  and\n      Val{\\'e}rio, Rodrigo  and\n      Gl{\\'o}ria-Silva, Diogo  and\n      Bitton, Yonatan  and\n      Yarom, Michal  and\n      Szpektor, Idan  and\n      Magalhaes, Joao\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.690\",\n    doi = \"10.18653/v1/2024.acl-long.690\",\n    pages = \"12777--12797\",\n    abstract = \"Multistep instructions, such as recipes and how-to guides, greatly benefit from visual aids, such as a series of images that accompany the instruction steps. While Large Language Models (LLMs) have become adept at generating coherent textual steps, Large Vision/Language Models (LVLMs) are less capable of generating accompanying image sequences. The most challenging aspect is that each generated image needs to adhere to the relevant textual step instruction, as well as be visually consistent with earlier images in the sequence. To address this problem, we propose an approach for generating consistent image sequences, which integrates a Latent Diffusion Model (LDM) with an LLM to transform the sequence into a caption to maintain the semantic coherence of the sequence. In addition, to maintain the visual coherence of the image sequence, we introduce a copy mechanism to initialise reverse diffusion processes with a latent vector iteration from a previously generated image from a relevant step. Both strategies will condition the reverse diffusion process on the sequence of instruction steps and tie the contents of the current image to previous instruction steps and corresponding images. Experiments show that the proposed approach is preferred by humans in 46.6{\\%} of the cases against 26.6{\\%} for the second best method. In addition, automatic metrics showed that the proposed method maintains semantic coherence and visual consistency across steps in both domains.\",\n}\n",
+    "authors": [
+        "João Bordalo",
+        "Vasco Ramos",
+        "Rodrigo Valério",
+        "Diogo Glória-Silva",
+        "Yonatan Bitton",
+        "Michal Yarom",
+        "Idan Szpektor",
+        "Joao Magalhaes"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.690.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/648929d0-1cfa-5160-92d5-740de6180cb9.pdf",
+    "abstract": "Multistep instructions, such as recipes and how-to guides, greatly benefit from visual aids, such as a series of images that accompany the instruction steps. While Large Language Models (LLMs) have become adept at generating coherent textual steps, Large Vision/Language Models (LVLMs) are less capable of generating accompanying image sequences. The most challenging aspect is that each generated image needs to adhere to the relevant textual step instruction, as well as be visually consistent with earlier images in the sequence. To address this problem, we propose an approach for generating consistent image sequences, which integrates a Latent Diffusion Model (LDM) with an LLM to transform the sequence into a caption to maintain the semantic coherence of the sequence. In addition, to maintain the visual coherence of the image sequence, we introduce a copy mechanism to initialise reverse diffusion processes with a latent vector iteration from a previously generated image from a relevant step. Both strategies will condition the reverse diffusion process on the sequence of instruction steps and tie the contents of the current image to previous instruction steps and corresponding images. Experiments show that the proposed approach is preferred by humans in 46.6% of the cases against 26.6% for the second best method. In addition, automatic metrics showed that the proposed method maintains semantic coherence and visual consistency across steps in both domains.",
+    "num_pages": 21
+}

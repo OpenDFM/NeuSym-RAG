@@ -1,0 +1,20 @@
+{
+    "uuid": "0954e1d4-c099-5532-a37a-7739ebf7e572",
+    "title": "Coarse-to-Fine Generative Model for Oracle Bone Inscriptions Inpainting",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 1st Workshop on Machine Learning for Ancient Languages (ML4AL 2024)",
+    "bibtex": "@inproceedings{wang-etal-2024-coarse,\n    title = \"Coarse-to-Fine Generative Model for Oracle Bone Inscriptions Inpainting\",\n    author = \"Wang, Shibin  and\n      Guo, Wenjie  and\n      Xu, Yubo  and\n      Liu, Dong  and\n      Li, Xueshan\",\n    editor = \"Pavlopoulos, John  and\n      Sommerschield, Thea  and\n      Assael, Yannis  and\n      Gordin, Shai  and\n      Cho, Kyunghyun  and\n      Passarotti, Marco  and\n      Sprugnoli, Rachele  and\n      Liu, Yudong  and\n      Li, Bin  and\n      Anderson, Adam\",\n    booktitle = \"Proceedings of the 1st Workshop on Machine Learning for Ancient Languages (ML4AL 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Hybrid in Bangkok, Thailand and online\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.ml4al-1.12\",\n    doi = \"10.18653/v1/2024.ml4al-1.12\",\n    pages = \"107--114\",\n    abstract = \"Due to ancient origin, there are many incomplete characters in the unearthed Oracle Bone Inscriptions(OBI), which brings the great challenges to recognition and research. In recent years, image inpainting techniques have made remarkable progress. However, these models are unable to adapt to the unique font shape and complex text background of OBI. To meet these aforementioned challenges, we propose a two-stage method for restoring damaged OBI using Generative Adversarial Networks (GAN), which incorporates a dual discriminator structure to capture both global and local image information. In order to accurately restore the image structure and details, the spatial attention mechanism and a novel loss function are proposed. By feeding clear copies of existing OBI and various types of masks into the network, it learns to generate content for the missing regions. Experimental results demonstrate the effectiveness of our proposed method in completing OBI compared to several state-of-the-art techniques.\",\n}\n",
+    "authors": [
+        "Shibin Wang",
+        "Wenjie Guo",
+        "Yubo Xu",
+        "Dong Liu",
+        "Xueshan Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.ml4al-1.12.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0954e1d4-c099-5532-a37a-7739ebf7e572.pdf",
+    "abstract": "Due to ancient origin, there are many incomplete characters in the unearthed Oracle Bone Inscriptions(OBI), which brings the great challenges to recognition and research. In recent years, image inpainting techniques have made remarkable progress. However, these models are unable to adapt to the unique font shape and complex text background of OBI. To meet these aforementioned challenges, we propose a two-stage method for restoring damaged OBI using Generative Adversarial Networks (GAN), which incorporates a dual discriminator structure to capture both global and local image information. In order to accurately restore the image structure and details, the spatial attention mechanism and a novel loss function are proposed. By feeding clear copies of existing OBI and various types of masks into the network, it learns to generate content for the missing regions. Experimental results demonstrate the effectiveness of our proposed method in completing OBI compared to several state-of-the-art techniques.",
+    "num_pages": 8
+}

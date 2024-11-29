@@ -1,0 +1,25 @@
+{
+    "uuid": "d5c3c0fa-3808-5f0b-b51d-94b6b86b8b77",
+    "title": "TLCR: Token-Level Continuous Reward for Fine-grained Reinforcement Learning from Human Feedback",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{yoon-etal-2024-tlcr,\n    title = \"{TLCR}: Token-Level Continuous Reward for Fine-grained Reinforcement Learning from Human Feedback\",\n    author = \"Yoon, Eunseop  and\n      Yoon, Hee Suk  and\n      Eom, SooHwan  and\n      Han, Gunsoo  and\n      Nam, Daniel  and\n      Jo, Daejin  and\n      On, Kyoung-Woon  and\n      Hasegawa-Johnson, Mark  and\n      Kim, Sungwoong  and\n      Yoo, Chang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.889\",\n    doi = \"10.18653/v1/2024.findings-acl.889\",\n    pages = \"14969--14981\",\n    abstract = \"Reinforcement Learning from Human Feedback (RLHF) leverages human preference data to train language models to align more closely with human essence. These human preference data, however, are labeled at the sequence level, creating a mismatch between sequence-level preference labels and tokens, which are autoregressively generated from the language model. Although several recent approaches have tried to provide token-level (i.e., dense) rewards for each individual token, these typically rely on predefined discrete reward values (e.g., positive: +1, negative: -1, neutral: 0), failing to account for varying degrees of preference inherent to each token. To address this limitation, we introduce TLCR (Token-Level Continuous Reward) for RLHF, which incorporates a discriminator trained to distinguish positive and negative tokens, and the confidence of the discriminator is used to assign continuous rewards to each token considering the context. Extensive experiments show that our proposed TLCR leads to consistent performance improvements over previous sequence-level or token-level discrete rewards on open-ended generation benchmarks.\",\n}\n",
+    "authors": [
+        "Eunseop Yoon",
+        "Hee Suk Yoon",
+        "SooHwan Eom",
+        "Gunsoo Han",
+        "Daniel Nam",
+        "Daejin Jo",
+        "Kyoung-Woon On",
+        "Mark Hasegawa-Johnson",
+        "Sungwoong Kim",
+        "Chang Yoo"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.889.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d5c3c0fa-3808-5f0b-b51d-94b6b86b8b77.pdf",
+    "abstract": "Reinforcement Learning from Human Feedback (RLHF) leverages human preference data to train language models to align more closely with human essence. These human preference data, however, are labeled at the sequence level, creating a mismatch between sequence-level preference labels and tokens, which are autoregressively generated from the language model. Although several recent approaches have tried to provide token-level (i.e., dense) rewards for each individual token, these typically rely on predefined discrete reward values (e.g., positive: +1, negative: -1, neutral: 0), failing to account for varying degrees of preference inherent to each token. To address this limitation, we introduce TLCR (Token-Level Continuous Reward) for RLHF, which incorporates a discriminator trained to distinguish positive and negative tokens, and the confidence of the discriminator is used to assign continuous rewards to each token considering the context. Extensive experiments show that our proposed TLCR leads to consistent performance improvements over previous sequence-level or token-level discrete rewards on open-ended generation benchmarks.",
+    "num_pages": 13
+}

@@ -1,0 +1,26 @@
+{
+    "uuid": "d939c4bf-3f98-5f8c-99a8-fb0bf48e70f4",
+    "title": "Mobile-Bench: An Evaluation Benchmark for LLM-based Mobile Agents",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{deng-etal-2024-mobile,\n    title = \"Mobile-Bench: An Evaluation Benchmark for {LLM}-based Mobile Agents\",\n    author = \"Deng, Shihan  and\n      Xu, Weikai  and\n      Sun, Hongda  and\n      Liu, Wei  and\n      Tan, Tao  and\n      Liujianfeng, Liujianfeng  and\n      Li, Ang  and\n      Luan, Jian  and\n      Wang, Bin  and\n      Yan, Rui  and\n      Shang, Shuo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.478\",\n    doi = \"10.18653/v1/2024.acl-long.478\",\n    pages = \"8813--8831\",\n    abstract = \"With the remarkable advancements of large language models (LLMs), LLM-based agents have become a research hotspot in human-computer interaction.However, there is a scarcity of benchmarks available for LLM-based mobile agents.Benchmarking these agents generally faces three main challenges:(1) The inefficiency of UI-only operations imposes limitations to task evaluation.(2) Specific instructions within a singular application lack adequacy for assessing the multi-dimensional reasoning and decision-making capacities of LLM mobile agents.(3) Current evaluation metrics are insufficient to accurately assess the process of sequential actions. To this end, we propose Mobile-Bench, a novel benchmark for evaluating the capabilities of LLM-based mobile agents.First, we expand conventional UI operations by incorporating 103 collected APIs to accelerate the efficiency of task completion.Subsequently, we collect evaluation data by combining real user queries with augmentation from LLMs.To better evaluate different levels of planning capabilities for mobile agents, our data is categorized into three distinct groups: SAST, SAMT, and MAMT, reflecting varying levels of task complexity. Mobile-Bench comprises 832 data entries, with more than 200 tasks specifically designed to evaluate multi-APP collaboration scenarios.Furthermore, we introduce a more accurate evaluation metric, named CheckPoint, to assess whether LLM-based mobile agents reach essential points during their planning and reasoning steps. Dataset and platform will be released in the future.\",\n}\n",
+    "authors": [
+        "Shihan Deng",
+        "Weikai Xu",
+        "Hongda Sun",
+        "Wei Liu",
+        "Tao Tan",
+        "Liujianfeng Liujianfeng",
+        "Ang Li",
+        "Jian Luan",
+        "Bin Wang",
+        "Rui Yan",
+        "Shuo Shang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.478.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d939c4bf-3f98-5f8c-99a8-fb0bf48e70f4.pdf",
+    "abstract": "With the remarkable advancements of large language models (LLMs), LLM-based agents have become a research hotspot in human-computer interaction.However, there is a scarcity of benchmarks available for LLM-based mobile agents.Benchmarking these agents generally faces three main challenges:(1) The inefficiency of UI-only operations imposes limitations to task evaluation.(2) Specific instructions within a singular application lack adequacy for assessing the multi-dimensional reasoning and decision-making capacities of LLM mobile agents.(3) Current evaluation metrics are insufficient to accurately assess the process of sequential actions. To this end, we propose Mobile-Bench, a novel benchmark for evaluating the capabilities of LLM-based mobile agents.First, we expand conventional UI operations by incorporating 103 collected APIs to accelerate the efficiency of task completion.Subsequently, we collect evaluation data by combining real user queries with augmentation from LLMs.To better evaluate different levels of planning capabilities for mobile agents, our data is categorized into three distinct groups: SAST, SAMT, and MAMT, reflecting varying levels of task complexity. Mobile-Bench comprises 832 data entries, with more than 200 tasks specifically designed to evaluate multi-APP collaboration scenarios.Furthermore, we introduce a more accurate evaluation metric, named CheckPoint, to assess whether LLM-based mobile agents reach essential points during their planning and reasoning steps. Dataset and platform will be released in the future.",
+    "num_pages": 19
+}

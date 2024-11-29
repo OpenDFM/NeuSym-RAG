@@ -1,0 +1,22 @@
+{
+    "uuid": "a1d299bc-aced-59f4-b8c4-66a0047e1ab3",
+    "title": "SSS: Editing Factual Knowledge in Language Models towards Semantic Sparse Space",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{wang-etal-2024-sss,\n    title = \"{SSS}: Editing Factual Knowledge in Language Models towards Semantic Sparse Space\",\n    author = \"Wang, Huazheng  and\n      Sun, Haifeng  and\n      Wang, Jingyu  and\n      Qi, Qi  and\n      Xia, Zixuan  and\n      Zhang, Menghao  and\n      Liao, Jianxin\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.331\",\n    doi = \"10.18653/v1/2024.findings-acl.331\",\n    pages = \"5559--5570\",\n    abstract = \"Language Models (LMs) acquire factual knowledge during pre-training and store it in the parameters, which can be valuable for downstream tasks. As world evolves, some facts may be incorrectly induced or become obsolete over time. Various model editing methods have been proposed to modify specific examples in LMs. However, existing training-based methods still suffer from sub-optimal locality, where irrelevant neighborhood examples can be adversely influenced. Model{'}s gradients are still struggling to identify the appropriate direction when updating the parameters. To address this issue, we find that directing the hidden state of the edit example towards spaces where semantics are sparse tends to help preserve the semantics of irrelevant neighborhood examples. Based on this hypothesis, we propose a novel metric, named SSS, to evaluate the degree of sparsity around a sentence embedding in the semantic space without any human or machine annotation. Subsequently, we incorporate SSS into the original loss function of the existing training-based methods to enhance locality. Experiments conducted on two datasets across various models demonstrate that SSS is effective in improving both locality and reasoning capability.\",\n}\n",
+    "authors": [
+        "Huazheng Wang",
+        "Haifeng Sun",
+        "Jingyu Wang",
+        "Qi Qi",
+        "Zixuan Xia",
+        "Menghao Zhang",
+        "Jianxin Liao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.331.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a1d299bc-aced-59f4-b8c4-66a0047e1ab3.pdf",
+    "abstract": "Language Models (LMs) acquire factual knowledge during pre-training and store it in the parameters, which can be valuable for downstream tasks. As world evolves, some facts may be incorrectly induced or become obsolete over time. Various model editing methods have been proposed to modify specific examples in LMs. However, existing training-based methods still suffer from sub-optimal locality, where irrelevant neighborhood examples can be adversely influenced. Model’s gradients are still struggling to identify the appropriate direction when updating the parameters. To address this issue, we find that directing the hidden state of the edit example towards spaces where semantics are sparse tends to help preserve the semantics of irrelevant neighborhood examples. Based on this hypothesis, we propose a novel metric, named SSS, to evaluate the degree of sparsity around a sentence embedding in the semantic space without any human or machine annotation. Subsequently, we incorporate SSS into the original loss function of the existing training-based methods to enhance locality. Experiments conducted on two datasets across various models demonstrate that SSS is effective in improving both locality and reasoning capability.",
+    "num_pages": 12
+}

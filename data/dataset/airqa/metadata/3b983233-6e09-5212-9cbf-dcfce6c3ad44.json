@@ -1,0 +1,25 @@
+{
+    "uuid": "3b983233-6e09-5212-9cbf-dcfce6c3ad44",
+    "title": "The economic trade-offs of large language models: A case study",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{howell-etal-2023-distilled,\n    title = \"The economic trade-offs of large language models: A case study\",\n    author = \"Howell, Kristen  and\n      Christian, Gwen  and\n      Fomitchov, Pavel  and\n      Kehat, Gitit  and\n      Marzulla, Julianne  and\n      Rolston, Leanne  and\n      Tredup, Jadin  and\n      Zimmerman, Ilana  and\n      Selfridge, Ethan  and\n      Bradley, Joseph\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.24\",\n    doi = \"10.18653/v1/2023.acl-industry.24\",\n    pages = \"248--267\",\n    abstract = \"Contacting customer service via chat is a common practice. Because employing customer service agents is expensive, many companies are turning to NLP that assists human agents by auto-generating responses that can be used directly or with modifications. With their ability to handle large context windows, Large Language Models (LLMs) are a natural fit for this use case. However, their efficacy must be balanced with the cost of training and serving them. This paper assesses the practical cost and impact of LLMs for the enterprise as a function of the usefulness of the responses that they generate. We present a cost framework for evaluating an NLP model{'}s utility for this use case and apply it to a single brand as a case study in the context of an existing agent assistance product. We compare three strategies for specializing an LLM {---} prompt engineering, fine-tuning, and knowledge distillation {---} using feedback from the brand{'}s customer service agents. We find that the usability of a model{'}s responses can make up for a large difference in inference cost for our case study brand, and we extrapolate our findings to the broader enterprise space.\",\n}\n",
+    "authors": [
+        "Kristen Howell",
+        "Gwen Christian",
+        "Pavel Fomitchov",
+        "Gitit Kehat",
+        "Julianne Marzulla",
+        "Leanne Rolston",
+        "Jadin Tredup",
+        "Ilana Zimmerman",
+        "Ethan Selfridge",
+        "Joseph Bradley"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.24.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/3b983233-6e09-5212-9cbf-dcfce6c3ad44.pdf",
+    "abstract": "Contacting customer service via chat is a common practice. Because employing customer service agents is expensive, many companies are turning to NLP that assists human agents by auto-generating responses that can be used directly or with modifications. With their ability to handle large context windows, Large Language Models (LLMs) are a natural fit for this use case. However, their efficacy must be balanced with the cost of training and serving them. This paper assesses the practical cost and impact of LLMs for the enterprise as a function of the usefulness of the responses that they generate. We present a cost framework for evaluating an NLP model’s utility for this use case and apply it to a single brand as a case study in the context of an existing agent assistance product. We compare three strategies for specializing an LLM — prompt engineering, fine-tuning, and knowledge distillation — using feedback from the brand’s customer service agents. We find that the usability of a model’s responses can make up for a large difference in inference cost for our case study brand, and we extrapolate our findings to the broader enterprise space.",
+    "num_pages": 20
+}

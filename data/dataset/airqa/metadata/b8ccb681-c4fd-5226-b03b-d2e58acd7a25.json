@@ -1,0 +1,17 @@
+{
+    "uuid": "b8ccb681-c4fd-5226-b03b-d2e58acd7a25",
+    "title": "Extracting Drug-Drug and Protein-Protein Interactions from Text using a Continuous Update of Tree-Transformers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+    "bibtex": "@inproceedings{singha-roy-mercer-2023-extracting,\n    title = \"Extracting Drug-Drug and Protein-Protein Interactions from Text using a Continuous Update of Tree-Transformers\",\n    author = \"Singha Roy, Sudipta  and\n      Mercer, Robert E.\",\n    editor = \"Demner-fushman, Dina  and\n      Ananiadou, Sophia  and\n      Cohen, Kevin\",\n    booktitle = \"The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.bionlp-1.25\",\n    doi = \"10.18653/v1/2023.bionlp-1.25\",\n    pages = \"280--291\",\n    abstract = \"Understanding biological mechanisms requires determining mutual protein-protein interactions (PPI). Obtaining drug-drug interactions (DDI) from scientific articles provides important information about drugs. Extracting such medical entity interactions from biomedical articles is challenging due to complex sentence structures. To address this issue, our proposed model utilizes tree-transformers to generate the sentence representation first, and then a sentence-to-word update step to fine-tune the word embeddings which are again used by the tree-transformers to generate enriched sentence representations. Using the tree-transformers helps the model preserve syntactical information and provide semantic information. The fine-tuning provided by the continuous update step adds improved semantics to the representation of each sentence. Our model outperforms other prominent models with a significant performance boost on the five standard PPI corpora and a performance boost on the one benchmark DDI corpus that are used in our experiments.\",\n}\n",
+    "authors": [
+        "Sudipta Singha Roy",
+        "Robert E. Mercer"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.bionlp-1.25.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b8ccb681-c4fd-5226-b03b-d2e58acd7a25.pdf",
+    "abstract": "Understanding biological mechanisms requires determining mutual protein-protein interactions (PPI). Obtaining drug-drug interactions (DDI) from scientific articles provides important information about drugs. Extracting such medical entity interactions from biomedical articles is challenging due to complex sentence structures. To address this issue, our proposed model utilizes tree-transformers to generate the sentence representation first, and then a sentence-to-word update step to fine-tune the word embeddings which are again used by the tree-transformers to generate enriched sentence representations. Using the tree-transformers helps the model preserve syntactical information and provide semantic information. The fine-tuning provided by the continuous update step adds improved semantics to the representation of each sentence. Our model outperforms other prominent models with a significant performance boost on the five standard PPI corpora and a performance boost on the one benchmark DDI corpus that are used in our experiments.",
+    "num_pages": 12
+}

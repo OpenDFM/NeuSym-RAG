@@ -1,0 +1,19 @@
+{
+    "uuid": "13d8c9db-0214-5e7a-aabb-47b50635f815",
+    "title": "GADePo: Graph-Assisted Declarative Pooling Transformers for Document-Level Relation Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 3rd Workshop on Knowledge Augmented Methods for NLP",
+    "bibtex": "@inproceedings{coman-etal-2024-gadepo,\n    title = \"{GAD}e{P}o: Graph-Assisted Declarative Pooling Transformers for Document-Level Relation Extraction\",\n    author = \"Coman, Andrei  and\n      Theodoropoulos, Christos  and\n      Moens, Marie-Francine  and\n      Henderson, James\",\n    editor = \"Yu, Wenhao  and\n      Shi, Weijia  and\n      Yasunaga, Michihiro  and\n      Jiang, Meng  and\n      Zhu, Chenguang  and\n      Hajishirzi, Hannaneh  and\n      Zettlemoyer, Luke  and\n      Zhang, Zhihan\",\n    booktitle = \"Proceedings of the 3rd Workshop on Knowledge Augmented Methods for NLP\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.knowledgenlp-1.1\",\n    doi = \"10.18653/v1/2024.knowledgenlp-1.1\",\n    pages = \"1--14\",\n    abstract = \"Document-level relation extraction typically relies on text-based encoders and hand-coded pooling heuristics to aggregate information learned by the encoder. In this paper, we leverage the intrinsic graph processing capabilities of the Transformer model and propose replacing hand-coded pooling methods with new tokens in the input, which are designed to aggregate information via explicit graph relations in the computation of attention weights. We introduce a joint text-graph Transformer model and a graph-assisted declarative pooling (GADePo) specification of the input, which provides explicit and high-level instructions for information aggregation. GADePo allows the pooling process to be guided by domain-specific knowledge or desired outcomes but still learned by the Transformer, leading to more flexible and customisable pooling strategies. We evaluate our method across diverse datasets and models and show that our approach yields promising results that are consistently better than those achieved by the hand-coded pooling functions.\",\n}\n",
+    "authors": [
+        "Andrei Coman",
+        "Christos Theodoropoulos",
+        "Marie-Francine Moens",
+        "James Henderson"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.knowledgenlp-1.1.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/13d8c9db-0214-5e7a-aabb-47b50635f815.pdf",
+    "abstract": "Document-level relation extraction typically relies on text-based encoders and hand-coded pooling heuristics to aggregate information learned by the encoder. In this paper, we leverage the intrinsic graph processing capabilities of the Transformer model and propose replacing hand-coded pooling methods with new tokens in the input, which are designed to aggregate information via explicit graph relations in the computation of attention weights. We introduce a joint text-graph Transformer model and a graph-assisted declarative pooling (GADePo) specification of the input, which provides explicit and high-level instructions for information aggregation. GADePo allows the pooling process to be guided by domain-specific knowledge or desired outcomes but still learned by the Transformer, leading to more flexible and customisable pooling strategies. We evaluate our method across diverse datasets and models and show that our approach yields promising results that are consistently better than those achieved by the hand-coded pooling functions.",
+    "num_pages": 14
+}

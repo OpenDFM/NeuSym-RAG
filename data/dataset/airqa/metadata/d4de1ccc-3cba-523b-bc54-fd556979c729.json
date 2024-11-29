@@ -1,0 +1,22 @@
+{
+    "uuid": "d4de1ccc-3cba-523b-bc54-fd556979c729",
+    "title": "InstructProtein: Aligning Human and Protein Language via Knowledge Instruction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2024-instructprotein,\n    title = \"{I}nstruct{P}rotein: Aligning Human and Protein Language via Knowledge Instruction\",\n    author = \"Wang, Zeyuan  and\n      Zhang, Qiang  and\n      Ding, Keyan  and\n      Qin, Ming  and\n      Zhuang, Xiang  and\n      Li, Xiaotong  and\n      Chen, Huajun\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.62\",\n    doi = \"10.18653/v1/2024.acl-long.62\",\n    pages = \"1114--1136\",\n    abstract = \"Large Language Models (LLMs) have revolutionized the field of natural language processing, but they fall short in comprehending biological sequences such as proteins. To address this challenge, we propose InstructProtein, an innovative LLM that possesses bidirectional generation capabilities in both human and protein languages: (i) taking a protein sequence as input to predict its textual function description and (ii) using natural language to prompt protein sequence generation. To achieve this, we first pre-train an LLM on both protein and natural language corpora, enabling it to comprehend individual languages. Then supervised instruction tuning is employed to facilitate the alignment of these two distinct languages. Herein, we introduce a knowledge graph-based instruction generation framework to construct a high-quality instruction dataset, addressing the annotation imbalance and the absence of instructional signals in the existing protein-text corpus. In particular, the instructions inherit the structural relations between proteins and function annotations in knowledge graphs, which empowers our model to engage in the causal modeling of protein functions, akin to the chain-of-thought processes in natural languages. Extensive experiments on bidirectional protein-text generation tasks show that InstructProtein outperforms state-of-the-art LLMs by a large margin.\",\n}\n",
+    "authors": [
+        "Zeyuan Wang",
+        "Qiang Zhang",
+        "Keyan Ding",
+        "Ming Qin",
+        "Xiang Zhuang",
+        "Xiaotong Li",
+        "Huajun Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.62.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d4de1ccc-3cba-523b-bc54-fd556979c729.pdf",
+    "abstract": "Large Language Models (LLMs) have revolutionized the field of natural language processing, but they fall short in comprehending biological sequences such as proteins. To address this challenge, we propose InstructProtein, an innovative LLM that possesses bidirectional generation capabilities in both human and protein languages: (i) taking a protein sequence as input to predict its textual function description and (ii) using natural language to prompt protein sequence generation. To achieve this, we first pre-train an LLM on both protein and natural language corpora, enabling it to comprehend individual languages. Then supervised instruction tuning is employed to facilitate the alignment of these two distinct languages. Herein, we introduce a knowledge graph-based instruction generation framework to construct a high-quality instruction dataset, addressing the annotation imbalance and the absence of instructional signals in the existing protein-text corpus. In particular, the instructions inherit the structural relations between proteins and function annotations in knowledge graphs, which empowers our model to engage in the causal modeling of protein functions, akin to the chain-of-thought processes in natural languages. Extensive experiments on bidirectional protein-text generation tasks show that InstructProtein outperforms state-of-the-art LLMs by a large margin.",
+    "num_pages": 23
+}

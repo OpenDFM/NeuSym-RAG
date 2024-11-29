@@ -1,0 +1,18 @@
+{
+    "uuid": "955cb5b2-e409-572d-b4d1-20f672c73193",
+    "title": "SIP: Injecting a Structural Inductive Bias into a Seq2Seq Model by Simulation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{lindemann-etal-2024-sip,\n    title = \"{SIP}: Injecting a Structural Inductive Bias into a {S}eq2{S}eq Model by Simulation\",\n    author = \"Lindemann, Matthias  and\n      Koller, Alexander  and\n      Titov, Ivan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.355\",\n    doi = \"10.18653/v1/2024.acl-long.355\",\n    pages = \"6570--6587\",\n    abstract = \"Strong inductive biases enable learning from little data and help generalization outside the training distribution. Popular neural architectures such as Transformers lack strong structural inductive biases for seq2seq NLP tasks on their own. Consequently, they struggle with systematic generalization beyond the training distribution, e.g. with extrapolating to longer inputs, even when pre-trained on large amounts of text.We show how a structural inductive bias can be efficiently injected into a seq2seq model by pre-training it to simulate structural transformations on synthetic data. Specifically, we inject an inductive bias towards Finite State Transducers (FSTs) into a Transformer by pre-training it to simulate FSTs given their descriptions. Our experiments show that our method imparts the desired inductive bias, resulting in improved systematic generalization and better few-shot learning for FST-like tasks. Our analysis shows that fine-tuned models accurately capture the state dynamics of the unseen underlying FSTs, suggesting that the simulation process is internalized by the fine-tuned model.\",\n}\n",
+    "authors": [
+        "Matthias Lindemann",
+        "Alexander Koller",
+        "Ivan Titov"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.355.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/955cb5b2-e409-572d-b4d1-20f672c73193.pdf",
+    "abstract": "Strong inductive biases enable learning from little data and help generalization outside the training distribution. Popular neural architectures such as Transformers lack strong structural inductive biases for seq2seq NLP tasks on their own. Consequently, they struggle with systematic generalization beyond the training distribution, e.g. with extrapolating to longer inputs, even when pre-trained on large amounts of text.We show how a structural inductive bias can be efficiently injected into a seq2seq model by pre-training it to simulate structural transformations on synthetic data. Specifically, we inject an inductive bias towards Finite State Transducers (FSTs) into a Transformer by pre-training it to simulate FSTs given their descriptions. Our experiments show that our method imparts the desired inductive bias, resulting in improved systematic generalization and better few-shot learning for FST-like tasks. Our analysis shows that fine-tuned models accurately capture the state dynamics of the unseen underlying FSTs, suggesting that the simulation process is internalized by the fine-tuned model.",
+    "num_pages": 18
+}

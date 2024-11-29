@@ -1,0 +1,17 @@
+{
+    "uuid": "b2920bd5-0840-52c0-88f8-e8c0269527a0",
+    "title": "Mitigating Hallucinations in Large Vision-Language Models (LVLMs) via Language-Contrastive Decoding (LCD)",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{manevich-tsarfaty-2024-mitigating,\n    title = \"Mitigating Hallucinations in Large Vision-Language Models ({LVLM}s) via Language-Contrastive Decoding ({LCD})\",\n    author = \"Manevich, Avshalom  and\n      Tsarfaty, Reut\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.359\",\n    doi = \"10.18653/v1/2024.findings-acl.359\",\n    pages = \"6008--6022\",\n    abstract = \"Large Vision-Language Models (LVLMs) are an extension of Large Language Models (LLMs) that facilitate processing both image and text inputs, expanding AI capabilities. However, LVLMs struggle with object hallucinations due to their reliance on text cues and learned object co-occurrence biases. While most research quantifies these hallucinations, mitigation strategies are still lacking. Our study introduces a Language Contrastive Decoding (LCD) algorithm that adjusts LVLM outputs based on LLM distribution confidence levels, effectively reducing object hallucinations. We demonstrate the advantages of LCD in leading LVLMs, showing up to {\\%}4 improvement in POPE F1 scores and up to {\\%}36 reduction in CHAIR scores on the COCO validation set, while also improving captioning quality scores. Our method effectively improves LVLMs without needing complex post-processing or retraining, and is easily applicable to different models. Our findings highlight the potential of further exploration of LVLM-specific decoding algorithms.\",\n}\n",
+    "authors": [
+        "Avshalom Manevich",
+        "Reut Tsarfaty"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.359.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/b2920bd5-0840-52c0-88f8-e8c0269527a0.pdf",
+    "abstract": "Large Vision-Language Models (LVLMs) are an extension of Large Language Models (LLMs) that facilitate processing both image and text inputs, expanding AI capabilities. However, LVLMs struggle with object hallucinations due to their reliance on text cues and learned object co-occurrence biases. While most research quantifies these hallucinations, mitigation strategies are still lacking. Our study introduces a Language Contrastive Decoding (LCD) algorithm that adjusts LVLM outputs based on LLM distribution confidence levels, effectively reducing object hallucinations. We demonstrate the advantages of LCD in leading LVLMs, showing up to %4 improvement in POPE F1 scores and up to %36 reduction in CHAIR scores on the COCO validation set, while also improving captioning quality scores. Our method effectively improves LVLMs without needing complex post-processing or retraining, and is easily applicable to different models. Our findings highlight the potential of further exploration of LVLM-specific decoding algorithms.",
+    "num_pages": 15
+}

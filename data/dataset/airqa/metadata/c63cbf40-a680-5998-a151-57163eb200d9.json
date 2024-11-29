@@ -1,0 +1,19 @@
+{
+    "uuid": "c63cbf40-a680-5998-a151-57163eb200d9",
+    "title": "Is a Video worth n n Images? A Highly Efficient Approach to Transformer-based Video Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)",
+    "bibtex": "@inproceedings{lyu-etal-2023-video,\n    title = \"Is a Video worth n n Images? A Highly Efficient Approach to Transformer-based Video Question Answering\",\n    author = \"Lyu, Chenyang  and\n      Ji, Tianbo  and\n      Graham, Yvette  and\n      Foster, Jennifer\",\n    editor = \"Sadat Moosavi, Nafise  and\n      Gurevych, Iryna  and\n      Hou, Yufang  and\n      Kim, Gyuwan  and\n      Kim, Young Jin  and\n      Schuster, Tal  and\n      Agrawal, Ameeta\",\n    booktitle = \"Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (Hybrid)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.sustainlp-1.12\",\n    doi = \"10.18653/v1/2023.sustainlp-1.12\",\n    pages = \"183--189\",\n}\n",
+    "authors": [
+        "Chenyang Lyu",
+        "Tianbo Ji",
+        "Yvette Graham",
+        "Jennifer Foster"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.sustainlp-1.12.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c63cbf40-a680-5998-a151-57163eb200d9.pdf",
+    "abstract": "Conventional Transformer-based Video Question Answering (VideoQA) approaches generally encode frames independently through one or more image encoders followed by interaction between frames and question. However, such schema incur significant memory use and inevitably slow down the training and inference speed. In this work, we present a highly efficient approach for VideoQA based on existing vision-language pre-trained models where we concatenate video frames to a n × n matrix and then convert it to one image. By doing so, we reduce the use of the image encoder from n2 to 1 while maintaining the temporal structure of the original video. Experimental results on MSRVTT and TrafficQA show that our proposed approach achieves state-of-theart performance with nearly 4× faster speed and only 30% memory use. We show that by integrating our approach into VideoQA systems we can achieve comparable, even superior, performance with a significant speed up for training and inference. We believe the proposed approach can facilitate VideoQA-related research by reducing the computational requirements for those who have limited access to budgets and resources. Our code is publicly available at https://github.com/lyuchenyang/ Efficient-VideoQA for research use.",
+    "num_pages": 7
+}

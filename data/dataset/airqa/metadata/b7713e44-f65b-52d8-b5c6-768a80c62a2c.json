@@ -1,0 +1,22 @@
+{
+    "uuid": "b7713e44-f65b-52d8-b5c6-768a80c62a2c",
+    "title": "Language Agnostic Multilingual Information Retrieval with Contrastive Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{hu-etal-2023-language,\n    title = \"Language Agnostic Multilingual Information Retrieval with Contrastive Learning\",\n    author = \"Hu, Xiyang  and\n      Chen, Xinchi  and\n      Qi, Peng  and\n      Kong, Deguang  and\n      Liu, Kunlun  and\n      Wang, William Yang  and\n      Huang, Zhiheng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.581\",\n    doi = \"10.18653/v1/2023.findings-acl.581\",\n    pages = \"9133--9146\",\n    abstract = \"Multilingual information retrieval (IR) is challenging since annotated training data is costly to obtain in many languages. We present an effective method to train multilingual IR systems when only English IR training data and some parallel corpora between English and other languages are available. We leverage parallel and non-parallel corpora to improve the pretrained multilingual language models{'} cross-lingual transfer ability. We design a semantic contrastive loss to align representations of parallel sentences that share the same semantics in different languages, and a new language contrastive loss to leverage parallel sentence pairs to remove language-specific information in sentence representations from non-parallel corpora. When trained on English IR data with these losses and evaluated zero-shot on non-English data, our model demonstrates significant improvement to prior work on retrieval performance, while it requires much less computational effort. We also demonstrate the value of our model for a practical setting when a parallel corpus is only available for a few languages, but a lack of parallel corpora resources persists for many other low-resource languages. Our model can work well even with a small number of parallel sentences, and be used as an add-on module to any backbones and other tasks.\",\n}\n",
+    "authors": [
+        "Xiyang Hu",
+        "Xinchi Chen",
+        "Peng Qi",
+        "Deguang Kong",
+        "Kunlun Liu",
+        "William Yang Wang",
+        "Zhiheng Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.581.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b7713e44-f65b-52d8-b5c6-768a80c62a2c.pdf",
+    "abstract": "Multilingual information retrieval (IR) is challenging since annotated training data is costly to obtain in many languages. We present an effective method to train multilingual IR systems when only English IR training data and some parallel corpora between English and other languages are available. We leverage parallel and non-parallel corpora to improve the pretrained multilingual language models’ cross-lingual transfer ability. We design a semantic contrastive loss to align representations of parallel sentences that share the same semantics in different languages, and a new language contrastive loss to leverage parallel sentence pairs to remove language-specific information in sentence representations from non-parallel corpora. When trained on English IR data with these losses and evaluated zero-shot on non-English data, our model demonstrates significant improvement to prior work on retrieval performance, while it requires much less computational effort. We also demonstrate the value of our model for a practical setting when a parallel corpus is only available for a few languages, but a lack of parallel corpora resources persists for many other low-resource languages. Our model can work well even with a small number of parallel sentences, and be used as an add-on module to any backbones and other tasks.",
+    "num_pages": 14
+}

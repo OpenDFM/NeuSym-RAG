@@ -1,0 +1,22 @@
+{
+    "uuid": "b1ef1a9e-79ba-5627-af14-cf7b9474b934",
+    "title": "Model Intrinsic Features of Fine-tuning based Text Summarization Models for Factual Consistency",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{song-etal-2023-model,\n    title = \"Model Intrinsic Features of Fine-tuning based Text Summarization Models for Factual Consistency\",\n    author = \"Song, Jongyoon  and\n      Park, Nohil  and\n      Hwang, Bongkyu  and\n      Yun, Jaewoong  and\n      Joe, Seongho  and\n      Gwon, Youngjune  and\n      Yoon, Sungroh\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.872\",\n    doi = \"10.18653/v1/2023.findings-acl.872\",\n    pages = \"13884--13898\",\n    abstract = \"In this study, we analyze the model intrinsic features of a summarization model by varying the fine-tuning objectives and datasets. We fine-tune BART models combining three fine-tuning objectives (negative log-likelihood, unlikelihood, and contrastive loss) and two datasets (CNN/DailyMail and XSum) and provide shuffled or aligned documents to observe changes in the model predictions and intrinsic features. We find that (i) the inductive bias for factual consistency during the fine-tuning procedure depends on both the objectives and datasets, and (ii) summarization models with relatively low factual consistency are more likely to model summaries that are not conditional to the documents. We demonstrate that splitting data based on the unconditional and conditional summary modeling difficulty affects the factual consistency and intrinsic features of the summarization models. Our experimental results highlight the importance of studying the inductive bias during fine-tuning for factual consistency.\",\n}\n",
+    "authors": [
+        "Jongyoon Song",
+        "Nohil Park",
+        "Bongkyu Hwang",
+        "Jaewoong Yun",
+        "Seongho Joe",
+        "Youngjune Gwon",
+        "Sungroh Yoon"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.872.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b1ef1a9e-79ba-5627-af14-cf7b9474b934.pdf",
+    "abstract": "In this study, we analyze the model intrinsic features of a summarization model by varying the fine-tuning objectives and datasets. We fine-tune BART models combining three fine-tuning objectives (negative log-likelihood, unlikelihood, and contrastive loss) and two datasets (CNN/DailyMail and XSum) and provide shuffled or aligned documents to observe changes in the model predictions and intrinsic features. We find that (i) the inductive bias for factual consistency during the fine-tuning procedure depends on both the objectives and datasets, and (ii) summarization models with relatively low factual consistency are more likely to model summaries that are not conditional to the documents. We demonstrate that splitting data based on the unconditional and conditional summary modeling difficulty affects the factual consistency and intrinsic features of the summarization models. Our experimental results highlight the importance of studying the inductive bias during fine-tuning for factual consistency.",
+    "num_pages": 15
+}

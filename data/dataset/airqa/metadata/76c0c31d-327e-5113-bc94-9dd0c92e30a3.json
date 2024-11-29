@@ -1,0 +1,23 @@
+{
+    "uuid": "76c0c31d-327e-5113-bc94-9dd0c92e30a3",
+    "title": "An Effective Pronunciation Assessment Approach Leveraging Hierarchical Transformers and Pre-training Strategies",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yan-etal-2024-effective,\n    title = \"An Effective Pronunciation Assessment Approach Leveraging Hierarchical Transformers and Pre-training Strategies\",\n    author = \"Yan, Bi-Cheng  and\n      Li, Jiun-Ting  and\n      Wang, Yi-Cheng  and\n      Wang, Hsin Wei  and\n      Lo, Tien-Hong  and\n      Hsu, Yung-Chang  and\n      Chao, Wei-Cheng  and\n      Chen, Berlin\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.95\",\n    doi = \"10.18653/v1/2024.acl-long.95\",\n    pages = \"1737--1747\",\n    abstract = \"Automatic pronunciation assessment (APA) manages to quantify a second language (L2) learner{'}s pronunciation proficiency in a target language by providing fine-grained feedback with multiple pronunciation aspect scores at various linguistic levels. Most existing efforts on APA typically parallelize the modeling process, namely predicting multiple aspect scores across various linguistic levels simultaneously. This inevitably makes both the hierarchy of linguistic units and the relatedness among the pronunciation aspects sidelined. Recognizing such a limitation, we in this paper first introduce HierTFR, a hierarchal APA method that jointly models the intrinsic structures of an utterance while considering the relatedness among the pronunciation aspects. We also propose a correlation-aware regularizer to strengthen the connection between the estimated scores and the human annotations. Furthermore, novel pre-training strategies tailored for different linguistic levels are put forward so as to facilitate better model initialization. An extensive set of empirical experiments conducted on the speechocean762 benchmark dataset suggest the feasibility and effectiveness of our approach in relation to several competitive baselines.\",\n}\n",
+    "authors": [
+        "Bi-Cheng Yan",
+        "Jiun-Ting Li",
+        "Yi-Cheng Wang",
+        "Hsin Wei Wang",
+        "Tien-Hong Lo",
+        "Yung-Chang Hsu",
+        "Wei-Cheng Chao",
+        "Berlin Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.95.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/76c0c31d-327e-5113-bc94-9dd0c92e30a3.pdf",
+    "abstract": "Automatic pronunciation assessment (APA) manages to quantify a second language (L2) learner’s pronunciation proficiency in a target language by providing fine-grained feedback with multiple pronunciation aspect scores at various linguistic levels. Most existing efforts on APA typically parallelize the modeling process, namely predicting multiple aspect scores across various linguistic levels simultaneously. This inevitably makes both the hierarchy of linguistic units and the relatedness among the pronunciation aspects sidelined. Recognizing such a limitation, we in this paper first introduce HierTFR, a hierarchal APA method that jointly models the intrinsic structures of an utterance while considering the relatedness among the pronunciation aspects. We also propose a correlation-aware regularizer to strengthen the connection between the estimated scores and the human annotations. Furthermore, novel pre-training strategies tailored for different linguistic levels are put forward so as to facilitate better model initialization. An extensive set of empirical experiments conducted on the speechocean762 benchmark dataset suggest the feasibility and effectiveness of our approach in relation to several competitive baselines.",
+    "num_pages": 11
+}

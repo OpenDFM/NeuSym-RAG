@@ -1,0 +1,25 @@
+{
+    "uuid": "c5efae4b-54fe-5ff0-bb28-4f9df0dca910",
+    "title": "CoMave: Contrastive Pre-training with Multi-scale Masking for Attribute Value Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{guo-etal-2023-comave,\n    title = \"{C}o{M}ave: Contrastive Pre-training with Multi-scale Masking for Attribute Value Extraction\",\n    author = \"Guo, Xinnan  and\n      Deng, Wentao  and\n      Chen, Yongrui  and\n      Li, Yang  and\n      Zhou, Mengdi  and\n      Qi, Guilin  and\n      Wu, Tianxing  and\n      Yang, Dong  and\n      Wang, Liubin  and\n      Pan, Yong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.373\",\n    doi = \"10.18653/v1/2023.findings-acl.373\",\n    pages = \"6007--6018\",\n    abstract = \"Attribute Value Extraction (AVE) aims to automatically obtain attribute value pairs from product descriptions to aid e-commerce. Despite the progressive performance of existing approaches in e-commerce platforms, they still suffer from two challenges: 1) difficulty in identifying values at different scales simultaneously; 2) easy confusion by some highly similar fine-grained attributes. This paper proposes a pre-training technique for AVE to address these issues. In particular, we first improve the conventional token-level masking strategy, guiding the language model to understand multi-scale values by recovering spans at the phrase and sentence level. Second, we apply clustering to build a challenging negative set for each example and design a pre-training objective based on contrastive learning to force the model to discriminate similar attributes. Comprehensive experiments show that our solution provides a significant improvement over traditional pre-trained models in the AVE task, and achieves state-of-the-art on four benchmarks.\",\n}\n",
+    "authors": [
+        "Xinnan Guo",
+        "Wentao Deng",
+        "Yongrui Chen",
+        "Yang Li",
+        "Mengdi Zhou",
+        "Guilin Qi",
+        "Tianxing Wu",
+        "Dong Yang",
+        "Liubin Wang",
+        "Yong Pan"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.373.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c5efae4b-54fe-5ff0-bb28-4f9df0dca910.pdf",
+    "abstract": "Attribute Value Extraction (AVE) aims to automatically obtain attribute value pairs from product descriptions to aid e-commerce. Despite the progressive performance of existing approaches in e-commerce platforms, they still suffer from two challenges: 1) difficulty in identifying values at different scales simultaneously; 2) easy confusion by some highly similar fine-grained attributes. This paper proposes a pre-training technique for AVE to address these issues. In particular, we first improve the conventional token-level masking strategy, guiding the language model to understand multi-scale values by recovering spans at the phrase and sentence level. Second, we apply clustering to build a challenging negative set for each example and design a pre-training objective based on contrastive learning to force the model to discriminate similar attributes. Comprehensive experiments show that our solution provides a significant improvement over traditional pre-trained models in the AVE task, and achieves state-of-the-art on four benchmarks.",
+    "num_pages": 12
+}

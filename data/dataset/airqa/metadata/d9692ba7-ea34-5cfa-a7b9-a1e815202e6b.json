@@ -1,0 +1,23 @@
+{
+    "uuid": "d9692ba7-ea34-5cfa-a7b9-a1e815202e6b",
+    "title": "Does DetectGPT Fully Utilize Perturbation? Bridging Selective Perturbation to Fine-tuned Contrastive Learning Detector would be Better",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{liu-etal-2024-detectgpt,\n    title = \"Does {D}etect{GPT} Fully Utilize Perturbation? Bridging Selective Perturbation to Fine-tuned Contrastive Learning Detector would be Better\",\n    author = \"Liu, Shengchao  and\n      Liu, Xiaoming  and\n      Wang, Yichen  and\n      Cheng, Zehua  and\n      Li, Chengzhengxu  and\n      Zhang, Zhaohan  and\n      Lan, Yu  and\n      Shen, Chao\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.103\",\n    doi = \"10.18653/v1/2024.acl-long.103\",\n    pages = \"1874--1889\",\n    abstract = \"The burgeoning generative capabilities of large language models (LLMs) have raised growing concerns about abuse, demanding automatic machine-generated text detectors. DetectGPT, a zero-shot metric-based detector, first introduces perturbation and shows great performance improvement. However, in DetectGPT, the random perturbation strategy could introduce noise, and logit regression depends on the threshold, harming the generalizability and applicability of individual or small-batch inputs. Hence, we propose a novel fine-tuned detector, PECOLA, bridging metric-based and fine-tuned methods by contrastive learning on selective perturbation. Selective strategy retains important tokens during perturbation and weights for multi-pair contrastive learning. The experiments show that PECOLA outperforms the state-of-the-art (SOTA) by 1.20{\\%} in accuracy on average on four public datasets. And we further analyze the effectiveness, robustness, and generalization of the method.\",\n}\n",
+    "authors": [
+        "Shengchao Liu",
+        "Xiaoming Liu",
+        "Yichen Wang",
+        "Zehua Cheng",
+        "Chengzhengxu Li",
+        "Zhaohan Zhang",
+        "Yu Lan",
+        "Chao Shen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.103.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d9692ba7-ea34-5cfa-a7b9-a1e815202e6b.pdf",
+    "abstract": "The burgeoning generative capabilities of large language models (LLMs) have raised growing concerns about abuse, demanding automatic machine-generated text detectors. DetectGPT, a zero-shot metric-based detector, first introduces perturbation and shows great performance improvement. However, in DetectGPT, the random perturbation strategy could introduce noise, and logit regression depends on the threshold, harming the generalizability and applicability of individual or small-batch inputs. Hence, we propose a novel fine-tuned detector, PECOLA, bridging metric-based and fine-tuned methods by contrastive learning on selective perturbation. Selective strategy retains important tokens during perturbation and weights for multi-pair contrastive learning. The experiments show that PECOLA outperforms the state-of-the-art (SOTA) by 1.20% in accuracy on average on four public datasets. And we further analyze the effectiveness, robustness, and generalization of the method.",
+    "num_pages": 16
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "d6ab77d4-6e02-5b7f-bb18-bc40267f6af5",
+    "title": "What Languages are Easy to Language-Model? A Perspective from Learning Probabilistic Regular Languages",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{borenstein-etal-2024-languages,\n    title = \"What Languages are Easy to Language-Model? A Perspective from Learning Probabilistic Regular Languages\",\n    author = \"Borenstein, Nadav  and\n      Svete, Anej  and\n      Chan, Robin  and\n      Valvoda, Josef  and\n      Nowak, Franz  and\n      Augenstein, Isabelle  and\n      Chodroff, Eleanor  and\n      Cotterell, Ryan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.807\",\n    doi = \"10.18653/v1/2024.acl-long.807\",\n    pages = \"15115--15134\",\n    abstract = \"What can large language models learn? By definition, language models (LM) are distributionsover strings. Therefore, an intuitive way of addressing the above question is to formalize it as a matter of learnability of classes of distributions over strings. While prior work in this direction focused on assessing the theoretical limits, in contrast, we seek to understand the empirical learnability. Unlike prior empirical work, we evaluate neural LMs on their home turf{---}learning probabilistic languages{---}rather than as classifiers of formal languages. In particular, we investigate the learnability of regular LMs (RLMs) by RNN and Transformer LMs. We empirically test the learnability of RLMs as a function of various complexity parameters of the RLM and the hidden state size of the neural LM. We find that the RLM rank, which corresponds to the size of linear space spanned by the logits of its conditional distributions, and the expected length of sampled strings are strong and significant predictors of learnability for both RNNs and Transformers. Several other predictors also reach significance, but with differing patterns between RNNs and Transformers.\",\n}\n",
+    "authors": [
+        "Nadav Borenstein",
+        "Anej Svete",
+        "Robin Chan",
+        "Josef Valvoda",
+        "Franz Nowak",
+        "Isabelle Augenstein",
+        "Eleanor Chodroff",
+        "Ryan Cotterell"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.807.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d6ab77d4-6e02-5b7f-bb18-bc40267f6af5.pdf",
+    "abstract": "What can large language models learn? By definition, language models (LM) are distributionsover strings. Therefore, an intuitive way of addressing the above question is to formalize it as a matter of learnability of classes of distributions over strings. While prior work in this direction focused on assessing the theoretical limits, in contrast, we seek to understand the empirical learnability. Unlike prior empirical work, we evaluate neural LMs on their home turf—learning probabilistic languages—rather than as classifiers of formal languages. In particular, we investigate the learnability of regular LMs (RLMs) by RNN and Transformer LMs. We empirically test the learnability of RLMs as a function of various complexity parameters of the RLM and the hidden state size of the neural LM. We find that the RLM rank, which corresponds to the size of linear space spanned by the logits of its conditional distributions, and the expected length of sampled strings are strong and significant predictors of learnability for both RNNs and Transformers. Several other predictors also reach significance, but with differing patterns between RNNs and Transformers.",
+    "num_pages": 20
+}

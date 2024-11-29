@@ -1,0 +1,21 @@
+{
+    "uuid": "98991211-f4eb-5eb0-9e16-720cea108c98",
+    "title": "Achilles-Bench: A Challenging Benchmark for Low-Resource Evaluation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{wang-etal-2024-achilles,\n    title = \"Achilles-Bench: A Challenging Benchmark for Low-Resource Evaluation\",\n    author = \"Wang, Yudong  and\n      Ma, Chang  and\n      Dong, Qingxiu  and\n      Sui, Zhifang  and\n      Kong, Lingpeng  and\n      Xu, Jingjing\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.123\",\n    doi = \"10.18653/v1/2024.findings-acl.123\",\n    pages = \"2057--2080\",\n    abstract = \"With promising yet saturated results in high-resource settings, low-resource datasets have gradually become crucial benchmarks (e.g., BigBench Hard, superGLUE) for evaluating the learning ability of advanced neural networks. In this work, we find that there exists a set of {``}hard examples{''} in low-resource settings that challenge neural networks but are not well evaluated, which causes over-estimated performance. We first give a theoretical analysis on which factors bring the difficulty of low-resource learning. It then motivates us to propose a challenging benchmark Achilles-Bench to better evaluate the learning ability, which covers 11 datasets, including 8 natural language process (NLP) datasets and 3 computer vision (CV) datasets. Experiments on a wide range of models show that neural networks, even pre-trained language models, have sharp performance drops on our benchmark, demonstrating the effectiveness of evaluating the weaknesses of neural networks. On NLP tasks, we surprisingly find that despite better results on traditional low-resource benchmarks, pre-trained networks, does not show performance improvements on our benchmarks. there is still a large robustness gap between existing models and human-level performance, highlighting the need for robust low-resource learning models.\",\n}\n",
+    "authors": [
+        "Yudong Wang",
+        "Chang Ma",
+        "Qingxiu Dong",
+        "Zhifang Sui",
+        "Lingpeng Kong",
+        "Jingjing Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.123.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/98991211-f4eb-5eb0-9e16-720cea108c98.pdf",
+    "abstract": "With promising yet saturated results in high-resource settings, low-resource datasets have gradually become crucial benchmarks (e.g., BigBench Hard, superGLUE) for evaluating the learning ability of advanced neural networks. In this work, we find that there exists a set of “hard examples” in low-resource settings that challenge neural networks but are not well evaluated, which causes over-estimated performance. We first give a theoretical analysis on which factors bring the difficulty of low-resource learning. It then motivates us to propose a challenging benchmark Achilles-Bench to better evaluate the learning ability, which covers 11 datasets, including 8 natural language process (NLP) datasets and 3 computer vision (CV) datasets. Experiments on a wide range of models show that neural networks, even pre-trained language models, have sharp performance drops on our benchmark, demonstrating the effectiveness of evaluating the weaknesses of neural networks. On NLP tasks, we surprisingly find that despite better results on traditional low-resource benchmarks, pre-trained networks, does not show performance improvements on our benchmarks. there is still a large robustness gap between existing models and human-level performance, highlighting the need for robust low-resource learning models.",
+    "num_pages": 24
+}

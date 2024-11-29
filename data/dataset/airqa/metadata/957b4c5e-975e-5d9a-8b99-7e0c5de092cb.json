@@ -1,0 +1,21 @@
+{
+    "uuid": "957b4c5e-975e-5d9a-8b99-7e0c5de092cb",
+    "title": "Improving Low-resource Named Entity Recognition with Graph Propagated Data Augmentation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{cai-etal-2023-graph,\n    title = \"Improving Low-resource Named Entity Recognition with Graph Propagated Data Augmentation\",\n    author = \"Cai, Jiong  and\n      Huang, Shen  and\n      Jiang, Yong  and\n      Tan, Zeqi  and\n      Xie, Pengjun  and\n      Tu, Kewei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.11\",\n    doi = \"10.18653/v1/2023.acl-short.11\",\n    pages = \"110--118\",\n    abstract = \"Data augmentation is an effective solution to improve model performance and robustness for low-resource named entity recognition (NER). However, synthetic data often suffer from poor diversity, which leads to performance limitations. In this paper, we propose a novel Graph Propagated Data Augmentation (GPDA) framework for Named Entity Recognition (NER), leveraging graph propagation to build relationships between labeled data and unlabeled natural texts. By projecting the annotations from the labeled text to the unlabeled text, the unlabeled texts are partially labeled, which has more diversity rather than synthetic annotated data. To strengthen the propagation precision, a simple search engine built on Wikipedia is utilized to fetch related texts of labeled data and to propagate the entity labels to them in the light of the anchor links. Besides, we construct and perform experiments on a real-world low-resource dataset of the E-commerce domain, which will be publicly available to facilitate the low-resource NER research. Experimental results show that GPDA presents substantial improvements over previous data augmentation methods on multiple low-resource NER datasets.\",\n}\n",
+    "authors": [
+        "Jiong Cai",
+        "Shen Huang",
+        "Yong Jiang",
+        "Zeqi Tan",
+        "Pengjun Xie",
+        "Kewei Tu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.11.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/957b4c5e-975e-5d9a-8b99-7e0c5de092cb.pdf",
+    "abstract": "Data augmentation is an effective solution to improve model performance and robustness for low-resource named entity recognition (NER). However, synthetic data often suffer from poor diversity, which leads to performance limitations. In this paper, we propose a novel Graph Propagated Data Augmentation (GPDA) framework for Named Entity Recognition (NER), leveraging graph propagation to build relationships between labeled data and unlabeled natural texts. By projecting the annotations from the labeled text to the unlabeled text, the unlabeled texts are partially labeled, which has more diversity rather than synthetic annotated data. To strengthen the propagation precision, a simple search engine built on Wikipedia is utilized to fetch related texts of labeled data and to propagate the entity labels to them in the light of the anchor links. Besides, we construct and perform experiments on a real-world low-resource dataset of the E-commerce domain, which will be publicly available to facilitate the low-resource NER research. Experimental results show that GPDA presents substantial improvements over previous data augmentation methods on multiple low-resource NER datasets.",
+    "num_pages": 9
+}

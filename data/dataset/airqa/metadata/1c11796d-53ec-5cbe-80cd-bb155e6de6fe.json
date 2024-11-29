@@ -1,0 +1,19 @@
+{
+    "uuid": "1c11796d-53ec-5cbe-80cd-bb155e6de6fe",
+    "title": "Asymmetric Bias in Text-to-Image Generation with Adversarial Attacks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{shahgir-etal-2024-asymmetric,\n    title = \"Asymmetric Bias in Text-to-Image Generation with Adversarial Attacks\",\n    author = \"Shahgir, Haz  and\n      Kong, Xianghao  and\n      Ver Steeg, Greg  and\n      Dong, Yue\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.344\",\n    doi = \"10.18653/v1/2024.findings-acl.344\",\n    pages = \"5779--5796\",\n    abstract = \"The widespread use of Text-to-Image (T2I) models in content generation requires careful examination of their safety, including their robustness to adversarial attacks. Despite extensive research on adversarial attacks, the reasons for their effectiveness remain underexplored. This paper presents an empirical study on adversarial attacks against T2I models, focusing on analyzing factors associated with attack success rates (ASR). We introduce a new attack objective - entity swapping using adversarial suffixes and two gradient-based attack algorithms. Human and automatic evaluations reveal the asymmetric nature of ASRs on entity swap: for example, it is easier to replace {``}human{''} with {``}robot{''} in the prompt {``}a human dancing in the rain.{''} with an adversarial suffix, but the reverse replacement is significantly harder. We further propose probing metrics to establish indicative signals from the model{'}s beliefs to the adversarial ASR. We identify conditions that result in a success probability of 60{\\%} for adversarial attacks and others where this likelihood drops below 5{\\%}. The code and data are available at https://github.com/Patchwork53/AsymmetricAttack\",\n}\n",
+    "authors": [
+        "Haz Shahgir",
+        "Xianghao Kong",
+        "Greg Ver Steeg",
+        "Yue Dong"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.344.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/1c11796d-53ec-5cbe-80cd-bb155e6de6fe.pdf",
+    "abstract": "The widespread use of Text-to-Image (T2I) models in content generation requires careful examination of their safety, including their robustness to adversarial attacks. Despite extensive research on adversarial attacks, the reasons for their effectiveness remain underexplored. This paper presents an empirical study on adversarial attacks against T2I models, focusing on analyzing factors associated with attack success rates (ASR). We introduce a new attack objective - entity swapping using adversarial suffixes and two gradient-based attack algorithms. Human and automatic evaluations reveal the asymmetric nature of ASRs on entity swap: for example, it is easier to replace “human” with “robot” in the prompt “a human dancing in the rain.” with an adversarial suffix, but the reverse replacement is significantly harder. We further propose probing metrics to establish indicative signals from the model’s beliefs to the adversarial ASR. We identify conditions that result in a success probability of 60% for adversarial attacks and others where this likelihood drops below 5%. The code and data are available at https://github.com/Patchwork53/AsymmetricAttack",
+    "num_pages": 18
+}

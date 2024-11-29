@@ -1,0 +1,20 @@
+{
+    "uuid": "6cd84261-45fa-5b47-8d31-622551257d8f",
+    "title": "Parallel Structures in Pre-training Data Yield In-Context Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2024-parallel,\n    title = \"Parallel Structures in Pre-training Data Yield In-Context Learning\",\n    author = \"Chen, Yanda  and\n      Zhao, Chen  and\n      Yu, Zhou  and\n      McKeown, Kathleen  and\n      He, He\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.465\",\n    doi = \"10.18653/v1/2024.acl-long.465\",\n    pages = \"8582--8592\",\n    abstract = \"Pre-trained language models (LMs) are capable of in-context learning (ICL): they can adapt to a task with only a few examples given in the prompt without any parameter update. However, it is unclear where this capability comes from as there is a stark distribution shift between pre-training text and ICL prompts. In this work, we study what patterns of the pre-training data contribute to ICL. We find that LMs{'} ICL ability depends on $\\textit{parallel structures}$ in the pre-training data{---}pairs of phrases following similar templates in the same context window. Specifically, we detect parallel structures by checking whether training on one phrase improves prediction of the other, and conduct ablation experiments to study their effect on ICL. We show that removing parallel structures in the pre-training data reduces LMs{'} ICL accuracy by $\\textbf{51}${\\%} (vs 2{\\%} from random ablation). This drop persists even when excluding common patterns such as n-gram repetitions and long-range dependency, showing the diversity and generality of parallel structures. A closer look at the detected parallel structures indicates that they cover diverse linguistic tasks and span long distances in the data.\",\n}\n",
+    "authors": [
+        "Yanda Chen",
+        "Chen Zhao",
+        "Zhou Yu",
+        "Kathleen McKeown",
+        "He He"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.465.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/6cd84261-45fa-5b47-8d31-622551257d8f.pdf",
+    "abstract": "Pre-trained language models (LMs) are capable of in-context learning (ICL): they can adapt to a task with only a few examples given in the prompt without any parameter update. However, it is unclear where this capability comes from as there is a stark distribution shift between pre-training text and ICL prompts. In this work, we study what patterns of the pre-training data contribute to ICL. We find that LMs’ ICL ability depends on parallel structures in the pre-training data—pairs of phrases following similar templates in the same context window. Specifically, we detect parallel structures by checking whether training on one phrase improves prediction of the other, and conduct ablation experiments to study their effect on ICL. We show that removing parallel structures in the pre-training data reduces LMs’ ICL accuracy by 51% (vs 2% from random ablation). This drop persists even when excluding common patterns such as n-gram repetitions and long-range dependency, showing the diversity and generality of parallel structures. A closer look at the detected parallel structures indicates that they cover diverse linguistic tasks and span long distances in the data.",
+    "num_pages": 11
+}

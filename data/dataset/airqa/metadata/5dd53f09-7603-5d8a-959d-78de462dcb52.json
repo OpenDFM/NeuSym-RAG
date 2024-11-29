@@ -1,0 +1,21 @@
+{
+    "uuid": "5dd53f09-7603-5d8a-959d-78de462dcb52",
+    "title": "Beyond Triplet: Leveraging the Most Data for Multimodal Machine Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhu-etal-2023-beyond,\n    title = \"Beyond Triplet: Leveraging the Most Data for Multimodal Machine Translation\",\n    author = \"Zhu, Yaoming  and\n      Sun, Zewei  and\n      Cheng, Shanbo  and\n      Huang, Luyang  and\n      Wu, Liwei  and\n      Wang, Mingxuan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.168\",\n    doi = \"10.18653/v1/2023.findings-acl.168\",\n    pages = \"2679--2697\",\n    abstract = \"Multimodal machine translation (MMT) aims to improve translation quality by incorporating information from other modalities, such as vision. Previous MMT systems focus on better access and use of visual information and tend to validate their methods on image-related datasets. However, these studies face two challenges. First, they can only utilize a limited amount of data that is composed of bilingual texts and images (referred to as {``}triple data{''}), which is scarce. Second, current benchmarks for MMT are restricted and do not correspond to realistic scenarios. Therefore, this paper correspondingly establishes new methods and a new dataset for MMT. We propose a novel framework for MMT that addresses these challenges by utilizing large-scale non-triple data, such as monolingual image-text and parallel text-only data. Additionally, we construct a new e-commercial multimodal translation dataset, named EMMT, of which the test set is specifically designed to include ambiguous words that require visual context for accurate translation. Experiments show that our method is well-suited for real-world scenarios and can significantly improve translation performance with more non-triple data. In addition, our model also rivals or surpasses various SOTA models in conventional multimodal translation benchmarks.\",\n}\n",
+    "authors": [
+        "Yaoming Zhu",
+        "Zewei Sun",
+        "Shanbo Cheng",
+        "Luyang Huang",
+        "Liwei Wu",
+        "Mingxuan Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.168.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/5dd53f09-7603-5d8a-959d-78de462dcb52.pdf",
+    "abstract": "Multimodal machine translation (MMT) aims to improve translation quality by incorporating information from other modalities, such as vision. Previous MMT systems focus on better access and use of visual information and tend to validate their methods on image-related datasets. However, these studies face two challenges. First, they can only utilize a limited amount of data that is composed of bilingual texts and images (referred to as “triple data”), which is scarce. Second, current benchmarks for MMT are restricted and do not correspond to realistic scenarios. Therefore, this paper correspondingly establishes new methods and a new dataset for MMT. We propose a novel framework for MMT that addresses these challenges by utilizing large-scale non-triple data, such as monolingual image-text and parallel text-only data. Additionally, we construct a new e-commercial multimodal translation dataset, named EMMT, of which the test set is specifically designed to include ambiguous words that require visual context for accurate translation. Experiments show that our method is well-suited for real-world scenarios and can significantly improve translation performance with more non-triple data. In addition, our model also rivals or surpasses various SOTA models in conventional multimodal translation benchmarks.",
+    "num_pages": 19
+}

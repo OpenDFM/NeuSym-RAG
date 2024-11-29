@@ -1,0 +1,18 @@
+{
+    "uuid": "e70e2ed8-0a05-5158-a9ce-e0fad4b06880",
+    "title": "Unsupervised Discontinuous Constituency Parsing with Mildly Context-Sensitive Grammars",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yang-etal-2023-unsupervised,\n    title = \"Unsupervised Discontinuous Constituency Parsing with Mildly Context-Sensitive Grammars\",\n    author = \"Yang, Songlin  and\n      Levy, Roger  and\n      Kim, Yoon\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.316\",\n    doi = \"10.18653/v1/2023.acl-long.316\",\n    pages = \"5747--5766\",\n    abstract = \"We study grammar induction with mildly context-sensitive grammars for unsupervised discontinuous parsing. Using the probabilistic linear context-free rewriting system (LCFRS) formalism, our approach fixes the rule structure in advance and focuses on parameter learning with maximum likelihood. To reduce the computational complexity of both parsing and parameter estimation, we restrict the grammar formalism to LCFRS-2 (i.e., binary LCFRS with fan-out two) and further discard rules that require $O(l^6)$ time to parse, reducing inference to $O(l^5)$. We find that using a large number of nonterminals is beneficial and thus make use of tensor decomposition-based rank-space dynamic programming with an embedding-based parameterization of rule probabilities to scale up the number of nonterminals. Experiments on German and Dutch show that our approach is able to induce linguistically meaningful trees with continuous and discontinuous structures.\",\n}\n",
+    "authors": [
+        "Songlin Yang",
+        "Roger Levy",
+        "Yoon Kim"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.316.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/e70e2ed8-0a05-5158-a9ce-e0fad4b06880.pdf",
+    "abstract": "We study grammar induction with mildly context-sensitive grammars for unsupervised discontinuous parsing. Using the probabilistic linear context-free rewriting system (LCFRS) formalism, our approach fixes the rule structure in advance and focuses on parameter learning with maximum likelihood. To reduce the computational complexity of both parsing and parameter estimation, we restrict the grammar formalism to LCFRS-2 (i.e., binary LCFRS with fan-out two) and further discard rules that require O(l6) time to parse, reducing inference to O(l5). We find that using a large number of nonterminals is beneficial and thus make use of tensor decomposition-based rank-space dynamic programming with an embedding-based parameterization of rule probabilities to scale up the number of nonterminals. Experiments on German and Dutch show that our approach is able to induce linguistically meaningful trees with continuous and discontinuous structures.",
+    "num_pages": 20
+}

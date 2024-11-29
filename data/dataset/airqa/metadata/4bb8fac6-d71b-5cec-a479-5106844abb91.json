@@ -1,0 +1,18 @@
+{
+    "uuid": "4bb8fac6-d71b-5cec-a479-5106844abb91",
+    "title": "Token-level Fitting Issues of Seq2seq Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)",
+    "bibtex": "@inproceedings{bao-etal-2023-token,\n    title = \"Token-level Fitting Issues of Seq2seq Models\",\n    author = \"Bao, Guangsheng  and\n      Teng, Zhiyang  and\n      Zhang, Yue\",\n    editor = \"Can, Burcu  and\n      Mozes, Maximilian  and\n      Cahyawijaya, Samuel  and\n      Saphra, Naomi  and\n      Kassner, Nora  and\n      Ravfogel, Shauli  and\n      Ravichander, Abhilasha  and\n      Zhao, Chen  and\n      Augenstein, Isabelle  and\n      Rogers, Anna  and\n      Cho, Kyunghyun  and\n      Grefenstette, Edward  and\n      Voita, Lena\",\n    booktitle = \"Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.repl4nlp-1.23\",\n    doi = \"10.18653/v1/2023.repl4nlp-1.23\",\n    pages = \"276--288\",\n}\n",
+    "authors": [
+        "Guangsheng Bao",
+        "Zhiyang Teng",
+        "Yue Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.repl4nlp-1.23.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4bb8fac6-d71b-5cec-a479-5106844abb91.pdf",
+    "abstract": "Sequence-to-sequence (seq2seq) models have been widely used for natural language processing, computer vision, and other deep learning tasks. We find that seq2seq models trained with early-stopping suffer from issues at the token level. In particular, while some tokens in the vocabulary demonstrate overfitting, others underfit when training is stopped. Experiments show that the phenomena are pervasive in different models, even in fine-tuned large pretrained-models. We identify three major factors that influence token-level fitting, which include token frequency, parts-of-speech, and prediction discrepancy. Further, we find that external factors such as language, model size, domain, data scale, and pretraining can also influence the fitting of tokens.",
+    "num_pages": 13
+}

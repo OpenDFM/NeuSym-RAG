@@ -1,0 +1,21 @@
+{
+    "uuid": "9efdfa0c-bfbe-5517-809c-1a22a9736570",
+    "title": "S2GSL: Incorporating Segment to Syntactic Enhanced Graph Structure Learning for Aspect-based Sentiment Analysis",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2024-s2gsl,\n    title = \"{S}$^2${GSL}: Incorporating Segment to Syntactic Enhanced Graph Structure Learning for Aspect-based Sentiment Analysis\",\n    author = \"Chen, Bingfeng  and\n      Ouyang, Qihan  and\n      Luo, Yongqi  and\n      Xu, Boyan  and\n      Cai, Ruichu  and\n      Hao, Zhifeng\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.721\",\n    doi = \"10.18653/v1/2024.acl-long.721\",\n    pages = \"13366--13379\",\n    abstract = \"Previous graph-based approaches in Aspect-based Sentiment Analysis(ABSA) have demonstrated impressive performance by utilizing graph neural networks and attention mechanisms to learn structures of static dependency trees and dynamic latent trees. However, incorporating both semantic and syntactic information simultaneously within complex global structures can introduce irrelevant contexts and syntactic dependencies during the process of graph structure learning, potentially resulting in inaccurate predictions. In order to address the issues above, we propose S$^2$GSL, incorporating Segment to Syntactic enhanced Graph Structure Learning for ABSA. Specifically, S$^2$GSL is featured with a segment-aware semantic graph learning and a syntax-based latent graph learning enabling the removal of irrelevant contexts and dependencies, respectively. We further propose a self-adaptive aggregation network that facilitates the fusion of two graph learning branches, thereby achieving complementarity across diverse structures. Experimental results on four benchmarks demonstrate the effectiveness of our framework.\",\n}\n",
+    "authors": [
+        "Bingfeng Chen",
+        "Qihan Ouyang",
+        "Yongqi Luo",
+        "Boyan Xu",
+        "Ruichu Cai",
+        "Zhifeng Hao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.721.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/9efdfa0c-bfbe-5517-809c-1a22a9736570.pdf",
+    "abstract": "Previous graph-based approaches in Aspect-based Sentiment Analysis(ABSA) have demonstrated impressive performance by utilizing graph neural networks and attention mechanisms to learn structures of static dependency trees and dynamic latent trees. However, incorporating both semantic and syntactic information simultaneously within complex global structures can introduce irrelevant contexts and syntactic dependencies during the process of graph structure learning, potentially resulting in inaccurate predictions. In order to address the issues above, we propose S2GSL, incorporating Segment to Syntactic enhanced Graph Structure Learning for ABSA. Specifically, S2GSL is featured with a segment-aware semantic graph learning and a syntax-based latent graph learning enabling the removal of irrelevant contexts and dependencies, respectively. We further propose a self-adaptive aggregation network that facilitates the fusion of two graph learning branches, thereby achieving complementarity across diverse structures. Experimental results on four benchmarks demonstrate the effectiveness of our framework.",
+    "num_pages": 14
+}

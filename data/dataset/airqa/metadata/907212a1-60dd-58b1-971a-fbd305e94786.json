@@ -1,0 +1,20 @@
+{
+    "uuid": "907212a1-60dd-58b1-971a-fbd305e94786",
+    "title": "Enhancing Numerical Reasoning with the Guidance of Reliable Reasoning Processes",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2024-enhancing-numerical,\n    title = \"Enhancing Numerical Reasoning with the Guidance of Reliable Reasoning Processes\",\n    author = \"Wang, Dingzirui  and\n      Dou, Longxu  and\n      Zhang, Xuanliang  and\n      Zhu, Qingfu  and\n      Che, Wanxiang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.582\",\n    doi = \"10.18653/v1/2024.acl-long.582\",\n    pages = \"10812--10828\",\n    abstract = \"Numerical reasoning is an essential ability for NLP systems to handle numeric information. Recent research indicates that fine-tuning a small-scale model to learn generating reasoning processes alongside answers can significantly enhance performance. However, current methods have the limitation that most methods generate reasoning processes with large language models (LLMs), which are {``}unreliable{''} since such processes could contain information unrelated to the answer. To address this limitation, we introduce enhancing numerical reasoning with reliable processes (Encore), which derives the reliable reasoning process by decomposing the answer formula, ensuring which fully supports the answer. Nevertheless, models could lack enough data to learn the reasoning process generation adequately, since our method generates only one single reasoning process for one formula. To overcome this difficulty, we present a series of pre-training tasks to help models learn the reasoning process generation with synthesized data. The experiments show that Encore yields improvement on all five experimental datasets with an average of 1.8{\\%}, proving the effectiveness of our method.\",\n}\n",
+    "authors": [
+        "Dingzirui Wang",
+        "Longxu Dou",
+        "Xuanliang Zhang",
+        "Qingfu Zhu",
+        "Wanxiang Che"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.582.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/907212a1-60dd-58b1-971a-fbd305e94786.pdf",
+    "abstract": "Numerical reasoning is an essential ability for NLP systems to handle numeric information. Recent research indicates that fine-tuning a small-scale model to learn generating reasoning processes alongside answers can significantly enhance performance. However, current methods have the limitation that most methods generate reasoning processes with large language models (LLMs), which are “unreliable” since such processes could contain information unrelated to the answer. To address this limitation, we introduce enhancing numerical reasoning with reliable processes (Encore), which derives the reliable reasoning process by decomposing the answer formula, ensuring which fully supports the answer. Nevertheless, models could lack enough data to learn the reasoning process generation adequately, since our method generates only one single reasoning process for one formula. To overcome this difficulty, we present a series of pre-training tasks to help models learn the reasoning process generation with synthesized data. The experiments show that Encore yields improvement on all five experimental datasets with an average of 1.8%, proving the effectiveness of our method.",
+    "num_pages": 17
+}

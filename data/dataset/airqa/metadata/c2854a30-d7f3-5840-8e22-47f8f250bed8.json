@@ -1,0 +1,18 @@
+{
+    "uuid": "c2854a30-d7f3-5840-8e22-47f8f250bed8",
+    "title": "Sampling Better Negatives for Distantly Supervised Named Entity Recognition",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{xu-etal-2023-sampling,\n    title = \"Sampling Better Negatives for Distantly Supervised Named Entity Recognition\",\n    author = \"Xu, Lu  and\n      Bing, Lidong  and\n      Lu, Wei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.300\",\n    doi = \"10.18653/v1/2023.findings-acl.300\",\n    pages = \"4874--4882\",\n    abstract = \"Distantly supervised named entity recognition (DS-NER) has been proposed to exploit the automatically labeled training data instead of human annotations. The distantly annotated datasets are often noisy and contain a considerable number of false negatives. The recent approach uses a weighted sampling approach to select a subset of negative samples for training. However, it requires a good classifier to assign weights to the negative samples. In this paper, we propose a simple and straightforward approach for selecting the top negative samples that have high similarities with all the positive samples for training. Our method achieves consistent performance improvements on four distantly supervised NER datasets. Our analysis also shows that it is critical to differentiate the true negatives from the false negatives.\",\n}\n",
+    "authors": [
+        "Lu Xu",
+        "Lidong Bing",
+        "Wei Lu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.300.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c2854a30-d7f3-5840-8e22-47f8f250bed8.pdf",
+    "abstract": "Distantly supervised named entity recognition (DS-NER) has been proposed to exploit the automatically labeled training data instead of human annotations. The distantly annotated datasets are often noisy and contain a considerable number of false negatives. The recent approach uses a weighted sampling approach to select a subset of negative samples for training. However, it requires a good classifier to assign weights to the negative samples. In this paper, we propose a simple and straightforward approach for selecting the top negative samples that have high similarities with all the positive samples for training. Our method achieves consistent performance improvements on four distantly supervised NER datasets. Our analysis also shows that it is critical to differentiate the true negatives from the false negatives.",
+    "num_pages": 9
+}

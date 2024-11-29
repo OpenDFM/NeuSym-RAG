@@ -1,0 +1,22 @@
+{
+    "uuid": "bf980428-2a4c-5f5c-9205-afc8293f746b",
+    "title": "TimelineQA: A Benchmark for Question Answering over Timelines",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{tan-etal-2023-timelineqa,\n    title = \"{T}imeline{QA}: A Benchmark for Question Answering over Timelines\",\n    author = \"Tan, Wang-Chiew  and\n      Dwivedi-Yu, Jane  and\n      Li, Yuliang  and\n      Mathias, Lambert  and\n      Saeidi, Marzieh  and\n      Yan, Jing Nathan  and\n      Halevy, Alon\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.6\",\n    doi = \"10.18653/v1/2023.findings-acl.6\",\n    pages = \"77--91\",\n    abstract = \"Lifelogs are descriptions of experiences that a person had during their life. Lifelogs are created by fusing data from the multitude of digital services, such as online photos, maps, shopping and content streaming services. Question answering over lifelogs can offer personal assistants a critical resource when they try to provide advice in context. However, obtaining answers to questions over lifelogs is beyond the current state of the art of question answering techniques for a variety of reasons, the most pronounced of which is that lifelogs combine free text with some degree of structure such as temporal and geographical information. We create and publicly release TimelineQA, a benchmark for accelerating progress on querying lifelogs. TimelineQA generates lifelogs of imaginary people. The episodes in the lifelog range from major life episodes such as high school graduation to those that occur on a daily basis such as going for a run. We describe a set of experiments on TimelineQA with several state-of-the-art QA models. Our experiments reveal that for atomic queries, an extractive QA system significantly out-performs a state-of-the-art retrieval-augmented QA system. For multi-hop queries involving aggregates, we show that the best result is obtained with a state-of-the-art table QA technique, assuming the ground truth set of episodes for deriving the answer is available.\",\n}\n",
+    "authors": [
+        "Wang-Chiew Tan",
+        "Jane Dwivedi-Yu",
+        "Yuliang Li",
+        "Lambert Mathias",
+        "Marzieh Saeidi",
+        "Jing Nathan Yan",
+        "Alon Halevy"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.6.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/bf980428-2a4c-5f5c-9205-afc8293f746b.pdf",
+    "abstract": "Lifelogs are descriptions of experiences that a person had during their life. Lifelogs are created by fusing data from the multitude of digital services, such as online photos, maps, shopping and content streaming services. Question answering over lifelogs can offer personal assistants a critical resource when they try to provide advice in context. However, obtaining answers to questions over lifelogs is beyond the current state of the art of question answering techniques for a variety of reasons, the most pronounced of which is that lifelogs combine free text with some degree of structure such as temporal and geographical information. We create and publicly release TimelineQA, a benchmark for accelerating progress on querying lifelogs. TimelineQA generates lifelogs of imaginary people. The episodes in the lifelog range from major life episodes such as high school graduation to those that occur on a daily basis such as going for a run. We describe a set of experiments on TimelineQA with several state-of-the-art QA models. Our experiments reveal that for atomic queries, an extractive QA system significantly out-performs a state-of-the-art retrieval-augmented QA system. For multi-hop queries involving aggregates, we show that the best result is obtained with a state-of-the-art table QA technique, assuming the ground truth set of episodes for deriving the answer is available.",
+    "num_pages": 15
+}

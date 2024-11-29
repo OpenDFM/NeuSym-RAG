@@ -1,0 +1,20 @@
+{
+    "uuid": "3edf91e8-5f48-50f8-8980-d4526c43538f",
+    "title": "Rethinking Multimodal Entity and Relation Extraction from a Translation Point of View",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zheng-etal-2023-rethinking,\n    title = \"Rethinking Multimodal Entity and Relation Extraction from a Translation Point of View\",\n    author = \"Zheng, Changmeng  and\n      Feng, Junhao  and\n      Cai, Yi  and\n      Wei, Xiaoyong  and\n      Li, Qing\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.376\",\n    doi = \"10.18653/v1/2023.acl-long.376\",\n    pages = \"6810--6824\",\n    abstract = \"We revisit the multimodal entity and relation extraction from a translation point of view. Special attention is paid on the misalignment issue in text-image datasets which may mislead the learning. We are motivated by the fact that the cross-modal misalignment is a similar problem of cross-lingual divergence issue in machine translation. The problem can then be transformed and existing solutions can be borrowed by treating a text and its paired image as the translation to each other. We implement a multimodal back-translation using diffusion-based generative models for pseudo-paralleled pairs and a divergence estimator by constructing a high-resource corpora as a bridge for low-resource learners. Fine-grained confidence scores are generated to indicate both types and degrees of alignments with which better representations are obtained. The method has been validated in the experiments by outperforming 14 state-of-the-art methods in both entity and relation extraction tasks. The source code is available at \\url{https://github.com/thecharm/TMR}.\",\n}\n",
+    "authors": [
+        "Changmeng Zheng",
+        "Junhao Feng",
+        "Yi Cai",
+        "Xiaoyong Wei",
+        "Qing Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.376.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/3edf91e8-5f48-50f8-8980-d4526c43538f.pdf",
+    "abstract": "We revisit the multimodal entity and relation extraction from a translation point of view. Special attention is paid on the misalignment issue in text-image datasets which may mislead the learning. We are motivated by the fact that the cross-modal misalignment is a similar problem of cross-lingual divergence issue in machine translation. The problem can then be transformed and existing solutions can be borrowed by treating a text and its paired image as the translation to each other. We implement a multimodal back-translation using diffusion-based generative models for pseudo-paralleled pairs and a divergence estimator by constructing a high-resource corpora as a bridge for low-resource learners. Fine-grained confidence scores are generated to indicate both types and degrees of alignments with which better representations are obtained. The method has been validated in the experiments by outperforming 14 state-of-the-art methods in both entity and relation extraction tasks. The source code is available at https://github.com/thecharm/TMR.",
+    "num_pages": 15
+}

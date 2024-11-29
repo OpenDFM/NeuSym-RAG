@@ -1,0 +1,19 @@
+{
+    "uuid": "33616764-4500-5fdb-844b-55902fc00aa9",
+    "title": "Improving Sentence Embeddings with Automatic Generation of Training Data Using Few-shot Examples",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)",
+    "bibtex": "@inproceedings{sato-etal-2024-improving,\n    title = \"Improving Sentence Embeddings with Automatic Generation of Training Data Using Few-shot Examples\",\n    author = \"Sato, Soma  and\n      Tsukagoshi, Hayato  and\n      Sasano, Ryohei  and\n      Takeda, Koichi\",\n    editor = \"Fu, Xiyan  and\n      Fleisig, Eve\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-srw.43\",\n    doi = \"10.18653/v1/2024.acl-srw.43\",\n    pages = \"378--389\",\n    abstract = \"Decoder-based large language models (LLMs) have shown high performance on many tasks in natural language processing. This is also true for sentence embedding learning, where a decoder-based model, PromptEOL, has achieved the best performance on semantic textual similarity (STS) tasks. However, PromptEOL requires a manually annotated natural language inference (NLI) dataset for fine-tuning.We aim to improve sentence embeddings without using large manually annotated datasets by automatically generating an NLI dataset with an LLM and using it for fine-tuning of PromptEOL. To achieve this, we explore methods of data generation suitable for sentence embedding learning in this study. Specifically, we will focus on automatic dataset generation through few-shot learning and explore the appropriate methods to leverage few-shot examples. Experimental results on the STS tasks demonstrate that our approach outperforms existing models in settings without large manually annotated datasets.\",\n}\n",
+    "authors": [
+        "Soma Sato",
+        "Hayato Tsukagoshi",
+        "Ryohei Sasano",
+        "Koichi Takeda"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-srw.43.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/33616764-4500-5fdb-844b-55902fc00aa9.pdf",
+    "abstract": "Decoder-based large language models (LLMs) have shown high performance on many tasks in natural language processing. This is also true for sentence embedding learning, where a decoder-based model, PromptEOL, has achieved the best performance on semantic textual similarity (STS) tasks. However, PromptEOL requires a manually annotated natural language inference (NLI) dataset for fine-tuning.We aim to improve sentence embeddings without using large manually annotated datasets by automatically generating an NLI dataset with an LLM and using it for fine-tuning of PromptEOL. To achieve this, we explore methods of data generation suitable for sentence embedding learning in this study. Specifically, we will focus on automatic dataset generation through few-shot learning and explore the appropriate methods to leverage few-shot examples. Experimental results on the STS tasks demonstrate that our approach outperforms existing models in settings without large manually annotated datasets.",
+    "num_pages": 12
+}

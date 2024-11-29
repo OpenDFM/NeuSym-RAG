@@ -1,0 +1,23 @@
+{
+    "uuid": "27a33bfe-47aa-51c8-9f42-e90bc8b1aeaf",
+    "title": "Joint Document-Level Event Extraction via Token-Token Bidirectional Event Completed Graph",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wan-etal-2023-joint,\n    title = \"Joint Document-Level Event Extraction via Token-Token Bidirectional Event Completed Graph\",\n    author = \"Wan, Qizhi  and\n      Wan, Changxuan  and\n      Xiao, Keli  and\n      Liu, Dexi  and\n      Li, Chenliang  and\n      Zheng, Bolong  and\n      Liu, Xiping  and\n      Hu, Rong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.584\",\n    doi = \"10.18653/v1/2023.acl-long.584\",\n    pages = \"10481--10492\",\n    abstract = \"We solve the challenging document-level event extraction problem by proposing a joint exaction methodology that can avoid inefficiency and error propagation issues in classic pipeline methods. Essentially, we address the three crucial limitations in existing studies. First, the autoregressive strategy of path expansion heavily relies on the orders of argument role. Second, the number of events in documents must be specified in advance. Last, unexpected errors usually exist when decoding events based on the entity-entity adjacency matrix. To address these issues, this paper designs a Token-Token Bidirectional Event Completed Graph (TT-BECG) in which the relation eType-Role1-Role2 serves as the edge type, precisely revealing which tokens play argument roles in an event of a specific event type. Exploiting the token-token adjacency matrix of the TT-BECG, we develop an edge-enhanced joint document-level event extraction model. Guided by the target token-token adjacency matrix, the predicted token-token adjacency matrix can be obtained during the model training. Then, extracted events and event records in a document are decoded based on the predicted matrix, including the graph structure and edge type decoding. Extensive experiments are conducted on two public datasets, and the results confirm the effectiveness of our method and its superiority over the state-of-the-art baselines.\",\n}\n",
+    "authors": [
+        "Qizhi Wan",
+        "Changxuan Wan",
+        "Keli Xiao",
+        "Dexi Liu",
+        "Chenliang Li",
+        "Bolong Zheng",
+        "Xiping Liu",
+        "Rong Hu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.584.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/27a33bfe-47aa-51c8-9f42-e90bc8b1aeaf.pdf",
+    "abstract": "We solve the challenging document-level event extraction problem by proposing a joint exaction methodology that can avoid inefficiency and error propagation issues in classic pipeline methods. Essentially, we address the three crucial limitations in existing studies. First, the autoregressive strategy of path expansion heavily relies on the orders of argument role. Second, the number of events in documents must be specified in advance. Last, unexpected errors usually exist when decoding events based on the entity-entity adjacency matrix. To address these issues, this paper designs a Token-Token Bidirectional Event Completed Graph (TT-BECG) in which the relation eType-Role1-Role2 serves as the edge type, precisely revealing which tokens play argument roles in an event of a specific event type. Exploiting the token-token adjacency matrix of the TT-BECG, we develop an edge-enhanced joint document-level event extraction model. Guided by the target token-token adjacency matrix, the predicted token-token adjacency matrix can be obtained during the model training. Then, extracted events and event records in a document are decoded based on the predicted matrix, including the graph structure and edge type decoding. Extensive experiments are conducted on two public datasets, and the results confirm the effectiveness of our method and its superiority over the state-of-the-art baselines.",
+    "num_pages": 12
+}

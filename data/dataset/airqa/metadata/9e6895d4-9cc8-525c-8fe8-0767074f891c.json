@@ -1,0 +1,23 @@
+{
+    "uuid": "9e6895d4-9cc8-525c-8fe8-0767074f891c",
+    "title": "A Grounded Preference Model for LLM Alignment",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{naseem-etal-2024-grounded,\n    title = \"A Grounded Preference Model for {LLM} Alignment\",\n    author = \"Naseem, Tahira  and\n      Xu, Guangxuan  and\n      Swaminathan, Sarathkrishna  and\n      Yehudai, Asaf  and\n      Chaudhury, Subhajit  and\n      Florian, Radu  and\n      Astudillo, Ram{\\'o}n  and\n      Munawar, Asim\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.10\",\n    doi = \"10.18653/v1/2024.findings-acl.10\",\n    pages = \"151--162\",\n    abstract = \"Despite LLMs{'} recent advancements, they still suffer from factual inconsistency and hallucination. An often-opted remedy is retrieval-augmented generation {--} however, there is no guarantee that the model will strictly adhere to retrieved grounding. Fundamentally, LLMs need to be aligned to be more faithful to grounding, which will require high-quality preference annotations. This paper investigates whether we can create high-quality grounded preference data for model alignment without using annotations from humans or large proprietary models. We experimented with existing entailment data and proposed approaches to generate synthetic grounded preference data, with which we train a Grounded Preference Model(GPM). We demonstrate through Proximal Policy Optimization(PPO) training of Mistral-7B-Instruct that our GPM model can successfully align powerful LLMs to generate much better grounded responses as judged by GPT4. Moreover, we show that our GPM is also a great faithfulness classifier, achieving SoTA in dialogue sub-tasks of the TRUE faithfulness Benchmark. We will release our GPM under the Apache 2.0 license.\",\n}\n",
+    "authors": [
+        "Tahira Naseem",
+        "Guangxuan Xu",
+        "Sarathkrishna Swaminathan",
+        "Asaf Yehudai",
+        "Subhajit Chaudhury",
+        "Radu Florian",
+        "Ramón Astudillo",
+        "Asim Munawar"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.10.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/9e6895d4-9cc8-525c-8fe8-0767074f891c.pdf",
+    "abstract": "Despite LLMs’ recent advancements, they still suffer from factual inconsistency and hallucination. An often-opted remedy is retrieval-augmented generation – however, there is no guarantee that the model will strictly adhere to retrieved grounding. Fundamentally, LLMs need to be aligned to be more faithful to grounding, which will require high-quality preference annotations. This paper investigates whether we can create high-quality grounded preference data for model alignment without using annotations from humans or large proprietary models. We experimented with existing entailment data and proposed approaches to generate synthetic grounded preference data, with which we train a Grounded Preference Model(GPM). We demonstrate through Proximal Policy Optimization(PPO) training of Mistral-7B-Instruct that our GPM model can successfully align powerful LLMs to generate much better grounded responses as judged by GPT4. Moreover, we show that our GPM is also a great faithfulness classifier, achieving SoTA in dialogue sub-tasks of the TRUE faithfulness Benchmark. We will release our GPM under the Apache 2.0 license.",
+    "num_pages": 12
+}

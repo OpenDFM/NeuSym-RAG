@@ -1,0 +1,23 @@
+{
+    "uuid": "d78d3c2b-04cf-5ef9-a9c4-f06a3f337d9d",
+    "title": "Solving Math Word Problems via Cooperative Reasoning induced Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhu-etal-2023-solving,\n    title = \"Solving Math Word Problems via Cooperative Reasoning induced Language Models\",\n    author = \"Zhu, Xinyu  and\n      Wang, Junjie  and\n      Zhang, Lin  and\n      Zhang, Yuxiang  and\n      Huang, Yongfeng  and\n      Gan, Ruyi  and\n      Zhang, Jiaxing  and\n      Yang, Yujiu\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.245\",\n    doi = \"10.18653/v1/2023.acl-long.245\",\n    pages = \"4471--4485\",\n    abstract = \"Large-scale pre-trained language models (PLMs) bring new opportunities to challenging problems, especially those that need high-level intelligence, such as the math word problem (MWPs). However, directly applying existing PLMs to MWPs can fail as the generation process lacks sufficient supervision and thus lacks fast adaptivity as humans. We notice that human reasoning has a dual reasoning framework that consists of an immediate reaction system (system 1) and a delicate reasoning system (system 2), where the entire reasoning is determined by their interaction. This inspires us to develop a cooperative reasoning-induced PLM for solving MWPs, called Cooperative Reasoning (CoRe), resulting in a human-like reasoning architecture with system 1 as the generator and system 2 as the verifier. In our approach, the generator is responsible for generating reasoning paths, and the verifiers are used to supervise the evaluation in order to obtain reliable feedback for the generator. We evaluate our CoRe framework on several mathematical reasoning datasets and achieve decent improvement over state-of-the-art methods, up to 9.6{\\%} increase over best baselines.\",\n}\n",
+    "authors": [
+        "Xinyu Zhu",
+        "Junjie Wang",
+        "Lin Zhang",
+        "Yuxiang Zhang",
+        "Yongfeng Huang",
+        "Ruyi Gan",
+        "Jiaxing Zhang",
+        "Yujiu Yang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.245.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d78d3c2b-04cf-5ef9-a9c4-f06a3f337d9d.pdf",
+    "abstract": "Large-scale pre-trained language models (PLMs) bring new opportunities to challenging problems, especially those that need high-level intelligence, such as the math word problem (MWPs). However, directly applying existing PLMs to MWPs can fail as the generation process lacks sufficient supervision and thus lacks fast adaptivity as humans. We notice that human reasoning has a dual reasoning framework that consists of an immediate reaction system (system 1) and a delicate reasoning system (system 2), where the entire reasoning is determined by their interaction. This inspires us to develop a cooperative reasoning-induced PLM for solving MWPs, called Cooperative Reasoning (CoRe), resulting in a human-like reasoning architecture with system 1 as the generator and system 2 as the verifier. In our approach, the generator is responsible for generating reasoning paths, and the verifiers are used to supervise the evaluation in order to obtain reliable feedback for the generator. We evaluate our CoRe framework on several mathematical reasoning datasets and achieve decent improvement over state-of-the-art methods, up to 9.6% increase over best baselines.",
+    "num_pages": 15
+}

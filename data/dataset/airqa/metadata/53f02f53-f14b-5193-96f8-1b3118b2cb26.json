@@ -1,0 +1,22 @@
+{
+    "uuid": "53f02f53-f14b-5193-96f8-1b3118b2cb26",
+    "title": "XtremeCLIP: Extremely Parameter-efficient Tuning for Low-resource Vision Language Understanding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{tang-etal-2023-xtremeclip,\n    title = \"{X}treme{CLIP}: Extremely Parameter-efficient Tuning for Low-resource Vision Language Understanding\",\n    author = \"Tang, Moming  and\n      Wang, Chengyu  and\n      Wang, Jianing  and\n      Tan, Chuanqi  and\n      Huang, Songfang  and\n      Chen, Cen  and\n      Qian, Weining\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.397\",\n    doi = \"10.18653/v1/2023.findings-acl.397\",\n    pages = \"6368--6376\",\n    abstract = \"Recently, Contrastive Visual-Language Pre-training (CLIP) has demonstrated remarkable capability in various Visual Language Understanding (VLU) tasks. Yet, most CLIP-based methods require tasks-specific designs and sufficient training data. In this paper, we introduce a simple yet efficient paradigm for low-resource VLU named XtremeCLIP, which involves very few trainable parameters to improve the generalization ability of the trained models. In our XtremeCLIP framework, we reformulate a series of VLU tasks as a unified open-book affinity-matching problem. Furthermore, to handle the insufficient supervised signals in small datasets, we adopt contrastive learning to utilize the implicit sorting information of ground-truth labels to provide more supervised cues. Extensive experiments over multiple datasets on visual entailment, visual question answering, and image classification show that XtremeCLIP consistently outperforms existing baselines in low-resource settings.\",\n}\n",
+    "authors": [
+        "Moming Tang",
+        "Chengyu Wang",
+        "Jianing Wang",
+        "Chuanqi Tan",
+        "Songfang Huang",
+        "Cen Chen",
+        "Weining Qian"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.397.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/53f02f53-f14b-5193-96f8-1b3118b2cb26.pdf",
+    "abstract": "Recently, Contrastive Visual-Language Pre-training (CLIP) has demonstrated remarkable capability in various Visual Language Understanding (VLU) tasks. Yet, most CLIP-based methods require tasks-specific designs and sufficient training data. In this paper, we introduce a simple yet efficient paradigm for low-resource VLU named XtremeCLIP, which involves very few trainable parameters to improve the generalization ability of the trained models. In our XtremeCLIP framework, we reformulate a series of VLU tasks as a unified open-book affinity-matching problem. Furthermore, to handle the insufficient supervised signals in small datasets, we adopt contrastive learning to utilize the implicit sorting information of ground-truth labels to provide more supervised cues. Extensive experiments over multiple datasets on visual entailment, visual question answering, and image classification show that XtremeCLIP consistently outperforms existing baselines in low-resource settings.",
+    "num_pages": 9
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "55f6a207-6154-5434-8031-4634e1089c54",
+    "title": "LPNL: Scalable Link Prediction with Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{bi-etal-2024-lpnl,\n    title = \"{LPNL}: Scalable Link Prediction with Large Language Models\",\n    author = \"Bi, Baolong  and\n      Liu, Shenghua  and\n      Wang, Yiwei  and\n      Mei, Lingrui  and\n      Cheng, Xueqi\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.215\",\n    doi = \"10.18653/v1/2024.findings-acl.215\",\n    pages = \"3615--3625\",\n    abstract = \"Exploring the application of large language models (LLMs) to graph learning is an emerging endeavor. However, the vast amount of information inherent in large graphs poses significant challenges to graph learning with LLMs. This work focuses on the link prediction task and introduces **LPNL** (Link Prediction via Natural Language), a framework based on large language models designed for scalable link prediction on large-scale heterogeneous graphs. We design novel prompts for link prediction that articulate graph details in natural language. We propose a two-stage sampling pipeline to extract crucial information from the graphs, and a divide-and-conquer strategy to control the input tokens within predefined limits, addressing the challenge of overwhelming information. We fine-tune a T5 model based on our self-supervised learning designed for link prediction. Extensive experimental results demonstrate that LPNL outperforms multiple advanced baselines in link prediction tasks on large-scale graphs.\",\n}\n",
+    "authors": [
+        "Baolong Bi",
+        "Shenghua Liu",
+        "Yiwei Wang",
+        "Lingrui Mei",
+        "Xueqi Cheng"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.215.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/55f6a207-6154-5434-8031-4634e1089c54.pdf",
+    "abstract": "Exploring the application of large language models (LLMs) to graph learning is an emerging endeavor. However, the vast amount of information inherent in large graphs poses significant challenges to graph learning with LLMs. This work focuses on the link prediction task and introduces **LPNL** (Link Prediction via Natural Language), a framework based on large language models designed for scalable link prediction on large-scale heterogeneous graphs. We design novel prompts for link prediction that articulate graph details in natural language. We propose a two-stage sampling pipeline to extract crucial information from the graphs, and a divide-and-conquer strategy to control the input tokens within predefined limits, addressing the challenge of overwhelming information. We fine-tune a T5 model based on our self-supervised learning designed for link prediction. Extensive experimental results demonstrate that LPNL outperforms multiple advanced baselines in link prediction tasks on large-scale graphs.",
+    "num_pages": 11
+}

@@ -1,0 +1,26 @@
+{
+    "uuid": "53873bdf-b8a9-55e5-ba67-baf5897a71c7",
+    "title": "Fine-grained Artificial Neurons in Audio-transformers for Disentangling Neural Auditory Encoding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhou-etal-2023-fine,\n    title = \"Fine-grained Artificial Neurons in Audio-transformers for Disentangling Neural Auditory Encoding\",\n    author = \"Zhou, Mengyue  and\n      Liu, Xu  and\n      Liu, David  and\n      Wu, Zihao  and\n      Liu, Zhengliang  and\n      Zhao, Lin  and\n      Zhu, Dajiang  and\n      Guo, Lei  and\n      Han, Junwei  and\n      Liu, Tianming  and\n      Hu, Xintao\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.503\",\n    doi = \"10.18653/v1/2023.findings-acl.503\",\n    pages = \"7943--7956\",\n    abstract = \"The Wav2Vec and its variants have achieved unprecedented success in computational auditory and speech processing. Meanwhile, neural encoding studies that integrate the superb representation capability of Wav2Vec and link those representations to brain activities have provided novel insights into a fundamental question of how auditory and speech processing unfold in the human brain. Without an explicit definition, most existing studies treat each transformer encoding layer in Wav2Vec as a single artificial neuron (AN). That is, the layer-level embeddings are used to predict neural responses. However, the comprehensive layer-level embedding aggregates multiple types of contextual attention captured by multi-head self-attention (MSA) modules. Thus, the layer-level ANs lack fine-granularity for neural encoding. To address this limitation, we define the elementary units, i.e., each hidden dimension, as neuron-level ANs in Wav2Vec2.0, quantify their temporal responses, and couple those ANs with their biological-neuron (BN) counterparts in the human brain. Our experimental results demonstrated that: 1) The proposed neuron-level ANs carry meaningful neurolinguistic information; 2) Those ANs anchor to their BN signatures; 3) The AN-BN anchoring patterns are interpretable from a neurolinguistic perspective. More importantly, our results suggest an intermediate stage in both the computational representation in Wav2Vec2.0 and the cortical representation in the brain. Our study validates the fine-grained ANs in Wav2Vec2.0, which may serve as a novel and general strategy to link transformer-based deep learning models to neural responses for probing the sensory processing in the brain.\",\n}\n",
+    "authors": [
+        "Mengyue Zhou",
+        "Xu Liu",
+        "David Liu",
+        "Zihao Wu",
+        "Zhengliang Liu",
+        "Lin Zhao",
+        "Dajiang Zhu",
+        "Lei Guo",
+        "Junwei Han",
+        "Tianming Liu",
+        "Xintao Hu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.503.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/53873bdf-b8a9-55e5-ba67-baf5897a71c7.pdf",
+    "abstract": "The Wav2Vec and its variants have achieved unprecedented success in computational auditory and speech processing. Meanwhile, neural encoding studies that integrate the superb representation capability of Wav2Vec and link those representations to brain activities have provided novel insights into a fundamental question of how auditory and speech processing unfold in the human brain. Without an explicit definition, most existing studies treat each transformer encoding layer in Wav2Vec as a single artificial neuron (AN). That is, the layer-level embeddings are used to predict neural responses. However, the comprehensive layer-level embedding aggregates multiple types of contextual attention captured by multi-head self-attention (MSA) modules. Thus, the layer-level ANs lack fine-granularity for neural encoding. To address this limitation, we define the elementary units, i.e., each hidden dimension, as neuron-level ANs in Wav2Vec2.0, quantify their temporal responses, and couple those ANs with their biological-neuron (BN) counterparts in the human brain. Our experimental results demonstrated that: 1) The proposed neuron-level ANs carry meaningful neurolinguistic information; 2) Those ANs anchor to their BN signatures; 3) The AN-BN anchoring patterns are interpretable from a neurolinguistic perspective. More importantly, our results suggest an intermediate stage in both the computational representation in Wav2Vec2.0 and the cortical representation in the brain. Our study validates the fine-grained ANs in Wav2Vec2.0, which may serve as a novel and general strategy to link transformer-based deep learning models to neural responses for probing the sensory processing in the brain.",
+    "num_pages": 14
+}

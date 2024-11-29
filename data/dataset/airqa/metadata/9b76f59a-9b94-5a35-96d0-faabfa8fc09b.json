@@ -1,0 +1,24 @@
+{
+    "uuid": "9b76f59a-9b94-5a35-96d0-faabfa8fc09b",
+    "title": "A Length-Extrapolatable Transformer",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{sun-etal-2023-length,\n    title = \"A Length-Extrapolatable Transformer\",\n    author = \"Sun, Yutao  and\n      Dong, Li  and\n      Patra, Barun  and\n      Ma, Shuming  and\n      Huang, Shaohan  and\n      Benhaim, Alon  and\n      Chaudhary, Vishrav  and\n      Song, Xia  and\n      Wei, Furu\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.816\",\n    doi = \"10.18653/v1/2023.acl-long.816\",\n    pages = \"14590--14604\",\n    abstract = \"Position modeling plays a critical role in Transformers. In this paper, we focus on length extrapolation, i.e., training on short texts while evaluating longer sequences. We define \\textit{attention resolution} as an indicator of extrapolation. Then we propose two designs to improve the above metric of Transformers. Specifically, we introduce a relative position embedding to explicitly maximize attention resolution. Moreover, we use blockwise causal attention during inference for better resolution. We evaluate different Transformer variants with language modeling. Experimental results show that our model achieves strong performance in both interpolation and extrapolation settings. The code will be available at \\url{https://aka.ms/LeX-Transformer}.\",\n}\n",
+    "authors": [
+        "Yutao Sun",
+        "Li Dong",
+        "Barun Patra",
+        "Shuming Ma",
+        "Shaohan Huang",
+        "Alon Benhaim",
+        "Vishrav Chaudhary",
+        "Xia Song",
+        "Furu Wei"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.816.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9b76f59a-9b94-5a35-96d0-faabfa8fc09b.pdf",
+    "abstract": "Position modeling plays a critical role in Transformers. In this paper, we focus on length extrapolation, i.e., training on short texts while evaluating longer sequences. We define attention resolution as an indicator of extrapolation. Then we propose two designs to improve the above metric of Transformers. Specifically, we introduce a relative position embedding to explicitly maximize attention resolution. Moreover, we use blockwise causal attention during inference for better resolution. We evaluate different Transformer variants with language modeling. Experimental results show that our model achieves strong performance in both interpolation and extrapolation settings. The code will be available at https://aka.ms/LeX-Transformer.",
+    "num_pages": 15
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "7656ac6b-9350-501a-a769-66e3f0aeb9ea",
+    "title": "Dissecting Transformer Length Extrapolation via the Lens of Receptive Field Analysis",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chi-etal-2023-dissecting,\n    title = \"Dissecting Transformer Length Extrapolation via the Lens of Receptive Field Analysis\",\n    author = \"Chi, Ta-Chung  and\n      Fan, Ting-Han  and\n      Rudnicky, Alexander  and\n      Ramadge, Peter\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.756\",\n    doi = \"10.18653/v1/2023.acl-long.756\",\n    pages = \"13522--13537\",\n    abstract = \"Length extrapolation permits training a transformer language model on short sequences that preserves perplexities when tested on substantially longer sequences.A relative positional embedding design, ALiBi, has had the widest usage to date. We dissect ALiBi via the lens of receptive field analysis empowered by a novel cumulative normalized gradient tool. The concept of receptive field further allows us to modify the vanilla Sinusoidal positional embedding to create \\textbf{Sandwich}, the first parameter-free relative positional embedding design that truly length information uses longer than the training sequence. Sandwich shares with KERPLE and T5 the same logarithmic decaying temporal bias pattern with learnable relative positional embeddings; these elucidate future extrapolatable positional embedding design.\",\n}\n",
+    "authors": [
+        "Ta-Chung Chi",
+        "Ting-Han Fan",
+        "Alexander Rudnicky",
+        "Peter Ramadge"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.756.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/7656ac6b-9350-501a-a769-66e3f0aeb9ea.pdf",
+    "abstract": "Length extrapolation permits training a transformer language model on short sequences that preserves perplexities when tested on substantially longer sequences.A relative positional embedding design, ALiBi, has had the widest usage to date. We dissect ALiBi via the lens of receptive field analysis empowered by a novel cumulative normalized gradient tool. The concept of receptive field further allows us to modify the vanilla Sinusoidal positional embedding to create Sandwich, the first parameter-free relative positional embedding design that truly length information uses longer than the training sequence. Sandwich shares with KERPLE and T5 the same logarithmic decaying temporal bias pattern with learnable relative positional embeddings; these elucidate future extrapolatable positional embedding design.",
+    "num_pages": 16
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "fe83b849-277c-5582-96fc-d94db552f468",
+    "title": "Evaluating Large Language Models for Health-related Queries with Presuppositions",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{kaur-etal-2024-evaluating,\n    title = \"Evaluating Large Language Models for Health-related Queries with Presuppositions\",\n    author = \"Kaur, Navreet  and\n      Choudhury, Monojit  and\n      Pruthi, Danish\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.850\",\n    doi = \"10.18653/v1/2024.findings-acl.850\",\n    pages = \"14308--14331\",\n    abstract = \"As corporations rush to integrate large language models (LLMs) it is critical that they provide factually accurate information, that is robust to any presuppositions that a user may express. In this work, we introduce UPHILL, a dataset consisting of health-related queries with varying degrees of presuppositions. Using UPHILL, we evaluate the factual accuracy and consistency of InstructGPT, ChatGPT, GPT-4 and Bing Copilot models. We find that while model responses rarely contradict true health claims (posed as questions), all investigated models fail to challenge false claims. Alarmingly, responses from these models agree with 23-32{\\%} of the existing false claims, and 49-55{\\%} with novel fabricated claims. As we increase the extent of presupposition in input queries, responses from all models except Bing Copilot agree with the claim considerably more often, regardless of its veracity. Given the moderate factual accuracy, and the inability of models to challenge false assumptions, our work calls for a careful assessment of current LLMs for use in high-stakes scenarios.\",\n}\n",
+    "authors": [
+        "Navreet Kaur",
+        "Monojit Choudhury",
+        "Danish Pruthi"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.850.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/fe83b849-277c-5582-96fc-d94db552f468.pdf",
+    "abstract": "As corporations rush to integrate large language models (LLMs) it is critical that they provide factually accurate information, that is robust to any presuppositions that a user may express. In this work, we introduce UPHILL, a dataset consisting of health-related queries with varying degrees of presuppositions. Using UPHILL, we evaluate the factual accuracy and consistency of InstructGPT, ChatGPT, GPT-4 and Bing Copilot models. We find that while model responses rarely contradict true health claims (posed as questions), all investigated models fail to challenge false claims. Alarmingly, responses from these models agree with 23-32% of the existing false claims, and 49-55% with novel fabricated claims. As we increase the extent of presupposition in input queries, responses from all models except Bing Copilot agree with the claim considerably more often, regardless of its veracity. Given the moderate factual accuracy, and the inability of models to challenge false assumptions, our work calls for a careful assessment of current LLMs for use in high-stakes scenarios.",
+    "num_pages": 24
+}

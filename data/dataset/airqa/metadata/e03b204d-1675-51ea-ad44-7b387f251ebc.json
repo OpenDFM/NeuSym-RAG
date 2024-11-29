@@ -1,0 +1,24 @@
+{
+    "uuid": "e03b204d-1675-51ea-ad44-7b387f251ebc",
+    "title": "DocLLM: A Layout-Aware Generative Language Model for Multimodal Document Understanding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2024-docllm,\n    title = \"{D}oc{LLM}: A Layout-Aware Generative Language Model for Multimodal Document Understanding\",\n    author = \"Wang, Dongsheng  and\n      Raman, Natraj  and\n      Sibue, Mathieu  and\n      Ma, Zhiqiang  and\n      Babkin, Petr  and\n      Kaur, Simerjot  and\n      Pei, Yulong  and\n      Nourbakhsh, Armineh  and\n      Liu, Xiaomo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.463\",\n    doi = \"10.18653/v1/2024.acl-long.463\",\n    pages = \"8529--8548\",\n    abstract = \"Enterprise documents such as forms, receipts, reports, and other such records, often carry rich semantics at the intersection of textual and spatial modalities. The visual cues offered by their complex layouts play a crucial role in comprehending these documents effectively. In this paper, we present DocLLM, a lightweight extension to traditional large language models (LLMs) for reasoning over visual documents, taking into account both textual semantics and spatial layout. Our model differs from existing multimodal LLMs by avoiding expensive image encoders and focuses exclusively on bounding box information to incorporate the spatial layout structure. Specifically, the cross-alignment between text and spatial modalities is captured by decomposing the attention mechanism in classical transformers to a set of disentangled matrices. Furthermore, we devise a pre-training objective that learns to infill text segments. This approach allows us to address irregular layouts and heterogeneous content frequently encountered in visual documents. The pre-trained model is fine-tuned using a large-scale instruction dataset, covering four core document intelligence tasks. We demonstrate that our solution outperforms SotA LLMs on 14 out of 16 datasets across all tasks, and generalizes well to 4 out of 5 previously unseen datasets.\",\n}\n",
+    "authors": [
+        "Dongsheng Wang",
+        "Natraj Raman",
+        "Mathieu Sibue",
+        "Zhiqiang Ma",
+        "Petr Babkin",
+        "Simerjot Kaur",
+        "Yulong Pei",
+        "Armineh Nourbakhsh",
+        "Xiaomo Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.463.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e03b204d-1675-51ea-ad44-7b387f251ebc.pdf",
+    "abstract": "Enterprise documents such as forms, receipts, reports, and other such records, often carry rich semantics at the intersection of textual and spatial modalities. The visual cues offered by their complex layouts play a crucial role in comprehending these documents effectively. In this paper, we present DocLLM, a lightweight extension to traditional large language models (LLMs) for reasoning over visual documents, taking into account both textual semantics and spatial layout. Our model differs from existing multimodal LLMs by avoiding expensive image encoders and focuses exclusively on bounding box information to incorporate the spatial layout structure. Specifically, the cross-alignment between text and spatial modalities is captured by decomposing the attention mechanism in classical transformers to a set of disentangled matrices. Furthermore, we devise a pre-training objective that learns to infill text segments. This approach allows us to address irregular layouts and heterogeneous content frequently encountered in visual documents. The pre-trained model is fine-tuned using a large-scale instruction dataset, covering four core document intelligence tasks. We demonstrate that our solution outperforms SotA LLMs on 14 out of 16 datasets across all tasks, and generalizes well to 4 out of 5 previously unseen datasets.",
+    "num_pages": 20
+}

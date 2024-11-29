@@ -8,6 +8,7 @@ from milvus_model.base import BaseEmbeddingFunction
 from typing import List, Tuple, Dict, Any, Union, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.database_utils import get_database_connection
+from utils.functions.ai_research_metadata import get_airqa_paper_metadata
 
 
 logger = logging.getLogger(__name__)
@@ -380,13 +381,8 @@ def get_image_or_pdf_path(database: str, pdf_id: str, page_number: int) -> str:
     """
     if database == 'ai_research':
         # Load the mapping file
-        uuid2papers_path = os.path.join('data', 'dataset', 'airqa', 'uuid2papers.json')
-        if not os.path.exists(uuid2papers_path):
-            raise FileNotFoundError(f"Mapping file of ai_research not found: {uuid2papers_path}")
-        
-        with open(uuid2papers_path, 'r', encoding='utf-8') as f:
-            uuid2papers = json.load(f)
-        
+        uuid2papers = get_airqa_paper_metadata()
+
         # Get the paper info
         paper_info = uuid2papers.get(pdf_id)
         if not paper_info:

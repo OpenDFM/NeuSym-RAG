@@ -1,0 +1,23 @@
+{
+    "uuid": "52cbc5a8-8e09-587e-adf8-cecbde380ffc",
+    "title": "EX-FEVER: A Dataset for Multi-hop Explainable Fact Verification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{ma-etal-2024-ex,\n    title = \"{EX}-{FEVER}: A Dataset for Multi-hop Explainable Fact Verification\",\n    author = \"Ma, Huanhuan  and\n      Xu, Weizhi  and\n      Wei, Yifan  and\n      Chen, Liuji  and\n      Wang, Liang  and\n      Liu, Qiang  and\n      Wu, Shu  and\n      Wang, Liang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.556\",\n    doi = \"10.18653/v1/2024.findings-acl.556\",\n    pages = \"9340--9353\",\n    abstract = \"Fact verification aims to automatically probe the veracity of a claim based on several pieces of evidence. Existing works are always engaging in accuracy improvement, let alone explainability, a critical capability of fact verification systems.Constructing an explainable fact verification system in a complex multi-hop scenario is consistently impeded by the absence of a relevant, high-quality dataset. Previous datasets either suffer from excessive simplification or fail to incorporate essential considerations for explainability. To address this, we present EX-FEVER, a pioneering dataset for multi-hop explainable fact verification. With over 60,000 claims involving 2-hop and 3-hop reasoning, each is created by summarizing and modifying information from hyperlinked Wikipedia documents. Each instance is accompanied by a veracity label and an explanation that outlines the reasoning path supporting the veracity classification. Additionally, we demonstrate a novel baseline system on our EX-FEVER dataset, showcasing document retrieval, explanation generation, and claim verification, and validate the significance of our dataset. Furthermore, we highlight the potential of utilizing Large Language Models in the fact verification task. We hope our dataset could make a significant contribution by providing ample opportunities to explore the integration of natural language explanations in the domain of fact verification.\",\n}\n",
+    "authors": [
+        "Huanhuan Ma",
+        "Weizhi Xu",
+        "Yifan Wei",
+        "Liuji Chen",
+        "Liang Wang",
+        "Qiang Liu",
+        "Shu Wu",
+        "Liang Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.556.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/52cbc5a8-8e09-587e-adf8-cecbde380ffc.pdf",
+    "abstract": "Fact verification aims to automatically probe the veracity of a claim based on several pieces of evidence. Existing works are always engaging in accuracy improvement, let alone explainability, a critical capability of fact verification systems.Constructing an explainable fact verification system in a complex multi-hop scenario is consistently impeded by the absence of a relevant, high-quality dataset. Previous datasets either suffer from excessive simplification or fail to incorporate essential considerations for explainability. To address this, we present EX-FEVER, a pioneering dataset for multi-hop explainable fact verification. With over 60,000 claims involving 2-hop and 3-hop reasoning, each is created by summarizing and modifying information from hyperlinked Wikipedia documents. Each instance is accompanied by a veracity label and an explanation that outlines the reasoning path supporting the veracity classification. Additionally, we demonstrate a novel baseline system on our EX-FEVER dataset, showcasing document retrieval, explanation generation, and claim verification, and validate the significance of our dataset. Furthermore, we highlight the potential of utilizing Large Language Models in the fact verification task. We hope our dataset could make a significant contribution by providing ample opportunities to explore the integration of natural language explanations in the domain of fact verification.",
+    "num_pages": 14
+}

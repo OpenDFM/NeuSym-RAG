@@ -1,0 +1,19 @@
+{
+    "uuid": "cffabf05-cd25-5a57-9f7b-2923e71c3d62",
+    "title": "Fixed and Adaptive Simultaneous Machine Translation Strategies Using Adapters",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)",
+    "bibtex": "@inproceedings{issam-etal-2024-fixed,\n    title = \"Fixed and Adaptive Simultaneous Machine Translation Strategies Using Adapters\",\n    author = \"Issam, Abderrahmane  and\n      Can Semerci, Yusuf  and\n      Scholtes, Jan  and\n      Spanakis, Gerasimos\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.iwslt-1.36\",\n    doi = \"10.18653/v1/2024.iwslt-1.36\",\n    pages = \"298--310\",\n    abstract = \"Simultaneous machine translation aims at solving the task of real-time translation by starting to translate before consuming the full input, which poses challenges in terms of balancing quality and latency of the translation. The wait-k policy offers a solution by starting to translate after consuming words, where the choice of the number k directly affects the latency and quality. In applications where we seek to keep the choice over latency and quality at inference, the wait-k policy obliges us to train more than one model. In this paper, we address the challenge of building one model that can fulfil multiple latency levels and we achieve this by introducing lightweight adapter modules into the decoder. The adapters are trained to be specialized for different wait-k values and compared to other techniques they offer more flexibility to allow for reaping the benefits of parameter sharing and minimizing interference. Additionally, we show that by combining with an adaptive strategy, we can further improve the results. Experiments on two language directions show that our method outperforms or competes with other strong baselines on most latency values.\",\n}\n",
+    "authors": [
+        "Abderrahmane Issam",
+        "Yusuf Can Semerci",
+        "Jan Scholtes",
+        "Gerasimos Spanakis"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.iwslt-1.36.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/cffabf05-cd25-5a57-9f7b-2923e71c3d62.pdf",
+    "abstract": "Simultaneous machine translation aims at solving the task of real-time translation by starting to translate before consuming the full input, which poses challenges in terms of balancing quality and latency of the translation. The wait-k policy offers a solution by starting to translate after consuming words, where the choice of the number k directly affects the latency and quality. In applications where we seek to keep the choice over latency and quality at inference, the wait-k policy obliges us to train more than one model. In this paper, we address the challenge of building one model that can fulfil multiple latency levels and we achieve this by introducing lightweight adapter modules into the decoder. The adapters are trained to be specialized for different wait-k values and compared to other techniques they offer more flexibility to allow for reaping the benefits of parameter sharing and minimizing interference. Additionally, we show that by combining with an adaptive strategy, we can further improve the results. Experiments on two language directions show that our method outperforms or competes with other strong baselines on most latency values.",
+    "num_pages": 13
+}

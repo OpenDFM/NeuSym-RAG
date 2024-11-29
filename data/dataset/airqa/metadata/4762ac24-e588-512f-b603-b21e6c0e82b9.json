@@ -1,0 +1,19 @@
+{
+    "uuid": "4762ac24-e588-512f-b603-b21e6c0e82b9",
+    "title": "When Do LLMs Need Retrieval Augmentation? Mitigating LLMs’ Overconfidence Helps Retrieval Augmentation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{ni-etal-2024-llms,\n    title = \"When Do {LLM}s Need Retrieval Augmentation? Mitigating {LLM}s{'} Overconfidence Helps Retrieval Augmentation\",\n    author = \"Ni, Shiyu  and\n      Bi, Keping  and\n      Guo, Jiafeng  and\n      Cheng, Xueqi\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.675\",\n    doi = \"10.18653/v1/2024.findings-acl.675\",\n    pages = \"11375--11388\",\n    abstract = \"Large Language Models (LLMs) have been found to have difficulty knowing they do not possess certain knowledge and tend to provide specious answers in such cases. Retrieval Augmentation (RA) has been extensively studied to mitigate LLMs{'} hallucinations. However, due to the extra overhead and unassured quality of retrieval, it may not be optimal to conduct RA all the time. A straightforward idea is to only conduct retrieval when LLMs are uncertain about a question. This motivates us to enhance the LLMs{'} ability to perceive their knowledge boundaries to help RA. In this paper, we first quantitatively measure LLMs{'} such ability and confirm their overconfidence. Then, we study how LLMs{'} certainty about a question correlates with their dependence on external retrieved information. We propose several methods to enhance LLMs{'} perception of knowledge boundaries and show that they are effective in reducing overconfidence. Additionally, equipped with these methods, LLMs can achieve comparable or even better performance of RA with much fewer retrieval calls.\",\n}\n",
+    "authors": [
+        "Shiyu Ni",
+        "Keping Bi",
+        "Jiafeng Guo",
+        "Xueqi Cheng"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.675.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/4762ac24-e588-512f-b603-b21e6c0e82b9.pdf",
+    "abstract": "Large Language Models (LLMs) have been found to have difficulty knowing they do not possess certain knowledge and tend to provide specious answers in such cases. Retrieval Augmentation (RA) has been extensively studied to mitigate LLMs’ hallucinations. However, due to the extra overhead and unassured quality of retrieval, it may not be optimal to conduct RA all the time. A straightforward idea is to only conduct retrieval when LLMs are uncertain about a question. This motivates us to enhance the LLMs’ ability to perceive their knowledge boundaries to help RA. In this paper, we first quantitatively measure LLMs’ such ability and confirm their overconfidence. Then, we study how LLMs’ certainty about a question correlates with their dependence on external retrieved information. We propose several methods to enhance LLMs’ perception of knowledge boundaries and show that they are effective in reducing overconfidence. Additionally, equipped with these methods, LLMs can achieve comparable or even better performance of RA with much fewer retrieval calls.",
+    "num_pages": 14
+}

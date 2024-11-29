@@ -1,0 +1,23 @@
+{
+    "uuid": "f787de09-7bfb-534e-a50c-4d2b60b6428b",
+    "title": "Quality-Aware Translation Models: Efficient Generation and Quality Estimation in a Single Model",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{tomani-etal-2024-quality,\n    title = \"Quality-Aware Translation Models: Efficient Generation and Quality Estimation in a Single Model\",\n    author = \"Tomani, Christian  and\n      Vilar, David  and\n      Freitag, Markus  and\n      Cherry, Colin  and\n      Naskar, Subhajit  and\n      Finkelstein, Mara  and\n      Garcia, Xavier  and\n      Cremers, Daniel\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.836\",\n    doi = \"10.18653/v1/2024.acl-long.836\",\n    pages = \"15660--15679\",\n    abstract = \"Maximum-a-posteriori (MAP) decoding is the most widely used decoding strategy for neural machine translation (NMT) models. The underlying assumption is that model probability correlates well with human judgment, with better translations getting assigned a higher score by the model. However, research has shown that this assumption does not always hold, and generation quality can be improved by decoding to optimize a utility function backed by a metric or quality-estimation signal, as is done by Minimum Bayes Risk (MBR) or Quality-Aware decoding. The main disadvantage of these approaches is that they require an additional model to calculate the utility function during decoding, significantly increasing the computational cost. In this paper, we propose to make the NMT models themselves quality-aware by training them to estimate the quality of their own output. Using this approach for MBR decoding we can drastically reduce the size of the candidate list, resulting in a speed-up of two-orders of magnitude. When applying our method to MAP decoding we obtain quality gains similar or even superior to quality reranking approaches, but with the efficiency of single pass decoding.\",\n}\n",
+    "authors": [
+        "Christian Tomani",
+        "David Vilar",
+        "Markus Freitag",
+        "Colin Cherry",
+        "Subhajit Naskar",
+        "Mara Finkelstein",
+        "Xavier Garcia",
+        "Daniel Cremers"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.836.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/f787de09-7bfb-534e-a50c-4d2b60b6428b.pdf",
+    "abstract": "Maximum-a-posteriori (MAP) decoding is the most widely used decoding strategy for neural machine translation (NMT) models. The underlying assumption is that model probability correlates well with human judgment, with better translations getting assigned a higher score by the model. However, research has shown that this assumption does not always hold, and generation quality can be improved by decoding to optimize a utility function backed by a metric or quality-estimation signal, as is done by Minimum Bayes Risk (MBR) or Quality-Aware decoding. The main disadvantage of these approaches is that they require an additional model to calculate the utility function during decoding, significantly increasing the computational cost. In this paper, we propose to make the NMT models themselves quality-aware by training them to estimate the quality of their own output. Using this approach for MBR decoding we can drastically reduce the size of the candidate list, resulting in a speed-up of two-orders of magnitude. When applying our method to MAP decoding we obtain quality gains similar or even superior to quality reranking approaches, but with the efficiency of single pass decoding.",
+    "num_pages": 20
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "2222c330-6db1-56f7-ae25-f07ff35d1c6e",
+    "title": "The Whole Truth and Nothing But the Truth: Faithful and Controllable Dialogue Response Generation with Dataflow Transduction and Constrained Decoding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{fang-etal-2023-whole,\n    title = \"The Whole Truth and Nothing But the Truth: Faithful and Controllable Dialogue Response Generation with Dataflow Transduction and Constrained Decoding\",\n    author = \"Fang, Hao  and\n      Balakrishnan, Anusha  and\n      Jhamtani, Harsh  and\n      Bufe, John  and\n      Crawford, Jean  and\n      Krishnamurthy, Jayant  and\n      Pauls, Adam  and\n      Eisner, Jason  and\n      Andreas, Jacob  and\n      Klein, Dan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.351\",\n    doi = \"10.18653/v1/2023.findings-acl.351\",\n    pages = \"5682--5700\",\n    abstract = \"In a real-world dialogue system, generated text must be truthful and informative while remaining fluent and adhering to a prescribed style. Satisfying these constraints simultaneously isdifficult for the two predominant paradigms in language generation: neural language modeling and rule-based generation. We describe a hybrid architecture for dialogue response generation that combines the strengths of both paradigms. The first component of this architecture is a rule-based content selection model defined using a new formal framework called dataflow transduction, which uses declarative rules to transduce a dialogue agent{'}s actions and their results (represented as dataflow graphs) into context-free grammars representing the space of contextually acceptable responses. The second component is a constrained decoding procedure that uses these grammars to constrain the output of a neural language model, which selects fluent utterances. Our experiments show that this system outperforms both rule-based and learned approaches in human evaluations of fluency, relevance, and truthfulness.\",\n}\n",
+    "authors": [
+        "Hao Fang",
+        "Anusha Balakrishnan",
+        "Harsh Jhamtani",
+        "John Bufe",
+        "Jean Crawford",
+        "Jayant Krishnamurthy",
+        "Adam Pauls",
+        "Jason Eisner",
+        "Jacob Andreas",
+        "Dan Klein"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.351.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2222c330-6db1-56f7-ae25-f07ff35d1c6e.pdf",
+    "abstract": "In a real-world dialogue system, generated text must be truthful and informative while remaining fluent and adhering to a prescribed style. Satisfying these constraints simultaneously isdifficult for the two predominant paradigms in language generation: neural language modeling and rule-based generation. We describe a hybrid architecture for dialogue response generation that combines the strengths of both paradigms. The first component of this architecture is a rule-based content selection model defined using a new formal framework called dataflow transduction, which uses declarative rules to transduce a dialogue agent’s actions and their results (represented as dataflow graphs) into context-free grammars representing the space of contextually acceptable responses. The second component is a constrained decoding procedure that uses these grammars to constrain the output of a neural language model, which selects fluent utterances. Our experiments show that this system outperforms both rule-based and learned approaches in human evaluations of fluency, relevance, and truthfulness.",
+    "num_pages": 19
+}

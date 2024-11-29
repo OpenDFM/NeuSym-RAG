@@ -1,0 +1,23 @@
+{
+    "uuid": "917a286c-4854-5513-9bd2-ff46206ac668",
+    "title": "Boosting Radiology Report Generation by Infusing Comparison Prior",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+    "bibtex": "@inproceedings{kim-etal-2023-boosting,\n    title = \"Boosting Radiology Report Generation by Infusing Comparison Prior\",\n    author = \"Kim, Sanghwan  and\n      Nooralahzadeh, Farhad  and\n      Rohanian, Morteza  and\n      Fujimoto, Koji  and\n      Nishio, Mizuho  and\n      Sakamoto, Ryo  and\n      Rinaldi, Fabio  and\n      Krauthammer, Michael\",\n    editor = \"Demner-fushman, Dina  and\n      Ananiadou, Sophia  and\n      Cohen, Kevin\",\n    booktitle = \"The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.bionlp-1.4\",\n    doi = \"10.18653/v1/2023.bionlp-1.4\",\n    pages = \"50--61\",\n    abstract = \"Recent transformer-based models have made significant strides in generating radiology reports from chest X-ray images. However, a prominent challenge remains; these models often lack prior knowledge, resulting in the generation of synthetic reports that mistakenly reference non-existent prior exams. This discrepancy can be attributed to a knowledge gap between radiologists and the generation models. While radiologists possess patient-specific prior information, the models solely receive X-ray images at a specific time point. To tackle this issue, we propose a novel approach that leverages a rule-based labeler to extract comparison prior information from radiology reports. This extracted comparison prior is then seamlessly integrated into state-of-the-art transformer-based models, enabling them to produce more realistic and comprehensive reports. Our method is evaluated on English report datasets, such as IU X-ray and MIMIC-CXR. The results demonstrate that our approach surpasses baseline models in terms of natural language generation metrics. Notably, our model generates reports that are free from false references to non-existent prior exams, setting it apart from previous models. By addressing this limitation, our approach represents a significant step towards bridging the gap between radiologists and generation models in the domain of medical report generation.\",\n}\n",
+    "authors": [
+        "Sanghwan Kim",
+        "Farhad Nooralahzadeh",
+        "Morteza Rohanian",
+        "Koji Fujimoto",
+        "Mizuho Nishio",
+        "Ryo Sakamoto",
+        "Fabio Rinaldi",
+        "Michael Krauthammer"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.bionlp-1.4.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/917a286c-4854-5513-9bd2-ff46206ac668.pdf",
+    "abstract": "Recent transformer-based models have made significant strides in generating radiology reports from chest X-ray images. However, a prominent challenge remains; these models often lack prior knowledge, resulting in the generation of synthetic reports that mistakenly reference non-existent prior exams. This discrepancy can be attributed to a knowledge gap between radiologists and the generation models. While radiologists possess patient-specific prior information, the models solely receive X-ray images at a specific time point. To tackle this issue, we propose a novel approach that leverages a rule-based labeler to extract comparison prior information from radiology reports. This extracted comparison prior is then seamlessly integrated into state-of-the-art transformer-based models, enabling them to produce more realistic and comprehensive reports. Our method is evaluated on English report datasets, such as IU X-ray and MIMIC-CXR. The results demonstrate that our approach surpasses baseline models in terms of natural language generation metrics. Notably, our model generates reports that are free from false references to non-existent prior exams, setting it apart from previous models. By addressing this limitation, our approach represents a significant step towards bridging the gap between radiologists and generation models in the domain of medical report generation.",
+    "num_pages": 12
+}

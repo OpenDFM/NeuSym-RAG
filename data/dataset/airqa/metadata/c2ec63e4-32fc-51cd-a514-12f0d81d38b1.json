@@ -1,0 +1,23 @@
+{
+    "uuid": "c2ec63e4-32fc-51cd-a514-12f0d81d38b1",
+    "title": "CSS: A Large-scale Cross-schema Chinese Text-to-SQL Medical Dataset",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhang-etal-2023-css,\n    title = \"{CSS}: A Large-scale Cross-schema {C}hinese Text-to-{SQL} Medical Dataset\",\n    author = \"Zhang, Hanchong  and\n      Li, Jieyu  and\n      Chen, Lu  and\n      Cao, Ruisheng  and\n      Zhang, Yunyan  and\n      Huang, Yu  and\n      Zheng, Yefeng  and\n      Yu, Kai\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.435\",\n    doi = \"10.18653/v1/2023.findings-acl.435\",\n    pages = \"6970--6983\",\n    abstract = \"The cross-domain text-to-SQL task aims to build a system that can parse user questions into SQL on complete unseen databases, and the single-domain text-to-SQL task evaluates the performance on identical databases. Both of these setups confront unavoidable difficulties in real-world applications. To this end, we introduce the cross-schema text-to-SQL task, where the databases of evaluation data are different from that in the training data but come from the same domain. Furthermore, we present CSS, a large-scale CrosS-Schema Chinese text-to-SQL dataset, to carry on corresponding studies. CSS originally consisted of 4,340 question/SQL pairs across 2 databases. In order to generalize models to different medical systems, we extend CSS and create 19 new databases along with 29,280 corresponding dataset examples. Moreover, CSS is also a large corpus for single-domain Chinese text-to-SQL studies. We present the data collection approach and a series of analyses of the data statistics. To show the potential and usefulness of CSS, benchmarking baselines have been conducted and reported. Our dataset is publicly available at \\url{https://huggingface.co/datasets/zhanghanchong/css}.\",\n}\n",
+    "authors": [
+        "Hanchong Zhang",
+        "Jieyu Li",
+        "Lu Chen",
+        "Ruisheng Cao",
+        "Yunyan Zhang",
+        "Yu Huang",
+        "Yefeng Zheng",
+        "Kai Yu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.435.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c2ec63e4-32fc-51cd-a514-12f0d81d38b1.pdf",
+    "abstract": "The cross-domain text-to-SQL task aims to build a system that can parse user questions into SQL on complete unseen databases, and the single-domain text-to-SQL task evaluates the performance on identical databases. Both of these setups confront unavoidable difficulties in real-world applications. To this end, we introduce the cross-schema text-to-SQL task, where the databases of evaluation data are different from that in the training data but come from the same domain. Furthermore, we present CSS, a large-scale CrosS-Schema Chinese text-to-SQL dataset, to carry on corresponding studies. CSS originally consisted of 4,340 question/SQL pairs across 2 databases. In order to generalize models to different medical systems, we extend CSS and create 19 new databases along with 29,280 corresponding dataset examples. Moreover, CSS is also a large corpus for single-domain Chinese text-to-SQL studies. We present the data collection approach and a series of analyses of the data statistics. To show the potential and usefulness of CSS, benchmarking baselines have been conducted and reported. Our dataset is publicly available at https://huggingface.co/datasets/zhanghanchong/css.",
+    "num_pages": 14
+}

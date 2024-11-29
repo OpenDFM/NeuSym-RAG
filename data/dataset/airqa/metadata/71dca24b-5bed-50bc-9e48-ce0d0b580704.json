@@ -1,0 +1,18 @@
+{
+    "uuid": "71dca24b-5bed-50bc-9e48-ce0d0b580704",
+    "title": "Annotating and Detecting Fine-grained Factual Errors for Dialogue Summarization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhu-etal-2023-annotating,\n    title = \"Annotating and Detecting Fine-grained Factual Errors for Dialogue Summarization\",\n    author = \"Zhu, Rongxin  and\n      Qi, Jianzhong  and\n      Lau, Jey Han\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.377\",\n    doi = \"10.18653/v1/2023.acl-long.377\",\n    pages = \"6825--6845\",\n    abstract = \"A series of datasets and models have been proposed for summaries generated for well-formatted documents such as news articles. Dialogue summaries, however, have been under explored. In this paper, we present the first dataset with fine-grained factual error annotations named DIASUMFACT. We define fine-grained factual error detection as a sentence-level multi-label classification problem, and weevaluate two state-of-the-art (SOTA) models on our dataset. Both models yield sub-optimal results, with a macro-averaged F1 score of around 0.25 over 6 error classes. We further propose an unsupervised model ENDERANKER via candidate ranking using pretrained encoder-decoder models. Our model performs on par with the SOTA models while requiring fewer resources. These observations confirm the challenges in detecting factual errors from dialogue summaries, which call for further studies, for which our dataset and results offer a solid foundation.\",\n}\n",
+    "authors": [
+        "Rongxin Zhu",
+        "Jianzhong Qi",
+        "Jey Han Lau"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.377.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/71dca24b-5bed-50bc-9e48-ce0d0b580704.pdf",
+    "abstract": "A series of datasets and models have been proposed for summaries generated for well-formatted documents such as news articles. Dialogue summaries, however, have been under explored. In this paper, we present the first dataset with fine-grained factual error annotations named DIASUMFACT. We define fine-grained factual error detection as a sentence-level multi-label classification problem, and weevaluate two state-of-the-art (SOTA) models on our dataset. Both models yield sub-optimal results, with a macro-averaged F1 score of around 0.25 over 6 error classes. We further propose an unsupervised model ENDERANKER via candidate ranking using pretrained encoder-decoder models. Our model performs on par with the SOTA models while requiring fewer resources. These observations confirm the challenges in detecting factual errors from dialogue summaries, which call for further studies, for which our dataset and results offer a solid foundation.",
+    "num_pages": 21
+}

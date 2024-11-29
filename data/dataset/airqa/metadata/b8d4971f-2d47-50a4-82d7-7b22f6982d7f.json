@@ -1,0 +1,22 @@
+{
+    "uuid": "b8d4971f-2d47-50a4-82d7-7b22f6982d7f",
+    "title": "MVP-Tuning: Multi-View Knowledge Retrieval with Prompt Tuning for Commonsense Reasoning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{huang-etal-2023-mvp,\n    title = \"{MVP}-Tuning: Multi-View Knowledge Retrieval with Prompt Tuning for Commonsense Reasoning\",\n    author = \"Huang, Yongfeng  and\n      Li, Yanyang  and\n      Xu, Yichong  and\n      Zhang, Lin  and\n      Gan, Ruyi  and\n      Zhang, Jiaxing  and\n      Wang, Liwei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.750\",\n    doi = \"10.18653/v1/2023.acl-long.750\",\n    pages = \"13417--13432\",\n    abstract = \"Recent advances in pre-trained language models (PLMs) have facilitated the development ofcommonsense reasoning tasks. However, existing methods rely on multi-hop knowledgeretrieval and thus suffer low accuracy due toembedded noise in the acquired knowledge. In addition, these methods often attain highcomputational costs and nontrivial knowledgeloss because they encode the knowledge independently of the PLM, making it less relevant to the task and thus resulting in a poorlocal optimum. In this work, we propose MultiView Knowledge Retrieval with Prompt Tuning (MVP-Tuning). MVP-Tuning leveragessimilar question-answer pairs in the training setto improve knowledge retrieval and employsa single prompt-tuned PLM to model knowledge and input text jointly. We conduct our experiments on five commonsense reasoning QAbenchmarks to show that MVP-Tuning outperforms all other baselines in 4 out of 5 datasetswith less than 2{\\%} trainable parameters. MVPTuning even gets a new state-of-the-art resulton OpenBookQA and is number one on theleaderboard.\",\n}\n",
+    "authors": [
+        "Yongfeng Huang",
+        "Yanyang Li",
+        "Yichong Xu",
+        "Lin Zhang",
+        "Ruyi Gan",
+        "Jiaxing Zhang",
+        "Liwei Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.750.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b8d4971f-2d47-50a4-82d7-7b22f6982d7f.pdf",
+    "abstract": "Recent advances in pre-trained language models (PLMs) have facilitated the development ofcommonsense reasoning tasks. However, existing methods rely on multi-hop knowledgeretrieval and thus suffer low accuracy due toembedded noise in the acquired knowledge. In addition, these methods often attain highcomputational costs and nontrivial knowledgeloss because they encode the knowledge independently of the PLM, making it less relevant to the task and thus resulting in a poorlocal optimum. In this work, we propose MultiView Knowledge Retrieval with Prompt Tuning (MVP-Tuning). MVP-Tuning leveragessimilar question-answer pairs in the training setto improve knowledge retrieval and employsa single prompt-tuned PLM to model knowledge and input text jointly. We conduct our experiments on five commonsense reasoning QAbenchmarks to show that MVP-Tuning outperforms all other baselines in 4 out of 5 datasetswith less than 2% trainable parameters. MVPTuning even gets a new state-of-the-art resulton OpenBookQA and is number one on theleaderboard.",
+    "num_pages": 16
+}

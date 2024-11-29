@@ -1,0 +1,20 @@
+{
+    "uuid": "120d59e1-2b0c-548e-ad49-5fcefa97b549",
+    "title": "Context or Knowledge is Not Always Necessary: A Contrastive Learning Framework for Emotion Recognition in Conversations",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{tu-etal-2023-context,\n    title = \"Context or Knowledge is Not Always Necessary: A Contrastive Learning Framework for Emotion Recognition in Conversations\",\n    author = \"Tu, Geng  and\n      Liang, Bin  and\n      Mao, Ruibin  and\n      Yang, Min  and\n      Xu, Ruifeng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.883\",\n    doi = \"10.18653/v1/2023.findings-acl.883\",\n    pages = \"14054--14067\",\n    abstract = \"Emotion recognition in conversations (ERC) aims to detect the emotion of utterances in conversations. Existing efforts generally focus on modeling context- and knowledge-sensitive dependencies. However, it is observed that the emotions of many utterances can be correctly detected without context or external knowledge. In such cases, blindly leveraging the context and external knowledge may impede model training. Based on this, we propose a novel framework based on contrastive learning (CL), called CKCL (including the contrastive learning scenarios among Context and Knowledge), to distinguish the above utterances for better vector representations. The CKCL framework defines context- and knowledge-independent utterances, as the positive sample, whose predicted results are unchanged even masking context and knowledge representations, otherwise, the negative sample. This can obtain a latent feature reflecting the impact degree of context and external knowledge on predicted results, thus effectively denoising irrelevant context and knowledge during training. Experimental results on four datasets show the performance of CKCL-based models is significantly boosted and outperforms state-of-the-art methods.\",\n}\n",
+    "authors": [
+        "Geng Tu",
+        "Bin Liang",
+        "Ruibin Mao",
+        "Min Yang",
+        "Ruifeng Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.883.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/120d59e1-2b0c-548e-ad49-5fcefa97b549.pdf",
+    "abstract": "Emotion recognition in conversations (ERC) aims to detect the emotion of utterances in conversations. Existing efforts generally focus on modeling context- and knowledge-sensitive dependencies. However, it is observed that the emotions of many utterances can be correctly detected without context or external knowledge. In such cases, blindly leveraging the context and external knowledge may impede model training. Based on this, we propose a novel framework based on contrastive learning (CL), called CKCL (including the contrastive learning scenarios among Context and Knowledge), to distinguish the above utterances for better vector representations. The CKCL framework defines context- and knowledge-independent utterances, as the positive sample, whose predicted results are unchanged even masking context and knowledge representations, otherwise, the negative sample. This can obtain a latent feature reflecting the impact degree of context and external knowledge on predicted results, thus effectively denoising irrelevant context and knowledge during training. Experimental results on four datasets show the performance of CKCL-based models is significantly boosted and outperforms state-of-the-art methods.",
+    "num_pages": 14
+}

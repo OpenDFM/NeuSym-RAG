@@ -1,0 +1,19 @@
+{
+    "uuid": "42fd98b7-5ac7-5005-858b-2a3a6664a23f",
+    "title": "Best-k Search Algorithm for Neural Text Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{xu-etal-2023-best,\n    title = \"Best-k Search Algorithm for Neural Text Generation\",\n    author = \"Xu, Jiacheng  and\n      Xiong, Caiming  and\n      Savarese, Silvio  and\n      Zhou, Yingbo\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.692\",\n    doi = \"10.18653/v1/2023.acl-long.692\",\n    pages = \"12385--12401\",\n    abstract = \"Modern natural language generation paradigms require a decoding strategy to obtain quality sequences out of the model. Beam search yields high-quality but low diversity outputs; stochastic approaches suffer from high variance and sometimes low quality. In this work, we propose a deterministic search algorithm balancing both quality and diversity. We first investigate the vanilla best-first search (BFS) algorithm and then propose the best-k search algorithm. Inspired by BFS, we greedily expand the top k nodes, instead of the first node, to boost efficiency and diversity. Upweighting recently discovered nodes accompanied by heap pruning ensures the completeness of the search procedure. Experiments on four NLG tasks show that best-k search yields more diverse and natural outputs compared to strong baselines, while our approach maintains high text quality. The proposed algorithm is parameter-free, lightweight, efficient, and easy-to-use.\",\n}\n",
+    "authors": [
+        "Jiacheng Xu",
+        "Caiming Xiong",
+        "Silvio Savarese",
+        "Yingbo Zhou"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.692.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/42fd98b7-5ac7-5005-858b-2a3a6664a23f.pdf",
+    "abstract": "Modern natural language generation paradigms require a decoding strategy to obtain quality sequences out of the model. Beam search yields high-quality but low diversity outputs; stochastic approaches suffer from high variance and sometimes low quality. In this work, we propose a deterministic search algorithm balancing both quality and diversity. We first investigate the vanilla best-first search (BFS) algorithm and then propose the best-k search algorithm. Inspired by BFS, we greedily expand the top k nodes, instead of the first node, to boost efficiency and diversity. Upweighting recently discovered nodes accompanied by heap pruning ensures the completeness of the search procedure. Experiments on four NLG tasks show that best-k search yields more diverse and natural outputs compared to strong baselines, while our approach maintains high text quality. The proposed algorithm is parameter-free, lightweight, efficient, and easy-to-use.",
+    "num_pages": 17
+}

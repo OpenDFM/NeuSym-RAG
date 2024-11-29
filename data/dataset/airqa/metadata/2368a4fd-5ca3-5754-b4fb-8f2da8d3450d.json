@@ -1,0 +1,21 @@
+{
+    "uuid": "2368a4fd-5ca3-5754-b4fb-8f2da8d3450d",
+    "title": "MemeGuard: An LLM and VLM-based Framework for Advancing Content Moderation via Meme Intervention",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{jha-etal-2024-memeguard,\n    title = \"{M}eme{G}uard: An {LLM} and {VLM}-based Framework for Advancing Content Moderation via Meme Intervention\",\n    author = \"Jha, Prince  and\n      Jain, Raghav  and\n      Mandal, Konika  and\n      Chadha, Aman  and\n      Saha, Sriparna  and\n      Bhattacharyya, Pushpak\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.439\",\n    doi = \"10.18653/v1/2024.acl-long.439\",\n    pages = \"8084--8104\",\n    abstract = \"In the digital world, memes present a unique challenge for content moderation due to their potential to spread harmful content. Although detection methods have improved, proactive solutions such as intervention are still limited, with current research focusing mostly on text-based content, neglecting the widespread influence of multimodal content like memes. Addressing this gap, we present \\textit{MemeGuard}, a comprehensive framework leveraging Large Language Models (LLMs) and Visual Language Models (VLMs) for meme intervention. \\textit{MemeGuard} harnesses a specially fine-tuned VLM, \\textit{VLMeme}, for meme interpretation, and a multimodal knowledge selection and ranking mechanism (\\textit{MKS}) for distilling relevant knowledge. This knowledge is then employed by a general-purpose LLM to generate contextually appropriate interventions. Another key contribution of this work is the \\textit{ \\textbf{I}ntervening} \\textit{ \\textbf{C}yberbullying in \\textbf{M}ultimodal \\textbf{M}emes (ICMM)} dataset, a high-quality, labeled dataset featuring toxic memes and their corresponding human-annotated interventions. We leverage \\textit{ICMM} to test \\textit{MemeGuard}, demonstrating its proficiency in generating relevant and effective responses to toxic memes. red \\textbf{Disclaimer}: \\textit{This paper contains harmful content that may be disturbing to some readers.}\",\n}\n",
+    "authors": [
+        "Prince Jha",
+        "Raghav Jain",
+        "Konika Mandal",
+        "Aman Chadha",
+        "Sriparna Saha",
+        "Pushpak Bhattacharyya"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.439.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/2368a4fd-5ca3-5754-b4fb-8f2da8d3450d.pdf",
+    "abstract": "In the digital world, memes present a unique challenge for content moderation due to their potential to spread harmful content. Although detection methods have improved, proactive solutions such as intervention are still limited, with current research focusing mostly on text-based content, neglecting the widespread influence of multimodal content like memes. Addressing this gap, we present MemeGuard, a comprehensive framework leveraging Large Language Models (LLMs) and Visual Language Models (VLMs) for meme intervention. MemeGuard harnesses a specially fine-tuned VLM, VLMeme, for meme interpretation, and a multimodal knowledge selection and ranking mechanism (MKS) for distilling relevant knowledge. This knowledge is then employed by a general-purpose LLM to generate contextually appropriate interventions. Another key contribution of this work is the Intervening Cyberbullying in Multimodal Memes (ICMM) dataset, a high-quality, labeled dataset featuring toxic memes and their corresponding human-annotated interventions. We leverage ICMM to test MemeGuard, demonstrating its proficiency in generating relevant and effective responses to toxic memes. red Disclaimer: This paper contains harmful content that may be disturbing to some readers.",
+    "num_pages": 21
+}

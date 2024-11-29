@@ -1,0 +1,16 @@
+{
+    "uuid": "94f23694-f99f-5c62-88fc-19f2b78e3342",
+    "title": "Bf3R at SemEval-2023 Task 7: a text similarity model for textual entailment and evidence retrieval in clinical trials and animal studies",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{neves-2023-bf3r,\n    title = \"{B}f3{R} at {S}em{E}val-2023 Task 7: a text similarity model for textual entailment and evidence retrieval in clinical trials and animal studies\",\n    author = \"Neves, Mariana\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.17\",\n    doi = \"10.18653/v1/2023.semeval-1.17\",\n    pages = \"125--129\",\n    abstract = \"We describe our participation on the Multi-evidence Natural Language Inference for Clinical Trial Data (NLI4CT) of SemEval{'}23. The organizers provided a collection of clinical trials as training data and a set of statements, which can be related to either a single trial or to a comparison of two trials. The task consisted of two sub-tasks: (i) textual entailment (Task 1) for predicting whether the statement is supported (Entailment) or not (Contradiction) by the corresponding trial(s); and (ii) evidence retrieval (Task 2) for selecting the evidences (sentences in the trials) that support the decision made for Task 1. We built a model based on a sentence-based BERT similarity model which was pre-trained on ClinicalBERT embeddings. Our best results on the official test sets were f-scores of 0.64 and 0.67 for Tasks 1 and 2, respectively.\",\n}\n",
+    "authors": [
+        "Mariana Neves"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.17.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/94f23694-f99f-5c62-88fc-19f2b78e3342.pdf",
+    "abstract": "We describe our participation on the Multi-evidence Natural Language Inference for Clinical Trial Data (NLI4CT) of SemEval’23. The organizers provided a collection of clinical trials as training data and a set of statements, which can be related to either a single trial or to a comparison of two trials. The task consisted of two sub-tasks: (i) textual entailment (Task 1) for predicting whether the statement is supported (Entailment) or not (Contradiction) by the corresponding trial(s); and (ii) evidence retrieval (Task 2) for selecting the evidences (sentences in the trials) that support the decision made for Task 1. We built a model based on a sentence-based BERT similarity model which was pre-trained on ClinicalBERT embeddings. Our best results on the official test sets were f-scores of 0.64 and 0.67 for Tasks 1 and 2, respectively.",
+    "num_pages": 5
+}

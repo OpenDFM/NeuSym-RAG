@@ -1,0 +1,27 @@
+{
+    "uuid": "93337b91-4151-5aa4-ac74-2f08a91fad54",
+    "title": "ChatKBQA: A Generate-then-Retrieve Framework for Knowledge Base Question Answering with Fine-tuned Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{luo-etal-2024-chatkbqa,\n    title = \"{C}hat{KBQA}: A Generate-then-Retrieve Framework for Knowledge Base Question Answering with Fine-tuned Large Language Models\",\n    author = \"Luo, Haoran  and\n      E, Haihong  and\n      Tang, Zichen  and\n      Peng, Shiyao  and\n      Guo, Yikai  and\n      Zhang, Wentai  and\n      Ma, Chenghao  and\n      Dong, Guanting  and\n      Song, Meina  and\n      Lin, Wei  and\n      Zhu, Yifan  and\n      Luu, Anh Tuan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.122\",\n    doi = \"10.18653/v1/2024.findings-acl.122\",\n    pages = \"2039--2056\",\n    abstract = \"Knowledge Base Question Answering (KBQA) aims to answer natural language questions over large-scale knowledge bases (KBs), which can be summarized into two crucial steps: knowledge retrieval and semantic parsing. However, three core challenges remain: inefficient knowledge retrieval, mistakes of retrieval adversely impacting semantic parsing, and the complexity of previous KBQA methods. To tackle these challenges, we introduce ChatKBQA, a novel and simple generate-then-retrieve KBQA framework, which proposes first generating the logical form with fine-tuned LLMs, then retrieving and replacing entities and relations with an unsupervised retrieval method, to improve both generation and retrieval more directly. Experimental results show that ChatKBQA achieves new state-of-the-art performance on standard KBQA datasets, WebQSP, and CWQ. This work can also be regarded as a new paradigm for combining LLMs with knowledge graphs (KGs) for interpretable and knowledge-required question answering.\",\n}\n",
+    "authors": [
+        "Haoran Luo",
+        "Haihong E",
+        "Zichen Tang",
+        "Shiyao Peng",
+        "Yikai Guo",
+        "Wentai Zhang",
+        "Chenghao Ma",
+        "Guanting Dong",
+        "Meina Song",
+        "Wei Lin",
+        "Yifan Zhu",
+        "Anh Tuan Luu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.122.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/93337b91-4151-5aa4-ac74-2f08a91fad54.pdf",
+    "abstract": "Knowledge Base Question Answering (KBQA) aims to answer natural language questions over large-scale knowledge bases (KBs), which can be summarized into two crucial steps: knowledge retrieval and semantic parsing. However, three core challenges remain: inefficient knowledge retrieval, mistakes of retrieval adversely impacting semantic parsing, and the complexity of previous KBQA methods. To tackle these challenges, we introduce ChatKBQA, a novel and simple generate-then-retrieve KBQA framework, which proposes first generating the logical form with fine-tuned LLMs, then retrieving and replacing entities and relations with an unsupervised retrieval method, to improve both generation and retrieval more directly. Experimental results show that ChatKBQA achieves new state-of-the-art performance on standard KBQA datasets, WebQSP, and CWQ. This work can also be regarded as a new paradigm for combining LLMs with knowledge graphs (KGs) for interpretable and knowledge-required question answering.",
+    "num_pages": 18
+}

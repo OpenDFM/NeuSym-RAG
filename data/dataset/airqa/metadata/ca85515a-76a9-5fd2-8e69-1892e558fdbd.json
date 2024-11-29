@@ -1,0 +1,19 @@
+{
+    "uuid": "ca85515a-76a9-5fd2-8e69-1892e558fdbd",
+    "title": "Enhancing Conceptual Understanding in Multimodal Contrastive Learning through Hard Negative Samples",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 3rd Workshop on Advances in Language and Vision Research (ALVR)",
+    "bibtex": "@inproceedings{rosch-etal-2024-enhancing,\n    title = \"Enhancing Conceptual Understanding in Multimodal Contrastive Learning through Hard Negative Samples\",\n    author = {R{\\\"o}sch, Philipp J.  and\n      Oswald, Norbert  and\n      Geierhos, Michaela  and\n      Libovick{\\'y}, Jind{\\v{r}}ich},\n    editor = \"Gu, Jing  and\n      Fu, Tsu-Jui (Ray)  and\n      Hudson, Drew  and\n      Celikyilmaz, Asli  and\n      Wang, William\",\n    booktitle = \"Proceedings of the 3rd Workshop on Advances in Language and Vision Research (ALVR)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.alvr-1.9\",\n    doi = \"10.18653/v1/2024.alvr-1.9\",\n    pages = \"102--115\",\n    abstract = \"Current vision-language models leveraging contrastive learning often face limitations in developing fine-grained conceptual understanding. This is due to random negative samples during pretraining, causing almost exclusively very dissimilar concepts to be compared in the loss function. Consequently, the models struggle with fine-grained semantic differences. To address this problem, we introduce a novel pretraining method incorporating synthetic hard negative text examples. The hard negatives replace terms corresponding to visual concepts, leading to a more fine-grained visual and textual concept alignment. Further, we introduce InpaintCOCO, a new challenging dataset for assessing the fine-grained alignment of colors, objects, and sizes in vision-language models. We created the dataset using generative inpainting from COCO images by changing the visual concepts so that the images no longer match their original captions. Our results show significant improvements in fine-grained concept understanding across various vision-language datasets, including our InpaintCOCO dataset.\",\n}\n",
+    "authors": [
+        "Philipp J. Rösch",
+        "Norbert Oswald",
+        "Michaela Geierhos",
+        "Jindřich Libovický"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.alvr-1.9.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/ca85515a-76a9-5fd2-8e69-1892e558fdbd.pdf",
+    "abstract": "Current vision-language models leveraging contrastive learning often face limitations in developing fine-grained conceptual understanding. This is due to random negative samples during pretraining, causing almost exclusively very dissimilar concepts to be compared in the loss function. Consequently, the models struggle with fine-grained semantic differences. To address this problem, we introduce a novel pretraining method incorporating synthetic hard negative text examples. The hard negatives replace terms corresponding to visual concepts, leading to a more fine-grained visual and textual concept alignment. Further, we introduce InpaintCOCO, a new challenging dataset for assessing the fine-grained alignment of colors, objects, and sizes in vision-language models. We created the dataset using generative inpainting from COCO images by changing the visual concepts so that the images no longer match their original captions. Our results show significant improvements in fine-grained concept understanding across various vision-language datasets, including our InpaintCOCO dataset.",
+    "num_pages": 14
+}

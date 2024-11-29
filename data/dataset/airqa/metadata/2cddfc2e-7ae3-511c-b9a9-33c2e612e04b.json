@@ -1,0 +1,20 @@
+{
+    "uuid": "2cddfc2e-7ae3-511c-b9a9-33c2e612e04b",
+    "title": "TECHS: Temporal Logical Graph Networks for Explainable Extrapolation Reasoning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{lin-etal-2023-techs,\n    title = \"{TECHS}: Temporal Logical Graph Networks for Explainable Extrapolation Reasoning\",\n    author = \"Lin, Qika  and\n      Liu, Jun  and\n      Mao, Rui  and\n      Xu, Fangzhi  and\n      Cambria, Erik\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.71\",\n    doi = \"10.18653/v1/2023.acl-long.71\",\n    pages = \"1281--1293\",\n    abstract = \"Extrapolation reasoning on temporal knowledge graphs (TKGs) aims to forecast future facts based on past counterparts. There are two main challenges: (1) incorporating the complex information, including structural dependencies, temporal dynamics, and hidden logical rules; (2) implementing differentiable logical rule learning and reasoning for explainability. To this end, we propose an explainable extrapolation reasoning framework TEemporal logiCal grapH networkS (TECHS), which mainly contains a temporal graph encoder and a logical decoder. The former employs a graph convolutional network with temporal encoding and heterogeneous attention to embed topological structures and temporal dynamics. The latter integrates propositional reasoning and first-order reasoning by introducing a reasoning graph that iteratively expands to find the answer. A forward message-passing mechanism is also proposed to update node representations, and their propositional and first-order attention scores. Experimental results demonstrate that it outperforms state-of-the-art baselines.\",\n}\n",
+    "authors": [
+        "Qika Lin",
+        "Jun Liu",
+        "Rui Mao",
+        "Fangzhi Xu",
+        "Erik Cambria"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.71.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2cddfc2e-7ae3-511c-b9a9-33c2e612e04b.pdf",
+    "abstract": "Extrapolation reasoning on temporal knowledge graphs (TKGs) aims to forecast future facts based on past counterparts. There are two main challenges: (1) incorporating the complex information, including structural dependencies, temporal dynamics, and hidden logical rules; (2) implementing differentiable logical rule learning and reasoning for explainability. To this end, we propose an explainable extrapolation reasoning framework TEemporal logiCal grapH networkS (TECHS), which mainly contains a temporal graph encoder and a logical decoder. The former employs a graph convolutional network with temporal encoding and heterogeneous attention to embed topological structures and temporal dynamics. The latter integrates propositional reasoning and first-order reasoning by introducing a reasoning graph that iteratively expands to find the answer. A forward message-passing mechanism is also proposed to update node representations, and their propositional and first-order attention scores. Experimental results demonstrate that it outperforms state-of-the-art baselines.",
+    "num_pages": 13
+}

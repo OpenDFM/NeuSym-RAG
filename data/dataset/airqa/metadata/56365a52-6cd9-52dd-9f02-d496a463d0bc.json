@@ -1,0 +1,19 @@
+{
+    "uuid": "56365a52-6cd9-52dd-9f02-d496a463d0bc",
+    "title": "DimonGen: Diversified Generative Commonsense Reasoning for Explaining Concept Relationships",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{liu-etal-2023-dimongen,\n    title = \"{D}imon{G}en: Diversified Generative Commonsense Reasoning for Explaining Concept Relationships\",\n    author = \"Liu, Chenzhengyi  and\n      Huang, Jie  and\n      Zhu, Kerui  and\n      Chang, Kevin Chen-Chuan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.260\",\n    doi = \"10.18653/v1/2023.acl-long.260\",\n    pages = \"4719--4731\",\n    abstract = \"In this paper, we propose DimonGen, which aims to generate diverse sentences describing concept relationships in various everyday scenarios. To support this, we first create a benchmark dataset for this task by adapting the existing CommonGen dataset. We then propose a two-stage model called MoREE to generate the target sentences. MoREE consists of a mixture of retrievers model that retrieves diverse context sentences related to the given concepts, and a mixture of generators model that generates diverse sentences based on the retrieved contexts. We conduct experiments on the DimonGen task and show that MoREE outperforms strong baselines in terms of both the quality and diversity of the generated sentences. Our results demonstrate that MoREE is able to generate diverse sentences that reflect different relationships between concepts, leading to a comprehensive understanding of concept relationships.\",\n}\n",
+    "authors": [
+        "Chenzhengyi Liu",
+        "Jie Huang",
+        "Kerui Zhu",
+        "Kevin Chen-Chuan Chang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.260.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/56365a52-6cd9-52dd-9f02-d496a463d0bc.pdf",
+    "abstract": "In this paper, we propose DimonGen, which aims to generate diverse sentences describing concept relationships in various everyday scenarios. To support this, we first create a benchmark dataset for this task by adapting the existing CommonGen dataset. We then propose a two-stage model called MoREE to generate the target sentences. MoREE consists of a mixture of retrievers model that retrieves diverse context sentences related to the given concepts, and a mixture of generators model that generates diverse sentences based on the retrieved contexts. We conduct experiments on the DimonGen task and show that MoREE outperforms strong baselines in terms of both the quality and diversity of the generated sentences. Our results demonstrate that MoREE is able to generate diverse sentences that reflect different relationships between concepts, leading to a comprehensive understanding of concept relationships.",
+    "num_pages": 13
+}

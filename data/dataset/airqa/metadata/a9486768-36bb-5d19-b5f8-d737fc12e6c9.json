@@ -1,0 +1,26 @@
+{
+    "uuid": "a9486768-36bb-5d19-b5f8-d737fc12e6c9",
+    "title": "Model Composition for Multimodal Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2024-model,\n    title = \"Model Composition for Multimodal Large Language Models\",\n    author = \"Chen, Chi  and\n      Du, Yiyang  and\n      Fang, Zheng  and\n      Wang, Ziyue  and\n      Luo, Fuwen  and\n      Li, Peng  and\n      Yan, Ming  and\n      Zhang, Ji  and\n      Huang, Fei  and\n      Sun, Maosong  and\n      Liu, Yang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.606\",\n    doi = \"10.18653/v1/2024.acl-long.606\",\n    pages = \"11246--11262\",\n    abstract = \"Recent developments in Multimodal Large Language Models (MLLMs) have shown rapid progress, moving towards the goal of creating versatile MLLMs that understand inputs from various modalities. However, existing methods typically rely on joint training with paired multimodal instruction data, which is resource-intensive and challenging to extend to new modalities. In this paper, we propose a new paradigm through the model composition of existing MLLMs to create a new model that retains the modal understanding capabilities of each original model. Our basic implementation, NaiveMC, demonstrates the effectiveness of this paradigm by reusing modality encoders and merging LLM parameters. Furthermore, we introduce DAMC to address parameter interference and mismatch issues during the merging process, thereby enhancing the model performance. To facilitate research in this area, we propose MCUB, a benchmark for assessing ability of MLLMs to understand inputs from diverse modalities. Experiments on this benchmark and four other multimodal understanding tasks show significant improvements over baselines, proving that model composition can create a versatile model capable of processing inputs from multiple modalities.\",\n}\n",
+    "authors": [
+        "Chi Chen",
+        "Yiyang Du",
+        "Zheng Fang",
+        "Ziyue Wang",
+        "Fuwen Luo",
+        "Peng Li",
+        "Ming Yan",
+        "Ji Zhang",
+        "Fei Huang",
+        "Maosong Sun",
+        "Yang Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.606.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a9486768-36bb-5d19-b5f8-d737fc12e6c9.pdf",
+    "abstract": "Recent developments in Multimodal Large Language Models (MLLMs) have shown rapid progress, moving towards the goal of creating versatile MLLMs that understand inputs from various modalities. However, existing methods typically rely on joint training with paired multimodal instruction data, which is resource-intensive and challenging to extend to new modalities. In this paper, we propose a new paradigm through the model composition of existing MLLMs to create a new model that retains the modal understanding capabilities of each original model. Our basic implementation, NaiveMC, demonstrates the effectiveness of this paradigm by reusing modality encoders and merging LLM parameters. Furthermore, we introduce DAMC to address parameter interference and mismatch issues during the merging process, thereby enhancing the model performance. To facilitate research in this area, we propose MCUB, a benchmark for assessing ability of MLLMs to understand inputs from diverse modalities. Experiments on this benchmark and four other multimodal understanding tasks show significant improvements over baselines, proving that model composition can create a versatile model capable of processing inputs from multiple modalities.",
+    "num_pages": 17
+}

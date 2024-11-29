@@ -1,0 +1,25 @@
+{
+    "uuid": "d6663629-b8d2-5239-ada8-78a47892a967",
+    "title": "Sharing Encoder Representations across Languages, Domains and Tasks in Large-Scale Spoken Language Understanding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{hueser-etal-2023-sharing,\n    title = \"Sharing Encoder Representations across Languages, Domains and Tasks in Large-Scale Spoken Language Understanding\",\n    author = \"Hueser, Jonathan  and\n      Gaspers, Judith  and\n      Gueudre, Thomas  and\n      Prakash, Chandana  and\n      Cao, Jin  and\n      Sorokin, Daniil  and\n      Do, Quynh  and\n      Anastassacos, Nicolas  and\n      Falke, Tobias  and\n      Gojayev, Turan\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.43\",\n    doi = \"10.18653/v1/2023.acl-industry.43\",\n    pages = \"447--456\",\n    abstract = \"Leveraging representations from pre-trained transformer-based encoders achieves state-of-the-art performance on numerous NLP tasks. Larger encoders can improve accuracy for spoken language understanding (SLU) but are challenging to use given the inference latency constraints of online systems (especially on CPU machines).We evaluate using a larger 170M parameter BERT encoder that shares representations across languages, domains and tasks for SLU compared to using smaller 17M parameter BERT encoders with language-, domain- and task-decoupled finetuning.Running inference with a larger shared encoder on GPU is latency neutral and reduces infrastructure cost compared to running inference for decoupled smaller encoders on CPU machines. The larger shared encoder reduces semantic error rates by 4.62{\\%} for test sets representing user requests to voice-controlled devices and 5.79{\\%} on the tail of the test sets on average across four languages.\",\n}\n",
+    "authors": [
+        "Jonathan Hueser",
+        "Judith Gaspers",
+        "Thomas Gueudre",
+        "Chandana Prakash",
+        "Jin Cao",
+        "Daniil Sorokin",
+        "Quynh Do",
+        "Nicolas Anastassacos",
+        "Tobias Falke",
+        "Turan Gojayev"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.43.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d6663629-b8d2-5239-ada8-78a47892a967.pdf",
+    "abstract": "Leveraging representations from pre-trained transformer-based encoders achieves state-of-the-art performance on numerous NLP tasks. Larger encoders can improve accuracy for spoken language understanding (SLU) but are challenging to use given the inference latency constraints of online systems (especially on CPU machines).We evaluate using a larger 170M parameter BERT encoder that shares representations across languages, domains and tasks for SLU compared to using smaller 17M parameter BERT encoders with language-, domain- and task-decoupled finetuning.Running inference with a larger shared encoder on GPU is latency neutral and reduces infrastructure cost compared to running inference for decoupled smaller encoders on CPU machines. The larger shared encoder reduces semantic error rates by 4.62% for test sets representing user requests to voice-controlled devices and 5.79% on the tail of the test sets on average across four languages.",
+    "num_pages": 10
+}

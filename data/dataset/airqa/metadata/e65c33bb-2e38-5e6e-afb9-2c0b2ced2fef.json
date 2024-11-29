@@ -1,0 +1,22 @@
+{
+    "uuid": "e65c33bb-2e38-5e6e-afb9-2c0b2ced2fef",
+    "title": "FiDO: Fusion-in-Decoder optimized for stronger performance and faster inference",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{de-jong-etal-2023-fido,\n    title = \"{F}i{DO}: Fusion-in-Decoder optimized for stronger performance and faster inference\",\n    author = \"de Jong, Michiel  and\n      Zemlyanskiy, Yury  and\n      Ainslie, Joshua  and\n      FitzGerald, Nicholas  and\n      Sanghai, Sumit  and\n      Sha, Fei  and\n      Cohen, William\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.732\",\n    doi = \"10.18653/v1/2023.findings-acl.732\",\n    pages = \"11534--11547\",\n    abstract = \"Fusion-in-Decoder (FiD) is a powerful retrieval-augmented language model that sets the state-of-the-art on many knowledge-intensive NLP tasks. However, the architecture used for FiD was chosen by making minimal modifications to a standard T5 model, which our analysis shows to be highly suboptimal for a retrieval-augmented model. In particular, FiD allocates the bulk of FLOPs to the encoder, while the majority of inference time results from memory bandwidth constraints in the decoder. We propose two simple changes to the FiD architecture to alleviate memory bandwidth constraints, and speed up inference by 7x. This allows us to use a much larger decoder at modest cost. We denote FiD with the above modifications as FiDO, and show that it strongly improves performance over existing FiD models for a wide range of inference budgets. For example, FiDO-Large-XXL performs faster inference than FiD-Base and achieves better performance than FiD-Large.\",\n}\n",
+    "authors": [
+        "Michiel de Jong",
+        "Yury Zemlyanskiy",
+        "Joshua Ainslie",
+        "Nicholas FitzGerald",
+        "Sumit Sanghai",
+        "Fei Sha",
+        "William Cohen"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.732.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/e65c33bb-2e38-5e6e-afb9-2c0b2ced2fef.pdf",
+    "abstract": "Fusion-in-Decoder (FiD) is a powerful retrieval-augmented language model that sets the state-of-the-art on many knowledge-intensive NLP tasks. However, the architecture used for FiD was chosen by making minimal modifications to a standard T5 model, which our analysis shows to be highly suboptimal for a retrieval-augmented model. In particular, FiD allocates the bulk of FLOPs to the encoder, while the majority of inference time results from memory bandwidth constraints in the decoder. We propose two simple changes to the FiD architecture to alleviate memory bandwidth constraints, and speed up inference by 7x. This allows us to use a much larger decoder at modest cost. We denote FiD with the above modifications as FiDO, and show that it strongly improves performance over existing FiD models for a wide range of inference budgets. For example, FiDO-Large-XXL performs faster inference than FiD-Base and achieves better performance than FiD-Large.",
+    "num_pages": 14
+}

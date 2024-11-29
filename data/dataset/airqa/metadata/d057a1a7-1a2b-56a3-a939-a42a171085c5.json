@@ -1,0 +1,18 @@
+{
+    "uuid": "d057a1a7-1a2b-56a3-a939-a42a171085c5",
+    "title": "Extracting Multi-valued Relations from Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)",
+    "bibtex": "@inproceedings{singhania-etal-2023-extracting,\n    title = \"Extracting Multi-valued Relations from Language Models\",\n    author = \"Singhania, Sneha  and\n      Razniewski, Simon  and\n      Weikum, Gerhard\",\n    editor = \"Can, Burcu  and\n      Mozes, Maximilian  and\n      Cahyawijaya, Samuel  and\n      Saphra, Naomi  and\n      Kassner, Nora  and\n      Ravfogel, Shauli  and\n      Ravichander, Abhilasha  and\n      Zhao, Chen  and\n      Augenstein, Isabelle  and\n      Rogers, Anna  and\n      Cho, Kyunghyun  and\n      Grefenstette, Edward  and\n      Voita, Lena\",\n    booktitle = \"Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.repl4nlp-1.12\",\n    doi = \"10.18653/v1/2023.repl4nlp-1.12\",\n    pages = \"139--154\",\n    abstract = \"The widespread usage of latent language representations via pre-trained language models (LMs) suggests that they are a promising source of structured knowledge. However, existing methods focus only on a single object per subject-relation pair, even though often multiple objects are correct. To overcome this limitation, we analyze these representations for their potential to yield materialized multi-object relational knowledge. We formulate the problem as a rank-then-select task. For ranking candidate objects, we evaluate existing prompting techniques and propose new ones incorporating domain knowledge. Among the selection methods, we find that choosing objects with a likelihood above a learned relation-specific threshold gives a 49.5{\\%} F1 score. Our results highlight the difficulty of employing LMs for the multi-valued slot-filling task, and pave the way for further research on extracting relational knowledge from latent language representations.\",\n}\n",
+    "authors": [
+        "Sneha Singhania",
+        "Simon Razniewski",
+        "Gerhard Weikum"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.repl4nlp-1.12.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d057a1a7-1a2b-56a3-a939-a42a171085c5.pdf",
+    "abstract": "The widespread usage of latent language representations via pre-trained language models (LMs) suggests that they are a promising source of structured knowledge. However, existing methods focus only on a single object per subject-relation pair, even though often multiple objects are correct. To overcome this limitation, we analyze these representations for their potential to yield materialized multi-object relational knowledge. We formulate the problem as a rank-then-select task. For ranking candidate objects, we evaluate existing prompting techniques and propose new ones incorporating domain knowledge. Among the selection methods, we find that choosing objects with a likelihood above a learned relation-specific threshold gives a 49.5% F1 score. Our results highlight the difficulty of employing LMs for the multi-valued slot-filling task, and pave the way for further research on extracting relational knowledge from latent language representations.",
+    "num_pages": 16
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "b2cb9191-4b78-52ca-b99d-d37e471198ab",
+    "title": "IMBERT: Making BERT Immune to Insertion-based Backdoor Attacks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 3rd Workshop on Trustworthy Natural Language Processing (TrustNLP 2023)",
+    "bibtex": "@inproceedings{he-etal-2023-imbert,\n    title = \"{IMBERT}: Making {BERT} Immune to Insertion-based Backdoor Attacks\",\n    author = \"He, Xuanli  and\n      Wang, Jun  and\n      Rubinstein, Benjamin  and\n      Cohn, Trevor\",\n    editor = \"Ovalle, Anaelia  and\n      Chang, Kai-Wei  and\n      Mehrabi, Ninareh  and\n      Pruksachatkun, Yada  and\n      Galystan, Aram  and\n      Dhamala, Jwala  and\n      Verma, Apurv  and\n      Cao, Trista  and\n      Kumar, Anoop  and\n      Gupta, Rahul\",\n    booktitle = \"Proceedings of the 3rd Workshop on Trustworthy Natural Language Processing (TrustNLP 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.trustnlp-1.25\",\n    doi = \"10.18653/v1/2023.trustnlp-1.25\",\n    pages = \"287--301\",\n    abstract = \"Backdoor attacks are an insidious security threat against machine learning models. Adversaries can manipulate the predictions of compromised models by inserting triggers into the training phase. Various backdoor attacks have been devised which can achieve nearly perfect attack success without affecting model predictions for clean inputs. Means of mitigating such vulnerabilities are underdeveloped, especially in natural language processing. To fill this gap, we introduce IMBERT, which uses either gradients or self-attention scores derived from victim models to self-defend against backdoor attacks at inference time. Our empirical studies demonstrate that IMBERT can effectively identify up to 98.5{\\%} of inserted triggers. Thus, it significantly reduces the attack success rate while attaining competitive accuracy on the clean dataset across widespread insertion-based attacks compared to two baselines. Finally, we show that our approach is model-agnostic, and can be easily ported to several pre-trained transformer models.\",\n}\n",
+    "authors": [
+        "Xuanli He",
+        "Jun Wang",
+        "Benjamin Rubinstein",
+        "Trevor Cohn"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.trustnlp-1.25.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b2cb9191-4b78-52ca-b99d-d37e471198ab.pdf",
+    "abstract": "Backdoor attacks are an insidious security threat against machine learning models. Adversaries can manipulate the predictions of compromised models by inserting triggers into the training phase. Various backdoor attacks have been devised which can achieve nearly perfect attack success without affecting model predictions for clean inputs. Means of mitigating such vulnerabilities are underdeveloped, especially in natural language processing. To fill this gap, we introduce IMBERT, which uses either gradients or self-attention scores derived from victim models to self-defend against backdoor attacks at inference time. Our empirical studies demonstrate that IMBERT can effectively identify up to 98.5% of inserted triggers. Thus, it significantly reduces the attack success rate while attaining competitive accuracy on the clean dataset across widespread insertion-based attacks compared to two baselines. Finally, we show that our approach is model-agnostic, and can be easily ported to several pre-trained transformer models.",
+    "num_pages": 15
+}

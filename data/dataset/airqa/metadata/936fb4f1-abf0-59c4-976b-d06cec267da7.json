@@ -1,0 +1,21 @@
+{
+    "uuid": "936fb4f1-abf0-59c4-976b-d06cec267da7",
+    "title": "FinanceMATH: Knowledge-Intensive Math Reasoning in Finance Domains",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhao-etal-2024-knowledgefmath,\n    title = \"FinanceMATH: Knowledge-Intensive Math Reasoning in Finance Domains\",\n    author = \"Zhao, Yilun  and\n      Liu, Hongjun  and\n      Long, Yitao  and\n      Zhang, Rui  and\n      Zhao, Chen  and\n      Cohan, Arman\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.693\",\n    doi = \"10.18653/v1/2024.acl-long.693\",\n    pages = \"12841--12858\",\n    abstract = \"We introduce FinanceMath, a novel benchmark designed to evaluate LLMs' capabilities in solving knowledge-intensive math reasoning problems. Compared to prior works, this study features three core advancements. First, FinanceMath includes 1,200 problems with a hybrid of textual and tabular content. These problems require college-level knowledge in the finance domain for effective resolution. Second, we provide expert-annotated, detailed solution references in Python program format, ensuring a high-quality benchmark for LLM assessment. We also construct a finance-domain knowledge bank and investigate various knowledge integration strategies. Finally, we evaluate a wide spectrum of 44 LLMs with both Chain-of-Thought and Program-of-Thought prompting methods. Our experimental results reveal that the current best-performing system (i.e., GPT-4o) achieves only 60.9{\\%} accuracy using CoT prompting, leaving substantial room for improvement. Moreover, while augmenting LLMs with external knowledge can improve model performance (e.g., from 47.5{\\%} to 54.5{\\%} for Gemini-1.5-Pro), their accuracy remains significantly lower than the estimated human expert performance of 92{\\%}. We believe that FinanceMath can advance future research in the area of domain-specific knowledge retrieval and integration, particularly within the context of solving reasoning-intensive tasks.\",\n}\n",
+    "authors": [
+        "Yilun Zhao",
+        "Hongjun Liu",
+        "Yitao Long",
+        "Rui Zhang",
+        "Chen Zhao",
+        "Arman Cohan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.693.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/936fb4f1-abf0-59c4-976b-d06cec267da7.pdf",
+    "abstract": "We introduce FinanceMath, a novel benchmark designed to evaluate LLMs' capabilities in solving knowledge-intensive math reasoning problems. Compared to prior works, this study features three core advancements. First, FinanceMath includes 1,200 problems with a hybrid of textual and tabular content. These problems require college-level knowledge in the finance domain for effective resolution. Second, we provide expert-annotated, detailed solution references in Python program format, ensuring a high-quality benchmark for LLM assessment. We also construct a finance-domain knowledge bank and investigate various knowledge integration strategies. Finally, we evaluate a wide spectrum of 44 LLMs with both Chain-of-Thought and Program-of-Thought prompting methods. Our experimental results reveal that the current best-performing system (i.e., GPT-4o) achieves only 60.9% accuracy using CoT prompting, leaving substantial room for improvement. Moreover, while augmenting LLMs with external knowledge can improve model performance (e.g., from 47.5% to 54.5% for Gemini-1.5-Pro), their accuracy remains significantly lower than the estimated human expert performance of 92%. We believe that FinanceMath can advance future research in the area of domain-specific knowledge retrieval and integration, particularly within the context of solving reasoning-intensive tasks.",
+    "num_pages": 18
+}

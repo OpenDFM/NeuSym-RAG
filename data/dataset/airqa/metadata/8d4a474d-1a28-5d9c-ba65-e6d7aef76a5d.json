@@ -1,0 +1,21 @@
+{
+    "uuid": "8d4a474d-1a28-5d9c-ba65-e6d7aef76a5d",
+    "title": "A Question Answering Benchmark Database for Hungarian",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII)",
+    "bibtex": "@inproceedings{novak-etal-2023-question,\n    title = \"A Question Answering Benchmark Database for {H}ungarian\",\n    author = \"Nov{\\'a}k, Attila  and\n      Nov{\\'a}k, Borb{\\'a}la  and\n      Zombori, Tam{\\'a}s  and\n      Szab{\\'o}, Gerg{\\H{o}}  and\n      Sz{\\'a}nt{\\'o}, Zsolt  and\n      Farkas, Rich{\\'a}rd\",\n    editor = \"Prange, Jakob  and\n      Friedrich, Annemarie\",\n    booktitle = \"Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.law-1.19\",\n    doi = \"10.18653/v1/2023.law-1.19\",\n    pages = \"188--198\",\n    abstract = \"Within the research presented in this article, we created a new question answering benchmark database for Hungarian called MILQA. When creating the dataset, we basically followed the principles of the English SQuAD 2.0, however, like in some more recent English question answering datasets, we introduced a number of innovations beyond SQuAD: e.g., yes/no-questions, list-like answers consisting of several text spans, long answers, questions requiring calculation and other question types where you cannot simply copy the answer from the text. For all these non-extractive question types, the pragmatically adequate form of the answer was also added to make the training of generative models possible. We implemented and evaluated a set of baseline retrieval and answer span extraction models on the dataset. BM25 performed better than any vector-based solution for retrieval. Cross-lingual transfer from English significantly improved span extraction models.\",\n}\n",
+    "authors": [
+        "Attila Novák",
+        "Borbála Novák",
+        "Tamás Zombori",
+        "Gergő Szabó",
+        "Zsolt Szántó",
+        "Richárd Farkas"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.law-1.19.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8d4a474d-1a28-5d9c-ba65-e6d7aef76a5d.pdf",
+    "abstract": "Within the research presented in this article, we created a new question answering benchmark database for Hungarian called MILQA. When creating the dataset, we basically followed the principles of the English SQuAD 2.0, however, like in some more recent English question answering datasets, we introduced a number of innovations beyond SQuAD: e.g., yes/no-questions, list-like answers consisting of several text spans, long answers, questions requiring calculation and other question types where you cannot simply copy the answer from the text. For all these non-extractive question types, the pragmatically adequate form of the answer was also added to make the training of generative models possible. We implemented and evaluated a set of baseline retrieval and answer span extraction models on the dataset. BM25 performed better than any vector-based solution for retrieval. Cross-lingual transfer from English significantly improved span extraction models.",
+    "num_pages": 11
+}

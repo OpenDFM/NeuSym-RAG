@@ -1,0 +1,20 @@
+{
+    "uuid": "2425c057-dcd9-5d31-a076-272964ac2b30",
+    "title": "LightFormer: Light-weight Transformer Using SVD-based Weight Transfer and Parameter Sharing",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{lv-etal-2023-lightformer,\n    title = \"{L}ight{F}ormer: Light-weight Transformer Using {SVD}-based Weight Transfer and Parameter Sharing\",\n    author = \"Lv, Xiuqing  and\n      Zhang, Peng  and\n      Li, Sunzhu  and\n      Gan, Guobing  and\n      Sun, Yueheng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.656\",\n    doi = \"10.18653/v1/2023.findings-acl.656\",\n    pages = \"10323--10335\",\n    abstract = \"Transformer has become an important technique for natural language processing tasks with great success. However, it usually requires huge storage space and computational cost, making it difficult to be deployed on resource-constrained edge devices. To compress and accelerate Transformer, we propose LightFormer, which adopts a low-rank factorization initialized by SVD-based weight transfer and parameter sharing. The SVD-based weight transfer can effectively utilize the well-trained Transformer parameter knowledge to speed up the model convergence, and effectively alleviate the low-rank bottleneck problem combined with parameter sharing. We validate our method on machine translation, text summarization and text classification tasks. Experiments show that on IWSLT{'}14 De-En and WMT{'}14 En-De, LightFormer achieves similar performance to the baseline Transformer with 3.8 times and 1.8 times fewer parameters, and achieves 2.3 times speedup and 1.5 times speedup respectively, generally outperforming recent light-weight Transformers.\",\n}\n",
+    "authors": [
+        "Xiuqing Lv",
+        "Peng Zhang",
+        "Sunzhu Li",
+        "Guobing Gan",
+        "Yueheng Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.656.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2425c057-dcd9-5d31-a076-272964ac2b30.pdf",
+    "abstract": "Transformer has become an important technique for natural language processing tasks with great success. However, it usually requires huge storage space and computational cost, making it difficult to be deployed on resource-constrained edge devices. To compress and accelerate Transformer, we propose LightFormer, which adopts a low-rank factorization initialized by SVD-based weight transfer and parameter sharing. The SVD-based weight transfer can effectively utilize the well-trained Transformer parameter knowledge to speed up the model convergence, and effectively alleviate the low-rank bottleneck problem combined with parameter sharing. We validate our method on machine translation, text summarization and text classification tasks. Experiments show that on IWSLT’14 De-En and WMT’14 En-De, LightFormer achieves similar performance to the baseline Transformer with 3.8 times and 1.8 times fewer parameters, and achieves 2.3 times speedup and 1.5 times speedup respectively, generally outperforming recent light-weight Transformers.",
+    "num_pages": 13
+}

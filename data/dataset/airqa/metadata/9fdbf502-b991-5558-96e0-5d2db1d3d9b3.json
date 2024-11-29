@@ -1,0 +1,21 @@
+{
+    "uuid": "9fdbf502-b991-5558-96e0-5d2db1d3d9b3",
+    "title": "Structure-Discourse Hierarchical Graph for Conditional Question Answering on Long Documents",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{du-etal-2023-structure,\n    title = \"Structure-Discourse Hierarchical Graph for Conditional Question Answering on Long Documents\",\n    author = \"Du, Haowei  and\n      Feng, Yansong  and\n      Li, Chen  and\n      Li, Yang  and\n      Lan, Yunshi  and\n      Zhao, Dongyan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.391\",\n    doi = \"10.18653/v1/2023.findings-acl.391\",\n    pages = \"6282--6293\",\n    abstract = \"Conditional question answering on long documents aims to find probable answers and identify conditions that need to be satisfied to make the answers correct over long documents. Existing approaches solve this task by segmenting long documents into multiple sections, and attending information at global and local tokens to predict the answers and corresponding conditions. However, the natural structure of the document and discourse relations between sentences in each document section are ignored, which are crucial for condition retrieving across sections, as well as logical interaction over the question and conditions. To address this issue, this paper constructs a Structure-Discourse Hierarchical Graph (SDHG) and conducts bottom-up information propagation. Firstly we build the sentence-level discourse graphs for each section and encode the discourse relations by graph attention. Secondly, we construct a section-level structure graph based on natural structures, and conduct interactions over the question and contexts. Finally different levels of representations are integrated into jointly answer and condition decoding. The experiments on the benchmark ConditionalQA shows our approach gains over the prior state-of-the-art, by 3.0 EM score and 2.4 F1 score on answer measuring, as well as 2.2 EM score and 1.9 F1 score on jointly answer and condition measuring.\",\n}\n",
+    "authors": [
+        "Haowei Du",
+        "Yansong Feng",
+        "Chen Li",
+        "Yang Li",
+        "Yunshi Lan",
+        "Dongyan Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.391.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9fdbf502-b991-5558-96e0-5d2db1d3d9b3.pdf",
+    "abstract": "Conditional question answering on long documents aims to find probable answers and identify conditions that need to be satisfied to make the answers correct over long documents. Existing approaches solve this task by segmenting long documents into multiple sections, and attending information at global and local tokens to predict the answers and corresponding conditions. However, the natural structure of the document and discourse relations between sentences in each document section are ignored, which are crucial for condition retrieving across sections, as well as logical interaction over the question and conditions. To address this issue, this paper constructs a Structure-Discourse Hierarchical Graph (SDHG) and conducts bottom-up information propagation. Firstly we build the sentence-level discourse graphs for each section and encode the discourse relations by graph attention. Secondly, we construct a section-level structure graph based on natural structures, and conduct interactions over the question and contexts. Finally different levels of representations are integrated into jointly answer and condition decoding. The experiments on the benchmark ConditionalQA shows our approach gains over the prior state-of-the-art, by 3.0 EM score and 2.4 F1 score on answer measuring, as well as 2.2 EM score and 1.9 F1 score on jointly answer and condition measuring.",
+    "num_pages": 12
+}

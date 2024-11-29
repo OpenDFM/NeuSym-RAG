@@ -1,0 +1,27 @@
+{
+    "uuid": "8eac26cb-5ab7-52c9-aab9-ade9c9aa85d0",
+    "title": "IndicLLMSuite: A Blueprint for Creating Pre-training and Fine-Tuning Datasets for Indian Languages",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{khan-etal-2024-indicllmsuite,\n    title = \"{I}ndic{LLMS}uite: A Blueprint for Creating Pre-training and Fine-Tuning Datasets for {I}ndian Languages\",\n    author = \"Khan, Mohammed  and\n      Mehta, Priyam  and\n      Sankar, Ananth  and\n      Kumaravelan, Umashankar  and\n      Doddapaneni, Sumanth  and\n      B, Suriyaprasaad  and\n      G, Varun  and\n      Jain, Sparsh  and\n      Kunchukuttan, Anoop  and\n      Kumar, Pratyush  and\n      Dabre, Raj  and\n      Khapra, Mitesh\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.843\",\n    doi = \"10.18653/v1/2024.acl-long.843\",\n    pages = \"15831--15879\",\n    abstract = \"Despite the considerable advancements in English LLMs, the progress in building comparable models for other languages has been hindered due to the scarcity of tailored resources. Our work aims to bridge this divide by introducing an expansive suite of resources specifically designed for the development of Indic LLMs, covering 22 languages, containing a total of 251B tokens and 74.8M instruction-response pairs. Recognizing the importance of both data quality and quantity, our approach combines highly curated manually verified data, unverified yet valuable data, and synthetic data. We build a clean, open-source pipeline for curating pre-training data from diverse sources, including websites, PDFs, and videos, incorporating best practices for crawling, cleaning, flagging, and deduplication. For instruction-fine tuning, we amalgamate existing Indic datasets, translate/transliterate English datasets into Indian languages, and utilize LLaMa2 and Mixtral models to create conversations grounded in articles from Indian Wikipedia and Wikihow. Additionally, we address toxicity alignment by generating toxic prompts for multiple scenarios and then generate non-toxic responses by feeding these toxic prompts to an aligned LLaMa2 model. We hope that the datasets, tools, and resources released as a part of this work will not only propel the research and development of Indic LLMs but also establish an open-source blueprint for extending such efforts to other languages.\",\n}\n",
+    "authors": [
+        "Mohammed Khan",
+        "Priyam Mehta",
+        "Ananth Sankar",
+        "Umashankar Kumaravelan",
+        "Sumanth Doddapaneni",
+        "Suriyaprasaad B",
+        "Varun G",
+        "Sparsh Jain",
+        "Anoop Kunchukuttan",
+        "Pratyush Kumar",
+        "Raj Dabre",
+        "Mitesh Khapra"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.843.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/8eac26cb-5ab7-52c9-aab9-ade9c9aa85d0.pdf",
+    "abstract": "Despite the considerable advancements in English LLMs, the progress in building comparable models for other languages has been hindered due to the scarcity of tailored resources. Our work aims to bridge this divide by introducing an expansive suite of resources specifically designed for the development of Indic LLMs, covering 22 languages, containing a total of 251B tokens and 74.8M instruction-response pairs. Recognizing the importance of both data quality and quantity, our approach combines highly curated manually verified data, unverified yet valuable data, and synthetic data. We build a clean, open-source pipeline for curating pre-training data from diverse sources, including websites, PDFs, and videos, incorporating best practices for crawling, cleaning, flagging, and deduplication. For instruction-fine tuning, we amalgamate existing Indic datasets, translate/transliterate English datasets into Indian languages, and utilize LLaMa2 and Mixtral models to create conversations grounded in articles from Indian Wikipedia and Wikihow. Additionally, we address toxicity alignment by generating toxic prompts for multiple scenarios and then generate non-toxic responses by feeding these toxic prompts to an aligned LLaMa2 model. We hope that the datasets, tools, and resources released as a part of this work will not only propel the research and development of Indic LLMs but also establish an open-source blueprint for extending such efforts to other languages.",
+    "num_pages": 49
+}

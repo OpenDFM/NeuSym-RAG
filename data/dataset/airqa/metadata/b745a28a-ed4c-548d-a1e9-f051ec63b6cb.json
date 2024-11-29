@@ -1,0 +1,17 @@
+{
+    "uuid": "b745a28a-ed4c-548d-a1e9-f051ec63b6cb",
+    "title": "Less is KEN: a Universal and Simple Non-Parametric Pruning Algorithm for Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{mastromattei-zanzotto-2024-less,\n    title = \"Less is {KEN}: a Universal and Simple Non-Parametric Pruning Algorithm for Large Language Models\",\n    author = \"Mastromattei, Michele  and\n      Zanzotto, Fabio Massimo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.674\",\n    doi = \"10.18653/v1/2024.findings-acl.674\",\n    pages = \"11361--11374\",\n}\n",
+    "authors": [
+        "Michele Mastromattei",
+        "Fabio Massimo Zanzotto"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.674.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/b745a28a-ed4c-548d-a1e9-f051ec63b6cb.pdf",
+    "abstract": "Neural network pruning has become increasingly crucial due to the complexity of these models and their widespread use in various fields. Existing pruning algorithms often suffer from limitations such as architecture specificity, excessive complexity and reliance on demanding calculations, rendering them impractical for real-world applications. This paper introduces KEN: a straightforward, universal and unstructured pruning algorithm based on Kernel Density Estimation (KDE). KEN1 aims to construct optimized transformers by selectively preserving the most significant parameters while restoring others to their pre-training state. This strategy preserves model performance while enabling storage of only the optimized subnetwork, leading to substantial memory savings. Extensive evaluations across seven different LLMs demonstrate that KEN achieves equal or better performance than their original unpruned versions, with a minimum parameter reduction of 25%. Furthermore, in-depth comparisons with established pruning and PEFT algorithms confirm KEN effectiveness. We further introduce KENviz, an explainable tool that visualizes the optimized model composition achieved by KEN from different points of view.",
+    "num_pages": 14
+}

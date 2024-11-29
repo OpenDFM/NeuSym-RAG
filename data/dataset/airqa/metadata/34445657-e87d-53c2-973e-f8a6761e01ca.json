@@ -1,0 +1,26 @@
+{
+    "uuid": "34445657-e87d-53c2-973e-f8a6761e01ca",
+    "title": "CodeScope: An Execution-based Multilingual Multitask Multidimensional Benchmark for Evaluating LLMs on Code Understanding and Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yan-etal-2024-codescope,\n    title = \"{C}ode{S}cope: An Execution-based Multilingual Multitask Multidimensional Benchmark for Evaluating {LLM}s on Code Understanding and Generation\",\n    author = \"Yan, Weixiang  and\n      Liu, Haitian  and\n      Wang, Yunkun  and\n      Li, Yunzhe  and\n      Chen, Qian  and\n      Wang, Wen  and\n      Lin, Tingyu  and\n      Zhao, Weishan  and\n      Zhu, Li  and\n      Sundaram, Hari  and\n      Deng, Shuiguang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.301\",\n    doi = \"10.18653/v1/2024.acl-long.301\",\n    pages = \"5511--5558\",\n    abstract = \"Large Language Models (LLMs) have demonstrated remarkable performance on assisting humans in programming and facilitating programming automation. However, existing benchmarks for evaluating the code understanding and generation capacities of LLMs suffer from severe limitations. First, most benchmarks are insufficient as they focus on a narrow range of popular programming languages and specific tasks, whereas real-world software development scenarios show a critical need to implement systems with multilingual and multitask programming environments to satisfy diverse requirements. Second, most benchmarks fail to consider the actual executability and the consistency of execution results of the generated code. To bridge these gaps between existing benchmarks and expectations from practical applications, we introduce **CodeScope**, an execution-based, multilingual, multitask, multidimensional evaluation benchmark for comprehensively measuring LLM capabilities on coding tasks. CodeScope covers **43 programming languages** and **eight coding tasks**. It evaluates the coding performance of LLMs from three dimensions (perspectives): **length**, **difficulty**, and **efficiency**. To facilitate execution-based evaluations of code generation, we develop **MultiCodeEngine**, an automated code execution engine that supports 14 programming languages. Finally, we systematically evaluate and analyze eight mainstream LLMs and demonstrate the superior breadth and challenges of CodeScope for evaluating LLMs on code understanding and generation tasks compared to other benchmarks. The CodeScope benchmark and code are publicly available at https://github.com/WeixiangYAN/CodeScope.\",\n}\n",
+    "authors": [
+        "Weixiang Yan",
+        "Haitian Liu",
+        "Yunkun Wang",
+        "Yunzhe Li",
+        "Qian Chen",
+        "Wen Wang",
+        "Tingyu Lin",
+        "Weishan Zhao",
+        "Li Zhu",
+        "Hari Sundaram",
+        "Shuiguang Deng"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.301.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/34445657-e87d-53c2-973e-f8a6761e01ca.pdf",
+    "abstract": "Large Language Models (LLMs) have demonstrated remarkable performance on assisting humans in programming and facilitating programming automation. However, existing benchmarks for evaluating the code understanding and generation capacities of LLMs suffer from severe limitations. First, most benchmarks are insufficient as they focus on a narrow range of popular programming languages and specific tasks, whereas real-world software development scenarios show a critical need to implement systems with multilingual and multitask programming environments to satisfy diverse requirements. Second, most benchmarks fail to consider the actual executability and the consistency of execution results of the generated code. To bridge these gaps between existing benchmarks and expectations from practical applications, we introduce **CodeScope**, an execution-based, multilingual, multitask, multidimensional evaluation benchmark for comprehensively measuring LLM capabilities on coding tasks. CodeScope covers **43 programming languages** and **eight coding tasks**. It evaluates the coding performance of LLMs from three dimensions (perspectives): **length**, **difficulty**, and **efficiency**. To facilitate execution-based evaluations of code generation, we develop **MultiCodeEngine**, an automated code execution engine that supports 14 programming languages. Finally, we systematically evaluate and analyze eight mainstream LLMs and demonstrate the superior breadth and challenges of CodeScope for evaluating LLMs on code understanding and generation tasks compared to other benchmarks. The CodeScope benchmark and code are publicly available at https://github.com/WeixiangYAN/CodeScope.",
+    "num_pages": 48
+}

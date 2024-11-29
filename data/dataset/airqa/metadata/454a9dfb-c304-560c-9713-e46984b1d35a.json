@@ -1,0 +1,25 @@
+{
+    "uuid": "454a9dfb-c304-560c-9713-e46984b1d35a",
+    "title": "Advancing Parameter Efficiency in Fine-tuning via Representation Editing",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wu-etal-2024-advancing,\n    title = \"Advancing Parameter Efficiency in Fine-tuning via Representation Editing\",\n    author = \"Wu, Muling  and\n      Liu, Wenhao  and\n      Wang, Xiaohua  and\n      Li, Tianlong  and\n      Lv, Changze  and\n      Ling, Zixuan  and\n      JianHao, Zhu  and\n      Zhang, Cenyuan  and\n      Zheng, Xiaoqing  and\n      Huang, Xuanjing\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.726\",\n    doi = \"10.18653/v1/2024.acl-long.726\",\n    pages = \"13445--13464\",\n    abstract = \"Parameter Efficient Fine-Tuning (PEFT) has gained significant attention for its ability to achieve competitive results while updating only a small subset of trainable parameters. Despite the promising performance of current PEFT methods, they present challenges in hyperparameter selection, such as determining the rank of LoRA or Adapter, or specifying the length of soft prompts. In addressing these challenges, we propose a novel approach to fine-tuning neural models, termed Representation EDiting (RED), which scales and biases the representation produced at each layer. RED substantially reduces the number of trainable parameters by a factor of 25,700 compared to full parameter fine-tuning, and by a factor of 32 compared to LoRA. Remarkably, RED achieves comparable or superior results to full parameter fine-tuning and other PEFT methods. Extensive experiments were conducted across models of varying architectures and scales, including RoBERTa, GPT-2, T5, and Llama-2, and the results demonstrate the efficiency and efficacy of RED, positioning it as a promising PEFT approach for large neural models.\",\n}\n",
+    "authors": [
+        "Muling Wu",
+        "Wenhao Liu",
+        "Xiaohua Wang",
+        "Tianlong Li",
+        "Changze Lv",
+        "Zixuan Ling",
+        "Zhu JianHao",
+        "Cenyuan Zhang",
+        "Xiaoqing Zheng",
+        "Xuanjing Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.726.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/454a9dfb-c304-560c-9713-e46984b1d35a.pdf",
+    "abstract": "Parameter Efficient Fine-Tuning (PEFT) has gained significant attention for its ability to achieve competitive results while updating only a small subset of trainable parameters. Despite the promising performance of current PEFT methods, they present challenges in hyperparameter selection, such as determining the rank of LoRA or Adapter, or specifying the length of soft prompts. In addressing these challenges, we propose a novel approach to fine-tuning neural models, termed Representation EDiting (RED), which scales and biases the representation produced at each layer. RED substantially reduces the number of trainable parameters by a factor of 25,700 compared to full parameter fine-tuning, and by a factor of 32 compared to LoRA. Remarkably, RED achieves comparable or superior results to full parameter fine-tuning and other PEFT methods. Extensive experiments were conducted across models of varying architectures and scales, including RoBERTa, GPT-2, T5, and Llama-2, and the results demonstrate the efficiency and efficacy of RED, positioning it as a promising PEFT approach for large neural models.",
+    "num_pages": 20
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "b5f2302e-806e-59f9-91bc-c34b025f1372",
+    "title": "Translating a low-resource language using GPT-3 and a human-readable dictionary",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th SIGMORPHON workshop on Computational Research in Phonetics, Phonology, and Morphology",
+    "bibtex": "@inproceedings{elsner-needle-2023-translating,\n    title = \"Translating a low-resource language using {GPT}-3 and a human-readable dictionary\",\n    author = \"Elsner, Micha  and\n      Needle, Jordan\",\n    editor = {Nicolai, Garrett  and\n      Chodroff, Eleanor  and\n      Mailhot, Frederic  and\n      {\\c{C}}{\\\"o}ltekin, {\\c{C}}a{\\u{g}}r{\\i}},\n    booktitle = \"Proceedings of the 20th SIGMORPHON workshop on Computational Research in Phonetics, Phonology, and Morphology\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.sigmorphon-1.2\",\n    doi = \"10.18653/v1/2023.sigmorphon-1.2\",\n    pages = \"1--13\",\n    abstract = \"We investigate how well words in the polysynthetic language Inuktitut can be translated by combining dictionary definitions, without use of a neural machine translation model trained on parallel text. Such a translation system would allow natural language technology to benefit from resources designed for community use in a language revitalization or education program, rather than requiring a separate parallel corpus. We show that the text-to-text generation capabilities of GPT-3 allow it to perform this task with BLEU scores of up to 18.5. We investigate prompting GPT-3 to provide multiple translations, which can help slightly, and providing it with grammar information, which is mostly ineffective. Finally, we test GPT-3{'}s ability to derive morpheme definitions from whole-word translations, but find this process is prone to errors including hallucinations.\",\n}\n",
+    "authors": [
+        "Micha Elsner",
+        "Jordan Needle"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.sigmorphon-1.2.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b5f2302e-806e-59f9-91bc-c34b025f1372.pdf",
+    "abstract": "We investigate how well words in the polysynthetic language Inuktitut can be translated by combining dictionary definitions, without use of a neural machine translation model trained on parallel text. Such a translation system would allow natural language technology to benefit from resources designed for community use in a language revitalization or education program, rather than requiring a separate parallel corpus. We show that the text-to-text generation capabilities of GPT-3 allow it to perform this task with BLEU scores of up to 18.5. We investigate prompting GPT-3 to provide multiple translations, which can help slightly, and providing it with grammar information, which is mostly ineffective. Finally, we test GPT-3’s ability to derive morpheme definitions from whole-word translations, but find this process is prone to errors including hallucinations.",
+    "num_pages": 13
+}

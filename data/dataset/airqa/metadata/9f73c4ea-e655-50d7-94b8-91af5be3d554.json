@@ -1,0 +1,24 @@
+{
+    "uuid": "9f73c4ea-e655-50d7-94b8-91af5be3d554",
+    "title": "When to Trust LLMs: Aligning Confidence with Response Quality",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{tao-etal-2024-trust,\n    title = \"When to Trust {LLM}s: Aligning Confidence with Response Quality\",\n    author = \"Tao, Shuchang  and\n      Yao, Liuyi  and\n      Ding, Hanxing  and\n      Xie, Yuexiang  and\n      Cao, Qi  and\n      Sun, Fei  and\n      Gao, Jinyang  and\n      Shen, Huawei  and\n      Ding, Bolin\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.357\",\n    doi = \"10.18653/v1/2024.findings-acl.357\",\n    pages = \"5984--5996\",\n    abstract = \"Despite the success of large language models (LLMs) in natural language generation, much evidence shows that LLMs may produce incorrect or nonsensical text. This limitation highlights the importance of discerning when to trust LLMs, especially in safety-critical domains. Existing methods often express reliability by confidence level, however, their effectiveness is limited by the lack of objective guidance. To address this, we propose CONfidence-Quality-ORDer-preserving alignment approach (CONQORD), which leverages reinforcement learning guided by a tailored dual-component reward function. This function integrates quality reward and order-preserving alignment reward functions. Specifically, the order-preserving reward incentivizes the model to verbalize greater confidence for responses of higher quality to align the order of confidence and quality. Experiments demonstrate that CONQORD significantly improves the alignment performance between confidence and response accuracy, without causing over-cautious. Furthermore, the aligned confidence provided by CONQORD informs when to trust LLMs, and acts as a determinant for initiating the retrieval process of external knowledge. Aligning confidence with response quality ensures more transparent and reliable responses, providing better trustworthiness.\",\n}\n",
+    "authors": [
+        "Shuchang Tao",
+        "Liuyi Yao",
+        "Hanxing Ding",
+        "Yuexiang Xie",
+        "Qi Cao",
+        "Fei Sun",
+        "Jinyang Gao",
+        "Huawei Shen",
+        "Bolin Ding"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.357.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/9f73c4ea-e655-50d7-94b8-91af5be3d554.pdf",
+    "abstract": "Despite the success of large language models (LLMs) in natural language generation, much evidence shows that LLMs may produce incorrect or nonsensical text. This limitation highlights the importance of discerning when to trust LLMs, especially in safety-critical domains. Existing methods often express reliability by confidence level, however, their effectiveness is limited by the lack of objective guidance. To address this, we propose CONfidence-Quality-ORDer-preserving alignment approach (CONQORD), which leverages reinforcement learning guided by a tailored dual-component reward function. This function integrates quality reward and order-preserving alignment reward functions. Specifically, the order-preserving reward incentivizes the model to verbalize greater confidence for responses of higher quality to align the order of confidence and quality. Experiments demonstrate that CONQORD significantly improves the alignment performance between confidence and response accuracy, without causing over-cautious. Furthermore, the aligned confidence provided by CONQORD informs when to trust LLMs, and acts as a determinant for initiating the retrieval process of external knowledge. Aligning confidence with response quality ensures more transparent and reliable responses, providing better trustworthiness.",
+    "num_pages": 13
+}

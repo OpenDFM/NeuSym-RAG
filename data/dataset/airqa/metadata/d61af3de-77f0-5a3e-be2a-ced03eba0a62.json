@@ -1,0 +1,25 @@
+{
+    "uuid": "d61af3de-77f0-5a3e-be2a-ced03eba0a62",
+    "title": "AbsInstruct: Eliciting Abstraction Ability from LLMs through Explanation Tuning with Plausibility Estimation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2024-absinstruct,\n    title = \"{A}bs{I}nstruct: Eliciting Abstraction Ability from {LLM}s through Explanation Tuning with Plausibility Estimation\",\n    author = \"Wang, Zhaowei  and\n      Fan, Wei  and\n      Zong, Qing  and\n      Zhang, Hongming  and\n      Choi, Sehyun  and\n      Fang, Tianqing  and\n      Liu, Xin  and\n      Song, Yangqiu  and\n      Wong, Ginny  and\n      See, Simon\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.55\",\n    doi = \"10.18653/v1/2024.acl-long.55\",\n    pages = \"973--994\",\n    abstract = \"Abstraction ability is crucial in human intelligence, which can also benefit various tasks in NLP study. Existing work shows that LLMs are deficient in abstract ability, and how to improve it remains unexplored. In this work, we design the framework AbsInstruct to enhance LLMs{'} abstraction ability through instruction tuning. The framework builds instructions with in-depth explanations to assist LLMs in capturing the underlying rationale of abstraction. Meanwhile, we introduce a plausibility estimator to select instructions that are more consistent with the abstraction knowledge of LLMs to be aligned. Then, our framework combines abstraction instructions with general-purpose ones to build a hybrid dataset. Extensive experiments and analyses demonstrate that our framework can considerably enhance LLMs{'} abstraction ability with strong generalization performance while maintaining their general instruction-following abilities.\",\n}\n",
+    "authors": [
+        "Zhaowei Wang",
+        "Wei Fan",
+        "Qing Zong",
+        "Hongming Zhang",
+        "Sehyun Choi",
+        "Tianqing Fang",
+        "Xin Liu",
+        "Yangqiu Song",
+        "Ginny Wong",
+        "Simon See"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.55.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d61af3de-77f0-5a3e-be2a-ced03eba0a62.pdf",
+    "abstract": "Abstraction ability is crucial in human intelligence, which can also benefit various tasks in NLP study. Existing work shows that LLMs are deficient in abstract ability, and how to improve it remains unexplored. In this work, we design the framework AbsInstruct to enhance LLMs’ abstraction ability through instruction tuning. The framework builds instructions with in-depth explanations to assist LLMs in capturing the underlying rationale of abstraction. Meanwhile, we introduce a plausibility estimator to select instructions that are more consistent with the abstraction knowledge of LLMs to be aligned. Then, our framework combines abstraction instructions with general-purpose ones to build a hybrid dataset. Extensive experiments and analyses demonstrate that our framework can considerably enhance LLMs’ abstraction ability with strong generalization performance while maintaining their general instruction-following abilities.",
+    "num_pages": 22
+}

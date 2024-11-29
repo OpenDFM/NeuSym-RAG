@@ -1,0 +1,21 @@
+{
+    "uuid": "ffe27f2f-1c05-5ba6-a8f7-493c5206993d",
+    "title": "A Gradient Control Method for Backdoor Attacks on Parameter-Efficient Tuning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{gu-etal-2023-gradient,\n    title = \"A Gradient Control Method for Backdoor Attacks on Parameter-Efficient Tuning\",\n    author = \"Gu, Naibin  and\n      Fu, Peng  and\n      Liu, Xiyu  and\n      Liu, Zhengxiao  and\n      Lin, Zheng  and\n      Wang, Weiping\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.194\",\n    doi = \"10.18653/v1/2023.acl-long.194\",\n    pages = \"3508--3520\",\n    abstract = \"Parameter-Efficient Tuning (PET) has shown remarkable performance by fine-tuning only a small number of parameters of the pre-trained language models (PLMs) for the downstream tasks, while it is also possible to construct backdoor attacks due to the vulnerability of pre-trained weights. However, a large reduction in the number of attackable parameters in PET will cause the user{'}s fine-tuning to greatly affect the effectiveness of backdoor attacks, resulting in backdoor forgetting. We find that the backdoor injection process can be regarded as multi-task learning, which has a convergence imbalance problem between the training of clean and poisoned data. And this problem might result in forgetting the backdoor. Based on this finding, we propose a gradient control method to consolidate the attack effect, comprising two strategies. One controls the gradient magnitude distribution cross layers within one task and the other prevents the conflict of gradient directions between tasks. Compared with previous backdoor attack methods in the scenario of PET, our method improve the effect of the attack on sentiment classification and spam detection respectively, which shows that our method is widely applicable to different tasks.\",\n}\n",
+    "authors": [
+        "Naibin Gu",
+        "Peng Fu",
+        "Xiyu Liu",
+        "Zhengxiao Liu",
+        "Zheng Lin",
+        "Weiping Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.194.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ffe27f2f-1c05-5ba6-a8f7-493c5206993d.pdf",
+    "abstract": "Parameter-Efficient Tuning (PET) has shown remarkable performance by fine-tuning only a small number of parameters of the pre-trained language models (PLMs) for the downstream tasks, while it is also possible to construct backdoor attacks due to the vulnerability of pre-trained weights. However, a large reduction in the number of attackable parameters in PET will cause the user’s fine-tuning to greatly affect the effectiveness of backdoor attacks, resulting in backdoor forgetting. We find that the backdoor injection process can be regarded as multi-task learning, which has a convergence imbalance problem between the training of clean and poisoned data. And this problem might result in forgetting the backdoor. Based on this finding, we propose a gradient control method to consolidate the attack effect, comprising two strategies. One controls the gradient magnitude distribution cross layers within one task and the other prevents the conflict of gradient directions between tasks. Compared with previous backdoor attack methods in the scenario of PET, our method improve the effect of the attack on sentiment classification and spam detection respectively, which shows that our method is widely applicable to different tasks.",
+    "num_pages": 13
+}

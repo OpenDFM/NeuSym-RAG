@@ -1,0 +1,19 @@
+{
+    "uuid": "a818809b-309b-50ae-bd8e-9d08643b1f4c",
+    "title": "ARL2: Aligning Retrievers with Black-box Large Language Models via Self-guided Adaptive Relevance Labeling",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhang-etal-2024-arl2,\n    title = \"{ARL}2: Aligning Retrievers with Black-box Large Language Models via Self-guided Adaptive Relevance Labeling\",\n    author = \"Zhang, LingXi  and\n      Yu, Yue  and\n      Wang, Kuan  and\n      Zhang, Chao\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.203\",\n    doi = \"10.18653/v1/2024.acl-long.203\",\n    pages = \"3708--3719\",\n    abstract = \"Retrieval-augmented generation enhances large language models (LLMs) by incorporating relevant information from external knowledge sources. This enables LLMs to adapt to specific domains and mitigate hallucinations in knowledge-intensive tasks. However, existing retrievers are often misaligned with LLMs due to separate training processes and the inherent black-box nature of LLMs. To address this challenge, we propose ARL2, a retriever learning technique that harnesses LLMs as labelers. ARL2 leverages LLMs to annotate and score adaptive relevance evidence, enabling the retriever to learn from robust LLM supervision. Furthermore, ARL2 incorporates a self-training strategy to minimize the cost of API calls. Extensive experiments demonstrate the effectiveness of ARL2, achieving accuracy improvements of 5.4{\\%} on NQ and 4.6{\\%} on MMLU compared to the state-of-the-art methods. Additionally, ARL2 exhibits robust transfer learning capabilities and strong zero-shot generalization abilities.\",\n}\n",
+    "authors": [
+        "LingXi Zhang",
+        "Yue Yu",
+        "Kuan Wang",
+        "Chao Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.203.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a818809b-309b-50ae-bd8e-9d08643b1f4c.pdf",
+    "abstract": "Retrieval-augmented generation enhances large language models (LLMs) by incorporating relevant information from external knowledge sources. This enables LLMs to adapt to specific domains and mitigate hallucinations in knowledge-intensive tasks. However, existing retrievers are often misaligned with LLMs due to separate training processes and the inherent black-box nature of LLMs. To address this challenge, we propose ARL2, a retriever learning technique that harnesses LLMs as labelers. ARL2 leverages LLMs to annotate and score adaptive relevance evidence, enabling the retriever to learn from robust LLM supervision. Furthermore, ARL2 incorporates a self-training strategy to minimize the cost of API calls. Extensive experiments demonstrate the effectiveness of ARL2, achieving accuracy improvements of 5.4% on NQ and 4.6% on MMLU compared to the state-of-the-art methods. Additionally, ARL2 exhibits robust transfer learning capabilities and strong zero-shot generalization abilities.",
+    "num_pages": 12
+}

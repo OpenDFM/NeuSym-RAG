@@ -1,0 +1,21 @@
+{
+    "uuid": "f27156e8-8818-5b9b-9c8c-f085f0db7692",
+    "title": "DePA: Improving Non-autoregressive Translation with Dependency-Aware Decoder",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)",
+    "bibtex": "@inproceedings{zhan-etal-2023-depa,\n    title = \"{D}e{PA}: Improving Non-autoregressive Translation with Dependency-Aware Decoder\",\n    author = \"Zhan, Jiaao  and\n      Chen, Qian  and\n      Chen, Boxing  and\n      Wang, Wen  and\n      Bai, Yu  and\n      Gao, Yang\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.iwslt-1.47\",\n    doi = \"10.18653/v1/2023.iwslt-1.47\",\n    pages = \"478--490\",\n    abstract = \"Non-autoregressive machine translation (NAT) models have lower translation quality than autoregressive translation (AT) models because NAT decoders do not depend on previous target tokens in the decoder input. We propose a novel and general Dependency-Aware Decoder (DePA) to enhance target dependency modeling in the decoder of fully NAT models from two perspectives: decoder self-attention and decoder input. First, we propose an autoregressive forward-backward pre-training phase before NAT training, which enables the NAT decoder to gradually learn bidirectional target dependencies for the final NAT training. Second, we transform the decoder input from the source language representation space to the target language representation space through a novel attentive transformation process, which enables the decoder to better capture target dependencies. DePA can be applied to any fully NAT models. Extensive experiments show that DePA consistently improves highly competitive and state-of-the-art fully NAT models on widely used WMT and IWSLT benchmarks by up to 1.88 BLEU gain, while maintaining the inference latency comparable to other fully NAT models.\",\n}\n",
+    "authors": [
+        "Jiaao Zhan",
+        "Qian Chen",
+        "Boxing Chen",
+        "Wen Wang",
+        "Yu Bai",
+        "Yang Gao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.iwslt-1.47.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f27156e8-8818-5b9b-9c8c-f085f0db7692.pdf",
+    "abstract": "Non-autoregressive machine translation (NAT) models have lower translation quality than autoregressive translation (AT) models because NAT decoders do not depend on previous target tokens in the decoder input. We propose a novel and general Dependency-Aware Decoder (DePA) to enhance target dependency modeling in the decoder of fully NAT models from two perspectives: decoder self-attention and decoder input. First, we propose an autoregressive forward-backward pre-training phase before NAT training, which enables the NAT decoder to gradually learn bidirectional target dependencies for the final NAT training. Second, we transform the decoder input from the source language representation space to the target language representation space through a novel attentive transformation process, which enables the decoder to better capture target dependencies. DePA can be applied to any fully NAT models. Extensive experiments show that DePA consistently improves highly competitive and state-of-the-art fully NAT models on widely used WMT and IWSLT benchmarks by up to 1.88 BLEU gain, while maintaining the inference latency comparable to other fully NAT models.",
+    "num_pages": 13
+}

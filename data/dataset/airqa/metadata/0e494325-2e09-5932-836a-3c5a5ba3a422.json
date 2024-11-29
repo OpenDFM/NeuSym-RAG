@@ -1,0 +1,22 @@
+{
+    "uuid": "0e494325-2e09-5932-836a-3c5a5ba3a422",
+    "title": "Improving the Robustness of Summarization Systems with Dual Augmentation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2023-improving-robustness,\n    title = \"Improving the Robustness of Summarization Systems with Dual Augmentation\",\n    author = \"Chen, Xiuying  and\n      Long, Guodong  and\n      Tao, Chongyang  and\n      Li, Mingzhe  and\n      Gao, Xin  and\n      Zhang, Chengqi  and\n      Zhang, Xiangliang\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.378\",\n    doi = \"10.18653/v1/2023.acl-long.378\",\n    pages = \"6846--6857\",\n    abstract = \"A robust summarization system should be able to capture the gist of the document, regardless of the specific word choices or noise in the input. In this work, we first explore the summarization models{'} robustness against perturbations including word-level synonym substitution and noise. To create semantic-consistent substitutes, we propose a SummAttacker, which is an efficient approach to generating adversarial samples based on pre-trained language models. Experimental results show that state-of-the-art summarization models have a significant decrease in performance on adversarial and noisy test sets. Next, we analyze the vulnerability of the summarization systems and explore improving the robustness by data augmentation. Specifically, the first vulnerability factor we found is the low diversity of the training inputs. Correspondingly, we expose the encoder to more diverse cases created by SummAttacker in the input space. The second factor is the vulnerability of the decoder, and we propose an augmentation in the latent space of the decoder to improve its robustness. Concretely, we create virtual cases by manifold softmixing two decoder hidden states of similar semantic meanings. Experimental results on Gigaword and CNN/DM datasets demonstrate that our approach achieves significant improvements over strong baselines and exhibits higher robustness on noisy, attacked, and clean datasets\",\n}\n",
+    "authors": [
+        "Xiuying Chen",
+        "Guodong Long",
+        "Chongyang Tao",
+        "Mingzhe Li",
+        "Xin Gao",
+        "Chengqi Zhang",
+        "Xiangliang Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.378.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/0e494325-2e09-5932-836a-3c5a5ba3a422.pdf",
+    "abstract": "A robust summarization system should be able to capture the gist of the document, regardless of the specific word choices or noise in the input. In this work, we first explore the summarization models’ robustness against perturbations including word-level synonym substitution and noise. To create semantic-consistent substitutes, we propose a SummAttacker, which is an efficient approach to generating adversarial samples based on pre-trained language models. Experimental results show that state-of-the-art summarization models have a significant decrease in performance on adversarial and noisy test sets. Next, we analyze the vulnerability of the summarization systems and explore improving the robustness by data augmentation. Specifically, the first vulnerability factor we found is the low diversity of the training inputs. Correspondingly, we expose the encoder to more diverse cases created by SummAttacker in the input space. The second factor is the vulnerability of the decoder, and we propose an augmentation in the latent space of the decoder to improve its robustness. Concretely, we create virtual cases by manifold softmixing two decoder hidden states of similar semantic meanings. Experimental results on Gigaword and CNN/DM datasets demonstrate that our approach achieves significant improvements over strong baselines and exhibits higher robustness on noisy, attacked, and clean datasets",
+    "num_pages": 12
+}

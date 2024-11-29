@@ -6,7 +6,7 @@ import os, sys, re, json, logging
 from typing import Dict, Any, Optional, List
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from agents.models import get_llm_single_instance
-from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid, get_num_pages, download_paper_pdf, get_airqa_relative_path
+from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid, get_airqa_paper_metadata, get_num_pages, download_paper_pdf, get_airqa_relative_path
 from bs4 import BeautifulSoup
 
 
@@ -84,6 +84,8 @@ def get_answer_from_llm(question_uuid: Optional[str] = None, question: Optional[
 
 
 def make_airqa_dataset(airqa_dir: str = AIRQA_DIR):
+    """ Given all examples UUID json files, merge them into a single JSONL file.
+    """
     output_path = os.path.join(airqa_dir, 'test_data.jsonl')
     indir = os.path.join(airqa_dir, 'examples')
     json_files = os.listdir(indir)
@@ -96,6 +98,17 @@ def make_airqa_dataset(airqa_dir: str = AIRQA_DIR):
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
             count += 1
     logger.info(f"Merge {count} AIR-QA examples into {output_path}.")
+    return output_path
+
+
+def make_airqa_metadata(airqa_dir: str = AIRQA_DIR):
+    """ Given all metadata JSON files, merge them into a single JSON file.
+    """
+    output_path = os.path.join(airqa_dir, 'uuid2papers.json')
+    uuid2papers = get_airqa_paper_metadata()
+    with open(output_path, 'w', encoding='utf8') as ouf:
+        json.dump(uuid2papers, ouf, ensure_ascii=False, indent=4)
+    logger.info(f"Merge {len(uuid2papers)} AIR-QA metadata into {output_path}.")
     return output_path
 
 
@@ -114,20 +127,15 @@ def download_html(url: str, html_path: str = None):
 
 def crawl_acl_anthology_papers(
         url: str = "https://aclanthology.org/events/acl-2024/",
-        output_dir: str = AIRQA_DIR,
         errata_file: Optional[str] = os.path.join(AIRQA_DIR, 'errata.json')):
-    """ Crawl papers from ACL Anthology website. Use `get_airqa_paper_uuid` to generate UUIDs and rename the output PDFs under `output_dir`. Save meta data and UUID -> paper mappings into uuid2papers.json.
+    """ Crawl papers from ACL Anthology website. Use `get_airqa_paper_uuid` to generate UUIDs and rename the output PDFs under `output_dir`. Save the meta data dict with its UUID into metadata folder.
     @param:
         url: str, the URL of the ACL Anthology. This parameter will be used to download the HTML file into `html_path`.
         output_dir: str, the directory to save the PDF files.
         errata_file: str, the file path to the errata JSON file.
     """
     # get UUID -> paper mappings
-    uuid2papers_path = os.path.join(output_dir, f'uuid2papers.json')
-    if os.path.exists(uuid2papers_path):
-        with open(uuid2papers_path, 'r', encoding='utf8') as inf:
-            uuid2papers = json.load(inf)
-    else: uuid2papers = {}
+    uuid2papers = get_airqa_paper_metadata()
 
     # errata file, maybe deleted in future
     if os.path.exists(errata_file):
@@ -145,7 +153,7 @@ def crawl_acl_anthology_papers(
     conference_full = soup.select_one('h2#title').get_text().strip() # e.g., Annual Meeting of the Association for Computational Linguistics
     conference_full = re.sub(r"\s+\(\d+\)", "", conference_full).strip() # remove the year in the conference title
     conference, year = os.path.basename(url.rstrip('#').rstrip(os.sep)).lower().split('-')
-    paper_dir = os.path.join(output_dir, 'papers', conference + year) # folder to save all paper PDFs
+    paper_dir = os.path.join(AIRQA_DIR, 'papers', conference + year) # folder to save all paper PDFs
 
 
     def parse_acl_paper_meta(node):
@@ -225,15 +233,14 @@ def crawl_acl_anthology_papers(
                         logger.warning(f"UUID {meta['uuid']} already exists in the UUID -> paper mappings {meta['title']}.")
                         continue
                     uuid2papers[meta['uuid']] = meta
+                    with open(os.path.join(AIRQA_DIR, 'metadata', meta['uuid'] + '.json'), 'w', encoding='utf8') as ouf:
+                        json.dump(meta, ouf, ensure_ascii=False, indent=4)
                 else: skip_first_p = True
 
-        # save the UUID -> paper mappings after finishing each volume
-        with open(uuid2papers_path, 'w', encoding='utf8') as ouf:
-            json.dump(uuid2papers, ouf, ensure_ascii=False, indent=4)
     return uuid2papers
 
 
 if __name__ == '__main__':
 
     for url in ['https://aclanthology.org/events/acl-2023/', 'https://aclanthology.org/events/acl-2024/']:
-        crawl_acl_anthology_papers(url, output_dir=AIRQA_DIR)
+        crawl_acl_anthology_papers(url)

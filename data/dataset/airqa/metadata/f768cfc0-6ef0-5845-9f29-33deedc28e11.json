@@ -1,0 +1,20 @@
+{
+    "uuid": "f768cfc0-6ef0-5845-9f29-33deedc28e11",
+    "title": "Sentence Ordering with a Coherence Verifier",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{jia-etal-2023-sentence,\n    title = \"Sentence Ordering with a Coherence Verifier\",\n    author = \"Jia, Sainan  and\n      Song, Wei  and\n      Gong, Jiefu  and\n      Wang, Shijin  and\n      Liu, Ting\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.592\",\n    doi = \"10.18653/v1/2023.findings-acl.592\",\n    pages = \"9301--9314\",\n    abstract = \"This paper presents a novel sentence ordering method by plugging a coherence verifier (CoVer) into pair-wise ranking-based and sequence generation-based methods. It does not change the model parameters of the baseline, and only verifies the coherence of candidate (partial) orders produced by the baseline and reranks them in beam search. We also propose a coherence model as CoVer with a novel graph formulation and a novel data construction strategy for contrastive pre-training independently of the sentence ordering task. Experimental results on four benchmarks demonstrate the effectiveness of our method with topological sorting-based and pointer network-based methods as the baselines. Detailed analyses illustrate how CoVer improves the baselines and confirm the importance of its graph formulation and training strategy. Our code is available at \\url{https://github.com/SN-Jia/SO_with_CoVer}.\",\n}\n",
+    "authors": [
+        "Sainan Jia",
+        "Wei Song",
+        "Jiefu Gong",
+        "Shijin Wang",
+        "Ting Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.592.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f768cfc0-6ef0-5845-9f29-33deedc28e11.pdf",
+    "abstract": "This paper presents a novel sentence ordering method by plugging a coherence verifier (CoVer) into pair-wise ranking-based and sequence generation-based methods. It does not change the model parameters of the baseline, and only verifies the coherence of candidate (partial) orders produced by the baseline and reranks them in beam search. We also propose a coherence model as CoVer with a novel graph formulation and a novel data construction strategy for contrastive pre-training independently of the sentence ordering task. Experimental results on four benchmarks demonstrate the effectiveness of our method with topological sorting-based and pointer network-based methods as the baselines. Detailed analyses illustrate how CoVer improves the baselines and confirm the importance of its graph formulation and training strategy. Our code is available at https://github.com/SN-Jia/SO_with_CoVer.",
+    "num_pages": 14
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "f17fd175-ed15-5609-bc0e-ac55ca5b63e1",
+    "title": "Data Contamination Calibration for Black-box LLMs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{ye-etal-2024-data,\n    title = \"Data Contamination Calibration for Black-box {LLM}s\",\n    author = \"Ye, Wentao  and\n      Hu, Jiaqi  and\n      Li, Liyao  and\n      Wang, Haobo  and\n      Chen, Gang  and\n      Zhao, Junbo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.644\",\n    doi = \"10.18653/v1/2024.findings-acl.644\",\n    pages = \"10845--10861\",\n    abstract = \"The rapid advancements of Large Language Models (LLMs) tightly associate with the expansion of the training data size. However, the unchecked ultra-large-scale training sets introduce a series of potential risks like data contamination, i.e. the benchmark data is used for training. In this work, we propose a holistic method named Polarized Augment Calibration (PAC) along with a new to-be-released dataset to detect the contaminated data and diminish the contamination effect. PAC extends the popular MIA (Membership Inference Attack) {---} from machine learning community {---} by forming a more global target at detecting training data to Clarify invisible training data. As a pioneering work, PAC is very much plug-and-play that can be integrated with most (if not all) current white- and black-box LLMs. By extensive experiments, PAC outperforms existing methods by at least 4.5{\\%}, towards data contamination detection on more 4 dataset formats, with more than 10 base LLMs. Besides, our application in real-world scenarios highlights the prominent presence of contamination and related issues.\",\n}\n",
+    "authors": [
+        "Wentao Ye",
+        "Jiaqi Hu",
+        "Liyao Li",
+        "Haobo Wang",
+        "Gang Chen",
+        "Junbo Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.644.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/f17fd175-ed15-5609-bc0e-ac55ca5b63e1.pdf",
+    "abstract": "The rapid advancements of Large Language Models (LLMs) tightly associate with the expansion of the training data size. However, the unchecked ultra-large-scale training sets introduce a series of potential risks like data contamination, i.e. the benchmark data is used for training. In this work, we propose a holistic method named Polarized Augment Calibration (PAC) along with a new to-be-released dataset to detect the contaminated data and diminish the contamination effect. PAC extends the popular MIA (Membership Inference Attack) — from machine learning community — by forming a more global target at detecting training data to Clarify invisible training data. As a pioneering work, PAC is very much plug-and-play that can be integrated with most (if not all) current white- and black-box LLMs. By extensive experiments, PAC outperforms existing methods by at least 4.5%, towards data contamination detection on more 4 dataset formats, with more than 10 base LLMs. Besides, our application in real-world scenarios highlights the prominent presence of contamination and related issues.",
+    "num_pages": 17
+}

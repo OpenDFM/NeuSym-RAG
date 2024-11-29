@@ -1,0 +1,19 @@
+{
+    "uuid": "23e77aec-4523-54c0-8b16-47c67429bd5f",
+    "title": "shs-nlp at RadSum23: Domain-Adaptive Pre-training of Instruction-tuned LLMs for Radiology Report Impression Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+    "bibtex": "@inproceedings{karn-etal-2023-shs,\n    title = \"shs-nlp at {R}ad{S}um23: Domain-Adaptive Pre-training of Instruction-tuned {LLM}s for Radiology Report Impression Generation\",\n    author = \"Karn, Sanjeev Kumar  and\n      Ghosh, Rikhiya  and\n      P, Kusuma  and\n      Farri, Oladimeji\",\n    editor = \"Demner-fushman, Dina  and\n      Ananiadou, Sophia  and\n      Cohen, Kevin\",\n    booktitle = \"The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.bionlp-1.57\",\n    doi = \"10.18653/v1/2023.bionlp-1.57\",\n    pages = \"550--556\",\n    abstract = \"Instruction-tuned generative large language models (LLMs), such as ChatGPT and Bloomz, possess excellent generalization abilities. However, they face limitations in understanding radiology reports, particularly when generating the IMPRESSIONS section from the FINDINGS section. These models tend to produce either verbose or incomplete IMPRESSIONS, mainly due to insufficient exposure to medical text data during training. We present a system that leverages large-scale medical text data for domain-adaptive pre-training of instruction-tuned LLMs, enhancing their medical knowledge and performance on specific medical tasks. We demonstrate that this system performs better in a zero-shot setting compared to several pretrain-and-finetune adaptation methods on the IMPRESSIONS generation task. Furthermore, it ranks 1st among participating systems in Task 1B: Radiology Report Summarization.\",\n}\n",
+    "authors": [
+        "Sanjeev Kumar Karn",
+        "Rikhiya Ghosh",
+        "Kusuma P",
+        "Oladimeji Farri"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.bionlp-1.57.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/23e77aec-4523-54c0-8b16-47c67429bd5f.pdf",
+    "abstract": "Instruction-tuned generative large language models (LLMs), such as ChatGPT and Bloomz, possess excellent generalization abilities. However, they face limitations in understanding radiology reports, particularly when generating the IMPRESSIONS section from the FINDINGS section. These models tend to produce either verbose or incomplete IMPRESSIONS, mainly due to insufficient exposure to medical text data during training. We present a system that leverages large-scale medical text data for domain-adaptive pre-training of instruction-tuned LLMs, enhancing their medical knowledge and performance on specific medical tasks. We demonstrate that this system performs better in a zero-shot setting compared to several pretrain-and-finetune adaptation methods on the IMPRESSIONS generation task. Furthermore, it ranks 1st among participating systems in Task 1B: Radiology Report Summarization.",
+    "num_pages": 7
+}

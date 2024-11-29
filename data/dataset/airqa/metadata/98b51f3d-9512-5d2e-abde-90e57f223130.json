@@ -1,0 +1,21 @@
+{
+    "uuid": "98b51f3d-9512-5d2e-abde-90e57f223130",
+    "title": "Transforming LLMs into Cross-modal and Cross-lingual Retrieval Systems",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)",
+    "bibtex": "@inproceedings{palma-gomez-etal-2024-transforming,\n    title = \"Transforming {LLM}s into Cross-modal and Cross-lingual Retrieval Systems\",\n    author = \"Palma Gomez, Frank  and\n      Sanabria, Ramon  and\n      Sung, Yun-hsuan  and\n      Cer, Daniel  and\n      Dalmia, Siddharth  and\n      Hernandez Abrego, Gustavo\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.iwslt-1.4\",\n    doi = \"10.18653/v1/2024.iwslt-1.4\",\n    pages = \"23--32\",\n    abstract = \"Large language models (LLMs) are trained on text-only data that go far beyond the languages with paired speech and text data. At the same time, Dual Encoder (DE) based retrieval systems project queries and documents into the same embedding space and have demonstrated their success in retrieval and bi-text mining. To match speech and text in many languages, we propose using LLMs to initialize multi-modal DE retrieval systems. Unlike traditional methods, our system doesn{'}t require speech data during LLM pre-training and can exploit LLM{'}s multilingual text understanding capabilities to match speech and text in languages unseen during retrieval training. Our multi-modal LLM-based retrieval system is capable of matching speech and text in 102 languages despite only training on 21 languages. Our system outperforms previous systems trained explicitly on all 102 languages. We achieve a 10{\\%} absolute improvement in Recall@1 averaged across these languages. Additionally, our model demonstrates cross-lingual speech and text matching, which is further enhanced by readily available machine translation data.\",\n}\n",
+    "authors": [
+        "Frank Palma Gomez",
+        "Ramon Sanabria",
+        "Yun-hsuan Sung",
+        "Daniel Cer",
+        "Siddharth Dalmia",
+        "Gustavo Hernandez Abrego"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.iwslt-1.4.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/98b51f3d-9512-5d2e-abde-90e57f223130.pdf",
+    "abstract": "Large language models (LLMs) are trained on text-only data that go far beyond the languages with paired speech and text data. At the same time, Dual Encoder (DE) based retrieval systems project queries and documents into the same embedding space and have demonstrated their success in retrieval and bi-text mining. To match speech and text in many languages, we propose using LLMs to initialize multi-modal DE retrieval systems. Unlike traditional methods, our system doesn’t require speech data during LLM pre-training and can exploit LLM’s multilingual text understanding capabilities to match speech and text in languages unseen during retrieval training. Our multi-modal LLM-based retrieval system is capable of matching speech and text in 102 languages despite only training on 21 languages. Our system outperforms previous systems trained explicitly on all 102 languages. We achieve a 10% absolute improvement in Recall@1 averaged across these languages. Additionally, our model demonstrates cross-lingual speech and text matching, which is further enhanced by readily available machine translation data.",
+    "num_pages": 10
+}

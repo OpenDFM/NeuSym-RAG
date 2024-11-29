@@ -1,0 +1,19 @@
+{
+    "uuid": "188e8134-0fb8-5a69-b906-2ebc080728b8",
+    "title": "SINAI at BioLaySumm: Self-Play Fine-Tuning of Large Language Models for Biomedical Lay Summarisation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 23rd Workshop on Biomedical Natural Language Processing",
+    "bibtex": "@inproceedings{chizhikova-etal-2024-sinai,\n    title = \"{SINAI} at {B}io{L}ay{S}umm: Self-Play Fine-Tuning of Large Language Models for Biomedical Lay Summarisation\",\n    author = \"Chizhikova, Mariia  and\n      D{\\'\\i}az-Galiano, Manuel Carlos  and\n      Ure{\\~n}a-L{\\'o}pez, L. Alfonso  and\n      Mart{\\'\\i}n-Valdivia, Mar{\\'\\i}a-Teresa\",\n    editor = \"Demner-Fushman, Dina  and\n      Ananiadou, Sophia  and\n      Miwa, Makoto  and\n      Roberts, Kirk  and\n      Tsujii, Junichi\",\n    booktitle = \"Proceedings of the 23rd Workshop on Biomedical Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.bionlp-1.74\",\n    doi = \"10.18653/v1/2024.bionlp-1.74\",\n    pages = \"804--809\",\n    abstract = \"An effective disclosure of scientific knowledge and advancements to the general public is often hindered by the complexity of the technical language used in research which often results very difficult, if not impossible, for non-experts to understand. In this paper we present the approach developed by the SINAI team as the result of our participation in BioLaySumm shared task hosted by the BioNLP workshop at ACL 2024. Our approach stems from the experimentation we performed in order to test the ability of state-of-the-art pre-trained large language models, namely GPT 3.5, GPT 4 and Llama-3, to tackle this task in a few-shot manner. In order to improve this baseline, we opted for fine-tuning Llama-3 by applying parameter-efficient methodologies. The best performing system which resulted from applying self-play fine tuning method which allows the model to improve while learning to distinguish between its own generations from the previous step from the gold standard summaries. This approach achieved 0.4205 ROUGE-1 score and 0.8583 BERTScore.\",\n}\n",
+    "authors": [
+        "Mariia Chizhikova",
+        "Manuel Carlos Díaz-Galiano",
+        "L. Alfonso Ureña-López",
+        "María-Teresa Martín-Valdivia"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.bionlp-1.74.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/188e8134-0fb8-5a69-b906-2ebc080728b8.pdf",
+    "abstract": "An effective disclosure of scientific knowledge and advancements to the general public is often hindered by the complexity of the technical language used in research which often results very difficult, if not impossible, for non-experts to understand. In this paper we present the approach developed by the SINAI team as the result of our participation in BioLaySumm shared task hosted by the BioNLP workshop at ACL 2024. Our approach stems from the experimentation we performed in order to test the ability of state-of-the-art pre-trained large language models, namely GPT 3.5, GPT 4 and Llama-3, to tackle this task in a few-shot manner. In order to improve this baseline, we opted for fine-tuning Llama-3 by applying parameter-efficient methodologies. The best performing system which resulted from applying self-play fine tuning method which allows the model to improve while learning to distinguish between its own generations from the previous step from the gold standard summaries. This approach achieved 0.4205 ROUGE-1 score and 0.8583 BERTScore.",
+    "num_pages": 6
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "e633466e-d75f-5ab3-8cb8-a420ffd89e8d",
+    "title": "Reinforcement Tuning for Detecting Stances and Debunking Rumors Jointly with Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{yang-etal-2024-reinforcement,\n    title = \"Reinforcement Tuning for Detecting Stances and Debunking Rumors Jointly with Large Language Models\",\n    author = \"Yang, Ruichao  and\n      Gao, Wei  and\n      Ma, Jing  and\n      Lin, Hongzhan  and\n      Wang, Bo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.796\",\n    doi = \"10.18653/v1/2024.findings-acl.796\",\n    pages = \"13423--13439\",\n    abstract = \"Learning multi-task models for jointly detecting stance and verifying rumors poses challenges due to the need for training data of stance at post level and rumor veracity at claim level, which are difficult to obtain. To address this issue, we leverage large language models (LLMs) as the foundation annotators for the joint stance detection (SD) and rumor verification (RV) tasks, dubbed as JSDRV. We introduce a novel reinforcement tuning framework to enhance the joint predictive capabilities of LLM-based SD and RV components. Specifically, we devise a policy for selecting LLM-annotated data at the two levels, employing a hybrid reward mechanism to choose high-quality labels for effective LLM fine-tuning on both tasks. Results demonstrate that JSDRV improves the capabilities of LLMs in the joint tasks, not only outperforming state-of-the-art methods but also generalizing to non-LLMs accommodated as task models.\",\n}\n",
+    "authors": [
+        "Ruichao Yang",
+        "Wei Gao",
+        "Jing Ma",
+        "Hongzhan Lin",
+        "Bo Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.796.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e633466e-d75f-5ab3-8cb8-a420ffd89e8d.pdf",
+    "abstract": "Learning multi-task models for jointly detecting stance and verifying rumors poses challenges due to the need for training data of stance at post level and rumor veracity at claim level, which are difficult to obtain. To address this issue, we leverage large language models (LLMs) as the foundation annotators for the joint stance detection (SD) and rumor verification (RV) tasks, dubbed as JSDRV. We introduce a novel reinforcement tuning framework to enhance the joint predictive capabilities of LLM-based SD and RV components. Specifically, we devise a policy for selecting LLM-annotated data at the two levels, employing a hybrid reward mechanism to choose high-quality labels for effective LLM fine-tuning on both tasks. Results demonstrate that JSDRV improves the capabilities of LLMs in the joint tasks, not only outperforming state-of-the-art methods but also generalizing to non-LLMs accommodated as task models.",
+    "num_pages": 17
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "cc80d4db-4ace-503a-8870-65e15c190c82",
+    "title": "VoiceCraft: Zero-Shot Speech Editing and Text-to-Speech in the Wild",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{peng-etal-2024-voicecraft,\n    title = \"{V}oice{C}raft: Zero-Shot Speech Editing and Text-to-Speech in the Wild\",\n    author = \"Peng, Puyuan  and\n      Huang, Po-Yao  and\n      Li, Shang-Wen  and\n      Mohamed, Abdelrahman  and\n      Harwath, David\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.673\",\n    doi = \"10.18653/v1/2024.acl-long.673\",\n    pages = \"12442--12462\",\n    abstract = \"We introduce VoiceCraft, a token infilling neural codec language model, that achieves state-of-the-art performance on both speech editing and zero-shot text-to-speech (TTS) on audiobooks, internet videos, and podcasts. VoiceCraft employs a Transformer decoder architecture and introduces a token rearrangement procedure that combines causal masking and delayed stacking to enable generation within an existing sequence. On speech editing tasks, VoiceCraft produces edited speech that is nearly indistinguishable from unedited recordings in terms of naturalness, as evaluated by humans; for zero-shot TTS, our model outperforms prior SotA models including VALL-E and the popular commercial model XTTS v2. Crucially, the models are evaluated on challenging and realistic datasets, that consist of diverse accents, speaking styles, recording conditions, and background noise and music, and our model performs consistently well compared to other models and real recordings. In particular, for speech editing evaluation, we introduce a high quality, challenging, and realistic dataset named . We encourage readers to listen to the demos at https://jasonppy.github.io/VoiceCraft{\\_}web. Data, code, and model weights are available at https://github.com/jasonppy/VoiceCraft\",\n}\n",
+    "authors": [
+        "Puyuan Peng",
+        "Po-Yao Huang",
+        "Shang-Wen Li",
+        "Abdelrahman Mohamed",
+        "David Harwath"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.673.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/cc80d4db-4ace-503a-8870-65e15c190c82.pdf",
+    "abstract": "We introduce VoiceCraft, a token infilling neural codec language model, that achieves state-of-the-art performance on both speech editing and zero-shot text-to-speech (TTS) on audiobooks, internet videos, and podcasts. VoiceCraft employs a Transformer decoder architecture and introduces a token rearrangement procedure that combines causal masking and delayed stacking to enable generation within an existing sequence. On speech editing tasks, VoiceCraft produces edited speech that is nearly indistinguishable from unedited recordings in terms of naturalness, as evaluated by humans; for zero-shot TTS, our model outperforms prior SotA models including VALL-E and the popular commercial model XTTS v2. Crucially, the models are evaluated on challenging and realistic datasets, that consist of diverse accents, speaking styles, recording conditions, and background noise and music, and our model performs consistently well compared to other models and real recordings. In particular, for speech editing evaluation, we introduce a high quality, challenging, and realistic dataset named . We encourage readers to listen to the demos at https://jasonppy.github.io/VoiceCraft_web. Data, code, and model weights are available at https://github.com/jasonppy/VoiceCraft",
+    "num_pages": 21
+}

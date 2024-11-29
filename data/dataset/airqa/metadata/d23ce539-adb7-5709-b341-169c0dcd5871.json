@@ -1,0 +1,26 @@
+{
+    "uuid": "d23ce539-adb7-5709-b341-169c0dcd5871",
+    "title": "Predicting Text Preference Via Structured Comparative Reasoning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yan-etal-2024-predicting,\n    title = \"Predicting Text Preference Via Structured Comparative Reasoning\",\n    author = \"Yan, Jing Nathan  and\n      Liu, Tianqi  and\n      Chiu, Justin  and\n      Shen, Jiaming  and\n      Qin, Zhen  and\n      Yu, Yue  and\n      Lakshmanan, Charumathi  and\n      Kurzion, Yair  and\n      Rush, Alexander  and\n      Liu, Jialu  and\n      Bendersky, Michael\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.541\",\n    doi = \"10.18653/v1/2024.acl-long.541\",\n    pages = \"10040--10060\",\n    abstract = \"Comparative reasoning plays a crucial role in predicting text preferences; however, large language models (LLMs) often demonstrate inconsistencies in their reasoning, leading to incorrect preference predictions. While approaches like Chain-of-Thought improve accuracy in many settings, they struggle to consistently distinguish the similarities and differences of complex texts. We introduce $SC^2$, a model that prompts LLMs to predict text preferences by generating structured intermediate comparisons. $SC^2$ begins by proposing aspects for comparison, followed by generating textual comparisons under each aspect. We select consistent comparisons with a pairwise comparator that ensures each comparison of a given aspect clearly distinguishes differences between texts, significantly reducing hallucination and improving consistency. Our empirical studies across various NLP tasks, including summarization, retrieval, and automatic rating, demonstrate that $SC^2${`}s enhanced performance in text preference prediction is significant.\",\n}\n",
+    "authors": [
+        "Jing Nathan Yan",
+        "Tianqi Liu",
+        "Justin Chiu",
+        "Jiaming Shen",
+        "Zhen Qin",
+        "Yue Yu",
+        "Charumathi Lakshmanan",
+        "Yair Kurzion",
+        "Alexander Rush",
+        "Jialu Liu",
+        "Michael Bendersky"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.541.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d23ce539-adb7-5709-b341-169c0dcd5871.pdf",
+    "abstract": "Comparative reasoning plays a crucial role in predicting text preferences; however, large language models (LLMs) often demonstrate inconsistencies in their reasoning, leading to incorrect preference predictions. While approaches like Chain-of-Thought improve accuracy in many settings, they struggle to consistently distinguish the similarities and differences of complex texts. We introduce SC2, a model that prompts LLMs to predict text preferences by generating structured intermediate comparisons. SC2 begins by proposing aspects for comparison, followed by generating textual comparisons under each aspect. We select consistent comparisons with a pairwise comparator that ensures each comparison of a given aspect clearly distinguishes differences between texts, significantly reducing hallucination and improving consistency. Our empirical studies across various NLP tasks, including summarization, retrieval, and automatic rating, demonstrate that SC2‘s enhanced performance in text preference prediction is significant.",
+    "num_pages": 21
+}

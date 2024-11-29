@@ -1,0 +1,23 @@
+{
+    "uuid": "425ab934-13c0-543f-95e4-865857db5235",
+    "title": "ALADAN at IWSLT24 Low-resource Arabic Dialectal Speech Translation Task",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)",
+    "bibtex": "@inproceedings{ben-kheder-etal-2024-aladan,\n    title = \"{ALADAN} at {IWSLT}24 Low-resource {A}rabic Dialectal Speech Translation Task\",\n    author = \"Ben Kheder, Waad  and\n      Jon, Josef  and\n      Beyer, Andr{\\'e}  and\n      Messaoudi, Abdel  and\n      Affan, Rabea  and\n      Barras, Claude  and\n      Tychonov, Maxim  and\n      Gauvain, Jean-Luc\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.iwslt-1.25\",\n    doi = \"10.18653/v1/2024.iwslt-1.25\",\n    pages = \"192--202\",\n    abstract = \"This paper presents ALADAN{'}s approach to the IWSLT 2024 Dialectal and Low-resource shared task, focusing on Levantine Arabic (apc) and Tunisian Arabic (aeb) to English speech translation (ST). Addressing challenges such as the lack of standardized orthography and limited training data, we propose a solution for data normalization in Dialectal Arabic, employing a modified Levenshtein distance and Word2vec models to find orthographic variants of the same word. Our system consists of a cascade ST system integrating two ASR systems (TDNN-F and Zipformer) and two NMT modules derived from pre-trained models (NLLB-200 1.3B distilled model and CohereAI{'}s Command-R). Additionally, we explore the integration of unsupervised textual and audio data, highlighting the importance of multi-dialectal datasets for both ASR and NMT tasks. Our system achieves BLEU score of 31.5 for Levantine Arabic on the official validation set.\",\n}\n",
+    "authors": [
+        "Waad Ben Kheder",
+        "Josef Jon",
+        "André Beyer",
+        "Abdel Messaoudi",
+        "Rabea Affan",
+        "Claude Barras",
+        "Maxim Tychonov",
+        "Jean-Luc Gauvain"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.iwslt-1.25.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/425ab934-13c0-543f-95e4-865857db5235.pdf",
+    "abstract": "This paper presents ALADAN’s approach to the IWSLT 2024 Dialectal and Low-resource shared task, focusing on Levantine Arabic (apc) and Tunisian Arabic (aeb) to English speech translation (ST). Addressing challenges such as the lack of standardized orthography and limited training data, we propose a solution for data normalization in Dialectal Arabic, employing a modified Levenshtein distance and Word2vec models to find orthographic variants of the same word. Our system consists of a cascade ST system integrating two ASR systems (TDNN-F and Zipformer) and two NMT modules derived from pre-trained models (NLLB-200 1.3B distilled model and CohereAI’s Command-R). Additionally, we explore the integration of unsupervised textual and audio data, highlighting the importance of multi-dialectal datasets for both ASR and NMT tasks. Our system achieves BLEU score of 31.5 for Levantine Arabic on the official validation set.",
+    "num_pages": 11
+}

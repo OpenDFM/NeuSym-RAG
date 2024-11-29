@@ -1,0 +1,21 @@
+{
+    "uuid": "ee0755e3-741d-56b1-a9ef-73a20b10cf02",
+    "title": "The CRINGE Loss: Learning what language not to model",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{adolphs-etal-2023-cringe,\n    title = \"The {CRINGE} Loss: Learning what language not to model\",\n    author = \"Adolphs, Leonard  and\n      Gao, Tianyu  and\n      Xu, Jing  and\n      Shuster, Kurt  and\n      Sukhbaatar, Sainbayar  and\n      Weston, Jason\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.493\",\n    doi = \"10.18653/v1/2023.acl-long.493\",\n    pages = \"8854--8874\",\n    abstract = \"Standard language model training employs gold human documents or human-human interaction data, and treats all training data as positive examples. Growing evidence shows that even with very large amounts of positive training data, issues remain that can be alleviated with relatively small amounts of negative data {--} examples of what the model should not do. In this work, we propose a novel procedure to train with such data called the {``}CRINGE{''} loss (ContRastive Iterative Negative GEneration). We show the effectiveness of this approach across three different experiments on the tasks of safe generation, contradiction avoidance, and open-domain dialogue. Our models outperform multiple strong baselines and are conceptually simple, easy to train and implement.\",\n}\n",
+    "authors": [
+        "Leonard Adolphs",
+        "Tianyu Gao",
+        "Jing Xu",
+        "Kurt Shuster",
+        "Sainbayar Sukhbaatar",
+        "Jason Weston"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.493.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ee0755e3-741d-56b1-a9ef-73a20b10cf02.pdf",
+    "abstract": "Standard language model training employs gold human documents or human-human interaction data, and treats all training data as positive examples. Growing evidence shows that even with very large amounts of positive training data, issues remain that can be alleviated with relatively small amounts of negative data – examples of what the model should not do. In this work, we propose a novel procedure to train with such data called the “CRINGE” loss (ContRastive Iterative Negative GEneration). We show the effectiveness of this approach across three different experiments on the tasks of safe generation, contradiction avoidance, and open-domain dialogue. Our models outperform multiple strong baselines and are conceptually simple, easy to train and implement.",
+    "num_pages": 21
+}

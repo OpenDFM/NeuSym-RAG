@@ -1,0 +1,22 @@
+{
+    "uuid": "78b54bfe-7a26-5897-947b-91c676f7089f",
+    "title": "Making Harmful Behaviors Unlearnable for Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhou-etal-2024-making,\n    title = \"Making Harmful Behaviors Unlearnable for Large Language Models\",\n    author = \"Zhou, Xin  and\n      Lu, Yi  and\n      Ma, Ruotian  and\n      Wei, Yujian  and\n      Gui, Tao  and\n      Zhang, Qi  and\n      Huang, Xuanjing\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.611\",\n    doi = \"10.18653/v1/2024.findings-acl.611\",\n    pages = \"10258--10273\",\n    abstract = \"Large language models (LLMs) have shown great potential to empower various domains and are often customized by fine-tuning for the requirements of different applications. However, the powerful learning ability of LLMs not only enables them to learn new tasks but also makes them vulnerable to learning undesired behaviors, such as harmfulness and hallucination, as the fine-tuning data often implicitly or explicitly contains such content. Can we fine-tune LLMs on harmful data without learning harmful behaviors? This paper proposes a controllable training framework to make undesired behaviors unlearnable during the fine-tuning process. Specifically, we introduce security vectors to control the model{'}s behavior and make it consistent with the undesired behavior. Security vectors are activated during fine-tuning, the consistent behavior makes the model believe that such behavior has already been learned and there is no need for further optimization, while inconsistent data can still be learned. After fine-tuning, security vectors are deactivated to restore the LLM{'}s normal behavior. Our experiments show that the security vectors can prevent LLM from learning harmful and hallucination behavior while preserving the ability to learn other information.\",\n}\n",
+    "authors": [
+        "Xin Zhou",
+        "Yi Lu",
+        "Ruotian Ma",
+        "Yujian Wei",
+        "Tao Gui",
+        "Qi Zhang",
+        "Xuanjing Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.611.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/78b54bfe-7a26-5897-947b-91c676f7089f.pdf",
+    "abstract": "Large language models (LLMs) have shown great potential to empower various domains and are often customized by fine-tuning for the requirements of different applications. However, the powerful learning ability of LLMs not only enables them to learn new tasks but also makes them vulnerable to learning undesired behaviors, such as harmfulness and hallucination, as the fine-tuning data often implicitly or explicitly contains such content. Can we fine-tune LLMs on harmful data without learning harmful behaviors? This paper proposes a controllable training framework to make undesired behaviors unlearnable during the fine-tuning process. Specifically, we introduce security vectors to control the model’s behavior and make it consistent with the undesired behavior. Security vectors are activated during fine-tuning, the consistent behavior makes the model believe that such behavior has already been learned and there is no need for further optimization, while inconsistent data can still be learned. After fine-tuning, security vectors are deactivated to restore the LLM’s normal behavior. Our experiments show that the security vectors can prevent LLM from learning harmful and hallucination behavior while preserving the ability to learn other information.",
+    "num_pages": 16
+}

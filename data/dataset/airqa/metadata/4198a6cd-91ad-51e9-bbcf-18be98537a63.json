@@ -1,0 +1,25 @@
+{
+    "uuid": "4198a6cd-91ad-51e9-bbcf-18be98537a63",
+    "title": "Rapid Diffusion: Building Domain-Specific Text-to-Image Synthesizers with Fast Inference Speed",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{liu-etal-2023-rapid,\n    title = \"Rapid Diffusion: Building Domain-Specific Text-to-Image Synthesizers with Fast Inference Speed\",\n    author = \"Liu, Bingyan  and\n      Lin, Weifeng  and\n      Duan, Zhongjie  and\n      Wang, Chengyu  and\n      Ziheng, Wu  and\n      Zipeng, Zhang  and\n      Jia, Kui  and\n      Jin, Lianwen  and\n      Chen, Cen  and\n      Huang, Jun\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.28\",\n    doi = \"10.18653/v1/2023.acl-industry.28\",\n    pages = \"295--304\",\n    abstract = \"Text-to-Image Synthesis (TIS) aims to generate images based on textual inputs. Recently, several large pre-trained diffusion models have been released to create high-quality images with pre-trained text encoders and diffusion-based image synthesizers. However, popular diffusion-based models from the open-source community cannot support industrial domain-specific applications due to the lack of entity knowledge and low inference speed. In this paper, we propose Rapid Diffusion, a novel framework for training and deploying super-resolution, text-to-image latent diffusion models with rich entity knowledge injected and optimized networks. Furthermore, we employ BladeDISC, an end-to-end Artificial Intelligence (AI) compiler, and FlashAttention techniques to optimize computational graphs of the generated models for online deployment. Experiments verify the effectiveness of our approach in terms of image quality and inference speed. In addition, we present industrial use cases and integrate Rapid Diffusion to an AI platform to show its practical values.\",\n}\n",
+    "authors": [
+        "Bingyan Liu",
+        "Weifeng Lin",
+        "Zhongjie Duan",
+        "Chengyu Wang",
+        "Wu Ziheng",
+        "Zhang Zipeng",
+        "Kui Jia",
+        "Lianwen Jin",
+        "Cen Chen",
+        "Jun Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.28.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4198a6cd-91ad-51e9-bbcf-18be98537a63.pdf",
+    "abstract": "Text-to-Image Synthesis (TIS) aims to generate images based on textual inputs. Recently, several large pre-trained diffusion models have been released to create high-quality images with pre-trained text encoders and diffusion-based image synthesizers. However, popular diffusion-based models from the open-source community cannot support industrial domain-specific applications due to the lack of entity knowledge and low inference speed. In this paper, we propose Rapid Diffusion, a novel framework for training and deploying super-resolution, text-to-image latent diffusion models with rich entity knowledge injected and optimized networks. Furthermore, we employ BladeDISC, an end-to-end Artificial Intelligence (AI) compiler, and FlashAttention techniques to optimize computational graphs of the generated models for online deployment. Experiments verify the effectiveness of our approach in terms of image quality and inference speed. In addition, we present industrial use cases and integrate Rapid Diffusion to an AI platform to show its practical values.",
+    "num_pages": 10
+}

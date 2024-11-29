@@ -1,0 +1,20 @@
+{
+    "uuid": "6ae8af01-a9dd-5104-8bb4-c24c2731e800",
+    "title": "xSIM++: An Improved Proxy to Bitext Mining Performance for Low-Resource Languages",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{chen-etal-2023-xsim,\n    title = \"x{SIM}++: An Improved Proxy to Bitext Mining Performance for Low-Resource Languages\",\n    author = \"Chen, Mingda  and\n      Heffernan, Kevin  and\n      {\\c{C}}elebi, Onur  and\n      Mourachko, Alexandre  and\n      Schwenk, Holger\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.10\",\n    doi = \"10.18653/v1/2023.acl-short.10\",\n    pages = \"101--109\",\n    abstract = \"We introduce a new proxy score for evaluating bitext mining based on similarity in a multilingual embedding space: xsim++. In comparison to xsim, this improved proxy leverages rule-based approaches to extend English sentences in any evaluation set with synthetic, hard-to-distinguish examples which more closely mirror the scenarios we encounter during large-scale mining. We validate this proxy by running a significant number of bitext mining experiments for a set of low-resource languages, and subsequently train NMT systems on the mined data. In comparison to xsim, we show that xsim++ is better correlated with the downstream BLEU scores of translation systems trained on mined bitexts, providing a reliable proxy of bitext mining performance without needing to run expensive bitext mining pipelines. xsim++ also reports performance for different error types, offering more fine-grained feedbacks for model development.\",\n}\n",
+    "authors": [
+        "Mingda Chen",
+        "Kevin Heffernan",
+        "Onur Çelebi",
+        "Alexandre Mourachko",
+        "Holger Schwenk"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.10.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/6ae8af01-a9dd-5104-8bb4-c24c2731e800.pdf",
+    "abstract": "We introduce a new proxy score for evaluating bitext mining based on similarity in a multilingual embedding space: xsim++. In comparison to xsim, this improved proxy leverages rule-based approaches to extend English sentences in any evaluation set with synthetic, hard-to-distinguish examples which more closely mirror the scenarios we encounter during large-scale mining. We validate this proxy by running a significant number of bitext mining experiments for a set of low-resource languages, and subsequently train NMT systems on the mined data. In comparison to xsim, we show that xsim++ is better correlated with the downstream BLEU scores of translation systems trained on mined bitexts, providing a reliable proxy of bitext mining performance without needing to run expensive bitext mining pipelines. xsim++ also reports performance for different error types, offering more fine-grained feedbacks for model development.",
+    "num_pages": 9
+}

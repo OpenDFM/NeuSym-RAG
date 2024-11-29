@@ -1,0 +1,19 @@
+{
+    "uuid": "61aabb2a-f1d1-596e-8f12-33f86d28d84a",
+    "title": "Speech Translation with Foundation Models and Optimal Transport: UPC at IWSLT23",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)",
+    "bibtex": "@inproceedings{tsiamas-etal-2023-speech,\n    title = \"Speech Translation with Foundation Models and Optimal Transport: {UPC} at {IWSLT}23\",\n    author = \"Tsiamas, Ioannis  and\n      I. G{\\'a}llego, Gerard  and\n      Fonollosa, Jose  and\n      R. Costa-juss{\\'a}, Marta\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.iwslt-1.38\",\n    doi = \"10.18653/v1/2023.iwslt-1.38\",\n    pages = \"397--410\",\n    abstract = \"This paper describes the submission of the UPC Machine Translation group to the IWSLT 2023 Offline Speech Translation task. Our Speech Translation systems utilize foundation models for speech (wav2vec 2.0) and text (mBART50). We incorporate a Siamese pretraining step of the speech and text encoders with CTC and Optimal Transport, to adapt the speech representations to the space of the text model, thus maximizing transfer learning from MT. After this pretraining, we fine-tune our system end-to-end on ST, with Cross Entropy and Knowledge Distillation. Apart from the available ST corpora, we create synthetic data with SegAugment to better adapt our models to the custom segmentations of the IWSLT test sets. Our best single model obtains 31.2 BLEU points on MuST-C tst-COMMON, 29.8 points on IWLST.tst2020 and 33.4 points on the newly released IWSLT.ACLdev2023.\",\n}\n",
+    "authors": [
+        "Ioannis Tsiamas",
+        "Gerard I. Gállego",
+        "Jose Fonollosa",
+        "Marta R. Costa-jussá"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.iwslt-1.38.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/61aabb2a-f1d1-596e-8f12-33f86d28d84a.pdf",
+    "abstract": "This paper describes the submission of the UPC Machine Translation group to the IWSLT 2023 Offline Speech Translation task. Our Speech Translation systems utilize foundation models for speech (wav2vec 2.0) and text (mBART50). We incorporate a Siamese pretraining step of the speech and text encoders with CTC and Optimal Transport, to adapt the speech representations to the space of the text model, thus maximizing transfer learning from MT. After this pretraining, we fine-tune our system end-to-end on ST, with Cross Entropy and Knowledge Distillation. Apart from the available ST corpora, we create synthetic data with SegAugment to better adapt our models to the custom segmentations of the IWSLT test sets. Our best single model obtains 31.2 BLEU points on MuST-C tst-COMMON, 29.8 points on IWLST.tst2020 and 33.4 points on the newly released IWSLT.ACLdev2023.",
+    "num_pages": 14
+}

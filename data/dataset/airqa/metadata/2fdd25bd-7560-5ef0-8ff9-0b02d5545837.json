@@ -1,0 +1,21 @@
+{
+    "uuid": "2fdd25bd-7560-5ef0-8ff9-0b02d5545837",
+    "title": "FastDiff 2: Revisiting and Incorporating GANs and Diffusion Models in High-Fidelity Speech Synthesis",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{huang-etal-2023-fastdiff,\n    title = \"{F}ast{D}iff 2: Revisiting and Incorporating {GAN}s and Diffusion Models in High-Fidelity Speech Synthesis\",\n    author = \"Huang, Rongjie  and\n      Ren, Yi  and\n      Jiang, Ziyue  and\n      Cui, Chenye  and\n      Liu, Jinglin  and\n      Zhao, Zhou\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.437\",\n    doi = \"10.18653/v1/2023.findings-acl.437\",\n    pages = \"6994--7009\",\n    abstract = \"Generative adversarial networks (GANs) and denoising diffusion probabilistic models (DDPMs) have recently achieved impressive performances in image and audio synthesis. After revisiting their success in conditional speech synthesis, we find that 1) GANs sacrifice sample diversity for quality and speed, 2) diffusion models exhibit outperformed sample quality and diversity at a high computational cost, where achieving high-quality, fast, and diverse speech synthesis challenges all neural synthesizers. In this work, we propose to converge advantages from GANs and diffusion models by incorporating both classes, introducing dual-empowered modeling perspectives: 1) FastDiff 2 (DiffGAN), a diffusion model whose denoising process is parametrized by conditional GANs, and the non-Gaussian denoising distribution makes it much more stable to implement the reverse process with large steps sizes; and 2) FastDiff 2 (GANDiff), a generative adversarial network whose forward process is constructed by multiple denoising diffusion iterations, which exhibits better sample diversity than traditional GANs. Experimental results show that both variants enjoy an efficient 4-step sampling process and demonstrate superior sample quality and diversity. Audio samples are available at \\url{https://RevisitSpeech.github.io/}\",\n}\n",
+    "authors": [
+        "Rongjie Huang",
+        "Yi Ren",
+        "Ziyue Jiang",
+        "Chenye Cui",
+        "Jinglin Liu",
+        "Zhou Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.437.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2fdd25bd-7560-5ef0-8ff9-0b02d5545837.pdf",
+    "abstract": "Generative adversarial networks (GANs) and denoising diffusion probabilistic models (DDPMs) have recently achieved impressive performances in image and audio synthesis. After revisiting their success in conditional speech synthesis, we find that 1) GANs sacrifice sample diversity for quality and speed, 2) diffusion models exhibit outperformed sample quality and diversity at a high computational cost, where achieving high-quality, fast, and diverse speech synthesis challenges all neural synthesizers. In this work, we propose to converge advantages from GANs and diffusion models by incorporating both classes, introducing dual-empowered modeling perspectives: 1) FastDiff 2 (DiffGAN), a diffusion model whose denoising process is parametrized by conditional GANs, and the non-Gaussian denoising distribution makes it much more stable to implement the reverse process with large steps sizes; and 2) FastDiff 2 (GANDiff), a generative adversarial network whose forward process is constructed by multiple denoising diffusion iterations, which exhibits better sample diversity than traditional GANs. Experimental results show that both variants enjoy an efficient 4-step sampling process and demonstrate superior sample quality and diversity. Audio samples are available at https://RevisitSpeech.github.io/",
+    "num_pages": 16
+}

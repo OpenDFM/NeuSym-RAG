@@ -1,0 +1,27 @@
+{
+    "uuid": "e960f2a6-b4a8-5e8e-8198-9d12d531531f",
+    "title": "Aligning Large Multimodal Models with Factually Augmented RLHF",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{sun-etal-2024-aligning,\n    title = \"Aligning Large Multimodal Models with Factually Augmented {RLHF}\",\n    author = \"Sun, Zhiqing  and\n      Shen, Sheng  and\n      Cao, Shengcao  and\n      Liu, Haotian  and\n      Li, Chunyuan  and\n      Shen, Yikang  and\n      Gan, Chuang  and\n      Gui, Liangyan  and\n      Wang, Yu-Xiong  and\n      Yang, Yiming  and\n      Keutzer, Kurt  and\n      Darrell, Trevor\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.775\",\n    doi = \"10.18653/v1/2024.findings-acl.775\",\n    pages = \"13088--13110\",\n    abstract = \"Large Multimodal Models (LMM) are built across modalities and the misalignment between two modalities can result in {``}hallucination{''}, generating textual outputs that are not grounded by the multimodal information in context. To address the multimodal misalignment issue, we adapt the Reinforcement Learning from Human Feedback (RLHF) from the text domain to the vision-language alignment, where human annotators are asked to compare two responses and pinpoint the more hallucinated one, and the vision-language model is trained to maximize the simulated human rewards. We propose a new alignment algorithm called Factually Augmented RLHF that augments the reward model with additional factual information such as image captions and ground-truth multi-choice options, which alleviates the reward hacking phenomenon in RLHF and further improves the performance. We also enhance the GPT-4-generated training data (for vision instruction tuning) with previously available human-written image-text pairs to improve the general capabilities of our model. To evaluate the proposed approach in real-world scenarios, we develop a new evaluation benchmark MMHAL-BENCH with a special focus on penalizing hallucinations. As the first LMM trained with RLHF, our approach achieves remarkable improvement on the LLaVA-Bench dataset with the 96{\\%} performance level of the text-only GPT-4 (while previous best methods can only achieve the 87{\\%} level), and an improvement of 60{\\%} on MMHAL-BENCH over other baselines.\",\n}\n",
+    "authors": [
+        "Zhiqing Sun",
+        "Sheng Shen",
+        "Shengcao Cao",
+        "Haotian Liu",
+        "Chunyuan Li",
+        "Yikang Shen",
+        "Chuang Gan",
+        "Liangyan Gui",
+        "Yu-Xiong Wang",
+        "Yiming Yang",
+        "Kurt Keutzer",
+        "Trevor Darrell"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.775.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e960f2a6-b4a8-5e8e-8198-9d12d531531f.pdf",
+    "abstract": "Large Multimodal Models (LMM) are built across modalities and the misalignment between two modalities can result in “hallucination”, generating textual outputs that are not grounded by the multimodal information in context. To address the multimodal misalignment issue, we adapt the Reinforcement Learning from Human Feedback (RLHF) from the text domain to the vision-language alignment, where human annotators are asked to compare two responses and pinpoint the more hallucinated one, and the vision-language model is trained to maximize the simulated human rewards. We propose a new alignment algorithm called Factually Augmented RLHF that augments the reward model with additional factual information such as image captions and ground-truth multi-choice options, which alleviates the reward hacking phenomenon in RLHF and further improves the performance. We also enhance the GPT-4-generated training data (for vision instruction tuning) with previously available human-written image-text pairs to improve the general capabilities of our model. To evaluate the proposed approach in real-world scenarios, we develop a new evaluation benchmark MMHAL-BENCH with a special focus on penalizing hallucinations. As the first LMM trained with RLHF, our approach achieves remarkable improvement on the LLaVA-Bench dataset with the 96% performance level of the text-only GPT-4 (while previous best methods can only achieve the 87% level), and an improvement of 60% on MMHAL-BENCH over other baselines.",
+    "num_pages": 23
+}

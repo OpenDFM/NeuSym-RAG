@@ -1,0 +1,24 @@
+{
+    "uuid": "c8f4f5f6-b961-5cf2-b142-70f21246618e",
+    "title": "Ranking-Enhanced Unsupervised Sentence Representation Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{seonwoo-etal-2023-ranking,\n    title = \"Ranking-Enhanced Unsupervised Sentence Representation Learning\",\n    author = \"Seonwoo, Yeon  and\n      Wang, Guoyin  and\n      Seo, Changmin  and\n      Choudhary, Sajal  and\n      Li, Jiwei  and\n      Li, Xiang  and\n      Xu, Puyang  and\n      Park, Sunghyun  and\n      Oh, Alice\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.879\",\n    doi = \"10.18653/v1/2023.acl-long.879\",\n    pages = \"15783--15798\",\n    abstract = \"Unsupervised sentence representation learning has progressed through contrastive learning and data augmentation methods such as dropout masking. Despite this progress, sentence encoders are still limited to using only an input sentence when predicting its semantic vector. In this work, we show that the semantic meaning of a sentence is also determined by nearest-neighbor sentences that are similar to the input sentence. Based on this finding, we propose a novel unsupervised sentence encoder, RankEncoder. RankEncoder predicts the semantic vector of an input sentence by leveraging its relationship with other sentences in an external corpus, as well as the input sentence itself. We evaluate RankEncoder on semantic textual benchmark datasets. From the experimental results, we verify that 1) RankEncoder achieves 80.07{\\%} Spearman{'}s correlation, a 1.1{\\%} absolute improvement compared to the previous state-of-the-art performance, 2) RankEncoder is universally applicable to existing unsupervised sentence embedding methods, and 3) RankEncoder is specifically effective for predicting the similarity scores of similar sentence pairs.\",\n}\n",
+    "authors": [
+        "Yeon Seonwoo",
+        "Guoyin Wang",
+        "Changmin Seo",
+        "Sajal Choudhary",
+        "Jiwei Li",
+        "Xiang Li",
+        "Puyang Xu",
+        "Sunghyun Park",
+        "Alice Oh"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.879.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c8f4f5f6-b961-5cf2-b142-70f21246618e.pdf",
+    "abstract": "Unsupervised sentence representation learning has progressed through contrastive learning and data augmentation methods such as dropout masking. Despite this progress, sentence encoders are still limited to using only an input sentence when predicting its semantic vector. In this work, we show that the semantic meaning of a sentence is also determined by nearest-neighbor sentences that are similar to the input sentence. Based on this finding, we propose a novel unsupervised sentence encoder, RankEncoder. RankEncoder predicts the semantic vector of an input sentence by leveraging its relationship with other sentences in an external corpus, as well as the input sentence itself. We evaluate RankEncoder on semantic textual benchmark datasets. From the experimental results, we verify that 1) RankEncoder achieves 80.07% Spearman’s correlation, a 1.1% absolute improvement compared to the previous state-of-the-art performance, 2) RankEncoder is universally applicable to existing unsupervised sentence embedding methods, and 3) RankEncoder is specifically effective for predicting the similarity scores of similar sentence pairs.",
+    "num_pages": 16
+}

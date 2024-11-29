@@ -1,0 +1,19 @@
+{
+    "uuid": "f0d961d2-d190-5de7-874b-91a05aa91921",
+    "title": "Fantastic Semantics and Where to Find Them: Investigating Which Layers of Generative LLMs Reflect Lexical Semantics",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{liu-etal-2024-fantastic,\n    title = \"Fantastic Semantics and Where to Find Them: Investigating Which Layers of Generative {LLM}s Reflect Lexical Semantics\",\n    author = \"Liu, Zhu  and\n      Kong, Cunliang  and\n      Liu, Ying  and\n      Sun, Maosong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.866\",\n    doi = \"10.18653/v1/2024.findings-acl.866\",\n    pages = \"14551--14558\",\n    abstract = \"Large language models have achieved remarkable success in general language understanding tasks. However, as a family of generative methods with the objective of next token prediction, the semantic evolution with the depth of these models are not fully explored, unlike their predecessors, such as BERT-like architectures. In this paper, we specifically investigate the bottom-up evolution of lexical semantics for a popular LLM, namely Llama2, by probing its hidden states at the end of each layer using a contextualized word identification task. Our experiments show that the representations in lower layers encode lexical semantics, while the higher layers, with weaker semantic induction, are responsible for prediction. This is in contrast to models with discriminative objectives, such as mask language modeling, where the higher layers obtain better lexical semantics. The conclusion is further supported by the monotonic increase in performance via the hidden states for the last meaningless symbols, such as punctuation, in the prompting strategy. Our codes are available at https://github.com/RyanLiut/LLM{\\_}LexSem.\",\n}\n",
+    "authors": [
+        "Zhu Liu",
+        "Cunliang Kong",
+        "Ying Liu",
+        "Maosong Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.866.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/f0d961d2-d190-5de7-874b-91a05aa91921.pdf",
+    "abstract": "Large language models have achieved remarkable success in general language understanding tasks. However, as a family of generative methods with the objective of next token prediction, the semantic evolution with the depth of these models are not fully explored, unlike their predecessors, such as BERT-like architectures. In this paper, we specifically investigate the bottom-up evolution of lexical semantics for a popular LLM, namely Llama2, by probing its hidden states at the end of each layer using a contextualized word identification task. Our experiments show that the representations in lower layers encode lexical semantics, while the higher layers, with weaker semantic induction, are responsible for prediction. This is in contrast to models with discriminative objectives, such as mask language modeling, where the higher layers obtain better lexical semantics. The conclusion is further supported by the monotonic increase in performance via the hidden states for the last meaningless symbols, such as punctuation, in the prompting strategy. Our codes are available at https://github.com/RyanLiut/LLM_LexSem.",
+    "num_pages": 8
+}

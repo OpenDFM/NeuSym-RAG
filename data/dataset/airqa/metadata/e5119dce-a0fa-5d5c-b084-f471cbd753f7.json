@@ -1,0 +1,18 @@
+{
+    "uuid": "e5119dce-a0fa-5d5c-b084-f471cbd753f7",
+    "title": "Semantic-Oriented Unlabeled Priming for Large-Scale Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)",
+    "bibtex": "@inproceedings{liu-etal-2023-semantic,\n    title = \"Semantic-Oriented Unlabeled Priming for Large-Scale Language Models\",\n    author = \"Liu, Yanchen  and\n      Schick, Timo  and\n      Schtze, Hinrich\",\n    editor = \"Sadat Moosavi, Nafise  and\n      Gurevych, Iryna  and\n      Hou, Yufang  and\n      Kim, Gyuwan  and\n      Kim, Young Jin  and\n      Schuster, Tal  and\n      Agrawal, Ameeta\",\n    booktitle = \"Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (Hybrid)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.sustainlp-1.2\",\n    doi = \"10.18653/v1/2023.sustainlp-1.2\",\n    pages = \"32--38\",\n}\n",
+    "authors": [
+        "Yanchen Liu",
+        "Timo Schick",
+        "Hinrich Schtze"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.sustainlp-1.2.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/e5119dce-a0fa-5d5c-b084-f471cbd753f7.pdf",
+    "abstract": "Due to the high costs associated with finetuning large language models, various recent works propose to adapt them to specific tasks without any parameter updates through in-context learning. Unfortunately, for in-context learning there is currently no way to leverage unlabeled data, which is often much easier to obtain in large quantities than labeled examples. In this work, we therefore investigate ways to make use of unlabeled examples to improve the zero-shot performance of pretrained language models without any finetuning: We introduce Semantic-Oriented Unlabeled Priming (SOUP), a method that classifies examples by retrieving semantically similar unlabeled examples, assigning labels to them in a zero-shot fashion, and then using them for in-context learning. We also propose bag-of-contexts priming, a new priming strategy that is more suitable for our setting and enables the usage of more examples than fit into the context window.",
+    "num_pages": 7
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "fd90ae9c-34fc-5732-81c1-50091b793b7b",
+    "title": "Revisiting Pathologies of Neural Models under Input Reduction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{kruengkrai-yamagishi-2023-revisiting,\n    title = \"Revisiting Pathologies of Neural Models under Input Reduction\",\n    author = \"Kruengkrai, Canasai  and\n      Yamagishi, Junichi\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.730\",\n    doi = \"10.18653/v1/2023.findings-acl.730\",\n    pages = \"11504--11517\",\n    abstract = \"We revisit the question of why neural models tend to produce high-confidence predictions on inputs that appear nonsensical to humans. Previous work has suggested that the models fail to assign low probabilities to such inputs due to model overconfidence. We evaluate various regularization methods on fact verification benchmarks and find that this problem persists even with well-calibrated or underconfident models, suggesting that overconfidence is not the only underlying cause. We also find that regularizing the models with reduced examples helps improve interpretability but comes with the cost of miscalibration. We show that although these reduced examples are incomprehensible to humans, they can contain valid statistical patterns in the dataset utilized by the model.\",\n}\n",
+    "authors": [
+        "Canasai Kruengkrai",
+        "Junichi Yamagishi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.730.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/fd90ae9c-34fc-5732-81c1-50091b793b7b.pdf",
+    "abstract": "We revisit the question of why neural models tend to produce high-confidence predictions on inputs that appear nonsensical to humans. Previous work has suggested that the models fail to assign low probabilities to such inputs due to model overconfidence. We evaluate various regularization methods on fact verification benchmarks and find that this problem persists even with well-calibrated or underconfident models, suggesting that overconfidence is not the only underlying cause. We also find that regularizing the models with reduced examples helps improve interpretability but comes with the cost of miscalibration. We show that although these reduced examples are incomprehensible to humans, they can contain valid statistical patterns in the dataset utilized by the model.",
+    "num_pages": 14
+}

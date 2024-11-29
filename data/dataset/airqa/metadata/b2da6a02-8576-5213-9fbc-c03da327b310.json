@@ -1,0 +1,18 @@
+{
+    "uuid": "b2da6a02-8576-5213-9fbc-c03da327b310",
+    "title": "DEBATE: Devil’s Advocate-Based Assessment and Text Evaluation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{kim-etal-2024-debate,\n    title = \"{DEBATE}: Devil{'}s Advocate-Based Assessment and Text Evaluation\",\n    author = \"Kim, Alex  and\n      Kim, Keonwoo  and\n      Yoon, Sangwon\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.112\",\n    doi = \"10.18653/v1/2024.findings-acl.112\",\n    pages = \"1885--1897\",\n    abstract = \"As natural language generation (NLG) models have become prevalent, systematically assessing the quality of machine-generated texts has become increasingly important. Recent studies introduce LLM-based evaluators that operate as reference-free metrics, demonstrating their capability to adeptly handle novel tasks. However, these models generally rely on a single-agent approach, which, we argue, introduces an inherent limit to their performance. This is because there exist biases in LLM agent{'}s responses, including preferences for certain text structure or content. In this work, we propose DEBATE, an NLG evaluation framework based on multi-agent scoring system augmented with a concept of Devil{'}s Advocate. Within the framework, one agent is instructed to criticize other agents{'} arguments, potentially resolving the bias in LLM agent{'}s answers. DEBATE substantially outperforms the previous state-of-the-art methods in two meta-evaluation benchmarks in NLG evaluation, SummEval and TopicalChat. We also show that the extensiveness of debates among agents and the persona of an agent can influence the performance of evaluators.\",\n}\n",
+    "authors": [
+        "Alex Kim",
+        "Keonwoo Kim",
+        "Sangwon Yoon"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.112.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/b2da6a02-8576-5213-9fbc-c03da327b310.pdf",
+    "abstract": "As natural language generation (NLG) models have become prevalent, systematically assessing the quality of machine-generated texts has become increasingly important. Recent studies introduce LLM-based evaluators that operate as reference-free metrics, demonstrating their capability to adeptly handle novel tasks. However, these models generally rely on a single-agent approach, which, we argue, introduces an inherent limit to their performance. This is because there exist biases in LLM agent’s responses, including preferences for certain text structure or content. In this work, we propose DEBATE, an NLG evaluation framework based on multi-agent scoring system augmented with a concept of Devil’s Advocate. Within the framework, one agent is instructed to criticize other agents’ arguments, potentially resolving the bias in LLM agent’s answers. DEBATE substantially outperforms the previous state-of-the-art methods in two meta-evaluation benchmarks in NLG evaluation, SummEval and TopicalChat. We also show that the extensiveness of debates among agents and the persona of an agent can influence the performance of evaluators.",
+    "num_pages": 13
+}

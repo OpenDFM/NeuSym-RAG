@@ -1,0 +1,24 @@
+{
+    "uuid": "fbf14fea-51eb-53f5-b189-a3c858c56cd1",
+    "title": "KIEval: A Knowledge-grounded Interactive Evaluation Framework for Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yu-etal-2024-kieval,\n    title = \"{KIE}val: A Knowledge-grounded Interactive Evaluation Framework for Large Language Models\",\n    author = \"Yu, Zhuohao  and\n      Gao, Chang  and\n      Yao, Wenjin  and\n      Wang, Yidong  and\n      Ye, Wei  and\n      Wang, Jindong  and\n      Xie, Xing  and\n      Zhang, Yue  and\n      Zhang, Shikun\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.325\",\n    doi = \"10.18653/v1/2024.acl-long.325\",\n    pages = \"5967--5985\",\n    abstract = \"Automatic evaluation methods for large language models (LLMs) are hindered by data contamination, leading to inflated assessments of their effectiveness. Existing strategies, which aim to detect contaminated texts, focus on quantifying contamination status instead of accurately gauging model performance. In this paper, we introduce KIEval, a Knowledge-grounded Interactive Evaluation framework, which incorporates an LLM-powered {``}interactor{''} role for the first time to accomplish a dynamic contamination-resilient evaluation. Starting with a question in a conventional LLM benchmark involving domain-specific knowledge, KIEval utilizes dynamically generated, multi-round, and knowledge-focused dialogues to determine whether a model{'}s response is merely a recall of benchmark answers or demonstrates a deep comprehension to apply knowledge in more complex conversations. Extensive experiments on seven leading LLMs across five datasets validate KIEval{'}s effectiveness and generalization. We also reveal that data contamination brings no contribution or even negative effect to models{'} real-world applicability and understanding, and existing contamination detection methods for LLMs can only identify contamination in pre-training but not during supervised fine-tuning.\",\n}\n",
+    "authors": [
+        "Zhuohao Yu",
+        "Chang Gao",
+        "Wenjin Yao",
+        "Yidong Wang",
+        "Wei Ye",
+        "Jindong Wang",
+        "Xing Xie",
+        "Yue Zhang",
+        "Shikun Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.325.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/fbf14fea-51eb-53f5-b189-a3c858c56cd1.pdf",
+    "abstract": "Automatic evaluation methods for large language models (LLMs) are hindered by data contamination, leading to inflated assessments of their effectiveness. Existing strategies, which aim to detect contaminated texts, focus on quantifying contamination status instead of accurately gauging model performance. In this paper, we introduce KIEval, a Knowledge-grounded Interactive Evaluation framework, which incorporates an LLM-powered “interactor” role for the first time to accomplish a dynamic contamination-resilient evaluation. Starting with a question in a conventional LLM benchmark involving domain-specific knowledge, KIEval utilizes dynamically generated, multi-round, and knowledge-focused dialogues to determine whether a model’s response is merely a recall of benchmark answers or demonstrates a deep comprehension to apply knowledge in more complex conversations. Extensive experiments on seven leading LLMs across five datasets validate KIEval’s effectiveness and generalization. We also reveal that data contamination brings no contribution or even negative effect to models’ real-world applicability and understanding, and existing contamination detection methods for LLMs can only identify contamination in pre-training but not during supervised fine-tuning.",
+    "num_pages": 19
+}

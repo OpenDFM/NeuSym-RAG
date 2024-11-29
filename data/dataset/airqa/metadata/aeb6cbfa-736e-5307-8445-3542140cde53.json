@@ -1,0 +1,18 @@
+{
+    "uuid": "aeb6cbfa-736e-5307-8445-3542140cde53",
+    "title": "Diverse Demonstrations Improve In-context Compositional Generalization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{levy-etal-2023-diverse,\n    title = \"Diverse Demonstrations Improve In-context Compositional Generalization\",\n    author = \"Levy, Itay  and\n      Bogin, Ben  and\n      Berant, Jonathan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.78\",\n    doi = \"10.18653/v1/2023.acl-long.78\",\n    pages = \"1401--1422\",\n    abstract = \"In-context learning has shown great success in i.i.d semantic parsing splits, where the training and test sets are drawn from the same distribution. In this setup, models are typically prompted with demonstrations that are similar to the input utterance. However, in the setup of compositional generalization, where models are tested on outputs with structures that are absent from the training set, selecting similar demonstrations is insufficient, as often no example will be similar enough to the input. In this work, we propose a method to select diverse demonstrations that aims to collectively cover all of the structures required in the output program, in order to encourage the model to generalize to new structures from these demonstrations. We empirically show that combining diverse demonstrations with in-context learning substantially improves performance across three compositional generalization semantic parsing datasets in the pure in-context learning setup and when combined with finetuning.\",\n}\n",
+    "authors": [
+        "Itay Levy",
+        "Ben Bogin",
+        "Jonathan Berant"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.78.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/aeb6cbfa-736e-5307-8445-3542140cde53.pdf",
+    "abstract": "In-context learning has shown great success in i.i.d semantic parsing splits, where the training and test sets are drawn from the same distribution. In this setup, models are typically prompted with demonstrations that are similar to the input utterance. However, in the setup of compositional generalization, where models are tested on outputs with structures that are absent from the training set, selecting similar demonstrations is insufficient, as often no example will be similar enough to the input. In this work, we propose a method to select diverse demonstrations that aims to collectively cover all of the structures required in the output program, in order to encourage the model to generalize to new structures from these demonstrations. We empirically show that combining diverse demonstrations with in-context learning substantially improves performance across three compositional generalization semantic parsing datasets in the pure in-context learning setup and when combined with finetuning.",
+    "num_pages": 22
+}

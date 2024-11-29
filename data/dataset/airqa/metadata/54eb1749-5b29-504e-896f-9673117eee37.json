@@ -1,0 +1,19 @@
+{
+    "uuid": "54eb1749-5b29-504e-896f-9673117eee37",
+    "title": "AttributionBench: How Hard is Automatic Attribution Evaluation?",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{li-etal-2024-attributionbench,\n    title = \"{A}ttribution{B}ench: How Hard is Automatic Attribution Evaluation?\",\n    author = \"Li, Yifei  and\n      Yue, Xiang  and\n      Liao, Zeyi  and\n      Sun, Huan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.886\",\n    doi = \"10.18653/v1/2024.findings-acl.886\",\n    pages = \"14919--14935\",\n    abstract = \"Modern generative search engines enhance the reliability of large language model (LLM) responses by providing cited evidence. However, evaluating the answer{'}s attribution, i.e., whether every claim within the generated responses is fully supported by its cited evidence, remains an open problem. This verification, traditionally dependent on costly human evaluation, underscores the urgent need for automatic attribution evaluation methods. To bridge the gap in the absence of standardized benchmarks for these methods, we present AttributionBench, a comprehensive benchmark compiled from various existing attribution datasets. Our extensive experiments on AttributionBench reveal the challenges of automatic attribution evaluation, even for state-of-the-art LLMs. Specifically, our findings show that even a fine-tuned GPT-3.5 only achieves around 80{\\%} macro-F1 under a binary classification formulation. A detailed analysis of more than 300 error cases indicates that a majority of failures stem from the model{'}s inability to process nuanced information, and the discrepancy between the information the model has access to and that human annotators do.\",\n}\n",
+    "authors": [
+        "Yifei Li",
+        "Xiang Yue",
+        "Zeyi Liao",
+        "Huan Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.886.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/54eb1749-5b29-504e-896f-9673117eee37.pdf",
+    "abstract": "Modern generative search engines enhance the reliability of large language model (LLM) responses by providing cited evidence. However, evaluating the answer’s attribution, i.e., whether every claim within the generated responses is fully supported by its cited evidence, remains an open problem. This verification, traditionally dependent on costly human evaluation, underscores the urgent need for automatic attribution evaluation methods. To bridge the gap in the absence of standardized benchmarks for these methods, we present AttributionBench, a comprehensive benchmark compiled from various existing attribution datasets. Our extensive experiments on AttributionBench reveal the challenges of automatic attribution evaluation, even for state-of-the-art LLMs. Specifically, our findings show that even a fine-tuned GPT-3.5 only achieves around 80% macro-F1 under a binary classification formulation. A detailed analysis of more than 300 error cases indicates that a majority of failures stem from the model’s inability to process nuanced information, and the discrepancy between the information the model has access to and that human annotators do.",
+    "num_pages": 17
+}

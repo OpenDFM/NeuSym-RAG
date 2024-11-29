@@ -1,0 +1,21 @@
+{
+    "uuid": "c25b61cb-b933-5fd0-a671-e141c13bb82a",
+    "title": "Domain Incremental Lifelong Learning in an Open World",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{dai-etal-2023-domain,\n    title = \"Domain Incremental Lifelong Learning in an Open World\",\n    author = \"Dai, Yi  and\n      Lang, Hao  and\n      Zheng, Yinhe  and\n      Yu, Bowen  and\n      Huang, Fei  and\n      Li, Yongbin\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.361\",\n    doi = \"10.18653/v1/2023.findings-acl.361\",\n    pages = \"5844--5865\",\n    abstract = \"Lifelong learning (LL) is an important ability for NLP models to learn new tasks continuously. Architecture-based approaches are reported to be effective implementations for LL models. However, it is non-trivial to extend previous approaches to domain incremental LL scenarios since they either require access to task identities in the testing phase or cannot handle samples from unseen tasks. In this paper, we propose Diana: a dynamic architecture-based lifelong learning model that tries to learn a sequence of tasks with a prompt-enhanced language model. Four types of hierarchically organized prompts are used in Diana to capture knowledge from different granularities. Specifically, we dedicate task-level prompts to capture task-specific knowledge to retain high LL performances and maintain instance-level prompts to learn knowledge shared across input samples to improve the model{'}s generalization performance. Moreover, we dedicate separate prompts to explicitly model unseen tasks and introduce a set of prompt key vectors to facilitate knowledge sharing between tasks. Extensive experiments demonstrate that Diana outperforms state-of-the-art LL models, especially in handling unseen tasks.\",\n}\n",
+    "authors": [
+        "Yi Dai",
+        "Hao Lang",
+        "Yinhe Zheng",
+        "Bowen Yu",
+        "Fei Huang",
+        "Yongbin Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.361.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c25b61cb-b933-5fd0-a671-e141c13bb82a.pdf",
+    "abstract": "Lifelong learning (LL) is an important ability for NLP models to learn new tasks continuously. Architecture-based approaches are reported to be effective implementations for LL models. However, it is non-trivial to extend previous approaches to domain incremental LL scenarios since they either require access to task identities in the testing phase or cannot handle samples from unseen tasks. In this paper, we propose Diana: a dynamic architecture-based lifelong learning model that tries to learn a sequence of tasks with a prompt-enhanced language model. Four types of hierarchically organized prompts are used in Diana to capture knowledge from different granularities. Specifically, we dedicate task-level prompts to capture task-specific knowledge to retain high LL performances and maintain instance-level prompts to learn knowledge shared across input samples to improve the model’s generalization performance. Moreover, we dedicate separate prompts to explicitly model unseen tasks and introduce a set of prompt key vectors to facilitate knowledge sharing between tasks. Extensive experiments demonstrate that Diana outperforms state-of-the-art LL models, especially in handling unseen tasks.",
+    "num_pages": 22
+}

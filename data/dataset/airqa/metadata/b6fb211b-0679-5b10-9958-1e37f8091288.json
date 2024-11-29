@@ -1,0 +1,23 @@
+{
+    "uuid": "b6fb211b-0679-5b10-9958-1e37f8091288",
+    "title": "SimLM: Pre-training with Representation Bottleneck for Dense Passage Retrieval",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2023-simlm,\n    title = \"{S}im{LM}: Pre-training with Representation Bottleneck for Dense Passage Retrieval\",\n    author = \"Wang, Liang  and\n      Yang, Nan  and\n      Huang, Xiaolong  and\n      Jiao, Binxing  and\n      Yang, Linjun  and\n      Jiang, Daxin  and\n      Majumder, Rangan  and\n      Wei, Furu\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.125\",\n    doi = \"10.18653/v1/2023.acl-long.125\",\n    pages = \"2244--2258\",\n    abstract = \"In this paper, we propose SimLM (Similarity matching with Language Model pre-training), a simple yet effective pre-training method for dense passage retrieval. It employs a simple bottleneck architecture that learns to compress the passage information into a dense vector through self-supervised pre-training. We use a replaced language modeling objective, which is inspired by ELECTRA (Clark et al., 2020), to improve the sample efficiency and reduce the mismatch of the input distribution between pre-training and fine-tuning. SimLM only requires access to an unlabeled corpus and is more broadly applicable when there are no labeled data or queries. We conduct experiments on several large-scale passage retrieval datasets and show substantial improvements over strong baselines under various settings. Remarkably, SimLM even outperforms multi-vector approaches such as ColBERTv2 (Santhanam et al., 2021) which incurs significantly more storage cost. Our code and model checkpoints are available at \\url{https://github.com/microsoft/unilm/tree/master/simlm} .\",\n}\n",
+    "authors": [
+        "Liang Wang",
+        "Nan Yang",
+        "Xiaolong Huang",
+        "Binxing Jiao",
+        "Linjun Yang",
+        "Daxin Jiang",
+        "Rangan Majumder",
+        "Furu Wei"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.125.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b6fb211b-0679-5b10-9958-1e37f8091288.pdf",
+    "abstract": "In this paper, we propose SimLM (Similarity matching with Language Model pre-training), a simple yet effective pre-training method for dense passage retrieval. It employs a simple bottleneck architecture that learns to compress the passage information into a dense vector through self-supervised pre-training. We use a replaced language modeling objective, which is inspired by ELECTRA (Clark et al., 2020), to improve the sample efficiency and reduce the mismatch of the input distribution between pre-training and fine-tuning. SimLM only requires access to an unlabeled corpus and is more broadly applicable when there are no labeled data or queries. We conduct experiments on several large-scale passage retrieval datasets and show substantial improvements over strong baselines under various settings. Remarkably, SimLM even outperforms multi-vector approaches such as ColBERTv2 (Santhanam et al., 2021) which incurs significantly more storage cost. Our code and model checkpoints are available at https://github.com/microsoft/unilm/tree/master/simlm .",
+    "num_pages": 15
+}

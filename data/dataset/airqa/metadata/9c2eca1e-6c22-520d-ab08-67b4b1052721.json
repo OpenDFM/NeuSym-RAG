@@ -1,0 +1,20 @@
+{
+    "uuid": "9c2eca1e-6c22-520d-ab08-67b4b1052721",
+    "title": "YNU-HPCC at SIGHAN-2024 dimABSA Task: Using PLMs with a Joint Learning Strategy for Dimensional Intensity Prediction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 10th SIGHAN Workshop on Chinese Language Processing (SIGHAN-10)",
+    "bibtex": "@inproceedings{wangzehui-stu-ynu-edu-cn-etal-2024-ynu,\n    title = \"{YNU}-{HPCC} at {SIGHAN}-2024 dim{ABSA} Task: Using {PLM}s with a Joint Learning Strategy for Dimensional Intensity Prediction\",\n    author = \"Wangzehui@stu.ynu.edu.cn, Wangzehui@stu.ynu.edu.cn  and\n      Zhang, You  and\n      Wang, Jin  and\n      Xu, Dan  and\n      Zhang, Xuejie\",\n    editor = \"Wong, Kam-Fai  and\n      Zhang, Min  and\n      Xu, Ruifeng  and\n      Li, Jing  and\n      Wei, Zhongyu  and\n      Gui, Lin  and\n      Liang, Bin  and\n      Zhao, Runcong\",\n    booktitle = \"Proceedings of the 10th SIGHAN Workshop on Chinese Language Processing (SIGHAN-10)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.sighan-1.11\",\n    pages = \"96--101\",\n    abstract = \"The dimensional approach can represent more fine-grained emotional information than discrete affective states. In this paper, a pretrained language model (PLM) with a joint learning strategy is proposed for the SIGHAN-2024 shared task on Chinese dimensional aspect-based sentiment analysis (dimABSA), which requires submitted models to provide fine-grained multi-dimensional (Valance and Arousal) intensity predictions for given aspects of a review. The proposed model consists of three parts: an input layer that concatenates both given aspect terms and input sentences; a Chinese PLM encoder that generates aspect-specific review representation; and separate linear predictors that jointly predict Valence and Arousal sentiment intensities. Moreover, we merge simplified and traditional Chinese training data for data augmentation. Our systems ranked 2nd place out of 5 participants in subtask 1-intensity prediction. The code is publicly available at https://github.com/WZH5127/2024{\\_}subtask1{\\_}intensity{\\_}prediction.\",\n}\n",
+    "authors": [
+        "Wangzehui@stu.ynu.edu.cn Wangzehui@stu.ynu.edu.cn",
+        "You Zhang",
+        "Jin Wang",
+        "Dan Xu",
+        "Xuejie Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.sighan-1.11.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/9c2eca1e-6c22-520d-ab08-67b4b1052721.pdf",
+    "abstract": "The dimensional approach can represent more fine-grained emotional information than discrete affective states. In this paper, a pretrained language model (PLM) with a joint learning strategy is proposed for the SIGHAN-2024 shared task on Chinese dimensional aspect-based sentiment analysis (dimABSA), which requires submitted models to provide fine-grained multi-dimensional (Valance and Arousal) intensity predictions for given aspects of a review. The proposed model consists of three parts: an input layer that concatenates both given aspect terms and input sentences; a Chinese PLM encoder that generates aspect-specific review representation; and separate linear predictors that jointly predict Valence and Arousal sentiment intensities. Moreover, we merge simplified and traditional Chinese training data for data augmentation. Our systems ranked 2nd place out of 5 participants in subtask 1-intensity prediction. The code is publicly available at https://github.com/WZH5127/2024_subtask1_intensity_prediction.",
+    "num_pages": 6
+}

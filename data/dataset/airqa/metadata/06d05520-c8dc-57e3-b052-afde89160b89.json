@@ -1,0 +1,22 @@
+{
+    "uuid": "06d05520-c8dc-57e3-b052-afde89160b89",
+    "title": "Laziness Is a Virtue When It Comes to Compositionality in Neural Semantic Parsing",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{crouse-etal-2023-laziness,\n    title = \"Laziness Is a Virtue When It Comes to Compositionality in Neural Semantic Parsing\",\n    author = \"Crouse, Maxwell  and\n      Kapanipathi, Pavan  and\n      Chaudhury, Subhajit  and\n      Naseem, Tahira  and\n      Fernandez Astudillo, Ramon  and\n      Fokoue, Achille  and\n      Klinger, Tim\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.470\",\n    doi = \"10.18653/v1/2023.acl-long.470\",\n    pages = \"8434--8448\",\n    abstract = \"Nearly all general-purpose neural semantic parsers generate logical forms in a strictly top-down autoregressive fashion. Though such systems have achieved impressive results across a variety of datasets and domains, recent works have called into question whether they are ultimately limited in their ability to compositionally generalize. In this work, we approach semantic parsing from, quite literally, the opposite direction; that is, we introduce a neural semantic parsing generation method that constructs logical forms from the bottom up, beginning from the logical form{'}s leaves. The system we introduce is lazy in that it incrementally builds up a set of potential semantic parses, but only expands and processes the most promising candidate parses at each generation step. Such a parsimonious expansion scheme allows the system to maintain an arbitrarily large set of parse hypotheses that are never realized and thus incur minimal computational overhead. We evaluate our approach on compositional generalization; specifically, on the challenging CFQ dataset and two other Text-to-SQL datasets where we show that our novel, bottom-up semantic parsing technique outperforms general-purpose semantic parsers while also being competitive with semantic parsers that have been tailored to each task.\",\n}\n",
+    "authors": [
+        "Maxwell Crouse",
+        "Pavan Kapanipathi",
+        "Subhajit Chaudhury",
+        "Tahira Naseem",
+        "Ramon Fernandez Astudillo",
+        "Achille Fokoue",
+        "Tim Klinger"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.470.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/06d05520-c8dc-57e3-b052-afde89160b89.pdf",
+    "abstract": "Nearly all general-purpose neural semantic parsers generate logical forms in a strictly top-down autoregressive fashion. Though such systems have achieved impressive results across a variety of datasets and domains, recent works have called into question whether they are ultimately limited in their ability to compositionally generalize. In this work, we approach semantic parsing from, quite literally, the opposite direction; that is, we introduce a neural semantic parsing generation method that constructs logical forms from the bottom up, beginning from the logical form’s leaves. The system we introduce is lazy in that it incrementally builds up a set of potential semantic parses, but only expands and processes the most promising candidate parses at each generation step. Such a parsimonious expansion scheme allows the system to maintain an arbitrarily large set of parse hypotheses that are never realized and thus incur minimal computational overhead. We evaluate our approach on compositional generalization; specifically, on the challenging CFQ dataset and two other Text-to-SQL datasets where we show that our novel, bottom-up semantic parsing technique outperforms general-purpose semantic parsers while also being competitive with semantic parsers that have been tailored to each task.",
+    "num_pages": 15
+}

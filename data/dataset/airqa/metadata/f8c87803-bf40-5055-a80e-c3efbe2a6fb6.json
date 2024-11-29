@@ -1,0 +1,21 @@
+{
+    "uuid": "f8c87803-bf40-5055-a80e-c3efbe2a6fb6",
+    "title": "Few-shot In-context Learning on Knowledge Base Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{li-etal-2023-shot,\n    title = \"Few-shot In-context Learning on Knowledge Base Question Answering\",\n    author = \"Li, Tianle  and\n      Ma, Xueguang  and\n      Zhuang, Alex  and\n      Gu, Yu  and\n      Su, Yu  and\n      Chen, Wenhu\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.385\",\n    doi = \"10.18653/v1/2023.acl-long.385\",\n    pages = \"6966--6980\",\n    abstract = \"Question answering over knowledge bases is considered a difficult problem due to the challenge of generalizing to a wide variety of possible natural language questions. Additionally, the heterogeneity of knowledge base schema items between different knowledge bases often necessitates specialized training for different knowledge base question-answering (KBQA) datasets. To handle questions over diverse KBQA datasets with a unified training-free framework, we propose KB-BINDER, which for the first time enables few-shot in-context learning over KBQA tasks. Firstly, KB-BINDER leverages large language models like Codex to generate logical forms as the draft for a specific question by imitating a few demonstrations. Secondly, KB-BINDER grounds on the knowledge base to bind the generated draft to an executable one with BM25 score matching. The experimental results on four public heterogeneous KBQA datasets show that KB-BINDER can achieve a strong performance with only a few in-context demonstrations. Especially on GraphQA and 3-hop MetaQA, KB-BINDER can even outperform the state-of-the-art trained models. On GrailQA and WebQSP, our model is also on par with other fully-trained models. We believe KB-BINDER can serve as an important baseline for future research. We plan to release all the code and data. Our code is available at \\url{https://github.com/ltl3A87/KB-BINDER}.\",\n}\n",
+    "authors": [
+        "Tianle Li",
+        "Xueguang Ma",
+        "Alex Zhuang",
+        "Yu Gu",
+        "Yu Su",
+        "Wenhu Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.385.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f8c87803-bf40-5055-a80e-c3efbe2a6fb6.pdf",
+    "abstract": "Question answering over knowledge bases is considered a difficult problem due to the challenge of generalizing to a wide variety of possible natural language questions. Additionally, the heterogeneity of knowledge base schema items between different knowledge bases often necessitates specialized training for different knowledge base question-answering (KBQA) datasets. To handle questions over diverse KBQA datasets with a unified training-free framework, we propose KB-BINDER, which for the first time enables few-shot in-context learning over KBQA tasks. Firstly, KB-BINDER leverages large language models like Codex to generate logical forms as the draft for a specific question by imitating a few demonstrations. Secondly, KB-BINDER grounds on the knowledge base to bind the generated draft to an executable one with BM25 score matching. The experimental results on four public heterogeneous KBQA datasets show that KB-BINDER can achieve a strong performance with only a few in-context demonstrations. Especially on GraphQA and 3-hop MetaQA, KB-BINDER can even outperform the state-of-the-art trained models. On GrailQA and WebQSP, our model is also on par with other fully-trained models. We believe KB-BINDER can serve as an important baseline for future research. We plan to release all the code and data. Our code is available at https://github.com/ltl3A87/KB-BINDER.",
+    "num_pages": 15
+}

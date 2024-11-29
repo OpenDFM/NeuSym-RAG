@@ -1,0 +1,23 @@
+{
+    "uuid": "dee5fed4-127f-5fbd-ae4d-95aebc5c399e",
+    "title": "Extract and Attend: Improving Entity Translation in Neural Machine Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zeng-etal-2023-extract,\n    title = \"Extract and Attend: Improving Entity Translation in Neural Machine Translation\",\n    author = \"Zeng, Zixin  and\n      Wang, Rui  and\n      Leng, Yichong  and\n      Guo, Junliang  and\n      Xie, Shufang  and\n      Tan, Xu  and\n      Qin, Tao  and\n      Liu, Tie-Yan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.107\",\n    doi = \"10.18653/v1/2023.findings-acl.107\",\n    pages = \"1697--1710\",\n    abstract = \"While Neural Machine Translation (NMT) has achieved great progress in recent years, it still suffers from inaccurate translation of entities (e.g., person/organization name, location), due to the lack of entity training instances. When we humans encounter an unknown entity during translation, we usually first look up in a dictionary and then organize the entity translation together with the translations of other parts to form a smooth target sentence. Inspired by this translation process, we propose an Extract-and-Attend approach to enhance entity translation in NMT, where the translation candidates of source entities are first extracted from a dictionary and then attended to by the NMT model to generate the target sentence. Specifically, the translation candidates are extracted by first detecting the entities in a source sentence and then translating the entities through looking up in a dictionary. Then, the extracted candidates are added as a prefix of the decoder input to be attended to by the decoder when generating the target sentence through self-attention. Experiments conducted on En-Zh and En-Ru demonstrate that the proposed method is effective on improving both the translation accuracy of entities and the overall translation quality, with up to 35{\\%} reduction on entity error rate and 0.85 gain on BLEU and 13.8 gain on COMET.\",\n}\n",
+    "authors": [
+        "Zixin Zeng",
+        "Rui Wang",
+        "Yichong Leng",
+        "Junliang Guo",
+        "Shufang Xie",
+        "Xu Tan",
+        "Tao Qin",
+        "Tie-Yan Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.107.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/dee5fed4-127f-5fbd-ae4d-95aebc5c399e.pdf",
+    "abstract": "While Neural Machine Translation (NMT) has achieved great progress in recent years, it still suffers from inaccurate translation of entities (e.g., person/organization name, location), due to the lack of entity training instances. When we humans encounter an unknown entity during translation, we usually first look up in a dictionary and then organize the entity translation together with the translations of other parts to form a smooth target sentence. Inspired by this translation process, we propose an Extract-and-Attend approach to enhance entity translation in NMT, where the translation candidates of source entities are first extracted from a dictionary and then attended to by the NMT model to generate the target sentence. Specifically, the translation candidates are extracted by first detecting the entities in a source sentence and then translating the entities through looking up in a dictionary. Then, the extracted candidates are added as a prefix of the decoder input to be attended to by the decoder when generating the target sentence through self-attention. Experiments conducted on En-Zh and En-Ru demonstrate that the proposed method is effective on improving both the translation accuracy of entities and the overall translation quality, with up to 35% reduction on entity error rate and 0.85 gain on BLEU and 13.8 gain on COMET.",
+    "num_pages": 14
+}

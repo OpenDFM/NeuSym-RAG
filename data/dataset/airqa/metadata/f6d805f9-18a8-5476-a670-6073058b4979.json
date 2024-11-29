@@ -1,0 +1,27 @@
+{
+    "uuid": "f6d805f9-18a8-5476-a670-6073058b4979",
+    "title": "Learning to Edit: Aligning LLMs with Knowledge Editing",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{jiang-etal-2024-learning,\n    title = \"Learning to Edit: Aligning {LLM}s with Knowledge Editing\",\n    author = \"Jiang, Yuxin  and\n      Wang, Yufei  and\n      Wu, Chuhan  and\n      Zhong, Wanjun  and\n      Zeng, Xingshan  and\n      Gao, Jiahui  and\n      Li, Liangyou  and\n      Jiang, Xin  and\n      Shang, Lifeng  and\n      Tang, Ruiming  and\n      Liu, Qun  and\n      Wang, Wei\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.258\",\n    doi = \"10.18653/v1/2024.acl-long.258\",\n    pages = \"4689--4705\",\n    abstract = \"Knowledge editing techniques, aiming to efficiently modify a minor proportion of knowledge in large language models (LLMs) without negatively impacting performance across other inputs, have garnered widespread attention. However, existing methods predominantly rely on memorizing the updated knowledge, impeding LLMs from effectively combining the new knowledge with their inherent knowledge when answering questions. To this end, we propose a Learning to Edit (LTE) framework, focusing on teaching LLMs to apply updated knowledge into input questions, inspired by the philosophy of {``}Teach a man to fish.{''} LTE features a two-phase process: (i) the Alignment Phase, which fine-tunes LLMs on a meticulously curated parallel dataset to make reliable, in-scope edits while preserving out-of-scope information and linguistic proficiency; and (ii) the Inference Phase, which employs a retrieval-based mechanism for real-time and mass knowledge editing. By comparing our approach with seven advanced baselines across four popular knowledge editing benchmarks and two LLM architectures, we demonstrate LTE{'}s superiority in knowledge editing performance, robustness in both batch and sequential editing, minimal interference on general tasks, and rapid editing speeds. The data and code are publicly available at https://github.com/YJiangcm/LTE.\",\n}\n",
+    "authors": [
+        "Yuxin Jiang",
+        "Yufei Wang",
+        "Chuhan Wu",
+        "Wanjun Zhong",
+        "Xingshan Zeng",
+        "Jiahui Gao",
+        "Liangyou Li",
+        "Xin Jiang",
+        "Lifeng Shang",
+        "Ruiming Tang",
+        "Qun Liu",
+        "Wei Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.258.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/f6d805f9-18a8-5476-a670-6073058b4979.pdf",
+    "abstract": "Knowledge editing techniques, aiming to efficiently modify a minor proportion of knowledge in large language models (LLMs) without negatively impacting performance across other inputs, have garnered widespread attention. However, existing methods predominantly rely on memorizing the updated knowledge, impeding LLMs from effectively combining the new knowledge with their inherent knowledge when answering questions. To this end, we propose a Learning to Edit (LTE) framework, focusing on teaching LLMs to apply updated knowledge into input questions, inspired by the philosophy of “Teach a man to fish.” LTE features a two-phase process: (i) the Alignment Phase, which fine-tunes LLMs on a meticulously curated parallel dataset to make reliable, in-scope edits while preserving out-of-scope information and linguistic proficiency; and (ii) the Inference Phase, which employs a retrieval-based mechanism for real-time and mass knowledge editing. By comparing our approach with seven advanced baselines across four popular knowledge editing benchmarks and two LLM architectures, we demonstrate LTE’s superiority in knowledge editing performance, robustness in both batch and sequential editing, minimal interference on general tasks, and rapid editing speeds. The data and code are publicly available at https://github.com/YJiangcm/LTE.",
+    "num_pages": 17
+}

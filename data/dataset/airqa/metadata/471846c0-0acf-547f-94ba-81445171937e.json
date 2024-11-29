@@ -1,0 +1,22 @@
+{
+    "uuid": "471846c0-0acf-547f-94ba-81445171937e",
+    "title": "RHO: Reducing Hallucination in Open-domain Dialogues with Knowledge Grounding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{ji-etal-2023-rho,\n    title = \"{RHO}: Reducing Hallucination in Open-domain Dialogues with Knowledge Grounding\",\n    author = \"Ji, Ziwei  and\n      Liu, Zihan  and\n      Lee, Nayeon  and\n      Yu, Tiezheng  and\n      Wilie, Bryan  and\n      Zeng, Min  and\n      Fung, Pascale\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.275\",\n    doi = \"10.18653/v1/2023.findings-acl.275\",\n    pages = \"4504--4522\",\n    abstract = \"Dialogue systems can leverage large pre-trained language models and knowledge to generate fluent and informative responses. However, these models are still prone to produce hallucinated responses not supported by the input source, which greatly hinders their application. The heterogeneity between external knowledge and dialogue context challenges representation learning and source integration, which further contributes to unfaithfulness. To handle this challenge and generate more faithful responses, this paper presents RHO (Ï) utilizing the representations of linked entities and relation predicates from a knowledge graph (KG). We propose (1) local knowledge grounding to combine textual embeddings with the corresponding KG embeddings; and (2) global knowledge grounding to equip RHO with multi-hop reasoning abilities via the attention mechanism. In addition, we devise a response re-ranking technique based on walks over KG sub-graphs for better conversational reasoning. Experimental results on OpenDialKG (Moon et al., 2019) show that our approach significantly outperforms state-of-the-art methods on both automatic and human evaluation by a large margin, especially in hallucination reduction (17.54{\\%} in FeQA (Durmus et al., 2020)).\",\n}\n",
+    "authors": [
+        "Ziwei Ji",
+        "Zihan Liu",
+        "Nayeon Lee",
+        "Tiezheng Yu",
+        "Bryan Wilie",
+        "Min Zeng",
+        "Pascale Fung"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.275.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/471846c0-0acf-547f-94ba-81445171937e.pdf",
+    "abstract": "Dialogue systems can leverage large pre-trained language models and knowledge to generate fluent and informative responses. However, these models are still prone to produce hallucinated responses not supported by the input source, which greatly hinders their application. The heterogeneity between external knowledge and dialogue context challenges representation learning and source integration, which further contributes to unfaithfulness. To handle this challenge and generate more faithful responses, this paper presents RHO (ρ) utilizing the representations of linked entities and relation predicates from a knowledge graph (KG). We propose (1) local knowledge grounding to combine textual embeddings with the corresponding KG embeddings; and (2) global knowledge grounding to equip RHO with multi-hop reasoning abilities via the attention mechanism. In addition, we devise a response re-ranking technique based on walks over KG sub-graphs for better conversational reasoning. Experimental results on OpenDialKG (Moon et al., 2019) show that our approach significantly outperforms state-of-the-art methods on both automatic and human evaluation by a large margin, especially in hallucination reduction (17.54% in FeQA (Durmus et al., 2020)).",
+    "num_pages": 19
+}

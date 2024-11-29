@@ -1,0 +1,21 @@
+{
+    "uuid": "97c47c5c-3720-5e5f-aebf-ac1d0173f992",
+    "title": "Improving Grammatical Error Correction via Contextual Data Augmentation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{wang-etal-2024-improving-grammatical,\n    title = \"Improving Grammatical Error Correction via Contextual Data Augmentation\",\n    author = \"Wang, Yixuan  and\n      Wang, Baoxin  and\n      Liu, Yijun  and\n      Zhu, Qingfu  and\n      Wu, Dayong  and\n      Che, Wanxiang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.647\",\n    doi = \"10.18653/v1/2024.findings-acl.647\",\n    pages = \"10898--10910\",\n    abstract = \"Nowadays, data augmentation through synthetic data has been widely used in the field of Grammatical Error Correction (GEC) to alleviate the problem of data scarcity. However, these synthetic data are mainly used in the pre-training phase rather than the data-limited fine tuning phase due to inconsistent error distribution and noisy labels. In this paper, we propose a synthetic data construction method based on contextual augmentation, which can ensure an efficient augmentation of the original data with a more consistent error distribution. Specifically, we combine rule-based substitution with model-based generation, using the generation model to generate a richer context for the extracted error patterns. Besides, we also propose a relabeling-based data cleaning method to mitigate the effects of noisy labels in synthetic data. Experiments on CoNLL14 and BEA19-Test show that our proposed augmentation method consistently and substantially outperforms strong baselines and achieves the state-of-the-art level with only a few synthetic data.\",\n}\n",
+    "authors": [
+        "Yixuan Wang",
+        "Baoxin Wang",
+        "Yijun Liu",
+        "Qingfu Zhu",
+        "Dayong Wu",
+        "Wanxiang Che"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.647.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/97c47c5c-3720-5e5f-aebf-ac1d0173f992.pdf",
+    "abstract": "Nowadays, data augmentation through synthetic data has been widely used in the field of Grammatical Error Correction (GEC) to alleviate the problem of data scarcity. However, these synthetic data are mainly used in the pre-training phase rather than the data-limited fine tuning phase due to inconsistent error distribution and noisy labels. In this paper, we propose a synthetic data construction method based on contextual augmentation, which can ensure an efficient augmentation of the original data with a more consistent error distribution. Specifically, we combine rule-based substitution with model-based generation, using the generation model to generate a richer context for the extracted error patterns. Besides, we also propose a relabeling-based data cleaning method to mitigate the effects of noisy labels in synthetic data. Experiments on CoNLL14 and BEA19-Test show that our proposed augmentation method consistently and substantially outperforms strong baselines and achieves the state-of-the-art level with only a few synthetic data.",
+    "num_pages": 13
+}

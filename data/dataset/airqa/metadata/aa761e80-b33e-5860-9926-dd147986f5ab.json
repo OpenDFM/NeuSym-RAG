@@ -1,0 +1,17 @@
+{
+    "uuid": "aa761e80-b33e-5860-9926-dd147986f5ab",
+    "title": "Don’t Parse, Choose Spans! Continuous and Discontinuous Constituency Parsing via Autoregressive Span Selection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yang-tu-2023-dont,\n    title = \"Don{'}t Parse, Choose Spans! Continuous and Discontinuous Constituency Parsing via Autoregressive Span Selection\",\n    author = \"Yang, Songlin  and\n      Tu, Kewei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.469\",\n    doi = \"10.18653/v1/2023.acl-long.469\",\n    pages = \"8420--8433\",\n    abstract = \"We present a simple and unified approach for both continuous and discontinuous constituency parsing via autoregressive span selection. Constituency parsing aims to produce a set of non-crossing spans so that they can form a constituency parse tree. We sort gold spans using a predefined order and leverage a pointer network to autoregressively select spans by that order. To deal with discontinuous spans, we consecutively select their subspans from left to right, label all but last subspans with special discontinuous labels and the last subspan as the whole discontinuous spans{'} labels. We use simple heuristic to output valid trees so that our approach is able to predict all possible continuous and discontinuous constituency trees without sacrificing data coverage and without the need to use expensive chart-based parsing algorithms. Experiments on multiple continuous and discontinuous benchmarks show that our model achieves state-of-the-art or competitive performance.\",\n}\n",
+    "authors": [
+        "Songlin Yang",
+        "Kewei Tu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.469.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/aa761e80-b33e-5860-9926-dd147986f5ab.pdf",
+    "abstract": "We present a simple and unified approach for both continuous and discontinuous constituency parsing via autoregressive span selection. Constituency parsing aims to produce a set of non-crossing spans so that they can form a constituency parse tree. We sort gold spans using a predefined order and leverage a pointer network to autoregressively select spans by that order. To deal with discontinuous spans, we consecutively select their subspans from left to right, label all but last subspans with special discontinuous labels and the last subspan as the whole discontinuous spans’ labels. We use simple heuristic to output valid trees so that our approach is able to predict all possible continuous and discontinuous constituency trees without sacrificing data coverage and without the need to use expensive chart-based parsing algorithms. Experiments on multiple continuous and discontinuous benchmarks show that our model achieves state-of-the-art or competitive performance.",
+    "num_pages": 14
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "a228fb41-bd50-53e2-a2bc-9e6c27c2869e",
+    "title": "Choose Your Transformer: Improved Transferability Estimation of Transformer Models on Classification Tasks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{garbaciauskas-etal-2024-choose,\n    title = \"Choose Your Transformer: Improved Transferability Estimation of Transformer Models on Classification Tasks\",\n    author = \"Garbaciauskas, Lukas  and\n      Ploner, Max  and\n      Akbik, Alan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.757\",\n    doi = \"10.18653/v1/2024.findings-acl.757\",\n    pages = \"12752--12768\",\n    abstract = \"There currently exists a multitude of pre-trained transformer language models (LMs) that are readily available. From a practical perspective, this raises the question of which pre-trained LM will perform best if fine-tuned for a specific downstream NLP task. However, exhaustively fine-tuning all available LMs to determine the best-fitting model is computationally infeasible. To address this problem, we present an approach that inexpensively estimates a ranking of the expected performance of a given set of candidate LMs for a given task. Following a layer-wise representation analysis, we extend existing approaches such as H-score and LogME by aggregating representations across all layers of the transformer model. We present an extensive analysis of 20 transformer LMs, 6 downstream NLP tasks, and various estimators (linear probing, kNN, H-score, and LogME). Our evaluation finds that averaging the layer representations significantly improves the Pearson correlation coefficient between the true model ranks and the estimate, increasing from 0.58 to 0.86 for LogME and from 0.65 to 0.88 for H-score.\",\n}\n",
+    "authors": [
+        "Lukas Garbaciauskas",
+        "Max Ploner",
+        "Alan Akbik"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.757.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a228fb41-bd50-53e2-a2bc-9e6c27c2869e.pdf",
+    "abstract": "There currently exists a multitude of pre-trained transformer language models (LMs) that are readily available. From a practical perspective, this raises the question of which pre-trained LM will perform best if fine-tuned for a specific downstream NLP task. However, exhaustively fine-tuning all available LMs to determine the best-fitting model is computationally infeasible. To address this problem, we present an approach that inexpensively estimates a ranking of the expected performance of a given set of candidate LMs for a given task. Following a layer-wise representation analysis, we extend existing approaches such as H-score and LogME by aggregating representations across all layers of the transformer model. We present an extensive analysis of 20 transformer LMs, 6 downstream NLP tasks, and various estimators (linear probing, kNN, H-score, and LogME). Our evaluation finds that averaging the layer representations significantly improves the Pearson correlation coefficient between the true model ranks and the estimate, increasing from 0.58 to 0.86 for LogME and from 0.65 to 0.88 for H-score.",
+    "num_pages": 17
+}

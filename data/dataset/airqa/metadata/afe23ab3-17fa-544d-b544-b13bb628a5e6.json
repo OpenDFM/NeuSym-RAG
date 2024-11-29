@@ -1,0 +1,20 @@
+{
+    "uuid": "afe23ab3-17fa-544d-b544-b13bb628a5e6",
+    "title": "e-Health CSIRO at RRG24: Entropy-Augmented Self-Critical Sequence Training for Radiology Report Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 23rd Workshop on Biomedical Natural Language Processing",
+    "bibtex": "@inproceedings{nicolson-etal-2024-e,\n    title = \"e-Health {CSIRO} at {RRG}24: Entropy-Augmented Self-Critical Sequence Training for Radiology Report Generation\",\n    author = \"Nicolson, Aaron  and\n      Liu, Jinghui  and\n      Dowling, Jason  and\n      Nguyen, Anthony  and\n      Koopman, Bevan\",\n    editor = \"Demner-Fushman, Dina  and\n      Ananiadou, Sophia  and\n      Miwa, Makoto  and\n      Roberts, Kirk  and\n      Tsujii, Junichi\",\n    booktitle = \"Proceedings of the 23rd Workshop on Biomedical Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.bionlp-1.8\",\n    doi = \"10.18653/v1/2024.bionlp-1.8\",\n    pages = \"99--104\",\n    abstract = \"The core novelty of our approach lies in the addition of entropy regularisation to self-critical sequence training. This helps maintain a higher entropy in the token distribution, preventing overfitting to common phrases and ensuring a broader exploration of the vocabulary during training, which is essential for handling the diversity of the radiology reports in the RRG24 datasets. We apply this to a multimodal language model with RadGraph as the reward. Additionally, our model incorporates several other aspects. We use token type embeddings to differentiate between findings and impression section tokens, as well as image embeddings. To handle missing sections, we employ special tokens. We also utilise an attention mask with non-causal masking for the image embeddings and a causal mask for the report token embeddings.\",\n}\n",
+    "authors": [
+        "Aaron Nicolson",
+        "Jinghui Liu",
+        "Jason Dowling",
+        "Anthony Nguyen",
+        "Bevan Koopman"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.bionlp-1.8.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/afe23ab3-17fa-544d-b544-b13bb628a5e6.pdf",
+    "abstract": "The core novelty of our approach lies in the addition of entropy regularisation to self-critical sequence training. This helps maintain a higher entropy in the token distribution, preventing overfitting to common phrases and ensuring a broader exploration of the vocabulary during training, which is essential for handling the diversity of the radiology reports in the RRG24 datasets. We apply this to a multimodal language model with RadGraph as the reward. Additionally, our model incorporates several other aspects. We use token type embeddings to differentiate between findings and impression section tokens, as well as image embeddings. To handle missing sections, we employ special tokens. We also utilise an attention mask with non-causal masking for the image embeddings and a causal mask for the report token embeddings.",
+    "num_pages": 6
+}

@@ -17,8 +17,13 @@
         ...
     - processed_data/ # folder used to store pre-processed result for each PDF file, e.g., extracted images or LLM-generated page summaries
         - 0a1e5410-f9f1-5877-ae3a-151c214762e1.json
+        - ...
+    - metadata/ # folder used to store paper metadata
+        - 0a1e5410-f9f1-5877-ae3a-151c214762e1.json
+        - ...
     - examples/ # during annotation, each data is stored as a separate file ${question_uuid}.json following `data_format.json.template`
         - 0dadc5c6-a5f7-572b-9a20-fc9b907eddb9.json
+        - ...
 ```
 
 

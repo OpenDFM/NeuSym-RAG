@@ -1,0 +1,17 @@
+{
+    "uuid": "41436d6f-7cde-5ab4-967f-cb968166924f",
+    "title": "Character-Level Chinese Dependency Parsing via Modeling Latent Intra-Word Structure",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{hou-li-2024-character,\n    title = \"Character-Level {C}hinese Dependency Parsing via Modeling Latent Intra-Word Structure\",\n    author = \"Hou, Yang  and\n      Li, Zhenghua\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.173\",\n    doi = \"10.18653/v1/2024.findings-acl.173\",\n    pages = \"2943--2956\",\n    abstract = \"Revealing the syntactic structure of sentences in Chinese poses significant challenges for word-level parsers due to the absence of clear word boundaries. To facilitate a transition from word-level to character-level Chinese dependency parsing, this paper proposes modeling latent internal structures within words. In this way, each word-level dependency tree is interpreted as a forest of character-level trees. A constrained Eisner algorithm is implemented to ensure the compatibility of character-level trees, guaranteeing a single root for intra-word structures and establishing inter-word dependencies between these roots. Experiments on Chinese treebanks demonstrate the superiority of our method over both the pipeline framework and previous joint models. A detailed analysis reveals that a coarse-to-fine parsing strategy empowers the model to predict more linguistically plausible intra-word structures.\",\n}\n",
+    "authors": [
+        "Yang Hou",
+        "Zhenghua Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.173.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/41436d6f-7cde-5ab4-967f-cb968166924f.pdf",
+    "abstract": "Revealing the syntactic structure of sentences in Chinese poses significant challenges for word-level parsers due to the absence of clear word boundaries. To facilitate a transition from word-level to character-level Chinese dependency parsing, this paper proposes modeling latent internal structures within words. In this way, each word-level dependency tree is interpreted as a forest of character-level trees. A constrained Eisner algorithm is implemented to ensure the compatibility of character-level trees, guaranteeing a single root for intra-word structures and establishing inter-word dependencies between these roots. Experiments on Chinese treebanks demonstrate the superiority of our method over both the pipeline framework and previous joint models. A detailed analysis reveals that a coarse-to-fine parsing strategy empowers the model to predict more linguistically plausible intra-word structures.",
+    "num_pages": 14
+}

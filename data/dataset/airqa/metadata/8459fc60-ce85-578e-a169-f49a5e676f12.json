@@ -1,0 +1,19 @@
+{
+    "uuid": "8459fc60-ce85-578e-a169-f49a5e676f12",
+    "title": "Backpack Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{hewitt-etal-2023-backpack,\n    title = \"Backpack Language Models\",\n    author = \"Hewitt, John  and\n      Thickstun, John  and\n      Manning, Christopher  and\n      Liang, Percy\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.506\",\n    doi = \"10.18653/v1/2023.acl-long.506\",\n    pages = \"9103--9125\",\n    abstract = \"We present Backpacks: a new neural architecture that marries strong modeling performancewith an interface for interpretability and control. Backpacks learn multiple non-contextual sense vectors for each word in a vocabulary, and represent a word in a sequence as a context-dependent, non-negative linear combination ofsense vectors in this sequence. We find that, after training, sense vectors specialize, each encoding a different aspect of a word. We can interpret a sense vector by inspecting its (non-contextual, linear) projection onto the output space, and intervene on these interpretable hooks to change the model{'}s behavior in predictable ways. We train a 170M-parameter Backpack language model on OpenWebText, matching the loss of a GPT-2 small (124Mparameter) Transformer. On lexical similarity evaluations, we find that Backpack sense vectors outperform even a 6B-parameter Transformer LM{'}s word embeddings. Finally, we present simple algorithms that intervene on sense vectors to perform controllable text generation and debiasing. For example, we can edit the sense vocabulary to tend more towards a topic, or localize a source of gender bias to a sense vector and globally suppress that sense.\",\n}\n",
+    "authors": [
+        "John Hewitt",
+        "John Thickstun",
+        "Christopher Manning",
+        "Percy Liang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.506.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8459fc60-ce85-578e-a169-f49a5e676f12.pdf",
+    "abstract": "We present Backpacks: a new neural architecture that marries strong modeling performancewith an interface for interpretability and control. Backpacks learn multiple non-contextual sense vectors for each word in a vocabulary, and represent a word in a sequence as a context-dependent, non-negative linear combination ofsense vectors in this sequence. We find that, after training, sense vectors specialize, each encoding a different aspect of a word. We can interpret a sense vector by inspecting its (non-contextual, linear) projection onto the output space, and intervene on these interpretable hooks to change the model’s behavior in predictable ways. We train a 170M-parameter Backpack language model on OpenWebText, matching the loss of a GPT-2 small (124Mparameter) Transformer. On lexical similarity evaluations, we find that Backpack sense vectors outperform even a 6B-parameter Transformer LM’s word embeddings. Finally, we present simple algorithms that intervene on sense vectors to perform controllable text generation and debiasing. For example, we can edit the sense vocabulary to tend more towards a topic, or localize a source of gender bias to a sense vector and globally suppress that sense.",
+    "num_pages": 23
+}

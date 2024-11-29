@@ -1,0 +1,22 @@
+{
+    "uuid": "a258cd1c-38a0-54cd-b5a7-7e67ddbc37de",
+    "title": "GenTranslate: Large Language Models are Generative Multilingual Speech and Machine Translators",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{hu-etal-2024-gentranslate,\n    title = \"{G}en{T}ranslate: Large Language Models are Generative Multilingual Speech and Machine Translators\",\n    author = \"Hu, Yuchen  and\n      Chen, Chen  and\n      Yang, Chao-Han  and\n      Li, Ruizhe  and\n      Zhang, Dong  and\n      Chen, Zhehuai  and\n      Chng, EngSiong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.5\",\n    doi = \"10.18653/v1/2024.acl-long.5\",\n    pages = \"74--90\",\n    abstract = \"Recent advances in large language models (LLMs) have stepped forward the development of multilingual speech and machine translation by its reduced representation errors and incorporated external knowledge. However, both translation tasks typically utilize beam search decoding and top-1 hypothesis selection for inference. These techniques struggle to fully exploit the rich information in the diverse N-best hypotheses, making them less optimal for translation tasks that require a single, high-quality output sequence. In this paper, we propose a new generative paradigm for translation tasks, namely GenTranslate, which builds upon LLMs to generate better results from the diverse translation versions in N-best list. Leveraging the rich linguistic knowledge and strong reasoning abilities of LLMs, our new paradigm can integrate the diverse N-best candidates to generate a higher-quality translation result. Furthermore, to support LLM finetuning, we build and release a HypoTranslate dataset that contains over 592K hypotheses-translation pairs in 11 languages. Experiments on various speech and machine translation benchmarks (e.g., FLEURS, CoVoST-2, WMT) demonstrate that our GenTranslate significantly outperforms the state-of-the-art model.\",\n}\n",
+    "authors": [
+        "Yuchen Hu",
+        "Chen Chen",
+        "Chao-Han Yang",
+        "Ruizhe Li",
+        "Dong Zhang",
+        "Zhehuai Chen",
+        "EngSiong Chng"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.5.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a258cd1c-38a0-54cd-b5a7-7e67ddbc37de.pdf",
+    "abstract": "Recent advances in large language models (LLMs) have stepped forward the development of multilingual speech and machine translation by its reduced representation errors and incorporated external knowledge. However, both translation tasks typically utilize beam search decoding and top-1 hypothesis selection for inference. These techniques struggle to fully exploit the rich information in the diverse N-best hypotheses, making them less optimal for translation tasks that require a single, high-quality output sequence. In this paper, we propose a new generative paradigm for translation tasks, namely GenTranslate, which builds upon LLMs to generate better results from the diverse translation versions in N-best list. Leveraging the rich linguistic knowledge and strong reasoning abilities of LLMs, our new paradigm can integrate the diverse N-best candidates to generate a higher-quality translation result. Furthermore, to support LLM finetuning, we build and release a HypoTranslate dataset that contains over 592K hypotheses-translation pairs in 11 languages. Experiments on various speech and machine translation benchmarks (e.g., FLEURS, CoVoST-2, WMT) demonstrate that our GenTranslate significantly outperforms the state-of-the-art model.",
+    "num_pages": 17
+}

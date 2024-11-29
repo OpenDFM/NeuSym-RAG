@@ -1,0 +1,23 @@
+{
+    "uuid": "409f4ae3-533f-5a0d-a631-a08d8a86933f",
+    "title": "HyperPELT: Unified Parameter-Efficient Language Model Tuning for Both Language and Vision-and-Language Tasks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhang-etal-2023-hyperpelt,\n    title = \"{H}yper{PELT}: Unified Parameter-Efficient Language Model Tuning for Both Language and Vision-and-Language Tasks\",\n    author = \"Zhang, Zhengkun  and\n      Guo, Wenya  and\n      Meng, Xiaojun  and\n      Wang, Yasheng  and\n      Wang, Yadao  and\n      Jiang, Xin  and\n      Liu, Qun  and\n      Yang, Zhenglu\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.725\",\n    doi = \"10.18653/v1/2023.findings-acl.725\",\n    pages = \"11442--11453\",\n    abstract = \"With the scale and capacity of pretrained models growing rapidly, parameter-efficient language model tuning has emerged as a popular paradigm for solving various NLP and Vision-and-Language (V{\\&}L) tasks. In this paper, we design a unified parameter-efficient multitask learning framework that works effectively on both NLP and V{\\&}L tasks. In particular, we use a shared hypernetwork that takes trainable hyper-embeddings and visual modality as input, and outputs weights for different modules in a pretrained language model, such as the parameters inserted into multi-head attention blocks (i.e., prefix-tuning) and feed-forward blocks (i.e., adapter-tuning.). Our proposed framework adds fewer trainable parameters in multi-task learning while achieving superior performances and transfer ability compared to state-of-the-art methods. Empirical results on the GLUE benchmark and multiple V{\\&}L tasks confirm the effectiveness of our framework.\",\n}\n",
+    "authors": [
+        "Zhengkun Zhang",
+        "Wenya Guo",
+        "Xiaojun Meng",
+        "Yasheng Wang",
+        "Yadao Wang",
+        "Xin Jiang",
+        "Qun Liu",
+        "Zhenglu Yang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.725.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/409f4ae3-533f-5a0d-a631-a08d8a86933f.pdf",
+    "abstract": "With the scale and capacity of pretrained models growing rapidly, parameter-efficient language model tuning has emerged as a popular paradigm for solving various NLP and Vision-and-Language (V&L) tasks. In this paper, we design a unified parameter-efficient multitask learning framework that works effectively on both NLP and V&L tasks. In particular, we use a shared hypernetwork that takes trainable hyper-embeddings and visual modality as input, and outputs weights for different modules in a pretrained language model, such as the parameters inserted into multi-head attention blocks (i.e., prefix-tuning) and feed-forward blocks (i.e., adapter-tuning.). Our proposed framework adds fewer trainable parameters in multi-task learning while achieving superior performances and transfer ability compared to state-of-the-art methods. Empirical results on the GLUE benchmark and multiple V&L tasks confirm the effectiveness of our framework.",
+    "num_pages": 12
+}

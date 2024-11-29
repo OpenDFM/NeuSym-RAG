@@ -1,0 +1,21 @@
+{
+    "uuid": "b27fd670-badc-585d-95a2-3cbc3b041a24",
+    "title": "Byte-Level Grammatical Error Correction Using Synthetic and Curated Corpora",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ingolfsdottir-etal-2023-byte,\n    title = \"Byte-Level Grammatical Error Correction Using Synthetic and Curated Corpora\",\n    author = \"Ing{\\'o}lfsd{\\'o}ttir, Svanhv{\\'\\i}t Lilja  and\n      Ragnarsson, Petur  and\n      J{\\'o}nsson, Haukur  and\n      Simonarson, Haukur  and\n      Thorsteinsson, Vilhjalmur  and\n      Sn{\\ae}bjarnarson, V{\\'e}steinn\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.402\",\n    doi = \"10.18653/v1/2023.acl-long.402\",\n    pages = \"7299--7316\",\n    abstract = \"Grammatical error correction (GEC) is the task of correcting typos, spelling, punctuation and grammatical issues in text. Approaching the problem as a sequence-to-sequence task, we compare the use of a common subword unit vocabulary and byte-level encoding. Initial synthetic training data is created using an error-generating pipeline, and used for finetuning two subword-level models and one byte-level model. Models are then finetuned further on hand-corrected error corpora, including texts written by children, university students, dyslexic and second-language writers, and evaluated over different error types and error origins. We show that a byte-level model enables higher correction quality than a subword approach, not only for simple spelling errors, but also for more complex semantic, stylistic and grammatical issues. In particular, initial training on synthetic corpora followed by finetuning on a relatively small parallel corpus of real-world errors helps the byte-level model correct a wide range of commonly occurring errors. Our experiments are run for the Icelandic language but should hold for other similar languages, and in particular to morphologically rich ones.\",\n}\n",
+    "authors": [
+        "Svanhvít Lilja Ingólfsdóttir",
+        "Petur Ragnarsson",
+        "Haukur Jónsson",
+        "Haukur Simonarson",
+        "Vilhjalmur Thorsteinsson",
+        "Vésteinn Snæbjarnarson"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.402.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b27fd670-badc-585d-95a2-3cbc3b041a24.pdf",
+    "abstract": "Grammatical error correction (GEC) is the task of correcting typos, spelling, punctuation and grammatical issues in text. Approaching the problem as a sequence-to-sequence task, we compare the use of a common subword unit vocabulary and byte-level encoding. Initial synthetic training data is created using an error-generating pipeline, and used for finetuning two subword-level models and one byte-level model. Models are then finetuned further on hand-corrected error corpora, including texts written by children, university students, dyslexic and second-language writers, and evaluated over different error types and error origins. We show that a byte-level model enables higher correction quality than a subword approach, not only for simple spelling errors, but also for more complex semantic, stylistic and grammatical issues. In particular, initial training on synthetic corpora followed by finetuning on a relatively small parallel corpus of real-world errors helps the byte-level model correct a wide range of commonly occurring errors. Our experiments are run for the Icelandic language but should hold for other similar languages, and in particular to morphologically rich ones.",
+    "num_pages": 18
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "bb0b4e96-b900-5f7a-a46d-8f831bca8f1b",
+    "title": "SpikeVoice: High-Quality Text-to-Speech Via Efficient Spiking Neural Network",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2024-spikevoice,\n    title = \"{S}pike{V}oice: High-Quality Text-to-Speech Via Efficient Spiking Neural Network\",\n    author = \"Wang, Kexin  and\n      Zhang, Jiahong  and\n      Ren, Yong  and\n      Yao, Man  and\n      Shang, Di  and\n      Xu, Bo  and\n      Li, Guoqi\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.429\",\n    doi = \"10.18653/v1/2024.acl-long.429\",\n    pages = \"7927--7940\",\n    abstract = \"Brain-inspired Spiking Neural Network (SNN) has demonstrated its effectiveness and efficiency in vision, natural language, and speech understanding tasks, indicating their capacity to {``}see{''}, {``}listen{''}, and {``}read{''}. In this paper, we design SpikeVoice, which performs high-quality Text-To-Speech (TTS) via SNN, to explore the potential of SNN to {``}speak{''}. A major obstacle to using SNN for such generative tasks lies in the demand for models to grasp long-term dependencies. The serial nature of spiking neurons, however, leads to the invisibility of information at future spiking time steps, limiting SNN models to capture sequence dependencies solely within the same time step. We term this phenomenon {``}partial-time dependency{''}. To address this issue, we introduce Spiking Temporal-Sequential Attention (STSA) in the SpikeVoice. To the best of our knowledge, SpikeVoice is the first TTS work in the SNN field. We perform experiments using four well-established datasets that cover both Chinese and English languages, encompassing scenarios with both single-speaker and multi-speaker configurations. The results demonstrate that SpikeVoice can achieve results comparable to Artificial Neural Networks (ANN) with only 10.5{\\%} energy consumption of ANN. Both our demo and code are available as supplementary material.\",\n}\n",
+    "authors": [
+        "Kexin Wang",
+        "Jiahong Zhang",
+        "Yong Ren",
+        "Man Yao",
+        "Di Shang",
+        "Bo Xu",
+        "Guoqi Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.429.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/bb0b4e96-b900-5f7a-a46d-8f831bca8f1b.pdf",
+    "abstract": "Brain-inspired Spiking Neural Network (SNN) has demonstrated its effectiveness and efficiency in vision, natural language, and speech understanding tasks, indicating their capacity to “see”, “listen”, and “read”. In this paper, we design SpikeVoice, which performs high-quality Text-To-Speech (TTS) via SNN, to explore the potential of SNN to “speak”. A major obstacle to using SNN for such generative tasks lies in the demand for models to grasp long-term dependencies. The serial nature of spiking neurons, however, leads to the invisibility of information at future spiking time steps, limiting SNN models to capture sequence dependencies solely within the same time step. We term this phenomenon “partial-time dependency”. To address this issue, we introduce Spiking Temporal-Sequential Attention (STSA) in the SpikeVoice. To the best of our knowledge, SpikeVoice is the first TTS work in the SNN field. We perform experiments using four well-established datasets that cover both Chinese and English languages, encompassing scenarios with both single-speaker and multi-speaker configurations. The results demonstrate that SpikeVoice can achieve results comparable to Artificial Neural Networks (ANN) with only 10.5% energy consumption of ANN. Both our demo and code are available as supplementary material.",
+    "num_pages": 14
+}

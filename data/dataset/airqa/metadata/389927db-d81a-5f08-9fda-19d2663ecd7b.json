@@ -1,0 +1,18 @@
+{
+    "uuid": "389927db-d81a-5f08-9fda-19d2663ecd7b",
+    "title": "Noisy Neighbors: Efficient membership inference attacks against LLMs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the Fifth Workshop on Privacy in Natural Language Processing",
+    "bibtex": "@inproceedings{galli-etal-2024-noisy,\n    title = \"Noisy Neighbors: Efficient membership inference attacks against {LLM}s\",\n    author = \"Galli, Filippo  and\n      Melis, Luca  and\n      Cucinotta, Tommaso\",\n    editor = \"Habernal, Ivan  and\n      Ghanavati, Sepideh  and\n      Ravichander, Abhilasha  and\n      Jain, Vijayanta  and\n      Thaine, Patricia  and\n      Igamberdiev, Timour  and\n      Mireshghallah, Niloofar  and\n      Feyisetan, Oluwaseyi\",\n    booktitle = \"Proceedings of the Fifth Workshop on Privacy in Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.privatenlp-1.1\",\n    pages = \"1--6\",\n    abstract = \"The potential of transformer-based LLMs risks being hindered by privacy concerns due to their reliance on extensive datasets, possibly including sensitive information. Regulatory measures like GDPR and CCPA call for using robust auditing tools to address potential privacy issues, with Membership Inference Attacks (MIA) being the primary method for assessing LLMs{'} privacy risks. Differently from traditional MIA approaches, often requiring computationally intensive training of additional models, this paper introduces an efficient methodology that generates noisy neighbors for a target sample by adding stochastic noise in the embedding space, requiring operating the target model in inference mode only. Our findings demonstrate that this approach closely matches the effectiveness of employing shadow models, showing its usability in practical privacy auditing scenarios.\",\n}\n",
+    "authors": [
+        "Filippo Galli",
+        "Luca Melis",
+        "Tommaso Cucinotta"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.privatenlp-1.1.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/389927db-d81a-5f08-9fda-19d2663ecd7b.pdf",
+    "abstract": "The potential of transformer-based LLMs risks being hindered by privacy concerns due to their reliance on extensive datasets, possibly including sensitive information. Regulatory measures like GDPR and CCPA call for using robust auditing tools to address potential privacy issues, with Membership Inference Attacks (MIA) being the primary method for assessing LLMs’ privacy risks. Differently from traditional MIA approaches, often requiring computationally intensive training of additional models, this paper introduces an efficient methodology that generates noisy neighbors for a target sample by adding stochastic noise in the embedding space, requiring operating the target model in inference mode only. Our findings demonstrate that this approach closely matches the effectiveness of employing shadow models, showing its usability in practical privacy auditing scenarios.",
+    "num_pages": 6
+}

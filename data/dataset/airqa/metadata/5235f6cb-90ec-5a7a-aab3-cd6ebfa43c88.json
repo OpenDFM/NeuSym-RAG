@@ -1,0 +1,20 @@
+{
+    "uuid": "5235f6cb-90ec-5a7a-aab3-cd6ebfa43c88",
+    "title": "Multi-Dimensional Optimization for Text Summarization via Reinforcement Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ryu-etal-2024-multi,\n    title = \"Multi-Dimensional Optimization for Text Summarization via Reinforcement Learning\",\n    author = \"Ryu, Sangwon  and\n      Do, Heejin  and\n      Kim, Yunsu  and\n      Lee, Gary  and\n      Ok, Jungseul\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.319\",\n    doi = \"10.18653/v1/2024.acl-long.319\",\n    pages = \"5858--5871\",\n    abstract = \"The evaluation of summary quality encompasses diverse dimensions such as consistency, coherence, relevance, and fluency. However, existing summarization methods often target a specific dimension, facing challenges in generating well-balanced summaries across multiple dimensions. In this paper, we propose multi-objective reinforcement learning tailored to generate balanced summaries across all four dimensions. We introduce two multi-dimensional optimization (MDO) strategies for adaptive learning: 1) MDO{\\_}min, rewarding the current lowest dimension score, and 2) MDO{\\_}pro, optimizing multiple dimensions similar to multi-task learning, resolves conflicting gradients across dimensions through gradient projection. Unlike prior ROUGE-based rewards relying on reference summaries, we use a QA-based reward model that aligns with human preferences. Further, we discover the capability to regulate the length of summaries by adjusting the discount factor, seeking the generation of concise yet informative summaries that encapsulate crucial points. Our approach achieved substantial performance gains compared to baseline models on representative summarization datasets, particularly in the overlooked dimensions.\",\n}\n",
+    "authors": [
+        "Sangwon Ryu",
+        "Heejin Do",
+        "Yunsu Kim",
+        "Gary Lee",
+        "Jungseul Ok"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.319.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/5235f6cb-90ec-5a7a-aab3-cd6ebfa43c88.pdf",
+    "abstract": "The evaluation of summary quality encompasses diverse dimensions such as consistency, coherence, relevance, and fluency. However, existing summarization methods often target a specific dimension, facing challenges in generating well-balanced summaries across multiple dimensions. In this paper, we propose multi-objective reinforcement learning tailored to generate balanced summaries across all four dimensions. We introduce two multi-dimensional optimization (MDO) strategies for adaptive learning: 1) MDO_min, rewarding the current lowest dimension score, and 2) MDO_pro, optimizing multiple dimensions similar to multi-task learning, resolves conflicting gradients across dimensions through gradient projection. Unlike prior ROUGE-based rewards relying on reference summaries, we use a QA-based reward model that aligns with human preferences. Further, we discover the capability to regulate the length of summaries by adjusting the discount factor, seeking the generation of concise yet informative summaries that encapsulate crucial points. Our approach achieved substantial performance gains compared to baseline models on representative summarization datasets, particularly in the overlooked dimensions.",
+    "num_pages": 14
+}

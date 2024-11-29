@@ -1,0 +1,22 @@
+{
+    "uuid": "7eb41d67-59e3-542a-8f03-93ab8f53216a",
+    "title": "Explicating the Implicit: Argument Detection Beyond Sentence Boundaries",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{roit-etal-2024-explicating,\n    title = \"Explicating the Implicit: Argument Detection Beyond Sentence Boundaries\",\n    author = \"Roit, Paul  and\n      Slobodkin, Aviv  and\n      Hirsch, Eran  and\n      Cattan, Arie  and\n      Klein, Ayal  and\n      Pyatkin, Valentina  and\n      Dagan, Ido\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.863\",\n    doi = \"10.18653/v1/2024.acl-long.863\",\n    pages = \"16394--16409\",\n    abstract = \"Detecting semantic arguments of a predicate word has been conventionally modeled as a sentence-level task. The typical reader, however, perfectly interprets predicate-argument relations in a much wider context than just the sentence where the predicate was evoked. In this work, we reformulate the problem of argument detection through textual entailment to capture semantic relations across sentence boundaries. We propose a method that tests whether some semantic relation can be inferred from a full passage by first encoding it into a simple and standalone proposition and then testing for entailment against the passage. Our method does not require direct supervision, which is generally absent due to dataset scarcity, but instead builds on existing NLI and sentence-level SRL resources. Such a method can potentially explicate pragmatically understood relations into a set of explicit sentences. We demonstrate it on a recent document-level benchmark, outperforming some supervised methods and contemporary language models.\",\n}\n",
+    "authors": [
+        "Paul Roit",
+        "Aviv Slobodkin",
+        "Eran Hirsch",
+        "Arie Cattan",
+        "Ayal Klein",
+        "Valentina Pyatkin",
+        "Ido Dagan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.863.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7eb41d67-59e3-542a-8f03-93ab8f53216a.pdf",
+    "abstract": "Detecting semantic arguments of a predicate word has been conventionally modeled as a sentence-level task. The typical reader, however, perfectly interprets predicate-argument relations in a much wider context than just the sentence where the predicate was evoked. In this work, we reformulate the problem of argument detection through textual entailment to capture semantic relations across sentence boundaries. We propose a method that tests whether some semantic relation can be inferred from a full passage by first encoding it into a simple and standalone proposition and then testing for entailment against the passage. Our method does not require direct supervision, which is generally absent due to dataset scarcity, but instead builds on existing NLI and sentence-level SRL resources. Such a method can potentially explicate pragmatically understood relations into a set of explicit sentences. We demonstrate it on a recent document-level benchmark, outperforming some supervised methods and contemporary language models.",
+    "num_pages": 16
+}

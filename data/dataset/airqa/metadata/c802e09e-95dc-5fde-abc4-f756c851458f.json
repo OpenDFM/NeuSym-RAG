@@ -1,0 +1,21 @@
+{
+    "uuid": "c802e09e-95dc-5fde-abc4-f756c851458f",
+    "title": "Explore Spurious Correlations at the Concept Level in Language Models for Text Classification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhou-etal-2024-explore,\n    title = \"Explore Spurious Correlations at the Concept Level in Language Models for Text Classification\",\n    author = \"Zhou, Yuhang  and\n      Xu, Paiheng  and\n      Liu, Xiaoyu  and\n      An, Bang  and\n      Ai, Wei  and\n      Huang, Furong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.28\",\n    doi = \"10.18653/v1/2024.acl-long.28\",\n    pages = \"478--492\",\n    abstract = \"Language models (LMs) have achieved notable success in numerous NLP tasks, employing both fine-tuning and in-context learning (ICL) methods. While language models demonstrate exceptional performance, they face robustness challenges due to spurious correlations arising from imbalanced label distributions in training data or ICL exemplars. Previous research has primarily concentrated on word, phrase, and syntax features, neglecting the concept level, often due to the absence of concept labels and difficulty in identifying conceptual content in input texts. This paper introduces two main contributions. First, we employ ChatGPT to assign concept labels to texts, assessing concept bias in models during fine-tuning or ICL on test data. We find that LMs, when encountering spurious correlations between a concept and a label in training or prompts, resort to shortcuts for predictions. Second, we introduce a data rebalancing technique that incorporates ChatGPT-generated counterfactual data, thereby balancing label distribution and mitigating spurious correlations. Our method{'}s efficacy, surpassing traditional token removal approaches, is validated through extensive testing.\",\n}\n",
+    "authors": [
+        "Yuhang Zhou",
+        "Paiheng Xu",
+        "Xiaoyu Liu",
+        "Bang An",
+        "Wei Ai",
+        "Furong Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.28.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/c802e09e-95dc-5fde-abc4-f756c851458f.pdf",
+    "abstract": "Language models (LMs) have achieved notable success in numerous NLP tasks, employing both fine-tuning and in-context learning (ICL) methods. While language models demonstrate exceptional performance, they face robustness challenges due to spurious correlations arising from imbalanced label distributions in training data or ICL exemplars. Previous research has primarily concentrated on word, phrase, and syntax features, neglecting the concept level, often due to the absence of concept labels and difficulty in identifying conceptual content in input texts. This paper introduces two main contributions. First, we employ ChatGPT to assign concept labels to texts, assessing concept bias in models during fine-tuning or ICL on test data. We find that LMs, when encountering spurious correlations between a concept and a label in training or prompts, resort to shortcuts for predictions. Second, we introduce a data rebalancing technique that incorporates ChatGPT-generated counterfactual data, thereby balancing label distribution and mitigating spurious correlations. Our method’s efficacy, surpassing traditional token removal approaches, is validated through extensive testing.",
+    "num_pages": 15
+}

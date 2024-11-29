@@ -1,0 +1,22 @@
+{
+    "uuid": "2db77973-1a10-539a-a9aa-203cfed180cd",
+    "title": "UF-HOBI at “Discharge Me!”: A Hybrid Solution for Discharge Summary Generation Through Prompt-based Tuning of GatorTronGPT Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 23rd Workshop on Biomedical Natural Language Processing",
+    "bibtex": "@inproceedings{lyu-etal-2024-uf,\n    title = \"{UF}-{HOBI} at {``}Discharge Me!{''}: A Hybrid Solution for Discharge Summary Generation Through Prompt-based Tuning of {G}ator{T}ron{GPT} Models\",\n    author = \"Lyu, Mengxian  and\n      Peng, Cheng  and\n      Paredes, Daniel  and\n      Chen, Ziyi  and\n      Chen, Aokun  and\n      Bian, Jiang  and\n      Wu, Yonghui\",\n    editor = \"Demner-Fushman, Dina  and\n      Ananiadou, Sophia  and\n      Miwa, Makoto  and\n      Roberts, Kirk  and\n      Tsujii, Junichi\",\n    booktitle = \"Proceedings of the 23rd Workshop on Biomedical Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.bionlp-1.60\",\n    doi = \"10.18653/v1/2024.bionlp-1.60\",\n    pages = \"685--695\",\n    abstract = \"Automatic generation of discharge summaries presents significant challenges due to the length of clinical documentation, the dispersed nature of patient information, and the diverse terminology used in healthcare. This paper presents a hybrid solution for generating discharge summary sections as part of our participation in the {``}Discharge Me!{''} Challenge at the BioNLP 2024 Shared Task. We developed a two-stage generation method using both extractive and abstractive techniques, in which we first apply name entity recognition (NER) to extract key clinical concepts, which are then used as input for a prompt-tuning based GatorTronGPT model to generate coherent text for two important sections including {``}Brief Hospital Course{''} and {``}Discharge Instructions{''}. Our system was ranked 5th in this challenge, achieving an overall score of 0.284. The results demonstrate the effectiveness of our hybrid solution in improving the quality of automated discharge section generation.\",\n}\n",
+    "authors": [
+        "Mengxian Lyu",
+        "Cheng Peng",
+        "Daniel Paredes",
+        "Ziyi Chen",
+        "Aokun Chen",
+        "Jiang Bian",
+        "Yonghui Wu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.bionlp-1.60.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/2db77973-1a10-539a-a9aa-203cfed180cd.pdf",
+    "abstract": "Automatic generation of discharge summaries presents significant challenges due to the length of clinical documentation, the dispersed nature of patient information, and the diverse terminology used in healthcare. This paper presents a hybrid solution for generating discharge summary sections as part of our participation in the “Discharge Me!” Challenge at the BioNLP 2024 Shared Task. We developed a two-stage generation method using both extractive and abstractive techniques, in which we first apply name entity recognition (NER) to extract key clinical concepts, which are then used as input for a prompt-tuning based GatorTronGPT model to generate coherent text for two important sections including “Brief Hospital Course” and “Discharge Instructions”. Our system was ranked 5th in this challenge, achieving an overall score of 0.284. The results demonstrate the effectiveness of our hybrid solution in improving the quality of automated discharge section generation.",
+    "num_pages": 11
+}

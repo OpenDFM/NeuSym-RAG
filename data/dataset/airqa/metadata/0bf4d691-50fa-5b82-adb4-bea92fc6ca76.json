@@ -1,0 +1,19 @@
+{
+    "uuid": "0bf4d691-50fa-5b82-adb4-bea92fc6ca76",
+    "title": "Multilingual Knowledge Graph Completion with Language-Sensitive Multi-Graph Attention",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{tang-etal-2023-multilingual,\n    title = \"Multilingual Knowledge Graph Completion with Language-Sensitive Multi-Graph Attention\",\n    author = \"Tang, Rongchuan  and\n      Zhao, Yang  and\n      Zong, Chengqing  and\n      Zhou, Yu\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.586\",\n    doi = \"10.18653/v1/2023.acl-long.586\",\n    pages = \"10508--10519\",\n    abstract = \"Multilingual Knowledge Graph Completion (KGC) aims to predict missing links with multilingual knowledge graphs. However, existing approaches suffer from two main drawbacks: (a) alignment dependency: the multilingual KGC is always realized with joint entity or relation alignment, which introduces additional alignment models and increases the complexity of the whole framework; (b) training inefficiency: the trained model will only be used for the completion of one target KG, although the data from all KGs are used simultaneously. To address these drawbacks, we propose a novel multilingual KGC framework with language-sensitive multi-graph attention such that the missing links on all given KGs can be inferred by a universal knowledge completion model. Specifically, we first build a relational graph neural network by sharing the embeddings of aligned nodes to transfer language-independent knowledge. Meanwhile, a language-sensitive multi-graph attention (LSMGA) is proposed to deal with the information inconsistency among different KGs. Experimental results show that our model achieves significant improvements on the DBP-5L and E-PKG datasets.\",\n}\n",
+    "authors": [
+        "Rongchuan Tang",
+        "Yang Zhao",
+        "Chengqing Zong",
+        "Yu Zhou"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.586.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/0bf4d691-50fa-5b82-adb4-bea92fc6ca76.pdf",
+    "abstract": "Multilingual Knowledge Graph Completion (KGC) aims to predict missing links with multilingual knowledge graphs. However, existing approaches suffer from two main drawbacks: (a) alignment dependency: the multilingual KGC is always realized with joint entity or relation alignment, which introduces additional alignment models and increases the complexity of the whole framework; (b) training inefficiency: the trained model will only be used for the completion of one target KG, although the data from all KGs are used simultaneously. To address these drawbacks, we propose a novel multilingual KGC framework with language-sensitive multi-graph attention such that the missing links on all given KGs can be inferred by a universal knowledge completion model. Specifically, we first build a relational graph neural network by sharing the embeddings of aligned nodes to transfer language-independent knowledge. Meanwhile, a language-sensitive multi-graph attention (LSMGA) is proposed to deal with the information inconsistency among different KGs. Experimental results show that our model achieves significant improvements on the DBP-5L and E-PKG datasets.",
+    "num_pages": 12
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "bcf415c2-24cb-58e9-bf7c-00518bc87669",
+    "title": "Incremental Sequence Labeling: A Tale of Two Shifts",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{qiu-etal-2024-incremental,\n    title = \"Incremental Sequence Labeling: A Tale of Two Shifts\",\n    author = \"Qiu, Shengjie  and\n      Zheng, Junhao  and\n      Liu, Zhen  and\n      Luo, Yicheng  and\n      Ma, Qianli\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.44\",\n    doi = \"10.18653/v1/2024.findings-acl.44\",\n    pages = \"777--791\",\n    abstract = \"The incremental sequence labeling task involves continuously learning new classes over time while retaining knowledge of the previous ones. Our investigation identifies two significant semantic shifts: E2O (where the model mislabels an old entity as a non-entity) and O2E (where the model labels a non-entity or old entity as a new entity). Previous research has predominantly focused on addressing the E2O problem, neglecting the O2E issue. This negligence results in a model bias towards classifying new data samples as belonging to the new class during the learning process. To address these challenges, we propose a novel framework, Incremental Sequential Labeling without Semantic Shifts (IS3). Motivated by the identified semantic shifts (E2O and O2E), IS3 aims to mitigate catastrophic forgetting in models. As for the E2O problem, we use knowledge distillation to maintain the model{'}s discriminative ability for old entities. Simultaneously, to tackle the O2E problem, we alleviate the model{'}s bias towards new entities through debiased loss and optimization levels.Our experimental evaluation, conducted on three datasets with various incremental settings, demonstrates the superior performance of IS3 compared to the previous state-of-the-art method by a significant margin.\",\n}\n",
+    "authors": [
+        "Shengjie Qiu",
+        "Junhao Zheng",
+        "Zhen Liu",
+        "Yicheng Luo",
+        "Qianli Ma"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.44.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/bcf415c2-24cb-58e9-bf7c-00518bc87669.pdf",
+    "abstract": "The incremental sequence labeling task involves continuously learning new classes over time while retaining knowledge of the previous ones. Our investigation identifies two significant semantic shifts: E2O (where the model mislabels an old entity as a non-entity) and O2E (where the model labels a non-entity or old entity as a new entity). Previous research has predominantly focused on addressing the E2O problem, neglecting the O2E issue. This negligence results in a model bias towards classifying new data samples as belonging to the new class during the learning process. To address these challenges, we propose a novel framework, Incremental Sequential Labeling without Semantic Shifts (IS3). Motivated by the identified semantic shifts (E2O and O2E), IS3 aims to mitigate catastrophic forgetting in models. As for the E2O problem, we use knowledge distillation to maintain the model’s discriminative ability for old entities. Simultaneously, to tackle the O2E problem, we alleviate the model’s bias towards new entities through debiased loss and optimization levels.Our experimental evaluation, conducted on three datasets with various incremental settings, demonstrates the superior performance of IS3 compared to the previous state-of-the-art method by a significant margin.",
+    "num_pages": 15
+}

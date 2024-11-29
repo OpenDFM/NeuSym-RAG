@@ -1,0 +1,20 @@
+{
+    "uuid": "37d287ea-3e88-559e-bf1a-1a039cd3584e",
+    "title": "A Language-First Approach for Procedure Planning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{liu-etal-2023-language,\n    title = \"A Language-First Approach for Procedure Planning\",\n    author = \"Liu, Jiateng  and\n      Li, Sha  and\n      Wang, Zhenhailong  and\n      Li, Manling  and\n      Ji, Heng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.122\",\n    doi = \"10.18653/v1/2023.findings-acl.122\",\n    pages = \"1941--1954\",\n    abstract = \"Procedure planning, or the ability to predict a series of steps that can achieve a given goal conditioned on the current observation, is critical for building intelligent embodied agents that can assist users in everyday tasks. Encouraged by the recent success of language models (LMs) for zero-shot and few-shot planning, we hypothesize that LMs may be equipped with stronger priors for planning compared to their visual counterparts. To this end, we propose a language-first procedure planning framework with a modularized design: we first align the current and goal observations with corresponding steps and then use a pre-trained LM to predict the intermediate steps. Under this framework, we find that using an image captioning model for alignment can already match state-of-the-art performance and by designing a double retrieval model conditioned over current and goal observations jointly, we can achieve large improvements (19.2{\\%}-98.9{\\%} relatively higher success rate than state-of-the-art) on both COIN and CrossTask benchmarks. Our work verifies the planning ability of LMs and demonstrates how LMs can serve as a powerful {``}reasoning engine{''} even when the input is provided in another modality.\",\n}\n",
+    "authors": [
+        "Jiateng Liu",
+        "Sha Li",
+        "Zhenhailong Wang",
+        "Manling Li",
+        "Heng Ji"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.122.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/37d287ea-3e88-559e-bf1a-1a039cd3584e.pdf",
+    "abstract": "Procedure planning, or the ability to predict a series of steps that can achieve a given goal conditioned on the current observation, is critical for building intelligent embodied agents that can assist users in everyday tasks. Encouraged by the recent success of language models (LMs) for zero-shot and few-shot planning, we hypothesize that LMs may be equipped with stronger priors for planning compared to their visual counterparts. To this end, we propose a language-first procedure planning framework with a modularized design: we first align the current and goal observations with corresponding steps and then use a pre-trained LM to predict the intermediate steps. Under this framework, we find that using an image captioning model for alignment can already match state-of-the-art performance and by designing a double retrieval model conditioned over current and goal observations jointly, we can achieve large improvements (19.2%-98.9% relatively higher success rate than state-of-the-art) on both COIN and CrossTask benchmarks. Our work verifies the planning ability of LMs and demonstrates how LMs can serve as a powerful “reasoning engine” even when the input is provided in another modality.",
+    "num_pages": 14
+}

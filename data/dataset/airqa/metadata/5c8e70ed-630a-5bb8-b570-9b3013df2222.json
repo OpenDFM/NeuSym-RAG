@@ -1,0 +1,20 @@
+{
+    "uuid": "5c8e70ed-630a-5bb8-b570-9b3013df2222",
+    "title": "Word Sense Linking: Disambiguating Outside the Sandbox",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{bejgu-etal-2024-word,\n    title = \"Word Sense Linking: Disambiguating Outside the Sandbox\",\n    author = \"Bejgu, Andrei  and\n      Barba, Edoardo  and\n      Procopio, Luigi  and\n      Fern{\\'a}ndez-Castro, Alberte  and\n      Navigli, Roberto\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.851\",\n    doi = \"10.18653/v1/2024.findings-acl.851\",\n    pages = \"14332--14347\",\n    abstract = \"Word Sense Disambiguation (WSD) is the task of associating a word in a given context with its most suitable meaning among a set of possible candidates. While the task has recently witnessed renewed interest, with systems achieving performances above the estimated inter-annotator agreement, at the time of writing it still struggles to find downstream applications. We argue that one of the reasons behind this is the difficulty of applying WSD to plain text. Indeed, in the standard formulation, models work under the assumptions that a) all the spans to disambiguate have already been identified, and b) all the possible candidate senses of each span are provided, both of which are requirements that are far from trivial. In this work, we present a new task called Word Sense Linking (WSL) where, given an input text and a reference sense inventory, systems have to both identify which spans to disambiguate and then link them to their most suitable meaning.We put forward a transformer-based architecture for the task and thoroughly evaluate both its performance and those of state-of-the-art WSD systems scaled to WSL, iteratively relaxing the assumptions of WSD. We hope that our work will foster easier integration of lexical semantics into downstream applications.\",\n}\n",
+    "authors": [
+        "Andrei Bejgu",
+        "Edoardo Barba",
+        "Luigi Procopio",
+        "Alberte Fernández-Castro",
+        "Roberto Navigli"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.851.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/5c8e70ed-630a-5bb8-b570-9b3013df2222.pdf",
+    "abstract": "Word Sense Disambiguation (WSD) is the task of associating a word in a given context with its most suitable meaning among a set of possible candidates. While the task has recently witnessed renewed interest, with systems achieving performances above the estimated inter-annotator agreement, at the time of writing it still struggles to find downstream applications. We argue that one of the reasons behind this is the difficulty of applying WSD to plain text. Indeed, in the standard formulation, models work under the assumptions that a) all the spans to disambiguate have already been identified, and b) all the possible candidate senses of each span are provided, both of which are requirements that are far from trivial. In this work, we present a new task called Word Sense Linking (WSL) where, given an input text and a reference sense inventory, systems have to both identify which spans to disambiguate and then link them to their most suitable meaning.We put forward a transformer-based architecture for the task and thoroughly evaluate both its performance and those of state-of-the-art WSD systems scaled to WSL, iteratively relaxing the assumptions of WSD. We hope that our work will foster easier integration of lexical semantics into downstream applications.",
+    "num_pages": 16
+}

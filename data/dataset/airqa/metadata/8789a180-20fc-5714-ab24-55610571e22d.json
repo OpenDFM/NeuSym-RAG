@@ -1,0 +1,22 @@
+{
+    "uuid": "8789a180-20fc-5714-ab24-55610571e22d",
+    "title": "Exploring the Compositional Generalization in Context Dependent Text-to-SQL Parsing",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{liu-etal-2023-exploring,\n    title = \"Exploring the Compositional Generalization in Context Dependent Text-to-{SQL} Parsing\",\n    author = \"Liu, Aiwei  and\n      Liu, Wei  and\n      Hu, Xuming  and\n      Li, Shuang  and\n      Ma, Fukun  and\n      Yang, Yawen  and\n      Wen, Lijie\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.43\",\n    doi = \"10.18653/v1/2023.findings-acl.43\",\n    pages = \"688--700\",\n    abstract = \"In the context-dependent Text-to-SQL task, the generated SQL statements are refined iteratively based on the user input utterance from each interaction. The input text from each interaction can be viewed as component modifications to the previous SQL statements, which could be further extracted as the modification patterns. Since these modification patterns could also be combined with other SQL statements, the models are supposed to have the compositional generalization to these novel combinations. This work is the first exploration of compositional generalization in context-dependent Text-to-SQL scenarios. To facilitate related studies, we constructed two challenging benchmarks named CoSQL-CG and SParC-CG by recombining the modification patterns and existing SQL statements. The following experiments show that almost all current models struggle on our proposed benchmarks. Furthermore, we found that better aligning the previous SQL statements with the input utterance could give models better combinatorial generalization ability. Based on these observations, we propose a method name p-align to improve the combinatorial generalization of Text-to-SQL models. Further experiments validate the effectiveness of our model.\",\n}\n",
+    "authors": [
+        "Aiwei Liu",
+        "Wei Liu",
+        "Xuming Hu",
+        "Shuang Li",
+        "Fukun Ma",
+        "Yawen Yang",
+        "Lijie Wen"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.43.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8789a180-20fc-5714-ab24-55610571e22d.pdf",
+    "abstract": "In the context-dependent Text-to-SQL task, the generated SQL statements are refined iteratively based on the user input utterance from each interaction. The input text from each interaction can be viewed as component modifications to the previous SQL statements, which could be further extracted as the modification patterns. Since these modification patterns could also be combined with other SQL statements, the models are supposed to have the compositional generalization to these novel combinations. This work is the first exploration of compositional generalization in context-dependent Text-to-SQL scenarios. To facilitate related studies, we constructed two challenging benchmarks named CoSQL-CG and SParC-CG by recombining the modification patterns and existing SQL statements. The following experiments show that almost all current models struggle on our proposed benchmarks. Furthermore, we found that better aligning the previous SQL statements with the input utterance could give models better combinatorial generalization ability. Based on these observations, we propose a method name p-align to improve the combinatorial generalization of Text-to-SQL models. Further experiments validate the effectiveness of our model.",
+    "num_pages": 13
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "6bdbecf7-7472-5d74-852e-a4b70333c708",
+    "title": "Can Diffusion Model Achieve Better Performance in Text Generation ? Bridging the Gap between Training and Inference !",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{tang-etal-2023-diffusion,\n    title = \"Can Diffusion Model Achieve Better Performance in Text Generation ? Bridging the Gap between Training and Inference !\",\n    author = \"Tang, Zecheng  and\n      Wang, Pinzheng  and\n      Zhou, Keyan  and\n      Li, Juntao  and\n      Cao, Ziqiang  and\n      Zhang, Min\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.721\",\n    doi = \"10.18653/v1/2023.findings-acl.721\",\n    pages = \"11359--11386\",\n    abstract = \"Diffusion models have been successfully adapted to text generation tasks by mapping the discrete text into the continuous space. However, there exist nonnegligible gaps between training and inference, owing to the absence of the forward process during inference. Thus, the model only predicts based on the previously generated reverse noise rather than the noise computed by the forward process. Besides, the widely-used downsampling strategy in speeding up the inference will cause the mismatch of diffusion trajectories between training and inference. To understand and mitigate the above two types of training-inference discrepancies, we launch a thorough preliminary study. Based on our observations, we propose two simple yet effective methods to bridge the gaps mentioned above, named Distance Penalty and Adaptive Decay Sampling. Extensive experiments on \\textbf{6} generation tasks confirm the superiority of our methods, which can achieve $\\mathbf{100}\\times \\rightarrow \\mathbf{200}\\times$ speedup with better performance. Our code will be released at \\url{https://github.com/CODINNLG/Bridge_Gap_Diffusion}.\",\n}\n",
+    "authors": [
+        "Zecheng Tang",
+        "Pinzheng Wang",
+        "Keyan Zhou",
+        "Juntao Li",
+        "Ziqiang Cao",
+        "Min Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.721.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/6bdbecf7-7472-5d74-852e-a4b70333c708.pdf",
+    "abstract": "Diffusion models have been successfully adapted to text generation tasks by mapping the discrete text into the continuous space. However, there exist nonnegligible gaps between training and inference, owing to the absence of the forward process during inference. Thus, the model only predicts based on the previously generated reverse noise rather than the noise computed by the forward process. Besides, the widely-used downsampling strategy in speeding up the inference will cause the mismatch of diffusion trajectories between training and inference. To understand and mitigate the above two types of training-inference discrepancies, we launch a thorough preliminary study. Based on our observations, we propose two simple yet effective methods to bridge the gaps mentioned above, named Distance Penalty and Adaptive Decay Sampling. Extensive experiments on 6 generation tasks confirm the superiority of our methods, which can achieve 100× → 200× speedup with better performance. Our code will be released at https://github.com/CODINNLG/Bridge_Gap_Diffusion.",
+    "num_pages": 28
+}

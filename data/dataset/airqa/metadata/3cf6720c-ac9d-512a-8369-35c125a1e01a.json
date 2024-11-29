@@ -1,0 +1,18 @@
+{
+    "uuid": "3cf6720c-ac9d-512a-8369-35c125a1e01a",
+    "title": "Deep Span Representations for Named Entity Recognition",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhu-etal-2023-deep,\n    title = \"Deep Span Representations for Named Entity Recognition\",\n    author = \"Zhu, Enwei  and\n      Liu, Yiyang  and\n      Li, Jinpeng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.672\",\n    doi = \"10.18653/v1/2023.findings-acl.672\",\n    pages = \"10565--10582\",\n    abstract = \"Span-based models are one of the most straightforward methods for named entity recognition (NER). Existing span-based NER systems shallowly aggregate the token representations to span representations. However, this typically results in significant ineffectiveness for long entities, a coupling between the representations of overlapping spans, and ultimately a performance degradation. In this study, we propose DSpERT (Deep Span Encoder Representations from Transformers), which comprises a standard Transformer and a span Transformer. The latter uses low-layered span representations as queries, and aggregates the token representations as keys and values, layer by layer from bottom to top. Thus, DSpERT produces span representations of deep semantics. With weight initialization from pretrained language models, DSpERT achieves performance higher than or competitive with recent state-of-the-art systems on six NER benchmarks. Experimental results verify the importance of the depth for span representations, and show that DSpERT performs particularly well on long-span entities and nested structures. Further, the deep span representations are well structured and easily separable in the feature space.\",\n}\n",
+    "authors": [
+        "Enwei Zhu",
+        "Yiyang Liu",
+        "Jinpeng Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.672.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/3cf6720c-ac9d-512a-8369-35c125a1e01a.pdf",
+    "abstract": "Span-based models are one of the most straightforward methods for named entity recognition (NER). Existing span-based NER systems shallowly aggregate the token representations to span representations. However, this typically results in significant ineffectiveness for long entities, a coupling between the representations of overlapping spans, and ultimately a performance degradation. In this study, we propose DSpERT (Deep Span Encoder Representations from Transformers), which comprises a standard Transformer and a span Transformer. The latter uses low-layered span representations as queries, and aggregates the token representations as keys and values, layer by layer from bottom to top. Thus, DSpERT produces span representations of deep semantics. With weight initialization from pretrained language models, DSpERT achieves performance higher than or competitive with recent state-of-the-art systems on six NER benchmarks. Experimental results verify the importance of the depth for span representations, and show that DSpERT performs particularly well on long-span entities and nested structures. Further, the deep span representations are well structured and easily separable in the feature space.",
+    "num_pages": 18
+}

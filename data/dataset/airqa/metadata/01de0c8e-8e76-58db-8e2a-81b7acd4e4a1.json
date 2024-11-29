@@ -1,0 +1,21 @@
+{
+    "uuid": "01de0c8e-8e76-58db-8e2a-81b7acd4e4a1",
+    "title": "Unlearning Climate Misinformation in Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 1st Workshop on Natural Language Processing Meets Climate Change (ClimateNLP 2024)",
+    "bibtex": "@inproceedings{fore-etal-2024-unlearning,\n    title = \"Unlearning Climate Misinformation in Large Language Models\",\n    author = \"Fore, Michael  and\n      Singh, Simranjit  and\n      Lee, Chaehong  and\n      Pandey, Amritanshu  and\n      Anastasopoulos, Antonios  and\n      Stamoulis, Dimitrios\",\n    editor = \"Stammbach, Dominik  and\n      Ni, Jingwei  and\n      Schimanski, Tobias  and\n      Dutia, Kalyan  and\n      Singh, Alok  and\n      Bingler, Julia  and\n      Christiaen, Christophe  and\n      Kushwaha, Neetu  and\n      Muccione, Veruska  and\n      A. Vaghefi, Saeid  and\n      Leippold, Markus\",\n    booktitle = \"Proceedings of the 1st Workshop on Natural Language Processing Meets Climate Change (ClimateNLP 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.climatenlp-1.14\",\n    doi = \"10.18653/v1/2024.climatenlp-1.14\",\n    pages = \"178--192\",\n    abstract = \"Misinformation regarding climate change is a key roadblock in addressing one of the most serious threats to humanity. This paper investigates factual accuracy in large language models (LLMs) regarding climate information. Using true/false labeled Q{\\&}A data for fine-tuning and evaluating LLMs on climate-related claims, we compare open-source models, assessing their ability to generate truthful responses to climate change questions. We investigate the detectability of models intentionally poisoned with false climate information, finding that such poisoning may not affect the accuracy of a model{'}s responses in other domains. Furthermore, we compare the effectiveness of unlearning algorithms, fine-tuning, and Retrieval-Augmented Generation (RAG) for factually grounding LLMs on climate change topics. Our evaluation reveals that unlearning algorithms can be effective for nuanced conceptual claims, despite previous findings suggesting their inefficacy in privacy contexts. These insights aim to guide the development of more factually reliable LLMs and highlight the need for additional work to secure LLMs against misinformation attacks.\",\n}\n",
+    "authors": [
+        "Michael Fore",
+        "Simranjit Singh",
+        "Chaehong Lee",
+        "Amritanshu Pandey",
+        "Antonios Anastasopoulos",
+        "Dimitrios Stamoulis"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.climatenlp-1.14.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/01de0c8e-8e76-58db-8e2a-81b7acd4e4a1.pdf",
+    "abstract": "Misinformation regarding climate change is a key roadblock in addressing one of the most serious threats to humanity. This paper investigates factual accuracy in large language models (LLMs) regarding climate information. Using true/false labeled Q&A data for fine-tuning and evaluating LLMs on climate-related claims, we compare open-source models, assessing their ability to generate truthful responses to climate change questions. We investigate the detectability of models intentionally poisoned with false climate information, finding that such poisoning may not affect the accuracy of a model’s responses in other domains. Furthermore, we compare the effectiveness of unlearning algorithms, fine-tuning, and Retrieval-Augmented Generation (RAG) for factually grounding LLMs on climate change topics. Our evaluation reveals that unlearning algorithms can be effective for nuanced conceptual claims, despite previous findings suggesting their inefficacy in privacy contexts. These insights aim to guide the development of more factually reliable LLMs and highlight the need for additional work to secure LLMs against misinformation attacks.",
+    "num_pages": 15
+}

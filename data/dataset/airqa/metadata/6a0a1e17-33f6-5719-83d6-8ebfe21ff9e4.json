@@ -1,0 +1,22 @@
+{
+    "uuid": "6a0a1e17-33f6-5719-83d6-8ebfe21ff9e4",
+    "title": "Multimedia Generative Script Learning for Task Planning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wang-etal-2023-multimedia,\n    title = \"Multimedia Generative Script Learning for Task Planning\",\n    author = \"Wang, Qingyun  and\n      Li, Manling  and\n      Chan, Hou Pong  and\n      Huang, Lifu  and\n      Hockenmaier, Julia  and\n      Chowdhary, Girish  and\n      Ji, Heng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.63\",\n    doi = \"10.18653/v1/2023.findings-acl.63\",\n    pages = \"986--1008\",\n    abstract = \"Goal-oriented generative script learning aims to generate subsequent steps to reach a particular goal, which is an essential task to assist robots or humans in performing stereotypical activities. An important aspect of this process is the ability to capture historical states visually, which provides detailed information that is not covered by text and will guide subsequent steps. Therefore, we propose a new task, Multimedia Generative Script Learning, to generate subsequent steps by tracking historical states in both text and vision modalities, as well as presenting the first benchmark containing 5,652 tasks and 79,089 multimedia steps. This task is challenging in three aspects: the multimedia challenge of capturing the visual states in images, the induction challenge of performing unseen tasks, and the diversity challenge of covering different information in individual steps. We propose to encode visual state changes through a selective multimedia encoder to address the multimedia challenge, transfer knowledge from previously observed tasks using a retrieval-augmented decoder to overcome the induction challenge, and further present distinct information at each step by optimizing a diversity-oriented contrastive learning objective. We define metrics to evaluate both generation and inductive quality. Experiment results demonstrate that our approach significantly outperforms strong baselines.\",\n}\n",
+    "authors": [
+        "Qingyun Wang",
+        "Manling Li",
+        "Hou Pong Chan",
+        "Lifu Huang",
+        "Julia Hockenmaier",
+        "Girish Chowdhary",
+        "Heng Ji"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.63.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/6a0a1e17-33f6-5719-83d6-8ebfe21ff9e4.pdf",
+    "abstract": "Goal-oriented generative script learning aims to generate subsequent steps to reach a particular goal, which is an essential task to assist robots or humans in performing stereotypical activities. An important aspect of this process is the ability to capture historical states visually, which provides detailed information that is not covered by text and will guide subsequent steps. Therefore, we propose a new task, Multimedia Generative Script Learning, to generate subsequent steps by tracking historical states in both text and vision modalities, as well as presenting the first benchmark containing 5,652 tasks and 79,089 multimedia steps. This task is challenging in three aspects: the multimedia challenge of capturing the visual states in images, the induction challenge of performing unseen tasks, and the diversity challenge of covering different information in individual steps. We propose to encode visual state changes through a selective multimedia encoder to address the multimedia challenge, transfer knowledge from previously observed tasks using a retrieval-augmented decoder to overcome the induction challenge, and further present distinct information at each step by optimizing a diversity-oriented contrastive learning objective. We define metrics to evaluate both generation and inductive quality. Experiment results demonstrate that our approach significantly outperforms strong baselines.",
+    "num_pages": 21
+}

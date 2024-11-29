@@ -1,0 +1,19 @@
+{
+    "uuid": "9af45b31-87f8-526e-b9cf-4dab46d97c29",
+    "title": "Bridging The Gap: Entailment Fused-T5 for Open-retrieval Conversational Machine Reading Comprehension",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhang-etal-2023-bridging-gap,\n    title = \"Bridging The Gap: Entailment Fused-T5 for Open-retrieval Conversational Machine Reading Comprehension\",\n    author = \"Zhang, Xiao  and\n      Huang, Heyan  and\n      Chi, Zewen  and\n      Mao, Xian-Ling\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.857\",\n    doi = \"10.18653/v1/2023.acl-long.857\",\n    pages = \"15374--15386\",\n    abstract = \"Open-retrieval conversational machine reading comprehension (OCMRC) simulates real-life conversational interaction scenes. Machines are required to make a decision of {``}Yes/No/Inquire{''} or generate a follow-up question when the decision is {``}Inquire{''} based on retrieved rule texts, user scenario, user question and dialogue history. Recent studies try to reduce the information gap between decision-making and question generation, in order to improve the performance of generation. However, the information gap still persists because these methods are still limited in pipeline framework, where decision-making and question generation are performed separately, making it hard to share the entailment reasoning used in decision-making across all stages. To tackle the above problem, we propose a novel one-stage end-to-end framework, called Entailment Fused-T5 (EFT), to bridge the information gap between decision-making and question generation in a global understanding manner. The extensive experimental results demonstrate that our proposed framework achieves new state-of-the-art performance on the OR-ShARC benchmark. Our model and code are publicly available at an anonymous link.\",\n}\n",
+    "authors": [
+        "Xiao Zhang",
+        "Heyan Huang",
+        "Zewen Chi",
+        "Xian-Ling Mao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.857.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9af45b31-87f8-526e-b9cf-4dab46d97c29.pdf",
+    "abstract": "Open-retrieval conversational machine reading comprehension (OCMRC) simulates real-life conversational interaction scenes. Machines are required to make a decision of “Yes/No/Inquire” or generate a follow-up question when the decision is “Inquire” based on retrieved rule texts, user scenario, user question and dialogue history. Recent studies try to reduce the information gap between decision-making and question generation, in order to improve the performance of generation. However, the information gap still persists because these methods are still limited in pipeline framework, where decision-making and question generation are performed separately, making it hard to share the entailment reasoning used in decision-making across all stages. To tackle the above problem, we propose a novel one-stage end-to-end framework, called Entailment Fused-T5 (EFT), to bridge the information gap between decision-making and question generation in a global understanding manner. The extensive experimental results demonstrate that our proposed framework achieves new state-of-the-art performance on the OR-ShARC benchmark. Our model and code are publicly available at an anonymous link.",
+    "num_pages": 13
+}

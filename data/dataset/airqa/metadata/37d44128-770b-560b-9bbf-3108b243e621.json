@@ -1,0 +1,20 @@
+{
+    "uuid": "37d44128-770b-560b-9bbf-3108b243e621",
+    "title": "Fine-Tuning Pre-Trained Language Models with Gaze Supervision",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{deng-etal-2024-fine,\n    title = \"Fine-Tuning Pre-Trained Language Models with Gaze Supervision\",\n    author = {Deng, Shuwen  and\n      Prasse, Paul  and\n      Reich, David  and\n      Scheffer, Tobias  and\n      J{\\\"a}ger, Lena},\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-short.21\",\n    doi = \"10.18653/v1/2024.acl-short.21\",\n    pages = \"217--224\",\n    abstract = \"Human gaze data provide cognitive information that reflect human language comprehension and has been effectively integrated into a variety of natural language processing (NLP) tasks, demonstrating improved performance over corresponding plain text-based models. In this work, we propose to integrate a gaze module into pre-trained language models (LMs) at the fine-tuning stage to improve their capabilities to learn representations that are grounded in human language processing. This is done by extending the conventional purely text-based fine-tuning objective with an auxiliary loss to exploit cognitive signals. The gaze module is only included during training, retaining compatibility with existing pre-trained LM-based pipelines. We evaluate the proposed approach using two distinct pre-trained LMs on the GLUE benchmark and observe that the proposed model improves performance compared to both standard fine-tuning and traditional text augmentation baselines.\",\n}\n",
+    "authors": [
+        "Shuwen Deng",
+        "Paul Prasse",
+        "David Reich",
+        "Tobias Scheffer",
+        "Lena Jäger"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-short.21.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/37d44128-770b-560b-9bbf-3108b243e621.pdf",
+    "abstract": "Human gaze data provide cognitive information that reflect human language comprehension and has been effectively integrated into a variety of natural language processing (NLP) tasks, demonstrating improved performance over corresponding plain text-based models. In this work, we propose to integrate a gaze module into pre-trained language models (LMs) at the fine-tuning stage to improve their capabilities to learn representations that are grounded in human language processing. This is done by extending the conventional purely text-based fine-tuning objective with an auxiliary loss to exploit cognitive signals. The gaze module is only included during training, retaining compatibility with existing pre-trained LM-based pipelines. We evaluate the proposed approach using two distinct pre-trained LMs on the GLUE benchmark and observe that the proposed model improves performance compared to both standard fine-tuning and traditional text augmentation baselines.",
+    "num_pages": 8
+}

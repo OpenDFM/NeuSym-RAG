@@ -1,0 +1,16 @@
+{
+    "uuid": "b93171b4-f5df-5778-b607-7eb8054a287e",
+    "title": "RGAT at SemEval-2023 Task 2: Named Entity Recognition Using Graph Attention Network",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{chakraborty-2023-rgat,\n    title = \"{RGAT} at {S}em{E}val-2023 Task 2: Named Entity Recognition Using Graph Attention Network\",\n    author = \"Chakraborty, Abir\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.23\",\n    doi = \"10.18653/v1/2023.semeval-1.23\",\n    pages = \"163--170\",\n    abstract = \"In this paper, we (team RGAT) describe our approach for the SemEval 2023 Task 2: Multilingual Complex Named Entity Recognition (MultiCoNER II). The goal of this task is to locate and classify named entities in unstructured short complex texts in 12 different languages and one multilingual setup. We use the dependency tree of the input query as additional feature in a Graph Attention Network along with the token and part-of-speech features. We also experiment with additional layers like BiLSTM and Transformer in addition to the CRF layer. However, we have not included any external Knowledge base like Wikipedia to enrich our inputs. We evaluated our proposed approach on the English NER dataset that resulted in a clean-subset F1 of 61.29{\\textbackslash}{\\%} and overall F1 of 56.91{\\textbackslash}{\\%}. However, other approaches that used external knowledge base performed significantly better.\",\n}\n",
+    "authors": [
+        "Abir Chakraborty"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.23.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b93171b4-f5df-5778-b607-7eb8054a287e.pdf",
+    "abstract": "In this paper, we (team RGAT) describe our approach for the SemEval 2023 Task 2: Multilingual Complex Named Entity Recognition (MultiCoNER II). The goal of this task is to locate and classify named entities in unstructured short complex texts in 12 different languages and one multilingual setup. We use the dependency tree of the input query as additional feature in a Graph Attention Network along with the token and part-of-speech features. We also experiment with additional layers like BiLSTM and Transformer in addition to the CRF layer. However, we have not included any external Knowledge base like Wikipedia to enrich our inputs. We evaluated our proposed approach on the English NER dataset that resulted in a clean-subset F1 of 61.29\\% and overall F1 of 56.91\\%. However, other approaches that used external knowledge base performed significantly better.",
+    "num_pages": 8
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "aacdf630-eeb9-54ae-b893-d008e7c768a7",
+    "title": "Curating Datasets for Better Performance with Example Training Dynamics",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{sar-shalom-schwartz-2023-curating,\n    title = \"Curating Datasets for Better Performance with Example Training Dynamics\",\n    author = \"Sar-Shalom, Aviad  and\n      Schwartz, Roy\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.674\",\n    doi = \"10.18653/v1/2023.findings-acl.674\",\n    pages = \"10597--10608\",\n    abstract = \"The landscape of NLP research is dominated by large-scale models training on colossal datasets, relying on data quantity rather than quality. As an alternative to this landscape, we propose a method for weighing the relative importance of examples in a dataset based on their Example Training dynamics (swayamdipta et al., 2020) {---} a set of metrics computed during training. We propose a new way of computing the ETD of a dataset, and show that they can be used to improve performance in both in-distribution and out-of-distribution testing. We show that ETD can be transferable, i.e., they can be computed once and used for training different models, effectively reducing their computation cost. Finally, we suggest an active learning approach for computing ETD during training rather than as a preprocessing step {---} an approach that is not as effective, but dramatically reduces the extra computational costs.\",\n}\n",
+    "authors": [
+        "Aviad Sar-Shalom",
+        "Roy Schwartz"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.674.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/aacdf630-eeb9-54ae-b893-d008e7c768a7.pdf",
+    "abstract": "The landscape of NLP research is dominated by large-scale models training on colossal datasets, relying on data quantity rather than quality. As an alternative to this landscape, we propose a method for weighing the relative importance of examples in a dataset based on their Example Training dynamics (swayamdipta et al., 2020) — a set of metrics computed during training. We propose a new way of computing the ETD of a dataset, and show that they can be used to improve performance in both in-distribution and out-of-distribution testing. We show that ETD can be transferable, i.e., they can be computed once and used for training different models, effectively reducing their computation cost. Finally, we suggest an active learning approach for computing ETD during training rather than as a preprocessing step — an approach that is not as effective, but dramatically reduces the extra computational costs.",
+    "num_pages": 12
+}

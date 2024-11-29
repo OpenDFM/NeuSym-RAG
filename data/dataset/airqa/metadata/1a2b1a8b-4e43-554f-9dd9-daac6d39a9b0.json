@@ -1,0 +1,21 @@
+{
+    "uuid": "1a2b1a8b-4e43-554f-9dd9-daac6d39a9b0",
+    "title": "SSP: Self-Supervised Post-training for Conversational Search",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{tu-etal-2023-ssp,\n    title = \"{SSP}: Self-Supervised Post-training for Conversational Search\",\n    author = \"Tu, Quan  and\n      Gao, Shen  and\n      Wu, Xiaolong  and\n      Cao, Zhao  and\n      Wen, Ji-Rong  and\n      Yan, Rui\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.837\",\n    doi = \"10.18653/v1/2023.findings-acl.837\",\n    pages = \"13237--13249\",\n    abstract = \"Conversational search has been regarded as the next-generation search paradigm. Constrained by data scarcity, most existing methods distill the well-trained ad-hoc retriever to the conversational retriever. However, these methods, which usually initialize parameters by query reformulation to discover contextualized dependency, have trouble in understanding the dialogue structure information and struggle with contextual semantic vanishing. In this paper, we propose {pasted macro {`}FULLMODEL{'}} ({pasted macro {`}MODEL{'}}) which is a new post-training paradigm with three self-supervised tasks to efficiently initialize the conversational search model to enhance the dialogue structure and contextual semantic understanding. Furthermore, the {pasted macro {`}MODEL{'}} can be plugged into most of the existing conversational models to boost their performance. To verify the effectiveness of our proposed method, we apply the conversational encoder post-trained by {pasted macro {`}MODEL{'}} on the conversational search task using two benchmark datasets: CAsT-19 and CAsT-20.Extensive experiments that our {pasted macro {`}MODEL{'}} can boost the performance of several existing conversational search methods. Our source code is available at \\url{https://github.com/morecry/SSP}.\",\n}\n",
+    "authors": [
+        "Quan Tu",
+        "Shen Gao",
+        "Xiaolong Wu",
+        "Zhao Cao",
+        "Ji-Rong Wen",
+        "Rui Yan"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.837.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1a2b1a8b-4e43-554f-9dd9-daac6d39a9b0.pdf",
+    "abstract": "Conversational search has been regarded as the next-generation search paradigm. Constrained by data scarcity, most existing methods distill the well-trained ad-hoc retriever to the conversational retriever. However, these methods, which usually initialize parameters by query reformulation to discover contextualized dependency, have trouble in understanding the dialogue structure information and struggle with contextual semantic vanishing. In this paper, we propose {pasted macro ‘FULLMODEL’} ({pasted macro ‘MODEL’}) which is a new post-training paradigm with three self-supervised tasks to efficiently initialize the conversational search model to enhance the dialogue structure and contextual semantic understanding. Furthermore, the {pasted macro ‘MODEL’} can be plugged into most of the existing conversational models to boost their performance. To verify the effectiveness of our proposed method, we apply the conversational encoder post-trained by {pasted macro ‘MODEL’} on the conversational search task using two benchmark datasets: CAsT-19 and CAsT-20.Extensive experiments that our {pasted macro ‘MODEL’} can boost the performance of several existing conversational search methods. Our source code is available at https://github.com/morecry/SSP.",
+    "num_pages": 13
+}

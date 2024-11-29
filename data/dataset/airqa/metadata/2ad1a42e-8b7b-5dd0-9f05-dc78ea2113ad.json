@@ -1,0 +1,23 @@
+{
+    "uuid": "2ad1a42e-8b7b-5dd0-9f05-dc78ea2113ad",
+    "title": "PromptNER: Prompt Locating and Typing for Named Entity Recognition",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{shen-etal-2023-promptner,\n    title = \"{P}rompt{NER}: Prompt Locating and Typing for Named Entity Recognition\",\n    author = \"Shen, Yongliang  and\n      Tan, Zeqi  and\n      Wu, Shuhui  and\n      Zhang, Wenqi  and\n      Zhang, Rongsheng  and\n      Xi, Yadong  and\n      Lu, Weiming  and\n      Zhuang, Yueting\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.698\",\n    doi = \"10.18653/v1/2023.acl-long.698\",\n    pages = \"12492--12507\",\n    abstract = \"Prompt learning is a new paradigm for utilizing pre-trained language models and has achieved great success in many tasks. To adopt prompt learning in the NER task, two kinds of methods have been explored from a pair of symmetric perspectives, populating the template by enumerating spans to predict their entity types or constructing type-specific prompts to locate entities. However, these methods not only require a multi-round prompting manner with a high time overhead and computational cost, but also require elaborate prompt templates, that are difficult to apply in practical scenarios. In this paper, we unify entity locating and entity typing into prompt learning, and design a dual-slot multi-prompt template with the position slot and type slot to prompt locating and typing respectively. Multiple prompts can be input to the model simultaneously, and then the model extracts all entities by parallel predictions on the slots. To assign labels for the slots during training, we design a dynamic template filling mechanism that uses the extended bipartite graph matching between prompts and the ground-truth entities. We conduct experiments in various settings, including resource-rich flat and nested NER datasets and low-resource in-domain and cross-domain datasets. Experimental results show that the proposed model achieves a significant performance improvement, especially in the cross-domain few-shot setting, which outperforms the state-of-the-art model by +7.7{\\%} on average.\",\n}\n",
+    "authors": [
+        "Yongliang Shen",
+        "Zeqi Tan",
+        "Shuhui Wu",
+        "Wenqi Zhang",
+        "Rongsheng Zhang",
+        "Yadong Xi",
+        "Weiming Lu",
+        "Yueting Zhuang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.698.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2ad1a42e-8b7b-5dd0-9f05-dc78ea2113ad.pdf",
+    "abstract": "Prompt learning is a new paradigm for utilizing pre-trained language models and has achieved great success in many tasks. To adopt prompt learning in the NER task, two kinds of methods have been explored from a pair of symmetric perspectives, populating the template by enumerating spans to predict their entity types or constructing type-specific prompts to locate entities. However, these methods not only require a multi-round prompting manner with a high time overhead and computational cost, but also require elaborate prompt templates, that are difficult to apply in practical scenarios. In this paper, we unify entity locating and entity typing into prompt learning, and design a dual-slot multi-prompt template with the position slot and type slot to prompt locating and typing respectively. Multiple prompts can be input to the model simultaneously, and then the model extracts all entities by parallel predictions on the slots. To assign labels for the slots during training, we design a dynamic template filling mechanism that uses the extended bipartite graph matching between prompts and the ground-truth entities. We conduct experiments in various settings, including resource-rich flat and nested NER datasets and low-resource in-domain and cross-domain datasets. Experimental results show that the proposed model achieves a significant performance improvement, especially in the cross-domain few-shot setting, which outperforms the state-of-the-art model by +7.7% on average.",
+    "num_pages": 16
+}

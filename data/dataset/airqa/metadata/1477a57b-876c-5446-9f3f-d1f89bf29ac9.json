@@ -1,0 +1,18 @@
+{
+    "uuid": "1477a57b-876c-5446-9f3f-d1f89bf29ac9",
+    "title": "Fixing MoE Over-Fitting on Low-Resource Languages in Multilingual Machine Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{elbayad-etal-2023-fixing,\n    title = \"Fixing {M}o{E} Over-Fitting on Low-Resource Languages in Multilingual Machine Translation\",\n    author = \"Elbayad, Maha  and\n      Sun, Anna  and\n      Bhosale, Shruti\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.897\",\n    doi = \"10.18653/v1/2023.findings-acl.897\",\n    pages = \"14237--14253\",\n    abstract = \"Sparsely gated Mixture of Experts (MoE) models have been shown to be a compute-efficient method to scale model capacity for multilingual machine translation. However, for low-resource tasks, MoE models severely over-fit. We show effective regularization strategies, namely dropout techniques for MoE layers in EOM and FOM, Conditional MoE Routing and Curriculum Learning methods that prevent over-fitting and improve the performance of MoE models on low-resource tasks without adversely affecting high-resource tasks. On a massively multilingual machine translation benchmark, our strategies result in about +1 chrF++ improvement in very low resource language pairs. We perform an extensive analysis of the learned MoE routing to better understand the impact of our regularization methods and how we can improve them.\",\n}\n",
+    "authors": [
+        "Maha Elbayad",
+        "Anna Sun",
+        "Shruti Bhosale"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.897.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1477a57b-876c-5446-9f3f-d1f89bf29ac9.pdf",
+    "abstract": "Sparsely gated Mixture of Experts (MoE) models have been shown to be a compute-efficient method to scale model capacity for multilingual machine translation. However, for low-resource tasks, MoE models severely over-fit. We show effective regularization strategies, namely dropout techniques for MoE layers in EOM and FOM, Conditional MoE Routing and Curriculum Learning methods that prevent over-fitting and improve the performance of MoE models on low-resource tasks without adversely affecting high-resource tasks. On a massively multilingual machine translation benchmark, our strategies result in about +1 chrF++ improvement in very low resource language pairs. We perform an extensive analysis of the learned MoE routing to better understand the impact of our regularization methods and how we can improve them.",
+    "num_pages": 17
+}

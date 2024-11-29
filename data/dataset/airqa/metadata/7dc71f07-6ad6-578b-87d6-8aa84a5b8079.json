@@ -1,0 +1,20 @@
+{
+    "uuid": "7dc71f07-6ad6-578b-87d6-8aa84a5b8079",
+    "title": "Do PLMs and Annotators Share the Same Gender Bias? Definition, Dataset, and Framework of Contextualized Gender Bias",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 5th Workshop on Gender Bias in Natural Language Processing (GeBNLP)",
+    "bibtex": "@inproceedings{zhu-etal-2024-plms,\n    title = \"Do {PLM}s and Annotators Share the Same Gender Bias? Definition, Dataset, and Framework of Contextualized Gender Bias\",\n    author = \"Zhu, Shucheng  and\n      Du, Bingjie  and\n      Zhao, Jishun  and\n      Liu, Ying  and\n      Liu, Pengyuan\",\n    editor = \"Fale{\\'n}ska, Agnieszka  and\n      Basta, Christine  and\n      Costa-juss{\\`a}, Marta  and\n      Goldfarb-Tarrant, Seraphina  and\n      Nozza, Debora\",\n    booktitle = \"Proceedings of the 5th Workshop on Gender Bias in Natural Language Processing (GeBNLP)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.gebnlp-1.2\",\n    doi = \"10.18653/v1/2024.gebnlp-1.2\",\n    pages = \"20--32\",\n    abstract = \"Pre-trained language models (PLMs) have achieved success in various of natural language processing (NLP) tasks. However, PLMs also introduce some disquieting safety problems, such as gender bias. Gender bias is an extremely complex issue, because different individuals may hold disparate opinions on whether the same sentence expresses harmful bias, especially those seemingly neutral or positive. This paper first defines the concept of contextualized gender bias (CGB), which makes it easy to measure implicit gender bias in both PLMs and annotators. We then construct CGBDataset, which contains 20k natural sentences with gendered words, from Chinese news. Similar to the task of masked language models, gendered words are masked for PLMs and annotators to judge whether a male word or a female word is more suitable. Then, we introduce CGBFrame to measure the gender bias of annotators. By comparing the results measured by PLMs and annotators, we find that though there are differences on the choices made by PLMs and annotators, they show significant consistency in general.\",\n}\n",
+    "authors": [
+        "Shucheng Zhu",
+        "Bingjie Du",
+        "Jishun Zhao",
+        "Ying Liu",
+        "Pengyuan Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.gebnlp-1.2.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7dc71f07-6ad6-578b-87d6-8aa84a5b8079.pdf",
+    "abstract": "Pre-trained language models (PLMs) have achieved success in various of natural language processing (NLP) tasks. However, PLMs also introduce some disquieting safety problems, such as gender bias. Gender bias is an extremely complex issue, because different individuals may hold disparate opinions on whether the same sentence expresses harmful bias, especially those seemingly neutral or positive. This paper first defines the concept of contextualized gender bias (CGB), which makes it easy to measure implicit gender bias in both PLMs and annotators. We then construct CGBDataset, which contains 20k natural sentences with gendered words, from Chinese news. Similar to the task of masked language models, gendered words are masked for PLMs and annotators to judge whether a male word or a female word is more suitable. Then, we introduce CGBFrame to measure the gender bias of annotators. By comparing the results measured by PLMs and annotators, we find that though there are differences on the choices made by PLMs and annotators, they show significant consistency in general.",
+    "num_pages": 13
+}

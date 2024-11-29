@@ -1,0 +1,23 @@
+{
+    "uuid": "55c259e1-f773-5cde-8cc4-bcd3a2418b62",
+    "title": "CMU’s IWSLT 2024 Simultaneous Speech Translation System",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)",
+    "bibtex": "@inproceedings{xu-etal-2024-cmus,\n    title = \"{CMU}{'}s {IWSLT} 2024 Simultaneous Speech Translation System\",\n    author = \"Xu, Xi  and\n      Ouyang, Siqi  and\n      Yan, Brian  and\n      Fernandes, Patrick  and\n      Chen, William  and\n      Li, Lei  and\n      Neubig, Graham  and\n      Watanabe, Shinji\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.iwslt-1.20\",\n    doi = \"10.18653/v1/2024.iwslt-1.20\",\n    pages = \"154--159\",\n    abstract = \"This paper describes CMU{'}s submission to the IWSLT 2024 Simultaneous Speech Translation (SST) task for translating English speech to German text in a streaming manner. Our end-to-end speech-to-text (ST) system integrates the WavLM speech encoder, a modality adapter, and the Llama2-7B-Base model as the decoder. We employ a two-stage training approach: initially, we align the representations of speech and text, followed by full fine-tuning. Both stages are trained on MuST-c v2 data with cross-entropy loss. We adapt our offline ST model for SST using a simple fixed hold-n policy. Experiments show that our model obtains an offline BLEU score of 31.1 and a BLEU score of 29.5 under 2 seconds latency on the MuST-C-v2 tst-COMMON.\",\n}\n",
+    "authors": [
+        "Xi Xu",
+        "Siqi Ouyang",
+        "Brian Yan",
+        "Patrick Fernandes",
+        "William Chen",
+        "Lei Li",
+        "Graham Neubig",
+        "Shinji Watanabe"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.iwslt-1.20.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/55c259e1-f773-5cde-8cc4-bcd3a2418b62.pdf",
+    "abstract": "This paper describes CMU’s submission to the IWSLT 2024 Simultaneous Speech Translation (SST) task for translating English speech to German text in a streaming manner. Our end-to-end speech-to-text (ST) system integrates the WavLM speech encoder, a modality adapter, and the Llama2-7B-Base model as the decoder. We employ a two-stage training approach: initially, we align the representations of speech and text, followed by full fine-tuning. Both stages are trained on MuST-c v2 data with cross-entropy loss. We adapt our offline ST model for SST using a simple fixed hold-n policy. Experiments show that our model obtains an offline BLEU score of 31.1 and a BLEU score of 29.5 under 2 seconds latency on the MuST-C-v2 tst-COMMON.",
+    "num_pages": 6
+}

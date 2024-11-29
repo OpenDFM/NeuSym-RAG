@@ -1,0 +1,21 @@
+{
+    "uuid": "91c3673b-a6f5-5431-a42d-f6587471edc6",
+    "title": "OOP: Object-Oriented Programming Evaluation Benchmark for Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{wang-etal-2024-oop,\n    title = \"{OOP}: Object-Oriented Programming Evaluation Benchmark for Large Language Models\",\n    author = \"Wang, Shuai  and\n      Ding, Liang  and\n      Shen, Li  and\n      Luo, Yong  and\n      Du, Bo  and\n      Tao, Dacheng\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.808\",\n    doi = \"10.18653/v1/2024.findings-acl.808\",\n    pages = \"13619--13639\",\n    abstract = \"Advancing automated programming necessitates robust and comprehensive code generation benchmarks, yet current evaluation frameworks largely neglect object-oriented programming (OOP) in favour of functional programming (FP), e.g., HumanEval and MBPP. To address this, our study introduces a pioneering OOP-focused benchmark, featuring 431 Python programs that encompass essential OOP concepts and features like classes and encapsulation methods. We propose a novel evaluation metric, pass@o, tailored for OOP, enhancing traditional pass@k metric. Our evaluation of 23 leading large language models (LLMs), including both general and code-specialized models, reveals three key insights: 1) pass@o offers a more relevant and comprehensive assessment for OOP code generation; 2) Despite excelling in FP, code-specialized LLMs like WizardCoder lag in OOP compared to models like ChatGPT; 3) The poor performance of all advanced LLMs on our OOP benchmark highlights a critical need for improvements in this field. Our benchmark and scripts will be publicly released at GitHub.\",\n}\n",
+    "authors": [
+        "Shuai Wang",
+        "Liang Ding",
+        "Li Shen",
+        "Yong Luo",
+        "Bo Du",
+        "Dacheng Tao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.808.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/91c3673b-a6f5-5431-a42d-f6587471edc6.pdf",
+    "abstract": "Advancing automated programming necessitates robust and comprehensive code generation benchmarks, yet current evaluation frameworks largely neglect object-oriented programming (OOP) in favour of functional programming (FP), e.g., HumanEval and MBPP. To address this, our study introduces a pioneering OOP-focused benchmark, featuring 431 Python programs that encompass essential OOP concepts and features like classes and encapsulation methods. We propose a novel evaluation metric, pass@o, tailored for OOP, enhancing traditional pass@k metric. Our evaluation of 23 leading large language models (LLMs), including both general and code-specialized models, reveals three key insights: 1) pass@o offers a more relevant and comprehensive assessment for OOP code generation; 2) Despite excelling in FP, code-specialized LLMs like WizardCoder lag in OOP compared to models like ChatGPT; 3) The poor performance of all advanced LLMs on our OOP benchmark highlights a critical need for improvements in this field. Our benchmark and scripts will be publicly released at GitHub.",
+    "num_pages": 21
+}

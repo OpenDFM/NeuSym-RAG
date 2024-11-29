@@ -1,0 +1,24 @@
+{
+    "uuid": "d459a7ed-f26a-5dca-b7fb-fab1a140fd40",
+    "title": "MolTC: Towards Molecular Relational Modeling In Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{fang-etal-2024-moltc,\n    title = \"{M}ol{TC}: Towards Molecular Relational Modeling In Language Models\",\n    author = \"Fang, Junfeng  and\n      Zhang, Shuai  and\n      Wu, Chang  and\n      Yang, Zhengyi  and\n      Liu, Zhiyuan  and\n      Li, Sihang  and\n      Wang, Kun  and\n      Du, Wenjie  and\n      Wang, Xiang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.116\",\n    doi = \"10.18653/v1/2024.findings-acl.116\",\n    pages = \"1943--1958\",\n    abstract = \"Molecular Relational Learning (MRL), aiming to understand interactions between molecular pairs, plays a pivotal role in advancing biochemical research. Recently, the adoption of large language models (LLMs), known for their vast knowledge repositories and advanced logical inference capabilities, has emerged as a promising way for efficient and effective MRL. Despite their potential, these methods predominantly rely on textual data, thus not fully harnessing the wealth of structural information inherent in molecular graphs. Moreover, the absence of a unified framework exacerbates the issue of insufficient data exploitation, as it hinders the sharing of interaction mechanism learned across various datasets. To address these challenges, this work proposes a novel LLM-based multi-modal framework for molecular interaction modeling following Chain-of-Thought (CoT) theory, termed MolTC, which effectively integrate graphical information of two molecules in pair. To train this integrated framework efficiently, we introduce a *multi-hierarchical CoT theory* to refine its training paradigm, and conduct a comprehensive *Molecular Interactive Instructions* dataset for the development of biochemical LLMs involving MRL.Our experiments,conducted across various datasets involving over 4,000,000 molecular pairs, exhibit the superiority of our method over current GNN and LLM-based baselines. Code is available at https://github.com/MangoKiller/MolTC.\",\n}\n",
+    "authors": [
+        "Junfeng Fang",
+        "Shuai Zhang",
+        "Chang Wu",
+        "Zhengyi Yang",
+        "Zhiyuan Liu",
+        "Sihang Li",
+        "Kun Wang",
+        "Wenjie Du",
+        "Xiang Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.116.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d459a7ed-f26a-5dca-b7fb-fab1a140fd40.pdf",
+    "abstract": "Molecular Relational Learning (MRL), aiming to understand interactions between molecular pairs, plays a pivotal role in advancing biochemical research. Recently, the adoption of large language models (LLMs), known for their vast knowledge repositories and advanced logical inference capabilities, has emerged as a promising way for efficient and effective MRL. Despite their potential, these methods predominantly rely on textual data, thus not fully harnessing the wealth of structural information inherent in molecular graphs. Moreover, the absence of a unified framework exacerbates the issue of insufficient data exploitation, as it hinders the sharing of interaction mechanism learned across various datasets. To address these challenges, this work proposes a novel LLM-based multi-modal framework for molecular interaction modeling following Chain-of-Thought (CoT) theory, termed MolTC, which effectively integrate graphical information of two molecules in pair. To train this integrated framework efficiently, we introduce a *multi-hierarchical CoT theory* to refine its training paradigm, and conduct a comprehensive *Molecular Interactive Instructions* dataset for the development of biochemical LLMs involving MRL.Our experiments,conducted across various datasets involving over 4,000,000 molecular pairs, exhibit the superiority of our method over current GNN and LLM-based baselines. Code is available at https://github.com/MangoKiller/MolTC.",
+    "num_pages": 16
+}

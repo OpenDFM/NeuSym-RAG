@@ -1,0 +1,23 @@
+{
+    "uuid": "a67ad9a9-2022-5cba-9824-cad452bc0aa0",
+    "title": "TransGEC: Improving Grammatical Error Correction with Translationese",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{fang-etal-2023-transgec,\n    title = \"{T}rans{GEC}: Improving Grammatical Error Correction with Translationese\",\n    author = \"Fang, Tao  and\n      Liu, Xuebo  and\n      Wong, Derek F.  and\n      Zhan, Runzhe  and\n      Ding, Liang  and\n      Chao, Lidia S.  and\n      Tao, Dacheng  and\n      Zhang, Min\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.223\",\n    doi = \"10.18653/v1/2023.findings-acl.223\",\n    pages = \"3614--3633\",\n    abstract = \"Data augmentation is an effective way to improve model performance of grammatical error correction (GEC). This paper identifies a critical side-effect of GEC data augmentation, which is due to the style discrepancy between the data used in GEC tasks (i.e., texts produced by non-native speakers) and data augmentation (i.e., native texts). To alleviate this issue, we propose to use an alternative data source, translationese (i.e., human-translated texts), as input for GEC data augmentation, which 1) is easier to obtain and usually has better quality than non-native texts, and 2) has a more similar style to non-native texts. Experimental results on the CoNLL14 and BEA19 English, NLPCC18 Chinese, Falko-MERLIN German, and RULEC-GEC Russian GEC benchmarks show that our approach consistently improves correction accuracy over strong baselines. Further analyses reveal that our approach is helpful for overcoming mainstream correction difficulties such as the corrections of frequent words, missing words, and substitution errors. Data, code, models and scripts are freely available at \\url{https://github.com/NLP2CT/TransGEC}.\",\n}\n",
+    "authors": [
+        "Tao Fang",
+        "Xuebo Liu",
+        "Derek F. Wong",
+        "Runzhe Zhan",
+        "Liang Ding",
+        "Lidia S. Chao",
+        "Dacheng Tao",
+        "Min Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.223.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a67ad9a9-2022-5cba-9824-cad452bc0aa0.pdf",
+    "abstract": "Data augmentation is an effective way to improve model performance of grammatical error correction (GEC). This paper identifies a critical side-effect of GEC data augmentation, which is due to the style discrepancy between the data used in GEC tasks (i.e., texts produced by non-native speakers) and data augmentation (i.e., native texts). To alleviate this issue, we propose to use an alternative data source, translationese (i.e., human-translated texts), as input for GEC data augmentation, which 1) is easier to obtain and usually has better quality than non-native texts, and 2) has a more similar style to non-native texts. Experimental results on the CoNLL14 and BEA19 English, NLPCC18 Chinese, Falko-MERLIN German, and RULEC-GEC Russian GEC benchmarks show that our approach consistently improves correction accuracy over strong baselines. Further analyses reveal that our approach is helpful for overcoming mainstream correction difficulties such as the corrections of frequent words, missing words, and substitution errors. Data, code, models and scripts are freely available at https://github.com/NLP2CT/TransGEC.",
+    "num_pages": 20
+}

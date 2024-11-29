@@ -1,0 +1,21 @@
+{
+    "uuid": "79bb12df-1406-5798-bc58-ad7663167f61",
+    "title": "URG: A Unified Ranking and Generation Method for Ensembling Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{lv-etal-2024-urg,\n    title = \"{URG}: A Unified Ranking and Generation Method for Ensembling Language Models\",\n    author = \"Lv, Bo  and\n      Tang, Chen  and\n      Zhang, Yanan  and\n      Liu, Xin  and\n      Luo, Ping  and\n      Yu, Yue\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.261\",\n    doi = \"10.18653/v1/2024.findings-acl.261\",\n    pages = \"4421--4434\",\n    abstract = \"Prior research endeavors of the ensemble Large Language Models (LLMs) achieved great success by employing an individual language model (LM) rank before the text generation. However, the use of an individual LM ranker faces two primary challenges: (1) The time-intensive nature of the ranking process, stemming from the comparisons between models; (2) The issue of error propagation arising from the separate ranking and generation models within the framework. In order to overcome these challenges, we propose a novel ensemble framework, namely Unified Ranking and Generation (URG). URG represents an end-to-end framework that jointly ranks the outputs of LLMs and generates fine-grained fusion results, via utilizing a dedicated cross-attention-based module and noise mitigation training against irrelevant information stemming from bad ranking results. Through extensive experimentation and evaluation, we demonstrate the efficiency and effectiveness of our framework in both the ranking and generation tasks. With the close coordination of the ranking and generation modules, our end-to-end framework achieves the state-of-the-art (SOTA) performance on these tasks, and exhibits substantial enhancements to any of the ensembled models.\",\n}\n",
+    "authors": [
+        "Bo Lv",
+        "Chen Tang",
+        "Yanan Zhang",
+        "Xin Liu",
+        "Ping Luo",
+        "Yue Yu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.261.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/79bb12df-1406-5798-bc58-ad7663167f61.pdf",
+    "abstract": "Prior research endeavors of the ensemble Large Language Models (LLMs) achieved great success by employing an individual language model (LM) rank before the text generation. However, the use of an individual LM ranker faces two primary challenges: (1) The time-intensive nature of the ranking process, stemming from the comparisons between models; (2) The issue of error propagation arising from the separate ranking and generation models within the framework. In order to overcome these challenges, we propose a novel ensemble framework, namely Unified Ranking and Generation (URG). URG represents an end-to-end framework that jointly ranks the outputs of LLMs and generates fine-grained fusion results, via utilizing a dedicated cross-attention-based module and noise mitigation training against irrelevant information stemming from bad ranking results. Through extensive experimentation and evaluation, we demonstrate the efficiency and effectiveness of our framework in both the ranking and generation tasks. With the close coordination of the ranking and generation modules, our end-to-end framework achieves the state-of-the-art (SOTA) performance on these tasks, and exhibits substantial enhancements to any of the ensembled models.",
+    "num_pages": 14
+}

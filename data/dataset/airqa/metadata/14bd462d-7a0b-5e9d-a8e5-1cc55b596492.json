@@ -1,0 +1,29 @@
+{
+    "uuid": "14bd462d-7a0b-5e9d-a8e5-1cc55b596492",
+    "title": "E2-LLM: Efficient and Extreme Length Extension of Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{liu-etal-2024-e2,\n    title = \"E2-{LLM}: Efficient and Extreme Length Extension of Large Language Models\",\n    author = \"Liu, Jiaheng  and\n      ZhiqiBai, ZhiqiBai  and\n      Zhang, Yuanxing  and\n      Zhang, Chenchen  and\n      YuangZh, YuangZh  and\n      Zhang, Ge  and\n      JiakaiWang, JiakaiWang  and\n      Que, Haoran  and\n      Chen, Yukang  and\n      Su, Wenbo  and\n      Ge, Tiezheng  and\n      Fu, Jie  and\n      Chen, Wenhu  and\n      Zheng, Bo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.252\",\n    doi = \"10.18653/v1/2024.findings-acl.252\",\n    pages = \"4243--4253\",\n    abstract = \"Training Large Language Models (LLMs) to process extensive context lengths incurs prohibitive computational costs. Prevailing techniques for extending context capabilities in LLMs typically require not only additional training procedures but also access to datasets with long context (e.g., sequences of 32K tokens), presupposing substantial GPU expenditures. To address the aforementioned issues, we introduce a novel solution named Efficient and Extreme length extension for Large Language Models (E2-LLM). E2-LLM entails a singular training process over considerably short sequences (e.g., 4K tokens), which greatly mitigates the cost of continual-pretraining or fine-tuning. Within the training phase, we incorporate a dual augmentation strategy with Rotary Position Embeddings (RoPE) that adjusts the scale and position indices across distinct training samples. E 2 -LLM is meticulously designed to enhance the model{'}s robustness to diverse relative positions. The experimental results on multiple benchmark datasets demonstrate the superior performance of E 2 -LLM on demanding tasks of processing long contexts.\",\n}\n",
+    "authors": [
+        "Jiaheng Liu",
+        "ZhiqiBai ZhiqiBai",
+        "Yuanxing Zhang",
+        "Chenchen Zhang",
+        "YuangZh YuangZh",
+        "Ge Zhang",
+        "JiakaiWang JiakaiWang",
+        "Haoran Que",
+        "Yukang Chen",
+        "Wenbo Su",
+        "Tiezheng Ge",
+        "Jie Fu",
+        "Wenhu Chen",
+        "Bo Zheng"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.252.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/14bd462d-7a0b-5e9d-a8e5-1cc55b596492.pdf",
+    "abstract": "Training Large Language Models (LLMs) to process extensive context lengths incurs prohibitive computational costs. Prevailing techniques for extending context capabilities in LLMs typically require not only additional training procedures but also access to datasets with long context (e.g., sequences of 32K tokens), presupposing substantial GPU expenditures. To address the aforementioned issues, we introduce a novel solution named Efficient and Extreme length extension for Large Language Models (E2-LLM). E2-LLM entails a singular training process over considerably short sequences (e.g., 4K tokens), which greatly mitigates the cost of continual-pretraining or fine-tuning. Within the training phase, we incorporate a dual augmentation strategy with Rotary Position Embeddings (RoPE) that adjusts the scale and position indices across distinct training samples. E 2 -LLM is meticulously designed to enhance the model’s robustness to diverse relative positions. The experimental results on multiple benchmark datasets demonstrate the superior performance of E 2 -LLM on demanding tasks of processing long contexts.",
+    "num_pages": 11
+}

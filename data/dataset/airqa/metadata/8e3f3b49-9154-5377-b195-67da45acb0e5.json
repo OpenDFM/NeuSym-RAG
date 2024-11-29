@@ -1,0 +1,19 @@
+{
+    "uuid": "8e3f3b49-9154-5377-b195-67da45acb0e5",
+    "title": "Controlled Text Generation for Black-box Language Models via Score-based Progressive Editor",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yu-etal-2024-controlled,\n    title = \"Controlled Text Generation for Black-box Language Models via Score-based Progressive Editor\",\n    author = \"Yu, Sangwon  and\n      Lee, Changmin  and\n      Lee, Hojin  and\n      Yoon, Sungroh\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.767\",\n    doi = \"10.18653/v1/2024.acl-long.767\",\n    pages = \"14215--14237\",\n    abstract = \"Controlled text generation, aiming to ensure that language models produce text containing only the desired domain or corpus attributes, is immensely crucial in the practical application of language models. Existing methods, however, are inapplicable to black-box models or suffer a significant trade-off between control and fluency in text generation. This paper introduces the Score-based Progressive Editor (ScoPE), a novel approach designed to overcome these issues. ScoPE modifies the context at the token level during the generation process of a backbone language model. This modification guides the subsequent text to naturally include the target attributes. To facilitate this process, ScoPE employs a training objective that maximizes a target score, comprehensively considering both control and fluency. Experimental results on diverse controlled generation tasks demonstrate that ScoPE can effectively regulate the attributes of the generated text while effectively utilizing the capability of the backbone large language models.\",\n}\n",
+    "authors": [
+        "Sangwon Yu",
+        "Changmin Lee",
+        "Hojin Lee",
+        "Sungroh Yoon"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.767.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/8e3f3b49-9154-5377-b195-67da45acb0e5.pdf",
+    "abstract": "Controlled text generation, aiming to ensure that language models produce text containing only the desired domain or corpus attributes, is immensely crucial in the practical application of language models. Existing methods, however, are inapplicable to black-box models or suffer a significant trade-off between control and fluency in text generation. This paper introduces the Score-based Progressive Editor (ScoPE), a novel approach designed to overcome these issues. ScoPE modifies the context at the token level during the generation process of a backbone language model. This modification guides the subsequent text to naturally include the target attributes. To facilitate this process, ScoPE employs a training objective that maximizes a target score, comprehensively considering both control and fluency. Experimental results on diverse controlled generation tasks demonstrate that ScoPE can effectively regulate the attributes of the generated text while effectively utilizing the capability of the backbone large language models.",
+    "num_pages": 23
+}

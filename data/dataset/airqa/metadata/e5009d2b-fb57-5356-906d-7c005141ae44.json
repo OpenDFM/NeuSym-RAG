@@ -1,0 +1,18 @@
+{
+    "uuid": "e5009d2b-fb57-5356-906d-7c005141ae44",
+    "title": "Ask an Expert: Leveraging Language Models to Improve Strategic Reasoning in Goal-Oriented Dialogue Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhang-etal-2023-ask,\n    title = \"Ask an Expert: Leveraging Language Models to Improve Strategic Reasoning in Goal-Oriented Dialogue Models\",\n    author = \"Zhang, Qiang  and\n      Naradowsky, Jason  and\n      Miyao, Yusuke\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.417\",\n    doi = \"10.18653/v1/2023.findings-acl.417\",\n    pages = \"6665--6694\",\n    abstract = \"Existing dialogue models may encounter scenarios which are not well-represented in the training data, and as a result generate responses that are unnatural, inappropriate, or unhelpful. We propose the {``}Ask an Expert{''} framework in which the model is trained with access to an {``}expert{''} which it can consult at each turn. Advice is solicited via a structured dialogue with the expert, and the model is optimized to selectively utilize (or ignore) it given the context and dialogue history. In this work the expert takes the form of an LLM.We evaluate this framework in a mental health support domain, where the structure of the expert conversation is outlined by pre-specified prompts which reflect a reasoning strategy taught to practitioners in the field. Blenderbot models utilizing {``}Ask an Expert{''} show quality improvements across all expert sizes, including those with fewer parameters than the dialogue model itself. Our best model provides a {\\textasciitilde}10{\\%} improvement over baselines, approaching human-level scores on {``}engingingness{''} and {``}helpfulness{''} metrics.\",\n}\n",
+    "authors": [
+        "Qiang Zhang",
+        "Jason Naradowsky",
+        "Yusuke Miyao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.417.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/e5009d2b-fb57-5356-906d-7c005141ae44.pdf",
+    "abstract": "Existing dialogue models may encounter scenarios which are not well-represented in the training data, and as a result generate responses that are unnatural, inappropriate, or unhelpful. We propose the “Ask an Expert” framework in which the model is trained with access to an “expert” which it can consult at each turn. Advice is solicited via a structured dialogue with the expert, and the model is optimized to selectively utilize (or ignore) it given the context and dialogue history. In this work the expert takes the form of an LLM.We evaluate this framework in a mental health support domain, where the structure of the expert conversation is outlined by pre-specified prompts which reflect a reasoning strategy taught to practitioners in the field. Blenderbot models utilizing “Ask an Expert” show quality improvements across all expert sizes, including those with fewer parameters than the dialogue model itself. Our best model provides a ~10% improvement over baselines, approaching human-level scores on “engingingness” and “helpfulness” metrics.",
+    "num_pages": 30
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "8e683e76-b1ed-5a8a-b249-2ee223443176",
+    "title": "FedPETuning: When Federated Learning Meets the Parameter-Efficient Tuning Methods of Pre-trained Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhang-etal-2023-fedpetuning,\n    title = \"{F}ed{PET}uning: When Federated Learning Meets the Parameter-Efficient Tuning Methods of Pre-trained Language Models\",\n    author = \"Zhang, Zhuo  and\n      Yang, Yuanhang  and\n      Dai, Yong  and\n      Wang, Qifan  and\n      Yu, Yue  and\n      Qu, Lizhen  and\n      Xu, Zenglin\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.632\",\n    doi = \"10.18653/v1/2023.findings-acl.632\",\n    pages = \"9963--9977\",\n    abstract = \"With increasing concerns about data privacy, there is an increasing necessity of fine-tuning pre-trained language models (PLMs) for adapting to downstream tasks located in end-user devices or local clients without transmitting data to the central server. This urgent necessity therefore calls the research of investigating federated learning (FL) for PLMs. However, large PLMs bring the curse of prohibitive communication overhead and local model adaptation costs for the FL system. To this end, we investigate the parameter-efficient tuning (PETuning) of PLMs and develop a corresponding federated benchmark for four representative PETuning methods, dubbed FedPETuning. Specifically, FedPETuning provides the first holistic empirical study of representative PLMs tuning methods in FL, covering privacy attacks, performance comparisons, and resource-constrained analysis. Intensive experimental results have indicated that FedPETuning can efficiently defend against privacy attacks and maintains acceptable performance with reducing heavy resource consumption. The open-source code and data are available at \\url{https://github.com/SMILELab-FL/FedPETuning}.\",\n}\n",
+    "authors": [
+        "Zhuo Zhang",
+        "Yuanhang Yang",
+        "Yong Dai",
+        "Qifan Wang",
+        "Yue Yu",
+        "Lizhen Qu",
+        "Zenglin Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.632.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/8e683e76-b1ed-5a8a-b249-2ee223443176.pdf",
+    "abstract": "With increasing concerns about data privacy, there is an increasing necessity of fine-tuning pre-trained language models (PLMs) for adapting to downstream tasks located in end-user devices or local clients without transmitting data to the central server. This urgent necessity therefore calls the research of investigating federated learning (FL) for PLMs. However, large PLMs bring the curse of prohibitive communication overhead and local model adaptation costs for the FL system. To this end, we investigate the parameter-efficient tuning (PETuning) of PLMs and develop a corresponding federated benchmark for four representative PETuning methods, dubbed FedPETuning. Specifically, FedPETuning provides the first holistic empirical study of representative PLMs tuning methods in FL, covering privacy attacks, performance comparisons, and resource-constrained analysis. Intensive experimental results have indicated that FedPETuning can efficiently defend against privacy attacks and maintains acceptable performance with reducing heavy resource consumption. The open-source code and data are available at https://github.com/SMILELab-FL/FedPETuning.",
+    "num_pages": 15
+}

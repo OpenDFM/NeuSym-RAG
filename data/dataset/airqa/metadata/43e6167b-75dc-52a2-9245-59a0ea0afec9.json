@@ -1,0 +1,20 @@
+{
+    "uuid": "43e6167b-75dc-52a2-9245-59a0ea0afec9",
+    "title": "Nano: Nested Human-in-the-Loop Reward Learning for Few-shot Language Model Control",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{fan-etal-2023-nano,\n    title = \"Nano: Nested Human-in-the-Loop Reward Learning for Few-shot Language Model Control\",\n    author = \"Fan, Xiang  and\n      Lyu, Yiwei  and\n      Liang, Paul Pu  and\n      Salakhutdinov, Ruslan  and\n      Morency, Louis-Philippe\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.758\",\n    doi = \"10.18653/v1/2023.findings-acl.758\",\n    pages = \"11970--11992\",\n    abstract = \"Pretrained language models have demonstrated extraordinary capabilities in language generation. However, real-world tasks often require controlling the distribution of generated text in order to mitigate bias, promote fairness, and achieve personalization. Existing techniques for controlling the distribution of generated text only work with quantified distributions, which require pre-defined categories, proportions of the distribution, or an existing corpus following the desired distributions. However, many important distributions, such as personal preferences, are unquantified. In this work, we tackle the problem of generating text following arbitrary distributions (quantified and unquantified) by proposing NANO, a few-shot human-in-the-loop training algorithm that continuously learns from human feedback. NANO achieves state-of-the-art results on single topic/attribute as well as quantified distribution control compared to previous works. We also show that NANO is able to learn unquantified distributions, achieves personalization, and captures differences between different individuals{'} personal preferences with high sample efficiency.\",\n}\n",
+    "authors": [
+        "Xiang Fan",
+        "Yiwei Lyu",
+        "Paul Pu Liang",
+        "Ruslan Salakhutdinov",
+        "Louis-Philippe Morency"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.758.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/43e6167b-75dc-52a2-9245-59a0ea0afec9.pdf",
+    "abstract": "Pretrained language models have demonstrated extraordinary capabilities in language generation. However, real-world tasks often require controlling the distribution of generated text in order to mitigate bias, promote fairness, and achieve personalization. Existing techniques for controlling the distribution of generated text only work with quantified distributions, which require pre-defined categories, proportions of the distribution, or an existing corpus following the desired distributions. However, many important distributions, such as personal preferences, are unquantified. In this work, we tackle the problem of generating text following arbitrary distributions (quantified and unquantified) by proposing NANO, a few-shot human-in-the-loop training algorithm that continuously learns from human feedback. NANO achieves state-of-the-art results on single topic/attribute as well as quantified distribution control compared to previous works. We also show that NANO is able to learn unquantified distributions, achieves personalization, and captures differences between different individuals’ personal preferences with high sample efficiency.",
+    "num_pages": 23
+}

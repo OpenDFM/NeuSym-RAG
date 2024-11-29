@@ -1,0 +1,25 @@
+{
+    "uuid": "d335f8f8-b63b-50e0-97c6-aa915589878a",
+    "title": "Hence, Socrates is mortal: A Benchmark for Natural Language Syllogistic Reasoning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wu-etal-2023-hence,\n    title = \"Hence, Socrates is mortal: A Benchmark for Natural Language Syllogistic Reasoning\",\n    author = \"Wu, Yongkang  and\n      Han, Meng  and\n      Zhu, Yutao  and\n      Li, Lei  and\n      Zhang, Xinyu  and\n      Lai, Ruofei  and\n      Li, Xiaoguang  and\n      Ren, Yuanhang  and\n      Dou, Zhicheng  and\n      Cao, Zhao\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.148\",\n    doi = \"10.18653/v1/2023.findings-acl.148\",\n    pages = \"2347--2367\",\n    abstract = \"Syllogistic reasoning, a typical form of deductive reasoning, is a critical capability widely required in natural language understanding tasks, such as text entailment and question answering. To better facilitate research on syllogistic reasoning, we develop a benchmark called SylloBase that differs from existing syllogistic datasets in three aspects: (1) Covering a complete taxonomy of syllogism reasoning patterns; (2) Containing both automatically and manually constructed samples; and (3) Involving both the generation and understanding tasks. We automatically construct 50k template-based syllogism samples by mining syllogism patterns from Wikidata and ConceptNet. To improve our dataset{'}s naturalness and challenge, we apply GPT-3 to paraphrase the template-based data and further manually rewrite 1,000 samples as the test set. State-of-the-art pre-trained language models can achieve the best generation ROUGE-L of 38.72 by T5 and the best multi-choice accuracy of 72.77{\\%} by RoBERTa on SylloBase, which indicates the great challenge of learning diverse syllogistic reasoning types on SylloBase. Our datasets are released at \\url{https://github.com/casually-PYlearner/SYLLOBASE}.\",\n}\n",
+    "authors": [
+        "Yongkang Wu",
+        "Meng Han",
+        "Yutao Zhu",
+        "Lei Li",
+        "Xinyu Zhang",
+        "Ruofei Lai",
+        "Xiaoguang Li",
+        "Yuanhang Ren",
+        "Zhicheng Dou",
+        "Zhao Cao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.148.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d335f8f8-b63b-50e0-97c6-aa915589878a.pdf",
+    "abstract": "Syllogistic reasoning, a typical form of deductive reasoning, is a critical capability widely required in natural language understanding tasks, such as text entailment and question answering. To better facilitate research on syllogistic reasoning, we develop a benchmark called SylloBase that differs from existing syllogistic datasets in three aspects: (1) Covering a complete taxonomy of syllogism reasoning patterns; (2) Containing both automatically and manually constructed samples; and (3) Involving both the generation and understanding tasks. We automatically construct 50k template-based syllogism samples by mining syllogism patterns from Wikidata and ConceptNet. To improve our dataset’s naturalness and challenge, we apply GPT-3 to paraphrase the template-based data and further manually rewrite 1,000 samples as the test set. State-of-the-art pre-trained language models can achieve the best generation ROUGE-L of 38.72 by T5 and the best multi-choice accuracy of 72.77% by RoBERTa on SylloBase, which indicates the great challenge of learning diverse syllogistic reasoning types on SylloBase. Our datasets are released at https://github.com/casually-PYlearner/SYLLOBASE.",
+    "num_pages": 21
+}

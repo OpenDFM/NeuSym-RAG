@@ -1,0 +1,24 @@
+{
+    "uuid": "21869996-7231-54c7-9dd1-42088fcd7b70",
+    "title": "LLM-QAT: Data-Free Quantization Aware Training for Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{liu-etal-2024-llm,\n    title = \"{LLM}-{QAT}: Data-Free Quantization Aware Training for Large Language Models\",\n    author = \"Liu, Zechun  and\n      Oguz, Barlas  and\n      Zhao, Changsheng  and\n      Chang, Ernie  and\n      Stock, Pierre  and\n      Mehdad, Yashar  and\n      Shi, Yangyang  and\n      Krishnamoorthi, Raghuraman  and\n      Chandra, Vikas\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.26\",\n    doi = \"10.18653/v1/2024.findings-acl.26\",\n    pages = \"467--484\",\n    abstract = \"Several post-training quantization methods have been applied to large language models (LLMs), and have been shown to perform well down to 8-bits. We find that these methods break down at lower bit precision, and investigate quantization-aware training for LLMs (LLM-QAT) to push quantization levels even further. We propose a data-free distillation method that leverages generations produced by the pre-trained model, which better preserves the original output distribution and allows quantizing any generative model independent of its training data, similar to post-training quantization methods. In addition to quantizing weights and activations, we also quantize the KV cache, which is critical for increasing throughput and supporting long sequence dependencies at current model sizes. We experiment with LLaMA models of sizes 7B, 13B, and 30B, at quantization levels down to 4-bits. We observe large improvements over training-free methods, especially in the low-bit settings.\",\n}\n",
+    "authors": [
+        "Zechun Liu",
+        "Barlas Oguz",
+        "Changsheng Zhao",
+        "Ernie Chang",
+        "Pierre Stock",
+        "Yashar Mehdad",
+        "Yangyang Shi",
+        "Raghuraman Krishnamoorthi",
+        "Vikas Chandra"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.26.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/21869996-7231-54c7-9dd1-42088fcd7b70.pdf",
+    "abstract": "Several post-training quantization methods have been applied to large language models (LLMs), and have been shown to perform well down to 8-bits. We find that these methods break down at lower bit precision, and investigate quantization-aware training for LLMs (LLM-QAT) to push quantization levels even further. We propose a data-free distillation method that leverages generations produced by the pre-trained model, which better preserves the original output distribution and allows quantizing any generative model independent of its training data, similar to post-training quantization methods. In addition to quantizing weights and activations, we also quantize the KV cache, which is critical for increasing throughput and supporting long sequence dependencies at current model sizes. We experiment with LLaMA models of sizes 7B, 13B, and 30B, at quantization levels down to 4-bits. We observe large improvements over training-free methods, especially in the low-bit settings.",
+    "num_pages": 18
+}

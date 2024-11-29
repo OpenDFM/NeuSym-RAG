@@ -1,0 +1,19 @@
+{
+    "uuid": "8e69c420-ecb6-5987-85be-41cc7720e82a",
+    "title": "Exploring the Effectiveness and Consistency of Task Selection in Intermediate-Task Transfer Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)",
+    "bibtex": "@inproceedings{lin-etal-2024-exploring,\n    title = \"Exploring the Effectiveness and Consistency of Task Selection in Intermediate-Task Transfer Learning\",\n    author = \"Lin, Pin-Jie  and\n      Zhang, Miaoran  and\n      Mosbach, Marius  and\n      Klakow, Dietrich\",\n    editor = \"Fu, Xiyan  and\n      Fleisig, Eve\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-srw.24\",\n    doi = \"10.18653/v1/2024.acl-srw.24\",\n    pages = \"170--185\",\n    abstract = \"Identifying beneficial tasks to transfer from is a critical step toward successful intermediate-task transfer learning. In this work, we experiment with 130 source-target task combinations and demonstrate that the transfer performance exhibits severe variance across different source tasks and training seeds, highlighting the crucial role of intermediate-task selection in a broader context. We compare four representative task selection methods in a unified setup, focusing on their effectiveness and consistency. Compared to embedding-free methods and text embeddings, task embeddings constructed from fine-tuned weights can better estimate task transferability by improving task prediction scores from 2.59{\\%} to 3.96{\\%}. Despite their strong performance, we observe that the task embeddings do not consistently demonstrate superiority for tasks requiring reasoning abilities. Furthermore, we introduce a novel method that measures pairwise token similarity using maximum inner product search, leading to the highest performance in task prediction. Our findings suggest that token-wise similarity is better predictive for predicting transferability compared to averaging weights.\",\n}\n",
+    "authors": [
+        "Pin-Jie Lin",
+        "Miaoran Zhang",
+        "Marius Mosbach",
+        "Dietrich Klakow"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-srw.24.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/8e69c420-ecb6-5987-85be-41cc7720e82a.pdf",
+    "abstract": "Identifying beneficial tasks to transfer from is a critical step toward successful intermediate-task transfer learning. In this work, we experiment with 130 source-target task combinations and demonstrate that the transfer performance exhibits severe variance across different source tasks and training seeds, highlighting the crucial role of intermediate-task selection in a broader context. We compare four representative task selection methods in a unified setup, focusing on their effectiveness and consistency. Compared to embedding-free methods and text embeddings, task embeddings constructed from fine-tuned weights can better estimate task transferability by improving task prediction scores from 2.59% to 3.96%. Despite their strong performance, we observe that the task embeddings do not consistently demonstrate superiority for tasks requiring reasoning abilities. Furthermore, we introduce a novel method that measures pairwise token similarity using maximum inner product search, leading to the highest performance in task prediction. Our findings suggest that token-wise similarity is better predictive for predicting transferability compared to averaging weights.",
+    "num_pages": 16
+}

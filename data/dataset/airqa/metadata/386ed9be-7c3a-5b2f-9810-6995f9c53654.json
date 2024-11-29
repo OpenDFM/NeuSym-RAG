@@ -1,0 +1,19 @@
+{
+    "uuid": "386ed9be-7c3a-5b2f-9810-6995f9c53654",
+    "title": "DEnsity: Open-domain Dialogue Evaluation Metric using Density Estimation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{park-etal-2023-density,\n    title = \"{DE}nsity: Open-domain Dialogue Evaluation Metric using Density Estimation\",\n    author = \"Park, ChaeHun  and\n      Lee, Seungil  and\n      Rim, Daniel  and\n      Choo, Jaegul\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.896\",\n    doi = \"10.18653/v1/2023.findings-acl.896\",\n    pages = \"14222--14236\",\n    abstract = \"Despite the recent advances in open-domain dialogue systems, building a reliable evaluation metric is still a challenging problem. Recent studies proposed learnable metrics based on classification models trained to distinguish the correct response. However, neural classifiers are known to make overly confident predictions for examples from unseen distributions. We propose DENSITY, which evaluates a response by utilizing density estimation on the feature space derived from a neural classifier. Our metric measures how likely a response would appear in the distribution of human conversations. Moreover, to improve the performance of DENSITY, we utilize contrastive learning to further compress the feature space. Experiments on multiple response evaluation datasets show that DENSITY correlates better with human evaluations than the existing metrics.\",\n}\n",
+    "authors": [
+        "ChaeHun Park",
+        "Seungil Lee",
+        "Daniel Rim",
+        "Jaegul Choo"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.896.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/386ed9be-7c3a-5b2f-9810-6995f9c53654.pdf",
+    "abstract": "Despite the recent advances in open-domain dialogue systems, building a reliable evaluation metric is still a challenging problem. Recent studies proposed learnable metrics based on classification models trained to distinguish the correct response. However, neural classifiers are known to make overly confident predictions for examples from unseen distributions. We propose DENSITY, which evaluates a response by utilizing density estimation on the feature space derived from a neural classifier. Our metric measures how likely a response would appear in the distribution of human conversations. Moreover, to improve the performance of DENSITY, we utilize contrastive learning to further compress the feature space. Experiments on multiple response evaluation datasets show that DENSITY correlates better with human evaluations than the existing metrics.",
+    "num_pages": 15
+}

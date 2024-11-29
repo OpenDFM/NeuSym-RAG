@@ -1,0 +1,23 @@
+{
+    "uuid": "c8f3f8c4-9f82-5d97-a77b-5abfe6891847",
+    "title": "Towards standardizing Korean Grammatical Error Correction: Datasets and Annotation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yoon-etal-2023-towards,\n    title = \"Towards standardizing {K}orean Grammatical Error Correction: Datasets and Annotation\",\n    author = \"Yoon, Soyoung  and\n      Park, Sungjoon  and\n      Kim, Gyuwan  and\n      Cho, Junhee  and\n      Park, Kihyo  and\n      Kim, Gyu Tae  and\n      Seo, Minjoon  and\n      Oh, Alice\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.371\",\n    doi = \"10.18653/v1/2023.acl-long.371\",\n    pages = \"6713--6742\",\n    abstract = \"Research on Korean grammatical error correction (GEC) is limited, compared to other major languages such as English. We attribute this problematic circumstance to the lack of a carefully designed evaluation benchmark for Korean GEC. In this work, we collect three datasets from different sources (Kor-Lang8, Kor-Native, and Kor-Learner) that covers a wide range of Korean grammatical errors. Considering the nature of Korean grammar, We then define 14 error types for Korean and provide KAGAS (Korean Automatic Grammatical error Annotation System), which can automatically annotate error types from parallel corpora. We use KAGAS on our datasets to make an evaluation benchmark for Korean, and present baseline models trained from our datasets. We show that the model trained with our datasets significantly outperforms the currently used statistical Korean GEC system (Hanspell) on a wider range of error types, demonstrating the diversity and usefulness of the datasets. The implementations and datasets are open-sourced.\",\n}\n",
+    "authors": [
+        "Soyoung Yoon",
+        "Sungjoon Park",
+        "Gyuwan Kim",
+        "Junhee Cho",
+        "Kihyo Park",
+        "Gyu Tae Kim",
+        "Minjoon Seo",
+        "Alice Oh"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.371.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c8f3f8c4-9f82-5d97-a77b-5abfe6891847.pdf",
+    "abstract": "Research on Korean grammatical error correction (GEC) is limited, compared to other major languages such as English. We attribute this problematic circumstance to the lack of a carefully designed evaluation benchmark for Korean GEC. In this work, we collect three datasets from different sources (Kor-Lang8, Kor-Native, and Kor-Learner) that covers a wide range of Korean grammatical errors. Considering the nature of Korean grammar, We then define 14 error types for Korean and provide KAGAS (Korean Automatic Grammatical error Annotation System), which can automatically annotate error types from parallel corpora. We use KAGAS on our datasets to make an evaluation benchmark for Korean, and present baseline models trained from our datasets. We show that the model trained with our datasets significantly outperforms the currently used statistical Korean GEC system (Hanspell) on a wider range of error types, demonstrating the diversity and usefulness of the datasets. The implementations and datasets are open-sourced.",
+    "num_pages": 30
+}

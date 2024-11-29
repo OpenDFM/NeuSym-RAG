@@ -1,0 +1,24 @@
+{
+    "uuid": "6671a5dc-b8a0-5d9b-8cdc-41c6b450512d",
+    "title": "Symbol-LLM: Towards Foundational Symbol-centric Interface For Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{xu-etal-2024-symbol,\n    title = \"Symbol-{LLM}: Towards Foundational Symbol-centric Interface For Large Language Models\",\n    author = \"Xu, Fangzhi  and\n      Wu, Zhiyong  and\n      Sun, Qiushi  and\n      Ren, Siyu  and\n      Yuan, Fei  and\n      Yuan, Shuai  and\n      Lin, Qika  and\n      Qiao, Yu  and\n      Liu, Jun\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.707\",\n    doi = \"10.18653/v1/2024.acl-long.707\",\n    pages = \"13091--13116\",\n    abstract = \"Although Large Language Models (LLMs) demonstrate remarkable ability in processing and generating human-like text, they do have limitations when it comes to comprehending and expressing world knowledge that extends beyond the boundaries of natural language(e.g., chemical molecular formula). Injecting a collection of symbolic data directly into the training of LLMs can be problematic, as it disregards the synergies among different symbolic families and overlooks the need for a balanced mixture of natural and symbolic data. In this work, we tackle these challenges from both a data and framework perspective and introduce Symbol-LLM series models. First, we curated a data collection consisting of 34 tasks and incorporating 20 distinct symbolic families, intending to capture the interrelations and foster synergies between symbols. Then, a two-stage tuning framework succeeds in injecting symbolic knowledge without loss of the generality ability. Extensive experiments on both symbol- and NL-centric tasks demonstrate the balanced and superior performances of Symbol-LLM series models.\",\n}\n",
+    "authors": [
+        "Fangzhi Xu",
+        "Zhiyong Wu",
+        "Qiushi Sun",
+        "Siyu Ren",
+        "Fei Yuan",
+        "Shuai Yuan",
+        "Qika Lin",
+        "Yu Qiao",
+        "Jun Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.707.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/6671a5dc-b8a0-5d9b-8cdc-41c6b450512d.pdf",
+    "abstract": "Although Large Language Models (LLMs) demonstrate remarkable ability in processing and generating human-like text, they do have limitations when it comes to comprehending and expressing world knowledge that extends beyond the boundaries of natural language(e.g., chemical molecular formula). Injecting a collection of symbolic data directly into the training of LLMs can be problematic, as it disregards the synergies among different symbolic families and overlooks the need for a balanced mixture of natural and symbolic data. In this work, we tackle these challenges from both a data and framework perspective and introduce Symbol-LLM series models. First, we curated a data collection consisting of 34 tasks and incorporating 20 distinct symbolic families, intending to capture the interrelations and foster synergies between symbols. Then, a two-stage tuning framework succeeds in injecting symbolic knowledge without loss of the generality ability. Extensive experiments on both symbol- and NL-centric tasks demonstrate the balanced and superior performances of Symbol-LLM series models.",
+    "num_pages": 26
+}

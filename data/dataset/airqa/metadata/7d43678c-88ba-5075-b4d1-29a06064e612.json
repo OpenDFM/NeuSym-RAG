@@ -1,0 +1,21 @@
+{
+    "uuid": "7d43678c-88ba-5075-b4d1-29a06064e612",
+    "title": "Countering Reward Over-Optimization in LLM with Demonstration-Guided Reinforcement Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{rita-etal-2024-countering,\n    title = \"Countering Reward Over-Optimization in {LLM} with Demonstration-Guided Reinforcement Learning\",\n    author = \"Rita, Mathieu  and\n      Strub, Florian  and\n      Chaabouni, Rahma  and\n      Michel, Paul  and\n      Dupoux, Emmanuel  and\n      Pietquin, Olivier\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.740\",\n    doi = \"10.18653/v1/2024.findings-acl.740\",\n    pages = \"12447--12472\",\n    abstract = \"While reinforcement learning (RL) has been proven essential for tuning large language models (LLMs), it can lead to reward over-optimization (ROO). Existing approaches address ROO by adding KL regularization, requiring computationally expensive hyperparameter tuning. Additionally, KL regularization focuses solely on regularizing the language policy, neglecting a potential source of regularization: the reward function itself. Inspired by demonstration-guided RL, we here introduce the Reward Calibration from Demonstration (RCfD), which leverages human demonstrations and a reward model to recalibrate the reward objective. Formally, given a prompt, the RCfD objective minimizes the distance between the demonstrations{'} and LLM{'}s rewards rather than directly maximizing the reward function. This objective shift avoids incentivizing the LLM to exploit the reward model and promotes more natural and diverse language generation.We show the effectiveness of RCfD in three RL language tasks, where it achieves comparable performance to carefully tuned baselines while mitigating ROO.\",\n}\n",
+    "authors": [
+        "Mathieu Rita",
+        "Florian Strub",
+        "Rahma Chaabouni",
+        "Paul Michel",
+        "Emmanuel Dupoux",
+        "Olivier Pietquin"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.740.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7d43678c-88ba-5075-b4d1-29a06064e612.pdf",
+    "abstract": "While reinforcement learning (RL) has been proven essential for tuning large language models (LLMs), it can lead to reward over-optimization (ROO). Existing approaches address ROO by adding KL regularization, requiring computationally expensive hyperparameter tuning. Additionally, KL regularization focuses solely on regularizing the language policy, neglecting a potential source of regularization: the reward function itself. Inspired by demonstration-guided RL, we here introduce the Reward Calibration from Demonstration (RCfD), which leverages human demonstrations and a reward model to recalibrate the reward objective. Formally, given a prompt, the RCfD objective minimizes the distance between the demonstrations’ and LLM’s rewards rather than directly maximizing the reward function. This objective shift avoids incentivizing the LLM to exploit the reward model and promotes more natural and diverse language generation.We show the effectiveness of RCfD in three RL language tasks, where it achieves comparable performance to carefully tuned baselines while mitigating ROO.",
+    "num_pages": 26
+}

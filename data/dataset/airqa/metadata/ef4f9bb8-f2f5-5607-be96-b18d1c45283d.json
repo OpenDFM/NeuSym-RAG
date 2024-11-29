@@ -1,0 +1,23 @@
+{
+    "uuid": "ef4f9bb8-f2f5-5607-be96-b18d1c45283d",
+    "title": "Nonparametric Decoding for Generative Retrieval",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{lee-etal-2023-nonparametric,\n    title = \"Nonparametric Decoding for Generative Retrieval\",\n    author = \"Lee, Hyunji  and\n      Kim, JaeYoung  and\n      Chang, Hoyeon  and\n      Oh, Hanseok  and\n      Yang, Sohee  and\n      Karpukhin, Vladimir  and\n      Lu, Yi  and\n      Seo, Minjoon\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.801\",\n    doi = \"10.18653/v1/2023.findings-acl.801\",\n    pages = \"12642--12661\",\n    abstract = \"The generative retrieval model depends solely on the information encoded in its model parameters without external memory, its information capacity is limited and fixed. To overcome the limitation, we propose Nonparametric Decoding (Np Decoding) which can be applied to existing generative retrieval models. Np Decoding uses nonparametric contextualized vocab embeddings (external memory) rather than vanilla vocab embeddings as decoder vocab embeddings. By leveraging the contextualized vocab embeddings, the generative retrieval model is able to utilize both the parametric and nonparametric space. Evaluation over 9 datasets (8 single-hop and 1 multi-hop) in the document retrieval task shows that applying Np Decoding to generative retrieval models significantly improves the performance. We also show that Np Decoding is data- and parameter-efficient, and shows high performance in the zero-shot setting.\",\n}\n",
+    "authors": [
+        "Hyunji Lee",
+        "JaeYoung Kim",
+        "Hoyeon Chang",
+        "Hanseok Oh",
+        "Sohee Yang",
+        "Vladimir Karpukhin",
+        "Yi Lu",
+        "Minjoon Seo"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.801.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ef4f9bb8-f2f5-5607-be96-b18d1c45283d.pdf",
+    "abstract": "The generative retrieval model depends solely on the information encoded in its model parameters without external memory, its information capacity is limited and fixed. To overcome the limitation, we propose Nonparametric Decoding (Np Decoding) which can be applied to existing generative retrieval models. Np Decoding uses nonparametric contextualized vocab embeddings (external memory) rather than vanilla vocab embeddings as decoder vocab embeddings. By leveraging the contextualized vocab embeddings, the generative retrieval model is able to utilize both the parametric and nonparametric space. Evaluation over 9 datasets (8 single-hop and 1 multi-hop) in the document retrieval task shows that applying Np Decoding to generative retrieval models significantly improves the performance. We also show that Np Decoding is data- and parameter-efficient, and shows high performance in the zero-shot setting.",
+    "num_pages": 20
+}

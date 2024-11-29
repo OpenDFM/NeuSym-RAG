@@ -1,0 +1,18 @@
+{
+    "uuid": "73a0ff58-4450-5e74-ab5a-e58e5ae035c4",
+    "title": "A Few-shot Learning Approach for Lexical Semantic Change Detection Using GPT-4",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 5th Workshop on Computational Approaches to Historical Language Change",
+    "bibtex": "@inproceedings{ren-etal-2024-shot,\n    title = \"A Few-shot Learning Approach for Lexical Semantic Change Detection Using {GPT}-4\",\n    author = \"Ren, Zhengfei  and\n      Caputo, Annalina  and\n      Jones, Gareth\",\n    editor = \"Tahmasebi, Nina  and\n      Montariol, Syrielle  and\n      Kutuzov, Andrey  and\n      Alfter, David  and\n      Periti, Francesco  and\n      Cassotti, Pierluigi  and\n      Huebscher, Netta\",\n    booktitle = \"Proceedings of the 5th Workshop on Computational Approaches to Historical Language Change\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.lchange-1.18\",\n    doi = \"10.18653/v1/2024.lchange-1.18\",\n    pages = \"187--192\",\n    abstract = \"\",\n}\n",
+    "authors": [
+        "Zhengfei Ren",
+        "Annalina Caputo",
+        "Gareth Jones"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.lchange-1.18.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/73a0ff58-4450-5e74-ab5a-e58e5ae035c4.pdf",
+    "abstract": "Lexical Semantic Change Detection (LSCD) aims to detect language change from a diachronic corpus over time. We can see that over the last two decades there has been a surge in research dealing with the LSC Detection. Recently, a series of methods especially contextualized word embeddings have been widely established to address this task. While several studies have investigated LSCD using large language models (LLMs), an evaluation of prompt engineering techniques, such as few-shot learning with different in-context examples for improving the LSCD performance is required. In this study, we examine the few-shot learning ability of GPT-4 to detect semantic changes in the Chinese language change evaluation dataset ChiWUG. We show that our LLM-based solution improves the GCD evaluation metric on the ChiWUG benchmark compared to the previously top-performing pre-trained system. The result suggests that using GPT-4 with threeshot learning with hand-picked demonstrations achieves the best performance among our different prompts.",
+    "num_pages": 6
+}

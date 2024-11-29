@@ -1,0 +1,23 @@
+{
+    "uuid": "0a4fd43b-c41d-5fef-bd80-47bc979ab4c8",
+    "title": "Focus on Your Question! Interpreting and Mitigating Toxic CoT Problems in Commonsense Reasoning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{li-etal-2024-focus,\n    title = \"Focus on Your Question! Interpreting and Mitigating Toxic {C}o{T} Problems in Commonsense Reasoning\",\n    author = \"Li, Jiachun  and\n      Cao, Pengfei  and\n      Wang, Chenhao  and\n      Jin, Zhuoran  and\n      Chen, Yubo  and\n      Zeng, Daojian  and\n      Liu, Kang  and\n      Zhao, Jun\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.499\",\n    doi = \"10.18653/v1/2024.acl-long.499\",\n    pages = \"9206--9230\",\n    abstract = \"Large language models exhibit high-level commonsense reasoning abilities, especially with enhancement methods like Chain-of-Thought (CoT). However, we find these CoT-like methods lead to a considerable number of originally correct answers turning wrong, which we define as the Toxic CoT problem. To interpret and mitigate this problem, we first utilize attribution tracing and causal tracing methods to probe the internal working mechanism of the LLM during CoT reasoning. Through comparisons, we prove that the model exhibits information loss from the question over the shallow attention layers when generating rationales or answers. Based on the probing findings, we design a novel method called RIDERS (Residual decodIng and sERial-position Swap), which compensates for the information deficit in the model from both decoding and serial-position perspectives. Through extensive experiments on multiple commonsense reasoning benchmarks, we validate that this method not only significantly eliminates Toxic CoT problems (decreased by $\\textbf{23.6}${\\%}), but also effectively improves the model{'}s overall commonsense reasoning performance (increased by $\\textbf{5.5}${\\%}).\",\n}\n",
+    "authors": [
+        "Jiachun Li",
+        "Pengfei Cao",
+        "Chenhao Wang",
+        "Zhuoran Jin",
+        "Yubo Chen",
+        "Daojian Zeng",
+        "Kang Liu",
+        "Jun Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.499.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0a4fd43b-c41d-5fef-bd80-47bc979ab4c8.pdf",
+    "abstract": "Large language models exhibit high-level commonsense reasoning abilities, especially with enhancement methods like Chain-of-Thought (CoT). However, we find these CoT-like methods lead to a considerable number of originally correct answers turning wrong, which we define as the Toxic CoT problem. To interpret and mitigate this problem, we first utilize attribution tracing and causal tracing methods to probe the internal working mechanism of the LLM during CoT reasoning. Through comparisons, we prove that the model exhibits information loss from the question over the shallow attention layers when generating rationales or answers. Based on the probing findings, we design a novel method called RIDERS (Residual decodIng and sERial-position Swap), which compensates for the information deficit in the model from both decoding and serial-position perspectives. Through extensive experiments on multiple commonsense reasoning benchmarks, we validate that this method not only significantly eliminates Toxic CoT problems (decreased by 23.6%), but also effectively improves the model’s overall commonsense reasoning performance (increased by 5.5%).",
+    "num_pages": 25
+}

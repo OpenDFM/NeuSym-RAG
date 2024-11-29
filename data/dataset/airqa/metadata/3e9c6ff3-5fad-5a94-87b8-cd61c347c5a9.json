@@ -1,0 +1,24 @@
+{
+    "uuid": "3e9c6ff3-5fad-5a94-87b8-cd61c347c5a9",
+    "title": "garNER at SemEval-2023: Simplified Knowledge Augmentation for Multilingual Complex Named Entity Recognition",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{hossain-etal-2023-garner,\n    title = \"gar{NER} at {S}em{E}val-2023: Simplified Knowledge Augmentation for Multilingual Complex Named Entity Recognition\",\n    author = \"Hossain, Md Zobaer  and\n      So, Averie Ho Zoen  and\n      Silwal, Silviya  and\n      Gonzalez Gongora, H. Andres  and\n      Samin, Ahnaf Mozib  and\n      Junaed, Jahedul Alam  and\n      Mazumder, Aritra  and\n      Saha, Sourav  and\n      Tahsin Soha, Sabiha\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.114\",\n    doi = \"10.18653/v1/2023.semeval-1.114\",\n    pages = \"823--835\",\n    abstract = \"This paper presents our solution, garNER, to the SemEval-2023 MultiConer task. We propose a knowledge augmentation approach by directly querying entities from the Wikipedia API and appending the summaries of the entities to the input sentence. These entities are either retrieved from the labeled training set (Gold Entity) or from off-the-shelf entity taggers (Entity Extractor). Ensemble methods are then applied across multiple models to get the final prediction. Our analysis shows that the added contexts are beneficial only when such contexts are relevant to the target-named entities, but detrimental when the contexts are irrelevant.\",\n}\n",
+    "authors": [
+        "Md Zobaer Hossain",
+        "Averie Ho Zoen So",
+        "Silviya Silwal",
+        "H. Andres Gonzalez Gongora",
+        "Ahnaf Mozib Samin",
+        "Jahedul Alam Junaed",
+        "Aritra Mazumder",
+        "Sourav Saha",
+        "Sabiha Tahsin Soha"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.114.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/3e9c6ff3-5fad-5a94-87b8-cd61c347c5a9.pdf",
+    "abstract": "This paper presents our solution, garNER, to the SemEval-2023 MultiConer task. We propose a knowledge augmentation approach by directly querying entities from the Wikipedia API and appending the summaries of the entities to the input sentence. These entities are either retrieved from the labeled training set (Gold Entity) or from off-the-shelf entity taggers (Entity Extractor). Ensemble methods are then applied across multiple models to get the final prediction. Our analysis shows that the added contexts are beneficial only when such contexts are relevant to the target-named entities, but detrimental when the contexts are irrelevant.",
+    "num_pages": 13
+}

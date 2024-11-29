@@ -1,0 +1,21 @@
+{
+    "uuid": "2bb59ed0-a7ea-5d80-be96-5a4f386fe6f3",
+    "title": "Factual Confidence of LLMs: on Reliability and Robustness of Current Estimators",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{mahaut-etal-2024-factual,\n    title = \"Factual Confidence of {LLM}s: on Reliability and Robustness of Current Estimators\",\n    author = {Mahaut, Mat{\\'e}o  and\n      Aina, Laura  and\n      Czarnowska, Paula  and\n      Hardalov, Momchil  and\n      M{\\\"u}ller, Thomas  and\n      Marquez, Lluis},\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.250\",\n    doi = \"10.18653/v1/2024.acl-long.250\",\n    pages = \"4554--4570\",\n    abstract = \"Large Language Models (LLMs) tend to be unreliable on fact-based answers.To address this problem, NLP researchers have proposed a range of techniques to estimate LLM{'}s confidence over facts. However, due to the lack of a systematic comparison, it is not clear how the different methods compare to one other.To fill this gap, we present a rigorous survey and empirical comparison of estimators of factual confidence.We define an experimental framework allowing for fair comparison, covering both fact-verification and QA. Our experiments across a series of LLMs indicate that trained hidden-state probes provide the most reliable confidence estimates; albeit at the expense of requiring access to weights and supervision data. We also conduct a deeper assessment of the methods, in which we measure the consistency of model behavior under meaning-preserving variations in the input. We find that the factual confidence of LLMs is often unstable across semantically equivalent inputs, suggesting there is much room for improvement for the stability of models{'} parametric knowledge.\",\n}\n",
+    "authors": [
+        "Matéo Mahaut",
+        "Laura Aina",
+        "Paula Czarnowska",
+        "Momchil Hardalov",
+        "Thomas Müller",
+        "Lluis Marquez"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.250.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/2bb59ed0-a7ea-5d80-be96-5a4f386fe6f3.pdf",
+    "abstract": "Large Language Models (LLMs) tend to be unreliable on fact-based answers.To address this problem, NLP researchers have proposed a range of techniques to estimate LLM’s confidence over facts. However, due to the lack of a systematic comparison, it is not clear how the different methods compare to one other.To fill this gap, we present a rigorous survey and empirical comparison of estimators of factual confidence.We define an experimental framework allowing for fair comparison, covering both fact-verification and QA. Our experiments across a series of LLMs indicate that trained hidden-state probes provide the most reliable confidence estimates; albeit at the expense of requiring access to weights and supervision data. We also conduct a deeper assessment of the methods, in which we measure the consistency of model behavior under meaning-preserving variations in the input. We find that the factual confidence of LLMs is often unstable across semantically equivalent inputs, suggesting there is much room for improvement for the stability of models’ parametric knowledge.",
+    "num_pages": 17
+}

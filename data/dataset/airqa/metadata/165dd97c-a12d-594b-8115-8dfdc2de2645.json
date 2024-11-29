@@ -1,0 +1,26 @@
+{
+    "uuid": "165dd97c-a12d-594b-8115-8dfdc2de2645",
+    "title": "To Copy Rather Than Memorize: A Vertical Learning Paradigm for Knowledge Graph Completion",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{li-etal-2023-copy,\n    title = \"To Copy Rather Than Memorize: A Vertical Learning Paradigm for Knowledge Graph Completion\",\n    author = \"Li, Rui  and\n      Chen, Xu  and\n      Li, Chaozhuo  and\n      Shen, Yanming  and\n      Zhao, Jianan  and\n      Wang, Yujing  and\n      Han, Weihao  and\n      Sun, Hao  and\n      Deng, Weiwei  and\n      Zhang, Qi  and\n      Xie, Xing\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.349\",\n    doi = \"10.18653/v1/2023.acl-long.349\",\n    pages = \"6335--6347\",\n    abstract = \"Embedding models have shown great power in knowledge graph completion (KGC) task. By learning structural constraints for each training triple, these methods implicitly memorize intrinsic relation rules to infer missing links. However, this paper points out that the multi-hop relation rules are hard to be reliably memorized due to the inherent deficiencies of such implicit memorization strategy, making embedding models underperform in predicting links between distant entity pairs. To alleviate this problem, we present Vertical Learning Paradigm (VLP), which extends embedding models by allowing to explicitly copy target information from related factual triples for more accurate prediction. Rather than solely relying on the implicit memory, VLP directly provides additional cues to improve the generalization ability of embedding models, especially making the distant link prediction significantly easier. Moreover, we also propose a novel relative distance based negative sampling technique (ReD) for more effective optimization. Experiments demonstrate the validity and generality of our proposals on two standard benchmarks. Our code is available at \\url{https://github.com/rui9812/VLP}.\",\n}\n",
+    "authors": [
+        "Rui Li",
+        "Xu Chen",
+        "Chaozhuo Li",
+        "Yanming Shen",
+        "Jianan Zhao",
+        "Yujing Wang",
+        "Weihao Han",
+        "Hao Sun",
+        "Weiwei Deng",
+        "Qi Zhang",
+        "Xing Xie"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.349.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/165dd97c-a12d-594b-8115-8dfdc2de2645.pdf",
+    "abstract": "Embedding models have shown great power in knowledge graph completion (KGC) task. By learning structural constraints for each training triple, these methods implicitly memorize intrinsic relation rules to infer missing links. However, this paper points out that the multi-hop relation rules are hard to be reliably memorized due to the inherent deficiencies of such implicit memorization strategy, making embedding models underperform in predicting links between distant entity pairs. To alleviate this problem, we present Vertical Learning Paradigm (VLP), which extends embedding models by allowing to explicitly copy target information from related factual triples for more accurate prediction. Rather than solely relying on the implicit memory, VLP directly provides additional cues to improve the generalization ability of embedding models, especially making the distant link prediction significantly easier. Moreover, we also propose a novel relative distance based negative sampling technique (ReD) for more effective optimization. Experiments demonstrate the validity and generality of our proposals on two standard benchmarks. Our code is available at https://github.com/rui9812/VLP.",
+    "num_pages": 13
+}

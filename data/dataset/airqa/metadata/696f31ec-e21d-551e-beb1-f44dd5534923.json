@@ -1,0 +1,17 @@
+{
+    "uuid": "696f31ec-e21d-551e-beb1-f44dd5534923",
+    "title": "DP-BART for Privatized Text Rewriting under Local Differential Privacy",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{igamberdiev-habernal-2023-dp,\n    title = \"{DP}-{BART} for Privatized Text Rewriting under Local Differential Privacy\",\n    author = \"Igamberdiev, Timour  and\n      Habernal, Ivan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.874\",\n    doi = \"10.18653/v1/2023.findings-acl.874\",\n    pages = \"13914--13934\",\n    abstract = \"Privatized text rewriting with local differential privacy (LDP) is a recent approach that enables sharing of sensitive textual documents while formally guaranteeing privacy protection to individuals. However, existing systems face several issues, such as formal mathematical flaws, unrealistic privacy guarantees, privatization of only individual words, as well as a lack of transparency and reproducibility. In this paper, we propose a new system {`}DP-BART{'} that largely outperforms existing LDP systems. Our approach uses a novel clipping method, iterative pruning, and further training of internal representations which drastically reduces the amount of noise required for DP guarantees. We run experiments on five textual datasets of varying sizes, rewriting them at different privacy guarantees and evaluating the rewritten texts on downstream text classification tasks. Finally, we thoroughly discuss the privatized text rewriting approach and its limitations, including the problem of the strict text adjacency constraint in the LDP paradigm that leads to the high noise requirement.\",\n}\n",
+    "authors": [
+        "Timour Igamberdiev",
+        "Ivan Habernal"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.874.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/696f31ec-e21d-551e-beb1-f44dd5534923.pdf",
+    "abstract": "Privatized text rewriting with local differential privacy (LDP) is a recent approach that enables sharing of sensitive textual documents while formally guaranteeing privacy protection to individuals. However, existing systems face several issues, such as formal mathematical flaws, unrealistic privacy guarantees, privatization of only individual words, as well as a lack of transparency and reproducibility. In this paper, we propose a new system ‘DP-BART’ that largely outperforms existing LDP systems. Our approach uses a novel clipping method, iterative pruning, and further training of internal representations which drastically reduces the amount of noise required for DP guarantees. We run experiments on five textual datasets of varying sizes, rewriting them at different privacy guarantees and evaluating the rewritten texts on downstream text classification tasks. Finally, we thoroughly discuss the privatized text rewriting approach and its limitations, including the problem of the strict text adjacency constraint in the LDP paradigm that leads to the high noise requirement.",
+    "num_pages": 21
+}

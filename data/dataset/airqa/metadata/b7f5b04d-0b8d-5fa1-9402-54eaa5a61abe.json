@@ -1,0 +1,18 @@
+{
+    "uuid": "b7f5b04d-0b8d-5fa1-9402-54eaa5a61abe",
+    "title": "Semisupervised Neural Proto-Language Reconstruction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{lu-etal-2024-semisupervised,\n    title = \"Semisupervised Neural Proto-Language Reconstruction\",\n    author = \"Lu, Liang  and\n      Xie, Peirong  and\n      Mortensen, David\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.788\",\n    doi = \"10.18653/v1/2024.acl-long.788\",\n    pages = \"14715--14759\",\n    abstract = \"Existing work implementing comparative reconstruction of ancestral languages (proto-languages) has usually required full supervision. However, historical reconstruction models are only of practical value if they can be trained with a limited amount of labeled data. We propose a semisupervised historical reconstruction task in which the model is trained on only a small amount of labeled data (cognate sets with proto-forms) and a large amount of unlabeled data (cognate sets without proto-forms). We propose a neural architecture for comparative reconstruction (DPD-BiReconstructor) incorporating an essential insight from linguists{'} comparative method: that reconstructed words should not only be reconstructable from their daughter words, but also deterministically transformable back into their daughter words. We show that this architecture is able to leverage unlabeled cognate sets to outperform strong semisupervised baselines on this novel task.\",\n}\n",
+    "authors": [
+        "Liang Lu",
+        "Peirong Xie",
+        "David Mortensen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.788.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/b7f5b04d-0b8d-5fa1-9402-54eaa5a61abe.pdf",
+    "abstract": "Existing work implementing comparative reconstruction of ancestral languages (proto-languages) has usually required full supervision. However, historical reconstruction models are only of practical value if they can be trained with a limited amount of labeled data. We propose a semisupervised historical reconstruction task in which the model is trained on only a small amount of labeled data (cognate sets with proto-forms) and a large amount of unlabeled data (cognate sets without proto-forms). We propose a neural architecture for comparative reconstruction (DPD-BiReconstructor) incorporating an essential insight from linguists’ comparative method: that reconstructed words should not only be reconstructable from their daughter words, but also deterministically transformable back into their daughter words. We show that this architecture is able to leverage unlabeled cognate sets to outperform strong semisupervised baselines on this novel task.",
+    "num_pages": 45
+}

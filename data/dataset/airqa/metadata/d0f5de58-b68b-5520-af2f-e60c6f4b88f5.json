@@ -1,0 +1,23 @@
+{
+    "uuid": "d0f5de58-b68b-5520-af2f-e60c6f4b88f5",
+    "title": "SecFormer: Fast and Accurate Privacy-Preserving Inference for Transformer Models via SMPC",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{luo-etal-2024-secformer,\n    title = \"{S}ec{F}ormer: Fast and Accurate Privacy-Preserving Inference for Transformer Models via {SMPC}\",\n    author = \"Luo, Jinglong  and\n      Zhang, Yehong  and\n      Zhang, Zhuo  and\n      Zhang, Jiaqi  and\n      Mu, Xin  and\n      Wang, Hui  and\n      Yu, Yue  and\n      Xu, Zenglin\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.790\",\n    doi = \"10.18653/v1/2024.findings-acl.790\",\n    pages = \"13333--13348\",\n}\n",
+    "authors": [
+        "Jinglong Luo",
+        "Yehong Zhang",
+        "Zhuo Zhang",
+        "Jiaqi Zhang",
+        "Xin Mu",
+        "Hui Wang",
+        "Yue Yu",
+        "Zenglin Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.790.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d0f5de58-b68b-5520-af2f-e60c6f4b88f5.pdf",
+    "abstract": "With the growing use of Transformer models hosted on cloud platforms to offer inference services, privacy concerns are escalating, especially concerning sensitive data like investment plans and bank account details. Secure Multi-Party Computing (SMPC) emerges as a promising solution to protect the privacy of inference data and model parameters. However, the application of SMPC in Privacy-Preserving Inference (PPI) for Transformer models often leads to considerable slowdowns or declines in performance. This is largely due to the multitude of nonlinear operations in the Transformer architecture, which are not well-suited to SMPC and difficult to circumvent or optimize effectively. To address this concern, we introduce a comprehensive PPI framework called SecFormer to achieve fast and accurate PPI for Transformer models. We successfully eliminate the high-cost exponential and maximum operations in PPI without sacrificing model performance and develop a suite of efficient SMPC protocols by employing suitable numerical computation methods to boost other complex nonlinear functions in PPI, including GeLU, LayerNorm, and a redesigned Softmax. Our extensive experiments reveal that SecFormer outperforms MPCFormer in performance, showing improvements of 3.4% and 24.7% for BERTBASE and BERTLARGE, respectively. In terms of efficiency, SecFormer is 3.57 and 3.58 times faster than PUMA for BERTBASE and BERTLARGE, demonstrating its effectiveness and speed. The code is available by clicking here.",
+    "num_pages": 16
+}

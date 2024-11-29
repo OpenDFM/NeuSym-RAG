@@ -1,0 +1,23 @@
+{
+    "uuid": "f351f0ad-07a8-598d-8f03-75bae02277e5",
+    "title": "DiFiNet: Boundary-Aware Semantic Differentiation and Filtration Network for Nested Named Entity Recognition",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{cai-etal-2024-difinet,\n    title = \"{D}i{F}i{N}et: Boundary-Aware Semantic Differentiation and Filtration Network for Nested Named Entity Recognition\",\n    author = \"Cai, Yuxiang  and\n      Liu, Qiao  and\n      Gan, Yanglei  and\n      Lin, Run  and\n      Li, Changlin  and\n      Liu, Xueyi  and\n      Luo, Da  and\n      JiayeYang, JiayeYang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.349\",\n    doi = \"10.18653/v1/2024.acl-long.349\",\n    pages = \"6455--6471\",\n    abstract = \"Nested Named Entity Recognition (Nested NER) entails identifying and classifying entity spans within the text, including the detection of named entities that are embedded within external entities. Prior approaches primarily employ span-based techniques, utilizing the power of exhaustive searches to address the challenge of overlapping entities. Nonetheless, these methods often grapple with the absence of explicit guidance for boundary detection, resulting insensitivity in discerning minor variations within nested spans. To this end, we propose a Boundary-aware Semantic $\\underline{Di}$fferentiation and $\\underline{Fi}$ltration $\\underline{Net}$work (DiFiNet) tailored for nested NER. Specifically, DiFiNet leverages a biaffine attention mechanism to generate a span representation matrix. This matrix undergoes further refinement through a self-adaptive semantic differentiation module, specifically engineered to discern semantic variances across spans. Furthermore, DiFiNet integrates a boundary filtration module, designed to mitigate the impact of non-entity noise by leveraging semantic relations among spans. Extensive experiments on three benchmark datasets demonstrate our model yields a new state-of-the-art performance.\",\n}\n",
+    "authors": [
+        "Yuxiang Cai",
+        "Qiao Liu",
+        "Yanglei Gan",
+        "Run Lin",
+        "Changlin Li",
+        "Xueyi Liu",
+        "Da Luo",
+        "JiayeYang JiayeYang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.349.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/f351f0ad-07a8-598d-8f03-75bae02277e5.pdf",
+    "abstract": "Nested Named Entity Recognition (Nested NER) entails identifying and classifying entity spans within the text, including the detection of named entities that are embedded within external entities. Prior approaches primarily employ span-based techniques, utilizing the power of exhaustive searches to address the challenge of overlapping entities. Nonetheless, these methods often grapple with the absence of explicit guidance for boundary detection, resulting insensitivity in discerning minor variations within nested spans. To this end, we propose a Boundary-aware Semantic  ̲Differentiation and  ̲Filtration  ̲Network (DiFiNet) tailored for nested NER. Specifically, DiFiNet leverages a biaffine attention mechanism to generate a span representation matrix. This matrix undergoes further refinement through a self-adaptive semantic differentiation module, specifically engineered to discern semantic variances across spans. Furthermore, DiFiNet integrates a boundary filtration module, designed to mitigate the impact of non-entity noise by leveraging semantic relations among spans. Extensive experiments on three benchmark datasets demonstrate our model yields a new state-of-the-art performance.",
+    "num_pages": 17
+}

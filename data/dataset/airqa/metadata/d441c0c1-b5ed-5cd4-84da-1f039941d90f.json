@@ -1,0 +1,19 @@
+{
+    "uuid": "d441c0c1-b5ed-5cd4-84da-1f039941d90f",
+    "title": "Enhancing textual counterfactual explanation intelligibility through Counterfactual Feature Importance",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 3rd Workshop on Trustworthy Natural Language Processing (TrustNLP 2023)",
+    "bibtex": "@inproceedings{bhan-etal-2023-enhancing,\n    title = \"Enhancing textual counterfactual explanation intelligibility through Counterfactual Feature Importance\",\n    author = \"Bhan, Milan  and\n      Vittaut, Jean-noel  and\n      Chesneau, Nicolas  and\n      Lesot, Marie-jeanne\",\n    editor = \"Ovalle, Anaelia  and\n      Chang, Kai-Wei  and\n      Mehrabi, Ninareh  and\n      Pruksachatkun, Yada  and\n      Galystan, Aram  and\n      Dhamala, Jwala  and\n      Verma, Apurv  and\n      Cao, Trista  and\n      Kumar, Anoop  and\n      Gupta, Rahul\",\n    booktitle = \"Proceedings of the 3rd Workshop on Trustworthy Natural Language Processing (TrustNLP 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.trustnlp-1.19\",\n    doi = \"10.18653/v1/2023.trustnlp-1.19\",\n    pages = \"221--231\",\n    abstract = \"Textual counterfactual examples explain a prediction by modifying the tokens of an initial instance in order to flip the outcome of a classifier. Even under sparsity constraint, counterfactual generation can lead to numerous changes from the initial text, making the explanation hard to understand. We propose Counterfactual Feature Importance, a method to make non-sparse counterfactual explanations more intelligible. Counterfactual Feature Importance assesses token change importance between an instance to explain and its counterfactual example. We develop two ways of computing Counterfactual Feature Importance, respectively based on classifier gradient computation and counterfactual generator loss evolution during counterfactual search. Then we design a global version of Counterfactual Feature Importance, providing rich information about semantic fields globally impacting classifier predictions. Counterfactual Feature Importance enables to focus on impacting parts of counterfactual explanations, making counterfactual explanations involving numerous changes more understandable.\",\n}\n",
+    "authors": [
+        "Milan Bhan",
+        "Jean-noel Vittaut",
+        "Nicolas Chesneau",
+        "Marie-jeanne Lesot"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.trustnlp-1.19.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d441c0c1-b5ed-5cd4-84da-1f039941d90f.pdf",
+    "abstract": "Textual counterfactual examples explain a prediction by modifying the tokens of an initial instance in order to flip the outcome of a classifier. Even under sparsity constraint, counterfactual generation can lead to numerous changes from the initial text, making the explanation hard to understand. We propose Counterfactual Feature Importance, a method to make non-sparse counterfactual explanations more intelligible. Counterfactual Feature Importance assesses token change importance between an instance to explain and its counterfactual example. We develop two ways of computing Counterfactual Feature Importance, respectively based on classifier gradient computation and counterfactual generator loss evolution during counterfactual search. Then we design a global version of Counterfactual Feature Importance, providing rich information about semantic fields globally impacting classifier predictions. Counterfactual Feature Importance enables to focus on impacting parts of counterfactual explanations, making counterfactual explanations involving numerous changes more understandable.",
+    "num_pages": 11
+}

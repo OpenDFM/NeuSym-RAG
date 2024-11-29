@@ -1,0 +1,23 @@
+{
+    "uuid": "a2ac7321-479b-5257-a753-fc2ce0b01b0f",
+    "title": "Self-Alignment for Factuality: Mitigating Hallucinations in LLMs via Self-Evaluation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhang-etal-2024-self,\n    title = \"Self-Alignment for Factuality: Mitigating Hallucinations in {LLM}s via Self-Evaluation\",\n    author = \"Zhang, Xiaoying  and\n      Peng, Baolin  and\n      Tian, Ye  and\n      Zhou, Jingyan  and\n      Jin, Lifeng  and\n      Song, Linfeng  and\n      Mi, Haitao  and\n      Meng, Helen\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.107\",\n    doi = \"10.18653/v1/2024.acl-long.107\",\n    pages = \"1946--1965\",\n    abstract = \"Despite showing impressive abilities, large language models (LLMs) often struggle with factual inaccuracies, i.e., {''}hallucinations{''}, even when they hold relevant knowledge. To mitigate these hallucinations, current approaches typically necessitate high-quality human factuality annotations. In this work, we explore Self-Alignment for Factuality, where we leverage the self-evaluation capability of an LLM to provide training signals that steer the model towards factuality. Specifically, we incorporate Self-Eval, a self-evaluation component, to prompt an LLM to validate the factuality of its own generated responses solely based on its internal knowledge. Additionally, we design Self-Knowledge Tuning (SK-Tuning) to augment the LLM{'}s self-evaluation ability by improving the model{'}s confidence estimation and calibration. We then utilize these self-annotated responses to fine-tune the model via Direct Preference Optimization algorithm. We show that the proposed self-alignment approach substantially enhances factual accuracy over Llama family models across three key knowledge-intensive tasks on TruthfulQA and BioGEN.\",\n}\n",
+    "authors": [
+        "Xiaoying Zhang",
+        "Baolin Peng",
+        "Ye Tian",
+        "Jingyan Zhou",
+        "Lifeng Jin",
+        "Linfeng Song",
+        "Haitao Mi",
+        "Helen Meng"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.107.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a2ac7321-479b-5257-a753-fc2ce0b01b0f.pdf",
+    "abstract": "Despite showing impressive abilities, large language models (LLMs) often struggle with factual inaccuracies, i.e., ”hallucinations”, even when they hold relevant knowledge. To mitigate these hallucinations, current approaches typically necessitate high-quality human factuality annotations. In this work, we explore Self-Alignment for Factuality, where we leverage the self-evaluation capability of an LLM to provide training signals that steer the model towards factuality. Specifically, we incorporate Self-Eval, a self-evaluation component, to prompt an LLM to validate the factuality of its own generated responses solely based on its internal knowledge. Additionally, we design Self-Knowledge Tuning (SK-Tuning) to augment the LLM’s self-evaluation ability by improving the model’s confidence estimation and calibration. We then utilize these self-annotated responses to fine-tune the model via Direct Preference Optimization algorithm. We show that the proposed self-alignment approach substantially enhances factual accuracy over Llama family models across three key knowledge-intensive tasks on TruthfulQA and BioGEN.",
+    "num_pages": 20
+}

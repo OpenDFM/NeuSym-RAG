@@ -1,0 +1,23 @@
+{
+    "uuid": "038dab7e-98f1-5320-a55a-f75a3fe6f363",
+    "title": "Focus-aware Response Generation in Inquiry Conversation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wu-etal-2023-focus,\n    title = \"Focus-aware Response Generation in Inquiry Conversation\",\n    author = \"Wu, Yiquan  and\n      Lu, Weiming  and\n      Zhang, Yating  and\n      Jatowt, Adam  and\n      Feng, Jun  and\n      Sun, Changlong  and\n      Wu, Fei  and\n      Kuang, Kun\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.797\",\n    doi = \"10.18653/v1/2023.findings-acl.797\",\n    pages = \"12585--12599\",\n    abstract = \"Inquiry conversation is a common form of conversation that aims to complete the investigation (e.g., court hearing, medical consultation and police interrogation) during which a series of focus shifts occurs. While many models have been proposed to generate a smooth response to a given conversation history, neglecting the focus can limit performance in inquiry conversation where the order of the focuses plays there a key role. In this paper, we investigate the problem of response generation in inquiry conversation by taking the focus into consideration. We propose a novel Focus-aware Response Generation (FRG) method by jointly optimizing a multi-level encoder and a set of focal decoders to generate several candidate responses that correspond to different focuses. Additionally, a focus ranking module is proposed to predict the next focus and rank the candidate responses. Experiments on two orthogonal inquiry conversation datasets (judicial, medical domain) demonstrate that our method generates results significantly better in automatic metrics and human evaluation compared to the state-of-the-art approaches.\",\n}\n",
+    "authors": [
+        "Yiquan Wu",
+        "Weiming Lu",
+        "Yating Zhang",
+        "Adam Jatowt",
+        "Jun Feng",
+        "Changlong Sun",
+        "Fei Wu",
+        "Kun Kuang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.797.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/038dab7e-98f1-5320-a55a-f75a3fe6f363.pdf",
+    "abstract": "Inquiry conversation is a common form of conversation that aims to complete the investigation (e.g., court hearing, medical consultation and police interrogation) during which a series of focus shifts occurs. While many models have been proposed to generate a smooth response to a given conversation history, neglecting the focus can limit performance in inquiry conversation where the order of the focuses plays there a key role. In this paper, we investigate the problem of response generation in inquiry conversation by taking the focus into consideration. We propose a novel Focus-aware Response Generation (FRG) method by jointly optimizing a multi-level encoder and a set of focal decoders to generate several candidate responses that correspond to different focuses. Additionally, a focus ranking module is proposed to predict the next focus and rank the candidate responses. Experiments on two orthogonal inquiry conversation datasets (judicial, medical domain) demonstrate that our method generates results significantly better in automatic metrics and human evaluation compared to the state-of-the-art approaches.",
+    "num_pages": 15
+}

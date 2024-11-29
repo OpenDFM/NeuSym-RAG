@@ -1,0 +1,21 @@
+{
+    "uuid": "472a61a4-8a00-5154-9f09-4c5229d97046",
+    "title": "XMoE: Sparse Models with Fine-grained and Adaptive Expert Selection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{yang-etal-2024-xmoe,\n    title = \"{XM}o{E}: Sparse Models with Fine-grained and Adaptive Expert Selection\",\n    author = \"Yang, Yuanhang  and\n      Qi, Shiyi  and\n      Gu, Wenchao  and\n      Wang, Chaozheng  and\n      Gao, Cuiyun  and\n      Xu, Zenglin\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.694\",\n    doi = \"10.18653/v1/2024.findings-acl.694\",\n    pages = \"11664--11674\",\n    abstract = \"Sparse models, including sparse Mixture-of-Experts (MoE) models, have emerged as an effective approach for scaling Transformer models. However, they often suffer from computational inefficiency since a significant number of parameters are unnecessarily involved in computations by multiplying values by zero or low activation values. To address this issue, we present XMoE, a novel MoE designed to enhance both the efficacy and efficiency of sparse MoE models. XMoE leverages small experts and a threshold-based router to enable tokens to selectively engage only essential parameters. Our extensive experiments on language modeling and machine translation tasks demonstrate that enhances model performance and can decrease the computation load at MoE layers by over 50{\\%} without sacrificing performance. Furthermore, we present the versatility of by applying it to dense models, enabling sparse computation during inference. We provide a comprehensive analysis and make our code available at \\url{https://anonymous.4open.science/r/XMoE}.\",\n}\n",
+    "authors": [
+        "Yuanhang Yang",
+        "Shiyi Qi",
+        "Wenchao Gu",
+        "Chaozheng Wang",
+        "Cuiyun Gao",
+        "Zenglin Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.694.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/472a61a4-8a00-5154-9f09-4c5229d97046.pdf",
+    "abstract": "Sparse models, including sparse Mixture-of-Experts (MoE) models, have emerged as an effective approach for scaling Transformer models. However, they often suffer from computational inefficiency since a significant number of parameters are unnecessarily involved in computations by multiplying values by zero or low activation values. To address this issue, we present XMoE, a novel MoE designed to enhance both the efficacy and efficiency of sparse MoE models. XMoE leverages small experts and a threshold-based router to enable tokens to selectively engage only essential parameters. Our extensive experiments on language modeling and machine translation tasks demonstrate that enhances model performance and can decrease the computation load at MoE layers by over 50% without sacrificing performance. Furthermore, we present the versatility of by applying it to dense models, enabling sparse computation during inference. We provide a comprehensive analysis and make our code available at https://anonymous.4open.science/r/XMoE.",
+    "num_pages": 11
+}

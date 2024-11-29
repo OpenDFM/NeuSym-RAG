@@ -1,0 +1,24 @@
+{
+    "uuid": "64e03d61-e437-5a7b-9bc0-ae2347dc354f",
+    "title": "Ambiguous Learning from Retrieval: Towards Zero-shot Semantic Parsing",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wu-etal-2023-ambiguous,\n    title = \"Ambiguous Learning from Retrieval: Towards Zero-shot Semantic Parsing\",\n    author = \"Wu, Shan  and\n      Xin, Chunlei  and\n      Lin, Hongyu  and\n      Han, Xianpei  and\n      Liu, Cao  and\n      Chen, Jiansong  and\n      Yang, Fan  and\n      Wan, Guanglu  and\n      Sun, Le\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.787\",\n    doi = \"10.18653/v1/2023.acl-long.787\",\n    pages = \"14081--14094\",\n    abstract = \"Current neural semantic parsers take a supervised approach requiring a considerable amount of training data which is expensive and difficult to obtain. Thus, minimizing the supervision effort is one of the key challenges in semantic parsing. In this paper, we propose the Retrieval as Ambiguous Supervision framework, in which we construct a retrieval system based on pretrained language models to collect high-coverage candidates. Assuming candidates always contain the correct ones, we convert zero-shot task into ambiguously supervised task. To improve the precision and coverage of such ambiguous supervision, we propose a confidence-driven self-training algorithm, in which a semantic parser is learned and exploited to disambiguate the candidates iteratively. Experimental results show that our approach significantly outperforms the state-of-the-art zero-shot semantic parsing methods.\",\n}\n",
+    "authors": [
+        "Shan Wu",
+        "Chunlei Xin",
+        "Hongyu Lin",
+        "Xianpei Han",
+        "Cao Liu",
+        "Jiansong Chen",
+        "Fan Yang",
+        "Guanglu Wan",
+        "Le Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.787.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/64e03d61-e437-5a7b-9bc0-ae2347dc354f.pdf",
+    "abstract": "Current neural semantic parsers take a supervised approach requiring a considerable amount of training data which is expensive and difficult to obtain. Thus, minimizing the supervision effort is one of the key challenges in semantic parsing. In this paper, we propose the Retrieval as Ambiguous Supervision framework, in which we construct a retrieval system based on pretrained language models to collect high-coverage candidates. Assuming candidates always contain the correct ones, we convert zero-shot task into ambiguously supervised task. To improve the precision and coverage of such ambiguous supervision, we propose a confidence-driven self-training algorithm, in which a semantic parser is learned and exploited to disambiguate the candidates iteratively. Experimental results show that our approach significantly outperforms the state-of-the-art zero-shot semantic parsing methods.",
+    "num_pages": 14
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "f6178632-07c5-5633-93e1-728e24c3d441",
+    "title": "Trigger-Argument based Explanation for Event Detection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{guan-etal-2023-trigger,\n    title = \"Trigger-Argument based Explanation for Event Detection\",\n    author = \"Guan, Yong  and\n      Chen, Jiaoyan  and\n      Lecue, Freddy  and\n      Pan, Jeff  and\n      Li, Juanzi  and\n      Li, Ru\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.312\",\n    doi = \"10.18653/v1/2023.findings-acl.312\",\n    pages = \"5046--5058\",\n    abstract = \"Event Detection (ED) is a critical task that aims to identify events of certain types in plain text. Neural models have achieved great success on ED, thus coming with a desire for higher interpretability. Existing works mainly exploit words or phrases of the input text to explain models{'} inner mechanisms. However, for ED, the event structure, comprising of an event trigger and a set of arguments, are more enlightening clues to explain model behaviors. To this end, we propose a Trigger-Argument based Explanation method (TAE), which can utilize event structure knowledge to uncover a faithful interpretation for the existing ED models at neuron level. Specifically, we design group, sparsity, support mechanisms to construct the event structure from structuralization, compactness, and faithfulness perspectives. We evaluate our model on the large-scale MAVEN and the widely-used ACE 2005 datasets, and observe that TAE is able to reveal the process by which the model predicts. Experimental results also demonstrate that TAE can not only improve the interpretability on standard evaluation metrics, but also effectively facilitate the human understanding.\",\n}\n",
+    "authors": [
+        "Yong Guan",
+        "Jiaoyan Chen",
+        "Freddy Lecue",
+        "Jeff Pan",
+        "Juanzi Li",
+        "Ru Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.312.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f6178632-07c5-5633-93e1-728e24c3d441.pdf",
+    "abstract": "Event Detection (ED) is a critical task that aims to identify events of certain types in plain text. Neural models have achieved great success on ED, thus coming with a desire for higher interpretability. Existing works mainly exploit words or phrases of the input text to explain models’ inner mechanisms. However, for ED, the event structure, comprising of an event trigger and a set of arguments, are more enlightening clues to explain model behaviors. To this end, we propose a Trigger-Argument based Explanation method (TAE), which can utilize event structure knowledge to uncover a faithful interpretation for the existing ED models at neuron level. Specifically, we design group, sparsity, support mechanisms to construct the event structure from structuralization, compactness, and faithfulness perspectives. We evaluate our model on the large-scale MAVEN and the widely-used ACE 2005 datasets, and observe that TAE is able to reveal the process by which the model predicts. Experimental results also demonstrate that TAE can not only improve the interpretability on standard evaluation metrics, but also effectively facilitate the human understanding.",
+    "num_pages": 13
+}

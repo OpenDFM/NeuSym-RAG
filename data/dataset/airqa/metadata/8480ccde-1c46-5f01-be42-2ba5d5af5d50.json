@@ -1,0 +1,22 @@
+{
+    "uuid": "8480ccde-1c46-5f01-be42-2ba5d5af5d50",
+    "title": "Fact-and-Reflection (FaR) Improves Confidence Calibration of Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhao-etal-2024-fact,\n    title = \"Fact-and-Reflection ({F}a{R}) Improves Confidence Calibration of Large Language Models\",\n    author = \"Zhao, Xinran  and\n      Zhang, Hongming  and\n      Pan, Xiaoman  and\n      Yao, Wenlin  and\n      Yu, Dong  and\n      Wu, Tongshuang  and\n      Chen, Jianshu\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.515\",\n    doi = \"10.18653/v1/2024.findings-acl.515\",\n    pages = \"8702--8718\",\n    abstract = \"For a LLM to be trustworthy, its confidence level should be well-calibrated with its actual performance. While it is now common sense that LLM performances are greatly impacted by prompts, the confidence calibration in prompting LLMs has yet to be thoroughly explored.In this paper, we explore how different prompting strategies influence LLM confidence calibration and how it could be improved. We conduct extensive experiments on six prompting methods in the question-answering context and we observe that, while these methods help improve the expected LLM calibration, they also trigger LLMs to be over-confident when responding to some instances.Inspired by human cognition, we propose Fact-and-Reflection (FaR) prompting, which improves the LLM calibration in two steps. First, FaR elicits the known {``}facts{''} that are relevant to the input prompt from the LLM. And then it asks the model to {``}reflect{''} over them to generate the final answer.Experiments show that FaR prompting achieves significantly better calibration; it lowers the Expected Calibration Error by 23.5{\\%} on our multi-purpose QA tasks. Notably, FaR prompting even elicits the capability of verbally expressing concerns in less confident scenarios, which helps trigger retrieval augmentation for solving these harder instances.\",\n}\n",
+    "authors": [
+        "Xinran Zhao",
+        "Hongming Zhang",
+        "Xiaoman Pan",
+        "Wenlin Yao",
+        "Dong Yu",
+        "Tongshuang Wu",
+        "Jianshu Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.515.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/8480ccde-1c46-5f01-be42-2ba5d5af5d50.pdf",
+    "abstract": "For a LLM to be trustworthy, its confidence level should be well-calibrated with its actual performance. While it is now common sense that LLM performances are greatly impacted by prompts, the confidence calibration in prompting LLMs has yet to be thoroughly explored.In this paper, we explore how different prompting strategies influence LLM confidence calibration and how it could be improved. We conduct extensive experiments on six prompting methods in the question-answering context and we observe that, while these methods help improve the expected LLM calibration, they also trigger LLMs to be over-confident when responding to some instances.Inspired by human cognition, we propose Fact-and-Reflection (FaR) prompting, which improves the LLM calibration in two steps. First, FaR elicits the known “facts” that are relevant to the input prompt from the LLM. And then it asks the model to “reflect” over them to generate the final answer.Experiments show that FaR prompting achieves significantly better calibration; it lowers the Expected Calibration Error by 23.5% on our multi-purpose QA tasks. Notably, FaR prompting even elicits the capability of verbally expressing concerns in less confident scenarios, which helps trigger retrieval augmentation for solving these harder instances.",
+    "num_pages": 17
+}

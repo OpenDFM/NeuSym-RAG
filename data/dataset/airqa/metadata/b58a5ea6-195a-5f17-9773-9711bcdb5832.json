@@ -1,0 +1,16 @@
+{
+    "uuid": "b58a5ea6-195a-5f17-9773-9711bcdb5832",
+    "title": "Masked Latent Semantic Modeling: an Efficient Pre-training Alternative to Masked Language Modeling",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{berend-2023-masked,\n    title = \"Masked Latent Semantic Modeling: an Efficient Pre-training Alternative to Masked Language Modeling\",\n    author = \"Berend, G{\\'a}bor\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.876\",\n    doi = \"10.18653/v1/2023.findings-acl.876\",\n    pages = \"13949--13962\",\n    abstract = \"In this paper, we propose an alternative to the classic masked language modeling (MLM) pre-training paradigm, where the objective is altered from the reconstruction of the exact identity of randomly selected masked subwords to the prediction of their latent semantic properties. We coin the proposed pre-training technique masked latent semantic modeling (MLSM for short). In order to make the contextualized determination of the latent semantic properties of the masked subwords possible, we rely on an unsupervised technique which uses sparse coding. Our experimental results reveal that the fine-tuned performance of those models that we pre-trained via MLSM is consistently and significantly better compared to the use of vanilla MLM pretraining and other strong baselines.\",\n}\n",
+    "authors": [
+        "Gábor Berend"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.876.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b58a5ea6-195a-5f17-9773-9711bcdb5832.pdf",
+    "abstract": "In this paper, we propose an alternative to the classic masked language modeling (MLM) pre-training paradigm, where the objective is altered from the reconstruction of the exact identity of randomly selected masked subwords to the prediction of their latent semantic properties. We coin the proposed pre-training technique masked latent semantic modeling (MLSM for short). In order to make the contextualized determination of the latent semantic properties of the masked subwords possible, we rely on an unsupervised technique which uses sparse coding. Our experimental results reveal that the fine-tuned performance of those models that we pre-trained via MLSM is consistently and significantly better compared to the use of vanilla MLM pretraining and other strong baselines.",
+    "num_pages": 14
+}

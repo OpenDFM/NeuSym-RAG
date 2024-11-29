@@ -1,0 +1,20 @@
+{
+    "uuid": "4a3801f5-43ac-5395-bb11-14b6e4d9094c",
+    "title": "Modeling the Q-Diversity in a Min-max Play Game for Robust Optimization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wu-etal-2023-modeling,\n    title = \"Modeling the {Q}-Diversity in a Min-max Play Game for Robust Optimization\",\n    author = \"Wu, Ting  and\n      Zheng, Rui  and\n      Gui, Tao  and\n      Zhang, Qi  and\n      Huang, Xuanjing\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.8\",\n    doi = \"10.18653/v1/2023.findings-acl.8\",\n    pages = \"100--113\",\n    abstract = \"Models trained with empirical risk minimization (ERM) are revealed to easily rely on spurious correlations, resulting in poor generalization. Group distributionally robust optimization (group DRO) can alleviate this problem by minimizing the worst-case loss over pre-defined groups. While promising, in practice factors like expensive annotations and privacy preclude the availability of group labels. More crucially, when taking a closer look at the failure modes of out-of-distribution generalization, the typical procedure of reweighting in group DRO loses efficiency. Hinged on the limitations, in this work, we reformulate the group DRO framework by proposing Q-Diversity. Characterized by an interactive training mode, Q-Diversity relaxes the group identification from annotation into direct parameterization. Furthermore, a novel mixing strategy across groups is presented to diversify the under-represented groups. In a series of experiments on both synthetic and real-world text classification tasks, results demonstrate that Q-Diversity can consistently improve worst-case accuracy under different distributional shifts, outperforming state-of-the-art alternatives.\",\n}\n",
+    "authors": [
+        "Ting Wu",
+        "Rui Zheng",
+        "Tao Gui",
+        "Qi Zhang",
+        "Xuanjing Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.8.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4a3801f5-43ac-5395-bb11-14b6e4d9094c.pdf",
+    "abstract": "Models trained with empirical risk minimization (ERM) are revealed to easily rely on spurious correlations, resulting in poor generalization. Group distributionally robust optimization (group DRO) can alleviate this problem by minimizing the worst-case loss over pre-defined groups. While promising, in practice factors like expensive annotations and privacy preclude the availability of group labels. More crucially, when taking a closer look at the failure modes of out-of-distribution generalization, the typical procedure of reweighting in group DRO loses efficiency. Hinged on the limitations, in this work, we reformulate the group DRO framework by proposing Q-Diversity. Characterized by an interactive training mode, Q-Diversity relaxes the group identification from annotation into direct parameterization. Furthermore, a novel mixing strategy across groups is presented to diversify the under-represented groups. In a series of experiments on both synthetic and real-world text classification tasks, results demonstrate that Q-Diversity can consistently improve worst-case accuracy under different distributional shifts, outperforming state-of-the-art alternatives.",
+    "num_pages": 14
+}

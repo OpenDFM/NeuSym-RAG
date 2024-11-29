@@ -1,0 +1,22 @@
+{
+    "uuid": "b2a76a80-27db-5f3b-a5b4-b89e81dbc46e",
+    "title": "Forward-Backward Reasoning in Large Language Models for Mathematical Verification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{jiang-etal-2024-forward,\n    title = \"Forward-Backward Reasoning in Large Language Models for Mathematical Verification\",\n    author = \"Jiang, Weisen  and\n      Shi, Han  and\n      Yu, Longhui  and\n      Liu, Zhengying  and\n      Zhang, Yu  and\n      Li, Zhenguo  and\n      Kwok, James\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.397\",\n    doi = \"10.18653/v1/2024.findings-acl.397\",\n    pages = \"6647--6661\",\n    abstract = \"Self-Consistency samples diverse reasoning chains with answers and chooses the final answer by majority voting. It is based on forward reasoning and cannot further improve performance by sampling more reasoning chains when saturated. To further boost performance, we introduce backward reasoning to verify candidate answers. Specifically, for mathematical tasks, we mask a number in the question and ask the LLM to answer a backward question created by a simple template, i.e., to predict the masked number when a candidate answer is provided. Instead of using forward or backward reasoning alone, we propose **FOBAR** to combine **FO**rward and **BA**ckward **R**easoning for verification. Extensive experiments on six standard mathematical data sets and three LLMs show that FOBAR achieves state-of-the-art performance. In particular, FOBAR outperforms Self-Consistency, which uses forward reasoning alone, demonstrating that combining forward and backward reasoning is more accurate in verification. In addition, FOBAR achieves higher accuracy than existing verification methods, showing the effectiveness of the simple template used in backward reasoning and the proposed combination.\",\n}\n",
+    "authors": [
+        "Weisen Jiang",
+        "Han Shi",
+        "Longhui Yu",
+        "Zhengying Liu",
+        "Yu Zhang",
+        "Zhenguo Li",
+        "James Kwok"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.397.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/b2a76a80-27db-5f3b-a5b4-b89e81dbc46e.pdf",
+    "abstract": "Self-Consistency samples diverse reasoning chains with answers and chooses the final answer by majority voting. It is based on forward reasoning and cannot further improve performance by sampling more reasoning chains when saturated. To further boost performance, we introduce backward reasoning to verify candidate answers. Specifically, for mathematical tasks, we mask a number in the question and ask the LLM to answer a backward question created by a simple template, i.e., to predict the masked number when a candidate answer is provided. Instead of using forward or backward reasoning alone, we propose **FOBAR** to combine **FO**rward and **BA**ckward **R**easoning for verification. Extensive experiments on six standard mathematical data sets and three LLMs show that FOBAR achieves state-of-the-art performance. In particular, FOBAR outperforms Self-Consistency, which uses forward reasoning alone, demonstrating that combining forward and backward reasoning is more accurate in verification. In addition, FOBAR achieves higher accuracy than existing verification methods, showing the effectiveness of the simple template used in backward reasoning and the proposed combination.",
+    "num_pages": 15
+}

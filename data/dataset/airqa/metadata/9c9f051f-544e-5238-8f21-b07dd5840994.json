@@ -1,0 +1,21 @@
+{
+    "uuid": "9c9f051f-544e-5238-8f21-b07dd5840994",
+    "title": "Towards Stable Natural Language Understanding via Information Entropy Guided Debiasing",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{du-etal-2023-towards,\n    title = \"Towards Stable Natural Language Understanding via Information Entropy Guided Debiasing\",\n    author = \"Du, Li  and\n      Ding, Xiao  and\n      Sun, Zhouhao  and\n      Liu, Ting  and\n      Qin, Bing  and\n      Liu, Jingshuo\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.161\",\n    doi = \"10.18653/v1/2023.acl-long.161\",\n    pages = \"2868--2882\",\n    abstract = \"Although achieving promising performance, current Natural Language Understanding models tend to utilize dataset biases instead of learning the intended task, which always leads to performance degradation on out-of-distribution (OOD) samples. Toincrease the performance stability, previous debiasing methods \\textit{empirically} capture bias features from data to prevent the model from corresponding biases. However, our analyses show that the empirical debiasing methods may fail to capture part of the potential dataset biases and mistake semantic information of input text as biases, which limits the effectiveness of debiasing. To address these issues, we propose a debiasing framework IEGDB that comprehensively detects the dataset biases to induce a set of biased features, and then purifies the biased features with the guidance of information entropy. Experimental results show that IEGDB can consistently improve the stability of performance on OOD datasets for a set of widely adopted NLU models.\",\n}\n",
+    "authors": [
+        "Li Du",
+        "Xiao Ding",
+        "Zhouhao Sun",
+        "Ting Liu",
+        "Bing Qin",
+        "Jingshuo Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.161.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9c9f051f-544e-5238-8f21-b07dd5840994.pdf",
+    "abstract": "Although achieving promising performance, current Natural Language Understanding models tend to utilize dataset biases instead of learning the intended task, which always leads to performance degradation on out-of-distribution (OOD) samples. Toincrease the performance stability, previous debiasing methods empirically capture bias features from data to prevent the model from corresponding biases. However, our analyses show that the empirical debiasing methods may fail to capture part of the potential dataset biases and mistake semantic information of input text as biases, which limits the effectiveness of debiasing. To address these issues, we propose a debiasing framework IEGDB that comprehensively detects the dataset biases to induce a set of biased features, and then purifies the biased features with the guidance of information entropy. Experimental results show that IEGDB can consistently improve the stability of performance on OOD datasets for a set of widely adopted NLU models.",
+    "num_pages": 15
+}

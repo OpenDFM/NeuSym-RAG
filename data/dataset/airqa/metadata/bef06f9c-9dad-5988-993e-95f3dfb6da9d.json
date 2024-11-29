@@ -1,0 +1,17 @@
+{
+    "uuid": "bef06f9c-9dad-5988-993e-95f3dfb6da9d",
+    "title": "A Fast Algorithm for Computing Prefix Probabilities",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{nowak-cotterell-2023-fast,\n    title = \"A Fast Algorithm for Computing Prefix Probabilities\",\n    author = \"Nowak, Franz  and\n      Cotterell, Ryan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.6\",\n    doi = \"10.18653/v1/2023.acl-short.6\",\n    pages = \"57--69\",\n    abstract = \"Multiple algorithms are known for efficiently calculating the prefix probability of a string under a probabilistic context-free grammar (PCFG). Good algorithms for the problem have a runtime cubic in the length of the input string. However, some proposed algorithms are suboptimal with respect to the size of the grammar. This paper proposes a new speed-up of Jelinek and Lafferty{'}s (1991) algorithm, which runs in $O(n^3|N|^3 + |N|^4)$, where n is the input length and |N| is the number of non-terminals in the grammar. In contrast, our speed-up runs in $O(n^2|N|^3 + n^3|N|^2)$.\",\n}\n",
+    "authors": [
+        "Franz Nowak",
+        "Ryan Cotterell"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.6.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/bef06f9c-9dad-5988-993e-95f3dfb6da9d.pdf",
+    "abstract": "Multiple algorithms are known for efficiently calculating the prefix probability of a string under a probabilistic context-free grammar (PCFG). Good algorithms for the problem have a runtime cubic in the length of the input string. However, some proposed algorithms are suboptimal with respect to the size of the grammar. This paper proposes a new speed-up of Jelinek and Lafferty’s (1991) algorithm, which runs in O(n3|N|3 + |N|4), where n is the input length and |N| is the number of non-terminals in the grammar. In contrast, our speed-up runs in O(n2|N|3 + n3|N|2).",
+    "num_pages": 13
+}

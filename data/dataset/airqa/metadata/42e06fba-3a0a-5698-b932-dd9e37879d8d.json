@@ -1,0 +1,21 @@
+{
+    "uuid": "42e06fba-3a0a-5698-b932-dd9e37879d8d",
+    "title": "Uncertainty Aware Learning for Language Model Alignment",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2024-uncertainty,\n    title = \"Uncertainty Aware Learning for Language Model Alignment\",\n    author = \"Wang, Yikun  and\n      Zheng, Rui  and\n      Ding, Liang  and\n      Zhang, Qi  and\n      Lin, Dahua  and\n      Tao, Dacheng\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.597\",\n    doi = \"10.18653/v1/2024.acl-long.597\",\n    pages = \"11087--11099\",\n    abstract = \"As instruction-tuned large language models (LLMs) evolve, aligning pretrained foundation models presents increasing challenges. Existing alignment strategies, which typically leverage diverse and high-quality data sources, often overlook the intrinsic uncertainty of tasks, learning all data samples equally. This may lead to suboptimal data efficiency and model performance. In response, we propose uncertainty-aware learning (UAL) to improve the model alignment of different task scenarios, by introducing the sample uncertainty (elicited from more capable LLMs). We implement UAL by a simple fashion {--} adaptively setting the label smoothing value of training according to the uncertainty of individual samples. Analysis shows that our UAL indeed facilitates better token clustering in the feature space, validating our hypothesis. Extensive experiments on widely used benchmarks demonstrate that our UAL significantly and consistently outperforms standard supervised fine-tuning. Notably, LLMs aligned in a mixed scenario have achieved an average improvement of 10.62{\\%} on high-entropy tasks (i.e., AlpacaEval leaderboard), and 1.81{\\%} on complex low-entropy tasks (i.e., MetaMath and GSM8K).\",\n}\n",
+    "authors": [
+        "Yikun Wang",
+        "Rui Zheng",
+        "Liang Ding",
+        "Qi Zhang",
+        "Dahua Lin",
+        "Dacheng Tao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.597.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/42e06fba-3a0a-5698-b932-dd9e37879d8d.pdf",
+    "abstract": "As instruction-tuned large language models (LLMs) evolve, aligning pretrained foundation models presents increasing challenges. Existing alignment strategies, which typically leverage diverse and high-quality data sources, often overlook the intrinsic uncertainty of tasks, learning all data samples equally. This may lead to suboptimal data efficiency and model performance. In response, we propose uncertainty-aware learning (UAL) to improve the model alignment of different task scenarios, by introducing the sample uncertainty (elicited from more capable LLMs). We implement UAL by a simple fashion – adaptively setting the label smoothing value of training according to the uncertainty of individual samples. Analysis shows that our UAL indeed facilitates better token clustering in the feature space, validating our hypothesis. Extensive experiments on widely used benchmarks demonstrate that our UAL significantly and consistently outperforms standard supervised fine-tuning. Notably, LLMs aligned in a mixed scenario have achieved an average improvement of 10.62% on high-entropy tasks (i.e., AlpacaEval leaderboard), and 1.81% on complex low-entropy tasks (i.e., MetaMath and GSM8K).",
+    "num_pages": 13
+}

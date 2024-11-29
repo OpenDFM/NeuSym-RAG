@@ -1,0 +1,18 @@
+{
+    "uuid": "29a2e29f-8b40-5c28-aa14-bb6e6b5c7154",
+    "title": "Tell Me What’s Next: Textual Foresight for Generic UI Representations",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{burns-etal-2024-tell,\n    title = \"Tell Me What{'}s Next: Textual Foresight for Generic {UI} Representations\",\n    author = \"Burns, Andrea  and\n      Saenko, Kate  and\n      Plummer, Bryan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.273\",\n    doi = \"10.18653/v1/2024.findings-acl.273\",\n    pages = \"4590--4611\",\n    abstract = \"Mobile app user interfaces (UIs) are rich with action, text, structure, and image content that can be utilized to learn generic UI representations for tasks like automating user commands, summarizing content, and evaluating the accessibility of user interfaces. Prior work has learned strong visual representations with local or global captioning losses, but fails to retain both granularities.To combat this, we propose Textual Foresight, a novel pretraining objective for learning UI screen representations. Textual Foresight generates global text descriptions of future UI states given a current UI and local action taken. Our approach requires joint reasoning over elements and entire screens, resulting in improved UI features: on generation tasks, UI agents trained with Textual Foresight outperform state-of-the-art by 2{\\%} with 28x fewer images. We train with our newly constructed mobile app dataset, OpenApp, which results in the first public dataset for app UI representation learning. OpenApp enables new baselines, and we find Textual Foresight improves average task performance over them by 5.7{\\%} while having access to 2x less data.\",\n}\n",
+    "authors": [
+        "Andrea Burns",
+        "Kate Saenko",
+        "Bryan Plummer"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.273.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/29a2e29f-8b40-5c28-aa14-bb6e6b5c7154.pdf",
+    "abstract": "Mobile app user interfaces (UIs) are rich with action, text, structure, and image content that can be utilized to learn generic UI representations for tasks like automating user commands, summarizing content, and evaluating the accessibility of user interfaces. Prior work has learned strong visual representations with local or global captioning losses, but fails to retain both granularities.To combat this, we propose Textual Foresight, a novel pretraining objective for learning UI screen representations. Textual Foresight generates global text descriptions of future UI states given a current UI and local action taken. Our approach requires joint reasoning over elements and entire screens, resulting in improved UI features: on generation tasks, UI agents trained with Textual Foresight outperform state-of-the-art by 2% with 28x fewer images. We train with our newly constructed mobile app dataset, OpenApp, which results in the first public dataset for app UI representation learning. OpenApp enables new baselines, and we find Textual Foresight improves average task performance over them by 5.7% while having access to 2x less data.",
+    "num_pages": 22
+}

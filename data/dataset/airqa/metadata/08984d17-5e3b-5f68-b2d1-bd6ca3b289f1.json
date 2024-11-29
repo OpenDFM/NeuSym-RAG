@@ -1,0 +1,18 @@
+{
+    "uuid": "08984d17-5e3b-5f68-b2d1-bd6ca3b289f1",
+    "title": "Training Models on Oversampled Data and a Novel Multi-class Annotation Scheme for Dementia Detection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 5th Clinical Natural Language Processing Workshop",
+    "bibtex": "@inproceedings{abdelhalim-etal-2023-training,\n    title = \"Training Models on Oversampled Data and a Novel Multi-class Annotation Scheme for Dementia Detection\",\n    author = \"Abdelhalim, Nadine  and\n      Abdelhalim, Ingy  and\n      Batista-Navarro, Riza\",\n    editor = \"Naumann, Tristan  and\n      Ben Abacha, Asma  and\n      Bethard, Steven  and\n      Roberts, Kirk  and\n      Rumshisky, Anna\",\n    booktitle = \"Proceedings of the 5th Clinical Natural Language Processing Workshop\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.clinicalnlp-1.15\",\n    doi = \"10.18653/v1/2023.clinicalnlp-1.15\",\n    pages = \"118--124\",\n    abstract = \"This work introduces a novel three-class annotation scheme for text-based dementia classification in patients, based on their recorded visit interactions. Multiple models were developed utilising BERT, RoBERTa and DistilBERT. Two approaches were employed to improve the representation of dementia samples: oversampling the underrepresented data points in the original Pitt dataset and combining the Pitt with the Holland and Kempler datasets. The DistilBERT models trained on either an oversampled Pitt dataset or the combined dataset performed best in classifying the dementia class. Specifically, the model trained on the oversampled Pitt dataset and the one trained on the combined dataset obtained state-of-the-art performance with 98.8{\\%} overall accuracy and 98.6{\\%} macro-averaged F1-score, respectively. The models{'} outputs were manually inspected through saliency highlighting, using Local Interpretable Model-agnostic Explanations (LIME), to provide a better understanding of its predictions.\",\n}\n",
+    "authors": [
+        "Nadine Abdelhalim",
+        "Ingy Abdelhalim",
+        "Riza Batista-Navarro"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.clinicalnlp-1.15.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/08984d17-5e3b-5f68-b2d1-bd6ca3b289f1.pdf",
+    "abstract": "This work introduces a novel three-class annotation scheme for text-based dementia classification in patients, based on their recorded visit interactions. Multiple models were developed utilising BERT, RoBERTa and DistilBERT. Two approaches were employed to improve the representation of dementia samples: oversampling the underrepresented data points in the original Pitt dataset and combining the Pitt with the Holland and Kempler datasets. The DistilBERT models trained on either an oversampled Pitt dataset or the combined dataset performed best in classifying the dementia class. Specifically, the model trained on the oversampled Pitt dataset and the one trained on the combined dataset obtained state-of-the-art performance with 98.8% overall accuracy and 98.6% macro-averaged F1-score, respectively. The models’ outputs were manually inspected through saliency highlighting, using Local Interpretable Model-agnostic Explanations (LIME), to provide a better understanding of its predictions.",
+    "num_pages": 7
+}

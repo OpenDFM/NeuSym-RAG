@@ -1,0 +1,18 @@
+{
+    "uuid": "630114cf-f2fc-5aea-b642-14b3d2453933",
+    "title": "UTSA-NLP at RadSum23: Multi-modal Retrieval-Based Chest X-Ray Report Summarization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+    "bibtex": "@inproceedings{wang-etal-2023-utsa,\n    title = \"{UTSA}-{NLP} at {R}ad{S}um23: Multi-modal Retrieval-Based Chest {X}-Ray Report Summarization\",\n    author = \"Wang, Tongnian  and\n      Zhao, Xingmeng  and\n      Rios, Anthony\",\n    editor = \"Demner-fushman, Dina  and\n      Ananiadou, Sophia  and\n      Cohen, Kevin\",\n    booktitle = \"The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.bionlp-1.58\",\n    doi = \"10.18653/v1/2023.bionlp-1.58\",\n    pages = \"557--566\",\n    abstract = \"Radiology report summarization aims to automatically provide concise summaries of radiology findings, reducing time and errors in manual summaries. However, current methods solely summarize the text, which overlooks critical details in the images. Unfortunately, directly using the images in a multimodal model is difficult. Multimodal models are susceptible to overfitting due to their increased capacity, and modalities tend to overfit and generalize at different rates. Thus, we propose a novel retrieval-based approach that uses image similarities to generate additional text features. We further employ few-shot with chain-of-thought and ensemble techniques to boost performance. Overall, our method achieves state-of-the-art performance in the F1RadGraph score, which measures the factual correctness of summaries. We rank second place in both MIMIC-CXR and MIMIC-III hidden tests among 11 teams.\",\n}\n",
+    "authors": [
+        "Tongnian Wang",
+        "Xingmeng Zhao",
+        "Anthony Rios"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.bionlp-1.58.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/630114cf-f2fc-5aea-b642-14b3d2453933.pdf",
+    "abstract": "Radiology report summarization aims to automatically provide concise summaries of radiology findings, reducing time and errors in manual summaries. However, current methods solely summarize the text, which overlooks critical details in the images. Unfortunately, directly using the images in a multimodal model is difficult. Multimodal models are susceptible to overfitting due to their increased capacity, and modalities tend to overfit and generalize at different rates. Thus, we propose a novel retrieval-based approach that uses image similarities to generate additional text features. We further employ few-shot with chain-of-thought and ensemble techniques to boost performance. Overall, our method achieves state-of-the-art performance in the F1RadGraph score, which measures the factual correctness of summaries. We rank second place in both MIMIC-CXR and MIMIC-III hidden tests among 11 teams.",
+    "num_pages": 10
+}

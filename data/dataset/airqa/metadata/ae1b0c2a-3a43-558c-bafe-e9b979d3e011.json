@@ -1,0 +1,21 @@
+{
+    "uuid": "ae1b0c2a-3a43-558c-bafe-e9b979d3e011",
+    "title": "Understanding and Patching Compositional Reasoning in LLMs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{li-etal-2024-understanding,\n    title = \"Understanding and Patching Compositional Reasoning in {LLM}s\",\n    author = \"Li, Zhaoyi  and\n      Jiang, Gangwei  and\n      Xie, Hong  and\n      Song, Linqi  and\n      Lian, Defu  and\n      Wei, Ying\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.576\",\n    doi = \"10.18653/v1/2024.findings-acl.576\",\n    pages = \"9668--9688\",\n    abstract = \"LLMs have marked a revolutonary shift, yet they falter when faced with compositional reasoning tasks. Our research embarks on a quest to uncover the root causes of compositional reasoning failures of LLMs, uncovering that most of them stem from the improperly generated or leveraged implicit reasoning results. Inspired by our empirical findings, we resort to Logit Lens and an intervention experiment to dissect the inner hidden states of LLMs. This deep dive reveals that implicit reasoning results indeed surface within middle layers and play a causative role in shaping the final explicit reasoning results. Our exploration further locates multi-head self-attention (MHSA) modules within these layers, which emerge as the linchpins in accurate generation and leveraing of implicit reasoning results. Grounded on the above findings, we develop CREME, a lightweight method to patch errors in compositional reasoning via editing the located MHSA modules. Our empirical evidence stands testament to CREME{'}s effectiveness, paving the way for autonomously and continuously enhancing compositional reasoning capabilities in language models.\",\n}\n",
+    "authors": [
+        "Zhaoyi Li",
+        "Gangwei Jiang",
+        "Hong Xie",
+        "Linqi Song",
+        "Defu Lian",
+        "Ying Wei"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.576.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/ae1b0c2a-3a43-558c-bafe-e9b979d3e011.pdf",
+    "abstract": "LLMs have marked a revolutonary shift, yet they falter when faced with compositional reasoning tasks. Our research embarks on a quest to uncover the root causes of compositional reasoning failures of LLMs, uncovering that most of them stem from the improperly generated or leveraged implicit reasoning results. Inspired by our empirical findings, we resort to Logit Lens and an intervention experiment to dissect the inner hidden states of LLMs. This deep dive reveals that implicit reasoning results indeed surface within middle layers and play a causative role in shaping the final explicit reasoning results. Our exploration further locates multi-head self-attention (MHSA) modules within these layers, which emerge as the linchpins in accurate generation and leveraing of implicit reasoning results. Grounded on the above findings, we develop CREME, a lightweight method to patch errors in compositional reasoning via editing the located MHSA modules. Our empirical evidence stands testament to CREME’s effectiveness, paving the way for autonomously and continuously enhancing compositional reasoning capabilities in language models.",
+    "num_pages": 21
+}

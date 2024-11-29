@@ -1,0 +1,20 @@
+{
+    "uuid": "51dd718e-0129-54d4-9a4d-56c983f161a3",
+    "title": "KInITVeraAI at SemEval-2023 Task 3: Simple yet Powerful Multilingual Fine-Tuning for Persuasion Techniques Detection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{hromadka-etal-2023-kinitveraai,\n    title = \"{KI}n{ITV}era{AI} at {S}em{E}val-2023 Task 3: Simple yet Powerful Multilingual Fine-Tuning for Persuasion Techniques Detection\",\n    author = \"Hromadka, Timo  and\n      Smolen, Timotej  and\n      Remis, Tomas  and\n      Pecher, Branislav  and\n      Srba, Ivan\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.86\",\n    doi = \"10.18653/v1/2023.semeval-1.86\",\n    pages = \"629--637\",\n    abstract = \"This paper presents the best-performing solution to the SemEval 2023 Task 3 on the subtask 3 dedicated to persuasion techniques detection. Due to a high multilingual character of the input data and a large number of 23 predicted labels (causing a lack of labelled data for some language-label combinations), we opted for fine-tuning pre-trained transformer-based language models. Conducting multiple experiments, we find the best configuration, which consists of large multilingual model (XLM-RoBERTa large) trained jointly on all input data, with carefully calibrated confidence thresholds for seen and surprise languages separately. Our final system performed the best on 6 out of 9 languages (including two surprise languages) and achieved highly competitive results on the remaining three languages.\",\n}\n",
+    "authors": [
+        "Timo Hromadka",
+        "Timotej Smolen",
+        "Tomas Remis",
+        "Branislav Pecher",
+        "Ivan Srba"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.86.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/51dd718e-0129-54d4-9a4d-56c983f161a3.pdf",
+    "abstract": "This paper presents the best-performing solution to the SemEval 2023 Task 3 on the subtask 3 dedicated to persuasion techniques detection. Due to a high multilingual character of the input data and a large number of 23 predicted labels (causing a lack of labelled data for some language-label combinations), we opted for fine-tuning pre-trained transformer-based language models. Conducting multiple experiments, we find the best configuration, which consists of large multilingual model (XLM-RoBERTa large) trained jointly on all input data, with carefully calibrated confidence thresholds for seen and surprise languages separately. Our final system performed the best on 6 out of 9 languages (including two surprise languages) and achieved highly competitive results on the remaining three languages.",
+    "num_pages": 9
+}

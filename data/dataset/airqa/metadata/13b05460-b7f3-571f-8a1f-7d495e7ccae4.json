@@ -1,0 +1,20 @@
+{
+    "uuid": "13b05460-b7f3-571f-8a1f-7d495e7ccae4",
+    "title": "LAMBADA: Backward Chaining for Automated Reasoning in Natural Language",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{kazemi-etal-2023-lambada,\n    title = \"{LAMBADA}: Backward Chaining for Automated Reasoning in Natural Language\",\n    author = \"Kazemi, Mehran  and\n      Kim, Najoung  and\n      Bhatia, Deepti  and\n      Xu, Xin  and\n      Ramachandran, Deepak\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.361\",\n    doi = \"10.18653/v1/2023.acl-long.361\",\n    pages = \"6547--6568\",\n    abstract = \"Remarkable progress has been made on automated reasoning with natural text, by using Large Language Models (LLMs) and methods such as Chain-of-Thought prompting and Selection-Inference. These techniques search for proofs in the forward direction from axioms to the conclusion, which suffers from a combinatorial explosion of the search space, and thus high failure rates for problems requiring longer chains of reasoning. The classical automated reasoning literature has shown that reasoning in the backward direction (i.e. from intended conclusion to supporting axioms) is significantly more efficient at proof-finding. Importing this intuition into the LM setting, we develop a Backward Chaining algorithm, called LAMBADA, that decomposes reasoning into four sub-modules, that are simply implemented by few-shot prompted LLM inference. We show that LAMBADA achieves sizable accuracy boosts over state-of-the-art forward reasoning methods on two challenging logical reasoning datasets, particularly when deep and accurate proof chains are required.\",\n}\n",
+    "authors": [
+        "Mehran Kazemi",
+        "Najoung Kim",
+        "Deepti Bhatia",
+        "Xin Xu",
+        "Deepak Ramachandran"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.361.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/13b05460-b7f3-571f-8a1f-7d495e7ccae4.pdf",
+    "abstract": "Remarkable progress has been made on automated reasoning with natural text, by using Large Language Models (LLMs) and methods such as Chain-of-Thought prompting and Selection-Inference. These techniques search for proofs in the forward direction from axioms to the conclusion, which suffers from a combinatorial explosion of the search space, and thus high failure rates for problems requiring longer chains of reasoning. The classical automated reasoning literature has shown that reasoning in the backward direction (i.e. from intended conclusion to supporting axioms) is significantly more efficient at proof-finding. Importing this intuition into the LM setting, we develop a Backward Chaining algorithm, called LAMBADA, that decomposes reasoning into four sub-modules, that are simply implemented by few-shot prompted LLM inference. We show that LAMBADA achieves sizable accuracy boosts over state-of-the-art forward reasoning methods on two challenging logical reasoning datasets, particularly when deep and accurate proof chains are required.",
+    "num_pages": 22
+}

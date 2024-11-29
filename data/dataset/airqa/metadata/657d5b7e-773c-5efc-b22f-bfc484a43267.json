@@ -1,0 +1,27 @@
+{
+    "uuid": "657d5b7e-773c-5efc-b22f-bfc484a43267",
+    "title": "HW-TSC’s Speech to Text Translation System for IWSLT 2024 in Indic track",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)",
+    "bibtex": "@inproceedings{wei-etal-2024-hw,\n    title = \"{HW}-{TSC}{'}s Speech to Text Translation System for {IWSLT} 2024 in {I}ndic track\",\n    author = \"Wei, Bin  and\n      Li, Zongyao  and\n      Guo, Jiaxin  and\n      Wei, Daimeng  and\n      Wu, Zhanglin  and\n      Chen, Xiaoyu  and\n      Rao, Zhiqiang  and\n      Li, Shaojun  and\n      Luo, Yuanchang  and\n      Shang, Hengchao  and\n      Yang, Hao  and\n      Jiang, Yanfei\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.iwslt-1.8\",\n    doi = \"10.18653/v1/2024.iwslt-1.8\",\n    pages = \"53--56\",\n    abstract = \"This article introduces the process of HW-TSC and the results of IWSLT 2024 Indic Track Speech to Text Translation. We designed a cascade system consisting of an ASR model and a machine translation model to translate speech from one language to another. For the ASR part, we directly use whisper large v3 as our ASR model. Our main task is to optimize the machine translation model (en2ta, en2hi, en2bn). In the process of optimizing the translation model, we first use bilingual corpus to train the baseline model. Then we use monolingual data to construct pseudo-corpus data to further enhance the baseline model. Finally, we filter the parallel corpus data through the labse filtering method and finetune the model again, which can further improve the bleu value. We also selected domain data from bilingual corpus to finetune previous model to achieve the best results.\",\n}\n",
+    "authors": [
+        "Bin Wei",
+        "Zongyao Li",
+        "Jiaxin Guo",
+        "Daimeng Wei",
+        "Zhanglin Wu",
+        "Xiaoyu Chen",
+        "Zhiqiang Rao",
+        "Shaojun Li",
+        "Yuanchang Luo",
+        "Hengchao Shang",
+        "Hao Yang",
+        "Yanfei Jiang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.iwslt-1.8.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/657d5b7e-773c-5efc-b22f-bfc484a43267.pdf",
+    "abstract": "This article introduces the process of HW-TSC and the results of IWSLT 2024 Indic Track Speech to Text Translation. We designed a cascade system consisting of an ASR model and a machine translation model to translate speech from one language to another. For the ASR part, we directly use whisper large v3 as our ASR model. Our main task is to optimize the machine translation model (en2ta, en2hi, en2bn). In the process of optimizing the translation model, we first use bilingual corpus to train the baseline model. Then we use monolingual data to construct pseudo-corpus data to further enhance the baseline model. Finally, we filter the parallel corpus data through the labse filtering method and finetune the model again, which can further improve the bleu value. We also selected domain data from bilingual corpus to finetune previous model to achieve the best results.",
+    "num_pages": 4
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "2c32a905-885f-582a-a74b-4fed016ca4f1",
+    "title": "OpenDelta: A Plug-and-play Library for Parameter-efficient Adaptation of Pre-trained Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)",
+    "bibtex": "@inproceedings{hu-etal-2023-opendelta,\n    title = \"{O}pen{D}elta: A Plug-and-play Library for Parameter-efficient Adaptation of Pre-trained Models\",\n    author = \"Hu, Shengding  and\n      Ding, Ning  and\n      Zhao, Weilin  and\n      Lv, Xingtai  and\n      Zhang, Zhen  and\n      Liu, Zhiyuan  and\n      Sun, Maosong\",\n    editor = \"Bollegala, Danushka  and\n      Huang, Ruihong  and\n      Ritter, Alan\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-demo.26\",\n    doi = \"10.18653/v1/2023.acl-demo.26\",\n    pages = \"274--281\",\n    abstract = \"The scale of large pre-trained models (PTMs) poses significant challenges in adapting to downstream tasks due to the high optimization overhead and storage costs associated with full-parameter fine-tuning. To address this, many studies explore parameter-efficient tuning methods, also framed as {``}delta tuning{''} in Ding et al. (2022), which updates only a small subset of parameters, known as {``}delta modules{''}, while keeping the backbone model{'}s parameters fixed. However, the practicality and flexibility of delta tuning have been limited due to existing implementations that directly modify the code of the backbone PTMs and hard-code specific delta tuning methods for each PTM. In this paper, we present OpenDelta, an open-source library that overcomes these limitations by providing a plug-and-play implementation of various delta tuning methods. Our novel techniques eliminate the need to modify the backbone PTMs{'} code, making OpenDelta compatible with different, even novel PTMs. OpenDelta is designed to be simple, modular, and extensible, providing a comprehensive platform for researchers and practitioners to adapt large PTMs efficiently.\",\n}\n",
+    "authors": [
+        "Shengding Hu",
+        "Ning Ding",
+        "Weilin Zhao",
+        "Xingtai Lv",
+        "Zhen Zhang",
+        "Zhiyuan Liu",
+        "Maosong Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-demo.26.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2c32a905-885f-582a-a74b-4fed016ca4f1.pdf",
+    "abstract": "The scale of large pre-trained models (PTMs) poses significant challenges in adapting to downstream tasks due to the high optimization overhead and storage costs associated with full-parameter fine-tuning. To address this, many studies explore parameter-efficient tuning methods, also framed as “delta tuning” in Ding et al. (2022), which updates only a small subset of parameters, known as “delta modules”, while keeping the backbone model’s parameters fixed. However, the practicality and flexibility of delta tuning have been limited due to existing implementations that directly modify the code of the backbone PTMs and hard-code specific delta tuning methods for each PTM. In this paper, we present OpenDelta, an open-source library that overcomes these limitations by providing a plug-and-play implementation of various delta tuning methods. Our novel techniques eliminate the need to modify the backbone PTMs’ code, making OpenDelta compatible with different, even novel PTMs. OpenDelta is designed to be simple, modular, and extensible, providing a comprehensive platform for researchers and practitioners to adapt large PTMs efficiently.",
+    "num_pages": 8
+}

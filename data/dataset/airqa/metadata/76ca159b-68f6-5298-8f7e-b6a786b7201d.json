@@ -1,0 +1,20 @@
+{
+    "uuid": "76ca159b-68f6-5298-8f7e-b6a786b7201d",
+    "title": "Self-Edit: Fault-Aware Code Editor for Code Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhang-etal-2023-self,\n    title = \"Self-Edit: Fault-Aware Code Editor for Code Generation\",\n    author = \"Zhang, Kechi  and\n      Li, Zhuo  and\n      Li, Jia  and\n      Li, Ge  and\n      Jin, Zhi\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.45\",\n    doi = \"10.18653/v1/2023.acl-long.45\",\n    pages = \"769--787\",\n    abstract = \"Large language models (LLMs) have demonstrated an impressive ability to generate codes on competitive programming tasks. However, with limited sample numbers, LLMs still suffer from poor accuracy. Inspired by the process of human programming, we propose a generate-and-edit approach named Self-Edit that utilizes execution results of the generated code from LLMs to improve the code quality on the competitive programming task. We execute the generated code on the example test case provided in the question and wrap execution results into a supplementary comment. Utilizing this comment as guidance, our fault-aware code editor is employed to correct errors in the generated code. We perform extensive evaluations across two competitive programming datasets with nine different LLMs. Compared to directly generating from LLMs, our approach can improve the average of pass@1 by 89{\\%} on APPS-dev, 31{\\%} on APPS-test, and 48{\\%} on HumanEval over nine popular code generation LLMs with parameter sizes ranging from 110M to 175B. Compared to other post-processing methods, our method demonstrates superior accuracy and efficiency.\",\n}\n",
+    "authors": [
+        "Kechi Zhang",
+        "Zhuo Li",
+        "Jia Li",
+        "Ge Li",
+        "Zhi Jin"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.45.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/76ca159b-68f6-5298-8f7e-b6a786b7201d.pdf",
+    "abstract": "Large language models (LLMs) have demonstrated an impressive ability to generate codes on competitive programming tasks. However, with limited sample numbers, LLMs still suffer from poor accuracy. Inspired by the process of human programming, we propose a generate-and-edit approach named Self-Edit that utilizes execution results of the generated code from LLMs to improve the code quality on the competitive programming task. We execute the generated code on the example test case provided in the question and wrap execution results into a supplementary comment. Utilizing this comment as guidance, our fault-aware code editor is employed to correct errors in the generated code. We perform extensive evaluations across two competitive programming datasets with nine different LLMs. Compared to directly generating from LLMs, our approach can improve the average of pass@1 by 89% on APPS-dev, 31% on APPS-test, and 48% on HumanEval over nine popular code generation LLMs with parameter sizes ranging from 110M to 175B. Compared to other post-processing methods, our method demonstrates superior accuracy and efficiency.",
+    "num_pages": 17
+}

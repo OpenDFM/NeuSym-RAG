@@ -1,0 +1,19 @@
+{
+    "uuid": "a6a177dc-789f-52a0-b79f-adf7eaf41c2d",
+    "title": "Exploring Domain Robust Lightweight Reward Models based on Router Mechanism",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{namgoong-etal-2024-exploring,\n    title = \"Exploring Domain Robust Lightweight Reward Models based on Router Mechanism\",\n    author = \"Namgoong, Hyuk  and\n      Jung, Jeesu  and\n      Jung, Sangkeun  and\n      Roh, YoonHyung\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.511\",\n    doi = \"10.18653/v1/2024.findings-acl.511\",\n    pages = \"8644--8652\",\n    abstract = \"Recent advancements in large language models have heavily relied on the large reward model from reinforcement learning from human feedback for fine-tuning. However, the use of a single reward model across various domains may not always be optimal, often requiring retraining from scratch when new domain data is introduced. To address these challenges, we explore the utilization of small language models operating in a domain-specific manner based on router mechanisms. Our three approaches are: 1) utilize mixture of experts to form a single reward model by modularizing an internal router and experts, 2) employing external router to select the appropriate reward model from multiple domain-specific models, and 3) the framework reduces parameter size by loading reward models and router adapters onto a single small language model using adapters. Experimental validation underscores the effectiveness of our approach, demonstrating performance comparable to baseline methods while also reducing the total parameter size.\",\n}\n",
+    "authors": [
+        "Hyuk Namgoong",
+        "Jeesu Jung",
+        "Sangkeun Jung",
+        "YoonHyung Roh"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.511.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a6a177dc-789f-52a0-b79f-adf7eaf41c2d.pdf",
+    "abstract": "Recent advancements in large language models have heavily relied on the large reward model from reinforcement learning from human feedback for fine-tuning. However, the use of a single reward model across various domains may not always be optimal, often requiring retraining from scratch when new domain data is introduced. To address these challenges, we explore the utilization of small language models operating in a domain-specific manner based on router mechanisms. Our three approaches are: 1) utilize mixture of experts to form a single reward model by modularizing an internal router and experts, 2) employing external router to select the appropriate reward model from multiple domain-specific models, and 3) the framework reduces parameter size by loading reward models and router adapters onto a single small language model using adapters. Experimental validation underscores the effectiveness of our approach, demonstrating performance comparable to baseline methods while also reducing the total parameter size.",
+    "num_pages": 9
+}

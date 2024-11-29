@@ -1,0 +1,18 @@
+{
+    "uuid": "d3e3c3c6-d737-540b-b4d2-2922c80fcb87",
+    "title": "Document-level Claim Extraction and Decontextualisation for Fact-Checking",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{deng-etal-2024-document,\n    title = \"Document-level Claim Extraction and Decontextualisation for Fact-Checking\",\n    author = \"Deng, Zhenyun  and\n      Schlichtkrull, Michael  and\n      Vlachos, Andreas\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.645\",\n    doi = \"10.18653/v1/2024.acl-long.645\",\n    pages = \"11943--11954\",\n    abstract = \"Selecting which claims to check is a time-consuming task for human fact-checkers, especially from documents consisting of multiple sentences and containing multiple claims. However, existing claim extraction approaches focus more on identifying and extracting claims from individual sentences, e.g., identifying whether a sentence contains a claim or the exact boundaries of the claim within a sentence. In this paper, we propose a method for document-level claim extraction for fact-checking, which aims to extract check-worthy claims from documents and decontextualise them so that they can be understood out of context. Specifically, we first recast claim extraction as extractive summarization in order to identify central sentences from documents, then rewrite them to include necessary context from the originating document through sentence decontextualisation. Evaluation with both automatic metrics and a fact-checking professional shows that our method is able to extract check-worthy claims from documents at a higher rate than previous work, while also improving evidence retrieval.\",\n}\n",
+    "authors": [
+        "Zhenyun Deng",
+        "Michael Schlichtkrull",
+        "Andreas Vlachos"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.645.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d3e3c3c6-d737-540b-b4d2-2922c80fcb87.pdf",
+    "abstract": "Selecting which claims to check is a time-consuming task for human fact-checkers, especially from documents consisting of multiple sentences and containing multiple claims. However, existing claim extraction approaches focus more on identifying and extracting claims from individual sentences, e.g., identifying whether a sentence contains a claim or the exact boundaries of the claim within a sentence. In this paper, we propose a method for document-level claim extraction for fact-checking, which aims to extract check-worthy claims from documents and decontextualise them so that they can be understood out of context. Specifically, we first recast claim extraction as extractive summarization in order to identify central sentences from documents, then rewrite them to include necessary context from the originating document through sentence decontextualisation. Evaluation with both automatic metrics and a fact-checking professional shows that our method is able to extract check-worthy claims from documents at a higher rate than previous work, while also improving evidence retrieval.",
+    "num_pages": 12
+}

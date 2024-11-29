@@ -1,0 +1,18 @@
+{
+    "uuid": "c49c3863-95b0-5bc4-9c80-f27edb03785e",
+    "title": "Comparing Data Augmentation Methods for End-to-End Task-Oriented Dialog Systems",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{vlachos-etal-2024-comparing,\n    title = \"Comparing Data Augmentation Methods for End-to-End Task-Oriented Dialog Systems\",\n    author = \"Vlachos, Christos  and\n      Stafylakis, Themos  and\n      Androutsopoulos, Ion\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.431\",\n    doi = \"10.18653/v1/2024.findings-acl.431\",\n    pages = \"7216--7240\",\n    abstract = \"Creating effective and reliable task-oriented dialog systems (ToDSs) is challenging, not only because of the complex structure of these systems, but also due to the scarcity of training data, especially when several modules need to be trained separately, each one with its own input/output training examples. Data augmentation (DA), whereby synthetic training examples are added to the training data, has been successful in other NLP systems, but has not been explored as extensively in ToDSs. We empirically evaluate the effectiveness of DA methods in an end-to-end ToDS setting, where a single system is trained to handle all processing stages, from user inputs to system outputs. We experiment with two ToDSs (UBAR, GALAXY) on two datasets (MultiWOZ, KVRET). We consider three types of DA methods (word-level, sentence-level, dialog-level), comparing eight DA methods that have shown promising results in ToDSs and other NLP systems. We show that all DA methods considered are beneficial, and we highlight the best ones, also providing advice to practitioners. We also introduce a more challenging few-shot cross-domain ToDS setting, reaching similar conclusions.\",\n}\n",
+    "authors": [
+        "Christos Vlachos",
+        "Themos Stafylakis",
+        "Ion Androutsopoulos"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.431.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/c49c3863-95b0-5bc4-9c80-f27edb03785e.pdf",
+    "abstract": "Creating effective and reliable task-oriented dialog systems (ToDSs) is challenging, not only because of the complex structure of these systems, but also due to the scarcity of training data, especially when several modules need to be trained separately, each one with its own input/output training examples. Data augmentation (DA), whereby synthetic training examples are added to the training data, has been successful in other NLP systems, but has not been explored as extensively in ToDSs. We empirically evaluate the effectiveness of DA methods in an end-to-end ToDS setting, where a single system is trained to handle all processing stages, from user inputs to system outputs. We experiment with two ToDSs (UBAR, GALAXY) on two datasets (MultiWOZ, KVRET). We consider three types of DA methods (word-level, sentence-level, dialog-level), comparing eight DA methods that have shown promising results in ToDSs and other NLP systems. We show that all DA methods considered are beneficial, and we highlight the best ones, also providing advice to practitioners. We also introduce a more challenging few-shot cross-domain ToDS setting, reaching similar conclusions.",
+    "num_pages": 25
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "5e1caed1-5ced-58ed-baa6-24754cdc635d",
+    "title": "Synthesize, Prompt and Transfer: Zero-shot Conversational Question Generation with Pre-trained Language Model",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zeng-etal-2023-synthesize,\n    title = \"Synthesize, Prompt and Transfer: Zero-shot Conversational Question Generation with Pre-trained Language Model\",\n    author = \"Zeng, Hongwei  and\n      Wei, Bifan  and\n      Liu, Jun  and\n      Fu, Weiping\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.500\",\n    doi = \"10.18653/v1/2023.acl-long.500\",\n    pages = \"8989--9010\",\n    abstract = \"Conversational question generation aims to generate questions that depend on both context and conversation history. Conventional works utilizing deep learning have shown promising results, but heavily rely on the availability of large-scale annotated conversations. In this paper, we introduce a more realistic and less explored setting, Zero-shot Conversational Question Generation (ZeroCQG), which requires no human-labeled conversations for training. To solve ZeroCQG, we propose a multi-stage knowledge transfer framework, Synthesize, Prompt, and trAnsfer with pRe-Trained lAnguage model (SPARTA) to effectively leverage knowledge from single-turn question generation instances. To validate the zero-shot performance of SPARTA, we conduct extensive experiments on three conversational datasets: CoQA, QuAC, and DoQA by transferring knowledge from three single-turn datasets: MS MARCO, NewsQA, and SQuAD. The experimental results demonstrate the superior performance of our method. Specifically, SPARTA has achieved 14.81 BLEU-4 (88.2{\\%} absolute improvement compared to T5) in CoQA with knowledge transferred from SQuAD.\",\n}\n",
+    "authors": [
+        "Hongwei Zeng",
+        "Bifan Wei",
+        "Jun Liu",
+        "Weiping Fu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.500.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/5e1caed1-5ced-58ed-baa6-24754cdc635d.pdf",
+    "abstract": "Conversational question generation aims to generate questions that depend on both context and conversation history. Conventional works utilizing deep learning have shown promising results, but heavily rely on the availability of large-scale annotated conversations. In this paper, we introduce a more realistic and less explored setting, Zero-shot Conversational Question Generation (ZeroCQG), which requires no human-labeled conversations for training. To solve ZeroCQG, we propose a multi-stage knowledge transfer framework, Synthesize, Prompt, and trAnsfer with pRe-Trained lAnguage model (SPARTA) to effectively leverage knowledge from single-turn question generation instances. To validate the zero-shot performance of SPARTA, we conduct extensive experiments on three conversational datasets: CoQA, QuAC, and DoQA by transferring knowledge from three single-turn datasets: MS MARCO, NewsQA, and SQuAD. The experimental results demonstrate the superior performance of our method. Specifically, SPARTA has achieved 14.81 BLEU-4 (88.2% absolute improvement compared to T5) in CoQA with knowledge transferred from SQuAD.",
+    "num_pages": 22
+}

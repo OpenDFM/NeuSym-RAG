@@ -1,0 +1,17 @@
+{
+    "uuid": "2feafd63-f1f0-57d0-b1d2-68dd997ca16e",
+    "title": "UltraSparseBERT: 99% Conditionally Sparse Language Modelling",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{belcak-wattenhofer-2024-ultrasparsebert,\n    title = \"{U}ltra{S}parse{BERT}: 99{\\%} Conditionally Sparse Language Modelling\",\n    author = \"Belcak, Peter  and\n      Wattenhofer, Roger\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-short.10\",\n    doi = \"10.18653/v1/2024.acl-short.10\",\n    pages = \"104--108\",\n    abstract = \"We present UltraSparseBERT, a BERT variant that uses 0.3{\\%} of its neurons during inference while performing on par with similar BERT models. UltraSparseBERT selectively engages just 12 out of 4095 neurons for each layer inference. This is achieved by reorganizing feedforward networks into fast feedforward networks (FFFs).To showcase but one benefit of high sparsity, we provide an Intel MKL implementation achieving 78x speedup over the optimized feedforward baseline on CPUs, and an OpenAI Triton implementation performing forward passes 4.1x faster than the corresponding native GPU implementation. The training and benchmarking code is enclosed.\",\n}\n",
+    "authors": [
+        "Peter Belcak",
+        "Roger Wattenhofer"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-short.10.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/2feafd63-f1f0-57d0-b1d2-68dd997ca16e.pdf",
+    "abstract": "We present UltraSparseBERT, a BERT variant that uses 0.3% of its neurons during inference while performing on par with similar BERT models. UltraSparseBERT selectively engages just 12 out of 4095 neurons for each layer inference. This is achieved by reorganizing feedforward networks into fast feedforward networks (FFFs).To showcase but one benefit of high sparsity, we provide an Intel MKL implementation achieving 78x speedup over the optimized feedforward baseline on CPUs, and an OpenAI Triton implementation performing forward passes 4.1x faster than the corresponding native GPU implementation. The training and benchmarking code is enclosed.",
+    "num_pages": 5
+}

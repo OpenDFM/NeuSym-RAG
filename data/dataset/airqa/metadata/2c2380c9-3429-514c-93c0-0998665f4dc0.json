@@ -1,0 +1,22 @@
+{
+    "uuid": "2c2380c9-3429-514c-93c0-0998665f4dc0",
+    "title": "Automated Metrics for Medical Multi-Document Summarization Disagree with Human Evaluations",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2023-automated,\n    title = \"Automated Metrics for Medical Multi-Document Summarization Disagree with Human Evaluations\",\n    author = \"Wang, Lucy Lu  and\n      Otmakhova, Yulia  and\n      DeYoung, Jay  and\n      Truong, Thinh Hung  and\n      Kuehl, Bailey  and\n      Bransom, Erin  and\n      Wallace, Byron\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.549\",\n    doi = \"10.18653/v1/2023.acl-long.549\",\n    pages = \"9871--9889\",\n    abstract = \"Evaluating multi-document summarization (MDS) quality is difficult. This is especially true in the case of MDS for biomedical literature reviews, where models must synthesize contradicting evidence reported across different documents. Prior work has shown that rather than performing the task, models may exploit shortcuts that are difficult to detect using standard n-gram similarity metrics such as ROUGE. Better automated evaluation metrics are needed, but few resources exist to assess metrics when they are proposed. Therefore, we introduce a dataset of human-assessed summary quality facets and pairwise preferences to encourage and support the development of better automated evaluation methods for literature review MDS. We take advantage of community submissions to the Multi-document Summarization for Literature Review (MSLR) shared task to compile a diverse and representative sample of generated summaries. We analyze how automated summarization evaluation metrics correlate with lexical features of generated summaries, to other automated metrics including several we propose in this work, and to aspects of human-assessed summary quality. We find that not only do automated metrics fail to capture aspects of quality as assessed by humans, in many cases the system rankings produced by these metrics are anti-correlated with rankings according to human annotators.\",\n}\n",
+    "authors": [
+        "Lucy Lu Wang",
+        "Yulia Otmakhova",
+        "Jay DeYoung",
+        "Thinh Hung Truong",
+        "Bailey Kuehl",
+        "Erin Bransom",
+        "Byron Wallace"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.549.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2c2380c9-3429-514c-93c0-0998665f4dc0.pdf",
+    "abstract": "Evaluating multi-document summarization (MDS) quality is difficult. This is especially true in the case of MDS for biomedical literature reviews, where models must synthesize contradicting evidence reported across different documents. Prior work has shown that rather than performing the task, models may exploit shortcuts that are difficult to detect using standard n-gram similarity metrics such as ROUGE. Better automated evaluation metrics are needed, but few resources exist to assess metrics when they are proposed. Therefore, we introduce a dataset of human-assessed summary quality facets and pairwise preferences to encourage and support the development of better automated evaluation methods for literature review MDS. We take advantage of community submissions to the Multi-document Summarization for Literature Review (MSLR) shared task to compile a diverse and representative sample of generated summaries. We analyze how automated summarization evaluation metrics correlate with lexical features of generated summaries, to other automated metrics including several we propose in this work, and to aspects of human-assessed summary quality. We find that not only do automated metrics fail to capture aspects of quality as assessed by humans, in many cases the system rankings produced by these metrics are anti-correlated with rankings according to human annotators.",
+    "num_pages": 19
+}

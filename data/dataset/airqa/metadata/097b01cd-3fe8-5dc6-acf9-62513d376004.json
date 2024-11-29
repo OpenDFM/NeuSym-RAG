@@ -1,0 +1,22 @@
+{
+    "uuid": "097b01cd-3fe8-5dc6-acf9-62513d376004",
+    "title": "Query-Efficient Black-Box Red Teaming via Bayesian Optimization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{lee-etal-2023-query,\n    title = \"Query-Efficient Black-Box Red Teaming via {B}ayesian Optimization\",\n    author = \"Lee, Deokjae  and\n      Lee, JunYeong  and\n      Ha, Jung-Woo  and\n      Kim, Jin-Hwa  and\n      Lee, Sang-Woo  and\n      Lee, Hwaran  and\n      Song, Hyun Oh\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.646\",\n    doi = \"10.18653/v1/2023.acl-long.646\",\n    pages = \"11551--11574\",\n    abstract = \"The deployment of large-scale generative models is often restricted by their potential risk of causing harm to users in unpredictable ways. We focus on the problem of black-box red teaming, where a red team generates test cases and interacts with the victim model to discover a diverse set of failures with limited query access. Existing red teaming methods construct test cases based on human supervision or language model (LM) and query all test cases in a brute-force manner without incorporating any information from past evaluations, resulting in a prohibitively large number of queries. To this end, we propose \\textit{Bayesian red teaming} (BRT), novel query-efficient black-box red teaming methods based on Bayesian optimization, which iteratively identify diverse positive test cases leading to model failures by utilizing the pre-defined user input pool and the past evaluations. Experimental results on various user input pools demonstrate that our method consistently finds a significantly larger number of diverse positive test cases under the limited query budget than the baseline methods.The source code is available at \\url{https://github.com/snu-mllab/Bayesian-Red-Teaming}.\",\n}\n",
+    "authors": [
+        "Deokjae Lee",
+        "JunYeong Lee",
+        "Jung-Woo Ha",
+        "Jin-Hwa Kim",
+        "Sang-Woo Lee",
+        "Hwaran Lee",
+        "Hyun Oh Song"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.646.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/097b01cd-3fe8-5dc6-acf9-62513d376004.pdf",
+    "abstract": "The deployment of large-scale generative models is often restricted by their potential risk of causing harm to users in unpredictable ways. We focus on the problem of black-box red teaming, where a red team generates test cases and interacts with the victim model to discover a diverse set of failures with limited query access. Existing red teaming methods construct test cases based on human supervision or language model (LM) and query all test cases in a brute-force manner without incorporating any information from past evaluations, resulting in a prohibitively large number of queries. To this end, we propose Bayesian red teaming (BRT), novel query-efficient black-box red teaming methods based on Bayesian optimization, which iteratively identify diverse positive test cases leading to model failures by utilizing the pre-defined user input pool and the past evaluations. Experimental results on various user input pools demonstrate that our method consistently finds a significantly larger number of diverse positive test cases under the limited query budget than the baseline methods.The source code is available at https://github.com/snu-mllab/Bayesian-Red-Teaming.",
+    "num_pages": 24
+}

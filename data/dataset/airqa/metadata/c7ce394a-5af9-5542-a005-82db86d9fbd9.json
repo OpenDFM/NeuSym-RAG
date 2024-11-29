@@ -1,0 +1,21 @@
+{
+    "uuid": "c7ce394a-5af9-5542-a005-82db86d9fbd9",
+    "title": "Improving Text Embeddings with Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2024-improving-text,\n    title = \"Improving Text Embeddings with Large Language Models\",\n    author = \"Wang, Liang  and\n      Yang, Nan  and\n      Huang, Xiaolong  and\n      Yang, Linjun  and\n      Majumder, Rangan  and\n      Wei, Furu\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.642\",\n    doi = \"10.18653/v1/2024.acl-long.642\",\n    pages = \"11897--11916\",\n    abstract = \"In this paper, we introduce a novel and simple method for obtaining high-quality text embeddings using only synthetic data and less than 1k training steps. Unlike existing methods that often depend on multi-stage intermediate pre-training with billions of weakly-supervised text pairs, followed by fine-tuning with a few labeled datasets, our method does not require building complex training pipelines or relying on manually collected datasets that are often constrained by task diversity and language coverage. We leverage proprietary LLMs to generate diverse synthetic data for hundreds of thousands of text embedding tasks across 93 languages. We then fine-tune open-source decoder-only LLMs on the synthetic data using standard contrastive loss. Experiments demonstrate that our method achieves strong performance on highly competitive text embedding benchmarks without using any labeled data. Furthermore, when fine-tuned with a mixture of synthetic and labeled data, our model sets new state-of-the-art results on the BEIR and MTEB benchmarks.\",\n}\n",
+    "authors": [
+        "Liang Wang",
+        "Nan Yang",
+        "Xiaolong Huang",
+        "Linjun Yang",
+        "Rangan Majumder",
+        "Furu Wei"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.642.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/c7ce394a-5af9-5542-a005-82db86d9fbd9.pdf",
+    "abstract": "In this paper, we introduce a novel and simple method for obtaining high-quality text embeddings using only synthetic data and less than 1k training steps. Unlike existing methods that often depend on multi-stage intermediate pre-training with billions of weakly-supervised text pairs, followed by fine-tuning with a few labeled datasets, our method does not require building complex training pipelines or relying on manually collected datasets that are often constrained by task diversity and language coverage. We leverage proprietary LLMs to generate diverse synthetic data for hundreds of thousands of text embedding tasks across 93 languages. We then fine-tune open-source decoder-only LLMs on the synthetic data using standard contrastive loss. Experiments demonstrate that our method achieves strong performance on highly competitive text embedding benchmarks without using any labeled data. Furthermore, when fine-tuned with a mixture of synthetic and labeled data, our model sets new state-of-the-art results on the BEIR and MTEB benchmarks.",
+    "num_pages": 20
+}

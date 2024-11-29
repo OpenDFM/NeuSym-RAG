@@ -1,0 +1,24 @@
+{
+    "uuid": "875e65e0-8e9f-52e3-9d3e-65f15fa1ea82",
+    "title": "Learning “O” Helps for Learning More: Handling the Unlabeled Entity Problem for Class-incremental NER",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ma-etal-2023-learning,\n    title = \"Learning {``}{O}{''} Helps for Learning More: Handling the Unlabeled Entity Problem for Class-incremental {NER}\",\n    author = \"Ma, Ruotian  and\n      Chen, Xuanting  and\n      Lin, Zhang  and\n      Zhou, Xin  and\n      Wang, Junzhe  and\n      Gui, Tao  and\n      Zhang, Qi  and\n      Gao, Xiang  and\n      Chen, Yun Wen\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.328\",\n    doi = \"10.18653/v1/2023.acl-long.328\",\n    pages = \"5959--5979\",\n    abstract = \"As the categories of named entities rapidly increase, the deployed NER models are required to keep updating toward recognizing more entity types, creating a demand for class-incremental learning for NER. Considering the privacy concerns and storage constraints, the standard paradigm for class-incremental NER updates the models with training data only annotated with the new classes, yet the entities from other entity classes are regarded as {``}Non-entity{''} (or {``}O{''}). In this work, we conduct an empirical study on the {``}Unlabeled Entity Problem{''} and find that it leads to severe confusion between {``}O{''} and entities, decreasing class discrimination of old classes and declining the model{'}s ability to learn new classes. To solve the Unlabeled Entity Problem, we propose a novel representation learning method to learn discriminative representations for the entity classes and {``}O{''}. Specifically, we propose an entity-aware contrastive learning method that adaptively detects entity clusters in {``}O{''}. Furthermore, we propose two effective distance-based relabeling strategies for better learning the old classes. We introduce a more realistic and challenging benchmark for class-incremental NER, and the proposed method achieves up to 10.62{\\%} improvement over the baseline methods.\",\n}\n",
+    "authors": [
+        "Ruotian Ma",
+        "Xuanting Chen",
+        "Zhang Lin",
+        "Xin Zhou",
+        "Junzhe Wang",
+        "Tao Gui",
+        "Qi Zhang",
+        "Xiang Gao",
+        "Yun Wen Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.328.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/875e65e0-8e9f-52e3-9d3e-65f15fa1ea82.pdf",
+    "abstract": "As the categories of named entities rapidly increase, the deployed NER models are required to keep updating toward recognizing more entity types, creating a demand for class-incremental learning for NER. Considering the privacy concerns and storage constraints, the standard paradigm for class-incremental NER updates the models with training data only annotated with the new classes, yet the entities from other entity classes are regarded as “Non-entity” (or “O”). In this work, we conduct an empirical study on the “Unlabeled Entity Problem” and find that it leads to severe confusion between “O” and entities, decreasing class discrimination of old classes and declining the model’s ability to learn new classes. To solve the Unlabeled Entity Problem, we propose a novel representation learning method to learn discriminative representations for the entity classes and “O”. Specifically, we propose an entity-aware contrastive learning method that adaptively detects entity clusters in “O”. Furthermore, we propose two effective distance-based relabeling strategies for better learning the old classes. We introduce a more realistic and challenging benchmark for class-incremental NER, and the proposed method achieves up to 10.62% improvement over the baseline methods.",
+    "num_pages": 21
+}

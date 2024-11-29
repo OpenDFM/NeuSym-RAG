@@ -1,0 +1,20 @@
+{
+    "uuid": "ae906a95-7bf6-58bc-9fb8-0a6fae329274",
+    "title": "Learning Action Conditions from Instructional Manuals for Instruction Understanding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wu-etal-2023-learning,\n    title = \"Learning Action Conditions from Instructional Manuals for Instruction Understanding\",\n    author = \"Wu, Te-Lin  and\n      Zhang, Caiqi  and\n      Hu, Qingyuan  and\n      Spangher, Alexander  and\n      Peng, Nanyun\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.170\",\n    doi = \"10.18653/v1/2023.acl-long.170\",\n    pages = \"3023--3043\",\n    abstract = \"The ability to infer pre- and postconditions of an action is vital for comprehending complex instructions, and is essential for applications such as autonomous instruction-guided agents and assistive AI that supports humans to perform physical tasks. In this work, we propose a task dubbed action condition inference, which extracts mentions of preconditions and postconditions of actions in instructional manuals. We propose a weakly supervised approach utilizing automatically constructed large-scale training instances from online instructions, and curate a densely human-annotated and validated dataset to study how well the current NLP models do on the proposed task. We design two types of models differ by whether contextualized and global information is leveraged, as well as various combinations of heuristics to construct the weak supervisions.Our experiments show a {\\textgreater} 20{\\%} F1-score improvement with considering the entire instruction contexts and a {\\textgreater} 6{\\%} F1-score benefit with the proposed heuristics. However, the best performing model is still well-behind human performance.\",\n}\n",
+    "authors": [
+        "Te-Lin Wu",
+        "Caiqi Zhang",
+        "Qingyuan Hu",
+        "Alexander Spangher",
+        "Nanyun Peng"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.170.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ae906a95-7bf6-58bc-9fb8-0a6fae329274.pdf",
+    "abstract": "The ability to infer pre- and postconditions of an action is vital for comprehending complex instructions, and is essential for applications such as autonomous instruction-guided agents and assistive AI that supports humans to perform physical tasks. In this work, we propose a task dubbed action condition inference, which extracts mentions of preconditions and postconditions of actions in instructional manuals. We propose a weakly supervised approach utilizing automatically constructed large-scale training instances from online instructions, and curate a densely human-annotated and validated dataset to study how well the current NLP models do on the proposed task. We design two types of models differ by whether contextualized and global information is leveraged, as well as various combinations of heuristics to construct the weak supervisions.Our experiments show a > 20% F1-score improvement with considering the entire instruction contexts and a > 6% F1-score benefit with the proposed heuristics. However, the best performing model is still well-behind human performance.",
+    "num_pages": 21
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "2d8cad43-b02d-5668-a999-63e41c7b1fe8",
+    "title": "Iterative Nearest Neighbour Machine Translation for Unsupervised Domain Adaptation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{huang-etal-2023-iterative,\n    title = \"Iterative Nearest Neighbour Machine Translation for Unsupervised Domain Adaptation\",\n    author = \"Huang, Hui  and\n      Wu, Shuangzhi  and\n      Liang, Xinnian  and\n      Zhou, Zefan  and\n      Yang, Muyun  and\n      Zhao, Tiejun\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.840\",\n    doi = \"10.18653/v1/2023.findings-acl.840\",\n    pages = \"13294--13301\",\n    abstract = \"Unsupervised domain adaptation of machine translation, which adapts a pre-trained translation model to a specific domain without in-domain parallel data, has drawn extensive attention in recent years. However, most existing methods focus on the fine-tuning based techniques, which is non-extensible. In this paper, we propose a new method to perform unsupervised domain adaptation in a non-parametric manner. Our method only resorts to in-domain monolingual data, and we jointly perform nearest neighbour inference on both forward and backward translation directions. The forward translation model creates nearest neighbour datastore for the backward direction, and vice versa, strengthening each other in an iterative style. Experiments on multi-domain datasets demonstrate that our method significantly improves the in-domain translation performance and achieves state-of-the-art results among non-parametric methods.\",\n}\n",
+    "authors": [
+        "Hui Huang",
+        "Shuangzhi Wu",
+        "Xinnian Liang",
+        "Zefan Zhou",
+        "Muyun Yang",
+        "Tiejun Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.840.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2d8cad43-b02d-5668-a999-63e41c7b1fe8.pdf",
+    "abstract": "Unsupervised domain adaptation of machine translation, which adapts a pre-trained translation model to a specific domain without in-domain parallel data, has drawn extensive attention in recent years. However, most existing methods focus on the fine-tuning based techniques, which is non-extensible. In this paper, we propose a new method to perform unsupervised domain adaptation in a non-parametric manner. Our method only resorts to in-domain monolingual data, and we jointly perform nearest neighbour inference on both forward and backward translation directions. The forward translation model creates nearest neighbour datastore for the backward direction, and vice versa, strengthening each other in an iterative style. Experiments on multi-domain datasets demonstrate that our method significantly improves the in-domain translation performance and achieves state-of-the-art results among non-parametric methods.",
+    "num_pages": 8
+}

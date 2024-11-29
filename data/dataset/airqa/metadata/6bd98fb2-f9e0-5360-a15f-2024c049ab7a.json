@@ -1,0 +1,20 @@
+{
+    "uuid": "6bd98fb2-f9e0-5360-a15f-2024c049ab7a",
+    "title": "Towards Privacy-Aware Sign Language Translation at Scale",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{rust-etal-2024-towards,\n    title = \"Towards Privacy-Aware Sign Language Translation at Scale\",\n    author = \"Rust, Phillip  and\n      Shi, Bowen  and\n      Wang, Skyler  and\n      Camgoz, Necati Cihan  and\n      Maillard, Jean\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.467\",\n    doi = \"10.18653/v1/2024.acl-long.467\",\n    pages = \"8624--8641\",\n    abstract = \"A major impediment to the advancement of sign language translation (SLT) is data scarcity. Much of the sign language data currently available on the web cannot be used for training supervised models due to the lack of aligned captions. Furthermore, scaling SLT using large-scale web-scraped datasets bears privacy risks due to the presence of biometric information, which the responsible development of SLT technologies should account for. In this work, we propose a two-stage framework for privacy-aware SLT at scale that addresses both of these issues. We introduce SSVP-SLT, which leverages self-supervised video pretraining on anonymized and unannotated videos, followed by supervised SLT finetuning on a curated parallel dataset. SSVP-SLT achieves state-of-the-art finetuned and zero-shot gloss-free SLT performance on the How2Sign dataset, outperforming the strongest respective baselines by over 3 BLEU-4. Based on controlled experiments, we further discuss the advantages and limitations of self-supervised pretraining and anonymization via facial obfuscation for SLT.\",\n}\n",
+    "authors": [
+        "Phillip Rust",
+        "Bowen Shi",
+        "Skyler Wang",
+        "Necati Cihan Camgoz",
+        "Jean Maillard"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.467.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/6bd98fb2-f9e0-5360-a15f-2024c049ab7a.pdf",
+    "abstract": "A major impediment to the advancement of sign language translation (SLT) is data scarcity. Much of the sign language data currently available on the web cannot be used for training supervised models due to the lack of aligned captions. Furthermore, scaling SLT using large-scale web-scraped datasets bears privacy risks due to the presence of biometric information, which the responsible development of SLT technologies should account for. In this work, we propose a two-stage framework for privacy-aware SLT at scale that addresses both of these issues. We introduce SSVP-SLT, which leverages self-supervised video pretraining on anonymized and unannotated videos, followed by supervised SLT finetuning on a curated parallel dataset. SSVP-SLT achieves state-of-the-art finetuned and zero-shot gloss-free SLT performance on the How2Sign dataset, outperforming the strongest respective baselines by over 3 BLEU-4. Based on controlled experiments, we further discuss the advantages and limitations of self-supervised pretraining and anonymization via facial obfuscation for SLT.",
+    "num_pages": 18
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "d15ba3f7-23c4-55c5-b3be-24fd93448b70",
+    "title": "Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{qu-etal-2024-generation,\n    title = \"Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-{SQL} Generation\",\n    author = \"Qu, Ge  and\n      Li, Jinyang  and\n      Li, Bowen  and\n      Qin, Bowen  and\n      Huo, Nan  and\n      Ma, Chenhao  and\n      Cheng, Reynold\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.324\",\n    doi = \"10.18653/v1/2024.findings-acl.324\",\n    pages = \"5456--5471\",\n    abstract = \"Large Language Models (LLMs) driven by In-Context Learning (ICL) have significantly improved the performance of text-to-SQL. Previous methods generally employ a two-stage reasoning framework, namely 1) schema linking and 2) logical synthesis, making the framework not only effective but also interpretable. Despite these advancements, the inherent bad nature of the generalization of LLMs often results in hallucinations, which limits the full potential of LLMs. In this work, we first identify and categorize the common types of hallucinations at each stage in text-to-SQL. We then introduce a novel strategy, Task Alignment (TA), designed to mitigate hallucinations at each stage. TA encourages LLMs to take advantage of experiences from similar tasks rather than starting the tasks from scratch. This can help LLMs reduce the burden of generalization, thereby mitigating hallucinations effectively. We further propose TA-SQL, a text-to-SQL framework based on this strategy. The experimental results and comprehensive analysis demonstrate the effectiveness and robustness of our framework. Specifically, it enhances the performance of the GPT-4 baseline by 21.23{\\%} relatively on BIRD dev and it yields significant improvements across six models and four mainstream, complex text-to-SQL benchmarks.\",\n}\n",
+    "authors": [
+        "Ge Qu",
+        "Jinyang Li",
+        "Bowen Li",
+        "Bowen Qin",
+        "Nan Huo",
+        "Chenhao Ma",
+        "Reynold Cheng"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.324.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d15ba3f7-23c4-55c5-b3be-24fd93448b70.pdf",
+    "abstract": "Large Language Models (LLMs) driven by In-Context Learning (ICL) have significantly improved the performance of text-to-SQL. Previous methods generally employ a two-stage reasoning framework, namely 1) schema linking and 2) logical synthesis, making the framework not only effective but also interpretable. Despite these advancements, the inherent bad nature of the generalization of LLMs often results in hallucinations, which limits the full potential of LLMs. In this work, we first identify and categorize the common types of hallucinations at each stage in text-to-SQL. We then introduce a novel strategy, Task Alignment (TA), designed to mitigate hallucinations at each stage. TA encourages LLMs to take advantage of experiences from similar tasks rather than starting the tasks from scratch. This can help LLMs reduce the burden of generalization, thereby mitigating hallucinations effectively. We further propose TA-SQL, a text-to-SQL framework based on this strategy. The experimental results and comprehensive analysis demonstrate the effectiveness and robustness of our framework. Specifically, it enhances the performance of the GPT-4 baseline by 21.23% relatively on BIRD dev and it yields significant improvements across six models and four mainstream, complex text-to-SQL benchmarks.",
+    "num_pages": 16
+}

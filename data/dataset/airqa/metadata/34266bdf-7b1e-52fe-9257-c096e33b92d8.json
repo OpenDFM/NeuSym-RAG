@@ -1,0 +1,20 @@
+{
+    "uuid": "34266bdf-7b1e-52fe-9257-c096e33b92d8",
+    "title": "LSTPrompt: Large Language Models as Zero-Shot Time Series Forecasters by Long-Short-Term Prompting",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{liu-etal-2024-lstprompt,\n    title = \"{LSTP}rompt: Large Language Models as Zero-Shot Time Series Forecasters by Long-Short-Term Prompting\",\n    author = \"Liu, Haoxin  and\n      Zhao, Zhiyuan  and\n      Wang, Jindong  and\n      Kamarthi, Harshavardhan  and\n      Prakash, B. Aditya\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.466\",\n    doi = \"10.18653/v1/2024.findings-acl.466\",\n    pages = \"7832--7840\",\n    abstract = \"Time-series forecasting (TSF) finds broad applications in real-world scenarios. Prompting off-the-shelf Large Language Models (LLMs) demonstrates strong zero-shot TSF capabilities while preserving computational efficiency. However, existing prompting methods oversimplify TSF as language next-token predictions, overlooking its dynamic nature and lack of integration with state-of-the-art prompt strategies such as Chain-of-Thought. Thus, we propose LSTPrompt, a novel approach for prompting LLMs in zero-shot TSF tasks. LSTPrompt decomposes TSF into short-term and long-term forecasting sub-tasks, tailoring prompts to each. LSTPrompt guides LLMs to regularly reassess forecasting mechanisms to enhance adaptability. Extensive evaluations demonstrate consistently better performance of LSTPrompt than existing prompting methods, and competitive results compared to foundation TSF models.\",\n}\n",
+    "authors": [
+        "Haoxin Liu",
+        "Zhiyuan Zhao",
+        "Jindong Wang",
+        "Harshavardhan Kamarthi",
+        "B. Aditya Prakash"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.466.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/34266bdf-7b1e-52fe-9257-c096e33b92d8.pdf",
+    "abstract": "Time-series forecasting (TSF) finds broad applications in real-world scenarios. Prompting off-the-shelf Large Language Models (LLMs) demonstrates strong zero-shot TSF capabilities while preserving computational efficiency. However, existing prompting methods oversimplify TSF as language next-token predictions, overlooking its dynamic nature and lack of integration with state-of-the-art prompt strategies such as Chain-of-Thought. Thus, we propose LSTPrompt, a novel approach for prompting LLMs in zero-shot TSF tasks. LSTPrompt decomposes TSF into short-term and long-term forecasting sub-tasks, tailoring prompts to each. LSTPrompt guides LLMs to regularly reassess forecasting mechanisms to enhance adaptability. Extensive evaluations demonstrate consistently better performance of LSTPrompt than existing prompting methods, and competitive results compared to foundation TSF models.",
+    "num_pages": 9
+}

@@ -1,0 +1,29 @@
+{
+    "uuid": "1920ebd5-dcf1-5f50-a8e9-bb55976eaa03",
+    "title": "Length-Aware NMT and Adaptive Duration for Automatic Dubbing",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)",
+    "bibtex": "@inproceedings{rao-etal-2023-length,\n    title = \"Length-Aware {NMT} and Adaptive Duration for Automatic Dubbing\",\n    author = \"Rao, Zhiqiang  and\n      Shang, Hengchao  and\n      Yang, Jinlong  and\n      Wei, Daimeng  and\n      Li, Zongyao  and\n      Guo, Jiaxin  and\n      Li, Shaojun  and\n      Yu, Zhengzhe  and\n      Wu, Zhanglin  and\n      Xie, Yuhao  and\n      Wei, Bin  and\n      Zheng, Jiawei  and\n      Lei, Lizhi  and\n      Yang, Hao\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.iwslt-1.9\",\n    doi = \"10.18653/v1/2023.iwslt-1.9\",\n    pages = \"138--143\",\n    abstract = \"This paper presents the submission of Huawei Translation Services Center for the IWSLT 2023 dubbing task in the unconstrained setting. The proposed solution consists of a Transformer-based machine translation model and a phoneme duration predictor. The Transformer is deep and multiple target-to-source length-ratio class labels are used to control target lengths. The variation predictor in FastSpeech2 is utilized to predict phoneme durations. To optimize the isochrony in dubbing, re-ranking and scaling are performed. The source audio duration is used as a reference to re-rank the translations of different length-ratio labels, and the one with minimum time deviation is preferred. Additionally, the phoneme duration outputs are scaled within a defined threshold to narrow the duration gap with the source audio.\",\n}\n",
+    "authors": [
+        "Zhiqiang Rao",
+        "Hengchao Shang",
+        "Jinlong Yang",
+        "Daimeng Wei",
+        "Zongyao Li",
+        "Jiaxin Guo",
+        "Shaojun Li",
+        "Zhengzhe Yu",
+        "Zhanglin Wu",
+        "Yuhao Xie",
+        "Bin Wei",
+        "Jiawei Zheng",
+        "Lizhi Lei",
+        "Hao Yang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.iwslt-1.9.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1920ebd5-dcf1-5f50-a8e9-bb55976eaa03.pdf",
+    "abstract": "This paper presents the submission of Huawei Translation Services Center for the IWSLT 2023 dubbing task in the unconstrained setting. The proposed solution consists of a Transformer-based machine translation model and a phoneme duration predictor. The Transformer is deep and multiple target-to-source length-ratio class labels are used to control target lengths. The variation predictor in FastSpeech2 is utilized to predict phoneme durations. To optimize the isochrony in dubbing, re-ranking and scaling are performed. The source audio duration is used as a reference to re-rank the translations of different length-ratio labels, and the one with minimum time deviation is preferred. Additionally, the phoneme duration outputs are scaled within a defined threshold to narrow the duration gap with the source audio.",
+    "num_pages": 6
+}

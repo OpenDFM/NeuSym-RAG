@@ -1,0 +1,23 @@
+{
+    "uuid": "c353890a-4b6b-55bf-80e2-4b4cb9ecb8b1",
+    "title": "Predicting the Unpredictable: Uncertainty-Aware Reasoning over Temporal Knowledge Graphs via Diffusion Process",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{cai-etal-2024-predicting,\n    title = \"Predicting the Unpredictable: Uncertainty-Aware Reasoning over Temporal Knowledge Graphs via Diffusion Process\",\n    author = \"Cai, Yuxiang  and\n      Liu, Qiao  and\n      Gan, Yanglei  and\n      Li, Changlin  and\n      Liu, Xueyi  and\n      Lin, Run  and\n      Luo, Da  and\n      JiayeYang, JiayeYang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.343\",\n    doi = \"10.18653/v1/2024.findings-acl.343\",\n    pages = \"5766--5778\",\n    abstract = \"Temporal Knowledge Graph (TKG) reasoning seeks to predict future incomplete facts leveraging historical data. While existing approaches have shown effectiveness in addressing the task through various perspectives, such as graph learning and logic rules, they are limited in capturing the indeterminacy in future events, particularly in the case of rare/unseen facts. To tackle the highlighted issues, we introduce a novel approach by conceptualizing TKG reasoning as a sequence denoising process for future facts, namely DiffuTKG. Concretely, we first encodes the historical events as the conditional sequence. Then we gradually introduce Gaussian noise to corrupt target facts during the forward process and then employ a transformer-based conditional denoiser to restore them in the reverse phase. Moreover, we introduce an uncertainty regularization loss to mitigate the risk of prediction biases by favoring frequent scenarios over rare/unseen facts. Empirical results on four real-world datasets show that DiffuTKG outperforms state-of-the-art methods across multiple evaluation metrics.\",\n}\n",
+    "authors": [
+        "Yuxiang Cai",
+        "Qiao Liu",
+        "Yanglei Gan",
+        "Changlin Li",
+        "Xueyi Liu",
+        "Run Lin",
+        "Da Luo",
+        "JiayeYang JiayeYang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.343.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/c353890a-4b6b-55bf-80e2-4b4cb9ecb8b1.pdf",
+    "abstract": "Temporal Knowledge Graph (TKG) reasoning seeks to predict future incomplete facts leveraging historical data. While existing approaches have shown effectiveness in addressing the task through various perspectives, such as graph learning and logic rules, they are limited in capturing the indeterminacy in future events, particularly in the case of rare/unseen facts. To tackle the highlighted issues, we introduce a novel approach by conceptualizing TKG reasoning as a sequence denoising process for future facts, namely DiffuTKG. Concretely, we first encodes the historical events as the conditional sequence. Then we gradually introduce Gaussian noise to corrupt target facts during the forward process and then employ a transformer-based conditional denoiser to restore them in the reverse phase. Moreover, we introduce an uncertainty regularization loss to mitigate the risk of prediction biases by favoring frequent scenarios over rare/unseen facts. Empirical results on four real-world datasets show that DiffuTKG outperforms state-of-the-art methods across multiple evaluation metrics.",
+    "num_pages": 13
+}

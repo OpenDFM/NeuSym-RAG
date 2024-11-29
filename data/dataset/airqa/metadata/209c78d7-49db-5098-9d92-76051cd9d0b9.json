@@ -1,0 +1,19 @@
+{
+    "uuid": "209c78d7-49db-5098-9d92-76051cd9d0b9",
+    "title": "LENS: A Learnable Evaluation Metric for Text Simplification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{maddela-etal-2023-lens,\n    title = \"{LENS}: A Learnable Evaluation Metric for Text Simplification\",\n    author = \"Maddela, Mounica  and\n      Dou, Yao  and\n      Heineman, David  and\n      Xu, Wei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.905\",\n    doi = \"10.18653/v1/2023.acl-long.905\",\n    pages = \"16383--16408\",\n    abstract = \"Training learnable metrics using modern language models has recently emerged as a promising method for the automatic evaluation of machine translation. However, existing human evaluation datasets for text simplification have limited annotations that are based on unitary or outdated models, making them unsuitable for this approach. To address these issues, we introduce the SimpEval corpus that contains: SimpEval{\\_}past, comprising 12K human ratings on 2.4K simplifications of 24 past systems, and SimpEval{\\_}2022, a challenging simplification benchmark consisting of over 1K human ratings of 360 simplifications including GPT-3.5 generated text. Training on SimpEval, we present LENS, a Learnable Evaluation Metric for Text Simplification. Extensive empirical results show that LENS correlates much better with human judgment than existing metrics, paving the way for future progress in the evaluation of text simplification. We also introduce Rank {\\&} Rate, a human evaluation framework that rates simplifications from several models in a list-wise manner using an interactive interface, which ensures both consistency and accuracy in the evaluation process and is used to create the SimpEval datasets.\",\n}\n",
+    "authors": [
+        "Mounica Maddela",
+        "Yao Dou",
+        "David Heineman",
+        "Wei Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.905.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/209c78d7-49db-5098-9d92-76051cd9d0b9.pdf",
+    "abstract": "Training learnable metrics using modern language models has recently emerged as a promising method for the automatic evaluation of machine translation. However, existing human evaluation datasets for text simplification have limited annotations that are based on unitary or outdated models, making them unsuitable for this approach. To address these issues, we introduce the SimpEval corpus that contains: SimpEval_past, comprising 12K human ratings on 2.4K simplifications of 24 past systems, and SimpEval_2022, a challenging simplification benchmark consisting of over 1K human ratings of 360 simplifications including GPT-3.5 generated text. Training on SimpEval, we present LENS, a Learnable Evaluation Metric for Text Simplification. Extensive empirical results show that LENS correlates much better with human judgment than existing metrics, paving the way for future progress in the evaluation of text simplification. We also introduce Rank & Rate, a human evaluation framework that rates simplifications from several models in a list-wise manner using an interactive interface, which ensures both consistency and accuracy in the evaluation process and is used to create the SimpEval datasets.",
+    "num_pages": 26
+}

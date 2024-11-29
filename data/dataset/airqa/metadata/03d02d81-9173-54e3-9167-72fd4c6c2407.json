@@ -1,0 +1,20 @@
+{
+    "uuid": "03d02d81-9173-54e3-9167-72fd4c6c2407",
+    "title": "Understanding Differential Search Index for Text Retrieval",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{chen-etal-2023-understanding,\n    title = \"Understanding Differential Search Index for Text Retrieval\",\n    author = \"Chen, Xiaoyang  and\n      Liu, Yanjiang  and\n      He, Ben  and\n      Sun, Le  and\n      Sun, Yingfei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.681\",\n    doi = \"10.18653/v1/2023.findings-acl.681\",\n    pages = \"10701--10717\",\n    abstract = \"The Differentiable Search Index (DSI) is a novel information retrieval (IR) framework that utilizes a differentiable function to generate a sorted list of document identifiers in response to a given query. However, due to the black-box nature of the end-to-end neural architecture, it remains to be understood to what extent DSI possesses the basic indexing and retrieval abilities. To mitigate this gap, in this study, we define and examine three important abilities that a functioning IR framework should possess, namely, exclusivity, completeness, and relevance ordering. Our analytical experimentation shows that while DSI demonstrates proficiency in memorizing the unidirectional mapping from pseudo queries to document identifiers, it falls short in distinguishing relevant documents from random ones, thereby negatively impacting its retrieval effectiveness. To address this issue, we propose a multi-task distillation approach to enhance the retrieval quality without altering the structure of the model and successfully endow it with improved indexing abilities. Through experiments conducted on various datasets, we demonstrate that our proposed method outperforms previous DSI baselinesThe code and data for this work can be found at \\url{https://github.com/VerdureChen/Understang_DSI}.\",\n}\n",
+    "authors": [
+        "Xiaoyang Chen",
+        "Yanjiang Liu",
+        "Ben He",
+        "Le Sun",
+        "Yingfei Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.681.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/03d02d81-9173-54e3-9167-72fd4c6c2407.pdf",
+    "abstract": "The Differentiable Search Index (DSI) is a novel information retrieval (IR) framework that utilizes a differentiable function to generate a sorted list of document identifiers in response to a given query. However, due to the black-box nature of the end-to-end neural architecture, it remains to be understood to what extent DSI possesses the basic indexing and retrieval abilities. To mitigate this gap, in this study, we define and examine three important abilities that a functioning IR framework should possess, namely, exclusivity, completeness, and relevance ordering. Our analytical experimentation shows that while DSI demonstrates proficiency in memorizing the unidirectional mapping from pseudo queries to document identifiers, it falls short in distinguishing relevant documents from random ones, thereby negatively impacting its retrieval effectiveness. To address this issue, we propose a multi-task distillation approach to enhance the retrieval quality without altering the structure of the model and successfully endow it with improved indexing abilities. Through experiments conducted on various datasets, we demonstrate that our proposed method outperforms previous DSI baselinesThe code and data for this work can be found at https://github.com/VerdureChen/Understang_DSI.",
+    "num_pages": 17
+}

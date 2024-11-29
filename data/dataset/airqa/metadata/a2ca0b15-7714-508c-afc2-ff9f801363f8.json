@@ -1,0 +1,22 @@
+{
+    "uuid": "a2ca0b15-7714-508c-afc2-ff9f801363f8",
+    "title": "KorNAT: LLM Alignment Benchmark for Korean Social Values and Common Knowledge",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{lee-etal-2024-kornat,\n    title = \"{K}or{NAT}: {LLM} Alignment Benchmark for {K}orean Social Values and Common Knowledge\",\n    author = \"Lee, Jiyoung  and\n      Kim, Minwoo  and\n      Kim, Seungho  and\n      Kim, Junghwan  and\n      Won, Seunghyun  and\n      Lee, Hwaran  and\n      Choi, Edward\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.666\",\n    doi = \"10.18653/v1/2024.findings-acl.666\",\n    pages = \"11177--11213\",\n    abstract = \"To reliably deploy Large Language Models (LLMs) in a specific country, they must possess an understanding of the nation{'}s culture and basic knowledge. To this end, we introduce National Alignment, which measures the alignment between an LLM and a targeted country from two aspects: social value alignment and common knowledge alignment. We constructed KorNAT, the first benchmark that measures national alignment between LLMs and South Korea. KorNat contains 4K and 6K multiple-choice questions for social value and common knowledge, respectively. To attain an appropriately aligned ground truth in the social value dataset, we conducted a large-scale public survey with 6,174 South Koreans. For common knowledge, we created the data based on the South Korea text books and GED exams. Our dataset creation process is meticulously designed based on statistical sampling theory, and we also introduce metrics to measure national alignment, including three variations of social value alignment. We tested seven LLMs and found that only few models passed our reference score, indicating there exists room for improvement. Our dataset has received government approval following an assessment by a government-affiliated organization dedicated to evaluating dataset quality.\",\n}\n",
+    "authors": [
+        "Jiyoung Lee",
+        "Minwoo Kim",
+        "Seungho Kim",
+        "Junghwan Kim",
+        "Seunghyun Won",
+        "Hwaran Lee",
+        "Edward Choi"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.666.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a2ca0b15-7714-508c-afc2-ff9f801363f8.pdf",
+    "abstract": "To reliably deploy Large Language Models (LLMs) in a specific country, they must possess an understanding of the nation’s culture and basic knowledge. To this end, we introduce National Alignment, which measures the alignment between an LLM and a targeted country from two aspects: social value alignment and common knowledge alignment. We constructed KorNAT, the first benchmark that measures national alignment between LLMs and South Korea. KorNat contains 4K and 6K multiple-choice questions for social value and common knowledge, respectively. To attain an appropriately aligned ground truth in the social value dataset, we conducted a large-scale public survey with 6,174 South Koreans. For common knowledge, we created the data based on the South Korea text books and GED exams. Our dataset creation process is meticulously designed based on statistical sampling theory, and we also introduce metrics to measure national alignment, including three variations of social value alignment. We tested seven LLMs and found that only few models passed our reference score, indicating there exists room for improvement. Our dataset has received government approval following an assessment by a government-affiliated organization dedicated to evaluating dataset quality.",
+    "num_pages": 37
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "2ecc6ce2-ce02-5069-98f2-a13fa6f75e71",
+    "title": "Actively Supervised Clustering for Open Relation Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhao-etal-2023-actively,\n    title = \"Actively Supervised Clustering for Open Relation Extraction\",\n    author = \"Zhao, Jun  and\n      Zhang, Yongxin  and\n      Zhang, Qi  and\n      Gui, Tao  and\n      Wei, Zhongyu  and\n      Peng, Minlong  and\n      Sun, Mingming\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.273\",\n    doi = \"10.18653/v1/2023.acl-long.273\",\n    pages = \"4985--4997\",\n    abstract = \"Current clustering-based Open Relation Extraction (OpenRE) methods usually adopt a two-stage pipeline, which simultaneously learns relation representations and assignments in the first stage, then manually labels relation for each cluster. However, unsupervised objectives struggle to explicitly optimize clusters to align with relational semantics, and the number of clusters K has to be supplied in advance. In this paper, we present a novel setting, named actively supervised clustering for OpenRE. Our insight lies in that clustering learning and relation labeling can be performed simultaneously, which provides the necessary guidance for clustering without a significant increase in human effort. Along with this setting, we propose an active labeling strategy tailored for clustering. Instead of only focusing on improving the clustering of relations that have been discovered, our strategy is encouraged to discover new relations through diversity regularization. This is particularly beneficial for long-tail relations in the real world. Experimental results show that our method is able to discover almost all relational clusters in the data and improve the SOTA methods by 13.8{\\%} and 10.6{\\%}, on two datasets respectively.\",\n}\n",
+    "authors": [
+        "Jun Zhao",
+        "Yongxin Zhang",
+        "Qi Zhang",
+        "Tao Gui",
+        "Zhongyu Wei",
+        "Minlong Peng",
+        "Mingming Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.273.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2ecc6ce2-ce02-5069-98f2-a13fa6f75e71.pdf",
+    "abstract": "Current clustering-based Open Relation Extraction (OpenRE) methods usually adopt a two-stage pipeline, which simultaneously learns relation representations and assignments in the first stage, then manually labels relation for each cluster. However, unsupervised objectives struggle to explicitly optimize clusters to align with relational semantics, and the number of clusters K has to be supplied in advance. In this paper, we present a novel setting, named actively supervised clustering for OpenRE. Our insight lies in that clustering learning and relation labeling can be performed simultaneously, which provides the necessary guidance for clustering without a significant increase in human effort. Along with this setting, we propose an active labeling strategy tailored for clustering. Instead of only focusing on improving the clustering of relations that have been discovered, our strategy is encouraged to discover new relations through diversity regularization. This is particularly beneficial for long-tail relations in the real world. Experimental results show that our method is able to discover almost all relational clusters in the data and improve the SOTA methods by 13.8% and 10.6%, on two datasets respectively.",
+    "num_pages": 13
+}

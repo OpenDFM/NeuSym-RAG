@@ -1,0 +1,21 @@
+{
+    "uuid": "66501a0b-271d-5aa9-a7fb-84853c3e2e1a",
+    "title": "Can Large Language Models Mine Interpretable Financial Factors More Effectively? A Neural-Symbolic Factor Mining Agent Model",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{li-etal-2024-large-language,\n    title = \"Can Large Language Models Mine Interpretable Financial Factors More Effectively? A Neural-Symbolic Factor Mining Agent Model\",\n    author = \"Li, Zhiwei  and\n      Song, Ran  and\n      Sun, Caihong  and\n      Xu, Wei  and\n      Yu, Zhengtao  and\n      Wen, Ji-Rong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.233\",\n    doi = \"10.18653/v1/2024.findings-acl.233\",\n    pages = \"3891--3902\",\n    abstract = \"Finding interpretable factors for stock returns is the most vital issue in the empirical asset pricing domain. As data-driven methods, existing factor mining models can be categorized into symbol-based and neural-based models. Symbol-based models are interpretable but inefficient, while neural-based approaches are efficient but lack interpretability. Hence, mining interpretable factors effectively presents a significant challenge. Inspired by the success of Large Language Models (LLMs) in various tasks, we propose a FActor Mining Agent (FAMA) model that enables LLMs to integrate the strengths of both neural and symbolic models for factor mining. In this paper, FAMA consists of two main components: Cross-Sample Selection (CSS) and Chain-of-Experience (CoE). CSS addresses the homogeneity challenges in LLMs during factor mining by assimilating diverse factors as in-context samples, whereas CoE enables LLMs to leverage past successful mining experiences, expediting the mining of effective factors. Experimental evaluations on real-world stock market data demonstrate the effectiveness of our approach by surpassing the SOTA RankIC by 0.006 and RankICIR by 0.105 in predicting S{\\&}P 500 returns. Furthermore, the investment simulation shows that our model can achieve superior performance with an annualized return of 38.4{\\%} and a Sharpe ratio of 667.2{\\%}.\",\n}\n",
+    "authors": [
+        "Zhiwei Li",
+        "Ran Song",
+        "Caihong Sun",
+        "Wei Xu",
+        "Zhengtao Yu",
+        "Ji-Rong Wen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.233.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/66501a0b-271d-5aa9-a7fb-84853c3e2e1a.pdf",
+    "abstract": "Finding interpretable factors for stock returns is the most vital issue in the empirical asset pricing domain. As data-driven methods, existing factor mining models can be categorized into symbol-based and neural-based models. Symbol-based models are interpretable but inefficient, while neural-based approaches are efficient but lack interpretability. Hence, mining interpretable factors effectively presents a significant challenge. Inspired by the success of Large Language Models (LLMs) in various tasks, we propose a FActor Mining Agent (FAMA) model that enables LLMs to integrate the strengths of both neural and symbolic models for factor mining. In this paper, FAMA consists of two main components: Cross-Sample Selection (CSS) and Chain-of-Experience (CoE). CSS addresses the homogeneity challenges in LLMs during factor mining by assimilating diverse factors as in-context samples, whereas CoE enables LLMs to leverage past successful mining experiences, expediting the mining of effective factors. Experimental evaluations on real-world stock market data demonstrate the effectiveness of our approach by surpassing the SOTA RankIC by 0.006 and RankICIR by 0.105 in predicting S&P 500 returns. Furthermore, the investment simulation shows that our model can achieve superior performance with an annualized return of 38.4% and a Sharpe ratio of 667.2%.",
+    "num_pages": 12
+}

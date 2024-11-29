@@ -1,0 +1,22 @@
+{
+    "uuid": "71fb1345-e79d-56b1-811f-92da520617fa",
+    "title": "ARIES: A Corpus of Scientific Paper Edits Made in Response to Peer Reviews",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{darcy-etal-2024-aries,\n    title = \"{ARIES}: A Corpus of Scientific Paper Edits Made in Response to Peer Reviews\",\n    author = \"D{'}Arcy, Mike  and\n      Ross, Alexis  and\n      Bransom, Erin  and\n      Kuehl, Bailey  and\n      Bragg, Jonathan  and\n      Hope, Tom  and\n      Downey, Doug\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.377\",\n    doi = \"10.18653/v1/2024.acl-long.377\",\n    pages = \"6985--7001\",\n    abstract = \"We introduce the task of automatically revising scientific papers based on peer feedback and release ARIES, a dataset of review comments and their corresponding paper edits. The data is drawn from real reviewer-author interactions from computer science, and we provide labels linking each reviewer comment to the specific paper edits made by the author in response. We automatically create a high-precision silver training set, as well as an expert-labeled test set that shows high inter-annotator agreement. In experiments with 10 models covering the state of the art, we find that they struggle even to identify which edits correspond to a comment{---}especially when the relationship between the edit and the comment is indirect and requires reasoning to uncover. We also extensively analyze GPT-4{'}s ability to generate edits given a comment and the original paper. We find that it often succeeds on a superficial level, but tends to rigidly follow the wording of the feedback rather than the underlying intent, and lacks technical details compared to human-written edits.\",\n}\n",
+    "authors": [
+        "Mike D’Arcy",
+        "Alexis Ross",
+        "Erin Bransom",
+        "Bailey Kuehl",
+        "Jonathan Bragg",
+        "Tom Hope",
+        "Doug Downey"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.377.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/71fb1345-e79d-56b1-811f-92da520617fa.pdf",
+    "abstract": "We introduce the task of automatically revising scientific papers based on peer feedback and release ARIES, a dataset of review comments and their corresponding paper edits. The data is drawn from real reviewer-author interactions from computer science, and we provide labels linking each reviewer comment to the specific paper edits made by the author in response. We automatically create a high-precision silver training set, as well as an expert-labeled test set that shows high inter-annotator agreement. In experiments with 10 models covering the state of the art, we find that they struggle even to identify which edits correspond to a comment—especially when the relationship between the edit and the comment is indirect and requires reasoning to uncover. We also extensively analyze GPT-4’s ability to generate edits given a comment and the original paper. We find that it often succeeds on a superficial level, but tends to rigidly follow the wording of the feedback rather than the underlying intent, and lacks technical details compared to human-written edits.",
+    "num_pages": 17
+}

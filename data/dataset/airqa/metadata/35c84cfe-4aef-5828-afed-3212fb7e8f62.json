@@ -1,0 +1,22 @@
+{
+    "uuid": "35c84cfe-4aef-5828-afed-3212fb7e8f62",
+    "title": "Learning-From-Mistakes Prompting for Indigenous Language Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the Seventh Workshop on Technologies for Machine Translation of Low-Resource Languages (LoResMT 2024)",
+    "bibtex": "@inproceedings{liao-etal-2024-learning,\n    title = \"Learning-From-Mistakes Prompting for Indigenous Language Translation\",\n    author = \"Liao, You Cheng  and\n      Yu, Chen-Jui  and\n      Lin, Chi-Yi  and\n      Yun, He-Feng  and\n      Wang, Yen-Hsiang  and\n      Li, Hsiao-Min  and\n      Fan, Yao-Chung\",\n    editor = \"Ojha, Atul Kr.  and\n      Liu, Chao-hong  and\n      Vylomova, Ekaterina  and\n      Pirinen, Flammie  and\n      Abbott, Jade  and\n      Washington, Jonathan  and\n      Oco, Nathaniel  and\n      Malykh, Valentin  and\n      Logacheva, Varvara  and\n      Zhao, Xiaobing\",\n    booktitle = \"Proceedings of the Seventh Workshop on Technologies for Machine Translation of Low-Resource Languages (LoResMT 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.loresmt-1.15\",\n    doi = \"10.18653/v1/2024.loresmt-1.15\",\n    pages = \"146--158\",\n    abstract = \"Using large language models, this paper presents techniques to improve extremely low-resourced indigenous language translations. Our approaches are grounded in the use of (1) the presence of a datastore consisting of a limited number of parallel translation examples, (2) the inherent capabilities of LLMs like GPT-3.5, and (3) a word-level translation dictionary. We harness the potential of LLMs and in-context learning techniques in such a setting for using LLM as universal translators for extremely low-resourced languages. Our methodology hinges on utilizing LLMs as language compilers for selected language pairs, hypothesizing that they could internalize syntactic structures to facilitate accurate translation. We introduce three techniques: KNN-Prompting with Retrieved Prompting Context, Chain-of-Thought Prompting, and Learning-from-Mistakes Prompting, with the last method addressing past errors. The evaluation results suggest that, even with limited corpora, LLMs, when paired with proper prompting, can effectively translate extremely low-resource languages.\",\n}\n",
+    "authors": [
+        "You Cheng Liao",
+        "Chen-Jui Yu",
+        "Chi-Yi Lin",
+        "He-Feng Yun",
+        "Yen-Hsiang Wang",
+        "Hsiao-Min Li",
+        "Yao-Chung Fan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.loresmt-1.15.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/35c84cfe-4aef-5828-afed-3212fb7e8f62.pdf",
+    "abstract": "Using large language models, this paper presents techniques to improve extremely low-resourced indigenous language translations. Our approaches are grounded in the use of (1) the presence of a datastore consisting of a limited number of parallel translation examples, (2) the inherent capabilities of LLMs like GPT-3.5, and (3) a word-level translation dictionary. We harness the potential of LLMs and in-context learning techniques in such a setting for using LLM as universal translators for extremely low-resourced languages. Our methodology hinges on utilizing LLMs as language compilers for selected language pairs, hypothesizing that they could internalize syntactic structures to facilitate accurate translation. We introduce three techniques: KNN-Prompting with Retrieved Prompting Context, Chain-of-Thought Prompting, and Learning-from-Mistakes Prompting, with the last method addressing past errors. The evaluation results suggest that, even with limited corpora, LLMs, when paired with proper prompting, can effectively translate extremely low-resource languages.",
+    "num_pages": 13
+}

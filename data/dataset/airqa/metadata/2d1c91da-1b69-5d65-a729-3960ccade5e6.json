@@ -1,0 +1,23 @@
+{
+    "uuid": "2d1c91da-1b69-5d65-a729-3960ccade5e6",
+    "title": "KG-FLIP: Knowledge-guided Fashion-domain Language-Image Pre-training for E-commerce",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{jia-etal-2023-kg,\n    title = \"{KG}-{FLIP}: Knowledge-guided Fashion-domain Language-Image Pre-training for {E}-commerce\",\n    author = \"Jia, Qinjin  and\n      Liu, Yang  and\n      Wu, Daoping  and\n      Xu, Shaoyuan  and\n      Liu, Huidong  and\n      Fu, Jinmiao  and\n      Vollgraf, Roland  and\n      Wang, Bryan\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.9\",\n    doi = \"10.18653/v1/2023.acl-industry.9\",\n    pages = \"81--88\",\n    abstract = \"Various Vision-Language Pre-training (VLP) models (e.g., CLIP, BLIP) have sprung up and dramatically advanced the benchmarks for public general-domain datasets (e.g., COCO, Flickr30k). Such models usually learn the cross-modal alignment from large-scale well-aligned image-text datasets without leveraging external knowledge. Adapting these models to downstream applications in specific domains like fashion requires fine-grained in-domain image-text corpus, which are usually less semantically aligned and in small scale that requires efficient pre-training strategies. In this paper, we propose a knowledge-guided fashion-domain language-image pre-training (FLIP) framework that focuses on learning fine-grained representations in e-commerce domain and utilizes external knowledge (i.e., product attribute schema), to improve the pre-training efficiency. Experiments demonstrate that FLIP outperforms previous state-of-the-art VLP models on Amazon data and on the Fashion-Gen dataset by large margins. FLIP has been successfully deployed in the Amazon catalog system to backfill missing attributes and improve the customer shopping experience.\",\n}\n",
+    "authors": [
+        "Qinjin Jia",
+        "Yang Liu",
+        "Daoping Wu",
+        "Shaoyuan Xu",
+        "Huidong Liu",
+        "Jinmiao Fu",
+        "Roland Vollgraf",
+        "Bryan Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.9.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2d1c91da-1b69-5d65-a729-3960ccade5e6.pdf",
+    "abstract": "Various Vision-Language Pre-training (VLP) models (e.g., CLIP, BLIP) have sprung up and dramatically advanced the benchmarks for public general-domain datasets (e.g., COCO, Flickr30k). Such models usually learn the cross-modal alignment from large-scale well-aligned image-text datasets without leveraging external knowledge. Adapting these models to downstream applications in specific domains like fashion requires fine-grained in-domain image-text corpus, which are usually less semantically aligned and in small scale that requires efficient pre-training strategies. In this paper, we propose a knowledge-guided fashion-domain language-image pre-training (FLIP) framework that focuses on learning fine-grained representations in e-commerce domain and utilizes external knowledge (i.e., product attribute schema), to improve the pre-training efficiency. Experiments demonstrate that FLIP outperforms previous state-of-the-art VLP models on Amazon data and on the Fashion-Gen dataset by large margins. FLIP has been successfully deployed in the Amazon catalog system to backfill missing attributes and improve the customer shopping experience.",
+    "num_pages": 8
+}

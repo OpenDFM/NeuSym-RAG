@@ -1,0 +1,21 @@
+{
+    "uuid": "599861ff-2357-5fd0-817b-17c61c55f7f7",
+    "title": "Knowledge-to-SQL: Enhancing SQL Generation with Data Expert LLM",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{hong-etal-2024-knowledge,\n    title = \"Knowledge-to-{SQL}: Enhancing {SQL} Generation with Data Expert {LLM}\",\n    author = \"Hong, Zijin  and\n      Yuan, Zheng  and\n      Chen, Hao  and\n      Zhang, Qinggang  and\n      Huang, Feiran  and\n      Huang, Xiao\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.653\",\n    doi = \"10.18653/v1/2024.findings-acl.653\",\n    pages = \"10997--11008\",\n    abstract = \"Generating accurate SQL queries for user questions (text-to-SQL) has been a long-standing challenge since it requires a deep understanding of both the user{'}s question and the corresponding database schema in order to retrieve the desired content accurately. Existing methods rely on the comprehensive capability of large language models (LLMs) to generate the SQL. However, some necessary knowledge is not explicitly included in the database schema and user question or has been learned by LLMs. Thus, the generated SQL of the knowledge-insufficient questions may be inaccurate, negatively influencing the text-to-SQL models{'} performance and robustness. To address this challenge, we propose the Knowledge-to-SQL framework, which employs tailored Data Expert LLM (DELLM) to provide helpful knowledge for all text-to-SQL models. Specifically, we introduce the detailed implementation of DELLM regarding table reading and the basic fine-tuning process. We further propose a Preference Learning via Database Feedback (PLDBF) strategy, refining the DELLM to generate more helpful knowledge for LLMs. Extensive experiments verify that DELLM can enhance the state-of-the-art approaches for text-to-SQL tasks. The corresponding code of DELLM is released for further research.\",\n}\n",
+    "authors": [
+        "Zijin Hong",
+        "Zheng Yuan",
+        "Hao Chen",
+        "Qinggang Zhang",
+        "Feiran Huang",
+        "Xiao Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.653.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/599861ff-2357-5fd0-817b-17c61c55f7f7.pdf",
+    "abstract": "Generating accurate SQL queries for user questions (text-to-SQL) has been a long-standing challenge since it requires a deep understanding of both the user’s question and the corresponding database schema in order to retrieve the desired content accurately. Existing methods rely on the comprehensive capability of large language models (LLMs) to generate the SQL. However, some necessary knowledge is not explicitly included in the database schema and user question or has been learned by LLMs. Thus, the generated SQL of the knowledge-insufficient questions may be inaccurate, negatively influencing the text-to-SQL models’ performance and robustness. To address this challenge, we propose the Knowledge-to-SQL framework, which employs tailored Data Expert LLM (DELLM) to provide helpful knowledge for all text-to-SQL models. Specifically, we introduce the detailed implementation of DELLM regarding table reading and the basic fine-tuning process. We further propose a Preference Learning via Database Feedback (PLDBF) strategy, refining the DELLM to generate more helpful knowledge for LLMs. Extensive experiments verify that DELLM can enhance the state-of-the-art approaches for text-to-SQL tasks. The corresponding code of DELLM is released for further research.",
+    "num_pages": 12
+}

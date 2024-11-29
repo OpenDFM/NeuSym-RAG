@@ -1,0 +1,18 @@
+{
+    "uuid": "19823a5d-3a42-53dc-a438-a4a0bef4aa10",
+    "title": "Adversarial Training for Low-Resource Disfluency Correction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{bhat-etal-2023-adversarial,\n    title = \"Adversarial Training for Low-Resource Disfluency Correction\",\n    author = \"Bhat, Vineet  and\n      Jyothi, Preethi  and\n      Bhattacharyya, Pushpak\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.514\",\n    doi = \"10.18653/v1/2023.findings-acl.514\",\n    pages = \"8112--8122\",\n    abstract = \"Disfluencies commonly occur in conversational speech. Speech with disfluencies can result in noisy Automatic Speech Recognition (ASR) transcripts, which affects downstream tasks like machine translation. In this paper, we propose an adversarially-trained sequence-tagging model for Disfluency Correction (DC) that utilizes a small amount of labeled real disfluent data in conjunction with a large amount of unlabeled data. We show the benefit of our proposed technique, which crucially depends on synthetically generated disfluent data, by evaluating it for DC in three Indian languages- Bengali, Hindi, and Marathi (all from the Indo-Aryan family). Our technique also performs well in removing stuttering disfluencies in ASR transcripts introduced by speech impairments. We achieve an average 6.15 points improvement in F1-score over competitive baselines across all three languages mentioned. To the best of our knowledge, we are the first to utilize adversarial training for DC and use it to correct stuttering disfluencies in English, establishing a new benchmark for this task.\",\n}\n",
+    "authors": [
+        "Vineet Bhat",
+        "Preethi Jyothi",
+        "Pushpak Bhattacharyya"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.514.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/19823a5d-3a42-53dc-a438-a4a0bef4aa10.pdf",
+    "abstract": "Disfluencies commonly occur in conversational speech. Speech with disfluencies can result in noisy Automatic Speech Recognition (ASR) transcripts, which affects downstream tasks like machine translation. In this paper, we propose an adversarially-trained sequence-tagging model for Disfluency Correction (DC) that utilizes a small amount of labeled real disfluent data in conjunction with a large amount of unlabeled data. We show the benefit of our proposed technique, which crucially depends on synthetically generated disfluent data, by evaluating it for DC in three Indian languages- Bengali, Hindi, and Marathi (all from the Indo-Aryan family). Our technique also performs well in removing stuttering disfluencies in ASR transcripts introduced by speech impairments. We achieve an average 6.15 points improvement in F1-score over competitive baselines across all three languages mentioned. To the best of our knowledge, we are the first to utilize adversarial training for DC and use it to correct stuttering disfluencies in English, establishing a new benchmark for this task.",
+    "num_pages": 11
+}

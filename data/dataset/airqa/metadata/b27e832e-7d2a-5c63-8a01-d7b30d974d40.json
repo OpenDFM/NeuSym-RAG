@@ -1,0 +1,22 @@
+{
+    "uuid": "b27e832e-7d2a-5c63-8a01-d7b30d974d40",
+    "title": "POMP: Probability-driven Meta-graph Prompter for LLMs in Low-resource Unsupervised Neural Machine Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{pan-etal-2024-pomp,\n    title = \"{POMP}: Probability-driven Meta-graph Prompter for {LLM}s in Low-resource Unsupervised Neural Machine Translation\",\n    author = \"Pan, Shilong  and\n      Tian, Zhiliang  and\n      Ding, Liang  and\n      Zheng, Haoqi  and\n      Huang, Zhen  and\n      Wen, Zhihua  and\n      Li, Dongsheng\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.537\",\n    doi = \"10.18653/v1/2024.acl-long.537\",\n    pages = \"9976--9992\",\n    abstract = \"Low-resource languages (LRLs) face challenges in supervised neural machine translation (NMT) due to limited parallel data, prompting research in unsupervised NMT.Unsupervised NMT (UNMT), without requiring ground truth, provides solutions for LRL translations using synthetic pseudo-parallel data and parallel data from auxiliary language pairs. However, they usually encounter translation errors, including errors from synthetic data and from auxiliary language pairs with linguistic biases.We argue that large language models (LLMs) mitigate UNMT{'}s translation errors by dynamically organizing auxiliary languages in prompts to improve LRL translations. In this paper, we propose $\\textbf{P}$r$\\textbf{O}$bability-driven $\\textbf{M}$eta-graph $\\textbf{P}$rompter (POMP), an approach employing a dynamic graph to organize multiple auxiliary languages, to prompt LLMs in LRL translations. POMP proposes a language-specific meta-graph that dynamically samples multiple translation paths to organize auxiliary languages in constructing prompts. Following the path, POMP prompts LLMs to translate with a mixture of auxiliary languages. We achieve the meta-graph{'}s evolution by back-propagating evaluation scores to update probabilities on the graph.Our experimental improvements show POMP{'}s effectiveness on LRLs{'} translation.\",\n}\n",
+    "authors": [
+        "Shilong Pan",
+        "Zhiliang Tian",
+        "Liang Ding",
+        "Haoqi Zheng",
+        "Zhen Huang",
+        "Zhihua Wen",
+        "Dongsheng Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.537.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/b27e832e-7d2a-5c63-8a01-d7b30d974d40.pdf",
+    "abstract": "Low-resource languages (LRLs) face challenges in supervised neural machine translation (NMT) due to limited parallel data, prompting research in unsupervised NMT.Unsupervised NMT (UNMT), without requiring ground truth, provides solutions for LRL translations using synthetic pseudo-parallel data and parallel data from auxiliary language pairs. However, they usually encounter translation errors, including errors from synthetic data and from auxiliary language pairs with linguistic biases.We argue that large language models (LLMs) mitigate UNMT’s translation errors by dynamically organizing auxiliary languages in prompts to improve LRL translations. In this paper, we propose PrObability-driven Meta-graph Prompter (POMP), an approach employing a dynamic graph to organize multiple auxiliary languages, to prompt LLMs in LRL translations. POMP proposes a language-specific meta-graph that dynamically samples multiple translation paths to organize auxiliary languages in constructing prompts. Following the path, POMP prompts LLMs to translate with a mixture of auxiliary languages. We achieve the meta-graph’s evolution by back-propagating evaluation scores to update probabilities on the graph.Our experimental improvements show POMP’s effectiveness on LRLs’ translation.",
+    "num_pages": 17
+}

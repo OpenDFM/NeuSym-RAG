@@ -1,0 +1,26 @@
+{
+    "uuid": "bc903e0d-9971-587b-8508-404e71c2b4f0",
+    "title": "XMD: An End-to-End Framework for Interactive Explanation-Based Debugging of NLP Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)",
+    "bibtex": "@inproceedings{lee-etal-2023-xmd,\n    title = \"{XMD}: An End-to-End Framework for Interactive Explanation-Based Debugging of {NLP} Models\",\n    author = \"Lee, Dong-Ho  and\n      Kadakia, Akshen  and\n      Joshi, Brihi  and\n      Chan, Aaron  and\n      Liu, Ziyi  and\n      Narahari, Kiran  and\n      Shibuya, Takashi  and\n      Mitani, Ryosuke  and\n      Sekiya, Toshiyuki  and\n      Pujara, Jay  and\n      Ren, Xiang\",\n    editor = \"Bollegala, Danushka  and\n      Huang, Ruihong  and\n      Ritter, Alan\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-demo.25\",\n    doi = \"10.18653/v1/2023.acl-demo.25\",\n    pages = \"264--273\",\n    abstract = \"NLP models are susceptible to learning spurious biases (i.e., bugs) that work on some datasets but do not properly reflect the underlying task. Explanation-based model debugging aims to resolve spurious biases by showing human users explanations of model behavior, asking users to give feedback on the behavior, thenusing the feedback to update the model. While existing model debugging methods have shown promise, their prototype-level implementations provide limited practical utility. Thus, we propose XMD: the first open-source, end-to-end framework for explanation-based model debugging. Given task- or instance-level explanations,users can flexibly provide various forms of feedback via an intuitive, web-based UI. After receiving user feedback, XMD automatically updates the model in real time, by regularizing the model so that its explanationsalign with the user feedback. The new model can then be easily deployed into real-world applications via Hugging Face. Using XMD, we can improve the model{'}s OOD performance on text classification tasks by up to 18{\\%}.\",\n}\n",
+    "authors": [
+        "Dong-Ho Lee",
+        "Akshen Kadakia",
+        "Brihi Joshi",
+        "Aaron Chan",
+        "Ziyi Liu",
+        "Kiran Narahari",
+        "Takashi Shibuya",
+        "Ryosuke Mitani",
+        "Toshiyuki Sekiya",
+        "Jay Pujara",
+        "Xiang Ren"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-demo.25.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/bc903e0d-9971-587b-8508-404e71c2b4f0.pdf",
+    "abstract": "NLP models are susceptible to learning spurious biases (i.e., bugs) that work on some datasets but do not properly reflect the underlying task. Explanation-based model debugging aims to resolve spurious biases by showing human users explanations of model behavior, asking users to give feedback on the behavior, thenusing the feedback to update the model. While existing model debugging methods have shown promise, their prototype-level implementations provide limited practical utility. Thus, we propose XMD: the first open-source, end-to-end framework for explanation-based model debugging. Given task- or instance-level explanations,users can flexibly provide various forms of feedback via an intuitive, web-based UI. After receiving user feedback, XMD automatically updates the model in real time, by regularizing the model so that its explanationsalign with the user feedback. The new model can then be easily deployed into real-world applications via Hugging Face. Using XMD, we can improve the model’s OOD performance on text classification tasks by up to 18%.",
+    "num_pages": 10
+}

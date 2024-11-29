@@ -1,0 +1,18 @@
+{
+    "uuid": "06ae2795-5f67-5d3c-a3ae-532e5eb609c5",
+    "title": "Unsupervised Distractor Generation via Large Language Model Distilling and Counterfactual Contrastive Decoding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{qu-etal-2024-unsupervised,\n    title = \"Unsupervised Distractor Generation via Large Language Model Distilling and Counterfactual Contrastive Decoding\",\n    author = \"Qu, Fanyi  and\n      Sun, Hao  and\n      Wu, Yunfang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.47\",\n    doi = \"10.18653/v1/2024.findings-acl.47\",\n    pages = \"827--838\",\n    abstract = \"Within the context of reading comprehension, the task of Distractor Generation (DG) aims to generate several incorrect options to confuse readers. In recent years, the emergence of Large Language Models (LLMs) provides a potential for unsupervised DG without expensive human-annotated distractor labels. In this paper, we leverage LLMs as a cost-effective annotator to enhance the DG capability of smaller student models. To perform knowledge distilling, we propose a dual task training framework that integrates pseudo distractors from LLMs and answer information as the objective target with a two-stage training process. Moreover, we devise a counterfactual contrastive decoding mechanism for increasing the distracting capability of the DG model. Experiments show that our unsupervised generation method with Bart-base greatly surpasses GPT-3.5-turbo zero-shot performance with only 200$\\times$ fewer model parameters. Our proposed unsupervised DG method offers a cost-effective framework for practical reading comprehension applications, without the need of laborious distractor annotation and costly large-size models.\",\n}\n",
+    "authors": [
+        "Fanyi Qu",
+        "Hao Sun",
+        "Yunfang Wu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.47.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/06ae2795-5f67-5d3c-a3ae-532e5eb609c5.pdf",
+    "abstract": "Within the context of reading comprehension, the task of Distractor Generation (DG) aims to generate several incorrect options to confuse readers. In recent years, the emergence of Large Language Models (LLMs) provides a potential for unsupervised DG without expensive human-annotated distractor labels. In this paper, we leverage LLMs as a cost-effective annotator to enhance the DG capability of smaller student models. To perform knowledge distilling, we propose a dual task training framework that integrates pseudo distractors from LLMs and answer information as the objective target with a two-stage training process. Moreover, we devise a counterfactual contrastive decoding mechanism for increasing the distracting capability of the DG model. Experiments show that our unsupervised generation method with Bart-base greatly surpasses GPT-3.5-turbo zero-shot performance with only 200× fewer model parameters. Our proposed unsupervised DG method offers a cost-effective framework for practical reading comprehension applications, without the need of laborious distractor annotation and costly large-size models.",
+    "num_pages": 12
+}

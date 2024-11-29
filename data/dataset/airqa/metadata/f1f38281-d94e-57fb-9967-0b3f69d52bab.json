@@ -1,0 +1,20 @@
+{
+    "uuid": "f1f38281-d94e-57fb-9967-0b3f69d52bab",
+    "title": "Dwell in the Beginning: How Language Models Embed Long Documents for Dense Retrieval",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{coelho-etal-2024-dwell,\n    title = \"Dwell in the Beginning: How Language Models Embed Long Documents for Dense Retrieval\",\n    author = \"Coelho, Jo{\\~a}o  and\n      Martins, Bruno  and\n      Magalhaes, Joao  and\n      Callan, Jamie  and\n      Xiong, Chenyan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-short.35\",\n    doi = \"10.18653/v1/2024.acl-short.35\",\n    pages = \"370--377\",\n    abstract = \"This study investigates the existence of positional biases in Transformer-based language models for text representation learning, particularly in the context of web document retrieval. We build on previous research that demonstrated loss of information in the middle of input sequences for causal language models, extending it to the domain of embedding learning. We examine positional biases at multiple stages of the training pipeline for an encoder-decoder neural retrieval model, namely language model pre-training, contrastive pre-training, and contrastive fine-tuning. Experiments with the MS-MARCO document collection reveal that after contrastive pre-training the model already generates embeddings that better capture the beginning of the input content, with fine-tuning further aggravating this effect.\",\n}\n",
+    "authors": [
+        "João Coelho",
+        "Bruno Martins",
+        "Joao Magalhaes",
+        "Jamie Callan",
+        "Chenyan Xiong"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-short.35.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/f1f38281-d94e-57fb-9967-0b3f69d52bab.pdf",
+    "abstract": "This study investigates the existence of positional biases in Transformer-based language models for text representation learning, particularly in the context of web document retrieval. We build on previous research that demonstrated loss of information in the middle of input sequences for causal language models, extending it to the domain of embedding learning. We examine positional biases at multiple stages of the training pipeline for an encoder-decoder neural retrieval model, namely language model pre-training, contrastive pre-training, and contrastive fine-tuning. Experiments with the MS-MARCO document collection reveal that after contrastive pre-training the model already generates embeddings that better capture the beginning of the input content, with fine-tuning further aggravating this effect.",
+    "num_pages": 8
+}

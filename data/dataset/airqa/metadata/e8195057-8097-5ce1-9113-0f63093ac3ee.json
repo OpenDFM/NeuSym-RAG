@@ -1,0 +1,26 @@
+{
+    "uuid": "e8195057-8097-5ce1-9113-0f63093ac3ee",
+    "title": "Revisiting the Gold Standard: Grounding Summarization Evaluation with Robust Human Evaluation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{liu-etal-2023-revisiting,\n    title = \"Revisiting the Gold Standard: Grounding Summarization Evaluation with Robust Human Evaluation\",\n    author = \"Liu, Yixin  and\n      Fabbri, Alex  and\n      Liu, Pengfei  and\n      Zhao, Yilun  and\n      Nan, Linyong  and\n      Han, Ruilin  and\n      Han, Simeng  and\n      Joty, Shafiq  and\n      Wu, Chien-Sheng  and\n      Xiong, Caiming  and\n      Radev, Dragomir\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.228\",\n    doi = \"10.18653/v1/2023.acl-long.228\",\n    pages = \"4140--4170\",\n    abstract = \"Human evaluation is the foundation upon which the evaluation of both summarization systems and automatic metrics rests. However, existing human evaluation studies for summarization either exhibit a low inter-annotator agreement or have insufficient scale, and an in-depth analysis of human evaluation is lacking. Therefore, we address the shortcomings of existing summarization evaluation along the following axes: (1) We propose a modified summarization salience protocol, Atomic Content Units (ACUs), which is based on fine-grained semantic units and allows for a high inter-annotator agreement. (2) We curate the Robust Summarization Evaluation (RoSE) benchmark, a large human evaluation dataset consisting of 22,000 summary-level annotations over 28 top-performing systems on three datasets. (3) We conduct a comparative study of four human evaluation protocols, underscoring potential confounding factors in evaluation setups. (4) We evaluate 50 automatic metrics and their variants using the collected human annotations across evaluation protocols and demonstrate how our benchmark leads to more statistically stable and significant results. The metrics we benchmarked include recent methods based on large language models (LLMs), GPTScore and G-Eval. Furthermore, our findings have important implications for evaluating LLMs, as we show that LLMs adjusted by human feedback (e.g., GPT-3.5) may overfit unconstrained human evaluation, which is affected by the annotators{'} prior, input-agnostic preferences, calling for more robust, targeted evaluation methods.\",\n}\n",
+    "authors": [
+        "Yixin Liu",
+        "Alex Fabbri",
+        "Pengfei Liu",
+        "Yilun Zhao",
+        "Linyong Nan",
+        "Ruilin Han",
+        "Simeng Han",
+        "Shafiq Joty",
+        "Chien-Sheng Wu",
+        "Caiming Xiong",
+        "Dragomir Radev"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.228.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/e8195057-8097-5ce1-9113-0f63093ac3ee.pdf",
+    "abstract": "Human evaluation is the foundation upon which the evaluation of both summarization systems and automatic metrics rests. However, existing human evaluation studies for summarization either exhibit a low inter-annotator agreement or have insufficient scale, and an in-depth analysis of human evaluation is lacking. Therefore, we address the shortcomings of existing summarization evaluation along the following axes: (1) We propose a modified summarization salience protocol, Atomic Content Units (ACUs), which is based on fine-grained semantic units and allows for a high inter-annotator agreement. (2) We curate the Robust Summarization Evaluation (RoSE) benchmark, a large human evaluation dataset consisting of 22,000 summary-level annotations over 28 top-performing systems on three datasets. (3) We conduct a comparative study of four human evaluation protocols, underscoring potential confounding factors in evaluation setups. (4) We evaluate 50 automatic metrics and their variants using the collected human annotations across evaluation protocols and demonstrate how our benchmark leads to more statistically stable and significant results. The metrics we benchmarked include recent methods based on large language models (LLMs), GPTScore and G-Eval. Furthermore, our findings have important implications for evaluating LLMs, as we show that LLMs adjusted by human feedback (e.g., GPT-3.5) may overfit unconstrained human evaluation, which is affected by the annotators’ prior, input-agnostic preferences, calling for more robust, targeted evaluation methods.",
+    "num_pages": 31
+}

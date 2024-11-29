@@ -1,0 +1,20 @@
+{
+    "uuid": "4db81bb8-d830-5bb3-b799-398dd010ed35",
+    "title": "An Invariant Learning Characterization of Controlled Text Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zheng-etal-2023-invariant,\n    title = \"An Invariant Learning Characterization of Controlled Text Generation\",\n    author = \"Zheng, Carolina  and\n      Shi, Claudia  and\n      Vafa, Keyon  and\n      Feder, Amir  and\n      Blei, David\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.179\",\n    doi = \"10.18653/v1/2023.acl-long.179\",\n    pages = \"3186--3206\",\n    abstract = \"Controlled generation refers to the problem of creating text that contains stylistic or semantic attributes of interest. Many approaches reduce this problem to training a predictor of the desired attribute. For example, researchers hoping to deploy a large language model to produce non-toxic content may use a toxicity classifier to filter generated text. In practice, the generated text to classify, which is determined by user prompts, may come from a wide range of distributions. In this paper, we show that the performance of controlled generation may be poor if the distributions of text in response to user prompts differ from the distribution the predictor was trained on. To address this problem, we cast controlled generation under distribution shift as an invariant learning problem: the most effective predictor should be invariant across multiple text environments. We then discuss a natural solution that arises from this characterization and propose heuristics for selecting natural environments. We study this characterization and the proposed method empirically using both synthetic and real data. Experiments demonstrate both the challenge of distribution shift in controlled generation and the potential of invariance methods in this setting.\",\n}\n",
+    "authors": [
+        "Carolina Zheng",
+        "Claudia Shi",
+        "Keyon Vafa",
+        "Amir Feder",
+        "David Blei"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.179.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4db81bb8-d830-5bb3-b799-398dd010ed35.pdf",
+    "abstract": "Controlled generation refers to the problem of creating text that contains stylistic or semantic attributes of interest. Many approaches reduce this problem to training a predictor of the desired attribute. For example, researchers hoping to deploy a large language model to produce non-toxic content may use a toxicity classifier to filter generated text. In practice, the generated text to classify, which is determined by user prompts, may come from a wide range of distributions. In this paper, we show that the performance of controlled generation may be poor if the distributions of text in response to user prompts differ from the distribution the predictor was trained on. To address this problem, we cast controlled generation under distribution shift as an invariant learning problem: the most effective predictor should be invariant across multiple text environments. We then discuss a natural solution that arises from this characterization and propose heuristics for selecting natural environments. We study this characterization and the proposed method empirically using both synthetic and real data. Experiments demonstrate both the challenge of distribution shift in controlled generation and the potential of invariance methods in this setting.",
+    "num_pages": 21
+}

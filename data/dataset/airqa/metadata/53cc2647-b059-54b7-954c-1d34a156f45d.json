@@ -1,0 +1,21 @@
+{
+    "uuid": "53cc2647-b059-54b7-954c-1d34a156f45d",
+    "title": "CUPID: Curriculum Learning Based Real-Time Prediction using Distillation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{bhattacharya-etal-2023-cupid,\n    title = \"{CUPID}: Curriculum Learning Based Real-Time Prediction using Distillation\",\n    author = \"Bhattacharya, Arindam  and\n      Ms, Ankith  and\n      Gandhi, Ankit  and\n      Huddar, Vijay  and\n      Saroop, Atul  and\n      Bhagat, Rahul\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.69\",\n    doi = \"10.18653/v1/2023.acl-industry.69\",\n    pages = \"720--728\",\n    abstract = \"Relevance in E-commerce Product Search is crucial for providing customers with accurate results that match their query intent. With recent advancements in NLP and Deep Learning, Transformers have become the default choice for relevance classification tasks. In such a setting, the relevance model uses query text and product title as input features, and estimates if the product is relevant for the customer query. While cross-attention in Transformers enables a more accurate relevance prediction in such a setting, its high evaluation latency makes it unsuitable for real-time predictions in which thousands of products must be evaluated against a user query within few milliseconds. To address this issue, we propose CUPID: a Curriculum learning based real-time Prediction using Distillation that utilizes knowledge distillation within a curriculum learning setting to learn a simpler architecture that can be evaluated within low latency budgets. In a bi-lingual relevance prediction task, our approach shows an 302 bps improvement on English and 676 bps improvement for low-resource Arabic, while maintaining the low evaluation latency on CPUs.\",\n}\n",
+    "authors": [
+        "Arindam Bhattacharya",
+        "Ankith Ms",
+        "Ankit Gandhi",
+        "Vijay Huddar",
+        "Atul Saroop",
+        "Rahul Bhagat"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.69.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/53cc2647-b059-54b7-954c-1d34a156f45d.pdf",
+    "abstract": "Relevance in E-commerce Product Search is crucial for providing customers with accurate results that match their query intent. With recent advancements in NLP and Deep Learning, Transformers have become the default choice for relevance classification tasks. In such a setting, the relevance model uses query text and product title as input features, and estimates if the product is relevant for the customer query. While cross-attention in Transformers enables a more accurate relevance prediction in such a setting, its high evaluation latency makes it unsuitable for real-time predictions in which thousands of products must be evaluated against a user query within few milliseconds. To address this issue, we propose CUPID: a Curriculum learning based real-time Prediction using Distillation that utilizes knowledge distillation within a curriculum learning setting to learn a simpler architecture that can be evaluated within low latency budgets. In a bi-lingual relevance prediction task, our approach shows an 302 bps improvement on English and 676 bps improvement for low-resource Arabic, while maintaining the low evaluation latency on CPUs.",
+    "num_pages": 9
+}

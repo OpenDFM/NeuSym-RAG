@@ -1,0 +1,25 @@
+{
+    "uuid": "b970d91f-feaf-5ed6-9553-913f1c35542d",
+    "title": "Moving Beyond Downstream Task Accuracy for Information Retrieval Benchmarking",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{santhanam-etal-2023-moving,\n    title = \"Moving Beyond Downstream Task Accuracy for Information Retrieval Benchmarking\",\n    author = \"Santhanam, Keshav  and\n      Saad-Falcon, Jon  and\n      Franz, Martin  and\n      Khattab, Omar  and\n      Sil, Avi  and\n      Florian, Radu  and\n      Sultan, Md Arafat  and\n      Roukos, Salim  and\n      Zaharia, Matei  and\n      Potts, Christopher\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.738\",\n    doi = \"10.18653/v1/2023.findings-acl.738\",\n    pages = \"11613--11628\",\n    abstract = \"Neural information retrieval (IR) systems have progressed rapidly in recent years, in large part due to the release of publicly available benchmarking tasks. Unfortunately, some dimensions of this progress are illusory: the majority of the popular IR benchmarks today focus exclusively on downstream task accuracy and thus conceal the costs incurred by systems that trade away efficiency for quality. Latency, hardware cost, and other efficiency considerations are paramount to the deployment of IR systems in user-facing settings. We propose that IR benchmarks structure their evaluation methodology to include not only metrics of accuracy, but also efficiency considerations such as a query latency and the corresponding cost budget for a reproducible hardware setting. For the popular IR benchmarks MS MARCO and XOR-TyDi, we show how the best choice of IR system varies according to how these efficiency considerations are chosen and weighed. We hope that future benchmarks will adopt these guidelines toward more holistic IR evaluation.\",\n}\n",
+    "authors": [
+        "Keshav Santhanam",
+        "Jon Saad-Falcon",
+        "Martin Franz",
+        "Omar Khattab",
+        "Avi Sil",
+        "Radu Florian",
+        "Md Arafat Sultan",
+        "Salim Roukos",
+        "Matei Zaharia",
+        "Christopher Potts"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.738.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b970d91f-feaf-5ed6-9553-913f1c35542d.pdf",
+    "abstract": "Neural information retrieval (IR) systems have progressed rapidly in recent years, in large part due to the release of publicly available benchmarking tasks. Unfortunately, some dimensions of this progress are illusory: the majority of the popular IR benchmarks today focus exclusively on downstream task accuracy and thus conceal the costs incurred by systems that trade away efficiency for quality. Latency, hardware cost, and other efficiency considerations are paramount to the deployment of IR systems in user-facing settings. We propose that IR benchmarks structure their evaluation methodology to include not only metrics of accuracy, but also efficiency considerations such as a query latency and the corresponding cost budget for a reproducible hardware setting. For the popular IR benchmarks MS MARCO and XOR-TyDi, we show how the best choice of IR system varies according to how these efficiency considerations are chosen and weighed. We hope that future benchmarks will adopt these guidelines toward more holistic IR evaluation.",
+    "num_pages": 16
+}

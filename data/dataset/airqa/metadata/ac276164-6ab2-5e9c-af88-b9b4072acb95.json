@@ -1,0 +1,20 @@
+{
+    "uuid": "ac276164-6ab2-5e9c-af88-b9b4072acb95",
+    "title": "An Investigation of Noise in Morphological Inflection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wiemerslage-etal-2023-investigation,\n    title = \"An Investigation of Noise in Morphological Inflection\",\n    author = \"Wiemerslage, Adam  and\n      Yang, Changbing  and\n      Nicolai, Garrett  and\n      Silfverberg, Miikka  and\n      Kann, Katharina\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.207\",\n    doi = \"10.18653/v1/2023.findings-acl.207\",\n    pages = \"3351--3365\",\n    abstract = \"With a growing focus on morphological inflection systems for languages where high-quality data is scarce, training data noise is a serious but so far largely ignored concern. We aim at closing this gap by investigating the types of noise encountered within a pipeline for truly unsupervised morphological paradigm completion and its impact on morphological inflection systems: First, we propose an error taxonomy and annotation pipeline for inflection training data. Then, we compare the effect of different types of noise on multiple state-of-the- art inflection models. Finally, we propose a novel character-level masked language modeling (CMLM) pretraining objective and explore its impact on the models{'} resistance to noise. Our experiments show that various architectures are impacted differently by separate types of noise, but encoder-decoders tend to be more robust to noise than models trained with a copy bias. CMLM pretraining helps transformers, but has lower impact on LSTMs.\",\n}\n",
+    "authors": [
+        "Adam Wiemerslage",
+        "Changbing Yang",
+        "Garrett Nicolai",
+        "Miikka Silfverberg",
+        "Katharina Kann"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.207.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ac276164-6ab2-5e9c-af88-b9b4072acb95.pdf",
+    "abstract": "With a growing focus on morphological inflection systems for languages where high-quality data is scarce, training data noise is a serious but so far largely ignored concern. We aim at closing this gap by investigating the types of noise encountered within a pipeline for truly unsupervised morphological paradigm completion and its impact on morphological inflection systems: First, we propose an error taxonomy and annotation pipeline for inflection training data. Then, we compare the effect of different types of noise on multiple state-of-the- art inflection models. Finally, we propose a novel character-level masked language modeling (CMLM) pretraining objective and explore its impact on the models’ resistance to noise. Our experiments show that various architectures are impacted differently by separate types of noise, but encoder-decoders tend to be more robust to noise than models trained with a copy bias. CMLM pretraining helps transformers, but has lower impact on LSTMs.",
+    "num_pages": 15
+}

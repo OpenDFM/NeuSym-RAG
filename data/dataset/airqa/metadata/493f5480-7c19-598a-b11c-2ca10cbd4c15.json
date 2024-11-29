@@ -1,0 +1,20 @@
+{
+    "uuid": "493f5480-7c19-598a-b11c-2ca10cbd4c15",
+    "title": "ULTRA: Unleash LLMs’ Potential for Event Argument Extraction through Hierarchical Modeling and Pair-wise Self-Refinement",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhang-etal-2024-ultra,\n    title = \"{ULTRA}: Unleash {LLM}s{'} Potential for Event Argument Extraction through Hierarchical Modeling and Pair-wise Self-Refinement\",\n    author = \"Zhang, Xinliang Frederick  and\n      Blum, Carter  and\n      Choji, Temma  and\n      Shah, Shalin  and\n      Vempala, Alakananda\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.487\",\n    doi = \"10.18653/v1/2024.findings-acl.487\",\n    pages = \"8172--8185\",\n    abstract = \"Structural extraction of events within discourse is critical since it avails a deeper understanding of communication patterns and behavior trends. Event argument extraction (EAE), at the core of event-centric understanding, is the task of identifying role-specific text spans (i.e., arguments) for a given event. Document-level EAE (DocEAE) focuses on arguments that are scattered across an entire document. In this work, we explore open-source Large Language Models (LLMs) for DocEAE, and propose ULTRA, a hierarchical framework that extracts event arguments more cost-effectively. Further, it alleviates the positional bias issue intrinsic to LLMs. ULTRA sequentially reads text chunks of a document to generate a candidate argument set, upon which non-pertinent candidates are dropped through self-refinement. We introduce LEAFER to address the challenge LLMs face in locating the exact boundary of an argument. ULTRA outperforms strong baselines, including strong supervised models and ChatGPT, by 9.8{\\%} when evaluated by Exact Match (EM).\",\n}\n",
+    "authors": [
+        "Xinliang Frederick Zhang",
+        "Carter Blum",
+        "Temma Choji",
+        "Shalin Shah",
+        "Alakananda Vempala"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.487.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/493f5480-7c19-598a-b11c-2ca10cbd4c15.pdf",
+    "abstract": "Structural extraction of events within discourse is critical since it avails a deeper understanding of communication patterns and behavior trends. Event argument extraction (EAE), at the core of event-centric understanding, is the task of identifying role-specific text spans (i.e., arguments) for a given event. Document-level EAE (DocEAE) focuses on arguments that are scattered across an entire document. In this work, we explore open-source Large Language Models (LLMs) for DocEAE, and propose ULTRA, a hierarchical framework that extracts event arguments more cost-effectively. Further, it alleviates the positional bias issue intrinsic to LLMs. ULTRA sequentially reads text chunks of a document to generate a candidate argument set, upon which non-pertinent candidates are dropped through self-refinement. We introduce LEAFER to address the challenge LLMs face in locating the exact boundary of an argument. ULTRA outperforms strong baselines, including strong supervised models and ChatGPT, by 9.8% when evaluated by Exact Match (EM).",
+    "num_pages": 14
+}

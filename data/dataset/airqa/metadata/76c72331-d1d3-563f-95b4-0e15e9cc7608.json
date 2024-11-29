@@ -1,0 +1,19 @@
+{
+    "uuid": "76c72331-d1d3-563f-95b4-0e15e9cc7608",
+    "title": "EvolveMT: an Ensemble MT Engine Improving Itself with Usage Only",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{yuksel-etal-2023-evolvemt,\n    title = \"{E}volve{MT}: an Ensemble {MT} Engine Improving Itself with Usage Only\",\n    author = {Y{\\\"u}ksel, Kamer  and\n      Gunduz, Ahmet  and\n      Al-badrashiny, Mohamed  and\n      Sawaf, Hassan},\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.33\",\n    doi = \"10.18653/v1/2023.acl-industry.33\",\n    pages = \"341--346\",\n    abstract = \"This work proposes a method named EvolveMT for the efficient combination of multiple machine translation (MT) engines. The method selects the output from one engine for each segment, using online learning techniques to predict the most appropriate system for each translation request. A neural quality estimation metric supervises the method without requiring reference translations. The method{'}s online learning capability enables it to adapt to changes in the domain or MT engines dynamically, eliminating the requirement for retraining. The method selects a subset of translation engines to be called based on the source sentence features. The degree of exploration is configurable according to the desired quality-cost trade-off. Results from custom datasets demonstrate that EvolveMT achieves similar translation accuracy at a lower cost than selecting the best translation of each segment from all translations using an MT quality estimator. To the best of our knowledge, EvolveMT is the first MT system that adapts itself after deployment to incoming translation requests from the production environment without needing costly retraining on human feedback.\",\n}\n",
+    "authors": [
+        "Kamer Yüksel",
+        "Ahmet Gunduz",
+        "Mohamed Al-badrashiny",
+        "Hassan Sawaf"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.33.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/76c72331-d1d3-563f-95b4-0e15e9cc7608.pdf",
+    "abstract": "This work proposes a method named EvolveMT for the efficient combination of multiple machine translation (MT) engines. The method selects the output from one engine for each segment, using online learning techniques to predict the most appropriate system for each translation request. A neural quality estimation metric supervises the method without requiring reference translations. The method’s online learning capability enables it to adapt to changes in the domain or MT engines dynamically, eliminating the requirement for retraining. The method selects a subset of translation engines to be called based on the source sentence features. The degree of exploration is configurable according to the desired quality-cost trade-off. Results from custom datasets demonstrate that EvolveMT achieves similar translation accuracy at a lower cost than selecting the best translation of each segment from all translations using an MT quality estimator. To the best of our knowledge, EvolveMT is the first MT system that adapts itself after deployment to incoming translation requests from the production environment without needing costly retraining on human feedback.",
+    "num_pages": 6
+}

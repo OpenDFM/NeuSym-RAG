@@ -1,0 +1,22 @@
+{
+    "uuid": "996547b1-99ba-5bef-ac72-1d28f21e9808",
+    "title": "TAGPRIME: A Unified Framework for Relational Structure Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{hsu-etal-2023-tagprime,\n    title = \"{TAGPRIME}: A Unified Framework for Relational Structure Extraction\",\n    author = \"Hsu, I-Hung  and\n      Huang, Kuan-Hao  and\n      Zhang, Shuning  and\n      Cheng, Wenxin  and\n      Natarajan, Prem  and\n      Chang, Kai-Wei  and\n      Peng, Nanyun\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.723\",\n    doi = \"10.18653/v1/2023.acl-long.723\",\n    pages = \"12917--12932\",\n    abstract = \"Many tasks in natural language processing require the extraction of relationship information for a given condition, such as event argument extraction, relation extraction, and task-oriented semantic parsing. Recent works usually propose sophisticated models for each task independently and pay less attention to the commonality of these tasks and to have a unified framework for all the tasks. In this work, we propose to take a unified view of all these tasks and introduce TAGPRIME to address relational structure extraction problems. TAGPRIME is a sequence tagging model that appends priming words about the information of the given condition (such as an event trigger) to the input text. With the self-attention mechanism in pre-trained language models, the priming words make the output contextualized representations contain more information about the given condition, and hence become more suitable for extracting specific relationships for the condition. Extensive experiments and analyses on three different tasks that cover ten datasets across five different languages demonstrate the generality and effectiveness of TAGPRIME.\",\n}\n",
+    "authors": [
+        "I-Hung Hsu",
+        "Kuan-Hao Huang",
+        "Shuning Zhang",
+        "Wenxin Cheng",
+        "Prem Natarajan",
+        "Kai-Wei Chang",
+        "Nanyun Peng"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.723.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/996547b1-99ba-5bef-ac72-1d28f21e9808.pdf",
+    "abstract": "Many tasks in natural language processing require the extraction of relationship information for a given condition, such as event argument extraction, relation extraction, and task-oriented semantic parsing. Recent works usually propose sophisticated models for each task independently and pay less attention to the commonality of these tasks and to have a unified framework for all the tasks. In this work, we propose to take a unified view of all these tasks and introduce TAGPRIME to address relational structure extraction problems. TAGPRIME is a sequence tagging model that appends priming words about the information of the given condition (such as an event trigger) to the input text. With the self-attention mechanism in pre-trained language models, the priming words make the output contextualized representations contain more information about the given condition, and hence become more suitable for extracting specific relationships for the condition. Extensive experiments and analyses on three different tasks that cover ten datasets across five different languages demonstrate the generality and effectiveness of TAGPRIME.",
+    "num_pages": 16
+}

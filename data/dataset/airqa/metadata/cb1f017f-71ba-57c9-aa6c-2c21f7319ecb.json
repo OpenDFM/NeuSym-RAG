@@ -1,0 +1,26 @@
+{
+    "uuid": "cb1f017f-71ba-57c9-aa6c-2c21f7319ecb",
+    "title": "Rehearsal-free Continual Language Learning via Efficient Parameter Isolation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2023-rehearsal,\n    title = \"Rehearsal-free Continual Language Learning via Efficient Parameter Isolation\",\n    author = \"Wang, Zhicheng  and\n      Liu, Yufang  and\n      Ji, Tao  and\n      Wang, Xiaoling  and\n      Wu, Yuanbin  and\n      Jiang, Congcong  and\n      Chao, Ye  and\n      Han, Zhencong  and\n      Wang, Ling  and\n      Shao, Xu  and\n      Zeng, Wenqiu\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.612\",\n    doi = \"10.18653/v1/2023.acl-long.612\",\n    pages = \"10933--10946\",\n    abstract = \"We study the problem of defying catastrophic forgetting when learning a series of language processing tasks. Compared with previous methods, we emphasize the importance of not caching history tasks{'} data, which makes the problem more challenging. Our proposed method applies the parameter isolation strategy. For each task, it allocates a small portion of private parameters and learns them with a shared pre-trained model. To load correct parameters at testing time, we introduce a simple yet effective non-parametric method. Experiments on continual language learning benchmarks show that our method is significantly better than all existing no-data-cache methods, and is comparable (or even better) than those using historical data.\",\n}\n",
+    "authors": [
+        "Zhicheng Wang",
+        "Yufang Liu",
+        "Tao Ji",
+        "Xiaoling Wang",
+        "Yuanbin Wu",
+        "Congcong Jiang",
+        "Ye Chao",
+        "Zhencong Han",
+        "Ling Wang",
+        "Xu Shao",
+        "Wenqiu Zeng"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.612.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/cb1f017f-71ba-57c9-aa6c-2c21f7319ecb.pdf",
+    "abstract": "We study the problem of defying catastrophic forgetting when learning a series of language processing tasks. Compared with previous methods, we emphasize the importance of not caching history tasks’ data, which makes the problem more challenging. Our proposed method applies the parameter isolation strategy. For each task, it allocates a small portion of private parameters and learns them with a shared pre-trained model. To load correct parameters at testing time, we introduce a simple yet effective non-parametric method. Experiments on continual language learning benchmarks show that our method is significantly better than all existing no-data-cache methods, and is comparable (or even better) than those using historical data.",
+    "num_pages": 14
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "83697c88-ca1e-5f3f-ab3c-5b3ac9ee6068",
+    "title": "Re-Tuning: Overcoming the Compositionality Limits of Large Language Models with Recursive Tuning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{pasewark-etal-2024-tuning,\n    title = \"Re-Tuning: Overcoming the Compositionality Limits of Large Language Models with Recursive Tuning\",\n    author = \"Pasewark, Eric  and\n      Montgomery, Kyle  and\n      Duan, Kefei  and\n      Song, Dawn  and\n      Wang, Chenguang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.561\",\n    doi = \"10.18653/v1/2024.acl-long.561\",\n    pages = \"10422--10437\",\n    abstract = \"We present a new method for large language models to solve compositional tasks. Although they have shown strong performance on traditional language understanding tasks, large language models struggle to solve compositional tasks, where the solution depends on solving smaller instances of the same problem. We propose a natural approach to solve compositional tasks recursively. Our method, Re-Tuning, tunes models to break down a problem into subproblems, solve those subproblems, and combine the results. We show that our method significantly improves model performance on three representative compositional tasks: integer addition, dynamic programming, and parity. Compared to state-of-the-art methods that keep intermediate steps towards solving the problems, Re-Tuning achieves significantly higher accuracy and is more GPU memory efficient.\",\n}\n",
+    "authors": [
+        "Eric Pasewark",
+        "Kyle Montgomery",
+        "Kefei Duan",
+        "Dawn Song",
+        "Chenguang Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.561.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/83697c88-ca1e-5f3f-ab3c-5b3ac9ee6068.pdf",
+    "abstract": "We present a new method for large language models to solve compositional tasks. Although they have shown strong performance on traditional language understanding tasks, large language models struggle to solve compositional tasks, where the solution depends on solving smaller instances of the same problem. We propose a natural approach to solve compositional tasks recursively. Our method, Re-Tuning, tunes models to break down a problem into subproblems, solve those subproblems, and combine the results. We show that our method significantly improves model performance on three representative compositional tasks: integer addition, dynamic programming, and parity. Compared to state-of-the-art methods that keep intermediate steps towards solving the problems, Re-Tuning achieves significantly higher accuracy and is more GPU memory efficient.",
+    "num_pages": 16
+}

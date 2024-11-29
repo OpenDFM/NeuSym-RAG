@@ -1,0 +1,21 @@
+{
+    "uuid": "c7a81e4c-8b96-5335-b342-09ecc3725101",
+    "title": "G-DIG: Towards Gradient-based DIverse and hiGh-quality Instruction Data Selection for Machine Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{pan-etal-2024-g,\n    title = \"{G}-{DIG}: Towards Gradient-based {DI}verse and hi{G}h-quality Instruction Data Selection for Machine Translation\",\n    author = \"Pan, Xingyuan  and\n      Huang, Luyang  and\n      Kang, Liyan  and\n      Liu, Zhicheng  and\n      Lu, Yu  and\n      Cheng, Shanbo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.821\",\n    doi = \"10.18653/v1/2024.acl-long.821\",\n    pages = \"15395--15406\",\n    abstract = \"Large Language Models (LLMs) have demonstrated remarkable abilities in general scenarios. Instruction finetuning empowers them to align with humans in various tasks. Nevertheless, the \\textit{Diversity} and \\textit{Quality} of the instruction data remain two main challenges for instruction finetuning. With regard to this, in this paper, we propose a novel gradient-based method to automatically select high-quality and diverse instruction finetuning data for machine translation. Our key innovation centers around analyzing how individual training examples influence the model during training. Specifically, we select training examples that exert beneficial influences on the model as high-quality ones by means of Influence Function plus a small high-quality seed dataset. Moreover, to enhance the diversity of the training data we maximize the variety of influences they have on the model by clustering on their gradients and resampling. Extensive experiments on WMT22 and FLORES translation tasks demonstrate the superiority of our methods, and in-depth analysis further validates their effectiveness and generalization.\",\n}\n",
+    "authors": [
+        "Xingyuan Pan",
+        "Luyang Huang",
+        "Liyan Kang",
+        "Zhicheng Liu",
+        "Yu Lu",
+        "Shanbo Cheng"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.821.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/c7a81e4c-8b96-5335-b342-09ecc3725101.pdf",
+    "abstract": "Large Language Models (LLMs) have demonstrated remarkable abilities in general scenarios. Instruction finetuning empowers them to align with humans in various tasks. Nevertheless, the Diversity and Quality of the instruction data remain two main challenges for instruction finetuning. With regard to this, in this paper, we propose a novel gradient-based method to automatically select high-quality and diverse instruction finetuning data for machine translation. Our key innovation centers around analyzing how individual training examples influence the model during training. Specifically, we select training examples that exert beneficial influences on the model as high-quality ones by means of Influence Function plus a small high-quality seed dataset. Moreover, to enhance the diversity of the training data we maximize the variety of influences they have on the model by clustering on their gradients and resampling. Extensive experiments on WMT22 and FLORES translation tasks demonstrate the superiority of our methods, and in-depth analysis further validates their effectiveness and generalization.",
+    "num_pages": 12
+}

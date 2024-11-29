@@ -1,0 +1,20 @@
+{
+    "uuid": "36932b55-52e3-5603-9d9d-dd85c9bb8932",
+    "title": "Improving Hateful Meme Detection through Retrieval-Guided Contrastive Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{mei-etal-2024-improving,\n    title = \"Improving Hateful Meme Detection through Retrieval-Guided Contrastive Learning\",\n    author = \"Mei, Jingbiao  and\n      Chen, Jinghong  and\n      Lin, Weizhe  and\n      Byrne, Bill  and\n      Tomalin, Marcus\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.291\",\n    doi = \"10.18653/v1/2024.acl-long.291\",\n    pages = \"5333--5347\",\n    abstract = \"Hateful memes have emerged as a significant concern on the Internet. Detecting hateful memes requires the system to jointly understand the visual and textual modalities. Our investigation reveals that the embedding space of existing CLIP-based systems lacks sensitivity to subtle differences in memes that are vital for correct hatefulness classification. We propose constructing a hatefulness-aware embedding space through retrieval-guided contrastive training. Our approach achieves state-of-the-art performance on the HatefulMemes dataset with an AUROC of 87.0, outperforming much larger fine-tuned large multimodal models. We demonstrate a retrieval-based hateful memes detection system, which is capable of identifying hatefulness based on data unseen in training. This allows developers to update the hateful memes detection system by simply adding new examples without retraining {---} a desirable feature for real services in the constantly evolving landscape of hateful memes on the Internet.\",\n}\n",
+    "authors": [
+        "Jingbiao Mei",
+        "Jinghong Chen",
+        "Weizhe Lin",
+        "Bill Byrne",
+        "Marcus Tomalin"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.291.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/36932b55-52e3-5603-9d9d-dd85c9bb8932.pdf",
+    "abstract": "Hateful memes have emerged as a significant concern on the Internet. Detecting hateful memes requires the system to jointly understand the visual and textual modalities. Our investigation reveals that the embedding space of existing CLIP-based systems lacks sensitivity to subtle differences in memes that are vital for correct hatefulness classification. We propose constructing a hatefulness-aware embedding space through retrieval-guided contrastive training. Our approach achieves state-of-the-art performance on the HatefulMemes dataset with an AUROC of 87.0, outperforming much larger fine-tuned large multimodal models. We demonstrate a retrieval-based hateful memes detection system, which is capable of identifying hatefulness based on data unseen in training. This allows developers to update the hateful memes detection system by simply adding new examples without retraining — a desirable feature for real services in the constantly evolving landscape of hateful memes on the Internet.",
+    "num_pages": 15
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "09f70309-e0a3-594f-9ee2-b166f6b89bc7",
+    "title": "Multistage Collaborative Knowledge Distillation from a Large Language Model for Semi-Supervised Sequence Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhao-etal-2024-multistage,\n    title = \"Multistage Collaborative Knowledge Distillation from a Large Language Model for Semi-Supervised Sequence Generation\",\n    author = \"Zhao, Jiachen  and\n      Zhao, Wenlong  and\n      Drozdov, Andrew  and\n      Rozonoyer, Benjamin  and\n      Sultan, Md Arafat  and\n      Lee, Jay-Yoon  and\n      Iyyer, Mohit  and\n      McCallum, Andrew\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.766\",\n    doi = \"10.18653/v1/2024.acl-long.766\",\n    pages = \"14201--14214\",\n    abstract = \"We study semi-supervised sequence generation tasks, where the few labeled examples are too scarce to finetune a model, and meanwhile, few-shot prompted large language models (LLMs) exhibit room for improvement. In this paper, we present the discovery that a student model distilled from a few-shot prompted LLM can commonly generalize better than its teacher to unseen examples on such tasks. We find that the student is able to learn a general pattern from the high-quality pseudolabels produced by the teacher during knowledge distillation (KD), and favorably not a general pattern from the low-quality pseudolabels. Leveraging this discovery, we propose a new method, Multistage Collaborative Knowledge Distillation from an LLM (MCKD), for these tasks. MCKD first few-shot prompts an LLM to produce pseudolabels for unlabeled data. Then at each stage of an iterative KD process, a new pair of students is trained on disjoint partitions of the pseudolabeled data, and produces new and improved pseudolabels for their unseen partitions. We conduct extensive experiments on four syntactic and semantic parsing datasets and show the effectiveness of MCKD for low-resource semi-supervised sequence generation. On CRAFT biomedical parsing, for example, 3-stage MCKD with 50 labeled examples outperforms an LLM teacher and vanilla KD by 7.5{\\%} and 3.7{\\%} parsing F1, respectively, and matches the performance of supervised finetuning with 500 labeled examples.\",\n}\n",
+    "authors": [
+        "Jiachen Zhao",
+        "Wenlong Zhao",
+        "Andrew Drozdov",
+        "Benjamin Rozonoyer",
+        "Md Arafat Sultan",
+        "Jay-Yoon Lee",
+        "Mohit Iyyer",
+        "Andrew McCallum"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.766.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/09f70309-e0a3-594f-9ee2-b166f6b89bc7.pdf",
+    "abstract": "We study semi-supervised sequence generation tasks, where the few labeled examples are too scarce to finetune a model, and meanwhile, few-shot prompted large language models (LLMs) exhibit room for improvement. In this paper, we present the discovery that a student model distilled from a few-shot prompted LLM can commonly generalize better than its teacher to unseen examples on such tasks. We find that the student is able to learn a general pattern from the high-quality pseudolabels produced by the teacher during knowledge distillation (KD), and favorably not a general pattern from the low-quality pseudolabels. Leveraging this discovery, we propose a new method, Multistage Collaborative Knowledge Distillation from an LLM (MCKD), for these tasks. MCKD first few-shot prompts an LLM to produce pseudolabels for unlabeled data. Then at each stage of an iterative KD process, a new pair of students is trained on disjoint partitions of the pseudolabeled data, and produces new and improved pseudolabels for their unseen partitions. We conduct extensive experiments on four syntactic and semantic parsing datasets and show the effectiveness of MCKD for low-resource semi-supervised sequence generation. On CRAFT biomedical parsing, for example, 3-stage MCKD with 50 labeled examples outperforms an LLM teacher and vanilla KD by 7.5% and 3.7% parsing F1, respectively, and matches the performance of supervised finetuning with 500 labeled examples.",
+    "num_pages": 14
+}

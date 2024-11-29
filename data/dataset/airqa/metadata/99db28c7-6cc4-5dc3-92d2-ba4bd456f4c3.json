@@ -1,0 +1,19 @@
+{
+    "uuid": "99db28c7-6cc4-5dc3-92d2-ba4bd456f4c3",
+    "title": "Multi-Document Summarization with Centroid-Based Pretraining",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{puduppully-etal-2023-multi,\n    title = \"Multi-Document Summarization with Centroid-Based Pretraining\",\n    author = \"Puduppully, Ratish Surendran  and\n      Jain, Parag  and\n      Chen, Nancy  and\n      Steedman, Mark\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.13\",\n    doi = \"10.18653/v1/2023.acl-short.13\",\n    pages = \"128--138\",\n    abstract = \"In Multi-Document Summarization (MDS), the input can be modeled as a set of documents, and the output is its summary. In this paper, we focus on pretraining objectives for MDS. Specifically, we introduce a novel pretraining objective, which involves selecting the ROUGE-based centroid of each document cluster as a proxy for its summary. Our objective thus does not require human written summaries and can be utilized for pretraining on a dataset consisting solely of document sets. Through zero-shot, few-shot, and fully supervised experiments on multiple MDS datasets, we show that our model \\textit{Centrum} is better or comparable to a state-of-the-art model. We make the pretrained and fine-tuned models freely available to the research community \\url{https://github.com/ratishsp/centrum}.\",\n}\n",
+    "authors": [
+        "Ratish Surendran Puduppully",
+        "Parag Jain",
+        "Nancy Chen",
+        "Mark Steedman"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.13.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/99db28c7-6cc4-5dc3-92d2-ba4bd456f4c3.pdf",
+    "abstract": "In Multi-Document Summarization (MDS), the input can be modeled as a set of documents, and the output is its summary. In this paper, we focus on pretraining objectives for MDS. Specifically, we introduce a novel pretraining objective, which involves selecting the ROUGE-based centroid of each document cluster as a proxy for its summary. Our objective thus does not require human written summaries and can be utilized for pretraining on a dataset consisting solely of document sets. Through zero-shot, few-shot, and fully supervised experiments on multiple MDS datasets, we show that our model Centrum is better or comparable to a state-of-the-art model. We make the pretrained and fine-tuned models freely available to the research community https://github.com/ratishsp/centrum.",
+    "num_pages": 11
+}

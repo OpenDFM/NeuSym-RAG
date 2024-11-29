@@ -1,0 +1,19 @@
+{
+    "uuid": "e7497bf0-4e3d-5099-b9cc-9a61be4bd30f",
+    "title": "RulE: Knowledge Graph Reasoning with Rule Embedding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{tang-etal-2024-rule,\n    title = \"{R}ul{E}: Knowledge Graph Reasoning with Rule Embedding\",\n    author = \"Tang, Xiaojuan  and\n      Zhu, Song-Chun  and\n      Liang, Yitao  and\n      Zhang, Muhan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.256\",\n    doi = \"10.18653/v1/2024.findings-acl.256\",\n    pages = \"4316--4335\",\n    abstract = \"Knowledge graph reasoning is an important problem for knowledge graphs. In this paper, we propose a novel and principled framework called \\textbf{RulE} (stands for Rule Embedding) to effectively leverage logical rules to enhance KG reasoning. Unlike knowledge graph embedding methods, RulE learns rule embeddings from existing triplets and first-order rules by jointly representing \\textbf{entities}, \\textbf{relations} and \\textbf{logical rules} in a unified embedding space. Based on the learned rule embeddings, a confidence score can be calculated for each rule, reflecting its consistency with the observed triplets. This allows us to perform logical rule inference in a soft way, thus alleviating the brittleness of logic. On the other hand, RulE injects prior logical rule information into the embedding space, enriching and regularizing the entity/relation embeddings. This makes KGE alone perform better too. RulE is conceptually simple and empirically effective. We conduct extensive experiments to verify each component of RulE.Results on multiple benchmarks reveal that our model outperforms the majority of existing embedding-based and rule-based approaches.\",\n}\n",
+    "authors": [
+        "Xiaojuan Tang",
+        "Song-Chun Zhu",
+        "Yitao Liang",
+        "Muhan Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.256.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e7497bf0-4e3d-5099-b9cc-9a61be4bd30f.pdf",
+    "abstract": "Knowledge graph reasoning is an important problem for knowledge graphs. In this paper, we propose a novel and principled framework called RulE (stands for Rule Embedding) to effectively leverage logical rules to enhance KG reasoning. Unlike knowledge graph embedding methods, RulE learns rule embeddings from existing triplets and first-order rules by jointly representing entities, relations and logical rules in a unified embedding space. Based on the learned rule embeddings, a confidence score can be calculated for each rule, reflecting its consistency with the observed triplets. This allows us to perform logical rule inference in a soft way, thus alleviating the brittleness of logic. On the other hand, RulE injects prior logical rule information into the embedding space, enriching and regularizing the entity/relation embeddings. This makes KGE alone perform better too. RulE is conceptually simple and empirically effective. We conduct extensive experiments to verify each component of RulE.Results on multiple benchmarks reveal that our model outperforms the majority of existing embedding-based and rule-based approaches.",
+    "num_pages": 20
+}

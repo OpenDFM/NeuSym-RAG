@@ -1,0 +1,22 @@
+{
+    "uuid": "9e1bb410-8565-54d9-a7df-b05ffd6bd495",
+    "title": "BloomVQA: Assessing Hierarchical Multi-modal Comprehension",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{gong-etal-2024-bloomvqa,\n    title = \"{B}loom{VQA}: Assessing Hierarchical Multi-modal Comprehension\",\n    author = \"Gong, Yunye  and\n      Shrestha, Robik  and\n      Claypoole, Jared  and\n      Cogswell, Michael  and\n      Ray, Arijit  and\n      Kanan, Christopher  and\n      Divakaran, Ajay\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.885\",\n    doi = \"10.18653/v1/2024.findings-acl.885\",\n    pages = \"14905--14918\",\n    abstract = \"We propose a novel VQA dataset, BloomVQA, to facilitate comprehensive evaluation of large vision-language models on comprehension tasks. Unlike current benchmarks that often focus on fact-based memorization and simple reasoning tasks without theoretical grounding, we collect multiple-choice samples based on picture stories that reflect different levels of comprehension, as laid out in Bloom{'}s Taxonomy, a classic framework for learning assessment widely adopted in education research. Our data maps to a novel hierarchical graph representation which enables automatic data augmentation and novel measures characterizing model consistency. We perform graded evaluation and reliability analysis on recent multi-modal models. In comparison to low-level tasks, we observe decreased performance on tasks requiring advanced comprehension and cognitive skills with up to 38.0{\\%} drop in VQA accuracy. In comparison to earlier models, GPT-4V demonstrates improved accuracy over all comprehension levels and also shows a tendency of bypassing visual inputs especially for higher-level tasks. Current models also show consistency patterns misaligned with human comprehension in various scenarios, demonstrating the need for improvement based on theoretically-grounded criteria. The dataset can be accessed at https://huggingface.co/datasets/ygong/BloomVQA.\",\n}\n",
+    "authors": [
+        "Yunye Gong",
+        "Robik Shrestha",
+        "Jared Claypoole",
+        "Michael Cogswell",
+        "Arijit Ray",
+        "Christopher Kanan",
+        "Ajay Divakaran"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.885.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/9e1bb410-8565-54d9-a7df-b05ffd6bd495.pdf",
+    "abstract": "We propose a novel VQA dataset, BloomVQA, to facilitate comprehensive evaluation of large vision-language models on comprehension tasks. Unlike current benchmarks that often focus on fact-based memorization and simple reasoning tasks without theoretical grounding, we collect multiple-choice samples based on picture stories that reflect different levels of comprehension, as laid out in Bloom’s Taxonomy, a classic framework for learning assessment widely adopted in education research. Our data maps to a novel hierarchical graph representation which enables automatic data augmentation and novel measures characterizing model consistency. We perform graded evaluation and reliability analysis on recent multi-modal models. In comparison to low-level tasks, we observe decreased performance on tasks requiring advanced comprehension and cognitive skills with up to 38.0% drop in VQA accuracy. In comparison to earlier models, GPT-4V demonstrates improved accuracy over all comprehension levels and also shows a tendency of bypassing visual inputs especially for higher-level tasks. Current models also show consistency patterns misaligned with human comprehension in various scenarios, demonstrating the need for improvement based on theoretically-grounded criteria. The dataset can be accessed at https://huggingface.co/datasets/ygong/BloomVQA.",
+    "num_pages": 14
+}

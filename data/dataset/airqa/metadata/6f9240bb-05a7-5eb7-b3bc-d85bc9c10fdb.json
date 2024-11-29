@@ -1,0 +1,24 @@
+{
+    "uuid": "6f9240bb-05a7-5eb7-b3bc-d85bc9c10fdb",
+    "title": "Generating Hashtags for Short-form Videos with Guided Signals",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yu-etal-2023-generating,\n    title = \"Generating Hashtags for Short-form Videos with Guided Signals\",\n    author = \"Yu, Tiezheng  and\n      Yu, Hanchao  and\n      Liang, Davis  and\n      Mao, Yuning  and\n      Nie, Shaoliang  and\n      Huang, Po-Yao  and\n      Khabsa, Madian  and\n      Fung, Pascale  and\n      Wang, Yi-Chia\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.527\",\n    doi = \"10.18653/v1/2023.acl-long.527\",\n    pages = \"9482--9495\",\n    abstract = \"Short-form video hashtag recommendation (SVHR) aims to recommend hashtags to content creators from videos and corresponding descriptions. Most prior studies regard SVHR as a classification or ranking problem and select hashtags from a set of limited candidates. However, in reality, users can create new hashtags, and trending hashtags change rapidly over time on social media. Both of these properties cannot be easily modeled with classification approaches. To bridge this gap, we formulate SVHR as a generation task that better represents how hashtags are created naturally. Additionally, we propose the Guided Generative Model (GGM) where we augment the input features by retrieving relevant hashtags from a large-scale hashtag pool as extra guidance signals. Experimental results on two short-form video datasets show that our generative models outperform strong classification baselines, and the guidance signals further boost the performance by 8.11 and 2.17 absolute ROUGE-1 scores on average, respectively. We also perform extensive analyses including human evaluation, demonstrating that our generative model can create meaningful and relevant novel hashtags while achieving state-of-the-art performance on known hashtags\",\n}\n",
+    "authors": [
+        "Tiezheng Yu",
+        "Hanchao Yu",
+        "Davis Liang",
+        "Yuning Mao",
+        "Shaoliang Nie",
+        "Po-Yao Huang",
+        "Madian Khabsa",
+        "Pascale Fung",
+        "Yi-Chia Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.527.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/6f9240bb-05a7-5eb7-b3bc-d85bc9c10fdb.pdf",
+    "abstract": "Short-form video hashtag recommendation (SVHR) aims to recommend hashtags to content creators from videos and corresponding descriptions. Most prior studies regard SVHR as a classification or ranking problem and select hashtags from a set of limited candidates. However, in reality, users can create new hashtags, and trending hashtags change rapidly over time on social media. Both of these properties cannot be easily modeled with classification approaches. To bridge this gap, we formulate SVHR as a generation task that better represents how hashtags are created naturally. Additionally, we propose the Guided Generative Model (GGM) where we augment the input features by retrieving relevant hashtags from a large-scale hashtag pool as extra guidance signals. Experimental results on two short-form video datasets show that our generative models outperform strong classification baselines, and the guidance signals further boost the performance by 8.11 and 2.17 absolute ROUGE-1 scores on average, respectively. We also perform extensive analyses including human evaluation, demonstrating that our generative model can create meaningful and relevant novel hashtags while achieving state-of-the-art performance on known hashtags",
+    "num_pages": 14
+}

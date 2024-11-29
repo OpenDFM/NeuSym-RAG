@@ -1,0 +1,18 @@
+{
+    "uuid": "5b7c9972-4ff4-50a5-af77-1a555b377583",
+    "title": "JellyBell at TextGraphs-17 Shared Task: Fusing Large Language Models with External Knowledge for Enhanced Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of TextGraphs-17: Graph-based Methods for Natural Language Processing",
+    "bibtex": "@inproceedings{belikova-etal-2024-jellybell,\n    title = \"{J}elly{B}ell at {T}ext{G}raphs-17 Shared Task: Fusing Large Language Models with External Knowledge for Enhanced Question Answering\",\n    author = \"Belikova, Julia  and\n      Beliakin, Evegeniy  and\n      Konovalov, Vasily\",\n    editor = \"Ustalov, Dmitry  and\n      Gao, Yanjun  and\n      Panchenko, Alexander  and\n      Tutubalina, Elena  and\n      Nikishina, Irina  and\n      Ramesh, Arti  and\n      Sakhovskiy, Andrey  and\n      Usbeck, Ricardo  and\n      Penn, Gerald  and\n      Valentino, Marco\",\n    booktitle = \"Proceedings of TextGraphs-17: Graph-based Methods for Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.textgraphs-1.15\",\n    pages = \"154--160\",\n    abstract = \"This work describes an approach to develop Knowledge Graph Question Answering (KGQA) system for TextGraphs-17 shared task. The task focuses on the fusion of Large Language Models (LLMs) with Knowledge Graphs (KGs). The goal is to select a KG entity (out of several candidates) which corresponds to an answer given a textual question. Our approach applies LLM to identify the correct answer among the list of possible candidates. We confirm that integrating external information is particularly beneficial when the subject entities are not well-known, and using RAG can negatively impact the performance of LLM on questions related to popular entities, as the retrieved context might be misleading. With our result, we achieved 2nd place in the post-evaluation phase.\",\n}\n",
+    "authors": [
+        "Julia Belikova",
+        "Evegeniy Beliakin",
+        "Vasily Konovalov"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.textgraphs-1.15.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/5b7c9972-4ff4-50a5-af77-1a555b377583.pdf",
+    "abstract": "This work describes an approach to develop Knowledge Graph Question Answering (KGQA) system for TextGraphs-17 shared task. The task focuses on the fusion of Large Language Models (LLMs) with Knowledge Graphs (KGs). The goal is to select a KG entity (out of several candidates) which corresponds to an answer given a textual question. Our approach applies LLM to identify the correct answer among the list of possible candidates. We confirm that integrating external information is particularly beneficial when the subject entities are not well-known, and using RAG can negatively impact the performance of LLM on questions related to popular entities, as the retrieved context might be misleading. With our result, we achieved 2nd place in the post-evaluation phase.",
+    "num_pages": 7
+}

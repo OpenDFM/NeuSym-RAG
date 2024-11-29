@@ -1,0 +1,18 @@
+{
+    "uuid": "65632e52-f0e9-5239-b7bd-d81f64793233",
+    "title": "Learning Relational Decomposition of Queries for Question Answering from Tables",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{mouravieff-etal-2024-learning,\n    title = \"Learning Relational Decomposition of Queries for Question Answering from Tables\",\n    author = {Mouravieff, Rapha{\\\"e}l  and\n      Piwowarski, Benjamin  and\n      Lamprier, Sylvain},\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.564\",\n    doi = \"10.18653/v1/2024.acl-long.564\",\n    pages = \"10471--10485\",\n    abstract = \"Table Question-Answering involves both understanding the natural language query and grounding it in the context of the input table to extract relevant information. In this context, many methods have highlighted the benefits of intermediate pre-training using SQL queries. However, while most approaches aim at generating final answers directly from inputs, we claim that there is better to do with SQL queries during training.By learning to imitate a restricted subset of SQL-like algebraic operations, we demonstrate that their execution flow provides intermediate supervision steps that allow for increased generalization and structural reasoning compared to classical approaches. Our method, bridges the gap between semantic parsing and direct answering methods, offering valuable insights into which types of operations should be predicted by a generative architecture and which should be executed by an external algorithm. Our code can be found at https://github.com/RaphaelMouravieff/Partial-Exec.\",\n}\n",
+    "authors": [
+        "Raphaël Mouravieff",
+        "Benjamin Piwowarski",
+        "Sylvain Lamprier"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.564.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/65632e52-f0e9-5239-b7bd-d81f64793233.pdf",
+    "abstract": "Table Question-Answering involves both understanding the natural language query and grounding it in the context of the input table to extract relevant information. In this context, many methods have highlighted the benefits of intermediate pre-training using SQL queries. However, while most approaches aim at generating final answers directly from inputs, we claim that there is better to do with SQL queries during training.By learning to imitate a restricted subset of SQL-like algebraic operations, we demonstrate that their execution flow provides intermediate supervision steps that allow for increased generalization and structural reasoning compared to classical approaches. Our method, bridges the gap between semantic parsing and direct answering methods, offering valuable insights into which types of operations should be predicted by a generative architecture and which should be executed by an external algorithm. Our code can be found at https://github.com/RaphaelMouravieff/Partial-Exec.",
+    "num_pages": 15
+}

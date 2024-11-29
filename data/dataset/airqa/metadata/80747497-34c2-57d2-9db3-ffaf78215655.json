@@ -1,0 +1,21 @@
+{
+    "uuid": "80747497-34c2-57d2-9db3-ffaf78215655",
+    "title": "SRI-B’s Systems for IWSLT 2023 Dialectal and Low-resource Track: Marathi-Hindi Speech Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)",
+    "bibtex": "@inproceedings{radhakrishnan-etal-2023-sri,\n    title = \"{SRI}-{B}{'}s Systems for {IWSLT} 2023 Dialectal and Low-resource Track: {M}arathi-{H}indi Speech Translation\",\n    author = \"Radhakrishnan, Balaji  and\n      Agrawal, Saurabh  and\n      Prakash Gohil, Raj  and\n      Praveen, Kiran  and\n      Vinay Dhopeshwarkar, Advait  and\n      Pandey, Abhishek\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.iwslt-1.43\",\n    doi = \"10.18653/v1/2023.iwslt-1.43\",\n    pages = \"449--454\",\n    abstract = \"This paper describes the speech translation systems SRI-B developed for the IWSLT 2023 Evaluation Campaign Dialectal and Low-resource track: Marathi-Hindi Speech Translation. We propose systems for both the constrained (systems are trained only on the datasets provided by the organizers) and the unconstrained conditions (systems can be trained with any resource). For both the conditions, we build end-to-end speech translation networks comprising of a conformer encoder and a transformer decoder. Under both the conditions, we leverage Marathi Automatic Speech Recognition (ASR) data to pre-train the encoder and subsequently train the entire model on the speech translation data. Our results demonstrate that pre-training the encoder with ASR data is a key step in significantly improving the speech translation performance. We also show that conformer encoders are inherently superior to its transformer counterparts for speech translation tasks. Our primary submissions achieved a BLEU{\\%} score of 31.2 on the constrained condition and 32.4 on the unconstrained condition. We secured the top position in the constrained condition and second position in the unconstrained condition.\",\n}\n",
+    "authors": [
+        "Balaji Radhakrishnan",
+        "Saurabh Agrawal",
+        "Raj Prakash Gohil",
+        "Kiran Praveen",
+        "Advait Vinay Dhopeshwarkar",
+        "Abhishek Pandey"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.iwslt-1.43.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/80747497-34c2-57d2-9db3-ffaf78215655.pdf",
+    "abstract": "This paper describes the speech translation systems SRI-B developed for the IWSLT 2023 Evaluation Campaign Dialectal and Low-resource track: Marathi-Hindi Speech Translation. We propose systems for both the constrained (systems are trained only on the datasets provided by the organizers) and the unconstrained conditions (systems can be trained with any resource). For both the conditions, we build end-to-end speech translation networks comprising of a conformer encoder and a transformer decoder. Under both the conditions, we leverage Marathi Automatic Speech Recognition (ASR) data to pre-train the encoder and subsequently train the entire model on the speech translation data. Our results demonstrate that pre-training the encoder with ASR data is a key step in significantly improving the speech translation performance. We also show that conformer encoders are inherently superior to its transformer counterparts for speech translation tasks. Our primary submissions achieved a BLEU% score of 31.2 on the constrained condition and 32.4 on the unconstrained condition. We secured the top position in the constrained condition and second position in the unconstrained condition.",
+    "num_pages": 6
+}

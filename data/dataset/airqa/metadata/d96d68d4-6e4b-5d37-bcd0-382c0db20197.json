@@ -1,0 +1,19 @@
+{
+    "uuid": "d96d68d4-6e4b-5d37-bcd0-382c0db20197",
+    "title": "CFL: Causally Fair Language Models Through Token-level Attribute Controlled Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{madhavan-etal-2023-cfl,\n    title = \"{CFL}: Causally Fair Language Models Through Token-level Attribute Controlled Generation\",\n    author = \"Madhavan, Rahul  and\n      Garg, Rishabh  and\n      Wadhawan, Kahini  and\n      Mehta, Sameep\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.720\",\n    doi = \"10.18653/v1/2023.findings-acl.720\",\n    pages = \"11344--11358\",\n    abstract = \"We propose a method to control the attributes of Language Models (LMs) for the text generation task using Causal Average Treatment Effect (ATE) scores and counterfactual augmentation. We explore this method, in the context of LM detoxification, and propose the Causally Fair Language (CFL) architecture for detoxifying pre-trained LMs in a plug-and-play manner. Our architecture is based on a Structural Causal Model (SCM) that is mathematically transparent and computationally efficient as compared with many existing detoxification techniques. We also propose several new metrics that aim to better understand the behaviour of LMs in the context of toxic text generation. Further, we achieve state of the art performance for toxic degeneration, which are computed using Real Toxicity Prompts. Our experiments show that CFL achieves such a detoxification without much impact on the model perplexity. We also show that CFL mitigates the unintended bias problem through experiments on the BOLD dataset.\",\n}\n",
+    "authors": [
+        "Rahul Madhavan",
+        "Rishabh Garg",
+        "Kahini Wadhawan",
+        "Sameep Mehta"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.720.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d96d68d4-6e4b-5d37-bcd0-382c0db20197.pdf",
+    "abstract": "We propose a method to control the attributes of Language Models (LMs) for the text generation task using Causal Average Treatment Effect (ATE) scores and counterfactual augmentation. We explore this method, in the context of LM detoxification, and propose the Causally Fair Language (CFL) architecture for detoxifying pre-trained LMs in a plug-and-play manner. Our architecture is based on a Structural Causal Model (SCM) that is mathematically transparent and computationally efficient as compared with many existing detoxification techniques. We also propose several new metrics that aim to better understand the behaviour of LMs in the context of toxic text generation. Further, we achieve state of the art performance for toxic degeneration, which are computed using Real Toxicity Prompts. Our experiments show that CFL achieves such a detoxification without much impact on the model perplexity. We also show that CFL mitigates the unintended bias problem through experiments on the BOLD dataset.",
+    "num_pages": 15
+}

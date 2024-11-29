@@ -1,0 +1,21 @@
+{
+    "uuid": "83ab4698-5411-5d11-8658-d76717a639ae",
+    "title": "Diffusion Theory as a Scalpel: Detecting and Purifying Poisonous Dimensions in Pre-trained Language Models Caused by Backdoor or Bias",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhang-etal-2023-diffusion,\n    title = \"Diffusion Theory as a Scalpel: Detecting and Purifying Poisonous Dimensions in Pre-trained Language Models Caused by Backdoor or Bias\",\n    author = \"Zhang, Zhiyuan  and\n      Chen, Deli  and\n      Zhou, Hao  and\n      Meng, Fandong  and\n      Zhou, Jie  and\n      Sun, Xu\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.157\",\n    doi = \"10.18653/v1/2023.findings-acl.157\",\n    pages = \"2495--2517\",\n    abstract = \"Pre-trained Language Models (PLMs) may be poisonous with backdoors or bias injected by the suspicious attacker during the fine-tuning process. A core challenge of purifying potentially poisonous PLMs is precisely finding poisonous dimensions. To settle this issue, we propose the Fine-purifying approach, which utilizes the diffusion theory to study the dynamic process of fine-tuning for finding potentially poisonous dimensions. According to the relationship between parameter drifts and Hessians of different dimensions, we can detect poisonous dimensions with abnormal dynamics, purify them by resetting them to clean pre-trained weights, and then fine-tune the purified weights on a small clean dataset. To the best of our knowledge, we are the first to study the dynamics guided by the diffusion theory for safety or defense purposes. Experimental results validate the effectiveness of Fine-purifying even with a small clean dataset.\",\n}\n",
+    "authors": [
+        "Zhiyuan Zhang",
+        "Deli Chen",
+        "Hao Zhou",
+        "Fandong Meng",
+        "Jie Zhou",
+        "Xu Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.157.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/83ab4698-5411-5d11-8658-d76717a639ae.pdf",
+    "abstract": "Pre-trained Language Models (PLMs) may be poisonous with backdoors or bias injected by the suspicious attacker during the fine-tuning process. A core challenge of purifying potentially poisonous PLMs is precisely finding poisonous dimensions. To settle this issue, we propose the Fine-purifying approach, which utilizes the diffusion theory to study the dynamic process of fine-tuning for finding potentially poisonous dimensions. According to the relationship between parameter drifts and Hessians of different dimensions, we can detect poisonous dimensions with abnormal dynamics, purify them by resetting them to clean pre-trained weights, and then fine-tune the purified weights on a small clean dataset. To the best of our knowledge, we are the first to study the dynamics guided by the diffusion theory for safety or defense purposes. Experimental results validate the effectiveness of Fine-purifying even with a small clean dataset.",
+    "num_pages": 23
+}

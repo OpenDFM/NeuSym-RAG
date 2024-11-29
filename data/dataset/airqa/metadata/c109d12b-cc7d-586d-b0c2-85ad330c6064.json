@@ -1,0 +1,19 @@
+{
+    "uuid": "c109d12b-cc7d-586d-b0c2-85ad330c6064",
+    "title": "IITR at BioLaySumm Task 1:Lay Summarization of BioMedical articles using Transformers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+    "bibtex": "@inproceedings{reddy-etal-2023-iitr,\n    title = \"{IITR} at {B}io{L}ay{S}umm Task 1:Lay Summarization of {B}io{M}edical articles using Transformers\",\n    author = \"Reddy, Venkat praneeth  and\n      Reddy, Pinnapu Reddy Harshavardhan  and\n      Sumedh, Karanam Sai  and\n      Sharma, Raksha\",\n    editor = \"Demner-fushman, Dina  and\n      Ananiadou, Sophia  and\n      Cohen, Kevin\",\n    booktitle = \"The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.bionlp-1.67\",\n    doi = \"10.18653/v1/2023.bionlp-1.67\",\n    pages = \"625--628\",\n    abstract = \"Initially, we analyzed the datasets in a statistical way so as to learn about various sections{'} contributions to the final summary in both the pros and life datasets. We found that both the datasets have an Introduction and Abstract along with some initial parts of the results contributing to the summary. We considered only these sections in the next stage of analysis. We found the optimal length or no of sentences of each of the Introduction, abstract, and result which contributes best to the summary. After this statistical analysis, we took the pre-trained model Facebook/bart-base and fine-tuned it with both the datasets PLOS and eLife. While fine-tuning and testing the results we have used chunking because the text lengths are huge. So to not lose information due to the number of token constraints of the model, we used chunking. Finally, we saw the eLife model giving more accurate results than PLOS in terms of readability aspect, probably because the PLOS summary is closer to its abstract, we have considered the eLife model as our final model and tuned the hyperparameters. We are ranked 7th overall and 1st in readability\",\n}\n",
+    "authors": [
+        "Venkat praneeth Reddy",
+        "Pinnapu Reddy Harshavardhan Reddy",
+        "Karanam Sai Sumedh",
+        "Raksha Sharma"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.bionlp-1.67.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c109d12b-cc7d-586d-b0c2-85ad330c6064.pdf",
+    "abstract": "Initially, we analyzed the datasets in a statistical way so as to learn about various sections’ contributions to the final summary in both the pros and life datasets. We found that both the datasets have an Introduction and Abstract along with some initial parts of the results contributing to the summary. We considered only these sections in the next stage of analysis. We found the optimal length or no of sentences of each of the Introduction, abstract, and result which contributes best to the summary. After this statistical analysis, we took the pre-trained model Facebook/bart-base and fine-tuned it with both the datasets PLOS and eLife. While fine-tuning and testing the results we have used chunking because the text lengths are huge. So to not lose information due to the number of token constraints of the model, we used chunking. Finally, we saw the eLife model giving more accurate results than PLOS in terms of readability aspect, probably because the PLOS summary is closer to its abstract, we have considered the eLife model as our final model and tuned the hyperparameters. We are ranked 7th overall and 1st in readability",
+    "num_pages": 4
+}

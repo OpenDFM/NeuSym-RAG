@@ -1,0 +1,24 @@
+{
+    "uuid": "bca7a81a-0368-5e65-ba0f-ce530a183c1d",
+    "title": "Retrieval-Augmented Domain Adaptation of Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)",
+    "bibtex": "@inproceedings{xu-etal-2023-retrieval,\n    title = \"Retrieval-Augmented Domain Adaptation of Language Models\",\n    author = \"Xu, Benfeng  and\n      Zhao, Chunxu  and\n      Jiang, Wenbin  and\n      Zhu, PengFei  and\n      Dai, Songtai  and\n      Pang, Chao  and\n      Sun, Zhuo  and\n      Wang, Shuohuan  and\n      Sun, Yu\",\n    editor = \"Can, Burcu  and\n      Mozes, Maximilian  and\n      Cahyawijaya, Samuel  and\n      Saphra, Naomi  and\n      Kassner, Nora  and\n      Ravfogel, Shauli  and\n      Ravichander, Abhilasha  and\n      Zhao, Chen  and\n      Augenstein, Isabelle  and\n      Rogers, Anna  and\n      Cho, Kyunghyun  and\n      Grefenstette, Edward  and\n      Voita, Lena\",\n    booktitle = \"Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.repl4nlp-1.5\",\n    doi = \"10.18653/v1/2023.repl4nlp-1.5\",\n    pages = \"54--64\",\n    abstract = \"Language models pretrained on general domain corpora usually exhibit considerable degradation when generalizing to downstream tasks of specialized domains. Existing approaches try to construct PLMs for each specific domains either from scratch or through further pretraining, which not only costs substantial resources, but also fails to cover all target domains at various granularity. In this work, we propose RADA, a novel Retrieval-Augmented framework for Domain Adaptation. We first construct a textual corpora that covers the downstream task at flexible domain granularity and resource availability. We employ it as a pluggable datastore to retrieve informative background knowledge, and integrate them into the standard language model framework to augment representations. We then propose a two-level selection scheme to integrate the most relevant information while alleviating irrelevant noises. Specifically, we introduce a differentiable sampling module as well as an attention mechanism to achieve both passage-level and word-level selection. Such a retrieval-augmented framework enables domain adaptation of language models with flexible domain coverage and fine-grained domain knowledge integration. We conduct comprehensive experiments across biomedical, science and legal domains to demonstrate the effectiveness of the overall framework, and its advantage over existing solutions.\",\n}\n",
+    "authors": [
+        "Benfeng Xu",
+        "Chunxu Zhao",
+        "Wenbin Jiang",
+        "PengFei Zhu",
+        "Songtai Dai",
+        "Chao Pang",
+        "Zhuo Sun",
+        "Shuohuan Wang",
+        "Yu Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.repl4nlp-1.5.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/bca7a81a-0368-5e65-ba0f-ce530a183c1d.pdf",
+    "abstract": "Language models pretrained on general domain corpora usually exhibit considerable degradation when generalizing to downstream tasks of specialized domains. Existing approaches try to construct PLMs for each specific domains either from scratch or through further pretraining, which not only costs substantial resources, but also fails to cover all target domains at various granularity. In this work, we propose RADA, a novel Retrieval-Augmented framework for Domain Adaptation. We first construct a textual corpora that covers the downstream task at flexible domain granularity and resource availability. We employ it as a pluggable datastore to retrieve informative background knowledge, and integrate them into the standard language model framework to augment representations. We then propose a two-level selection scheme to integrate the most relevant information while alleviating irrelevant noises. Specifically, we introduce a differentiable sampling module as well as an attention mechanism to achieve both passage-level and word-level selection. Such a retrieval-augmented framework enables domain adaptation of language models with flexible domain coverage and fine-grained domain knowledge integration. We conduct comprehensive experiments across biomedical, science and legal domains to demonstrate the effectiveness of the overall framework, and its advantage over existing solutions.",
+    "num_pages": 11
+}

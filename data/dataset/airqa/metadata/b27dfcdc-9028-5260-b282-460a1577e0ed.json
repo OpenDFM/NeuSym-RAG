@@ -1,0 +1,18 @@
+{
+    "uuid": "b27dfcdc-9028-5260-b282-460a1577e0ed",
+    "title": "Building blocks for complex tasks: Robust generative event extraction for radiology reports under domain shifts",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 5th Clinical Natural Language Processing Workshop",
+    "bibtex": "@inproceedings{zhou-etal-2023-building,\n    title = \"Building blocks for complex tasks: Robust generative event extraction for radiology reports under domain shifts\",\n    author = \"Zhou, Sitong  and\n      Yetisgen, Meliha  and\n      Ostendorf, Mari\",\n    editor = \"Naumann, Tristan  and\n      Ben Abacha, Asma  and\n      Bethard, Steven  and\n      Roberts, Kirk  and\n      Rumshisky, Anna\",\n    booktitle = \"Proceedings of the 5th Clinical Natural Language Processing Workshop\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.clinicalnlp-1.38\",\n    doi = \"10.18653/v1/2023.clinicalnlp-1.38\",\n    pages = \"344--357\",\n    abstract = \"This paper explores methods for extracting information from radiology reports that generalize across exam modalities to reduce requirements for annotated data. We demonstrate that multi-pass T5-based text-to-text generative models exhibit better generalization across exam modalities compared to approaches that employ BERT-based task-specific classification layers. We then develop methods that reduce the inference cost of the model, making large-scale corpus processing more feasible for clinical applications. Specifically, we introduce a generative technique that decomposes complex tasks into smaller subtask blocks, which improves a single-pass model when combined with multitask training. In addition, we leverage target-domain contexts during inference to enhance domain adaptation, enabling use of smaller models. Analyses offer insights into the benefits of different cost reduction strategies.\",\n}\n",
+    "authors": [
+        "Sitong Zhou",
+        "Meliha Yetisgen",
+        "Mari Ostendorf"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.clinicalnlp-1.38.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b27dfcdc-9028-5260-b282-460a1577e0ed.pdf",
+    "abstract": "This paper explores methods for extracting information from radiology reports that generalize across exam modalities to reduce requirements for annotated data. We demonstrate that multi-pass T5-based text-to-text generative models exhibit better generalization across exam modalities compared to approaches that employ BERT-based task-specific classification layers. We then develop methods that reduce the inference cost of the model, making large-scale corpus processing more feasible for clinical applications. Specifically, we introduce a generative technique that decomposes complex tasks into smaller subtask blocks, which improves a single-pass model when combined with multitask training. In addition, we leverage target-domain contexts during inference to enhance domain adaptation, enabling use of smaller models. Analyses offer insights into the benefits of different cost reduction strategies.",
+    "num_pages": 14
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "492c3c0e-5389-5047-9adc-359d8678cb30",
+    "title": "Improving End-to-End Speech Translation by Imitation-Based Knowledge Distillation with Synthetic Transcripts",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)",
+    "bibtex": "@inproceedings{hubert-etal-2023-improving,\n    title = \"Improving End-to-End Speech Translation by Imitation-Based Knowledge Distillation with Synthetic Transcripts\",\n    author = \"Hubert, Rebekka  and\n      Sokolov, Artem  and\n      Riezler, Stefan\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.iwslt-1.4\",\n    doi = \"10.18653/v1/2023.iwslt-1.4\",\n    pages = \"89--101\",\n    abstract = \"End-to-end automatic speech translation (AST) relies on data that combines audio inputs with text translation outputs. Previous work used existing large parallel corpora of transcriptions and translations in a knowledge distillation (KD) setup to distill a neural machine translation (NMT) into an AST student model. While KD allows using larger pretrained models, the reliance of previous KD approaches on manual audio transcripts in the data pipeline restricts the applicability of this framework to AST. We present an imitation learning approach where a teacher NMT system corrects the errors of an AST student without relying on manual transcripts. We show that the NMT teacher can recover from errors in automatic transcriptions and is able to correct erroneous translations of the AST student, leading to improvements of about 4 BLEU points over the standard AST end-to-end baseline on the English-German CoVoST-2 and MuST-C datasets, respectively. Code and data are publicly available: \\url{https://github.com/HubReb/imitkd_ast/releases/tag/v1.1}\",\n}\n",
+    "authors": [
+        "Rebekka Hubert",
+        "Artem Sokolov",
+        "Stefan Riezler"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.iwslt-1.4.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/492c3c0e-5389-5047-9adc-359d8678cb30.pdf",
+    "abstract": "End-to-end automatic speech translation (AST) relies on data that combines audio inputs with text translation outputs. Previous work used existing large parallel corpora of transcriptions and translations in a knowledge distillation (KD) setup to distill a neural machine translation (NMT) into an AST student model. While KD allows using larger pretrained models, the reliance of previous KD approaches on manual audio transcripts in the data pipeline restricts the applicability of this framework to AST. We present an imitation learning approach where a teacher NMT system corrects the errors of an AST student without relying on manual transcripts. We show that the NMT teacher can recover from errors in automatic transcriptions and is able to correct erroneous translations of the AST student, leading to improvements of about 4 BLEU points over the standard AST end-to-end baseline on the English-German CoVoST-2 and MuST-C datasets, respectively. Code and data are publicly available: https://github.com/HubReb/imitkd_ast/releases/tag/v1.1",
+    "num_pages": 13
+}

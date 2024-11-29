@@ -1,0 +1,22 @@
+{
+    "uuid": "d7f6357e-49b6-5cc6-b84b-10453ef3ab17",
+    "title": "Query Structure Modeling for Inductive Logical Reasoning Over Knowledge Graphs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2023-query,\n    title = \"Query Structure Modeling for Inductive Logical Reasoning Over Knowledge Graphs\",\n    author = \"Wang, Siyuan  and\n      Wei, Zhongyu  and\n      Han, Meng  and\n      Fan, Zhihao  and\n      Shan, Haijun  and\n      Zhang, Qi  and\n      Huang, Xuanjing\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.259\",\n    doi = \"10.18653/v1/2023.acl-long.259\",\n    pages = \"4706--4718\",\n    abstract = \"Logical reasoning over incomplete knowledge graphs to answer complex logical queries is a challenging task. With the emergence of new entities and relations in constantly evolving KGs, inductive logical reasoning over KGs has become a crucial problem. However, previous PLMs-based methods struggle to model the logical structures of complex queries, which limits their ability to generalize within the same structure. In this paper, we propose a structure-modeled textual encoding framework for inductive logical reasoning over KGs. It encodes linearized query structures and entities using pre-trained language models to find answers. For structure modeling of complex queries, we design stepwise instructions that implicitly prompt PLMs on the execution order of geometric operations in each query. We further separately model different geometric operations (i.e., projection, intersection, and union) on the representation space using a pre-trained encoder with additional attention and maxout layers to enhance structured modeling. We conduct experiments on two inductive logical reasoning datasets and three transductive datasets. The results demonstrate the effectiveness of our method on logical reasoning over KGs in both inductive and transductive settings.\",\n}\n",
+    "authors": [
+        "Siyuan Wang",
+        "Zhongyu Wei",
+        "Meng Han",
+        "Zhihao Fan",
+        "Haijun Shan",
+        "Qi Zhang",
+        "Xuanjing Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.259.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d7f6357e-49b6-5cc6-b84b-10453ef3ab17.pdf",
+    "abstract": "Logical reasoning over incomplete knowledge graphs to answer complex logical queries is a challenging task. With the emergence of new entities and relations in constantly evolving KGs, inductive logical reasoning over KGs has become a crucial problem. However, previous PLMs-based methods struggle to model the logical structures of complex queries, which limits their ability to generalize within the same structure. In this paper, we propose a structure-modeled textual encoding framework for inductive logical reasoning over KGs. It encodes linearized query structures and entities using pre-trained language models to find answers. For structure modeling of complex queries, we design stepwise instructions that implicitly prompt PLMs on the execution order of geometric operations in each query. We further separately model different geometric operations (i.e., projection, intersection, and union) on the representation space using a pre-trained encoder with additional attention and maxout layers to enhance structured modeling. We conduct experiments on two inductive logical reasoning datasets and three transductive datasets. The results demonstrate the effectiveness of our method on logical reasoning over KGs in both inductive and transductive settings.",
+    "num_pages": 13
+}

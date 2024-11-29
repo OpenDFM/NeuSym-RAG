@@ -1,0 +1,17 @@
+{
+    "uuid": "d67fadec-706f-5e20-97e2-0744ba8ac439",
+    "title": "Controlling Learned Effects to Reduce Spurious Correlations in Text Classifiers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{bansal-sharma-2023-controlling,\n    title = \"Controlling Learned Effects to Reduce Spurious Correlations in Text Classifiers\",\n    author = \"Bansal, Parikshit  and\n      Sharma, Amit\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.127\",\n    doi = \"10.18653/v1/2023.acl-long.127\",\n    pages = \"2271--2287\",\n    abstract = \"To address the problem of NLP classifiers learning spurious correlations between training features and target labels, a common approach is to make the model{'}s predictions invariant to these features. However, this can be counter-productive when the features have a non-zero causal effect on the target label and thus are important for prediction. Therefore, using methods from the causal inference literature, we propose an algorithm to regularize the learnt effect of the features on the model{'}s prediction to the estimated effect of feature on label. This results in an automated augmentation method that leverages the estimated effect of a feature to appropriately change the labels for new augmented inputs. On toxicity and IMDB review datasets, the proposed algorithm minimises spurious correlations and improves the minority group (i.e., samples breaking spurious correlations) accuracy, while also improving the total accuracy compared to standard training.\",\n}\n",
+    "authors": [
+        "Parikshit Bansal",
+        "Amit Sharma"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.127.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d67fadec-706f-5e20-97e2-0744ba8ac439.pdf",
+    "abstract": "To address the problem of NLP classifiers learning spurious correlations between training features and target labels, a common approach is to make the model’s predictions invariant to these features. However, this can be counter-productive when the features have a non-zero causal effect on the target label and thus are important for prediction. Therefore, using methods from the causal inference literature, we propose an algorithm to regularize the learnt effect of the features on the model’s prediction to the estimated effect of feature on label. This results in an automated augmentation method that leverages the estimated effect of a feature to appropriately change the labels for new augmented inputs. On toxicity and IMDB review datasets, the proposed algorithm minimises spurious correlations and improves the minority group (i.e., samples breaking spurious correlations) accuracy, while also improving the total accuracy compared to standard training.",
+    "num_pages": 17
+}

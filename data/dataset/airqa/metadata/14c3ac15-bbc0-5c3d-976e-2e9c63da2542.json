@@ -1,0 +1,19 @@
+{
+    "uuid": "14c3ac15-bbc0-5c3d-976e-2e9c63da2542",
+    "title": "Layerwise universal adversarial attack on NLP models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{tsymboi-etal-2023-layerwise,\n    title = \"Layerwise universal adversarial attack on {NLP} models\",\n    author = \"Tsymboi, Olga  and\n      Malaev, Danil  and\n      Petrovskii, Andrei  and\n      Oseledets, Ivan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.10\",\n    doi = \"10.18653/v1/2023.findings-acl.10\",\n    pages = \"129--143\",\n    abstract = \"In this work, we examine the vulnerability of language models to universal adversarial triggers (UATs). We propose a new white-box approach to the construction of layerwise UATs (LUATs), which searches the triggers by perturbing hidden layers of a network. On the example of three transformer models and three datasets from the GLUE benchmark, we demonstrate that our method provides better transferability in a model-to-model setting with an average gain of 9.3{\\%} in the fooling rate over the baseline. Moreover, we investigate triggers transferability in the task-to-task setting. Using small subsets from the datasets similar to the target tasks for choosing a perturbed layer, we show that LUATs are more efficient than vanilla UATs by 7.1{\\%} in the fooling rate.\",\n}\n",
+    "authors": [
+        "Olga Tsymboi",
+        "Danil Malaev",
+        "Andrei Petrovskii",
+        "Ivan Oseledets"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.10.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/14c3ac15-bbc0-5c3d-976e-2e9c63da2542.pdf",
+    "abstract": "In this work, we examine the vulnerability of language models to universal adversarial triggers (UATs). We propose a new white-box approach to the construction of layerwise UATs (LUATs), which searches the triggers by perturbing hidden layers of a network. On the example of three transformer models and three datasets from the GLUE benchmark, we demonstrate that our method provides better transferability in a model-to-model setting with an average gain of 9.3% in the fooling rate over the baseline. Moreover, we investigate triggers transferability in the task-to-task setting. Using small subsets from the datasets similar to the target tasks for choosing a perturbed layer, we show that LUATs are more efficient than vanilla UATs by 7.1% in the fooling rate.",
+    "num_pages": 15
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "9ac4b234-01a1-5428-857a-e77eccc3f340",
+    "title": "Harvesting Events from Multiple Sources: Towards a Cross-Document Event Extraction Paradigm",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{gao-etal-2024-harvesting,\n    title = \"Harvesting Events from Multiple Sources: Towards a Cross-Document Event Extraction Paradigm\",\n    author = \"Gao, Qiang  and\n      Meng, Zixiang  and\n      Li, Bobo  and\n      Zhou, Jun  and\n      Li, Fei  and\n      Teng, Chong  and\n      Ji, Donghong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.114\",\n    doi = \"10.18653/v1/2024.findings-acl.114\",\n    pages = \"1913--1927\",\n    abstract = \"Document-level event extraction aims to extract structured event information from unstructured text. However, a single document often contains limited event information and the roles of different event arguments may be biased due to the influence of the information source.This paper addresses the limitations of traditional document-level event extraction by proposing the task of cross-document event extraction (CDEE) to integrate event information from multiple documents and provide a comprehensive perspective on events. We construct a novel cross-document event extraction dataset, namely CLES, which contains 20,059 documents and 37,688 mention-level events, where over 70{\\%} of them are cross-document. To address the task, we propose a CDEE pipeline that includes 5 steps, namely event extraction, coreference resolution, entity normalization, role normalization and entity-role resolution. Our CDEE pipeline achieves about 72{\\%} F1 in end-to-end cross-document event extraction, suggesting the challenge of this task and setting up a benchmark for future research. Our work builds a new line of information extraction research and will attract new research attention.\",\n}\n",
+    "authors": [
+        "Qiang Gao",
+        "Zixiang Meng",
+        "Bobo Li",
+        "Jun Zhou",
+        "Fei Li",
+        "Chong Teng",
+        "Donghong Ji"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.114.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/9ac4b234-01a1-5428-857a-e77eccc3f340.pdf",
+    "abstract": "Document-level event extraction aims to extract structured event information from unstructured text. However, a single document often contains limited event information and the roles of different event arguments may be biased due to the influence of the information source.This paper addresses the limitations of traditional document-level event extraction by proposing the task of cross-document event extraction (CDEE) to integrate event information from multiple documents and provide a comprehensive perspective on events. We construct a novel cross-document event extraction dataset, namely CLES, which contains 20,059 documents and 37,688 mention-level events, where over 70% of them are cross-document. To address the task, we propose a CDEE pipeline that includes 5 steps, namely event extraction, coreference resolution, entity normalization, role normalization and entity-role resolution. Our CDEE pipeline achieves about 72% F1 in end-to-end cross-document event extraction, suggesting the challenge of this task and setting up a benchmark for future research. Our work builds a new line of information extraction research and will attract new research attention.",
+    "num_pages": 15
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "dee17b9a-09b2-5268-9336-f810ba5d3f5b",
+    "title": "RAID: A Shared Benchmark for Robust Evaluation of Machine-Generated Text Detectors",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{dugan-etal-2024-raid,\n    title = \"{RAID}: A Shared Benchmark for Robust Evaluation of Machine-Generated Text Detectors\",\n    author = \"Dugan, Liam  and\n      Hwang, Alyssa  and\n      Trhl{\\'\\i}k, Filip  and\n      Zhu, Andrew  and\n      Ludan, Josh Magnus  and\n      Xu, Hainiu  and\n      Ippolito, Daphne  and\n      Callison-Burch, Chris\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.674\",\n    doi = \"10.18653/v1/2024.acl-long.674\",\n    pages = \"12463--12492\",\n    abstract = \"Many commercial and open-source models claim to detect machine-generated text with extremely high accuracy (99{\\%} or more). However, very few of these detectors are evaluated on shared benchmark datasets and even when they are, the datasets used for evaluation are insufficiently challenging{---}lacking variations in sampling strategy, adversarial attacks, and open-source generative models. In this work we present RAID: the largest and most challenging benchmark dataset for machine-generated text detection. RAID includes over 6 million generations spanning 11 models, 8 domains, 11 adversarial attacks and 4 decoding strategies. Using RAID, we evaluate the out-of-domain and adversarial robustness of 8 open- and 4 closed-source detectors and find that current detectors are easily fooled by adversarial attacks, variations in sampling strategies, repetition penalties, and unseen generative models. We release our data along with a leaderboard to encourage future research.\",\n}\n",
+    "authors": [
+        "Liam Dugan",
+        "Alyssa Hwang",
+        "Filip Trhlík",
+        "Andrew Zhu",
+        "Josh Magnus Ludan",
+        "Hainiu Xu",
+        "Daphne Ippolito",
+        "Chris Callison-Burch"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.674.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/dee17b9a-09b2-5268-9336-f810ba5d3f5b.pdf",
+    "abstract": "Many commercial and open-source models claim to detect machine-generated text with extremely high accuracy (99% or more). However, very few of these detectors are evaluated on shared benchmark datasets and even when they are, the datasets used for evaluation are insufficiently challenging—lacking variations in sampling strategy, adversarial attacks, and open-source generative models. In this work we present RAID: the largest and most challenging benchmark dataset for machine-generated text detection. RAID includes over 6 million generations spanning 11 models, 8 domains, 11 adversarial attacks and 4 decoding strategies. Using RAID, we evaluate the out-of-domain and adversarial robustness of 8 open- and 4 closed-source detectors and find that current detectors are easily fooled by adversarial attacks, variations in sampling strategies, repetition penalties, and unseen generative models. We release our data along with a leaderboard to encourage future research.",
+    "num_pages": 30
+}

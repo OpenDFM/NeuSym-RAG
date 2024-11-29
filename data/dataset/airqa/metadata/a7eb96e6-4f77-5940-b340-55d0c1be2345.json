@@ -1,0 +1,21 @@
+{
+    "uuid": "a7eb96e6-4f77-5940-b340-55d0c1be2345",
+    "title": "CAME: Confidence-guided Adaptive Memory Efficient Optimization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{luo-etal-2023-came,\n    title = \"{CAME}: Confidence-guided Adaptive Memory Efficient Optimization\",\n    author = \"Luo, Yang  and\n      Ren, Xiaozhe  and\n      Zheng, Zangwei  and\n      Jiang, Zhuo  and\n      Jiang, Xin  and\n      You, Yang\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.243\",\n    doi = \"10.18653/v1/2023.acl-long.243\",\n    pages = \"4442--4453\",\n    abstract = \"Adaptive gradient methods, such as Adam and LAMB, have demonstrated excellent performance in the training of large language models. Nevertheless, the need for adaptivity requires maintaining second-moment estimates of the per-parameter gradients, which entails a high cost of extra memory overheads. To solve this problem, several memory-efficient optimizers (e.g., Adafactor) have been proposed to obtain a drastic reduction in auxiliary memory usage, but with a performance penalty. In this paper, we first study a confidence-guided strategy to reduce the instability of existing memory efficient optimizers. Based on this strategy, we propose CAME to simultaneously achieve two goals: fast convergence as in traditional adaptive methods, and low memory usage as in memory-efficient methods. Extensive experiments demonstrate the training stability and superior performance of CAME across various NLP tasks such as BERT and GPT-2 training. Notably, for BERT pre-training on the large batch size of 32,768, our proposed optimizer attains faster convergence and higher accuracy compared with the Adam optimizer. The implementation of CAME is publicly available.\",\n}\n",
+    "authors": [
+        "Yang Luo",
+        "Xiaozhe Ren",
+        "Zangwei Zheng",
+        "Zhuo Jiang",
+        "Xin Jiang",
+        "Yang You"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.243.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a7eb96e6-4f77-5940-b340-55d0c1be2345.pdf",
+    "abstract": "Adaptive gradient methods, such as Adam and LAMB, have demonstrated excellent performance in the training of large language models. Nevertheless, the need for adaptivity requires maintaining second-moment estimates of the per-parameter gradients, which entails a high cost of extra memory overheads. To solve this problem, several memory-efficient optimizers (e.g., Adafactor) have been proposed to obtain a drastic reduction in auxiliary memory usage, but with a performance penalty. In this paper, we first study a confidence-guided strategy to reduce the instability of existing memory efficient optimizers. Based on this strategy, we propose CAME to simultaneously achieve two goals: fast convergence as in traditional adaptive methods, and low memory usage as in memory-efficient methods. Extensive experiments demonstrate the training stability and superior performance of CAME across various NLP tasks such as BERT and GPT-2 training. Notably, for BERT pre-training on the large batch size of 32,768, our proposed optimizer attains faster convergence and higher accuracy compared with the Adam optimizer. The implementation of CAME is publicly available.",
+    "num_pages": 12
+}

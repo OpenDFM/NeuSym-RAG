@@ -1,0 +1,20 @@
+{
+    "uuid": "524bd91c-e8d1-540e-9f1e-da460111ba4c",
+    "title": "Resolving Elliptical Compounds in German Medical Text",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+    "bibtex": "@inproceedings{kammer-etal-2023-resolving,\n    title = \"Resolving Elliptical Compounds in {G}erman Medical Text\",\n    author = \"Kammer, Niklas  and\n      Borchert, Florian  and\n      Winkler, Silvia  and\n      de Melo, Gerard  and\n      Schapranow, Matthieu-P.\",\n    editor = \"Demner-fushman, Dina  and\n      Ananiadou, Sophia  and\n      Cohen, Kevin\",\n    booktitle = \"The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.bionlp-1.26\",\n    doi = \"10.18653/v1/2023.bionlp-1.26\",\n    pages = \"292--305\",\n    abstract = \"Elliptical coordinated compound noun phrases (ECCNPs), a special kind of coordination ellipsis, are a common phenomenon in German medical texts. As their presence is known to affect the performance in downstream tasks such as entity extraction and disambiguation, their resolution can be a useful preprocessing step in information extraction pipelines. In this work, we present a new comprehensive dataset of more than 4,000 manually annotated ECCNPs in German medical text, along with the respective ground truth resolutions. Based on this data, we propose a generative encoder-decoder Transformer model, allowing for a simple end-to-end resolution of ECCNPs from raw input strings with very high accuracy (90.5{\\%} exact match score). We compare our approach to an elaborate rule-based baseline, which the generative model outperforms by a large margin. We further investigate different scenarios for prompting large language models (LLM) to resolve ECCNPs. In a zero-shot setting, performance is remarkably poor (21.6{\\%} exact matches), as the LLM tends to apply complex changes to the inputs unrelated to our specific task. We also find no improvement over the generative model when using the LLM for post-filtering of generated candidate resolutions.\",\n}\n",
+    "authors": [
+        "Niklas Kammer",
+        "Florian Borchert",
+        "Silvia Winkler",
+        "Gerard de Melo",
+        "Matthieu-P. Schapranow"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.bionlp-1.26.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/524bd91c-e8d1-540e-9f1e-da460111ba4c.pdf",
+    "abstract": "Elliptical coordinated compound noun phrases (ECCNPs), a special kind of coordination ellipsis, are a common phenomenon in German medical texts. As their presence is known to affect the performance in downstream tasks such as entity extraction and disambiguation, their resolution can be a useful preprocessing step in information extraction pipelines. In this work, we present a new comprehensive dataset of more than 4,000 manually annotated ECCNPs in German medical text, along with the respective ground truth resolutions. Based on this data, we propose a generative encoder-decoder Transformer model, allowing for a simple end-to-end resolution of ECCNPs from raw input strings with very high accuracy (90.5% exact match score). We compare our approach to an elaborate rule-based baseline, which the generative model outperforms by a large margin. We further investigate different scenarios for prompting large language models (LLM) to resolve ECCNPs. In a zero-shot setting, performance is remarkably poor (21.6% exact matches), as the LLM tends to apply complex changes to the inputs unrelated to our specific task. We also find no improvement over the generative model when using the LLM for post-filtering of generated candidate resolutions.",
+    "num_pages": 14
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "73257232-f34f-52cb-b72b-ec70efc5b237",
+    "title": "Accelerating Multilingual Language Model for Excessively Tokenized Languages",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{hong-etal-2024-accelerating,\n    title = \"Accelerating Multilingual Language Model for Excessively Tokenized Languages\",\n    author = \"Hong, Jimin  and\n      Lee, Gibbeum  and\n      Cho, Jaewoong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.660\",\n    doi = \"10.18653/v1/2024.findings-acl.660\",\n    pages = \"11095--11111\",\n    abstract = \"Recent advancements in large language models (LLMs) have remarkably enhanced performances on a variety of tasks in multiple languages. However, tokenizers in LLMs trained primarily on English-centric corpora often overly fragment a text into character or Unicode-level tokens in non-Roman alphabetic languages, leading to inefficient text generation.We introduce a simple yet effective framework to accelerate text generation in such languages. Our approach involves employing a new language model head with a vocabulary set tailored to a specific target language for a pre-trained LLM. This is followed by fine-tuning the new head while incorporating a verification step to ensure the model{'}s performance is preserved.We show that this targeted fine-tuning, while freezing other model parameters, effectively reduces token fragmentation for the target language. Our extensive experiments demonstrate that the proposed framework increases the generation speed by a factor of 1.7 while maintaining the performance of pre-trained multilingual models on target monolingual tasks.\",\n}\n",
+    "authors": [
+        "Jimin Hong",
+        "Gibbeum Lee",
+        "Jaewoong Cho"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.660.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/73257232-f34f-52cb-b72b-ec70efc5b237.pdf",
+    "abstract": "Recent advancements in large language models (LLMs) have remarkably enhanced performances on a variety of tasks in multiple languages. However, tokenizers in LLMs trained primarily on English-centric corpora often overly fragment a text into character or Unicode-level tokens in non-Roman alphabetic languages, leading to inefficient text generation.We introduce a simple yet effective framework to accelerate text generation in such languages. Our approach involves employing a new language model head with a vocabulary set tailored to a specific target language for a pre-trained LLM. This is followed by fine-tuning the new head while incorporating a verification step to ensure the model’s performance is preserved.We show that this targeted fine-tuning, while freezing other model parameters, effectively reduces token fragmentation for the target language. Our extensive experiments demonstrate that the proposed framework increases the generation speed by a factor of 1.7 while maintaining the performance of pre-trained multilingual models on target monolingual tasks.",
+    "num_pages": 17
+}

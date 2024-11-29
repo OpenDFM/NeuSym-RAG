@@ -1,0 +1,19 @@
+{
+    "uuid": "f93a1805-a6e4-5a26-9200-9c1da90d4eed",
+    "title": "A Fine Line Between Irony and Sincerity: Identifying Bias in Transformer Models for Irony Detection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 13th Workshop on Computational Approaches to Subjectivity, Sentiment, & Social Media Analysis",
+    "bibtex": "@inproceedings{maladry-etal-2023-fine,\n    title = \"A Fine Line Between Irony and Sincerity: Identifying Bias in Transformer Models for Irony Detection\",\n    author = \"Maladry, Aaron  and\n      Lefever, Els  and\n      Van Hee, Cynthia  and\n      Hoste, Veronique\",\n    editor = \"Barnes, Jeremy  and\n      De Clercq, Orph{\\'e}e  and\n      Klinger, Roman\",\n    booktitle = \"Proceedings of the 13th Workshop on Computational Approaches to Subjectivity, Sentiment, {\\&} Social Media Analysis\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.wassa-1.28\",\n    doi = \"10.18653/v1/2023.wassa-1.28\",\n    pages = \"315--324\",\n    abstract = \"In this paper we investigate potential bias in fine-tuned transformer models for irony detection. Bias is defined in this research as spurious associations between word n-grams and class labels, that can cause the system to rely too much on superficial cues and miss the essence of the irony. For this purpose, we looked for correlations between class labels and words that are prone to trigger irony, such as positive adjectives, intensifiers and topical nouns. Additionally, we investigate our irony model{'}s predictions before and after manipulating the data set through irony trigger replacements. We further support these insights with state-of-the-art explainability techniques (Layer Integrated Gradients, Discretized Integrated Gradients and Layer-wise Relevance Propagation). Both approaches confirm the hypothesis that transformer models generally encode correlations between positive sentiments and ironic texts, with even higher correlations between vividly expressed sentiment and irony. Based on these insights, we implemented a number of modification strategies to enhance the robustness of our irony classifier.\",\n}\n",
+    "authors": [
+        "Aaron Maladry",
+        "Els Lefever",
+        "Cynthia Van Hee",
+        "Veronique Hoste"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.wassa-1.28.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f93a1805-a6e4-5a26-9200-9c1da90d4eed.pdf",
+    "abstract": "In this paper we investigate potential bias in fine-tuned transformer models for irony detection. Bias is defined in this research as spurious associations between word n-grams and class labels, that can cause the system to rely too much on superficial cues and miss the essence of the irony. For this purpose, we looked for correlations between class labels and words that are prone to trigger irony, such as positive adjectives, intensifiers and topical nouns. Additionally, we investigate our irony model’s predictions before and after manipulating the data set through irony trigger replacements. We further support these insights with state-of-the-art explainability techniques (Layer Integrated Gradients, Discretized Integrated Gradients and Layer-wise Relevance Propagation). Both approaches confirm the hypothesis that transformer models generally encode correlations between positive sentiments and ironic texts, with even higher correlations between vividly expressed sentiment and irony. Based on these insights, we implemented a number of modification strategies to enhance the robustness of our irony classifier.",
+    "num_pages": 10
+}

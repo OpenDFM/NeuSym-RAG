@@ -1,0 +1,17 @@
+{
+    "uuid": "45234318-8716-50df-981e-aa151e91a986",
+    "title": "Relational Sentence Embedding for Flexible Semantic Matching",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)",
+    "bibtex": "@inproceedings{wang-li-2023-relational,\n    title = \"Relational Sentence Embedding for Flexible Semantic Matching\",\n    author = \"Wang, Bin  and\n      Li, Haizhou\",\n    editor = \"Can, Burcu  and\n      Mozes, Maximilian  and\n      Cahyawijaya, Samuel  and\n      Saphra, Naomi  and\n      Kassner, Nora  and\n      Ravfogel, Shauli  and\n      Ravichander, Abhilasha  and\n      Zhao, Chen  and\n      Augenstein, Isabelle  and\n      Rogers, Anna  and\n      Cho, Kyunghyun  and\n      Grefenstette, Edward  and\n      Voita, Lena\",\n    booktitle = \"Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.repl4nlp-1.20\",\n    doi = \"10.18653/v1/2023.repl4nlp-1.20\",\n    pages = \"238--252\",\n}\n",
+    "authors": [
+        "Bin Wang",
+        "Haizhou Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.repl4nlp-1.20.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/45234318-8716-50df-981e-aa151e91a986.pdf",
+    "abstract": "We present Relational Sentence Embedding (RSE), a new paradigm to further discover the potential of sentence embeddings. Prior work mainly models the similarity between sentences based on their embedding distance. Because of the complex semantic meanings conveyed, sentence pairs can have various relation types, including but not limited to entailment, paraphrasing, and question-answer. It poses challenges to existing embedding methods to capture such relational information. We handle the problem by learning associated relational embeddings. Specifically, a relation-wise translation operation is applied to the source sentence to infer the corresponding target sentence with a pre-trained Siamese-based encoder. Later, the fine-grained relational similarity scores can be estimated with learned relational embeddings. We benchmark our method on 19 datasets covering a wide range of tasks, including semantic textual similarity, transfer, and domain-specific tasks. Experimental results show that our method is effective and flexible in modelling sentence relations and outperforms a series of state-of-the-art sentence embedding methods.1",
+    "num_pages": 15
+}

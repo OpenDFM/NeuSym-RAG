@@ -1,0 +1,22 @@
+{
+    "uuid": "3e2251d6-818e-5cff-a307-a383a0fc2cbc",
+    "title": "Improving Attributed Text Generation of Large Language Models via Preference Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{li-etal-2024-improving-attributed,\n    title = \"Improving Attributed Text Generation of Large Language Models via Preference Learning\",\n    author = \"Li, Dongfang  and\n      Sun, Zetian  and\n      Hu, Baotian  and\n      Liu, Zhenyu  and\n      Hu, Xinshuo  and\n      Liu, Xuebo  and\n      Zhang, Min\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.301\",\n    doi = \"10.18653/v1/2024.findings-acl.301\",\n    pages = \"5079--5101\",\n    abstract = \"Large language models have been widely adopted in natural language processing, yet they face the challenge of generating unreliable content. Recent works aim to reduce misinformation and hallucinations by resorting to attribution as a means to provide evidence (i.e., citations). However, current attribution methods usually focus on the retrieval stage and automatic evaluation that neglect mirroring the citation mechanisms in human scholarly writing to bolster credibility. In this paper, we address these challenges by modelling the attribution task as preference learning and introducing an Automatic Preference Optimization (APO) framework. First, we create a curated collection for post-training with 6,330 examples by collecting and filtering from existing datasets. Second, considering the high cost of labelling preference data, we further propose an automatic method to synthesize attribution preference data resulting in 95,263 pairs. Moreover, inspired by the human citation process, we further propose a progressive preference optimization method by leveraging fine-grained information. Extensive experiments on three datasets (i.e., ASQA, StrategyQA, and ELI5) demonstrate that APO achieves state-of-the-art citation F1 with higher answer quality.\",\n}\n",
+    "authors": [
+        "Dongfang Li",
+        "Zetian Sun",
+        "Baotian Hu",
+        "Zhenyu Liu",
+        "Xinshuo Hu",
+        "Xuebo Liu",
+        "Min Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.301.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/3e2251d6-818e-5cff-a307-a383a0fc2cbc.pdf",
+    "abstract": "Large language models have been widely adopted in natural language processing, yet they face the challenge of generating unreliable content. Recent works aim to reduce misinformation and hallucinations by resorting to attribution as a means to provide evidence (i.e., citations). However, current attribution methods usually focus on the retrieval stage and automatic evaluation that neglect mirroring the citation mechanisms in human scholarly writing to bolster credibility. In this paper, we address these challenges by modelling the attribution task as preference learning and introducing an Automatic Preference Optimization (APO) framework. First, we create a curated collection for post-training with 6,330 examples by collecting and filtering from existing datasets. Second, considering the high cost of labelling preference data, we further propose an automatic method to synthesize attribution preference data resulting in 95,263 pairs. Moreover, inspired by the human citation process, we further propose a progressive preference optimization method by leveraging fine-grained information. Extensive experiments on three datasets (i.e., ASQA, StrategyQA, and ELI5) demonstrate that APO achieves state-of-the-art citation F1 with higher answer quality.",
+    "num_pages": 23
+}

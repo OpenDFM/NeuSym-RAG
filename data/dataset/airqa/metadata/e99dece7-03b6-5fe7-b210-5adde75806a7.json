@@ -1,0 +1,21 @@
+{
+    "uuid": "e99dece7-03b6-5fe7-b210-5adde75806a7",
+    "title": "ONSEP: A Novel Online Neural-Symbolic Framework for Event Prediction Based on Large Language Model",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{yu-etal-2024-onsep,\n    title = \"{ONSEP}: A Novel Online Neural-Symbolic Framework for Event Prediction Based on Large Language Model\",\n    author = \"Yu, Xuanqing  and\n      Sun, Wangtao  and\n      Li, Jingwei  and\n      Liu, Kang  and\n      Liu, Chengbao  and\n      Tan, Jie\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.378\",\n    doi = \"10.18653/v1/2024.findings-acl.378\",\n    pages = \"6335--6350\",\n    abstract = \"In the realm of event prediction, temporal knowledge graph forecasting (TKGF) stands as a pivotal technique. Previous approaches face the challenges of not utilizing experience during testing and relying on a single short-term history, which limits adaptation to evolving data. In this paper, we introduce the Online Neural-Symbolic Event Prediction (ONSEP) framework, which innovates by integrating dynamic causal rule mining (DCRM) and dual history augmented generation (DHAG). DCRM dynamically constructs causal rules from real-time data, allowing for swift adaptation to new causal relationships. In parallel, DHAG merges short-term and long-term historical contexts, leveraging a bi-branch approach to enrich event prediction. Our framework demonstrates notable performance enhancements across diverse datasets, with significant Hit@k (k=1,3,10) improvements, showcasing its ability to augment large language models (LLMs) for event prediction without necessitating extensive retraining. The ONSEP framework not only advances the field of TKGF but also underscores the potential of neural-symbolic approaches in adapting to dynamic data environments.\",\n}\n",
+    "authors": [
+        "Xuanqing Yu",
+        "Wangtao Sun",
+        "Jingwei Li",
+        "Kang Liu",
+        "Chengbao Liu",
+        "Jie Tan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.378.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e99dece7-03b6-5fe7-b210-5adde75806a7.pdf",
+    "abstract": "In the realm of event prediction, temporal knowledge graph forecasting (TKGF) stands as a pivotal technique. Previous approaches face the challenges of not utilizing experience during testing and relying on a single short-term history, which limits adaptation to evolving data. In this paper, we introduce the Online Neural-Symbolic Event Prediction (ONSEP) framework, which innovates by integrating dynamic causal rule mining (DCRM) and dual history augmented generation (DHAG). DCRM dynamically constructs causal rules from real-time data, allowing for swift adaptation to new causal relationships. In parallel, DHAG merges short-term and long-term historical contexts, leveraging a bi-branch approach to enrich event prediction. Our framework demonstrates notable performance enhancements across diverse datasets, with significant Hit@k (k=1,3,10) improvements, showcasing its ability to augment large language models (LLMs) for event prediction without necessitating extensive retraining. The ONSEP framework not only advances the field of TKGF but also underscores the potential of neural-symbolic approaches in adapting to dynamic data environments.",
+    "num_pages": 16
+}

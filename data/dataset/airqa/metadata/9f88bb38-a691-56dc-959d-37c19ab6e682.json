@@ -1,0 +1,21 @@
+{
+    "uuid": "9f88bb38-a691-56dc-959d-37c19ab6e682",
+    "title": "Exploring Hybrid Question Answering via Program-based Prompting",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{shi-etal-2024-exploring,\n    title = \"Exploring Hybrid Question Answering via Program-based Prompting\",\n    author = \"Shi, Qi  and\n      Cui, Han  and\n      Wang, Haofeng  and\n      Zhu, Qingfu  and\n      Che, Wanxiang  and\n      Liu, Ting\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.594\",\n    doi = \"10.18653/v1/2024.acl-long.594\",\n    pages = \"11035--11046\",\n    abstract = \"Question answering over heterogeneous data requires reasoning over diverse sources of data, which is challenging due to the large scale of information and organic coupling of heterogeneous data. Various approaches have been proposed to address these challenges. One approach involves training specialized retrievers to select relevant information, thereby reducing the input length. Another approach is to transform diverse modalities of data into a single modality, simplifying the task difficulty and enabling more straightforward processing. In this paper, we propose HProPro, a novel program-based prompting framework for the hybrid question answering task. HProPro follows the code generation and execution paradigm. In addition, HProPro integrates various functions to tackle the hybrid reasoning scenario. Specifically, HProPro contains function declaration and function implementation to perform hybrid information-seeking over data from various sources and modalities, which enables reasoning over such data without training specialized retrievers or performing modal transformations. Experimental results on two typical hybrid question answering benchmarks HybridQA and MultiModalQA demonstrate the effectiveness of HProPro: it surpasses all baseline systems and achieves the best performances in the few-shot settings on both datasets.\",\n}\n",
+    "authors": [
+        "Qi Shi",
+        "Han Cui",
+        "Haofeng Wang",
+        "Qingfu Zhu",
+        "Wanxiang Che",
+        "Ting Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.594.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/9f88bb38-a691-56dc-959d-37c19ab6e682.pdf",
+    "abstract": "Question answering over heterogeneous data requires reasoning over diverse sources of data, which is challenging due to the large scale of information and organic coupling of heterogeneous data. Various approaches have been proposed to address these challenges. One approach involves training specialized retrievers to select relevant information, thereby reducing the input length. Another approach is to transform diverse modalities of data into a single modality, simplifying the task difficulty and enabling more straightforward processing. In this paper, we propose HProPro, a novel program-based prompting framework for the hybrid question answering task. HProPro follows the code generation and execution paradigm. In addition, HProPro integrates various functions to tackle the hybrid reasoning scenario. Specifically, HProPro contains function declaration and function implementation to perform hybrid information-seeking over data from various sources and modalities, which enables reasoning over such data without training specialized retrievers or performing modal transformations. Experimental results on two typical hybrid question answering benchmarks HybridQA and MultiModalQA demonstrate the effectiveness of HProPro: it surpasses all baseline systems and achieves the best performances in the few-shot settings on both datasets.",
+    "num_pages": 12
+}

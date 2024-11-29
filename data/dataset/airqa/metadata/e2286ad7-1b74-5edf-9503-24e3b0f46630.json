@@ -1,0 +1,19 @@
+{
+    "uuid": "e2286ad7-1b74-5edf-9503-24e3b0f46630",
+    "title": "BranchNorm: Robustly Scaling Extremely Deep Transformers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{liu-etal-2024-branchnorm,\n    title = \"{B}ranch{N}orm: Robustly Scaling Extremely Deep Transformers\",\n    author = \"Liu, Yijin  and\n      Zeng, Xianfeng  and\n      Meng, Fandong  and\n      Zhou, Jie\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.695\",\n    doi = \"10.18653/v1/2024.findings-acl.695\",\n    pages = \"11675--11687\",\n    abstract = \"Recently, DeepNorm scales Transformers into extremely deep (i.e., 1000 layers) and reveals the promising potential of deep scaling. To stabilize the training of deep models, DeepNorm attempts to constrain the model update to a constant value. Although applying such a constraint can benefit the early stage of model training, it may lead to undertrained models during the whole training procedure. In this paper, we propose BranchNorm, which dynamically rescales the non-residual branch of Transformer in accordance with the training period. BranchNorm not only theoretically stabilizes the training with smooth gradient norms at the early stage, but also encourages better convergence in the subsequent training stage. Experimental results on multiple translation tasks demonstrate that BranchNorm achieves a better trade-off between training stability and converge performance.\",\n}\n",
+    "authors": [
+        "Yijin Liu",
+        "Xianfeng Zeng",
+        "Fandong Meng",
+        "Jie Zhou"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.695.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e2286ad7-1b74-5edf-9503-24e3b0f46630.pdf",
+    "abstract": "Recently, DeepNorm scales Transformers into extremely deep (i.e., 1000 layers) and reveals the promising potential of deep scaling. To stabilize the training of deep models, DeepNorm attempts to constrain the model update to a constant value. Although applying such a constraint can benefit the early stage of model training, it may lead to undertrained models during the whole training procedure. In this paper, we propose BranchNorm, which dynamically rescales the non-residual branch of Transformer in accordance with the training period. BranchNorm not only theoretically stabilizes the training with smooth gradient norms at the early stage, but also encourages better convergence in the subsequent training stage. Experimental results on multiple translation tasks demonstrate that BranchNorm achieves a better trade-off between training stability and converge performance.",
+    "num_pages": 13
+}

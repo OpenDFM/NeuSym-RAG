@@ -1,0 +1,27 @@
+{
+    "uuid": "6073474d-0784-5e92-81ba-f33e81651130",
+    "title": "NAIST Simultaneous Speech Translation System for IWSLT 2024",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)",
+    "bibtex": "@inproceedings{ko-etal-2024-naist,\n    title = \"{NAIST} Simultaneous Speech Translation System for {IWSLT} 2024\",\n    author = \"Ko, Yuka  and\n      Fukuda, Ryo  and\n      Nishikawa, Yuta  and\n      Kano, Yasumasa  and\n      Yanagita, Tomoya  and\n      Doi, Kosuke  and\n      Makinae, Mana  and\n      Tan, Haotian  and\n      Sakai, Makoto  and\n      Sakti, Sakriani  and\n      Sudoh, Katsuhito  and\n      Nakamura, Satoshi\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.iwslt-1.23\",\n    doi = \"10.18653/v1/2024.iwslt-1.23\",\n    pages = \"170--182\",\n    abstract = \"This paper describes NAIST{'}s submission to the simultaneous track of the IWSLT 2024 Evaluation Campaign: English-to-German, Japanese, Chinese speech-to-text translation and English-to-Japanese speech-to-speech translation. We develop a multilingual end-to-end speech-to-text translation model combining two pre-trained language models, HuBERT and mBART. We trained this model with two decoding policies, Local Agreement (LA) and AlignAtt. The submitted models employ the LA policy because it outperformed the AlignAtt policy in previous models. Our speech-to-speech translation method is a cascade of the above speech-to-text model and an incremental text-to-speech (TTS) module that incorporates a phoneme estimation model, a parallel acoustic model, and a parallel WaveGAN vocoder. We improved our incremental TTS by applying the Transformer architecture with the AlignAtt policy for the estimation model. The results show that our upgraded TTS module contributed to improving the system performance.\",\n}\n",
+    "authors": [
+        "Yuka Ko",
+        "Ryo Fukuda",
+        "Yuta Nishikawa",
+        "Yasumasa Kano",
+        "Tomoya Yanagita",
+        "Kosuke Doi",
+        "Mana Makinae",
+        "Haotian Tan",
+        "Makoto Sakai",
+        "Sakriani Sakti",
+        "Katsuhito Sudoh",
+        "Satoshi Nakamura"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.iwslt-1.23.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/6073474d-0784-5e92-81ba-f33e81651130.pdf",
+    "abstract": "This paper describes NAIST’s submission to the simultaneous track of the IWSLT 2024 Evaluation Campaign: English-to-German, Japanese, Chinese speech-to-text translation and English-to-Japanese speech-to-speech translation. We develop a multilingual end-to-end speech-to-text translation model combining two pre-trained language models, HuBERT and mBART. We trained this model with two decoding policies, Local Agreement (LA) and AlignAtt. The submitted models employ the LA policy because it outperformed the AlignAtt policy in previous models. Our speech-to-speech translation method is a cascade of the above speech-to-text model and an incremental text-to-speech (TTS) module that incorporates a phoneme estimation model, a parallel acoustic model, and a parallel WaveGAN vocoder. We improved our incremental TTS by applying the Transformer architecture with the AlignAtt policy for the estimation model. The results show that our upgraded TTS module contributed to improving the system performance.",
+    "num_pages": 13
+}

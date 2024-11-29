@@ -1,0 +1,23 @@
+{
+    "uuid": "121d5b45-fd70-5ce5-bc8d-93aef9576a85",
+    "title": "Federated Domain Adaptation for Named Entity Recognition via Distilling with Heterogeneous Tag Sets",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wang-etal-2023-federated,\n    title = \"Federated Domain Adaptation for Named Entity Recognition via Distilling with Heterogeneous Tag Sets\",\n    author = \"Wang, Rui  and\n      Yu, Tong  and\n      Wu, Junda  and\n      Zhao, Handong  and\n      Kim, Sungchul  and\n      Zhang, Ruiyi  and\n      Mitra, Subrata  and\n      Henao, Ricardo\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.470\",\n    doi = \"10.18653/v1/2023.findings-acl.470\",\n    pages = \"7449--7463\",\n    abstract = \"Federated learning involves collaborative training with private data from multiple platforms, while not violating data privacy. We study the problem of federated domain adaptation for Named Entity Recognition (NER), where we seek to transfer knowledge across different platforms with data of multiple domains. In addition, we consider a practical and challenging scenario, where NER datasets of different platforms of federated learning are annotated with heterogeneous tag sets, i.e., different sets of entity types. The goal is to train a global model with federated learning, such that it can predict with a complete tag set, i.e., with all the occurring entity types for data across all platforms. To cope with the heterogeneous tag sets in a multi-domain setting, we propose a distillation approach along with a mechanism of instance weighting to facilitate knowledge transfer across platforms. Besides, we release two re-annotated clinic NER datasets, for testing the proposed method in the clinic domain. Our method shows superior empirical performance for NER with federated learning.\",\n}\n",
+    "authors": [
+        "Rui Wang",
+        "Tong Yu",
+        "Junda Wu",
+        "Handong Zhao",
+        "Sungchul Kim",
+        "Ruiyi Zhang",
+        "Subrata Mitra",
+        "Ricardo Henao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.470.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/121d5b45-fd70-5ce5-bc8d-93aef9576a85.pdf",
+    "abstract": "Federated learning involves collaborative training with private data from multiple platforms, while not violating data privacy. We study the problem of federated domain adaptation for Named Entity Recognition (NER), where we seek to transfer knowledge across different platforms with data of multiple domains. In addition, we consider a practical and challenging scenario, where NER datasets of different platforms of federated learning are annotated with heterogeneous tag sets, i.e., different sets of entity types. The goal is to train a global model with federated learning, such that it can predict with a complete tag set, i.e., with all the occurring entity types for data across all platforms. To cope with the heterogeneous tag sets in a multi-domain setting, we propose a distillation approach along with a mechanism of instance weighting to facilitate knowledge transfer across platforms. Besides, we release two re-annotated clinic NER datasets, for testing the proposed method in the clinic domain. Our method shows superior empirical performance for NER with federated learning.",
+    "num_pages": 15
+}

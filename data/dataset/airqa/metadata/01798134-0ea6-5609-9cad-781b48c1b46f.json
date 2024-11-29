@@ -1,0 +1,24 @@
+{
+    "uuid": "01798134-0ea6-5609-9cad-781b48c1b46f",
+    "title": "Your Vision-Language Model Itself Is a Strong Filter: Towards High-Quality Instruction Tuning with Data Selection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{chen-etal-2024-vision,\n    title = \"Your Vision-Language Model Itself Is a Strong Filter: Towards High-Quality Instruction Tuning with Data Selection\",\n    author = \"Chen, Ruibo  and\n      Wu, Yihan  and\n      Chen, Lichang  and\n      Liu, Guodong  and\n      He, Qi  and\n      Xiong, Tianyi  and\n      Liu, Chenxi  and\n      Guo, Junfeng  and\n      Huang, Heng\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.246\",\n    doi = \"10.18653/v1/2024.findings-acl.246\",\n    pages = \"4156--4172\",\n    abstract = \"Data selection in instruction tuning emerges as a pivotal process for acquiring high-quality data and training instruction-following large language models (LLMs), but it is still a new and unexplored research area for vision-language models (VLMs). Existing data selection approaches on LLMs either rely on single unreliable scores, or use downstream tasks for selection, which is time-consuming and can lead to potential over-fitting on the chosen evaluation datasets. To address this challenge, we introduce a novel dataset selection method, Self-Filter, that utilizes the VLM itself as a filter. This approach is inspired by the observation that VLMs benefit from training with the most challenging instructions. Self-Filter operates in two stages. In the first stage, we devise a scoring network to evaluate the difficulty of training instructions, which is co-trained with the VLM. In the second stage, we use the trained score net to measure the difficulty of each instruction, select the most challenging samples, and penalize similar samples to encourage diversity. Comprehensive experiments on LLaVA and MiniGPT-4 show that Self-Filter can reach better results compared to full data settings with merely about 15{\\%} samples, and can achieve superior performance against competitive baselines.\",\n}\n",
+    "authors": [
+        "Ruibo Chen",
+        "Yihan Wu",
+        "Lichang Chen",
+        "Guodong Liu",
+        "Qi He",
+        "Tianyi Xiong",
+        "Chenxi Liu",
+        "Junfeng Guo",
+        "Heng Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.246.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/01798134-0ea6-5609-9cad-781b48c1b46f.pdf",
+    "abstract": "Data selection in instruction tuning emerges as a pivotal process for acquiring high-quality data and training instruction-following large language models (LLMs), but it is still a new and unexplored research area for vision-language models (VLMs). Existing data selection approaches on LLMs either rely on single unreliable scores, or use downstream tasks for selection, which is time-consuming and can lead to potential over-fitting on the chosen evaluation datasets. To address this challenge, we introduce a novel dataset selection method, Self-Filter, that utilizes the VLM itself as a filter. This approach is inspired by the observation that VLMs benefit from training with the most challenging instructions. Self-Filter operates in two stages. In the first stage, we devise a scoring network to evaluate the difficulty of training instructions, which is co-trained with the VLM. In the second stage, we use the trained score net to measure the difficulty of each instruction, select the most challenging samples, and penalize similar samples to encourage diversity. Comprehensive experiments on LLaVA and MiniGPT-4 show that Self-Filter can reach better results compared to full data settings with merely about 15% samples, and can achieve superior performance against competitive baselines.",
+    "num_pages": 17
+}

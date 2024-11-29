@@ -1,0 +1,17 @@
+{
+    "uuid": "a6f9f870-84aa-5ba8-988a-98585d3446cb",
+    "title": "ActiveAED: A Human in the Loop Improves Annotation Error Detection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{weber-plank-2023-activeaed,\n    title = \"{A}ctive{AED}: A Human in the Loop Improves Annotation Error Detection\",\n    author = \"Weber, Leon  and\n      Plank, Barbara\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.562\",\n    doi = \"10.18653/v1/2023.findings-acl.562\",\n    pages = \"8834--8845\",\n    abstract = \"Manually annotated datasets are crucial for training and evaluating Natural Language Processing models. However, recent work has discovered that even widely-used benchmark datasets contain a substantial number of erroneous annotations. This problem has been addressed with Annotation Error Detection (AED) models, which can flag such errors for human re-annotation. However, even though many of these AED methods assume a final curation step in which a human annotator decides whether the annotation is erroneous, they have been developed as static models without any human-in-the-loop component. In this work, we propose ActiveAED, an AED method that can detect errors more accurately by repeatedly querying a human for error corrections in its prediction loop. We evaluate ActiveAED on eight datasets spanning five different tasks and find that it leads to improvements over the state of the art on seven of them, with gains of up to six percentage points in average precision.\",\n}\n",
+    "authors": [
+        "Leon Weber",
+        "Barbara Plank"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.562.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a6f9f870-84aa-5ba8-988a-98585d3446cb.pdf",
+    "abstract": "Manually annotated datasets are crucial for training and evaluating Natural Language Processing models. However, recent work has discovered that even widely-used benchmark datasets contain a substantial number of erroneous annotations. This problem has been addressed with Annotation Error Detection (AED) models, which can flag such errors for human re-annotation. However, even though many of these AED methods assume a final curation step in which a human annotator decides whether the annotation is erroneous, they have been developed as static models without any human-in-the-loop component. In this work, we propose ActiveAED, an AED method that can detect errors more accurately by repeatedly querying a human for error corrections in its prediction loop. We evaluate ActiveAED on eight datasets spanning five different tasks and find that it leads to improvements over the state of the art on seven of them, with gains of up to six percentage points in average precision.",
+    "num_pages": 12
+}

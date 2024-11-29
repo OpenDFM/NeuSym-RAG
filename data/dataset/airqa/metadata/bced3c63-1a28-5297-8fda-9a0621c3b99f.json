@@ -1,0 +1,21 @@
+{
+    "uuid": "bced3c63-1a28-5297-8fda-9a0621c3b99f",
+    "title": "Extreme Miscalibration and the Illusion of Adversarial Robustness",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{raina-etal-2024-extreme,\n    title = \"Extreme Miscalibration and the Illusion of Adversarial Robustness\",\n    author = \"Raina, Vyas  and\n      Tan, Samson  and\n      Cevher, Volkan  and\n      Rawal, Aditya  and\n      Zha, Sheng  and\n      Karypis, George\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.137\",\n    doi = \"10.18653/v1/2024.acl-long.137\",\n    pages = \"2500--2525\",\n    abstract = \"Deep learning-based Natural Language Processing (NLP) models are vulnerable to adversarial attacks, where small perturbations can cause a model to misclassify. Adversarial Training (AT) is often used to increase model robustness. However, we have discovered an intriguing phenomenon: deliberately or accidentally miscalibrating models masks gradients in a way that interferes with adversarial attack search methods, giving rise to an apparent increase in robustness. We show that this observed gain in robustness is an illusion of robustness (IOR), and demonstrate how an adversary can perform various forms of test-time temperature calibration to nullify the aforementioned interference and allow the adversarial attack to find adversarial examples. Hence, we urge the NLP community to incorporate test-time temperature scaling into their robustness evaluations to ensure that any observed gains are genuine. Finally, we show how the temperature can be scaled during training to improve genuine robustness.\",\n}\n",
+    "authors": [
+        "Vyas Raina",
+        "Samson Tan",
+        "Volkan Cevher",
+        "Aditya Rawal",
+        "Sheng Zha",
+        "George Karypis"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.137.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/bced3c63-1a28-5297-8fda-9a0621c3b99f.pdf",
+    "abstract": "Deep learning-based Natural Language Processing (NLP) models are vulnerable to adversarial attacks, where small perturbations can cause a model to misclassify. Adversarial Training (AT) is often used to increase model robustness. However, we have discovered an intriguing phenomenon: deliberately or accidentally miscalibrating models masks gradients in a way that interferes with adversarial attack search methods, giving rise to an apparent increase in robustness. We show that this observed gain in robustness is an illusion of robustness (IOR), and demonstrate how an adversary can perform various forms of test-time temperature calibration to nullify the aforementioned interference and allow the adversarial attack to find adversarial examples. Hence, we urge the NLP community to incorporate test-time temperature scaling into their robustness evaluations to ensure that any observed gains are genuine. Finally, we show how the temperature can be scaled during training to improve genuine robustness.",
+    "num_pages": 26
+}

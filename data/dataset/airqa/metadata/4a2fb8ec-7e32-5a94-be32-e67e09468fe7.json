@@ -1,0 +1,17 @@
+{
+    "uuid": "4a2fb8ec-7e32-5a94-be32-e67e09468fe7",
+    "title": "Another Dead End for Morphological Tags? Perturbed Inputs and Parsing",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{munoz-ortiz-vilares-2023-another,\n    title = \"Another Dead End for Morphological Tags? Perturbed Inputs and Parsing\",\n    author = \"Mu{\\~n}oz-Ortiz, Alberto  and\n      Vilares, David\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.459\",\n    doi = \"10.18653/v1/2023.findings-acl.459\",\n    pages = \"7301--7310\",\n    abstract = \"The usefulness of part-of-speech tags for parsing has been heavily questioned due to the success of word-contextualized parsers. Yet, most studies are limited to coarse-grained tags and high quality written content; while we know little about their influence when it comes to models in production that face lexical errors. We expand these setups and design an adversarial attack to verify if the use of morphological information by parsers: (i) contributes to error propagation or (ii) if on the other hand it can play a role to correct mistakes that word-only neural parsers make. The results on 14 diverse UD treebanks show that under such attacks, for transition- and graph-based models their use contributes to degrade the performance even faster, while for the (lower-performing) sequence labeling parsers they are helpful. We also show that if morphological tags were utopically robust against lexical perturbations, they would be able to correct parsing mistakes.\",\n}\n",
+    "authors": [
+        "Alberto Muñoz-Ortiz",
+        "David Vilares"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.459.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4a2fb8ec-7e32-5a94-be32-e67e09468fe7.pdf",
+    "abstract": "The usefulness of part-of-speech tags for parsing has been heavily questioned due to the success of word-contextualized parsers. Yet, most studies are limited to coarse-grained tags and high quality written content; while we know little about their influence when it comes to models in production that face lexical errors. We expand these setups and design an adversarial attack to verify if the use of morphological information by parsers: (i) contributes to error propagation or (ii) if on the other hand it can play a role to correct mistakes that word-only neural parsers make. The results on 14 diverse UD treebanks show that under such attacks, for transition- and graph-based models their use contributes to degrade the performance even faster, while for the (lower-performing) sequence labeling parsers they are helpful. We also show that if morphological tags were utopically robust against lexical perturbations, they would be able to correct parsing mistakes.",
+    "num_pages": 10
+}

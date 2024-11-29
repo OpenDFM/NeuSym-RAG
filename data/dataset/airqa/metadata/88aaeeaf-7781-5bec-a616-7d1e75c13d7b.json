@@ -1,0 +1,22 @@
+{
+    "uuid": "88aaeeaf-7781-5bec-a616-7d1e75c13d7b",
+    "title": "ProgGen: Generating Named Entity Recognition Datasets Step-by-step with Self-Reflexive Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{heng-etal-2024-proggen,\n    title = \"{P}rog{G}en: Generating Named Entity Recognition Datasets Step-by-step with Self-Reflexive Large Language Models\",\n    author = \"Heng, Yuzhao  and\n      Deng, Chunyuan  and\n      Li, Yitong  and\n      Yu, Yue  and\n      Li, Yinghao  and\n      Zhang, Rongzhi  and\n      Zhang, Chao\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.947\",\n    doi = \"10.18653/v1/2024.findings-acl.947\",\n    pages = \"15992--16030\",\n    abstract = \"Although Large Language Models (LLMs) exhibit remarkable adaptability across domains, these models often fall short in structured knowledge extraction tasks such as named entity recognition (NER). This paper explores an innovative, cost-efficient strategy to harness LLMs with modest NER capabilities for producing superior NER datasets. Our approach diverges from the basic class-conditional prompts by instructing LLMs to self-reflect on the specific domain, thereby generating domain-relevant attributes (such as category and emotions for movie reviews), which are utilized for creating attribute-rich training data. Furthermore, we preemptively generate entity terms and then develop NER context data around these entities, effectively bypassing the LLMs{'} challenges with complex structures. Our experiments across both general and niche domains reveal significant performance enhancements over conventional data generation methods while being more cost-effective than existing alternatives.\",\n}\n",
+    "authors": [
+        "Yuzhao Heng",
+        "Chunyuan Deng",
+        "Yitong Li",
+        "Yue Yu",
+        "Yinghao Li",
+        "Rongzhi Zhang",
+        "Chao Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.947.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/88aaeeaf-7781-5bec-a616-7d1e75c13d7b.pdf",
+    "abstract": "Although Large Language Models (LLMs) exhibit remarkable adaptability across domains, these models often fall short in structured knowledge extraction tasks such as named entity recognition (NER). This paper explores an innovative, cost-efficient strategy to harness LLMs with modest NER capabilities for producing superior NER datasets. Our approach diverges from the basic class-conditional prompts by instructing LLMs to self-reflect on the specific domain, thereby generating domain-relevant attributes (such as category and emotions for movie reviews), which are utilized for creating attribute-rich training data. Furthermore, we preemptively generate entity terms and then develop NER context data around these entities, effectively bypassing the LLMs’ challenges with complex structures. Our experiments across both general and niche domains reveal significant performance enhancements over conventional data generation methods while being more cost-effective than existing alternatives.",
+    "num_pages": 39
+}

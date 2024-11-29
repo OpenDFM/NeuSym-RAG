@@ -1,0 +1,23 @@
+{
+    "uuid": "d5276e75-b7da-534a-aa23-f51f18452157",
+    "title": "Federated Learning of Gboard Language Models with Differential Privacy",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{xu-etal-2023-federated,\n    title = \"Federated Learning of Gboard Language Models with Differential Privacy\",\n    author = \"Xu, Zheng  and\n      Zhang, Yanxiang  and\n      Andrew, Galen  and\n      Choquette, Christopher  and\n      Kairouz, Peter  and\n      Mcmahan, Brendan  and\n      Rosenstock, Jesse  and\n      Zhang, Yuanbo\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.60\",\n    doi = \"10.18653/v1/2023.acl-industry.60\",\n    pages = \"629--639\",\n    abstract = \"We train and deploy language models (LMs) with federated learning (FL) and differential privacy (DP) in Google Keyboard (Gboard). The recent DP-Follow the Regularized Leader (DP-FTRL) algorithm is applied to achieve meaningfully formal DP guarantees without requiring uniform sampling of clients. To provide favorable privacy-utility trade-offs, we introduce a new client participation criterion and discuss the implication of its configuration in large scale systems. We show how quantile-based clip estimation can be combined with DP-FTRL to adaptively choose the clip norm during training or reduce the hyperparameter tuning in preparation of training. With the help of pretraining on public data, we trained and deployed more than fifteen Gboard LMs that achieve high utility and {\\$}{\\textbackslash}rho-{\\$}zCDP privacy guarantees with {\\$}{\\textbackslash}rho {\\textbackslash}in (0.3, 2){\\$}, with one model additionally trained with secure aggregation. We summarize our experience and provide concrete suggestions on DP training for practitioners.\",\n}\n",
+    "authors": [
+        "Zheng Xu",
+        "Yanxiang Zhang",
+        "Galen Andrew",
+        "Christopher Choquette",
+        "Peter Kairouz",
+        "Brendan Mcmahan",
+        "Jesse Rosenstock",
+        "Yuanbo Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.60.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d5276e75-b7da-534a-aa23-f51f18452157.pdf",
+    "abstract": "We train and deploy language models (LMs) with federated learning (FL) and differential privacy (DP) in Google Keyboard (Gboard). The recent DP-Follow the Regularized Leader (DP-FTRL) algorithm is applied to achieve meaningfully formal DP guarantees without requiring uniform sampling of clients. To provide favorable privacy-utility trade-offs, we introduce a new client participation criterion and discuss the implication of its configuration in large scale systems. We show how quantile-based clip estimation can be combined with DP-FTRL to adaptively choose the clip norm during training or reduce the hyperparameter tuning in preparation of training. With the help of pretraining on public data, we trained and deployed more than fifteen Gboard LMs that achieve high utility and $\\rho-$zCDP privacy guarantees with $\\rho \\in (0.3, 2)$, with one model additionally trained with secure aggregation. We summarize our experience and provide concrete suggestions on DP training for practitioners.",
+    "num_pages": 11
+}

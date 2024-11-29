@@ -1,0 +1,22 @@
+{
+    "uuid": "83b92164-3459-53b1-822d-2fa5a96b30aa",
+    "title": "Improving Large Language Models via Fine-grained Reinforcement Learning with Minimum Editing Constraint",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{chen-etal-2024-improving,\n    title = \"Improving Large Language Models via Fine-grained Reinforcement Learning with Minimum Editing Constraint\",\n    author = \"Chen, Zhipeng  and\n      Zhou, Kun  and\n      Zhao, Xin  and\n      Wan, Junchen  and\n      Zhang, Fuzheng  and\n      Zhang, Di  and\n      Wen, Ji-Rong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.338\",\n    doi = \"10.18653/v1/2024.findings-acl.338\",\n    pages = \"5694--5711\",\n    abstract = \"Reinforcement learning (RL) has been widely used in training large language models (LLMs) for preventing unexpected outputs, e.g., reducing harmfulness and errors. However, existing RL methods mainly adopt instance-level reward, which cannot provide fine-grained supervision for complex reasoning tasks. As a result, the RL training cannot be fully aware of the specific part or step that actually leads to the incorrectness in model response. To address it, we propose a new RL method named RLMEC that incorporates a generative model as the reward model, which is trained by the erroneous solution rewriting task under the minimum editing constraint, which can produce token-level supervision for RL training. Based 0on the generative reward model, we design the token-level RL objective for training and an imitation-based regularization for stabilizing RL process. And these two objectives focus on the revision of the key tokens for the erroneous solution, reducing the effect of other unimportant tokens. Experiment results on 8 tasks have demonstrated the effectiveness of our approach. Our code and data will be publicly released.\",\n}\n",
+    "authors": [
+        "Zhipeng Chen",
+        "Kun Zhou",
+        "Xin Zhao",
+        "Junchen Wan",
+        "Fuzheng Zhang",
+        "Di Zhang",
+        "Ji-Rong Wen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.338.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/83b92164-3459-53b1-822d-2fa5a96b30aa.pdf",
+    "abstract": "Reinforcement learning (RL) has been widely used in training large language models (LLMs) for preventing unexpected outputs, e.g., reducing harmfulness and errors. However, existing RL methods mainly adopt instance-level reward, which cannot provide fine-grained supervision for complex reasoning tasks. As a result, the RL training cannot be fully aware of the specific part or step that actually leads to the incorrectness in model response. To address it, we propose a new RL method named RLMEC that incorporates a generative model as the reward model, which is trained by the erroneous solution rewriting task under the minimum editing constraint, which can produce token-level supervision for RL training. Based 0on the generative reward model, we design the token-level RL objective for training and an imitation-based regularization for stabilizing RL process. And these two objectives focus on the revision of the key tokens for the erroneous solution, reducing the effect of other unimportant tokens. Experiment results on 8 tasks have demonstrated the effectiveness of our approach. Our code and data will be publicly released.",
+    "num_pages": 18
+}

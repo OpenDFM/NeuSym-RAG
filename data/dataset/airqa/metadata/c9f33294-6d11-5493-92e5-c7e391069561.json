@@ -1,0 +1,22 @@
+{
+    "uuid": "c9f33294-6d11-5493-92e5-c7e391069561",
+    "title": "UniEX: An Effective and Efficient Framework for Unified Information Extraction via a Span-extractive Perspective",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ping-etal-2023-uniex,\n    title = \"{U}ni{EX}: An Effective and Efficient Framework for Unified Information Extraction via a Span-extractive Perspective\",\n    author = \"Ping, Yang  and\n      Lu, JunYu  and\n      Gan, Ruyi  and\n      Wang, Junjie  and\n      Zhang, Yuxiang  and\n      Zhang, Pingjian  and\n      Zhang, Jiaxing\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.907\",\n    doi = \"10.18653/v1/2023.acl-long.907\",\n    pages = \"16424--16440\",\n    abstract = \"We propose a new paradigm for universal information extraction (IE) that is compatible with any schema format and applicable to a list of IE tasks, such as named entity recognition, relation extraction, event extraction and sentiment analysis. Our approach converts the text-based IE tasks as the token-pair problem, which uniformly disassembles all extraction targets into joint span detection, classification and association problems with a unified extractive framework, namely UniEX. UniEX can synchronously encode schema-based prompt and textual information, and collaboratively learn the generalized knowledge from pre-defined information using the auto-encoder language models. We develop a traffine attention mechanism to integrate heterogeneous factors including tasks, labels and inside tokens, and obtain the extraction target via a scoring matrix. Experiment results show that UniEX can outperform generative universal IE models in terms of performance and inference-speed on 14 benchmarks IE datasets with the supervised setting. The state-of-the-art performance in low-resource scenarios also verifies the transferability and effectiveness of UniEX.\",\n}\n",
+    "authors": [
+        "Yang Ping",
+        "JunYu Lu",
+        "Ruyi Gan",
+        "Junjie Wang",
+        "Yuxiang Zhang",
+        "Pingjian Zhang",
+        "Jiaxing Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.907.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c9f33294-6d11-5493-92e5-c7e391069561.pdf",
+    "abstract": "We propose a new paradigm for universal information extraction (IE) that is compatible with any schema format and applicable to a list of IE tasks, such as named entity recognition, relation extraction, event extraction and sentiment analysis. Our approach converts the text-based IE tasks as the token-pair problem, which uniformly disassembles all extraction targets into joint span detection, classification and association problems with a unified extractive framework, namely UniEX. UniEX can synchronously encode schema-based prompt and textual information, and collaboratively learn the generalized knowledge from pre-defined information using the auto-encoder language models. We develop a traffine attention mechanism to integrate heterogeneous factors including tasks, labels and inside tokens, and obtain the extraction target via a scoring matrix. Experiment results show that UniEX can outperform generative universal IE models in terms of performance and inference-speed on 14 benchmarks IE datasets with the supervised setting. The state-of-the-art performance in low-resource scenarios also verifies the transferability and effectiveness of UniEX.",
+    "num_pages": 17
+}

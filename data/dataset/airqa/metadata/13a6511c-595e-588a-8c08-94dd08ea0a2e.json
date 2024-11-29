@@ -1,0 +1,20 @@
+{
+    "uuid": "13a6511c-595e-588a-8c08-94dd08ea0a2e",
+    "title": "Rare Codes Count: Mining Inter-code Relations for Long-tail Clinical Text Classification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 5th Clinical Natural Language Processing Workshop",
+    "bibtex": "@inproceedings{chen-etal-2023-rare,\n    title = \"Rare Codes Count: Mining Inter-code Relations for Long-tail Clinical Text Classification\",\n    author = \"Chen, Jiamin  and\n      Li, Xuhong  and\n      Xi, Junting  and\n      Yu, Lei  and\n      Xiong, Haoyi\",\n    editor = \"Naumann, Tristan  and\n      Ben Abacha, Asma  and\n      Bethard, Steven  and\n      Roberts, Kirk  and\n      Rumshisky, Anna\",\n    booktitle = \"Proceedings of the 5th Clinical Natural Language Processing Workshop\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.clinicalnlp-1.43\",\n    doi = \"10.18653/v1/2023.clinicalnlp-1.43\",\n    pages = \"403--413\",\n    abstract = \"Multi-label clinical text classification, such as automatic ICD coding, has always been a challenging subject in Natural Language Processing, due to its long, domain-specific documents and long-tail distribution over a large label set. Existing methods adopt different model architectures to encode the clinical notes. Whereas without digging out the useful connections between labels, the model presents a huge gap in predicting performances between rare and frequent codes. In this work, we propose a novel method for further mining the helpful relations between different codes via a relation-enhanced code encoder to improve the rare code performance. Starting from the simple code descriptions, the model reaches comparable, even better performances than models with heavy external knowledge. Our proposed method is evaluated on MIMIC-III, a common dataset in the medical domain. It outperforms the previous state-of-art models on both overall metrics and rare code performances. Moreover, the interpretation results further prove the effectiveness of our methods. Our code is publicly available at \\url{https://github.com/jiaminchen-1031/Rare-ICD}.\",\n}\n",
+    "authors": [
+        "Jiamin Chen",
+        "Xuhong Li",
+        "Junting Xi",
+        "Lei Yu",
+        "Haoyi Xiong"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.clinicalnlp-1.43.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/13a6511c-595e-588a-8c08-94dd08ea0a2e.pdf",
+    "abstract": "Multi-label clinical text classification, such as automatic ICD coding, has always been a challenging subject in Natural Language Processing, due to its long, domain-specific documents and long-tail distribution over a large label set. Existing methods adopt different model architectures to encode the clinical notes. Whereas without digging out the useful connections between labels, the model presents a huge gap in predicting performances between rare and frequent codes. In this work, we propose a novel method for further mining the helpful relations between different codes via a relation-enhanced code encoder to improve the rare code performance. Starting from the simple code descriptions, the model reaches comparable, even better performances than models with heavy external knowledge. Our proposed method is evaluated on MIMIC-III, a common dataset in the medical domain. It outperforms the previous state-of-art models on both overall metrics and rare code performances. Moreover, the interpretation results further prove the effectiveness of our methods. Our code is publicly available at https://github.com/jiaminchen-1031/Rare-ICD.",
+    "num_pages": 11
+}

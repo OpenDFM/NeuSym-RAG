@@ -1,0 +1,27 @@
+{
+    "uuid": "bada46e3-ac7e-5a08-a9d9-d1ec58d0f4ba",
+    "title": "HW-TSC at TextGraphs-17 Shared Task: Enhancing Inference Capabilities of LLMs with Knowledge Graphs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of TextGraphs-17: Graph-based Methods for Natural Language Processing",
+    "bibtex": "@inproceedings{tang-etal-2024-hw,\n    title = \"{HW}-{TSC} at {T}ext{G}raphs-17 Shared Task: Enhancing Inference Capabilities of {LLM}s with Knowledge Graphs\",\n    author = \"Tang, Wei  and\n      Qiao, Xiaosong  and\n      Zhao, Xiaofeng  and\n      Zhang, Min  and\n      Su, Chang  and\n      Li, Yuang  and\n      Li, Yinglu  and\n      Liu, Yilun  and\n      Yao, Feiyu  and\n      Tao, Shimin  and\n      Yang, Hao  and\n      Xianghui, He\",\n    editor = \"Ustalov, Dmitry  and\n      Gao, Yanjun  and\n      Panchenko, Alexander  and\n      Tutubalina, Elena  and\n      Nikishina, Irina  and\n      Ramesh, Arti  and\n      Sakhovskiy, Andrey  and\n      Usbeck, Ricardo  and\n      Penn, Gerald  and\n      Valentino, Marco\",\n    booktitle = \"Proceedings of TextGraphs-17: Graph-based Methods for Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.textgraphs-1.11\",\n    pages = \"131--136\",\n    abstract = \"In this paper, we present an effective method for TextGraphs-17 Shared Task. This task requires selecting an entity from the candidate entities that is relevant to the given question and answer. The selection process is aided by utilizing the shortest path graph in the knowledge graph, connecting entities in the query to the candidate entity. This task aims to explore how to enhance LLMs output with KGs, although current LLMs have certain logical reasoning capabilities, they may not be certain about their own outputs, and the answers they produce may be correct by chance through incorrect paths. In this case, we have introduced a LLM prompt design strategy based on self-ranking and emotion. Specifically, we let the large model score its own answer choices to reflect its confidence in the answer. Additionally, we add emotional incentives to the prompts to encourage the model to carefully examine the questions. Our submissions was conducted under zero-resource setting, and we achieved the second place in the task with an F1-score of 0.8321.\",\n}\n",
+    "authors": [
+        "Wei Tang",
+        "Xiaosong Qiao",
+        "Xiaofeng Zhao",
+        "Min Zhang",
+        "Chang Su",
+        "Yuang Li",
+        "Yinglu Li",
+        "Yilun Liu",
+        "Feiyu Yao",
+        "Shimin Tao",
+        "Hao Yang",
+        "He Xianghui"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.textgraphs-1.11.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/bada46e3-ac7e-5a08-a9d9-d1ec58d0f4ba.pdf",
+    "abstract": "In this paper, we present an effective method for TextGraphs-17 Shared Task. This task requires selecting an entity from the candidate entities that is relevant to the given question and answer. The selection process is aided by utilizing the shortest path graph in the knowledge graph, connecting entities in the query to the candidate entity. This task aims to explore how to enhance LLMs output with KGs, although current LLMs have certain logical reasoning capabilities, they may not be certain about their own outputs, and the answers they produce may be correct by chance through incorrect paths. In this case, we have introduced a LLM prompt design strategy based on self-ranking and emotion. Specifically, we let the large model score its own answer choices to reflect its confidence in the answer. Additionally, we add emotional incentives to the prompts to encourage the model to carefully examine the questions. Our submissions was conducted under zero-resource setting, and we achieved the second place in the task with an F1-score of 0.8321.",
+    "num_pages": 6
+}

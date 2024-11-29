@@ -1,0 +1,18 @@
+{
+    "uuid": "924d3a2e-e019-5c27-b90b-b3813b9fd973",
+    "title": "ADEQA: A Question Answer based approach for joint ADE-Suspect Extraction using Sequence-To-Sequence Transformers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+    "bibtex": "@inproceedings{arannil-etal-2023-adeqa,\n    title = \"{ADEQA}: A Question Answer based approach for joint {ADE}-Suspect Extraction using Sequence-To-Sequence Transformers\",\n    author = \"Arannil, Vinayak  and\n      Deb, Tomal  and\n      Roy, Atanu\",\n    editor = \"Demner-fushman, Dina  and\n      Ananiadou, Sophia  and\n      Cohen, Kevin\",\n    booktitle = \"The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.bionlp-1.17\",\n    doi = \"10.18653/v1/2023.bionlp-1.17\",\n    pages = \"206--214\",\n    abstract = \"Early identification of Adverse Drug Events (ADE) is critical for taking prompt actions while introducing new drugs into the market. These ADEs information are available through various unstructured data sources like clinical study reports, patient health records, social media posts, etc. Extracting ADEs and the related suspect drugs using machine learning is a challenging task due to the complex linguistic relations between drug ADE pairs in textual data and unavailability of large corpus of labelled datasets. This paper introduces ADEQA, a question- answer(QA) based approach using quasi supervised labelled data and sequence-to-sequence transformers to extract ADEs, drug suspects and the relationships between them. Unlike traditional QA models, natural language generation (NLG) based models don{'}t require extensive token level labelling and thereby reduces the adoption barrier significantly. On a public ADE corpus, we were able to achieve state-of-the-art results with an F1 score of 94{\\%} on establishing the relationships between ADEs and the respective suspects.\",\n}\n",
+    "authors": [
+        "Vinayak Arannil",
+        "Tomal Deb",
+        "Atanu Roy"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.bionlp-1.17.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/924d3a2e-e019-5c27-b90b-b3813b9fd973.pdf",
+    "abstract": "Early identification of Adverse Drug Events (ADE) is critical for taking prompt actions while introducing new drugs into the market. These ADEs information are available through various unstructured data sources like clinical study reports, patient health records, social media posts, etc. Extracting ADEs and the related suspect drugs using machine learning is a challenging task due to the complex linguistic relations between drug ADE pairs in textual data and unavailability of large corpus of labelled datasets. This paper introduces ADEQA, a question- answer(QA) based approach using quasi supervised labelled data and sequence-to-sequence transformers to extract ADEs, drug suspects and the relationships between them. Unlike traditional QA models, natural language generation (NLG) based models don’t require extensive token level labelling and thereby reduces the adoption barrier significantly. On a public ADE corpus, we were able to achieve state-of-the-art results with an F1 score of 94% on establishing the relationships between ADEs and the respective suspects.",
+    "num_pages": 9
+}

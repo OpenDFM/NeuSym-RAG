@@ -1,0 +1,28 @@
+{
+    "uuid": "978fbb96-da0d-5bbc-bdde-9ca0b590cd33",
+    "title": "LayerSkip: Enabling Early Exit Inference and Self-Speculative Decoding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{elhoushi-etal-2024-layerskip,\n    title = \"{L}ayer{S}kip: Enabling Early Exit Inference and Self-Speculative Decoding\",\n    author = \"Elhoushi, Mostafa  and\n      Shrivastava, Akshat  and\n      Liskovich, Diana  and\n      Hosmer, Basil  and\n      Wasti, Bram  and\n      Lai, Liangzhen  and\n      Mahmoud, Anas  and\n      Acun, Bilge  and\n      Agarwal, Saurabh  and\n      Roman, Ahmed  and\n      Aly, Ahmed  and\n      Chen, Beidi  and\n      Wu, Carole-Jean\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.681\",\n    doi = \"10.18653/v1/2024.acl-long.681\",\n    pages = \"12622--12642\",\n    abstract = \"We present LayerSkip, an end-to-end solution to speed-up inference of large language models (LLMs). First, during training we apply layer dropout, with low dropout rates for earlier layers and higher dropout rates for later layers, and an early exit loss where all transformer layers share the same exit. Second, during inference, we show that this training recipe increases the accuracy of early exit at earlier layers, without adding any auxiliary layers or modules to the model. Third, we present a novel self-speculative decoding solution where we exit at early layers and verify and correct with remaining layers of the model. Our proposed self-speculative decoding approach has less memory footprint than other speculative decoding approaches and benefits from shared compute and activations of the draft and verification stages. We run experiments on different Llama model sizes on different types of training: pretraining from scratch, continual pretraining, finetuning on specific data domain, and finetuning on specific task. We implement our inference solution and show speedups of up to 2.16x on summarization for CNN/DM documents, 1.82x on coding, and 2.0x on TOPv2 semantic parsing task. We open source our code at https://github.com/facebookresearch/LayerSkip.\",\n}\n",
+    "authors": [
+        "Mostafa Elhoushi",
+        "Akshat Shrivastava",
+        "Diana Liskovich",
+        "Basil Hosmer",
+        "Bram Wasti",
+        "Liangzhen Lai",
+        "Anas Mahmoud",
+        "Bilge Acun",
+        "Saurabh Agarwal",
+        "Ahmed Roman",
+        "Ahmed Aly",
+        "Beidi Chen",
+        "Carole-Jean Wu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.681.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/978fbb96-da0d-5bbc-bdde-9ca0b590cd33.pdf",
+    "abstract": "We present LayerSkip, an end-to-end solution to speed-up inference of large language models (LLMs). First, during training we apply layer dropout, with low dropout rates for earlier layers and higher dropout rates for later layers, and an early exit loss where all transformer layers share the same exit. Second, during inference, we show that this training recipe increases the accuracy of early exit at earlier layers, without adding any auxiliary layers or modules to the model. Third, we present a novel self-speculative decoding solution where we exit at early layers and verify and correct with remaining layers of the model. Our proposed self-speculative decoding approach has less memory footprint than other speculative decoding approaches and benefits from shared compute and activations of the draft and verification stages. We run experiments on different Llama model sizes on different types of training: pretraining from scratch, continual pretraining, finetuning on specific data domain, and finetuning on specific task. We implement our inference solution and show speedups of up to 2.16x on summarization for CNN/DM documents, 1.82x on coding, and 2.0x on TOPv2 semantic parsing task. We open source our code at https://github.com/facebookresearch/LayerSkip.",
+    "num_pages": 21
+}

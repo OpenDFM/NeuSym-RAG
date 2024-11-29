@@ -1,0 +1,19 @@
+{
+    "uuid": "3b7509c3-974d-5c3e-add1-a67021605c6b",
+    "title": "Augmenters at SemEval-2023 Task 1: Enhancing CLIP in Handling Compositionality and Ambiguity for Zero-Shot Visual WSD through Prompt Augmentation and Text-To-Image Diffusion",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{li-etal-2023-augmenters,\n    title = \"Augmenters at {S}em{E}val-2023 Task 1: Enhancing {CLIP} in Handling Compositionality and Ambiguity for Zero-Shot Visual {WSD} through Prompt Augmentation and Text-To-Image Diffusion\",\n    author = \"Li, Jie  and\n      Shiue, Yow-Ting  and\n      Shih, Yong-Siang  and\n      Geiping, Jonas\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.5\",\n    doi = \"10.18653/v1/2023.semeval-1.5\",\n    pages = \"44--49\",\n    abstract = \"This paper describes our zero-shot approachesfor the Visual Word Sense Disambiguation(VWSD) Task in English. Our preliminarystudy shows that the simple approach of match-ing candidate images with the phrase usingCLIP suffers from the many-to-many natureof image-text pairs. We find that the CLIP textencoder may have limited abilities in captur-ing the compositionality in natural language. Conversely, the descriptive focus of the phrasevaries from instance to instance. We addressthese issues in our two systems, Augment-CLIPand Stable Diffusion Sampling (SD Sampling).Augment-CLIP augments the text prompt bygenerating sentences that contain the contextphrase with the help of large language mod-els (LLMs). We further explore CLIP modelsin other languages, as the an ambiguous wordmay be translated into an unambiguous one inthe other language. SD Sampling uses text-to-image Stable Diffusion to generate multipleimages from the given phrase, increasing thelikelihood that a subset of images match theone that paired with the text.\",\n}\n",
+    "authors": [
+        "Jie Li",
+        "Yow-Ting Shiue",
+        "Yong-Siang Shih",
+        "Jonas Geiping"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.5.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/3b7509c3-974d-5c3e-add1-a67021605c6b.pdf",
+    "abstract": "This paper describes our zero-shot approachesfor the Visual Word Sense Disambiguation(VWSD) Task in English. Our preliminarystudy shows that the simple approach of match-ing candidate images with the phrase usingCLIP suffers from the many-to-many natureof image-text pairs. We find that the CLIP textencoder may have limited abilities in captur-ing the compositionality in natural language. Conversely, the descriptive focus of the phrasevaries from instance to instance. We addressthese issues in our two systems, Augment-CLIPand Stable Diffusion Sampling (SD Sampling).Augment-CLIP augments the text prompt bygenerating sentences that contain the contextphrase with the help of large language mod-els (LLMs). We further explore CLIP modelsin other languages, as the an ambiguous wordmay be translated into an unambiguous one inthe other language. SD Sampling uses text-to-image Stable Diffusion to generate multipleimages from the given phrase, increasing thelikelihood that a subset of images match theone that paired with the text.",
+    "num_pages": 6
+}

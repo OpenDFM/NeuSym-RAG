@@ -1,0 +1,23 @@
+{
+    "uuid": "8d861d1f-f3db-550c-8bba-706505946d0e",
+    "title": "FactPICO: Factuality Evaluation for Plain Language Summarization of Medical Evidence",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{joseph-etal-2024-factpico,\n    title = \"{F}act{PICO}: Factuality Evaluation for Plain Language Summarization of Medical Evidence\",\n    author = {Joseph, Sebastian  and\n      Chen, Lily  and\n      Trienes, Jan  and\n      G{\\\"o}ke, Hannah  and\n      Coers, Monika  and\n      Xu, Wei  and\n      Wallace, Byron  and\n      Li, Junyi Jessy},\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.459\",\n    doi = \"10.18653/v1/2024.acl-long.459\",\n    pages = \"8437--8464\",\n    abstract = \"Plain language summarization with LLMs can be useful for improving textual accessibility of technical content. But how factual are these summaries in a high-stakes domain like medicine? This paper presents FactPICO, a factuality benchmark for plain language summarization of medical texts describing randomized controlled trials (RCTs), which are the basis of evidence-based medicine and can directly inform patient treatment. FactPICO consists of 345 plain language summaries of RCT abstracts generated from three LLMs (i.e., GPT-4, Llama-2, and Alpaca), with fine-grained evaluation and natural language rationales from experts. We assess the factuality of critical elements of RCTs in those summaries: Populations, Interventions, Comparators, Outcomes (PICO), as well as the reported findings concerning these. We also evaluate the correctness of the extra information (e.g., explanations) added by LLMs. Using FactPICO, we benchmark a range of existing factuality metrics, including the newly devised ones based on LLMs. We find that plain language summarization of medical evidence is still challenging, especially when balancing between simplicity and factuality, and that existing metrics correlate poorly with expert judgments on the instance level.\",\n}\n",
+    "authors": [
+        "Sebastian Joseph",
+        "Lily Chen",
+        "Jan Trienes",
+        "Hannah Göke",
+        "Monika Coers",
+        "Wei Xu",
+        "Byron Wallace",
+        "Junyi Jessy Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.459.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/8d861d1f-f3db-550c-8bba-706505946d0e.pdf",
+    "abstract": "Plain language summarization with LLMs can be useful for improving textual accessibility of technical content. But how factual are these summaries in a high-stakes domain like medicine? This paper presents FactPICO, a factuality benchmark for plain language summarization of medical texts describing randomized controlled trials (RCTs), which are the basis of evidence-based medicine and can directly inform patient treatment. FactPICO consists of 345 plain language summaries of RCT abstracts generated from three LLMs (i.e., GPT-4, Llama-2, and Alpaca), with fine-grained evaluation and natural language rationales from experts. We assess the factuality of critical elements of RCTs in those summaries: Populations, Interventions, Comparators, Outcomes (PICO), as well as the reported findings concerning these. We also evaluate the correctness of the extra information (e.g., explanations) added by LLMs. Using FactPICO, we benchmark a range of existing factuality metrics, including the newly devised ones based on LLMs. We find that plain language summarization of medical evidence is still challenging, especially when balancing between simplicity and factuality, and that existing metrics correlate poorly with expert judgments on the instance level.",
+    "num_pages": 28
+}

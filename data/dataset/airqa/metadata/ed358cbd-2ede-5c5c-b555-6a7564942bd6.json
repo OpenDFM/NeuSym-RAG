@@ -1,0 +1,20 @@
+{
+    "uuid": "ed358cbd-2ede-5c5c-b555-6a7564942bd6",
+    "title": "Generalizing Backpropagation for Gradient-Based Interpretability",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{du-etal-2023-generalizing,\n    title = \"Generalizing Backpropagation for Gradient-Based Interpretability\",\n    author = \"Du, Kevin  and\n      Torroba Hennigen, Lucas  and\n      Stoehr, Niklas  and\n      Warstadt, Alex  and\n      Cotterell, Ryan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.669\",\n    doi = \"10.18653/v1/2023.acl-long.669\",\n    pages = \"11979--11995\",\n    abstract = \"Many popular feature-attribution methods for interpreting deep neural networks rely on computing the gradients of a model{'}s output with respect to its inputs. While these methods can indicate which input features may be important for the model{'}s prediction, they reveal little about the inner workings of the model itself. In this paper, we observe that the gradient computation of a model is a special case of a more general formulation using semirings. This observation allows us to generalize the backpropagation algorithm to efficiently compute other interpretable statistics about the gradient graph of a neural network, such as the highest-weighted path and entropy. We implement this generalized algorithm, evaluate it on synthetic datasets to better understand the statistics it computes, and apply it to study BERT{'}s behavior on the subject{--}verb number agreement task (SVA). With this method, we (a) validate that the amount of gradient flow through a component of a model reflects its importance to a prediction and (b) for SVA, identify which pathways of the self-attention mechanism are most important.\",\n}\n",
+    "authors": [
+        "Kevin Du",
+        "Lucas Torroba Hennigen",
+        "Niklas Stoehr",
+        "Alex Warstadt",
+        "Ryan Cotterell"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.669.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ed358cbd-2ede-5c5c-b555-6a7564942bd6.pdf",
+    "abstract": "Many popular feature-attribution methods for interpreting deep neural networks rely on computing the gradients of a model’s output with respect to its inputs. While these methods can indicate which input features may be important for the model’s prediction, they reveal little about the inner workings of the model itself. In this paper, we observe that the gradient computation of a model is a special case of a more general formulation using semirings. This observation allows us to generalize the backpropagation algorithm to efficiently compute other interpretable statistics about the gradient graph of a neural network, such as the highest-weighted path and entropy. We implement this generalized algorithm, evaluate it on synthetic datasets to better understand the statistics it computes, and apply it to study BERT’s behavior on the subject–verb number agreement task (SVA). With this method, we (a) validate that the amount of gradient flow through a component of a model reflects its importance to a prediction and (b) for SVA, identify which pathways of the self-attention mechanism are most important.",
+    "num_pages": 17
+}

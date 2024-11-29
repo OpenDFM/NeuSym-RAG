@@ -1,0 +1,22 @@
+{
+    "uuid": "31e0ada0-eea3-5efe-ada5-6ee206947843",
+    "title": "CaLM: Contrasting Large and Small Language Models to Verify Grounded Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{hsu-etal-2024-calm,\n    title = \"{C}a{LM}: Contrasting Large and Small Language Models to Verify Grounded Generation\",\n    author = \"Hsu, I-Hung  and\n      Wang, Zifeng  and\n      Le, Long  and\n      Miculicich, Lesly  and\n      Peng, Nanyun  and\n      Lee, Chen-Yu  and\n      Pfister, Tomas\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.759\",\n    doi = \"10.18653/v1/2024.findings-acl.759\",\n    pages = \"12782--12803\",\n    abstract = \"Grounded generation aims to equip language models (LMs) with the ability to produce more credible and accountable responses by accurately citing verifiable sources. However, existing methods, by either feeding LMs with raw or preprocessed materials, remain prone to errors. To address this, we introduce CaLM, a novel verification framework. CaLM leverages the insight that a robust grounded response should be consistent with information derived solely from its cited sources. Our framework empowers smaller LMs, which rely less on parametric memory and excel at processing relevant information given a query, to validate the output of larger LMs. Larger LM responses that closely align with the smaller LMs{'} output, which relies exclusively on cited documents, are verified. Responses showing discrepancies are iteratively refined through a feedback loop. Experiments on three open-domain question-answering datasets demonstrate significant performance gains of 1.5{\\%} to 7{\\%} absolute average without any required model fine-tuning.\",\n}\n",
+    "authors": [
+        "I-Hung Hsu",
+        "Zifeng Wang",
+        "Long Le",
+        "Lesly Miculicich",
+        "Nanyun Peng",
+        "Chen-Yu Lee",
+        "Tomas Pfister"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.759.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/31e0ada0-eea3-5efe-ada5-6ee206947843.pdf",
+    "abstract": "Grounded generation aims to equip language models (LMs) with the ability to produce more credible and accountable responses by accurately citing verifiable sources. However, existing methods, by either feeding LMs with raw or preprocessed materials, remain prone to errors. To address this, we introduce CaLM, a novel verification framework. CaLM leverages the insight that a robust grounded response should be consistent with information derived solely from its cited sources. Our framework empowers smaller LMs, which rely less on parametric memory and excel at processing relevant information given a query, to validate the output of larger LMs. Larger LM responses that closely align with the smaller LMs’ output, which relies exclusively on cited documents, are verified. Responses showing discrepancies are iteratively refined through a feedback loop. Experiments on three open-domain question-answering datasets demonstrate significant performance gains of 1.5% to 7% absolute average without any required model fine-tuning.",
+    "num_pages": 22
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "109e74b1-0541-5cf9-82e1-11eaa4384b25",
+    "title": "Assessing Word Importance Using Models Trained for Semantic Tasks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{javorsky-etal-2023-assessing,\n    title = \"Assessing Word Importance Using Models Trained for Semantic Tasks\",\n    author = \"Javorsk{\\'y}, D{\\'a}vid  and\n      Bojar, Ond{\\v{r}}ej  and\n      Yvon, Fran{\\c{c}}ois\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.563\",\n    doi = \"10.18653/v1/2023.findings-acl.563\",\n    pages = \"8846--8856\",\n    abstract = \"Many NLP tasks require to automatically identify the most significant words in a text. In this work, we derive word significance from models trained to solve semantic task: Natural Language Inference and Paraphrase Identification. Using an attribution method aimed to explain the predictions of these models, we derive importance scores for each input token. We evaluate their relevance using a so-called cross-task evaluation: Analyzing the performance of one model on an input masked according to the other model{'}s weight, we show that our method is robust with respect to the choice of the initial task. Additionally, we investigate the scores from the syntax point of view and observe interesting patterns, e.g. words closer to the root of a syntactic tree receive higher importance scores. Altogether, these observations suggest that our method can be used to identify important words in sentences without any explicit word importance labeling in training.\",\n}\n",
+    "authors": [
+        "Dávid Javorský",
+        "Ondřej Bojar",
+        "François Yvon"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.563.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/109e74b1-0541-5cf9-82e1-11eaa4384b25.pdf",
+    "abstract": "Many NLP tasks require to automatically identify the most significant words in a text. In this work, we derive word significance from models trained to solve semantic task: Natural Language Inference and Paraphrase Identification. Using an attribution method aimed to explain the predictions of these models, we derive importance scores for each input token. We evaluate their relevance using a so-called cross-task evaluation: Analyzing the performance of one model on an input masked according to the other model’s weight, we show that our method is robust with respect to the choice of the initial task. Additionally, we investigate the scores from the syntax point of view and observe interesting patterns, e.g. words closer to the root of a syntactic tree receive higher importance scores. Altogether, these observations suggest that our method can be used to identify important words in sentences without any explicit word importance labeling in training.",
+    "num_pages": 11
+}

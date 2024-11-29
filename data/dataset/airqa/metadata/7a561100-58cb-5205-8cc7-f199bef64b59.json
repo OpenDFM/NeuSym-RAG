@@ -1,0 +1,22 @@
+{
+    "uuid": "7a561100-58cb-5205-8cc7-f199bef64b59",
+    "title": "Generating Deep Questions with Commonsense Reasoning Ability from the Text by Disentangled Adversarial Inference",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{yu-etal-2023-generating-deep,\n    title = \"Generating Deep Questions with Commonsense Reasoning Ability from the Text by Disentangled Adversarial Inference\",\n    author = \"Yu, Jianxing  and\n      Wang, Shiqi  and\n      Zheng, Libin  and\n      Su, Qinliang  and\n      Liu, Wei  and\n      Zhao, Baoquan  and\n      Yin, Jian\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.30\",\n    doi = \"10.18653/v1/2023.findings-acl.30\",\n    pages = \"470--486\",\n    abstract = \"This paper proposes a new task of commonsense question generation, which aims to yield deep-level and to-the-point questions from the text. Their answers need to reason over disjoint relevant contexts and external commonsense knowledge, such as encyclopedic facts and causality. The knowledge may not be explicitly mentioned in the text but is used by most humans for problem-shooting. Such complex reasoning with hidden contexts involves deep semantic understanding. Thus, this task has great application value, such as making high-quality quizzes in advanced exams. Due to the lack of modeling complexity, existing methods may produce shallow questions that can be answered by simple word matching. To address these challenges, we propose a new QG model by simultaneously considering asking contents, expressive ways, and answering complexity. We first retrieve text-related commonsense context. Then we disentangle the key factors that control questions in terms of reasoning content and verbalized way. Independence priors and constraints are imposed to facilitate disentanglement. We further develop a discriminator to promote the deep results by considering their answering complexity. Through adversarial inference, we learn the latent factors from data. By sampling the expressive factor from the data distributions, diverse questions can be yielded. Evaluations of two typical data sets show the effectiveness of our approach.\",\n}\n",
+    "authors": [
+        "Jianxing Yu",
+        "Shiqi Wang",
+        "Libin Zheng",
+        "Qinliang Su",
+        "Wei Liu",
+        "Baoquan Zhao",
+        "Jian Yin"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.30.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/7a561100-58cb-5205-8cc7-f199bef64b59.pdf",
+    "abstract": "This paper proposes a new task of commonsense question generation, which aims to yield deep-level and to-the-point questions from the text. Their answers need to reason over disjoint relevant contexts and external commonsense knowledge, such as encyclopedic facts and causality. The knowledge may not be explicitly mentioned in the text but is used by most humans for problem-shooting. Such complex reasoning with hidden contexts involves deep semantic understanding. Thus, this task has great application value, such as making high-quality quizzes in advanced exams. Due to the lack of modeling complexity, existing methods may produce shallow questions that can be answered by simple word matching. To address these challenges, we propose a new QG model by simultaneously considering asking contents, expressive ways, and answering complexity. We first retrieve text-related commonsense context. Then we disentangle the key factors that control questions in terms of reasoning content and verbalized way. Independence priors and constraints are imposed to facilitate disentanglement. We further develop a discriminator to promote the deep results by considering their answering complexity. Through adversarial inference, we learn the latent factors from data. By sampling the expressive factor from the data distributions, diverse questions can be yielded. Evaluations of two typical data sets show the effectiveness of our approach.",
+    "num_pages": 17
+}

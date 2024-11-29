@@ -1,0 +1,25 @@
+{
+    "uuid": "b597afd2-105d-5c60-9f56-b37677936e50",
+    "title": "Large Language Models as Zero-shot Dialogue State Tracker through Function Calling",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{li-etal-2024-large-language-models,\n    title = \"Large Language Models as Zero-shot Dialogue State Tracker through Function Calling\",\n    author = \"Li, Zekun  and\n      Chen, Zhiyu  and\n      Ross, Mike  and\n      Huber, Patrick  and\n      Moon, Seungwhan  and\n      Lin, Zhaojiang  and\n      Dong, Xin  and\n      Sagar, Adithya  and\n      Yan, Xifeng  and\n      Crook, Paul\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.471\",\n    doi = \"10.18653/v1/2024.acl-long.471\",\n    pages = \"8688--8704\",\n    abstract = \"Large language models (LLMs) are increasingly prevalent in conversational systems due to their advanced understanding and generative capabilities in general contexts. However, their effectiveness in task-oriented dialogues (TOD), which requires not only response generation but also effective dialogue state tracking (DST) within specific tasks and domains, remains less satisfying. In this work, we propose a novel approach FnCTOD for solving DST with LLMs through function calling. This method improves zero-shot DST, allowing adaptation to diverse domains without extensive data collection or model tuning. Our experimental results demonstrate that our approach achieves exceptional performance with both modestly sized open-source and also proprietary LLMs: with in-context prompting it enables various 7B or 13B parameter models to surpass the previous state-of-the-art (SOTA) achieved by ChatGPT, and improves ChatGPT{'}s performance beating the SOTA by 5.6{\\%} average joint goal accuracy (JGA). Individual model results for GPT-3.5 and GPT-4 are boosted by 4.8{\\%} and 14{\\%}, respectively. We also show that by fine-tuning on a small collection of diverse task-oriented dialogues, we can equip modestly sized models, specifically a 13B parameter LLaMA2-Chat model, with function-calling capabilities and DST performance comparable to ChatGPT while maintaining their chat capabilities. We have made the code publicly available at https://github.com/facebookresearch/FnCTOD.\",\n}\n",
+    "authors": [
+        "Zekun Li",
+        "Zhiyu Chen",
+        "Mike Ross",
+        "Patrick Huber",
+        "Seungwhan Moon",
+        "Zhaojiang Lin",
+        "Xin Dong",
+        "Adithya Sagar",
+        "Xifeng Yan",
+        "Paul Crook"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.471.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/b597afd2-105d-5c60-9f56-b37677936e50.pdf",
+    "abstract": "Large language models (LLMs) are increasingly prevalent in conversational systems due to their advanced understanding and generative capabilities in general contexts. However, their effectiveness in task-oriented dialogues (TOD), which requires not only response generation but also effective dialogue state tracking (DST) within specific tasks and domains, remains less satisfying. In this work, we propose a novel approach FnCTOD for solving DST with LLMs through function calling. This method improves zero-shot DST, allowing adaptation to diverse domains without extensive data collection or model tuning. Our experimental results demonstrate that our approach achieves exceptional performance with both modestly sized open-source and also proprietary LLMs: with in-context prompting it enables various 7B or 13B parameter models to surpass the previous state-of-the-art (SOTA) achieved by ChatGPT, and improves ChatGPT’s performance beating the SOTA by 5.6% average joint goal accuracy (JGA). Individual model results for GPT-3.5 and GPT-4 are boosted by 4.8% and 14%, respectively. We also show that by fine-tuning on a small collection of diverse task-oriented dialogues, we can equip modestly sized models, specifically a 13B parameter LLaMA2-Chat model, with function-calling capabilities and DST performance comparable to ChatGPT while maintaining their chat capabilities. We have made the code publicly available at https://github.com/facebookresearch/FnCTOD.",
+    "num_pages": 17
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "6c1bfb35-6d4e-5d06-8a56-6b59893ace37",
+    "title": "Span-level Aspect-based Sentiment Analysis via Table Filling",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhang-etal-2023-span,\n    title = \"Span-level Aspect-based Sentiment Analysis via Table Filling\",\n    author = \"Zhang, Mao  and\n      Zhu, Yongxin  and\n      Liu, Zhen  and\n      Bao, Zhimin  and\n      Wu, Yunfei  and\n      Sun, Xing  and\n      Xu, Linli\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.515\",\n    doi = \"10.18653/v1/2023.acl-long.515\",\n    pages = \"9273--9284\",\n    abstract = \"In this paper, we propose a novel span-level model for Aspect-Based Sentiment Analysis (ABSA), which aims at identifying the sentiment polarity of the given aspect. In contrast to conventional ABSA models that focus on modeling the word-level dependencies between an aspect and its corresponding opinion expressions, in this paper, we propose Table Filling BERT (TF-BERT), which considers the consistency of multi-word opinion expressions at the span-level. Specially, we learn the span representations with a table filling method, by constructing an upper triangular table for each sentiment polarity, of which the elements represent the sentiment intensity of the specific sentiment polarity for all spans in the sentence. Two methods are then proposed, including table-decoding and table-aggregation, to filter out target spans or aggregate each table for sentiment polarity classification. In addition, we design a sentiment consistency regularizer to guarantee the sentiment consistency of each span for different sentiment polarities. Experimental results on three benchmarks demonstrate the effectiveness of our proposed model.\",\n}\n",
+    "authors": [
+        "Mao Zhang",
+        "Yongxin Zhu",
+        "Zhen Liu",
+        "Zhimin Bao",
+        "Yunfei Wu",
+        "Xing Sun",
+        "Linli Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.515.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/6c1bfb35-6d4e-5d06-8a56-6b59893ace37.pdf",
+    "abstract": "In this paper, we propose a novel span-level model for Aspect-Based Sentiment Analysis (ABSA), which aims at identifying the sentiment polarity of the given aspect. In contrast to conventional ABSA models that focus on modeling the word-level dependencies between an aspect and its corresponding opinion expressions, in this paper, we propose Table Filling BERT (TF-BERT), which considers the consistency of multi-word opinion expressions at the span-level. Specially, we learn the span representations with a table filling method, by constructing an upper triangular table for each sentiment polarity, of which the elements represent the sentiment intensity of the specific sentiment polarity for all spans in the sentence. Two methods are then proposed, including table-decoding and table-aggregation, to filter out target spans or aggregate each table for sentiment polarity classification. In addition, we design a sentiment consistency regularizer to guarantee the sentiment consistency of each span for different sentiment polarities. Experimental results on three benchmarks demonstrate the effectiveness of our proposed model.",
+    "num_pages": 12
+}

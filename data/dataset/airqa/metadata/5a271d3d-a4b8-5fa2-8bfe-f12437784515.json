@@ -1,0 +1,19 @@
+{
+    "uuid": "5a271d3d-a4b8-5fa2-8bfe-f12437784515",
+    "title": "Understanding and Addressing the Under-Translation Problem from the Perspective of Decoding Objective",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{shao-etal-2024-understanding,\n    title = \"Understanding and Addressing the Under-Translation Problem from the Perspective of Decoding Objective\",\n    author = \"Shao, Chenze  and\n      Meng, Fandong  and\n      Zeng, Jiali  and\n      Zhou, Jie\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.209\",\n    doi = \"10.18653/v1/2024.acl-long.209\",\n    pages = \"3800--3814\",\n    abstract = \"Neural Machine Translation (NMT) has made remarkable progress over the past years. However, under-translation and over-translation remain two challenging problems in state-of-the-art NMT systems. In this work, we conduct an in-depth analysis on the underlying cause of under-translation in NMT, providing an explanation from the perspective of decoding objective. To optimize the beam search objective, the model tends to overlook words it is less confident about, leading to the under-translation phenomenon. Correspondingly, the model{'}s confidence in predicting the End Of Sentence (EOS) diminishes when under-translation occurs, serving as a mild penalty for under-translated candidates. Building upon this analysis, we propose employing the confidence of predicting EOS as a detector for under-translation, and strengthening the confidence-based penalty to penalize candidates with a high risk of under-translation.Experiments on both synthetic and real-world data show that our method can accurately detect and rectify under-translated outputs, with minor impact on other correct translations.\",\n}\n",
+    "authors": [
+        "Chenze Shao",
+        "Fandong Meng",
+        "Jiali Zeng",
+        "Jie Zhou"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.209.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/5a271d3d-a4b8-5fa2-8bfe-f12437784515.pdf",
+    "abstract": "Neural Machine Translation (NMT) has made remarkable progress over the past years. However, under-translation and over-translation remain two challenging problems in state-of-the-art NMT systems. In this work, we conduct an in-depth analysis on the underlying cause of under-translation in NMT, providing an explanation from the perspective of decoding objective. To optimize the beam search objective, the model tends to overlook words it is less confident about, leading to the under-translation phenomenon. Correspondingly, the model’s confidence in predicting the End Of Sentence (EOS) diminishes when under-translation occurs, serving as a mild penalty for under-translated candidates. Building upon this analysis, we propose employing the confidence of predicting EOS as a detector for under-translation, and strengthening the confidence-based penalty to penalize candidates with a high risk of under-translation.Experiments on both synthetic and real-world data show that our method can accurately detect and rectify under-translated outputs, with minor impact on other correct translations.",
+    "num_pages": 15
+}

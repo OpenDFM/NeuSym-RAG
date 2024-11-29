@@ -1,0 +1,16 @@
+{
+    "uuid": "3653645a-0c5a-59b0-a8e5-be24eb364804",
+    "title": "Towards Efficient Dialogue Processing in the Emergency Response Domain",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)",
+    "bibtex": "@inproceedings{anikina-2023-towards,\n    title = \"Towards Efficient Dialogue Processing in the Emergency Response Domain\",\n    author = \"Anikina, Tatiana\",\n    editor = \"Padmakumar, Vishakh  and\n      Vallejo, Gisela  and\n      Fu, Yao\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-srw.31\",\n    doi = \"10.18653/v1/2023.acl-srw.31\",\n    pages = \"212--225\",\n    abstract = \"In this paper we describe the task of adapting NLP models to dialogue processing in the emergency response domain. Our goal is to provide a recipe for building a system that performs dialogue act classification and domain-specific slot tagging while being efficient, flexible and robust. We show that adapter models Pfeiffer et al. (2020) perform well in the emergency response domain and benefit from additional dialogue context and speaker information. Comparing adapters to standard fine-tuned Transformer models we show that they achieve competitive results and can easily accommodate new tasks without significant memory increase since the base model can be shared between the adapters specializing on different tasks. We also address the problem of scarce annotations in the emergency response domain and evaluate different data augmentation techniques in a low-resource setting.\",\n}\n",
+    "authors": [
+        "Tatiana Anikina"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-srw.31.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/3653645a-0c5a-59b0-a8e5-be24eb364804.pdf",
+    "abstract": "In this paper we describe the task of adapting NLP models to dialogue processing in the emergency response domain. Our goal is to provide a recipe for building a system that performs dialogue act classification and domain-specific slot tagging while being efficient, flexible and robust. We show that adapter models Pfeiffer et al. (2020) perform well in the emergency response domain and benefit from additional dialogue context and speaker information. Comparing adapters to standard fine-tuned Transformer models we show that they achieve competitive results and can easily accommodate new tasks without significant memory increase since the base model can be shared between the adapters specializing on different tasks. We also address the problem of scarce annotations in the emergency response domain and evaluate different data augmentation techniques in a low-resource setting.",
+    "num_pages": 14
+}

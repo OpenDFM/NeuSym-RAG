@@ -1,0 +1,23 @@
+{
+    "uuid": "55248806-d1a3-5206-b0b1-42fd2d54a238",
+    "title": "Hybrid Transducer and Attention based Encoder-Decoder Modeling for Speech-to-Text Tasks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{tang-etal-2023-hybrid,\n    title = \"Hybrid Transducer and Attention based Encoder-Decoder Modeling for Speech-to-Text Tasks\",\n    author = \"Tang, Yun  and\n      Sun, Anna  and\n      Inaguma, Hirofumi  and\n      Chen, Xinyue  and\n      Dong, Ning  and\n      Ma, Xutai  and\n      Tomasello, Paden  and\n      Pino, Juan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.695\",\n    doi = \"10.18653/v1/2023.acl-long.695\",\n    pages = \"12441--12455\",\n    abstract = \"Transducer and Attention based Encoder-Decoder (AED) are two widely used frameworks for speech-to-text tasks. They are designed for different purposes and each has its own benefits and drawbacks for speech-to-text tasks. In order to leverage strengths of both modeling methods, we propose a solution by combining Transducer and Attention based Encoder-Decoder (TAED) for speech-to-text tasks. The new method leverages AED{'}s strength in non-monotonic sequence to sequence learning while retaining Transducer{'}s streaming property. In the proposed framework, Transducer and AED share the same speech encoder. The predictor in Transducer is replaced by the decoder in the AED model, and the outputs of the decoder are conditioned on the speech inputs instead of outputs from an unconditioned language model. The proposed solution ensures that the model is optimized by covering all possible read/write scenarios and creates a matched environment for streaming applications. We evaluate the proposed approach on the MuST-C dataset and the findings demonstrate that TAED performs significantly better than Transducer for offline automatic speech recognition (ASR) and speech-to-text translation (ST) tasks. In the streaming case, TAED outperforms Transducer in the ASR task and one ST direction while comparable results are achieved in another translation direction.\",\n}\n",
+    "authors": [
+        "Yun Tang",
+        "Anna Sun",
+        "Hirofumi Inaguma",
+        "Xinyue Chen",
+        "Ning Dong",
+        "Xutai Ma",
+        "Paden Tomasello",
+        "Juan Pino"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.695.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/55248806-d1a3-5206-b0b1-42fd2d54a238.pdf",
+    "abstract": "Transducer and Attention based Encoder-Decoder (AED) are two widely used frameworks for speech-to-text tasks. They are designed for different purposes and each has its own benefits and drawbacks for speech-to-text tasks. In order to leverage strengths of both modeling methods, we propose a solution by combining Transducer and Attention based Encoder-Decoder (TAED) for speech-to-text tasks. The new method leverages AED’s strength in non-monotonic sequence to sequence learning while retaining Transducer’s streaming property. In the proposed framework, Transducer and AED share the same speech encoder. The predictor in Transducer is replaced by the decoder in the AED model, and the outputs of the decoder are conditioned on the speech inputs instead of outputs from an unconditioned language model. The proposed solution ensures that the model is optimized by covering all possible read/write scenarios and creates a matched environment for streaming applications. We evaluate the proposed approach on the MuST-C dataset and the findings demonstrate that TAED performs significantly better than Transducer for offline automatic speech recognition (ASR) and speech-to-text translation (ST) tasks. In the streaming case, TAED outperforms Transducer in the ASR task and one ST direction while comparable results are achieved in another translation direction.",
+    "num_pages": 15
+}

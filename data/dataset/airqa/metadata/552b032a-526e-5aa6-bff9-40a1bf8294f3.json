@@ -1,0 +1,18 @@
+{
+    "uuid": "552b032a-526e-5aa6-bff9-40a1bf8294f3",
+    "title": "TAXI: Evaluating Categorical Knowledge Editing for Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{powell-etal-2024-taxi,\n    title = \"{TAXI}: Evaluating Categorical Knowledge Editing for Language Models\",\n    author = \"Powell, Derek  and\n      Gerych, Walter  and\n      Hartvigsen, Thomas\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.906\",\n    doi = \"10.18653/v1/2024.findings-acl.906\",\n    pages = \"15343--15352\",\n    abstract = \"Humans rarely learn one fact in isolation. Instead, learning a new fact induces knowledge of other facts about the world. For example, in learning a korat is a type of cat, you also infer it is a mammal and has claws, ensuring your model of the world is consistent. Knowledge editing aims to inject new facts into language models to improve their factuality, but current benchmarks fail to evaluate consistency, which is critical to ensure efficient, accurate, and generalizable edits. We manually create TAXI, a new benchmark dataset specifically created to evaluate consistency in categorical knowledge edits. TAXI contains 11,120 multiple-choice queries for 976 edits spanning 41 categories (e.g., Dogs), 164 subjects (e.g., Labrador), and 183 properties (e.g., is a mammal). We then use TAXI to evaluate popular editors{'} categorical consistency, measuring how often editing a subject{'}s category appropriately edits its properties. We find that 1) the editors achieve marginal, yet non-random consistency, 2) their consistency far underperforms human baselines, and 3) consistency is more achievable when editing atypical subjects.\",\n}\n",
+    "authors": [
+        "Derek Powell",
+        "Walter Gerych",
+        "Thomas Hartvigsen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.906.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/552b032a-526e-5aa6-bff9-40a1bf8294f3.pdf",
+    "abstract": "Humans rarely learn one fact in isolation. Instead, learning a new fact induces knowledge of other facts about the world. For example, in learning a korat is a type of cat, you also infer it is a mammal and has claws, ensuring your model of the world is consistent. Knowledge editing aims to inject new facts into language models to improve their factuality, but current benchmarks fail to evaluate consistency, which is critical to ensure efficient, accurate, and generalizable edits. We manually create TAXI, a new benchmark dataset specifically created to evaluate consistency in categorical knowledge edits. TAXI contains 11,120 multiple-choice queries for 976 edits spanning 41 categories (e.g., Dogs), 164 subjects (e.g., Labrador), and 183 properties (e.g., is a mammal). We then use TAXI to evaluate popular editors’ categorical consistency, measuring how often editing a subject’s category appropriately edits its properties. We find that 1) the editors achieve marginal, yet non-random consistency, 2) their consistency far underperforms human baselines, and 3) consistency is more achievable when editing atypical subjects.",
+    "num_pages": 10
+}

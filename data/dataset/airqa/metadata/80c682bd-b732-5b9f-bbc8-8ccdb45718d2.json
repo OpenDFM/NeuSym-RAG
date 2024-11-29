@@ -1,0 +1,25 @@
+{
+    "uuid": "80c682bd-b732-5b9f-bbc8-8ccdb45718d2",
+    "title": "Browse and Concentrate: Comprehending Multimodal Content via Prior-LLM Context Fusion",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2024-browse,\n    title = \"Browse and Concentrate: Comprehending Multimodal Content via Prior-{LLM} Context Fusion\",\n    author = \"Wang, Ziyue  and\n      Chen, Chi  and\n      Zhu, Yiqi  and\n      Luo, Fuwen  and\n      Li, Peng  and\n      Yan, Ming  and\n      Zhang, Ji  and\n      Huang, Fei  and\n      Sun, Maosong  and\n      Liu, Yang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.605\",\n    doi = \"10.18653/v1/2024.acl-long.605\",\n    pages = \"11229--11245\",\n    abstract = \"With the bloom of Large Language Models (LLMs), Multimodal Large Language Models (MLLMs) that incorporate LLMs with pre-trained vision models have recently demonstrated impressive performance across diverse vision-language tasks. However, they fall short to comprehend context involving multiple images. A primary reason for this shortcoming is that the visual features for each images are encoded individually by frozen encoders before feeding into the LLM backbone, lacking awareness of other images and the multimodal instructions. We term this issue as prior-LLM modality isolation and propose a two phase paradigm, browse-and-concentrate, to enable in-depth multimodal context fusion prior to feeding the features into LLMs. This paradigm initially {``}browses{''} through the inputs for essential insights, and then revisits the inputs to {``}concentrate{''} on crucial details, guided by these insights, to achieve a more comprehensive understanding of the multimodal inputs. Additionally, we develop training strategies specifically to enhance the understanding of multi-image inputs. Our method markedly boosts the performance on 7 multi-image scenarios, contributing to increments on average accuracy by 2.13{\\%} and 7.60{\\%} against strong MLLMs baselines with 3B and 11B LLMs, respectively.\",\n}\n",
+    "authors": [
+        "Ziyue Wang",
+        "Chi Chen",
+        "Yiqi Zhu",
+        "Fuwen Luo",
+        "Peng Li",
+        "Ming Yan",
+        "Ji Zhang",
+        "Fei Huang",
+        "Maosong Sun",
+        "Yang Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.605.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/80c682bd-b732-5b9f-bbc8-8ccdb45718d2.pdf",
+    "abstract": "With the bloom of Large Language Models (LLMs), Multimodal Large Language Models (MLLMs) that incorporate LLMs with pre-trained vision models have recently demonstrated impressive performance across diverse vision-language tasks. However, they fall short to comprehend context involving multiple images. A primary reason for this shortcoming is that the visual features for each images are encoded individually by frozen encoders before feeding into the LLM backbone, lacking awareness of other images and the multimodal instructions. We term this issue as prior-LLM modality isolation and propose a two phase paradigm, browse-and-concentrate, to enable in-depth multimodal context fusion prior to feeding the features into LLMs. This paradigm initially “browses” through the inputs for essential insights, and then revisits the inputs to “concentrate” on crucial details, guided by these insights, to achieve a more comprehensive understanding of the multimodal inputs. Additionally, we develop training strategies specifically to enhance the understanding of multi-image inputs. Our method markedly boosts the performance on 7 multi-image scenarios, contributing to increments on average accuracy by 2.13% and 7.60% against strong MLLMs baselines with 3B and 11B LLMs, respectively.",
+    "num_pages": 17
+}

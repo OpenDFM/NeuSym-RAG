@@ -1,0 +1,19 @@
+{
+    "uuid": "d0361b9e-4fb1-5179-8d58-603e9e6b75a2",
+    "title": "HBUT at #SMM4H 2024 Task1: Extraction and Normalization of Adverse Drug Events with a Large Language Model",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of The 9th Social Media Mining for Health Research and Applications (SMM4H 2024) Workshop and Shared Tasks",
+    "bibtex": "@inproceedings{ke-etal-2024-hbut,\n    title = \"{HBUT} at {\\#}{SMM}4{H} 2024 Task1: Extraction and Normalization of Adverse Drug Events with a Large Language Model\",\n    author = \"Ke, Yuanzhi  and\n      Jin, Hanbo  and\n      Wu, Xinyun  and\n      Xiong, Caiquan\",\n    editor = \"Xu, Dongfang  and\n      Gonzalez-Hernandez, Graciela\",\n    booktitle = \"Proceedings of The 9th Social Media Mining for Health Research and Applications (SMM4H 2024) Workshop and Shared Tasks\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.smm4h-1.11\",\n    pages = \"48--54\",\n    abstract = \"In this paper, we describe our proposed systems for the Social Media Mining for Health 2024 shared task 1. We built our system on the basis of GLM, a pre-trained large language model with few-shot Learning capabilities, using a two-step prompting strategy to extract adverse drug event (ADE) and an ensemble method for normalization. In first step of extraction phase, we extract all the potential ADEs with in-context few-shot learning. In the second step for extraction, we let GLM to filer out false positive outputs in the first step by a tailored prompt. Then we normalize each ADE to its MedDRA preferred term ID (ptID) by an ensemble method using Reciprocal Rank Fusion (RRF). Our method achieved excellent recall rate. It obtained 41.1{\\%}, 42.8{\\%}, and 40.6{\\%} recall rate for ADE normalization, ADE recognition, and normalization for unseen ADEs, respectively. Compared to the performance of the average and median among all the participants in terms of recall rate, our recall rate scores are generally 10{\\%}-20{\\%} higher than the other participants{'} systems.\",\n}\n",
+    "authors": [
+        "Yuanzhi Ke",
+        "Hanbo Jin",
+        "Xinyun Wu",
+        "Caiquan Xiong"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.smm4h-1.11.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d0361b9e-4fb1-5179-8d58-603e9e6b75a2.pdf",
+    "abstract": "In this paper, we describe our proposed systems for the Social Media Mining for Health 2024 shared task 1. We built our system on the basis of GLM, a pre-trained large language model with few-shot Learning capabilities, using a two-step prompting strategy to extract adverse drug event (ADE) and an ensemble method for normalization. In first step of extraction phase, we extract all the potential ADEs with in-context few-shot learning. In the second step for extraction, we let GLM to filer out false positive outputs in the first step by a tailored prompt. Then we normalize each ADE to its MedDRA preferred term ID (ptID) by an ensemble method using Reciprocal Rank Fusion (RRF). Our method achieved excellent recall rate. It obtained 41.1%, 42.8%, and 40.6% recall rate for ADE normalization, ADE recognition, and normalization for unseen ADEs, respectively. Compared to the performance of the average and median among all the participants in terms of recall rate, our recall rate scores are generally 10%-20% higher than the other participants’ systems.",
+    "num_pages": 7
+}

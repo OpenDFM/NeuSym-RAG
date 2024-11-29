@@ -1,0 +1,23 @@
+{
+    "uuid": "b3977830-02d3-556d-adcd-2b09afe2493f",
+    "title": "Recurrent Attention Networks for Long-text Modeling",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{li-etal-2023-recurrent,\n    title = \"Recurrent Attention Networks for Long-text Modeling\",\n    author = \"Li, Xianming  and\n      Li, Zongxi  and\n      Luo, Xiaotian  and\n      Xie, Haoran  and\n      Lee, Xing  and\n      Zhao, Yingbin  and\n      Wang, Fu Lee  and\n      Li, Qing\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.188\",\n    doi = \"10.18653/v1/2023.findings-acl.188\",\n    pages = \"3006--3019\",\n    abstract = \"Self-attention-based models have achieved remarkable progress in short-text mining. However, the quadratic computational complexities restrict their application in long text processing. Prior works have adopted the chunking strategy to divide long documents into chunks and stack a self-attention backbone with the recurrent structure to extract semantic representation. Such an approach disables parallelization of the attention mechanism, significantly increasing the training cost and raising hardware requirements. Revisiting the self-attention mechanism and the recurrent structure, this paper proposes a novel long-document encoding model, Recurrent Attention Network (RAN), to enable the recurrent operation of self-attention. Combining the advantages from both sides, the well-designed RAN is capable of extracting global semantics in both token-level and document-level representations, making it inherently compatible with both sequential and classification tasks, respectively. Furthermore, RAN is computationally scalable as it supports parallelization on long document processing. Extensive experiments demonstrate the long-text encoding ability of the proposed RAN model on both classification and sequential tasks, showing its potential for a wide range of applications.\",\n}\n",
+    "authors": [
+        "Xianming Li",
+        "Zongxi Li",
+        "Xiaotian Luo",
+        "Haoran Xie",
+        "Xing Lee",
+        "Yingbin Zhao",
+        "Fu Lee Wang",
+        "Qing Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.188.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b3977830-02d3-556d-adcd-2b09afe2493f.pdf",
+    "abstract": "Self-attention-based models have achieved remarkable progress in short-text mining. However, the quadratic computational complexities restrict their application in long text processing. Prior works have adopted the chunking strategy to divide long documents into chunks and stack a self-attention backbone with the recurrent structure to extract semantic representation. Such an approach disables parallelization of the attention mechanism, significantly increasing the training cost and raising hardware requirements. Revisiting the self-attention mechanism and the recurrent structure, this paper proposes a novel long-document encoding model, Recurrent Attention Network (RAN), to enable the recurrent operation of self-attention. Combining the advantages from both sides, the well-designed RAN is capable of extracting global semantics in both token-level and document-level representations, making it inherently compatible with both sequential and classification tasks, respectively. Furthermore, RAN is computationally scalable as it supports parallelization on long document processing. Extensive experiments demonstrate the long-text encoding ability of the proposed RAN model on both classification and sequential tasks, showing its potential for a wide range of applications.",
+    "num_pages": 14
+}

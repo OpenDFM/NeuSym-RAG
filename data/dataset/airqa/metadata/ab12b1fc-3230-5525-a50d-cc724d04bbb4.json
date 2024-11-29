@@ -1,0 +1,27 @@
+{
+    "uuid": "ab12b1fc-3230-5525-a50d-cc724d04bbb4",
+    "title": "The HW-TSC’s Simultaneous Speech-to-Speech Translation System for IWSLT 2023 Evaluation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)",
+    "bibtex": "@inproceedings{shang-etal-2023-hw,\n    title = \"The {HW}-{TSC}{'}s Simultaneous Speech-to-Speech Translation System for {IWSLT} 2023 Evaluation\",\n    author = \"Shang, Hengchao  and\n      Rao, Zhiqiang  and\n      Li, Zongyao  and\n      Wu, Zhanglin  and\n      Guo, Jiaxin  and\n      Wang, Minghan  and\n      Wei, Daimeng  and\n      Li, Shaojun  and\n      Yu, Zhengzhe  and\n      Chen, Xiaoyu  and\n      Lei, Lizhi  and\n      Yang, Hao\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.iwslt-1.36\",\n    doi = \"10.18653/v1/2023.iwslt-1.36\",\n    pages = \"383--388\",\n    abstract = \"In this paper, we present our submission to the IWSLT 2023 Simultaneous Speech-to-Speech Translation competition. Our participation involves three language directions: English-German, English-Chinese, and English-Japanese. Our solution is a cascaded incremental decoding system, consisting of an ASR model, an MT model, and a TTS model. By adopting the strategies used in the Speech-to-Text track, we have managed to generate a more confident target text for each audio segment input, which can guide the next MT incremental decoding process. Additionally, we have integrated the TTS model to seamlessly reproduce audio files from the translation hypothesis. To enhance the effectiveness of our experiment, we have utilized a range of methods to reduce error conditions in the TTS input text and improve the smoothness of the TTS output audio.\",\n}\n",
+    "authors": [
+        "Hengchao Shang",
+        "Zhiqiang Rao",
+        "Zongyao Li",
+        "Zhanglin Wu",
+        "Jiaxin Guo",
+        "Minghan Wang",
+        "Daimeng Wei",
+        "Shaojun Li",
+        "Zhengzhe Yu",
+        "Xiaoyu Chen",
+        "Lizhi Lei",
+        "Hao Yang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.iwslt-1.36.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ab12b1fc-3230-5525-a50d-cc724d04bbb4.pdf",
+    "abstract": "In this paper, we present our submission to the IWSLT 2023 Simultaneous Speech-to-Speech Translation competition. Our participation involves three language directions: English-German, English-Chinese, and English-Japanese. Our solution is a cascaded incremental decoding system, consisting of an ASR model, an MT model, and a TTS model. By adopting the strategies used in the Speech-to-Text track, we have managed to generate a more confident target text for each audio segment input, which can guide the next MT incremental decoding process. Additionally, we have integrated the TTS model to seamlessly reproduce audio files from the translation hypothesis. To enhance the effectiveness of our experiment, we have utilized a range of methods to reduce error conditions in the TTS input text and improve the smoothness of the TTS output audio.",
+    "num_pages": 6
+}

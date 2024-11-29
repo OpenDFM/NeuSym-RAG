@@ -1,0 +1,17 @@
+{
+    "uuid": "726bfbff-b11d-53d2-ba89-a6a40696f9eb",
+    "title": "WISMIR3: A Multi-Modal Dataset to Challenge Text-Image Retrieval Approaches",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 3rd Workshop on Advances in Language and Vision Research (ALVR)",
+    "bibtex": "@inproceedings{schneider-biemann-2024-wismir3,\n    title = \"{WISMIR}3: A Multi-Modal Dataset to Challenge Text-Image Retrieval Approaches\",\n    author = \"Schneider, Florian  and\n      Biemann, Chris\",\n    editor = \"Gu, Jing  and\n      Fu, Tsu-Jui (Ray)  and\n      Hudson, Drew  and\n      Celikyilmaz, Asli  and\n      Wang, William\",\n    booktitle = \"Proceedings of the 3rd Workshop on Advances in Language and Vision Research (ALVR)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.alvr-1.1\",\n    doi = \"10.18653/v1/2024.alvr-1.1\",\n    pages = \"1--6\",\n    abstract = \"This paper presents WISMIR3, a multi-modal dataset comprising roughly 300K text-image pairs from Wikipedia. With a sophisticated automatic ETL pipeline, we scraped, filtered, and transformed the data so that WISMIR3 intrinsically differs from other popular text-image datasets like COCO and Flickr30k. We prove this difference by comparing various linguistic statistics between the three datasets computed using the pipeline. The primary purpose of WISMIR3 is to use it as a benchmark to challenge state-of-the-art text-image retrieval approaches, which already reach around 90{\\%} Recall@5 scores on the mentioned popular datasets. Therefore, we ran several text-image retrieval experiments on our dataset using current models, which show that the models, in fact, perform significantly worse compared to evaluation results on COCO and Flickr30k. In addition, for each text-image pair, we release features computed by Faster-R-CNN and CLIP models. With this, we want to ease and motivate the use of the dataset for other researchers.\",\n}\n",
+    "authors": [
+        "Florian Schneider",
+        "Chris Biemann"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.alvr-1.1.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/726bfbff-b11d-53d2-ba89-a6a40696f9eb.pdf",
+    "abstract": "This paper presents WISMIR3, a multi-modal dataset comprising roughly 300K text-image pairs from Wikipedia. With a sophisticated automatic ETL pipeline, we scraped, filtered, and transformed the data so that WISMIR3 intrinsically differs from other popular text-image datasets like COCO and Flickr30k. We prove this difference by comparing various linguistic statistics between the three datasets computed using the pipeline. The primary purpose of WISMIR3 is to use it as a benchmark to challenge state-of-the-art text-image retrieval approaches, which already reach around 90% Recall@5 scores on the mentioned popular datasets. Therefore, we ran several text-image retrieval experiments on our dataset using current models, which show that the models, in fact, perform significantly worse compared to evaluation results on COCO and Flickr30k. In addition, for each text-image pair, we release features computed by Faster-R-CNN and CLIP models. With this, we want to ease and motivate the use of the dataset for other researchers.",
+    "num_pages": 6
+}

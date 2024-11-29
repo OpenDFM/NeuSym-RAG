@@ -1,0 +1,25 @@
+{
+    "uuid": "c81088ac-322e-5f4e-baf6-eb74d8724731",
+    "title": "HermEs: Interactive Spreadsheet Formula Prediction via Hierarchical Formulet Expansion",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{he-etal-2023-hermes,\n    title = \"{H}erm{E}s: Interactive Spreadsheet Formula Prediction via Hierarchical Formulet Expansion\",\n    author = \"He, Wanrong  and\n      Dong, Haoyu  and\n      Gao, Yihuai  and\n      Fan, Zhichao  and\n      Guo, Xingzhuo  and\n      Hou, Zhitao  and\n      Lv, Xiao  and\n      Jia, Ran  and\n      Han, Shi  and\n      Zhang, Dongmei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.465\",\n    doi = \"10.18653/v1/2023.acl-long.465\",\n    pages = \"8356--8372\",\n    abstract = \"We propose HermEs, the first approach for spreadsheet formula prediction via HiEraRchical forMulet ExpanSion, where hierarchical expansion means generating formulas following the underlying parse tree structure, and Formulet refers to commonly-used multi-level patterns mined from real formula parse trees. HermEs improves the formula prediction accuracy by (1) guaranteeing correct grammar by hierarchical generation rather than left-to-right generation and (2) significantly streamlining the token-level decoding with high-level Formulet. Notably, instead of generating formulas in a pre-defined fixed order, we propose a novel sampling strategy to systematically exploit a variety of hierarchical and multi-level expansion orders and provided solid mathematical proof, with the aim of meeting diverse human needs of the formula writing order in real applications. We further develop an interactive formula completion interface based on HermEs, which shows a new user experience in \\url{https://github.com/formulet/HERMES}.\",\n}\n",
+    "authors": [
+        "Wanrong He",
+        "Haoyu Dong",
+        "Yihuai Gao",
+        "Zhichao Fan",
+        "Xingzhuo Guo",
+        "Zhitao Hou",
+        "Xiao Lv",
+        "Ran Jia",
+        "Shi Han",
+        "Dongmei Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.465.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c81088ac-322e-5f4e-baf6-eb74d8724731.pdf",
+    "abstract": "We propose HermEs, the first approach for spreadsheet formula prediction via HiEraRchical forMulet ExpanSion, where hierarchical expansion means generating formulas following the underlying parse tree structure, and Formulet refers to commonly-used multi-level patterns mined from real formula parse trees. HermEs improves the formula prediction accuracy by (1) guaranteeing correct grammar by hierarchical generation rather than left-to-right generation and (2) significantly streamlining the token-level decoding with high-level Formulet. Notably, instead of generating formulas in a pre-defined fixed order, we propose a novel sampling strategy to systematically exploit a variety of hierarchical and multi-level expansion orders and provided solid mathematical proof, with the aim of meeting diverse human needs of the formula writing order in real applications. We further develop an interactive formula completion interface based on HermEs, which shows a new user experience in https://github.com/formulet/HERMES.",
+    "num_pages": 17
+}

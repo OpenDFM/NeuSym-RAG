@@ -1,0 +1,19 @@
+{
+    "uuid": "26011b4c-ff94-564e-a6a2-62fd2f276731",
+    "title": "WeLT: Improving Biomedical Fine-tuned Pre-trained Language Models with Cost-sensitive Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+    "bibtex": "@inproceedings{mobasher-etal-2023-welt,\n    title = \"{W}e{LT}: Improving Biomedical Fine-tuned Pre-trained Language Models with Cost-sensitive Learning\",\n    author = {Mobasher, Ghadeer  and\n      M{\\\"u}ller, Wolfgang  and\n      Krebs, Olga  and\n      Gertz, Michael},\n    editor = \"Demner-fushman, Dina  and\n      Ananiadou, Sophia  and\n      Cohen, Kevin\",\n    booktitle = \"The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.bionlp-1.40\",\n    doi = \"10.18653/v1/2023.bionlp-1.40\",\n    pages = \"427--438\",\n    abstract = \"Fine-tuning biomedical pre-trained language models (BioPLMs) such as BioBERT has become a common practice dominating leaderboards across various natural language processing tasks. Despite their success and wide adoption, prevailing fine-tuning approaches for named entity recognition (NER) naively train BioPLMs on targeted datasets without considering class distributions. This is problematic especially when dealing with imbalanced biomedical gold-standard datasets for NER in which most biomedical entities are underrepresented. In this paper, we address the class imbalance problem and propose WeLT, a cost-sensitive fine-tuning approach based on new re-scaled class weights for the task of biomedical NER. We evaluate WeLT{'}s fine-tuning performance on mixed-domain and domain-specific BioPLMs using eight biomedical gold-standard datasets. We compare our approach against vanilla fine-tuning and three other existing re-weighting schemes. Our results show the positive impact of handling the class imbalance problem. WeLT outperforms all the vanilla fine-tuned models. Furthermore, our method demonstrates advantages over other existing weighting schemes in most experiments.\",\n}\n",
+    "authors": [
+        "Ghadeer Mobasher",
+        "Wolfgang Müller",
+        "Olga Krebs",
+        "Michael Gertz"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.bionlp-1.40.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/26011b4c-ff94-564e-a6a2-62fd2f276731.pdf",
+    "abstract": "Fine-tuning biomedical pre-trained language models (BioPLMs) such as BioBERT has become a common practice dominating leaderboards across various natural language processing tasks. Despite their success and wide adoption, prevailing fine-tuning approaches for named entity recognition (NER) naively train BioPLMs on targeted datasets without considering class distributions. This is problematic especially when dealing with imbalanced biomedical gold-standard datasets for NER in which most biomedical entities are underrepresented. In this paper, we address the class imbalance problem and propose WeLT, a cost-sensitive fine-tuning approach based on new re-scaled class weights for the task of biomedical NER. We evaluate WeLT’s fine-tuning performance on mixed-domain and domain-specific BioPLMs using eight biomedical gold-standard datasets. We compare our approach against vanilla fine-tuning and three other existing re-weighting schemes. Our results show the positive impact of handling the class imbalance problem. WeLT outperforms all the vanilla fine-tuned models. Furthermore, our method demonstrates advantages over other existing weighting schemes in most experiments.",
+    "num_pages": 12
+}

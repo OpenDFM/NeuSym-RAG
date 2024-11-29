@@ -1,0 +1,18 @@
+{
+    "uuid": "029cdb88-33fd-5d2b-94d0-312e3a477be4",
+    "title": "Balancing the Effect of Training Dataset Distribution of Multiple Styles for Multi-Style Text Transfer",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{das-etal-2023-balancing,\n    title = \"Balancing the Effect of Training Dataset Distribution of Multiple Styles for Multi-Style Text Transfer\",\n    author = \"Das, Debarati  and\n      Ma, David  and\n      Kang, Dongyeop\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.243\",\n    doi = \"10.18653/v1/2023.findings-acl.243\",\n    pages = \"3932--3943\",\n    abstract = \"Text style transfer is an exciting task within the field of natural language generation that is often plagued by the need for high-quality paired datasets. Furthermore, training a model for multi-attribute text style transfer requires datasets with sufficient support across all combinations of the considered stylistic attributes, adding to the challenges of training a style transfer model. This paper explores the impact of training data input diversity on the quality of the generated text from the multi-style transfer model. We construct a pseudo-parallel dataset by devising heuristics to adjust the style distribution in the training samples. We balance our training dataset using marginal and joint distributions to train our style transfer models. We observe that a balanced dataset produces more effective control effects over multiple styles than an imbalanced or skewed one. Through quantitative analysis, we explore the impact of multiple style distributions in training data on style-transferred output. These findings will better inform the design of style-transfer datasets.\",\n}\n",
+    "authors": [
+        "Debarati Das",
+        "David Ma",
+        "Dongyeop Kang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.243.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/029cdb88-33fd-5d2b-94d0-312e3a477be4.pdf",
+    "abstract": "Text style transfer is an exciting task within the field of natural language generation that is often plagued by the need for high-quality paired datasets. Furthermore, training a model for multi-attribute text style transfer requires datasets with sufficient support across all combinations of the considered stylistic attributes, adding to the challenges of training a style transfer model. This paper explores the impact of training data input diversity on the quality of the generated text from the multi-style transfer model. We construct a pseudo-parallel dataset by devising heuristics to adjust the style distribution in the training samples. We balance our training dataset using marginal and joint distributions to train our style transfer models. We observe that a balanced dataset produces more effective control effects over multiple styles than an imbalanced or skewed one. Through quantitative analysis, we explore the impact of multiple style distributions in training data on style-transferred output. These findings will better inform the design of style-transfer datasets.",
+    "num_pages": 12
+}

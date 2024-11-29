@@ -1,0 +1,19 @@
+{
+    "uuid": "576e6004-d3f2-50cb-adf0-c7ada6f6a34e",
+    "title": "ChunkAttention: Efficient Self-Attention with Prefix-Aware KV Cache and Two-Phase Partition",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ye-etal-2024-chunkattention,\n    title = \"{C}hunk{A}ttention: Efficient Self-Attention with Prefix-Aware {KV} Cache and Two-Phase Partition\",\n    author = \"Ye, Lu  and\n      Tao, Ze  and\n      Huang, Yong  and\n      Li, Yang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.623\",\n    doi = \"10.18653/v1/2024.acl-long.623\",\n    pages = \"11608--11620\",\n    abstract = \"Self-attention is an essential component of large language models (LLM) but a significant source of inference latency for long sequences. In multi-tenant LLMs serving scenarios, the compute and memory operation cost of self-attention can be optimized by using the probability that multiple LLM requests have shared system prompts in prefixes. In this paper, we introduce ChunkAttention, a prefix-aware self-attention module that can detect matching prompt prefixes across multiple requests and share their key/value tensors in memory at runtime to improve the memory utilization of KV cache. This is achieved by breaking monolithic key/value tensors into smaller chunks and structuring them into the auxiliary prefix tree. Consequently, on top of the prefix-tree based KV cache, we design an efficient self-attention kernel, where a two-phase partition algorithm is implemented to improve the data locality during self-attention computation in the presence of shared system prompts. Experiments show that ChunkAttention can speed up the self-attention kernel by 3.2-4.8$\\times$ compared to the start-of-the-art implementation, with the length of the system prompt ranging from 1024 to 4096.\",\n}\n",
+    "authors": [
+        "Lu Ye",
+        "Ze Tao",
+        "Yong Huang",
+        "Yang Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.623.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/576e6004-d3f2-50cb-adf0-c7ada6f6a34e.pdf",
+    "abstract": "Self-attention is an essential component of large language models (LLM) but a significant source of inference latency for long sequences. In multi-tenant LLMs serving scenarios, the compute and memory operation cost of self-attention can be optimized by using the probability that multiple LLM requests have shared system prompts in prefixes. In this paper, we introduce ChunkAttention, a prefix-aware self-attention module that can detect matching prompt prefixes across multiple requests and share their key/value tensors in memory at runtime to improve the memory utilization of KV cache. This is achieved by breaking monolithic key/value tensors into smaller chunks and structuring them into the auxiliary prefix tree. Consequently, on top of the prefix-tree based KV cache, we design an efficient self-attention kernel, where a two-phase partition algorithm is implemented to improve the data locality during self-attention computation in the presence of shared system prompts. Experiments show that ChunkAttention can speed up the self-attention kernel by 3.2-4.8× compared to the start-of-the-art implementation, with the length of the system prompt ranging from 1024 to 4096.",
+    "num_pages": 13
+}

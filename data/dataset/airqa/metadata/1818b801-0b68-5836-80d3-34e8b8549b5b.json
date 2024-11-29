@@ -1,0 +1,18 @@
+{
+    "uuid": "1818b801-0b68-5836-80d3-34e8b8549b5b",
+    "title": "PIP: Parse-Instructed Prefix for Syntactically Controlled Paraphrase Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wan-etal-2023-pip,\n    title = \"{PIP}: Parse-Instructed Prefix for Syntactically Controlled Paraphrase Generation\",\n    author = \"Wan, Yixin  and\n      Huang, Kuan-Hao  and\n      Chang, Kai-Wei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.659\",\n    doi = \"10.18653/v1/2023.findings-acl.659\",\n    pages = \"10372--10380\",\n    abstract = \"Syntactically controlled paraphrase generation requires language models to generate paraphrases for sentences according to specific syntactic structures. Existing fine-tuning methods on this task is costly, as all parameters of the model need to be updated during the training process. Inspired by recent studies on parameter-efficient learning, we propose Parse-Instructed Prefix (PIP), a novel adaptation of prefix-tuning to tune large pre-trained language models on syntactically controlled paraphrase generation task in a low-data setting with significantly less training cost. We introduce two methods to instruct a model{'}s encoder prefix to capture syntax-related knowledge: direct initiation (PIP-Direct) and indirect optimization (PIP-Indirect). Comparing to traditional fine-tuning methods for this task, PIP is a compute-efficient alternative with 10 times less learnable parameters. Comparing to existing prefix-tuning methods, PIP excels at capturing syntax control information, achieving significantly higher performance at the same level of learnable parameter count.\",\n}\n",
+    "authors": [
+        "Yixin Wan",
+        "Kuan-Hao Huang",
+        "Kai-Wei Chang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.659.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1818b801-0b68-5836-80d3-34e8b8549b5b.pdf",
+    "abstract": "Syntactically controlled paraphrase generation requires language models to generate paraphrases for sentences according to specific syntactic structures. Existing fine-tuning methods on this task is costly, as all parameters of the model need to be updated during the training process. Inspired by recent studies on parameter-efficient learning, we propose Parse-Instructed Prefix (PIP), a novel adaptation of prefix-tuning to tune large pre-trained language models on syntactically controlled paraphrase generation task in a low-data setting with significantly less training cost. We introduce two methods to instruct a model’s encoder prefix to capture syntax-related knowledge: direct initiation (PIP-Direct) and indirect optimization (PIP-Indirect). Comparing to traditional fine-tuning methods for this task, PIP is a compute-efficient alternative with 10 times less learnable parameters. Comparing to existing prefix-tuning methods, PIP excels at capturing syntax control information, achieving significantly higher performance at the same level of learnable parameter count.",
+    "num_pages": 9
+}

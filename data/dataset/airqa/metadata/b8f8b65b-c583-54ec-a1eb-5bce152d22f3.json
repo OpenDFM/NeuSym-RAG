@@ -1,0 +1,18 @@
+{
+    "uuid": "b8f8b65b-c583-54ec-a1eb-5bce152d22f3",
+    "title": "Domain Aligned Prefix Averaging for Domain Generalization in Abstractive Summarization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{nair-etal-2023-domain,\n    title = \"Domain Aligned Prefix Averaging for Domain Generalization in Abstractive Summarization\",\n    author = \"Nair, Pranav  and\n      Pal, Sukomal  and\n      Verma, Pradeepika\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.288\",\n    doi = \"10.18653/v1/2023.findings-acl.288\",\n    pages = \"4696--4710\",\n    abstract = \"Domain generalization is hitherto an underexplored area applied in abstractive summarization. Moreover, most existing works on domain generalization have sophisticated training algorithms. In this paper, we propose a lightweight, weight averaging based, Domain Aligned Prefix Averaging approach to domain generalization for abstractive summarization. Given a number of source domains, our method first trains a prefix for each one of them. These source prefixes generate summaries for a small number of target domain documents. The similarity of the generated summaries to their corresponding source documents is used for calculating weights required to average source prefixes. In DAPA, prefix tuning allows for lightweight finetuning, and weight averaging allows for the computationally efficient addition of new source domains. When evaluated on four diverse summarization domains, DAPA shows comparable or better performance against the baselines demonstrating the effectiveness of its prefix averaging scheme.\",\n}\n",
+    "authors": [
+        "Pranav Nair",
+        "Sukomal Pal",
+        "Pradeepika Verma"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.288.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b8f8b65b-c583-54ec-a1eb-5bce152d22f3.pdf",
+    "abstract": "Domain generalization is hitherto an underexplored area applied in abstractive summarization. Moreover, most existing works on domain generalization have sophisticated training algorithms. In this paper, we propose a lightweight, weight averaging based, Domain Aligned Prefix Averaging approach to domain generalization for abstractive summarization. Given a number of source domains, our method first trains a prefix for each one of them. These source prefixes generate summaries for a small number of target domain documents. The similarity of the generated summaries to their corresponding source documents is used for calculating weights required to average source prefixes. In DAPA, prefix tuning allows for lightweight finetuning, and weight averaging allows for the computationally efficient addition of new source domains. When evaluated on four diverse summarization domains, DAPA shows comparable or better performance against the baselines demonstrating the effectiveness of its prefix averaging scheme.",
+    "num_pages": 15
+}

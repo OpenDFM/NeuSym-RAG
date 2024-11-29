@@ -1,0 +1,21 @@
+{
+    "uuid": "a4353954-6f9d-5d17-8c58-303d6f831160",
+    "title": "Zero-shot Cross-lingual POS Tagging for Filipino",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 3rd Workshop on NLP Applications to Field Linguistics (Field Matters 2024)",
+    "bibtex": "@inproceedings{layacan-etal-2024-zero,\n    title = \"Zero-shot Cross-lingual {POS} Tagging for {F}ilipino\",\n    author = \"Layacan, Jimson  and\n      Flores, Isaiah Edri W.  and\n      Tan, Katrina  and\n      Estuar, Ma. Regina E.  and\n      Montalan, Jann  and\n      De Leon, Marlene M.\",\n    editor = \"Serikov, Oleg  and\n      Voloshina, Ekaterina  and\n      Postnikova, Anna  and\n      Muradoglu, Saliha  and\n      Le Ferrand, Eric  and\n      Klyachko, Elena  and\n      Vylomova, Ekaterina  and\n      Shavrina, Tatiana  and\n      Tyers, Francis\",\n    booktitle = \"Proceedings of the 3rd Workshop on NLP Applications to Field Linguistics (Field Matters 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.fieldmatters-1.9\",\n    doi = \"10.18653/v1/2024.fieldmatters-1.9\",\n    pages = \"69--77\",\n    abstract = \"Supervised learning approaches in NLP, exemplified by POS tagging, rely heavily on the presence of large amounts of annotated data. However, acquiring such data often requires significant amount of resources and incurs high costs. In this work, we explore zero-shot cross-lingual transfer learning to address data scarcity issues in Filipino POS tagging, particularly focusing on optimizing source language selection. Our zero-shot approach demonstrates superior performance compared to previous studies, with top-performing fine-tuned PLMs achieving F1 scores as high as 79.10{\\%}. The analysis reveals moderate correlations between cross-lingual transfer performance and specific linguistic distances{--}featural, inventory, and syntactic{--}suggesting that source languages with these features closer to Filipino provide better results. We identify tokenizer optimization as a key challenge, as PLM tokenization sometimes fails to align with meaningful representations, thus hindering POS tagging performance.\",\n}\n",
+    "authors": [
+        "Jimson Layacan",
+        "Isaiah Edri W. Flores",
+        "Katrina Tan",
+        "Ma. Regina E. Estuar",
+        "Jann Montalan",
+        "Marlene M. De Leon"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.fieldmatters-1.9.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a4353954-6f9d-5d17-8c58-303d6f831160.pdf",
+    "abstract": "Supervised learning approaches in NLP, exemplified by POS tagging, rely heavily on the presence of large amounts of annotated data. However, acquiring such data often requires significant amount of resources and incurs high costs. In this work, we explore zero-shot cross-lingual transfer learning to address data scarcity issues in Filipino POS tagging, particularly focusing on optimizing source language selection. Our zero-shot approach demonstrates superior performance compared to previous studies, with top-performing fine-tuned PLMs achieving F1 scores as high as 79.10%. The analysis reveals moderate correlations between cross-lingual transfer performance and specific linguistic distances–featural, inventory, and syntactic–suggesting that source languages with these features closer to Filipino provide better results. We identify tokenizer optimization as a key challenge, as PLM tokenization sometimes fails to align with meaningful representations, thus hindering POS tagging performance.",
+    "num_pages": 9
+}

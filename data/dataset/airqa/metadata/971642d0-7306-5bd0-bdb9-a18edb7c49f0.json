@@ -1,0 +1,21 @@
+{
+    "uuid": "971642d0-7306-5bd0-bdb9-a18edb7c49f0",
+    "title": "Learning to Maximize Mutual Information for Chain-of-Thought Distillation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{chen-etal-2024-learning-maximize,\n    title = \"Learning to Maximize Mutual Information for Chain-of-Thought Distillation\",\n    author = \"Chen, Xin  and\n      Huang, Hanxian  and\n      Gao, Yanjun  and\n      Wang, Yi  and\n      Zhao, Jishen  and\n      Ding, Ke\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.409\",\n    doi = \"10.18653/v1/2024.findings-acl.409\",\n    pages = \"6857--6868\",\n    abstract = \"Knowledge distillation, the technique of transferring knowledge from large, complex models to smaller ones, marks a pivotal step towards efficient AI deployment. Distilling Step-by-Step (DSS), a novel method utilizing chain-of-thought (CoT) distillation, has demonstrated promise by imbuing smaller models with the superior reasoning capabilities of their larger counterparts. In DSS, the distilled model acquires the ability to generate rationales and predict labels concurrently through a multi-task learning framework. However, DSS overlooks the intrinsic relationship between the two training tasks, leading to ineffective integration of CoT knowledge with the task of label prediction. To this end, we investigate the mutual relationship of the two tasks from Information Bottleneck perspective and formulate it as maximizing the mutual information of the representation features of the two tasks. We propose a variational approach to solve this optimization problem using a learning-based method. Our experimental results across four datasets demonstrate that our method outperforms the state-of-the-art DSS. Our findings offer insightful guidance for future research on language model distillation as well as applications involving CoT. Codes are available at https://github.com/xinchen9/cot{\\_}distillation{\\_}ACL2024.\",\n}\n",
+    "authors": [
+        "Xin Chen",
+        "Hanxian Huang",
+        "Yanjun Gao",
+        "Yi Wang",
+        "Jishen Zhao",
+        "Ke Ding"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.409.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/971642d0-7306-5bd0-bdb9-a18edb7c49f0.pdf",
+    "abstract": "Knowledge distillation, the technique of transferring knowledge from large, complex models to smaller ones, marks a pivotal step towards efficient AI deployment. Distilling Step-by-Step (DSS), a novel method utilizing chain-of-thought (CoT) distillation, has demonstrated promise by imbuing smaller models with the superior reasoning capabilities of their larger counterparts. In DSS, the distilled model acquires the ability to generate rationales and predict labels concurrently through a multi-task learning framework. However, DSS overlooks the intrinsic relationship between the two training tasks, leading to ineffective integration of CoT knowledge with the task of label prediction. To this end, we investigate the mutual relationship of the two tasks from Information Bottleneck perspective and formulate it as maximizing the mutual information of the representation features of the two tasks. We propose a variational approach to solve this optimization problem using a learning-based method. Our experimental results across four datasets demonstrate that our method outperforms the state-of-the-art DSS. Our findings offer insightful guidance for future research on language model distillation as well as applications involving CoT. Codes are available at https://github.com/xinchen9/cot_distillation_ACL2024.",
+    "num_pages": 12
+}

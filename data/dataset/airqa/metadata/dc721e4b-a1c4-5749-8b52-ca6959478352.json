@@ -1,0 +1,17 @@
+{
+    "uuid": "dc721e4b-a1c4-5749-8b52-ca6959478352",
+    "title": "Real-World Compositional Generalization with Disentangled Sequence-to-Sequence Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zheng-lapata-2023-real,\n    title = \"Real-World Compositional Generalization with Disentangled Sequence-to-Sequence Learning\",\n    author = \"Zheng, Hao  and\n      Lapata, Mirella\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.108\",\n    doi = \"10.18653/v1/2023.findings-acl.108\",\n    pages = \"1711--1725\",\n    abstract = \"Compositional generalization is a basic mechanism in human language learning, which current neural networks struggle with. A recently proposed Disentangled sequence-to-sequence model (Dangle) shows promising generalization capability by learning specialized encodings for each decoding step. We introduce two key modifications to this model which encourage more disentangled representations and improve its compute and memory efficiency, allowing us to tackle compositional generalization in a more realistic setting. Specifically, instead of adaptively re-encoding source keys and values at each time step, we disentangle their representations and only re-encode keys periodically, at some interval. Our new architecture leads to better generalization performance across existing tasks and datasets, and a new machine translation benchmark which we create by detecting naturally occurring compositional patterns in relation to a training set. We show this methodology better emulates real-world requirements than artificial challenges.\",\n}\n",
+    "authors": [
+        "Hao Zheng",
+        "Mirella Lapata"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.108.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/dc721e4b-a1c4-5749-8b52-ca6959478352.pdf",
+    "abstract": "Compositional generalization is a basic mechanism in human language learning, which current neural networks struggle with. A recently proposed Disentangled sequence-to-sequence model (Dangle) shows promising generalization capability by learning specialized encodings for each decoding step. We introduce two key modifications to this model which encourage more disentangled representations and improve its compute and memory efficiency, allowing us to tackle compositional generalization in a more realistic setting. Specifically, instead of adaptively re-encoding source keys and values at each time step, we disentangle their representations and only re-encode keys periodically, at some interval. Our new architecture leads to better generalization performance across existing tasks and datasets, and a new machine translation benchmark which we create by detecting naturally occurring compositional patterns in relation to a training set. We show this methodology better emulates real-world requirements than artificial challenges.",
+    "num_pages": 15
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "119908b0-fd78-55df-8b5d-842e90d2d836",
+    "title": "Hybrid Alignment Training for Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{wang-etal-2024-hybrid,\n    title = \"Hybrid Alignment Training for Large Language Models\",\n    author = \"Wang, Chenglong  and\n      Zhou, Hang  and\n      Chang, Kaiyan  and\n      Li, Bei  and\n      Mu, Yongyu  and\n      Xiao, Tong  and\n      Liu, Tongran  and\n      Zhu, JingBo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.676\",\n    doi = \"10.18653/v1/2024.findings-acl.676\",\n    pages = \"11389--11403\",\n    abstract = \"Alignment training is crucial for enabling large language models (LLMs) to cater to human intentions and preferences. It is typically performed based on two stages with different objectives: instruction-following alignment and human-preference alignment. However, aligning LLMs with these objectives in sequence suffers from an inherent problem: the objectives may conflict, and the LLMs cannot guarantee to simultaneously align with the instructions and human preferences well. To response to these, in this work, we propose a Hybrid Alignment Training (Hbat) approach, based on alternating alignment and modified elastic weight consolidation methods. The basic idea is to alternate between different objectives during alignment training, so that better collaboration can be achieved between the two alignment tasks. We experiment with Hbat on summarization and dialogue tasks. Experimental results show that the proposed Hbat can significantly outperform all baselines. Notably, Hbat yields consistent performance gains over the traditional two-stage alignment training when using both proximal policy optimization and direct preference optimization.\",\n}\n",
+    "authors": [
+        "Chenglong Wang",
+        "Hang Zhou",
+        "Kaiyan Chang",
+        "Bei Li",
+        "Yongyu Mu",
+        "Tong Xiao",
+        "Tongran Liu",
+        "JingBo Zhu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.676.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/119908b0-fd78-55df-8b5d-842e90d2d836.pdf",
+    "abstract": "Alignment training is crucial for enabling large language models (LLMs) to cater to human intentions and preferences. It is typically performed based on two stages with different objectives: instruction-following alignment and human-preference alignment. However, aligning LLMs with these objectives in sequence suffers from an inherent problem: the objectives may conflict, and the LLMs cannot guarantee to simultaneously align with the instructions and human preferences well. To response to these, in this work, we propose a Hybrid Alignment Training (Hbat) approach, based on alternating alignment and modified elastic weight consolidation methods. The basic idea is to alternate between different objectives during alignment training, so that better collaboration can be achieved between the two alignment tasks. We experiment with Hbat on summarization and dialogue tasks. Experimental results show that the proposed Hbat can significantly outperform all baselines. Notably, Hbat yields consistent performance gains over the traditional two-stage alignment training when using both proximal policy optimization and direct preference optimization.",
+    "num_pages": 15
+}

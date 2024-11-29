@@ -1,0 +1,24 @@
+{
+    "uuid": "7c159fda-f179-5ae1-8506-f243f50183ec",
+    "title": "The Language Barrier: Dissecting Safety Challenges of LLMs in Multilingual Contexts",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{shen-etal-2024-language,\n    title = \"The Language Barrier: Dissecting Safety Challenges of {LLM}s in Multilingual Contexts\",\n    author = \"Shen, Lingfeng  and\n      Tan, Weiting  and\n      Chen, Sihao  and\n      Chen, Yunmo  and\n      Zhang, Jingyu  and\n      Xu, Haoran  and\n      Zheng, Boyuan  and\n      Koehn, Philipp  and\n      Khashabi, Daniel\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.156\",\n    doi = \"10.18653/v1/2024.findings-acl.156\",\n    pages = \"2668--2680\",\n    abstract = \"As the influence of large language models (LLMs) spans across global communities, their safety challenges in multilingual settings become paramount for alignment research. This paper examines the variations in safety challenges faced by LLMs across different languages and discusses approaches to alleviating such concerns. By comparing how state-of-the-art LLMs respond to the same set of malicious prompts written in higher- vs. lower-resource languages,we observe that (1) LLMs tend to generate unsafe responses much more often when a malicious prompt is written in a lower-resource language, and (2) LLMs tend to generate more irrelevant responses to malicious prompts in lower-resource languages. To understand where the discrepancy can be attributed, we study the effect of instruction tuning with reinforcement learning from human feedback (RLHF) or supervised finetuning (SFT) on the HH-RLHF dataset. Surprisingly, while training with high-resource languages improves model alignment, training in lower-resource languages yields minimal improvement. This suggests that the bottleneck of cross-lingual alignment is rooted in the pretraining stage. Our findings highlight the challenges in cross-lingual LLM safety, and we hope they inform future research in this direction.\",\n}\n",
+    "authors": [
+        "Lingfeng Shen",
+        "Weiting Tan",
+        "Sihao Chen",
+        "Yunmo Chen",
+        "Jingyu Zhang",
+        "Haoran Xu",
+        "Boyuan Zheng",
+        "Philipp Koehn",
+        "Daniel Khashabi"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.156.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7c159fda-f179-5ae1-8506-f243f50183ec.pdf",
+    "abstract": "As the influence of large language models (LLMs) spans across global communities, their safety challenges in multilingual settings become paramount for alignment research. This paper examines the variations in safety challenges faced by LLMs across different languages and discusses approaches to alleviating such concerns. By comparing how state-of-the-art LLMs respond to the same set of malicious prompts written in higher- vs. lower-resource languages,we observe that (1) LLMs tend to generate unsafe responses much more often when a malicious prompt is written in a lower-resource language, and (2) LLMs tend to generate more irrelevant responses to malicious prompts in lower-resource languages. To understand where the discrepancy can be attributed, we study the effect of instruction tuning with reinforcement learning from human feedback (RLHF) or supervised finetuning (SFT) on the HH-RLHF dataset. Surprisingly, while training with high-resource languages improves model alignment, training in lower-resource languages yields minimal improvement. This suggests that the bottleneck of cross-lingual alignment is rooted in the pretraining stage. Our findings highlight the challenges in cross-lingual LLM safety, and we hope they inform future research in this direction.",
+    "num_pages": 13
+}

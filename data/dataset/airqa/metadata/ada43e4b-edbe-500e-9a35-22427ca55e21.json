@@ -1,0 +1,20 @@
+{
+    "uuid": "ada43e4b-edbe-500e-9a35-22427ca55e21",
+    "title": "Context Consistency between Training and Inference in Simultaneous Machine Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhong-etal-2024-context,\n    title = \"Context Consistency between Training and Inference in Simultaneous Machine Translation\",\n    author = \"Zhong, Meizhi  and\n      Liu, Lemao  and\n      Chen, Kehai  and\n      Yang, Mingming  and\n      Zhang, Min\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.727\",\n    doi = \"10.18653/v1/2024.acl-long.727\",\n    pages = \"13465--13476\",\n    abstract = \"Simultaneous Machine Translation (SiMT) aims to yield a real-time partial translation with a monotonically growing source-side context.However, there is a counterintuitive phenomenon about the context usage between training and inference: *e.g.*, in wait-$k$ inference, model consistently trained with wait-$k$ is much worse than that model inconsistently trained with wait-$k'$ ($k'\\neq k$) in terms of translation quality. To this end, we first investigate the underlying reasons behind this phenomenon and uncover the following two factors: 1) the limited correlation between translation quality and training loss; 2) exposure bias between training and inference. Based on both reasons, we then propose an effective training approach called context consistency training accordingly, which encourages consistent context usage between training and inference by optimizing translation quality and latency as bi-objectives and exposing the predictions to the model during the training. The experiments on three language pairs demonstrate that our SiMT system encouraging context consistency outperforms existing SiMT systems with context inconsistency for the first time.\",\n}\n",
+    "authors": [
+        "Meizhi Zhong",
+        "Lemao Liu",
+        "Kehai Chen",
+        "Mingming Yang",
+        "Min Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.727.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/ada43e4b-edbe-500e-9a35-22427ca55e21.pdf",
+    "abstract": "Simultaneous Machine Translation (SiMT) aims to yield a real-time partial translation with a monotonically growing source-side context.However, there is a counterintuitive phenomenon about the context usage between training and inference: *e.g.*, in wait-k inference, model consistently trained with wait-k is much worse than that model inconsistently trained with wait-k' (k'≠ k) in terms of translation quality. To this end, we first investigate the underlying reasons behind this phenomenon and uncover the following two factors: 1) the limited correlation between translation quality and training loss; 2) exposure bias between training and inference. Based on both reasons, we then propose an effective training approach called context consistency training accordingly, which encourages consistent context usage between training and inference by optimizing translation quality and latency as bi-objectives and exposing the predictions to the model during the training. The experiments on three language pairs demonstrate that our SiMT system encouraging context consistency outperforms existing SiMT systems with context inconsistency for the first time.",
+    "num_pages": 12
+}

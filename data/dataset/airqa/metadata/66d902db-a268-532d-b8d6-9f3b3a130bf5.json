@@ -1,0 +1,19 @@
+{
+    "uuid": "66d902db-a268-532d-b8d6-9f3b3a130bf5",
+    "title": "In-sample Curriculum Learning by Sequence Completion for Natural Language Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{jia-etal-2023-sample,\n    title = \"In-sample Curriculum Learning by Sequence Completion for Natural Language Generation\",\n    author = \"Jia, Qi  and\n      Liu, Yizhu  and\n      Tang, Haifeng  and\n      Zhu, Kenny\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.666\",\n    doi = \"10.18653/v1/2023.acl-long.666\",\n    pages = \"11937--11950\",\n    abstract = \"Curriculum learning has shown promising improvements in multiple domains by training machine learning models from easy samples to hard ones. Previous works which either design rules or train models for scoring the difficulty highly rely on task-specific expertise, and cannot generalize. Inspired by the {``}easy-to-hard{''} intuition, we propose to do in-sample curriculum learning for natural language generation tasks. Our learning strategy starts training the model to generate the last few words, i.e., do sequence completion, and gradually extends to generate the whole output sequence. Comprehensive experiments show that it generalizes well to different tasks and achieves significant improvements over strong baselines.\",\n}\n",
+    "authors": [
+        "Qi Jia",
+        "Yizhu Liu",
+        "Haifeng Tang",
+        "Kenny Zhu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.666.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/66d902db-a268-532d-b8d6-9f3b3a130bf5.pdf",
+    "abstract": "Curriculum learning has shown promising improvements in multiple domains by training machine learning models from easy samples to hard ones. Previous works which either design rules or train models for scoring the difficulty highly rely on task-specific expertise, and cannot generalize. Inspired by the “easy-to-hard” intuition, we propose to do in-sample curriculum learning for natural language generation tasks. Our learning strategy starts training the model to generate the last few words, i.e., do sequence completion, and gradually extends to generate the whole output sequence. Comprehensive experiments show that it generalizes well to different tasks and achieves significant improvements over strong baselines.",
+    "num_pages": 14
+}

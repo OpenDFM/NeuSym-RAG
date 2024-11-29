@@ -1,0 +1,23 @@
+{
+    "uuid": "fb5cce30-5cd4-500e-bac5-aa4d3c8854a0",
+    "title": "Simple and Effective Unsupervised Speech Translation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2023-simple,\n    title = \"Simple and Effective Unsupervised Speech Translation\",\n    author = \"Wang, Changhan  and\n      Inaguma, Hirofumi  and\n      Chen, Peng-Jen  and\n      Kulikov, Ilia  and\n      Tang, Yun  and\n      Hsu, Wei-Ning  and\n      Auli, Michael  and\n      Pino, Juan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.602\",\n    doi = \"10.18653/v1/2023.acl-long.602\",\n    pages = \"10771--10784\",\n    abstract = \"The amount of labeled data to train models for speech tasks is limited for most languages, however, the data scarcity is exacerbated for speech translation which requires labeled data covering two different languages. To address this issue, we study a simple and effective approach to build speech translation systems without labeled data by leveraging recent advances in unsupervised speech recognition, machine translation and speech synthesis, either in a pipeline approach, or to generate pseudo-labels for training end-to-end speech translation models. Furthermore, we present an unsupervised domain adaptation technique for pre-trained speech models which improves the performance of downstream unsupervised speech recognition, especially for low-resource settings. Experiments show that unsupervised speech-to-text translation outperforms the previous unsupervised state of the art by 3.2 BLEU on the Libri-Trans benchmark, on CoVoST 2, our best systems outperform the best supervised end-to-end models (without pre-training) from only two years ago by an average of 5.0 BLEU over five X-En directions. We also report competitive results on MuST-C and CVSS benchmarks.\",\n}\n",
+    "authors": [
+        "Changhan Wang",
+        "Hirofumi Inaguma",
+        "Peng-Jen Chen",
+        "Ilia Kulikov",
+        "Yun Tang",
+        "Wei-Ning Hsu",
+        "Michael Auli",
+        "Juan Pino"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.602.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/fb5cce30-5cd4-500e-bac5-aa4d3c8854a0.pdf",
+    "abstract": "The amount of labeled data to train models for speech tasks is limited for most languages, however, the data scarcity is exacerbated for speech translation which requires labeled data covering two different languages. To address this issue, we study a simple and effective approach to build speech translation systems without labeled data by leveraging recent advances in unsupervised speech recognition, machine translation and speech synthesis, either in a pipeline approach, or to generate pseudo-labels for training end-to-end speech translation models. Furthermore, we present an unsupervised domain adaptation technique for pre-trained speech models which improves the performance of downstream unsupervised speech recognition, especially for low-resource settings. Experiments show that unsupervised speech-to-text translation outperforms the previous unsupervised state of the art by 3.2 BLEU on the Libri-Trans benchmark, on CoVoST 2, our best systems outperform the best supervised end-to-end models (without pre-training) from only two years ago by an average of 5.0 BLEU over five X-En directions. We also report competitive results on MuST-C and CVSS benchmarks.",
+    "num_pages": 14
+}

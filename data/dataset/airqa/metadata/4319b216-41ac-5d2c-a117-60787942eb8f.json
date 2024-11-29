@@ -1,0 +1,21 @@
+{
+    "uuid": "4319b216-41ac-5d2c-a117-60787942eb8f",
+    "title": "KwikBucks: Correlation Clustering with Cheap-Weak and Expensive-Strong Signals",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)",
+    "bibtex": "@inproceedings{silwal-etal-2023-kwikbucks,\n    title = \"{K}wik{B}ucks: Correlation Clustering with Cheap-Weak and Expensive-Strong Signals\",\n    author = \"Silwal, Sandeep  and\n      Ahmadian, Sara  and\n      Nystrom, Andrew  and\n      Mccallum, Andrew  and\n      Ramachandran, Deepak  and\n      Kazemi, Mehran\",\n    editor = \"Sadat Moosavi, Nafise  and\n      Gurevych, Iryna  and\n      Hou, Yufang  and\n      Kim, Gyuwan  and\n      Kim, Young Jin  and\n      Schuster, Tal  and\n      Agrawal, Ameeta\",\n    booktitle = \"Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (Hybrid)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.sustainlp-1.1\",\n    doi = \"10.18653/v1/2023.sustainlp-1.1\",\n    pages = \"1--31\",\n}\n",
+    "authors": [
+        "Sandeep Silwal",
+        "Sara Ahmadian",
+        "Andrew Nystrom",
+        "Andrew Mccallum",
+        "Deepak Ramachandran",
+        "Mehran Kazemi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.sustainlp-1.1.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4319b216-41ac-5d2c-a117-60787942eb8f.pdf",
+    "abstract": "For text clustering, there is often a dilemma: one can either ﬁrst embed each examples independently and then compute pair-wise similarities based on the embeddings, or use a crossattention model that takes a pair of examples as input and produces a similarity. The former is more scalable but the similarities often have lower quality, whereas the latter does not scale well but produces higher quality similarities. We address this dilemma by developing a clustering algorithm that leverages the best of both worlds: the scalability of former and the quality of the latter. We formulate the problem of text clustering with embeddingbased and cross-attention models as a novel version of the Budgeted Correlation Clustering problem (BCC) where along with a limited number of queries to an expensive oracle (a cross-attention model in our case), we have unlimited access to a cheaper but less accurate second oracle (embedding similarities in our case). We develop a theoretically motivated algorithm that leverages the cheap oracle to judiciously query the strong oracle while maintaining high clustering quality. We empirically demonstrate gains in query minimization and clustering metrics on a variety of datasets with diverse strong and cheap oracles.",
+    "num_pages": 31
+}

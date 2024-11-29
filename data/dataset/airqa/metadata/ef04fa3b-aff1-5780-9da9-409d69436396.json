@@ -1,0 +1,21 @@
+{
+    "uuid": "ef04fa3b-aff1-5780-9da9-409d69436396",
+    "title": "Propagation and Pitfalls: Reasoning-based Assessment of Knowledge Editing through Counterfactual Tasks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{hua-etal-2024-propagation,\n    title = \"Propagation and Pitfalls: Reasoning-based Assessment of Knowledge Editing through Counterfactual Tasks\",\n    author = \"Hua, Wenyue  and\n      Guo, Jiang  and\n      Dong, Mingwen  and\n      Zhu, Henghui  and\n      Ng, Patrick  and\n      Wang, Zhiguo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.743\",\n    doi = \"10.18653/v1/2024.findings-acl.743\",\n    pages = \"12503--12525\",\n    abstract = \"Current knowledge editing approaches struggle to effectively propagate updates to interconnected facts.In this work, we delve into the barriers that hinder the appropriate propagation of updated knowledge within these models for accurate reasoning. To support our analysis, we introduce a novel reasoning-based benchmark, ReCoE (Reasoning-based Counterfactual Editing dataset), which covers six common reasoning schemes in the real world. We conduct an extensive analysis of existing knowledge editing techniques, including input-augmentation, finetuning, and locate-and-edit methods. We found that all model editing methods exhibit notably low performance on this dataset, especially within certain reasoning schemes. Our analysis of the chain-of-thought responses from edited models indicate that, while the models effectively update individual facts, they struggle to recall these facts in reasoning tasks. Moreover, locate-and-edit methods severely deteriorate the models{'} language modeling capabilities, leading to poor perplexity and logical coherence in their outputs.\",\n}\n",
+    "authors": [
+        "Wenyue Hua",
+        "Jiang Guo",
+        "Mingwen Dong",
+        "Henghui Zhu",
+        "Patrick Ng",
+        "Zhiguo Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.743.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/ef04fa3b-aff1-5780-9da9-409d69436396.pdf",
+    "abstract": "Current knowledge editing approaches struggle to effectively propagate updates to interconnected facts.In this work, we delve into the barriers that hinder the appropriate propagation of updated knowledge within these models for accurate reasoning. To support our analysis, we introduce a novel reasoning-based benchmark, ReCoE (Reasoning-based Counterfactual Editing dataset), which covers six common reasoning schemes in the real world. We conduct an extensive analysis of existing knowledge editing techniques, including input-augmentation, finetuning, and locate-and-edit methods. We found that all model editing methods exhibit notably low performance on this dataset, especially within certain reasoning schemes. Our analysis of the chain-of-thought responses from edited models indicate that, while the models effectively update individual facts, they struggle to recall these facts in reasoning tasks. Moreover, locate-and-edit methods severely deteriorate the models’ language modeling capabilities, leading to poor perplexity and logical coherence in their outputs.",
+    "num_pages": 23
+}

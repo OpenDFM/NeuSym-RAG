@@ -1,0 +1,24 @@
+{
+    "uuid": "d64835ea-584d-5583-84f4-d479d4c96f44",
+    "title": "SCCS: Semantics-Consistent Cross-domain Summarization via Optimal Transport Alignment",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{qiu-etal-2023-sccs,\n    title = \"{SCCS}: Semantics-Consistent Cross-domain Summarization via Optimal Transport Alignment\",\n    author = \"Qiu, Jielin  and\n      Zhu, Jiacheng  and\n      Xu, Mengdi  and\n      Dernoncourt, Franck  and\n      Bui, Trung  and\n      Wang, Zhaowen  and\n      Li, Bo  and\n      Zhao, Ding  and\n      Jin, Hailin\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.101\",\n    doi = \"10.18653/v1/2023.findings-acl.101\",\n    pages = \"1584--1601\",\n    abstract = \"Multimedia summarization with multimodal output (MSMO) is a recently explored application in language grounding. It plays an essential role in real-world applications, i.e., automatically generating cover images and titles for news articles or providing introductions to online videos. However, existing methods extract features from the whole video and article and use fusion methods to select the representative one, thus usually ignoring the critical structure and varying semantics with video/document. In this work, we propose a Semantics-Consistent Cross-domain Summarization (SCCS) model based on optimal transport alignment with visual and textual segmentation. Our method first decomposes both videos and articles into segments in order to capture the structural semantics, and then follows a cross-domain alignment objective with optimal transport distance, which leverages multimodal interaction to match and select the visual and textual summary. We evaluated our method on three MSMO datasets, and achieved performance improvement by 8{\\%} {\\&} 6{\\%} of textual and 6.6{\\%} {\\&}5.7{\\%} of video summarization, respectively, which demonstrated the effectiveness of our method in producing high-quality multimodal summaries.\",\n}\n",
+    "authors": [
+        "Jielin Qiu",
+        "Jiacheng Zhu",
+        "Mengdi Xu",
+        "Franck Dernoncourt",
+        "Trung Bui",
+        "Zhaowen Wang",
+        "Bo Li",
+        "Ding Zhao",
+        "Hailin Jin"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.101.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d64835ea-584d-5583-84f4-d479d4c96f44.pdf",
+    "abstract": "Multimedia summarization with multimodal output (MSMO) is a recently explored application in language grounding. It plays an essential role in real-world applications, i.e., automatically generating cover images and titles for news articles or providing introductions to online videos. However, existing methods extract features from the whole video and article and use fusion methods to select the representative one, thus usually ignoring the critical structure and varying semantics with video/document. In this work, we propose a Semantics-Consistent Cross-domain Summarization (SCCS) model based on optimal transport alignment with visual and textual segmentation. Our method first decomposes both videos and articles into segments in order to capture the structural semantics, and then follows a cross-domain alignment objective with optimal transport distance, which leverages multimodal interaction to match and select the visual and textual summary. We evaluated our method on three MSMO datasets, and achieved performance improvement by 8% & 6% of textual and 6.6% &5.7% of video summarization, respectively, which demonstrated the effectiveness of our method in producing high-quality multimodal summaries.",
+    "num_pages": 18
+}

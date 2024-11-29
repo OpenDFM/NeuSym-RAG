@@ -1,0 +1,20 @@
+{
+    "uuid": "d7f80b64-fa61-5e1c-9aef-c3c39f2c0157",
+    "title": "PolCLIP: A Unified Image-Text Word Sense Disambiguation Model via Generating Multimodal Complementary Representations",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yang-etal-2024-polclip,\n    title = \"{P}ol{CLIP}: A Unified Image-Text Word Sense Disambiguation Model via Generating Multimodal Complementary Representations\",\n    author = \"Yang, Qihao  and\n      Li, Yong  and\n      Wang, Xuelin  and\n      Wang, Fu Lee  and\n      Hao, Tianyong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.575\",\n    doi = \"10.18653/v1/2024.acl-long.575\",\n    pages = \"10676--10690\",\n    abstract = \"Word sense disambiguation (WSD) can be viewed as two subtasks: textual word sense disambiguation (Textual-WSD) and visual word sense disambiguation (Visual-WSD). They aim to identify the most semantically relevant senses or images to a given context containing ambiguous target words. However, existing WSD models seldom address these two subtasks jointly due to lack of images in Textual-WSD datasets or lack of senses in Visual-WSD datasets. To bridge this gap, we propose PolCLIP, a unified image-text WSD model. By employing an image-text complementarity strategy, it not only simulates stable diffusion models to generate implicit visual representations for word senses but also simulates image captioning models to provide implicit textual representations for images. Additionally, a disambiguation-oriented image-sense dataset is constructed for the training objective of learning multimodal polysemy representations. To the best of our knowledge, PolCLIP is the first model that can cope with both Textual-WSD and Visual-WSD. Extensive experimental results on benchmarks demonstrate the effectiveness of our method, achieving a 2.53{\\%} F1-score increase over the state-of-the-art models on Textual-WSD and a 2.22{\\%} HR@1 improvement on Visual-WSD.\",\n}\n",
+    "authors": [
+        "Qihao Yang",
+        "Yong Li",
+        "Xuelin Wang",
+        "Fu Lee Wang",
+        "Tianyong Hao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.575.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d7f80b64-fa61-5e1c-9aef-c3c39f2c0157.pdf",
+    "abstract": "Word sense disambiguation (WSD) can be viewed as two subtasks: textual word sense disambiguation (Textual-WSD) and visual word sense disambiguation (Visual-WSD). They aim to identify the most semantically relevant senses or images to a given context containing ambiguous target words. However, existing WSD models seldom address these two subtasks jointly due to lack of images in Textual-WSD datasets or lack of senses in Visual-WSD datasets. To bridge this gap, we propose PolCLIP, a unified image-text WSD model. By employing an image-text complementarity strategy, it not only simulates stable diffusion models to generate implicit visual representations for word senses but also simulates image captioning models to provide implicit textual representations for images. Additionally, a disambiguation-oriented image-sense dataset is constructed for the training objective of learning multimodal polysemy representations. To the best of our knowledge, PolCLIP is the first model that can cope with both Textual-WSD and Visual-WSD. Extensive experimental results on benchmarks demonstrate the effectiveness of our method, achieving a 2.53% F1-score increase over the state-of-the-art models on Textual-WSD and a 2.22% HR@1 improvement on Visual-WSD.",
+    "num_pages": 15
+}

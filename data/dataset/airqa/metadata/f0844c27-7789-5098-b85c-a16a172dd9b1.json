@@ -1,0 +1,22 @@
+{
+    "uuid": "f0844c27-7789-5098-b85c-a16a172dd9b1",
+    "title": "IM-TQA: A Chinese Table Question Answering Dataset with Implicit and Multi-type Table Structures",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zheng-etal-2023-im,\n    title = \"{IM}-{TQA}: A {C}hinese Table Question Answering Dataset with Implicit and Multi-type Table Structures\",\n    author = \"Zheng, Mingyu  and\n      Hao, Yang  and\n      Jiang, Wenbin  and\n      Lin, Zheng  and\n      Lyu, Yajuan  and\n      She, QiaoQiao  and\n      Wang, Weiping\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.278\",\n    doi = \"10.18653/v1/2023.acl-long.278\",\n    pages = \"5074--5094\",\n    abstract = \"Various datasets have been proposed to promote the development of Table Question Answering (TQA) technique. However, the problem setting of existing TQA benchmarks suffers from two limitations. First, they directly provide models with explicit table structures where row headers and column headers of the table are explicitly annotated and treated as model input during inference. Second, they only consider tables of limited types and ignore other tables especially complex tables with flexible header locations. Such simplified problem setting cannot cover practical scenarios where models need to process tables without header annotations in the inference phase or tables of different types. To address above issues, we construct a new TQA dataset with implicit and multi-type table structures, named IM-TQA, which not only requires the model to understand tables without directly available header annotations but also to handle multi-type tables including previously neglected complex tables. We investigate the performance of recent methods on our dataset and find that existing methods struggle in processing implicit and multi-type table structures. Correspondingly, we propose an RGCN-RCI framework outperforming recent baselines. We will release our dataset to facilitate future research.\",\n}\n",
+    "authors": [
+        "Mingyu Zheng",
+        "Yang Hao",
+        "Wenbin Jiang",
+        "Zheng Lin",
+        "Yajuan Lyu",
+        "QiaoQiao She",
+        "Weiping Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.278.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f0844c27-7789-5098-b85c-a16a172dd9b1.pdf",
+    "abstract": "Various datasets have been proposed to promote the development of Table Question Answering (TQA) technique. However, the problem setting of existing TQA benchmarks suffers from two limitations. First, they directly provide models with explicit table structures where row headers and column headers of the table are explicitly annotated and treated as model input during inference. Second, they only consider tables of limited types and ignore other tables especially complex tables with flexible header locations. Such simplified problem setting cannot cover practical scenarios where models need to process tables without header annotations in the inference phase or tables of different types. To address above issues, we construct a new TQA dataset with implicit and multi-type table structures, named IM-TQA, which not only requires the model to understand tables without directly available header annotations but also to handle multi-type tables including previously neglected complex tables. We investigate the performance of recent methods on our dataset and find that existing methods struggle in processing implicit and multi-type table structures. Correspondingly, we propose an RGCN-RCI framework outperforming recent baselines. We will release our dataset to facilitate future research.",
+    "num_pages": 21
+}

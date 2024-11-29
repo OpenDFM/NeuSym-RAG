@@ -1,0 +1,18 @@
+{
+    "uuid": "55913ad9-9737-5551-96c9-53da42bf17fc",
+    "title": "Structured Mean-Field Variational Inference for Higher-Order Span-Based Semantic Role Labeling",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{liu-etal-2023-structured,\n    title = \"Structured Mean-Field Variational Inference for Higher-Order Span-Based Semantic Role Labeling\",\n    author = \"Liu, Wei  and\n      Yang, Songlin  and\n      Tu, Kewei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.58\",\n    doi = \"10.18653/v1/2023.findings-acl.58\",\n    pages = \"918--931\",\n    abstract = \"In this work, we enhance higher-order graph-based approaches for span-based semantic role labeling (SRL) by means of structured modeling. To decrease the complexity of higher-order modeling, we decompose the edge from predicate word to argument span into three different edges, predicate-to-head (P2H), predicate-to-tail (P2T), and head-to-tail (H2T), where head/tail means the first/last word of the semantic argument span. As such, we use a CRF-based higher-order dependency parser and leverage Mean-Field Variational Inference (MFVI) for higher-order inference. Moreover, since semantic arguments of predicates are often constituents within a constituency parse tree, we can leverage such nice structural property by defining a TreeCRF distribution over all H2T edges, using the idea of partial marginalization to define structural training loss. We further leverage structured MFVI to enhance inference. We experiment on span-based SRL benchmarks, showing the effectiveness of both higher-order and structured modeling and the combination thereof. In addition, we show superior performance of structured MFVI against vanilla MFVI.\",\n}\n",
+    "authors": [
+        "Wei Liu",
+        "Songlin Yang",
+        "Kewei Tu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.58.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/55913ad9-9737-5551-96c9-53da42bf17fc.pdf",
+    "abstract": "In this work, we enhance higher-order graph-based approaches for span-based semantic role labeling (SRL) by means of structured modeling. To decrease the complexity of higher-order modeling, we decompose the edge from predicate word to argument span into three different edges, predicate-to-head (P2H), predicate-to-tail (P2T), and head-to-tail (H2T), where head/tail means the first/last word of the semantic argument span. As such, we use a CRF-based higher-order dependency parser and leverage Mean-Field Variational Inference (MFVI) for higher-order inference. Moreover, since semantic arguments of predicates are often constituents within a constituency parse tree, we can leverage such nice structural property by defining a TreeCRF distribution over all H2T edges, using the idea of partial marginalization to define structural training loss. We further leverage structured MFVI to enhance inference. We experiment on span-based SRL benchmarks, showing the effectiveness of both higher-order and structured modeling and the combination thereof. In addition, we show superior performance of structured MFVI against vanilla MFVI.",
+    "num_pages": 14
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "4559aab7-35b3-57b8-a506-af64c41a55ac",
+    "title": "Lifting the Curse of Capacity Gap in Distilling Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhang-etal-2023-lifting,\n    title = \"Lifting the Curse of Capacity Gap in Distilling Language Models\",\n    author = \"Zhang, Chen  and\n      Yang, Yang  and\n      Liu, Jiahao  and\n      Wang, Jingang  and\n      Xian, Yunsen  and\n      Wang, Benyou  and\n      Song, Dawei\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.249\",\n    doi = \"10.18653/v1/2023.acl-long.249\",\n    pages = \"4535--4553\",\n    abstract = \"Pretrained language models (LMs) have shown compelling performance on various downstream tasks, but unfortunately they require a tremendous amount of inference compute. Knowledge distillation finds a path to compress LMs to small ones with a teacher-student paradigm. However, when the capacity gap between the teacher and the student is large, a curse of capacity gap appears, invoking a deficiency in distilling LMs. While a few studies have been carried out to fill the gap, the curse is not yet well tackled. In this paper, we aim at lifting the curse of capacity gap via enlarging the capacity of the student without notably increasing the inference compute. Largely motivated by sparse activation regime of mixture of experts (MoE), we propose a mixture of minimal experts (MiniMoE), which imposes extra parameters to the student but introduces almost no additional inference compute. Experimental results on GLUE and CoNLL demonstrate the curse of capacity gap is lifted by the magic of MiniMoE to a large extent. MiniMoE also achieves the state-of-the-art performance at small FLOPs compared with a range of competitive baselines. With a compression rate as much as {\\textasciitilde}50$\\times$, MiniMoE preserves {\\textasciitilde}95{\\%} GLUE score of the teacher.\",\n}\n",
+    "authors": [
+        "Chen Zhang",
+        "Yang Yang",
+        "Jiahao Liu",
+        "Jingang Wang",
+        "Yunsen Xian",
+        "Benyou Wang",
+        "Dawei Song"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.249.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4559aab7-35b3-57b8-a506-af64c41a55ac.pdf",
+    "abstract": "Pretrained language models (LMs) have shown compelling performance on various downstream tasks, but unfortunately they require a tremendous amount of inference compute. Knowledge distillation finds a path to compress LMs to small ones with a teacher-student paradigm. However, when the capacity gap between the teacher and the student is large, a curse of capacity gap appears, invoking a deficiency in distilling LMs. While a few studies have been carried out to fill the gap, the curse is not yet well tackled. In this paper, we aim at lifting the curse of capacity gap via enlarging the capacity of the student without notably increasing the inference compute. Largely motivated by sparse activation regime of mixture of experts (MoE), we propose a mixture of minimal experts (MiniMoE), which imposes extra parameters to the student but introduces almost no additional inference compute. Experimental results on GLUE and CoNLL demonstrate the curse of capacity gap is lifted by the magic of MiniMoE to a large extent. MiniMoE also achieves the state-of-the-art performance at small FLOPs compared with a range of competitive baselines. With a compression rate as much as ~50×, MiniMoE preserves ~95% GLUE score of the teacher.",
+    "num_pages": 19
+}

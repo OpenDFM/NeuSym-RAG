@@ -1,0 +1,17 @@
+{
+    "uuid": "b6b585c7-8d41-590a-976f-66e4f1142461",
+    "title": "Corpus Complexity Matters in Pretraining Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)",
+    "bibtex": "@inproceedings{agrawal-singh-2023-corpus,\n    title = \"Corpus Complexity Matters in Pretraining Language Models\",\n    author = \"Agrawal, Ameeta  and\n      Singh, Suresh\",\n    editor = \"Sadat Moosavi, Nafise  and\n      Gurevych, Iryna  and\n      Hou, Yufang  and\n      Kim, Gyuwan  and\n      Kim, Young Jin  and\n      Schuster, Tal  and\n      Agrawal, Ameeta\",\n    booktitle = \"Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (Hybrid)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.sustainlp-1.20\",\n    doi = \"10.18653/v1/2023.sustainlp-1.20\",\n    pages = \"257--263\",\n}\n",
+    "authors": [
+        "Ameeta Agrawal",
+        "Suresh Singh"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.sustainlp-1.20.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b6b585c7-8d41-590a-976f-66e4f1142461.pdf",
+    "abstract": "It is well known that filtering low-quality data before pretraining language models or selecting suitable data from domains similar to downstream task datasets generally leads to improved downstream performance. However, the extent to which the quality of a corpus, in particular its complexity, affects its downstream performance remains less explored. In this work, we address the problem of creating a suitable pretraining corpus given a fixed corpus budget. Using metrics of text complexity we propose a simple yet effective approach for constructing a corpus with rich lexical variation. Our extensive set of empirical analyses reveal that such a diverse and complex corpus yields significant improvements over baselines consisting of less diverse and less complex corpora when evaluated in the context of general language understanding tasks.",
+    "num_pages": 7
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "618d02c6-9b9c-5047-a8a9-a7c0e36440de",
+    "title": "Petals: Collaborative Inference and Fine-tuning of Large Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)",
+    "bibtex": "@inproceedings{borzunov-etal-2023-petals,\n    title = \"Petals: Collaborative Inference and Fine-tuning of Large Models\",\n    author = \"Borzunov, Alexander  and\n      Baranchuk, Dmitry  and\n      Dettmers, Tim  and\n      Riabinin, Maksim  and\n      Belkada, Younes  and\n      Chumachenko, Artem  and\n      Samygin, Pavel  and\n      Raffel, Colin\",\n    editor = \"Bollegala, Danushka  and\n      Huang, Ruihong  and\n      Ritter, Alan\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-demo.54\",\n    doi = \"10.18653/v1/2023.acl-demo.54\",\n    pages = \"558--568\",\n    abstract = \"Many NLP tasks benefit from using large language models (LLMs) that often have more than 100 billion parameters. With the release of BLOOM-176B and OPT-175B, everyone can download pretrained models of this scale. Still, using these models requires high-end hardware unavailable to many researchers. In some cases, LLMs can be used more affordably via RAM offloading or hosted APIs. However, these techniques have innate limitations: offloading is too slow for interactive inference, while APIs are not flexible enough for research that requires access to weights, attention or logits. In this work, we propose Petals - a system for inference and fine-tuning of large models collaboratively by joining the resources of multiple parties. We demonstrate that this strategy outperforms offloading for very large models, running inference of BLOOM-176B on consumer GPUs with {\\mbox{$\\approx$}}1 step per second, which is enough for many interactive LLM applications. Unlike most inference APIs, Petals also natively exposes hidden states of served models, allowing to train and share custom model extensions based on efficient fine-tuning methods. The system, its source code, and documentation are available at https://petals.mlVideo (2 min): \\url{https://youtu.be/F4muLI-0hTE}\",\n}\n",
+    "authors": [
+        "Alexander Borzunov",
+        "Dmitry Baranchuk",
+        "Tim Dettmers",
+        "Maksim Riabinin",
+        "Younes Belkada",
+        "Artem Chumachenko",
+        "Pavel Samygin",
+        "Colin Raffel"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-demo.54.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/618d02c6-9b9c-5047-a8a9-a7c0e36440de.pdf",
+    "abstract": "Many NLP tasks benefit from using large language models (LLMs) that often have more than 100 billion parameters. With the release of BLOOM-176B and OPT-175B, everyone can download pretrained models of this scale. Still, using these models requires high-end hardware unavailable to many researchers. In some cases, LLMs can be used more affordably via RAM offloading or hosted APIs. However, these techniques have innate limitations: offloading is too slow for interactive inference, while APIs are not flexible enough for research that requires access to weights, attention or logits. In this work, we propose Petals - a system for inference and fine-tuning of large models collaboratively by joining the resources of multiple parties. We demonstrate that this strategy outperforms offloading for very large models, running inference of BLOOM-176B on consumer GPUs with ≈1 step per second, which is enough for many interactive LLM applications. Unlike most inference APIs, Petals also natively exposes hidden states of served models, allowing to train and share custom model extensions based on efficient fine-tuning methods. The system, its source code, and documentation are available at https://petals.mlVideo (2 min): https://youtu.be/F4muLI-0hTE",
+    "num_pages": 11
+}

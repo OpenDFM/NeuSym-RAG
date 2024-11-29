@@ -1,0 +1,24 @@
+{
+    "uuid": "7dc7bf45-d189-5d0c-a314-b1e8fcae8802",
+    "title": "CMU’s IWSLT 2024 Offline Speech Translation System: A Cascaded Approach For Long-Form Robustness",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)",
+    "bibtex": "@inproceedings{yan-etal-2024-cmus,\n    title = \"{CMU}{'}s {IWSLT} 2024 Offline Speech Translation System: A Cascaded Approach For Long-Form Robustness\",\n    author = \"Yan, Brian  and\n      Fernandes, Patrick  and\n      Tian, Jinchuan  and\n      Ouyang, Siqi  and\n      Chen, William  and\n      Livescu, Karen  and\n      Li, Lei  and\n      Neubig, Graham  and\n      Watanabe, Shinji\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 21st International Conference on Spoken Language Translation (IWSLT 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.iwslt-1.22\",\n    doi = \"10.18653/v1/2024.iwslt-1.22\",\n    pages = \"164--169\",\n    abstract = \"This work describes CMU{'}s submission to the IWSLT 2024 Offline Speech Translation (ST) Shared Task for translating English speech to German, Chinese, and Japanese text. We are the first participants to employ a long-form strategy which directly processes unsegmented recordings without the need for a separate voice-activity detection stage (VAD). We show that the Whisper automatic speech recognition (ASR) model has a hallucination problem when applied out-of-the-box to recordings containing non-speech noises, but a simple noisy fine-tuning approach can greatly enhance Whisper{'}s long-form robustness across multiple domains. Then, we feed English ASR outputs into fine-tuned NLLB machine translation (MT) models which are decoded using COMET-based Minimum Bayes Risk. Our VAD-free ASR+MT cascade is tested on TED talks, TV series, and workout videos and shown to outperform prior winning IWSLT submissions and large open-source models.\",\n}\n",
+    "authors": [
+        "Brian Yan",
+        "Patrick Fernandes",
+        "Jinchuan Tian",
+        "Siqi Ouyang",
+        "William Chen",
+        "Karen Livescu",
+        "Lei Li",
+        "Graham Neubig",
+        "Shinji Watanabe"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.iwslt-1.22.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7dc7bf45-d189-5d0c-a314-b1e8fcae8802.pdf",
+    "abstract": "This work describes CMU’s submission to the IWSLT 2024 Offline Speech Translation (ST) Shared Task for translating English speech to German, Chinese, and Japanese text. We are the first participants to employ a long-form strategy which directly processes unsegmented recordings without the need for a separate voice-activity detection stage (VAD). We show that the Whisper automatic speech recognition (ASR) model has a hallucination problem when applied out-of-the-box to recordings containing non-speech noises, but a simple noisy fine-tuning approach can greatly enhance Whisper’s long-form robustness across multiple domains. Then, we feed English ASR outputs into fine-tuned NLLB machine translation (MT) models which are decoded using COMET-based Minimum Bayes Risk. Our VAD-free ASR+MT cascade is tested on TED talks, TV series, and workout videos and shown to outperform prior winning IWSLT submissions and large open-source models.",
+    "num_pages": 6
+}

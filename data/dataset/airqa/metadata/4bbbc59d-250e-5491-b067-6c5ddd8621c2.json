@@ -1,0 +1,20 @@
+{
+    "uuid": "4bbbc59d-250e-5491-b067-6c5ddd8621c2",
+    "title": "Parameter-efficient Weight Ensembling Facilitates Task-level Knowledge Transfer",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{lv-etal-2023-parameter,\n    title = \"Parameter-efficient Weight Ensembling Facilitates Task-level Knowledge Transfer\",\n    author = \"Lv, Xingtai  and\n      Ding, Ning  and\n      Qin, Yujia  and\n      Liu, Zhiyuan  and\n      Sun, Maosong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.24\",\n    doi = \"10.18653/v1/2023.acl-short.24\",\n    pages = \"270--282\",\n    abstract = \"Recent studies show that large-scale pre-trained language models could be efficaciously adapted to particular tasks in a parameter-efficient manner. The trained lightweight set of parameters, such as adapters, can be easily stored and shared as a capability equipped with the corresponding models. Owning many lightweight parameters, we focus on transferring them between tasks to acquire an improvement in performance of new tasks, the key point of which is to obtain the similarity between tasks. In this paper, we explore 5 parameter-efficient weight ensembling methods to achieve such transferability and verify the effectiveness of them. These methods extract the information of datasets and trained lightweight parameters from different perspectives to obtain the similarity between tasks, and weight the existing lightweight parameters according to the comparability to acquire a suitable module for the initialization of new tasks. We apply them to three parameter-efficient tuning methods and test them on a wide set of downstream tasks. Experimental results show that our methods show an improvement of 5{\\%}{\\textasciitilde}8{\\%} over baselines and could largely facilitate task-level knowledge transfer.\",\n}\n",
+    "authors": [
+        "Xingtai Lv",
+        "Ning Ding",
+        "Yujia Qin",
+        "Zhiyuan Liu",
+        "Maosong Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.24.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4bbbc59d-250e-5491-b067-6c5ddd8621c2.pdf",
+    "abstract": "Recent studies show that large-scale pre-trained language models could be efficaciously adapted to particular tasks in a parameter-efficient manner. The trained lightweight set of parameters, such as adapters, can be easily stored and shared as a capability equipped with the corresponding models. Owning many lightweight parameters, we focus on transferring them between tasks to acquire an improvement in performance of new tasks, the key point of which is to obtain the similarity between tasks. In this paper, we explore 5 parameter-efficient weight ensembling methods to achieve such transferability and verify the effectiveness of them. These methods extract the information of datasets and trained lightweight parameters from different perspectives to obtain the similarity between tasks, and weight the existing lightweight parameters according to the comparability to acquire a suitable module for the initialization of new tasks. We apply them to three parameter-efficient tuning methods and test them on a wide set of downstream tasks. Experimental results show that our methods show an improvement of 5%~8% over baselines and could largely facilitate task-level knowledge transfer.",
+    "num_pages": 13
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "7e2c1c88-a097-537b-a728-e638b3206cc2",
+    "title": "Should you marginalize over possible tokenizations?",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{chirkova-etal-2023-marginalize,\n    title = \"Should you marginalize over possible tokenizations?\",\n    author = \"Chirkova, Nadezhda  and\n      Kruszewski, Germ{\\'a}n  and\n      Rozen, Jos  and\n      Dymetman, Marc\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.1\",\n    doi = \"10.18653/v1/2023.acl-short.1\",\n    pages = \"1--12\",\n    abstract = \"Autoregressive language models (LMs) map token sequences to probabilities. The usual practice for computing the probability of any character string (e.g. English sentences) is to first transform it into a sequence of tokens that is scored by the model. However, there are exponentially many token sequences that represent any given string. To truly compute the probability of a string one should marginalize over all tokenizations, which is typically intractable. Here, we analyze whether the practice of ignoring the marginalization is justified. To this end, we devise an importance-sampling-based algorithm that allows us to compute estimates of the marginal probabilities and compare them to the default procedure in a range of state-of-the-art models and datasets. Our results show that the gap in log-likelihood is no larger than 0.5{\\%} in most cases, but that it becomes more pronounced for data with long complex words.\",\n}\n",
+    "authors": [
+        "Nadezhda Chirkova",
+        "Germán Kruszewski",
+        "Jos Rozen",
+        "Marc Dymetman"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.1.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/7e2c1c88-a097-537b-a728-e638b3206cc2.pdf",
+    "abstract": "Autoregressive language models (LMs) map token sequences to probabilities. The usual practice for computing the probability of any character string (e.g. English sentences) is to first transform it into a sequence of tokens that is scored by the model. However, there are exponentially many token sequences that represent any given string. To truly compute the probability of a string one should marginalize over all tokenizations, which is typically intractable. Here, we analyze whether the practice of ignoring the marginalization is justified. To this end, we devise an importance-sampling-based algorithm that allows us to compute estimates of the marginal probabilities and compare them to the default procedure in a range of state-of-the-art models and datasets. Our results show that the gap in log-likelihood is no larger than 0.5% in most cases, but that it becomes more pronounced for data with long complex words.",
+    "num_pages": 12
+}

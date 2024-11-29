@@ -1,0 +1,20 @@
+{
+    "uuid": "51a73264-39d8-537e-a122-0c200e0102e1",
+    "title": "FiD-ICL: A Fusion-in-Decoder Approach for Efficient In-Context Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{ye-etal-2023-fid,\n    title = \"{F}i{D}-{ICL}: A Fusion-in-Decoder Approach for Efficient In-Context Learning\",\n    author = \"Ye, Qinyuan  and\n      Beltagy, Iz  and\n      Peters, Matthew  and\n      Ren, Xiang  and\n      Hajishirzi, Hannaneh\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.454\",\n    doi = \"10.18653/v1/2023.acl-long.454\",\n    pages = \"8158--8185\",\n    abstract = \"Large pre-trained models are capable of few-shot in-context learning (ICL), i.e., performing a new task by prepending a few demonstrations before the test input. However, the concatenated demonstrations are often excessively long and induce additional computation. Inspired by fusion-in-decoder (FiD) models which efficiently aggregate more passages and thus outperforms concatenation-based models in open-domain QA, we hypothesize that similar techniques can be applied to improve the efficiency and end-task performance of ICL. To verify this, we present a comprehensive study on applying three fusion methods{---}concatenation-based (early fusion), FiD (intermediate), and ensemble-based (late){---}to ICL. We adopt a meta-learning setup where a model is first trained to perform ICL on a mixture of tasks using one selected fusion method, then evaluated on held-out tasks for ICL. Results on 11 held-out tasks show that FiD-ICL matches or outperforms the other two fusion methods. Additionally, we show that FiD-ICL (1) is 10x faster at inference time compared to concat-based and ensemble-based ICL, as we can easily pre-compute the representations of in-context examples and reuse them; (2) enables scaling up to meta-training 3B-sized models, which would fail for concat-based ICL.\",\n}\n",
+    "authors": [
+        "Qinyuan Ye",
+        "Iz Beltagy",
+        "Matthew Peters",
+        "Xiang Ren",
+        "Hannaneh Hajishirzi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.454.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/51a73264-39d8-537e-a122-0c200e0102e1.pdf",
+    "abstract": "Large pre-trained models are capable of few-shot in-context learning (ICL), i.e., performing a new task by prepending a few demonstrations before the test input. However, the concatenated demonstrations are often excessively long and induce additional computation. Inspired by fusion-in-decoder (FiD) models which efficiently aggregate more passages and thus outperforms concatenation-based models in open-domain QA, we hypothesize that similar techniques can be applied to improve the efficiency and end-task performance of ICL. To verify this, we present a comprehensive study on applying three fusion methods—concatenation-based (early fusion), FiD (intermediate), and ensemble-based (late)—to ICL. We adopt a meta-learning setup where a model is first trained to perform ICL on a mixture of tasks using one selected fusion method, then evaluated on held-out tasks for ICL. Results on 11 held-out tasks show that FiD-ICL matches or outperforms the other two fusion methods. Additionally, we show that FiD-ICL (1) is 10x faster at inference time compared to concat-based and ensemble-based ICL, as we can easily pre-compute the representations of in-context examples and reuse them; (2) enables scaling up to meta-training 3B-sized models, which would fail for concat-based ICL.",
+    "num_pages": 28
+}

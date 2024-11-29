@@ -1,0 +1,18 @@
+{
+    "uuid": "16c522a0-d845-5cba-a4ae-879bf2ed4e73",
+    "title": "Modeling Structural Similarities between Documents for Coherence Assessment with Graph Convolutional Networks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{liu-etal-2023-modeling,\n    title = \"Modeling Structural Similarities between Documents for Coherence Assessment with Graph Convolutional Networks\",\n    author = \"Liu, Wei  and\n      Fu, Xiyan  and\n      Strube, Michael\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.431\",\n    doi = \"10.18653/v1/2023.acl-long.431\",\n    pages = \"7792--7808\",\n    abstract = \"Coherence is an important aspect of text quality, and various approaches have been applied to coherence modeling. However, existing methods solely focus on a single document{'}s coherence patterns, ignoring the underlying correlation between documents. We investigate a GCN-based coherence model that is capable of capturing structural similarities between documents. Our model first creates a graph structure for each document, from where we mine different subgraph patterns. We then construct a heterogeneous graph for the training corpus, connecting documents based on their shared subgraphs. Finally, a GCN is applied to the heterogeneous graph to model the connectivity relationships. We evaluate our method on two tasks, assessing discourse coherence and automated essay scoring. Results show that our GCN-based model outperforms all baselines, achieving a new state-of-the-art on both tasks.\",\n}\n",
+    "authors": [
+        "Wei Liu",
+        "Xiyan Fu",
+        "Michael Strube"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.431.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/16c522a0-d845-5cba-a4ae-879bf2ed4e73.pdf",
+    "abstract": "Coherence is an important aspect of text quality, and various approaches have been applied to coherence modeling. However, existing methods solely focus on a single document’s coherence patterns, ignoring the underlying correlation between documents. We investigate a GCN-based coherence model that is capable of capturing structural similarities between documents. Our model first creates a graph structure for each document, from where we mine different subgraph patterns. We then construct a heterogeneous graph for the training corpus, connecting documents based on their shared subgraphs. Finally, a GCN is applied to the heterogeneous graph to model the connectivity relationships. We evaluate our method on two tasks, assessing discourse coherence and automated essay scoring. Results show that our GCN-based model outperforms all baselines, achieving a new state-of-the-art on both tasks.",
+    "num_pages": 17
+}

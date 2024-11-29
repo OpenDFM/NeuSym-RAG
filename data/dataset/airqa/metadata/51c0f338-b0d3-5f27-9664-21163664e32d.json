@@ -1,0 +1,17 @@
+{
+    "uuid": "51c0f338-b0d3-5f27-9664-21163664e32d",
+    "title": "Adapting transformer models to morphological tagging of two highly inflectional languages: a case study on Ancient Greek and Latin",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 1st Workshop on Machine Learning for Ancient Languages (ML4AL 2024)",
+    "bibtex": "@inproceedings{keersmaekers-mercelis-2024-adapting,\n    title = \"Adapting transformer models to morphological tagging of two highly inflectional languages: a case study on {A}ncient {G}reek and {L}atin\",\n    author = \"Keersmaekers, Alek  and\n      Mercelis, Wouter\",\n    editor = \"Pavlopoulos, John  and\n      Sommerschield, Thea  and\n      Assael, Yannis  and\n      Gordin, Shai  and\n      Cho, Kyunghyun  and\n      Passarotti, Marco  and\n      Sprugnoli, Rachele  and\n      Liu, Yudong  and\n      Li, Bin  and\n      Anderson, Adam\",\n    booktitle = \"Proceedings of the 1st Workshop on Machine Learning for Ancient Languages (ML4AL 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Hybrid in Bangkok, Thailand and online\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.ml4al-1.17\",\n    doi = \"10.18653/v1/2024.ml4al-1.17\",\n    pages = \"165--176\",\n    abstract = \"Natural language processing for Greek and Latin, inflectional languages with small corpora, requires special techniques. For morphological tagging, transformer models show promising potential, but the best approach to use these models is unclear. For both languages, this paper examines the impact of using morphological lexica, training different model types (a single model with a combined feature tag, multiple models for separate features, and a multi-task model for all features), and adding linguistic constraints. We find that, although simply fine-tuning transformers to predict a monolithic tag may already yield decent results, each of these adaptations can further improve tagging accuracy.\",\n}\n",
+    "authors": [
+        "Alek Keersmaekers",
+        "Wouter Mercelis"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.ml4al-1.17.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/51c0f338-b0d3-5f27-9664-21163664e32d.pdf",
+    "abstract": "Natural language processing for Greek and Latin, inflectional languages with small corpora, requires special techniques. For morphological tagging, transformer models show promising potential, but the best approach to use these models is unclear. For both languages, this paper examines the impact of using morphological lexica, training different model types (a single model with a combined feature tag, multiple models for separate features, and a multi-task model for all features), and adding linguistic constraints. We find that, although simply fine-tuning transformers to predict a monolithic tag may already yield decent results, each of these adaptations can further improve tagging accuracy.",
+    "num_pages": 12
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "1a88cf19-ee64-5f84-a603-dcbbcab92b53",
+    "title": "A Modular Approach for Multimodal Summarization of TV Shows",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{mahon-lapata-2024-modular,\n    title = \"A Modular Approach for Multimodal Summarization of {TV} Shows\",\n    author = \"Mahon, Louis  and\n      Lapata, Mirella\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.450\",\n    doi = \"10.18653/v1/2024.acl-long.450\",\n    pages = \"8272--8291\",\n    abstract = \"In this paper we address the task of summarizing television shows, which touches key areas in AI research: complex reasoning, multiple modalities, and long narratives. We present a modular approach where separate components perform specialized sub-tasks which we argue affords greater flexibility compared to end-to-end methods. Our modules involve detecting scene boundaries, reordering scenes so as to minimize the number of cuts between different events, converting visual information to text, summarizing the dialogue in each scene, and fusing the scene summaries into a final summary for the entire episode. We also present a new metric, PRISMA (**P**recision and **R**ecall Evaluat**i**on of **s**ummary F**a**cts), to measure both precision and recall of generated summaries, which we decompose into atomic facts. Tested on the recently released SummScreen3D dataset (Papalampidi {\\&} Lapata, 2023), our method produces higher quality summaries than comparison models, as measured with ROUGE and our new fact-based metric.\",\n}\n",
+    "authors": [
+        "Louis Mahon",
+        "Mirella Lapata"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.450.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/1a88cf19-ee64-5f84-a603-dcbbcab92b53.pdf",
+    "abstract": "In this paper we address the task of summarizing television shows, which touches key areas in AI research: complex reasoning, multiple modalities, and long narratives. We present a modular approach where separate components perform specialized sub-tasks which we argue affords greater flexibility compared to end-to-end methods. Our modules involve detecting scene boundaries, reordering scenes so as to minimize the number of cuts between different events, converting visual information to text, summarizing the dialogue in each scene, and fusing the scene summaries into a final summary for the entire episode. We also present a new metric, PRISMA (**P**recision and **R**ecall Evaluat**i**on of **s**ummary F**a**cts), to measure both precision and recall of generated summaries, which we decompose into atomic facts. Tested on the recently released SummScreen3D dataset (Papalampidi & Lapata, 2023), our method produces higher quality summaries than comparison models, as measured with ROUGE and our new fact-based metric.",
+    "num_pages": 20
+}

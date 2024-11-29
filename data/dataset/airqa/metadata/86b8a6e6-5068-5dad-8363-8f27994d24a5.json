@@ -1,0 +1,23 @@
+{
+    "uuid": "86b8a6e6-5068-5dad-8363-8f27994d24a5",
+    "title": "Efficient Out-of-Domain Detection for Sequence to Sequence Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{vazhentsev-etal-2023-efficient,\n    title = \"Efficient Out-of-Domain Detection for Sequence to Sequence Models\",\n    author = \"Vazhentsev, Artem  and\n      Tsvigun, Akim  and\n      Vashurin, Roman  and\n      Petrakov, Sergey  and\n      Vasilev, Daniil  and\n      Panov, Maxim  and\n      Panchenko, Alexander  and\n      Shelmanov, Artem\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.93\",\n    doi = \"10.18653/v1/2023.findings-acl.93\",\n    pages = \"1430--1454\",\n    abstract = \"Sequence-to-sequence (seq2seq) models based on the Transformer architecture have become a ubiquitous tool applicable not only to classical text generation tasks such as machine translation and summarization but also to any other task where an answer can be represented in a form of a finite text fragment (e.g., question answering). However, when deploying a model in practice, we need not only high performance but also an ability to determine cases where the model is not applicable. Uncertainty estimation (UE) techniques provide a tool for identifying out-of-domain (OOD) input where the model is susceptible to errors. State-of-the-art UE methods for seq2seq models rely on computationally heavyweight and impractical deep ensembles. In this work, we perform an empirical investigation of various novel UE methods for large pre-trained seq2seq models T5 and BART on three tasks: machine translation, text summarization, and question answering. We apply computationally lightweight density-based UE methods to seq2seq models and show that they often outperform heavyweight deep ensembles on the task of OOD detection.\",\n}\n",
+    "authors": [
+        "Artem Vazhentsev",
+        "Akim Tsvigun",
+        "Roman Vashurin",
+        "Sergey Petrakov",
+        "Daniil Vasilev",
+        "Maxim Panov",
+        "Alexander Panchenko",
+        "Artem Shelmanov"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.93.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/86b8a6e6-5068-5dad-8363-8f27994d24a5.pdf",
+    "abstract": "Sequence-to-sequence (seq2seq) models based on the Transformer architecture have become a ubiquitous tool applicable not only to classical text generation tasks such as machine translation and summarization but also to any other task where an answer can be represented in a form of a finite text fragment (e.g., question answering). However, when deploying a model in practice, we need not only high performance but also an ability to determine cases where the model is not applicable. Uncertainty estimation (UE) techniques provide a tool for identifying out-of-domain (OOD) input where the model is susceptible to errors. State-of-the-art UE methods for seq2seq models rely on computationally heavyweight and impractical deep ensembles. In this work, we perform an empirical investigation of various novel UE methods for large pre-trained seq2seq models T5 and BART on three tasks: machine translation, text summarization, and question answering. We apply computationally lightweight density-based UE methods to seq2seq models and show that they often outperform heavyweight deep ensembles on the task of OOD detection.",
+    "num_pages": 25
+}

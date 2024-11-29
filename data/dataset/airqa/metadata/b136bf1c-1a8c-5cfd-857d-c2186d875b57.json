@@ -1,0 +1,21 @@
+{
+    "uuid": "b136bf1c-1a8c-5cfd-857d-c2186d875b57",
+    "title": "A Multi-task Learning Framework for Quality Estimation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{deoghare-etal-2023-multi,\n    title = \"A Multi-task Learning Framework for Quality Estimation\",\n    author = \"Deoghare, Sourabh  and\n      Choudhary, Paramveer  and\n      Kanojia, Diptesh  and\n      Ranasinghe, Tharindu  and\n      Bhattacharyya, Pushpak  and\n      Or{\\u{a}}san, Constantin\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.585\",\n    doi = \"10.18653/v1/2023.findings-acl.585\",\n    pages = \"9191--9205\",\n    abstract = \"Quality Estimation (QE) is the task of evaluating machine translation output in the absence of reference translation. Conventional approaches to QE involve training separate models at different levels of granularity viz., word-level, sentence-level, and document-level, which sometimes lead to inconsistent predictions for the same input. To overcome this limitation, we focus on jointly training a single model for sentence-level and word-level QE tasks in a multi-task learning framework. Using two multi-task learning-based QE approaches, we show that multi-task learning improves the performance of both tasks. We evaluate these approaches by performing experiments in different settings, viz., single-pair, multi-pair, and zero-shot. We compare the multi-task learning-based approach with baseline QE models trained on single tasks and observe an improvement of up to 4.28{\\%} in Pearson{'}s correlation (r) at sentence-level and 8.46{\\%} in F1-score at word-level, in the single-pair setting. In the multi-pair setting, we observe improvements of up to 3.04{\\%} at sentence-level and 13.74{\\%} at word-level; while in the zero-shot setting, we also observe improvements of up to 5.26{\\%} and 3.05{\\%}, respectively. We make the models proposed in this paper publically available.\",\n}\n",
+    "authors": [
+        "Sourabh Deoghare",
+        "Paramveer Choudhary",
+        "Diptesh Kanojia",
+        "Tharindu Ranasinghe",
+        "Pushpak Bhattacharyya",
+        "Constantin Orăsan"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.585.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/b136bf1c-1a8c-5cfd-857d-c2186d875b57.pdf",
+    "abstract": "Quality Estimation (QE) is the task of evaluating machine translation output in the absence of reference translation. Conventional approaches to QE involve training separate models at different levels of granularity viz., word-level, sentence-level, and document-level, which sometimes lead to inconsistent predictions for the same input. To overcome this limitation, we focus on jointly training a single model for sentence-level and word-level QE tasks in a multi-task learning framework. Using two multi-task learning-based QE approaches, we show that multi-task learning improves the performance of both tasks. We evaluate these approaches by performing experiments in different settings, viz., single-pair, multi-pair, and zero-shot. We compare the multi-task learning-based approach with baseline QE models trained on single tasks and observe an improvement of up to 4.28% in Pearson’s correlation (r) at sentence-level and 8.46% in F1-score at word-level, in the single-pair setting. In the multi-pair setting, we observe improvements of up to 3.04% at sentence-level and 13.74% at word-level; while in the zero-shot setting, we also observe improvements of up to 5.26% and 3.05%, respectively. We make the models proposed in this paper publically available.",
+    "num_pages": 15
+}

@@ -1,0 +1,24 @@
+{
+    "uuid": "1701cf8a-da21-54ee-9213-0fe2abe34733",
+    "title": "FolkScope: Intention Knowledge Graph Construction for E-commerce Commonsense Discovery",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{yu-etal-2023-folkscope,\n    title = \"{F}olk{S}cope: Intention Knowledge Graph Construction for {E}-commerce Commonsense Discovery\",\n    author = \"Yu, Changlong  and\n      Wang, Weiqi  and\n      Liu, Xin  and\n      Bai, Jiaxin  and\n      Song, Yangqiu  and\n      Li, Zheng  and\n      Gao, Yifan  and\n      Cao, Tianyu  and\n      Yin, Bing\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.76\",\n    doi = \"10.18653/v1/2023.findings-acl.76\",\n    pages = \"1173--1191\",\n    abstract = \"Understanding users{'} intentions in e-commerce platforms requires commonsense knowledge. In this paper, we present FolkScope, an intention knowledge graph construction framework, to reveal the structure of humans{'} minds about purchasing items. As commonsense knowledge is usually ineffable and not expressed explicitly, it is challenging to perform information extraction. Thus, we propose a new approach that leverages the generation power of large language models (LLMs) and human-in-the-loop annotation to semi-automatically construct the knowledge graph. LLMs first generate intention assertions via e-commerce specific prompts to explain shopping behaviors, where the intention can be an open reason or a predicate falling into one of 18 categories aligning with ConceptNet, e.g., IsA, MadeOf, UsedFor, etc. Then we annotate plausibility and typicality labels of sampled intentions as training data in order to populate human judgments to all automatic generations. Last, to structurize the assertions, we propose pattern mining and conceptualization to form more condensed and abstract knowledge. Extensive evaluations and study demonstrate that our constructed knowledge graph can well model e-commerce knowledge and have many potential applications.\",\n}\n",
+    "authors": [
+        "Changlong Yu",
+        "Weiqi Wang",
+        "Xin Liu",
+        "Jiaxin Bai",
+        "Yangqiu Song",
+        "Zheng Li",
+        "Yifan Gao",
+        "Tianyu Cao",
+        "Bing Yin"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.76.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1701cf8a-da21-54ee-9213-0fe2abe34733.pdf",
+    "abstract": "Understanding users’ intentions in e-commerce platforms requires commonsense knowledge. In this paper, we present FolkScope, an intention knowledge graph construction framework, to reveal the structure of humans’ minds about purchasing items. As commonsense knowledge is usually ineffable and not expressed explicitly, it is challenging to perform information extraction. Thus, we propose a new approach that leverages the generation power of large language models (LLMs) and human-in-the-loop annotation to semi-automatically construct the knowledge graph. LLMs first generate intention assertions via e-commerce specific prompts to explain shopping behaviors, where the intention can be an open reason or a predicate falling into one of 18 categories aligning with ConceptNet, e.g., IsA, MadeOf, UsedFor, etc. Then we annotate plausibility and typicality labels of sampled intentions as training data in order to populate human judgments to all automatic generations. Last, to structurize the assertions, we propose pattern mining and conceptualization to form more condensed and abstract knowledge. Extensive evaluations and study demonstrate that our constructed knowledge graph can well model e-commerce knowledge and have many potential applications.",
+    "num_pages": 19
+}

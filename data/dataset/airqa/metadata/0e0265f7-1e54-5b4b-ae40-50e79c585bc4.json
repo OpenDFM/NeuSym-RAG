@@ -1,0 +1,19 @@
+{
+    "uuid": "0e0265f7-1e54-5b4b-ae40-50e79c585bc4",
+    "title": "An Embarrassingly Easy but Strong Baseline for Nested Named Entity Recognition",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{yan-etal-2023-embarrassingly,\n    title = \"An Embarrassingly Easy but Strong Baseline for Nested Named Entity Recognition\",\n    author = \"Yan, Hang  and\n      Sun, Yu  and\n      Li, Xiaonan  and\n      Qiu, Xipeng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.123\",\n    doi = \"10.18653/v1/2023.acl-short.123\",\n    pages = \"1442--1452\",\n    abstract = \"Named entity recognition (NER) is the task to detect and classify entity spans in the text. When entity spans overlap between each other, the task is named as nested NER. Span-based methods have been widely used to tackle nested NER. Most of these methods get a score matrix, where each entry corresponds to a span. However, previous work ignores spatial relations in the score matrix. In this paper, we propose using Convolutional Neural Network (CNN) to model these spatial relations. Despite being simple, experiments in three commonly used nested NER datasets show that our model surpasses several recently proposed methods with the same pre-trained encoders. Further analysis shows that using CNN can help the model find more nested entities. Besides, we find that different papers use different sentence tokenizations for the three nested NER datasets, which will influence the comparison. Thus, we release a pre-processing script to facilitate future comparison.\",\n}\n",
+    "authors": [
+        "Hang Yan",
+        "Yu Sun",
+        "Xiaonan Li",
+        "Xipeng Qiu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.123.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/0e0265f7-1e54-5b4b-ae40-50e79c585bc4.pdf",
+    "abstract": "Named entity recognition (NER) is the task to detect and classify entity spans in the text. When entity spans overlap between each other, the task is named as nested NER. Span-based methods have been widely used to tackle nested NER. Most of these methods get a score matrix, where each entry corresponds to a span. However, previous work ignores spatial relations in the score matrix. In this paper, we propose using Convolutional Neural Network (CNN) to model these spatial relations. Despite being simple, experiments in three commonly used nested NER datasets show that our model surpasses several recently proposed methods with the same pre-trained encoders. Further analysis shows that using CNN can help the model find more nested entities. Besides, we find that different papers use different sentence tokenizations for the three nested NER datasets, which will influence the comparison. Thus, we release a pre-processing script to facilitate future comparison.",
+    "num_pages": 11
+}

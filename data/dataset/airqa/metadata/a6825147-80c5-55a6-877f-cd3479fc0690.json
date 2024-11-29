@@ -1,0 +1,18 @@
+{
+    "uuid": "a6825147-80c5-55a6-877f-cd3479fc0690",
+    "title": "Quick Dense Retrievers Consume KALE: Post Training KullbackLeibler Alignment of Embeddings for Asymmetrical dual encoders",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)",
+    "bibtex": "@inproceedings{campos-etal-2023-quick,\n    title = \"Quick Dense Retrievers Consume {KALE}: Post Training {K}ullback{L}eibler Alignment of Embeddings for Asymmetrical dual encoders\",\n    author = \"Campos, Daniel  and\n      Magnani, Alessandro  and\n      Zhai, Chengxiang\",\n    editor = \"Sadat Moosavi, Nafise  and\n      Gurevych, Iryna  and\n      Hou, Yufang  and\n      Kim, Gyuwan  and\n      Kim, Young Jin  and\n      Schuster, Tal  and\n      Agrawal, Ameeta\",\n    booktitle = \"Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (Hybrid)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.sustainlp-1.4\",\n    doi = \"10.18653/v1/2023.sustainlp-1.4\",\n    pages = \"59--77\",\n}\n",
+    "authors": [
+        "Daniel Campos",
+        "Alessandro Magnani",
+        "Chengxiang Zhai"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.sustainlp-1.4.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a6825147-80c5-55a6-877f-cd3479fc0690.pdf",
+    "abstract": "In this paper, we consider the problem of improving the inference latency of language model-based dense retrieval systems by introducing structural compression and model size asymmetry between the context and query encoders. First, we investigate the impact of pre and post-training compression on the MSMARCO, Natural Questions, TriviaQA, SQUAD, and SCIFACT, finding that asymmetry in the dual-encoders in dense retrieval can lead to improved inference efficiency. Knowing this, we introduce Kullback–Leibler Alignment of Embeddings (KALE), an efficient and accurate method for increasing the inference efficiency of dense retrieval methods by pruning and aligning the query encoder after training. Specifically, KALE extends traditional Knowledge Distillation after bi-encoder training, allowing for effective query encoder compression without full retraining or index generation. Using KALE and asymmetric training, we can generate models which exceed the performance of DistilBERT despite having 3x faster inference.",
+    "num_pages": 19
+}

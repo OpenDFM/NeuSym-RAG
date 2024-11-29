@@ -1,0 +1,19 @@
+{
+    "uuid": "3617c229-6fb1-51af-9378-af3915915ce5",
+    "title": "Improving Machine Translation with Large Language Models: A Preliminary Study with Cooperative Decoding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zeng-etal-2024-improving,\n    title = \"Improving Machine Translation with Large Language Models: A Preliminary Study with Cooperative Decoding\",\n    author = \"Zeng, Jiali  and\n      Meng, Fandong  and\n      Yin, Yongjing  and\n      Zhou, Jie\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.786\",\n    doi = \"10.18653/v1/2024.findings-acl.786\",\n    pages = \"13275--13288\",\n    abstract = \"Contemporary translation engines based on the encoder-decoder framework have made significant strides in development.However, the emergence of Large Language Models (LLMs) has disrupted their position by presenting the potential for achieving superior translation quality.To uncover the circumstances in which LLMs excel and explore how their strengths can be harnessed to enhance translation quality,we first conduct a comprehensive analysis to assess the strengths and limitations of various commercial NMT systems and MT-oriented LLMs. Our findings indicate that neither NMT nor MT-oriented LLMs alone can effectively address all the translation issues, but MT-oriented LLMs show promise as a complementary solution to NMT systems.Building upon these insights, we propose Cooperative Decoding (CoDec), which treats NMT systems as a pretranslation model and MT-oriented LLMs as a supplemental solution to handle complex scenarios beyond the capability of NMT alone.Experimental results on the WMT22 test sets and a newly collected test set WebCrawl demonstrate the effectiveness and efficiency of CoDec, highlighting its potential as a robust solution for combining NMT systems with MT-oriented LLMs in the field of machine translation.\",\n}\n",
+    "authors": [
+        "Jiali Zeng",
+        "Fandong Meng",
+        "Yongjing Yin",
+        "Jie Zhou"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.786.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/3617c229-6fb1-51af-9378-af3915915ce5.pdf",
+    "abstract": "Contemporary translation engines based on the encoder-decoder framework have made significant strides in development.However, the emergence of Large Language Models (LLMs) has disrupted their position by presenting the potential for achieving superior translation quality.To uncover the circumstances in which LLMs excel and explore how their strengths can be harnessed to enhance translation quality,we first conduct a comprehensive analysis to assess the strengths and limitations of various commercial NMT systems and MT-oriented LLMs. Our findings indicate that neither NMT nor MT-oriented LLMs alone can effectively address all the translation issues, but MT-oriented LLMs show promise as a complementary solution to NMT systems.Building upon these insights, we propose Cooperative Decoding (CoDec), which treats NMT systems as a pretranslation model and MT-oriented LLMs as a supplemental solution to handle complex scenarios beyond the capability of NMT alone.Experimental results on the WMT22 test sets and a newly collected test set WebCrawl demonstrate the effectiveness and efficiency of CoDec, highlighting its potential as a robust solution for combining NMT systems with MT-oriented LLMs in the field of machine translation.",
+    "num_pages": 14
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "73a221c8-0bc9-5e7b-8fdd-3a4fb6aa8253",
+    "title": "LABO: Towards Learning Optimal Label Regularization via Bi-level Optimization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{lu-etal-2023-labo,\n    title = \"{LABO}: Towards Learning Optimal Label Regularization via Bi-level Optimization\",\n    author = \"Lu, Peng  and\n      Rashid, Ahmad  and\n      Kobyzev, Ivan  and\n      Rezagholizadeh, Mehdi  and\n      Langlais, Phillippe\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.356\",\n    doi = \"10.18653/v1/2023.findings-acl.356\",\n    pages = \"5759--5774\",\n    abstract = \"Regularization techniques are crucial to improving the generalization performance and training efficiency of deep neural networks. Many deep learning algorithms rely on weight decay, dropout, batch/layer normalization to converge faster and generalize. Label Smoothing (LS) is another simple, versatile and efficient regularization which can be applied to various supervised classification tasks. Conventional LS, however, regardless of the training instance assumes that each non-target class is equally likely. In this work, we present a general framework for training with label regularization, which includes conventional LS but can also model instance-specific variants. Based on this formulation, we propose an efficient way of learning LAbel regularization by devising a Bi-level Optimization (LABO) problem. We derive a deterministic and interpretable solution of the inner loop as the optimal label smoothing without the need to store the parameters or the output of a trained model. Finally, we conduct extensive experiments and demonstrate our LABO consistently yields improvement over conventional label regularization on various fields, including seven machine translation and three image classification tasks across various neural network architectures while maintaining training efficiency.\",\n}\n",
+    "authors": [
+        "Peng Lu",
+        "Ahmad Rashid",
+        "Ivan Kobyzev",
+        "Mehdi Rezagholizadeh",
+        "Phillippe Langlais"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.356.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/73a221c8-0bc9-5e7b-8fdd-3a4fb6aa8253.pdf",
+    "abstract": "Regularization techniques are crucial to improving the generalization performance and training efficiency of deep neural networks. Many deep learning algorithms rely on weight decay, dropout, batch/layer normalization to converge faster and generalize. Label Smoothing (LS) is another simple, versatile and efficient regularization which can be applied to various supervised classification tasks. Conventional LS, however, regardless of the training instance assumes that each non-target class is equally likely. In this work, we present a general framework for training with label regularization, which includes conventional LS but can also model instance-specific variants. Based on this formulation, we propose an efficient way of learning LAbel regularization by devising a Bi-level Optimization (LABO) problem. We derive a deterministic and interpretable solution of the inner loop as the optimal label smoothing without the need to store the parameters or the output of a trained model. Finally, we conduct extensive experiments and demonstrate our LABO consistently yields improvement over conventional label regularization on various fields, including seven machine translation and three image classification tasks across various neural network architectures while maintaining training efficiency.",
+    "num_pages": 16
+}

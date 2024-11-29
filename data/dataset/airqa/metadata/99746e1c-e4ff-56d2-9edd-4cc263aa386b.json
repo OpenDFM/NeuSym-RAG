@@ -1,0 +1,22 @@
+{
+    "uuid": "99746e1c-e4ff-56d2-9edd-4cc263aa386b",
+    "title": "Tackling Modality Heterogeneity with Multi-View Calibration Network for Multimodal Sentiment Detection",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wei-etal-2023-tackling,\n    title = \"Tackling Modality Heterogeneity with Multi-View Calibration Network for Multimodal Sentiment Detection\",\n    author = \"Wei, Yiwei  and\n      Yuan, Shaozu  and\n      Yang, Ruosong  and\n      Shen, Lei  and\n      Li, Zhangmeizhi  and\n      Wang, Longbiao  and\n      Chen, Meng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.287\",\n    doi = \"10.18653/v1/2023.acl-long.287\",\n    pages = \"5240--5252\",\n    abstract = \"With the popularity of social media, detecting sentiment from multimodal posts (e.g. image-text pairs) has attracted substantial attention recently. Existing works mainly focus on fusing different features but ignore the challenge of modality heterogeneity. Specifically, different modalities with inherent disparities may bring three problems: 1) introducing redundant visual features during feature fusion; 2) causing feature shift in the representation space; 3) leading to inconsistent annotations for different modal data. All these issues will increase the difficulty in understanding the sentiment of the multimodal content. In this paper, we propose a novel Multi-View Calibration Network (MVCN) to alleviate the above issues systematically. We first propose a text-guided fusion module with novel Sparse-Attention to reduce the negative impacts of redundant visual elements. We then devise a sentiment-based congruity constraint task to calibrate the feature shift in the representation space. Finally, we introduce an adaptive loss calibration strategy to tackle inconsistent annotated labels. Extensive experiments demonstrate the competitiveness of MVCN against previous approaches and achieve state-of-the-art results on two public benchmark datasets.\",\n}\n",
+    "authors": [
+        "Yiwei Wei",
+        "Shaozu Yuan",
+        "Ruosong Yang",
+        "Lei Shen",
+        "Zhangmeizhi Li",
+        "Longbiao Wang",
+        "Meng Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.287.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/99746e1c-e4ff-56d2-9edd-4cc263aa386b.pdf",
+    "abstract": "With the popularity of social media, detecting sentiment from multimodal posts (e.g. image-text pairs) has attracted substantial attention recently. Existing works mainly focus on fusing different features but ignore the challenge of modality heterogeneity. Specifically, different modalities with inherent disparities may bring three problems: 1) introducing redundant visual features during feature fusion; 2) causing feature shift in the representation space; 3) leading to inconsistent annotations for different modal data. All these issues will increase the difficulty in understanding the sentiment of the multimodal content. In this paper, we propose a novel Multi-View Calibration Network (MVCN) to alleviate the above issues systematically. We first propose a text-guided fusion module with novel Sparse-Attention to reduce the negative impacts of redundant visual elements. We then devise a sentiment-based congruity constraint task to calibrate the feature shift in the representation space. Finally, we introduce an adaptive loss calibration strategy to tackle inconsistent annotated labels. Extensive experiments demonstrate the competitiveness of MVCN against previous approaches and achieve state-of-the-art results on two public benchmark datasets.",
+    "num_pages": 13
+}

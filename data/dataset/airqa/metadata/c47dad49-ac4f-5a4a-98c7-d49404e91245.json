@@ -1,0 +1,25 @@
+{
+    "uuid": "c47dad49-ac4f-5a4a-98c7-d49404e91245",
+    "title": "Position Matters! Empirical Study of Order Effect in Knowledge-grounded Dialogue",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the Third DialDoc Workshop on Document-grounded Dialogue and Conversational Question Answering",
+    "bibtex": "@inproceedings{su-etal-2023-position,\n    title = \"Position Matters! Empirical Study of Order Effect in Knowledge-grounded Dialogue\",\n    author = \"Su, Hsuan  and\n      H. Kumar, Shachi  and\n      Mazumder, Sahisnu  and\n      Chen, Wenda  and\n      Manuvinakurike, Ramesh  and\n      Okur, Eda  and\n      Sahay, Saurav  and\n      Nachman, Lama  and\n      Chen, Shang-Tse  and\n      Lee, Hung-yi\",\n    editor = \"Muresan, Smaranda  and\n      Chen, Vivian  and\n      Casey, Kennington  and\n      David, Vandyke  and\n      Nina, Dethlefs  and\n      Koji, Inoue  and\n      Erik, Ekstedt  and\n      Stefan, Ultes\",\n    booktitle = \"Proceedings of the Third DialDoc Workshop on Document-grounded Dialogue and Conversational Question Answering\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.dialdoc-1.4\",\n    doi = \"10.18653/v1/2023.dialdoc-1.4\",\n    pages = \"36--43\",\n    abstract = \"With the power of large pretrained language models, various research works have integrated knowledge into dialogue systems. The traditional techniques treat knowledge as part of the input sequence for the dialogue system, prepending a set of knowledge statements in front of dialogue history. However, such a mechanism forces knowledge sets to be concatenated in an ordered manner, making models implicitly pay imbalanced attention to the sets during training. In this paper, we first investigate how the order of the knowledge set can influence autoregressive dialogue systems{'} responses. We conduct experiments on two commonly used dialogue datasets with two types of transformer-based models and find that models view the input knowledge unequally. To this end, we propose a simple and novel technique to alleviate the order effect by modifying the position embeddings of knowledge input in these models. With the proposed position embedding method, the experimental results show that each knowledge statement is uniformly considered to generate responses.\",\n}\n",
+    "authors": [
+        "Hsuan Su",
+        "Shachi H. Kumar",
+        "Sahisnu Mazumder",
+        "Wenda Chen",
+        "Ramesh Manuvinakurike",
+        "Eda Okur",
+        "Saurav Sahay",
+        "Lama Nachman",
+        "Shang-Tse Chen",
+        "Hung-yi Lee"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.dialdoc-1.4.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c47dad49-ac4f-5a4a-98c7-d49404e91245.pdf",
+    "abstract": "With the power of large pretrained language models, various research works have integrated knowledge into dialogue systems. The traditional techniques treat knowledge as part of the input sequence for the dialogue system, prepending a set of knowledge statements in front of dialogue history. However, such a mechanism forces knowledge sets to be concatenated in an ordered manner, making models implicitly pay imbalanced attention to the sets during training. In this paper, we first investigate how the order of the knowledge set can influence autoregressive dialogue systems’ responses. We conduct experiments on two commonly used dialogue datasets with two types of transformer-based models and find that models view the input knowledge unequally. To this end, we propose a simple and novel technique to alleviate the order effect by modifying the position embeddings of knowledge input in these models. With the proposed position embedding method, the experimental results show that each knowledge statement is uniformly considered to generate responses.",
+    "num_pages": 8
+}

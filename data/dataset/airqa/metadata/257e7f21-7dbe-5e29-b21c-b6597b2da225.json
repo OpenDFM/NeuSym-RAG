@@ -1,0 +1,20 @@
+{
+    "uuid": "257e7f21-7dbe-5e29-b21c-b6597b2da225",
+    "title": "Analyze, Generate and Refine: Query Expansion with LLMs for Zero-Shot Open-Domain QA",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{chen-etal-2024-analyze,\n    title = \"Analyze, Generate and Refine: Query Expansion with {LLM}s for Zero-Shot Open-Domain {QA}\",\n    author = \"Chen, Xinran  and\n      Chen, Xuanang  and\n      He, Ben  and\n      Wen, Tengfei  and\n      Sun, Le\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.708\",\n    doi = \"10.18653/v1/2024.findings-acl.708\",\n    pages = \"11908--11922\",\n    abstract = \"Query expansion (QE) is a critical component in the open-domain question answering (OpenQA) pipeline, enhancing the retrieval performance by broadening the scope of queries with additional relevant texts. However, existing methods like GAR and EAR rely heavily on supervised training and often struggle to maintain effectiveness across domains and datasets. Meanwhile, although large language models (LLMs) have demonstrated QE capability for information retrieval (IR) tasks, their application in OpenQA is hindered by the inadequate analysis of query{'}s informational needs and the lack of quality control for generated QEs, failing to meet the unique requirements of OpenQA. To bridge this gap, we propose a novel LLM-based QE approach named AGR for the OpenQA task, leveraging a three-step prompting strategy. AGR begins with an analysis of the query, followed by the generation of answer-oriented expansions, and culminates with a refinement process for better query formulation. Extensive experiments on four OpenQA datasets reveal that AGR not only rivals in-domain supervised methods in retrieval accuracy, but also outperforms state-of-the-art baselines in out-domain zero-shot scenarios. Moreover, it exhibits enhanced performance in end-to-end QA evaluations, underscoring the superiority of AGR for OpenQA.\",\n}\n",
+    "authors": [
+        "Xinran Chen",
+        "Xuanang Chen",
+        "Ben He",
+        "Tengfei Wen",
+        "Le Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.708.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/257e7f21-7dbe-5e29-b21c-b6597b2da225.pdf",
+    "abstract": "Query expansion (QE) is a critical component in the open-domain question answering (OpenQA) pipeline, enhancing the retrieval performance by broadening the scope of queries with additional relevant texts. However, existing methods like GAR and EAR rely heavily on supervised training and often struggle to maintain effectiveness across domains and datasets. Meanwhile, although large language models (LLMs) have demonstrated QE capability for information retrieval (IR) tasks, their application in OpenQA is hindered by the inadequate analysis of query’s informational needs and the lack of quality control for generated QEs, failing to meet the unique requirements of OpenQA. To bridge this gap, we propose a novel LLM-based QE approach named AGR for the OpenQA task, leveraging a three-step prompting strategy. AGR begins with an analysis of the query, followed by the generation of answer-oriented expansions, and culminates with a refinement process for better query formulation. Extensive experiments on four OpenQA datasets reveal that AGR not only rivals in-domain supervised methods in retrieval accuracy, but also outperforms state-of-the-art baselines in out-domain zero-shot scenarios. Moreover, it exhibits enhanced performance in end-to-end QA evaluations, underscoring the superiority of AGR for OpenQA.",
+    "num_pages": 15
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "c393053b-cb4b-51a8-8333-3373eddcc39f",
+    "title": "Knowledge Graph-augmented Language Models for Complex Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 1st Workshop on Natural Language Reasoning and Structured Explanations (NLRSE)",
+    "bibtex": "@inproceedings{sen-etal-2023-knowledge,\n    title = \"Knowledge Graph-augmented Language Models for Complex Question Answering\",\n    author = \"Sen, Priyanka  and\n      Mavadia, Sandeep  and\n      Saffari, Amir\",\n    editor = \"Dalvi Mishra, Bhavana  and\n      Durrett, Greg  and\n      Jansen, Peter  and\n      Neves Ribeiro, Danilo  and\n      Wei, Jason\",\n    booktitle = \"Proceedings of the 1st Workshop on Natural Language Reasoning and Structured Explanations (NLRSE)\",\n    month = jun,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.nlrse-1.1\",\n    doi = \"10.18653/v1/2023.nlrse-1.1\",\n    pages = \"1--8\",\n    abstract = \"Large language models have shown impressive abilities to reason over input text, however, they are prone to hallucinations. On the other hand, end-to-end knowledge graph question answering (KGQA) models output responses grounded in facts, but they still struggle with complex reasoning, such as comparison or ordinal questions. In this paper, we propose a new method for complex question answering where we combine a knowledge graph retriever based on an end-to-end KGQA model with a language model that reasons over the retrieved facts to return an answer. We observe that augmenting language model prompts with retrieved KG facts improves performance over using a language model alone by an average of 83{\\%}. In particular, we see improvements on complex questions requiring count, intersection, or multi-hop reasoning operations.\",\n}\n",
+    "authors": [
+        "Priyanka Sen",
+        "Sandeep Mavadia",
+        "Amir Saffari"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.nlrse-1.1.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c393053b-cb4b-51a8-8333-3373eddcc39f.pdf",
+    "abstract": "Large language models have shown impressive abilities to reason over input text, however, they are prone to hallucinations. On the other hand, end-to-end knowledge graph question answering (KGQA) models output responses grounded in facts, but they still struggle with complex reasoning, such as comparison or ordinal questions. In this paper, we propose a new method for complex question answering where we combine a knowledge graph retriever based on an end-to-end KGQA model with a language model that reasons over the retrieved facts to return an answer. We observe that augmenting language model prompts with retrieved KG facts improves performance over using a language model alone by an average of 83%. In particular, we see improvements on complex questions requiring count, intersection, or multi-hop reasoning operations.",
+    "num_pages": 8
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "08388577-6850-57a0-8b50-81546cef0a29",
+    "title": "Learning Joint Structural and Temporal Contextualized Knowledge Embeddings for Temporal Knowledge Graph Completion",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{gao-etal-2023-learning,\n    title = \"Learning Joint Structural and Temporal Contextualized Knowledge Embeddings for Temporal Knowledge Graph Completion\",\n    author = \"Gao, Yifu  and\n      He, Yongquan  and\n      Kan, Zhigang  and\n      Han, Yi  and\n      Qiao, Linbo  and\n      Li, Dongsheng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.28\",\n    doi = \"10.18653/v1/2023.findings-acl.28\",\n    pages = \"417--430\",\n    abstract = \"Temporal knowledge graph completion that predicts missing links for incomplete temporal knowledge graphs (TKG) is gaining increasing attention. Most existing works have achieved good results by incorporating time information into static knowledge graph embedding methods. However, they ignore the contextual nature of the TKG structure, i.e., query-specific subgraph contains both structural and temporal neighboring facts. This paper presents the SToKE, a novel method that employs the pre-trained language model (PLM) to learn joint Structural and Temporal Contextualized Knowledge Embeddings.Specifically, we first construct an event evolution tree (EET) for each query to enable PLMs to handle the TKG, which can be seen as a structured event sequence recording query-relevant structural and temporal contexts. We then propose a novel temporal embedding and structural matrix to learn the time information and structural dependencies of facts in EET.Finally, we formulate TKG completion as a mask prediction problem by masking the missing entity of the query to fine-tune pre-trained language models. Experimental results on three widely used datasets show the superiority of our model.\",\n}\n",
+    "authors": [
+        "Yifu Gao",
+        "Yongquan He",
+        "Zhigang Kan",
+        "Yi Han",
+        "Linbo Qiao",
+        "Dongsheng Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.28.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/08388577-6850-57a0-8b50-81546cef0a29.pdf",
+    "abstract": "Temporal knowledge graph completion that predicts missing links for incomplete temporal knowledge graphs (TKG) is gaining increasing attention. Most existing works have achieved good results by incorporating time information into static knowledge graph embedding methods. However, they ignore the contextual nature of the TKG structure, i.e., query-specific subgraph contains both structural and temporal neighboring facts. This paper presents the SToKE, a novel method that employs the pre-trained language model (PLM) to learn joint Structural and Temporal Contextualized Knowledge Embeddings.Specifically, we first construct an event evolution tree (EET) for each query to enable PLMs to handle the TKG, which can be seen as a structured event sequence recording query-relevant structural and temporal contexts. We then propose a novel temporal embedding and structural matrix to learn the time information and structural dependencies of facts in EET.Finally, we formulate TKG completion as a mask prediction problem by masking the missing entity of the query to fine-tune pre-trained language models. Experimental results on three widely used datasets show the superiority of our model.",
+    "num_pages": 14
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "6fd44ded-50f0-5e60-af18-49ebac340357",
+    "title": "Fixed Input Parameterization for Efficient Prompting",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{choi-etal-2023-fixed,\n    title = \"Fixed Input Parameterization for Efficient Prompting\",\n    author = \"Choi, Eunbi  and\n      Jo, Yongrae  and\n      Jang, Joel  and\n      Jang, Joonwon  and\n      Seo, Minjoon\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.533\",\n    doi = \"10.18653/v1/2023.findings-acl.533\",\n    pages = \"8428--8441\",\n    abstract = \"Recent works have shown that attaching prompts to the input is effective at conditioning Language Models (LM) to perform specific tasks. However, prompts are always included in the input text during inference, even when they are fixed, thus incurring substantial computational and memory overhead. Also, there is currently no straightforward method of utilizing prompts that are longer than the maximum input length of the LMs without incurring additional costs during inference. We formally define Fixed Input Parameterization (FIP) problem that focuses on injecting the fixed prompt into the parameters of an LM to be an efficient alternative to attaching fixed prompts to the input. We show that in scenarios with long fixed prompts, FIP can be up to 280 times more efficient in terms of total FLOPs than previous approaches. We further explore methodologies for FIP and show promising results in persona-dependent conversation, semantic parsing, and zero-shot learning with task instructions. Through these explorations, we show that FIP can be a promising direction for conditioning language models, in scenarios with long and fixed prompts.\",\n}\n",
+    "authors": [
+        "Eunbi Choi",
+        "Yongrae Jo",
+        "Joel Jang",
+        "Joonwon Jang",
+        "Minjoon Seo"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.533.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/6fd44ded-50f0-5e60-af18-49ebac340357.pdf",
+    "abstract": "Recent works have shown that attaching prompts to the input is effective at conditioning Language Models (LM) to perform specific tasks. However, prompts are always included in the input text during inference, even when they are fixed, thus incurring substantial computational and memory overhead. Also, there is currently no straightforward method of utilizing prompts that are longer than the maximum input length of the LMs without incurring additional costs during inference. We formally define Fixed Input Parameterization (FIP) problem that focuses on injecting the fixed prompt into the parameters of an LM to be an efficient alternative to attaching fixed prompts to the input. We show that in scenarios with long fixed prompts, FIP can be up to 280 times more efficient in terms of total FLOPs than previous approaches. We further explore methodologies for FIP and show promising results in persona-dependent conversation, semantic parsing, and zero-shot learning with task instructions. Through these explorations, we show that FIP can be a promising direction for conditioning language models, in scenarios with long and fixed prompts.",
+    "num_pages": 14
+}

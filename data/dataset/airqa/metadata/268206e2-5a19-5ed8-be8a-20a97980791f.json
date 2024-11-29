@@ -1,0 +1,18 @@
+{
+    "uuid": "268206e2-5a19-5ed8-be8a-20a97980791f",
+    "title": "Out-of-Domain Dependency Parsing for Dialects of Arabic: A Case Study",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of The Second Arabic Natural Language Processing Conference",
+    "bibtex": "@inproceedings{mokh-etal-2024-domain,\n    title = \"Out-of-Domain Dependency Parsing for Dialects of {A}rabic: A Case Study\",\n    author = {Mokh, Noor Abo  and\n      Dakota, Daniel  and\n      K{\\\"u}bler, Sandra},\n    editor = \"Habash, Nizar  and\n      Bouamor, Houda  and\n      Eskander, Ramy  and\n      Tomeh, Nadi  and\n      Abu Farha, Ibrahim  and\n      Abdelali, Ahmed  and\n      Touileb, Samia  and\n      Hamed, Injy  and\n      Onaizan, Yaser  and\n      Alhafni, Bashar  and\n      Antoun, Wissam  and\n      Khalifa, Salam  and\n      Haddad, Hatem  and\n      Zitouni, Imed  and\n      AlKhamissi, Badr  and\n      Almatham, Rawan  and\n      Mrini, Khalil\",\n    booktitle = \"Proceedings of The Second Arabic Natural Language Processing Conference\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.arabicnlp-1.16\",\n    doi = \"10.18653/v1/2024.arabicnlp-1.16\",\n    pages = \"170--182\",\n    abstract = \"We study dependency parsing for four Arabic dialects (Gulf, Levantine, Egyptian, and Maghrebi). Since no syntactically annotated data exist for Arabic dialects, we train the parser on a Modern Standard Arabic (MSA) corpus, which creates an out-of-domain setting.We investigate methods to close the gap between the source (MSA) and target data (dialects), e.g., by training on syntactically similar sentences to the test data. For testing, we manually annotate a small data set from a dialectal corpus. We focus on parsing two linguistic phenomena, which are difficult to parse: Idafa and coordination. We find that we can improve results by adding in-domain MSA data while adding dialectal embeddings only results in minor improvements.\",\n}\n",
+    "authors": [
+        "Noor Abo Mokh",
+        "Daniel Dakota",
+        "Sandra Kübler"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.arabicnlp-1.16.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/268206e2-5a19-5ed8-be8a-20a97980791f.pdf",
+    "abstract": "We study dependency parsing for four Arabic dialects (Gulf, Levantine, Egyptian, and Maghrebi). Since no syntactically annotated data exist for Arabic dialects, we train the parser on a Modern Standard Arabic (MSA) corpus, which creates an out-of-domain setting.We investigate methods to close the gap between the source (MSA) and target data (dialects), e.g., by training on syntactically similar sentences to the test data. For testing, we manually annotate a small data set from a dialectal corpus. We focus on parsing two linguistic phenomena, which are difficult to parse: Idafa and coordination. We find that we can improve results by adding in-domain MSA data while adding dialectal embeddings only results in minor improvements.",
+    "num_pages": 13
+}

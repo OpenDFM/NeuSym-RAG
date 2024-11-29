@@ -1,0 +1,20 @@
+{
+    "uuid": "99fb769b-a814-5bd5-9e78-aceb27fbe270",
+    "title": "InfoSync: Information Synchronization across Multilingual Semi-structured Tables",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{khincha-etal-2023-infosync,\n    title = \"{I}nfo{S}ync: Information Synchronization across Multilingual Semi-structured Tables\",\n    author = \"Khincha, Siddharth  and\n      Jain, Chelsi  and\n      Gupta, Vivek  and\n      Kataria, Tushar  and\n      Zhang, Shuo\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.159\",\n    doi = \"10.18653/v1/2023.findings-acl.159\",\n    pages = \"2536--2559\",\n    abstract = \"Information Synchronization of semi-structured data across languages is challenging. For example, Wikipedia tables in one language need to be synchronized with others. To address this problem, we introduce a new dataset InfoSync and a two-step method for tabular synchronization. InfoSync contains 100K entity-centric tables (Wikipedia Infoboxes) across 14 languages, of which a subset ({\\textasciitilde}3.5K pairs) are manually annotated. The proposed method includes 1) Information Alignment to map rows and 2) Information Update for updating missing/outdated information for aligned tables across multilingual tables. When evaluated on InfoSync, information alignment achieves an F1 score of 87.91 (en {\\textless}-{\\textgreater} non-en). To evaluate information updation, we perform human-assisted Wikipedia edits on Infoboxes for 532 table pairs. Our approach obtains an acceptance rate of 77.28{\\%} on Wikipedia, showing the effectiveness of the proposed method.\",\n}\n",
+    "authors": [
+        "Siddharth Khincha",
+        "Chelsi Jain",
+        "Vivek Gupta",
+        "Tushar Kataria",
+        "Shuo Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.159.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/99fb769b-a814-5bd5-9e78-aceb27fbe270.pdf",
+    "abstract": "Information Synchronization of semi-structured data across languages is challenging. For example, Wikipedia tables in one language need to be synchronized with others. To address this problem, we introduce a new dataset InfoSync and a two-step method for tabular synchronization. InfoSync contains 100K entity-centric tables (Wikipedia Infoboxes) across 14 languages, of which a subset (~3.5K pairs) are manually annotated. The proposed method includes 1) Information Alignment to map rows and 2) Information Update for updating missing/outdated information for aligned tables across multilingual tables. When evaluated on InfoSync, information alignment achieves an F1 score of 87.91 (en <-> non-en). To evaluate information updation, we perform human-assisted Wikipedia edits on Infoboxes for 532 table pairs. Our approach obtains an acceptance rate of 77.28% on Wikipedia, showing the effectiveness of the proposed method.",
+    "num_pages": 24
+}

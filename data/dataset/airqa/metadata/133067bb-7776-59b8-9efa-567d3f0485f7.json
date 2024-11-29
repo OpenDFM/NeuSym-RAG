@@ -1,0 +1,22 @@
+{
+    "uuid": "133067bb-7776-59b8-9efa-567d3f0485f7",
+    "title": "COBRA Frames: Contextual Reasoning about Effects and Harms of Offensive Statements",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhou-etal-2023-cobra,\n    title = \"{COBRA} Frames: Contextual Reasoning about Effects and Harms of Offensive Statements\",\n    author = \"Zhou, Xuhui  and\n      Zhu, Hao  and\n      Yerukola, Akhila  and\n      Davidson, Thomas  and\n      Hwang, Jena D.  and\n      Swayamdipta, Swabha  and\n      Sap, Maarten\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.392\",\n    doi = \"10.18653/v1/2023.findings-acl.392\",\n    pages = \"6294--6315\",\n    abstract = \"Warning: This paper contains content that may be offensive or upsetting. Understanding the harms and offensiveness of statements requires reasoning about the social and situational context in which statements are made. For example, the utterance {``}your English is very good{''} may implicitly signal an insult when uttered by a white man to a non-white colleague, but uttered by an ESL teacher to their student would be interpreted as a genuine compliment. Such contextual factors have been largely ignored by previous approaches to toxic language detection. We introduce COBRA frames, the first context-aware formalism for explaining the intents, reactions, and harms of offensive or biased statements grounded in their social and situational context. We create COBRACORPUS, a dataset of 33k potentially offensive statements paired with machine-generated contexts and free-text explanations of offensiveness, implied biases, speaker intents, and listener reactions. To study the contextual dynamics of offensiveness, we train models to generate COBRA explanations, with and without access to the context. We find that explanations by context-agnostic models are significantly worse than by context-aware ones, especially in situations where the context inverts the statement{'}s offensiveness (29{\\%} accuracy drop). Our work highlights the importance and feasibility of contextualized NLP by modeling social factors.\",\n}\n",
+    "authors": [
+        "Xuhui Zhou",
+        "Hao Zhu",
+        "Akhila Yerukola",
+        "Thomas Davidson",
+        "Jena D. Hwang",
+        "Swabha Swayamdipta",
+        "Maarten Sap"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.392.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/133067bb-7776-59b8-9efa-567d3f0485f7.pdf",
+    "abstract": "Warning: This paper contains content that may be offensive or upsetting. Understanding the harms and offensiveness of statements requires reasoning about the social and situational context in which statements are made. For example, the utterance “your English is very good” may implicitly signal an insult when uttered by a white man to a non-white colleague, but uttered by an ESL teacher to their student would be interpreted as a genuine compliment. Such contextual factors have been largely ignored by previous approaches to toxic language detection. We introduce COBRA frames, the first context-aware formalism for explaining the intents, reactions, and harms of offensive or biased statements grounded in their social and situational context. We create COBRACORPUS, a dataset of 33k potentially offensive statements paired with machine-generated contexts and free-text explanations of offensiveness, implied biases, speaker intents, and listener reactions. To study the contextual dynamics of offensiveness, we train models to generate COBRA explanations, with and without access to the context. We find that explanations by context-agnostic models are significantly worse than by context-aware ones, especially in situations where the context inverts the statement’s offensiveness (29% accuracy drop). Our work highlights the importance and feasibility of contextualized NLP by modeling social factors.",
+    "num_pages": 22
+}

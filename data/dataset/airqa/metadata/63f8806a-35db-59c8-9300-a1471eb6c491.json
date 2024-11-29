@@ -1,0 +1,21 @@
+{
+    "uuid": "63f8806a-35db-59c8-9300-a1471eb6c491",
+    "title": "Faithful Low-Resource Data-to-Text Generation through Cycle Training",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2023-faithful,\n    title = \"Faithful Low-Resource Data-to-Text Generation through Cycle Training\",\n    author = \"Wang, Zhuoer  and\n      Collins, Marcus  and\n      Vedula, Nikhita  and\n      Filice, Simone  and\n      Malmasi, Shervin  and\n      Rokhlenko, Oleg\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.160\",\n    doi = \"10.18653/v1/2023.acl-long.160\",\n    pages = \"2847--2867\",\n    abstract = \"Methods to generate text from structured data have advanced significantly in recent years, primarily due to fine-tuning of pre-trained language models on large datasets. However, such models can fail to produce output faithful to the input data, particularly on out-of-domain data. Sufficient annotated data is often not available for specific domains, leading us to seek an unsupervised approach to improve the faithfulness of output text. Since the problem is fundamentally one of consistency between the representations of the structured data and text, we evaluate the effectiveness of cycle training in this work. Cycle training uses two models which are inverses of each other: one that generates text from structured data, and one which generates the structured data from natural language text. We show that cycle training, when initialized with a small amount of supervised data (100 samples in our case), achieves nearly the same performance as fully supervised approaches for the data-to-text generation task on the WebNLG, E2E, WTQ, and WSQL datasets. We perform extensive empirical analysis with automated evaluation metrics and a newly designed human evaluation schema to reveal different cycle training strategies{'} effectiveness of reducing various types of generation errors. Our code is publicly available at \\url{https://github.com/Edillower/CycleNLG}.\",\n}\n",
+    "authors": [
+        "Zhuoer Wang",
+        "Marcus Collins",
+        "Nikhita Vedula",
+        "Simone Filice",
+        "Shervin Malmasi",
+        "Oleg Rokhlenko"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.160.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/63f8806a-35db-59c8-9300-a1471eb6c491.pdf",
+    "abstract": "Methods to generate text from structured data have advanced significantly in recent years, primarily due to fine-tuning of pre-trained language models on large datasets. However, such models can fail to produce output faithful to the input data, particularly on out-of-domain data. Sufficient annotated data is often not available for specific domains, leading us to seek an unsupervised approach to improve the faithfulness of output text. Since the problem is fundamentally one of consistency between the representations of the structured data and text, we evaluate the effectiveness of cycle training in this work. Cycle training uses two models which are inverses of each other: one that generates text from structured data, and one which generates the structured data from natural language text. We show that cycle training, when initialized with a small amount of supervised data (100 samples in our case), achieves nearly the same performance as fully supervised approaches for the data-to-text generation task on the WebNLG, E2E, WTQ, and WSQL datasets. We perform extensive empirical analysis with automated evaluation metrics and a newly designed human evaluation schema to reveal different cycle training strategies’ effectiveness of reducing various types of generation errors. Our code is publicly available at https://github.com/Edillower/CycleNLG.",
+    "num_pages": 21
+}

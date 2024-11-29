@@ -1,0 +1,22 @@
+{
+    "uuid": "331caa1d-e2e3-535d-bc06-1ecd8ee99033",
+    "title": "Don’t Retrain, Just Rewrite: Countering Adversarial Perturbations by Rewriting Text",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{gupta-etal-2023-dont,\n    title = \"Don{'}t Retrain, Just Rewrite: Countering Adversarial Perturbations by Rewriting Text\",\n    author = \"Gupta, Ashim  and\n      Blum, Carter  and\n      Choji, Temma  and\n      Fei, Yingjie  and\n      Shah, Shalin  and\n      Vempala, Alakananda  and\n      Srikumar, Vivek\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.781\",\n    doi = \"10.18653/v1/2023.acl-long.781\",\n    pages = \"13981--13998\",\n    abstract = \"Can language models transform inputs to protect text classifiers against adversarial attacks? In this work, we present ATINTER, a model that intercepts and learns to rewrite adversarial inputs to make them non-adversarial for a downstream text classifier. Our experiments on four datasets and five attack mechanisms reveal that ATINTER is effective at providing better adversarial robustness than existing defense approaches, without compromising task accuracy. For example, on sentiment classification using the SST-2 dataset, our method improves the adversarial accuracy over the best existing defense approach by more than 4{\\%} with a smaller decrease in task accuracy (0.5 {\\%} vs 2.5{\\%}). Moreover, we show that ATINTER generalizes across multiple downstream tasks and classifiers without having to explicitly retrain it for those settings. For example, we find that when ATINTER is trained to remove adversarial perturbations for the sentiment classification task on the SST-2 dataset, it even transfers to a semantically different task of news classification (on AGNews) and improves the adversarial robustness by more than 10{\\%}.\",\n}\n",
+    "authors": [
+        "Ashim Gupta",
+        "Carter Blum",
+        "Temma Choji",
+        "Yingjie Fei",
+        "Shalin Shah",
+        "Alakananda Vempala",
+        "Vivek Srikumar"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.781.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/331caa1d-e2e3-535d-bc06-1ecd8ee99033.pdf",
+    "abstract": "Can language models transform inputs to protect text classifiers against adversarial attacks? In this work, we present ATINTER, a model that intercepts and learns to rewrite adversarial inputs to make them non-adversarial for a downstream text classifier. Our experiments on four datasets and five attack mechanisms reveal that ATINTER is effective at providing better adversarial robustness than existing defense approaches, without compromising task accuracy. For example, on sentiment classification using the SST-2 dataset, our method improves the adversarial accuracy over the best existing defense approach by more than 4% with a smaller decrease in task accuracy (0.5 % vs 2.5%). Moreover, we show that ATINTER generalizes across multiple downstream tasks and classifiers without having to explicitly retrain it for those settings. For example, we find that when ATINTER is trained to remove adversarial perturbations for the sentiment classification task on the SST-2 dataset, it even transfers to a semantically different task of news classification (on AGNews) and improves the adversarial robustness by more than 10%.",
+    "num_pages": 18
+}

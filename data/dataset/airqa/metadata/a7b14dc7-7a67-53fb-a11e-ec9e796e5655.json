@@ -1,0 +1,20 @@
+{
+    "uuid": "a7b14dc7-7a67-53fb-a11e-ec9e796e5655",
+    "title": "Safety Alignment in NLP Tasks: Weakly Aligned Summarization as an In-Context Attack",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{fu-etal-2024-safety,\n    title = \"Safety Alignment in {NLP} Tasks: Weakly Aligned Summarization as an In-Context Attack\",\n    author = \"Fu, Yu  and\n      Li, Yufei  and\n      Xiao, Wen  and\n      Liu, Cong  and\n      Dong, Yue\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.461\",\n    doi = \"10.18653/v1/2024.acl-long.461\",\n    pages = \"8483--8502\",\n    abstract = \"Recent developments in balancing the usefulness and safety of Large Language Models (LLMs) have raised a critical question: Are mainstream NLP tasks adequately aligned with safety consideration? Our study, focusing on safety-sensitive documents obtained through adversarial attacks, reveals significant disparities in the safety alignment of various NLP tasks. For instance, LLMs can effectively summarize malicious long documents but often refuse to translate them. This discrepancy highlights a previously unidentified vulnerability: attacks exploiting tasks with weaker safety alignment, like summarization, can potentially compromise the integrity of tasks traditionally deemed more robust, such as translation and question-answering (QA). Moreover, the concurrent use of multiple NLP tasks with lesser safety alignment increases the risk of LLMs inadvertently processing harmful content. We demonstrate these vulnerabilities in various safety-aligned LLMs, particularly Llama2 models, Gemini and GPT-4, indicating an urgent need for strengthening safety alignments across a broad spectrum of NLP tasks.\",\n}\n",
+    "authors": [
+        "Yu Fu",
+        "Yufei Li",
+        "Wen Xiao",
+        "Cong Liu",
+        "Yue Dong"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.461.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a7b14dc7-7a67-53fb-a11e-ec9e796e5655.pdf",
+    "abstract": "Recent developments in balancing the usefulness and safety of Large Language Models (LLMs) have raised a critical question: Are mainstream NLP tasks adequately aligned with safety consideration? Our study, focusing on safety-sensitive documents obtained through adversarial attacks, reveals significant disparities in the safety alignment of various NLP tasks. For instance, LLMs can effectively summarize malicious long documents but often refuse to translate them. This discrepancy highlights a previously unidentified vulnerability: attacks exploiting tasks with weaker safety alignment, like summarization, can potentially compromise the integrity of tasks traditionally deemed more robust, such as translation and question-answering (QA). Moreover, the concurrent use of multiple NLP tasks with lesser safety alignment increases the risk of LLMs inadvertently processing harmful content. We demonstrate these vulnerabilities in various safety-aligned LLMs, particularly Llama2 models, Gemini and GPT-4, indicating an urgent need for strengthening safety alignments across a broad spectrum of NLP tasks.",
+    "num_pages": 20
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "e725ef8f-0b57-5493-8f22-d2d68af2cd8f",
+    "title": "LoRA-Flow: Dynamic LoRA Fusion for Large Language Models in Generative Tasks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2024-lora-flow,\n    title = \"{L}o{RA}-Flow: Dynamic {L}o{RA} Fusion for Large Language Models in Generative Tasks\",\n    author = \"Wang, Hanqing  and\n      Ping, Bowen  and\n      Wang, Shuo  and\n      Han, Xu  and\n      Chen, Yun  and\n      Liu, Zhiyuan  and\n      Sun, Maosong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.695\",\n    doi = \"10.18653/v1/2024.acl-long.695\",\n    pages = \"12871--12882\",\n    abstract = \"LoRA employs lightweight modules to customize large language models (LLMs) for each downstream task or domain, where different learned additional modules represent diverse skills. Combining existing LoRAs to address new tasks can enhance the reusability of learned LoRAs, particularly beneficial for tasks with limited annotated data. Most prior works on LoRA combination primarily rely on task-level weights for each involved LoRA, making different examples and tokens share the same LoRA weights. However, in generative tasks, different tokens may necessitate diverse skills to manage. Taking the Chinese math task as an example, understanding the problem description may depend more on the Chinese LoRA, while the calculation part may rely more on the math LoRA. To this end, we propose LoRA-Flow, which utilizes dynamic weights to adjust the impact of different LoRAs. The weights at each step are determined by a fusion gate with extremely few parameters, which can be learned with only 200 training examples. Experiments across six generative tasks demonstrate that our method consistently outperforms baselines with task-level fusion weights. This underscores the necessity of introducing dynamic fusion weights for LoRA combination.\",\n}\n",
+    "authors": [
+        "Hanqing Wang",
+        "Bowen Ping",
+        "Shuo Wang",
+        "Xu Han",
+        "Yun Chen",
+        "Zhiyuan Liu",
+        "Maosong Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.695.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e725ef8f-0b57-5493-8f22-d2d68af2cd8f.pdf",
+    "abstract": "LoRA employs lightweight modules to customize large language models (LLMs) for each downstream task or domain, where different learned additional modules represent diverse skills. Combining existing LoRAs to address new tasks can enhance the reusability of learned LoRAs, particularly beneficial for tasks with limited annotated data. Most prior works on LoRA combination primarily rely on task-level weights for each involved LoRA, making different examples and tokens share the same LoRA weights. However, in generative tasks, different tokens may necessitate diverse skills to manage. Taking the Chinese math task as an example, understanding the problem description may depend more on the Chinese LoRA, while the calculation part may rely more on the math LoRA. To this end, we propose LoRA-Flow, which utilizes dynamic weights to adjust the impact of different LoRAs. The weights at each step are determined by a fusion gate with extremely few parameters, which can be learned with only 200 training examples. Experiments across six generative tasks demonstrate that our method consistently outperforms baselines with task-level fusion weights. This underscores the necessity of introducing dynamic fusion weights for LoRA combination.",
+    "num_pages": 12
+}

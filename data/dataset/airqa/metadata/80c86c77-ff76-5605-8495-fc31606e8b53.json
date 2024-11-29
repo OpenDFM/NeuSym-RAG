@@ -1,0 +1,21 @@
+{
+    "uuid": "80c86c77-ff76-5605-8495-fc31606e8b53",
+    "title": "Context versus Prior Knowledge in Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{du-etal-2024-context,\n    title = \"Context versus Prior Knowledge in Language Models\",\n    author = \"Du, Kevin  and\n      Sn{\\ae}bjarnarson, V{\\'e}steinn  and\n      Stoehr, Niklas  and\n      White, Jennifer  and\n      Schein, Aaron  and\n      Cotterell, Ryan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.714\",\n    doi = \"10.18653/v1/2024.acl-long.714\",\n    pages = \"13211--13235\",\n    abstract = \"To answer a question, language models often need to integrate prior knowledge learned during pretraining and new information presented in context. We hypothesize that models perform this integration in a predictable way across different questions and contexts: models will rely more on prior knowledge for questions about entities (e.g., persons, places, etc.) that they are more familiar with due to higher exposure in the training corpus, and be more easily persuaded by some contexts than others. To formalize this problem, we propose two mutual information-based metrics to measure a model{'}s dependency on a context and on its prior about an entity: first, the persuasion score of a given context represents how much a model depends on the context in its decision, and second, the susceptibility score of a given entity represents how much the model can be swayed away from its original answer distribution about an entity. We empirically test our metrics for their validity and reliability. Finally, we explore and find a relationship between the scores and the model{'}s expected familiarity with an entity, and provide two use cases to illustrate their benefits.\",\n}\n",
+    "authors": [
+        "Kevin Du",
+        "Vésteinn Snæbjarnarson",
+        "Niklas Stoehr",
+        "Jennifer White",
+        "Aaron Schein",
+        "Ryan Cotterell"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.714.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/80c86c77-ff76-5605-8495-fc31606e8b53.pdf",
+    "abstract": "To answer a question, language models often need to integrate prior knowledge learned during pretraining and new information presented in context. We hypothesize that models perform this integration in a predictable way across different questions and contexts: models will rely more on prior knowledge for questions about entities (e.g., persons, places, etc.) that they are more familiar with due to higher exposure in the training corpus, and be more easily persuaded by some contexts than others. To formalize this problem, we propose two mutual information-based metrics to measure a model’s dependency on a context and on its prior about an entity: first, the persuasion score of a given context represents how much a model depends on the context in its decision, and second, the susceptibility score of a given entity represents how much the model can be swayed away from its original answer distribution about an entity. We empirically test our metrics for their validity and reliability. Finally, we explore and find a relationship between the scores and the model’s expected familiarity with an entity, and provide two use cases to illustrate their benefits.",
+    "num_pages": 25
+}

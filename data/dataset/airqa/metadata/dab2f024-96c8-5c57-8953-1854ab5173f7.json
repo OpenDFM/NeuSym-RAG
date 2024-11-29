@@ -1,0 +1,22 @@
+{
+    "uuid": "dab2f024-96c8-5c57-8953-1854ab5173f7",
+    "title": "Yale at “Discharge Me!”: Evaluating Constrained Generation of Discharge Summaries with Unstructured and Structured Information",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 23rd Workshop on Biomedical Natural Language Processing",
+    "bibtex": "@inproceedings{socrates-etal-2024-yale,\n    title = \"{Y}ale at {``}Discharge Me!{''}: Evaluating Constrained Generation of Discharge Summaries with Unstructured and Structured Information\",\n    author = \"Socrates, Vimig  and\n      Huang, Thomas  and\n      Ai, Xuguang  and\n      Fereydooni, Soraya  and\n      Chen, Qingyu  and\n      Taylor, R Andrew  and\n      Chartash, David\",\n    editor = \"Demner-Fushman, Dina  and\n      Ananiadou, Sophia  and\n      Miwa, Makoto  and\n      Roberts, Kirk  and\n      Tsujii, Junichi\",\n    booktitle = \"Proceedings of the 23rd Workshop on Biomedical Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.bionlp-1.64\",\n    doi = \"10.18653/v1/2024.bionlp-1.64\",\n    pages = \"724--730\",\n    abstract = \"In this work, we propose our top-ranking (2nd place) pipeline for the generation of discharge summary subsections as a part of the BioNLP 2024 Shared Task 2: {``}Discharge Me!{''}. We evaluate both encoder-decoder and state-of-the-art decoder-only language models on the generation of two key sections of the discharge summary. To evaluate the ability of NLP methods to further alleviate the documentation burden on physicians, we also design a novel pipeline to generate the brief hospital course directly from structured information found in the EHR. Finally, we evaluate a constrained beam search approach to inject external knowledge about relevant patient problems into the text generation process. We find that a BioBART model fine-tuned on a larger fraction of the data without constrained beam search outperforms all other models.\",\n}\n",
+    "authors": [
+        "Vimig Socrates",
+        "Thomas Huang",
+        "Xuguang Ai",
+        "Soraya Fereydooni",
+        "Qingyu Chen",
+        "R Andrew Taylor",
+        "David Chartash"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.bionlp-1.64.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/dab2f024-96c8-5c57-8953-1854ab5173f7.pdf",
+    "abstract": "In this work, we propose our top-ranking (2nd place) pipeline for the generation of discharge summary subsections as a part of the BioNLP 2024 Shared Task 2: “Discharge Me!”. We evaluate both encoder-decoder and state-of-the-art decoder-only language models on the generation of two key sections of the discharge summary. To evaluate the ability of NLP methods to further alleviate the documentation burden on physicians, we also design a novel pipeline to generate the brief hospital course directly from structured information found in the EHR. Finally, we evaluate a constrained beam search approach to inject external knowledge about relevant patient problems into the text generation process. We find that a BioBART model fine-tuned on a larger fraction of the data without constrained beam search outperforms all other models.",
+    "num_pages": 7
+}

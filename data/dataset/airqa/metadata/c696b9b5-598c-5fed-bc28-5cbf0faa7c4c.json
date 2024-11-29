@@ -1,0 +1,20 @@
+{
+    "uuid": "c696b9b5-598c-5fed-bc28-5cbf0faa7c4c",
+    "title": "What Is Overlap Knowledge in Event Argument Extraction? APE: A Cross-datasets Transfer Learning Model for EAE",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhang-etal-2023-overlap,\n    title = \"What Is Overlap Knowledge in Event Argument Extraction? {APE}: A Cross-datasets Transfer Learning Model for {EAE}\",\n    author = \"Zhang, Kaihang  and\n      Shuang, Kai  and\n      Yang, Xinyue  and\n      Yao, Xuyang  and\n      Guo, Jinyu\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.24\",\n    doi = \"10.18653/v1/2023.acl-long.24\",\n    pages = \"393--409\",\n    abstract = \"The EAE task extracts a structured event record from an event text. Most existing approaches train the EAE model on each dataset independently and ignore the overlap knowledge across datasets. However, insufficient event records in a single dataset often prevent the existing model from achieving better performance. In this paper, we clearly define the overlap knowledge across datasets and split the knowledge of the EAE task into overlap knowledge across datasets and specific knowledge of the target dataset. We propose APE model to learn the two parts of knowledge in two serial learning phases without causing catastrophic forgetting. In addition, we formulate both learning phases as conditional generation tasks and design Stressing Entity Type Prompt to close the gap between the two phases. The experiments show APE achieves new state-of-the-art with a large margin in the EAE task. When only ten records are available in the target dataset, our model dramatically outperforms the baseline model with average 27.27{\\%} F1 gain.\",\n}\n",
+    "authors": [
+        "Kaihang Zhang",
+        "Kai Shuang",
+        "Xinyue Yang",
+        "Xuyang Yao",
+        "Jinyu Guo"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.24.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/c696b9b5-598c-5fed-bc28-5cbf0faa7c4c.pdf",
+    "abstract": "The EAE task extracts a structured event record from an event text. Most existing approaches train the EAE model on each dataset independently and ignore the overlap knowledge across datasets. However, insufficient event records in a single dataset often prevent the existing model from achieving better performance. In this paper, we clearly define the overlap knowledge across datasets and split the knowledge of the EAE task into overlap knowledge across datasets and specific knowledge of the target dataset. We propose APE model to learn the two parts of knowledge in two serial learning phases without causing catastrophic forgetting. In addition, we formulate both learning phases as conditional generation tasks and design Stressing Entity Type Prompt to close the gap between the two phases. The experiments show APE achieves new state-of-the-art with a large margin in the EAE task. When only ten records are available in the target dataset, our model dramatically outperforms the baseline model with average 27.27% F1 gain.",
+    "num_pages": 17
+}

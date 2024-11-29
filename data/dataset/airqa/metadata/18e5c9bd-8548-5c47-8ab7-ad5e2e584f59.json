@@ -1,0 +1,22 @@
+{
+    "uuid": "18e5c9bd-8548-5c47-8ab7-ad5e2e584f59",
+    "title": "FutureTOD: Teaching Future Knowledge to Pre-trained Language Model for Task-Oriented Dialogue",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zeng-etal-2023-futuretod,\n    title = \"{F}uture{TOD}: Teaching Future Knowledge to Pre-trained Language Model for Task-Oriented Dialogue\",\n    author = \"Zeng, Weihao  and\n      He, Keqing  and\n      Wang, Yejie  and\n      Zeng, Chen  and\n      Wang, Jingang  and\n      Xian, Yunsen  and\n      Xu, Weiran\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.360\",\n    doi = \"10.18653/v1/2023.acl-long.360\",\n    pages = \"6532--6546\",\n    abstract = \"Pre-trained language models based on general text enable huge success in the NLP scenario. But the intrinsical difference of linguistic patterns between general text and task-oriented dialogues makes existing pre-trained language models less useful in practice. Current dialogue pre-training methods rely on a contrastive framework and face the challenges of both selecting true positives and hard negatives. In this paper, we propose a novel dialogue pre-training model, FutureTOD, which distills future knowledge to the representation of the previous dialogue context using a self-training framework. Our intuition is that a good dialogue representation both learns local context information and predicts future information. Extensive experiments on diverse downstream dialogue tasks demonstrate the effectiveness of our model, especially the generalization, robustness, and learning discriminative dialogue representations capabilities.\",\n}\n",
+    "authors": [
+        "Weihao Zeng",
+        "Keqing He",
+        "Yejie Wang",
+        "Chen Zeng",
+        "Jingang Wang",
+        "Yunsen Xian",
+        "Weiran Xu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.360.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/18e5c9bd-8548-5c47-8ab7-ad5e2e584f59.pdf",
+    "abstract": "Pre-trained language models based on general text enable huge success in the NLP scenario. But the intrinsical difference of linguistic patterns between general text and task-oriented dialogues makes existing pre-trained language models less useful in practice. Current dialogue pre-training methods rely on a contrastive framework and face the challenges of both selecting true positives and hard negatives. In this paper, we propose a novel dialogue pre-training model, FutureTOD, which distills future knowledge to the representation of the previous dialogue context using a self-training framework. Our intuition is that a good dialogue representation both learns local context information and predicts future information. Extensive experiments on diverse downstream dialogue tasks demonstrate the effectiveness of our model, especially the generalization, robustness, and learning discriminative dialogue representations capabilities.",
+    "num_pages": 15
+}

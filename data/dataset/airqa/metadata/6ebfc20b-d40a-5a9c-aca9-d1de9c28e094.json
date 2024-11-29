@@ -1,0 +1,23 @@
+{
+    "uuid": "6ebfc20b-d40a-5a9c-aca9-d1de9c28e094",
+    "title": "CMU’s IWSLT 2023 Simultaneous Speech Translation System",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)",
+    "bibtex": "@inproceedings{yan-etal-2023-cmus,\n    title = \"{CMU}{'}s {IWSLT} 2023 Simultaneous Speech Translation System\",\n    author = \"Yan, Brian  and\n      Shi, Jiatong  and\n      Maiti, Soumi  and\n      Chen, William  and\n      Li, Xinjian  and\n      Peng, Yifan  and\n      Arora, Siddhant  and\n      Watanabe, Shinji\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.iwslt-1.20\",\n    doi = \"10.18653/v1/2023.iwslt-1.20\",\n    pages = \"235--240\",\n    abstract = \"This paper describes CMU{'}s submission to the IWSLT 2023 simultaneous speech translation shared task for translating English speech to both German text and speech in a streaming fashion. We first build offline speech-to-text (ST) models using the joint CTC/attention framework. These models also use WavLM front-end features and mBART decoder initialization. We adapt our offline ST models for simultaneous speech-to-text translation (SST) by 1) incrementally encoding chunks of input speech, re-computing encoder states for each new chunk and 2) incrementally decoding output text, pruning beam search hypotheses to 1-best after processing each chunk. We then build text-to-speech (TTS) models using the VITS framework and achieve simultaneous speech-to-speech translation (SS2ST) by cascading our SST and TTS models.\",\n}\n",
+    "authors": [
+        "Brian Yan",
+        "Jiatong Shi",
+        "Soumi Maiti",
+        "William Chen",
+        "Xinjian Li",
+        "Yifan Peng",
+        "Siddhant Arora",
+        "Shinji Watanabe"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.iwslt-1.20.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/6ebfc20b-d40a-5a9c-aca9-d1de9c28e094.pdf",
+    "abstract": "This paper describes CMU’s submission to the IWSLT 2023 simultaneous speech translation shared task for translating English speech to both German text and speech in a streaming fashion. We first build offline speech-to-text (ST) models using the joint CTC/attention framework. These models also use WavLM front-end features and mBART decoder initialization. We adapt our offline ST models for simultaneous speech-to-text translation (SST) by 1) incrementally encoding chunks of input speech, re-computing encoder states for each new chunk and 2) incrementally decoding output text, pruning beam search hypotheses to 1-best after processing each chunk. We then build text-to-speech (TTS) models using the VITS framework and achieve simultaneous speech-to-speech translation (SS2ST) by cascading our SST and TTS models.",
+    "num_pages": 6
+}

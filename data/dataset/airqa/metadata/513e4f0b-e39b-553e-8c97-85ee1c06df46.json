@@ -1,0 +1,20 @@
+{
+    "uuid": "513e4f0b-e39b-553e-8c97-85ee1c06df46",
+    "title": "Towards Faithful and Robust LLM Specialists for Evidence-Based Question-Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{schimanski-etal-2024-towards,\n    title = \"Towards Faithful and Robust {LLM} Specialists for Evidence-Based Question-Answering\",\n    author = \"Schimanski, Tobias  and\n      Ni, Jingwei  and\n      Kraus, Mathias  and\n      Ash, Elliott  and\n      Leippold, Markus\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.105\",\n    doi = \"10.18653/v1/2024.acl-long.105\",\n    pages = \"1913--1931\",\n    abstract = \"Advances towards more faithful and traceable answers of Large Language Models (LLMs) are crucial for various research and practical endeavors. One avenue in reaching this goal is basing the answers on reliable sources. However, this Evidence-Based QA has proven to work insufficiently with LLMs in terms of citing the correct sources (source quality) and truthfully representing the information within sources (answer attributability). In this work, we systematically investigate how to robustly fine-tune LLMs for better source quality and answer attributability. Specifically, we introduce a data generation pipeline with automated data quality filters, which can synthesize diversified high-quality training and testing data at scale. We further introduce four test sets to benchmark the robustness of fine-tuned specialist models. Extensive evaluation shows that fine-tuning on synthetic data improves performance on both in- and out-of-distribution. Furthermore, we show that data quality, which can be drastically improved by proposed quality filters, matters more than quantity in improving Evidence-Based QA.\",\n}\n",
+    "authors": [
+        "Tobias Schimanski",
+        "Jingwei Ni",
+        "Mathias Kraus",
+        "Elliott Ash",
+        "Markus Leippold"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.105.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/513e4f0b-e39b-553e-8c97-85ee1c06df46.pdf",
+    "abstract": "Advances towards more faithful and traceable answers of Large Language Models (LLMs) are crucial for various research and practical endeavors. One avenue in reaching this goal is basing the answers on reliable sources. However, this Evidence-Based QA has proven to work insufficiently with LLMs in terms of citing the correct sources (source quality) and truthfully representing the information within sources (answer attributability). In this work, we systematically investigate how to robustly fine-tune LLMs for better source quality and answer attributability. Specifically, we introduce a data generation pipeline with automated data quality filters, which can synthesize diversified high-quality training and testing data at scale. We further introduce four test sets to benchmark the robustness of fine-tuned specialist models. Extensive evaluation shows that fine-tuning on synthetic data improves performance on both in- and out-of-distribution. Furthermore, we show that data quality, which can be drastically improved by proposed quality filters, matters more than quantity in improving Evidence-Based QA.",
+    "num_pages": 19
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "64d14f18-24ce-50b5-ae9d-070cfe84e758",
+    "title": "JumpCoder: Go Beyond Autoregressive Coder via Online Modification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2024-jumpcoder,\n    title = \"{J}ump{C}oder: Go Beyond Autoregressive Coder via Online Modification\",\n    author = \"Chen, Mouxiang  and\n      Tian, Hao  and\n      Liu, Zhongxin  and\n      Ren, Xiaoxue  and\n      Sun, Jianling\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.619\",\n    doi = \"10.18653/v1/2024.acl-long.619\",\n    pages = \"11500--11520\",\n    abstract = \"While existing code large language models (code LLMs) exhibit impressive capabilities in code generation, their autoregressive sequential generation inherently lacks reversibility. This limitation hinders them from timely correcting previous missing statements during coding as humans do, often leading to error propagation and suboptimal performance. We introduce JumpCoder, a novel model-agnostic framework that enables human-like online modification and non-sequential generation to augment code LLMs. The key idea behind JumpCoder is to insert new code into the currently generated code when necessary during generation, which is achieved through an auxiliary infilling model that works in tandem with the code LLM. Since identifying the best infill position beforehand is intractable, we adopt an infill-first, judge-later strategy, which experiments with filling at the $k$ most critical positions following the generation of each line, and uses an Abstract Syntax Tree (AST) parser alongside the Generation Model Scoring to effectively judge the validity of each potential infill. Extensive experiments using six state-of-the-art code LLMs across multiple and multilingual benchmarks consistently indicate significant improvements over all baselines. Our code is available in the uploaded attachment.\",\n}\n",
+    "authors": [
+        "Mouxiang Chen",
+        "Hao Tian",
+        "Zhongxin Liu",
+        "Xiaoxue Ren",
+        "Jianling Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.619.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/64d14f18-24ce-50b5-ae9d-070cfe84e758.pdf",
+    "abstract": "While existing code large language models (code LLMs) exhibit impressive capabilities in code generation, their autoregressive sequential generation inherently lacks reversibility. This limitation hinders them from timely correcting previous missing statements during coding as humans do, often leading to error propagation and suboptimal performance. We introduce JumpCoder, a novel model-agnostic framework that enables human-like online modification and non-sequential generation to augment code LLMs. The key idea behind JumpCoder is to insert new code into the currently generated code when necessary during generation, which is achieved through an auxiliary infilling model that works in tandem with the code LLM. Since identifying the best infill position beforehand is intractable, we adopt an infill-first, judge-later strategy, which experiments with filling at the k most critical positions following the generation of each line, and uses an Abstract Syntax Tree (AST) parser alongside the Generation Model Scoring to effectively judge the validity of each potential infill. Extensive experiments using six state-of-the-art code LLMs across multiple and multilingual benchmarks consistently indicate significant improvements over all baselines. Our code is available in the uploaded attachment.",
+    "num_pages": 21
+}

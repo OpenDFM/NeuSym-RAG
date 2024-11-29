@@ -1,0 +1,25 @@
+{
+    "uuid": "efeed2cb-a67a-5c0c-acf0-5515eace6d6e",
+    "title": "Bridging the Granularity Gap for Acoustic Modeling",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{xu-etal-2023-bridging,\n    title = \"Bridging the Granularity Gap for Acoustic Modeling\",\n    author = \"Xu, Chen  and\n      Zhang, Yuhao  and\n      Jiao, Chengbo  and\n      Liu, Xiaoqian  and\n      Hu, Chi  and\n      Zeng, Xin  and\n      Xiao, Tong  and\n      Ma, Anxiang  and\n      Wang, Huizhen  and\n      Zhu, Jingbo\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.688\",\n    doi = \"10.18653/v1/2023.findings-acl.688\",\n    pages = \"10816--10833\",\n    abstract = \"While Transformer has become the de-facto standard for speech, modeling upon the fine-grained frame-level features remains an open challenge of capturing long-distance dependencies and distributing the attention weights. We propose Progressive Down-Sampling (PDS) which gradually compresses the acoustic features into coarser-grained units containing more complete semantic information, like text-level representation. In addition, we develop a representation fusion method to alleviate information loss that occurs inevitably during high compression. In this way, we compress the acoustic features into 1/32 of the initial length while achieving better or comparable performances on the speech recognition task. And as a bonus, it yields inference speedups ranging from 1.20x to 1.47x.By reducing the modeling burden, we also achieve competitive results when training on the more challenging speech translation task.\",\n}\n",
+    "authors": [
+        "Chen Xu",
+        "Yuhao Zhang",
+        "Chengbo Jiao",
+        "Xiaoqian Liu",
+        "Chi Hu",
+        "Xin Zeng",
+        "Tong Xiao",
+        "Anxiang Ma",
+        "Huizhen Wang",
+        "Jingbo Zhu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.688.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/efeed2cb-a67a-5c0c-acf0-5515eace6d6e.pdf",
+    "abstract": "While Transformer has become the de-facto standard for speech, modeling upon the fine-grained frame-level features remains an open challenge of capturing long-distance dependencies and distributing the attention weights. We propose Progressive Down-Sampling (PDS) which gradually compresses the acoustic features into coarser-grained units containing more complete semantic information, like text-level representation. In addition, we develop a representation fusion method to alleviate information loss that occurs inevitably during high compression. In this way, we compress the acoustic features into 1/32 of the initial length while achieving better or comparable performances on the speech recognition task. And as a bonus, it yields inference speedups ranging from 1.20x to 1.47x.By reducing the modeling burden, we also achieve competitive results when training on the more challenging speech translation task.",
+    "num_pages": 18
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "d9bc984b-6284-5eab-bfc7-d05e439b0c6c",
+    "title": "ICC : Quantifying Image Caption Concreteness for Multimodal Dataset Curation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{yanuka-etal-2024-icc,\n    title = \"{ICC} : Quantifying Image Caption Concreteness for Multimodal Dataset Curation\",\n    author = \"Yanuka, Moran  and\n      Alper, Morris  and\n      Averbuch-Elor, Hadar  and\n      Giryes, Raja\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.657\",\n    doi = \"10.18653/v1/2024.findings-acl.657\",\n    pages = \"11048--11064\",\n    abstract = \"Web-scale training on paired text-image data is becoming increasingly central to multimodal learning, but is challenged by the highly noisy nature of datasets in the wild. Standard data filtering approaches succeed in removing mismatched text-image pairs, but permit semantically related but highly abstract or subjective text. These approaches lack the fine-grained ability to isolate the most concrete samples that provide the strongest signal for learning in a noisy dataset. In this work, we propose a new metric, Image Caption Concreteness (ICC), that evaluates caption text without an image reference to measure its concreteness and relevancy for use in multimodal learning. Our unsupervised approach leverages strong foundation models for measuring visual-semantic information loss in multimodal representations. We demonstrate that this strongly correlates with human evaluation of concreteness in both single-word and caption-level texts. Moreover, we show that curation using ICC complements existing approaches: It succeeds in selecting the highest quality samples from multimodal web-scale datasets to allow for efficient training in resource-constrained settings.\",\n}\n",
+    "authors": [
+        "Moran Yanuka",
+        "Morris Alper",
+        "Hadar Averbuch-Elor",
+        "Raja Giryes"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.657.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d9bc984b-6284-5eab-bfc7-d05e439b0c6c.pdf",
+    "abstract": "Web-scale training on paired text-image data is becoming increasingly central to multimodal learning, but is challenged by the highly noisy nature of datasets in the wild. Standard data filtering approaches succeed in removing mismatched text-image pairs, but permit semantically related but highly abstract or subjective text. These approaches lack the fine-grained ability to isolate the most concrete samples that provide the strongest signal for learning in a noisy dataset. In this work, we propose a new metric, Image Caption Concreteness (ICC), that evaluates caption text without an image reference to measure its concreteness and relevancy for use in multimodal learning. Our unsupervised approach leverages strong foundation models for measuring visual-semantic information loss in multimodal representations. We demonstrate that this strongly correlates with human evaluation of concreteness in both single-word and caption-level texts. Moreover, we show that curation using ICC complements existing approaches: It succeeds in selecting the highest quality samples from multimodal web-scale datasets to allow for efficient training in resource-constrained settings.",
+    "num_pages": 17
+}

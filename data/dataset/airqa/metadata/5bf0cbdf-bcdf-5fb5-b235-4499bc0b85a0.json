@@ -1,0 +1,20 @@
+{
+    "uuid": "5bf0cbdf-bcdf-5fb5-b235-4499bc0b85a0",
+    "title": "CocaCLIP: Exploring Distillation of Fully-Connected Knowledge Interaction Graph for Lightweight Text-Image Retrieval",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)",
+    "bibtex": "@inproceedings{wang-etal-2023-cocaclip,\n    title = \"{C}oca{CLIP}: Exploring Distillation of Fully-Connected Knowledge Interaction Graph for Lightweight Text-Image Retrieval\",\n    author = \"Wang, Jiapeng  and\n      Wang, Chengyu  and\n      Wang, Xiaodan  and\n      Huang, Jun  and\n      Jin, Lianwen\",\n    editor = \"Sitaram, Sunayana  and\n      Beigman Klebanov, Beata  and\n      Williams, Jason D\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-industry.8\",\n    doi = \"10.18653/v1/2023.acl-industry.8\",\n    pages = \"71--80\",\n    abstract = \"Large-scale pre-trained text-image models with dual-encoder architectures (such as CLIP) are typically adopted for various vision-language applications, including text-image retrieval. However, these models are still less practical on edge devices or for real-time situations, due to the substantial indexing and inference time and the large consumption of computational resources. Although knowledge distillation techniques have been widely utilized for uni-modal model compression, how to expand them to the situation when the numbers of modalities and teachers/students are doubled has been rarely studied. In this paper, we conduct comprehensive experiments on this topic and propose the fully-Connected knowledge interaction graph (Coca) technique for cross-modal pre-training distillation. Based on our findings, the resulting CocaCLIP achieves SOTA performances on the widely-used Flickr30K and MSCOCO benchmarks under the lightweight setting. An industry application of our method on an e-commercial platform further demonstrates the significant effectiveness of CocaCLIP.\",\n}\n",
+    "authors": [
+        "Jiapeng Wang",
+        "Chengyu Wang",
+        "Xiaodan Wang",
+        "Jun Huang",
+        "Lianwen Jin"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-industry.8.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/5bf0cbdf-bcdf-5fb5-b235-4499bc0b85a0.pdf",
+    "abstract": "Large-scale pre-trained text-image models with dual-encoder architectures (such as CLIP) are typically adopted for various vision-language applications, including text-image retrieval. However, these models are still less practical on edge devices or for real-time situations, due to the substantial indexing and inference time and the large consumption of computational resources. Although knowledge distillation techniques have been widely utilized for uni-modal model compression, how to expand them to the situation when the numbers of modalities and teachers/students are doubled has been rarely studied. In this paper, we conduct comprehensive experiments on this topic and propose the fully-Connected knowledge interaction graph (Coca) technique for cross-modal pre-training distillation. Based on our findings, the resulting CocaCLIP achieves SOTA performances on the widely-used Flickr30K and MSCOCO benchmarks under the lightweight setting. An industry application of our method on an e-commercial platform further demonstrates the significant effectiveness of CocaCLIP.",
+    "num_pages": 10
+}

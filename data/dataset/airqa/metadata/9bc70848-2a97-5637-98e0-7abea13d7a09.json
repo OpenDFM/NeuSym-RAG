@@ -1,0 +1,22 @@
+{
+    "uuid": "9bc70848-2a97-5637-98e0-7abea13d7a09",
+    "title": "Exploiting Abstract Meaning Representation for Open-Domain Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wang-etal-2023-exploiting,\n    title = \"Exploiting {A}bstract {M}eaning {R}epresentation for Open-Domain Question Answering\",\n    author = \"Wang, Cunxiang  and\n      Xu, Zhikun  and\n      Guo, Qipeng  and\n      Hu, Xiangkun  and\n      Bai, Xuefeng  and\n      Zhang, Zheng  and\n      Zhang, Yue\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.131\",\n    doi = \"10.18653/v1/2023.findings-acl.131\",\n    pages = \"2083--2096\",\n    abstract = \"The Open-Domain Question Answering (ODQA) task involves retrieving and subsequently generating answers from fine-grained relevant passages within a database. Current systems leverage Pretrained Language Models (PLMs) to model the relationship between questions and passages. However, the diversity in surface form expressions can hinder the model{'}s ability to capture accurate correlations, especially within complex contexts. Therefore, we utilize Abstract Meaning Representation (AMR) graphs to assist the model in understanding complex semantic information. We introduce a method known as Graph-as-Token (GST) to incorporate AMRs into PLMs. Results from Natural Questions (NQ) and TriviaQA (TQ) demonstrate that our GST method can significantly improve performance, resulting in up to 2.44/3.17 Exact Match score improvements on NQ/TQ respectively. Furthermore, our method enhances robustness and outperforms alternative Graph Neural Network (GNN) methods for integrating AMRs. To the best of our knowledge, we are the first to employ semantic graphs in ODQA.\",\n}\n",
+    "authors": [
+        "Cunxiang Wang",
+        "Zhikun Xu",
+        "Qipeng Guo",
+        "Xiangkun Hu",
+        "Xuefeng Bai",
+        "Zheng Zhang",
+        "Yue Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.131.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9bc70848-2a97-5637-98e0-7abea13d7a09.pdf",
+    "abstract": "The Open-Domain Question Answering (ODQA) task involves retrieving and subsequently generating answers from fine-grained relevant passages within a database. Current systems leverage Pretrained Language Models (PLMs) to model the relationship between questions and passages. However, the diversity in surface form expressions can hinder the model’s ability to capture accurate correlations, especially within complex contexts. Therefore, we utilize Abstract Meaning Representation (AMR) graphs to assist the model in understanding complex semantic information. We introduce a method known as Graph-as-Token (GST) to incorporate AMRs into PLMs. Results from Natural Questions (NQ) and TriviaQA (TQ) demonstrate that our GST method can significantly improve performance, resulting in up to 2.44/3.17 Exact Match score improvements on NQ/TQ respectively. Furthermore, our method enhances robustness and outperforms alternative Graph Neural Network (GNN) methods for integrating AMRs. To the best of our knowledge, we are the first to employ semantic graphs in ODQA.",
+    "num_pages": 14
+}

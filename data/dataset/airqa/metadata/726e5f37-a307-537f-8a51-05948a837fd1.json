@@ -1,0 +1,18 @@
+{
+    "uuid": "726e5f37-a307-537f-8a51-05948a837fd1",
+    "title": "Listener Model for the PhotoBook Referential Game with CLIPScores as Implicit Reference Chain",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{wu-etal-2023-listener,\n    title = \"Listener Model for the {P}hoto{B}ook Referential Game with {CLIPS}cores as Implicit Reference Chain\",\n    author = \"Wu, Shih-Lun  and\n      Chou, Yi-Hui  and\n      Li, Liangze\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.121\",\n    doi = \"10.18653/v1/2023.acl-short.121\",\n    pages = \"1420--1432\",\n    abstract = \"PhotoBook is a collaborative dialogue game where two players receive private, partially-overlapping sets of images and resolve which images they have in common. It presents machines with a great challenge to learn how people build common ground around multimodal context to communicate effectively. Methods developed in the literature, however, cannot be deployed to real gameplaysince they only tackle some subtasks of the game,and they require additional reference chains inputs, whose extraction process is imperfect. Therefore, we propose a reference chain-free listener modelthat directly addresses the game{'}s predictive task, i.e., deciding whether an image is shared with partner. Our DeBERTa-based listener model reads the full dialogue, and utilizesCLIPScore features to assess utterance-image relevance. We achieve {\\textgreater}77{\\%} accuracy on unseen sets of images/game themes, outperforming baseline by {\\textgreater}17 points.\",\n}\n",
+    "authors": [
+        "Shih-Lun Wu",
+        "Yi-Hui Chou",
+        "Liangze Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.121.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/726e5f37-a307-537f-8a51-05948a837fd1.pdf",
+    "abstract": "PhotoBook is a collaborative dialogue game where two players receive private, partially-overlapping sets of images and resolve which images they have in common. It presents machines with a great challenge to learn how people build common ground around multimodal context to communicate effectively. Methods developed in the literature, however, cannot be deployed to real gameplaysince they only tackle some subtasks of the game,and they require additional reference chains inputs, whose extraction process is imperfect. Therefore, we propose a reference chain-free listener modelthat directly addresses the game’s predictive task, i.e., deciding whether an image is shared with partner. Our DeBERTa-based listener model reads the full dialogue, and utilizesCLIPScore features to assess utterance-image relevance. We achieve >77% accuracy on unseen sets of images/game themes, outperforming baseline by >17 points.",
+    "num_pages": 13
+}

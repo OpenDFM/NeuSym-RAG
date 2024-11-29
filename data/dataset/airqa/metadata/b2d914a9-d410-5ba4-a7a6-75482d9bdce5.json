@@ -1,0 +1,21 @@
+{
+    "uuid": "b2d914a9-d410-5ba4-a7a6-75482d9bdce5",
+    "title": "Instruct Once, Chat Consistently in Multiple Rounds: An Efficient Tuning Framework for Dialogue",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2024-instruct,\n    title = \"Instruct Once, Chat Consistently in Multiple Rounds: An Efficient Tuning Framework for Dialogue\",\n    author = \"Wang, Jian  and\n      Leong, Chak Tou  and\n      Wang, Jiashuo  and\n      Lin, Dongding  and\n      Li, Wenjie  and\n      Wei, Xiaoyong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.219\",\n    doi = \"10.18653/v1/2024.acl-long.219\",\n    pages = \"3993--4010\",\n    abstract = \"Tuning language models for dialogue generation has been a prevalent paradigm for building capable dialogue agents. Yet, traditional tuning narrowly views dialogue generation as resembling other language generation tasks, ignoring the role disparities between two speakers and the multi-round interactive process that dialogues ought to be. Such a manner often leads to unsatisfactory chat consistency for the built agent. In this work, we emphasize the interactive, communicative nature of dialogue and argue that it is more feasible to model the speaker roles of agent and user separately, enabling the agent to adhere to its role consistently. With this in mind, we propose an efficient Multi-round Interactive Dialogue Tuning (Midi-Tuning) framework. It models the agent and user individually with two adapters built upon large language models. The adapters make use of respective utterances round by round in alternating order and they are tuned via a round-level memory caching mechanism. Extensive experiments demonstrate that, our framework performs superior to traditional fine-tuning and harbors the tremendous potential for improving dialogue consistency.\",\n}\n",
+    "authors": [
+        "Jian Wang",
+        "Chak Tou Leong",
+        "Jiashuo Wang",
+        "Dongding Lin",
+        "Wenjie Li",
+        "Xiaoyong Wei"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.219.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/b2d914a9-d410-5ba4-a7a6-75482d9bdce5.pdf",
+    "abstract": "Tuning language models for dialogue generation has been a prevalent paradigm for building capable dialogue agents. Yet, traditional tuning narrowly views dialogue generation as resembling other language generation tasks, ignoring the role disparities between two speakers and the multi-round interactive process that dialogues ought to be. Such a manner often leads to unsatisfactory chat consistency for the built agent. In this work, we emphasize the interactive, communicative nature of dialogue and argue that it is more feasible to model the speaker roles of agent and user separately, enabling the agent to adhere to its role consistently. With this in mind, we propose an efficient Multi-round Interactive Dialogue Tuning (Midi-Tuning) framework. It models the agent and user individually with two adapters built upon large language models. The adapters make use of respective utterances round by round in alternating order and they are tuned via a round-level memory caching mechanism. Extensive experiments demonstrate that, our framework performs superior to traditional fine-tuning and harbors the tremendous potential for improving dialogue consistency.",
+    "num_pages": 18
+}

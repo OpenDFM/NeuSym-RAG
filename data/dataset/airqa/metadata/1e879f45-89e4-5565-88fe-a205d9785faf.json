@@ -1,0 +1,20 @@
+{
+    "uuid": "1e879f45-89e4-5565-88fe-a205d9785faf",
+    "title": "Neural Topic Modeling based on Cycle Adversarial Training and Contrastive Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{wang-etal-2023-neural,\n    title = \"Neural Topic Modeling based on Cycle Adversarial Training and Contrastive Learning\",\n    author = \"Wang, Boyu  and\n      Zhang, Linhai  and\n      Zhou, Deyu  and\n      Cao, Yi  and\n      Ding, Jiandong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.616\",\n    doi = \"10.18653/v1/2023.findings-acl.616\",\n    pages = \"9720--9731\",\n    abstract = \"Neural topic models have been widely used to extract common topics across documents. Recently, contrastive learning has been applied to variational autoencoder-based neural topic models, achieving promising results. However, due to the limitation of the unidirectional structure of the variational autoencoder, the encoder is enhanced with the contrastive loss instead of the decoder, leading to a gap between model training and evaluation. To address the limitation, we propose a novel neural topic modeling framework based on cycle adversarial training and contrastive learning to apply contrastive learning on the generator directly. Specifically, a self-supervised contrastive loss is proposed to make the generator capture similar topic information, which leads to better topic-word distributions. Meanwhile, a discriminative contrastive loss is proposed to cooperate with the self-supervised contrastive loss to balance the generation and discrimination. Moreover, based on the reconstruction ability of the cycle generative adversarial network, a novel data augmentation strategy is designed and applied to the topic distribution directly. Experiments have been conducted on four benchmark datasets and results show that the proposed approach outperforms competitive baselines.\",\n}\n",
+    "authors": [
+        "Boyu Wang",
+        "Linhai Zhang",
+        "Deyu Zhou",
+        "Yi Cao",
+        "Jiandong Ding"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.616.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1e879f45-89e4-5565-88fe-a205d9785faf.pdf",
+    "abstract": "Neural topic models have been widely used to extract common topics across documents. Recently, contrastive learning has been applied to variational autoencoder-based neural topic models, achieving promising results. However, due to the limitation of the unidirectional structure of the variational autoencoder, the encoder is enhanced with the contrastive loss instead of the decoder, leading to a gap between model training and evaluation. To address the limitation, we propose a novel neural topic modeling framework based on cycle adversarial training and contrastive learning to apply contrastive learning on the generator directly. Specifically, a self-supervised contrastive loss is proposed to make the generator capture similar topic information, which leads to better topic-word distributions. Meanwhile, a discriminative contrastive loss is proposed to cooperate with the self-supervised contrastive loss to balance the generation and discrimination. Moreover, based on the reconstruction ability of the cycle generative adversarial network, a novel data augmentation strategy is designed and applied to the topic distribution directly. Experiments have been conducted on four benchmark datasets and results show that the proposed approach outperforms competitive baselines.",
+    "num_pages": 12
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "271a15a3-aff2-573e-a987-5422615b67cb",
+    "title": "Multilingual Instruction Tuning With Just a Pinch of Multilinguality",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{shaham-etal-2024-multilingual,\n    title = \"Multilingual Instruction Tuning With Just a Pinch of Multilinguality\",\n    author = \"Shaham, Uri  and\n      Herzig, Jonathan  and\n      Aharoni, Roee  and\n      Szpektor, Idan  and\n      Tsarfaty, Reut  and\n      Eyal, Matan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.136\",\n    doi = \"10.18653/v1/2024.findings-acl.136\",\n    pages = \"2304--2317\",\n    abstract = \"As instruction-tuned large language models (LLMs) gain global adoption, their ability to follow instructions in multiple languages becomes increasingly crucial. In this work, we investigate how multilinguality during instruction tuning of a multilingual LLM affects instruction-following across languages from the pre-training corpus. We first show that many languages transfer some instruction-following capabilities to other languages from even monolingual tuning. Furthermore, we find that only 40 multilingual examples integrated in an English tuning set substantially improve multilingual instruction-following, both in seen and unseen languages during tuning. In general, we observe that models tuned on multilingual mixtures exhibit comparable or superior performance in multiple languages compared to monolingually tuned models, despite training on 10x fewer examples in those languages. Finally, we find that diversifying the instruction tuning set with even just 2-4 languages significantly improves cross-lingual generalization. Our results suggest that building massively multilingual instruction-tuned models can be done with only a very small set of multilingual instruction-responses.\",\n}\n",
+    "authors": [
+        "Uri Shaham",
+        "Jonathan Herzig",
+        "Roee Aharoni",
+        "Idan Szpektor",
+        "Reut Tsarfaty",
+        "Matan Eyal"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.136.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/271a15a3-aff2-573e-a987-5422615b67cb.pdf",
+    "abstract": "As instruction-tuned large language models (LLMs) gain global adoption, their ability to follow instructions in multiple languages becomes increasingly crucial. In this work, we investigate how multilinguality during instruction tuning of a multilingual LLM affects instruction-following across languages from the pre-training corpus. We first show that many languages transfer some instruction-following capabilities to other languages from even monolingual tuning. Furthermore, we find that only 40 multilingual examples integrated in an English tuning set substantially improve multilingual instruction-following, both in seen and unseen languages during tuning. In general, we observe that models tuned on multilingual mixtures exhibit comparable or superior performance in multiple languages compared to monolingually tuned models, despite training on 10x fewer examples in those languages. Finally, we find that diversifying the instruction tuning set with even just 2-4 languages significantly improves cross-lingual generalization. Our results suggest that building massively multilingual instruction-tuned models can be done with only a very small set of multilingual instruction-responses.",
+    "num_pages": 14
+}

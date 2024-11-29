@@ -1,0 +1,21 @@
+{
+    "uuid": "baab06bf-f7ca-5486-b84c-b1f331e0610a",
+    "title": "Complementary Explanations for Effective In-Context Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{ye-etal-2023-complementary,\n    title = \"Complementary Explanations for Effective In-Context Learning\",\n    author = \"Ye, Xi  and\n      Iyer, Srinivasan  and\n      Celikyilmaz, Asli  and\n      Stoyanov, Veselin  and\n      Durrett, Greg  and\n      Pasunuru, Ramakanth\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.273\",\n    doi = \"10.18653/v1/2023.findings-acl.273\",\n    pages = \"4469--4484\",\n    abstract = \"Large language models (LLMs) have exhibited remarkable capabilities in learning from expla- nations in prompts, but there has been limited understanding of exactly how these explana- tions function or why they are effective. This work aims to better understand the mechanisms by which explanations are used for in-context learning. We first study the impact of two dif- ferent factors on the performance of prompts with explanations: the computation trace (the way the solution is decomposed) and the natural language used to express the prompt. By per- turbing explanations on three controlled tasks, we show that both factors contribute to the ef- fectiveness of explanations. We further study how to form maximally effective sets of expla- nations for solving a given test query. We find that LLMs can benefit from the complemen- tarity of the explanation set: diverse reasoning skills shown by different exemplars can lead to better performance. Therefore, we propose a maximal marginal relevance-based exemplar selection approach for constructing exemplar sets that are both relevant as well as comple- mentary, which successfully improves the in- context learning performance across three real- world tasks on multiple LLMs.\",\n}\n",
+    "authors": [
+        "Xi Ye",
+        "Srinivasan Iyer",
+        "Asli Celikyilmaz",
+        "Veselin Stoyanov",
+        "Greg Durrett",
+        "Ramakanth Pasunuru"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.273.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/baab06bf-f7ca-5486-b84c-b1f331e0610a.pdf",
+    "abstract": "Large language models (LLMs) have exhibited remarkable capabilities in learning from expla- nations in prompts, but there has been limited understanding of exactly how these explana- tions function or why they are effective. This work aims to better understand the mechanisms by which explanations are used for in-context learning. We first study the impact of two dif- ferent factors on the performance of prompts with explanations: the computation trace (the way the solution is decomposed) and the natural language used to express the prompt. By per- turbing explanations on three controlled tasks, we show that both factors contribute to the ef- fectiveness of explanations. We further study how to form maximally effective sets of expla- nations for solving a given test query. We find that LLMs can benefit from the complemen- tarity of the explanation set: diverse reasoning skills shown by different exemplars can lead to better performance. Therefore, we propose a maximal marginal relevance-based exemplar selection approach for constructing exemplar sets that are both relevant as well as comple- mentary, which successfully improves the in- context learning performance across three real- world tasks on multiple LLMs.",
+    "num_pages": 16
+}

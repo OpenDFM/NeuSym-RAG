@@ -1,0 +1,18 @@
+{
+    "uuid": "3677ecb8-595b-5a34-9140-bedf4e5277a5",
+    "title": "PREADD: Prefix-Adaptive Decoding for Controlled Text Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{pei-etal-2023-preadd,\n    title = \"{PREADD}: Prefix-Adaptive Decoding for Controlled Text Generation\",\n    author = \"Pei, Jonathan  and\n      Yang, Kevin  and\n      Klein, Dan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.636\",\n    doi = \"10.18653/v1/2023.findings-acl.636\",\n    pages = \"10018--10037\",\n    abstract = \"We propose Prefix-Adaptive Decoding (PREADD), a flexible method for controlled text generation. Unlike existing methods that use auxiliary expert models to control for attributes, PREADD does not require an external model, instead relying on linearly combining output logits from multiple prompts. Specifically, PREADD contrasts the output logits generated using a raw prompt against those generated using a prefix-prepended prompt, enabling both positive and negative control with respect to any attribute encapsulated by the prefix. We evaluate PREADD on three tasks{---}toxic output mitigation, gender bias reduction, and sentiment control{---}and find that PREADD outperforms not only prompting baselines, but also an auxiliary-expert control method, by 12{\\%} or more in relative gain on our main metrics for each task.\",\n}\n",
+    "authors": [
+        "Jonathan Pei",
+        "Kevin Yang",
+        "Dan Klein"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.636.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/3677ecb8-595b-5a34-9140-bedf4e5277a5.pdf",
+    "abstract": "We propose Prefix-Adaptive Decoding (PREADD), a flexible method for controlled text generation. Unlike existing methods that use auxiliary expert models to control for attributes, PREADD does not require an external model, instead relying on linearly combining output logits from multiple prompts. Specifically, PREADD contrasts the output logits generated using a raw prompt against those generated using a prefix-prepended prompt, enabling both positive and negative control with respect to any attribute encapsulated by the prefix. We evaluate PREADD on three tasks—toxic output mitigation, gender bias reduction, and sentiment control—and find that PREADD outperforms not only prompting baselines, but also an auxiliary-expert control method, by 12% or more in relative gain on our main metrics for each task.",
+    "num_pages": 20
+}

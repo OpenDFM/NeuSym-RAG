@@ -1,0 +1,23 @@
+{
+    "uuid": "a9054572-75d8-51a8-a6dd-1c6a7ded2664",
+    "title": "Se2: Sequential Example Selection for In-Context Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{liu-etal-2024-se2,\n    title = \"$Se^2$: Sequential Example Selection for In-Context Learning\",\n    author = \"Liu, Haoyu  and\n      Liu, Jianfeng  and\n      Huang, Shaohan  and\n      Zhan, Yuefeng  and\n      Sun, Hao  and\n      Deng, Weiwei  and\n      Wei, Furu  and\n      Zhang, Qi\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.312\",\n    doi = \"10.18653/v1/2024.findings-acl.312\",\n    pages = \"5262--5284\",\n    abstract = \"The remarkable capability of large language models(LLMs) for in-context learning(ICL) needs to be activated by demonstration examples. Prior work has extensively explored the selection of examples for ICL, predominantly following the {``}select then organize{''} paradigm, such approaches often neglect the internal relationships between examples and exist an inconsistency between the training and inference. In this paper, we formulate the problem as a $Se$quential $Se$lection problem and introduce $Se^2$, a sequential-aware method that leverages the LLM{'}s feedback on varying context, aiding in capturing inter-relationships and sequential information among examples, significantly enriching the contextuality and relevance of ICL prompts. Meanwhile, we utilize beam search to seek and construct example sequences, enhancing both quality and diversity. Extensive experiments across 23 NLP tasks from 8 distinct categories illustrate that $Se^2$ markedly surpasses competitive baselines and achieves 42{\\%} relative improvement over random selection. Further in-depth analysis shows the effectiveness of proposed strategies, highlighting $Se^2${`}s exceptional stability and adaptability across various scenarios. Code available at https://github.com/microsoft/LMOps.\",\n}\n",
+    "authors": [
+        "Haoyu Liu",
+        "Jianfeng Liu",
+        "Shaohan Huang",
+        "Yuefeng Zhan",
+        "Hao Sun",
+        "Weiwei Deng",
+        "Furu Wei",
+        "Qi Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.312.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a9054572-75d8-51a8-a6dd-1c6a7ded2664.pdf",
+    "abstract": "The remarkable capability of large language models(LLMs) for in-context learning(ICL) needs to be activated by demonstration examples. Prior work has extensively explored the selection of examples for ICL, predominantly following the “select then organize” paradigm, such approaches often neglect the internal relationships between examples and exist an inconsistency between the training and inference. In this paper, we formulate the problem as a Sequential Selection problem and introduce Se2, a sequential-aware method that leverages the LLM’s feedback on varying context, aiding in capturing inter-relationships and sequential information among examples, significantly enriching the contextuality and relevance of ICL prompts. Meanwhile, we utilize beam search to seek and construct example sequences, enhancing both quality and diversity. Extensive experiments across 23 NLP tasks from 8 distinct categories illustrate that Se2 markedly surpasses competitive baselines and achieves 42% relative improvement over random selection. Further in-depth analysis shows the effectiveness of proposed strategies, highlighting Se2‘s exceptional stability and adaptability across various scenarios. Code available at https://github.com/microsoft/LMOps.",
+    "num_pages": 23
+}

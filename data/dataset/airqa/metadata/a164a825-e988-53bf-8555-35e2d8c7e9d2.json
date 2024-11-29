@@ -1,0 +1,17 @@
+{
+    "uuid": "a164a825-e988-53bf-8555-35e2d8c7e9d2",
+    "title": "Pruning Pre-trained Language Models with Principled Importance and Self-regularization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{ren-zhu-2023-pruning,\n    title = \"Pruning Pre-trained Language Models with Principled Importance and Self-regularization\",\n    author = \"Ren, Siyu  and\n      Zhu, Kenny\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.573\",\n    doi = \"10.18653/v1/2023.findings-acl.573\",\n    pages = \"8995--9008\",\n    abstract = \"Iterative pruning is one of the most effective compression methods for pre-trained language models. We discovered that finding the optimal pruning decision is an equality-constrained 0-1 Integer Linear Programming problem. The solution to this optimization problem leads to a principled importance criterion which we use to rank parameters during iterative model pruning. To mitigate the poor generalization at high sparsity levels, we propose a self-regularization scheme where model prediction is regularized by the latest checkpoint with increasing sparsity throughout pruning. Our experiments on natural language understanding, question answering, named entity recognition, and data-to-text generation with various Transformer-based PLMs show the effectiveness of the approach at various sparsity levels.\",\n}\n",
+    "authors": [
+        "Siyu Ren",
+        "Kenny Zhu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.573.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a164a825-e988-53bf-8555-35e2d8c7e9d2.pdf",
+    "abstract": "Iterative pruning is one of the most effective compression methods for pre-trained language models. We discovered that finding the optimal pruning decision is an equality-constrained 0-1 Integer Linear Programming problem. The solution to this optimization problem leads to a principled importance criterion which we use to rank parameters during iterative model pruning. To mitigate the poor generalization at high sparsity levels, we propose a self-regularization scheme where model prediction is regularized by the latest checkpoint with increasing sparsity throughout pruning. Our experiments on natural language understanding, question answering, named entity recognition, and data-to-text generation with various Transformer-based PLMs show the effectiveness of the approach at various sparsity levels.",
+    "num_pages": 14
+}

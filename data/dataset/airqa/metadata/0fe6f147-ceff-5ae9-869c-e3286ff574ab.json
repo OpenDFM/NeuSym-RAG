@@ -1,0 +1,18 @@
+{
+    "uuid": "0fe6f147-ceff-5ae9-869c-e3286ff574ab",
+    "title": "On the Surprising Effectiveness of Name Matching Alone in Autoregressive Entity Linking",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the First Workshop on Matching From Unstructured and Structured Data (MATCHING 2023)",
+    "bibtex": "@inproceedings{schumacher-etal-2023-surprising,\n    title = \"On the Surprising Effectiveness of Name Matching Alone in Autoregressive Entity Linking\",\n    author = \"Schumacher, Elliot  and\n      Mayfield, James  and\n      Dredze, Mark\",\n    editor = \"Hruschka, Estevam  and\n      Mitchell, Tom  and\n      Rahman, Sajjadur  and\n      Mladeni{\\'c}, Dunja  and\n      Grobelnik, Marko\",\n    booktitle = \"Proceedings of the First Workshop on Matching From Unstructured and Structured Data (MATCHING 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, ON, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.matching-1.6\",\n    doi = \"10.18653/v1/2023.matching-1.6\",\n    pages = \"58--69\",\n    abstract = \"Fifteen years of work on entity linking has established the importance of different information sources in making linking decisions: mention and entity name similarity, contextual relevance, and features of the knowledge base. Modern state-of-the-art systems build on these features, including through neural representations (Wu et al., 2020). In contrast to this trend, the autoregressive language model GENRE (De Cao et al., 2021) generates normalized entity names for mentions and beats many other entity linking systems, despite making no use of knowledge base (KB) information. How is this possible? We analyze the behavior of GENRE on several entity linking datasets and demonstrate that its performance stems from memorization of name patterns. In contrast, it fails in cases that might benefit from using the KB. We experiment with a modification to the model to enable it to utilize KB information, highlighting challenges to incorporating traditional entity linking information sources into autoregressive models.\",\n}\n",
+    "authors": [
+        "Elliot Schumacher",
+        "James Mayfield",
+        "Mark Dredze"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.matching-1.6.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/0fe6f147-ceff-5ae9-869c-e3286ff574ab.pdf",
+    "abstract": "Fifteen years of work on entity linking has established the importance of different information sources in making linking decisions: mention and entity name similarity, contextual relevance, and features of the knowledge base. Modern state-of-the-art systems build on these features, including through neural representations (Wu et al., 2020). In contrast to this trend, the autoregressive language model GENRE (De Cao et al., 2021) generates normalized entity names for mentions and beats many other entity linking systems, despite making no use of knowledge base (KB) information. How is this possible? We analyze the behavior of GENRE on several entity linking datasets and demonstrate that its performance stems from memorization of name patterns. In contrast, it fails in cases that might benefit from using the KB. We experiment with a modification to the model to enable it to utilize KB information, highlighting challenges to incorporating traditional entity linking information sources into autoregressive models.",
+    "num_pages": 12
+}

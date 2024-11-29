@@ -1,0 +1,21 @@
+{
+    "uuid": "803054cc-e008-5d23-837c-22d09e901ca4",
+    "title": "P4: Plug-and-Play Discrete Prompting for Large Language Models Personalization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhang-etal-2024-p4,\n    title = \"P4: Plug-and-Play Discrete Prompting for Large Language Models Personalization\",\n    author = \"Zhang, Yuansen  and\n      Wang, Xiao  and\n      Chen, Tianze  and\n      Fu, Jiayi  and\n      Gui, Tao  and\n      Zhang, Qi\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.541\",\n    doi = \"10.18653/v1/2024.findings-acl.541\",\n    pages = \"9129--9144\",\n    abstract = \"Empowering Large Language Models (LLMs) with distinct human-like personality traits has become an innovative task for developing advanced dialog systems.Although LLMs demonstrate impressive capabilities in following instructions, directly prompting them to exhibit certain personalities through manually crafted instructions may result in sub-optimal performance.In this paper, we propose a plug-and-play prompting method to manipulate the LLMs{'} personality traits.Specifically, we append discrete personalized suffixes, automatically generated through an aggregated gradient-based search method, to the user query or dialog histories and induce LLMs to respond with target personalities.In addition, due to the high redundancy of the search space, we adopt a reward-based strategy to prune the vocabulary and focus exclusively on influential tokens.Experiment results on four models ranging from 1.1B to 13B show that our method achieves 79.9{\\%} accuracy in customizing LLMs{'} personalities, significantly outperforming other prompting methods (65.5{\\%}) and model editing methods.Our method also excels in generation fluency and quality with the lowest generation perplexity and the highest GPT-4 evaluation scores.\",\n}\n",
+    "authors": [
+        "Yuansen Zhang",
+        "Xiao Wang",
+        "Tianze Chen",
+        "Jiayi Fu",
+        "Tao Gui",
+        "Qi Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.541.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/803054cc-e008-5d23-837c-22d09e901ca4.pdf",
+    "abstract": "Empowering Large Language Models (LLMs) with distinct human-like personality traits has become an innovative task for developing advanced dialog systems.Although LLMs demonstrate impressive capabilities in following instructions, directly prompting them to exhibit certain personalities through manually crafted instructions may result in sub-optimal performance.In this paper, we propose a plug-and-play prompting method to manipulate the LLMs’ personality traits.Specifically, we append discrete personalized suffixes, automatically generated through an aggregated gradient-based search method, to the user query or dialog histories and induce LLMs to respond with target personalities.In addition, due to the high redundancy of the search space, we adopt a reward-based strategy to prune the vocabulary and focus exclusively on influential tokens.Experiment results on four models ranging from 1.1B to 13B show that our method achieves 79.9% accuracy in customizing LLMs’ personalities, significantly outperforming other prompting methods (65.5%) and model editing methods.Our method also excels in generation fluency and quality with the lowest generation perplexity and the highest GPT-4 evaluation scores.",
+    "num_pages": 16
+}

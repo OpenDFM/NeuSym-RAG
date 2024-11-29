@@ -1,0 +1,19 @@
+{
+    "uuid": "77f7eac2-a618-5352-8bae-4e08fbd83936",
+    "title": "NCUEE-NLP at SemEval-2023 Task 7: Ensemble Biomedical LinkBERT Transformers in Multi-evidence Natural Language Inference for Clinical Trial Data",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "bibtex": "@inproceedings{chen-etal-2023-ncuee-nlp,\n    title = \"{NCUEE}-{NLP} at {S}em{E}val-2023 Task 7: Ensemble Biomedical {L}ink{BERT} Transformers in Multi-evidence Natural Language Inference for Clinical Trial Data\",\n    author = \"Chen, Chao-Yi  and\n      Tien, Kao-Yuan  and\n      Cheng, Yuan-Hao  and\n      Lee, Lung-Hao\",\n    editor = {Ojha, Atul Kr.  and\n      Do{\\u{g}}ru{\\\"o}z, A. Seza  and\n      Da San Martino, Giovanni  and\n      Tayyar Madabushi, Harish  and\n      Kumar, Ritesh  and\n      Sartori, Elisa},\n    booktitle = \"Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.semeval-1.107\",\n    doi = \"10.18653/v1/2023.semeval-1.107\",\n    pages = \"776--781\",\n    abstract = \"This study describes the model design of the NCUEE-NLP system for the SemEval-2023 NLI4CT task that focuses on multi-evidence natural language inference for clinical trial data. We use the LinkBERT transformer in the biomedical domain (denoted as BioLinkBERT) as our main system architecture. First, a set of sentences in clinical trial reports is extracted as evidence for premise-statement inference. This identified evidence is then used to determine the inference relation (i.e., entailment or contradiction). Finally, a soft voting ensemble mechanism is applied to enhance the system performance. For Subtask 1 on textual entailment, our best submission had an F1-score of 0.7091, ranking sixth among all 30 participating teams. For Subtask 2 on evidence retrieval, our best result obtained an F1-score of 0.7940, ranking ninth of 19 submissions.\",\n}\n",
+    "authors": [
+        "Chao-Yi Chen",
+        "Kao-Yuan Tien",
+        "Yuan-Hao Cheng",
+        "Lung-Hao Lee"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.semeval-1.107.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/77f7eac2-a618-5352-8bae-4e08fbd83936.pdf",
+    "abstract": "This study describes the model design of the NCUEE-NLP system for the SemEval-2023 NLI4CT task that focuses on multi-evidence natural language inference for clinical trial data. We use the LinkBERT transformer in the biomedical domain (denoted as BioLinkBERT) as our main system architecture. First, a set of sentences in clinical trial reports is extracted as evidence for premise-statement inference. This identified evidence is then used to determine the inference relation (i.e., entailment or contradiction). Finally, a soft voting ensemble mechanism is applied to enhance the system performance. For Subtask 1 on textual entailment, our best submission had an F1-score of 0.7091, ranking sixth among all 30 participating teams. For Subtask 2 on evidence retrieval, our best result obtained an F1-score of 0.7940, ranking ninth of 19 submissions.",
+    "num_pages": 6
+}

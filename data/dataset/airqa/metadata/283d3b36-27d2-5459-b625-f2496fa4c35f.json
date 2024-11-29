@@ -1,0 +1,20 @@
+{
+    "uuid": "283d3b36-27d2-5459-b625-f2496fa4c35f",
+    "title": "Are Machines Better at Complex Reasoning? Unveiling Human-Machine Inference Gaps in Entailment Verification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{sanyal-etal-2024-machines,\n    title = \"Are Machines Better at Complex Reasoning? Unveiling Human-Machine Inference Gaps in Entailment Verification\",\n    author = \"Sanyal, Soumya  and\n      Xiao, Tianyi  and\n      Liu, Jiacheng  and\n      Wang, Wenya  and\n      Ren, Xiang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.618\",\n    doi = \"10.18653/v1/2024.findings-acl.618\",\n    pages = \"10361--10386\",\n    abstract = \"Making inferences in text comprehension to understand the meaning is essential in language processing. This work studies the entailment verification (EV) problem of complex, multi-sentence premises requiring a system to make multiple inferences implicitly. Modern applications of EV in detecting inconsistent model-generated rationales require complex multi-hop reasoning. However, current textual inference datasets mostly contain short-sentence premises that partially focus on this. To address this, we compile an EV benchmark that includes datasets from three NLP domains (NLI, contextual QA, and rationales) containing multi-sentence premises. On benchmarking humans and LLMs, we find that LLMs are better than humans in multi-hop reasoning across extended contexts, while humans perform better in simple deductive reasoning tasks. We also finetune a Flan-T5 model for EV using two training objectives to obtain a strong open-source model that outperforms GPT-3.5 and rivals GPT-4. Finally, we use our finetuned model to filter out inconsistent model-generated rationales in self-consistency decoding, resulting in a 6{\\%} accuracy improvement on average across three MCQ datasets.\",\n}\n",
+    "authors": [
+        "Soumya Sanyal",
+        "Tianyi Xiao",
+        "Jiacheng Liu",
+        "Wenya Wang",
+        "Xiang Ren"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.618.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/283d3b36-27d2-5459-b625-f2496fa4c35f.pdf",
+    "abstract": "Making inferences in text comprehension to understand the meaning is essential in language processing. This work studies the entailment verification (EV) problem of complex, multi-sentence premises requiring a system to make multiple inferences implicitly. Modern applications of EV in detecting inconsistent model-generated rationales require complex multi-hop reasoning. However, current textual inference datasets mostly contain short-sentence premises that partially focus on this. To address this, we compile an EV benchmark that includes datasets from three NLP domains (NLI, contextual QA, and rationales) containing multi-sentence premises. On benchmarking humans and LLMs, we find that LLMs are better than humans in multi-hop reasoning across extended contexts, while humans perform better in simple deductive reasoning tasks. We also finetune a Flan-T5 model for EV using two training objectives to obtain a strong open-source model that outperforms GPT-3.5 and rivals GPT-4. Finally, we use our finetuned model to filter out inconsistent model-generated rationales in self-consistency decoding, resulting in a 6% accuracy improvement on average across three MCQ datasets.",
+    "num_pages": 26
+}

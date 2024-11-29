@@ -1,0 +1,19 @@
+{
+    "uuid": "96867be2-b209-5b0b-b68a-572a6eaec55c",
+    "title": "Efficient Transformers with Dynamic Token Pooling",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{nawrot-etal-2023-efficient,\n    title = \"Efficient Transformers with Dynamic Token Pooling\",\n    author = \"Nawrot, Piotr  and\n      Chorowski, Jan  and\n      Lancucki, Adrian  and\n      Ponti, Edoardo Maria\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.353\",\n    doi = \"10.18653/v1/2023.acl-long.353\",\n    pages = \"6403--6417\",\n    abstract = \"Transformers achieve unrivalled performance in modelling language, but remain inefficient in terms of memory and time complexity. A possible remedy is to reduce the sequence length in the intermediate layers by pooling fixed-length segments of tokens. Nevertheless, natural units of meaning, such as words or phrases, display varying sizes. To address this mismatch, we equip language models with a dynamic-pooling mechanism, which predicts segment boundaries in an autoregressive fashion. We compare several methods to infer boundaries, including end-to-end learning through stochastic re-parameterisation, supervised learning (based on segmentations from subword tokenizers or spikes in conditional entropy), as well as linguistically motivated boundaries. We perform character-level evaluation on texts from multiple datasets and morphologically diverse languages. The results demonstrate that dynamic pooling, which jointly segments and models language, is both faster and more accurate than vanilla Transformers and fixed-length pooling within the same computational budget.\",\n}\n",
+    "authors": [
+        "Piotr Nawrot",
+        "Jan Chorowski",
+        "Adrian Lancucki",
+        "Edoardo Maria Ponti"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.353.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/96867be2-b209-5b0b-b68a-572a6eaec55c.pdf",
+    "abstract": "Transformers achieve unrivalled performance in modelling language, but remain inefficient in terms of memory and time complexity. A possible remedy is to reduce the sequence length in the intermediate layers by pooling fixed-length segments of tokens. Nevertheless, natural units of meaning, such as words or phrases, display varying sizes. To address this mismatch, we equip language models with a dynamic-pooling mechanism, which predicts segment boundaries in an autoregressive fashion. We compare several methods to infer boundaries, including end-to-end learning through stochastic re-parameterisation, supervised learning (based on segmentations from subword tokenizers or spikes in conditional entropy), as well as linguistically motivated boundaries. We perform character-level evaluation on texts from multiple datasets and morphologically diverse languages. The results demonstrate that dynamic pooling, which jointly segments and models language, is both faster and more accurate than vanilla Transformers and fixed-length pooling within the same computational budget.",
+    "num_pages": 15
+}

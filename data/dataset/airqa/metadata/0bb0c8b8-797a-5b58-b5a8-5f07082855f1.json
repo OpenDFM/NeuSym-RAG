@@ -1,0 +1,22 @@
+{
+    "uuid": "0bb0c8b8-797a-5b58-b5a8-5f07082855f1",
+    "title": "Selecting Better Samples from Pre-trained LLMs: A Case Study on Question Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{yuan-etal-2023-selecting,\n    title = \"Selecting Better Samples from Pre-trained {LLM}s: A Case Study on Question Generation\",\n    author = \"Yuan, Xingdi  and\n      Wang, Tong  and\n      Wang, Yen-Hsiang  and\n      Fine, Emery  and\n      Abdelghani, Rania  and\n      Sauz{\\'e}on, H{\\'e}l{\\`e}ne  and\n      Oudeyer, Pierre-Yves\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.820\",\n    doi = \"10.18653/v1/2023.findings-acl.820\",\n    pages = \"12952--12965\",\n    abstract = \"Large Language Models (LLMs) have in recent years demonstrated impressive prowess in natural language generation. A common practice to improve generation diversity is to sample multiple outputs from the model. However, partly due to the inaccessibility of LLMs, there lacks a simple and robust way of selecting the best output from these stochastic samples. As a case study framed in the context of question generation, we propose two prompt-based approaches, namely round-trip and prompt-based score, to selecting high-quality questions from a set of LLM-generated candidates. Our method works without the need to modify the underlying model, nor does it rely on human-annotated references {---} both of which are realistic constraints for real-world deployment of LLMs. With automatic as well as human evaluations, we empirically demonstrate that our approach can effectively select questions of higher qualities than greedy generation.\",\n}\n",
+    "authors": [
+        "Xingdi Yuan",
+        "Tong Wang",
+        "Yen-Hsiang Wang",
+        "Emery Fine",
+        "Rania Abdelghani",
+        "Hélène Sauzéon",
+        "Pierre-Yves Oudeyer"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.820.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/0bb0c8b8-797a-5b58-b5a8-5f07082855f1.pdf",
+    "abstract": "Large Language Models (LLMs) have in recent years demonstrated impressive prowess in natural language generation. A common practice to improve generation diversity is to sample multiple outputs from the model. However, partly due to the inaccessibility of LLMs, there lacks a simple and robust way of selecting the best output from these stochastic samples. As a case study framed in the context of question generation, we propose two prompt-based approaches, namely round-trip and prompt-based score, to selecting high-quality questions from a set of LLM-generated candidates. Our method works without the need to modify the underlying model, nor does it rely on human-annotated references — both of which are realistic constraints for real-world deployment of LLMs. With automatic as well as human evaluations, we empirically demonstrate that our approach can effectively select questions of higher qualities than greedy generation.",
+    "num_pages": 14
+}

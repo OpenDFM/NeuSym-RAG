@@ -1,0 +1,23 @@
+{
+    "uuid": "2a864d4b-3ef2-54e5-8276-17efa92150f1",
+    "title": "Graph Reasoning for Question Answering with Triplet Retrieval",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{li-etal-2023-graph,\n    title = \"Graph Reasoning for Question Answering with Triplet Retrieval\",\n    author = \"Li, Shiyang  and\n      Gao, Yifan  and\n      Jiang, Haoming  and\n      Yin, Qingyu  and\n      Li, Zheng  and\n      Yan, Xifeng  and\n      Zhang, Chao  and\n      Yin, Bing\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.208\",\n    doi = \"10.18653/v1/2023.findings-acl.208\",\n    pages = \"3366--3375\",\n    abstract = \"Answering complex questions often requires reasoning over knowledge graphs (KGs). State-of-the-art methods often utilize entities in questions to retrieve local subgraphs, which are then fed into KG encoder, e.g. graph neural networks (GNNs), to model their local structures and integrated into language models for question answering. However, this paradigm constrains retrieved knowledge in local subgraphs and discards more diverse triplets buried in KGs that are disconnected but useful for question answering. In this paper, we propose a simple yet effective method to first retrieve the most relevant triplets from KGs and then rerank them, which are then concatenated with questions to be fed into language models. Extensive results on both CommonsenseQA and OpenbookQA datasets show that our method can outperform state-of-the-art up to 4.6{\\%} absolute accuracy.\",\n}\n",
+    "authors": [
+        "Shiyang Li",
+        "Yifan Gao",
+        "Haoming Jiang",
+        "Qingyu Yin",
+        "Zheng Li",
+        "Xifeng Yan",
+        "Chao Zhang",
+        "Bing Yin"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.208.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/2a864d4b-3ef2-54e5-8276-17efa92150f1.pdf",
+    "abstract": "Answering complex questions often requires reasoning over knowledge graphs (KGs). State-of-the-art methods often utilize entities in questions to retrieve local subgraphs, which are then fed into KG encoder, e.g. graph neural networks (GNNs), to model their local structures and integrated into language models for question answering. However, this paradigm constrains retrieved knowledge in local subgraphs and discards more diverse triplets buried in KGs that are disconnected but useful for question answering. In this paper, we propose a simple yet effective method to first retrieve the most relevant triplets from KGs and then rerank them, which are then concatenated with questions to be fed into language models. Extensive results on both CommonsenseQA and OpenbookQA datasets show that our method can outperform state-of-the-art up to 4.6% absolute accuracy.",
+    "num_pages": 10
+}

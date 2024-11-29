@@ -1,0 +1,18 @@
+{
+    "uuid": "f0f92557-ce88-5da9-b09b-8bea1da8ea73",
+    "title": "When to Use Efficient Self Attention? Profiling Text, Speech and Image Transformer Variants",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{diwan-etal-2023-use,\n    title = \"When to Use Efficient Self Attention? Profiling Text, Speech and Image Transformer Variants\",\n    author = \"Diwan, Anuj  and\n      Choi, Eunsol  and\n      Harwath, David\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.141\",\n    doi = \"10.18653/v1/2023.acl-short.141\",\n    pages = \"1639--1650\",\n    abstract = \"We present the first unified study of the efficiency of self-attention-based Transformer variants spanning text, speech and vision. We identify input length thresholds (tipping points) at which efficient Transformer variants become more efficient than vanilla models, using a variety of efficiency metrics (latency, throughput, and memory). To conduct this analysis for speech, we introduce L-HuBERT, a novel local-attention variant of a self-supervised speech model. We observe that these thresholds are (a) much higher than typical dataset sequence lengths and (b) dependent on the metric and modality, showing that choosing the right model depends on modality, task type (long-form vs. typical context) and resource constraints (time vs. memory). By visualising the breakdown of the computational costs for transformer components, we also show that non-self-attention components exhibit significant computational costs. We release our profiling toolkit at \\url{https://github.com/ajd12342/profiling-transformers} .\",\n}\n",
+    "authors": [
+        "Anuj Diwan",
+        "Eunsol Choi",
+        "David Harwath"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.141.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f0f92557-ce88-5da9-b09b-8bea1da8ea73.pdf",
+    "abstract": "We present the first unified study of the efficiency of self-attention-based Transformer variants spanning text, speech and vision. We identify input length thresholds (tipping points) at which efficient Transformer variants become more efficient than vanilla models, using a variety of efficiency metrics (latency, throughput, and memory). To conduct this analysis for speech, we introduce L-HuBERT, a novel local-attention variant of a self-supervised speech model. We observe that these thresholds are (a) much higher than typical dataset sequence lengths and (b) dependent on the metric and modality, showing that choosing the right model depends on modality, task type (long-form vs. typical context) and resource constraints (time vs. memory). By visualising the breakdown of the computational costs for transformer components, we also show that non-self-attention components exhibit significant computational costs. We release our profiling toolkit at https://github.com/ajd12342/profiling-transformers .",
+    "num_pages": 12
+}

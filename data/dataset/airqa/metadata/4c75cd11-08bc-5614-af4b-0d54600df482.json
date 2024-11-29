@@ -1,0 +1,19 @@
+{
+    "uuid": "4c75cd11-08bc-5614-af4b-0d54600df482",
+    "title": "Tucker Decomposition with Frequency Attention for Temporal Knowledge Graph Completion",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)",
+    "bibtex": "@inproceedings{xiao-etal-2023-tucker-decomposition,\n    title = \"Tucker Decomposition with Frequency Attention for Temporal Knowledge Graph Completion\",\n    author = \"Xiao, Likang  and\n      Zhang, Richong  and\n      Chen, Zijie  and\n      Chen, Junfan\",\n    editor = \"Can, Burcu  and\n      Mozes, Maximilian  and\n      Cahyawijaya, Samuel  and\n      Saphra, Naomi  and\n      Kassner, Nora  and\n      Ravfogel, Shauli  and\n      Ravichander, Abhilasha  and\n      Zhao, Chen  and\n      Augenstein, Isabelle  and\n      Rogers, Anna  and\n      Cho, Kyunghyun  and\n      Grefenstette, Edward  and\n      Voita, Lena\",\n    booktitle = \"Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.repl4nlp-1.21\",\n    doi = \"10.18653/v1/2023.repl4nlp-1.21\",\n    pages = \"253--265\",\n}\n",
+    "authors": [
+        "Likang Xiao",
+        "Richong Zhang",
+        "Zijie Chen",
+        "Junfan Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.repl4nlp-1.21.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4c75cd11-08bc-5614-af4b-0d54600df482.pdf",
+    "abstract": "Temporal Knowledge Graph Completion aims to complete missing entities or relations under temporal constraints. Previous tensor decomposition-based models for TKGC only independently consider the combination of one single relation with one single timestamp, ignoring the global nature of the embedding. We propose a Frequency Attention (FA) model to capture the global temporal dependencies between one relation and the entire timestamp. Specifically, we use Discrete Cosine Transform (DCT) to capture the frequency of the timestamp embedding and further compute the frequency attention weight to scale embedding. Meanwhile, the previous temporal tucker decomposition method uses a simple norm regularization to constrain the core tensor, which limits the optimization performance. Thus, we propose Orthogonal Regularization (OR) variants for the core tensor, which can limit the non-superdiagonal elements of the 3-rd core tensor. Experiments on three standard TKGC datasets demonstrate that our method outperforms the state-of-the-art results on several metrics. The results suggest that the direct-current component is not the best feature for TKG representation learning. Additional analysis shows the effectiveness of our FA and OR models, even with smaller embedding dimensions.",
+    "num_pages": 15
+}

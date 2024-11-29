@@ -1,0 +1,20 @@
+{
+    "uuid": "c78b4e81-debe-5e86-bf1b-4ebbd1f52a27",
+    "title": "RaDA: Retrieval-augmented Web Agent Planning with LLMs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{kim-etal-2024-rada,\n    title = \"{R}a{DA}: Retrieval-augmented Web Agent Planning with {LLM}s\",\n    author = \"Kim, Minsoo  and\n      Bursztyn, Victor  and\n      Koh, Eunyee  and\n      Guo, Shunan  and\n      Hwang, Seung-won\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.802\",\n    doi = \"10.18653/v1/2024.findings-acl.802\",\n    pages = \"13511--13525\",\n    abstract = \"Agents powered by large language models (LLMs) inherit important limitations, such as the restricted context length, dependency on human-engineered exemplars (e.g., for task decomposition), and insufficient generalization. To address these challenges, we propose RaDA, a novel planning method for Web agents that does not require manual exemplars, efficiently leverages the LLMs{'} context, and enhances generalization. RaDA disentangles planning into two stages: for a new given task, during Retrieval-augmented Task Decomposition (RaD), it decomposes tasks into high-level subtasks; next, during Retrieval-augmented Action Generation (RaA), it traverses the trajectory obtained with RaD to iteratively synthesize actions based on dynamically retrieved exemplars. We compare RaDA with strong baselines covering a broad space of design choices, using both GPT-3.5 and GPT-4 as backbones; and we find consistent improvements over previous SOTA in two challenging benchmarks, CompWoB and Mind2Web, covering settings with different complexities. We show the contributions of RaDA via ablation studies and qualitative analysis; and we discuss the structural benefits of our more compositional design.\",\n}\n",
+    "authors": [
+        "Minsoo Kim",
+        "Victor Bursztyn",
+        "Eunyee Koh",
+        "Shunan Guo",
+        "Seung-won Hwang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.802.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/c78b4e81-debe-5e86-bf1b-4ebbd1f52a27.pdf",
+    "abstract": "Agents powered by large language models (LLMs) inherit important limitations, such as the restricted context length, dependency on human-engineered exemplars (e.g., for task decomposition), and insufficient generalization. To address these challenges, we propose RaDA, a novel planning method for Web agents that does not require manual exemplars, efficiently leverages the LLMs’ context, and enhances generalization. RaDA disentangles planning into two stages: for a new given task, during Retrieval-augmented Task Decomposition (RaD), it decomposes tasks into high-level subtasks; next, during Retrieval-augmented Action Generation (RaA), it traverses the trajectory obtained with RaD to iteratively synthesize actions based on dynamically retrieved exemplars. We compare RaDA with strong baselines covering a broad space of design choices, using both GPT-3.5 and GPT-4 as backbones; and we find consistent improvements over previous SOTA in two challenging benchmarks, CompWoB and Mind2Web, covering settings with different complexities. We show the contributions of RaDA via ablation studies and qualitative analysis; and we discuss the structural benefits of our more compositional design.",
+    "num_pages": 15
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "49fe213c-020e-52fb-855d-5e74c263744a",
+    "title": "Agent Lumos: Unified and Modular Training for Open-Source Language Agents",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{yin-etal-2024-agent,\n    title = \"Agent Lumos: Unified and Modular Training for Open-Source Language Agents\",\n    author = \"Yin, Da  and\n      Brahman, Faeze  and\n      Ravichander, Abhilasha  and\n      Chandu, Khyathi  and\n      Chang, Kai-Wei  and\n      Choi, Yejin  and\n      Lin, Bill Yuchen\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.670\",\n    doi = \"10.18653/v1/2024.acl-long.670\",\n    pages = \"12380--12403\",\n    abstract = \"Closed-source agents suffer from several issues such as a lack of affordability, transparency, and reproducibility, particularly on complex interactive tasks. This motivates the development of open-source alternatives. We introduce Lumos, one of the first frameworks for training open-source LLM-based agents. Lumos features a learnable, unified and modular architecture with a planning module that learns high-level subgoal generation, and a grounding module trained to translate these into the actions using various tools in the execution module. The design allows for modular upgrades and wider applicability to diverse interactive tasks. To foster generalizable agent learning, we collect large-scale, unified, and high-quality training annotations derived from diverse ground-truth reasoning rationales across various complex interactive tasks. On 9 datasets, Lumos exhibits several key advantages: (1) Lumos excels multiple larger open-source agents on the held-out datasets (unused for training) for each task type. Lumos even surpasses GPT agents on QA and web tasks; (2) Lumos outperforms open-source agents produced by chain-of-thoughts and unmodularized integrated training; and (3) Lumos effectively generalizes to unseen tasks, outperforming 33B-scale agents and domain-specific agents. Code and data will be released.\",\n}\n",
+    "authors": [
+        "Da Yin",
+        "Faeze Brahman",
+        "Abhilasha Ravichander",
+        "Khyathi Chandu",
+        "Kai-Wei Chang",
+        "Yejin Choi",
+        "Bill Yuchen Lin"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.670.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/49fe213c-020e-52fb-855d-5e74c263744a.pdf",
+    "abstract": "Closed-source agents suffer from several issues such as a lack of affordability, transparency, and reproducibility, particularly on complex interactive tasks. This motivates the development of open-source alternatives. We introduce Lumos, one of the first frameworks for training open-source LLM-based agents. Lumos features a learnable, unified and modular architecture with a planning module that learns high-level subgoal generation, and a grounding module trained to translate these into the actions using various tools in the execution module. The design allows for modular upgrades and wider applicability to diverse interactive tasks. To foster generalizable agent learning, we collect large-scale, unified, and high-quality training annotations derived from diverse ground-truth reasoning rationales across various complex interactive tasks. On 9 datasets, Lumos exhibits several key advantages: (1) Lumos excels multiple larger open-source agents on the held-out datasets (unused for training) for each task type. Lumos even surpasses GPT agents on QA and web tasks; (2) Lumos outperforms open-source agents produced by chain-of-thoughts and unmodularized integrated training; and (3) Lumos effectively generalizes to unseen tasks, outperforming 33B-scale agents and domain-specific agents. Code and data will be released.",
+    "num_pages": 24
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "50eb4a1d-a57f-5102-a035-787960d70f4f",
+    "title": "FLamE: Few-shot Learning from Natural Language Explanations",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhou-etal-2023-flame,\n    title = \"{FL}am{E}: Few-shot Learning from Natural Language Explanations\",\n    author = \"Zhou, Yangqiaoyu  and\n      Zhang, Yiming  and\n      Tan, Chenhao\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.372\",\n    doi = \"10.18653/v1/2023.acl-long.372\",\n    pages = \"6743--6763\",\n    abstract = \"Natural language explanations have the potential to provide rich information that in principle guides model reasoning. Yet, recent work by Lampinen et al. has shown limited utility of natural language explanations in improving classification. To effectively learn from explanations, we present FLamE, a two-stage few-shot learning framework that first generates explanations using GPT-3, and then fine-tunes a smaller model (e.g., RoBERTa) with generated explanations. Our experiments on natural language inference demonstrate effectiveness over strong baselines, increasing accuracy by 17.6{\\%} over GPT-3 Babbage and 5.7{\\%} over GPT-3 Davinci in e-SNLI.Despite improving classification performance, human evaluation surprisingly reveals that the majority of generated explanations does not adequately justify classification decisions. Additional analyses point to the important role of label-specific cues (e.g., {``}not know{''} for the neutral label) in generated explanations.\",\n}\n",
+    "authors": [
+        "Yangqiaoyu Zhou",
+        "Yiming Zhang",
+        "Chenhao Tan"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.372.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/50eb4a1d-a57f-5102-a035-787960d70f4f.pdf",
+    "abstract": "Natural language explanations have the potential to provide rich information that in principle guides model reasoning. Yet, recent work by Lampinen et al. has shown limited utility of natural language explanations in improving classification. To effectively learn from explanations, we present FLamE, a two-stage few-shot learning framework that first generates explanations using GPT-3, and then fine-tunes a smaller model (e.g., RoBERTa) with generated explanations. Our experiments on natural language inference demonstrate effectiveness over strong baselines, increasing accuracy by 17.6% over GPT-3 Babbage and 5.7% over GPT-3 Davinci in e-SNLI.Despite improving classification performance, human evaluation surprisingly reveals that the majority of generated explanations does not adequately justify classification decisions. Additional analyses point to the important role of label-specific cues (e.g., “not know” for the neutral label) in generated explanations.",
+    "num_pages": 21
+}

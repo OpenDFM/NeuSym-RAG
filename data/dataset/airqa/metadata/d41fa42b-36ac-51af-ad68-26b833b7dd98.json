@@ -1,0 +1,22 @@
+{
+    "uuid": "d41fa42b-36ac-51af-ad68-26b833b7dd98",
+    "title": "Backdooring Neural Code Search",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{sun-etal-2023-backdooring,\n    title = \"Backdooring Neural Code Search\",\n    author = \"Sun, Weisong  and\n      Chen, Yuchen  and\n      Tao, Guanhong  and\n      Fang, Chunrong  and\n      Zhang, Xiangyu  and\n      Zhang, Quanjun  and\n      Luo, Bin\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.540\",\n    doi = \"10.18653/v1/2023.acl-long.540\",\n    pages = \"9692--9708\",\n    abstract = \"Reusing off-the-shelf code snippets from online repositories is a common practice, which significantly enhances the productivity of software developers. To find desired code snippets, developers resort to code search engines through natural language queries. Neural code search models are hence behind many such engines. These models are based on deep learning and gain substantial attention due to their impressive performance. However, the security aspect of these models is rarely studied. Particularly, an adversary can inject a backdoor in neural code search models, which return buggy or even vulnerable code with security/privacy issues. This may impact the downstream software (e.g., stock trading systems and autonomous driving) and cause financial loss and/or life-threatening incidents. In this paper, we demonstrate such attacks are feasible and can be quite stealthy. By simply modifying one variable/function name, the attacker can make buggy/vulnerable code rank in the top 11{\\%}. Our attack BADCODE features a special trigger generation and injection procedure, making the attack more effective and stealthy. The evaluation is conducted on two neural code search models and the results show our attack outperforms baselines by 60{\\%}. Our user study demonstrates that our attack is more stealthy than the baseline by two times based on the F1 score.\",\n}\n",
+    "authors": [
+        "Weisong Sun",
+        "Yuchen Chen",
+        "Guanhong Tao",
+        "Chunrong Fang",
+        "Xiangyu Zhang",
+        "Quanjun Zhang",
+        "Bin Luo"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.540.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d41fa42b-36ac-51af-ad68-26b833b7dd98.pdf",
+    "abstract": "Reusing off-the-shelf code snippets from online repositories is a common practice, which significantly enhances the productivity of software developers. To find desired code snippets, developers resort to code search engines through natural language queries. Neural code search models are hence behind many such engines. These models are based on deep learning and gain substantial attention due to their impressive performance. However, the security aspect of these models is rarely studied. Particularly, an adversary can inject a backdoor in neural code search models, which return buggy or even vulnerable code with security/privacy issues. This may impact the downstream software (e.g., stock trading systems and autonomous driving) and cause financial loss and/or life-threatening incidents. In this paper, we demonstrate such attacks are feasible and can be quite stealthy. By simply modifying one variable/function name, the attacker can make buggy/vulnerable code rank in the top 11%. Our attack BADCODE features a special trigger generation and injection procedure, making the attack more effective and stealthy. The evaluation is conducted on two neural code search models and the results show our attack outperforms baselines by 60%. Our user study demonstrates that our attack is more stealthy than the baseline by two times based on the F1 score.",
+    "num_pages": 17
+}

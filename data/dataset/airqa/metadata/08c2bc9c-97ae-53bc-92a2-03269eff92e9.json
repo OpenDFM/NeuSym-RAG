@@ -1,0 +1,20 @@
+{
+    "uuid": "08c2bc9c-97ae-53bc-92a2-03269eff92e9",
+    "title": "Towards Unified Spoken Language Understanding Decoding via Label-aware Compact Linguistics Representations",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhu-etal-2023-towards,\n    title = \"Towards Unified Spoken Language Understanding Decoding via Label-aware Compact Linguistics Representations\",\n    author = \"Zhu, Zhihong  and\n      Cheng, Xuxin  and\n      Huang, Zhiqi  and\n      Chen, Dongsheng  and\n      Zou, Yuexian\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.793\",\n    doi = \"10.18653/v1/2023.findings-acl.793\",\n    pages = \"12523--12531\",\n    abstract = \"Joint intent detection and slot filling models have shown promising success in recent years due to the high correlations between the two tasks. However, previous works independently decode the two tasks, which could result in misaligned predictions for both tasks. To address this shortcoming, we propose a novel method named Label-aware Compact Linguistics Representation (LCLR), which leverages label embeddings to jointly guide the decoding process. Concretely, LCLR projects both task-specific hidden states into a joint label latent space, where both task-specific hidden states could be concisely represented as linear combinations of label embeddings. Such feature decomposition of task-specific hidden states increases the representing power for the linguistics of utterance. Extensive experiments on two single- and multi-intent SLU benchmarks prove that LCLR can learn more discriminative label information than previous separate decoders, and consistently outperform previous state-of-the-art methods across all metrics. More encouragingly, LCLR can be applied to boost the performance of existing approaches, making it easy to be incorporated into any existing SLU models.\",\n}\n",
+    "authors": [
+        "Zhihong Zhu",
+        "Xuxin Cheng",
+        "Zhiqi Huang",
+        "Dongsheng Chen",
+        "Yuexian Zou"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.793.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/08c2bc9c-97ae-53bc-92a2-03269eff92e9.pdf",
+    "abstract": "Joint intent detection and slot filling models have shown promising success in recent years due to the high correlations between the two tasks. However, previous works independently decode the two tasks, which could result in misaligned predictions for both tasks. To address this shortcoming, we propose a novel method named Label-aware Compact Linguistics Representation (LCLR), which leverages label embeddings to jointly guide the decoding process. Concretely, LCLR projects both task-specific hidden states into a joint label latent space, where both task-specific hidden states could be concisely represented as linear combinations of label embeddings. Such feature decomposition of task-specific hidden states increases the representing power for the linguistics of utterance. Extensive experiments on two single- and multi-intent SLU benchmarks prove that LCLR can learn more discriminative label information than previous separate decoders, and consistently outperform previous state-of-the-art methods across all metrics. More encouragingly, LCLR can be applied to boost the performance of existing approaches, making it easy to be incorporated into any existing SLU models.",
+    "num_pages": 9
+}

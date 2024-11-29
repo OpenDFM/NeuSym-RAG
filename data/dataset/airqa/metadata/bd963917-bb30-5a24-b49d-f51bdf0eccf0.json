@@ -1,0 +1,22 @@
+{
+    "uuid": "bd963917-bb30-5a24-b49d-f51bdf0eccf0",
+    "title": "Towards Understanding Omission in Dialogue Summarization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zou-etal-2023-towards,\n    title = \"Towards Understanding Omission in Dialogue Summarization\",\n    author = \"Zou, Yicheng  and\n      Song, Kaitao  and\n      Tan, Xu  and\n      Fu, Zhongkai  and\n      Zhang, Qi  and\n      Li, Dongsheng  and\n      Gui, Tao\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.798\",\n    doi = \"10.18653/v1/2023.acl-long.798\",\n    pages = \"14268--14286\",\n    abstract = \"Dialogue summarization aims to condense the lengthy dialogue into a concise summary, and has recently achieved significant progress. However, the result of existing methods is still far from satisfactory. Previous works indicated that omission is a major factor in affecting the quality of summarization, but few of them have further explored the omission problem, such as how omission affects summarization results and how to detect omission, which is critical for reducing omission and improving summarization quality. Moreover, analyzing and detecting omission relies on summarization datasets with omission labels (i.e., which dialogue utterances are omitted in the summarization), which are not available in the current literature. In this paper, we propose the OLDS dataset, which provides high-quality omission labels for dialogue summarization. By analyzing this dataset, we find that a large improvement in summarization quality can be achieved by providing ground-truth omission labels for the summarization model to recover omission information, which demonstrates the importance of omission detection for omission mitigation in dialogue summarization. Therefore, we formulate an omission detection task and demonstrate our proposed dataset can support the training and evaluation of this task well. We also call for research action on omission detection based on our proposed datasets. Our dataset and codes are publicly available.\",\n}\n",
+    "authors": [
+        "Yicheng Zou",
+        "Kaitao Song",
+        "Xu Tan",
+        "Zhongkai Fu",
+        "Qi Zhang",
+        "Dongsheng Li",
+        "Tao Gui"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.798.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/bd963917-bb30-5a24-b49d-f51bdf0eccf0.pdf",
+    "abstract": "Dialogue summarization aims to condense the lengthy dialogue into a concise summary, and has recently achieved significant progress. However, the result of existing methods is still far from satisfactory. Previous works indicated that omission is a major factor in affecting the quality of summarization, but few of them have further explored the omission problem, such as how omission affects summarization results and how to detect omission, which is critical for reducing omission and improving summarization quality. Moreover, analyzing and detecting omission relies on summarization datasets with omission labels (i.e., which dialogue utterances are omitted in the summarization), which are not available in the current literature. In this paper, we propose the OLDS dataset, which provides high-quality omission labels for dialogue summarization. By analyzing this dataset, we find that a large improvement in summarization quality can be achieved by providing ground-truth omission labels for the summarization model to recover omission information, which demonstrates the importance of omission detection for omission mitigation in dialogue summarization. Therefore, we formulate an omission detection task and demonstrate our proposed dataset can support the training and evaluation of this task well. We also call for research action on omission detection based on our proposed datasets. Our dataset and codes are publicly available.",
+    "num_pages": 19
+}

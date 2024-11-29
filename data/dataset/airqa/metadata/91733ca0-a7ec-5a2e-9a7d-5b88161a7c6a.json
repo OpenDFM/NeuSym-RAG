@@ -1,0 +1,20 @@
+{
+    "uuid": "91733ca0-a7ec-5a2e-9a7d-5b88161a7c6a",
+    "title": "PRewrite: Prompt Rewriting with Reinforcement Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{kong-etal-2024-prewrite,\n    title = \"{PR}ewrite: Prompt Rewriting with Reinforcement Learning\",\n    author = \"Kong, Weize  and\n      Hombaiah, Spurthi  and\n      Zhang, Mingyang  and\n      Mei, Qiaozhu  and\n      Bendersky, Michael\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-short.54\",\n    doi = \"10.18653/v1/2024.acl-short.54\",\n    pages = \"594--601\",\n    abstract = \"Prompt engineering is critical for the development of LLM-based applications. However, it is usually done manually in a {``}trial and error{''} fashion that can be time consuming, ineffective, and sub-optimal. Even for the prompts which seemingly work well, there is always a lingering question: can the prompts be made better with further modifications?To address these problems, we investigate automated prompt engineering in this paper. Specifically, we propose PRewrite, an automated method to rewrite an under-optimized prompt to a more effective prompt. We instantiate the prompt rewriter using an LLM. The rewriter LLM is trained using reinforcement learning to optimize the performance on a given downstream task. We conduct experiments on diverse benchmark datasets, which demonstrates the effectiveness of PRewrite.\",\n}\n",
+    "authors": [
+        "Weize Kong",
+        "Spurthi Hombaiah",
+        "Mingyang Zhang",
+        "Qiaozhu Mei",
+        "Michael Bendersky"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-short.54.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/91733ca0-a7ec-5a2e-9a7d-5b88161a7c6a.pdf",
+    "abstract": "Prompt engineering is critical for the development of LLM-based applications. However, it is usually done manually in a “trial and error” fashion that can be time consuming, ineffective, and sub-optimal. Even for the prompts which seemingly work well, there is always a lingering question: can the prompts be made better with further modifications?To address these problems, we investigate automated prompt engineering in this paper. Specifically, we propose PRewrite, an automated method to rewrite an under-optimized prompt to a more effective prompt. We instantiate the prompt rewriter using an LLM. The rewriter LLM is trained using reinforcement learning to optimize the performance on a given downstream task. We conduct experiments on diverse benchmark datasets, which demonstrates the effectiveness of PRewrite.",
+    "num_pages": 8
+}

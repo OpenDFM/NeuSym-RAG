@@ -1,0 +1,21 @@
+{
+    "uuid": "3cb0ee6d-33d9-512f-b821-9806d8d77b28",
+    "title": "CycleAlign: Iterative Distillation from Black-box LLM to White-box Models for Better Human Alignment",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{hong-etal-2024-cyclealign,\n    title = \"{C}ycle{A}lign: Iterative Distillation from Black-box {LLM} to White-box Models for Better Human Alignment\",\n    author = \"Hong, Jixiang  and\n      Tu, Quan  and\n      Chen, Changyu  and\n      Xing, Gao  and\n      Zhang, Ji  and\n      Yan, Rui\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.869\",\n    doi = \"10.18653/v1/2024.findings-acl.869\",\n    pages = \"14596--14609\",\n    abstract = \"Language models trained on large-scale corpus often generate harmful responses that are harmful and contrary to human values. A prevalent approach for human alignment is reinforcement learning from human feedback (RLHF), utilizing algorithms such as proximal policy optimization (PPO). However, these methods are often characterized by complexity, instability, and substantial resource consumption. Considering that existing large language models (LLMs) like ChatGPT are already relatively well-aligned and cost-friendly, researchers propose to align the language model with human preferences from AI feedback. Nevertheless, the common practices, that unidirectionally distill the responses, are constrained by the inherent capability of LLMs. To address it, we introduce CycleAlign, a framework that distills alignment capabilities from the parameter-invisible LLMs (black-box) to the parameter-visible models (white-box) in an iterative manner. CycleAlign iteratively improves both the white-box and black-box models by integrating static and dynamic in-context learning and a belief alignment method.Empirical results illustrate that the model fine-tuned by CycleAlign remarkably exceeds existing methods, and achieves the state-of-the-art performance in alignment with human value.\",\n}\n",
+    "authors": [
+        "Jixiang Hong",
+        "Quan Tu",
+        "Changyu Chen",
+        "Gao Xing",
+        "Ji Zhang",
+        "Rui Yan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.869.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/3cb0ee6d-33d9-512f-b821-9806d8d77b28.pdf",
+    "abstract": "Language models trained on large-scale corpus often generate harmful responses that are harmful and contrary to human values. A prevalent approach for human alignment is reinforcement learning from human feedback (RLHF), utilizing algorithms such as proximal policy optimization (PPO). However, these methods are often characterized by complexity, instability, and substantial resource consumption. Considering that existing large language models (LLMs) like ChatGPT are already relatively well-aligned and cost-friendly, researchers propose to align the language model with human preferences from AI feedback. Nevertheless, the common practices, that unidirectionally distill the responses, are constrained by the inherent capability of LLMs. To address it, we introduce CycleAlign, a framework that distills alignment capabilities from the parameter-invisible LLMs (black-box) to the parameter-visible models (white-box) in an iterative manner. CycleAlign iteratively improves both the white-box and black-box models by integrating static and dynamic in-context learning and a belief alignment method.Empirical results illustrate that the model fine-tuned by CycleAlign remarkably exceeds existing methods, and achieves the state-of-the-art performance in alignment with human value.",
+    "num_pages": 14
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "8edbc174-71f6-5d70-b6bd-a21796527d86",
+    "title": "Retrieval-Augmented Retrieval: Large Language Models are Strong Zero-Shot Retriever",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{shen-etal-2024-retrieval,\n    title = \"Retrieval-Augmented Retrieval: Large Language Models are Strong Zero-Shot Retriever\",\n    author = \"Shen, Tao  and\n      Long, Guodong  and\n      Geng, Xiubo  and\n      Tao, Chongyang  and\n      Lei, Yibin  and\n      Zhou, Tianyi  and\n      Blumenstein, Michael  and\n      Jiang, Daxin\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.943\",\n    doi = \"10.18653/v1/2024.findings-acl.943\",\n    pages = \"15933--15946\",\n    abstract = \"We propose a simple method that applies a large language model (LLM) to large-scale retrieval in zero-shot scenarios. Our method, the Large language model as Retriever (LameR), is built upon no other neural models but an LLM in a retrieval-augmented retrieval fashion, while breaking brute-force combinations of retrievers with LLMs and lifting the performance of zero-shot retrieval to be very competitive on benchmark datasets. Essentially, we propose to augment a query with its potential answers by prompting LLMs with a composition of the query and the query{'}s in-domain candidates. The candidates, regardless of correct or wrong, are obtained by a vanilla retrieval procedure on the target collection. As a part of the prompts, they are likely to help LLM generate more precise answers by pattern imitation or candidate summarization. Even if all the candidates are wrong, the prompts at least make LLM aware of in-collection patterns and genres. Moreover, due to the low performance of a self-supervised retriever, the LLM-based query augmentation becomes less effective as the retriever bottlenecks the whole pipeline. Therefore, we propose to leverage a non-parametric lexicon-based method (e.g., BM25) as the retrieval module to capture query-document overlap in a literal fashion. As such, LameR makes the retrieval procedure transparent to the LLM, thus circumventing the bottleneck.\",\n}\n",
+    "authors": [
+        "Tao Shen",
+        "Guodong Long",
+        "Xiubo Geng",
+        "Chongyang Tao",
+        "Yibin Lei",
+        "Tianyi Zhou",
+        "Michael Blumenstein",
+        "Daxin Jiang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.943.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/8edbc174-71f6-5d70-b6bd-a21796527d86.pdf",
+    "abstract": "We propose a simple method that applies a large language model (LLM) to large-scale retrieval in zero-shot scenarios. Our method, the Large language model as Retriever (LameR), is built upon no other neural models but an LLM in a retrieval-augmented retrieval fashion, while breaking brute-force combinations of retrievers with LLMs and lifting the performance of zero-shot retrieval to be very competitive on benchmark datasets. Essentially, we propose to augment a query with its potential answers by prompting LLMs with a composition of the query and the query’s in-domain candidates. The candidates, regardless of correct or wrong, are obtained by a vanilla retrieval procedure on the target collection. As a part of the prompts, they are likely to help LLM generate more precise answers by pattern imitation or candidate summarization. Even if all the candidates are wrong, the prompts at least make LLM aware of in-collection patterns and genres. Moreover, due to the low performance of a self-supervised retriever, the LLM-based query augmentation becomes less effective as the retriever bottlenecks the whole pipeline. Therefore, we propose to leverage a non-parametric lexicon-based method (e.g., BM25) as the retrieval module to capture query-document overlap in a literal fashion. As such, LameR makes the retrieval procedure transparent to the LLM, thus circumventing the bottleneck.",
+    "num_pages": 14
+}

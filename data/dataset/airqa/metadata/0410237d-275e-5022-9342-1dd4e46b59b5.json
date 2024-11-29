@@ -1,0 +1,19 @@
+{
+    "uuid": "0410237d-275e-5022-9342-1dd4e46b59b5",
+    "title": "Mini-Model Adaptation: Efficiently Extending Pretrained Models to New Languages via Aligned Shallow Training",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{marchisio-etal-2023-mini,\n    title = \"Mini-Model Adaptation: Efficiently Extending Pretrained Models to New Languages via Aligned Shallow Training\",\n    author = \"Marchisio, Kelly  and\n      Lewis, Patrick  and\n      Chen, Yihong  and\n      Artetxe, Mikel\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.338\",\n    doi = \"10.18653/v1/2023.findings-acl.338\",\n    pages = \"5474--5490\",\n    abstract = \"Prior work shows that it is possible to expand pretrained Masked Language Models (MLMs) to new languages by learning a new set of embeddings, while keeping the transformer body frozen. Despite learning a small subset of parameters, this approach is not compute-efficient, as training the new embeddings requires a full forward and backward pass over the entire model. We propose mini-model adaptation, a compute-efficient alternative that builds a shallow mini-model from a fraction of a large model{'}s parameters. New language-specific embeddings can then be efficiently trained over the mini-model and plugged into the aligned large model for rapid cross-lingual transfer. We explore two approaches to learn mini-models: MINIJOINT, which jointly pretrains the primary model and the mini-model using a single transformer with a secondary MLM head at a middle layer; and MINIPOST, where we start from a regular pretrained model, build a mini-model by extracting and freezing a few layers, and learn a small number of parameters on top. Experiments on XNLI, MLQA and PAWS-X show that mini-model adaptation matches the performance of the standard approach using up to 2.3x less compute on average.\",\n}\n",
+    "authors": [
+        "Kelly Marchisio",
+        "Patrick Lewis",
+        "Yihong Chen",
+        "Mikel Artetxe"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.338.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/0410237d-275e-5022-9342-1dd4e46b59b5.pdf",
+    "abstract": "Prior work shows that it is possible to expand pretrained Masked Language Models (MLMs) to new languages by learning a new set of embeddings, while keeping the transformer body frozen. Despite learning a small subset of parameters, this approach is not compute-efficient, as training the new embeddings requires a full forward and backward pass over the entire model. We propose mini-model adaptation, a compute-efficient alternative that builds a shallow mini-model from a fraction of a large model’s parameters. New language-specific embeddings can then be efficiently trained over the mini-model and plugged into the aligned large model for rapid cross-lingual transfer. We explore two approaches to learn mini-models: MINIJOINT, which jointly pretrains the primary model and the mini-model using a single transformer with a secondary MLM head at a middle layer; and MINIPOST, where we start from a regular pretrained model, build a mini-model by extracting and freezing a few layers, and learn a small number of parameters on top. Experiments on XNLI, MLQA and PAWS-X show that mini-model adaptation matches the performance of the standard approach using up to 2.3x less compute on average.",
+    "num_pages": 17
+}

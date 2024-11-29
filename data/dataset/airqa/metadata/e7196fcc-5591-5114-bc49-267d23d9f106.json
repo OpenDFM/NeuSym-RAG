@@ -1,0 +1,20 @@
+{
+    "uuid": "e7196fcc-5591-5114-bc49-267d23d9f106",
+    "title": "TableVLM: Multi-modal Pre-training for Table Structure Recognition",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2023-tablevlm,\n    title = \"{T}able{VLM}: Multi-modal Pre-training for Table Structure Recognition\",\n    author = \"Chen, Leiyuan  and\n      Huang, Chengsong  and\n      Zheng, Xiaoqing  and\n      Lin, Jinshu  and\n      Huang, Xuanjing\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.137\",\n    doi = \"10.18653/v1/2023.acl-long.137\",\n    pages = \"2437--2449\",\n    abstract = \"Tables are widely used in research and business, which are suitable for human consumption, but not easily machine-processable, particularly when tables are present in images. One of the main challenges to extracting data from images of tables is accurately recognizing table structures, especially for complex tables with cross rows and columns. In this study, we propose a novel multi-modal pre-training model for table structure recognition, named TableVLM.With a two-stream multi-modal transformer-based encoder-decoder architecture, TableVLM learns to capture rich table structure-related features by multiple carefully-designed unsupervised objectives inspired by the notion of masked visual-language modeling. To pre-train this model, we also created a dataset, called ComplexTable, which consists of 1,000K samples to be released publicly. Experiment results show that the model built on pre-trained TableVLM can improve the performance up to 1.97{\\%} in tree-editing-distance-score on ComplexTable.\",\n}\n",
+    "authors": [
+        "Leiyuan Chen",
+        "Chengsong Huang",
+        "Xiaoqing Zheng",
+        "Jinshu Lin",
+        "Xuanjing Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.137.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/e7196fcc-5591-5114-bc49-267d23d9f106.pdf",
+    "abstract": "Tables are widely used in research and business, which are suitable for human consumption, but not easily machine-processable, particularly when tables are present in images. One of the main challenges to extracting data from images of tables is accurately recognizing table structures, especially for complex tables with cross rows and columns. In this study, we propose a novel multi-modal pre-training model for table structure recognition, named TableVLM.With a two-stream multi-modal transformer-based encoder-decoder architecture, TableVLM learns to capture rich table structure-related features by multiple carefully-designed unsupervised objectives inspired by the notion of masked visual-language modeling. To pre-train this model, we also created a dataset, called ComplexTable, which consists of 1,000K samples to be released publicly. Experiment results show that the model built on pre-trained TableVLM can improve the performance up to 1.97% in tree-editing-distance-score on ComplexTable.",
+    "num_pages": 13
+}

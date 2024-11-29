@@ -1,0 +1,32 @@
+{
+    "uuid": "4394b657-b517-5892-8388-020c0772b8c6",
+    "title": "MAIRA at RRG24: A specialised large multimodal model for radiology report generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 23rd Workshop on Biomedical Natural Language Processing",
+    "bibtex": "@inproceedings{srivastav-etal-2024-maira,\n    title = \"{MAIRA} at {RRG}24: A specialised large multimodal model for radiology report generation\",\n    author = \"Srivastav, Shaury  and\n      Ranjit, Mercy  and\n      P{\\'e}rez-Garc{\\'\\i}a, Fernando  and\n      Bouzid, Kenza  and\n      Bannur, Shruthi  and\n      Castro, Daniel C.  and\n      Schwaighofer, Anton  and\n      Sharma, Harshita  and\n      Ilse, Maximilian  and\n      Salvatelli, Valentina  and\n      Bond-Taylor, Sam  and\n      Falck, Fabian  and\n      Thieme, Anja  and\n      Richardson, Hannah  and\n      Lungren, Matthew P.  and\n      Hyland, Stephanie L.  and\n      Alvarez-Valle, Javier\",\n    editor = \"Demner-Fushman, Dina  and\n      Ananiadou, Sophia  and\n      Miwa, Makoto  and\n      Roberts, Kirk  and\n      Tsujii, Junichi\",\n    booktitle = \"Proceedings of the 23rd Workshop on Biomedical Natural Language Processing\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.bionlp-1.50\",\n    doi = \"10.18653/v1/2024.bionlp-1.50\",\n    pages = \"597--602\",\n    abstract = \"This paper discusses the participation of the MSR MAIRA team in the Large-Scale Radiology Report Generation Shared Task Challenge, as part of the BioNLP workshop at ACL 2024. We present a radiology-specific multimodal model designed to generate radiological reports from chest X-Rays (CXRs). Our proposed model combines a CXR-specific image encoder RAD-DINO with a Large Language Model (LLM) based on Vicuna-7B, via a multi-layer perceptron (MLP) adapter. Both the adapter and the LLM have been fine-tuned in a single-stage training setup to generate radiology reports. Experimental results indicate that a joint training setup with findings and impression sections improves findings prediction. Additionally, incorporating lateral images alongside frontal images when available further enhances all metrics. More information and resources about MAIRA can be found on the project website: http://aka.ms/maira.\",\n}\n",
+    "authors": [
+        "Shaury Srivastav",
+        "Mercy Ranjit",
+        "Fernando Pérez-García",
+        "Kenza Bouzid",
+        "Shruthi Bannur",
+        "Daniel C. Castro",
+        "Anton Schwaighofer",
+        "Harshita Sharma",
+        "Maximilian Ilse",
+        "Valentina Salvatelli",
+        "Sam Bond-Taylor",
+        "Fabian Falck",
+        "Anja Thieme",
+        "Hannah Richardson",
+        "Matthew P. Lungren",
+        "Stephanie L. Hyland",
+        "Javier Alvarez-Valle"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.bionlp-1.50.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/4394b657-b517-5892-8388-020c0772b8c6.pdf",
+    "abstract": "This paper discusses the participation of the MSR MAIRA team in the Large-Scale Radiology Report Generation Shared Task Challenge, as part of the BioNLP workshop at ACL 2024. We present a radiology-specific multimodal model designed to generate radiological reports from chest X-Rays (CXRs). Our proposed model combines a CXR-specific image encoder RAD-DINO with a Large Language Model (LLM) based on Vicuna-7B, via a multi-layer perceptron (MLP) adapter. Both the adapter and the LLM have been fine-tuned in a single-stage training setup to generate radiology reports. Experimental results indicate that a joint training setup with findings and impression sections improves findings prediction. Additionally, incorporating lateral images alongside frontal images when available further enhances all metrics. More information and resources about MAIRA can be found on the project website: http://aka.ms/maira.",
+    "num_pages": 6
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "d50ce9d6-7ab6-5454-b692-0915b9717366",
+    "title": "Knowledge Fusion By Evolving Weights of Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{du-etal-2024-knowledge,\n    title = \"Knowledge Fusion By Evolving Weights of Language Models\",\n    author = \"Du, Guodong  and\n      Li, Jing  and\n      Liu, Hanting  and\n      Jiang, Runhua  and\n      Yu, Shuyang  and\n      Guo, Yifei  and\n      Goh, Sim Kuan  and\n      Tang, Ho-Kin\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.698\",\n    doi = \"10.18653/v1/2024.findings-acl.698\",\n    pages = \"11727--11742\",\n    abstract = \"Fine-tuning pre-trained language models, particularly large language models, demands extensive computing resources and can result in varying performance outcomes across different domains and datasets. This paper examines the approach of integrating multiple models from diverse training scenarios into a unified model. This unified model excels across various data domains and exhibits the ability to generalize well on out-of-domain data. We propose a knowledge fusion method named Evolver, inspired by evolutionary algorithms, which does not need further training or additional training data. Specifically, our method involves aggregating the weights of different language models into a population and subsequently generating offspring models through mutation and crossover operations. These offspring models are then evaluated against their parents, allowing for the preservation of those models that show enhanced performance on development datasets. Importantly, our model evolving strategy can be seamlessly integrated with existing model merging frameworks, offering a versatile tool for model enhancement. Experimental results on mainstream language models (i.e., encoder-only, decoder-only, encoder-decoder) reveal that Evolver outperforms previous state-of-the-art models by large margins.\",\n}\n",
+    "authors": [
+        "Guodong Du",
+        "Jing Li",
+        "Hanting Liu",
+        "Runhua Jiang",
+        "Shuyang Yu",
+        "Yifei Guo",
+        "Sim Kuan Goh",
+        "Ho-Kin Tang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.698.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d50ce9d6-7ab6-5454-b692-0915b9717366.pdf",
+    "abstract": "Fine-tuning pre-trained language models, particularly large language models, demands extensive computing resources and can result in varying performance outcomes across different domains and datasets. This paper examines the approach of integrating multiple models from diverse training scenarios into a unified model. This unified model excels across various data domains and exhibits the ability to generalize well on out-of-domain data. We propose a knowledge fusion method named Evolver, inspired by evolutionary algorithms, which does not need further training or additional training data. Specifically, our method involves aggregating the weights of different language models into a population and subsequently generating offspring models through mutation and crossover operations. These offspring models are then evaluated against their parents, allowing for the preservation of those models that show enhanced performance on development datasets. Importantly, our model evolving strategy can be seamlessly integrated with existing model merging frameworks, offering a versatile tool for model enhancement. Experimental results on mainstream language models (i.e., encoder-only, decoder-only, encoder-decoder) reveal that Evolver outperforms previous state-of-the-art models by large margins.",
+    "num_pages": 16
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "ea0c229e-9743-5518-b3c7-fc7d47e588c3",
+    "title": "Injecting Comparison Skills in Task-Oriented Dialogue Systems for Database Search Results Disambiguation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{kim-etal-2023-injecting,\n    title = \"Injecting Comparison Skills in Task-Oriented Dialogue Systems for Database Search Results Disambiguation\",\n    author = \"Kim, Yongil  and\n      Hwang, Yerin  and\n      Shin, Joongbo  and\n      Bae, Hyunkyung  and\n      Jung, Kyomin\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.249\",\n    doi = \"10.18653/v1/2023.findings-acl.249\",\n    pages = \"4047--4065\",\n    abstract = \"In task-oriented dialogue (TOD) systems designed to aid users accomplish specific goals in one or more domains, the agent retrieves entities that satisfy user constraints from the database. However, when multiple database search results exist, an ambiguity occurs regarding which results to select and present to the user. Existing TOD systems handle this ambiguity by randomly selecting one or few results and presenting their names to the user. However, in a real scenario, users do not always accept a randomly recommended entity, and users should have access to more comprehensive information about the search results. To address this limitation, we propose a novel task called Comparison-Based database search Ambiguity handling (CBA), which handles ambiguity in database search results by comparing the properties of multiple entities to enable users to choose according to their preferences. Accordingly, we introduce a new framework for automatically collecting high-quality dialogue data along with the Disambiguating Schema-guided Dialogue (DSD) dataset, an augmented version of the SGD dataset. Experimental studies on the DSD dataset demonstrate that training baseline models with the dataset effectively address the CBA task. Our dataset and code will be publicized.\",\n}\n",
+    "authors": [
+        "Yongil Kim",
+        "Yerin Hwang",
+        "Joongbo Shin",
+        "Hyunkyung Bae",
+        "Kyomin Jung"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.249.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ea0c229e-9743-5518-b3c7-fc7d47e588c3.pdf",
+    "abstract": "In task-oriented dialogue (TOD) systems designed to aid users accomplish specific goals in one or more domains, the agent retrieves entities that satisfy user constraints from the database. However, when multiple database search results exist, an ambiguity occurs regarding which results to select and present to the user. Existing TOD systems handle this ambiguity by randomly selecting one or few results and presenting their names to the user. However, in a real scenario, users do not always accept a randomly recommended entity, and users should have access to more comprehensive information about the search results. To address this limitation, we propose a novel task called Comparison-Based database search Ambiguity handling (CBA), which handles ambiguity in database search results by comparing the properties of multiple entities to enable users to choose according to their preferences. Accordingly, we introduce a new framework for automatically collecting high-quality dialogue data along with the Disambiguating Schema-guided Dialogue (DSD) dataset, an augmented version of the SGD dataset. Experimental studies on the DSD dataset demonstrate that training baseline models with the dataset effectively address the CBA task. Our dataset and code will be publicized.",
+    "num_pages": 19
+}

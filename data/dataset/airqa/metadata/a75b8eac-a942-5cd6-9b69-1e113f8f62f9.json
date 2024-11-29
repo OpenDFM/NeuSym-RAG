@@ -1,0 +1,19 @@
+{
+    "uuid": "a75b8eac-a942-5cd6-9b69-1e113f8f62f9",
+    "title": "Transformer Language Models Handle Word Frequency in Prediction Head",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{kobayashi-etal-2023-transformer,\n    title = \"Transformer Language Models Handle Word Frequency in Prediction Head\",\n    author = \"Kobayashi, Goro  and\n      Kuribayashi, Tatsuki  and\n      Yokoi, Sho  and\n      Inui, Kentaro\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.276\",\n    doi = \"10.18653/v1/2023.findings-acl.276\",\n    pages = \"4523--4535\",\n    abstract = \"Prediction head is a crucial component of Transformer language models. Despite its direct impact on prediction, this component has often been overlooked in analyzing Transformers.In this study, we investigate the inner workings of the prediction head, specifically focusing on bias parameters. Our experiments with BERT and GPT-2 models reveal that the biases in their word prediction heads play a significant role in the models{'} ability to reflect word frequency in a corpus, aligning with the logit adjustment method commonly used in long-tailed learning. We also quantify the effect of controlling the biases in practical auto-regressive text generation scenarios;under a particular setting, more diverse text can be generated without compromising text quality.\",\n}\n",
+    "authors": [
+        "Goro Kobayashi",
+        "Tatsuki Kuribayashi",
+        "Sho Yokoi",
+        "Kentaro Inui"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.276.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a75b8eac-a942-5cd6-9b69-1e113f8f62f9.pdf",
+    "abstract": "Prediction head is a crucial component of Transformer language models. Despite its direct impact on prediction, this component has often been overlooked in analyzing Transformers.In this study, we investigate the inner workings of the prediction head, specifically focusing on bias parameters. Our experiments with BERT and GPT-2 models reveal that the biases in their word prediction heads play a significant role in the models’ ability to reflect word frequency in a corpus, aligning with the logit adjustment method commonly used in long-tailed learning. We also quantify the effect of controlling the biases in practical auto-regressive text generation scenarios;under a particular setting, more diverse text can be generated without compromising text quality.",
+    "num_pages": 13
+}

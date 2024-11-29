@@ -1,0 +1,20 @@
+{
+    "uuid": "7d9e4175-623a-5e7a-b457-5262d3e1a3ca",
+    "title": "A Data-Driven Guided Decoding Mechanism for Diagnostic Captioning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{kaliosis-etal-2024-data,\n    title = \"A Data-Driven Guided Decoding Mechanism for Diagnostic Captioning\",\n    author = \"Kaliosis, Panagiotis  and\n      Pavlopoulos, John  and\n      Charalampakos, Foivos  and\n      Moschovis, Georgios  and\n      Androutsopoulos, Ion\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.444\",\n    doi = \"10.18653/v1/2024.findings-acl.444\",\n    pages = \"7450--7466\",\n}\n",
+    "authors": [
+        "Panagiotis Kaliosis",
+        "John Pavlopoulos",
+        "Foivos Charalampakos",
+        "Georgios Moschovis",
+        "Ion Androutsopoulos"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.444.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7d9e4175-623a-5e7a-b457-5262d3e1a3ca.pdf",
+    "abstract": "Diagnostic Captioning (DC) automatically generates a diagnostic text from one or more medical images (e.g., X-rays, MRIs) of a patient. Treated as a draft, the generated text may assist clinicians, by providing an initial estimation of the patient’s condition, speeding up and helping safeguard the diagnostic process. The accuracy of a diagnostic text, however, strongly depends on how well the key medical conditions depicted in the images are expressed. We propose a new data-driven guided decoding method that incorporates medical information, in the form of existing tags capturing key conditions of the image(s), into the beam search of the diagnostic text generation process. We evaluate the proposed method on two medical datasets using four DC systems that range from generic image-to-text systems with CNN encoders and RNN decoders to pretrained Large Language Models. The latter can also be used in few- and zero-shot learning scenarios. In most cases, the proposed mechanism improves performance with respect to all evaluation measures. We provide an opensource implementation of the proposed method at https://github.com/nlpaueb/dmmcs.",
+    "num_pages": 17
+}

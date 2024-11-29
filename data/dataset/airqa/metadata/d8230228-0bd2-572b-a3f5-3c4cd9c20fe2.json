@@ -1,0 +1,20 @@
+{
+    "uuid": "d8230228-0bd2-572b-a3f5-3c4cd9c20fe2",
+    "title": "Multi-label Learning with Random Circular Vectors",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 9th Workshop on Representation Learning for NLP (RepL4NLP-2024)",
+    "bibtex": "@inproceedings{nishida-etal-2024-multi,\n    title = \"Multi-label Learning with Random Circular Vectors\",\n    author = \"Nishida, Ken  and\n      Machi, Kojiro  and\n      Onishi, Kazuma  and\n      Hayashi, Katsuhiko  and\n      Kamigaito, Hidetaka\",\n    editor = \"Zhao, Chen  and\n      Mosbach, Marius  and\n      Atanasova, Pepa  and\n      Goldfarb-Tarrent, Seraphina  and\n      Hase, Peter  and\n      Hosseini, Arian  and\n      Elbayad, Maha  and\n      Pezzelle, Sandro  and\n      Mozes, Maximilian\",\n    booktitle = \"Proceedings of the 9th Workshop on Representation Learning for NLP (RepL4NLP-2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.repl4nlp-1.18\",\n    pages = \"245--255\",\n    abstract = \"The extreme multi-label classification (XMC) task involves learning a classifier that can predict from a large label set the most relevant subset of labels for a data instance. While deep neural networks (DNNs) have demonstrated remarkable success in XMC problems, the task is still challenging because it must deal with a large number of output labels, which make the DNN training computationally expensive. This paper addresses the issue by exploring the use of random circular vectors, where each vector component is represented as a complex amplitude. In our framework, we can develop an output layer and loss function of DNNs for XMC by representing the final output layer as a fully connected layer that directly predicts a low-dimensional circular vector encoding a set of labels for a data instance. We conducted experiments on synthetic datasets to verify that circular vectors have better label encoding capacity and retrieval ability than normal real-valued vectors. Then, we conducted experiments on actual XMC datasets and found that these appealing properties of circular vectors contribute to significant improvements in task performance compared with a previous model using random real-valued vectors, while reducing the size of the output layers by up to 99{\\%}.\",\n}\n",
+    "authors": [
+        "Ken Nishida",
+        "Kojiro Machi",
+        "Kazuma Onishi",
+        "Katsuhiko Hayashi",
+        "Hidetaka Kamigaito"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.repl4nlp-1.18.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/d8230228-0bd2-572b-a3f5-3c4cd9c20fe2.pdf",
+    "abstract": "The extreme multi-label classification (XMC) task involves learning a classifier that can predict from a large label set the most relevant subset of labels for a data instance. While deep neural networks (DNNs) have demonstrated remarkable success in XMC problems, the task is still challenging because it must deal with a large number of output labels, which make the DNN training computationally expensive. This paper addresses the issue by exploring the use of random circular vectors, where each vector component is represented as a complex amplitude. In our framework, we can develop an output layer and loss function of DNNs for XMC by representing the final output layer as a fully connected layer that directly predicts a low-dimensional circular vector encoding a set of labels for a data instance. We conducted experiments on synthetic datasets to verify that circular vectors have better label encoding capacity and retrieval ability than normal real-valued vectors. Then, we conducted experiments on actual XMC datasets and found that these appealing properties of circular vectors contribute to significant improvements in task performance compared with a previous model using random real-valued vectors, while reducing the size of the output layers by up to 99%.",
+    "num_pages": 11
+}

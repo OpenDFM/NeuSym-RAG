@@ -1,0 +1,21 @@
+{
+    "uuid": "dde7834c-b693-55bf-89dd-e25f772991c3",
+    "title": "Aerial Vision-and-Dialog Navigation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{fan-etal-2023-aerial,\n    title = \"Aerial Vision-and-Dialog Navigation\",\n    author = \"Fan, Yue  and\n      Chen, Winson  and\n      Jiang, Tongzhou  and\n      Zhou, Chun  and\n      Zhang, Yi  and\n      Wang, Xin\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.190\",\n    doi = \"10.18653/v1/2023.findings-acl.190\",\n    pages = \"3043--3061\",\n    abstract = \"The ability to converse with humans and follow natural language commands is crucial for intelligent unmanned aerial vehicles (a.k.a. drones). It can relieve people{'}s burden of holding a controller all the time, allow multitasking, and make drone control more accessible for people with disabilities or with their hands occupied. To this end, we introduce Aerial Vision-and-Dialog Navigation (AVDN), to navigate a drone via natural language conversation. We build a drone simulator with a continuous photorealistic environment and collect a new AVDN dataset of over 3k recorded navigation trajectories with asynchronous human-human dialogs between commanders and followers. The commander provides initial navigation instruction and further guidance by request, while the follower navigates the drone in the simulator and asks questions when needed. During data collection, followers{'} attention on the drone{'}s visual observation is also recorded. Based on the AVDN dataset, we study the tasks of aerial navigation from (full) dialog history and propose an effective Human Attention Aided Transformer model (HAA-Transformer), which learns to predict both navigation waypoints and human attention.\",\n}\n",
+    "authors": [
+        "Yue Fan",
+        "Winson Chen",
+        "Tongzhou Jiang",
+        "Chun Zhou",
+        "Yi Zhang",
+        "Xin Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.190.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/dde7834c-b693-55bf-89dd-e25f772991c3.pdf",
+    "abstract": "The ability to converse with humans and follow natural language commands is crucial for intelligent unmanned aerial vehicles (a.k.a. drones). It can relieve people’s burden of holding a controller all the time, allow multitasking, and make drone control more accessible for people with disabilities or with their hands occupied. To this end, we introduce Aerial Vision-and-Dialog Navigation (AVDN), to navigate a drone via natural language conversation. We build a drone simulator with a continuous photorealistic environment and collect a new AVDN dataset of over 3k recorded navigation trajectories with asynchronous human-human dialogs between commanders and followers. The commander provides initial navigation instruction and further guidance by request, while the follower navigates the drone in the simulator and asks questions when needed. During data collection, followers’ attention on the drone’s visual observation is also recorded. Based on the AVDN dataset, we study the tasks of aerial navigation from (full) dialog history and propose an effective Human Attention Aided Transformer model (HAA-Transformer), which learns to predict both navigation waypoints and human attention.",
+    "num_pages": 19
+}

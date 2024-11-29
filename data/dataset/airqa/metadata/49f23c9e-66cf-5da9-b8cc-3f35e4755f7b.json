@@ -1,0 +1,20 @@
+{
+    "uuid": "49f23c9e-66cf-5da9-b8cc-3f35e4755f7b",
+    "title": "Clustering-Aware Negative Sampling for Unsupervised Sentence Representation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{deng-etal-2023-clustering,\n    title = \"Clustering-Aware Negative Sampling for Unsupervised Sentence Representation\",\n    author = \"Deng, Jinghao  and\n      Wan, Fanqi  and\n      Yang, Tao  and\n      Quan, Xiaojun  and\n      Wang, Rui\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.555\",\n    doi = \"10.18653/v1/2023.findings-acl.555\",\n    pages = \"8713--8729\",\n    abstract = \"Contrastive learning has been widely studied in sentence representation learning. However, earlier works mainly focus on the construction of positive examples, while in-batch samples are often simply treated as negative examples. This approach overlooks the importance of selecting appropriate negative examples, potentially leading to a scarcity of hard negatives and the inclusion of false negatives. To address these issues, we propose ClusterNS (Clustering-aware Negative Sampling), a novel method that incorporates cluster information into contrastive learning for unsupervised sentence representation learning. We apply a modified K-means clustering algorithm to supply hard negatives and recognize in-batch false negatives during training, aiming to solve the two issues in one unified framework. Experiments on semantic textual similarity (STS) tasks demonstrate that our proposed ClusterNS compares favorably with baselines in unsupervised sentence representation learning. Our code has been made publicly available at github.com/djz233/ClusterNS.\",\n}\n",
+    "authors": [
+        "Jinghao Deng",
+        "Fanqi Wan",
+        "Tao Yang",
+        "Xiaojun Quan",
+        "Rui Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.555.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/49f23c9e-66cf-5da9-b8cc-3f35e4755f7b.pdf",
+    "abstract": "Contrastive learning has been widely studied in sentence representation learning. However, earlier works mainly focus on the construction of positive examples, while in-batch samples are often simply treated as negative examples. This approach overlooks the importance of selecting appropriate negative examples, potentially leading to a scarcity of hard negatives and the inclusion of false negatives. To address these issues, we propose ClusterNS (Clustering-aware Negative Sampling), a novel method that incorporates cluster information into contrastive learning for unsupervised sentence representation learning. We apply a modified K-means clustering algorithm to supply hard negatives and recognize in-batch false negatives during training, aiming to solve the two issues in one unified framework. Experiments on semantic textual similarity (STS) tasks demonstrate that our proposed ClusterNS compares favorably with baselines in unsupervised sentence representation learning. Our code has been made publicly available at github.com/djz233/ClusterNS.",
+    "num_pages": 17
+}

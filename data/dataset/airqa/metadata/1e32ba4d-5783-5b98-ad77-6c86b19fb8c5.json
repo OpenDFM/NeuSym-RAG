@@ -1,0 +1,26 @@
+{
+    "uuid": "1e32ba4d-5783-5b98-ad77-6c86b19fb8c5",
+    "title": "Class Lifelong Learning for Intent Detection via Structure Consolidation Networks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{liu-etal-2023-class,\n    title = \"Class Lifelong Learning for Intent Detection via Structure Consolidation Networks\",\n    author = \"Liu, Qingbin  and\n      Hao, Yanchao  and\n      Liu, Xiaolong  and\n      Li, Bo  and\n      Sui, Dianbo  and\n      He, Shizhu  and\n      Liu, Kang  and\n      Zhao, Jun  and\n      Chen, Xi  and\n      Zhang, Ningyu  and\n      Chen, Jiaoyan\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.20\",\n    doi = \"10.18653/v1/2023.findings-acl.20\",\n    pages = \"293--306\",\n    abstract = \"Intent detection, which estimates diverse intents behind user utterances, is an essential component of task-oriented dialogue systems. Previous intent detection models are usually trained offline, which can only handle predefined intent classes. In the real world, new intents may keep challenging deployed models. For example, with the prevalence of the COVID-19 pandemic, users may pose various issues related to the pandemic to conversational systems, which brings many new intents. A general intent detection model should be intelligent enough to continually learn new data and recognize new arriving intent classes. Therefore, this work explores Class Lifelong Learning for Intent Detection (CLL-ID), where the model continually learns new intent classes from new data while avoiding catastrophic performance degradation on old data. To this end, we propose a novel lifelong learning method, called Structure Consolidation Networks (SCN), which consists of structure-based retrospection and contrastive knowledge distillation to handle the problems of expression diversity and class imbalance in the CLL-ID task. In addition to formulating the new task, we construct 3 benchmarks based on 8 intent detection datasets. Experimental results demonstrate the effectiveness of SCN, which significantly outperforms previous lifelong learning methods on the three benchmarks.\",\n}\n",
+    "authors": [
+        "Qingbin Liu",
+        "Yanchao Hao",
+        "Xiaolong Liu",
+        "Bo Li",
+        "Dianbo Sui",
+        "Shizhu He",
+        "Kang Liu",
+        "Jun Zhao",
+        "Xi Chen",
+        "Ningyu Zhang",
+        "Jiaoyan Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.20.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1e32ba4d-5783-5b98-ad77-6c86b19fb8c5.pdf",
+    "abstract": "Intent detection, which estimates diverse intents behind user utterances, is an essential component of task-oriented dialogue systems. Previous intent detection models are usually trained offline, which can only handle predefined intent classes. In the real world, new intents may keep challenging deployed models. For example, with the prevalence of the COVID-19 pandemic, users may pose various issues related to the pandemic to conversational systems, which brings many new intents. A general intent detection model should be intelligent enough to continually learn new data and recognize new arriving intent classes. Therefore, this work explores Class Lifelong Learning for Intent Detection (CLL-ID), where the model continually learns new intent classes from new data while avoiding catastrophic performance degradation on old data. To this end, we propose a novel lifelong learning method, called Structure Consolidation Networks (SCN), which consists of structure-based retrospection and contrastive knowledge distillation to handle the problems of expression diversity and class imbalance in the CLL-ID task. In addition to formulating the new task, we construct 3 benchmarks based on 8 intent detection datasets. Experimental results demonstrate the effectiveness of SCN, which significantly outperforms previous lifelong learning methods on the three benchmarks.",
+    "num_pages": 14
+}

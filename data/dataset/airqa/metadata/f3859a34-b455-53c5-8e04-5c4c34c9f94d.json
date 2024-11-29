@@ -1,0 +1,19 @@
+{
+    "uuid": "f3859a34-b455-53c5-8e04-5c4c34c9f94d",
+    "title": "Cache & Distil: Optimising API Calls to Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{ramirez-etal-2024-cache,\n    title = \"Cache {\\&} Distil: Optimising {API} Calls to Large Language Models\",\n    author = \"Ram{\\'\\i}rez, Guillem  and\n      Lindemann, Matthias  and\n      Birch, Alexandra  and\n      Titov, Ivan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.704\",\n    doi = \"10.18653/v1/2024.findings-acl.704\",\n    pages = \"11838--11853\",\n    abstract = \"Large-scale deployment of generative AI tools often depends on costly API calls to a Large Language Model (LLM) to fulfil user queries, a process that also exposes the request stream to external providers. To curtail the frequency of these calls, one can employ a local smaller language model -a student- which is continuously trained on the responses of the LLM. This student gradually gains proficiency in independently handling an increasing number of user requests, a process we term neural caching. The crucial element in neural caching is a policy that decides which requests should be processed by the student alone and which should be redirected to the LLM, subsequently aiding the student{'}s learning. In this study, we focus on classification tasks, and we consider a range of classic Active Learning-based selection criteria as the policy. Our experiments suggest that Margin Sampling and Query by Committee bring consistent benefits over other policies and baselines across tasks and budgets.\",\n}\n",
+    "authors": [
+        "Guillem Ramírez",
+        "Matthias Lindemann",
+        "Alexandra Birch",
+        "Ivan Titov"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.704.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/f3859a34-b455-53c5-8e04-5c4c34c9f94d.pdf",
+    "abstract": "Large-scale deployment of generative AI tools often depends on costly API calls to a Large Language Model (LLM) to fulfil user queries, a process that also exposes the request stream to external providers. To curtail the frequency of these calls, one can employ a local smaller language model -a student- which is continuously trained on the responses of the LLM. This student gradually gains proficiency in independently handling an increasing number of user requests, a process we term neural caching. The crucial element in neural caching is a policy that decides which requests should be processed by the student alone and which should be redirected to the LLM, subsequently aiding the student’s learning. In this study, we focus on classification tasks, and we consider a range of classic Active Learning-based selection criteria as the policy. Our experiments suggest that Margin Sampling and Query by Committee bring consistent benefits over other policies and baselines across tasks and budgets.",
+    "num_pages": 16
+}

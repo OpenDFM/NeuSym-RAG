@@ -1,0 +1,25 @@
+{
+    "uuid": "4dc092e6-bbbd-564d-9187-b678b688f07e",
+    "title": "Navigating the OverKill in Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{shi-etal-2024-navigating,\n    title = \"Navigating the {O}ver{K}ill in Large Language Models\",\n    author = \"Shi, Chenyu  and\n      Wang, Xiao  and\n      Ge, Qiming  and\n      Gao, Songyang  and\n      Yang, Xianjun  and\n      Gui, Tao  and\n      Zhang, Qi  and\n      Huang, Xuanjing  and\n      Zhao, Xun  and\n      Lin, Dahua\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.253\",\n    doi = \"10.18653/v1/2024.acl-long.253\",\n    pages = \"4602--4614\",\n    abstract = \"Large language models are meticulously aligned to be both helpful and harmless. However, recent research points to a potential overkill which means models may refuse to answer benign queries. In this paper, we investigate the factors for overkill by exploring how models handle and determine the safety of queries. Our findings reveal the presence of shortcuts within models, leading to excessive attention to harmful words like {`}kill{'} and prompts emphasizing safety will exacerbate overkill. Based on these insights, we introduce Self-Contrastive Decoding (Self-CD), a training-free and model-agnostic strategy, to alleviate this phenomenon. We first extract such excessive attention by amplifying the difference in the model{'}s output distributions when responding to system prompts that either include or omit an emphasis on safety. Then we determine the final next-token predictions by downplaying the excessive attention via contrastive decoding. Empirical results have indicated that our method has achieved an average reduction of the refusal rate by 20 {\\%} while having almost no impact on safety.\",\n}\n",
+    "authors": [
+        "Chenyu Shi",
+        "Xiao Wang",
+        "Qiming Ge",
+        "Songyang Gao",
+        "Xianjun Yang",
+        "Tao Gui",
+        "Qi Zhang",
+        "Xuanjing Huang",
+        "Xun Zhao",
+        "Dahua Lin"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.253.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/4dc092e6-bbbd-564d-9187-b678b688f07e.pdf",
+    "abstract": "Large language models are meticulously aligned to be both helpful and harmless. However, recent research points to a potential overkill which means models may refuse to answer benign queries. In this paper, we investigate the factors for overkill by exploring how models handle and determine the safety of queries. Our findings reveal the presence of shortcuts within models, leading to excessive attention to harmful words like ‘kill’ and prompts emphasizing safety will exacerbate overkill. Based on these insights, we introduce Self-Contrastive Decoding (Self-CD), a training-free and model-agnostic strategy, to alleviate this phenomenon. We first extract such excessive attention by amplifying the difference in the model’s output distributions when responding to system prompts that either include or omit an emphasis on safety. Then we determine the final next-token predictions by downplaying the excessive attention via contrastive decoding. Empirical results have indicated that our method has achieved an average reduction of the refusal rate by 20 % while having almost no impact on safety.",
+    "num_pages": 13
+}

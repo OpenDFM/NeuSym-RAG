@@ -1,0 +1,24 @@
+{
+    "uuid": "ff651d37-e725-5752-9c38-3361bc54723d",
+    "title": "mCLIP: Multilingual CLIP via Cross-lingual Transfer",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2023-mclip,\n    title = \"m{CLIP}: Multilingual {CLIP} via Cross-lingual Transfer\",\n    author = \"Chen, Guanhua  and\n      Hou, Lu  and\n      Chen, Yun  and\n      Dai, Wenliang  and\n      Shang, Lifeng  and\n      Jiang, Xin  and\n      Liu, Qun  and\n      Pan, Jia  and\n      Wang, Wenping\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.728\",\n    doi = \"10.18653/v1/2023.acl-long.728\",\n    pages = \"13028--13043\",\n    abstract = \"Large-scale vision-language pretrained (VLP) models like CLIP have shown remarkable performance on various downstream cross-modal tasks. However, they are usually biased towards English due to the lack of sufficient non-English image-text pairs. Existing multilingual VLP methods often learn retrieval-inefficient single-stream models by translation-augmented non-English image-text pairs. In this paper, we introduce mCLIP, a retrieval-efficient dual-stream multilingual VLP model, trained by aligning the CLIP model and a Multilingual Text Encoder (MTE) through a novel Triangle Cross-modal Knowledge Distillation (TriKD) method. It is parameter-efficient as only two light projectors on the top of them are updated during distillation. Furthermore, to enhance the token- and sentence-level multilingual representation of the MTE, we propose to train it with machine translation and contrastive learning jointly before the TriKD to provide a better initialization. Empirical results show that mCLIP achieves new state-of-the-art performance for both zero-shot and finetuned multilingual image-text retrieval task.\",\n}\n",
+    "authors": [
+        "Guanhua Chen",
+        "Lu Hou",
+        "Yun Chen",
+        "Wenliang Dai",
+        "Lifeng Shang",
+        "Xin Jiang",
+        "Qun Liu",
+        "Jia Pan",
+        "Wenping Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.728.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ff651d37-e725-5752-9c38-3361bc54723d.pdf",
+    "abstract": "Large-scale vision-language pretrained (VLP) models like CLIP have shown remarkable performance on various downstream cross-modal tasks. However, they are usually biased towards English due to the lack of sufficient non-English image-text pairs. Existing multilingual VLP methods often learn retrieval-inefficient single-stream models by translation-augmented non-English image-text pairs. In this paper, we introduce mCLIP, a retrieval-efficient dual-stream multilingual VLP model, trained by aligning the CLIP model and a Multilingual Text Encoder (MTE) through a novel Triangle Cross-modal Knowledge Distillation (TriKD) method. It is parameter-efficient as only two light projectors on the top of them are updated during distillation. Furthermore, to enhance the token- and sentence-level multilingual representation of the MTE, we propose to train it with machine translation and contrastive learning jointly before the TriKD to provide a better initialization. Empirical results show that mCLIP achieves new state-of-the-art performance for both zero-shot and finetuned multilingual image-text retrieval task.",
+    "num_pages": 16
+}

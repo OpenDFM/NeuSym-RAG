@@ -1,0 +1,26 @@
+{
+    "uuid": "0c46f33d-387f-5b12-bbf9-29d810a49397",
+    "title": "MT-Bench-101: A Fine-Grained Benchmark for Evaluating Large Language Models in Multi-Turn Dialogues",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{bai-etal-2024-mt,\n    title = \"{MT}-Bench-101: A Fine-Grained Benchmark for Evaluating Large Language Models in Multi-Turn Dialogues\",\n    author = \"Bai, Ge  and\n      Liu, Jie  and\n      Bu, Xingyuan  and\n      He, Yancheng  and\n      Liu, Jiaheng  and\n      Zhou, Zhanhui  and\n      Lin, Zhuoran  and\n      Su, Wenbo  and\n      Ge, Tiezheng  and\n      Zheng, Bo  and\n      Ouyang, Wanli\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.401\",\n    doi = \"10.18653/v1/2024.acl-long.401\",\n    pages = \"7421--7454\",\n    abstract = \"The advent of Large Language Models (LLMs) has drastically enhanced dialogue systems. However, comprehensively evaluating the dialogue abilities of LLMs remains a challenge. Previous benchmarks have primarily focused on single-turn dialogues or provided coarse-grained and incomplete assessments of multi-turn dialogues, overlooking the complexity and fine-grained nuances of real-life dialogues. To address this issue, we introduce MT-Bench-101, specifically designed to evaluate the fine-grained abilities of LLMs in multi-turn dialogues. By conducting a detailed analysis of real multi-turn dialogue data, we construct a three-tier hierarchical ability taxonomy comprising 4208 turns across 1388 multi-turn dialogues in 13 distinct tasks. We then evaluate 21 popular LLMs based on MT-Bench-101, conducting comprehensive analyses from both ability and task perspectives and observing differing trends in LLMs performance across dialogue turns within various tasks. Further analysis indicates that neither utilizing common alignment techniques nor chat-specific designs has led to obvious enhancements in the multi-turn abilities of LLMs. Extensive case studies suggest that our designed tasks accurately assess the corresponding multi-turn abilities. The data and code are available at https://github.com/mtbench101/mt-bench-101.\",\n}\n",
+    "authors": [
+        "Ge Bai",
+        "Jie Liu",
+        "Xingyuan Bu",
+        "Yancheng He",
+        "Jiaheng Liu",
+        "Zhanhui Zhou",
+        "Zhuoran Lin",
+        "Wenbo Su",
+        "Tiezheng Ge",
+        "Bo Zheng",
+        "Wanli Ouyang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.401.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0c46f33d-387f-5b12-bbf9-29d810a49397.pdf",
+    "abstract": "The advent of Large Language Models (LLMs) has drastically enhanced dialogue systems. However, comprehensively evaluating the dialogue abilities of LLMs remains a challenge. Previous benchmarks have primarily focused on single-turn dialogues or provided coarse-grained and incomplete assessments of multi-turn dialogues, overlooking the complexity and fine-grained nuances of real-life dialogues. To address this issue, we introduce MT-Bench-101, specifically designed to evaluate the fine-grained abilities of LLMs in multi-turn dialogues. By conducting a detailed analysis of real multi-turn dialogue data, we construct a three-tier hierarchical ability taxonomy comprising 4208 turns across 1388 multi-turn dialogues in 13 distinct tasks. We then evaluate 21 popular LLMs based on MT-Bench-101, conducting comprehensive analyses from both ability and task perspectives and observing differing trends in LLMs performance across dialogue turns within various tasks. Further analysis indicates that neither utilizing common alignment techniques nor chat-specific designs has led to obvious enhancements in the multi-turn abilities of LLMs. Extensive case studies suggest that our designed tasks accurately assess the corresponding multi-turn abilities. The data and code are available at https://github.com/mtbench101/mt-bench-101.",
+    "num_pages": 34
+}

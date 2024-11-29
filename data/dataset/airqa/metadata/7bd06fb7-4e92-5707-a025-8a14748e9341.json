@@ -1,0 +1,23 @@
+{
+    "uuid": "7bd06fb7-4e92-5707-a025-8a14748e9341",
+    "title": "BertNet: Harvesting Knowledge Graphs with Arbitrary Relations from Pretrained Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{hao-etal-2023-bertnet,\n    title = \"{B}ert{N}et: Harvesting Knowledge Graphs with Arbitrary Relations from Pretrained Language Models\",\n    author = \"Hao, Shibo  and\n      Tan, Bowen  and\n      Tang, Kaiwen  and\n      Ni, Bin  and\n      Shao, Xiyan  and\n      Zhang, Hengzhe  and\n      Xing, Eric  and\n      Hu, Zhiting\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.309\",\n    doi = \"10.18653/v1/2023.findings-acl.309\",\n    pages = \"5000--5015\",\n    abstract = \"It is crucial to automatically construct knowledge graphs (KGs) of diverse new relations to support knowledge discovery and broad applications. Previous KG construction methods, based on either crowdsourcing or text mining, are often limited to a small predefined set of relations due to manual cost or restrictions in text corpus. Recent research proposed to use pretrained language models (LMs) as implicit knowledge bases that accept knowledge queries with prompts. Yet, the implicit knowledge lacks many desirable properties of a full-scale symbolic KG, such as easy access, navigation, editing, and quality assurance. In this paper, we propose a new approach of harvesting massive KGs of arbitrary relations from pretrained LMs. With minimal input of a relation definition (a prompt and a few shot of example entity pairs), the approach efficiently searches in the vast entity pair space to extract diverse accurate knowledge of the desired relation. We develop an effective search-and-rescore mechanism for improved efficiency and accuracy. We deploy the approach to harvest KGs of over 400 new relations, from LMs of varying capacities such as RoBERTaNet. Extensive human and automatic evaluations show our approach manages to extract diverse accurate knowledge, including tuples of complex relations (e.g., {``}A is capable of but not good at B{''}). The resulting KGs as a symbolic interpretation of the source LMs also reveal new insights into the LMs{'} knowledge capacities.\",\n}\n",
+    "authors": [
+        "Shibo Hao",
+        "Bowen Tan",
+        "Kaiwen Tang",
+        "Bin Ni",
+        "Xiyan Shao",
+        "Hengzhe Zhang",
+        "Eric Xing",
+        "Zhiting Hu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.309.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/7bd06fb7-4e92-5707-a025-8a14748e9341.pdf",
+    "abstract": "It is crucial to automatically construct knowledge graphs (KGs) of diverse new relations to support knowledge discovery and broad applications. Previous KG construction methods, based on either crowdsourcing or text mining, are often limited to a small predefined set of relations due to manual cost or restrictions in text corpus. Recent research proposed to use pretrained language models (LMs) as implicit knowledge bases that accept knowledge queries with prompts. Yet, the implicit knowledge lacks many desirable properties of a full-scale symbolic KG, such as easy access, navigation, editing, and quality assurance. In this paper, we propose a new approach of harvesting massive KGs of arbitrary relations from pretrained LMs. With minimal input of a relation definition (a prompt and a few shot of example entity pairs), the approach efficiently searches in the vast entity pair space to extract diverse accurate knowledge of the desired relation. We develop an effective search-and-rescore mechanism for improved efficiency and accuracy. We deploy the approach to harvest KGs of over 400 new relations, from LMs of varying capacities such as RoBERTaNet. Extensive human and automatic evaluations show our approach manages to extract diverse accurate knowledge, including tuples of complex relations (e.g., “A is capable of but not good at B”). The resulting KGs as a symbolic interpretation of the source LMs also reveal new insights into the LMs’ knowledge capacities.",
+    "num_pages": 16
+}

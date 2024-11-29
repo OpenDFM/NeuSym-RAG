@@ -1,0 +1,17 @@
+{
+    "uuid": "69a1610e-c802-59e6-af0b-420be1d715f0",
+    "title": "Model Editing by Standard Fine-Tuning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{gangadhar-stratos-2024-model,\n    title = \"Model Editing by Standard Fine-Tuning\",\n    author = \"Gangadhar, Govind Krishnan  and\n      Stratos, Karl\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.352\",\n    doi = \"10.18653/v1/2024.findings-acl.352\",\n    pages = \"5907--5913\",\n    abstract = \"Standard fine-tuning is considered not as effective as specialized methods for model editing due to its comparatively poor performance. However, it is simple, agnostic to the architectural details of the model being edited, and able to leverage advances in standard training techniques with no additional work (e.g., black-box PEFT for computational efficiency), making it an appealing choice for a model editor. In this work, we show that standard fine-tuning alone can yield competitive model editing performance with two minor modifications. First, we optimize the conditional likelihood rather than the full likelihood. Second, in addition to the typical practice of training on randomly paraphrased edit prompts to encourage generalization, we also train on random or similar unedited facts to encourage locality. Our experiments on the ZsRE and CounterFact datasets demonstrate that these simple modifications allow standard fine-tuning to match or outperform highly specialized editors in terms of edit score.\",\n}\n",
+    "authors": [
+        "Govind Krishnan Gangadhar",
+        "Karl Stratos"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.352.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/69a1610e-c802-59e6-af0b-420be1d715f0.pdf",
+    "abstract": "Standard fine-tuning is considered not as effective as specialized methods for model editing due to its comparatively poor performance. However, it is simple, agnostic to the architectural details of the model being edited, and able to leverage advances in standard training techniques with no additional work (e.g., black-box PEFT for computational efficiency), making it an appealing choice for a model editor. In this work, we show that standard fine-tuning alone can yield competitive model editing performance with two minor modifications. First, we optimize the conditional likelihood rather than the full likelihood. Second, in addition to the typical practice of training on randomly paraphrased edit prompts to encourage generalization, we also train on random or similar unedited facts to encourage locality. Our experiments on the ZsRE and CounterFact datasets demonstrate that these simple modifications allow standard fine-tuning to match or outperform highly specialized editors in terms of edit score.",
+    "num_pages": 7
+}

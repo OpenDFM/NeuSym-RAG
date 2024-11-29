@@ -1,0 +1,20 @@
+{
+    "uuid": "448ead3b-f872-51c3-8dd1-7e0024fa5966",
+    "title": "Fine-tuning Language Models for Joint Rewriting and Completion of Code with Potential Bugs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{wang-etal-2024-fine-tuning,\n    title = \"Fine-tuning Language Models for Joint Rewriting and Completion of Code with Potential Bugs\",\n    author = \"Wang, Dingmin  and\n      Zhao, Jinman  and\n      Pei, Hengzhi  and\n      Tan, Samson  and\n      Zha, Sheng\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.938\",\n    doi = \"10.18653/v1/2024.findings-acl.938\",\n    pages = \"15854--15868\",\n    abstract = \"Handling drafty partial code remains a notable challenge in real-time code suggestion applications. Previous work has demonstrated shortcomings of large language models of code (CodeLLMs) in completing partial code with potential bugs. In this study, we view partial code as implementation hints and fine-tune CodeLLMs to jointly rewrite and complete partial code into functional full programs. We explore two strategies: one-pass generation and multi-pass iterative refinement. We construct new training and testing datasets using semantic-altering code transformations and iterative self-generations.We conduct comprehensive experiments over three representative open-sourced CodeLLMs {--} InCoder, CodeGen, and StarCoder.Results show that CodeLLMs fine-tuned using our approach achieve superior pass rates compared to the previous baselines across existing and newly-created benchmarks, effectively handle both potentially buggy and clean code, and largely preserve the integrity of the original partial implementations. We further present findings on the properties of the potential bugs we tested and on the design choices of our methods.\",\n}\n",
+    "authors": [
+        "Dingmin Wang",
+        "Jinman Zhao",
+        "Hengzhi Pei",
+        "Samson Tan",
+        "Sheng Zha"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.938.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/448ead3b-f872-51c3-8dd1-7e0024fa5966.pdf",
+    "abstract": "Handling drafty partial code remains a notable challenge in real-time code suggestion applications. Previous work has demonstrated shortcomings of large language models of code (CodeLLMs) in completing partial code with potential bugs. In this study, we view partial code as implementation hints and fine-tune CodeLLMs to jointly rewrite and complete partial code into functional full programs. We explore two strategies: one-pass generation and multi-pass iterative refinement. We construct new training and testing datasets using semantic-altering code transformations and iterative self-generations.We conduct comprehensive experiments over three representative open-sourced CodeLLMs – InCoder, CodeGen, and StarCoder.Results show that CodeLLMs fine-tuned using our approach achieve superior pass rates compared to the previous baselines across existing and newly-created benchmarks, effectively handle both potentially buggy and clean code, and largely preserve the integrity of the original partial implementations. We further present findings on the properties of the potential bugs we tested and on the design choices of our methods.",
+    "num_pages": 15
+}

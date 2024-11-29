@@ -1,0 +1,22 @@
+{
+    "uuid": "cc144f12-0c3a-5e6c-a1e9-4c33a366c725",
+    "title": "NaijaHate: Evaluating Hate Speech Detection on Nigerian Twitter Using Representative Data",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{tonneau-etal-2024-naijahate,\n    title = \"{N}aija{H}ate: Evaluating Hate Speech Detection on {N}igerian {T}witter Using Representative Data\",\n    author = \"Tonneau, Manuel  and\n      Quinta De Castro, Pedro  and\n      Lasri, Karim  and\n      Farouq, Ibrahim  and\n      Subramanian, Lakshmi  and\n      Orozco-Olvera, Victor  and\n      Fraiberger, Samuel\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.488\",\n    doi = \"10.18653/v1/2024.acl-long.488\",\n    pages = \"9020--9040\",\n    abstract = \"To address the global issue of online hate, hate speech detection (HSD) systems are typically developed on datasets from the United States, thereby failing to generalize to English dialects from the Majority World. Furthermore, HSD models are often evaluated on non-representative samples, raising concerns about overestimating model performance in real-world settings. In this work, we introduce NaijaHate, the first dataset annotated for HSD which contains a representative sample of Nigerian tweets. We demonstrate that HSD evaluated on biased datasets traditionally used in the literature consistently overestimates real-world performance by at least two-fold. We then propose NaijaXLM-T, a pretrained model tailored to the Nigerian Twitter context, and establish the key role played by domain-adaptive pretraining and finetuning in maximizing HSD performance. Finally, owing to the modest performance of HSD systems in real-world conditions, we find that content moderators would need to review about ten thousand Nigerian tweets flagged as hateful daily to moderate 60{\\%} of all hateful content, highlighting the challenges of moderating hate speech at scale as social media usage continues to grow globally. Taken together, these results pave the way towards robust HSD systems and a better protection of social media users from hateful content in low-resource settings.\",\n}\n",
+    "authors": [
+        "Manuel Tonneau",
+        "Pedro Quinta De Castro",
+        "Karim Lasri",
+        "Ibrahim Farouq",
+        "Lakshmi Subramanian",
+        "Victor Orozco-Olvera",
+        "Samuel Fraiberger"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.488.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/cc144f12-0c3a-5e6c-a1e9-4c33a366c725.pdf",
+    "abstract": "To address the global issue of online hate, hate speech detection (HSD) systems are typically developed on datasets from the United States, thereby failing to generalize to English dialects from the Majority World. Furthermore, HSD models are often evaluated on non-representative samples, raising concerns about overestimating model performance in real-world settings. In this work, we introduce NaijaHate, the first dataset annotated for HSD which contains a representative sample of Nigerian tweets. We demonstrate that HSD evaluated on biased datasets traditionally used in the literature consistently overestimates real-world performance by at least two-fold. We then propose NaijaXLM-T, a pretrained model tailored to the Nigerian Twitter context, and establish the key role played by domain-adaptive pretraining and finetuning in maximizing HSD performance. Finally, owing to the modest performance of HSD systems in real-world conditions, we find that content moderators would need to review about ten thousand Nigerian tweets flagged as hateful daily to moderate 60% of all hateful content, highlighting the challenges of moderating hate speech at scale as social media usage continues to grow globally. Taken together, these results pave the way towards robust HSD systems and a better protection of social media users from hateful content in low-resource settings.",
+    "num_pages": 21
+}

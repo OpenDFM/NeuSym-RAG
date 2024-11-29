@@ -1,0 +1,21 @@
+{
+    "uuid": "e3fafa3c-efc7-5b7b-930e-85e2e1eb5952",
+    "title": "DocFinQA: A Long-Context Financial Reasoning Dataset",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{reddy-etal-2024-docfinqa,\n    title = \"{D}oc{F}in{QA}: A Long-Context Financial Reasoning Dataset\",\n    author = \"Reddy, Varshini  and\n      Koncel-Kedziorski, Rik  and\n      Lai, Viet Dac  and\n      Krumdick, Michael  and\n      Lovering, Charles  and\n      Tanner, Chris\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-short.42\",\n    doi = \"10.18653/v1/2024.acl-short.42\",\n    pages = \"445--458\",\n    abstract = \"For large language models (LLMs) to be effective in the financial domain {--} where each decision can have a significant impact {--} it is necessary to investigate realistic tasks and data. Financial professionals often interact with documents spanning hundreds of pages, but most financial research datasets only deal with short excerpts from these documents. To address this, we introduce a long-document financial QA task. We augment 7,437 questions from the existing FinQA dataset with full-document context, extending the average context length from under 700 words in FinQA to 123k words in DocFinQA. We conduct extensive experiments over retrieval-based QA pipelines and long-context language models. Based on our experiments, DocFinQA proves a significant challenge for even state-of-the-art systems. We also provide a case study on a subset of the longest documents in DocFinQA and find that models particularly struggle with these documents. Addressing these challenges may have a wide-reaching impact across applications where specificity and long-range contexts are critical, like gene sequences and legal document contract analysis. DocFinQA dataset is publicly accessible.\",\n}\n",
+    "authors": [
+        "Varshini Reddy",
+        "Rik Koncel-Kedziorski",
+        "Viet Dac Lai",
+        "Michael Krumdick",
+        "Charles Lovering",
+        "Chris Tanner"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-short.42.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e3fafa3c-efc7-5b7b-930e-85e2e1eb5952.pdf",
+    "abstract": "For large language models (LLMs) to be effective in the financial domain – where each decision can have a significant impact – it is necessary to investigate realistic tasks and data. Financial professionals often interact with documents spanning hundreds of pages, but most financial research datasets only deal with short excerpts from these documents. To address this, we introduce a long-document financial QA task. We augment 7,437 questions from the existing FinQA dataset with full-document context, extending the average context length from under 700 words in FinQA to 123k words in DocFinQA. We conduct extensive experiments over retrieval-based QA pipelines and long-context language models. Based on our experiments, DocFinQA proves a significant challenge for even state-of-the-art systems. We also provide a case study on a subset of the longest documents in DocFinQA and find that models particularly struggle with these documents. Addressing these challenges may have a wide-reaching impact across applications where specificity and long-range contexts are critical, like gene sequences and legal document contract analysis. DocFinQA dataset is publicly accessible.",
+    "num_pages": 14
+}

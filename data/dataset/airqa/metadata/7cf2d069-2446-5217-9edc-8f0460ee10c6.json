@@ -1,0 +1,21 @@
+{
+    "uuid": "7cf2d069-2446-5217-9edc-8f0460ee10c6",
+    "title": "Self-Supervised Position Debiasing for Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{liu-etal-2024-self-supervised,\n    title = \"Self-Supervised Position Debiasing for Large Language Models\",\n    author = \"Liu, Zhongkun  and\n      Chen, Zheng  and\n      Zhang, Mengqi  and\n      Ren, Zhaochun  and\n      Ren, Pengjie  and\n      Chen, Zhumin\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.170\",\n    doi = \"10.18653/v1/2024.findings-acl.170\",\n    pages = \"2897--2917\",\n    abstract = \"Fine-tuning has been demonstrated to be an effective method to improve the domain performance of large language models (LLMs). However, LLMs might fit the dataset bias and shortcuts for prediction, leading to poor generation performance. Previous works have proven that LLMs are prone to exhibit position bias, i.e., leveraging information positioned at the beginning or end, or specific positional cues within the input. Existing debiasing methods for LLMs require external bias knowledge or annotated non-biased samples, which is lacking for position debiasing and impractical in reality. In this work, we propose a self-supervised position debiasing (SOD) framework to mitigate position bias for LLMs. SOD leverages unsupervised responses from pre-trained LLMs for debiasing without relying on any external knowledge. To improve the quality of unsupervised responses, we propose an objective alignment (OAM) module to prune these responses. Experiments on eight datasets and five tasks show that SOD consistently outperforms existing methods in mitigating three types of position biases. Besides, SOD achieves this by sacrificing only a small performance on biased samples, which is general and effective. To facilitate the reproducibility of the results, we share the code of all methods and datasets on https://github.com/LZKSKY/SOD.\",\n}\n",
+    "authors": [
+        "Zhongkun Liu",
+        "Zheng Chen",
+        "Mengqi Zhang",
+        "Zhaochun Ren",
+        "Pengjie Ren",
+        "Zhumin Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.170.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7cf2d069-2446-5217-9edc-8f0460ee10c6.pdf",
+    "abstract": "Fine-tuning has been demonstrated to be an effective method to improve the domain performance of large language models (LLMs). However, LLMs might fit the dataset bias and shortcuts for prediction, leading to poor generation performance. Previous works have proven that LLMs are prone to exhibit position bias, i.e., leveraging information positioned at the beginning or end, or specific positional cues within the input. Existing debiasing methods for LLMs require external bias knowledge or annotated non-biased samples, which is lacking for position debiasing and impractical in reality. In this work, we propose a self-supervised position debiasing (SOD) framework to mitigate position bias for LLMs. SOD leverages unsupervised responses from pre-trained LLMs for debiasing without relying on any external knowledge. To improve the quality of unsupervised responses, we propose an objective alignment (OAM) module to prune these responses. Experiments on eight datasets and five tasks show that SOD consistently outperforms existing methods in mitigating three types of position biases. Besides, SOD achieves this by sacrificing only a small performance on biased samples, which is general and effective. To facilitate the reproducibility of the results, we share the code of all methods and datasets on https://github.com/LZKSKY/SOD.",
+    "num_pages": 21
+}

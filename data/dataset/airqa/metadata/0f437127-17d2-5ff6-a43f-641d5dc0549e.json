@@ -1,0 +1,19 @@
+{
+    "uuid": "0f437127-17d2-5ff6-a43f-641d5dc0549e",
+    "title": "What Do Language Models Learn in Context? The Structured Task Hypothesis.",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{li-etal-2024-language,\n    title = \"What Do Language Models Learn in Context? The Structured Task Hypothesis.\",\n    author = \"Li, Jiaoda  and\n      Hou, Yifan  and\n      Sachan, Mrinmaya  and\n      Cotterell, Ryan\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.669\",\n    doi = \"10.18653/v1/2024.acl-long.669\",\n    pages = \"12365--12379\",\n    abstract = \"Large language models (LLMs) exhibit an intriguing ability to learn a novel task from in-context examples presented in a demonstration, termed in-context learning (ICL). Understandably, a swath of research has been dedicated to uncovering the theories underpinning ICL. One popular hypothesis explains ICL by task selection. LLMs identify the task based on the demonstration and generalize it to the prompt. Another popular hypothesis is that ICL is a form of meta-learning, i.e., the models learn a learning algorithm at pre-training time and apply it to the demonstration. Finally, a third hypothesis argues that LLMs use the demonstration to select a composition of tasks learned during pre-training to perform ICL. In this paper, we empirically explore these three hypotheses that explain LLMs{'} ability to learn in context with a suite of experiments derived from common text classification tasks. We invalidate the first two hypotheses with counterexamples and provide evidence in support of the last hypothesis. Our results suggest an LLM could learn a novel task in context via composing tasks learned during pre-training.\",\n}\n",
+    "authors": [
+        "Jiaoda Li",
+        "Yifan Hou",
+        "Mrinmaya Sachan",
+        "Ryan Cotterell"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.669.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0f437127-17d2-5ff6-a43f-641d5dc0549e.pdf",
+    "abstract": "Large language models (LLMs) exhibit an intriguing ability to learn a novel task from in-context examples presented in a demonstration, termed in-context learning (ICL). Understandably, a swath of research has been dedicated to uncovering the theories underpinning ICL. One popular hypothesis explains ICL by task selection. LLMs identify the task based on the demonstration and generalize it to the prompt. Another popular hypothesis is that ICL is a form of meta-learning, i.e., the models learn a learning algorithm at pre-training time and apply it to the demonstration. Finally, a third hypothesis argues that LLMs use the demonstration to select a composition of tasks learned during pre-training to perform ICL. In this paper, we empirically explore these three hypotheses that explain LLMs’ ability to learn in context with a suite of experiments derived from common text classification tasks. We invalidate the first two hypotheses with counterexamples and provide evidence in support of the last hypothesis. Our results suggest an LLM could learn a novel task in context via composing tasks learned during pre-training.",
+    "num_pages": 15
+}

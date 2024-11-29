@@ -1,0 +1,18 @@
+{
+    "uuid": "d801fac5-060f-5c59-90c4-6f95efe98be8",
+    "title": "LaSQuE: Improved Zero-Shot Classification from Explanations Through Quantifier Modeling and Curriculum Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{ghosh-etal-2023-lasque,\n    title = \"{L}a{SQ}u{E}: Improved Zero-Shot Classification from Explanations Through Quantifier Modeling and Curriculum Learning\",\n    author = \"Ghosh, Sayan  and\n      R. Menon, Rakesh  and\n      Srivastava, Shashank\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.467\",\n    doi = \"10.18653/v1/2023.findings-acl.467\",\n    pages = \"7403--7419\",\n    abstract = \"A hallmark of human intelligence is the ability to learn new concepts purely from language. Several recent approaches have explored training machine learning models via natural language supervision. However, these approaches fall short in leveraging linguistic quantifiers (such as {`}always{'} or {`}rarely{'}) and mimicking humans in compositionally learning complex tasks. Here, we present LaSQuE, a method that can learn zero-shot classifiers from language explanations by using three new strategies - (1) modeling the semantics of linguistic quantifiers in explanations (including exploiting ordinal strength relationships, such as {`}always{'} {\\textgreater} {`}likely{'}), (2) aggregating information from multiple explanations using an attention-based mechanism, and (3) model training via curriculum learning. With these strategies, LaSQuE outperforms prior work, showing an absolute gain of up to 7{\\%} in generalizing to unseen real-world classification tasks.\",\n}\n",
+    "authors": [
+        "Sayan Ghosh",
+        "Rakesh R. Menon",
+        "Shashank Srivastava"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.467.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d801fac5-060f-5c59-90c4-6f95efe98be8.pdf",
+    "abstract": "A hallmark of human intelligence is the ability to learn new concepts purely from language. Several recent approaches have explored training machine learning models via natural language supervision. However, these approaches fall short in leveraging linguistic quantifiers (such as ‘always’ or ‘rarely’) and mimicking humans in compositionally learning complex tasks. Here, we present LaSQuE, a method that can learn zero-shot classifiers from language explanations by using three new strategies - (1) modeling the semantics of linguistic quantifiers in explanations (including exploiting ordinal strength relationships, such as ‘always’ > ‘likely’), (2) aggregating information from multiple explanations using an attention-based mechanism, and (3) model training via curriculum learning. With these strategies, LaSQuE outperforms prior work, showing an absolute gain of up to 7% in generalizing to unseen real-world classification tasks.",
+    "num_pages": 17
+}

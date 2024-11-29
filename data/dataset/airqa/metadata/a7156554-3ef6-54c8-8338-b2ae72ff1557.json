@@ -1,0 +1,17 @@
+{
+    "uuid": "a7156554-3ef6-54c8-8338-b2ae72ff1557",
+    "title": "To Asymmetry and Beyond: Structured Pruning of Sequence to Sequence Models for Improved Inference Efficiency",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)",
+    "bibtex": "@inproceedings{campos-zhai-2023-asymmetry,\n    title = \"To Asymmetry and Beyond: Structured Pruning of Sequence to Sequence Models for Improved Inference Efficiency\",\n    author = \"Campos, Daniel  and\n      Zhai, Chengxiang\",\n    editor = \"Sadat Moosavi, Nafise  and\n      Gurevych, Iryna  and\n      Hou, Yufang  and\n      Kim, Gyuwan  and\n      Kim, Young Jin  and\n      Schuster, Tal  and\n      Agrawal, Ameeta\",\n    booktitle = \"Proceedings of The Fourth Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (Hybrid)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.sustainlp-1.6\",\n    doi = \"10.18653/v1/2023.sustainlp-1.6\",\n    pages = \"91--109\",\n}\n",
+    "authors": [
+        "Daniel Campos",
+        "Chengxiang Zhai"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.sustainlp-1.6.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a7156554-3ef6-54c8-8338-b2ae72ff1557.pdf",
+    "abstract": "Sequence-to-sequence language models can be used to produce abstractive summaries which are coherent, relevant, and concise. Still, model sizes can make deployment in latency-sensitive or web-scale implementations difficult. This paper studies the relationship between model size, structured pruning, inference efficiency, and summarization accuracy on widely used summarization datasets. We show that model accuracy is tied to the encoder size while inference efficiency is connected to the decoder. Using asymmetric pruning can lead to nearly 3x improvement in inference latency with 1 point loss in Rouge-2. Moreover, we find both the average degradation and the role of asymmetry to be consistent across model sizes and variations in datasets. We release our code1, training regimes, and associated model 2 for broad usage to encourage usage and experimentation.",
+    "num_pages": 19
+}

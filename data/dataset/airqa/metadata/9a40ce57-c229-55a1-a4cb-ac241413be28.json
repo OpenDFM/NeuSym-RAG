@@ -1,0 +1,19 @@
+{
+    "uuid": "9a40ce57-c229-55a1-a4cb-ac241413be28",
+    "title": "BUT Systems for IWSLT 2023 Marathi - Hindi Low Resource Speech Translation Task",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)",
+    "bibtex": "@inproceedings{kesiraju-etal-2023-systems,\n    title = \"{BUT} Systems for {IWSLT} 2023 {M}arathi - {H}indi Low Resource Speech Translation Task\",\n    author = \"Kesiraju, Santosh  and\n      Bene{\\v{s}}, Karel  and\n      Tikhonov, Maksim  and\n      {\\v{C}}ernock{\\'y}, Jan\",\n    editor = \"Salesky, Elizabeth  and\n      Federico, Marcello  and\n      Carpuat, Marine\",\n    booktitle = \"Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada (in-person and online)\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.iwslt-1.19\",\n    doi = \"10.18653/v1/2023.iwslt-1.19\",\n    pages = \"227--234\",\n    abstract = \"This paper describes the systems submitted for Marathi to Hindi low-resource speech translation task. Our primary submission is based on an end-to-end direct speech translation system, whereas the contrastive one is a cascaded system. The backbone of both the systems is a Hindi-Marathi bilingual ASR system trained on 2790 hours of imperfect transcribed speech. The end-to-end speech translation system was directly initialized from the ASR, and then fine-tuned for direct speech translation with an auxiliary CTC loss for translation. The MT model for the cascaded system is initialized from a cross-lingual language model, which was then fine-tuned using 1.6 M parallel sentences. All our systems were trained from scratch on publicly available datasets. In the end, we use a language model to re-score the n-best hypotheses. Our primary submission achieved 30.5 and 39.6 BLEU whereas the contrastive system obtained 21.7 and 28.6 BLEU on official dev and test sets respectively. The paper also presents the analysis on several experiments that were conducted and outlines the strategies for improving speech translation in low-resource scenarios.\",\n}\n",
+    "authors": [
+        "Santosh Kesiraju",
+        "Karel Beneš",
+        "Maksim Tikhonov",
+        "Jan Černocký"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.iwslt-1.19.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9a40ce57-c229-55a1-a4cb-ac241413be28.pdf",
+    "abstract": "This paper describes the systems submitted for Marathi to Hindi low-resource speech translation task. Our primary submission is based on an end-to-end direct speech translation system, whereas the contrastive one is a cascaded system. The backbone of both the systems is a Hindi-Marathi bilingual ASR system trained on 2790 hours of imperfect transcribed speech. The end-to-end speech translation system was directly initialized from the ASR, and then fine-tuned for direct speech translation with an auxiliary CTC loss for translation. The MT model for the cascaded system is initialized from a cross-lingual language model, which was then fine-tuned using 1.6 M parallel sentences. All our systems were trained from scratch on publicly available datasets. In the end, we use a language model to re-score the n-best hypotheses. Our primary submission achieved 30.5 and 39.6 BLEU whereas the contrastive system obtained 21.7 and 28.6 BLEU on official dev and test sets respectively. The paper also presents the analysis on several experiments that were conducted and outlines the strategies for improving speech translation in low-resource scenarios.",
+    "num_pages": 8
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "30511a6f-d7ca-554d-ba53-cef9ab327563",
+    "title": "Improving Gradient Trade-offs between Tasks in Multi-task Text Classification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chai-etal-2023-improving,\n    title = \"Improving Gradient Trade-offs between Tasks in Multi-task Text Classification\",\n    author = \"Chai, Heyan  and\n      Cui, Jinhao  and\n      Wang, Ye  and\n      Zhang, Min  and\n      Fang, Binxing  and\n      Liao, Qing\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.144\",\n    doi = \"10.18653/v1/2023.acl-long.144\",\n    pages = \"2565--2579\",\n    abstract = \"Multi-task learning (MTL) has emerged as a promising approach for sharing inductive bias across multiple tasks to enable more efficient learning in text classification. However, training all tasks simultaneously often yields degraded performance of each task than learning them independently, since different tasks might conflict with each other. Existing MTL methods for alleviating this issue is to leverage heuristics or gradient-based algorithm to achieve an arbitrary Pareto optimal trade-off among different tasks. In this paper, we present a novel gradient trade-off approach to mitigate the task conflict problem, dubbed GetMTL, which can achieve a specific trade-off among different tasks nearby the main objective of multi-task text classification (MTC), so as to improve the performance of each task simultaneously. The results of extensive experiments on two benchmark datasets back up our theoretical analysis and validate the superiority of our proposed GetMTL.\",\n}\n",
+    "authors": [
+        "Heyan Chai",
+        "Jinhao Cui",
+        "Ye Wang",
+        "Min Zhang",
+        "Binxing Fang",
+        "Qing Liao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.144.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/30511a6f-d7ca-554d-ba53-cef9ab327563.pdf",
+    "abstract": "Multi-task learning (MTL) has emerged as a promising approach for sharing inductive bias across multiple tasks to enable more efficient learning in text classification. However, training all tasks simultaneously often yields degraded performance of each task than learning them independently, since different tasks might conflict with each other. Existing MTL methods for alleviating this issue is to leverage heuristics or gradient-based algorithm to achieve an arbitrary Pareto optimal trade-off among different tasks. In this paper, we present a novel gradient trade-off approach to mitigate the task conflict problem, dubbed GetMTL, which can achieve a specific trade-off among different tasks nearby the main objective of multi-task text classification (MTC), so as to improve the performance of each task simultaneously. The results of extensive experiments on two benchmark datasets back up our theoretical analysis and validate the superiority of our proposed GetMTL.",
+    "num_pages": 15
+}

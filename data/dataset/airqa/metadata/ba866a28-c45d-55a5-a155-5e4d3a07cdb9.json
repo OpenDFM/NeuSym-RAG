@@ -1,0 +1,19 @@
+{
+    "uuid": "ba866a28-c45d-55a5-a155-5e4d3a07cdb9",
+    "title": "Towards Faithful Dialogues via Focus Learning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{deng-etal-2023-towards,\n    title = \"Towards Faithful Dialogues via Focus Learning\",\n    author = \"Deng, Yifan  and\n      Zhang, Xingsheng  and\n      Huang, Heyan  and\n      Hu, Yue\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.250\",\n    doi = \"10.18653/v1/2023.acl-long.250\",\n    pages = \"4554--4566\",\n    abstract = \"Maintaining faithfulness between responses and knowledge is an important research topic for building reliable knowledge-grounded dialogue systems. Existing models heavily rely on elaborate data engineering or increasing the model{'}s parameters ignoring to track the tokens that significantly influence losses, which is decisive for the optimization direction of the model in each iteration. To address this issue, we propose Focus Learning (FocusL), a novel learning approach that adjusts the contribution of each token to the optimization direction by directly scaling the corresponding objective loss. Specifically, we first introduce a positioning method by utilizing similarity distributions between knowledge and each response token to locate knowledge-aware tokens. Then, we further design a similarity-to-weight transformation to provide dynamic token-level weights for the cross-entropy loss. Finally, we use the weighted loss to encourage the model to pay special attention to the knowledge utilization. Experimental results demonstrate that our method achieves the new state-of-the-art results and generates more reliable responses while maintaining training stability.\",\n}\n",
+    "authors": [
+        "Yifan Deng",
+        "Xingsheng Zhang",
+        "Heyan Huang",
+        "Yue Hu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.250.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ba866a28-c45d-55a5-a155-5e4d3a07cdb9.pdf",
+    "abstract": "Maintaining faithfulness between responses and knowledge is an important research topic for building reliable knowledge-grounded dialogue systems. Existing models heavily rely on elaborate data engineering or increasing the model’s parameters ignoring to track the tokens that significantly influence losses, which is decisive for the optimization direction of the model in each iteration. To address this issue, we propose Focus Learning (FocusL), a novel learning approach that adjusts the contribution of each token to the optimization direction by directly scaling the corresponding objective loss. Specifically, we first introduce a positioning method by utilizing similarity distributions between knowledge and each response token to locate knowledge-aware tokens. Then, we further design a similarity-to-weight transformation to provide dynamic token-level weights for the cross-entropy loss. Finally, we use the weighted loss to encourage the model to pay special attention to the knowledge utilization. Experimental results demonstrate that our method achieves the new state-of-the-art results and generates more reliable responses while maintaining training stability.",
+    "num_pages": 13
+}

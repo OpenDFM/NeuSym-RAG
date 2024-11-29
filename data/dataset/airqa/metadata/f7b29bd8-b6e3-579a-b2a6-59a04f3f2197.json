@@ -1,0 +1,24 @@
+{
+    "uuid": "f7b29bd8-b6e3-579a-b2a6-59a04f3f2197",
+    "title": "LLM can Achieve Self-Regulation via Hyperparameter Aware Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{wang-etal-2024-llm-achieve,\n    title = \"{LLM} can Achieve Self-Regulation via Hyperparameter Aware Generation\",\n    author = \"Wang, Siyin  and\n      Li, Shimin  and\n      Sun, Tianxiang  and\n      Fu, Jinlan  and\n      Cheng, Qinyuan  and\n      Ye, Jiasheng  and\n      Ye, Junjie  and\n      Qiu, Xipeng  and\n      Huang, Xuanjing\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.396\",\n    doi = \"10.18653/v1/2024.findings-acl.396\",\n    pages = \"6632--6646\",\n    abstract = \"In the realm of Large Language Models (LLMs), users commonly employ diverse decoding strategies and adjust hyperparameters to control the generated text. However, a critical question emerges: Are LLMs conscious of the existence of these decoding strategies and capable of regulating themselves? The current decoding generation process often relies on empirical and heuristic manual adjustments to hyperparameters based on types of tasks and demands. However, this process is typically cumbersome, and the decoding hyperparameters may not always be optimal for each sample. To address the aforementioned challenges, we propose a novel text generation paradigm termed Hyperparameter Aware Generation (HAG). By leveraging hyperparameter-aware instruction tuning, the LLM autonomously determines the optimal decoding strategy and configs based on the input samples, enabling self-regulation. Our approach eliminates the need for extensive manual tuning, offering a more autonomous, self-regulate model behavior. Experimental results spanning six datasets across reasoning, creativity, translation, and mathematics tasks demonstrate that hyperparameter-aware instruction tuning empowers the LLMs to self-regulate the decoding strategy and hyperparameter. HAG extends the current paradigm in the text generation process, highlighting the feasibility of endowing the LLMs with self-regulate decoding strategies.\",\n}\n",
+    "authors": [
+        "Siyin Wang",
+        "Shimin Li",
+        "Tianxiang Sun",
+        "Jinlan Fu",
+        "Qinyuan Cheng",
+        "Jiasheng Ye",
+        "Junjie Ye",
+        "Xipeng Qiu",
+        "Xuanjing Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.396.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/f7b29bd8-b6e3-579a-b2a6-59a04f3f2197.pdf",
+    "abstract": "In the realm of Large Language Models (LLMs), users commonly employ diverse decoding strategies and adjust hyperparameters to control the generated text. However, a critical question emerges: Are LLMs conscious of the existence of these decoding strategies and capable of regulating themselves? The current decoding generation process often relies on empirical and heuristic manual adjustments to hyperparameters based on types of tasks and demands. However, this process is typically cumbersome, and the decoding hyperparameters may not always be optimal for each sample. To address the aforementioned challenges, we propose a novel text generation paradigm termed Hyperparameter Aware Generation (HAG). By leveraging hyperparameter-aware instruction tuning, the LLM autonomously determines the optimal decoding strategy and configs based on the input samples, enabling self-regulation. Our approach eliminates the need for extensive manual tuning, offering a more autonomous, self-regulate model behavior. Experimental results spanning six datasets across reasoning, creativity, translation, and mathematics tasks demonstrate that hyperparameter-aware instruction tuning empowers the LLMs to self-regulate the decoding strategy and hyperparameter. HAG extends the current paradigm in the text generation process, highlighting the feasibility of endowing the LLMs with self-regulate decoding strategies.",
+    "num_pages": 15
+}

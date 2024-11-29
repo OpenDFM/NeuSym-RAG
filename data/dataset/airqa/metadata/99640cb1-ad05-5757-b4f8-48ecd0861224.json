@@ -1,0 +1,22 @@
+{
+    "uuid": "99640cb1-ad05-5757-b4f8-48ecd0861224",
+    "title": "Evaluation of Question Generation Needs More References",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{oh-etal-2023-evaluation,\n    title = \"Evaluation of Question Generation Needs More References\",\n    author = \"Oh, Shinhyeok  and\n      Go, Hyojun  and\n      Moon, Hyeongdon  and\n      Lee, Yunsung  and\n      Jeong, Myeongho  and\n      Lee, Hyun Seung  and\n      Choi, Seungtaek\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.396\",\n    doi = \"10.18653/v1/2023.findings-acl.396\",\n    pages = \"6358--6367\",\n    abstract = \"Question generation (QG) is the task of generating a valid and fluent question based on a given context and the target answer. According to various purposes, even given the same context, instructors can ask questions about different concepts, and even the same concept can be written in different ways. However, the evaluation for QG usually depends on single reference-based similarity metrics, such as n-gram-based metric or learned metric, which is not sufficient to fully evaluate the potential of QG methods. To this end, we propose to paraphrase the reference question for a more robust QG evaluation. Using large language models such as GPT-3, we created semantically and syntactically diverse questions, then adopt the simple aggregation of the popular evaluation metrics as the final scores. Through our experiments, we found that using multiple (pseudo) references is more effective for QG evaluation while showing a higher correlation with human evaluations than evaluation with a single reference.\",\n}\n",
+    "authors": [
+        "Shinhyeok Oh",
+        "Hyojun Go",
+        "Hyeongdon Moon",
+        "Yunsung Lee",
+        "Myeongho Jeong",
+        "Hyun Seung Lee",
+        "Seungtaek Choi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.396.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/99640cb1-ad05-5757-b4f8-48ecd0861224.pdf",
+    "abstract": "Question generation (QG) is the task of generating a valid and fluent question based on a given context and the target answer. According to various purposes, even given the same context, instructors can ask questions about different concepts, and even the same concept can be written in different ways. However, the evaluation for QG usually depends on single reference-based similarity metrics, such as n-gram-based metric or learned metric, which is not sufficient to fully evaluate the potential of QG methods. To this end, we propose to paraphrase the reference question for a more robust QG evaluation. Using large language models such as GPT-3, we created semantically and syntactically diverse questions, then adopt the simple aggregation of the popular evaluation metrics as the final scores. Through our experiments, we found that using multiple (pseudo) references is more effective for QG evaluation while showing a higher correlation with human evaluations than evaluation with a single reference.",
+    "num_pages": 10
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "9fc53922-02ff-5dee-800d-56c573919150",
+    "title": "ChronosLex: Time-aware Incremental Training for Temporal Generalization of Legal Classification Tasks",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{t-y-s-s-etal-2024-chronoslex,\n    title = \"{C}hronos{L}ex: Time-aware Incremental Training for Temporal Generalization of Legal Classification Tasks\",\n    author = \"T.y.s.s, Santosh  and\n      Vuong, Tuan-Quang  and\n      Grabmair, Matthias\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.166\",\n    doi = \"10.18653/v1/2024.acl-long.166\",\n    pages = \"3022--3039\",\n    abstract = \"This study investigates the challenges posed by the dynamic nature of legal multi-label text classification tasks, where legal concepts evolve over time. Existing models often overlook the temporal dimension in their training process, leading to suboptimal performance of those models over time, as they treat training data as a single homogeneous block. To address this, we introduce ChronosLex, an incremental training paradigm that trains models on chronological splits, preserving the temporal order of the data. However, this incremental approach raises concerns about overfitting to recent data, prompting an assessment of mitigation strategies using continual learning and temporal invariant methods. Our experimental results over six legal multi-label text classification datasets reveal that continual learning methods prove effective in preventing overfitting thereby enhancing temporal generalizability, while temporal invariant methods struggle to capture these dynamics of temporal shifts.\",\n}\n",
+    "authors": [
+        "Santosh T.y.s.s",
+        "Tuan-Quang Vuong",
+        "Matthias Grabmair"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.166.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/9fc53922-02ff-5dee-800d-56c573919150.pdf",
+    "abstract": "This study investigates the challenges posed by the dynamic nature of legal multi-label text classification tasks, where legal concepts evolve over time. Existing models often overlook the temporal dimension in their training process, leading to suboptimal performance of those models over time, as they treat training data as a single homogeneous block. To address this, we introduce ChronosLex, an incremental training paradigm that trains models on chronological splits, preserving the temporal order of the data. However, this incremental approach raises concerns about overfitting to recent data, prompting an assessment of mitigation strategies using continual learning and temporal invariant methods. Our experimental results over six legal multi-label text classification datasets reveal that continual learning methods prove effective in preventing overfitting thereby enhancing temporal generalizability, while temporal invariant methods struggle to capture these dynamics of temporal shifts.",
+    "num_pages": 18
+}

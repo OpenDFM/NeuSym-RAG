@@ -1,0 +1,21 @@
+{
+    "uuid": "08afd67a-b6b4-5b65-a26f-b82e90ea1bd4",
+    "title": "A Natural Bias for Language Generation Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{meister-etal-2023-natural,\n    title = \"A Natural Bias for Language Generation Models\",\n    author = \"Meister, Clara  and\n      Stokowiec, Wojciech  and\n      Pimentel, Tiago  and\n      Yu, Lei  and\n      Rimell, Laura  and\n      Kuncoro, Adhiguna\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.22\",\n    doi = \"10.18653/v1/2023.acl-short.22\",\n    pages = \"243--255\",\n    abstract = \"After just a few hundred training updates, a standard probabilistic model for language generation has likely not yet learnt many semantic or syntactic rules of natural language, making it difficult to estimate the probability distribution over next tokens. Yet around this point, these models have identified a simple, loss-minimising behaviour: to output the unigram distribution of the target training corpus. The use of such a heuristic raises the question: Can we initialise our models with this behaviour and save precious compute resources and model capacity? Here we show that we can effectively endow standard neural language generation models with a separate module that reflects unigram frequency statistics as prior knowledge, simply by initialising the bias term in a model{'}s final linear layer with the log-unigram distribution. We use neural machine translation as a test bed for this simple technique and observe that it: (i) improves learning efficiency; (ii) achieves better overall performance; and perhaps most importantly (iii) appears to disentangle strong frequency effects by encouraging the model to specialise in non-frequency-related aspects of language.\",\n}\n",
+    "authors": [
+        "Clara Meister",
+        "Wojciech Stokowiec",
+        "Tiago Pimentel",
+        "Lei Yu",
+        "Laura Rimell",
+        "Adhiguna Kuncoro"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.22.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/08afd67a-b6b4-5b65-a26f-b82e90ea1bd4.pdf",
+    "abstract": "After just a few hundred training updates, a standard probabilistic model for language generation has likely not yet learnt many semantic or syntactic rules of natural language, making it difficult to estimate the probability distribution over next tokens. Yet around this point, these models have identified a simple, loss-minimising behaviour: to output the unigram distribution of the target training corpus. The use of such a heuristic raises the question: Can we initialise our models with this behaviour and save precious compute resources and model capacity? Here we show that we can effectively endow standard neural language generation models with a separate module that reflects unigram frequency statistics as prior knowledge, simply by initialising the bias term in a model’s final linear layer with the log-unigram distribution. We use neural machine translation as a test bed for this simple technique and observe that it: (i) improves learning efficiency; (ii) achieves better overall performance; and perhaps most importantly (iii) appears to disentangle strong frequency effects by encouraging the model to specialise in non-frequency-related aspects of language.",
+    "num_pages": 13
+}

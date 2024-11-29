@@ -1,0 +1,20 @@
+{
+    "uuid": "f71bbca6-25d5-57e0-b8a9-50ac11a6a45e",
+    "title": "Operator Selection and Ordering in a Pipeline Approach to Efficiency Optimizations for Transformers",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{xin-etal-2023-operator,\n    title = \"Operator Selection and Ordering in a Pipeline Approach to Efficiency Optimizations for Transformers\",\n    author = \"Xin, Ji  and\n      Tang, Raphael  and\n      Jiang, Zhiying  and\n      Yu, Yaoliang  and\n      Lin, Jimmy\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.180\",\n    doi = \"10.18653/v1/2023.findings-acl.180\",\n    pages = \"2870--2882\",\n    abstract = \"There exists a wide variety of efficiency methods for natural language processing (NLP) tasks, such as pruning, distillation, dynamic inference, quantization, etc. From a different perspective, we can consider an efficiency method as an operator applied on a model. Naturally, we may construct a pipeline of operators, i.e., to apply multiple efficiency methods on the model sequentially. In this paper, we study the plausibility of this idea, and more importantly, the commutativity and cumulativeness of efficiency operators. We make two interesting observations from our experiments: (1) The operators are commutative{---}the order of efficiency methods within the pipeline has little impact on the final results; (2) The operators are also cumulative{---}the final results of combining several efficiency methods can be estimated by combining the results of individual methods. These observations deepen our understanding of efficiency operators and provide useful guidelines for building them in real-world applications.\",\n}\n",
+    "authors": [
+        "Ji Xin",
+        "Raphael Tang",
+        "Zhiying Jiang",
+        "Yaoliang Yu",
+        "Jimmy Lin"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.180.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/f71bbca6-25d5-57e0-b8a9-50ac11a6a45e.pdf",
+    "abstract": "There exists a wide variety of efficiency methods for natural language processing (NLP) tasks, such as pruning, distillation, dynamic inference, quantization, etc. From a different perspective, we can consider an efficiency method as an operator applied on a model. Naturally, we may construct a pipeline of operators, i.e., to apply multiple efficiency methods on the model sequentially. In this paper, we study the plausibility of this idea, and more importantly, the commutativity and cumulativeness of efficiency operators. We make two interesting observations from our experiments: (1) The operators are commutative—the order of efficiency methods within the pipeline has little impact on the final results; (2) The operators are also cumulative—the final results of combining several efficiency methods can be estimated by combining the results of individual methods. These observations deepen our understanding of efficiency operators and provide useful guidelines for building them in real-world applications.",
+    "num_pages": 13
+}

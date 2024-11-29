@@ -1,0 +1,19 @@
+{
+    "uuid": "5401e1de-4380-56d0-bf48-325a575fdae8",
+    "title": "IDAS: Intent Discovery with Abstractive Summarization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 5th Workshop on NLP for Conversational AI (NLP4ConvAI 2023)",
+    "bibtex": "@inproceedings{de-raedt-etal-2023-idas,\n    title = \"{IDAS}: Intent Discovery with Abstractive Summarization\",\n    author = \"De Raedt, Maarten  and\n      Godin, Fr{\\'e}deric  and\n      Demeester, Thomas  and\n      Develder, Chris\",\n    editor = \"Chen, Yun-Nung  and\n      Rastogi, Abhinav\",\n    booktitle = \"Proceedings of the 5th Workshop on NLP for Conversational AI (NLP4ConvAI 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.nlp4convai-1.7\",\n    doi = \"10.18653/v1/2023.nlp4convai-1.7\",\n    pages = \"71--88\",\n    abstract = \"Intent discovery is the task of inferring latent intents from a set of unlabeled utterances, and is a useful step towards the efficient creation of new conversational agents. We show that recent competitive methods in intent discovery can be outperformed by clustering utterances based on abstractive summaries, i.e., {``}labels{''}, that retain the core elements while removing non-essential information. We contribute the IDAS approach, which collects a set of descriptive utterance labels by prompting a Large Language Model, starting from a well-chosen seed set of prototypical utterances, to bootstrap an In-Context Learning procedure to generate labels for non-prototypical utterances. The utterances and their resulting noisy labels are then encoded by a frozen pre-trained encoder, and subsequently clustered to recover the latent intents. For the unsupervised task (without any intent labels) IDAS outperforms the state-of-the-art by up to +7.42{\\%} in standard cluster metrics for the Banking, StackOverflow, and Transport datasets. For the semi-supervised task (with labels for a subset of intents) IDAS surpasses 2 recent methods on the CLINC benchmark without even using labeled data.\",\n}\n",
+    "authors": [
+        "Maarten De Raedt",
+        "Fréderic Godin",
+        "Thomas Demeester",
+        "Chris Develder"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.nlp4convai-1.7.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/5401e1de-4380-56d0-bf48-325a575fdae8.pdf",
+    "abstract": "Intent discovery is the task of inferring latent intents from a set of unlabeled utterances, and is a useful step towards the efficient creation of new conversational agents. We show that recent competitive methods in intent discovery can be outperformed by clustering utterances based on abstractive summaries, i.e., “labels”, that retain the core elements while removing non-essential information. We contribute the IDAS approach, which collects a set of descriptive utterance labels by prompting a Large Language Model, starting from a well-chosen seed set of prototypical utterances, to bootstrap an In-Context Learning procedure to generate labels for non-prototypical utterances. The utterances and their resulting noisy labels are then encoded by a frozen pre-trained encoder, and subsequently clustered to recover the latent intents. For the unsupervised task (without any intent labels) IDAS outperforms the state-of-the-art by up to +7.42% in standard cluster metrics for the Banking, StackOverflow, and Transport datasets. For the semi-supervised task (with labels for a subset of intents) IDAS surpasses 2 recent methods on the CLINC benchmark without even using labeled data.",
+    "num_pages": 18
+}

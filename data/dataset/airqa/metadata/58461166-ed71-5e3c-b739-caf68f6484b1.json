@@ -1,0 +1,18 @@
+{
+    "uuid": "58461166-ed71-5e3c-b739-caf68f6484b1",
+    "title": "Driving Context into Text-to-Text Privatization",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 3rd Workshop on Trustworthy Natural Language Processing (TrustNLP 2023)",
+    "bibtex": "@inproceedings{arnold-etal-2023-driving,\n    title = \"Driving Context into Text-to-Text Privatization\",\n    author = \"Arnold, Stefan  and\n      Yesilbas, Dilara  and\n      Weinzierl, Sven\",\n    editor = \"Ovalle, Anaelia  and\n      Chang, Kai-Wei  and\n      Mehrabi, Ninareh  and\n      Pruksachatkun, Yada  and\n      Galystan, Aram  and\n      Dhamala, Jwala  and\n      Verma, Apurv  and\n      Cao, Trista  and\n      Kumar, Anoop  and\n      Gupta, Rahul\",\n    booktitle = \"Proceedings of the 3rd Workshop on Trustworthy Natural Language Processing (TrustNLP 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.trustnlp-1.2\",\n    doi = \"10.18653/v1/2023.trustnlp-1.2\",\n    pages = \"15--25\",\n    abstract = \"Metric Differential Privacy enables text-to-text privatization by adding calibrated noise to the vector of a word derived from an embedding space and projecting this noisy vector back to a discrete vocabulary using a nearest neighbor search. Since words are substituted without context, this mechanism is expected to fall short at finding substitutes for words with ambiguous meanings, such as {`}bank{'}. To account for these ambiguous words, we leverage a sense embedding and incorporate a sense disambiguation step prior to noise injection. We encompass our modification to the privatization mechanism with an estimation of privacy and utility. For word sense disambiguation on the Words in Context dataset, we demonstrate a substantial increase in classification accuracy by 6.05{\\%}.\",\n}\n",
+    "authors": [
+        "Stefan Arnold",
+        "Dilara Yesilbas",
+        "Sven Weinzierl"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.trustnlp-1.2.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/58461166-ed71-5e3c-b739-caf68f6484b1.pdf",
+    "abstract": "Metric Differential Privacy enables text-to-text privatization by adding calibrated noise to the vector of a word derived from an embedding space and projecting this noisy vector back to a discrete vocabulary using a nearest neighbor search. Since words are substituted without context, this mechanism is expected to fall short at finding substitutes for words with ambiguous meanings, such as ‘bank’. To account for these ambiguous words, we leverage a sense embedding and incorporate a sense disambiguation step prior to noise injection. We encompass our modification to the privatization mechanism with an estimation of privacy and utility. For word sense disambiguation on the Words in Context dataset, we demonstrate a substantial increase in classification accuracy by 6.05%.",
+    "num_pages": 11
+}

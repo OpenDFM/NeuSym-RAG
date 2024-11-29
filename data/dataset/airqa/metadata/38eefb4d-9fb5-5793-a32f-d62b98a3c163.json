@@ -1,0 +1,22 @@
+{
+    "uuid": "38eefb4d-9fb5-5793-a32f-d62b98a3c163",
+    "title": "ASPIRE: Language-Guided Data Augmentation for Improving Robustness Against Spurious Correlations",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{ghosh-etal-2024-aspire,\n    title = \"{ASPIRE}: Language-Guided Data Augmentation for Improving Robustness Against Spurious Correlations\",\n    author = \"Ghosh, Sreyan  and\n      Evuru, Chandra Kiran  and\n      Kumar, Sonal  and\n      Tyagi, Utkarsh  and\n      Sakshi, S  and\n      Chowdhury, Sanjoy  and\n      Manocha, Dinesh\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.22\",\n    doi = \"10.18653/v1/2024.findings-acl.22\",\n    pages = \"386--406\",\n    abstract = \"Neural image classifiers can often learn to make predictions by overly relying on non-predictive features that are spuriously correlated with the class labels in the training data. This leads to poor performance in real-world atypical scenarios where such features are absent. This paper presents ASPIRE (Language-guided Data Augmentation for SPurIous correlation REmoval), a simple yet effective solution for supplementing the training dataset with images without spurious features, for robust learning against spurious correlations via better generalization. ASPIRE, guided by language at various steps, can generate non-spurious images without requiring any group labeling or existing non-spurious images in the training set. Precisely, we employ LLMs to first extract foreground and background features from textual descriptions of an image, followed by advanced language-guided image editing to discover the features that are spuriously correlated with the class label. Finally, we personalize a text-to-image generation model using the edited images to generate diverse in-domain images without spurious features. ASPIRE is complementary to all prior robust training methods in literature, and we demonstrate its effectiveness across 4 datasets and 9 baselines and show that ASPIRE improves the worst-group classification accuracy of prior methods by 1{\\%} - 38{\\%}. We also contribute a novel test set for the challenging Hard ImageNet dataset.\",\n}\n",
+    "authors": [
+        "Sreyan Ghosh",
+        "Chandra Kiran Evuru",
+        "Sonal Kumar",
+        "Utkarsh Tyagi",
+        "S Sakshi",
+        "Sanjoy Chowdhury",
+        "Dinesh Manocha"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.22.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/38eefb4d-9fb5-5793-a32f-d62b98a3c163.pdf",
+    "abstract": "Neural image classifiers can often learn to make predictions by overly relying on non-predictive features that are spuriously correlated with the class labels in the training data. This leads to poor performance in real-world atypical scenarios where such features are absent. This paper presents ASPIRE (Language-guided Data Augmentation for SPurIous correlation REmoval), a simple yet effective solution for supplementing the training dataset with images without spurious features, for robust learning against spurious correlations via better generalization. ASPIRE, guided by language at various steps, can generate non-spurious images without requiring any group labeling or existing non-spurious images in the training set. Precisely, we employ LLMs to first extract foreground and background features from textual descriptions of an image, followed by advanced language-guided image editing to discover the features that are spuriously correlated with the class label. Finally, we personalize a text-to-image generation model using the edited images to generate diverse in-domain images without spurious features. ASPIRE is complementary to all prior robust training methods in literature, and we demonstrate its effectiveness across 4 datasets and 9 baselines and show that ASPIRE improves the worst-group classification accuracy of prior methods by 1% - 38%. We also contribute a novel test set for the challenging Hard ImageNet dataset.",
+    "num_pages": 21
+}

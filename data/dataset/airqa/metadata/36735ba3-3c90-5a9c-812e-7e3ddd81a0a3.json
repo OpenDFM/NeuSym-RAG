@@ -1,0 +1,22 @@
+{
+    "uuid": "36735ba3-3c90-5a9c-812e-7e3ddd81a0a3",
+    "title": "Improving LLM-based KGQA for multi-hop Question Answering with implicit reasoning in few-shot examples",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 1st Workshop on Knowledge Graphs and Large Language Models (KaLLM 2024)",
+    "bibtex": "@inproceedings{shah-etal-2024-improving,\n    title = \"Improving {LLM}-based {KGQA} for multi-hop Question Answering with implicit reasoning in few-shot examples\",\n    author = \"Shah, Mili  and\n      Cahoon, Joyce  and\n      Milletari, Mirco  and\n      Tian, Jing  and\n      Psallidas, Fotis  and\n      Mueller, Andreas  and\n      Litombe, Nick\",\n    editor = \"Biswas, Russa  and\n      Kaffee, Lucie-Aim{\\'e}e  and\n      Agarwal, Oshin  and\n      Minervini, Pasquale  and\n      Singh, Sameer  and\n      de Melo, Gerard\",\n    booktitle = \"Proceedings of the 1st Workshop on Knowledge Graphs and Large Language Models (KaLLM 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.kallm-1.13\",\n    doi = \"10.18653/v1/2024.kallm-1.13\",\n    pages = \"125--135\",\n    abstract = \"Large language models (LLMs) have shown remarkable capabilities in generating natural language texts for various tasks. However, using LLMs for question answering on knowledge graphs still remains a challenge, especially for questions requiring multi-hop reasoning. In this paper, we present a novel planned query guidance approach that improves large language model (LLM) performance in multi-hop question answering on knowledge graphs (KGQA). We do this by designing few-shot examples that implicitly demonstrate a systematic reasoning methodology to answer multi-hop questions. We evaluate our approach for two graph query languages, Cypher and SPARQL, and show that the queries generated using our strategy outperform the queries generated using a baseline LLM and typical few-shot examples by up to 24.66{\\%} and 7.7{\\%} in execution match accuracy for the MetaQA and the Spider benchmarks respectively. We also conduct an ablation study to analyze the incremental effects of the different techniques of designing few-shot examples. Our results suggest that our approach enables the LLM to effectively leverage the few-shot examples to generate queries for multi-hop KGQA.\",\n}\n",
+    "authors": [
+        "Mili Shah",
+        "Joyce Cahoon",
+        "Mirco Milletari",
+        "Jing Tian",
+        "Fotis Psallidas",
+        "Andreas Mueller",
+        "Nick Litombe"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.kallm-1.13.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/36735ba3-3c90-5a9c-812e-7e3ddd81a0a3.pdf",
+    "abstract": "Large language models (LLMs) have shown remarkable capabilities in generating natural language texts for various tasks. However, using LLMs for question answering on knowledge graphs still remains a challenge, especially for questions requiring multi-hop reasoning. In this paper, we present a novel planned query guidance approach that improves large language model (LLM) performance in multi-hop question answering on knowledge graphs (KGQA). We do this by designing few-shot examples that implicitly demonstrate a systematic reasoning methodology to answer multi-hop questions. We evaluate our approach for two graph query languages, Cypher and SPARQL, and show that the queries generated using our strategy outperform the queries generated using a baseline LLM and typical few-shot examples by up to 24.66% and 7.7% in execution match accuracy for the MetaQA and the Spider benchmarks respectively. We also conduct an ablation study to analyze the incremental effects of the different techniques of designing few-shot examples. Our results suggest that our approach enables the LLM to effectively leverage the few-shot examples to generate queries for multi-hop KGQA.",
+    "num_pages": 11
+}

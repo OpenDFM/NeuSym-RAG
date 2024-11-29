@@ -1,0 +1,18 @@
+{
+    "uuid": "d7e10c29-acae-5ab4-8d7a-f15dc58fd42f",
+    "title": "Navigating Data Scarcity: Pretraining for Medical Utterance Classification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 5th Clinical Natural Language Processing Workshop",
+    "bibtex": "@inproceedings{min-etal-2023-navigating,\n    title = \"Navigating Data Scarcity: Pretraining for Medical Utterance Classification\",\n    author = \"Min, Do June  and\n      Perez-Rosas, Veronica  and\n      Mihalcea, Rada\",\n    editor = \"Naumann, Tristan  and\n      Ben Abacha, Asma  and\n      Bethard, Steven  and\n      Roberts, Kirk  and\n      Rumshisky, Anna\",\n    booktitle = \"Proceedings of the 5th Clinical Natural Language Processing Workshop\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.clinicalnlp-1.8\",\n    doi = \"10.18653/v1/2023.clinicalnlp-1.8\",\n    pages = \"59--68\",\n    abstract = \"Pretrained language models leverage self-supervised learning to use large amounts of unlabeled text for learning contextual representations of sequences. However, in the domain of medical conversations, the availability of large, public datasets is limited due to issues of privacy and data management. In this paper, we study the effectiveness of dialog-aware pretraining objectives and multiphase training in using unlabeled data to improve LMs training for medical utterance classification. The objectives of pretraining for dialog awareness involve tasks that take into account the structure of conversations, including features such as turn-taking and the roles of speakers. The multiphase training process uses unannotated data in a sequence that prioritizes similarities and connections between different domains. We empirically evaluate these methods on conversational dialog classification tasks in the medical and counseling domains, and find that multiphase training can help achieve higher performance than standard pretraining or finetuning.\",\n}\n",
+    "authors": [
+        "Do June Min",
+        "Veronica Perez-Rosas",
+        "Rada Mihalcea"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.clinicalnlp-1.8.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/d7e10c29-acae-5ab4-8d7a-f15dc58fd42f.pdf",
+    "abstract": "Pretrained language models leverage self-supervised learning to use large amounts of unlabeled text for learning contextual representations of sequences. However, in the domain of medical conversations, the availability of large, public datasets is limited due to issues of privacy and data management. In this paper, we study the effectiveness of dialog-aware pretraining objectives and multiphase training in using unlabeled data to improve LMs training for medical utterance classification. The objectives of pretraining for dialog awareness involve tasks that take into account the structure of conversations, including features such as turn-taking and the roles of speakers. The multiphase training process uses unannotated data in a sequence that prioritizes similarities and connections between different domains. We empirically evaluate these methods on conversational dialog classification tasks in the medical and counseling domains, and find that multiphase training can help achieve higher performance than standard pretraining or finetuning.",
+    "num_pages": 10
+}

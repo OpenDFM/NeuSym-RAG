@@ -1,0 +1,18 @@
+{
+    "uuid": "2d2b50c3-48f4-597d-bd56-7036156af86c",
+    "title": "Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{levy-etal-2024-task,\n    title = \"Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models\",\n    author = \"Levy, Mosh  and\n      Jacoby, Alon  and\n      Goldberg, Yoav\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.818\",\n    doi = \"10.18653/v1/2024.acl-long.818\",\n    pages = \"15339--15353\",\n    abstract = \"This paper explores the impact of extending input lengths on the capabilities of Large Language Models (LLMs). Despite LLMs advancements in recent times, their performance consistency across different input lengths is not well understood. We investigate this aspect by introducing a novel QA reasoning framework, specifically designed to assess the impact of input length. We isolate the effect of input length using multiple versions of the same sample, each being extended with padding of different lengths, types and locations. Our findings show a notable degradation in LLMs{'} reasoning performance at much shorter input lengths than their technical maximum. We show that the degradation trend appears in every version of our dataset, although at different intensities.Additionally, our study reveals that the traditional metric of next word prediction correlates negatively with performance of LLMs{'} on our reasoning dataset. We analyse our results and identify failure modes that can serve as useful guides for future research, potentially informing strategies to address the limitations observed in LLMs.\",\n}\n",
+    "authors": [
+        "Mosh Levy",
+        "Alon Jacoby",
+        "Yoav Goldberg"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.818.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/2d2b50c3-48f4-597d-bd56-7036156af86c.pdf",
+    "abstract": "This paper explores the impact of extending input lengths on the capabilities of Large Language Models (LLMs). Despite LLMs advancements in recent times, their performance consistency across different input lengths is not well understood. We investigate this aspect by introducing a novel QA reasoning framework, specifically designed to assess the impact of input length. We isolate the effect of input length using multiple versions of the same sample, each being extended with padding of different lengths, types and locations. Our findings show a notable degradation in LLMs’ reasoning performance at much shorter input lengths than their technical maximum. We show that the degradation trend appears in every version of our dataset, although at different intensities.Additionally, our study reveals that the traditional metric of next word prediction correlates negatively with performance of LLMs’ on our reasoning dataset. We analyse our results and identify failure modes that can serve as useful guides for future research, potentially informing strategies to address the limitations observed in LLMs.",
+    "num_pages": 15
+}

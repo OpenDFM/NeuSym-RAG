@@ -1,0 +1,20 @@
+{
+    "uuid": "99213a51-11ac-540f-a7af-740fe69eb506",
+    "title": "infoVerse: A Universal Framework for Dataset Characterization with Multidimensional Meta-information",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{kim-etal-2023-infoverse,\n    title = \"info{V}erse: A Universal Framework for Dataset Characterization with Multidimensional Meta-information\",\n    author = \"Kim, Jaehyung  and\n      Kim, Yekyung  and\n      de Langis, Karin  and\n      Shin, Jinwoo  and\n      Kang, Dongyeop\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.547\",\n    doi = \"10.18653/v1/2023.acl-long.547\",\n    pages = \"9823--9850\",\n    abstract = \"The success of NLP systems often relies on the availability of large, high-quality datasets. However, not all samples in these datasets are equally valuable for learning, as some may be redundant or noisy. Several methods for characterizing datasets based on model-driven meta-information (e.g., model{'}s confidence) have been developed, but the relationship and complementary effects of these methods have received less attention. In this paper, we introduce infoVerse, a universal framework for dataset characterization, which provides a new feature space that effectively captures multidimensional characteristics of datasets by incorporating various model-driven meta-information. infoVerse reveals distinctive regions of the dataset that are not apparent in the original semantic space, hence guiding users (or models) in identifying which samples to focus on for exploration, assessment, or annotation. Additionally, we propose a novel sampling method on infoVerse to select a set of data points that maximizes informativeness. In three real-world applications (data pruning, active learning, and data annotation), the samples chosen on infoVerse space consistently outperform strong baselines in all applications. Our code and demo are publicly available.\",\n}\n",
+    "authors": [
+        "Jaehyung Kim",
+        "Yekyung Kim",
+        "Karin de Langis",
+        "Jinwoo Shin",
+        "Dongyeop Kang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.547.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/99213a51-11ac-540f-a7af-740fe69eb506.pdf",
+    "abstract": "The success of NLP systems often relies on the availability of large, high-quality datasets. However, not all samples in these datasets are equally valuable for learning, as some may be redundant or noisy. Several methods for characterizing datasets based on model-driven meta-information (e.g., model’s confidence) have been developed, but the relationship and complementary effects of these methods have received less attention. In this paper, we introduce infoVerse, a universal framework for dataset characterization, which provides a new feature space that effectively captures multidimensional characteristics of datasets by incorporating various model-driven meta-information. infoVerse reveals distinctive regions of the dataset that are not apparent in the original semantic space, hence guiding users (or models) in identifying which samples to focus on for exploration, assessment, or annotation. Additionally, we propose a novel sampling method on infoVerse to select a set of data points that maximizes informativeness. In three real-world applications (data pruning, active learning, and data annotation), the samples chosen on infoVerse space consistently outperform strong baselines in all applications. Our code and demo are publicly available.",
+    "num_pages": 28
+}

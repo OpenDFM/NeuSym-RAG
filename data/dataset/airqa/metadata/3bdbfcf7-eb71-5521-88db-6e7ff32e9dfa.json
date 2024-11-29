@@ -1,0 +1,18 @@
+{
+    "uuid": "3bdbfcf7-eb71-5521-88db-6e7ff32e9dfa",
+    "title": "DIP: Dead code Insertion based Black-box Attack for Programming Language Model",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{na-etal-2023-dip,\n    title = \"{DIP}: Dead code Insertion based Black-box Attack for Programming Language Model\",\n    author = \"Na, CheolWon  and\n      Choi, YunSeok  and\n      Lee, Jee-Hyong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.430\",\n    doi = \"10.18653/v1/2023.acl-long.430\",\n    pages = \"7777--7791\",\n    abstract = \"Automatic processing of source code, such as code clone detection and software vulnerability detection, is very helpful to software engineers. Large pre-trained Programming Language (PL) models (such as CodeBERT, GraphCodeBERT, CodeT5, etc.), show very powerful performance on these tasks. However, these PL models are vulnerable to adversarial examples that are generated with slight perturbation. Unlike natural language, an adversarial example of code must be semantic-preserving and compilable. Due to the requirements, it is hard to directly apply the existing attack methods for natural language models. In this paper, we propose DIP (Dead code Insertion based Black-box Attack for Programming Language Model), a high-performance and effective black-box attack method to generate adversarial examples using dead code insertion. We evaluate our proposed method on 9 victim downstream-task large code models. Our method outperforms the state-of-the-art black-box attack in both attack efficiency and attack quality, while generated adversarial examples are compiled preserving semantic functionality.\",\n}\n",
+    "authors": [
+        "CheolWon Na",
+        "YunSeok Choi",
+        "Jee-Hyong Lee"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.430.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/3bdbfcf7-eb71-5521-88db-6e7ff32e9dfa.pdf",
+    "abstract": "Automatic processing of source code, such as code clone detection and software vulnerability detection, is very helpful to software engineers. Large pre-trained Programming Language (PL) models (such as CodeBERT, GraphCodeBERT, CodeT5, etc.), show very powerful performance on these tasks. However, these PL models are vulnerable to adversarial examples that are generated with slight perturbation. Unlike natural language, an adversarial example of code must be semantic-preserving and compilable. Due to the requirements, it is hard to directly apply the existing attack methods for natural language models. In this paper, we propose DIP (Dead code Insertion based Black-box Attack for Programming Language Model), a high-performance and effective black-box attack method to generate adversarial examples using dead code insertion. We evaluate our proposed method on 9 victim downstream-task large code models. Our method outperforms the state-of-the-art black-box attack in both attack efficiency and attack quality, while generated adversarial examples are compiled preserving semantic functionality.",
+    "num_pages": 15
+}

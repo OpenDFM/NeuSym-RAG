@@ -1,0 +1,18 @@
+{
+    "uuid": "9cec98c3-91f0-5b69-8aaa-71a1e06cc245",
+    "title": "PMI-Align: Word Alignment With Point-Wise Mutual Information Without Requiring Parallel Training Data",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{azadi-etal-2023-pmi,\n    title = \"{PMI}-Align: Word Alignment With Point-Wise Mutual Information Without Requiring Parallel Training Data\",\n    author = \"Azadi, Fatemeh  and\n      Faili, Heshaam  and\n      Dousti, Mohammad Javad\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.782\",\n    doi = \"10.18653/v1/2023.findings-acl.782\",\n    pages = \"12366--12377\",\n    abstract = \"Word alignment has many applications including cross-lingual annotation projection, bilingual lexicon extraction, and the evaluation or analysis of translation outputs. Recent studies show that using contextualized embeddings from pre-trained multilingual language models could give us high quality word alignments without the need of parallel training data. In this work, we propose PMI-Align which computes and uses the point-wise mutual information between source and target tokens to extract word alignments, instead of the cosine similarity or dot product which is mostly used in recent approaches. Our experiments show that our proposed PMI-Align approach could outperform the rival methods on five out of six language pairs. Although our approach requires no parallel training data, we show that this method could also benefit the approaches using parallel data to fine-tune pre-trained language models on word alignments. Our code and data are publicly available.\",\n}\n",
+    "authors": [
+        "Fatemeh Azadi",
+        "Heshaam Faili",
+        "Mohammad Javad Dousti"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.782.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9cec98c3-91f0-5b69-8aaa-71a1e06cc245.pdf",
+    "abstract": "Word alignment has many applications including cross-lingual annotation projection, bilingual lexicon extraction, and the evaluation or analysis of translation outputs. Recent studies show that using contextualized embeddings from pre-trained multilingual language models could give us high quality word alignments without the need of parallel training data. In this work, we propose PMI-Align which computes and uses the point-wise mutual information between source and target tokens to extract word alignments, instead of the cosine similarity or dot product which is mostly used in recent approaches. Our experiments show that our proposed PMI-Align approach could outperform the rival methods on five out of six language pairs. Although our approach requires no parallel training data, we show that this method could also benefit the approaches using parallel data to fine-tune pre-trained language models on word alignments. Our code and data are publicly available.",
+    "num_pages": 12
+}

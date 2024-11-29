@@ -1,0 +1,20 @@
+{
+    "uuid": "4a38e587-62d9-5ff0-a163-741cfc169050",
+    "title": "Maximum Entropy Loss, the Silver Bullet Targeting Backdoor Attacks in Pre-trained Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{liu-etal-2023-maximum,\n    title = \"Maximum Entropy Loss, the Silver Bullet Targeting Backdoor Attacks in Pre-trained Language Models\",\n    author = \"Liu, Zhengxiao  and\n      Shen, Bowen  and\n      Lin, Zheng  and\n      Wang, Fali  and\n      Wang, Weiping\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.237\",\n    doi = \"10.18653/v1/2023.findings-acl.237\",\n    pages = \"3850--3868\",\n    abstract = \"Pre-trained language model (PLM) can be stealthily misled to target outputs by backdoor attacks when encountering poisoned samples, without performance degradation on clean samples. The stealthiness of backdoor attacks is commonly attained through minimal cross-entropy loss fine-tuning on a union of poisoned and clean samples. Existing defense paradigms provide a workaround by detecting and removing poisoned samples at pre-training or inference time. On the contrary, we provide a new perspective where the backdoor attack is directly reversed. Specifically, maximum entropy loss is incorporated in training to neutralize the minimal cross-entropy loss fine-tuning on poisoned data. We defend against a range of backdoor attacks on classification tasks and significantly lower the attack success rate. In extension, we explore the relationship between intended backdoor attacks and unintended dataset bias, and demonstrate the feasibility of the maximum entropy principle in de-biasing.\",\n}\n",
+    "authors": [
+        "Zhengxiao Liu",
+        "Bowen Shen",
+        "Zheng Lin",
+        "Fali Wang",
+        "Weiping Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.237.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4a38e587-62d9-5ff0-a163-741cfc169050.pdf",
+    "abstract": "Pre-trained language model (PLM) can be stealthily misled to target outputs by backdoor attacks when encountering poisoned samples, without performance degradation on clean samples. The stealthiness of backdoor attacks is commonly attained through minimal cross-entropy loss fine-tuning on a union of poisoned and clean samples. Existing defense paradigms provide a workaround by detecting and removing poisoned samples at pre-training or inference time. On the contrary, we provide a new perspective where the backdoor attack is directly reversed. Specifically, maximum entropy loss is incorporated in training to neutralize the minimal cross-entropy loss fine-tuning on poisoned data. We defend against a range of backdoor attacks on classification tasks and significantly lower the attack success rate. In extension, we explore the relationship between intended backdoor attacks and unintended dataset bias, and demonstrate the feasibility of the maximum entropy principle in de-biasing.",
+    "num_pages": 19
+}

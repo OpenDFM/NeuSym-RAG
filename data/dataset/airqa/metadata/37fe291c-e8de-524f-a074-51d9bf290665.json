@@ -1,0 +1,22 @@
+{
+    "uuid": "37fe291c-e8de-524f-a074-51d9bf290665",
+    "title": "Answer is All You Need: Instruction-following Text Embedding via Answering the Question",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{peng-etal-2024-answer,\n    title = \"Answer is All You Need: Instruction-following Text Embedding via Answering the Question\",\n    author = \"Peng, Letian  and\n      Zhang, Yuwei  and\n      Wang, Zilong  and\n      Srinivasa, Jayanth  and\n      Liu, Gaowen  and\n      Wang, Zihan  and\n      Shang, Jingbo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.27\",\n    doi = \"10.18653/v1/2024.acl-long.27\",\n    pages = \"459--477\",\n    abstract = \"This work aims to build a text embedder that can capture characteristics of texts specified by user instructions clarifying the similarity criterion. While previous methods improve general task awareness by injecting the instruction information into encoding, they fail to be sensitive to clearer criteria like {``}evaluate similarity based on emotion{''}. We instead propose a different viewpoint, which treats the instruction as a {``}question{''} about the input text and encodes the expected answers to obtain the representation accordingly. Intuitively, texts with the same (implicit) semantics would share similar answers following the instruction, thus leading to more similar representations. Specifically, we propose InBedder that instantiates this learning-to-answer idea by only fine-tuning language models via abstractive question answering tasks. Despite its simplicity, InBedder demonstrates significantly improved instruction-following capabilities according to our proposed instruction awareness tests and instruction robustness tests, when applied to language models with large language models (LLMs) (e.g., llama-2-7b) and smaller encoder-based LMs (e.g., roberta-large). Additionally, our qualitative analysis of clustering outcomes, achieved by applying diverse instructions to the same unlabeled corpus, demonstrates a high degree of interpretability in the clusters formed.\",\n}\n",
+    "authors": [
+        "Letian Peng",
+        "Yuwei Zhang",
+        "Zilong Wang",
+        "Jayanth Srinivasa",
+        "Gaowen Liu",
+        "Zihan Wang",
+        "Jingbo Shang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.27.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/37fe291c-e8de-524f-a074-51d9bf290665.pdf",
+    "abstract": "This work aims to build a text embedder that can capture characteristics of texts specified by user instructions clarifying the similarity criterion. While previous methods improve general task awareness by injecting the instruction information into encoding, they fail to be sensitive to clearer criteria like “evaluate similarity based on emotion”. We instead propose a different viewpoint, which treats the instruction as a “question” about the input text and encodes the expected answers to obtain the representation accordingly. Intuitively, texts with the same (implicit) semantics would share similar answers following the instruction, thus leading to more similar representations. Specifically, we propose InBedder that instantiates this learning-to-answer idea by only fine-tuning language models via abstractive question answering tasks. Despite its simplicity, InBedder demonstrates significantly improved instruction-following capabilities according to our proposed instruction awareness tests and instruction robustness tests, when applied to language models with large language models (LLMs) (e.g., llama-2-7b) and smaller encoder-based LMs (e.g., roberta-large). Additionally, our qualitative analysis of clustering outcomes, achieved by applying diverse instructions to the same unlabeled corpus, demonstrates a high degree of interpretability in the clusters formed.",
+    "num_pages": 19
+}

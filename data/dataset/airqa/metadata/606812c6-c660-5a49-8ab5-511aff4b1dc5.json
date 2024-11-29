@@ -1,0 +1,21 @@
+{
+    "uuid": "606812c6-c660-5a49-8ab5-511aff4b1dc5",
+    "title": "Contrastive Learning with Adversarial Examples for Alleviating Pathology of Language Model",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhan-etal-2023-contrastive,\n    title = \"Contrastive Learning with Adversarial Examples for Alleviating Pathology of Language Model\",\n    author = \"Zhan, Pengwei  and\n      Yang, Jing  and\n      Huang, Xiao  and\n      Jing, Chunlei  and\n      Li, Jingying  and\n      Wang, Liming\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.358\",\n    doi = \"10.18653/v1/2023.acl-long.358\",\n    pages = \"6493--6508\",\n    abstract = \"Neural language models have achieved superior performance. However, these models also suffer from the pathology of overconfidence in the out-of-distribution examples, potentially making the model difficult to interpret and making the interpretation methods fail to provide faithful attributions. In this paper, we explain the model pathology from the view of sentence representation and argue that the counter-intuitive bias degree and direction of the out-of-distribution examples{'} representation cause the pathology. We propose a Contrastive learning regularization method using Adversarial examples for Alleviating the Pathology (ConAAP), which calibrates the sentence representation of out-of-distribution examples. ConAAP generates positive and negative examples following the attribution results and utilizes adversarial examples to introduce direction information in regularization. Experiments show that ConAAP effectively alleviates the model pathology while slightly impacting the generalization ability on in-distribution examples and thus helps interpretation methods obtain more faithful results.\",\n}\n",
+    "authors": [
+        "Pengwei Zhan",
+        "Jing Yang",
+        "Xiao Huang",
+        "Chunlei Jing",
+        "Jingying Li",
+        "Liming Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.358.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/606812c6-c660-5a49-8ab5-511aff4b1dc5.pdf",
+    "abstract": "Neural language models have achieved superior performance. However, these models also suffer from the pathology of overconfidence in the out-of-distribution examples, potentially making the model difficult to interpret and making the interpretation methods fail to provide faithful attributions. In this paper, we explain the model pathology from the view of sentence representation and argue that the counter-intuitive bias degree and direction of the out-of-distribution examples’ representation cause the pathology. We propose a Contrastive learning regularization method using Adversarial examples for Alleviating the Pathology (ConAAP), which calibrates the sentence representation of out-of-distribution examples. ConAAP generates positive and negative examples following the attribution results and utilizes adversarial examples to introduce direction information in regularization. Experiments show that ConAAP effectively alleviates the model pathology while slightly impacting the generalization ability on in-distribution examples and thus helps interpretation methods obtain more faithful results.",
+    "num_pages": 16
+}

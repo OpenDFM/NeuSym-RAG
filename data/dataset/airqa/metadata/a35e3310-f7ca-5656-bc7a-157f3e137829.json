@@ -1,0 +1,20 @@
+{
+    "uuid": "a35e3310-f7ca-5656-bc7a-157f3e137829",
+    "title": "Pre-trained Language Model with Prompts for Temporal Knowledge Graph Completion",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{xu-etal-2023-pre,\n    title = \"Pre-trained Language Model with Prompts for Temporal Knowledge Graph Completion\",\n    author = \"Xu, Wenjie  and\n      Liu, Ben  and\n      Peng, Miao  and\n      Jia, Xu  and\n      Peng, Min\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.493\",\n    doi = \"10.18653/v1/2023.findings-acl.493\",\n    pages = \"7790--7803\",\n    abstract = \"Temporal Knowledge graph completion (TKGC) is a crucial task that involves reasoning at known timestamps to complete the missing part of facts and has attracted more and more attention in recent years. Most existing methods focus on learning representations based on graph neural networks while inaccurately extracting information from timestamps and insufficiently utilizing the implied information in relations. To address these problems, we propose a novel TKGC model, namely Pre-trained Language Model with Prompts for TKGC (PPT). We convert a series of sampled quadruples into pre-trained language model inputs and convert intervals between timestamps into different prompts to make coherent sentences with implicit semantic information. We train our model with a masking strategy to convert TKGC task into a masked token prediction task, which can leverage the semantic information in pre-trained language models. Experiments on three benchmark datasets and extensive analysis demonstrate that our model has great competitiveness compared to other models with four metrics. Our model can effectively incorporate information from temporal knowledge graphs into the language models.\",\n}\n",
+    "authors": [
+        "Wenjie Xu",
+        "Ben Liu",
+        "Miao Peng",
+        "Xu Jia",
+        "Min Peng"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.493.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a35e3310-f7ca-5656-bc7a-157f3e137829.pdf",
+    "abstract": "Temporal Knowledge graph completion (TKGC) is a crucial task that involves reasoning at known timestamps to complete the missing part of facts and has attracted more and more attention in recent years. Most existing methods focus on learning representations based on graph neural networks while inaccurately extracting information from timestamps and insufficiently utilizing the implied information in relations. To address these problems, we propose a novel TKGC model, namely Pre-trained Language Model with Prompts for TKGC (PPT). We convert a series of sampled quadruples into pre-trained language model inputs and convert intervals between timestamps into different prompts to make coherent sentences with implicit semantic information. We train our model with a masking strategy to convert TKGC task into a masked token prediction task, which can leverage the semantic information in pre-trained language models. Experiments on three benchmark datasets and extensive analysis demonstrate that our model has great competitiveness compared to other models with four metrics. Our model can effectively incorporate information from temporal knowledge graphs into the language models.",
+    "num_pages": 14
+}

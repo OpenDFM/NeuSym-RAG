@@ -1,0 +1,21 @@
+{
+    "uuid": "ebc9d72a-f540-58f1-a8ad-8864653d26fe",
+    "title": "Causal Matching with Text Embeddings: A Case Study in Estimating the Causal Effects of Peer Review Policies",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{zhang-etal-2023-causal-matching,\n    title = \"Causal Matching with Text Embeddings: A Case Study in Estimating the Causal Effects of Peer Review Policies\",\n    author = \"Zhang, Raymond  and\n      Kennard, Neha Nayak  and\n      Smith, Daniel  and\n      McFarland, Daniel  and\n      McCallum, Andrew  and\n      Keith, Katherine\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.83\",\n    doi = \"10.18653/v1/2023.findings-acl.83\",\n    pages = \"1284--1297\",\n    abstract = \"A promising approach to estimate the causal effects of peer review policies is to analyze data from publication venues that shift policies from single-blind to double-blind from one year to the next. However, in these settings the content of the manuscript is a confounding variable{---}each year has a different distribution of scientific content which may naturally affect the distribution of reviewer scores. To address this textual confounding, we extend variable ratio nearest neighbor matching to incorporate text embeddings. We compare this matching method to a widely-used causal method of stratified propensity score matching and a baseline of randomly selected matches. For our case study of the ICLR conference shifting from single- to double-blind review from 2017 to 2018, we find human judges prefer manuscript matches from our method in 70{\\%} of cases. While the unadjusted estimate of the average causal effect of reviewers{'} scores is -0.25, our method shifts the estimate to -0.17, a slightly smaller difference between the outcomes of single- and double-blind policies. We hope this case study enables exploration of additional text-based causal estimation methods and domains in the future.\",\n}\n",
+    "authors": [
+        "Raymond Zhang",
+        "Neha Nayak Kennard",
+        "Daniel Smith",
+        "Daniel McFarland",
+        "Andrew McCallum",
+        "Katherine Keith"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.83.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ebc9d72a-f540-58f1-a8ad-8864653d26fe.pdf",
+    "abstract": "A promising approach to estimate the causal effects of peer review policies is to analyze data from publication venues that shift policies from single-blind to double-blind from one year to the next. However, in these settings the content of the manuscript is a confounding variable—each year has a different distribution of scientific content which may naturally affect the distribution of reviewer scores. To address this textual confounding, we extend variable ratio nearest neighbor matching to incorporate text embeddings. We compare this matching method to a widely-used causal method of stratified propensity score matching and a baseline of randomly selected matches. For our case study of the ICLR conference shifting from single- to double-blind review from 2017 to 2018, we find human judges prefer manuscript matches from our method in 70% of cases. While the unadjusted estimate of the average causal effect of reviewers’ scores is -0.25, our method shifts the estimate to -0.17, a slightly smaller difference between the outcomes of single- and double-blind policies. We hope this case study enables exploration of additional text-based causal estimation methods and domains in the future.",
+    "num_pages": 14
+}

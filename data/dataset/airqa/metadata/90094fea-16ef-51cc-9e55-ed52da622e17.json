@@ -1,0 +1,24 @@
+{
+    "uuid": "90094fea-16ef-51cc-9e55-ed52da622e17",
+    "title": "Investigating and Mitigating the Multimodal Hallucination Snowballing in Large Vision-Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhong-etal-2024-investigating,\n    title = \"Investigating and Mitigating the Multimodal Hallucination Snowballing in Large Vision-Language Models\",\n    author = \"Zhong, Weihong  and\n      Feng, Xiaocheng  and\n      Zhao, Liang  and\n      Li, Qiming  and\n      Huang, Lei  and\n      Gu, Yuxuan  and\n      Ma, Weitao  and\n      Xu, Yuan  and\n      Qin, Bing\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.648\",\n    doi = \"10.18653/v1/2024.acl-long.648\",\n    pages = \"11991--12011\",\n    abstract = \"Though advanced in understanding visual information with human languages, Large Vision-Language Models (LVLMs) still suffer from multimodal hallucinations. A natural concern is that during multimodal interaction, the generated hallucinations could influence the LVLMs{'} subsequent generation. Thus, we raise a question: $\\textit{When presented with a query relevant to the previously generated hallucination, will LVLMs be misled and respond incorrectly, even though the ground visual information exists?}$ To answer this, we propose a framework called $\\\\textit{MMHalSnowball}$ to evaluate LVLMs{'} behaviors when encountering generated hallucinations, where LVLMs are required to answer specific visual questions within a curated hallucinatory conversation. Crucially, our experiment shows that the performance of open-source LVLMs drops by at least $31\\\\%$, indicating that LVLMs are prone to accept the generated hallucinations and make false claims that they would not have supported without distractions. We term this $\\textit{Multimodal Hallucination Snowballing}$. To mitigate this issue, we further propose a training-free method called $\\textit{Residual Visual Decoding},$ where we revise the output distribution of LVLMs with the one derived from the residual visual input, providing models with direct access to the visual information. Experiments show that our method can mitigate more than $24\\\\%$ of the snowballed multimodal hallucination while maintaining capabilities.\",\n}\n",
+    "authors": [
+        "Weihong Zhong",
+        "Xiaocheng Feng",
+        "Liang Zhao",
+        "Qiming Li",
+        "Lei Huang",
+        "Yuxuan Gu",
+        "Weitao Ma",
+        "Yuan Xu",
+        "Bing Qin"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.648.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/90094fea-16ef-51cc-9e55-ed52da622e17.pdf",
+    "abstract": "Though advanced in understanding visual information with human languages, Large Vision-Language Models (LVLMs) still suffer from multimodal hallucinations. A natural concern is that during multimodal interaction, the generated hallucinations could influence the LVLMs’ subsequent generation. Thus, we raise a question: When presented with a query relevant to the previously generated hallucination, will LVLMs be misled and respond incorrectly, even though the ground visual information exists? To answer this, we propose a framework called \\\\textitMMHalSnowball to evaluate LVLMs’ behaviors when encountering generated hallucinations, where LVLMs are required to answer specific visual questions within a curated hallucinatory conversation. Crucially, our experiment shows that the performance of open-source LVLMs drops by at least 31\\\\%, indicating that LVLMs are prone to accept the generated hallucinations and make false claims that they would not have supported without distractions. We term this Multimodal Hallucination Snowballing. To mitigate this issue, we further propose a training-free method called Residual Visual Decoding, where we revise the output distribution of LVLMs with the one derived from the residual visual input, providing models with direct access to the visual information. Experiments show that our method can mitigate more than 24\\\\% of the snowballed multimodal hallucination while maintaining capabilities.",
+    "num_pages": 21
+}

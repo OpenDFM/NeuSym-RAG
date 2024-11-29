@@ -1,0 +1,20 @@
+{
+    "uuid": "a17b2402-96ae-5087-b72d-b39234d094ba",
+    "title": "Uncertainty-Aware Bootstrap Learning for Joint Extraction on Distantly-Supervised Data",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{li-etal-2023-uncertainty,\n    title = \"Uncertainty-Aware Bootstrap Learning for Joint Extraction on Distantly-Supervised Data\",\n    author = \"Li, Yufei  and\n      Yu, Xiao  and\n      Liu, Yanchi  and\n      Chen, Haifeng  and\n      Liu, Cong\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.116\",\n    doi = \"10.18653/v1/2023.acl-short.116\",\n    pages = \"1349--1358\",\n    abstract = \"Jointly extracting entity pairs and their relations is challenging when working on distantly-supervised data with ambiguous or noisy labels. To mitigate such impact, we propose uncertainty-aware bootstrap learning, which is motivated by the intuition that the higher uncertainty of an instance, the more likely the model confidence is inconsistent with the ground truths. Specifically, we first explore instance-level data uncertainty to create an initial high-confident examples. Such subset serves as filtering noisy instances and facilitating the model to converge fast at the early stage. During bootstrap learning, we propose self-ensembling as a regularizer to alleviate inter-model uncertainty produced by noisy labels. We further define probability variance of joint tagging probabilities to estimate inner-model parametric uncertainty, which is used to select and build up new reliable training instances for the next iteration. Experimental results on two large datasets reveal that our approach outperforms existing strong baselines and related methods.\",\n}\n",
+    "authors": [
+        "Yufei Li",
+        "Xiao Yu",
+        "Yanchi Liu",
+        "Haifeng Chen",
+        "Cong Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.116.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/a17b2402-96ae-5087-b72d-b39234d094ba.pdf",
+    "abstract": "Jointly extracting entity pairs and their relations is challenging when working on distantly-supervised data with ambiguous or noisy labels. To mitigate such impact, we propose uncertainty-aware bootstrap learning, which is motivated by the intuition that the higher uncertainty of an instance, the more likely the model confidence is inconsistent with the ground truths. Specifically, we first explore instance-level data uncertainty to create an initial high-confident examples. Such subset serves as filtering noisy instances and facilitating the model to converge fast at the early stage. During bootstrap learning, we propose self-ensembling as a regularizer to alleviate inter-model uncertainty produced by noisy labels. We further define probability variance of joint tagging probabilities to estimate inner-model parametric uncertainty, which is used to select and build up new reliable training instances for the next iteration. Experimental results on two large datasets reveal that our approach outperforms existing strong baselines and related methods.",
+    "num_pages": 10
+}

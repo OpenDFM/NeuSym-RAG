@@ -1,0 +1,21 @@
+{
+    "uuid": "43c259e1-e4ff-5563-85eb-e7a5ece23610",
+    "title": "IMO: Greedy Layer-Wise Sparse Representation Learning for Out-of-Distribution Text Classification with Pre-trained Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{feng-etal-2024-imo,\n    title = \"{IMO}: Greedy Layer-Wise Sparse Representation Learning for Out-of-Distribution Text Classification with Pre-trained Models\",\n    author = \"Feng, Tao  and\n      Qu, Lizhen  and\n      Li, Zhuang  and\n      Zhan, Haolan  and\n      Hua, Yuncheng  and\n      Haf, Reza\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.144\",\n    doi = \"10.18653/v1/2024.acl-long.144\",\n    pages = \"2625--2639\",\n    abstract = \"Machine learning models have made incredible progress, but they still struggle when applied to examples from unseen domains. This study focuses on a specific problem of domain generalization, where a model is trained on one source domain and tested on multiple target domains that are unseen during training. We propose IMO: Invariant features Masks for Out-of-Distribution text classification, to achieve OOD generalization by learning invariant features. During training, IMO would learn sparse mask layers to remove irrelevant features for prediction, where the remaining features keep invariant. Additionally, IMO has an attention module at the token level to focus on tokens that are useful for prediction. Our comprehensive experiments show that IMO substantially outperforms strong baselines in terms of various evaluation metrics and settings.\",\n}\n",
+    "authors": [
+        "Tao Feng",
+        "Lizhen Qu",
+        "Zhuang Li",
+        "Haolan Zhan",
+        "Yuncheng Hua",
+        "Reza Haf"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.144.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/43c259e1-e4ff-5563-85eb-e7a5ece23610.pdf",
+    "abstract": "Machine learning models have made incredible progress, but they still struggle when applied to examples from unseen domains. This study focuses on a specific problem of domain generalization, where a model is trained on one source domain and tested on multiple target domains that are unseen during training. We propose IMO: Invariant features Masks for Out-of-Distribution text classification, to achieve OOD generalization by learning invariant features. During training, IMO would learn sparse mask layers to remove irrelevant features for prediction, where the remaining features keep invariant. Additionally, IMO has an attention module at the token level to focus on tokens that are useful for prediction. Our comprehensive experiments show that IMO substantially outperforms strong baselines in terms of various evaluation metrics and settings.",
+    "num_pages": 15
+}

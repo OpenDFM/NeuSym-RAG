@@ -1,0 +1,19 @@
+{
+    "uuid": "3dbee7ed-4411-5e7b-b9b6-a7457b9582df",
+    "title": "Friendly Neighbors: Contextualized Sequence-to-Sequence Link Prediction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)",
+    "bibtex": "@inproceedings{kochsiek-etal-2023-friendly,\n    title = \"Friendly Neighbors: Contextualized Sequence-to-Sequence Link Prediction\",\n    author = \"Kochsiek, Adrian  and\n      Saxena, Apoorv  and\n      Nair, Inderjeet  and\n      Gemulla, Rainer\",\n    editor = \"Can, Burcu  and\n      Mozes, Maximilian  and\n      Cahyawijaya, Samuel  and\n      Saphra, Naomi  and\n      Kassner, Nora  and\n      Ravfogel, Shauli  and\n      Ravichander, Abhilasha  and\n      Zhao, Chen  and\n      Augenstein, Isabelle  and\n      Rogers, Anna  and\n      Cho, Kyunghyun  and\n      Grefenstette, Edward  and\n      Voita, Lena\",\n    booktitle = \"Proceedings of the 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.repl4nlp-1.11\",\n    doi = \"10.18653/v1/2023.repl4nlp-1.11\",\n    pages = \"131--138\",\n    abstract = \"We propose KGT5-context, a simple sequence-to-sequence model for link prediction (LP) in knowledge graphs (KG). Our work expands on KGT5, a recent LP model that exploits textual features of the KG, has small model size, and is scalable. To reach good predictive performance, however, KGT5 relies on an ensemble with a knowledge graph embedding model, which itself is excessively large and costly to use. In this short paper, we show empirically that adding contextual information {---} i.e., information about the direct neighborhood of the query entity {---} alleviates the need for a separate KGE model to obtain good performance. The resulting KGT5-context model is simple, reduces model size significantly, and obtains state-of-the-art performance in our experimental study.\",\n}\n",
+    "authors": [
+        "Adrian Kochsiek",
+        "Apoorv Saxena",
+        "Inderjeet Nair",
+        "Rainer Gemulla"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.repl4nlp-1.11.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/3dbee7ed-4411-5e7b-b9b6-a7457b9582df.pdf",
+    "abstract": "We propose KGT5-context, a simple sequence-to-sequence model for link prediction (LP) in knowledge graphs (KG). Our work expands on KGT5, a recent LP model that exploits textual features of the KG, has small model size, and is scalable. To reach good predictive performance, however, KGT5 relies on an ensemble with a knowledge graph embedding model, which itself is excessively large and costly to use. In this short paper, we show empirically that adding contextual information — i.e., information about the direct neighborhood of the query entity — alleviates the need for a separate KGE model to obtain good performance. The resulting KGT5-context model is simple, reduces model size significantly, and obtains state-of-the-art performance in our experimental study.",
+    "num_pages": 8
+}

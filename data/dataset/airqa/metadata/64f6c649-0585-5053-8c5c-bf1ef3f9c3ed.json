@@ -1,0 +1,20 @@
+{
+    "uuid": "64f6c649-0585-5053-8c5c-bf1ef3f9c3ed",
+    "title": "Delving into the Openness of CLIP",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{ren-etal-2023-delving,\n    title = \"Delving into the Openness of {CLIP}\",\n    author = \"Ren, Shuhuai  and\n      Li, Lei  and\n      Ren, Xuancheng  and\n      Zhao, Guangxiang  and\n      Sun, Xu\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.610\",\n    doi = \"10.18653/v1/2023.findings-acl.610\",\n    pages = \"9587--9606\",\n    abstract = \"Contrastive Language-Image Pre-training (CLIP) formulates image classification as an image-to-text matching task, i.e., matching images to the corresponding natural language descriptions instead of discrete category IDs. This allows for open-vocabulary visual recognition, where the model can recognize images from an open class set (also known as an open vocabulary) in a zero-shot manner. However, evaluating the openness of CLIP-like models is challenging, as the models are open to arbitrary vocabulary in theory, but their accuracy varies in practice. To address this, we resort to an incremental perspective to assess the openness through vocabulary expansions, and define extensibility to measure a model{'}s ability to handle novel classes. Our evaluation shows that CLIP-like models are not truly open, and their performance deteriorates as the vocabulary expands. We further dissect the feature space of CLIP from the perspectives of representation alignment and uniformity. Our investigation reveals that the overestimation of openness is due to confusion among competing text features, rather than a failure to capture the similarity between image features and text features of novel classes. We hope that our investigation and analysis will facilitate future research on the CLIP openness issue.\",\n}\n",
+    "authors": [
+        "Shuhuai Ren",
+        "Lei Li",
+        "Xuancheng Ren",
+        "Guangxiang Zhao",
+        "Xu Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.610.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/64f6c649-0585-5053-8c5c-bf1ef3f9c3ed.pdf",
+    "abstract": "Contrastive Language-Image Pre-training (CLIP) formulates image classification as an image-to-text matching task, i.e., matching images to the corresponding natural language descriptions instead of discrete category IDs. This allows for open-vocabulary visual recognition, where the model can recognize images from an open class set (also known as an open vocabulary) in a zero-shot manner. However, evaluating the openness of CLIP-like models is challenging, as the models are open to arbitrary vocabulary in theory, but their accuracy varies in practice. To address this, we resort to an incremental perspective to assess the openness through vocabulary expansions, and define extensibility to measure a model’s ability to handle novel classes. Our evaluation shows that CLIP-like models are not truly open, and their performance deteriorates as the vocabulary expands. We further dissect the feature space of CLIP from the perspectives of representation alignment and uniformity. Our investigation reveals that the overestimation of openness is due to confusion among competing text features, rather than a failure to capture the similarity between image features and text features of novel classes. We hope that our investigation and analysis will facilitate future research on the CLIP openness issue.",
+    "num_pages": 20
+}

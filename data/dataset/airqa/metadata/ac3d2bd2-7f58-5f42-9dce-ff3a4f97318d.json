@@ -1,0 +1,17 @@
+{
+    "uuid": "ac3d2bd2-7f58-5f42-9dce-ff3a4f97318d",
+    "title": "BioNART: A Biomedical Non-AutoRegressive Transformer for Natural Language Generation",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+    "bibtex": "@inproceedings{asada-miwa-2023-bionart,\n    title = \"{B}io{NART}: A Biomedical Non-{A}uto{R}egressive Transformer for Natural Language Generation\",\n    author = \"Asada, Masaki  and\n      Miwa, Makoto\",\n    editor = \"Demner-fushman, Dina  and\n      Ananiadou, Sophia  and\n      Cohen, Kevin\",\n    booktitle = \"The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.bionlp-1.34\",\n    doi = \"10.18653/v1/2023.bionlp-1.34\",\n    pages = \"369--376\",\n    abstract = \"We propose a novel Biomedical domain-specific Non-AutoRegressive Transformer model for natural language generation: BioNART. Our BioNART is based on an encoder-decoder model, and both encoder and decoder are compatible with widely used BERT architecture, which allows benefiting from publicly available pre-trained biomedical language model checkpoints. We performed additional pre-training and fine-tuned BioNART on biomedical summarization and doctor-patient dialogue tasks. Experimental results show that our BioNART achieves about 94{\\%} of the ROUGE score to the pre-trained autoregressive model while realizing an 18 times faster inference speed on the iCliniq dataset.\",\n}\n",
+    "authors": [
+        "Masaki Asada",
+        "Makoto Miwa"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.bionlp-1.34.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ac3d2bd2-7f58-5f42-9dce-ff3a4f97318d.pdf",
+    "abstract": "We propose a novel Biomedical domain-specific Non-AutoRegressive Transformer model for natural language generation: BioNART. Our BioNART is based on an encoder-decoder model, and both encoder and decoder are compatible with widely used BERT architecture, which allows benefiting from publicly available pre-trained biomedical language model checkpoints. We performed additional pre-training and fine-tuned BioNART on biomedical summarization and doctor-patient dialogue tasks. Experimental results show that our BioNART achieves about 94% of the ROUGE score to the pre-trained autoregressive model while realizing an 18 times faster inference speed on the iCliniq dataset.",
+    "num_pages": 8
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "0d17fb59-6d44-555b-9676-b03556d5c653",
+    "title": "MUSTIE: Multimodal Structural Transformer for Web Information Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wang-etal-2023-mustie,\n    title = \"{MUSTIE}: Multimodal Structural Transformer for Web Information Extraction\",\n    author = \"Wang, Qifan  and\n      Wang, Jingang  and\n      Quan, Xiaojun  and\n      Feng, Fuli  and\n      Xu, Zenglin  and\n      Nie, Shaoliang  and\n      Wang, Sinong  and\n      Khabsa, Madian  and\n      Firooz, Hamed  and\n      Liu, Dongfang\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.135\",\n    doi = \"10.18653/v1/2023.acl-long.135\",\n    pages = \"2405--2420\",\n    abstract = \"The task of web information extraction is to extract target fields of an object from web pages, such as extracting the name, genre and actor from a movie page. Recent sequential modeling approaches have achieved state-of-the-art results on web information extraction. However, most of these methods only focus on extracting information from textual sources while ignoring the rich information from other modalities such as image and web layout. In this work, we propose a novel MUltimodal Structural Transformer (MUST) that incorporates multiple modalities for web information extraction. Concretely, we develop a structural encoder that jointly encodes the multimodal information based on the HTML structure of the web layout, where high-level DOM nodes, and low-level text and image tokens are introduced to represent the entire page. Structural attention patterns are designed to learn effective cross-modal embeddings for all DOM nodes and low-level tokens. An extensive set of experiments are conducted on WebSRC and Common Crawl benchmarks. Experimental results demonstrate the superior performance of MUST over several state-of-the-art baselines.\",\n}\n",
+    "authors": [
+        "Qifan Wang",
+        "Jingang Wang",
+        "Xiaojun Quan",
+        "Fuli Feng",
+        "Zenglin Xu",
+        "Shaoliang Nie",
+        "Sinong Wang",
+        "Madian Khabsa",
+        "Hamed Firooz",
+        "Dongfang Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.135.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/0d17fb59-6d44-555b-9676-b03556d5c653.pdf",
+    "abstract": "The task of web information extraction is to extract target fields of an object from web pages, such as extracting the name, genre and actor from a movie page. Recent sequential modeling approaches have achieved state-of-the-art results on web information extraction. However, most of these methods only focus on extracting information from textual sources while ignoring the rich information from other modalities such as image and web layout. In this work, we propose a novel MUltimodal Structural Transformer (MUST) that incorporates multiple modalities for web information extraction. Concretely, we develop a structural encoder that jointly encodes the multimodal information based on the HTML structure of the web layout, where high-level DOM nodes, and low-level text and image tokens are introduced to represent the entire page. Structural attention patterns are designed to learn effective cross-modal embeddings for all DOM nodes and low-level tokens. An extensive set of experiments are conducted on WebSRC and Common Crawl benchmarks. Experimental results demonstrate the superior performance of MUST over several state-of-the-art baselines.",
+    "num_pages": 16
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "4584308a-b3a6-543b-b5e0-e3bf72319add",
+    "title": "A Confidence-based Partial Label Learning Model for Crowd-Annotated Named Entity Recognition",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "bibtex": "@inproceedings{xiong-etal-2023-confidence,\n    title = \"A Confidence-based Partial Label Learning Model for Crowd-Annotated Named Entity Recognition\",\n    author = \"Xiong, Limao  and\n      Zhou, Jie  and\n      Zhu, Qunxi  and\n      Wang, Xiao  and\n      Wu, Yuanbin  and\n      Zhang, Qi  and\n      Gui, Tao  and\n      Huang, Xuanjing  and\n      Ma, Jin  and\n      Shan, Ying\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2023\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-acl.89\",\n    doi = \"10.18653/v1/2023.findings-acl.89\",\n    pages = \"1375--1386\",\n    abstract = \"Existing models for named entity recognition (NER) are mainly based on large-scale labeled datasets, which always obtain using crowdsourcing. However, it is hard to obtain a unified and correct label via majority voting from multiple annotators for NER due to the large labeling space and complexity of this task. To address this problem, we aim to utilize the original multi-annotator labels directly. Particularly, we propose a CONfidence-based partial Label Learning (CONLL) method to integrate the prior confidence (given by annotators) and posterior confidences (learned by models) for crowd-annotated NER. This model learns a token- and content-dependent confidence via an Expectation{--}Maximization (EM) algorithm by minimizing empirical risk. The true posterior estimator and confidence estimator perform iteratively to update the true posterior and confidence respectively. We conduct extensive experimental results on both real-world and synthetic datasets, which show that our model can improve performance effectively compared with strong baselines.\",\n}\n",
+    "authors": [
+        "Limao Xiong",
+        "Jie Zhou",
+        "Qunxi Zhu",
+        "Xiao Wang",
+        "Yuanbin Wu",
+        "Qi Zhang",
+        "Tao Gui",
+        "Xuanjing Huang",
+        "Jin Ma",
+        "Ying Shan"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-acl.89.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/4584308a-b3a6-543b-b5e0-e3bf72319add.pdf",
+    "abstract": "Existing models for named entity recognition (NER) are mainly based on large-scale labeled datasets, which always obtain using crowdsourcing. However, it is hard to obtain a unified and correct label via majority voting from multiple annotators for NER due to the large labeling space and complexity of this task. To address this problem, we aim to utilize the original multi-annotator labels directly. Particularly, we propose a CONfidence-based partial Label Learning (CONLL) method to integrate the prior confidence (given by annotators) and posterior confidences (learned by models) for crowd-annotated NER. This model learns a token- and content-dependent confidence via an Expectation–Maximization (EM) algorithm by minimizing empirical risk. The true posterior estimator and confidence estimator perform iteratively to update the true posterior and confidence respectively. We conduct extensive experimental results on both real-world and synthetic datasets, which show that our model can improve performance effectively compared with strong baselines.",
+    "num_pages": 12
+}

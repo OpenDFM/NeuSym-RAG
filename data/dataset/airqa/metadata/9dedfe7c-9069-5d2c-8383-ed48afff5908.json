@@ -1,0 +1,17 @@
+{
+    "uuid": "9dedfe7c-9069-5d2c-8383-ed48afff5908",
+    "title": "Self-Distilled Quantization: Achieving High Compression Rates in Transformer-Based Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    "bibtex": "@inproceedings{oneill-dutta-2023-self,\n    title = \"Self-Distilled Quantization: Achieving High Compression Rates in Transformer-Based Language Models\",\n    author = \"O{'}Neill, James  and\n      Dutta, Sourav\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-short.114\",\n    doi = \"10.18653/v1/2023.acl-short.114\",\n    pages = \"1329--1339\",\n    abstract = \"We investigate the effects of post-training quantization and quantization-aware training on the generalization of Transformer language models. We present a new method called self-distilled quantization (SDQ) that minimizes accumulative quantization errors and outperforms baselines. We apply SDQ to multilingual models XLM-R$_{\\text{Base}}$ and InfoXLM$_{\\text{Base}}$ and demonstrate that both models can be reduced from 32-bit floating point weights to 8-bit integer weights while maintaining a high level of performance on the XGLUE benchmark. Our results also highlight the challenges of quantizing multilingual models, which must generalize to languages they were not fine-tuned on.\",\n}\n",
+    "authors": [
+        "James O’Neill",
+        "Sourav Dutta"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-short.114.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9dedfe7c-9069-5d2c-8383-ed48afff5908.pdf",
+    "abstract": "We investigate the effects of post-training quantization and quantization-aware training on the generalization of Transformer language models. We present a new method called self-distilled quantization (SDQ) that minimizes accumulative quantization errors and outperforms baselines. We apply SDQ to multilingual models XLM-RBase and InfoXLMBase and demonstrate that both models can be reduced from 32-bit floating point weights to 8-bit integer weights while maintaining a high level of performance on the XGLUE benchmark. Our results also highlight the challenges of quantizing multilingual models, which must generalize to languages they were not fine-tuned on.",
+    "num_pages": 11
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "59d747b8-e253-565b-94aa-aefc17746994",
+    "title": "SCALE: Synergized Collaboration of Asymmetric Language Translation Engines",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{cheng-etal-2024-scale,\n    title = \"{SCALE}: Synergized Collaboration of Asymmetric Language Translation Engines\",\n    author = \"Cheng, Xin  and\n      Wang, Xun  and\n      Ge, Tao  and\n      Chen, Si-Qing  and\n      Wei, Furu  and\n      Zhao, Dongyan  and\n      Yan, Rui\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.941\",\n    doi = \"10.18653/v1/2024.findings-acl.941\",\n    pages = \"15903--15918\",\n    abstract = \"In this paper, we introduce SCALE, a collaborative framework that connects a compact Specialized Translation Model (STM) and a general-purpose Large Language Model (LLM) as one unified translation engine. By introducing translation from STM into the triplet in-context demonstrations, SCALE unlocks refinement and pivoting ability of LLM, thus 1) mitigating language bias of LLMs and parallel data bias of STMs, 2) enhancing LLM speciality without sacrificing generality, and 3) facilitating continual learning in a LLM-tuning-free way.Our comprehensive experiments show that SCALE significantly outperforms both LLMs (GPT-4, GPT-3.5) and supervised models (NLLB, M2M) in either high-resource or challenging low-resource settings. Moreover SCALE shows great scalability by only updating the lightweight STM and witness consistent system improvement, an averaged 4 BLEURT score across 4 languages without tuning LLM. Interestingly, SCALE could also effectively exploit the existing language bias of LLMs by using an English-centric STM as a pivot to conduct translation between any language pairs, outperforming GPT-4 by an average of 6 COMET points across eight translation directions. Furthermore we provide an in-depth analysis of SCALE{'}s robustness, translation characteristics, latency costs and inherent language bias, providing solid foundation for future studies exploring the potential synergy between LLMs and more specialized models.\",\n}\n",
+    "authors": [
+        "Xin Cheng",
+        "Xun Wang",
+        "Tao Ge",
+        "Si-Qing Chen",
+        "Furu Wei",
+        "Dongyan Zhao",
+        "Rui Yan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.941.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/59d747b8-e253-565b-94aa-aefc17746994.pdf",
+    "abstract": "In this paper, we introduce SCALE, a collaborative framework that connects a compact Specialized Translation Model (STM) and a general-purpose Large Language Model (LLM) as one unified translation engine. By introducing translation from STM into the triplet in-context demonstrations, SCALE unlocks refinement and pivoting ability of LLM, thus 1) mitigating language bias of LLMs and parallel data bias of STMs, 2) enhancing LLM speciality without sacrificing generality, and 3) facilitating continual learning in a LLM-tuning-free way.Our comprehensive experiments show that SCALE significantly outperforms both LLMs (GPT-4, GPT-3.5) and supervised models (NLLB, M2M) in either high-resource or challenging low-resource settings. Moreover SCALE shows great scalability by only updating the lightweight STM and witness consistent system improvement, an averaged 4 BLEURT score across 4 languages without tuning LLM. Interestingly, SCALE could also effectively exploit the existing language bias of LLMs by using an English-centric STM as a pivot to conduct translation between any language pairs, outperforming GPT-4 by an average of 6 COMET points across eight translation directions. Furthermore we provide an in-depth analysis of SCALE’s robustness, translation characteristics, latency costs and inherent language bias, providing solid foundation for future studies exploring the potential synergy between LLMs and more specialized models.",
+    "num_pages": 16
+}

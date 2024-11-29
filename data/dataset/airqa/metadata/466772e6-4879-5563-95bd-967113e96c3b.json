@@ -1,0 +1,20 @@
+{
+    "uuid": "466772e6-4879-5563-95bd-967113e96c3b",
+    "title": "Dual Cache for Long Document Neural Coreference Resolution",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{guo-etal-2023-dual,\n    title = \"Dual Cache for Long Document Neural Coreference Resolution\",\n    author = \"Guo, Qipeng  and\n      Hu, Xiangkun  and\n      Zhang, Yue  and\n      Qiu, Xipeng  and\n      Zhang, Zheng\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.851\",\n    doi = \"10.18653/v1/2023.acl-long.851\",\n    pages = \"15272--15285\",\n    abstract = \"Recent works show the effectiveness of cache-based neural coreference resolution models on long documents. These models incrementally process a long document from left to right and extract relations between mentions and entities in a cache, resulting in much lower memory and computation cost compared to computing all mentions in parallel. However, they do not handle cache misses when high-quality entities are purged from the cache, which causes wrong assignments and leads to prediction errors. We propose a new hybrid cache that integrates two eviction policies to capture global and local entities separately, and effectively reduces the aggregated cache misses up to half as before, while improving F1 score of coreference by 0.7 5.7pt. As such, the hybrid policy can accelerate existing cache-based models and offer a new long document coreference resolution solution. Results show that our method outperforms existing methods on four benchmarks while saving up to 83{\\%} of inference time against non-cache-based models. Further, we achieve a new state-of-the-art on a long document coreference benchmark, LitBank.\",\n}\n",
+    "authors": [
+        "Qipeng Guo",
+        "Xiangkun Hu",
+        "Yue Zhang",
+        "Xipeng Qiu",
+        "Zheng Zhang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.851.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/466772e6-4879-5563-95bd-967113e96c3b.pdf",
+    "abstract": "Recent works show the effectiveness of cache-based neural coreference resolution models on long documents. These models incrementally process a long document from left to right and extract relations between mentions and entities in a cache, resulting in much lower memory and computation cost compared to computing all mentions in parallel. However, they do not handle cache misses when high-quality entities are purged from the cache, which causes wrong assignments and leads to prediction errors. We propose a new hybrid cache that integrates two eviction policies to capture global and local entities separately, and effectively reduces the aggregated cache misses up to half as before, while improving F1 score of coreference by 0.7 5.7pt. As such, the hybrid policy can accelerate existing cache-based models and offer a new long document coreference resolution solution. Results show that our method outperforms existing methods on four benchmarks while saving up to 83% of inference time against non-cache-based models. Further, we achieve a new state-of-the-art on a long document coreference benchmark, LitBank.",
+    "num_pages": 14
+}

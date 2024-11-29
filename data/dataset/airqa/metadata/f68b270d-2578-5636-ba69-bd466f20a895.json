@@ -1,0 +1,17 @@
+{
+    "uuid": "f68b270d-2578-5636-ba69-bd466f20a895",
+    "title": "Knowlab’s Submission to L+M Shared Task: All you need is continued pretraining of chemistry texts even for molecule captioning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 1st Workshop on Language + Molecules (L+M 2024)",
+    "bibtex": "@inproceedings{kim-wu-2024-knowlabs,\n    title = \"Knowlab{'}s Submission to {L}+{M} Shared Task: All you need is continued pretraining of chemistry texts even for molecule captioning\",\n    author = \"Kim, Yunsoo  and\n      Wu, Honghan\",\n    editor = \"Edwards, Carl  and\n      Wang, Qingyun  and\n      Li, Manling  and\n      Zhao, Lawrence  and\n      Hope, Tom  and\n      Ji, Heng\",\n    booktitle = \"Proceedings of the 1st Workshop on Language + Molecules (L+M 2024)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.langmol-1.11\",\n    doi = \"10.18653/v1/2024.langmol-1.11\",\n    pages = \"91--96\",\n    abstract = \"This paper presents our submission to the L+M-24 shared task, focused on translating molecular structures into natural language descriptions, known as the molecule captioning task. We selected a small language model (SLM), Phi-3-mini-4k, to evaluate the impact of continued pretraining and instruction tuning for domain-specific chemical knowledge. The Phi-3 model was continued pretrained with 90M chemistry textbooks and abstracts, followed by instruction tuning on 150K question answering sets of SMILES and general chemistry knowledge. Despite the continued pretraining phase not including direct exposure to SMILES representations, it significantly enhanced the Phi-3 model{'}s performance, a 300{\\%} increase for the BLEU scores, in the molecule captioning task. The code and model are released at \\url{https://github.com/bluesky333/Phi3KnowChem} to facilitate research in chemical small language modeling.\",\n}\n",
+    "authors": [
+        "Yunsoo Kim",
+        "Honghan Wu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.langmol-1.11.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/f68b270d-2578-5636-ba69-bd466f20a895.pdf",
+    "abstract": "This paper presents our submission to the L+M-24 shared task, focused on translating molecular structures into natural language descriptions, known as the molecule captioning task. We selected a small language model (SLM), Phi-3-mini-4k, to evaluate the impact of continued pretraining and instruction tuning for domain-specific chemical knowledge. The Phi-3 model was continued pretrained with 90M chemistry textbooks and abstracts, followed by instruction tuning on 150K question answering sets of SMILES and general chemistry knowledge. Despite the continued pretraining phase not including direct exposure to SMILES representations, it significantly enhanced the Phi-3 model’s performance, a 300% increase for the BLEU scores, in the molecule captioning task. The code and model are released at https://github.com/bluesky333/Phi3KnowChem to facilitate research in chemical small language modeling.",
+    "num_pages": 6
+}
