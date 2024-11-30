@@ -6,21 +6,14 @@
             "args": {
                 "deps": [
                     "pdf_path"
-                ]
-            }
-        },
-        {
-            "function": "get_ai_research_tldr_tags",
-            "args": {
-                "deps": [
-                    "get_ai_research_metadata"
                 ],
                 "kwargs": {
+                    "max_length": 50,
                     "model": "gpt-4o",
+                    "title_temperature": 0.0,
+                    "tldr_tags_temperature": 0.7,
                     "tldr_max_length": 80,
-                    "tag_number": 5,
-                    "temperature": 0.7,
-                    "top_p" : 0.95
+                    "tag_number": 5
                 }
             }
         },
@@ -137,8 +130,7 @@
             "table": "metadata",
             "args": {
                 "deps": [
-                    "get_ai_research_metadata",
-                    "get_ai_research_tldr_tags"
+                    "get_ai_research_metadata"
                 ]
             }
         },
