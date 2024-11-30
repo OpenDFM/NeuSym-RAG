@@ -7,6 +7,7 @@ from typing import Dict, Any, Optional, List
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from agents.models import get_llm_single_instance
 from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid, get_airqa_paper_metadata, get_num_pages, download_paper_pdf, get_airqa_relative_path
+from utils.functions.common_functions import get_uuid
 from bs4 import BeautifulSoup
 
 
@@ -49,6 +50,36 @@ def get_all_used_paper_uuids(
         with open(output_file, 'w', encoding='utf8') as ouf:
             json.dump(uuids, ouf, ensure_ascii=False, indent=4)
     return uuids
+
+
+def generate_airqa_example_template() -> Dict[str, Any]:
+    """ Generate an AIR-QA example template.
+    """
+    flag, existing_uids = True, [os.path.splitext(f)[0] for f in os.listdir(os.path.join(AIRQA_DIR, 'examples')) if f.endswith('.json')]
+    while flag:
+        uid = get_uuid(name=os.path.abspath(__file__) + str(os.urandom(8)))
+        if uid not in existing_uids:
+            break
+    example_template = {
+        "uuid": uid,
+        "question": "",
+        "answer_format": "Your answer should be ",
+        "tags": [],
+        "pdf_id": [],
+        "conference": [],
+        "reasoning_steps": [],
+        "evaluator": {
+            "eval_func": "eval_",
+            "eval_kwargs": {}
+        },
+        "state": {
+            "gui-gpt-4o-2024-11-20": False
+        }
+    }
+    with open(os.path.join(AIRQA_DIR, 'examples', uid + '.json'), 'w', encoding='utf8') as ouf:
+        json.dump(example_template, ouf, ensure_ascii=False, indent=4)
+    logger.info(f"Generated an AIR-QA example template with ID {uid} into examples/{uid}.json file.")
+    return example_template
 
 
 def get_answer_from_llm(question_uuid: Optional[str] = None, question: Optional[str] = None, add_answer_format: bool = True, model: str = 'gpt-4o', temperature: float = 0.7, top_p: float = 0.95) -> str:
