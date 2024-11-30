@@ -413,6 +413,7 @@ def get_ai_research_metadata(
             "abstract": "..." // paper abstract text
         }
     """
+    metadata_path = os.path.join(AIRQA_DIR, 'metadata')
     metadata_dict = get_airqa_paper_metadata()
 
     # pdf_path: "/path/to/paper/397f31e7-2b9f-5795-a843-e29ea6b28e7a.pdf" -> "397f31e7-2b9f-5795-a843-e29ea6b28e7a"
