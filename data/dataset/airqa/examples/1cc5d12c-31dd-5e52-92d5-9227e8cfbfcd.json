@@ -19,7 +19,7 @@
         "Otherwise, try to summarize the core questions from the main text."
     ],
     "evaluator": {
-        "eval_func": "eval_answer_with_llm_scoring_points",
+        "eval_func": "eval_scoring_points_with_llm",
         "eval_kwargs": {
             "scoring_points": [
                 "Is it possible to determine data contamination by solely analyzing the inputs and outputs of existing LLMs?",
