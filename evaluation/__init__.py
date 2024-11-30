@@ -9,5 +9,9 @@ from .match_functions import (
 )
 
 from .llm_functions import (
-    eval_answer_with_llm_scoring_points
+    eval_candidate_reference_answer_with_llm,
+    eval_partial_scoring_points_with_llm,
+    eval_reference_answer_with_llm,
+    eval_scoring_points_with_llm,
+    eval_reference_answer_and_scoring_points_with_llm
 )
