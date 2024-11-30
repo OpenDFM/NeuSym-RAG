@@ -448,7 +448,7 @@ def get_ai_research_metadata(
 
         # metadata already exists, just skip
         if metadata["uuid"] in metadata_dict:
-            logger.warning(f"Metadata for paper UUID {metadata['uuid']} already exists in {metadata_path}.")
+            logger.warning(f"Metadata for paper UUID {metadata['uuid']} already exists.")
             return metadata_dict[metadata['uuid']]
 
         pdf_path_renamed = metadata['pdf_path']

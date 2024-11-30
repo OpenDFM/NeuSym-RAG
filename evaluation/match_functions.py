@@ -6,7 +6,7 @@ from fuzzywuzzy import fuzz, process
 
 def eval_string_exact_match(
         pred: str,
-        gold: Optional[str] = None,
+        gold: str,
         lowercase: bool = False,
         ignore_blank: bool = False,
         **kwargs
@@ -28,7 +28,7 @@ def eval_string_exact_match(
 
 def eval_string_fuzzy_match(
         pred: str,
-        gold: Optional[str] = None,
+        gold: str,
         fuzz_method: str = 'ratio',
         threshold: int = 95,
         ignore_blank: bool = False,
@@ -57,7 +57,7 @@ def eval_string_fuzzy_match(
     return float(fuzz_function(pred.lower(), gold.lower()) >= threshold) if lowercase else float(fuzz_function(pred, gold) >= threshold)
 
 
-def eval_bool_exact_match(pred: Any, gold: Optional[bool] = None, **kwargs) -> float:
+def eval_bool_exact_match(pred: Any, gold: bool, **kwargs) -> float:
     """ Evaluate the predicted answer against the gold answer using exact boolean match.
     """
     try:
@@ -84,7 +84,7 @@ def eval_bool_exact_match(pred: Any, gold: Optional[bool] = None, **kwargs) -> f
         return 0.0
 
 
-def eval_int_exact_match(pred: Any, gold: Optional[int] = None, **kwargs) -> float:
+def eval_int_exact_match(pred: Any, gold: int, **kwargs) -> float:
     """ Evaluate the predicted answer against the gold answer using exact integer match.
     """
     try:
@@ -93,7 +93,7 @@ def eval_int_exact_match(pred: Any, gold: Optional[int] = None, **kwargs) -> flo
         return 0.0
 
 
-def eval_float_exact_match(pred: Any, gold: Optional[float] = None, ndigits: Optional[int] = None, tolerance: float = 1e-6, **kwargs) -> float:
+def eval_float_exact_match(pred: Any, gold: float, ndigits: Optional[int] = None, tolerance: float = 1e-6, **kwargs) -> float:
     """ Evaluate the predicted answer against the gold answer using exact float match.
     """
     try:
