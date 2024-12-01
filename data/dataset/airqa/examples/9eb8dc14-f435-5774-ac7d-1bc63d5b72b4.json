@@ -1,0 +1,33 @@
+{
+    "uuid": "9eb8dc14-f435-5774-ac7d-1bc63d5b72b4",
+    "question": "Which website can I find the conversation video between Sheldon and Leonard?",
+    "answer_format": "Your answer should be a pure text string starting with 'https'. DO NOT INCLUDE ANY OTHER INFORMATION OR CONTEXT IN THE ANSWER.",
+    "tags": [
+        "metadata query",
+        "text understanding",
+        "metadata extraction",
+        "objective"
+    ],
+    "pdf_id": [
+        "1a8e9cd5-8ae1-52b9-84d5-b67bd9c07a21"
+    ],
+    "conference": [
+        "acl2024"
+    ],
+    "reasoning_steps": [
+        "Firstly, we need to search through the paper with the query \"conversation video between Sheldon and Leonard\".",
+        "Then, we need to find the website link surrounding the text.",
+        "If not found nearby, we can also search for the footnote in exactly the same page where the query relevant text is found. It possibly contains the website link."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "https://giaabaoo.github.io/TPD_website/",
+            "lowercase": false
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": true,
+        "gpt-4o-2024-11-20": false
+    }
+}
