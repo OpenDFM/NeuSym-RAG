@@ -8,10 +8,14 @@
                     "pdf_path"
                 ],
                 "kwargs": {
+                    "max_length": 50,
                     "model": "gpt-4o",
-                    "temperature": 0.0,
-                    "api_tools": [],
-                    "write_to_json": true
+                    "title_temperature": 0.0,
+                    "tldr_tags_temperature": 0.7,
+                    "tldr_max_length": 80,
+                    "tag_number": 5,
+                    "temperature": 0.7,
+                    "top_p" : 0.95
                 }
             }
         },
@@ -19,26 +23,11 @@
             "function": "get_ai_research_pdf_data",
             "args": {
                 "deps": [
-                    "get_ai_research_metadata"
+                    "pdf_path"
                 ],
                 "kwargs": {
                     "processed_data_folder": "data/dataset/airqa/processed_data",
                     "TOC_threshold": 0.9
-                }
-            }
-        },
-        {
-            "function": "get_ai_research_tldr_tags",
-            "args": {
-                "deps": [
-                    "get_ai_research_metadata"
-                ],
-                "kwargs": {
-                    "model": "gpt-4o",
-                    "tldr_max_length": 80,
-                    "tag_number": 5,
-                    "temperature": 0.7,
-                    "top_p" : 0.95
                 }
             }
         },
@@ -143,8 +132,7 @@
             "table": "metadata",
             "args": {
                 "deps": [
-                    "get_ai_research_metadata",
-                    "get_ai_research_tldr_tags"
+                    "get_ai_research_metadata"
                 ]
             }
         },

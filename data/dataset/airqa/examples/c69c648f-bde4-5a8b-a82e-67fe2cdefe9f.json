@@ -1,0 +1,34 @@
+{
+    "uuid": "c69c648f-bde4-5a8b-a82e-67fe2cdefe9f",
+    "question": "What is the limitation of this work proposed by the authors themselves?",
+    "answer_format": "Your answer should be plain text.",
+    "tags": [
+        "single-doc details",
+        "text understanding",
+        "subjective"
+    ],
+    "pdf_id": [
+        "1a472825-70b5-5b91-a9a1-f60fcb8d89f5"
+    ],
+    "conference": [
+        "acl2024"
+    ],
+    "reasoning_steps": [
+        "Find the limitation section in the paper to locate the limitations of the work.",
+        "Summarize or paraphrase the limitations mentioned by the authors."
+    ],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "The authors have only explored applying the approach to encoder models, leaving room for applications on decoder models.",
+                "Despite the variety of existing contrastive learning methodologies, this work still adheres to utilizing the contrastive learning objectives provided by the tasks."
+            ],
+            "question": "What is the limitation of this work proposed by the authors themselves?",
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}
