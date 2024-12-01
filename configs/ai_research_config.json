@@ -6,7 +6,25 @@
             "args": {
                 "deps": [
                     "pdf_path"
-                ]
+                ],
+                "kwargs": {
+                    "model": "gpt-4o",
+                    "temperature": 0.0,
+                    "api_tools": [],
+                    "write_to_json": true
+                }
+            }
+        },
+        {
+            "function": "get_ai_research_pdf_data",
+            "args": {
+                "deps": [
+                    "get_ai_research_metadata"
+                ],
+                "kwargs": {
+                    "processed_data_folder": "data/dataset/airqa/processed_data",
+                    "TOC_threshold": 0.9
+                }
             }
         },
         {
@@ -21,18 +39,6 @@
                     "tag_number": 5,
                     "temperature": 0.7,
                     "top_p" : 0.95
-                }
-            }
-        },
-        {
-            "function": "get_ai_research_pdf_data",
-            "args": {
-                "deps": [
-                    "pdf_path"
-                ],
-                "kwargs": {
-                    "processed_data_folder": "data/dataset/airqa/processed_data",
-                    "TOC_threshold": 0.9
                 }
             }
         },

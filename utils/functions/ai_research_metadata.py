@@ -6,7 +6,7 @@ import fitz, pymupdf # PyMuPDF
 from fuzzywuzzy import fuzz
 import pandas as pd
 from urllib.parse import urlencode
-from .common_functions import is_valid_uuid, get_uuid, call_llm
+from .common_functions import is_valid_uuid, get_uuid, call_llm, call_llm_with_message
 
 
 logger = logging.getLogger(__name__)
@@ -150,6 +150,93 @@ def infer_paper_title_from_pdf(
         logger.error(f"Paper title is not found in {first_lines} of the PDF {pdf_path}.")
         return None
     return title
+
+
+def infer_paper_volume_from_pdf(
+        pdf_path: str,
+        first_lines: Optional[int] = 10,
+        last_lines: Optional[int] = 10,
+        model: str = 'gpt-4o',
+        temperature: float = 0.0 # Use more deterministic decoding with temperature=0.0
+    ) -> str:
+    """ Use a language model to infer the volume of a paper from the top `first_lines` lines and the bottom `last_lines` of the first page in a PDF.
+    """
+    volume_prompt_path = os.path.join("utils", "functions", "ai_research_metadata_volume.json")
+    with open(volume_prompt_path, "r", encoding='utf-8') as f:
+       VOLUME_PROMPTS = json.load(f)
+    VOLUME_SYSTEM_PROMPT = VOLUME_PROMPTS["VOLUME_SYSTEM_PROMPT"]
+    VOLUME_USER_PROMPT = VOLUME_PROMPTS["VOLUME_USER_PROMPT"]
+    VOLUME_FEW_SHOTS = VOLUME_PROMPTS["VOLUME_FEW_SHOTS"]
+    doc = fitz.open(pdf_path)
+    first_page = doc[0]
+    first_lines_text = '\n'.join(first_page.get_text().split('\n')[:first_lines])
+    last_lines_text = '\n'.join(first_page.get_text().split('\n')[-last_lines:])
+    first_last_lines = f"the first {first_lines} lines and the last {last_lines} lines of the first page"
+    doc.close()
+
+    # Call the language model to infer the title
+    messages = [{
+        "role": "system", 
+        "content" : VOLUME_SYSTEM_PROMPT.format(first_last_lines = first_last_lines)
+    }]
+    for example in ["ACL", "NeurIPS", "arxiv"]:
+        messages.append({
+            "role": "user", 
+            "content": VOLUME_USER_PROMPT.format(
+                first_lines_text = VOLUME_FEW_SHOTS[example]['first_lines_text'],
+                last_lines_text = VOLUME_FEW_SHOTS[example]['last_lines_text']
+            )
+        })
+        messages.append({
+            "role": "assistant",
+            "content": VOLUME_FEW_SHOTS[example]['volume']
+        })
+    messages.append({
+        "role": "user",
+        "content": VOLUME_USER_PROMPT.format(first_lines_text = first_lines_text, last_lines_text = last_lines_text)
+    })
+    logger.info(messages)
+    volume = call_llm_with_message(messages=messages, model=model, temperature=temperature).strip()
+    if volume.startswith("volume not found"):
+        logger.error(f"Paper volume is not found in {first_last_lines} of the PDF {pdf_path}.")
+        return None
+    return volume
+
+
+def infer_paper_abstract_from_pdf(
+        pdf_path: str,
+        model: str = 'gpt-4o',
+        temperature: float = 0.0 # Use more deterministic decoding with temperature=0.0
+    ) -> str:
+    """ Use a language model to infer the abstract of a paper from the first page in a PDF.
+    """
+    doc = fitz.open(pdf_path)
+    first_page = doc[0].get_text()
+    doc.close()
+
+    # Call the language model to infer the title
+    template = f"""You are an expert in academic papers. Your task is to identify the abstract of a research paper based on the text from the first page in the PDF, extracted using PyMuPDF. Please ensure the following:\n1. Directly return the abstract without adding any extra context, explanations, or formatting.\n2. Do not modify the abstract, retain its original capitalization and punctuation exactly as presented.\n3. If the abstract spans multiple lines, concatenate them into a single line and return it.\n4. If you are certain that the provided text does not contain the paper's abstract, respond only with "abstract not found".\n\nHere is the extracted text:\n\n```txt\n{first_page}\n```\n\nYour response is:\n"""
+    abstract = call_llm(template, model=model, temperature=temperature).strip()
+    if abstract.startswith("abstract not found"):
+        logger.error(f"Paper abstract is not found in the first page of the PDF {pdf_path}.")
+        return None
+    return abstract
+
+
+def infer_conference_full_from_conference(
+        conference: str,
+        model: str = 'gpt-4o',
+        temperature: float = 0.0 # Use more deterministic decoding with temperature=0.0
+    ) -> str:
+    """ Infer the full title of a conference from its abbreviation.
+    """
+    template = f"""You are an expert in academic papers. Your task is to identify the full title of a conference or a journal based on its abbreviation. If you're not sure about the full title, respond only with "not found".\n\nThe provided abbreviation is:\n\n{conference}\n\nYour response is:
+"""
+    conference_full = call_llm(template, model=model, temperature=temperature).strip()
+    if conference_full.startswith("not found"):
+        logger.error(f"Full title of the conference `{conference}` is not found.")
+        return None
+    return conference_full
 
 
 def infer_paper_tldr_from_metadata(
@@ -302,7 +389,7 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                 pdf_url = response.url
                 if pdf_url.endswith('.pdf'): return pdf_url
             except Exception as e:
-                # logger.error(f'Failed to obtain the html file when parsing PDF URL: {pdf_url}')
+                logger.error(f'Failed to obtain the html file when parsing PDF URL: {pdf_url} withError: {e}')
                 return None
     
             # Step 3: Parse the HTML to find PDF link
@@ -319,11 +406,11 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                     if not pdf_link.startswith('http'):
                         pdf_link = requests.compat.urljoin(pdf_url, pdf_link)
                     return pdf_link
-            # logger.error(f"[Error]: Failed to find the PDF download link from the DBLP URL: {pdf_url}.")
+            logger.error(f"[Error]: Failed to find the PDF download link from the DBLP URL: {pdf_url}.")
             return None
         
         except Exception as e:
-            # logger.error(f"[Error]: Unexpected error occurred when finding the PDF download link from the DBLP URL: {pdf_url}.")
+            logger.error(f"[Error]: Unexpected error occurred when finding the PDF download link from the DBLP URL: {pdf_url}.")
             return None
 
 
@@ -350,12 +437,20 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             elif len(series := ccf_catalog.loc[ccf_catalog.get('abbr').str.lower() == conference.lower(), ['abbr', 'name']]) > 0:
                 conference, conference_full = series.iloc[0]
                 subfolder = conference.lower() + str(year)
+            elif conference.lower().startswith('wmt@'):
+                conference, conference_full = 'WMT', 'Conference on Machine Translation'
+                subfolder = 'wmt' + str(year)
             else:
-                subfolder = 'uncategorized'
-                conference_full = None
+                conference_full = infer_conference_full_from_conference(conference)
+                logger.info(f"Inferred full conference title: {conference_full}, conference abbrevaition: {conference}")
+                subfolder = (conference.lower() + str(year)) if conference_full else 'uncategorized'
+                if not re.match(r'^[a-z\d]+$', subfolder):
+                    subfolder = 'uncategorized'
+                logger.info(f"subfolder {subfolder}")
             paper_uuid = get_airqa_paper_uuid(title, subfolder)
             pdf_path = os.path.join(AIRQA_DIR, 'papers', subfolder, f'{paper_uuid}.pdf')
             pdf_url, bibtex = get_dblp_pdf_url(hit['info']['ee']), get_dblp_bibtex(hit['info']['url'])
+            logger.info(f"pdf_url {pdf_url}, pdf_path {pdf_path}, bibtex{bibtex}, info_ee = {hit['info']['ee']} {hit['info']['url']}")
             if pdf_url is None: # unable to find download link, directly return
                 continue
             metadata = {
@@ -373,7 +468,7 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             }
             return metadata
         except Exception as e:
-            # logger.error(f'Error occurred when trying to process hit: {json.dumps(hit)}\n{e}')
+            logger.error(f'Error occurred when trying to process hit: {json.dumps(hit)}\n{e}')
             pass
 
     return
@@ -413,7 +508,6 @@ def get_ai_research_metadata(
             "abstract": "..." // paper abstract text
         }
     """
-    metadata_path = os.path.join(AIRQA_DIR, 'metadata')
     metadata_dict = get_airqa_paper_metadata()
 
     # pdf_path: "/path/to/paper/397f31e7-2b9f-5795-a843-e29ea6b28e7a.pdf" -> "397f31e7-2b9f-5795-a843-e29ea6b28e7a"
@@ -460,6 +554,10 @@ def get_ai_research_metadata(
                 raise ValueError(f"Failed to download the PDF file from {metadata['pdf_url']} into {pdf_path_renamed}.")
         metadata['pdf_path'] = get_airqa_relative_path(pdf_path_renamed)
         metadata['num_pages'] = get_num_pages(pdf_path_renamed)
+        if metadata['volume'] is None:
+            metadata['volume'] = infer_paper_volume_from_pdf(pdf_path_renamed, first_lines=10, last_lines=10, model=model, temperature=temperature)
+        if metadata['abstract'] is None:
+            metadata['abstract'] = infer_paper_abstract_from_pdf(pdf_path_renamed, model=model, temperature=temperature)
         metadata_dict[metadata['uuid']] = metadata
 
         if write_to_json:
