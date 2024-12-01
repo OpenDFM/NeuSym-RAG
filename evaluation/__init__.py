@@ -8,6 +8,12 @@ from .match_functions import (
     eval_structured_object_exact_match
 )
 
+from .set_functions import (
+    eval_element_included,
+    eval_element_list_included,
+    eval_element_list_overlap
+)
+
 from .llm_functions import (
     eval_candidate_reference_answer_with_llm,
     eval_partial_scoring_points_with_llm,
