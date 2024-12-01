@@ -25,3 +25,9 @@ from .llm_functions import (
 from .formula_functions import (
     eval_complex_math_formula_with_llm
 )
+
+from .logical_functions import (
+    eval_conjunction,
+    eval_disjunction,
+    eval_negation
+)

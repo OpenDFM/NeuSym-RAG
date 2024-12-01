@@ -23,7 +23,7 @@ def eval_string_exact_match(
     pred, gold = str(pred).strip(), str(gold).strip()
     if ignore_blank:
         pred, gold = re.sub(r'\s+', '', pred), re.sub(r'\s+', '', gold)
-    return pred.lower() == gold.lower() if lowercase else pred == gold
+    return float(pred.lower() == gold.lower()) if lowercase else float(pred == gold)
 
 
 def eval_string_fuzzy_match(
@@ -62,15 +62,15 @@ def eval_bool_exact_match(pred: Any, gold: bool, **kwargs) -> float:
     """
     try:
         if isinstance(pred, bool):
-            return bool(pred) == bool(gold)
+            return float(bool(pred) == bool(gold))
         elif isinstance(pred, int):
             if int(pred) not in [0, 1]:
                 return 0.0
-            return bool(pred) == bool(gold)
+            return float(bool(pred) == bool(gold))
         elif isinstance(pred, float):
             if float(pred) not in [0.0, 1.0]:
                 return 0.0
-            return bool(pred) == bool(gold)
+            return float(bool(pred) == bool(gold))
         else:
             pred = str(pred)
             if pred.lower() in ['true', '1', 'yes', 'y', 't']:
@@ -79,7 +79,7 @@ def eval_bool_exact_match(pred: Any, gold: bool, **kwargs) -> float:
                 pred = False
             else:
                 return 0.0
-            return bool(pred) == bool(gold)
+            return float(bool(pred) == bool(gold))
     except Exception:
         return 0.0
 
@@ -88,7 +88,7 @@ def eval_int_exact_match(pred: Any, gold: int, **kwargs) -> float:
     """ Evaluate the predicted answer against the gold answer using exact integer match.
     """
     try:
-        return int(pred) == int(gold)
+        return float(int(pred) == int(gold))
     except Exception:
         return 0.0
 
