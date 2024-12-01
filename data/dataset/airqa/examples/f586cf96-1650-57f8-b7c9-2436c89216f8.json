@@ -1,7 +1,7 @@
 {
     "uuid": "f586cf96-1650-57f8-b7c9-2436c89216f8",
-    "question": "When we utilize decoder-only language models in understanding word meaning, does prompting styles affect performance? If so, which technique outperforms the others? If not, what is the commonly used technique?",
-    "answer_format": "Your answer should be a Python list of two elements, the first element is a bool value of yes or no, and the second element is the prompting style name string, reply abbreviations if it has, e.g., ['yes', 'prompting_style_name'].",
+    "question": "When we utilize decoder-only language models in understanding word meaning, does prompting styles affect performance? If so, which technique outperforms the others? If not, what is the worst one?",
+    "answer_format": "Your answer should be a Python list of two elements, the first element is a bool value of yes or no, and the second element is the prompting style name string, don't reply abbreviations, e.g., ['yes', 'prompting_style_name'].",
     "tags": [
         "single-doc details",
         "text understanding",
@@ -18,14 +18,14 @@
         "Firstly, find all section titles in the paper to locate the section relevant to decoder-only language models in word meaning understanding.",
         "Identify the finer requirements on different prompting styles.",
         "Retrieve the context for this subsection to compare the performance of different prompting styles.",
-        "Finally, find the best or commonly-used prompting styles depending on the comparison results."
+        "Finally, find the best or worst prompting styles depending on the comparison results."
     ],
     "evaluator": {
         "eval_func": "eval_structured_object_exact_match",
         "eval_kwargs": {
             "gold": [
                 "yes",
-                "MCQ"
+                "Multiple-choice questions"
             ]
         }
     },
