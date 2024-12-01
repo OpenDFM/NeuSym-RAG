@@ -14,10 +14,10 @@
         "acl2023"
     ],
     "reasoning_steps": [
-        "Firstly, Extract relevant performance data from the specified PDF for CLiCoTEA and other models.",
-        "Analyse and identify the specific dataset in which CLiCoTEA does not outperform all models.",
-        "Extract relevant performance data from the specified PDF for the dataset.",
-        "Finally, analyze performance to identify the languages where CLiCoTEA underperforms."
+        "Firstly, identify relevant performances (usually in the main experiment table) from the specified PDF for CLiCoTEA and other models.",
+        "Analyse and recognize the specific dataset in which CLiCoTEA does not outperform all models.",
+        "Extract relevant performances (possibly in the ablation table or appendices) for that dataset.",
+        "Finally, analyze the table content to identify the languages where CLiCoTEA underperforms previous methods."
     ],
     "evaluator": {
         "eval_func": "eval_structured_object_exact_match",
