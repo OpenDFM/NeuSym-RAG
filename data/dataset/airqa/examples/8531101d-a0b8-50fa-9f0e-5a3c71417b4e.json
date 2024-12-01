@@ -6,7 +6,7 @@
         "single-doc details",
         "formula inference",
         "image analysis",
-        "objective"
+        "subjective"
     ],
     "pdf_id": [
         "8712603a-e96c-5537-be18-651b29dedfb8"
@@ -20,14 +20,13 @@
         "Extract formulas related to the three parameters from the figure."
     ],
     "evaluator": {
-        "eval_func": "eval_reference_answer_with_llm",
+        "eval_func": "eval_complex_math_formula_with_llm",
         "eval_kwargs":{
-            "reference_answer":   
-                [
+            "formulas": [
                 "\\alpha_{k}=\\displaystyle\\frac{\\cos\\left(\\mathbf{h}_{t},\\mathbf{h}_{o}[k]\\right)}{\\sum_{j=1}^{K}\\cos\\left(\\mathbf{h}_{t},\\mathbf{h}_{o}[j]\\right)}",
                 "\\beta=\\mathrm{FC}_{\\beta}(\\overline{{\\mathbf{h}}}_{o})=\\mathrm{FC}_{\\beta}\\left(\\displaystyle\\sum_{k=1}^{K}\\alpha_{k}\\mathbf{h}_{o}[k]\\right)",
                 "\\gamma=\\mathrm{tanh}\\left(\\mathrm{FC}_{\\gamma}\\left(\\mathbf{h}_{i}\\right)\\right)"
-                ],
+            ],
             "question" : "How to calculate three important parameters that appear in the second part of Figure 2?"
         }
     },
