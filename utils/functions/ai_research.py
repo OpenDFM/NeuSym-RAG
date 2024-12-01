@@ -26,13 +26,14 @@ logger.setLevel(logging.INFO)
 
 
 def get_ai_research_pdf_data(
-        pdf_path: str, 
+        metadata: Dict[str, Any], 
         processed_data_folder: str = 'data/dataset/airqa/processed_data',
         TOC_threshold: float = 0.9
     ) -> Dict[str, Any]:
     """ Load the parsed JSON data from a PDF file. See `utils.function.pdf_functions.parse_pdf` for more details.
         Output (pdf_data)
     """
+    pdf_path = metadata["pdf_path"]
     return load_json_from_processed_data(pdf_path=pdf_path, processed_data_folder=processed_data_folder, TOC_threshold=TOC_threshold)
 
 
@@ -118,8 +119,8 @@ def get_ai_research_section_info(
     pdf_name = metadata["uuid"]
     sections=[]
     for idx, section_data in enumerate(pdf_data["info_from_mineru"]["TOC"]):
-        title= section_data["title"]
-        section_text= section_data["text"]
+        title = section_data["title"]
+        section_text = section_data["text"]
         section_summary = get_text_summary(
             content={"section_text": section_text},
             key="section_text",
