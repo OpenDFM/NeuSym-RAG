@@ -161,7 +161,7 @@ def infer_paper_volume_from_pdf(
     ) -> str:
     """ Use a language model to infer the volume of a paper from the top `first_lines` lines and the bottom `last_lines` of the first page in a PDF.
     """
-    volume_prompt_path = os.path.join("utils", "functions", "ai_research_metadata_volume.json")
+    volume_prompt_path = os.path.join("utils", "functions", "volume_prompt.json")
     with open(volume_prompt_path, "r", encoding='utf-8') as f:
        VOLUME_PROMPTS = json.load(f)
     VOLUME_SYSTEM_PROMPT = VOLUME_PROMPTS["VOLUME_SYSTEM_PROMPT"]
@@ -424,27 +424,32 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             # logger.error(f"Failed to get the bibtex from URL: {bibtex_url}.")
             return None
 
-
+    joint_conference_path = os.path.join("data", "dataset", "airqa", "joint_conference_mapping.jsonl")
+    with open(joint_conference_path, "r", encoding="utf-8") as f:
+        joint_conferences = [json.loads(line) for line in f]
     for hit in sorted_hits:
         try:
             title, conference, year = hit['info']['title'], hit['info']['venue'], int(hit['info']['year'])
             volume = hit.get('volume', None)
             ccf_catalog = get_ccf_conferences()
             # determine the download pdf path
-            if not conference:
+            if not conference or conference.lower() == 'corr':
                 conference, conference_full, subfolder = None, None, 'uncategorized'
             elif len(series := ccf_catalog.loc[ccf_catalog.get('abbr').str.lower() == conference.lower(), ['abbr', 'name']]) > 0:
                 conference, conference_full = series.iloc[0]
                 subfolder = conference.lower() + str(year)
-            elif conference.lower().startswith('wmt@'):
-                conference, conference_full = 'WMT', 'Conference on Machine Translation'
-                subfolder = 'wmt' + str(year)
             else:
-                conference_full = infer_conference_full_from_conference(conference)
-                logger.info(f"Inferred full conference title: {conference_full}, conference abbrevaition: {conference}")
-                subfolder = (conference.lower() + str(year)) if conference_full else 'uncategorized'
-                if not re.match(r'^[a-z\d]+$', subfolder):
-                    subfolder = 'uncategorized'
+                for joint_conference in joint_conferences:
+                    if conference.lower().startswith(joint_conference["identifier"]):
+                        conference, conference_full = joint_conference["conference"], joint_conference["conference_full"]
+                        subfolder = conference.lower() + str(year)
+                        break
+                else:
+                    conference_full = infer_conference_full_from_conference(conference)
+                    logger.info(f"Inferred full conference title: {conference_full}, conference abbrevaition: {conference}")
+                    subfolder = (conference.lower() + str(year)) if conference_full else 'uncategorized'
+                    if not re.match(r'^[a-z\d]+$', subfolder):
+                        subfolder = 'uncategorized'
             paper_uuid = get_airqa_paper_uuid(title, subfolder)
             pdf_path = os.path.join(AIRQA_DIR, 'papers', subfolder, f'{paper_uuid}.pdf')
             pdf_url, bibtex = get_dblp_pdf_url(hit['info']['ee']), get_dblp_bibtex(hit['info']['url'])
