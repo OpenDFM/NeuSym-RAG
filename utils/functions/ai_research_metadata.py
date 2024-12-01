@@ -195,7 +195,6 @@ def infer_paper_volume_from_pdf(
         "role": "user",
         "content": VOLUME_USER_PROMPT.format(first_lines_text = first_lines_text, last_lines_text = last_lines_text)
     })
-    logger.info(messages)
     volume = call_llm_with_message(messages=messages, model=model, temperature=temperature).strip()
     if volume.startswith("volume not found"):
         logger.error(f"Paper volume is not found in {first_last_lines} of the PDF {pdf_path}.")
@@ -446,11 +445,9 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                 subfolder = (conference.lower() + str(year)) if conference_full else 'uncategorized'
                 if not re.match(r'^[a-z\d]+$', subfolder):
                     subfolder = 'uncategorized'
-                logger.info(f"subfolder {subfolder}")
             paper_uuid = get_airqa_paper_uuid(title, subfolder)
             pdf_path = os.path.join(AIRQA_DIR, 'papers', subfolder, f'{paper_uuid}.pdf')
             pdf_url, bibtex = get_dblp_pdf_url(hit['info']['ee']), get_dblp_bibtex(hit['info']['url'])
-            logger.info(f"pdf_url {pdf_url}, pdf_path {pdf_path}, bibtex{bibtex}, info_ee = {hit['info']['ee']} {hit['info']['url']}")
             if pdf_url is None: # unable to find download link, directly return
                 continue
             metadata = {
@@ -474,7 +471,7 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
     return
 
 def add_ai_research_metadata(
-        metadata: dict,
+        metadata: Dict[str, Any],
         model: str = 'gpt-4o',
         temperature: float = 0.7,
         tldr_max_length: int = 50,
@@ -483,7 +480,7 @@ def add_ai_research_metadata(
     if metadata['title'] and metadata['abstract']:
         tldr = infer_paper_tldr_from_metadata(pdf_title=metadata['title'],pdf_abstract=metadata['abstract'],max_length=tldr_max_length,model=model,temperature=temperature,)
         tags = infer_paper_tags_from_metadata(pdf_title=metadata['title'],pdf_abstract=metadata['abstract'],tag_number=tag_number,model=model,temperature=temperature)
-        metadata["tldr"]=tldr
+        metadata["tldr"] = tldr
         metadata["tags"] = tags
     return metadata
         
@@ -491,11 +488,12 @@ def add_ai_research_metadata(
 def get_ai_research_metadata(
         pdf_path: str,
         model: str = 'gpt-4o',
-        title_temperature: float = 0.0,
-        tldr_tags_temperature: float = 0.7,
+        temperature: float = 0.0,
         api_tools: List[str] = [],
         write_to_json: bool = True,
-        tldr_max_length: int = 50,
+        title_lines: int = 20,
+        volume_lines: int = 10,
+        tldr_max_length: int = 80,
         tag_number: int = 5,
         **kwargs
     ) -> Dict[str, Any]:
@@ -539,8 +537,8 @@ def get_ai_research_metadata(
         if metadata == {}:
             raise ValueError(f"Metadata for paper UUID {pdf_path} not found locally.")
         else:
-            if not (metadata.get('tldr',"") and metadata.get('tags',[])):
-                add_ai_research_metadata(metadata=metadata,model=model,temperature=tldr_tags_temperature,tldr_max_length=tldr_max_length,tag_number=tag_number)
+            if not (metadata.get('tldr', "") and metadata.get('tags', [])):
+                add_ai_research_metadata(metadata=metadata, model=model, temperature=temperature,tldr_max_length=tldr_max_length, tag_number=tag_number)
     else:
         if pdf_path.startswith('http') or pdf_path.endswith('.pdf'): # local file path or remote URL
             pdf_path = pdf_path.strip()
@@ -551,7 +549,7 @@ def get_ai_research_metadata(
                     raise ValueError(f"Failed to download the PDF file from {pdf_path}.")
                 pdf_path = output_path
             # use LLM to infer the paper title from the first page (we assume the first page MUST contain the title)
-            title = infer_paper_title_from_pdf(pdf_path, first_lines=20, model=model, temperature=title_temperature)
+            title = infer_paper_title_from_pdf(pdf_path, first_lines=title_lines, model=model, temperature=temperature)
             if title is None:
                 raise ValueError(f"Failed to infer the paper title from the first page of the PDF {pdf_path}.")
             logger.info(f"Inferred paper title for {pdf_path} is: {title}")
@@ -566,8 +564,8 @@ def get_ai_research_metadata(
         if metadata["uuid"] in metadata_dict:
             logger.warning(f"Metadata for paper UUID {metadata['uuid']} already exists.")
             metadata = metadata_dict[metadata['uuid']]
-            if not (metadata.get('tldr',"") and metadata.get('tags',[])):
-                add_ai_research_metadata(metadata=metadata,model=model,temperature=tldr_tags_temperature,tldr_max_length=tldr_max_length,tag_number=tag_number)
+            if not (metadata.get('tldr', "") and metadata.get('tags', [])):
+                add_ai_research_metadata(metadata=metadata, model=model, temperature=temperature,tldr_max_length=tldr_max_length, tag_number=tag_number)
             return metadata
 
         pdf_path_renamed = metadata['pdf_path']
@@ -580,22 +578,19 @@ def get_ai_research_metadata(
         metadata['pdf_path'] = get_airqa_relative_path(pdf_path_renamed)
         metadata['num_pages'] = get_num_pages(pdf_path_renamed)
         if metadata['volume'] is None:
-            metadata['volume'] = infer_paper_volume_from_pdf(pdf_path_renamed, first_lines=10, last_lines=10, model=model, temperature=temperature)
+            metadata['volume'] = infer_paper_volume_from_pdf(pdf_path_renamed, first_lines=volume_lines, last_lines=volume_lines, model=model, temperature=temperature)
         if metadata['abstract'] is None:
             metadata['abstract'] = infer_paper_abstract_from_pdf(pdf_path_renamed, model=model, temperature=temperature)
         metadata_dict[metadata['uuid']] = metadata
 
         # Generate TL;DR and tags (if abstract is not empty)
-        add_ai_research_metadata(metadata,model=model,temperature=tldr_tags_temperature,tldr_max_length=tldr_max_length,tag_number=tag_number)
+        add_ai_research_metadata(metadata, model=model, temperature=temperature, tldr_max_length=tldr_max_length, tag_number=tag_number)
 
         if write_to_json:
             # new entry added, serialize it
             with open(os.path.join(AIRQA_DIR, 'metadata', f"{metadata['uuid']}.json"), 'w', encoding='utf8') as of:
                 json.dump(metadata, of, indent=4, ensure_ascii=False)
     return metadata
-
-
-
 
 
 def aggregate_ai_research_metadata(metadata: Dict[str, Any]) -> List[List[Any]]:
