@@ -401,7 +401,7 @@ def get_ai_research_metadata(
         api_tools: List[str] = [],
         write_to_json: bool = True,
         tldr_max_length: int = 50,
-        tag_number:int = 5,
+        tag_number: int = 5,
         **kwargs
     ) -> Dict[str, Any]:
     """ Given input pdf_path, return the metadata of the paper.
