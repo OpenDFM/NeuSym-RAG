@@ -73,8 +73,12 @@ def download_paper_pdf(pdf_url: str, pdf_path: str) -> Optional[str]:
         logger.warning(f"PDF file {pdf_path} already exists. Just ignore the download from {pdf_url}.")
         return pdf_path
     try:
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
+        } # simulate user agent
         os.makedirs(os.path.dirname(pdf_path), exist_ok=True)
-        response = requests.get(pdf_url, stream=True)
+        response = requests.get(pdf_url, headers=headers, stream=True)
         if response.status_code == 200:
             with open(pdf_path, 'wb') as file:
                 for chunk in response.iter_content(chunk_size=8192):
@@ -398,6 +402,18 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                 return pdf_url
             html = response.text
             soup = BeautifulSoup(html, 'html.parser')
+            if pdf_url.startswith('https://ojs.aaai.org/'):
+                pdf_links = soup.find_all(
+                    'a',
+                    class_=re.compile(r'\bpdf\b'),
+                    href=True
+                )
+                for link in pdf_links:
+                    pdf_link = link['href']
+                    # Handle relative links
+                    if not pdf_link.startswith('http'):
+                        pdf_link = requests.compat.urljoin(pdf_url, pdf_link)
+                    return pdf_link
             for link in soup.find_all('a', href=True):
                 if link['href'].endswith('.pdf') or '/pdf/' in link['href']:
                     pdf_link = link['href']
