@@ -517,6 +517,8 @@ def parse_pdf(
     # Write each paper's data into a separate JSON file
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=4)
+    
+    return result
 
 def load_json_from_processed_data(
         pdf_path: str, 
@@ -528,7 +530,7 @@ def load_json_from_processed_data(
     pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
     json_path = os.path.join(processed_data_folder, f'{pdf_name}.json')
     if not os.path.exists(json_path):
-        parse_pdf(pdf_path=pdf_path, processed_data_folder=processed_data_folder, TOC_threshold=TOC_threshold)
+        pdf_data = parse_pdf(pdf_path=pdf_path, processed_data_folder=processed_data_folder, TOC_threshold=TOC_threshold)
     with open(json_path, 'r', encoding='utf-8') as f:
         pdf_data = json.load(f)
     return pdf_data

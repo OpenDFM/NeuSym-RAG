@@ -1,0 +1,37 @@
+{
+    "uuid": "eb3a5dd5-0008-5edf-b8e7-8cebd614f282",
+    "question": "In the survey of Large Language Models for NL2Code, what are the multi-lingual benchmarks to evaluate the NL2Code task, and how many instances do they contain?",
+    "answer_format": "Your answer should be a python dictionary of entries, each dictionary key is the model name string and each value is an integer of the corresponding instance number, e.g., {'model1': 10, 'model2': 100}, ....",
+    "tags": [
+        "single-doc details",
+        "image analysis",
+        "objective"
+    ],
+    "pdf_id": [
+        "37758401-6101-554f-8f1e-4e2995443314"
+    ],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [
+        "Firstly, find all section titles in the paper to locate the section relevant to Large Language Models for NL2Code.",
+        "Identify the finer requirements on multi-lingual benchmarks for NL2Code evaluation.",
+        "Finally, retrieve the context for this subsection to find the model names and the instances numbers."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_optional_match",
+        "eval_kwargs": {
+            "gold": {
+                "MBXP": 974,
+                "MBXP-HumanEval": 164,
+                "HumanEval-X": 164,
+                "MultiPL-HumanEval": 164,
+                "MultiPL-MBPP": 974
+            },
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}
