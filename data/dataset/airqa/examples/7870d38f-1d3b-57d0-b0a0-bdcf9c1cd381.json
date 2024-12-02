@@ -1,0 +1,39 @@
+{
+    "uuid": "7870d38f-1d3b-57d0-b0a0-bdcf9c1cd381",
+    "question": "What are the advantages and disadvantages of MUX-PLMs mentioned in the paper?",
+    "answer_format": "Your answer should be a string list of advantages and disadvantages. ",
+    "tags": [
+        "single-doc details",
+        "text understanding",
+        "subjective"
+    ],
+    "pdf_id": [
+        "457688f9-deb0-54fb-8531-6ed175a556d0"
+    ],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [
+        "Locate the section in the specified PDF that discusses MUX-PLMs, possibly in the analysis section or conclusion section.",
+        "Extract content from the relevant sections that highlight the advantages of MUX-PLMs and discusses the disadvantages of MUX-PLMs..",
+        "Summarize the advantages and disadvantages."
+    ],
+    "evaluator": {
+        "eval_func": "eval_partial_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points":[
+                "Significant Throughput Improvement: MUX-PLMs leverage data multiplexing to process multiple inputs in a single forward pass, resulting in a dramatic increase in throughput.",
+                "Comparable Performance to PLMs: Despite the increased throughput, MUX-PLMs maintain performance close to traditional PLMs on downstream tasks.",
+                "Model Generalizability: MUX-PLMs can be fine-tuned like traditional PLMs for various downstream tasks, such as text classification and named entity recognition.",
+                "Performance-Throughput Trade-off: As the number of multiplexed inputs (N) increases, the throughput improves further, but the performance may slightly degrade.",
+                "Model Size Limitations: While the paper demonstrates the effectiveness of MUX-PLMs across different model sizes, the model size still impacts performance and throughput. Larger models may offer better performance but with a potentially smaller throughput improvement compared to smaller models.",
+                "Data Sampling Strategy: The paper employs a random data sampling strategy, but a more sophisticated approach could potentially enhance performance, for example, clustering similar instances based on similarity metrics and multiplexing them."
+            ],
+            "question":"What are the advantages and disadvantages of MUX-PLMs mentioned in the paper?",
+            "count": 4
+        }
+    },
+    "state": {
+        "gpt-4o-2024-11-20": false
+    }
+}
