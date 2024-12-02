@@ -1,0 +1,30 @@
+{
+ "uuid": "bf391f7a-d33b-5b00-9001-ee92284a15ec",
+ "question": "According to Figure 1, with the increasing of the number of few-shot training samples, which setting keeps getting a better score?",
+ "answer_format": "Your answer should be the name of the setting appearing in the legend of the image.",
+ "tags": [
+  "single-doc details",
+  "image analysis",
+  "objective"
+ ],
+ "pdf_id": [
+  "ebf4682e-2653-5589-9458-da26d00d9f5b"
+ ],
+ "conference": [
+  "acl2023"
+ ],
+ "reasoning_steps": [
+  "First, get the content of Figure 1.",
+  "Second, analyze the trend of scores as the number of samples increases and get the answer."
+ ],
+ "evaluator": {
+  "eval_func": "eval_string_exact_match",
+  "eval_kwargs": {
+   "gold": "KB score, curie"
+  }
+ },
+ "state": {
+  "gpt-4o-2024-05-13": false,
+  "gui-gpt-4o-2024-05-13": false
+ }
+}
