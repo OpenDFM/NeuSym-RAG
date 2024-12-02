@@ -33,7 +33,7 @@ class LocalClient(LLMClient):
 
     def _get_response(self,
         messages: List[Dict[str, str]],
-        model: str = 'llama-3-8b_instruct_hf',
+        model: str = 'qwen2.5-7b-instruct',
         temperature: float = 0.7,
         top_p: float = 0.95,
         max_tokens: int = 1500,
