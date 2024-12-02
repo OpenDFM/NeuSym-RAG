@@ -504,7 +504,14 @@ def add_ai_research_metadata(
         metadata["tldr"] = tldr
         metadata["tags"] = tags
     return metadata
-        
+
+
+def write_ai_research_metadata_to_json(metadata: Dict[str, Any]) -> str:
+    metadata_path = os.path.join(AIRQA_DIR, 'metadata', f"{metadata['uuid']}.json")
+    with open(metadata_path, 'w', encoding='utf8') as of:
+        json.dump(metadata, of, indent=4, ensure_ascii=False)
+    return metadata_path
+
 
 def get_ai_research_metadata(
         pdf_path: str,
@@ -560,6 +567,7 @@ def get_ai_research_metadata(
         else:
             if not (metadata.get('tldr', "") and metadata.get('tags', [])):
                 add_ai_research_metadata(metadata=metadata, model=model, temperature=temperature,tldr_max_length=tldr_max_length, tag_number=tag_number)
+                if write_to_json: write_ai_research_metadata_to_json(metadata)
     else:
         if pdf_path.startswith('http') or pdf_path.endswith('.pdf'): # local file path or remote URL
             pdf_path = pdf_path.strip()
@@ -587,6 +595,7 @@ def get_ai_research_metadata(
             metadata = metadata_dict[metadata['uuid']]
             if not (metadata.get('tldr', "") and metadata.get('tags', [])):
                 add_ai_research_metadata(metadata=metadata, model=model, temperature=temperature,tldr_max_length=tldr_max_length, tag_number=tag_number)
+                if write_to_json: write_ai_research_metadata_to_json(metadata)
             return metadata
 
         pdf_path_renamed = metadata['pdf_path']
@@ -608,9 +617,7 @@ def get_ai_research_metadata(
         add_ai_research_metadata(metadata, model=model, temperature=temperature, tldr_max_length=tldr_max_length, tag_number=tag_number)
 
         if write_to_json:
-            # new entry added, serialize it
-            with open(os.path.join(AIRQA_DIR, 'metadata', f"{metadata['uuid']}.json"), 'w', encoding='utf8') as of:
-                json.dump(metadata, of, indent=4, ensure_ascii=False)
+            write_ai_research_metadata_to_json(metadata)
     return metadata
 
 

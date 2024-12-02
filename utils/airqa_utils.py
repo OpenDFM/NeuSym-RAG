@@ -6,7 +6,7 @@ import os, sys, re, json, logging
 from typing import Dict, Any, Optional, List
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from agents.models import get_llm_single_instance
-from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid, get_airqa_paper_metadata, get_num_pages, download_paper_pdf, get_airqa_relative_path
+from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid, get_airqa_paper_metadata, get_num_pages, download_paper_pdf, get_airqa_relative_path, add_ai_research_metadata, write_ai_research_metadata_to_json
 from utils.functions.common_functions import get_uuid
 from bs4 import BeautifulSoup
 
@@ -158,7 +158,12 @@ def download_html(url: str, html_path: str = None):
 
 def crawl_acl_anthology_papers(
         url: str = "https://aclanthology.org/events/acl-2024/",
-        errata_file: Optional[str] = os.path.join(AIRQA_DIR, 'errata.json')):
+        model: str = 'gpt-4o',
+        temperature: float = 0.0,
+        tldr_max_length: int = 80,
+        tag_number: int = 5,
+        errata_file: Optional[str] = os.path.join(AIRQA_DIR, 'errata.json')
+):
     """ Crawl papers from ACL Anthology website. Use `get_airqa_paper_uuid` to generate UUIDs and rename the output PDFs under `output_dir`. Save the meta data dict with its UUID into metadata folder.
     @param:
         url: str, the URL of the ACL Anthology. This parameter will be used to download the HTML file into `html_path`.
@@ -263,9 +268,9 @@ def crawl_acl_anthology_papers(
                     if meta['uuid'] in uuid2papers:
                         logger.warning(f"UUID {meta['uuid']} already exists in the UUID -> paper mappings {meta['title']}.")
                         continue
+                    add_ai_research_metadata(meta, model=model, temperature=temperature, tldr_max_length=tldr_max_length, tag_number=tag_number)
+                    write_ai_research_metadata_to_json(meta)
                     uuid2papers[meta['uuid']] = meta
-                    with open(os.path.join(AIRQA_DIR, 'metadata', meta['uuid'] + '.json'), 'w', encoding='utf8') as ouf:
-                        json.dump(meta, ouf, ensure_ascii=False, indent=4)
                 else: skip_first_p = True
 
     return uuid2papers
