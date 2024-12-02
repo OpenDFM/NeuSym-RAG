@@ -232,6 +232,7 @@ if __name__ == '__main__':
         convert_json_to_create_sql(json_path, sql_path)
         create_database_from_sql(sql_path, db_path, from_scratch=args.from_scratch)
     elif args.function == 'populate_db':
+        # logger.info(f"START TIME: {datetime.now()}")
         populate_pdf_file_into_database(args.database, args.pdf_path, args.config_path, args.on_conflict)
     else:
         raise ValueError(f"Function {args.function} not implemented yet.")

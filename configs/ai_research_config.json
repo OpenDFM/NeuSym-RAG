@@ -35,7 +35,8 @@
             "function": "get_ai_research_page_info",
             "args": {
                 "deps": [
-                    "get_ai_research_metadata"
+                    "get_ai_research_metadata",
+                    "get_ai_research_pdf_data"
                 ],
                 "kwargs": {
                     "max_length": 50,
@@ -122,6 +123,22 @@
                 ],
                 "kwargs": {
                     "threshold": 0.9
+                }
+            }
+        },
+        {
+            "function": "write_summary_json",
+            "args": {
+                "deps": [
+                    "get_ai_research_metadata",
+                    "get_ai_research_pdf_data",
+                    "get_ai_research_page_info",
+                    "get_ai_research_section_info",
+                    "get_ai_research_per_page_table_info",
+                    "get_ai_research_per_page_image_info"
+                ],
+                "kwargs": {
+                    "processed_data_folder": "data/dataset/airqa/processed_data"
                 }
             }
         }

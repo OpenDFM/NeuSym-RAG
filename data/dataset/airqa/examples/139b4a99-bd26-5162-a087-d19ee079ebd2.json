@@ -1,0 +1,55 @@
+{
+    "uuid": "139b4a99-bd26-5162-a087-d19ee079ebd2",
+    "question": "For the four types of evaluation mentioned in the paper, provide their names and corresponding overall score range. Besides, explain how to obtain overall score for JWP-SAQs.",
+    "answer_format": "Your answer should be a Python list of 2 elements, the first element is a Pyhon dictionary, where the keys are the names of the four types of evaluation and the values are the corresponding overall score range. The second element is a string that explains how to obtain the overall score for JWP-SAQs. e.g. [{'evaluation1': [-1, 1], 'evaluation2': [0, 0.5], ...}, 'reason'] . For the first element, YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION. For the second element, YOU MUST USE DATA FROM THE PDF TO SUPPORT YOUR REASON.",
+    "tags": [
+        "single-doc details",
+        "image analysis",
+        "text understanding"
+    ],
+    "pdf_id": [
+        "a3a0b636-d0ab-5dab-a2c3-49f666755896"
+    ],
+    "conference": [
+        "acl2024"
+    ],
+    "reasoning_steps": [
+        "Firstly, locate the section and figure that introduces the four types of evaluation.",
+        "Identify the names of the four types of evaluation and their corresponding overall score range.",
+        "Read the image to get the criteria for JWP-SAQs.",
+        "Finally, explain how to obtain overall score for JWP-SAQs."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_structured_object_exact_match",
+                "eval_scoring_points_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": {
+                        "SA-SAQs": [0, 1],
+                        "JWP-SAQs": [0.75, 2.5],
+                        "SA-MCQs": [0, 1],
+                        "JWP-MCQs": [0, 1]
+                    },
+                    "ndigits": 2,
+                    "tolerance": 1e-3
+                },
+                {
+                    "scoring_points": [
+                        "JWP Short Answers are evaluated by LLM according to the 4 JWP Criteria Facets",
+                        "The 4 JWP Criteria Facets include Language Fluency, Style Alignment, Logical Coherence and Instruction Fulfillment.",
+                        "The 4 criteria's score ranges are [1, 3], [1, 3], [1, 3] and [0, 1] respectively, leading to an average overall score range of [0.75, 2.5]."
+                    ],
+                    "question": "How to obtain overall score for JWP-SAQs?",
+                    "ignore_order": true
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}

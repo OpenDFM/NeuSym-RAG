@@ -1,7 +1,7 @@
 {
     "uuid": "44db1f84-1791-509e-91ae-79b2856153ee",
     "question": "What are the datasets and their metrics used in this paper according to the tables?",
-    "answer_format": "Your answer should be a Python list of dataset-metric pairs, e.g., [['dataset1', 'metric1'], ['dataset2', 'metric2'], ...]. YOU MUST USE THE EXACT TEXT FROM THE PAPER.",
+    "answer_format": "Your answer should be a Python dictionary, e.g., {'dataset1': 'metric1', 'dataset2': 'metric2', ...}. YOU MUST USE THE EXACT TEXT AND FULL NAME FROM THE PAPER.",
     "tags": [
         "single-doc details",
         "table",
@@ -21,17 +21,18 @@
     "evaluator": {
         "eval_func": "eval_structured_object_exact_match",
         "eval_kwargs": {
-            "gold": [
-                ["Cornell Movie", "Rouge-1"],
-                ["DailyDialog", "BLEU-1"],
-                ["CMU_DoG", "Rouge-1"],
-                ["LIGHT", "unigram-F1"],
-                ["EmpathicDialogue", "Rouge-1"],
-                ["ConvAI2", "unigram-F1"],
-                ["Wizard of Wikipedia", "unigram-F1"],
-                ["Mutual", "Rouge-L"],
-                ["CommonsenseDialog", "Rouge-1"]
-            ]
+            "gold": {
+                "Cornell Movie": "Rouge-1",
+                "DailyDialog": "BLEU-1",
+                "CMU_DoG": "Rouge-1",
+                "LIGHT": "unigram-F1",
+                "EmpathicDialogue": "Rouge-1",
+                "ConvAI2": "unigram-F1",
+                "Wizard of Wikipedia": "unigram-F1",
+                "Mutual": "Rouge-L",
+                "CommonsenseDialog": "Rouge-1"
+            },
+            "ignore_order": true
         }
     },
     "state": {
