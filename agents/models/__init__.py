@@ -22,7 +22,7 @@ def infer_model_class(model_name: str) -> LLMClient:
     """
     if any(model_name.lower().startswith(prefix) for prefix in ['claude', 'gemini', 'gpt', 'o1']):
         return GPTClient
-    elif model_name.lower().startswith('llama'):
+    elif any(model_name.lower().startswith(prefix) for prefix in ['llama', 'qwen']):
         return LocalClient
     else:
         raise ValueError(f"Model name {model_name} is not supported.")
