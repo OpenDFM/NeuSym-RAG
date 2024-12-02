@@ -189,7 +189,7 @@ Now, let's start!
 
 [Question]: {question}
 [Reference Answer]: {reference_answer}
-[Socring Points]: In total, there are {num_scoring_points} scoring points:
+[Scoring Points]: In total, there are {num_scoring_points} scoring points:
 {scoring_points_str}
 [Predicted Answer]: {str(pred)}
     """
