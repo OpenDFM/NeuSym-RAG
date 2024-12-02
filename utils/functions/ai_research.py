@@ -38,7 +38,8 @@ def get_ai_research_pdf_data(
 
 
 def get_ai_research_page_info(
-        metadata: Dict[str, Any], 
+        metadata: Dict[str, Any],
+        pdf_data: Dict[str, Any], 
         max_length: int = 50,
         model: str = 'gpt-4o', 
         temperature: float = 0.7, 
@@ -55,14 +56,19 @@ def get_ai_research_page_info(
     pdf_path = metadata["pdf_path"]
     pdf_name = metadata["uuid"]
     num_pages = metadata["num_pages"]
+    summary_data = pdf_data.get("summary", {})
     page_info = get_pdf_page_text(pdf_path)
-    page_info["page_summaries"] = get_text_summary(
-        content={"page_contents": page_info["page_contents"]},
-        max_length=max_length,
-        model=model,
-        temperature=temperature,
-        top_p=top_p
-    ).get("text_summary", [])
+    if summary_data.get("page_summary", []):
+        # logger.info("Using cached page summary ...")
+        page_info["page_summaries"] = summary_data["page_summary"]
+    else:
+        page_info["page_summaries"] = get_text_summary(
+            content={"page_contents": page_info["page_contents"]},
+            max_length=max_length,
+            model=model,
+            temperature=temperature,
+            top_p=top_p
+        ).get("text_summary", [])
     page_info["page_uuids"] = [
         get_uuid(name=f"{pdf_name}_page_{page_number}") for page_number in range(1, num_pages + 1)
     ]
@@ -117,18 +123,23 @@ def get_ai_research_section_info(
         ]
     """
     pdf_name = metadata["uuid"]
+    summary_data = pdf_data.get("summary", {}).get("section_summary", [])
     sections=[]
     for idx, section_data in enumerate(pdf_data["info_from_mineru"]["TOC"]):
         title = section_data["title"]
         section_text = section_data["text"]
-        section_summary = get_text_summary(
-            content={"section_text": section_text},
-            key="section_text",
-            max_length=max_length,
-            model=model,
-            temperature=temperature,
-            top_p=top_p
-        ).get("text_summary", "")
+        if summary_data:
+            # logger.info("Using cached section summary ...")
+            section_summary = summary_data[idx]
+        else:
+            section_summary = get_text_summary(
+                content={"section_text": section_text},
+                key="section_text",
+                max_length=max_length,
+                model=model,
+                temperature=temperature,
+                top_p=top_p
+            ).get("text_summary", "")
         sections.append({
             'uuid': get_uuid(name=f"{pdf_name}_section_{idx}"),
             'title': title,
@@ -152,6 +163,7 @@ def get_ai_research_per_page_table_info(
         [ [ {'uuid': uuid1 of page1, 'table_content': table_html ,'table_caption': table caption1, 'bbox': bbox1, 'table_summary':table_summary}, {...} ], [ {...} ] ... ]
     """
     pdf_data_mineru = pdf_data["info_from_mineru"]
+    summary_data = pdf_data.get("summary", {}).get("table_summary", [])
     pdf_path = metadata["pdf_path"]
     pdf_name = metadata["uuid"]
     num_pages = metadata["num_pages"]
@@ -172,13 +184,17 @@ def get_ai_research_per_page_table_info(
 
             for ordinal, table in enumerate(page_tables, start=1):
                 uuid = get_uuid(name=f"{pdf_name}_page_{page_num}_table_{ordinal}")
-                table_summary = get_table_summary(
-                    table=table,
-                    max_length=max_length,
-                    model=model,
-                    temperature=temperature,
-                    top_p=top_p
-                )
+                if summary_data:
+                    # logger.info("Using cached table summary ...")
+                    table_summary = summary_data[page_num-1][ordinal-1]
+                else:
+                    table_summary = get_table_summary(
+                        table=table,
+                        max_length=max_length,
+                        model=model,
+                        temperature=temperature,
+                        top_p=top_p
+                    )
 
                 table_info = {
                     "uuid": uuid,
@@ -208,6 +224,7 @@ def get_ai_research_per_page_image_info(
         [ [ {'uuid': uuid, 'image_caption': image_caption, 'image_summary': immage_summary, 'bbox': bbox1}, {...} ], [ {...} ] ... ]
     """
     pdf_data_mineru = pdf_data["info_from_mineru"]
+    summary_data = pdf_data.get("summary", {}).get("image_summary", [])
     pdf_name = metadata["uuid"]
     num_pages = metadata["num_pages"]
     
@@ -224,13 +241,17 @@ def get_ai_research_per_page_image_info(
         result = []
         for ordinal, image in enumerate(images, start=1):
             uuid = get_uuid(name=f"{pdf_name}_page_{page_num}_image_{ordinal}")
-            image_summary = get_image_summary(
-                image_path=image["figure_path"],
-                max_length=max_length,
-                model=model,
-                temperature=temperature,
-                top_p=top_p
-            )
+            if summary_data:
+                # logger.info("Using cached image summary ...")
+                image_summary = summary_data[page_num-1][ordinal-1]
+            else:
+                image_summary = get_image_summary(
+                    image_path=image["figure_path"],
+                    max_length=max_length,
+                    model=model,
+                    temperature=temperature,
+                    top_p=top_p
+                )
             image_info = {
                 "uuid": uuid,
                 "image_caption": image["figure_caption"],
@@ -526,3 +547,26 @@ def aggregate_ai_research_references(
         ])
     
     return results
+
+
+def write_summary_json(
+        metadata: Dict[str, Any],
+        pdf_data: Dict[str, Any],
+        page_data: Dict[str, Union[str, List[str]]],
+        section_data: List[Dict[str, Union[str, List[int]]]],
+        table_data: List[List[Dict[str, Any]]],
+        image_data: List[List[Dict[str, Any]]],
+        processed_data_folder: str = 'data/dataset/airqa/processed_data'
+    ):
+    pdf_path = metadata["pdf_path"]
+    pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
+    json_path = os.path.join(processed_data_folder, f'{pdf_name}.json')
+    summary_data = {}
+    summary_data["page_summary"] = page_data["page_summaries"]
+    summary_data["section_summary"] = [section["summary"] for section in section_data]
+    summary_data["table_summary"] = [[table["table_summary"] for table in page] for page in table_data]
+    summary_data["image_summary"] = [[image["image_summary"] for image in page] for page in image_data]
+    pdf_data["summary"] = summary_data
+    # logger.info(f"Writing summaries into {json_path} ...")
+    with open(json_path, 'w', encoding='utf-8') as f:
+        json.dump(pdf_data, f, ensure_ascii=False, indent=4)
