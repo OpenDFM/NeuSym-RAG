@@ -1,0 +1,30 @@
+{
+    "uuid": "8f7b7d77-1860-501a-a407-fce975021b8f",
+    "question": "Overall, what is the best size of generation pool for the proposed method?",
+    "answer_format": "Your answer should be a single integer number.",
+    "tags": [
+        "single-doc details",
+        "image analysis",
+        "objective"
+    ],
+    "pdf_id": [
+        "ca116924-bf11-5529-a43f-bf68e9745c5c"
+    ],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [
+        "Locate the experiment table or figure that shows the method performances with different sizes of generation pool.",
+        "Think about what 'best' means, considering both benefits and costs comprehensively.",
+        "Find out the best size of generation pool for the proposed method based on the experiment results."
+    ],
+    "evaluator": {
+        "eval_func": "eval_int_exact_match",
+        "eval_kwargs": {
+            "gold": 4
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}

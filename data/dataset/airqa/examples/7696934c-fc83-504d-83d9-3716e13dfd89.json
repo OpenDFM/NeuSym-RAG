@@ -1,0 +1,34 @@
+{
+    "uuid": "7696934c-fc83-504d-83d9-3716e13dfd89",
+    "question": "How much does the average performance of the model improve on WMT'19 test sets by replacing one of example-specific prompts with a task-level prompt?",
+    "answer_format": "Your answer should be a single float number ranging from 0 to 100, representing the subtraction result.",
+    "tags": [
+        "single-doc details",
+        "table calculation",
+        "text understanding",
+        "objective"
+    ],
+    "pdf_id": [
+        "5a2b95c1-12d6-5b77-82a1-ee24180d27ae"
+    ],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [
+        "Locate the experiment table that shows the model performances on WMT'19 test sets with different distributions of prompts.",
+        "Find out the mathematical symbols indicating the numbers of two types of prompts.",
+        "Locate the two rows in the table related to the question.",
+        "Record the two average performance scores.",
+        "Calculate the subtraction result."
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 0.34,
+            "ndigits": 2
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}
