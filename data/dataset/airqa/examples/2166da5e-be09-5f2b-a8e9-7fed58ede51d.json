@@ -1,0 +1,40 @@
+{
+ "uuid": "2166da5e-be09-5f2b-a8e9-7fed58ede51d",
+ "question": "According to Table 2, which models perform the highest on each of the 8 tasks of GLUE?",
+ "answer_format": "Your answer should a python list of the name of models reaching highest performance on MNLI, QQP, QNLI, SST-2, STS-B, MRPC, RTE, and CoLA respectively. If two models get the same score, you can use 'and' to connect their names, e.g. A and B.",
+ "tags": [
+  "single-doc details",
+  "table calculation",
+  "objective"
+ ],
+ "pdf_id": [
+  "9b06b24b-0afc-5ccb-95fc-c662395d291d"
+ ],
+ "conference": [
+  "acl2024"
+ ],
+ "reasoning_steps": [
+  "First, get the content of Table.",
+  "Second, identify the models with the highest performance on eight tasks."
+ ],
+ "evaluator": {
+  "eval_func": "eval_structured_object_exact_match",
+  "eval_kwargs": {
+   "gold": [
+    "SCALEARN++",
+    "SCALEARNUNIFORM and SCALEARNUNIFORM++",
+    "SCALEARNUNIFORM and SCALEARNUNIFORM++",
+    "SCALEARN++",
+    "SCALEARN",
+    "ADAPTERFUSION",
+    "SCALEARN",
+    "SCALEARN++"
+   ],
+   "ignore_order": false
+  }
+ },
+ "state": {
+  "gpt-4o-2024-05-13": false,
+  "gui-gpt-4o-2024-05-13": false
+ }
+}
