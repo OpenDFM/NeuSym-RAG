@@ -120,4 +120,19 @@ Example html output:
 
 ### MinerU
 
-To be done.
+- Installation
+    - First, install magic-pdf package by
+    ```bash
+    pip install -U magic-pdf[full] --extra-index-url https://wheels.myhloli.com
+    ```
+    - Second, download models according to https://github.com/opendatalab/MinerU/blob/master/docs/how_to_download_models_en.md
+    - Third, modify `magic-pdf.json` in
+        1. (windows) "C:\Users\username" 
+        2. (linux) "/home/username" 
+        3. (macos) "/Users/username"
+
+        to set the `table-config` to true
+- Use Case
+    ```bash
+    magic-pdf -p FILE_OR_FOLDER_PATH -o OUTPUT_PATH -m auto
+    ```
