@@ -204,6 +204,11 @@ def populate_pdf_file_into_database(
                 current_time = datetime.now() - start_time
                 logger.info(f"[Statistics]: Current Cost: {current_cost} | Current Time: {current_time}")
                 write_count += 1
+    elif pdf_path.endswith(".json"):
+        with open(pdf_path, 'r', encoding='UTF-8') as inf:
+            uuids = json.load(inf)
+            for uuid in uuids:
+                populator.populate(uuid, config, on_conflict=on_conflict, log=log_to_file)
     else:
         populator.populate(pdf_path, config, on_conflict=on_conflict, log=log_to_file)
         write_count += 1
