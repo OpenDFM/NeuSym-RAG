@@ -14,9 +14,8 @@
         "acl2024"
     ],
     "reasoning_steps": [
-        "Firstly, find all section titles in the paper to locate the section about RRCP and retrieval complexity.",
-        "Identify the finer requirements on comparison results between RRCP and LLM baseline on complex QA datasets.",
-        "Retrieve the context for this subsection to find the exact values of Accuracy and F1 Score on RRCP and baseline for differnt QA dataset.",
+        "Usually, the comparison between new design and baseline are proposed in the experiment or result section, especially in the form of tables. Search the correpsonding parts.",
+        "Find the exact values of Accuracy and F1 Score on RRCP and baseline for differnt QA dataset.",
         "Finally, compare and calculate the values to find the datasets satisfying the requirements of outperforming."
     ],
     "evaluator": {
