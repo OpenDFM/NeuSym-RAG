@@ -1,0 +1,50 @@
+{
+ "uuid": "08bd3ae0-1594-510d-b67b-bfbd9fb73b56",
+ "question": "What baselines do authors use? And according to Table 2, which baseline can reach the best performance?",
+ "answer_format": "Your answer should a list with two items, the first item is a python list of the name of baselines, and the second item is the name of baseline reaching the best performance, e.g. [[baseline 1, baseline 2, ...], baseline 1].",
+ "tags": [
+  "single-doc details",
+  "text understanding",
+  "objective"
+ ],
+ "pdf_id": [
+  "3d2fcb43-2cda-5645-99aa-da78c6cfd23f"
+ ],
+ "conference": [
+  "acl2024"
+ ],
+ "reasoning_steps": [
+  "First, get the content of Section 4.",
+  "Second, get the content of Table 2, and get the final answer."
+ ],
+ "evaluator": {
+  "eval_func": "eval_conjunction",
+  "eval_kwargs": {
+   "eval_func_list": [
+    "eval_structured_object_exact_match",
+    "eval_string_exact_match"
+   ],
+   "eval_kwargs_list": [
+    {
+     "gold": [
+      "Prompting",
+      "Random",
+      "BM25",
+      "TopK",
+      "TopK + MDL"
+     ],
+     "ignore_order": true,
+     "ignore_blank": true
+    },
+    {
+     "gold": "TopK + MDL",
+     "ignore_blank": true
+    }
+   ]
+  }
+ },
+ "state": {
+  "gpt-4o-2024-05-13": false,
+  "gui-gpt-4o-2024-05-13": true
+ }
+}
