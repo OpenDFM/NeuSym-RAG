@@ -1,0 +1,31 @@
+{
+    "uuid": "75c1fd66-8271-5ae8-b45f-c188ae9ccf84",
+    "question": "Which evaluation metric demonstrates the greatest improvement in the finetuned model proposed in this paper compared to GPT baseline",
+    "answer_format": "Your answer should be a python string about the name of the evaluation metric.",
+    "tags": [
+        "single-doc details",
+        "table calculation",
+        "objective"
+    ],
+    "pdf_id": [
+        "481d851e-214b-5d6b-af6c-880a1be8f3b9"
+    ],
+    "conference": [
+        "acl2024"
+    ],
+    "reasoning_steps": [
+        "Usually, the comparison results between new models and baseline are mentioned in the experiment or result section, especially in the form of tables. Search the correpsonding parts.",
+        "Find the exact values of the performance of the new model and the baseline on all evaluation metrics.",
+        "Finally, calculate or compare to get the evaluation metric demonstrates the greatest improvement in the finetuned model compared to GPT baseline."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "sBLEU",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}
