@@ -1,0 +1,31 @@
+{
+    "uuid": "23cb6726-c7b6-56f0-86bc-4939eac49e1d",
+    "question": "What is the innovation of the formula (6) in this paper?",
+    "answer_format": "Your answer should be a Python strings of innovation of the formula.",
+    "tags": [
+        "single-doc details",
+        "formula inference",
+        "text understanding",
+        "subjective"
+    ],
+    "pdf_id": [
+        "7e6c6c6a-f0a6-59ee-8734-af8a912dcf09"
+    ],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [
+        "Find the formula (6) in the Methodology section and the surrounding text to understand the meaning of the formula.",
+        "Identify the innovation or just the difference of the formula based on the context and the formula itself."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The idea of this formula is decomposing token representations into their constituent vectors based on vector-based approaches. Decompose the i-th token representation in layer l into elemental vectors attributable to each of the N input tokens. So we can compute the norm of the attribution vector of the k-th input to quantify its total attribution to xi.",
+            "question": "What is the innovation of the formula (6) in this paper?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}
