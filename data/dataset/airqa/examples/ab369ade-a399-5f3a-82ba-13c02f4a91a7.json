@@ -1,0 +1,29 @@
+{
+    "uuid": "ab369ade-a399-5f3a-82ba-13c02f4a91a7",
+    "question": "Whether the code and data of this paper are publicly available?",
+    "answer_format": "Your answer should be the python int of 0 or 1, if the answer is yes, then you are supposed to reply 1, else reply 0.",
+    "tags": [
+        "metadata query",
+        "metadata extraction",
+        "objective"
+    ],
+    "pdf_id": [
+        "ae9b4a06-0642-5512-9150-656cf166c470"
+    ],
+    "conference": [
+        "acl2024"
+    ],
+    "reasoning_steps": [
+        "To find the information of code and data, you need to look at the first page of the paper.",
+        "Usually, the URL of the code and data is provided in the Abstract section."
+    ],
+    "evaluator": {
+        "eval_func": "eval_bool_exact_match",
+        "eval_kwargs": {
+            "gold": 1
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}
