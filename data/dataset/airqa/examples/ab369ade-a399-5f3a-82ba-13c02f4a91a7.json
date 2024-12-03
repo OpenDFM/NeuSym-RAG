@@ -1,7 +1,7 @@
 {
     "uuid": "ab369ade-a399-5f3a-82ba-13c02f4a91a7",
-    "question": "Whether the code and data of this paper are publicly available?",
-    "answer_format": "Your answer should be the python int of 0 or 1, if the answer is yes, then you are supposed to reply 1, else reply 0.",
+    "question": "Whether the code and data of this paper are publicly available or not?",
+    "answer_format": "Your answer should be a simple 'yes' or 'no' WITHOUT PUNCTUATION OR EXPLANATION.",
     "tags": [
         "metadata query",
         "metadata extraction",
@@ -18,9 +18,10 @@
         "Usually, the URL of the code and data is provided in the Abstract section."
     ],
     "evaluator": {
-        "eval_func": "eval_bool_exact_match",
+        "eval_func": "eval_string_exact_match",
         "eval_kwargs": {
-            "gold": 1
+            "gold": "yes",
+            "lowercase": true
         }
     },
     "state": {
