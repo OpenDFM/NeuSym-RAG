@@ -4,7 +4,7 @@
     "answer_format": "Your answer should be a python dictionary of entries, each dictionary key is the model name string and each value is an integer of the corresponding instance number, e.g., {'model1': 10, 'model2': 100}, ....",
     "tags": [
         "single-doc details",
-        "image analysis",
+        "table calculation",
         "objective"
     ],
     "pdf_id": [
@@ -14,12 +14,12 @@
         "acl2023"
     ],
     "reasoning_steps": [
-        "Firstly, find all section titles in the paper to locate the section relevant to Large Language Models for NL2Code.",
+        "Usually, the details about benchmarks are mentioned in the experiment or result section, especially in the form of tables. Search the correpsonding parts.",
         "Identify the finer requirements on multi-lingual benchmarks for NL2Code evaluation.",
         "Finally, retrieve the context for this subsection to find the model names and the instances numbers."
     ],
     "evaluator": {
-        "eval_func": "eval_structured_object_optional_match",
+        "eval_func": "eval_structured_object_exact_match",
         "eval_kwargs": {
             "gold": {
                 "MBXP": 974,
