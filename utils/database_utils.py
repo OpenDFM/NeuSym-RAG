@@ -207,8 +207,12 @@ def populate_pdf_file_into_database(
     elif pdf_path.endswith(".json"):
         with open(pdf_path, 'r', encoding='UTF-8') as inf:
             uuids = json.load(inf)
-            for uuid in uuids:
+            for idx, uuid in enumerate(uuids):
+                logger.info(f"Processing PDF {uuid} ({idx+1}/{len(uuids)}) ...")
                 populator.populate(uuid, config, on_conflict=on_conflict, log=log_to_file)
+                current_cost = get_llm_single_instance("gpt-4o").get_cost()
+                current_time = datetime.now() - start_time
+                logger.info(f"[Statistics]: Current Cost: {current_cost} | Current Time: {current_time}")
     else:
         populator.populate(pdf_path, config, on_conflict=on_conflict, log=log_to_file)
         write_count += 1
