@@ -1,0 +1,33 @@
+{
+ "uuid": "ad341e2b-cb59-5695-b41a-9912be57ea77",
+ "question": "What is the shape of $W$ in Equation (3)? And what about $W_l$ and $W_v$ in Equation (5)?",
+ "answer_format": "",
+ "tags": [
+  "single-doc details",
+  "formula inference",
+  "subjective"
+ ],
+ "pdf_id": [
+  "648e3d50-375b-5189-b6b0-e0520626716e"
+ ],
+ "conference": [
+  "acl2024"
+ ],
+ "reasoning_steps": [
+  "First, get the content of Equation (3) and paragraph 'Encoding' of Section 3.2.",
+  "Second, summarize the answer for question 1.",
+  "Third, get the content of Equation (5) and paragraph 'Interaction' of Section 3.2.",
+  "Finally, summarize the answer for question 2."
+ ],
+ "evaluator": {
+  "eval_func": "eval_reference_answer_with_llm",
+  "eval_kwargs": {
+   "reference_answer": "The shape of $W$ in Equation (3) is $\\mathbb{R}^{d_s \\times d_l}$, where $d_s$ is the dimension of the vision features, and $d_l$ is the dimension of the language features. The shapes of $W_l$ and $W_v$ in Equation (5) are both $\\mathbb{R}^{d \\times 1}$.",
+   "question": "What is the shape of $W$ in Equation (3)? And what about $W_l$ and $W_v$ in Equation (5)?"
+  }
+ },
+ "state": {
+  "gpt-4o-2024-05-13": false,
+  "gui-gpt-4o-2024-05-13": true
+ }
+}

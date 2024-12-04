@@ -1,0 +1,30 @@
+{
+ "uuid": "00608f20-e3f5-5fdc-8979-4efeb0756d8e",
+ "question": "What distance function and transfer function do the author use for their method?",
+ "answer_format": "",
+ "tags": [
+  "single-doc details",
+  "formula inference",
+  "subjective"
+ ],
+ "pdf_id": [
+  "16f7e6e6-6bfa-5c74-9c8b-1adc5bf7e3b9"
+ ],
+ "conference": [
+  "acl2023"
+ ],
+ "reasoning_steps": [
+  "First, get the content of Table 2 and get the final answer."
+ ],
+ "evaluator": {
+  "eval_func": "eval_reference_answer_with_llm",
+  "eval_kwargs": {
+   "reference_answer": "The author use distance function $d(u,v) = -u^Tv/\\tau$ and transfer function $f(h) = \\frac{h}{||h||}$ for their method.",
+   "question": "What distance function and transfer function do the author use for their method?"
+  }
+ },
+ "state": {
+  "gpt-4o-2024-05-13": false,
+  "gui-gpt-4o-2024-05-13": true
+ }
+}

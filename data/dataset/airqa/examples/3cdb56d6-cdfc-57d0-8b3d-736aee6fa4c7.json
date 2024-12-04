@@ -1,0 +1,32 @@
+{
+ "uuid": "3cdb56d6-cdfc-57d0-8b3d-736aee6fa4c7",
+ "question": "How to initialize $h_{i,l-1}^S$ in Equation (11)?",
+ "answer_format": "",
+ "tags": [
+  "single-doc details",
+  "formula inference",
+  "subjective"
+ ],
+ "pdf_id": [
+  "6a24d7f4-430d-5c92-b259-f62f76490147"
+ ],
+ "conference": [
+  "acl2023"
+ ],
+ "reasoning_steps": [
+  "First, get the content of the Equation (11).",
+  "Second, get the content of section 3.3, and find the definition of $h_i^S$.",
+  "Finally, get the content of Section 3.2, and find the definition of $\\hat{h_i}$."
+ ],
+ "evaluator": {
+  "eval_func": "eval_reference_answer_with_llm",
+  "eval_kwargs": {
+   "reference_answer": "To initialize $h_{i,0}^S$ in Equation (11), we start with the output from Equation (8): $h_i^S = \\hat{h}_i + s_i$.\n\nHere, $\\hat{h}_i$ is the output from the Aspect-Aware Attention Module (A3M), and $s_i$ is the sentiment feature obtained by projecting the affective score of word $w_i$ from SenticNet into the same dimensional space as $\\hat{h}_i$. Specifically:\n\n1. For each word $w_i$ in the sentence, obtain its affective score $w_i^S$ from SenticNet.\n2. Project this affective score into the same dimensional space as $\\hat{h}_i$: $s_i = W_S w_i^S + b_S$, where $W_S$ and $b_S$ are learned parameters.\n3. Add the sentiment feature $s_i$ to $\\hat{h}_i$: $h_i^S = \\hat{h}_i + s_i$\n\nThis $h_i^S$ serves as the initial node representation $h_{i,0}^S$ for the Aspect-Guided Graph Convolutional Network (AG-GCN). Therefore, for the first layer $l=0$: $h_{i,0}^S = h_i^S$.",
+   "question": "How to initialize $h_{i,l-1}^S$ in Equation (11)?"
+  }
+ },
+ "state": {
+  "gpt-4o-2024-05-13": false,
+  "gui-gpt-4o-2024-05-13": true
+ }
+}
