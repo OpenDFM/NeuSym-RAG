@@ -21,7 +21,7 @@
     "evaluator": {
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
-            "reference_answer": "The idea of this formula is decomposing token representations into their constituent vectors based on vector-based approaches. Decompose the i-th token representation in layer l into elemental vectors attributable to each of the N input tokens. So we can compute the norm of the attribution vector of the k-th input to quantify its total attribution to xi.",
+            "reference_answer": "The innovation of this loss function is that it consists of two parts: ground-truth loss and distillation loss. The ground-truth loss is to use one-hot labels to predict connectives, and LKD is the knowledge distillation loss utilizing the Kullback-Leibler divergence to quantify the difference of output distribution from student's soft predictions to teacher's soft labels, which means the student model S is required to match not only the groundtruth one-hot labels but also the probability outputs of the teacher model T.",
             "question": "What is the innovation of the formula (6) in this paper?"
         }
     },
