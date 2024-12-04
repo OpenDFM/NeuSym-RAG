@@ -1,0 +1,30 @@
+{
+    "uuid": "04f6fcad-edd9-577c-b089-ae167567ef47",
+    "question": "What is the most appropriate evaluation metric for this paper?",
+    "answer_format": "Your answer should be a python strings of the exact name of the evaluation metric.",
+    "tags": [
+        "single-doc details",
+        "text understanding",
+        "objective"
+    ],
+    "pdf_id": [
+        "cc28a219-3ac4-5614-ba45-59d6aabf1af4"
+    ],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [
+        "Find the corresponding sections about evaluation metric.",
+        "Compare different evaluation metrics to find the most appropriate one based on the context."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "refinement",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}
