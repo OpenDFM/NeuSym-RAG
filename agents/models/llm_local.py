@@ -47,7 +47,7 @@ class LocalClient(LLMClient):
             temperature=temperature,
             top_p=top_p,
             max_tokens=max_tokens,
-            stop=['<|start_header_id|>', '<|end_header_id|>', '<|eot_id|>']
+            stop=['<|im_end|>', '<|endoftext|>', '<|eot_id|>']
         )
         response = completion.choices[0].message.content.strip()
         self.update_usage(completion)
