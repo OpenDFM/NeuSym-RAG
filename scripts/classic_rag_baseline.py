@@ -10,8 +10,8 @@ from agents.prompts import formulate_input
 from utils.eval_utils import evaluate, print_result
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', type=str, default='pdfvqa', help='which dataset to use')
-parser.add_argument('--vectorstore', type=str, default='biology_paper', help='which vectorstore to use')
+parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
+parser.add_argument('--vectorstore', type=str, default='ai_research', help='which vectorstore to use')
 parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
 parser.add_argument('--table_name', type=str, default='chunks', help='which table to use, if not specified, use all tables under the database')
 parser.add_argument('--column_name', type=str, default='text_content', help='which column to use, if not specified, use all encodable columns under the table')

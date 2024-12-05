@@ -10,8 +10,8 @@ from agents.prompts import convert_vectorstore_schema_to_prompt, formulate_input
 from utils.eval_utils import evaluate, print_result
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', type=str, default='pdfvqa', help='which dataset to use')
-parser.add_argument('--vectorstore', type=str, default='biology_paper', help='which vectorstore to use')
+parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
+parser.add_argument('--vectorstore', type=str, default='ai_research', help='which vectorstore to use')
 parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
 parser.add_argument('--vs_format', type=str, choices=['detailed_json'], default='detailed_json', help='Vectorstore schema serialization format')
 parser.add_argument('--agent_method', type=str, default='two_stage_text2vec', help='Agent method')
