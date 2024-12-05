@@ -1,7 +1,6 @@
 #coding=utf8
 from agents.models.llm_base import LLMClient
 from agents.models.llm_gpt import GPTClient
-from agents.models.llm_qwen2_vl import Qwen2VLClient
 from agents.models.llm_local import LocalClient
 
 
@@ -23,8 +22,6 @@ def infer_model_class(model_name: str) -> LLMClient:
     """
     if any(model_name.lower().startswith(prefix) for prefix in ['claude', 'gemini', 'gpt', 'o1']):
         return GPTClient
-    elif model_name.lower().startswith('qwen2-vl'):
-        return Qwen2VLClient
     elif any(model_name.lower().startswith(prefix) for prefix in ['llama', 'qwen']):
         return LocalClient
     else:
