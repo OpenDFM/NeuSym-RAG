@@ -7,7 +7,7 @@ from agents.models.llm_base import LLMClient
 
 
 class LocalClient(LLMClient):
-    model_stop: Dict[List[str]] = {
+    model_stop: Dict[str, List[str]] = {
         'llama': ['<|start_header_id|>', '<|end_header_id|>', '<|eot_id|>']
     }
 
