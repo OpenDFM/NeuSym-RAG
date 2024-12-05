@@ -1,5 +1,5 @@
 #coding=utf8
-import ast, math, os, re, sys
+import ast, json, math, os, re, sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from typing import Dict, Any, Optional, List, Union
 from collections import defaultdict
@@ -279,7 +279,7 @@ def print_result(result: dict) -> str:
 
 if __name__ == '__main__':
 
-    import argparse, json
+    import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', type=str, default='airqa', choices=['airqa', 'pdfvqa', 'tatdqa'], help='Dataset name')
     parser.add_argument('--pred', type=str, required=True, help='Path to predicted answer, .jsonl file')
