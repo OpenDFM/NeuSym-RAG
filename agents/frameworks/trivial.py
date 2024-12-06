@@ -18,7 +18,7 @@ class TrivialAgent(AgentBase):
     def interact(self,
                  question: str,
                  answer_format: str,
-                 pdf_id: Optional[str] = None,
+                 pdf_id: Optional[Union[str, List[str]]] = None,
                  page_number: Optional[Union[str, List[str]]] = None,
                  max_length: int = 30,
                  model: str = 'gpt-4o-mini',
@@ -33,12 +33,15 @@ class TrivialAgent(AgentBase):
         self.env.reset()
 
         # 1. Retrieve the PDF content (hard coding)
-        if pdf_id is not None:
-            if page_number is not None and page_number != []:
-                page_number_list = sorted(page_number) if isinstance(page_number, list) else [page_number]
+        if pdf_id is not None and pdf_id != []:
+            if self.env.dataset == 'airqa':
+                observation = '\n'.join(f"PDF {idx}:\n{self.env.pdf_contents[idx]}" for idx in pdf_id if idx in self.env.pdf_contents)
             else:
-                page_number_list = sorted(self.env.pdf_contents[pdf_id].keys())
-            observation = '\n'.join(f"PDF {pdf_id} page {idx}:\n{self.env.pdf_contents[pdf_id][idx]}" for idx in page_number_list if idx in self.env.pdf_contents[pdf_id])
+                if page_number is not None and page_number != []:
+                    page_number_list = sorted(page_number) if isinstance(page_number, list) else [page_number]
+                else:
+                    page_number_list = sorted(self.env.pdf_contents[pdf_id].keys())
+                observation = '\n'.join(f"PDF {pdf_id} page {idx}:\n{self.env.pdf_contents[pdf_id][idx]}" for idx in page_number_list if idx in self.env.pdf_contents[pdf_id])
         else:
             observation = 'No context provided.'
         logger.info('[Stage 1]: Retrieve context ...')
