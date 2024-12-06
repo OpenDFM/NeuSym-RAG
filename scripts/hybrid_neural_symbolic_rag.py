@@ -13,6 +13,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
 parser.add_argument('--database', type=str, default='ai_research', help='which database to use')
 parser.add_argument('--vectorstore', type=str, default='ai_research', help='which vectorstore to use')
+parser.add_argument('--launch_method', type=str, default='standalone', choices=['standalone', 'docker'], help='launch method for vectorstore, chosen from ["docker", "standalone"]. Note that, for Windows OS, can only choose "docker".')
 parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
 parser.add_argument('--db_format', type=str, choices=['create_sql', 'detailed_json'], default='create_sql', help='Database schema serialization format')
 parser.add_argument('--vs_format', type=str, choices=['detailed_json'], default='detailed_json', help='Vectorstore schema serialization format')
@@ -52,7 +53,7 @@ logger.setLevel(logging.INFO)
 
 
 llm = infer_model_class(args.llm)()
-env: HybridEnv = ENVIRONMENTS['hybrid'](action_format=args.action_format, agent_method=args.agent_method, dataset=args.dataset, database=args.database, vectorstore=args.vectorstore)
+env: HybridEnv = ENVIRONMENTS['hybrid'](action_format=args.action_format, agent_method=args.agent_method, dataset=args.dataset, database=args.database, vectorstore=args.vectorstore, launch_method=args.launch_method)
 agent: HybridRAGAgent = FRAMEWORKS['hybrid_rag'](llm, env, agent_method=args.agent_method, max_turn=args.max_turn)
 
 test_data = []

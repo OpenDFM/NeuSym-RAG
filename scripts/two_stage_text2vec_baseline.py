@@ -12,6 +12,7 @@ from utils.eval_utils import evaluate, print_result
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
 parser.add_argument('--vectorstore', type=str, default='ai_research', help='which vectorstore to use')
+parser.add_argument('--launch_method', type=str, default='standalone', choices=['standalone', 'docker'], help='launch method for vectorstore, chosen from ["docker", "standalone"]. Note that, for Windows OS, can only choose "docker".')
 parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
 parser.add_argument('--vs_format', type=str, choices=['detailed_json'], default='detailed_json', help='Vectorstore schema serialization format')
 parser.add_argument('--agent_method', type=str, default='two_stage_text2vec', help='Agent method')
@@ -43,7 +44,7 @@ logger.setLevel(logging.INFO)
 
 
 llm = infer_model_class(args.llm)()
-env = ENVIRONMENTS['text2vec'](dataset=args.dataset, vectorstore=args.vectorstore)
+env = ENVIRONMENTS['text2vec'](dataset=args.dataset, vectorstore=args.vectorstore, launch_method=args.launch_method)
 agent: TwoStageText2VecRAGAgent = FRAMEWORKS['two_stage_text2vec'](llm, env, agent_method=args.agent_method)
 
 test_data = []
