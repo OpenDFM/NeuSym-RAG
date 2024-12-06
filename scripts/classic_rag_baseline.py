@@ -70,7 +70,7 @@ for data in test_data:
     result = agent.interact(
         question, answer_format,
         table_name=args.table_name, column_name=args.column_name,
-        pdf_id=data['pdf_id'], page_number=data['page_number'],
+        pdf_id=data['pdf_id'], page_number=data.get('page_number', None),
         collection_name=args.collection_name, limit=args.limit,
         model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens,
         output_path=output_path
