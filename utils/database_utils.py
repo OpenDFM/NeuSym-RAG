@@ -213,6 +213,7 @@ def populate_pdf_file_into_database(
                 current_cost = get_llm_single_instance("gpt-4o").get_cost()
                 current_time = datetime.now() - start_time
                 logger.info(f"[Statistics]: Current Cost: {current_cost} | Current Time: {current_time}")
+                write_count += 1
     else:
         populator.populate(pdf_path, config, on_conflict=on_conflict, log=log_to_file)
         write_count += 1
