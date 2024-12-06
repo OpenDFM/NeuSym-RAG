@@ -1,5 +1,5 @@
 #coding=utf8
-import duckdb
+import duckdb, tiktoken
 from pymilvus import MilvusClient
 from milvus_model.base import BaseEmbeddingFunction
 from agents.envs.actions.action import Action, Observation
@@ -26,6 +26,7 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
         "tablefmt": "pretty", # for markdown format, see doc https://pypi.org/project/tabulate/ for all options
         "max_filter": 512000, # maximum number of context records to retrieve, optional, by default 512000
         "max_rows": 10, # maximum rows to display in the output
+        "max_tokens": 5000, # maximum tokens to display in the output
         "index": False, # whether to include the row index in the output
         "max_timeout": 600 # the maximum timeout for each stage (SQL execution or vector search) is 10 minutes
     }, repr=False)
@@ -176,9 +177,33 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
             output_format = format_kwargs['output_format']
             assert output_format in ['markdown', 'string', 'html', 'json'], "SQL execution output format must be chosen from ['markdown', 'string', 'html', 'json']."
 
-            max_rows = format_kwargs['max_rows']
-            suffix = f'\n... # only display {max_rows} rows in {output_format.upper()} format, more are truncated due to length constraint' if db_df.shape[0] > max_rows else f'\nIn total, {db_df.shape[0]} rows are displayed in {output_format.upper()} format.'
-            db_df = db_df.head(max_rows)
+            max_rows = format_kwargs["max_rows"]
+            max_tokens = format_kwargs["max_tokens"]
+            
+            # Token&row-based filtering
+            cumulative_tokens = 0
+            filtered_rows = []
+            truncation_reason=''
+            llmencoder = tiktoken.get_encoding("cl100k_base")  
+            for index, row in db_df.iterrows():
+                row_text = row.to_string() 
+                row_tokens =  len(llmencoder.encode(row_text)) 
+                # Check if we exceeded either row or token limit
+                if len(filtered_rows) >= max_rows:
+                    truncation_reason = f"based on max_rows ({max_rows})"
+                    break
+                if cumulative_tokens + row_tokens > max_tokens:
+                    truncation_reason = f"based on max_tokens ({max_tokens})"
+                    break
+
+                filtered_rows.append(row)
+                cumulative_tokens += row_tokens
+
+            # Determine suffix based on truncation reason
+            suffix = f'\n... # only display {len(filtered_rows)} rows in {output_format.upper()} format, more are truncated due to length constraint {truncation_reason}' if truncation_reason else f'\nIn total, {db_df.shape[0]} rows are displayed in {output_format.upper()} format.'
+
+            # Create filtered DataFrame
+            db_df = pd.DataFrame(filtered_rows, columns=db_df.columns)
             
             msg = f"[Stage 2]: The retrieved SQL execution results from the database in the second stage:\n"
             if output_format == 'markdown':
