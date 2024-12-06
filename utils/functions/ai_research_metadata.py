@@ -286,7 +286,7 @@ def extract_metadata_from_scholar_api(
         api_tools: List[str] = ['dblp', 'semantic-scholar', 'arxiv'],
         **kwargs
     ) -> Dict[str, Any]:
-    """ Given the title of one paper, extract its metadata from provided scholar APIs.
+    """ Given the title or the arxiv id of one paper, extract its metadata from provided scholar APIs.
     @param:
         title: str, the title of the paper
         api_tool: List[str], the list of scholar API tools to use, each element is chosen from
@@ -295,7 +295,7 @@ def extract_metadata_from_scholar_api(
     for tool in api_tools:
         assert tool in ['dblp', 'semantic-scholar', 'arxiv'], f"Invalid scholar API tool: {tool}."
     if not api_tools: # try sequentially with pre-defined orders
-        api_tools = ['arxiv', 'dblp', 'semantic-scholar']
+        api_tools = ['dblp', 'semantic-scholar', 'arxiv']
     functions = {
         "dblp": dblp_scholar_api,
         "semantic-scholar": semantic_scholar_api,
