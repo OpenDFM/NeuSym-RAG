@@ -14,7 +14,7 @@ class HybridEnv(AgentEnv):
     """ Responsible for managing the environment for the text-to-vec retrieval, which includes maintaining the connection to the Milvus vectorstore, executing the search query and formatting the output result.
     """
 
-    action_space: List[Type] = [RetrieveFromDatabase, RetrieveFromVectorstore, RetrieveFromDatabaseWithVectorFilter, RetrieveFromVectorstoreWithSQLFilter, CalculateExpr, ViewImage, GenerateAnswer]
+    action_space: List[Type] = [RetrieveFromDatabase, RetrieveFromVectorstore, CalculateExpr, ViewImage, GenerateAnswer]
 
     def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, agent_method: Optional[str] = 'react', dataset: Optional[str] = None, **kwargs) -> None:
         """ Initialize the environment with the given action format, action space, agent method, dataset and other parameters.
