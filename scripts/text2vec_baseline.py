@@ -57,7 +57,7 @@ elif os.path.exists(os.path.join('data', 'dataset', args.dataset, args.test_data
     test_data_path = os.path.join('data', 'dataset', args.dataset, args.test_data)
 else:
     test_data_path = os.path.join('data', 'dataset', args.dataset, 'processed_data', args.test_data)
-with open(test_data_path, 'r') as inf:
+with open(test_data_path, 'r', encoding='utf-8') as inf:
     for line in inf:
         test_data.append(json.loads(line))
 
@@ -74,7 +74,7 @@ logger.info(f"Total cost: {llm.get_cost()}")
 agent.close()
 
 output_path = os.path.join(result_dir, 'result.jsonl')
-with open(output_path, 'w', encoding='UTF-8') as ouf:
+with open(output_path, 'w', encoding='utf-8') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")

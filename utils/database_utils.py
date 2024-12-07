@@ -185,13 +185,13 @@ def populate_pdf_file_into_database(
     from utils.database_population import DatabasePopulation
     populator = DatabasePopulation(database_name)
     config_path = config_path if config_path is not None else os.path.join('configs', f'{database_name}_config.json')
-    with open(config_path, 'r', encoding='UTF-8') as inf:
+    with open(config_path, 'r', encoding='utf-8') as inf:
         config = json.load(inf)
     log_to_file = config.get('log', False)
     write_count = 0
     start_time = datetime.now()
     if pdf_path.endswith('.jsonl'):
-        with open(pdf_path, 'r', encoding='UTF-8') as inf:
+        with open(pdf_path, 'r', encoding='utf-8') as inf:
             for line in tqdm.tqdm(inf):
                 json_data = json.loads(line)
                 if database_name in ["biology_paper", "financial_report"]:
@@ -205,7 +205,7 @@ def populate_pdf_file_into_database(
                 logger.info(f"[Statistics]: Current Cost: {current_cost} | Current Time: {current_time}")
                 write_count += 1
     elif pdf_path.endswith(".json"):
-        with open(pdf_path, 'r', encoding='UTF-8') as inf:
+        with open(pdf_path, 'r', encoding='utf-8') as inf:
             uuids = json.load(inf)
             for idx, uuid in enumerate(uuids):
                 logger.info(f"Processing PDF {uuid} ({idx+1}/{len(uuids)}) ...")
