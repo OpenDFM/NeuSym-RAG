@@ -1,0 +1,29 @@
+{
+    "uuid": "6746c386-b889-59ad-abed-144cd56101d3",
+    "question": "What's the baseline used in the experiment?",
+    "answer_format": "Your answer should be a plein text DIRECTLY FROM THE PDF.",
+    "tags": [
+        "single-doc details",
+        "text understanding"
+    ],
+    "pdf_id": [
+        "613d5129-98bd-5f6b-95d3-22b0a9966455"
+    ],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [
+        "Locate the experiment section.",
+        "Identify the baseline."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "We employ the released PLATO-v1 model, a pre-trained dialogue generation model based on UniLM, for our experiment.",
+            "question": "What's the baseline used in the experiment?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}
