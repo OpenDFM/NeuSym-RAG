@@ -99,7 +99,7 @@ def process_pdfvqa(
     docs = pickle.load(open(os.path.join(raw_data_folder, 'test_doc_info_visual.pkl'), 'rb'))
 
     empty_page_dict = lambda x: {"page_path": "", "width": 0, "height": 0, "page_number": x, "bbox": [], "bbox_text": [], "bbox_label": [], "relations": []}
-    errata = json.load(open(os.path.join(processed_data_folder, 'errata.json'), 'r', encoding='UTF-8'))
+    errata = json.load(open(os.path.join(processed_data_folder, 'errata.json'), 'r', encoding='utf-8'))
     # preprocess images of each PDF page
     for pdf_id in docs:
         tmp_pdf_data = {}
@@ -238,10 +238,10 @@ def process_pdfvqa(
 
     logger.info(f"In total, {len(pdf_data)} PDFs and {len(test_data)} examples are processed.")
 
-    with open(os.path.join(processed_data_folder, test_data_name), 'w', encoding='UTF-8') as of:
+    with open(os.path.join(processed_data_folder, test_data_name), 'w', encoding='utf-8') as of:
         for data in test_data:
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
-    with open(os.path.join(processed_data_folder, pdf_data_name), 'w', encoding='UTF-8') as of:
+    with open(os.path.join(processed_data_folder, pdf_data_name), 'w', encoding='utf-8') as of:
         for data in pdf_data:
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
     return {'test_data': test_data, 'pdf_data': pdf_data}
@@ -438,13 +438,13 @@ def process_tatdqa(
                 }
                 test_data.append(test_data_dict)
 
-    with open(os.path.join(processed_data_folder, test_data_name), 'w', encoding='UTF-8') as of:
+    with open(os.path.join(processed_data_folder, test_data_name), 'w', encoding='utf-8') as of:
         for data in test_data:
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
     pdf_data = list(pdf_data.values())
     for pdf in pdf_data:
         pdf['page_infos'] = sorted(pdf['page_infos'], key=lambda x: x['page_number'])
-    with open(os.path.join(processed_data_folder, pdf_data_name), 'w', encoding='UTF-8') as of:
+    with open(os.path.join(processed_data_folder, pdf_data_name), 'w', encoding='utf-8') as of:
         for data in pdf_data:
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
 
@@ -509,7 +509,7 @@ def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_fil
         output_file: str, the output file name for the sampling .jsonl file.
     """
     dataset_path = os.path.join(DATASET_DIR, dataset, 'processed_data', 'test_data.jsonl')
-    with open(dataset_path, 'r', encoding='UTF-8') as inf:
+    with open(dataset_path, 'r', encoding='utf-8') as inf:
         data = [json.loads(line) for line in inf]
     typed_data = {}
     for d in data:
@@ -533,7 +533,7 @@ def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_fil
 
     sample_size = len(sampled_data)
     output_path = os.path.join(DATASET_DIR, dataset, 'processed_data', output_file) if output_file is not None else dataset_path.replace('test_data.jsonl', f'test_data_sample_{sample_size}.jsonl')
-    with open(output_path, 'w', encoding='UTF-8') as of:
+    with open(output_path, 'w', encoding='utf-8') as of:
         for d in sampled_data:
             of.write(json.dumps(d, ensure_ascii=False) + '\n')
         logger.info(f"Sampled {sample_size} test data saved to {output_path} for dataset {dataset}.")

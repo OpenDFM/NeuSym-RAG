@@ -13,11 +13,11 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
 parser.add_argument('--vectorstore', type=str, default='ai_research', help='which vectorstore to use')
 parser.add_argument('--launch_method', type=str, default='standalone', choices=['standalone', 'docker'], help='launch method for vectorstore, chosen from ["docker", "standalone"]. Note that, for Windows OS, can only choose "docker".')
-parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
+parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='test data file')
 parser.add_argument('--table_name', type=str, default='chunks', help='which table to use, if not specified, use all tables under the database')
 parser.add_argument('--column_name', type=str, default='text_content', help='which column to use, if not specified, use all encodable columns under the table')
 parser.add_argument('--collection_name', type=str, default='text_sentence_transformers_all_minilm_l6_v2', help='which collection to use')
-parser.add_argument('--limit', type=int, default=2, help='limit the number of returned results')
+parser.add_argument('--limit', type=int, default=4, help='limit the number of returned results')
 parser.add_argument('--agent_method', type=str, default='classic_rag', help='Agent method')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
 parser.add_argument('--temperature', type=float, default=0.7)
@@ -59,7 +59,7 @@ elif os.path.exists(os.path.join('data', 'dataset', args.dataset, args.test_data
     test_data_path = os.path.join('data', 'dataset', args.dataset, args.test_data)
 else:
     test_data_path = os.path.join('data', 'dataset', args.dataset, 'processed_data', args.test_data)
-with open(test_data_path, 'r') as inf:
+with open(test_data_path, 'r', encoding='utf-8') as inf:
     for line in inf:
         test_data.append(json.loads(line))
 
@@ -81,7 +81,7 @@ logger.info(f"Total cost: {llm.get_cost()}")
 agent.close()
 
 output_path = os.path.join(result_dir, 'result.jsonl')
-with open(output_path, 'w', encoding='UTF-8') as ouf:
+with open(output_path, 'w', encoding='utf-8') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")

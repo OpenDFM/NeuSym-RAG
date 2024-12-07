@@ -268,7 +268,7 @@ def parse_pdf(
         ]
         
         try:
-            result = subprocess.run(command, check=True, text=True, encoding='UTF-8')
+            result = subprocess.run(command, check=True, text=True, encoding='utf-8')
         except subprocess.CalledProcessError as e:
             raise subprocess.CalledProcessError(f"Command execution failed for {pdf_path} with error: {e.stderr}")
     

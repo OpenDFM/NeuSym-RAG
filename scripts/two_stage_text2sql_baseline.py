@@ -12,7 +12,7 @@ from utils.eval_utils import evaluate, print_result
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
 parser.add_argument('--database', type=str, default='ai_research', help='which database to use')
-parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
+parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='test data file')
 parser.add_argument('--db_format', type=str, choices=['create_sql', 'detailed_json'], default='create_sql', help='Database schema serialization format')
 parser.add_argument('--agent_method', type=str, default='two_stage_text2sql', help='Agent method')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
@@ -53,7 +53,7 @@ elif os.path.exists(os.path.join('data', 'dataset', args.dataset, args.test_data
     test_data_path = os.path.join('data', 'dataset', args.dataset, args.test_data)
 else:
     test_data_path = os.path.join('data', 'dataset', args.dataset, 'processed_data', args.test_data)
-with open(test_data_path, 'r') as inf:
+with open(test_data_path, 'r', encoding='utf-8') as inf:
     for line in inf:
         test_data.append(json.loads(line))
 
@@ -75,7 +75,7 @@ logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime
 agent.close()
 
 output_path = os.path.join(result_dir, 'result.jsonl')
-with open(output_path, 'w', encoding='UTF-8') as ouf:
+with open(output_path, 'w', encoding='utf-8') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")

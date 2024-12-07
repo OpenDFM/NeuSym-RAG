@@ -11,7 +11,7 @@ from utils.eval_utils import evaluate, print_result
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
-parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
+parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='test data file')
 parser.add_argument('--agent_method', type=str, default='trivial', help='Agent method')
 parser.add_argument('--max_length', type=int, default=30, help='Maximum length (x 1000) of the input context or document, default is 32k')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
@@ -52,7 +52,7 @@ elif os.path.exists(os.path.join('data', 'dataset', args.dataset, args.test_data
     test_data_path = os.path.join('data', 'dataset', args.dataset, args.test_data)
 else:
     test_data_path = os.path.join('data', 'dataset', args.dataset, 'processed_data', args.test_data)
-with open(test_data_path, 'r') as inf:
+with open(test_data_path, 'r', encoding='utf-8') as inf:
     for line in inf:
         test_data.append(json.loads(line))
 
@@ -72,7 +72,7 @@ logger.info(f"Total cost: {llm.get_cost()}")
 agent.close()
 
 output_path = os.path.join(result_dir, 'result.jsonl')
-with open(output_path, 'w', encoding='UTF-8') as ouf:
+with open(output_path, 'w', encoding='utf-8') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")

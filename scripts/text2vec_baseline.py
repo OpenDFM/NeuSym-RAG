@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
 parser.add_argument('--vectorstore', type=str, default='ai_research', help='which vectorstore to use')
 parser.add_argument('--launch_method', type=str, default='standalone', choices=['standalone', 'docker'], help='launch method for vectorstore, chosen from ["docker", "standalone"]. Note that, for Windows OS, can only choose "docker".')
-parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
+parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='test data file')
 parser.add_argument('--vs_format', type=str, choices=['detailed_json'], default='detailed_json', help='Vectorstore schema serialization format')
 parser.add_argument('--action_format', type=str, default='json', choices=['markdown', 'json', 'xml', 'yaml'], help='Action format for the environment')
 parser.add_argument('--output_format', type=str, default='json', choices=['markdown', 'string', 'html', 'json'], help='Output format for the environment execution results')
@@ -57,7 +57,7 @@ elif os.path.exists(os.path.join('data', 'dataset', args.dataset, args.test_data
     test_data_path = os.path.join('data', 'dataset', args.dataset, args.test_data)
 else:
     test_data_path = os.path.join('data', 'dataset', args.dataset, 'processed_data', args.test_data)
-with open(test_data_path, 'r') as inf:
+with open(test_data_path, 'r', encoding='utf-8') as inf:
     for line in inf:
         test_data.append(json.loads(line))
 
@@ -74,7 +74,7 @@ logger.info(f"Total cost: {llm.get_cost()}")
 agent.close()
 
 output_path = os.path.join(result_dir, 'result.jsonl')
-with open(output_path, 'w', encoding='UTF-8') as ouf:
+with open(output_path, 'w', encoding='utf-8') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")

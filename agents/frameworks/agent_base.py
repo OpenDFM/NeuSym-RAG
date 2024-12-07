@@ -82,7 +82,7 @@ class AgentBase(ABC):
             cost = self.model.get_cost() - prev_cost
             logger.info(f'[Warning]: exceeds the maximum interaction turn {self.max_turn}, cost ${cost:.6f}.')
         if output_path is not None:
-            with open(output_path, 'w', encoding='UTF-8') as f:
+            with open(output_path, 'w', encoding='utf-8') as f:
                 for m in messages:
                     f.write(json.dumps(m, ensure_ascii=False) + '\n')
         return obs.obs_content
