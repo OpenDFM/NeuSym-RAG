@@ -11,7 +11,7 @@ from utils.eval_utils import evaluate, print_result
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
-parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
+parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='test data file')
 parser.add_argument('--agent_method', type=str, default='trivial', help='Agent method')
 parser.add_argument('--max_length', type=int, default=30, help='Maximum length (x 1000) of the input context or document, default is 32k')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
