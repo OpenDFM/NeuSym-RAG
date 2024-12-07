@@ -13,9 +13,15 @@
         "use_cases": [
             {
                 "example": {
-                    "sql": "SELECT COUNT(DISTINCT pdf_id) FROM meta_data;"
+                    "sql": "SELECT abstract FROM metadata WHERE paper_id = '12345678';"
                 },
-                "explanation": "Get the total number of unique PDFs in the database."
+                "explanation": "Get the abstract of the paper with paper_id '12345678' from the metadata table in the DuckDB database."
+            },
+            {
+                "example": {
+                    "sql": "SELECT pages.page_number FROM images JOIN pages JOIN metadata ON images.ref_page_id = pages.page_id AND pages.ref_paper_id = metadata.paper_id WHERE metadata.paper_id = '12345678' AND images.image_caption LIKE '%Figure 3%';"
+                },
+                "explanation": "Find which page in the paper with paper_id '12345678' contains Figure 3."
             }
         ]
     },
@@ -73,10 +79,10 @@
                 "example": {
                     "query": "Is there any work about the topic structured RAG?",
                     "collection_name": "text_sentence_transformers_all_minilm_l6_v2",
-                    "table_name": "papers",
+                    "table_name": "metadata",
                     "column_name": "abstract"
                 },
-                "explanation": "Perform a similarity search on all cell values from the `abstract` column of the `papers` table in the relational database, using the MiniLM-L6-v2 setence transformer embeddings. By default, the top 5 most relevant entries will be returned based on vector similarity."
+                "explanation": "Perform a similarity search on all cell values from the `abstract` column of the `metadata` table in the database, using the MiniLM-L6-v2 setence transformer embeddings. By default, the top 5 most relevant entries will be returned based on vector similarity."
             }
         ]
     },
