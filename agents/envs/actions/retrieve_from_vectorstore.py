@@ -35,12 +35,13 @@ class RetrieveFromVectorstore(Action):
     def _validate_parameters(self, env: gym.Env) -> Tuple[bool, str]:
         self.query, self.collection_name, self.table_name, self.column_name, self.filter = str(self.query), str(self.collection_name), str(self.table_name), str(self.column_name), str(self.filter)
 
-        embed_model_path = env.embedder_dict[self.collection_name]['embed_model']
-        with open(os.path.join(embed_model_path, 'config.json'), 'r', encoding='utf-8') as fin:
-            query_max_tokens = json.load(fin)['text_config']['max_position_embeddings']
-        tokenizer = AutoTokenizer.from_pretrained(embed_model_path)
-        if len(tokenizer.encode(self.query)) > query_max_tokens:
-            return False, "[Error]: The query string is too long. You can try to shorten it."
+        if self.collection_name.startswith('image'):
+            embed_model_path = env.embedder_dict[self.collection_name]['embed_model']
+            with open(os.path.join(embed_model_path, 'config.json'), 'r', encoding='utf-8') as fin:
+                query_max_tokens = json.load(fin)['text_config']['max_position_embeddings']
+            tokenizer = AutoTokenizer.from_pretrained(embed_model_path)
+            if len(tokenizer.encode(self.query)) > query_max_tokens:
+                return False, "[Error]: The query string is too long. You can try to shorten it."
 
         if type(self.limit) != int:
             try:
