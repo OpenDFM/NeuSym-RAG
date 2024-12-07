@@ -1,10 +1,10 @@
 #coding=utf8
 import re
 from typing import Any, Dict, List, Union, Tuple, Optional
-from .llm_functions import DEFAULT_LLM_MODEL, _eval_with_llm
+from .llm_functions import DEFAULT_LLM_MODEL, DEFAULT_TEMPERATURE, _eval_with_llm
 
 
-def eval_complex_math_formula_with_llm(pred: Any, formulas: Union[str, List[str]], question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = 0.0, **kwargs) -> float:
+def eval_complex_math_formula_with_llm(pred: Any, formulas: Union[str, List[str]], question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, **kwargs) -> float:
     """ Evaluate the complex math formula with LLM.
     @param:
         pred: The predicted answer.

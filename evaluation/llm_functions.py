@@ -5,6 +5,7 @@ from utils.functions.common_functions import call_llm, call_llm_with_message
 
 
 DEFAULT_LLM_MODEL = 'gpt-4o' # may be changed to other open-source models
+DEFAULT_TEMPERATURE = 0.0
 
 
 def _eval_with_llm(template, llm_model, temperature) -> float:
@@ -19,7 +20,7 @@ def _eval_with_llm(template, llm_model, temperature) -> float:
     return 1.0 if final_judgement == 'true' else 0.0
 
 
-def eval_reference_answer_with_llm(pred: Any, reference_answer: str, question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = 0.0, **kwargs) -> float:
+def eval_reference_answer_with_llm(pred: Any, reference_answer: str, question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, **kwargs) -> float:
     """ Evaluate the reference answer with LLM.
     @param:
         pred: The predicted answer.
@@ -50,7 +51,7 @@ Let's think step-by-step, and then provide the final judgement.
     return _eval_with_llm(template, llm_model, temperature)
 
 
-def eval_candidate_reference_answer_with_llm(pred: Any, candidate_reference_answers: List[str], question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = 0.0, **kwargs) -> float:
+def eval_candidate_reference_answer_with_llm(pred: Any, candidate_reference_answers: List[str], question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, **kwargs) -> float:
     """ Evaluate the candidate reference answers with LLM. The predicted answer should be considered correct if any of the candidate reference answers is matched semantically.
     @param:
         pred: The predicted answer.
@@ -86,7 +87,7 @@ Let's think step-by-step, and then provide the final judgement.
     return _eval_with_llm(template, llm_model, temperature)
 
 
-def eval_partial_scoring_points_with_llm(pred: Any, scoring_points: List[str], question: str, count: int = 1, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = 0.0, **kwargs) -> float:
+def eval_partial_scoring_points_with_llm(pred: Any, scoring_points: List[str], question: str, count: int = 1, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, **kwargs) -> float:
     """ Evaluate whether the scoring points are partially mentioned in the pred answer with LLM (at least `count`).
     @param:
         pred: The predicted answer.
@@ -123,7 +124,7 @@ Let's think step-by-step, and then provide the final judgement.
     return _eval_with_llm(template, llm_model, temperature)
 
 
-def eval_scoring_points_with_llm(pred: Any, scoring_points: List[str], question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = 0.0, ignore_order: bool = True, **kwargs) -> float:
+def eval_scoring_points_with_llm(pred: Any, scoring_points: List[str], question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, ignore_order: bool = True, **kwargs) -> float:
     """ Evaluate whether the scoring points are ALL mentioned in the pred answer with LLM.
     @param:
         pred: The predicted answer.
@@ -159,7 +160,7 @@ Let's think step-by-step, and then provide the final judgement.
     return _eval_with_llm(template, llm_model, temperature)
 
 
-def eval_reference_answer_and_scoring_points_with_llm(pred: Any, reference_answer: str, scoring_points: List[str], question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = 0.0, ignore_order: bool = True, **kwargs) -> float:
+def eval_reference_answer_and_scoring_points_with_llm(pred: Any, reference_answer: str, scoring_points: List[str], question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, ignore_order: bool = True, **kwargs) -> float:
     """ Evaluate the reference answer and scoring points with LLM.
     @param:
         pred: The predicted answer.
