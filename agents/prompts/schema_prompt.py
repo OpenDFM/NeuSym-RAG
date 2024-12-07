@@ -90,7 +90,7 @@ def convert_vectorstore_schema_to_prompt(vectorstore: str, serialize_method: str
 
     if serialize_method == 'detailed_json':
         prompt = f"The vectorstore schema for {vectorstore} is as follows. You can try collections with different encoding models or modalities:\n{json.dumps(vs_schema, indent=4)}\n\n"
-        prompt += f"The following lists all encodable (table_name, column_name, encode_modality) information from the corresponding DuckDB database, where the encoded vector entries are sourced. Note that, for text modality, we directly encode cell values from the `table_name.column_name`; for image modality, we encode the cropped images for `page_number` in `pdf_id` with bounding boxes from `table_name.column_name`. You can leverage them for filter condition or output fields during similarity search:\n{json.dumps(encodable_pairs, indent=4)}\n\n"
+        prompt += f"The following lists all encodable (table_name, column_name, encode_modality) information from the corresponding DuckDB database, where the encoded vector entries are sourced. Note that, for text modality, we directly encode cell values from the `table_name.column_name`; for image modality, we encode the cropped images for `page_number` in `pdf_id` with bounding boxes from `table_name.column_name`. You can leverage them for filter condition during similarity search:\n{json.dumps(encodable_pairs, indent=4)}\n\n"
         prompt += f"Here are the operators that you can use in the filtering condition for the vectorstore:\n{json.dumps(filter_rules, indent=4)}"
     else:
         raise ValueError(f"Unsupported serialize method: {serialize_method}.")
