@@ -2,7 +2,7 @@
 from agents.envs.actions.action import Action
 from agents.envs.actions.observation import Observation
 from dataclasses import dataclass, field
-import duckdb
+import duckdb,tiktoken
 import pandas as pd
 import gymnasium as gym
 from typing import Optional, List, Tuple, Dict, Union, Any
@@ -17,6 +17,7 @@ class RetrieveFromDatabase(Action):
         "output_format": "json", # output format for the SQL execution result, chosen from ['markdown', 'string', 'html', 'json'], default is 'markdown'
         "tablefmt": "pretty", # for markdown format, see doc https://pypi.org/project/tabulate/ for all options
         "max_rows": 10, # maximum rows to display in the output
+        "max_tokens": 5000, # maximum tokens to display in the output
         "index": False, # whether to include the row index in the output
         "max_timeout": 600 # the maximum timeout for the SQL execution is 10 minutes
     }, repr=False) # keyword arguments for SQL execution formatting
@@ -46,13 +47,38 @@ class RetrieveFromDatabase(Action):
 
             conn: duckdb.DuckDBPyConnection = env.database_conn # get the database connection
             result: pd.DataFrame = conn.execute(sql).fetchdf() # execute the SQL query and fetch the result
-            max_rows = format_kwargs['max_rows']
-            suffix = f'\n... # only display {max_rows} rows from {result.shape[0]} returned rows in {output_format.upper()} format, more are truncated due to length constraint' if \
-                result.shape[0] > max_rows else f'\nIn total, {result.shape[0]} rows are displayed in {output_format.upper()} format.'
-            result = result.head(max_rows)
 
             if result.empty:
                 return "[Warning]: The SQL execution result is empty, please check the SQL first."
+            
+            max_rows = format_kwargs["max_rows"]
+            max_tokens = format_kwargs["max_tokens"]
+            
+            # Token&row-based filtering
+            cumulative_tokens = 0
+            filtered_rows = []
+            truncation_reason=''
+            llmencoder = tiktoken.get_encoding("cl100k_base")  
+            for index, row in result.iterrows():
+                row_text = row.to_string() 
+                row_tokens =  len(llmencoder.encode(row_text)) 
+                # Check if we exceeded either row or token limit
+                if len(filtered_rows) >= max_rows:
+                    truncation_reason = f"based on max_rows ({max_rows})"
+                    break
+                if cumulative_tokens + row_tokens > max_tokens:
+                    truncation_reason = f"based on max_tokens ({max_tokens})"
+                    break
+
+                filtered_rows.append(row)
+                cumulative_tokens += row_tokens
+
+            # Determine suffix based on truncation reason
+            suffix = f'\n... # only display {len(filtered_rows)} rows in {output_format.upper()} format, more are truncated due to length constraint {truncation_reason}' if truncation_reason else f'\nIn total, {result.shape[0]} rows are displayed in {output_format.upper()} format.'
+
+            # Create filtered DataFrame
+            result = pd.DataFrame(filtered_rows, columns=result.columns)
+            
 
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options

@@ -454,7 +454,7 @@ def encoding_database_content(vs_conn: MilvusClient, db_conn: duckdb.DuckDBPyCon
                 documents, records = [], []
 
             for row in result:
-                record = {'table_name': table_name, 'column_name': column_name}
+                record = {'table_name': table_name, 'column_name': column_name, 'pdf_id': '', 'page_number': -1, 'primary_key': ''}
                 if len(extra_fields) == 2:
                     pdf_id, page_id = str(row[1]), str(row[2])
                     record['pdf_id'] = pdf_id

@@ -1,0 +1,29 @@
+{
+    "uuid": "b15e2f1e-a31c-58b9-8d53-1910e0d28391",
+    "question": "On what devices is StreamVoice trained?",
+    "answer_format": "Your answer should be a plein text directly from the PDF without explanation.",
+    "tags": [
+        "single-doc details",
+        "text understanding"
+    ],
+    "pdf_id": [
+        "039b3a9f-1e97-5579-bc23-fcd0d2f01c19"
+    ],
+    "conference": [
+        "acl2024"
+    ],
+    "reasoning_steps": [
+        "Locate the section where training details are provided.",
+        "Read the section to find the devices used for training."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "StreamVoice is trained using 8 V100 GPUs with a batch size of 7 utterances per GPU for 700k steps.",
+            "question": "On what devices is StreamVoice trained?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}

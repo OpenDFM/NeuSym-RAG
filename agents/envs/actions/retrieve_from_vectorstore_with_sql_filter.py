@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from pymilvus import MilvusClient
 from milvus_model.base import BaseEmbeddingFunction
 import pandas as pd
-import duckdb
+import duckdb,tiktoken
 import gymnasium as gym
 from dataclasses import dataclass, field
 from typing import Optional, List, Tuple, Dict, Union, Any
@@ -28,6 +28,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
         "batch_size": 512, # batch size for vector search, primary_key in [...batch_size values...]
         "max_filter": 512000, # maximum number of filter primary key values to use in vector search, number of batches (or vectorstore.search() function calls) should be max_filter // batch_size
         "max_rows": 10, # maximum rows to display in the output
+        "max_tokens": 5000, # maximum tokens to display in the output
         "index": False, # whether to include the row index in the output
         "max_timeout": 1200 # the maximum timeout for the SQL execution is 20 minutes
     }, repr=False)
@@ -209,13 +210,32 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
 
             output_format = format_kwargs['output_format']
             assert output_format in ['markdown', 'string', 'html', 'json'], "Vectorstore search output format must be chosen from ['markdown', 'string', 'html', 'json']."
-
-            max_rows = format_kwargs['max_rows']
-            suffix = f'\n... # only display {max_rows} retrieved entries from {len(search_result)} records in {output_format.upper()} format, more are truncated due to length constraint' if len(search_result) > max_rows else f'\nIn total, {len(search_result)} retrieved entries are displayed in {output_format.upper()} format.'
-
+            
+            max_rows = format_kwargs["max_rows"]
+            max_tokens = format_kwargs["max_tokens"]
             # post-process the search result
             df = pd.DataFrame(search_result)
-            df = df.head(max_rows)
+            cumulative_tokens = 0
+            filtered_rows = []
+            truncation_reason=''
+            llmencoder = tiktoken.get_encoding("cl100k_base")  
+            for index, row in df.iterrows():
+                row_text = row.to_string() 
+                row_tokens =  len(llmencoder.encode(row_text)) 
+                # Check if we exceeded either row or token limit
+                if len(filtered_rows) >= max_rows:
+                    truncation_reason = f"based on max_rows ({max_rows})"
+                    break
+                if cumulative_tokens + row_tokens > max_tokens:
+                    truncation_reason = f"based on max_tokens ({max_tokens})"
+                    break
+
+                filtered_rows.append(row)
+                cumulative_tokens += row_tokens
+
+            suffix = f'\n... # only display {len(filtered_rows)} rows in {output_format.upper()} format, more are truncated due to length constraint {truncation_reason}' if truncation_reason else f'\nIn total, {df.shape[0]} rows are displayed in {output_format.upper()} format.'
+            df = pd.DataFrame(filtered_rows, columns=df.columns)  # Create filtered DataFrame   
+
             if len(self.output_fields) == 0: # remove entity field
                 df = df.drop(columns=['entity'])
             else: # resolve the nested entity field

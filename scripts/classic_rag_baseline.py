@@ -12,6 +12,7 @@ from utils.eval_utils import evaluate, print_result
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
 parser.add_argument('--vectorstore', type=str, default='ai_research', help='which vectorstore to use')
+parser.add_argument('--launch_method', type=str, default='standalone', choices=['standalone', 'docker'], help='launch method for vectorstore, chosen from ["docker", "standalone"]. Note that, for Windows OS, can only choose "docker".')
 parser.add_argument('--test_data', type=str, default='test_data_sample.jsonl', help='test data file')
 parser.add_argument('--table_name', type=str, default='chunks', help='which table to use, if not specified, use all tables under the database')
 parser.add_argument('--column_name', type=str, default='text_content', help='which column to use, if not specified, use all encodable columns under the table')
@@ -48,7 +49,7 @@ logger.setLevel(logging.INFO)
 
 
 llm: LLMClient = infer_model_class(args.llm)()
-env: AgentEnv = ENVIRONMENTS['text2vec'](dataset=args.dataset, vectorstore=args.vectorstore)
+env: AgentEnv = ENVIRONMENTS['text2vec'](dataset=args.dataset, vectorstore=args.vectorstore, launch_method=args.launch_method)
 agent: AgentBase = FRAMEWORKS['classic_rag'](llm, env, agent_method=args.agent_method)
 
 test_data = []
@@ -70,7 +71,7 @@ for data in test_data:
     result = agent.interact(
         question, answer_format,
         table_name=args.table_name, column_name=args.column_name,
-        pdf_id=data['pdf_id'], page_number=data['page_number'],
+        pdf_id=data['pdf_id'], page_number=data.get('page_number', None),
         collection_name=args.collection_name, limit=args.limit,
         model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens,
         output_path=output_path

@@ -1,5 +1,7 @@
 #coding=utf8
 import json, requests, shutil, uuid, tempfile, subprocess, sys, os, re, logging
+import urllib, urllib.request
+import xmltodict
 from bs4 import BeautifulSoup
 from typing import List, Union, Optional, Tuple, Any, Dict
 import fitz, pymupdf # PyMuPDF
@@ -284,7 +286,7 @@ def extract_metadata_from_scholar_api(
         api_tools: List[str] = ['dblp', 'semantic-scholar', 'arxiv'],
         **kwargs
     ) -> Dict[str, Any]:
-    """ Given the title of one paper, extract its metadata from provided scholar APIs.
+    """ Given the title or the arxiv id of one paper, extract its metadata from provided scholar APIs.
     @param:
         title: str, the title of the paper
         api_tool: List[str], the list of scholar API tools to use, each element is chosen from
@@ -309,8 +311,59 @@ def extract_metadata_from_scholar_api(
     return None
 
 
-def arxiv_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
-    pass
+def arxiv_scholar_api(arxiv_id: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
+    """ Given the arxiv_id of one paper, extract its metadata from arxiv API.
+    @param:
+        arxiv_id: str, the arxiv_id of the paper
+        **kwargs: Dict[str, Any], other arguments that will be directly passed to the arxiv API
+            - limit: int, the maximum number of search results to return, by default 10
+            - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 95
+    @return: metadata dict
+        see doc in `get_ai_research_metadata`
+    """
+    ARXIV_API_URL = 'http://export.arxiv.org/api/query'
+    ARXIV_PDF_URL = 'https://arxiv.org/pdf'
+    options = {
+        "search_query": arxiv_id,
+        "start": 0,
+        "max_results": max(1, kwargs.get('limit', 10))
+    }
+    search_url = f'{ARXIV_API_URL}?{urlencode(options)}'
+    try:
+        xml_response = urllib.request.urlopen(search_url)
+    except Exception as e:
+        logger.error(f"An unexpected error occurred during calling ARXIV API to search `{search_url}`: {e}")
+        return None
+    
+    xml_string = xml_response.read().decode('utf-8')
+    
+    data = xmltodict.parse(xml_string).get("feed", {}).get("entry", {})
+    if data == {}:
+        logger.error(f"Failed to find paper {arxiv_id} using ARXIV API.")
+        return None
+    
+    title, subfolder = data["title"], "arxiv"
+    paper_uuid = get_airqa_paper_uuid(title, subfolder)
+    pdf_path = os.path.join(AIRQA_DIR, 'papers', subfolder, f'{paper_uuid}.pdf')
+    pdf_url = f"{ARXIV_PDF_URL}/{arxiv_id}"
+    authors = [author["name"] for author in data["author"]]
+    abstract = data["summary"]
+    year = data["published"][:4]
+    
+    metadata = {
+        "uuid": paper_uuid,
+        "title": title,
+        "conference": "arxiv",
+        "conference_full": "arxiv",
+        "volume": None,
+        "year": year,
+        "authors": authors,
+        "pdf_url": pdf_url,
+        "pdf_path": pdf_path,
+        "bibtex": None,
+        "abstract": abstract
+    }
+    return metadata
 
 
 def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:

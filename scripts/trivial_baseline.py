@@ -63,7 +63,7 @@ for data in test_data:
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
     result = agent.interact(
         question, answer_format,
-        pdf_id=data['pdf_id'], page_number=data['page_number'], max_length=args.max_length,
+        pdf_id=data['pdf_id'], page_number=data.get('page_number', None), max_length=args.max_length,
         model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens,
         output_path=output_path
     )

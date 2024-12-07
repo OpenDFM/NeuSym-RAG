@@ -55,12 +55,6 @@
                 "required": false,
                 "default": 5,
                 "description": "The number of top-ranked context to retrieve. Please set it to a positive integer to limit the number of returned results. Extremely large limit values may be truncated."
-            },
-            "output_fields": {
-                "type": "List[str]",
-                "required": false,
-                "default": [],
-                "description": "The fields to return in the output. By default, the `text` field will be returned for text type collections and the `bbox` field will be returned for image type collections if this parameter is empty. And the `id` and `distance/score` for each retrieved entry will also be returned."
             }
         },
         "use_cases": [
@@ -71,25 +65,18 @@
                     "table_name": "chunks",
                     "column_name": "text_content",
                     "filter": "pdf_id == '12345678' and page_number == 1",
-                    "limit": 10,
-                    "output_fields": [
-                        "text"
-                    ]
+                    "limit": 10
                 },
-                "explanation": "Search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with the filter condition `table_name == 'chunks' and column_name == 'text_content' and pdf_id == '12345678' and page_number == 1` to restrict the content source and return the top 10 relevant context with the `text` field."
+                "explanation": "Search the entire collection `text_bm25_en`, which use BM25 sparse embeddings, with the filter condition `table_name == 'chunks' and column_name == 'text_content' and pdf_id == '12345678' and page_number == 1` to restrict the content source and return the top 10 relevant entries."
             },
             {
                 "example": {
                     "query": "Is there any work about the topic structured RAG?",
                     "collection_name": "text_sentence_transformers_all_minilm_l6_v2",
                     "table_name": "papers",
-                    "column_name": "abstract",
-                    "output_fields": [
-                        "text",
-                        "primary_key"
-                    ]
+                    "column_name": "abstract"
                 },
-                "explanation": "Perform a similarity search on all cell values from the `abstract` column of the `papers` table in the relational database, using the MiniLM-L6-v2 setence transformer embeddings. By default, the top 5 most relevant entries will be returned based on vector similarity. Each result includes the abstract text and the corresponding primary key from the `papers` table to uniquely identify the cell."
+                "explanation": "Perform a similarity search on all cell values from the `abstract` column of the `papers` table in the relational database, using the MiniLM-L6-v2 setence transformer embeddings. By default, the top 5 most relevant entries will be returned based on vector similarity."
             }
         ]
     },

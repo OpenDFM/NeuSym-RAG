@@ -1,0 +1,34 @@
+{
+    "uuid": "38a692e8-8566-539a-aecd-b3e7df04dbcf",
+    "question": "According to the methods proposed by this paper,how to calculate the bias Scores when aggregating attributions for tokens, instances and instructions respectively?",
+    "answer_format": "Your answer should be a python list of three elements, every element is a formula string in latex format.",
+    "tags": [
+        "single-doc details",
+        "formula inference"
+    ],
+    "pdf_id": [
+        "2b003f7e-a995-57d1-af78-78432ed96561"
+    ],
+    "conference": [
+        "acl2024"
+    ],
+    "reasoning_steps": [
+        "Locate the sections about the aggregation of bias scores.",
+        "Extract formulas that correspond to aggregating tokens, instances and instructions respectively."
+    ],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": [
+                "$$\\nB_{i}^{(\\iota,x_{j})}(h)=\\operatorname*{max}_{k}B_{i}^{(\\iota,x_{j},t_{k})}(h)\n$$",
+                "$$\\n\\begin{array}{c}{{B_{i}^{(\\iota,\\mathcal{D})}(h)=\\displaystyle\\sum_{j}^{N}\\alpha^{(\\iota,x_{j})}B_{i}^{(\\iota,x_{j})}(h)}}\\\\ {{\\alpha^{(\\iota,x_{j})}=\\mathcal{P}(\\hat{y_{j}}|\\iota,x_{j})}}\\end{array}\\n$$",
+                "$$\\nB_{i}^{(\\mathbb{Z},\\mathcal{D})}(h)=\\frac{1}{M}\\sum_{\\iota}^{\\mathcal{Z}}B_{i}^{(\\iota,\\mathcal{D})}(h)\\n$$"
+            ],
+            "question":"According to the methods proposed by this paper,how to calculate the bias Scores when aggregating attributions for tokens, instances and instructions respectively?",
+            "ignore_order": false
+        }
+    },
+    "state": {
+        "gpt-4o-2024-11-20": false
+    }
+}

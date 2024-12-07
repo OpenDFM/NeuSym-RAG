@@ -8,6 +8,7 @@ import gymnasium as gym
 from dataclasses import dataclass, field
 from typing import Optional, List, Tuple, Dict, Union, Any
 from func_timeout import func_set_timeout, FunctionTimedOut
+import tiktoken
 
 
 @dataclass
@@ -18,12 +19,13 @@ class RetrieveFromVectorstore(Action):
     column_name: str = field(default='', repr=True) # column name for the context retrieval, required
     filter: str = field(default='', repr=True) # filter condition for context retrieval, optional, by default no filter
     limit: int = field(default=5, repr=True) # maximum number of context records to retrieve, optional, by default 5
-    output_fields: List[str] = field(default_factory=lambda: [], repr=True) # output fields for context retrieval. Optional, by default, return the `text` field for text vectors and `bbox` for image vectors
+    output_fields: List[str] = field(default_factory=lambda: [], repr=False) # output fields for context retrieval. Optional, by default, using all available fields
 
     observation_format_kwargs: Dict[str, Any] = field(default_factory=lambda: {
         "output_format": "json", # output format for the vectorstore search result, chosen from ['markdown', 'string', 'html', 'json'], default is 'markdown'
         "tablefmt": "pretty", # for markdown format, see doc https://pypi.org/project/tabulate/ for all options
         "max_rows": 10, # maximum rows to display in the output
+        "max_tokens": 5000, # maximum tokens to display in the output
         "index": False, # whether to include the row index in the output
         "max_timeout": 600 # the maximum timeout for the vectorstore search is 10 minutes
     }, repr=False)
@@ -64,10 +66,10 @@ class RetrieveFromVectorstore(Action):
                 self.output_fields = [str(self.output_fields)]
                 # return False, "[Error]: Value of parameter `output_fields` should be a list of strings."
         self.output_fields = [str(field) for field in self.output_fields if str(field).strip() not in ['id', 'vector', 'distance', '']] # filter useless fields
-        if len(self.output_fields) == 0:
-            # add default output fields, e.g., `text` for text collections, `bbox` for image collections, etc.
-            self.output_fields = ['text'] if self.collection_name.startswith('text') else ['bbox']
         valid_output_fields = [field['name'] for field in vs_conn.describe_collection(self.collection_name)['fields'] if field['name'] not in ['id', 'vector', 'distance']]
+        if len(self.output_fields) == 0:
+            # using all valid output fields by default
+            self.output_fields = valid_output_fields
         for field in self.output_fields:
             if field not in valid_output_fields:
                 return False, "[Error]: Output field {} is not available in the collection {} of Milvus vectorstore. The available output fields include {}".format(repr(field), repr(self.collection_name), valid_output_fields)
@@ -98,7 +100,6 @@ class RetrieveFromVectorstore(Action):
         def output_formatter(query_embedding, format_kwargs: Dict[str, Any], **kwargs) -> str:
             """ Each dict in search_result is in the format:
             {
-                "id": Union[str, int],
                 "distance": float, # rename to "distance" or "score" in the output
                 "entity": {
                     "output_field1": value1,
@@ -122,11 +123,32 @@ class RetrieveFromVectorstore(Action):
             assert output_format in ['markdown', 'string', 'html', 'json'], "Vectorstore search output format must be chosen from ['markdown', 'string', 'html', 'json']."
 
             max_rows = format_kwargs['max_rows']
-            suffix = f'\n... # only display {max_rows} retrieved entries from {len(search_result)} records in {output_format.upper()} format, more are truncated due to length constraint' if len(search_result) > max_rows else f'\nIn total, {len(search_result)} retrieved entries are displayed in {output_format.upper()} format.'
+            max_tokens = format_kwargs["max_tokens"]
 
             # post-process the search result
             df = pd.DataFrame(search_result)
-            df = df.head(max_rows)
+            cumulative_tokens = 0
+            filtered_rows = []
+            truncation_reason=''
+            llmencoder = tiktoken.get_encoding("cl100k_base")  
+            for index, row in df.iterrows():
+                row_text = row.to_string() 
+                row_tokens =  len(llmencoder.encode(row_text)) 
+                # Check if we exceeded either row or token limit
+                if len(filtered_rows) >= max_rows:
+                    truncation_reason = f"based on max_rows ({max_rows})"
+                    break
+                if cumulative_tokens + row_tokens > max_tokens:
+                    truncation_reason = f"based on max_tokens ({max_tokens})"
+                    break
+
+                filtered_rows.append(row)
+                cumulative_tokens += row_tokens
+
+            suffix = f'\n... # only display {len(filtered_rows)} rows in {output_format.upper()} format, more are truncated due to length constraint {truncation_reason}' if truncation_reason else f'\nIn total, {df.shape[0]} rows are displayed in {output_format.upper()} format.'
+            df = pd.DataFrame(filtered_rows, columns=df.columns)  # Create filtered DataFrame   
+            
+            df = df.drop(columns=['id']) # remove id field
             if len(self.output_fields) == 0: # remove entity field
                 df = df.drop(columns=['entity'])
             else: # resolve the nested entity field
@@ -143,9 +165,8 @@ class RetrieveFromVectorstore(Action):
                 msg = df.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string': # customize the result display
                 for index, row in df.iterrows():
-                    id_ = row['id']
                     score = row['score'] if metric_type in ['IP', 'COSINE'] else row['distance']
-                    header_msg = f"ID: {id_}, {'Score' if metric_type in ['IP', 'COSINE'] else 'Distance'}: {score}\n"
+                    header_msg = f"{'Score' if metric_type in ['IP', 'COSINE'] else 'Distance'}: {score}\n"
                     if format_kwargs['index']:
                         header_msg = f"Index: {index}, " + header_msg
                     msg += header_msg

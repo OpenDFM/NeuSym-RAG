@@ -5,10 +5,12 @@ from dataclasses import dataclass, field
 import base64
 import copy
 import gymnasium as gym
+import math
 import os
 import tempfile
 from typing import Optional, List, Tuple, Dict, Union, Any
 from PIL import Image
+from PyPDF2 import PdfReader
 from pdf2image import convert_from_path
 
 
@@ -41,7 +43,26 @@ class ViewImage(Action):
         except:
             return Observation('[Error]: bounding box must be a list of 0 or 4 floats.')
 
-        if env.dataset == 'pdfvqa':
+        if env.dataset == 'airqa':
+            pdf_dirname = os.path.join('data', 'dataset', 'airqa', 'papers')
+            for conference in os.listdir(pdf_dirname):
+                pdf_filename = os.path.join(pdf_dirname, conference, f'{self.paper_id}.pdf')
+                if os.path.exists(pdf_filename):
+                    break
+            else:
+                return Observation(f'[Error]: paper id {self.paper_id} does not exist.')
+            try:
+                with open(pdf_filename, 'rb') as fin:
+                    pdf_reader = PdfReader(fin)
+                    mediabox = pdf_reader.pages[self.page_number - 1].mediabox
+                    w, h = mediabox.width, mediabox.height
+                image = convert_from_path(pdf_filename)[self.page_number - 1]
+                ratio = math.sqrt(image.width * image.height / w / h)
+            except IndexError:
+                return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
+            except Exception as e:
+                return Observation(f'[Error]: {str(e)}')
+        elif env.dataset == 'pdfvqa':
             pdf_page_dirname = os.path.join('data', 'dataset', 'pdfvqa', 'processed_data', 'test_images')
             if not any(fn.startswith(f'{self.paper_id}.pdf') for fn in os.listdir(pdf_page_dirname)):
                 return Observation(f'[Error]: paper id {self.paper_id} does not exist.')
@@ -50,6 +71,7 @@ class ViewImage(Action):
                 return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
             try:
                 image = Image.open(pdf_page_filename)
+                ratio = 1
             except Exception as e:
                 return Observation(f'[Error]: {str(e)}')
         elif env.dataset == 'tatdqa':
@@ -57,7 +79,12 @@ class ViewImage(Action):
             if not os.path.exists(pdf_filename):
                 return Observation(f'[Error]: paper id {self.paper_id} does not exist.')
             try:
+                with open(pdf_filename, 'rb') as fin:
+                    pdf_reader = PdfReader(fin)
+                    mediabox = pdf_reader.pages[self.page_number - 1].mediabox
+                    w, h = mediabox.width, mediabox.height
                 image = convert_from_path(pdf_filename)[self.page_number - 1]
+                ratio = math.sqrt(image.width * image.height / w / h)
             except IndexError:
                 return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
             except Exception as e:
@@ -68,6 +95,8 @@ class ViewImage(Action):
         try:
             if self.bounding_box:
                 box = copy.deepcopy(self.bounding_box)
+                for i in range(4):
+                    box[i] *= ratio
                 box[2] += box[0]
                 box[3] += box[1]
                 image = image.crop(box)

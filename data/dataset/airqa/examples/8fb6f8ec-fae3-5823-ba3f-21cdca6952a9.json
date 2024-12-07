@@ -1,0 +1,29 @@
+{
+    "uuid": "8fb6f8ec-fae3-5823-ba3f-21cdca6952a9",
+    "question": "How do the authors split the dataset for the experiments?",
+    "answer_format": "Your answer should be a plein text.",
+    "tags": [
+        "single-doc details",
+        "text understanding"
+    ],
+    "pdf_id": [
+        "67c78c79-7878-5ff5-b5f6-45cec4ad9bf9"
+    ],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [
+        "Locate the section where experiments are mentioned.",
+        "Find the subsection which discusses the dataset split."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "For the empirical modeling analysis and performance benchmarking, we randomly split the dataset into 3 sets: train (70%), dev (5%), and test (25%) sets, while ensuring both domains (fashion and furniture) have the same split distributions.",
+            "question": "How do the authors split the dataset for the experiments?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}

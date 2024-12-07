@@ -31,7 +31,7 @@ def evaluate_dataset(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **k
     return score
 
 
-def llm_semantic_equivalent(question: str, pred_ans: str, gold_ans: str, model: str = 'qwen2.5-72b-instruct', temperature: float = 0.7, top_p: float = 0.95) -> float:
+def llm_semantic_equivalent(question: str, pred_ans: str, gold_ans: str, model: str = 'gpt-4o', temperature: float = 0.7, top_p: float = 0.95) -> float:
     prompt = """You are given the following question and answer pair, please determine whether the predicted answer is semantically-equivalent to the gold answer. Your response should be a single integer number 0 or 1, with 1 for equivalent and 0 for not equivalent (no punctuation and formatting).
 Question: {question}
 Predicted Answer: {pred_ans}
