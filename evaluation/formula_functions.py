@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Union, Tuple, Optional
 from .llm_functions import DEFAULT_LLM_MODEL, DEFAULT_TEMPERATURE, _eval_with_llm
 
 
-def eval_complex_math_formula_with_llm(pred: Any, formulas: Union[str, List[str]], question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, **kwargs) -> float:
+def eval_complex_math_formula_with_llm(pred: Any, formulas: Union[str, List[str]], question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, ignore_order: bool = True, **kwargs) -> float:
     """ Evaluate the complex math formula with LLM.
     @param:
         pred: The predicted answer.
@@ -12,6 +12,7 @@ def eval_complex_math_formula_with_llm(pred: Any, formulas: Union[str, List[str]
         question: The input question.
         llm_model: The LLM model name.
         temperature: The temperature parameter for LLM.
+        ignore_order: Whether to ignore the order of formulas.
     @return:
         The evaluation score, 0.0 or 1.0.
     """
@@ -23,7 +24,7 @@ def eval_complex_math_formula_with_llm(pred: Any, formulas: Union[str, List[str]
 - [Predicted Latex Code]: The answer generated in LaTeX format.
 **Your task is to:**
 1. Determine if the predicted LaTeX code is mathematically equivalent to the reference math formula(s).
-2. If the reference math formula is a list of formulas, ensure the predicted answer contains all of these formulas in sequential order.
+2. If the reference math formula is a list of formulas, ensure the predicted answer contains all of these formulas in {'any' if ignore_order else 'sequential'} order.
 3. Your judgment must be based on mathematical equivalence, not string-level similarity.
 **Final Output Format:**
 - You must provide the final decision in the following format:
@@ -45,4 +46,4 @@ Now, let's start!
 Let's reason step-by-step, then provide the final judgment.
 Now, let's start!
 """
-    return _eval_with_llm(template, llm_model, temperature, **kwargs)
+    return _eval_with_llm(template, llm_model, temperature)
