@@ -1,0 +1,37 @@
+{
+    "uuid": "8781817f-474b-5c15-9f77-aa85055446b9",
+    "question": "The study employs two main methods to analyze linguistic features: LIWC and BERT. What are the advantages of the two methodes respectively?",
+    "answer_format": "Your answer should be a python list of two strings.every string describes clearly the advantages of one methode.",
+    "tags": [
+        "single-doc details",
+        "text understanding"
+    ],
+    "pdf_id": [
+        "4ffd9c08-58a8-5008-8aeb-8686e4093869"
+    ],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [
+        "Locate the relevant section(s) in the specified PDF discussing LIWC and BERT methods.",
+        "Extract or analyse the advantages of LIWC and BERT."
+    ],
+    "evaluator": {
+        "eval_func": "eval_partial_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "Interpretability of LIWC: LIWC categories have clear psychological meanings, making it easier to interpret the analysis results.",
+                "Low computational cost of LIWC: LIWC analysis only requires simple word counting, which has a low computational cost.",
+                "Ease of use of LIWC: LIWC dictionaries are easy to obtain and use, and the operation is simple.",
+                "Contextual understanding of BERT: The BERT model can capture the contextual information of words, thus understanding the meaning of words more accurately.",
+                "Stronger feature representation ability of BERT: The BERT model can generate richer feature vectors, capturing more complex linguistic features.",
+                "Better prediction performance of BERT: In some tasks, the prediction performance of the BERT model may be better than that of the LIWC model."
+            ],
+            "question": "The study employs two main methods to analyze linguistic features: LIWC and BERT. What are the advantages of the two methodes respectively?",
+            "count": 4
+        }
+    },
+    "state": {
+        "gpt-4o-2024-11-20": false
+    }
+}

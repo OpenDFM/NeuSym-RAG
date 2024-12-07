@@ -1,0 +1,29 @@
+{
+    "uuid": "5741c36f-3c84-51e1-80ac-960026dfba12",
+    "question": "According to the results, in which interval of attack budget does the ASR of SCTS saturate? Note that the interval has been indicated directly in the text.",
+    "answer_format": "Your answer should be a python list of two float, e.g [0.35,0.4]",
+    "tags": [
+        "single-doc details",
+        "text understanding"
+    ],
+    "pdf_id": [
+        "d0d476c5-880d-5b71-ae01-adc1111550a1"
+    ],
+    "conference": [
+        "acl2024"
+    ],
+    "reasoning_steps": [
+        "Firstly, locate the section(s) about experiment result, especially about attack budget.",
+        "Then identify the interval where the ASR of SCTS saturates."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [0.35, 0.45],
+            "ignore_order": false
+        }
+    },
+    "state": {
+        "gpt-4o-2024-11-20": false
+    }
+}
