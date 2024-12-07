@@ -3,12 +3,14 @@ from agents.envs.actions.action import Action, Observation
 from dataclasses import dataclass, field
 from pymilvus import MilvusClient
 from milvus_model.base import BaseEmbeddingFunction
+import json, os
 import pandas as pd
 import gymnasium as gym
 from dataclasses import dataclass, field
 from typing import Optional, List, Tuple, Dict, Union, Any
 from func_timeout import func_set_timeout, FunctionTimedOut
 import tiktoken
+from transformers import AutoTokenizer
 
 
 @dataclass
@@ -32,6 +34,14 @@ class RetrieveFromVectorstore(Action):
 
     def _validate_parameters(self, env: gym.Env) -> Tuple[bool, str]:
         self.query, self.collection_name, self.table_name, self.column_name, self.filter = str(self.query), str(self.collection_name), str(self.table_name), str(self.column_name), str(self.filter)
+
+        embed_model_path = env.embedder_dict[self.collection_name]['embed_model']
+        with open(os.path.join(embed_model_path, 'config.json'), 'r', encoding='utf-8') as fin:
+            query_max_tokens = json.load(fin)['text_config']['max_position_embeddings']
+        tokenizer = AutoTokenizer.from_pretrained(embed_model_path)
+        if len(tokenizer.encode(self.query)) > query_max_tokens:
+            return False, "[Error]: The query string is too long. You can try to shorten it."
+
         if type(self.limit) != int:
             try:
                 self.limit = int(str(self.limit))
