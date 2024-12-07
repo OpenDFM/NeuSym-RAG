@@ -17,7 +17,7 @@ parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='te
 parser.add_argument('--table_name', type=str, default='chunks', help='which table to use, if not specified, use all tables under the database')
 parser.add_argument('--column_name', type=str, default='text_content', help='which column to use, if not specified, use all encodable columns under the table')
 parser.add_argument('--collection_name', type=str, default='text_sentence_transformers_all_minilm_l6_v2', help='which collection to use')
-parser.add_argument('--limit', type=int, default=2, help='limit the number of returned results')
+parser.add_argument('--limit', type=int, default=5, help='limit the number of returned results')
 parser.add_argument('--agent_method', type=str, default='classic_rag', help='Agent method')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
 parser.add_argument('--temperature', type=float, default=0.7)
