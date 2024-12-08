@@ -39,6 +39,8 @@ result_dir = os.path.join(args.result_dir, filename)
 os.makedirs(result_dir, exist_ok=True)
 
 logger = logging.getLogger()
+if logger.hasHandlers():
+    logger.handlers.clear()
 handler = logging.StreamHandler(sys.stdout)
 file_handler = logging.FileHandler(os.path.join(result_dir, 'log.txt'), encoding='utf-8')
 formatter = logging.Formatter(

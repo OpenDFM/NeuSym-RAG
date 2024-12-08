@@ -164,6 +164,7 @@ class RetrieveFromVectorstore(Action):
                 df = df.drop(columns=['entity'])
             else: # resolve the nested entity field
                 df_entity = pd.json_normalize(df['entity'])
+                df_entity = df_entity[self.output_fields]
                 df = df.drop(columns=['entity']).join(df_entity)
             if metric_type in ['IP', 'COSINE']:
                 df = df.rename(columns={'distance': 'score'})
