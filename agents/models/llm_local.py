@@ -1,5 +1,5 @@
 #coding=utf8
-import os
+import copy, os
 from typing import List, Dict, Tuple, Any, Optional
 from openai.types.chat.chat_completion import ChatCompletion
 from openai import OpenAI
@@ -21,9 +21,17 @@ class LocalClient(LLMClient):
 
 
     def convert_message_from_gpt_format(self, messages: List[Dict[str, str]]) -> List[Dict[str, str]]:
-        """ Preserve the original GPT-style message format.
+        """ Keep only the last image.
         """
-        return messages
+        new_messages = copy.deepcopy(messages)
+        flag_image = False
+        for i in range(len(new_messages) - 1, -1, -1):
+            if isinstance(new_messages[i]['content'], list):
+                if flag_image:
+                    new_messages[i]['content'] = '[Observation]: The extracted image is omitted.'
+                else:
+                    flag_image = True
+        return new_messages
 
 
     def update_usage(self, completion: ChatCompletion) -> None:
