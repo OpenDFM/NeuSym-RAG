@@ -1,0 +1,29 @@
+{
+    "uuid": "50f6e66a-aa2a-56ee-bb54-d2ade82a95ad",
+    "question": "What success rate does MapGPT(with GPT-4V) achieve on the validation unseen set of the R2R dataset?",
+    "answer_format": "Your answer should be a single float.",
+    "tags": [
+        "single-doc details",
+        "text understanding"
+    ],
+    "pdf_id": [
+        "0a412245-e6a6-5d0d-a25d-5b79b8c4faaf"
+    ],
+    "conference": [
+        "acl2024"
+    ],
+    "reasoning_steps": [
+        "Firstly, locate the section(s) or page(s) about the experiment results.",
+        "If necessary, find the table concerning results on the validation unseen set of R2R dataset.",
+        "Finally, identify the success rate  MapGPT(with GPT-4V) achieves on the specified dataset."
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 43.7
+        }
+    },
+    "state": {
+        "gpt-4o-2024-11-20": false
+    }
+}
