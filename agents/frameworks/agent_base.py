@@ -43,7 +43,7 @@ class AgentBase(ABC):
         return text
 
 
-    def forward(self, messages: List[Dict[str, Any]], model: str = '', temperature: float = 0.7, top_p: float = 0.95, max_tokens: int = 1500, window_size: int = 3, output_path: Optional[str] = None, output_kwargs: Dict[str, Any] = {}) -> str:
+    def forward(self, messages: List[Dict[str, Any]], model: str = '', temperature: float = 0.7, top_p: float = 0.95, max_tokens: int = 1500, window_size: int = 3, message_max_tokens: int = 30000, output_path: Optional[str] = None, output_kwargs: Dict[str, Any] = {}) -> str:
         prev_cost = self.model.get_cost()
         self.env.reset()
 
@@ -51,6 +51,20 @@ class AgentBase(ABC):
             if len(messages) > (window_size + 1) * 2: # each turn has two messages from assistant and user, respectively
                 current_messages = messages[:2] + messages[-window_size * 2:]
             else: current_messages = messages
+
+            if len(current_messages) > 2:
+                current_tokens = 0
+                truncated_messages = current_messages[:2]  
+                for i in range(len(current_messages) - 2, 1, -2): 
+                    pair = current_messages[i-1:i+1]  
+                    pair_tokens = sum(len(tiktoken.get_encoding('cl100k_base').encode(message['content'])) for message in pair)
+                    if current_tokens + pair_tokens > message_max_tokens:
+                        break
+                    truncated_messages.insert(2, pair[1])  
+                    truncated_messages.insert(2, pair[0])  
+                    current_tokens += pair_tokens
+                current_messages = truncated_messages
+
             logger.info(f'[Interaction Turn]: {turn + 1}')
 
             response = self.model.get_response(current_messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
