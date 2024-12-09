@@ -143,7 +143,7 @@ class RetrieveFromVectorstore(Action):
             truncation_reason=''
             llmencoder = tiktoken.get_encoding("cl100k_base")  
             for index, row in df.iterrows():
-                row_text = row.to_string() 
+                row_text = "\n".join([f"{col}: {row[col]}" for col in row.index])
                 row_tokens =  len(llmencoder.encode(row_text)) 
                 # Check if we exceeded either row or token limit
                 if len(filtered_rows) >= max_rows:
