@@ -24,7 +24,7 @@ class LLMClient(abc.ABC):
 
 
     @abc.abstractmethod
-    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]]) -> List[Dict[str, str]]:
+    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: Optional[str] = None) -> List[Dict[str, str]]:
         """ Convert the messages to the format that the LLM model can understand.
         """
         pass
@@ -53,7 +53,7 @@ class LLMClient(abc.ABC):
         if cached_response is not None: # hit cache
             return cached_response
         else:
-            messages = self.convert_message_from_gpt_format(messages)
+            messages = self.convert_message_from_gpt_format(messages, model)
             response = self._get_response(messages, model, temperature, top_p, max_tokens)
             self.cache.insert(hashed_key, params, response)
             return response
