@@ -53,8 +53,8 @@ class AgentBase(ABC):
             else: current_messages = messages
 
             if model == "qwen2-vl-72b-instruct" and len(current_messages) > 2 :
-                current_tokens = 0
-                truncated_messages = current_messages[:2]  
+                truncated_messages = current_messages[:2] 
+                current_tokens = sum(len(tiktoken.get_encoding('cl100k_base').encode(str(message))) for message in truncated_messages) 
                 for i in range(len(current_messages) - 1, 1, -2): 
                     pair = current_messages[i-1:i+1]  
                     pair_tokens = sum(len(tiktoken.get_encoding('cl100k_base').encode(str(message))) for message in pair)
