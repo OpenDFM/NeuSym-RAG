@@ -66,8 +66,8 @@ class RetrieveFromVectorstore(Action):
         modality = env.table2encodable[self.table_name][self.column_name]
         if not self.collection_name.startswith(modality):
             valid_collections = [collection for collection in vs_conn.list_collections() if collection.startswith(modality)]
-            if str(modality) == "image":
-                valid_collections = []
+            # if str(modality) == "image":
+            #     valid_collections = []
             return False, f"[Error]: Column '{self.table_name}.{self.column_name}' should be encoded as {modality} vectors, but the collection name {repr(self.collection_name)} does not match the modality {repr(modality)}. Please choose from these collections: {valid_collections}."
 
         is_valid_output_fields = lambda x: type(x) == list and all([type(field) == str for field in x])
