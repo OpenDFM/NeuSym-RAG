@@ -28,7 +28,7 @@ class GPTClient(LLMClient):
         self._client: OpenAI = OpenAI(api_key=api_key, base_url=base_url)
 
 
-    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]]) -> List[Dict[str, str]]:
+    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: Optional[str] = None) -> List[Dict[str, str]]:
         """ Preserve the original GPT-style message format.
         """
         return messages
