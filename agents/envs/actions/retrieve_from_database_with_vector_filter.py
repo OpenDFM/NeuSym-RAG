@@ -109,14 +109,14 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
                 filter_condition += f" and ({self.filter})"
             vs_search_result: List[Dict[str, Any]] = vs_conn.search(self.collection_name, query_embedding, limit=self.limit, filter=filter_condition, output_fields=['primary_key'])[0] # only one query
             return vs_search_result
-        
+
         try:
             vs_search_result = vector_search(vs_conn, query_embedding, forceTimeout=max_timeout)
         except FunctionTimedOut as e:
             return Observation(f"[TimeoutError]: The vectorstore search is TIMEOUT given maximum {max_timeout} seconds.")
         except Exception as e:
             return Observation(f"[Error]: Runtime error during vectorstore search. {str(e)}")
-        
+
         msg = ""
         if len(vs_search_result) == 0:
             return Observation(f"[Warning]: No relevant context records retrieved for the input query: {self.query}.")
@@ -172,22 +172,21 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
                 df.loc[:, col] = df[col].astype(str).str.encode('utf-8', errors='ignore').str.decode('utf-8')
             return df
 
-        
         def output_formatter(db_df: pd.DataFrame, format_kwargs: Dict[str, Any]) -> str:
             output_format = format_kwargs['output_format']
             assert output_format in ['markdown', 'string', 'html', 'json'], "SQL execution output format must be chosen from ['markdown', 'string', 'html', 'json']."
 
             max_rows = format_kwargs["max_rows"]
             max_tokens = format_kwargs["max_tokens"]
-            
+
             # Token&row-based filtering
             cumulative_tokens = 0
             filtered_rows = []
             truncation_reason=''
-            llmencoder = tiktoken.get_encoding("cl100k_base")  
+            llmencoder = tiktoken.get_encoding("cl100k_base")
             for index, row in db_df.iterrows():
-                row_text = row.to_string() 
-                row_tokens =  len(llmencoder.encode(row_text)) 
+                row_text = "\n".join([f"{col}: {row[col]}" for col in row.index])
+                row_tokens = len(llmencoder.encode(row_text))
                 # Check if we exceeded either row or token limit
                 if len(filtered_rows) >= max_rows:
                     truncation_reason = f"based on max_rows ({max_rows})"
@@ -204,7 +203,7 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
 
             # Create filtered DataFrame
             db_df = pd.DataFrame(filtered_rows, columns=db_df.columns)
-            
+
             msg = f"[Stage 2]: The retrieved SQL execution results from the database in the second stage:\n"
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options

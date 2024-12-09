@@ -12,14 +12,14 @@ class LocalClient(LLMClient):
     }
 
     model_info: Dict[str, Any] = {
-            'qwen2-vl-72b-instruct': {
-                'HF_path':'Qwen/Qwen2-VL-72B-Instruct'
-            },
-            'qwen2.5-72b-instruct': {
-                'HF_path':'Qwen/Qwen2.5-72B-Instruct'
-            }
+        'qwen2-vl-72b-instruct': {
+            'HF_path':'Qwen/Qwen2-VL-72B-Instruct'
+        },
+        'qwen2.5-72b-instruct': {
+            'HF_path':'Qwen/Qwen2.5-72B-Instruct'
         }
-    
+    }
+
     def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None) -> None:
         super(LocalClient, self).__init__()
         if api_key is None:
@@ -29,7 +29,7 @@ class LocalClient(LLMClient):
         self._client: OpenAI = OpenAI(api_key=api_key, base_url=base_url)
 
 
-    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: str = 'qwen2-vl-72b-instruct') -> List[Dict[str, str]]:
+    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: Optional[str] = None) -> List[Dict[str, str]]:
         """ Keep only the last image.
             Truncate the message according to token limit.
         """
@@ -45,15 +45,15 @@ class LocalClient(LLMClient):
         tokenizer = AutoTokenizer.from_pretrained(self.model_info[model]['HF_path'])
         message_max_tokens = tokenizer.model_max_length
         if len(new_messages) > 2 :
-            truncated_messages = new_messages[:2] 
-            current_tokens = sum(len(tokenizer.encode(str(message))) for message in truncated_messages) 
-            for i in range(len(new_messages) - 1, 1, -2): 
-                pair = new_messages[i-1:i+1]  
+            truncated_messages = new_messages[:2]
+            current_tokens = sum(len(tokenizer.encode(str(message))) for message in truncated_messages)
+            for i in range(len(new_messages) - 1, 1, -2):
+                pair = new_messages[i-1:i+1]
                 pair_tokens = sum(len(tokenizer.encode(str(message))) for message in pair)
                 if current_tokens + pair_tokens > message_max_tokens:
                     break
-                truncated_messages.insert(2, pair[1])  
-                truncated_messages.insert(2, pair[0])  
+                truncated_messages.insert(2, pair[1])
+                truncated_messages.insert(2, pair[0])
                 current_tokens += pair_tokens
             new_messages = truncated_messages
 
