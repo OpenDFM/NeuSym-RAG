@@ -14,6 +14,9 @@ class LocalClient(LLMClient):
     model_info: Dict[str, Any] = {
             'qwen2-vl-72b-instruct': {
                 'HF_path':'Qwen/qwen2-vl-72b-instruct'
+            },
+            'qwen2.5-72b-instruct': {
+                'HF_path':'Qwen/qwen2.5-72b-instruct'
             }
         }
     
@@ -52,7 +55,6 @@ class LocalClient(LLMClient):
                 truncated_messages.insert(2, pair[1])  
                 truncated_messages.insert(2, pair[0])  
                 current_tokens += pair_tokens
-                print('---------')
             new_messages = truncated_messages
 
         return new_messages
