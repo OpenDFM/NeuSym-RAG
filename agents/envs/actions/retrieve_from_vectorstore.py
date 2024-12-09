@@ -143,10 +143,10 @@ class RetrieveFromVectorstore(Action):
             cumulative_tokens = 0
             filtered_rows = []
             truncation_reason=''
-            llmencoder = tiktoken.get_encoding("cl100k_base")  
+            llmencoder = tiktoken.get_encoding("cl100k_base")
             for index, row in df.iterrows():
                 row_text = "\n".join([f"{col}: {row[col]}" for col in row.index])
-                row_tokens =  len(llmencoder.encode(row_text)) 
+                row_tokens = len(llmencoder.encode(row_text))
                 # Check if we exceeded either row or token limit
                 if len(filtered_rows) >= max_rows:
                     truncation_reason = f"based on max_rows ({max_rows})"
@@ -159,8 +159,8 @@ class RetrieveFromVectorstore(Action):
                 cumulative_tokens += row_tokens
 
             suffix = f'\n... # only display {len(filtered_rows)} rows in {output_format.upper()} format, more are truncated due to length constraint {truncation_reason}' if truncation_reason else f'\nIn total, {df.shape[0]} rows are displayed in {output_format.upper()} format.'
-            df = pd.DataFrame(filtered_rows, columns=df.columns)  # Create filtered DataFrame   
-            
+            df = pd.DataFrame(filtered_rows, columns=df.columns)  # Create filtered DataFrame
+
             df = df.drop(columns=['id']) # remove id field
             if len(self.output_fields) == 0: # remove entity field
                 df = df.drop(columns=['entity'])

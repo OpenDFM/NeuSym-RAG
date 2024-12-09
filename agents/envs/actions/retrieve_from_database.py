@@ -50,18 +50,18 @@ class RetrieveFromDatabase(Action):
 
             if result.empty:
                 return "[Warning]: The SQL execution result is empty, please check the SQL first."
-            
+
             max_rows = format_kwargs["max_rows"]
             max_tokens = format_kwargs["max_tokens"]
-            
+
             # Token&row-based filtering
             cumulative_tokens = 0
             filtered_rows = []
             truncation_reason=''
-            llmencoder = tiktoken.get_encoding("cl100k_base")  
+            llmencoder = tiktoken.get_encoding("cl100k_base")
             for index, row in result.iterrows():
-                row_text = row.to_string() 
-                row_tokens =  len(llmencoder.encode(row_text)) 
+                row_text = "\n".join([f"{col}: {row[col]}" for col in row.index])
+                row_tokens = len(llmencoder.encode(row_text))
                 # Check if we exceeded either row or token limit
                 if len(filtered_rows) >= max_rows:
                     truncation_reason = f"based on max_rows ({max_rows})"
@@ -78,7 +78,6 @@ class RetrieveFromDatabase(Action):
 
             # Create filtered DataFrame
             result = pd.DataFrame(filtered_rows, columns=result.columns)
-            
 
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
