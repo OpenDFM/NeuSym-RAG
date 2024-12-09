@@ -86,4 +86,4 @@ class AgentBase(ABC):
             with open(output_path, 'w', encoding='utf-8') as f:
                 for m in messages:
                     f.write(json.dumps(m, ensure_ascii=False) + '\n')
-        return obs.obs_content
+        return self.truncate_tokens(str(obs.obs_content))

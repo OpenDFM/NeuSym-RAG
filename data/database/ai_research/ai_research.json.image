@@ -168,7 +168,8 @@
                 {
                     "column_name": "bounding_box",
                     "column_type": "INTEGER[4]",
-                    "description": "The bounding box of the figure in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height which are used to determine the shape of the rectangle."
+                    "description": "The bounding box of the figure in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height which are used to determine the shape of the rectangle.",
+                    "encodable": "image"
                 },
                 {
                     "column_name": "ordinal",
@@ -283,7 +284,8 @@
                 {
                     "column_name": "bounding_box",
                     "column_type": "INTEGER[4]",
-                    "description": "The bounding box of the table in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height."
+                    "description": "The bounding box of the table in the format [x0, y0, w, h], where (x0, y0) represents the coordinates of the top-left corner and (w, h) represents the width and height.",
+                    "encodable": "image"
                 },
                 {
                     "column_name": "ordinal",
