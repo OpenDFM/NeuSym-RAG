@@ -13,10 +13,10 @@ class LocalClient(LLMClient):
 
     model_info: Dict[str, Any] = {
             'qwen2-vl-72b-instruct': {
-                'HF_path':'Qwen/qwen2-vl-72b-instruct'
+                'HF_path':'Qwen/Qwen2-VL-72B-Instruct'
             },
             'qwen2.5-72b-instruct': {
-                'HF_path':'Qwen/qwen2.5-72b-instruct'
+                'HF_path':'Qwen/Qwen2.5-72B-Instruct'
             }
         }
     
