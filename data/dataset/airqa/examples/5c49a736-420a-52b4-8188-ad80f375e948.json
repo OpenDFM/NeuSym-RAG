@@ -1,7 +1,7 @@
 {
     "uuid": "5c49a736-420a-52b4-8188-ad80f375e948",
     "question": "From which subset of ExHVV was MemeMQACorpus chosen, and why? How many questions were selected? Also, provide the changes in each role-label for the chosen subset.",
-    "answer_format": "Your answer should be a Python list of 4 elements. The first element is the subset's name. The second element is the reason why the author chose this subset. The third element is an integer, denoting the number of questions chosen. The fourth element is a Python dict, containing role-labels and their corresponding changes, where each change is calculated as the new count minus the old count. e.g. ['answer1', 'answer2', 3, {'role1': -2, 'role2': 3, ...}]",
+    "answer_format": "Your answer should be a Python list of 4 elements. The first element is the subset\"s name. The second element is the reason why the author chose this subset. The third element is an integer, denoting the number of questions chosen. The fourth element is a Python dict, containing role-labels and their corresponding changes, where each change is calculated as the new count minus the old count. e.g. [\"answer1\", \"answer2\", 3, {\"role1\": -2, \"role2\": 3, ...}]",
     "tags": [
         "comprehensive q&a",
         "table calculation",
@@ -32,12 +32,16 @@
                 "eval_structured_object_exact_match"
             ],
             "eval_kwargs_list": [
-                {"gold": "US Politics"},
                 {
-                    "reference_answer": "This domain choice is based on diversity in the entity distribution across different roles compared to the other subset (on Covid-19) of ExHVV dataset.", 
+                    "gold": "US Politics"
+                },
+                {
+                    "reference_answer": "This domain choice is based on diversity in the entity distribution across different roles compared to the other subset (on Covid-19) of ExHVV dataset.",
                     "question": "Why was MemeMQACorpus chosen from the US Politics subset of ExHVV?"
                 },
-                {"gold": 1880},
+                {
+                    "gold": 1880
+                },
                 {
                     "gold": {
                         "hero": -89,

@@ -1,7 +1,7 @@
 {
     "uuid": "897a955d-9e8a-5836-a3b6-0ed48575f2b9",
     "question": "In terms of evaluation results on SuperGLUE using RoBERTaBASE, on subtask ReCoRD, which model(s) achieve the overall best results? Additionally, which model(s) perform the best among the two-stage MTL models?",
-    "answer_format": "Your answer should be a python dict(without \\n) containing two keys 'overall best' and 'two-stage MTL best', each value of the two keys is a python string list. e.g.{'overall best':['modelname1'],'two-stage MTL best':['modelname2','modelname3']} ",
+    "answer_format": "Your answer should be a python dict(without \\n) containing two keys \"overall best\" and \"two-stage MTL best\", each value of the two keys is a python string list. e.g.{\"overall best\":[\"modelname1\"],\"two-stage MTL best\":[\"modelname2\",\"modelname3\"]} ",
     "tags": [
         "single-doc details",
         "text understanding",
@@ -23,11 +23,16 @@
         "eval_func": "eval_structured_object_exact_match",
         "eval_kwargs": {
             "gold": {
-                "overall best":["PROPETL"],
-                "two-stage MTL best":["SCALEARNUNIFORM","SCALEARN++"]
+                "overall best": [
+                    "PROPETL"
+                ],
+                "two-stage MTL best": [
+                    "SCALEARNUNIFORM",
+                    "SCALEARN++"
+                ]
             },
-            "ignore_order" : true,
-            "ignore_blank" : true
+            "ignore_order": true,
+            "ignore_blank": true
         }
     },
     "state": {

@@ -1,7 +1,7 @@
 {
     "uuid": "be178eef-403f-5633-8cbd-5b876059fce4",
     "question": "For each test split in Figure 5, provide the name and type of the website with the highest step success rate.",
-    "answer_format": "Your answer should be a Python dictionary. e.g. {'split1': ['web1', 'type1'], 'split2': ['web2', 'type2'], ...}. YOU MUST USE THE EXACT WORDS FROM PDF WITHOUT CHANGING CAPITALIZATION.",
+    "answer_format": "Your answer should be a Python dictionary. e.g. {\"split1\": [\"web1\", \"type1\"], \"split2\": [\"web2\", \"type2\"], ...}. YOU MUST USE THE EXACT WORDS FROM PDF WITHOUT CHANGING CAPITALIZATION.",
     "tags": [
         "single-doc details",
         "image analysis"
@@ -21,9 +21,18 @@
         "eval_func": "eval_structured_object_exact_match",
         "eval_kwargs": {
             "gold": {
-                "Cross-Task": ["travelzoo", "General"],
-                "Cross-Website": ["exploretock", "Restaurant"],
-                "Cross-Subdomain": ["koa", "Hotel"]
+                "Cross-Task": [
+                    "travelzoo",
+                    "General"
+                ],
+                "Cross-Website": [
+                    "exploretock",
+                    "Restaurant"
+                ],
+                "Cross-Subdomain": [
+                    "koa",
+                    "Hotel"
+                ]
             }
         }
     },

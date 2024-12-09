@@ -1,7 +1,7 @@
 {
     "uuid": "f7c8f3fc-801a-5e50-9722-af38407a0b9d",
     "question": "What are the seven categories of tasks, which form the dataset used to conduct SFT on a Llama-2-7B model in section 2.1?",
-    "answer_format": "Your answer should be a Python list of seven elements, containing the names of the seven categories of tasks. e.g. ['task1', 'task2', ... 'task7']. YOU MUST USE THE EXACT AND FULL NAMES OF THE TASKS AS MENTIONED IN THE PAPER.",
+    "answer_format": "Your answer should be a Python list of seven elements, containing the names of the seven categories of tasks. e.g. [\"task1\", \"task2\", ... \"task7\"]. YOU MUST USE THE EXACT AND FULL NAMES OF THE TASKS AS MENTIONED IN THE PAPER.",
     "tags": [
         "single-doc details",
         "text understanding"
@@ -23,9 +23,9 @@
             "gold": [
                 "closed-book question answering",
                 "coreference resolution",
-                "natural language inference", 
-                "abstract summarization", 
-                "multi-lingual translation", 
+                "natural language inference",
+                "abstract summarization",
+                "multi-lingual translation",
                 "reading comprehension",
                 "text classification"
             ],

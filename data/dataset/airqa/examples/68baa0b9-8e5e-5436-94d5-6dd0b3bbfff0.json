@@ -1,7 +1,7 @@
 {
     "uuid": "68baa0b9-8e5e-5436-94d5-6dd0b3bbfff0",
     "question": "On which datasets this study surpassed the SOTA?",
-    "answer_format": "Your answer should be a Python list of dataset, e.g., ['dataset1', 'dataset2', ...]. YOU MUST USE THE EXACT TEXT FROM THE PAPER.",
+    "answer_format": "Your answer should be a Python list of dataset, e.g., [\"dataset1\", \"dataset2\", ...]. YOU MUST USE THE EXACT TEXT FROM THE PAPER.",
     "tags": [
         "single-doc details",
         "table",
@@ -21,7 +21,14 @@
     "evaluator": {
         "eval_func": "eval_structured_object_exact_match",
         "eval_kwargs": {
-            "gold": ["DailyDialog", "CMU_DoG", "LIGHT", "EmpathicDialogue", "Wizard of Wikipedia", "CommonsenseDialog"],
+            "gold": [
+                "DailyDialog",
+                "CMU_DoG",
+                "LIGHT",
+                "EmpathicDialogue",
+                "Wizard of Wikipedia",
+                "CommonsenseDialog"
+            ],
             "ignore_order": true,
             "lowercase": true
         }

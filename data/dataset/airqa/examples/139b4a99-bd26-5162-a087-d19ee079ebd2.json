@@ -1,7 +1,7 @@
 {
     "uuid": "139b4a99-bd26-5162-a087-d19ee079ebd2",
     "question": "For the four types of evaluation mentioned in the paper, provide their names and corresponding overall score range. Besides, explain how to obtain overall score for JWP-SAQs.",
-    "answer_format": "Your answer should be a Python list of 2 elements, the first element is a Pyhon dictionary, where the keys are the names of the four types of evaluation and the values are the corresponding overall score range. The second element is a string that explains how to obtain the overall score for JWP-SAQs. e.g. [{'evaluation1': [-1, 1], 'evaluation2': [0, 0.5], ...}, 'reason'] . For the first element, YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION. For the second element, YOU MUST USE DATA FROM THE PDF TO SUPPORT YOUR REASON.",
+    "answer_format": "Your answer should be a Python list of 2 elements, the first element is a Pyhon dictionary, where the keys are the names of the four types of evaluation and the values are the corresponding overall score range. The second element is a string that explains how to obtain the overall score for JWP-SAQs. e.g. [{\"evaluation1\": [-1, 1], \"evaluation2\": [0, 0.5], ...}, \"reason\"] . For the first element, YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION. For the second element, YOU MUST USE DATA FROM THE PDF TO SUPPORT YOUR REASON.",
     "tags": [
         "single-doc details",
         "image analysis",
@@ -29,13 +29,25 @@
             "eval_kwargs_list": [
                 {
                     "gold": {
-                        "SA-SAQs": [0, 1],
-                        "JWP-SAQs": [0.75, 2.5],
-                        "SA-MCQs": [0, 1],
-                        "JWP-MCQs": [0, 1]
+                        "SA-SAQs": [
+                            0,
+                            1
+                        ],
+                        "JWP-SAQs": [
+                            0.75,
+                            2.5
+                        ],
+                        "SA-MCQs": [
+                            0,
+                            1
+                        ],
+                        "JWP-MCQs": [
+                            0,
+                            1
+                        ]
                     },
                     "ndigits": 2,
-                    "tolerance": 1e-3
+                    "tolerance": 0.001
                 },
                 {
                     "scoring_points": [

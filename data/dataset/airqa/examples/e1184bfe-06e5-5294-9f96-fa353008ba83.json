@@ -1,7 +1,7 @@
 {
     "uuid": "e1184bfe-06e5-5294-9f96-fa353008ba83",
     "question": "Who are the authors of this paper? What're their institutions?",
-    "answer_format": "Your answer should be a Python dictionary, e.g. {'Amy': ['Massachusetts Institute of Technology', 'Carnegie Mellon University'], 'Bob': ['Shanghai Jiaotong University']}. YOU MUST USE THE FULL AND EXACT WORDS FROM PDF.",
+    "answer_format": "Your answer should be a Python dictionary, e.g. {\"Amy\": [\"Massachusetts Institute of Technology\", \"Carnegie Mellon University\"], \"Bob\": [\"Shanghai Jiaotong University\"]}. YOU MUST USE THE FULL AND EXACT WORDS FROM PDF.",
     "tags": [
         "metadata query",
         "metadata extraction"
@@ -20,9 +20,18 @@
         "eval_func": "eval_structured_object_exact_match",
         "eval_kwargs": {
             "gold": {
-                "Gili Lior": ["Allen Institute for AI", "The Hebrew University of Jerusalem"],
-                "Yoav Goldberg": ["Allen Institute for AI", "Bar-Ilan University"],
-                "Gabriel Stanovsky": ["Allen Institute for AI", "The Hebrew University of Jerusalem"]
+                "Gili Lior": [
+                    "Allen Institute for AI",
+                    "The Hebrew University of Jerusalem"
+                ],
+                "Yoav Goldberg": [
+                    "Allen Institute for AI",
+                    "Bar-Ilan University"
+                ],
+                "Gabriel Stanovsky": [
+                    "Allen Institute for AI",
+                    "The Hebrew University of Jerusalem"
+                ]
             },
             "ignore_order": true
         }

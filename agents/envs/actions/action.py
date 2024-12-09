@@ -199,10 +199,10 @@ class Action(ABC):
         # currently only support react and code_block styles
         if agent_method not in ['react', 'code_block']: agent_method = 'react'
         if agent_method == 'react':
-            thought_pattern = r"\[Thought\]:\s*(.*?)\s*\[Action\]:"
+            thought_pattern = r"\[?\bThought\b\]?:\s*(.*?)\s*\[?\bAction\b\]?:"
             matched_thought = re.search(thought_pattern, text, re.DOTALL)
             thought = matched_thought.group(1) if matched_thought else None
-            action_pattern = r"\[Action\]:\s*(.*?)\s*(\[Observation\]:|$)"
+            action_pattern = r"\[?\bAction\b\]?:\s*(.*?)\s*(\[?\bObservation\b\]?:|$)"
             matched_action = re.search(action_pattern, text, re.DOTALL)
             action_text = matched_action.group(1).strip() if matched_action else text.strip()
         elif agent_method == 'code_block':
