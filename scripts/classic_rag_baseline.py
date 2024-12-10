@@ -30,7 +30,7 @@ args = parser.parse_args()
 assert args.table_name is not None and args.column_name is not None, "Table name and column name must be specified."
 
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-filename = f'{args.dataset}_{args.agent_method}_{args.llm}-{start_time}'
+filename = f'{args.dataset}_{args.agent_method}_{args.llm}_{args.table_name}_{args.column_name}-{start_time}'
 result_dir = os.path.join(args.result_dir, filename)
 os.makedirs(result_dir, exist_ok=True)
 

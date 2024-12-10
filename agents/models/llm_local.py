@@ -1,5 +1,5 @@
 #coding=utf8
-import copy, os, tiktoken
+import copy, os
 from typing import List, Dict, Tuple, Any, Optional
 from openai.types.chat.chat_completion import ChatCompletion
 from openai import OpenAI
@@ -7,17 +7,13 @@ from agents.models.llm_base import LLMClient
 from transformers import AutoTokenizer
 
 class LocalClient(LLMClient):
-    model_stop: Dict[str, List[str]] = {
-        'llama': ['<|start_header_id|>', '<|end_header_id|>', '<|eot_id|>']
+    model_path: Dict[str, str] = {
+        'qwen2-vl-72b-instruct': os.path.join('.cache', 'Qwen2-VL-72B-Instruct'),
+        'qwen2.5-72b-instruct': os.path.join('.cache', 'Qwen2.5-72B-Instruct')
     }
 
-    model_info: Dict[str, Any] = {
-        'qwen2-vl-72b-instruct': {
-            'HF_path':'Qwen/Qwen2-VL-72B-Instruct'
-        },
-        'qwen2.5-72b-instruct': {
-            'HF_path':'Qwen/Qwen2.5-72B-Instruct'
-        }
+    model_stop: Dict[str, List[str]] = {
+        'llama': ['<|start_header_id|>', '<|end_header_id|>', '<|eot_id|>']
     }
 
     def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None) -> None:
@@ -42,7 +38,7 @@ class LocalClient(LLMClient):
                 else:
                     flag_image = True
 
-        tokenizer = AutoTokenizer.from_pretrained(self.model_info[model]['HF_path'])
+        tokenizer = AutoTokenizer.from_pretrained(self.model_path[model])
         message_max_tokens = tokenizer.model_max_length
         if len(new_messages) > 2 :
             truncated_messages = new_messages[:2]
