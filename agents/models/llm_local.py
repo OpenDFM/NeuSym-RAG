@@ -9,7 +9,8 @@ from transformers import AutoTokenizer
 class LocalClient(LLMClient):
     model_path: Dict[str, str] = {
         'qwen2-vl-72b-instruct': os.path.join('.cache', 'Qwen2-VL-72B-Instruct'),
-        'qwen2.5-72b-instruct': os.path.join('.cache', 'Qwen2.5-72B-Instruct')
+        'qwen2.5-72b-instruct': os.path.join('.cache', 'Qwen2.5-72B-Instruct'),
+        'llama-3.3-70b-instruct': os.path.join('.cache', 'Llama-3.3-70B-Instruct')
     }
 
     model_stop: Dict[str, List[str]] = {
