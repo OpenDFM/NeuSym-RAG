@@ -13,10 +13,6 @@ class LocalClient(LLMClient):
         'llama-3.3-70b-instruct': os.path.join('.cache', 'Llama-3.3-70B-Instruct')
     }
 
-    model_stop: Dict[str, List[str]] = {
-        'llama': ['<|start_header_id|>', '<|end_header_id|>', '<|eot_id|>']
-    }
-
     def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None) -> None:
         super(LocalClient, self).__init__()
         if api_key is None:
@@ -75,19 +71,12 @@ class LocalClient(LLMClient):
     ) -> str:
         """ Get the response string from the local model.
         """
-        for prefix in self.model_stop.keys():
-            if model.startswith(prefix):
-                stop = self.model_stop[prefix]
-                break
-        else:
-            stop = None
         completion: ChatCompletion = self._client.chat.completions.create(
             messages=messages,
             model=model,
             temperature=temperature,
             top_p=top_p,
-            max_tokens=max_tokens,
-            stop=stop
+            max_tokens=max_tokens
         )
         response = completion.choices[0].message.content.strip()
         self.update_usage(completion)
