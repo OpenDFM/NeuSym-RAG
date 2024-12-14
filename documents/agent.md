@@ -46,25 +46,25 @@ Here are some common arguments:
     - `tatdqa` -> `financial_report`
     - `airqa` -> `ai_research`
 - the predicted result and log history are both saved in folder `results/`
-- `action_format`: chosen from [`json`, `markdown`, `xml`, `yaml`], by default is `json`
-- `output_format`: only used in actions `RetrieveFrom*`, chosen from [`markdown`, `json`, `html`, `string`], by default is `markdown` table. Currently, you need to modify this parameter in the action file, e.g., `agents/envs/actions/retrieve_from_database.py`
+- `action_format`: chosen from [`json`, `markdown`, `xml`, `yaml`], by default is `markdown`
+- `output_format`: only used in actions `RetrieveFrom*`, chosen from [`markdown`, `json`, `html`, `string`], by default is `json`. Currently, you need to modify this parameter in the action file, e.g., `agents/envs/actions/retrieve_from_database.py`
 
 0. Hybrid neural symbolic interactive retrieval framework:
 ```sh
-python scripts/hybrid_neural_symbolic_rag.py --dataset pdfvqa --database biology_paper --vectorstore biology_paper --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 15
-python scripts/hybrid_neural_symbolic_rag.py --dataset tatdqa --database financial_report --vectorstore financial_report --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 15
+python scripts/hybrid_neural_symbolic_rag.py --dataset pdfvqa --database biology_paper --vectorstore biology_paper --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 15
+python scripts/hybrid_neural_symbolic_rag.py --dataset tatdqa --database financial_report --vectorstore financial_report --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 15
 ```
 
 1. Text-to-SQL with interactive database environment baseline:
 ```sh
-python scripts/text2sql_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 10
-python scripts/text2sql_baseline.py --dataset tatdqa --database financial_report --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 10
+python scripts/text2sql_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 10
+python scripts/text2sql_baseline.py --dataset tatdqa --database financial_report --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 10
 ```
 
 2. Text-to-vector with interactive vectorstore environment baseline:
 ```sh
-python scripts/text2vec_baseline.py --dataset pdfvqa --vectorstore biology_paper --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 10
-python scripts/text2vec_baseline.py --dataset tatdqa --vectorstore financial_report --test_data test_data_sample.jsonl --action_format json --agent_method 'react' --llm gpt-4o-mini --max_turn 10
+python scripts/text2vec_baseline.py --dataset pdfvqa --vectorstore biology_paper --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 10
+python scripts/text2vec_baseline.py --dataset tatdqa --vectorstore financial_report --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 10
 ```
 
 3. Two stage text-to-SQL (non-interactive) baseline:

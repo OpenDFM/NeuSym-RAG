@@ -12,7 +12,7 @@ class AgentEnv(gym.Env, ABC):
     action_space: List[Type] = []
 
     def __init__(self,
-                 action_format: str = 'json',
+                 action_format: str = 'markdown',
                  action_space: Optional[List[Type]] = None,
                  agent_method: Optional[str] = 'react',
                  dataset: Optional[str] = None

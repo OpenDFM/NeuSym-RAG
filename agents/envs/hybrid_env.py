@@ -16,7 +16,7 @@ class HybridEnv(AgentEnv):
 
     action_space: List[Type] = [RetrieveFromDatabase, RetrieveFromVectorstore, CalculateExpr, ViewImage, GenerateAnswer]
 
-    def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, agent_method: Optional[str] = 'react', dataset: Optional[str] = None, **kwargs) -> None:
+    def __init__(self, action_format: str = 'markdown', action_space: Optional[List[Type]] = None, agent_method: Optional[str] = 'react', dataset: Optional[str] = None, **kwargs) -> None:
         """ Initialize the environment with the given action format, action space, agent method, dataset and other parameters.
         @param:
             kwargs:
