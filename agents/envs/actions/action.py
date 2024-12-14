@@ -73,7 +73,7 @@ class Action(ABC):
 
 
     @classmethod
-    def specification(cls, action_format: str = 'json') -> str:
+    def specification(cls, action_format: str = 'markdown') -> str:
         """ Return a human-readable specification of the action according to the argument `action_format`.
         This specification is usually inserted into the action space of the system prompt. The checklist of all actions is defined in file `actions.json`, each as a json dict like the following example: (will be automatically converted into the specified `action_format`)
         {
@@ -164,7 +164,7 @@ class Action(ABC):
 
 
     @classmethod
-    def get_action_space_prompt(cls, action_types: List[type], action_format: str = 'json') -> str:
+    def get_action_space_prompt(cls, action_types: List[type], action_format: str = 'markdown') -> str:
         """ Return the entire action space prompt for all given action types (using function `_specification`) based on the `action_format`.
         """
         assert action_format in ACTION_FORMATS, f"Action format {action_format} not supported."
@@ -177,7 +177,7 @@ class Action(ABC):
 
 
     @classmethod
-    def parse_action(cls, text: str, action_types: List[type], action_format: str = 'json', agent_method: str = 'react') -> Tuple[bool, 'Action']:
+    def parse_action(cls, text: str, action_types: List[type], action_format: str = 'markdown', agent_method: str = 'react') -> Tuple[bool, 'Action']:
         """ Parse the raw LLM response text into one concrete Action object based on the allowable action types and the specified action `format`.
         @args:
             text: str, the raw LLM response text
@@ -232,7 +232,7 @@ class Action(ABC):
 
 
     @classmethod
-    def _parse(cls, action_text: str, action_format: str = 'json') -> 'Action':
+    def _parse(cls, action_text: str, action_format: str = 'markdown') -> 'Action':
         """ Parse the action text into the concrete Action object based on the specified `action_format`.
         """
         class_name = cls.__name__
@@ -304,7 +304,7 @@ class Action(ABC):
             raise ValueError(f"Action format {action_format} not supported for {class_name} action yet.")
 
 
-    def convert_to_message(self, action_format: str = 'json') -> Dict[str, str]:
+    def convert_to_message(self, action_format: str = 'markdown') -> Dict[str, str]:
         """ Convert the Action object into a message according to the specified format.
         This message is used to record the interaction history.
         """

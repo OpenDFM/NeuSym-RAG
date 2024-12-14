@@ -15,7 +15,7 @@ class Text2VecEnv(AgentEnv):
 
     action_space: List[Type] = [RetrieveFromVectorstore, CalculateExpr, ViewImage, GenerateAnswer]
 
-    def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, agent_method: Optional[str] = 'react', dataset: Optional[str] = None, **kwargs) -> None:
+    def __init__(self, action_format: str = 'markdown', action_space: Optional[List[Type]] = None, agent_method: Optional[str] = 'react', dataset: Optional[str] = None, **kwargs) -> None:
         super(Text2VecEnv, self).__init__(action_format=action_format, action_space=action_space, agent_method=agent_method, dataset=dataset)
         self.vectorstore_conn, self.embedder_dict = None, {}
         self.vectorstore, self.launch_method = kwargs.get('vectorstore', None), kwargs.get('launch_method', 'standalone')

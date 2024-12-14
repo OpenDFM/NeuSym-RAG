@@ -15,7 +15,7 @@ parser.add_argument('--vectorstore', type=str, default='ai_research', help='whic
 parser.add_argument('--launch_method', type=str, default='standalone', choices=['standalone', 'docker'], help='launch method for vectorstore, chosen from ["docker", "standalone"]. Note that, for Windows OS, can only choose "docker".')
 parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='test data file')
 parser.add_argument('--vs_format', type=str, choices=['detailed_json'], default='detailed_json', help='Vectorstore schema serialization format')
-parser.add_argument('--action_format', type=str, default='json', choices=['markdown', 'json', 'xml', 'yaml'], help='Action format for the environment')
+parser.add_argument('--action_format', type=str, default='markdown', choices=['markdown', 'json', 'xml', 'yaml'], help='Action format for the environment')
 parser.add_argument('--output_format', type=str, default='json', choices=['markdown', 'string', 'html', 'json'], help='Output format for the environment execution results')
 parser.add_argument('--agent_method', type=str, default='react', help='Agent method')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')

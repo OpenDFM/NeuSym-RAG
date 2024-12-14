@@ -13,7 +13,7 @@ class Text2SQLEnv(AgentEnv):
 
     action_space: List[Type] = [RetrieveFromDatabase, CalculateExpr, ViewImage, GenerateAnswer]
 
-    def __init__(self, action_format: str = 'json', action_space: Optional[List[Type]] = None, agent_method: Optional[str] = 'react', dataset: Optional[str] = None, **kwargs) -> None:
+    def __init__(self, action_format: str = 'markdown', action_space: Optional[List[Type]] = None, agent_method: Optional[str] = 'react', dataset: Optional[str] = None, **kwargs) -> None:
         super(Text2SQLEnv, self).__init__(action_format=action_format, action_space=action_space, agent_method=agent_method, dataset=dataset)
         self.database_conn = None
         self.database, self.database_type = kwargs.get('database', None), kwargs.get('database_type', 'duckdb')
