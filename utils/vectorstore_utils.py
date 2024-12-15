@@ -92,7 +92,7 @@ def get_embed_model_from_collection(
             'embed_model': embed_model
         })
 
-    return embed_kwargs if len(collection_name) > 1 else embed_kwargs[0]
+    return embed_kwargs
 
 
 def get_milvus_embedding_function(
