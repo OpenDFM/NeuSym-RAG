@@ -32,7 +32,7 @@ class TwoStageText2VecRAGAgent(AgentBase):
         self.env.reset()
 
         # 1. Generate RetriveFromVectorstore action
-        action_prompt = f"Your output should follow the action format below:\n{RetrieveFromVectorstore.specification(action_format='markdown')}"
+        action_prompt = f"Your output should follow the action format below:\n{RetrieveFromVectorstore.specification(action_format='json')}"
         prompt = AGENT_PROMPTS[self.agent_method][0].format(
             system_prompt = SYSTEM_PROMPTS[self.agent_method][0],
             action_prompt = action_prompt,
@@ -43,7 +43,7 @@ class TwoStageText2VecRAGAgent(AgentBase):
         messages = [{'role': 'user', 'content': prompt}]
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
-        _, action = Action.parse_action(response, action_types=[RetrieveFromVectorstore], action_format='markdown', agent_method='code_block')
+        _, action = Action.parse_action(response, action_types=[RetrieveFromVectorstore], action_format='json', agent_method='code_block')
         logger.info(f'[Action]: {repr(action)}')
 
         # 2. Answer question
