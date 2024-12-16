@@ -17,22 +17,31 @@ def convert_database_schema_to_dbml(database: str, output_file: Optional[str] = 
         database = os.path.join('data', 'database', database, f'{database}.json')
         if not os.path.exists(database):
             raise FileNotFoundError(f"Database schema file {database} not found!")
-    with open(database, 'r', encoding='utf8') as f:
+    with open(database, 'r', encoding='utf-8') as f:
         db_schema = json.load(f)['database_schema']
     for table_dict in db_schema:
         table_name = table_dict['table']['table_name']
         columns = table_dict['columns']
+        pks = table_dict.get('primary_keys', [])
+        fks = table_dict.get('foreign_keys', [])
         dbml_text += f"Table {table_name} " + "{\n"
         for column_dict in columns:
             column_name = column_dict['column_name']
-            column_type = column_dict['column_type']
-            dbml_text += f"    {column_name} {column_type}\n"
-            dbml_text += "}\n\n"
-    # primary key? foreign key?
-    # all data types valid?
-
+            column_type = column_dict['column_type'].replace(' ', '')
+            dbml_text += f"    {column_name} {column_type}"
+            ref_string_list = []
+            for fk_list in fks:
+                if column_name == fk_list[0]:
+                    ref_string_list.append(f"ref: > {fk_list[1]}.{fk_list[2]}")
+            if len(ref_string_list) > 0:
+                dbml_text += f" [{', '.join(ref_string_list)}]"
+            dbml_text += '\n'
+        if len(pks) > 0:
+            dbml_text += f"    indexes {{\n        ({', '.join(pks)}) [pk]\n    }}\n"
+        dbml_text += "}\n\n"
+    dbml_text = dbml_text.strip()
     if output_file is not None:
-        with open(output_file, 'w', encoding='utf8') as f:
+        with open(output_file, 'w', encoding='utf-8') as f:
             f.write(dbml_text)
     return dbml_text
 
