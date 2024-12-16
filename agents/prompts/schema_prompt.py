@@ -1,6 +1,40 @@
 #coding=utf8
 import os, json
-from typing import Dict, List, Union, Tuple, Any
+from typing import Dict, List, Union, Tuple, Any, Optional
+
+
+def convert_database_schema_to_dbml(database: str, output_file: Optional[str] = None) -> str:
+    """ Given the database schema, convert it to the DBML format.
+    See doc about DBML: https://dbml.dbdiagram.io/docs/
+    @param:
+        database: str, database name
+        output_file: Optional[str], the output file path
+    @return:
+        dbml: str, the DBML content
+    """
+    dbml_text = ''
+    if not os.path.exists(database):
+        database = os.path.join('data', 'database', database, f'{database}.json')
+        if not os.path.exists(database):
+            raise FileNotFoundError(f"Database schema file {database} not found!")
+    with open(database, 'r', encoding='utf8') as f:
+        db_schema = json.load(f)['database_schema']
+    for table_dict in db_schema:
+        table_name = table_dict['table']['table_name']
+        columns = table_dict['columns']
+        dbml_text += f"Table {table_name} " + "{\n"
+        for column_dict in columns:
+            column_name = column_dict['column_name']
+            column_type = column_dict['column_type']
+            dbml_text += f"    {column_name} {column_type}\n"
+            dbml_text += "}\n\n"
+    # primary key? foreign key?
+    # all data types valid?
+
+    if output_file is not None:
+        with open(output_file, 'w', encoding='utf8') as f:
+            f.write(dbml_text)
+    return dbml_text
 
 
 def convert_database_schema_to_prompt(database: str, serialize_method: str = 'create_sql') -> str:
