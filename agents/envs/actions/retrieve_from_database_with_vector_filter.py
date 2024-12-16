@@ -207,7 +207,7 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
             msg = f"[Stage 2]: The retrieved SQL execution results from the database in the second stage:\n"
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
-                msg += db_df.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
+                msg += convert_to_utf8(db_df).to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string': # customize the result display
                 msg += db_df.to_string(index=format_kwargs['index'])
             elif output_format == 'html':

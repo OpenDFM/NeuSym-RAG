@@ -81,7 +81,7 @@ class RetrieveFromDatabase(Action):
 
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
-                msg = result.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
+                msg = convert_to_utf8(result).to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string':
                 msg = result.to_string(index=format_kwargs['index'])
             elif output_format == 'html':

@@ -55,6 +55,9 @@ class LocalClient(LLMClient):
 
 
     def update_usage(self, completion: ChatCompletion) -> None:
+        self._call_times += 1
+        self._prompt_tokens += completion.usage.prompt_tokens
+        self._completion_tokens += completion.usage.completion_tokens
         return
 
 

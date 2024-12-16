@@ -176,7 +176,7 @@ class RetrieveFromVectorstore(Action):
 
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
-                msg = df.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
+                msg = convert_to_utf8(df).to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string': # customize the result display
                 for index, row in df.iterrows():
                     score = row['score'] if metric_type in ['IP', 'COSINE'] else row['distance']

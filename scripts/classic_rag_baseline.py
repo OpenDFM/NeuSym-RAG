@@ -63,6 +63,7 @@ with open(test_data_path, 'r', encoding='utf-8') as inf:
     for line in inf:
         test_data.append(json.loads(line))
 
+start_time = datetime.now()
 preds = []
 for data in test_data:
     logger.info(f"Processing question: {data['uuid']}")
@@ -77,7 +78,7 @@ for data in test_data:
         output_path=output_path
     )
     preds.append({'uuid': data['uuid'], 'answer': result})
-logger.info(f"Total cost: {llm.get_cost()}")
+logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 agent.close()
 
 output_path = os.path.join(result_dir, 'result.jsonl')
