@@ -1,5 +1,5 @@
 {
-    "VOLUME_SYSTEM_PROMPT": "You are an expert in academic papers. Your task is to identify the volume of a research paper based on the extracted text from the first page. Volume is usually found in the header or footer, so the provided text is from {first_last_lines} in the PDF file, extracted using PyMuPDF. Please ensure the following:\n1. Directly return the volume without adding any extra context, explanations, or formatting.\n2. Do not modify the volume, retain its original capitalization and punctuation exactly as presented.\n3. If you are certain that the provided text does not contain the paper's volume, respond only with 'volume not found'.",
+    "VOLUME_SYSTEM_PROMPT": "You are an expert in academic papers. Your task is to identify the volume of a research paper based on the extracted text from the first page. Volume is usually found in the header or footer, so the provided text is from top and bottom lines in the PDF file, extracted using PyMuPDF. Please ensure the following:\n1. Directly return the volume without adding any extra context, explanations, or formatting.\n2. Do not modify the volume, retain its original capitalization and punctuation exactly as presented.\n3. If you are certain that the provided text does not contain the paper's volume, respond only with 'volume not found'.",
     "VOLUME_USER_PROMPT": "Here is the extracted text:\n\nHeader:\n```txt\n{first_lines_text}\n```\n\nFooter:\n```txt\n{last_lines_text}\n```\n\nYour response is:\n",
     "VOLUME_FEW_SHOTS": [
         {
@@ -8,14 +8,49 @@
             "volume": "Proceedings of the 12th Joint Conference on Lexical and Computational Semantics (*SEM 2023)"
         },
         {
+            "first_lines_text": "13796\nIEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE, VOL. 45, NO. 11, NOVEMBER 2023\nA Heterogeneous Graph to Abstract Syntax Tree\nFramework for Text-to-SQL",
+            "last_lines_text": "0162-8828 © 2023 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.\nSee https://www.ieee.org/publications/rights/index.html for more information.\nAuthorized licensed use limited to: Shanghai Jiaotong University. Downloaded on October 19,2023 at 02:31:10 UTC from IEEE Xplore.  Restrictions apply. \n",
+            "volume": "45"
+        },
+        {
             "first_lines_text": "Modelling Cellular Perturbations with the Sparse\nAdditive Mechanism Shift Variational Autoencoder\nMichael Bereket\ninsitro⇤\nmbereket@stanford.edu\nTheofanis Karaletsos\ninsitro*\ntheofanis@karaletsos.com\nAbstract\nGenerative models of observations under interventions have been a vibrant topic of",
             "last_lines_text": "generalization and discovery. A desirable outcome consists of these subspaces learned by models be-\ning indicative of latent mechanisms, while sparsely varying according to the underlying latent factors\nof variation in the true data distribution [10]. This goal has recently been formalized under the Sparse\nMechanism Shift framework [20, 9] which connects disentanglement to the causal inference ﬁeld\nthrough the identiﬁcation of causal graphs. Concomitantly, recent models such as the Compositional\nPerturbation Autoencoder [13] and SVAE+ [12] have successfully applied disentangled deep learning\nto scientiﬁc problems in single-cell RNA-sequencing under perturbation.\n⇤Research supporting this publication conducted while authors were employed at insitro\n37th Conference on Neural Information Processing Systems (NeurIPS 2023).\n",
             "volume": "volume not found"
         },
         {
+            "first_lines_text": "finds a segmentation with the minimum possible\n678\n\n",
+            "last_lines_text": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 678–702\nNovember 12-16, 2024 ©2024 Association for Computational Linguistics\nTokenization Is More Than Compression",
+            "volume": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing"
+        },
+        {
+            "first_lines_text": "Findings of the Association for Computational Linguistics: ACL 2024, pages 17–27\nAugust 11-16, 2024 ©2024 Association for Computational Linguistics\nMatch More, Extract Better!\nHybrid Matching Model for Open Domain Web Keyphrase Extraction",
+            "last_lines_text": "quately, such as the recent studies (Sun et al., 2020;\nWang et al., 2020; Song et al., 2021b).\n17\n",
+            "volume": "Findings of the Association for Computational Linguistics: ACL 2024"
+        },
+        {
             "first_lines_text": "Cross-modal Information Flow in Multimodal Large Language Models\nZhi Zhang*, Srishti Yadav*†, Fengze Han‡, Ekaterina Shutova*\n*ILLC, University of Amsterdam, Netherlands\n†Dept. of Computer Science, University of Copenhagen, Denmark\n‡Dept. of Computer Engineering, Technical University of Munich, Germany\nzhangzhizz2626@gmail.com, srya@di.ku.dk, fengze.han@tum.de, e.shutova@uva.nl\nAbstract\nThe recent advancements in auto-regressive multimodal\nlarge language models (MLLMs) have demonstrated\npromising progress for vision-language tasks. While there",
             "last_lines_text": "to uppercase for the first letter.\nSpecifically, LLMs generate responses based on both visual\nand linguistic inputs where visual representations extracted\nfrom an image encoder precede the word embeddings in\nthe input sequence. Despite the successful performance and\nwide applicability of MLLMs, there is still a lack of under-\nstanding of their internal working mechanisms at play when\n1\narXiv:2411.18620v1  [cs.AI]  27 Nov 2024\n",
             "volume": "volume not found"
+        },
+        {
+            "first_lines_text": "1936\nIEEE/ACM TRANSACTIONS ON AUDIO, SPEECH, AND LANGUAGE PROCESSING, VOL. 28, 2020\nDual Learning for Semi-Supervised Natural\nLanguage Understanding\nSu Zhu\n, Student Member, IEEE, Ruisheng Cao\n, and Kai Yu\n, Senior Member, IEEE",
+            "last_lines_text": "method also utilizes a dual model to generate pseudo sentences\nfor pure semantic forms. Next, we combine these pseudo-labeled\nsamples with the labeled dataset to retrain both the primal\nand dual models iteratively. 2) Furthermore, the dual learning\nalgorithm [25] is applied to train the primal and dual models\n2329-9290 © 2020 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.\nSee https://www.ieee.org/publications/rights/index.html for more information.\n",
+            "volume": "28"
+        },
+        {
+            "first_lines_text": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing\nSystem Demonstrations, pages 14–24\nNovember 12-16, 2024 ©2024 Association for Computational Linguistics\ni-Code Studio: A Configurable and Composable Framework\nfor Integrative AI\nYuwei Fang∗, Mahmoud Khademi∗, Chenguang Zhu, Ziyi Yang, Reid Pryzant, Yichong Xu,",
+            "last_lines_text": "to build Artificial General Intelligence (AGI), we\nneed to break the barriers between modalities and\nspecific tasks.\nInstead of building a single model to handle all\n14",
+            "volume": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: System Demonstrations"
+        },
+        {
+            "first_lines_text": "LETTER\ndoi:10.1038/nature14236\nHuman-level control through deep reinforcement\nlearning\nVolodymyr Mnih1*, Koray Kavukcuoglu1*, David Silver1*, Andrei A. Rusu1, Joel Veness1, Marc G. Bellemare1, Alex Graves1,\nMartin Riedmiller1, Andreas K. Fidjeland1, Georg Ostrovski1, Stig Petersen1, Charles Beattie1, Amir Sadik1, Ioannis Antonoglou1,\nHelen King1, Dharshan Kumaran1, Daan Wierstra1, Shane Legg1 & Demis Hassabis1",
+            "last_lines_text": "2 6 F E B R U A R Y\n2 0 1 5 | V O L 5 1 8\n| N A T U R E\n| 5 2 9\nMacmillan Publishers Limited. All rights reserved\n©2015\n",
+            "volume": "518"
+        },
+        {
+            "first_lines_text": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 74–90\nAugust 11-16, 2024 ©2024 Association for Computational Linguistics\nGenTranslate: Large Language Models are Generative Multilingual\nSpeech and Machine Translators\nYuchen Hu1\nChen Chen1\nChao-Han Huck Yang2,3",
+            "last_lines_text": "200 languages. BigTranslate (Yang et al., 2023b) is\nfinetuned on LLaMA (Touvron et al., 2023a) with\nmultilingual instruction tuning, which achieves\ncomparable performance to ChatGPT (OpenAI,\n2022) and Google Translate. Most recent work\n74\n",
+            "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)"
         }
     ]
 }

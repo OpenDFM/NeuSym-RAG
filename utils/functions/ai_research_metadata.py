@@ -177,20 +177,19 @@ def infer_paper_volume_from_pdf(
     first_page = doc[0]
     first_lines_text = '\n'.join(first_page.get_text().split('\n')[:first_lines])
     last_lines_text = '\n'.join(first_page.get_text().split('\n')[-last_lines:])
-    first_last_lines = f"the first {first_lines} lines and the last {last_lines} lines of the first page"
     doc.close()
 
     # Call the language model to infer the title
     messages = [{
-        "role": "system", 
-        "content" : VOLUME_SYSTEM_PROMPT.format(first_last_lines = first_last_lines)
+        "role": "system",
+        "content" : VOLUME_SYSTEM_PROMPT
     }]
     for example in VOLUME_FEW_SHOTS:
         messages.append({
             "role": "user", 
             "content": VOLUME_USER_PROMPT.format(
-                first_lines_text = example['first_lines_text'],
-                last_lines_text = example['last_lines_text']
+                first_lines_text=example['first_lines_text'],
+                last_lines_text=example['last_lines_text']
             )
         })
         messages.append({
@@ -199,11 +198,11 @@ def infer_paper_volume_from_pdf(
         })
     messages.append({
         "role": "user",
-        "content": VOLUME_USER_PROMPT.format(first_lines_text = first_lines_text, last_lines_text = last_lines_text)
+        "content": VOLUME_USER_PROMPT.format(first_lines_text=first_lines_text, last_lines_text=last_lines_text)
     })
     volume = call_llm_with_message(messages=messages, model=model, temperature=temperature).strip()
     if volume.lower().startswith("volume not found"):
-        logger.error(f"Paper volume is not found in {first_last_lines} of the PDF {pdf_path}.")
+        logger.error(f"Paper volume is not found in the first {first_lines} and last {last_lines} lines of PDF {pdf_path}.")
         return None
     return volume
 
