@@ -7,6 +7,9 @@ from agents.models.llm_base import LLMClient
 from transformers import AutoTokenizer
 
 class LocalClient(LLMClient):
+    """ Note that, in .cache/ folder, only download the tokenizer files to calculate the token length.
+    """
+
     model_path: Dict[str, str] = {
         'qwen2-vl-72b-instruct': os.path.join('.cache', 'Qwen2-VL-72B-Instruct'),
         'qwen2.5-72b-instruct': os.path.join('.cache', 'Qwen2.5-72B-Instruct'),
@@ -24,7 +27,7 @@ class LocalClient(LLMClient):
 
 
     def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: Optional[str] = None) -> List[Dict[str, str]]:
-        """ Keep only the last image.
+        """ Keep only the last image (some open-source VLMs only allow one image throughout the interaction).
             Truncate the message according to token limit.
         """
         new_messages = copy.deepcopy(messages)
