@@ -282,7 +282,7 @@ def infer_paper_tags_from_metadata(
 
 def extract_metadata_from_scholar_api(
         title: str,
-        api_tools: List[str] = ['dblp', 'semantic-scholar', 'arxiv'],
+        api_tools: List[str] = ['semantic-scholar', 'dblp', 'arxiv'],
         **kwargs
     ) -> Dict[str, Any]:
     """ Given the title or the arxiv id of one paper, extract its metadata from provided scholar APIs.
@@ -296,8 +296,8 @@ def extract_metadata_from_scholar_api(
     if not api_tools: # try sequentially with pre-defined orders
         api_tools = ['dblp', 'semantic-scholar', 'arxiv']
     functions = {
-        "dblp": dblp_scholar_api,
         "semantic-scholar": semantic_scholar_api,
+        "dblp": dblp_scholar_api,
         "arxiv": arxiv_scholar_api,
     }
     # Call the scholar API to extract the metadata
@@ -369,7 +369,7 @@ def arxiv_scholar_api(arxiv_id_or_title: str, **kwargs) -> Tuple[bool, Dict[str,
     data = sorted(filtered_data, key=lambda x: x['fuzzy-score'], reverse=True)[0]
     year = data["updated"][:4]
     arxiv_id = re.sub(r'v\d+$', '', data['id'].split('/')[-1])
-    title, subfolder = re.sub(r'\n ', '', data["title"].strip()), f"arxiv{year}"
+    title, subfolder = re.sub(r'\n ', ' ', re.sub(r'\n  ', ' ', data["title"].strip())), f"arxiv{year}"
     paper_uuid = get_airqa_paper_uuid(title, subfolder)
     pdf_path = os.path.join(AIRQA_DIR, 'papers', subfolder, f'{paper_uuid}.pdf')
     pdf_url = data['id'].replace('/abs/', '/pdf/') # do not use arxiv id, directly use the pdf link in the returned id
@@ -409,8 +409,89 @@ def arxiv_scholar_api(arxiv_id_or_title: str, **kwargs) -> Tuple[bool, Dict[str,
 
 
 def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
+    """ Given the title of one paper, extract its metadata from Semantic Scholar API. We resort to the following endpoint:
+    Paper bulk search: https://api.semanticscholar.org/graph/v1/paper/search/bulk
+        - Paper title search only returns one single result, not suitable since we may request that open access is true
+        - According to official tutorial, https://www.semanticscholar.org/product/api/tutorial#step-1-guide, we should mostly use paper bulk search because it is more efficient (it seldom encounters the "Too Many Requests" error). Probaly need Semantic Scholar API key for abundant usage (set environment variable `S2_API_KEY`) if "Paper relevance search" (/paper/search) is expected.
+    @param:
+        title: str, the title of the paper
+        **kwargs: Dict[str, Any], other arguments that will be directly passed to the DBLP API
+            - limit: int, the maximum number of search results to return, by default 10
+            - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 90
+            - fields_of_study: List[str], the list of fields of study to filter the search results, e.g., ['Computer Science', 'Linguistics']. By default, no filter
+            - start_year: int, the start year of the publication, used to narrow down search result. By default, None
+    @return: metadata dict
+        see doc in `get_ai_research_metadata`
+    """
+    # api_key = os.environ.get('S2_API_KEY', None)
+    # headers = {"x-api-key": api_key} if api_key is not None else {}
+    url = "http://api.semanticscholar.org/graph/v1/paper/search/bulk"
+    query_params = {
+        "query": title,
+        "openAccessPdf": True,
+        "publicationTypes": "Review,JournalArticle,Conference,Dataset",
+        "fields": "title,abstract,publicationVenue,year,openAccessPdf,authors,citationStyles"
+    }
+    if kwargs.get('fields_of_study', None) is not None:
+        query_params['fieldsOfStudy'] = ",".join(kwargs['fields_of_study'])
+    if kwargs.get('start_year', None) is not None:
+        query_params['year'] = f'{year}-'
+    hits = []
+    try:
+        # requests.get(url, headers=headers, json=query_params, timeout=60)
+        response = requests.get(url, json=query_params, timeout=60)
+        response.raise_for_status()
+        response = response.json()
+        if response['total'] > 1000:
+            logger.warning(f"Too many search results for paper `{title}` in Semantic Scholar API. Better narrow down the search.")
+            return None
+        data = response['data']
+        for data_dict in data:
+            hit_title = data_dict['title']
+            data_dict['fuzzy-score'] = fuzz.ratio(title.lower(), hit_title.lower())
+            if data_dict['fuzzy-score'] >= kwargs.get('threshold', 90):
+                hits.append(data_dict)
+    except Exception as e:
+        logger.error(f"An unexpected error occurred during calling Semantic Scholar API to search `{title}`: {e}")
+        return None
+    if len(hits) == 0:
+        logger.warning(f"Not found paper with title `{title}` and open access PDF in Semantic Scholar.")
+        return None
 
-    pass
+    sorted_hits = sorted(hits, key=lambda x: x['fuzzy-score'], reverse=True)[0]
+    for data in sorted_hits:
+        try:
+            data['title'] = data['title'].strip()
+            year = int(data['year'])
+            if data.get('publicationVenue', {}):
+                conference_full = data['publicationVenue']['name']
+                alternate_names = data['publicationVenue']['alternate_names']
+                conference = sorted(alternate_names, key=lambda x: len(x))[0]
+                if conference == 'NIPS': # special case
+                    conference = 'NeurIPS'
+                subfolder = conference + f'{year}' if ' ' not in conference else 'uncategorized'
+            else:
+                conference_full, conference, subfolder = None, None, 'uncategorized'
+            paper_uid = get_airqa_paper_uuid(data['title'], subfolder)
+            metadata_dict = {
+                "uuid": paper_uid,
+                "title": data['title'],
+                "conference": conference,
+                "conference_full": conference_full,
+                "volume": None,
+                "year": year,
+                "authors": [author['name'] for author in data['authors']],
+                "pdf_url": data['openAccessPdf']['url'],
+                "pdf_path": os.path.join(AIRQA_DIR, 'papers', subfolder.lower(), f'{paper_uid}.pdf'),
+                "bibtex": data['citationStyles']['bibtex'],
+                "abstract": data['abstract'] # not supported yet with DBLP
+            }
+            return metadata_dict
+        except Exception as e:
+            logger.error(f'Error occurred when trying to process semantic scholar hit: {json.dumps(data)}\n{e}')
+            pass
+    logger.error(f"Failed to extract metadata for paper with title `{title}` and open access PDF in Semantic Scholar.")
+    return None
 
 
 def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
@@ -545,8 +626,10 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             volume = hit.get('volume', None)
             ccf_catalog = get_ccf_conferences()
             # determine the download pdf path
-            if not conference or conference.lower() == 'corr':
+            if not conference:
                 conference, conference_full, subfolder = None, None, 'uncategorized'
+            elif conference.lower() == 'corr':
+                conference, conference_full, subfolder = 'arxiv', 'ArXiv', f'arxiv{year}'
             elif len(series := ccf_catalog.loc[ccf_catalog.get('abbr').str.lower() == conference.lower(), ['abbr', 'name']]) > 0:
                 conference, conference_full = series.iloc[0]
                 subfolder = conference.lower() + str(year)
@@ -559,7 +642,7 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                 else:
                     conference_full = infer_conference_full_from_conference(conference)
                     logger.info(f"Inferred full conference title: {conference_full}, conference abbrevaition: {conference}")
-                    subfolder = (conference.lower() + str(year)) if conference_full else 'uncategorized'
+                    subfolder = conference.lower() + str(year) if conference_full else 'uncategorized'
                     if not re.match(r'^[a-z\d]+$', subfolder):
                         subfolder = 'uncategorized'
             paper_uuid = get_airqa_paper_uuid(title, subfolder)
@@ -582,10 +665,11 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             }
             return metadata
         except Exception as e:
-            logger.error(f'Error occurred when trying to process hit: {json.dumps(hit)}\n{e}')
+            logger.error(f'Error occurred when trying to process dblp hit: {json.dumps(hit)}\n{e}')
             pass
+    logger.error(f"Failed to extract metadata for paper with title `{title}` and open access PDF in DBLP.")
+    return None
 
-    return
 
 def add_ai_research_metadata(
         metadata: Dict[str, Any],
@@ -615,7 +699,7 @@ def get_ai_research_metadata(
         pdf_path: str,
         model: str = 'gpt-4o',
         temperature: float = 0.0,
-        api_tools: List[str] = [],
+        api_tools: List[str] = ['semantic-scholar', 'dblp', 'arxiv'],
         write_to_json: bool = True,
         title_lines: int = 20,
         volume_lines: int = 10,
