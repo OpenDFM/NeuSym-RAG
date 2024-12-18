@@ -34,6 +34,7 @@ TMP_DIR = os.path.join(
 
 
 UUID2PAPERS: Dict[str, Any] = {}
+CCF_CONFERENCES: Optional[pd.DataFrame] = None
 
 
 def get_airqa_paper_uuid(title: str, conference_year: str = 'uncategorized') -> str:
@@ -127,7 +128,10 @@ def get_num_pages(pdf_path: str) -> int:
 def get_ccf_conferences(ccf_file: str = os.path.join(AIRQA_DIR, 'ccf_catalog.csv')) -> pd.DataFrame:
     """ Load the CCF conference dataframe from the provided CSV file.
     """
-    return pd.read_csv(ccf_file)
+    global CCF_CONFERENCES
+    if CCF_CONFERENCES is None:
+        CCF_CONFERENCES = pd.read_csv(ccf_file)
+    return CCF_CONFERENCES
 
 
 def infer_paper_title_from_pdf(
