@@ -1,21 +1,21 @@
 {
     "VOLUME_SYSTEM_PROMPT": "You are an expert in academic papers. Your task is to identify the volume of a research paper based on the extracted text from the first page. Volume is usually found in the header or footer, so the provided text is from {first_last_lines} in the PDF file, extracted using PyMuPDF. Please ensure the following:\n1. Directly return the volume without adding any extra context, explanations, or formatting.\n2. Do not modify the volume, retain its original capitalization and punctuation exactly as presented.\n3. If you are certain that the provided text does not contain the paper's volume, respond only with 'volume not found'.",
     "VOLUME_USER_PROMPT": "Here is the extracted text:\n\nHeader:\n```txt\n{first_lines_text}\n```\n\nFooter:\n```txt\n{last_lines_text}\n```\n\nYour response is:\n",
-    "VOLUME_FEW_SHOTS": {
-        "ACL": {
+    "VOLUME_FEW_SHOTS": [
+        {
             "first_lines_text": "Proceedings of the The 12th Joint Conference on Lexical and Computational Semantics (*SEM 2023), pages 101–114\nJuly 13-14, 2023 ©2023 Association for Computational Linguistics\nLanguage models are not naysayers:\nAn analysis of language models on negation benchmarks\nThinh Hung Truong1\nTimothy Baldwin1,3\nKarin Verspoor2,1\nTrevor Cohn1,∗\n1University of Melbourne\n2RMIT University",
             "last_lines_text": "antonym/synonym relationships; and (3) ability to\nreason with negation through language inference\ntasks.\nWe conduct extensive experiments using prompt-\nbased learning to facilitate zero- and few-shot eval-\nuation of LLMs, and find the following:\n• larger LMs are more insensitive to negation\ncompared to smaller ones (Section 3);\n101\n",
             "volume": "Proceedings of the 12th Joint Conference on Lexical and Computational Semantics (*SEM 2023)"
         },
-        "NeurIPS": {
+        {
             "first_lines_text": "Modelling Cellular Perturbations with the Sparse\nAdditive Mechanism Shift Variational Autoencoder\nMichael Bereket\ninsitro⇤\nmbereket@stanford.edu\nTheofanis Karaletsos\ninsitro*\ntheofanis@karaletsos.com\nAbstract\nGenerative models of observations under interventions have been a vibrant topic of",
             "last_lines_text": "generalization and discovery. A desirable outcome consists of these subspaces learned by models be-\ning indicative of latent mechanisms, while sparsely varying according to the underlying latent factors\nof variation in the true data distribution [10]. This goal has recently been formalized under the Sparse\nMechanism Shift framework [20, 9] which connects disentanglement to the causal inference ﬁeld\nthrough the identiﬁcation of causal graphs. Concomitantly, recent models such as the Compositional\nPerturbation Autoencoder [13] and SVAE+ [12] have successfully applied disentangled deep learning\nto scientiﬁc problems in single-cell RNA-sequencing under perturbation.\n⇤Research supporting this publication conducted while authors were employed at insitro\n37th Conference on Neural Information Processing Systems (NeurIPS 2023).\n",
             "volume": "volume not found"
         },
-        "arxiv": {
+        {
             "first_lines_text": "Cross-modal Information Flow in Multimodal Large Language Models\nZhi Zhang*, Srishti Yadav*†, Fengze Han‡, Ekaterina Shutova*\n*ILLC, University of Amsterdam, Netherlands\n†Dept. of Computer Science, University of Copenhagen, Denmark\n‡Dept. of Computer Engineering, Technical University of Munich, Germany\nzhangzhizz2626@gmail.com, srya@di.ku.dk, fengze.han@tum.de, e.shutova@uva.nl\nAbstract\nThe recent advancements in auto-regressive multimodal\nlarge language models (MLLMs) have demonstrated\npromising progress for vision-language tasks. While there",
             "last_lines_text": "to uppercase for the first letter.\nSpecifically, LLMs generate responses based on both visual\nand linguistic inputs where visual representations extracted\nfrom an image encoder precede the word embeddings in\nthe input sequence. Despite the successful performance and\nwide applicability of MLLMs, there is still a lack of under-\nstanding of their internal working mechanisms at play when\n1\narXiv:2411.18620v1  [cs.AI]  27 Nov 2024\n",
             "volume": "volume not found"
         }
-    }
+    ]
 }

@@ -167,7 +167,7 @@ def infer_paper_volume_from_pdf(
     ) -> str:
     """ Use a language model to infer the volume of a paper from the top `first_lines` lines and the bottom `last_lines` of the first page in a PDF.
     """
-    volume_prompt_path = os.path.join("utils", "functions", "volume_prompt.json")
+    volume_prompt_path = (os.path.abspath(os.path.dirname(__file__)), "volume_prompt.json")
     with open(volume_prompt_path, "r", encoding='utf-8') as f:
        VOLUME_PROMPTS = json.load(f)
     VOLUME_SYSTEM_PROMPT = VOLUME_PROMPTS["VOLUME_SYSTEM_PROMPT"]
@@ -185,24 +185,24 @@ def infer_paper_volume_from_pdf(
         "role": "system", 
         "content" : VOLUME_SYSTEM_PROMPT.format(first_last_lines = first_last_lines)
     }]
-    for example in ["ACL", "NeurIPS", "arxiv"]:
+    for example in VOLUME_FEW_SHOTS:
         messages.append({
             "role": "user", 
             "content": VOLUME_USER_PROMPT.format(
-                first_lines_text = VOLUME_FEW_SHOTS[example]['first_lines_text'],
-                last_lines_text = VOLUME_FEW_SHOTS[example]['last_lines_text']
+                first_lines_text = example['first_lines_text'],
+                last_lines_text = example['last_lines_text']
             )
         })
         messages.append({
             "role": "assistant",
-            "content": VOLUME_FEW_SHOTS[example]['volume']
+            "content": example['volume']
         })
     messages.append({
         "role": "user",
         "content": VOLUME_USER_PROMPT.format(first_lines_text = first_lines_text, last_lines_text = last_lines_text)
     })
     volume = call_llm_with_message(messages=messages, model=model, temperature=temperature).strip()
-    if volume.startswith("volume not found"):
+    if volume.lower().startswith("volume not found"):
         logger.error(f"Paper volume is not found in {first_last_lines} of the PDF {pdf_path}.")
         return None
     return volume
@@ -311,20 +311,19 @@ def extract_metadata_from_scholar_api(
     return None
 
 
-def arxiv_scholar_api(arxiv_id: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
+def arxiv_scholar_api(arxiv_id_or_title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
     """ Given the arxiv_id of one paper, extract its metadata from arxiv API.
     @param:
-        arxiv_id: str, the arxiv_id of the paper
+        arxiv_id_or_title: str, the arxiv_id or title of the paper
         **kwargs: Dict[str, Any], other arguments that will be directly passed to the arxiv API
             - limit: int, the maximum number of search results to return, by default 10
-            - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 95
+            - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 90
     @return: metadata dict
         see doc in `get_ai_research_metadata`
     """
     ARXIV_API_URL = 'http://export.arxiv.org/api/query'
-    ARXIV_PDF_URL = 'https://arxiv.org/pdf'
     options = {
-        "search_query": arxiv_id,
+        "search_query": arxiv_id_or_title,
         "start": 0,
         "max_results": max(1, kwargs.get('limit', 10))
     }
@@ -338,35 +337,80 @@ def arxiv_scholar_api(arxiv_id: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
     xml_string = xml_response.read().decode('utf-8')
     
     data = xmltodict.parse(xml_string).get("feed", {}).get("entry", {})
-    if data == {}:
-        logger.error(f"Failed to find paper {arxiv_id} using ARXIV API.")
+    if data == {} or data == []:
+        logger.error(f"Failed to find paper {arxiv_id_or_title} using ARXIV API.")
         return None
-    
-    title, subfolder = data["title"], "arxiv"
+
+    def select_return_result(data: List[dict]) -> dict:
+        if type(data) == dict: data = [data]
+        normed_id_or_title = arxiv_id_or_title.lower().strip()
+        is_arxiv_id, filtered_data = False, []
+        if re.search(r'^\d+\.\d+$', normed_id_or_title) or re.search(r'^\d+\.\d+v\d+$', normed_id_or_title): # arxiv id
+            is_arxiv_id = True
+            normed_id_or_title = re.sub(r'v\d+$', '', normed_id_or_title)
+        for hit in data:
+            if is_arxiv_id: # require exact match for arxiv id
+                extracted_id = hit["id"].split('/')[-1]
+                if extracted_id.startswith(normed_id_or_title):
+                    hit['fuzzy-score'] = fuzz.ratio(extracted_id, normed_id_or_title)
+                    filtered_data.append(hit)
+            else: # allow fuzzy matching for title with threshold
+                hit_title = hit.get('title', '').lower().replace('\n ', '').strip()
+                hit['fuzzy-score'] = fuzz.ratio(normed_id_or_title, hit_title)
+                if hit['fuzzy-score'] >= kwargs.get('threshold', 90):
+                    filtered_data.append(hit)
+        return filtered_data
+
+    filtered_data = select_return_result(data)
+    if len(filtered_data) == 0:
+        logger.warning(f"Not found paper with arxiv id or title `{arxiv_id_or_title}` in ARXIV.")
+        return None
+
+    # only the highest score data
+    data = sorted(filtered_data, key=lambda x: x['fuzzy-score'], reverse=True)[0]
+    year = data["updated"][:4]
+    arxiv_id = re.sub(r'v\d+$', '', data['id'].split('/')[-1])
+    title, subfolder = re.sub(r'\n ', '', data["title"].strip()), f"arxiv{year}"
     paper_uuid = get_airqa_paper_uuid(title, subfolder)
     pdf_path = os.path.join(AIRQA_DIR, 'papers', subfolder, f'{paper_uuid}.pdf')
-    pdf_url = f"{ARXIV_PDF_URL}/{arxiv_id}"
+    pdf_url = data['id'].replace('/abs/', '/pdf/') # do not use arxiv id, directly use the pdf link in the returned id
     authors = [author["name"] for author in data["author"]]
     abstract = data["summary"]
-    year = data["published"][:4]
-    
+
+    def get_arxiv_bibtex(data):
+        # construct bibtex automatically
+        ref = authors[0].strip().split(' ')[-1] + year + ''.join(title.split(' ')[:5])
+        bibtex = '@misc{' + re.sub(r'[^a-z0-9]', '', ref.lower()) + ',\n'
+        bibtex += f'    title = {{{title}}},\n'
+        bibtex += f'    author = {{{" and ".join(authors)}}},\n'
+        bibtex += f'    year = {{{year}}},\n'
+        bibtex += f'    eprint = {{{arxiv_id}}},\n'
+        bibtex += '    archivePrefix = {arXiv},\n'
+        primary_class = data.get("arxiv:primary_category", {}).get('@term', 'cs.AI')
+        bibtex += f'    primaryClass = {{{primary_class}}},\n'
+        url = '/'.join(data['id'].split('/')[:-1]) + f'/{arxiv_id}'
+        bibtex += f'    url = {{{url}}},\n'
+        bibtex += '}'
+        return bibtex
+
     metadata = {
         "uuid": paper_uuid,
         "title": title,
         "conference": "arxiv",
-        "conference_full": "arxiv",
-        "volume": None,
-        "year": year,
+        "conference_full": "ArXiv",
+        "volume": None, # no volume
+        "year": int(year),
         "authors": authors,
         "pdf_url": pdf_url,
         "pdf_path": pdf_path,
-        "bibtex": None,
+        "bibtex": get_arxiv_bibtex(data),
         "abstract": abstract
     }
     return metadata
 
 
 def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
+
     pass
 
 
@@ -376,7 +420,7 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
         title: str, the title of the paper
         **kwargs: Dict[str, Any], other arguments that will be directly passed to the DBLP API
             - limit: int, the maximum number of search results to return, by default 10
-            - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 95
+            - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 90
             - allow_arxiv: bool, whether to allow arxiv papers in the search results, by default False
     @return: metadata dict
         see doc in `get_ai_research_metadata`
@@ -552,10 +596,12 @@ def add_ai_research_metadata(
         tag_number:int = 5,
 ) -> Dict[str, Any]:
     if metadata['title'] and metadata['abstract']:
-        tldr = infer_paper_tldr_from_metadata(pdf_title=metadata['title'],pdf_abstract=metadata['abstract'],max_length=tldr_max_length,model=model,temperature=temperature,)
-        tags = infer_paper_tags_from_metadata(pdf_title=metadata['title'],pdf_abstract=metadata['abstract'],tag_number=tag_number,model=model,temperature=temperature)
-        metadata["tldr"] = tldr
-        metadata["tags"] = tags
+        if not metadata.get('tldr', ""):
+            metadata['tldr'] = infer_paper_tldr_from_metadata(pdf_title=metadata['title'],pdf_abstract=metadata['abstract'],max_length=tldr_max_length,model=model,temperature=temperature,)
+        if not metadata.get('tags', []):
+            metadata['tags'] = infer_paper_tags_from_metadata(pdf_title=metadata['title'],pdf_abstract=metadata['abstract'],tag_number=tag_number,model=model,temperature=temperature)
+    else:
+        logger.error(f"Failed to generate TL;DR and tags for paper {metadata['title']} due to missing title or abstract.")
     return metadata
 
 
