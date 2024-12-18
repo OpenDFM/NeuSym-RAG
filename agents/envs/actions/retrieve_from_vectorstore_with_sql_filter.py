@@ -247,9 +247,10 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
             else:
                 df['distance'] = df['distance'].round(4)
 
+            df = convert_to_utf8(df)
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
-                msg += convert_to_utf8(df).to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
+                msg += df.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string': # customize the result display
                 for index, row in df.iterrows():
                     id_ = row['id']
@@ -264,7 +265,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
             elif output_format == 'html':
                 msg += df.to_html(index=format_kwargs['index'])
             elif output_format == 'json':
-                msg += convert_to_utf8(df).to_json(orient='records', lines=True, index=False) # indeed JSON Line format
+                msg += df.to_json(orient='records', lines=True, index=False) # indeed JSON Line format
             else:
                 raise ValueError(f"Vectorstore search output format {output_format} not supported.")
             return msg + suffix

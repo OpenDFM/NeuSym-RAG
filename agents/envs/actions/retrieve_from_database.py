@@ -78,16 +78,16 @@ class RetrieveFromDatabase(Action):
 
             # Create filtered DataFrame
             result = pd.DataFrame(filtered_rows, columns=result.columns)
-
+            result = convert_to_utf8(result)
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
-                msg = convert_to_utf8(result).to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
+                msg = result.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])
             elif output_format == 'string':
                 msg = result.to_string(index=format_kwargs['index'])
             elif output_format == 'html':
                 msg = result.to_html(index=format_kwargs['index'])
             elif output_format == 'json':
-                msg = convert_to_utf8(result).to_json(orient='records', lines=True, index=False) # indeed JSON Line format
+                msg = result.to_json(orient='records', lines=True, index=False) # indeed JSON Line format
             else:
                 raise ValueError(f"SQL execution output format {output_format} not supported.")
             return msg + suffix
