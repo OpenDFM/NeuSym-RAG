@@ -34,7 +34,7 @@ TMP_DIR = os.path.join(
 
 
 UUID2PAPERS: Dict[str, Any] = {}
-CCF_CONFERENCES: Optional[pd.DataFrame] = None
+CCF_CONFERENCES: Optional[Dict[str, Any]] = None
 
 
 def get_airqa_paper_uuid(title: str, conference_year: str = 'uncategorized') -> str:
@@ -125,13 +125,30 @@ def get_num_pages(pdf_path: str) -> int:
     return num_pages
 
 
-def get_ccf_conferences(ccf_file: str = os.path.join(AIRQA_DIR, 'ccf_catalog.csv')) -> pd.DataFrame:
+def get_ccf_conference_name(conference_abbrev: str = None, conference_full: str = None) -> str:
     """ Load the CCF conference dataframe from the provided CSV file.
     """
+    def normalize_conference_name(cf_name: str) -> str:
+        return re.sub(r'[^a-z\d]', '', cf_name.lower().replace('&', 'and'))
+
     global CCF_CONFERENCES
     if CCF_CONFERENCES is None:
-        CCF_CONFERENCES = pd.read_csv(ccf_file)
-    return CCF_CONFERENCES
+        ccf_file: str = os.path.join(AIRQA_DIR, 'ccf_catalog.csv')
+        ccf_pd = pd.read_csv(ccf_file)
+
+        CCF_CONFERENCES = {
+            "abbrev2full": {
+                row['abbr'].lower(): row['name'] for idx, row in ccf_pd.iterrows()
+            },
+            "full2abbrev": {
+                normalize_conference_name(row['name']): row['abbr'] for idx, row in ccf_pd.iterrows()
+            }
+        }
+    
+    if conference_abbrev is not None:
+        return conference_abbrev, CCF_CONFERENCES["abbrev2full"].get(conference_abbrev, conference_abbrev)
+    else:
+        return CCF_CONFERENCES["full2abbrev"].get(normalize_conference_name(conference_full), conference_full), conference_full
 
 
 def infer_paper_title_from_pdf(
@@ -229,22 +246,6 @@ def infer_paper_abstract_from_pdf(
         logger.error(f"Paper abstract is not found in the first page of the PDF {pdf_path}.")
         return None
     return abstract
-
-
-def infer_conference_full_from_conference(
-        conference: str,
-        model: str = 'gpt-4o',
-        temperature: float = 0.0 # Use more deterministic decoding with temperature=0.0
-    ) -> str:
-    """ Infer the full title of a conference from its abbreviation.
-    """
-    template = f"""You are an expert in academic papers. Your task is to identify the full title of a conference or a journal based on its abbreviation. If you're not sure about the full title, respond only with "not found".\n\nThe provided abbreviation is:\n\n{conference}\n\nYour response is:
-"""
-    conference_full = call_llm(template, model=model, temperature=temperature).strip()
-    if conference_full.startswith("not found"):
-        logger.error(f"Full title of the conference `{conference}` is not found.")
-        return None
-    return conference_full
 
 
 def infer_paper_tldr_from_metadata(
@@ -462,21 +463,24 @@ def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
         logger.warning(f"Not found paper with title `{title}` and open access PDF in Semantic Scholar.")
         return None
 
-    sorted_hits = sorted(hits, key=lambda x: x['fuzzy-score'], reverse=True)[0]
+    sorted_hits = sorted(hits, key=lambda x: x['fuzzy-score'], reverse=True)
     for data in sorted_hits:
         try:
             data['title'] = data['title'].strip()
             year = int(data['year'])
             if data.get('publicationVenue', {}):
                 conference_full = data['publicationVenue']['name']
-                alternate_names = data['publicationVenue']['alternate_names']
-                conference = sorted(alternate_names, key=lambda x: len(x))[0]
-                if conference == 'NIPS': # special case
-                    conference = 'NeurIPS'
-                subfolder = conference + f'{year}' if ' ' not in conference else 'uncategorized'
+                conference, conference_full = get_ccf_conference_name(conference_full=conference_full)
+                if conference == conference_full: # indeed not found in the CCF list
+                    alternate_names = data['publicationVenue']['alternate_names']
+                    conference = sorted(alternate_names, key=lambda x: len(x))[0]
+                    if conference == 'NIPS': # special case
+                        conference = 'NeurIPS'
+                subfolder = conference.lower() + f'{year}' if re.search(r'^[a-z\d]+$', conference.lower()) else 'uncategorized'
             else:
                 conference_full, conference, subfolder = None, None, 'uncategorized'
             paper_uid = get_airqa_paper_uuid(data['title'], subfolder)
+            assert data['openAccessPdf']['url'] and data['citationStyles']['bibtex'], f"Invalid open access URL or bibtex."
             metadata_dict = {
                 "uuid": paper_uid,
                 "title": data['title'],
@@ -486,7 +490,7 @@ def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                 "year": year,
                 "authors": [author['name'] for author in data['authors']],
                 "pdf_url": data['openAccessPdf']['url'],
-                "pdf_path": os.path.join(AIRQA_DIR, 'papers', subfolder.lower(), f'{paper_uid}.pdf'),
+                "pdf_path": os.path.join(AIRQA_DIR, 'papers', subfolder, f'{paper_uid}.pdf'),
                 "bibtex": data['citationStyles']['bibtex'],
                 "abstract": data['abstract'] # not supported yet with DBLP
             }
@@ -621,38 +625,23 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             # logger.error(f"Failed to get the bibtex from URL: {bibtex_url}.")
             return None
 
-    joint_conference_path = os.path.join("data", "dataset", "airqa", "joint_conference_mapping.jsonl")
-    with open(joint_conference_path, "r", encoding="utf-8") as f:
-        joint_conferences = [json.loads(line) for line in f]
     for hit in sorted_hits:
         try:
             title, conference, year = hit['info']['title'], hit['info']['venue'], int(hit['info']['year'])
             volume = hit.get('volume', None)
-            ccf_catalog = get_ccf_conferences()
-            # determine the download pdf path
+            # determine the conference abbrevation, conference full name and subfolder for PDF path
             if not conference:
                 conference, conference_full, subfolder = None, None, 'uncategorized'
             elif conference.lower() == 'corr':
                 conference, conference_full, subfolder = 'arxiv', 'ArXiv', f'arxiv{year}'
-            elif len(series := ccf_catalog.loc[ccf_catalog.get('abbr').str.lower() == conference.lower(), ['abbr', 'name']]) > 0:
-                conference, conference_full = series.iloc[0]
-                subfolder = conference.lower() + str(year)
             else:
-                for joint_conference in joint_conferences:
-                    if conference.lower().startswith(joint_conference["identifier"]):
-                        conference, conference_full = joint_conference["conference"], joint_conference["conference_full"]
-                        subfolder = conference.lower() + str(year)
-                        break
-                else:
-                    conference_full = infer_conference_full_from_conference(conference)
-                    logger.info(f"Inferred full conference title: {conference_full}, conference abbrevaition: {conference}")
-                    subfolder = conference.lower() + str(year) if conference_full else 'uncategorized'
-                    if not re.match(r'^[a-z\d]+$', subfolder):
-                        subfolder = 'uncategorized'
+                conference, conference_full = get_ccf_conference_name(conference_abbrev=conference)
+                subfolder = conference.lower() + f'{year}' if re.search(r'^[a-z\d]+$', conference.lower()) else 'uncategorized'
+
             paper_uuid = get_airqa_paper_uuid(title, subfolder)
             pdf_path = os.path.join(AIRQA_DIR, 'papers', subfolder, f'{paper_uuid}.pdf')
             pdf_url, bibtex = get_dblp_pdf_url(hit['info']['ee']), get_dblp_bibtex(hit['info']['url'])
-            if pdf_url is None: # unable to find download link, directly return
+            if pdf_url is None: # unable to find download link, try the next candidate
                 continue
             metadata = {
                 "uuid": paper_uuid,
