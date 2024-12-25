@@ -188,7 +188,7 @@ def infer_paper_volume_from_pdf(
     ) -> str:
     """ Use a language model to infer the volume of a paper from the top `first_lines` lines and the bottom `last_lines` of the first page in a PDF.
     """
-    volume_prompt_path = (os.path.abspath(os.path.dirname(__file__)), "volume_prompt.json")
+    volume_prompt_path = os.path.join(os.path.dirname(__file__), "volume_prompt.json")
     with open(volume_prompt_path, "r", encoding='utf-8') as f:
        VOLUME_PROMPTS = json.load(f)
     VOLUME_SYSTEM_PROMPT = VOLUME_PROMPTS["VOLUME_SYSTEM_PROMPT"]
@@ -492,7 +492,7 @@ def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                 "pdf_url": data['openAccessPdf']['url'],
                 "pdf_path": os.path.join(AIRQA_DIR, 'papers', subfolder, f'{paper_uid}.pdf'),
                 "bibtex": data['citationStyles']['bibtex'],
-                "abstract": data['abstract'] # not supported yet with DBLP
+                "abstract": data['abstract']
             }
             return metadata_dict
         except Exception as e:
