@@ -138,15 +138,15 @@ def get_ccf_conference_name(conference_abbrev: str = None, conference_full: str 
 
         CCF_CONFERENCES = {
             "abbrev2full": {
-                row['abbr'].lower(): row['name'] for idx, row in ccf_pd.iterrows()
+                str(row['abbr']).lower(): str(row['name']) for idx, row in ccf_pd.iterrows() if not pd.isna(row['abbr']) and not pd.isna(row['name'])
             },
             "full2abbrev": {
-                normalize_conference_name(row['name']): row['abbr'] for idx, row in ccf_pd.iterrows()
+                normalize_conference_name(str(row['name'])): str(row['abbr']) for idx, row in ccf_pd.iterrows() if not pd.isna(row['abbr']) and not pd.isna(row['name'])
             }
         }
     
     if conference_abbrev is not None:
-        return conference_abbrev, CCF_CONFERENCES["abbrev2full"].get(conference_abbrev, conference_abbrev)
+        return conference_abbrev, CCF_CONFERENCES["abbrev2full"].get(str(conference_abbrev).lower(), conference_abbrev)
     else:
         return CCF_CONFERENCES["full2abbrev"].get(normalize_conference_name(conference_full), conference_full), conference_full
 
