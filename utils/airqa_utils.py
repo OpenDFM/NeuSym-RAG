@@ -65,7 +65,8 @@ def generate_airqa_example_template() -> Dict[str, Any]:
         "question": "",
         "answer_format": "Your answer should be ",
         "tags": [],
-        "pdf_id": [],
+        "anchor_pdf": [],
+        "reference_pdf": [],
         "conference": [],
         "reasoning_steps": [],
         "evaluator": {

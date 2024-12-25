@@ -1,20 +1,19 @@
 {
     "uuid": "5c49a736-420a-52b4-8188-ad80f375e948",
     "question": "From which subset of ExHVV was MemeMQACorpus chosen, and why? How many questions were selected? Also, provide the changes in each role-label for the chosen subset.",
-    "answer_format": "Your answer should be a Python list of 4 elements. The first element is the subset\"s name. The second element is the reason why the author chose this subset. The third element is an integer, denoting the number of questions chosen. The fourth element is a Python dict, containing role-labels and their corresponding changes, where each change is calculated as the new count minus the old count. e.g. [\"answer1\", \"answer2\", 3, {\"role1\": -2, \"role2\": 3, ...}]",
+    "answer_format": "Your answer should be a Python list of 4 elements. The first element is the subset's name. The second element is the reason why the author chose this subset. The third element is an integer, denoting the number of questions chosen. The fourth element is a Python dict, containing role-labels and their corresponding changes, where each change is calculated as the new count minus the old count. e.g. [\"answer1\", \"answer2\", 3, {\"role1\": -2, \"role2\": 3, ...}]",
     "tags": [
-        "comprehensive q&a",
+        "multi-doc analysis",
         "table calculation",
-        "text understanding"
+        "text understanding",
+        "subjective"
     ],
-    "pdf_id": [
+    "archor_pdf": [
         "0b35eefa-16ce-5586-9a5b-5ce712108204",
         "3fa95090-bfd8-5e88-a119-fe685d21c97e"
     ],
-    "conference": [
-        "acl2024",
-        "aaai2023"
-    ],
+    "reference_pdf": [],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, locate the section that mentioned dataset MemeMQACorpus.",
         "Find the answer to the first three sub-questions.",
@@ -33,7 +32,10 @@
             ],
             "eval_kwargs_list": [
                 {
-                    "gold": "US Politics"
+                    "gold": "US Politics",
+                    "ignore_blank": true,
+                    "ignore_order": true,
+                    "lowercase": true
                 },
                 {
                     "reference_answer": "This domain choice is based on diversity in the entity distribution across different roles compared to the other subset (on Covid-19) of ExHVV dataset.",
@@ -47,8 +49,7 @@
                         "hero": -89,
                         "villain": -628,
                         "victim": -241
-                    },
-                    "ignore_blank": true
+                    }
                 }
             ]
         }

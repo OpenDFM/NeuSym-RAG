@@ -1,0 +1,40 @@
+{
+    "uuid": "a3c6958b-aed2-5e28-8dea-5d0b88550ac8",
+    "question": "According to the anchor PDF, what're the three most recent decoder-only LLMs for NL2Code? How many programming languages do their training datasets contain respectively?",
+    "answer_format": "Your answer should be a Python dictionary of 3 key-value pairs, where each key is the name of the LLM and each value is an integer indicating the number of programming languages in its training dataset. e.g. {\"LLM1\": 3, \"LLM2\": 5, \"LLM3\": 2}",
+    "tags": [
+        "table calculation",
+        "text understanding",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "37758401-6101-554f-8f1e-4e2995443314"
+    ],
+    "reference_pdf": [
+        "6590d875-4982-56a0-8bd7-e67f4bc777c9",
+        "4247e19f-5e43-5545-821a-2f3d97379cac",
+        "3905e63d-ca28-5db5-9ddf-b51ac2f449bd",
+        "5eb70fbd-1dc5-583f-b43f-a95968af7dee",
+        "3c3b3cfc-e4f2-52b9-899a-2f9cac25dafc"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the table which compares different LLMs for NL2Code.",
+        "Identify the three most recent decoder-only LLMs.",
+        "Locate the respective papers.",
+        "Find the number of programming languages in training datasets for each LLM."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": {
+                "CodeGeeX": 23,
+                "BLOOM": 13,
+                "SantaCoder": 3
+            }
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    }
+}

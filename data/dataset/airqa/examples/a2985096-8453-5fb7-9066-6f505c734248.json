@@ -1,26 +1,22 @@
 {
     "uuid": "a2985096-8453-5fb7-9066-6f505c734248",
     "question": "List the names of the baselines used in the paper \"On the Compositional Generalization in Versatile Open-domain Dialogue\", along with the titles of papers that proposed these baselines.",
-    "answer_format": "Your answer should be a Python list of baseline-title pair, e.g., [[\"baseline1\", \"title1\"] , [\"dataset2\", \"title2\"], ...]. YOU MUST USE THE EXACT TEXT FROM THE PAPER AND THE FULL TITLE TEXT OF THE PAPERS.",
+    "answer_format": "Your answer should be a Python list of baseline-title pair, e.g., [[\"baseline1\", \"title1\"] , [\"baseline2\", \"title2\"], ...]. YOU MUST USE THE EXACT TEXT FROM THE PAPER AND THE FULL TITLE TEXT OF THE PAPERS.",
     "tags": [
         "metadata query",
         "metadata extraction",
         "objective"
     ],
-    "pdf_id": [
-        "3107f6a8-1939-5af0-b3d8-06d7aa66158d",
+    "anchor_pdf": [
+        "3107f6a8-1939-5af0-b3d8-06d7aa66158d"
+    ],
+    "reference_pdf": [
         "eb4800c1-5de9-5cc5-aff4-f02f057b4ba9",
         "bf052655-f971-51b9-91a9-1d34ad1cf701",
         "3da67e14-5538-5013-876e-18cb0355d507",
         "363f1ed3-023c-5696-9abd-5b3ad6fa3bfc"
     ],
-    "conference": [
-        "acl2023",
-        "acl2020",
-        "emnlp2022",
-        "acl2021",
-        "uncategorized"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, locate the sections that mention baselines.",
         "Identify the baselines.",
@@ -48,7 +44,11 @@
                     "Modular Skill",
                     "Combining modular skills in multitask learning"
                 ]
-            ]
+            ],
+            "lowercase": true,
+            "ignore_order": true,
+            "ignore_blank": true,
+            "threshold": 95
         }
     },
     "state": {

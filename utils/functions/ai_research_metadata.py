@@ -1,5 +1,5 @@
 #coding=utf8
-import json, requests, shutil, uuid, tempfile, subprocess, sys, os, re, logging
+import html, json, requests, shutil, uuid, tempfile, subprocess, sys, os, re, logging
 import urllib, urllib.request
 import xmltodict
 from bs4 import BeautifulSoup
@@ -236,16 +236,19 @@ def infer_paper_abstract_from_pdf(
     """ Use a language model to infer the abstract of a paper from the first page in a PDF.
     """
     doc = fitz.open(pdf_path)
-    first_page = doc[0].get_text()
-    doc.close()
 
-    # Call the language model to infer the title
-    template = f"""You are an expert in academic papers. Your task is to identify the abstract of a research paper based on the text from the first page in the PDF, extracted using PyMuPDF. Please ensure the following:\n1. Directly return the abstract without adding any extra context, explanations, or formatting.\n2. Do not modify the abstract, retain its original capitalization and punctuation exactly as presented.\n3. If the abstract spans multiple lines, concatenate them into a single line and return it.\n4. If you are certain that the provided text does not contain the paper's abstract, respond only with "abstract not found".\n\nHere is the extracted text:\n\n```txt\n{first_page}\n```\n\nYour response is:\n"""
-    abstract = call_llm(template, model=model, temperature=temperature).strip()
-    if abstract.startswith("abstract not found"):
-        logger.error(f"Paper abstract is not found in the first page of the PDF {pdf_path}.")
-        return None
-    return abstract
+    template = """You are an expert in academic papers. Your task is to identify the abstract of a research paper based on the text from the first {page_num} page(s) in the PDF, extracted using PyMuPDF. Please ensure the following:\n1. Directly return the abstract without adding any extra context, explanations, or formatting.\n2. Do not modify the abstract, retain its original capitalization and punctuation exactly as presented.\n3. If the abstract spans multiple lines, concatenate them into a single line and return it.\n4. If you are certain that the provided text does not contain the paper's abstract, respond only with "abstract not found".\n\nHere is the extracted text:\n\n```txt\n{page_content}\n```\n\nYour response is:\n"""
+    
+    page_content = ""
+    for page_num in range(0, min(4, len(doc))):
+        page_content += doc[page_num].get_text()
+        abstract = call_llm(template.format(page_num=page_num+1, page_content=page_content), model=model, temperature=temperature).strip()
+        if not abstract.startswith("abstract not found"):
+            doc.close()
+            return abstract
+    logger.error(f"Paper abstract is not found in the first page of the PDF {pdf_path}.")
+    doc.close()
+    return None
 
 
 def infer_paper_tldr_from_metadata(
@@ -359,7 +362,7 @@ def arxiv_scholar_api(arxiv_id_or_title: str, **kwargs) -> Tuple[bool, Dict[str,
                     hit['fuzzy-score'] = fuzz.ratio(extracted_id, normed_id_or_title)
                     filtered_data.append(hit)
             else: # allow fuzzy matching for title with threshold
-                hit_title = hit.get('title', '').lower().replace('\n ', '').strip()
+                hit_title = html.unescape(hit.get('title', '').lower().replace('\n ', '').strip())
                 hit['fuzzy-score'] = fuzz.ratio(normed_id_or_title, hit_title)
                 if hit['fuzzy-score'] >= kwargs.get('threshold', 90):
                     filtered_data.append(hit)
@@ -536,7 +539,7 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
     threshold = kwargs.get('threshold', 90)
     filtered_hits = []
     for hit in hits: # filter result
-        title_hit = hit['info'].get('title', '').rstrip('.')
+        title_hit = html.unescape(hit['info'].get('title', '').rstrip('.'))
         hit['info']['title'] = title_hit
         hit['fuzzy-score'] = fuzz.ratio(title.lower(), title_hit.lower())
         hit['non-arxiv'] = 1 if hit.get('info', {}).get('venue', '') != 'CoRR' else 0 # non-arxiv with priority
