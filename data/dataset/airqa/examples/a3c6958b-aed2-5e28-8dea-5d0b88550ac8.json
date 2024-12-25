@@ -3,6 +3,7 @@
     "question": "According to the anchor PDF, what're the three most recent decoder-only LLMs for NL2Code? How many programming languages do their training datasets contain respectively?",
     "answer_format": "Your answer should be a Python dictionary of 3 key-value pairs, where each key is the name of the LLM and each value is an integer indicating the number of programming languages in its training dataset. e.g. {\"LLM1\": 3, \"LLM2\": 5, \"LLM3\": 2}",
     "tags": [
+        "multi-doc analysis",
         "table calculation",
         "text understanding",
         "objective"
