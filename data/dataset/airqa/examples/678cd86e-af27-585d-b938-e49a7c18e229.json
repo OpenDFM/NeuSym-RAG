@@ -1,0 +1,27 @@
+{
+    "uuid": "678cd86e-af27-585d-b938-e49a7c18e229",
+    "question": "What are all the papers that Aviv Slobodkin has participated in acl2024?",
+    "answer_format": "Your answer should be a Python list, every element of the list is the string of a paper_uuid",
+    "tags": [
+        "paper retrieval"
+    ],
+    "pdf_id": [
+    ],
+    "conference": [
+        "acl2024"
+    ],
+    "reasoning_steps": [
+        "Find papers with Aviv Slobodkin as one of the authors from the database."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": ["3097e545-7cad-5021-9d16-57938472fc77","7eb41d67-59e3-542a-8f03-93ab8f53216a"],
+            "ignore_order": true,
+            "ignore_blank": true
+        }
+    },
+    "state": {
+        "gpt-4o-2024-11-20": false
+    }
+}
