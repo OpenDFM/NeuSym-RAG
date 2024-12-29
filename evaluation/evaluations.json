@@ -1,7 +1,7 @@
 {
     "eval_string_exact_match": {
         "function": "eval_string_exact_match",
-        "description": "Evaluate the output against the answer using exact string match.",
+        "description": "Evaluate the predicted answer against the gold answer using exact string match.",
         "parameters": {
             "gold": {
                 "type": "str",
@@ -27,6 +27,820 @@
                 "eval_kwargs": {
                     "gold": "Italian",
                     "lowercase": true
+                }
+            }
+        ]
+    },
+
+    "eval_string_fuzzy_match": {
+        "function": "eval_string_fuzzy_match",
+        "description": "Evaluate the predicted answer against the gold answer using fuzzy string match.",
+        "parameters": {
+          "gold": {
+            "type": "str",
+            "required": true,
+            "description": "The gold answer in Python string format."
+          },
+          "fuzz_method": {
+            "type": "str",
+            "required": false,
+            "default": "ratio",
+            "description": "The method for fuzzy string matching. Available options are 'ratio', 'partial_ratio', 'token_sort_ratio', 'token_set_ratio'."
+          },
+          "threshold": {
+            "type": "int",
+            "required": false,
+            "default": 95,
+            "description": "The threshold for fuzzy string matching. A match above this threshold is considered valid."
+          },
+          "ignore_blank": {
+            "type": "bool",
+            "required": false,
+            "default": false,
+            "description": "Whether to ignore the blank spaces."
+          },
+          "lowercase": {
+            "type": "bool",
+            "required": false,
+            "default": false,
+            "description": "Whether to convert the strings to lowercase before comparison."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_string_fuzzy_match",
+            "eval_kwargs": {
+              "gold": "Italy",
+              "fuzz_method": "token_sort_ratio",
+              "threshold": 90,
+              "lowercase": true
+            }
+          }
+        ]
+    },
+
+    "eval_bool_exact_match": {
+        "function": "eval_bool_exact_match",
+        "description": "Evaluate the predicted answer against the gold answer using exact boolean match.",
+        "parameters": {
+          "gold": {
+            "type": "bool",
+            "required": true,
+            "description": "The gold answer (boolean value)."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_bool_exact_match",
+            "eval_kwargs": {
+              "gold": true
+            }
+          }
+        ]
+    },
+
+    "eval_int_exact_match": {
+        "function": "eval_int_exact_match",
+        "description": "Evaluate the predicted answer against the gold answer using exact integer match.",
+        "parameters": {
+          "gold": {
+            "type": "int",
+            "required": true,
+            "description": "The gold answer (integer value)."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_int_exact_match",
+            "eval_kwargs": {
+              "gold": 42
+            }
+          }
+        ]
+    },
+
+    "eval_float_exact_match": {
+        "function": "eval_float_exact_match",
+        "description": "Evaluate the predicted answer against the gold answer using exact float match with optional accuracy.",
+        "parameters": {
+          "gold": {
+            "type": "float",
+            "required": true,
+            "description": "The gold answer (float value)."
+          },
+          "ndigits": {
+            "type": "int",
+            "required": false,
+            "default": null,
+            "description": "The number of decimal places to round to before comparison. If None, no rounding is applied."
+          },
+          "tolerance": {
+            "type": "float",
+            "required": false,
+            "default": 1e-6,
+            "description": "The relative tolerance for floating-point comparison. Default is 1e-6."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_float_exact_match",
+            "eval_kwargs": {
+              "gold": 3.14159,
+              "ndigits": 3,
+              "tolerance": 1e-6
+            }
+          }
+        ]
+    },
+
+    "eval_structured_object_exact_match": {
+        "function": "eval_structured_object_exact_match",
+        "description": "Evaluate the predicted answer against the gold answer recursively by parsing them both as Python-style lists or dictionaries with optional arguments for comparison.",
+        "parameters": {
+          "gold": {
+            "type": "any",
+            "required": true,
+            "description": "The gold answer (can be any type: list, dict, int, float, or str)."
+          },
+          "ignore_order": {
+            "type": "bool",
+            "required": false,
+            "default": false,
+            "description": "Whether to ignore the order of elements in lists (only relevant for lists)."
+          },
+          "tolerance": {
+            "type": "float",
+            "required": false,
+            "default": 1e-6,
+            "description": "The tolerance for comparing float numbers (only relevant for floats)."
+          },
+          "ndigits": {
+            "type": "int",
+            "required": false,
+            "default": null,
+            "description": "The number of digits to round float numbers before comparison (only relevant for floats)."
+          },
+          "lowercase": {
+            "type": "bool",
+            "required": false,
+            "default": false,
+            "description": "Whether to convert strings to lowercase before comparison (only relevant for strings)."
+          },
+          "ignore_blank": {
+            "type": "bool",
+            "required": false,
+            "default": false,
+            "description": "Whether to ignore blank spaces before comparison (only relevant for strings)."
+          },
+          "threshold": {
+            "type": "int",
+            "required": false,
+            "default": -1,
+            "description": "The threshold for fuzzy string matching. If greater than 0, uses fuzzy matching (only relevant for strings)."
+          },
+          "fuzz_method": {
+            "type": "str",
+            "required": false,
+            "default": "ratio",
+            "description": "The fuzzy matching method to use if `threshold` is set. Default is 'ratio'."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_structured_object_exact_match",
+            "eval_kwargs": {
+              "gold": [1, 2, 3],
+              "ignore_order": true
+            }
+          },
+          {
+            "eval_func": "eval_structured_object_exact_match",
+            "eval_kwargs": {
+              "gold": {"key1": 1.204, "key2": 2.335},
+              "ndigits": 2
+            }
+          },
+          {
+            "eval_func": "eval_structured_object_exact_match",
+            "eval_kwargs": {
+              "gold": ["Italy", "France", "Germany"],
+              "lowercase": true
+            }
+          }
+        ]
+    },
+
+    "eval_reference_answer_with_llm": {
+        "function": "eval_reference_answer_with_llm",
+        "description": "Evaluate the predicted answer with LLM based on the semantic meaning and intent compared to the reference answer.",
+        "parameters": {
+          "reference_answer": {
+            "type": "str",
+            "required": true,
+            "description": "The reference answer (ground truth) against which the predicted answer is evaluated."
+          },
+          "question": {
+            "type": "str",
+            "required": true,
+            "description": "The input question that was asked."
+          },
+          "llm_model": {
+            "type": "str",
+            "required": false,
+            "default": "DEFAULT_LLM_MODEL",
+            "description": "The LLM model name to use for evaluation. Default is the specified constant `DEFAULT_LLM_MODEL`."
+          },
+          "temperature": {
+            "type": "float",
+            "required": false,
+            "default": "DEFAULT_TEMPERATURE",
+            "description": "The temperature parameter for the LLM, affecting the randomness of the output. Default is the specified constant `DEFAULT_TEMPERATURE`."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_reference_answer_with_llm",
+            "eval_kwargs": {
+              "reference_answer": "Artificial intelligence is a branch of computer science focused on building systems that can perform tasks that typically require human intelligence.",
+              "question": "What is artificial intelligence?"
+            }
+          }
+        ]
+    },
+
+    "eval_candidate_reference_answer_with_llm": {
+        "function": "eval_candidate_reference_answer_with_llm",
+        "description": "Evaluate the predicted answer against a list of candidate reference answers with LLM. The predicted answer is correct if it matches any of the candidate reference answers semantically.",
+        "parameters": {
+          "candidate_reference_answers": {
+            "type": "list",
+            "required": true,
+            "description": "The list of candidate reference answers to be compared against the predicted answer."
+          },
+          "question": {
+            "type": "str",
+            "required": true,
+            "description": "The input question that provides context for the evaluation."
+          },
+          "llm_model": {
+            "type": "str",
+            "required": false,
+            "default": "DEFAULT_LLM_MODEL",
+            "description": "The LLM model to use for evaluation. Default is `DEFAULT_LLM_MODEL`."
+          },
+          "temperature": {
+            "type": "float",
+            "required": false,
+            "default": "DEFAULT_TEMPERATURE",
+            "description": "The temperature parameter for the LLM, controlling randomness. Default is `DEFAULT_TEMPERATURE`."
+          }
+        },
+        "use_cases": [
+        {
+            "eval_func": "eval_candidate_reference_answer_with_llm",
+            "eval_kwargs": {
+                "candidate_reference_answers": [
+                "Artificial intelligence is a branch of computer science focused on building systems that can perform tasks that typically require human intelligence.",
+                "AI involves creating algorithms capable of decision-making, speech recognition, and problem-solving."
+                ],
+                "question": "What is artificial intelligence?"
+            }
+        }
+        ]
+    },
+
+    "eval_partial_scoring_points_with_llm": {
+        "function": "eval_partial_scoring_points_with_llm",
+        "description": "Evaluate whether the predicted answer mentions at least the specified number of scoring points, based on the input question and scoring points list, using LLM.",
+        "parameters": {
+          "scoring_points": {
+            "type": "list",
+            "required": true,
+            "description": "The list of scoring points that need to be mentioned in the predicted answer."
+          },
+          "question": {
+            "type": "str",
+            "required": true,
+            "description": "The input question that provides context for the evaluation."
+          },
+          "count": {
+            "type": "int",
+            "required": false,
+            "default": 1,
+            "description": "The minimum number of scoring points that must be mentioned in the predicted answer."
+          },
+          "llm_model": {
+            "type": "str",
+            "required": false,
+            "default": "DEFAULT_LLM_MODEL",
+            "description": "The LLM model to use for evaluation. Default is `DEFAULT_LLM_MODEL`."
+          },
+          "temperature": {
+            "type": "float",
+            "required": false,
+            "default": "DEFAULT_TEMPERATURE",
+            "description": "The temperature parameter for the LLM, controlling randomness. Default is `DEFAULT_TEMPERATURE`."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_partial_scoring_points_with_llm",
+            "eval_kwargs": {
+              "scoring_points": [
+                "Artificial intelligence is a field in computer science.",
+                "AI can be used for machine learning and problem solving.",
+                "The goal of AI is to create systems that mimic human intelligence."
+              ],
+              "question": "What is artificial intelligence?",
+              "count": 2
+            }
+          }
+        ]
+    },
+
+    "eval_scoring_points_with_llm": {
+        "function": "eval_scoring_points_with_llm",
+        "description": "Evaluate whether all required scoring points are mentioned in the predicted answer using LLM.",
+        "parameters": {
+          "scoring_points": {
+            "type": "list",
+            "required": true,
+            "description": "The list of scoring points that need to be all mentioned in the predicted answer."
+          },
+          "question": {
+            "type": "str",
+            "required": true,
+            "description": "The input question that provides context for the evaluation."
+          },
+          "llm_model": {
+            "type": "str",
+            "required": false,
+            "default": "DEFAULT_LLM_MODEL",
+            "description": "The LLM model to use for evaluation. Default is `DEFAULT_LLM_MODEL`."
+          },
+          "temperature": {
+            "type": "float",
+            "required": false,
+            "default": "DEFAULT_TEMPERATURE",
+            "description": "The temperature parameter for the LLM, controlling randomness. Default is `DEFAULT_TEMPERATURE`."
+          },
+          "ignore_order": {
+            "type": "bool",
+            "required": false,
+            "default": true,
+            "description": "Whether to ignore the order of scoring points when evaluating the answer."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_scoring_points_with_llm",
+            "eval_kwargs": {
+              "scoring_points": [
+                "Supervised learning involves training a model on labeled data.",
+                "Unsupervised learning is used when data does not have labels.",
+                "Reinforcement learning focuses on agents learning through interaction with an environment."
+              ],
+              "question": "Can you explain the different types of machine learning?",
+              "ignore_order": true
+            }
+          }
+        ]
+    },
+
+    "eval_reference_answer_and_scoring_points_with_llm": {
+        "function": "eval_reference_answer_and_scoring_points_with_llm",
+        "description": "Evaluate the reference answer and scoring points with LLM, checking both the reference and scoring points in the predicted answer.",
+        "parameters": {
+          "reference_answer": {
+            "type": "str",
+            "required": true,
+            "description": "The reference answer that the predicted answer will be compared to."
+          },
+          "scoring_points": {
+            "type": "list",
+            "required": true,
+            "description": "A list of scoring points that must be mentioned in the predicted answer."
+          },
+          "question": {
+            "type": "str",
+            "required": true,
+            "description": "The input question that provides context for the evaluation."
+          },
+          "llm_model": {
+            "type": "str",
+            "required": false,
+            "default": "DEFAULT_LLM_MODEL",
+            "description": "The LLM model to use for evaluation. Default is `DEFAULT_LLM_MODEL`."
+          },
+          "temperature": {
+            "type": "float",
+            "required": false,
+            "default": "DEFAULT_TEMPERATURE",
+            "description": "The temperature parameter for the LLM, controlling randomness. Default is `DEFAULT_TEMPERATURE`."
+          },
+          "ignore_order": {
+            "type": "bool",
+            "required": false,
+            "default": true,
+            "description": "Whether to ignore the order of the scoring points when evaluating the answer."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_reference_answer_and_scoring_points_with_llm",
+            "eval_kwargs": {
+              "reference_answer": "Artificial intelligence involves the development of algorithms and models that allow machines to perform tasks that would typically require human intelligence.",
+              "scoring_points": [
+                "AI involves algorithms and models.",
+                "AI enables machines to perform human-like tasks.",
+                "AI systems are built to simulate human intelligence."
+              ],
+              "question": "Can you summarize what artificial intelligence is following the instruction in the first paragraph?",
+              "ignore_order": false
+            }
+          }
+        ]
+    },
+
+    "eval_complex_math_formula_with_llm": {
+        "function": "eval_complex_math_formula_with_llm",
+        "description": "Evaluate the mathematical equivalence between the predicted answer and the reference formula answer formatted in Latex using LLM.",
+        "parameters": {
+          "formulas": {
+            "type": "str or list",
+            "required": true,
+            "description": "The reference math formula(s) to compare the predicted LaTeX code against."
+          },
+          "question": {
+            "type": "str",
+            "required": true,
+            "description": "The question describing the problem context for the math formula."
+          },
+          "llm_model": {
+            "type": "str",
+            "required": false,
+            "default": "DEFAULT_LLM_MODEL",
+            "description": "The LLM model used for evaluation."
+          },
+          "temperature": {
+            "type": "float",
+            "required": false,
+            "default": "DEFAULT_TEMPERATURE",
+            "description": "The temperature setting for controlling the randomness of the model."
+          },
+          "ignore_order": {
+            "type": "bool",
+            "required": false,
+            "default": true,
+            "description": "Whether to ignore the order of formulas in the evaluation."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_complex_math_formula_with_llm",
+            "eval_kwargs": {
+              "question": "What is the solution to the quadratic equation $ax^2 + bx + c = 0$?",
+              "formulas": "$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}"
+            }
+          }
+        ]
+    },
+
+    "eval_element_included": {
+        "function": "eval_element_included",
+        "description": "Evaluate whether the predicted answer is included in the gold answer list.",
+        "parameters": {
+          "gold": {
+            "type": "list",
+            "required": true,
+            "description": "The gold answer list to compare against."
+          },
+          "element_type": {
+            "type": "str",
+            "required": false,
+            "description": "The type of the element. Can be 'str', 'int', 'float', 'dict' or 'list'. Default is str."
+          },
+          "ndigits": {
+            "type": "int",
+            "required": false,
+            "default": 2,
+            "description": "The number of digits for rounding in case of float comparisons. Default is 2."
+          },
+          "tolerance": {
+            "type": "float",
+            "required": false,
+            "default": 1e-6,
+            "description": "The tolerance for comparing floats. Default is 1e-6."
+          },
+          "fuzz_method": {
+            "type": "str",
+            "required": false,
+            "default": "ratio",
+            "description": "The method for fuzzy string matching. Default is 'ratio'."
+          },
+          "threshold": {
+            "type": "int",
+            "required": false,
+            "default": -1,
+            "description": "The threshold for fuzzy string matching. Default is -1, meaning exact match."
+          },
+          "lowercase": {
+            "type": "bool",
+            "required": false,
+            "default": false,
+            "description": "Whether to ignore case in string comparisons. Default is false."
+          },
+          "ignore_blank": {
+            "type": "bool",
+            "required": false,
+            "default": false,
+            "description": "Whether to ignore blank spaces in string comparisons. Default is false."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_element_included",
+            "eval_kwargs": {
+              "gold": ["hello world", "Hi there", "Greetings"],
+              "element_type": "str",
+              "lowercase": true,
+              "ignore_blank": true
+            }
+          },
+          {
+            "eval_func": "eval_element_included",
+            "eval_kwargs": {
+              "gold": [3.141, 3.14, 2.71],
+              "element_type": "float",
+              "ndigits": 2
+            }
+          },
+          {
+            "eval_func": "eval_element_included",
+            "eval_kwargs": {
+              "gold": [{"a": 1, "b": 2}, {"x": 9, "y": 8}],
+              "element_type": "dict"
+            }
+          }
+        ]
+    },
+
+    "eval_element_list_included": {
+        "function": "eval_element_list_included",
+        "description": "Evaluate whether each element in the predicted answer list is included in the gold answer list.",
+        "parameters": {
+          "gold": {
+            "type": "list",
+            "required": true,
+            "description": "The gold answer list to compare against."
+          },
+          "element_type": {
+            "type": "str",
+            "required": false,
+            "description": "The type of the element. Can be 'str', 'int', 'float', 'dict' or 'list'. Default is str."
+          },
+          "ndigits": {
+            "type": "int",
+            "required": false,
+            "default": 2,
+            "description": "The number of digits for rounding in case of float comparisons. Default is 2."
+          },
+          "tolerance": {
+            "type": "float",
+            "required": false,
+            "default": 1e-6,
+            "description": "The tolerance for comparing floats. Default is 1e-6."
+          },
+          "fuzz_method": {
+            "type": "str",
+            "required": false,
+            "default": "ratio",
+            "description": "The method for fuzzy string matching. Default is 'ratio'."
+          },
+          "threshold": {
+            "type": "int",
+            "required": false,
+            "default": -1,
+            "description": "The threshold for fuzzy string matching. Default is -1, meaning exact match."
+          },
+          "lowercase": {
+            "type": "bool",
+            "required": false,
+            "default": false,
+            "description": "Whether to ignore case in string comparisons. Default is false."
+          },
+          "ignore_blank": {
+            "type": "bool",
+            "required": false,
+            "default": false,
+            "description": "Whether to ignore blank spaces in string comparisons. Default is false."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_element_list_included",
+            "eval_kwargs": {
+              "gold": ["apple", "banana", "cherry", "date", "elderberry"],
+              "element_type": "str",
+              "lowercase": true
+            }
+          },
+          {
+            "eval_func": "eval_element_list_included",
+            "eval_kwargs": {
+              "gold": [3.141, 3.14, 2.71, 2.718],
+              "element_type": "float",
+              "ndigits": 2
+            }
+          },
+          {
+            "eval_func": "eval_element_list_included",
+            "eval_kwargs": {
+              "gold": [{"a": 1}, {"b": 2}, {"c": 3}],
+              "element_type": "dict"
+            }
+          }
+        ]
+    },
+
+    "eval_element_list_overlap": {
+        "function": "eval_element_list_overlap",
+        "description": "Evaluate whether the predicted answer list overlaps with the gold answer list, checking if at least 'count' distinct elements are present in both lists.",
+        "parameters": {
+          "gold": {
+            "type": "list",
+            "required": true,
+            "description": "The gold answer list to compare against."
+          },
+          "count": {
+            "type": "int",
+            "default": 1,
+            "description": "The minimum number of distinct elements that should overlap between the predicted and gold answer lists."
+          },
+          "element_type": {
+            "type": "str",
+            "required": false,
+            "description": "The type of the element. Can be 'str', 'int', 'float', 'dict' or 'list'. Default is str."
+          },
+          "ndigits": {
+            "type": "int",
+            "required": false,
+            "default": 2,
+            "description": "The number of digits for rounding in case of float comparisons. Default is 2."
+          },
+          "tolerance": {
+            "type": "float",
+            "required": false,
+            "default": 1e-6,
+            "description": "The tolerance for comparing floats. Default is 1e-6."
+          },
+          "fuzz_method": {
+            "type": "str",
+            "required": false,
+            "default": "ratio",
+            "description": "The method for fuzzy string matching. Default is 'ratio'."
+          },
+          "threshold": {
+            "type": "int",
+            "required": false,
+            "default": -1,
+            "description": "The threshold for fuzzy string matching. Default is -1, meaning exact match."
+          },
+          "lowercase": {
+            "type": "bool",
+            "required": false,
+            "default": false,
+            "description": "Whether to ignore case in string comparisons. Default is false."
+          },
+          "ignore_blank": {
+            "type": "bool",
+            "required": false,
+            "default": false,
+            "description": "Whether to ignore blank spaces in string comparisons. Default is false."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_element_list_overlap",
+            "eval_kwargs": {
+              "gold": [3, 4, 5],
+              "element_type": "int",
+              "count": 2
+            }
+          },
+          {
+            "eval_func": "eval_element_list_overlap",
+            "eval_kwargs": {
+              "gold": ["banana", "apple", "date", "cherry"],
+              "count": 3,
+              "lowercase": true
+            }
+          }
+        ]
+    },
+
+    "eval_conjunction": {
+        "function": "eval_conjunction",
+        "description": "Evaluate the conjunction (logical AND) of multiple evaluation functions. Returns 1.0 if all evaluation functions satisfy their conditions, otherwise 0.0.",
+        "parameters": {
+          "eval_func_list": {
+            "type": "list",
+            "required": true,
+            "description": "The list of evaluation function names to apply to each corresponding predicted answer."
+          },
+          "eval_kwargs_list": {
+            "type": "list",
+            "required": true,
+            "description": "The list of keyword argument dictionaries for each evaluation function."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_conjunction",
+            "eval_kwargs": {
+              "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+              ],
+              "eval_kwargs_list": [
+                {
+                  "gold": "role-oriented routing",
+                  "lowercase": true
+                },
+                {
+                  "reference_answer": "To illustrate the effect of RoR, we run three baselines, namely, 'ALL', 'RANDOM', 'NO ROLE' as comparison to our approach, where the first one selects all experts, the second randomly select experts, and the third one does not use role information in router inputs. The results of the aforementioned models are reported in Table 9 with the following observations. First, comparing our approach (in Table 3) with the 'ALL' and the 'RANDOM' baselines, our approach achieves better performance, which complies with our intuition because that 'ALL' and 'RANDOM' actually do not select experts to process the input features and thus face problems of utilizing inappropriate experts to process the essential content of the dialogue, which introduces noise that leads to inferior results. Second, when the role information is not included in the router, the model's performance is also worse than our full model, which indicates that the role information is important to understand the key content of dialogue as we hypothesized in our motivation, so that it helps the router to better associate some contents to particular speakers and perform appropriate expert selection",
+                  "question": "How do the authors further explain why role-oriented routing works?"
+                }
+              ]
+            }
+          }
+        ]
+    },
+
+    "eval_disjunction": {
+        "function": "eval_disjunction",
+        "description": "Evaluate the disjunction (logical OR) of multiple evaluation functions. Returns 1.0 if at least one evaluation function satisfies its condition, otherwise 0.0.",
+        "parameters": {
+          "eval_func_list": {
+            "type": "list",
+            "required": true,
+            "description": "The list of evaluation function names to apply to each corresponding predicted answer."
+          },
+          "eval_kwargs_list": {
+            "type": "list",
+            "required": true,
+            "description": "The list of keyword argument dictionaries for each evaluation function."
+          }
+        },
+        "use_cases": [
+          {
+            "eval_func": "eval_disjunction",
+            "eval_kwargs": {
+              "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+              ],
+              "eval_kwargs_list": [
+                {
+                  "gold": "role-oriented routing",
+                  "lowercase": true
+                },
+                {
+                  "reference_answer": "It routes messages, requests, or tasks based on the roles or responsibilities of the recipients, rather than simply by their identity or static attributes.",
+                  "question": "What's the most important idea of role-oriented routing?"
+                }
+              ]
+            }
+          }
+        ]
+    },
+
+    "eval_negation": {
+        "function": "eval_negation",
+        "description": "Evaluate the negation of an evaluation function. The result is the complement of the evaluation function's output. If the evaluation function returns 1.0, this will return 0.0, and vice versa.",
+        "parameters": {
+          "eval_func": {
+            "type": "str",
+            "required": true,
+            "description": "The evaluation function name to be negated. This function will be applied to the predicted answer with the provided kwargs."
+          },
+          "eval_kwargs": {
+            "type": "dict",
+            "required": true,
+            "description": "The keyword arguments to be passed to the evaluation function."
+          }
+        },
+        "use_cases": [
+            {
+                "eval_func": "eval_negation",
+                "eval_kwargs": {
+                  "eval_func": "eval_element_list_overlap",
+                  "eval_kwargs":
+                    {
+                      "gold": ["DocVQA","ChartQA","InfoVQA"],
+                      "count":1,
+                      "lowercase": true
+                    }
                 }
             }
         ]
