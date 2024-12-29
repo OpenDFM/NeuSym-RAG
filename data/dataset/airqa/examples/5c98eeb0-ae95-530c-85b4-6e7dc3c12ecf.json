@@ -3,9 +3,9 @@
     "question": "For Llama2 on DialogSum, which newly proposed module contributes more to the improvement of performance? How do the authors further explain why that module works?",
     "answer_format": "Your answer should be a Python list of 2 elements, where the first element is the FULL NAME of the module that contributes more to the improvement of performance, and the second element is a string, explaining why that module works. e.g. [\"module\", \"explanation\"].",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "table calculation",
+        "single",
+        "text",
+        "table",
         "subjective"
     ],
     "anchor_pdf": [
@@ -28,17 +28,18 @@
             ],
             "eval_kwargs_list": [
                 {
-                    "gold": "role-oriented routing",
+                    "gold": "fusion generation",
                     "lowercase": true
                 },
                 {
-                    "reference_answer": "To illustrate the effect of RoR, we run three baselines, namely, 'ALL', 'RANDOM', 'NO ROLE' as comparison to our approach, where the first one selects all experts, the second randomly select experts, and the third one does not use role information in router inputs. The results of the aforementioned models are reported in Table 9 with the following observations. First, comparing our approach (in Table 3) with the 'ALL' and the 'RANDOM' baselines, our approach achieves better performance, which complies with our intuition because that 'ALL' and 'RANDOM' actually do not select experts to process the input features and thus face problems of utilizing inappropriate experts to process the essential content of the dialogue, which introduces noise that leads to inferior results. Second, when the role information is not included in the router, the model's performance is also worse than our full model, which indicates that the role information is important to understand the key content of dialogue as we hypothesized in our motivation, so that it helps the router to better associate some contents to particular speakers and perform appropriate expert selection",
-                    "question": "How do the authors further explain why role-oriented routing works?"
+                    "reference_answer": "In our main experiments, we use dialogue as the condition for generating the final summary in the FG. To explore the effect of using such condition, we run experiments without using it, where the results are ported in Table 10. It clearly shows that, compared with the models without using the entire dialogue, our approach is able to generate better summaries, which emphasizes the contribution of the entire dialogue, for the reason that it provides global or environmental information to guide FG identifying useful content produced by the experts.",
+                    "question": "How do the authors further explain why Fusion Generation (FG) works?"
                 }
             ]
         }
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "Human"
 }

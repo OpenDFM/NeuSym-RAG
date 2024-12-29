@@ -1,18 +1,17 @@
 {
     "uuid": "cd235027-4032-5403-964a-b2c7e7550966",
     "question": "How much percent does VerifiNER improve the F1 score of the three baseline models on average on GENIA?",
-    "answer_format": "Your answer should be a Python float rounded to two decimal places WITHOUT ANT PUNCTUATION OR EXPLANATION. e.g. 21.30",
+    "answer_format": "Your answer should be a Python float rounded to two decimal places WITHOUT ANY PUNCTUATION OR EXPLANATION. e.g. 21.30",
     "tags": [
-        "single-doc details",
-        "table calculation",
+        "single",
+        "table",
         "objective"
     ],
-    "pdf_id": [
+    "anchor_pdf": [
         "220f0021-1bf8-599f-ab3d-5b46d56cb03e"
     ],
-    "conference": [
-        "acl2024"
-    ],
+    "reference_pdf": [],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, locate the result of VerifiNER on GENIA.",
         "Fetch the improvement on three baseline models respectively.",
@@ -28,5 +27,6 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "Human"
 }

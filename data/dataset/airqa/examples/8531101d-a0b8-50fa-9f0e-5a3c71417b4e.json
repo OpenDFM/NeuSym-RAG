@@ -1,19 +1,18 @@
 {
     "uuid": "8531101d-a0b8-50fa-9f0e-5a3c71417b4e",
     "question": "How to calculate three important parameters that appear in the second part of Figure 2?",
-    "answer_format": "Your answer should be a Python list of three string elements, every element is a formula in latex format to calculate a parameter",
+    "answer_format": "Your answer should be a Python list of three string elements, every element is a formula in latex format to calculate a parameter.",
     "tags": [
-        "single-doc details",
-        "formula inference",
-        "image analysis",
+        "single",
+        "formula",
+        "image",
         "subjective"
     ],
-    "pdf_id": [
+    "anchor_pdf": [
         "8712603a-e96c-5537-be18-651b29dedfb8"
     ],
-    "conference": [
-        "acl2023"
-    ],
+    "reference_pdf": [],
+    "conference": [],
     "reasoning_steps": [
         "Find Figure 2 in the specified PDF and understand the background information.",
         "Identify its second part and three important parameters.",
@@ -33,5 +32,6 @@
     },
     "state": {
         "gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "Human"
 }
