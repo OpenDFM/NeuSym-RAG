@@ -109,7 +109,7 @@
             "column_name": {
                 "type": "str",
                 "required": true,
-                "description": "This paramerter is used to narrow the search space of the Milvus vectorstore in the first stage. Please ensure it comes from encodable columns in the specified `table_name`."
+                "description": "This parameter is used to narrow the search space of the Milvus vectorstore in the first stage. Please ensure it comes from encodable columns in the specified `table_name`."
             },
             "filter": {
                 "type": "str",
@@ -181,7 +181,7 @@
             "column_name": {
                 "type": "str",
                 "required": true,
-                "description": "This paramerter only restricts the search space of the Milvus vectorstore in the second stage, that is the `column_name` field for each data entry. Please ensure that the `column_name` value exists and is encodable under `table_name`."
+                "description": "This parameter only restricts the search space of the Milvus vectorstore in the second stage, that is the `column_name` field for each data entry. Please ensure that the `column_name` value exists and is encodable under `table_name`."
             },
             "filter": {
                 "type": "str",

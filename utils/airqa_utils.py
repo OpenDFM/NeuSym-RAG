@@ -75,7 +75,8 @@ def generate_airqa_example_template() -> Dict[str, Any]:
         },
         "state": {
             "gui-gpt-4o-2024-11-20": False
-        }
+        },
+        "annotator": "Human"
     }
     with open(os.path.join(AIRQA_DIR, 'examples', uid + '.json'), 'w', encoding='utf8') as ouf:
         json.dump(example_template, ouf, ensure_ascii=False, indent=4)

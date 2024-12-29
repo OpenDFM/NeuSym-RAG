@@ -1,0 +1,34 @@
+{
+    "eval_string_exact_match": {
+        "function": "eval_string_exact_match",
+        "description": "Evaluate the output against the answer using exact string match.",
+        "parameters": {
+            "gold": {
+                "type": "str",
+                "required": true,
+                "description": "The gold answer in Python string format."
+            },
+            "lowercase": {
+                "type": "bool",
+                "required": false,
+                "default": false,
+                "description": "Whether to convert the strings to lowercase before comparison."
+            },
+            "ignore_blank": {
+                "type": "bool",
+                "required": false,
+                "default": false,
+                "description": "Whether to ignore the blank spaces."
+            }
+        },
+        "use_cases": [
+            {
+                "eval_func": "eval_string_exact_match",
+                "eval_kwargs": {
+                    "gold": "Italian",
+                    "lowercase": true
+                }
+            }
+        ]
+    }
+}
