@@ -166,7 +166,7 @@ def download_html(url: str, html_path: str = None):
 
 def crawl_acl_anthology_papers(
         url: str = "https://aclanthology.org/events/acl-2024/",
-        model: str = 'gpt-4o',
+        model: str = 'gpt-4o-mini',
         temperature: float = 0.0,
         tldr_max_length: int = 80,
         tag_number: int = 5,
@@ -198,7 +198,7 @@ def crawl_acl_anthology_papers(
     conference_full = re.sub(r"\s+\(\d+\)", "", conference_full).strip() # remove the year in the conference title
     conference, year = os.path.basename(url.rstrip('#').rstrip(os.sep)).lower().split('-')
     paper_dir = os.path.join(AIRQA_DIR, 'papers', conference + year) # folder to save all paper PDFs
-
+    logger.info(f"Processing conference ({conference}-{year}): {conference_full}")
 
     def parse_acl_paper_meta(node):
         # node is a <p> tag
@@ -235,6 +235,8 @@ def crawl_acl_anthology_papers(
                 # get title, authors
                 meta['title'] = span.select_one('strong > a').get_text().strip()
                 meta['uuid'] = get_airqa_paper_uuid(meta['title'], meta['conference'] + str(meta['year']))
+                if meta['uuid'] in uuid2papers:
+                    return uuid2papers[meta['uuid']]
                 download_path = os.path.join(paper_dir, meta['uuid'] + '.pdf')
                 if not download_paper_pdf(meta['pdf_url'], download_path):
                     logger.error(f'Failed to download the PDF file from {meta["pdf_url"]} into {download_path}.')
@@ -263,7 +265,6 @@ def crawl_acl_anthology_papers(
                     meta['authors'].append(author.get_text().strip())
         return meta
 
-
     for volume in soup.select('section#main h4 > a.align-middle'):
         volume_title = volume.get_text().strip()
         parent_node = volume.parent.parent
@@ -274,7 +275,7 @@ def crawl_acl_anthology_papers(
                 if skip_first_p:
                     meta = parse_acl_paper_meta(child)
                     if meta['uuid'] in uuid2papers:
-                        logger.warning(f"UUID {meta['uuid']} already exists in the UUID -> paper mappings {meta['title']}.")
+                        # logger.warning(f"UUID {meta['uuid']} already exists in the UUID -> paper mappings {meta['title']}.")
                         continue
                     add_ai_research_metadata(meta, model=model, temperature=temperature, tldr_max_length=tldr_max_length, tag_number=tag_number)
                     write_ai_research_metadata_to_json(meta)
@@ -286,5 +287,5 @@ def crawl_acl_anthology_papers(
 
 if __name__ == '__main__':
 
-    for url in ['https://aclanthology.org/events/acl-2023/', 'https://aclanthology.org/events/acl-2024/']:
+    for url in ['https://aclanthology.org/events/acl-2023/', 'https://aclanthology.org/events/acl-2024/', 'https://aclanthology.org/events/emnlp-2023/', 'https://aclanthology.org/events/emnlp-2024/']:
         crawl_acl_anthology_papers(url)

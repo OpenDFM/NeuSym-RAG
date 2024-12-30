@@ -86,7 +86,7 @@ def download_paper_pdf(pdf_url: str, pdf_path: str) -> Optional[str]:
             with open(pdf_path, 'wb') as file:
                 for chunk in response.iter_content(chunk_size=8192):
                     file.write(chunk)
-            logger.info(f"Downloaded paper `{pdf_url}` successfully to: {pdf_path}")
+            # logger.info(f"Downloaded paper `{pdf_url}` successfully to: {pdf_path}")
             return pdf_path
         else:
             logger.error(f"Failed to download paper `{pdf_url}`. Status code: {response.status_code}")
