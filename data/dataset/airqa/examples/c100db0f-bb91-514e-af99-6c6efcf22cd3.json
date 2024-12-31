@@ -3,16 +3,11 @@
     "question": "How much data do the author use in total in million for the main experiment conducted on WMT17 ZhEn?",
     "answer_format": "Your answer should be a Python float, rounding to 1 decimal places.",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "objective"
+        "objective",
+        "single",
+        "text"
     ],
-    "pdf_id": [
-        "03166771-5ae8-57b9-9c10-3120423adc5c"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Locate the section where experimental data is mentioned.",
         "Identify the data used for the specific experiment.",
@@ -23,10 +18,15 @@
         "eval_kwargs": {
             "gold": 39.5,
             "ndigits": 1,
-            "tolerance": 1e-2
+            "tolerance": 0.01
         }
     },
     "state": {
         "gui-gpt-4o-2024-11-20": true
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "03166771-5ae8-57b9-9c10-3120423adc5c"
+    ],
+    "reference_pdf": []
 }

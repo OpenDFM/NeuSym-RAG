@@ -3,16 +3,11 @@
     "question": "Which datasets are used for Multi-Document QA in this paper?",
     "answer_format": "Your answer should be python list, each element of the list is a string of the name of a dataset.",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "objective"
+        "objective",
+        "single",
+        "text"
     ],
-    "pdf_id": [
-        "d6b892b8-cf43-5b62-bde9-48c070c2e5dc"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, find the section(s) about dataset, especially about Multi-Document QA",
         "Then identify the Multi-Document QA datasets used in this paper."
@@ -20,11 +15,21 @@
     "evaluator": {
         "eval_func": "eval_structured_object_exact_match",
         "eval_kwargs": {
-            "gold": ["HotpotQA","2WikiMultihopQA","MuSiQue","DuReader"],
+            "gold": [
+                "HotpotQA",
+                "2WikiMultihopQA",
+                "MuSiQue",
+                "DuReader"
+            ],
             "ignore_order": true
         }
     },
     "state": {
         "gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "d6b892b8-cf43-5b62-bde9-48c070c2e5dc"
+    ],
+    "reference_pdf": []
 }

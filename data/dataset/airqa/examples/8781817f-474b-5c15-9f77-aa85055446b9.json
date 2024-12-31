@@ -3,16 +3,11 @@
     "question": "The study employs two main methods to analyze linguistic features: LIWC and BERT. What are the advantages of the two methodes respectively?",
     "answer_format": "Your answer should be a python list of two strings.every string describes clearly the advantages of one methode.",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "subjective"
+        "single",
+        "subjective",
+        "text"
     ],
-    "pdf_id": [
-        "4ffd9c08-58a8-5008-8aeb-8686e4093869"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Locate the relevant section(s) in the specified PDF discussing LIWC and BERT methods.",
         "Extract or analyse the advantages of LIWC and BERT."
@@ -34,5 +29,10 @@
     },
     "state": {
         "gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "4ffd9c08-58a8-5008-8aeb-8686e4093869"
+    ],
+    "reference_pdf": []
 }

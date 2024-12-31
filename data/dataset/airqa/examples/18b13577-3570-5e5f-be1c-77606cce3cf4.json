@@ -3,17 +3,12 @@
     "question": "When the authors use ChatGPT in generating data points, what is the templated prompt?",
     "answer_format": "Your answer should be raw text directly demonstrating the used prompt template without any other context.",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "table calculation",
-        "subjective"
+        "single",
+        "subjective",
+        "table",
+        "text"
     ],
-    "pdf_id": [
-        "09abed2f-a7af-56e5-8a34-3fc5e7130c6a"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Locate the position about \"using ChatGPT in generating data points\".",
         "Find any text or table content that contains the templated prompt, and directly return the raw templated prompt."
@@ -27,5 +22,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "09abed2f-a7af-56e5-8a34-3fc5e7130c6a"
+    ],
+    "reference_pdf": []
 }

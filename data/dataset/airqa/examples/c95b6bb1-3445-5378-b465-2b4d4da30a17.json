@@ -3,9 +3,9 @@
     "question": "What are the core parameters L, H, A, and the total number of parameters(params) of the base model of the classifier in this anchor paper?",
     "answer_format": "Your answer should be a python dictionary with keys 'L', 'H', 'A', and 'params', and the corresponding value should be a number, e.g., {'L': 1, 'H': 1, 'A': 1, 'params': 1}.",
     "tags": [
-        "multi-doc analysis",
-        "text",
-        "objective"
+        "multiple",
+        "objective",
+        "text"
     ],
     "anchor_pdf": [
         "2a4dd0fe-b10b-5155-82ea-3a28ba29a4fa"
@@ -29,11 +29,11 @@
                 "A": 16,
                 "params": 550000000
             },
-        "ignore_order": true
+            "ignore_order": true
         }
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "Human"
+    "annotator": "human"
 }

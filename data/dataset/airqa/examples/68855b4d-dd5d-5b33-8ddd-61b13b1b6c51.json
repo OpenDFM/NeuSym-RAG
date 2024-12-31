@@ -3,16 +3,11 @@
     "question": "On cmudog, which one among the linguistics operators appears the most frequently? What's its distribution?",
     "answer_format": "Your answer should be a Python list of 2 elements. The first element is the linguistic operator\"s name, and the second element is its disrtibution in percent in string format. e.g. [\"answer\", \"5%\"].",
     "tags": [
-        "single-doc details",
-        "image analysis",
-        "objective"
+        "image",
+        "objective",
+        "single"
     ],
-    "pdf_id": [
-        "3107f6a8-1939-5af0-b3d8-06d7aa66158d"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, locate the image that contains the distribution of linguistic operators on cmudog.",
         "Finally, output the most frequent linguistic operator and its distribution."
@@ -28,5 +23,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "3107f6a8-1939-5af0-b3d8-06d7aa66158d"
+    ],
+    "reference_pdf": []
 }

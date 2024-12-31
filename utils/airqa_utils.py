@@ -118,10 +118,20 @@ def get_answer_from_llm(question_uuid: Optional[str] = None, question: Optional[
     return response
 
 
-def make_airqa_dataset(airqa_dir: str = AIRQA_DIR, airqa_100: bool = True):
+def make_airqa_dataset(airqa_dir: str = AIRQA_DIR, airqa_100: bool = False) -> str:
     """ Given all examples UUID json files, merge them into a single JSONL file.
     """
-    output_path = os.path.join(airqa_dir, 'test_data.jsonl')
+    uuids_to_include = []
+    if airqa_100:
+        output_path = os.path.join(airqa_dir, 'test_data_airqa100.jsonl')
+        if os.path.exists(output_path):
+            with open(output_path, 'r', encoding='utf8') as inf:
+                for line in inf:
+                    data = json.loads(line)
+                    uuids_to_include.append(data['uuid'])
+    else:
+        output_path = os.path.join(airqa_dir, 'test_data.jsonl')
+
     indir = os.path.join(airqa_dir, 'examples')
     json_files = os.listdir(indir)
     count = 0
@@ -130,12 +140,7 @@ def make_airqa_dataset(airqa_dir: str = AIRQA_DIR, airqa_100: bool = True):
             fp = os.path.join(indir, fp)
             with open(fp, 'r', encoding='utf8') as inf:
                 data = json.load(inf)
-            if airqa_100 and (len(data['pdf_id']) > 1 or data['uuid'] in [
-                'e87fa3e0-7d2f-5909-8e01-5c2d8de2e64c', '398ee3a7-26c8-5967-8b5b-196b5d7641b3', '5c49a736-420a-52b4-8188-ad80f375e948', 'a2985096-8453-5fb7-9066-6f505c734248', 'e1180112-dc52-5a5c-9907-6d007f17b729', '76dc78aa-daa0-5e3a-8377-96072b98e408',
-                '8cc38e05-20e5-5a69-8b82-ecc09c03450a', '82bdaa47-a2cb-5fbd-a827-83d981f4bb52',
-                '44db1f84-1791-509e-91ae-79b2856153ee', '18b13577-3570-5e5f-be1c-77606cce3cf4',
-                "6bb32702-f9f0-53a5-a534-be38bfc75b3f"
-            ]): continue
+            if airqa_100 and data['uuid'] not in uuids_to_include: continue
             of.write(json.dumps(data, ensure_ascii=False) + '\n')
             count += 1
     logger.info(f"Merge {count} AIR-QA examples into {output_path}.")

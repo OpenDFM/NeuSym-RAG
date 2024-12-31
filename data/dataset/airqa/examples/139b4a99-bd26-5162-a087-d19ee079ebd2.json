@@ -3,17 +3,12 @@
     "question": "For the four types of evaluation mentioned in the paper, provide their names and corresponding overall score range.",
     "answer_format": "Your answer should be a Python dictionary, where the keys are the names of the four types of evaluation and the values are the corresponding overall score range. e.g. {\"evaluation1\": [-1, 1], \"evaluation2\": [0, 0.5], ...} . YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION.",
     "tags": [
-        "single-doc details",
-        "image analysis",
-        "text understanding",
-        "objective"
+        "image",
+        "objective",
+        "single",
+        "text"
     ],
-    "pdf_id": [
-        "a3a0b636-d0ab-5dab-a2c3-49f666755896"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, locate the section and figure that introduces the four types of evaluation.",
         "Identify the names of the four types of evaluation and their corresponding overall score range."
@@ -46,5 +41,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "a3a0b636-d0ab-5dab-a2c3-49f666755896"
+    ],
+    "reference_pdf": []
 }

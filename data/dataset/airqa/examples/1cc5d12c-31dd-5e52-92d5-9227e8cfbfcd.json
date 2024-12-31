@@ -3,16 +3,11 @@
     "question": "What are the main questions that this paper tries to resolve or answer?",
     "answer_format": "Your answer should be a Python list of text strings, with each element being one critical problem that this paper analyzes, e.g., [\"question 1\", \"question 2\", ...].",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "subjective"
+        "single",
+        "subjective",
+        "text"
     ],
-    "pdf_id": [
-        "effede2d-ed50-597e-b1fb-d5fc1b6dc554"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Usually, the main questions that one work tries to resolve are mentioned in the end of the introduction section or at the beiginning of the experiment section. Search the correpsonding paragraphs of these two parts.",
         "If the questions are organized as evident bullet points, directly use them as the answer.",
@@ -32,5 +27,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "effede2d-ed50-597e-b1fb-d5fc1b6dc554"
+    ],
+    "reference_pdf": []
 }

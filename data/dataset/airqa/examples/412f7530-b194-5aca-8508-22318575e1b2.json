@@ -3,17 +3,12 @@
     "question": "According to the expression and physical meaning of formula (2), if I want the weight to be 0.5 right at the middle of the training process, what is the value of parameter s?",
     "answer_format": "Your answer should be a python float of the exact value of parameter s.",
     "tags": [
-        "single-doc details",
-        "formula inference",
-        "text understanding",
-        "objective"
+        "formula",
+        "objective",
+        "single",
+        "text"
     ],
-    "pdf_id": [
-        "996afc36-70e9-5f75-8e9f-6f0e5587c451"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, find the formula (2) in the paper and retrieve the context to understand the physical meaning.",
         "Then, find the parameters and retrieve the context to understand the effect of parameters on the weight, e.g., the relationship between training process and the parameter t implies t = 0.5.",
@@ -28,5 +23,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "996afc36-70e9-5f75-8e9f-6f0e5587c451"
+    ],
+    "reference_pdf": []
 }

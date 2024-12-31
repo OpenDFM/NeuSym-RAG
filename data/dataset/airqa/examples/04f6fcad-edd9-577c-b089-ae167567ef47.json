@@ -3,16 +3,11 @@
     "question": "What is the most appropriate evaluation metric for this paper?",
     "answer_format": "Your answer should be a python strings of the exact name of the evaluation metric.",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "objective"
+        "objective",
+        "single",
+        "text"
     ],
-    "pdf_id": [
-        "cc28a219-3ac4-5614-ba45-59d6aabf1af4"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Find the corresponding sections about evaluation metric.",
         "Compare different evaluation metrics to find the most appropriate one based on the context."
@@ -26,5 +21,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "cc28a219-3ac4-5614-ba45-59d6aabf1af4"
+    ],
+    "reference_pdf": []
 }

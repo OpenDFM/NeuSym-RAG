@@ -3,16 +3,11 @@
     "question": "Which domain in the GRBench dataset does not have any hard questions?",
     "answer_format": "Your answer should be a single string representing the domain name.",
     "tags": [
-        "single-doc details",
-        "image analysis",
-        "objective"
+        "image",
+        "objective",
+        "single"
     ],
-    "pdf_id": [
-        "fb154467-1ce1-5c1f-9d4f-b4f5c76312ee"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Locate the statistics table or the experimental figure related to GRBench samples of different difficulties.",
         "Check the statistics table if it reveals the domain with no hard questions.",
@@ -27,5 +22,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "fb154467-1ce1-5c1f-9d4f-b4f5c76312ee"
+    ],
+    "reference_pdf": []
 }

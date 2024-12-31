@@ -3,9 +3,7 @@
     "question": "Which acl papers mention 'transfer learning' in their abstracts?",
     "answer_format": "Your answer should be a Python list, every element of the list is the string of a paper_uuid",
     "tags": [
-        "paper retrieval"
-    ],
-    "pdf_id": [
+        "retrieval"
     ],
     "conference": [
         "acl2023",
@@ -17,11 +15,20 @@
     "evaluator": {
         "eval_func": "eval_element_list_included",
         "eval_kwargs": {
-            "gold": ["9b06b24b-0afc-5ccb-95fc-c662395d291d","ef699d3b-ffef-5b18-8527-826110f880fd","0d6ea045-b831-520d-9b99-ba22a081a403","03166771-5ae8-57b9-9c10-3120423adc5c","7e6c6c6a-f0a6-59ee-8734-af8a912dcf09"],
+            "gold": [
+                "9b06b24b-0afc-5ccb-95fc-c662395d291d",
+                "ef699d3b-ffef-5b18-8527-826110f880fd",
+                "0d6ea045-b831-520d-9b99-ba22a081a403",
+                "03166771-5ae8-57b9-9c10-3120423adc5c",
+                "7e6c6c6a-f0a6-59ee-8734-af8a912dcf09"
+            ],
             "ignore_blank": true
         }
     },
     "state": {
         "gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [],
+    "reference_pdf": []
 }

@@ -3,16 +3,11 @@
     "question": "How does Multi-DYLE combine the three different losses as the objective of training?",
     "answer_format": "Your answer should be single formula in latex format, extracted from the specified pdf.",
     "tags": [
-        "single-doc details",
-        "formula inference",
+        "formula",
+        "single",
         "subjective"
     ],
-    "pdf_id": [
-        "8535fa9f-0253-5e2b-b3a4-5167aeeae4c6"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, find the pages or sections mentioning the combined losses or training Objective of Multi-DYLE to understand the three different losses.",
         "Then retrieve the right formula about the combined losses."
@@ -26,5 +21,10 @@
     },
     "state": {
         "gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "8535fa9f-0253-5e2b-b3a4-5167aeeae4c6"
+    ],
+    "reference_pdf": []
 }

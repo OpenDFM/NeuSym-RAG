@@ -3,16 +3,11 @@
     "question": "RRCP is a new pipeline proposed to recognize retrieval complexity, on which complex QA datasets does it significantly outperform the LLM baseline, with a clear improvement in Accuracy or F1 Score of at least 0.1?",
     "answer_format": "Your answer should be a list of elements, each element is the QA dataset name string, e.g., [\"QA dataset1\", \"QA dataset2\", ...].",
     "tags": [
-        "single-doc details",
-        "table calculation",
-        "objective"
+        "objective",
+        "single",
+        "table"
     ],
-    "pdf_id": [
-        "7640a304-546b-5aa9-8111-8a56b9b06861"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Usually, the comparison between new design and baseline are proposed in the experiment or result section, especially in the form of tables. Search the correpsonding parts.",
         "Find the exact values of Accuracy and F1 Score on RRCP and baseline for differnt QA dataset.",
@@ -31,5 +26,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "7640a304-546b-5aa9-8111-8a56b9b06861"
+    ],
+    "reference_pdf": []
 }

@@ -1,32 +1,32 @@
 {
- "uuid": "82bdaa47-a2cb-5fbd-a827-83d981f4bb52",
- "question": "According to Table 2, what is the difference of the percentage of over 80% agreement threshold for both concessive and causal relations between the first and second iteration on the English dataset?",
- "answer_format": "Your answer should be a percentage with two decimal places, indicating the difference in proportion.",
- "tags": [
-  "single-doc details",
-  "table calculation",
-  "objective"
- ],
- "pdf_id": [
-  "757dc667-413b-5207-8463-5deb4fedf073"
- ],
- "conference": [
-  "acl2023"
- ],
- "reasoning_steps": [
-  "First, get the content of Table 2.",
-  "Second, find the '>80% both' column and calculate the difference of first and second iteration.",
-  "Third, calculate the total number of samples.",
-  "Finally, calculate the percentage."
- ],
- "evaluator": {
-  "eval_func": "eval_string_exact_match",
-  "eval_kwargs": {
-   "gold": "58.06%"
-  }
- },
- "state": {
-  "gpt-4o-2024-05-13": false,
-  "gui-gpt-4o-2024-05-13": true
- }
+    "uuid": "82bdaa47-a2cb-5fbd-a827-83d981f4bb52",
+    "question": "According to Table 2, what is the difference of the percentage of over 80% agreement threshold for both concessive and causal relations between the first and second iteration on the English dataset?",
+    "answer_format": "Your answer should be a percentage with two decimal places, indicating the difference in proportion.",
+    "tags": [
+        "objective",
+        "single",
+        "table"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, get the content of Table 2.",
+        "Second, find the '>80% both' column and calculate the difference of first and second iteration.",
+        "Third, calculate the total number of samples.",
+        "Finally, calculate the percentage."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "58.06%"
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false,
+        "gui-gpt-4o-2024-05-13": true
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "757dc667-413b-5207-8463-5deb4fedf073"
+    ],
+    "reference_pdf": []
 }

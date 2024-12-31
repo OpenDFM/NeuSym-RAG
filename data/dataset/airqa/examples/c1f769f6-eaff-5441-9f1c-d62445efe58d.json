@@ -3,16 +3,11 @@
     "question": "What's the total number of augmented training samples across all datasets used in the MINPROMPT work?",
     "answer_format": "Your answer should be a single integer number.",
     "tags": [
-        "single-doc details",
-        "table calculation",
-        "objective"
+        "objective",
+        "single",
+        "table"
     ],
-    "pdf_id": [
-        "0b77c64c-6b36-5501-848f-79a062be2a45"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, locate the table that describes the data augmentation statistics in the paper.",
         "Then, find the number of augmented data samples for each dataset. Special attention should be paid to some aggregation columns or rows, e.g., \"average\" or \"total\". They should be excluded from the calculation.",
@@ -26,5 +21,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "0b77c64c-6b36-5501-848f-79a062be2a45"
+    ],
+    "reference_pdf": []
 }

@@ -6,8 +6,6 @@
 - data/dataset/airqa/ # root folder
     - test_data.jsonl # JSON line file where each line represents one test data
     - data_format.json.template # template file for each data point
-    - uuid2papers.json # it stores the mapping from paper UUID to the metadata of each file (dict), like title, conference, year, authors, etc.
-    - errata.json # fix metadata errors for some papers
     - papers/ # stores all PDF files of papers, organized by lowercase {conference}{year} sub-folder and renamed by paper UUIDs
         - acl2024/
             - 0a1e5410-f9f1-5877-ae3a-151c214762e1.pdf
@@ -33,32 +31,30 @@ This section describes different question categories (or tags) for classificatio
 
 ### Category 1: Task Goals
 
-- `paper retrieval`: retrieve papers with constraints, e.g.,
+- `retrieval`: retrieve papers with constraints, e.g.,
     - papers published by a specific author or institute
-- `single-doc details`: ask technical details of one single paper, e.g.,
+- `single`: ask technical details of one single paper, e.g.,
     - list 3 major contributions of this work
-- `multi-doc analysis`: involve multiple papers, may require comparison, calculation, aggregation and multi-step reasoning, e.g.,
+- `multiple`: involve multiple papers, may require comparison, calculation, aggregation and multi-step reasoning, e.g.,
     - which agent framework is better on this popular benchmark
-- `metadata query`: query metadata about papers (note that, here metadata can be obtained in raw PDF file), e.g.,
     - whether the code is public available
-- `comprehensive q&a`: if the task does not belong to any category above or requires integration of multiple task types, e.g.,
+- `comprehensive`: if the task does not belong to any category above or requires integration of multiple task types, e.g.,
     - which author published the most papers regarding multi-modal llm pre-training in acl 2023 (matadata query + paper retrieval)
 
 
 ### Category 2: Key Capabilities
 
-- `text understanding`: Q&A that focuses on text understanding and reasoning
-- `table calculation`: Q&A that requires identifying tables and their contents
-- `image analysis`: Q&A that involves the recognition of figures, charts, or graphs
-- `formula inference`: Q&A that queries the details of math formulas
-- `metadata extraction`: metadata includes authors, institutes, e-mails, conferences, years and other information that does not appear in the main text (e.g., page header and footer)
+- `text`: Q&A that focuses on text understanding and reasoning
+- `table`: Q&A that requires identifying tables and their contents
+- `image`: Q&A that involves the recognition of figures, charts, or graphs
+- `formula`: Q&A that queries the details of math formulas
+- `metadata`: metadata includes authors, institutes, e-mails, conferences, years and other information that does not appear in the main text (e.g., page header and footer)
 
 
 ### Category 3: Evaluation Types
 
-- `subjective`: answers that are usually long-form text which requires LLM or model-based evaluation
+- `subjective`: answers that require LLM or model-based evaluation
 - `objective`: answers that can be evaluated with objective metrics
-- `hybrid`: answers that need to be inspected by both `subjective` and `objective` schemes 
 
 
 ### Category 4: Hardness Level
@@ -92,6 +88,8 @@ This is usually the first function that will be invoked in the pipeline function
     "num_pages": 36, // int value
     "pdf_url": "https://aclanthology.org/2024.acl-long.1.pdf", // URL to download the PDF, should end with .pdf
     "pdf_path": "data/dataset/airqa/papers/acl2024/ab14a93a-c5ee-5d60-8713-8b38bd501140.pdf", // local path to save the PDF, rename it with the UUID
-    "abstract": "..." // paper abstract text
+    "abstract": "...", // paper abstract text
+    "tldr": "...", // TLDR
+    "tags": ["llm"] // keywords or tags
 }
 ```

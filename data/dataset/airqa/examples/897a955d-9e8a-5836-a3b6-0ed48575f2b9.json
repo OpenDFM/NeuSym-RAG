@@ -3,17 +3,12 @@
     "question": "In terms of evaluation results on SuperGLUE using RoBERTaBASE, on subtask ReCoRD, which model(s) achieve the overall best results? Additionally, which model(s) perform the best among the two-stage MTL models?",
     "answer_format": "Your answer should be a python dict(without \\n) containing two keys \"overall best\" and \"two-stage MTL best\", each value of the two keys is a python string list. e.g.{\"overall best\":[\"modelname1\"],\"two-stage MTL best\":[\"modelname2\",\"modelname3\"]} ",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "table calculation",
-        "objective"
+        "objective",
+        "single",
+        "table",
+        "text"
     ],
-    "pdf_id": [
-        "9b06b24b-0afc-5ccb-95fc-c662395d291d"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Find information about two-stage MTL models(maybe a section or table mentioning which models or baselines are two-stage MTL).",
         "Locate the table about the performance results on SuperGLUE using RoBERTaBASE(usually a main experiment table containing different kinds of models and subtasks).",
@@ -37,5 +32,10 @@
     },
     "state": {
         "gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "9b06b24b-0afc-5ccb-95fc-c662395d291d"
+    ],
+    "reference_pdf": []
 }

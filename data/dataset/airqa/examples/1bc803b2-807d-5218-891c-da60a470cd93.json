@@ -3,16 +3,11 @@
     "question": "Which model achieves the highest accuracy of the classification when the training data consists of 512 pairs of FPQ and TPQs in this paper?",
     "answer_format": "Your answer should be a python string about the name of the best model. You\"d better use the names as they are referred to in the paper.",
     "tags": [
-        "single-doc details",
-        "image analysis",
-        "objective"
+        "image",
+        "objective",
+        "single"
     ],
-    "pdf_id": [
-        "529875d6-5189-5c4d-9076-1635a01a862d"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Usually, the experiment results between models are mentioned in the experiment or result section, especially in the form of tables or figures. Search the correpsonding parts.",
         "Find all the experiment results of models when the training data consists of 512 pairs of FPQ and TPQs.",
@@ -27,5 +22,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "529875d6-5189-5c4d-9076-1635a01a862d"
+    ],
+    "reference_pdf": []
 }

@@ -3,16 +3,11 @@
     "question": "What are the Low resource languages in INDICGENBENCH?",
     "answer_format": "Your answer should be a Python list, where each element is a string representing a language. e.g. [\"language1\", \"language2\", ...]",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "objective"
+        "objective",
+        "single",
+        "text"
     ],
-    "pdf_id": [
-        "1e6eeeab-ba5c-508e-a693-62a9b39f2d92"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Locate the section which introduces INDICGENBENCH.",
         "Find the paragraph that talks about the divide of languages.",
@@ -42,5 +37,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "1e6eeeab-ba5c-508e-a693-62a9b39f2d92"
+    ],
+    "reference_pdf": []
 }

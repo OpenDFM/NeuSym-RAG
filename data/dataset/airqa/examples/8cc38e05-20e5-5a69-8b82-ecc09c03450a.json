@@ -3,16 +3,11 @@
     "question": "According to the experiment result, How much better does the GPT-2 model perform on Task A compared to the CNN-BiLSTM model in terms of F1-score?",
     "answer_format": "Your answer should be a single python float.",
     "tags": [
-        "single-doc details",
-        "table calculation",
-        "objective"
+        "objective",
+        "single",
+        "table"
     ],
-    "pdf_id": [
-        "1aa5e165-0b78-582a-8f67-e459452348df"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Locate the table(s) that presents experimental results for Task A.",
         "Compare and calculate the F1 score difference between GPT-2 and CNN-BiLSTM."
@@ -25,5 +20,10 @@
     },
     "state": {
         "gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "1aa5e165-0b78-582a-8f67-e459452348df"
+    ],
+    "reference_pdf": []
 }

@@ -3,16 +3,11 @@
     "question": "In the survey of Large Language Models for NL2Code, what are the multi-lingual benchmarks to evaluate the NL2Code task, and how many instances do they contain per promgramming language?",
     "answer_format": "Your answer should be a Python dictionary of entries, each dictionary key is a string, the benchmark name DIRECTLY FROM THE PDF WITHOUT CHANGING CAPITALIZATION, and each value is an integer of the corresponding instance number, e.g., {\"benchmark1\": 10, \"benchmark2\": 100}, ....",
     "tags": [
-        "single-doc details",
-        "table calculation",
-        "objective"
+        "objective",
+        "single",
+        "table"
     ],
-    "pdf_id": [
-        "37758401-6101-554f-8f1e-4e2995443314"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Usually, the details about benchmarks are mentioned in the experiment or result section, especially in the form of tables. Search the correpsonding parts.",
         "Finally, answer the question with the benchmark names and their instances numbers."
@@ -32,5 +27,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "37758401-6101-554f-8f1e-4e2995443314"
+    ],
+    "reference_pdf": []
 }

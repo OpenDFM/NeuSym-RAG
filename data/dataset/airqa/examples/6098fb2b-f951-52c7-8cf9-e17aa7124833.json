@@ -1,36 +1,36 @@
 {
- "uuid": "6098fb2b-f951-52c7-8cf9-e17aa7124833",
- "question": "What is the difference between Equation (1) and Equation (2)?",
- "answer_format": "Your answer should be text describing the difference.",
- "tags": [
-  "single-doc details",
-  "formula inference",
-  "subjective"
- ],
- "pdf_id": [
-  "bbe1cd56-d6c0-5ab7-8f3e-a54ff7489d0b"
- ],
- "conference": [
-  "acl2023"
- ],
- "reasoning_steps": [
-  "First, get the content of Equation 1 and its corresponding paragraphs.",
-  "Second, get the content of Equation 2 and its corresponding paragraphs.",
-  "Finally, summarize the answer."
- ],
- "evaluator": {
-  "eval_func": "eval_scoring_points_with_llm",
-  "eval_kwargs": {
-   "scoring_points": [
-    "Equation (1) is used in single-vector retrieval models. It calculates the similarity score $s(q, d)$ as the dot product between the encoded vector of the query $v_q = \\eta_Q(q)$ and the encoded vector of the document $v_d = \\eta_D(d)$. In this method, the entire query and the entire document are each represented by a single vector, and their similarity is determined by the cosine of the angle between these two vectors. This approach does not consider token-level interactions, as all token embeddings are pooled into a single vector before the similarity score is computed.",
-    "Equation (2) is used in multi-vector retrieval models, specifically in ColBERT. It calculates the similarity score by considering the interaction between each token in the query and each token in the document. The similarity score $s(q, d)$ is defined as $s(q, d) = \\sum_{i=1}^{N} \\max_{j} v_{qi}^T v_{dj}$, where $v_{qi}$ and $v_{dj}$ are the last-layer contextualized token embeddings of BERT for the i-th token in the query and the j-th token in the document, respectively. This operation, known as MaxSim, exhaustively compares each query token to all document tokens, effectively capturing the most relevant token-level interactions."
-   ],
-   "question": "What is the difference between Equation (1) and Equation (2)?",
-   "ignore_order": true
-  }
- },
- "state": {
-  "gpt-4o-2024-05-13": false,
-  "gui-gpt-4o-2024-05-13": true
- }
+    "uuid": "6098fb2b-f951-52c7-8cf9-e17aa7124833",
+    "question": "What is the difference between Equation (1) and Equation (2)?",
+    "answer_format": "Your answer should be text describing the difference.",
+    "tags": [
+        "formula",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, get the content of Equation 1 and its corresponding paragraphs.",
+        "Second, get the content of Equation 2 and its corresponding paragraphs.",
+        "Finally, summarize the answer."
+    ],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "Equation (1) is used in single-vector retrieval models. It calculates the similarity score $s(q, d)$ as the dot product between the encoded vector of the query $v_q = \\eta_Q(q)$ and the encoded vector of the document $v_d = \\eta_D(d)$. In this method, the entire query and the entire document are each represented by a single vector, and their similarity is determined by the cosine of the angle between these two vectors. This approach does not consider token-level interactions, as all token embeddings are pooled into a single vector before the similarity score is computed.",
+                "Equation (2) is used in multi-vector retrieval models, specifically in ColBERT. It calculates the similarity score by considering the interaction between each token in the query and each token in the document. The similarity score $s(q, d)$ is defined as $s(q, d) = \\sum_{i=1}^{N} \\max_{j} v_{qi}^T v_{dj}$, where $v_{qi}$ and $v_{dj}$ are the last-layer contextualized token embeddings of BERT for the i-th token in the query and the j-th token in the document, respectively. This operation, known as MaxSim, exhaustively compares each query token to all document tokens, effectively capturing the most relevant token-level interactions."
+            ],
+            "question": "What is the difference between Equation (1) and Equation (2)?",
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false,
+        "gui-gpt-4o-2024-05-13": true
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "bbe1cd56-d6c0-5ab7-8f3e-a54ff7489d0b"
+    ],
+    "reference_pdf": []
 }

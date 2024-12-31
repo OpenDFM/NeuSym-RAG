@@ -3,16 +3,11 @@
     "question": "What is the main design of Auto-GUI framework from the aspects of the encoder, interaction, and decoder?",
     "answer_format": "Your answer should be a Python list of text strings, with each element being one core stage of this framework, you\"d better use the origin text, e.g., [\"stage 1\", \"stage 2\", ...].",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "subjective"
+        "single",
+        "subjective",
+        "text"
     ],
-    "pdf_id": [
-        "648e3d50-375b-5189-b6b0-e0520626716e"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Usually, the framework of a model is mentioned in the methodology or related work section. Search the corresponding paragraphs of these two parts.",
         "If the core stages are organized as evident bullet points, directly use them as the answer.",
@@ -31,5 +26,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "648e3d50-375b-5189-b6b0-e0520626716e"
+    ],
+    "reference_pdf": []
 }

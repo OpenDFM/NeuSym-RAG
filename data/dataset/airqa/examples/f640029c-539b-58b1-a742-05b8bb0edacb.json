@@ -3,16 +3,11 @@
     "question": "What's the biggest reason of incorrect action for each model?",
     "answer_format": "Your answer should be a Python dictionary. e.g. {\"model1\": \"answer1\", \"model2\": \"answer2\", ...}. YOU MUST USE THE EXACT AND FULL TEXT FROM PDF WITHOUT CHANGING CAPITALIZATION.",
     "tags": [
-        "single-doc details",
-        "image analysis",
-        "objective"
+        "image",
+        "objective",
+        "single"
     ],
-    "pdf_id": [
-        "4ee26cdd-4e52-5090-b1c8-46f5dcdba09c"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, locate the section that analyses the incorrect actions of the models.",
         "Find the figure that shows the proportions of correct and incorrect actions for each model.",
@@ -33,5 +28,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "4ee26cdd-4e52-5090-b1c8-46f5dcdba09c"
+    ],
+    "reference_pdf": []
 }

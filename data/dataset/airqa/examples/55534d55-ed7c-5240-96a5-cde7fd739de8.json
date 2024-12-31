@@ -3,16 +3,11 @@
     "question": "What're the related domains of this paper according to related works?",
     "answer_format": "Your answer should be a Python list of strings where each string is a related domain. e.g. [\"domain1\", \"domain2\", ...]",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "objective"
+        "objective",
+        "single",
+        "text"
     ],
-    "pdf_id": [
-        "9cf8bd4d-0120-5a3b-b926-1a2d7d7b4f0a"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Locate the related works section of the paper.",
         "Identify the subsections in the related works section.",
@@ -31,5 +26,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "9cf8bd4d-0120-5a3b-b926-1a2d7d7b4f0a"
+    ],
+    "reference_pdf": []
 }

@@ -3,16 +3,11 @@
     "question": "In terms of WER values with ASR across the six different methods tested in the paper, how much higher is DD2 compared to NV1?",
     "answer_format": "Your answer should be a single float number.",
     "tags": [
-        "single-doc details",
-        "image analysis",
-        "objective"
+        "image",
+        "objective",
+        "single"
     ],
-    "pdf_id": [
-        "81b6a6b0-a195-5cae-9e30-137150b64352"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, locate the section or figure relevant to WER values with ASR across the six different methods.",
         "Find WER values for DD2 and NV1.If necessary, view and analyze the figure.",
@@ -22,10 +17,14 @@
         "eval_func": "eval_float_exact_match",
         "eval_kwargs": {
             "gold": 0.598
- 
         }
     },
     "state": {
         "gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "81b6a6b0-a195-5cae-9e30-137150b64352"
+    ],
+    "reference_pdf": []
 }

@@ -3,16 +3,11 @@
     "question": "How can we get the bias attribution without skill knowledge according to formula (2)?",
     "answer_format": "Your answer should be a Python strings of the calculation method of bias attribution without skill knowledge.",
     "tags": [
-        "single-doc details",
-        "formula inference",
+        "formula",
+        "single",
         "subjective"
     ],
-    "pdf_id": [
-        "2b003f7e-a995-57d1-af78-78432ed96561"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Find the formula (2) in the Methods section and the surrounding text to understand the calculation method of the bias attribution.",
         "If the formula is fully explained in the text, directly use the explanation as the answer.",
@@ -27,5 +22,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "2b003f7e-a995-57d1-af78-78432ed96561"
+    ],
+    "reference_pdf": []
 }

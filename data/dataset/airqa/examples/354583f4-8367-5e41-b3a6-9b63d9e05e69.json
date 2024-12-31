@@ -3,16 +3,11 @@
     "question": "I want to download this paper from the internet.Can you give me a link?",
     "answer_format": "Your answer should be single string of the link.",
     "tags": [
-        "single-doc details",
-        "metadata extraction",
-        "objective"
+        "metadata",
+        "objective",
+        "single"
     ],
-    "pdf_id": [
-        "3097e545-7cad-5021-9d16-57938472fc77"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Find the pdf_url of the specified pdf."
     ],
@@ -24,5 +19,10 @@
     },
     "state": {
         "gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "3097e545-7cad-5021-9d16-57938472fc77"
+    ],
+    "reference_pdf": []
 }

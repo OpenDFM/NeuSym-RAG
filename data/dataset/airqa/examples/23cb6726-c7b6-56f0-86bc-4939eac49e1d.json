@@ -3,17 +3,12 @@
     "question": "What is the innovation of the formula (6) in this paper?",
     "answer_format": "Your answer should be a Python strings of innovation of the formula.",
     "tags": [
-        "single-doc details",
-        "formula inference",
-        "text understanding",
-        "subjective"
+        "formula",
+        "single",
+        "subjective",
+        "text"
     ],
-    "pdf_id": [
-        "7e6c6c6a-f0a6-59ee-8734-af8a912dcf09"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Find the formula (6) in the Methodology section and the surrounding text to understand the meaning of the formula.",
         "Identify the innovation or just the difference of the formula based on the context and the formula itself."
@@ -27,5 +22,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "7e6c6c6a-f0a6-59ee-8734-af8a912dcf09"
+    ],
+    "reference_pdf": []
 }

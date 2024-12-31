@@ -3,12 +3,8 @@
     "question": "Who are the authors of this paper? What're their institutions?",
     "answer_format": "Your answer should be a Python dictionary, e.g. {\"Amy\": [\"Massachusetts Institute of Technology\", \"Carnegie Mellon University\"], \"Bob\": [\"Shanghai Jiaotong University\"]}. YOU MUST USE THE FULL AND EXACT WORDS FROM PDF.",
     "tags": [
-        "metadata query",
-        "metadata extraction",
+        "metadata",
         "objective"
-    ],
-    "pdf_id": [
-        "28f25ac1-c82a-5208-84b4-8ac1a33ea481"
     ],
     "conference": [
         "acl2024"
@@ -39,5 +35,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "28f25ac1-c82a-5208-84b4-8ac1a33ea481"
+    ],
+    "reference_pdf": []
 }

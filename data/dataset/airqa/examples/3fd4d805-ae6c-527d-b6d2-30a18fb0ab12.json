@@ -3,16 +3,11 @@
     "question": "On the dataset proposed by this work, how much does the GPT-3.5-turbo model improve its GPT4score after using Graph-CoT?",
     "answer_format": "Your answer should be a single float number ranging from 0 to 100, representing the subtraction result.",
     "tags": [
-        "single-doc details",
-        "table calculation",
-        "objective"
+        "objective",
+        "single",
+        "table"
     ],
-    "pdf_id": [
-        "fb154467-1ce1-5c1f-9d4f-b4f5c76312ee"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Find the name of the dataset proposed by this work.",
         "Locate the experiment table related to the proposed dataset that demonstrates the GPT4score of the GPT-3.5-turbo model before and after using Graph-CoT.",
@@ -28,5 +23,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "fb154467-1ce1-5c1f-9d4f-b4f5c76312ee"
+    ],
+    "reference_pdf": []
 }

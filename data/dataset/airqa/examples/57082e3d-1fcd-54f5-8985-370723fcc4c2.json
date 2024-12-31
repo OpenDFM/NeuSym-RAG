@@ -3,16 +3,11 @@
     "question": "Which domain in the GRBench dataset has the most number of questions?",
     "answer_format": "Your answer should be a single string representing the domain name.",
     "tags": [
-        "single-doc details",
-        "table calculation",
-        "objective"
+        "objective",
+        "single",
+        "table"
     ],
-    "pdf_id": [
-        "fb154467-1ce1-5c1f-9d4f-b4f5c76312ee"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Locate the statistics table for the GRBench dataset.",
         "Record or calculate the total number of questions in each domain.",
@@ -27,5 +22,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "fb154467-1ce1-5c1f-9d4f-b4f5c76312ee"
+    ],
+    "reference_pdf": []
 }

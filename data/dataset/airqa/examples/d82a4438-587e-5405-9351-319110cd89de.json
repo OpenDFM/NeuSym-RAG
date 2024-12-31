@@ -3,16 +3,11 @@
     "question": "What is the average proportion of papers in the ACL anthology in recent ten years which mention the words speech, spoken or audio in the title?",
     "answer_format": "Your answer should be a Python float number roudning to 3 decimal places, e.g., 0.001.",
     "tags": [
-        "single-doc details",
-        "image analysis",
-        "objective"
+        "image",
+        "objective",
+        "single"
     ],
-    "pdf_id": [
-        "a88d4d17-b2f9-520e-a611-c2c4ba178be5"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, find all section titles in the paper to locate the section that discusses the proportion of papers in the ACL anthology which mention the words speech, spoken or audio in the title.",
         "Find the exact value of annual propotion in recent ten years.",
@@ -23,10 +18,15 @@
         "eval_kwargs": {
             "gold": 0.035,
             "nidigits": 3,
-            "tolerance": 1e-4
+            "tolerance": 0.0001
         }
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "a88d4d17-b2f9-520e-a611-c2c4ba178be5"
+    ],
+    "reference_pdf": []
 }

@@ -3,16 +3,11 @@
     "question": "For each test split in Figure 5, provide the name and type of the website with the highest step success rate.",
     "answer_format": "Your answer should be a Python dictionary. e.g. {\"split1\": [\"web1\", \"type1\"], \"split2\": [\"web2\", \"type2\"], ...}. YOU MUST USE THE EXACT WORDS FROM PDF WITHOUT CHANGING CAPITALIZATION.",
     "tags": [
-        "single-doc details",
-        "image analysis",
-        "objective"
+        "image",
+        "objective",
+        "single"
     ],
-    "pdf_id": [
-        "32a52b98-370b-5bc4-87ab-5193405b723b"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, locate the figure.",
         "Search in the caption to find test split and corresponding websites.",
@@ -39,5 +34,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "32a52b98-370b-5bc4-87ab-5193405b723b"
+    ],
+    "reference_pdf": []
 }

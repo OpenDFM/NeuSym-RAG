@@ -3,16 +3,11 @@
     "question": "On what devices is StreamVoice trained?",
     "answer_format": "Your answer should be a plein text directly from the PDF without explanation.",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "subjective"
+        "single",
+        "subjective",
+        "text"
     ],
-    "pdf_id": [
-        "039b3a9f-1e97-5579-bc23-fcd0d2f01c19"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Locate the section where training details are provided.",
         "Read the section to find the devices used for training."
@@ -26,5 +21,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "039b3a9f-1e97-5579-bc23-fcd0d2f01c19"
+    ],
+    "reference_pdf": []
 }

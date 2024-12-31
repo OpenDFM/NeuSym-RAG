@@ -3,12 +3,8 @@
     "question": "What are the institutions of the first author and corresponding author of this paper?",
     "answer_format": "Your answer should be a Python list of length 2 containing the institution names respectively, e.g., [\"first_author_institute\", \"corresponding_author_institute\"]. If there are multiple first authors or corresponding authors, please replace the corresponding institution name with a name list, e.g., [[\"first_author1_institute\", \"first_author2_institute\", ...], [\"corresponding_author1_institute\", \"corresponding_author2_institute\", ...]].",
     "tags": [
-        "metadata query",
-        "metadata extraction",
+        "metadata",
         "objective"
-    ],
-    "pdf_id": [
-        "3d2fcb43-2cda-5645-99aa-da78c6cfd23f"
     ],
     "conference": [
         "acl2024"
@@ -33,5 +29,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "3d2fcb43-2cda-5645-99aa-da78c6cfd23f"
+    ],
+    "reference_pdf": []
 }

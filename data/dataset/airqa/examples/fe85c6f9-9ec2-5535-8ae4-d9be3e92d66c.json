@@ -1,31 +1,31 @@
 {
- "uuid": "fe85c6f9-9ec2-5535-8ae4-d9be3e92d66c",
- "question": "Why can we omit $p(\\{y_l, l \\in L\\})$ in Equation (1)?",
- "answer_format": "",
- "tags": [
-  "single-doc details",
-  "formula inference",
-  "subjective"
- ],
- "pdf_id": [
-  "a819666a-9e5b-5213-9efd-4f1e12225426"
- ],
- "conference": [
-  "acl2023"
- ],
- "reasoning_steps": [
-  "First, get the content of Equation (1).",
-  "Second, get the content of Section 6.1, and summarize the answer."
- ],
- "evaluator": {
-  "eval_func": "eval_reference_answer_with_llm",
-  "eval_kwargs": {
-   "reference_answer": "In Equation (1), $p(\\{y_l, l \\in L\\})$ can be omitted because it acts as a normalization factor that is constant with respect to the ancestral form $x$. The goal of the equation is to compute a value proportional to the posterior probability $p(x | \\{y_l, l \\in L\\})$. Since $p(\\{y_l, l \\in L\\})$ does not depend on $x$, it remains the same for all possible ancestral forms and thus does not affect the relative probabilities of different $x$ values.",
-   "question": "Why can we omit $p(\\{y_l, l \\in L\\})$ in Equation (1)?"
-  }
- },
- "state": {
-  "gpt-4o-2024-05-13": false,
-  "gui-gpt-4o-2024-05-13": true
- }
+    "uuid": "fe85c6f9-9ec2-5535-8ae4-d9be3e92d66c",
+    "question": "Why can we omit $p(\\{y_l, l \\in L\\})$ in Equation (1)?",
+    "answer_format": "",
+    "tags": [
+        "formula",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, get the content of Equation (1).",
+        "Second, get the content of Section 6.1, and summarize the answer."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "In Equation (1), $p(\\{y_l, l \\in L\\})$ can be omitted because it acts as a normalization factor that is constant with respect to the ancestral form $x$. The goal of the equation is to compute a value proportional to the posterior probability $p(x | \\{y_l, l \\in L\\})$. Since $p(\\{y_l, l \\in L\\})$ does not depend on $x$, it remains the same for all possible ancestral forms and thus does not affect the relative probabilities of different $x$ values.",
+            "question": "Why can we omit $p(\\{y_l, l \\in L\\})$ in Equation (1)?"
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false,
+        "gui-gpt-4o-2024-05-13": true
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "a819666a-9e5b-5213-9efd-4f1e12225426"
+    ],
+    "reference_pdf": []
 }

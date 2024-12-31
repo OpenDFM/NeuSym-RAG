@@ -3,16 +3,11 @@
     "question": "In the training of LangBrige, when adapting finetuned LMs, is multilingual encoder trainable?",
     "answer_format": "Your answer should be a Python bool of true or false.",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "objective"
+        "objective",
+        "single",
+        "text"
     ],
-    "pdf_id": [
-        "11f71fa7-fd1b-5223-8ee1-53ecd8519ed7"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Usually, the training details of model are explained in the method or experiment section of the paper. Retrieve these sections from the paper.",
         "Based on more specific requirements, find the context mentioned  multilingual encoder and its training.",
@@ -21,10 +16,15 @@
     "evaluator": {
         "eval_func": "eval_bool_exact_match",
         "eval_kwargs": {
-           "gold": false
+            "gold": false
         }
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "11f71fa7-fd1b-5223-8ee1-53ecd8519ed7"
+    ],
+    "reference_pdf": []
 }

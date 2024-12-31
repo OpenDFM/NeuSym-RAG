@@ -3,9 +3,9 @@
     "question": "How much percent does VerifiNER improve the F1 score of the three baseline models on average on GENIA?",
     "answer_format": "Your answer should be a Python float rounded to two decimal places WITHOUT ANY PUNCTUATION OR EXPLANATION. e.g. 21.30",
     "tags": [
+        "objective",
         "single",
-        "table",
-        "objective"
+        "table"
     ],
     "anchor_pdf": [
         "220f0021-1bf8-599f-ab3d-5b46d56cb03e"
@@ -22,11 +22,11 @@
         "eval_kwargs": {
             "gold": 7.05,
             "ndigits": 2,
-            "tolerance": 1e-6
+            "tolerance": 1e-06
         }
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "Human"
+    "annotator": "human"
 }

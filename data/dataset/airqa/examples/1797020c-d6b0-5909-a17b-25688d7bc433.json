@@ -3,16 +3,11 @@
     "question": "According to this paper, what type will the question \"How to keep strawberries fresh\" be classified into?",
     "answer_format": "Your answer should be a single string representing the question type.",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "objective"
+        "objective",
+        "single",
+        "text"
     ],
-    "pdf_id": [
-        "010e09cf-8f86-5759-8446-0f7e6558997c"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Read section titles and locate the section that discusses the question type classification.",
         "Understand the definition of each question type.",
@@ -27,5 +22,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "010e09cf-8f86-5759-8446-0f7e6558997c"
+    ],
+    "reference_pdf": []
 }

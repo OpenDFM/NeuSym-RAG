@@ -3,16 +3,11 @@
     "question": "On which datasets this study surpassed the SOTA?",
     "answer_format": "Your answer should be a Python list of dataset, e.g., [\"dataset1\", \"dataset2\", ...]. YOU MUST USE THE EXACT TEXT FROM THE PAPER.",
     "tags": [
-        "single-doc details",
-        "table calculation",
-        "objective"
+        "objective",
+        "single",
+        "table"
     ],
-    "pdf_id": [
-        "3107f6a8-1939-5af0-b3d8-06d7aa66158d"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, find all sections in the paper that mentions SOTA.",
         "Identify the part that compare the performance with SOTA.",
@@ -35,5 +30,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "3107f6a8-1939-5af0-b3d8-06d7aa66158d"
+    ],
+    "reference_pdf": []
 }

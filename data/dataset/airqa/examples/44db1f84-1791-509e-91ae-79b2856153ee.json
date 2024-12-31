@@ -3,16 +3,11 @@
     "question": "What are the datasets and their metrics used in this paper according to the tables?",
     "answer_format": "Your answer should be a Python dictionary, e.g., {\"dataset1\": \"metric1\", \"dataset2\": \"metric2\", ...}. YOU MUST USE THE EXACT TEXT AND FULL DATASET NAME FROM THE PAPER WIHOUT CHANGING CAPITALIZATION.",
     "tags": [
-        "single-doc details",
-        "table calculation",
-        "objective"
+        "objective",
+        "single",
+        "table"
     ],
-    "pdf_id": [
-        "3107f6a8-1939-5af0-b3d8-06d7aa66158d"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, find all tables in the paper that include dataset and metric.",
         "Identify the full name of the datasets and metrics from the tables.",
@@ -36,5 +31,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "3107f6a8-1939-5af0-b3d8-06d7aa66158d"
+    ],
+    "reference_pdf": []
 }

@@ -3,16 +3,11 @@
     "question": "In section 3, the author provides an exemplary event description. List the features in the example that correspond to the semantic roles discussed in the following paragraph.",
     "answer_format": "Your answer should be a Python dictionary where the keys are the semantic roles and the values are the features that correspond to the roles. e.g. {\"semantic_role1\": \"feature1\", \"semantic_role2\": \"feature2\", ...}",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "objective"
+        "objective",
+        "single",
+        "text"
     ],
-    "pdf_id": [
-        "5b81a1a3-fbe6-534d-b0c0-801e8fb2bdd6"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, read section 3 and find the exemplary event description.",
         "Read the following paragraphs to identify the semantic roles discussed.",
@@ -32,5 +27,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "5b81a1a3-fbe6-534d-b0c0-801e8fb2bdd6"
+    ],
+    "reference_pdf": []
 }

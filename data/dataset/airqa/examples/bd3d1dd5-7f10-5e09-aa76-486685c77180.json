@@ -1,33 +1,33 @@
 {
- "uuid": "bd3d1dd5-7f10-5e09-aa76-486685c77180",
- "question": "What do formula (2) to formula (4) mean?",
- "answer_format": "Your answer should be a brief summarization of the meaning of these formulas, and you do not need to introduce these formulas one-by-one.",
- "tags": [
-  "single-doc details",
-  "formula inference",
-  "subjective"
- ],
- "pdf_id": [
-  "aec41fde-98a1-58c4-86f3-100e408171cd"
- ],
- "conference": [
-  "acl2023"
- ],
- "reasoning_steps": [
-  "First, locate where formula (2) to formula (4) are",
-  "Second, get the content of the corresponding section",
-  "Third, get the content of the previous section to know the meaning of different symbols.",
-  "Finally, analyze the meaning of these formulas."
- ],
- "evaluator": {
-  "eval_func": "eval_reference_answer_with_llm",
-  "eval_kwargs": {
-   "reference_answer": "Formula (2) to (4) describe the self-contrastive training (SELFCONT) algorithm, which is designed to mitigate the repetition problem in language models. SELFCONT modifies the training process by adding a penalty to the output of the current model \\(f_{\theta_1}\\) when it predicts a repetitive token that the premature checkpoint \\(f_{\theta_0}\\) also predicts. The penalty is controlled by the weight \\(w\\), which is only active when the true next token is non-repetitive but the premature model predicts it as repetitive. This encourages the model to learn more complex patterns and reduce its tendency to generate repetitive text.",
-   "question":"What do formula (2) to formula (4) mean?"
-  }
- },
- "state": {
-  "gpt-4o-2024-05-13": false,
-  "gui-gpt-4o-2024-05-13": true
- }
+    "uuid": "bd3d1dd5-7f10-5e09-aa76-486685c77180",
+    "question": "What do formula (2) to formula (4) mean?",
+    "answer_format": "Your answer should be a brief summarization of the meaning of these formulas, and you do not need to introduce these formulas one-by-one.",
+    "tags": [
+        "formula",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate where formula (2) to formula (4) are",
+        "Second, get the content of the corresponding section",
+        "Third, get the content of the previous section to know the meaning of different symbols.",
+        "Finally, analyze the meaning of these formulas."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "Formula (2) to (4) describe the self-contrastive training (SELFCONT) algorithm, which is designed to mitigate the repetition problem in language models. SELFCONT modifies the training process by adding a penalty to the output of the current model \\(f_{\theta_1}\\) when it predicts a repetitive token that the premature checkpoint \\(f_{\theta_0}\\) also predicts. The penalty is controlled by the weight \\(w\\), which is only active when the true next token is non-repetitive but the premature model predicts it as repetitive. This encourages the model to learn more complex patterns and reduce its tendency to generate repetitive text.",
+            "question": "What do formula (2) to formula (4) mean?"
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false,
+        "gui-gpt-4o-2024-05-13": true
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "aec41fde-98a1-58c4-86f3-100e408171cd"
+    ],
+    "reference_pdf": []
 }

@@ -3,10 +3,10 @@
     "question": "From which subset of ExHVV was MemeMQACorpus chosen, and why? How many questions were selected? Also, provide the changes in each role-label for the chosen subset.",
     "answer_format": "Your answer should be a Python list of 4 elements. The first element is the subset's name. The second element is the reason why the author chose this subset. The third element is an integer, denoting the number of questions chosen. The fourth element is a Python dict, containing role-labels and their corresponding changes, where each change is calculated as the new count minus the old count. e.g. [\"answer1\", \"answer2\", 3, {\"role1\": -2, \"role2\": 3, ...}]",
     "tags": [
-        "multi-doc analysis",
-        "table calculation",
-        "text understanding",
-        "subjective"
+        "multiple",
+        "subjective",
+        "table",
+        "text"
     ],
     "archor_pdf": [
         "0b35eefa-16ce-5586-9a5b-5ce712108204",
@@ -56,5 +56,6 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human"
 }

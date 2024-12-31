@@ -1,31 +1,31 @@
 {
- "uuid": "e5b21555-1c9a-5275-be50-1a418f9a59d6",
- "question": "What are the meanings of function $s$ and function $F$ in Equation (3)?",
- "answer_format": "",
- "tags": [
-  "single-doc details",
-  "formula inference",
-  "subjective"
- ],
- "pdf_id": [
-  "875e65e0-8e9f-52e3-9d3e-65f15fa1ea82"
- ],
- "conference": [
-  "acl2023"
- ],
- "reasoning_steps": [
-  "First, get the content of Equation (3).",
-  "Second, get the content of Section 4.1 and summarize the answer."
- ],
- "evaluator": {
-  "eval_func": "eval_reference_answer_with_llm",
-  "eval_kwargs": {
-   "reference_answer": "$s(\\cdot)$ is the cosine similarity and $F(\\cdot)$ is a non-linear mapping on the output representations of PLM.",
-   "question": "What are the meanings of function $s$ and function $F$ in Equation (3)?"
-  }
- },
- "state": {
-  "gpt-4o-2024-05-13": false,
-  "gui-gpt-4o-2024-05-13": true
- }
+    "uuid": "e5b21555-1c9a-5275-be50-1a418f9a59d6",
+    "question": "What are the meanings of function $s$ and function $F$ in Equation (3)?",
+    "answer_format": "",
+    "tags": [
+        "formula",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, get the content of Equation (3).",
+        "Second, get the content of Section 4.1 and summarize the answer."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "$s(\\cdot)$ is the cosine similarity and $F(\\cdot)$ is a non-linear mapping on the output representations of PLM.",
+            "question": "What are the meanings of function $s$ and function $F$ in Equation (3)?"
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false,
+        "gui-gpt-4o-2024-05-13": true
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "875e65e0-8e9f-52e3-9d3e-65f15fa1ea82"
+    ],
+    "reference_pdf": []
 }

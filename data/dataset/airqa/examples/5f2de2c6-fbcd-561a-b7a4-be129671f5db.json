@@ -3,17 +3,12 @@
     "question": "On which labeled dataset did the metric AMR not reduce to Acc? On that dataset, which model performs best on the metric AMR?",
     "answer_format": "Your answer should be a Python list of three elements, the first element is the name of the labeled dataset, the second and third element is the model family and the variant of the model. e.g. [\"answer1\", \"answer2\", \"answer3\"].",
     "tags": [
-        "single-doc details",
-        "table calculation",
-        "text understanding",
-        "objective"
+        "objective",
+        "single",
+        "table",
+        "text"
     ],
-    "pdf_id": [
-        "0da230cb-d487-56fa-9a85-4648f3f1e6c5"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, locate the section that includes the relevant metrics.",
         "Find the labled dataset's name in the section text.",
@@ -33,5 +28,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "0da230cb-d487-56fa-9a85-4648f3f1e6c5"
+    ],
+    "reference_pdf": []
 }

@@ -3,17 +3,12 @@
     "question": "What does formula (1) mean in the Methodology section?",
     "answer_format": "Your answer should be a python strings of the detailed explanation of the formula.",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "formula inference",
-        "subjective"
+        "formula",
+        "single",
+        "subjective",
+        "text"
     ],
-    "pdf_id": [
-        "cd91a901-384e-597b-bb20-2d4f9fa0c4f9"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Find the formula (1) in the Methodology section and the surrounding text to understand the meaning of the formula.",
         "If the formula is fully explained in the text, directly use the explanation as the answer.",
@@ -28,5 +23,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "cd91a901-384e-597b-bb20-2d4f9fa0c4f9"
+    ],
+    "reference_pdf": []
 }

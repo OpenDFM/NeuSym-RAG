@@ -3,17 +3,12 @@
     "question": "Using only task-level prompts or using only example-specific prompts, which is better on the Multi-Domain test set?",
     "answer_format": "Your answer should be a single string, either \"task-level\" or \"example-specific\".",
     "tags": [
-        "single-doc details",
-        "table calculation",
-        "text understanding",
-        "objective"
+        "objective",
+        "single",
+        "table",
+        "text"
     ],
-    "pdf_id": [
-        "5a2b95c1-12d6-5b77-82a1-ee24180d27ae"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Locate the experiment table that shows the model performances on the Multi-Domain test set with different distributions of prompts.",
         "Find out the mathematical symbols indicating the numbers of two types of prompts.",
@@ -29,5 +24,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": true
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "5a2b95c1-12d6-5b77-82a1-ee24180d27ae"
+    ],
+    "reference_pdf": []
 }

@@ -3,16 +3,11 @@
     "question": "In the domain of prediciton questions, what's the largest issue for LLAMA 2?",
     "answer_format": "Your answer should be a word or phrase, indicating the largest issue. YOU MUST USE THE EXACT WORDS FROM PDF WITHOUT EXPLANATIONS.",
     "tags": [
-        "single-doc details",
-        "image analysis",
-        "objective"
+        "image",
+        "objective",
+        "single"
     ],
-    "pdf_id": [
-        "10e37be8-8c9f-590c-b94f-e6bea03794f2"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, locate the figure that lists the distribution of different issues.",
         "Finally, find the largest issue for given model."
@@ -25,5 +20,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "10e37be8-8c9f-590c-b94f-e6bea03794f2"
+    ],
+    "reference_pdf": []
 }

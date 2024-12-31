@@ -3,12 +3,8 @@
     "question": "I want to contact the first author of this paper. What's the email address?",
     "answer_format": "Your answer should be a verbose text string representing the email address if there is only one first author. Otherwise, return a Python list of e-mail strings for each first and co-first author, e.g., [\"xxx@xxx.com\", \"yyy@yyy.com\", ...]. DO NOT INCLUDE ANY OTHER CONTEXT IN YOUR ANSWER.",
     "tags": [
-        "metadata query",
-        "metadata extraction",
+        "metadata",
         "objective"
-    ],
-    "pdf_id": [
-        "3ea7de2a-3312-589f-a765-01e4b9e1dcb7"
     ],
     "conference": [
         "acl2024"
@@ -31,5 +27,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "3ea7de2a-3312-589f-a765-01e4b9e1dcb7"
+    ],
+    "reference_pdf": []
 }

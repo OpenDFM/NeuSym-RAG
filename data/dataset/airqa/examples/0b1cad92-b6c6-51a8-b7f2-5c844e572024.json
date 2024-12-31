@@ -3,16 +3,11 @@
     "question": "On which language does LLaMA-2 13B with no removal reaches its second highest perplexity?",
     "answer_format": "Your answer should be a word DIRECTLY FROM THE PDF WITHOUT ANY EXPLANATION.",
     "tags": [
-        "single-doc details",
-        "table calculation",
-        "objective"
+        "objective",
+        "single",
+        "table"
     ],
-    "pdf_id": [
-        "a20a1a7a-b335-54ef-82a5-b97be4405604"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, locate the table that compares LLaMA-2 perplexity.",
         "Find the correct column and rows that correspond to the model LLaMA-2 13B with no removal.",
@@ -27,5 +22,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "a20a1a7a-b335-54ef-82a5-b97be4405604"
+    ],
+    "reference_pdf": []
 }

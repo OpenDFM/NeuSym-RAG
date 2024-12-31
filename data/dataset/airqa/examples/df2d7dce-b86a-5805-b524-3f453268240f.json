@@ -1,30 +1,30 @@
 {
- "uuid": "df2d7dce-b86a-5805-b524-3f453268240f",
- "question": "According to Figure 1, in which year has the highest proportion of NLP papers that explicitly mention speech-related terms in their title?",
- "answer_format": "Your answer should be the year number with the highest proportion, e.g. 2000.",
- "tags": [
-  "single-doc details",
-  "image analysis",
-  "objective"
- ],
- "pdf_id": [
-  "a88d4d17-b2f9-520e-a611-c2c4ba178be5"
- ],
- "conference": [
-  "acl2023"
- ],
- "reasoning_steps": [
-  "First, get the content of Figure 1.",
-  "Second, identify the answer and check it with the content of section 2.2."
- ],
- "evaluator": {
-  "eval_func": "eval_int_exact_match",
-  "eval_kwargs": {
-   "gold": 1989
-  }
- },
- "state": {
-  "gpt-4o-2024-05-13": false,
-  "gui-gpt-4o-2024-05-13": true
- }
+    "uuid": "df2d7dce-b86a-5805-b524-3f453268240f",
+    "question": "According to Figure 1, in which year has the highest proportion of NLP papers that explicitly mention speech-related terms in their title?",
+    "answer_format": "Your answer should be the year number with the highest proportion, e.g. 2000.",
+    "tags": [
+        "image",
+        "objective",
+        "single"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, get the content of Figure 1.",
+        "Second, identify the answer and check it with the content of section 2.2."
+    ],
+    "evaluator": {
+        "eval_func": "eval_int_exact_match",
+        "eval_kwargs": {
+            "gold": 1989
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false,
+        "gui-gpt-4o-2024-05-13": true
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "a88d4d17-b2f9-520e-a611-c2c4ba178be5"
+    ],
+    "reference_pdf": []
 }

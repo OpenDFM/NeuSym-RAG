@@ -3,16 +3,11 @@
     "question": "For the specific dataset where CLiCoTEA does not outperform all models, in which languages does this occur?",
     "answer_format": "Your answer should be a Python list of string elements, every element is the abbreviation of a langugage mentioned in the paper, e.g. [\"AR\", \"ES\", \"FR\", ...].",
     "tags": [
-        "single-doc details",
-        "table calculation",
-        "objective"
+        "objective",
+        "single",
+        "table"
     ],
-    "pdf_id": [
-        "0d6ea045-b831-520d-9b99-ba22a081a403"
-    ],
-    "conference": [
-        "acl2023"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, identify relevant performances (usually in the main experiment table) from the specified PDF for CLiCoTEA and other models.",
         "Analyse and recognize the specific dataset in which CLiCoTEA does not outperform all models.",
@@ -35,5 +30,10 @@
     },
     "state": {
         "gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "0d6ea045-b831-520d-9b99-ba22a081a403"
+    ],
+    "reference_pdf": []
 }

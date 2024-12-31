@@ -3,16 +3,11 @@
     "question": "What are the seven categories of tasks, which form the dataset used to conduct SFT on a Llama-2-7B model in section 2.1?",
     "answer_format": "Your answer should be a Python list of seven elements, containing the names of the seven categories of tasks. e.g. [\"task1\", \"task2\", ... \"task7\"]. YOU MUST USE THE EXACT AND FULL NAMES OF THE TASKS AS MENTIONED IN THE PAPER.",
     "tags": [
-        "single-doc details",
-        "text understanding",
-        "objective"
+        "objective",
+        "single",
+        "text"
     ],
-    "pdf_id": [
-        "eed48331-03ed-52de-8f87-c71da234697c"
-    ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Read section 2.1 and locate the implementation details.",
         "Find the details concerning dataset.",
@@ -36,5 +31,10 @@
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
-    }
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "eed48331-03ed-52de-8f87-c71da234697c"
+    ],
+    "reference_pdf": []
 }
