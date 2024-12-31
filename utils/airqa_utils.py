@@ -37,7 +37,7 @@ abbrev_mappings = {
 
 def get_all_used_paper_uuids(
         example_dir: str = os.path.join(AIRQA_DIR, 'examples'),
-        output_file: str = os.path.join(AIRQA_DIR, 'used_uuids.json')
+        output_file: str = os.path.join(AIRQA_DIR, 'used_paper_uuids.json')
     ) -> List[str]:
     """ Extract all used paper UUIDs from the AIR-QA examples.
     """
@@ -46,7 +46,8 @@ def get_all_used_paper_uuids(
         if file.endswith('.json'):
             with open(os.path.join(example_dir, file), 'r', encoding='utf8') as inf:
                 data = json.load(inf)
-                uuids.update(data['pdf_id'])
+                uuids.update(data['anchor_pdf'])
+                uuids.update(data['reference_pdf'])
     uuids = list(uuids)
     if output_file is not None:
         with open(output_file, 'w', encoding='utf8') as ouf:
@@ -78,7 +79,7 @@ def generate_airqa_example_template() -> Dict[str, Any]:
         "state": {
             "gui-gpt-4o-2024-11-20": False
         },
-        "annotator": "Human"
+        "annotator": "human"
     }
     with open(os.path.join(AIRQA_DIR, 'examples', uid + '.json'), 'w', encoding='utf8') as ouf:
         json.dump(example_template, ouf, ensure_ascii=False, indent=4)
