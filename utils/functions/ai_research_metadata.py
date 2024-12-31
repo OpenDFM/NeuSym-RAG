@@ -254,6 +254,36 @@ def infer_paper_abstract_from_pdf(
     return None
 
 
+def infer_paper_authors_from_pdf(
+        pdf_path: str,
+        model: str = 'gpt-4o',
+        temperature: float = 0.0 # Use more deterministic decoding with temperature=0.0
+    ) -> list[str]:
+    """ Use a language model to infer the authors of a paper from the first page in a PDF.
+    """
+    doc = fitz.open(pdf_path)
+    first_page = doc[0]
+    first_page_text = first_page.get_text()
+    doc.close()
+
+    # Call the language model to infer the authors
+    template = f"""You are an expert in academic papers. Your task is to identify the authors of a research paper based on the extracted text from the first page in the PDF file, using PyMuPDF. Please ensure the following:\n1. Directly return the author list (of Python type `List[str]`) without adding any extra context, explanations, or formatting, e.g., ["abc", "xyz"]\n2. Do not modify the author names, which means preserving their original capitalization and order exactly as presented (from left to right, from top to bottom).\n3. If you are certain that the provided text does not contain the paper's authors, respond only with "None".\n\nHere is the extracted text:\n\n{first_page_text}\n\nYour response is:
+    """
+    authors = call_llm(template, model=model, temperature=temperature).strip()
+    if authors.lower().strip() == "none":
+        logger.error(f"Paper authors are not found in the first page of the PDF {pdf_path}.")
+        return []
+    try:
+        authors = eval(authors.strip())
+        if type(authors) == list:
+            return authors
+        else:
+            raise ValueError()
+    except Exception as e:
+        logger.error(f"Failed to parse valid author list from {authors} .")
+        return []
+
+
 def infer_paper_tldr_from_metadata(
         pdf_title: str,
         pdf_abstract: str,

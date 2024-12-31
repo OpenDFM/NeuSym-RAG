@@ -9,7 +9,7 @@ from tenacity import retry, stop_after_attempt, wait_exponential, RetryError
 from typing import Dict, Any, Optional, List, Tuple, Union
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from agents.models import get_llm_single_instance
-from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid, get_airqa_paper_metadata, get_num_pages, download_paper_pdf, get_airqa_relative_path, add_ai_research_metadata, write_ai_research_metadata_to_json, infer_paper_abstract_from_pdf
+from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid, get_airqa_paper_metadata, get_num_pages, download_paper_pdf, get_airqa_relative_path, add_ai_research_metadata, write_ai_research_metadata_to_json, infer_paper_abstract_from_pdf, infer_paper_authors_from_pdf
 from utils.functions.common_functions import get_uuid
 from bs4 import BeautifulSoup
 
@@ -341,7 +341,18 @@ def crawl_openreview_papers(
             submissions: List[Note] = client.get_all_notes(content={'venueid': venue_id})
             submissions = [submit.to_json() for submit in submissions]
             # we only keep accepted papers with downloadable PDFs
-            submissions = [data for data in submissions if 'submitted to' not in data['content']['venue'].lower() and data['content'].get('pdf', None)]
+            filtered = []
+            for data in submissions:
+                # type(data['content']['venue']) == dict -> {'value': 'xxx'}, o.w., data['content']['venue'] == str
+                if type(data['content']['venue']) == dict and 'submitted to' not in data['content']['venue']['value'].lower() and data['content'].get('pdf', {}).get('value', None):
+                    for k in data['content']:
+                        if type(data['content'][k]) == dict and 'value' in data['content'][k]:
+                            data['content'][k] = data['content'][k]['value']
+                    filtered.append(data)
+                elif type(data['content']['venue']) != dict and 'submitted to' not in data['content']['venue'].lower() and data['content'].get('pdf', None):
+                    filtered.append(data)
+            submissions = filtered 
+            # submissions = [data for data in submissions if 'submitted to' not in data['content']['venue'].lower() and data['content'].get('pdf', None)]
             if len(submissions) == 0:
                 logger.warning(f"No papers found for {venue_id}.")
                 continue
@@ -368,7 +379,7 @@ def crawl_openreview_papers(
                 "year": int(year), # conference year
                 "volume": data['venue'], # volume title
                 "bibtex": data['_bibtex'], # bibtex citation
-                "authors": data['authors'], # authors list
+                "authors": data.get('authors', None), # authors list
                 "pdf_url": pdf_url, # URL to download the PDF
                 "pdf_path": os.path.join(subfolder, f'{uid}.pdf'), # local path to save the PDF, rename it with the UUID
                 "num_pages": -1, # number of pages in the PDF
@@ -389,11 +400,13 @@ def crawl_openreview_papers(
             metadata['num_pages'] = get_num_pages(metadata['pdf_path'])
             if not metadata['abstract']:
                 metadata['abstract'] = infer_paper_abstract_from_pdf(metadata['pdf_path'], model=model, temperature=temperature)
+            if not metadata['authors']:
+                metadata['authors'] = infer_paper_authors_from_pdf(metadata['pdf_path'], model=model, temperature=temperature)
             add_ai_research_metadata(metadata, model=model, temperature=temperature, tldr_max_length=tldr_max_length, tag_number=tag_number)
             metadata['pdf_path'] = get_airqa_relative_path(metadata['pdf_path'])
             write_ai_research_metadata_to_json(metadata)
-        except:
-            logger.error(f"Failed to post-process the metadata for {metadata['uuid']}.")
+        except Exception as e:
+            logger.error(f"Failed to post-process the metadata for {metadata['uuid']}: {e}")
     return uuid2papers
 
 
@@ -431,8 +444,9 @@ if __name__ == '__main__':
 
     from itertools import combinations
 
-    for url in ['https://aclanthology.org/events/acl-2023/', 'https://aclanthology.org/events/acl-2024/', 'https://aclanthology.org/events/emnlp-2023/', 'https://aclanthology.org/events/emnlp-2024/']:
-        crawl_acl_anthology_papers(url, model='gpt-4o-mini', temperature=0.0, tldr_max_length=80, tag_number=5)
+    # for url in ['https://aclanthology.org/events/acl-2023/', 'https://aclanthology.org/events/acl-2024/', 'https://aclanthology.org/events/emnlp-2023/', 'https://aclanthology.org/events/emnlp-2024/']:
+    #     crawl_acl_anthology_papers(url, model='gpt-4o-mini', temperature=0.0, tldr_max_length=80, tag_number=5)
 
-    for conference, year in combinations(['ICLR', 'NeurIPS'], [2023, 2024]):
-        crawl_openreview_papers(conference, year, model='gpt-4o-mini', temperature=0.0, tldr_max_length=80, tag_number=5)
+    # for conference, year in combinations(['ICLR', 'NeurIPS'], [2023, 2024]):
+    #     crawl_openreview_papers(conference, year, model='gpt-4o-mini', temperature=0.0, tldr_max_length=80, tag_number=5)
+    crawl_openreview_papers('ICLR', 2024, model='gpt-4o-mini', temperature=0.0, tldr_max_length=80, tag_number=5)
