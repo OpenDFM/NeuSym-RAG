@@ -69,11 +69,11 @@ def get_airqa_paper_metadata(uuid_str: Optional[str] = None) -> Dict[str, Any]:
     return UUID2PAPERS
 
 
-def download_paper_pdf(pdf_url: str, pdf_path: str) -> Optional[str]:
+def download_paper_pdf(pdf_url: str, pdf_path: str, log: bool = True) -> Optional[str]:
     """ Download the PDF file from the `pdf_url` into `pdf_path`. Just return the relative `pdf_path` if succeeded.
     """
     if os.path.exists(pdf_path) and os.path.isfile(pdf_path): # PDF file already exists
-        logger.warning(f"PDF file {pdf_path} already exists. Just ignore the download from {pdf_url}.")
+        if log: logger.warning(f"PDF file {pdf_path} already exists. Just ignore the download from {pdf_url}.")
         return pdf_path
     try:
         headers = {
@@ -86,12 +86,12 @@ def download_paper_pdf(pdf_url: str, pdf_path: str) -> Optional[str]:
             with open(pdf_path, 'wb') as file:
                 for chunk in response.iter_content(chunk_size=8192):
                     file.write(chunk)
-            # logger.info(f"Downloaded paper `{pdf_url}` successfully to: {pdf_path}")
+            if log: logger.info(f"Downloaded paper `{pdf_url}` successfully to: {pdf_path}")
             return pdf_path
         else:
-            logger.error(f"Failed to download paper `{pdf_url}`. Status code: {response.status_code}")
+            if log: logger.error(f"Failed to download paper `{pdf_url}`. Status code: {response.status_code}")
     except requests.exceptions.RequestException as e:
-        logger.error(f"An error occurred while downloading PDF file: {e}")
+        if log: logger.error(f"An error occurred while downloading PDF file: {e}")
     return None
 
 

@@ -6,13 +6,15 @@
         "tag1",
         "tag2"
     ], // different tags for the data or task sample, see documents/airqa_tags.md for reference
-    "pdf_id": [
+    "anchor_pdf": [
         "xxx-xxx-xxx-xxx"
-    ], // unique ids of the PDF file, uuid5(namespace, 'paper title')
+    ], // paper ids that must be used in the current question
+    "reference_pdf": [
+        "xxx-xxx-xxx-xxx"
+    ], // often in "multi" category to define the list of papers that may be used
     "conference": [
-        "acl2023",
-        "acl2024"
-    ], // conference names, format "{lowercase_conference_name}{year}"
+        "acl2023"
+    ], // in "retrieval" category to define the set of papers, usually volume
     "reasoning_steps": [
         "find the table related to xxx",
         "check the table content about method A and method B",
@@ -30,5 +32,6 @@
     "state": {
         "gpt-4o-2024-05-13": false,
         "gui-gpt-4o-2024-05-13": true
-    } // true or false represents whether this question can be resolved by the keyword model; the `gui-` prefix represents using the web browser interface instead of api
+    }, // true or false represents whether this question can be resolved by the keyword model; the `gui-` prefix represents using the web browser interface instead of api
+    "annotator": "Human" // whether annotated by human or machine
 }

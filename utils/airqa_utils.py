@@ -2,11 +2,13 @@
 """
 import requests, shutil, subprocess
 import tqdm, fitz
+import multiprocessing as mp
+from pathlib import Path
 import os, sys, re, json, logging
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional, List, Tuple, Union
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from agents.models import get_llm_single_instance
-from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid, get_airqa_paper_metadata, get_num_pages, download_paper_pdf, get_airqa_relative_path, add_ai_research_metadata, write_ai_research_metadata_to_json
+from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid, get_airqa_paper_metadata, get_num_pages, download_paper_pdf, get_airqa_relative_path, add_ai_research_metadata, write_ai_research_metadata_to_json, infer_paper_abstract_from_pdf
 from utils.functions.common_functions import get_uuid
 from bs4 import BeautifulSoup
 
@@ -169,9 +171,8 @@ def crawl_acl_anthology_papers(
         model: str = 'gpt-4o-mini',
         temperature: float = 0.0,
         tldr_max_length: int = 80,
-        tag_number: int = 5,
-        errata_file: Optional[str] = os.path.join(AIRQA_DIR, 'errata.json')
-):
+        tag_number: int = 5
+) -> Dict[str, dict]:
     """ Crawl papers from ACL Anthology website. Use `get_airqa_paper_uuid` to generate UUIDs and rename the output PDFs under `output_dir`. Save the meta data dict with its UUID into metadata folder.
     @param:
         url: str, the URL of the ACL Anthology. This parameter will be used to download the HTML file into `html_path`.
@@ -180,12 +181,6 @@ def crawl_acl_anthology_papers(
     """
     # get UUID -> paper mappings
     uuid2papers = get_airqa_paper_metadata()
-
-    # errata file, maybe deleted in future
-    if os.path.exists(errata_file):
-        with open(errata_file, 'r', encoding='utf8') as inf:
-            errata = json.load(inf)
-    else: errata = {}
 
     download_html(url, 'index.html')
     with open('index.html', 'r', encoding='utf8') as inf:
@@ -238,7 +233,7 @@ def crawl_acl_anthology_papers(
                 if meta['uuid'] in uuid2papers:
                     return uuid2papers[meta['uuid']]
                 download_path = os.path.join(paper_dir, meta['uuid'] + '.pdf')
-                if not download_paper_pdf(meta['pdf_url'], download_path):
+                if not download_paper_pdf(meta['pdf_url'], download_path, log=False):
                     logger.error(f'Failed to download the PDF file from {meta["pdf_url"]} into {download_path}.')
 
                 meta['num_pages'] = get_num_pages(download_path)
@@ -285,7 +280,135 @@ def crawl_acl_anthology_papers(
     return uuid2papers
 
 
+def crawl_openreview_papers(
+        conference: str,
+        year: int,
+        model: str = 'gpt-4o-mini',
+        temperature: float = 0.0,
+        tldr_max_length=80,
+        tag_number=5
+    ) -> Dict[str, dict]:
+    """ Refer to blogs and doc:
+        - https://blog.csdn.net/qq_39517117/article/details/142959952
+        - https://github.com/fedebotu/ICLR2023-OpenReviewData
+        - https://docs.openreview.net/getting-started/using-the-api
+    Please firstly: pip install openreview-py
+    And set the environment variable OPENREVIEW_USERNAME and OPENREVIEW_PASSWORD.
+    """
+    try:
+        import openreview
+        from openreview.api import OpenReviewClient, Note
+    except ImportError:
+        logger.error("Please pip install the openreview-py package firstly.")
+        return {}
+    uuid2papers = get_airqa_paper_metadata()
+    if os.environ.get('OPENREVIEW_USERNAME', None) is None or os.environ.get('OPENREVIEW_PASSWORD', None) is None:
+        logger.error("Please set the environment variable OPENREVIEW_USERNAME and OPENREVIEW_PASSWORD.")
+        return uuid2papers
+
+    def get_openreview_client_and_venues(conference: str, year: int) -> Tuple[Union[openreview.Client, OpenReviewClient], List[str]]:
+        conference = conference.lower()
+        if conference == 'iclr' and int(year) <= 2023: # api2 failed to retrieve content in ICLR 2023
+            client: openreview.Client = openreview.Client(baseurl='https://api.openreview.net')
+        else:
+            client: OpenReviewClient = OpenReviewClient(baseurl='https://api2.openreview.net')
+        venues = client.get_group(id='venues').members
+        venues = [v for v in venues if v.lower().startswith(f'{conference}.cc/{year}/')]
+        return client, venues
+
+    client, venues = get_openreview_client_and_venues(conference, year)
+    conference_full = 'International Conference on Learning Representations' if conference.lower() == 'iclr' \
+        else 'Conference on Neural Information Processing Systems' if conference.lower() in ['nips', 'neurips'] \
+        else conference
+    subfolder = os.path.join(AIRQA_DIR, 'papers', conference.lower() + str(year))
+    logger.info(f"In total, {len(venues)} venues found for {conference} {year}.")
+    processed_data = []
+    for venue_id in venues:
+        logger.info(f"Processing volume: {venue_id} ...")
+        output_venue_path = f"{venue_id.replace('/', '_').replace('-', '_').lower()}.json"
+        if os.path.exists(output_venue_path):
+            with open(output_venue_path, 'r', encoding='utf8') as inf:
+                submissions = json.load(inf)
+        else:
+            # we only care about accepted papers
+            submissions: List[Note] = client.get_all_notes(content={'venueid': venue_id})
+            if len(submissions) == 0:
+                logger.warning(f"No accepted papers found for {venue_id}.")
+                continue
+            # serialize first to prevent follow-up processing errors
+            submissions = [submit.to_json() for submit in submissions]
+            with open(output_venue_path, 'w', encoding='utf8') as ouf:
+                json.dump(submissions, ouf, ensure_ascii=False, indent=4)
+
+        logger.info(f"In total, {len(submissions)} submissions found for venue {venue_id}.")
+        for submission in tqdm.tqdm(submissions):
+            data = submission['content']
+            title = str(data['title']).strip()
+            uid = get_airqa_paper_uuid(title, f'{conference.lower()}{year}')
+            if uid in uuid2papers:
+                # logger.warning(f"UUID {uuid} already exists in the UUID -> paper mappings: {title}")
+                continue
+            metadata = {
+                "uuid": uid, # UUID generated by the title
+                "title": title, # paper title
+                "conference_full": conference_full, # full title of the conference
+                "conference": conference,
+                "year": int(year), # conference year
+                "volume": data['venue'], # volume title
+                "bibtex": data['_bibtex'], # bibtex citation
+                "authors": data['authors'], # authors list
+                # data['pdf'] if data['pdf'].startswith('http') else 'https://openreview.net/' + data['pdf'].lstrip('/')
+                "pdf_url": f'https://openreview.net/pdf?id={submission["id"]}', # URL to download the PDF
+                "pdf_path": os.path.join(subfolder, f'{uid}.pdf'), # local path to save the PDF, rename it with the UUID
+                "num_pages": -1, # number of pages in the PDF
+                "abstract": data.get('abstract', None), # paper abstract
+                "tldr": data.get('TLDR', None), # TLDR
+                "tags": data.get('keywords', None) # tags
+            }
+            processed_data.append(metadata)
+            uuid2papers[metadata['uuid']] = metadata
+
+    # download all papers from pdf_url to pdf_path using multi-processing
+    download_openreview_papers(processed_data, subfolder)
+
+    # post-process the metadata: num_pages, relative_path, abstract, TLDR, tags
+    for metadata in processed_data:
+        metadata['num_pages'] = get_num_pages(metadata['pdf_path'])
+        if not metadata['abstract']:
+            metadata['abstract'] = infer_paper_abstract_from_pdf(metadata['pdf_path'], model=model, temperature=temperature)
+        add_ai_research_metadata(metadata, model=model, temperature=temperature, tldr_max_length=tldr_max_length, tag_number=tag_number)
+        metadata['pdf_path'] = get_airqa_relative_path(metadata['pdf_path'])
+        write_ai_research_metadata_to_json(metadata)
+    return uuid2papers
+
+
+def multiprocessing_download_wrapper(args):
+    pdf_url, pdf_path = args
+    return download_paper_pdf(pdf_url, pdf_path, log=False)
+
+
+def download_openreview_papers(processed_data: List[Dict[str, Any]], parent_folder: str) -> int:
+    """ Download all papers from OpenReview.
+    """
+    count = sum(1 for _ in Path(parent_folder).rglob('*') if _.is_file())
+    # download all papers in parallel
+    papers_to_download = [(metadata['pdf_url'], metadata['pdf_path']) for metadata in processed_data]
+    num_processes = int(0.8 * mp.cpu_count())
+
+    logger.info(f"Starting to download {len(papers_to_download)} papers from OpenReview ({count} already exist) ...")
+    with mp.Pool(num_processes) as pool:
+        pool.map(multiprocessing_download_wrapper, papers_to_download)
+    count = sum(1 for _ in Path(parent_folder).rglob('*') if _.is_file()) - count
+    logger.info(f"Finished downloading {len(papers_to_download)} papers from OpenReview ({count} new downloaded) .")
+    return count
+
+
 if __name__ == '__main__':
 
+    from itertools import combinations
+
     for url in ['https://aclanthology.org/events/acl-2023/', 'https://aclanthology.org/events/acl-2024/', 'https://aclanthology.org/events/emnlp-2023/', 'https://aclanthology.org/events/emnlp-2024/']:
-        crawl_acl_anthology_papers(url)
+        crawl_acl_anthology_papers(url, model='gpt-4o-mini', temperature=0.0, tldr_max_length=80, tag_number=5)
+
+    for conference, year in combinations(['ICLR', 'NeurIPS'], [2023, 2024]):
+        crawl_openreview_papers(conference, year, model='gpt-4o-mini', temperature=0.0, tldr_max_length=80, tag_number=5)
