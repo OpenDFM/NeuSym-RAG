@@ -90,8 +90,10 @@ def download_paper_pdf(pdf_url: str, pdf_path: str, log: bool = True) -> Optiona
             return pdf_path
         else:
             if log: logger.error(f"Failed to download paper `{pdf_url}`. Status code: {response.status_code}")
+            else: print(f"Failed to download paper `{pdf_url}`. Status code: {response.status_code}")
     except requests.exceptions.RequestException as e:
         if log: logger.error(f"An error occurred while downloading PDF file: {e}")
+        else: print(f"An error occurred while downloading PDF file: {e}")
     return None
 
 
