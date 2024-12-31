@@ -4,7 +4,7 @@ from typing import Any, Dict, Tuple
 def formulate_input(dataset: str, data: Dict[str, Any]) -> Tuple[str, str]:
     if dataset == 'airqa':
         question, answer_format = data['question'], data['answer_format']
-        pdf_id = data['pdf_id']
+        pdf_id = data.get('anchor_pdf', 'pdf_id')
         assert isinstance(pdf_id, list), f"Example {data['uuid']} pdf_id should be a list."
         if len(pdf_id) == 1:
             question += f" (for PDF with id {pdf_id[0]})"
