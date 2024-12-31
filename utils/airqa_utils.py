@@ -378,7 +378,8 @@ def crawl_openreview_papers(
     download_openreview_papers(processed_data, subfolder)
 
     # post-process the metadata: num_pages, relative_path, abstract, TLDR, tags
-    for metadata in processed_data:
+    logger.info(f"Post-processing the metadata for {len(processed_data)} papers ...")
+    for metadata in tqdm.tqdm(processed_data):
         metadata['num_pages'] = get_num_pages(metadata['pdf_path'])
         if not metadata['abstract']:
             metadata['abstract'] = infer_paper_abstract_from_pdf(metadata['pdf_path'], model=model, temperature=temperature)
