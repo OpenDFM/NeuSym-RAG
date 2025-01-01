@@ -3,13 +3,12 @@
     "question": "According to the anchor PDF, what are the baseline models used in the experiments of both the two most recent model papers and this paper?",
     "answer_format": "Your answer should be a python list of elements, each element is the baseline model name string, e.g., [\"model1\", \"model2\", ...]. YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION.",
     "tags": [
-        "multi-doc analysis",
+        "multiple",
         "text",
         "table",
         "objective"
     ],
-    "conference": [
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Find the section mentioned the two most recent baseline models used in the experiments, which is usually in the table of the experiments section.",
         "Locate the respective papers.",

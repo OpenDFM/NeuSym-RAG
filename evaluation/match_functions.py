@@ -192,6 +192,10 @@ def eval_structured_object_exact_match(pred: Union[str, Any], gold: Any, **kwarg
         pred_len = len(pred)
         if pred_len != gold_len:
             return 0.0
+        lowercase = kwargs.get('lowercase', False)
+        if lowercase:
+            gold = {k.lower(): v for k, v in gold.items()}
+            pred = {k.lower(): v for k, v in pred.items()}
         for k, v in gold.items():
             if not isinstance(k, str) and k in pred:
                 pred_v = pred[k]

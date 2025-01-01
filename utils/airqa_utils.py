@@ -15,6 +15,8 @@ from bs4 import BeautifulSoup
 
 
 logger = logging.getLogger(__name__)
+if logger.hasHandlers():
+    logger.handlers.clear()
 handler = logging.StreamHandler(sys.stdout)
 formatter = logging.Formatter(
     fmt='[%(asctime)s][%(filename)s - %(lineno)d][%(levelname)s]: %(message)s',
@@ -56,10 +58,18 @@ def get_all_used_paper_uuids(
     return uuids
 
 
-def generate_airqa_example_template() -> Dict[str, Any]:
+def get_all_example_uuids(
+        example_dir: str = os.path.join(AIRQA_DIR, 'examples')
+    ) -> List[str]:
+    """ Extract all example UUIDs from the AIR-QA examples.
+    """
+    return [os.path.splitext(f)[0] for f in os.listdir(example_dir) if f.endswith('.json')]
+
+
+def generate_airqa_example_template(**kwargs) -> Dict[str, Any]:
     """ Generate an AIR-QA example template.
     """
-    flag, existing_uids = True, [os.path.splitext(f)[0] for f in os.listdir(os.path.join(AIRQA_DIR, 'examples')) if f.endswith('.json')]
+    flag, existing_uids = True, get_all_example_uuids()
     while flag:
         uid = get_uuid(name=os.path.abspath(__file__) + str(os.urandom(8)))
         if uid not in existing_uids:
@@ -82,6 +92,7 @@ def generate_airqa_example_template() -> Dict[str, Any]:
         },
         "annotator": "human"
     }
+    example_template.update(kwargs)
     with open(os.path.join(AIRQA_DIR, 'examples', uid + '.json'), 'w', encoding='utf8') as ouf:
         json.dump(example_template, ouf, ensure_ascii=False, indent=4)
     logger.info(f"Generated an AIR-QA example template with ID {uid} into examples/{uid}.json file.")
@@ -91,35 +102,44 @@ def generate_airqa_example_template() -> Dict[str, Any]:
 def check_airqa_examples() -> Dict[str, Any]:
     """ Check AIR-QA examples.
     """
-    example_path = os.path.join(AIRQA_DIR, 'examples')
-    uuids = [os.path.splitext(f)[0] for f in os.listdir(example_path) if f.endswith('.json')]
+    tag, example_dir = True, os.path.join(AIRQA_DIR, 'examples')
+    uuids = get_all_example_uuids()
     
     evaluation_list = ["objective", "subjective"]
     capability_list = ["text", "table", "image", "formula", "metadata"]
     question_type_list = ["single", "multiple", "retrieval", "comprehensive"]
     
     for uuid in uuids:
-        with open(os.path.join(example_path, uuid + '.json'), 'r', encoding='utf8') as inf:
+        with open(os.path.join(example_dir, uuid + '.json'), 'r', encoding='utf8') as inf:
             data = json.load(inf)
             
             for column in ["uuid", "question", "tags", "evaluator", "state", "annotator"]:
-                if not data[column]: logger.info(f"[Error]: {column} is missing in example {uuid}.")
+                if not data[column]:
+                    logger.info(f"[Error]: {column} is missing in example {uuid}.")
+                    tag = False
             for tag_list in [evaluation_list, capability_list, question_type_list]:
                 if list(set(data["tags"]) & set(tag_list)) == []:
                     logger.info(f"[Error]: Tags must contain {tag_list} in example {uuid}.")
+                    tag = False
             for tag_list in [evaluation_list, question_type_list]:
                 if len(list(set(data["tags"]) & set(tag_list))) > 1:
                     logger.info(f"[Error]: Tags cannot contain more than one {tag_list} in example {uuid}.")
+                    tag = False
             if "anchor_pdf" not in data or "reference_pdf" not in data:
                 logger.info(f"[Error]: anchor_pdf and reference_pdf must be provided in example {uuid}.")
+                tag = False
             elif not data["anchor_pdf"] and not data["reference_pdf"] and not data["conference"]:
                 logger.info(f"[Error]: At least one of anchor_pdf, reference_pdf, or conference must be provided in example {uuid}.")
+                tag = False
             if "single" in data["tags"] or "multiple" in data["tags"]:
                 if data["conference"]:
                     logger.info(f"[Error]: conference must not be provided in example {uuid} with single or multiple question types.")
+                    tag = False
             if "retreival" in data["tags"]:
                 if (not data["conference"]) or data["anchor_pdf"] or data["reference_pdf"]:
                     logger.info(f"[Error]: You should only provide conference in example {uuid} with retreival question type.")
+                    tag = False
+    return tag
 
 
 def get_answer_from_llm(question_uuid: Optional[str] = None, question: Optional[str] = None, add_answer_format: bool = True, model: str = 'gpt-4o', temperature: float = 0.7, top_p: float = 0.95) -> str:
