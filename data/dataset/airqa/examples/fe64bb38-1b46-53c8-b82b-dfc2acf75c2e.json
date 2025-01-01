@@ -3,12 +3,11 @@
     "question": "I want to contact the first author of this paper. What's the email address?",
     "answer_format": "Your answer should be a verbose text string representing the email address if there is only one first author. Otherwise, return a Python list of e-mail strings for each first and co-first author, e.g., [\"xxx@xxx.com\", \"yyy@yyy.com\", ...]. DO NOT INCLUDE ANY OTHER CONTEXT IN YOUR ANSWER.",
     "tags": [
+        "single",
         "metadata",
         "objective"
     ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "To find the first and possibly co-first authors, we need to look at the first page of the paper.",
         "Pay attention to the superscript symbols next to the author names, which usually indicate the author's affiliation and contribution (e.g., co-first or corresponding authors).",

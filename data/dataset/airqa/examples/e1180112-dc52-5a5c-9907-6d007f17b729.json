@@ -3,12 +3,11 @@
     "question": "I am a beginnner to the field of NLP, and I wonder roughly how many papers on average should one paper cite, given the provided paper list.",
     "answer_format": "Your answer should be a single integer number, rounded from the average reference number.",
     "tags": [
+        "multiple",
         "metadata",
         "objective"
     ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "Firstly, find the reference section in the paper to locate the number of citations.",
         "If the number of citations is not explicitly mentioned, count the number of references in the reference section.",

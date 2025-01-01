@@ -3,12 +3,11 @@
     "question": "What are the institutions of the first author and corresponding author of this paper?",
     "answer_format": "Your answer should be a Python list of length 2 containing the institution names respectively, e.g., [\"first_author_institute\", \"corresponding_author_institute\"]. If there are multiple first authors or corresponding authors, please replace the corresponding institution name with a name list, e.g., [[\"first_author1_institute\", \"first_author2_institute\", ...], [\"corresponding_author1_institute\", \"corresponding_author2_institute\", ...]].",
     "tags": [
+        "single",
         "metadata",
         "objective"
     ],
-    "conference": [
-        "acl2024"
-    ],
+    "conference": [],
     "reasoning_steps": [
         "The authors and their institutions are usually listed in the first page.",
         "And the co-first author or corresponding author information is usually marked with a symbol in the author region, and explained below in the footnote.",

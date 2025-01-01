@@ -88,6 +88,40 @@ def generate_airqa_example_template() -> Dict[str, Any]:
     return example_template
 
 
+def check_airqa_examples() -> Dict[str, Any]:
+    """ Check AIR-QA examples.
+    """
+    example_path = os.path.join(AIRQA_DIR, 'examples')
+    uuids = [os.path.splitext(f)[0] for f in os.listdir(example_path) if f.endswith('.json')]
+    
+    evaluation_list = ["objective", "subjective"]
+    capability_list = ["text", "table", "image", "formula", "metadata"]
+    question_type_list = ["single", "multiple", "retrieval", "comprehensive"]
+    
+    for uuid in uuids:
+        with open(os.path.join(example_path, uuid + '.json'), 'r', encoding='utf8') as inf:
+            data = json.load(inf)
+            
+            for column in ["uuid", "question", "tags", "evaluator", "state", "annotator"]:
+                if not data[column]: logger.info(f"[Error]: {column} is missing in example {uuid}.")
+            for tag_list in [evaluation_list, capability_list, question_type_list]:
+                if list(set(data["tags"]) & set(tag_list)) == []:
+                    logger.info(f"[Error]: Tags must contain {tag_list} in example {uuid}.")
+            for tag_list in [evaluation_list, question_type_list]:
+                if len(list(set(data["tags"]) & set(tag_list))) > 1:
+                    logger.info(f"[Error]: Tags cannot contain more than one {tag_list} in example {uuid}.")
+            if "anchor_pdf" not in data or "reference_pdf" not in data:
+                logger.info(f"[Error]: anchor_pdf and reference_pdf must be provided in example {uuid}.")
+            elif not data["anchor_pdf"] and not data["reference_pdf"] and not data["conference"]:
+                logger.info(f"[Error]: At least one of anchor_pdf, reference_pdf, or conference must be provided in example {uuid}.")
+            if "single" in data["tags"] or "multiple" in data["tags"]:
+                if data["conference"]:
+                    logger.info(f"[Error]: conference must not be provided in example {uuid} with single or multiple question types.")
+            if "retreival" in data["tags"]:
+                if (not data["conference"]) or data["anchor_pdf"] or data["reference_pdf"]:
+                    logger.info(f"[Error]: You should only provide conference in example {uuid} with retreival question type.")
+
+
 def get_answer_from_llm(question_uuid: Optional[str] = None, question: Optional[str] = None, add_answer_format: bool = True, model: str = 'gpt-4o', temperature: float = 0.7, top_p: float = 0.95) -> str:
     """ Get the answer from the LLM model.
     @param:
