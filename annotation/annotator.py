@@ -43,7 +43,7 @@ def _annotate_with_llm(
     ) -> Any:
     llm_output = call_llm(template=template, model=model, temperature=temperature)
     logger.info(f"LLM output: \n{llm_output}\n")
-    pattern = r"```(txt)?\s*\[Question\]:\s*(.*?)\s*\[Answer\]:\s*(.*)```"
+    pattern = r"```(txt)?\s*\[Question\]:\s*(.*?)\s*\[Answer\]:\s*(.*?)```"
     matched = re.findall(pattern, llm_output, re.DOTALL)
     if len(matched) == 0:
         logger.info(f"Failed to match a question and answer pair.")
@@ -63,7 +63,7 @@ You will be given a section from an AI research paper, and your task is to gener
 Notice that:
 1. Remember to wrap the question and answer with triple backticks.
 2. Don't include the answer in the question.
-3. Your problem should be as objective as possible.
+3. Your question should be as objective as possible.
 4. Your answer should be concise and clear, and should use raw context if possible.
 
 [Context]:
@@ -90,7 +90,7 @@ You will be given a section from an AI research paper, and your task is to gener
 Notice that:
 1. Remember to wrap the question and answer with triple backticks.
 2. Don't include the answer in the question.
-3. Your problem should be as objective as possible.
+3. Your question should be as objective as possible.
 4. Your answer should be concise and clear.
     4.1 If your answer can be just a float or integer, just provide the number.
     4.2 If your question can be presented in the form of a true-or-false statement, do so and provide the answer as `True` or `False`.
@@ -118,6 +118,77 @@ Table content in HTML format:
     return question, answer
 
 
+def single_multiple_single_part(pdf_data: Dict[str, Any]) -> Any:
+    template = """You are an intelligent annotation system who is expert in posing questions. 
+
+You will be given a section from an AI research paper, and your task is to generate a question based on the content of the section. Your output should be in the following format:
+```txt
+[Question]: Your question here.
+[Answer]: Your answer here.
+```
+Notice that:
+1. Remember to wrap the question and answer with triple backticks.
+2. Don't include the answer in the question.
+3. Your problem should be as objective as possible.
+4. Your question should be concise and clear, and should use raw context if possible.
+    4.1 If your answer can be just a float or integer, just provide the number.
+    4.2 If your question can be presented in the form of a true-or-false statement, do so and provide the answer as `True` or `False`.
+5. Try to pose a question with the text of the section, then pose another question with the text of the subsection. Better make the second question relyng on the first. Note that you should combine the two question into one complete question, and the two answers into one in Python List format, e.g. [answer1, answer2].
+6. If there are no subsection, return "No Subsection."
+
+[Context]:
+{context}
+
+Let's think step-by-step, and then provide the final question and answer."""
+
+    section_data = pdf_data["info_from_mineru"]["TOC"]
+    section_data = section_partition(section_data)
+    context = f"```txt\n{random.choice(section_data).strip()}\n```"
+    question, answer = _annotate_with_llm(template=template.format(context=context))
+    logger.info(f"Question: {question}\nAnswer: {answer}\n")
+    return question, answer
+
+
+def single_multiple_cross_part(pdf_data: Dict[str, Any]) -> Any:
+    template = """You are an intelligent annotation system who is expert in posing questions. 
+
+You will be given a section from an AI research paper, and your task is to generate a question based on the content of the section. Your output should be in the following format:
+```txt
+[Question]: Your question here.
+[Answer]: Your answer here.
+```
+Notice that:
+1. Remember to wrap the question and answer with triple backticks.
+2. Don't include the answer in the question.
+3. Your problem should be as objective as possible.
+4. Your question should be concise and clear, and should use raw context if possible.
+    4.1 If your answer can be just a float or integer, just provide the number.
+    4.2 If your question can be presented in the form of a true-or-false statement, do so and provide the answer as `True` or `False`.
+5. Try to pose a question with the text of the first section, then pose another question with the text of the second section. Better make the second question relyng on the first. Note that you should combine the two question into one complete question, and the two answers into one in Python List format, e.g. [answer1, answer2].
+
+[Context]:
+{context}
+
+Let's think step-by-step, and then provide the final question and answer."""
+
+    section_data = pdf_data["info_from_mineru"]["TOC"]
+    section_data = section_partition(section_data)
+    indexs = sorted(random.sample(list(range(0, len(section_data))), 2))
+    section_data = [section_data[index] for index in indexs]
+    context = f"""First Section:
+```txt
+{section_data[0].strip()}
+```
+
+Second Section:
+```txt
+{section_data[1].strip()}
+```"""
+    question, answer = _annotate_with_llm(template=template.format(context=context))
+    logger.info(f"Question: {question}\nAnswer: {answer}\n")
+    return question, answer
+
+
 with open(uuid_file, "r", encoding="utf-8") as f:
     used_uuids = json.load(f)
 pid = random.choice(used_uuids)
@@ -128,7 +199,9 @@ with open(os.path.join(processed_dir, f"{pid}.json"), "r", encoding="utf-8") as 
 with open(os.path.join(metadata_dir, f"{pid}.json"), "r", encoding="utf-8") as f:
     metadata = json.load(f)
 # single_single_text(pdf_data)
-single_single_table(pdf_data)
+# single_single_table(pdf_data)
+# single_multiple_single_part(pdf_data)
+# single_multiple_cross_part(pdf_data)
 
 # qid = generate_airqa_example_template()["uuid"]
 # if check_airqa_examples():
