@@ -1,0 +1,32 @@
+{
+    "uuid": "b14a34e0-6226-5a98-aeec-2ade7fe35d70",
+    "question": "Regarding the dataset ROCKS used in the anchor paper, it contains ratings assessed by 20 annotators for each of the 12 pictures of a given rock type. How does its experimental setup ensure the objectivity and fairness of the ratings, specifically how do subjects use consistent scale values?",
+    "answer_format": "Your answer should be a python string that explains the detailed experimental setup.",
+    "tags": [
+        "multi-doc analysis",
+        "text",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the section mentioned the dataset ROCKS used in the anchor paper, which is usually in the Dataset section.",
+        "Locate the respective paper in the reference PDF.",
+        "Find the detailed experimental setup of the ROCKS, which is usually in the Method section.",
+        "Find the detailed explanation of how the experimental setup ensures subjects use consistent scale values."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "To promote the use of consistent scale values across subjects, anchor pictures were displayed along with scale values on the computer screen throughout each rating session. One anchor picture corresponded to the lowest rating (e.g, the very darkest rock), a second anchor picture corresponded to the highest rating (e.g, the very lightest rock), and a third anchor corresponded to a rock that we judged to be roughly average on the rated dimension (e.g., a rock of average darkness/lightness). The anchors and scale values were displayed at the bottom of the screen throughout the rating session to ensure the objectivity and fairness of the ratings.",
+            "question": "Regarding the dataset ROCKS used in the anchor paper, it contains ratings assessed by 20 annotators for each of the 12 pictures of a given rock type. How does its experimental setup ensure the objectivity and fairness of the ratings, specifically how do subjects use consistent scale values?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "6435f055-a064-504a-b636-d3c71c51a6e8"
+    ],
+    "reference_pdf": []
+}
