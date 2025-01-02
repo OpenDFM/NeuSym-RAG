@@ -1,0 +1,28 @@
+{
+    "uuid": "bb7c8889-1582-5409-95bc-74cb179506a1",
+    "question": "What's the original annotation process drawn by the paper named \"Where Do People Tell Stories Online?Story Detection Across Online Communities?\"?",
+    "answer_format": "Your answer should be a single string indicating the original annotation process.",
+    "tags": [
+        "subjective",
+        "multiple",
+        "text"
+    ],
+    "anchor_pdf": ["ddf6d3e0-7c36-5ce6-ac60-67c687303e0f"],
+    "reference_pdf": ["c7563d97-695f-5c77-8021-334bf2ff9ddb"],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, find the section about event annotation in the paper named \"Where Do People Tell Stories Online?Story Detection Across Online Communities\".",
+        "Then turn to the original paper to find the section about the annotation process."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "All annotations were carried out by a single co-author after multiple rounds of discussions and the creation of a set of annotation guidelines. To calculate the expected inter-annotator agreement rate, a second co-author independently annotated a random sample of five texts at the end of the annotation process, using only the annotation guidelines for reference.",
+            "question": "What's the original annotation process drawn by the paper named \"Where Do People Tell Stories Online?Story Detection Across Online Communities?\"?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
