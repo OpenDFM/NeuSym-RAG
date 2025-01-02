@@ -460,7 +460,7 @@ def crawl_openreview_papers(
             metadata['pdf_path'] = get_airqa_relative_path(metadata['pdf_path'])
             write_ai_research_metadata_to_json(metadata)
         except Exception as e:
-            logger.error(f"Failed to post-process the metadata for {metadata['uuid']}: {e}")
+            logger.error(f"Failed to post-process the metadata for {metadata['uuid']} with title `{metadata['title']}`: {e}")
     return uuid2papers
 
 
@@ -498,9 +498,8 @@ if __name__ == '__main__':
 
     from itertools import combinations
 
-    # for url in ['https://aclanthology.org/events/acl-2023/', 'https://aclanthology.org/events/acl-2024/', 'https://aclanthology.org/events/emnlp-2023/', 'https://aclanthology.org/events/emnlp-2024/']:
-    #     crawl_acl_anthology_papers(url, model='gpt-4o-mini', temperature=0.0, tldr_max_length=80, tag_number=5)
+    for url in ['https://aclanthology.org/events/acl-2023/', 'https://aclanthology.org/events/acl-2024/', 'https://aclanthology.org/events/emnlp-2023/', 'https://aclanthology.org/events/emnlp-2024/']:
+        crawl_acl_anthology_papers(url, model='gpt-4o-mini', temperature=0.0, tldr_max_length=80, tag_number=5)
 
-    # for conference, year in combinations(['ICLR', 'NeurIPS'], [2023, 2024]):
-    #     crawl_openreview_papers(conference, year, model='gpt-4o-mini', temperature=0.0, tldr_max_length=80, tag_number=5)
-    crawl_openreview_papers('ICLR', 2024, model='gpt-4o-mini', temperature=0.0, tldr_max_length=80, tag_number=5)
+    for conference, year in combinations(['ICLR', 'NeurIPS'], [2023, 2024]):
+        crawl_openreview_papers(conference, year, model='gpt-4o-mini', temperature=0.0, tldr_max_length=80, tag_number=5)
