@@ -22,13 +22,16 @@
             }
         },
         "use_cases": [
-            {
-                "eval_func": "eval_string_exact_match",
-                "eval_kwargs": {
-                    "gold": "Italian",
-                    "lowercase": true
-                }
-            }
+          {
+              "example": {
+                  "eval_func": "eval_string_exact_match",
+                  "eval_kwargs": {
+                      "gold": "Italian",
+                      "lowercase": true
+                  }
+              },
+              "explanation": "In this case, the evaluation function compares the predicted answer with the gold answer 'Italian', ignoring case sensitivity due to the 'lowercase' parameter being set to true. This means 'italian', 'ITALIAN', or 'ItAliAn' would all match 'Italian'."
+          }
         ]
     },
 
@@ -45,6 +48,7 @@
             "type": "str",
             "required": false,
             "default": "ratio",
+            "options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
             "description": "The method for fuzzy string matching. Available options are 'ratio', 'partial_ratio', 'token_sort_ratio', 'token_set_ratio'."
           },
           "threshold": {
@@ -67,15 +71,18 @@
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_string_fuzzy_match",
-            "eval_kwargs": {
-              "gold": "Italy",
-              "fuzz_method": "token_sort_ratio",
-              "threshold": 90,
-              "lowercase": true
+            {
+                "example": {
+                    "eval_func": "eval_string_fuzzy_match",
+                    "eval_kwargs": {
+                        "gold": "Italy",
+                        "fuzz_method": "token_sort_ratio",
+                        "threshold": 90,
+                        "lowercase": true
+                    }
+                },
+                "explanation": "This evaluation uses the 'token_sort_ratio' method to compare the predicted answer to 'Italy' after converting both to lowercase. If the similarity score is above the threshold of 90, it is considered a match."
             }
-          }
         ]
     },
 
@@ -90,12 +97,15 @@
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_bool_exact_match",
-            "eval_kwargs": {
-              "gold": true
+            {
+                "example": {
+                    "eval_func": "eval_bool_exact_match",
+                    "eval_kwargs": {
+                        "gold": true
+                    }
+                },
+                "explanation": "This evaluation checks if the predicted boolean matches the gold answer 'true'. If the predicted answer is 'true', it is considered a match; otherwise, it is not."
             }
-          }
         ]
     },
 
@@ -110,12 +120,15 @@
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_int_exact_match",
-            "eval_kwargs": {
-              "gold": 42
+            {
+                "example": {
+                    "eval_func": "eval_int_exact_match",
+                    "eval_kwargs": {
+                        "gold": 42
+                    }
+                },
+                "explanation": "This evaluation checks if the predicted integer matches the gold answer '42'. Only an exact match is considered valid."
             }
-          }
         ]
     },
 
@@ -142,14 +155,17 @@
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_float_exact_match",
-            "eval_kwargs": {
-              "gold": 3.14159,
-              "ndigits": 3,
-              "tolerance": 1e-6
+            {
+                "example": {
+                    "eval_func": "eval_float_exact_match",
+                    "eval_kwargs": {
+                        "gold": 3.14159,
+                        "ndigits": 3,
+                        "tolerance": 1e-6
+                    }
+                },
+                "explanation": "This evaluation checks if the predicted float matches the gold answer '3.14159', rounded to 3 decimal places and within a tolerance of 1e-6."
             }
-          }
         ]
     },
 
@@ -166,68 +182,78 @@
             "type": "bool",
             "required": false,
             "default": false,
-            "description": "Whether to ignore the order of elements in lists (only relevant for lists)."
+            "description": "Whether to ignore the order of elements in lists."
           },
           "tolerance": {
             "type": "float",
             "required": false,
             "default": 1e-6,
-            "description": "The tolerance for comparing float numbers (only relevant for floats)."
+            "description": "The tolerance for comparing float numbers."
           },
           "ndigits": {
             "type": "int",
             "required": false,
             "default": null,
-            "description": "The number of digits to round float numbers before comparison (only relevant for floats)."
+            "description": "The number of digits to round float numbers before comparison."
           },
           "lowercase": {
             "type": "bool",
             "required": false,
             "default": false,
-            "description": "Whether to convert strings to lowercase before comparison (only relevant for strings)."
+            "description": "Whether to convert strings to lowercase before comparison."
           },
           "ignore_blank": {
             "type": "bool",
             "required": false,
             "default": false,
-            "description": "Whether to ignore blank spaces before comparison (only relevant for strings)."
+            "description": "Whether to ignore blank spaces before comparison."
           },
           "threshold": {
             "type": "int",
             "required": false,
             "default": -1,
-            "description": "The threshold for fuzzy string matching. If greater than 0, uses fuzzy matching (only relevant for strings)."
+            "description": "The threshold for fuzzy string matching. If greater than 0, uses fuzzy matching."
           },
           "fuzz_method": {
             "type": "str",
             "required": false,
             "default": "ratio",
+            "options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
             "description": "The fuzzy matching method to use if `threshold` is set. Default is 'ratio'."
           }
         },
         "use_cases": [
           {
-            "eval_func": "eval_structured_object_exact_match",
-            "eval_kwargs": {
-              "gold": [1, 2, 3],
-              "ignore_order": true
-            }
+              "example": {
+                  "eval_func": "eval_structured_object_exact_match",
+                  "eval_kwargs": {
+                      "gold": [1, 2, 3],
+                      "ignore_order": true
+                  }
+              },
+              "explanation": "The evaluation function compares the predicted list against the gold list [1, 2, 3] while ignoring the order of elements. As long as the predicted list contains the same elements, it will be considered a match."
           },
           {
-            "eval_func": "eval_structured_object_exact_match",
-            "eval_kwargs": {
-              "gold": {"key1": 1.204, "key2": 2.335},
-              "ndigits": 2
-            }
+              "example": {
+                  "eval_func": "eval_structured_object_exact_match",
+                  "eval_kwargs": {
+                      "gold": {"key1": 1.204, "key2": 2.335},
+                      "ndigits": 2
+                  }
+              },
+              "explanation": "The evaluation function compares the predicted dictionary against the gold dictionary {'key1': 1.204, 'key2': 2.335}. The float values are rounded to 2 decimal places before comparison, so '1.205' and '2.34' would match the gold values."
           },
           {
-            "eval_func": "eval_structured_object_exact_match",
-            "eval_kwargs": {
-              "gold": ["Italy", "France", "Germany"],
-              "lowercase": true
-            }
+              "example": {
+                  "eval_func": "eval_structured_object_exact_match",
+                  "eval_kwargs": {
+                      "gold": ["Italy", "France", "Germany"],
+                      "lowercase": true
+                  }
+              },
+              "explanation": "The evaluation function compares the predicted list of countries against the gold list ['Italy', 'France', 'Germany'], converting all strings to lowercase before comparison. This ensures that 'italy' and 'ITALY' are treated as a match.Note that the order of elements matters in this case."
           }
-        ]
+      ]
     },
 
     "eval_reference_answer_with_llm": {
@@ -243,28 +269,19 @@
             "type": "str",
             "required": true,
             "description": "The input question that was asked."
-          },
-          "llm_model": {
-            "type": "str",
-            "required": false,
-            "default": "DEFAULT_LLM_MODEL",
-            "description": "The LLM model name to use for evaluation. Default is the specified constant `DEFAULT_LLM_MODEL`."
-          },
-          "temperature": {
-            "type": "float",
-            "required": false,
-            "default": "DEFAULT_TEMPERATURE",
-            "description": "The temperature parameter for the LLM, affecting the randomness of the output. Default is the specified constant `DEFAULT_TEMPERATURE`."
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_reference_answer_with_llm",
-            "eval_kwargs": {
-              "reference_answer": "Artificial intelligence is a branch of computer science focused on building systems that can perform tasks that typically require human intelligence.",
-              "question": "What is artificial intelligence?"
+            {
+                "example": {
+                    "eval_func": "eval_reference_answer_with_llm",
+                    "eval_kwargs": {
+                        "reference_answer": "Artificial intelligence is a branch of computer science focused on building systems that can perform tasks that typically require human intelligence.",
+                        "question": "What is artificial intelligence?"
+                    }
+                },
+                "explanation": "In this case, the evaluation checks if the predicted answer conveys the same meaning as the reference answer about artificial intelligence, in response to the question 'What is artificial intelligence?'."
             }
-          }
         ]
     },
 
@@ -281,31 +298,22 @@
             "type": "str",
             "required": true,
             "description": "The input question that provides context for the evaluation."
-          },
-          "llm_model": {
-            "type": "str",
-            "required": false,
-            "default": "DEFAULT_LLM_MODEL",
-            "description": "The LLM model to use for evaluation. Default is `DEFAULT_LLM_MODEL`."
-          },
-          "temperature": {
-            "type": "float",
-            "required": false,
-            "default": "DEFAULT_TEMPERATURE",
-            "description": "The temperature parameter for the LLM, controlling randomness. Default is `DEFAULT_TEMPERATURE`."
           }
         },
         "use_cases": [
-        {
-            "eval_func": "eval_candidate_reference_answer_with_llm",
-            "eval_kwargs": {
-                "candidate_reference_answers": [
-                "Artificial intelligence is a branch of computer science focused on building systems that can perform tasks that typically require human intelligence.",
-                "AI involves creating algorithms capable of decision-making, speech recognition, and problem-solving."
-                ],
-                "question": "What is artificial intelligence?"
+            {
+                "example": {
+                    "eval_func": "eval_candidate_reference_answer_with_llm",
+                    "eval_kwargs": {
+                        "candidate_reference_answers": [
+                            "Artificial intelligence is a branch of computer science focused on building systems that can perform tasks that typically require human intelligence.",
+                            "AI involves creating algorithms capable of decision-making, speech recognition, and problem-solving."
+                        ],
+                        "question": "What is artificial intelligence?"
+                    }
+                },
+                "explanation": "In this case, the evaluation checks if the predicted answer semantically matches any of the candidate reference answers, based on the question 'What is artificial intelligence?'."
             }
-        }
         ]
     },
 
@@ -328,33 +336,24 @@
             "required": false,
             "default": 1,
             "description": "The minimum number of scoring points that must be mentioned in the predicted answer."
-          },
-          "llm_model": {
-            "type": "str",
-            "required": false,
-            "default": "DEFAULT_LLM_MODEL",
-            "description": "The LLM model to use for evaluation. Default is `DEFAULT_LLM_MODEL`."
-          },
-          "temperature": {
-            "type": "float",
-            "required": false,
-            "default": "DEFAULT_TEMPERATURE",
-            "description": "The temperature parameter for the LLM, controlling randomness. Default is `DEFAULT_TEMPERATURE`."
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_partial_scoring_points_with_llm",
-            "eval_kwargs": {
-              "scoring_points": [
-                "Artificial intelligence is a field in computer science.",
-                "AI can be used for machine learning and problem solving.",
-                "The goal of AI is to create systems that mimic human intelligence."
-              ],
-              "question": "What is artificial intelligence?",
-              "count": 2
+            {
+                "example": {
+                    "eval_func": "eval_partial_scoring_points_with_llm",
+                    "eval_kwargs": {
+                        "scoring_points": [
+                            "Artificial intelligence is a field in computer science.",
+                            "AI can be used for machine learning and problem solving.",
+                            "The goal of AI is to create systems that mimic human intelligence."
+                        ],
+                        "question": "What is artificial intelligence?",
+                        "count": 2
+                    }
+                },
+                "explanation": "In this case, the evaluation checks if the predicted answer mentions at least 2 of the specified scoring points about artificial intelligence in response to the question."
             }
-          }
         ]
     },
 
@@ -372,18 +371,6 @@
             "required": true,
             "description": "The input question that provides context for the evaluation."
           },
-          "llm_model": {
-            "type": "str",
-            "required": false,
-            "default": "DEFAULT_LLM_MODEL",
-            "description": "The LLM model to use for evaluation. Default is `DEFAULT_LLM_MODEL`."
-          },
-          "temperature": {
-            "type": "float",
-            "required": false,
-            "default": "DEFAULT_TEMPERATURE",
-            "description": "The temperature parameter for the LLM, controlling randomness. Default is `DEFAULT_TEMPERATURE`."
-          },
           "ignore_order": {
             "type": "bool",
             "required": false,
@@ -392,18 +379,20 @@
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_scoring_points_with_llm",
-            "eval_kwargs": {
-              "scoring_points": [
-                "Supervised learning involves training a model on labeled data.",
-                "Unsupervised learning is used when data does not have labels.",
-                "Reinforcement learning focuses on agents learning through interaction with an environment."
-              ],
-              "question": "Can you explain the different types of machine learning?",
-              "ignore_order": true
+            {
+                "example": {
+                    "eval_func": "eval_scoring_points_with_llm",
+                    "eval_kwargs": {
+                        "scoring_points": [
+                            "Supervised learning involves training a model on labeled data.",
+                            "Unsupervised learning is used when data does not have labels.",
+                            "Reinforcement learning focuses on agents learning through interaction with an environment."
+                        ],
+                        "question": "Can you explain the different types of machine learning?"
+                    }
+                },
+                "explanation": "In this case, the evaluation checks if the predicted answer mentions all three scoring points about types of machine learning, regardless of the order."
             }
-          }
         ]
     },
 
@@ -426,18 +415,6 @@
             "required": true,
             "description": "The input question that provides context for the evaluation."
           },
-          "llm_model": {
-            "type": "str",
-            "required": false,
-            "default": "DEFAULT_LLM_MODEL",
-            "description": "The LLM model to use for evaluation. Default is `DEFAULT_LLM_MODEL`."
-          },
-          "temperature": {
-            "type": "float",
-            "required": false,
-            "default": "DEFAULT_TEMPERATURE",
-            "description": "The temperature parameter for the LLM, controlling randomness. Default is `DEFAULT_TEMPERATURE`."
-          },
           "ignore_order": {
             "type": "bool",
             "required": false,
@@ -446,19 +423,22 @@
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_reference_answer_and_scoring_points_with_llm",
-            "eval_kwargs": {
-              "reference_answer": "Artificial intelligence involves the development of algorithms and models that allow machines to perform tasks that would typically require human intelligence.",
-              "scoring_points": [
-                "AI involves algorithms and models.",
-                "AI enables machines to perform human-like tasks.",
-                "AI systems are built to simulate human intelligence."
-              ],
-              "question": "Can you summarize what artificial intelligence is following the instruction in the first paragraph?",
-              "ignore_order": false
+            {
+                "example": {
+                    "eval_func": "eval_reference_answer_and_scoring_points_with_llm",
+                    "eval_kwargs": {
+                        "reference_answer": "Artificial intelligence involves the development of algorithms and models that allow machines to perform tasks that would typically require human intelligence.",
+                        "scoring_points": [
+                            "AI involves algorithms and models.",
+                            "AI enables machines to perform human-like tasks.",
+                            "AI systems are built to simulate human intelligence."
+                        ],
+                        "question": "Can you summarize what artificial intelligence is following the instruction in the first paragraph?",
+                        "ignore_order": false
+                    }
+                },
+                "explanation": "In this case, the evaluation checks if the predicted answer matches the reference answer and mentions all specified scoring points in the given order."
             }
-          }
         ]
     },
 
@@ -476,18 +456,6 @@
             "required": true,
             "description": "The question describing the problem context for the math formula."
           },
-          "llm_model": {
-            "type": "str",
-            "required": false,
-            "default": "DEFAULT_LLM_MODEL",
-            "description": "The LLM model used for evaluation."
-          },
-          "temperature": {
-            "type": "float",
-            "required": false,
-            "default": "DEFAULT_TEMPERATURE",
-            "description": "The temperature setting for controlling the randomness of the model."
-          },
           "ignore_order": {
             "type": "bool",
             "required": false,
@@ -496,13 +464,16 @@
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_complex_math_formula_with_llm",
-            "eval_kwargs": {
-              "question": "What is the solution to the quadratic equation $ax^2 + bx + c = 0$?",
-              "formulas": "$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}"
+            {
+                "example": {
+                    "eval_func": "eval_complex_math_formula_with_llm",
+                    "eval_kwargs": {
+                        "question": "What is the solution to the quadratic equation $ax^2 + bx + c = 0$?",
+                        "formulas": "$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}"
+                    }
+                },
+                "explanation": "In this case, the evaluation checks if the predicted LaTeX formula is mathematically equivalent to the reference formula for solving the quadratic equation."
             }
-          }
         ]
     },
 
@@ -518,7 +489,9 @@
           "element_type": {
             "type": "str",
             "required": false,
-            "description": "The type of the element. Can be 'str', 'int', 'float', 'dict' or 'list'. Default is str."
+            "default": "str",
+            "options": ["str", "int", "float", "structured"],
+            "description": "The type of the element. Can be 'str', 'int', 'float' or 'structured'. Default is str. Note that, structured objects here refer to list or dictionary."
           },
           "ndigits": {
             "type": "int",
@@ -536,6 +509,7 @@
             "type": "str",
             "required": false,
             "default": "ratio",
+            "options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
             "description": "The method for fuzzy string matching. Default is 'ratio'."
           },
           "threshold": {
@@ -558,30 +532,38 @@
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_element_included",
-            "eval_kwargs": {
-              "gold": ["hello world", "Hi there", "Greetings"],
-              "element_type": "str",
-              "lowercase": true,
-              "ignore_blank": true
+            {
+                "example": {
+                    "eval_func": "eval_element_included",
+                    "eval_kwargs": {
+                        "gold": ["hello world", "Hi there", "Greetings"],
+                        "lowercase": true,
+                        "ignore_blank": true
+                    }
+                },
+                "explanation": "This checks if the predicted answer matches any element in the gold list, ignoring case and blank spaces."
+            },
+            {
+                "example": {
+                    "eval_func": "eval_element_included",
+                    "eval_kwargs": {
+                        "gold": [3.141, 3.14, 2.71],
+                        "element_type": "float",
+                        "ndigits": 2
+                    }
+                },
+                "explanation": "This checks if the predicted float value matches any element in the gold list, rounded to 2 decimal places."
+            },
+            {
+                "example": {
+                    "eval_func": "eval_element_included",
+                    "eval_kwargs": {
+                        "gold": [{"a": 1, "b": 2}, {"x": 9, "y": 8}],
+                        "element_type": "structured"
+                    }
+                },
+                "explanation": "This checks if the predicted dict matches any element in the gold list of dictionaries."
             }
-          },
-          {
-            "eval_func": "eval_element_included",
-            "eval_kwargs": {
-              "gold": [3.141, 3.14, 2.71],
-              "element_type": "float",
-              "ndigits": 2
-            }
-          },
-          {
-            "eval_func": "eval_element_included",
-            "eval_kwargs": {
-              "gold": [{"a": 1, "b": 2}, {"x": 9, "y": 8}],
-              "element_type": "dict"
-            }
-          }
         ]
     },
 
@@ -597,7 +579,9 @@
           "element_type": {
             "type": "str",
             "required": false,
-            "description": "The type of the element. Can be 'str', 'int', 'float', 'dict' or 'list'. Default is str."
+            "default": "str",
+            "options": ["str", "int", "float", "structured"],
+            "description": "The type of the element. Can be 'str', 'int', 'float', 'structured'. Default is str. Note that, structured objects here refer to list or dictionary."
           },
           "ndigits": {
             "type": "int",
@@ -615,6 +599,7 @@
             "type": "str",
             "required": false,
             "default": "ratio",
+            "options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
             "description": "The method for fuzzy string matching. Default is 'ratio'."
           },
           "threshold": {
@@ -637,29 +622,38 @@
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_element_list_included",
-            "eval_kwargs": {
-              "gold": ["apple", "banana", "cherry", "date", "elderberry"],
-              "element_type": "str",
-              "lowercase": true
+            {
+                "example": {
+                    "eval_func": "eval_element_list_included",
+                    "eval_kwargs": {
+                        "gold": ["apple", "banana", "cherry", "date", "elderberry"],
+                        "element_type": "str",
+                        "lowercase": true
+                    }
+                },
+                "explanation": "This checks if each predicted fruit in the list matches any element in the gold list, ignoring case."
+            },
+            {
+                "example": {
+                    "eval_func": "eval_element_list_included",
+                    "eval_kwargs": {
+                        "gold": [3.141, 3.14, 2.71, 2.718],
+                        "element_type": "float",
+                        "ndigits": 2
+                    }
+                },
+                "explanation": "This checks if each predicted float value in the list matches any element in the gold list, rounded to 2 decimal places."
+            },
+            {
+                "example": {
+                    "eval_func": "eval_element_list_included",
+                    "eval_kwargs": {
+                        "gold": [{"a": 1}, {"b": 2}, {"c": 3}],
+                        "element_type": "structured"
+                    }
+                },
+                "explanation": "This checks if each predicted structured object in the list matches any element in the gold list of dictionaries."
             }
-          },
-          {
-            "eval_func": "eval_element_list_included",
-            "eval_kwargs": {
-              "gold": [3.141, 3.14, 2.71, 2.718],
-              "element_type": "float",
-              "ndigits": 2
-            }
-          },
-          {
-            "eval_func": "eval_element_list_included",
-            "eval_kwargs": {
-              "gold": [{"a": 1}, {"b": 2}, {"c": 3}],
-              "element_type": "dict"
-            }
-          }
         ]
     },
 
@@ -680,7 +674,9 @@
           "element_type": {
             "type": "str",
             "required": false,
-            "description": "The type of the element. Can be 'str', 'int', 'float', 'dict' or 'list'. Default is str."
+            "default": "str",
+            "options": ["str", "int", "float", "structured"],
+            "description": "The type of the element. Can be 'str', 'int', 'float', 'structured'. Default is str. Note that, structured objects here refer to list or dictionary."
           },
           "ndigits": {
             "type": "int",
@@ -698,6 +694,7 @@
             "type": "str",
             "required": false,
             "default": "ratio",
+            "options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
             "description": "The method for fuzzy string matching. Default is 'ratio'."
           },
           "threshold": {
@@ -720,22 +717,28 @@
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_element_list_overlap",
-            "eval_kwargs": {
-              "gold": [3, 4, 5],
-              "element_type": "int",
-              "count": 2
+            {
+                "example": {
+                    "eval_func": "eval_element_list_overlap",
+                    "eval_kwargs": {
+                        "gold": [3, 4, 5],
+                        "element_type": "int",
+                        "count": 2
+                    }
+                },
+                "explanation": "This case checks whether the predicted list of integers overlaps with the gold standard list [3, 4, 5] by at least two distinct elements."
+            },
+            {
+                "example": {
+                    "eval_func": "eval_element_list_overlap",
+                    "eval_kwargs": {
+                        "gold": ["banana", "apple", "date", "cherry"],
+                        "count": 3,
+                        "lowercase": true
+                    }
+                },
+                "explanation": "This case evaluates whether the predicted list of fruit names contains at least three elements that overlap with the gold standard list, ignoring case."
             }
-          },
-          {
-            "eval_func": "eval_element_list_overlap",
-            "eval_kwargs": {
-              "gold": ["banana", "apple", "date", "cherry"],
-              "count": 3,
-              "lowercase": true
-            }
-          }
         ]
     },
 
@@ -755,25 +758,28 @@
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_conjunction",
-            "eval_kwargs": {
-              "eval_func_list": [
-                "eval_string_exact_match",
-                "eval_reference_answer_with_llm"
-              ],
-              "eval_kwargs_list": [
-                {
-                  "gold": "role-oriented routing",
-                  "lowercase": true
+            {
+                "example": {
+                    "eval_func": "eval_conjunction",
+                    "eval_kwargs": {
+                        "eval_func_list": [
+                            "eval_string_exact_match",
+                            "eval_reference_answer_with_llm"
+                        ],
+                        "eval_kwargs_list": [
+                            {
+                                "gold": "role-oriented routing",
+                                "lowercase": true
+                            },
+                            {
+                                "reference_answer": "To illustrate the effect of RoR, we run three baselines, namely, 'ALL', 'RANDOM', 'NO ROLE' as comparison to our approach, where the first one selects all experts, the second randomly selects experts, and the third one does not use role information in router inputs. The results of the aforementioned models are reported in Table 9 with the following observations. First, comparing our approach (in Table 3) with the 'ALL' and the 'RANDOM' baselines, our approach achieves better performance, which complies with our intuition because that 'ALL' and 'RANDOM' actually do not select experts to process the input features and thus face problems of utilizing inappropriate experts to process the essential content of the dialogue, which introduces noise that leads to inferior results. Second, when the role information is not included in the router, the model's performance is also worse than our full model, which indicates that the role information is important to understand the key content of dialogue as we hypothesized in our motivation, so that it helps the router to better associate some contents to particular speakers and perform appropriate expert selection.",
+                                "question": "How do the authors further explain why role-oriented routing works?"
+                            }
+                        ]
+                    }
                 },
-                {
-                  "reference_answer": "To illustrate the effect of RoR, we run three baselines, namely, 'ALL', 'RANDOM', 'NO ROLE' as comparison to our approach, where the first one selects all experts, the second randomly select experts, and the third one does not use role information in router inputs. The results of the aforementioned models are reported in Table 9 with the following observations. First, comparing our approach (in Table 3) with the 'ALL' and the 'RANDOM' baselines, our approach achieves better performance, which complies with our intuition because that 'ALL' and 'RANDOM' actually do not select experts to process the input features and thus face problems of utilizing inappropriate experts to process the essential content of the dialogue, which introduces noise that leads to inferior results. Second, when the role information is not included in the router, the model's performance is also worse than our full model, which indicates that the role information is important to understand the key content of dialogue as we hypothesized in our motivation, so that it helps the router to better associate some contents to particular speakers and perform appropriate expert selection",
-                  "question": "How do the authors further explain why role-oriented routing works?"
-                }
-              ]
+                "explanation": "In this case, the conjunction evaluation function checks if both the string exact match and the reference answer with LLM are satisfied. The first function verifies whether the predicted answer matches the gold standard 'role-oriented routing' in a case-insensitive manner. The second function checks if the predicted answer sufficiently addresses the provided question about the effectiveness of role-oriented routing based on the detailed reference answer. If both conditions are met, the evaluation returns 1.0; otherwise, it returns 0.0."
             }
-          }
         ]
     },
 
@@ -793,25 +799,28 @@
           }
         },
         "use_cases": [
-          {
-            "eval_func": "eval_disjunction",
-            "eval_kwargs": {
-              "eval_func_list": [
-                "eval_string_exact_match",
-                "eval_reference_answer_with_llm"
-              ],
-              "eval_kwargs_list": [
-                {
-                  "gold": "role-oriented routing",
-                  "lowercase": true
+            {
+                "example": {
+                    "eval_func": "eval_disjunction",
+                    "eval_kwargs": {
+                        "eval_func_list": [
+                            "eval_string_exact_match",
+                            "eval_reference_answer_with_llm"
+                        ],
+                        "eval_kwargs_list": [
+                            {
+                                "gold": "role-oriented routing",
+                                "lowercase": true
+                            },
+                            {
+                                "reference_answer": "It routes messages, requests, or tasks based on the roles or responsibilities of the recipients, rather than simply by their identity or static attributes.",
+                                "question": "What's the most important idea of role-oriented routing?"
+                            }
+                        ]
+                    }
                 },
-                {
-                  "reference_answer": "It routes messages, requests, or tasks based on the roles or responsibilities of the recipients, rather than simply by their identity or static attributes.",
-                  "question": "What's the most important idea of role-oriented routing?"
-                }
-              ]
+                "explanation": "In this use case, the disjunction evaluation function checks if at least one of the specified evaluation functions returns a positive result. The first function, `eval_string_exact_match`, verifies whether the predicted answer matches the gold standard 'role-oriented routing' in a case-insensitive manner. The second function, `eval_reference_answer_with_llm`, evaluates whether the predicted answer sufficiently addresses the question about the most important idea of role-oriented routing, as described in the provided reference answer. If either condition is satisfied, the evaluation returns 1.0; otherwise, it returns 0.0."
             }
-          }
         ]
     },
 
@@ -832,16 +841,18 @@
         },
         "use_cases": [
             {
-                "eval_func": "eval_negation",
-                "eval_kwargs": {
-                  "eval_func": "eval_element_list_overlap",
-                  "eval_kwargs":
-                    {
-                      "gold": ["DocVQA","ChartQA","InfoVQA"],
-                      "count":1,
-                      "lowercase": true
+                "example": {
+                    "eval_func": "eval_negation",
+                    "eval_kwargs": {
+                        "eval_func": "eval_element_list_overlap",
+                        "eval_kwargs": {
+                            "gold": ["DocVQA", "ChartQA", "InfoVQA"],
+                            "count": 1,
+                            "lowercase": true
+                        }
                     }
-                }
+                },
+                "explanation": "In this use case, the negation evaluation function checks whether the overlap of elements between the predicted answer list and the gold standard list does not meet the specified criteria. As soon as the overlap count is less than 1(which means none of [\"DocVQA\", \"ChartQA\", \"InfoVQA\"] appears in the predicted answer), the negation evaluation returns 1.0; otherwise, it returns 0.0."
             }
         ]
     }
