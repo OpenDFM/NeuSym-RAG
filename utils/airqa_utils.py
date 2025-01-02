@@ -398,12 +398,12 @@ def crawl_openreview_papers(
             filtered = []
             for data in submissions:
                 # type(data['content']['venue']) == dict -> {'value': 'xxx'}, o.w., data['content']['venue'] == str
-                if type(data['content']['venue']) == dict and 'submitted to' not in data['content']['venue']['value'].lower() and data['content'].get('pdf', {}).get('value', None):
+                if type(data['content']['venue']) == dict and 'submitted to' not in data['content']['venue']['value'].lower() and data['content'].get('pdf', {}).get('value', None) and 'reject' not in data['content']['venue']['value'].lower():
                     for k in data['content']:
                         if type(data['content'][k]) == dict and 'value' in data['content'][k]:
                             data['content'][k] = data['content'][k]['value']
                     filtered.append(data)
-                elif type(data['content']['venue']) != dict and 'submitted to' not in data['content']['venue'].lower() and data['content'].get('pdf', None):
+                elif type(data['content']['venue']) != dict and 'submitted to' not in data['content']['venue'].lower() and data['content'].get('pdf', None) and 'reject' not in data['content']['venue'].lower():
                     filtered.append(data)
             submissions = filtered 
             # submissions = [data for data in submissions if 'submitted to' not in data['content']['venue'].lower() and data['content'].get('pdf', None)]
