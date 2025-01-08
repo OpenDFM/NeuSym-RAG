@@ -1,10 +1,15 @@
 #coding=utf8
-import time, uuid
+import time, uuid, re
 from typing import List, Dict, Union, Optional, Any, Iterable
 from agents.models import get_llm_single_instance
 
 
-def call_llm_with_message(messages: List[Dict[str, Any]], model: str = 'gpt-4o', top_p: float = 0.95, temperature: float = 0.7) -> str:
+def call_llm_with_message(
+        messages: List[Dict[str, Any]], 
+        model: str = 'gpt-4o', 
+        top_p: float = 0.95, 
+        temperature: float = 0.7
+    ) -> str:
     """ Call LLM to generate the response directly using the message list.
     """
     model_client = get_llm_single_instance(model)
@@ -18,7 +23,12 @@ def call_llm_with_message(messages: List[Dict[str, Any]], model: str = 'gpt-4o',
     return response
 
 
-def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperature: float = 0.7) -> str:
+def call_llm(
+        template: str, 
+        model: str = 'gpt-4o', 
+        top_p: float = 0.95, 
+        temperature: float = 0.7
+    ) -> str:
     """ Automatically construct the message list from template and call LLM to generate the response. The `template` merely supports the following format:
     {{system_message}}
 
@@ -38,6 +48,22 @@ def call_llm(template: str, model: str = 'gpt-4o', top_p: float = 0.95, temperat
         }
     ]
     return call_llm_with_message(messages=messages, model=model, top_p=top_p, temperature=temperature)
+
+
+def call_llm_with_pattern(
+        template: str,
+        pattern: str, 
+        model: str = 'gpt-4o', 
+        top_p: float = 0.95, 
+        temperature: float = 0.7
+    ) -> List[str]:
+    """ Automatically construct the message list from template, call LLM to generate the response, and parse the response with givern pattern.
+    """
+    response = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
+    matched = re.findall(pattern, response, re.DOTALL)
+    if len(matched) == 0:
+        return None
+    return [s.strip() for s in matched[-1]]
 
 
 def get_uuid(name: Optional[str] = None, uuid_type: str = 'uuid5', uuid_namespace: str = 'dns') -> str:
