@@ -235,6 +235,9 @@ def get_ai_research_per_page_image_info(
             images_by_page[page_number] = []
         images_by_page[page_number].append(image)
     
+    def transfer_bbox(bbox: List[Any]) -> List[Any]:
+        return [bbox[0], bbox[1], bbox[2]-bbox[0], bbox[3]-bbox[1]]
+    
     results = []
     for page_num in range(1, num_pages + 1):
         images = images_by_page.get(page_num, [])
@@ -256,7 +259,7 @@ def get_ai_research_per_page_image_info(
                 "uuid": uuid,
                 "image_caption": image["figure_caption"],
                 "image_summary": image_summary,
-                "bbox": image["figure_bbox"]
+                "bbox": transfer_bbox(image["figure_bbox"])
             }
             result.append(image_info)
         results.append(result)
