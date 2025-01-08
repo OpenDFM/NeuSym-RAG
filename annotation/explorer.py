@@ -6,14 +6,10 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from utils.airqa_utils import generate_airqa_example_template, check_airqa_examples
 from utils.functions.common_functions import call_llm_with_pattern
-from annotation.annotation_prompt import EXPLORE_PROMPT, DESCRIPTION_PROMPT, CONTEXT_PROMPT, HINT_PROMPT, IMAGE_PROMPT
+from annotation.explorer_prompt import EXPLORE_PROMPT, DESCRIPTION_PROMPT, CONTEXT_PROMPT, HINT_PROMPT, IMAGE_PROMPT
 
-
-DEFAULT_LLM_MODEL = 'gpt-4o' # may be changed to other open-source models
-DEFAULT_TEMPERATURE = 0.0
 processed_dir = os.path.join("data", "dataset", "airqa", "processed_data")
 metadata_dir = os.path.join("data", "dataset", "airqa", "metadata")
-
 
 def section_partition(section_data: List[Dict[str, Any]]) -> List[str]:
     VALID_SECTION_COUNT = 5
@@ -56,12 +52,16 @@ def section_partition(section_data: List[Dict[str, Any]]) -> List[str]:
 
 class BaseExplorer(ABC):
     pid: str = None
+    model: str = None
+    temperature: float = None
     pdf_data: Dict[str, Any] = None
     metadata: Dict[str, Any] = None
     section_data: List[str] = None
     
-    def __init__(self, pid: str):
+    def __init__(self, pid: str, model: str, temperature: float):
         self.pid = pid
+        self.model = model
+        self.temperature = temperature
         
         pdf_data_path = os.path.join(processed_dir, f"{self.pid}.json")
         if not os.path.exists(pdf_data_path):
@@ -82,12 +82,10 @@ class BaseExplorer(ABC):
         
     def _explore_with_llm(
             self,
-            template: str, 
-            model: str =  DEFAULT_LLM_MODEL, 
-            temperature: float = DEFAULT_TEMPERATURE
+            template: str
         ) -> Any:
         pattern = r"```(txt)?\s*\[Question\]:\s*(.*?)\s*\[Answer\]:\s*(.*?)\s*\[Reasoning Steps\]:\s*(.*?)```"
-        response = call_llm_with_pattern(template, pattern, model=model, temperature=temperature)
+        response = call_llm_with_pattern(template, pattern, self.model, self.temperature)
         print(response)
         if not response: raise ValueError("Failed to Parse the Response.")
         return response[1:]
@@ -98,8 +96,8 @@ class BaseExplorer(ABC):
 
 class SingleExplorer(BaseExplorer):
     
-    def __init__(self, pid):
-        super().__init__(pid=pid)
+    def __init__(self, pid: str, model: str, temperature: float):
+        super().__init__(pid=pid, model=model, temperature=temperature)
     
     def explore(self):
         return self.single_text()
@@ -115,7 +113,7 @@ class SingleExplorer(BaseExplorer):
             image = ""
         )
         question, answer, reasoning_steps = self._explore_with_llm(template)
-        return question, answer, reasoning_steps
+        return question, answer, reasoning_steps, ["single", "text"]
 
 
 # def single_single_table(pdf_data: Dict[str, Any]) -> Any:
