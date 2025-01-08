@@ -160,20 +160,20 @@ def get_pdf_formula(
     @returns:
         result: List[str], the list of all formula
     """
-    
+
     ocr = Pix2Text()
-    
+
     result = []
-    tmp_png_file = tempfile.mktemp(suffix='.png', dir=os.path.join(os.getcwd(), '.cache'))
+    tmp_png_file = tempfile.NamedTemporaryFile(suffix='.png', dir=os.path.join(os.getcwd(), '.cache'))
     images = convert_from_path(pdf_path)
     for image in images:
-        image.save(tmp_png_file, "PNG")
-        elements = ocr(tmp_png_file).elements
+        image.save(tmp_png_file.name, "PNG")
+        elements = ocr(tmp_png_file.name).elements
         for element in elements:
             if element.type == ElementType.FORMULA:
                 result.append(str(element.text))
-    os.remove(tmp_png_file)
-    
+    tmp_png_file.close()
+
     return result
 
 def parse_pdf(

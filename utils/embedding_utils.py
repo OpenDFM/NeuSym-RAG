@@ -31,8 +31,9 @@ def get_clip_text_embedding_pipeline(embed_model: str = 'clip-vit-base-patch32')
 
 class ClipEmbeddingFunction(BaseEmbeddingFunction):
 
-    def __init__(self, model_name: str = 'clip-vit-base-patch32'):
+    def __init__(self, model_name: str = 'clip-vit-base-patch32', image_batch_size: int = 8):
         self.model_name = os.path.basename(model_name.rstrip(os.sep))
+        self.image_batch_size = image_batch_size
         self.image_embedding_pipeline = get_clip_image_embedding_pipeline(self.model_name)
         self.text_embedding_pipeline = get_clip_text_embedding_pipeline(self.model_name)
 
@@ -69,31 +70,35 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
         Note that, `page` starts from 1, and `bbox` is a tuple of length 4 representing (x0, y0, width, height).
         """
         embeddings = []
-        for image_obj in tqdm.tqdm(images):
-            image_path = image_obj["path"]
-            if image_path.endswith('.pdf'): # PDF path, must specify the page number
-                page_number = int(image_obj["page"])
-                with open(image_path, 'rb') as fin:
-                    pdf_reader = PdfReader(fin)
-                    mediabox = pdf_reader.pages[page_number - 1].mediabox
-                    w, h = mediabox.width, mediabox.height
-                image = convert_from_path(image_path)[page_number - 1]
-                width_ratio, height_ratio = image.width / w, image.height / h
-            else:
-                image = Image.open(image_path)
-                width_ratio = height_ratio = 1
+        for i in tqdm.tqdm(range(0, len(images), self.image_batch_size)):
+            temp_image_files = []
+            for image_obj in images[i:min(i + self.image_batch_size, len(images))]:
+                image_path = image_obj["path"]
+                if image_path.endswith('.pdf'): # PDF path, must specify the page number
+                    page_number = int(image_obj["page"])
+                    with open(image_path, 'rb') as fin:
+                        pdf_reader = PdfReader(fin)
+                        mediabox = pdf_reader.pages[page_number - 1].mediabox
+                        w, h = mediabox.width, mediabox.height
+                    image = convert_from_path(image_path)[page_number - 1]
+                    width_ratio, height_ratio = image.width / w, image.height / h
+                else:
+                    image = Image.open(image_path)
+                    width_ratio = height_ratio = 1
 
-            if len(image_obj.get("bbox", [])) == 4:
-                bbox = list(image_obj["bbox"])
-                bbox[2] = (bbox[0] + bbox[2]) * width_ratio
-                bbox[3] = (bbox[1] + bbox[3]) * height_ratio
-                bbox[0] *= width_ratio
-                bbox[1] *= height_ratio
-                image = image.crop(bbox) # (x0, y0, x1, y1)
+                if len(image_obj.get("bbox", [])) == 4:
+                    bbox = list(image_obj["bbox"])
+                    bbox[2] = (bbox[0] + bbox[2]) * width_ratio
+                    bbox[3] = (bbox[1] + bbox[3]) * height_ratio
+                    bbox[0] *= width_ratio
+                    bbox[1] *= height_ratio
+                    image = image.crop(bbox) # (x0, y0, x1, y1)
 
-            image_file = tempfile.mktemp(suffix='.png', dir=TEMP_CACHE_DIR)
-            image.save(image_file, 'PNG')
-            embeddings.append(DataCollection(self.image_embedding_pipeline(image_file))[0]['vector'])
-            os.remove(image_file)
+                temp_image_files.append(tempfile.NamedTemporaryFile(suffix='.png', dir=TEMP_CACHE_DIR))
+                image.save(temp_image_files[-1].name, 'PNG')
 
+            vectors = self.image_embedding_pipeline.batch([t.name for t in temp_image_files])
+            embeddings.extend([v.get()[0] for v in vectors])
+            for t in temp_image_files:
+                t.close()
         return embeddings
