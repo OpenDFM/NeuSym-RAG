@@ -5,7 +5,6 @@ from dataclasses import dataclass, field
 import base64
 import copy
 import gymnasium as gym
-import math
 import os
 import tempfile
 from typing import Optional, List, Tuple, Dict, Union, Any
@@ -57,7 +56,7 @@ class ViewImage(Action):
                     mediabox = pdf_reader.pages[self.page_number - 1].mediabox
                     w, h = mediabox.width, mediabox.height
                 image = convert_from_path(pdf_filename)[self.page_number - 1]
-                ratio = math.sqrt(image.width * image.height / w / h)
+                width_ratio, height_ratio = image.width / w, image.height / h
             except IndexError:
                 return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
             except Exception as e:
@@ -71,7 +70,7 @@ class ViewImage(Action):
                 return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
             try:
                 image = Image.open(pdf_page_filename)
-                ratio = 1
+                width_ratio = height_ratio = 1
             except Exception as e:
                 return Observation(f'[Error]: {str(e)}')
         elif env.dataset == 'tatdqa':
@@ -84,7 +83,7 @@ class ViewImage(Action):
                     mediabox = pdf_reader.pages[self.page_number - 1].mediabox
                     w, h = mediabox.width, mediabox.height
                 image = convert_from_path(pdf_filename)[self.page_number - 1]
-                ratio = math.sqrt(image.width * image.height / w / h)
+                width_ratio, height_ratio = image.width / w, image.height / h
             except IndexError:
                 return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
             except Exception as e:
@@ -95,10 +94,10 @@ class ViewImage(Action):
         try:
             if self.bounding_box:
                 box = copy.deepcopy(self.bounding_box)
-                for i in range(4):
-                    box[i] *= ratio
-                box[2] += box[0]
-                box[3] += box[1]
+                box[2] = (box[0] + box[2]) * width_ratio
+                box[3] = (box[1] + box[3]) * height_ratio
+                box[0] *= width_ratio
+                box[1] *= height_ratio
                 image = image.crop(box)
             image_file = tempfile.mktemp(suffix='.png', dir=os.path.join(os.getcwd(), '.cache'))
             image.save(image_file, 'PNG')

@@ -8,6 +8,7 @@ from towhee.runtime.runtime_pipeline import RuntimePipeline
 from milvus_model.base import BaseEmbeddingFunction
 from utils.vectorstore_utils import detect_embedding_model_path
 from PIL import Image
+from PyPDF2 import PdfReader
 from pdf2image import convert_from_path
 
 
@@ -72,13 +73,22 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
             image_path = image_obj["path"]
             if image_path.endswith('.pdf'): # PDF path, must specify the page number
                 page_number = int(image_obj["page"])
+                with open(image_path, 'rb') as fin:
+                    pdf_reader = PdfReader(fin)
+                    mediabox = pdf_reader.pages[page_number - 1].mediabox
+                    w, h = mediabox.width, mediabox.height
                 image = convert_from_path(image_path)[page_number - 1]
-            else: image = Image.open(image_path)
+                width_ratio, height_ratio = image.width / w, image.height / h
+            else:
+                image = Image.open(image_path)
+                width_ratio = height_ratio = 1
 
             if len(image_obj.get("bbox", [])) == 4:
                 bbox = list(image_obj["bbox"])
-                bbox[2] = bbox[0] + bbox[2]
-                bbox[3] = bbox[1] + bbox[3]
+                bbox[2] = (bbox[0] + bbox[2]) * width_ratio
+                bbox[3] = (bbox[1] + bbox[3]) * height_ratio
+                bbox[0] *= width_ratio
+                bbox[1] *= height_ratio
                 image = image.crop(bbox) # (x0, y0, x1, y1)
 
             image_file = tempfile.mktemp(suffix='.png', dir=TEMP_CACHE_DIR)
