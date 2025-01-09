@@ -9,11 +9,11 @@ You will be given an AI research paper, and your task is to generate a question 
 [Reasoning Steps]: Your reasoning steps here.
 ```
 Notice that:
-1. Remember to wrap the question and answer with triple backticks.
-2. Don't include the answer in the question or in the reasoning steps.
-3. Your question should be as objective as possible.
-4. Your answer should be concise and clear.
-5. Your reasoning steps should serve as a hint to the question. Focus on the action that the participant should do to find the answer, e.g. "Locate the section that describes ...", "Find the name of the model in the section.", but avoid including specific contexts, numbers, titles or captions.
+- Remember to wrap the question and answer with triple backticks.
+- Don't include the answer in the question or in the reasoning steps.
+- Your question should be as objective as possible.
+- Your answer should be concise and clear.
+- Your reasoning steps should serve as a hint to the question. Focus on the action that the participant should do to find the answer, e.g. "Locate the section that describes ...", "Find the name of the model in the section.", but avoid including specific contexts, numbers, titles or captions.
 {hint}
 
 Let's think step-by-step, and then provide the final question and answer.
@@ -24,7 +24,8 @@ Let's think step-by-step, and then provide the final question and answer.
 """
 
 DESCRIPTION_PROMPT = {
-"text": "the content of the section in MARKDOWN format"
+"text": "the content of the section in MARKDOWN format",
+"table": "the content of the table in HTML format and the caption of the table"
 }
 
 CONTEXT_PROMPT = {
@@ -33,11 +34,20 @@ CONTEXT_PROMPT = {
 ```markdown
 {context}
 ```""",
-"table": ""
+"table": """The caption of the table is as follows:
+```txt
+{caption}
+```
+The content of the table is as follows:
+```html
+{content}
+```"""
 }
 
 HINT_PROMPT = {
-"text": ""
+"text": "",
+"table": """- Try not to include the word `table` in your question.
+- Try using the numerical values in the table to ask questions, such as comparing, calculating differences, etc."""
 }
 
 IMAGE_PROMPT = """

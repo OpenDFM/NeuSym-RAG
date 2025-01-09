@@ -97,12 +97,13 @@ class BaseExplorer(ABC):
         return self.metadata["title"]
 
 class SingleExplorer(BaseExplorer):
-    
+    """Single Document Explorer.
+    """
     def __init__(self, pid: str, model: str, temperature: float):
         super().__init__(pid=pid, model=model, temperature=temperature)
     
     def explore(self):
-        return self.single_text()
+        return self.single_table()
     
     def single_text(self):
         """Single-Step Paradigm: Text Modal.
@@ -117,75 +118,51 @@ class SingleExplorer(BaseExplorer):
         question, answer, reasoning_steps = self._explore_with_llm(template)
         return question, answer, reasoning_steps, ["single", "text"]
 
+    def single_table(self) -> Any:
+        """Single-Step Paradigm: Table Modal.
+        """
+        table_data = random.choice(self.pdf_data["info_from_mineru"]["tables"])
+        template = EXPLORE_PROMPT.format(
+            description = DESCRIPTION_PROMPT["table"],
+            hint = HINT_PROMPT["table"],
+            context = CONTEXT_PROMPT["table"].format(
+                caption = table_data["table_caption"],
+                content = table_data["table_html"]
+            ),
+            image = ""
+        )
+        question, answer, reasoning_steps = self._explore_with_llm(template)
+        return question, answer, reasoning_steps, ["single", "table"]
 
-# def single_single_table(pdf_data: Dict[str, Any]) -> Any:
-#     template = """You are an intelligent annotation system who is expert in posing questions. 
+    # def single_multiple_single_part(self) -> Any:
+    #     template = """You are an intelligent annotation system who is expert in posing questions. 
 
-# You will be given a section from an AI research paper, and your task is to generate a question based on the content in HTML format and caption of the table. Your output should be in the following format:
-# ```txt
-# [Question]: Your question here.
-# [Answer]: Your answer here.
-# ```
-# Notice that:
-# 1. Remember to wrap the question and answer with triple backticks.
-# 2. Don't include the answer in the question.
-# 3. Your question should be as objective as possible.
-# 4. Your answer should be concise and clear.
-#     4.1 If your answer can be just a float or integer, just provide the number.
-#     4.2 If your question can be presented in the form of a true-or-false statement, do so and provide the answer as `True` or `False`.
-# 5. Try not to include the word `table` in your question.
-# 6. Try using the numerical values in the table to ask questions, such as comparing, calculating differences, etc.
+    # You will be given a section from an AI research paper, and your task is to generate a question based on the content of the section. Your output should be in the following format:
+    # ```txt
+    # [Question]: Your question here.
+    # [Answer]: Your answer here.
+    # ```
+    # Notice that:
+    # 1. Remember to wrap the question and answer with triple backticks.
+    # 2. Don't include the answer in the question.
+    # 3. Your problem should be as objective as possible.
+    # 4. Your question should be concise and clear, and should use raw context if possible.
+    #     4.1 If your answer can be just a float or integer, just provide the number.
+    #     4.2 If your question can be presented in the form of a true-or-false statement, do so and provide the answer as `True` or `False`.
+    # 5. Try to pose a question with the text of the section, then pose another question with the text of the subsection. Better make the second question relyng on the first. Note that you should combine the two question into one complete question, and the two answers into one in Python List format, e.g. [answer1, answer2].
+    # 6. If there are no subsection, return "No Subsection."
 
-# [Context]:
-# ```txt
-# {context}
-# ```
+    # [Context]:
+    # {context}
 
-# Let's think step-by-step, and then provide the final question and answer."""
+    # Let's think step-by-step, and then provide the final question and answer."""
 
-#     table_data = pdf_data["info_from_mineru"]["tables"]
-#     table_data = random.choice(table_data)
-#     context = f"""
-# Table caption: {table_data['table_caption']}
-# Table content in HTML format:
-# ```html
-# {table_data['table_html']}
-# ```
-# """
-#     question, answer = _annotate_with_llm(template=template.format(context=context))
-#     # logger.info(f"Question: {question}\nAnswer: {answer}\n")
-#     return question, answer
-
-
-# def single_multiple_single_part(pdf_data: Dict[str, Any]) -> Any:
-#     template = """You are an intelligent annotation system who is expert in posing questions. 
-
-# You will be given a section from an AI research paper, and your task is to generate a question based on the content of the section. Your output should be in the following format:
-# ```txt
-# [Question]: Your question here.
-# [Answer]: Your answer here.
-# ```
-# Notice that:
-# 1. Remember to wrap the question and answer with triple backticks.
-# 2. Don't include the answer in the question.
-# 3. Your problem should be as objective as possible.
-# 4. Your question should be concise and clear, and should use raw context if possible.
-#     4.1 If your answer can be just a float or integer, just provide the number.
-#     4.2 If your question can be presented in the form of a true-or-false statement, do so and provide the answer as `True` or `False`.
-# 5. Try to pose a question with the text of the section, then pose another question with the text of the subsection. Better make the second question relyng on the first. Note that you should combine the two question into one complete question, and the two answers into one in Python List format, e.g. [answer1, answer2].
-# 6. If there are no subsection, return "No Subsection."
-
-# [Context]:
-# {context}
-
-# Let's think step-by-step, and then provide the final question and answer."""
-
-#     section_data = pdf_data["info_from_mineru"]["TOC"]
-#     section_data = section_partition(section_data)
-#     context = f"```txt\n{random.choice(section_data).strip()}\n```"
-#     question, answer = _annotate_with_llm(template=template.format(context=context))
-#     # logger.info(f"Question: {question}\nAnswer: {answer}\n")
-#     return question, answer
+    #     section_data = pdf_data["info_from_mineru"]["TOC"]
+    #     section_data = section_partition(section_data)
+    #     context = f"```txt\n{random.choice(section_data).strip()}\n```"
+    #     question, answer = _annotate_with_llm(template=template.format(context=context))
+    #     # logger.info(f"Question: {question}\nAnswer: {answer}\n")
+    #     return question, answer
 
 
 # def single_multiple_cross_part(pdf_data: Dict[str, Any]) -> Any:
