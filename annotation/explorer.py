@@ -83,16 +83,18 @@ class BaseExplorer(ABC):
     def _explore_with_llm(
             self,
             template: str
-        ) -> Any:
+        ) -> List[Any]:
         pattern = r"```(txt)?\s*\[Question\]:\s*(.*?)\s*\[Answer\]:\s*(.*?)\s*\[Reasoning Steps\]:\s*(.*?)```"
         response = call_llm_with_pattern(template, pattern, self.model, self.temperature)
-        print(response)
         if not response: raise ValueError("Failed to Parse the Response.")
         return response[1:]
     
     @abstractmethod
     def explore(self):
         pass
+    
+    def get_title(self):
+        return self.metadata["title"]
 
 class SingleExplorer(BaseExplorer):
     

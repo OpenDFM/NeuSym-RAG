@@ -5,7 +5,8 @@ from .match_functions import (
     eval_float_exact_match,
     eval_int_exact_match,
     eval_string_exact_match,
-    eval_structured_object_exact_match
+    eval_structured_object_exact_match,
+    eval_string_fuzzy_match
 )
 
 from .set_functions import (
