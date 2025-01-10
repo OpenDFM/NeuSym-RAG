@@ -148,6 +148,8 @@ class SingleAnnotator(BaseAnnotator):
     
     def annotate(self, write_to_json: bool = False):
         example = self._annotate()
+        if not example:
+            return
         example.update({
             "anchor_pdf": [self.pid], 
             "reference_pdf": [], 

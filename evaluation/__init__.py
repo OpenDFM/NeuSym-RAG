@@ -20,7 +20,8 @@ from .llm_functions import (
     eval_partial_scoring_points_with_llm,
     eval_reference_answer_with_llm,
     eval_scoring_points_with_llm,
-    eval_reference_answer_and_scoring_points_with_llm
+    eval_reference_answer_and_scoring_points_with_llm,
+    eval_paper_relevance_with_llm
 )
 
 from .formula_functions import (

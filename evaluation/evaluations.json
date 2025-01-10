@@ -22,16 +22,16 @@
             }
         },
         "use_cases": [
-          {
-              "example": {
-                  "eval_func": "eval_string_exact_match",
-                  "eval_kwargs": {
-                      "gold": "Italian",
-                      "lowercase": true
-                  }
-              },
-              "explanation": "In this case, the evaluation function compares the predicted answer with the gold answer 'Italian', ignoring case sensitivity due to the 'lowercase' parameter being set to true. This means 'italian', 'ITALIAN', or 'ItAliAn' would all match 'Italian'."
-          }
+			{
+				"example": {
+					"eval_func": "eval_string_exact_match",
+					"eval_kwargs": {
+						"gold": "Italian",
+						"lowercase": true
+					}
+				},
+				"explanation": "In this case, the evaluation function compares the predicted answer with the gold answer 'Italian', ignoring case sensitivity due to the 'lowercase' parameter being set to true. This means 'italian', 'ITALIAN', or 'ItAliAn' would all match 'Italian'."
+			}
         ]
     },
 
@@ -39,36 +39,36 @@
         "function": "eval_string_fuzzy_match",
         "description": "Evaluate the predicted answer against the gold answer using fuzzy string match.",
         "parameters": {
-          "gold": {
-            "type": "str",
-            "required": true,
-            "description": "The gold answer in Python string format."
-          },
-          "fuzz_method": {
-            "type": "str",
-            "required": false,
-            "default": "ratio",
-            "options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
-            "description": "The method for fuzzy string matching. Available options are 'ratio', 'partial_ratio', 'token_sort_ratio', 'token_set_ratio'."
-          },
-          "threshold": {
-            "type": "int",
-            "required": false,
-            "default": 95,
-            "description": "The threshold for fuzzy string matching. A match above this threshold is considered valid."
-          },
-          "ignore_blank": {
-            "type": "bool",
-            "required": false,
-            "default": false,
-            "description": "Whether to ignore the blank spaces."
-          },
-          "lowercase": {
-            "type": "bool",
-            "required": false,
-            "default": false,
-            "description": "Whether to convert the strings to lowercase before comparison."
-          }
+			"gold": {
+				"type": "str",
+				"required": true,
+				"description": "The gold answer in Python string format."
+			},
+			"fuzz_method": {
+				"type": "str",
+				"required": false,
+				"default": "ratio",
+				"options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
+				"description": "The method for fuzzy string matching. Available options are 'ratio', 'partial_ratio', 'token_sort_ratio', 'token_set_ratio'."
+			},
+			"threshold": {
+				"type": "int",
+				"required": false,
+				"default": 95,
+				"description": "The threshold for fuzzy string matching. A match above this threshold is considered valid."
+			},
+			"ignore_blank": {
+				"type": "bool",
+				"required": false,
+				"default": false,
+				"description": "Whether to ignore the blank spaces."
+			},
+			"lowercase": {
+				"type": "bool",
+				"required": false,
+				"default": false,
+				"description": "Whether to convert the strings to lowercase before comparison."
+			}
         },
         "use_cases": [
             {
@@ -90,11 +90,11 @@
         "function": "eval_bool_exact_match",
         "description": "Evaluate the predicted answer against the gold answer using exact boolean match.",
         "parameters": {
-          "gold": {
-            "type": "bool",
-            "required": true,
-            "description": "The gold answer (boolean value)."
-          }
+			"gold": {
+				"type": "bool",
+				"required": true,
+				"description": "The gold answer (boolean value)."
+			}
         },
         "use_cases": [
             {
@@ -113,11 +113,11 @@
         "function": "eval_int_exact_match",
         "description": "Evaluate the predicted answer against the gold answer using exact integer match.",
         "parameters": {
-          "gold": {
-            "type": "int",
-            "required": true,
-            "description": "The gold answer (integer value)."
-          }
+			"gold": {
+				"type": "int",
+				"required": true,
+				"description": "The gold answer (integer value)."
+			}
         },
         "use_cases": [
             {
@@ -136,23 +136,23 @@
         "function": "eval_float_exact_match",
         "description": "Evaluate the predicted answer against the gold answer using exact float match with optional accuracy.",
         "parameters": {
-          "gold": {
-            "type": "float",
-            "required": true,
-            "description": "The gold answer (float value)."
-          },
-          "ndigits": {
-            "type": "int",
-            "required": false,
-            "default": null,
-            "description": "The number of decimal places to round to before comparison. If None, no rounding is applied."
-          },
-          "tolerance": {
-            "type": "float",
-            "required": false,
-            "default": 1e-6,
-            "description": "The relative tolerance for floating-point comparison. Default is 1e-6."
-          }
+			"gold": {
+				"type": "float",
+				"required": true,
+				"description": "The gold answer (float value)."
+			},
+			"ndigits": {
+				"type": "int",
+				"required": false,
+				"default": null,
+				"description": "The number of decimal places to round to before comparison. If None, no rounding is applied."
+			},
+			"tolerance": {
+				"type": "float",
+				"required": false,
+				"default": 1e-6,
+				"description": "The relative tolerance for floating-point comparison. Default is 1e-6."
+			}
         },
         "use_cases": [
             {
@@ -173,86 +173,86 @@
         "function": "eval_structured_object_exact_match",
         "description": "Evaluate the predicted answer against the gold answer recursively by parsing them both as Python-style lists or dictionaries with optional arguments for comparison.",
         "parameters": {
-          "gold": {
-            "type": "any",
-            "required": true,
-            "description": "The gold answer (can be any type: list, dict, int, float, or str)."
-          },
-          "ignore_order": {
-            "type": "bool",
-            "required": false,
-            "default": false,
-            "description": "Whether to ignore the order of elements in lists."
-          },
-          "tolerance": {
-            "type": "float",
-            "required": false,
-            "default": 1e-6,
-            "description": "The tolerance for comparing float numbers."
-          },
-          "ndigits": {
-            "type": "int",
-            "required": false,
-            "default": null,
-            "description": "The number of digits to round float numbers before comparison."
-          },
-          "lowercase": {
-            "type": "bool",
-            "required": false,
-            "default": false,
-            "description": "Whether to convert strings to lowercase before comparison."
-          },
-          "ignore_blank": {
-            "type": "bool",
-            "required": false,
-            "default": false,
-            "description": "Whether to ignore blank spaces before comparison."
-          },
-          "threshold": {
-            "type": "int",
-            "required": false,
-            "default": -1,
-            "description": "The threshold for fuzzy string matching. If greater than 0, uses fuzzy matching."
-          },
-          "fuzz_method": {
-            "type": "str",
-            "required": false,
-            "default": "ratio",
-            "options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
-            "description": "The fuzzy matching method to use if `threshold` is set. Default is 'ratio'."
-          }
+			"gold": {
+				"type": "any",
+				"required": true,
+				"description": "The gold answer (can be any type: list, dict, int, float, or str)."
+			},
+			"ignore_order": {
+				"type": "bool",
+				"required": false,
+				"default": false,
+				"description": "Whether to ignore the order of elements in lists."
+			},
+			"tolerance": {
+				"type": "float",
+				"required": false,
+				"default": 1e-6,
+				"description": "The tolerance for comparing float numbers."
+			},
+			"ndigits": {
+				"type": "int",
+				"required": false,
+				"default": null,
+				"description": "The number of digits to round float numbers before comparison."
+			},
+			"lowercase": {
+				"type": "bool",
+				"required": false,
+				"default": false,
+				"description": "Whether to convert strings to lowercase before comparison."
+			},
+			"ignore_blank": {
+				"type": "bool",
+				"required": false,
+				"default": false,
+				"description": "Whether to ignore blank spaces before comparison."
+			},
+			"threshold": {
+				"type": "int",
+				"required": false,
+				"default": -1,
+				"description": "The threshold for fuzzy string matching. If greater than 0, uses fuzzy matching."
+			},
+			"fuzz_method": {
+				"type": "str",
+				"required": false,
+				"default": "ratio",
+				"options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
+				"description": "The fuzzy matching method to use if `threshold` is set. Default is 'ratio'."
+			}
         },
         "use_cases": [
-          {
-              "example": {
-                  "eval_func": "eval_structured_object_exact_match",
-                  "eval_kwargs": {
-                      "gold": [1, 2, 3],
-                      "ignore_order": true
-                  }
-              },
-              "explanation": "The evaluation function compares the predicted list against the gold list [1, 2, 3] while ignoring the order of elements. As long as the predicted list contains the same elements, it will be considered a match."
-          },
-          {
-              "example": {
-                  "eval_func": "eval_structured_object_exact_match",
-                  "eval_kwargs": {
-                      "gold": {"key1": 1.204, "key2": 2.335},
-                      "ndigits": 2
-                  }
-              },
-              "explanation": "The evaluation function compares the predicted dictionary against the gold dictionary {'key1': 1.204, 'key2': 2.335}. The float values are rounded to 2 decimal places before comparison, so '1.205' and '2.34' would match the gold values."
-          },
-          {
-              "example": {
-                  "eval_func": "eval_structured_object_exact_match",
-                  "eval_kwargs": {
-                      "gold": ["Italy", "France", "Germany"],
-                      "lowercase": true
-                  }
-              },
-              "explanation": "The evaluation function compares the predicted list of countries against the gold list ['Italy', 'France', 'Germany'], converting all strings to lowercase before comparison. This ensures that 'italy' and 'ITALY' are treated as a match.Note that the order of elements matters in this case."
-          }
+			{
+				"example": {
+					"eval_func": "eval_structured_object_exact_match",
+					"eval_kwargs": {
+						"gold": [1, 2, 3],
+						"ignore_order": true
+					}
+				},
+				"explanation": "The evaluation function compares the predicted list against the gold list [1, 2, 3] while ignoring the order of elements. As long as the predicted list contains the same elements, it will be considered a match."
+			},
+			{
+				"example": {
+					"eval_func": "eval_structured_object_exact_match",
+					"eval_kwargs": {
+						"gold": {"key1": 1.204, "key2": 2.335},
+						"ndigits": 2
+					}
+				},
+				"explanation": "The evaluation function compares the predicted dictionary against the gold dictionary {'key1': 1.204, 'key2': 2.335}. The float values are rounded to 2 decimal places before comparison, so '1.205' and '2.34' would match the gold values."
+			},
+			{
+					"example": {
+					"eval_func": "eval_structured_object_exact_match",
+					"eval_kwargs": {
+						"gold": ["Italy", "France", "Germany"],
+						"lowercase": true
+					}
+					},
+					"explanation": "The evaluation function compares the predicted list of countries against the gold list ['Italy', 'France', 'Germany'], converting all strings to lowercase before comparison. This ensures that 'italy' and 'ITALY' are treated as a match.Note that the order of elements matters in this case."
+			}
       ]
     },
 
@@ -260,16 +260,16 @@
         "function": "eval_reference_answer_with_llm",
         "description": "Evaluate the predicted answer with LLM based on the semantic meaning and intent compared to the reference answer.",
         "parameters": {
-          "reference_answer": {
-            "type": "str",
-            "required": true,
-            "description": "The reference answer (ground truth) against which the predicted answer is evaluated."
-          },
-          "question": {
-            "type": "str",
-            "required": true,
-            "description": "The input question that was asked."
-          }
+			"reference_answer": {
+				"type": "str",
+				"required": true,
+				"description": "The reference answer (ground truth) against which the predicted answer is evaluated."
+			},
+			"question": {
+				"type": "str",
+				"required": true,
+				"description": "The input question that was asked."
+			}
         },
         "use_cases": [
             {
@@ -289,16 +289,16 @@
         "function": "eval_candidate_reference_answer_with_llm",
         "description": "Evaluate the predicted answer against a list of candidate reference answers with LLM. The predicted answer is correct if it matches any of the candidate reference answers semantically.",
         "parameters": {
-          "candidate_reference_answers": {
-            "type": "list",
-            "required": true,
-            "description": "The list of candidate reference answers to be compared against the predicted answer."
-          },
-          "question": {
-            "type": "str",
-            "required": true,
-            "description": "The input question that provides context for the evaluation."
-          }
+			"candidate_reference_answers": {
+				"type": "list",
+				"required": true,
+				"description": "The list of candidate reference answers to be compared against the predicted answer."
+			},
+			"question": {
+				"type": "str",
+				"required": true,
+				"description": "The input question that provides context for the evaluation."
+			}
         },
         "use_cases": [
             {
@@ -321,22 +321,22 @@
         "function": "eval_partial_scoring_points_with_llm",
         "description": "Evaluate whether the predicted answer mentions at least the specified number of scoring points, based on the input question and scoring points list, using LLM.",
         "parameters": {
-          "scoring_points": {
-            "type": "list",
-            "required": true,
-            "description": "The list of scoring points that need to be mentioned in the predicted answer."
-          },
-          "question": {
-            "type": "str",
-            "required": true,
-            "description": "The input question that provides context for the evaluation."
-          },
-          "count": {
-            "type": "int",
-            "required": false,
-            "default": 1,
-            "description": "The minimum number of scoring points that must be mentioned in the predicted answer."
-          }
+			"scoring_points": {
+				"type": "list",
+				"required": true,
+				"description": "The list of scoring points that need to be mentioned in the predicted answer."
+			},
+			"question": {
+				"type": "str",
+				"required": true,
+				"description": "The input question that provides context for the evaluation."
+			},
+			"count": {
+				"type": "int",
+				"required": false,
+				"default": 1,
+				"description": "The minimum number of scoring points that must be mentioned in the predicted answer."
+			}
         },
         "use_cases": [
             {
@@ -361,22 +361,22 @@
         "function": "eval_scoring_points_with_llm",
         "description": "Evaluate whether all required scoring points are mentioned in the predicted answer using LLM.",
         "parameters": {
-          "scoring_points": {
-            "type": "list",
-            "required": true,
-            "description": "The list of scoring points that need to be all mentioned in the predicted answer."
-          },
-          "question": {
-            "type": "str",
-            "required": true,
-            "description": "The input question that provides context for the evaluation."
-          },
-          "ignore_order": {
-            "type": "bool",
-            "required": false,
-            "default": true,
-            "description": "Whether to ignore the order of scoring points when evaluating the answer."
-          }
+			"scoring_points": {
+				"type": "list",
+				"required": true,
+				"description": "The list of scoring points that need to be all mentioned in the predicted answer."
+			},
+			"question": {
+				"type": "str",
+				"required": true,
+				"description": "The input question that provides context for the evaluation."
+			},
+			"ignore_order": {
+				"type": "bool",
+				"required": false,
+				"default": true,
+				"description": "Whether to ignore the order of scoring points when evaluating the answer."
+			}
         },
         "use_cases": [
             {
@@ -400,27 +400,27 @@
         "function": "eval_reference_answer_and_scoring_points_with_llm",
         "description": "Evaluate the reference answer and scoring points with LLM, checking both the reference and scoring points in the predicted answer.",
         "parameters": {
-          "reference_answer": {
-            "type": "str",
-            "required": true,
-            "description": "The reference answer that the predicted answer will be compared to."
-          },
-          "scoring_points": {
-            "type": "list",
-            "required": true,
-            "description": "A list of scoring points that must be mentioned in the predicted answer."
-          },
-          "question": {
-            "type": "str",
-            "required": true,
-            "description": "The input question that provides context for the evaluation."
-          },
-          "ignore_order": {
-            "type": "bool",
-            "required": false,
-            "default": true,
-            "description": "Whether to ignore the order of the scoring points when evaluating the answer."
-          }
+			"reference_answer": {
+				"type": "str",
+				"required": true,
+				"description": "The reference answer that the predicted answer will be compared to."
+			},
+			"scoring_points": {
+				"type": "list",
+				"required": true,
+				"description": "A list of scoring points that must be mentioned in the predicted answer."
+			},
+			"question": {
+				"type": "str",
+				"required": true,
+				"description": "The input question that provides context for the evaluation."
+			},
+			"ignore_order": {
+				"type": "bool",
+				"required": false,
+				"default": true,
+				"description": "Whether to ignore the order of the scoring points when evaluating the answer."
+			}
         },
         "use_cases": [
             {
@@ -441,27 +441,45 @@
             }
         ]
     },
-
+    "eval_paper_relevance_with_llm": {
+		"function": "eval_paper_relevance_with_llm",
+        "description": "Evaluate the semantic relevance between the predicted paper and the input question with LLM, given the title and abstract of the paper.",
+        "parameters": {
+            "question": {
+                "type": "str",
+                "required": true,
+                "description": "The input question that describes the paper."
+            }
+        },
+        "use_cases": [
+            {
+                "example": {
+                    "question": "Give me a paper that applies Euler's method."
+                },
+                "explanation": "In this case, the evaluation checks if the title or abstract of the predicted paper mention \"Euler's method\"."
+            }
+        ]
+    },
     "eval_complex_math_formula_with_llm": {
         "function": "eval_complex_math_formula_with_llm",
         "description": "Evaluate the mathematical equivalence between the predicted answer and the reference formula answer formatted in Latex using LLM.",
         "parameters": {
-          "formulas": {
-            "type": "str or list",
-            "required": true,
-            "description": "The reference math formula(s) to compare the predicted LaTeX code against."
-          },
-          "question": {
-            "type": "str",
-            "required": true,
-            "description": "The question describing the problem context for the math formula."
-          },
-          "ignore_order": {
-            "type": "bool",
-            "required": false,
-            "default": true,
-            "description": "Whether to ignore the order of formulas in the evaluation."
-          }
+			"formulas": {
+				"type": "str or list",
+				"required": true,
+				"description": "The reference math formula(s) to compare the predicted LaTeX code against."
+			},
+			"question": {
+				"type": "str",
+				"required": true,
+				"description": "The question describing the problem context for the math formula."
+			},
+			"ignore_order": {
+				"type": "bool",
+				"required": false,
+				"default": true,
+				"description": "Whether to ignore the order of formulas in the evaluation."
+			}
         },
         "use_cases": [
             {
@@ -481,55 +499,55 @@
         "function": "eval_element_included",
         "description": "Evaluate whether the predicted answer is included in the gold answer list.",
         "parameters": {
-          "gold": {
-            "type": "list",
-            "required": true,
-            "description": "The gold answer list to compare against."
-          },
-          "element_type": {
-            "type": "str",
-            "required": false,
-            "default": "str",
-            "options": ["str", "int", "float", "structured"],
-            "description": "The type of the element. Can be 'str', 'int', 'float' or 'structured'. Default is str. Note that, structured objects here refer to list or dictionary."
-          },
-          "ndigits": {
-            "type": "int",
-            "required": false,
-            "default": 2,
-            "description": "The number of digits for rounding in case of float comparisons. Default is 2."
-          },
-          "tolerance": {
-            "type": "float",
-            "required": false,
-            "default": 1e-6,
-            "description": "The tolerance for comparing floats. Default is 1e-6."
-          },
-          "fuzz_method": {
-            "type": "str",
-            "required": false,
-            "default": "ratio",
-            "options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
-            "description": "The method for fuzzy string matching. Default is 'ratio'."
-          },
-          "threshold": {
-            "type": "int",
-            "required": false,
-            "default": -1,
-            "description": "The threshold for fuzzy string matching. Default is -1, meaning exact match."
-          },
-          "lowercase": {
-            "type": "bool",
-            "required": false,
-            "default": false,
-            "description": "Whether to ignore case in string comparisons. Default is false."
-          },
-          "ignore_blank": {
-            "type": "bool",
-            "required": false,
-            "default": false,
-            "description": "Whether to ignore blank spaces in string comparisons. Default is false."
-          }
+			"gold": {
+				"type": "list",
+				"required": true,
+				"description": "The gold answer list to compare against."
+			},
+			"element_type": {
+				"type": "str",
+				"required": false,
+				"default": "str",
+				"options": ["str", "int", "float", "structured"],
+				"description": "The type of the element. Can be 'str', 'int', 'float' or 'structured'. Default is str. Note that, structured objects here refer to list or dictionary."
+			},
+			"ndigits": {
+				"type": "int",
+				"required": false,
+				"default": 2,
+				"description": "The number of digits for rounding in case of float comparisons. Default is 2."
+			},
+			"tolerance": {
+				"type": "float",
+				"required": false,
+				"default": 1e-6,
+				"description": "The tolerance for comparing floats. Default is 1e-6."
+			},
+			"fuzz_method": {
+				"type": "str",
+				"required": false,
+				"default": "ratio",
+				"options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
+				"description": "The method for fuzzy string matching. Default is 'ratio'."
+			},
+			"threshold": {
+				"type": "int",
+				"required": false,
+				"default": -1,
+				"description": "The threshold for fuzzy string matching. Default is -1, meaning exact match."
+			},
+			"lowercase": {
+				"type": "bool",
+				"required": false,
+				"default": false,
+				"description": "Whether to ignore case in string comparisons. Default is false."
+			},
+			"ignore_blank": {
+				"type": "bool",
+				"required": false,
+				"default": false,
+				"description": "Whether to ignore blank spaces in string comparisons. Default is false."
+			}
         },
         "use_cases": [
             {
@@ -571,55 +589,55 @@
         "function": "eval_element_list_included",
         "description": "Evaluate whether each element in the predicted answer list is included in the gold answer list.",
         "parameters": {
-          "gold": {
-            "type": "list",
-            "required": true,
-            "description": "The gold answer list to compare against."
-          },
-          "element_type": {
-            "type": "str",
-            "required": false,
-            "default": "str",
-            "options": ["str", "int", "float", "structured"],
-            "description": "The type of the element. Can be 'str', 'int', 'float', 'structured'. Default is str. Note that, structured objects here refer to list or dictionary."
-          },
-          "ndigits": {
-            "type": "int",
-            "required": false,
-            "default": 2,
-            "description": "The number of digits for rounding in case of float comparisons. Default is 2."
-          },
-          "tolerance": {
-            "type": "float",
-            "required": false,
-            "default": 1e-6,
-            "description": "The tolerance for comparing floats. Default is 1e-6."
-          },
-          "fuzz_method": {
-            "type": "str",
-            "required": false,
-            "default": "ratio",
-            "options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
-            "description": "The method for fuzzy string matching. Default is 'ratio'."
-          },
-          "threshold": {
-            "type": "int",
-            "required": false,
-            "default": -1,
-            "description": "The threshold for fuzzy string matching. Default is -1, meaning exact match."
-          },
-          "lowercase": {
-            "type": "bool",
-            "required": false,
-            "default": false,
-            "description": "Whether to ignore case in string comparisons. Default is false."
-          },
-          "ignore_blank": {
-            "type": "bool",
-            "required": false,
-            "default": false,
-            "description": "Whether to ignore blank spaces in string comparisons. Default is false."
-          }
+			"gold": {
+				"type": "list",
+				"required": true,
+				"description": "The gold answer list to compare against."
+			},
+			"element_type": {
+				"type": "str",
+				"required": false,
+				"default": "str",
+				"options": ["str", "int", "float", "structured"],
+				"description": "The type of the element. Can be 'str', 'int', 'float', 'structured'. Default is str. Note that, structured objects here refer to list or dictionary."
+			},
+			"ndigits": {
+				"type": "int",
+				"required": false,
+				"default": 2,
+				"description": "The number of digits for rounding in case of float comparisons. Default is 2."
+			},
+			"tolerance": {
+				"type": "float",
+				"required": false,
+				"default": 1e-6,
+				"description": "The tolerance for comparing floats. Default is 1e-6."
+			},
+			"fuzz_method": {
+				"type": "str",
+				"required": false,
+				"default": "ratio",
+				"options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
+				"description": "The method for fuzzy string matching. Default is 'ratio'."
+			},
+			"threshold": {
+				"type": "int",
+				"required": false,
+				"default": -1,
+				"description": "The threshold for fuzzy string matching. Default is -1, meaning exact match."
+			},
+			"lowercase": {
+				"type": "bool",
+				"required": false,
+				"default": false,
+				"description": "Whether to ignore case in string comparisons. Default is false."
+			},
+			"ignore_blank": {
+				"type": "bool",
+				"required": false,
+				"default": false,
+				"description": "Whether to ignore blank spaces in string comparisons. Default is false."
+			}
         },
         "use_cases": [
             {
@@ -661,60 +679,60 @@
         "function": "eval_element_list_overlap",
         "description": "Evaluate whether the predicted answer list overlaps with the gold answer list, checking if at least 'count' distinct elements are present in both lists.",
         "parameters": {
-          "gold": {
-            "type": "list",
-            "required": true,
-            "description": "The gold answer list to compare against."
-          },
-          "count": {
-            "type": "int",
-            "default": 1,
-            "description": "The minimum number of distinct elements that should overlap between the predicted and gold answer lists."
-          },
-          "element_type": {
-            "type": "str",
-            "required": false,
-            "default": "str",
-            "options": ["str", "int", "float", "structured"],
-            "description": "The type of the element. Can be 'str', 'int', 'float', 'structured'. Default is str. Note that, structured objects here refer to list or dictionary."
-          },
-          "ndigits": {
-            "type": "int",
-            "required": false,
-            "default": 2,
-            "description": "The number of digits for rounding in case of float comparisons. Default is 2."
-          },
-          "tolerance": {
-            "type": "float",
-            "required": false,
-            "default": 1e-6,
-            "description": "The tolerance for comparing floats. Default is 1e-6."
-          },
-          "fuzz_method": {
-            "type": "str",
-            "required": false,
-            "default": "ratio",
-            "options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
-            "description": "The method for fuzzy string matching. Default is 'ratio'."
-          },
-          "threshold": {
-            "type": "int",
-            "required": false,
-            "default": -1,
-            "description": "The threshold for fuzzy string matching. Default is -1, meaning exact match."
-          },
-          "lowercase": {
-            "type": "bool",
-            "required": false,
-            "default": false,
-            "description": "Whether to ignore case in string comparisons. Default is false."
-          },
-          "ignore_blank": {
-            "type": "bool",
-            "required": false,
-            "default": false,
-            "description": "Whether to ignore blank spaces in string comparisons. Default is false."
-          }
+			"gold": {
+				"type": "list",
+				"required": true,
+				"description": "The gold answer list to compare against."
+			},
+			"count": {
+				"type": "int",
+				"default": 1,
+				"description": "The minimum number of distinct elements that should overlap between the predicted and gold answer lists."
+			},
+			"element_type": {
+				"type": "str",
+				"required": false,
+				"default": "str",
+				"options": ["str", "int", "float", "structured"],
+				"description": "The type of the element. Can be 'str', 'int', 'float', 'structured'. Default is str. Note that, structured objects here refer to list or dictionary."
+			},
+			"ndigits": {
+				"type": "int",
+				"required": false,
+				"default": 2,
+				"description": "The number of digits for rounding in case of float comparisons. Default is 2."
+			},
+			"tolerance": {
+				"type": "float",
+				"required": false,
+				"default": 1e-6,
+				"description": "The tolerance for comparing floats. Default is 1e-6."
+			},
+			"fuzz_method": {
+				"type": "str",
+				"required": false,
+				"default": "ratio",
+				"options": ["ratio", "partial_ratio", "token_sort_ratio", "token_set_ratio"],
+				"description": "The method for fuzzy string matching. Default is 'ratio'."
+			},
+			"threshold": {
+				"type": "int",
+				"required": false,
+				"default": -1,
+				"description": "The threshold for fuzzy string matching. Default is -1, meaning exact match."
+			},
+			"lowercase": {
+				"type": "bool",
+				"required": false,
+				"default": false,
+				"description": "Whether to ignore case in string comparisons. Default is false."
+			},
+			"ignore_blank": {
+				"type": "bool",
+				"required": false,
+				"default": false,
+				"description": "Whether to ignore blank spaces in string comparisons. Default is false."
+			}
         },
         "use_cases": [
             {
@@ -746,16 +764,16 @@
         "function": "eval_conjunction",
         "description": "Evaluate the conjunction (logical AND) of multiple evaluation functions. Returns 1.0 if all evaluation functions satisfy their conditions, otherwise 0.0.",
         "parameters": {
-          "eval_func_list": {
-            "type": "list",
-            "required": true,
-            "description": "The list of evaluation function names to apply to each corresponding predicted answer."
-          },
-          "eval_kwargs_list": {
-            "type": "list",
-            "required": true,
-            "description": "The list of keyword argument dictionaries for each evaluation function."
-          }
+			"eval_func_list": {
+				"type": "list",
+				"required": true,
+				"description": "The list of evaluation function names to apply to each corresponding predicted answer."
+			},
+			"eval_kwargs_list": {
+				"type": "list",
+				"required": true,
+				"description": "The list of keyword argument dictionaries for each evaluation function."
+			}
         },
         "use_cases": [
             {
@@ -787,16 +805,16 @@
         "function": "eval_disjunction",
         "description": "Evaluate the disjunction (logical OR) of multiple evaluation functions. Returns 1.0 if at least one evaluation function satisfies its condition, otherwise 0.0.",
         "parameters": {
-          "eval_func_list": {
-            "type": "list",
-            "required": true,
-            "description": "The list of evaluation function names to apply to each corresponding predicted answer."
-          },
-          "eval_kwargs_list": {
-            "type": "list",
-            "required": true,
-            "description": "The list of keyword argument dictionaries for each evaluation function."
-          }
+			"eval_func_list": {
+				"type": "list",
+				"required": true,
+				"description": "The list of evaluation function names to apply to each corresponding predicted answer."
+			},
+			"eval_kwargs_list": {
+				"type": "list",
+				"required": true,
+				"description": "The list of keyword argument dictionaries for each evaluation function."
+			}
         },
         "use_cases": [
             {
@@ -828,16 +846,16 @@
         "function": "eval_negation",
         "description": "Evaluate the negation of an evaluation function. The result is the complement of the evaluation function's output. If the evaluation function returns 1.0, this will return 0.0, and vice versa.",
         "parameters": {
-          "eval_func": {
-            "type": "str",
-            "required": true,
-            "description": "The evaluation function name to be negated. This function will be applied to the predicted answer with the provided kwargs."
-          },
-          "eval_kwargs": {
-            "type": "dict",
-            "required": true,
-            "description": "The keyword arguments to be passed to the evaluation function."
-          }
+			"eval_func": {
+				"type": "str",
+				"required": true,
+				"description": "The evaluation function name to be negated. This function will be applied to the predicted answer with the provided kwargs."
+			},
+			"eval_kwargs": {
+				"type": "dict",
+				"required": true,
+				"description": "The keyword arguments to be passed to the evaluation function."
+			}
         },
         "use_cases": [
             {
