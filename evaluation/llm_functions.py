@@ -203,8 +203,8 @@ def eval_paper_relevance_with_llm(pred: Any, question: str, metadata_path = "./d
     if not os.path.exists(metadata_path):
         return 0.0
     metadata = json.load(open(metadata_file, "r", encoding="utf-8"))
-    title, abstract = metadata["title"], metadata["abstract"]
-    template = f"""You are an intelligent judgement system who is expert in determining whether the predicted paper matches the given question. You will be given the title and abstract of the paper, and the original question. And you need to provide the final decision with the following format:
+    title, abstract, authors, conference, year, volume = metadata["title"], metadata["abstract"], metadata["authors"], metadata["conference"], metadata["year"], metadata["volume"]
+    template = f"""You are an intelligent judgement system who is expert in determining whether the predicted paper matches the given question. You will be given the metadata of the paper, and the original question. And you need to provide the final decision with the following format:
 ```txt
 True/False
 ```
@@ -216,6 +216,10 @@ Now, let's start!
 
 [Question]: {question}
 [Title]: {title}
+[Conference]: {conference}
+[Year]: {year}
+[Volume]: {volume}
+[Authors]: {", ".join(authors)}
 [Abstract]: {abstract}
 """
     return _eval_with_llm(template, llm_model, temperature)
