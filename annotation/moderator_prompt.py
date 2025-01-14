@@ -1,6 +1,6 @@
 #coding=utf8
 
-MODERATOR_PROMPT = """You are an intelligent annotation system who is expert in reviewing questions.
+MODERATE_PROMPT = """You are an intelligent annotation system who is expert in reviewing questions.
 
 You will be given a question and an answer. You should adjust the question and the answer, adapting them to the evaluator's requirements. The descriptions, parameters and use cases of the evaluators are provided below:
 

@@ -161,9 +161,7 @@ class SingleAnnotator(BaseAnnotator):
             qid = generate_airqa_example_template(**example)
 
 if __name__ == "__main__":
-    for i in range(10):
-        try:
-            SingleAnnotator(model=DEFAULT_LLM_MODEL, temperature=DEFAULT_TEMPERATURE, explorer_cls=SingleExplorer, moderator_cls=BaseModerator).annotate(write_to_json=True)
-        except Exception as e:
-            logger.info(f"Failed to annotate the paper. {str(e)}")
-            continue
+    try:
+        SingleAnnotator(model=DEFAULT_LLM_MODEL, temperature=DEFAULT_TEMPERATURE, explorer_cls=SingleExplorer, moderator_cls=BaseModerator).annotate(write_to_json=True)
+    except Exception as e:
+        logger.info(f"Failed to annotate the paper. {str(e)}")

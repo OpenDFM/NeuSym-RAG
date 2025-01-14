@@ -27,26 +27,33 @@ def call_llm(
         template: str, 
         model: str = 'gpt-4o', 
         top_p: float = 0.95, 
-        temperature: float = 0.7
+        temperature: float = 0.7,
+        **kwargs
     ) -> str:
     """ Automatically construct the message list from template and call LLM to generate the response. The `template` merely supports the following format:
     {{system_message}}
 
     {{user_message}}
     Note that, the system and user messages should be separated by two consecutive newlines. And the first block is the system message, the other blocks are the user message. There is no assistant message or interaction history.
+    If you need 
     """
-    system_msg = template.split('\n\n')[0]
-    user_msg = '\n\n'.join(template.split('\n\n')[1:])
+    system_msg = template.split('\n\n')[0].strip()
+    user_msg = '\n\n'.join(template.split('\n\n')[1:]).strip()
     messages = [
         {
             "role": 'system',
             "content": system_msg
-        },
-        {
-            "role": 'user',
-            "content": user_msg
         }
     ]
+    if user_msg:
+        messages.append(
+            {
+                "role": 'user',
+                "content": user_msg
+            }
+        )
+    if kwargs.get("image", None):
+        messages.append(kwargs["image"])
     return call_llm_with_message(messages=messages, model=model, top_p=top_p, temperature=temperature)
 
 
@@ -55,7 +62,8 @@ def call_llm_with_pattern(
         pattern: str, 
         model: str = 'gpt-4o', 
         top_p: float = 0.95, 
-        temperature: float = 0.7
+        temperature: float = 0.7,
+        **kwargs
     ) -> List[str]:
     """ Automatically construct the message list from template, call LLM to generate the response, and parse the response with givern pattern.
     """

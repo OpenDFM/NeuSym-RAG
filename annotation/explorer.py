@@ -4,8 +4,13 @@ import os, sys, re, json, random
 from typing import List, Dict, Any
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
+import gymnasium as gym
+
 from utils.airqa_utils import generate_airqa_example_template, check_airqa_examples
 from utils.functions.common_functions import call_llm_with_pattern
+from utils.functions.image_functions import get_image_message
+from agents.envs.actions.view_image import ViewImage
+from agents.envs.actions.observation import Observation
 from annotation.explorer_prompt import EXPLORE_PROMPT, DESCRIPTION_PROMPT, CONTEXT_PROMPT, HINT_PROMPT, IMAGE_PROMPT
 
 processed_dir = os.path.join("data", "dataset", "airqa", "processed_data")
@@ -82,11 +87,12 @@ class BaseExplorer(ABC):
         
     def _explore_with_llm(
             self,
-            template: str
+            template: str,
+            **kwargs
         ) -> List[Any]:
         pattern = r"```(txt)?\s*\[Question\]:\s*(.*?)\s*\[Answer\]:\s*(.*?)\s*\[Reasoning Steps\]:\s*(.*?)```"
-        response = call_llm_with_pattern(template, pattern, self.model, self.temperature)
-        if not response: raise ValueError("Failed to Parse the Response.")
+        response = call_llm_with_pattern(template, pattern, self.model, self.temperature, **kwargs)
+        if not response: raise ValueError(f"Failed to Parse the Response. {response}")
         return response[1:]
     
     @abstractmethod
@@ -103,17 +109,15 @@ class SingleExplorer(BaseExplorer):
         super().__init__(pid=pid, model=model, temperature=temperature)
     
     def explore(self):
-        return self.single_table()
+        return self.single_image()
     
     def single_text(self):
         """Single-Step Paradigm: Text Modal.
         """
-
         template = EXPLORE_PROMPT.format(
             description = DESCRIPTION_PROMPT["text"],
             hint = HINT_PROMPT["text"],
-            context = CONTEXT_PROMPT["text"].format(context=random.choice(self.section_data).strip()),
-            image = ""
+            context = CONTEXT_PROMPT["text"].format(context=random.choice(self.section_data).strip())
         )
         question, answer, reasoning_steps = self._explore_with_llm(template)
         return question, answer, reasoning_steps, ["single", "text"]
@@ -128,11 +132,32 @@ class SingleExplorer(BaseExplorer):
             context = CONTEXT_PROMPT["table"].format(
                 caption = table_data["table_caption"],
                 content = table_data["table_html"]
-            ),
-            image = ""
+            )
         )
         question, answer, reasoning_steps = self._explore_with_llm(template)
         return question, answer, reasoning_steps, ["single", "table"]
+    
+    def single_image(self) -> Any:
+        """Single-Step Paradigm: Image Modal.
+        """
+        image_data = random.choice(self.pdf_data["info_from_mineru"]["figures"])
+        template = EXPLORE_PROMPT.format(
+            description = DESCRIPTION_PROMPT["image"],
+            hint = HINT_PROMPT["image"],
+            context = CONTEXT_PROMPT["image"].format(caption=image_data["figure_caption"])
+        )
+        print(f"Caption: {image_data['figure_caption']}")
+        # Get the base64 image data.
+        # The following code is not a good practice, it's a temporary solution.
+        action = ViewImage(paper_id=self.pid, page_number=image_data["page_number"], bounding_box=image_data["figure_bbox"])
+        env = gym.Env()
+        env.dataset = "airqa" # fake an environment
+        obs: Observation = action.execute(env)
+        base64_image: str = obs.obs_content
+        
+        image_template = get_image_message(base64_image, IMAGE_PROMPT)
+        question, answer, reasoning_steps = self._explore_with_llm(template, image=image_template)
+        return question, answer, reasoning_steps, ["single", "image"]
 
     # def single_multiple_single_part(self) -> Any:
     #     template = """You are an intelligent annotation system who is expert in posing questions. 

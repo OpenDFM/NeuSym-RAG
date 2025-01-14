@@ -3,7 +3,7 @@ import os, sys, json
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from annotation.moderator_prompt import MODERATOR_PROMPT, EVALUATOR_PROMPT, USECASE_PROMPT
+from annotation.moderator_prompt import MODERATE_PROMPT, EVALUATOR_PROMPT, USECASE_PROMPT
 from utils.functions.common_functions import call_llm_with_pattern, call_llm
 
 EVALUATIONS_FILE = os.path.join('evaluation', 'evaluations.json')
@@ -43,11 +43,11 @@ class BaseModerator(ABC):
         ) -> List[Any]:
         pattern = r"```(txt)?\s*\[question\]:\s*(.*?)\s*\[evaluator\]:\s*(.*?)\s*\[answer_format\]:\s*(.*?)\s*\[answer\]:\s*(.*?)\s*\[tag\]:\s*(.*?)```"
         response = call_llm_with_pattern(template, pattern, self.model, self.temperature)
-        if not response: raise ValueError("Failed to Parse the Response.")
+        if not response: raise ValueError(f"Failed to Parse the Response. {response}")
         return response[1:]
     
     def moderate(self, question: str, answer: str) -> List[Any]:
-        template = MODERATOR_PROMPT.format(
+        template = MODERATE_PROMPT.format(
             evaluator = EVALUATORS_PROMPT,
             question = question,
             answer = answer

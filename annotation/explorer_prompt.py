@@ -12,6 +12,7 @@ Notice that:
 - Remember to wrap the question and answer with triple backticks.
 - Don't include the answer in the question or in the reasoning steps.
 - Your question should be as objective as possible.
+    - Try using the numerical values in the content to ask questions, such as comparing, calculating differences, etc.
 - Your answer should be concise and clear.
 - Your reasoning steps should serve as a hint to the question. Focus on the action that the participant should do to find the answer, e.g. "Locate the section that describes ...", "Find the name of the model in the section.", but avoid including specific contexts, numbers, titles or captions.
 {hint}
@@ -19,18 +20,16 @@ Notice that:
 Let's think step-by-step, and then provide the final question and answer.
 
 {context}
-
-{image}
 """
 
 DESCRIPTION_PROMPT = {
 "text": "the content of the section in MARKDOWN format",
-"table": "the content of the table in HTML format and the caption of the table"
+"table": "the content of the table in HTML format and the caption of the table",
+"image": "the content of the image in base64 format and the caption of the image"
 }
 
 CONTEXT_PROMPT = {
 "text": """The content of the section is as follows:
-
 ```markdown
 {context}
 ```""",
@@ -41,14 +40,17 @@ CONTEXT_PROMPT = {
 The content of the table is as follows:
 ```html
 {content}
+```""",
+"image": """The caption of the image is as follows:
+```txt
+{caption}
 ```"""
 }
 
 HINT_PROMPT = {
 "text": "",
-"table": """- Try not to include the word `table` in your question.
-- Try using the numerical values in the table to ask questions, such as comparing, calculating differences, etc."""
+"table": """- Try not to include the word `table` in your question.""",
+"image": """- Try not to include the word `image` in your question."""
 }
 
-IMAGE_PROMPT = """
-"""
+IMAGE_PROMPT = "The content of the image in base64 format is shown below:"

@@ -3,7 +3,7 @@ from typing import List, Tuple, Dict, Union, Optional, Any, Callable
 from PIL import Image, ImageDraw, ImageFont
 import base64
 
-from utils.functions.common_functions import call_llm_with_message
+from utils.functions.common_functions import call_llm
 
 def draw_image_with_bbox(
         image_path: str,
@@ -56,6 +56,36 @@ def draw_image_with_bbox(
     image.save(output_path)
     return output_path
 
+def get_image_message(
+        base64_image: str,
+        template: str
+    ) -> str:
+    """ Get the image message for LLM calling.
+    @args:
+        image_path: str, path to the image file you want to summary.
+        template: str, the description/instruction for the image.
+    @return:
+        message: dict, a role-content message pair
+    """
+    
+    message = {
+        "role": "user",
+        "content": [
+            {
+                'type': 'text',
+                'text': template
+            },
+            {
+                'type': 'image_url',
+                "image_url": {
+                    "url":  f"data:image/jpeg;base64,{base64_image}"
+                }
+            }
+        ]
+    }
+    
+    return message
+
 def get_image_summary(
         image_path: str,
         max_length: int = 50,
@@ -70,30 +100,17 @@ def get_image_summary(
     @return:
         summary: str, the image summary.
     """
+    
     with open(image_path, 'rb') as f:
         base64_image = base64.b64encode(f.read()).decode('utf-8')
+    system_template = "You are an intelligent assistant who is expert at summarizing images."
+    image_template = f'Please directly return the summary without any extra information or formatting. And you should summarize it in no more than {max_length} words. The image is as follows:'
     
-    messages = [
-        {
-            "role": "system",
-            "content": "You are an intelligent assistant who is expert at summarizing images.",
-        },
-        {
-            "role": "user",
-            "content": [
-                {
-                    'type': 'text',
-                    'text': f'Please directly return the summary without any extra information or formatting. And you should summarize it in no more than {max_length} words. The image is as follows:'
-                },
-                {
-                    'type': 'image_url',
-                    "image_url": {
-                        "url":  f"data:image/jpeg;base64,{base64_image}"
-                    },
-                }
-            ]
-        }
-    ]
-    
-    summary = call_llm_with_message(messages, model=model, top_p=top_p, temperature=temperature)
+    summary = call_llm(
+        template=system_template, 
+        model=model, 
+        top_p=top_p, 
+        temperature=temperature,
+        image=get_image_message(base64_image, image_template)
+    )
     return summary
