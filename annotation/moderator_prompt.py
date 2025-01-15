@@ -14,8 +14,8 @@ Your output should be in the following format:
 ```txt
 [question]: Modified question. Don't include answer_format in the question, just focus on the question itself.
 [evaluator]: The evaluator you choose. You should present it in JSON format, as given in the use cases.
-[answer_format]: The format that the answer should follow in order to pass the evaluator. It will be provided to the respondent along with the question. e.g. "Your answer should be a single python list containing two strings, the first element of the list is the abbreviation of the baseline, the second element of the list is the full name of this baseline, e.g.["MAML","Model-Agnostic Meta-Learning"]." You shouldn't include answers, hints or key points in the answer_format, just focus on the format.
-[answer]: A possible answer that can pass the evaluator.
+[answer_format]: The format that the answer should follow in order to pass the evaluator. It will be provided to the respondent along with the question. e.g. \"Your answer should be a single python list containing two strings, the first element of the list is the abbreviation of the baseline, the second element of the list is the full name of this baseline, e.g.[\"abbr\",\"full\"].\" You shouldn't include answers, hints or key points in the answer_format, especially when you try to give an example, just focus on the format.
+[answer]: Modified answer. Your answer should be able to pass the evaluator.
 [tag]: A single `subjective` or `objective` without explanation. Whether the evaluator involves LLM. `subjective` if involves LLM, otherwise `objective`.
 ```
 

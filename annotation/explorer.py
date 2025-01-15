@@ -117,11 +117,12 @@ class SingleExplorer(BaseExplorer):
         super().__init__(pid=pid, model=model, temperature=temperature)
     
     def explore(self, explore_func: str = None, **kwargs) -> Any:
-        explore_funcs = ["single_text", "single_table", "single_image", "single_formula"]
-        if not explore_func:
-            explore_func = random.choice(explore_funcs)
-        assert explore_func in explore_funcs, f"Invalid Explore Function {explore_func}."
-        return getattr(self, explore_func)(**kwargs)
+        return self.multiple_section_section()
+        # explore_funcs = ["single_text", "single_table", "single_image", "single_formula"]
+        # if not explore_func:
+        #     explore_func = random.choice(explore_funcs)
+        # assert explore_func in explore_funcs, f"Invalid Explore Function {explore_func}."
+        # return getattr(self, explore_func)(**kwargs)
     
     def single_text(self, **kwargs) -> Any:
         """Single-Step Paradigm: Text Modal.
@@ -209,72 +210,21 @@ class SingleExplorer(BaseExplorer):
         question, answer, reasoning_steps = self._explore_with_llm(template)
         return question, answer, reasoning_steps, tags
 
-    # def single_multiple_single_part(self) -> Any:
-    #     template = """You are an intelligent annotation system who is expert in posing questions. 
+    def multiple_section_subsection(self) -> Any:
+        """Multiple-Step Paradigm: Section-Subsection Modal.
+        """
+        content = random.choice(section_partition(self.pdf_data["info_from_mineru"]["TOC"]))
+        template = EXPLORE_PROMPT["sec_sub"] + CONTEXT_PROMPT["sec_sub"].format(content=content)
+        question, answer, reasoning_steps = self._explore_with_llm(template)
+        return question, answer, reasoning_steps, ["single", "text"]
 
-    # You will be given a section from an AI research paper, and your task is to generate a question based on the content of the section. Your output should be in the following format:
-    # ```txt
-    # [Question]: Your question here.
-    # [Answer]: Your answer here.
-    # ```
-    # Notice that:
-    # 1. Remember to wrap the question and answer with triple backticks.
-    # 2. Don't include the answer in the question.
-    # 3. Your problem should be as objective as possible.
-    # 4. Your question should be concise and clear, and should use raw context if possible.
-    #     4.1 If your answer can be just a float or integer, just provide the number.
-    #     4.2 If your question can be presented in the form of a true-or-false statement, do so and provide the answer as `True` or `False`.
-    # 5. Try to pose a question with the text of the section, then pose another question with the text of the subsection. Better make the second question relyng on the first. Note that you should combine the two question into one complete question, and the two answers into one in Python List format, e.g. [answer1, answer2].
-    # 6. If there are no subsection, return "No Subsection."
-
-    # [Context]:
-    # {context}
-
-    # Let's think step-by-step, and then provide the final question and answer."""
-
-    #     section_data = pdf_data["info_from_mineru"]["TOC"]
-    #     section_data = section_partition(section_data)
-    #     context = f"```txt\n{random.choice(section_data).strip()}\n```"
-    #     question, answer = _annotate_with_llm(template=template.format(context=context))
-    #     # logger.info(f"Question: {question}\nAnswer: {answer}\n")
-    #     return question, answer
-
-
-# def single_multiple_cross_part(pdf_data: Dict[str, Any]) -> Any:
-#     template = """You are an intelligent annotation system who is expert in posing questions. 
-
-# You will be given a section from an AI research paper, and your task is to generate a question based on the content of the section. Your output should be in the following format:
-# ```txt
-# [Question]: Your question here.
-# [Answer]: Your answer here.
-# ```
-# Notice that:
-# 1. Remember to wrap the question and answer with triple backticks.
-# 2. Don't include the answer in the question.
-# 3. Your problem should be as objective as possible.
-# 4. Your question should be concise and clear, and should use raw context if possible.
-#     4.1 If your answer can be just a float or integer, just provide the number.
-#     4.2 If your question can be presented in the form of a true-or-false statement, do so and provide the answer as `True` or `False`.
-# 5. Try to pose a question with the text of the first section, then pose another question with the text of the second section. Better make the second question relyng on the first. Note that you should combine the two question into one complete question, and the two answers into one in Python List format, e.g. [answer1, answer2].
-
-# [Context]:
-# {context}
-
-# Let's think step-by-step, and then provide the final question and answer."""
-
-#     section_data = pdf_data["info_from_mineru"]["TOC"]
-#     section_data = section_partition(section_data)
-#     indexs = sorted(random.sample(list(range(0, len(section_data))), 2))
-#     section_data = [section_data[index] for index in indexs]
-#     context = f"""First Section:
-# ```txt
-# {section_data[0].strip()}
-# ```
-
-# Second Section:
-# ```txt
-# {section_data[1].strip()}
-# ```"""
-#     question, answer = _annotate_with_llm(template=template.format(context=context))
-#     # logger.info(f"Question: {question}\nAnswer: {answer}\n")
-#     return question, answer
+    def multiple_section_section(self) -> Any:
+        """Multiple-Step Paradigm: Section-Section Modal.
+        """
+        section_data = section_partition(self.pdf_data["info_from_mineru"]["TOC"])
+        indexs = sorted(random.sample(list(range(0, len(section_data))), 2))
+        section_data = [section_data[index].strip() for index in indexs]
+        context = CONTEXT_PROMPT["sec_sec"].format(content0=section_data[0], content1=section_data[1])
+        template = EXPLORE_PROMPT["sec_sec"] + context
+        question, answer, reasoning_steps = self._explore_with_llm(template)
+        return question, answer, reasoning_steps, ["single", "text"]
