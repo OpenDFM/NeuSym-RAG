@@ -1,6 +1,6 @@
 #coding=utf8
 
-EXPLORE_PROMPT = """You are an intelligent annotation system who is expert in posing questions. 
+_EXPLORE_PROMPT = """You are an intelligent annotation system who is expert in posing questions. 
 
 You will be given an AI research paper, and your task is to generate a question based on {description}. Your output should be in the following format:
 ```txt
@@ -18,20 +18,34 @@ Notice that:
 {hint}
 
 Let's think step-by-step, and then provide the final question and answer.
-
-{context}
 """
 
 DESCRIPTION_PROMPT = {
-"text": "the content of the section in MARKDOWN format",
+"section": "the content of the section in MARKDOWN format",
+"page": "the content of the pagg",
 "table": "the content of the table in HTML format and the caption of the table",
-"image": "the content of the image in base64 format and the caption of the image"
+"image": "the content of the image in base64 format and the caption of the image",
+"formula": "the content of the formula in MARKDOWN format"
 }
 
+HINT_PROMPT = {
+"section": "",
+"page": "",
+"table": """- Try not to include the word `table` in your question.""",
+"image": """- Try to indicate the figure in the question by providing indexes, e.g. Figure 2.""",
+"formula": """- Try to indicate the formula in the question by providing indexes, e.g. formula (2)."""
+}
+
+EXPLORE_PROMPT = {key: _EXPLORE_PROMPT.format(description=DESCRIPTION_PROMPT[key], hint=HINT_PROMPT[key]) for key in DESCRIPTION_PROMPT}
+
 CONTEXT_PROMPT = {
-"text": """The content of the section is as follows:
+"section": """The content of the section is as follows:
 ```markdown
-{context}
+{content}
+```""",
+"page": """The content of the page is as follows:
+```txt
+{content}
 ```""",
 "table": """The caption of the table is as follows:
 ```txt
@@ -44,13 +58,11 @@ The content of the table is as follows:
 "image": """The caption of the image is as follows:
 ```txt
 {caption}
+```""",
+"formula": """The formula ({index}) is as follows:
+```markdown
+{formula}
 ```"""
-}
-
-HINT_PROMPT = {
-"text": "",
-"table": """- Try not to include the word `table` in your question.""",
-"image": """- Try not to include the word `image` in your question."""
 }
 
 IMAGE_PROMPT = "The content of the image in base64 format is shown below:"
