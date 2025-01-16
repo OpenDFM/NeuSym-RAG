@@ -2,13 +2,14 @@
 from abc import ABC, abstractmethod
 import os, sys, re, json, random
 from typing import List, Dict, Any
+from datetime import datetime
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 import gymnasium as gym
 import fitz
 
 from utils.airqa_utils import generate_airqa_example_template, check_airqa_examples
-from utils.functions.common_functions import call_llm_with_pattern
+from utils.functions.common_functions import call_llm_with_pattern, call_llm, convert_to_message, call_llm_with_message
 from utils.functions.image_functions import get_image_message
 from agents.envs.actions.view_image import ViewImage
 from agents.envs.actions.observation import Observation
@@ -98,16 +99,16 @@ class BaseExplorer(ABC):
             template: str,
             **kwargs
         ) -> List[Any]:
-        pattern = r"```(txt)?\s*\[Question\]:\s*(.*?)\s*\[Answer\]:\s*(.*?)\s*\[Reasoning Steps\]:\s*(.*?)```"
-        response = call_llm_with_pattern(template, pattern, self.model, self.temperature, **kwargs)
-        if not response: raise ValueError(f"Failed to Parse the Response. {response}")
-        return response[1:]
+        messages = convert_to_message(template, **kwargs)
+        response = call_llm_with_message(messages, model=self.model, temperature=self.temperature)
+        messages.append({"role": "assistant", "content": response})
+        return messages
     
     @abstractmethod
-    def explore(self):
+    def explore(self, **kwargs) -> Any:
         pass
     
-    def get_title(self):
+    def get_title(self) -> str:
         return self.metadata["title"]
 
 class SingleExplorer(BaseExplorer):
@@ -116,11 +117,10 @@ class SingleExplorer(BaseExplorer):
     def __init__(self, pid: str, model: str, temperature: float):
         super().__init__(pid=pid, model=model, temperature=temperature)
     
-    def explore(self, explore_func: str = None, **kwargs) -> Any:
-        return self.multiple_section_section()
+    def explore(self, **kwargs) -> Any:
+        return self.single_text(**kwargs)
         # explore_funcs = ["single_text", "single_table", "single_image", "single_formula"]
-        # if not explore_func:
-        #     explore_func = random.choice(explore_funcs)
+        # explore_func = kwargs.get("explore_func", random.choice(explore_funcs))
         # assert explore_func in explore_funcs, f"Invalid Explore Function {explore_func}."
         # return getattr(self, explore_func)(**kwargs)
     
@@ -135,8 +135,7 @@ class SingleExplorer(BaseExplorer):
         else:
             raise ValueError(f"Invalid Context Type {context_type}.")
         template = EXPLORE_PROMPT[context_type] + CONTEXT_PROMPT[context_type].format(content=content)
-        question, answer, reasoning_steps = self._explore_with_llm(template)
-        return question, answer, reasoning_steps, ["single", "text"]
+        return self._explore_with_llm(template), ["single", "text"]
 
     def single_table(self, **kwargs) -> Any:
         """Single-Step Paradigm: Table Modal.

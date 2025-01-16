@@ -1,5 +1,6 @@
 #coding=utf
-import os, sys, logging, json, random, argparse
+import os, sys, logging, json, random, argparse, re
+from datetime import datetime
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Type
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
@@ -75,7 +76,7 @@ class BaseAnnotator(ABC):
         self.explorer_cls = explorer_cls
         self.moderator_cls = moderator_cls
     
-    def _annotate(self) -> Dict[str, Any]:
+    def _annotate(self, **kwargs) -> Dict[str, Any]:
         # Explore the paper
         for i in range(1 if self.pid else 10):
             try:
@@ -84,13 +85,18 @@ class BaseAnnotator(ABC):
                 else:
                     pid = self.pid
                 explorer = self.explorer_cls(pid=pid, model=self.model, temperature=self.temperature)
-                question, answer, reasoning_steps, tags = explorer.explore()
+                messages, tags = explorer.explore()
+                pattern = r"```(txt)?\s*\[Question\]:\s*(.*?)\s*\[Answer\]:\s*(.*?)\s*\[Reasoning Steps\]:\s*(.*?)```"
+                matched = re.findall(pattern, messages[-1]["content"], re.DOTALL)
+                if len(matched) == 0:
+                    raise ValueError(f"Failed to Parse the Response. {messages[-1]['content']}")
+                question, answer, reasoning_steps = [s.strip() for s in matched[0][1:]]
                 reasoning_steps = list(reasoning_steps.split("\n"))
                 break
             except ValueError as e:
-                pass
+                logger.info(f"Failed to explore the paper {pid}. {str(e)}")
             except FileNotFoundError as e:
-                logger.info(e)
+                logger.info(f"Failed to explore the paper {pid}. {str(e)}")
             except Exception as e:
                 logger.info(f"Failed to explore the paper {pid}. {str(e)}")
         else:
@@ -100,7 +106,13 @@ class BaseAnnotator(ABC):
         self.pid = explorer.pid
         # Moderate the question
         moderator: BaseModerator = self.moderator_cls(model=self.model, temperature=self.temperature)
-        question, evaluator, answer_format, answer, eval_tag = moderator.moderate(question, answer)
+        messages = moderator.moderate(messages, question, answer)
+        pattern = r"```(txt)?\s*\[question\]:\s*(.*?)\s*\[evaluator\]:\s*(.*?)\s*\[answer_format\]:\s*(.*?)\s*\[answer\]:\s*(.*?)\s*\[tag\]:\s*(.*?)```"
+        matched = re.findall(pattern, messages[-1]["content"], re.DOTALL)
+        if len(matched) == 0:
+            logger.info(f"Failed to Parse the Response. {messages[-1]['content']}")
+            return None
+        question, evaluator, answer_format, answer, eval_tag = [s.strip() for s in matched[0][1:]]
         evaluator = eval(evaluator)
         tags.append(eval_tag)
         
@@ -121,6 +133,10 @@ class BaseAnnotator(ABC):
         except Exception as e:
             logger.info(f"Failed to check the LLM baseline. {str(e)}")
             return None
+        
+        if kwargs.get("log_dir", None):
+            with open(os.path.join(kwargs["log_dir"], f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.json"), "w", encoding="utf-8") as f:
+                json.dump(messages, f, ensure_ascii=False, indent=4)
         
         return {
             "question": question,
@@ -144,8 +160,8 @@ class SingleAnnotator(BaseAnnotator):
         ):
         super().__init__(model, temperature, explorer_cls, moderator_cls, **kwargs)
     
-    def annotate(self, write_to_json: bool = False):
-        example = self._annotate()
+    def annotate(self, write_to_json: bool = False, **kwargs):
+        example = self._annotate(**kwargs)
         if not example:
             return
         example.update({
@@ -165,6 +181,7 @@ if __name__ == "__main__":
     parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE)
     parser.add_argument("--explorer", type=str, default="SingleExplorer")
     parser.add_argument("--moderator", type=str, default="BaseModerator")
+    parser.add_argument("--log_dir", type=str, default=None)
     args = parser.parse_args()
     for i in range(args.n):
         try:
@@ -173,6 +190,6 @@ if __name__ == "__main__":
                 temperature=args.temperature, 
                 explorer_cls=getattr(annotation.explorer, args.explorer), 
                 moderator_cls=getattr(annotation.moderator, args.moderator)
-            ).annotate(write_to_json=True)
+            ).annotate(write_to_json=True, log_dir=args.log_dir)
         except Exception as e:
             logger.info(f"Failed to annotate the paper. {str(e)}")

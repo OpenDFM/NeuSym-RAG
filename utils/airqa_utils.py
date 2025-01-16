@@ -93,7 +93,10 @@ def generate_airqa_example_template(**kwargs) -> Dict[str, Any]:
         "annotator": "human"
     }
     example_template.update(kwargs)
-    with open(os.path.join(AIRQA_DIR, 'examples', uid + '.json'), 'w', encoding='utf8') as ouf:
+    example_path = os.path.join(AIRQA_DIR, 'examples')
+    if example_template["annotator"] != "human":
+        example_path = os.path.join(example_path, 'automation')
+    with open(os.path.join(example_path, uid + '.json'), 'w', encoding='utf-8') as ouf:
         json.dump(example_template, ouf, ensure_ascii=False, indent=4)
     logger.info(f"Generated an AIR-QA example template with ID {uid} into examples/{uid}.json file.")
     return example_template
