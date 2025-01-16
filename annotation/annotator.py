@@ -1,9 +1,11 @@
 #coding=utf
-import os, sys, logging, json, random
+import os, sys, logging, json, random, argparse, re
+from datetime import datetime
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Type
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from annotation.explorer import BaseExplorer, SingleExplorer
+import annotation.explorer, annotation.moderator
+from annotation.explorer import BaseExplorer
 from annotation.moderator import BaseModerator
 from evaluation.evaluator import evaluate_airqa
 from utils.airqa_utils import generate_airqa_example_template
@@ -57,8 +59,8 @@ class BaseAnnotator(ABC):
     pid: str = None
     model: str = None
     temperature: float = None
-    explorer: BaseExplorer = None
-    moderator: BaseModerator = None
+    explorer_cls: Type[BaseExplorer] = None
+    moderator_cls: Type[BaseModerator] = None
 
     def __init__(
             self, 
@@ -70,39 +72,47 @@ class BaseAnnotator(ABC):
         ):
         self.model = model
         self.temperature = temperature
-        pid = kwargs.get("pid", None)
-        if pid:
-            try:
-                self.explorer = explorer_cls(pid=pid, model=model, temperature=temperature)
-            except Exception as e:
-                logger.info(f"Failed to create an explorer with given paper uuid {pid}. {e}")
-                raise RuntimeError(f"Failed to create an explorer with given paper uuid {pid}. {e}")
-        else:
-            for _ in range(100):
-                pid = random.choice(used_uuids)
-                try:
-                    self.explorer = explorer_cls(pid=pid, model=model, temperature=temperature)
-                    break
-                except Exception as e:
-                    continue
-            else:
-                logger.info(f"Failed to create an explorer after 100 attemps.")
-                raise RuntimeError(f"Failed to create an explorer after 100 attemps.")
-        logger.info(f"Explorer created successfully with paper uuid {pid}.")
-        self.pid = pid
-        self.moderator = moderator_cls(model=model, temperature=temperature)
+        self.pid = kwargs.get("pid", None)
+        self.explorer_cls = explorer_cls
+        self.moderator_cls = moderator_cls
     
-    def _annotate(self) -> Dict[str, Any]:
+    def _annotate(self, **kwargs) -> Dict[str, Any]:
         # Explore the paper
-        try:
-            question, answer, reasoning_steps, tags = self.explorer.explore()
-            reasoning_steps = list(reasoning_steps.split("\n"))
-        except Exception as e:
-            logger.info(f"Failed to explore the paper {self.pid}. {str(e)}")
+        for i in range(1 if self.pid else 10):
+            try:
+                if not self.pid:
+                    pid = random.choice(used_uuids)
+                else:
+                    pid = self.pid
+                explorer = self.explorer_cls(pid=pid, model=self.model, temperature=self.temperature)
+                messages, tags = explorer.explore()
+                pattern = r"```(txt)?\s*\[Question\]:\s*(.*?)\s*\[Answer\]:\s*(.*?)\s*\[Reasoning Steps\]:\s*(.*?)```"
+                matched = re.findall(pattern, messages[-1]["content"], re.DOTALL)
+                if len(matched) == 0:
+                    raise ValueError(f"Failed to Parse the Response. {messages[-1]['content']}")
+                question, answer, reasoning_steps = [s.strip() for s in matched[0][1:]]
+                reasoning_steps = list(reasoning_steps.split("\n"))
+                break
+            except ValueError as e:
+                logger.info(f"Failed to explore the paper {pid}. {str(e)}")
+            except FileNotFoundError as e:
+                logger.info(f"Failed to explore the paper {pid}. {str(e)}")
+            except Exception as e:
+                logger.info(f"Failed to explore the paper {pid}. {str(e)}")
+        else:
+            logger.info(f"Failed to explore the paper after 10 attempts.")
             return None
         
+        self.pid = explorer.pid
         # Moderate the question
-        question, evaluator, answer_format, answer, eval_tag = self.moderator.moderate(question, answer)
+        moderator: BaseModerator = self.moderator_cls(model=self.model, temperature=self.temperature)
+        messages = moderator.moderate(messages, question, answer)
+        pattern = r"```(txt)?\s*\[question\]:\s*(.*?)\s*\[evaluator\]:\s*(.*?)\s*\[answer_format\]:\s*(.*?)\s*\[answer\]:\s*(.*?)\s*\[tag\]:\s*(.*?)```"
+        matched = re.findall(pattern, messages[-1]["content"], re.DOTALL)
+        if len(matched) == 0:
+            logger.info(f"Failed to Parse the Response. {messages[-1]['content']}")
+            return None
+        question, evaluator, answer_format, answer, eval_tag = [s.strip() for s in matched[0][1:]]
         evaluator = eval(evaluator)
         tags.append(eval_tag)
         
@@ -119,10 +129,14 @@ class BaseAnnotator(ABC):
             return None
         
         try:
-            state = {"gpt-4o-2024-08-06": check_llm_baseline(self.explorer.get_title(), question, answer_format, evaluator)}
+            state = {"gpt-4o-2024-08-06": check_llm_baseline(explorer.get_title(), question, answer_format, evaluator)}
         except Exception as e:
             logger.info(f"Failed to check the LLM baseline. {str(e)}")
             return None
+        
+        if kwargs.get("log_dir", None):
+            with open(os.path.join(kwargs["log_dir"], f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.json"), "w", encoding="utf-8") as f:
+                json.dump(messages, f, ensure_ascii=False, indent=4)
         
         return {
             "question": question,
@@ -146,8 +160,8 @@ class SingleAnnotator(BaseAnnotator):
         ):
         super().__init__(model, temperature, explorer_cls, moderator_cls, **kwargs)
     
-    def annotate(self, write_to_json: bool = False):
-        example = self._annotate()
+    def annotate(self, write_to_json: bool = False, **kwargs):
+        example = self._annotate(**kwargs)
         if not example:
             return
         example.update({
@@ -161,7 +175,21 @@ class SingleAnnotator(BaseAnnotator):
             qid = generate_airqa_example_template(**example)
 
 if __name__ == "__main__":
-    try:
-        SingleAnnotator(model=DEFAULT_LLM_MODEL, temperature=DEFAULT_TEMPERATURE, explorer_cls=SingleExplorer, moderator_cls=BaseModerator).annotate(write_to_json=True)
-    except Exception as e:
-        logger.info(f"Failed to annotate the paper. {str(e)}")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--n", type=int, default=1)
+    parser.add_argument("--model", type=str, default=DEFAULT_LLM_MODEL)
+    parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE)
+    parser.add_argument("--explorer", type=str, default="SingleExplorer")
+    parser.add_argument("--moderator", type=str, default="BaseModerator")
+    parser.add_argument("--log_dir", type=str, default=None)
+    args = parser.parse_args()
+    for i in range(args.n):
+        try:
+            SingleAnnotator(
+                model=args.model, 
+                temperature=args.temperature, 
+                explorer_cls=getattr(annotation.explorer, args.explorer), 
+                moderator_cls=getattr(annotation.moderator, args.moderator)
+            ).annotate(write_to_json=True, log_dir=args.log_dir)
+        except Exception as e:
+            logger.info(f"Failed to annotate the paper. {str(e)}")

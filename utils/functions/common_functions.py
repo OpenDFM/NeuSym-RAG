@@ -23,19 +23,17 @@ def call_llm_with_message(
     return response
 
 
-def call_llm(
-        template: str, 
-        model: str = 'gpt-4o', 
-        top_p: float = 0.95, 
-        temperature: float = 0.7,
+def convert_to_message(
+        template: str,
         **kwargs
-    ) -> str:
-    """ Automatically construct the message list from template and call LLM to generate the response. The `template` merely supports the following format:
+    ) -> List[Dict[str, Any]]:
+    """ Convert the template to the message list. The `template` merely supports the following format:
     {{system_message}}
 
     {{user_message}}
     Note that, the system and user messages should be separated by two consecutive newlines. And the first block is the system message, the other blocks are the user message. There is no assistant message or interaction history.
-    If you need 
+    
+    If you need to add an image, you can set `image` in kwargs to the image message dict. See `get_image_message` in `utils.functions.image_functions` for the image message format.
     """
     system_msg = template.split('\n\n')[0].strip()
     user_msg = '\n\n'.join(template.split('\n\n')[1:]).strip()
@@ -54,7 +52,20 @@ def call_llm(
         )
     if kwargs.get("image", None):
         messages.append(kwargs["image"])
-    return call_llm_with_message(messages=messages, model=model, top_p=top_p, temperature=temperature)
+    return messages
+
+
+def call_llm(
+        template: str, 
+        model: str = 'gpt-4o', 
+        top_p: float = 0.95, 
+        temperature: float = 0.7,
+        **kwargs
+    ) -> str:
+    """ Automatically construct the message list from template and call LLM to generate the response. 
+    See `convert_to_message` for the template format.
+    """
+    return call_llm_with_message(messages=convert_to_message(template, **kwargs), model=model, top_p=top_p, temperature=temperature)
 
 
 def call_llm_with_pattern(
@@ -67,7 +78,7 @@ def call_llm_with_pattern(
     ) -> List[str]:
     """ Automatically construct the message list from template, call LLM to generate the response, and parse the response with givern pattern.
     """
-    response = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
+    response = call_llm(template=template, model=model, top_p=top_p, temperature=temperature, **kwargs)
     matched = re.findall(pattern, response, re.DOTALL)
     if len(matched) == 0:
         return None

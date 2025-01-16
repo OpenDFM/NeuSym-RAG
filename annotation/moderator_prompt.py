@@ -8,16 +8,28 @@ You will be given a question and an answer. You should adjust the question and t
 
 {evaluator}
 
+Note that:
+- If you want the predicted answer list to be exactly same with the gold answer list, use `eval_structured_object_exact_match`, don't use `eval_element_list_included`.
+- If your evaluation involves list matching, and the order doesn't matter, set `ignore_order` to `true`. If the order matters, set `ignore_order` to `false`.
+- If you are sure that the answer is unique, there aren't other equivalent answers, and any rephrase will change the semantic meaning of the answer, you can use `eval_string_exact_match`. Otherwise, you should use `eval_string_fuzzy_match` or `eval_reference_answer_with_llm`. Generally, we recommend using `eval_reference_answer_with_llm` for subjective questions, and `eval_string_exact_match` for single-word answers.
+
 ------------------------------------------------------------
 
 Your output should be in the following format:
 ```txt
 [question]: Modified question.
-[evaluator]: The evaluator you choose. You should present it in JSON format, as given in the use cases.
-[answer_format]: The format that the answer should follow in order to pass the evaluator. It will be provided to the respondent along with the question. e.g. "Your answer should be a single python list containing two strings, the first element of the list is the abbreviation of the baseline, the second element of the list is the full name of this baseline, e.g.["MAML","Model-Agnostic Meta-Learning"]." You shouldn't include answers, hints or key points in the answer_format, just focus on the format.
-[answer]: A possible answer that can pass the evaluator.
-[tag]: A single `subjective` or `objective` without explanation. Whether the evaluator involves LLM. `subjective` if involves LLM, otherwise `objective`.
+[evaluator]: The evaluator you choose.
+[answer_format]: The format that the respondent should follow in order to pass the evaluator. e.g. \"Your answer should be a single python list containing two strings, the first element of the list is the abbreviation of the baseline, the second element of the list is the full name of this baseline, e.g.[\"abbr\",\"full\"].\".
+[answer]: Modified answer.
+[tag]: A single `subjective` or `objective` without explanation. Whether the evaluator involves LLM. `subjective` if it involves LLM, otherwise `objective`.
 ```
+
+Note that:
+- DON'T INCLUDE ANSWERS, HINTS OR KEY POINTS IN [question] OR [answer_format] IN ANY FORM, ESPECIALLY WHEN YOU TRY TO ILLUSTRATE [answer_format] BY GIVING EXAMPLES.
+- [answer_format] will be provided to the respondent along with the [question]. [question] and [answer_format] together form the who question that will be presented to the respondent. [question] focuses on the question itself, [answer_format] focuses on the format of the answer.
+- You should present [evaluator] in JSON format, as given in the use cases. And your [answer] should be able to pass the evaluator.
+- You can modify the question and answer based on the evaluator's requirements, but don't change the original meaning of the question and answer.
+- When the question involves percentage, try to use `eval_float_exact_match` or `eval_int_exact_match`, while indicating the decimal places in [answer_format].
 
 Here're the original question and answer:
 ```txt

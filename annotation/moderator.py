@@ -2,9 +2,10 @@
 import os, sys, json
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any
+from datetime import datetime
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from annotation.moderator_prompt import MODERATE_PROMPT, EVALUATOR_PROMPT, USECASE_PROMPT
-from utils.functions.common_functions import call_llm_with_pattern, call_llm
+from utils.functions.common_functions import call_llm_with_pattern, call_llm, convert_to_message, call_llm_with_message
 
 EVALUATIONS_FILE = os.path.join('evaluation', 'evaluations.json')
 EVALUATIONS = json.load(open(EVALUATIONS_FILE, 'r'))
@@ -39,17 +40,23 @@ class BaseModerator(ABC):
     
     def _moderate_with_llm(
             self,
+            messages: List[Dict[str, Any]],
             template: str
         ) -> List[Any]:
-        pattern = r"```(txt)?\s*\[question\]:\s*(.*?)\s*\[evaluator\]:\s*(.*?)\s*\[answer_format\]:\s*(.*?)\s*\[answer\]:\s*(.*?)\s*\[tag\]:\s*(.*?)```"
-        response = call_llm_with_pattern(template, pattern, self.model, self.temperature)
-        if not response: raise ValueError(f"Failed to Parse the Response. {response}")
-        return response[1:]
+        trajectory = {
+            "role": "user", 
+            "content": f"Here are original trajectory where the question and answer are generated:\n```json\n{messages}\n```"
+        }
+        messages = convert_to_message(template)
+        messages.append(trajectory)
+        response = call_llm_with_message(messages, model=self.model, temperature=self.temperature)
+        messages.append({"role": "assistant", "content": response})
+        return messages
     
-    def moderate(self, question: str, answer: str) -> List[Any]:
+    def moderate(self, messages: List[Dict[str, Any]], question: str, answer: str) -> List[Any]:
         template = MODERATE_PROMPT.format(
             evaluator = EVALUATORS_PROMPT,
             question = question,
             answer = answer
         )
-        return self._moderate_with_llm(template)
+        return self._moderate_with_llm(messages, template)
