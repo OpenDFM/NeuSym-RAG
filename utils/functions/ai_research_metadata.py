@@ -323,7 +323,7 @@ def infer_paper_tags_from_metadata(
 
 def extract_metadata_from_scholar_api(
         title: str,
-        api_tools: List[str] = ['semantic-scholar', 'dblp', 'arxiv'],
+        api_tools: List[str] = ['arxiv', 'dblp', 'semantic-scholar'],
         **kwargs
     ) -> Dict[str, Any]:
     """ Given the title or the arxiv id of one paper, extract its metadata from provided scholar APIs.
@@ -333,13 +333,13 @@ def extract_metadata_from_scholar_api(
             ['dblp', 'semantic-scholar', 'arxiv']
     """
     for tool in api_tools:
-        assert tool in ['dblp', 'semantic-scholar', 'arxiv'], f"Invalid scholar API tool: {tool}."
+        assert tool in ['arxiv', 'dblp', 'semantic-scholar'], f"Invalid scholar API tool: {tool}."
     if not api_tools: # try sequentially with pre-defined orders
-        api_tools = ['dblp', 'semantic-scholar', 'arxiv']
+        api_tools = ['arxiv', 'dblp', 'semantic-scholar']
     functions = {
-        "semantic-scholar": semantic_scholar_api,
-        "dblp": dblp_scholar_api,
         "arxiv": arxiv_scholar_api,
+        "dblp": dblp_scholar_api,
+        "semantic-scholar": semantic_scholar_api,
     }
     # Call the scholar API to extract the metadata
     metadata_dict = {}
@@ -728,7 +728,7 @@ def get_ai_research_metadata(
         pdf_path: str,
         model: str = 'gpt-4o',
         temperature: float = 0.0,
-        api_tools: List[str] = ['semantic-scholar', 'dblp', 'arxiv'],
+        api_tools: List[str] = ['arxiv', 'dblp', 'semantic-scholar'],
         write_to_json: bool = True,
         title_lines: int = 20,
         volume_lines: int = 10,
