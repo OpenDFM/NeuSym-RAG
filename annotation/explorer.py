@@ -243,6 +243,9 @@ class MultipleExplorer(BaseExplorer):
         self.pid = pid
         self.subexplorers = [SingleExplorer(pid=_pid, model=model, temperature=temperature) for _pid in pid]
     
+    def get_conference(self):
+        return None
+    
     def get_titles(self) -> List[str]:
         return [explorer.get_title() for explorer in self.subexplorers]
     

@@ -60,11 +60,11 @@ HINT_PROMPT = {
         "page": """- Try to use all the pages to generate the question.""",
         "table": """- Try to use all the tables to generate the question.""",
         "image": """- Try to use all the images to generate the question.""",
-    }
+    },
+    "comprehensive": {}
 }
-HINT_PROMPT["comprehensive"] = HINT_PROMPT["single"]
-for key in HINT_PROMPT["comprehensive"]:
-    HINT_PROMPT["comprehensive"][key] += """\n- Try to add qualifiers to make sure the respondents can directly locate the paper, but avoid directly providing the title. e.g. \"In the paper that introduces ReACT ...\", \"In transformer, what's ...\"."""
+for key in HINT_PROMPT["single"]:
+    HINT_PROMPT["comprehensive"][key] = HINT_PROMPT["single"][key] + """\n- Try to add qualifiers to make sure the respondents can directly locate the paper, but avoid directly providing the title. e.g. \"In the paper that introduces ReACT ...\", \"In transformer, what's ...\"."""
 
 EXPLORE_PROMPT = {
     category: {
