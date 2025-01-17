@@ -1,6 +1,6 @@
 #coding=utf8
 import numpy as np
-import duckdb, math
+import duckdb, math, tqdm
 from scipy.sparse import csr_array
 import os, re, sys, json, logging, torch, time
 from pymilvus import MilvusClient, FieldSchema, CollectionSchema, DataType
@@ -11,6 +11,7 @@ from utils.database_utils import get_database_connection
 from utils.database_schema import DatabaseSchema
 from utils.vectorstore_schema import VectorstoreSchema, VectorstoreCollection
 from utils.functions.ai_research_metadata import get_airqa_paper_metadata
+from utils.functions.pdf_functions import get_pdf_page_text
 
 
 logger = logging.getLogger(__name__)
@@ -332,10 +333,35 @@ def get_image_or_pdf_path(database: str, pdf_id: str, page_number: int) -> str:
         raise ValueError(f"Database '{database}' is not supported.")
 
 
-def build_bm25_corpus():
+def build_bm25_corpus(
+        paper_dir: str = os.path.join('data', 'dataset', 'airqa', 'papers'),
+        save_path: str = os.path.join('data', 'vectorstore', 'ai_research', 'bm25.json')
+):
     """ Build the BM25 corpus for the vectorstore. Indeed, generate the backup JSON file for BM25 model.
+    Directly load the PDF files and extract the text content for all preprocessed papers.
     """
-    pass
+    documents = []
+    for conference_dir in os.listdir(paper_dir):
+        conference_dir = os.path.join(paper_dir, conference_dir)
+        if not os.path.isdir(conference_dir): continue
+        logger.info(f"Processing conference directory: {conference_dir}")
+        for paper_file in tqdm.tqdm(os.listdir(conference_dir)):
+            if not paper_file.endswith('.pdf'): continue
+            paper_file = os.path.join(conference_dir, paper_file)
+            try:
+                # just ignore errors like:
+                # MuPDF error: unsupported error: cannot create appearance stream for Screen annotations
+                # MuPDF error: syntax error: unknown keyword: 'literal'
+                pieces = get_pdf_page_text(paper_file, generate_uuid=False)['page_contents']
+            except Exception as e:
+                logger.error(f"Failed to extract text from PDF: {paper_file}")
+                continue
+            documents.extend(pieces)
+
+    embedder: BaseEmbeddingFunction = get_milvus_embedding_function('bm25', 'en')
+    embedder.fit(documents)
+    embedder.save(save_path)
+    return save_path
 
 
 def encoding_database_content(
