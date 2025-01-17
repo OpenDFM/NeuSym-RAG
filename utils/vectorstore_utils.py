@@ -8,6 +8,8 @@ from milvus_model.base import BaseEmbeddingFunction
 from typing import List, Tuple, Dict, Any, Union, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.database_utils import get_database_connection
+from utils.database_schema import DatabaseSchema
+from utils.vectorstore_schema import VectorstoreSchema, VectorstoreCollection
 from utils.functions.ai_research_metadata import get_airqa_paper_metadata
 
 
@@ -26,6 +28,8 @@ EMBED_TYPES = {
     'text': ['sentence_transformers', 'bge', 'instructor', 'mgte', 'bm25', 'splade'],
     'image': ['clip']
 }
+
+VECTORSTORE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'vectorstore')
 
 
 def detect_embedding_model_path(model_name: str) -> str:
@@ -96,9 +100,9 @@ def get_embed_model_from_collection(
 
 
 def get_milvus_embedding_function(
-        embed_type: str = 'sentence_transformers',
-        embed_model: str = 'all-MiniLM-L6-v2',
-        backup_json: str = None
+    embed_type: str = 'sentence_transformers',
+    embed_model: str = 'all-MiniLM-L6-v2',
+    backup_json: str = None
 ) -> BaseEmbeddingFunction:
     """ Note that, we only support open-source embedding models w/o the need of API keys.
     """
@@ -158,162 +162,101 @@ def get_milvus_embedding_function(
 
 
 def get_vectorstore_connection(
-        uri: str = 'http://127.0.0.1:19530',
-        db_name: Optional[str] = None,
-        from_scratch: bool = False) -> MilvusClient:
+        vectorstore_name: str,
+        launch_method: str = 'standalone',
+        docker_uri: str = 'http://127.0.0.1:19530',
+        from_scratch: bool = False
+    ) -> MilvusClient:
     """ Get the connection to the vectorstore, either from the local .db path (Milvus-lite) or from the remote server via Docker.
     @args:
-        uri: str, the URI for the Milvus server, or local .db file path
-        db_name: str, the database name to create/use
-        from_scratch: bool, remove the existed vectorstore with `db_name` or not
+        vectorstore_name: str, the database name to create/use
+        launch_method: str, the launch method for the Milvus server, chosen from ['standalone', 'docker']
+        docker_uri: str, the URI for the Milvus server if using Docker
+        from_scratch: bool, remove the existed vectorstore with `vectorstore_name` or not
     @return:
         conn: MilvusClient, the connection to the vectorstore
     """
-    if uri.endswith('.db'): # Milvus-lite
-        if from_scratch and os.path.exists(uri):
-            os.remove(uri)
-        client = MilvusClient(uri)
+    if launch_method == 'standalone': # Milvus-lite
+        vs_path = os.path.join(VECTORSTORE_DIR, vectorstore_name, f'{vectorstore_name}.db')
+        if from_scratch and os.path.exists(vs_path):
+            os.remove(vs_path)
+        client = MilvusClient(vs_path)
     else:
-        assert db_name is not None, "Please specify the database name for the server."
-        client = MilvusClient(uri)
+        client = MilvusClient(docker_uri)
         dbs = client.list_databases()
-        if from_scratch and db_name in dbs:
-            client.using_database(db_name)
+        if from_scratch and vectorstore_name in dbs:
+            client.using_database(vectorstore_name)
             collections = client.list_collections()
             for col in collections:
                 client.drop_collection(col)
-            client.drop_database(db_name)
-        if from_scratch or db_name not in dbs:
-            client.create_database(db_name)
-        client.using_database(db_name)
+            client.drop_database(vectorstore_name)
+        if from_scratch or vectorstore_name not in dbs:
+            client.create_database(vectorstore_name)
+        client.using_database(vectorstore_name)
     return client
 
 
-def get_collection_name(
-        embed_type: Optional[str] = None,
-        embed_model: Optional[str] = None,
-        modality: str = 'text',
-        collection_name: Optional[str] = None
-    ) -> str:
-    """ Normalize the `collection_name` for Milvus vectorstore, or construct the `collection_name` automatically.
+def initialize_vectorstore(conn: MilvusClient, schema: VectorstoreSchema) -> MilvusClient:
+    """ Initialize the schema for the Milvus vectorstore, including the collections, fields and their types.
     """
-    if collection_name is not None:
-        return re.sub(r'[^a-z0-9_]', '_', collection_name.lower().strip())
-    if modality in ['text', 'image']:
-        collection_name = f"{modality}_{embed_type}_{os.path.basename(embed_model.rstrip(os.sep))}".lower()
-        return re.sub(r'[^a-z0-9_]', '_', collection_name)
-    raise NotImplementedError(f"Modality {modality} not supported yet.")
-
-
-def initialize_vectorstore(conn: MilvusClient, schema: List[Dict[str, Any]]) -> MilvusClient:
-    """ Create the schema for the vectorstore from scratch, including the collections, fields and their types.
-    """
-    def get_field_type(collection: CollectionSchema, field_name: str):
-        for schema in collection.fields:
-            if schema.name == field_name:
-                return repr(schema.dtype)
-        raise ValueError(f"Field {field_name} not found in the collection schema.")
-
     collections = conn.list_collections()
-    for collection in schema:
-        collection_name = get_collection_name(collection_name=collection['collection_name'])
-        if collection_name not in collections:
-            # add schema fields
-            collection_fields = []
-            for schema_field in collection['fields']:
-                dtype = schema_field["dtype"].upper()
-                field_kwargs = {
-                    'name': schema_field.get('name', 'field_name'),
-                    'dtype': eval(f'DataType.{dtype}'),
-                    'is_primary': schema_field.get('is_primary', False),
-                    'description': schema_field.get('description', f"name: {schema_field['name']}; data_type: {dtype}")
-                }
-                if field_kwargs['is_primary']:
-                    # tackle the primary key field on auto_id
-                    assert dtype.startswith('INT') or dtype in ['STRING', 'VARCHAR'], f"Primary key field must be INT or VARCHAR type: {schema_field['name']}"
-                    # by default, set auto_id = True (do not provide `id` during insertion)
-                    field_kwargs['auto_id'] = True
-                if '_VECTOR' in dtype and 'SPARSE' not in dtype:
-                    # vector type must specify the dimension, except for sparse vectors
-                    assert 'dim' in schema_field, f"Please specify the dimension for the vector field: {schema_field['name']}"
-                    field_kwargs['dim'] = schema_field['dim']
-                if dtype in ['VARCHAR', 'STRING']:
-                    # for VARCHAR data type, specify the max_length
-                    field_kwargs['max_length'] = schema_field.get('max_length', 65535)
-                if dtype == 'ARRAY': # ARRAY DataType for bbox images
-                    etype = schema_field.get('etype', 'element_type')
-                    field_kwargs['element_type'] = eval(f"DataType.{etype}")
-                    field_kwargs['max_capacity'] = schema_field.get('max_capacity', 20)
-                    if etype in ['VARCHAR', 'STRING']:
-                        field_kwargs['max_length'] = schema_field.get('max_length', 256)
-                collection_fields.append(FieldSchema(**field_kwargs))
+    for collection_name in schema.collections:
+        if collection_name in collections:
+            logger.warning(f'Colelction {collection_name} already exists, skip creation.')
+            continue
 
-            description = collection['description']
-            enable_dynamic_field = collection.get('enable_dynamic_field', False)
-            collection_schema = CollectionSchema(
-                collection_fields,
-                description=description,
-                enable_dynamic_field=enable_dynamic_field
-            )
+        collection: VectorstoreCollection = schema.get_collection(collection_name)
 
-            # add index params
-            index_params = MilvusClient.prepare_index_params()
-            for index in collection['indexes']:
-                assert 'field_name' in index, "Please specify the field_name for the index."
-                dtype = get_field_type(collection_schema, index['field_name'])
-                default_index_type = 'FLAT' if 'VECTOR' in dtype and 'SPARSE' not in dtype \
-                    else 'SPARSE_INVERTED_INDEX' if 'VECTOR' in dtype and 'SPARSE' in dtype \
-                    else 'INVERTED'
-                index_param = {
-                    'field_name': index['field_name'],
-                    'index_type': index.get('index_type', default_index_type),
-                    'index_name': index.get('index_name', f"{index['field_name']}_index")
-                }
-                if 'VECTOR' in dtype:
-                    default_metric_type = 'IP' if 'SPARSE' in dtype else 'COSINE'
-                    index_param['metric_type'] = index.get('metric_type', default_metric_type)
-                if 'params' in index:
-                    index_param['params'] = index['params']
-                index_params.add_index(**index_param)
+        # add schema fields
+        collection_fields = [FieldSchema(**field.to_dict()) for field in collection.fields]
+        collection_schema = CollectionSchema(
+            collection_fields,
+            description=collection.description,
+            enable_dynamic_field=False
+        )
 
-            # create collection from the customized schema fields and indexes
-            conn.create_collection(
-                collection_name,
-                schema=collection_schema,
-                index_params=index_params
-            )
-            time.sleep(5)
+        # add index params
+        index_params = MilvusClient.prepare_index_params()
+        for index_obj in collection.indexes:
+            index_params.add_index(**index_obj.to_dict())
 
-            logger.info(f"Create collection {collection_name}: {conn.describe_collection(collection_name)}")
-        else:
-            logger.info(f'Colelction {collection_name} already exists, skip creation.')
+        # create collection from the customized schema fields and indexes
+        conn.create_collection(
+            collection_name,
+            schema=collection_schema,
+            index_params=index_params
+        )
+        time.sleep(5)
+
+        logger.info(f"Create collection {collection_name}: {conn.describe_collection(collection_name)}")
+
     return conn
 
 
-def try_sql_with_extra_fields_returned(
+def retrieve_cell_values(
         db_conn: duckdb.DuckDBPyConnection,
         table_name: str,
         column_name: str,
         primary_keys: Union[str, List[str]],
-        extra_fields: Tuple[str] = (),
+        pdf_and_page_fields: Tuple[str] = (),
         where_condition: str = ''
     ) -> List[Tuple[Any]]:
-    """ Try to execute the SQL statement to retrieve all column values, and also obtain the primary key values and some extra column fields (e.g., pdf_id, page_id).
+    """ Execute the SQL statement to retrieve all column values, and also obtain the primary key values and pdf_id/page_id cell values.
     @args:
         db_conn: duckdb.DuckDBPyConnection, the connection to the relational database
         table_name: str, the table name to query
         column_name: str, the column name to retrieve
         primary_keys: Union[str, List[str]], the primary key names (`str` for single-column primary key)
-        extra_fields: Tuple[str], candidates of different extra field names
-        where_condition: str, used to filter the execution result
+        pdf_and_page_fields: Tuple[str], pdf_id column name and page_id column name (None if not exists)
+        where_condition: str, where condition string used to filter the execution result (excluding prefix `WHERE`)
     @return:
         List[Tuple[Any]], the returned results
     """
     primary_keys = [primary_keys] if type(primary_keys) == str else primary_keys
-    extra_fields = ', '.join(extra_fields) + ', ' if len(extra_fields) > 0 else ''
-    select = f"SELECT {column_name}, {extra_fields}{', '.join(primary_keys)} FROM {table_name}"
-    if where_condition:
-        select += f" WHERE {where_condition}"
+    assert len(pdf_and_page_fields) == 2 and pdf_and_page_fields[0] is not None, f"PDF id field not found in table {table_name}."
+    extra_fields = ', '.join(pdf_and_page_fields) if pdf_and_page_fields[1] is not None else pdf_and_page_fields[0]
+    select = f"SELECT {column_name}, {extra_fields}, {', '.join(primary_keys)} FROM {table_name}"
+    if where_condition: select += f" WHERE {where_condition}"
     try:
         result = db_conn.sql(select).fetchall()
         return result
@@ -322,51 +265,27 @@ def try_sql_with_extra_fields_returned(
         return []
 
 
-def get_extra_fields(column_names: List[str]) -> Tuple[str]:
-    """ Get column names of `pdf_id` and `page_id` in the current table.
-    @args:
-        column_names: List[str], all column names from the current table
-    @return:
-        Tuple[str]
-    """
-    # these two candidate list depends on the database schema design and can be extended
-    candidate_pdf_names = ['paper_id', 'pdf_id', 'report_id', 'ref_paper_id', 'ref_pdf_id', 'ref_report_id']
-    candidate_page_names = ['page_id', 'ref_page_id']
-    extra_fields = []
-    for cname in candidate_pdf_names:
-        if cname in column_names:
-            extra_fields.append(cname)
-            break
-    for cname in candidate_page_names:
-        if cname in column_names:
-            extra_fields.append(cname)
-    return tuple(extra_fields)
-
-
-def get_page_number_from_id(db_schema: Dict[str, Any], db_conn: duckdb.DuckDBPyConnection, pdf_id: str, page_id: str) -> int:
+def get_page_number_from_id(database_name: str, db_conn: duckdb.DuckDBPyConnection, pdf_id: str, page_id: str) -> int:
     """ Get the page number from the relational database (only used for biology_paper, financial_report and ai_research).
     @args:
-        db_schema: Dict[str, Any], the schema of the relational database
+        database_name: str, the relational database name
         db_conn: duckdb.DuckDBPyConnection, the connection to the relational database
         pdf_id: str, the PDF id
         page_id: str, the page id
     @return:
         int, the page number (-1 means not found)
     """
-    database = db_schema['database_name']
     sql_query = {
         'biology_paper': f"SELECT page_number FROM pages WHERE ref_paper_id = '{pdf_id}' AND page_id = '{page_id}';",
         'financial_report': f"SELECT page_number FROM pages WHERE ref_report_id = '{pdf_id}' AND page_id = '{page_id}';",
         'ai_research': f"SELECT page_number FROM pages WHERE ref_paper_id = '{pdf_id}' AND page_id = '{page_id}';"
     }
-    sql = sql_query.get(database, None)
-    if sql is None:
-        raise ValueError(f"Get page_number from page_id not supported for database name {database}.")
-    result = db_conn.sql(sql).fetchall()
+    select = sql_query.get(database_name, sql_query['ai_research'])
     try:
+        result = db_conn.sql(select).fetchall()
         return int(result[0][0])
     except:
-        logger.error(f"Get page_number from page_id {page_id} failed for {database} with pdf_id {pdf_id}.")
+        logger.error(f"Failed to get page_number from page_id `{page_id}` for DB {database_name} with pdf_id `{pdf_id}`.")
         return -1
 
 
@@ -413,98 +332,140 @@ def get_image_or_pdf_path(database: str, pdf_id: str, page_number: int) -> str:
         raise ValueError(f"Database '{database}' is not supported.")
 
 
-def encoding_database_content(vs_conn: MilvusClient, db_conn: duckdb.DuckDBPyConnection, db_schema: Dict[str, Any], embed_kwargs: Optional[Dict[str, Any]] = None, skip_collections: List[str] = [], **kwargs) -> None:
+def build_bm25_corpus():
+    """ Build the BM25 corpus for the vectorstore. Indeed, generate the backup JSON file for BM25 model.
+    """
+    pass
+
+
+def encoding_database_content(
+        vs_conn: MilvusClient,
+        db_conn: duckdb.DuckDBPyConnection,
+        vs_schema: VectorstoreSchema,
+        db_schema: DatabaseSchema,
+        pdf_id: Optional[Union[List[str], str]] = None,
+        batch_size: int = 128
+    ) -> None:
     """ Encode the database content into vectors and insert them into the vectorstore.
     @args:
         vs_conn: MilvusClient, the connection to the vectorstore
         db_conn: DatabasePopulation, the connection to the relational database
-        db_schema: Dict[str, Any], the schema of the relational database
-        embed_kwargs: Dict[str, Any], the keyword arguments for the embedding function, including `modality`, `embed_type`, `embed_model`, `embed_func` and optional `save_path`.
-        skip_collections: List[str], the collection names to skip
+        vs_schema: VectorstoreSchema, the schema of the vectorstore
+        db_schema: DatabaseSchema, the schema of the relational database
+        pdf_id: Optional[Union[List[str], str]], the PDF id or id list to encode, if None, encode all records in the DB
+        batch_size: int, the batch size for encoding
     """
-    modality = embed_kwargs["modality"]
-    embedder: BaseEmbeddingFunction = embed_kwargs['embed_func']
-    embed_type = embed_kwargs['embed_type']
-    embed_model = embed_kwargs['embed_model']
-    if embed_type == 'bm25':
-        # assert 'save_path' in embed_kwargs, "Please specify the save_path for the BM25 model."
-        documents, records = [], []
+    for collection_name in vs_schema.collections:
+        # get info of each collection
+        collection: VectorstoreCollection = vs_schema.get_collection(collection_name)
+        modality, et, em = collection.modality, collection.embed_type, collection.embed_model
+        backup_json = os.path.join(VECTORSTORE_DIR, db_schema.database_name, 'bm25.json') if et == 'bm25' else None
+        embedder: BaseEmbeddingFunction = get_milvus_embedding_function(et, em, backup_json=backup_json)
 
-    for table in db_schema['database_schema']:
-        table_name = table['table']['table_name']
-        primary_keys = table['primary_keys']
-        for col in table['columns']:
-            # only encode encodable columns
-            current_modality = col.get('encodable', None)
-            if not current_modality or modality != current_modality:
-                continue
+        # get the records to encode
+        for table_name in db_schema.tables:
+            primary_keys = db_schema.get_primary_keys(table_name)
+            pdf_id_field, page_id_field = db_schema.get_pdf_and_page_fields(table_name)
+            assert pdf_id_field is not None, f"PDF id field not found in table {table_name}."
 
-            collection_name = get_collection_name(embed_type=embed_type, embed_model=embed_model, modality=modality)
-            if collection_name in skip_collections: continue
-            assert vs_conn.has_collection(collection_name), f"Collection {collection_name} not created yet."
+            for column_name in db_schema.table2column(table_name):
+                # only encode encodable columns
+                if not db_schema.is_encodable(table_name, column_name, modality): continue
 
-            column_name = col['column_name']
-            logger.info(f"Extract table=`{table_name}`, column=`{column_name}`, modality=`{modality}` ...")
-            extra_fields = get_extra_fields([c['column_name'] for c in table['columns']])
-            result = try_sql_with_extra_fields_returned(db_conn, table_name, column_name, primary_keys, extra_fields=extra_fields)
-            if result is None or len(result) == 0:
-                continue
-
-            if embed_type != 'bm25':
-                documents, records = [], []
-
-            for row in result:
-                record = {'table_name': table_name, 'column_name': column_name, 'pdf_id': '', 'page_number': -1, 'primary_key': ''}
-                if len(extra_fields) == 2:
-                    pdf_id, page_id = str(row[1]), str(row[2])
-                    record['pdf_id'] = pdf_id
-                    record['page_number'] = get_page_number_from_id(db_schema, db_conn, pdf_id, page_id)
-                    record['primary_key'] = ','.join([str(v) for v in row[3:]])
-                elif len(extra_fields) == 1: # only extra field pdf_id
-                    record['pdf_id'] = str(row[1])
-                    record['primary_key'] = ','.join([str(v) for v in row[2:]])
+                logger.info(f"Extract cell values for table=`{table_name}`, column=`{column_name}` ...")
+                if type(pdf_id) in [list, tuple]:
+                    result = []
+                    for start_idx in range(0, len(pdf_id), batch_size):
+                        batch_pdf_id_str = ', '.join([f"'{str(pid)}'" for pid in pdf_id[start_idx:start_idx + batch_size]])
+                        where_condition = f"{pdf_id_field} IN ({batch_pdf_id_str})"
+                        result += retrieve_cell_values(
+                            db_conn, table_name, column_name, primary_keys,
+                            pdf_and_page_fields=(pdf_id_field, page_id_field),
+                            where_condition=where_condition
+                        )
                 else:
-                    record['primary_key'] = ','.join([str(v) for v in row[1:]])
-                
-                if modality == 'text': # fill in 'text' field
-                    text = str(row[0]).strip()
-                    if text is None or text == '':
-                        continue
-                    record['text'] = text
-                    documents.append(text)
-                    records.append(record)
-                else: # fill in 'bbox' field
-                    try:
-                        bbox = list(row[0])
-                        assert len(bbox) == 4
-                        bbox = [math.floor(bbox[0]), math.floor(bbox[1]), math.ceil(bbox[2]), math.ceil(bbox[3])]
-                    except:
-                        continue
-                    record['bbox'] = bbox
-                    image_or_pdf_path = get_image_or_pdf_path(db_schema['database_name'], record['pdf_id'], record['page_number'])
-                    documents.append({"path": image_or_pdf_path, "page": record['page_number'], "bbox": bbox})
-                    records.append(record)
+                    where_condition = '' if not pdf_id else \
+                        f"{pdf_id_field} = \'{str(pdf_id)}\'"
+                    result = retrieve_cell_values(
+                        db_conn, table_name, column_name, primary_keys,
+                        pdf_and_page_fields=(pdf_id_field, page_id_field),
+                        where_condition=where_condition
+                    )
+            
+                # post-process each record
+                if len(result) == 0: continue
+                documents, records = [], []
+                for row in result:
+                    record = {'table_name': table_name, 'column_name': column_name, 'pdf_id': '', 'page_number': -1, 'primary_key': ''}
+                    if page_id_field is not None:
+                        pdf_id, page_id = str(row[1]), str(row[2])
+                        record['pdf_id'] = pdf_id
+                        record['page_number'] = get_page_number_from_id(db_schema.database_name, db_conn, pdf_id, page_id)
+                        record['primary_key'] = ','.join([str(v) for v in row[3:]])
+                    else: # page_id field is None
+                        record['pdf_id'] = str(row[1])
+                        record['primary_key'] = ','.join([str(v) for v in row[2:]])
                     
-            if len(records) > 0 and embed_type != 'bm25':
-                logger.info(f"Encode {len(records)} records into vectors with {embed_type} model: {embed_model} ...")
-                vectors: List[np.ndarray] = embedder.encode_documents(documents)
+                    if modality == 'text': # fill in 'text' field
+                        text = str(row[0]).strip()
+                        if text is None or text == '': continue
+                        record['text'] = text
+                        documents.append(text)
+                        records.append(record)
+                    else: # fill in 'bbox' field
+                        try:
+                            bbox = list(row[0])
+                            assert len(bbox) == 4
+                            bbox = [math.floor(bbox[0]), math.floor(bbox[1]), math.ceil(bbox[2]), math.ceil(bbox[3])]
+                        except Exception as e: continue
+                        record['bbox'] = bbox
+                        image_or_pdf_path = get_image_or_pdf_path(db_schema.database_name, record['pdf_id'], record['page_number'])
+                        documents.append({"path": image_or_pdf_path, "page": record['page_number'], "bbox": bbox})
+                        records.append(record)
+                
+                # encode the records
+                if len(records) == 0: continue
+                logger.info(f"Encode {len(records)} records into vectors with {et} model: {em} ...")
+                vectors: Union[csr_array, List[np.ndarray]] = embedder.encode_documents(documents)
                 logger.info(f"Insert {len(records)} records into collection {collection_name} ...")
                 for i, record in enumerate(records):
-                    record['vector'] = vectors[i] if embed_type != 'splade' else vectors[i:i+1]
+                    record['vector'] = vectors[i] if et not in ['splade', 'bm25'] else vectors[i:i+1, :]
                 vs_conn.insert(collection_name=collection_name, data=records)
-
-    if len(documents) > 0 and embed_type == 'bm25': # get corpus statistics
-        collection_name = get_collection_name(embed_type='bm25', embed_model=embed_model, modality='text')
-        logger.info(f"Encode {len(documents)} records into vectors with {embed_type} model: {embed_model} ...")
-        embedder.fit(documents)
-        embedder.save(embed_kwargs.get('save_path', os.path.join('data', 'vectorstore', db_schema['database_name'], 'bm25.json')))
-        vectors: csr_array = embedder.encode_documents(documents)
-        # assert len(records) == vectors.shape[0], "The number of text records should be equal to the number of encoded documents."
-        logger.info(f"Insert {len(records)} records into collection {collection_name} ...")
-        for i, record in enumerate(records):
-            record['vector'] = vectors[i:i+1, :]
-        vs_conn.insert(collection_name=collection_name, data=records)
     return
+
+
+def get_pdf_ids_to_encode(pdf_path_or_id: str) -> List[str]:
+    """ Get the list of valid PDF ids to encode.
+    @args:
+        pdf_path_or_id: str, the path to the PDF file or the PDF id [list].
+    @return:
+        pdf_ids: List[str], the list of valid PDF ids
+    """
+    if os.path.exists(pdf_path_or_id):
+        with open(pdf_path_or_id, mode='r', encoding='utf8') as f:
+            if pdf_path_or_id.endswith('.json'):
+                pdf_ids = json.load(f)
+            else:
+                pdf_ids = f.readlines()
+                pdf_ids = [pdf_id.strip() for pdf_id in pdf_ids if pdf_id.strip()]
+        return pdf_ids
+    else:
+        from utils.functions import is_valid_uuid
+        if type(pdf_path_or_id) == str:
+            if is_valid_uuid(pdf_path_or_id):
+                return [pdf_path_or_id]
+            elif ',' in pdf_path_or_id:
+                pdf_ids = pdf_path_or_id.split(',')
+                return get_pdf_ids_to_encode(pdf_ids)
+            else:
+                raise ValueError(f"Invalid PDF path or PDF id: {pdf_path_or_id}.")
+        elif type(pdf_path_or_id) in [list, tuple]:
+            for pdf_id in pdf_path_or_id:
+                if not is_valid_uuid(pdf_id):
+                    raise ValueError(f"Invalid PDF id: {pdf_id}.")
+            return list(pdf_path_or_id)
+        else:
+            raise ValueError(f"Invalid PDF path or PDF id: {pdf_path_or_id}.")
 
 
 if __name__ == '__main__':
@@ -512,42 +473,25 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('--vectorstore', type=str, help='which vectorstore, indeed the database name.')
-    parser.add_argument('--modality', type=str, default='text', choices=list(EMBED_TYPES.keys()), help=f'which modality to encode, chosen from {list(EMBED_TYPES.keys())}.')
-    parser.add_argument('--embed_type', type=str, default='sentence_transformers', choices=sum(EMBED_TYPES.values(), []), help=f'which embedding type to use, chosen from {[(k, EMBED_TYPES[k]) for k in EMBED_TYPES]}.')
-    parser.add_argument('--embed_model', type=str, default=os.path.join('.cache', 'all-MiniLM-L6-v2'), help='which embedding model to use, please pre-download the model in advance into ./.cache/ folder. For BM25 embedder, set it to the language type, e.g., `en`.')
-    parser.add_argument('--launch_method', type=str, default='standalone', help='launch method for vectorstore, chosen from ["docker", "standalone"]. Note that, for Windows OS, can only choose "docker".')
+    parser.add_argument('--launch_method', type=str, default='standalone', help='launch method for vectorstore, chosen from ["docker", "standalone"].')
     parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='host + port for milvus started from docker')
+    parser.add_argument('--pdf_path', type=str, help='File containing the list of PDF ids to encode (pls. ensure they exist in the relational database)')
+    parser.add_argument('--batch_size', type=int, default=128, help='batch size for pdf content retrieval')
     parser.add_argument('--from_scratch', action='store_true', help='remove the existed vectorstore or not')
     args = parser.parse_args()
 
     # the schema of relational database records which column will be encoded into vectors
     db_conn: duckdb.DuckDBPyConnection = get_database_connection(args.vectorstore)
-    db_schema_path = os.path.join('data', 'database', args.vectorstore, f'{args.vectorstore}.json')
-    db_schema = json.load(open(db_schema_path, 'r'))
+    db_schema: DatabaseSchema = DatabaseSchema(args.vectorstore)
+    vs_conn: MilvusClient = get_vectorstore_connection(args.vectorstore, launch_method=args.launch_method, docker_uri=args.docker_uri, from_scratch=args.from_scratch)
+    vs_schema: VectorstoreSchema = VectorstoreSchema()
 
-    if args.launch_method == 'standalone':
-        vs_path = os.path.join(os.path.join('data', 'vectorstore', args.vectorstore, f'{args.vectorstore}.db'))
-        vs_conn: MilvusClient = get_vectorstore_connection(uri=vs_path, from_scratch=args.from_scratch)
-    else:
-        vs_conn: MilvusClient = get_vectorstore_connection(uri=args.docker_uri, db_name=args.vectorstore, from_scratch=args.from_scratch)
-
-    # vectorstore schema to define the fields to be encoded into vectors
-    vs_schema_path = os.path.join('data', 'vectorstore', 'vectorstore_schema.json')
-    with open(vs_schema_path, 'r', encoding='utf8') as inf:
-        vs_schema = json.load(inf)
+    # initialize the vectorstore schema
     initialize_vectorstore(vs_conn, vs_schema)
 
-    # embedding the database content into vectors
-    embed_kwargs = {
-        "modality": args.modality,
-        "embed_type": args.embed_type,
-        "embed_model": args.embed_model,
-        "embed_func": get_milvus_embedding_function(args.embed_type, args.embed_model)
-    }
-    if args.embed_type == 'bm25':
-        embed_kwargs['save_path'] = os.path.join('data', 'vectorstore', args.vectorstore, 'bm25.json')
-
-    encoding_database_content(vs_conn, db_conn, db_schema, embed_kwargs=embed_kwargs)
+    # which pdfs to encode
+    pdf_ids = get_pdf_ids_to_encode(args.pdf_path) if args.pdf_path else None
+    encoding_database_content(vs_conn, db_conn, vs_schema, db_schema, pdf_id=pdf_ids, batch_size=args.batch_size)
 
     db_conn.close()
     vs_conn.close()

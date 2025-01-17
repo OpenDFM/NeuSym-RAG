@@ -3,7 +3,7 @@
 import json, os
 from functools import cached_property
 from utils.database_utils import DATABASE_DIR
-from typing import List, Dict, Union, Optional, Any
+from typing import List, Dict, Union, Optional, Any, Tuple
 
 
 class DatabaseSchema():
@@ -109,6 +109,40 @@ class DatabaseSchema():
         """
         table_name = self.id2table(table_name) if type(table_name) == int else table_name
         return self.table2column_mapping[table_name]
+
+
+    def get_pdf_and_page_fields(self, table_name: Union[int, str]) -> Tuple[Optional[str]]:
+        """ Get the pdf and page fields of the given table (name or id).
+        """
+        columns = self.table2column(table_name)
+        pdf_id_field, page_id_field = None, None
+        candidate_pdf_names = ['paper_id', 'pdf_id', 'report_id', 'ref_paper_id', 'ref_pdf_id', 'ref_report_id']
+        candidate_page_names = ['page_id', 'ref_page_id', 'pageid', 'ref_pageid']
+        for column in columns:
+            if column in candidate_pdf_names:
+                pdf_id_field = column
+            elif column in candidate_page_names:
+                page_id_field = column
+        return pdf_id_field, page_id_field
+
+
+    def get_primary_keys(self, table_name: Union[int, str]) -> List[str]:
+        """ Get the primary key list of the given table (name or id).
+        """
+        table_id = table_name if type(table_name) == int else self.table2id_mapping[table_name]
+        return self.database_schema['database_schema'][table_id]['primary_keys']
+
+
+    def is_encodable(self, table_name: str, column_name: str, modality: Optional[str] = None) -> bool:
+        """ Check if the column is encodable.
+        @return:
+            bool: True if the column is encodable and equals to modality, False otherwise.
+        """
+        for column in self.database_schema['database_schema'][self.table2id_mapping[table_name]]['columns']:
+            if column['column_name'] == column_name:
+                encode_modality = column.get('encodable', None)
+                return encode_modality == modality if modality is not None else encode_modality is not None
+        return False
 
 
     @cached_property
