@@ -16,6 +16,7 @@ Note that:
 ------------------------------------------------------------
 
 Your output should be in the following format:
+[thought]: Your thought process.
 ```txt
 [question]: Modified question.
 [evaluator]: The evaluator you choose.
@@ -25,6 +26,7 @@ Your output should be in the following format:
 ```
 
 Note that:
+- Remember to wrap your output (except thought) with triple backticks.
 - DON'T INCLUDE ANSWERS, HINTS OR KEY POINTS IN [question] OR [answer_format] IN ANY FORM, ESPECIALLY WHEN YOU TRY TO ILLUSTRATE [answer_format] BY GIVING EXAMPLES.
 - [answer_format] will be provided to the respondent along with the [question]. [question] and [answer_format] together form the who question that will be presented to the respondent. [question] focuses on the question itself, [answer_format] focuses on the format of the answer.
 - You should present [evaluator] in JSON format, as given in the use cases. And your [answer] should be able to pass the evaluator.

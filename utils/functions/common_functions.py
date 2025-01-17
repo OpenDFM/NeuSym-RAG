@@ -51,7 +51,11 @@ def convert_to_message(
             }
         )
     if kwargs.get("image", None):
-        messages.append(kwargs["image"])
+        image_message = kwargs["image"]
+        if type(image_message) is list:
+            messages.extend(image_message)
+        else:
+            messages.append(image_message)
     return messages
 
 

@@ -43,6 +43,9 @@ class BaseModerator(ABC):
             messages: List[Dict[str, Any]],
             template: str
         ) -> List[Any]:
+        messages = str(messages)
+        if len(messages) >= 50000:
+            messages = messages[:50000]
         trajectory = {
             "role": "user", 
             "content": f"Here are original trajectory where the question and answer are generated:\n```json\n{messages}\n```"

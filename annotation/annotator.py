@@ -4,8 +4,9 @@ from datetime import datetime
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Type
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+import annotation.annotator
 import annotation.explorer, annotation.moderator
-from annotation.explorer import BaseExplorer
+from annotation.explorer import BaseExplorer, SingleExplorer, MultipleExplorer
 from annotation.moderator import BaseModerator
 from evaluation.evaluator import evaluate_airqa
 from utils.airqa_utils import generate_airqa_example_template
@@ -30,7 +31,7 @@ uuid_file = os.path.join("data", "dataset", "airqa", "used_uuids_100.json")
 used_uuids = json.load(open(uuid_file, "r", encoding="utf-8"))
 
 def check_llm_baseline(
-        title: str,
+        title: List[str],
         question: str,
         answer_format: str,
         evaluator: Dict[str, Any],
@@ -40,12 +41,12 @@ def check_llm_baseline(
     ):
     template = """You are an intelligent system who is expert in answering AI research related questions.
 
-We're talking about the paper "{title}", and you should answer the following question in given format:
+We're talking about the paper(s) {title}, and you should answer the following question in given format:
 [Question]: {question}
 [Answer Format]: {answer_format}"""
     output = call_llm(
         template.format(
-            title = title, 
+            title = ", ".join(title), 
             question = question, 
             answer_format = answer_format
         ), 
@@ -58,7 +59,7 @@ We're talking about the paper "{title}", and you should answer the following que
 class ParseError(Exception):
     pass
 class BaseAnnotator(ABC):
-    pid: str = None
+    pid = None
     model: str = None
     temperature: float = None
     explorer_cls: Type[BaseExplorer] = None
@@ -74,19 +75,22 @@ class BaseAnnotator(ABC):
         ):
         self.model = model
         self.temperature = temperature
-        self.pid = kwargs.get("pid", None)
         self.explorer_cls = explorer_cls
         self.moderator_cls = moderator_cls
     
-    def _annotate(self, **kwargs) -> Dict[str, Any]:
+    def _annotate(self, **kwargs):
         # Explore the paper
-        for i in range(1 if self.pid else 10):
+        is_multiple = (self.explorer_cls == MultipleExplorer)
+        for _ in range(1 if self.pid else (30 if is_multiple else 10)):
             try:
                 if not self.pid:
-                    pid = random.choice(used_uuids)
+                    if is_multiple:
+                        pid = random.choices(used_uuids, k=kwargs.get("paper_count", 3))
+                    else:
+                        pid = random.choice(used_uuids)
                 else:
                     pid = self.pid
-                explorer = self.explorer_cls(pid=pid, model=self.model, temperature=self.temperature)
+                explorer: BaseExplorer = self.explorer_cls(pid=pid, model=self.model, temperature=self.temperature)
                 messages, tags = explorer.explore(**kwargs)
                 pattern = r"```(txt)?\s*\[Question\]:\s*(.*?)\s*\[Answer\]:\s*(.*?)\s*\[Reasoning Steps\]:\s*(.*?)```"
                 matched = re.findall(pattern, messages[-1]["content"], re.DOTALL)
@@ -117,7 +121,11 @@ class BaseAnnotator(ABC):
             logger.info(f"Failed to Parse the Response. {messages[-1]['content']}")
             return None
         question, evaluator, answer_format, answer, eval_tag = [s.strip() for s in matched[0][1:]]
-        evaluator = eval(evaluator)
+        try:
+            evaluator = json.loads(evaluator)
+        except Exception as e:
+            logger.info(f"Failed to parse the evaluator. {str(e)}")
+            return None
         tags.append(eval_tag)
         
         try:
@@ -133,7 +141,7 @@ class BaseAnnotator(ABC):
             return None
         
         try:
-            state = {"gpt-4o-2024-08-06": check_llm_baseline(explorer.get_title(), question, answer_format, evaluator)}
+            state = {"gpt-4o-2024-08-06": check_llm_baseline(explorer.get_titles(), question, answer_format, evaluator)}
         except Exception as e:
             logger.info(f"Failed to check the LLM baseline. {str(e)}")
             return None
@@ -151,20 +159,18 @@ class BaseAnnotator(ABC):
             "state": state,
             "annotator": self.model
         }
-        
+    
+    @abstractmethod
+    def annotate(self, **kwargs):
+        pass
 
 class SingleAnnotator(BaseAnnotator):
-    def __init__(
-            self, 
-            model: str, 
-            temperature: float,
-            explorer_cls: Type[BaseExplorer],
-            moderator_cls: Type[BaseModerator],
-            **kwargs
-        ):
-        super().__init__(model, temperature, explorer_cls, moderator_cls, **kwargs)
+    pid: str = None
+    def __init__(self, model: str, temperature: float, **kwargs):
+        super().__init__(model, temperature, SingleExplorer, BaseModerator, **kwargs)
+        self.pid = kwargs.get("pid", None)
     
-    def annotate(self, write_to_json: bool = False, **kwargs):
+    def annotate(self, **kwargs):
         example = self._annotate(**kwargs)
         if not example:
             return
@@ -174,7 +180,27 @@ class SingleAnnotator(BaseAnnotator):
             "conference": []
         })
         # write json file
-        if write_to_json:
+        if kwargs.get("write_to_json", False):
+            # question id
+            qid = generate_airqa_example_template(**example)
+
+class MultipleAnnotator(BaseAnnotator):
+    pid: List[str] = None
+    def __init__(self, model, temperature, **kwargs):
+        super().__init__(model, temperature, MultipleExplorer, BaseModerator, **kwargs)
+        self.pid = kwargs.get("pid", None)
+    
+    def annotate(self, **kwargs):
+        example = self._annotate(**kwargs)
+        if not example:
+            return
+        example.update({
+            "anchor_pdf": self.pid, 
+            "reference_pdf": [], 
+            "conference": []
+        })
+        # write json file
+        if kwargs.get("write_to_json", False):
             # question id
             qid = generate_airqa_example_template(**example)
 
@@ -183,18 +209,22 @@ if __name__ == "__main__":
     parser.add_argument("--n", type=int, default=1)
     parser.add_argument("--model", type=str, default=DEFAULT_LLM_MODEL)
     parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE)
-    parser.add_argument("--explorer", type=str, default="SingleExplorer")
-    parser.add_argument("--moderator", type=str, default="BaseModerator")
-    parser.add_argument("--log_dir", type=str, default=None)
+    parser.add_argument("--annotator", type=str, default="SingleAnnotator")
+    parser.add_argument("--log_dir", type=str, default="./logs")
+    parser.add_argument("--write_to_json", type=bool, default=True)
     parser.add_argument("--explore_func", type=str, default=None)
+    parser.add_argument("--paper_count", type=int, default=3)
     args = parser.parse_args()
     for i in range(args.n):
         try:
-            SingleAnnotator(
+            getattr(annotation.annotator, args.annotator)(
                 model=args.model, 
-                temperature=args.temperature, 
-                explorer_cls=getattr(annotation.explorer, args.explorer), 
-                moderator_cls=getattr(annotation.moderator, args.moderator)
-            ).annotate(write_to_json=True, log_dir=args.log_dir, explore_func=args.explore_func)
+                temperature=args.temperature
+            ).annotate(
+                write_to_json=args.write_to_json, 
+                log_dir=args.log_dir, 
+                explore_func=args.explore_func, 
+                paper_count=args.paper_count
+            )
         except Exception as e:
             logger.info(f"Failed to annotate the paper. {str(e)}")
