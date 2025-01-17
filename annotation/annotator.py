@@ -2,11 +2,11 @@
 import os, sys, logging, json, random, argparse, re
 from datetime import datetime
 from abc import ABC, abstractmethod
-from typing import List, Dict, Any, Type
+from typing import List, Dict, Any, Type, Union
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 import annotation.annotator
 import annotation.explorer, annotation.moderator
-from annotation.explorer import BaseExplorer, SingleExplorer, MultipleExplorer
+from annotation.explorer import BaseExplorer, SingleExplorer, MultipleExplorer, ComprehensiveExplorer
 from annotation.moderator import BaseModerator
 from evaluation.evaluator import evaluate_airqa
 from utils.airqa_utils import generate_airqa_example_template
@@ -59,7 +59,8 @@ We're talking about the paper(s) {title}, and you should answer the following qu
 class ParseError(Exception):
     pass
 class BaseAnnotator(ABC):
-    pid = None
+    pid: Union[str, List[str]] = None
+    conference: str = None
     model: str = None
     temperature: float = None
     explorer_cls: Type[BaseExplorer] = None
@@ -73,6 +74,7 @@ class BaseAnnotator(ABC):
             moderator_cls: Type[BaseModerator],
             **kwargs
         ):
+        self.pid = kwargs.get("pid", None)
         self.model = model
         self.temperature = temperature
         self.explorer_cls = explorer_cls
@@ -80,7 +82,7 @@ class BaseAnnotator(ABC):
     
     def _annotate(self, **kwargs):
         # Explore the paper
-        is_multiple = (self.explorer_cls == MultipleExplorer)
+        is_multiple = (self.explorer_cls is MultipleExplorer)
         for _ in range(1 if self.pid else (30 if is_multiple else 10)):
             try:
                 if not self.pid:
@@ -112,6 +114,7 @@ class BaseAnnotator(ABC):
             return None
         
         self.pid = explorer.pid
+        self.conference = explorer.get_conference()
         # Moderate the question
         moderator: BaseModerator = self.moderator_cls(model=self.model, temperature=self.temperature)
         messages = moderator.moderate(messages, question, answer)
@@ -124,7 +127,7 @@ class BaseAnnotator(ABC):
         try:
             evaluator = json.loads(evaluator)
         except Exception as e:
-            logger.info(f"Failed to parse the evaluator. {str(e)}")
+            logger.info(f"Failed to parse the evaluator. {str(e)} {evaluator}")
             return None
         tags.append(eval_tag)
         
@@ -150,7 +153,7 @@ class BaseAnnotator(ABC):
             with open(os.path.join(kwargs["log_dir"], f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.json"), "w", encoding="utf-8") as f:
                 json.dump(messages, f, ensure_ascii=False, indent=4)
         
-        return {
+        example = {
             "question": question,
             "answer_format": answer_format,
             "tags": tags,
@@ -159,50 +162,36 @@ class BaseAnnotator(ABC):
             "state": state,
             "annotator": self.model
         }
+        if type(self) is SingleAnnotator:
+            example["anchor_pdf"] = [self.pid]
+        elif type(self) is MultipleAnnotator:
+            example["anchor_pdf"] = self.pid
+        elif type(self) is ComprehensiveAnnotator:
+            example["conference"] = [self.conference]
+        else:
+            raise NotImplementedError(f"Annotator {type(self)} not implemented.")
+        if kwargs.get("write_to_json", True):
+            qid = generate_airqa_example_template(**example)
+            return qid
+        return example
     
-    @abstractmethod
     def annotate(self, **kwargs):
-        pass
+        return self._annotate(**kwargs)
 
 class SingleAnnotator(BaseAnnotator):
     pid: str = None
     def __init__(self, model: str, temperature: float, **kwargs):
         super().__init__(model, temperature, SingleExplorer, BaseModerator, **kwargs)
-        self.pid = kwargs.get("pid", None)
-    
-    def annotate(self, **kwargs):
-        example = self._annotate(**kwargs)
-        if not example:
-            return
-        example.update({
-            "anchor_pdf": [self.pid], 
-            "reference_pdf": [], 
-            "conference": []
-        })
-        # write json file
-        if kwargs.get("write_to_json", False):
-            # question id
-            qid = generate_airqa_example_template(**example)
 
 class MultipleAnnotator(BaseAnnotator):
     pid: List[str] = None
-    def __init__(self, model, temperature, **kwargs):
+    def __init__(self, model: str, temperature: float, **kwargs):
         super().__init__(model, temperature, MultipleExplorer, BaseModerator, **kwargs)
-        self.pid = kwargs.get("pid", None)
-    
-    def annotate(self, **kwargs):
-        example = self._annotate(**kwargs)
-        if not example:
-            return
-        example.update({
-            "anchor_pdf": self.pid, 
-            "reference_pdf": [], 
-            "conference": []
-        })
-        # write json file
-        if kwargs.get("write_to_json", False):
-            # question id
-            qid = generate_airqa_example_template(**example)
+
+class ComprehensiveAnnotator(BaseAnnotator):
+    pid: str = None
+    def __init__(self, model: str, temperature: float, **kwargs):
+        super().__init__(model, temperature, ComprehensiveExplorer, BaseModerator, **kwargs)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

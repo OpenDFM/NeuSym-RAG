@@ -38,6 +38,7 @@ DESCRIPTION_PROMPT = {
         "image": "You will be given multiple AI research papers, and your task is to generate a question based on the contents of the images in base64 format and the captions of the images."
     }
 }
+DESCRIPTION_PROMPT["comprehensive"] = DESCRIPTION_PROMPT["single"]
 
 HINT_PROMPT = {
     "single": {
@@ -61,6 +62,9 @@ HINT_PROMPT = {
         "image": """- Try to use all the images to generate the question.""",
     }
 }
+HINT_PROMPT["comprehensive"] = HINT_PROMPT["single"]
+for key in HINT_PROMPT["comprehensive"]:
+    HINT_PROMPT["comprehensive"][key] += """\n- Try to add qualifiers to make sure the respondents can directly locate the paper, but avoid directly providing the title. e.g. \"In the paper that introduces ReACT ...\", \"In transformer, what's ...\"."""
 
 EXPLORE_PROMPT = {
     category: {
@@ -95,8 +99,10 @@ CONTEXT_PROMPT = {
         The caption of the image is as follows:\n```txt\n{caption}\n```""",
     }
 }
+CONTEXT_PROMPT["comprehensive"] = CONTEXT_PROMPT["single"]
 
 IMAGE_PROMPT = {
-    "single": "The content of the image in base64 format is shown below:",
-    "multiple": "The image of paper {index} in base64 format is shown below:"
+    "single": "The image in base64 format is shown below:",
+    "multiple": "The image of paper {index} in base64 format is shown below:",
+    "comprehensive": "The image in base64 format is shown below:"
 }

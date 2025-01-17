@@ -82,6 +82,7 @@ class BaseExplorer(ABC):
 class SingleExplorer(BaseExplorer):
     """Single Document Explorer.
     """
+    exp_type: str = "single"
     pid: str = None
     pdf_data: Dict[str, Any] = None
     metadata: Dict[str, Any] = None
@@ -116,6 +117,9 @@ class SingleExplorer(BaseExplorer):
     def get_title(self) -> str:
         return self.metadata["title"]
     
+    def get_conference(self) -> str:
+        return str(self.metadata["conference"]).lower() + str(self.metadata["year"])
+    
     def get_titles(self) -> List[str]:
         return [self.metadata["title"]]
     
@@ -139,8 +143,8 @@ class SingleExplorer(BaseExplorer):
             content = random.choice(self.page_data)
         else:
             raise ValueError(f"Invalid Context Type {context_type}.")
-        template = EXPLORE_PROMPT["single"][context_type] + CONTEXT_PROMPT["single"][context_type].format(content=content)
-        return self._explore_with_llm(template), ["single", "text"]
+        template = EXPLORE_PROMPT[self.exp_type][context_type] + CONTEXT_PROMPT[self.exp_type][context_type].format(content=content)
+        return self._explore_with_llm(template), [self.exp_type, "text"]
 
     def single_table(self, **kwargs) -> Any:
         """Single-Step Paradigm: Table Modal.
@@ -148,15 +152,15 @@ class SingleExplorer(BaseExplorer):
             context: bool, default True, whether to include additional context in the prompt.
         """
         table_data = random.choice(self.pdf_data["info_from_mineru"]["tables"])
-        context = CONTEXT_PROMPT["single"]["table"].format(
+        context = CONTEXT_PROMPT[self.exp_type]["table"].format(
             caption = table_data["table_caption"],
             content = table_data["table_html"]
         )
-        tags = ["single", "table"]
+        tags = [self.exp_type, "table"]
         if kwargs.get("context", True):
-            context += "\n\n" + CONTEXT_PROMPT["single"]["page"].format(content=self.page_data[table_data["page_number"]-1])
+            context += "\n\n" + CONTEXT_PROMPT[self.exp_type]["page"].format(content=self.page_data[table_data["page_number"]-1])
             tags.append("text")
-        template = EXPLORE_PROMPT["single"]["table"] + context
+        template = EXPLORE_PROMPT[self.exp_type]["table"] + context
         return self._explore_with_llm(template), tags
     
     def single_image(self, **kwargs) -> Any:
@@ -170,12 +174,12 @@ class SingleExplorer(BaseExplorer):
             if data["figure_caption"].lower().startswith("figure")
         ]
         image_data = random.choice(image_data)
-        context = CONTEXT_PROMPT["single"]["image"].format(caption=image_data["figure_caption"])
-        tags = ["single", "image"]
+        context = CONTEXT_PROMPT[self.exp_type]["image"].format(caption=image_data["figure_caption"])
+        tags = [self.exp_type, "image"]
         if kwargs.get("context", True):
             tags.append("text")
-            context = CONTEXT_PROMPT["single"]["page"].format(content=self.page_data[image_data["page_number"]-1]) + "\n\n" + context
-        template = EXPLORE_PROMPT["single"]["image"] + context
+            context = CONTEXT_PROMPT[self.exp_type]["page"].format(content=self.page_data[image_data["page_number"]-1]) + "\n\n" + context
+        template = EXPLORE_PROMPT[self.exp_type]["image"] + context
         # Get the base64 image data.
         # The following code is not a good practice, it's a temporary solution.
         def transfer_bbox(bbox: List[Any]) -> List[Any]: # original airqa-100 bbox got some problem
@@ -186,7 +190,7 @@ class SingleExplorer(BaseExplorer):
         obs: Observation = action.execute(env)
         base64_image: str = obs.obs_content
         
-        image_template = get_image_message(base64_image, IMAGE_PROMPT["single"])
+        image_template = get_image_message(base64_image, IMAGE_PROMPT[self.exp_type])
         return self._explore_with_llm(template, image=image_template), tags
     
     # The question posed using formula is not satisfying, due to the wrong index.
@@ -200,37 +204,38 @@ class SingleExplorer(BaseExplorer):
             raise ValueError("No Formula Data Found.")
         index = random.randint(0, len(formula_data) - 1)
         formula_data = formula_data[index]
-        context = CONTEXT_PROMPT["single"]["formula"].format(
+        context = CONTEXT_PROMPT[self.exp_type]["formula"].format(
             index=index+1,
             formula=formula_data["equation_text"]
         )
-        tags = ["single", "formula"]
+        tags = [self.exp_type, "formula"]
         if kwargs.get("context", True):
-            context += "\n\n" + CONTEXT_PROMPT["single"]["page"].format(content=self.page_data[formula_data["page_number"]-1])
+            context += "\n\n" + CONTEXT_PROMPT[self.exp_type]["page"].format(content=self.page_data[formula_data["page_number"]-1])
             tags.append("text")
-        template = EXPLORE_PROMPT["single"]["formula"] + context
+        template = EXPLORE_PROMPT[self.exp_type]["formula"] + context
         return self._explore_with_llm(template), tags
 
-    def multiple_section_subsection(self) -> Any:
+    def multiple_section_subsection(self, **kwargs) -> Any:
         """Multiple-Step Paradigm: Section-Subsection Modal.
         """
         content = random.choice(section_partition(self.pdf_data["info_from_mineru"]["TOC"]))
-        template = EXPLORE_PROMPT["single"]["sec_sub"] + CONTEXT_PROMPT["single"]["sec_sub"].format(content=content)
-        return self._explore_with_llm(template), ["single", "text"]
+        template = EXPLORE_PROMPT[self.exp_type]["sec_sub"] + CONTEXT_PROMPT[self.exp_type]["sec_sub"].format(content=content)
+        return self._explore_with_llm(template), [self.exp_type, "text"]
 
-    def multiple_section_section(self) -> Any:
+    def multiple_section_section(self, **kwargs) -> Any:
         """Multiple-Step Paradigm: Section-Section Modal.
         """
         section_data = section_partition(self.pdf_data["info_from_mineru"]["TOC"])
         indexs = sorted(random.sample(list(range(0, len(section_data))), 2))
         section_data = [section_data[index].strip() for index in indexs]
-        context = CONTEXT_PROMPT["single"]["sec_sec"].format(content0=section_data[0], content1=section_data[1])
-        template = EXPLORE_PROMPT["single"]["sec_sec"] + context
-        return self._explore_with_llm(template), ["single", "text"]
+        context = CONTEXT_PROMPT[self.exp_type]["sec_sec"].format(content0=section_data[0], content1=section_data[1])
+        template = EXPLORE_PROMPT[self.exp_type]["sec_sec"] + context
+        return self._explore_with_llm(template), [self.exp_type, "text"]
 
 class MultipleExplorer(BaseExplorer):
     """Multiple Document Explorer.
     """
+    exp_type: str = "multiple"
     pid: List[str] = None
     subexplorers: List[SingleExplorer] = []
     def __init__(self, pid: List[str], model: str, temperature: float):
@@ -259,9 +264,9 @@ class MultipleExplorer(BaseExplorer):
             content = [random.choice(explorer.page_data) for explorer in self.subexplorers]
         else:
             raise ValueError(f"Invalid Context Type {context_type}.")
-        context = "\n\n".join([CONTEXT_PROMPT["multiple"][context_type].format(index=i+1, content=content[i]) for i in range(len(content))])
-        template = EXPLORE_PROMPT["multiple"][context_type] + context
-        return self._explore_with_llm(template), ["multiple", "text"]
+        context = "\n\n".join([CONTEXT_PROMPT[self.exp_type][context_type].format(index=i+1, content=content[i]) for i in range(len(content))])
+        template = EXPLORE_PROMPT[self.exp_type][context_type] + context
+        return self._explore_with_llm(template), [self.exp_type, "text"]
     
     def multiple_table(self, **kwargs) -> Any:
         """Comparison Paradigm: Table Modal.
@@ -272,20 +277,20 @@ class MultipleExplorer(BaseExplorer):
         page_data = [random.choice(explorer.page_data) for explorer in self.subexplorers]
         context = ""
         for i in range(len(table_data)):
-            context += CONTEXT_PROMPT["multiple"]["table"].format(
+            context += CONTEXT_PROMPT[self.exp_type]["table"].format(
                 index = i+1,
                 caption = table_data[i]["table_caption"],
                 content = table_data[i]["table_html"]
             ) + "\n\n"
             if kwargs.get("context", True):
-                context += CONTEXT_PROMPT["multiple"]["page"].format(
+                context += CONTEXT_PROMPT[self.exp_type]["page"].format(
                     index = i+1,
                     content=page_data[i][table_data[i]["page_number"]-1]
                 ) + "\n\n"
-        tags = ["multiple", "table"]
+        tags = [self.exp_type, "table"]
         if kwargs.get("context", True):
             tags.append("text")
-        template = EXPLORE_PROMPT["multiple"]["table"] + context
+        template = EXPLORE_PROMPT[self.exp_type]["table"] + context
         return self._explore_with_llm(template), tags
     
     def multiple_image(self, **kwargs) -> Any:
@@ -302,19 +307,19 @@ class MultipleExplorer(BaseExplorer):
         page_data = [random.choice(explorer.page_data) for explorer in self.subexplorers]
         context = ""
         for i in range(len(image_data)):
-            context += CONTEXT_PROMPT["multiple"]["image"].format(
+            context += CONTEXT_PROMPT[self.exp_type]["image"].format(
                 index = i+1,
                 caption = image_data[i]["figure_caption"],
             ) + "\n\n"
             if kwargs.get("context", True):
-                context += CONTEXT_PROMPT["multiple"]["page"].format(
+                context += CONTEXT_PROMPT[self.exp_type]["page"].format(
                     index = i+1,
                     content=page_data[i][image_data[i]["page_number"]-1]
                 ) + "\n\n"
-        tags = ["multiple", "image"]
+        tags = [self.exp_type, "image"]
         if kwargs.get("context", True):
             tags.append("text")
-        template = EXPLORE_PROMPT["multiple"]["image"] + context
+        template = EXPLORE_PROMPT[self.exp_type]["image"] + context
         
         def transfer_bbox(bbox: List[Any]) -> List[Any]:
             return [bbox[0], bbox[1], bbox[2]-bbox[0], bbox[3]-bbox[1]]
@@ -326,6 +331,11 @@ class MultipleExplorer(BaseExplorer):
             action = ViewImage(paper_id=self.pid[i], page_number=image_data[i]["page_number"], bounding_box=transfer_bbox(image_data[i]["figure_bbox"]))
             obs: Observation = action.execute(env)
             base64_image: str = obs.obs_content
-            image_template.append(get_image_message(base64_image, IMAGE_PROMPT["multiple"].format(index=i+1)))
+            image_template.append(get_image_message(base64_image, IMAGE_PROMPT[self.exp_type].format(index=i+1)))
         
         return self._explore_with_llm(template, image=image_template), tags
+
+class ComprehensiveExplorer(SingleExplorer):
+    """Comprehensive Document Explorer.
+    """
+    exp_type: str = "comprehensive"
