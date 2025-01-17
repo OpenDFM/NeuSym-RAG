@@ -118,14 +118,17 @@ class SingleExplorer(BaseExplorer):
         super().__init__(pid=pid, model=model, temperature=temperature)
     
     def explore(self, **kwargs) -> Any:
-        return self.single_text(**kwargs)
-        # explore_funcs = ["single_text", "single_table", "single_image", "single_formula"]
-        # explore_func = kwargs.get("explore_func", random.choice(explore_funcs))
-        # assert explore_func in explore_funcs, f"Invalid Explore Function {explore_func}."
-        # return getattr(self, explore_func)(**kwargs)
+        # explore_funcs = ["single_text", "single_table", "single_image", "single_formula", "multiple_section_subsection", "multiple_section_section"]
+        explore_funcs = ["single_text", "single_table", "single_image", "multiple_section_subsection", "multiple_section_section"]
+        explore_func = kwargs.get("explore_func", None)
+        if not explore_func: explore_func=random.choice(explore_funcs)
+        assert explore_func in explore_funcs, f"Invalid Explore Function {explore_func}."
+        return getattr(self, explore_func)(**kwargs)
     
     def single_text(self, **kwargs) -> Any:
         """Single-Step Paradigm: Text Modal.
+        @kwargs:
+            context: str, the context type, either "section" or "page".
         """
         context_type = kwargs.get("context", "section")
         if context_type == "section":
@@ -148,13 +151,11 @@ class SingleExplorer(BaseExplorer):
             content = table_data["table_html"]
         )
         tags = ["single", "table"]
-        if kwargs.get("context", False):
+        if kwargs.get("context", True):
             context += "\n\n" + CONTEXT_PROMPT["page"].format(content=self.page_data[table_data["page_number"]-1])
             tags.append("text")
         template = EXPLORE_PROMPT["table"] + context
-        # print(template)
-        question, answer, reasoning_steps = self._explore_with_llm(template)
-        return question, answer, reasoning_steps, tags
+        return self._explore_with_llm(template), tags
     
     def single_image(self, **kwargs) -> Any:
         """Single-Step Paradigm: Image Modal.
@@ -169,23 +170,22 @@ class SingleExplorer(BaseExplorer):
         image_data = random.choice(image_data)
         context = CONTEXT_PROMPT["image"].format(caption=image_data["figure_caption"])
         tags = ["single", "image"]
-        if kwargs.get("context", False):
+        if kwargs.get("context", True):
             tags.append("text")
             context = CONTEXT_PROMPT["page"].format(content=self.page_data[image_data["page_number"]-1]) + "\n\n" + context
         template = EXPLORE_PROMPT["image"] + context
-        # print(f"Caption: {image_data['figure_caption']}")
         # Get the base64 image data.
         # The following code is not a good practice, it's a temporary solution.
-        action = ViewImage(paper_id=self.pid, page_number=image_data["page_number"], bounding_box=image_data["figure_bbox"])
+        def transfer_bbox(bbox: List[Any]) -> List[Any]: # original airqa-100 bbox got some problem
+            return [bbox[0], bbox[1], bbox[2]-bbox[0], bbox[3]-bbox[1]]
+        action = ViewImage(paper_id=self.pid, page_number=image_data["page_number"], bounding_box=transfer_bbox(image_data["figure_bbox"]))
         env = gym.Env()
         env.dataset = "airqa" # fake an environment
         obs: Observation = action.execute(env)
         base64_image: str = obs.obs_content
         
         image_template = get_image_message(base64_image, IMAGE_PROMPT)
-        question, answer, reasoning_steps = self._explore_with_llm(template, image=image_template)
-        
-        return question, answer, reasoning_steps, tags
+        return self._explore_with_llm(template, image=image_template), tags
     
     def single_formula(self, **kwargs) -> Any:
         """Single-Step Paradigm: Formula Modal.
@@ -206,16 +206,14 @@ class SingleExplorer(BaseExplorer):
             context += "\n\n" + CONTEXT_PROMPT["page"].format(content=self.page_data[formula_data["page_number"]-1])
             tags.append("text")
         template = EXPLORE_PROMPT["formula"] + context
-        question, answer, reasoning_steps = self._explore_with_llm(template)
-        return question, answer, reasoning_steps, tags
+        return self._explore_with_llm(template), tags
 
     def multiple_section_subsection(self) -> Any:
         """Multiple-Step Paradigm: Section-Subsection Modal.
         """
         content = random.choice(section_partition(self.pdf_data["info_from_mineru"]["TOC"]))
         template = EXPLORE_PROMPT["sec_sub"] + CONTEXT_PROMPT["sec_sub"].format(content=content)
-        question, answer, reasoning_steps = self._explore_with_llm(template)
-        return question, answer, reasoning_steps, ["single", "text"]
+        return self._explore_with_llm(template), ["single", "text"]
 
     def multiple_section_section(self) -> Any:
         """Multiple-Step Paradigm: Section-Section Modal.
@@ -225,5 +223,4 @@ class SingleExplorer(BaseExplorer):
         section_data = [section_data[index].strip() for index in indexs]
         context = CONTEXT_PROMPT["sec_sec"].format(content0=section_data[0], content1=section_data[1])
         template = EXPLORE_PROMPT["sec_sec"] + context
-        question, answer, reasoning_steps = self._explore_with_llm(template)
-        return question, answer, reasoning_steps, ["single", "text"]
+        return self._explore_with_llm(template), ["single", "text"]

@@ -55,6 +55,8 @@ We're talking about the paper "{title}", and you should answer the following que
     )
     return bool(evaluate_airqa(output, {"evaluator": evaluator}) > 0.5)
 
+class ParseError(Exception):
+    pass
 class BaseAnnotator(ABC):
     pid: str = None
     model: str = None
@@ -85,18 +87,20 @@ class BaseAnnotator(ABC):
                 else:
                     pid = self.pid
                 explorer = self.explorer_cls(pid=pid, model=self.model, temperature=self.temperature)
-                messages, tags = explorer.explore()
+                messages, tags = explorer.explore(**kwargs)
                 pattern = r"```(txt)?\s*\[Question\]:\s*(.*?)\s*\[Answer\]:\s*(.*?)\s*\[Reasoning Steps\]:\s*(.*?)```"
                 matched = re.findall(pattern, messages[-1]["content"], re.DOTALL)
                 if len(matched) == 0:
-                    raise ValueError(f"Failed to Parse the Response. {messages[-1]['content']}")
+                    raise ParseError(f"Failed to Parse the Response. {messages[-1]['content']}")
                 question, answer, reasoning_steps = [s.strip() for s in matched[0][1:]]
                 reasoning_steps = list(reasoning_steps.split("\n"))
                 break
+            except ParseError as e:
+                logger.info(f"While exploring paper {pid}: {str(e)}")
             except ValueError as e:
-                logger.info(f"Failed to explore the paper {pid}. {str(e)}")
+                pass
             except FileNotFoundError as e:
-                logger.info(f"Failed to explore the paper {pid}. {str(e)}")
+                logger.info(f"While exploring paper {pid}: {str(e)}")
             except Exception as e:
                 logger.info(f"Failed to explore the paper {pid}. {str(e)}")
         else:
@@ -182,6 +186,7 @@ if __name__ == "__main__":
     parser.add_argument("--explorer", type=str, default="SingleExplorer")
     parser.add_argument("--moderator", type=str, default="BaseModerator")
     parser.add_argument("--log_dir", type=str, default=None)
+    parser.add_argument("--explore_func", type=str, default=None)
     args = parser.parse_args()
     for i in range(args.n):
         try:
@@ -190,6 +195,6 @@ if __name__ == "__main__":
                 temperature=args.temperature, 
                 explorer_cls=getattr(annotation.explorer, args.explorer), 
                 moderator_cls=getattr(annotation.moderator, args.moderator)
-            ).annotate(write_to_json=True, log_dir=args.log_dir)
+            ).annotate(write_to_json=True, log_dir=args.log_dir, explore_func=args.explore_func)
         except Exception as e:
             logger.info(f"Failed to annotate the paper. {str(e)}")
