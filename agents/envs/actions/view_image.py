@@ -56,7 +56,7 @@ class ViewImage(Action):
                     mediabox = pdf_reader.pages[self.page_number - 1].mediabox
                     w, h = mediabox.width, mediabox.height
                 image = convert_from_path(pdf_filename)[self.page_number - 1]
-                width_ratio, height_ratio = image.width / w, image.height / h
+                width_ratio, height_ratio = float(image.width) / float(w), float(image.height) / float(h)
             except IndexError:
                 return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
             except Exception as e:
