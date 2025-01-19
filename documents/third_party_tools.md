@@ -25,18 +25,53 @@ Attention that, after calling `get_ai_research_metadata`, new paper UUID will be
 - No extra libs needed, `requests` + `urllib` + `bs4` is enough
 - Code snippets:
 ```py
+import json
 from utils.functions.ai_research_metadata import dblp_scholar_api
 
-print("Obtained paper is:\n", dblp_scholar_api(
+metadata = dblp_scholar_api(
     title="Spider2-V: How Far Are Multimodal Agents From Automating Data Science and Engineering Workflows?",
     limit=10, # restrict the maximum number of hits by DBLP API
-    threshold=95, # DBLP search uses very weak matching criterion, we use fuzz.ratio to re-order the results ( only ratio score > threshold will be maintained )
+    threshold=90, # DBLP search uses very weak matching criterion, we use fuzz.ratio to re-order the results ( only ratio score > threshold will be maintained )
     allow_arxiv=True # by default, False, since we implement another arxiv scholar API, but can be changed to True, such that arxiv version of papers will not be ignored
-))
+)
+print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
 ```
 
-### More Scholar APIs like semantic-scholar and arxiv (TODO)
+### Semantic Scholar API
 
+- No extra libs needed
+- Code snippets:
+```py
+import json
+from utils.functions.ai_research_metadata import semantic_scholar_api
+
+metadata = semantic_scholar_api(
+    title="Spider2-V: How Far Are Multimodal Agents From Automating Data Science and Engineering Workflows?",
+    limit=10,
+    threshold=90,
+    fields_of_study=['Computer Science', 'Linguistics'], # further restrict the search range
+    start_year=2023 # further restrict the search range
+)
+print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
+```
+- Note that, this API is not stable and may prevent frequent calls in a limited period of time
+
+
+### Arxiv API
+
+- No extra libs needed
+- Code snippets:
+```py
+import json
+from utils.functions.ai_research_metadata import arxiv_scholar_api
+
+metadata = arxiv_scholar_api(
+    arxiv_id_or_title="Spider2-V: How Far Are Multimodal Agents From Automating Data Science and Engineering Workflows?",
+    limit=10,
+    threshold=90
+)
+print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
+```
 
 
 ### Unstructured

@@ -13,7 +13,7 @@
         - acl2023/
             - ...
         ...
-    - processed_data/ # folder used to store pre-processed result for each PDF file, e.g., extracted images or LLM-generated page summaries
+    - processed_data/ # folder used to store pre-processed result for each PDF file, e.g., chunked sections or LLM-generated page summaries
         - 0a1e5410-f9f1-5877-ae3a-151c214762e1.json
         - ...
     - metadata/ # folder used to store paper metadata
@@ -31,15 +31,14 @@ This section describes different question categories (or tags) for classificatio
 
 ### Category 1: Task Goals
 
-- `retrieval`: retrieve papers with constraints, e.g.,
-    - papers published by a specific author or institute
 - `single`: ask technical details of one single paper, e.g.,
     - list 3 major contributions of this work
 - `multiple`: involve multiple papers, may require comparison, calculation, aggregation and multi-step reasoning, e.g.,
-    - which agent framework is better on this popular benchmark
-    - whether the code is public available
+    - which agent framework performs better on a popular benchmark
+- `retrieval`: retrieve papers with constraints, e.g.,
+    - papers published by a specific author or institute
 - `comprehensive`: if the task does not belong to any category above or requires integration of multiple task types, e.g.,
-    - which author published the most papers regarding multi-modal llm pre-training in acl 2023 (matadata query + paper retrieval)
+    - for papers including experiments on a specific benchmark in neurips 2023, what's the top performance
 
 
 ### Category 2: Key Capabilities
@@ -68,12 +67,16 @@ TODO: this category will be automatically determined by the number of reasoning 
 
 ### Get PDF Metadata
 
-This is usually the first function that will be invoked in the pipeline function when populating database content.
+This is also the first function that will be invoked in the pipeline function when populating database content.
+```python
+from utils.functions import get_ai_research_metadata
+output_json = get_ai_research_metadata(input_pdf)
+```
 
-- input:
+- input_pdf:
     - pdf_path/download_url/paper_title/paper_uuid (str)
-- output:
-    - pdf_json (Dict[str, Any]): the output dict has the following fields
+- output_json:
+    - metadata_dict (Dict[str, Any]): the output dict has the following fields
 
 ```json
 {
@@ -90,6 +93,6 @@ This is usually the first function that will be invoked in the pipeline function
     "pdf_path": "data/dataset/airqa/papers/acl2024/ab14a93a-c5ee-5d60-8713-8b38bd501140.pdf", // local path to save the PDF, rename it with the UUID
     "abstract": "...", // paper abstract text
     "tldr": "...", // TLDR
-    "tags": ["llm"] // keywords or tags
+    "tags": ["llm", "agent"] // keywords or tags
 }
 ```

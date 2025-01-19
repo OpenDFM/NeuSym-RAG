@@ -2,7 +2,7 @@
 
 ----
 
-In this project, we use [Milvus](https://milvus.io/docs/quickstart.md) (the lite version) as the backend vectorstore to encode and save the vectors. The folder structure under `data/vectorstore/` is:
+In this project, we use [Milvus](https://milvus.io/docs/v2.4.x/quickstart.md) (the lite version) as the backend vectorstore to encode and save the vectors. The folder structure under `data/vectorstore/` is:
 ```txt
 - data/vectorstore/
     - biology_paper/
@@ -26,31 +26,32 @@ We support launching Milvus using standalone `.db` file for each vectorstore, or
 
 1. [**Standalone**] Install Milvus-lite:
 ```sh
-pip install pymilvus
+pip install "pymilvus[model]==2.4.8"
 ```
 2. [**Docker**] Download running script into `data/vectorstore/milvus/` and start it:
+    - To ensure replication and version conflict, you may change the docker image to `milvusdb/milvus:v2.4.x` in `standalone_embed.sh`. (We use `milvusdb/milvus:v2.4.15`)
 ```sh
 curl -sfL https://raw.githubusercontent.com/milvus-io/milvus/master/scripts/standalone_embed.sh -o data/vectorstore/milvus/standalone_embed.sh
-bash data/vectorstore/milvus/standalone_embed.sh start
+cd data/vectorstore/milvus/
+bash standalone_embed.sh start
 # bash data/vectorstore/milvus/standalone_embed.sh stop # stop the service
 ```
 
 ## Write Vectors Into Vectorstore
 
-> Please ensure that, the database has been populated! Since all encodable context will be retrieved from the corresponding relational database.
+> Please ensure that, the database content for the target PDF has been populated before vector encoding! Since all encodable content will be retrieved from the corresponding relational database.
 
 ### Download Embedding Models
 
-- Please download embedding models (either text or image modality) into `.cache/` folder, e.g.,
+- Please download the following embedding models (either text or image modality) into `.cache/` folder, e.g.,
     - [`sentence-transformers/all-MiniLM-L6-v2`](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
-    - [`BAAI/bge-m3`](https://huggingface.co/BAAI/bge-m3)
+    - [`BAAI/bge-large-en-v1.5`](https://huggingface.co/BAAI/bge-large-en-v1.5)
     - [`openai/clip-vit-base-patch32`](https://huggingface.co/openai/clip-vit-base-patch32)
 ```txt
 .cache/
-    - all-MiniLM-L6-v2/
-    - bge-m3/
-    - clip-vit-base-patch32/
-    - ... other downloaded embeddding models ...
+|---- all-MiniLM-L6-v2/
+|---- bge-large-en-v1.5/
+|---- clip-vit-base-patch32/
 ```
 
 - Feel free to customize your embedding model, remember to define the schema in `data/vectorstore/vectorstore_schema.json`.
@@ -59,9 +60,17 @@ bash data/vectorstore/milvus/standalone_embed.sh start
     - The fields `id`, `vector` are compulsory for unique id and stored vectors.
     - The field `text` is fixed for text-type content, while `bbox` for image-type bounding boxes.
     - The fields `table_name`, `column_name`, `primary_key` are used to build a one-to-one mapping between database and vectorstore.
-    - The fields `pdf_id` and `page_number` (maybe missing) are used to quickly filter the search space.
+    - The fields `pdf_id` and `page_number` are used to quickly filter the search space.
 - All available `embed_type`: `['sentence_transformers', 'bge', 'instructor', 'mgte', 'bm25', 'splade', 'clip']`, see [official doc](https://milvus.io/docs/embeddings.md) for reference. We also add special [`ClipEmbeddingFunction`](../utils/embedding_utils.py) for image embedding type.
-- Special care to `BM25` sparse embedding function, the `embed_model` value is the language `en`, and the vocabulary over the entire corpus will be saved to `data/vectorstore/*/bm25.json`.
+- Special care to `BM25` sparse embedding function, the `embed_model` value is the language `en`, and the vocabulary over the entire corpus will be saved to `data/vectorstore/*/bm25.json`. To build this vocabulary file, please run the following script:
+```py
+from utils.vectorstore_utils import build_bm25_corpus
+
+build_bm25_corpus(
+    paper_dir='data/dataset/airqa/papers',
+    save_path='data/vectorstore/ai_research/bm25.json'
+)
+```
 
 
 ### Running scripts
@@ -69,37 +78,42 @@ bash data/vectorstore/milvus/standalone_embed.sh start
 - We include the following embedding modality/type/model: 
     - `('text', 'bm25', 'en')`
     - `('text', 'sentence_transformers', 'all-MiniLM-L6-v2')`
+    - `('text', 'sentence_transformers', 'BAAI/bge-large-en-v1.5')`
     - `('image', 'clip', 'clip-vit-base-patch32')`
-- For Milvus launched from standalone `.db` file:
+- If the vectorstore is not created yet or we want to re-construct it, please add argument `--from_scratch`
+- For Milvus launched from **standalone** `.db` file:
+    - if `--pdf_path` is not specified, we will encode and insert all database content into the vectorstore; o.w., we will only encode and insert the specified PDF content
+    - `--from_scratch` will delete the original entire vectorstore first
+    - `--on_conflict [ignore|replace|raise]`: only used when `--pdf_path` is specified, it will check whether the PDF content of the target PDFs already exists in the vectorstore, and take the corresponding action
 ```sh
-# for biology_paper vectorstore
-python utils/vectorstore_utils.py --vectorstore biology_paper --modality text --embed_type bm25 --embed_model en --launch_method standalone --from_scratch
-python utils/vectorstore_utils.py --vectorstore biology_paper --modality text --embed_type sentence_transformers --embed_model all-MiniLM-L6-v2 --launch_method standalone # do not add --from_scratch this time
-python utils/vectorstore_utils.py --vectorstore biology_paper --modality image --embed_type clip --embed_model clip-vit-base-patch32 --launch_method standalone # do not add --from_scratch this time
-
-# for financial_report vectorstore
-python utils/vectorstore_utils.py --vectorstore financial_report --modality text --embed_type bm25 --embed_model en --launch_method standalone --from_scratch
-python utils/vectorstore_utils.py --vectorstore financial_report --modality text --embed_type sentence_transformers --embed_model all-MiniLM-L6-v2 --launch_method standalone # do not add --from_scratch this time
-python utils/vectorstore_utils.py --vectorstore financial_report --modality image --embed_type clip --embed_model clip-vit-base-patch32 --launch_method standalone # do not add --from_scratch this time
+python utils/vectorstore_utils.py --vectorstore biology_paper --launch_method standalone --from_scratch --on_conflict ignore
+python utils/vectorstore_utils.py --vectorstore financial_report --launch_method standalone --from_scratch --on_conflict ignore
+python utils/vectorstore_utils.py --vectorstore ai_research --launch_method standalone --from_scratch --on_conflict ignore
+```
+- For Milvus launched from **docker** containers:
+```sh
+python utils/vectorstore_utils.py --vectorstore biology_paper --launch_method docker --docker_uri http://127.0.0.1:19530 --from_scratch --on_conflict ignore
+python utils/vectorstore_utils.py --vectorstore financial_report --launch_method docker --docker_uri http://127.0.0.1:19530 --from_scratch --on_conflict ignore
+python utils/vectorstore_utils.py --vectorstore ai_research --launch_method docker --docker_uri http://127.0.0.1:19530 --from_scratch --on_conflict ignore
 ```
 
-- For Milvus launched from Docker containers:
-```sh
-# for biology_paper vectorstore
-python utils/vectorstore_utils.py --vectorstore biology_paper --modality text --embed_type bm25 --embed_model en --launch_method docker --docker_uri http://127.0.0.1:19530 --from_scratch
-python utils/vectorstore_utils.py --vectorstore biology_paper --modality text --embed_type sentence_transformers --embed_model all-MiniLM-L6-v2 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
-python utils/vectorstore_utils.py --vectorstore biology_paper --modality image --embed_type clip --embed_model clip-vit-base-patch32 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
+### The Complete Data Population Process
 
-# for financial_report vectorstore
-python utils/vectorstore_utils.py --vectorstore financial_report --modality text --embed_type bm25 --embed_model en --launch_method docker --docker_uri http://127.0.0.1:19530 --from_scratch
-python utils/vectorstore_utils.py --vectorstore financial_report --modality text --embed_type sentence_transformers --embed_model all-MiniLM-L6-v2 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
-python utils/vectorstore_utils.py --vectorstore financial_report --modality image --embed_type clip --embed_model clip-vit-base-patch32 --launch_method docker --docker_uri http://127.0.0.1:19530 # do not add --from_scratch this time
+- The complete data population process including 1) PDF parsing, 2) database insertion, and 3) vector encoding. It can be achived by running the following script:
+    - either `--database` or `--vectorstore` should be specified and they are the same
+    - `--launch_method` can be either `standalone` or `docker`. If `--launch_method` is `standalone`, the `.db` file will be used to launch Milvus vectorstore; o.w., the docker container will be used to launch Milvus vectorstore and `--docker_uri http://127.0.0.1:19530` should be specified
+    - `--pdf_path` can be a single UUID string, json file, or file with each line indicating one input PDF
+```sh
+python utils/data_population.py --database biology_paper --vectorstore biology_paper --launch_method standalone --from_scratch --on_conflict ignore --pdf_path data/dataset/pdfvqa/processed_data/pdf_data.jsonl
+python utils/data_population.py --database financial_report --vectorstore financial_report --launch_method standalone --from_scratch --on_conflict ignore --pdf_path data/dataset/tatdqa/processed_data/pdf_data.jsonl
+python utils/data_population.py --database ai_research --vectorstore ai_research --launch_method standalone --from_scratch --on_conflict ignore --pdf_path data/dataset/airqa/used_uuids_100.json
 ```
 
-- Note that, if the vectorstore is not created yet or you want to re-construct it, remember to add argument `--from_scratch`. But when you want to add another embedding model (indeed, a new collection) into an existing vectorstore, do not add this `from_scratch` parameter.
+
+### Inserted Data Entries
 
 - Each inserted data entry is like:
-    - Note that, the primary key `id` is auto incremented when new data is inserted. And we do not check whether the text content has been included. Thus, be careful.
+    - Note that, the primary key `id` is auto incremented when new data is inserted
 ```json
 {
     "id": 441234134, // primary key, auto increment when new entry is inserted
@@ -108,7 +122,7 @@ python utils/vectorstore_utils.py --vectorstore financial_report --modality imag
     "table_name": "biology_paper",
     "column_name": "text_content",
     "primary_key": "31ad2-31xfa-daa23", // this is the primary key in relational database for the current text content
-    "pdf_id": "fasd-fadsf-fasd", // // usde to quickly filter search space
+    "pdf_id": "fasd-fadsf-fasd", // // usde to quickly filter search space and check conflict
     "page_number": 1 // optional, quickly filter search space
 }
 ```
