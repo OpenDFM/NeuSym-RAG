@@ -4,7 +4,7 @@ from datetime import datetime
 import duckdb, tqdm
 from typing import List, Dict, Union, Optional, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from agents.models import get_llm_single_instance
+from utils.database_schema import DatabaseSchema
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
@@ -43,13 +43,13 @@ def normalize_column_type(column_type: str) -> str:
     return column_type
 
 
-def convert_json_to_create_sql(json_path: str, sql_path: Optional[str] = None) -> str:
+def convert_json_to_create_sql(schema: Dict[str, Any], sql_path: Optional[str] = None) -> str:
     """ Given the json path, return the CREATE TABLE SQL statement to create the database schema.
     @param:
-        json_path: str, path to the json file or database name
+        schema: Dict[str, Any], database schema
         sql_path: str, path to the sql file, optional
     @return:
-        if sql_path is None, return the CREATE DATABASE/TABLE SQL statement
+        return the CREATE DATABASE/TABLE SQL statement, e.g.,
         ```sql
         CREATE DATABASE IF NOT EXISTS database_name;
         CREATE TABLE IF NOT EXISTS table_name (
@@ -61,18 +61,8 @@ def convert_json_to_create_sql(json_path: str, sql_path: Optional[str] = None) -
         );
         ...
         ```
-        else, write the CREATE TABLE SQL statement to the sql file and return the sql file path
     """
-    if os.path.exists(json_path):
-        with open(json_path, 'r') as f:
-            schema = json.load(f)
-    else:
-        raise FileNotFoundError(f"File {json_path} not found.")
-    
     sqls = []
-    # DuckDB does not support CREATE DATABASE, only one database
-    # database_name = schema.get('database_name', os.path.basename(os.path.splitext(json_path)[0]))
-    # sqls.append(f"CREATE DATABASE IF NOT EXISTS {database_name};")
 
     def get_column_string(col: Dict[str, Union[Optional[str], List[str], bool, int]]):
         column_name = col['column_name']
@@ -101,7 +91,7 @@ def convert_json_to_create_sql(json_path: str, sql_path: Optional[str] = None) -
             return ',\n'.join([primary_key_string, foreign_key_string])
 
     def get_column_comment(col):
-        column_desc = col.get('description', '').replace('\n', ' ')
+        column_desc = col.get('description', '').replace('\n', ' ').replace(';', ',')
         return f" -- {column_desc}" if len(column_desc) > 0 else ""
 
 
@@ -125,11 +115,16 @@ def convert_json_to_create_sql(json_path: str, sql_path: Optional[str] = None) -
     return complete_sql
 
 
-def get_database_connection(database_name: str, database_type: str = 'duckdb'):
+def get_database_connection(
+        database_name: str,
+        database_type: str = 'duckdb',
+        from_scratch: bool = False
+    ) -> duckdb.DuckDBPyConnection:
     """ Get the database connection from the database name.
     @param:
         database_name: str, database name
         database_type: str, database type, default is 'duckdb'
+        from_scratch: remove the existed database file or not
     @return:
         database connection
     """
@@ -138,111 +133,86 @@ def get_database_connection(database_name: str, database_type: str = 'duckdb'):
             db_path = database_name
         else:
             db_path = os.path.join(DATABASE_DIR, database_name, database_name + '.duckdb')
-        if not os.path.exists(db_path):
-            raise FileNotFoundError(f"Database path {db_path} not found.")
+        if from_scratch and os.path.exists(db_path):
+            os.remove(db_path)
         conn: duckdb.DuckDBPyConnection = duckdb.connect(db_path)
         return conn
     else:
         raise ValueError(f"Database type {database_type} not supported.")
 
 
-def create_database_from_sql(sql_path: str, db_path: str, from_scratch: bool = True) -> None:
+def initialize_database(db_conn: duckdb.DuckDBPyConnection, db_schema: DatabaseSchema) -> None:
     """ Create the database from the SQL file.
     @param:
-        sql_path: str, path to the SQL file
-        db_path: str, path to the database file
-        from_scratch: remove the existed database file or not
+        db_conn: duckdb.DuckDBPyConnection, database connection
+        db_schema: DatabaseSchema, database schema
     """
-    if not os.path.exists(sql_path):
-        raise FileNotFoundError(f"File {sql_path} not found.")
-
-    with open(sql_path, 'r') as f:
-        sql = [line.strip() for line in f.read().split(';') if line.strip() != '']
-    if from_scratch and os.path.exists(db_path):
-        os.remove(db_path)
-    conn: duckdb.DuckDBPyConnection = duckdb.connect(db_path)
-    for stmt in sql:
+    sql_path = os.path.join(DATABASE_DIR, db_schema.database_name, db_schema.database_name + '.sql')
+    sql = convert_json_to_create_sql(db_schema.database_schema, sql_path=sql_path)
+    for stmt in sql.split(';'):
+        if not stmt.strip(): continue
         try:
-            conn.sql(stmt)
+            db_conn.sql(stmt.strip())
         except Exception as e:
-            logger.error(f"Error in executing SQL statement: {stmt}\n{e}")
-    conn.close()
+            logger.error(f"Error in CREATE SQL statement: {stmt.strip()}\n{e}")
     return
 
 
-def populate_pdf_file_into_database(
-        database_name: str,
-        pdf_path: str,
-        config_path: Optional[str] = None,
-        on_conflict: str = 'replace'
-    ) -> None:
-    """ Populate the PDF file into the database.
-    @param:
-        database_name: str, database name
-        pdf_path: str, path to the PDF file or JSON line file
-        config_path: str, path to the config file, optional
+def get_pdf_ids_to_encode(database: str, pdf_path: str) -> List[Any]:
+    """ Get the PDF IDs or json data to encode.
     """
-    from utils.database_population import DatabasePopulation
-    populator = DatabasePopulation(database_name)
-    config_path = config_path if config_path is not None else os.path.join('configs', f'{database_name}_config.json')
-    with open(config_path, 'r', encoding='utf-8') as inf:
-        config = json.load(inf)
-    log_to_file = config.get('log', False)
-    write_count = 0
-    start_time = datetime.now()
-    if pdf_path.endswith('.jsonl'):
-        with open(pdf_path, 'r', encoding='utf-8') as inf:
-            for line in tqdm.tqdm(inf):
-                json_data = json.loads(line)
-                if database_name in ["biology_paper", "financial_report"]:
-                    populator.populate(json_data, config, on_conflict=on_conflict, log=log_to_file)
-                elif database_name in ["ai_research"]:
-                    populator.populate(json_data["pdf_path"], config, on_conflict=on_conflict, log=log_to_file)
-                else:
-                    raise ValueError(f"Database {database_name} not supported yet.")
-                current_cost = get_llm_single_instance("gpt-4o").get_cost()
-                current_time = datetime.now() - start_time
-                logger.info(f"[Statistics]: Current Cost: {current_cost} | Current Time: {current_time}")
-                write_count += 1
-    elif pdf_path.endswith(".json"):
-        with open(pdf_path, 'r', encoding='utf-8') as inf:
-            uuids = json.load(inf)
-            for idx, uuid in enumerate(uuids):
-                logger.info(f"Processing PDF {uuid} ({idx+1}/{len(uuids)}) ...")
-                populator.populate(uuid, config, on_conflict=on_conflict, log=log_to_file)
-                current_cost = get_llm_single_instance("gpt-4o").get_cost()
-                current_time = datetime.now() - start_time
-                logger.info(f"[Statistics]: Current Cost: {current_cost} | Current Time: {current_time}")
-                write_count += 1
-    else:
-        populator.populate(pdf_path, config, on_conflict=on_conflict, log=log_to_file)
-        write_count += 1
-    logger.info(f"Total {write_count} PDF parsed and written into database {database_name}.")
-    populator.close()
-    return
+    if not os.path.exists(pdf_path):
+        return [pdf_path]
+
+    with open(pdf_path, 'r', encoding='utf-8') as inf:
+        if pdf_path.endswith('.jsonl'):
+            json_data = [json.loads(line) for line in inf if line.strip()]
+        elif pdf_path.endswith('.json'):
+            json_data = json.load(inf)
+            assert type(json_data) == list, f"Content in file `pdf_path` should be a list: {pdf_path}"
+        else:
+            json_data = [line.strip() for line in inf if line.strip()]
+    
+    if database == 'ai_research':
+        return [data.get('pdf_path', 'uuid') if type(data) == dict else data for data in json_data]
+    return json_data
 
 
 if __name__ == '__main__':
 
-
     import argparse
     parser = argparse.ArgumentParser(description='Database relevant utilities.')
     parser.add_argument('--database', type=str, required=True, help='Database name.')
-    parser.add_argument('--function', type=str, required=True, choices=['create_db', 'populate_db'], help='Which function to run.')
+    parser.add_argument('--pdf_path', type=str, required=True, help='Path to the PDF file or JSON line file.')
     parser.add_argument('--config_path', type=str, help='Path to the config file.')
-    parser.add_argument('--pdf_path', type=str, help='Path to the PDF file or JSON line file.')
-    parser.add_argument('--on_conflict', type=str, default='replace', choices=['replace', 'ignore', 'raise'], help='How to handle the conflict.')
+    parser.add_argument('--on_conflict', type=str, default='ignore', choices=['replace', 'ignore', 'raise'], help='How to handle the database content insertion conflict.')
     parser.add_argument('--from_scratch', action='store_true', help='Whether to create the empty database from scratch.')
     args = parser.parse_args()
 
-    json_path = os.path.join(DATABASE_DIR, args.database, args.database + '.json')
-    sql_path = os.path.join(DATABASE_DIR, args.database, args.database + '.sql')
-    db_path = os.path.join(DATABASE_DIR, args.database, args.database + '.duckdb')
-    if args.function == 'create_db':
-        convert_json_to_create_sql(json_path, sql_path)
-        create_database_from_sql(sql_path, db_path, from_scratch=args.from_scratch)
-    elif args.function == 'populate_db':
-        # logger.info(f"START TIME: {datetime.now()}")
-        populate_pdf_file_into_database(args.database, args.pdf_path, args.config_path, args.on_conflict)
-    else:
-        raise ValueError(f"Function {args.function} not implemented yet.")
+    from utils.data_population import DataPopulation
+    populator = DataPopulation(args.database, from_scratch=args.from_scratch)
+
+    # parse PDF files into the database
+    pdf_ids = get_pdf_ids_to_encode(args.database, args.pdf_path)
+    config_path = args.config_path if args.config_path is not None else os.path.join('configs', f'{args.database}_config.json')
+    with open(config_path, 'r', encoding='utf-8') as inf:
+        config = json.load(inf)
+
+    count: int = 0
+    for input_pdf in tqdm.tqdm(pdf_ids):
+        start_time = datetime.now()
+        try:
+            populator.populate(
+                input_pdf, config,
+                write_to_db=True, write_to_vs=False,
+                on_conflict=args.on_conflict,
+                verbose=False
+            )
+            count += 1
+            logger.info(f"[Statistics]: Parsing time: {datetime.now() - start_time}s")
+        except Exception as e:
+            logger.error(f"Error in parsing PDF {input_pdf}: {e}")
+            continue
+
+    logger.info(f"In total, {count} PDF parsed and written into database {args.database}.")
+    populator.close()

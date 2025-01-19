@@ -1,7 +1,6 @@
 #coding=utf8
 import os, tempfile
 import numpy as np
-import tqdm
 from typing import List, Dict, Union, Any
 from towhee import DataCollection, ops, pipe
 from towhee.runtime.runtime_pipeline import RuntimePipeline
@@ -70,7 +69,7 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
         Note that, `page` starts from 1, and `bbox` is a tuple of length 4 representing (x0, y0, width, height).
         """
         embeddings = []
-        for i in tqdm.tqdm(range(0, len(images), self.image_batch_size)):
+        for i in range(0, len(images), self.image_batch_size):
             temp_image_files = []
             for image_obj in images[i:min(i + self.image_batch_size, len(images))]:
                 image_path = image_obj["path"]

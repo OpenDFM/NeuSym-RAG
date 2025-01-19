@@ -11,7 +11,6 @@ from utils.database_utils import get_database_connection
 from utils.database_schema import DatabaseSchema
 from utils.vectorstore_schema import VectorstoreSchema, VectorstoreCollection
 from utils.functions.ai_research_metadata import get_airqa_paper_metadata
-from utils.functions.pdf_functions import get_pdf_page_text
 
 
 logger = logging.getLogger(__name__)
@@ -340,6 +339,7 @@ def build_bm25_corpus(
     """ Build the BM25 corpus for the vectorstore. Indeed, generate the backup JSON file for BM25 model.
     Directly load the PDF files and extract the text content for all preprocessed papers.
     """
+    from utils.functions.pdf_functions import get_pdf_page_text
     documents = []
     for conference_dir in os.listdir(paper_dir):
         conference_dir = os.path.join(paper_dir, conference_dir)
@@ -364,13 +364,15 @@ def build_bm25_corpus(
     return save_path
 
 
-def encoding_database_content(
+def encode_database_content(
         vs_conn: MilvusClient,
         db_conn: duckdb.DuckDBPyConnection,
         vs_schema: VectorstoreSchema,
         db_schema: DatabaseSchema,
         pdf_id: Optional[Union[List[str], str]] = None,
-        batch_size: int = 128
+        batch_size: int = 128,
+        on_conflict: str = 'ignore',
+        verbose: bool = False
     ) -> None:
     """ Encode the database content into vectors and insert them into the vectorstore.
     @args:
@@ -380,6 +382,8 @@ def encoding_database_content(
         db_schema: DatabaseSchema, the schema of the relational database
         pdf_id: Optional[Union[List[str], str]], the PDF id or id list to encode, if None, encode all records in the DB
         batch_size: int, the batch size for encoding
+        on_conflict: str, if pdf_id is not None, the conflict resolution strategy, chosen from ['ignore', 'replace', 'raise']
+        verbose: bool, whether to print the encoding process or not
     """
     for collection_name in vs_schema.collections:
         # get info of each collection
@@ -398,8 +402,11 @@ def encoding_database_content(
                 # only encode encodable columns
                 if not db_schema.is_encodable(table_name, column_name, modality): continue
 
-                logger.info(f"Extract cell values for table=`{table_name}`, column=`{column_name}` ...")
-                if type(pdf_id) in [list, tuple]:
+                # check conflict if pdf_id is specified, i.e., whether PDF content has been encoded or not
+                check_vectorstore_conflict(vs_conn, collection_name, pdf_id, on_conflict=on_conflict, batch_size=batch_size)
+
+                if verbose: logger.info(f"Extract cell values for table=`{table_name}`, column=`{column_name}` ...")
+                if pdf_id and type(pdf_id) in [list, tuple]:
                     result = []
                     for start_idx in range(0, len(pdf_id), batch_size):
                         batch_pdf_id_str = ', '.join([f"'{str(pid)}'" for pid in pdf_id[start_idx:start_idx + batch_size]])
@@ -451,16 +458,39 @@ def encoding_database_content(
                 
                 # encode the records
                 if len(records) == 0: continue
-                logger.info(f"Encode {len(records)} records into vectors with {et} model: {em} ...")
+                if verbose: logger.info(f"Encode {len(records)} records into vectors with {et} model: {em} ...")
                 vectors: Union[csr_array, List[np.ndarray]] = embedder.encode_documents(documents)
-                logger.info(f"Insert {len(records)} records into collection {collection_name} ...")
+                if verbose: logger.info(f"Insert {len(records)} records into collection {collection_name} ...")
                 for i, record in enumerate(records):
                     record['vector'] = vectors[i] if et not in ['splade', 'bm25'] else vectors[i:i+1, :]
                 vs_conn.insert(collection_name=collection_name, data=records)
     return
 
 
-def get_pdf_ids_to_encode(pdf_path_or_id: str) -> List[str]:
+def check_vectorstore_conflict(
+        vs_conn: MilvusClient,
+        collection_name: str,
+        pdf_id: Optional[Union[str, List[str]]],
+        on_conflict: str = 'ignore',
+        pdf_field: str = 'pdf_id',
+        batch_size: int = 128
+    ) -> None:
+    if on_conflict not in ['replace', 'raise'] or not pdf_id: return
+    if type(pdf_id) == str: pdf_id = [pdf_id]
+
+    for start_idx in range(0, len(pdf_id), batch_size):
+        batch_pdf_id_str = ', '.join([f"'{str(pid)}'" for pid in pdf_id[start_idx:start_idx + batch_size]])
+        filter_condition = f"{pdf_field} in [{batch_pdf_id_str}]"
+        if on_conflict == 'replace':
+            vs_conn.delete(collection_name=collection_name, filter=filter_condition)
+        else:
+            result = vs_conn.query(collection_name=collection_name, filter=filter_condition)
+            if len(result) > 0:
+                raise ValueError(f"PDF id(s) in [{batch_pdf_id_str}] already exist in collection {collection_name}.")
+    return
+
+
+def get_pdf_ids_to_encode(vectorstore: str, pdf_path_or_id: str) -> List[str]:
     """ Get the list of valid PDF ids to encode.
     @args:
         pdf_path_or_id: str, the path to the PDF file or the PDF id [list].
@@ -474,6 +504,8 @@ def get_pdf_ids_to_encode(pdf_path_or_id: str) -> List[str]:
             else:
                 pdf_ids = f.readlines()
                 pdf_ids = [pdf_id.strip() for pdf_id in pdf_ids if pdf_id.strip()]
+        if vectorstore in ['biology_paper', 'financial_report']:
+            pdf_ids = [json.loads(pdf_json)['pdf_id'] for pdf_json in pdf_ids]
         return pdf_ids
     else:
         from utils.functions import is_valid_uuid
@@ -482,7 +514,7 @@ def get_pdf_ids_to_encode(pdf_path_or_id: str) -> List[str]:
                 return [pdf_path_or_id]
             elif ',' in pdf_path_or_id:
                 pdf_ids = pdf_path_or_id.split(',')
-                return get_pdf_ids_to_encode(pdf_ids)
+                return get_pdf_ids_to_encode(vectorstore, pdf_ids)
             else:
                 raise ValueError(f"Invalid PDF path or PDF id: {pdf_path_or_id}.")
         elif type(pdf_path_or_id) in [list, tuple]:
@@ -503,6 +535,7 @@ if __name__ == '__main__':
     parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='host + port for milvus started from docker')
     parser.add_argument('--pdf_path', type=str, help='File containing the list of PDF ids to encode (pls. ensure they exist in the relational database)')
     parser.add_argument('--batch_size', type=int, default=128, help='batch size for pdf content retrieval')
+    parser.add_argument('--on_conflict', type=str, default='ignore', choices=['replace', 'ignore', 'raise'], help='how to handle the database content insertion conflict (a.k.a., the PDF has been processed)')
     parser.add_argument('--from_scratch', action='store_true', help='remove the existed vectorstore or not')
     args = parser.parse_args()
 
@@ -515,9 +548,12 @@ if __name__ == '__main__':
     # initialize the vectorstore schema
     initialize_vectorstore(vs_conn, vs_schema)
 
-    # which pdfs to encode
-    pdf_ids = get_pdf_ids_to_encode(args.pdf_path) if args.pdf_path else None
-    encoding_database_content(vs_conn, db_conn, vs_schema, db_schema, pdf_id=pdf_ids, batch_size=args.batch_size)
+    # pdf ids to encode, by default, all pdfs in the relational database if not specified
+    pdf_ids = get_pdf_ids_to_encode(args.vectorstore, args.pdf_path) if args.pdf_path else None
+    encode_database_content(
+        vs_conn, db_conn, vs_schema, db_schema,
+        pdf_id=pdf_ids, batch_size=args.batch_size, on_conflict=args.on_conflict, verbose=False
+    )
 
     db_conn.close()
     vs_conn.close()

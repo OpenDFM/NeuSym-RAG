@@ -1,11 +1,14 @@
 {
-    "log": 1,
+    "uuid": {
+        "function": "get_ai_research_metadata",
+        "field": "uuid"
+    },
     "pipeline": [
         {
             "function": "get_ai_research_metadata",
             "args": {
                 "deps": [
-                    "pdf_path"
+                    "input_pdf"
                 ],
                 "kwargs": {
                     "model": "gpt-4o",

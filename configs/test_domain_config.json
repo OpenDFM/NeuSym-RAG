@@ -1,10 +1,14 @@
 {
+    "uuid": {
+        "function": "get_pdf_page_text",
+        "field": "pdf_id"
+    },
     "pipeline": [
         {
             "function": "get_pdf_page_text",
             "args": {
                 "deps": [
-                    "pdf_path"
+                    "input_pdf"
                 ],
                 "kwargs": {
                     "generate_uuid": true,

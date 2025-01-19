@@ -6,6 +6,7 @@
 - For ACL or EMNLP, we exclude PDF files that introduce the program committee, e.g., "[Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)](https://aclanthology.org/2024.acl-long.0/)".
 - For NeurIPS or ICLR, we only process accepted papers that have open access PDF URLs, and exclude blog post and rejected submissions (`blog` not in `venue.lower()`, `reject` not in `venue.lower()` and `submitted to` not in `venue.lower()`).
 - For ICASSP, we only maintain papers whose PDF files are printable and parsable.
+  - **[Attention]:** Due to the license of ICASSP conference, we do not provide the archive `.zip` of papers. Raw PDF files can be downloaded according to the field `pdf_url` in the `metadata.zip`.
 
 | Conference | Year | Collected | Source                                           |
 | ---------- | ---- | --------- | ------------------------------------------------ |
