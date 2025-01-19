@@ -83,11 +83,11 @@ class BaseAnnotator(ABC):
     def _annotate(self, **kwargs):
         # Explore the paper
         is_multiple = (self.explorer_cls is MultipleExplorer)
-        for _ in range(1 if self.pid else (30 if is_multiple else 10)):
+        for _ in range(1 if self.pid else 100):
             try:
                 if not self.pid:
                     if is_multiple:
-                        pid = random.choices(used_uuids, k=kwargs.get("paper_count", 3))
+                        pid = random.choices(used_uuids, k=kwargs.get("paper_count", 2))
                     else:
                         pid = random.choice(used_uuids)
                 else:
@@ -125,10 +125,13 @@ class BaseAnnotator(ABC):
             return None
         question, evaluator, answer_format, answer, eval_tag = [s.strip() for s in matched[0][1:]]
         try:
-            evaluator = json.loads(evaluator)
+            evaluator = json.loads(evaluator.replace("'", "\""))
         except Exception as e:
-            logger.info(f"Failed to parse the evaluator. {str(e)} {evaluator}")
-            return None
+            try:
+                evaluator = eval(evaluator)
+            except Exception as e:
+                logger.info(f"Failed to parse the evaluator. {evaluator}")
+                return None
         tags.append(eval_tag)
         
         try:
@@ -202,9 +205,10 @@ if __name__ == "__main__":
     parser.add_argument("--log_dir", type=str, default="./logs")
     parser.add_argument("--write_to_json", type=bool, default=True)
     parser.add_argument("--explore_func", type=str, default=None)
-    parser.add_argument("--paper_count", type=int, default=3)
+    parser.add_argument("--paper_count", type=int, default=2)
     args = parser.parse_args()
     for i in range(args.n):
+        logger.info(f"Annotating #{i+1} ...")
         try:
             getattr(annotation.annotator, args.annotator)(
                 model=args.model, 
