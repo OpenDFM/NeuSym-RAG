@@ -33,6 +33,7 @@ class DataPopulation():
                  vectorstore: Optional[str] = None,
                  launch_method: str = 'standalone',
                  docker_uri: str = 'http://127.0.0.1:19530',
+                 encoding: bool = True,
                  from_scratch: bool = False
         ) -> None:
         """ Initialize the database/vectorstore population object.
@@ -44,11 +45,12 @@ class DataPopulation():
         assert self.database == self.vectorstore, f"Database and vectorstore must be the same, but got {self.database} and {self.vectorstore}."
         self.database_schema: DatabaseSchema = DatabaseSchema(self.database)
         self.database_conn: duckdb.DuckDBPyConnection = get_database_connection(self.database, from_scratch=from_scratch)
-        self.vectorstore_schema: VectorstoreSchema = VectorstoreSchema() # shared schema for all vectorstores
-        self.vectorstore_conn: MilvusClient = get_vectorstore_connection(self.vectorstore, launch_method=launch_method, docker_uri=docker_uri, from_scratch=from_scratch)
+        self.vectorstore_schema: Optional[VectorstoreSchema] = VectorstoreSchema() if encoding else None # shared schema for all vectorstores
+        self.vectorstore_conn: Optional[MilvusClient] = get_vectorstore_connection(self.vectorstore, launch_method=launch_method, docker_uri=docker_uri, from_scratch=from_scratch) if encoding else None
         if from_scratch:
             initialize_database(self.database_conn, self.database_schema)
-            initialize_vectorstore(self.vectorstore_conn, self.vectorstore_schema)
+            if encoding:
+                initialize_vectorstore(self.vectorstore_conn, self.vectorstore_schema)
 
 
     def close(self):
@@ -178,7 +180,7 @@ class DataPopulation():
             if write_to_db:
                 self.insert_values_to_database(insert_sql, values, verbose=verbose)
 
-        if not write_to_vs: return
+        if not write_to_vs or self.vectorstore_conn is None: return
 
         # 4. encode the PDF content into vectors and insert them into the vectorstore
         # get the UUID of the current PDF

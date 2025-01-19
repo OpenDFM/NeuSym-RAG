@@ -190,7 +190,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     from utils.data_population import DataPopulation
-    populator = DataPopulation(args.database, from_scratch=args.from_scratch)
+    populator = DataPopulation(args.database, encoding=False, from_scratch=args.from_scratch)
 
     # parse PDF files into the database
     pdf_ids = get_pdf_ids_to_encode(args.database, args.pdf_path)
