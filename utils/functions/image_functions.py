@@ -4,6 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 import base64
 
 from utils.functions.common_functions import call_llm
+from utils.functions.parallel_functions import parallel_write_or_read
 
 def draw_image_with_bbox(
         image_path: str,
@@ -91,7 +92,8 @@ def get_image_summary(
         max_length: int = 50,
         model: str = 'gpt-4o',
         temperature: float = 0.7,
-        top_p: float = 0.95
+        top_p: float = 0.95,
+        **kwargs
     ) -> str:
     """ Get the image summary using LLM.
     @args:
@@ -106,11 +108,19 @@ def get_image_summary(
     system_template = "You are an intelligent assistant who is expert at summarizing images."
     image_template = f'Please directly return the summary without any extra information or formatting. And you should summarize it in no more than {max_length} words. The image is as follows:'
     
-    summary = call_llm(
-        template=system_template, 
-        model=model, 
-        top_p=top_p, 
-        temperature=temperature,
-        image=get_image_message(base64_image, image_template)
-    )
+    image_message = get_image_message(base64_image, image_template)
+    if kwargs.get("parallel"):
+        summary = parallel_write_or_read(
+            template=system_template, 
+            image=image_message,
+            **kwargs
+        )
+    else:
+        summary = call_llm(
+            template=system_template, 
+            model=model, 
+            top_p=top_p, 
+            temperature=temperature,
+            image=image_message
+        )
     return summary

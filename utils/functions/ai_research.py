@@ -43,7 +43,8 @@ def get_ai_research_page_info(
         max_length: int = 50,
         model: str = 'gpt-4o', 
         temperature: float = 0.7, 
-        top_p: float = 0.95
+        top_p: float = 0.95,
+        **kwargs
     ) -> Dict[str, Union[str, List[str]]]:
     """ Output (page_data):
         Dict[str, Union[str, List[str]]], the output dictionary containing the following keys:
@@ -67,7 +68,8 @@ def get_ai_research_page_info(
             max_length=max_length,
             model=model,
             temperature=temperature,
-            top_p=top_p
+            top_p=top_p,
+            **kwargs
         ).get("text_summary", [])
     page_info["page_uuids"] = [
         get_uuid(name=f"{pdf_name}_page_{page_number}") for page_number in range(1, num_pages + 1)
@@ -113,7 +115,8 @@ def get_ai_research_section_info(
         max_length: int = 50,
         model: str = 'gpt-4o', 
         temperature: float = 0.7, 
-        top_p: float = 0.95
+        top_p: float = 0.95,
+        **kwargs
     ) -> List[Dict[str, Union[str, List[int]]]]:
     """ Output (section_data):
         [
@@ -138,7 +141,8 @@ def get_ai_research_section_info(
                 max_length=max_length,
                 model=model,
                 temperature=temperature,
-                top_p=top_p
+                top_p=top_p,
+                **kwargs
             ).get("text_summary", "")
         sections.append({
             'uuid': get_uuid(name=f"{pdf_name}_section_{idx}"),
@@ -157,7 +161,8 @@ def get_ai_research_per_page_table_info(
         max_length: int = 50,
         model: str = 'gpt-4o', 
         temperature: float = 0.7, 
-        top_p: float = 0.95
+        top_p: float = 0.95,
+        **kwargs
     ) -> List[List[Dict[str, Any]]]:
     """ Output (table_data):
         [ [ {'uuid': uuid1 of page1, 'table_content': table_html ,'table_caption': table caption1, 'bbox': bbox1, 'table_summary':table_summary}, {...} ], [ {...} ] ... ]
@@ -193,7 +198,8 @@ def get_ai_research_per_page_table_info(
                         max_length=max_length,
                         model=model,
                         temperature=temperature,
-                        top_p=top_p
+                        top_p=top_p,
+                        **kwargs
                     )
 
                 table_info = {
@@ -218,7 +224,8 @@ def get_ai_research_per_page_image_info(
         max_length: int = 50,
         model: str = 'gpt-4o', 
         temperature: float = 0.7, 
-        top_p: float = 0.95
+        top_p: float = 0.95,
+        **kwargs
     ) -> List[List[Dict[str, Any]]]:
     """ Output (image_data):
         [ [ {'uuid': uuid, 'image_caption': image_caption, 'image_summary': immage_summary, 'bbox': bbox1}, {...} ], [ {...} ] ... ]
@@ -253,7 +260,8 @@ def get_ai_research_per_page_image_info(
                     max_length=max_length,
                     model=model,
                     temperature=temperature,
-                    top_p=top_p
+                    top_p=top_p,
+                    **kwargs
                 )
             image_info = {
                 "uuid": uuid,

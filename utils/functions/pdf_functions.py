@@ -10,6 +10,7 @@ from pdf2image import convert_from_path
 from pdfminer.layout import LTImage, LTFigure, LTRect
 
 from utils.functions.common_functions import call_llm, get_uuid, call_llm_with_message
+from utils.functions.parallel_functions import parallel_write_or_read
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
@@ -68,7 +69,8 @@ def get_text_summary(
         max_length: int = 50,
         model: str = 'gpt-4o',
         temperature: float = 0.7,
-        top_p: float = 0.95
+        top_p: float = 0.95,
+        **kwargs
     ) -> str:
     """ Get the content summary by extracting the first `num_sentences` sentences from the content.
     @args:
@@ -90,7 +92,12 @@ Please directly return the summary without any extra information or formatting. 
     summary = []
     for text in texts:
         if len(text) > max_length:
-            summary.append(call_llm(prompt_template.format(text=text, max_length=max_length), model=model, top_p=top_p, temperature=temperature))
+            template = prompt_template.format(text=text, max_length=max_length)
+            if kwargs.get("parallel"):
+                response = parallel_write_or_read(template=template, **kwargs)
+            else:
+                response = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
+            summary.append(response)
         else:
             summary.append(text)
     return {'text_summary': summary if type(content[key]) == list else summary[0]}
@@ -100,13 +107,18 @@ def get_table_summary(
         max_length: int = 50,
         model: str = 'gpt-4o',
         temperature: float = 0.7,
-        top_p: float = 0.95
+        top_p: float = 0.95,
+        **kwargs
     ) -> str:
     prompt_template = """You are an expert in summarizing data. Your task is to generate a concise summary for an HTML-formatted table, focusing on key information and describing the table content clearly and succinctly.
 
 Please generate a brief summary for the following table without any extra information or formatting in no more than {max_length} words. \nTable Caption: {table_caption}\nTable Content in html: {table_html}\nHere is your summary:
 """
-    table_summary = call_llm(prompt_template.format(max_length=max_length, table_caption=table['table_caption'], table_html=table['table_html']), model=model, top_p=top_p, temperature=temperature)
+    template = prompt_template.format(max_length=max_length, table_caption=table['table_caption'], table_html=table['table_html'])
+    if kwargs.get("parallel"):
+        table_summary = parallel_write_or_read(template=template, **kwargs)
+    else:
+        table_summary = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
     return table_summary
 
 def crop_pdf(

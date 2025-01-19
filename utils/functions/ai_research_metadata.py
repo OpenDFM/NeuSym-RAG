@@ -1,5 +1,5 @@
 #coding=utf8
-import html, json, requests, shutil, uuid, tempfile, subprocess, sys, os, re, logging
+import html, json, requests, shutil, uuid, tempfile, subprocess, sys, os, re, logging, time
 import urllib, urllib.request
 import xmltodict
 from bs4 import BeautifulSoup
@@ -8,7 +8,9 @@ import fitz, pymupdf # PyMuPDF
 from fuzzywuzzy import fuzz
 import pandas as pd
 from urllib.parse import urlencode
-from .common_functions import is_valid_uuid, get_uuid, call_llm, call_llm_with_message
+
+from utils.functions.common_functions import is_valid_uuid, get_uuid, call_llm, call_llm_with_message, convert_to_message
+from utils.functions.parallel_functions import parallel_write_or_read
 
 
 logger = logging.getLogger(__name__)
@@ -258,7 +260,7 @@ def infer_paper_authors_from_pdf(
         pdf_path: str,
         model: str = 'gpt-4o',
         temperature: float = 0.0 # Use more deterministic decoding with temperature=0.0
-    ) -> list[str]:
+    ) -> List[str]:
     """ Use a language model to infer the authors of a paper from the first page in a PDF.
     """
     doc = fitz.open(pdf_path)
@@ -290,15 +292,19 @@ def infer_paper_tldr_from_metadata(
         max_length: int = 60,
         model: str = 'gpt-4o',
         temperature: float = 0.7,
-        top_p: float = 0.95
+        top_p: float = 0.95,
+        **kwargs
     ) -> str:
     """ Use a language model to infer the TL;DR of a paper based on its title and abstract.
     """
     # Call the language model to infer the TL;DR
-    template = f"""You are an expert in academic papers. Your task is to write a TL;DR (Too Long; Didn't Read) summary for a research paper based on its title and abstract. The TL;DR should:\n1. Be concise and within {max_length} characters.\n2. Capture the main focus or contribution of the paper.\n3. Be written in a single line without extra formatting or context.\n\nHere are the title and abstract of the paper.\nTitle: {pdf_title}\nAbstract: {pdf_abstract}\n\nYour response is:
-    """
-    tldr = call_llm(template, model=model, temperature=temperature, top_p=top_p).strip()
-
+    if kwargs.get("parallel_write"):
+        return None
+    template = f"""You are an expert in academic papers. Your task is to write a TL;DR (Too Long; Didn't Read) summary for a research paper based on its title and abstract. The TL;DR should:\n1. Be concise and within {max_length} characters.\n2. Capture the main focus or contribution of the paper.\n3. Be written in a single line without extra formatting or context.\n\nHere are the title and abstract of the paper.\nTitle: {pdf_title}\nAbstract: {pdf_abstract}\n\nYour response is:"""
+    if kwargs.get("parallel"):
+        tldr = parallel_write_or_read(template, **kwargs).strip()
+    else:
+        tldr = call_llm(template, model=model, temperature=temperature, top_p=top_p).strip()
     return tldr
 
 
@@ -308,16 +314,18 @@ def infer_paper_tags_from_metadata(
         tag_number: int = 5,
         model: str = 'gpt-4o',
         temperature: float = 0.7,
-        top_p: float = 0.95
-    ) -> list[str]:
+        top_p: float = 0.95,
+        **kwargs
+    ) -> List[str]:
     """ Use a language model to infer tags (keywords) of a paper based on its title and abstract.
     """
     # Call the language model to infer the tags
-    template = f"""You are an expert in academic papers. Your task is to generate a list of {tag_number} relevant tags (keywords) for a research paper based on its title and abstract. The tags should:\n1. Be concise and relevant to the paper's main focus.\n2. Be unique (avoid duplicates).\n3. Be written as a comma-separated list.\n\nHere are the title and abstract of the paper.\nTitle: {pdf_title}\nAbstract: {pdf_abstract}\nYour response is:
-    """
-    tags = call_llm(template, model=model, temperature=temperature, top_p=top_p).strip()
+    template = f"""You are an expert in academic papers. Your task is to generate a list of {tag_number} relevant tags (keywords) for a research paper based on its title and abstract. The tags should:\n1. Be concise and relevant to the paper's main focus.\n2. Be unique (avoid duplicates).\n3. Be written as a comma-separated list.\n\nHere are the title and abstract of the paper.\nTitle: {pdf_title}\nAbstract: {pdf_abstract}\nYour response is:\n"""
+    if kwargs.get("parallel"):
+        tags = parallel_write_or_read(template, **kwargs).strip()
+    else:
+        tags = call_llm(template, model=model, temperature=temperature, top_p=top_p, **kwargs).strip()
     tag_list = [tag.strip() for tag in tags.split(',') if tag.strip()]
-
     return tag_list
 
 
@@ -706,12 +714,13 @@ def add_ai_research_metadata(
         temperature: float = 0.7,
         tldr_max_length: int = 50,
         tag_number:int = 5,
-) -> Dict[str, Any]:
+        **kwargs
+    ) -> Dict[str, Any]:
     if metadata['title'] and metadata['abstract']:
         if not metadata.get('tldr', ""):
-            metadata['tldr'] = infer_paper_tldr_from_metadata(pdf_title=metadata['title'],pdf_abstract=metadata['abstract'],max_length=tldr_max_length,model=model,temperature=temperature,)
+            metadata['tldr'] = infer_paper_tldr_from_metadata(pdf_title=metadata['title'],pdf_abstract=metadata['abstract'],max_length=tldr_max_length,model=model,temperature=temperature,**kwargs)
         if not metadata.get('tags', []):
-            metadata['tags'] = infer_paper_tags_from_metadata(pdf_title=metadata['title'],pdf_abstract=metadata['abstract'],tag_number=tag_number,model=model,temperature=temperature)
+            metadata['tags'] = infer_paper_tags_from_metadata(pdf_title=metadata['title'],pdf_abstract=metadata['abstract'],tag_number=tag_number,model=model,temperature=temperature,**kwargs)
     else:
         logger.error(f"Failed to generate TL;DR and tags for paper {metadata['title']} due to missing title or abstract.")
     return metadata
@@ -777,7 +786,7 @@ def get_ai_research_metadata(
             raise ValueError(f"Metadata for paper UUID {pdf_path} not found locally.")
         else:
             if not (metadata.get('tldr', "") and metadata.get('tags', [])):
-                add_ai_research_metadata(metadata=metadata, model=model, temperature=temperature,tldr_max_length=tldr_max_length, tag_number=tag_number)
+                add_ai_research_metadata(metadata=metadata, model=model, temperature=temperature,tldr_max_length=tldr_max_length, tag_number=tag_number,**kwargs)
                 if write_to_json: write_ai_research_metadata_to_json(metadata)
     else:
         if pdf_path.startswith('http') or pdf_path.endswith('.pdf'): # local file path or remote URL
@@ -805,7 +814,7 @@ def get_ai_research_metadata(
             logger.warning(f"Metadata for paper UUID {metadata['uuid']} already exists.")
             metadata = metadata_dict[metadata['uuid']]
             if not (metadata.get('tldr', "") and metadata.get('tags', [])):
-                add_ai_research_metadata(metadata=metadata, model=model, temperature=temperature,tldr_max_length=tldr_max_length, tag_number=tag_number)
+                add_ai_research_metadata(metadata=metadata, model=model, temperature=temperature,tldr_max_length=tldr_max_length, tag_number=tag_number,**kwargs)
                 if write_to_json: write_ai_research_metadata_to_json(metadata)
             return metadata
 
@@ -825,7 +834,7 @@ def get_ai_research_metadata(
         metadata_dict[metadata['uuid']] = metadata
 
         # Generate TL;DR and tags (if abstract is not empty)
-        add_ai_research_metadata(metadata, model=model, temperature=temperature, tldr_max_length=tldr_max_length, tag_number=tag_number)
+        add_ai_research_metadata(metadata, model=model, temperature=temperature, tldr_max_length=tldr_max_length, tag_number=tag_number,**kwargs)
 
         if write_to_json:
             write_ai_research_metadata_to_json(metadata)

@@ -27,11 +27,26 @@ Under each database folder, it at least contains the following three files:
     - `--config_path path_to_config_file` defines the pipeline and aggregation functions to parse the input PDF file. By default, it is set to `configs/{database}_config.json`
     - `--from_scratch` will automatically delete existing `.duckdb` file and initialize a new one
     - `--on_conflict [ignore|replace|raise]` will check the primary key conflict and just ignore|update|raise ValueError concerning the duplicate row. By default, it is set to `ignore`
-```sh
-python utils/database_utils.py --database financial_report --config_path configs/financial_report_config.json --pdf_path data/dataset/tatdqa/processed_data/pdf_data.jsonl --from_scratch --on_conflict ignore
-python utils/database_utils.py --database biology_paper --config_path configs/biology_paper_config.json --pdf_path data/dataset/pdfvqa/processed_data/pdf_data.jsonl --from_scratch --on_conflict ignore
-python utils/database_utils.py --database ai_research --config_path configs/ai_research_config.json --pdf_path data/dataset/airqa/used_uuids_100.json --from_scratch --on_conflict ignore
-```
+    ```sh
+    python utils/database_utils.py --database financial_report --config_path configs/financial_report_config.json --pdf_path data/dataset/tatdqa/processed_data/pdf_data.jsonl --from_scratch --on_conflict ignore
+    python utils/database_utils.py --database biology_paper --config_path configs/biology_paper_config.json --pdf_path data/dataset/pdfvqa/processed_data/pdf_data.jsonl --from_scratch --on_conflict ignore
+    python utils/database_utils.py --database ai_research --config_path configs/ai_research_config.json --pdf_path data/dataset/airqa/used_uuids_100.json --from_scratch --on_conflict ignore
+    ```
+- Parallel summary pre-processing
+    In the population pipeline, we constantly send http requests to LLM for summarying, which is time-consuming. Here, we propose summarying in a batch manner, especially when you have a large number of papers to populate.
+    ```sh
+    python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/used_uuids_100.json --config_path configs/ai_research_pw_config.json
+    python utils/functions/parallel_functions.py --function batch --input data/dataset/airqa/parallel/text_output.jsonl --output data/dataset/airqa/parallel/text_batch.jsonl
+    python utils/functions/parallel_functions.py --function batch --input data/dataset/airqa/parallel/image_output.jsonl --output data/dataset/airqa/parallel/image_batch.jsonl
+    ```
+    This will generate two OpenAI Batch API like input files, see [OpenAI official documents](https://platform.openai.com/docs/guides/batch) for more details.
+    You can process the summary in parallel, supposing you've already got `text_results.jsonl` and `image_results.jsonl` respectively.
+    ```sh
+    python utils/functions/parallel_functions.py --function unbatch --input data/dataset/airqa/parallel/text_results.jsonl --output data/dataset/airqa/parallel/text_input.json
+    python utils/functions/parallel_functions.py --function unbatch --input data/dataset/airqa/parallel/image_results.jsonl --output data/dataset/airqa/parallel/image_input.json
+    python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/used_uuids_100.json --config_path configs/ai_research_pr_config.json
+    ```
+    The whole population process is therefore finished.
 
 
 ## Database Schema File
