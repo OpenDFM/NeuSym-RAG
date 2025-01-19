@@ -9,7 +9,7 @@
                 "kwargs": {
                     "tldr_max_length": 80,
                     "tag_number": 5,
-                    "parallel": {"write": "./data/dataset/airqa/parallel/text.jsonl"}
+                    "parallel": {"write": "./data/dataset/airqa/parallel/text_output.jsonl"}
                 }
             }
         },
@@ -34,7 +34,7 @@
                 ],
                 "kwargs": {
                     "max_length": 50,
-                    "parallel": {"write": "./data/dataset/airqa/parallel/text.jsonl"}
+                    "parallel": {"write": "./data/dataset/airqa/parallel/text_output.jsonl"}
                 }
             }
         },
@@ -47,7 +47,7 @@
                 ],
                 "kwargs": {
                     "max_length": 50,
-                    "parallel": {"write": "./data/dataset/airqa/parallel/text.jsonl"}
+                    "parallel": {"write": "./data/dataset/airqa/parallel/text_output.jsonl"}
                 }
             }
         },
@@ -60,7 +60,7 @@
                 ],
                 "kwargs": {
                     "max_length": 50,
-                    "parallel": {"write": "./data/dataset/airqa/parallel/text.jsonl"}
+                    "parallel": {"write": "./data/dataset/airqa/parallel/text_output.jsonl"}
                 }
             }
         },
@@ -73,7 +73,7 @@
                 ],
                 "kwargs": {
                     "max_length": 50,
-                    "parallel": {"write": "./data/dataset/airqa/parallel/image.jsonl"}
+                    "parallel": {"write": "./data/dataset/airqa/parallel/image_output.jsonl"}
                 }
             }
         }
