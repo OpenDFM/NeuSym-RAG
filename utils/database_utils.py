@@ -209,7 +209,7 @@ if __name__ == '__main__':
                 verbose=False
             )
             count += 1
-            logger.info(f"[Statistics]: Parsing time: {datetime.now() - start_time}s")
+            # logger.info(f"[Statistics]: Parsing time: {datetime.now() - start_time}s")
         except Exception as e:
             logger.error(f"Error in parsing PDF {input_pdf}: {e}")
             continue

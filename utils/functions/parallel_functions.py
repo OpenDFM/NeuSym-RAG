@@ -20,7 +20,11 @@ def parallel_write_or_read(
         return None
     elif parallel.get("read"):
         parallel_dict = json.load(open(parallel["read"], "r", encoding='utf-8'))
-        return parallel_dict[hashed_message]
+        if parallel_dict.get(hashed_message):
+            return parallel_dict[hashed_message]
+        else:
+            print(f"Message {hashed_message} not found in the parallel file.")
+            return None
 
 def parallel_message_to_batch(
         message_group: List[List[Dict[str, str]]], 
@@ -44,6 +48,16 @@ def parallel_message_to_batch(
         )
     return batch_group
 
+
+def parallel_batch_to_dict(
+        batch_group: List[Dict[str, Any]],
+    ):
+    summary_dict = {}
+    for batch in batch_group:
+        summary_dict[batch["custom_id"]] = batch["response"]["body"]["choices"][0]["message"]["content"]
+    return summary_dict
+
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description='Parallel population script.')
@@ -52,7 +66,7 @@ if __name__ == "__main__":
     parser.add_argument("--function", type=str, required=True)
     args = parser.parse_args()
 
-    if args.function == "to_batch":
+    if args.function == "batch":
         message_group, hashed_group = [], []
         with open(args.input, "r", encoding="utf-8") as f:
             for line in f:
@@ -62,5 +76,13 @@ if __name__ == "__main__":
         with open(args.output, "w", encoding="utf-8") as of:
             for message in batch_group:
                 of.write(json.dumps(message) + "\n")
+    elif args.function == "unbatch":
+        batch_group = []
+        with open(args.input, "r", encoding="utf-8") as f:
+            for line in f:
+                batch_group.append(json.loads(line))
+        summary_dict = parallel_batch_to_dict(batch_group)
+        with open(args.output, "w", encoding="utf-8") as of:
+            json.dump(summary_dict, of, ensure_ascii=False, indent=4)
     else:
         raise NotImplementedError(f"Function {args.function} is not supported.")
