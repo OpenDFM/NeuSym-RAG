@@ -1,0 +1,24 @@
+{
+    "uuid": "c7464644-b707-5db9-8151-b941e23d8fe6",
+    "question": "Can you find a research paper that discusses using structured pruning techniques to scale down language models, where the original model being pruned has billions of parameters?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Can you find a research paper that discusses using structured pruning techniques to scale down language models, where the original model being pruned has billions of parameters?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

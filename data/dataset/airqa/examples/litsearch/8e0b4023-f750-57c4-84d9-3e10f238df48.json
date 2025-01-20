@@ -1,0 +1,24 @@
+{
+    "uuid": "8e0b4023-f750-57c4-84d9-3e10f238df48",
+    "question": "Which paper first explored In-context learning in a cross lingual setup and made use of alignment to better it's performance?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper first explored In-context learning in a cross lingual setup and made use of alignment to better it's performance?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

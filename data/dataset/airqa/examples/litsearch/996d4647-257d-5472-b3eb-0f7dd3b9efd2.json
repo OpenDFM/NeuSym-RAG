@@ -1,0 +1,24 @@
+{
+    "uuid": "996d4647-257d-5472-b3eb-0f7dd3b9efd2",
+    "question": "I'm using Local SGD with a decaying learning rate for distributed training. Which paper offers guidance on setting the synchronization period in Local SGD to optimize test accuracy?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "I'm using Local SGD with a decaying learning rate for distributed training. Which paper offers guidance on setting the synchronization period in Local SGD to optimize test accuracy?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

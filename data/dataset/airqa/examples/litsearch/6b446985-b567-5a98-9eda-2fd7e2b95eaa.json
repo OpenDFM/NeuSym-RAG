@@ -1,0 +1,24 @@
+{
+    "uuid": "6b446985-b567-5a98-9eda-2fd7e2b95eaa",
+    "question": "Is there a theory paper that explains why sometimes tuning momentum does not boost performance for training a neural network?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there a theory paper that explains why sometimes tuning momentum does not boost performance for training a neural network?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

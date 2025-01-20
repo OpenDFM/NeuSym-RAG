@@ -1,0 +1,24 @@
+{
+    "uuid": "a9e80013-f5d1-5beb-adf2-9404ca2f6a25",
+    "question": "Which paper explored training a GPT-2 for automatic diagnosis, emphasizing efficient data augmentation for symptom prediction and disease identification?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper explored training a GPT-2 for automatic diagnosis, emphasizing efficient data augmentation for symptom prediction and disease identification?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

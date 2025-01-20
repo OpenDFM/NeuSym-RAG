@@ -1,0 +1,24 @@
+{
+    "uuid": "b594c319-ef1a-5cbc-b18a-586e73fb7fb6",
+    "question": "Which paper studies the concept of enhancing the coverage of a selective prediction system by re-attempting the questions on which it was not sufficiently confident.",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper studies the concept of enhancing the coverage of a selective prediction system by re-attempting the questions on which it was not sufficiently confident."
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

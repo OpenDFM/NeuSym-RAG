@@ -1,0 +1,24 @@
+{
+    "uuid": "62b5dae1-273e-5843-b6aa-5a3ff7f7c7d7",
+    "question": "What paper mitigates language model sampling errors due to the softmax bottleneck?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What paper mitigates language model sampling errors due to the softmax bottleneck?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

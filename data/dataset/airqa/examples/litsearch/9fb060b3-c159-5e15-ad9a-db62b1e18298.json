@@ -1,0 +1,24 @@
+{
+    "uuid": "9fb060b3-c159-5e15-ad9a-db62b1e18298",
+    "question": "Is there a paper that shows that language models' error distribution is different for unfamiliar entities that is not apparent when models are evaluated on familiar entities alone?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there a paper that shows that language models' error distribution is different for unfamiliar entities that is not apparent when models are evaluated on familiar entities alone?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

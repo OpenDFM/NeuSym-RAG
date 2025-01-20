@@ -1,0 +1,24 @@
+{
+    "uuid": "1bea432b-63bb-5d06-98d3-457f2f003270",
+    "question": "How to faithfully and explicitly measure the helpfulness of human explanations to language models during finetuning and inference?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "How to faithfully and explicitly measure the helpfulness of human explanations to language models during finetuning and inference?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

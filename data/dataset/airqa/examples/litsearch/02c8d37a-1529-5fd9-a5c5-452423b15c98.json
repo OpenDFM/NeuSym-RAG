@@ -1,0 +1,24 @@
+{
+    "uuid": "02c8d37a-1529-5fd9-a5c5-452423b15c98",
+    "question": "Which knowledge graph completion method focuses on reducing memory usage by pruning features?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which knowledge graph completion method focuses on reducing memory usage by pruning features?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

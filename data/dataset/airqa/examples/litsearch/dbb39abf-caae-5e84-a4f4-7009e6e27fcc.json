@@ -1,0 +1,24 @@
+{
+    "uuid": "dbb39abf-caae-5e84-a4f4-7009e6e27fcc",
+    "question": "What paper first associate the modeling frequency with input human skeletons under the NeRF framework?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What paper first associate the modeling frequency with input human skeletons under the NeRF framework?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

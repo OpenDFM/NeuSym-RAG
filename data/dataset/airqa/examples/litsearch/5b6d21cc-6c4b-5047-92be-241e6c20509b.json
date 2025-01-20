@@ -1,0 +1,24 @@
+{
+    "uuid": "5b6d21cc-6c4b-5047-92be-241e6c20509b",
+    "question": "Which work discusses an analysis of source and target contributions to output generation based on local interpretation when machine translation models experience hallucinations?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which work discusses an analysis of source and target contributions to output generation based on local interpretation when machine translation models experience hallucinations?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

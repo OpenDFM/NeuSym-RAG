@@ -1,0 +1,24 @@
+{
+    "uuid": "bd2f7817-a4c1-526c-9bd9-90fd5c4be702",
+    "question": "What paper first used the technique of prompt engineering to generate adversarial prompts that can fool LLMs into making wrong predictions in prompt-based learning?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What paper first used the technique of prompt engineering to generate adversarial prompts that can fool LLMs into making wrong predictions in prompt-based learning?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

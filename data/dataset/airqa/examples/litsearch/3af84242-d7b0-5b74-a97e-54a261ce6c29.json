@@ -1,0 +1,24 @@
+{
+    "uuid": "3af84242-d7b0-5b74-a97e-54a261ce6c29",
+    "question": "Which papers were among the first to explore the task of targeted training data extraction?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which papers were among the first to explore the task of targeted training data extraction?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

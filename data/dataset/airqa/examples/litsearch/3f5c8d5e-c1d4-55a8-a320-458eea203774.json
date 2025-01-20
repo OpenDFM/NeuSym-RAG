@@ -1,0 +1,24 @@
+{
+    "uuid": "3f5c8d5e-c1d4-55a8-a320-458eea203774",
+    "question": "What paper evaluated the ability of visual few-shot learning models to do in-context learning?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What paper evaluated the ability of visual few-shot learning models to do in-context learning?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

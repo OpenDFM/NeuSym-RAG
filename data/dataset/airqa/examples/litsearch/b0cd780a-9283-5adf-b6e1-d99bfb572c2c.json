@@ -1,0 +1,24 @@
+{
+    "uuid": "b0cd780a-9283-5adf-b6e1-d99bfb572c2c",
+    "question": "Which paper employs a two-stage approach in generative models to tackle ABSA tasks across various domains?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper employs a two-stage approach in generative models to tackle ABSA tasks across various domains?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

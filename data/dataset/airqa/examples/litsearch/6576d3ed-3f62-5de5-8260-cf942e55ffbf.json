@@ -1,0 +1,24 @@
+{
+    "uuid": "6576d3ed-3f62-5de5-8260-cf942e55ffbf",
+    "question": "Which paper first applied the chain of thought concepts in 3D localization problem?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper first applied the chain of thought concepts in 3D localization problem?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

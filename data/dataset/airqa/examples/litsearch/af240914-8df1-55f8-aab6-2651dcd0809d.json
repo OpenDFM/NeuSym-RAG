@@ -1,0 +1,24 @@
+{
+    "uuid": "af240914-8df1-55f8-aab6-2651dcd0809d",
+    "question": "What paper first uses decoupled workers in distributed RL system?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What paper first uses decoupled workers in distributed RL system?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

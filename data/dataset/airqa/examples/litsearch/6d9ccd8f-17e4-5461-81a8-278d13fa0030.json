@@ -1,0 +1,24 @@
+{
+    "uuid": "6d9ccd8f-17e4-5461-81a8-278d13fa0030",
+    "question": "Which paper utilized MMD flows with Riesz kernels to solve Bayesian inverse problems?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper utilized MMD flows with Riesz kernels to solve Bayesian inverse problems?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

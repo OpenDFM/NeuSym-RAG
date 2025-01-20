@@ -1,0 +1,24 @@
+{
+    "uuid": "c8171524-aa85-5b80-b5fd-2ba1c248619c",
+    "question": "Which paper in human motion generation can control the spatial location of any joints of the human with either dense or sparse 3D points?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper in human motion generation can control the spatial location of any joints of the human with either dense or sparse 3D points?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

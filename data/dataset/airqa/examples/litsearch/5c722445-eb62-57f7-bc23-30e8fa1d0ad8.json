@@ -1,0 +1,24 @@
+{
+    "uuid": "5c722445-eb62-57f7-bc23-30e8fa1d0ad8",
+    "question": "Is there any paper that utilizes Gaussian processes to analyze the vulnerability of text-conditioned generative models?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there any paper that utilizes Gaussian processes to analyze the vulnerability of text-conditioned generative models?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

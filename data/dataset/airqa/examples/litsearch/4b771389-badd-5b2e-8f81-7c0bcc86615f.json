@@ -1,0 +1,24 @@
+{
+    "uuid": "4b771389-badd-5b2e-8f81-7c0bcc86615f",
+    "question": "What research first proposed a new kind of cascaded diffusion of a Markov process?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What research first proposed a new kind of cascaded diffusion of a Markov process?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

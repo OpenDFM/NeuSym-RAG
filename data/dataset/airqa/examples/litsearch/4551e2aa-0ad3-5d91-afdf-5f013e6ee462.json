@@ -1,0 +1,24 @@
+{
+    "uuid": "4551e2aa-0ad3-5d91-afdf-5f013e6ee462",
+    "question": "Which paper first proved that wide-enough transformer architectures trained with gradient methods on enough data would learn to solve relational reasoning tasks?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper first proved that wide-enough transformer architectures trained with gradient methods on enough data would learn to solve relational reasoning tasks?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

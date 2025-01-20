@@ -1,0 +1,24 @@
+{
+    "uuid": "12414998-fe11-534e-a60f-fc32f26740f6",
+    "question": "Which was the first paper to explore the online adaptation of neural MT metrics for use during the inference stage?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which was the first paper to explore the online adaptation of neural MT metrics for use during the inference stage?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

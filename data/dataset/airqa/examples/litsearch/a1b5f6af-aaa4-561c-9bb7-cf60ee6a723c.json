@@ -1,0 +1,24 @@
+{
+    "uuid": "a1b5f6af-aaa4-561c-9bb7-cf60ee6a723c",
+    "question": "Is there any dataset that contains minimally-contrasting social situations that lead to different decisions about which behaviors are appropriate in that situation?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there any dataset that contains minimally-contrasting social situations that lead to different decisions about which behaviors are appropriate in that situation?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

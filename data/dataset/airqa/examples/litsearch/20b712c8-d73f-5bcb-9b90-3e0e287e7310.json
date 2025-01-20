@@ -1,0 +1,24 @@
+{
+    "uuid": "20b712c8-d73f-5bcb-9b90-3e0e287e7310",
+    "question": "Is there an existing dataset of images with alt-text that also includes the text the image was originally posted with?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there an existing dataset of images with alt-text that also includes the text the image was originally posted with?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

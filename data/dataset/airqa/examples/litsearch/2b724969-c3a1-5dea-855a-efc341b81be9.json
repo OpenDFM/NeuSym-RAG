@@ -1,0 +1,24 @@
+{
+    "uuid": "2b724969-c3a1-5dea-855a-efc341b81be9",
+    "question": "Is there any paper that tries to investigate LLMs’ capabilities in solving elliptical constructions by using a test-dataset based on the psycolinguistic notion of Thematic Fit?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there any paper that tries to investigate LLMs’ capabilities in solving elliptical constructions by using a test-dataset based on the psycolinguistic notion of Thematic Fit?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

@@ -1,0 +1,24 @@
+{
+    "uuid": "c81b0f3d-277a-5e55-b39e-1d3c4c5b4154",
+    "question": "Which paper first proposed extracting the pair of target and stance from sentences?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper first proposed extracting the pair of target and stance from sentences?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

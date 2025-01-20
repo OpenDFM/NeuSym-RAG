@@ -1,0 +1,24 @@
+{
+    "uuid": "c90cb36f-2725-5160-ae0f-3e6775b7d684",
+    "question": "What molecular representation learning paper introduced a benchmark that focuses on learning over thermodynamically-accessible conformer ensembles across diverse molecular properties and chemical reactions?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What molecular representation learning paper introduced a benchmark that focuses on learning over thermodynamically-accessible conformer ensembles across diverse molecular properties and chemical reactions?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

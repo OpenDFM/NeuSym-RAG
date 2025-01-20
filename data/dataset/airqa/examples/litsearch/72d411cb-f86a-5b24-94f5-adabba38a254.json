@@ -1,0 +1,24 @@
+{
+    "uuid": "72d411cb-f86a-5b24-94f5-adabba38a254",
+    "question": "Is there any paper that applies symbolic distillation on black-box generalist language models to harvest high-quality counterfactual data for out-of-distribution generalization?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there any paper that applies symbolic distillation on black-box generalist language models to harvest high-quality counterfactual data for out-of-distribution generalization?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

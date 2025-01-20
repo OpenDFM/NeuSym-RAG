@@ -1,0 +1,24 @@
+{
+    "uuid": "a7e03d68-f827-5063-a6e9-0f5e89dc087b",
+    "question": "Is there any paper that attempts to evaluate the similarity of meaning representations without using annotated data?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there any paper that attempts to evaluate the similarity of meaning representations without using annotated data?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

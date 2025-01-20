@@ -1,0 +1,24 @@
+{
+    "uuid": "87d1d8ad-a070-5248-ab99-d3a02e3800f7",
+    "question": "Is there a paper which applies Bayesian optimization to modular continual learning?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there a paper which applies Bayesian optimization to modular continual learning?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

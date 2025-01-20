@@ -1,0 +1,24 @@
+{
+    "uuid": "6a0c47db-59fd-5fd7-b8d7-1dfe0a190d49",
+    "question": "Which pre-trained model is specifically designed for low-resource dialogue summarization tasks?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which pre-trained model is specifically designed for low-resource dialogue summarization tasks?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

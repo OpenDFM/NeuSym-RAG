@@ -1,0 +1,24 @@
+{
+    "uuid": "d3aa216d-6019-547a-8072-41843d12b3bc",
+    "question": "In multimodal (multilingual) abstractive summarization field, is there any paper that propose target-oriented vision modeling method to improve the quality of summaries?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "In multimodal (multilingual) abstractive summarization field, is there any paper that propose target-oriented vision modeling method to improve the quality of summaries?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

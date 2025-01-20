@@ -1,0 +1,24 @@
+{
+    "uuid": "f0c49855-bfbe-547d-9a4c-62e1974f2a5e",
+    "question": "Which paper first study POMDP with enhanced feedback on observations?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper first study POMDP with enhanced feedback on observations?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

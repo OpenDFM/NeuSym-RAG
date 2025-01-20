@@ -1,0 +1,24 @@
+{
+    "uuid": "60d20730-bf2e-5ec7-b30b-a37109bfd347",
+    "question": "Which paper did a comprehensive survey of the code large language model (code LLMs)?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper did a comprehensive survey of the code large language model (code LLMs)?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

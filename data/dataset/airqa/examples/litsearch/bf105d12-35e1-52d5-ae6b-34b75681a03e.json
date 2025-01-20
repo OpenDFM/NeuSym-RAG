@@ -1,0 +1,24 @@
+{
+    "uuid": "bf105d12-35e1-52d5-ae6b-34b75681a03e",
+    "question": "Which vision-language model paper in 2023 developed techniques that reduce input tokens to improve model inference speed?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which vision-language model paper in 2023 developed techniques that reduce input tokens to improve model inference speed?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

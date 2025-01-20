@@ -1,0 +1,24 @@
+{
+    "uuid": "e4290b0b-5d3d-5be0-b1fd-26d18ef56188",
+    "question": "Which paper contains quantitative results demonstrating taking VQ tokens as inputs is inferior to pixel images for dense recognition tasks?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper contains quantitative results demonstrating taking VQ tokens as inputs is inferior to pixel images for dense recognition tasks?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

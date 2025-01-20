@@ -1,0 +1,24 @@
+{
+    "uuid": "e0da2e3c-d723-5101-b754-3a846f25f4cb",
+    "question": "Which paper shows assessment of training instabilities at different levels for language models?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper shows assessment of training instabilities at different levels for language models?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

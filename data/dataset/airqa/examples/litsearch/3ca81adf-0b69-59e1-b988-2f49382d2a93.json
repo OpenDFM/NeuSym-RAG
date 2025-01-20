@@ -1,0 +1,24 @@
+{
+    "uuid": "3ca81adf-0b69-59e1-b988-2f49382d2a93",
+    "question": "Which paper first proposed a cross-domain language model to automatically generate much labeled data for a unlabeled target domain?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper first proposed a cross-domain language model to automatically generate much labeled data for a unlabeled target domain?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

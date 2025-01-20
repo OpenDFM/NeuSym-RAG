@@ -1,0 +1,24 @@
+{
+    "uuid": "47a8cbf7-d740-515e-b61c-15519b2e29c8",
+    "question": "Which paper first used structural information for coherence modeling?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper first used structural information for coherence modeling?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

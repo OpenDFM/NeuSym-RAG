@@ -1,0 +1,24 @@
+{
+    "uuid": "b1c3a086-b181-504e-bb83-e52dbd8d8550",
+    "question": "What is the first paper to address the problem of predicting knowledge graphs whose nodes, links and attributes change with time?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What is the first paper to address the problem of predicting knowledge graphs whose nodes, links and attributes change with time?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

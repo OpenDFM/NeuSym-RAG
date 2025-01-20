@@ -1,0 +1,24 @@
+{
+    "uuid": "11524b8e-0d18-5765-987e-5ff165ac3af1",
+    "question": "Which paper first proposes a unified framework for black-box and white-box detection of AI-written text with explanations?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper first proposes a unified framework for black-box and white-box detection of AI-written text with explanations?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

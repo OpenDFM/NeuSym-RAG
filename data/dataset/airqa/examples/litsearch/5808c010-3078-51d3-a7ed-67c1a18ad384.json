@@ -1,0 +1,24 @@
+{
+    "uuid": "5808c010-3078-51d3-a7ed-67c1a18ad384",
+    "question": "Which work proposes an approach to improve candidate responses in the smart reply task by directly optimizing the metric to ensure that a response is selected by the user?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which work proposes an approach to improve candidate responses in the smart reply task by directly optimizing the metric to ensure that a response is selected by the user?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

@@ -1,0 +1,24 @@
+{
+    "uuid": "f71ae453-0906-5002-b72e-ac2838be241b",
+    "question": "Which family of model generally perform the best for the event conceptualization task",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which family of model generally perform the best for the event conceptualization task"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

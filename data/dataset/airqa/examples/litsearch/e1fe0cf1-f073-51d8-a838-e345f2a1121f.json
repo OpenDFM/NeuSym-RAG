@@ -1,0 +1,24 @@
+{
+    "uuid": "e1fe0cf1-f073-51d8-a838-e345f2a1121f",
+    "question": "What paper compares humans' and language models' non-literal interpretations of utterances featuring phenomena like deceit, irony, and humor?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What paper compares humans' and language models' non-literal interpretations of utterances featuring phenomena like deceit, irony, and humor?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch"
+}
