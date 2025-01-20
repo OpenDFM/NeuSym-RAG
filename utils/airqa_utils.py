@@ -102,7 +102,9 @@ def litsearch_to_airqa(
             "conference": [],
             "evaluator": {
                 "eval_func": "eval_paper_relevance_with_llm",
-                "eval_kwargs": {}
+                "eval_kwargs": {
+                    "question": query["query"]
+                }
             },
             "state": {},
             "annotator": "litsearch"

@@ -200,6 +200,15 @@ Now, let's start!
 
 
 def eval_paper_relevance_with_llm(pred: Any, question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE) -> float:
+    """Evaluate the relevance of the predicted paper with the question.
+    @param:
+        pred: The predicted paper title.
+        question: The input question.
+        llm_model: The LLM model name.
+        temperature: The temperature parameter for LLM.
+    @return:
+        The evaluation score, 0.0 or 1.0.
+    """
     results = get_relevent_papers_by_title(pred)
     if len(results) == 0:
         return 0.0
