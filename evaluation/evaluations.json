@@ -454,7 +454,10 @@
         "use_cases": [
             {
                 "example": {
-                    "question": "Give me a paper that applies Euler's method."
+                    "eval_func": "eval_paper_relevance_with_llm",
+                    "eval_kwargs":{
+                        "question": "Give me a paper that applies Euler's method."
+                    }
                 },
                 "explanation": "In this case, the evaluation checks if the title or abstract of the predicted paper mention \"Euler's method\"."
             }

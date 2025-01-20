@@ -3,6 +3,7 @@ import re, json, os, sys
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from typing import Any, Dict, List, Tuple, Optional
 from utils.functions.common_functions import call_llm, call_llm_with_message
+from utils.airqa_utils import get_relevent_papers_by_title
 
 
 DEFAULT_LLM_MODEL = 'gpt-4o' # may be changed to other open-source models
@@ -198,11 +199,11 @@ Now, let's start!
     return _eval_with_llm(template, llm_model, temperature)
 
 
-def eval_paper_relevance_with_llm(pred: Any, question: str, metadata_path = "./data/dataset/airqa/metadata", llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE) -> float:
-    metadata_file = os.path.join(metadata_path, f"{str(pred)}.json")
-    if not os.path.exists(metadata_path):
+def eval_paper_relevance_with_llm(pred: Any, question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE) -> float:
+    results = get_relevent_papers_by_title(pred)
+    if len(results) == 0:
         return 0.0
-    metadata = json.load(open(metadata_file, "r", encoding="utf-8"))
+    metadata = results[0]
     title, abstract, authors, conference, year, volume = metadata["title"], metadata["abstract"], metadata["authors"], metadata["conference"], metadata["year"], metadata["volume"]
     template = f"""You are an intelligent judgement system who is expert in determining whether the predicted paper matches the given question. You will be given the metadata of the paper, and the original question. And you need to provide the final decision with the following format:
 ```txt
