@@ -189,10 +189,12 @@ def infer_paper_volume_from_pdf(
         first_lines: Optional[int] = 10,
         last_lines: Optional[int] = 10,
         model: str = 'gpt-4o',
-        temperature: float = 0.0 # Use more deterministic decoding with temperature=0.0
+        temperature: float = 0.0, # Use more deterministic decoding with temperature=0.0
+        **kwargs
     ) -> str:
     """ Use a language model to infer the volume of a paper from the top `first_lines` lines and the bottom `last_lines` of the first page in a PDF.
     """
+    if kwargs.get("ignore_llm"): return None
     volume_prompt_path = os.path.join(os.path.dirname(__file__), "volume_prompt.json")
     with open(volume_prompt_path, "r", encoding='utf-8') as f:
        VOLUME_PROMPTS = json.load(f)
@@ -236,10 +238,12 @@ def infer_paper_volume_from_pdf(
 def infer_paper_abstract_from_pdf(
         pdf_path: str,
         model: str = 'gpt-4o',
-        temperature: float = 0.0 # Use more deterministic decoding with temperature=0.0
+        temperature: float = 0.0, # Use more deterministic decoding with temperature=0.0
+        **kwargs
     ) -> str:
     """ Use a language model to infer the abstract of a paper from the first page in a PDF.
     """
+    if kwargs.get("ignore_llm"): return None
     doc = fitz.open(pdf_path)
 
     template = """You are an expert in academic papers. Your task is to identify the abstract of a research paper based on the text from the first {page_num} page(s) in the PDF, extracted using PyMuPDF. Please ensure the following:\n1. Directly return the abstract without adding any extra context, explanations, or formatting.\n2. Do not modify the abstract, retain its original capitalization and punctuation exactly as presented.\n3. If the abstract spans multiple lines, concatenate them into a single line and return it.\n4. If you are certain that the provided text does not contain the paper's abstract, respond only with "abstract not found".\n\nHere is the extracted text:\n\n```txt\n{page_content}\n```\n\nYour response is:\n"""
@@ -716,6 +720,7 @@ def add_ai_research_metadata(
         tag_number:int = 5,
         **kwargs
     ) -> Dict[str, Any]:
+    if kwargs.get("ignore_llm"): return metadata
     if metadata['title'] and metadata['abstract']:
         if not metadata.get('tldr', ""):
             metadata['tldr'] = infer_paper_tldr_from_metadata(pdf_title=metadata['title'],pdf_abstract=metadata['abstract'],max_length=tldr_max_length,model=model,temperature=temperature,**kwargs)
@@ -828,9 +833,9 @@ def get_ai_research_metadata(
         metadata['pdf_path'] = get_airqa_relative_path(pdf_path_renamed)
         metadata['num_pages'] = get_num_pages(pdf_path_renamed)
         if metadata['volume'] is None:
-            metadata['volume'] = infer_paper_volume_from_pdf(pdf_path_renamed, first_lines=volume_lines, last_lines=volume_lines, model=model, temperature=temperature)
+            metadata['volume'] = infer_paper_volume_from_pdf(pdf_path_renamed, first_lines=volume_lines, last_lines=volume_lines, model=model, temperature=temperature,**kwargs)
         if metadata['abstract'] is None:
-            metadata['abstract'] = infer_paper_abstract_from_pdf(pdf_path_renamed, model=model, temperature=temperature)
+            metadata['abstract'] = infer_paper_abstract_from_pdf(pdf_path_renamed, model=model, temperature=temperature,**kwargs)
         metadata_dict[metadata['uuid']] = metadata
 
         # Generate TL;DR and tags (if abstract is not empty)

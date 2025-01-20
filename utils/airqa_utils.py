@@ -147,7 +147,7 @@ def generate_airqa_example_template(**kwargs) -> Dict[str, Any]:
     example_template.update(kwargs)
     example_path = os.path.join(AIRQA_DIR, 'examples')
     if example_template["annotator"] == "litsearch":
-        example_path = os.path.join(example_path, 'litsearch')
+        pass
     elif example_template["annotator"] not in ["human"]:
         example_path = os.path.join(example_path, 'automation')
     with open(os.path.join(example_path, uid + '.json'), 'w', encoding='utf-8') as ouf:
