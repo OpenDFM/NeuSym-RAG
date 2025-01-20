@@ -12,6 +12,7 @@ from agents.models import get_llm_single_instance
 from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid, get_airqa_paper_metadata, get_num_pages, download_paper_pdf, get_airqa_relative_path, add_ai_research_metadata, write_ai_research_metadata_to_json, infer_paper_abstract_from_pdf, infer_paper_authors_from_pdf
 from utils.functions.common_functions import get_uuid
 from bs4 import BeautifulSoup
+from fuzzywuzzy import fuzz
 
 
 logger = logging.getLogger(__name__)
@@ -64,6 +65,26 @@ def get_all_example_uuids(
     """ Extract all example UUIDs from the AIR-QA examples.
     """
     return [os.path.splitext(f)[0] for f in os.listdir(example_dir) if f.endswith('.json')]
+
+
+def get_relevent_papers_by_title(
+        rough_title: str,
+        metadata_dir: str = os.path.join(AIRQA_DIR, 'metadata')
+    ) -> List[str]:
+    """ Get all relevant papers from the AIR-QA metadata.
+    """
+    relevant_papers = []
+    for file in os.listdir(metadata_dir):
+        if file.endswith('.json'):
+            with open(os.path.join(metadata_dir, file), 'r', encoding='utf-8') as inf:
+                data = json.load(inf)
+                title = data['title']
+                score = fuzz.partial_ratio(rough_title.lower(), title.lower())
+                if score >= 80:
+                    data["score"] = score
+                    relevant_papers.append(data)
+    relevant_papers = sorted(relevant_papers, key=lambda x: x['score'], reverse=True)
+    return relevant_papers[:10]
 
 
 def generate_airqa_example_template(**kwargs) -> Dict[str, Any]:
