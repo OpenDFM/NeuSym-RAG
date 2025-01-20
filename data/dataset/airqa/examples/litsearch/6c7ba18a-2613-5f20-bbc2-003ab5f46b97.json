@@ -1,0 +1,22 @@
+{
+    "uuid": "6c7ba18a-2613-5f20-bbc2-003ab5f46b97",
+    "question": "Which numerical reasoning paper first published a dataset that considers different types of size of numbers and their representations in arithmetic questions?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {}
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

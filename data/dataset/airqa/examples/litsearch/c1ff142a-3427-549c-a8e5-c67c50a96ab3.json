@@ -1,0 +1,22 @@
+{
+    "uuid": "c1ff142a-3427-549c-a8e5-c67c50a96ab3",
+    "question": "Which paper systematically examed the input mismatch between training and sampling in diffusion models",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {}
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

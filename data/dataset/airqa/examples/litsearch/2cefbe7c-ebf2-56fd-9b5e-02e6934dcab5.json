@@ -1,0 +1,22 @@
+{
+    "uuid": "2cefbe7c-ebf2-56fd-9b5e-02e6934dcab5",
+    "question": "Is there any paper that automatically creates a dataset for summarizing text from one language to another for a large collection of languages?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {}
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

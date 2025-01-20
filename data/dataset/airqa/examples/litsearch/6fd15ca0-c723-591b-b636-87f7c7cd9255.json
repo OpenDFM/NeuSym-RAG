@@ -1,0 +1,22 @@
+{
+    "uuid": "6fd15ca0-c723-591b-b636-87f7c7cd9255",
+    "question": "Is there a paper illustrating that pre-trained transformers from LLMs can be used to encode visual information in a wide range of scenarios?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {}
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

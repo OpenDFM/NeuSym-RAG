@@ -1,0 +1,22 @@
+{
+    "uuid": "5ce04c75-05ae-5c6a-b8b1-a3437b8c67db",
+    "question": "Which paper shows that in instruction tuning, the instructions can be compressed to small supporting sets of words that provide useful information?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {}
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

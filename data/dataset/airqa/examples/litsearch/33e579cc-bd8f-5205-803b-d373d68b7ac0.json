@@ -1,0 +1,22 @@
+{
+    "uuid": "33e579cc-bd8f-5205-803b-d373d68b7ac0",
+    "question": "Which paper measured how well the source-translation contribution by the translation model can be used to detect its own hallucinations?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {}
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

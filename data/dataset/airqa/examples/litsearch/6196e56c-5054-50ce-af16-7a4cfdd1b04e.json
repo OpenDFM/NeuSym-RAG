@@ -1,0 +1,22 @@
+{
+    "uuid": "6196e56c-5054-50ce-af16-7a4cfdd1b04e",
+    "question": "Is there any paper that reveals annotation problems in cross-lingual summarization caused by decomposing the task into translation and summarization?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {}
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "db9bbbd3-93a9-5e64-a280-6a9e744ba2f6",
+    "question": "Is there a study that shows how to help the demonstration retriever better integrate feedback from LLMs?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {}
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "4e6fde2a-ba42-5561-80fb-62efa1a5a4fa",
+    "question": "Which paper first proposed to combine pretrained masked language models (BERT) and discrete diffusion language models?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {}
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

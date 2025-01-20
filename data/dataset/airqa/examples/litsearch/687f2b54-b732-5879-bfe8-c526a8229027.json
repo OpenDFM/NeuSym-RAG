@@ -1,0 +1,22 @@
+{
+    "uuid": "687f2b54-b732-5879-bfe8-c526a8229027",
+    "question": "Which paper about parameter-efficient finetuning first proposes to feed the pretrained weight instead of the activation to an adapter?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {}
+    },
+    "state": {},
+    "annotator": "litsearch"
+}

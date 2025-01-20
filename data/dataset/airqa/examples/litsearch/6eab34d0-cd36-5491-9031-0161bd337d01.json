@@ -1,0 +1,22 @@
+{
+    "uuid": "6eab34d0-cd36-5491-9031-0161bd337d01",
+    "question": "Is there a paper that utilizes the characteristics of human evolutionary knowledge to guide language models in generating scientific ideas?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {}
+    },
+    "state": {},
+    "annotator": "litsearch"
+}
