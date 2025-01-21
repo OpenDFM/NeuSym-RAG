@@ -120,6 +120,9 @@ class SingleExplorer(BaseExplorer):
     def get_conference(self) -> str:
         return str(self.metadata["conference"]).lower() + str(self.metadata["year"])
     
+    def get_abstract(self) -> str:
+        return self.metadata["abstract"]
+    
     def get_titles(self) -> List[str]:
         return [self.metadata["title"]]
     
@@ -134,9 +137,9 @@ class SingleExplorer(BaseExplorer):
     def single_text(self, **kwargs) -> Any:
         """Single-Step Paradigm: Text Modal.
         @kwargs:
-            context: str, default "section", the context type, either "section" or "page".
+            context: str, default "page", the context type, either "section" or "page".
         """
-        context_type = kwargs.get("context", "section")
+        context_type = kwargs.get("context", "page")
         if context_type == "section":
             content = random.choice(section_partition(self.pdf_data["info_from_mineru"]["TOC"]))
         elif context_type == "page":
@@ -342,3 +345,10 @@ class ComprehensiveExplorer(SingleExplorer):
     """Comprehensive Document Explorer.
     """
     exp_type: str = "comprehensive"
+    def _explore_with_llm(
+            self,
+            template: str,
+            **kwargs
+        ) -> List[Any]:
+        template += "\nThe title of the paper is as follows:\n```txt\n{title}\n```\nThe abstract of the paper is as follows:\n```markdown\n{abstract}\n```\n".format(title=self.get_title(), abstract=self.get_abstract())
+        return super()._explore_with_llm(template, **kwargs)
