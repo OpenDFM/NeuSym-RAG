@@ -7,7 +7,7 @@ from typing import List, Union, Optional, Tuple, Any, Dict
 import fitz, pymupdf # PyMuPDF
 from fuzzywuzzy import fuzz
 import pandas as pd
-from urllib.parse import urlencode
+from urllib.parse import urlencode, quote
 
 from utils.functions.common_functions import is_valid_uuid, get_uuid, call_llm, call_llm_with_message, convert_to_message
 from utils.functions.parallel_functions import parallel_write_or_read
@@ -370,21 +370,28 @@ def arxiv_scholar_api(arxiv_id_or_title: str, **kwargs) -> Tuple[bool, Dict[str,
         see doc in `get_ai_research_metadata`
     """
     ARXIV_API_URL = 'http://export.arxiv.org/api/query'
+    arxiv_id_or_title = arxiv_id_or_title.strip()
+    if re.search(r'^\d+\.\d+$', arxiv_id_or_title) or re.search(r'^\d+\.\d+v\d+$', arxiv_id_or_title):
+        # arxiv id
+        is_arxiv_id = True
+        search_query = arxiv_id_or_title
+    else:
+        is_arxiv_id = False
+        normed_title = re.sub(r'[^a-zA-Z0-9\-]', ' ', arxiv_id_or_title).strip()
+        search_query = f"ti:{quote(normed_title)}"
     options = {
-        "search_query": arxiv_id_or_title,
+        "search_query": search_query,
         "start": 0,
         "max_results": max(1, kwargs.get('limit', 10))
     }
-    search_url = f'{ARXIV_API_URL}?{urlencode(options)}'
     try:
-        xml_response = urllib.request.urlopen(search_url)
+        xml_response = requests.get(ARXIV_API_URL, params=options)
+        xml_response = xml_response.content.decode('utf8')
     except Exception as e:
-        logger.error(f"An unexpected error occurred during calling ARXIV API to search `{search_url}`: {e}")
+        logger.error(f"An unexpected error occurred during calling ARXIV API to search `{arxiv_id_or_title}`: {e}")
         return None
     
-    xml_string = xml_response.read().decode('utf-8')
-    
-    data = xmltodict.parse(xml_string).get("feed", {}).get("entry", {})
+    data = xmltodict.parse(xml_response).get("feed", {}).get("entry", {})
     if data == {} or data == []:
         logger.error(f"Failed to find paper {arxiv_id_or_title} using ARXIV API.")
         return None
@@ -392,9 +399,8 @@ def arxiv_scholar_api(arxiv_id_or_title: str, **kwargs) -> Tuple[bool, Dict[str,
     def select_return_result(data: List[dict]) -> dict:
         if type(data) == dict: data = [data]
         normed_id_or_title = arxiv_id_or_title.lower().strip()
-        is_arxiv_id, filtered_data = False, []
-        if re.search(r'^\d+\.\d+$', normed_id_or_title) or re.search(r'^\d+\.\d+v\d+$', normed_id_or_title): # arxiv id
-            is_arxiv_id = True
+        filtered_data = []
+        if is_arxiv_id:
             normed_id_or_title = re.sub(r'v\d+$', '', normed_id_or_title)
         for hit in data:
             if is_arxiv_id: # require exact match for arxiv id
