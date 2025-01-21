@@ -1,0 +1,30 @@
+{
+    "uuid": "ed62604f-0aad-569a-9105-8381212aeb43",
+    "question": "What is the optimal number of layers to skip for LLaMA2-13B?",
+    "answer_format": "Your answer should be a Python integer number. e.g. 3",
+    "tags": [
+        "single",
+        "image",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "7cffa095-8d51-5490-b0f0-7a6845e37f67"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the result for number of layers skipped for LLaMA2-13B.",
+        "Retrieve the optimal number of layers to skip for LLaMA2-13B."
+    ],
+    "evaluator": {
+        "eval_func": "eval_int_exact_match",
+        "eval_kwargs": {
+            "gold": 40
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
