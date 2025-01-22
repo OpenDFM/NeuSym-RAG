@@ -1,0 +1,37 @@
+{
+    "uuid": "40d036d6-78d8-5a2d-b692-9cb3fb24b3a6",
+    "question": "In Table 2 of the paper \"Train-Attention: Meta-Learning Where to Focus in Continual Knowledge Learning\", which method performs better between TAALM and Rho-1? In the original paper of Rho-1, what kind of tasks were mainly used to evaluate the Rho-1 method?",
+    "answer_format": "Your answer should be a single python list of two strings, the first element is the name of the method, the second element is the type of tasks",
+    "tags": [],
+    "anchor_pdf": ["8c6e03c9-4862-5560-b472-d9ca689cb0ba","22a670fd-c1d3-50d9-9c10-7ef49a3a2c24"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate Table 2 in the paper \"Train-Attention: Meta-Learning Where to Focus in Continual Knowledge Learning\" and compare the experimental results",
+        "Second, turn to the source paper of Rho-1",
+        "Finally, locate the abstract and extract the main types of evaluation tasks."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+          "eval_func_list": [
+            "eval_string_exact_match",
+            "eval_string_fuzzy_match"
+          ],
+          "eval_kwargs_list": [
+            {
+              "gold": "TAALM",
+              "lowercase": false
+            },
+            {
+              "gold": "Math",
+              "lowercase": true
+            }
+          ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
