@@ -1,0 +1,33 @@
+{
+    "uuid": "9cf5ab0b-d8e0-5cee-b756-ba9f5f95b220",
+    "question": "Among existing Math and STEM QA datasets, which dataset includes theorem except TheoremQA? In which paper is this dataset introduced?",
+    "answer_format": "Your answer should be a list of two strings, the first element is the name of the dataset, and the second element is the title of the source paper.",
+    "tags": [
+        "text",
+        "table",
+        "single",
+        "objective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the table about existing Math and STEM QA datasets.",
+        "Second, find the dataset which includes theorem.",
+        "Finally, find the title of source paper in the reference section."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": ["MATH","Measuring mathematical problem solving with the math dataset"],
+            "ignore_order": false,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "cea8e2ce-bf4a-53f5-9f63-9aaf9720500d"
+    ],
+    "reference_pdf": []
+}

@@ -1,0 +1,32 @@
+{
+    "uuid": "424196cb-a6e0-5e75-8b3a-379e266bbcfb",
+    "question": "In terms of multilingual lexical specialization for XLM-R, on which task(s) does Babel-FT get the highest score among the three tasks? Please give the full name of the task, not the abbrievation.",
+    "answer_format": "Your anwser should be a single python list, every element of the list is a string of the full name of the task.",
+    "tags": [
+        "text",
+        "table",
+        "single",
+        "objective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, go to relevant table about the main results of the experiment.",
+        "Second, read the content of the table to find the task name on which Babel-FT gets the highest score for XLM-R.",
+        "Finally, find the full name of this task if the name in the table is an abbrievation."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "bilingual lexicon induction",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "c9e569a7-d140-5c56-9051-0ec058334907"
+    ],
+    "reference_pdf": []
+}
