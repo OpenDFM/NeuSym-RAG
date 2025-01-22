@@ -1,0 +1,24 @@
+{
+    "uuid": "67d0e838-8dfa-5dc0-a3f0-e02f67602c87",
+    "question": "Which paper proposes to integrate black-box LLMs with a pool of smaller but specialized language models?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper proposes to integrate black-box LLMs with a pool of smaller but specialized language models?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

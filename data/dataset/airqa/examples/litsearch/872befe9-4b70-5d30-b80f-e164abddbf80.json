@@ -1,0 +1,24 @@
+{
+    "uuid": "872befe9-4b70-5d30-b80f-e164abddbf80",
+    "question": "What work attempts to explore multi-hop reasoning by densifying commonsense knowledge graphs?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What work attempts to explore multi-hop reasoning by densifying commonsense knowledge graphs?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

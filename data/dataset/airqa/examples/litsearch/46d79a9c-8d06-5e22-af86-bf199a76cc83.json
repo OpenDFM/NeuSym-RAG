@@ -1,0 +1,24 @@
+{
+    "uuid": "46d79a9c-8d06-5e22-af86-bf199a76cc83",
+    "question": "Can we learn to represent an image with arbitary numbers of tokens?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Can we learn to represent an image with arbitary numbers of tokens?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

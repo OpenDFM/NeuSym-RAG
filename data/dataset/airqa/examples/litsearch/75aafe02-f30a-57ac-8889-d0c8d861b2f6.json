@@ -1,0 +1,24 @@
+{
+    "uuid": "75aafe02-f30a-57ac-8889-d0c8d861b2f6",
+    "question": "Is there any paper that address attacks on code models by leveraging the semantic information of the source code through attention scores, while also guaranteeing that the generated adversarial examples can always be compiled successfully?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there any paper that address attacks on code models by leveraging the semantic information of the source code through attention scores, while also guaranteeing that the generated adversarial examples can always be compiled successfully?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

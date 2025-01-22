@@ -1,0 +1,24 @@
+{
+    "uuid": "eb517a7f-3e0b-548d-a7d8-130c62121841",
+    "question": "Is there a single GNN model that can inductively generalize to any knowledge graph?;What is the method to generalize knowledge graph reasoning to graphs with new entities and relations?;Is there a foundation model for knowledge graphs that does not learn embeddings for each node and relation type?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there a single GNN model that can inductively generalize to any knowledge graph?;What is the method to generalize knowledge graph reasoning to graphs with new entities and relations?;Is there a foundation model for knowledge graphs that does not learn embeddings for each node and relation type?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

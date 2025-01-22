@@ -1,0 +1,24 @@
+{
+    "uuid": "1963bd4a-ea54-5d19-a612-056411eac2c3",
+    "question": "What research exists on incorporating knowledge graphs into language models to improve their complex question-answering capabilities?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What research exists on incorporating knowledge graphs into language models to improve their complex question-answering capabilities?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_automatic"
+}

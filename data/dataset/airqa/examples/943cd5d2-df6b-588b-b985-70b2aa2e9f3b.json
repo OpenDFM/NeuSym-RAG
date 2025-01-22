@@ -1,0 +1,24 @@
+{
+    "uuid": "943cd5d2-df6b-588b-b985-70b2aa2e9f3b",
+    "question": "How does the LISA algorithm choose which layers' parameters to freeze at each iteration?",
+    "answer_format": "Your answer should be a python string",
+    "tags": ["single",
+            "subjective",
+            "formula"],
+    "anchor_pdf": ["4557bf76-9ede-5fb2-a271-47a71d382639"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": ["First, locate Algorithm 1 and retrieve information from it",
+                        "Second, find how layers are selected for parameter freezing and get the answer"],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "question":"How does the LISA algorithm choose which layers' parameters to freeze at each iteration?",
+            "reference_answer":"The LISA algorithm samples layer indices through a uniform distribution and freezes the parameters of the sampled layers."
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

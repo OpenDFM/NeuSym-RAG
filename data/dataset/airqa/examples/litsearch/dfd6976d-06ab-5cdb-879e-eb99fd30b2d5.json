@@ -1,0 +1,24 @@
+{
+    "uuid": "dfd6976d-06ab-5cdb-879e-eb99fd30b2d5",
+    "question": "How to achieve zero-shot lip reading?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "How to achieve zero-shot lip reading?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

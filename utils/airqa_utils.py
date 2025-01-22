@@ -87,37 +87,6 @@ def get_relevent_papers_by_title(
     return relevant_papers[:10]
 
 
-def litsearch_to_airqa(
-        litsearch_file: str = "./data/dataset/airqa/examples/litsearch/litsearch.jsonl",
-    ):
-    queries = []
-    with open(litsearch_file, "r", encoding="utf-8") as f:
-        for line in f:
-            queries.append(json.loads(line))
-    for query in queries:
-        kwargs = {
-            "question": query["query"],
-            "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
-            "tags": ["retrieval", "text", "subjective"],
-            "conference": [],
-            "evaluator": {
-                "eval_func": "eval_paper_relevance_with_llm",
-                "eval_kwargs": {
-                    "question": query["query"]
-                }
-            },
-            "state": {},
-            "annotator": "litsearch"
-        }
-        if query["query_set"]=="manual_acl":
-            kwargs["conference"].append("acl2023")
-        elif query["query_set"]=="manual_iclr":
-            kwargs["conference"].append("iclr2024")
-        else:
-            raise ValueError("Invalid query set.")
-        generate_airqa_example_template(**kwargs)
-
-
 def generate_airqa_example_template(dataset_dir: str = AIRQA_DIR, **kwargs) -> Dict[str, Any]:
     """ Generate an AIR-QA example template.
     """
@@ -146,8 +115,8 @@ def generate_airqa_example_template(dataset_dir: str = AIRQA_DIR, **kwargs) -> D
     }
     example_template.update(kwargs)
     example_path = os.path.join(dataset_dir, 'examples')
-    if example_template["annotator"] == "litsearch":
-        pass
+    if example_template["annotator"].startswith("litsearch"):
+        example_path = os.path.join(example_path, 'litsearch')
     elif example_template["annotator"] not in ["human"]:
         example_path = os.path.join(example_path, 'automation')
     with open(os.path.join(example_path, uid + '.json'), 'w', encoding='utf-8') as ouf:

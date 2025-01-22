@@ -1,0 +1,24 @@
+{
+    "uuid": "b3f8fbf4-3e5d-5f54-983c-390a8b494b1e",
+    "question": "What is a paper studying data being collected in bundles in reinforcement learning ?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What is a paper studying data being collected in bundles in reinforcement learning ?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

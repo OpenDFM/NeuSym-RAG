@@ -1,0 +1,24 @@
+{
+    "uuid": "2c6a5897-cdf1-534d-98be-1223575a7960",
+    "question": "Is there a decoder-only language model that does not use a tokenizer and operates on raw text bytes?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there a decoder-only language model that does not use a tokenizer and operates on raw text bytes?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

@@ -1,0 +1,24 @@
+{
+    "uuid": "2b716a60-f23a-5842-958b-6da02b23032e",
+    "question": "Is there commonsense reasoning dataset which generates diverse sentences to describe the relation between concepts?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there commonsense reasoning dataset which generates diverse sentences to describe the relation between concepts?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

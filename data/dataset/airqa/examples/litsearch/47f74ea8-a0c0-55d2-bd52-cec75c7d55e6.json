@@ -1,0 +1,24 @@
+{
+    "uuid": "47f74ea8-a0c0-55d2-bd52-cec75c7d55e6",
+    "question": "In video diffusion models, is there any paper that tried decomposing video instruction into sub instructions of different time?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "In video diffusion models, is there any paper that tried decomposing video instruction into sub instructions of different time?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

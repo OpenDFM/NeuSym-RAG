@@ -1,0 +1,30 @@
+{
+    "uuid": "58bdb8e3-b1ad-5e0a-9c11-ac8b7bf63570",
+    "question": "On average, how many steps does a solution have in the training set of PRM800K, and how many solutions are provided per question?",
+    "answer_format": "Your answer should be a Python list containing two floating-point numbers, each rounded to two decimal places. The first number represents the steps per solution, and the second number represents the solutions per question. Example format: [1.23, 4.56].",
+    "tags": [
+        "single",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "bb9a1e79-91a9-5854-a44f-288b212264d7"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the section that introduces the PRM800K training set.",
+        "Identify the number of step-level labels, solutions, and questions in the training set.",
+        "Calculate the average number of steps per solution and the average number of solutions per question."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [10.67, 6.25]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

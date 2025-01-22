@@ -1,0 +1,24 @@
+{
+    "uuid": "97fbde6e-1efd-5d52-9b7d-44255d2d6ba5",
+    "question": "How to better attract readers to news articles by generating personalized headlines?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "How to better attract readers to news articles by generating personalized headlines?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

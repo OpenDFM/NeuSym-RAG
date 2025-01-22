@@ -1,0 +1,24 @@
+{
+    "uuid": "9db8c181-61d8-52de-bc2f-822e6cfcb122",
+    "question": "Can we reduce visual tokens in vision transformers right from the beginning?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Can we reduce visual tokens in vision transformers right from the beginning?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

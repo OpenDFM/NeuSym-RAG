@@ -1,0 +1,24 @@
+{
+    "uuid": "c74672fa-485b-50d0-8152-ff69c60b9c48",
+    "question": "Is there a paper that connects the basic elements of storytelling with biased or imbalanced media reporting?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there a paper that connects the basic elements of storytelling with biased or imbalanced media reporting?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

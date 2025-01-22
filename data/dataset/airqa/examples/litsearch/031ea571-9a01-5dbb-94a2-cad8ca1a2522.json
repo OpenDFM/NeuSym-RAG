@@ -1,0 +1,24 @@
+{
+    "uuid": "031ea571-9a01-5dbb-94a2-cad8ca1a2522",
+    "question": "Which paper first proposed shared adapter module across layers?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper first proposed shared adapter module across layers?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

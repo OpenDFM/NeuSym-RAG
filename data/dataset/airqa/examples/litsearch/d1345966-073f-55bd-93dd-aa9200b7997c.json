@@ -1,0 +1,24 @@
+{
+    "uuid": "d1345966-073f-55bd-93dd-aa9200b7997c",
+    "question": "Which paper first aggregates statements to represent political actors and learns the mapping from languages to representation via pre-training?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper first aggregates statements to represent political actors and learns the mapping from languages to representation via pre-training?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

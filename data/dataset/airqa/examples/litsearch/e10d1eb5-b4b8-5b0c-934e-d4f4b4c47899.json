@@ -1,0 +1,24 @@
+{
+    "uuid": "e10d1eb5-b4b8-5b0c-934e-d4f4b4c47899",
+    "question": "Which neural theorem proving paper first attempted to prove theorems in a block-by-block manner?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which neural theorem proving paper first attempted to prove theorems in a block-by-block manner?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}
