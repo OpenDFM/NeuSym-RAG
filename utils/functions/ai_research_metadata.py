@@ -52,12 +52,17 @@ def get_airqa_paper_uuid(title: str, conference_year: str = 'uncategorized') -> 
     return get_uuid(paper, uuid_type='uuid5', uuid_namespace='dns')
 
 
-def get_airqa_paper_metadata(uuid_str: Optional[str] = None) -> Dict[str, Any]:
+def get_airqa_paper_metadata(uuid_str: Optional[str] = None, dataset_dir: Optional[str] = None) -> Dict[str, Any]:
     """ Get the metadata dict of a paper in the AIR-QA dataset.
     """
+    if dataset_dir is not None:
+        if not os.path.exists(dataset_dir):
+            logger.error(f"[Error]: The dataset directory {dataset_dir} does not exist.")
+            return None
+    else: dataset_dir = AIRQA_DIR
     global UUID2PAPERS
     if not UUID2PAPERS:
-        metadata_dir = os.path.join(AIRQA_DIR, 'metadata')
+        metadata_dir = os.path.join(dataset_dir, 'metadata')
         files = os.listdir(metadata_dir)
         for f in files:
             fp = os.path.join(metadata_dir, f)
@@ -370,6 +375,7 @@ def arxiv_scholar_api(arxiv_id_or_title: str, **kwargs) -> Tuple[bool, Dict[str,
         **kwargs: Dict[str, Any], other arguments that will be directly passed to the arxiv API
             - limit: int, the maximum number of search results to return, by default 10
             - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 90
+            - dataset_dir: str, folder path to the dataset, by default AIRQA_DIR
     @return: metadata dict
         see doc in `get_ai_research_metadata`
     """
@@ -430,7 +436,11 @@ def arxiv_scholar_api(arxiv_id_or_title: str, **kwargs) -> Tuple[bool, Dict[str,
     arxiv_id = re.sub(r'v\d+$', '', data['id'].split('/')[-1])
     title, subfolder = re.sub(r'\n ', ' ', re.sub(r'\n  ', ' ', data["title"].strip())), f"arxiv{year}"
     paper_uuid = get_airqa_paper_uuid(title, subfolder)
-    pdf_path = os.path.join(AIRQA_DIR, 'papers', subfolder, f'{paper_uuid}.pdf')
+    if kwargs.get('dataset_dir', None) is not None:
+        assert os.path.exists(kwargs['dataset_dir']), f"Invalid dataset directory: {kwargs['dataset_dir']}."
+        dataset_dir = kwargs['dataset_dir']
+    else: dataset_dir = AIRQA_DIR
+    pdf_path = os.path.join(dataset_dir, 'papers', subfolder, f'{paper_uuid}.pdf')
     pdf_url = data['id'].replace('/abs/', '/pdf/') # do not use arxiv id, directly use the pdf link in the returned id
     authors = [author["name"] for author in data["author"]]
     abstract = data["summary"]
@@ -479,6 +489,7 @@ def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 90
             - fields_of_study: List[str], the list of fields of study to filter the search results, e.g., ['Computer Science', 'Linguistics']. By default, no filter
             - start_year: int, the start year of the publication, used to narrow down search result. By default, None
+            - dataset_dir: str, folder path to the dataset, by default AIRQA_DIR
     @return: metadata dict
         see doc in `get_ai_research_metadata`
     """
@@ -535,6 +546,10 @@ def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                 conference_full, conference, subfolder = None, None, 'uncategorized'
             paper_uid = get_airqa_paper_uuid(data['title'], subfolder)
             assert data['openAccessPdf']['url'] and data['citationStyles']['bibtex'], f"Invalid open access URL or bibtex."
+            if kwargs.get('dataset_dir', None) is not None:
+                assert os.path.exists(kwargs['dataset_dir']), f"Invalid dataset directory: {kwargs['dataset_dir']}."
+                dataset_dir = kwargs['dataset_dir']
+            else: dataset_dir = AIRQA_DIR
             metadata_dict = {
                 "uuid": paper_uid,
                 "title": data['title'],
@@ -544,7 +559,7 @@ def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                 "year": year,
                 "authors": [author['name'] for author in data['authors']],
                 "pdf_url": data['openAccessPdf']['url'],
-                "pdf_path": os.path.join(AIRQA_DIR, 'papers', subfolder, f'{paper_uid}.pdf'),
+                "pdf_path": os.path.join(dataset_dir, 'papers', subfolder, f'{paper_uid}.pdf'),
                 "bibtex": data['citationStyles']['bibtex'],
                 "abstract": data['abstract']
             }
@@ -564,6 +579,7 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             - limit: int, the maximum number of search results to return, by default 10
             - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 90
             - allow_arxiv: bool, whether to allow arxiv papers in the search results, by default False
+            - dataset_dir: str, folder path to the dataset, by default AIRQA_DIR
     @return: metadata dict
         see doc in `get_ai_research_metadata`
     """
@@ -693,7 +709,11 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
                 subfolder = conference.lower() + f'{year}' if re.search(r'^[a-z\d]+$', conference.lower()) else 'uncategorized'
 
             paper_uuid = get_airqa_paper_uuid(title, subfolder)
-            pdf_path = os.path.join(AIRQA_DIR, 'papers', subfolder, f'{paper_uuid}.pdf')
+            if kwargs.get('dataset_dir', None) is not None:
+                assert os.path.exists(kwargs['dataset_dir']), f"Invalid dataset directory: {kwargs['dataset_dir']}."
+                dataset_dir = kwargs['dataset_dir']
+            else: dataset_dir = AIRQA_DIR
+            pdf_path = os.path.join(dataset_dir, 'papers', subfolder, f'{paper_uuid}.pdf')
             pdf_url, bibtex = get_dblp_pdf_url(hit['info']['ee']), get_dblp_bibtex(hit['info']['url'])
             if pdf_url is None: # unable to find download link, try the next candidate
                 continue
@@ -737,8 +757,11 @@ def add_ai_research_metadata(
     return metadata
 
 
-def write_ai_research_metadata_to_json(metadata: Dict[str, Any]) -> str:
-    metadata_path = os.path.join(AIRQA_DIR, 'metadata', f"{metadata['uuid']}.json")
+def write_ai_research_metadata_to_json(metadata: Dict[str, Any], dataset_dir: Optional[str] = None) -> str:
+    if dataset_dir is not None:
+        assert os.path.exists(dataset_dir), f"Invalid dataset directory: {dataset_dir}."
+    else: dataset_dir = AIRQA_DIR
+    metadata_path = os.path.join(dataset_dir, 'metadata', f"{metadata['uuid']}.json")
     with open(metadata_path, 'w', encoding='utf8') as of:
         json.dump(metadata, of, indent=4, ensure_ascii=False)
     return metadata_path
@@ -766,6 +789,8 @@ def get_ai_research_metadata(
         model and temperature: str, float, the language model and temperature for title inference
         api_tools: List[str], the list of scholar APIs to use, see function `extract_metadata_from_scholar_api`
         **kwargs: Dict[str, Any], other arguments that will be directly passed to the scholar API functions
+            - dataset_dir: str, the directory to save the metadata and papers PDF, by default AIRQA_DIR
+            - see `extract_metadata_from_scholar_api` for more arguments
     @return: metadata dict (metadata)
         {
             "uuid": "0a02b881-d0b1-59c6-a23e-1feb3bdf4c24", // UUID generated by `get_airqa_paper_uuid`
@@ -798,7 +823,7 @@ def get_ai_research_metadata(
         else:
             if not (metadata.get('tldr', "") and metadata.get('tags', [])):
                 add_ai_research_metadata(metadata=metadata, model=model, temperature=temperature,tldr_max_length=tldr_max_length, tag_number=tag_number,**kwargs)
-                if write_to_json: write_ai_research_metadata_to_json(metadata)
+                if write_to_json: write_ai_research_metadata_to_json(metadata, kwargs.get('dataset_dir', None))
     else:
         if pdf_path.startswith('http') or pdf_path.endswith('.pdf'): # local file path or remote URL
             pdf_path = pdf_path.strip()
@@ -826,7 +851,7 @@ def get_ai_research_metadata(
             metadata = metadata_dict[metadata['uuid']]
             if not (metadata.get('tldr', "") and metadata.get('tags', [])):
                 add_ai_research_metadata(metadata=metadata, model=model, temperature=temperature,tldr_max_length=tldr_max_length, tag_number=tag_number,**kwargs)
-                if write_to_json: write_ai_research_metadata_to_json(metadata)
+                if write_to_json: write_ai_research_metadata_to_json(metadata, kwargs.get('dataset_dir', None))
             return metadata
 
         pdf_path_renamed = metadata['pdf_path']
@@ -848,7 +873,7 @@ def get_ai_research_metadata(
         add_ai_research_metadata(metadata, model=model, temperature=temperature, tldr_max_length=tldr_max_length, tag_number=tag_number,**kwargs)
 
         if write_to_json:
-            write_ai_research_metadata_to_json(metadata)
+            write_ai_research_metadata_to_json(metadata, kwargs.get('dataset_dir', None))
     return metadata
 
 
