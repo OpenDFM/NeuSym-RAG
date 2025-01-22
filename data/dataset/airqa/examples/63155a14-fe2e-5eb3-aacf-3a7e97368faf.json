@@ -1,0 +1,29 @@
+{
+    "uuid": "63155a14-fe2e-5eb3-aacf-3a7e97368faf",
+    "question": "Among the tested models, which model is best for LLM to deal with code problems?",
+    "answer_format": "Your answer should be a python string of the name of the model.",
+    "tags": [
+        "objective",
+        "single",
+        "table"
+    ],
+    "anchor_pdf": [
+        "1f00c9dd-39b4-5302-8fd4-49f0c3a3d857"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, locate the table that contains the results of the tested models.",
+        "Then, find the model that is best for LLM to deal with code problems."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "Llama3-70B"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

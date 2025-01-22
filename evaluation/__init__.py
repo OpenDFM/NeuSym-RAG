@@ -21,7 +21,8 @@ from .llm_functions import (
     eval_reference_answer_with_llm,
     eval_scoring_points_with_llm,
     eval_reference_answer_and_scoring_points_with_llm,
-    eval_paper_relevance_with_llm
+    eval_paper_relevance_with_llm,
+    eval_paper_relevance_with_llm_and_reference_answer
 )
 
 from .formula_functions import (
