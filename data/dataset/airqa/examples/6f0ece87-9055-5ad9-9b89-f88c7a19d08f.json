@@ -1,0 +1,42 @@
+{
+    "uuid": "6f0ece87-9055-5ad9-9b89-f88c7a19d08f",
+    "question": "For the strongest baseline mentioned in \"TIES-Merging: Resolving Interference When Merging Models\", which benchmark and what tasks were used for NLP in the paper which proposed it?",
+    "answer_format": "Your answer should be a python dictionary with the keys \"benchmark\" and \"tasks\". The value for \"benchmark\" should be a string and the value for \"tasks\" should be a list of strings.",
+    "tags": [
+        "multiple",
+        "objective",
+        "text"
+    ],
+    "anchor_pdf": [
+        "153d1505-a286-5ceb-9858-c272e31a7d7e"
+    ],
+    "reference_pdf": [
+        "7efe0293-9ecd-5386-b1c5-a851c7a0fdf1"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find out which baseline is the strongest baseline in the anchor pdf.",
+        "Locate the paper which proposed the strongest baseline.",
+        "Identify the benchmark and tasks used for NLP in that paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_",
+        "eval_kwargs": {
+            "gold": {
+                "benchmark": "GLUE",
+                "tasks": [
+                    "CoLA",
+                    "SST-2",
+                    "MRPC",
+                    "RTE"
+                ]
+            },
+            "ignore_order": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
