@@ -1,0 +1,34 @@
+{
+    "uuid": "6df645eb-d78e-56b7-be7a-8712b3ed7a75",
+    "question": "According to the author's model, what connects emb input and emb output?",
+    "answer_format": "Your answer should be python list, each element of the list is a string.",
+    "tags": [
+        "objective",
+        "single",
+        "text",
+        "table"
+    ],
+    "anchor_pdf": [
+        "1dc45e9f-f844-5e78-b762-7784d6e52eb4"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the model in this paper.",
+        "Then, locate the emb input and emb output in the model.",
+        "Finally, analyze what connected them."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "unified",
+                "emb"
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
