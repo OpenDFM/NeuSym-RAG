@@ -1,7 +1,8 @@
 #coding=utf8
 import re, json, os, sys
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from typing import Any, Dict, List, Tuple, Optional
+from typing import Any, Dict, List, Tuple, Optional, Union
+import fuzzywuzzy.fuzz as fuzz
 from utils.functions.common_functions import call_llm, call_llm_with_message
 from utils.airqa_utils import get_relevent_papers_by_title
 
@@ -199,7 +200,7 @@ Now, let's start!
     return _eval_with_llm(template, llm_model, temperature)
 
 
-def eval_paper_relevance_with_llm(pred: Any, question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE) -> float:
+def eval_paper_relevance_with_llm(pred: Any, question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, dataset_dir: Optional[str] = None, threshold: int = 90, topk: int = 1) -> float:
     """Evaluate the relevance of the predicted paper with the question.
     @param:
         pred: The predicted paper title.
@@ -209,10 +210,14 @@ def eval_paper_relevance_with_llm(pred: Any, question: str, llm_model: str = DEF
     @return:
         The evaluation score, 0.0 or 1.0.
     """
-    results = get_relevent_papers_by_title(pred)
+    results = get_relevent_papers_by_title(pred, dataset_dir=dataset_dir, threshold=threshold, topk=topk)
     if len(results) == 0:
         return 0.0
     metadata = results[0]
+    return check_paper_relevance_with_llm(metadata, question, llm_model, temperature)
+
+
+def check_paper_relevance_with_llm(metadata: Dict[str, Any], question: str, llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE) -> float:
     title, abstract, authors, conference, year, volume = metadata["title"], metadata["abstract"], metadata["authors"], metadata["conference"], metadata["year"], metadata["volume"]
     template = f"""You are an intelligent judgement system who is expert in determining whether the predicted paper matches the given question. You will be given the metadata of the paper, and the original question. And you need to provide the final decision with the following format:
 ```txt
@@ -233,3 +238,23 @@ Now, let's start!
 [Abstract]: {abstract}
 """
     return _eval_with_llm(template, llm_model, temperature)
+
+
+def eval_paper_relevance_with_llm_and_reference_answer(pred: Any, question: str, reference_answer: Union[str, List[str]], llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, dataset_dir: Optional[str] = None, threshold: int = 90, topk: int = 1) -> float:
+    """Evaluate the relevance of the predicted paper with the question and reference answer.
+    @param:
+        pred: The predicted paper title.
+        question: The input question.
+        reference_answer: The reference answer.
+        **kwargs: The kwargs for eval_paper_relevance_with_llm.
+    @return:
+        The evaluation score, 0.0 or 1.0.
+    """
+    results = get_relevent_papers_by_title(pred, dataset_dir=dataset_dir, threshold=threshold, topk=topk)
+    if len(results) == 0:
+        return 0.0
+    metadata = results[0]
+    if (isinstance(reference_answer, str) and fuzz.ratio(metadata["title"].lower(), reference_answer.lower()) >= threshold) or \
+        (isinstance(reference_answer, list) and any(fuzz.ratio(metadata["title"].lower(), ra.lower()) >= threshold for ra in reference_answer)):
+        return 1.0
+    return check_paper_relevance_with_llm(metadata, question, llm_model, temperature)

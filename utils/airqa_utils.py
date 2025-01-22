@@ -69,22 +69,21 @@ def get_all_example_uuids(
 
 def get_relevent_papers_by_title(
         rough_title: str,
-        metadata_dir: str = os.path.join(AIRQA_DIR, 'metadata')
-    ) -> List[str]:
+        threshold: int = 90,
+        topk: int = 1,
+        dataset_dir: Optional[str] = None
+    ) -> List[Dict[str, Any]]:
     """ Get all relevant papers from the AIR-QA metadata.
     """
+    uuid2papers = get_airqa_paper_metadata(dataset_dir=dataset_dir)
     relevant_papers = []
-    for file in os.listdir(metadata_dir):
-        if file.endswith('.json'):
-            with open(os.path.join(metadata_dir, file), 'r', encoding='utf-8') as inf:
-                data = json.load(inf)
-                title = data['title']
-                score = fuzz.partial_ratio(rough_title.lower(), title.lower())
-                if score >= 80:
-                    data["score"] = score
-                    relevant_papers.append(data)
-    relevant_papers = sorted(relevant_papers, key=lambda x: x['score'], reverse=True)
-    return relevant_papers[:10]
+    for uid, data in uuid2papers.items():
+        title = data['title']
+        score = fuzz.partial_ratio(rough_title.lower(), title.lower())
+        if score >= threshold:
+            relevant_papers.append((uid, score))
+    relevant_papers = sorted(relevant_papers, key=lambda x: x[1], reverse=True)
+    return list(map(lambda x: uuid2papers[x[0]], relevant_papers))[:topk]
 
 
 def generate_airqa_example_template(dataset_dir: str = AIRQA_DIR, **kwargs) -> Dict[str, Any]:
