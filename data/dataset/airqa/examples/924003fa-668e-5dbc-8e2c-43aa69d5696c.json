@@ -1,0 +1,32 @@
+{
+    "uuid": "924003fa-668e-5dbc-8e2c-43aa69d5696c",
+    "question": "Both two papers, \"Language and Task Arithmetic with Parameter-Efficient Layers for Zero-Shot Summarization\" and \"Composing Parameter-Efficient Modules with Arithmetic Operation\" focus on arithmetics on parameter-efficient modules. Which setting did the first paper mainly focus on, while the second paper didn't?",
+    "answer_format": "Your answer should be brief text on the setting mainly focused on only by the first paper.",
+    "tags": [
+        "multiple",
+        "subjective",
+        "text"
+    ],
+    "anchor_pdf": [
+        "eee99caa-1041-588f-850b-67dc3a80524c",
+        "501ba611-6203-53af-8077-ea1a893322d4"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Find out the main setting that the first paper mainly focused on.",
+        "Find out the main setting that the second paper mainly focused on.",
+        "Compare the two settings to identify the setting mainly focused on only by the first paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "Cross-lingual transfer on summarization tasks.",
+            "question": "Both two papers, \"Language and Task Arithmetic with Parameter-Efficient Layers for Zero-Shot Summarization\" and \"Composing Parameter-Efficient Modules with Arithmetic Operation\" focus on arithmetics on parameter-efficient modules. Which setting did the first paper mainly focus on, while the second paper didn't?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
