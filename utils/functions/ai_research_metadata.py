@@ -387,7 +387,7 @@ def arxiv_scholar_api(arxiv_id_or_title: str, **kwargs) -> Tuple[bool, Dict[str,
         search_query = arxiv_id_or_title
     else:
         is_arxiv_id = False
-        normed_title = re.sub(r'[^a-zA-Z0-9\-]', ' ', arxiv_id_or_title).strip()
+        normed_title = re.sub(r'[^a-zA-Z0-9]', ' ', arxiv_id_or_title).strip()
         search_query = f"ti:{quote(normed_title)}"
     options = {
         "search_query": search_query,
