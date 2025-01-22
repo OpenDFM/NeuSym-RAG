@@ -1,0 +1,24 @@
+{
+    "uuid": "318936fb-a177-57c1-9a95-fc9b46e53fc4",
+    "question": "Which paper was the first to propose combining human spoken language and sign language datasets with gloss annotations to enhance the performance of sign language translation?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper was the first to propose combining human spoken language and sign language datasets with gloss annotations to enhance the performance of sign language translation?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

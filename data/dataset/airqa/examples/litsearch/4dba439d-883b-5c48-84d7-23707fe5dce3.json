@@ -1,0 +1,24 @@
+{
+    "uuid": "4dba439d-883b-5c48-84d7-23707fe5dce3",
+    "question": "Is there any paper that utilizes graph structure to model conversation history?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there any paper that utilizes graph structure to model conversation history?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

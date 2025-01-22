@@ -1,0 +1,24 @@
+{
+    "uuid": "6de3de7e-208b-59d6-8738-7dff03b31a02",
+    "question": "*Could you suggest a dataset with legally or ethically contentious content, and labels for acceptable and non-acceptable questions.",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "*Could you suggest a dataset with legally or ethically contentious content, and labels for acceptable and non-acceptable questions."
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_automatic"
+}

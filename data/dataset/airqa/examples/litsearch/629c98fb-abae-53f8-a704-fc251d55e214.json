@@ -1,0 +1,24 @@
+{
+    "uuid": "629c98fb-abae-53f8-a704-fc251d55e214",
+    "question": "What paper is the first to prove finetuned LLM can be a reliable judge?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What paper is the first to prove finetuned LLM can be a reliable judge?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

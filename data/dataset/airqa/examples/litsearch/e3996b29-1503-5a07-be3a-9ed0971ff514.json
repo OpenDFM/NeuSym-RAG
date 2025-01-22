@@ -1,0 +1,24 @@
+{
+    "uuid": "e3996b29-1503-5a07-be3a-9ed0971ff514",
+    "question": "Is there any paper leverages knowledge distillation of language models for textual out-of-distribution detection or anomaly detection?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there any paper leverages knowledge distillation of language models for textual out-of-distribution detection or anomaly detection?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

@@ -1,0 +1,24 @@
+{
+    "uuid": "a2a7a587-b63e-582a-a357-9c5ef3291158",
+    "question": "Which paper investigates the influence of the diversity of source tasks on the performance of target tasks in prompt tuning using CrossFit?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper investigates the influence of the diversity of source tasks on the performance of target tasks in prompt tuning using CrossFit?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

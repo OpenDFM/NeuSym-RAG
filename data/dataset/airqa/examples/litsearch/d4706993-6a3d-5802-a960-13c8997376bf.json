@@ -1,0 +1,24 @@
+{
+    "uuid": "d4706993-6a3d-5802-a960-13c8997376bf",
+    "question": "Is there any paper that seamlessly integrates the multigrid structure in operator learning for solving partial differential equations (PDEs)?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there any paper that seamlessly integrates the multigrid structure in operator learning for solving partial differential equations (PDEs)?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

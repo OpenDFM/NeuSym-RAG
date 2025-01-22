@@ -1,0 +1,24 @@
+{
+    "uuid": "c55e4638-5a84-5840-8a4f-ab246732d9a0",
+    "question": "Could you recommend research that assesses how well language learning models, such as ChatGPT, perform in creating reading comprehension tasks for educational software?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Could you recommend research that assesses how well language learning models, such as ChatGPT, perform in creating reading comprehension tasks for educational software?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_automatic"
+}

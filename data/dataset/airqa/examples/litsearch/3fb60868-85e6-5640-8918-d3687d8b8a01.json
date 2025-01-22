@@ -1,0 +1,24 @@
+{
+    "uuid": "3fb60868-85e6-5640-8918-d3687d8b8a01",
+    "question": "What are some methods for solving the class-incremetal continual learning problems?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What are some methods for solving the class-incremetal continual learning problems?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

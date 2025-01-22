@@ -1,0 +1,24 @@
+{
+    "uuid": "2adf3d69-0ed0-574a-a042-827e893e1752",
+    "question": "Is there a paper exploring the curse of multilinguality for similar languages?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Is there a paper exploring the curse of multilinguality for similar languages?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

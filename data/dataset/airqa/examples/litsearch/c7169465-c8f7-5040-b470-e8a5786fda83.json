@@ -1,0 +1,24 @@
+{
+    "uuid": "c7169465-c8f7-5040-b470-e8a5786fda83",
+    "question": "Which paper introduces the R-GCN technique into document-level joint entity and relation extraction?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which paper introduces the R-GCN technique into document-level joint entity and relation extraction?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

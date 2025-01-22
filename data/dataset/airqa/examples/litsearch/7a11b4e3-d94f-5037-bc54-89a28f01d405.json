@@ -1,0 +1,24 @@
+{
+    "uuid": "7a11b4e3-d94f-5037-bc54-89a28f01d405",
+    "question": "What paper first proposed a robust perceptual similarity metric with certificates?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What paper first proposed a robust perceptual similarity metric with certificates?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

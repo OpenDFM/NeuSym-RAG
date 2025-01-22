@@ -1,0 +1,24 @@
+{
+    "uuid": "252f8252-cbce-5f3e-9b8a-3f6641391f6f",
+    "question": "Which language model distillation paper that first identified the capacity gap in distillation and used the MoE student model to counter the curse of capacity gap?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Which language model distillation paper that first identified the capacity gap in distillation and used the MoE student model to counter the curse of capacity gap?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

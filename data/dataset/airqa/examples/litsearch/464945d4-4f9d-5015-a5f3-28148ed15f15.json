@@ -1,0 +1,24 @@
+{
+    "uuid": "464945d4-4f9d-5015-a5f3-28148ed15f15",
+    "question": "What paper first adapted ControlNet to generate continuous videos in a training-free manner?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "What paper first adapted ControlNet to generate continuous videos in a training-free manner?"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

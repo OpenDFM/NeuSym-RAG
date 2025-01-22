@@ -1,0 +1,24 @@
+{
+    "uuid": "ab9ad124-15c6-5ba1-8ee6-510485cc06b9",
+    "question": "Provide an example of a paper which proposes a method to learn a dynamic (conditioned on the input) sequence tokenizer (segmenter) via standard gradient backpropagation.",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm",
+        "eval_kwargs": {
+            "question": "Provide an example of a paper which proposes a method to learn a dynamic (conditioned on the input) sequence tokenizer (segmenter) via standard gradient backpropagation."
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}
