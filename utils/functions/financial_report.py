@@ -4,7 +4,6 @@ from typing import List, Dict, Union, Optional, Any, Iterable
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from utils.functions.common_functions import get_uuid,call_llm
 import fitz  # PyMuPDF
-from unstructured.partition.pdf import partition_pdf #table extraction
 import tempfile
 from pdf2image import convert_from_path
 
@@ -87,6 +86,13 @@ def get_financial_report_per_page_tableinpages(pdf_data: dict, model='gpt-4o', t
     Output:
         [ { "page_number": int, "table_html": str, "table_bbox": list, "table_summary":str } ]
     """
+    try:
+        # for table extraction, using: pip install "unstructured[all-docs]==0.16.0"
+        from unstructured.partition.pdf import partition_pdf 
+    except ImportError:
+        logging.error("Please install the unstructured library using 'pip install \"unstructured[all-docs]==0.16.0\"'")
+        exit(1)
+
     table_data = []
     pdf_path=pdf_data['pdf_path']
     
