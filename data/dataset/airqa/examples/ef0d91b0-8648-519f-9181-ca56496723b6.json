@@ -1,0 +1,22 @@
+{
+    "uuid": "ef0d91b0-8648-519f-9181-ca56496723b6",
+    "question": "What is the maximum gain obtained by adding more outputs in all the datasets tested?",
+    "answer_format": "Your answer should be a floating point numbers with three decimal places.",
+    "tags": ["single", "text", "table", "objective"],
+    "anchor_pdf": ["7e26b1a7-5536-5b8d-b5cd-068508c15c2e"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": ["First, locate the part of text that discusses the effect of different output numbers", "Second, locate the table that shows the performance of different output numbers",
+                        "Third, calculate the gain of adding more outputs in all the datasets tested", "Finally, find the maximum gain obtained by adding more outputs in all the datasets tested"],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 0.033,
+            "ndigits": 3
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

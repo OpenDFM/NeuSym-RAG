@@ -1,0 +1,25 @@
+{
+    "uuid": "7236429c-2845-556e-98c9-886d6a05c384",
+    "question": "How much higher ASRs do user cases with high content freedom yield, compared to those with low content freedom?",
+    "answer_format": "Your answer should be a floating point numbers with one decimal places.",
+    "tags": ["single", "image", "objective"],
+    "anchor_pdf": ["ab9342dc-a363-5a2a-b678-043637e4dd05"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the part of text that comparing the effect of high content freedom or low content freedom.",
+        "Second, locate the figure mentioned in the text.",
+        "Finally, read the ASR numbers from the figure and calculate the difference between the two settings."
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 18.3,
+            "ndigits": 1
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
