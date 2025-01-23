@@ -1,0 +1,32 @@
+{
+    "uuid": "74d535a9-5796-57d9-81c8-0c68e3c7188d",
+    "question": "How many programming languages in The Stack are selected in the code dataset used for hypernetwork training in the Anchor PDF?",
+    "answer_format": "Your answer should be a single integer.",
+    "tags": [
+        "multiple",
+        "objective",
+        "text"
+    ],
+    "anchor_pdf": [
+        "e3687846-983e-5174-b918-cf7abd297030"
+    ],
+    "reference_pdf": [
+        "6d6f8a4b-0f39-5f6f-9513-678e6f490f84"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the code dataset used for hypernetwork training in the Anchor PDF, which is usually in the experimental section.",
+        "Locate the relevant reference paper.",
+        "Retrieve the number of programming languages in The Stack that are selected in this dataset, which is usually mentioned in the dataset description."
+    ],
+    "evaluator": {
+        "eval_func": "eval_int_exact_match",
+        "eval_kwargs": {
+            "gold": 86
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
