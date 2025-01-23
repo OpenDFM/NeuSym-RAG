@@ -1,0 +1,49 @@
+{
+    "uuid": "546c4f0c-bbb9-5de6-913b-c1685321039c",
+    "question": "In the anchor PDF, which model-free algorithm applies weakly communicating MDP assumption? What's the algorithm's main contribution in the online setting, regarding the assumption?",
+    "answer_format": "Your answer should be a Python list of two strings, the first string is the name of the algorithm, and the second string is its main contribution.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "0a38545d-1e82-5713-ae3f-157bb8623bc0"
+    ],
+    "reference_pdf": [
+        "44ea9e05-6b8f-555d-b68d-ccc7fac68de7",
+        "4f363689-4ccd-5ee7-b03b-ef64fcf1544a"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the table that lists the details of the algorithms.",
+        "Identify the algorithm",
+        "Find the corresponding paper",
+        "Read the introduction section to find the contribution."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "UCB-AVG",
+                    "lowercase": true,
+                    "ignore_blank": true
+                },
+                {
+                    "reference_answer": "Our algorithm is the first computationally efficient model-free method with \\tilde{O}(\\sqrt{T}) regret for weakly communicating MDPs.",
+                    "question": "What's the algorithm's main contribution in the online setting, regarding the assumption?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
