@@ -6,7 +6,11 @@
     "anchor_pdf": ["cd0d4b90-0516-5e63-9e18-2ede1bcc6dda","287db02d-6d1e-5059-89f8-eb6973610a6b"],
     "reference_pdf": [],
     "conference": [],
-    "reasoning_steps": [],
+    "reasoning_steps": [
+        "First, locate Section 3.2 Long-context Benchmarks and extract the two benchmarks.",
+        "Turn to the source paper of the Retrieval head.",
+        "Locate the beginning of the paper to extract the meta data, which will provide the institutions associated with the paper."
+    ],
     "evaluator": {
         "eval_func": "eval_conjunction",
         "eval_kwargs": {
