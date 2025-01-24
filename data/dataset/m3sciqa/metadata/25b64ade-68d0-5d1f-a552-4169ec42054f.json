@@ -1,0 +1,19 @@
+{
+    "uuid": "25b64ade-68d0-5d1f-a552-4169ec42054f",
+    "title": "Language Models as Zero-Shot Planners: Extracting Actionable Knowledge for Embodied Agents",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Wenlong Huang",
+        "Pieter Abbeel",
+        "Deepak Pathak",
+        "Igor Mordatch"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2201.07207v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\25b64ade-68d0-5d1f-a552-4169ec42054f.pdf",
+    "bibtex": "@misc{huang2022languagemodelsaszeroshotplanners,\n    title = {Language Models as Zero-Shot Planners: Extracting Actionable Knowledge for Embodied Agents},\n    author = {Wenlong Huang and Pieter Abbeel and Deepak Pathak and Igor Mordatch},\n    year = {2022},\n    eprint = {2201.07207},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2201.07207},\n}",
+    "abstract": "Can world knowledge learned by large language models (LLMs) be used to act in\ninteractive environments? In this paper, we investigate the possibility of\ngrounding high-level tasks, expressed in natural language (e.g. \"make\nbreakfast\"), to a chosen set of actionable steps (e.g. \"open fridge\"). While\nprior work focused on learning from explicit step-by-step examples of how to\nact, we surprisingly find that if pre-trained LMs are large enough and prompted\nappropriately, they can effectively decompose high-level tasks into mid-level\nplans without any further training. However, the plans produced naively by LLMs\noften cannot map precisely to admissible actions. We propose a procedure that\nconditions on existing demonstrations and semantically translates the plans to\nadmissible actions. Our evaluation in the recent VirtualHome environment shows\nthat the resulting method substantially improves executability over the LLM\nbaseline. The conducted human evaluation reveals a trade-off between\nexecutability and correctness but shows a promising sign towards extracting\nactionable knowledge from language models. Website at\nhttps://huangwl18.github.io/language-planner",
+    "num_pages": 33
+}

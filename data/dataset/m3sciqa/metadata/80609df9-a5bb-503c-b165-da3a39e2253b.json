@@ -1,0 +1,23 @@
+{
+    "uuid": "80609df9-a5bb-503c-b165-da3a39e2253b",
+    "title": "Do Transformers Really Perform Bad for Graph Representation?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Chengxuan Ying",
+        "Tianle Cai",
+        "Shengjie Luo",
+        "Shuxin Zheng",
+        "Guolin Ke",
+        "Di He",
+        "Yanming Shen",
+        "Tie-Yan Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.05234v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\80609df9-a5bb-503c-b165-da3a39e2253b.pdf",
+    "bibtex": "@misc{ying2021dotransformersreallyperformbad,\n    title = {Do Transformers Really Perform Bad for Graph Representation?},\n    author = {Chengxuan Ying and Tianle Cai and Shengjie Luo and Shuxin Zheng and Guolin Ke and Di He and Yanming Shen and Tie-Yan Liu},\n    year = {2021},\n    eprint = {2106.05234},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2106.05234},\n}",
+    "abstract": "The Transformer architecture has become a dominant choice in many domains,\nsuch as natural language processing and computer vision. Yet, it has not\nachieved competitive performance on popular leaderboards of graph-level\nprediction compared to mainstream GNN variants. Therefore, it remains a mystery\nhow Transformers could perform well for graph representation learning. In this\npaper, we solve this mystery by presenting Graphormer, which is built upon the\nstandard Transformer architecture, and could attain excellent results on a\nbroad range of graph representation learning tasks, especially on the recent\nOGB Large-Scale Challenge. Our key insight to utilizing Transformer in the\ngraph is the necessity of effectively encoding the structural information of a\ngraph into the model. To this end, we propose several simple yet effective\nstructural encoding methods to help Graphormer better model graph-structured\ndata. Besides, we mathematically characterize the expressive power of\nGraphormer and exhibit that with our ways of encoding the structural\ninformation of graphs, many popular GNN variants could be covered as the\nspecial cases of Graphormer.",
+    "num_pages": 19
+}

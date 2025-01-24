@@ -1,0 +1,19 @@
+{
+    "uuid": "7ade11d4-01d2-59a3-b576-0fdf7b7e63a8",
+    "title": "Improving Time Sensitivity for Question Answering over Temporal Knowledge Graphs",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Chao Shang",
+        "Guangtao Wang",
+        "Peng Qi",
+        "Jing Huang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.00255v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\7ade11d4-01d2-59a3-b576-0fdf7b7e63a8.pdf",
+    "bibtex": "@misc{shang2022improvingtimesensitivityforquestion,\n    title = {Improving Time Sensitivity for Question Answering over Temporal Knowledge Graphs},\n    author = {Chao Shang and Guangtao Wang and Peng Qi and Jing Huang},\n    year = {2022},\n    eprint = {2203.00255},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.00255},\n}",
+    "abstract": "Question answering over temporal knowledge graphs (KGs) efficiently uses\nfacts contained in a temporal KG, which records entity relations and when they\noccur in time, to answer natural language questions (e.g., \"Who was the\npresident of the US before Obama?\"). These questions often involve three\ntime-related challenges that previous work fail to adequately address: 1)\nquestions often do not specify exact timestamps of interest (e.g., \"Obama\"\ninstead of 2000); 2) subtle lexical differences in time relations (e.g.,\n\"before\" vs \"after\"); 3) off-the-shelf temporal KG embeddings that previous\nwork builds on ignore the temporal order of timestamps, which is crucial for\nanswering temporal-order related questions. In this paper, we propose a\ntime-sensitive question answering (TSQA) framework to tackle these problems.\nTSQA features a timestamp estimation module to infer the unwritten timestamp\nfrom the question. We also employ a time-sensitive KG encoder to inject\nordering information into the temporal KG embeddings that TSQA is based on.\nWith the help of techniques to reduce the search space for potential answers,\nTSQA significantly outperforms the previous state of the art on a new benchmark\nfor question answering over temporal KGs, especially achieving a 32% (absolute)\nerror reduction on complex questions that require multiple steps of reasoning\nover facts in the temporal KG.",
+    "num_pages": 10
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "e41d952a-d067-52a4-9fea-12aa78420924",
+    "title": "Denoising Diffusion Implicit Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Jiaming Song",
+        "Chenlin Meng",
+        "Stefano Ermon"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.02502v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\e41d952a-d067-52a4-9fea-12aa78420924.pdf",
+    "bibtex": "@misc{song2022denoisingdiffusionimplicitmodels,\n    title = {Denoising Diffusion Implicit Models},\n    author = {Jiaming Song and Chenlin Meng and Stefano Ermon},\n    year = {2022},\n    eprint = {2010.02502},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2010.02502},\n}",
+    "abstract": "Denoising diffusion probabilistic models (DDPMs) have achieved high quality\nimage generation without adversarial training, yet they require simulating a\nMarkov chain for many steps to produce a sample. To accelerate sampling, we\npresent denoising diffusion implicit models (DDIMs), a more efficient class of\niterative implicit probabilistic models with the same training procedure as\nDDPMs. In DDPMs, the generative process is defined as the reverse of a\nMarkovian diffusion process. We construct a class of non-Markovian diffusion\nprocesses that lead to the same training objective, but whose reverse process\ncan be much faster to sample from. We empirically demonstrate that DDIMs can\nproduce high quality samples $10 \\times$ to $50 \\times$ faster in terms of\nwall-clock time compared to DDPMs, allow us to trade off computation for sample\nquality, and can perform semantically meaningful image interpolation directly\nin the latent space.",
+    "num_pages": 22
+}

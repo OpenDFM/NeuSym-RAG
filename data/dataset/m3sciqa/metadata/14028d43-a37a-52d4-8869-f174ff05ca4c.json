@@ -1,0 +1,21 @@
+{
+    "uuid": "14028d43-a37a-52d4-8869-f174ff05ca4c",
+    "title": "SimVLM: Simple Visual Language Model Pretraining with Weak Supervision",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Zirui Wang",
+        "Jiahui Yu",
+        "Adams Wei Yu",
+        "Zihang Dai",
+        "Yulia Tsvetkov",
+        "Yuan Cao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2108.10904v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\14028d43-a37a-52d4-8869-f174ff05ca4c.pdf",
+    "bibtex": "@misc{wang2022simvlmsimplevisuallanguagemodel,\n    title = {SimVLM: Simple Visual Language Model Pretraining with Weak Supervision},\n    author = {Zirui Wang and Jiahui Yu and Adams Wei Yu and Zihang Dai and Yulia Tsvetkov and Yuan Cao},\n    year = {2022},\n    eprint = {2108.10904},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2108.10904},\n}",
+    "abstract": "With recent progress in joint modeling of visual and textual representations,\nVision-Language Pretraining (VLP) has achieved impressive performance on many\nmultimodal downstream tasks. However, the requirement for expensive annotations\nincluding clean image captions and regional labels limits the scalability of\nexisting approaches, and complicates the pretraining procedure with the\nintroduction of multiple dataset-specific objectives. In this work, we relax\nthese constraints and present a minimalist pretraining framework, named Simple\nVisual Language Model (SimVLM). Unlike prior work, SimVLM reduces the training\ncomplexity by exploiting large-scale weak supervision, and is trained\nend-to-end with a single prefix language modeling objective. Without utilizing\nextra data or task-specific customization, the resulting model significantly\noutperforms previous pretraining methods and achieves new state-of-the-art\nresults on a wide range of discriminative and generative vision-language\nbenchmarks, including VQA (+3.74% vqa-score), NLVR2 (+1.17% accuracy), SNLI-VE\n(+1.37% accuracy) and image captioning tasks (+10.1% average CIDEr score).\nFurthermore, we demonstrate that SimVLM acquires strong generalization and\ntransfer ability, enabling zero-shot behavior including open-ended visual\nquestion answering and cross-modality transfer.",
+    "num_pages": 17
+}

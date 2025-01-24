@@ -1,0 +1,18 @@
+{
+    "uuid": "1344aef3-7b2d-5807-947d-335f73038249",
+    "title": "Efficient Nearest Neighbor Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Junxian He",
+        "Graham Neubig",
+        "Taylor Berg-Kirkpatrick"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.04212v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\1344aef3-7b2d-5807-947d-335f73038249.pdf",
+    "bibtex": "@misc{he2021efficientnearestneighborlanguagemodels,\n    title = {Efficient Nearest Neighbor Language Models},\n    author = {Junxian He and Graham Neubig and Taylor Berg-Kirkpatrick},\n    year = {2021},\n    eprint = {2109.04212},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.04212},\n}",
+    "abstract": "Non-parametric neural language models (NLMs) learn predictive distributions\nof text utilizing an external datastore, which allows them to learn through\nexplicitly memorizing the training datapoints. While effective, these models\noften require retrieval from a large datastore at test time, significantly\nincreasing the inference overhead and thus limiting the deployment of\nnon-parametric NLMs in practical applications. In this paper, we take the\nrecently proposed $k$-nearest neighbors language model (Khandelwal et al.,\n2020) as an example, exploring methods to improve its efficiency along various\ndimensions. Experiments on the standard WikiText-103 benchmark and\ndomain-adaptation datasets show that our methods are able to achieve up to a 6x\nspeed-up in inference speed while retaining comparable performance. The\nempirical analysis we present may provide guidelines for future research\nseeking to develop or deploy more efficient non-parametric NLMs.",
+    "num_pages": 12
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "37de84b9-2cd0-57ce-8d94-36a43b6c323d",
+    "title": "SLiC-HF: Sequence Likelihood Calibration with Human Feedback",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yao Zhao",
+        "Rishabh Joshi",
+        "Tianqi Liu",
+        "Misha Khalman",
+        "Mohammad Saleh",
+        "Peter J. Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.10425v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\37de84b9-2cd0-57ce-8d94-36a43b6c323d.pdf",
+    "bibtex": "@misc{zhao2023slichfsequencelikelihoodcalibrationwith,\n    title = {SLiC-HF: Sequence Likelihood Calibration with Human Feedback},\n    author = {Yao Zhao and Rishabh Joshi and Tianqi Liu and Misha Khalman and Mohammad Saleh and Peter J. Liu},\n    year = {2023},\n    eprint = {2305.10425},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.10425},\n}",
+    "abstract": "Learning from human feedback has been shown to be effective at aligning\nlanguage models with human preferences. Past work has often relied on\nReinforcement Learning from Human Feedback (RLHF), which optimizes the language\nmodel using reward scores assigned from a reward model trained on human\npreference data. In this work we show how the recently introduced Sequence\nLikelihood Calibration (SLiC), can also be used to effectively learn from human\npreferences (SLiC-HF). Furthermore, we demonstrate this can be done with human\nfeedback data collected for a different model, similar to off-policy, offline\nRL data. Automatic and human evaluation experiments on the TL;DR summarization\ntask show that SLiC-HF significantly improves supervised fine-tuning baselines.\nFurthermore, SLiC-HF presents a competitive alternative to the PPO RLHF\nimplementation used in past work while being much simpler to implement, easier\nto tune and more computationally efficient in practice.",
+    "num_pages": 12
+}

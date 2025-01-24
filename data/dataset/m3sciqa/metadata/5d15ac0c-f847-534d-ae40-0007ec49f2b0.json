@@ -1,0 +1,19 @@
+{
+    "uuid": "5d15ac0c-f847-534d-ae40-0007ec49f2b0",
+    "title": "A Mixture of $h-1$ Heads is Better than $h$ Heads",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Hao Peng",
+        "Roy Schwartz",
+        "Dianqi Li",
+        "Noah A. Smith"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2005.06537v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\5d15ac0c-f847-534d-ae40-0007ec49f2b0.pdf",
+    "bibtex": "@misc{peng2020amixtureofh1heads,\n    title = {A Mixture of $h-1$ Heads is Better than $h$ Heads},\n    author = {Hao Peng and Roy Schwartz and Dianqi Li and Noah A. Smith},\n    year = {2020},\n    eprint = {2005.06537},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2005.06537},\n}",
+    "abstract": "Multi-head attentive neural architectures have achieved state-of-the-art\nresults on a variety of natural language processing tasks. Evidence has shown\nthat they are overparameterized; attention heads can be pruned without\nsignificant performance loss. In this work, we instead \"reallocate\" them -- the\nmodel learns to activate different heads on different inputs. Drawing\nconnections between multi-head attention and mixture of experts, we propose the\nmixture of attentive experts model (MAE). MAE is trained using a block\ncoordinate descent algorithm that alternates between updating (1) the\nresponsibilities of the experts and (2) their parameters. Experiments on\nmachine translation and language modeling show that MAE outperforms strong\nbaselines on both tasks. Particularly, on the WMT14 English to German\ntranslation dataset, MAE improves over \"transformer-base\" by 0.8 BLEU, with a\ncomparable number of parameters. Our analysis shows that our model learns to\nspecialize different experts to different inputs.",
+    "num_pages": 12
+}

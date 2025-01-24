@@ -1,0 +1,20 @@
+{
+    "uuid": "ca5640af-3413-51d4-9850-faeeba815d6f",
+    "title": "A Plug-and-Play Method for Controlled Text Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Damian Pascual",
+        "Beni Egressy",
+        "Clara Meister",
+        "Ryan Cotterell",
+        "Roger Wattenhofer"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.09707v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\ca5640af-3413-51d4-9850-faeeba815d6f.pdf",
+    "bibtex": "@misc{pascual2021aplugandplaymethodforcontrolled,\n    title = {A Plug-and-Play Method for Controlled Text Generation},\n    author = {Damian Pascual and Beni Egressy and Clara Meister and Ryan Cotterell and Roger Wattenhofer},\n    year = {2021},\n    eprint = {2109.09707},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.09707},\n}",
+    "abstract": "Large pre-trained language models have repeatedly shown their ability to\nproduce fluent text. Yet even when starting from a prompt, generation can\ncontinue in many plausible directions. Current decoding methods with the goal\nof controlling generation, e.g., to ensure specific words are included, either\nrequire additional models or fine-tuning, or work poorly when the task at hand\nis semantically unconstrained, e.g., story generation. In this work, we present\na plug-and-play decoding method for controlled language generation that is so\nsimple and intuitive, it can be described in a single sentence: given a topic\nor keyword, we add a shift to the probability distribution over our vocabulary\ntowards semantically similar words. We show how annealing this distribution can\nbe used to impose hard constraints on language generation, something no other\nplug-and-play method is currently able to do with SOTA language generators.\nDespite the simplicity of this approach, we see it works incredibly well in\npractice: decoding from GPT-2 leads to diverse and fluent sentences while\nguaranteeing the appearance of given guide words. We perform two user studies,\nrevealing that (1) our method outperforms competing methods in human\nevaluations; and (2) forcing the guide words to appear in the generated text\nhas no impact on the fluency of the generated text.",
+    "num_pages": 25
+}

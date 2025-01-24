@@ -1,0 +1,29 @@
+{
+    "uuid": "7821eda8-5710-57df-96c4-89cf30bf7a77",
+    "title": "Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Chitwan Saharia",
+        "William Chan",
+        "Saurabh Saxena",
+        "Lala Li",
+        "Jay Whang",
+        "Emily Denton",
+        "Seyed Kamyar Seyed Ghasemipour",
+        "Burcu Karagol Ayan",
+        "S. Sara Mahdavi",
+        "Rapha Gontijo Lopes",
+        "Tim Salimans",
+        "Jonathan Ho",
+        "David J Fleet",
+        "Mohammad Norouzi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.11487v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\7821eda8-5710-57df-96c4-89cf30bf7a77.pdf",
+    "bibtex": "@misc{saharia2022photorealistictexttoimagediffusionmodelswith,\n    title = {Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding},\n    author = {Chitwan Saharia and William Chan and Saurabh Saxena and Lala Li and Jay Whang and Emily Denton and Seyed Kamyar Seyed Ghasemipour and Burcu Karagol Ayan and S. Sara Mahdavi and Rapha Gontijo Lopes and Tim Salimans and Jonathan Ho and David J Fleet and Mohammad Norouzi},\n    year = {2022},\n    eprint = {2205.11487},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2205.11487},\n}",
+    "abstract": "We present Imagen, a text-to-image diffusion model with an unprecedented\ndegree of photorealism and a deep level of language understanding. Imagen\nbuilds on the power of large transformer language models in understanding text\nand hinges on the strength of diffusion models in high-fidelity image\ngeneration. Our key discovery is that generic large language models (e.g. T5),\npretrained on text-only corpora, are surprisingly effective at encoding text\nfor image synthesis: increasing the size of the language model in Imagen boosts\nboth sample fidelity and image-text alignment much more than increasing the\nsize of the image diffusion model. Imagen achieves a new state-of-the-art FID\nscore of 7.27 on the COCO dataset, without ever training on COCO, and human\nraters find Imagen samples to be on par with the COCO data itself in image-text\nalignment. To assess text-to-image models in greater depth, we introduce\nDrawBench, a comprehensive and challenging benchmark for text-to-image models.\nWith DrawBench, we compare Imagen with recent methods including VQ-GAN+CLIP,\nLatent Diffusion Models, and DALL-E 2, and find that human raters prefer Imagen\nover other models in side-by-side comparisons, both in terms of sample quality\nand image-text alignment. See https://imagen.research.google/ for an overview\nof the results.",
+    "num_pages": 46
+}

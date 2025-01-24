@@ -1,0 +1,17 @@
+{
+    "uuid": "fc6bb8b7-c1c6-5462-aa43-cd6dc6d15f8d",
+    "title": "ELASTIC: Numerical Reasoning with Adaptive Symbolic Compiler",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Jiaxin Zhang",
+        "Yashar Moshfeghi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.10105v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\fc6bb8b7-c1c6-5462-aa43-cd6dc6d15f8d.pdf",
+    "bibtex": "@misc{zhang2022elasticnumericalreasoningwithadaptive,\n    title = {ELASTIC: Numerical Reasoning with Adaptive Symbolic Compiler},\n    author = {Jiaxin Zhang and Yashar Moshfeghi},\n    year = {2022},\n    eprint = {2210.10105},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/2210.10105},\n}",
+    "abstract": "Numerical reasoning over text is a challenging task of Artificial\nIntelligence (AI), requiring reading comprehension and numerical reasoning\nabilities. Previous approaches use numerical reasoning programs to represent\nthe reasoning process. However, most works do not separate the generation of\noperators and operands, which are key components of a numerical reasoning\nprogram, thus limiting their ability to generate such programs for complicated\ntasks. In this paper, we introduce the numEricaL reASoning with adapTive\nsymbolIc Compiler (ELASTIC) model, which is constituted of the RoBERTa as the\nEncoder and a Compiler with four modules: Reasoning Manager, Operator\nGenerator, Operands Generator, and Memory Register. ELASTIC is robust when\nconducting complicated reasoning. Also, it is domain agnostic by supporting the\nexpansion of diverse operators without caring about the number of operands it\ncontains. Experiments show that ELASTIC achieves 68.96 and 65.21 of execution\naccuracy and program accuracy on the FinQA dataset and 83.00 program accuracy\non the MathQA dataset, outperforming previous state-of-the-art models\nsignificantly.",
+    "num_pages": 19
+}

@@ -1,0 +1,33 @@
+{
+    "uuid": "40bab98b-5b92-56e0-bae1-846a9f1fab08",
+    "title": "WebGPT: Browser-assisted question-answering with human feedback",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Reiichiro Nakano",
+        "Jacob Hilton",
+        "Suchir Balaji",
+        "Jeff Wu",
+        "Long Ouyang",
+        "Christina Kim",
+        "Christopher Hesse",
+        "Shantanu Jain",
+        "Vineet Kosaraju",
+        "William Saunders",
+        "Xu Jiang",
+        "Karl Cobbe",
+        "Tyna Eloundou",
+        "Gretchen Krueger",
+        "Kevin Button",
+        "Matthew Knight",
+        "Benjamin Chess",
+        "John Schulman"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2112.09332v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\40bab98b-5b92-56e0-bae1-846a9f1fab08.pdf",
+    "bibtex": "@misc{nakano2022webgptbrowserassistedquestionansweringwithhuman,\n    title = {WebGPT: Browser-assisted question-answering with human feedback},\n    author = {Reiichiro Nakano and Jacob Hilton and Suchir Balaji and Jeff Wu and Long Ouyang and Christina Kim and Christopher Hesse and Shantanu Jain and Vineet Kosaraju and William Saunders and Xu Jiang and Karl Cobbe and Tyna Eloundou and Gretchen Krueger and Kevin Button and Matthew Knight and Benjamin Chess and John Schulman},\n    year = {2022},\n    eprint = {2112.09332},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2112.09332},\n}",
+    "abstract": "We fine-tune GPT-3 to answer long-form questions using a text-based\nweb-browsing environment, which allows the model to search and navigate the\nweb. By setting up the task so that it can be performed by humans, we are able\nto train models on the task using imitation learning, and then optimize answer\nquality with human feedback. To make human evaluation of factual accuracy\neasier, models must collect references while browsing in support of their\nanswers. We train and evaluate our models on ELI5, a dataset of questions asked\nby Reddit users. Our best model is obtained by fine-tuning GPT-3 using behavior\ncloning, and then performing rejection sampling against a reward model trained\nto predict human preferences. This model's answers are preferred by humans 56%\nof the time to those of our human demonstrators, and 69% of the time to the\nhighest-voted answer from Reddit.",
+    "num_pages": 32
+}

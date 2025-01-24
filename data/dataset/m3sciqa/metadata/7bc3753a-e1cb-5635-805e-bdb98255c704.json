@@ -1,0 +1,18 @@
+{
+    "uuid": "7bc3753a-e1cb-5635-805e-bdb98255c704",
+    "title": "Multilingual Event Extraction from Historical Newspaper Adverts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Nadav Borenstein",
+        "Natalia da Silva Perez",
+        "Isabelle Augenstein"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.10928v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\7bc3753a-e1cb-5635-805e-bdb98255c704.pdf",
+    "bibtex": "@misc{borenstein2023multilingualeventextractionfromhistorical,\n    title = {Multilingual Event Extraction from Historical Newspaper Adverts},\n    author = {Nadav Borenstein and Natalia da Silva Perez and Isabelle Augenstein},\n    year = {2023},\n    eprint = {2305.10928},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.10928},\n}",
+    "abstract": "NLP methods can aid historians in analyzing textual materials in greater\nvolumes than manually feasible. Developing such methods poses substantial\nchallenges though. First, acquiring large, annotated historical datasets is\ndifficult, as only domain experts can reliably label them. Second, most\navailable off-the-shelf NLP models are trained on modern language texts,\nrendering them significantly less effective when applied to historical corpora.\nThis is particularly problematic for less well studied tasks, and for languages\nother than English. This paper addresses these challenges while focusing on the\nunder-explored task of event extraction from a novel domain of historical\ntexts. We introduce a new multilingual dataset in English, French, and Dutch\ncomposed of newspaper ads from the early modern colonial period reporting on\nenslaved people who liberated themselves from enslavement. We find that: 1)\neven with scarce annotated data, it is possible to achieve surprisingly good\nresults by formulating the problem as an extractive QA task and leveraging\nexisting datasets and models for modern languages; and 2) cross-lingual\nlow-resource learning for historical languages is highly challenging, and\nmachine translation of the historical datasets to the considered target\nlanguages is, in practice, often the best-performing solution.",
+    "num_pages": 20
+}

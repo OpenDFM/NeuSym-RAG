@@ -1,0 +1,20 @@
+{
+    "uuid": "48f2ca99-2f34-5310-ac00-571357445a5c",
+    "title": "Rewriting a Deep Generative Model",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "David Bau",
+        "Steven Liu",
+        "Tongzhou Wang",
+        "Jun-Yan Zhu",
+        "Antonio Torralba"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2007.15646v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\48f2ca99-2f34-5310-ac00-571357445a5c.pdf",
+    "bibtex": "@misc{bau2020rewritingadeepgenerativemodel,\n    title = {Rewriting a Deep Generative Model},\n    author = {David Bau and Steven Liu and Tongzhou Wang and Jun-Yan Zhu and Antonio Torralba},\n    year = {2020},\n    eprint = {2007.15646},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2007.15646},\n}",
+    "abstract": "A deep generative model such as a GAN learns to model a rich set of semantic\nand physical rules about the target distribution, but up to now, it has been\nobscure how such rules are encoded in the network, or how a rule could be\nchanged. In this paper, we introduce a new problem setting: manipulation of\nspecific rules encoded by a deep generative model. To address the problem, we\npropose a formulation in which the desired rule is changed by manipulating a\nlayer of a deep network as a linear associative memory. We derive an algorithm\nfor modifying one entry of the associative memory, and we demonstrate that\nseveral interesting structural rules can be located and modified within the\nlayers of state-of-the-art generative models. We present a user interface to\nenable users to interactively change the rules of a generative model to achieve\ndesired effects, and we show several proof-of-concept applications. Finally,\nresults on multiple datasets demonstrate the advantage of our method against\nstandard fine-tuning methods and edit transfer algorithms.",
+    "num_pages": 31
+}

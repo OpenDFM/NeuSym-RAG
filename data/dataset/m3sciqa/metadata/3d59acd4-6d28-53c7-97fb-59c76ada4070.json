@@ -1,0 +1,20 @@
+{
+    "uuid": "3d59acd4-6d28-53c7-97fb-59c76ada4070",
+    "title": "LayoutLMv3: Pre-training for Document AI with Unified Text and Image Masking",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yupan Huang",
+        "Tengchao Lv",
+        "Lei Cui",
+        "Yutong Lu",
+        "Furu Wei"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.08387v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\3d59acd4-6d28-53c7-97fb-59c76ada4070.pdf",
+    "bibtex": "@misc{huang2022layoutlmv3pretrainingfordocumentai,\n    title = {LayoutLMv3: Pre-training for Document AI with Unified Text and Image Masking},\n    author = {Yupan Huang and Tengchao Lv and Lei Cui and Yutong Lu and Furu Wei},\n    year = {2022},\n    eprint = {2204.08387},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.08387},\n}",
+    "abstract": "Self-supervised pre-training techniques have achieved remarkable progress in\nDocument AI. Most multimodal pre-trained models use a masked language modeling\nobjective to learn bidirectional representations on the text modality, but they\ndiffer in pre-training objectives for the image modality. This discrepancy adds\ndifficulty to multimodal representation learning. In this paper, we propose\n\\textbf{LayoutLMv3} to pre-train multimodal Transformers for Document AI with\nunified text and image masking. Additionally, LayoutLMv3 is pre-trained with a\nword-patch alignment objective to learn cross-modal alignment by predicting\nwhether the corresponding image patch of a text word is masked. The simple\nunified architecture and training objectives make LayoutLMv3 a general-purpose\npre-trained model for both text-centric and image-centric Document AI tasks.\nExperimental results show that LayoutLMv3 achieves state-of-the-art performance\nnot only in text-centric tasks, including form understanding, receipt\nunderstanding, and document visual question answering, but also in\nimage-centric tasks such as document image classification and document layout\nanalysis. The code and models are publicly available at\n\\url{https://aka.ms/layoutlmv3}.",
+    "num_pages": 10
+}

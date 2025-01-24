@@ -1,0 +1,18 @@
+{
+    "uuid": "9b1ddffa-e7a2-59f1-bd43-e64415b44bbd",
+    "title": "One Network, Many Masks: Towards More Parameter-Efficient Transfer Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Guangtao Zeng",
+        "Peiyuan Zhang",
+        "Wei Lu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.17682v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\9b1ddffa-e7a2-59f1-bd43-e64415b44bbd.pdf",
+    "bibtex": "@misc{zeng2023onenetworkmanymaskstowards,\n    title = {One Network, Many Masks: Towards More Parameter-Efficient Transfer Learning},\n    author = {Guangtao Zeng and Peiyuan Zhang and Wei Lu},\n    year = {2023},\n    eprint = {2305.17682},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.17682},\n}",
+    "abstract": "Fine-tuning pre-trained language models for multiple tasks tends to be\nexpensive in terms of storage. To mitigate this, parameter-efficient transfer\nlearning (PETL) methods have been proposed to address this issue, but they\nstill require a significant number of parameters and storage when being applied\nto broader ranges of tasks. To achieve even greater storage reduction, we\npropose PROPETL, a novel method that enables efficient sharing of a single PETL\nmodule which we call prototype network (e.g., adapter, LoRA, and prefix-tuning)\nacross layers and tasks. We then learn binary masks to select different\nsub-networks from the shared prototype network and apply them as PETL modules\ninto different layers. We find that the binary masks can determine crucial\ninformation from the network, which is often ignored in previous studies. Our\nwork can also be seen as a type of pruning method, where we find that\noverparameterization also exists in the seemingly small PETL modules. We\nevaluate PROPETL on various downstream tasks and show that it can outperform\nother PETL methods with approximately 10% of the parameter storage required by\nthe latter.",
+    "num_pages": 15
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "eeda9a9d-5d4e-5579-9a3b-f2e546a7bf4b",
+    "title": "SECTOR: A Neural Model for Coherent Topic Segmentation and Classification",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Sebastian Arnold",
+        "Rudolf Schneider",
+        "Philippe Cudré-Mauroux",
+        "Felix A. Gers",
+        "Alexander Löser"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1902.04793v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\eeda9a9d-5d4e-5579-9a3b-f2e546a7bf4b.pdf",
+    "bibtex": "@misc{arnold2019sectoraneuralmodelfor,\n    title = {SECTOR: A Neural Model for Coherent Topic Segmentation and Classification},\n    author = {Sebastian Arnold and Rudolf Schneider and Philippe Cudré-Mauroux and Felix A. Gers and Alexander Löser},\n    year = {2019},\n    eprint = {1902.04793},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1902.04793},\n}",
+    "abstract": "When searching for information, a human reader first glances over a document,\nspots relevant sections and then focuses on a few sentences for resolving her\nintention. However, the high variance of document structure complicates to\nidentify the salient topic of a given section at a glance. To tackle this\nchallenge, we present SECTOR, a model to support machine reading systems by\nsegmenting documents into coherent sections and assigning topic labels to each\nsection. Our deep neural network architecture learns a latent topic embedding\nover the course of a document. This can be leveraged to classify local topics\nfrom plain text and segment a document at topic shifts. In addition, we\ncontribute WikiSection, a publicly available dataset with 242k labeled sections\nin English and German from two distinct domains: diseases and cities. From our\nextensive evaluation of 20 architectures, we report a highest score of 71.6% F1\nfor the segmentation and classification of 30 topics from the English city\ndomain, scored by our SECTOR LSTM model with bloom filter embeddings and\nbidirectional segmentation. This is a significant improvement of 29.5 points F1\ncompared to state-of-the-art CNN classifiers with baseline segmentation.",
+    "num_pages": 16
+}

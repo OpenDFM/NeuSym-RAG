@@ -1,0 +1,27 @@
+{
+    "uuid": "46a88ba5-c16e-5efd-913c-3de6e749f2a9",
+    "title": "Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Tao Yu",
+        "Rui Zhang",
+        "Kai Yang",
+        "Michihiro Yasunaga",
+        "Dongxu Wang",
+        "Zifan Li",
+        "James Ma",
+        "Irene Li",
+        "Qingning Yao",
+        "Shanelle Roman",
+        "Zilin Zhang",
+        "Dragomir Radev"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1809.08887v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\46a88ba5-c16e-5efd-913c-3de6e749f2a9.pdf",
+    "bibtex": "@misc{yu2019spideralargescalehumanlabeleddataset,\n    title = {Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task},\n    author = {Tao Yu and Rui Zhang and Kai Yang and Michihiro Yasunaga and Dongxu Wang and Zifan Li and James Ma and Irene Li and Qingning Yao and Shanelle Roman and Zilin Zhang and Dragomir Radev},\n    year = {2019},\n    eprint = {1809.08887},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1809.08887},\n}",
+    "abstract": "We present Spider, a large-scale, complex and cross-domain semantic parsing\nand text-to-SQL dataset annotated by 11 college students. It consists of 10,181\nquestions and 5,693 unique complex SQL queries on 200 databases with multiple\ntables, covering 138 different domains. We define a new complex and\ncross-domain semantic parsing and text-to-SQL task where different complex SQL\nqueries and databases appear in train and test sets. In this way, the task\nrequires the model to generalize well to both new SQL queries and new database\nschemas. Spider is distinct from most of the previous semantic parsing tasks\nbecause they all use a single database and the exact same programs in the train\nset and the test set. We experiment with various state-of-the-art models and\nthe best model achieves only 12.4% exact matching accuracy on a database split\nsetting. This shows that Spider presents a strong challenge for future\nresearch. Our dataset and task are publicly available at\nhttps://yale-lily.github.io/spider",
+    "num_pages": 11
+}

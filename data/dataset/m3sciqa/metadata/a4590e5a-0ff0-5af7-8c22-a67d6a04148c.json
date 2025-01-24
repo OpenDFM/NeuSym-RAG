@@ -1,0 +1,20 @@
+{
+    "uuid": "a4590e5a-0ff0-5af7-8c22-a67d6a04148c",
+    "title": "Towards Scalable Multi-domain Conversational Agents: The Schema-Guided Dialogue Dataset",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Abhinav Rastogi",
+        "Xiaoxue Zang",
+        "Srinivas Sunkara",
+        "Raghav Gupta",
+        "Pranav Khaitan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1909.05855v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\a4590e5a-0ff0-5af7-8c22-a67d6a04148c.pdf",
+    "bibtex": "@misc{rastogi2020towardsscalablemultidomainconversationalagents,\n    title = {Towards Scalable Multi-domain Conversational Agents: The Schema-Guided Dialogue Dataset},\n    author = {Abhinav Rastogi and Xiaoxue Zang and Srinivas Sunkara and Raghav Gupta and Pranav Khaitan},\n    year = {2020},\n    eprint = {1909.05855},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1909.05855},\n}",
+    "abstract": "Virtual assistants such as Google Assistant, Alexa and Siri provide a\nconversational interface to a large number of services and APIs spanning\nmultiple domains. Such systems need to support an ever-increasing number of\nservices with possibly overlapping functionality. Furthermore, some of these\nservices have little to no training data available. Existing public datasets\nfor task-oriented dialogue do not sufficiently capture these challenges since\nthey cover few domains and assume a single static ontology per domain. In this\nwork, we introduce the the Schema-Guided Dialogue (SGD) dataset, containing\nover 16k multi-domain conversations spanning 16 domains. Our dataset exceeds\nthe existing task-oriented dialogue corpora in scale, while also highlighting\nthe challenges associated with building large-scale virtual assistants. It\nprovides a challenging testbed for a number of tasks including language\nunderstanding, slot filling, dialogue state tracking and response generation.\nAlong the same lines, we present a schema-guided paradigm for task-oriented\ndialogue, in which predictions are made over a dynamic set of intents and\nslots, provided as input, using their natural language descriptions. This\nallows a single dialogue system to easily support a large number of services\nand facilitates simple integration of new services without requiring additional\ntraining data. Building upon the proposed paradigm, we release a model for\ndialogue state tracking capable of zero-shot generalization to new APIs, while\nremaining competitive in the regular setting.",
+    "num_pages": 11
+}

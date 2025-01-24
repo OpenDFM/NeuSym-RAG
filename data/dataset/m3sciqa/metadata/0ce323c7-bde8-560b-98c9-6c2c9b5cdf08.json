@@ -1,0 +1,20 @@
+{
+    "uuid": "0ce323c7-bde8-560b-98c9-6c2c9b5cdf08",
+    "title": "Universal Semantic Parsing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Siva Reddy",
+        "Oscar Täckström",
+        "Slav Petrov",
+        "Mark Steedman",
+        "Mirella Lapata"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1702.03196v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\0ce323c7-bde8-560b-98c9-6c2c9b5cdf08.pdf",
+    "bibtex": "@misc{reddy2017universalsemanticparsing,\n    title = {Universal Semantic Parsing},\n    author = {Siva Reddy and Oscar Täckström and Slav Petrov and Mark Steedman and Mirella Lapata},\n    year = {2017},\n    eprint = {1702.03196},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1702.03196},\n}",
+    "abstract": "Universal Dependencies (UD) offer a uniform cross-lingual syntactic\nrepresentation, with the aim of advancing multilingual applications. Recent\nwork shows that semantic parsing can be accomplished by transforming syntactic\ndependencies to logical forms. However, this work is limited to English, and\ncannot process dependency graphs, which allow handling complex phenomena such\nas control. In this work, we introduce UDepLambda, a semantic interface for UD,\nwhich maps natural language to logical forms in an almost language-independent\nfashion and can process dependency graphs. We perform experiments on question\nanswering against Freebase and provide German and Spanish translations of the\nWebQuestions and GraphQuestions datasets to facilitate multilingual evaluation.\nResults show that UDepLambda outperforms strong baselines across languages and\ndatasets. For English, it achieves a 4.9 F1 point improvement over the\nstate-of-the-art on GraphQuestions. Our code and data can be downloaded at\nhttps://github.com/sivareddyg/udeplambda.",
+    "num_pages": 16
+}

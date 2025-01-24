@@ -1,0 +1,18 @@
+{
+    "uuid": "3131ef5f-37e6-5044-9136-be579ad82e5b",
+    "title": "Investigating Novel Verb Learning in BERT: Selectional Preference Classes and Alternation-Based Syntactic Generalization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Tristan Thrush",
+        "Ethan Wilcox",
+        "Roger Levy"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2011.02417v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\3131ef5f-37e6-5044-9136-be579ad82e5b.pdf",
+    "bibtex": "@misc{thrush2020investigatingnovelverblearningin,\n    title = {Investigating Novel Verb Learning in BERT: Selectional Preference Classes and Alternation-Based Syntactic Generalization},\n    author = {Tristan Thrush and Ethan Wilcox and Roger Levy},\n    year = {2020},\n    eprint = {2011.02417},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2011.02417},\n}",
+    "abstract": "Previous studies investigating the syntactic abilities of deep learning\nmodels have not targeted the relationship between the strength of the\ngrammatical generalization and the amount of evidence to which the model is\nexposed during training. We address this issue by deploying a novel\nword-learning paradigm to test BERT's few-shot learning capabilities for two\naspects of English verbs: alternations and classes of selectional preferences.\nFor the former, we fine-tune BERT on a single frame in a verbal-alternation\npair and ask whether the model expects the novel verb to occur in its sister\nframe. For the latter, we fine-tune BERT on an incomplete selectional network\nof verbal objects and ask whether it expects unattested but plausible\nverb/object pairs. We find that BERT makes robust grammatical generalizations\nafter just one or two instances of a novel word in fine-tuning. For the verbal\nalternation tests, we find that the model displays behavior that is consistent\nwith a transitivity bias: verbs seen few times are expected to take direct\nobjects, but verbs seen with direct objects are not expected to occur\nintransitively.",
+    "num_pages": 11
+}

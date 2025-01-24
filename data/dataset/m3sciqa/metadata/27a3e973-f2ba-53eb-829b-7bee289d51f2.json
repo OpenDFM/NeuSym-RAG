@@ -1,0 +1,18 @@
+{
+    "uuid": "27a3e973-f2ba-53eb-829b-7bee289d51f2",
+    "title": "Autoregressive Entity Generation for End-to-End Task-Oriented Dialog",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Guanhuan Huang",
+        "Xiaojun Quan",
+        "Qifan Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2209.08708v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\27a3e973-f2ba-53eb-829b-7bee289d51f2.pdf",
+    "bibtex": "@misc{huang2022autoregressiveentitygenerationforendtoend,\n    title = {Autoregressive Entity Generation for End-to-End Task-Oriented Dialog},\n    author = {Guanhuan Huang and Xiaojun Quan and Qifan Wang},\n    year = {2022},\n    eprint = {2209.08708},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2209.08708},\n}",
+    "abstract": "Task-oriented dialog (TOD) systems often require interaction with an external\nknowledge base to retrieve necessary entity (e.g., restaurant) information to\nsupport the response generation. Most current end-to-end TOD systems either\nretrieve the KB information explicitly or embed it into model parameters for\nimplicit access.~While the former approach demands scanning the KB at each turn\nof response generation, which is inefficient when the KB scales up, the latter\napproach shows higher flexibility and efficiency. In either approach, the\nsystems may generate a response with conflicting entity information. To address\nthis issue, we propose to generate the entity autoregressively first and\nleverage it to guide the response generation in an end-to-end system. To ensure\nentity consistency, we impose a trie constraint on entity generation. We also\nintroduce a logit concatenation strategy to facilitate gradient backpropagation\nfor end-to-end training. Experiments on MultiWOZ 2.1 single and CAMREST show\nthat our system can generate more high-quality and entity-consistent responses.",
+    "num_pages": 10
+}

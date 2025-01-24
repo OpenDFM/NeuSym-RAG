@@ -1,0 +1,20 @@
+{
+    "uuid": "7c278568-4bb8-5a1f-af34-4df3980282eb",
+    "title": "LUKE: Deep Contextualized Entity Representations with Entity-aware Self-attention",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Ikuya Yamada",
+        "Akari Asai",
+        "Hiroyuki Shindo",
+        "Hideaki Takeda",
+        "Yuji Matsumoto"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.01057v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\7c278568-4bb8-5a1f-af34-4df3980282eb.pdf",
+    "bibtex": "@misc{yamada2020lukedeepcontextualizedentityrepresentations,\n    title = {LUKE: Deep Contextualized Entity Representations with Entity-aware Self-attention},\n    author = {Ikuya Yamada and Akari Asai and Hiroyuki Shindo and Hideaki Takeda and Yuji Matsumoto},\n    year = {2020},\n    eprint = {2010.01057},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.01057},\n}",
+    "abstract": "Entity representations are useful in natural language tasks involving\nentities. In this paper, we propose new pretrained contextualized\nrepresentations of words and entities based on the bidirectional transformer.\nThe proposed model treats words and entities in a given text as independent\ntokens, and outputs contextualized representations of them. Our model is\ntrained using a new pretraining task based on the masked language model of\nBERT. The task involves predicting randomly masked words and entities in a\nlarge entity-annotated corpus retrieved from Wikipedia. We also propose an\nentity-aware self-attention mechanism that is an extension of the\nself-attention mechanism of the transformer, and considers the types of tokens\n(words or entities) when computing attention scores. The proposed model\nachieves impressive empirical performance on a wide range of entity-related\ntasks. In particular, it obtains state-of-the-art results on five well-known\ndatasets: Open Entity (entity typing), TACRED (relation classification),\nCoNLL-2003 (named entity recognition), ReCoRD (cloze-style question answering),\nand SQuAD 1.1 (extractive question answering). Our source code and pretrained\nrepresentations are available at https://github.com/studio-ousia/luke.",
+    "num_pages": 13
+}

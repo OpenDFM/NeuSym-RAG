@@ -1,0 +1,20 @@
+{
+    "uuid": "c88a9f90-9a50-5ab9-b5b1-42982d8e7cc7",
+    "title": "Distantly Supervised Named Entity Recognition using Positive-Unlabeled Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Minlong Peng",
+        "Xiaoyu Xing",
+        "Qi Zhang",
+        "Jinlan Fu",
+        "Xuanjing Huang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1906.01378v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\c88a9f90-9a50-5ab9-b5b1-42982d8e7cc7.pdf",
+    "bibtex": "@misc{peng2019distantlysupervisednamedentityrecognition,\n    title = {Distantly Supervised Named Entity Recognition using Positive-Unlabeled Learning},\n    author = {Minlong Peng and Xiaoyu Xing and Qi Zhang and Jinlan Fu and Xuanjing Huang},\n    year = {2019},\n    eprint = {1906.01378},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1906.01378},\n}",
+    "abstract": "In this work, we explore the way to perform named entity recognition (NER)\nusing only unlabeled data and named entity dictionaries. To this end, we\nformulate the task as a positive-unlabeled (PU) learning problem and\naccordingly propose a novel PU learning algorithm to perform the task. We prove\nthat the proposed algorithm can unbiasedly and consistently estimate the task\nloss as if there is fully labeled data. A key feature of the proposed method is\nthat it does not require the dictionaries to label every entity within a\nsentence, and it even does not require the dictionaries to label all of the\nwords constituting an entity. This greatly reduces the requirement on the\nquality of the dictionaries and makes our method generalize well with quite\nsimple dictionaries. Empirical studies on four public NER datasets demonstrate\nthe effectiveness of our proposed method. We have published the source code at\n\\url{https://github.com/v-mipeng/LexiconNER}.",
+    "num_pages": 11
+}

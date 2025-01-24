@@ -1,0 +1,21 @@
+{
+    "uuid": "43f955ba-2521-5efa-91bb-86a21a137a27",
+    "title": "Quantifying Memorization Across Neural Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Nicholas Carlini",
+        "Daphne Ippolito",
+        "Matthew Jagielski",
+        "Katherine Lee",
+        "Florian Tramer",
+        "Chiyuan Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2202.07646v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\43f955ba-2521-5efa-91bb-86a21a137a27.pdf",
+    "bibtex": "@misc{carlini2023quantifyingmemorizationacrossneurallanguage,\n    title = {Quantifying Memorization Across Neural Language Models},\n    author = {Nicholas Carlini and Daphne Ippolito and Matthew Jagielski and Katherine Lee and Florian Tramer and Chiyuan Zhang},\n    year = {2023},\n    eprint = {2202.07646},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2202.07646},\n}",
+    "abstract": "Large language models (LMs) have been shown to memorize parts of their\ntraining data, and when prompted appropriately, they will emit the memorized\ntraining data verbatim. This is undesirable because memorization violates\nprivacy (exposing user data), degrades utility (repeated easy-to-memorize text\nis often low quality), and hurts fairness (some texts are memorized over\nothers).\n  We describe three log-linear relationships that quantify the degree to which\nLMs emit memorized training data. Memorization significantly grows as we\nincrease (1) the capacity of a model, (2) the number of times an example has\nbeen duplicated, and (3) the number of tokens of context used to prompt the\nmodel. Surprisingly, we find the situation becomes more complicated when\ngeneralizing these results across model families. On the whole, we find that\nmemorization in LMs is more prevalent than previously believed and will likely\nget worse as models continues to scale, at least without active mitigations.",
+    "num_pages": 19
+}

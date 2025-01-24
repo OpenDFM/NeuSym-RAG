@@ -1,0 +1,21 @@
+{
+    "uuid": "278cd4b7-0439-5a94-8a43-cdc6855de6c0",
+    "title": "ResNorm: Tackling Long-tailed Degree Distribution Issue in Graph Neural Networks via Normalization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Langzhang Liang",
+        "Zenglin Xu",
+        "Zixing Song",
+        "Irwin King",
+        "Yuan Qi",
+        "Jieping Ye"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2206.08181v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\278cd4b7-0439-5a94-8a43-cdc6855de6c0.pdf",
+    "bibtex": "@misc{liang2023resnormtacklinglongtaileddegreedistribution,\n    title = {ResNorm: Tackling Long-tailed Degree Distribution Issue in Graph Neural Networks via Normalization},\n    author = {Langzhang Liang and Zenglin Xu and Zixing Song and Irwin King and Yuan Qi and Jieping Ye},\n    year = {2023},\n    eprint = {2206.08181},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2206.08181},\n}",
+    "abstract": "Graph Neural Networks (GNNs) have attracted much attention due to their\nability in learning representations from graph-structured data. Despite the\nsuccessful applications of GNNs in many domains, the optimization of GNNs is\nless well studied, and the performance on node classification heavily suffers\nfrom the long-tailed node degree distribution. This paper focuses on improving\nthe performance of GNNs via normalization.\n  In detail, by studying the long-tailed distribution of node degrees in the\ngraph, we propose a novel normalization method for GNNs, which is termed\nResNorm (\\textbf{Res}haping the long-tailed distribution into a normal-like\ndistribution via \\textbf{norm}alization). The $scale$ operation of ResNorm\nreshapes the node-wise standard deviation (NStd) distribution so as to improve\nthe accuracy of tail nodes (\\textit{i}.\\textit{e}., low-degree nodes). We\nprovide a theoretical interpretation and empirical evidence for understanding\nthe mechanism of the above $scale$. In addition to the long-tailed distribution\nissue, over-smoothing is also a fundamental issue plaguing the community. To\nthis end, we analyze the behavior of the standard shift and prove that the\nstandard shift serves as a preconditioner on the weight matrix, increasing the\nrisk of over-smoothing. With the over-smoothing issue in mind, we design a\n$shift$ operation for ResNorm that simulates the degree-specific parameter\nstrategy in a low-cost manner. Extensive experiments have validated the\neffectiveness of ResNorm on several node classification benchmark datasets.",
+    "num_pages": 12
+}

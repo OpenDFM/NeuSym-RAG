@@ -1,0 +1,17 @@
+{
+    "uuid": "8f9d03a3-9cf4-5e26-a59f-6abb1b6eb278",
+    "title": "Dual Supervision Framework for Relation Extraction with Distant Supervision and Human Annotation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Woohwan Jung",
+        "Kyuseok Shim"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2011.11851v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\8f9d03a3-9cf4-5e26-a59f-6abb1b6eb278.pdf",
+    "bibtex": "@misc{jung2020dualsupervisionframeworkforrelation,\n    title = {Dual Supervision Framework for Relation Extraction with Distant Supervision and Human Annotation},\n    author = {Woohwan Jung and Kyuseok Shim},\n    year = {2020},\n    eprint = {2011.11851},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2011.11851},\n}",
+    "abstract": "Relation extraction (RE) has been extensively studied due to its importance\nin real-world applications such as knowledge base construction and question\nanswering. Most of the existing works train the models on either distantly\nsupervised data or human-annotated data. To take advantage of the high accuracy\nof human annotation and the cheap cost of distant supervision, we propose the\ndual supervision framework which effectively utilizes both types of data.\nHowever, simply combining the two types of data to train a RE model may\ndecrease the prediction accuracy since distant supervision has labeling bias.\nWe employ two separate prediction networks HA-Net and DS-Net to predict the\nlabels by human annotation and distant supervision, respectively, to prevent\nthe degradation of accuracy by the incorrect labeling of distant supervision.\nFurthermore, we propose an additional loss term called disagreement penalty to\nenable HA-Net to learn from distantly supervised labels. In addition, we\nexploit additional networks to adaptively assess the labeling bias by\nconsidering contextual information. Our performance study on sentence-level and\ndocument-level REs confirms the effectiveness of the dual supervision\nframework.",
+    "num_pages": 13
+}

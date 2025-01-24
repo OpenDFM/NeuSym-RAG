@@ -1,0 +1,21 @@
+{
+    "uuid": "95808d88-d437-55ec-9af6-cb7399b1010c",
+    "title": "FP8 Quantization: The Power of the Exponent",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Andrey Kuzmin",
+        "Mart Van Baalen",
+        "Yuwei Ren",
+        "Markus Nagel",
+        "Jorn Peters",
+        "Tijmen Blankevoort"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2208.09225v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\95808d88-d437-55ec-9af6-cb7399b1010c.pdf",
+    "bibtex": "@misc{kuzmin2024fp8quantizationthepowerof,\n    title = {FP8 Quantization: The Power of the Exponent},\n    author = {Andrey Kuzmin and Mart Van Baalen and Yuwei Ren and Markus Nagel and Jorn Peters and Tijmen Blankevoort},\n    year = {2024},\n    eprint = {2208.09225},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2208.09225},\n}",
+    "abstract": "When quantizing neural networks for efficient inference, low-bit integers are\nthe go-to format for efficiency. However, low-bit floating point numbers have\nan extra degree of freedom, assigning some bits to work on an exponential scale\ninstead. This paper in-depth investigates this benefit of the floating point\nformat for neural network inference. We detail the choices that can be made for\nthe FP8 format, including the important choice of the number of bits for the\nmantissa and exponent, and show analytically in which settings these choices\ngive better performance. Then we show how these findings translate to real\nnetworks, provide an efficient implementation for FP8 simulation, and a new\nalgorithm that enables the learning of both the scale parameters and the number\nof exponent bits in the FP8 format. Our chief conclusion is that when doing\npost-training quantization for a wide range of networks, the FP8 format is\nbetter than INT8 in terms of accuracy, and the choice of the number of exponent\nbits is driven by the severity of outliers in the network. We also conduct\nexperiments with quantization-aware training where the difference in formats\ndisappears as the network is trained to reduce the effect of outliers.",
+    "num_pages": 22
+}

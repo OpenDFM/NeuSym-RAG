@@ -1,0 +1,19 @@
+{
+    "uuid": "fb93f23b-657e-55a4-95a0-7174820f65b4",
+    "title": "Delete, Retrieve, Generate: A Simple Approach to Sentiment and Style Transfer",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Juncen Li",
+        "Robin Jia",
+        "He He",
+        "Percy Liang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1804.06437v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\fb93f23b-657e-55a4-95a0-7174820f65b4.pdf",
+    "bibtex": "@misc{li2018deleteretrievegenerateasimple,\n    title = {Delete, Retrieve, Generate: A Simple Approach to Sentiment and Style Transfer},\n    author = {Juncen Li and Robin Jia and He He and Percy Liang},\n    year = {2018},\n    eprint = {1804.06437},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1804.06437},\n}",
+    "abstract": "We consider the task of text attribute transfer: transforming a sentence to\nalter a specific attribute (e.g., sentiment) while preserving its\nattribute-independent content (e.g., changing \"screen is just the right size\"\nto \"screen is too small\"). Our training data includes only sentences labeled\nwith their attribute (e.g., positive or negative), but not pairs of sentences\nthat differ only in their attributes, so we must learn to disentangle\nattributes from attribute-independent content in an unsupervised way. Previous\nwork using adversarial methods has struggled to produce high-quality outputs.\nIn this paper, we propose simpler methods motivated by the observation that\ntext attributes are often marked by distinctive phrases (e.g., \"too small\").\nOur strongest method extracts content words by deleting phrases associated with\nthe sentence's original attribute value, retrieves new phrases associated with\nthe target attribute, and uses a neural model to fluently combine these into a\nfinal output. On human evaluation, our best method generates grammatical and\nappropriate responses on 22% more inputs than the best previous system,\naveraged over three attribute transfer datasets: altering sentiment of reviews\non Yelp, altering sentiment of reviews on Amazon, and altering image captions\nto be more romantic or humorous.",
+    "num_pages": 12
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "e488eded-0ba4-58ca-ad26-53799d8e9393",
+    "title": "Locate and Label: A Two-stage Identifier for Nested Named Entity Recognition",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Yongliang Shen",
+        "Xinyin Ma",
+        "Zeqi Tan",
+        "Shuai Zhang",
+        "Wen Wang",
+        "Weiming Lu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2105.06804v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\e488eded-0ba4-58ca-ad26-53799d8e9393.pdf",
+    "bibtex": "@misc{shen2021locateandlabelatwostage,\n    title = {Locate and Label: A Two-stage Identifier for Nested Named Entity Recognition},\n    author = {Yongliang Shen and Xinyin Ma and Zeqi Tan and Shuai Zhang and Wen Wang and Weiming Lu},\n    year = {2021},\n    eprint = {2105.06804},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2105.06804},\n}",
+    "abstract": "Named entity recognition (NER) is a well-studied task in natural language\nprocessing. Traditional NER research only deals with flat entities and ignores\nnested entities. The span-based methods treat entity recognition as a span\nclassification task. Although these methods have the innate ability to handle\nnested NER, they suffer from high computational cost, ignorance of boundary\ninformation, under-utilization of the spans that partially match with entities,\nand difficulties in long entity recognition. To tackle these issues, we propose\na two-stage entity identifier. First we generate span proposals by filtering\nand boundary regression on the seed spans to locate the entities, and then\nlabel the boundary-adjusted span proposals with the corresponding categories.\nOur method effectively utilizes the boundary information of entities and\npartially matched spans during training. Through boundary regression, entities\nof any length can be covered theoretically, which improves the ability to\nrecognize long entities. In addition, many low-quality seed spans are filtered\nout in the first stage, which reduces the time complexity of inference.\nExperiments on nested NER datasets demonstrate that our proposed method\noutperforms previous state-of-the-art models.",
+    "num_pages": 13
+}

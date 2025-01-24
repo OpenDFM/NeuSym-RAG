@@ -1,0 +1,17 @@
+{
+    "uuid": "da072dc2-1bd8-59a5-ba5e-92fcc00143c2",
+    "title": "Analyzing Generalization of Vision and Language Navigation to Unseen Outdoor Areas",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Raphael Schumann",
+        "Stefan Riezler"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.13838v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\da072dc2-1bd8-59a5-ba5e-92fcc00143c2.pdf",
+    "bibtex": "@misc{schumann2022analyzinggeneralizationofvisionand,\n    title = {Analyzing Generalization of Vision and Language Navigation to Unseen Outdoor Areas},\n    author = {Raphael Schumann and Stefan Riezler},\n    year = {2022},\n    eprint = {2203.13838},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2203.13838},\n}",
+    "abstract": "Vision and language navigation (VLN) is a challenging visually-grounded\nlanguage understanding task. Given a natural language navigation instruction, a\nvisual agent interacts with a graph-based environment equipped with panorama\nimages and tries to follow the described route. Most prior work has been\nconducted in indoor scenarios where best results were obtained for navigation\non routes that are similar to the training routes, with sharp drops in\nperformance when testing on unseen environments. We focus on VLN in outdoor\nscenarios and find that in contrast to indoor VLN, most of the gain in outdoor\nVLN on unseen data is due to features like junction type embedding or heading\ndelta that are specific to the respective environment graph, while image\ninformation plays a very minor role in generalizing VLN to unseen outdoor\nareas. These findings show a bias to specifics of graph representations of\nurban environments, demanding that VLN tasks grow in scale and diversity of\ngeographical environments.",
+    "num_pages": 14
+}

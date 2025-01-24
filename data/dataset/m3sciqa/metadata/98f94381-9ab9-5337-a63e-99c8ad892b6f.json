@@ -1,0 +1,22 @@
+{
+    "uuid": "98f94381-9ab9-5337-a63e-99c8ad892b6f",
+    "title": "Summary-Source Proposition-level Alignment: Task, Datasets and Supervised Baseline",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Ori Ernst",
+        "Ori Shapira",
+        "Ramakanth Pasunuru",
+        "Michael Lepioshkin",
+        "Jacob Goldberger",
+        "Mohit Bansal",
+        "Ido Dagan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2009.00590v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\98f94381-9ab9-5337-a63e-99c8ad892b6f.pdf",
+    "bibtex": "@misc{ernst2021summarysourcepropositionlevelalignmenttaskdatasets,\n    title = {Summary-Source Proposition-level Alignment: Task, Datasets and Supervised Baseline},\n    author = {Ori Ernst and Ori Shapira and Ramakanth Pasunuru and Michael Lepioshkin and Jacob Goldberger and Mohit Bansal and Ido Dagan},\n    year = {2021},\n    eprint = {2009.00590},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2009.00590},\n}",
+    "abstract": "Aligning sentences in a reference summary with their counterparts in source\ndocuments was shown as a useful auxiliary summarization task, notably for\ngenerating training data for salience detection. Despite its assessed utility,\nthe alignment step was mostly approached with heuristic unsupervised methods,\ntypically ROUGE-based, and was never independently optimized or evaluated. In\nthis paper, we propose establishing summary-source alignment as an explicit\ntask, while introducing two major novelties: (1) applying it at the more\naccurate proposition span level, and (2) approaching it as a supervised\nclassification task. To that end, we created a novel training dataset for\nproposition-level alignment, derived automatically from available summarization\nevaluation data. In addition, we crowdsourced dev and test datasets, enabling\nmodel development and proper evaluation. Utilizing these data, we present a\nsupervised proposition alignment baseline model, showing improved\nalignment-quality over the unsupervised approach.",
+    "num_pages": 13
+}

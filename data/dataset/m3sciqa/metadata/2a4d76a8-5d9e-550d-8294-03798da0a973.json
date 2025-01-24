@@ -1,0 +1,20 @@
+{
+    "uuid": "2a4d76a8-5d9e-550d-8294-03798da0a973",
+    "title": "Prophet: Prompting Large Language Models with Complementary Answer Heuristics for Knowledge-based Visual Question Answering",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Zhou Yu",
+        "Xuecheng Ouyang",
+        "Zhenwei Shao",
+        "Meng Wang",
+        "Jun Yu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2303.01903v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\2a4d76a8-5d9e-550d-8294-03798da0a973.pdf",
+    "bibtex": "@misc{yu2023prophetpromptinglargelanguagemodels,\n    title = {Prophet: Prompting Large Language Models with Complementary Answer Heuristics for Knowledge-based Visual Question Answering},\n    author = {Zhou Yu and Xuecheng Ouyang and Zhenwei Shao and Meng Wang and Jun Yu},\n    year = {2023},\n    eprint = {2303.01903},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2303.01903},\n}",
+    "abstract": "Knowledge-based visual question answering (VQA) requires external knowledge\nbeyond the image to answer the question. Early studies retrieve required\nknowledge from explicit knowledge bases (KBs), which often introduces\nirrelevant information to the question, hence restricting the performance of\ntheir models. Recent works have resorted to using a powerful large language\nmodel (LLM) as an implicit knowledge engine to acquire the necessary knowledge\nfor answering. Despite the encouraging results achieved by these methods, we\nargue that they have not fully activated the capacity of the blind LLM as the\nprovided textual input is insufficient to depict the required visual\ninformation to answer the question. In this paper, we present Prophet -- a\nconceptually simple, flexible, and general framework designed to prompt LLM\nwith answer heuristics for knowledge-based VQA. Specifically, we first train a\nvanilla VQA model on a specific knowledge-based VQA dataset without external\nknowledge. After that, we extract two types of complementary answer heuristics\nfrom the VQA model: answer candidates and answer-aware examples. Finally, the\ntwo types of answer heuristics are jointly encoded into a formatted prompt to\nfacilitate the LLM's understanding of both the image and question, thus\ngenerating a more accurate answer. By incorporating the state-of-the-art LLM\nGPT-3, Prophet significantly outperforms existing state-of-the-art methods on\nfour challenging knowledge-based VQA datasets. To demonstrate the generality of\nour approach, we instantiate Prophet with the combinations of different VQA\nmodels (i.e., both discriminative and generative ones) and different LLMs\n(i.e., both commercial and open-source ones).",
+    "num_pages": 16
+}

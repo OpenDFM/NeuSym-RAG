@@ -1,0 +1,23 @@
+{
+    "uuid": "67140bfe-0af6-5bb2-b96f-502358a17a1a",
+    "title": "Zero-Shot Text-to-Image Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Aditya Ramesh",
+        "Mikhail Pavlov",
+        "Gabriel Goh",
+        "Scott Gray",
+        "Chelsea Voss",
+        "Alec Radford",
+        "Mark Chen",
+        "Ilya Sutskever"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2102.12092v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\67140bfe-0af6-5bb2-b96f-502358a17a1a.pdf",
+    "bibtex": "@misc{ramesh2021zeroshottexttoimagegeneration,\n    title = {Zero-Shot Text-to-Image Generation},\n    author = {Aditya Ramesh and Mikhail Pavlov and Gabriel Goh and Scott Gray and Chelsea Voss and Alec Radford and Mark Chen and Ilya Sutskever},\n    year = {2021},\n    eprint = {2102.12092},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2102.12092},\n}",
+    "abstract": "Text-to-image generation has traditionally focused on finding better modeling\nassumptions for training on a fixed dataset. These assumptions might involve\ncomplex architectures, auxiliary losses, or side information such as object\npart labels or segmentation masks supplied during training. We describe a\nsimple approach for this task based on a transformer that autoregressively\nmodels the text and image tokens as a single stream of data. With sufficient\ndata and scale, our approach is competitive with previous domain-specific\nmodels when evaluated in a zero-shot fashion.",
+    "num_pages": 20
+}

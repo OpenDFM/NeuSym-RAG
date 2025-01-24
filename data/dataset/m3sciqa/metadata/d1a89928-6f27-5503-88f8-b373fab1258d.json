@@ -1,0 +1,18 @@
+{
+    "uuid": "d1a89928-6f27-5503-88f8-b373fab1258d",
+    "title": "Data Cleansing for Models Trained with SGD",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Satoshi Hara",
+        "Atsushi Nitanda",
+        "Takanori Maehara"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1906.08473v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\d1a89928-6f27-5503-88f8-b373fab1258d.pdf",
+    "bibtex": "@misc{hara2019datacleansingformodelstrained,\n    title = {Data Cleansing for Models Trained with SGD},\n    author = {Satoshi Hara and Atsushi Nitanda and Takanori Maehara},\n    year = {2019},\n    eprint = {1906.08473},\n    archivePrefix = {arXiv},\n    primaryClass = {stat.ML},\n    url = {http://arxiv.org/abs/1906.08473},\n}",
+    "abstract": "Data cleansing is a typical approach used to improve the accuracy of machine\nlearning models, which, however, requires extensive domain knowledge to\nidentify the influential instances that affect the models. In this paper, we\npropose an algorithm that can suggest influential instances without using any\ndomain knowledge. With the proposed method, users only need to inspect the\ninstances suggested by the algorithm, implying that users do not need extensive\nknowledge for this procedure, which enables even non-experts to conduct data\ncleansing and improve the model. The existing methods require the loss function\nto be convex and an optimal model to be obtained, which is not always the case\nin modern machine learning. To overcome these limitations, we propose a novel\napproach specifically designed for the models trained with stochastic gradient\ndescent (SGD). The proposed method infers the influential instances by\nretracing the steps of the SGD while incorporating intermediate models computed\nin each step. Through experiments, we demonstrate that the proposed method can\naccurately infer the influential instances. Moreover, we used MNIST and CIFAR10\nto show that the models can be effectively improved by removing the influential\ninstances suggested by the proposed method.",
+    "num_pages": 23
+}

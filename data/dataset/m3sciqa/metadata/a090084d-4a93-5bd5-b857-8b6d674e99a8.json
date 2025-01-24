@@ -1,0 +1,18 @@
+{
+    "uuid": "a090084d-4a93-5bd5-b857-8b6d674e99a8",
+    "title": "Distantly Supervised Named Entity Recognition via Confidence-Based Multi-Class Positive and Unlabeled Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Kang Zhou",
+        "Yuepei Li",
+        "Qi Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.09589v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\a090084d-4a93-5bd5-b857-8b6d674e99a8.pdf",
+    "bibtex": "@misc{zhou2022distantlysupervisednamedentityrecognition,\n    title = {Distantly Supervised Named Entity Recognition via Confidence-Based Multi-Class Positive and Unlabeled Learning},\n    author = {Kang Zhou and Yuepei Li and Qi Li},\n    year = {2022},\n    eprint = {2204.09589},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.09589},\n}",
+    "abstract": "In this paper, we study the named entity recognition (NER) problem under\ndistant supervision. Due to the incompleteness of the external dictionaries\nand/or knowledge bases, such distantly annotated training data usually suffer\nfrom a high false negative rate. To this end, we formulate the Distantly\nSupervised NER (DS-NER) problem via Multi-class Positive and Unlabeled (MPU)\nlearning and propose a theoretically and practically novel CONFidence-based MPU\n(Conf-MPU) approach. To handle the incomplete annotations, Conf-MPU consists of\ntwo steps. First, a confidence score is estimated for each token of being an\nentity token. Then, the proposed Conf-MPU risk estimation is applied to train a\nmulti-class classifier for the NER task. Thorough experiments on two benchmark\ndatasets labeled by various external knowledge demonstrate the superiority of\nthe proposed Conf-MPU over existing DS-NER methods.",
+    "num_pages": 14
+}

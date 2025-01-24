@@ -1,0 +1,22 @@
+{
+    "uuid": "9f4c8e70-1c59-506c-acd1-9396e1bdaca4",
+    "title": "Empathetic Dialogue Generation via Sensitive Emotion Recognition and Sensible Knowledge Selection",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Lanrui Wang",
+        "Jiangnan Li",
+        "Zheng Lin",
+        "Fandong Meng",
+        "Chenxu Yang",
+        "Weiping Wang",
+        "Jie Zhou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.11715v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\9f4c8e70-1c59-506c-acd1-9396e1bdaca4.pdf",
+    "bibtex": "@misc{wang2022empatheticdialoguegenerationviasensitive,\n    title = {Empathetic Dialogue Generation via Sensitive Emotion Recognition and Sensible Knowledge Selection},\n    author = {Lanrui Wang and Jiangnan Li and Zheng Lin and Fandong Meng and Chenxu Yang and Weiping Wang and Jie Zhou},\n    year = {2022},\n    eprint = {2210.11715},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.11715},\n}",
+    "abstract": "Empathy, which is widely used in psychological counselling, is a key trait of\neveryday human conversations. Equipped with commonsense knowledge, current\napproaches to empathetic response generation focus on capturing implicit\nemotion within dialogue context, where the emotions are treated as a static\nvariable throughout the conversations. However, emotions change dynamically\nbetween utterances, which makes previous works difficult to perceive the\nemotion flow and predict the correct emotion of the target response, leading to\ninappropriate response. Furthermore, simply importing commonsense knowledge\nwithout harmonization may trigger the conflicts between knowledge and emotion,\nwhich confuse the model to choose incorrect information to guide the generation\nprocess. To address the above problems, we propose a Serial Encoding and\nEmotion-Knowledge interaction (SEEK) method for empathetic dialogue generation.\nWe use a fine-grained encoding strategy which is more sensitive to the emotion\ndynamics (emotion flow) in the conversations to predict the emotion-intent\ncharacteristic of response. Besides, we design a novel framework to model the\ninteraction between knowledge and emotion to generate more sensible response.\nExtensive experiments on EmpatheticDialogues demonstrate that SEEK outperforms\nthe strong baselines in both automatic and manual evaluations.",
+    "num_pages": 12
+}

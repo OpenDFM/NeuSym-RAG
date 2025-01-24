@@ -1,0 +1,18 @@
+{
+    "uuid": "c292abb5-051b-54a6-966e-426024009c41",
+    "title": "KaggleDBQA: Realistic Evaluation of Text-to-SQL Parsers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Chia-Hsuan Lee",
+        "Oleksandr Polozov",
+        "Matthew Richardson"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.11455v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\c292abb5-051b-54a6-966e-426024009c41.pdf",
+    "bibtex": "@misc{lee2021kaggledbqarealisticevaluationoftexttosql,\n    title = {KaggleDBQA: Realistic Evaluation of Text-to-SQL Parsers},\n    author = {Chia-Hsuan Lee and Oleksandr Polozov and Matthew Richardson},\n    year = {2021},\n    eprint = {2106.11455},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.11455},\n}",
+    "abstract": "The goal of database question answering is to enable natural language\nquerying of real-life relational databases in diverse application domains.\nRecently, large-scale datasets such as Spider and WikiSQL facilitated novel\nmodeling techniques for text-to-SQL parsing, improving zero-shot generalization\nto unseen databases. In this work, we examine the challenges that still prevent\nthese techniques from practical deployment. First, we present KaggleDBQA, a new\ncross-domain evaluation dataset of real Web databases, with domain-specific\ndata types, original formatting, and unrestricted questions. Second, we\nre-examine the choice of evaluation tasks for text-to-SQL parsers as applied in\nreal-life settings. Finally, we augment our in-domain evaluation task with\ndatabase documentation, a naturally occurring source of implicit domain\nknowledge. We show that KaggleDBQA presents a challenge to state-of-the-art\nzero-shot parsers but a more realistic evaluation setting and creative use of\nassociated database documentation boosts their accuracy by over 13.2%, doubling\ntheir performance.",
+    "num_pages": 13
+}

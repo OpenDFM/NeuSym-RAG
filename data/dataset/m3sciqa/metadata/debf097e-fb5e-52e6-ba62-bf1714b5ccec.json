@@ -1,0 +1,18 @@
+{
+    "uuid": "debf097e-fb5e-52e6-ba62-bf1714b5ccec",
+    "title": "Enhancing Low-resource Fine-grained Named Entity Recognition by Leveraging Coarse-grained Datasets",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Su Ah Lee",
+        "Seokjin Oh",
+        "Woohwan Jung"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.11715v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\debf097e-fb5e-52e6-ba62-bf1714b5ccec.pdf",
+    "bibtex": "@misc{lee2023enhancinglowresourcefinegrainednamedentity,\n    title = {Enhancing Low-resource Fine-grained Named Entity Recognition by Leveraging Coarse-grained Datasets},\n    author = {Su Ah Lee and Seokjin Oh and Woohwan Jung},\n    year = {2023},\n    eprint = {2310.11715},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.11715},\n}",
+    "abstract": "Named Entity Recognition (NER) frequently suffers from the problem of\ninsufficient labeled data, particularly in fine-grained NER scenarios. Although\n$K$-shot learning techniques can be applied, their performance tends to\nsaturate when the number of annotations exceeds several tens of labels. To\novercome this problem, we utilize existing coarse-grained datasets that offer a\nlarge number of annotations. A straightforward approach to address this problem\nis pre-finetuning, which employs coarse-grained data for representation\nlearning. However, it cannot directly utilize the relationships between\nfine-grained and coarse-grained entities, although a fine-grained entity type\nis likely to be a subcategory of a coarse-grained entity type. We propose a\nfine-grained NER model with a Fine-to-Coarse(F2C) mapping matrix to leverage\nthe hierarchical structure explicitly. In addition, we present an inconsistency\nfiltering method to eliminate coarse-grained entities that are inconsistent\nwith fine-grained entity types to avoid performance degradation. Our\nexperimental results show that our method outperforms both $K$-shot learning\nand supervised learning methods when dealing with a small number of\nfine-grained annotations.",
+    "num_pages": 11
+}

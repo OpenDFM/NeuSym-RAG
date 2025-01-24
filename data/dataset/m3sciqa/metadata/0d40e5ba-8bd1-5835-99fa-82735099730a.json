@@ -1,0 +1,18 @@
+{
+    "uuid": "0d40e5ba-8bd1-5835-99fa-82735099730a",
+    "title": "Generative Knowledge Selection for Knowledge-Grounded Dialogues",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Weiwei Sun",
+        "Pengjie Ren",
+        "Zhaochun Ren"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.04836v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\0d40e5ba-8bd1-5835-99fa-82735099730a.pdf",
+    "bibtex": "@misc{sun2023generativeknowledgeselectionforknowledgegrounded,\n    title = {Generative Knowledge Selection for Knowledge-Grounded Dialogues},\n    author = {Weiwei Sun and Pengjie Ren and Zhaochun Ren},\n    year = {2023},\n    eprint = {2304.04836},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2304.04836},\n}",
+    "abstract": "Knowledge selection is the key in knowledge-grounded dialogues (KGD), which\naims to select an appropriate knowledge snippet to be used in the utterance\nbased on dialogue history. Previous studies mainly employ the classification\napproach to classify each candidate snippet as \"relevant\" or \"irrelevant\"\nindependently. However, such approaches neglect the interactions between\nsnippets, leading to difficulties in inferring the meaning of snippets.\nMoreover, they lack modeling of the discourse structure of dialogue-knowledge\ninteractions. We propose a simple yet effective generative approach for\nknowledge selection, called GenKS. GenKS learns to select snippets by\ngenerating their identifiers with a sequence-to-sequence model. GenKS therefore\ncaptures intra-knowledge interaction inherently through attention mechanisms.\nMeanwhile, we devise a hyperlink mechanism to model the dialogue-knowledge\ninteractions explicitly. We conduct experiments on three benchmark datasets,\nand verify GenKS achieves the best results on both knowledge selection and\nresponse generation.",
+    "num_pages": 12
+}

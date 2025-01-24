@@ -1,0 +1,20 @@
+{
+    "uuid": "239b7173-a5aa-5ebd-b3e1-ee619a7bb61e",
+    "title": "Fuzzy Alignments in Directed Acyclic Graph for Non-Autoregressive Machine Translation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Zhengrui Ma",
+        "Chenze Shao",
+        "Shangtong Gui",
+        "Min Zhang",
+        "Yang Feng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2303.06662v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\239b7173-a5aa-5ebd-b3e1-ee619a7bb61e.pdf",
+    "bibtex": "@misc{ma2023fuzzyalignmentsindirectedacyclic,\n    title = {Fuzzy Alignments in Directed Acyclic Graph for Non-Autoregressive Machine Translation},\n    author = {Zhengrui Ma and Chenze Shao and Shangtong Gui and Min Zhang and Yang Feng},\n    year = {2023},\n    eprint = {2303.06662},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2303.06662},\n}",
+    "abstract": "Non-autoregressive translation (NAT) reduces the decoding latency but suffers\nfrom performance degradation due to the multi-modality problem. Recently, the\nstructure of directed acyclic graph has achieved great success in NAT, which\ntackles the multi-modality problem by introducing dependency between vertices.\nHowever, training it with negative log-likelihood loss implicitly requires a\nstrict alignment between reference tokens and vertices, weakening its ability\nto handle multiple translation modalities. In this paper, we hold the view that\nall paths in the graph are fuzzily aligned with the reference sentence. We do\nnot require the exact alignment but train the model to maximize a fuzzy\nalignment score between the graph and reference, which takes captured\ntranslations in all modalities into account. Extensive experiments on major WMT\nbenchmarks show that our method substantially improves translation performance\nand increases prediction confidence, setting a new state of the art for NAT on\nthe raw training data.",
+    "num_pages": 19
+}

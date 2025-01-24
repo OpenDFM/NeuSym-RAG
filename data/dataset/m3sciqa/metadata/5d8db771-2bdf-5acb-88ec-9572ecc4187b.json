@@ -1,0 +1,22 @@
+{
+    "uuid": "5d8db771-2bdf-5acb-88ec-9572ecc4187b",
+    "title": "Learning from Miscellaneous Other-Class Words for Few-shot Named Entity Recognition",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Meihan Tong",
+        "Shuai Wang",
+        "Bin Xu",
+        "Yixin Cao",
+        "Minghui Liu",
+        "Lei Hou",
+        "Juanzi Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.15167v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\5d8db771-2bdf-5acb-88ec-9572ecc4187b.pdf",
+    "bibtex": "@misc{tong2021learningfrommiscellaneousotherclasswords,\n    title = {Learning from Miscellaneous Other-Class Words for Few-shot Named Entity Recognition},\n    author = {Meihan Tong and Shuai Wang and Bin Xu and Yixin Cao and Minghui Liu and Lei Hou and Juanzi Li},\n    year = {2021},\n    eprint = {2106.15167},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.15167},\n}",
+    "abstract": "Few-shot Named Entity Recognition (NER) exploits only a handful of\nannotations to identify and classify named entity mentions. Prototypical\nnetwork shows superior performance on few-shot NER. However, existing\nprototypical methods fail to differentiate rich semantics in other-class words,\nwhich will aggravate overfitting under few shot scenario. To address the issue,\nwe propose a novel model, Mining Undefined Classes from Other-class (MUCO),\nthat can automatically induce different undefined classes from the other class\nto improve few-shot NER. With these extra-labeled undefined classes, our method\nwill improve the discriminative ability of NER classifier and enhance the\nunderstanding of predefined classes with stand-by semantic knowledge.\nExperimental results demonstrate that our model outperforms five\nstate-of-the-art models in both 1-shot and 5-shots settings on four NER\nbenchmarks. We will release the code upon acceptance. The source code is\nreleased on https: //github.com/shuaiwa16/OtherClassNER.git.",
+    "num_pages": 12
+}

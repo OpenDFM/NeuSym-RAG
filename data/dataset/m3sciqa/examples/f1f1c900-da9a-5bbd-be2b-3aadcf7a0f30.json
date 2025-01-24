@@ -1,0 +1,44 @@
+{
+    "uuid": "f1f1c900-da9a-5bbd-be2b-3aadcf7a0f30",
+    "question": "Consider the paper that introduces the method that is in the third row of the table. What specific approach does the model proposed in the paper employ to minimize the SQL annotation error rate, and how does it ensure the selection of semantically equivalent and efficient SQL as ground truth?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "ba614015-ae38-5939-8106-728d33b07d78"
+    ],
+    "reference_pdf": [
+        "b16e8b8f-0d45-58db-b7ec-72837add121d",
+        "befe32c2-c0d6-520c-b7df-ddfcfeb79028",
+        "a0ce147c-98bf-52ba-8365-84983999c80a",
+        "6103a65c-dea4-59ae-bcc4-5f7420478289",
+        "a87515b4-ac31-5ecb-a261-cc3c8d5f4c8b",
+        "0b9362a1-e422-5331-a3ec-a8abc9c8c249",
+        "8ff266a0-ac5b-543b-b908-bdea848acd2d",
+        "79c6d4f0-99c6-5051-bc74-19bc136089f4",
+        "cfd90106-9c14-54c4-aa6c-58df4c94e301",
+        "73172932-ae8b-5d7d-bee0-6bc34aea20e7",
+        "d135e939-c86d-56a7-8840-c346de4706f9",
+        "1d0dae01-2fe3-5971-86b2-965007cceb0c",
+        "46a88ba5-c16e-5efd-913c-3de6e749f2a9",
+        "45fbbb5f-4e5d-52b2-8956-84eedc7cba9a"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method that is in the third row of the table. What specific approach does the model proposed in the paper employ to minimize the SQL annotation error rate, and how does it ensure the selection of semantically equivalent and efficient SQL as ground truth?",
+            "reference_answer": "The \\textsc{Bird} benchmark employs a double-blind annotation approach to minimize the SQL annotation error rate. This approach involves two independent SQL annotators generating SQLs for the same question without discussion. SQLs yielding identical results are collected, and those with discrepancies are reviewed by experts until a consensus is reached. This method dramatically reduces the SQL annotation error rate by ensuring a low probability for two skilled annotators to generate the same incorrect results when databases have large values. To ensure the selection of semantically equivalent and efficient SQL as ground truth, the more semantic-equivalent and efficient SQL selected by experts for each question is picked as ground truth SQL in \\textsc{Bird}. Additionally, external knowledge evidence sentences are recorded for each SQL if utilized, enhancing the model's comprehension of database values and promoting the generation of efficient SQL queries."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.18538/result_table.png"
+    ]
+}

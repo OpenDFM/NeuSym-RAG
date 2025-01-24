@@ -1,0 +1,19 @@
+{
+    "uuid": "606bc274-d6e5-5e9a-8c7e-68c4e47e038c",
+    "title": "Leveraging Task Dependency and Contrastive Learning for Case Outcome Classification on European Court of Human Rights Cases",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "T. Y. S. S Santosh",
+        "Marcel Perez San Blas",
+        "Phillip Kemper",
+        "Matthias Grabmair"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.00768v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\606bc274-d6e5-5e9a-8c7e-68c4e47e038c.pdf",
+    "bibtex": "@misc{santosh2023leveragingtaskdependencyandcontrastive,\n    title = {Leveraging Task Dependency and Contrastive Learning for Case Outcome Classification on European Court of Human Rights Cases},\n    author = {T. Y. S. S Santosh and Marcel Perez San Blas and Phillip Kemper and Matthias Grabmair},\n    year = {2023},\n    eprint = {2302.00768},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2302.00768},\n}",
+    "abstract": "We report on an experiment in case outcome classification on European Court\nof Human Rights cases where our model first learns to identify the convention\narticles allegedly violated by the state from case facts descriptions, and\nsubsequently uses that information to classify whether the court finds a\nviolation of those articles. We assess the dependency between these two tasks\nat the feature and outcome level. Furthermore, we leverage a hierarchical\ncontrastive loss to pull together article-specific representations of cases at\nthe higher level, leading to distinctive article clusters. The cases in each\narticle cluster are further pulled closer based on their outcome, leading to\nsub-clusters of cases with similar outcomes. Our experiment results demonstrate\nthat, given a static pre-trained encoder, our models produce a small but\nconsistent improvement in classification performance over single-task and joint\nmodels without contrastive loss.",
+    "num_pages": 9
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "80e783a2-8364-5565-8600-93cc7a0b066a",
+    "title": "CommonsenseQA 2.0: Exposing the Limits of AI through Gamification",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Alon Talmor",
+        "Ori Yoran",
+        "Ronan Le Bras",
+        "Chandra Bhagavatula",
+        "Yoav Goldberg",
+        "Yejin Choi",
+        "Jonathan Berant"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2201.05320v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\80e783a2-8364-5565-8600-93cc7a0b066a.pdf",
+    "bibtex": "@misc{talmor2022commonsenseqa20exposingthelimits,\n    title = {CommonsenseQA 2.0: Exposing the Limits of AI through Gamification},\n    author = {Alon Talmor and Ori Yoran and Ronan Le Bras and Chandra Bhagavatula and Yoav Goldberg and Yejin Choi and Jonathan Berant},\n    year = {2022},\n    eprint = {2201.05320},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2201.05320},\n}",
+    "abstract": "Constructing benchmarks that test the abilities of modern natural language\nunderstanding models is difficult - pre-trained language models exploit\nartifacts in benchmarks to achieve human parity, but still fail on adversarial\nexamples and make errors that demonstrate a lack of common sense. In this work,\nwe propose gamification as a framework for data construction. The goal of\nplayers in the game is to compose questions that mislead a rival AI while using\nspecific phrases for extra points. The game environment leads to enhanced user\nengagement and simultaneously gives the game designer control over the\ncollected data, allowing us to collect high-quality data at scale. Using our\nmethod we create CommonsenseQA 2.0, which includes 14,343 yes/no questions, and\ndemonstrate its difficulty for models that are orders-of-magnitude larger than\nthe AI used in the game itself. Our best baseline, the T5-based Unicorn with\n11B parameters achieves an accuracy of 70.2%, substantially higher than GPT-3\n(52.9%) in a few-shot inference setup. Both score well below human performance\nwhich is at 94.1%.",
+    "num_pages": 14
+}

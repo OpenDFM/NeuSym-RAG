@@ -1,0 +1,18 @@
+{
+    "uuid": "ff0d0226-2dc4-5a18-9cc9-ec5826c16eb7",
+    "title": "SimCSE: Simple Contrastive Learning of Sentence Embeddings",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Tianyu Gao",
+        "Xingcheng Yao",
+        "Danqi Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2104.08821v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\ff0d0226-2dc4-5a18-9cc9-ec5826c16eb7.pdf",
+    "bibtex": "@misc{gao2022simcsesimplecontrastivelearningof,\n    title = {SimCSE: Simple Contrastive Learning of Sentence Embeddings},\n    author = {Tianyu Gao and Xingcheng Yao and Danqi Chen},\n    year = {2022},\n    eprint = {2104.08821},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2104.08821},\n}",
+    "abstract": "This paper presents SimCSE, a simple contrastive learning framework that\ngreatly advances state-of-the-art sentence embeddings. We first describe an\nunsupervised approach, which takes an input sentence and predicts itself in a\ncontrastive objective, with only standard dropout used as noise. This simple\nmethod works surprisingly well, performing on par with previous supervised\ncounterparts. We find that dropout acts as minimal data augmentation, and\nremoving it leads to a representation collapse. Then, we propose a supervised\napproach, which incorporates annotated pairs from natural language inference\ndatasets into our contrastive learning framework by using \"entailment\" pairs as\npositives and \"contradiction\" pairs as hard negatives. We evaluate SimCSE on\nstandard semantic textual similarity (STS) tasks, and our unsupervised and\nsupervised models using BERT base achieve an average of 76.3% and 81.6%\nSpearman's correlation respectively, a 4.2% and 2.2% improvement compared to\nthe previous best results. We also show -- both theoretically and empirically\n-- that the contrastive learning objective regularizes pre-trained embeddings'\nanisotropic space to be more uniform, and it better aligns positive pairs when\nsupervised signals are available.",
+    "num_pages": 17
+}

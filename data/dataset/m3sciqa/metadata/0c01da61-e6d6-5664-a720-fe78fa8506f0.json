@@ -1,0 +1,24 @@
+{
+    "uuid": "0c01da61-e6d6-5664-a720-fe78fa8506f0",
+    "title": "Multitask Multimodal Prompted Training for Interactive Embodied Task Completion",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Georgios Pantazopoulos",
+        "Malvina Nikandrou",
+        "Amit Parekh",
+        "Bhathiya Hemanthage",
+        "Arash Eshghi",
+        "Ioannis Konstas",
+        "Verena Rieser",
+        "Oliver Lemon",
+        "Alessandro Suglia"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2311.04067v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\0c01da61-e6d6-5664-a720-fe78fa8506f0.pdf",
+    "bibtex": "@misc{pantazopoulos2023multitaskmultimodalpromptedtrainingfor,\n    title = {Multitask Multimodal Prompted Training for Interactive Embodied Task Completion},\n    author = {Georgios Pantazopoulos and Malvina Nikandrou and Amit Parekh and Bhathiya Hemanthage and Arash Eshghi and Ioannis Konstas and Verena Rieser and Oliver Lemon and Alessandro Suglia},\n    year = {2023},\n    eprint = {2311.04067},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2311.04067},\n}",
+    "abstract": "Interactive and embodied tasks pose at least two fundamental challenges to\nexisting Vision & Language (VL) models, including 1) grounding language in\ntrajectories of actions and observations, and 2) referential disambiguation. To\ntackle these challenges, we propose an Embodied MultiModal Agent (EMMA): a\nunified encoder-decoder model that reasons over images and trajectories, and\ncasts action prediction as multimodal text generation. By unifying all tasks as\ntext generation, EMMA learns a language of actions which facilitates transfer\nacross tasks. Different to previous modular approaches with independently\ntrained components, we use a single multitask model where each task contributes\nto goal completion. EMMA performs on par with similar models on several VL\nbenchmarks and sets a new state-of-the-art performance (36.81% success rate) on\nthe Dialog-guided Task Completion (DTC), a benchmark to evaluate dialog-guided\nagents in the Alexa Arena",
+    "num_pages": 22
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "a0863db0-4018-56ff-81bf-bdb1ff2ed4b7",
+    "title": "Detecting and Mitigating Hallucinations in Machine Translation: Model Internal Workings Alone Do Well, Sentence Similarity Even Better",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "David Dale",
+        "Elena Voita",
+        "Loïc Barrault",
+        "Marta R. Costa-jussà"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2212.08597v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\a0863db0-4018-56ff-81bf-bdb1ff2ed4b7.pdf",
+    "bibtex": "@misc{dale2022detectingandmitigatinghallucinationsin,\n    title = {Detecting and Mitigating Hallucinations in Machine Translation: Model Internal Workings Alone Do Well, Sentence Similarity Even Better},\n    author = {David Dale and Elena Voita and Loïc Barrault and Marta R. Costa-jussà},\n    year = {2022},\n    eprint = {2212.08597},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2212.08597},\n}",
+    "abstract": "While the problem of hallucinations in neural machine translation has long\nbeen recognized, so far the progress on its alleviation is very little. Indeed,\nrecently it turned out that without artificially encouraging models to\nhallucinate, previously existing methods fall short and even the standard\nsequence log-probability is more informative. It means that characteristics\ninternal to the model can give much more information than we expect, and before\nusing external models and measures, we first need to ask: how far can we go if\nwe use nothing but the translation model itself ? We propose to use a method\nthat evaluates the percentage of the source contribution to a generated\ntranslation. Intuitively, hallucinations are translations \"detached\" from the\nsource, hence they can be identified by low source contribution. This method\nimproves detection accuracy for the most severe hallucinations by a factor of 2\nand is able to alleviate hallucinations at test time on par with the previous\nbest approach that relies on external models. Next, if we move away from\ninternal model characteristics and allow external tools, we show that using\nsentence similarity from cross-lingual embeddings further improves these\nresults.",
+    "num_pages": 13
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "ab1e92a1-cd80-56c1-878b-6420ed9ef600",
+    "title": "Adversarial Training for Large Neural Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Xiaodong Liu",
+        "Hao Cheng",
+        "Pengcheng He",
+        "Weizhu Chen",
+        "Yu Wang",
+        "Hoifung Poon",
+        "Jianfeng Gao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.08994v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\ab1e92a1-cd80-56c1-878b-6420ed9ef600.pdf",
+    "bibtex": "@misc{liu2020adversarialtrainingforlargeneural,\n    title = {Adversarial Training for Large Neural Language Models},\n    author = {Xiaodong Liu and Hao Cheng and Pengcheng He and Weizhu Chen and Yu Wang and Hoifung Poon and Jianfeng Gao},\n    year = {2020},\n    eprint = {2004.08994},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2004.08994},\n}",
+    "abstract": "Generalization and robustness are both key desiderata for designing machine\nlearning methods. Adversarial training can enhance robustness, but past work\noften finds it hurts generalization. In natural language processing (NLP),\npre-training large neural language models such as BERT have demonstrated\nimpressive gain in generalization for a variety of tasks, with further\nimprovement from adversarial fine-tuning. However, these models are still\nvulnerable to adversarial attacks. In this paper, we show that adversarial\npre-training can improve both generalization and robustness. We propose a\ngeneral algorithm ALUM (Adversarial training for large neural LangUage Models),\nwhich regularizes the training objective by applying perturbations in the\nembedding space that maximizes the adversarial loss. We present the first\ncomprehensive study of adversarial training in all stages, including\npre-training from scratch, continual pre-training on a well-trained model, and\ntask-specific fine-tuning. ALUM obtains substantial gains over BERT on a wide\nrange of NLP tasks, in both regular and adversarial scenarios. Even for models\nthat have been well trained on extremely large text corpora, such as RoBERTa,\nALUM can still produce significant gains from continual pre-training, whereas\nconventional non-adversarial methods can not. ALUM can be further combined with\ntask-specific fine-tuning to attain additional gains. The ALUM code is publicly\navailable at https://github.com/namisan/mt-dnn.",
+    "num_pages": 13
+}

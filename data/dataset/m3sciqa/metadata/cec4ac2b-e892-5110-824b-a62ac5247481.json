@@ -1,0 +1,20 @@
+{
+    "uuid": "cec4ac2b-e892-5110-824b-a62ac5247481",
+    "title": "Contextual Representation Learning beyond Masked Language Modeling",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Zhiyi Fu",
+        "Wangchunshu Zhou",
+        "Jingjing Xu",
+        "Hao Zhou",
+        "Lei Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.04163v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\cec4ac2b-e892-5110-824b-a62ac5247481.pdf",
+    "bibtex": "@misc{fu2022contextualrepresentationlearningbeyondmasked,\n    title = {Contextual Representation Learning beyond Masked Language Modeling},\n    author = {Zhiyi Fu and Wangchunshu Zhou and Jingjing Xu and Hao Zhou and Lei Li},\n    year = {2022},\n    eprint = {2204.04163},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.04163},\n}",
+    "abstract": "How do masked language models (MLMs) such as BERT learn contextual\nrepresentations? In this work, we analyze the learning dynamics of MLMs. We\nfind that MLMs adopt sampled embeddings as anchors to estimate and inject\ncontextual semantics to representations, which limits the efficiency and\neffectiveness of MLMs. To address these issues, we propose TACO, a simple yet\neffective representation learning approach to directly model global semantics.\nTACO extracts and aligns contextual semantics hidden in contextualized\nrepresentations to encourage models to attend global semantics when generating\ncontextualized representations. Experiments on the GLUE benchmark show that\nTACO achieves up to 5x speedup and up to 1.2 points average improvement over\nexisting MLMs. The code is available at https://github.com/FUZHIYI/TACO.",
+    "num_pages": 14
+}

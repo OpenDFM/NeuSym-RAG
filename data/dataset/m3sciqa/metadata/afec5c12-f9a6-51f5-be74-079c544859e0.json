@@ -1,0 +1,23 @@
+{
+    "uuid": "afec5c12-f9a6-51f5-be74-079c544859e0",
+    "title": "Exploiting Contrastive Learning and Numerical Evidence for Confusing Legal Judgment Prediction",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Leilei Gan",
+        "Baokui Li",
+        "Kun Kuang",
+        "Yating Zhang",
+        "Lei Wang",
+        "Luu Anh Tuan",
+        "Yi Yang",
+        "Fei Wu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2211.08238v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\afec5c12-f9a6-51f5-be74-079c544859e0.pdf",
+    "bibtex": "@misc{gan2023exploitingcontrastivelearningandnumerical,\n    title = {Exploiting Contrastive Learning and Numerical Evidence for Confusing Legal Judgment Prediction},\n    author = {Leilei Gan and Baokui Li and Kun Kuang and Yating Zhang and Lei Wang and Luu Anh Tuan and Yi Yang and Fei Wu},\n    year = {2023},\n    eprint = {2211.08238},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2211.08238},\n}",
+    "abstract": "Given the fact description text of a legal case, legal judgment prediction\n(LJP) aims to predict the case's charge, law article and penalty term. A core\nproblem of LJP is how to distinguish confusing legal cases, where only subtle\ntext differences exist. Previous studies fail to distinguish different\nclassification errors with a standard cross-entropy classification loss, and\nignore the numbers in the fact description for predicting the term of penalty.\nTo tackle these issues, in this work, first, we propose a moco-based supervised\ncontrastive learning to learn distinguishable representations, and explore the\nbest strategy to construct positive example pairs to benefit all three subtasks\nof LJP simultaneously. Second, in order to exploit the numbers in legal cases\nfor predicting the penalty terms of certain cases, we further enhance the\nrepresentation of the fact description with extracted crime amounts which are\nencoded by a pre-trained numeracy model. Extensive experiments on public\nbenchmarks show that the proposed method achieves new state-of-the-art results,\nespecially on confusing legal cases. Ablation studies also demonstrate the\neffectiveness of each component.",
+    "num_pages": 12
+}

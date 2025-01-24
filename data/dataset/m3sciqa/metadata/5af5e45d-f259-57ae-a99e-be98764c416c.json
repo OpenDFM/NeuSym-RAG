@@ -1,0 +1,18 @@
+{
+    "uuid": "5af5e45d-f259-57ae-a99e-be98764c416c",
+    "title": "PAWS: Paraphrase Adversaries from Word Scrambling",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Yuan Zhang",
+        "Jason Baldridge",
+        "Luheng He"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1904.01130v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\5af5e45d-f259-57ae-a99e-be98764c416c.pdf",
+    "bibtex": "@misc{zhang2019pawsparaphraseadversariesfromword,\n    title = {PAWS: Paraphrase Adversaries from Word Scrambling},\n    author = {Yuan Zhang and Jason Baldridge and Luheng He},\n    year = {2019},\n    eprint = {1904.01130},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1904.01130},\n}",
+    "abstract": "Existing paraphrase identification datasets lack sentence pairs that have\nhigh lexical overlap without being paraphrases. Models trained on such data\nfail to distinguish pairs like flights from New York to Florida and flights\nfrom Florida to New York. This paper introduces PAWS (Paraphrase Adversaries\nfrom Word Scrambling), a new dataset with 108,463 well-formed paraphrase and\nnon-paraphrase pairs with high lexical overlap. Challenging pairs are generated\nby controlled word swapping and back translation, followed by fluency and\nparaphrase judgments by human raters. State-of-the-art models trained on\nexisting datasets have dismal performance on PAWS (<40% accuracy); however,\nincluding PAWS training data for these models improves their accuracy to 85%\nwhile maintaining performance on existing tasks. In contrast, models that do\nnot capture non-local contextual information fail even with PAWS training\nexamples. As such, PAWS provides an effective instrument for driving further\nprogress on models that better exploit structure, context, and pairwise\ncomparisons.",
+    "num_pages": 11
+}

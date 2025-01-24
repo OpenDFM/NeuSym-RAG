@@ -1,0 +1,18 @@
+{
+    "uuid": "0e6f19b8-6abc-54c4-baa8-bec3f656a0ad",
+    "title": "Estimating Example Difficulty Using Variance of Gradients",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Chirag Agarwal",
+        "Daniel D'souza",
+        "Sara Hooker"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2008.11600v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\0e6f19b8-6abc-54c4-baa8-bec3f656a0ad.pdf",
+    "bibtex": "@misc{agarwal2022estimatingexampledifficultyusingvariance,\n    title = {Estimating Example Difficulty Using Variance of Gradients},\n    author = {Chirag Agarwal and Daniel D'souza and Sara Hooker},\n    year = {2022},\n    eprint = {2008.11600},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2008.11600},\n}",
+    "abstract": "In machine learning, a question of great interest is understanding what\nexamples are challenging for a model to classify. Identifying atypical examples\nensures the safe deployment of models, isolates samples that require further\nhuman inspection and provides interpretability into model behavior. In this\nwork, we propose Variance of Gradients (VoG) as a valuable and efficient metric\nto rank data by difficulty and to surface a tractable subset of the most\nchallenging examples for human-in-the-loop auditing. We show that data points\nwith high VoG scores are far more difficult for the model to learn and\nover-index on corrupted or memorized examples. Further, restricting the\nevaluation to the test set instances with the lowest VoG improves the model's\ngeneralization performance. Finally, we show that VoG is a valuable and\nefficient ranking for out-of-distribution detection.",
+    "num_pages": 15
+}

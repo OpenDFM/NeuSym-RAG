@@ -1,0 +1,20 @@
+{
+    "uuid": "d135e939-c86d-56a7-8840-c346de4706f9",
+    "title": "RAT-SQL: Relation-Aware Schema Encoding and Linking for Text-to-SQL Parsers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Bailin Wang",
+        "Richard Shin",
+        "Xiaodong Liu",
+        "Oleksandr Polozov",
+        "Matthew Richardson"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1911.04942v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\d135e939-c86d-56a7-8840-c346de4706f9.pdf",
+    "bibtex": "@misc{wang2021ratsqlrelationawareschemaencodingand,\n    title = {RAT-SQL: Relation-Aware Schema Encoding and Linking for Text-to-SQL Parsers},\n    author = {Bailin Wang and Richard Shin and Xiaodong Liu and Oleksandr Polozov and Matthew Richardson},\n    year = {2021},\n    eprint = {1911.04942},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1911.04942},\n}",
+    "abstract": "When translating natural language questions into SQL queries to answer\nquestions from a database, contemporary semantic parsing models struggle to\ngeneralize to unseen database schemas. The generalization challenge lies in (a)\nencoding the database relations in an accessible way for the semantic parser,\nand (b) modeling alignment between database columns and their mentions in a\ngiven query. We present a unified framework, based on the relation-aware\nself-attention mechanism, to address schema encoding, schema linking, and\nfeature representation within a text-to-SQL encoder. On the challenging Spider\ndataset this framework boosts the exact match accuracy to 57.2%, surpassing its\nbest counterparts by 8.7% absolute improvement. Further augmented with BERT, it\nachieves the new state-of-the-art performance of 65.6% on the Spider\nleaderboard. In addition, we observe qualitative improvements in the model's\nunderstanding of schema linking and alignment. Our implementation will be\nopen-sourced at https://github.com/Microsoft/rat-sql.",
+    "num_pages": 12
+}

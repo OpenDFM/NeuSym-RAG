@@ -1,0 +1,24 @@
+{
+    "uuid": "47952b13-8f8a-5402-8c8a-17b461aaa1cc",
+    "title": "Sparse Upcycling: Training Mixture-of-Experts from Dense Checkpoints",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Aran Komatsuzaki",
+        "Joan Puigcerver",
+        "James Lee-Thorp",
+        "Carlos Riquelme Ruiz",
+        "Basil Mustafa",
+        "Joshua Ainslie",
+        "Yi Tay",
+        "Mostafa Dehghani",
+        "Neil Houlsby"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2212.05055v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\47952b13-8f8a-5402-8c8a-17b461aaa1cc.pdf",
+    "bibtex": "@misc{komatsuzaki2023sparseupcyclingtrainingmixtureofexpertsfrom,\n    title = {Sparse Upcycling: Training Mixture-of-Experts from Dense Checkpoints},\n    author = {Aran Komatsuzaki and Joan Puigcerver and James Lee-Thorp and Carlos Riquelme Ruiz and Basil Mustafa and Joshua Ainslie and Yi Tay and Mostafa Dehghani and Neil Houlsby},\n    year = {2023},\n    eprint = {2212.05055},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2212.05055},\n}",
+    "abstract": "Training large, deep neural networks to convergence can be prohibitively\nexpensive. As a result, often only a small selection of popular, dense models\nare reused across different contexts and tasks. Increasingly, sparsely\nactivated models, which seek to decouple model size from computation costs, are\nbecoming an attractive alternative to dense models. Although more efficient in\nterms of quality and computation cost, sparse models remain data-hungry and\ncostly to train from scratch in the large scale regime. In this work, we\npropose sparse upcycling -- a simple way to reuse sunk training costs by\ninitializing a sparsely activated Mixture-of-Experts model from a dense\ncheckpoint. We show that sparsely upcycled T5 Base, Large, and XL language\nmodels and Vision Transformer Base and Large models, respectively,\nsignificantly outperform their dense counterparts on SuperGLUE and ImageNet,\nusing only ~50% of the initial dense pretraining sunk cost. The upcycled models\nalso outperform sparse models trained from scratch on 100% of the initial dense\npretraining computation budget.",
+    "num_pages": 27
+}

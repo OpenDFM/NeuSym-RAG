@@ -1,0 +1,53 @@
+{
+    "uuid": "ce012678-0ea0-5416-a899-d1e220e07478",
+    "question": "Consider the paper that introduces the method that achieves an MRR score equal to 0.717 in the FB15kET dataset. What are the three distinct mechanisms that compose its approach, known as Transformer-based Entity Typing (TET), and how does each contribute to the task of knowledge graph entity typing?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "0b1e6d16-a279-5a83-ae0d-7b8a58bf0355"
+    ],
+    "reference_pdf": [
+        "ab8da4b2-8830-5dc2-b901-ca484702bbbe",
+        "8f3a0cf7-ba90-5e39-8e9a-2ebf3b91b288",
+        "437d1762-d8da-56a8-80e2-f6b5e823ad60",
+        "c170861e-b3c6-5f40-bad9-e98ba1f9c2d8",
+        "cc219d54-6f1e-524d-9a4a-dc4d0a5a4eec",
+        "9b027a68-0c67-587b-b01e-1abb132d9f19",
+        "1f670f2d-99fb-58c5-aef3-901c956d9929",
+        "d0b35b26-2b4c-5209-bb22-d8a44032dd05",
+        "3801abe7-8272-532f-bf4e-a10ce43700db",
+        "fbea0c82-5838-5d56-a4c7-3d9737ea7c08",
+        "ab9c34bc-777c-5ba4-9831-a203fa8bd682",
+        "128f2558-545f-58e7-ad6f-50141b4b068f",
+        "35cfee52-9b21-542e-a4a5-dc403ccd4fba",
+        "a208b8d1-6ff3-588a-9334-4195ba7e524c",
+        "b99fd553-6018-563d-820f-d97c0bbe1ea0",
+        "04f6e1fb-2218-5cd1-91e8-f7e37567df77",
+        "ddb1aaae-4a2c-57b7-8148-8d9e97d5d7ae",
+        "4675e5b7-915c-5c6f-afeb-c6d437bb8164",
+        "46202f6e-dfd7-5efd-816d-f285579141d0",
+        "eb603d6c-2a60-504d-93ed-aef55ff4655b",
+        "16269c81-8856-5df6-a1ac-b1a54440ca6e",
+        "1777f12e-991e-52d4-8b6b-03807d589e87",
+        "ae10df12-cb06-58ac-a746-6f941ee929e3"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method that achieves an MRR score equal to 0.717 in the FB15kET dataset. What are the three distinct mechanisms that compose its approach, known as Transformer-based Entity Typing (TET), and how does each contribute to the task of knowledge graph entity typing?",
+            "reference_answer": "The three distinct mechanisms that compose the Transformer-based Entity Typing (TET) approach are:\n\n1. **Local Transformer**: This mechanism focuses on encoding the information provided by each neighbor of an entity independently. It helps in inferring missing entity types by considering the local context around an entity, allowing for a detailed understanding of immediate relationships.\n\n2. **Global Transformer**: This mechanism aggregates the information from all neighbors of an entity into a single long sequence. It enables the model to reason about more complex entity types by considering the global context and the collective influence of all neighboring entities.\n\n3. **Context Transformer**: This mechanism integrates the content of neighbors in a differentiated way through information exchange between neighbor pairs, while preserving the graph structure. It enhances the model's ability to understand the context of each entity by considering how different neighbors relate to each other and to the entity in question.\n\nEach mechanism contributes to the task of knowledge graph entity typing by encoding different levels of context (local, global, and relational) around an entity, thereby improving the model's ability to accurately infer entity types."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.12008/comparison_table.png"
+    ]
+}

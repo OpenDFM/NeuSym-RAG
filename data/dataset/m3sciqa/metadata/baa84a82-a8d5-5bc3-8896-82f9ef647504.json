@@ -1,0 +1,17 @@
+{
+    "uuid": "baa84a82-a8d5-5bc3-8896-82f9ef647504",
+    "title": "A Baseline for Detecting Misclassified and Out-of-Distribution Examples in Neural Networks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Dan Hendrycks",
+        "Kevin Gimpel"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1610.02136v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\baa84a82-a8d5-5bc3-8896-82f9ef647504.pdf",
+    "bibtex": "@misc{hendrycks2018abaselinefordetectingmisclassified,\n    title = {A Baseline for Detecting Misclassified and Out-of-Distribution Examples in Neural Networks},\n    author = {Dan Hendrycks and Kevin Gimpel},\n    year = {2018},\n    eprint = {1610.02136},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.NE},\n    url = {http://arxiv.org/abs/1610.02136},\n}",
+    "abstract": "We consider the two related problems of detecting if an example is\nmisclassified or out-of-distribution. We present a simple baseline that\nutilizes probabilities from softmax distributions. Correctly classified\nexamples tend to have greater maximum softmax probabilities than erroneously\nclassified and out-of-distribution examples, allowing for their detection. We\nassess performance by defining several tasks in computer vision, natural\nlanguage processing, and automatic speech recognition, showing the\neffectiveness of this baseline across all. We then show the baseline can\nsometimes be surpassed, demonstrating the room for future research on these\nunderexplored detection tasks.",
+    "num_pages": 12
+}

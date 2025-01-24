@@ -1,0 +1,22 @@
+{
+    "uuid": "6376d671-e22f-58b4-bd2a-5cc3fa1d90b9",
+    "title": "DiscoPrompt: Path Prediction Prompt Tuning for Implicit Discourse Relation Recognition",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Chunkit Chan",
+        "Xin Liu",
+        "Jiayang Cheng",
+        "Zihan Li",
+        "Yangqiu Song",
+        "Ginny Y. Wong",
+        "Simon See"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.03973v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\6376d671-e22f-58b4-bd2a-5cc3fa1d90b9.pdf",
+    "bibtex": "@misc{chan2023discopromptpathpredictionprompttuning,\n    title = {DiscoPrompt: Path Prediction Prompt Tuning for Implicit Discourse Relation Recognition},\n    author = {Chunkit Chan and Xin Liu and Jiayang Cheng and Zihan Li and Yangqiu Song and Ginny Y. Wong and Simon See},\n    year = {2023},\n    eprint = {2305.03973},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.03973},\n}",
+    "abstract": "Implicit Discourse Relation Recognition (IDRR) is a sophisticated and\nchallenging task to recognize the discourse relations between the arguments\nwith the absence of discourse connectives. The sense labels for each discourse\nrelation follow a hierarchical classification scheme in the annotation process\n(Prasad et al., 2008), forming a hierarchy structure. Most existing works do\nnot well incorporate the hierarchy structure but focus on the syntax features\nand the prior knowledge of connectives in the manner of pure text\nclassification. We argue that it is more effective to predict the paths inside\nthe hierarchical tree (e.g., \"Comparison -> Contrast -> however\") rather than\nflat labels (e.g., Contrast) or connectives (e.g., however). We propose a\nprompt-based path prediction method to utilize the interactive information and\nintrinsic senses among the hierarchy in IDRR. This is the first work that\ninjects such structure information into pre-trained language models via prompt\ntuning, and the performance of our solution shows significant and consistent\nimprovement against competitive baselines.",
+    "num_pages": 21
+}

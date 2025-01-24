@@ -1,0 +1,21 @@
+{
+    "uuid": "d112b9d1-d4d4-5a03-b2f9-9107954158b4",
+    "title": "SynSetExpan: An Iterative Framework for Joint Entity Set Expansion and Synonym Discovery",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Jiaming Shen",
+        "Wenda Qiu",
+        "Jingbo Shang",
+        "Michelle Vanni",
+        "Xiang Ren",
+        "Jiawei Han"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2009.13827v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\d112b9d1-d4d4-5a03-b2f9-9107954158b4.pdf",
+    "bibtex": "@misc{shen2020synsetexpananiterativeframeworkfor,\n    title = {SynSetExpan: An Iterative Framework for Joint Entity Set Expansion and Synonym Discovery},\n    author = {Jiaming Shen and Wenda Qiu and Jingbo Shang and Michelle Vanni and Xiang Ren and Jiawei Han},\n    year = {2020},\n    eprint = {2009.13827},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2009.13827},\n}",
+    "abstract": "Entity set expansion and synonym discovery are two critical NLP tasks.\nPrevious studies accomplish them separately, without exploring their\ninterdependencies. In this work, we hypothesize that these two tasks are\ntightly coupled because two synonymous entities tend to have similar\nlikelihoods of belonging to various semantic classes. This motivates us to\ndesign SynSetExpan, a novel framework that enables two tasks to mutually\nenhance each other. SynSetExpan uses a synonym discovery model to include\npopular entities' infrequent synonyms into the set, which boosts the set\nexpansion recall. Meanwhile, the set expansion model, being able to determine\nwhether an entity belongs to a semantic class, can generate pseudo training\ndata to fine-tune the synonym discovery model towards better accuracy. To\nfacilitate the research on studying the interplays of these two tasks, we\ncreate the first large-scale Synonym-Enhanced Set Expansion (SE2) dataset via\ncrowdsourcing. Extensive experiments on the SE2 dataset and previous benchmarks\ndemonstrate the effectiveness of SynSetExpan for both entity set expansion and\nsynonym discovery tasks.",
+    "num_pages": 16
+}

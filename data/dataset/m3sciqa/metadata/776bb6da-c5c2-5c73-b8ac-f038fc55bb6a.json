@@ -1,0 +1,18 @@
+{
+    "uuid": "776bb6da-c5c2-5c73-b8ac-f038fc55bb6a",
+    "title": "Uncontrolled Lexical Exposure Leads to Overestimation of Compositional Generalization in Pretrained Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Najoung Kim",
+        "Tal Linzen",
+        "Paul Smolensky"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2212.10769v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\776bb6da-c5c2-5c73-b8ac-f038fc55bb6a.pdf",
+    "bibtex": "@misc{kim2022uncontrolledlexicalexposureleadsto,\n    title = {Uncontrolled Lexical Exposure Leads to Overestimation of Compositional Generalization in Pretrained Models},\n    author = {Najoung Kim and Tal Linzen and Paul Smolensky},\n    year = {2022},\n    eprint = {2212.10769},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2212.10769},\n}",
+    "abstract": "Human linguistic capacity is often characterized by compositionality and the\ngeneralization it enables -- human learners can produce and comprehend novel\ncomplex expressions by composing known parts. Several benchmarks exploit\ndistributional control across training and test to gauge compositional\ngeneralization, where certain lexical items only occur in limited contexts\nduring training. While recent work using these benchmarks suggests that\npretrained models achieve impressive generalization performance, we argue that\nexposure to pretraining data may break the aforementioned distributional\ncontrol. Using the COGS benchmark of Kim and Linzen (2020), we test two\nmodified evaluation setups that control for this issue: (1) substituting\ncontext-controlled lexical items with novel character sequences, and (2)\nsubstituting them with special tokens represented by novel embeddings. We find\nthat both of these setups lead to lower generalization performance in T5\n(Raffel et al., 2020), suggesting that previously reported results have been\noverestimated due to uncontrolled lexical exposure during pretraining. The\nperformance degradation is more extreme with novel embeddings, and the\ndegradation increases with the amount of pretraining data, highlighting an\ninteresting case of inverse scaling.",
+    "num_pages": 14
+}

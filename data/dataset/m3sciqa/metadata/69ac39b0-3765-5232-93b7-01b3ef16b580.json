@@ -1,0 +1,17 @@
+{
+    "uuid": "69ac39b0-3765-5232-93b7-01b3ef16b580",
+    "title": "ALL Dolphins Are Intelligent and SOME Are Friendly: Probing BERT for Nouns' Semantic Properties and their Prototypicality",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Marianna Apidianaki",
+        "Aina Garí Soler"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.06376v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\69ac39b0-3765-5232-93b7-01b3ef16b580.pdf",
+    "bibtex": "@misc{apidianaki2021alldolphinsareintelligentand,\n    title = {ALL Dolphins Are Intelligent and SOME Are Friendly: Probing BERT for Nouns' Semantic Properties and their Prototypicality},\n    author = {Marianna Apidianaki and Aina Garí Soler},\n    year = {2021},\n    eprint = {2110.06376},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2110.06376},\n}",
+    "abstract": "Large scale language models encode rich commonsense knowledge acquired\nthrough exposure to massive data during pre-training, but their understanding\nof entities and their semantic properties is unclear. We probe BERT (Devlin et\nal., 2019) for the properties of English nouns as expressed by adjectives that\ndo not restrict the reference scope of the noun they modify (as in \"red car\"),\nbut instead emphasise some inherent aspect (\"red strawberry\"). We base our\nstudy on psycholinguistics datasets that capture the association strength\nbetween nouns and their semantic features. We probe BERT using cloze tasks and\nin a classification setting, and show that the model has marginal knowledge of\nthese features and their prevalence as expressed in these datasets. We discuss\nfactors that make evaluation challenging and impede drawing general conclusions\nabout the models' knowledge of noun properties. Finally, we show that when\ntested in a fine-tuning setting addressing entailment, BERT successfully\nleverages the information needed for reasoning about the meaning of\nadjective-noun constructions outperforming previous methods.",
+    "num_pages": 16
+}

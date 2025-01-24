@@ -1,0 +1,19 @@
+{
+    "uuid": "c67a9286-46c2-57f7-9a58-2c7ab8755152",
+    "title": "HateBERT: Retraining BERT for Abusive Language Detection in English",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Tommaso Caselli",
+        "Valerio Basile",
+        "Jelena Mitrović",
+        "Michael Granitzer"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.12472v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\c67a9286-46c2-57f7-9a58-2c7ab8755152.pdf",
+    "bibtex": "@misc{caselli2021hatebertretrainingbertforabusive,\n    title = {HateBERT: Retraining BERT for Abusive Language Detection in English},\n    author = {Tommaso Caselli and Valerio Basile and Jelena Mitrović and Michael Granitzer},\n    year = {2021},\n    eprint = {2010.12472},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.12472},\n}",
+    "abstract": "In this paper, we introduce HateBERT, a re-trained BERT model for abusive\nlanguage detection in English. The model was trained on RAL-E, a large-scale\ndataset of Reddit comments in English from communities banned for being\noffensive, abusive, or hateful that we have collected and made available to the\npublic. We present the results of a detailed comparison between a general\npre-trained language model and the abuse-inclined version obtained by\nretraining with posts from the banned communities on three English datasets for\noffensive, abusive language and hate speech detection tasks. In all datasets,\nHateBERT outperforms the corresponding general BERT model. We also discuss a\nbattery of experiments comparing the portability of the generic pre-trained\nlanguage model and its corresponding abusive language-inclined counterpart\nacross the datasets, indicating that portability is affected by compatibility\nof the annotated phenomena.",
+    "num_pages": 10
+}

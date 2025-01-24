@@ -1,0 +1,20 @@
+{
+    "uuid": "d8d81d9c-41e6-5ad7-9da3-05dad87905f3",
+    "title": "Learning to Customize Model Structures for Few-shot Dialogue Generation Tasks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Yiping Song",
+        "Zequn Liu",
+        "Wei Bi",
+        "Rui Yan",
+        "Ming Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1910.14326v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\d8d81d9c-41e6-5ad7-9da3-05dad87905f3.pdf",
+    "bibtex": "@misc{song2020learningtocustomizemodelstructures,\n    title = {Learning to Customize Model Structures for Few-shot Dialogue Generation Tasks},\n    author = {Yiping Song and Zequn Liu and Wei Bi and Rui Yan and Ming Zhang},\n    year = {2020},\n    eprint = {1910.14326},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1910.14326},\n}",
+    "abstract": "Training the generative models with minimal corpus is one of the critical\nchallenges for building open-domain dialogue systems. Existing methods tend to\nuse the meta-learning framework which pre-trains the parameters on all\nnon-target tasks then fine-tunes on the target task. However, fine-tuning\ndistinguishes tasks from the parameter perspective but ignores the\nmodel-structure perspective, resulting in similar dialogue models for different\ntasks. In this paper, we propose an algorithm that can customize a unique\ndialogue model for each task in the few-shot setting. In our approach, each\ndialogue model consists of a shared module, a gating module, and a private\nmodule. The first two modules are shared among all the tasks, while the third\none will differentiate into different network structures to better capture the\ncharacteristics of the corresponding task. The extensive experiments on two\ndatasets show that our method outperforms all the baselines in terms of task\nconsistency, response quality, and diversity.",
+    "num_pages": 10
+}

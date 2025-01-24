@@ -1,0 +1,22 @@
+{
+    "uuid": "3b6d7c62-8eef-546a-a95d-394cb5fa0139",
+    "title": "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Suchin Gururangan",
+        "Ana Marasović",
+        "Swabha Swayamdipta",
+        "Kyle Lo",
+        "Iz Beltagy",
+        "Doug Downey",
+        "Noah A. Smith"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.10964v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\3b6d7c62-8eef-546a-a95d-394cb5fa0139.pdf",
+    "bibtex": "@misc{gururangan2020dontstoppretrainingadaptlanguage,\n    title = {Don't Stop Pretraining: Adapt Language Models to Domains and Tasks},\n    author = {Suchin Gururangan and Ana Marasović and Swabha Swayamdipta and Kyle Lo and Iz Beltagy and Doug Downey and Noah A. Smith},\n    year = {2020},\n    eprint = {2004.10964},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2004.10964},\n}",
+    "abstract": "Language models pretrained on text from a wide variety of sources form the\nfoundation of today's NLP. In light of the success of these broad-coverage\nmodels, we investigate whether it is still helpful to tailor a pretrained model\nto the domain of a target task. We present a study across four domains\n(biomedical and computer science publications, news, and reviews) and eight\nclassification tasks, showing that a second phase of pretraining in-domain\n(domain-adaptive pretraining) leads to performance gains, under both high- and\nlow-resource settings. Moreover, adapting to the task's unlabeled data\n(task-adaptive pretraining) improves performance even after domain-adaptive\npretraining. Finally, we show that adapting to a task corpus augmented using\nsimple data selection strategies is an effective alternative, especially when\nresources for domain-adaptive pretraining might be unavailable. Overall, we\nconsistently find that multi-phase adaptive pretraining offers large gains in\ntask performance.",
+    "num_pages": 19
+}

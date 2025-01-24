@@ -1,0 +1,18 @@
+{
+    "uuid": "fbea0c82-5838-5d56-a4c7-3d9737ea7c08",
+    "title": "Context-aware Entity Typing in Knowledge Graphs",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Weiran Pan",
+        "Wei Wei",
+        "Xian-Ling Mao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.07990v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\fbea0c82-5838-5d56-a4c7-3d9737ea7c08.pdf",
+    "bibtex": "@misc{pan2021contextawareentitytypinginknowledge,\n    title = {Context-aware Entity Typing in Knowledge Graphs},\n    author = {Weiran Pan and Wei Wei and Xian-Ling Mao},\n    year = {2021},\n    eprint = {2109.07990},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.07990},\n}",
+    "abstract": "Knowledge graph entity typing aims to infer entities' missing types in\nknowledge graphs which is an important but under-explored issue. This paper\nproposes a novel method for this task by utilizing entities' contextual\ninformation. Specifically, we design two inference mechanisms: i) N2T:\nindependently use each neighbor of an entity to infer its type; ii) Agg2T:\naggregate the neighbors of an entity to infer its type. Those mechanisms will\nproduce multiple inference results, and an exponentially weighted pooling\nmethod is used to generate the final inference result. Furthermore, we propose\na novel loss function to alleviate the false-negative problem during training.\nExperiments on two real-world KGs demonstrate the effectiveness of our method.\nThe source code and data of this paper can be obtained from\nhttps://github.com/CCIIPLab/CET.",
+    "num_pages": 11
+}

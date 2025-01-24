@@ -1,0 +1,29 @@
+{
+    "uuid": "7617cedb-1166-5825-81c0-fc4b40c5bf0e",
+    "title": "UL2: Unifying Language Learning Paradigms",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yi Tay",
+        "Mostafa Dehghani",
+        "Vinh Q. Tran",
+        "Xavier Garcia",
+        "Jason Wei",
+        "Xuezhi Wang",
+        "Hyung Won Chung",
+        "Siamak Shakeri",
+        "Dara Bahri",
+        "Tal Schuster",
+        "Huaixiu Steven Zheng",
+        "Denny Zhou",
+        "Neil Houlsby",
+        "Donald Metzler"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.05131v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\7617cedb-1166-5825-81c0-fc4b40c5bf0e.pdf",
+    "bibtex": "@misc{tay2023ul2unifyinglanguagelearningparadigms,\n    title = {UL2: Unifying Language Learning Paradigms},\n    author = {Yi Tay and Mostafa Dehghani and Vinh Q. Tran and Xavier Garcia and Jason Wei and Xuezhi Wang and Hyung Won Chung and Siamak Shakeri and Dara Bahri and Tal Schuster and Huaixiu Steven Zheng and Denny Zhou and Neil Houlsby and Donald Metzler},\n    year = {2023},\n    eprint = {2205.05131},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.05131},\n}",
+    "abstract": "Existing pre-trained models are generally geared towards a particular class\nof problems. To date, there seems to be still no consensus on what the right\narchitecture and pre-training setup should be. This paper presents a unified\nframework for pre-training models that are universally effective across\ndatasets and setups. We begin by disentangling architectural archetypes with\npre-training objectives -- two concepts that are commonly conflated. Next, we\npresent a generalized & unified perspective for self-supervision in NLP and\nshow how different pre-training objectives can be cast as one another and how\ninterpolating between different objectives can be effective. We then propose\nMixture-of-Denoisers (MoD), a pre-training objective that combines diverse\npre-training paradigms together. We furthermore introduce a notion of mode\nswitching, wherein downstream fine-tuning is associated with specific\npre-training schemes. We conduct extensive ablative experiments to compare\nmultiple pre-training objectives and find that our method pushes the\nPareto-frontier by outperforming T5 & GPT-like models across multiple diverse\nsetups. By scaling our model up to 20B parameters, we achieve SOTA performance\non 50 well-established supervised finetuning based NLP tasks. Our model also\nachieve strong results at in-context learning, outperforming 175B GPT-3 on\nzero-shot SuperGLUE and tripling the performance of T5-XXL on one-shot\nsummarization. On 0-shot MMLU, UL2 20B outperforms T0 and T5 models. UL2 20B\nalso works well with chain-of-thought prompting and reasoning, making it an\nappealing choice for research into reasoning at a small to medium scale of 20B\nparameters. Finally, we apply FLAN instruction tuning to the UL2 20B model,\nachieving MMLU and Big-Bench scores competitive to FLAN-PaLM 62B. We release\nFlax-based T5X checkpoints for the UL2 20B & Flan-UL2 20B.",
+    "num_pages": 39
+}

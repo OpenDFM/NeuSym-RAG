@@ -1,0 +1,19 @@
+{
+    "uuid": "b0a10826-741e-5ecb-b386-873cd15ed2b0",
+    "title": "Estimating Training Data Influence by Tracing Gradient Descent",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Garima Pruthi",
+        "Frederick Liu",
+        "Mukund Sundararajan",
+        "Satyen Kale"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2002.08484v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\b0a10826-741e-5ecb-b386-873cd15ed2b0.pdf",
+    "bibtex": "@misc{pruthi2020estimatingtrainingdatainfluenceby,\n    title = {Estimating Training Data Influence by Tracing Gradient Descent},\n    author = {Garima Pruthi and Frederick Liu and Mukund Sundararajan and Satyen Kale},\n    year = {2020},\n    eprint = {2002.08484},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2002.08484},\n}",
+    "abstract": "We introduce a method called TracIn that computes the influence of a training\nexample on a prediction made by the model. The idea is to trace how the loss on\nthe test point changes during the training process whenever the training\nexample of interest was utilized. We provide a scalable implementation of\nTracIn via: (a) a first-order gradient approximation to the exact computation,\n(b) saved checkpoints of standard training procedures, and (c) cherry-picking\nlayers of a deep neural network. In contrast with previously proposed methods,\nTracIn is simple to implement; all it needs is the ability to work with\ngradients, checkpoints, and loss functions. The method is general. It applies\nto any machine learning model trained using stochastic gradient descent or a\nvariant of it, agnostic of architecture, domain and task. We expect the method\nto be widely useful within processes that study and improve training data.",
+    "num_pages": 17
+}

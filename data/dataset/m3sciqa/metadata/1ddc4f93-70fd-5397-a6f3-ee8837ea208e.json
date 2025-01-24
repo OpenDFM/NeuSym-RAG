@@ -1,0 +1,17 @@
+{
+    "uuid": "1ddc4f93-70fd-5397-a6f3-ee8837ea208e",
+    "title": "Extractive Summarization of Long Documents by Combining Global and Local Context",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Wen Xiao",
+        "Giuseppe Carenini"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1909.08089v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\1ddc4f93-70fd-5397-a6f3-ee8837ea208e.pdf",
+    "bibtex": "@misc{xiao2019extractivesummarizationoflongdocuments,\n    title = {Extractive Summarization of Long Documents by Combining Global and Local Context},\n    author = {Wen Xiao and Giuseppe Carenini},\n    year = {2019},\n    eprint = {1909.08089},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1909.08089},\n}",
+    "abstract": "In this paper, we propose a novel neural single document extractive\nsummarization model for long documents, incorporating both the global context\nof the whole document and the local context within the current topic. We\nevaluate the model on two datasets of scientific papers, Pubmed and arXiv,\nwhere it outperforms previous work, both extractive and abstractive models, on\nROUGE-1, ROUGE-2 and METEOR scores. We also show that, consistently with our\ngoal, the benefits of our method become stronger as we apply it to longer\ndocuments. Rather surprisingly, an ablation study indicates that the benefits\nof our model seem to come exclusively from modeling the local context, even for\nthe longest documents.",
+    "num_pages": 12
+}

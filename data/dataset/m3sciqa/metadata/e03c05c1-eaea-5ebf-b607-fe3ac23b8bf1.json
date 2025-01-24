@@ -1,0 +1,19 @@
+{
+    "uuid": "e03c05c1-eaea-5ebf-b607-fe3ac23b8bf1",
+    "title": "Classifiers are Better Experts for Controllable Text Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Askhat Sitdikov",
+        "Nikita Balagansky",
+        "Daniil Gavrilov",
+        "Alexander Markov"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.07276v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\e03c05c1-eaea-5ebf-b607-fe3ac23b8bf1.pdf",
+    "bibtex": "@misc{sitdikov2022classifiersarebetterexpertsfor,\n    title = {Classifiers are Better Experts for Controllable Text Generation},\n    author = {Askhat Sitdikov and Nikita Balagansky and Daniil Gavrilov and Alexander Markov},\n    year = {2022},\n    eprint = {2205.07276},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.07276},\n}",
+    "abstract": "This paper proposes a simple method for controllable text generation based on\nweighting logits with a free-form classifier, namely CAIF sampling. Using an\narbitrary text classifier, we adjust a small part of a language model's logits\nand guide text generation towards or away from classifier prediction. We\nexperimented with toxicity avoidance and sentiment control tasks and showed\nthat the proposed method significantly outperforms recent PPLM, GeDi, and\nDExperts on PPL and task accuracy metrics based on the external classifier of\ngenerated texts. In addition, compared to other approaches, it is easier to\nimplement and tune and has significantly fewer restrictions and requirements.",
+    "num_pages": 10
+}

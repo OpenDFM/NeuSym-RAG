@@ -1,0 +1,22 @@
+{
+    "uuid": "9441027e-e7d4-59d3-8377-3e68c3f8d6d5",
+    "title": "Label Semantics for Few Shot Named Entity Recognition",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Jie Ma",
+        "Miguel Ballesteros",
+        "Srikanth Doss",
+        "Rishita Anubhai",
+        "Sunil Mallya",
+        "Yaser Al-Onaizan",
+        "Dan Roth"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.08985v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\9441027e-e7d4-59d3-8377-3e68c3f8d6d5.pdf",
+    "bibtex": "@misc{ma2022labelsemanticsforfewshot,\n    title = {Label Semantics for Few Shot Named Entity Recognition},\n    author = {Jie Ma and Miguel Ballesteros and Srikanth Doss and Rishita Anubhai and Sunil Mallya and Yaser Al-Onaizan and Dan Roth},\n    year = {2022},\n    eprint = {2203.08985},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.08985},\n}",
+    "abstract": "We study the problem of few shot learning for named entity recognition.\nSpecifically, we leverage the semantic information in the names of the labels\nas a way of giving the model additional signal and enriched priors. We propose\na neural architecture that consists of two BERT encoders, one to encode the\ndocument and its tokens and another one to encode each of the labels in natural\nlanguage format. Our model learns to match the representations of named\nentities computed by the first encoder with label representations computed by\nthe second encoder. The label semantics signal is shown to support improved\nstate-of-the-art results in multiple few shot NER benchmarks and on-par\nperformance in standard benchmarks. Our model is especially effective in low\nresource settings.",
+    "num_pages": 16
+}

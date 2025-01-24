@@ -1,0 +1,64 @@
+{
+    "uuid": "5c6a748d-3b01-55b7-a96d-f0ab32cc336b",
+    "question": "Consider the paper that introduces the model that has the highest performance on the En-Fr task in the MSCOCO dataset. How does its performance with hallucinated visual tokens (\\texttt{V}) compare to using ground-truth visual representations (\\texttt{VM}) on the Multi30K dataset for the Transformer-Tiny model in terms of BLEU score?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "c653b597-b831-535e-bdb1-af03d3f3f1e7"
+    ],
+    "reference_pdf": [
+        "dd2f2eae-81f5-5525-971f-5540dde42f6c",
+        "fffd1c97-f03e-5210-8dce-f0eb709b9199",
+        "f1ea3e20-3942-5edd-9c70-f73b10f2da1e",
+        "40d27262-e113-523f-9533-3ee949bdfb05",
+        "c89e402d-2dd4-57dc-883b-be5c04e54b3a",
+        "ad354a8b-1b60-517d-a7fa-d22b435b7f8f",
+        "5052872f-0692-5df0-b02c-ce0f895d539b",
+        "f17feaa7-e8e8-5559-9cf7-fd4b153b811c",
+        "a0c50dc5-15b6-5924-bb70-08d2617f583f",
+        "7821eda8-5710-57df-96c4-89cf30bf7a77",
+        "884e57aa-78e0-5621-958c-8681a2d6f61f",
+        "3b8af772-96a1-578e-a3de-272d2cb9ad7f",
+        "5b08577d-f73f-56d5-be75-931a10239a0d",
+        "f0266918-92ed-5f40-8bd8-499d2979a4e4",
+        "d38dfa65-c493-5cc7-a20d-a01897d7fdc2",
+        "0ce272f4-2ce0-5e5a-8889-2dac88f783a4",
+        "aa4925a8-1e46-5996-8654-b82cfa7820a5",
+        "88185cdb-ff85-5600-bbcb-5bb65ecd6665",
+        "5671a75b-4bcf-5446-82c0-481b1cd418f2",
+        "058b61e1-dbec-5ca7-9603-d53c1e14e733",
+        "67140bfe-0af6-5bb2-b96f-502358a17a1a",
+        "e26e48f8-0721-56f6-89dd-9e96448a75c5",
+        "67c0b261-9f6d-50ac-b824-816f48441fa8",
+        "ef1fd71c-6764-5364-8f8f-18d147a69e6d",
+        "117fcedd-ba7a-5009-9cf0-ee2e63137423",
+        "9d24c743-9966-5400-a5f9-6825eca1d557",
+        "0ce272f4-2ce0-5e5a-8889-2dac88f783a4",
+        "4b2861dc-27c5-57f4-8e01-b018654b3e25",
+        "d7894a4b-2b2f-5355-8193-5c68ffd30928",
+        "eb603d6c-2a60-504d-93ed-aef55ff4655b",
+        "0e854ebb-88e7-55c4-952b-818ce54bc014",
+        "d9b0f39f-60aa-53f3-8382-532440370fdf",
+        "ac65b094-5a2c-5ab7-8497-a3cd526fa8ca",
+        "dfac74e2-051a-5a1f-98fc-d5497a48f44b"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the model that has the highest performance on the En-Fr task in the MSCOCO dataset. How does its performance with hallucinated visual tokens (\\texttt{V}) compare to using ground-truth visual representations (\\texttt{VM}) on the Multi30K dataset for the Transformer-Tiny model in terms of BLEU score?",
+            "reference_answer": "Very similar"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.13361/result_table.png"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "d3d52a0d-373a-5de1-8a89-c8a5a57ec224",
+    "title": "TransferNet: An Effective and Transparent Framework for Multi-hop Question Answering over Relation Graph",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Jiaxin Shi",
+        "Shulin Cao",
+        "Lei Hou",
+        "Juanzi Li",
+        "Hanwang Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2104.07302v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\d3d52a0d-373a-5de1-8a89-c8a5a57ec224.pdf",
+    "bibtex": "@misc{shi2021transfernetaneffectiveandtransparent,\n    title = {TransferNet: An Effective and Transparent Framework for Multi-hop Question Answering over Relation Graph},\n    author = {Jiaxin Shi and Shulin Cao and Lei Hou and Juanzi Li and Hanwang Zhang},\n    year = {2021},\n    eprint = {2104.07302},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2104.07302},\n}",
+    "abstract": "Multi-hop Question Answering (QA) is a challenging task because it requires\nprecise reasoning with entity relations at every step towards the answer. The\nrelations can be represented in terms of labels in knowledge graph (e.g.,\n\\textit{spouse}) or text in text corpus (e.g., \\textit{they have been married\nfor 26 years}). Existing models usually infer the answer by predicting the\nsequential relation path or aggregating the hidden graph features. The former\nis hard to optimize, and the latter lacks interpretability. In this paper, we\npropose TransferNet, an effective and transparent model for multi-hop QA, which\nsupports both label and text relations in a unified framework. TransferNet\njumps across entities at multiple steps. At each step, it attends to different\nparts of the question, computes activated scores for relations, and then\ntransfer the previous entity scores along activated relations in a\ndifferentiable way. We carry out extensive experiments on three datasets and\ndemonstrate that TransferNet surpasses the state-of-the-art models by a large\nmargin. In particular, on MetaQA, it achieves 100\\% accuracy in 2-hop and 3-hop\nquestions. By qualitative analysis, we show that TransferNet has transparent\nand interpretable intermediate results.",
+    "num_pages": 10
+}

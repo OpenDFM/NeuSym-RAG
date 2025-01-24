@@ -1,0 +1,19 @@
+{
+    "uuid": "1e7ec69a-1a58-5bc0-a94b-c2b907d6c59d",
+    "title": "Program Induction by Rationale Generation : Learning to Solve and Explain Algebraic Word Problems",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Wang Ling",
+        "Dani Yogatama",
+        "Chris Dyer",
+        "Phil Blunsom"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1705.04146v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\1e7ec69a-1a58-5bc0-a94b-c2b907d6c59d.pdf",
+    "bibtex": "@misc{ling2017programinductionbyrationalegeneration,\n    title = {Program Induction by Rationale Generation : Learning to Solve and Explain Algebraic Word Problems},\n    author = {Wang Ling and Dani Yogatama and Chris Dyer and Phil Blunsom},\n    year = {2017},\n    eprint = {1705.04146},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/1705.04146},\n}",
+    "abstract": "Solving algebraic word problems requires executing a series of arithmetic\noperations---a program---to obtain a final answer. However, since programs can\nbe arbitrarily complicated, inducing them directly from question-answer pairs\nis a formidable challenge. To make this task more feasible, we solve these\nproblems by generating answer rationales, sequences of natural language and\nhuman-readable mathematical expressions that derive the final answer through a\nseries of small steps. Although rationales do not explicitly specify programs,\nthey provide a scaffolding for their structure via intermediate milestones. To\nevaluate our approach, we have created a new 100,000-sample dataset of\nquestions, answers and rationales. Experimental results show that indirect\nsupervision of program learning via answer rationales is a promising strategy\nfor inducing arithmetic programs.",
+    "num_pages": 10
+}

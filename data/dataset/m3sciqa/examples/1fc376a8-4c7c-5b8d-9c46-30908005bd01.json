@@ -1,0 +1,59 @@
+{
+    "uuid": "1fc376a8-4c7c-5b8d-9c46-30908005bd01",
+    "question": "Consider the paper that introduces the method which is shown in the table above the 'Magister et al' row but below the 'UL2' row. How does the performance of a GPT-2 Large model fine-tuned with ground truth step-by-step annotation compare to one fine-tuned with the model proposed in the paper-generated Chain of Thought (CoT) on the GSM8K dataset?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "a9cb1278-f520-54c7-95ce-e8f2f51779e1"
+    ],
+    "reference_pdf": [
+        "2e150e31-dca0-581d-97e1-f74e4efd24fb",
+        "498585ce-5f0a-5848-8205-f47f169e5a7f",
+        "6bf39f15-4505-5fec-a157-0d7269604c8c",
+        "34417770-67d7-5cab-b9d4-76999c97bc02",
+        "6ccd0e89-3d46-597a-910f-131be6ddc31c",
+        "623d4491-e63b-5ba4-8b3b-19827be11dc9",
+        "bf28f877-f161-5569-a7ac-0ff9a8d9f89f",
+        "5768d951-ac45-5015-8e79-e8373551d34d",
+        "28c91c0b-4918-5ece-a008-5c539282c189",
+        "38c42ad1-4e5f-5ebe-ae2d-683ef661bbfe",
+        "68eacc6c-474b-594d-b512-285ebb27d97b",
+        "75d94b88-a11a-5e5a-bb24-b01e7b230196",
+        "b1f5d2f0-a4a0-5938-94bf-7737b42158b1",
+        "9d19a76a-1f8e-5170-b5d7-b2d07ad1c2ec",
+        "4f43a3a1-e667-52b7-851e-21cffa9d29a0",
+        "7617cedb-1166-5825-81c0-fc4b40c5bf0e",
+        "23a2cf6d-2c8a-5b75-b4f1-29b2f64ee41c",
+        "28428662-2973-5032-9217-2aa27a59f6de",
+        "8dde05d0-7798-5f9b-9f99-1d4823d4fbdd",
+        "f398b6e5-0ff2-59e4-9f26-eba5cea5b48c",
+        "ad5ecb28-5270-5e7b-b161-6d994db6c2f7",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "027e7f32-5fc6-599e-a4a1-3e12606f627a",
+        "e05cbd04-192e-5761-97ce-7250058cf895",
+        "9feffe2b-4a6b-5ad4-a06d-1bae1257acce",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "7622ac08-15d7-5102-89b2-6891803cd8af",
+        "20847c00-ada9-56f4-aab2-d67eb2ace27b",
+        "7617cedb-1166-5825-81c0-fc4b40c5bf0e"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method which is shown in the table above the 'Magister et al' row but below the 'UL2' row. How does the performance of a GPT-2 Large model fine-tuned with ground truth step-by-step annotation compare to one fine-tuned with the model proposed in the paper-generated Chain of Thought (CoT) on the GSM8K dataset?",
+            "reference_answer": "The GPT-2 Large model fine-tuned with ground truth step-by-step annotation outperforms the one fine-tuned with LLM-generated Chain of Thought (CoT) on the GSM8K dataset."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.05074/result_table.png"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "739c8432-c687-5220-89f6-f84e7c860800",
+    "title": "Retrieval Augmentation Reduces Hallucination in Conversation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Kurt Shuster",
+        "Spencer Poff",
+        "Moya Chen",
+        "Douwe Kiela",
+        "Jason Weston"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2104.07567v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\739c8432-c687-5220-89f6-f84e7c860800.pdf",
+    "bibtex": "@misc{shuster2021retrievalaugmentationreduceshallucinationin,\n    title = {Retrieval Augmentation Reduces Hallucination in Conversation},\n    author = {Kurt Shuster and Spencer Poff and Moya Chen and Douwe Kiela and Jason Weston},\n    year = {2021},\n    eprint = {2104.07567},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2104.07567},\n}",
+    "abstract": "Despite showing increasingly human-like conversational abilities,\nstate-of-the-art dialogue models often suffer from factual incorrectness and\nhallucination of knowledge (Roller et al., 2020). In this work we explore the\nuse of neural-retrieval-in-the-loop architectures - recently shown to be\neffective in open-domain QA (Lewis et al., 2020b; Izacard and Grave, 2020) -\nfor knowledge-grounded dialogue, a task that is arguably more challenging as it\nrequires querying based on complex multi-turn dialogue context and generating\nconversationally coherent responses. We study various types of architectures\nwith multiple components - retrievers, rankers, and encoder-decoders - with the\ngoal of maximizing knowledgeability while retaining conversational ability. We\ndemonstrate that our best models obtain state-of-the-art performance on two\nknowledge-grounded conversational tasks. The models exhibit open-domain\nconversational capabilities, generalize effectively to scenarios not within the\ntraining data, and, as verified by human evaluations, substantially reduce the\nwell-known problem of knowledge hallucination in state-of-the-art chatbots.",
+    "num_pages": 21
+}

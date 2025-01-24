@@ -1,0 +1,18 @@
+{
+    "uuid": "fc11469f-1375-57f9-802c-06094e17834e",
+    "title": "Masked Autoregressive Flow for Density Estimation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "George Papamakarios",
+        "Theo Pavlakou",
+        "Iain Murray"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1705.07057v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\fc11469f-1375-57f9-802c-06094e17834e.pdf",
+    "bibtex": "@misc{papamakarios2018maskedautoregressiveflowfordensity,\n    title = {Masked Autoregressive Flow for Density Estimation},\n    author = {George Papamakarios and Theo Pavlakou and Iain Murray},\n    year = {2018},\n    eprint = {1705.07057},\n    archivePrefix = {arXiv},\n    primaryClass = {stat.ML},\n    url = {http://arxiv.org/abs/1705.07057},\n}",
+    "abstract": "Autoregressive models are among the best performing neural density\nestimators. We describe an approach for increasing the flexibility of an\nautoregressive model, based on modelling the random numbers that the model uses\ninternally when generating data. By constructing a stack of autoregressive\nmodels, each modelling the random numbers of the next model in the stack, we\nobtain a type of normalizing flow suitable for density estimation, which we\ncall Masked Autoregressive Flow. This type of flow is closely related to\nInverse Autoregressive Flow and is a generalization of Real NVP. Masked\nAutoregressive Flow achieves state-of-the-art performance in a range of\ngeneral-purpose density estimation tasks.",
+    "num_pages": 17
+}

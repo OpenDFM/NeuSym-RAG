@@ -1,0 +1,19 @@
+{
+    "uuid": "b9f85125-14a8-502f-8717-f38768038090",
+    "title": "Data-Free Quantization Through Weight Equalization and Bias Correction",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Markus Nagel",
+        "Mart van Baalen",
+        "Tijmen Blankevoort",
+        "Max Welling"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1906.04721v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\b9f85125-14a8-502f-8717-f38768038090.pdf",
+    "bibtex": "@misc{nagel2019datafreequantizationthroughweightequalization,\n    title = {Data-Free Quantization Through Weight Equalization and Bias Correction},\n    author = {Markus Nagel and Mart van Baalen and Tijmen Blankevoort and Max Welling},\n    year = {2019},\n    eprint = {1906.04721},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1906.04721},\n}",
+    "abstract": "We introduce a data-free quantization method for deep neural networks that\ndoes not require fine-tuning or hyperparameter selection. It achieves\nnear-original model performance on common computer vision architectures and\ntasks. 8-bit fixed-point quantization is essential for efficient inference on\nmodern deep learning hardware. However, quantizing models to run in 8-bit is a\nnon-trivial task, frequently leading to either significant performance\nreduction or engineering time spent on training a network to be amenable to\nquantization. Our approach relies on equalizing the weight ranges in the\nnetwork by making use of a scale-equivariance property of activation functions.\nIn addition the method corrects biases in the error that are introduced during\nquantization. This improves quantization accuracy performance, and can be\napplied to many common computer vision architectures with a straight forward\nAPI call. For common architectures, such as the MobileNet family, we achieve\nstate-of-the-art quantized model performance. We further show that the method\nalso extends to other computer vision architectures and tasks such as semantic\nsegmentation and object detection.",
+    "num_pages": 13
+}

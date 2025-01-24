@@ -1,0 +1,19 @@
+{
+    "uuid": "42fd3669-c60f-5d28-b51d-4523bebf0734",
+    "title": "Compositionality decomposed: how do neural networks generalise?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Dieuwke Hupkes",
+        "Verna Dankers",
+        "Mathijs Mul",
+        "Elia Bruni"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1908.08351v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\42fd3669-c60f-5d28-b51d-4523bebf0734.pdf",
+    "bibtex": "@misc{hupkes2020compositionalitydecomposedhowdoneural,\n    title = {Compositionality decomposed: how do neural networks generalise?},\n    author = {Dieuwke Hupkes and Verna Dankers and Mathijs Mul and Elia Bruni},\n    year = {2020},\n    eprint = {1908.08351},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1908.08351},\n}",
+    "abstract": "Despite a multitude of empirical studies, little consensus exists on whether\nneural networks are able to generalise compositionally, a controversy that, in\npart, stems from a lack of agreement about what it means for a neural model to\nbe compositional. As a response to this controversy, we present a set of tests\nthat provide a bridge between, on the one hand, the vast amount of linguistic\nand philosophical theory about compositionality of language and, on the other,\nthe successful neural models of language. We collect different interpretations\nof compositionality and translate them into five theoretically grounded tests\nfor models that are formulated on a task-independent level. In particular, we\nprovide tests to investigate (i) if models systematically recombine known parts\nand rules (ii) if models can extend their predictions beyond the length they\nhave seen in the training data (iii) if models' composition operations are\nlocal or global (iv) if models' predictions are robust to synonym substitutions\nand (v) if models favour rules or exceptions during training. To demonstrate\nthe usefulness of this evaluation paradigm, we instantiate these five tests on\na highly compositional data set which we dub PCFG SET and apply the resulting\ntests to three popular sequence-to-sequence models: a recurrent, a\nconvolution-based and a transformer model. We provide an in-depth analysis of\nthe results, which uncover the strengths and weaknesses of these three\narchitectures and point to potential areas of improvement.",
+    "num_pages": 41
+}

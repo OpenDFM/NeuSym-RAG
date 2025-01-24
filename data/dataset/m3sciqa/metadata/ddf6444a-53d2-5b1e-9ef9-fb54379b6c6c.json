@@ -1,0 +1,22 @@
+{
+    "uuid": "ddf6444a-53d2-5b1e-9ef9-fb54379b6c6c",
+    "title": "ChatGPT Evaluation on Sentence Level Relations: A Focus on Temporal, Causal, and Discourse Relations",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Chunkit Chan",
+        "Jiayang Cheng",
+        "Weiqi Wang",
+        "Yuxin Jiang",
+        "Tianqing Fang",
+        "Xin Liu",
+        "Yangqiu Song"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.14827v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\ddf6444a-53d2-5b1e-9ef9-fb54379b6c6c.pdf",
+    "bibtex": "@misc{chan2024chatgptevaluationonsentencelevel,\n    title = {ChatGPT Evaluation on Sentence Level Relations: A Focus on Temporal, Causal, and Discourse Relations},\n    author = {Chunkit Chan and Jiayang Cheng and Weiqi Wang and Yuxin Jiang and Tianqing Fang and Xin Liu and Yangqiu Song},\n    year = {2024},\n    eprint = {2304.14827},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2304.14827},\n}",
+    "abstract": "This paper aims to quantitatively evaluate the performance of ChatGPT, an\ninteractive large language model, on inter-sentential relations such as\ntemporal relations, causal relations, and discourse relations. Given ChatGPT's\npromising performance across various tasks, we proceed to carry out thorough\nevaluations on the whole test sets of 11 datasets, including temporal and\ncausal relations, PDTB2.0-based, and dialogue-based discourse relations. To\nensure the reliability of our findings, we employ three tailored prompt\ntemplates for each task, including the zero-shot prompt template, zero-shot\nprompt engineering (PE) template, and in-context learning (ICL) prompt\ntemplate, to establish the initial baseline scores for all popular\nsentence-pair relation classification tasks for the first time. Through our\nstudy, we discover that ChatGPT exhibits exceptional proficiency in detecting\nand reasoning about causal relations, albeit it may not possess the same level\nof expertise in identifying the temporal order between two events. While it is\ncapable of identifying the majority of discourse relations with existing\nexplicit discourse connectives, the implicit discourse relation remains a\nformidable challenge. Concurrently, ChatGPT demonstrates subpar performance in\nthe dialogue discourse parsing task that requires structural understanding in a\ndialogue before being aware of the discourse relation.",
+    "num_pages": 38
+}

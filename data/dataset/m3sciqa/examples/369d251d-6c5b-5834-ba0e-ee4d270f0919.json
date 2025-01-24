@@ -1,0 +1,54 @@
+{
+    "uuid": "369d251d-6c5b-5834-ba0e-ee4d270f0919",
+    "question": "Consider the paper that introduces the model that achieves an F1 score of 73.1 in the en_city category. What specific method did the authors employ to encode sentence positions in the encoder input of the model proposed in the paper, and how does it differ from using a fixed BOS token index?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "4db47b23-f7bf-5d2e-a957-279ddcc3310c"
+    ],
+    "reference_pdf": [
+        "56f3aaed-b2b7-5df1-97cc-7cf6236a892f",
+        "fa9a9ad6-66e9-5bd8-b1a2-862836bceb4b",
+        "c3a61f79-d156-54a9-9888-813475b4d3d1",
+        "0015561a-99bb-5b95-b457-3e43c7751331",
+        "0d601b2e-069f-5bab-ae99-f37eb696b06a",
+        "ff0d0226-2dc4-5a18-9cc9-ec5826c16eb7",
+        "9d2e017c-b25e-5cbc-8493-ccb4d9ab7443",
+        "bcf8872a-b92d-5cbe-8be5-350bcf7d5e15",
+        "0c1d2108-ab01-58ec-9369-5b8e148dab5d",
+        "ca40df32-58b7-52fe-b2b5-458f848e4210",
+        "4e513417-bbb2-55e1-b572-ec68a60fc6be",
+        "64ee757d-3fab-5132-aadf-376825399f6b",
+        "edd36969-0b52-50f9-b08c-9b0ba9e514e7",
+        "502590c0-bb29-53ab-8095-a2c68e3e42ab",
+        "3134099b-d3ac-56d3-898d-c77c7a99370e",
+        "1ddc4f93-70fd-5397-a6f3-ee8837ea208e",
+        "afbe2f7a-2754-5da7-97f6-b56a58fe47a4",
+        "eeda9a9d-5d4e-5579-9a3b-f2e546a7bf4b",
+        "00dd4300-de92-5712-9ce8-ccdb844b6314",
+        "3790e4a5-ff47-586a-b09c-c11ab395909d",
+        "26e45afd-1c91-5f0f-bb47-33707acec072",
+        "eb603d6c-2a60-504d-93ed-aef55ff4655b",
+        "510d6fc0-d3e0-5dc1-8e0d-4d470f964287",
+        "ac1b0430-6781-5539-9d45-5067c0c6ff3e"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the model that achieves an F1 score of 73.1 in the en_city category. What specific method did the authors employ to encode sentence positions in the encoder input of the model proposed in the paper, and how does it differ from using a fixed BOS token index?",
+            "reference_answer": "At the encoder input for the \\(i^\\text{th}\\) sentence, the authors used the \\(i^\\text{th}\\) vocabulary token embedding in place of a fixed BOS token index."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.11772/comparison_table.png"
+    ]
+}

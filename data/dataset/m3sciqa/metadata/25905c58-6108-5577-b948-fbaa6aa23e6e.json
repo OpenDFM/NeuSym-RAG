@@ -1,0 +1,33 @@
+{
+    "uuid": "25905c58-6108-5577-b948-fbaa6aa23e6e",
+    "title": "PolyLM: An Open Source Polyglot Large Language Model",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Xiangpeng Wei",
+        "Haoran Wei",
+        "Huan Lin",
+        "Tianhao Li",
+        "Pei Zhang",
+        "Xingzhang Ren",
+        "Mei Li",
+        "Yu Wan",
+        "Zhiwei Cao",
+        "Binbin Xie",
+        "Tianxiang Hu",
+        "Shangjie Li",
+        "Binyuan Hui",
+        "Bowen Yu",
+        "Dayiheng Liu",
+        "Baosong Yang",
+        "Fei Huang",
+        "Jun Xie"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2307.06018v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\25905c58-6108-5577-b948-fbaa6aa23e6e.pdf",
+    "bibtex": "@misc{wei2023polylmanopensourcepolyglot,\n    title = {PolyLM: An Open Source Polyglot Large Language Model},\n    author = {Xiangpeng Wei and Haoran Wei and Huan Lin and Tianhao Li and Pei Zhang and Xingzhang Ren and Mei Li and Yu Wan and Zhiwei Cao and Binbin Xie and Tianxiang Hu and Shangjie Li and Binyuan Hui and Bowen Yu and Dayiheng Liu and Baosong Yang and Fei Huang and Jun Xie},\n    year = {2023},\n    eprint = {2307.06018},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2307.06018},\n}",
+    "abstract": "Large language models (LLMs) demonstrate remarkable ability to comprehend,\nreason, and generate following nature language instructions. However, the\ndevelopment of LLMs has been primarily focused on high-resource languages, such\nas English, thereby limiting their applicability and research in other\nlanguages. Consequently, we present PolyLM, a multilingual LLM trained on 640\nbillion (B) tokens, avaliable in two model sizes: 1.7B and 13B. To enhance its\nmultilingual capabilities, we 1) integrate bilingual data into training data;\nand 2) adopt a curriculum learning strategy that increases the proportion of\nnon-English data from 30% in the first stage to 60% in the final stage during\npre-training. Further, we propose a multilingual self-instruct method which\nautomatically generates 132.7K diverse multilingual instructions for model\nfine-tuning. To assess the model's performance, we collect several existing\nmultilingual tasks, including multilingual understanding, question answering,\ngeneration, and translation. Extensive experiments show that PolyLM surpasses\nother open-source models such as LLaMA and BLOOM on multilingual tasks while\nmaintaining comparable performance in English. Our models, alone with the\ninstruction data and multilingual benchmark, are available at:\n\\url{https://modelscope.cn/models/damo/nlp_polylm_13b_text_generation}.",
+    "num_pages": 46
+}

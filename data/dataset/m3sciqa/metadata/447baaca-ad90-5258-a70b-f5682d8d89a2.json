@@ -1,0 +1,22 @@
+{
+    "uuid": "447baaca-ad90-5258-a70b-f5682d8d89a2",
+    "title": "GNN-LM: Language Modeling based on Global Contexts via GNN",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yuxian Meng",
+        "Shi Zong",
+        "Xiaoya Li",
+        "Xiaofei Sun",
+        "Tianwei Zhang",
+        "Fei Wu",
+        "Jiwei Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.08743v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\447baaca-ad90-5258-a70b-f5682d8d89a2.pdf",
+    "bibtex": "@misc{meng2022gnnlmlanguagemodelingbasedon,\n    title = {GNN-LM: Language Modeling based on Global Contexts via GNN},\n    author = {Yuxian Meng and Shi Zong and Xiaoya Li and Xiaofei Sun and Tianwei Zhang and Fei Wu and Jiwei Li},\n    year = {2022},\n    eprint = {2110.08743},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2110.08743},\n}",
+    "abstract": "Inspired by the notion that ``{\\it to copy is easier than to memorize}``, in\nthis work, we introduce GNN-LM, which extends the vanilla neural language model\n(LM) by allowing to reference similar contexts in the entire training corpus.\nWe build a directed heterogeneous graph between an input context and its\nsemantically related neighbors selected from the training corpus, where nodes\nare tokens in the input context and retrieved neighbor contexts, and edges\nrepresent connections between nodes. Graph neural networks (GNNs) are\nconstructed upon the graph to aggregate information from similar contexts to\ndecode the token. This learning paradigm provides direct access to the\nreference contexts and helps improve a model's generalization ability. We\nconduct comprehensive experiments to validate the effectiveness of the GNN-LM:\nGNN-LM achieves a new state-of-the-art perplexity of 14.8 on WikiText-103 (a\n3.9 point improvement over its counterpart of the vanilla LM model), and shows\nsubstantial improvement on One Billion Word and Enwiki8 datasets against strong\nbaselines. In-depth ablation studies are performed to understand the mechanics\nof GNN-LM. \\footnote{The code can be found at\nhttps://github.com/ShannonAI/GNN-LM",
+    "num_pages": 13
+}

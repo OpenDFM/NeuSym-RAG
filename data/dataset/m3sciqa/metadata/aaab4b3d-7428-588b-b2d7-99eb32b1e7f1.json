@@ -1,0 +1,18 @@
+{
+    "uuid": "aaab4b3d-7428-588b-b2d7-99eb32b1e7f1",
+    "title": "Skill Induction and Planning with Latent Language",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Pratyusha Sharma",
+        "Antonio Torralba",
+        "Jacob Andreas"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.01517v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\aaab4b3d-7428-588b-b2d7-99eb32b1e7f1.pdf",
+    "bibtex": "@misc{sharma2022skillinductionandplanningwith,\n    title = {Skill Induction and Planning with Latent Language},\n    author = {Pratyusha Sharma and Antonio Torralba and Jacob Andreas},\n    year = {2022},\n    eprint = {2110.01517},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2110.01517},\n}",
+    "abstract": "We present a framework for learning hierarchical policies from\ndemonstrations, using sparse natural language annotations to guide the\ndiscovery of reusable skills for autonomous decision-making. We formulate a\ngenerative model of action sequences in which goals generate sequences of\nhigh-level subtask descriptions, and these descriptions generate sequences of\nlow-level actions. We describe how to train this model using primarily\nunannotated demonstrations by parsing demonstrations into sequences of named\nhigh-level subtasks, using only a small number of seed annotations to ground\nlanguage in action. In trained models, natural language commands index a\ncombinatorial library of skills; agents can use these skills to plan by\ngenerating high-level instruction sequences tailored to novel goals. We\nevaluate this approach in the ALFRED household simulation environment,\nproviding natural language annotations for only 10% of demonstrations. It\nachieves task completion rates comparable to state-of-the-art models\n(outperforming several recent methods with access to ground-truth plans during\ntraining and evaluation) while providing structured and human-readable\nhigh-level plans.",
+    "num_pages": 14
+}

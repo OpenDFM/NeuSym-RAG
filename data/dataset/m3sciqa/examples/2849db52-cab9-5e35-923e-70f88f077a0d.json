@@ -1,0 +1,62 @@
+{
+    "uuid": "2849db52-cab9-5e35-923e-70f88f077a0d",
+    "question": "Consider the paper that introduces the method that demonstrates the second highest score in the TweetEval Irony dataset for both zero-shot and few-shot prompting. What specific adaptation in the text embeddings allows the model, proposed by the paper, to build correspondence among query text, label text, and objects in grounding tasks?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "2479f89b-b7c0-534f-b51d-d24093d3a1f9"
+    ],
+    "reference_pdf": [
+        "7aacee49-58db-593f-9a47-44846ba2ed23",
+        "881f50d7-f0cf-59e7-8351-429ea3655e0b",
+        "57c06ca1-608a-5816-86dd-0f35be577ce0",
+        "1165b8f0-4261-5c50-9583-bfc199324e61",
+        "1c848190-6829-5b07-a439-3452fd19617b",
+        "ea8d0d91-a08c-547f-aa61-fc136ce41e58",
+        "591f54ea-2f59-5cdb-8117-74bd1028e5d1",
+        "e0c4b079-e17f-5d16-9fc3-e8774c9f400a",
+        "71f0b9b0-e4fa-5ccc-a5e4-fc83695a9ed9",
+        "003269db-f43b-57bc-a219-825c655fab01",
+        "16e73621-a0c1-5f1d-ae72-fa60befecf05",
+        "f992c4ad-ce9f-584d-b09e-80bcdf9589b2",
+        "b31b84cd-d7c7-50d1-9dc2-cb340ea4d218",
+        "3eb1e55f-5293-52ea-8b6f-1d2ff896bf3c",
+        "a76fdb50-d95e-5db2-83a6-ece16257796b",
+        "e0523cf0-8310-565e-9d91-c539c15adcb7",
+        "be395337-c3e2-5e16-b2ef-1ed22e6736dd",
+        "729f79df-1057-5418-89cd-592408770592",
+        "9d19a76a-1f8e-5170-b5d7-b2d07ad1c2ec",
+        "1e0413f9-466d-57a0-be12-cbfb9da4056a",
+        "113174b9-1f5c-59aa-972d-7c6eb43597a9",
+        "8f02441e-aa43-5abf-bd9b-cfd760b7cc20",
+        "e5c8fae9-734a-54d1-bde4-03ec07d10c86",
+        "b5798106-2737-52fa-b1e5-010749d19c2c",
+        "6677d3c0-7aea-5795-a934-d93933e25157",
+        "02cf0294-1961-54c5-a745-0d99126e65d3",
+        "c76b968a-995a-5109-a4eb-f329fa710f26",
+        "de0470bf-d650-5f5c-9fb8-926b7ed2c806",
+        "65c601c1-c571-5d9e-aa32-e37fcc3e0097",
+        "445e9197-1321-57c3-93bf-7084e795848d",
+        "da29dae2-1a88-5793-8149-81c0b63122ca",
+        "02193a94-398e-57da-bb53-0c5800ca743a"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method that demonstrates the second highest score in the TweetEval Irony dataset for both zero-shot and few-shot prompting. What specific adaptation in the text embeddings allows the model, proposed by the paper, to build correspondence among query text, label text, and objects in grounding tasks?",
+            "reference_answer": "Embedding sharing"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.15746/comparison_2_table.png"
+    ]
+}

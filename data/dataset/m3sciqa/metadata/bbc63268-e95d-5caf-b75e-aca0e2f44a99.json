@@ -1,0 +1,18 @@
+{
+    "uuid": "bbc63268-e95d-5caf-b75e-aca0e2f44a99",
+    "title": "Global and Local Hierarchy-aware Contrastive Framework for Implicit Discourse Relation Recognition",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yuxin Jiang",
+        "Linhan Zhang",
+        "Wei Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2211.13873v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\bbc63268-e95d-5caf-b75e-aca0e2f44a99.pdf",
+    "bibtex": "@misc{jiang2023globalandlocalhierarchyawarecontrastive,\n    title = {Global and Local Hierarchy-aware Contrastive Framework for Implicit Discourse Relation Recognition},\n    author = {Yuxin Jiang and Linhan Zhang and Wei Wang},\n    year = {2023},\n    eprint = {2211.13873},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2211.13873},\n}",
+    "abstract": "Due to the absence of explicit connectives, implicit discourse relation\nrecognition (IDRR) remains a challenging task in discourse analysis. The\ncritical step for IDRR is to learn high-quality discourse relation\nrepresentations between two arguments. Recent methods tend to integrate the\nwhole hierarchical information of senses into discourse relation\nrepresentations for multi-level sense recognition. Nevertheless, they\ninsufficiently incorporate the static hierarchical structure containing all\nsenses (defined as global hierarchy), and ignore the hierarchical sense label\nsequence corresponding to each instance (defined as local hierarchy). For the\npurpose of sufficiently exploiting global and local hierarchies of senses to\nlearn better discourse relation representations, we propose a novel GlObal and\nLocal Hierarchy-aware Contrastive Framework (GOLF), to model two kinds of\nhierarchies with the aid of multi-task learning and contrastive learning.\nExperimental results on PDTB 2.0 and PDTB 3.0 datasets demonstrate that our\nmethod remarkably outperforms current state-of-the-art models at all\nhierarchical levels. Our code is publicly available at\nhttps://github.com/YJiangcm/GOLF_for_IDRR",
+    "num_pages": 15
+}

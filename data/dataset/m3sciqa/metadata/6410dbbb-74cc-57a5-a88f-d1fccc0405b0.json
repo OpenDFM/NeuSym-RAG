@@ -1,0 +1,18 @@
+{
+    "uuid": "6410dbbb-74cc-57a5-a88f-d1fccc0405b0",
+    "title": "Hierarchical Sketch Induction for Paraphrase Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Tom Hosking",
+        "Hao Tang",
+        "Mirella Lapata"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.03463v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\6410dbbb-74cc-57a5-a88f-d1fccc0405b0.pdf",
+    "bibtex": "@misc{hosking2022hierarchicalsketchinductionforparaphrase,\n    title = {Hierarchical Sketch Induction for Paraphrase Generation},\n    author = {Tom Hosking and Hao Tang and Mirella Lapata},\n    year = {2022},\n    eprint = {2203.03463},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.03463},\n}",
+    "abstract": "We propose a generative model of paraphrase generation, that encourages\nsyntactic diversity by conditioning on an explicit syntactic sketch. We\nintroduce Hierarchical Refinement Quantized Variational Autoencoders (HRQ-VAE),\na method for learning decompositions of dense encodings as a sequence of\ndiscrete latent variables that make iterative refinements of increasing\ngranularity. This hierarchy of codes is learned through end-to-end training,\nand represents fine-to-coarse grained information about the input. We use\nHRQ-VAE to encode the syntactic form of an input sentence as a path through the\nhierarchy, allowing us to more easily predict syntactic sketches at test time.\nExtensive experiments, including a human evaluation, confirm that HRQ-VAE\nlearns a hierarchical representation of the input space, and generates\nparaphrases of higher quality than previous systems.",
+    "num_pages": 13
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "ced47103-b45c-5707-818d-d3151961186c",
+    "title": "Improving Variational Encoder-Decoders in Dialogue Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Xiaoyu Shen",
+        "Hui Su",
+        "Shuzi Niu",
+        "Vera Demberg"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1802.02032v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\ced47103-b45c-5707-818d-d3151961186c.pdf",
+    "bibtex": "@misc{shen2018improvingvariationalencoderdecodersindialogue,\n    title = {Improving Variational Encoder-Decoders in Dialogue Generation},\n    author = {Xiaoyu Shen and Hui Su and Shuzi Niu and Vera Demberg},\n    year = {2018},\n    eprint = {1802.02032},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1802.02032},\n}",
+    "abstract": "Variational encoder-decoders (VEDs) have shown promising results in dialogue\ngeneration. However, the latent variable distributions are usually approximated\nby a much simpler model than the powerful RNN structure used for encoding and\ndecoding, yielding the KL-vanishing problem and inconsistent training\nobjective. In this paper, we separate the training step into two phases: The\nfirst phase learns to autoencode discrete texts into continuous embeddings,\nfrom which the second phase learns to generalize latent representations by\nreconstructing the encoded embedding. In this case, latent variables are\nsampled by transforming Gaussian noise through multi-layer perceptrons and are\ntrained with a separate VED model, which has the potential of realizing a much\nmore flexible distribution. We compare our model with current popular models\nand the experiment demonstrates substantial improvement in both metric-based\nand human evaluations.",
+    "num_pages": 9
+}

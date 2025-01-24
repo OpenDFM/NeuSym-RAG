@@ -1,0 +1,24 @@
+{
+    "uuid": "880a06dc-f0c4-5e19-9201-2861f952fb32",
+    "title": "Learning to summarize from human feedback",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Nisan Stiennon",
+        "Long Ouyang",
+        "Jeff Wu",
+        "Daniel M. Ziegler",
+        "Ryan Lowe",
+        "Chelsea Voss",
+        "Alec Radford",
+        "Dario Amodei",
+        "Paul Christiano"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2009.01325v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\880a06dc-f0c4-5e19-9201-2861f952fb32.pdf",
+    "bibtex": "@misc{stiennon2022learningtosummarizefromhuman,\n    title = {Learning to summarize from human feedback},\n    author = {Nisan Stiennon and Long Ouyang and Jeff Wu and Daniel M. Ziegler and Ryan Lowe and Chelsea Voss and Alec Radford and Dario Amodei and Paul Christiano},\n    year = {2022},\n    eprint = {2009.01325},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2009.01325},\n}",
+    "abstract": "As language models become more powerful, training and evaluation are\nincreasingly bottlenecked by the data and metrics used for a particular task.\nFor example, summarization models are often trained to predict human reference\nsummaries and evaluated using ROUGE, but both of these metrics are rough\nproxies for what we really care about -- summary quality. In this work, we show\nthat it is possible to significantly improve summary quality by training a\nmodel to optimize for human preferences. We collect a large, high-quality\ndataset of human comparisons between summaries, train a model to predict the\nhuman-preferred summary, and use that model as a reward function to fine-tune a\nsummarization policy using reinforcement learning. We apply our method to a\nversion of the TL;DR dataset of Reddit posts and find that our models\nsignificantly outperform both human reference summaries and much larger models\nfine-tuned with supervised learning alone. Our models also transfer to CNN/DM\nnews articles, producing summaries nearly as good as the human reference\nwithout any news-specific fine-tuning. We conduct extensive analyses to\nunderstand our human feedback dataset and fine-tuned models We establish that\nour reward model generalizes to new datasets, and that optimizing our reward\nmodel results in better summaries than optimizing ROUGE according to humans. We\nhope the evidence from our paper motivates machine learning researchers to pay\ncloser attention to how their training loss affects the model behavior they\nactually want.",
+    "num_pages": 45
+}

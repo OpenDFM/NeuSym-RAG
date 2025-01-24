@@ -1,0 +1,21 @@
+{
+    "uuid": "1afc667d-0a7b-5654-86de-a8dd0f129c65",
+    "title": "An Expression Tree Decoding Strategy for Mathematical Equation Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Wenqi Zhang",
+        "Yongliang Shen",
+        "Qingpeng Nong",
+        "Zeqi Tan",
+        "Yanna Ma",
+        "Weiming Lu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.09619v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\1afc667d-0a7b-5654-86de-a8dd0f129c65.pdf",
+    "bibtex": "@misc{zhang2023anexpressiontreedecodingstrategy,\n    title = {An Expression Tree Decoding Strategy for Mathematical Equation Generation},\n    author = {Wenqi Zhang and Yongliang Shen and Qingpeng Nong and Zeqi Tan and Yanna Ma and Weiming Lu},\n    year = {2023},\n    eprint = {2310.09619},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.09619},\n}",
+    "abstract": "Generating mathematical equations from natural language requires an accurate\nunderstanding of the relations among math expressions. Existing approaches can\nbe broadly categorized into token-level and expression-level generation. The\nformer treats equations as a mathematical language, sequentially generating\nmath tokens. Expression-level methods generate each expression one by one.\nHowever, each expression represents a solving step, and there naturally exist\nparallel or dependent relations between these steps, which are ignored by\ncurrent sequential methods. Therefore, we integrate tree structure into the\nexpression-level generation and advocate an expression tree decoding strategy.\nTo generate a tree with expression as its node, we employ a layer-wise parallel\ndecoding strategy: we decode multiple independent expressions (leaf nodes) in\nparallel at each layer and repeat parallel decoding layer by layer to\nsequentially generate these parent node expressions that depend on others.\nBesides, a bipartite matching algorithm is adopted to align multiple\npredictions with annotations for each layer. Experiments show our method\noutperforms other baselines, especially for these equations with complex\nstructures.",
+    "num_pages": 18
+}

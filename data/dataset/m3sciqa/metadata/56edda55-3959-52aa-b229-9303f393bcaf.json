@@ -1,0 +1,17 @@
+{
+    "uuid": "56edda55-3959-52aa-b229-9303f393bcaf",
+    "title": "Not All Negatives are Equal: Label-Aware Contrastive Loss for Fine-grained Text Classification",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Varsha Suresh",
+        "Desmond C. Ong"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.05427v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\56edda55-3959-52aa-b229-9303f393bcaf.pdf",
+    "bibtex": "@misc{suresh2021notallnegativesareequal,\n    title = {Not All Negatives are Equal: Label-Aware Contrastive Loss for Fine-grained Text Classification},\n    author = {Varsha Suresh and Desmond C. Ong},\n    year = {2021},\n    eprint = {2109.05427},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.05427},\n}",
+    "abstract": "Fine-grained classification involves dealing with datasets with larger number\nof classes with subtle differences between them. Guiding the model to focus on\ndifferentiating dimensions between these commonly confusable classes is key to\nimproving performance on fine-grained tasks. In this work, we analyse the\ncontrastive fine-tuning of pre-trained language models on two fine-grained text\nclassification tasks, emotion classification and sentiment analysis. We\nadaptively embed class relationships into a contrastive objective function to\nhelp differently weigh the positives and negatives, and in particular,\nweighting closely confusable negatives more than less similar negative\nexamples. We find that Label-aware Contrastive Loss outperforms previous\ncontrastive methods, in the presence of larger number and/or more confusable\nclasses, and helps models to produce output distributions that are more\ndifferentiated.",
+    "num_pages": 14
+}

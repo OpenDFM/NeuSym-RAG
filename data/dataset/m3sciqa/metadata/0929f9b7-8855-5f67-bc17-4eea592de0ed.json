@@ -1,0 +1,30 @@
+{
+    "uuid": "0929f9b7-8855-5f67-bc17-4eea592de0ed",
+    "title": "WebCPM: Interactive Web Search for Chinese Long-form Question Answering",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yujia Qin",
+        "Zihan Cai",
+        "Dian Jin",
+        "Lan Yan",
+        "Shihao Liang",
+        "Kunlun Zhu",
+        "Yankai Lin",
+        "Xu Han",
+        "Ning Ding",
+        "Huadong Wang",
+        "Ruobing Xie",
+        "Fanchao Qi",
+        "Zhiyuan Liu",
+        "Maosong Sun",
+        "Jie Zhou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.06849v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\0929f9b7-8855-5f67-bc17-4eea592de0ed.pdf",
+    "bibtex": "@misc{qin2023webcpminteractivewebsearchfor,\n    title = {WebCPM: Interactive Web Search for Chinese Long-form Question Answering},\n    author = {Yujia Qin and Zihan Cai and Dian Jin and Lan Yan and Shihao Liang and Kunlun Zhu and Yankai Lin and Xu Han and Ning Ding and Huadong Wang and Ruobing Xie and Fanchao Qi and Zhiyuan Liu and Maosong Sun and Jie Zhou},\n    year = {2023},\n    eprint = {2305.06849},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.06849},\n}",
+    "abstract": "Long-form question answering (LFQA) aims at answering complex, open-ended\nquestions with detailed, paragraph-length responses. The de facto paradigm of\nLFQA necessitates two procedures: information retrieval, which searches for\nrelevant supporting facts, and information synthesis, which integrates these\nfacts into a coherent answer. In this paper, we introduce WebCPM, the first\nChinese LFQA dataset. One unique feature of WebCPM is that its information\nretrieval is based on interactive web search, which engages with a search\nengine in real time. Following WebGPT, we develop a web search interface. We\nrecruit annotators to search for relevant information using our interface and\nthen answer questions. Meanwhile, the web search behaviors of our annotators\nwould be recorded. In total, we collect 5,500 high-quality question-answer\npairs, together with 14,315 supporting facts and 121,330 web search actions. We\nfine-tune pre-trained language models to imitate human behaviors for web search\nand to generate answers based on the collected facts. Our LFQA pipeline, built\non these fine-tuned models, generates answers that are no worse than\nhuman-written ones in 32.5% and 47.5% of the cases on our dataset and DuReader,\nrespectively.",
+    "num_pages": 19
+}

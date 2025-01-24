@@ -1,0 +1,22 @@
+{
+    "uuid": "a2d0d4b5-9596-52df-9c19-667c871cd76f",
+    "title": "BOND: BERT-Assisted Open-Domain Named Entity Recognition with Distant Supervision",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Chen Liang",
+        "Yue Yu",
+        "Haoming Jiang",
+        "Siawpeng Er",
+        "Ruijia Wang",
+        "Tuo Zhao",
+        "Chao Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2006.15509v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\a2d0d4b5-9596-52df-9c19-667c871cd76f.pdf",
+    "bibtex": "@misc{liang2020bondbertassistedopendomainnamedentity,\n    title = {BOND: BERT-Assisted Open-Domain Named Entity Recognition with Distant Supervision},\n    author = {Chen Liang and Yue Yu and Haoming Jiang and Siawpeng Er and Ruijia Wang and Tuo Zhao and Chao Zhang},\n    year = {2020},\n    eprint = {2006.15509},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2006.15509},\n}",
+    "abstract": "We study the open-domain named entity recognition (NER) problem under distant\nsupervision. The distant supervision, though does not require large amounts of\nmanual annotations, yields highly incomplete and noisy distant labels via\nexternal knowledge bases. To address this challenge, we propose a new\ncomputational framework -- BOND, which leverages the power of pre-trained\nlanguage models (e.g., BERT and RoBERTa) to improve the prediction performance\nof NER models. Specifically, we propose a two-stage training algorithm: In the\nfirst stage, we adapt the pre-trained language model to the NER tasks using the\ndistant labels, which can significantly improve the recall and precision; In\nthe second stage, we drop the distant labels, and propose a self-training\napproach to further improve the model performance. Thorough experiments on 5\nbenchmark datasets demonstrate the superiority of BOND over existing distantly\nsupervised NER methods. The code and distantly labeled data have been released\nin https://github.com/cliang1453/BOND.",
+    "num_pages": 23
+}

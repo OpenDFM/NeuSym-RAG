@@ -1,0 +1,19 @@
+{
+    "uuid": "fa5fa5c5-1780-5e27-84e9-da46df259090",
+    "title": "MAGNIFICo: Evaluating the In-Context Learning Ability of Large Language Models to Generalize to Novel Interpretations",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Arkil Patel",
+        "Satwik Bhattamishra",
+        "Siva Reddy",
+        "Dzmitry Bahdanau"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.11634v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\fa5fa5c5-1780-5e27-84e9-da46df259090.pdf",
+    "bibtex": "@misc{patel2023magnificoevaluatingtheincontextlearning,\n    title = {MAGNIFICo: Evaluating the In-Context Learning Ability of Large Language Models to Generalize to Novel Interpretations},\n    author = {Arkil Patel and Satwik Bhattamishra and Siva Reddy and Dzmitry Bahdanau},\n    year = {2023},\n    eprint = {2310.11634},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.11634},\n}",
+    "abstract": "Humans possess a remarkable ability to assign novel interpretations to\nlinguistic expressions, enabling them to learn new words and understand\ncommunity-specific connotations. However, Large Language Models (LLMs) have a\nknowledge cutoff and are costly to finetune repeatedly. Therefore, it is\ncrucial for LLMs to learn novel interpretations in-context. In this paper, we\nsystematically analyse the ability of LLMs to acquire novel interpretations\nusing in-context learning. To facilitate our study, we introduce MAGNIFICo, an\nevaluation suite implemented within a text-to-SQL semantic parsing framework\nthat incorporates diverse tokens and prompt settings to simulate real-world\ncomplexity. Experimental results on MAGNIFICo demonstrate that LLMs exhibit a\nsurprisingly robust capacity for comprehending novel interpretations from\nnatural language descriptions as well as from discussions within long\nconversations. Nevertheless, our findings also highlight the need for further\nimprovements, particularly when interpreting unfamiliar words or when composing\nmultiple novel interpretations simultaneously in the same example.\nAdditionally, our analysis uncovers the semantic predispositions in LLMs and\nreveals the impact of recency bias for information presented in long contexts.",
+    "num_pages": 23
+}

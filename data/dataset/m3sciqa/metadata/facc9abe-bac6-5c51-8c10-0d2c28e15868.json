@@ -1,0 +1,19 @@
+{
+    "uuid": "facc9abe-bac6-5c51-8c10-0d2c28e15868",
+    "title": "Exploring Visual Relationship for Image Captioning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Ting Yao",
+        "Yingwei Pan",
+        "Yehao Li",
+        "Tao Mei"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1809.07041v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\facc9abe-bac6-5c51-8c10-0d2c28e15868.pdf",
+    "bibtex": "@misc{yao2018exploringvisualrelationshipforimage,\n    title = {Exploring Visual Relationship for Image Captioning},\n    author = {Ting Yao and Yingwei Pan and Yehao Li and Tao Mei},\n    year = {2018},\n    eprint = {1809.07041},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1809.07041},\n}",
+    "abstract": "It is always well believed that modeling relationships between objects would\nbe helpful for representing and eventually describing an image. Nevertheless,\nthere has not been evidence in support of the idea on image description\ngeneration. In this paper, we introduce a new design to explore the connections\nbetween objects for image captioning under the umbrella of attention-based\nencoder-decoder framework. Specifically, we present Graph Convolutional\nNetworks plus Long Short-Term Memory (dubbed as GCN-LSTM) architecture that\nnovelly integrates both semantic and spatial object relationships into image\nencoder. Technically, we build graphs over the detected objects in an image\nbased on their spatial and semantic connections. The representations of each\nregion proposed on objects are then refined by leveraging graph structure\nthrough GCN. With the learnt region-level features, our GCN-LSTM capitalizes on\nLSTM-based captioning framework with attention mechanism for sentence\ngeneration. Extensive experiments are conducted on COCO image captioning\ndataset, and superior results are reported when comparing to state-of-the-art\napproaches. More remarkably, GCN-LSTM increases CIDEr-D performance from 120.1%\nto 128.7% on COCO testing set.",
+    "num_pages": 16
+}

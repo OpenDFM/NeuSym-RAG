@@ -1,0 +1,26 @@
+{
+    "uuid": "a76fdb50-d95e-5db2-83a6-ece16257796b",
+    "title": "Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Mirac Suzgun",
+        "Nathan Scales",
+        "Nathanael Schärli",
+        "Sebastian Gehrmann",
+        "Yi Tay",
+        "Hyung Won Chung",
+        "Aakanksha Chowdhery",
+        "Quoc V. Le",
+        "Ed H. Chi",
+        "Denny Zhou",
+        "Jason Wei"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.09261v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\a76fdb50-d95e-5db2-83a6-ece16257796b.pdf",
+    "bibtex": "@misc{suzgun2022challengingbigbenchtasksandwhether,\n    title = {Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them},\n    author = {Mirac Suzgun and Nathan Scales and Nathanael Schärli and Sebastian Gehrmann and Yi Tay and Hyung Won Chung and Aakanksha Chowdhery and Quoc V. Le and Ed H. Chi and Denny Zhou and Jason Wei},\n    year = {2022},\n    eprint = {2210.09261},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.09261},\n}",
+    "abstract": "BIG-Bench (Srivastava et al., 2022) is a diverse evaluation suite that\nfocuses on tasks believed to be beyond the capabilities of current language\nmodels. Language models have already made good progress on this benchmark, with\nthe best model in the BIG-Bench paper outperforming average reported\nhuman-rater results on 65% of the BIG-Bench tasks via few-shot prompting. But\non what tasks do language models fall short of average human-rater performance,\nand are those tasks actually unsolvable by current language models?\n  In this work, we focus on a suite of 23 challenging BIG-Bench tasks which we\ncall BIG-Bench Hard (BBH). These are the task for which prior language model\nevaluations did not outperform the average human-rater. We find that applying\nchain-of-thought (CoT) prompting to BBH tasks enables PaLM to surpass the\naverage human-rater performance on 10 of the 23 tasks, and Codex\n(code-davinci-002) to surpass the average human-rater performance on 17 of the\n23 tasks. Since many tasks in BBH require multi-step reasoning, few-shot\nprompting without CoT, as done in the BIG-Bench evaluations (Srivastava et al.,\n2022), substantially underestimates the best performance and capabilities of\nlanguage models, which is better captured via CoT prompting. As further\nanalysis, we explore the interaction between CoT and model scale on BBH,\nfinding that CoT enables emergent task performance on several BBH tasks with\notherwise flat scaling curves.",
+    "num_pages": 49
+}

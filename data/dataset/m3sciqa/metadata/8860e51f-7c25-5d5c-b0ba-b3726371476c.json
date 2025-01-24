@@ -1,0 +1,23 @@
+{
+    "uuid": "8860e51f-7c25-5d5c-b0ba-b3726371476c",
+    "title": "Parallel Instance Query Network for Named Entity Recognition",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yongliang Shen",
+        "Xiaobin Wang",
+        "Zeqi Tan",
+        "Guangwei Xu",
+        "Pengjun Xie",
+        "Fei Huang",
+        "Weiming Lu",
+        "Yueting Zhuang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.10545v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\8860e51f-7c25-5d5c-b0ba-b3726371476c.pdf",
+    "bibtex": "@misc{shen2022parallelinstancequerynetworkfor,\n    title = {Parallel Instance Query Network for Named Entity Recognition},\n    author = {Yongliang Shen and Xiaobin Wang and Zeqi Tan and Guangwei Xu and Pengjun Xie and Fei Huang and Weiming Lu and Yueting Zhuang},\n    year = {2022},\n    eprint = {2203.10545},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.10545},\n}",
+    "abstract": "Named entity recognition (NER) is a fundamental task in natural language\nprocessing. Recent works treat named entity recognition as a reading\ncomprehension task, constructing type-specific queries manually to extract\nentities. This paradigm suffers from three issues. First, type-specific queries\ncan only extract one type of entities per inference, which is inefficient.\nSecond, the extraction for different types of entities is isolated, ignoring\nthe dependencies between them. Third, query construction relies on external\nknowledge and is difficult to apply to realistic scenarios with hundreds of\nentity types. To deal with them, we propose Parallel Instance Query Network\n(PIQN), which sets up global and learnable instance queries to extract entities\nfrom a sentence in a parallel manner. Each instance query predicts one entity,\nand by feeding all instance queries simultaneously, we can query all entities\nin parallel. Instead of being constructed from external knowledge, instance\nqueries can learn their different query semantics during training. For training\nthe model, we treat label assignment as a one-to-many Linear Assignment Problem\n(LAP) and dynamically assign gold entities to instance queries with minimal\nassignment cost. Experiments on both nested and flat NER datasets demonstrate\nthat our proposed method outperforms previous state-of-the-art models.",
+    "num_pages": 15
+}

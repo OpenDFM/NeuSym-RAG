@@ -1,0 +1,18 @@
+{
+    "uuid": "cfd90106-9c14-54c4-aa6c-58df4c94e301",
+    "title": "Semantic Evaluation for Text-to-SQL with Distilled Test Suites",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Ruiqi Zhong",
+        "Tao Yu",
+        "Dan Klein"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.02840v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\cfd90106-9c14-54c4-aa6c-58df4c94e301.pdf",
+    "bibtex": "@misc{zhong2020semanticevaluationfortexttosqlwith,\n    title = {Semantic Evaluation for Text-to-SQL with Distilled Test Suites},\n    author = {Ruiqi Zhong and Tao Yu and Dan Klein},\n    year = {2020},\n    eprint = {2010.02840},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.02840},\n}",
+    "abstract": "We propose test suite accuracy to approximate semantic accuracy for\nText-to-SQL models. Our method distills a small test suite of databases that\nachieves high code coverage for the gold query from a large number of randomly\ngenerated databases. At evaluation time, it computes the denotation accuracy of\nthe predicted queries on the distilled test suite, hence calculating a tight\nupper-bound for semantic accuracy efficiently. We use our proposed method to\nevaluate 21 models submitted to the Spider leader board and manually verify\nthat our method is always correct on 100 examples. In contrast, the current\nSpider metric leads to a 2.5% false negative rate on average and 8.1% in the\nworst case, indicating that test suite accuracy is needed. Our implementation,\nalong with distilled test suites for eleven Text-to-SQL datasets, is publicly\navailable.",
+    "num_pages": 16
+}

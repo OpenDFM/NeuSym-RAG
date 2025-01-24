@@ -1,0 +1,18 @@
+{
+    "uuid": "87a8fb3c-6f1d-53d7-95c5-baed9d1f223e",
+    "title": "Types of Out-of-Distribution Texts and How to Detect Them",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Udit Arora",
+        "William Huang",
+        "He He"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.06827v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\87a8fb3c-6f1d-53d7-95c5-baed9d1f223e.pdf",
+    "bibtex": "@misc{arora2021typesofoutofdistributiontextsand,\n    title = {Types of Out-of-Distribution Texts and How to Detect Them},\n    author = {Udit Arora and William Huang and He He},\n    year = {2021},\n    eprint = {2109.06827},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.06827},\n}",
+    "abstract": "Despite agreement on the importance of detecting out-of-distribution (OOD)\nexamples, there is little consensus on the formal definition of OOD examples\nand how to best detect them. We categorize these examples by whether they\nexhibit a background shift or a semantic shift, and find that the two major\napproaches to OOD detection, model calibration and density estimation (language\nmodeling for text), have distinct behavior on these types of OOD data. Across\n14 pairs of in-distribution and OOD English natural language understanding\ndatasets, we find that density estimation methods consistently beat calibration\nmethods in background shift settings, while performing worse in semantic shift\nsettings. In addition, we find that both methods generally fail to detect\nexamples from challenge data, highlighting a weak spot for current methods.\nSince no single method works well across all settings, our results call for an\nexplicit definition of OOD examples when evaluating different detection\nmethods.",
+    "num_pages": 15
+}

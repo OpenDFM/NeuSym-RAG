@@ -1,0 +1,22 @@
+{
+    "uuid": "52f46313-b1a0-5e5e-b415-a54c42ca1496",
+    "title": "VL-BERT: Pre-training of Generic Visual-Linguistic Representations",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Weijie Su",
+        "Xizhou Zhu",
+        "Yue Cao",
+        "Bin Li",
+        "Lewei Lu",
+        "Furu Wei",
+        "Jifeng Dai"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1908.08530v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\52f46313-b1a0-5e5e-b415-a54c42ca1496.pdf",
+    "bibtex": "@misc{su2020vlbertpretrainingofgenericvisuallinguistic,\n    title = {VL-BERT: Pre-training of Generic Visual-Linguistic Representations},\n    author = {Weijie Su and Xizhou Zhu and Yue Cao and Bin Li and Lewei Lu and Furu Wei and Jifeng Dai},\n    year = {2020},\n    eprint = {1908.08530},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1908.08530},\n}",
+    "abstract": "We introduce a new pre-trainable generic representation for visual-linguistic\ntasks, called Visual-Linguistic BERT (VL-BERT for short). VL-BERT adopts the\nsimple yet powerful Transformer model as the backbone, and extends it to take\nboth visual and linguistic embedded features as input. In it, each element of\nthe input is either of a word from the input sentence, or a region-of-interest\n(RoI) from the input image. It is designed to fit for most of the\nvisual-linguistic downstream tasks. To better exploit the generic\nrepresentation, we pre-train VL-BERT on the massive-scale Conceptual Captions\ndataset, together with text-only corpus. Extensive empirical analysis\ndemonstrates that the pre-training procedure can better align the\nvisual-linguistic clues and benefit the downstream tasks, such as visual\ncommonsense reasoning, visual question answering and referring expression\ncomprehension. It is worth noting that VL-BERT achieved the first place of\nsingle model on the leaderboard of the VCR benchmark. Code is released at\n\\url{https://github.com/jackroos/VL-BERT}.",
+    "num_pages": 16
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "3665daf2-f865-553a-8593-6ce9441d8a71",
+    "title": "A Well-Composed Text is Half Done! Composition Sampling for Diverse Conditional Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Shashi Narayan",
+        "Gonçalo Simões",
+        "Yao Zhao",
+        "Joshua Maynez",
+        "Dipanjan Das",
+        "Michael Collins",
+        "Mirella Lapata"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.15108v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\3665daf2-f865-553a-8593-6ce9441d8a71.pdf",
+    "bibtex": "@misc{narayan2022awellcomposedtextishalf,\n    title = {A Well-Composed Text is Half Done! Composition Sampling for Diverse Conditional Generation},\n    author = {Shashi Narayan and Gonçalo Simões and Yao Zhao and Joshua Maynez and Dipanjan Das and Michael Collins and Mirella Lapata},\n    year = {2022},\n    eprint = {2203.15108},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.15108},\n}",
+    "abstract": "We propose Composition Sampling, a simple but effective method to generate\ndiverse outputs for conditional generation of higher quality compared to\nprevious stochastic decoding strategies. It builds on recently proposed\nplan-based neural generation models (Narayan et al, 2021) that are trained to\nfirst create a composition of the output and then generate by conditioning on\nit and the input. Our approach avoids text degeneration by first sampling a\ncomposition in the form of an entity chain and then using beam search to\ngenerate the best possible text grounded to this entity chain. Experiments on\nsummarization (CNN/DailyMail and XSum) and question generation (SQuAD), using\nexisting and newly proposed automatic metrics together with human-based\nevaluation, demonstrate that Composition Sampling is currently the best\navailable decoding strategy for generating diverse meaningful outputs.",
+    "num_pages": 21
+}

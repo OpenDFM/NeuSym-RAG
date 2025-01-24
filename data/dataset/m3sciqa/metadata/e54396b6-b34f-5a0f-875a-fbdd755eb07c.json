@@ -1,0 +1,17 @@
+{
+    "uuid": "e54396b6-b34f-5a0f-875a-fbdd755eb07c",
+    "title": "Prompter: Utilizing Large Language Model Prompting for a Data Efficient Embodied Instruction Following",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Yuki Inoue",
+        "Hiroki Ohashi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2211.03267v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\e54396b6-b34f-5a0f-875a-fbdd755eb07c.pdf",
+    "bibtex": "@misc{inoue2024prompterutilizinglargelanguagemodel,\n    title = {Prompter: Utilizing Large Language Model Prompting for a Data Efficient Embodied Instruction Following},\n    author = {Yuki Inoue and Hiroki Ohashi},\n    year = {2024},\n    eprint = {2211.03267},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.RO},\n    url = {http://arxiv.org/abs/2211.03267},\n}",
+    "abstract": "Embodied Instruction Following (EIF) studies how autonomous mobile\nmanipulation robots should be controlled to accomplish long-horizon tasks\ndescribed by natural language instructions. While much research on EIF is\nconducted in simulators, the ultimate goal of the field is to deploy the agents\nin real life. This is one of the reasons why recent methods have moved away\nfrom training models end-to-end and take modular approaches, which do not need\nthe costly expert operation data. However, as it is still in the early days of\nimporting modular ideas to EIF, a search for modules effective in the EIF task\nis still far from a conclusion. In this paper, we propose to extend the modular\ndesign using knowledge obtained from two external sources. First, we show that\nembedding the physical constraints of the deployed robots into the module\ndesign is highly effective. Our design also allows the same modular system to\nwork across robots of different configurations with minimal modifications.\nSecond, we show that the landmark-based object search, previously implemented\nby a trained model requiring a dedicated set of data, can be replaced by an\nimplementation that prompts pretrained large language models for\nlandmark-object relationships, eliminating the need for collecting dedicated\ntraining data. Our proposed Prompter achieves 41.53\\% and 45.32\\% on the ALFRED\nbenchmark with high-level instructions only and step-by-step instructions,\nrespectively, significantly outperforming the previous state of the art by\n5.46\\% and 9.91\\%.",
+    "num_pages": 8
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "9c000611-9964-5c0c-866c-95892d0aadde",
+    "title": "Bilateral Multi-Perspective Matching for Natural Language Sentences",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Zhiguo Wang",
+        "Wael Hamza",
+        "Radu Florian"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1702.03814v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\9c000611-9964-5c0c-866c-95892d0aadde.pdf",
+    "bibtex": "@misc{wang2017bilateralmultiperspectivematchingfornatural,\n    title = {Bilateral Multi-Perspective Matching for Natural Language Sentences},\n    author = {Zhiguo Wang and Wael Hamza and Radu Florian},\n    year = {2017},\n    eprint = {1702.03814},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/1702.03814},\n}",
+    "abstract": "Natural language sentence matching is a fundamental technology for a variety\nof tasks. Previous approaches either match sentences from a single direction or\nonly apply single granular (word-by-word or sentence-by-sentence) matching. In\nthis work, we propose a bilateral multi-perspective matching (BiMPM) model\nunder the \"matching-aggregation\" framework. Given two sentences $P$ and $Q$,\nour model first encodes them with a BiLSTM encoder. Next, we match the two\nencoded sentences in two directions $P \\rightarrow Q$ and $P \\leftarrow Q$. In\neach matching direction, each time step of one sentence is matched against all\ntime-steps of the other sentence from multiple perspectives. Then, another\nBiLSTM layer is utilized to aggregate the matching results into a fix-length\nmatching vector. Finally, based on the matching vector, the decision is made\nthrough a fully connected layer. We evaluate our model on three tasks:\nparaphrase identification, natural language inference and answer sentence\nselection. Experimental results on standard benchmark datasets show that our\nmodel achieves the state-of-the-art performance on all tasks.",
+    "num_pages": 7
+}

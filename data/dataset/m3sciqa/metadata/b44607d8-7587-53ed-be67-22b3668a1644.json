@@ -1,0 +1,22 @@
+{
+    "uuid": "b44607d8-7587-53ed-be67-22b3668a1644",
+    "title": "REFINER: Reasoning Feedback on Intermediate Representations",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Debjit Paul",
+        "Mete Ismayilzada",
+        "Maxime Peyrard",
+        "Beatriz Borges",
+        "Antoine Bosselut",
+        "Robert West",
+        "Boi Faltings"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.01904v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\b44607d8-7587-53ed-be67-22b3668a1644.pdf",
+    "bibtex": "@misc{paul2024refinerreasoningfeedbackonintermediate,\n    title = {REFINER: Reasoning Feedback on Intermediate Representations},\n    author = {Debjit Paul and Mete Ismayilzada and Maxime Peyrard and Beatriz Borges and Antoine Bosselut and Robert West and Boi Faltings},\n    year = {2024},\n    eprint = {2304.01904},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2304.01904},\n}",
+    "abstract": "Language models (LMs) have recently shown remarkable performance on reasoning\ntasks by explicitly generating intermediate inferences, e.g., chain-of-thought\nprompting. However, these intermediate inference steps may be inappropriate\ndeductions from the initial context and lead to incorrect final predictions.\nHere we introduce REFINER, a framework for finetuning LMs to explicitly\ngenerate intermediate reasoning steps while interacting with a critic model\nthat provides automated feedback on the reasoning. Specifically, the critic\nprovides structured feedback that the reasoning LM uses to iteratively improve\nits intermediate arguments. Empirical evaluations of REFINER on three diverse\nreasoning tasks show significant improvements over baseline LMs of comparable\nscale. Furthermore, when using GPT-3.5 or ChatGPT as the reasoner, the trained\ncritic significantly improves reasoning without finetuning the reasoner.\nFinally, our critic model is trained without expensive human-in-the-loop data\nbut can be substituted with humans at inference time.",
+    "num_pages": 27
+}

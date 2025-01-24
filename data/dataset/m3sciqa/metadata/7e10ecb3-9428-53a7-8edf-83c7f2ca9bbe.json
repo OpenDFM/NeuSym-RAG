@@ -1,0 +1,23 @@
+{
+    "uuid": "7e10ecb3-9428-53a7-8edf-83c7f2ca9bbe",
+    "title": "Effective Few-Shot Named Entity Linking by Meta-Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Xiuxing Li",
+        "Zhenyu Li",
+        "Zhengyan Zhang",
+        "Ning Liu",
+        "Haitao Yuan",
+        "Wei Zhang",
+        "Zhiyuan Liu",
+        "Jianyong Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2207.05280v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\7e10ecb3-9428-53a7-8edf-83c7f2ca9bbe.pdf",
+    "bibtex": "@misc{li2022effectivefewshotnamedentitylinking,\n    title = {Effective Few-Shot Named Entity Linking by Meta-Learning},\n    author = {Xiuxing Li and Zhenyu Li and Zhengyan Zhang and Ning Liu and Haitao Yuan and Wei Zhang and Zhiyuan Liu and Jianyong Wang},\n    year = {2022},\n    eprint = {2207.05280},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2207.05280},\n}",
+    "abstract": "Entity linking aims to link ambiguous mentions to their corresponding\nentities in a knowledge base, which is significant and fundamental for various\ndownstream applications, e.g., knowledge base completion, question answering,\nand information extraction. While great efforts have been devoted to this task,\nmost of these studies follow the assumption that large-scale labeled data is\navailable. However, when the labeled data is insufficient for specific domains\ndue to labor-intensive annotation work, the performance of existing algorithms\nwill suffer an intolerable decline. In this paper, we endeavor to solve the\nproblem of few-shot entity linking, which only requires a minimal amount of\nin-domain labeled data and is more practical in real situations. Specifically,\nwe firstly propose a novel weak supervision strategy to generate non-trivial\nsynthetic entity-mention pairs based on mention rewriting. Since the quality of\nthe synthetic data has a critical impact on effective model training, we\nfurther design a meta-learning mechanism to assign different weights to each\nsynthetic entity-mention pair automatically. Through this way, we can\nprofoundly exploit rich and precious semantic information to derive a\nwell-trained entity linking model under the few-shot setting. The experiments\non real-world datasets show that the proposed method can extensively improve\nthe state-of-the-art few-shot entity linking model and achieve impressive\nperformance when only a small amount of labeled data is available. Moreover, we\nalso demonstrate the outstanding ability of the model's transferability.",
+    "num_pages": 14
+}

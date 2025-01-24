@@ -1,0 +1,22 @@
+{
+    "uuid": "ea02c473-42cb-5fbe-9287-aea0fa4a842e",
+    "title": "Towards Complex Text-to-SQL in Cross-Domain Database with Intermediate Representation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Jiaqi Guo",
+        "Zecheng Zhan",
+        "Yan Gao",
+        "Yan Xiao",
+        "Jian-Guang Lou",
+        "Ting Liu",
+        "Dongmei Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1905.08205v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\ea02c473-42cb-5fbe-9287-aea0fa4a842e.pdf",
+    "bibtex": "@misc{guo2019towardscomplextexttosqlincrossdomain,\n    title = {Towards Complex Text-to-SQL in Cross-Domain Database with Intermediate Representation},\n    author = {Jiaqi Guo and Zecheng Zhan and Yan Gao and Yan Xiao and Jian-Guang Lou and Ting Liu and Dongmei Zhang},\n    year = {2019},\n    eprint = {1905.08205},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1905.08205},\n}",
+    "abstract": "We present a neural approach called IRNet for complex and cross-domain\nText-to-SQL. IRNet aims to address two challenges: 1) the mismatch between\nintents expressed in natural language (NL) and the implementation details in\nSQL; 2) the challenge in predicting columns caused by the large number of\nout-of-domain words. Instead of end-to-end synthesizing a SQL query, IRNet\ndecomposes the synthesis process into three phases. In the first phase, IRNet\nperforms a schema linking over a question and a database schema. Then, IRNet\nadopts a grammar-based neural model to synthesize a SemQL query which is an\nintermediate representation that we design to bridge NL and SQL. Finally, IRNet\ndeterministically infers a SQL query from the synthesized SemQL query with\ndomain knowledge. On the challenging Text-to-SQL benchmark Spider, IRNet\nachieves 46.7% accuracy, obtaining 19.5% absolute improvement over previous\nstate-of-the-art approaches. At the time of writing, IRNet achieves the first\nposition on the Spider leaderboard.",
+    "num_pages": 16
+}

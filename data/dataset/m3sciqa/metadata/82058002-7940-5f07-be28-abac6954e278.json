@@ -1,0 +1,20 @@
+{
+    "uuid": "82058002-7940-5f07-be28-abac6954e278",
+    "title": "Unsupervised Out-of-Domain Detection via Pre-trained Transformers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Keyang Xu",
+        "Tongzheng Ren",
+        "Shikun Zhang",
+        "Yihao Feng",
+        "Caiming Xiong"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.00948v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\82058002-7940-5f07-be28-abac6954e278.pdf",
+    "bibtex": "@misc{xu2022unsupervisedoutofdomaindetectionviapretrained,\n    title = {Unsupervised Out-of-Domain Detection via Pre-trained Transformers},\n    author = {Keyang Xu and Tongzheng Ren and Shikun Zhang and Yihao Feng and Caiming Xiong},\n    year = {2022},\n    eprint = {2106.00948},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.00948},\n}",
+    "abstract": "Deployed real-world machine learning applications are often subject to\nuncontrolled and even potentially malicious inputs. Those out-of-domain inputs\ncan lead to unpredictable outputs and sometimes catastrophic safety issues.\nPrior studies on out-of-domain detection require in-domain task labels and are\nlimited to supervised classification scenarios. Our work tackles the problem of\ndetecting out-of-domain samples with only unsupervised in-domain data. We\nutilize the latent representations of pre-trained transformers and propose a\nsimple yet effective method to transform features across all layers to\nconstruct out-of-domain detectors efficiently. Two domain-specific fine-tuning\napproaches are further proposed to boost detection accuracy. Our empirical\nevaluations of related methods on two datasets validate that our method greatly\nimproves out-of-domain detection ability in a more general scenario.",
+    "num_pages": 10
+}

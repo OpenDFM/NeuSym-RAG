@@ -1,0 +1,21 @@
+{
+    "uuid": "b99fd553-6018-563d-820f-d97c0bbe1ea0",
+    "title": "LightGCN: Simplifying and Powering Graph Convolution Network for Recommendation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Xiangnan He",
+        "Kuan Deng",
+        "Xiang Wang",
+        "Yan Li",
+        "Yongdong Zhang",
+        "Meng Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2002.02126v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\b99fd553-6018-563d-820f-d97c0bbe1ea0.pdf",
+    "bibtex": "@misc{he2020lightgcnsimplifyingandpoweringgraph,\n    title = {LightGCN: Simplifying and Powering Graph Convolution Network for Recommendation},\n    author = {Xiangnan He and Kuan Deng and Xiang Wang and Yan Li and Yongdong Zhang and Meng Wang},\n    year = {2020},\n    eprint = {2002.02126},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.IR},\n    url = {http://arxiv.org/abs/2002.02126},\n}",
+    "abstract": "Graph Convolution Network (GCN) has become new state-of-the-art for\ncollaborative filtering. Nevertheless, the reasons of its effectiveness for\nrecommendation are not well understood. Existing work that adapts GCN to\nrecommendation lacks thorough ablation analyses on GCN, which is originally\ndesigned for graph classification tasks and equipped with many neural network\noperations. However, we empirically find that the two most common designs in\nGCNs -- feature transformation and nonlinear activation -- contribute little to\nthe performance of collaborative filtering. Even worse, including them adds to\nthe difficulty of training and degrades recommendation performance.\n  In this work, we aim to simplify the design of GCN to make it more concise\nand appropriate for recommendation. We propose a new model named LightGCN,\nincluding only the most essential component in GCN -- neighborhood aggregation\n-- for collaborative filtering. Specifically, LightGCN learns user and item\nembeddings by linearly propagating them on the user-item interaction graph, and\nuses the weighted sum of the embeddings learned at all layers as the final\nembedding. Such simple, linear, and neat model is much easier to implement and\ntrain, exhibiting substantial improvements (about 16.0\\% relative improvement\non average) over Neural Graph Collaborative Filtering (NGCF) -- a\nstate-of-the-art GCN-based recommender model -- under exactly the same\nexperimental setting. Further analyses are provided towards the rationality of\nthe simple LightGCN from both analytical and empirical perspectives.",
+    "num_pages": 10
+}

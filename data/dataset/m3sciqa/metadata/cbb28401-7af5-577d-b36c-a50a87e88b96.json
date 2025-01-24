@@ -1,0 +1,19 @@
+{
+    "uuid": "cbb28401-7af5-577d-b36c-a50a87e88b96",
+    "title": "Syntax-based Deep Matching of Short Texts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2015,
+    "authors": [
+        "Mingxuan Wang",
+        "Zhengdong Lu",
+        "Hang Li",
+        "Qun Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1503.02427v6",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2015\\cbb28401-7af5-577d-b36c-a50a87e88b96.pdf",
+    "bibtex": "@misc{wang2015syntaxbaseddeepmatchingofshort,\n    title = {Syntax-based Deep Matching of Short Texts},\n    author = {Mingxuan Wang and Zhengdong Lu and Hang Li and Qun Liu},\n    year = {2015},\n    eprint = {1503.02427},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1503.02427},\n}",
+    "abstract": "Many tasks in natural language processing, ranging from machine translation\nto question answering, can be reduced to the problem of matching two sentences\nor more generally two short texts. We propose a new approach to the problem,\ncalled Deep Match Tree (DeepMatch$_{tree}$), under a general setting. The\napproach consists of two components, 1) a mining algorithm to discover patterns\nfor matching two short-texts, defined in the product space of dependency trees,\nand 2) a deep neural network for matching short texts using the mined patterns,\nas well as a learning algorithm to build the network having a sparse structure.\nWe test our algorithm on the problem of matching a tweet and a response in\nsocial media, a hard matching problem proposed in [Wang et al., 2013], and show\nthat DeepMatch$_{tree}$ can outperform a number of competitor models including\none without using dependency trees and one based on word-embedding, all with\nlarge margins",
+    "num_pages": 8
+}

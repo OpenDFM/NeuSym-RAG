@@ -1,0 +1,17 @@
+{
+    "uuid": "14940fd5-af90-5198-a293-1f2fb25ed521",
+    "title": "Neural Syntactic Preordering for Controlled Paraphrase Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Tanya Goyal",
+        "Greg Durrett"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2005.02013v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\14940fd5-af90-5198-a293-1f2fb25ed521.pdf",
+    "bibtex": "@misc{goyal2020neuralsyntacticpreorderingforcontrolled,\n    title = {Neural Syntactic Preordering for Controlled Paraphrase Generation},\n    author = {Tanya Goyal and Greg Durrett},\n    year = {2020},\n    eprint = {2005.02013},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2005.02013},\n}",
+    "abstract": "Paraphrasing natural language sentences is a multifaceted process: it might\ninvolve replacing individual words or short phrases, local rearrangement of\ncontent, or high-level restructuring like topicalization or passivization. Past\napproaches struggle to cover this space of paraphrase possibilities in an\ninterpretable manner. Our work, inspired by pre-ordering literature in machine\ntranslation, uses syntactic transformations to softly \"reorder'' the source\nsentence and guide our neural paraphrasing model. First, given an input\nsentence, we derive a set of feasible syntactic rearrangements using an\nencoder-decoder model. This model operates over a partially lexical, partially\nsyntactic view of the sentence and can reorder big chunks. Next, we use each\nproposed rearrangement to produce a sequence of position embeddings, which\nencourages our final encoder-decoder paraphrase model to attend to the source\nwords in a particular order. Our evaluation, both automatic and human, shows\nthat the proposed system retains the quality of the baseline approaches while\ngiving a substantial increase in the diversity of the generated paraphrases",
+    "num_pages": 15
+}

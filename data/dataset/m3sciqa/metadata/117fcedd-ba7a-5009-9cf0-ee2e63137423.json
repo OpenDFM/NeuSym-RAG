@@ -1,0 +1,23 @@
+{
+    "uuid": "117fcedd-ba7a-5009-9cf0-ee2e63137423",
+    "title": "UNITER: UNiversal Image-TExt Representation Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Yen-Chun Chen",
+        "Linjie Li",
+        "Licheng Yu",
+        "Ahmed El Kholy",
+        "Faisal Ahmed",
+        "Zhe Gan",
+        "Yu Cheng",
+        "Jingjing Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1909.11740v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\117fcedd-ba7a-5009-9cf0-ee2e63137423.pdf",
+    "bibtex": "@misc{chen2020uniteruniversalimagetextrepresentationlearning,\n    title = {UNITER: UNiversal Image-TExt Representation Learning},\n    author = {Yen-Chun Chen and Linjie Li and Licheng Yu and Ahmed El Kholy and Faisal Ahmed and Zhe Gan and Yu Cheng and Jingjing Liu},\n    year = {2020},\n    eprint = {1909.11740},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1909.11740},\n}",
+    "abstract": "Joint image-text embedding is the bedrock for most Vision-and-Language (V+L)\ntasks, where multimodality inputs are simultaneously processed for joint visual\nand textual understanding. In this paper, we introduce UNITER, a UNiversal\nImage-TExt Representation, learned through large-scale pre-training over four\nimage-text datasets (COCO, Visual Genome, Conceptual Captions, and SBU\nCaptions), which can power heterogeneous downstream V+L tasks with joint\nmultimodal embeddings. We design four pre-training tasks: Masked Language\nModeling (MLM), Masked Region Modeling (MRM, with three variants), Image-Text\nMatching (ITM), and Word-Region Alignment (WRA). Different from previous work\nthat applies joint random masking to both modalities, we use conditional\nmasking on pre-training tasks (i.e., masked language/region modeling is\nconditioned on full observation of image/text). In addition to ITM for global\nimage-text alignment, we also propose WRA via the use of Optimal Transport (OT)\nto explicitly encourage fine-grained alignment between words and image regions\nduring pre-training. Comprehensive analysis shows that both conditional masking\nand OT-based WRA contribute to better pre-training. We also conduct a thorough\nablation study to find an optimal combination of pre-training tasks. Extensive\nexperiments show that UNITER achieves new state of the art across six V+L tasks\n(over nine datasets), including Visual Question Answering, Image-Text\nRetrieval, Referring Expression Comprehension, Visual Commonsense Reasoning,\nVisual Entailment, and NLVR$^2$. Code is available at\nhttps://github.com/ChenRocks/UNITER.",
+    "num_pages": 26
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "04eb3bcf-5a3a-574f-84e5-2bf5ad50cde4",
+    "title": "MobileViT: Light-weight, General-purpose, and Mobile-friendly Vision Transformer",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Sachin Mehta",
+        "Mohammad Rastegari"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.02178v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\04eb3bcf-5a3a-574f-84e5-2bf5ad50cde4.pdf",
+    "bibtex": "@misc{mehta2022mobilevitlightweightgeneralpurposeandmobilefriendly,\n    title = {MobileViT: Light-weight, General-purpose, and Mobile-friendly Vision Transformer},\n    author = {Sachin Mehta and Mohammad Rastegari},\n    year = {2022},\n    eprint = {2110.02178},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2110.02178},\n}",
+    "abstract": "Light-weight convolutional neural networks (CNNs) are the de-facto for mobile\nvision tasks. Their spatial inductive biases allow them to learn\nrepresentations with fewer parameters across different vision tasks. However,\nthese networks are spatially local. To learn global representations,\nself-attention-based vision trans-formers (ViTs) have been adopted. Unlike\nCNNs, ViTs are heavy-weight. In this paper, we ask the following question: is\nit possible to combine the strengths of CNNs and ViTs to build a light-weight\nand low latency network for mobile vision tasks? Towards this end, we introduce\nMobileViT, a light-weight and general-purpose vision transformer for mobile\ndevices. MobileViT presents a different perspective for the global processing\nof information with transformers, i.e., transformers as convolutions. Our\nresults show that MobileViT significantly outperforms CNN- and ViT-based\nnetworks across different tasks and datasets. On the ImageNet-1k dataset,\nMobileViT achieves top-1 accuracy of 78.4% with about 6 million parameters,\nwhich is 3.2% and 6.2% more accurate than MobileNetv3 (CNN-based) and DeIT\n(ViT-based) for a similar number of parameters. On the MS-COCO object detection\ntask, MobileViT is 5.7% more accurate than MobileNetv3 for a similar number of\nparameters.\n  Our source code is open-source and available at:\nhttps://github.com/apple/ml-cvnets",
+    "num_pages": 26
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "a9e9314b-4cc2-58e5-bbbd-e0908b71d865",
+    "title": "InstructPix2Pix: Learning to Follow Image Editing Instructions",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Tim Brooks",
+        "Aleksander Holynski",
+        "Alexei A. Efros"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2211.09800v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\a9e9314b-4cc2-58e5-bbbd-e0908b71d865.pdf",
+    "bibtex": "@misc{brooks2023instructpix2pixlearningtofollowimage,\n    title = {InstructPix2Pix: Learning to Follow Image Editing Instructions},\n    author = {Tim Brooks and Aleksander Holynski and Alexei A. Efros},\n    year = {2023},\n    eprint = {2211.09800},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2211.09800},\n}",
+    "abstract": "We propose a method for editing images from human instructions: given an\ninput image and a written instruction that tells the model what to do, our\nmodel follows these instructions to edit the image. To obtain training data for\nthis problem, we combine the knowledge of two large pretrained models -- a\nlanguage model (GPT-3) and a text-to-image model (Stable Diffusion) -- to\ngenerate a large dataset of image editing examples. Our conditional diffusion\nmodel, InstructPix2Pix, is trained on our generated data, and generalizes to\nreal images and user-written instructions at inference time. Since it performs\nedits in the forward pass and does not require per example fine-tuning or\ninversion, our model edits images quickly, in a matter of seconds. We show\ncompelling editing results for a diverse collection of input images and written\ninstructions.",
+    "num_pages": 15
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "60495988-448a-5919-9470-d8561310a40d",
+    "title": "QDrop: Randomly Dropping Quantization for Extremely Low-bit Post-Training Quantization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Xiuying Wei",
+        "Ruihao Gong",
+        "Yuhang Li",
+        "Xianglong Liu",
+        "Fengwei Yu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.05740v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\60495988-448a-5919-9470-d8561310a40d.pdf",
+    "bibtex": "@misc{wei2023qdroprandomlydroppingquantizationfor,\n    title = {QDrop: Randomly Dropping Quantization for Extremely Low-bit Post-Training Quantization},\n    author = {Xiuying Wei and Ruihao Gong and Yuhang Li and Xianglong Liu and Fengwei Yu},\n    year = {2023},\n    eprint = {2203.05740},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2203.05740},\n}",
+    "abstract": "Recently, post-training quantization (PTQ) has driven much attention to\nproduce efficient neural networks without long-time retraining. Despite its low\ncost, current PTQ works tend to fail under the extremely low-bit setting. In\nthis study, we pioneeringly confirm that properly incorporating activation\nquantization into the PTQ reconstruction benefits the final accuracy. To deeply\nunderstand the inherent reason, a theoretical framework is established,\nindicating that the flatness of the optimized low-bit model on calibration and\ntest data is crucial. Based on the conclusion, a simple yet effective approach\ndubbed as QDROP is proposed, which randomly drops the quantization of\nactivations during PTQ. Extensive experiments on various tasks including\ncomputer vision (image classification, object detection) and natural language\nprocessing (text classification and question answering) prove its superiority.\nWith QDROP, the limit of PTQ is pushed to the 2-bit activation for the first\ntime and the accuracy boost can be up to 51.49%. Without bells and whistles,\nQDROP establishes a new state of the art for PTQ. Our code is available at\nhttps://github.com/wimh966/QDrop and has been integrated into MQBench\n(https://github.com/ModelTC/MQBench)",
+    "num_pages": 19
+}

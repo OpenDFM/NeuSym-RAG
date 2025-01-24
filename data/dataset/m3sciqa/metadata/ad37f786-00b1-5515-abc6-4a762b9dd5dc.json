@@ -1,0 +1,21 @@
+{
+    "uuid": "ad37f786-00b1-5515-abc6-4a762b9dd5dc",
+    "title": "The Goldilocks of Pragmatic Understanding: Fine-Tuning Strategy Matters for Implicature Resolution by LLMs",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Laura Ruis",
+        "Akbir Khan",
+        "Stella Biderman",
+        "Sara Hooker",
+        "Tim Rocktäschel",
+        "Edward Grefenstette"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.14986v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\ad37f786-00b1-5515-abc6-4a762b9dd5dc.pdf",
+    "bibtex": "@misc{ruis2023thegoldilocksofpragmaticunderstanding,\n    title = {The Goldilocks of Pragmatic Understanding: Fine-Tuning Strategy Matters for Implicature Resolution by LLMs},\n    author = {Laura Ruis and Akbir Khan and Stella Biderman and Sara Hooker and Tim Rocktäschel and Edward Grefenstette},\n    year = {2023},\n    eprint = {2210.14986},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.14986},\n}",
+    "abstract": "Despite widespread use of LLMs as conversational agents, evaluations of\nperformance fail to capture a crucial aspect of communication: interpreting\nlanguage in context -- incorporating its pragmatics. Humans interpret language\nusing beliefs and prior knowledge about the world. For example, we intuitively\nunderstand the response \"I wore gloves\" to the question \"Did you leave\nfingerprints?\" as meaning \"No\". To investigate whether LLMs have the ability to\nmake this type of inference, known as an implicature, we design a simple task\nand evaluate four categories of widely used state-of-the-art models. We find\nthat, despite only evaluating on utterances that require a binary inference\n(yes or no), models in three of these categories perform close to random.\nHowever, LLMs instruction-tuned at the example-level perform significantly\nbetter. These results suggest that certain fine-tuning strategies are far\nbetter at inducing pragmatic understanding in models. We present our findings\nas the starting point for further research into evaluating how LLMs interpret\nlanguage in context and to drive the development of more pragmatic and useful\nmodels of human discourse.",
+    "num_pages": 79
+}

@@ -1,0 +1,24 @@
+{
+    "uuid": "7eb9a7f2-f640-5526-b434-8d8ff6df167f",
+    "title": "HERO: HiErarchical spatio-tempoRal reasOning with Contrastive Action Correspondence for End-to-End Video Object Grounding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Mengze Li",
+        "Tianbao Wang",
+        "Haoyu Zhang",
+        "Shengyu Zhang",
+        "Zhou Zhao",
+        "Wenqiao Zhang",
+        "Jiaxu Miao",
+        "Shiliang Pu",
+        "Fei Wu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2208.05818v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\7eb9a7f2-f640-5526-b434-8d8ff6df167f.pdf",
+    "bibtex": "@misc{li2022herohierarchicalspatiotemporalreasoningwith,\n    title = {HERO: HiErarchical spatio-tempoRal reasOning with Contrastive Action Correspondence for End-to-End Video Object Grounding},\n    author = {Mengze Li and Tianbao Wang and Haoyu Zhang and Shengyu Zhang and Zhou Zhao and Wenqiao Zhang and Jiaxu Miao and Shiliang Pu and Fei Wu},\n    year = {2022},\n    eprint = {2208.05818},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.MM},\n    url = {http://arxiv.org/abs/2208.05818},\n}",
+    "abstract": "Video Object Grounding (VOG) is the problem of associating spatial object\nregions in the video to a descriptive natural language query. This is a\nchallenging vision-language task that necessitates constructing the correct\ncross-modal correspondence and modeling the appropriate spatio-temporal context\nof the query video and caption, thereby localizing the specific objects\naccurately. In this paper, we tackle this task by a novel framework called\nHiErarchical spatio-tempoRal reasOning (HERO) with contrastive action\ncorrespondence. We study the VOG task at two aspects that prior works\noverlooked: (1) Contrastive Action Correspondence-aware Retrieval. Notice that\nthe fine-grained video semantics (e.g., multiple actions) is not totally\naligned with the annotated language query (e.g., single action), we first\nintroduce the weakly-supervised contrastive learning that classifies the video\nas action-consistent and action-independent frames relying on the video-caption\naction semantic correspondence. Such a design can build the fine-grained\ncross-modal correspondence for more accurate subsequent VOG. (2) Hierarchical\nSpatio-temporal Modeling Improvement. While transformer-based VOG models\npresent their potential in sequential modality (i.e., video and caption)\nmodeling, existing evidence also indicates that the transformer suffers from\nthe issue of the insensitive spatio-temporal locality. Motivated by that, we\ncarefully design the hierarchical reasoning layers to decouple fully connected\nmulti-head attention and remove the redundant interfering correlations.\nFurthermore, our proposed pyramid and shifted alignment mechanisms are\neffective to improve the cross-modal information utilization of neighborhood\nspatial regions and temporal frames. We conducted extensive experiments to show\nour HERO outperforms existing techniques by achieving significant improvement\non two benchmark datasets.",
+    "num_pages": 10
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "d6ea3099-8dd9-5844-a96c-388a86582ee8",
+    "title": "Disentangled Sequence to Sequence Learning for Compositional Generalization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Hao Zheng",
+        "Mirella Lapata"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.04655v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\d6ea3099-8dd9-5844-a96c-388a86582ee8.pdf",
+    "bibtex": "@misc{zheng2022disentangledsequencetosequencelearning,\n    title = {Disentangled Sequence to Sequence Learning for Compositional Generalization},\n    author = {Hao Zheng and Mirella Lapata},\n    year = {2022},\n    eprint = {2110.04655},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2110.04655},\n}",
+    "abstract": "There is mounting evidence that existing neural network models, in particular\nthe very popular sequence-to-sequence architecture, struggle to systematically\ngeneralize to unseen compositions of seen components. We demonstrate that one\nof the reasons hindering compositional generalization relates to\nrepresentations being entangled. We propose an extension to\nsequence-to-sequence models which encourages disentanglement by adaptively\nre-encoding (at each time step) the source input. Specifically, we condition\nthe source representations on the newly decoded target context which makes it\neasier for the encoder to exploit specialized information for each prediction\nrather than capturing it all in a single forward pass. Experimental results on\nsemantic parsing and machine translation empirically show that our proposal\ndelivers more disentangled representations and better generalization.",
+    "num_pages": 13
+}

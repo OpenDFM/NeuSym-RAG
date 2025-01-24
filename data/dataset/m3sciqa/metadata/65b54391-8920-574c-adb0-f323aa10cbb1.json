@@ -1,0 +1,21 @@
+{
+    "uuid": "65b54391-8920-574c-adb0-f323aa10cbb1",
+    "title": "COMET: Commonsense Transformers for Automatic Knowledge Graph Construction",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Antoine Bosselut",
+        "Hannah Rashkin",
+        "Maarten Sap",
+        "Chaitanya Malaviya",
+        "Asli Celikyilmaz",
+        "Yejin Choi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1906.05317v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\65b54391-8920-574c-adb0-f323aa10cbb1.pdf",
+    "bibtex": "@misc{bosselut2019cometcommonsensetransformersforautomatic,\n    title = {COMET: Commonsense Transformers for Automatic Knowledge Graph Construction},\n    author = {Antoine Bosselut and Hannah Rashkin and Maarten Sap and Chaitanya Malaviya and Asli Celikyilmaz and Yejin Choi},\n    year = {2019},\n    eprint = {1906.05317},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1906.05317},\n}",
+    "abstract": "We present the first comprehensive study on automatic knowledge base\nconstruction for two prevalent commonsense knowledge graphs: ATOMIC (Sap et\nal., 2019) and ConceptNet (Speer et al., 2017). Contrary to many conventional\nKBs that store knowledge with canonical templates, commonsense KBs only store\nloosely structured open-text descriptions of knowledge. We posit that an\nimportant step toward automatic commonsense completion is the development of\ngenerative models of commonsense knowledge, and propose COMmonsEnse\nTransformers (COMET) that learn to generate rich and diverse commonsense\ndescriptions in natural language. Despite the challenges of commonsense\nmodeling, our investigation reveals promising results when implicit knowledge\nfrom deep pre-trained language models is transferred to generate explicit\nknowledge in commonsense knowledge graphs. Empirical results demonstrate that\nCOMET is able to generate novel knowledge that humans rate as high quality,\nwith up to 77.5% (ATOMIC) and 91.7% (ConceptNet) precision at top 1, which\napproaches human performance for these resources. Our findings suggest that\nusing generative commonsense models for automatic commonsense KB completion\ncould soon be a plausible alternative to extractive methods.",
+    "num_pages": 18
+}

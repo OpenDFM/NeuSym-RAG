@@ -1,0 +1,19 @@
+{
+    "uuid": "a0a8ed85-32d4-58c2-b4b7-6a34ec125441",
+    "title": "Solving Math Word Problems by Combining Language Models With Symbolic Solvers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Joy He-Yueya",
+        "Gabriel Poesia",
+        "Rose E. Wang",
+        "Noah D. Goodman"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.09102v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\a0a8ed85-32d4-58c2-b4b7-6a34ec125441.pdf",
+    "bibtex": "@misc{heyueya2023solvingmathwordproblemsby,\n    title = {Solving Math Word Problems by Combining Language Models With Symbolic Solvers},\n    author = {Joy He-Yueya and Gabriel Poesia and Rose E. Wang and Noah D. Goodman},\n    year = {2023},\n    eprint = {2304.09102},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2304.09102},\n}",
+    "abstract": "Automatically generating high-quality step-by-step solutions to math word\nproblems has many applications in education. Recently, combining large language\nmodels (LLMs) with external tools to perform complex reasoning and calculation\nhas emerged as a promising direction for solving math word problems, but prior\napproaches such as Program-Aided Language model (PAL) are biased towards simple\nprocedural problems and less effective for problems that require declarative\nreasoning. We propose an approach that combines an LLM that can incrementally\nformalize word problems as a set of variables and equations with an external\nsymbolic solver that can solve the equations. Our approach achieves comparable\naccuracy to the original PAL on the GSM8K benchmark of math word problems and\noutperforms PAL by an absolute 20% on ALGEBRA, a new dataset of more\nchallenging word problems extracted from Algebra textbooks. Our work highlights\nthe benefits of using declarative and incremental representations when\ninterfacing with an external tool for solving complex math word problems. Our\ndata and prompts are publicly available at\nhttps://github.com/joyheyueya/declarative-math-word-problem.",
+    "num_pages": 7
+}

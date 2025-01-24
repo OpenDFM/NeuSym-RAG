@@ -1,0 +1,19 @@
+{
+    "uuid": "b3afe895-977b-58d5-89a8-69bf5f6d84a3",
+    "title": "Likelihood Ratios and Generative Classifiers for Unsupervised Out-of-Domain Detection In Task Oriented Dialog",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Varun Gangal",
+        "Abhinav Arora",
+        "Arash Einolghozati",
+        "Sonal Gupta"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1912.12800v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\b3afe895-977b-58d5-89a8-69bf5f6d84a3.pdf",
+    "bibtex": "@misc{gangal2019likelihoodratiosandgenerativeclassifiers,\n    title = {Likelihood Ratios and Generative Classifiers for Unsupervised Out-of-Domain Detection In Task Oriented Dialog},\n    author = {Varun Gangal and Abhinav Arora and Arash Einolghozati and Sonal Gupta},\n    year = {2019},\n    eprint = {1912.12800},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1912.12800},\n}",
+    "abstract": "The task of identifying out-of-domain (OOD) input examples directly at\ntest-time has seen renewed interest recently due to increased real world\ndeployment of models. In this work, we focus on OOD detection for natural\nlanguage sentence inputs to task-based dialog systems. Our findings are\nthree-fold: First, we curate and release ROSTD (Real Out-of-Domain Sentences\nFrom Task-oriented Dialog) - a dataset of 4K OOD examples for the publicly\navailable dataset from (Schuster et al. 2019). In contrast to existing settings\nwhich synthesize OOD examples by holding out a subset of classes, our examples\nwere authored by annotators with apriori instructions to be out-of-domain with\nrespect to the sentences in an existing dataset. Second, we explore likelihood\nratio based approaches as an alternative to currently prevalent paradigms.\nSpecifically, we reformulate and apply these approaches to natural language\ninputs. We find that they match or outperform the latter on all datasets, with\nlarger improvements on non-artificial OOD benchmarks such as our dataset. Our\nablations validate that specifically using likelihood ratios rather than plain\nlikelihood is necessary to discriminate well between OOD and in-domain data.\nThird, we propose learning a generative classifier and computing a marginal\nlikelihood (ratio) for OOD detection. This allows us to use a principled\nlikelihood while at the same time exploiting training-time labels. We find that\nthis approach outperforms both simple likelihood (ratio) based and other prior\napproaches. We are hitherto the first to investigate the use of generative\nclassifiers for OOD detection at test-time.",
+    "num_pages": 8
+}

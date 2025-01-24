@@ -1,0 +1,22 @@
+{
+    "uuid": "a5c6f1d4-767f-5205-a0a3-77953c9c7267",
+    "title": "Task-Level Curriculum Learning for Non-Autoregressive Neural Machine Translation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Jinglin Liu",
+        "Yi Ren",
+        "Xu Tan",
+        "Chen Zhang",
+        "Tao Qin",
+        "Zhou Zhao",
+        "Tie-Yan Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2007.08772v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\a5c6f1d4-767f-5205-a0a3-77953c9c7267.pdf",
+    "bibtex": "@misc{liu2020tasklevelcurriculumlearningfornonautoregressive,\n    title = {Task-Level Curriculum Learning for Non-Autoregressive Neural Machine Translation},\n    author = {Jinglin Liu and Yi Ren and Xu Tan and Chen Zhang and Tao Qin and Zhou Zhao and Tie-Yan Liu},\n    year = {2020},\n    eprint = {2007.08772},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2007.08772},\n}",
+    "abstract": "Non-autoregressive translation (NAT) achieves faster inference speed but at\nthe cost of worse accuracy compared with autoregressive translation (AT). Since\nAT and NAT can share model structure and AT is an easier task than NAT due to\nthe explicit dependency on previous target-side tokens, a natural idea is to\ngradually shift the model training from the easier AT task to the harder NAT\ntask. To smooth the shift from AT training to NAT training, in this paper, we\nintroduce semi-autoregressive translation (SAT) as intermediate tasks. SAT\ncontains a hyperparameter k, and each k value defines a SAT task with different\ndegrees of parallelism. Specially, SAT covers AT and NAT as its special cases:\nit reduces to AT when k = 1 and to NAT when k = N (N is the length of target\nsentence). We design curriculum schedules to gradually shift k from 1 to N,\nwith different pacing functions and number of tasks trained at the same time.\nWe called our method as task-level curriculum learning for NAT (TCL-NAT).\nExperiments on IWSLT14 De-En, IWSLT16 En-De, WMT14 En-De and De-En datasets\nshow that TCL-NAT achieves significant accuracy improvements over previous NAT\nbaselines and reduces the performance gap between NAT and AT models to 1-2 BLEU\npoints, demonstrating the effectiveness of our proposed method.",
+    "num_pages": 7
+}

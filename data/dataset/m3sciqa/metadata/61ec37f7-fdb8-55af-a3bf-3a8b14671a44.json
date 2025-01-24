@@ -1,0 +1,21 @@
+{
+    "uuid": "61ec37f7-fdb8-55af-a3bf-3a8b14671a44",
+    "title": "Muppet: Massive Multi-task Representations with Pre-Finetuning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Armen Aghajanyan",
+        "Anchit Gupta",
+        "Akshat Shrivastava",
+        "Xilun Chen",
+        "Luke Zettlemoyer",
+        "Sonal Gupta"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2101.11038v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\61ec37f7-fdb8-55af-a3bf-3a8b14671a44.pdf",
+    "bibtex": "@misc{aghajanyan2021muppetmassivemultitaskrepresentationswith,\n    title = {Muppet: Massive Multi-task Representations with Pre-Finetuning},\n    author = {Armen Aghajanyan and Anchit Gupta and Akshat Shrivastava and Xilun Chen and Luke Zettlemoyer and Sonal Gupta},\n    year = {2021},\n    eprint = {2101.11038},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2101.11038},\n}",
+    "abstract": "We propose pre-finetuning, an additional large-scale learning stage between\nlanguage model pre-training and fine-tuning. Pre-finetuning is massively\nmulti-task learning (around 50 datasets, over 4.8 million total labeled\nexamples), and is designed to encourage learning of representations that\ngeneralize better to many different tasks. We show that pre-finetuning\nconsistently improves performance for pretrained discriminators (e.g.~RoBERTa)\nand generation models (e.g.~BART) on a wide range of tasks (sentence\nprediction, commonsense reasoning, MRC, etc.), while also significantly\nimproving sample efficiency during fine-tuning. We also show that large-scale\nmulti-tasking is crucial; pre-finetuning can hurt performance when few tasks\nare used up until a critical point (usually above 15) after which performance\nimproves linearly in the number of tasks.",
+    "num_pages": 12
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "a239e827-0d3f-5f3a-9757-0b218e376c95",
+    "title": "A Contrastive Framework for Neural Text Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yixuan Su",
+        "Tian Lan",
+        "Yan Wang",
+        "Dani Yogatama",
+        "Lingpeng Kong",
+        "Nigel Collier"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2202.06417v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\a239e827-0d3f-5f3a-9757-0b218e376c95.pdf",
+    "bibtex": "@misc{su2022acontrastiveframeworkforneural,\n    title = {A Contrastive Framework for Neural Text Generation},\n    author = {Yixuan Su and Tian Lan and Yan Wang and Dani Yogatama and Lingpeng Kong and Nigel Collier},\n    year = {2022},\n    eprint = {2202.06417},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2202.06417},\n}",
+    "abstract": "Text generation is of great importance to many natural language processing\napplications. However, maximization-based decoding methods (e.g. beam search)\nof neural language models often lead to degenerate solutions -- the generated\ntext is unnatural and contains undesirable repetitions. Existing approaches\nintroduce stochasticity via sampling or modify training objectives to decrease\nprobabilities of certain tokens (e.g., unlikelihood training). However, they\noften lead to solutions that lack coherence. In this work, we show that an\nunderlying reason for model degeneration is the anisotropic distribution of\ntoken representations. We present a contrastive solution: (i) SimCTG, a\ncontrastive training objective to calibrate the model's representation space,\nand (ii) a decoding method -- contrastive search -- to encourage diversity\nwhile maintaining coherence in the generated text. Extensive experiments and\nanalyses on three benchmarks from two languages demonstrate that our proposed\napproach significantly outperforms current state-of-the-art text generation\nmethods as evaluated by both human and automatic metrics.",
+    "num_pages": 25
+}

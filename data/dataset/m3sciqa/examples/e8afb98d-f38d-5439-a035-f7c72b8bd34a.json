@@ -1,0 +1,64 @@
+{
+    "uuid": "e8afb98d-f38d-5439-a035-f7c72b8bd34a",
+    "question": "Consider the paper that introduces the model that achieves a mean classification accuracy of 0.6712 on the Hate dataset. What is the Pearson's r correlation coefficient between word overlap and the model's performance for the task of political affiliation classification on Twitter data?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "dedf27e6-1e46-5256-a1ff-ef86b7b9795a"
+    ],
+    "reference_pdf": [
+        "5fafcacb-39f9-591f-be5a-7c510efb9431",
+        "46776752-771c-5aab-a1fd-f19a7a8c3f03",
+        "e7f8ec66-fcc7-5f7e-9af9-e1f69763cccb",
+        "ab8da4b2-8830-5dc2-b901-ca484702bbbe",
+        "cfb29636-07c4-5814-b367-97e551674acb",
+        "a1403f63-61e2-5148-a4f7-9e5b5dcc9591",
+        "7ade11d4-01d2-59a3-b576-0fdf7b7e63a8",
+        "2f3c31d0-97f6-53ed-a015-fa77ed3ff49e",
+        "c69e8c17-4b5c-5d03-be86-a0f0f19cd9fc",
+        "a412fa82-f531-5c43-bc7e-4a3dcc240384",
+        "5bf0d02e-6fc3-5d7e-8b7e-79a0113a37e6",
+        "d8d3751a-674d-5ca0-90ef-f16fff2a3e15",
+        "9b6fbdfc-caf0-5d79-ac65-a0ce884cb9cf",
+        "6bb1f536-7f4c-5a26-adc9-11154e7174a0",
+        "ce71bd6d-c5e8-5730-95ab-8e5d96efa77c",
+        "d75af728-525e-5784-a8c9-abc5cc9d3efb",
+        "842587b9-a434-5463-8493-86d59dd3f925",
+        "2b5ca079-e32a-563b-9231-599bb005d065",
+        "fbfe5f40-bfce-5c96-9fa8-5059ab4ba7a3",
+        "1a19e01b-854e-5242-a851-6cea01b4b0ed",
+        "29f9429b-0ff7-5e11-8fef-f6266228fa8a",
+        "3b6d7c62-8eef-546a-a95d-394cb5fa0139",
+        "ab1e92a1-cd80-56c1-878b-6420ed9ef600",
+        "c2ac06b9-eeee-57e5-b704-c79774852e30",
+        "1e7d9f86-3567-55b8-be98-064a3d297af1",
+        "293d5adc-aa34-5d98-b38c-29153c1715b8",
+        "81c915e3-20ad-58b8-90b2-abf6ad59277d",
+        "0302916e-fd19-5627-95c5-4320efcadc5a",
+        "be7b1da6-4e42-5c87-81ae-adbb8c9be0f5",
+        "c74cfa25-c4e3-5642-9de4-343770a00dc3",
+        "4291f117-a24f-5a67-ada9-37cba4c696da",
+        "4a324a22-6bd2-5602-84bc-07231c819440",
+        "278cd4b7-0439-5a94-8a43-cdc6855de6c0",
+        "6ba85b19-07ef-56af-9cb7-726e2402e4f4"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the model that achieves a mean classification accuracy of 0.6712 on the Hate dataset. What is the Pearson's r correlation coefficient between word overlap and the model's performance for the task of political affiliation classification on Twitter data?",
+            "reference_answer": "0.9817159316285563"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.10191/classification_accuracy_table.png"
+    ]
+}

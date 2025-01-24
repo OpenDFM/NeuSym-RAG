@@ -1,0 +1,19 @@
+{
+    "uuid": "4c8916e4-996c-5c22-9e25-966c9022aa8c",
+    "title": "SummaC: Re-Visiting NLI-based Models for Inconsistency Detection in Summarization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Philippe Laban",
+        "Tobias Schnabel",
+        "Paul N. Bennett",
+        "Marti A. Hearst"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2111.09525v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\4c8916e4-996c-5c22-9e25-966c9022aa8c.pdf",
+    "bibtex": "@misc{laban2021summacrevisitingnlibasedmodelsfor,\n    title = {SummaC: Re-Visiting NLI-based Models for Inconsistency Detection in Summarization},\n    author = {Philippe Laban and Tobias Schnabel and Paul N. Bennett and Marti A. Hearst},\n    year = {2021},\n    eprint = {2111.09525},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2111.09525},\n}",
+    "abstract": "In the summarization domain, a key requirement for summaries is to be\nfactually consistent with the input document. Previous work has found that\nnatural language inference (NLI) models do not perform competitively when\napplied to inconsistency detection. In this work, we revisit the use of NLI for\ninconsistency detection, finding that past work suffered from a mismatch in\ninput granularity between NLI datasets (sentence-level), and inconsistency\ndetection (document level). We provide a highly effective and light-weight\nmethod called SummaCConv that enables NLI models to be successfully used for\nthis task by segmenting documents into sentence units and aggregating scores\nbetween pairs of sentences. On our newly introduced benchmark called SummaC\n(Summary Consistency) consisting of six large inconsistency detection datasets,\nSummaCConv obtains state-of-the-art results with a balanced accuracy of 74.4%,\na 5% point improvement compared to prior work. We make the models and datasets\navailable: https://github.com/tingofurro/summac",
+    "num_pages": 16
+}

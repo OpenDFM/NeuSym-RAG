@@ -1,0 +1,18 @@
+{
+    "uuid": "b0661806-4056-510f-b3ef-bcfe1a7e5603",
+    "title": "Attribute Alignment: Controlling Text Generation from Pre-trained Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Dian Yu",
+        "Zhou Yu",
+        "Kenji Sagae"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2103.11070v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\b0661806-4056-510f-b3ef-bcfe1a7e5603.pdf",
+    "bibtex": "@misc{yu2021attributealignmentcontrollingtextgeneration,\n    title = {Attribute Alignment: Controlling Text Generation from Pre-trained Language Models},\n    author = {Dian Yu and Zhou Yu and Kenji Sagae},\n    year = {2021},\n    eprint = {2103.11070},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2103.11070},\n}",
+    "abstract": "Large language models benefit from training with a large amount of unlabeled\ntext, which gives them increasingly fluent and diverse generation capabilities.\nHowever, using these models for text generation that takes into account target\nattributes, such as sentiment polarity or specific topics, remains a challenge.\nWe propose a simple and flexible method for controlling text generation by\naligning disentangled attribute representations. In contrast to recent efforts\non training a discriminator to perturb the token level distribution for an\nattribute, we use the same data to learn an alignment function to guide the\npre-trained, non-controlled language model to generate texts with the target\nattribute without changing the original language model parameters. We evaluate\nour method on sentiment- and topic-controlled generation, and show large\nperformance gains over previous methods while retaining fluency and diversity.",
+    "num_pages": 18
+}

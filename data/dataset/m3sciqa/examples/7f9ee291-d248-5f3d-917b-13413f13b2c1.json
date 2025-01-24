@@ -1,0 +1,69 @@
+{
+    "uuid": "7f9ee291-d248-5f3d-917b-13413f13b2c1",
+    "question": "Consider the paper that introduces the model that performs the best on the BBBP dataset. What is the exact improvement in ROC-AUC score for the ClinTox dataset achieved by the model proposed in the paper over GEM?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "75156ea6-7402-5a33-9303-ec6f543e9999"
+    ],
+    "reference_pdf": [
+        "7aa1a28a-1256-5732-9581-f2538bfcaf8e",
+        "adf24566-930f-5a42-8118-6aeb65e4f6f4",
+        "825de5ef-3ab4-5629-9fc4-4b0805f419b8",
+        "a1002509-bd90-5cde-9fd2-7b6216144d71",
+        "653e5d86-f991-5533-bd83-a5d95f760b18",
+        "aa22dd10-f8dc-5b74-893f-4f3b21431f24",
+        "766ea9a1-a447-5963-a71f-c9d0a0562d57",
+        "7ea7979f-d2cf-58e4-b00e-2b4027aaf436",
+        "a2401db7-a8bd-588a-856c-4d9ad4f85409",
+        "3a2ae924-5f60-5905-abab-631f660f7bb6",
+        "54fbf9e2-28d0-54ce-ba51-27f90b206c6e",
+        "cb5cba33-3521-52d7-abbc-9d4f70cabb4d",
+        "3b7baa1d-606b-5481-9c27-fec60e4c7533",
+        "6d068e18-8fb7-5dff-b0bf-b95297a79dc5",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "4ef708b0-51b3-5527-91fc-a55d70b49671",
+        "e2b71dfc-0678-5451-82f6-42650b5ca0dc",
+        "08f4ba03-f60b-5eed-b60f-e94ba143379e",
+        "05397506-c619-548a-9f1f-18f85acc151e",
+        "cf69528e-9892-5b27-ab66-0b66a1304268",
+        "a2677b99-9e0d-5c14-8e19-f1c7d5cfa93f",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "7d25556e-bc5e-58ba-b1d8-294c67ed7d98",
+        "e45897f5-4429-5750-a8fb-dcfa9a904b5f",
+        "40076536-9fb5-50c7-acb2-93db2c59e1d7",
+        "6fd2a9e7-7fea-5866-b0c4-120b7cc5baae",
+        "0c2deafb-5ba6-5f61-93bf-cba4a976a858",
+        "9e0baaab-f75d-5b52-b965-a5b427196392",
+        "d97c36ef-e3d9-5f53-a6ff-00d5ee2f2777",
+        "03e70d5c-ae9c-50f3-8d54-6e6fe067dd8d",
+        "d4f91c73-f4cf-5209-bec5-6ff66eb29d19",
+        "26e45afd-1c91-5f0f-bb47-33707acec072",
+        "eb603d6c-2a60-504d-93ed-aef55ff4655b",
+        "5161fb60-4394-5446-9e6e-ce1f1e9e393a",
+        "1777f12e-991e-52d4-8b6b-03807d589e87",
+        "0ecdf509-8128-595a-9a9f-46dd6d41fd71",
+        "964db907-da57-5f8b-b1ef-1054c077ca89",
+        "4a697112-1b30-569a-8fee-c4eace04cb3f",
+        "33130f85-57c8-54d5-b050-075bb1ccab97"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the model that performs the best on the BBBP dataset. What is the exact improvement in ROC-AUC score for the ClinTox dataset achieved by the model proposed in the paper over GEM?",
+            "reference_answer": "5.2"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.07276/performance_table.png"
+    ]
+}

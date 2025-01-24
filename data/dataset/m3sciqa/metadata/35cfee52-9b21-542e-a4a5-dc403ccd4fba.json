@@ -1,0 +1,21 @@
+{
+    "uuid": "35cfee52-9b21-542e-a4a5-dc403ccd4fba",
+    "title": "HittER: Hierarchical Transformers for Knowledge Graph Embeddings",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Sanxing Chen",
+        "Xiaodong Liu",
+        "Jianfeng Gao",
+        "Jian Jiao",
+        "Ruofei Zhang",
+        "Yangfeng Ji"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2008.12813v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\35cfee52-9b21-542e-a4a5-dc403ccd4fba.pdf",
+    "bibtex": "@misc{chen2021hitterhierarchicaltransformersforknowledge,\n    title = {HittER: Hierarchical Transformers for Knowledge Graph Embeddings},\n    author = {Sanxing Chen and Xiaodong Liu and Jianfeng Gao and Jian Jiao and Ruofei Zhang and Yangfeng Ji},\n    year = {2021},\n    eprint = {2008.12813},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2008.12813},\n}",
+    "abstract": "This paper examines the challenging problem of learning representations of\nentities and relations in a complex multi-relational knowledge graph. We\npropose HittER, a Hierarchical Transformer model to jointly learn\nEntity-relation composition and Relational contextualization based on a source\nentity's neighborhood. Our proposed model consists of two different Transformer\nblocks: the bottom block extracts features of each entity-relation pair in the\nlocal neighborhood of the source entity and the top block aggregates the\nrelational information from outputs of the bottom block. We further design a\nmasked entity prediction task to balance information from the relational\ncontext and the source entity itself. Experimental results show that HittER\nachieves new state-of-the-art results on multiple link prediction datasets. We\nadditionally propose a simple approach to integrate HittER into BERT and\ndemonstrate its effectiveness on two Freebase factoid question answering\ndatasets.",
+    "num_pages": 13
+}

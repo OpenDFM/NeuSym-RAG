@@ -1,0 +1,22 @@
+{
+    "uuid": "aa22dd10-f8dc-5b74-893f-4f3b21431f24",
+    "title": "BioGPT: Generative Pre-trained Transformer for Biomedical Text Generation and Mining",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Renqian Luo",
+        "Liai Sun",
+        "Yingce Xia",
+        "Tao Qin",
+        "Sheng Zhang",
+        "Hoifung Poon",
+        "Tie-Yan Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.10341v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\aa22dd10-f8dc-5b74-893f-4f3b21431f24.pdf",
+    "bibtex": "@misc{luo2023biogptgenerativepretrainedtransformerfor,\n    title = {BioGPT: Generative Pre-trained Transformer for Biomedical Text Generation and Mining},\n    author = {Renqian Luo and Liai Sun and Yingce Xia and Tao Qin and Sheng Zhang and Hoifung Poon and Tie-Yan Liu},\n    year = {2023},\n    eprint = {2210.10341},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.10341},\n}",
+    "abstract": "Pre-trained language models have attracted increasing attention in the\nbiomedical domain, inspired by their great success in the general natural\nlanguage domain. Among the two main branches of pre-trained language models in\nthe general language domain, i.e., BERT (and its variants) and GPT (and its\nvariants), the first one has been extensively studied in the biomedical domain,\nsuch as BioBERT and PubMedBERT. While they have achieved great success on a\nvariety of discriminative downstream biomedical tasks, the lack of generation\nability constrains their application scope. In this paper, we propose BioGPT, a\ndomain-specific generative Transformer language model pre-trained on large\nscale biomedical literature. We evaluate BioGPT on six biomedical NLP tasks and\ndemonstrate that our model outperforms previous models on most tasks.\nEspecially, we get 44.98%, 38.42% and 40.76% F1 score on BC5CDR, KD-DTI and DDI\nend-to-end relation extraction tasks respectively, and 78.2% accuracy on\nPubMedQA, creating a new record. Our case study on text generation further\ndemonstrates the advantage of BioGPT on biomedical literature to generate\nfluent descriptions for biomedical terms. Code is available at\nhttps://github.com/microsoft/BioGPT.",
+    "num_pages": 12
+}

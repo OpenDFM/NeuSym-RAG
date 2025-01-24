@@ -1,0 +1,19 @@
+{
+    "uuid": "6986575a-2455-5144-b734-faf98ee0bc34",
+    "title": "Consistent Representation Learning for Continual Relation Extraction",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Kang Zhao",
+        "Hua Xu",
+        "Jiangong Yang",
+        "Kai Gao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.02721v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\6986575a-2455-5144-b734-faf98ee0bc34.pdf",
+    "bibtex": "@misc{zhao2022consistentrepresentationlearningforcontinual,\n    title = {Consistent Representation Learning for Continual Relation Extraction},\n    author = {Kang Zhao and Hua Xu and Jiangong Yang and Kai Gao},\n    year = {2022},\n    eprint = {2203.02721},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.02721},\n}",
+    "abstract": "Continual relation extraction (CRE) aims to continuously train a model on\ndata with new relations while avoiding forgetting old ones. Some previous work\nhas proved that storing a few typical samples of old relations and replaying\nthem when learning new relations can effectively avoid forgetting. However,\nthese memory-based methods tend to overfit the memory samples and perform\npoorly on imbalanced datasets. To solve these challenges, a consistent\nrepresentation learning method is proposed, which maintains the stability of\nthe relation embedding by adopting contrastive learning and knowledge\ndistillation when replaying memory. Specifically, supervised contrastive\nlearning based on a memory bank is first used to train each new task so that\nthe model can effectively learn the relation representation. Then, contrastive\nreplay is conducted of the samples in memory and makes the model retain the\nknowledge of historical relations through memory knowledge distillation to\nprevent the catastrophic forgetting of the old task. The proposed method can\nbetter learn consistent representations to alleviate forgetting effectively.\nExtensive experiments on FewRel and TACRED datasets show that our method\nsignificantly outperforms state-of-the-art baselines and yield strong\nrobustness on the imbalanced dataset.",
+    "num_pages": 10
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "bcd581ed-d1c8-58d3-97f6-3937a7d171bb",
+    "title": "Universal Simultaneous Machine Translation with Mixture-of-Experts Wait-k Policy",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Shaolei Zhang",
+        "Yang Feng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.05238v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\bcd581ed-d1c8-58d3-97f6-3937a7d171bb.pdf",
+    "bibtex": "@misc{zhang2022universalsimultaneousmachinetranslationwith,\n    title = {Universal Simultaneous Machine Translation with Mixture-of-Experts Wait-k Policy},\n    author = {Shaolei Zhang and Yang Feng},\n    year = {2022},\n    eprint = {2109.05238},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.05238},\n}",
+    "abstract": "Simultaneous machine translation (SiMT) generates translation before reading\nthe entire source sentence and hence it has to trade off between translation\nquality and latency. To fulfill the requirements of different translation\nquality and latency in practical applications, the previous methods usually\nneed to train multiple SiMT models for different latency levels, resulting in\nlarge computational costs. In this paper, we propose a universal SiMT model\nwith Mixture-of-Experts Wait-k Policy to achieve the best translation quality\nunder arbitrary latency with only one trained model. Specifically, our method\nemploys multi-head attention to accomplish the mixture of experts where each\nhead is treated as a wait-k expert with its own waiting words number, and given\na test latency and source inputs, the weights of the experts are accordingly\nadjusted to produce the best translation. Experiments on three datasets show\nthat our method outperforms all the strong baselines under different latency,\nincluding the state-of-the-art adaptive policy.",
+    "num_pages": 12
+}

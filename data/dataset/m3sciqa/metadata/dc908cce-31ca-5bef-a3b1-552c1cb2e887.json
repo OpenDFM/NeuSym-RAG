@@ -1,0 +1,22 @@
+{
+    "uuid": "dc908cce-31ca-5bef-a3b1-552c1cb2e887",
+    "title": "StructuralLM: Structural Pre-training for Form Understanding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Chenliang Li",
+        "Bin Bi",
+        "Ming Yan",
+        "Wei Wang",
+        "Songfang Huang",
+        "Fei Huang",
+        "Luo Si"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2105.11210v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\dc908cce-31ca-5bef-a3b1-552c1cb2e887.pdf",
+    "bibtex": "@misc{li2021structurallmstructuralpretrainingforform,\n    title = {StructuralLM: Structural Pre-training for Form Understanding},\n    author = {Chenliang Li and Bin Bi and Ming Yan and Wei Wang and Songfang Huang and Fei Huang and Luo Si},\n    year = {2021},\n    eprint = {2105.11210},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2105.11210},\n}",
+    "abstract": "Large pre-trained language models achieve state-of-the-art results when\nfine-tuned on downstream NLP tasks. However, they almost exclusively focus on\ntext-only representation, while neglecting cell-level layout information that\nis important for form image understanding. In this paper, we propose a new\npre-training approach, StructuralLM, to jointly leverage cell and layout\ninformation from scanned documents. Specifically, we pre-train StructuralLM\nwith two new designs to make the most of the interactions of cell and layout\ninformation: 1) each cell as a semantic unit; 2) classification of cell\npositions. The pre-trained StructuralLM achieves new state-of-the-art results\nin different types of downstream tasks, including form understanding (from\n78.95 to 85.14), document visual question answering (from 72.59 to 83.94) and\ndocument image classification (from 94.43 to 96.08).",
+    "num_pages": 10
+}

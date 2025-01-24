@@ -1,0 +1,18 @@
+{
+    "uuid": "c5534576-a4c3-5084-9038-2c4da11e73ea",
+    "title": "Graph Pre-training for AMR Parsing and Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Xuefeng Bai",
+        "Yulong Chen",
+        "Yue Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.07836v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\c5534576-a4c3-5084-9038-2c4da11e73ea.pdf",
+    "bibtex": "@misc{bai2022graphpretrainingforamrparsing,\n    title = {Graph Pre-training for AMR Parsing and Generation},\n    author = {Xuefeng Bai and Yulong Chen and Yue Zhang},\n    year = {2022},\n    eprint = {2203.07836},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.07836},\n}",
+    "abstract": "Abstract meaning representation (AMR) highlights the core semantic\ninformation of text in a graph structure. Recently, pre-trained language models\n(PLMs) have advanced tasks of AMR parsing and AMR-to-text generation,\nrespectively. However, PLMs are typically pre-trained on textual data, thus are\nsub-optimal for modeling structural knowledge. To this end, we investigate\ngraph self-supervised training to improve the structure awareness of PLMs over\nAMR graphs. In particular, we introduce two graph auto-encoding strategies for\ngraph-to-graph pre-training and four tasks to integrate text and graph\ninformation during pre-training. We further design a unified framework to\nbridge the gap between pre-training and fine-tuning tasks. Experiments on both\nAMR parsing and AMR-to-text generation show the superiority of our model. To\nour knowledge, we are the first to consider pre-training on semantic graphs.",
+    "num_pages": 15
+}

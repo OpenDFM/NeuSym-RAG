@@ -1,0 +1,23 @@
+{
+    "uuid": "e69ef270-7428-50f6-b47b-63a2455841ac",
+    "title": "Measuring Mathematical Problem Solving With the MATH Dataset",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Dan Hendrycks",
+        "Collin Burns",
+        "Saurav Kadavath",
+        "Akul Arora",
+        "Steven Basart",
+        "Eric Tang",
+        "Dawn Song",
+        "Jacob Steinhardt"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2103.03874v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\e69ef270-7428-50f6-b47b-63a2455841ac.pdf",
+    "bibtex": "@misc{hendrycks2021measuringmathematicalproblemsolvingwith,\n    title = {Measuring Mathematical Problem Solving With the MATH Dataset},\n    author = {Dan Hendrycks and Collin Burns and Saurav Kadavath and Akul Arora and Steven Basart and Eric Tang and Dawn Song and Jacob Steinhardt},\n    year = {2021},\n    eprint = {2103.03874},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2103.03874},\n}",
+    "abstract": "Many intellectual endeavors require mathematical problem solving, but this\nskill remains beyond the capabilities of computers. To measure this ability in\nmachine learning models, we introduce MATH, a new dataset of 12,500 challenging\ncompetition mathematics problems. Each problem in MATH has a full step-by-step\nsolution which can be used to teach models to generate answer derivations and\nexplanations. To facilitate future research and increase accuracy on MATH, we\nalso contribute a large auxiliary pretraining dataset which helps teach models\nthe fundamentals of mathematics. Even though we are able to increase accuracy\non MATH, our results show that accuracy remains relatively low, even with\nenormous Transformer models. Moreover, we find that simply increasing budgets\nand model parameter counts will be impractical for achieving strong\nmathematical reasoning if scaling trends continue. While scaling Transformers\nis automatically solving most other text-based tasks, scaling is not currently\nsolving MATH. To have more traction on mathematical problem solving we will\nlikely need new algorithmic advancements from the broader research community.",
+    "num_pages": 22
+}

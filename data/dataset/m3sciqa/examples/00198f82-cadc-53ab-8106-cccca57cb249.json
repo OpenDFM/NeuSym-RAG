@@ -1,0 +1,55 @@
+{
+    "uuid": "00198f82-cadc-53ab-8106-cccca57cb249",
+    "question": "Consider the paper that introduces the model that corresponds to the first row of the table. What specific methodological approach does the paper propose to address the challenge of generating high-cognitive-demand educational questions from children's storybooks?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "5cb4f0ee-6979-5de3-9228-7707e6240704"
+    ],
+    "reference_pdf": [
+        "78b201f5-8cc7-5580-a1e9-3e61fd50a3b0",
+        "412f0d4e-18e1-50b9-9029-b2f3dc0f7eff",
+        "a239e827-0d3f-5f3a-9757-0b218e376c95",
+        "c74ec7cd-9861-5651-92d8-d1a4d5ac53e5",
+        "93607ae8-285d-57c6-a6ec-c6a7cf55f65c",
+        "c48ce7f0-0f60-568a-a32a-61dac182a786",
+        "6f6a00e8-6bd2-5287-ab63-6b0b5f3e422d",
+        "6440959d-ac81-5a2c-ae6e-9082bf5ee380",
+        "28a47974-2035-5575-9a75-7df451faf18d",
+        "e606240b-8963-5ee5-b4f2-fb4949398e3a",
+        "39abfac3-551a-5cad-a486-e4eb0b2ea283",
+        "f6e91a91-0b1e-5280-8522-a20492033f16",
+        "822d7c33-cc29-503d-96f9-a82f49f90f06",
+        "977a0308-a19f-537c-940c-4064e7796e83",
+        "d086f9d2-e87c-5292-925f-26f489250673",
+        "b9dfe82f-3a52-57ab-9571-d4e293a722a3",
+        "0a58057a-a09f-5b93-9aeb-0243adcf3eef",
+        "e756a768-abbe-52e1-8416-6c24deaa43ff",
+        "f96ef4a4-88c2-52dd-bcad-82b7d77045f0",
+        "1740ce5d-d35e-50c7-9e9b-6fe3f069651b",
+        "101950db-b673-5061-9500-147447bfddc8",
+        "58914b28-03d1-528c-aca8-2bcc19b55aac",
+        "88affa18-ec3f-5871-857f-7c83b4732075",
+        "9ada7bff-c684-55ab-ae9b-04f836247ddc",
+        "ac1b0430-6781-5539-9d45-5067c0c6ff3e"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the model that corresponds to the first row of the table. What specific methodological approach does the paper propose to address the challenge of generating high-cognitive-demand educational questions from children's storybooks?",
+            "reference_answer": "The paper proposes a novel framework that combines question type prediction and event-centric summarization to generate educational questions for storybooks."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.16446/tell_me_why_table.png"
+    ]
+}

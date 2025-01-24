@@ -1,0 +1,18 @@
+{
+    "uuid": "c36d6d6b-727a-5c59-b847-cccde8d7f6f8",
+    "title": "Inductive Relation Prediction from Relational Paths and Context with Hierarchical Transformers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Jiaang Li",
+        "Quan Wang",
+        "Zhendong Mao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.00215v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\c36d6d6b-727a-5c59-b847-cccde8d7f6f8.pdf",
+    "bibtex": "@misc{li2023inductiverelationpredictionfromrelational,\n    title = {Inductive Relation Prediction from Relational Paths and Context with Hierarchical Transformers},\n    author = {Jiaang Li and Quan Wang and Zhendong Mao},\n    year = {2023},\n    eprint = {2304.00215},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2304.00215},\n}",
+    "abstract": "Relation prediction on knowledge graphs (KGs) is a key research topic.\nDominant embedding-based methods mainly focus on the transductive setting and\nlack the inductive ability to generalize to new entities for inference.\nExisting methods for inductive reasoning mostly mine the connections between\nentities, i.e., relational paths, without considering the nature of head and\ntail entities contained in the relational context. This paper proposes a novel\nmethod that captures both connections between entities and the intrinsic nature\nof entities, by simultaneously aggregating RElational Paths and cOntext with a\nunified hieRarchical Transformer framework, namely REPORT. REPORT relies solely\non relation semantics and can naturally generalize to the fully-inductive\nsetting, where KGs for training and inference have no common entities. In the\nexperiments, REPORT performs consistently better than all baselines on almost\nall the eight version subsets of two fully-inductive datasets. Moreover. REPORT\nis interpretable by providing each element's contribution to the prediction\nresults.",
+    "num_pages": 5
+}

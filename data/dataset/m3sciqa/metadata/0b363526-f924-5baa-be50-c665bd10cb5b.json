@@ -1,0 +1,25 @@
+{
+    "uuid": "0b363526-f924-5baa-be50-c665bd10cb5b",
+    "title": "Challenges in Detoxifying Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Johannes Welbl",
+        "Amelia Glaese",
+        "Jonathan Uesato",
+        "Sumanth Dathathri",
+        "John Mellor",
+        "Lisa Anne Hendricks",
+        "Kirsty Anderson",
+        "Pushmeet Kohli",
+        "Ben Coppin",
+        "Po-Sen Huang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.07445v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\0b363526-f924-5baa-be50-c665bd10cb5b.pdf",
+    "bibtex": "@misc{welbl2021challengesindetoxifyinglanguagemodels,\n    title = {Challenges in Detoxifying Language Models},\n    author = {Johannes Welbl and Amelia Glaese and Jonathan Uesato and Sumanth Dathathri and John Mellor and Lisa Anne Hendricks and Kirsty Anderson and Pushmeet Kohli and Ben Coppin and Po-Sen Huang},\n    year = {2021},\n    eprint = {2109.07445},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.07445},\n}",
+    "abstract": "Large language models (LM) generate remarkably fluent text and can be\nefficiently adapted across NLP tasks. Measuring and guaranteeing the quality of\ngenerated text in terms of safety is imperative for deploying LMs in the real\nworld; to this end, prior work often relies on automatic evaluation of LM\ntoxicity. We critically discuss this approach, evaluate several toxicity\nmitigation strategies with respect to both automatic and human evaluation, and\nanalyze consequences of toxicity mitigation in terms of model bias and LM\nquality. We demonstrate that while basic intervention strategies can\neffectively optimize previously established automatic metrics on the\nRealToxicityPrompts dataset, this comes at the cost of reduced LM coverage for\nboth texts about, and dialects of, marginalized groups. Additionally, we find\nthat human raters often disagree with high automatic toxicity scores after\nstrong toxicity reduction interventions -- highlighting further the nuances\ninvolved in careful evaluation of LM toxicity.",
+    "num_pages": 23
+}

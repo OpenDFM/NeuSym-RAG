@@ -1,0 +1,20 @@
+{
+    "uuid": "78961296-27a4-563d-8392-419b42bf18aa",
+    "title": "Answering Numerical Reasoning Questions in Table-Text Hybrid Contents with Graph-based Encoder and Tree-based Decoder",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Fangyu Lei",
+        "Shizhu He",
+        "Xiang Li",
+        "Jun Zhao",
+        "Kang Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2209.07692v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\78961296-27a4-563d-8392-419b42bf18aa.pdf",
+    "bibtex": "@misc{lei2022answeringnumericalreasoningquestionsin,\n    title = {Answering Numerical Reasoning Questions in Table-Text Hybrid Contents with Graph-based Encoder and Tree-based Decoder},\n    author = {Fangyu Lei and Shizhu He and Xiang Li and Jun Zhao and Kang Liu},\n    year = {2022},\n    eprint = {2209.07692},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2209.07692},\n}",
+    "abstract": "In the real-world question answering scenarios, hybrid form combining both\ntabular and textual contents has attracted more and more attention, among which\nnumerical reasoning problem is one of the most typical and challenging\nproblems. Existing methods usually adopt encoder-decoder framework to represent\nhybrid contents and generate answers. However, it can not capture the rich\nrelationship among numerical value, table schema, and text information on the\nencoder side. The decoder uses a simple predefined operator classifier which is\nnot flexible enough to handle numerical reasoning processes with diverse\nexpressions. To address these problems, this paper proposes a\n\\textbf{Re}lational \\textbf{G}raph enhanced \\textbf{H}ybrid table-text\n\\textbf{N}umerical reasoning model with \\textbf{T}ree decoder\n(\\textbf{RegHNT}). It models the numerical question answering over table-text\nhybrid contents as an expression tree generation task. Moreover, we propose a\nnovel relational graph modeling method, which models alignment between\nquestions, tables, and paragraphs. We validated our model on the publicly\navailable table-text hybrid QA benchmark (TAT-QA). The proposed RegHNT\nsignificantly outperform the baseline model and achieve state-of-the-art\nresults. We openly released the source code and data at\nhttps://github.com/lfy79001/RegHNT (2022-05-05).",
+    "num_pages": 12
+}

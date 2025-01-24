@@ -1,0 +1,17 @@
+{
+    "uuid": "4ef8ff36-7d1b-5330-a3ba-dc447df54c31",
+    "title": "Finding Support Examples for In-Context Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Xiaonan Li",
+        "Xipeng Qiu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.13539v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\4ef8ff36-7d1b-5330-a3ba-dc447df54c31.pdf",
+    "bibtex": "@misc{li2023findingsupportexamplesforincontext,\n    title = {Finding Support Examples for In-Context Learning},\n    author = {Xiaonan Li and Xipeng Qiu},\n    year = {2023},\n    eprint = {2302.13539},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2302.13539},\n}",
+    "abstract": "Additionally, the strong dependency among in-context examples makes it an\nNP-hard combinatorial optimization problem and enumerating all permutations is\ninfeasible. Hence we propose LENS, a fiLter-thEN-Search method to tackle this\nchallenge in two stages: First we filter the dataset to obtain informative\nin-context examples individually. Specifically, we propose a novel metric,\nInfoScore, to evaluate the example's in-context informativeness based on the\nlanguage model's feedback, and further propose a progressive filtering process\nto filter out uninformative examples. Then we propose diversity-guided example\nsearch which iteratively refines and evaluates the selected example\npermutations, to find examples that fully depict the task. The experimental\nresults show that LENS significantly outperforms a wide range of baselines.",
+    "num_pages": 17
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "6c13c345-6625-5459-ae26-1fccc31ca2d3",
+    "title": "Improving Multi-hop Knowledge Base Question Answering by Learning Intermediate Supervision Signals",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Gaole He",
+        "Yunshi Lan",
+        "Jing Jiang",
+        "Wayne Xin Zhao",
+        "Ji-Rong Wen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2101.03737v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\6c13c345-6625-5459-ae26-1fccc31ca2d3.pdf",
+    "bibtex": "@misc{he2021improvingmultihopknowledgebasequestion,\n    title = {Improving Multi-hop Knowledge Base Question Answering by Learning Intermediate Supervision Signals},\n    author = {Gaole He and Yunshi Lan and Jing Jiang and Wayne Xin Zhao and Ji-Rong Wen},\n    year = {2021},\n    eprint = {2101.03737},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2101.03737},\n}",
+    "abstract": "Multi-hop Knowledge Base Question Answering (KBQA) aims to find the answer\nentities that are multiple hops away in the Knowledge Base (KB) from the\nentities in the question. A major challenge is the lack of supervision signals\nat intermediate steps. Therefore, multi-hop KBQA algorithms can only receive\nthe feedback from the final answer, which makes the learning unstable or\nineffective.\n  To address this challenge, we propose a novel teacher-student approach for\nthe multi-hop KBQA task. In our approach, the student network aims to find the\ncorrect answer to the query, while the teacher network tries to learn\nintermediate supervision signals for improving the reasoning capacity of the\nstudent network. The major novelty lies in the design of the teacher network,\nwhere we utilize both forward and backward reasoning to enhance the learning of\nintermediate entity distributions. By considering bidirectional reasoning, the\nteacher network can produce more reliable intermediate supervision signals,\nwhich can alleviate the issue of spurious reasoning. Extensive experiments on\nthree benchmark datasets have demonstrated the effectiveness of our approach on\nthe KBQA task. The code to reproduce our analysis is available at\nhttps://github.com/RichardHGL/WSDM2021_NSM.",
+    "num_pages": 10
+}

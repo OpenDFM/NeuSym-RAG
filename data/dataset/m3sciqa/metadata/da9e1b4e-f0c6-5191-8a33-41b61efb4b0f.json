@@ -1,0 +1,23 @@
+{
+    "uuid": "da9e1b4e-f0c6-5191-8a33-41b61efb4b0f",
+    "title": "UniTAB: Unifying Text and Box Outputs for Grounded Vision-Language Modeling",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Zhengyuan Yang",
+        "Zhe Gan",
+        "Jianfeng Wang",
+        "Xiaowei Hu",
+        "Faisal Ahmed",
+        "Zicheng Liu",
+        "Yumao Lu",
+        "Lijuan Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2111.12085v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\da9e1b4e-f0c6-5191-8a33-41b61efb4b0f.pdf",
+    "bibtex": "@misc{yang2022unitabunifyingtextandbox,\n    title = {UniTAB: Unifying Text and Box Outputs for Grounded Vision-Language Modeling},\n    author = {Zhengyuan Yang and Zhe Gan and Jianfeng Wang and Xiaowei Hu and Faisal Ahmed and Zicheng Liu and Yumao Lu and Lijuan Wang},\n    year = {2022},\n    eprint = {2111.12085},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2111.12085},\n}",
+    "abstract": "We propose UniTAB that Unifies Text And Box outputs for grounded\nvision-language (VL) modeling. Grounded VL tasks such as grounded captioning\nrequire the model to generate a text description and align predicted words with\nobject regions. To achieve this, models must generate desired text and box\noutputs together, and meanwhile indicate the alignments between words and\nboxes. In contrast to existing solutions that use multiple separate modules for\ndifferent outputs, UniTAB represents both text and box outputs with a shared\ntoken sequence, and introduces a special <obj> token to naturally indicate\nword-box alignments in the sequence. UniTAB thus could provide a more\ncomprehensive and interpretable image description, by freely grounding\ngenerated words to object regions. On grounded captioning, UniTAB presents a\nsimpler solution with a single output head, and significantly outperforms state\nof the art in both grounding and captioning evaluations. On general VL tasks\nthat have different desired output formats (i.e., text, box, or their\ncombination), UniTAB with a single network achieves better or comparable\nperformance than task-specific state of the art. Experiments cover 7 VL\nbenchmarks, including grounded captioning, visual grounding, image captioning,\nand visual question answering. Furthermore, UniTAB's unified multi-task network\nand the task-agnostic output sequence design make the model parameter efficient\nand generalizable to new tasks.",
+    "num_pages": 27
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "a6cf032e-ddb4-561d-bd17-941b9bd28a0e",
+    "title": "MeanSum: A Neural Model for Unsupervised Multi-document Abstractive Summarization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Eric Chu",
+        "Peter J. Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1810.05739v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\a6cf032e-ddb4-561d-bd17-941b9bd28a0e.pdf",
+    "bibtex": "@misc{chu2019meansumaneuralmodelfor,\n    title = {MeanSum: A Neural Model for Unsupervised Multi-document Abstractive Summarization},\n    author = {Eric Chu and Peter J. Liu},\n    year = {2019},\n    eprint = {1810.05739},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1810.05739},\n}",
+    "abstract": "Abstractive summarization has been studied using neural sequence transduction\nmethods with datasets of large, paired document-summary examples. However, such\ndatasets are rare and the models trained from them do not generalize to other\ndomains. Recently, some progress has been made in learning sequence-to-sequence\nmappings with only unpaired examples. In our work, we consider the setting\nwhere there are only documents (product or business reviews) with no summaries\nprovided, and propose an end-to-end, neural model architecture to perform\nunsupervised abstractive summarization. Our proposed model consists of an\nauto-encoder where the mean of the representations of the input reviews decodes\nto a reasonable summary-review while not relying on any review-specific\nfeatures. We consider variants of the proposed architecture and perform an\nablation study to show the importance of specific components. We show through\nautomated metrics and human evaluation that the generated summaries are highly\nabstractive, fluent, relevant, and representative of the average sentiment of\nthe input reviews. Finally, we collect a reference evaluation dataset and show\nthat our model outperforms a strong extractive baseline.",
+    "num_pages": 22
+}

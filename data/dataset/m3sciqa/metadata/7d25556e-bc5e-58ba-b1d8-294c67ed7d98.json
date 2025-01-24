@@ -1,0 +1,19 @@
+{
+    "uuid": "7d25556e-bc5e-58ba-b1d8-294c67ed7d98",
+    "title": "MolTrans: Molecular Interaction Transformer for Drug Target Interaction Prediction",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Kexin Huang",
+        "Cao Xiao",
+        "Lucas Glass",
+        "Jimeng Sun"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.11424v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\7d25556e-bc5e-58ba-b1d8-294c67ed7d98.pdf",
+    "bibtex": "@misc{huang2020moltransmolecularinteractiontransformerfor,\n    title = {MolTrans: Molecular Interaction Transformer for Drug Target Interaction Prediction},\n    author = {Kexin Huang and Cao Xiao and Lucas Glass and Jimeng Sun},\n    year = {2020},\n    eprint = {2004.11424},\n    archivePrefix = {arXiv},\n    primaryClass = {q-bio.QM},\n    url = {http://arxiv.org/abs/2004.11424},\n}",
+    "abstract": "Drug target interaction (DTI) prediction is a foundational task for in silico\ndrug discovery, which is costly and time-consuming due to the need of\nexperimental search over large drug compound space. Recent years have witnessed\npromising progress for deep learning in DTI predictions. However, the following\nchallenges are still open: (1) the sole data-driven molecular representation\nlearning approaches ignore the sub-structural nature of DTI, thus produce\nresults that are less accurate and difficult to explain; (2) existing methods\nfocus on limited labeled data while ignoring the value of massive unlabelled\nmolecular data. We propose a Molecular Interaction Transformer (MolTrans) to\naddress these limitations via: (1) knowledge inspired sub-structural pattern\nmining algorithm and interaction modeling module for more accurate and\ninterpretable DTI prediction; (2) an augmented transformer encoder to better\nextract and capture the semantic relations among substructures extracted from\nmassive unlabeled biomedical data. We evaluate MolTrans on real world data and\nshow it improved DTI prediction performance compared to state-of-the-art\nbaselines.",
+    "num_pages": 21
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "626f7394-4e6e-551d-9786-dc5d0949561d",
+    "title": "BROS: A Pre-trained Language Model Focusing on Text and Layout for Better Key Information Extraction from Documents",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Teakgyu Hong",
+        "Donghyun Kim",
+        "Mingi Ji",
+        "Wonseok Hwang",
+        "Daehyun Nam",
+        "Sungrae Park"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2108.04539v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\626f7394-4e6e-551d-9786-dc5d0949561d.pdf",
+    "bibtex": "@misc{hong2022brosapretrainedlanguagemodel,\n    title = {BROS: A Pre-trained Language Model Focusing on Text and Layout for Better Key Information Extraction from Documents},\n    author = {Teakgyu Hong and Donghyun Kim and Mingi Ji and Wonseok Hwang and Daehyun Nam and Sungrae Park},\n    year = {2022},\n    eprint = {2108.04539},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2108.04539},\n}",
+    "abstract": "Key information extraction (KIE) from document images requires understanding\nthe contextual and spatial semantics of texts in two-dimensional (2D) space.\nMany recent studies try to solve the task by developing pre-trained language\nmodels focusing on combining visual features from document images with texts\nand their layout. On the other hand, this paper tackles the problem by going\nback to the basic: effective combination of text and layout. Specifically, we\npropose a pre-trained language model, named BROS (BERT Relying On Spatiality),\nthat encodes relative positions of texts in 2D space and learns from unlabeled\ndocuments with area-masking strategy. With this optimized training scheme for\nunderstanding texts in 2D space, BROS shows comparable or better performance\ncompared to previous methods on four KIE benchmarks (FUNSD, SROIE*, CORD, and\nSciTSR) without relying on visual features. This paper also reveals two\nreal-world challenges in KIE tasks-(1) minimizing the error from incorrect text\nordering and (2) efficient learning from fewer downstream examples-and\ndemonstrates the superiority of BROS over previous methods. Code is available\nat https://github.com/clovaai/bros.",
+    "num_pages": 14
+}

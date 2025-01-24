@@ -1,0 +1,23 @@
+{
+    "uuid": "7b87be86-9d46-51f9-90de-ec0d5fc14396",
+    "title": "Quark: Controllable Text Generation with Reinforced Unlearning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Ximing Lu",
+        "Sean Welleck",
+        "Jack Hessel",
+        "Liwei Jiang",
+        "Lianhui Qin",
+        "Peter West",
+        "Prithviraj Ammanabrolu",
+        "Yejin Choi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.13636v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\7b87be86-9d46-51f9-90de-ec0d5fc14396.pdf",
+    "bibtex": "@misc{lu2022quarkcontrollabletextgenerationwith,\n    title = {Quark: Controllable Text Generation with Reinforced Unlearning},\n    author = {Ximing Lu and Sean Welleck and Jack Hessel and Liwei Jiang and Lianhui Qin and Peter West and Prithviraj Ammanabrolu and Yejin Choi},\n    year = {2022},\n    eprint = {2205.13636},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.13636},\n}",
+    "abstract": "Large-scale language models often learn behaviors that are misaligned with\nuser expectations. Generated text may contain offensive or toxic language,\ncontain significant repetition, or be of a different sentiment than desired by\nthe user. We consider the task of unlearning these misalignments by fine-tuning\nthe language model on signals of what not to do. We introduce Quantized Reward\nKonditioning (Quark), an algorithm for optimizing a reward function that\nquantifies an (un)wanted property, while not straying too far from the original\nmodel. Quark alternates between (i) collecting samples with the current\nlanguage model, (ii) sorting them into quantiles based on reward, with each\nquantile identified by a reward token prepended to the language model's input,\nand (iii) using a standard language modeling loss on samples from each quantile\nconditioned on its reward token, while remaining nearby the original language\nmodel via a KL-divergence penalty. By conditioning on a high-reward token at\ngeneration time, the model generates text that exhibits less of the unwanted\nproperty. For unlearning toxicity, negative sentiment, and repetition, our\nexperiments show that Quark outperforms both strong baselines and\nstate-of-the-art reinforcement learning methods like PPO (Schulman et al.\n2017), while relying only on standard language modeling primitives.",
+    "num_pages": 25
+}

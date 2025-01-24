@@ -1,0 +1,24 @@
+{
+    "uuid": "c70e3426-63f3-5420-87ad-25fbfb193761",
+    "title": "GraPPa: Grammar-Augmented Pre-Training for Table Semantic Parsing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Tao Yu",
+        "Chien-Sheng Wu",
+        "Xi Victoria Lin",
+        "Bailin Wang",
+        "Yi Chern Tan",
+        "Xinyi Yang",
+        "Dragomir Radev",
+        "Richard Socher",
+        "Caiming Xiong"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2009.13845v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\c70e3426-63f3-5420-87ad-25fbfb193761.pdf",
+    "bibtex": "@misc{yu2021grappagrammaraugmentedpretrainingfortable,\n    title = {GraPPa: Grammar-Augmented Pre-Training for Table Semantic Parsing},\n    author = {Tao Yu and Chien-Sheng Wu and Xi Victoria Lin and Bailin Wang and Yi Chern Tan and Xinyi Yang and Dragomir Radev and Richard Socher and Caiming Xiong},\n    year = {2021},\n    eprint = {2009.13845},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2009.13845},\n}",
+    "abstract": "We present GraPPa, an effective pre-training approach for table semantic\nparsing that learns a compositional inductive bias in the joint representations\nof textual and tabular data. We construct synthetic question-SQL pairs over\nhigh-quality tables via a synchronous context-free grammar (SCFG) induced from\nexisting text-to-SQL datasets. We pre-train our model on the synthetic data\nusing a novel text-schema linking objective that predicts the syntactic role of\na table field in the SQL for each question-SQL pair. To maintain the model's\nability to represent real-world data, we also include masked language modeling\n(MLM) over several existing table-and-language datasets to regularize the\npre-training process. On four popular fully supervised and weakly supervised\ntable semantic parsing benchmarks, GraPPa significantly outperforms\nRoBERTa-large as the feature representation layers and establishes new\nstate-of-the-art results on all of them.",
+    "num_pages": 16
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "00a5ff65-630e-5c56-be2b-6cdc1c6785fa",
+    "title": "Bactrian-X: Multilingual Replicable Instruction-Following Models with Low-Rank Adaptation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Haonan Li",
+        "Fajri Koto",
+        "Minghao Wu",
+        "Alham Fikri Aji",
+        "Timothy Baldwin"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.15011v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\00a5ff65-630e-5c56-be2b-6cdc1c6785fa.pdf",
+    "bibtex": "@misc{li2023bactrianxmultilingualreplicableinstructionfollowingmodels,\n    title = {Bactrian-X: Multilingual Replicable Instruction-Following Models with Low-Rank Adaptation},\n    author = {Haonan Li and Fajri Koto and Minghao Wu and Alham Fikri Aji and Timothy Baldwin},\n    year = {2023},\n    eprint = {2305.15011},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.15011},\n}",
+    "abstract": "Instruction tuning has shown great promise in improving the performance of\nlarge language models. However, research on multilingual instruction tuning has\nbeen limited due to the scarcity of high-quality instruction-response datasets\nacross different languages. To bridge this gap, we present Bactrian-X, a\ncomprehensive multilingual parallel dataset of 3.4 million instruction-response\npairs across 52 languages. Leveraging this dataset, we train a set of adapters\nusing low-rank adaptation (LoRA), which are lightweight components that\nseamlessly integrate with large language models. These adapters have a\nsubstantially lower parameter count than the base model, making them easily\nreplaceable and usable as plug-ins for different languages or language groups.\nExtensive experiments in various multilingual evaluation settings demonstrate\nthat models derived from LoRA-based training over Bactrian-X outperform both\nthe vanilla models and existing instruction-tuned models. The code and models\nare publicly available at https://github.com/mbzuai-nlp/bactrian-x",
+    "num_pages": 18
+}

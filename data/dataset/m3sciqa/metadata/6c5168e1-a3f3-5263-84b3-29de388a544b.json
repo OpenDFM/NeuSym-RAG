@@ -1,0 +1,25 @@
+{
+    "uuid": "6c5168e1-a3f3-5263-84b3-29de388a544b",
+    "title": "One Model, Multiple Modalities: A Sparsely Activated Approach for Text, Sound, Image, Video and Code",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yong Dai",
+        "Duyu Tang",
+        "Liangxin Liu",
+        "Minghuan Tan",
+        "Cong Zhou",
+        "Jingquan Wang",
+        "Zhangyin Feng",
+        "Fan Zhang",
+        "Xueyu Hu",
+        "Shuming Shi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.06126v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\6c5168e1-a3f3-5263-84b3-29de388a544b.pdf",
+    "bibtex": "@misc{dai2022onemodelmultiplemodalitiesa,\n    title = {One Model, Multiple Modalities: A Sparsely Activated Approach for Text, Sound, Image, Video and Code},\n    author = {Yong Dai and Duyu Tang and Liangxin Liu and Minghuan Tan and Cong Zhou and Jingquan Wang and Zhangyin Feng and Fan Zhang and Xueyu Hu and Shuming Shi},\n    year = {2022},\n    eprint = {2205.06126},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.06126},\n}",
+    "abstract": "People perceive the world with multiple senses (e.g., through hearing sounds,\nreading words and seeing objects). However, most existing AI systems only\nprocess an individual modality. This paper presents an approach that excels at\nhandling multiple modalities of information with a single model. In our\n\"{SkillNet}\" model, different parts of the parameters are specialized for\nprocessing different modalities. Unlike traditional dense models that always\nactivate all the model parameters, our model sparsely activates parts of the\nparameters whose skills are relevant to the task. Such model design enables\nSkillNet to learn skills in a more interpretable way. We develop our model for\nfive modalities including text, image, sound, video and code. Results show\nthat, SkillNet performs comparably to five modality-specific fine-tuned models.\nMoreover, our model supports self-supervised pretraining with the same sparsely\nactivated way, resulting in better initialized parameters for different\nmodalities. We find that pretraining significantly improves the performance of\nSkillNet on five modalities, on par with or even better than baselines with\nmodality-specific pretraining. On the task of Chinese text-to-image retrieval,\nour final system achieves higher accuracy than existing leading systems\nincluding Wukong{ViT-B} and Wenlan 2.0 while using less number of activated\nparameters.",
+    "num_pages": 14
+}

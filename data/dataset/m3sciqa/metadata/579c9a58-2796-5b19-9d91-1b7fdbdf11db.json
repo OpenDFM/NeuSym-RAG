@@ -1,0 +1,23 @@
+{
+    "uuid": "579c9a58-2796-5b19-9d91-1b7fdbdf11db",
+    "title": "ALFRED: A Benchmark for Interpreting Grounded Instructions for Everyday Tasks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Mohit Shridhar",
+        "Jesse Thomason",
+        "Daniel Gordon",
+        "Yonatan Bisk",
+        "Winson Han",
+        "Roozbeh Mottaghi",
+        "Luke Zettlemoyer",
+        "Dieter Fox"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1912.01734v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\579c9a58-2796-5b19-9d91-1b7fdbdf11db.pdf",
+    "bibtex": "@misc{shridhar2020alfredabenchmarkforinterpreting,\n    title = {ALFRED: A Benchmark for Interpreting Grounded Instructions for Everyday Tasks},\n    author = {Mohit Shridhar and Jesse Thomason and Daniel Gordon and Yonatan Bisk and Winson Han and Roozbeh Mottaghi and Luke Zettlemoyer and Dieter Fox},\n    year = {2020},\n    eprint = {1912.01734},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1912.01734},\n}",
+    "abstract": "We present ALFRED (Action Learning From Realistic Environments and\nDirectives), a benchmark for learning a mapping from natural language\ninstructions and egocentric vision to sequences of actions for household tasks.\nALFRED includes long, compositional tasks with non-reversible state changes to\nshrink the gap between research benchmarks and real-world applications. ALFRED\nconsists of expert demonstrations in interactive visual environments for 25k\nnatural language directives. These directives contain both high-level goals\nlike \"Rinse off a mug and place it in the coffee maker.\" and low-level language\ninstructions like \"Walk to the coffee maker on the right.\" ALFRED tasks are\nmore complex in terms of sequence length, action space, and language than\nexisting vision-and-language task datasets. We show that a baseline model based\non recent embodied vision-and-language tasks performs poorly on ALFRED,\nsuggesting that there is significant room for developing innovative grounded\nvisual language understanding models with this benchmark.",
+    "num_pages": 18
+}

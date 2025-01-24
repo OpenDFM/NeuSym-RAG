@@ -1,0 +1,20 @@
+{
+    "uuid": "3967df69-753f-527b-9c82-35378bcaa943",
+    "title": "REALM: Retrieval-Augmented Language Model Pre-Training",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Kelvin Guu",
+        "Kenton Lee",
+        "Zora Tung",
+        "Panupong Pasupat",
+        "Ming-Wei Chang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2002.08909v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\3967df69-753f-527b-9c82-35378bcaa943.pdf",
+    "bibtex": "@misc{guu2020realmretrievalaugmentedlanguagemodelpretraining,\n    title = {REALM: Retrieval-Augmented Language Model Pre-Training},\n    author = {Kelvin Guu and Kenton Lee and Zora Tung and Panupong Pasupat and Ming-Wei Chang},\n    year = {2020},\n    eprint = {2002.08909},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2002.08909},\n}",
+    "abstract": "Language model pre-training has been shown to capture a surprising amount of\nworld knowledge, crucial for NLP tasks such as question answering. However,\nthis knowledge is stored implicitly in the parameters of a neural network,\nrequiring ever-larger networks to cover more facts.\n  To capture knowledge in a more modular and interpretable way, we augment\nlanguage model pre-training with a latent knowledge retriever, which allows the\nmodel to retrieve and attend over documents from a large corpus such as\nWikipedia, used during pre-training, fine-tuning and inference. For the first\ntime, we show how to pre-train such a knowledge retriever in an unsupervised\nmanner, using masked language modeling as the learning signal and\nbackpropagating through a retrieval step that considers millions of documents.\n  We demonstrate the effectiveness of Retrieval-Augmented Language Model\npre-training (REALM) by fine-tuning on the challenging task of Open-domain\nQuestion Answering (Open-QA). We compare against state-of-the-art models for\nboth explicit and implicit knowledge storage on three popular Open-QA\nbenchmarks, and find that we outperform all previous methods by a significant\nmargin (4-16% absolute accuracy), while also providing qualitative benefits\nsuch as interpretability and modularity.",
+    "num_pages": 12
+}

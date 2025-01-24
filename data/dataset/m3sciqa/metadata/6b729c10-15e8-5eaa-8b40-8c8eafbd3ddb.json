@@ -1,0 +1,21 @@
+{
+    "uuid": "6b729c10-15e8-5eaa-8b40-8c8eafbd3ddb",
+    "title": "SLOG: A Structural Generalization Benchmark for Semantic Parsing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Bingzhi Li",
+        "Lucia Donatelli",
+        "Alexander Koller",
+        "Tal Linzen",
+        "Yuekun Yao",
+        "Najoung Kim"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.15040v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\6b729c10-15e8-5eaa-8b40-8c8eafbd3ddb.pdf",
+    "bibtex": "@misc{li2023slogastructuralgeneralizationbenchmark,\n    title = {SLOG: A Structural Generalization Benchmark for Semantic Parsing},\n    author = {Bingzhi Li and Lucia Donatelli and Alexander Koller and Tal Linzen and Yuekun Yao and Najoung Kim},\n    year = {2023},\n    eprint = {2310.15040},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.15040},\n}",
+    "abstract": "The goal of compositional generalization benchmarks is to evaluate how well\nmodels generalize to new complex linguistic expressions. Existing benchmarks\noften focus on lexical generalization, the interpretation of novel lexical\nitems in syntactic structures familiar from training; structural generalization\ntasks, where a model needs to interpret syntactic structures that are\nthemselves unfamiliar from training, are often underrepresented, resulting in\noverly optimistic perceptions of how well models can generalize. We introduce\nSLOG, a semantic parsing dataset that extends COGS (Kim and Linzen, 2020) with\n17 structural generalization cases. In our experiments, the generalization\naccuracy of Transformer models, including pretrained ones, only reaches 40.6%,\nwhile a structure-aware parser only achieves 70.8%. These results are far from\nthe near-perfect accuracy existing models achieve on COGS, demonstrating the\nrole of SLOG in foregrounding the large discrepancy between models' lexical and\nstructural generalization capacities.",
+    "num_pages": 20
+}

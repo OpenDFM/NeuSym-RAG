@@ -1,0 +1,22 @@
+{
+    "uuid": "565281f7-0639-57ef-8326-b0a5736453ec",
+    "title": "TOE: A Grid-Tagging Discontinuous NER Model Enhanced by Embedding Tag/Word Relations and More Fine-Grained Tags",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Jiang Liu",
+        "Donghong Ji",
+        "Jingye Li",
+        "Dongdong Xie",
+        "Chong Teng",
+        "Liang Zhao",
+        "Fei Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2211.00684v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\565281f7-0639-57ef-8326-b0a5736453ec.pdf",
+    "bibtex": "@misc{liu2022toeagridtaggingdiscontinuousner,\n    title = {TOE: A Grid-Tagging Discontinuous NER Model Enhanced by Embedding Tag/Word Relations and More Fine-Grained Tags},\n    author = {Jiang Liu and Donghong Ji and Jingye Li and Dongdong Xie and Chong Teng and Liang Zhao and Fei Li},\n    year = {2022},\n    eprint = {2211.00684},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2211.00684},\n}",
+    "abstract": "So far, discontinuous named entity recognition (NER) has received increasing\nresearch attention and many related methods have surged such as\nhypergraph-based methods, span-based methods, and sequence-to-sequence\n(Seq2Seq) methods, etc. However, these methods more or less suffer from some\nproblems such as decoding ambiguity and efficiency, which limit their\nperformance. Recently, grid-tagging methods, which benefit from the flexible\ndesign of tagging systems and model architectures, have shown superiority to\nadapt for various information extraction tasks. In this paper, we follow the\nline of such methods and propose a competitive grid-tagging model for\ndiscontinuous NER. We call our model TOE because we incorporate two kinds of\nTag-Oriented Enhancement mechanisms into a state-of-the-art (SOTA) grid-tagging\nmodel that casts the NER problem into word-word relationship prediction. First,\nwe design a Tag Representation Embedding Module (TREM) to force our model to\nconsider not only word-word relationships but also word-tag and tag-tag\nrelationships. Concretely, we construct tag representations and embed them into\nTREM, so that TREM can treat tag and word representations as\nqueries/keys/values and utilize self-attention to model their relationships. On\nthe other hand, motivated by the Next-Neighboring-Word (NNW) and Tail-Head-Word\n(THW) tags in the SOTA model, we add two new symmetric tags, namely\nPrevious-Neighboring-Word (PNW) and Head-Tail-Word (HTW), to model more\nfine-grained word-word relationships and alleviate error propagation from tag\nprediction. In the experiments of three benchmark datasets, namely CADEC,\nShARe13 and ShARe14, our TOE model pushes the SOTA results by about 0.83%,\n0.05% and 0.66% in F1, demonstrating its effectiveness.",
+    "num_pages": 11
+}

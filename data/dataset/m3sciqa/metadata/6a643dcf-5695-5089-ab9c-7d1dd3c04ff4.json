@@ -1,0 +1,20 @@
+{
+    "uuid": "6a643dcf-5695-5089-ab9c-7d1dd3c04ff4",
+    "title": "LAMBADA: Backward Chaining for Automated Reasoning in Natural Language",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Mehran Kazemi",
+        "Najoung Kim",
+        "Deepti Bhatia",
+        "Xin Xu",
+        "Deepak Ramachandran"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2212.13894v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\6a643dcf-5695-5089-ab9c-7d1dd3c04ff4.pdf",
+    "bibtex": "@misc{kazemi2023lambadabackwardchainingforautomated,\n    title = {LAMBADA: Backward Chaining for Automated Reasoning in Natural Language},\n    author = {Mehran Kazemi and Najoung Kim and Deepti Bhatia and Xin Xu and Deepak Ramachandran},\n    year = {2023},\n    eprint = {2212.13894},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/2212.13894},\n}",
+    "abstract": "Remarkable progress has been made on automated reasoning with natural text,\nby using Language Models (LMs) and methods such as Chain-of-Thought and\nSelection-Inference. These techniques search for proofs in the forward\ndirection from axioms to the conclusion, which suffers from a combinatorial\nexplosion of the search space, and thus high failure rates for problems\nrequiring longer chains of reasoning. The classical automated reasoning\nliterature has shown that reasoning in the backward direction (i.e. from the\nintended conclusion to supporting axioms) is significantly more efficient at\nproof-finding. Importing this intuition into the LM setting, we develop a\nBackward Chaining algorithm, called LAMBADA, that decomposes reasoning into\nfour sub-modules. These sub-modules are simply implemented by few-shot prompted\nLM inference. We show that LAMBADA achieves sizable accuracy boosts over\nstate-of-the-art forward reasoning methods on challenging logical reasoning\ndatasets, particularly when deep and accurate proof chains are required.",
+    "num_pages": 20
+}

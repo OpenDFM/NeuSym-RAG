@@ -1,0 +1,19 @@
+{
+    "uuid": "6631eafb-0db6-5c75-a073-435e923e775d",
+    "title": "Trivial or impossible -- dichotomous data difficulty masks model differences (on ImageNet and beyond)",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Kristof Meding",
+        "Luca M. Schulze Buschoff",
+        "Robert Geirhos",
+        "Felix A. Wichmann"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.05922v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\6631eafb-0db6-5c75-a073-435e923e775d.pdf",
+    "bibtex": "@misc{meding2022trivialorimpossibledichotomous,\n    title = {Trivial or impossible -- dichotomous data difficulty masks model differences (on ImageNet and beyond)},\n    author = {Kristof Meding and Luca M. Schulze Buschoff and Robert Geirhos and Felix A. Wichmann},\n    year = {2022},\n    eprint = {2110.05922},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2110.05922},\n}",
+    "abstract": "\"The power of a generalization system follows directly from its biases\"\n(Mitchell 1980). Today, CNNs are incredibly powerful generalisation systems --\nbut to what degree have we understood how their inductive bias influences model\ndecisions? We here attempt to disentangle the various aspects that determine\nhow a model decides. In particular, we ask: what makes one model decide\ndifferently from another? In a meticulously controlled setting, we find that\n(1.) irrespective of the network architecture or objective (e.g.\nself-supervised, semi-supervised, vision transformers, recurrent models) all\nmodels end up with a similar decision boundary. (2.) To understand these\nfindings, we analysed model decisions on the ImageNet validation set from epoch\nto epoch and image by image. We find that the ImageNet validation set, among\nothers, suffers from dichotomous data difficulty (DDD): For the range of\ninvestigated models and their accuracies, it is dominated by 46.0% \"trivial\"\nand 11.5% \"impossible\" images (beyond label errors). Only 42.5% of the images\ncould possibly be responsible for the differences between two models' decision\nboundaries. (3.) Only removing the \"impossible\" and \"trivial\" images allows us\nto see pronounced differences between models. (4.) Humans are highly accurate\nat predicting which images are \"trivial\" and \"impossible\" for CNNs (81.4%).\nThis implies that in future comparisons of brains, machines and behaviour, much\nmay be gained from investigating the decisive role of images and the\ndistribution of their difficulties.",
+    "num_pages": 38
+}

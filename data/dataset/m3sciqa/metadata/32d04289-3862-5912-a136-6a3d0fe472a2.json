@@ -1,0 +1,21 @@
+{
+    "uuid": "32d04289-3862-5912-a136-6a3d0fe472a2",
+    "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Rafael Rafailov",
+        "Archit Sharma",
+        "Eric Mitchell",
+        "Stefano Ermon",
+        "Christopher D. Manning",
+        "Chelsea Finn"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.18290v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\32d04289-3862-5912-a136-6a3d0fe472a2.pdf",
+    "bibtex": "@misc{rafailov2024directpreferenceoptimizationyourlanguage,\n    title = {Direct Preference Optimization: Your Language Model is Secretly a Reward Model},\n    author = {Rafael Rafailov and Archit Sharma and Eric Mitchell and Stefano Ermon and Christopher D. Manning and Chelsea Finn},\n    year = {2024},\n    eprint = {2305.18290},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2305.18290},\n}",
+    "abstract": "While large-scale unsupervised language models (LMs) learn broad world\nknowledge and some reasoning skills, achieving precise control of their\nbehavior is difficult due to the completely unsupervised nature of their\ntraining. Existing methods for gaining such steerability collect human labels\nof the relative quality of model generations and fine-tune the unsupervised LM\nto align with these preferences, often with reinforcement learning from human\nfeedback (RLHF). However, RLHF is a complex and often unstable procedure, first\nfitting a reward model that reflects the human preferences, and then\nfine-tuning the large unsupervised LM using reinforcement learning to maximize\nthis estimated reward without drifting too far from the original model. In this\npaper we introduce a new parameterization of the reward model in RLHF that\nenables extraction of the corresponding optimal policy in closed form, allowing\nus to solve the standard RLHF problem with only a simple classification loss.\nThe resulting algorithm, which we call Direct Preference Optimization (DPO), is\nstable, performant, and computationally lightweight, eliminating the need for\nsampling from the LM during fine-tuning or performing significant\nhyperparameter tuning. Our experiments show that DPO can fine-tune LMs to align\nwith human preferences as well as or better than existing methods. Notably,\nfine-tuning with DPO exceeds PPO-based RLHF in ability to control sentiment of\ngenerations, and matches or improves response quality in summarization and\nsingle-turn dialogue while being substantially simpler to implement and train.",
+    "num_pages": 27
+}

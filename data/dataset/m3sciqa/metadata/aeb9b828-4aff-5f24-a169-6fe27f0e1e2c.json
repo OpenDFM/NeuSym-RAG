@@ -1,0 +1,25 @@
+{
+    "uuid": "aeb9b828-4aff-5f24-a169-6fe27f0e1e2c",
+    "title": "On the Reliability of Watermarks for Large Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "John Kirchenbauer",
+        "Jonas Geiping",
+        "Yuxin Wen",
+        "Manli Shu",
+        "Khalid Saifullah",
+        "Kezhi Kong",
+        "Kasun Fernando",
+        "Aniruddha Saha",
+        "Micah Goldblum",
+        "Tom Goldstein"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2306.04634v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\aeb9b828-4aff-5f24-a169-6fe27f0e1e2c.pdf",
+    "bibtex": "@misc{kirchenbauer2024onthereliabilityofwatermarks,\n    title = {On the Reliability of Watermarks for Large Language Models},\n    author = {John Kirchenbauer and Jonas Geiping and Yuxin Wen and Manli Shu and Khalid Saifullah and Kezhi Kong and Kasun Fernando and Aniruddha Saha and Micah Goldblum and Tom Goldstein},\n    year = {2024},\n    eprint = {2306.04634},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2306.04634},\n}",
+    "abstract": "As LLMs become commonplace, machine-generated text has the potential to flood\nthe internet with spam, social media bots, and valueless content. Watermarking\nis a simple and effective strategy for mitigating such harms by enabling the\ndetection and documentation of LLM-generated text. Yet a crucial question\nremains: How reliable is watermarking in realistic settings in the wild? There,\nwatermarked text may be modified to suit a user's needs, or entirely rewritten\nto avoid detection. We study the robustness of watermarked text after it is\nre-written by humans, paraphrased by a non-watermarked LLM, or mixed into a\nlonger hand-written document. We find that watermarks remain detectable even\nafter human and machine paraphrasing. While these attacks dilute the strength\nof the watermark, paraphrases are statistically likely to leak n-grams or even\nlonger fragments of the original text, resulting in high-confidence detections\nwhen enough tokens are observed. For example, after strong human paraphrasing\nthe watermark is detectable after observing 800 tokens on average, when setting\na 1e-5 false positive rate. We also consider a range of new detection schemes\nthat are sensitive to short spans of watermarked text embedded inside a large\ndocument, and we compare the robustness of watermarking to other kinds of\ndetectors.",
+    "num_pages": 45
+}

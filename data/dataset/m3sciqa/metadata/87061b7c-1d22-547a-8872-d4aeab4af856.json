@@ -1,0 +1,23 @@
+{
+    "uuid": "87061b7c-1d22-547a-8872-d4aeab4af856",
+    "title": "Location-Aware Visual Question Generation with Lightweight Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Nicholas Collin Suwono",
+        "Justin Chih-Yao Chen",
+        "Tun Min Hung",
+        "Ting-Hao Kenneth Huang",
+        "I-Bin Liao",
+        "Yung-Hui Li",
+        "Lun-Wei Ku",
+        "Shao-Hua Sun"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.15129v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\87061b7c-1d22-547a-8872-d4aeab4af856.pdf",
+    "bibtex": "@misc{suwono2023locationawarevisualquestiongenerationwith,\n    title = {Location-Aware Visual Question Generation with Lightweight Models},\n    author = {Nicholas Collin Suwono and Justin Chih-Yao Chen and Tun Min Hung and Ting-Hao Kenneth Huang and I-Bin Liao and Yung-Hui Li and Lun-Wei Ku and Shao-Hua Sun},\n    year = {2023},\n    eprint = {2310.15129},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.15129},\n}",
+    "abstract": "This work introduces a novel task, location-aware visual question generation\n(LocaVQG), which aims to generate engaging questions from data relevant to a\nparticular geographical location. Specifically, we represent such\nlocation-aware information with surrounding images and a GPS coordinate. To\ntackle this task, we present a dataset generation pipeline that leverages GPT-4\nto produce diverse and sophisticated questions. Then, we aim to learn a\nlightweight model that can address the LocaVQG task and fit on an edge device,\nsuch as a mobile phone. To this end, we propose a method which can reliably\ngenerate engaging questions from location-aware information. Our proposed\nmethod outperforms baselines regarding human evaluation (e.g., engagement,\ngrounding, coherence) and automatic evaluation metrics (e.g., BERTScore,\nROUGE-2). Moreover, we conduct extensive ablation studies to justify our\nproposed techniques for both generating the dataset and solving the task.",
+    "num_pages": 18
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "8639620d-31d1-5510-bf3f-2cedcfa80b1e",
+    "title": "End-to-End Relation Extraction using LSTMs on Sequences and Tree Structures",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2016,
+    "authors": [
+        "Makoto Miwa",
+        "Mohit Bansal"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1601.00770v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2016\\8639620d-31d1-5510-bf3f-2cedcfa80b1e.pdf",
+    "bibtex": "@misc{miwa2016endtoendrelationextractionusinglstms,\n    title = {End-to-End Relation Extraction using LSTMs on Sequences and Tree Structures},\n    author = {Makoto Miwa and Mohit Bansal},\n    year = {2016},\n    eprint = {1601.00770},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1601.00770},\n}",
+    "abstract": "We present a novel end-to-end neural model to extract entities and relations\nbetween them. Our recurrent neural network based model captures both word\nsequence and dependency tree substructure information by stacking bidirectional\ntree-structured LSTM-RNNs on bidirectional sequential LSTM-RNNs. This allows\nour model to jointly represent both entities and relations with shared\nparameters in a single model. We further encourage detection of entities during\ntraining and use of entity information in relation extraction via entity\npretraining and scheduled sampling. Our model improves over the\nstate-of-the-art feature-based model on end-to-end relation extraction,\nachieving 12.1% and 5.7% relative error reductions in F1-score on ACE2005 and\nACE2004, respectively. We also show that our LSTM-RNN based model compares\nfavorably to the state-of-the-art CNN based model (in F1-score) on nominal\nrelation classification (SemEval-2010 Task 8). Finally, we present an extensive\nablation analysis of several model components.",
+    "num_pages": 13
+}

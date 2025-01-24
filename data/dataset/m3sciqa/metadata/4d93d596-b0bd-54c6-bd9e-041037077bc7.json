@@ -1,0 +1,17 @@
+{
+    "uuid": "4d93d596-b0bd-54c6-bd9e-041037077bc7",
+    "title": "SituatedQA: Incorporating Extra-Linguistic Contexts into QA",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Michael J. Q. Zhang",
+        "Eunsol Choi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.06157v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\4d93d596-b0bd-54c6-bd9e-041037077bc7.pdf",
+    "bibtex": "@misc{zhang2021situatedqaincorporatingextralinguisticcontextsinto,\n    title = {SituatedQA: Incorporating Extra-Linguistic Contexts into QA},\n    author = {Michael J. Q. Zhang and Eunsol Choi},\n    year = {2021},\n    eprint = {2109.06157},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.06157},\n}",
+    "abstract": "Answers to the same question may change depending on the extra-linguistic\ncontexts (when and where the question was asked). To study this challenge, we\nintroduce SituatedQA, an open-retrieval QA dataset where systems must produce\nthe correct answer to a question given the temporal or geographical context. To\nconstruct SituatedQA, we first identify such questions in existing QA datasets.\nWe find that a significant proportion of information seeking questions have\ncontext-dependent answers (e.g., roughly 16.5% of NQ-Open). For such\ncontext-dependent questions, we then crowdsource alternative contexts and their\ncorresponding answers. Our study shows that existing models struggle with\nproducing answers that are frequently updated or from uncommon locations. We\nfurther quantify how existing models, which are trained on data collected in\nthe past, fail to generalize to answering questions asked in the present, even\nwhen provided with an updated evidence corpus (a roughly 15 point drop in\naccuracy). Our analysis suggests that open-retrieval QA benchmarks should\nincorporate extra-linguistic context to stay relevant globally and in the\nfuture. Our data, code, and datasheet are available at\nhttps://situatedqa.github.io/ .",
+    "num_pages": 17
+}

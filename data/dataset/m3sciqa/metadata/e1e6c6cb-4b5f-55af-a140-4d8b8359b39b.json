@@ -1,0 +1,23 @@
+{
+    "uuid": "e1e6c6cb-4b5f-55af-a140-4d8b8359b39b",
+    "title": "TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Fengbin Zhu",
+        "Wenqiang Lei",
+        "Youcheng Huang",
+        "Chao Wang",
+        "Shuo Zhang",
+        "Jiancheng Lv",
+        "Fuli Feng",
+        "Tat-Seng Chua"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2105.07624v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\e1e6c6cb-4b5f-55af-a140-4d8b8359b39b.pdf",
+    "bibtex": "@misc{zhu2021tatqaaquestionansweringbenchmark,\n    title = {TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance},\n    author = {Fengbin Zhu and Wenqiang Lei and Youcheng Huang and Chao Wang and Shuo Zhang and Jiancheng Lv and Fuli Feng and Tat-Seng Chua},\n    year = {2021},\n    eprint = {2105.07624},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2105.07624},\n}",
+    "abstract": "Hybrid data combining both tabular and textual content (e.g., financial\nreports) are quite pervasive in the real world. However, Question Answering\n(QA) over such hybrid data is largely neglected in existing research. In this\nwork, we extract samples from real financial reports to build a new large-scale\nQA dataset containing both Tabular And Textual data, named TAT-QA, where\nnumerical reasoning is usually required to infer the answer, such as addition,\nsubtraction, multiplication, division, counting, comparison/sorting, and the\ncompositions. We further propose a novel QA model termed TAGOP, which is\ncapable of reasoning over both tables and text. It adopts sequence tagging to\nextract relevant cells from the table along with relevant spans from the text\nto infer their semantics, and then applies symbolic reasoning over them with a\nset of aggregation operators to arrive at the final answer. TAGOPachieves 58.0%\ninF1, which is an 11.1% absolute increase over the previous best baseline\nmodel, according to our experiments on TAT-QA. But this result still lags far\nbehind performance of expert human, i.e.90.8% in F1. It is demonstrated that\nour TAT-QA is very challenging and can serve as a benchmark for training and\ntesting powerful QA models that address hybrid form data.",
+    "num_pages": 11
+}

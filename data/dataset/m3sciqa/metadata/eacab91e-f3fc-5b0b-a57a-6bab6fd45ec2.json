@@ -1,0 +1,19 @@
+{
+    "uuid": "eacab91e-f3fc-5b0b-a57a-6bab6fd45ec2",
+    "title": "Systematic Rectification of Language Models via Dead-end Analysis",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Meng Cao",
+        "Mehdi Fatemi",
+        "Jackie Chi Kit Cheung",
+        "Samira Shabanian"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.14003v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\eacab91e-f3fc-5b0b-a57a-6bab6fd45ec2.pdf",
+    "bibtex": "@misc{cao2023systematicrectificationoflanguagemodels,\n    title = {Systematic Rectification of Language Models via Dead-end Analysis},\n    author = {Meng Cao and Mehdi Fatemi and Jackie Chi Kit Cheung and Samira Shabanian},\n    year = {2023},\n    eprint = {2302.14003},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2302.14003},\n}",
+    "abstract": "With adversarial or otherwise normal prompts, existing large language models\n(LLM) can be pushed to generate toxic discourses. One way to reduce the risk of\nLLMs generating undesired discourses is to alter the training of the LLM. This\ncan be very restrictive due to demanding computation requirements. Other\nmethods rely on rule-based or prompt-based token elimination, which are limited\nas they dismiss future tokens and the overall meaning of the complete\ndiscourse. Here, we center detoxification on the probability that the finished\ndiscourse is ultimately considered toxic. That is, at each point, we advise\nagainst token selections proportional to how likely a finished text from this\npoint will be toxic. To this end, we formally extend the dead-end theory from\nthe recent reinforcement learning (RL) literature to also cover uncertain\noutcomes. Our approach, called rectification, utilizes a separate but\nsignificantly smaller model for detoxification, which can be applied to diverse\nLLMs as long as they share the same vocabulary. Importantly, our method does\nnot require access to the internal representations of the LLM, but only the\ntoken probability distribution at each decoding step. This is crucial as many\nLLMs today are hosted in servers and only accessible through APIs. When applied\nto various LLMs, including GPT-3, our approach significantly improves the\ngenerated discourse compared to the base LLMs and other techniques in terms of\nboth the overall language and detoxification performance.",
+    "num_pages": 21
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "3eebefdb-5ed6-51bf-92c6-b28841844f45",
+    "title": "Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yi Tay",
+        "Mostafa Dehghani",
+        "Jinfeng Rao",
+        "William Fedus",
+        "Samira Abnar",
+        "Hyung Won Chung",
+        "Sharan Narang",
+        "Dani Yogatama",
+        "Ashish Vaswani",
+        "Donald Metzler"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.10686v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\3eebefdb-5ed6-51bf-92c6-b28841844f45.pdf",
+    "bibtex": "@misc{tay2022scaleefficientlyinsightsfrompretraining,\n    title = {Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers},\n    author = {Yi Tay and Mostafa Dehghani and Jinfeng Rao and William Fedus and Samira Abnar and Hyung Won Chung and Sharan Narang and Dani Yogatama and Ashish Vaswani and Donald Metzler},\n    year = {2022},\n    eprint = {2109.10686},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.10686},\n}",
+    "abstract": "There remain many open questions pertaining to the scaling behaviour of\nTransformer architectures. These scaling decisions and findings can be\ncritical, as training runs often come with an associated computational cost\nwhich have both financial and/or environmental impact. The goal of this paper\nis to present scaling insights from pretraining and finetuning Transformers.\nWhile Kaplan et al. presents a comprehensive study of the scaling behaviour of\nTransformer language models, the scope is only on the upstream (pretraining)\nloss. Therefore, it is still unclear if these set of findings transfer to\ndownstream task within the context of the pretrain-finetune paradigm. The key\nfindings of this paper are as follows: (1) we show that aside from only the\nmodel size, model shape matters for downstream fine-tuning, (2) scaling\nprotocols operate differently at different compute regions, (3) widely adopted\nT5-base and T5-large sizes are Pareto-inefficient. To this end, we present\nimproved scaling protocols whereby our redesigned models achieve similar\ndownstream fine-tuning quality while having 50\\% fewer parameters and training\n40\\% faster compared to the widely adopted T5-base model. We publicly release\nover 100 pretrained checkpoints of different T5 configurations to facilitate\nfuture research and analysis.",
+    "num_pages": 18
+}

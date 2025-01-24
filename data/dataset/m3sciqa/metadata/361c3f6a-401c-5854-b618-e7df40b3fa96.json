@@ -1,0 +1,20 @@
+{
+    "uuid": "361c3f6a-401c-5854-b618-e7df40b3fa96",
+    "title": "Extracting Biomedical Factual Knowledge Using Pretrained Language Model and Electronic Health Record Context",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Zonghai Yao",
+        "Yi Cao",
+        "Zhichao Yang",
+        "Vijeta Deshpande",
+        "Hong Yu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2209.07859v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\361c3f6a-401c-5854-b618-e7df40b3fa96.pdf",
+    "bibtex": "@misc{yao2022extractingbiomedicalfactualknowledgeusing,\n    title = {Extracting Biomedical Factual Knowledge Using Pretrained Language Model and Electronic Health Record Context},\n    author = {Zonghai Yao and Yi Cao and Zhichao Yang and Vijeta Deshpande and Hong Yu},\n    year = {2022},\n    eprint = {2209.07859},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.IR},\n    url = {http://arxiv.org/abs/2209.07859},\n}",
+    "abstract": "Language Models (LMs) have performed well on biomedical natural language\nprocessing applications. In this study, we conducted some experiments to use\nprompt methods to extract knowledge from LMs as new knowledge Bases (LMs as\nKBs). However, prompting can only be used as a low bound for knowledge\nextraction, and perform particularly poorly on biomedical domain KBs. In order\nto make LMs as KBs more in line with the actual application scenarios of the\nbiomedical domain, we specifically add EHR notes as context to the prompt to\nimprove the low bound in the biomedical domain. We design and validate a series\nof experiments for our Dynamic-Context-BioLAMA task. Our experiments show that\nthe knowledge possessed by those language models can distinguish the correct\nknowledge from the noise knowledge in the EHR notes, and such distinguishing\nability can also be used as a new metric to evaluate the amount of knowledge\npossessed by the model.",
+    "num_pages": 10
+}

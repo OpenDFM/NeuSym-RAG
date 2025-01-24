@@ -1,0 +1,19 @@
+{
+    "uuid": "f09c794e-86fa-5594-90f7-3c9301329a5e",
+    "title": "A Span-Based Model for Joint Overlapped and Discontinuous Named Entity Recognition",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Fei Li",
+        "Zhichao Lin",
+        "Meishan Zhang",
+        "Donghong Ji"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.14373v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\f09c794e-86fa-5594-90f7-3c9301329a5e.pdf",
+    "bibtex": "@misc{li2021aspanbasedmodelforjoint,\n    title = {A Span-Based Model for Joint Overlapped and Discontinuous Named Entity Recognition},\n    author = {Fei Li and Zhichao Lin and Meishan Zhang and Donghong Ji},\n    year = {2021},\n    eprint = {2106.14373},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.14373},\n}",
+    "abstract": "Research on overlapped and discontinuous named entity recognition (NER) has\nreceived increasing attention. The majority of previous work focuses on either\noverlapped or discontinuous entities. In this paper, we propose a novel\nspan-based model that can recognize both overlapped and discontinuous entities\njointly. The model includes two major steps. First, entity fragments are\nrecognized by traversing over all possible text spans, thus, overlapped\nentities can be recognized. Second, we perform relation classification to judge\nwhether a given pair of entity fragments to be overlapping or succession. In\nthis way, we can recognize not only discontinuous entities, and meanwhile\ndoubly check the overlapped entities. As a whole, our model can be regarded as\na relation extraction paradigm essentially. Experimental results on multiple\nbenchmark datasets (i.e., CLEF, GENIA and ACE05) show that our model is highly\ncompetitive for overlapped and discontinuous NER.",
+    "num_pages": 15
+}

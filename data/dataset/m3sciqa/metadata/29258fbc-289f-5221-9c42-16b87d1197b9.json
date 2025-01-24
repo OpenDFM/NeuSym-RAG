@@ -1,0 +1,17 @@
+{
+    "uuid": "29258fbc-289f-5221-9c42-16b87d1197b9",
+    "title": "Retrieval-augmented Multi-label Text Classification",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Ilias Chalkidis",
+        "Yova Kementchedjhieva"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.13058v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\29258fbc-289f-5221-9c42-16b87d1197b9.pdf",
+    "bibtex": "@misc{chalkidis2023retrievalaugmentedmultilabeltextclassification,\n    title = {Retrieval-augmented Multi-label Text Classification},\n    author = {Ilias Chalkidis and Yova Kementchedjhieva},\n    year = {2023},\n    eprint = {2305.13058},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.13058},\n}",
+    "abstract": "Multi-label text classification (MLC) is a challenging task in settings of\nlarge label sets, where label support follows a Zipfian distribution. In this\npaper, we address this problem through retrieval augmentation, aiming to\nimprove the sample efficiency of classification models. Our approach closely\nfollows the standard MLC architecture of a Transformer-based encoder paired\nwith a set of classification heads. In our case, however, the input document\nrepresentation is augmented through cross-attention to similar documents\nretrieved from the training set and represented in a task-specific manner. We\nevaluate this approach on four datasets from the legal and biomedical domains,\nall of which feature highly skewed label distributions. Our experiments show\nthat retrieval augmentation substantially improves model performance on the\nlong tail of infrequent labels especially so for lower-resource training\nscenarios and more challenging long-document data scenarios.",
+    "num_pages": 8
+}

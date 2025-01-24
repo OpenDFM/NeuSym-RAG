@@ -1,0 +1,22 @@
+{
+    "uuid": "720ede7a-1362-532b-b4b5-4436c03c5363",
+    "title": "Towards Accurate Post-Training Quantization for Vision Transformer",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yifu Ding",
+        "Haotong Qin",
+        "Qinghua Yan",
+        "Zhenhua Chai",
+        "Junjie Liu",
+        "Xiaolin Wei",
+        "Xianglong Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2303.14341v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\720ede7a-1362-532b-b4b5-4436c03c5363.pdf",
+    "bibtex": "@misc{ding2023towardsaccurateposttrainingquantizationfor,\n    title = {Towards Accurate Post-Training Quantization for Vision Transformer},\n    author = {Yifu Ding and Haotong Qin and Qinghua Yan and Zhenhua Chai and Junjie Liu and Xiaolin Wei and Xianglong Liu},\n    year = {2023},\n    eprint = {2303.14341},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2303.14341},\n}",
+    "abstract": "Vision transformer emerges as a potential architecture for vision tasks.\nHowever, the intense computation and non-negligible delay hinder its\napplication in the real world. As a widespread model compression technique,\nexisting post-training quantization methods still cause severe performance\ndrops. We find the main reasons lie in (1) the existing calibration metric is\ninaccurate in measuring the quantization influence for extremely low-bit\nrepresentation, and (2) the existing quantization paradigm is unfriendly to the\npower-law distribution of Softmax. Based on these observations, we propose a\nnovel Accurate Post-training Quantization framework for Vision Transformer,\nnamely APQ-ViT. We first present a unified Bottom-elimination Blockwise\nCalibration scheme to optimize the calibration metric to perceive the overall\nquantization disturbance in a blockwise manner and prioritize the crucial\nquantization errors that influence more on the final output. Then, we design a\nMatthew-effect Preserving Quantization for Softmax to maintain the power-law\ncharacter and keep the function of the attention mechanism. Comprehensive\nexperiments on large-scale classification and detection datasets demonstrate\nthat our APQ-ViT surpasses the existing post-training quantization methods by\nconvincing margins, especially in lower bit-width settings (e.g., averagely up\nto 5.17% improvement for classification and 24.43% for detection on W4A4). We\nalso highlight that APQ-ViT enjoys versatility and works well on diverse\ntransformer variants.",
+    "num_pages": 9
+}

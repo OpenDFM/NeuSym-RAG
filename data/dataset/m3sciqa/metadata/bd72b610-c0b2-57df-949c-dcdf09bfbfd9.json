@@ -1,0 +1,18 @@
+{
+    "uuid": "bd72b610-c0b2-57df-949c-dcdf09bfbfd9",
+    "title": "Prompting for a conversation: How to control a dialog model?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Josef Valvoda",
+        "Yimai Fang",
+        "David Vandyke"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2209.11068v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\bd72b610-c0b2-57df-949c-dcdf09bfbfd9.pdf",
+    "bibtex": "@misc{valvoda2022promptingforaconversationhow,\n    title = {Prompting for a conversation: How to control a dialog model?},\n    author = {Josef Valvoda and Yimai Fang and David Vandyke},\n    year = {2022},\n    eprint = {2209.11068},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2209.11068},\n}",
+    "abstract": "Dialog modelling faces a difficult trade-off. Models are trained on a large\namount of text, yet their responses need to be limited to a desired scope and\nstyle of a dialog agent. Because the datasets used to achieve the former\ncontain language that is not compatible with the latter, pre-trained dialog\nmodels are fine-tuned on smaller curated datasets. However, the fine-tuning\nprocess robs them of the ability to produce diverse responses, eventually\nreducing them to dull conversation partners. In this paper we investigate if\nprompting can mitigate the above trade-off. Specifically, we experiment with\nconditioning the prompt on the query, rather than training a single prompt for\nall queries. By following the intuition that freezing the pre-trained language\nmodel will conserve its expressivity, we find that compared to fine-tuning,\nprompting can achieve a higher BLEU score and substantially improve the\ndiversity and novelty of the responses.",
+    "num_pages": 8
+}

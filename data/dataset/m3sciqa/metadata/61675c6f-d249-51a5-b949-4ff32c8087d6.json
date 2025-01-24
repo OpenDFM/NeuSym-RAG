@@ -1,0 +1,17 @@
+{
+    "uuid": "61675c6f-d249-51a5-b949-4ff32c8087d6",
+    "title": "Core Semantic First: A Top-down Approach for AMR Parsing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Deng Cai",
+        "Wai Lam"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1909.04303v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\61675c6f-d249-51a5-b949-4ff32c8087d6.pdf",
+    "bibtex": "@misc{cai2019coresemanticfirstatopdown,\n    title = {Core Semantic First: A Top-down Approach for AMR Parsing},\n    author = {Deng Cai and Wai Lam},\n    year = {2019},\n    eprint = {1909.04303},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1909.04303},\n}",
+    "abstract": "We introduce a novel scheme for parsing a piece of text into its Abstract\nMeaning Representation (AMR): Graph Spanning based Parsing (GSP). One novel\ncharacteristic of GSP is that it constructs a parse graph incrementally in a\ntop-down fashion. Starting from the root, at each step, a new node and its\nconnections to existing nodes will be jointly predicted. The output graph spans\nthe nodes by the distance to the root, following the intuition of first\ngrasping the main ideas then digging into more details. The \\textit{core\nsemantic first} principle emphasizes capturing the main ideas of a sentence,\nwhich is of great interest. We evaluate our model on the latest AMR sembank and\nachieve the state-of-the-art performance in the sense that no heuristic graph\nre-categorization is adopted. More importantly, the experiments show that our\nparser is especially good at obtaining the core semantics.",
+    "num_pages": 12
+}

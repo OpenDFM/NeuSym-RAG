@@ -1,0 +1,17 @@
+{
+    "uuid": "0a4a6ae4-afd1-5807-8417-fcd4b4809799",
+    "title": "Beyond a Pre-Trained Object Detector: Cross-Modal Textual and Visual Context for Image Captioning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Chia-Wen Kuo",
+        "Zsolt Kira"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.04363v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\0a4a6ae4-afd1-5807-8417-fcd4b4809799.pdf",
+    "bibtex": "@misc{kuo2022beyondapretrainedobjectdetector,\n    title = {Beyond a Pre-Trained Object Detector: Cross-Modal Textual and Visual Context for Image Captioning},\n    author = {Chia-Wen Kuo and Zsolt Kira},\n    year = {2022},\n    eprint = {2205.04363},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2205.04363},\n}",
+    "abstract": "Significant progress has been made on visual captioning, largely relying on\npre-trained features and later fixed object detectors that serve as rich inputs\nto auto-regressive models. A key limitation of such methods, however, is that\nthe output of the model is conditioned only on the object detector's outputs.\nThe assumption that such outputs can represent all necessary information is\nunrealistic, especially when the detector is transferred across datasets. In\nthis work, we reason about the graphical model induced by this assumption, and\npropose to add an auxiliary input to represent missing information such as\nobject relationships. We specifically propose to mine attributes and\nrelationships from the Visual Genome dataset and condition the captioning model\non them. Crucially, we propose (and show to be important) the use of a\nmulti-modal pre-trained model (CLIP) to retrieve such contextual descriptions.\nFurther, object detector models are frozen and do not have sufficient richness\nto allow the captioning model to properly ground them. As a result, we propose\nto condition both the detector and description outputs on the image, and show\nqualitatively and quantitatively that this can improve grounding. We validate\nour method on image captioning, perform thorough analyses of each component and\nimportance of the pre-trained multi-modal model, and demonstrate significant\nimprovements over the current state of the art, specifically +7.5% in CIDEr and\n+1.3% in BLEU-4 metrics.",
+    "num_pages": 11
+}

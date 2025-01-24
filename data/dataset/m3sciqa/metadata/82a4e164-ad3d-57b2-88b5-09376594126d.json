@@ -1,0 +1,19 @@
+{
+    "uuid": "82a4e164-ad3d-57b2-88b5-09376594126d",
+    "title": "Meta Reinforcement Learning with Autonomous Inference of Subtask Dependencies",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Sungryull Sohn",
+        "Hyunjae Woo",
+        "Jongwook Choi",
+        "Honglak Lee"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2001.00248v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\82a4e164-ad3d-57b2-88b5-09376594126d.pdf",
+    "bibtex": "@misc{sohn2020metareinforcementlearningwithautonomous,\n    title = {Meta Reinforcement Learning with Autonomous Inference of Subtask Dependencies},\n    author = {Sungryull Sohn and Hyunjae Woo and Jongwook Choi and Honglak Lee},\n    year = {2020},\n    eprint = {2001.00248},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2001.00248},\n}",
+    "abstract": "We propose and address a novel few-shot RL problem, where a task is\ncharacterized by a subtask graph which describes a set of subtasks and their\ndependencies that are unknown to the agent. The agent needs to quickly adapt to\nthe task over few episodes during adaptation phase to maximize the return in\nthe test phase. Instead of directly learning a meta-policy, we develop a\nMeta-learner with Subtask Graph Inference(MSGI), which infers the latent\nparameter of the task by interacting with the environment and maximizes the\nreturn given the latent parameter. To facilitate learning, we adopt an\nintrinsic reward inspired by upper confidence bound (UCB) that encourages\nefficient exploration. Our experiment results on two grid-world domains and\nStarCraft II environments show that the proposed method is able to accurately\ninfer the latent task parameter, and to adapt more efficiently than existing\nmeta RL and hierarchical RL methods.",
+    "num_pages": 29
+}

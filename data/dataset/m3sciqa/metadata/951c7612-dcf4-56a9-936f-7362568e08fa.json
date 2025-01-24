@@ -1,0 +1,18 @@
+{
+    "uuid": "951c7612-dcf4-56a9-936f-7362568e08fa",
+    "title": "Categorical Reparameterization with Gumbel-Softmax",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Eric Jang",
+        "Shixiang Gu",
+        "Ben Poole"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1611.01144v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\951c7612-dcf4-56a9-936f-7362568e08fa.pdf",
+    "bibtex": "@misc{jang2017categoricalreparameterizationwithgumbelsoftmax,\n    title = {Categorical Reparameterization with Gumbel-Softmax},\n    author = {Eric Jang and Shixiang Gu and Ben Poole},\n    year = {2017},\n    eprint = {1611.01144},\n    archivePrefix = {arXiv},\n    primaryClass = {stat.ML},\n    url = {http://arxiv.org/abs/1611.01144},\n}",
+    "abstract": "Categorical variables are a natural choice for representing discrete\nstructure in the world. However, stochastic neural networks rarely use\ncategorical latent variables due to the inability to backpropagate through\nsamples. In this work, we present an efficient gradient estimator that replaces\nthe non-differentiable sample from a categorical distribution with a\ndifferentiable sample from a novel Gumbel-Softmax distribution. This\ndistribution has the essential property that it can be smoothly annealed into a\ncategorical distribution. We show that our Gumbel-Softmax estimator outperforms\nstate-of-the-art gradient estimators on structured output prediction and\nunsupervised generative modeling tasks with categorical latent variables, and\nenables large speedups on semi-supervised classification.",
+    "num_pages": 13
+}

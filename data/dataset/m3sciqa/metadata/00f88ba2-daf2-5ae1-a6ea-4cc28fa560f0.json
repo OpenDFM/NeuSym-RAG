@@ -1,0 +1,19 @@
+{
+    "uuid": "00f88ba2-daf2-5ae1-a6ea-4cc28fa560f0",
+    "title": "History Aware Multimodal Transformer for Vision-and-Language Navigation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Shizhe Chen",
+        "Pierre-Louis Guhur",
+        "Cordelia Schmid",
+        "Ivan Laptev"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.13309v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\00f88ba2-daf2-5ae1-a6ea-4cc28fa560f0.pdf",
+    "bibtex": "@misc{chen2023historyawaremultimodaltransformerfor,\n    title = {History Aware Multimodal Transformer for Vision-and-Language Navigation},\n    author = {Shizhe Chen and Pierre-Louis Guhur and Cordelia Schmid and Ivan Laptev},\n    year = {2023},\n    eprint = {2110.13309},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2110.13309},\n}",
+    "abstract": "Vision-and-language navigation (VLN) aims to build autonomous visual agents\nthat follow instructions and navigate in real scenes. To remember previously\nvisited locations and actions taken, most approaches to VLN implement memory\nusing recurrent states. Instead, we introduce a History Aware Multimodal\nTransformer (HAMT) to incorporate a long-horizon history into multimodal\ndecision making. HAMT efficiently encodes all the past panoramic observations\nvia a hierarchical vision transformer (ViT), which first encodes individual\nimages with ViT, then models spatial relation between images in a panoramic\nobservation and finally takes into account temporal relation between panoramas\nin the history. It, then, jointly combines text, history and current\nobservation to predict the next action. We first train HAMT end-to-end using\nseveral proxy tasks including single step action prediction and spatial\nrelation prediction, and then use reinforcement learning to further improve the\nnavigation policy. HAMT achieves new state of the art on a broad range of VLN\ntasks, including VLN with fine-grained instructions (R2R, RxR), high-level\ninstructions (R2R-Last, REVERIE), dialogs (CVDN) as well as long-horizon VLN\n(R4R, R2R-Back). We demonstrate HAMT to be particularly effective for\nnavigation tasks with longer trajectories.",
+    "num_pages": 23
+}

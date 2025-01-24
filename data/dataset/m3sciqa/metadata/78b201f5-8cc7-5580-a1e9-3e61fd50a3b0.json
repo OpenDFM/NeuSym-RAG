@@ -1,0 +1,21 @@
+{
+    "uuid": "78b201f5-8cc7-5580-a1e9-3e61fd50a3b0",
+    "title": "Educational Question Generation of Children Storybooks via Question Type Distribution Learning and Event-Centric Summarization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Zhenjie Zhao",
+        "Yufang Hou",
+        "Dakuo Wang",
+        "Mo Yu",
+        "Chengzhong Liu",
+        "Xiaojuan Ma"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.14187v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\78b201f5-8cc7-5580-a1e9-3e61fd50a3b0.pdf",
+    "bibtex": "@misc{zhao2024educationalquestiongenerationofchildren,\n    title = {Educational Question Generation of Children Storybooks via Question Type Distribution Learning and Event-Centric Summarization},\n    author = {Zhenjie Zhao and Yufang Hou and Dakuo Wang and Mo Yu and Chengzhong Liu and Xiaojuan Ma},\n    year = {2024},\n    eprint = {2203.14187},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.14187},\n}",
+    "abstract": "Generating educational questions of fairytales or storybooks is vital for\nimproving children's literacy ability. However, it is challenging to generate\nquestions that capture the interesting aspects of a fairytale story with\neducational meaningfulness. In this paper, we propose a novel question\ngeneration method that first learns the question type distribution of an input\nstory paragraph, and then summarizes salient events which can be used to\ngenerate high-cognitive-demand questions. To train the event-centric\nsummarizer, we finetune a pre-trained transformer-based sequence-to-sequence\nmodel using silver samples composed by educational question-answer pairs. On a\nnewly proposed educational question answering dataset FairytaleQA, we show good\nperformance of our method on both automatic and human evaluation metrics. Our\nwork indicates the necessity of decomposing question type distribution learning\nand event-centric summary generation for educational question generation.",
+    "num_pages": 13
+}

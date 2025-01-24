@@ -1,0 +1,19 @@
+{
+    "uuid": "379fd373-9dae-52dd-aeaf-1db616b52199",
+    "title": "Difference-aware Knowledge Selection for Knowledge-grounded Conversation Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Chujie Zheng",
+        "Yunbo Cao",
+        "Daxin Jiang",
+        "Minlie Huang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2009.09378v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\379fd373-9dae-52dd-aeaf-1db616b52199.pdf",
+    "bibtex": "@misc{zheng2020differenceawareknowledgeselectionforknowledgegrounded,\n    title = {Difference-aware Knowledge Selection for Knowledge-grounded Conversation Generation},\n    author = {Chujie Zheng and Yunbo Cao and Daxin Jiang and Minlie Huang},\n    year = {2020},\n    eprint = {2009.09378},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2009.09378},\n}",
+    "abstract": "In a multi-turn knowledge-grounded dialog, the difference between the\nknowledge selected at different turns usually provides potential clues to\nknowledge selection, which has been largely neglected in previous research. In\nthis paper, we propose a difference-aware knowledge selection method. It first\ncomputes the difference between the candidate knowledge sentences provided at\nthe current turn and those chosen in the previous turns. Then, the differential\ninformation is fused with or disentangled from the contextual information to\nfacilitate final knowledge selection. Automatic, human observational, and\ninteractive evaluation shows that our method is able to select knowledge more\naccurately and generate more informative responses, significantly outperforming\nthe state-of-the-art baselines. The codes are available at\nhttps://github.com/chujiezheng/DiffKS.",
+    "num_pages": 11
+}

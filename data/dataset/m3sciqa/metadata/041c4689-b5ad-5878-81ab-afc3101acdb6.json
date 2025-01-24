@@ -1,0 +1,19 @@
+{
+    "uuid": "041c4689-b5ad-5878-81ab-afc3101acdb6",
+    "title": "Assessing The Factual Accuracy of Generated Text",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Ben Goodrich",
+        "Vinay Rao",
+        "Mohammad Saleh",
+        "Peter J Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1905.13322v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\041c4689-b5ad-5878-81ab-afc3101acdb6.pdf",
+    "bibtex": "@misc{goodrich2021assessingthefactualaccuracyof,\n    title = {Assessing The Factual Accuracy of Generated Text},\n    author = {Ben Goodrich and Vinay Rao and Mohammad Saleh and Peter J Liu},\n    year = {2021},\n    eprint = {1905.13322},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1905.13322},\n}",
+    "abstract": "We propose a model-based metric to estimate the factual accuracy of generated\ntext that is complementary to typical scoring schemes like ROUGE\n(Recall-Oriented Understudy for Gisting Evaluation) and BLEU (Bilingual\nEvaluation Understudy). We introduce and release a new large-scale dataset\nbased on Wikipedia and Wikidata to train relation classifiers and end-to-end\nfact extraction models. The end-to-end models are shown to be able to extract\ncomplete sets of facts from datasets with full pages of text. We then analyse\nmultiple models that estimate factual accuracy on a Wikipedia text\nsummarization task, and show their efficacy compared to ROUGE and other\nmodel-free variants by conducting a human evaluation study.",
+    "num_pages": 10
+}

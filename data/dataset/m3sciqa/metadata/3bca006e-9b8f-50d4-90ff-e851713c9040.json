@@ -1,0 +1,20 @@
+{
+    "uuid": "3bca006e-9b8f-50d4-90ff-e851713c9040",
+    "title": "Monotonic Multihead Attention",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Xutai Ma",
+        "Juan Pino",
+        "James Cross",
+        "Liezl Puzon",
+        "Jiatao Gu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1909.12406v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\3bca006e-9b8f-50d4-90ff-e851713c9040.pdf",
+    "bibtex": "@misc{ma2019monotonicmultiheadattention,\n    title = {Monotonic Multihead Attention},\n    author = {Xutai Ma and Juan Pino and James Cross and Liezl Puzon and Jiatao Gu},\n    year = {2019},\n    eprint = {1909.12406},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1909.12406},\n}",
+    "abstract": "Simultaneous machine translation models start generating a target sequence\nbefore they have encoded or read the source sequence. Recent approaches for\nthis task either apply a fixed policy on a state-of-the art Transformer model,\nor a learnable monotonic attention on a weaker recurrent neural network-based\nstructure. In this paper, we propose a new attention mechanism, Monotonic\nMultihead Attention (MMA), which extends the monotonic attention mechanism to\nmultihead attention. We also introduce two novel and interpretable approaches\nfor latency control that are specifically designed for multiple attentions\nheads. We apply MMA to the simultaneous machine translation task and\ndemonstrate better latency-quality tradeoffs compared to MILk, the previous\nstate-of-the-art approach. We also analyze how the latency controls affect the\nattention span and we motivate the introduction of our model by analyzing the\neffect of the number of decoder layers and heads on quality and latency.",
+    "num_pages": 11
+}

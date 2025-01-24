@@ -1,0 +1,19 @@
+{
+    "uuid": "1bc8e7cd-fc7a-568e-aa09-c80f67d1e15d",
+    "title": "Structural Guidance for Transformer Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Peng Qian",
+        "Tahira Naseem",
+        "Roger Levy",
+        "Ramón Fernandez Astudillo"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2108.00104v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\1bc8e7cd-fc7a-568e-aa09-c80f67d1e15d.pdf",
+    "bibtex": "@misc{qian2021structuralguidancefortransformerlanguage,\n    title = {Structural Guidance for Transformer Language Models},\n    author = {Peng Qian and Tahira Naseem and Roger Levy and Ramón Fernandez Astudillo},\n    year = {2021},\n    eprint = {2108.00104},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2108.00104},\n}",
+    "abstract": "Transformer-based language models pre-trained on large amounts of text data\nhave proven remarkably successful in learning generic transferable linguistic\nrepresentations. Here we study whether structural guidance leads to more\nhuman-like systematic linguistic generalization in Transformer language models\nwithout resorting to pre-training on very large amounts of data. We explore two\ngeneral ideas. The \"Generative Parsing\" idea jointly models the incremental\nparse and word sequence as part of the same sequence modeling task. The\n\"Structural Scaffold\" idea guides the language model's representation via\nadditional structure loss that separately predicts the incremental constituency\nparse. We train the proposed models along with a vanilla Transformer language\nmodel baseline on a 14 million-token and a 46 million-token subset of the BLLIP\ndataset, and evaluate models' syntactic generalization performances on SG Test\nSuites and sized BLiMP. Experiment results across two benchmarks suggest\nconverging evidence that generative structural supervisions can induce more\nrobust and humanlike linguistic generalization in Transformer language models\nwithout the need for data intensive pre-training.",
+    "num_pages": 11
+}

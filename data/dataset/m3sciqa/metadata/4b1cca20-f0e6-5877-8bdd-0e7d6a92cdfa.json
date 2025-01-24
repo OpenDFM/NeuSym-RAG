@@ -1,0 +1,19 @@
+{
+    "uuid": "4b1cca20-f0e6-5877-8bdd-0e7d6a92cdfa",
+    "title": "Baize: An Open-Source Chat Model with Parameter-Efficient Tuning on Self-Chat Data",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Canwen Xu",
+        "Daya Guo",
+        "Nan Duan",
+        "Julian McAuley"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.01196v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\4b1cca20-f0e6-5877-8bdd-0e7d6a92cdfa.pdf",
+    "bibtex": "@misc{xu2023baizeanopensourcechatmodel,\n    title = {Baize: An Open-Source Chat Model with Parameter-Efficient Tuning on Self-Chat Data},\n    author = {Canwen Xu and Daya Guo and Nan Duan and Julian McAuley},\n    year = {2023},\n    eprint = {2304.01196},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2304.01196},\n}",
+    "abstract": "Chat models, such as ChatGPT, have shown impressive capabilities and have\nbeen rapidly adopted across numerous domains. However, these models are only\naccessible through a restricted API, creating barriers for new research and\nprogress in the field. We propose a pipeline that can automatically generate a\nhigh-quality multi-turn chat corpus by leveraging ChatGPT to engage in a\nconversation with itself. Subsequently, we employ parameter-efficient tuning to\nenhance LLaMA, an open-source large language model. The resulting model, named\nBaize, demonstrates good performance in multi-turn dialogues with guardrails\nthat minimize potential risks. Furthermore, we propose a new technique called\nSelf-Distill with Feedback, to further improve the performance of the Baize\nmodels with feedback from ChatGPT. The Baize models and data are released for\nresearch purposes only at https://github.com/project-baize/baize-chatbot. An\nonline demo is also available at\nhttps://huggingface.co/spaces/project-baize/chat-with-baize.",
+    "num_pages": 11
+}

@@ -1,0 +1,69 @@
+{
+    "uuid": "00cce473-8fd6-5052-9e27-a63049a7641a",
+    "question": "Consider the paper that introduces the model that shows the best overall performance in the 'Foreign' scenario. What specific condition under the DA-WR algorithm ensures the convergence of the cumulative distribution function resulting from the data augmentation process to the target distribution?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "image",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "fa5fa5c5-1780-5e27-84e9-da46df259090"
+    ],
+    "reference_pdf": [
+        "6b887e82-ca3f-59e1-ae8a-f528919c1334",
+        "6d6f8a4b-0f39-5f6f-9513-678e6f490f84",
+        "36158741-e64e-5148-9eb0-105a66c7f0d3",
+        "b5ebcdd6-2a29-55fa-ad8f-1d52ede2025f",
+        "b16e8b8f-0d45-58db-b7ec-72837add121d",
+        "46074e2c-a8f2-5f8a-af58-207aa96a6480",
+        "f992c4ad-ce9f-584d-b09e-80bcdf9589b2",
+        "ee36b0d3-9a2a-59fa-a9fe-c116b3edfb50",
+        "8f709a51-f857-5683-8935-218a05ee1e15",
+        "b9efb3d8-b346-518b-a6b9-d6fe8a8c9a20",
+        "113174b9-1f5c-59aa-972d-7c6eb43597a9",
+        "a72dd3f5-dbd5-5512-a45a-9d31b8c6964b",
+        "06d3aa01-a14c-5e73-af1f-5e05d049f777",
+        "c292abb5-051b-54a6-966e-426024009c41",
+        "33208c99-5812-536e-a710-c15a59707b74",
+        "91295ee5-ecea-56df-8e38-5d3af693d9fb",
+        "a341fbc5-db9c-5e4e-85e8-41ff9a683e3a",
+        "cd4e4634-d8f7-5f30-9ed4-61e35cfbc617",
+        "3131ef5f-37e6-5044-9136-be579ad82e5b",
+        "09cd70b8-67ab-548a-ba13-90ea11ba2e24",
+        "cfd90106-9c14-54c4-aa6c-58df4c94e301",
+        "c70e3426-63f3-5420-87ad-25fbfb193761",
+        "0d634a2b-3091-5566-b890-9e5e06d8d59e",
+        "d38add76-d914-522b-9c38-1adf92508b32",
+        "cdfa24a6-9314-5a71-8d3d-822ee4cf1595",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "ab6eacc9-9657-5b14-9c85-e0edeea4af11",
+        "206d89fa-26e9-5109-8b5b-e1fa826a311e",
+        "b3cf3805-1c84-5852-874b-c43830dfbb3c",
+        "649f6e13-91c8-5328-8ef3-cfa3d03f8618",
+        "46a88ba5-c16e-5efd-913c-3de6e749f2a9",
+        "ca6a2e66-beca-5605-b8e5-ce5e22df0fec",
+        "94993d82-6d3b-5b04-b25f-13e33faf6822",
+        "2f767215-ca92-5449-9a65-f9628c071a18",
+        "eb603d6c-2a60-504d-93ed-aef55ff4655b",
+        "f539c3b0-32b8-5419-b22e-75fe5729c7c5",
+        "07f09067-3b43-5c96-941d-de3a582e8770",
+        "6d6f8a4b-0f39-5f6f-9513-678e6f490f84",
+        "ac1b0430-6781-5539-9d45-5067c0c6ff3e"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the model that shows the best overall performance in the 'Foreign' scenario. What specific condition under the DA-WR algorithm ensures the convergence of the cumulative distribution function resulting from the data augmentation process to the target distribution?",
+            "reference_answer": "The specific condition under the DA-WR algorithm that ensures the convergence of the cumulative distribution function resulting from the data augmentation process to the target distribution is the satisfaction of conditions {\\bf (C)-(C'')}."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.11634/average_relative_performance.png"
+    ]
+}

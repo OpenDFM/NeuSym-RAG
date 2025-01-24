@@ -1,0 +1,24 @@
+{
+    "uuid": "a72dd3f5-dbd5-5512-a45a-9d31b8c6964b",
+    "title": "Learning Algebraic Recombination for Compositional Generalization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Chenyao Liu",
+        "Shengnan An",
+        "Zeqi Lin",
+        "Qian Liu",
+        "Bei Chen",
+        "Jian-Guang Lou",
+        "Lijie Wen",
+        "Nanning Zheng",
+        "Dongmei Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2107.06516v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\a72dd3f5-dbd5-5512-a45a-9d31b8c6964b.pdf",
+    "bibtex": "@misc{liu2021learningalgebraicrecombinationforcompositional,\n    title = {Learning Algebraic Recombination for Compositional Generalization},\n    author = {Chenyao Liu and Shengnan An and Zeqi Lin and Qian Liu and Bei Chen and Jian-Guang Lou and Lijie Wen and Nanning Zheng and Dongmei Zhang},\n    year = {2021},\n    eprint = {2107.06516},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2107.06516},\n}",
+    "abstract": "Neural sequence models exhibit limited compositional generalization ability\nin semantic parsing tasks. Compositional generalization requires algebraic\nrecombination, i.e., dynamically recombining structured expressions in a\nrecursive manner. However, most previous studies mainly concentrate on\nrecombining lexical units, which is an important but not sufficient part of\nalgebraic recombination. In this paper, we propose LeAR, an end-to-end neural\nmodel to learn algebraic recombination for compositional generalization. The\nkey insight is to model the semantic parsing task as a homomorphism between a\nlatent syntactic algebra and a semantic algebra, thus encouraging algebraic\nrecombination. Specifically, we learn two modules jointly: a Composer for\nproducing latent syntax, and an Interpreter for assigning semantic operations.\nExperiments on two realistic and comprehensive compositional generalization\nbenchmarks demonstrate the effectiveness of our model. The source code is\npublicly available at https://github.com/microsoft/ContextualSP.",
+    "num_pages": 18
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "2925c847-385a-5175-a215-e2e46465d755",
+    "title": "Named Entity Recognition with Small Strongly Labeled and Large Weakly Labeled Data",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Haoming Jiang",
+        "Danqing Zhang",
+        "Tianyu Cao",
+        "Bing Yin",
+        "Tuo Zhao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.08977v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\2925c847-385a-5175-a215-e2e46465d755.pdf",
+    "bibtex": "@misc{jiang2021namedentityrecognitionwithsmall,\n    title = {Named Entity Recognition with Small Strongly Labeled and Large Weakly Labeled Data},\n    author = {Haoming Jiang and Danqing Zhang and Tianyu Cao and Bing Yin and Tuo Zhao},\n    year = {2021},\n    eprint = {2106.08977},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.08977},\n}",
+    "abstract": "Weak supervision has shown promising results in many natural language\nprocessing tasks, such as Named Entity Recognition (NER). Existing work mainly\nfocuses on learning deep NER models only with weak supervision, i.e., without\nany human annotation, and shows that by merely using weakly labeled data, one\ncan achieve good performance, though still underperforms fully supervised NER\nwith manually/strongly labeled data. In this paper, we consider a more\npractical scenario, where we have both a small amount of strongly labeled data\nand a large amount of weakly labeled data. Unfortunately, we observe that\nweakly labeled data does not necessarily improve, or even deteriorate the model\nperformance (due to the extensive noise in the weak labels) when we train deep\nNER models over a simple or weighted combination of the strongly labeled and\nweakly labeled data. To address this issue, we propose a new multi-stage\ncomputational framework -- NEEDLE with three essential ingredients: (1) weak\nlabel completion, (2) noise-aware loss function, and (3) final fine-tuning over\nthe strongly labeled data. Through experiments on E-commerce query NER and\nBiomedical NER, we demonstrate that NEEDLE can effectively suppress the noise\nof the weak labels and outperforms existing methods. In particular, we achieve\nnew SOTA F1-scores on 3 Biomedical NER datasets: BC5CDR-chem 93.74,\nBC5CDR-disease 90.69, NCBI-disease 92.28.",
+    "num_pages": 15
+}

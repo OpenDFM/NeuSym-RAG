@@ -1,0 +1,19 @@
+{
+    "uuid": "52401e06-7a75-5196-9a91-283debf280bd",
+    "title": "SEER : A Knapsack approach to Exemplar Selection for In-Context HybridQA",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Jonathan Tonglet",
+        "Manon Reusens",
+        "Philipp Borchert",
+        "Bart Baesens"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.06675v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\52401e06-7a75-5196-9a91-283debf280bd.pdf",
+    "bibtex": "@misc{tonglet2023seeraknapsackapproach,\n    title = {SEER : A Knapsack approach to Exemplar Selection for In-Context HybridQA},\n    author = {Jonathan Tonglet and Manon Reusens and Philipp Borchert and Bart Baesens},\n    year = {2023},\n    eprint = {2310.06675},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.06675},\n}",
+    "abstract": "Question answering over hybrid contexts is a complex task, which requires the\ncombination of information extracted from unstructured texts and structured\ntables in various ways. Recently, In-Context Learning demonstrated significant\nperformance advances for reasoning tasks. In this paradigm, a large language\nmodel performs predictions based on a small set of supporting exemplars. The\nperformance of In-Context Learning depends heavily on the selection procedure\nof the supporting exemplars, particularly in the case of HybridQA, where\nconsidering the diversity of reasoning chains and the large size of the hybrid\ncontexts becomes crucial. In this work, we present Selection of ExEmplars for\nhybrid Reasoning (SEER), a novel method for selecting a set of exemplars that\nis both representative and diverse. The key novelty of SEER is that it\nformulates exemplar selection as a Knapsack Integer Linear Program. The\nKnapsack framework provides the flexibility to incorporate diversity\nconstraints that prioritize exemplars with desirable attributes, and capacity\nconstraints that ensure that the prompt size respects the provided capacity\nbudgets. The effectiveness of SEER is demonstrated on FinQA and TAT-QA, two\nreal-world benchmarks for HybridQA, where it outperforms previous exemplar\nselection methods.",
+    "num_pages": 15
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "462a3ea2-5cf4-556a-a5bf-8f4b2c876260",
+    "title": "Meta-Learning for Low-resource Natural Language Generation in Task-oriented Dialogue Systems",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Fei Mi",
+        "Minlie Huang",
+        "Jiyong Zhang",
+        "Boi Faltings"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1905.05644v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\462a3ea2-5cf4-556a-a5bf-8f4b2c876260.pdf",
+    "bibtex": "@misc{mi2019metalearningforlowresourcenaturallanguage,\n    title = {Meta-Learning for Low-resource Natural Language Generation in Task-oriented Dialogue Systems},\n    author = {Fei Mi and Minlie Huang and Jiyong Zhang and Boi Faltings},\n    year = {2019},\n    eprint = {1905.05644},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1905.05644},\n}",
+    "abstract": "Natural language generation (NLG) is an essential component of task-oriented\ndialogue systems. Despite the recent success of neural approaches for NLG, they\nare typically developed for particular domains with rich annotated training\nexamples. In this paper, we study NLG in a low-resource setting to generate\nsentences in new scenarios with handful training examples. We formulate the\nproblem from a meta-learning perspective, and propose a generalized\noptimization-based approach (Meta-NLG) based on the well-recognized\nmodel-agnostic meta-learning (MAML) algorithm. Meta-NLG defines a set of meta\ntasks, and directly incorporates the objective of adapting to new low-resource\nNLG tasks into the meta-learning optimization process. Extensive experiments\nare conducted on a large multi-domain dataset (MultiWoz) with diverse\nlinguistic variations. We show that Meta-NLG significantly outperforms other\ntraining procedures in various low-resource configurations. We analyze the\nresults, and demonstrate that Meta-NLG adapts extremely fast and well to\nlow-resource situations.",
+    "num_pages": 7
+}

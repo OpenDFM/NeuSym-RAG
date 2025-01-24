@@ -1,0 +1,17 @@
+{
+    "uuid": "6df0c19b-6f0f-5bc1-b907-93ba1199f4c6",
+    "title": "What Neural Networks Memorize and Why: Discovering the Long Tail via Influence Estimation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Vitaly Feldman",
+        "Chiyuan Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2008.03703v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\6df0c19b-6f0f-5bc1-b907-93ba1199f4c6.pdf",
+    "bibtex": "@misc{feldman2020whatneuralnetworksmemorizeand,\n    title = {What Neural Networks Memorize and Why: Discovering the Long Tail via Influence Estimation},\n    author = {Vitaly Feldman and Chiyuan Zhang},\n    year = {2020},\n    eprint = {2008.03703},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2008.03703},\n}",
+    "abstract": "Deep learning algorithms are well-known to have a propensity for fitting the\ntraining data very well and often fit even outliers and mislabeled data points.\nSuch fitting requires memorization of training data labels, a phenomenon that\nhas attracted significant research interest but has not been given a compelling\nexplanation so far. A recent work of Feldman (2019) proposes a theoretical\nexplanation for this phenomenon based on a combination of two insights. First,\nnatural image and data distributions are (informally) known to be long-tailed,\nthat is have a significant fraction of rare and atypical examples. Second, in a\nsimple theoretical model such memorization is necessary for achieving\nclose-to-optimal generalization error when the data distribution is\nlong-tailed. However, no direct empirical evidence for this explanation or even\nan approach for obtaining such evidence were given.\n  In this work we design experiments to test the key ideas in this theory. The\nexperiments require estimation of the influence of each training example on the\naccuracy at each test example as well as memorization values of training\nexamples. Estimating these quantities directly is computationally prohibitive\nbut we show that closely-related subsampled influence and memorization values\ncan be estimated much more efficiently. Our experiments demonstrate the\nsignificant benefits of memorization for generalization on several standard\nbenchmarks. They also provide quantitative and visually compelling evidence for\nthe theory put forth in (Feldman, 2019).",
+    "num_pages": 18
+}

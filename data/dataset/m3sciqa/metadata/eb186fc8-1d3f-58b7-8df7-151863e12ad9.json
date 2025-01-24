@@ -1,0 +1,18 @@
+{
+    "uuid": "eb186fc8-1d3f-58b7-8df7-151863e12ad9",
+    "title": "Look Wide and Interpret Twice: Improving Performance on Interactive Instruction-following Tasks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Van-Quang Nguyen",
+        "Masanori Suganuma",
+        "Takayuki Okatani"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.00596v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\eb186fc8-1d3f-58b7-8df7-151863e12ad9.pdf",
+    "bibtex": "@misc{nguyen2021lookwideandinterprettwice,\n    title = {Look Wide and Interpret Twice: Improving Performance on Interactive Instruction-following Tasks},\n    author = {Van-Quang Nguyen and Masanori Suganuma and Takayuki Okatani},\n    year = {2021},\n    eprint = {2106.00596},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2106.00596},\n}",
+    "abstract": "There is a growing interest in the community in making an embodied AI agent\nperform a complicated task while interacting with an environment following\nnatural language directives. Recent studies have tackled the problem using\nALFRED, a well-designed dataset for the task, but achieved only very low\naccuracy. This paper proposes a new method, which outperforms the previous\nmethods by a large margin. It is based on a combination of several new ideas.\nOne is a two-stage interpretation of the provided instructions. The method\nfirst selects and interprets an instruction without using visual information,\nyielding a tentative action sequence prediction. It then integrates the\nprediction with the visual information etc., yielding the final prediction of\nan action and an object. As the object's class to interact is identified in the\nfirst stage, it can accurately select the correct object from the input image.\nMoreover, our method considers multiple egocentric views of the environment and\nextracts essential information by applying hierarchical attention conditioned\non the current instruction. This contributes to the accurate prediction of\nactions for navigation. A preliminary version of the method won the ALFRED\nChallenge 2020. The current version achieves the unseen environment's success\nrate of 4.45% with a single view, which is further improved to 8.37% with\nmultiple views.",
+    "num_pages": 14
+}

@@ -1,0 +1,65 @@
+{
+    "uuid": "3fa8a5b4-488f-5553-b9ef-5e09c71a8dfe",
+    "question": "Consider the paper that introduces the model that has a diversity score of 2.58 for p2. What specific architectural change was made to the Transformer's layer normalization compared to its originally proposed form?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "image",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "b868c871-5514-505d-8587-367e156e1e28"
+    ],
+    "reference_pdf": [
+        "aeb9b828-4aff-5f24-a169-6fe27f0e1e2c",
+        "675768f2-88cd-54a4-b359-f29fe975fcef",
+        "5885cc59-7626-56ec-a3dc-7caa8e7acf8f",
+        "ad72f105-7a2a-5959-8f49-342eb4469f36",
+        "9f2e58b0-9d4e-56b0-a504-e5f77a2f1476",
+        "d8388017-45ea-5dfa-9238-3d88f2c1ce6a",
+        "f7306500-2b64-5ee2-9f7e-f4beb3b0ebcf",
+        "799320b2-1e80-56c8-9084-73737c3fbfb5",
+        "7415a335-10d7-55f3-af82-07c08f608ecd",
+        "a24d04a0-5d7b-518f-97d3-5202a6f549a4",
+        "947f07f1-5d2a-554e-a441-9838afd4a779",
+        "34417770-67d7-5cab-b9d4-76999c97bc02",
+        "6f696630-3060-5bd1-9be1-a00e8d89edfe",
+        "f992c4ad-ce9f-584d-b09e-80bcdf9589b2",
+        "01c9329e-9789-52dc-9eed-c99a8ef88a5c",
+        "38c42ad1-4e5f-5ebe-ae2d-683ef661bbfe",
+        "97bf5a6b-8d1c-533a-a00c-d1ca31d3256d",
+        "d4223ac7-9d75-531d-9113-b52397da2e1e",
+        "eb4c8aef-aded-5cee-9cf3-805b485d85fd",
+        "ad6fa17b-383b-53da-8737-9038180d5159",
+        "0801ed2c-711f-5ffe-94d6-c264e679e00e",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "c16ad2d8-be0c-5eed-ae16-5950a83e34bc",
+        "e45897f5-4429-5750-a8fb-dcfa9a904b5f",
+        "342064c4-037b-5666-b324-15191f5c5e20",
+        "7efa89b4-4460-5eed-b6f0-62238a690c9b",
+        "3134099b-d3ac-56d3-898d-c77c7a99370e",
+        "40862fb4-44fd-5785-91f9-e24afaa2923d",
+        "40076536-9fb5-50c7-acb2-93db2c59e1d7",
+        "96ce2b83-dafd-5418-9d75-d54158cf56ae",
+        "80772a52-97c8-5bf8-9893-0de1cc8c02f4",
+        "07caf8ef-950f-50c9-8989-70d482d73168",
+        "3f2695ed-eeac-5dcc-9200-fa2eaa0f02ad",
+        "2173fe79-3e5b-52f6-bd51-a63b747394c0",
+        "ac1b0430-6781-5539-9d45-5067c0c6ff3e"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the model that has a diversity score of 2.58 for p2. What specific architectural change was made to the Transformer's layer normalization compared to its originally proposed form?",
+            "reference_answer": "a simplified version of layer normalization where the activations are only rescaled and no additive bias is applied."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.05030/diversity_score.png"
+    ]
+}

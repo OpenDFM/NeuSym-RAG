@@ -1,0 +1,23 @@
+{
+    "uuid": "39abfac3-551a-5cad-a486-e4eb0b2ea283",
+    "title": "ProphetNet: Predicting Future N-gram for Sequence-to-Sequence Pre-training",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Weizhen Qi",
+        "Yu Yan",
+        "Yeyun Gong",
+        "Dayiheng Liu",
+        "Nan Duan",
+        "Jiusheng Chen",
+        "Ruofei Zhang",
+        "Ming Zhou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2001.04063v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\39abfac3-551a-5cad-a486-e4eb0b2ea283.pdf",
+    "bibtex": "@misc{qi2020prophetnetpredictingfuturengramfor,\n    title = {ProphetNet: Predicting Future N-gram for Sequence-to-Sequence Pre-training},\n    author = {Weizhen Qi and Yu Yan and Yeyun Gong and Dayiheng Liu and Nan Duan and Jiusheng Chen and Ruofei Zhang and Ming Zhou},\n    year = {2020},\n    eprint = {2001.04063},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2001.04063},\n}",
+    "abstract": "This paper presents a new sequence-to-sequence pre-training model called\nProphetNet, which introduces a novel self-supervised objective named future\nn-gram prediction and the proposed n-stream self-attention mechanism. Instead\nof optimizing one-step-ahead prediction in the traditional sequence-to-sequence\nmodel, the ProphetNet is optimized by n-step ahead prediction that predicts the\nnext n tokens simultaneously based on previous context tokens at each time\nstep. The future n-gram prediction explicitly encourages the model to plan for\nthe future tokens and prevent overfitting on strong local correlations. We\npre-train ProphetNet using a base scale dataset (16GB) and a large-scale\ndataset (160GB), respectively. Then we conduct experiments on CNN/DailyMail,\nGigaword, and SQuAD 1.1 benchmarks for abstractive summarization and question\ngeneration tasks. Experimental results show that ProphetNet achieves new\nstate-of-the-art results on all these datasets compared to the models using the\nsame scale pre-training corpus.",
+    "num_pages": 10
+}

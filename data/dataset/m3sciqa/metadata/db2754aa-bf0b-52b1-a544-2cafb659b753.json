@@ -1,0 +1,21 @@
+{
+    "uuid": "db2754aa-bf0b-52b1-a544-2cafb659b753",
+    "title": "Adaptive Gating in Mixture-of-Experts based Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Jiamin Li",
+        "Qiang Su",
+        "Yitao Yang",
+        "Yimin Jiang",
+        "Cong Wang",
+        "Hong Xu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.07188v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\db2754aa-bf0b-52b1-a544-2cafb659b753.pdf",
+    "bibtex": "@misc{li2023adaptivegatinginmixtureofexpertsbased,\n    title = {Adaptive Gating in Mixture-of-Experts based Language Models},\n    author = {Jiamin Li and Qiang Su and Yitao Yang and Yimin Jiang and Cong Wang and Hong Xu},\n    year = {2023},\n    eprint = {2310.07188},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.07188},\n}",
+    "abstract": "Large language models, such as OpenAI's ChatGPT, have demonstrated\nexceptional language understanding capabilities in various NLP tasks. Sparsely\nactivated mixture-of-experts (MoE) has emerged as a promising solution for\nscaling models while maintaining a constant number of computational operations.\nExisting MoE model adopts a fixed gating network where each token is computed\nby the same number of experts. However, this approach contradicts our intuition\nthat the tokens in each sequence vary in terms of their linguistic complexity\nand, consequently, require different computational costs. Little is discussed\nin prior research on the trade-off between computation per token and model\nperformance. This paper introduces adaptive gating in MoE, a flexible training\nstrategy that allows tokens to be processed by a variable number of experts\nbased on expert probability distribution. The proposed framework preserves\nsparsity while improving training efficiency. Additionally, curriculum learning\nis leveraged to further reduce training time. Extensive experiments on diverse\nNLP tasks show that adaptive gating reduces at most 22.5% training time while\nmaintaining inference quality. Moreover, we conduct a comprehensive analysis of\nthe routing decisions and present our insights when adaptive gating is used.",
+    "num_pages": 10
+}

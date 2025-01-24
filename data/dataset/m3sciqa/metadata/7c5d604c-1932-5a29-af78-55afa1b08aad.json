@@ -1,0 +1,19 @@
+{
+    "uuid": "7c5d604c-1932-5a29-af78-55afa1b08aad",
+    "title": "TOD-BERT: Pre-trained Natural Language Understanding for Task-Oriented Dialogue",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Chien-Sheng Wu",
+        "Steven Hoi",
+        "Richard Socher",
+        "Caiming Xiong"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.06871v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\7c5d604c-1932-5a29-af78-55afa1b08aad.pdf",
+    "bibtex": "@misc{wu2020todbertpretrainednaturallanguageunderstanding,\n    title = {TOD-BERT: Pre-trained Natural Language Understanding for Task-Oriented Dialogue},\n    author = {Chien-Sheng Wu and Steven Hoi and Richard Socher and Caiming Xiong},\n    year = {2020},\n    eprint = {2004.06871},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2004.06871},\n}",
+    "abstract": "The underlying difference of linguistic patterns between general text and\ntask-oriented dialogue makes existing pre-trained language models less useful\nin practice. In this work, we unify nine human-human and multi-turn\ntask-oriented dialogue datasets for language modeling. To better model dialogue\nbehavior during pre-training, we incorporate user and system tokens into the\nmasked language modeling. We propose a contrastive objective function to\nsimulate the response selection task. Our pre-trained task-oriented dialogue\nBERT (TOD-BERT) outperforms strong baselines like BERT on four downstream\ntask-oriented dialogue applications, including intention recognition, dialogue\nstate tracking, dialogue act prediction, and response selection. We also show\nthat TOD-BERT has a stronger few-shot ability that can mitigate the data\nscarcity problem for task-oriented dialogue.",
+    "num_pages": 13
+}

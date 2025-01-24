@@ -1,0 +1,32 @@
+{
+    "uuid": "fabc23a5-be8b-513b-b9e0-b3e789cdf38f",
+    "question": "Consider the paper that introduces the method that has an accuracy of 78.1% on the VQA-v2 task. What specific improvement in CIDEr score does the model proposed in the paper contribute to image captioning through its text infilling pretraining task?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "0c01da61-e6d6-5664-a720-fe78fa8506f0"
+    ],
+    "reference_pdf": [
+        "2a0adc2f-455b-5d5a-9cf1-ac09f4347ff9",
+        "da9e1b4e-f0c6-5191-8a33-41b61efb4b0f"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method that has an accuracy of 78.1% on the VQA-v2 task. What specific improvement in CIDEr score does the model proposed in the paper contribute to image captioning through its text infilling pretraining task?",
+            "reference_answer": "+0.8"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2311.04067/result_table.png"
+    ]
+}

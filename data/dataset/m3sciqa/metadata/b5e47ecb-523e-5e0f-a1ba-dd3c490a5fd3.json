@@ -1,0 +1,21 @@
+{
+    "uuid": "b5e47ecb-523e-5e0f-a1ba-dd3c490a5fd3",
+    "title": "Multimodal Chain-of-Thought Reasoning in Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Zhuosheng Zhang",
+        "Aston Zhang",
+        "Mu Li",
+        "Hai Zhao",
+        "George Karypis",
+        "Alex Smola"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.00923v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\b5e47ecb-523e-5e0f-a1ba-dd3c490a5fd3.pdf",
+    "bibtex": "@misc{zhang2024multimodalchainofthoughtreasoninginlanguage,\n    title = {Multimodal Chain-of-Thought Reasoning in Language Models},\n    author = {Zhuosheng Zhang and Aston Zhang and Mu Li and Hai Zhao and George Karypis and Alex Smola},\n    year = {2024},\n    eprint = {2302.00923},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2302.00923},\n}",
+    "abstract": "Large language models (LLMs) have shown impressive performance on complex\nreasoning by leveraging chain-of-thought (CoT) prompting to generate\nintermediate reasoning chains as the rationale to infer the answer. However,\nexisting CoT studies have primarily focused on the language modality. We\npropose Multimodal-CoT that incorporates language (text) and vision (images)\nmodalities into a two-stage framework that separates rationale generation and\nanswer inference. In this way, answer inference can leverage better generated\nrationales that are based on multimodal information. Experimental results on\nScienceQA and A-OKVQA benchmark datasets show the effectiveness of our proposed\napproach. With Multimodal-CoT, our model under 1 billion parameters achieves\nstate-of-the-art performance on the ScienceQA benchmark. Our analysis indicates\nthat Multimodal-CoT offers the advantages of mitigating hallucination and\nenhancing convergence speed. Code is publicly available at\nhttps://github.com/amazon-science/mm-cot.",
+    "num_pages": 25
+}

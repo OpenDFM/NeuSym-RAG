@@ -1,0 +1,32 @@
+{
+    "uuid": "cd58ede0-844f-5f71-8438-f2849cc2fe0e",
+    "question": "Consider the paper that introduces the method whose results are displayed in a lighter grey color in the table. How does the model's performance on the visual question answering (VQA) task compare when using images of resolution 480x480 versus 640x640 during finetuning?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "0c01da61-e6d6-5664-a720-fe78fa8506f0"
+    ],
+    "reference_pdf": [
+        "2a0adc2f-455b-5d5a-9cf1-ac09f4347ff9",
+        "da9e1b4e-f0c6-5191-8a33-41b61efb4b0f"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method whose results are displayed in a lighter grey color in the table. How does the model's performance on the visual question answering (VQA) task compare when using images of resolution 480x480 versus 640x640 during finetuning?",
+            "reference_answer": "An improvement"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2311.04067/result_table.png"
+    ]
+}

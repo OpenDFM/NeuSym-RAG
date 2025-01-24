@@ -1,0 +1,21 @@
+{
+    "uuid": "e4ad4c66-c12f-5367-a923-7342a3a48ac0",
+    "title": "ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Thomas Hartvigsen",
+        "Saadia Gabriel",
+        "Hamid Palangi",
+        "Maarten Sap",
+        "Dipankar Ray",
+        "Ece Kamar"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.09509v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\e4ad4c66-c12f-5367-a923-7342a3a48ac0.pdf",
+    "bibtex": "@misc{hartvigsen2022toxigenalargescalemachinegenerateddataset,\n    title = {ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection},\n    author = {Thomas Hartvigsen and Saadia Gabriel and Hamid Palangi and Maarten Sap and Dipankar Ray and Ece Kamar},\n    year = {2022},\n    eprint = {2203.09509},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.09509},\n}",
+    "abstract": "Toxic language detection systems often falsely flag text that contains\nminority group mentions as toxic, as those groups are often the targets of\nonline hate. Such over-reliance on spurious correlations also causes systems to\nstruggle with detecting implicitly toxic language. To help mitigate these\nissues, we create ToxiGen, a new large-scale and machine-generated dataset of\n274k toxic and benign statements about 13 minority groups. We develop a\ndemonstration-based prompting framework and an adversarial\nclassifier-in-the-loop decoding method to generate subtly toxic and benign text\nwith a massive pretrained language model. Controlling machine generation in\nthis way allows ToxiGen to cover implicitly toxic text at a larger scale, and\nabout more demographic groups, than previous resources of human-written text.\nWe conduct a human evaluation on a challenging subset of ToxiGen and find that\nannotators struggle to distinguish machine-generated text from human-written\nlanguage. We also find that 94.5% of toxic examples are labeled as hate speech\nby human annotators. Using three publicly-available datasets, we show that\nfinetuning a toxicity classifier on our data improves its performance on\nhuman-written data substantially. We also demonstrate that ToxiGen can be used\nto fight machine-generated toxicity as finetuning improves the classifier\nsignificantly on our evaluation subset. Our code and data can be found at\nhttps://github.com/microsoft/ToxiGen.",
+    "num_pages": 18
+}

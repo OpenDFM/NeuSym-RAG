@@ -1,0 +1,19 @@
+{
+    "uuid": "4b918831-da2b-5123-8351-ffdf3abde7c2",
+    "title": "\"Nice Try, Kiddo\": Investigating Ad Hominems in Dialogue Responses",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Emily Sheng",
+        "Kai-Wei Chang",
+        "Premkumar Natarajan",
+        "Nanyun Peng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.12820v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\4b918831-da2b-5123-8351-ffdf3abde7c2.pdf",
+    "bibtex": "@misc{sheng2021nicetrykiddoinvestigatingad,\n    title = {\"Nice Try, Kiddo\": Investigating Ad Hominems in Dialogue Responses},\n    author = {Emily Sheng and Kai-Wei Chang and Premkumar Natarajan and Nanyun Peng},\n    year = {2021},\n    eprint = {2010.12820},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.12820},\n}",
+    "abstract": "Ad hominem attacks are those that target some feature of a person's character\ninstead of the position the person is maintaining. These attacks are harmful\nbecause they propagate implicit biases and diminish a person's credibility.\nSince dialogue systems respond directly to user input, it is important to study\nad hominems in dialogue responses. To this end, we propose categories of ad\nhominems, compose an annotated dataset, and build a classifier to analyze human\nand dialogue system responses to English Twitter posts. We specifically compare\nresponses to Twitter topics about marginalized communities (#BlackLivesMatter,\n#MeToo) versus other topics (#Vegan, #WFH), because the abusive language of ad\nhominems could further amplify the skew of power away from marginalized\npopulations. Furthermore, we propose a constrained decoding technique that uses\nsalient $n$-gram similarity as a soft constraint for top-$k$ sampling to reduce\nthe amount of ad hominems generated. Our results indicate that 1) responses\nfrom both humans and DialoGPT contain more ad hominems for discussions around\nmarginalized communities, 2) different quantities of ad hominems in the\ntraining data can influence the likelihood of generating ad hominems, and 3) we\ncan use constrained decoding techniques to reduce ad hominems in generated\ndialogue responses.",
+    "num_pages": 18
+}

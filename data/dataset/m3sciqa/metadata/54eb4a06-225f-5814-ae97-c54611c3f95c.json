@@ -1,0 +1,21 @@
+{
+    "uuid": "54eb4a06-225f-5814-ae97-c54611c3f95c",
+    "title": "mmT5: Modular Multilingual Pre-Training Solves Source Language Hallucinations",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Jonas Pfeiffer",
+        "Francesco Piccinno",
+        "Massimo Nicosia",
+        "Xinyi Wang",
+        "Machel Reid",
+        "Sebastian Ruder"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.14224v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\54eb4a06-225f-5814-ae97-c54611c3f95c.pdf",
+    "bibtex": "@misc{pfeiffer2023mmt5modularmultilingualpretrainingsolves,\n    title = {mmT5: Modular Multilingual Pre-Training Solves Source Language Hallucinations},\n    author = {Jonas Pfeiffer and Francesco Piccinno and Massimo Nicosia and Xinyi Wang and Machel Reid and Sebastian Ruder},\n    year = {2023},\n    eprint = {2305.14224},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.14224},\n}",
+    "abstract": "Multilingual sequence-to-sequence models perform poorly with increased\nlanguage coverage and fail to consistently generate text in the correct target\nlanguage in few-shot settings. To address these challenges, we propose mmT5, a\nmodular multilingual sequence-to-sequence model. mmT5 utilizes\nlanguage-specific modules during pre-training, which disentangle\nlanguage-specific information from language-agnostic information. We identify\nrepresentation drift during fine-tuning as a key limitation of modular\ngenerative models and develop strategies that enable effective zero-shot\ntransfer. Our model outperforms mT5 at the same parameter sizes by a large\nmargin on representative natural language understanding and generation tasks in\n40+ languages. Compared to mT5, mmT5 raises the rate of generating text in the\ncorrect language under zero-shot settings from 7% to 99%, thereby greatly\nalleviating the source language hallucination problem.",
+    "num_pages": 31
+}

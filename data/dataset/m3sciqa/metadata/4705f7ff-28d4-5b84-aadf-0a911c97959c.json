@@ -1,0 +1,21 @@
+{
+    "uuid": "4705f7ff-28d4-5b84-aadf-0a911c97959c",
+    "title": "What Makes Good In-Context Examples for GPT-$3$?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Jiachang Liu",
+        "Dinghan Shen",
+        "Yizhe Zhang",
+        "Bill Dolan",
+        "Lawrence Carin",
+        "Weizhu Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2101.06804v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\4705f7ff-28d4-5b84-aadf-0a911c97959c.pdf",
+    "bibtex": "@misc{liu2021whatmakesgoodincontextexamples,\n    title = {What Makes Good In-Context Examples for GPT-$3$?},\n    author = {Jiachang Liu and Dinghan Shen and Yizhe Zhang and Bill Dolan and Lawrence Carin and Weizhu Chen},\n    year = {2021},\n    eprint = {2101.06804},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2101.06804},\n}",
+    "abstract": "GPT-$3$ has attracted lots of attention due to its superior performance\nacross a wide range of NLP tasks, especially with its powerful and versatile\nin-context few-shot learning ability. Despite its success, we found that the\nempirical results of GPT-$3$ depend heavily on the choice of in-context\nexamples. In this work, we investigate whether there are more effective\nstrategies for judiciously selecting in-context examples (relative to random\nsampling) that better leverage GPT-$3$'s few-shot capabilities. Inspired by the\nrecent success of leveraging a retrieval module to augment large-scale neural\nnetwork models, we propose to retrieve examples that are semantically-similar\nto a test sample to formulate its corresponding prompt. Intuitively, the\nin-context examples selected with such a strategy may serve as more informative\ninputs to unleash GPT-$3$'s extensive knowledge. We evaluate the proposed\napproach on several natural language understanding and generation benchmarks,\nwhere the retrieval-based prompt selection approach consistently outperforms\nthe random baseline. Moreover, it is observed that the sentence encoders\nfine-tuned on task-related datasets yield even more helpful retrieval results.\nNotably, significant gains are observed on tasks such as table-to-text\ngeneration (41.9% on the ToTTo dataset) and open-domain question answering\n(45.5% on the NQ dataset). We hope our investigation could help understand the\nbehaviors of GPT-$3$ and large-scale pre-trained LMs in general and enhance\ntheir few-shot capabilities.",
+    "num_pages": 12
+}

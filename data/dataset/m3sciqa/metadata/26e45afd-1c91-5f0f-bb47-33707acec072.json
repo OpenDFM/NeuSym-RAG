@@ -1,0 +1,17 @@
+{
+    "uuid": "26e45afd-1c91-5f0f-bb47-33707acec072",
+    "title": "Decoupled Weight Decay Regularization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Ilya Loshchilov",
+        "Frank Hutter"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1711.05101v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\26e45afd-1c91-5f0f-bb47-33707acec072.pdf",
+    "bibtex": "@misc{loshchilov2019decoupledweightdecayregularization,\n    title = {Decoupled Weight Decay Regularization},\n    author = {Ilya Loshchilov and Frank Hutter},\n    year = {2019},\n    eprint = {1711.05101},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1711.05101},\n}",
+    "abstract": "L$_2$ regularization and weight decay regularization are equivalent for\nstandard stochastic gradient descent (when rescaled by the learning rate), but\nas we demonstrate this is \\emph{not} the case for adaptive gradient algorithms,\nsuch as Adam. While common implementations of these algorithms employ L$_2$\nregularization (often calling it \"weight decay\" in what may be misleading due\nto the inequivalence we expose), we propose a simple modification to recover\nthe original formulation of weight decay regularization by \\emph{decoupling}\nthe weight decay from the optimization steps taken w.r.t. the loss function. We\nprovide empirical evidence that our proposed modification (i) decouples the\noptimal choice of weight decay factor from the setting of the learning rate for\nboth standard SGD and Adam and (ii) substantially improves Adam's\ngeneralization performance, allowing it to compete with SGD with momentum on\nimage classification datasets (on which it was previously typically\noutperformed by the latter). Our proposed decoupled weight decay has already\nbeen adopted by many researchers, and the community has implemented it in\nTensorFlow and PyTorch; the complete source code for our experiments is\navailable at https://github.com/loshchil/AdamW-and-SGDW",
+    "num_pages": 19
+}

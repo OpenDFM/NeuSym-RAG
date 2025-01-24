@@ -1,0 +1,20 @@
+{
+    "uuid": "6617e100-5326-5f77-89fc-58086d9008bc",
+    "title": "Topic-Guided Abstractive Text Summarization: a Joint Learning Approach",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Chujie Zheng",
+        "Kunpeng Zhang",
+        "Harry Jiannan Wang",
+        "Ling Fan",
+        "Zhe Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.10323v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\6617e100-5326-5f77-89fc-58086d9008bc.pdf",
+    "bibtex": "@misc{zheng2021topicguidedabstractivetextsummarizationa,\n    title = {Topic-Guided Abstractive Text Summarization: a Joint Learning Approach},\n    author = {Chujie Zheng and Kunpeng Zhang and Harry Jiannan Wang and Ling Fan and Zhe Wang},\n    year = {2021},\n    eprint = {2010.10323},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.10323},\n}",
+    "abstract": "We introduce a new approach for abstractive text summarization, Topic-Guided\nAbstractive Summarization, which calibrates long-range dependencies from\ntopic-level features with globally salient content. The idea is to incorporate\nneural topic modeling with a Transformer-based sequence-to-sequence (seq2seq)\nmodel in a joint learning framework. This design can learn and preserve the\nglobal semantics of the document, which can provide additional contextual\nguidance for capturing important ideas of the document, thereby enhancing the\ngeneration of summary. We conduct extensive experiments on two datasets and the\nresults show that our proposed model outperforms many extractive and\nabstractive systems in terms of both ROUGE measurements and human evaluation.\nOur code is available at: https://github.com/chz816/tas.",
+    "num_pages": 12
+}

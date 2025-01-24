@@ -1,0 +1,76 @@
+{
+    "uuid": "90f4b32e-e0e4-5f0b-b659-614681f756c2",
+    "question": "Consider the paper that introduces the model that achieves a 16.5 Top-1 score on the SQuAD dataset. How does the \\ednascore metric, utilized by the model, balance the evaluation of faithfulness and diversity in generated summaries?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "910767c8-1586-5180-971e-4d17a0ca4839"
+    ],
+    "reference_pdf": [
+        "099a1379-7476-57f9-8219-3e5ca22a0fbf",
+        "3665daf2-f865-553a-8593-6ce9441d8a71",
+        "6410dbbb-74cc-57a5-a88f-d1fccc0405b0",
+        "ddd6c8da-4823-579d-8ac9-62f2c0ca8373",
+        "20ec131c-808d-59b3-8554-b5a68b02968e",
+        "f610d79f-d4e8-51b2-835c-5c39652d1350",
+        "d3897354-5b81-501b-b0bf-ca4a50e7e689",
+        "c74ec7cd-9861-5651-92d8-d1a4d5ac53e5",
+        "93607ae8-285d-57c6-a6ec-c6a7cf55f65c",
+        "0eb01fdd-2e18-5cf6-a973-16420f3d9ee5",
+        "739c8432-c687-5220-89f6-f84e7c860800",
+        "903c5f8d-dc70-5a8f-9660-d960ffecd438",
+        "476cba4c-ceae-57ab-917e-f7730c29f794",
+        "11df7bc5-755c-581a-a2a3-0bbec7933e37",
+        "162d7068-3b55-5fa9-855f-b58c60d80709",
+        "03987706-84be-5081-8b7c-02e03c230e4b",
+        "39f7afc4-5c63-5cc3-80e5-ac05cb088940",
+        "14940fd5-af90-5198-a293-1f2fb25ed521",
+        "1e7d9f86-3567-55b8-be98-064a3d297af1",
+        "39abfac3-551a-5cad-a486-e4eb0b2ea283",
+        "e45897f5-4429-5750-a8fb-dcfa9a904b5f",
+        "6ce47eb8-8d60-58f4-b30b-9b0095f622d8",
+        "822d7c33-cc29-503d-96f9-a82f49f90f06",
+        "9f926a21-6cf7-5f20-ad71-351277b28374",
+        "23c06bf5-933c-5615-8591-5a730260880b",
+        "8c6f2d13-c5f0-5fc4-b7ae-65c3b10e24ed",
+        "d086f9d2-e87c-5292-925f-26f489250673",
+        "b9dfe82f-3a52-57ab-9571-d4e293a722a3",
+        "03e6bdfb-abd2-58f9-8c54-862c60db09a0",
+        "43c8d87f-b0bb-51e8-b5d5-797407a011ca",
+        "e677e145-f273-5788-b753-f2592858e1fb",
+        "570a9df6-abb2-506f-945b-de350d19bbcf",
+        "d25cb257-5c78-57a5-b917-49646a796958",
+        "1740ce5d-d35e-50c7-9e9b-6fe3f069651b",
+        "860b745c-6cb4-5933-b802-cd1848e39229",
+        "fb93f23b-657e-55a4-95a0-7174820f65b4",
+        "7622ac08-15d7-5102-89b2-6891803cd8af",
+        "101950db-b673-5061-9500-147447bfddc8",
+        "58914b28-03d1-528c-aca8-2bcc19b55aac",
+        "88affa18-ec3f-5871-857f-7c83b4732075",
+        "9c000611-9964-5c0c-866c-95892d0aadde",
+        "06e23bcd-3d01-5478-a8ac-b95dd8f42ac9",
+        "54e72037-97b1-54cc-8aa1-5290454d3f5f",
+        "9ada7bff-c684-55ab-ae9b-04f836247ddc",
+        "86a65848-28d0-5381-9222-52d0f9032e24",
+        "ac1b0430-6781-5539-9d45-5067c0c6ff3e"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the model that achieves a 16.5 Top-1 score on the SQuAD dataset. How does the \\ednascore metric, utilized by the model, balance the evaluation of faithfulness and diversity in generated summaries?",
+            "reference_answer": "The \\ednascore metric balances the evaluation of faithfulness and diversity in generated summaries by being the harmonic mean of Entailment and (1-Self-Entailment). Higher values of \\ednascore imply more faithful and diverse summaries."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.14503/comparison_table.png"
+    ]
+}

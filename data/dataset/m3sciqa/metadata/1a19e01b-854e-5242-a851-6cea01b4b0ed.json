@@ -1,0 +1,20 @@
+{
+    "uuid": "1a19e01b-854e-5242-a851-6cea01b4b0ed",
+    "title": "ATOM: Robustifying Out-of-distribution Detection Using Outlier Mining",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Jiefeng Chen",
+        "Yixuan Li",
+        "Xi Wu",
+        "Yingyu Liang",
+        "Somesh Jha"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2006.15207v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\1a19e01b-854e-5242-a851-6cea01b4b0ed.pdf",
+    "bibtex": "@misc{chen2021atomrobustifyingoutofdistributiondetectionusing,\n    title = {ATOM: Robustifying Out-of-distribution Detection Using Outlier Mining},\n    author = {Jiefeng Chen and Yixuan Li and Xi Wu and Yingyu Liang and Somesh Jha},\n    year = {2021},\n    eprint = {2006.15207},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2006.15207},\n}",
+    "abstract": "Detecting out-of-distribution (OOD) inputs is critical for safely deploying\ndeep learning models in an open-world setting. However, existing OOD detection\nsolutions can be brittle in the open world, facing various types of adversarial\nOOD inputs. While methods leveraging auxiliary OOD data have emerged, our\nanalysis on illuminative examples reveals a key insight that the majority of\nauxiliary OOD examples may not meaningfully improve or even hurt the decision\nboundary of the OOD detector, which is also observed in empirical results on\nreal data. In this paper, we provide a theoretically motivated method,\nAdversarial Training with informative Outlier Mining (ATOM), which improves the\nrobustness of OOD detection. We show that, by mining informative auxiliary OOD\ndata, one can significantly improve OOD detection performance, and somewhat\nsurprisingly, generalize to unseen adversarial attacks. ATOM achieves\nstate-of-the-art performance under a broad family of classic and adversarial\nOOD evaluation tasks. For example, on the CIFAR-10 in-distribution dataset,\nATOM reduces the FPR (at TPR 95%) by up to 57.99% under adversarial OOD inputs,\nsurpassing the previous best baseline by a large margin.",
+    "num_pages": 41
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "f5b9aa98-8d6c-59b7-8883-d1339aeddd97",
+    "title": "Normalized and Geometry-Aware Self-Attention Network for Image Captioning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Longteng Guo",
+        "Jing Liu",
+        "Xinxin Zhu",
+        "Peng Yao",
+        "Shichen Lu",
+        "Hanqing Lu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2003.08897v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\f5b9aa98-8d6c-59b7-8883-d1339aeddd97.pdf",
+    "bibtex": "@misc{guo2020normalizedandgeometryawareselfattentionnetwork,\n    title = {Normalized and Geometry-Aware Self-Attention Network for Image Captioning},\n    author = {Longteng Guo and Jing Liu and Xinxin Zhu and Peng Yao and Shichen Lu and Hanqing Lu},\n    year = {2020},\n    eprint = {2003.08897},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2003.08897},\n}",
+    "abstract": "Self-attention (SA) network has shown profound value in image captioning. In\nthis paper, we improve SA from two aspects to promote the performance of image\ncaptioning. First, we propose Normalized Self-Attention (NSA), a\nreparameterization of SA that brings the benefits of normalization inside SA.\nWhile normalization is previously only applied outside SA, we introduce a novel\nnormalization method and demonstrate that it is both possible and beneficial to\nperform it on the hidden activations inside SA. Second, to compensate for the\nmajor limit of Transformer that it fails to model the geometry structure of the\ninput objects, we propose a class of Geometry-aware Self-Attention (GSA) that\nextends SA to explicitly and efficiently consider the relative geometry\nrelations between the objects in the image. To construct our image captioning\nmodel, we combine the two modules and apply it to the vanilla self-attention\nnetwork. We extensively evaluate our proposals on MS-COCO image captioning\ndataset and superior results are achieved when comparing to state-of-the-art\napproaches. Further experiments on three challenging tasks, i.e. video\ncaptioning, machine translation, and visual question answering, show the\ngenerality of our methods.",
+    "num_pages": 12
+}

@@ -1,0 +1,51 @@
+{
+    "uuid": "2efd1b32-25cb-5034-9f0d-fae9b78efaa7",
+    "question": "Consider the paper that introduces the method in the figure represented by the 'x' (cross) marker. What specific component of the model's architecture proposed in the paper is directly responsible for propagating the semantic matching information along the directed edges on KGs?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "image",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "30ce5dc5-482b-5bd5-8255-1e74e83762a4"
+    ],
+    "reference_pdf": [
+        "3e6ebb91-fb32-5754-abed-0d8518e037a8",
+        "6305afda-1839-57a8-9f4c-aaa788f95912",
+        "113174b9-1f5c-59aa-972d-7c6eb43597a9",
+        "338e177b-154c-5635-a216-408ed793b9c8",
+        "a1ee6864-35ca-5ec6-b5a3-71e7013c7643",
+        "d3d52a0d-373a-5de1-8a89-c8a5a57ec224",
+        "6c13c345-6625-5459-ae26-1fccc31ca2d3",
+        "8511a75d-b196-502c-87f3-3b8a5cdea12a",
+        "3f302571-f9a6-5c1b-895d-9f0ea8865d1d",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "e90a11ab-8f5e-50b8-b3e8-084bd6844e1f",
+        "782f319d-905f-57b4-9dde-03031c0c96a7",
+        "9add874f-1824-5518-80da-9b2569fa1728",
+        "63813a1d-48c7-5be9-b6d2-ba1e463de539",
+        "d40a6590-2c99-555f-85be-4208a63bfe6c",
+        "9abee888-fdb9-50bd-bb86-2e53a6052057",
+        "ab8da4b2-8830-5dc2-b901-ca484702bbbe",
+        "2f4062a4-bd8e-50d5-b536-f2f33bc077d0",
+        "3996e0e9-1288-58e0-9a4a-3f7fddb32b48",
+        "80609df9-a5bb-503c-b165-da3a39e2253b",
+        "ac1b0430-6781-5539-9d45-5067c0c6ff3e"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method in the figure represented by the 'x' (cross) marker. What specific component of the model's architecture proposed in the paper is directly responsible for propagating the semantic matching information along the directed edges on KGs?",
+            "reference_answer": "matching information propagation module"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2401.00158/comparison_figure.png"
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "uuid": "425402c6-9ba4-586d-b34c-5a662d7733be",
+    "question": "Consider the paper that introduces the method that achieves a score of 28.62 in the WQ-B task. What is the Pearson correlation coefficient between $Diverse@k$ and human evaluation for the top-5 generated questions by the model proposed in the paper?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "a144d387-0e72-5a5c-9a95-b7564833f86e"
+    ],
+    "reference_pdf": [
+        "ae1c6e74-8aba-5616-8134-867962b77538",
+        "dccc19ea-3d20-5b85-ab6a-7653fe2c43ae",
+        "e8c34623-fa57-5d42-aa8b-e2c4d1e7b45c",
+        "6878d8bb-cea9-5b39-8b70-7bfb14e4cfb5",
+        "6b3da471-6ef5-54dd-9ed5-d8fee1e915af",
+        "99ac7d3d-eedb-58ea-99c9-cfefa71aba7b",
+        "61add12c-1a79-5ef2-a38e-00e843271ad0",
+        "a5a0e6f0-0db5-5f51-a6da-10cd953f3ba2",
+        "5019ef03-2c2d-5edd-bec5-0f17340786cf",
+        "6df6c8ea-705c-58f8-83cd-a2483b1c828c",
+        "b5e47ecb-523e-5e0f-a1ba-dd3c490a5fd3",
+        "2987b2aa-67ad-5312-91c3-067762156456",
+        "1cce4062-2a2a-55c8-adb6-23c50e2c6b54",
+        "2f304b1c-69d5-588d-8156-b92662ba2204",
+        "ad37f786-00b1-5515-abc6-4a762b9dd5dc",
+        "a76fdb50-d95e-5db2-83a6-ece16257796b",
+        "fea606a3-b9d6-5b7a-80c3-8843bbec4414",
+        "cc130a18-2c9b-5cdf-93d5-660e066195df",
+        "bd72b610-c0b2-57df-949c-dcdf09bfbfd9",
+        "2671f46a-88c3-52a2-bb15-76231d933291",
+        "4f43a3a1-e667-52b7-851e-21cffa9d29a0",
+        "b17dd8cd-60cb-5d4c-9a8b-a46b10a5e4a5",
+        "ea69aa8a-081a-5b13-bb55-df26650a47da",
+        "8dde05d0-7798-5f9b-9f99-1d4823d4fbdd",
+        "f398b6e5-0ff2-59e4-9f26-eba5cea5b48c",
+        "583e243a-4799-52af-9f47-e23e9a065a79",
+        "31312947-d493-5305-bfd5-1e7a19085826",
+        "4c2ca75e-b1eb-5f6f-bbfe-9b8671d8537e",
+        "eb83ce89-de15-5630-b60f-866a766a4730",
+        "7ee7fec4-3acd-5e8b-99bb-023b305090f8",
+        "4705f7ff-28d4-5b84-aadf-0a911c97959c",
+        "058d0055-8d50-5b52-ac1a-8c36d074e246",
+        "4af995a1-7cbc-587f-a003-541af36ebb07",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "49843327-34cf-5110-b733-157ec90cfc2c",
+        "3f4d5a18-292d-5165-95fa-8aaf6c2ec2fd",
+        "d8d81d9c-41e6-5ad7-9da3-05dad87905f3",
+        "e45897f5-4429-5750-a8fb-dcfa9a904b5f",
+        "c76b968a-995a-5109-a4eb-f329fa710f26",
+        "462a3ea2-5cf4-556a-a5bf-8f4b2c876260",
+        "7509abe5-a2de-50dd-9c15-3c4d714fefed",
+        "9abee888-fdb9-50bd-bb86-2e53a6052057",
+        "e44ba5fc-2846-5b06-923b-eb11cc9b2e51",
+        "eb603d6c-2a60-504d-93ed-aef55ff4655b",
+        "58914b28-03d1-528c-aca8-2bcc19b55aac",
+        "33130f85-57c8-54d5-b050-075bb1ccab97",
+        "43f38bc8-bf1f-51ce-9dc9-be9ae2ff4942"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method that achieves a score of 28.62 in the WQ-B task. What is the Pearson correlation coefficient between $Diverse@k$ and human evaluation for the top-5 generated questions by the model proposed in the paper?",
+            "reference_answer": "0.949"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.08395/result_table.png"
+    ]
+}

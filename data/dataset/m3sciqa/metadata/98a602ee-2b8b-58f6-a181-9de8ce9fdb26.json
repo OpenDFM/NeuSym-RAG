@@ -1,0 +1,25 @@
+{
+    "uuid": "98a602ee-2b8b-58f6-a181-9de8ce9fdb26",
+    "title": "Speaker-Follower Models for Vision-and-Language Navigation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Daniel Fried",
+        "Ronghang Hu",
+        "Volkan Cirik",
+        "Anna Rohrbach",
+        "Jacob Andreas",
+        "Louis-Philippe Morency",
+        "Taylor Berg-Kirkpatrick",
+        "Kate Saenko",
+        "Dan Klein",
+        "Trevor Darrell"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1806.02724v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\98a602ee-2b8b-58f6-a181-9de8ce9fdb26.pdf",
+    "bibtex": "@misc{fried2018speakerfollowermodelsforvisionandlanguagenavigation,\n    title = {Speaker-Follower Models for Vision-and-Language Navigation},\n    author = {Daniel Fried and Ronghang Hu and Volkan Cirik and Anna Rohrbach and Jacob Andreas and Louis-Philippe Morency and Taylor Berg-Kirkpatrick and Kate Saenko and Dan Klein and Trevor Darrell},\n    year = {2018},\n    eprint = {1806.02724},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1806.02724},\n}",
+    "abstract": "Navigation guided by natural language instructions presents a challenging\nreasoning problem for instruction followers. Natural language instructions\ntypically identify only a few high-level decisions and landmarks rather than\ncomplete low-level motor behaviors; much of the missing information must be\ninferred based on perceptual context. In machine learning settings, this is\ndoubly challenging: it is difficult to collect enough annotated data to enable\nlearning of this reasoning process from scratch, and also difficult to\nimplement the reasoning process using generic sequence models. Here we describe\nan approach to vision-and-language navigation that addresses both these issues\nwith an embedded speaker model. We use this speaker model to (1) synthesize new\ninstructions for data augmentation and to (2) implement pragmatic reasoning,\nwhich evaluates how well candidate action sequences explain an instruction.\nBoth steps are supported by a panoramic action space that reflects the\ngranularity of human-generated instructions. Experiments show that all three\ncomponents of this approach---speaker-driven data augmentation, pragmatic\nreasoning and panoramic action space---dramatically improve the performance of\na baseline instruction follower, more than doubling the success rate over the\nbest existing approach on a standard benchmark.",
+    "num_pages": 25
+}

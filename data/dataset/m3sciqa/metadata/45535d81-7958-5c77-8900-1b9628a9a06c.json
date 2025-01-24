@@ -1,0 +1,20 @@
+{
+    "uuid": "45535d81-7958-5c77-8900-1b9628a9a06c",
+    "title": "Sequence-Level Training for Non-Autoregressive Neural Machine Translation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Chenze Shao",
+        "Yang Feng",
+        "Jinchao Zhang",
+        "Fandong Meng",
+        "Jie Zhou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.08122v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\45535d81-7958-5c77-8900-1b9628a9a06c.pdf",
+    "bibtex": "@misc{shao2021sequenceleveltrainingfornonautoregressiveneural,\n    title = {Sequence-Level Training for Non-Autoregressive Neural Machine Translation},\n    author = {Chenze Shao and Yang Feng and Jinchao Zhang and Fandong Meng and Jie Zhou},\n    year = {2021},\n    eprint = {2106.08122},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.08122},\n}",
+    "abstract": "In recent years, Neural Machine Translation (NMT) has achieved notable\nresults in various translation tasks. However, the word-by-word generation\nmanner determined by the autoregressive mechanism leads to high translation\nlatency of the NMT and restricts its low-latency applications.\nNon-Autoregressive Neural Machine Translation (NAT) removes the autoregressive\nmechanism and achieves significant decoding speedup through generating target\nwords independently and simultaneously. Nevertheless, NAT still takes the\nword-level cross-entropy loss as the training objective, which is not optimal\nbecause the output of NAT cannot be properly evaluated due to the multimodality\nproblem. In this article, we propose using sequence-level training objectives\nto train NAT models, which evaluate the NAT outputs as a whole and correlates\nwell with the real translation quality. Firstly, we propose training NAT models\nto optimize sequence-level evaluation metrics (e.g., BLEU) based on several\nnovel reinforcement algorithms customized for NAT, which outperforms the\nconventional method by reducing the variance of gradient estimation. Secondly,\nwe introduce a novel training objective for NAT models, which aims to minimize\nthe Bag-of-Ngrams (BoN) difference between the model output and the reference\nsentence. The BoN training objective is differentiable and can be calculated\nefficiently without doing any approximations. Finally, we apply a three-stage\ntraining strategy to combine these two methods to train the NAT model. We\nvalidate our approach on four translation tasks (WMT14 En$\\leftrightarrow$De,\nWMT16 En$\\leftrightarrow$Ro), which shows that our approach largely outperforms\nNAT baselines and achieves remarkable performance on all translation tasks. The\nsource code is available at https://github.com/ictnlp/Seq-NAT.",
+    "num_pages": 36
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "5d474441-0098-5521-b6d2-4219837f18c9",
+    "title": "Filtering before Iteratively Referring for Knowledge-Grounded Response Selection in Retrieval-Based Chatbots",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Jia-Chen Gu",
+        "Zhen-Hua Ling",
+        "Quan Liu",
+        "Zhigang Chen",
+        "Xiaodan Zhu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.14550v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\5d474441-0098-5521-b6d2-4219837f18c9.pdf",
+    "bibtex": "@misc{gu2020filteringbeforeiterativelyreferringfor,\n    title = {Filtering before Iteratively Referring for Knowledge-Grounded Response Selection in Retrieval-Based Chatbots},\n    author = {Jia-Chen Gu and Zhen-Hua Ling and Quan Liu and Zhigang Chen and Xiaodan Zhu},\n    year = {2020},\n    eprint = {2004.14550},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2004.14550},\n}",
+    "abstract": "The challenges of building knowledge-grounded retrieval-based chatbots lie in\nhow to ground a conversation on its background knowledge and how to match\nresponse candidates with both context and knowledge simultaneously. This paper\nproposes a method named Filtering before Iteratively REferring (FIRE) for this\ntask. In this method, a context filter and a knowledge filter are first built,\nwhich derive knowledge-aware context representations and context-aware\nknowledge representations respectively by global and bidirectional attention.\nBesides, the entries irrelevant to the conversation are discarded by the\nknowledge filter. After that, iteratively referring is performed between\ncontext and response representations as well as between knowledge and response\nrepresentations, in order to collect deep matching features for scoring\nresponse candidates. Experimental results show that FIRE outperforms previous\nmethods by margins larger than 2.8% and 4.1% on the PERSONA-CHAT dataset with\noriginal and revised personas respectively, and margins larger than 3.1% on the\nCMU_DoG dataset in terms of top-1 accuracy. We also show that FIRE is more\ninterpretable by visualizing the knowledge grounding process.",
+    "num_pages": 11
+}

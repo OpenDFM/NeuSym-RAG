@@ -1,0 +1,18 @@
+{
+    "uuid": "23b2039f-1245-5334-8452-b245c78e29cf",
+    "title": "ProofWriter: Generating Implications, Proofs, and Abductive Statements over Natural Language",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Oyvind Tafjord",
+        "Bhavana Dalvi Mishra",
+        "Peter Clark"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2012.13048v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\23b2039f-1245-5334-8452-b245c78e29cf.pdf",
+    "bibtex": "@misc{tafjord2021proofwritergeneratingimplicationsproofsand,\n    title = {ProofWriter: Generating Implications, Proofs, and Abductive Statements over Natural Language},\n    author = {Oyvind Tafjord and Bhavana Dalvi Mishra and Peter Clark},\n    year = {2021},\n    eprint = {2012.13048},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2012.13048},\n}",
+    "abstract": "Transformers have been shown to emulate logical deduction over natural\nlanguage theories (logical rules expressed in natural language), reliably\nassigning true/false labels to candidate implications. However, their ability\nto generate implications of a theory has not yet been demonstrated, and methods\nfor reconstructing proofs of answers are imperfect. In this work we show that a\ngenerative model, called ProofWriter, can reliably generate both implications\nof a theory and the natural language proof(s) that support them. In particular,\niterating a 1-step implication generator results in proofs that are highly\nreliable, and represent actual model decisions (rather than post-hoc\nrationalizations). On the RuleTaker dataset, the accuracy of ProofWriter's\nproofs exceed previous methods by +9% absolute, and in a way that generalizes\nto proof depths unseen in training and on out-of-domain problems. We also show\nthat generative techniques can perform a type of abduction with high precision:\nGiven a theory and an unprovable conclusion, identify a missing fact that\nallows the conclusion to be proved, along with a proof. These results\nsignificantly improve the viability of neural methods for systematically\nreasoning over natural language.",
+    "num_pages": 14
+}

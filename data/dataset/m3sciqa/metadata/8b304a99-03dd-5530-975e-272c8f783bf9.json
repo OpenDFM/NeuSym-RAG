@@ -1,0 +1,18 @@
+{
+    "uuid": "8b304a99-03dd-5530-975e-272c8f783bf9",
+    "title": "Fine-tuned Language Models are Continual Learners",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Thomas Scialom",
+        "Tuhin Chakrabarty",
+        "Smaranda Muresan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.12393v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\8b304a99-03dd-5530-975e-272c8f783bf9.pdf",
+    "bibtex": "@misc{scialom2022finetunedlanguagemodelsarecontinual,\n    title = {Fine-tuned Language Models are Continual Learners},\n    author = {Thomas Scialom and Tuhin Chakrabarty and Smaranda Muresan},\n    year = {2022},\n    eprint = {2205.12393},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.12393},\n}",
+    "abstract": "Recent work on large language models relies on the intuition that most\nnatural language processing tasks can be described via natural language\ninstructions. Language models trained on these instructions show strong\nzero-shot performance on several standard datasets. However, these models even\nthough impressive still perform poorly on a wide range of tasks outside of\ntheir respective training and evaluation sets. To address this limitation, we\nargue that a model should be able to keep extending its knowledge and\nabilities, without forgetting previous skills. In spite of the limited success\nof Continual Learning we show that Language Models can be continual learners.\nWe empirically investigate the reason for this success and conclude that\nContinual Learning emerges from self-supervision pre-training. Our resulting\nmodel Continual-T0 (CT0) is able to learn diverse new tasks, while still\nmaintaining good performance on previous tasks, spanning remarkably through 70\ndatasets in total. Finally, we show that CT0 is able to combine instructions in\nways it was never trained for, demonstrating some compositionality.",
+    "num_pages": 16
+}

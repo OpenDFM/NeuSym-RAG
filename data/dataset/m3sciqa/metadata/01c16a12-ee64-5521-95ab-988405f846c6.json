@@ -1,0 +1,19 @@
+{
+    "uuid": "01c16a12-ee64-5521-95ab-988405f846c6",
+    "title": "Imitating Past Successes can be Very Suboptimal",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Benjamin Eysenbach",
+        "Soumith Udatha",
+        "Sergey Levine",
+        "Ruslan Salakhutdinov"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2206.03378v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\01c16a12-ee64-5521-95ab-988405f846c6.pdf",
+    "bibtex": "@misc{eysenbach2023imitatingpastsuccessescanbe,\n    title = {Imitating Past Successes can be Very Suboptimal},\n    author = {Benjamin Eysenbach and Soumith Udatha and Sergey Levine and Ruslan Salakhutdinov},\n    year = {2023},\n    eprint = {2206.03378},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2206.03378},\n}",
+    "abstract": "Prior work has proposed a simple strategy for reinforcement learning (RL):\nlabel experience with the outcomes achieved in that experience, and then\nimitate the relabeled experience. These outcome-conditioned imitation learning\nmethods are appealing because of their simplicity, strong performance, and\nclose ties with supervised learning. However, it remains unclear how these\nmethods relate to the standard RL objective, reward maximization. In this\npaper, we formally relate outcome-conditioned imitation learning to reward\nmaximization, drawing a precise relationship between the learned policy and\nQ-values and explaining the close connections between these methods and prior\nEM-based policy search methods. This analysis shows that existing\noutcome-conditioned imitation learning methods do not necessarily improve the\npolicy, but a simple modification results in a method that does guarantee\npolicy improvement, under some assumptions.",
+    "num_pages": 17
+}

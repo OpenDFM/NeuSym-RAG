@@ -1,0 +1,23 @@
+{
+    "uuid": "4675e5b7-915c-5c6f-afeb-c6d437bb8164",
+    "title": "Entity-Relation Extraction as Multi-Turn Question Answering",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Xiaoya Li",
+        "Fan Yin",
+        "Zijun Sun",
+        "Xiayu Li",
+        "Arianna Yuan",
+        "Duo Chai",
+        "Mingxin Zhou",
+        "Jiwei Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1905.05529v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\4675e5b7-915c-5c6f-afeb-c6d437bb8164.pdf",
+    "bibtex": "@misc{li2019entityrelationextractionasmultiturnquestion,\n    title = {Entity-Relation Extraction as Multi-Turn Question Answering},\n    author = {Xiaoya Li and Fan Yin and Zijun Sun and Xiayu Li and Arianna Yuan and Duo Chai and Mingxin Zhou and Jiwei Li},\n    year = {2019},\n    eprint = {1905.05529},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1905.05529},\n}",
+    "abstract": "In this paper, we propose a new paradigm for the task of entity-relation\nextraction. We cast the task as a multi-turn question answering problem, i.e.,\nthe extraction of entities and relations is transformed to the task of\nidentifying answer spans from the context. This multi-turn QA formalization\ncomes with several key advantages: firstly, the question query encodes\nimportant information for the entity/relation class we want to identify;\nsecondly, QA provides a natural way of jointly modeling entity and relation;\nand thirdly, it allows us to exploit the well developed machine reading\ncomprehension (MRC) models. Experiments on the ACE and the CoNLL04 corpora\ndemonstrate that the proposed paradigm significantly outperforms previous best\nmodels. We are able to obtain the state-of-the-art results on all of the ACE04,\nACE05 and CoNLL04 datasets, increasing the SOTA results on the three datasets\nto 49.4 (+1.0), 60.2 (+0.6) and 68.9 (+2.1), respectively. Additionally, we\nconstruct a newly developed dataset RESUME in Chinese, which requires\nmulti-step reasoning to construct entity dependencies, as opposed to the\nsingle-step dependency extraction in the triplet exaction in previous datasets.\nThe proposed multi-turn QA model also achieves the best performance on the\nRESUME dataset.",
+    "num_pages": 11
+}

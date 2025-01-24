@@ -1,0 +1,18 @@
+{
+    "uuid": "623d4491-e63b-5ba4-8b3b-19827be11dc9",
+    "title": "Large Language Models Are Reasoning Teachers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Namgyu Ho",
+        "Laura Schmid",
+        "Se-Young Yun"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2212.10071v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\623d4491-e63b-5ba4-8b3b-19827be11dc9.pdf",
+    "bibtex": "@misc{ho2023largelanguagemodelsarereasoning,\n    title = {Large Language Models Are Reasoning Teachers},\n    author = {Namgyu Ho and Laura Schmid and Se-Young Yun},\n    year = {2023},\n    eprint = {2212.10071},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2212.10071},\n}",
+    "abstract": "Recent works have shown that chain-of-thought (CoT) prompting can elicit\nlanguage models to solve complex reasoning tasks, step-by-step. However,\nprompt-based CoT methods are dependent on very large models such as GPT-3 175B\nwhich are prohibitive to deploy at scale. In this paper, we use these large\nmodels as reasoning teachers to enable complex reasoning in smaller models and\nreduce model size requirements by several orders of magnitude. We propose\nFine-tune-CoT, a method that generates reasoning samples from very large\nteacher models to fine-tune smaller models. We evaluate our method on a wide\nrange of public models and complex tasks. We find that Fine-tune-CoT enables\nsubstantial reasoning capability in small models, far outperforming\nprompt-based baselines and even the teacher model in many tasks. Additionally,\nwe extend our method by leveraging the teacher model's ability to generate\nmultiple distinct rationales for each original sample. Enriching the\nfine-tuning data with such diverse reasoning results in a substantial\nperformance boost across datasets, even for very small models. We conduct\nablations and sample studies to understand the emergence of reasoning\ncapabilities of student models. Our code implementation and data are available\nat https://github.com/itsnamgyu/reasoning-teacher.",
+    "num_pages": 29
+}

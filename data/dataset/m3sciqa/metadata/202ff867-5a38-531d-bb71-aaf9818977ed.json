@@ -1,0 +1,18 @@
+{
+    "uuid": "202ff867-5a38-531d-bb71-aaf9818977ed",
+    "title": "Dialogue Planning via Brownian Bridge Stochastic Process for Goal-directed Proactive Dialogue",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Jian Wang",
+        "Dongding Lin",
+        "Wenjie Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.05290v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\202ff867-5a38-531d-bb71-aaf9818977ed.pdf",
+    "bibtex": "@misc{wang2023dialogueplanningviabrownianbridge,\n    title = {Dialogue Planning via Brownian Bridge Stochastic Process for Goal-directed Proactive Dialogue},\n    author = {Jian Wang and Dongding Lin and Wenjie Li},\n    year = {2023},\n    eprint = {2305.05290},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.05290},\n}",
+    "abstract": "Goal-directed dialogue systems aim to proactively reach a pre-determined\ntarget through multi-turn conversations. The key to achieving this task lies in\nplanning dialogue paths that smoothly and coherently direct conversations\ntowards the target. However, this is a challenging and under-explored task. In\nthis work, we propose a coherent dialogue planning approach that uses a\nstochastic process to model the temporal dynamics of dialogue paths. We define\na latent space that captures the coherence of goal-directed behavior using a\nBrownian bridge process, which allows us to incorporate user feedback flexibly\nin dialogue planning. Based on the derived latent trajectories, we generate\ndialogue paths explicitly using pre-trained language models. We finally employ\nthese paths as natural language prompts to guide dialogue generation. Our\nexperiments show that our approach generates more coherent utterances and\nachieves the goal with a higher success rate.",
+    "num_pages": 16
+}

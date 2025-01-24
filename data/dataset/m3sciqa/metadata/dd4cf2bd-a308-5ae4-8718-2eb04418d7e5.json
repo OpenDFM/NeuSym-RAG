@@ -1,0 +1,18 @@
+{
+    "uuid": "dd4cf2bd-a308-5ae4-8718-2eb04418d7e5",
+    "title": "Protest Activity Detection and Perceived Violence Estimation from Social Media Images",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Donghyeon Won",
+        "Zachary C. Steinert-Threlkeld",
+        "Jungseock Joo"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1709.06204v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\dd4cf2bd-a308-5ae4-8718-2eb04418d7e5.pdf",
+    "bibtex": "@misc{won2017protestactivitydetectionandperceived,\n    title = {Protest Activity Detection and Perceived Violence Estimation from Social Media Images},\n    author = {Donghyeon Won and Zachary C. Steinert-Threlkeld and Jungseock Joo},\n    year = {2017},\n    eprint = {1709.06204},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.MM},\n    url = {http://arxiv.org/abs/1709.06204},\n}",
+    "abstract": "We develop a novel visual model which can recognize protesters, describe\ntheir activities by visual attributes and estimate the level of perceived\nviolence in an image. Studies of social media and protests use natural language\nprocessing to track how individuals use hashtags and links, often with a focus\non those items' diffusion. These approaches, however, may not be effective in\nfully characterizing actual real-world protests (e.g., violent or peaceful) or\nestimating the demographics of participants (e.g., age, gender, and race) and\ntheir emotions. Our system characterizes protests along these dimensions. We\nhave collected geotagged tweets and their images from 2013-2017 and analyzed\nmultiple major protest events in that period. A multi-task convolutional neural\nnetwork is employed in order to automatically classify the presence of\nprotesters in an image and predict its visual attributes, perceived violence\nand exhibited emotions. We also release the UCLA Protest Image Dataset, our\nnovel dataset of 40,764 images (11,659 protest images and hard negatives) with\nvarious annotations of visual attributes and sentiments. Using this dataset, we\ntrain our model and demonstrate its effectiveness. We also present experimental\nresults from various analysis on geotagged image data in several prevalent\nprotest events. Our dataset will be made accessible at\nhttps://www.sscnet.ucla.edu/comm/jjoo/mm-protest/.",
+    "num_pages": 9
+}

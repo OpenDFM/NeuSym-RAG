@@ -1,0 +1,21 @@
+{
+    "uuid": "128f2558-545f-58e7-ad6f-50141b4b068f",
+    "title": "Graph Contrastive Learning with Adaptive Augmentation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Yanqiao Zhu",
+        "Yichen Xu",
+        "Feng Yu",
+        "Qiang Liu",
+        "Shu Wu",
+        "Liang Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.14945v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\128f2558-545f-58e7-ad6f-50141b4b068f.pdf",
+    "bibtex": "@misc{zhu2021graphcontrastivelearningwithadaptive,\n    title = {Graph Contrastive Learning with Adaptive Augmentation},\n    author = {Yanqiao Zhu and Yichen Xu and Feng Yu and Qiang Liu and Shu Wu and Liang Wang},\n    year = {2021},\n    eprint = {2010.14945},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2010.14945},\n}",
+    "abstract": "Recently, contrastive learning (CL) has emerged as a successful method for\nunsupervised graph representation learning. Most graph CL methods first perform\nstochastic augmentation on the input graph to obtain two graph views and\nmaximize the agreement of representations in the two views. Despite the\nprosperous development of graph CL methods, the design of graph augmentation\nschemes -- a crucial component in CL -- remains rarely explored. We argue that\nthe data augmentation schemes should preserve intrinsic structures and\nattributes of graphs, which will force the model to learn representations that\nare insensitive to perturbation on unimportant nodes and edges. However, most\nexisting methods adopt uniform data augmentation schemes, like uniformly\ndropping edges and uniformly shuffling features, leading to suboptimal\nperformance. In this paper, we propose a novel graph contrastive representation\nlearning method with adaptive augmentation that incorporates various priors for\ntopological and semantic aspects of the graph. Specifically, on the topology\nlevel, we design augmentation schemes based on node centrality measures to\nhighlight important connective structures. On the node attribute level, we\ncorrupt node features by adding more noise to unimportant node features, to\nenforce the model to recognize underlying semantic information. We perform\nextensive experiments of node classification on a variety of real-world\ndatasets. Experimental results demonstrate that our proposed method\nconsistently outperforms existing state-of-the-art baselines and even surpasses\nsome supervised counterparts, which validates the effectiveness of the proposed\ncontrastive framework with adaptive augmentation.",
+    "num_pages": 12
+}

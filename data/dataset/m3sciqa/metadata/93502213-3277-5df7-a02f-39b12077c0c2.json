@@ -1,0 +1,22 @@
+{
+    "uuid": "93502213-3277-5df7-a02f-39b12077c0c2",
+    "title": "VATT: Transformers for Multimodal Self-Supervised Learning from Raw Video, Audio and Text",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Hassan Akbari",
+        "Liangzhe Yuan",
+        "Rui Qian",
+        "Wei-Hong Chuang",
+        "Shih-Fu Chang",
+        "Yin Cui",
+        "Boqing Gong"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2104.11178v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\93502213-3277-5df7-a02f-39b12077c0c2.pdf",
+    "bibtex": "@misc{akbari2021vatttransformersformultimodalselfsupervised,\n    title = {VATT: Transformers for Multimodal Self-Supervised Learning from Raw Video, Audio and Text},\n    author = {Hassan Akbari and Liangzhe Yuan and Rui Qian and Wei-Hong Chuang and Shih-Fu Chang and Yin Cui and Boqing Gong},\n    year = {2021},\n    eprint = {2104.11178},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2104.11178},\n}",
+    "abstract": "We present a framework for learning multimodal representations from unlabeled\ndata using convolution-free Transformer architectures. Specifically, our\nVideo-Audio-Text Transformer (VATT) takes raw signals as inputs and extracts\nmultimodal representations that are rich enough to benefit a variety of\ndownstream tasks. We train VATT end-to-end from scratch using multimodal\ncontrastive losses and evaluate its performance by the downstream tasks of\nvideo action recognition, audio event classification, image classification, and\ntext-to-video retrieval. Furthermore, we study a modality-agnostic,\nsingle-backbone Transformer by sharing weights among the three modalities. We\nshow that the convolution-free VATT outperforms state-of-the-art ConvNet-based\narchitectures in the downstream tasks. Especially, VATT's vision Transformer\nachieves the top-1 accuracy of 82.1% on Kinetics-400, 83.6% on Kinetics-600,\n72.7% on Kinetics-700, and 41.1% on Moments in Time, new records while avoiding\nsupervised pre-training. Transferring to image classification leads to 78.7%\ntop-1 accuracy on ImageNet compared to 64.7% by training the same Transformer\nfrom scratch, showing the generalizability of our model despite the domain gap\nbetween videos and images. VATT's audio Transformer also sets a new record on\nwaveform-based audio event recognition by achieving the mAP of 39.4% on\nAudioSet without any supervised pre-training. VATT's source code is publicly\navailable.",
+    "num_pages": 20
+}

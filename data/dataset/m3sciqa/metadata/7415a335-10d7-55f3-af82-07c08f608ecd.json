@@ -1,0 +1,20 @@
+{
+    "uuid": "7415a335-10d7-55f3-af82-07c08f608ecd",
+    "title": "Can AI-Generated Text be Reliably Detected?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2025,
+    "authors": [
+        "Vinu Sankar Sadasivan",
+        "Aounon Kumar",
+        "Sriram Balasubramanian",
+        "Wenxiao Wang",
+        "Soheil Feizi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2303.11156v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2025\\7415a335-10d7-55f3-af82-07c08f608ecd.pdf",
+    "bibtex": "@misc{sadasivan2025canaigeneratedtextbereliably,\n    title = {Can AI-Generated Text be Reliably Detected?},\n    author = {Vinu Sankar Sadasivan and Aounon Kumar and Sriram Balasubramanian and Wenxiao Wang and Soheil Feizi},\n    year = {2025},\n    eprint = {2303.11156},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2303.11156},\n}",
+    "abstract": "Large Language Models (LLMs) perform impressively well in various\napplications. However, the potential for misuse of these models in activities\nsuch as plagiarism, generating fake news, and spamming has raised concern about\ntheir responsible use. Consequently, the reliable detection of AI-generated\ntext has become a critical area of research. AI text detectors have shown to be\neffective under their specific settings. In this paper, we stress-test the\nrobustness of these AI text detectors in the presence of an attacker. We\nintroduce recursive paraphrasing attack to stress test a wide range of\ndetection schemes, including the ones using the watermarking as well as neural\nnetwork-based detectors, zero shot classifiers, and retrieval-based detectors.\nOur experiments conducted on passages, each approximately 300 tokens long,\nreveal the varying sensitivities of these detectors to our attacks. Our\nfindings indicate that while our recursive paraphrasing method can\nsignificantly reduce detection rates, it only slightly degrades text quality in\nmany cases, highlighting potential vulnerabilities in current detection systems\nin the presence of an attacker. Additionally, we investigate the susceptibility\nof watermarked LLMs to spoofing attacks aimed at misclassifying human-written\ntext as AI-generated. We demonstrate that an attacker can infer hidden AI text\nsignatures without white-box access to the detection method, potentially\nleading to reputational risks for LLM developers. Finally, we provide a\ntheoretical framework connecting the AUROC of the best possible detector to the\nTotal Variation distance between human and AI text distributions. This analysis\noffers insights into the fundamental challenges of reliable detection as\nlanguage models continue to advance. Our code is publicly available at\nhttps://github.com/vinusankars/Reliability-of-AI-text-detectors.",
+    "num_pages": 37
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "c1c0f24c-58ff-5141-8a9e-a279b49c9213",
+    "title": "Universal Transformers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Mostafa Dehghani",
+        "Stephan Gouws",
+        "Oriol Vinyals",
+        "Jakob Uszkoreit",
+        "Łukasz Kaiser"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1807.03819v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\c1c0f24c-58ff-5141-8a9e-a279b49c9213.pdf",
+    "bibtex": "@misc{dehghani2019universaltransformers,\n    title = {Universal Transformers},\n    author = {Mostafa Dehghani and Stephan Gouws and Oriol Vinyals and Jakob Uszkoreit and Łukasz Kaiser},\n    year = {2019},\n    eprint = {1807.03819},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1807.03819},\n}",
+    "abstract": "Recurrent neural networks (RNNs) sequentially process data by updating their\nstate with each new data point, and have long been the de facto choice for\nsequence modeling tasks. However, their inherently sequential computation makes\nthem slow to train. Feed-forward and convolutional architectures have recently\nbeen shown to achieve superior results on some sequence modeling tasks such as\nmachine translation, with the added advantage that they concurrently process\nall inputs in the sequence, leading to easy parallelization and faster training\ntimes. Despite these successes, however, popular feed-forward sequence models\nlike the Transformer fail to generalize in many simple tasks that recurrent\nmodels handle with ease, e.g. copying strings or even simple logical inference\nwhen the string or formula lengths exceed those observed at training time. We\npropose the Universal Transformer (UT), a parallel-in-time self-attentive\nrecurrent sequence model which can be cast as a generalization of the\nTransformer model and which addresses these issues. UTs combine the\nparallelizability and global receptive field of feed-forward sequence models\nlike the Transformer with the recurrent inductive bias of RNNs. We also add a\ndynamic per-position halting mechanism and find that it improves accuracy on\nseveral tasks. In contrast to the standard Transformer, under certain\nassumptions, UTs can be shown to be Turing-complete. Our experiments show that\nUTs outperform standard Transformers on a wide range of algorithmic and\nlanguage understanding tasks, including the challenging LAMBADA language\nmodeling task where UTs achieve a new state of the art, and machine translation\nwhere UTs achieve a 0.9 BLEU improvement over Transformers on the WMT14 En-De\ndataset.",
+    "num_pages": 23
+}

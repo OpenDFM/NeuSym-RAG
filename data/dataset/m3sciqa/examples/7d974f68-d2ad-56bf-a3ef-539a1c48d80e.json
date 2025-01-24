@@ -1,0 +1,53 @@
+{
+    "uuid": "7d974f68-d2ad-56bf-a3ef-539a1c48d80e",
+    "question": "Consider the paper that introduces the method that results in a token-level F1 score equal to 37.03. What specific configuration led to the best performance in the WikiHop development set ablation study for the model proposed in the paper?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "79a856b0-ea50-5dad-b4a1-f0f0c8e17443"
+    ],
+    "reference_pdf": [
+        "8ad564f3-f634-5b41-9dbb-c7b55efd34ed",
+        "4774dafb-8266-57ac-ba3b-3fb7302f43e8",
+        "e544d7c3-0ea0-5f06-accd-9044fb2df8ce",
+        "2ad75cc6-aa85-532e-a8cc-d487ad70ac1d",
+        "8ac0dc8f-2cdc-5363-ab17-2cbe2cd98611",
+        "7913138b-027d-5e7a-a4f9-c94fa676607b",
+        "501de3a1-2bdc-5bea-9259-4731a2df35ab",
+        "68be5d29-f16d-506f-a4e5-215438f13409",
+        "9dab5ed2-4f76-52b3-b13a-ee7c9342d254",
+        "64ee757d-3fab-5132-aadf-376825399f6b",
+        "a672b5e1-0460-5bcf-9f96-189e0687079d",
+        "19037637-5fca-5021-a9c2-464b3eaf7fb1",
+        "167219f2-ecf4-59b5-8ea1-cdcb400400b2",
+        "7eb3a633-8d11-5b91-af60-4030ff538882",
+        "aefc8eb9-7238-561a-8055-858362dc6a0c",
+        "3157ccdb-a5d3-5ddb-93af-99dcbba44f15",
+        "f9ea4f73-3191-5d9c-8121-e490cc81af65",
+        "2e88d873-bc67-51d3-a17e-8eda7c844dd6",
+        "79c58b97-75e2-590f-ab73-90c71c7af2a6",
+        "26e45afd-1c91-5f0f-bb47-33707acec072",
+        "4fd8fdc1-1bd4-58dd-9c4e-0659d9c11ee4",
+        "eb603d6c-2a60-504d-93ed-aef55ff4655b",
+        "167219f2-ecf4-59b5-8ea1-cdcb400400b2"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method that results in a token-level F1 score equal to 37.03. What specific configuration led to the best performance in the WikiHop development set ablation study for the model proposed in the paper?",
+            "reference_answer": "seqlen: 4,096, 15 epochs"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.18544/result_table.png"
+    ]
+}

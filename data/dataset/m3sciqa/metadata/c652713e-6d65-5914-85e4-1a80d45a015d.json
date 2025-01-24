@@ -1,0 +1,19 @@
+{
+    "uuid": "c652713e-6d65-5914-85e4-1a80d45a015d",
+    "title": "Convolutional 2D Knowledge Graph Embeddings",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Tim Dettmers",
+        "Pasquale Minervini",
+        "Pontus Stenetorp",
+        "Sebastian Riedel"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1707.01476v6",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\c652713e-6d65-5914-85e4-1a80d45a015d.pdf",
+    "bibtex": "@misc{dettmers2018convolutional2dknowledgegraphembeddings,\n    title = {Convolutional 2D Knowledge Graph Embeddings},\n    author = {Tim Dettmers and Pasquale Minervini and Pontus Stenetorp and Sebastian Riedel},\n    year = {2018},\n    eprint = {1707.01476},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1707.01476},\n}",
+    "abstract": "Link prediction for knowledge graphs is the task of predicting missing\nrelationships between entities. Previous work on link prediction has focused on\nshallow, fast models which can scale to large knowledge graphs. However, these\nmodels learn less expressive features than deep, multi-layer models -- which\npotentially limits performance. In this work, we introduce ConvE, a multi-layer\nconvolutional network model for link prediction, and report state-of-the-art\nresults for several established datasets. We also show that the model is highly\nparameter efficient, yielding the same performance as DistMult and R-GCN with\n8x and 17x fewer parameters. Analysis of our model suggests that it is\nparticularly effective at modelling nodes with high indegree -- which are\ncommon in highly-connected, complex knowledge graphs such as Freebase and\nYAGO3. In addition, it has been noted that the WN18 and FB15k datasets suffer\nfrom test set leakage, due to inverse relations from the training set being\npresent in the test set -- however, the extent of this issue has so far not\nbeen quantified. We find this problem to be severe: a simple rule-based model\ncan achieve state-of-the-art results on both WN18 and FB15k. To ensure that\nmodels are evaluated on datasets where simply exploiting inverse relations\ncannot yield competitive results, we investigate and validate several commonly\nused datasets -- deriving robust variants where necessary. We then perform\nexperiments on these robust datasets for our own and several previously\nproposed models and find that ConvE achieves state-of-the-art Mean Reciprocal\nRank across most datasets.",
+    "num_pages": 9
+}

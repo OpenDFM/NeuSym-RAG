@@ -1,0 +1,19 @@
+{
+    "uuid": "08705cdc-cb92-5119-af5c-18717ec40e6b",
+    "title": "Memorization Without Overfitting: Analyzing the Training Dynamics of Large Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Kushal Tirumala",
+        "Aram H. Markosyan",
+        "Luke Zettlemoyer",
+        "Armen Aghajanyan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.10770v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\08705cdc-cb92-5119-af5c-18717ec40e6b.pdf",
+    "bibtex": "@misc{tirumala2022memorizationwithoutoverfittinganalyzingthe,\n    title = {Memorization Without Overfitting: Analyzing the Training Dynamics of Large Language Models},\n    author = {Kushal Tirumala and Aram H. Markosyan and Luke Zettlemoyer and Armen Aghajanyan},\n    year = {2022},\n    eprint = {2205.10770},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.10770},\n}",
+    "abstract": "Despite their wide adoption, the underlying training and memorization\ndynamics of very large language models is not well understood. We empirically\nstudy exact memorization in causal and masked language modeling, across model\nsizes and throughout the training process. We measure the effects of dataset\nsize, learning rate, and model size on memorization, finding that larger\nlanguage models memorize training data faster across all settings.\nSurprisingly, we show that larger models can memorize a larger portion of the\ndata before over-fitting and tend to forget less throughout the training\nprocess. We also analyze the memorization dynamics of different parts of speech\nand find that models memorize nouns and numbers first; we hypothesize and\nprovide empirical evidence that nouns and numbers act as a unique identifier\nfor memorizing individual training examples. Together, these findings present\nanother piece of the broader puzzle of trying to understand what actually\nimproves as models get bigger.",
+    "num_pages": 20
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "1e0413f9-466d-57a0-be12-cbfb9da4056a",
+    "title": "Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Haokun Liu",
+        "Derek Tam",
+        "Mohammed Muqeeth",
+        "Jay Mohta",
+        "Tenghao Huang",
+        "Mohit Bansal",
+        "Colin Raffel"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.05638v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\1e0413f9-466d-57a0-be12-cbfb9da4056a.pdf",
+    "bibtex": "@misc{liu2022fewshotparameterefficientfinetuningisbetter,\n    title = {Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning},\n    author = {Haokun Liu and Derek Tam and Mohammed Muqeeth and Jay Mohta and Tenghao Huang and Mohit Bansal and Colin Raffel},\n    year = {2022},\n    eprint = {2205.05638},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2205.05638},\n}",
+    "abstract": "Few-shot in-context learning (ICL) enables pre-trained language models to\nperform a previously-unseen task without any gradient-based training by feeding\na small number of training examples as part of the input. ICL incurs\nsubstantial computational, memory, and storage costs because it involves\nprocessing all of the training examples every time a prediction is made.\nParameter-efficient fine-tuning (PEFT) (e.g. adapter modules, prompt tuning,\nsparse update methods, etc.) offers an alternative paradigm where a small set\nof parameters are trained to enable a model to perform the new task. In this\npaper, we rigorously compare few-shot ICL and PEFT and demonstrate that the\nlatter offers better accuracy as well as dramatically lower computational\ncosts. Along the way, we introduce a new PEFT method called (IA)$^3$ that\nscales activations by learned vectors, attaining stronger performance while\nonly introducing a relatively tiny amount of new parameters. We also propose a\nsimple recipe based on the T0 model called T-Few that can be applied to new\ntasks without task-specific tuning or modifications. We validate the\neffectiveness of T-Few on completely unseen tasks by applying it to the RAFT\nbenchmark, attaining super-human performance for the first time and\noutperforming the state-of-the-art by 6% absolute. All of the code used in our\nexperiments is publicly available.",
+    "num_pages": 23
+}

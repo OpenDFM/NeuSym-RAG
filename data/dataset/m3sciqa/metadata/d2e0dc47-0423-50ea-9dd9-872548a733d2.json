@@ -1,0 +1,19 @@
+{
+    "uuid": "d2e0dc47-0423-50ea-9dd9-872548a733d2",
+    "title": "Code and Named Entity Recognition in StackOverflow",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Jeniya Tabassum",
+        "Mounica Maddela",
+        "Wei Xu",
+        "Alan Ritter"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2005.01634v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\d2e0dc47-0423-50ea-9dd9-872548a733d2.pdf",
+    "bibtex": "@misc{tabassum2020codeandnamedentityrecognition,\n    title = {Code and Named Entity Recognition in StackOverflow},\n    author = {Jeniya Tabassum and Mounica Maddela and Wei Xu and Alan Ritter},\n    year = {2020},\n    eprint = {2005.01634},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2005.01634},\n}",
+    "abstract": "There is an increasing interest in studying natural language and computer\ncode together, as large corpora of programming texts become readily available\non the Internet. For example, StackOverflow currently has over 15 million\nprogramming related questions written by 8.5 million users. Meanwhile, there is\nstill a lack of fundamental NLP techniques for identifying code tokens or\nsoftware-related named entities that appear within natural language sentences.\nIn this paper, we introduce a new named entity recognition (NER) corpus for the\ncomputer programming domain, consisting of 15,372 sentences annotated with 20\nfine-grained entity types. We trained in-domain BERT representations\n(BERTOverflow) on 152 million sentences from StackOverflow, which lead to an\nabsolute increase of +10 F-1 score over off-the-shelf BERT. We also present the\nSoftNER model which achieves an overall 79.10 F$_1$ score for code and named\nentity recognition on StackOverflow data. Our SoftNER model incorporates a\ncontext-independent code token classifier with corpus-level features to improve\nthe BERT-based tagging model. Our code and data are available at:\nhttps://github.com/jeniyat/StackOverflowNER/",
+    "num_pages": 14
+}

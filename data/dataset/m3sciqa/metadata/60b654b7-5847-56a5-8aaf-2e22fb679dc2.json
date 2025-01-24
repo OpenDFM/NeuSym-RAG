@@ -1,0 +1,19 @@
+{
+    "uuid": "60b654b7-5847-56a5-8aaf-2e22fb679dc2",
+    "title": "Human-like Controllable Image Captioning with Verb-specific Semantic Roles",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Long Chen",
+        "Zhihong Jiang",
+        "Jun Xiao",
+        "Wei Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2103.12204v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\60b654b7-5847-56a5-8aaf-2e22fb679dc2.pdf",
+    "bibtex": "@misc{chen2021humanlikecontrollableimagecaptioningwith,\n    title = {Human-like Controllable Image Captioning with Verb-specific Semantic Roles},\n    author = {Long Chen and Zhihong Jiang and Jun Xiao and Wei Liu},\n    year = {2021},\n    eprint = {2103.12204},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2103.12204},\n}",
+    "abstract": "Controllable Image Captioning (CIC) -- generating image descriptions\nfollowing designated control signals -- has received unprecedented attention\nover the last few years. To emulate the human ability in controlling caption\ngeneration, current CIC studies focus exclusively on control signals concerning\nobjective properties, such as contents of interest or descriptive patterns.\nHowever, we argue that almost all existing objective control signals have\noverlooked two indispensable characteristics of an ideal control signal: 1)\nEvent-compatible: all visual contents referred to in a single sentence should\nbe compatible with the described activity. 2) Sample-suitable: the control\nsignals should be suitable for a specific image sample. To this end, we propose\na new control signal for CIC: Verb-specific Semantic Roles (VSR). VSR consists\nof a verb and some semantic roles, which represents a targeted activity and the\nroles of entities involved in this activity. Given a designated VSR, we first\ntrain a grounded semantic role labeling (GSRL) model to identify and ground all\nentities for each role. Then, we propose a semantic structure planner (SSP) to\nlearn human-like descriptive semantic structures. Lastly, we use a role-shift\ncaptioning model to generate the captions. Extensive experiments and ablations\ndemonstrate that our framework can achieve better controllability than several\nstrong baselines on two challenging CIC benchmarks. Besides, we can generate\nmulti-level diverse captions easily. The code is available at:\nhttps://github.com/mad-red/VSR-guided-CIC.",
+    "num_pages": 15
+}

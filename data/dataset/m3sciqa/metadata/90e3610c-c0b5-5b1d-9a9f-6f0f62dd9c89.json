@@ -1,0 +1,18 @@
+{
+    "uuid": "90e3610c-c0b5-5b1d-9a9f-6f0f62dd9c89",
+    "title": "KALA: Knowledge-Augmented Language Model Adaptation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Minki Kang",
+        "Jinheon Baek",
+        "Sung Ju Hwang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.10555v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\90e3610c-c0b5-5b1d-9a9f-6f0f62dd9c89.pdf",
+    "bibtex": "@misc{kang2022kalaknowledgeaugmentedlanguagemodeladaptation,\n    title = {KALA: Knowledge-Augmented Language Model Adaptation},\n    author = {Minki Kang and Jinheon Baek and Sung Ju Hwang},\n    year = {2022},\n    eprint = {2204.10555},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.10555},\n}",
+    "abstract": "Pre-trained language models (PLMs) have achieved remarkable success on\nvarious natural language understanding tasks. Simple fine-tuning of PLMs, on\nthe other hand, might be suboptimal for domain-specific tasks because they\ncannot possibly cover knowledge from all domains. While adaptive pre-training\nof PLMs can help them obtain domain-specific knowledge, it requires a large\ntraining cost. Moreover, adaptive pre-training can harm the PLM's performance\non the downstream task by causing catastrophic forgetting of its general\nknowledge. To overcome such limitations of adaptive pre-training for PLM\nadaption, we propose a novel domain adaption framework for PLMs coined as\nKnowledge-Augmented Language model Adaptation (KALA), which modulates the\nintermediate hidden representations of PLMs with domain knowledge, consisting\nof entities and their relational facts. We validate the performance of our KALA\non question answering and named entity recognition tasks on multiple datasets\nacross various domains. The results show that, despite being computationally\nefficient, our KALA largely outperforms adaptive pre-training. Code is\navailable at: https://github.com/Nardien/KALA/.",
+    "num_pages": 24
+}

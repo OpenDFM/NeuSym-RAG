@@ -1,0 +1,19 @@
+{
+    "uuid": "ffbb6dd2-e4e9-5593-9a14-dff5ff793476",
+    "title": "On the Challenges of Using Black-Box APIs for Toxicity Evaluation in Research",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Luiza Pozzobon",
+        "Beyza Ermis",
+        "Patrick Lewis",
+        "Sara Hooker"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.12397v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\ffbb6dd2-e4e9-5593-9a14-dff5ff793476.pdf",
+    "bibtex": "@misc{pozzobon2023onthechallengesofusing,\n    title = {On the Challenges of Using Black-Box APIs for Toxicity Evaluation in Research},\n    author = {Luiza Pozzobon and Beyza Ermis and Patrick Lewis and Sara Hooker},\n    year = {2023},\n    eprint = {2304.12397},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2304.12397},\n}",
+    "abstract": "Perception of toxicity evolves over time and often differs between\ngeographies and cultural backgrounds. Similarly, black-box commercially\navailable APIs for detecting toxicity, such as the Perspective API, are not\nstatic, but frequently retrained to address any unattended weaknesses and\nbiases. We evaluate the implications of these changes on the reproducibility of\nfindings that compare the relative merits of models and methods that aim to\ncurb toxicity. Our findings suggest that research that relied on inherited\nautomatic toxicity scores to compare models and techniques may have resulted in\ninaccurate findings. Rescoring all models from HELM, a widely respected living\nbenchmark, for toxicity with the recent version of the API led to a different\nranking of widely used foundation models. We suggest caution in applying\napples-to-apples comparisons between studies and lay recommendations for a more\nstructured approach to evaluating toxicity over time. Code and data are\navailable at https://github.com/for-ai/black-box-api-challenges.",
+    "num_pages": 19
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "9f83b120-1a28-5397-b764-7b99e62db40d",
+    "title": "Transformers Learn Shortcuts to Automata",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Bingbin Liu",
+        "Jordan T. Ash",
+        "Surbhi Goel",
+        "Akshay Krishnamurthy",
+        "Cyril Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.10749v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\9f83b120-1a28-5397-b764-7b99e62db40d.pdf",
+    "bibtex": "@misc{liu2023transformerslearnshortcutstoautomata,\n    title = {Transformers Learn Shortcuts to Automata},\n    author = {Bingbin Liu and Jordan T. Ash and Surbhi Goel and Akshay Krishnamurthy and Cyril Zhang},\n    year = {2023},\n    eprint = {2210.10749},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2210.10749},\n}",
+    "abstract": "Algorithmic reasoning requires capabilities which are most naturally\nunderstood through recurrent models of computation, like the Turing machine.\nHowever, Transformer models, while lacking recurrence, are able to perform such\nreasoning using far fewer layers than the number of reasoning steps. This\nraises the question: what solutions are learned by these shallow and\nnon-recurrent models? We find that a low-depth Transformer can represent the\ncomputations of any finite-state automaton (thus, any bounded-memory\nalgorithm), by hierarchically reparameterizing its recurrent dynamics. Our\ntheoretical results characterize shortcut solutions, whereby a Transformer with\n$o(T)$ layers can exactly replicate the computation of an automaton on an input\nsequence of length $T$. We find that polynomial-sized $O(\\log T)$-depth\nsolutions always exist; furthermore, $O(1)$-depth simulators are surprisingly\ncommon, and can be understood using tools from Krohn-Rhodes theory and circuit\ncomplexity. Empirically, we perform synthetic experiments by training\nTransformers to simulate a wide variety of automata, and show that shortcut\nsolutions can be learned via standard training. We further investigate the\nbrittleness of these solutions and propose potential mitigations.",
+    "num_pages": 67
+}

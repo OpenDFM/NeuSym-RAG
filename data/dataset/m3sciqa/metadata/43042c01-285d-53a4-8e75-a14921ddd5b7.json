@@ -1,0 +1,20 @@
+{
+    "uuid": "43042c01-285d-53a4-8e75-a14921ddd5b7",
+    "title": "Stretching Sentence-pair NLI Models to Reason over Long Documents and Clusters",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Tal Schuster",
+        "Sihao Chen",
+        "Senaka Buthpitiya",
+        "Alex Fabrikant",
+        "Donald Metzler"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.07447v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\43042c01-285d-53a4-8e75-a14921ddd5b7.pdf",
+    "bibtex": "@misc{schuster2022stretchingsentencepairnlimodelsto,\n    title = {Stretching Sentence-pair NLI Models to Reason over Long Documents and Clusters},\n    author = {Tal Schuster and Sihao Chen and Senaka Buthpitiya and Alex Fabrikant and Donald Metzler},\n    year = {2022},\n    eprint = {2204.07447},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.07447},\n}",
+    "abstract": "Natural Language Inference (NLI) has been extensively studied by the NLP\ncommunity as a framework for estimating the semantic relation between sentence\npairs. While early work identified certain biases in NLI models, recent\nadvancements in modeling and datasets demonstrated promising performance. In\nthis work, we further explore the direct zero-shot applicability of NLI models\nto real applications, beyond the sentence-pair setting they were trained on.\nFirst, we analyze the robustness of these models to longer and out-of-domain\ninputs. Then, we develop new aggregation methods to allow operating over full\ndocuments, reaching state-of-the-art performance on the ContractNLI dataset.\nInterestingly, we find NLI scores to provide strong retrieval signals, leading\nto more relevant evidence extractions compared to common similarity-based\nmethods. Finally, we go further and investigate whole document clusters to\nidentify both discrepancies and consensus among sources. In a test case, we\nfind real inconsistencies between Wikipedia pages in different languages about\nthe same topic.",
+    "num_pages": 19
+}

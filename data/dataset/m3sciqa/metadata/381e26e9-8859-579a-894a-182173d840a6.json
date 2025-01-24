@@ -1,0 +1,18 @@
+{
+    "uuid": "381e26e9-8859-579a-894a-182173d840a6",
+    "title": "Self-Supervised Losses for One-Class Textual Anomaly Detection",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Kimberly T. Mai",
+        "Toby Davies",
+        "Lewis D. Griffin"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.05695v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\381e26e9-8859-579a-894a-182173d840a6.pdf",
+    "bibtex": "@misc{mai2022selfsupervisedlossesforoneclasstextual,\n    title = {Self-Supervised Losses for One-Class Textual Anomaly Detection},\n    author = {Kimberly T. Mai and Toby Davies and Lewis D. Griffin},\n    year = {2022},\n    eprint = {2204.05695},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.05695},\n}",
+    "abstract": "Current deep learning methods for anomaly detection in text rely on\nsupervisory signals in inliers that may be unobtainable or bespoke\narchitectures that are difficult to tune. We study a simpler alternative:\nfine-tuning Transformers on the inlier data with self-supervised objectives and\nusing the losses as an anomaly score. Overall, the self-supervision approach\noutperforms other methods under various anomaly detection scenarios, improving\nthe AUROC score on semantic anomalies by 11.6% and on syntactic anomalies by\n22.8% on average. Additionally, the optimal objective and resultant learnt\nrepresentation depend on the type of downstream anomaly. The separability of\nanomalies and inliers signals that a representation is more effective for\ndetecting semantic anomalies, whilst the presence of narrow feature directions\nsignals a representation that is effective for detecting syntactic anomalies.",
+    "num_pages": 9
+}

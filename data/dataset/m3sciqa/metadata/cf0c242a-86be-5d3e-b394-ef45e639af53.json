@@ -1,0 +1,22 @@
+{
+    "uuid": "cf0c242a-86be-5d3e-b394-ef45e639af53",
+    "title": "Learning Knowledge Bases with Parameters for Task-Oriented Dialogue Systems",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Andrea Madotto",
+        "Samuel Cahyawijaya",
+        "Genta Indra Winata",
+        "Yan Xu",
+        "Zihan Liu",
+        "Zhaojiang Lin",
+        "Pascale Fung"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2009.13656v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\cf0c242a-86be-5d3e-b394-ef45e639af53.pdf",
+    "bibtex": "@misc{madotto2020learningknowledgebaseswithparameters,\n    title = {Learning Knowledge Bases with Parameters for Task-Oriented Dialogue Systems},\n    author = {Andrea Madotto and Samuel Cahyawijaya and Genta Indra Winata and Yan Xu and Zihan Liu and Zhaojiang Lin and Pascale Fung},\n    year = {2020},\n    eprint = {2009.13656},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2009.13656},\n}",
+    "abstract": "Task-oriented dialogue systems are either modularized with separate dialogue\nstate tracking (DST) and management steps or end-to-end trainable. In either\ncase, the knowledge base (KB) plays an essential role in fulfilling user\nrequests. Modularized systems rely on DST to interact with the KB, which is\nexpensive in terms of annotation and inference time. End-to-end systems use the\nKB directly as input, but they cannot scale when the KB is larger than a few\nhundred entries. In this paper, we propose a method to embed the KB, of any\nsize, directly into the model parameters. The resulting model does not require\nany DST or template responses, nor the KB as input, and it can dynamically\nupdate its KB via fine-tuning. We evaluate our solution in five task-oriented\ndialogue datasets with small, medium, and large KB size. Our experiments show\nthat end-to-end models can effectively embed knowledge bases in their\nparameters and achieve competitive performance in all evaluated datasets.",
+    "num_pages": 23
+}

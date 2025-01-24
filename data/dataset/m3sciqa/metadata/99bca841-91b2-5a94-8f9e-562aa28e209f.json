@@ -1,0 +1,21 @@
+{
+    "uuid": "99bca841-91b2-5a94-8f9e-562aa28e209f",
+    "title": "Sentence Embedding Alignment for Lifelong Relation Extraction",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Hong Wang",
+        "Wenhan Xiong",
+        "Mo Yu",
+        "Xiaoxiao Guo",
+        "Shiyu Chang",
+        "William Yang Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1903.02588v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\99bca841-91b2-5a94-8f9e-562aa28e209f.pdf",
+    "bibtex": "@misc{wang2019sentenceembeddingalignmentforlifelong,\n    title = {Sentence Embedding Alignment for Lifelong Relation Extraction},\n    author = {Hong Wang and Wenhan Xiong and Mo Yu and Xiaoxiao Guo and Shiyu Chang and William Yang Wang},\n    year = {2019},\n    eprint = {1903.02588},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1903.02588},\n}",
+    "abstract": "Conventional approaches to relation extraction usually require a fixed set of\npre-defined relations. Such requirement is hard to meet in many real\napplications, especially when new data and relations are emerging incessantly\nand it is computationally expensive to store all data and re-train the whole\nmodel every time new data and relations come in. We formulate such a\nchallenging problem as lifelong relation extraction and investigate\nmemory-efficient incremental learning methods without catastrophically\nforgetting knowledge learned from previous tasks. We first investigate a\nmodified version of the stochastic gradient methods with a replay memory, which\nsurprisingly outperforms recent state-of-the-art lifelong learning methods. We\nfurther propose to improve this approach to alleviate the forgetting problem by\nanchoring the sentence embedding space. Specifically, we utilize an explicit\nalignment model to mitigate the sentence embedding distortion of the learned\nmodel when training on new data and new relations. Experiment results on\nmultiple benchmarks show that our proposed method significantly outperforms the\nstate-of-the-art lifelong learning approaches.",
+    "num_pages": 11
+}

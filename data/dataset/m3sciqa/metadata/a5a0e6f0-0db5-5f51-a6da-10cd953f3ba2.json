@@ -1,0 +1,21 @@
+{
+    "uuid": "a5a0e6f0-0db5-5f51-a6da-10cd953f3ba2",
+    "title": "Active Prompting with Chain-of-Thought for Large Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Shizhe Diao",
+        "Pengcheng Wang",
+        "Yong Lin",
+        "Rui Pan",
+        "Xiang Liu",
+        "Tong Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.12246v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\a5a0e6f0-0db5-5f51-a6da-10cd953f3ba2.pdf",
+    "bibtex": "@misc{diao2024activepromptingwithchainofthoughtfor,\n    title = {Active Prompting with Chain-of-Thought for Large Language Models},\n    author = {Shizhe Diao and Pengcheng Wang and Yong Lin and Rui Pan and Xiang Liu and Tong Zhang},\n    year = {2024},\n    eprint = {2302.12246},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2302.12246},\n}",
+    "abstract": "The increasing scale of large language models (LLMs) brings emergent\nabilities to various complex tasks requiring reasoning, such as arithmetic and\ncommonsense reasoning. It is known that the effective design of task-specific\nprompts is critical for LLMs' ability to produce high-quality answers. In\nparticular, an effective approach for complex question-and-answer tasks is\nexample-based prompting with chain-of-thought (CoT) reasoning, which\nsignificantly improves the performance of LLMs. However, current CoT methods\nrely on a fixed set of human-annotated exemplars, which are not necessarily the\nmost effective examples for different tasks. This paper proposes a new method,\nActive-Prompt, to adapt LLMs to different tasks with task-specific example\nprompts (annotated with human-designed CoT reasoning). For this purpose, we\npropose a solution to the key problem of determining which questions are the\nmost important and helpful ones to annotate from a pool of task-specific\nqueries. By borrowing ideas from the related problem of uncertainty-based\nactive learning, we introduce several metrics to characterize the uncertainty\nso as to select the most uncertain questions for annotation. Experimental\nresults demonstrate the superiority of our proposed method, achieving\nstate-of-the-art on eight complex reasoning tasks. Further analyses of\ndifferent uncertainty metrics, pool sizes, zero-shot learning, and\naccuracy-uncertainty relationship demonstrate the effectiveness of our method.\nOur code will be available at https://github.com/shizhediao/active-prompt.",
+    "num_pages": 21
+}

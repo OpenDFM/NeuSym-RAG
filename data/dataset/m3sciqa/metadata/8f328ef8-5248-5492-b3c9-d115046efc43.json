@@ -1,0 +1,19 @@
+{
+    "uuid": "8f328ef8-5248-5492-b3c9-d115046efc43",
+    "title": "Fine-Tuning Deteriorates General Textual Out-of-Distribution Detection by Distorting Task-Agnostic Features",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Sishuo Chen",
+        "Wenkai Yang",
+        "Xiaohan Bi",
+        "Xu Sun"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2301.12715v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\8f328ef8-5248-5492-b3c9-d115046efc43.pdf",
+    "bibtex": "@misc{chen2023finetuningdeterioratesgeneraltextualoutofdistribution,\n    title = {Fine-Tuning Deteriorates General Textual Out-of-Distribution Detection by Distorting Task-Agnostic Features},\n    author = {Sishuo Chen and Wenkai Yang and Xiaohan Bi and Xu Sun},\n    year = {2023},\n    eprint = {2301.12715},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2301.12715},\n}",
+    "abstract": "Detecting out-of-distribution (OOD) inputs is crucial for the safe deployment\nof natural language processing (NLP) models. Though existing methods,\nespecially those based on the statistics in the feature space of fine-tuned\npre-trained language models (PLMs), are claimed to be effective, their\neffectiveness on different types of distribution shifts remains underexplored.\nIn this work, we take the first step to comprehensively evaluate the mainstream\ntextual OOD detection methods for detecting semantic and non-semantic shifts.\nWe find that: (1) no existing method behaves well in both settings; (2)\nfine-tuning PLMs on in-distribution data benefits detecting semantic shifts but\nseverely deteriorates detecting non-semantic shifts, which can be attributed to\nthe distortion of task-agnostic features. To alleviate the issue, we present a\nsimple yet effective general OOD score named GNOME that integrates the\nconfidence scores derived from the task-agnostic and task-specific\nrepresentations. Experiments show that GNOME works well in both semantic and\nnon-semantic shift scenarios, and further brings significant improvement on two\ncross-task benchmarks where both kinds of shifts simultaneously take place. Our\ncode is available at https://github.com/lancopku/GNOME.",
+    "num_pages": 16
+}

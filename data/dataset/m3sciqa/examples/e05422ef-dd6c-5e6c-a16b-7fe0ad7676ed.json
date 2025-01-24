@@ -1,0 +1,55 @@
+{
+    "uuid": "e05422ef-dd6c-5e6c-a16b-7fe0ad7676ed",
+    "question": "Consider the paper that introduces the quantization method that achieves a score of 80.3 on Deit-B with a Weight/Activation (W/A) precision of 6/6. What is the specific range of search space for \\(\\Delta_{\\text{R1}}^s\\) during post-softmax quantization as mentioned in the experiment settings?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "87c327a8-cd52-5d23-93de-c4486887da8b"
+    ],
+    "reference_pdf": [
+        "bc431e93-410f-5eb0-a4a5-314a37e129a0",
+        "34417770-67d7-5cab-b9d4-76999c97bc02",
+        "720ede7a-1362-532b-b4b5-4436c03c5363",
+        "95808d88-d437-55ec-9af6-cb7399b1010c",
+        "23ad3ca1-b89a-5ace-a9b9-940d351b46bc",
+        "60495988-448a-5919-9470-d8561310a40d",
+        "81528b8c-c326-567e-a3ed-4ca2b0295ff2",
+        "52d72671-969b-5840-8808-73be9745a07f",
+        "720ede7a-1362-532b-b4b5-4436c03c5363",
+        "93502213-3277-5df7-a02f-39b12077c0c2",
+        "08e29bf5-665b-561e-8672-d90363383d43",
+        "e7184da4-f850-5562-ba39-441760b58a7d",
+        "6ea15eac-4060-5f1d-8629-76330e0b67c5",
+        "3b9340d4-5374-5613-a1a4-bc3c125639c6",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "1ffa6ac4-663b-5498-84b3-3148948fcba4",
+        "332d0f2a-9d5a-54b3-8d5e-e24081633c0e",
+        "f6e91a91-0b1e-5280-8522-a20492033f16",
+        "e45897f5-4429-5750-a8fb-dcfa9a904b5f",
+        "b9f85125-14a8-502f-8717-f38768038090",
+        "acce625f-be46-56f5-b5f6-13b331e2efdf",
+        "2292ac5f-ddf9-5ed5-8009-b4f7a69a8ec9",
+        "eb603d6c-2a60-504d-93ed-aef55ff4655b",
+        "ac1b0430-6781-5539-9d45-5067c0c6ff3e",
+        "b9fa129c-7848-536a-b464-b4090dd72a9a"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the quantization method that achieves a score of 80.3 on Deit-B with a Weight/Activation (W/A) precision of 6/6. What is the specific range of search space for \\(\\Delta_{\\text{R1}}^s\\) during post-softmax quantization as mentioned in the experiment settings?",
+            "reference_answer": "\\([\\frac{1}{2^{k}},\\frac{1}{2^{k+1}},...,\\frac{1}{2^{k+10}}]\\)"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.16836/comparison_table.png"
+    ]
+}

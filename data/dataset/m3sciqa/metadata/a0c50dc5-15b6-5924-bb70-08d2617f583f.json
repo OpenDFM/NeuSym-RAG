@@ -1,0 +1,22 @@
+{
+    "uuid": "a0c50dc5-15b6-5924-bb70-08d2617f583f",
+    "title": "VALHALLA: Visual Hallucination for Machine Translation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yi Li",
+        "Rameswar Panda",
+        "Yoon Kim",
+        "Chun-Fu Chen",
+        "Rogerio Feris",
+        "David Cox",
+        "Nuno Vasconcelos"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2206.00100v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\a0c50dc5-15b6-5924-bb70-08d2617f583f.pdf",
+    "bibtex": "@misc{li2022valhallavisualhallucinationformachine,\n    title = {VALHALLA: Visual Hallucination for Machine Translation},\n    author = {Yi Li and Rameswar Panda and Yoon Kim and Chun-Fu Chen and Rogerio Feris and David Cox and Nuno Vasconcelos},\n    year = {2022},\n    eprint = {2206.00100},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2206.00100},\n}",
+    "abstract": "Designing better machine translation systems by considering auxiliary inputs\nsuch as images has attracted much attention in recent years. While existing\nmethods show promising performance over the conventional text-only translation\nsystems, they typically require paired text and image as input during\ninference, which limits their applicability to real-world scenarios. In this\npaper, we introduce a visual hallucination framework, called VALHALLA, which\nrequires only source sentences at inference time and instead uses hallucinated\nvisual representations for multimodal machine translation. In particular, given\na source sentence an autoregressive hallucination transformer is used to\npredict a discrete visual representation from the input text, and the combined\ntext and hallucinated representations are utilized to obtain the target\ntranslation. We train the hallucination transformer jointly with the\ntranslation transformer using standard backpropagation with cross-entropy\nlosses while being guided by an additional loss that encourages consistency\nbetween predictions using either ground-truth or hallucinated visual\nrepresentations. Extensive experiments on three standard translation datasets\nwith a diverse set of language pairs demonstrate the effectiveness of our\napproach over both text-only baselines and state-of-the-art methods. Project\npage: http://www.svcl.ucsd.edu/projects/valhalla.",
+    "num_pages": 16
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "769ca490-f11b-5591-84c5-cdbadf78e298",
+    "title": "Learning to Reweight Examples for Robust Deep Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Mengye Ren",
+        "Wenyuan Zeng",
+        "Bin Yang",
+        "Raquel Urtasun"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1803.09050v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\769ca490-f11b-5591-84c5-cdbadf78e298.pdf",
+    "bibtex": "@misc{ren2019learningtoreweightexamplesfor,\n    title = {Learning to Reweight Examples for Robust Deep Learning},\n    author = {Mengye Ren and Wenyuan Zeng and Bin Yang and Raquel Urtasun},\n    year = {2019},\n    eprint = {1803.09050},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1803.09050},\n}",
+    "abstract": "Deep neural networks have been shown to be very powerful modeling tools for\nmany supervised learning tasks involving complex input patterns. However, they\ncan also easily overfit to training set biases and label noises. In addition to\nvarious regularizers, example reweighting algorithms are popular solutions to\nthese problems, but they require careful tuning of additional hyperparameters,\nsuch as example mining schedules and regularization hyperparameters. In\ncontrast to past reweighting methods, which typically consist of functions of\nthe cost value of each example, in this work we propose a novel meta-learning\nalgorithm that learns to assign weights to training examples based on their\ngradient directions. To determine the example weights, our method performs a\nmeta gradient descent step on the current mini-batch example weights (which are\ninitialized from zero) to minimize the loss on a clean unbiased validation set.\nOur proposed method can be easily implemented on any type of deep network, does\nnot require any additional hyperparameter tuning, and achieves impressive\nperformance on class imbalance and corrupted label problems where only a small\namount of clean validation data is available.",
+    "num_pages": 13
+}

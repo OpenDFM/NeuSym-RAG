@@ -1,0 +1,18 @@
+{
+    "uuid": "d712b278-8121-521b-b7be-028c27148a47",
+    "title": "BEEP! Korean Corpus of Online News Comments for Toxic Speech Detection",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Jihyung Moon",
+        "Won Ik Cho",
+        "Junbum Lee"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2005.12503v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\d712b278-8121-521b-b7be-028c27148a47.pdf",
+    "bibtex": "@misc{moon2020beepkoreancorpusofonline,\n    title = {BEEP! Korean Corpus of Online News Comments for Toxic Speech Detection},\n    author = {Jihyung Moon and Won Ik Cho and Junbum Lee},\n    year = {2020},\n    eprint = {2005.12503},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2005.12503},\n}",
+    "abstract": "Toxic comments in online platforms are an unavoidable social issue under the\ncloak of anonymity. Hate speech detection has been actively done for languages\nsuch as English, German, or Italian, where manually labeled corpus has been\nreleased. In this work, we first present 9.4K manually labeled entertainment\nnews comments for identifying Korean toxic speech, collected from a widely used\nonline news platform in Korea. The comments are annotated regarding social bias\nand hate speech since both aspects are correlated. The inter-annotator\nagreement Krippendorff's alpha score is 0.492 and 0.496, respectively. We\nprovide benchmarks using CharCNN, BiLSTM, and BERT, where BERT achieves the\nhighest score on all tasks. The models generally display better performance on\nbias identification, since the hate speech detection is a more subjective\nissue. Additionally, when BERT is trained with bias label for hate speech\ndetection, the prediction score increases, implying that bias and hate are\nintertwined. We make our dataset publicly available and open competitions with\nthe corpus and benchmarks.",
+    "num_pages": 7
+}

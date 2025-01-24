@@ -1,0 +1,23 @@
+{
+    "uuid": "101950db-b673-5061-9500-147447bfddc8",
+    "title": "Machine Comprehension by Text-to-Text Neural Question Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Xingdi Yuan",
+        "Tong Wang",
+        "Caglar Gulcehre",
+        "Alessandro Sordoni",
+        "Philip Bachman",
+        "Sandeep Subramanian",
+        "Saizheng Zhang",
+        "Adam Trischler"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1705.02012v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\101950db-b673-5061-9500-147447bfddc8.pdf",
+    "bibtex": "@misc{yuan2017machinecomprehensionbytexttotextneural,\n    title = {Machine Comprehension by Text-to-Text Neural Question Generation},\n    author = {Xingdi Yuan and Tong Wang and Caglar Gulcehre and Alessandro Sordoni and Philip Bachman and Sandeep Subramanian and Saizheng Zhang and Adam Trischler},\n    year = {2017},\n    eprint = {1705.02012},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1705.02012},\n}",
+    "abstract": "We propose a recurrent neural model that generates natural-language questions\nfrom documents, conditioned on answers. We show how to train the model using a\ncombination of supervised and reinforcement learning. After teacher forcing for\nstandard maximum likelihood training, we fine-tune the model using policy\ngradient techniques to maximize several rewards that measure question quality.\nMost notably, one of these rewards is the performance of a question-answering\nsystem. We motivate question generation as a means to improve the performance\nof question answering systems. Our model is trained and evaluated on the recent\nquestion-answering dataset SQuAD.",
+    "num_pages": 14
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "8f3a0cf7-ba90-5e39-8e9a-2ebf3b91b288",
+    "title": "An Empirical Study of Pre-trained Language Models in Simple Knowledge Graph Question Answering",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Nan Hu",
+        "Yike Wu",
+        "Guilin Qi",
+        "Dehai Min",
+        "Jiaoyan Chen",
+        "Jeff Z. Pan",
+        "Zafar Ali"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2303.10368v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\8f3a0cf7-ba90-5e39-8e9a-2ebf3b91b288.pdf",
+    "bibtex": "@misc{hu2023anempiricalstudyofpretrained,\n    title = {An Empirical Study of Pre-trained Language Models in Simple Knowledge Graph Question Answering},\n    author = {Nan Hu and Yike Wu and Guilin Qi and Dehai Min and Jiaoyan Chen and Jeff Z. Pan and Zafar Ali},\n    year = {2023},\n    eprint = {2303.10368},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2303.10368},\n}",
+    "abstract": "Large-scale pre-trained language models (PLMs) such as BERT have recently\nachieved great success and become a milestone in natural language processing\n(NLP). It is now the consensus of the NLP community to adopt PLMs as the\nbackbone for downstream tasks. In recent works on knowledge graph question\nanswering (KGQA), BERT or its variants have become necessary in their KGQA\nmodels. However, there is still a lack of comprehensive research and comparison\nof the performance of different PLMs in KGQA. To this end, we summarize two\nbasic KGQA frameworks based on PLMs without additional neural network modules\nto compare the performance of nine PLMs in terms of accuracy and efficiency. In\naddition, we present three benchmarks for larger-scale KGs based on the popular\nSimpleQuestions benchmark to investigate the scalability of PLMs. We carefully\nanalyze the results of all PLMs-based KGQA basic frameworks on these benchmarks\nand two other popular datasets, WebQuestionSP and FreebaseQA, and find that\nknowledge distillation techniques and knowledge enhancement methods in PLMs are\npromising for KGQA. Furthermore, we test ChatGPT, which has drawn a great deal\nof attention in the NLP community, demonstrating its impressive capabilities\nand limitations in zero-shot KGQA. We have released the code and benchmarks to\npromote the use of PLMs on KGQA.",
+    "num_pages": 38
+}

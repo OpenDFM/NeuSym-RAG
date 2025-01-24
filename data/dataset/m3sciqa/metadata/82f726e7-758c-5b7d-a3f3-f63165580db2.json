@@ -1,0 +1,17 @@
+{
+    "uuid": "82f726e7-758c-5b7d-a3f3-f63165580db2",
+    "title": "Lexicon Learning for Few-Shot Neural Sequence Modeling",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Ekin Akyürek",
+        "Jacob Andreas"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.03993v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\82f726e7-758c-5b7d-a3f3-f63165580db2.pdf",
+    "bibtex": "@misc{akyrek2021lexiconlearningforfewshotneural,\n    title = {Lexicon Learning for Few-Shot Neural Sequence Modeling},\n    author = {Ekin Akyürek and Jacob Andreas},\n    year = {2021},\n    eprint = {2106.03993},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.03993},\n}",
+    "abstract": "Sequence-to-sequence transduction is the core problem in language processing\napplications as diverse as semantic parsing, machine translation, and\ninstruction following. The neural network models that provide the dominant\nsolution to these problems are brittle, especially in low-resource settings:\nthey fail to generalize correctly or systematically from small datasets. Past\nwork has shown that many failures of systematic generalization arise from\nneural models' inability to disentangle lexical phenomena from syntactic ones.\nTo address this, we augment neural decoders with a lexical translation\nmechanism that generalizes existing copy mechanisms to incorporate learned,\ndecontextualized, token-level translation rules. We describe how to initialize\nthis mechanism using a variety of lexicon learning algorithms, and show that it\nimproves systematic generalization on a diverse set of sequence modeling tasks\ndrawn from cognitive science, formal semantics, and machine translation.",
+    "num_pages": 13
+}

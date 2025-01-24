@@ -1,0 +1,18 @@
+{
+    "uuid": "4d8eda47-efe5-5b38-b942-68343fe657b2",
+    "title": "Editing Factual Knowledge in Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Nicola De Cao",
+        "Wilker Aziz",
+        "Ivan Titov"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2104.08164v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\4d8eda47-efe5-5b38-b942-68343fe657b2.pdf",
+    "bibtex": "@misc{cao2021editingfactualknowledgeinlanguage,\n    title = {Editing Factual Knowledge in Language Models},\n    author = {Nicola De Cao and Wilker Aziz and Ivan Titov},\n    year = {2021},\n    eprint = {2104.08164},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2104.08164},\n}",
+    "abstract": "The factual knowledge acquired during pre-training and stored in the\nparameters of Language Models (LMs) can be useful in downstream tasks (e.g.,\nquestion answering or textual inference). However, some facts can be\nincorrectly induced or become obsolete over time. We present KnowledgeEditor, a\nmethod which can be used to edit this knowledge and, thus, fix 'bugs' or\nunexpected predictions without the need for expensive re-training or\nfine-tuning. Besides being computationally efficient, KnowledgeEditordoes not\nrequire any modifications in LM pre-training (e.g., the use of meta-learning).\nIn our approach, we train a hyper-network with constrained optimization to\nmodify a fact without affecting the rest of the knowledge; the trained\nhyper-network is then used to predict the weight update at test time. We show\nKnowledgeEditor's efficacy with two popular architectures and\nknowledge-intensive tasks: i) a BERT model fine-tuned for fact-checking, and\nii) a sequence-to-sequence BART model for question answering. With our method,\nchanging a prediction on the specific wording of a query tends to result in a\nconsistent change in predictions also for its paraphrases. We show that this\ncan be further encouraged by exploiting (e.g., automatically-generated)\nparaphrases during training. Interestingly, our hyper-network can be regarded\nas a 'probe' revealing which components need to be changed to manipulate\nfactual knowledge; our analysis shows that the updates tend to be concentrated\non a small subset of components. Source code available at\nhttps://github.com/nicola-decao/KnowledgeEditor",
+    "num_pages": 16
+}

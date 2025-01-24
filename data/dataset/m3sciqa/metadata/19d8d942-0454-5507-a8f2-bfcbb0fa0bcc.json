@@ -1,0 +1,17 @@
+{
+    "uuid": "19d8d942-0454-5507-a8f2-bfcbb0fa0bcc",
+    "title": "Length-Adaptive Transformer: Train Once with Length Drop, Use Anytime with Search",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Gyuwan Kim",
+        "Kyunghyun Cho"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.07003v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\19d8d942-0454-5507-a8f2-bfcbb0fa0bcc.pdf",
+    "bibtex": "@misc{kim2021lengthadaptivetransformertrainoncewith,\n    title = {Length-Adaptive Transformer: Train Once with Length Drop, Use Anytime with Search},\n    author = {Gyuwan Kim and Kyunghyun Cho},\n    year = {2021},\n    eprint = {2010.07003},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.07003},\n}",
+    "abstract": "Despite transformers' impressive accuracy, their computational cost is often\nprohibitive to use with limited computational resources. Most previous\napproaches to improve inference efficiency require a separate model for each\npossible computational budget. In this paper, we extend PoWER-BERT (Goyal et\nal., 2020) and propose Length-Adaptive Transformer that can be used for various\ninference scenarios after one-shot training. We train a transformer with\nLengthDrop, a structural variant of dropout, which stochastically determines a\nsequence length at each layer. We then conduct a multi-objective evolutionary\nsearch to find a length configuration that maximizes the accuracy and minimizes\nthe efficiency metric under any given computational budget. Additionally, we\nsignificantly extend the applicability of PoWER-BERT beyond sequence-level\nclassification into token-level classification with Drop-and-Restore process\nthat drops word-vectors temporarily in intermediate layers and restores at the\nlast layer if necessary. We empirically verify the utility of the proposed\napproach by demonstrating the superior accuracy-efficiency trade-off under\nvarious setups, including span-based question answering and text\nclassification. Code is available at\nhttps://github.com/clovaai/length-adaptive-transformer.",
+    "num_pages": 11
+}

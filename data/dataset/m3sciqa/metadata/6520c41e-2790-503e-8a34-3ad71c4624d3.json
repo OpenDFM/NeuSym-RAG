@@ -1,0 +1,22 @@
+{
+    "uuid": "6520c41e-2790-503e-8a34-3ad71c4624d3",
+    "title": "ERNIE 2.0: A Continual Pre-training Framework for Language Understanding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Yu Sun",
+        "Shuohuan Wang",
+        "Yukun Li",
+        "Shikun Feng",
+        "Hao Tian",
+        "Hua Wu",
+        "Haifeng Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1907.12412v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\6520c41e-2790-503e-8a34-3ad71c4624d3.pdf",
+    "bibtex": "@misc{sun2019ernie20acontinualpretraining,\n    title = {ERNIE 2.0: A Continual Pre-training Framework for Language Understanding},\n    author = {Yu Sun and Shuohuan Wang and Yukun Li and Shikun Feng and Hao Tian and Hua Wu and Haifeng Wang},\n    year = {2019},\n    eprint = {1907.12412},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1907.12412},\n}",
+    "abstract": "Recently, pre-trained models have achieved state-of-the-art results in\nvarious language understanding tasks, which indicates that pre-training on\nlarge-scale corpora may play a crucial role in natural language processing.\nCurrent pre-training procedures usually focus on training the model with\nseveral simple tasks to grasp the co-occurrence of words or sentences. However,\nbesides co-occurring, there exists other valuable lexical, syntactic and\nsemantic information in training corpora, such as named entity, semantic\ncloseness and discourse relations. In order to extract to the fullest extent,\nthe lexical, syntactic and semantic information from training corpora, we\npropose a continual pre-training framework named ERNIE 2.0 which builds and\nlearns incrementally pre-training tasks through constant multi-task learning.\nExperimental results demonstrate that ERNIE 2.0 outperforms BERT and XLNet on\n16 tasks including English tasks on GLUE benchmarks and several common tasks in\nChinese. The source codes and pre-trained models have been released at\nhttps://github.com/PaddlePaddle/ERNIE.",
+    "num_pages": 8
+}

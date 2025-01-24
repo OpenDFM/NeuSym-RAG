@@ -1,0 +1,23 @@
+{
+    "uuid": "5b258a8f-7b30-5e2b-8385-6336c6743dde",
+    "title": "Selection via Proxy: Efficient Data Selection for Deep Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Cody Coleman",
+        "Christopher Yeh",
+        "Stephen Mussmann",
+        "Baharan Mirzasoleiman",
+        "Peter Bailis",
+        "Percy Liang",
+        "Jure Leskovec",
+        "Matei Zaharia"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1906.11829v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\5b258a8f-7b30-5e2b-8385-6336c6743dde.pdf",
+    "bibtex": "@misc{coleman2020selectionviaproxyefficientdata,\n    title = {Selection via Proxy: Efficient Data Selection for Deep Learning},\n    author = {Cody Coleman and Christopher Yeh and Stephen Mussmann and Baharan Mirzasoleiman and Peter Bailis and Percy Liang and Jure Leskovec and Matei Zaharia},\n    year = {2020},\n    eprint = {1906.11829},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1906.11829},\n}",
+    "abstract": "Data selection methods, such as active learning and core-set selection, are\nuseful tools for machine learning on large datasets. However, they can be\nprohibitively expensive to apply in deep learning because they depend on\nfeature representations that need to be learned. In this work, we show that we\ncan greatly improve the computational efficiency by using a small proxy model\nto perform data selection (e.g., selecting data points to label for active\nlearning). By removing hidden layers from the target model, using smaller\narchitectures, and training for fewer epochs, we create proxies that are an\norder of magnitude faster to train. Although these small proxy models have\nhigher error rates, we find that they empirically provide useful signals for\ndata selection. We evaluate this \"selection via proxy\" (SVP) approach on\nseveral data selection tasks across five datasets: CIFAR10, CIFAR100, ImageNet,\nAmazon Review Polarity, and Amazon Review Full. For active learning, applying\nSVP can give an order of magnitude improvement in data selection runtime (i.e.,\nthe time it takes to repeatedly train and select points) without significantly\nincreasing the final error (often within 0.1%). For core-set selection on\nCIFAR10, proxies that are over 10x faster to train than their larger, more\naccurate targets can remove up to 50% of the data without harming the final\naccuracy of the target, leading to a 1.6x end-to-end training time improvement.",
+    "num_pages": 25
+}

@@ -1,0 +1,24 @@
+{
+    "uuid": "8515c774-3725-50a8-9296-a89b4974eb1b",
+    "title": "Tactical Rewind: Self-Correction via Backtracking in Vision-and-Language Navigation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Liyiming Ke",
+        "Xiujun Li",
+        "Yonatan Bisk",
+        "Ari Holtzman",
+        "Zhe Gan",
+        "Jingjing Liu",
+        "Jianfeng Gao",
+        "Yejin Choi",
+        "Siddhartha Srinivasa"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1903.02547v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\8515c774-3725-50a8-9296-a89b4974eb1b.pdf",
+    "bibtex": "@misc{ke2019tacticalrewindselfcorrectionviabacktracking,\n    title = {Tactical Rewind: Self-Correction via Backtracking in Vision-and-Language Navigation},\n    author = {Liyiming Ke and Xiujun Li and Yonatan Bisk and Ari Holtzman and Zhe Gan and Jingjing Liu and Jianfeng Gao and Yejin Choi and Siddhartha Srinivasa},\n    year = {2019},\n    eprint = {1903.02547},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1903.02547},\n}",
+    "abstract": "We present the Frontier Aware Search with backTracking (FAST) Navigator, a\ngeneral framework for action decoding, that achieves state-of-the-art results\non the Room-to-Room (R2R) Vision-and-Language navigation challenge of Anderson\net. al. (2018). Given a natural language instruction and photo-realistic image\nviews of a previously unseen environment, the agent was tasked with navigating\nfrom source to target location as quickly as possible. While all current\napproaches make local action decisions or score entire trajectories using beam\nsearch, ours balances local and global signals when exploring an unobserved\nenvironment. Importantly, this lets us act greedily but use global signals to\nbacktrack when necessary. Applying FAST framework to existing state-of-the-art\nmodels achieved a 17% relative gain, an absolute 6% gain on Success rate\nweighted by Path Length (SPL).",
+    "num_pages": 13
+}

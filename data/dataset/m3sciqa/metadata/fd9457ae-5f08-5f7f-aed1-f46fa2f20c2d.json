@@ -1,0 +1,19 @@
+{
+    "uuid": "fd9457ae-5f08-5f7f-aed1-f46fa2f20c2d",
+    "title": "Reading Wikipedia to Answer Open-Domain Questions",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Danqi Chen",
+        "Adam Fisch",
+        "Jason Weston",
+        "Antoine Bordes"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1704.00051v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\fd9457ae-5f08-5f7f-aed1-f46fa2f20c2d.pdf",
+    "bibtex": "@misc{chen2017readingwikipediatoansweropendomain,\n    title = {Reading Wikipedia to Answer Open-Domain Questions},\n    author = {Danqi Chen and Adam Fisch and Jason Weston and Antoine Bordes},\n    year = {2017},\n    eprint = {1704.00051},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1704.00051},\n}",
+    "abstract": "This paper proposes to tackle open- domain question answering using Wikipedia\nas the unique knowledge source: the answer to any factoid question is a text\nspan in a Wikipedia article. This task of machine reading at scale combines the\nchallenges of document retrieval (finding the relevant articles) with that of\nmachine comprehension of text (identifying the answer spans from those\narticles). Our approach combines a search component based on bigram hashing and\nTF-IDF matching with a multi-layer recurrent neural network model trained to\ndetect answers in Wikipedia paragraphs. Our experiments on multiple existing QA\ndatasets indicate that (1) both modules are highly competitive with respect to\nexisting counterparts and (2) multitask learning using distant supervision on\ntheir combination is an effective complete system on this challenging task.",
+    "num_pages": 10
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "6c4dc282-e455-530e-9a34-4900a85e2964",
+    "title": "Comprehending and Ordering Semantics for Image Captioning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yehao Li",
+        "Yingwei Pan",
+        "Ting Yao",
+        "Tao Mei"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2206.06930v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\6c4dc282-e455-530e-9a34-4900a85e2964.pdf",
+    "bibtex": "@misc{li2022comprehendingandorderingsemanticsfor,\n    title = {Comprehending and Ordering Semantics for Image Captioning},\n    author = {Yehao Li and Yingwei Pan and Ting Yao and Tao Mei},\n    year = {2022},\n    eprint = {2206.06930},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2206.06930},\n}",
+    "abstract": "Comprehending the rich semantics in an image and ordering them in linguistic\norder are essential to compose a visually-grounded and linguistically coherent\ndescription for image captioning. Modern techniques commonly capitalize on a\npre-trained object detector/classifier to mine the semantics in an image, while\nleaving the inherent linguistic ordering of semantics under-exploited. In this\npaper, we propose a new recipe of Transformer-style structure, namely\nComprehending and Ordering Semantics Networks (COS-Net), that novelly unifies\nan enriched semantic comprehending and a learnable semantic ordering processes\ninto a single architecture. Technically, we initially utilize a cross-modal\nretrieval model to search the relevant sentences of each image, and all words\nin the searched sentences are taken as primary semantic cues. Next, a novel\nsemantic comprehender is devised to filter out the irrelevant semantic words in\nprimary semantic cues, and meanwhile infer the missing relevant semantic words\nvisually grounded in the image. After that, we feed all the screened and\nenriched semantic words into a semantic ranker, which learns to allocate all\nsemantic words in linguistic order as humans. Such sequence of ordered semantic\nwords are further integrated with visual tokens of images to trigger sentence\ngeneration. Empirical evidences show that COS-Net clearly surpasses the\nstate-of-the-art approaches on COCO and achieves to-date the best CIDEr score\nof 141.1% on Karpathy test split. Source code is available at\n\\url{https://github.com/YehLi/xmodaler/tree/master/configs/image_caption/cosnet}.",
+    "num_pages": 10
+}

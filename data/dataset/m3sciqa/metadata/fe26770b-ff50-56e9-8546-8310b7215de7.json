@@ -1,0 +1,19 @@
+{
+    "uuid": "fe26770b-ff50-56e9-8546-8310b7215de7",
+    "title": "Falsesum: Generating Document-level NLI Examples for Recognizing Factual Inconsistency in Summarization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Prasetya Ajie Utama",
+        "Joshua Bambrick",
+        "Nafise Sadat Moosavi",
+        "Iryna Gurevych"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.06009v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\fe26770b-ff50-56e9-8546-8310b7215de7.pdf",
+    "bibtex": "@misc{utama2022falsesumgeneratingdocumentlevelnliexamples,\n    title = {Falsesum: Generating Document-level NLI Examples for Recognizing Factual Inconsistency in Summarization},\n    author = {Prasetya Ajie Utama and Joshua Bambrick and Nafise Sadat Moosavi and Iryna Gurevych},\n    year = {2022},\n    eprint = {2205.06009},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.06009},\n}",
+    "abstract": "Neural abstractive summarization models are prone to generate summaries which\nare factually inconsistent with their source documents. Previous work has\nintroduced the task of recognizing such factual inconsistency as a downstream\napplication of natural language inference (NLI). However, state-of-the-art NLI\nmodels perform poorly in this context due to their inability to generalize to\nthe target task. In this work, we show that NLI models can be effective for\nthis task when the training data is augmented with high-quality task-oriented\nexamples. We introduce Falsesum, a data generation pipeline leveraging a\ncontrollable text generation model to perturb human-annotated summaries,\nintroducing varying types of factual inconsistencies. Unlike previously\nintroduced document-level NLI datasets, our generated dataset contains examples\nthat are diverse and inconsistent yet plausible. We show that models trained on\na Falsesum-augmented NLI dataset improve the state-of-the-art performance\nacross four benchmarks for detecting factual inconsistency in summarization.\n  The code to obtain the dataset is available online at\nhttps://github.com/joshbambrick/Falsesum",
+    "num_pages": 14
+}

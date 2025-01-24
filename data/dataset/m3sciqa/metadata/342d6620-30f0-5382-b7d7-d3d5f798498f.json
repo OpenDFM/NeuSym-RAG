@@ -1,0 +1,17 @@
+{
+    "uuid": "342d6620-30f0-5382-b7d7-d3d5f798498f",
+    "title": "CLIFF: Contrastive Learning for Improving Faithfulness and Factuality in Abstractive Summarization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Shuyang Cao",
+        "Lu Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.09209v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\342d6620-30f0-5382-b7d7-d3d5f798498f.pdf",
+    "bibtex": "@misc{cao2021cliffcontrastivelearningforimproving,\n    title = {CLIFF: Contrastive Learning for Improving Faithfulness and Factuality in Abstractive Summarization},\n    author = {Shuyang Cao and Lu Wang},\n    year = {2021},\n    eprint = {2109.09209},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.09209},\n}",
+    "abstract": "We study generating abstractive summaries that are faithful and factually\nconsistent with the given articles. A novel contrastive learning formulation is\npresented, which leverages both reference summaries, as positive training data,\nand automatically generated erroneous summaries, as negative training data, to\ntrain summarization systems that are better at distinguishing between them. We\nfurther design four types of strategies for creating negative samples, to\nresemble errors made commonly by two state-of-the-art models, BART and PEGASUS,\nfound in our new human annotations of summary errors. Experiments on XSum and\nCNN/Daily Mail show that our contrastive learning framework is robust across\ndatasets and models. It consistently produces more factual summaries than\nstrong comparisons with post error correction, entailment-based reranking, and\nunlikelihood training, according to QA-based factuality evaluation. Human\njudges echo the observation and find that our model summaries correct more\nerrors.",
+    "num_pages": 17
+}

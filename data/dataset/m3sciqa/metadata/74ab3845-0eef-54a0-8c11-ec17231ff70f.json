@@ -1,0 +1,20 @@
+{
+    "uuid": "74ab3845-0eef-54a0-8c11-ec17231ff70f",
+    "title": "Multi-Grained Knowledge Retrieval for End-to-End Task-Oriented Dialog",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Fanqi Wan",
+        "Weizhou Shen",
+        "Ke Yang",
+        "Xiaojun Quan",
+        "Wei Bi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.10149v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\74ab3845-0eef-54a0-8c11-ec17231ff70f.pdf",
+    "bibtex": "@misc{wan2023multigrainedknowledgeretrievalforendtoend,\n    title = {Multi-Grained Knowledge Retrieval for End-to-End Task-Oriented Dialog},\n    author = {Fanqi Wan and Weizhou Shen and Ke Yang and Xiaojun Quan and Wei Bi},\n    year = {2023},\n    eprint = {2305.10149},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.10149},\n}",
+    "abstract": "Retrieving proper domain knowledge from an external database lies at the\nheart of end-to-end task-oriented dialog systems to generate informative\nresponses. Most existing systems blend knowledge retrieval with response\ngeneration and optimize them with direct supervision from reference responses,\nleading to suboptimal retrieval performance when the knowledge base becomes\nlarge-scale. To address this, we propose to decouple knowledge retrieval from\nresponse generation and introduce a multi-grained knowledge retriever (MAKER)\nthat includes an entity selector to search for relevant entities and an\nattribute selector to filter out irrelevant attributes. To train the retriever,\nwe propose a novel distillation objective that derives supervision signals from\nthe response generator. Experiments conducted on three standard benchmarks with\nboth small and large-scale knowledge bases demonstrate that our retriever\nperforms knowledge retrieval more effectively than existing methods. Our code\nhas been made publicly\navailable.\\footnote{https://github.com/18907305772/MAKER}",
+    "num_pages": 13
+}

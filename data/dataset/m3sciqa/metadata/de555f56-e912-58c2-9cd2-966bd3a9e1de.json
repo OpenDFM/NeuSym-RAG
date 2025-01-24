@@ -1,0 +1,17 @@
+{
+    "uuid": "de555f56-e912-58c2-9cd2-966bd3a9e1de",
+    "title": "Hyperdecoders: Instance-specific decoders for multi-task NLP",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Hamish Ivison",
+        "Matthew E. Peters"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.08304v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\de555f56-e912-58c2-9cd2-966bd3a9e1de.pdf",
+    "bibtex": "@misc{ivison2022hyperdecodersinstancespecificdecodersformultitask,\n    title = {Hyperdecoders: Instance-specific decoders for multi-task NLP},\n    author = {Hamish Ivison and Matthew E. Peters},\n    year = {2022},\n    eprint = {2203.08304},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.08304},\n}",
+    "abstract": "We investigate input-conditioned hypernetworks for multi-tasking in NLP,\ngenerating parameter-efficient adaptations for a decoder using a hypernetwork\nconditioned on the output of an encoder. This approach produces a unique\ndecoder adaptation for every input instance, allowing the network a larger\ndegree of flexibility than prior work that only produces one decoder adaptation\nper task. We apply our method to sequence classification tasks, extractive QA,\nand summarisation and find that it surpasses previous parameter efficient\nfine-tuning methods and often outperforms fully finetuning the underlying\nmodel. An analysis of the embeddings used by our hypernetwork shows that they\nare sensitive to output label and type, suggesting that our approach better\nmaps from encoder representations to output labels. Our code is publicly\navailable at https://github.com/allenai/hyperdecoders.",
+    "num_pages": 16
+}

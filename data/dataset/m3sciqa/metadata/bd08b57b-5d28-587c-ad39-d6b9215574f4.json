@@ -1,0 +1,20 @@
+{
+    "uuid": "bd08b57b-5d28-587c-ad39-d6b9215574f4",
+    "title": "What Do Compressed Deep Neural Networks Forget?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Sara Hooker",
+        "Aaron Courville",
+        "Gregory Clark",
+        "Yann Dauphin",
+        "Andrea Frome"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1911.05248v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\bd08b57b-5d28-587c-ad39-d6b9215574f4.pdf",
+    "bibtex": "@misc{hooker2021whatdocompresseddeepneural,\n    title = {What Do Compressed Deep Neural Networks Forget?},\n    author = {Sara Hooker and Aaron Courville and Gregory Clark and Yann Dauphin and Andrea Frome},\n    year = {2021},\n    eprint = {1911.05248},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1911.05248},\n}",
+    "abstract": "Deep neural network pruning and quantization techniques have demonstrated it\nis possible to achieve high levels of compression with surprisingly little\ndegradation to test set accuracy. However, this measure of performance conceals\nsignificant differences in how different classes and images are impacted by\nmodel compression techniques. We find that models with radically different\nnumbers of weights have comparable top-line performance metrics but diverge\nconsiderably in behavior on a narrow subset of the dataset. This small subset\nof data points, which we term Pruning Identified Exemplars (PIEs) are\nsystematically more impacted by the introduction of sparsity. Compression\ndisproportionately impacts model performance on the underrepresented long-tail\nof the data distribution. PIEs over-index on atypical or noisy images that are\nfar more challenging for both humans and algorithms to classify. Our work\nprovides intuition into the role of capacity in deep neural networks and the\ntrade-offs incurred by compression. An understanding of this disparate impact\nis critical given the widespread deployment of compressed models in the wild.",
+    "num_pages": 20
+}

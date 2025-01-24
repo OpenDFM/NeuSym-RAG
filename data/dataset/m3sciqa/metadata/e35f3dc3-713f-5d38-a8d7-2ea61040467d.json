@@ -1,0 +1,21 @@
+{
+    "uuid": "e35f3dc3-713f-5d38-a8d7-2ea61040467d",
+    "title": "Distinguish Confusing Law Articles for Legal Judgment Prediction",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Nuo Xu",
+        "Pinghui Wang",
+        "Long Chen",
+        "Li Pan",
+        "Xiaoyan Wang",
+        "Junzhou Zhao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.02557v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\e35f3dc3-713f-5d38-a8d7-2ea61040467d.pdf",
+    "bibtex": "@misc{xu2020distinguishconfusinglawarticlesfor,\n    title = {Distinguish Confusing Law Articles for Legal Judgment Prediction},\n    author = {Nuo Xu and Pinghui Wang and Long Chen and Li Pan and Xiaoyan Wang and Junzhou Zhao},\n    year = {2020},\n    eprint = {2004.02557},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2004.02557},\n}",
+    "abstract": "Legal Judgment Prediction (LJP) is the task of automatically predicting a law\ncase's judgment results given a text describing its facts, which has excellent\nprospects in judicial assistance systems and convenient services for the\npublic. In practice, confusing charges are frequent, because law cases\napplicable to similar law articles are easily misjudged. For addressing this\nissue, the existing method relies heavily on domain experts, which hinders its\napplication in different law systems. In this paper, we present an end-to-end\nmodel, LADAN, to solve the task of LJP. To distinguish confusing charges, we\npropose a novel graph neural network to automatically learn subtle differences\nbetween confusing law articles and design a novel attention mechanism that\nfully exploits the learned differences to extract compelling discriminative\nfeatures from fact descriptions attentively. Experiments conducted on\nreal-world datasets demonstrate the superiority of our LADAN.",
+    "num_pages": 10
+}

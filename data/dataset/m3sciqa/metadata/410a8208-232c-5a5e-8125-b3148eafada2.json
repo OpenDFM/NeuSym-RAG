@@ -1,0 +1,18 @@
+{
+    "uuid": "410a8208-232c-5a5e-8125-b3148eafada2",
+    "title": "Active Example Selection for In-Context Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yiming Zhang",
+        "Shi Feng",
+        "Chenhao Tan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2211.04486v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\410a8208-232c-5a5e-8125-b3148eafada2.pdf",
+    "bibtex": "@misc{zhang2022activeexampleselectionforincontext,\n    title = {Active Example Selection for In-Context Learning},\n    author = {Yiming Zhang and Shi Feng and Chenhao Tan},\n    year = {2022},\n    eprint = {2211.04486},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2211.04486},\n}",
+    "abstract": "With a handful of demonstration examples, large-scale language models show\nstrong capability to perform various tasks by in-context learning from these\nexamples, without any fine-tuning. We demonstrate that in-context learning\nperformance can be highly unstable across samples of examples, indicating the\nidiosyncrasies of how language models acquire information. We formulate example\nselection for in-context learning as a sequential decision problem, and propose\na reinforcement learning algorithm for identifying generalizable policies to\nselect demonstration examples. For GPT-2, our learned policies demonstrate\nstrong abilities of generalizing to unseen tasks in training, with a $5.8\\%$\nimprovement on average. Examples selected from our learned policies can even\nachieve a small improvement on GPT-3 Ada. However, the improvement diminishes\non larger GPT-3 models, suggesting emerging capabilities of large language\nmodels.",
+    "num_pages": 15
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "f841f8ad-680a-5de6-872e-3b6b9aec1c2b",
+    "title": "BeliefBank: Adding Memory to a Pre-Trained Language Model for a Systematic Notion of Belief",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Nora Kassner",
+        "Oyvind Tafjord",
+        "Hinrich Schütze",
+        "Peter Clark"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.14723v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\f841f8ad-680a-5de6-872e-3b6b9aec1c2b.pdf",
+    "bibtex": "@misc{kassner2021beliefbankaddingmemorytoa,\n    title = {BeliefBank: Adding Memory to a Pre-Trained Language Model for a Systematic Notion of Belief},\n    author = {Nora Kassner and Oyvind Tafjord and Hinrich Schütze and Peter Clark},\n    year = {2021},\n    eprint = {2109.14723},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.14723},\n}",
+    "abstract": "Although pretrained language models (PTLMs) contain significant amounts of\nworld knowledge, they can still produce inconsistent answers to questions when\nprobed, even after specialized training. As a result, it can be hard to\nidentify what the model actually \"believes\" about the world, making it\nsusceptible to inconsistent behavior and simple errors. Our goal is to reduce\nthese problems. Our approach is to embed a PTLM in a broader system that also\nincludes an evolving, symbolic memory of beliefs -- a BeliefBank -- that\nrecords but then may modify the raw PTLM answers. We describe two mechanisms to\nimprove belief consistency in the overall system. First, a reasoning component\n-- a weighted MaxSAT solver -- revises beliefs that significantly clash with\nothers. Second, a feedback component issues future queries to the PTLM using\nknown beliefs as context. We show that, in a controlled experimental setting,\nthese two mechanisms result in more consistent beliefs in the overall system,\nimproving both the accuracy and consistency of its answers over time. This is\nsignificant as it is a first step towards PTLM-based architectures with a\nsystematic notion of belief, enabling them to construct a more coherent picture\nof the world, and improve over time without model retraining.",
+    "num_pages": 13
+}

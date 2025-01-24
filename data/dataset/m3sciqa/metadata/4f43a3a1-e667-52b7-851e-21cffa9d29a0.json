@@ -1,0 +1,26 @@
+{
+    "uuid": "4f43a3a1-e667-52b7-851e-21cffa9d29a0",
+    "title": "Least-to-Most Prompting Enables Complex Reasoning in Large Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Denny Zhou",
+        "Nathanael Schärli",
+        "Le Hou",
+        "Jason Wei",
+        "Nathan Scales",
+        "Xuezhi Wang",
+        "Dale Schuurmans",
+        "Claire Cui",
+        "Olivier Bousquet",
+        "Quoc Le",
+        "Ed Chi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.10625v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\4f43a3a1-e667-52b7-851e-21cffa9d29a0.pdf",
+    "bibtex": "@misc{zhou2023leasttomostpromptingenablescomplexreasoning,\n    title = {Least-to-Most Prompting Enables Complex Reasoning in Large Language Models},\n    author = {Denny Zhou and Nathanael Schärli and Le Hou and Jason Wei and Nathan Scales and Xuezhi Wang and Dale Schuurmans and Claire Cui and Olivier Bousquet and Quoc Le and Ed Chi},\n    year = {2023},\n    eprint = {2205.10625},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/2205.10625},\n}",
+    "abstract": "Chain-of-thought prompting has demonstrated remarkable performance on various\nnatural language reasoning tasks. However, it tends to perform poorly on tasks\nwhich requires solving problems harder than the exemplars shown in the prompts.\nTo overcome this challenge of easy-to-hard generalization, we propose a novel\nprompting strategy, least-to-most prompting. The key idea in this strategy is\nto break down a complex problem into a series of simpler subproblems and then\nsolve them in sequence. Solving each subproblem is facilitated by the answers\nto previously solved subproblems. Our experimental results on tasks related to\nsymbolic manipulation, compositional generalization, and math reasoning reveal\nthat least-to-most prompting is capable of generalizing to more difficult\nproblems than those seen in the prompts. A notable finding is that when the\nGPT-3 code-davinci-002 model is used with least-to-most prompting, it can solve\nthe compositional generalization benchmark SCAN in any split (including length\nsplit) with an accuracy of at least 99% using just 14 exemplars, compared to\nonly 16% accuracy with chain-of-thought prompting. This is particularly\nnoteworthy because neural-symbolic models in the literature that specialize in\nsolving SCAN are trained on the entire training set containing over 15,000\nexamples. We have included prompts for all the tasks in the Appendix.",
+    "num_pages": 61
+}

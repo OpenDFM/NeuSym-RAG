@@ -1,0 +1,22 @@
+{
+    "uuid": "46d4aabb-5f18-5e81-8613-d3af7d3f5a8a",
+    "title": "Decomposed Prompting: A Modular Approach for Solving Complex Tasks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Tushar Khot",
+        "Harsh Trivedi",
+        "Matthew Finlayson",
+        "Yao Fu",
+        "Kyle Richardson",
+        "Peter Clark",
+        "Ashish Sabharwal"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.02406v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\46d4aabb-5f18-5e81-8613-d3af7d3f5a8a.pdf",
+    "bibtex": "@misc{khot2023decomposedpromptingamodularapproach,\n    title = {Decomposed Prompting: A Modular Approach for Solving Complex Tasks},\n    author = {Tushar Khot and Harsh Trivedi and Matthew Finlayson and Yao Fu and Kyle Richardson and Peter Clark and Ashish Sabharwal},\n    year = {2023},\n    eprint = {2210.02406},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.02406},\n}",
+    "abstract": "Few-shot prompting is a surprisingly powerful way to use Large Language\nModels (LLMs) to solve various tasks. However, this approach struggles as the\ntask complexity increases or when the individual reasoning steps of the task\nthemselves are hard to learn, especially when embedded in more complex tasks.\nTo address this, we propose Decomposed Prompting, a new approach to solve\ncomplex tasks by decomposing them (via prompting) into simpler sub-tasks that\ncan be delegated to a library of prompting-based LLMs dedicated to these\nsub-tasks. This modular structure allows each prompt to be optimized for its\nspecific sub-task, further decomposed if necessary, and even easily replaced\nwith more effective prompts, trained models, or symbolic functions if desired.\nWe show that the flexibility and modularity of Decomposed Prompting allows it\nto outperform prior work on few-shot prompting using GPT3. On symbolic\nreasoning tasks, we can further decompose sub-tasks that are hard for LLMs into\neven simpler solvable sub-tasks. When the complexity comes from the input\nlength, we can recursively decompose the task into the same task but with\nsmaller inputs. We also evaluate our approach on textual multi-step reasoning\ntasks: on long-context multi-hop QA task, we can more effectively teach the\nsub-tasks via our separate sub-tasks prompts; and on open-domain multi-hop QA,\nwe can incorporate a symbolic information retrieval within our decomposition\nframework, leading to improved performance on both tasks. Datasets, Code and\nPrompts available at https://github.com/allenai/DecomP.",
+    "num_pages": 69
+}

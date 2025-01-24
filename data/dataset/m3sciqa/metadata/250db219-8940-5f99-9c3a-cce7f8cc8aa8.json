@@ -1,0 +1,22 @@
+{
+    "uuid": "250db219-8940-5f99-9c3a-cce7f8cc8aa8",
+    "title": "SPACE-3: Unified Dialog Model Pre-training for Task-Oriented Dialog Understanding and Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Wanwei He",
+        "Yinpei Dai",
+        "Min Yang",
+        "Jian Sun",
+        "Fei Huang",
+        "Luo Si",
+        "Yongbin Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2209.06664v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\250db219-8940-5f99-9c3a-cce7f8cc8aa8.pdf",
+    "bibtex": "@misc{he2022space3unifieddialogmodelpretraining,\n    title = {SPACE-3: Unified Dialog Model Pre-training for Task-Oriented Dialog Understanding and Generation},\n    author = {Wanwei He and Yinpei Dai and Min Yang and Jian Sun and Fei Huang and Luo Si and Yongbin Li},\n    year = {2022},\n    eprint = {2209.06664},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2209.06664},\n}",
+    "abstract": "Recently, pre-training methods have shown remarkable success in task-oriented\ndialog (TOD) systems. However, most existing pre-trained models for TOD focus\non either dialog understanding or dialog generation, but not both. In this\npaper, we propose SPACE-3, a novel unified semi-supervised pre-trained\nconversation model learning from large-scale dialog corpora with limited\nannotations, which can be effectively fine-tuned on a wide range of downstream\ndialog tasks. Specifically, SPACE-3 consists of four successive components in a\nsingle transformer to maintain a task-flow in TOD systems: (i) a dialog\nencoding module to encode dialog history, (ii) a dialog understanding module to\nextract semantic vectors from either user queries or system responses, (iii) a\ndialog policy module to generate a policy vector that contains high-level\nsemantics of the response, and (iv) a dialog generation module to produce\nappropriate responses. We design a dedicated pre-training objective for each\ncomponent. Concretely, we pre-train the dialog encoding module with span mask\nlanguage modeling to learn contextualized dialog information. To capture the\nstructured dialog semantics, we pre-train the dialog understanding module via a\nnovel tree-induced semi-supervised contrastive learning objective with the help\nof extra dialog annotations. In addition, we pre-train the dialog policy module\nby minimizing the L2 distance between its output policy vector and the semantic\nvector of the response for policy optimization. Finally, the dialog generation\nmodel is pre-trained by language modeling. Results show that SPACE-3 achieves\nstate-of-the-art performance on eight downstream dialog benchmarks, including\nintent prediction, dialog state tracking, and end-to-end dialog modeling. We\nalso show that SPACE-3 has a stronger few-shot ability than existing models\nunder the low-resource setting.",
+    "num_pages": 14
+}

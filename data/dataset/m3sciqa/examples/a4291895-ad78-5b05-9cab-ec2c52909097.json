@@ -1,0 +1,52 @@
+{
+    "uuid": "a4291895-ad78-5b05-9cab-ec2c52909097",
+    "question": "Consider the paper that introduces the model represented with a dot marker. What specific performance improvement does the model, DialoGPT Large, show over the standard DialoGPT (345M) model in terms of METEOR score according to the DSTC-7 Dialogue Generation Challenge results?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "image",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "55abc53e-a52b-5dae-a143-9f5a1b7e61e0"
+    ],
+    "reference_pdf": [
+        "770824c7-74c4-56a2-96fb-f660347c5ab0",
+        "02c713fb-34a3-52b4-abfc-87ecb9dfbe03",
+        "d5e7e85b-65f9-5de9-8055-715323afd845",
+        "d2e5cbce-eee7-5683-b86b-5386568fce0c",
+        "3c559985-fd4a-53fd-bcc7-656fe2452a6a",
+        "d4223ac7-9d75-531d-9113-b52397da2e1e",
+        "b1509b39-7013-5138-af63-9057839e7476",
+        "08846cfe-32f4-5a54-b88b-822df3b6bb98",
+        "9af2c22e-ab2f-5812-9aa9-0dc3e50d1100",
+        "7884f42d-28d1-53c4-bee5-62754d65f98f",
+        "46c753dc-6966-5386-aea9-5782fd08aaa1",
+        "6e541276-cef5-5b69-9036-6c65d9e6b5ca",
+        "c97315f8-2f29-5e3e-bbf4-f0848b855663",
+        "5c19fded-b265-5a07-b81b-580d43473e35",
+        "393e9431-63b0-589d-88bb-62335baaf8bc",
+        "c76b968a-995a-5109-a4eb-f329fa710f26",
+        "b9dfe82f-3a52-57ab-9571-d4e293a722a3",
+        "6fa32937-0b0d-5a8f-9cf7-785754c9d516",
+        "10394dc5-9259-54c9-8868-bf2692924ffa",
+        "206abdf4-f071-58ab-8bd6-206bb79786f1",
+        "770824c7-74c4-56a2-96fb-f660347c5ab0",
+        "23104b1a-a45b-50ef-9541-4627857e2b03"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the model represented with a dot marker. What specific performance improvement does the model, DialoGPT Large, show over the standard DialoGPT (345M) model in terms of METEOR score according to the DSTC-7 Dialogue Generation Challenge results?",
+            "reference_answer": "3.03%"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.13676/comparison_figure.png"
+    ]
+}

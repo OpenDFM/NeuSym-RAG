@@ -1,0 +1,19 @@
+{
+    "uuid": "770222d1-8165-5bef-9d34-38f7f20a5c62",
+    "title": "ATTEMPT: Parameter-Efficient Multi-task Tuning via Attentional Mixtures of Soft Prompts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Akari Asai",
+        "Mohammadreza Salehi",
+        "Matthew E. Peters",
+        "Hannaneh Hajishirzi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.11961v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\770222d1-8165-5bef-9d34-38f7f20a5c62.pdf",
+    "bibtex": "@misc{asai2022attemptparameterefficientmultitasktuningvia,\n    title = {ATTEMPT: Parameter-Efficient Multi-task Tuning via Attentional Mixtures of Soft Prompts},\n    author = {Akari Asai and Mohammadreza Salehi and Matthew E. Peters and Hannaneh Hajishirzi},\n    year = {2022},\n    eprint = {2205.11961},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.11961},\n}",
+    "abstract": "This work introduces a new multi-task, parameter-efficient language model\n(LM) tuning method that learns to transfer knowledge across different tasks via\na mixture of soft prompts-small prefix embedding vectors pre-trained for\ndifferent tasks. Our method, called ATTEMPT (ATTEntional Mixtures of Prompt\nTuning), obtains source prompts as encodings of large-scale source tasks into a\nsmall number of parameters and trains an attention module to interpolate the\nsource prompts and a newly initialized target prompt for every instance in the\ntarget task. During training, only the target task prompt and the attention\nweights, which are shared between tasks in multi-task training, are updated,\nwhile the original LM and source prompts are intact. ATTEMPT is highly\nparameter-efficient (e.g., updates 2,300 times fewer parameters than full\nfine-tuning) while achieving high task performance using knowledge from\nhigh-resource tasks. Moreover, it is modular using pre-trained soft prompts,\nand can flexibly add or remove source prompts for effective knowledge transfer.\nOur experimental results across 21 diverse NLP datasets show that ATTEMPT\nsignificantly outperforms prompt tuning and outperforms or matches fully\nfine-tuned or other parameter-efficient tuning approaches that use over ten\ntimes more parameters. Finally, ATTEMPT outperforms previous work in few-shot\nlearning settings.",
+    "num_pages": 18
+}

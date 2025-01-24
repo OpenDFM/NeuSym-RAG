@@ -1,0 +1,18 @@
+{
+    "uuid": "05f9c218-644f-5c4c-81b2-a66f192586c8",
+    "title": "Understanding Memorization from the Perspective of Optimization via Efficient Influence Estimation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Futong Liu",
+        "Tao Lin",
+        "Martin Jaggi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2112.08798v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\05f9c218-644f-5c4c-81b2-a66f192586c8.pdf",
+    "bibtex": "@misc{liu2021understandingmemorizationfromtheperspective,\n    title = {Understanding Memorization from the Perspective of Optimization via Efficient Influence Estimation},\n    author = {Futong Liu and Tao Lin and Martin Jaggi},\n    year = {2021},\n    eprint = {2112.08798},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2112.08798},\n}",
+    "abstract": "Over-parameterized deep neural networks are able to achieve excellent\ntraining accuracy while maintaining a small generalization error. It has also\nbeen found that they are able to fit arbitrary labels, and this behaviour is\nreferred to as the phenomenon of memorization. In this work, we study the\nphenomenon of memorization with turn-over dropout, an efficient method to\nestimate influence and memorization, for data with true labels (real data) and\ndata with random labels (random data). Our main findings are: (i) For both real\ndata and random data, the optimization of easy examples (e.g., real data) and\ndifficult examples (e.g., random data) are conducted by the network\nsimultaneously, with easy ones at a higher speed; (ii) For real data, a correct\ndifficult example in the training dataset is more informative than an easy one.\nBy showing the existence of memorization on random data and real data, we\nhighlight the consistency between them regarding optimization and we emphasize\nthe implication of memorization during optimization.",
+    "num_pages": 14
+}

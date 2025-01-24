@@ -1,0 +1,23 @@
+{
+    "uuid": "27bb462f-a64d-572a-8061-e56203f7d0af",
+    "title": "Neural Task Graphs: Generalizing to Unseen Tasks from a Single Video Demonstration",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "De-An Huang",
+        "Suraj Nair",
+        "Danfei Xu",
+        "Yuke Zhu",
+        "Animesh Garg",
+        "Li Fei-Fei",
+        "Silvio Savarese",
+        "Juan Carlos Niebles"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1807.03480v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\27bb462f-a64d-572a-8061-e56203f7d0af.pdf",
+    "bibtex": "@misc{huang2019neuraltaskgraphsgeneralizingto,\n    title = {Neural Task Graphs: Generalizing to Unseen Tasks from a Single Video Demonstration},\n    author = {De-An Huang and Suraj Nair and Danfei Xu and Yuke Zhu and Animesh Garg and Li Fei-Fei and Silvio Savarese and Juan Carlos Niebles},\n    year = {2019},\n    eprint = {1807.03480},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1807.03480},\n}",
+    "abstract": "Our goal is to generate a policy to complete an unseen task given just a\nsingle video demonstration of the task in a given domain. We hypothesize that\nto successfully generalize to unseen complex tasks from a single video\ndemonstration, it is necessary to explicitly incorporate the compositional\nstructure of the tasks into the model. To this end, we propose Neural Task\nGraph (NTG) Networks, which use conjugate task graph as the intermediate\nrepresentation to modularize both the video demonstration and the derived\npolicy. We empirically show NTG achieves inter-task generalization on two\ncomplex tasks: Block Stacking in BulletPhysics and Object Collection in\nAI2-THOR. NTG improves data efficiency with visual input as well as achieve\nstrong generalization without the need for dense hierarchical supervision. We\nfurther show that similar performance trends hold when applied to real-world\ndata. We show that NTG can effectively predict task structure on the JIGSAWS\nsurgical dataset and generalize to unseen tasks.",
+    "num_pages": 10
+}

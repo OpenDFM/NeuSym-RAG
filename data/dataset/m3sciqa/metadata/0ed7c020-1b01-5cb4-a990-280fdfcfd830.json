@@ -1,0 +1,18 @@
+{
+    "uuid": "0ed7c020-1b01-5cb4-a990-280fdfcfd830",
+    "title": "Ultra-Fine Entity Typing with Prior Knowledge about Labels: A Simple Clustering Based Strategy",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Na Li",
+        "Zied Bouraoui",
+        "Steven Schockaert"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.12802v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\0ed7c020-1b01-5cb4-a990-280fdfcfd830.pdf",
+    "bibtex": "@misc{li2023ultrafineentitytypingwithprior,\n    title = {Ultra-Fine Entity Typing with Prior Knowledge about Labels: A Simple Clustering Based Strategy},\n    author = {Na Li and Zied Bouraoui and Steven Schockaert},\n    year = {2023},\n    eprint = {2305.12802},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.12802},\n}",
+    "abstract": "Ultra-fine entity typing (UFET) is the task of inferring the semantic types,\nfrom a large set of fine-grained candidates, that apply to a given entity\nmention. This task is especially challenging because we only have a small\nnumber of training examples for many of the types, even with distant\nsupervision strategies. State-of-the-art models, therefore, have to rely on\nprior knowledge about the type labels in some way. In this paper, we show that\nthe performance of existing methods can be improved using a simple technique:\nwe use pre-trained label embeddings to cluster the labels into semantic domains\nand then treat these domains as additional types. We show that this strategy\nconsistently leads to improved results, as long as high-quality label\nembeddings are used. We furthermore use the label clusters as part of a simple\npost-processing technique, which results in further performance gains. Both\nstrategies treat the UFET model as a black box and can thus straightforwardly\nbe used to improve a wide range of existing models.",
+    "num_pages": 14
+}

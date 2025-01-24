@@ -1,0 +1,23 @@
+{
+    "uuid": "6024183f-3dca-53df-934d-62772213d7b3",
+    "title": "SKEP: Sentiment Knowledge Enhanced Pre-training for Sentiment Analysis",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Hao Tian",
+        "Can Gao",
+        "Xinyan Xiao",
+        "Hao Liu",
+        "Bolei He",
+        "Hua Wu",
+        "Haifeng Wang",
+        "Feng Wu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2005.05635v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\6024183f-3dca-53df-934d-62772213d7b3.pdf",
+    "bibtex": "@misc{tian2020skepsentimentknowledgeenhancedpretraining,\n    title = {SKEP: Sentiment Knowledge Enhanced Pre-training for Sentiment Analysis},\n    author = {Hao Tian and Can Gao and Xinyan Xiao and Hao Liu and Bolei He and Hua Wu and Haifeng Wang and Feng Wu},\n    year = {2020},\n    eprint = {2005.05635},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2005.05635},\n}",
+    "abstract": "Recently, sentiment analysis has seen remarkable advance with the help of\npre-training approaches. However, sentiment knowledge, such as sentiment words\nand aspect-sentiment pairs, is ignored in the process of pre-training, despite\nthe fact that they are widely used in traditional sentiment analysis\napproaches. In this paper, we introduce Sentiment Knowledge Enhanced\nPre-training (SKEP) in order to learn a unified sentiment representation for\nmultiple sentiment analysis tasks. With the help of automatically-mined\nknowledge, SKEP conducts sentiment masking and constructs three sentiment\nknowledge prediction objectives, so as to embed sentiment information at the\nword, polarity and aspect level into pre-trained sentiment representation. In\nparticular, the prediction of aspect-sentiment pairs is converted into\nmulti-label classification, aiming to capture the dependency between words in a\npair. Experiments on three kinds of sentiment tasks show that SKEP\nsignificantly outperforms strong pre-training baseline, and achieves new\nstate-of-the-art results on most of the test datasets. We release our code at\nhttps://github.com/baidu/Senta.",
+    "num_pages": 10
+}

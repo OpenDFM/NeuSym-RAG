@@ -1,0 +1,21 @@
+{
+    "uuid": "ec5a0dc4-0a52-55b2-a4a2-54e1006e50b9",
+    "title": "MobileBERT: a Compact Task-Agnostic BERT for Resource-Limited Devices",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Zhiqing Sun",
+        "Hongkun Yu",
+        "Xiaodan Song",
+        "Renjie Liu",
+        "Yiming Yang",
+        "Denny Zhou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.02984v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\ec5a0dc4-0a52-55b2-a4a2-54e1006e50b9.pdf",
+    "bibtex": "@misc{sun2020mobilebertacompacttaskagnosticbert,\n    title = {MobileBERT: a Compact Task-Agnostic BERT for Resource-Limited Devices},\n    author = {Zhiqing Sun and Hongkun Yu and Xiaodan Song and Renjie Liu and Yiming Yang and Denny Zhou},\n    year = {2020},\n    eprint = {2004.02984},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2004.02984},\n}",
+    "abstract": "Natural Language Processing (NLP) has recently achieved great success by\nusing huge pre-trained models with hundreds of millions of parameters. However,\nthese models suffer from heavy model sizes and high latency such that they\ncannot be deployed to resource-limited mobile devices. In this paper, we\npropose MobileBERT for compressing and accelerating the popular BERT model.\nLike the original BERT, MobileBERT is task-agnostic, that is, it can be\ngenerically applied to various downstream NLP tasks via simple fine-tuning.\nBasically, MobileBERT is a thin version of BERT_LARGE, while equipped with\nbottleneck structures and a carefully designed balance between self-attentions\nand feed-forward networks. To train MobileBERT, we first train a specially\ndesigned teacher model, an inverted-bottleneck incorporated BERT_LARGE model.\nThen, we conduct knowledge transfer from this teacher to MobileBERT. Empirical\nstudies show that MobileBERT is 4.3x smaller and 5.5x faster than BERT_BASE\nwhile achieving competitive results on well-known benchmarks. On the natural\nlanguage inference tasks of GLUE, MobileBERT achieves a GLUEscore o 77.7 (0.6\nlower than BERT_BASE), and 62 ms latency on a Pixel 4 phone. On the SQuAD\nv1.1/v2.0 question answering task, MobileBERT achieves a dev F1 score of\n90.0/79.2 (1.5/2.1 higher than BERT_BASE).",
+    "num_pages": 13
+}

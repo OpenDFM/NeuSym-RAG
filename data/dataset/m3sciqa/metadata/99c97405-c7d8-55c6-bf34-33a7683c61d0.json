@@ -1,0 +1,20 @@
+{
+    "uuid": "99c97405-c7d8-55c6-bf34-33a7683c61d0",
+    "title": "AQuaMuSe: Automatically Generating Datasets for Query-Based Multi-Document Summarization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Sayali Kulkarni",
+        "Sheide Chammas",
+        "Wan Zhu",
+        "Fei Sha",
+        "Eugene Ie"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.12694v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\99c97405-c7d8-55c6-bf34-33a7683c61d0.pdf",
+    "bibtex": "@misc{kulkarni2020aquamuseautomaticallygeneratingdatasetsfor,\n    title = {AQuaMuSe: Automatically Generating Datasets for Query-Based Multi-Document Summarization},\n    author = {Sayali Kulkarni and Sheide Chammas and Wan Zhu and Fei Sha and Eugene Ie},\n    year = {2020},\n    eprint = {2010.12694},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.12694},\n}",
+    "abstract": "Summarization is the task of compressing source document(s) into coherent and\nsuccinct passages. This is a valuable tool to present users with concise and\naccurate sketch of the top ranked documents related to their queries.\nQuery-based multi-document summarization (qMDS) addresses this pervasive need,\nbut the research is severely limited due to lack of training and evaluation\ndatasets as existing single-document and multi-document summarization datasets\nare inadequate in form and scale. We propose a scalable approach called\nAQuaMuSe to automatically mine qMDS examples from question answering datasets\nand large document corpora. Our approach is unique in the sense that it can\ngeneral a dual dataset -- for extractive and abstractive summaries both. We\npublicly release a specific instance of an AQuaMuSe dataset with 5,519\nquery-based summaries, each associated with an average of 6 input documents\nselected from an index of 355M documents from Common Crawl. Extensive\nevaluation of the dataset along with baseline summarization model experiments\nare provided.",
+    "num_pages": 10
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "2b4f3800-c515-559d-aa36-85d34f6fd899",
+    "title": "Diverse Text Generation via Variational Encoder-Decoder Models with Gaussian Process Priors",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Wanyu Du",
+        "Jianqiao Zhao",
+        "Liwei Wang",
+        "Yangfeng Ji"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.01227v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\2b4f3800-c515-559d-aa36-85d34f6fd899.pdf",
+    "bibtex": "@misc{du2022diversetextgenerationviavariational,\n    title = {Diverse Text Generation via Variational Encoder-Decoder Models with Gaussian Process Priors},\n    author = {Wanyu Du and Jianqiao Zhao and Liwei Wang and Yangfeng Ji},\n    year = {2022},\n    eprint = {2204.01227},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.01227},\n}",
+    "abstract": "Generating high quality texts with high diversity is important for many NLG\napplications, but current methods mostly focus on building deterministic models\nto generate higher quality texts and do not provide many options for promoting\ndiversity. In this work, we present a novel latent structured variable model to\ngenerate high quality texts by enriching contextual representation learning of\nencoder-decoder models. Specifically, we introduce a stochastic function to map\ndeterministic encoder hidden states into random context variables. The proposed\nstochastic function is sampled from a Gaussian process prior to (1) provide\ninfinite number of joint Gaussian distributions of random context variables\n(diversity-promoting) and (2) explicitly model dependency between context\nvariables (accurate-encoding). To address the learning challenge of Gaussian\nprocesses, we propose an efficient variational inference approach to\napproximate the posterior distribution of random context variables. We evaluate\nour method in two typical text generation tasks: paraphrase generation and text\nstyle transfer. Experimental results on benchmark datasets demonstrate that our\nmethod improves the generation quality and diversity compared with other\nbaselines.",
+    "num_pages": 13
+}

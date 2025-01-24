@@ -1,0 +1,57 @@
+{
+    "uuid": "6d82a420-807e-5270-b1d8-29fc1329ba4c",
+    "question": "Consider the paper that introduces the method that corresponds to the leftmost bar in the figure. What is the improvement in True Negative Rate (TNR) for detecting LSUN samples using DenseNet, when comparing the model proposed in the paper to ODIN, given that 95% of CIFAR-100 samples are correctly detected?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "image",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "810b0721-c498-57eb-93f3-4687d2dc64f8"
+    ],
+    "reference_pdf": [
+        "96ffb0d8-e291-596b-8c52-bcb4f183ed44",
+        "74bcffe4-c1bb-5022-8e6a-7a9fef895ed0",
+        "b0a79d1a-de14-5e2c-a2f8-c8e66f707a89",
+        "8f328ef8-5248-5492-b3c9-d115046efc43",
+        "9523ad64-fad9-5352-bc32-ceb1a8f5adbc",
+        "83cd0d28-4378-5b49-8949-01f5181b7b17",
+        "1047803c-3229-546d-8a93-9027fcbe4df0",
+        "8f13f0c9-2b92-5a09-8369-41969fc0924d",
+        "e879e81b-c392-5e42-8658-34e328f1b1ca",
+        "87a8fb3c-6f1d-53d7-95c5-baed9d1f223e",
+        "82058002-7940-5f07-be28-abac6954e278",
+        "f3dd87c3-4705-546b-ac6c-93d9d1692249",
+        "78a2a197-944e-5f53-91c7-265b771d4c06",
+        "de5ec475-b70f-5190-a798-98df54b25136",
+        "d05f95b6-53e2-5fa5-a256-7c4c232feb64",
+        "b3afe895-977b-58d5-89a8-69bf5f6d84a3",
+        "d7e4e761-411b-5c7a-8d24-3a7b71ea2719",
+        "37a5f603-9e5f-5fa5-bdfd-9dc0318ef668",
+        "7c403e43-6318-5a9f-a3c8-40ff27f52369",
+        "f554c584-7f48-587f-9f9b-4e4debbc5cad",
+        "80686b1b-4ffa-54fb-a2fe-79152313a396",
+        "8a533609-59b9-5837-a2c4-669dea41251a",
+        "baa84a82-a8d5-5bc3-8896-82f9ef647504",
+        "c811c5a5-c22a-5fd6-9f1c-1ffa1bde7c47",
+        "65999ca9-2672-51e5-b596-2c9bb3cee2dd",
+        "4a324a22-6bd2-5602-84bc-07231c819440",
+        "ac1b0430-6781-5539-9d45-5067c0c6ff3e"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method that corresponds to the leftmost bar in the figure. What is the improvement in True Negative Rate (TNR) for detecting LSUN samples using DenseNet, when comparing the model proposed in the paper to ODIN, given that 95% of CIFAR-100 samples are correctly detected?",
+            "reference_answer": "50.2%"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.05083/comparison_figure.png"
+    ]
+}

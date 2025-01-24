@@ -1,0 +1,60 @@
+{
+    "uuid": "5159477f-61eb-5e63-a37c-59617fea2272",
+    "question": "Consider the paper that introduces the LLM shown in the figure with a model size of 1.7T. What specific methodological difference in the evaluation setup for the model's performance on the USABO and SAT reading/writing exams contributed to a deviation from the standard approach used for other exams?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "image",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "9b154fc7-cac7-5a8f-89ac-1ea50638b087"
+    ],
+    "reference_pdf": [
+        "87b70047-b849-5220-a3df-28e992c41bf2",
+        "d4de27d2-08b9-57ae-b0a7-a4b9b26047bf",
+        "507be7a7-d7c2-5c15-8ffe-9e6bfe40e5b0",
+        "54eb4a06-225f-5814-ae97-c54611c3f95c",
+        "5885cc59-7626-56ec-a3dc-7caa8e7acf8f",
+        "4d2120b1-212d-52ad-a0e5-c56245349f00",
+        "34417770-67d7-5cab-b9d4-76999c97bc02",
+        "a0863db0-4018-56ff-81bf-bdb1ff2ed4b7",
+        "e59b32f7-7a87-5940-b581-3e110d2fd77d",
+        "01c9329e-9789-52dc-9eed-c99a8ef88a5c",
+        "8d8e4058-651e-5b61-8d84-96d8846cd07c",
+        "97bf5a6b-8d1c-533a-a00c-d1ca31d3256d",
+        "d4223ac7-9d75-531d-9113-b52397da2e1e",
+        "884e57aa-78e0-5621-958c-8681a2d6f61f",
+        "98b88819-fa1f-503b-9e15-3b078e676975",
+        "aa4925a8-1e46-5996-8654-b82cfa7820a5",
+        "3caa80e4-e308-5fd8-b45f-6b55c8a7a835",
+        "ad6fa17b-383b-53da-8737-9038180d5159",
+        "a1302ac9-0f53-556b-96cd-38977a533888",
+        "67140bfe-0af6-5bb2-b96f-502358a17a1a",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "278cd4b7-0439-5a94-8a43-cdc6855de6c0",
+        "e45897f5-4429-5750-a8fb-dcfa9a904b5f",
+        "342064c4-037b-5666-b324-15191f5c5e20",
+        "7efa89b4-4460-5eed-b6f0-62238a690c9b",
+        "3134099b-d3ac-56d3-898d-c77c7a99370e",
+        "dd073182-00f0-5a9f-800b-7779293ab2ae",
+        "40076536-9fb5-50c7-acb2-93db2c59e1d7",
+        "96ce2b83-dafd-5418-9d75-d54158cf56ae",
+        "17623cac-c243-591b-b7bc-d261f6ebd607"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the LLM shown in the figure with a model size of 1.7T. What specific methodological difference in the evaluation setup for the model's performance on the USABO and SAT reading/writing exams contributed to a deviation from the standard approach used for other exams?",
+            "reference_answer": "The use of sampling a letter choice at temperature 0 using the already-sampled explanation for certain exams, rather than extracting the model's letter choice directly from the explanation."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.04988/HVI_figure.png"
+    ]
+}

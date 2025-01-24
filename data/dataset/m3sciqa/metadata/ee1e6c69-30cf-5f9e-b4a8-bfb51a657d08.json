@@ -1,0 +1,23 @@
+{
+    "uuid": "ee1e6c69-30cf-5f9e-b4a8-bfb51a657d08",
+    "title": "Confident Adaptive Language Modeling",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Tal Schuster",
+        "Adam Fisch",
+        "Jai Gupta",
+        "Mostafa Dehghani",
+        "Dara Bahri",
+        "Vinh Q. Tran",
+        "Yi Tay",
+        "Donald Metzler"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2207.07061v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\ee1e6c69-30cf-5f9e-b4a8-bfb51a657d08.pdf",
+    "bibtex": "@misc{schuster2022confidentadaptivelanguagemodeling,\n    title = {Confident Adaptive Language Modeling},\n    author = {Tal Schuster and Adam Fisch and Jai Gupta and Mostafa Dehghani and Dara Bahri and Vinh Q. Tran and Yi Tay and Donald Metzler},\n    year = {2022},\n    eprint = {2207.07061},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2207.07061},\n}",
+    "abstract": "Recent advances in Transformer-based large language models (LLMs) have led to\nsignificant performance improvements across many tasks. These gains come with a\ndrastic increase in the models' size, potentially leading to slow and costly\nuse at inference time. In practice, however, the series of generations made by\nLLMs is composed of varying levels of difficulty. While certain predictions\ntruly benefit from the models' full capacity, other continuations are more\ntrivial and can be solved with reduced compute. In this work, we introduce\nConfident Adaptive Language Modeling (CALM), a framework for dynamically\nallocating different amounts of compute per input and generation timestep.\nEarly exit decoding involves several challenges that we address here, such as:\n(1) what confidence measure to use; (2) connecting sequence-level constraints\nto local per-token exit decisions; and (3) attending back to missing hidden\nrepresentations due to early exits in previous tokens. Through theoretical\nanalysis and empirical experiments on three diverse text generation tasks, we\ndemonstrate the efficacy of our framework in reducing compute -- potential\nspeedup of up to $\\times 3$ -- while provably maintaining high performance.",
+    "num_pages": 24
+}

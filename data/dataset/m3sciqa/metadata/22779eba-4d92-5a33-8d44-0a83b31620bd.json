@@ -1,0 +1,19 @@
+{
+    "uuid": "22779eba-4d92-5a33-8d44-0a83b31620bd",
+    "title": "TLDR: Token Loss Dynamic Reweighting for Reducing Repetitive Utterance Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Shaojie Jiang",
+        "Thomas Wolf",
+        "Christof Monz",
+        "Maarten de Rijke"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2003.11963v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\22779eba-4d92-5a33-8d44-0a83b31620bd.pdf",
+    "bibtex": "@misc{jiang2020tldrtokenlossdynamicreweighting,\n    title = {TLDR: Token Loss Dynamic Reweighting for Reducing Repetitive Utterance Generation},\n    author = {Shaojie Jiang and Thomas Wolf and Christof Monz and Maarten de Rijke},\n    year = {2020},\n    eprint = {2003.11963},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2003.11963},\n}",
+    "abstract": "Natural Language Generation (NLG) models are prone to generating repetitive\nutterances. In this work, we study the repetition problem for encoder-decoder\nmodels, using both recurrent neural network (RNN) and transformer\narchitectures. To this end, we consider the chit-chat task, where the problem\nis more prominent than in other tasks that need encoder-decoder architectures.\nWe first study the influence of model architectures. By using pre-attention and\nhighway connections for RNNs, we manage to achieve lower repetition rates.\nHowever, this method does not generalize to other models such as transformers.\nWe hypothesize that the deeper reason is that in the training corpora, there\nare hard tokens that are more difficult for a generative model to learn than\nothers and, once learning has finished, hard tokens are still under-learned, so\nthat repetitive generations are more likely to happen. Based on this\nhypothesis, we propose token loss dynamic reweighting (TLDR) that applies\ndifferentiable weights to individual token losses. By using higher weights for\nhard tokens and lower weights for easy tokens, NLG models are able to learn\nindividual tokens at different paces. Experiments on chit-chat benchmark\ndatasets show that TLDR is more effective in repetition reduction for both RNN\nand transformer architectures than baselines using different weighting\nfunctions.",
+    "num_pages": 9
+}

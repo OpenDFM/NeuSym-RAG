@@ -1,0 +1,19 @@
+{
+    "uuid": "680db1c1-3dec-573f-84d9-c379bbbcffbb",
+    "title": "SimKGC: Simple Contrastive Knowledge Graph Completion with Pre-trained Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Liang Wang",
+        "Wei Zhao",
+        "Zhuoyu Wei",
+        "Jingming Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.02167v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\680db1c1-3dec-573f-84d9-c379bbbcffbb.pdf",
+    "bibtex": "@misc{wang2022simkgcsimplecontrastiveknowledgegraph,\n    title = {SimKGC: Simple Contrastive Knowledge Graph Completion with Pre-trained Language Models},\n    author = {Liang Wang and Wei Zhao and Zhuoyu Wei and Jingming Liu},\n    year = {2022},\n    eprint = {2203.02167},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.02167},\n}",
+    "abstract": "Knowledge graph completion (KGC) aims to reason over known facts and infer\nthe missing links. Text-based methods such as KGBERT (Yao et al., 2019) learn\nentity representations from natural language descriptions, and have the\npotential for inductive KGC. However, the performance of text-based methods\nstill largely lag behind graph embedding-based methods like TransE (Bordes et\nal., 2013) and RotatE (Sun et al., 2019b). In this paper, we identify that the\nkey issue is efficient contrastive learning. To improve the learning\nefficiency, we introduce three types of negatives: in-batch negatives,\npre-batch negatives, and self-negatives which act as a simple form of hard\nnegatives. Combined with InfoNCE loss, our proposed model SimKGC can\nsubstantially outperform embedding-based methods on several benchmark datasets.\nIn terms of mean reciprocal rank (MRR), we advance the state-of-the-art by +19%\non WN18RR, +6.8% on the Wikidata5M transductive setting, and +22% on the\nWikidata5M inductive setting. Thorough analyses are conducted to gain insights\ninto each component. Our code is available at\nhttps://github.com/intfloat/SimKGC .",
+    "num_pages": 14
+}

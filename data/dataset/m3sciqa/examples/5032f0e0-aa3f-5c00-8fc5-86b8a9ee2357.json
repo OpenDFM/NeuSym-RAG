@@ -1,0 +1,67 @@
+{
+    "uuid": "5032f0e0-aa3f-5c00-8fc5-86b8a9ee2357",
+    "question": "Consider the paper that introduces the optimization method that has the lowest BLEU score among all models in the table. What specific advantage does the model's use of multi-head attention provide over single-head attention in terms of model quality and computational cost, as evidenced by the experimental variations?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "5c7fb1dc-efe9-585f-a52c-656bed6b1c72"
+    ],
+    "reference_pdf": [
+        "cb54e44a-db51-5a8d-b3e5-e6387543389a",
+        "c8717e4f-8ff0-5152-8082-266d0bb88071",
+        "9f83b120-1a28-5397-b764-7b99e62db40d",
+        "969d0c84-5046-5233-a9ce-015454c17e10",
+        "75d94b88-a11a-5e5a-bb24-b01e7b230196",
+        "5015464f-7f34-5403-90e6-e0476fd5febc",
+        "ee1e6c69-30cf-5f9e-b4a8-bfb51a657d08",
+        "35ec5422-c394-5eac-854d-28233a5f9f68",
+        "5aab03c9-0e38-5818-90e3-3b5f882ce28d",
+        "565aa06f-5a94-59e2-9b9a-d8de69a00b54",
+        "d6ea3099-8dd9-5844-a96c-388a86582ee8",
+        "1d0cd268-ff7e-55d2-8ee5-178092342836",
+        "00541e26-04b4-520c-8fee-a656c0bc652c",
+        "4d70e58b-2262-56d0-b3ec-957f8d6132d5",
+        "808a8c71-5485-5683-88e6-b4616d8e7ead",
+        "0c1d2108-ab01-58ec-9369-5b8e148dab5d",
+        "b0b8f08f-5cc3-51bd-9834-5c7e50ae692e",
+        "d537f355-a76b-5894-856f-7fbd3328d16e",
+        "0dbcbe8e-2d15-50c7-a52a-9aea7f74fa95",
+        "5d15ac0c-f847-534d-ae40-0007ec49f2b0",
+        "ab6eacc9-9657-5b14-9c85-e0edeea4af11",
+        "09a1e967-c629-5c69-b12c-782dd3e017ac",
+        "9066c5d4-3831-59c9-b803-b593a6ef8083",
+        "b3cf3805-1c84-5852-874b-c43830dfbb3c",
+        "3134099b-d3ac-56d3-898d-c77c7a99370e",
+        "42fd3669-c60f-5d28-b51d-4523bebf0734",
+        "1f098267-9697-5fbb-bf8f-a585caad8bf8",
+        "9d24c743-9966-5400-a5f9-6825eca1d557",
+        "b80e3d5b-034c-5f7a-9375-022d87904ee4",
+        "c1c0f24c-58ff-5141-8a9e-a279b49c9213",
+        "3998efe3-6eb0-5c5b-9c68-1888031f2ad3",
+        "0f92bb2b-b658-5689-914a-8c0ef2dffc3a",
+        "eb603d6c-2a60-504d-93ed-aef55ff4655b",
+        "14c9ea98-903d-52bc-b706-f869a7ff6c91",
+        "0494f66b-dc26-5683-9804-25b245ddba54",
+        "69e18e42-778d-5f47-92ec-bdfe3b03ed37",
+        "0956d0ef-a936-5d49-a5aa-9be966fc7470"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the optimization method that has the lowest BLEU score among all models in the table. What specific advantage does the model's use of multi-head attention provide over single-head attention in terms of model quality and computational cost, as evidenced by the experimental variations?",
+            "reference_answer": "Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions, overcoming the limitation of single-head attention where averaging inhibits this capability. Despite the reduced dimension of each head, the total computational cost is similar to that of single-head attention with full dimensionality."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.07096/BLEU.png"
+    ]
+}

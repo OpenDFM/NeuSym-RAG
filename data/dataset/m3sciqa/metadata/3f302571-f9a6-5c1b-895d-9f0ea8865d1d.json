@@ -1,0 +1,24 @@
+{
+    "uuid": "3f302571-f9a6-5c1b-895d-9f0ea8865d1d",
+    "title": "KQA Pro: A Dataset with Explicit Compositional Programs for Complex Question Answering over Knowledge Base",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Shulin Cao",
+        "Jiaxin Shi",
+        "Liangming Pan",
+        "Lunyiu Nie",
+        "Yutong Xiang",
+        "Lei Hou",
+        "Juanzi Li",
+        "Bin He",
+        "Hanwang Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2007.03875v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\3f302571-f9a6-5c1b-895d-9f0ea8865d1d.pdf",
+    "bibtex": "@misc{cao2022kqaproadatasetwith,\n    title = {KQA Pro: A Dataset with Explicit Compositional Programs for Complex Question Answering over Knowledge Base},\n    author = {Shulin Cao and Jiaxin Shi and Liangming Pan and Lunyiu Nie and Yutong Xiang and Lei Hou and Juanzi Li and Bin He and Hanwang Zhang},\n    year = {2022},\n    eprint = {2007.03875},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2007.03875},\n}",
+    "abstract": "Complex question answering over knowledge base (Complex KBQA) is challenging\nbecause it requires various compositional reasoning capabilities, such as\nmulti-hop inference, attribute comparison, set operation. Existing benchmarks\nhave some shortcomings that limit the development of Complex KBQA: 1) they only\nprovide QA pairs without explicit reasoning processes; 2) questions are poor in\ndiversity or scale. To this end, we introduce KQA Pro, a dataset for Complex\nKBQA including ~120K diverse natural language questions. We introduce a\ncompositional and interpretable programming language KoPL to represent the\nreasoning process of complex questions. For each question, we provide the\ncorresponding KoPL program and SPARQL query, so that KQA Pro serves for both\nKBQA and semantic parsing tasks. Experimental results show that SOTA KBQA\nmethods cannot achieve promising results on KQA Pro as on current datasets,\nwhich suggests that KQA Pro is challenging and Complex KBQA requires further\nresearch efforts. We also treat KQA Pro as a diagnostic dataset for testing\nmultiple reasoning skills, conduct a thorough evaluation of existing models and\ndiscuss further directions for Complex KBQA. Our codes and datasets can be\nobtained from https://github.com/shijx12/KQAPro_Baselines.",
+    "num_pages": 19
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "e2a2d7b1-a02c-58e5-8d14-272810335de1",
+    "title": "ConvBERT: Improving BERT with Span-based Dynamic Convolution",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Zihang Jiang",
+        "Weihao Yu",
+        "Daquan Zhou",
+        "Yunpeng Chen",
+        "Jiashi Feng",
+        "Shuicheng Yan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2008.02496v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\e2a2d7b1-a02c-58e5-8d14-272810335de1.pdf",
+    "bibtex": "@misc{jiang2021convbertimprovingbertwithspanbased,\n    title = {ConvBERT: Improving BERT with Span-based Dynamic Convolution},\n    author = {Zihang Jiang and Weihao Yu and Daquan Zhou and Yunpeng Chen and Jiashi Feng and Shuicheng Yan},\n    year = {2021},\n    eprint = {2008.02496},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2008.02496},\n}",
+    "abstract": "Pre-trained language models like BERT and its variants have recently achieved\nimpressive performance in various natural language understanding tasks.\nHowever, BERT heavily relies on the global self-attention block and thus\nsuffers large memory footprint and computation cost. Although all its attention\nheads query on the whole input sequence for generating the attention map from a\nglobal perspective, we observe some heads only need to learn local\ndependencies, which means the existence of computation redundancy. We therefore\npropose a novel span-based dynamic convolution to replace these self-attention\nheads to directly model local dependencies. The novel convolution heads,\ntogether with the rest self-attention heads, form a new mixed attention block\nthat is more efficient at both global and local context learning. We equip BERT\nwith this mixed attention design and build a ConvBERT model. Experiments have\nshown that ConvBERT significantly outperforms BERT and its variants in various\ndownstream tasks, with lower training cost and fewer model parameters.\nRemarkably, ConvBERTbase model achieves 86.4 GLUE score, 0.7 higher than\nELECTRAbase, while using less than 1/4 training cost. Code and pre-trained\nmodels will be released.",
+    "num_pages": 17
+}

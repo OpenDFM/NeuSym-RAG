@@ -1,0 +1,22 @@
+{
+    "uuid": "b6fda7ba-768f-5bd0-88b8-75b610919a93",
+    "title": "OpenPrompt: An Open-source Framework for Prompt-learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Ning Ding",
+        "Shengding Hu",
+        "Weilin Zhao",
+        "Yulin Chen",
+        "Zhiyuan Liu",
+        "Hai-Tao Zheng",
+        "Maosong Sun"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2111.01998v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\b6fda7ba-768f-5bd0-88b8-75b610919a93.pdf",
+    "bibtex": "@misc{ding2021openpromptanopensourceframeworkfor,\n    title = {OpenPrompt: An Open-source Framework for Prompt-learning},\n    author = {Ning Ding and Shengding Hu and Weilin Zhao and Yulin Chen and Zhiyuan Liu and Hai-Tao Zheng and Maosong Sun},\n    year = {2021},\n    eprint = {2111.01998},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2111.01998},\n}",
+    "abstract": "Prompt-learning has become a new paradigm in modern natural language\nprocessing, which directly adapts pre-trained language models (PLMs) to\n$cloze$-style prediction, autoregressive modeling, or sequence to sequence\ngeneration, resulting in promising performances on various tasks. However, no\nstandard implementation framework of prompt-learning is proposed yet, and most\nexisting prompt-learning codebases, often unregulated, only provide limited\nimplementations for specific scenarios. Since there are many details such as\ntemplating strategy, initializing strategy, and verbalizing strategy, etc. need\nto be considered in prompt-learning, practitioners face impediments to quickly\nadapting the desired prompt learning methods to their applications. In this\npaper, we present {OpenPrompt}, a unified easy-to-use toolkit to conduct\nprompt-learning over PLMs. OpenPrompt is a research-friendly framework that is\nequipped with efficiency, modularity, and extendibility, and its combinability\nallows the freedom to combine different PLMs, task formats, and prompting\nmodules in a unified paradigm. Users could expediently deploy prompt-learning\nframeworks and evaluate the generalization of them on different NLP tasks\nwithout constraints. OpenPrompt is publicly released at {\\url{\nhttps://github.com/thunlp/OpenPrompt}}.",
+    "num_pages": 9
+}

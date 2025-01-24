@@ -1,0 +1,17 @@
+{
+    "uuid": "d2e5cbce-eee7-5683-b86b-5386568fce0c",
+    "title": "Why Does Surprisal From Larger Transformer-Based Language Models Provide a Poorer Fit to Human Reading Times?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Byung-Doh Oh",
+        "William Schuler"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2212.12131v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\d2e5cbce-eee7-5683-b86b-5386568fce0c.pdf",
+    "bibtex": "@misc{oh2022whydoessurprisalfromlarger,\n    title = {Why Does Surprisal From Larger Transformer-Based Language Models Provide a Poorer Fit to Human Reading Times?},\n    author = {Byung-Doh Oh and William Schuler},\n    year = {2022},\n    eprint = {2212.12131},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2212.12131},\n}",
+    "abstract": "This work presents a detailed linguistic analysis into why larger\nTransformer-based pre-trained language models with more parameters and lower\nperplexity nonetheless yield surprisal estimates that are less predictive of\nhuman reading times. First, regression analyses show a strictly monotonic,\npositive log-linear relationship between perplexity and fit to reading times\nfor the more recently released five GPT-Neo variants and eight OPT variants on\ntwo separate datasets, replicating earlier results limited to just GPT-2 (Oh et\nal., 2022). Subsequently, analysis of residual errors reveals a systematic\ndeviation of the larger variants, such as underpredicting reading times of\nnamed entities and making compensatory overpredictions for reading times of\nfunction words such as modals and conjunctions. These results suggest that the\npropensity of larger Transformer-based models to 'memorize' sequences during\ntraining makes their surprisal estimates diverge from humanlike expectations,\nwhich warrants caution in using pre-trained language models to study human\nlanguage processing.",
+    "num_pages": 14
+}

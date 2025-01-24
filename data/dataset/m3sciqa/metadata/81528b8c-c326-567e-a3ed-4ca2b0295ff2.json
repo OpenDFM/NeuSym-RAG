@@ -1,0 +1,20 @@
+{
+    "uuid": "81528b8c-c326-567e-a3ed-4ca2b0295ff2",
+    "title": "Post-Training Quantization for Vision Transformer",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Zhenhua Liu",
+        "Yunhe Wang",
+        "Kai Han",
+        "Siwei Ma",
+        "Wen Gao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.14156v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\81528b8c-c326-567e-a3ed-4ca2b0295ff2.pdf",
+    "bibtex": "@misc{liu2021posttrainingquantizationforvisiontransformer,\n    title = {Post-Training Quantization for Vision Transformer},\n    author = {Zhenhua Liu and Yunhe Wang and Kai Han and Siwei Ma and Wen Gao},\n    year = {2021},\n    eprint = {2106.14156},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2106.14156},\n}",
+    "abstract": "Recently, transformer has achieved remarkable performance on a variety of\ncomputer vision applications. Compared with mainstream convolutional neural\nnetworks, vision transformers are often of sophisticated architectures for\nextracting powerful feature representations, which are more difficult to be\ndeveloped on mobile devices. In this paper, we present an effective\npost-training quantization algorithm for reducing the memory storage and\ncomputational costs of vision transformers. Basically, the quantization task\ncan be regarded as finding the optimal low-bit quantization intervals for\nweights and inputs, respectively. To preserve the functionality of the\nattention mechanism, we introduce a ranking loss into the conventional\nquantization objective that aims to keep the relative order of the\nself-attention results after quantization. Moreover, we thoroughly analyze the\nrelationship between quantization loss of different layers and the feature\ndiversity, and explore a mixed-precision quantization scheme by exploiting the\nnuclear norm of each attention map and output feature. The effectiveness of the\nproposed method is verified on several benchmark models and datasets, which\noutperforms the state-of-the-art post-training quantization algorithms. For\ninstance, we can obtain an 81.29\\% top-1 accuracy using DeiT-B model on\nImageNet dataset with about 8-bit quantization.",
+    "num_pages": 11
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "4ff07545-64af-5426-8c2e-5d296393c929",
+    "title": "AdapLeR: Speeding up Inference by Adaptive Length Reduction",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Ali Modarressi",
+        "Hosein Mohebbi",
+        "Mohammad Taher Pilehvar"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.08991v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\4ff07545-64af-5426-8c2e-5d296393c929.pdf",
+    "bibtex": "@misc{modarressi2022adaplerspeedingupinferenceby,\n    title = {AdapLeR: Speeding up Inference by Adaptive Length Reduction},\n    author = {Ali Modarressi and Hosein Mohebbi and Mohammad Taher Pilehvar},\n    year = {2022},\n    eprint = {2203.08991},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.08991},\n}",
+    "abstract": "Pre-trained language models have shown stellar performance in various\ndownstream tasks. But, this usually comes at the cost of high latency and\ncomputation, hindering their usage in resource-limited settings. In this work,\nwe propose a novel approach for reducing the computational cost of BERT with\nminimal loss in downstream performance. Our method dynamically eliminates less\ncontributing tokens through layers, resulting in shorter lengths and\nconsequently lower computational cost. To determine the importance of each\ntoken representation, we train a Contribution Predictor for each layer using a\ngradient-based saliency method. Our experiments on several diverse\nclassification tasks show speedups up to 22x during inference time without much\nsacrifice in performance. We also validate the quality of the selected tokens\nin our method using human annotations in the ERASER benchmark. In comparison to\nother widely used strategies for selecting important tokens, such as saliency\nand attention, our proposed method has a significantly lower false positive\nrate in generating rationales. Our code is freely available at\nhttps://github.com/amodaresi/AdapLeR .",
+    "num_pages": 15
+}

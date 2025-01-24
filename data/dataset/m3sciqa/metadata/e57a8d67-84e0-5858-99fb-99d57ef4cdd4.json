@@ -1,0 +1,22 @@
+{
+    "uuid": "e57a8d67-84e0-5858-99fb-99d57ef4cdd4",
+    "title": "INGENIOUS: Using Informative Data Subsets for Efficient Pre-Training of Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "H S V N S Kowndinya Renduchintala",
+        "Krishnateja Killamsetty",
+        "Sumit Bhatia",
+        "Milan Aggarwal",
+        "Ganesh Ramakrishnan",
+        "Rishabh Iyer",
+        "Balaji Krishnamurthy"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.06677v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\e57a8d67-84e0-5858-99fb-99d57ef4cdd4.pdf",
+    "bibtex": "@misc{renduchintala2023ingenioususinginformativedatasubsets,\n    title = {INGENIOUS: Using Informative Data Subsets for Efficient Pre-Training of Language Models},\n    author = {H S V N S Kowndinya Renduchintala and Krishnateja Killamsetty and Sumit Bhatia and Milan Aggarwal and Ganesh Ramakrishnan and Rishabh Iyer and Balaji Krishnamurthy},\n    year = {2023},\n    eprint = {2305.06677},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.06677},\n}",
+    "abstract": "A salient characteristic of pre-trained language models (PTLMs) is a\nremarkable improvement in their generalization capability and emergence of new\ncapabilities with increasing model capacity and pre-training dataset size.\nConsequently, we are witnessing the development of enormous models pushing the\nstate-of-the-art. It is, however, imperative to realize that this inevitably\nleads to prohibitively long training times, extortionate computing costs, and a\ndetrimental environmental impact. Significant efforts are underway to make PTLM\ntraining more efficient through innovations in model architectures, training\npipelines, and loss function design, with scant attention being paid to\noptimizing the utility of training data. The key question that we ask is\nwhether it is possible to train PTLMs by employing only highly informative\nsubsets of the training data while maintaining downstream performance? Building\nupon the recent progress in informative data subset selection, we show how we\ncan employ submodular optimization to select highly representative subsets of\nthe training corpora and demonstrate that the proposed framework can be applied\nto efficiently train multiple PTLMs (BERT, BioBERT, GPT-2) using only a\nfraction of data. Further, we perform a rigorous empirical evaluation to show\nthat the resulting models achieve up to $\\sim99\\%$ of the performance of the\nfully-trained models. We made our framework publicly available at\nhttps://github.com/Efficient-AI/ingenious.",
+    "num_pages": 16
+}

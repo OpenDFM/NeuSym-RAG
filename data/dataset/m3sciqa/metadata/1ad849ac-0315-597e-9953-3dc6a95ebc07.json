@@ -1,0 +1,30 @@
+{
+    "uuid": "1ad849ac-0315-597e-9953-3dc6a95ebc07",
+    "title": "ERNIE-Layout: Layout Knowledge Enhanced Pre-training for Visually-rich Document Understanding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Qiming Peng",
+        "Yinxu Pan",
+        "Wenjin Wang",
+        "Bin Luo",
+        "Zhenyu Zhang",
+        "Zhengjie Huang",
+        "Teng Hu",
+        "Weichong Yin",
+        "Yongfeng Chen",
+        "Yin Zhang",
+        "Shikun Feng",
+        "Yu Sun",
+        "Hao Tian",
+        "Hua Wu",
+        "Haifeng Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.06155v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\1ad849ac-0315-597e-9953-3dc6a95ebc07.pdf",
+    "bibtex": "@misc{peng2022ernielayoutlayoutknowledgeenhancedpretraining,\n    title = {ERNIE-Layout: Layout Knowledge Enhanced Pre-training for Visually-rich Document Understanding},\n    author = {Qiming Peng and Yinxu Pan and Wenjin Wang and Bin Luo and Zhenyu Zhang and Zhengjie Huang and Teng Hu and Weichong Yin and Yongfeng Chen and Yin Zhang and Shikun Feng and Yu Sun and Hao Tian and Hua Wu and Haifeng Wang},\n    year = {2022},\n    eprint = {2210.06155},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.06155},\n}",
+    "abstract": "Recent years have witnessed the rise and success of pre-training techniques\nin visually-rich document understanding. However, most existing methods lack\nthe systematic mining and utilization of layout-centered knowledge, leading to\nsub-optimal performances. In this paper, we propose ERNIE-Layout, a novel\ndocument pre-training solution with layout knowledge enhancement in the whole\nworkflow, to learn better representations that combine the features from text,\nlayout, and image. Specifically, we first rearrange input sequences in the\nserialization stage, and then present a correlative pre-training task, reading\norder prediction, to learn the proper reading order of documents. To improve\nthe layout awareness of the model, we integrate a spatial-aware disentangled\nattention into the multi-modal transformer and a replaced regions prediction\ntask into the pre-training phase. Experimental results show that ERNIE-Layout\nachieves superior performance on various downstream tasks, setting new\nstate-of-the-art on key information extraction, document image classification,\nand document question answering datasets. The code and models are publicly\navailable at\nhttp://github.com/PaddlePaddle/PaddleNLP/tree/develop/model_zoo/ernie-layout.",
+    "num_pages": 13
+}

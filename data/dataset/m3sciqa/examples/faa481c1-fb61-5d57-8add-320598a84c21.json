@@ -1,0 +1,32 @@
+{
+    "uuid": "faa481c1-fb61-5d57-8add-320598a84c21",
+    "question": "Consider the paper that introduces the method that exhibits the highest Accuracy@0.5 value on the RefCOCOg task. What is the role of the $\\tiny{<}obj\\tiny{>}$ token in the model's output sequence design proposed by the paper?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "0c01da61-e6d6-5664-a720-fe78fa8506f0"
+    ],
+    "reference_pdf": [
+        "2a0adc2f-455b-5d5a-9cf1-ac09f4347ff9",
+        "da9e1b4e-f0c6-5191-8a33-41b61efb4b0f"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method that exhibits the highest Accuracy@0.5 value on the RefCOCOg task. What is the role of the $\\tiny{<}obj\\tiny{>}$ token in the model's output sequence design proposed by the paper?",
+            "reference_answer": "Indicates word-box alignments and simplifies sequence prediction by providing hints of text-box code-switching."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2311.04067/result_table.png"
+    ]
+}

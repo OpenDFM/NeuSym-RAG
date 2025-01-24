@@ -1,0 +1,22 @@
+{
+    "uuid": "dd3f8d4e-2048-51d2-acf4-b48af1355488",
+    "title": "Generating Wikipedia by Summarizing Long Sequences",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Peter J. Liu",
+        "Mohammad Saleh",
+        "Etienne Pot",
+        "Ben Goodrich",
+        "Ryan Sepassi",
+        "Lukasz Kaiser",
+        "Noam Shazeer"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1801.10198v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\dd3f8d4e-2048-51d2-acf4-b48af1355488.pdf",
+    "bibtex": "@misc{liu2018generatingwikipediabysummarizinglong,\n    title = {Generating Wikipedia by Summarizing Long Sequences},\n    author = {Peter J. Liu and Mohammad Saleh and Etienne Pot and Ben Goodrich and Ryan Sepassi and Lukasz Kaiser and Noam Shazeer},\n    year = {2018},\n    eprint = {1801.10198},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1801.10198},\n}",
+    "abstract": "We show that generating English Wikipedia articles can be approached as a\nmulti- document summarization of source documents. We use extractive\nsummarization to coarsely identify salient information and a neural abstractive\nmodel to generate the article. For the abstractive model, we introduce a\ndecoder-only architecture that can scalably attend to very long sequences, much\nlonger than typical encoder- decoder architectures used in sequence\ntransduction. We show that this model can generate fluent, coherent\nmulti-sentence paragraphs and even whole Wikipedia articles. When given\nreference documents, we show it can extract relevant factual information as\nreflected in perplexity, ROUGE scores and human evaluations.",
+    "num_pages": 18
+}

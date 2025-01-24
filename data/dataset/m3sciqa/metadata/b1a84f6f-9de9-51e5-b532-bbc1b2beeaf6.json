@@ -1,0 +1,22 @@
+{
+    "uuid": "b1a84f6f-9de9-51e5-b532-bbc1b2beeaf6",
+    "title": "Can We Edit Factual Knowledge by In-Context Learning?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Ce Zheng",
+        "Lei Li",
+        "Qingxiu Dong",
+        "Yuxuan Fan",
+        "Zhiyong Wu",
+        "Jingjing Xu",
+        "Baobao Chang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.12740v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\b1a84f6f-9de9-51e5-b532-bbc1b2beeaf6.pdf",
+    "bibtex": "@misc{zheng2023canweeditfactualknowledge,\n    title = {Can We Edit Factual Knowledge by In-Context Learning?},\n    author = {Ce Zheng and Lei Li and Qingxiu Dong and Yuxuan Fan and Zhiyong Wu and Jingjing Xu and Baobao Chang},\n    year = {2023},\n    eprint = {2305.12740},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.12740},\n}",
+    "abstract": "Previous studies have shown that large language models (LLMs) like GPTs store\nmassive factual knowledge in their parameters. However, the stored knowledge\ncould be false or out-dated. Traditional knowledge editing methods refine LLMs\nvia fine-tuning on texts containing specific knowledge. However, with the\nincreasing scales of LLMs, these gradient-based approaches bring large\ncomputation costs. The trend of model-as-a-service also makes it impossible to\nmodify knowledge in black-box LMs. Inspired by in-context learning (ICL), a new\nparadigm based on demonstration contexts without parameter updating, we explore\nwhether ICL can edit factual knowledge. To answer this question, we give a\ncomprehensive empirical study of ICL strategies. Experiments show that\nin-context knowledge editing (IKE), without any gradient and parameter\nupdating, achieves a competitive success rate compared to gradient-based\nmethods on GPT-J (6B) but with much fewer side effects, including less\nover-editing on similar but unrelated facts and less knowledge forgetting on\npreviously stored knowledge. We also apply the method to larger LMs with tens\nor hundreds of parameters like OPT-175B, which shows the scalability of our\nmethod. The code is available at https://github.com/Zce1112zslx/IKE.",
+    "num_pages": 13
+}

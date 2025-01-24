@@ -1,0 +1,20 @@
+{
+    "uuid": "6f26f6da-6cc3-5aa4-9f91-ca29b2d64729",
+    "title": "ZEN: Pre-training Chinese Text Encoder Enhanced by N-gram Representations",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Shizhe Diao",
+        "Jiaxin Bai",
+        "Yan Song",
+        "Tong Zhang",
+        "Yonggang Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1911.00720v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\6f26f6da-6cc3-5aa4-9f91-ca29b2d64729.pdf",
+    "bibtex": "@misc{diao2019zenpretrainingchinesetextencoder,\n    title = {ZEN: Pre-training Chinese Text Encoder Enhanced by N-gram Representations},\n    author = {Shizhe Diao and Jiaxin Bai and Yan Song and Tong Zhang and Yonggang Wang},\n    year = {2019},\n    eprint = {1911.00720},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1911.00720},\n}",
+    "abstract": "The pre-training of text encoders normally processes text as a sequence of\ntokens corresponding to small text units, such as word pieces in English and\ncharacters in Chinese. It omits information carried by larger text granularity,\nand thus the encoders cannot easily adapt to certain combinations of\ncharacters. This leads to a loss of important semantic information, which is\nespecially problematic for Chinese because the language does not have explicit\nword boundaries. In this paper, we propose ZEN, a BERT-based Chinese (Z) text\nencoder Enhanced by N-gram representations, where different combinations of\ncharacters are considered during training. As a result, potential word or phase\nboundaries are explicitly pre-trained and fine-tuned with the character encoder\n(BERT). Therefore ZEN incorporates the comprehensive information of both the\ncharacter sequence and words or phrases it contains. Experimental results\nillustrated the effectiveness of ZEN on a series of Chinese NLP tasks. We show\nthat ZEN, using less resource than other published encoders, can achieve\nstate-of-the-art performance on most tasks. Moreover, it is shown that\nreasonable performance can be obtained when ZEN is trained on a small corpus,\nwhich is important for applying pre-training techniques to scenarios with\nlimited data. The code and pre-trained models of ZEN are available at\nhttps://github.com/sinovation/zen.",
+    "num_pages": 11
+}

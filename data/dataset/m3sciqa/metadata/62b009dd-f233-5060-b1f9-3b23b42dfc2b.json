@@ -1,0 +1,21 @@
+{
+    "uuid": "62b009dd-f233-5060-b1f9-3b23b42dfc2b",
+    "title": "A Unified Generative Framework for Various NER Subtasks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Hang Yan",
+        "Tao Gui",
+        "Junqi Dai",
+        "Qipeng Guo",
+        "Zheng Zhang",
+        "Xipeng Qiu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.01223v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\62b009dd-f233-5060-b1f9-3b23b42dfc2b.pdf",
+    "bibtex": "@misc{yan2021aunifiedgenerativeframeworkfor,\n    title = {A Unified Generative Framework for Various NER Subtasks},\n    author = {Hang Yan and Tao Gui and Junqi Dai and Qipeng Guo and Zheng Zhang and Xipeng Qiu},\n    year = {2021},\n    eprint = {2106.01223},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.01223},\n}",
+    "abstract": "Named Entity Recognition (NER) is the task of identifying spans that\nrepresent entities in sentences. Whether the entity spans are nested or\ndiscontinuous, the NER task can be categorized into the flat NER, nested NER,\nand discontinuous NER subtasks. These subtasks have been mainly solved by the\ntoken-level sequence labelling or span-level classification. However, these\nsolutions can hardly tackle the three kinds of NER subtasks concurrently. To\nthat end, we propose to formulate the NER subtasks as an entity span sequence\ngeneration task, which can be solved by a unified sequence-to-sequence\n(Seq2Seq) framework. Based on our unified framework, we can leverage the\npre-trained Seq2Seq model to solve all three kinds of NER subtasks without the\nspecial design of the tagging schema or ways to enumerate spans. We exploit\nthree types of entity representations to linearize entities into a sequence.\nOur proposed framework is easy-to-implement and achieves state-of-the-art\n(SoTA) or near SoTA performance on eight English NER datasets, including two\nflat NER datasets, three nested NER datasets, and three discontinuous NER\ndatasets.",
+    "num_pages": 15
+}

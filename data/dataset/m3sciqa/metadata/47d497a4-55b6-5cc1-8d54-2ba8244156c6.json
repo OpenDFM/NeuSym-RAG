@@ -1,0 +1,19 @@
+{
+    "uuid": "47d497a4-55b6-5cc1-8d54-2ba8244156c6",
+    "title": "CONTaiNER: Few-Shot Named Entity Recognition via Contrastive Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Sarkar Snigdha Sarathi Das",
+        "Arzoo Katiyar",
+        "Rebecca J. Passonneau",
+        "Rui Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.07589v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\47d497a4-55b6-5cc1-8d54-2ba8244156c6.pdf",
+    "bibtex": "@misc{das2022containerfewshotnamedentityrecognition,\n    title = {CONTaiNER: Few-Shot Named Entity Recognition via Contrastive Learning},\n    author = {Sarkar Snigdha Sarathi Das and Arzoo Katiyar and Rebecca J. Passonneau and Rui Zhang},\n    year = {2022},\n    eprint = {2109.07589},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.07589},\n}",
+    "abstract": "Named Entity Recognition (NER) in Few-Shot setting is imperative for entity\ntagging in low resource domains. Existing approaches only learn class-specific\nsemantic features and intermediate representations from source domains. This\naffects generalizability to unseen target domains, resulting in suboptimal\nperformances. To this end, we present CONTaiNER, a novel contrastive learning\ntechnique that optimizes the inter-token distribution distance for Few-Shot\nNER. Instead of optimizing class-specific attributes, CONTaiNER optimizes a\ngeneralized objective of differentiating between token categories based on\ntheir Gaussian-distributed embeddings. This effectively alleviates overfitting\nissues originating from training domains. Our experiments in several\ntraditional test domains (OntoNotes, CoNLL'03, WNUT '17, GUM) and a new large\nscale Few-Shot NER dataset (Few-NERD) demonstrate that on average, CONTaiNER\noutperforms previous methods by 3%-13% absolute F1 points while showing\nconsistent performance trends, even in challenging scenarios where previous\napproaches could not achieve appreciable performance.",
+    "num_pages": 16
+}

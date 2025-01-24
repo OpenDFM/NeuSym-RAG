@@ -1,0 +1,19 @@
+{
+    "uuid": "a664a316-f113-561d-be01-bf7870b1cc04",
+    "title": "Automated Hate Speech Detection and the Problem of Offensive Language",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Thomas Davidson",
+        "Dana Warmsley",
+        "Michael Macy",
+        "Ingmar Weber"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1703.04009v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\a664a316-f113-561d-be01-bf7870b1cc04.pdf",
+    "bibtex": "@misc{davidson2017automatedhatespeechdetectionand,\n    title = {Automated Hate Speech Detection and the Problem of Offensive Language},\n    author = {Thomas Davidson and Dana Warmsley and Michael Macy and Ingmar Weber},\n    year = {2017},\n    eprint = {1703.04009},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1703.04009},\n}",
+    "abstract": "A key challenge for automatic hate-speech detection on social media is the\nseparation of hate speech from other instances of offensive language. Lexical\ndetection methods tend to have low precision because they classify all messages\ncontaining particular terms as hate speech and previous work using supervised\nlearning has failed to distinguish between the two categories. We used a\ncrowd-sourced hate speech lexicon to collect tweets containing hate speech\nkeywords. We use crowd-sourcing to label a sample of these tweets into three\ncategories: those containing hate speech, only offensive language, and those\nwith neither. We train a multi-class classifier to distinguish between these\ndifferent categories. Close analysis of the predictions and the errors shows\nwhen we can reliably separate hate speech from other offensive language and\nwhen this differentiation is more difficult. We find that racist and homophobic\ntweets are more likely to be classified as hate speech but that sexist tweets\nare generally classified as offensive. Tweets without explicit hate keywords\nare also more difficult to classify.",
+    "num_pages": 4
+}

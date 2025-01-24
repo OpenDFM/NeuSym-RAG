@@ -1,0 +1,19 @@
+{
+    "uuid": "1ad58efb-6d3b-5d50-b516-a01ae90f0787",
+    "title": "Cross-modal Memory Networks for Radiology Report Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Zhihong Chen",
+        "Yaling Shen",
+        "Yan Song",
+        "Xiang Wan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.13258v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\1ad58efb-6d3b-5d50-b516-a01ae90f0787.pdf",
+    "bibtex": "@misc{chen2022crossmodalmemorynetworksforradiology,\n    title = {Cross-modal Memory Networks for Radiology Report Generation},\n    author = {Zhihong Chen and Yaling Shen and Yan Song and Xiang Wan},\n    year = {2022},\n    eprint = {2204.13258},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.13258},\n}",
+    "abstract": "Medical imaging plays a significant role in clinical practice of medical\ndiagnosis, where the text reports of the images are essential in understanding\nthem and facilitating later treatments. By generating the reports\nautomatically, it is beneficial to help lighten the burden of radiologists and\nsignificantly promote clinical automation, which already attracts much\nattention in applying artificial intelligence to medical domain. Previous\nstudies mainly follow the encoder-decoder paradigm and focus on the aspect of\ntext generation, with few studies considering the importance of cross-modal\nmappings and explicitly exploit such mappings to facilitate radiology report\ngeneration. In this paper, we propose a cross-modal memory networks (CMN) to\nenhance the encoder-decoder framework for radiology report generation, where a\nshared memory is designed to record the alignment between images and texts so\nas to facilitate the interaction and generation across modalities. Experimental\nresults illustrate the effectiveness of our proposed model, where\nstate-of-the-art performance is achieved on two widely used benchmark datasets,\ni.e., IU X-Ray and MIMIC-CXR. Further analyses also prove that our model is\nable to better align information from radiology images and texts so as to help\ngenerating more accurate reports in terms of clinical indicators.",
+    "num_pages": 11
+}

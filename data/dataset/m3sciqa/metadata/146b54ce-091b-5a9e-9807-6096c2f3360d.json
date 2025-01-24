@@ -1,0 +1,21 @@
+{
+    "uuid": "146b54ce-091b-5a9e-9807-6096c2f3360d",
+    "title": "KILM: Knowledge Injection into Encoder-Decoder Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yan Xu",
+        "Mahdi Namazifar",
+        "Devamanyu Hazarika",
+        "Aishwarya Padmakumar",
+        "Yang Liu",
+        "Dilek Hakkani-Tür"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.09170v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\146b54ce-091b-5a9e-9807-6096c2f3360d.pdf",
+    "bibtex": "@misc{xu2023kilmknowledgeinjectionintoencoderdecoder,\n    title = {KILM: Knowledge Injection into Encoder-Decoder Language Models},\n    author = {Yan Xu and Mahdi Namazifar and Devamanyu Hazarika and Aishwarya Padmakumar and Yang Liu and Dilek Hakkani-Tür},\n    year = {2023},\n    eprint = {2302.09170},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2302.09170},\n}",
+    "abstract": "Large pre-trained language models (PLMs) have been shown to retain implicit\nknowledge within their parameters. To enhance this implicit knowledge, we\npropose Knowledge Injection into Language Models (KILM), a novel approach that\ninjects entity-related knowledge into encoder-decoder PLMs, via a generative\nknowledge infilling objective through continued pre-training. This is done\nwithout architectural modifications to the PLMs or adding additional\nparameters. Experimental results over a suite of knowledge-intensive tasks\nspanning numerous datasets show that KILM enables models to retain more\nknowledge and hallucinate less, while preserving their original performance on\ngeneral NLU and NLG tasks. KILM also demonstrates improved zero-shot\nperformances on tasks such as entity disambiguation, outperforming\nstate-of-the-art models having 30x more parameters.",
+    "num_pages": 21
+}

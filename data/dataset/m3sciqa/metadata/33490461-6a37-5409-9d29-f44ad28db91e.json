@@ -1,0 +1,27 @@
+{
+    "uuid": "33490461-6a37-5409-9d29-f44ad28db91e",
+    "title": "End-to-End Modeling via Information Tree for One-Shot Natural Language Spatial Video Grounding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Mengze Li",
+        "Tianbao Wang",
+        "Haoyu Zhang",
+        "Shengyu Zhang",
+        "Zhou Zhao",
+        "Jiaxu Miao",
+        "Wenqiao Zhang",
+        "Wenming Tan",
+        "Jin Wang",
+        "Peng Wang",
+        "Shiliang Pu",
+        "Fei Wu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.08013v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\33490461-6a37-5409-9d29-f44ad28db91e.pdf",
+    "bibtex": "@misc{li2022endtoendmodelingviainformationtree,\n    title = {End-to-End Modeling via Information Tree for One-Shot Natural Language Spatial Video Grounding},\n    author = {Mengze Li and Tianbao Wang and Haoyu Zhang and Shengyu Zhang and Zhou Zhao and Jiaxu Miao and Wenqiao Zhang and Wenming Tan and Jin Wang and Peng Wang and Shiliang Pu and Fei Wu},\n    year = {2022},\n    eprint = {2203.08013},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2203.08013},\n}",
+    "abstract": "Natural language spatial video grounding aims to detect the relevant objects\nin video frames with descriptive sentences as the query. In spite of the great\nadvances, most existing methods rely on dense video frame annotations, which\nrequire a tremendous amount of human effort. To achieve effective grounding\nunder a limited annotation budget, we investigate one-shot video grounding, and\nlearn to ground natural language in all video frames with solely one frame\nlabeled, in an end-to-end manner. One major challenge of end-to-end one-shot\nvideo grounding is the existence of videos frames that are either irrelevant to\nthe language query or the labeled frames. Another challenge relates to the\nlimited supervision, which might result in ineffective representation learning.\nTo address these challenges, we designed an end-to-end model via Information\nTree for One-Shot video grounding (IT-OS). Its key module, the information\ntree, can eliminate the interference of irrelevant frames based on branch\nsearch and branch cropping techniques. In addition, several self-supervised\ntasks are proposed based on the information tree to improve the representation\nlearning under insufficient labeling. Experiments on the benchmark dataset\ndemonstrate the effectiveness of our model.",
+    "num_pages": 11
+}

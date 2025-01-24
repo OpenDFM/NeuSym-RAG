@@ -1,0 +1,21 @@
+{
+    "uuid": "7e072c34-0edd-5b4a-a557-f5f1aa920dd2",
+    "title": "Calibrating Factual Knowledge in Pretrained Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Qingxiu Dong",
+        "Damai Dai",
+        "Yifan Song",
+        "Jingjing Xu",
+        "Zhifang Sui",
+        "Lei Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.03329v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\7e072c34-0edd-5b4a-a557-f5f1aa920dd2.pdf",
+    "bibtex": "@misc{dong2022calibratingfactualknowledgeinpretrained,\n    title = {Calibrating Factual Knowledge in Pretrained Language Models},\n    author = {Qingxiu Dong and Damai Dai and Yifan Song and Jingjing Xu and Zhifang Sui and Lei Li},\n    year = {2022},\n    eprint = {2210.03329},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.03329},\n}",
+    "abstract": "Previous literature has proved that Pretrained Language Models (PLMs) can\nstore factual knowledge. However, we find that facts stored in the PLMs are not\nalways correct. It motivates us to explore a fundamental question: How do we\ncalibrate factual knowledge in PLMs without re-training from scratch? In this\nwork, we propose a simple and lightweight method CaliNet to achieve this goal.\nTo be specific, we first detect whether PLMs can learn the right facts via a\ncontrastive score between right and fake facts. If not, we then use a\nlightweight method to add and adapt new parameters to specific factual texts.\nExperiments on the knowledge probing task show the calibration effectiveness\nand efficiency. In addition, through closed-book question answering, we find\nthat the calibrated PLM possesses knowledge generalization ability after\nfine-tuning. Beyond the calibration performance, we further investigate and\nvisualize the knowledge calibration mechanism.",
+    "num_pages": 11
+}

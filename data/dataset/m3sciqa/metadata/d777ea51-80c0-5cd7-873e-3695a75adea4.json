@@ -1,0 +1,19 @@
+{
+    "uuid": "d777ea51-80c0-5cd7-873e-3695a75adea4",
+    "title": "Paragraph-level Simplification of Medical Texts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Ashwin Devaraj",
+        "Iain J. Marshall",
+        "Byron C. Wallace",
+        "Junyi Jessy Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2104.05767v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\d777ea51-80c0-5cd7-873e-3695a75adea4.pdf",
+    "bibtex": "@misc{devaraj2021paragraphlevelsimplificationofmedicaltexts,\n    title = {Paragraph-level Simplification of Medical Texts},\n    author = {Ashwin Devaraj and Iain J. Marshall and Byron C. Wallace and Junyi Jessy Li},\n    year = {2021},\n    eprint = {2104.05767},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2104.05767},\n}",
+    "abstract": "We consider the problem of learning to simplify medical texts. This is\nimportant because most reliable, up-to-date information in biomedicine is dense\nwith jargon and thus practically inaccessible to the lay audience. Furthermore,\nmanual simplification does not scale to the rapidly growing body of biomedical\nliterature, motivating the need for automated approaches. Unfortunately, there\nare no large-scale resources available for this task. In this work we introduce\na new corpus of parallel texts in English comprising technical and lay\nsummaries of all published evidence pertaining to different clinical topics. We\nthen propose a new metric based on likelihood scores from a masked language\nmodel pretrained on scientific texts. We show that this automated measure\nbetter differentiates between technical and lay summaries than existing\nheuristics. We introduce and evaluate baseline encoder-decoder Transformer\nmodels for simplification and propose a novel augmentation to these in which we\nexplicitly penalize the decoder for producing \"jargon\" terms; we find that this\nyields improvements over baselines in terms of readability.",
+    "num_pages": 13
+}

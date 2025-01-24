@@ -1,0 +1,18 @@
+{
+    "uuid": "f66565d0-3473-5828-a075-94cad5400620",
+    "title": "Neural Discrete Representation Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Aaron van den Oord",
+        "Oriol Vinyals",
+        "Koray Kavukcuoglu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1711.00937v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\f66565d0-3473-5828-a075-94cad5400620.pdf",
+    "bibtex": "@misc{oord2018neuraldiscreterepresentationlearning,\n    title = {Neural Discrete Representation Learning},\n    author = {Aaron van den Oord and Oriol Vinyals and Koray Kavukcuoglu},\n    year = {2018},\n    eprint = {1711.00937},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1711.00937},\n}",
+    "abstract": "Learning useful representations without supervision remains a key challenge\nin machine learning. In this paper, we propose a simple yet powerful generative\nmodel that learns such discrete representations. Our model, the Vector\nQuantised-Variational AutoEncoder (VQ-VAE), differs from VAEs in two key ways:\nthe encoder network outputs discrete, rather than continuous, codes; and the\nprior is learnt rather than static. In order to learn a discrete latent\nrepresentation, we incorporate ideas from vector quantisation (VQ). Using the\nVQ method allows the model to circumvent issues of \"posterior collapse\" --\nwhere the latents are ignored when they are paired with a powerful\nautoregressive decoder -- typically observed in the VAE framework. Pairing\nthese representations with an autoregressive prior, the model can generate high\nquality images, videos, and speech as well as doing high quality speaker\nconversion and unsupervised learning of phonemes, providing further evidence of\nthe utility of the learnt representations.",
+    "num_pages": 11
+}

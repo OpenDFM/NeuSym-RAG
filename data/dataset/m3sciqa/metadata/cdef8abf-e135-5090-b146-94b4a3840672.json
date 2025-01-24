@@ -1,0 +1,23 @@
+{
+    "uuid": "cdef8abf-e135-5090-b146-94b4a3840672",
+    "title": "Kleister: Key Information Extraction Datasets Involving Long Documents with Complex Layouts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Tomasz Stanisławek",
+        "Filip Graliński",
+        "Anna Wróblewska",
+        "Dawid Lipiński",
+        "Agnieszka Kaliska",
+        "Paulina Rosalska",
+        "Bartosz Topolski",
+        "Przemysław Biecek"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2105.05796v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\cdef8abf-e135-5090-b146-94b4a3840672.pdf",
+    "bibtex": "@misc{stanisawek2021kleisterkeyinformationextractiondatasets,\n    title = {Kleister: Key Information Extraction Datasets Involving Long Documents with Complex Layouts},\n    author = {Tomasz Stanisławek and Filip Graliński and Anna Wróblewska and Dawid Lipiński and Agnieszka Kaliska and Paulina Rosalska and Bartosz Topolski and Przemysław Biecek},\n    year = {2021},\n    eprint = {2105.05796},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2105.05796},\n}",
+    "abstract": "The relevance of the Key Information Extraction (KIE) task is increasingly\nimportant in natural language processing problems. But there are still only a\nfew well-defined problems that serve as benchmarks for solutions in this area.\nTo bridge this gap, we introduce two new datasets (Kleister NDA and Kleister\nCharity). They involve a mix of scanned and born-digital long formal\nEnglish-language documents. In these datasets, an NLP system is expected to\nfind or infer various types of entities by employing both textual and\nstructural layout features. The Kleister Charity dataset consists of 2,788\nannual financial reports of charity organizations, with 61,643 unique pages and\n21,612 entities to extract. The Kleister NDA dataset has 540 Non-disclosure\nAgreements, with 3,229 unique pages and 2,160 entities to extract. We provide\nseveral state-of-the-art baseline systems from the KIE domain (Flair, BERT,\nRoBERTa, LayoutLM, LAMBERT), which show that our datasets pose a strong\nchallenge to existing models. The best model achieved an 81.77% and an 83.57%\nF1-score on respectively the Kleister NDA and the Kleister Charity datasets. We\nshare the datasets to encourage progress on more in-depth and complex\ninformation extraction tasks.",
+    "num_pages": 16
+}

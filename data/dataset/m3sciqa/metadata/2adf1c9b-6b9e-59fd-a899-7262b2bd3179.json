@@ -1,0 +1,25 @@
+{
+    "uuid": "2adf1c9b-6b9e-59fd-a899-7262b2bd3179",
+    "title": "RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Hanze Dong",
+        "Wei Xiong",
+        "Deepanshu Goyal",
+        "Yihan Zhang",
+        "Winnie Chow",
+        "Rui Pan",
+        "Shizhe Diao",
+        "Jipeng Zhang",
+        "Kashun Shum",
+        "Tong Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.06767v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\2adf1c9b-6b9e-59fd-a899-7262b2bd3179.pdf",
+    "bibtex": "@misc{dong2023raftrewardrankedfinetuningfor,\n    title = {RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment},\n    author = {Hanze Dong and Wei Xiong and Deepanshu Goyal and Yihan Zhang and Winnie Chow and Rui Pan and Shizhe Diao and Jipeng Zhang and Kashun Shum and Tong Zhang},\n    year = {2023},\n    eprint = {2304.06767},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2304.06767},\n}",
+    "abstract": "Generative foundation models are susceptible to implicit biases that can\narise from extensive unsupervised training data. Such biases can produce\nsuboptimal samples, skewed outcomes, and unfairness, with potentially serious\nconsequences. Consequently, aligning these models with human ethics and\npreferences is an essential step toward ensuring their responsible and\neffective deployment in real-world applications. Prior research has primarily\nemployed Reinforcement Learning from Human Feedback (RLHF) to address this\nproblem, where generative models are fine-tuned with RL algorithms guided by a\nhuman-feedback-informed reward model. However, the inefficiencies and\ninstabilities associated with RL algorithms frequently present substantial\nobstacles to the successful alignment, necessitating the development of a more\nrobust and streamlined approach. To this end, we introduce a new framework,\nReward rAnked FineTuning (RAFT), designed to align generative models\neffectively. Utilizing a reward model and a sufficient number of samples, our\napproach selects the high-quality samples, discarding those that exhibit\nundesired behavior, and subsequently enhancing the model by fine-tuning on\nthese filtered samples. Our studies show that RAFT can effectively improve the\nmodel performance in both reward learning and other automated metrics in both\nlarge language models and diffusion models.",
+    "num_pages": 29
+}

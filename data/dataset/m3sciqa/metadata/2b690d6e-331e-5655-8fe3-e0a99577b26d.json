@@ -1,0 +1,19 @@
+{
+    "uuid": "2b690d6e-331e-5655-8fe3-e0a99577b26d",
+    "title": "The Skipped Beat: A Study of Sociopragmatic Understanding in LLMs for 64 Languages",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Chiyu Zhang",
+        "Khai Duy Doan",
+        "Qisheng Liao",
+        "Muhammad Abdul-Mageed"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.14557v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\2b690d6e-331e-5655-8fe3-e0a99577b26d.pdf",
+    "bibtex": "@misc{zhang2023theskippedbeatastudy,\n    title = {The Skipped Beat: A Study of Sociopragmatic Understanding in LLMs for 64 Languages},\n    author = {Chiyu Zhang and Khai Duy Doan and Qisheng Liao and Muhammad Abdul-Mageed},\n    year = {2023},\n    eprint = {2310.14557},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.14557},\n}",
+    "abstract": "Instruction tuned large language models (LLMs), such as ChatGPT, demonstrate\nremarkable performance in a wide range of tasks. Despite numerous recent\nstudies that examine the performance of instruction-tuned LLMs on various NLP\nbenchmarks, there remains a lack of comprehensive investigation into their\nability to understand cross-lingual sociopragmatic meaning (SM), i.e., meaning\nembedded within social and interactive contexts. This deficiency arises partly\nfrom SM not being adequately represented in any of the existing benchmarks. To\naddress this gap, we present SPARROW, an extensive multilingual benchmark\nspecifically designed for SM understanding. SPARROW comprises 169 datasets\ncovering 13 task types across six primary categories (e.g., anti-social\nlanguage detection, emotion recognition). SPARROW datasets encompass 64\ndifferent languages originating from 12 language families representing 16\nwriting scripts. We evaluate the performance of various multilingual pretrained\nlanguage models (e.g., mT5) and instruction-tuned LLMs (e.g., BLOOMZ, ChatGPT)\non SPARROW through fine-tuning, zero-shot, and/or few-shot learning. Our\ncomprehensive analysis reveals that existing open-source instruction tuned LLMs\nstill struggle to understand SM across various languages, performing close to a\nrandom baseline in some cases. We also find that although ChatGPT outperforms\nmany LLMs, it still falls behind task-specific finetuned models with a gap of\n12.19 SPARROW score. Our benchmark is available at:\nhttps://github.com/UBC-NLP/SPARROW",
+    "num_pages": 33
+}

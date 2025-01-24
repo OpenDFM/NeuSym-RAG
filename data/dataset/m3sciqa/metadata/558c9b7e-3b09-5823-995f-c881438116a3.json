@@ -1,0 +1,18 @@
+{
+    "uuid": "558c9b7e-3b09-5823-995f-c881438116a3",
+    "title": "Named Entity Recognition as Dependency Parsing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Juntao Yu",
+        "Bernd Bohnet",
+        "Massimo Poesio"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2005.07150v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\558c9b7e-3b09-5823-995f-c881438116a3.pdf",
+    "bibtex": "@misc{yu2020namedentityrecognitionasdependency,\n    title = {Named Entity Recognition as Dependency Parsing},\n    author = {Juntao Yu and Bernd Bohnet and Massimo Poesio},\n    year = {2020},\n    eprint = {2005.07150},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2005.07150},\n}",
+    "abstract": "Named Entity Recognition (NER) is a fundamental task in Natural Language\nProcessing, concerned with identifying spans of text expressing references to\nentities. NER research is often focused on flat entities only (flat NER),\nignoring the fact that entity references can be nested, as in [Bank of [China]]\n(Finkel and Manning, 2009). In this paper, we use ideas from graph-based\ndependency parsing to provide our model a global view on the input via a\nbiaffine model (Dozat and Manning, 2017). The biaffine model scores pairs of\nstart and end tokens in a sentence which we use to explore all spans, so that\nthe model is able to predict named entities accurately. We show that the model\nworks well for both nested and flat NER through evaluation on 8 corpora and\nachieving SoTA performance on all of them, with accuracy gains of up to 2.2\npercentage points.",
+    "num_pages": 7
+}

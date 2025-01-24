@@ -1,0 +1,25 @@
+{
+    "uuid": "ec5ed5f8-d390-59f2-8299-03115ca2c742",
+    "title": "Mixture-of-Experts with Expert Choice Routing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yanqi Zhou",
+        "Tao Lei",
+        "Hanxiao Liu",
+        "Nan Du",
+        "Yanping Huang",
+        "Vincent Zhao",
+        "Andrew Dai",
+        "Zhifeng Chen",
+        "Quoc Le",
+        "James Laudon"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2202.09368v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\ec5ed5f8-d390-59f2-8299-03115ca2c742.pdf",
+    "bibtex": "@misc{zhou2022mixtureofexpertswithexpertchoicerouting,\n    title = {Mixture-of-Experts with Expert Choice Routing},\n    author = {Yanqi Zhou and Tao Lei and Hanxiao Liu and Nan Du and Yanping Huang and Vincent Zhao and Andrew Dai and Zhifeng Chen and Quoc Le and James Laudon},\n    year = {2022},\n    eprint = {2202.09368},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2202.09368},\n}",
+    "abstract": "Sparsely-activated Mixture-of-experts (MoE) models allow the number of\nparameters to greatly increase while keeping the amount of computation for a\ngiven token or a given sample unchanged. However, a poor expert routing\nstrategy (e.g. one resulting in load imbalance) can cause certain experts to be\nunder-trained, leading to an expert being under or over-specialized. Prior work\nallocates a fixed number of experts to each token using a top-k function\nregardless of the relative importance of different tokens. To address this, we\npropose a heterogeneous mixture-of-experts employing an expert choice method.\nInstead of letting tokens select the top-k experts, we have experts selecting\nthe top-k tokens. As a result, each token can be routed to a variable number of\nexperts and each expert can have a fixed bucket size. We systematically study\npre-training speedups using the same computational resources of the Switch\nTransformer top-1 and GShard top-2 gating of prior work and find that our\nmethod improves training convergence time by more than 2x. For the same\ncomputational cost, our method demonstrates higher performance in fine-tuning\n11 selected tasks in the GLUE and SuperGLUE benchmarks. For a smaller\nactivation cost, our method outperforms the T5 dense model in 7 out of the 11\ntasks.",
+    "num_pages": 14
+}
