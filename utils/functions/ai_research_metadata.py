@@ -61,7 +61,8 @@ def get_airqa_paper_metadata(uuid_str: Optional[str] = None, dataset_dir: Option
             return None
     else: dataset_dir = AIRQA_DIR
     global UUID2PAPERS
-    if not UUID2PAPERS:
+    if not UUID2PAPERS.get(dataset_dir):
+        UUID2PAPERS[dataset_dir] = {}
         metadata_dir = os.path.join(dataset_dir, 'metadata')
         files = os.listdir(metadata_dir)
         for f in files:
@@ -69,11 +70,11 @@ def get_airqa_paper_metadata(uuid_str: Optional[str] = None, dataset_dir: Option
             if fp.endswith('.json') and is_valid_uuid(os.path.basename(fp).split('.')[0]):
                 with open(fp, 'r', encoding='utf-8') as inf:
                     paper_dict = json.load(inf)
-                    UUID2PAPERS[paper_dict['uuid']] = paper_dict
+                    UUID2PAPERS[dataset_dir][paper_dict['uuid']] = paper_dict
     if uuid_str is not None:
-        assert is_valid_uuid(uuid_str) and uuid_str in UUID2PAPERS, f"Invalid UUID string: {uuid_str}."
-        return UUID2PAPERS[uuid_str]
-    return UUID2PAPERS
+        assert is_valid_uuid(uuid_str) and uuid_str in UUID2PAPERS[dataset_dir], f"Invalid UUID string: {uuid_str}."
+        return UUID2PAPERS[dataset_dir][uuid_str]
+    return UUID2PAPERS[dataset_dir]
 
 
 def download_paper_pdf(pdf_url: str, pdf_path: str, log: bool = True) -> Optional[str]:

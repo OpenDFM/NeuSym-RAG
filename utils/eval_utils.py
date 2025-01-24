@@ -8,6 +8,7 @@ from tabulate import tabulate
 from contextlib import nullcontext
 from evaluation.evaluator import evaluate_airqa
 from agents.models import get_llm_single_instance
+from utils.functions.common_functions import call_llm
 
 
 def evaluate_dataset(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs) -> float:
@@ -26,6 +27,8 @@ def evaluate_dataset(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **k
         score = evaluate_tatdqa(pred_ans, gold_data, **kwargs)
     elif dataset == 'airqa':
         score = evaluate_airqa(pred_ans, gold_data)
+    elif dataset == 'm3sciqa':
+        score = evaluate_m3sciqa(pred_ans, gold_data, **kwargs)
     else:
         raise NotImplementedError(f"Dataset {dataset} not supported.")
     return score
@@ -190,6 +193,53 @@ def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], **kwargs) -> float
             raise NotImplementedError(f"Gold scale {gold_scale} not supported.")
     else:
         raise NotImplementedError(f"Question type {question_type} not supported.")
+
+
+def evaluate_m3sciqa(pred_ans: str, gold_data: Dict[str, Any], **kwargs) -> float:
+    """ Evaluate the predicted answer for the M3SciQA dataset.
+    @args:
+        pred_ans: str, predicted answer
+        gold_data: Dict[str, Any], gold data
+    @return:
+        score: float, evaluation score
+    """
+    
+    question, gold_ans = gold_data["question"], gold_data["answer"]
+    
+    def extract_response(text):
+        import re
+        pattern = r'\{.*?\}'
+        match = re.search(pattern, text, re.DOTALL)
+        return match.group(0) if match else None
+    
+    prompt = f"""You are the sole expert in this field and you can understand scientific papers.
+    
+    I am testing a model performance on open-ended questions, I want you to help me in checking if the candidate answer has the same meaning with the reference answer given the question. If you think the reference answer and the candidate answer have the same meaning, respond {{"selection": "1"}}; else, respond by {{"selection": "0"}}; if you think the candidate is partially correct, respond by {{"selection": "0.5"}}.
+
+    <QUESTION>
+    {question}
+    </QUESTION>
+
+    <REFERENCE>
+    {gold_ans}
+    </REFERENCE>
+
+    <CANDIDATE>
+    {pred_ans}
+    </CANDIDATE>
+
+    Again, if you think they have the same meaning, respond {{"selection": "1"}}; if you think they are totally irrelevant, respond by {{"selection": "0"}} only; if you think the candidate is partially correct, respond by {{"selection": "0.5"}}.
+    
+    Do not use other format.
+"""
+    
+    model = kwargs.get("model", "gpt-4-0125-preview")
+    temperature = kwargs.get("temperature", 0.0)
+    
+    response = call_llm(prompt, model=model, temperature=temperature)
+    response = extract_response(response)
+    response = json.loads(response)['selection']
+    return float(float(response) > kwargs.get("threshold", 0.9))
 
 
 def resolve_gold_answer(gold: Dict[str, Any]) -> str:

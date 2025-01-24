@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from typing import Any, Dict, List, Tuple, Optional, Union
 import fuzzywuzzy.fuzz as fuzz
 from utils.functions.common_functions import call_llm, call_llm_with_message
-from utils.airqa_utils import get_relevent_papers_by_title
+from utils.airqa_utils import get_relevant_papers_by_title
 
 
 DEFAULT_LLM_MODEL = 'gpt-4o' # may be changed to other open-source models
@@ -210,7 +210,7 @@ def eval_paper_relevance_with_llm(pred: Any, question: str, llm_model: str = DEF
     @return:
         The evaluation score, 0.0 or 1.0.
     """
-    results = get_relevent_papers_by_title(pred, dataset_dir=dataset_dir, threshold=threshold, topk=topk)
+    results = get_relevant_papers_by_title(pred, dataset_dir=dataset_dir, threshold=threshold, topk=topk)
     if len(results) == 0:
         return 0.0
     metadata = results[0]
@@ -250,7 +250,7 @@ def eval_paper_relevance_with_llm_and_reference_answer(pred: Any, question: str,
     @return:
         The evaluation score, 0.0 or 1.0.
     """
-    results = get_relevent_papers_by_title(pred, dataset_dir=dataset_dir, threshold=threshold, topk=topk)
+    results = get_relevant_papers_by_title(pred, dataset_dir=dataset_dir, threshold=threshold, topk=topk)
     if len(results) == 0:
         return 0.0
     metadata = results[0]

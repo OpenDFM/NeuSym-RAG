@@ -67,7 +67,7 @@ def get_all_example_uuids(
     return [os.path.splitext(f)[0] for f in os.listdir(example_dir) if f.endswith('.json')]
 
 
-def get_relevent_papers_by_title(
+def get_relevant_papers_by_title(
         rough_title: str,
         threshold: int = 90,
         topk: int = 1,
@@ -116,7 +116,7 @@ def generate_airqa_example_template(dataset_dir: str = AIRQA_DIR, **kwargs) -> D
     example_path = os.path.join(dataset_dir, 'examples')
     if example_template["annotator"].startswith("litsearch"):
         example_path = os.path.join(example_path, 'litsearch')
-    elif example_template["annotator"] not in ["human"]:
+    elif example_template["annotator"] not in ["human", "m3sciqa"]:
         example_path = os.path.join(example_path, 'automation')
     with open(os.path.join(example_path, uid + '.json'), 'w', encoding='utf-8') as ouf:
         json.dump(example_template, ouf, ensure_ascii=False, indent=4)
