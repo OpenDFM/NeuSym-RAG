@@ -10,21 +10,21 @@ def hashed(stringified_message: str) -> str:
 def parallel_write_or_read(
         template: str,
         **kwargs
-    ):
+    ) -> str:
     stringified_message = json.dumps(convert_to_message(template, **kwargs), separators=(",", ":"))
     hashed_message = hashed(stringified_message.strip())
     parallel = kwargs.get("parallel")
     if parallel.get("write"):
         with open(parallel["write"], "a", encoding='utf-8') as f:
             f.write(stringified_message + "\n")
-        return None
+        return ""
     elif parallel.get("read"):
         parallel_dict = json.load(open(parallel["read"], "r", encoding='utf-8'))
         if parallel_dict.get(hashed_message):
             return parallel_dict[hashed_message]
         else:
             print(f"Message {hashed_message} not found in the parallel file.")
-            return None
+            return ""
 
 def parallel_message_to_batch(
         message_group: List[List[Dict[str, str]]], 
