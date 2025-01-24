@@ -1,0 +1,34 @@
+{
+    "uuid": "0318f9e2-625a-5fab-8933-cb1b817faee5",
+    "question": "In the paper \"DuoAttention: Efficient Long-Context LLM Inference with Retrieval and Streaming Heads\", on which two benchmarks was the long text capability tested? Which institutions proposed the Retrieval head used in this paper?",
+    "answer_format": "Your answer should be a python list of two items. The first item is a python list of two strings, the two benchmarks. The second item is a python list strings, the institutions.",
+    "tags": ["multiple","objective","text","metadata"],
+    "anchor_pdf": ["cd0d4b90-0516-5e63-9e18-2ede1bcc6dda","287db02d-6d1e-5059-89f8-eb6973610a6b"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_element_list_included",
+                "eval_element_list_included"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": ["Needle-in-a-Haystack", "LongBench"],
+                    "ignore_order": true
+                },
+                {
+                    "gold": ["MIT", "Tsinghua University", "SJTU", "University of Edingburgh", "NVIDIA"],
+                    "ignore_order": true
+                }
+            ]
+
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
