@@ -34,3 +34,7 @@ from .logical_functions import (
     eval_disjunction,
     eval_negation
 )
+
+from .m3sciqa_functions import (
+    eval_m3sciqa
+)
