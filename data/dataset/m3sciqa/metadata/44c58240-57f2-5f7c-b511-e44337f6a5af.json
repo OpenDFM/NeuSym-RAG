@@ -1,0 +1,20 @@
+{
+    "uuid": "44c58240-57f2-5f7c-b511-e44337f6a5af",
+    "title": "Fast Model Editing at Scale",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Eric Mitchell",
+        "Charles Lin",
+        "Antoine Bosselut",
+        "Chelsea Finn",
+        "Christopher D. Manning"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.11309v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\44c58240-57f2-5f7c-b511-e44337f6a5af.pdf",
+    "bibtex": "@misc{mitchell2022fastmodeleditingatscale,\n    title = {Fast Model Editing at Scale},\n    author = {Eric Mitchell and Charles Lin and Antoine Bosselut and Chelsea Finn and Christopher D. Manning},\n    year = {2022},\n    eprint = {2110.11309},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2110.11309},\n}",
+    "abstract": "While large pre-trained models have enabled impressive results on a variety\nof downstream tasks, the largest existing models still make errors, and even\naccurate predictions may become outdated over time. Because detecting all such\nfailures at training time is impossible, enabling both developers and end users\nof such models to correct inaccurate outputs while leaving the model otherwise\nintact is desirable. However, the distributed, black-box nature of the\nrepresentations learned by large neural networks makes producing such targeted\nedits difficult. If presented with only a single problematic input and new\ndesired output, fine-tuning approaches tend to overfit; other editing\nalgorithms are either computationally infeasible or simply ineffective when\napplied to very large models. To enable easy post-hoc editing at scale, we\npropose Model Editor Networks using Gradient Decomposition (MEND), a collection\nof small auxiliary editing networks that use a single desired input-output pair\nto make fast, local edits to a pre-trained model's behavior. MEND learns to\ntransform the gradient obtained by standard fine-tuning, using a low-rank\ndecomposition of the gradient to make the parameterization of this\ntransformation tractable. MEND can be trained on a single GPU in less than a\nday even for 10 billion+ parameter models; once trained MEND enables rapid\napplication of new edits to the pre-trained model. Our experiments with T5,\nGPT, BERT, and BART models show that MEND is the only approach to model editing\nthat effectively edits the behavior of models with more than 10 billion\nparameters. Code and data available at\nhttps://sites.google.com/view/mend-editing.",
+    "num_pages": 21
+}

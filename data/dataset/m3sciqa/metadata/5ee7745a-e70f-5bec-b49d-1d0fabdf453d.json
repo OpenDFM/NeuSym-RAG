@@ -1,0 +1,22 @@
+{
+    "uuid": "5ee7745a-e70f-5bec-b49d-1d0fabdf453d",
+    "title": "Inferring Prototypes for Multi-Label Few-Shot Image Classification with Word Vector Guided Attention",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Kun Yan",
+        "Chenbin Zhang",
+        "Jun Hou",
+        "Ping Wang",
+        "Zied Bouraoui",
+        "Shoaib Jameel",
+        "Steven Schockaert"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2112.01037v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\5ee7745a-e70f-5bec-b49d-1d0fabdf453d.pdf",
+    "bibtex": "@misc{yan2021inferringprototypesformultilabelfewshot,\n    title = {Inferring Prototypes for Multi-Label Few-Shot Image Classification with Word Vector Guided Attention},\n    author = {Kun Yan and Chenbin Zhang and Jun Hou and Ping Wang and Zied Bouraoui and Shoaib Jameel and Steven Schockaert},\n    year = {2021},\n    eprint = {2112.01037},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2112.01037},\n}",
+    "abstract": "Multi-label few-shot image classification (ML-FSIC) is the task of assigning\ndescriptive labels to previously unseen images, based on a small number of\ntraining examples. A key feature of the multi-label setting is that images\noften have multiple labels, which typically refer to different regions of the\nimage. When estimating prototypes, in a metric-based setting, it is thus\nimportant to determine which regions are relevant for which labels, but the\nlimited amount of training data makes this highly challenging. As a solution,\nin this paper we propose to use word embeddings as a form of prior knowledge\nabout the meaning of the labels. In particular, visual prototypes are obtained\nby aggregating the local feature maps of the support images, using an attention\nmechanism that relies on the label embeddings. As an important advantage, our\nmodel can infer prototypes for unseen labels without the need for fine-tuning\nany model parameters, which demonstrates its strong generalization abilities.\nExperiments on COCO and PASCAL VOC furthermore show that our model\nsubstantially improves the current state-of-the-art.",
+    "num_pages": 9
+}

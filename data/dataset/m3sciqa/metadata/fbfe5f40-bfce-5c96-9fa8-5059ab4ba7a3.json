@@ -1,0 +1,21 @@
+{
+    "uuid": "fbfe5f40-bfce-5c96-9fa8-5059ab4ba7a3",
+    "title": "Feature Adaptation of Pre-Trained Language Models across Languages and Domains with Robust Self-Training",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Hai Ye",
+        "Qingyu Tan",
+        "Ruidan He",
+        "Juntao Li",
+        "Hwee Tou Ng",
+        "Lidong Bing"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2009.11538v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\fbfe5f40-bfce-5c96-9fa8-5059ab4ba7a3.pdf",
+    "bibtex": "@misc{ye2020featureadaptationofpretrainedlanguage,\n    title = {Feature Adaptation of Pre-Trained Language Models across Languages and Domains with Robust Self-Training},\n    author = {Hai Ye and Qingyu Tan and Ruidan He and Juntao Li and Hwee Tou Ng and Lidong Bing},\n    year = {2020},\n    eprint = {2009.11538},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2009.11538},\n}",
+    "abstract": "Adapting pre-trained language models (PrLMs) (e.g., BERT) to new domains has\ngained much attention recently. Instead of fine-tuning PrLMs as done in most\nprevious work, we investigate how to adapt the features of PrLMs to new domains\nwithout fine-tuning. We explore unsupervised domain adaptation (UDA) in this\npaper. With the features from PrLMs, we adapt the models trained with labeled\ndata from the source domain to the unlabeled target domain. Self-training is\nwidely used for UDA which predicts pseudo labels on the target domain data for\ntraining. However, the predicted pseudo labels inevitably include noise, which\nwill negatively affect training a robust model. To improve the robustness of\nself-training, in this paper we present class-aware feature self-distillation\n(CFd) to learn discriminative features from PrLMs, in which PrLM features are\nself-distilled into a feature adaptation module and the features from the same\nclass are more tightly clustered. We further extend CFd to a cross-language\nsetting, in which language discrepancy is studied. Experiments on two\nmonolingual and multilingual Amazon review datasets show that CFd can\nconsistently improve the performance of self-training in cross-domain and\ncross-language settings.",
+    "num_pages": 14
+}

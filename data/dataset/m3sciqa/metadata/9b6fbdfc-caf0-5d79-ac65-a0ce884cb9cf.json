@@ -1,0 +1,17 @@
+{
+    "uuid": "9b6fbdfc-caf0-5d79-ac65-a0ce884cb9cf",
+    "title": "Temporal Adaptation of BERT and Performance on Downstream Document Classification: Insights from Social Media",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Paul Röttger",
+        "Janet B. Pierrehumbert"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2104.08116v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\9b6fbdfc-caf0-5d79-ac65-a0ce884cb9cf.pdf",
+    "bibtex": "@misc{rttger2021temporaladaptationofbertand,\n    title = {Temporal Adaptation of BERT and Performance on Downstream Document Classification: Insights from Social Media},\n    author = {Paul Röttger and Janet B. Pierrehumbert},\n    year = {2021},\n    eprint = {2104.08116},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2104.08116},\n}",
+    "abstract": "Language use differs between domains and even within a domain, language use\nchanges over time. For pre-trained language models like BERT, domain adaptation\nthrough continued pre-training has been shown to improve performance on\nin-domain downstream tasks. In this article, we investigate whether temporal\nadaptation can bring additional benefits. For this purpose, we introduce a\ncorpus of social media comments sampled over three years. It contains\nunlabelled data for adaptation and evaluation on an upstream masked language\nmodelling task as well as labelled data for fine-tuning and evaluation on a\ndownstream document classification task. We find that temporality matters for\nboth tasks: temporal adaptation improves upstream and temporal fine-tuning\ndownstream task performance. Time-specific models generally perform better on\npast than on future test sets, which matches evidence on the bursty usage of\ntopical words. However, adapting BERT to time and domain does not improve\nperformance on the downstream task over only adapting to domain. Token-level\nanalysis shows that temporal adaptation captures event-driven changes in\nlanguage use in the downstream task, but not those changes that are actually\nrelevant to task performance. Based on our findings, we discuss when temporal\nadaptation may be more effective.",
+    "num_pages": 13
+}

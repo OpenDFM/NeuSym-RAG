@@ -1,0 +1,21 @@
+{
+    "uuid": "3b7baa1d-606b-5481-9c27-fec60e4c7533",
+    "title": "Pre-training Molecular Graph Representation with 3D Geometry",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Shengchao Liu",
+        "Hanchen Wang",
+        "Weiyang Liu",
+        "Joan Lasenby",
+        "Hongyu Guo",
+        "Jian Tang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.07728v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\3b7baa1d-606b-5481-9c27-fec60e4c7533.pdf",
+    "bibtex": "@misc{liu2022pretrainingmoleculargraphrepresentationwith,\n    title = {Pre-training Molecular Graph Representation with 3D Geometry},\n    author = {Shengchao Liu and Hanchen Wang and Weiyang Liu and Joan Lasenby and Hongyu Guo and Jian Tang},\n    year = {2022},\n    eprint = {2110.07728},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2110.07728},\n}",
+    "abstract": "Molecular graph representation learning is a fundamental problem in modern\ndrug and material discovery. Molecular graphs are typically modeled by their 2D\ntopological structures, but it has been recently discovered that 3D geometric\ninformation plays a more vital role in predicting molecular functionalities.\nHowever, the lack of 3D information in real-world scenarios has significantly\nimpeded the learning of geometric graph representation. To cope with this\nchallenge, we propose the Graph Multi-View Pre-training (GraphMVP) framework\nwhere self-supervised learning (SSL) is performed by leveraging the\ncorrespondence and consistency between 2D topological structures and 3D\ngeometric views. GraphMVP effectively learns a 2D molecular graph encoder that\nis enhanced by richer and more discriminative 3D geometry. We further provide\ntheoretical insights to justify the effectiveness of GraphMVP. Finally,\ncomprehensive experiments show that GraphMVP can consistently outperform\nexisting graph SSL methods.",
+    "num_pages": 32
+}

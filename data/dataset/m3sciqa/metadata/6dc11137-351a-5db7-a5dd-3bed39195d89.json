@@ -1,0 +1,18 @@
+{
+    "uuid": "6dc11137-351a-5db7-a5dd-3bed39195d89",
+    "title": "Invertible Generative Modeling using Linear Rational Splines",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Hadi M. Dolatabadi",
+        "Sarah Erfani",
+        "Christopher Leckie"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2001.05168v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\6dc11137-351a-5db7-a5dd-3bed39195d89.pdf",
+    "bibtex": "@misc{dolatabadi2020invertiblegenerativemodelingusinglinear,\n    title = {Invertible Generative Modeling using Linear Rational Splines},\n    author = {Hadi M. Dolatabadi and Sarah Erfani and Christopher Leckie},\n    year = {2020},\n    eprint = {2001.05168},\n    archivePrefix = {arXiv},\n    primaryClass = {stat.ML},\n    url = {http://arxiv.org/abs/2001.05168},\n}",
+    "abstract": "Normalizing flows attempt to model an arbitrary probability distribution\nthrough a set of invertible mappings. These transformations are required to\nachieve a tractable Jacobian determinant that can be used in high-dimensional\nscenarios. The first normalizing flow designs used coupling layer mappings\nbuilt upon affine transformations. The significant advantage of such models is\ntheir easy-to-compute inverse. Nevertheless, making use of affine\ntransformations may limit the expressiveness of such models. Recently,\ninvertible piecewise polynomial functions as a replacement for affine\ntransformations have attracted attention. However, these methods require\nsolving a polynomial equation to calculate their inverse. In this paper, we\nexplore using linear rational splines as a replacement for affine\ntransformations used in coupling layers. Besides having a straightforward\ninverse, inference and generation have similar cost and architecture in this\nmethod. Moreover, simulation results demonstrate the competitiveness of this\napproach's performance compared to existing methods.",
+    "num_pages": 18
+}

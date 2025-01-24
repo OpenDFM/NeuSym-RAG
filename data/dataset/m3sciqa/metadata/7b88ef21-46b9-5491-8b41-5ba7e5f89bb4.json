@@ -1,0 +1,19 @@
+{
+    "uuid": "7b88ef21-46b9-5491-8b41-5ba7e5f89bb4",
+    "title": "On Faithfulness and Factuality in Abstractive Summarization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Joshua Maynez",
+        "Shashi Narayan",
+        "Bernd Bohnet",
+        "Ryan McDonald"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2005.00661v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\7b88ef21-46b9-5491-8b41-5ba7e5f89bb4.pdf",
+    "bibtex": "@misc{maynez2020onfaithfulnessandfactualityin,\n    title = {On Faithfulness and Factuality in Abstractive Summarization},\n    author = {Joshua Maynez and Shashi Narayan and Bernd Bohnet and Ryan McDonald},\n    year = {2020},\n    eprint = {2005.00661},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2005.00661},\n}",
+    "abstract": "It is well known that the standard likelihood training and approximate\ndecoding objectives in neural text generation models lead to less human-like\nresponses for open-ended tasks such as language modeling and story generation.\nIn this paper we have analyzed limitations of these models for abstractive\ndocument summarization and found that these models are highly prone to\nhallucinate content that is unfaithful to the input document. We conducted a\nlarge scale human evaluation of several neural abstractive summarization\nsystems to better understand the types of hallucinations they produce. Our\nhuman annotators found substantial amounts of hallucinated content in all model\ngenerated summaries. However, our analysis does show that pretrained models are\nbetter summarizers not only in terms of raw metrics, i.e., ROUGE, but also in\ngenerating faithful and factual summaries as evaluated by humans. Furthermore,\nwe show that textual entailment measures better correlate with faithfulness\nthan standard metrics, potentially leading the way to automatic evaluation\nmetrics as well as training and decoding criteria.",
+    "num_pages": 14
+}

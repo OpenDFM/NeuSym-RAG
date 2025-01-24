@@ -1,0 +1,17 @@
+{
+    "uuid": "fffd1c97-f03e-5210-8dce-f0eb709b9199",
+    "title": "Understanding and Bridging the Modality Gap for Speech Translation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Qingkai Fang",
+        "Yang Feng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.08706v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\fffd1c97-f03e-5210-8dce-f0eb709b9199.pdf",
+    "bibtex": "@misc{fang2023understandingandbridgingthemodality,\n    title = {Understanding and Bridging the Modality Gap for Speech Translation},\n    author = {Qingkai Fang and Yang Feng},\n    year = {2023},\n    eprint = {2305.08706},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.08706},\n}",
+    "abstract": "How to achieve better end-to-end speech translation (ST) by leveraging (text)\nmachine translation (MT) data? Among various existing techniques, multi-task\nlearning is one of the effective ways to share knowledge between ST and MT in\nwhich additional MT data can help to learn source-to-target mapping. However,\ndue to the differences between speech and text, there is always a gap between\nST and MT. In this paper, we first aim to understand this modality gap from the\ntarget-side representation differences, and link the modality gap to another\nwell-known problem in neural machine translation: exposure bias. We find that\nthe modality gap is relatively small during training except for some difficult\ncases, but keeps increasing during inference due to the cascading effect. To\naddress these problems, we propose the Cross-modal Regularization with\nScheduled Sampling (Cress) method. Specifically, we regularize the output\npredictions of ST and MT, whose target-side contexts are derived by sampling\nbetween ground truth words and self-generated words with a varying probability.\nFurthermore, we introduce token-level adaptive training which assigns different\ntraining weights to target tokens to handle difficult cases with large modality\ngaps. Experiments and analysis show that our approach effectively bridges the\nmodality gap, and achieves promising results in all eight directions of the\nMuST-C dataset.",
+    "num_pages": 16
+}

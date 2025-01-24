@@ -1,0 +1,21 @@
+{
+    "uuid": "5f861444-411b-5c95-80cf-3aa93ff28763",
+    "title": "Scaling Vision-Language Models with Sparse Mixture of Experts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Sheng Shen",
+        "Zhewei Yao",
+        "Chunyuan Li",
+        "Trevor Darrell",
+        "Kurt Keutzer",
+        "Yuxiong He"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2303.07226v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\5f861444-411b-5c95-80cf-3aa93ff28763.pdf",
+    "bibtex": "@misc{shen2023scalingvisionlanguagemodelswithsparse,\n    title = {Scaling Vision-Language Models with Sparse Mixture of Experts},\n    author = {Sheng Shen and Zhewei Yao and Chunyuan Li and Trevor Darrell and Kurt Keutzer and Yuxiong He},\n    year = {2023},\n    eprint = {2303.07226},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2303.07226},\n}",
+    "abstract": "The field of natural language processing (NLP) has made significant strides\nin recent years, particularly in the development of large-scale vision-language\nmodels (VLMs). These models aim to bridge the gap between text and visual\ninformation, enabling a more comprehensive understanding of multimedia data.\nHowever, as these models become larger and more complex, they also become more\nchallenging to train and deploy. One approach to addressing this challenge is\nthe use of sparsely-gated mixture-of-experts (MoE) techniques, which divide the\nmodel into smaller, specialized sub-models that can jointly solve a task. In\nthis paper, we explore the effectiveness of MoE in scaling vision-language\nmodels, demonstrating its potential to achieve state-of-the-art performance on\na range of benchmarks over dense models of equivalent computational cost. Our\nresearch offers valuable insights into stabilizing the training of MoE models,\nunderstanding the impact of MoE on model interpretability, and balancing the\ntrade-offs between compute performance when scaling VLMs. We hope our work will\ninspire further research into the use of MoE for scaling large-scale\nvision-language models and other multimodal machine learning applications.",
+    "num_pages": 16
+}

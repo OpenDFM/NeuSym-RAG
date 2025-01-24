@@ -1,0 +1,18 @@
+{
+    "uuid": "1b108425-ed34-58b9-909e-fde6e2bfcc3f",
+    "title": "Learning with Latent Language",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Jacob Andreas",
+        "Dan Klein",
+        "Sergey Levine"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1711.00482v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\1b108425-ed34-58b9-909e-fde6e2bfcc3f.pdf",
+    "bibtex": "@misc{andreas2017learningwithlatentlanguage,\n    title = {Learning with Latent Language},\n    author = {Jacob Andreas and Dan Klein and Sergey Levine},\n    year = {2017},\n    eprint = {1711.00482},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1711.00482},\n}",
+    "abstract": "The named concepts and compositional operators present in natural language\nprovide a rich source of information about the kinds of abstractions humans use\nto navigate the world. Can this linguistic background knowledge improve the\ngenerality and efficiency of learned classifiers and control policies? This\npaper aims to show that using the space of natural language strings as a\nparameter space is an effective way to capture natural task structure. In a\npretraining phase, we learn a language interpretation model that transforms\ninputs (e.g. images) into outputs (e.g. labels) given natural language\ndescriptions. To learn a new concept (e.g. a classifier), we search directly in\nthe space of descriptions to minimize the interpreter's loss on training\nexamples. Crucially, our models do not require language data to learn these\nconcepts: language is used only in pretraining to impose structure on\nsubsequent learning. Results on image classification, text editing, and\nreinforcement learning show that, in all settings, models with a linguistic\nparameterization outperform those without.",
+    "num_pages": 16
+}

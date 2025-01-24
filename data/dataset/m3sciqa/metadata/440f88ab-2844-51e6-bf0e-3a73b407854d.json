@@ -1,0 +1,20 @@
+{
+    "uuid": "440f88ab-2844-51e6-bf0e-3a73b407854d",
+    "title": "Compositional Exemplars for In-context Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Jiacheng Ye",
+        "Zhiyong Wu",
+        "Jiangtao Feng",
+        "Tao Yu",
+        "Lingpeng Kong"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.05698v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\440f88ab-2844-51e6-bf0e-3a73b407854d.pdf",
+    "bibtex": "@misc{ye2023compositionalexemplarsforincontextlearning,\n    title = {Compositional Exemplars for In-context Learning},\n    author = {Jiacheng Ye and Zhiyong Wu and Jiangtao Feng and Tao Yu and Lingpeng Kong},\n    year = {2023},\n    eprint = {2302.05698},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2302.05698},\n}",
+    "abstract": "Large pretrained language models (LMs) have shown impressive In-Context\nLearning (ICL) ability, where the model learns to do an unseen task via a\nprompt consisting of input-output examples as the demonstration, without any\nparameter updates. The performance of ICL is highly dominated by the quality of\nthe selected in-context examples. However, previous selection methods are\nmostly based on simple heuristics, leading to sub-optimal performance. In this\nwork, we formulate in-context example selection as a subset selection problem.\nWe propose CEIL (Compositional Exemplars for In-context Learning), which is\ninstantiated by Determinantal Point Processes (DPPs) to model the interaction\nbetween the given input and in-context examples, and optimized through a\ncarefully-designed contrastive learning objective to obtain preference from\nLMs. We validate CEIL on 12 classification and generation datasets from 7\ndistinct NLP tasks, including sentiment analysis, paraphrase detection, natural\nlanguage inference, commonsense reasoning, open-domain question answering, code\ngeneration, and semantic parsing. Extensive experiments demonstrate not only\nthe state-of-the-art performance but also the transferability and\ncompositionality of CEIL, shedding new light on effective and efficient\nin-context learning. Our code is released at\nhttps://github.com/HKUNLP/icl-ceil.",
+    "num_pages": 16
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "ddd6c8da-4823-579d-8ac9-62f2c0ca8373",
+    "title": "DG2: Data Augmentation Through Document Grounded Dialogue Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Qingyang Wu",
+        "Song Feng",
+        "Derek Chen",
+        "Sachindra Joshi",
+        "Luis A. Lastras",
+        "Zhou Yu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2112.08342v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\ddd6c8da-4823-579d-8ac9-62f2c0ca8373.pdf",
+    "bibtex": "@misc{wu2021dg2dataaugmentationthroughdocument,\n    title = {DG2: Data Augmentation Through Document Grounded Dialogue Generation},\n    author = {Qingyang Wu and Song Feng and Derek Chen and Sachindra Joshi and Luis A. Lastras and Zhou Yu},\n    year = {2021},\n    eprint = {2112.08342},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2112.08342},\n}",
+    "abstract": "Collecting data for training dialog systems can be extremely expensive due to\nthe involvement of human participants and need for extensive annotation.\nEspecially in document-grounded dialog systems, human experts need to carefully\nread the unstructured documents to answer the users' questions. As a result,\nexisting document-grounded dialog datasets are relatively small-scale and\nobstruct the effective training of dialogue systems. In this paper, we propose\nan automatic data augmentation technique grounded on documents through a\ngenerative dialogue model. The dialogue model consists of a user bot and agent\nbot that can synthesize diverse dialogues given an input document, which are\nthen used to train a downstream model. When supplementing the original dataset,\nour method achieves significant improvement over traditional data augmentation\nmethods. We also achieve great performance in the low-resource setting.",
+    "num_pages": 11
+}

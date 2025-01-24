@@ -1,0 +1,23 @@
+{
+    "uuid": "a07b0382-f658-598f-988b-2d8127b73e6a",
+    "title": "Large Language Models Can Be Easily Distracted by Irrelevant Context",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Freda Shi",
+        "Xinyun Chen",
+        "Kanishka Misra",
+        "Nathan Scales",
+        "David Dohan",
+        "Ed Chi",
+        "Nathanael Schärli",
+        "Denny Zhou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.00093v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\a07b0382-f658-598f-988b-2d8127b73e6a.pdf",
+    "bibtex": "@misc{shi2023largelanguagemodelscanbe,\n    title = {Large Language Models Can Be Easily Distracted by Irrelevant Context},\n    author = {Freda Shi and Xinyun Chen and Kanishka Misra and Nathan Scales and David Dohan and Ed Chi and Nathanael Schärli and Denny Zhou},\n    year = {2023},\n    eprint = {2302.00093},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2302.00093},\n}",
+    "abstract": "Large language models have achieved impressive performance on various natural\nlanguage processing tasks. However, so far they have been evaluated primarily\non benchmarks where all information in the input context is relevant for\nsolving the task. In this work, we investigate the distractibility of large\nlanguage models, i.e., how the model problem-solving accuracy can be influenced\nby irrelevant context. In particular, we introduce Grade-School Math with\nIrrelevant Context (GSM-IC), an arithmetic reasoning dataset with irrelevant\ninformation in the problem description. We use this benchmark to measure the\ndistractibility of cutting-edge prompting techniques for large language models,\nand find that the model performance is dramatically decreased when irrelevant\ninformation is included. We also identify several approaches for mitigating\nthis deficiency, such as decoding with self-consistency and adding to the\nprompt an instruction that tells the language model to ignore the irrelevant\ninformation.",
+    "num_pages": 18
+}

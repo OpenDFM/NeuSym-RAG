@@ -1,0 +1,17 @@
+{
+    "uuid": "4a324a22-6bd2-5602-84bc-07231c819440",
+    "title": "Auto-Encoding Variational Bayes",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Diederik P Kingma",
+        "Max Welling"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1312.6114v11",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\4a324a22-6bd2-5602-84bc-07231c819440.pdf",
+    "bibtex": "@misc{kingma2022autoencodingvariationalbayes,\n    title = {Auto-Encoding Variational Bayes},\n    author = {Diederik P Kingma and Max Welling},\n    year = {2022},\n    eprint = {1312.6114},\n    archivePrefix = {arXiv},\n    primaryClass = {stat.ML},\n    url = {http://arxiv.org/abs/1312.6114},\n}",
+    "abstract": "How can we perform efficient inference and learning in directed probabilistic\nmodels, in the presence of continuous latent variables with intractable\nposterior distributions, and large datasets? We introduce a stochastic\nvariational inference and learning algorithm that scales to large datasets and,\nunder some mild differentiability conditions, even works in the intractable\ncase. Our contributions are two-fold. First, we show that a reparameterization\nof the variational lower bound yields a lower bound estimator that can be\nstraightforwardly optimized using standard stochastic gradient methods. Second,\nwe show that for i.i.d. datasets with continuous latent variables per\ndatapoint, posterior inference can be made especially efficient by fitting an\napproximate inference model (also called a recognition model) to the\nintractable posterior using the proposed lower bound estimator. Theoretical\nadvantages are reflected in experimental results.",
+    "num_pages": 14
+}

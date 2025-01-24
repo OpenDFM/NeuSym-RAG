@@ -1,0 +1,21 @@
+{
+    "uuid": "14b3abbe-d581-58e8-8d53-b52c2c64066c",
+    "title": "UniRPG: Unified Discrete Reasoning over Table and Text as Program Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yongwei Zhou",
+        "Junwei Bao",
+        "Chaoqun Duan",
+        "Youzheng Wu",
+        "Xiaodong He",
+        "Tiejun Zhao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.08249v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\14b3abbe-d581-58e8-8d53-b52c2c64066c.pdf",
+    "bibtex": "@misc{zhou2022unirpgunifieddiscretereasoningover,\n    title = {UniRPG: Unified Discrete Reasoning over Table and Text as Program Generation},\n    author = {Yongwei Zhou and Junwei Bao and Chaoqun Duan and Youzheng Wu and Xiaodong He and Tiejun Zhao},\n    year = {2022},\n    eprint = {2210.08249},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.08249},\n}",
+    "abstract": "Question answering requiring discrete reasoning, e.g., arithmetic computing,\ncomparison, and counting, over knowledge is a challenging task. In this paper,\nwe propose UniRPG, a semantic-parsing-based approach advanced in\ninterpretability and scalability, to perform unified discrete reasoning over\nheterogeneous knowledge resources, i.e., table and text, as program generation.\nConcretely, UniRPG consists of a neural programmer and a symbolic program\nexecutor, where a program is the composition of a set of pre-defined general\natomic and higher-order operations and arguments extracted from table and text.\nFirst, the programmer parses a question into a program by generating operations\nand copying arguments, and then the executor derives answers from table and\ntext based on the program. To alleviate the costly program annotation issue, we\ndesign a distant supervision approach for programmer learning, where pseudo\nprograms are automatically constructed without annotated derivations. Extensive\nexperiments on the TAT-QA dataset show that UniRPG achieves tremendous\nimprovements and enhances interpretability and scalability compared with\nstate-of-the-art methods, even without derivation annotation. Moreover, it\nachieves promising performance on the textual dataset DROP without derivations.",
+    "num_pages": 14
+}

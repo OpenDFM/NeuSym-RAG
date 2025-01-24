@@ -1,0 +1,18 @@
+{
+    "uuid": "cc1ac0c9-340a-5ae3-8410-c000b2696eb8",
+    "title": "DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Pengcheng He",
+        "Jianfeng Gao",
+        "Weizhu Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2111.09543v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\cc1ac0c9-340a-5ae3-8410-c000b2696eb8.pdf",
+    "bibtex": "@misc{he2023debertav3improvingdebertausingelectrastyle,\n    title = {DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing},\n    author = {Pengcheng He and Jianfeng Gao and Weizhu Chen},\n    year = {2023},\n    eprint = {2111.09543},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2111.09543},\n}",
+    "abstract": "This paper presents a new pre-trained language model, DeBERTaV3, which\nimproves the original DeBERTa model by replacing mask language modeling (MLM)\nwith replaced token detection (RTD), a more sample-efficient pre-training task.\nOur analysis shows that vanilla embedding sharing in ELECTRA hurts training\nefficiency and model performance. This is because the training losses of the\ndiscriminator and the generator pull token embeddings in different directions,\ncreating the \"tug-of-war\" dynamics. We thus propose a new gradient-disentangled\nembedding sharing method that avoids the tug-of-war dynamics, improving both\ntraining efficiency and the quality of the pre-trained model. We have\npre-trained DeBERTaV3 using the same settings as DeBERTa to demonstrate its\nexceptional performance on a wide range of downstream natural language\nunderstanding (NLU) tasks. Taking the GLUE benchmark with eight tasks as an\nexample, the DeBERTaV3 Large model achieves a 91.37% average score, which is\n1.37% over DeBERTa and 1.91% over ELECTRA, setting a new state-of-the-art\n(SOTA) among the models with a similar structure. Furthermore, we have\npre-trained a multi-lingual model mDeBERTa and observed a larger improvement\nover strong baselines compared to English models. For example, the mDeBERTa\nBase achieves a 79.8% zero-shot cross-lingual accuracy on XNLI and a 3.6%\nimprovement over XLM-R Base, creating a new SOTA on this benchmark. We have\nmade our pre-trained models and inference code publicly available at\nhttps://github.com/microsoft/DeBERTa.",
+    "num_pages": 16
+}

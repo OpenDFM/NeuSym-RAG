@@ -1,0 +1,19 @@
+{
+    "uuid": "ca191c58-f83a-59e0-ad3f-fc6d9a125d9c",
+    "title": "GPTScore: Evaluate as You Desire",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Jinlan Fu",
+        "See-Kiong Ng",
+        "Zhengbao Jiang",
+        "Pengfei Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.04166v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\ca191c58-f83a-59e0-ad3f-fc6d9a125d9c.pdf",
+    "bibtex": "@misc{fu2023gptscoreevaluateasyoudesire,\n    title = {GPTScore: Evaluate as You Desire},\n    author = {Jinlan Fu and See-Kiong Ng and Zhengbao Jiang and Pengfei Liu},\n    year = {2023},\n    eprint = {2302.04166},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2302.04166},\n}",
+    "abstract": "Generative Artificial Intelligence (AI) has enabled the development of\nsophisticated models that are capable of producing high-caliber text, images,\nand other outputs through the utilization of large pre-trained models.\nNevertheless, assessing the quality of the generation is an even more arduous\ntask than the generation itself, and this issue has not been given adequate\nconsideration recently. This paper proposes a novel evaluation framework,\nGPTScore, which utilizes the emergent abilities (e.g., zero-shot instruction)\nof generative pre-trained models to score generated texts. There are 19\npre-trained models explored in this paper, ranging in size from 80M (e.g.,\nFLAN-T5-small) to 175B (e.g., GPT3). Experimental results on four text\ngeneration tasks, 22 evaluation aspects, and corresponding 37 datasets\ndemonstrate that this approach can effectively allow us to achieve what one\ndesires to evaluate for texts simply by natural language instructions. This\nnature helps us overcome several long-standing challenges in text\nevaluation--how to achieve customized, multi-faceted evaluation without the\nneed for annotated samples. We make our code publicly available at\nhttps://github.com/jinlanfu/GPTScore.",
+    "num_pages": 22
+}

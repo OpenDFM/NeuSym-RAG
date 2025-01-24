@@ -1,0 +1,17 @@
+{
+    "uuid": "9523ad64-fad9-5352-bc32-ceb1a8f5adbc",
+    "title": "Falsehoods that ML researchers believe about OOD detection",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Andi Zhang",
+        "Damon Wischik"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.12767v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\9523ad64-fad9-5352-bc32-ceb1a8f5adbc.pdf",
+    "bibtex": "@misc{zhang2022falsehoodsthatmlresearchersbelieve,\n    title = {Falsehoods that ML researchers believe about OOD detection},\n    author = {Andi Zhang and Damon Wischik},\n    year = {2022},\n    eprint = {2210.12767},\n    archivePrefix = {arXiv},\n    primaryClass = {stat.ML},\n    url = {http://arxiv.org/abs/2210.12767},\n}",
+    "abstract": "An intuitive way to detect out-of-distribution (OOD) data is via the density\nfunction of a fitted probabilistic generative model: points with low density\nmay be classed as OOD. But this approach has been found to fail, in deep\nlearning settings. In this paper, we list some falsehoods that machine learning\nresearchers believe about density-based OOD detection. Many recent works have\nproposed likelihood-ratio-based methods to `fix' the problem. We propose a\nframework, the OOD proxy framework, to unify these methods, and we argue that\nlikelihood ratio is a principled method for OOD detection and not a mere `fix'.\nFinally, we discuss the relationship between domain discrimination and\nsemantics.",
+    "num_pages": 5
+}

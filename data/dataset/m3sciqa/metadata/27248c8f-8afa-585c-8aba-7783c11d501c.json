@@ -1,0 +1,17 @@
+{
+    "uuid": "27248c8f-8afa-585c-8aba-7783c11d501c",
+    "title": "PhoNLP: A joint multi-task learning model for Vietnamese part-of-speech tagging, named entity recognition and dependency parsing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Linh The Nguyen",
+        "Dat Quoc Nguyen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2101.01476v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\27248c8f-8afa-585c-8aba-7783c11d501c.pdf",
+    "bibtex": "@misc{nguyen2021phonlpajointmultitasklearning,\n    title = {PhoNLP: A joint multi-task learning model for Vietnamese part-of-speech tagging, named entity recognition and dependency parsing},\n    author = {Linh The Nguyen and Dat Quoc Nguyen},\n    year = {2021},\n    eprint = {2101.01476},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2101.01476},\n}",
+    "abstract": "We present the first multi-task learning model -- named PhoNLP -- for joint\nVietnamese part-of-speech (POS) tagging, named entity recognition (NER) and\ndependency parsing. Experiments on Vietnamese benchmark datasets show that\nPhoNLP produces state-of-the-art results, outperforming a single-task learning\napproach that fine-tunes the pre-trained Vietnamese language model PhoBERT\n(Nguyen and Nguyen, 2020) for each task independently. We publicly release\nPhoNLP as an open-source toolkit under the Apache License 2.0. Although we\nspecify PhoNLP for Vietnamese, our PhoNLP training and evaluation command\nscripts in fact can directly work for other languages that have a pre-trained\nBERT-based language model and gold annotated corpora available for the three\ntasks of POS tagging, NER and dependency parsing. We hope that PhoNLP can serve\nas a strong baseline and useful toolkit for future NLP research and\napplications to not only Vietnamese but also the other languages. Our PhoNLP is\navailable at: https://github.com/VinAIResearch/PhoNLP",
+    "num_pages": 7
+}

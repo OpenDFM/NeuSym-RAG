@@ -1,0 +1,21 @@
+{
+    "uuid": "ddb5d231-229d-5d33-8272-f6dda132ff11",
+    "title": "Contrastive Instruction-Trajectory Learning for Vision-Language Navigation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Xiwen Liang",
+        "Fengda Zhu",
+        "Yi Zhu",
+        "Bingqian Lin",
+        "Bing Wang",
+        "Xiaodan Liang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2112.04138v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\ddb5d231-229d-5d33-8272-f6dda132ff11.pdf",
+    "bibtex": "@misc{liang2021contrastiveinstructiontrajectorylearningforvisionlanguage,\n    title = {Contrastive Instruction-Trajectory Learning for Vision-Language Navigation},\n    author = {Xiwen Liang and Fengda Zhu and Yi Zhu and Bingqian Lin and Bing Wang and Xiaodan Liang},\n    year = {2021},\n    eprint = {2112.04138},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2112.04138},\n}",
+    "abstract": "The vision-language navigation (VLN) task requires an agent to reach a target\nwith the guidance of natural language instruction. Previous works learn to\nnavigate step-by-step following an instruction. However, these works may fail\nto discriminate the similarities and discrepancies across\ninstruction-trajectory pairs and ignore the temporal continuity of\nsub-instructions. These problems hinder agents from learning distinctive\nvision-and-language representations, harming the robustness and\ngeneralizability of the navigation policy. In this paper, we propose a\nContrastive Instruction-Trajectory Learning (CITL) framework that explores\ninvariance across similar data samples and variance across different ones to\nlearn distinctive representations for robust navigation. Specifically, we\npropose: (1) a coarse-grained contrastive learning objective to enhance\nvision-and-language representations by contrasting semantics of full trajectory\nobservations and instructions, respectively; (2) a fine-grained contrastive\nlearning objective to perceive instructions by leveraging the temporal\ninformation of the sub-instructions; (3) a pairwise sample-reweighting\nmechanism for contrastive learning to mine hard samples and hence mitigate the\ninfluence of data sampling bias in contrastive learning. Our CITL can be easily\nintegrated with VLN backbones to form a new learning paradigm and achieve\nbetter generalizability in unseen environments. Extensive experiments show that\nthe model with CITL surpasses the previous state-of-the-art methods on R2R,\nR4R, and RxR.",
+    "num_pages": 9
+}

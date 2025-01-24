@@ -1,0 +1,23 @@
+{
+    "uuid": "11df7bc5-755c-581a-a2a3-0bbec7933e37",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Siamak Shakeri",
+        "Cicero Nogueira dos Santos",
+        "Henry Zhu",
+        "Patrick Ng",
+        "Feng Nan",
+        "Zhiguo Wang",
+        "Ramesh Nallapati",
+        "Bing Xiang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.06028v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\11df7bc5-755c-581a-a2a3-0bbec7933e37.pdf",
+    "bibtex": "@misc{shakeri2020endtoendsyntheticdatagenerationfor,\n    title = {End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems},\n    author = {Siamak Shakeri and Cicero Nogueira dos Santos and Henry Zhu and Patrick Ng and Feng Nan and Zhiguo Wang and Ramesh Nallapati and Bing Xiang},\n    year = {2020},\n    eprint = {2010.06028},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.06028},\n}",
+    "abstract": "We propose an end-to-end approach for synthetic QA data generation. Our model\ncomprises a single transformer-based encoder-decoder network that is trained\nend-to-end to generate both answers and questions. In a nutshell, we feed a\npassage to the encoder and ask the decoder to generate a question and an answer\ntoken-by-token. The likelihood produced in the generation process is used as a\nfiltering score, which avoids the need for a separate filtering model. Our\ngenerator is trained by fine-tuning a pretrained LM using maximum likelihood\nestimation. The experimental results indicate significant improvements in the\ndomain adaptation of QA models outperforming current state-of-the-art methods.",
+    "num_pages": 16
+}

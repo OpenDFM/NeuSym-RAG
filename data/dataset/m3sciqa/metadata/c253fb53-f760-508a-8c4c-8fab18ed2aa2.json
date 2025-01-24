@@ -1,0 +1,20 @@
+{
+    "uuid": "c253fb53-f760-508a-8c4c-8fab18ed2aa2",
+    "title": "CTRL: A Conditional Transformer Language Model for Controllable Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Nitish Shirish Keskar",
+        "Bryan McCann",
+        "Lav R. Varshney",
+        "Caiming Xiong",
+        "Richard Socher"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1909.05858v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\c253fb53-f760-508a-8c4c-8fab18ed2aa2.pdf",
+    "bibtex": "@misc{keskar2019ctrlaconditionaltransformerlanguage,\n    title = {CTRL: A Conditional Transformer Language Model for Controllable Generation},\n    author = {Nitish Shirish Keskar and Bryan McCann and Lav R. Varshney and Caiming Xiong and Richard Socher},\n    year = {2019},\n    eprint = {1909.05858},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1909.05858},\n}",
+    "abstract": "Large-scale language models show promising text generation capabilities, but\nusers cannot easily control particular aspects of the generated text. We\nrelease CTRL, a 1.63 billion-parameter conditional transformer language model,\ntrained to condition on control codes that govern style, content, and\ntask-specific behavior. Control codes were derived from structure that\nnaturally co-occurs with raw text, preserving the advantages of unsupervised\nlearning while providing more explicit control over text generation. These\ncodes also allow CTRL to predict which parts of the training data are most\nlikely given a sequence. This provides a potential method for analyzing large\namounts of data via model-based source attribution. We have released multiple\nfull-sized, pretrained versions of CTRL at https://github.com/salesforce/ctrl.",
+    "num_pages": 18
+}

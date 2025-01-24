@@ -1,0 +1,20 @@
+{
+    "uuid": "18bd25cd-ba3d-5ddb-965b-e9807e41fb06",
+    "title": "FILM: Following Instructions in Language with Modular Methods",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "So Yeon Min",
+        "Devendra Singh Chaplot",
+        "Pradeep Ravikumar",
+        "Yonatan Bisk",
+        "Ruslan Salakhutdinov"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.07342v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\18bd25cd-ba3d-5ddb-965b-e9807e41fb06.pdf",
+    "bibtex": "@misc{min2022filmfollowinginstructionsinlanguage,\n    title = {FILM: Following Instructions in Language with Modular Methods},\n    author = {So Yeon Min and Devendra Singh Chaplot and Pradeep Ravikumar and Yonatan Bisk and Ruslan Salakhutdinov},\n    year = {2022},\n    eprint = {2110.07342},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2110.07342},\n}",
+    "abstract": "Recent methods for embodied instruction following are typically trained\nend-to-end using imitation learning. This often requires the use of expert\ntrajectories and low-level language instructions. Such approaches assume that\nneural states will integrate multimodal semantics to perform state tracking,\nbuilding spatial memory, exploration, and long-term planning. In contrast, we\npropose a modular method with structured representations that (1) builds a\nsemantic map of the scene and (2) performs exploration with a semantic search\npolicy, to achieve the natural language goal. Our modular method achieves SOTA\nperformance (24.46 %) with a substantial (8.17 % absolute) gap from previous\nwork while using less data by eschewing both expert trajectories and low-level\ninstructions. Leveraging low-level language, however, can further increase our\nperformance (26.49 %). Our findings suggest that an explicit spatial memory and\na semantic search policy can provide a stronger and more general representation\nfor state-tracking and guidance, even in the absence of expert trajectories or\nlow-level instructions.",
+    "num_pages": 17
+}

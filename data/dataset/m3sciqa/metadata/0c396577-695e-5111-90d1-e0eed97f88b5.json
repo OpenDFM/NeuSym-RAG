@@ -1,0 +1,23 @@
+{
+    "uuid": "0c396577-695e-5111-90d1-e0eed97f88b5",
+    "title": "MWPToolkit: An Open-Source Framework for Deep Learning-Based Math Word Problem Solvers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Yihuai Lan",
+        "Lei Wang",
+        "Qiyuan Zhang",
+        "Yunshi Lan",
+        "Bing Tian Dai",
+        "Yan Wang",
+        "Dongxiang Zhang",
+        "Ee-Peng Lim"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.00799v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\0c396577-695e-5111-90d1-e0eed97f88b5.pdf",
+    "bibtex": "@misc{lan2021mwptoolkitanopensourceframeworkfor,\n    title = {MWPToolkit: An Open-Source Framework for Deep Learning-Based Math Word Problem Solvers},\n    author = {Yihuai Lan and Lei Wang and Qiyuan Zhang and Yunshi Lan and Bing Tian Dai and Yan Wang and Dongxiang Zhang and Ee-Peng Lim},\n    year = {2021},\n    eprint = {2109.00799},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.00799},\n}",
+    "abstract": "Developing automatic Math Word Problem (MWP) solvers has been an interest of\nNLP researchers since the 1960s. Over the last few years, there are a growing\nnumber of datasets and deep learning-based methods proposed for effectively\nsolving MWPs. However, most existing methods are benchmarked soly on one or two\ndatasets, varying in different configurations, which leads to a lack of\nunified, standardized, fair, and comprehensive comparison between methods. This\npaper presents MWPToolkit, the first open-source framework for solving MWPs. In\nMWPToolkit, we decompose the procedure of existing MWP solvers into multiple\ncore components and decouple their models into highly reusable modules. We also\nprovide a hyper-parameter search function to boost the performance. In total,\nwe implement and compare 17 MWP solvers on 4 widely-used single equation\ngeneration benchmarks and 2 multiple equations generation benchmarks. These\nfeatures enable our MWPToolkit to be suitable for researchers to reproduce\nadvanced baseline models and develop new MWP solvers quickly. Code and\ndocuments are available at https://github.com/LYH-YF/MWPToolkit.",
+    "num_pages": 9
+}

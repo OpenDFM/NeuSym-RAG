@@ -1,0 +1,19 @@
+{
+    "uuid": "729f79df-1057-5418-89cd-592408770592",
+    "title": "Balancing Stability and Plasticity through Advanced Null Space in Continual Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yajing Kong",
+        "Liu Liu",
+        "Zhen Wang",
+        "Dacheng Tao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2207.12061v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\729f79df-1057-5418-89cd-592408770592.pdf",
+    "bibtex": "@misc{kong2022balancingstabilityandplasticitythrough,\n    title = {Balancing Stability and Plasticity through Advanced Null Space in Continual Learning},\n    author = {Yajing Kong and Liu Liu and Zhen Wang and Dacheng Tao},\n    year = {2022},\n    eprint = {2207.12061},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2207.12061},\n}",
+    "abstract": "Continual learning is a learning paradigm that learns tasks sequentially with\nresources constraints, in which the key challenge is stability-plasticity\ndilemma, i.e., it is uneasy to simultaneously have the stability to prevent\ncatastrophic forgetting of old tasks and the plasticity to learn new tasks\nwell. In this paper, we propose a new continual learning approach, Advanced\nNull Space (AdNS), to balance the stability and plasticity without storing any\nold data of previous tasks. Specifically, to obtain better stability, AdNS\nmakes use of low-rank approximation to obtain a novel null space and projects\nthe gradient onto the null space to prevent the interference on the past tasks.\nTo control the generation of the null space, we introduce a non-uniform\nconstraint strength to further reduce forgetting. Furthermore, we present a\nsimple but effective method, intra-task distillation, to improve the\nperformance of the current task. Finally, we theoretically find that null space\nplays a key role in plasticity and stability, respectively. Experimental\nresults show that the proposed method can achieve better performance compared\nto state-of-the-art continual learning approaches.",
+    "num_pages": 25
+}

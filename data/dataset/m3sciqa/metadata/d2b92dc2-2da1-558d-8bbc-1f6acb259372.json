@@ -1,0 +1,22 @@
+{
+    "uuid": "d2b92dc2-2da1-558d-8bbc-1f6acb259372",
+    "title": "Entity-Agnostic Representation Learning for Parameter-Efficient Knowledge Graph Embedding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Mingyang Chen",
+        "Wen Zhang",
+        "Zhen Yao",
+        "Yushan Zhu",
+        "Yang Gao",
+        "Jeff Z. Pan",
+        "Huajun Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.01849v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\d2b92dc2-2da1-558d-8bbc-1f6acb259372.pdf",
+    "bibtex": "@misc{chen2023entityagnosticrepresentationlearningforparameterefficient,\n    title = {Entity-Agnostic Representation Learning for Parameter-Efficient Knowledge Graph Embedding},\n    author = {Mingyang Chen and Wen Zhang and Zhen Yao and Yushan Zhu and Yang Gao and Jeff Z. Pan and Huajun Chen},\n    year = {2023},\n    eprint = {2302.01849},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2302.01849},\n}",
+    "abstract": "We propose an entity-agnostic representation learning method for handling the\nproblem of inefficient parameter storage costs brought by embedding knowledge\ngraphs. Conventional knowledge graph embedding methods map elements in a\nknowledge graph, including entities and relations, into continuous vector\nspaces by assigning them one or multiple specific embeddings (i.e., vector\nrepresentations). Thus the number of embedding parameters increases linearly as\nthe growth of knowledge graphs. In our proposed model, Entity-Agnostic\nRepresentation Learning (EARL), we only learn the embeddings for a small set of\nentities and refer to them as reserved entities. To obtain the embeddings for\nthe full set of entities, we encode their distinguishable information from\ntheir connected relations, k-nearest reserved entities, and multi-hop\nneighbors. We learn universal and entity-agnostic encoders for transforming\ndistinguishable information into entity embeddings. This approach allows our\nproposed EARL to have a static, efficient, and lower parameter count than\nconventional knowledge graph embedding methods. Experimental results show that\nEARL uses fewer parameters and performs better on link prediction tasks than\nbaselines, reflecting its parameter efficiency.",
+    "num_pages": 9
+}

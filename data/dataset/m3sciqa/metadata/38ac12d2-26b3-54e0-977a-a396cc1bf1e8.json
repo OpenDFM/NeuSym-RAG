@@ -1,0 +1,19 @@
+{
+    "uuid": "38ac12d2-26b3-54e0-977a-a396cc1bf1e8",
+    "title": "Learning Parameterized Task Structure for Generalization to Unseen Entities",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Anthony Z. Liu",
+        "Sungryull Sohn",
+        "Mahdi Qazwini",
+        "Honglak Lee"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.15034v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\38ac12d2-26b3-54e0-977a-a396cc1bf1e8.pdf",
+    "bibtex": "@misc{liu2022learningparameterizedtaskstructurefor,\n    title = {Learning Parameterized Task Structure for Generalization to Unseen Entities},\n    author = {Anthony Z. Liu and Sungryull Sohn and Mahdi Qazwini and Honglak Lee},\n    year = {2022},\n    eprint = {2203.15034},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2203.15034},\n}",
+    "abstract": "Real world tasks are hierarchical and compositional. Tasks can be composed of\nmultiple subtasks (or sub-goals) that are dependent on each other. These\nsubtasks are defined in terms of entities (e.g., \"apple\", \"pear\") that can be\nrecombined to form new subtasks (e.g., \"pickup apple\", and \"pickup pear\"). To\nsolve these tasks efficiently, an agent must infer subtask dependencies (e.g.\nan agent must execute \"pickup apple\" before \"place apple in pot\"), and\ngeneralize the inferred dependencies to new subtasks (e.g. \"place apple in pot\"\nis similar to \"place apple in pan\"). Moreover, an agent may also need to solve\nunseen tasks, which can involve unseen entities. To this end, we formulate\nparameterized subtask graph inference (PSGI), a method for modeling subtask\ndependencies using first-order logic with subtask entities. To facilitate this,\nwe learn entity attributes in a zero-shot manner, which are used as quantifiers\n(e.g. \"is_pickable(X)\") for the parameterized subtask graph. We show this\napproach accurately learns the latent structure on hierarchical and\ncompositional tasks more efficiently than prior work, and show PSGI can\ngeneralize by modelling structure on subtasks unseen during adaptation.",
+    "num_pages": 13
+}

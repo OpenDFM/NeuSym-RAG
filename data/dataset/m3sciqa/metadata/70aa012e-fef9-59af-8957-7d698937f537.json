@@ -1,0 +1,23 @@
+{
+    "uuid": "70aa012e-fef9-59af-8957-7d698937f537",
+    "title": "Semantic Compositional Networks for Visual Captioning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Zhe Gan",
+        "Chuang Gan",
+        "Xiaodong He",
+        "Yunchen Pu",
+        "Kenneth Tran",
+        "Jianfeng Gao",
+        "Lawrence Carin",
+        "Li Deng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1611.08002v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\70aa012e-fef9-59af-8957-7d698937f537.pdf",
+    "bibtex": "@misc{gan2017semanticcompositionalnetworksforvisual,\n    title = {Semantic Compositional Networks for Visual Captioning},\n    author = {Zhe Gan and Chuang Gan and Xiaodong He and Yunchen Pu and Kenneth Tran and Jianfeng Gao and Lawrence Carin and Li Deng},\n    year = {2017},\n    eprint = {1611.08002},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1611.08002},\n}",
+    "abstract": "A Semantic Compositional Network (SCN) is developed for image captioning, in\nwhich semantic concepts (i.e., tags) are detected from the image, and the\nprobability of each tag is used to compose the parameters in a long short-term\nmemory (LSTM) network. The SCN extends each weight matrix of the LSTM to an\nensemble of tag-dependent weight matrices. The degree to which each member of\nthe ensemble is used to generate an image caption is tied to the\nimage-dependent probability of the corresponding tag. In addition to captioning\nimages, we also extend the SCN to generate captions for video clips. We\nqualitatively analyze semantic composition in SCNs, and quantitatively evaluate\nthe algorithm on three benchmark datasets: COCO, Flickr30k, and Youtube2Text.\nExperimental results show that the proposed method significantly outperforms\nprior state-of-the-art approaches, across multiple evaluation metrics.",
+    "num_pages": 13
+}

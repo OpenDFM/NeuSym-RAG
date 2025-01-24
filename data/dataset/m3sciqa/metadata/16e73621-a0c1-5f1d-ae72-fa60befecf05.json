@@ -1,0 +1,19 @@
+{
+    "uuid": "16e73621-a0c1-5f1d-ae72-fa60befecf05",
+    "title": "Restricted Orthogonal Gradient Projection for Continual Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Zeyuan Yang",
+        "Zonghan Yang",
+        "Peng Li",
+        "Yang Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2301.12131v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\16e73621-a0c1-5f1d-ae72-fa60befecf05.pdf",
+    "bibtex": "@misc{yang2023restrictedorthogonalgradientprojectionfor,\n    title = {Restricted Orthogonal Gradient Projection for Continual Learning},\n    author = {Zeyuan Yang and Zonghan Yang and Peng Li and Yang Liu},\n    year = {2023},\n    eprint = {2301.12131},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2301.12131},\n}",
+    "abstract": "Continual learning aims to avoid catastrophic forgetting and effectively\nleverage learned experiences to master new knowledge. Existing gradient\nprojection approaches impose hard constraints on the optimization space for new\ntasks to minimize interference, which simultaneously hinders forward knowledge\ntransfer. To address this issue, recent methods reuse frozen parameters with a\ngrowing network, resulting in high computational costs. Thus, it remains a\nchallenge whether we can improve forward knowledge transfer for gradient\nprojection approaches using a fixed network architecture. In this work, we\npropose the Restricted Orthogonal Gradient prOjection (ROGO) framework. The\nbasic idea is to adopt a restricted orthogonal constraint allowing parameters\noptimized in the direction oblique to the whole frozen space to facilitate\nforward knowledge transfer while consolidating previous knowledge. Our\nframework requires neither data buffers nor extra parameters. Extensive\nexperiments have demonstrated the superiority of our framework over several\nstrong baselines. We also provide theoretical guarantees for our relaxing\nstrategy.",
+    "num_pages": 19
+}

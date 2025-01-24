@@ -1,0 +1,18 @@
+{
+    "uuid": "1d0cd268-ff7e-55d2-8ee5-178092342836",
+    "title": "The Devil is in the Detail: Simple Tricks Improve Systematic Generalization of Transformers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Róbert Csordás",
+        "Kazuki Irie",
+        "Jürgen Schmidhuber"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2108.12284v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\1d0cd268-ff7e-55d2-8ee5-178092342836.pdf",
+    "bibtex": "@misc{csords2022thedevilisinthe,\n    title = {The Devil is in the Detail: Simple Tricks Improve Systematic Generalization of Transformers},\n    author = {Róbert Csordás and Kazuki Irie and Jürgen Schmidhuber},\n    year = {2022},\n    eprint = {2108.12284},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2108.12284},\n}",
+    "abstract": "Recently, many datasets have been proposed to test the systematic\ngeneralization ability of neural networks. The companion baseline Transformers,\ntypically trained with default hyper-parameters from standard tasks, are shown\nto fail dramatically. Here we demonstrate that by revisiting model\nconfigurations as basic as scaling of embeddings, early stopping, relative\npositional embedding, and Universal Transformer variants, we can drastically\nimprove the performance of Transformers on systematic generalization. We report\nimprovements on five popular datasets: SCAN, CFQ, PCFG, COGS, and Mathematics\ndataset. Our models improve accuracy from 50% to 85% on the PCFG productivity\nsplit, and from 35% to 81% on COGS. On SCAN, relative positional embedding\nlargely mitigates the EOS decision problem (Newman et al., 2020), yielding 100%\naccuracy on the length split with a cutoff at 26. Importantly, performance\ndifferences between these models are typically invisible on the IID data split.\nThis calls for proper generalization validation sets for developing neural\nnetworks that generalize systematically. We publicly release the code to\nreproduce our results.",
+    "num_pages": 16
+}

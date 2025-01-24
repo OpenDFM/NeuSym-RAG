@@ -1,0 +1,20 @@
+{
+    "uuid": "daf59047-5c23-56ab-9cc4-245eb1a6f397",
+    "title": "CoCon: A Self-Supervised Approach for Controlled Text Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Alvin Chan",
+        "Yew-Soon Ong",
+        "Bill Pung",
+        "Aston Zhang",
+        "Jie Fu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2006.03535v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\daf59047-5c23-56ab-9cc4-245eb1a6f397.pdf",
+    "bibtex": "@misc{chan2022coconaselfsupervisedapproachfor,\n    title = {CoCon: A Self-Supervised Approach for Controlled Text Generation},\n    author = {Alvin Chan and Yew-Soon Ong and Bill Pung and Aston Zhang and Jie Fu},\n    year = {2022},\n    eprint = {2006.03535},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2006.03535},\n}",
+    "abstract": "Pretrained Transformer-based language models (LMs) display remarkable natural\nlanguage generation capabilities. With their immense potential, controlling\ntext generation of such LMs is getting attention. While there are studies that\nseek to control high-level attributes (such as sentiment and topic) of\ngenerated text, there is still a lack of more precise control over its content\nat the word- and phrase-level. Here, we propose Content-Conditioner (CoCon) to\ncontrol an LM's output text with a content input, at a fine-grained level. In\nour self-supervised approach, the CoCon block learns to help the LM complete a\npartially-observed text sequence by conditioning with content inputs that are\nwithheld from the LM. Through experiments, we show that CoCon can naturally\nincorporate target content into generated texts and control high-level text\nattributes in a zero-shot manner.",
+    "num_pages": 22
+}

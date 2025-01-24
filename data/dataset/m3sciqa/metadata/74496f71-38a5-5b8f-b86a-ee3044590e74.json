@@ -1,0 +1,24 @@
+{
+    "uuid": "74496f71-38a5-5b8f-b86a-ee3044590e74",
+    "title": "K-Adapter: Infusing Knowledge into Pre-Trained Models with Adapters",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Ruize Wang",
+        "Duyu Tang",
+        "Nan Duan",
+        "Zhongyu Wei",
+        "Xuanjing Huang",
+        "Jianshu ji",
+        "Guihong Cao",
+        "Daxin Jiang",
+        "Ming Zhou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2002.01808v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\74496f71-38a5-5b8f-b86a-ee3044590e74.pdf",
+    "bibtex": "@misc{wang2020kadapterinfusingknowledgeintopretrained,\n    title = {K-Adapter: Infusing Knowledge into Pre-Trained Models with Adapters},\n    author = {Ruize Wang and Duyu Tang and Nan Duan and Zhongyu Wei and Xuanjing Huang and Jianshu ji and Guihong Cao and Daxin Jiang and Ming Zhou},\n    year = {2020},\n    eprint = {2002.01808},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2002.01808},\n}",
+    "abstract": "We study the problem of injecting knowledge into large pre-trained models\nlike BERT and RoBERTa. Existing methods typically update the original\nparameters of pre-trained models when injecting knowledge. However, when\nmultiple kinds of knowledge are injected, the historically injected knowledge\nwould be flushed away. To address this, we propose K-Adapter, a framework that\nretains the original parameters of the pre-trained model fixed and supports the\ndevelopment of versatile knowledge-infused model. Taking RoBERTa as the\nbackbone model, K-Adapter has a neural adapter for each kind of infused\nknowledge, like a plug-in connected to RoBERTa. There is no information flow\nbetween different adapters, thus multiple adapters can be efficiently trained\nin a distributed way. As a case study, we inject two kinds of knowledge in this\nwork, including (1) factual knowledge obtained from automatically aligned\ntext-triplets on Wikipedia and Wikidata and (2) linguistic knowledge obtained\nvia dependency parsing. Results on three knowledge-driven tasks, including\nrelation classification, entity typing, and question answering, demonstrate\nthat each adapter improves the performance and the combination of both adapters\nbrings further improvements. Further analysis indicates that K-Adapter captures\nversatile knowledge than RoBERTa.",
+    "num_pages": 14
+}

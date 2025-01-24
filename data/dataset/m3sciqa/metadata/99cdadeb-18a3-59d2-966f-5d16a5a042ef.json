@@ -1,0 +1,26 @@
+{
+    "uuid": "99cdadeb-18a3-59d2-966f-5d16a5a042ef",
+    "title": "Teaching language models to support answers with verified quotes",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Jacob Menick",
+        "Maja Trebacz",
+        "Vladimir Mikulik",
+        "John Aslanides",
+        "Francis Song",
+        "Martin Chadwick",
+        "Mia Glaese",
+        "Susannah Young",
+        "Lucy Campbell-Gillingham",
+        "Geoffrey Irving",
+        "Nat McAleese"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.11147v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\99cdadeb-18a3-59d2-966f-5d16a5a042ef.pdf",
+    "bibtex": "@misc{menick2022teachinglanguagemodelstosupport,\n    title = {Teaching language models to support answers with verified quotes},\n    author = {Jacob Menick and Maja Trebacz and Vladimir Mikulik and John Aslanides and Francis Song and Martin Chadwick and Mia Glaese and Susannah Young and Lucy Campbell-Gillingham and Geoffrey Irving and Nat McAleese},\n    year = {2022},\n    eprint = {2203.11147},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.11147},\n}",
+    "abstract": "Recent large language models often answer factual questions correctly. But\nusers can't trust any given claim a model makes without fact-checking, because\nlanguage models can hallucinate convincing nonsense. In this work we use\nreinforcement learning from human preferences (RLHP) to train \"open-book\" QA\nmodels that generate answers whilst also citing specific evidence for their\nclaims, which aids in the appraisal of correctness. Supporting evidence is\ndrawn from multiple documents found via a search engine, or from a single\nuser-provided document. Our 280 billion parameter model, GopherCite, is able to\nproduce answers with high quality supporting evidence and abstain from\nanswering when unsure. We measure the performance of GopherCite by conducting\nhuman evaluation of answers to questions in a subset of the NaturalQuestions\nand ELI5 datasets. The model's response is found to be high-quality 80\\% of the\ntime on this Natural Questions subset, and 67\\% of the time on the ELI5 subset.\nAbstaining from the third of questions for which it is most unsure improves\nperformance to 90\\% and 80\\% respectively, approaching human baselines.\nHowever, analysis on the adversarial TruthfulQA dataset shows why citation is\nonly one part of an overall strategy for safety and trustworthiness: not all\nclaims supported by evidence are true.",
+    "num_pages": 40
+}

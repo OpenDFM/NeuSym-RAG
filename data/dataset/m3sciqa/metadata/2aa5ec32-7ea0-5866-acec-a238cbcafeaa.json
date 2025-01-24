@@ -1,0 +1,18 @@
+{
+    "uuid": "2aa5ec32-7ea0-5866-acec-a238cbcafeaa",
+    "title": "Learning to Reason Deductively: Math Word Problem Solving as Complex Relation Extraction",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Zhanming Jie",
+        "Jierui Li",
+        "Wei Lu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.10316v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\2aa5ec32-7ea0-5866-acec-a238cbcafeaa.pdf",
+    "bibtex": "@misc{jie2022learningtoreasondeductivelymath,\n    title = {Learning to Reason Deductively: Math Word Problem Solving as Complex Relation Extraction},\n    author = {Zhanming Jie and Jierui Li and Wei Lu},\n    year = {2022},\n    eprint = {2203.10316},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.10316},\n}",
+    "abstract": "Solving math word problems requires deductive reasoning over the quantities\nin the text. Various recent research efforts mostly relied on\nsequence-to-sequence or sequence-to-tree models to generate mathematical\nexpressions without explicitly performing relational reasoning between\nquantities in the given context. While empirically effective, such approaches\ntypically do not provide explanations for the generated expressions. In this\nwork, we view the task as a complex relation extraction problem, proposing a\nnovel approach that presents explainable deductive reasoning steps to\niteratively construct target expressions, where each step involves a primitive\noperation over two quantities defining their relation. Through extensive\nexperiments on four benchmark datasets, we show that the proposed model\nsignificantly outperforms existing strong baselines. We further demonstrate\nthat the deductive procedure not only presents more explainable steps but also\nenables us to make more accurate predictions on questions that require more\ncomplex reasoning.",
+    "num_pages": 13
+}

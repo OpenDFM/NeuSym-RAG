@@ -1,0 +1,20 @@
+{
+    "uuid": "d51a9214-fff1-52cb-8bbc-d55f87c0cd9c",
+    "title": "Focal Loss for Dense Object Detection",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Tsung-Yi Lin",
+        "Priya Goyal",
+        "Ross Girshick",
+        "Kaiming He",
+        "Piotr Dollár"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1708.02002v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\d51a9214-fff1-52cb-8bbc-d55f87c0cd9c.pdf",
+    "bibtex": "@misc{lin2018focallossfordenseobject,\n    title = {Focal Loss for Dense Object Detection},\n    author = {Tsung-Yi Lin and Priya Goyal and Ross Girshick and Kaiming He and Piotr Dollár},\n    year = {2018},\n    eprint = {1708.02002},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1708.02002},\n}",
+    "abstract": "The highest accuracy object detectors to date are based on a two-stage\napproach popularized by R-CNN, where a classifier is applied to a sparse set of\ncandidate object locations. In contrast, one-stage detectors that are applied\nover a regular, dense sampling of possible object locations have the potential\nto be faster and simpler, but have trailed the accuracy of two-stage detectors\nthus far. In this paper, we investigate why this is the case. We discover that\nthe extreme foreground-background class imbalance encountered during training\nof dense detectors is the central cause. We propose to address this class\nimbalance by reshaping the standard cross entropy loss such that it\ndown-weights the loss assigned to well-classified examples. Our novel Focal\nLoss focuses training on a sparse set of hard examples and prevents the vast\nnumber of easy negatives from overwhelming the detector during training. To\nevaluate the effectiveness of our loss, we design and train a simple dense\ndetector we call RetinaNet. Our results show that when trained with the focal\nloss, RetinaNet is able to match the speed of previous one-stage detectors\nwhile surpassing the accuracy of all existing state-of-the-art two-stage\ndetectors. Code is at: https://github.com/facebookresearch/Detectron.",
+    "num_pages": 10
+}

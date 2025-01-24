@@ -1,0 +1,23 @@
+{
+    "uuid": "9048f37a-221a-5252-a6ff-2e7feb5258b3",
+    "title": "Unified Named Entity Recognition as Word-Word Relation Classification",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Jingye Li",
+        "Hao Fei",
+        "Jiang Liu",
+        "Shengqiong Wu",
+        "Meishan Zhang",
+        "Chong Teng",
+        "Donghong Ji",
+        "Fei Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2112.10070v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\9048f37a-221a-5252-a6ff-2e7feb5258b3.pdf",
+    "bibtex": "@misc{li2021unifiednamedentityrecognitionas,\n    title = {Unified Named Entity Recognition as Word-Word Relation Classification},\n    author = {Jingye Li and Hao Fei and Jiang Liu and Shengqiong Wu and Meishan Zhang and Chong Teng and Donghong Ji and Fei Li},\n    year = {2021},\n    eprint = {2112.10070},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2112.10070},\n}",
+    "abstract": "So far, named entity recognition (NER) has been involved with three major\ntypes, including flat, overlapped (aka. nested), and discontinuous NER, which\nhave mostly been studied individually. Recently, a growing interest has been\nbuilt for unified NER, tackling the above three jobs concurrently with one\nsingle model. Current best-performing methods mainly include span-based and\nsequence-to-sequence models, where unfortunately the former merely focus on\nboundary identification and the latter may suffer from exposure bias. In this\nwork, we present a novel alternative by modeling the unified NER as word-word\nrelation classification, namely W^2NER. The architecture resolves the kernel\nbottleneck of unified NER by effectively modeling the neighboring relations\nbetween entity words with Next-Neighboring-Word (NNW) and Tail-Head-Word-*\n(THW-*) relations. Based on the W^2NER scheme we develop a neural framework, in\nwhich the unified NER is modeled as a 2D grid of word pairs. We then propose\nmulti-granularity 2D convolutions for better refining the grid representations.\nFinally, a co-predictor is used to sufficiently reason the word-word relations.\nWe perform extensive experiments on 14 widely-used benchmark datasets for flat,\noverlapped, and discontinuous NER (8 English and 6 Chinese datasets), where our\nmodel beats all the current top-performing baselines, pushing the\nstate-of-the-art performances of unified NER.",
+    "num_pages": 12
+}

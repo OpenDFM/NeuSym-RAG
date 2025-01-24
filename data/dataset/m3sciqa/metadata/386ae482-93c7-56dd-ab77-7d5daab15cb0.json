@@ -1,0 +1,22 @@
+{
+    "uuid": "386ae482-93c7-56dd-ab77-7d5daab15cb0",
+    "title": "On Continual Model Refinement in Out-of-Distribution Data Streams",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Bill Yuchen Lin",
+        "Sida Wang",
+        "Xi Victoria Lin",
+        "Robin Jia",
+        "Lin Xiao",
+        "Xiang Ren",
+        "Wen-tau Yih"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.02014v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\386ae482-93c7-56dd-ab77-7d5daab15cb0.pdf",
+    "bibtex": "@misc{lin2022oncontinualmodelrefinementin,\n    title = {On Continual Model Refinement in Out-of-Distribution Data Streams},\n    author = {Bill Yuchen Lin and Sida Wang and Xi Victoria Lin and Robin Jia and Lin Xiao and Xiang Ren and Wen-tau Yih},\n    year = {2022},\n    eprint = {2205.02014},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.02014},\n}",
+    "abstract": "Real-world natural language processing (NLP) models need to be continually\nupdated to fix the prediction errors in out-of-distribution (OOD) data streams\nwhile overcoming catastrophic forgetting. However, existing continual learning\n(CL) problem setups cannot cover such a realistic and complex scenario. In\nresponse to this, we propose a new CL problem formulation dubbed continual\nmodel refinement (CMR). Compared to prior CL settings, CMR is more practical\nand introduces unique challenges (boundary-agnostic and non-stationary\ndistribution shift, diverse mixtures of multiple OOD data clusters,\nerror-centric streams, etc.). We extend several existing CL approaches to the\nCMR setting and evaluate them extensively. For benchmarking and analysis, we\npropose a general sampling algorithm to obtain dynamic OOD data streams with\ncontrollable non-stationarity, as well as a suite of metrics measuring various\naspects of online performance. Our experiments and detailed analysis reveal the\npromise and challenges of the CMR problem, supporting that studying CMR in\ndynamic OOD streams can benefit the longevity of deployed NLP models in\nproduction.",
+    "num_pages": 13
+}

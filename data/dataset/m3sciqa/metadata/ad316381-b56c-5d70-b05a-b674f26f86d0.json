@@ -1,0 +1,18 @@
+{
+    "uuid": "ad316381-b56c-5d70-b05a-b674f26f86d0",
+    "title": "Internet-Augmented Dialogue Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Mojtaba Komeili",
+        "Kurt Shuster",
+        "Jason Weston"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2107.07566v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\ad316381-b56c-5d70-b05a-b674f26f86d0.pdf",
+    "bibtex": "@misc{komeili2021internetaugmenteddialoguegeneration,\n    title = {Internet-Augmented Dialogue Generation},\n    author = {Mojtaba Komeili and Kurt Shuster and Jason Weston},\n    year = {2021},\n    eprint = {2107.07566},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/2107.07566},\n}",
+    "abstract": "The largest store of continually updating knowledge on our planet can be\naccessed via internet search. In this work we study giving access to this\ninformation to conversational agents. Large language models, even though they\nstore an impressive amount of knowledge within their weights, are known to\nhallucinate facts when generating dialogue (Shuster et al., 2021); moreover,\nthose facts are frozen in time at the point of model training. In contrast, we\npropose an approach that learns to generate an internet search query based on\nthe context, and then conditions on the search results to finally generate a\nresponse, a method that can employ up-to-the-minute relevant information. We\ntrain and evaluate such models on a newly collected dataset of human-human\nconversations whereby one of the speakers is given access to internet search\nduring knowledgedriven discussions in order to ground their responses. We find\nthat search-query based access of the internet in conversation provides\nsuperior performance compared to existing approaches that either use no\naugmentation or FAISS-based retrieval (Lewis et al., 2020).",
+    "num_pages": 18
+}

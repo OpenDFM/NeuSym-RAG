@@ -1,0 +1,53 @@
+{
+    "uuid": "017758fd-7ec0-52d9-b652-787c26325aab",
+    "question": "Consider the paper that introduces the method that demonstrates the lowest score in the CSQA2.0 dev/dev* task. What specific methodological approach does the paper employ to align the model proposed in the paper with human intentions, particularly in terms of handling sensitive content?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "5bf1e056-9343-55e5-967a-c63726575c9e"
+    ],
+    "reference_pdf": [
+        "6a643dcf-5695-5089-ab9c-7d1dd3c04ff4",
+        "e8f47ab4-abbd-5553-b031-4d0d76afab3e",
+        "7617cedb-1166-5825-81c0-fc4b40c5bf0e",
+        "23a2cf6d-2c8a-5b75-b4f1-29b2f64ee41c",
+        "8dde05d0-7798-5f9b-9f99-1d4823d4fbdd",
+        "113174b9-1f5c-59aa-972d-7c6eb43597a9",
+        "345aaf21-19b7-552f-9991-4549ea1995aa",
+        "dccb63d4-f203-5a8b-8f8a-10fb38fda9b4",
+        "80e783a2-8364-5565-8600-93cc7a0b066a",
+        "c7304df5-0d4d-594e-9f83-cb5d9a19b350",
+        "7072220d-1680-5120-b061-9c5d175922e2",
+        "23b2039f-1245-5334-8452-b245c78e29cf",
+        "c1f4221a-e7e5-5df3-8d1b-0acc89e315f6",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "39f7afc4-5c63-5cc3-80e5-ac05cb088940",
+        "1e7d9f86-3567-55b8-be98-064a3d297af1",
+        "67479dd9-47ba-5b58-bf3d-3ee378a5030f",
+        "3967df69-753f-527b-9c82-35378bcaa943",
+        "2bc7f244-8607-5501-a3c5-916c66efc615",
+        "f8406901-eed8-5981-94c2-92d667fedd98",
+        "46fd03d6-7a66-5072-b2ab-61e072e5131f",
+        "fd9457ae-5f08-5f7f-aed1-f46fa2f20c2d",
+        "7dfb54d5-b8dc-52b1-a79d-a286df0819cd"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method that demonstrates the lowest score in the CSQA2.0 dev/dev* task. What specific methodological approach does the paper employ to align the model proposed in the paper with human intentions, particularly in terms of handling sensitive content?",
+            "reference_answer": "Reinforcement learning from human feedback (RLHF)"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2311.18397/result_table.png"
+    ]
+}

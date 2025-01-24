@@ -1,0 +1,27 @@
+{
+    "uuid": "39f7afc4-5c63-5cc3-80e5-ac05cb088940",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Patrick Lewis",
+        "Ethan Perez",
+        "Aleksandra Piktus",
+        "Fabio Petroni",
+        "Vladimir Karpukhin",
+        "Naman Goyal",
+        "Heinrich Küttler",
+        "Mike Lewis",
+        "Wen-tau Yih",
+        "Tim Rocktäschel",
+        "Sebastian Riedel",
+        "Douwe Kiela"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2005.11401v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\39f7afc4-5c63-5cc3-80e5-ac05cb088940.pdf",
+    "bibtex": "@misc{lewis2021retrievalaugmentedgenerationforknowledgeintensivenlp,\n    title = {Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks},\n    author = {Patrick Lewis and Ethan Perez and Aleksandra Piktus and Fabio Petroni and Vladimir Karpukhin and Naman Goyal and Heinrich Küttler and Mike Lewis and Wen-tau Yih and Tim Rocktäschel and Sebastian Riedel and Douwe Kiela},\n    year = {2021},\n    eprint = {2005.11401},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2005.11401},\n}",
+    "abstract": "Large pre-trained language models have been shown to store factual knowledge\nin their parameters, and achieve state-of-the-art results when fine-tuned on\ndownstream NLP tasks. However, their ability to access and precisely manipulate\nknowledge is still limited, and hence on knowledge-intensive tasks, their\nperformance lags behind task-specific architectures. Additionally, providing\nprovenance for their decisions and updating their world knowledge remain open\nresearch problems. Pre-trained models with a differentiable access mechanism to\nexplicit non-parametric memory can overcome this issue, but have so far been\nonly investigated for extractive downstream tasks. We explore a general-purpose\nfine-tuning recipe for retrieval-augmented generation (RAG) -- models which\ncombine pre-trained parametric and non-parametric memory for language\ngeneration. We introduce RAG models where the parametric memory is a\npre-trained seq2seq model and the non-parametric memory is a dense vector index\nof Wikipedia, accessed with a pre-trained neural retriever. We compare two RAG\nformulations, one which conditions on the same retrieved passages across the\nwhole generated sequence, the other can use different passages per token. We\nfine-tune and evaluate our models on a wide range of knowledge-intensive NLP\ntasks and set the state-of-the-art on three open domain QA tasks, outperforming\nparametric seq2seq models and task-specific retrieve-and-extract architectures.\nFor language generation tasks, we find that RAG models generate more specific,\ndiverse and factual language than a state-of-the-art parametric-only seq2seq\nbaseline.",
+    "num_pages": 19
+}

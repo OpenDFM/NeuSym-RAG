@@ -1,0 +1,19 @@
+{
+    "uuid": "d08af61b-1ed0-5e37-8c83-2067886be82a",
+    "title": "Identifying Mislabeled Data using the Area Under the Margin Ranking",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Geoff Pleiss",
+        "Tianyi Zhang",
+        "Ethan R. Elenberg",
+        "Kilian Q. Weinberger"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2001.10528v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\d08af61b-1ed0-5e37-8c83-2067886be82a.pdf",
+    "bibtex": "@misc{pleiss2020identifyingmislabeleddatausingthe,\n    title = {Identifying Mislabeled Data using the Area Under the Margin Ranking},\n    author = {Geoff Pleiss and Tianyi Zhang and Ethan R. Elenberg and Kilian Q. Weinberger},\n    year = {2020},\n    eprint = {2001.10528},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2001.10528},\n}",
+    "abstract": "Not all data in a typical training set help with generalization; some samples\ncan be overly ambiguous or outrightly mislabeled. This paper introduces a new\nmethod to identify such samples and mitigate their impact when training neural\nnetworks. At the heart of our algorithm is the Area Under the Margin (AUM)\nstatistic, which exploits differences in the training dynamics of clean and\nmislabeled samples. A simple procedure - adding an extra class populated with\npurposefully mislabeled threshold samples - learns a AUM upper bound that\nisolates mislabeled data. This approach consistently improves upon prior work\non synthetic and real-world datasets. On the WebVision50 classification task\nour method removes 17% of training data, yielding a 1.6% (absolute) improvement\nin test error. On CIFAR100 removing 13% of the data leads to a 1.2% drop in\nerror.",
+    "num_pages": 17
+}

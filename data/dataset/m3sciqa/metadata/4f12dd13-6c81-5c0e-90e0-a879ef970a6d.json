@@ -1,0 +1,24 @@
+{
+    "uuid": "4f12dd13-6c81-5c0e-90e0-a879ef970a6d",
+    "title": "Precedent-Enhanced Legal Judgment Prediction with LLM and Domain-Model Collaboration",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yiquan Wu",
+        "Siying Zhou",
+        "Yifei Liu",
+        "Weiming Lu",
+        "Xiaozhong Liu",
+        "Yating Zhang",
+        "Changlong Sun",
+        "Fei Wu",
+        "Kun Kuang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.09241v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\4f12dd13-6c81-5c0e-90e0-a879ef970a6d.pdf",
+    "bibtex": "@misc{wu2023precedentenhancedlegaljudgmentpredictionwith,\n    title = {Precedent-Enhanced Legal Judgment Prediction with LLM and Domain-Model Collaboration},\n    author = {Yiquan Wu and Siying Zhou and Yifei Liu and Weiming Lu and Xiaozhong Liu and Yating Zhang and Changlong Sun and Fei Wu and Kun Kuang},\n    year = {2023},\n    eprint = {2310.09241},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.09241},\n}",
+    "abstract": "Legal Judgment Prediction (LJP) has become an increasingly crucial task in\nLegal AI, i.e., predicting the judgment of the case in terms of case fact\ndescription. Precedents are the previous legal cases with similar facts, which\nare the basis for the judgment of the subsequent case in national legal\nsystems. Thus, it is worthwhile to explore the utilization of precedents in the\nLJP. Recent advances in deep learning have enabled a variety of techniques to\nbe used to solve the LJP task. These can be broken down into two categories:\nlarge language models (LLMs) and domain-specific models. LLMs are capable of\ninterpreting and generating complex natural language, while domain models are\nefficient in learning task-specific information. In this paper, we propose the\nprecedent-enhanced LJP framework (PLJP), a system that leverages the strength\nof both LLM and domain models in the context of precedents. Specifically, the\ndomain models are designed to provide candidate labels and find the proper\nprecedents efficiently, and the large models will make the final prediction\nwith an in-context precedents comprehension. Experiments on the real-world\ndataset demonstrate the effectiveness of our PLJP. Moreover, our work shows a\npromising direction for LLM and domain-model collaboration that can be\ngeneralized to other vertical domains.",
+    "num_pages": 16
+}

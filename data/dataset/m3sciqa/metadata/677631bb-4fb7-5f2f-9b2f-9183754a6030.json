@@ -1,0 +1,26 @@
+{
+    "uuid": "677631bb-4fb7-5f2f-9b2f-9183754a6030",
+    "title": "Lila: A Unified Benchmark for Mathematical Reasoning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Swaroop Mishra",
+        "Matthew Finlayson",
+        "Pan Lu",
+        "Leonard Tang",
+        "Sean Welleck",
+        "Chitta Baral",
+        "Tanmay Rajpurohit",
+        "Oyvind Tafjord",
+        "Ashish Sabharwal",
+        "Peter Clark",
+        "Ashwin Kalyan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.17517v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\677631bb-4fb7-5f2f-9b2f-9183754a6030.pdf",
+    "bibtex": "@misc{mishra2023lilaaunifiedbenchmarkfor,\n    title = {Lila: A Unified Benchmark for Mathematical Reasoning},\n    author = {Swaroop Mishra and Matthew Finlayson and Pan Lu and Leonard Tang and Sean Welleck and Chitta Baral and Tanmay Rajpurohit and Oyvind Tafjord and Ashish Sabharwal and Peter Clark and Ashwin Kalyan},\n    year = {2023},\n    eprint = {2210.17517},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.17517},\n}",
+    "abstract": "Mathematical reasoning skills are essential for general-purpose intelligent\nsystems to perform tasks from grocery shopping to climate modeling. Towards\nevaluating and improving AI systems in this domain, we propose LILA, a unified\nmathematical reasoning benchmark consisting of 23 diverse tasks along four\ndimensions: (i) mathematical abilities e.g., arithmetic, calculus (ii) language\nformat e.g., question-answering, fill-in-the-blanks (iii) language diversity\ne.g., no language, simple language (iv) external knowledge e.g., commonsense,\nphysics. We construct our benchmark by extending 20 datasets benchmark by\ncollecting task instructions and solutions in the form of Python programs,\nthereby obtaining explainable solutions in addition to the correct answer. We\nadditionally introduce two evaluation datasets to measure out-of-distribution\nperformance and robustness to language perturbation. Finally, we introduce\nBHASKARA, a general-purpose mathematical reasoning model trained on LILA.\nImportantly, we find that multi-tasking leads to significant improvements\n(average relative improvement of 21.83% F1 score vs. single-task models), while\nthe best performing model only obtains 60.40%, indicating the room for\nimprovement in general mathematical reasoning and understanding.",
+    "num_pages": 59
+}

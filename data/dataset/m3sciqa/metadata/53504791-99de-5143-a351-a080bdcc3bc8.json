@@ -1,0 +1,23 @@
+{
+    "uuid": "53504791-99de-5143-a351-a080bdcc3bc8",
+    "title": "Evaluating the Impact of Model Scale for Compositional Generalization in Semantic Parsing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Linlu Qiu",
+        "Peter Shaw",
+        "Panupong Pasupat",
+        "Tianze Shi",
+        "Jonathan Herzig",
+        "Emily Pitler",
+        "Fei Sha",
+        "Kristina Toutanova"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.12253v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\53504791-99de-5143-a351-a080bdcc3bc8.pdf",
+    "bibtex": "@misc{qiu2022evaluatingtheimpactofmodel,\n    title = {Evaluating the Impact of Model Scale for Compositional Generalization in Semantic Parsing},\n    author = {Linlu Qiu and Peter Shaw and Panupong Pasupat and Tianze Shi and Jonathan Herzig and Emily Pitler and Fei Sha and Kristina Toutanova},\n    year = {2022},\n    eprint = {2205.12253},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.12253},\n}",
+    "abstract": "Despite their strong performance on many tasks, pre-trained language models\nhave been shown to struggle on out-of-distribution compositional\ngeneralization. Meanwhile, recent work has shown considerable improvements on\nmany NLP tasks from model scaling. Can scaling up model size also improve\ncompositional generalization in semantic parsing? We evaluate encoder-decoder\nmodels up to 11B parameters and decoder-only models up to 540B parameters, and\ncompare model scaling curves for three different methods for applying a\npre-trained language model to a new task: fine-tuning all parameters, prompt\ntuning, and in-context learning. We observe that fine-tuning generally has flat\nor negative scaling curves on out-of-distribution compositional generalization\nin semantic parsing evaluations. In-context learning has positive scaling\ncurves, but is generally outperformed by much smaller fine-tuned models.\nPrompt-tuning can outperform fine-tuning, suggesting further potential\nimprovements from scaling as it exhibits a more positive scaling curve.\nAdditionally, we identify several error trends that vary with model scale. For\nexample, larger models are generally better at modeling the syntax of the\noutput space, but are also more prone to certain types of overfitting. Overall,\nour study highlights limitations of current techniques for effectively\nleveraging model scale for compositional generalization, while our analysis\nalso suggests promising directions for future work.",
+    "num_pages": 23
+}

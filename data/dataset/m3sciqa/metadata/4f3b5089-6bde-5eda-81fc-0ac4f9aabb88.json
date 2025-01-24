@@ -1,0 +1,21 @@
+{
+    "uuid": "4f3b5089-6bde-5eda-81fc-0ac4f9aabb88",
+    "title": "Plug-and-Play Adaptation for Continuously-updated QA",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Kyungjae Lee",
+        "Wookje Han",
+        "Seung-won Hwang",
+        "Hwaran Lee",
+        "Joonsuk Park",
+        "Sang-Woo Lee"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.12785v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\4f3b5089-6bde-5eda-81fc-0ac4f9aabb88.pdf",
+    "bibtex": "@misc{lee2022plugandplayadaptationforcontinuouslyupdatedqa,\n    title = {Plug-and-Play Adaptation for Continuously-updated QA},\n    author = {Kyungjae Lee and Wookje Han and Seung-won Hwang and Hwaran Lee and Joonsuk Park and Sang-Woo Lee},\n    year = {2022},\n    eprint = {2204.12785},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.12785},\n}",
+    "abstract": "Language models (LMs) have shown great potential as implicit knowledge bases\n(KBs). And for their practical use, knowledge in LMs need to be updated\nperiodically. However, existing tasks to assess LMs' efficacy as KBs do not\nadequately consider multiple large-scale updates. To this end, we first propose\na novel task--Continuously-updated QA (CuQA)--in which multiple large-scale\nupdates are made to LMs, and the performance is measured with respect to the\nsuccess in adding and updating knowledge while retaining existing knowledge. We\nthen present LMs with plug-in modules that effectively handle the updates.\nExperiments conducted on zsRE QA and NQ datasets show that our method\noutperforms existing approaches. We find that our method is 4x more effective\nin terms of updates/forgets ratio, compared to a fine-tuning baseline.",
+    "num_pages": 10
+}

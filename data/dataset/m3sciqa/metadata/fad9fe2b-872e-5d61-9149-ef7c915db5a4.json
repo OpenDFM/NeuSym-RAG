@@ -1,0 +1,20 @@
+{
+    "uuid": "fad9fe2b-872e-5d61-9149-ef7c915db5a4",
+    "title": "Self-Alignment Pretraining for Biomedical Entity Representations",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Fangyu Liu",
+        "Ehsan Shareghi",
+        "Zaiqiao Meng",
+        "Marco Basaldella",
+        "Nigel Collier"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.11784v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\fad9fe2b-872e-5d61-9149-ef7c915db5a4.pdf",
+    "bibtex": "@misc{liu2021selfalignmentpretrainingforbiomedicalentity,\n    title = {Self-Alignment Pretraining for Biomedical Entity Representations},\n    author = {Fangyu Liu and Ehsan Shareghi and Zaiqiao Meng and Marco Basaldella and Nigel Collier},\n    year = {2021},\n    eprint = {2010.11784},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.11784},\n}",
+    "abstract": "Despite the widespread success of self-supervised learning via masked\nlanguage models (MLM), accurately capturing fine-grained semantic relationships\nin the biomedical domain remains a challenge. This is of paramount importance\nfor entity-level tasks such as entity linking where the ability to model entity\nrelations (especially synonymy) is pivotal. To address this challenge, we\npropose SapBERT, a pretraining scheme that self-aligns the representation space\nof biomedical entities. We design a scalable metric learning framework that can\nleverage UMLS, a massive collection of biomedical ontologies with 4M+ concepts.\nIn contrast with previous pipeline-based hybrid systems, SapBERT offers an\nelegant one-model-for-all solution to the problem of medical entity linking\n(MEL), achieving a new state-of-the-art (SOTA) on six MEL benchmarking\ndatasets. In the scientific domain, we achieve SOTA even without task-specific\nsupervision. With substantial improvement over various domain-specific\npretrained MLMs such as BioBERT, SciBERTand and PubMedBERT, our pretraining\nscheme proves to be both effective and robust.",
+    "num_pages": 11
+}

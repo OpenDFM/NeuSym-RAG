@@ -1,0 +1,19 @@
+{
+    "uuid": "fa248633-ed2a-5eff-b162-4f28be7b7035",
+    "title": "End-to-End Learning of Flowchart Grounded Task-Oriented Dialogs",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Dinesh Raghu",
+        "Shantanu Agarwal",
+        "Sachindra Joshi",
+        "Mausam"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.07263v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\fa248633-ed2a-5eff-b162-4f28be7b7035.pdf",
+    "bibtex": "@misc{raghu2021endtoendlearningofflowchartgrounded,\n    title = {End-to-End Learning of Flowchart Grounded Task-Oriented Dialogs},\n    author = {Dinesh Raghu and Shantanu Agarwal and Sachindra Joshi and Mausam},\n    year = {2021},\n    eprint = {2109.07263},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.07263},\n}",
+    "abstract": "We propose a novel problem within end-to-end learning of task-oriented\ndialogs (TOD), in which the dialog system mimics a troubleshooting agent who\nhelps a user by diagnosing their problem (e.g., car not starting). Such dialogs\nare grounded in domain-specific flowcharts, which the agent is supposed to\nfollow during the conversation. Our task exposes novel technical challenges for\nneural TOD, such as grounding an utterance to the flowchart without explicit\nannotation, referring to additional manual pages when user asks a clarification\nquestion, and ability to follow unseen flowcharts at test time. We release a\ndataset (FloDial) consisting of 2,738 dialogs grounded on 12 different\ntroubleshooting flowcharts. We also design a neural model, FloNet, which uses a\nretrieval-augmented generation architecture to train the dialog agent. Our\nexperiments find that FloNet can do zero-shot transfer to unseen flowcharts,\nand sets a strong baseline for future research.",
+    "num_pages": 20
+}

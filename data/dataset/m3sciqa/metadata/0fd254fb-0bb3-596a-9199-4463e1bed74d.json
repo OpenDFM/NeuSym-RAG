@@ -1,0 +1,20 @@
+{
+    "uuid": "0fd254fb-0bb3-596a-9199-4463e1bed74d",
+    "title": "Variational Neural Machine Translation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2016,
+    "authors": [
+        "Biao Zhang",
+        "Deyi Xiong",
+        "Jinsong Su",
+        "Hong Duan",
+        "Min Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1605.07869v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2016\\0fd254fb-0bb3-596a-9199-4463e1bed74d.pdf",
+    "bibtex": "@misc{zhang2016variationalneuralmachinetranslation,\n    title = {Variational Neural Machine Translation},\n    author = {Biao Zhang and Deyi Xiong and Jinsong Su and Hong Duan and Min Zhang},\n    year = {2016},\n    eprint = {1605.07869},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1605.07869},\n}",
+    "abstract": "Models of neural machine translation are often from a discriminative family\nof encoderdecoders that learn a conditional distribution of a target sentence\ngiven a source sentence. In this paper, we propose a variational model to learn\nthis conditional distribution for neural machine translation: a variational\nencoderdecoder model that can be trained end-to-end. Different from the vanilla\nencoder-decoder model that generates target translations from hidden\nrepresentations of source sentences alone, the variational model introduces a\ncontinuous latent variable to explicitly model underlying semantics of source\nsentences and to guide the generation of target translations. In order to\nperform efficient posterior inference and large-scale training, we build a\nneural posterior approximator conditioned on both the source and the target\nsides, and equip it with a reparameterization technique to estimate the\nvariational lower bound. Experiments on both Chinese-English and English-\nGerman translation tasks show that the proposed variational neural machine\ntranslation achieves significant improvements over the vanilla neural machine\ntranslation baselines.",
+    "num_pages": 11
+}

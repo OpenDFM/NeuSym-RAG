@@ -1,0 +1,20 @@
+{
+    "uuid": "06e23bcd-3d01-5478-a8ac-b95dd8f42ac9",
+    "title": "Self-critical Sequence Training for Image Captioning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Steven J. Rennie",
+        "Etienne Marcheret",
+        "Youssef Mroueh",
+        "Jarret Ross",
+        "Vaibhava Goel"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1612.00563v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\06e23bcd-3d01-5478-a8ac-b95dd8f42ac9.pdf",
+    "bibtex": "@misc{rennie2017selfcriticalsequencetrainingforimage,\n    title = {Self-critical Sequence Training for Image Captioning},\n    author = {Steven J. Rennie and Etienne Marcheret and Youssef Mroueh and Jarret Ross and Vaibhava Goel},\n    year = {2017},\n    eprint = {1612.00563},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1612.00563},\n}",
+    "abstract": "Recently it has been shown that policy-gradient methods for reinforcement\nlearning can be utilized to train deep end-to-end systems directly on\nnon-differentiable metrics for the task at hand. In this paper we consider the\nproblem of optimizing image captioning systems using reinforcement learning,\nand show that by carefully optimizing our systems using the test metrics of the\nMSCOCO task, significant gains in performance can be realized. Our systems are\nbuilt using a new optimization approach that we call self-critical sequence\ntraining (SCST). SCST is a form of the popular REINFORCE algorithm that, rather\nthan estimating a \"baseline\" to normalize the rewards and reduce variance,\nutilizes the output of its own test-time inference algorithm to normalize the\nrewards it experiences. Using this approach, estimating the reward signal (as\nactor-critic methods must do) and estimating normalization (as REINFORCE\nalgorithms typically do) is avoided, while at the same time harmonizing the\nmodel with respect to its test-time inference procedure. Empirically we find\nthat directly optimizing the CIDEr metric with SCST and greedy decoding at\ntest-time is highly effective. Our results on the MSCOCO evaluation sever\nestablish a new state-of-the-art on the task, improving the best result in\nterms of CIDEr from 104.9 to 114.7.",
+    "num_pages": 16
+}

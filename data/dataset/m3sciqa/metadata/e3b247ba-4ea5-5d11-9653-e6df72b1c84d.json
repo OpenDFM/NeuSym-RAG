@@ -1,0 +1,17 @@
+{
+    "uuid": "e3b247ba-4ea5-5d11-9653-e6df72b1c84d",
+    "title": "ContractNLI: A Dataset for Document-level Natural Language Inference for Contracts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Yuta Koreeda",
+        "Christopher D. Manning"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.01799v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\e3b247ba-4ea5-5d11-9653-e6df72b1c84d.pdf",
+    "bibtex": "@misc{koreeda2021contractnliadatasetfordocumentlevel,\n    title = {ContractNLI: A Dataset for Document-level Natural Language Inference for Contracts},\n    author = {Yuta Koreeda and Christopher D. Manning},\n    year = {2021},\n    eprint = {2110.01799},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2110.01799},\n}",
+    "abstract": "Reviewing contracts is a time-consuming procedure that incurs large expenses\nto companies and social inequality to those who cannot afford it. In this work,\nwe propose \"document-level natural language inference (NLI) for contracts\", a\nnovel, real-world application of NLI that addresses such problems. In this\ntask, a system is given a set of hypotheses (such as \"Some obligations of\nAgreement may survive termination.\") and a contract, and it is asked to\nclassify whether each hypothesis is \"entailed by\", \"contradicting to\" or \"not\nmentioned by\" (neutral to) the contract as well as identifying \"evidence\" for\nthe decision as spans in the contract. We annotated and release the largest\ncorpus to date consisting of 607 annotated contracts. We then show that\nexisting models fail badly on our task and introduce a strong baseline, which\n(1) models evidence identification as multi-label classification over spans\ninstead of trying to predict start and end tokens, and (2) employs more\nsophisticated context segmentation for dealing with long documents. We also\nshow that linguistic characteristics of contracts, such as negations by\nexceptions, are contributing to the difficulty of this task and that there is\nmuch room for improvement.",
+    "num_pages": 13
+}

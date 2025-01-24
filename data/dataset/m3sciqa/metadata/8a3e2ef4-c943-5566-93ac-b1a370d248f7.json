@@ -1,0 +1,20 @@
+{
+    "uuid": "8a3e2ef4-c943-5566-93ac-b1a370d248f7",
+    "title": "Adaptive Chameleon or Stubborn Sloth: Revealing the Behavior of Large Language Models in Knowledge Conflicts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Jian Xie",
+        "Kai Zhang",
+        "Jiangjie Chen",
+        "Renze Lou",
+        "Yu Su"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.13300v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\8a3e2ef4-c943-5566-93ac-b1a370d248f7.pdf",
+    "bibtex": "@misc{xie2024adaptivechameleonorstubbornsloth,\n    title = {Adaptive Chameleon or Stubborn Sloth: Revealing the Behavior of Large Language Models in Knowledge Conflicts},\n    author = {Jian Xie and Kai Zhang and Jiangjie Chen and Renze Lou and Yu Su},\n    year = {2024},\n    eprint = {2305.13300},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.13300},\n}",
+    "abstract": "By providing external information to large language models (LLMs), tool\naugmentation (including retrieval augmentation) has emerged as a promising\nsolution for addressing the limitations of LLMs' static parametric memory.\nHowever, how receptive are LLMs to such external evidence, especially when the\nevidence conflicts with their parametric memory? We present the first\ncomprehensive and controlled investigation into the behavior of LLMs when\nencountering knowledge conflicts. We propose a systematic framework to elicit\nhigh-quality parametric memory from LLMs and construct the corresponding\ncounter-memory, which enables us to conduct a series of controlled experiments.\nOur investigation reveals seemingly contradicting behaviors of LLMs. On the one\nhand, different from prior wisdom, we find that LLMs can be highly receptive to\nexternal evidence even when that conflicts with their parametric memory, given\nthat the external evidence is coherent and convincing. On the other hand, LLMs\nalso demonstrate a strong confirmation bias when the external evidence contains\nsome information that is consistent with their parametric memory, despite being\npresented with conflicting evidence at the same time. These results pose\nimportant implications that are worth careful consideration for the further\ndevelopment and deployment of tool- and retrieval-augmented LLMs. Resources are\navailable at https://github.com/OSU-NLP-Group/LLM-Knowledge-Conflict.",
+    "num_pages": 24
+}

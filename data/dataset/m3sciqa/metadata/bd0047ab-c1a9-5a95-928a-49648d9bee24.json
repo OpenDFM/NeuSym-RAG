@@ -1,0 +1,21 @@
+{
+    "uuid": "bd0047ab-c1a9-5a95-928a-49648d9bee24",
+    "title": "Stay on the Path: Instruction Fidelity in Vision-and-Language Navigation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Vihan Jain",
+        "Gabriel Magalhaes",
+        "Alexander Ku",
+        "Ashish Vaswani",
+        "Eugene Ie",
+        "Jason Baldridge"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1905.12255v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\bd0047ab-c1a9-5a95-928a-49648d9bee24.pdf",
+    "bibtex": "@misc{jain2019stayonthepathinstruction,\n    title = {Stay on the Path: Instruction Fidelity in Vision-and-Language Navigation},\n    author = {Vihan Jain and Gabriel Magalhaes and Alexander Ku and Ashish Vaswani and Eugene Ie and Jason Baldridge},\n    year = {2019},\n    eprint = {1905.12255},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/1905.12255},\n}",
+    "abstract": "Advances in learning and representations have reinvigorated work that\nconnects language to other modalities. A particularly exciting direction is\nVision-and-Language Navigation(VLN), in which agents interpret natural language\ninstructions and visual scenes to move through environments and reach goals.\nDespite recent progress, current research leaves unclear how much of a role\nlanguage understanding plays in this task, especially because dominant\nevaluation metrics have focused on goal completion rather than the sequence of\nactions corresponding to the instructions. Here, we highlight shortcomings of\ncurrent metrics for the Room-to-Room dataset (Anderson et al.,2018b) and\npropose a new metric, Coverage weighted by Length Score (CLS). We also show\nthat the existing paths in the dataset are not ideal for evaluating instruction\nfollowing because they are direct-to-goal shortest paths. We join existing\nshort paths to form more challenging extended paths to create a new data set,\nRoom-for-Room (R4R). Using R4R and CLS, we show that agents that receive\nrewards for instruction fidelity outperform agents that focus on goal\ncompletion.",
+    "num_pages": 11
+}

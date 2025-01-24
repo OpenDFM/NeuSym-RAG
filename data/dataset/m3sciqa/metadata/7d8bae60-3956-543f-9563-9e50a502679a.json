@@ -1,0 +1,18 @@
+{
+    "uuid": "7d8bae60-3956-543f-9563-9e50a502679a",
+    "title": "Global-to-local Memory Pointer Networks for Task-Oriented Dialogue",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Chien-Sheng Wu",
+        "Richard Socher",
+        "Caiming Xiong"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1901.04713v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\7d8bae60-3956-543f-9563-9e50a502679a.pdf",
+    "bibtex": "@misc{wu2019globaltolocalmemorypointernetworksfor,\n    title = {Global-to-local Memory Pointer Networks for Task-Oriented Dialogue},\n    author = {Chien-Sheng Wu and Richard Socher and Caiming Xiong},\n    year = {2019},\n    eprint = {1901.04713},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1901.04713},\n}",
+    "abstract": "End-to-end task-oriented dialogue is challenging since knowledge bases are\nusually large, dynamic and hard to incorporate into a learning framework. We\npropose the global-to-local memory pointer (GLMP) networks to address this\nissue. In our model, a global memory encoder and a local memory decoder are\nproposed to share external knowledge. The encoder encodes dialogue history,\nmodifies global contextual representation, and generates a global memory\npointer. The decoder first generates a sketch response with unfilled slots.\nNext, it passes the global memory pointer to filter the external knowledge for\nrelevant information, then instantiates the slots via the local memory\npointers. We empirically show that our model can improve copy accuracy and\nmitigate the common out-of-vocabulary problem. As a result, GLMP is able to\nimprove over the previous state-of-the-art models in both simulated bAbI\nDialogue dataset and human-human Stanford Multi-domain Dialogue dataset on\nautomatic and human evaluation.",
+    "num_pages": 19
+}

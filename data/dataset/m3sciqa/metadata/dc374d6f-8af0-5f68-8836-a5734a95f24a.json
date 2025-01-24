@@ -1,0 +1,23 @@
+{
+    "uuid": "dc374d6f-8af0-5f68-8836-a5734a95f24a",
+    "title": "Q-TOD: A Query-driven Task-oriented Dialogue System",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Xin Tian",
+        "Yingzhan Lin",
+        "Mengfei Song",
+        "Siqi Bao",
+        "Fan Wang",
+        "Huang He",
+        "Shuqi Sun",
+        "Hua Wu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.07564v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\dc374d6f-8af0-5f68-8836-a5734a95f24a.pdf",
+    "bibtex": "@misc{tian2022qtodaquerydriventaskorienteddialogue,\n    title = {Q-TOD: A Query-driven Task-oriented Dialogue System},\n    author = {Xin Tian and Yingzhan Lin and Mengfei Song and Siqi Bao and Fan Wang and Huang He and Shuqi Sun and Hua Wu},\n    year = {2022},\n    eprint = {2210.07564},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.07564},\n}",
+    "abstract": "Existing pipelined task-oriented dialogue systems usually have difficulties\nadapting to unseen domains, whereas end-to-end systems are plagued by\nlarge-scale knowledge bases in practice. In this paper, we introduce a novel\nquery-driven task-oriented dialogue system, namely Q-TOD. The essential\ninformation from the dialogue context is extracted into a query, which is\nfurther employed to retrieve relevant knowledge records for response\ngeneration. Firstly, as the query is in the form of natural language and not\nconfined to the schema of the knowledge base, the issue of domain adaption is\nalleviated remarkably in Q-TOD. Secondly, as the query enables the decoupling\nof knowledge retrieval from the generation, Q-TOD gets rid of the issue of\nknowledge base scalability. To evaluate the effectiveness of the proposed\nQ-TOD, we collect query annotations for three publicly available task-oriented\ndialogue datasets. Comprehensive experiments verify that Q-TOD outperforms\nstrong baselines and establishes a new state-of-the-art performance on these\ndatasets.",
+    "num_pages": 12
+}

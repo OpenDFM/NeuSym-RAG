@@ -1,0 +1,19 @@
+{
+    "uuid": "e3c55596-606e-5dbe-9ef3-ac06ef461af8",
+    "title": "Dual Contrastive Learning: Text Classification via Label-Aware Data Augmentation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Qianben Chen",
+        "Richong Zhang",
+        "Yaowei Zheng",
+        "Yongyi Mao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2201.08702v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\e3c55596-606e-5dbe-9ef3-ac06ef461af8.pdf",
+    "bibtex": "@misc{chen2022dualcontrastivelearningtextclassification,\n    title = {Dual Contrastive Learning: Text Classification via Label-Aware Data Augmentation},\n    author = {Qianben Chen and Richong Zhang and Yaowei Zheng and Yongyi Mao},\n    year = {2022},\n    eprint = {2201.08702},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2201.08702},\n}",
+    "abstract": "Contrastive learning has achieved remarkable success in representation\nlearning via self-supervision in unsupervised settings. However, effectively\nadapting contrastive learning to supervised learning tasks remains as a\nchallenge in practice. In this work, we introduce a dual contrastive learning\n(DualCL) framework that simultaneously learns the features of input samples and\nthe parameters of classifiers in the same space. Specifically, DualCL regards\nthe parameters of the classifiers as augmented samples associating to different\nlabels and then exploits the contrastive learning between the input samples and\nthe augmented samples. Empirical studies on five benchmark text classification\ndatasets and their low-resource version demonstrate the improvement in\nclassification accuracy and confirm the capability of learning discriminative\nrepresentations of DualCL.",
+    "num_pages": 8
+}

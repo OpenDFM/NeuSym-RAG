@@ -1,0 +1,22 @@
+{
+    "uuid": "11a21829-d857-5f65-8038-ee3c761ef026",
+    "title": "Distantly-Supervised Named Entity Recognition with Noise-Robust Learning and Language Model Augmented Self-Training",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Yu Meng",
+        "Yunyi Zhang",
+        "Jiaxin Huang",
+        "Xuan Wang",
+        "Yu Zhang",
+        "Heng Ji",
+        "Jiawei Han"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.05003v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\11a21829-d857-5f65-8038-ee3c761ef026.pdf",
+    "bibtex": "@misc{meng2021distantlysupervisednamedentityrecognitionwith,\n    title = {Distantly-Supervised Named Entity Recognition with Noise-Robust Learning and Language Model Augmented Self-Training},\n    author = {Yu Meng and Yunyi Zhang and Jiaxin Huang and Xuan Wang and Yu Zhang and Heng Ji and Jiawei Han},\n    year = {2021},\n    eprint = {2109.05003},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.05003},\n}",
+    "abstract": "We study the problem of training named entity recognition (NER) models using\nonly distantly-labeled data, which can be automatically obtained by matching\nentity mentions in the raw text with entity types in a knowledge base. The\nbiggest challenge of distantly-supervised NER is that the distant supervision\nmay induce incomplete and noisy labels, rendering the straightforward\napplication of supervised learning ineffective. In this paper, we propose (1) a\nnoise-robust learning scheme comprised of a new loss function and a noisy label\nremoval step, for training NER models on distantly-labeled data, and (2) a\nself-training method that uses contextualized augmentations created by\npre-trained language models to improve the generalization ability of the NER\nmodel. On three benchmark datasets, our method achieves superior performance,\noutperforming existing distantly-supervised NER models by significant margins.",
+    "num_pages": 12
+}

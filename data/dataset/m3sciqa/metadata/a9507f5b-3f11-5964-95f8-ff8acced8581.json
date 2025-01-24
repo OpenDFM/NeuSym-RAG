@@ -1,0 +1,17 @@
+{
+    "uuid": "a9507f5b-3f11-5964-95f8-ff8acced8581",
+    "title": "Bottom-Up Constituency Parsing and Nested Named Entity Recognition with Pointer Networks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Songlin Yang",
+        "Kewei Tu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.05419v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\a9507f5b-3f11-5964-95f8-ff8acced8581.pdf",
+    "bibtex": "@misc{yang2022bottomupconstituencyparsingandnested,\n    title = {Bottom-Up Constituency Parsing and Nested Named Entity Recognition with Pointer Networks},\n    author = {Songlin Yang and Kewei Tu},\n    year = {2022},\n    eprint = {2110.05419},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2110.05419},\n}",
+    "abstract": "Constituency parsing and nested named entity recognition (NER) are similar\ntasks since they both aim to predict a collection of nested and non-crossing\nspans. In this work, we cast nested NER to constituency parsing and propose a\nnovel pointing mechanism for bottom-up parsing to tackle both tasks. The key\nidea is based on the observation that if we traverse a constituency tree in\npost-order, i.e., visiting a parent after its children, then two consecutively\nvisited spans would share a boundary. Our model tracks the shared boundaries\nand predicts the next boundary at each step by leveraging a pointer network. As\na result, it needs only linear steps to parse and thus is efficient. It also\nmaintains a parsing configuration for structural consistency, i.e., always\noutputting valid trees. Experimentally, our model achieves the state-of-the-art\nperformance on PTB among all BERT-based models (96.01 F1 score) and competitive\nperformance on CTB7 in constituency parsing; and it also achieves strong\nperformance on three benchmark datasets of nested NER: ACE2004, ACE2005, and\nGENIA. Our code is publicly available at\n\\url{https://github.com/sustcsonglin/pointer-net-for-nested}.",
+    "num_pages": 14
+}

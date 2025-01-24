@@ -1,0 +1,21 @@
+{
+    "uuid": "6851f701-d921-56d5-a4ee-5c127c7d1183",
+    "title": "Simultaneous Translation Policies: From Fixed to Adaptive",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Baigong Zheng",
+        "Kaibo Liu",
+        "Renjie Zheng",
+        "Mingbo Ma",
+        "Hairong Liu",
+        "Liang Huang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.13169v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\6851f701-d921-56d5-a4ee-5c127c7d1183.pdf",
+    "bibtex": "@misc{zheng2020simultaneoustranslationpoliciesfromfixed,\n    title = {Simultaneous Translation Policies: From Fixed to Adaptive},\n    author = {Baigong Zheng and Kaibo Liu and Renjie Zheng and Mingbo Ma and Hairong Liu and Liang Huang},\n    year = {2020},\n    eprint = {2004.13169},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2004.13169},\n}",
+    "abstract": "Adaptive policies are better than fixed policies for simultaneous\ntranslation, since they can flexibly balance the tradeoff between translation\nquality and latency based on the current context information. But previous\nmethods on obtaining adaptive policies either rely on complicated training\nprocess, or underperform simple fixed policies. We design an algorithm to\nachieve adaptive policies via a simple heuristic composition of a set of fixed\npolicies. Experiments on Chinese -> English and German -> English show that our\nadaptive policies can outperform fixed ones by up to 4 BLEU points for the same\nlatency, and more surprisingly, it even surpasses the BLEU score of\nfull-sentence translation in the greedy mode (and very close to beam mode), but\nwith much lower latency.",
+    "num_pages": 7
+}

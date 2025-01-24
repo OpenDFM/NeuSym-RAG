@@ -1,0 +1,18 @@
+{
+    "uuid": "4d3092f6-d683-5121-b9a5-7fca4ff91894",
+    "title": "ClipCap: CLIP Prefix for Image Captioning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Ron Mokady",
+        "Amir Hertz",
+        "Amit H. Bermano"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2111.09734v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\4d3092f6-d683-5121-b9a5-7fca4ff91894.pdf",
+    "bibtex": "@misc{mokady2021clipcapclipprefixforimage,\n    title = {ClipCap: CLIP Prefix for Image Captioning},\n    author = {Ron Mokady and Amir Hertz and Amit H. Bermano},\n    year = {2021},\n    eprint = {2111.09734},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2111.09734},\n}",
+    "abstract": "Image captioning is a fundamental task in vision-language understanding,\nwhere the model predicts a textual informative caption to a given input image.\nIn this paper, we present a simple approach to address this task. We use CLIP\nencoding as a prefix to the caption, by employing a simple mapping network, and\nthen fine-tunes a language model to generate the image captions. The recently\nproposed CLIP model contains rich semantic features which were trained with\ntextual context, making it best for vision-language perception. Our key idea is\nthat together with a pre-trained language model (GPT2), we obtain a wide\nunderstanding of both visual and textual data. Hence, our approach only\nrequires rather quick training to produce a competent captioning model. Without\nadditional annotations or pre-training, it efficiently generates meaningful\ncaptions for large-scale and diverse datasets. Surprisingly, our method works\nwell even when only the mapping network is trained, while both CLIP and the\nlanguage model remain frozen, allowing a lighter architecture with less\ntrainable parameters. Through quantitative evaluation, we demonstrate our model\nachieves comparable results to state-of-the-art methods on the challenging\nConceptual Captions and nocaps datasets, while it is simpler, faster, and\nlighter. Our code is available in\nhttps://github.com/rmokady/CLIP_prefix_caption.",
+    "num_pages": 10
+}

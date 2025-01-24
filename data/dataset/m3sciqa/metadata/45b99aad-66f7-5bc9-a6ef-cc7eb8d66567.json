@@ -1,0 +1,23 @@
+{
+    "uuid": "45b99aad-66f7-5bc9-a6ef-cc7eb8d66567",
+    "title": "How Much Can CLIP Benefit Vision-and-Language Tasks?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Sheng Shen",
+        "Liunian Harold Li",
+        "Hao Tan",
+        "Mohit Bansal",
+        "Anna Rohrbach",
+        "Kai-Wei Chang",
+        "Zhewei Yao",
+        "Kurt Keutzer"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2107.06383v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\45b99aad-66f7-5bc9-a6ef-cc7eb8d66567.pdf",
+    "bibtex": "@misc{shen2021howmuchcanclipbenefit,\n    title = {How Much Can CLIP Benefit Vision-and-Language Tasks?},\n    author = {Sheng Shen and Liunian Harold Li and Hao Tan and Mohit Bansal and Anna Rohrbach and Kai-Wei Chang and Zhewei Yao and Kurt Keutzer},\n    year = {2021},\n    eprint = {2107.06383},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2107.06383},\n}",
+    "abstract": "Most existing Vision-and-Language (V&L) models rely on pre-trained visual\nencoders, using a relatively small set of manually-annotated data (as compared\nto web-crawled data), to perceive the visual world. However, it has been\nobserved that large-scale pretraining usually can result in better\ngeneralization performance, e.g., CLIP (Contrastive Language-Image\nPre-training), trained on a massive amount of image-caption pairs, has shown a\nstrong zero-shot capability on various vision tasks. To further study the\nadvantage brought by CLIP, we propose to use CLIP as the visual encoder in\nvarious V&L models in two typical scenarios: 1) plugging CLIP into\ntask-specific fine-tuning; 2) combining CLIP with V&L pre-training and\ntransferring to downstream tasks. We show that CLIP significantly outperforms\nwidely-used visual encoders trained with in-domain annotated data, such as\nBottomUp-TopDown. We achieve competitive or better results on diverse V&L\ntasks, while establishing new state-of-the-art results on Visual Question\nAnswering, Visual Entailment, and V&L Navigation tasks. We release our code at\nhttps://github.com/clip-vil/CLIP-ViL.",
+    "num_pages": 14
+}

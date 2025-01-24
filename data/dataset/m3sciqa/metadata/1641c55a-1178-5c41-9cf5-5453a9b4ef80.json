@@ -1,0 +1,17 @@
+{
+    "uuid": "1641c55a-1178-5c41-9cf5-5453a9b4ef80",
+    "title": "Reward-Augmented Decoding: Efficient Controlled Text Generation With a Unidirectional Reward Model",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Haikang Deng",
+        "Colin Raffel"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.09520v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\1641c55a-1178-5c41-9cf5-5453a9b4ef80.pdf",
+    "bibtex": "@misc{deng2024rewardaugmenteddecodingefficientcontrolledtext,\n    title = {Reward-Augmented Decoding: Efficient Controlled Text Generation With a Unidirectional Reward Model},\n    author = {Haikang Deng and Colin Raffel},\n    year = {2024},\n    eprint = {2310.09520},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.09520},\n}",
+    "abstract": "While large language models have proven effective in a huge range of\ndownstream applications, they often generate text that is problematic or lacks\na desired attribute. In this paper, we introduce Reward-Augmented Decoding\n(RAD), a text generation procedure that uses a small unidirectional reward\nmodel to encourage a language model to generate text that has certain\nproperties. Specifically, RAD uses the reward model to score generations as\nthey are produced and rescales sampling probabilities to favor high-reward\ntokens. By using a unidirectional reward model, RAD can cache activations from\nprior generation steps to decrease computational overhead. Through experiments\non generating non-toxic and sentiment-controlled text, we demonstrate that RAD\nperforms best among methods that change only the generation procedure and\nmatches the performance of state-of-the-art methods that involve re-training\nthe language model. We further validate that RAD is effective on very large\nlanguage models while incurring a minimal computational overhead.",
+    "num_pages": 11
+}

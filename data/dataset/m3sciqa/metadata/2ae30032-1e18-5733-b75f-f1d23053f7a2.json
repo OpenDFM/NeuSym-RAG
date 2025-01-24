@@ -1,0 +1,19 @@
+{
+    "uuid": "2ae30032-1e18-5733-b75f-f1d23053f7a2",
+    "title": "A Conditional Splitting Framework for Efficient Constituency Parsing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Thanh-Tung Nguyen",
+        "Xuan-Phi Nguyen",
+        "Shafiq Joty",
+        "Xiaoli Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.15760v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\2ae30032-1e18-5733-b75f-f1d23053f7a2.pdf",
+    "bibtex": "@misc{nguyen2021aconditionalsplittingframeworkfor,\n    title = {A Conditional Splitting Framework for Efficient Constituency Parsing},\n    author = {Thanh-Tung Nguyen and Xuan-Phi Nguyen and Shafiq Joty and Xiaoli Li},\n    year = {2021},\n    eprint = {2106.15760},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.15760},\n}",
+    "abstract": "We introduce a generic seq2seq parsing framework that casts constituency\nparsing problems (syntactic and discourse parsing) into a series of conditional\nsplitting decisions. Our parsing model estimates the conditional probability\ndistribution of possible splitting points in a given text span and supports\nefficient top-down decoding, which is linear in number of nodes. The\nconditional splitting formulation together with efficient beam search inference\nfacilitate structural consistency without relying on expensive structured\ninference. Crucially, for discourse analysis we show that in our formulation,\ndiscourse segmentation can be framed as a special case of parsing which allows\nus to perform discourse parsing without requiring segmentation as a\npre-requisite. Experiments show that our model achieves good results on the\nstandard syntactic parsing tasks under settings with/without pre-trained\nrepresentations and rivals state-of-the-art (SoTA) methods that are more\ncomputationally expensive than ours. In discourse parsing, our method\noutperforms SoTA by a good margin.",
+    "num_pages": 13
+}

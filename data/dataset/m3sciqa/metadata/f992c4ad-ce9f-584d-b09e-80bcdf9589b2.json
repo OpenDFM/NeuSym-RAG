@@ -1,0 +1,22 @@
+{
+    "uuid": "f992c4ad-ce9f-584d-b09e-80bcdf9589b2",
+    "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yizhong Wang",
+        "Yeganeh Kordi",
+        "Swaroop Mishra",
+        "Alisa Liu",
+        "Noah A. Smith",
+        "Daniel Khashabi",
+        "Hannaneh Hajishirzi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2212.10560v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\f992c4ad-ce9f-584d-b09e-80bcdf9589b2.pdf",
+    "bibtex": "@misc{wang2023selfinstructaligninglanguagemodelswith,\n    title = {Self-Instruct: Aligning Language Models with Self-Generated Instructions},\n    author = {Yizhong Wang and Yeganeh Kordi and Swaroop Mishra and Alisa Liu and Noah A. Smith and Daniel Khashabi and Hannaneh Hajishirzi},\n    year = {2023},\n    eprint = {2212.10560},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2212.10560},\n}",
+    "abstract": "Large \"instruction-tuned\" language models (i.e., finetuned to respond to\ninstructions) have demonstrated a remarkable ability to generalize zero-shot to\nnew tasks. Nevertheless, they depend heavily on human-written instruction data\nthat is often limited in quantity, diversity, and creativity, therefore\nhindering the generality of the tuned model. We introduce Self-Instruct, a\nframework for improving the instruction-following capabilities of pretrained\nlanguage models by bootstrapping off their own generations. Our pipeline\ngenerates instructions, input, and output samples from a language model, then\nfilters invalid or similar ones before using them to finetune the original\nmodel. Applying our method to the vanilla GPT3, we demonstrate a 33% absolute\nimprovement over the original model on Super-NaturalInstructions, on par with\nthe performance of InstructGPT-001, which was trained with private user data\nand human annotations. For further evaluation, we curate a set of\nexpert-written instructions for novel tasks, and show through human evaluation\nthat tuning GPT3 with Self-Instruct outperforms using existing public\ninstruction datasets by a large margin, leaving only a 5% absolute gap behind\nInstructGPT-001. Self-Instruct provides an almost annotation-free method for\naligning pre-trained language models with instructions, and we release our\nlarge synthetic dataset to facilitate future studies on instruction tuning. Our\ncode and data are available at https://github.com/yizhongw/self-instruct.",
+    "num_pages": 23
+}

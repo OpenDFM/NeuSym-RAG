@@ -1,0 +1,21 @@
+{
+    "uuid": "1c848190-6829-5b07-a439-3452fd19617b",
+    "title": "Automatic Prompt Optimization with \"Gradient Descent\" and Beam Search",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Reid Pryzant",
+        "Dan Iter",
+        "Jerry Li",
+        "Yin Tat Lee",
+        "Chenguang Zhu",
+        "Michael Zeng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.03495v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\1c848190-6829-5b07-a439-3452fd19617b.pdf",
+    "bibtex": "@misc{pryzant2023automaticpromptoptimizationwithgradient,\n    title = {Automatic Prompt Optimization with \"Gradient Descent\" and Beam Search},\n    author = {Reid Pryzant and Dan Iter and Jerry Li and Yin Tat Lee and Chenguang Zhu and Michael Zeng},\n    year = {2023},\n    eprint = {2305.03495},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.03495},\n}",
+    "abstract": "Large Language Models (LLMs) have shown impressive performance as general\npurpose agents, but their abilities remain highly dependent on prompts which\nare hand written with onerous trial-and-error effort. We propose a simple and\nnonparametric solution to this problem, Automatic Prompt Optimization (APO),\nwhich is inspired by numerical gradient descent to automatically improve\nprompts, assuming access to training data and an LLM API. The algorithm uses\nminibatches of data to form natural language \"gradients\" that criticize the\ncurrent prompt. The gradients are then \"propagated\" into the prompt by editing\nthe prompt in the opposite semantic direction of the gradient. These gradient\ndescent steps are guided by a beam search and bandit selection procedure which\nsignificantly improves algorithmic efficiency. Preliminary results across three\nbenchmark NLP tasks and the novel problem of LLM jailbreak detection suggest\nthat Automatic Prompt Optimization can outperform prior prompt editing\ntechniques and improve an initial prompt's performance by up to 31%, by using\ndata to rewrite vague task descriptions into more precise annotation\ninstructions.",
+    "num_pages": 12
+}

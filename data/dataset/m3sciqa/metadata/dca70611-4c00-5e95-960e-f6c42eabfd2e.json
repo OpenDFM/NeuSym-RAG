@@ -1,0 +1,22 @@
+{
+    "uuid": "dca70611-4c00-5e95-960e-f6c42eabfd2e",
+    "title": "An Enhanced Span-based Decomposition Method for Few-Shot Sequence Labeling",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Peiyi Wang",
+        "Runxin Xu",
+        "Tianyu Liu",
+        "Qingyu Zhou",
+        "Yunbo Cao",
+        "Baobao Chang",
+        "Zhifang Sui"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.13023v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\dca70611-4c00-5e95-960e-f6c42eabfd2e.pdf",
+    "bibtex": "@misc{wang2022anenhancedspanbaseddecompositionmethod,\n    title = {An Enhanced Span-based Decomposition Method for Few-Shot Sequence Labeling},\n    author = {Peiyi Wang and Runxin Xu and Tianyu Liu and Qingyu Zhou and Yunbo Cao and Baobao Chang and Zhifang Sui},\n    year = {2022},\n    eprint = {2109.13023},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.13023},\n}",
+    "abstract": "Few-Shot Sequence Labeling (FSSL) is a canonical paradigm for the tagging\nmodels, e.g., named entity recognition and slot filling, to generalize on an\nemerging, resource-scarce domain. Recently, the metric-based meta-learning\nframework has been recognized as a promising approach for FSSL. However, most\nprior works assign a label to each token based on the token-level similarities,\nwhich ignores the integrality of named entities or slots. To this end, in this\npaper, we propose ESD, an Enhanced Span-based Decomposition method for FSSL.\nESD formulates FSSL as a span-level matching problem between test query and\nsupporting instances. Specifically, ESD decomposes the span matching problem\ninto a series of span-level procedures, mainly including enhanced span\nrepresentation, class prototype aggregation and span conflicts resolution.\nExtensive experiments show that ESD achieves the new state-of-the-art results\non two popular FSSL benchmarks, FewNERD and SNIPS, and is proven to be more\nrobust in the nested and noisy tagging scenarios. Our code is available at\nhttps://github.com/Wangpeiyi9979/ESD.",
+    "num_pages": 13
+}

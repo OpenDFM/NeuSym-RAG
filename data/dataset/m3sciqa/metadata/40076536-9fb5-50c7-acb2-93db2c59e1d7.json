@@ -1,0 +1,25 @@
+{
+    "uuid": "40076536-9fb5-50c7-acb2-93db2c59e1d7",
+    "title": "RoBERTa: A Robustly Optimized BERT Pretraining Approach",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Yinhan Liu",
+        "Myle Ott",
+        "Naman Goyal",
+        "Jingfei Du",
+        "Mandar Joshi",
+        "Danqi Chen",
+        "Omer Levy",
+        "Mike Lewis",
+        "Luke Zettlemoyer",
+        "Veselin Stoyanov"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1907.11692v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\40076536-9fb5-50c7-acb2-93db2c59e1d7.pdf",
+    "bibtex": "@misc{liu2019robertaarobustlyoptimizedbert,\n    title = {RoBERTa: A Robustly Optimized BERT Pretraining Approach},\n    author = {Yinhan Liu and Myle Ott and Naman Goyal and Jingfei Du and Mandar Joshi and Danqi Chen and Omer Levy and Mike Lewis and Luke Zettlemoyer and Veselin Stoyanov},\n    year = {2019},\n    eprint = {1907.11692},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1907.11692},\n}",
+    "abstract": "Language model pretraining has led to significant performance gains but\ncareful comparison between different approaches is challenging. Training is\ncomputationally expensive, often done on private datasets of different sizes,\nand, as we will show, hyperparameter choices have significant impact on the\nfinal results. We present a replication study of BERT pretraining (Devlin et\nal., 2019) that carefully measures the impact of many key hyperparameters and\ntraining data size. We find that BERT was significantly undertrained, and can\nmatch or exceed the performance of every model published after it. Our best\nmodel achieves state-of-the-art results on GLUE, RACE and SQuAD. These results\nhighlight the importance of previously overlooked design choices, and raise\nquestions about the source of recently reported improvements. We release our\nmodels and code.",
+    "num_pages": 13
+}

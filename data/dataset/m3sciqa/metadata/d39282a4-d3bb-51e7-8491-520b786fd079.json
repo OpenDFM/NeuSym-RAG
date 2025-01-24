@@ -1,0 +1,19 @@
+{
+    "uuid": "d39282a4-d3bb-51e7-8491-520b786fd079",
+    "title": "Should You Mask 15% in Masked Language Modeling?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Alexander Wettig",
+        "Tianyu Gao",
+        "Zexuan Zhong",
+        "Danqi Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2202.08005v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\d39282a4-d3bb-51e7-8491-520b786fd079.pdf",
+    "bibtex": "@misc{wettig2023shouldyoumask15in,\n    title = {Should You Mask 15% in Masked Language Modeling?},\n    author = {Alexander Wettig and Tianyu Gao and Zexuan Zhong and Danqi Chen},\n    year = {2023},\n    eprint = {2202.08005},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2202.08005},\n}",
+    "abstract": "Masked language models (MLMs) conventionally mask 15% of tokens due to the\nbelief that more masking would leave insufficient context to learn good\nrepresentations; this masking rate has been widely used, regardless of model\nsizes or masking strategies. In this work, we revisit this important choice of\nMLM pre-training. We first establish that 15% is not universally optimal, and\nlarger models should adopt a higher masking rate. Specifically, we find that\nmasking 40% outperforms 15% for BERT-large size models on GLUE and SQuAD.\nInterestingly, an extremely high masking rate of 80% can still preserve 95%\nfine-tuning performance and most of the accuracy in linguistic probing,\nchallenging the conventional wisdom about the role of the masking rate. We then\nexamine the interplay between masking rates and masking strategies and find\nthat uniform masking requires a higher masking rate compared to sophisticated\nmasking strategies such as span or PMI masking. Finally, we argue that\nincreasing the masking rate has two distinct effects: it leads to more\ncorruption, which makes the prediction task more difficult; it also enables\nmore predictions, which benefits optimization. Using this framework, we revisit\nBERT's 80-10-10 corruption strategy. Together, our results contribute to a\nbetter understanding of MLM pre-training.",
+    "num_pages": 16
+}

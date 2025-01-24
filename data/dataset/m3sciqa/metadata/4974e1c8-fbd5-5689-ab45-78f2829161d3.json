@@ -1,0 +1,22 @@
+{
+    "uuid": "4974e1c8-fbd5-5689-ab45-78f2829161d3",
+    "title": "Asymmetric Loss For Multi-Label Classification",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Emanuel Ben-Baruch",
+        "Tal Ridnik",
+        "Nadav Zamir",
+        "Asaf Noy",
+        "Itamar Friedman",
+        "Matan Protter",
+        "Lihi Zelnik-Manor"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2009.14119v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\4974e1c8-fbd5-5689-ab45-78f2829161d3.pdf",
+    "bibtex": "@misc{benbaruch2021asymmetriclossformultilabelclassification,\n    title = {Asymmetric Loss For Multi-Label Classification},\n    author = {Emanuel Ben-Baruch and Tal Ridnik and Nadav Zamir and Asaf Noy and Itamar Friedman and Matan Protter and Lihi Zelnik-Manor},\n    year = {2021},\n    eprint = {2009.14119},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2009.14119},\n}",
+    "abstract": "In a typical multi-label setting, a picture contains on average few positive\nlabels, and many negative ones. This positive-negative imbalance dominates the\noptimization process, and can lead to under-emphasizing gradients from positive\nlabels during training, resulting in poor accuracy. In this paper, we introduce\na novel asymmetric loss (\"ASL\"), which operates differently on positive and\nnegative samples. The loss enables to dynamically down-weights and\nhard-thresholds easy negative samples, while also discarding possibly\nmislabeled samples. We demonstrate how ASL can balance the probabilities of\ndifferent samples, and how this balancing is translated to better mAP scores.\nWith ASL, we reach state-of-the-art results on multiple popular multi-label\ndatasets: MS-COCO, Pascal-VOC, NUS-WIDE and Open Images. We also demonstrate\nASL applicability for other tasks, such as single-label classification and\nobject detection. ASL is effective, easy to implement, and does not increase\nthe training time or complexity.\n  Implementation is available at: https://github.com/Alibaba-MIIL/ASL.",
+    "num_pages": 13
+}

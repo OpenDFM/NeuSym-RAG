@@ -1,0 +1,20 @@
+{
+    "uuid": "b7e882d3-0b6b-5401-baf7-36cdd87176ee",
+    "title": "Propagating Knowledge Updates to LMs Through Distillation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Shankar Padmanabhan",
+        "Yasumasa Onoe",
+        "Michael J. Q. Zhang",
+        "Greg Durrett",
+        "Eunsol Choi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2306.09306v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\b7e882d3-0b6b-5401-baf7-36cdd87176ee.pdf",
+    "bibtex": "@misc{padmanabhan2023propagatingknowledgeupdatestolms,\n    title = {Propagating Knowledge Updates to LMs Through Distillation},\n    author = {Shankar Padmanabhan and Yasumasa Onoe and Michael J. Q. Zhang and Greg Durrett and Eunsol Choi},\n    year = {2023},\n    eprint = {2306.09306},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2306.09306},\n}",
+    "abstract": "Modern language models have the capacity to store and use immense amounts of\nknowledge about real-world entities, but it remains unclear how to update such\nknowledge stored in model parameters. While prior methods for updating\nknowledge in LMs successfully inject atomic facts, updated LMs fail to make\ninferences based on injected facts. In this work, we demonstrate that a context\ndistillation-based approach can both impart knowledge about entities and\npropagate that knowledge to enable broader inferences. Our approach consists of\ntwo stages: transfer set generation and distillation on the transfer set. We\nfirst generate a transfer set by prompting a language model to generate\ncontinuations from the entity definition. Then, we update the model parameters\nso that the distribution of the LM (the student) matches the distribution of\nthe LM conditioned on the definition (the teacher) on the transfer set. Our\nexperiments demonstrate that this approach is more effective at propagating\nknowledge updates than fine-tuning and other gradient-based knowledge-editing\nmethods. Moreover, it does not compromise performance in other contexts, even\nwhen injecting the definitions of up to 150 entities at once.",
+    "num_pages": 19
+}

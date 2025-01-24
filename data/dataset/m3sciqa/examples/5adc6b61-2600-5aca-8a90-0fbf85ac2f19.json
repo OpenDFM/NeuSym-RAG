@@ -1,0 +1,53 @@
+{
+    "uuid": "5adc6b61-2600-5aca-8a90-0fbf85ac2f19",
+    "question": "Consider the paper that introduces the model that achieves a score of 3.84 in the Grounding task. What specific improvement in percentage points did the model proposed in the paper achieve over their discriminative counterparts on the out-of-domain subset for the VQA task?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "87061b7c-1d22-547a-8872-d4aeab4af856"
+    ],
+    "reference_pdf": [
+        "494cb703-b95f-5e14-a0e7-a3fd11506fc1",
+        "6f3f28fe-d2d7-586a-88ad-9221a4b30d73",
+        "34417770-67d7-5cab-b9d4-76999c97bc02",
+        "d8294ff2-583e-51c8-800f-d71a9308007f",
+        "2ca6dd33-bf5b-50cf-b091-3282a484d4a8",
+        "2a0adc2f-455b-5d5a-9cf1-ac09f4347ff9",
+        "04eb3bcf-5a3a-574f-84e5-2bf5ad50cde4",
+        "3eebefdb-5ed6-51bf-92c6-b28841844f45",
+        "4d93d596-b0bd-54c6-bd9e-041037077bc7",
+        "ffa6aa03-6f5b-56a1-9120-8d8c625c0880",
+        "e201f724-c783-5300-baeb-1379ae22f643",
+        "7aacee49-58db-593f-9a47-44846ba2ed23",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "e606240b-8963-5ee5-b4f2-fb4949398e3a",
+        "ec5a0dc4-0a52-55b2-a4a2-54e1006e50b9",
+        "8d432bf0-21eb-51f9-b126-078fe08a3012",
+        "0a58057a-a09f-5b93-9aeb-0243adcf3eef",
+        "9ada7bff-c684-55ab-ae9b-04f836247ddc",
+        "3e2528f0-84e9-5fa9-a440-22ae6fcc2500",
+        "c8260bf5-7dd8-5066-8aa4-1a512fa40f12",
+        "1b61dc63-60bb-51d1-9935-260cf324487f",
+        "45decdf4-f524-52d5-8385-3da8d839888b",
+        "ac1b0430-6781-5539-9d45-5067c0c6ff3e"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the model that achieves a score of 3.84 in the Grounding task. What specific improvement in percentage points did the model proposed in the paper achieve over their discriminative counterparts on the out-of-domain subset for the VQA task?",
+            "reference_answer": "6 and 6.2 points"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.15129/human_eval_table.png"
+    ]
+}

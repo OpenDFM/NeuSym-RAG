@@ -1,0 +1,20 @@
+{
+    "uuid": "6d068e18-8fb7-5dff-b0bf-b95297a79dc5",
+    "title": "Motif-based Graph Self-Supervised Learning for Molecular Property Prediction",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Zaixi Zhang",
+        "Qi Liu",
+        "Hao Wang",
+        "Chengqiang Lu",
+        "Chee-Kong Lee"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.00987v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\6d068e18-8fb7-5dff-b0bf-b95297a79dc5.pdf",
+    "bibtex": "@misc{zhang2021motifbasedgraphselfsupervisedlearningfor,\n    title = {Motif-based Graph Self-Supervised Learning for Molecular Property Prediction},\n    author = {Zaixi Zhang and Qi Liu and Hao Wang and Chengqiang Lu and Chee-Kong Lee},\n    year = {2021},\n    eprint = {2110.00987},\n    archivePrefix = {arXiv},\n    primaryClass = {q-bio.QM},\n    url = {http://arxiv.org/abs/2110.00987},\n}",
+    "abstract": "Predicting molecular properties with data-driven methods has drawn much\nattention in recent years. Particularly, Graph Neural Networks (GNNs) have\ndemonstrated remarkable success in various molecular generation and prediction\ntasks. In cases where labeled data is scarce, GNNs can be pre-trained on\nunlabeled molecular data to first learn the general semantic and structural\ninformation before being fine-tuned for specific tasks. However, most existing\nself-supervised pre-training frameworks for GNNs only focus on node-level or\ngraph-level tasks. These approaches cannot capture the rich information in\nsubgraphs or graph motifs. For example, functional groups (frequently-occurred\nsubgraphs in molecular graphs) often carry indicative information about the\nmolecular properties. To bridge this gap, we propose Motif-based Graph\nSelf-supervised Learning (MGSSL) by introducing a novel self-supervised motif\ngeneration framework for GNNs. First, for motif extraction from molecular\ngraphs, we design a molecule fragmentation method that leverages a\nretrosynthesis-based algorithm BRICS and additional rules for controlling the\nsize of motif vocabulary. Second, we design a general motif-based generative\npre-training framework in which GNNs are asked to make topological and label\npredictions. This generative framework can be implemented in two different\nways, i.e., breadth-first or depth-first. Finally, to take the multi-scale\ninformation in molecular graphs into consideration, we introduce a multi-level\nself-supervised pre-training. Extensive experiments on various downstream\nbenchmark tasks show that our methods outperform all state-of-the-art\nbaselines.",
+    "num_pages": 13
+}

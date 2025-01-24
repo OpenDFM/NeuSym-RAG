@@ -1,0 +1,20 @@
+{
+    "uuid": "259f8e65-c806-51bd-9207-f0652eea30e6",
+    "title": "Can LMs Learn New Entities from Descriptions? Challenges in Propagating Injected Knowledge",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yasumasa Onoe",
+        "Michael J. Q. Zhang",
+        "Shankar Padmanabhan",
+        "Greg Durrett",
+        "Eunsol Choi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.01651v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\259f8e65-c806-51bd-9207-f0652eea30e6.pdf",
+    "bibtex": "@misc{onoe2023canlmslearnnewentities,\n    title = {Can LMs Learn New Entities from Descriptions? Challenges in Propagating Injected Knowledge},\n    author = {Yasumasa Onoe and Michael J. Q. Zhang and Shankar Padmanabhan and Greg Durrett and Eunsol Choi},\n    year = {2023},\n    eprint = {2305.01651},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.01651},\n}",
+    "abstract": "Pre-trained language models (LMs) are used for knowledge intensive tasks like\nquestion answering, but their knowledge gets continuously outdated as the world\nchanges. Prior work has studied targeted updates to LMs, injecting individual\nfacts and evaluating whether the model learns these facts while not changing\npredictions on other contexts. We take a step forward and study LMs' abilities\nto make inferences based on injected facts (or propagate those facts): for\nexample, after learning that something is a TV show, does an LM predict that\nyou can watch it? We study this with two cloze-style tasks: an existing dataset\nof real-world sentences about novel entities (ECBD) as well as a new controlled\nbenchmark with manually designed templates requiring varying levels of\ninference about injected knowledge. Surprisingly, we find that existing methods\nfor updating knowledge (gradient-based fine-tuning and modifications of this\napproach) show little propagation of injected knowledge. These methods improve\nperformance on cloze instances only when there is lexical overlap between\ninjected facts and target inferences. Yet, prepending entity definitions in an\nLM's context improves performance across all settings, suggesting that there is\nsubstantial headroom for parameter-updating approaches for knowledge injection.",
+    "num_pages": 15
+}

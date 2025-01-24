@@ -1,0 +1,51 @@
+{
+    "uuid": "38428e95-a11b-50bf-b999-063c0af902b1",
+    "question": "Consider the paper that introduces the dataset which is shown in the second row of the table. What specific aspect of the conversation goal completion rate significantly demonstrates the effectiveness of the knowledge posterior/prior distribution learning in the model proposed by the paper?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "1fe4dceb-0e28-5cef-8794-e9303386d11e"
+    ],
+    "reference_pdf": [
+        "202ff867-5a38-531d-bb71-aaf9818977ed",
+        "af704b49-b4f8-5ee4-b76a-af903e4e62dc",
+        "34417770-67d7-5cab-b9d4-76999c97bc02",
+        "003269db-f43b-57bc-a219-825c655fab01",
+        "bd169600-08fb-561b-af10-381361a9cfd7",
+        "79fb9402-0283-5c7a-ae54-72967aec6549",
+        "773bd309-53f3-5c7d-93a1-7ccc735a1478",
+        "55bea9dd-19cb-5319-9e84-40f981fbde69",
+        "72584296-7e67-500a-883d-60fff1566e16",
+        "b6b88c8a-8892-5722-9c07-319c87bf7010",
+        "46293c99-57d9-5ead-8078-908709313cd3",
+        "b528f9d7-6504-56be-abbf-1a1b714760aa",
+        "da6bc6e9-3f60-575e-868b-4a55bba673dc",
+        "caae1c5b-0cc2-520e-b18d-f4569d83c528",
+        "be76575e-6c00-5476-88ea-0ee5ddb704e7",
+        "393e9431-63b0-589d-88bb-62335baaf8bc",
+        "b46755fc-9177-511a-bc44-a4bc792850bf",
+        "49bde77b-fc00-53fc-b37e-a64371f3a21f",
+        "caae1c5b-0cc2-520e-b18d-f4569d83c528",
+        "3eb58497-86ef-5979-ab34-37ded2b70778",
+        "0da3897b-f258-5cf7-9926-793bd73769d3"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the dataset which is shown in the second row of the table. What specific aspect of the conversation goal completion rate significantly demonstrates the effectiveness of the knowledge posterior/prior distribution learning in the model proposed by the paper?",
+            "reference_answer": "more knowledge to achieve the conversation goal  (much higher rate on score '2')"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.07397/result_table.png"
+    ]
+}

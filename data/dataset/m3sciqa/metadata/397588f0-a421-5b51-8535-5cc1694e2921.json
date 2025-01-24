@@ -1,0 +1,18 @@
+{
+    "uuid": "397588f0-a421-5b51-8535-5cc1694e2921",
+    "title": "A Deep Reinforced Model for Abstractive Summarization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Romain Paulus",
+        "Caiming Xiong",
+        "Richard Socher"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1705.04304v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\397588f0-a421-5b51-8535-5cc1694e2921.pdf",
+    "bibtex": "@misc{paulus2017adeepreinforcedmodelfor,\n    title = {A Deep Reinforced Model for Abstractive Summarization},\n    author = {Romain Paulus and Caiming Xiong and Richard Socher},\n    year = {2017},\n    eprint = {1705.04304},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1705.04304},\n}",
+    "abstract": "Attentional, RNN-based encoder-decoder models for abstractive summarization\nhave achieved good performance on short input and output sequences. For longer\ndocuments and summaries however these models often include repetitive and\nincoherent phrases. We introduce a neural network model with a novel\nintra-attention that attends over the input and continuously generated output\nseparately, and a new training method that combines standard supervised word\nprediction and reinforcement learning (RL). Models trained only with supervised\nlearning often exhibit \"exposure bias\" - they assume ground truth is provided\nat each step during training. However, when standard word prediction is\ncombined with the global sequence prediction training of RL the resulting\nsummaries become more readable. We evaluate this model on the CNN/Daily Mail\nand New York Times datasets. Our model obtains a 41.16 ROUGE-1 score on the\nCNN/Daily Mail dataset, an improvement over previous state-of-the-art models.\nHuman evaluation also shows that our model produces higher quality summaries.",
+    "num_pages": 12
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "5a1fa4c3-fd03-576e-a4bf-29fd77bec899",
+    "title": "OpenAGI: When LLM Meets Domain Experts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yingqiang Ge",
+        "Wenyue Hua",
+        "Kai Mei",
+        "Jianchao Ji",
+        "Juntao Tan",
+        "Shuyuan Xu",
+        "Zelong Li",
+        "Yongfeng Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.04370v6",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\5a1fa4c3-fd03-576e-a4bf-29fd77bec899.pdf",
+    "bibtex": "@misc{ge2023openagiwhenllmmeetsdomain,\n    title = {OpenAGI: When LLM Meets Domain Experts},\n    author = {Yingqiang Ge and Wenyue Hua and Kai Mei and Jianchao Ji and Juntao Tan and Shuyuan Xu and Zelong Li and Yongfeng Zhang},\n    year = {2023},\n    eprint = {2304.04370},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/2304.04370},\n}",
+    "abstract": "Human Intelligence (HI) excels at combining basic skills to solve complex\ntasks. This capability is vital for Artificial Intelligence (AI) and should be\nembedded in comprehensive AI Agents, enabling them to harness expert models for\ncomplex task-solving towards Artificial General Intelligence (AGI). Large\nLanguage Models (LLMs) show promising learning and reasoning abilities, and can\neffectively use external models, tools, plugins, or APIs to tackle complex\nproblems. In this work, we introduce OpenAGI, an open-source AGI research and\ndevelopment platform designed for solving multi-step, real-world tasks.\nSpecifically, OpenAGI uses a dual strategy, integrating standard benchmark\ntasks for benchmarking and evaluation, and open-ended tasks including more\nexpandable models, tools, plugins, or APIs for creative problem-solving. Tasks\nare presented as natural language queries to the LLM, which then selects and\nexecutes appropriate models. We also propose a Reinforcement Learning from Task\nFeedback (RLTF) mechanism that uses task results to improve the LLM's\ntask-solving ability, which creates a self-improving AI feedback loop. While we\nacknowledge that AGI is a broad and multifaceted research challenge with no\nsingularly defined solution path, the integration of LLMs with domain-specific\nexpert models, inspired by mirroring the blend of general and specialized\nintelligence in humans, offers a promising approach towards AGI. We are\nopen-sourcing the OpenAGI project's code, dataset, benchmarks, evaluation\nmethods, and the UI demo to foster community involvement in AGI advancement:\nhttps://github.com/agiresearch/OpenAGI.",
+    "num_pages": 30
+}

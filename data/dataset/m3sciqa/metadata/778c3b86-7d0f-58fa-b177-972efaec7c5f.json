@@ -1,0 +1,23 @@
+{
+    "uuid": "778c3b86-7d0f-58fa-b177-972efaec7c5f",
+    "title": "Learning Visual Representation from Modality-Shared Contrastive Language-Image Pre-training",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Haoxuan You",
+        "Luowei Zhou",
+        "Bin Xiao",
+        "Noel Codella",
+        "Yu Cheng",
+        "Ruochen Xu",
+        "Shih-Fu Chang",
+        "Lu Yuan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2207.12661v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\778c3b86-7d0f-58fa-b177-972efaec7c5f.pdf",
+    "bibtex": "@misc{you2022learningvisualrepresentationfrommodalityshared,\n    title = {Learning Visual Representation from Modality-Shared Contrastive Language-Image Pre-training},\n    author = {Haoxuan You and Luowei Zhou and Bin Xiao and Noel Codella and Yu Cheng and Ruochen Xu and Shih-Fu Chang and Lu Yuan},\n    year = {2022},\n    eprint = {2207.12661},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2207.12661},\n}",
+    "abstract": "Large-scale multi-modal contrastive pre-training has demonstrated great\nutility to learn transferable features for a range of downstream tasks by\nmapping multiple modalities into a shared embedding space. Typically, this has\nemployed separate encoders for each modality. However, recent work suggests\nthat transformers can support learning across multiple modalities and allow\nknowledge sharing. Inspired by this, we investigate a variety of\nModality-Shared Contrastive Language-Image Pre-training (MS-CLIP) frameworks.\nMore specifically, we question how many parameters of a transformer model can\nbe shared across modalities during contrastive pre-training, and rigorously\nexamine architectural design choices that position the proportion of parameters\nshared along a spectrum. In studied conditions, we observe that a mostly\nunified encoder for vision and language signals outperforms all other\nvariations that separate more parameters. Additionally, we find that\nlight-weight modality-specific parallel modules further improve performance.\nExperimental results show that the proposed MS-CLIP approach outperforms\nvanilla CLIP by up to 13\\% relative in zero-shot ImageNet classification\n(pre-trained on YFCC-100M), while simultaneously supporting a reduction of\nparameters. In addition, our approach outperforms vanilla CLIP by 1.6 points in\nlinear probing on a collection of 24 downstream vision tasks. Furthermore, we\ndiscover that sharing parameters leads to semantic concepts from different\nmodalities being encoded more closely in the embedding space, facilitating the\ntransferring of common semantic structure (e.g., attention patterns) from\nlanguage to vision. Code is available at\n\\href{https://github.com/Hxyou/MSCLIP}{URL}.",
+    "num_pages": 22
+}

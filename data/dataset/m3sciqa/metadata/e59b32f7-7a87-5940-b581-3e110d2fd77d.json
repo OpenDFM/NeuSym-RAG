@@ -1,0 +1,17 @@
+{
+    "uuid": "e59b32f7-7a87-5940-b581-3e110d2fd77d",
+    "title": "Improved Beam Search for Hallucination Mitigation in Abstractive Summarization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Arvind Krishna Sridhar",
+        "Erik Visser"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2212.02712v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\e59b32f7-7a87-5940-b581-3e110d2fd77d.pdf",
+    "bibtex": "@misc{sridhar2023improvedbeamsearchforhallucination,\n    title = {Improved Beam Search for Hallucination Mitigation in Abstractive Summarization},\n    author = {Arvind Krishna Sridhar and Erik Visser},\n    year = {2023},\n    eprint = {2212.02712},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2212.02712},\n}",
+    "abstract": "Advancement in large pretrained language models has significantly improved\ntheir performance for conditional language generation tasks including\nsummarization albeit with hallucinations. To reduce hallucinations,\nconventional methods proposed improving beam search or using a fact checker as\na postprocessing step. In this paper, we investigate the use of the Natural\nLanguage Inference (NLI) entailment metric to detect and prevent hallucinations\nin summary generation. We propose an NLI-assisted beam re-ranking mechanism by\ncomputing entailment probability scores between the input context and\nsummarization model-generated beams during saliency-enhanced greedy decoding.\nMoreover, a diversity metric is introduced to compare its effectiveness against\nvanilla beam search. Our proposed algorithm significantly outperforms vanilla\nbeam decoding on XSum and CNN/DM datasets.",
+    "num_pages": 12
+}

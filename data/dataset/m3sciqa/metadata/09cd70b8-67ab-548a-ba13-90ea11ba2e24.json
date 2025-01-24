@@ -1,0 +1,17 @@
+{
+    "uuid": "09cd70b8-67ab-548a-ba13-90ea11ba2e24",
+    "title": "COGS: A Compositional Generalization Challenge Based on Semantic Interpretation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Najoung Kim",
+        "Tal Linzen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.05465v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\09cd70b8-67ab-548a-ba13-90ea11ba2e24.pdf",
+    "bibtex": "@misc{kim2020cogsacompositionalgeneralizationchallenge,\n    title = {COGS: A Compositional Generalization Challenge Based on Semantic Interpretation},\n    author = {Najoung Kim and Tal Linzen},\n    year = {2020},\n    eprint = {2010.05465},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.05465},\n}",
+    "abstract": "Natural language is characterized by compositionality: the meaning of a\ncomplex expression is constructed from the meanings of its constituent parts.\nTo facilitate the evaluation of the compositional abilities of language\nprocessing architectures, we introduce COGS, a semantic parsing dataset based\non a fragment of English. The evaluation portion of COGS contains multiple\nsystematic gaps that can only be addressed by compositional generalization;\nthese include new combinations of familiar syntactic structures, or new\ncombinations of familiar words and familiar structures. In experiments with\nTransformers and LSTMs, we found that in-distribution accuracy on the COGS test\nset was near-perfect (96--99%), but generalization accuracy was substantially\nlower (16--35%) and showed high sensitivity to random seed ($\\pm$6--8%). These\nfindings indicate that contemporary standard NLP models are limited in their\ncompositional generalization capacity, and position COGS as a good way to\nmeasure progress.",
+    "num_pages": 19
+}

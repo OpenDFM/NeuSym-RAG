@@ -1,0 +1,22 @@
+{
+    "uuid": "1a05c1a3-e926-53c4-86c5-70f51293c26b",
+    "title": "Less is More: Rethinking State-of-the-art Continual Relation Extraction Models with a Frustratingly Easy but Effective Approach",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Peiyi Wang",
+        "Yifan Song",
+        "Tianyu Liu",
+        "Rundong Gao",
+        "Binghuai Lin",
+        "Yunbo Cao",
+        "Zhifang Sui"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2209.00243v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\1a05c1a3-e926-53c4-86c5-70f51293c26b.pdf",
+    "bibtex": "@misc{wang2022lessismorerethinkingstateoftheart,\n    title = {Less is More: Rethinking State-of-the-art Continual Relation Extraction Models with a Frustratingly Easy but Effective Approach},\n    author = {Peiyi Wang and Yifan Song and Tianyu Liu and Rundong Gao and Binghuai Lin and Yunbo Cao and Zhifang Sui},\n    year = {2022},\n    eprint = {2209.00243},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2209.00243},\n}",
+    "abstract": "Continual relation extraction (CRE) requires the model to continually learn\nnew relations from class-incremental data streams. In this paper, we propose a\nFrustratingly easy but Effective Approach (FEA) method with two learning stages\nfor CRE: 1) Fast Adaption (FA) warms up the model with only new data. 2)\nBalanced Tuning (BT) finetunes the model on the balanced memory data. Despite\nits simplicity, FEA achieves comparable (on TACRED or superior (on FewRel)\nperformance compared with the state-of-the-art baselines. With careful\nexaminations, we find that the data imbalance between new and old relations\nleads to a skewed decision boundary in the head classifiers over the pretrained\nencoders, thus hurting the overall performance. In FEA, the FA stage unleashes\nthe potential of memory data for the subsequent finetuning, while the BT stage\nhelps establish a more balanced decision boundary. With a unified view, we find\nthat two strong CRE baselines can be subsumed into the proposed training\npipeline. The success of FEA also provides actionable insights and suggestions\nfor future model designing in CRE.",
+    "num_pages": 16
+}

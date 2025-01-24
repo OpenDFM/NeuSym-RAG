@@ -1,0 +1,19 @@
+{
+    "uuid": "45d2861a-8d15-562c-a177-bb9bc5695af1",
+    "title": "Meta-Learning Online Adaptation of Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Nathan Hu",
+        "Eric Mitchell",
+        "Christopher D. Manning",
+        "Chelsea Finn"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.15076v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\45d2861a-8d15-562c-a177-bb9bc5695af1.pdf",
+    "bibtex": "@misc{hu2023metalearningonlineadaptationoflanguage,\n    title = {Meta-Learning Online Adaptation of Language Models},\n    author = {Nathan Hu and Eric Mitchell and Christopher D. Manning and Chelsea Finn},\n    year = {2023},\n    eprint = {2305.15076},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.15076},\n}",
+    "abstract": "Large language models encode impressively broad world knowledge in their\nparameters. However, the knowledge in static language models falls out of date,\nlimiting the model's effective \"shelf life.\" While online fine-tuning can\nreduce this degradation, we find that naively fine-tuning on a stream of\ndocuments leads to a low level of information uptake. We hypothesize that\nonline fine-tuning does not sufficiently attend to important information. That\nis, the gradient signal from important tokens representing factual information\nis drowned out by the gradient from inherently noisy tokens, suggesting that a\ndynamic, context-aware learning rate may be beneficial. We therefore propose\nlearning which tokens to upweight. We meta-train a small, autoregressive model\nto reweight the language modeling loss for each token during online\nfine-tuning, with the objective of maximizing the out-of-date base\nquestion-answering model's ability to answer questions about a document after a\nsingle weighted gradient step. We call this approach Context-aware Meta-learned\nLoss Scaling (CaMeLS). Across three different distributions of documents, our\nexperiments find that CaMeLS provides substantially improved information uptake\non streams of thousands of documents compared with standard fine-tuning and\nbaseline heuristics for reweighting token losses.",
+    "num_pages": 14
+}

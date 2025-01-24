@@ -1,0 +1,20 @@
+{
+    "uuid": "6b3908c1-247a-56c8-8bcb-3f0364e6049c",
+    "title": "Beyond neural scaling laws: beating power law scaling via data pruning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Ben Sorscher",
+        "Robert Geirhos",
+        "Shashank Shekhar",
+        "Surya Ganguli",
+        "Ari S. Morcos"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2206.14486v6",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\6b3908c1-247a-56c8-8bcb-3f0364e6049c.pdf",
+    "bibtex": "@misc{sorscher2023beyondneuralscalinglawsbeating,\n    title = {Beyond neural scaling laws: beating power law scaling via data pruning},\n    author = {Ben Sorscher and Robert Geirhos and Shashank Shekhar and Surya Ganguli and Ari S. Morcos},\n    year = {2023},\n    eprint = {2206.14486},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2206.14486},\n}",
+    "abstract": "Widely observed neural scaling laws, in which error falls off as a power of\nthe training set size, model size, or both, have driven substantial performance\nimprovements in deep learning. However, these improvements through scaling\nalone require considerable costs in compute and energy. Here we focus on the\nscaling of error with dataset size and show how in theory we can break beyond\npower law scaling and potentially even reduce it to exponential scaling instead\nif we have access to a high-quality data pruning metric that ranks the order in\nwhich training examples should be discarded to achieve any pruned dataset size.\nWe then test this improved scaling prediction with pruned dataset size\nempirically, and indeed observe better than power law scaling in practice on\nResNets trained on CIFAR-10, SVHN, and ImageNet. Next, given the importance of\nfinding high-quality pruning metrics, we perform the first large-scale\nbenchmarking study of ten different data pruning metrics on ImageNet. We find\nmost existing high performing metrics scale poorly to ImageNet, while the best\nare computationally intensive and require labels for every image. We therefore\ndeveloped a new simple, cheap and scalable self-supervised pruning metric that\ndemonstrates comparable performance to the best supervised metrics. Overall,\nour work suggests that the discovery of good data-pruning metrics may provide a\nviable path forward to substantially improved neural scaling laws, thereby\nreducing the resource costs of modern deep learning.",
+    "num_pages": 53
+}

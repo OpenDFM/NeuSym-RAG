@@ -1,0 +1,17 @@
+{
+    "uuid": "e7f8ec66-fcc7-5f7e-9af9-e1f69763cccb",
+    "title": "Time Will Change Things: An Empirical Study on Dynamic Language Understanding in Social Media Classification",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yuji Zhang",
+        "Jing Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.02857v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\e7f8ec66-fcc7-5f7e-9af9-e1f69763cccb.pdf",
+    "bibtex": "@misc{zhang2022timewillchangethingsan,\n    title = {Time Will Change Things: An Empirical Study on Dynamic Language Understanding in Social Media Classification},\n    author = {Yuji Zhang and Jing Li},\n    year = {2022},\n    eprint = {2210.02857},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.02857},\n}",
+    "abstract": "Language features are ever-evolving in the real-world social media\nenvironment. Many trained models in natural language understanding (NLU),\nineffective in semantic inference for unseen features, might consequently\nstruggle with the deteriorating performance in dynamicity. To address this\nchallenge, we empirically study social media NLU in a dynamic setup, where\nmodels are trained on the past data and test on the future. It better reflects\nthe realistic practice compared to the commonly-adopted static setup of random\ndata split. To further analyze model adaption to the dynamicity, we explore the\nusefulness of leveraging some unlabeled data created after a model is trained.\nThe performance of unsupervised domain adaption baselines based on\nauto-encoding and pseudo-labeling and a joint framework coupling them both are\nexamined in the experiments. Substantial results on four social media tasks\nimply the universally negative effects of evolving environments over\nclassification accuracy, while auto-encoding and pseudo-labeling\ncollaboratively show the best robustness in dynamicity.",
+    "num_pages": 11
+}

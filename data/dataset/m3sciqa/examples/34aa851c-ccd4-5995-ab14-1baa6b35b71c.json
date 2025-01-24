@@ -1,0 +1,67 @@
+{
+    "uuid": "34aa851c-ccd4-5995-ab14-1baa6b35b71c",
+    "question": "Consider the paper that introduces the dataset in the table that has a validation set size of 1250. Which model demonstrated the highest percentage of factual hallucinations among the evaluated systems?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "36658338-c3d6-5b36-89d0-3ae79fa52f44"
+    ],
+    "reference_pdf": [
+        "7b88ef21-46b9-5491-8b41-5ba7e5f89bb4",
+        "5ab64734-2725-57c3-95ba-75a693bf4922",
+        "1165b8f0-4261-5c50-9583-bfc199324e61",
+        "d9e5cf3c-1b25-580a-b88a-a07f9d832600",
+        "413aacbe-98fe-526a-9b0f-9d9cbe19ef5b",
+        "34417770-67d7-5cab-b9d4-76999c97bc02",
+        "2987b2aa-67ad-5312-91c3-067762156456",
+        "e0fe58d1-5915-5058-a0d9-fead5d6c3cde",
+        "fe26770b-ff50-56e9-8546-8310b7215de7",
+        "059ebe26-3869-5ac6-9b02-3c8f4cc40d4c",
+        "4c8916e4-996c-5c22-9e25-966c9022aa8c",
+        "87b6b442-cb9b-52b0-bda4-c5315b366b48",
+        "1e52b704-faf6-5269-9ab2-c13bc8be1042",
+        "1e5af690-d43f-573a-9426-eae1c86f4c12",
+        "239edc4a-ccdc-5065-96a3-9e612c1afcc1",
+        "dba5b637-a3a2-54f2-9284-034b062db02a",
+        "cac30ce0-51b1-54ef-bfc5-fa365d4131e4",
+        "48341d3f-eb13-529f-94b4-15ea396b7793",
+        "5102db9f-2387-5fbe-8dfb-045a29ad21da",
+        "e77a8699-a9b0-5923-9ee7-6b40ebe9c61f",
+        "d0ad987a-c189-5059-9b97-48ec131780a4",
+        "e9c37d5e-a9e4-5f5d-a0b7-2d96e98c1048",
+        "612006a5-2d37-53ab-ac56-7de3ead0ace4",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "7d73d518-86e4-5000-95a5-50c8c4daf0e7",
+        "281a6af0-616c-5163-995a-77801d30adbd",
+        "295776b5-bd82-5def-96e7-ee7bb8cc6b99",
+        "eb8ba2b8-b5a6-516b-b762-19465f9eaaed",
+        "213e91d3-d0ba-517e-9eaa-9c30953f754b",
+        "c16ad2d8-be0c-5eed-ae16-5950a83e34bc",
+        "f6e91a91-0b1e-5280-8522-a20492033f16",
+        "dbf8b926-916c-5a80-a5f8-ba8a4d2f68d8",
+        "041c4689-b5ad-5878-81ab-afc3101acdb6",
+        "0a58057a-a09f-5b93-9aeb-0243adcf3eef",
+        "5af5e45d-f259-57ae-a99e-be98764c416c",
+        "58b68b03-a6a4-5977-a584-6f7b13dab877",
+        "608838ef-8a4c-50f0-a78e-db6f2709edc5"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the dataset in the table that has a validation set size of 1250. Which model demonstrated the highest percentage of factual hallucinations among the evaluated systems?",
+            "reference_answer": "\\bencdec"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.11648/comparison_table.png"
+    ]
+}

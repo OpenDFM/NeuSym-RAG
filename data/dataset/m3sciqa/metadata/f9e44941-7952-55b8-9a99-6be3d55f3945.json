@@ -1,0 +1,19 @@
+{
+    "uuid": "f9e44941-7952-55b8-9a99-6be3d55f3945",
+    "title": "How Can We Know What Language Models Know?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Zhengbao Jiang",
+        "Frank F. Xu",
+        "Jun Araki",
+        "Graham Neubig"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1911.12543v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\f9e44941-7952-55b8-9a99-6be3d55f3945.pdf",
+    "bibtex": "@misc{jiang2020howcanweknowwhat,\n    title = {How Can We Know What Language Models Know?},\n    author = {Zhengbao Jiang and Frank F. Xu and Jun Araki and Graham Neubig},\n    year = {2020},\n    eprint = {1911.12543},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1911.12543},\n}",
+    "abstract": "Recent work has presented intriguing results examining the knowledge\ncontained in language models (LM) by having the LM fill in the blanks of\nprompts such as \"Obama is a _ by profession\". These prompts are usually\nmanually created, and quite possibly sub-optimal; another prompt such as \"Obama\nworked as a _\" may result in more accurately predicting the correct profession.\nBecause of this, given an inappropriate prompt, we might fail to retrieve facts\nthat the LM does know, and thus any given prompt only provides a lower bound\nestimate of the knowledge contained in an LM. In this paper, we attempt to more\naccurately estimate the knowledge contained in LMs by automatically discovering\nbetter prompts to use in this querying process. Specifically, we propose\nmining-based and paraphrasing-based methods to automatically generate\nhigh-quality and diverse prompts, as well as ensemble methods to combine\nanswers from different prompts. Extensive experiments on the LAMA benchmark for\nextracting relational knowledge from LMs demonstrate that our methods can\nimprove accuracy from 31.1% to 39.6%, providing a tighter lower bound on what\nLMs know. We have released the code and the resulting LM Prompt And Query\nArchive (LPAQA) at https://github.com/jzbjyb/LPAQA.",
+    "num_pages": 15
+}

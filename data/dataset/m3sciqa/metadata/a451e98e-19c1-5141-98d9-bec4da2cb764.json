@@ -1,0 +1,20 @@
+{
+    "uuid": "a451e98e-19c1-5141-98d9-bec4da2cb764",
+    "title": "Transition-based Parsing with Stack-Transformers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Ramon Fernandez Astudillo",
+        "Miguel Ballesteros",
+        "Tahira Naseem",
+        "Austin Blodgett",
+        "Radu Florian"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.10669v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\a451e98e-19c1-5141-98d9-bec4da2cb764.pdf",
+    "bibtex": "@misc{astudillo2020transitionbasedparsingwithstacktransformers,\n    title = {Transition-based Parsing with Stack-Transformers},\n    author = {Ramon Fernandez Astudillo and Miguel Ballesteros and Tahira Naseem and Austin Blodgett and Radu Florian},\n    year = {2020},\n    eprint = {2010.10669},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.10669},\n}",
+    "abstract": "Modeling the parser state is key to good performance in transition-based\nparsing. Recurrent Neural Networks considerably improved the performance of\ntransition-based systems by modelling the global state, e.g. stack-LSTM\nparsers, or local state modeling of contextualized features, e.g. Bi-LSTM\nparsers. Given the success of Transformer architectures in recent parsing\nsystems, this work explores modifications of the sequence-to-sequence\nTransformer architecture to model either global or local parser states in\ntransition-based parsing. We show that modifications of the cross attention\nmechanism of the Transformer considerably strengthen performance both on\ndependency and Abstract Meaning Representation (AMR) parsing tasks,\nparticularly for smaller models or limited training data.",
+    "num_pages": 7
+}

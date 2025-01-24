@@ -1,0 +1,22 @@
+{
+    "uuid": "e90a11ab-8f5e-50b8-b3e8-084bd6844e1f",
+    "title": "KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Xiaozhi Wang",
+        "Tianyu Gao",
+        "Zhaocheng Zhu",
+        "Zhengyan Zhang",
+        "Zhiyuan Liu",
+        "Juanzi Li",
+        "Jian Tang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1911.06136v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\e90a11ab-8f5e-50b8-b3e8-084bd6844e1f.pdf",
+    "bibtex": "@misc{wang2020kepleraunifiedmodelfor,\n    title = {KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation},\n    author = {Xiaozhi Wang and Tianyu Gao and Zhaocheng Zhu and Zhengyan Zhang and Zhiyuan Liu and Juanzi Li and Jian Tang},\n    year = {2020},\n    eprint = {1911.06136},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1911.06136},\n}",
+    "abstract": "Pre-trained language representation models (PLMs) cannot well capture factual\nknowledge from text. In contrast, knowledge embedding (KE) methods can\neffectively represent the relational facts in knowledge graphs (KGs) with\ninformative entity embeddings, but conventional KE models cannot take full\nadvantage of the abundant textual information. In this paper, we propose a\nunified model for Knowledge Embedding and Pre-trained LanguagE Representation\n(KEPLER), which can not only better integrate factual knowledge into PLMs but\nalso produce effective text-enhanced KE with the strong PLMs. In KEPLER, we\nencode textual entity descriptions with a PLM as their embeddings, and then\njointly optimize the KE and language modeling objectives. Experimental results\nshow that KEPLER achieves state-of-the-art performances on various NLP tasks,\nand also works remarkably well as an inductive KE model on KG link prediction.\nFurthermore, for pre-training and evaluating KEPLER, we construct Wikidata5M, a\nlarge-scale KG dataset with aligned entity descriptions, and benchmark\nstate-of-the-art KE methods on it. It shall serve as a new KE benchmark and\nfacilitate the research on large KG, inductive KE, and KG with text. The source\ncode can be obtained from https://github.com/THU-KEG/KEPLER.",
+    "num_pages": 18
+}

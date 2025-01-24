@@ -1,0 +1,19 @@
+{
+    "uuid": "77146f7f-edd6-57d3-a190-c37c96243ea3",
+    "title": "Neural OCR Post-Hoc Correction of Historical Corpora",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Lijun Lyu",
+        "Maria Koutraki",
+        "Martin Krickl",
+        "Besnik Fetahu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2102.00583v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\77146f7f-edd6-57d3-a190-c37c96243ea3.pdf",
+    "bibtex": "@misc{lyu2021neuralocrposthoccorrectionof,\n    title = {Neural OCR Post-Hoc Correction of Historical Corpora},\n    author = {Lijun Lyu and Maria Koutraki and Martin Krickl and Besnik Fetahu},\n    year = {2021},\n    eprint = {2102.00583},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2102.00583},\n}",
+    "abstract": "Optical character recognition (OCR) is crucial for a deeper access to\nhistorical collections. OCR needs to account for orthographic variations,\ntypefaces, or language evolution (i.e., new letters, word spellings), as the\nmain source of character, word, or word segmentation transcription errors. For\ndigital corpora of historical prints, the errors are further exacerbated due to\nlow scan quality and lack of language standardization.\n  For the task of OCR post-hoc correction, we propose a neural approach based\non a combination of recurrent (RNN) and deep convolutional network (ConvNet) to\ncorrect OCR transcription errors. At character level we flexibly capture\nerrors, and decode the corrected output based on a novel attention mechanism.\nAccounting for the input and output similarity, we propose a new loss function\nthat rewards the model's correcting behavior.\n  Evaluation on a historical book corpus in German language shows that our\nmodels are robust in capturing diverse OCR transcription errors and reduce the\nword error rate of 32.3% by more than 89%.",
+    "num_pages": 15
+}

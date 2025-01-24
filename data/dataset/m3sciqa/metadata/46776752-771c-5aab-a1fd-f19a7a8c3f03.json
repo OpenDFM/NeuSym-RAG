@@ -1,0 +1,21 @@
+{
+    "uuid": "46776752-771c-5aab-a1fd-f19a7a8c3f03",
+    "title": "WSFE: Wasserstein Sub-graph Feature Encoder for Effective User Segmentation in Collaborative Filtering",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yankai Chen",
+        "Yifei Zhang",
+        "Menglin Yang",
+        "Zixing Song",
+        "Chen Ma",
+        "Irwin King"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.04410v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\46776752-771c-5aab-a1fd-f19a7a8c3f03.pdf",
+    "bibtex": "@misc{chen2023wsfewassersteinsubgraphfeatureencoder,\n    title = {WSFE: Wasserstein Sub-graph Feature Encoder for Effective User Segmentation in Collaborative Filtering},\n    author = {Yankai Chen and Yifei Zhang and Menglin Yang and Zixing Song and Chen Ma and Irwin King},\n    year = {2023},\n    eprint = {2305.04410},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.IR},\n    url = {http://arxiv.org/abs/2305.04410},\n}",
+    "abstract": "Maximizing the user-item engagement based on vectorized embeddings is a\nstandard procedure of recent recommender models. Despite the superior\nperformance for item recommendations, these methods however implicitly\ndeprioritize the modeling of user-wise similarity in the embedding space;\nconsequently, identifying similar users is underperforming, and additional\nprocessing schemes are usually required otherwise. To avoid thorough model\nre-training, we propose WSFE, a model-agnostic and training-free representation\nencoder, to be flexibly employed on the fly for effective user segmentation.\nUnderpinned by the optimal transport theory, the encoded representations from\nWSFE present a matched user-wise similarity/distance measurement between the\nrealistic and embedding space. We incorporate WSFE into six state-of-the-art\nrecommender models and conduct extensive experiments on six real-world\ndatasets. The empirical analyses well demonstrate the superiority and\ngenerality of WSFE to fuel multiple downstream tasks with diverse underlying\ntargets in recommendation.",
+    "num_pages": 5
+}

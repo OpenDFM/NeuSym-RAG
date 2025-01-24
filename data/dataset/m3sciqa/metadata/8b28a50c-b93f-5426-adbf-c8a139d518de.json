@@ -1,0 +1,18 @@
+{
+    "uuid": "8b28a50c-b93f-5426-adbf-c8a139d518de",
+    "title": "Using Multi-Encoder Fusion Strategies to Improve Personalized Response Selection",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Souvik Das",
+        "Sougata Saha",
+        "Rohini K. Srihari"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2208.09601v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\8b28a50c-b93f-5426-adbf-c8a139d518de.pdf",
+    "bibtex": "@misc{das2022usingmultiencoderfusionstrategiesto,\n    title = {Using Multi-Encoder Fusion Strategies to Improve Personalized Response Selection},\n    author = {Souvik Das and Sougata Saha and Rohini K. Srihari},\n    year = {2022},\n    eprint = {2208.09601},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2208.09601},\n}",
+    "abstract": "Personalized response selection systems are generally grounded on persona.\nHowever, there exists a co-relation between persona and empathy, which is not\nexplored well in these systems. Also, faithfulness to the conversation context\nplunges when a contradictory or an off-topic response is selected. This paper\nattempts to address these issues by proposing a suite of fusion strategies that\ncapture the interaction between persona, emotion, and entailment information of\nthe utterances. Ablation studies on the Persona-Chat dataset show that\nincorporating emotion and entailment improves the accuracy of response\nselection. We combine our fusion strategies and concept-flow encoding to train\na BERT-based model which outperforms the previous methods by margins larger\nthan 2.3 % on original personas and 1.9 % on revised personas in terms of\nhits@1 (top-1 accuracy), achieving a new state-of-the-art performance on the\nPersona-Chat dataset.",
+    "num_pages": 10
+}

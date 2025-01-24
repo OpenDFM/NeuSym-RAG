@@ -1,0 +1,21 @@
+{
+    "uuid": "ed482231-94e3-5621-835a-776a8fc788c8",
+    "title": "Recall and Learn: Fine-tuning Deep Pretrained Language Models with Less Forgetting",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Sanyuan Chen",
+        "Yutai Hou",
+        "Yiming Cui",
+        "Wanxiang Che",
+        "Ting Liu",
+        "Xiangzhan Yu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.12651v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\ed482231-94e3-5621-835a-776a8fc788c8.pdf",
+    "bibtex": "@misc{chen2020recallandlearnfinetuningdeep,\n    title = {Recall and Learn: Fine-tuning Deep Pretrained Language Models with Less Forgetting},\n    author = {Sanyuan Chen and Yutai Hou and Yiming Cui and Wanxiang Che and Ting Liu and Xiangzhan Yu},\n    year = {2020},\n    eprint = {2004.12651},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2004.12651},\n}",
+    "abstract": "Deep pretrained language models have achieved great success in the way of\npretraining first and then fine-tuning. But such a sequential transfer learning\nparadigm often confronts the catastrophic forgetting problem and leads to\nsub-optimal performance. To fine-tune with less forgetting, we propose a recall\nand learn mechanism, which adopts the idea of multi-task learning and jointly\nlearns pretraining tasks and downstream tasks. Specifically, we propose a\nPretraining Simulation mechanism to recall the knowledge from pretraining tasks\nwithout data, and an Objective Shifting mechanism to focus the learning on\ndownstream tasks gradually. Experiments show that our method achieves\nstate-of-the-art performance on the GLUE benchmark. Our method also enables\nBERT-base to achieve better performance than directly fine-tuning of\nBERT-large. Further, we provide the open-source RecAdam optimizer, which\nintegrates the proposed mechanisms into Adam optimizer, to facility the NLP\ncommunity.",
+    "num_pages": 12
+}

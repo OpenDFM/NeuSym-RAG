@@ -1,0 +1,20 @@
+{
+    "uuid": "d62a70d3-39eb-57b2-854c-06ae086c4b84",
+    "title": "CLIP-GEN: Language-Free Training of a Text-to-Image Generator with CLIP",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Zihao Wang",
+        "Wei Liu",
+        "Qian He",
+        "Xinglong Wu",
+        "Zili Yi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.00386v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\d62a70d3-39eb-57b2-854c-06ae086c4b84.pdf",
+    "bibtex": "@misc{wang2022clipgenlanguagefreetrainingofa,\n    title = {CLIP-GEN: Language-Free Training of a Text-to-Image Generator with CLIP},\n    author = {Zihao Wang and Wei Liu and Qian He and Xinglong Wu and Zili Yi},\n    year = {2022},\n    eprint = {2203.00386},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2203.00386},\n}",
+    "abstract": "Training a text-to-image generator in the general domain (e.g., Dall.e,\nCogView) requires huge amounts of paired text-image data, which is too\nexpensive to collect. In this paper, we propose a self-supervised scheme named\nas CLIP-GEN for general text-to-image generation with the language-image priors\nextracted with a pre-trained CLIP model. In our approach, we only require a set\nof unlabeled images in the general domain to train a text-to-image generator.\nSpecifically, given an image without text labels, we first extract the\nembedding of the image in the united language-vision embedding space with the\nimage encoder of CLIP. Next, we convert the image into a sequence of discrete\ntokens in the VQGAN codebook space (the VQGAN model can be trained with the\nunlabeled image dataset in hand). Finally, we train an autoregressive\ntransformer that maps the image tokens from its unified language-vision\nrepresentation. Once trained, the transformer can generate coherent image\ntokens based on the text embedding extracted from the text encoder of CLIP upon\nan input text. Such a strategy enables us to train a strong and general\ntext-to-image generator with large text-free image dataset such as ImageNet.\nQualitative and quantitative evaluations verify that our method significantly\noutperforms optimization-based text-to-image methods in terms of image quality\nwhile not compromising the text-image matching. Our method can even achieve\ncomparable performance as flagship supervised models like CogView.",
+    "num_pages": 15
+}

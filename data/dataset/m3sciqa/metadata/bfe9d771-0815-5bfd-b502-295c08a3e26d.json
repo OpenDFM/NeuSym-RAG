@@ -1,0 +1,23 @@
+{
+    "uuid": "bfe9d771-0815-5bfd-b502-295c08a3e26d",
+    "title": "Continual Pre-Training of Large Language Models: How to (re)warm your model?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Kshitij Gupta",
+        "Benjamin Thérien",
+        "Adam Ibrahim",
+        "Mats L. Richter",
+        "Quentin Anthony",
+        "Eugene Belilovsky",
+        "Irina Rish",
+        "Timothée Lesort"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2308.04014v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\bfe9d771-0815-5bfd-b502-295c08a3e26d.pdf",
+    "bibtex": "@misc{gupta2023continualpretrainingoflargelanguage,\n    title = {Continual Pre-Training of Large Language Models: How to (re)warm your model?},\n    author = {Kshitij Gupta and Benjamin Thérien and Adam Ibrahim and Mats L. Richter and Quentin Anthony and Eugene Belilovsky and Irina Rish and Timothée Lesort},\n    year = {2023},\n    eprint = {2308.04014},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2308.04014},\n}",
+    "abstract": "Large language models (LLMs) are routinely pre-trained on billions of tokens,\nonly to restart the process over again once new data becomes available. A much\ncheaper and more efficient solution would be to enable the continual\npre-training of these models, i.e. updating pre-trained models with new data\ninstead of re-training them from scratch. However, the distribution shift\ninduced by novel data typically results in degraded performance on past data.\nTaking a step towards efficient continual pre-training, in this work, we\nexamine the effect of different warm-up strategies. Our hypothesis is that the\nlearning rate must be re-increased to improve compute efficiency when training\non a new dataset. We study the warmup phase of models pre-trained on the Pile\n(upstream data, 300B tokens) as we continue to pre-train on SlimPajama\n(downstream data, 297B tokens), following a linear warmup and cosine decay\nschedule. We conduct all experiments on the Pythia 410M language model\narchitecture and evaluate performance through validation perplexity. We\nexperiment with different pre-training checkpoints, various maximum learning\nrates, and various warmup lengths. Our results show that while rewarming models\nfirst increases the loss on upstream and downstream data, in the longer run it\nimproves the downstream performance, outperforming models trained from\nscratch$\\unicode{x2013}$even for a large downstream dataset.",
+    "num_pages": 11
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "7582f0e7-6e24-5ce8-8359-74f0573280b9",
+    "title": "Non-autoregressive Streaming Transformer for Simultaneous Translation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Zhengrui Ma",
+        "Shaolei Zhang",
+        "Shoutao Guo",
+        "Chenze Shao",
+        "Min Zhang",
+        "Yang Feng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.14883v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\7582f0e7-6e24-5ce8-8359-74f0573280b9.pdf",
+    "bibtex": "@misc{ma2023nonautoregressivestreamingtransformerforsimultaneous,\n    title = {Non-autoregressive Streaming Transformer for Simultaneous Translation},\n    author = {Zhengrui Ma and Shaolei Zhang and Shoutao Guo and Chenze Shao and Min Zhang and Yang Feng},\n    year = {2023},\n    eprint = {2310.14883},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.14883},\n}",
+    "abstract": "Simultaneous machine translation (SiMT) models are trained to strike a\nbalance between latency and translation quality. However, training these models\nto achieve high quality while maintaining low latency often leads to a tendency\nfor aggressive anticipation. We argue that such issue stems from the\nautoregressive architecture upon which most existing SiMT models are built. To\naddress those issues, we propose non-autoregressive streaming Transformer\n(NAST) which comprises a unidirectional encoder and a non-autoregressive\ndecoder with intra-chunk parallelism. We enable NAST to generate the blank\ntoken or repetitive tokens to adjust its READ/WRITE strategy flexibly, and\ntrain it to maximize the non-monotonic latent alignment with an alignment-based\nlatency loss. Experiments on various SiMT benchmarks demonstrate that NAST\noutperforms previous strong autoregressive SiMT baselines.",
+    "num_pages": 14
+}

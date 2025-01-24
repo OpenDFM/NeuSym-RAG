@@ -1,0 +1,18 @@
+{
+    "uuid": "91295ee5-ecea-56df-8e38-5d3af693d9fb",
+    "title": "SyGNS: A Systematic Generalization Testbed Based on Natural Language Semantics",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Hitomi Yanaka",
+        "Koji Mineshima",
+        "Kentaro Inui"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.01077v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\91295ee5-ecea-56df-8e38-5d3af693d9fb.pdf",
+    "bibtex": "@misc{yanaka2021sygnsasystematicgeneralizationtestbed,\n    title = {SyGNS: A Systematic Generalization Testbed Based on Natural Language Semantics},\n    author = {Hitomi Yanaka and Koji Mineshima and Kentaro Inui},\n    year = {2021},\n    eprint = {2106.01077},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.01077},\n}",
+    "abstract": "Recently, deep neural networks (DNNs) have achieved great success in\nsemantically challenging NLP tasks, yet it remains unclear whether DNN models\ncan capture compositional meanings, those aspects of meaning that have been\nlong studied in formal semantics. To investigate this issue, we propose a\nSystematic Generalization testbed based on Natural language Semantics (SyGNS),\nwhose challenge is to map natural language sentences to multiple forms of\nscoped meaning representations, designed to account for various semantic\nphenomena. Using SyGNS, we test whether neural networks can systematically\nparse sentences involving novel combinations of logical expressions such as\nquantifiers and negation. Experiments show that Transformer and GRU models can\ngeneralize to unseen combinations of quantifiers, negations, and modifiers that\nare similar to given training instances in form, but not to the others. We also\nfind that the generalization performance to unseen combinations is better when\nthe form of meaning representations is simpler. The data and code for SyGNS are\npublicly available at https://github.com/verypluming/SyGNS.",
+    "num_pages": 16
+}

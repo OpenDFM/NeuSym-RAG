@@ -1,0 +1,20 @@
+{
+    "uuid": "5adc93c4-d1e7-5ce9-9711-2432e9c0d46a",
+    "title": "Edit at your own risk: evaluating the robustness of edited models to distribution shifts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Davis Brown",
+        "Charles Godfrey",
+        "Cody Nizinski",
+        "Jonathan Tu",
+        "Henry Kvinge"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2303.00046v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\5adc93c4-d1e7-5ce9-9711-2432e9c0d46a.pdf",
+    "bibtex": "@misc{brown2023editatyourownrisk,\n    title = {Edit at your own risk: evaluating the robustness of edited models to distribution shifts},\n    author = {Davis Brown and Charles Godfrey and Cody Nizinski and Jonathan Tu and Henry Kvinge},\n    year = {2023},\n    eprint = {2303.00046},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2303.00046},\n}",
+    "abstract": "The current trend toward ever-larger models makes standard retraining\nprocedures an ever-more expensive burden. For this reason, there is growing\ninterest in model editing, which enables computationally inexpensive,\ninterpretable, post-hoc model modifications. While many model editing\ntechniques are promising, research on the properties of edited models is\nlargely limited to evaluation of validation accuracy. The robustness of edited\nmodels is an important and yet mostly unexplored topic. In this paper, we\nemploy recently developed techniques from the field of deep learning robustness\nto investigate both how model editing affects the general robustness of a\nmodel, as well as the robustness of the specific behavior targeted by the edit.\nWe find that edits tend to reduce general robustness, but that the degree of\ndegradation depends on the editing algorithm and layers chosen. Motivated by\nthese observations we introduce a new model editing algorithm, 1-layer\ninterpolation (1-LI), which uses weight-space interpolation to navigate the\ntrade-off between editing task accuracy and general robustness.",
+    "num_pages": 24
+}

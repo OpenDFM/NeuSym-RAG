@@ -1,0 +1,22 @@
+{
+    "uuid": "61bb0ab8-4419-5a2c-a8a1-6ec9c8512d8a",
+    "title": "Noise-Resistant Multimodal Transformer for Emotion Recognition",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yuanyuan Liu",
+        "Haoyu Zhang",
+        "Yibing Zhan",
+        "Zijing Chen",
+        "Guanghao Yin",
+        "Lin Wei",
+        "Zhe Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.02814v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\61bb0ab8-4419-5a2c-a8a1-6ec9c8512d8a.pdf",
+    "bibtex": "@misc{liu2023noiseresistantmultimodaltransformerforemotion,\n    title = {Noise-Resistant Multimodal Transformer for Emotion Recognition},\n    author = {Yuanyuan Liu and Haoyu Zhang and Yibing Zhan and Zijing Chen and Guanghao Yin and Lin Wei and Zhe Chen},\n    year = {2023},\n    eprint = {2305.02814},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.MM},\n    url = {http://arxiv.org/abs/2305.02814},\n}",
+    "abstract": "Multimodal emotion recognition identifies human emotions from various data\nmodalities like video, text, and audio. However, we found that this task can be\neasily affected by noisy information that does not contain useful semantics. To\nthis end, we present a novel paradigm that attempts to extract noise-resistant\nfeatures in its pipeline and introduces a noise-aware learning scheme to\neffectively improve the robustness of multimodal emotion understanding. Our new\npipeline, namely Noise-Resistant Multimodal Transformer (NORM-TR), mainly\nintroduces a Noise-Resistant Generic Feature (NRGF) extractor and a Transformer\nfor the multimodal emotion recognition task. In particular, we make the NRGF\nextractor learn a generic and disturbance-insensitive representation so that\nconsistent and meaningful semantics can be obtained. Furthermore, we apply a\nTransformer to incorporate Multimodal Features (MFs) of multimodal inputs based\non their relations to the NRGF. Therefore, the possible insensitive but useful\ninformation of NRGF could be complemented by MFs that contain more details. To\ntrain the NORM-TR properly, our proposed noise-aware learning scheme\ncomplements normal emotion recognition losses by enhancing the learning against\nnoises. Our learning scheme explicitly adds noises to either all the modalities\nor a specific modality at random locations of a multimodal input sequence. We\ncorrespondingly introduce two adversarial losses to encourage the NRGF\nextractor to learn to extract the NRGFs invariant to the added noises, thus\nfacilitating the NORM-TR to achieve more favorable multimodal emotion\nrecognition performance. In practice, on several popular multimodal datasets,\nour NORM-TR achieves state-of-the-art performance and outperforms existing\nmethods by a large margin, which demonstrates that the ability to resist noisy\ninformation is important for effective emotion recognition.",
+    "num_pages": 20
+}

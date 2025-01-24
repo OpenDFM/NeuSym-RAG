@@ -1,0 +1,24 @@
+{
+    "uuid": "cf69528e-9892-5b27-ab66-0b66a1304268",
+    "title": "Domain-Specific Language Model Pretraining for Biomedical Natural Language Processing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Yu Gu",
+        "Robert Tinn",
+        "Hao Cheng",
+        "Michael Lucas",
+        "Naoto Usuyama",
+        "Xiaodong Liu",
+        "Tristan Naumann",
+        "Jianfeng Gao",
+        "Hoifung Poon"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2007.15779v6",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\cf69528e-9892-5b27-ab66-0b66a1304268.pdf",
+    "bibtex": "@misc{gu2021domainspecificlanguagemodelpretrainingfor,\n    title = {Domain-Specific Language Model Pretraining for Biomedical Natural Language Processing},\n    author = {Yu Gu and Robert Tinn and Hao Cheng and Michael Lucas and Naoto Usuyama and Xiaodong Liu and Tristan Naumann and Jianfeng Gao and Hoifung Poon},\n    year = {2021},\n    eprint = {2007.15779},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2007.15779},\n}",
+    "abstract": "Pretraining large neural language models, such as BERT, has led to impressive\ngains on many natural language processing (NLP) tasks. However, most\npretraining efforts focus on general domain corpora, such as newswire and Web.\nA prevailing assumption is that even domain-specific pretraining can benefit by\nstarting from general-domain language models. In this paper, we challenge this\nassumption by showing that for domains with abundant unlabeled text, such as\nbiomedicine, pretraining language models from scratch results in substantial\ngains over continual pretraining of general-domain language models. To\nfacilitate this investigation, we compile a comprehensive biomedical NLP\nbenchmark from publicly-available datasets. Our experiments show that\ndomain-specific pretraining serves as a solid foundation for a wide range of\nbiomedical NLP tasks, leading to new state-of-the-art results across the board.\nFurther, in conducting a thorough evaluation of modeling choices, both for\npretraining and task-specific fine-tuning, we discover that some common\npractices are unnecessary with BERT models, such as using complex tagging\nschemes in named entity recognition (NER). To help accelerate research in\nbiomedical NLP, we have released our state-of-the-art pretrained and\ntask-specific models for the community, and created a leaderboard featuring our\nBLURB benchmark (short for Biomedical Language Understanding & Reasoning\nBenchmark) at https://aka.ms/BLURB.",
+    "num_pages": 24
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "e61a3438-d8c6-5412-802c-4830aeab7442",
+    "title": "Semantically-Aligned Equation Generation for Solving and Reasoning Math Word Problems",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Ting-Rui Chiang",
+        "Yun-Nung Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1811.00720v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\e61a3438-d8c6-5412-802c-4830aeab7442.pdf",
+    "bibtex": "@misc{chiang2019semanticallyalignedequationgenerationforsolving,\n    title = {Semantically-Aligned Equation Generation for Solving and Reasoning Math Word Problems},\n    author = {Ting-Rui Chiang and Yun-Nung Chen},\n    year = {2019},\n    eprint = {1811.00720},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1811.00720},\n}",
+    "abstract": "Solving math word problems is a challenging task that requires accurate\nnatural language understanding to bridge natural language texts and math\nexpressions. Motivated by the intuition about how human generates the equations\ngiven the problem texts, this paper presents a neural approach to automatically\nsolve math word problems by operating symbols according to their semantic\nmeanings in texts. This paper views the process of generating equation as a\nbridge between the semantic world and the symbolic world, where the proposed\nneural math solver is based on an encoder-decoder framework. In the proposed\nmodel, the encoder is designed to understand the semantics of problems, and the\ndecoder focuses on tracking semantic meanings of the generated symbols and then\ndeciding which symbol to generate next. The preliminary experiments are\nconducted in a dataset Math23K, and our model significantly outperforms both\nthe state-of-the-art single model and the best non-retrieval-based model over\nabout 10% accuracy, demonstrating the effectiveness of bridging the symbolic\nand semantic worlds from math word problems.",
+    "num_pages": 13
+}

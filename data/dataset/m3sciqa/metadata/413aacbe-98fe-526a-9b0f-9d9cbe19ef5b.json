@@ -1,0 +1,24 @@
+{
+    "uuid": "413aacbe-98fe-526a-9b0f-9d9cbe19ef5b",
+    "title": "Is ChatGPT a Good NLG Evaluator? A Preliminary Study",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Jiaan Wang",
+        "Yunlong Liang",
+        "Fandong Meng",
+        "Zengkui Sun",
+        "Haoxiang Shi",
+        "Zhixu Li",
+        "Jinan Xu",
+        "Jianfeng Qu",
+        "Jie Zhou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2303.04048v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\413aacbe-98fe-526a-9b0f-9d9cbe19ef5b.pdf",
+    "bibtex": "@misc{wang2023ischatgptagoodnlg,\n    title = {Is ChatGPT a Good NLG Evaluator? A Preliminary Study},\n    author = {Jiaan Wang and Yunlong Liang and Fandong Meng and Zengkui Sun and Haoxiang Shi and Zhixu Li and Jinan Xu and Jianfeng Qu and Jie Zhou},\n    year = {2023},\n    eprint = {2303.04048},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2303.04048},\n}",
+    "abstract": "Recently, the emergence of ChatGPT has attracted wide attention from the\ncomputational linguistics community. Many prior studies have shown that ChatGPT\nachieves remarkable performance on various NLP tasks in terms of automatic\nevaluation metrics. However, the ability of ChatGPT to serve as an evaluation\nmetric is still underexplored. Considering assessing the quality of natural\nlanguage generation (NLG) models is an arduous task and NLG metrics notoriously\nshow their poor correlation with human judgments, we wonder whether ChatGPT is\na good NLG evaluation metric. In this report, we provide a preliminary\nmeta-evaluation on ChatGPT to show its reliability as an NLG metric. In detail,\nwe regard ChatGPT as a human evaluator and give task-specific (e.g.,\nsummarization) and aspect-specific (e.g., relevance) instruction to prompt\nChatGPT to evaluate the generated results of NLG models. We conduct experiments\non five NLG meta-evaluation datasets (including summarization, story generation\nand data-to-text tasks). Experimental results show that compared with previous\nautomatic metrics, ChatGPT achieves state-of-the-art or competitive correlation\nwith human judgments in most cases. In addition, we find that the effectiveness\nof the ChatGPT evaluator might be influenced by the creation method of the\nmeta-evaluation datasets. For the meta-evaluation datasets which are created\ngreatly depending on the reference and thus are biased, the ChatGPT evaluator\nmight lose its effectiveness. We hope our preliminary study could prompt the\nemergence of a general-purposed reliable NLG metric.",
+    "num_pages": 11
+}

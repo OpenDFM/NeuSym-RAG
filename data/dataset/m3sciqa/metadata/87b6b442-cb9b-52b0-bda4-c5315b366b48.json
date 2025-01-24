@@ -1,0 +1,19 @@
+{
+    "uuid": "87b6b442-cb9b-52b0-bda4-c5315b366b48",
+    "title": "Training Dynamics for Text Summarization Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Tanya Goyal",
+        "Jiacheng Xu",
+        "Junyi Jessy Li",
+        "Greg Durrett"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.08370v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\87b6b442-cb9b-52b0-bda4-c5315b366b48.pdf",
+    "bibtex": "@misc{goyal2022trainingdynamicsfortextsummarization,\n    title = {Training Dynamics for Text Summarization Models},\n    author = {Tanya Goyal and Jiacheng Xu and Junyi Jessy Li and Greg Durrett},\n    year = {2022},\n    eprint = {2110.08370},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2110.08370},\n}",
+    "abstract": "Pre-trained language models (e.g. BART) have shown impressive results when\nfine-tuned on large summarization datasets. However, little is understood about\nthis fine-tuning process, including what knowledge is retained from\npre-training time or how content selection and generation strategies are learnt\nacross iterations. In this work, we analyze the training dynamics for\ngeneration models, focusing on summarization. Across different datasets\n(CNN/DM, XSum, MediaSum) and summary properties, such as abstractiveness and\nhallucination, we study what the model learns at different stages of its\nfine-tuning process. We find that a propensity to copy the input is learned\nearly in the training process consistently across all datasets studied. On the\nother hand, factual errors, such as hallucination of unsupported facts, are\nlearnt in the later stages, though this behavior is more varied across domains.\nBased on these observations, we explore complementary approaches for modifying\ntraining: first, disregarding high-loss tokens that are challenging to learn\nand second, disregarding low-loss tokens that are learnt very quickly in the\nlatter stages of the training process. We show that these simple training\nmodifications allow us to configure our model to achieve different goals, such\nas improving factuality or improving abstractiveness.",
+    "num_pages": 13
+}

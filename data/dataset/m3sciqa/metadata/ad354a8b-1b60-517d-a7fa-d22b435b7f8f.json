@@ -1,0 +1,18 @@
+{
+    "uuid": "ad354a8b-1b60-517d-a7fa-d22b435b7f8f",
+    "title": "Low-resource Neural Machine Translation with Cross-modal Alignment",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Zhe Yang",
+        "Qingkai Fang",
+        "Yang Feng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.06716v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\ad354a8b-1b60-517d-a7fa-d22b435b7f8f.pdf",
+    "bibtex": "@misc{yang2022lowresourceneuralmachinetranslationwith,\n    title = {Low-resource Neural Machine Translation with Cross-modal Alignment},\n    author = {Zhe Yang and Qingkai Fang and Yang Feng},\n    year = {2022},\n    eprint = {2210.06716},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.06716},\n}",
+    "abstract": "How to achieve neural machine translation with limited parallel data?\nExisting techniques often rely on large-scale monolingual corpora, which is\nimpractical for some low-resource languages. In this paper, we turn to connect\nseveral low-resource languages to a particular high-resource one by additional\nvisual modality. Specifically, we propose a cross-modal contrastive learning\nmethod to learn a shared space for all languages, where both a coarse-grained\nsentence-level objective and a fine-grained token-level one are introduced.\nExperimental results and further analysis show that our method can effectively\nlearn the cross-modal and cross-lingual alignment with a small amount of\nimage-text pairs and achieves significant improvements over the text-only\nbaseline under both zero-shot and few-shot scenarios.",
+    "num_pages": 13
+}

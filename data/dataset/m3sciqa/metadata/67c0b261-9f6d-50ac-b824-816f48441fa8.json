@@ -1,0 +1,18 @@
+{
+    "uuid": "67c0b261-9f6d-50ac-b824-816f48441fa8",
+    "title": "Generative Imagination Elevates Machine Translation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Quanyu Long",
+        "Mingxuan Wang",
+        "Lei Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2009.09654v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\67c0b261-9f6d-50ac-b824-816f48441fa8.pdf",
+    "bibtex": "@misc{long2021generativeimaginationelevatesmachinetranslation,\n    title = {Generative Imagination Elevates Machine Translation},\n    author = {Quanyu Long and Mingxuan Wang and Lei Li},\n    year = {2021},\n    eprint = {2009.09654},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2009.09654},\n}",
+    "abstract": "There are common semantics shared across text and images. Given a sentence in\na source language, whether depicting the visual scene helps translation into a\ntarget language? Existing multimodal neural machine translation methods (MNMT)\nrequire triplets of bilingual sentence - image for training and tuples of\nsource sentence - image for inference. In this paper, we propose ImagiT, a\nnovel machine translation method via visual imagination. ImagiT first learns to\ngenerate visual representation from the source sentence, and then utilizes both\nsource sentence and the \"imagined representation\" to produce a target\ntranslation. Unlike previous methods, it only needs the source sentence at the\ninference time. Experiments demonstrate that ImagiT benefits from visual\nimagination and significantly outperforms the text-only neural machine\ntranslation baselines. Further analysis reveals that the imagination process in\nImagiT helps fill in missing information when performing the degradation\nstrategy.",
+    "num_pages": 11
+}

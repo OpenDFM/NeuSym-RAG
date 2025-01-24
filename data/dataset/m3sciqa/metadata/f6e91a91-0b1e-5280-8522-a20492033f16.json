@@ -1,0 +1,23 @@
+{
+    "uuid": "f6e91a91-0b1e-5280-8522-a20492033f16",
+    "title": "BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Mike Lewis",
+        "Yinhan Liu",
+        "Naman Goyal",
+        "Marjan Ghazvininejad",
+        "Abdelrahman Mohamed",
+        "Omer Levy",
+        "Ves Stoyanov",
+        "Luke Zettlemoyer"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1910.13461v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\f6e91a91-0b1e-5280-8522-a20492033f16.pdf",
+    "bibtex": "@misc{lewis2019bartdenoisingsequencetosequencepretrainingfor,\n    title = {BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension},\n    author = {Mike Lewis and Yinhan Liu and Naman Goyal and Marjan Ghazvininejad and Abdelrahman Mohamed and Omer Levy and Ves Stoyanov and Luke Zettlemoyer},\n    year = {2019},\n    eprint = {1910.13461},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1910.13461},\n}",
+    "abstract": "We present BART, a denoising autoencoder for pretraining sequence-to-sequence\nmodels. BART is trained by (1) corrupting text with an arbitrary noising\nfunction, and (2) learning a model to reconstruct the original text. It uses a\nstandard Tranformer-based neural machine translation architecture which,\ndespite its simplicity, can be seen as generalizing BERT (due to the\nbidirectional encoder), GPT (with the left-to-right decoder), and many other\nmore recent pretraining schemes. We evaluate a number of noising approaches,\nfinding the best performance by both randomly shuffling the order of the\noriginal sentences and using a novel in-filling scheme, where spans of text are\nreplaced with a single mask token. BART is particularly effective when fine\ntuned for text generation but also works well for comprehension tasks. It\nmatches the performance of RoBERTa with comparable training resources on GLUE\nand SQuAD, achieves new state-of-the-art results on a range of abstractive\ndialogue, question answering, and summarization tasks, with gains of up to 6\nROUGE. BART also provides a 1.1 BLEU increase over a back-translation system\nfor machine translation, with only target language pretraining. We also report\nablation experiments that replicate other pretraining schemes within the BART\nframework, to better measure which factors most influence end-task performance.",
+    "num_pages": 10
+}

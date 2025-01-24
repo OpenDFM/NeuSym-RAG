@@ -1,0 +1,23 @@
+{
+    "uuid": "345aaf21-19b7-552f-9991-4549ea1995aa",
+    "title": "Generated Knowledge Prompting for Commonsense Reasoning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Jiacheng Liu",
+        "Alisa Liu",
+        "Ximing Lu",
+        "Sean Welleck",
+        "Peter West",
+        "Ronan Le Bras",
+        "Yejin Choi",
+        "Hannaneh Hajishirzi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.08387v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\345aaf21-19b7-552f-9991-4549ea1995aa.pdf",
+    "bibtex": "@misc{liu2022generatedknowledgepromptingforcommonsense,\n    title = {Generated Knowledge Prompting for Commonsense Reasoning},\n    author = {Jiacheng Liu and Alisa Liu and Ximing Lu and Sean Welleck and Peter West and Ronan Le Bras and Yejin Choi and Hannaneh Hajishirzi},\n    year = {2022},\n    eprint = {2110.08387},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2110.08387},\n}",
+    "abstract": "It remains an open question whether incorporating external knowledge benefits\ncommonsense reasoning while maintaining the flexibility of pretrained sequence\nmodels. To investigate this question, we develop generated knowledge prompting,\nwhich consists of generating knowledge from a language model, then providing\nthe knowledge as additional input when answering a question. Our method does\nnot require task-specific supervision for knowledge integration, or access to a\nstructured knowledge base, yet it improves performance of large-scale,\nstate-of-the-art models on four commonsense reasoning tasks, achieving\nstate-of-the-art results on numerical commonsense (NumerSense), general\ncommonsense (CommonsenseQA 2.0), and scientific commonsense (QASC) benchmarks.\nGenerated knowledge prompting highlights large-scale language models as\nflexible sources of external knowledge for improving commonsense reasoning. Our\ncode is available at https://github.com/liujch1998/GKP",
+    "num_pages": 16
+}

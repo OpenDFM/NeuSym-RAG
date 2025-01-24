@@ -1,0 +1,18 @@
+{
+    "uuid": "bd3ad280-18ad-5de3-989b-9b49fc63a9b5",
+    "title": "Rich Knowledge Sources Bring Complex Knowledge Conflicts: Recalibrating Models to Reflect Conflicting Evidence",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Hung-Ting Chen",
+        "Michael J. Q. Zhang",
+        "Eunsol Choi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.13701v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\bd3ad280-18ad-5de3-989b-9b49fc63a9b5.pdf",
+    "bibtex": "@misc{chen2022richknowledgesourcesbringcomplex,\n    title = {Rich Knowledge Sources Bring Complex Knowledge Conflicts: Recalibrating Models to Reflect Conflicting Evidence},\n    author = {Hung-Ting Chen and Michael J. Q. Zhang and Eunsol Choi},\n    year = {2022},\n    eprint = {2210.13701},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.13701},\n}",
+    "abstract": "Question answering models can use rich knowledge sources -- up to one hundred\nretrieved passages and parametric knowledge in the large-scale language model\n(LM). Prior work assumes information in such knowledge sources is consistent\nwith each other, paying little attention to how models blend information stored\nin their LM parameters with that from retrieved evidence documents. In this\npaper, we simulate knowledge conflicts (i.e., where parametric knowledge\nsuggests one answer and different passages suggest different answers) and\nexamine model behaviors. We find retrieval performance heavily impacts which\nsources models rely on, and current models mostly rely on non-parametric\nknowledge in their best-performing settings. We discover a troubling trend that\ncontradictions among knowledge sources affect model confidence only marginally.\nTo address this issue, we present a new calibration study, where models are\ndiscouraged from presenting any single answer when presented with multiple\nconflicting answer candidates in retrieved evidences.",
+    "num_pages": 16
+}

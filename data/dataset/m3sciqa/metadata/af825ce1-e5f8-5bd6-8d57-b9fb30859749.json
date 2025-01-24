@@ -1,0 +1,18 @@
+{
+    "uuid": "af825ce1-e5f8-5bd6-8d57-b9fb30859749",
+    "title": "Straight to the Gradient: Learning to Use Novel Tokens for Neural Text Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Xiang Lin",
+        "Simeng Han",
+        "Shafiq Joty"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.07207v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\af825ce1-e5f8-5bd6-8d57-b9fb30859749.pdf",
+    "bibtex": "@misc{lin2021straighttothegradientlearning,\n    title = {Straight to the Gradient: Learning to Use Novel Tokens for Neural Text Generation},\n    author = {Xiang Lin and Simeng Han and Shafiq Joty},\n    year = {2021},\n    eprint = {2106.07207},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.07207},\n}",
+    "abstract": "Advanced large-scale neural language models have led to significant success\nin many language generation tasks. However, the most commonly used training\nobjective, Maximum Likelihood Estimation (MLE), has been shown problematic,\nwhere the trained model prefers using dull and repetitive phrases. In this\nwork, we introduce ScaleGrad, a modification straight to the gradient of the\nloss function, to remedy the degeneration issue of the standard MLE objective.\nBy directly maneuvering the gradient information, ScaleGrad makes the model\nlearn to use novel tokens. Empirical results show the effectiveness of our\nmethod not only in open-ended generation, but also in directed generation\ntasks. With the simplicity in architecture, our method can serve as a general\ntraining objective that is applicable to most of the neural text generation\ntasks.",
+    "num_pages": 23
+}

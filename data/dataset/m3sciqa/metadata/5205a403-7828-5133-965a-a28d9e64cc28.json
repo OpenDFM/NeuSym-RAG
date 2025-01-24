@@ -1,0 +1,18 @@
+{
+    "uuid": "5205a403-7828-5133-965a-a28d9e64cc28",
+    "title": "Parameter-Efficient Fine-Tuning without Introducing New Latency",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Baohao Liao",
+        "Yan Meng",
+        "Christof Monz"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.16742v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\5205a403-7828-5133-965a-a28d9e64cc28.pdf",
+    "bibtex": "@misc{liao2023parameterefficientfinetuningwithoutintroducingnew,\n    title = {Parameter-Efficient Fine-Tuning without Introducing New Latency},\n    author = {Baohao Liao and Yan Meng and Christof Monz},\n    year = {2023},\n    eprint = {2305.16742},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.16742},\n}",
+    "abstract": "Parameter-efficient fine-tuning (PEFT) of pre-trained language models has\nrecently demonstrated remarkable achievements, effectively matching the\nperformance of full fine-tuning while utilizing significantly fewer trainable\nparameters, and consequently addressing the storage and communication\nconstraints. Nonetheless, various PEFT methods are limited by their inherent\ncharacteristics. In the case of sparse fine-tuning, which involves modifying\nonly a small subset of the existing parameters, the selection of fine-tuned\nparameters is task- and domain-specific, making it unsuitable for federated\nlearning. On the other hand, PEFT methods with adding new parameters typically\nintroduce additional inference latency. In this paper, we demonstrate the\nfeasibility of generating a sparse mask in a task-agnostic manner, wherein all\ndownstream tasks share a common mask. Our approach, which relies solely on the\nmagnitude information of pre-trained parameters, surpasses existing\nmethodologies by a significant margin when evaluated on the GLUE benchmark.\nAdditionally, we introduce a novel adapter technique that directly applies the\nadapter to pre-trained parameters instead of the hidden representation, thereby\nachieving identical inference speed to that of full fine-tuning. Through\nextensive experiments, our proposed method attains a new state-of-the-art\noutcome in terms of both performance and storage efficiency, storing only 0.03%\nparameters of full fine-tuning.",
+    "num_pages": 17
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "c69e8c17-4b5c-5d03-be86-a0f0f19cd9fc",
+    "title": "Learning to Retrieve Passages without Supervision",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Ori Ram",
+        "Gal Shachaf",
+        "Omer Levy",
+        "Jonathan Berant",
+        "Amir Globerson"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2112.07708v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\c69e8c17-4b5c-5d03-be86-a0f0f19cd9fc.pdf",
+    "bibtex": "@misc{ram2022learningtoretrievepassageswithout,\n    title = {Learning to Retrieve Passages without Supervision},\n    author = {Ori Ram and Gal Shachaf and Omer Levy and Jonathan Berant and Amir Globerson},\n    year = {2022},\n    eprint = {2112.07708},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2112.07708},\n}",
+    "abstract": "Dense retrievers for open-domain question answering (ODQA) have been shown to\nachieve impressive performance by training on large datasets of\nquestion-passage pairs. In this work we ask whether this dependence on labeled\ndata can be reduced via unsupervised pretraining that is geared towards ODQA.\nWe show this is in fact possible, via a novel pretraining scheme designed for\nretrieval. Our \"recurring span retrieval\" approach uses recurring spans across\npassages in a document to create pseudo examples for contrastive learning. Our\npretraining scheme directly controls for term overlap across pseudo queries and\nrelevant passages, thus allowing to model both lexical and semantic relations\nbetween them. The resulting model, named Spider, performs surprisingly well\nwithout any labeled training examples on a wide range of ODQA datasets.\nSpecifically, it significantly outperforms all other pretrained baselines in a\nzero-shot setting, and is competitive with BM25, a strong sparse baseline.\nMoreover, a hybrid retriever over Spider and BM25 improves over both, and is\noften competitive with DPR models, which are trained on tens of thousands of\nexamples. Last, notable gains are observed when using Spider as an\ninitialization for supervised training.",
+    "num_pages": 14
+}

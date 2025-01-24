@@ -1,0 +1,21 @@
+{
+    "uuid": "ae7e311d-d5ed-5eec-a0c1-03cf2939de7f",
+    "title": "End-to-End Object Detection with Transformers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Nicolas Carion",
+        "Francisco Massa",
+        "Gabriel Synnaeve",
+        "Nicolas Usunier",
+        "Alexander Kirillov",
+        "Sergey Zagoruyko"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2005.12872v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\ae7e311d-d5ed-5eec-a0c1-03cf2939de7f.pdf",
+    "bibtex": "@misc{carion2020endtoendobjectdetectionwithtransformers,\n    title = {End-to-End Object Detection with Transformers},\n    author = {Nicolas Carion and Francisco Massa and Gabriel Synnaeve and Nicolas Usunier and Alexander Kirillov and Sergey Zagoruyko},\n    year = {2020},\n    eprint = {2005.12872},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2005.12872},\n}",
+    "abstract": "We present a new method that views object detection as a direct set\nprediction problem. Our approach streamlines the detection pipeline,\neffectively removing the need for many hand-designed components like a\nnon-maximum suppression procedure or anchor generation that explicitly encode\nour prior knowledge about the task. The main ingredients of the new framework,\ncalled DEtection TRansformer or DETR, are a set-based global loss that forces\nunique predictions via bipartite matching, and a transformer encoder-decoder\narchitecture. Given a fixed small set of learned object queries, DETR reasons\nabout the relations of the objects and the global image context to directly\noutput the final set of predictions in parallel. The new model is conceptually\nsimple and does not require a specialized library, unlike many other modern\ndetectors. DETR demonstrates accuracy and run-time performance on par with the\nwell-established and highly-optimized Faster RCNN baseline on the challenging\nCOCO object detection dataset. Moreover, DETR can be easily generalized to\nproduce panoptic segmentation in a unified manner. We show that it\nsignificantly outperforms competitive baselines. Training code and pretrained\nmodels are available at https://github.com/facebookresearch/detr.",
+    "num_pages": 26
+}

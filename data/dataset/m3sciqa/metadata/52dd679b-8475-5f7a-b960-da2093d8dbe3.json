@@ -1,0 +1,17 @@
+{
+    "uuid": "52dd679b-8475-5f7a-b960-da2093d8dbe3",
+    "title": "Boosting Summarization with Normalizing Flows and Aggressive Training",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yu Yang",
+        "Xiaotong Shen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2311.00588v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\52dd679b-8475-5f7a-b960-da2093d8dbe3.pdf",
+    "bibtex": "@misc{yang2023boostingsummarizationwithnormalizingflows,\n    title = {Boosting Summarization with Normalizing Flows and Aggressive Training},\n    author = {Yu Yang and Xiaotong Shen},\n    year = {2023},\n    eprint = {2311.00588},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2311.00588},\n}",
+    "abstract": "This paper presents FlowSUM, a normalizing flows-based variational\nencoder-decoder framework for Transformer-based summarization. Our approach\ntackles two primary challenges in variational summarization: insufficient\nsemantic information in latent representations and posterior collapse during\ntraining. To address these challenges, we employ normalizing flows to enable\nflexible latent posterior modeling, and we propose a controlled alternate\naggressive training (CAAT) strategy with an improved gate mechanism.\nExperimental results show that FlowSUM significantly enhances the quality of\ngenerated summaries and unleashes the potential for knowledge distillation with\nminimal impact on inference time. Furthermore, we investigate the issue of\nposterior collapse in normalizing flows and analyze how the summary quality is\naffected by the training strategy, gate initialization, and the type and number\nof normalizing flows used, offering valuable insights for future research.",
+    "num_pages": 25
+}

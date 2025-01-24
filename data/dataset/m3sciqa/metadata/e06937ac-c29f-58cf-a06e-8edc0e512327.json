@@ -1,0 +1,22 @@
+{
+    "uuid": "e06937ac-c29f-58cf-a06e-8edc0e512327",
+    "title": "Adversarial Filters of Dataset Biases",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Ronan Le Bras",
+        "Swabha Swayamdipta",
+        "Chandra Bhagavatula",
+        "Rowan Zellers",
+        "Matthew E. Peters",
+        "Ashish Sabharwal",
+        "Yejin Choi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2002.04108v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\e06937ac-c29f-58cf-a06e-8edc0e512327.pdf",
+    "bibtex": "@misc{bras2020adversarialfiltersofdatasetbiases,\n    title = {Adversarial Filters of Dataset Biases},\n    author = {Ronan Le Bras and Swabha Swayamdipta and Chandra Bhagavatula and Rowan Zellers and Matthew E. Peters and Ashish Sabharwal and Yejin Choi},\n    year = {2020},\n    eprint = {2002.04108},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2002.04108},\n}",
+    "abstract": "Large neural models have demonstrated human-level performance on language and\nvision benchmarks, while their performance degrades considerably on adversarial\nor out-of-distribution samples. This raises the question of whether these\nmodels have learned to solve a dataset rather than the underlying task by\noverfitting to spurious dataset biases. We investigate one recently proposed\napproach, AFLite, which adversarially filters such dataset biases, as a means\nto mitigate the prevalent overestimation of machine performance. We provide a\ntheoretical understanding for AFLite, by situating it in the generalized\nframework for optimum bias reduction. We present extensive supporting evidence\nthat AFLite is broadly applicable for reduction of measurable dataset biases,\nand that models trained on the filtered datasets yield better generalization to\nout-of-distribution tasks. Finally, filtering results in a large drop in model\nperformance (e.g., from 92% to 62% for SNLI), while human performance still\nremains high. Our work thus shows that such filtered datasets can pose new\nresearch challenges for robust generalization by serving as upgraded\nbenchmarks.",
+    "num_pages": 14
+}

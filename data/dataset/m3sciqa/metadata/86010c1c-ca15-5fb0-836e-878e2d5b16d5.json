@@ -1,0 +1,17 @@
+{
+    "uuid": "86010c1c-ca15-5fb0-836e-878e2d5b16d5",
+    "title": "AMR Parsing via Graph-Sequence Iterative Inference",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Deng Cai",
+        "Wai Lam"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.05572v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\86010c1c-ca15-5fb0-836e-878e2d5b16d5.pdf",
+    "bibtex": "@misc{cai2020amrparsingviagraphsequenceiterative,\n    title = {AMR Parsing via Graph-Sequence Iterative Inference},\n    author = {Deng Cai and Wai Lam},\n    year = {2020},\n    eprint = {2004.05572},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2004.05572},\n}",
+    "abstract": "We propose a new end-to-end model that treats AMR parsing as a series of dual\ndecisions on the input sequence and the incrementally constructed graph. At\neach time step, our model performs multiple rounds of attention, reasoning, and\ncomposition that aim to answer two critical questions: (1) which part of the\ninput \\textit{sequence} to abstract; and (2) where in the output \\textit{graph}\nto construct the new concept. We show that the answers to these two questions\nare mutually causalities. We design a model based on iterative inference that\nhelps achieve better answers in both perspectives, leading to greatly improved\nparsing accuracy. Our experimental results significantly outperform all\npreviously reported \\textsc{Smatch} scores by large margins. Remarkably,\nwithout the help of any large-scale pre-trained language model (e.g., BERT),\nour model already surpasses previous state-of-the-art using BERT. With the help\nof BERT, we can push the state-of-the-art results to 80.2\\% on LDC2017T10 (AMR\n2.0) and 75.4\\% on LDC2014T12 (AMR 1.0).",
+    "num_pages": 12
+}

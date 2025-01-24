@@ -1,0 +1,20 @@
+{
+    "uuid": "a2c41209-de94-53c6-b8f4-e3ec89674d04",
+    "title": "Interpretable Math Word Problem Solution Generation Via Step-by-step Planning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Mengxue Zhang",
+        "Zichao Wang",
+        "Zhichao Yang",
+        "Weiqi Feng",
+        "Andrew Lan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2306.00784v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\a2c41209-de94-53c6-b8f4-e3ec89674d04.pdf",
+    "bibtex": "@misc{zhang2023interpretablemathwordproblemsolution,\n    title = {Interpretable Math Word Problem Solution Generation Via Step-by-step Planning},\n    author = {Mengxue Zhang and Zichao Wang and Zhichao Yang and Weiqi Feng and Andrew Lan},\n    year = {2023},\n    eprint = {2306.00784},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2306.00784},\n}",
+    "abstract": "Solutions to math word problems (MWPs) with step-by-step explanations are\nvaluable, especially in education, to help students better comprehend\nproblem-solving strategies. Most existing approaches only focus on obtaining\nthe final correct answer. A few recent approaches leverage intermediate\nsolution steps to improve final answer correctness but often cannot generate\ncoherent steps with a clear solution strategy. Contrary to existing work, we\nfocus on improving the correctness and coherence of the intermediate solutions\nsteps. We propose a step-by-step planning approach for intermediate solution\ngeneration, which strategically plans the generation of the next solution step\nbased on the MWP and the previous solution steps. Our approach first plans the\nnext step by predicting the necessary math operation needed to proceed, given\nhistory steps, then generates the next step, token-by-token, by prompting a\nlanguage model with the predicted math operation. Experiments on the GSM8K\ndataset demonstrate that our approach improves the accuracy and\ninterpretability of the solution on both automatic metrics and human\nevaluation.",
+    "num_pages": 18
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "ca40df32-58b7-52fe-b2b5-458f848e4210",
+    "title": "Improving Context Modeling in Neural Topic Segmentation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Linzi Xing",
+        "Brad Hackinen",
+        "Giuseppe Carenini",
+        "Francesco Trebbi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.03138v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\ca40df32-58b7-52fe-b2b5-458f848e4210.pdf",
+    "bibtex": "@misc{xing2020improvingcontextmodelinginneural,\n    title = {Improving Context Modeling in Neural Topic Segmentation},\n    author = {Linzi Xing and Brad Hackinen and Giuseppe Carenini and Francesco Trebbi},\n    year = {2020},\n    eprint = {2010.03138},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.03138},\n}",
+    "abstract": "Topic segmentation is critical in key NLP tasks and recent works favor highly\neffective neural supervised approaches. However, current neural solutions are\narguably limited in how they model context. In this paper, we enhance a\nsegmenter based on a hierarchical attention BiLSTM network to better model\ncontext, by adding a coherence-related auxiliary task and restricted\nself-attention. Our optimized segmenter outperforms SOTA approaches when\ntrained and tested on three datasets. We also the robustness of our proposed\nmodel in domain transfer setting by training a model on a large-scale dataset\nand testing it on four challenging real-world benchmarks. Furthermore, we apply\nour proposed strategy to two other languages (German and Chinese), and show its\neffectiveness in multilingual scenarios.",
+    "num_pages": 11
+}

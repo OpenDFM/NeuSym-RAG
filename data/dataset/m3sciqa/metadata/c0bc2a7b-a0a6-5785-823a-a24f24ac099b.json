@@ -1,0 +1,23 @@
+{
+    "uuid": "c0bc2a7b-a0a6-5785-823a-a24f24ac099b",
+    "title": "DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Samyam Rajbhandari",
+        "Conglong Li",
+        "Zhewei Yao",
+        "Minjia Zhang",
+        "Reza Yazdani Aminabadi",
+        "Ammar Ahmad Awan",
+        "Jeff Rasley",
+        "Yuxiong He"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2201.05596v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\c0bc2a7b-a0a6-5785-823a-a24f24ac099b.pdf",
+    "bibtex": "@misc{rajbhandari2022deepspeedmoeadvancingmixtureofexpertsinferenceand,\n    title = {DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale},\n    author = {Samyam Rajbhandari and Conglong Li and Zhewei Yao and Minjia Zhang and Reza Yazdani Aminabadi and Ammar Ahmad Awan and Jeff Rasley and Yuxiong He},\n    year = {2022},\n    eprint = {2201.05596},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2201.05596},\n}",
+    "abstract": "As the training of giant dense models hits the boundary on the availability\nand capability of the hardware resources today, Mixture-of-Experts (MoE) models\nbecome one of the most promising model architectures due to their significant\ntraining cost reduction compared to a quality-equivalent dense model. Its\ntraining cost saving is demonstrated from encoder-decoder models (prior works)\nto a 5x saving for auto-aggressive language models (this work along with\nparallel explorations). However, due to the much larger model size and unique\narchitecture, how to provide fast MoE model inference remains challenging and\nunsolved, limiting its practical usage. To tackle this, we present\nDeepSpeed-MoE, an end-to-end MoE training and inference solution as part of the\nDeepSpeed library, including novel MoE architecture designs and model\ncompression techniques that reduce MoE model size by up to 3.7x, and a highly\noptimized inference system that provides 7.3x better latency and cost compared\nto existing MoE inference solutions. DeepSpeed-MoE offers an unprecedented\nscale and efficiency to serve massive MoE models with up to 4.5x faster and 9x\ncheaper inference compared to quality-equivalent dense models. We hope our\ninnovations and systems help open a promising path to new directions in the\nlarge model landscape, a shift from dense to sparse MoE models, where training\nand deploying higher-quality models with fewer resources becomes more widely\npossible.",
+    "num_pages": 31
+}

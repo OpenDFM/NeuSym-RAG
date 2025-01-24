@@ -1,0 +1,17 @@
+{
+    "uuid": "7317eb83-dade-50f1-a450-b78345889411",
+    "title": "End-to-End Non-Autoregressive Neural Machine Translation with Connectionist Temporal Classification",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Jindřich Libovický",
+        "Jindřich Helcl"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1811.04719v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\7317eb83-dade-50f1-a450-b78345889411.pdf",
+    "bibtex": "@misc{libovick2018endtoendnonautoregressiveneuralmachinetranslation,\n    title = {End-to-End Non-Autoregressive Neural Machine Translation with Connectionist Temporal Classification},\n    author = {Jindřich Libovický and Jindřich Helcl},\n    year = {2018},\n    eprint = {1811.04719},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1811.04719},\n}",
+    "abstract": "Autoregressive decoding is the only part of sequence-to-sequence models that\nprevents them from massive parallelization at inference time.\nNon-autoregressive models enable the decoder to generate all output symbols\nindependently in parallel. We present a novel non-autoregressive architecture\nbased on connectionist temporal classification and evaluate it on the task of\nneural machine translation. Unlike other non-autoregressive methods which\noperate in several steps, our model can be trained end-to-end. We conduct\nexperiments on the WMT English-Romanian and English-German datasets. Our models\nachieve a significant speedup over the autoregressive models, keeping the\ntranslation quality comparable to other non-autoregressive models.",
+    "num_pages": 6
+}

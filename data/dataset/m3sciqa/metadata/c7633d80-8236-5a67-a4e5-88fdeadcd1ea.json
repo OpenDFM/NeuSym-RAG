@@ -1,0 +1,23 @@
+{
+    "uuid": "c7633d80-8236-5a67-a4e5-88fdeadcd1ea",
+    "title": "Human Evaluation and Correlation with Automatic Metrics in Consultation Note Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Francesco Moramarco",
+        "Alex Papadopoulos Korfiatis",
+        "Mark Perera",
+        "Damir Juric",
+        "Jack Flann",
+        "Ehud Reiter",
+        "Anya Belz",
+        "Aleksandar Savkov"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.00447v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\c7633d80-8236-5a67-a4e5-88fdeadcd1ea.pdf",
+    "bibtex": "@misc{moramarco2022humanevaluationandcorrelationwith,\n    title = {Human Evaluation and Correlation with Automatic Metrics in Consultation Note Generation},\n    author = {Francesco Moramarco and Alex Papadopoulos Korfiatis and Mark Perera and Damir Juric and Jack Flann and Ehud Reiter and Anya Belz and Aleksandar Savkov},\n    year = {2022},\n    eprint = {2204.00447},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.00447},\n}",
+    "abstract": "In recent years, machine learning models have rapidly become better at\ngenerating clinical consultation notes; yet, there is little work on how to\nproperly evaluate the generated consultation notes to understand the impact\nthey may have on both the clinician using them and the patient's clinical\nsafety. To address this we present an extensive human evaluation study of\nconsultation notes where 5 clinicians (i) listen to 57 mock consultations, (ii)\nwrite their own notes, (iii) post-edit a number of automatically generated\nnotes, and (iv) extract all the errors, both quantitative and qualitative. We\nthen carry out a correlation study with 18 automatic quality metrics and the\nhuman judgements. We find that a simple, character-based Levenshtein distance\nmetric performs on par if not better than common model-based metrics like\nBertScore. All our findings and annotations are open-sourced.",
+    "num_pages": 16
+}

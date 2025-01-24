@@ -1,0 +1,18 @@
+{
+    "uuid": "ebaab94f-c9fb-5186-951c-d7259a580fde",
+    "title": "Get To The Point: Summarization with Pointer-Generator Networks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Abigail See",
+        "Peter J. Liu",
+        "Christopher D. Manning"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1704.04368v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\ebaab94f-c9fb-5186-951c-d7259a580fde.pdf",
+    "bibtex": "@misc{see2017gettothepointsummarization,\n    title = {Get To The Point: Summarization with Pointer-Generator Networks},\n    author = {Abigail See and Peter J. Liu and Christopher D. Manning},\n    year = {2017},\n    eprint = {1704.04368},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1704.04368},\n}",
+    "abstract": "Neural sequence-to-sequence models have provided a viable new approach for\nabstractive text summarization (meaning they are not restricted to simply\nselecting and rearranging passages from the original text). However, these\nmodels have two shortcomings: they are liable to reproduce factual details\ninaccurately, and they tend to repeat themselves. In this work we propose a\nnovel architecture that augments the standard sequence-to-sequence attentional\nmodel in two orthogonal ways. First, we use a hybrid pointer-generator network\nthat can copy words from the source text via pointing, which aids accurate\nreproduction of information, while retaining the ability to produce novel words\nthrough the generator. Second, we use coverage to keep track of what has been\nsummarized, which discourages repetition. We apply our model to the CNN / Daily\nMail summarization task, outperforming the current abstractive state-of-the-art\nby at least 2 ROUGE points.",
+    "num_pages": 20
+}

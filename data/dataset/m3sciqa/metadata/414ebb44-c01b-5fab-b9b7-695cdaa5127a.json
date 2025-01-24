@@ -1,0 +1,20 @@
+{
+    "uuid": "414ebb44-c01b-5fab-b9b7-695cdaa5127a",
+    "title": "Directed Acyclic Transformer for Non-Autoregressive Machine Translation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Fei Huang",
+        "Hao Zhou",
+        "Yang Liu",
+        "Hang Li",
+        "Minlie Huang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.07459v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\414ebb44-c01b-5fab-b9b7-695cdaa5127a.pdf",
+    "bibtex": "@misc{huang2022directedacyclictransformerfornonautoregressive,\n    title = {Directed Acyclic Transformer for Non-Autoregressive Machine Translation},\n    author = {Fei Huang and Hao Zhou and Yang Liu and Hang Li and Minlie Huang},\n    year = {2022},\n    eprint = {2205.07459},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.07459},\n}",
+    "abstract": "Non-autoregressive Transformers (NATs) significantly reduce the decoding\nlatency by generating all tokens in parallel. However, such independent\npredictions prevent NATs from capturing the dependencies between the tokens for\ngenerating multiple possible translations. In this paper, we propose Directed\nAcyclic Transfomer (DA-Transformer), which represents the hidden states in a\nDirected Acyclic Graph (DAG), where each path of the DAG corresponds to a\nspecific translation. The whole DAG simultaneously captures multiple\ntranslations and facilitates fast predictions in a non-autoregressive fashion.\nExperiments on the raw training data of WMT benchmark show that DA-Transformer\nsubstantially outperforms previous NATs by about 3 BLEU on average, which is\nthe first NAT model that achieves competitive results with autoregressive\nTransformers without relying on knowledge distillation.",
+    "num_pages": 18
+}

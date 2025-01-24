@@ -1,0 +1,19 @@
+{
+    "uuid": "8b0379d4-7ff4-55f8-ab02-50abfbadfbda",
+    "title": "Autoregressive Entity Retrieval",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Nicola De Cao",
+        "Gautier Izacard",
+        "Sebastian Riedel",
+        "Fabio Petroni"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.00904v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\8b0379d4-7ff4-55f8-ab02-50abfbadfbda.pdf",
+    "bibtex": "@misc{cao2021autoregressiveentityretrieval,\n    title = {Autoregressive Entity Retrieval},\n    author = {Nicola De Cao and Gautier Izacard and Sebastian Riedel and Fabio Petroni},\n    year = {2021},\n    eprint = {2010.00904},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.00904},\n}",
+    "abstract": "Entities are at the center of how we represent and aggregate knowledge. For\ninstance, Encyclopedias such as Wikipedia are structured by entities (e.g., one\nper Wikipedia article). The ability to retrieve such entities given a query is\nfundamental for knowledge-intensive tasks such as entity linking and\nopen-domain question answering. Current approaches can be understood as\nclassifiers among atomic labels, one for each entity. Their weight vectors are\ndense entity representations produced by encoding entity meta information such\nas their descriptions. This approach has several shortcomings: (i) context and\nentity affinity is mainly captured through a vector dot product, potentially\nmissing fine-grained interactions; (ii) a large memory footprint is needed to\nstore dense representations when considering large entity sets; (iii) an\nappropriately hard set of negative data has to be subsampled at training time.\nIn this work, we propose GENRE, the first system that retrieves entities by\ngenerating their unique names, left to right, token-by-token in an\nautoregressive fashion. This mitigates the aforementioned technical issues\nsince: (i) the autoregressive formulation directly captures relations between\ncontext and entity name, effectively cross encoding both; (ii) the memory\nfootprint is greatly reduced because the parameters of our encoder-decoder\narchitecture scale with vocabulary size, not entity count; (iii) the softmax\nloss is computed without subsampling negative data. We experiment with more\nthan 20 datasets on entity disambiguation, end-to-end entity linking and\ndocument retrieval tasks, achieving new state-of-the-art or very competitive\nresults while using a tiny fraction of the memory footprint of competing\nsystems. Finally, we demonstrate that new entities can be added by simply\nspecifying their names. Code and pre-trained models at\nhttps://github.com/facebookresearch/GENRE.",
+    "num_pages": 20
+}

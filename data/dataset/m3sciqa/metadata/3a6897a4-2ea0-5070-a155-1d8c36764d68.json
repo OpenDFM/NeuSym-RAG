@@ -1,0 +1,18 @@
+{
+    "uuid": "3a6897a4-2ea0-5070-a155-1d8c36764d68",
+    "title": "PifPaf: Composite Fields for Human Pose Estimation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Sven Kreiss",
+        "Lorenzo Bertoni",
+        "Alexandre Alahi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1903.06593v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\3a6897a4-2ea0-5070-a155-1d8c36764d68.pdf",
+    "bibtex": "@misc{kreiss2019pifpafcompositefieldsforhuman,\n    title = {PifPaf: Composite Fields for Human Pose Estimation},\n    author = {Sven Kreiss and Lorenzo Bertoni and Alexandre Alahi},\n    year = {2019},\n    eprint = {1903.06593},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1903.06593},\n}",
+    "abstract": "We propose a new bottom-up method for multi-person 2D human pose estimation\nthat is particularly well suited for urban mobility such as self-driving cars\nand delivery robots. The new method, PifPaf, uses a Part Intensity Field (PIF)\nto localize body parts and a Part Association Field (PAF) to associate body\nparts with each other to form full human poses. Our method outperforms previous\nmethods at low resolution and in crowded, cluttered and occluded scenes thanks\nto (i) our new composite field PAF encoding fine-grained information and (ii)\nthe choice of Laplace loss for regressions which incorporates a notion of\nuncertainty. Our architecture is based on a fully convolutional, single-shot,\nbox-free design. We perform on par with the existing state-of-the-art bottom-up\nmethod on the standard COCO keypoint task and produce state-of-the-art results\non a modified COCO keypoint task for the transportation domain.",
+    "num_pages": 10
+}

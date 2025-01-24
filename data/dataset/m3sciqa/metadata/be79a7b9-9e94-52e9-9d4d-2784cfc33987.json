@@ -1,0 +1,22 @@
+{
+    "uuid": "be79a7b9-9e94-52e9-9d4d-2784cfc33987",
+    "title": "Few-shot Slot Tagging with Collapsed Dependency Transfer and Label-enhanced Task-adaptive Projection Network",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Yutai Hou",
+        "Wanxiang Che",
+        "Yongkui Lai",
+        "Zhihan Zhou",
+        "Yijia Liu",
+        "Han Liu",
+        "Ting Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2006.05702v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\be79a7b9-9e94-52e9-9d4d-2784cfc33987.pdf",
+    "bibtex": "@misc{hou2020fewshotslottaggingwithcollapsed,\n    title = {Few-shot Slot Tagging with Collapsed Dependency Transfer and Label-enhanced Task-adaptive Projection Network},\n    author = {Yutai Hou and Wanxiang Che and Yongkui Lai and Zhihan Zhou and Yijia Liu and Han Liu and Ting Liu},\n    year = {2020},\n    eprint = {2006.05702},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2006.05702},\n}",
+    "abstract": "In this paper, we explore the slot tagging with only a few labeled support\nsentences (a.k.a. few-shot). Few-shot slot tagging faces a unique challenge\ncompared to the other few-shot classification problems as it calls for modeling\nthe dependencies between labels. But it is hard to apply previously learned\nlabel dependencies to an unseen domain, due to the discrepancy of label sets.\nTo tackle this, we introduce a collapsed dependency transfer mechanism into the\nconditional random field (CRF) to transfer abstract label dependency patterns\nas transition scores. In the few-shot setting, the emission score of CRF can be\ncalculated as a word's similarity to the representation of each label. To\ncalculate such similarity, we propose a Label-enhanced Task-Adaptive Projection\nNetwork (L-TapNet) based on the state-of-the-art few-shot classification model\n-- TapNet, by leveraging label name semantics in representing labels.\nExperimental results show that our model significantly outperforms the\nstrongest few-shot learning baseline by 14.64 F1 scores in the one-shot\nsetting.",
+    "num_pages": 13
+}

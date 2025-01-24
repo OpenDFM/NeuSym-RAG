@@ -1,0 +1,21 @@
+{
+    "uuid": "04235996-3396-5b9d-85ee-1f0262f8c751",
+    "title": "Vietnamese Hate and Offensive Detection using PhoBERT-CNN and Social Media Streaming Data",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Khanh Q. Tran",
+        "An T. Nguyen",
+        "Phu Gia Hoang",
+        "Canh Duc Luu",
+        "Trong-Hop Do",
+        "Kiet Van Nguyen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2206.00524v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\04235996-3396-5b9d-85ee-1f0262f8c751.pdf",
+    "bibtex": "@misc{tran2022vietnamesehateandoffensivedetection,\n    title = {Vietnamese Hate and Offensive Detection using PhoBERT-CNN and Social Media Streaming Data},\n    author = {Khanh Q. Tran and An T. Nguyen and Phu Gia Hoang and Canh Duc Luu and Trong-Hop Do and Kiet Van Nguyen},\n    year = {2022},\n    eprint = {2206.00524},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2206.00524},\n}",
+    "abstract": "Society needs to develop a system to detect hate and offense to build a\nhealthy and safe environment. However, current research in this field still\nfaces four major shortcomings, including deficient pre-processing techniques,\nindifference to data imbalance issues, modest performance models, and lacking\npractical applications. This paper focused on developing an intelligent system\ncapable of addressing these shortcomings. Firstly, we proposed an efficient\npre-processing technique to clean comments collected from Vietnamese social\nmedia. Secondly, a novel hate speech detection (HSD) model, which is the\ncombination of a pre-trained PhoBERT model and a Text-CNN model, was proposed\nfor solving tasks in Vietnamese. Thirdly, EDA techniques are applied to deal\nwith imbalanced data to improve the performance of classification models.\nBesides, various experiments were conducted as baselines to compare and\ninvestigate the proposed model's performance against state-of-the-art methods.\nThe experiment results show that the proposed PhoBERT-CNN model outperforms\nSOTA methods and achieves an F1-score of 67,46% and 98,45% on two benchmark\ndatasets, ViHSD and HSD-VLSP, respectively. Finally, we also built a streaming\nHSD application to demonstrate the practicality of our proposed system.",
+    "num_pages": 38
+}

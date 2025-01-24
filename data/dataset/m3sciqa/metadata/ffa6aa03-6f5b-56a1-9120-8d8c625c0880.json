@@ -1,0 +1,20 @@
+{
+    "uuid": "ffa6aa03-6f5b-56a1-9120-8d8c625c0880",
+    "title": "Your fairness may vary: Pretrained language model fairness in toxic text classification",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Ioana Baldini",
+        "Dennis Wei",
+        "Karthikeyan Natesan Ramamurthy",
+        "Mikhail Yurochkin",
+        "Moninder Singh"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2108.01250v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\ffa6aa03-6f5b-56a1-9120-8d8c625c0880.pdf",
+    "bibtex": "@misc{baldini2022yourfairnessmayvarypretrained,\n    title = {Your fairness may vary: Pretrained language model fairness in toxic text classification},\n    author = {Ioana Baldini and Dennis Wei and Karthikeyan Natesan Ramamurthy and Mikhail Yurochkin and Moninder Singh},\n    year = {2022},\n    eprint = {2108.01250},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2108.01250},\n}",
+    "abstract": "The popularity of pretrained language models in natural language processing\nsystems calls for a careful evaluation of such models in down-stream tasks,\nwhich have a higher potential for societal impact. The evaluation of such\nsystems usually focuses on accuracy measures. Our findings in this paper call\nfor attention to be paid to fairness measures as well. Through the analysis of\nmore than a dozen pretrained language models of varying sizes on two toxic text\nclassification tasks (English), we demonstrate that focusing on accuracy\nmeasures alone can lead to models with wide variation in fairness\ncharacteristics. Specifically, we observe that fairness can vary even more than\naccuracy with increasing training data size and different random\ninitializations. At the same time, we find that little of the fairness\nvariation is explained by model size, despite claims in the literature. To\nimprove model fairness without retraining, we show that two post-processing\nmethods developed for structured, tabular data can be successfully applied to a\nrange of pretrained language models. Warning: This paper contains samples of\noffensive text.",
+    "num_pages": 18
+}

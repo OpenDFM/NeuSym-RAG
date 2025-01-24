@@ -1,0 +1,20 @@
+{
+    "uuid": "ae1c6e74-8aba-5616-8134-867962b77538",
+    "title": "Diversifying Question Generation over Knowledge Base via External Natural Questions",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Shasha Guo",
+        "Jing Zhang",
+        "Xirui Ke",
+        "Cuiping Li",
+        "Hong Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2309.14362v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\ae1c6e74-8aba-5616-8134-867962b77538.pdf",
+    "bibtex": "@misc{guo2023diversifyingquestiongenerationoverknowledge,\n    title = {Diversifying Question Generation over Knowledge Base via External Natural Questions},\n    author = {Shasha Guo and Jing Zhang and Xirui Ke and Cuiping Li and Hong Chen},\n    year = {2023},\n    eprint = {2309.14362},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2309.14362},\n}",
+    "abstract": "Previous methods on knowledge base question generation (KBQG) primarily focus\non enhancing the quality of a single generated question. Recognizing the\nremarkable paraphrasing ability of humans, we contend that diverse texts should\nconvey the same semantics through varied expressions. The above insights make\ndiversifying question generation an intriguing task, where the first challenge\nis evaluation metrics for diversity. Current metrics inadequately assess the\nabove diversity since they calculate the ratio of unique n-grams in the\ngenerated question itself, which leans more towards measuring duplication\nrather than true diversity. Accordingly, we devise a new diversity evaluation\nmetric, which measures the diversity among top-k generated questions for each\ninstance while ensuring their relevance to the ground truth. Clearly, the\nsecond challenge is how to enhance diversifying question generation. To address\nthis challenge, we introduce a dual model framework interwoven by two selection\nstrategies to generate diverse questions leveraging external natural questions.\nThe main idea of our dual framework is to extract more diverse expressions and\nintegrate them into the generation model to enhance diversifying question\ngeneration. Extensive experiments on widely used benchmarks for KBQG\ndemonstrate that our proposed approach generates highly diverse questions and\nimproves the performance of question answering tasks.",
+    "num_pages": 12
+}

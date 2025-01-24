@@ -1,0 +1,23 @@
+{
+    "uuid": "e92e45f8-a691-5ecd-abee-67f6fb478fc2",
+    "title": "Inference with Reference: Lossless Acceleration of Large Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Nan Yang",
+        "Tao Ge",
+        "Liang Wang",
+        "Binxing Jiao",
+        "Daxin Jiang",
+        "Linjun Yang",
+        "Rangan Majumder",
+        "Furu Wei"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.04487v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\e92e45f8-a691-5ecd-abee-67f6fb478fc2.pdf",
+    "bibtex": "@misc{yang2023inferencewithreferencelosslessacceleration,\n    title = {Inference with Reference: Lossless Acceleration of Large Language Models},\n    author = {Nan Yang and Tao Ge and Liang Wang and Binxing Jiao and Daxin Jiang and Linjun Yang and Rangan Majumder and Furu Wei},\n    year = {2023},\n    eprint = {2304.04487},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2304.04487},\n}",
+    "abstract": "We propose LLMA, an LLM accelerator to losslessly speed up Large Language\nModel (LLM) inference with references. LLMA is motivated by the observation\nthat there are abundant identical text spans between the decoding result by an\nLLM and the reference that is available in many real world scenarios (e.g.,\nretrieved documents). LLMA first selects a text span from the reference and\ncopies its tokens to the decoder and then efficiently checks the tokens'\nappropriateness as the decoding result in parallel within one decoding step.\nThe improved computational parallelism allows LLMA to achieve over 2x speed-up\nfor LLMs with identical generation results as greedy decoding in many practical\ngeneration scenarios where significant overlap between in-context reference and\noutputs exists (e.g., search engines and multi-turn conversations).",
+    "num_pages": 9
+}

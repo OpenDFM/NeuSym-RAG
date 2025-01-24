@@ -1,0 +1,18 @@
+{
+    "uuid": "2f3c31d0-97f6-53ed-a015-fa77ed3ff49e",
+    "title": "Domain-Adjusted Regression or: ERM May Already Learn Features Sufficient for Out-of-Distribution Generalization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Elan Rosenfeld",
+        "Pradeep Ravikumar",
+        "Andrej Risteski"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2202.06856v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\2f3c31d0-97f6-53ed-a015-fa77ed3ff49e.pdf",
+    "bibtex": "@misc{rosenfeld2022domainadjustedregressionorermmay,\n    title = {Domain-Adjusted Regression or: ERM May Already Learn Features Sufficient for Out-of-Distribution Generalization},\n    author = {Elan Rosenfeld and Pradeep Ravikumar and Andrej Risteski},\n    year = {2022},\n    eprint = {2202.06856},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2202.06856},\n}",
+    "abstract": "A common explanation for the failure of deep networks to generalize\nout-of-distribution is that they fail to recover the \"correct\" features. We\nchallenge this notion with a simple experiment which suggests that ERM already\nlearns sufficient features and that the current bottleneck is not feature\nlearning, but robust regression. Our findings also imply that given a small\namount of data from the target distribution, retraining only the last linear\nlayer will give excellent performance. We therefore argue that devising simpler\nmethods for learning predictors on existing features is a promising direction\nfor future research. Towards this end, we introduce Domain-Adjusted Regression\n(DARE), a convex objective for learning a linear predictor that is provably\nrobust under a new model of distribution shift. Rather than learning one\nfunction, DARE performs a domain-specific adjustment to unify the domains in a\ncanonical latent space and learns to predict in this space. Under a natural\nmodel, we prove that the DARE solution is the minimax-optimal predictor for a\nconstrained set of test distributions. Further, we provide the first\nfinite-environment convergence guarantee to the minimax risk, improving over\nexisting analyses which only yield minimax predictors after an environment\nthreshold. Evaluated on finetuned features, we find that DARE compares\nfavorably to prior methods, consistently achieving equal or better performance.",
+    "num_pages": 32
+}

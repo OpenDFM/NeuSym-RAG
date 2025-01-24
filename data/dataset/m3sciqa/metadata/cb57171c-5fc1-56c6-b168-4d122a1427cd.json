@@ -1,0 +1,21 @@
+{
+    "uuid": "cb57171c-5fc1-56c6-b168-4d122a1427cd",
+    "title": "SpanBERT: Improving Pre-training by Representing and Predicting Spans",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Mandar Joshi",
+        "Danqi Chen",
+        "Yinhan Liu",
+        "Daniel S. Weld",
+        "Luke Zettlemoyer",
+        "Omer Levy"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1907.10529v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\cb57171c-5fc1-56c6-b168-4d122a1427cd.pdf",
+    "bibtex": "@misc{joshi2020spanbertimprovingpretrainingbyrepresenting,\n    title = {SpanBERT: Improving Pre-training by Representing and Predicting Spans},\n    author = {Mandar Joshi and Danqi Chen and Yinhan Liu and Daniel S. Weld and Luke Zettlemoyer and Omer Levy},\n    year = {2020},\n    eprint = {1907.10529},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1907.10529},\n}",
+    "abstract": "We present SpanBERT, a pre-training method that is designed to better\nrepresent and predict spans of text. Our approach extends BERT by (1) masking\ncontiguous random spans, rather than random tokens, and (2) training the span\nboundary representations to predict the entire content of the masked span,\nwithout relying on the individual token representations within it. SpanBERT\nconsistently outperforms BERT and our better-tuned baselines, with substantial\ngains on span selection tasks such as question answering and coreference\nresolution. In particular, with the same training data and model size as\nBERT-large, our single model obtains 94.6% and 88.7% F1 on SQuAD 1.1 and 2.0,\nrespectively. We also achieve a new state of the art on the OntoNotes\ncoreference resolution task (79.6\\% F1), strong performance on the TACRED\nrelation extraction benchmark, and even show gains on GLUE.",
+    "num_pages": 13
+}

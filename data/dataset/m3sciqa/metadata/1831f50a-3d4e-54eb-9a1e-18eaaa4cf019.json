@@ -1,0 +1,19 @@
+{
+    "uuid": "1831f50a-3d4e-54eb-9a1e-18eaaa4cf019",
+    "title": "Deconfounding Legal Judgment Prediction for European Court of Human Rights Cases Towards Better Alignment with Experts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "T. Y. S. S Santosh",
+        "Shanshan Xu",
+        "Oana Ichim",
+        "Matthias Grabmair"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.13836v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\1831f50a-3d4e-54eb-9a1e-18eaaa4cf019.pdf",
+    "bibtex": "@misc{santosh2022deconfoundinglegaljudgmentpredictionfor,\n    title = {Deconfounding Legal Judgment Prediction for European Court of Human Rights Cases Towards Better Alignment with Experts},\n    author = {T. Y. S. S Santosh and Shanshan Xu and Oana Ichim and Matthias Grabmair},\n    year = {2022},\n    eprint = {2210.13836},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.13836},\n}",
+    "abstract": "This work demonstrates that Legal Judgement Prediction systems without\nexpert-informed adjustments can be vulnerable to shallow, distracting surface\nsignals that arise from corpus construction, case distribution, and confounding\nfactors. To mitigate this, we use domain expertise to strategically identify\nstatistically predictive but legally irrelevant information. We adopt\nadversarial training to prevent the system from relying on it. We evaluate our\ndeconfounded models by employing interpretability techniques and comparing to\nexpert annotations. Quantitative experiments and qualitative analysis show that\nour deconfounded model consistently aligns better with expert rationales than\nbaselines trained for prediction only. We further contribute a set of reference\nexpert annotations to the validation and testing partitions of an existing\nbenchmark dataset of European Court of Human Rights cases.",
+    "num_pages": 19
+}

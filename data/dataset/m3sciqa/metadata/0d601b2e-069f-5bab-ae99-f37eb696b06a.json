@@ -1,0 +1,21 @@
+{
+    "uuid": "0d601b2e-069f-5bab-ae99-f37eb696b06a",
+    "title": "ConSERT: A Contrastive Framework for Self-Supervised Sentence Representation Transfer",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Yuanmeng Yan",
+        "Rumei Li",
+        "Sirui Wang",
+        "Fuzheng Zhang",
+        "Wei Wu",
+        "Weiran Xu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2105.11741v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\0d601b2e-069f-5bab-ae99-f37eb696b06a.pdf",
+    "bibtex": "@misc{yan2021consertacontrastiveframeworkfor,\n    title = {ConSERT: A Contrastive Framework for Self-Supervised Sentence Representation Transfer},\n    author = {Yuanmeng Yan and Rumei Li and Sirui Wang and Fuzheng Zhang and Wei Wu and Weiran Xu},\n    year = {2021},\n    eprint = {2105.11741},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2105.11741},\n}",
+    "abstract": "Learning high-quality sentence representations benefits a wide range of\nnatural language processing tasks. Though BERT-based pre-trained language\nmodels achieve high performance on many downstream tasks, the native derived\nsentence representations are proved to be collapsed and thus produce a poor\nperformance on the semantic textual similarity (STS) tasks. In this paper, we\npresent ConSERT, a Contrastive Framework for Self-Supervised Sentence\nRepresentation Transfer, that adopts contrastive learning to fine-tune BERT in\nan unsupervised and effective way. By making use of unlabeled texts, ConSERT\nsolves the collapse issue of BERT-derived sentence representations and make\nthem more applicable for downstream tasks. Experiments on STS datasets\ndemonstrate that ConSERT achieves an 8\\% relative improvement over the previous\nstate-of-the-art, even comparable to the supervised SBERT-NLI. And when further\nincorporating NLI supervision, we achieve new state-of-the-art performance on\nSTS tasks. Moreover, ConSERT obtains comparable results with only 1000 samples\navailable, showing its robustness in data scarcity scenarios.",
+    "num_pages": 11
+}

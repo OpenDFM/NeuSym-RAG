@@ -1,0 +1,20 @@
+{
+    "uuid": "b80e3d5b-034c-5f7a-9375-022d87904ee4",
+    "title": "Pay Less Attention with Lightweight and Dynamic Convolutions",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Felix Wu",
+        "Angela Fan",
+        "Alexei Baevski",
+        "Yann N. Dauphin",
+        "Michael Auli"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1901.10430v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\b80e3d5b-034c-5f7a-9375-022d87904ee4.pdf",
+    "bibtex": "@misc{wu2019paylessattentionwithlightweight,\n    title = {Pay Less Attention with Lightweight and Dynamic Convolutions},\n    author = {Felix Wu and Angela Fan and Alexei Baevski and Yann N. Dauphin and Michael Auli},\n    year = {2019},\n    eprint = {1901.10430},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1901.10430},\n}",
+    "abstract": "Self-attention is a useful mechanism to build generative models for language\nand images. It determines the importance of context elements by comparing each\nelement to the current time step. In this paper, we show that a very\nlightweight convolution can perform competitively to the best reported\nself-attention results. Next, we introduce dynamic convolutions which are\nsimpler and more efficient than self-attention. We predict separate convolution\nkernels based solely on the current time-step in order to determine the\nimportance of context elements. The number of operations required by this\napproach scales linearly in the input length, whereas self-attention is\nquadratic. Experiments on large-scale machine translation, language modeling\nand abstractive summarization show that dynamic convolutions improve over\nstrong self-attention models. On the WMT'14 English-German test set dynamic\nconvolutions achieve a new state of the art of 29.7 BLEU.",
+    "num_pages": 14
+}

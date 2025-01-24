@@ -1,0 +1,20 @@
+{
+    "uuid": "02c713fb-34a3-52b4-abfc-87ecb9dfbe03",
+    "title": "What Comes Next? Evaluating Uncertainty in Neural Text Generators Against Human Production Variability",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Mario Giulianelli",
+        "Joris Baan",
+        "Wilker Aziz",
+        "Raquel Fernández",
+        "Barbara Plank"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.11707v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\02c713fb-34a3-52b4-abfc-87ecb9dfbe03.pdf",
+    "bibtex": "@misc{giulianelli2023whatcomesnextevaluatinguncertainty,\n    title = {What Comes Next? Evaluating Uncertainty in Neural Text Generators Against Human Production Variability},\n    author = {Mario Giulianelli and Joris Baan and Wilker Aziz and Raquel Fernández and Barbara Plank},\n    year = {2023},\n    eprint = {2305.11707},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.11707},\n}",
+    "abstract": "In Natural Language Generation (NLG) tasks, for any input, multiple\ncommunicative goals are plausible, and any goal can be put into words, or\nproduced, in multiple ways. We characterise the extent to which human\nproduction varies lexically, syntactically, and semantically across four NLG\ntasks, connecting human production variability to aleatoric or data\nuncertainty. We then inspect the space of output strings shaped by a generation\nsystem's predicted probability distribution and decoding algorithm to probe its\nuncertainty. For each test input, we measure the generator's calibration to\nhuman production variability. Following this instance-level approach, we\nanalyse NLG models and decoding strategies, demonstrating that probing a\ngenerator with multiple samples and, when possible, multiple references,\nprovides the level of detail necessary to gain understanding of a model's\nrepresentation of uncertainty. Code available at\nhttps://github.com/dmg-illc/nlg-uncertainty-probes.",
+    "num_pages": 23
+}

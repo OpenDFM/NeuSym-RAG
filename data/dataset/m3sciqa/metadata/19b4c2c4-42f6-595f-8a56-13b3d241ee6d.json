@@ -1,0 +1,20 @@
+{
+    "uuid": "19b4c2c4-42f6-595f-8a56-13b3d241ee6d",
+    "title": "DU-VLG: Unifying Vision-and-Language Generation via Dual Sequence-to-Sequence Pre-training",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Luyang Huang",
+        "Guocheng Niu",
+        "Jiachen Liu",
+        "Xinyan Xiao",
+        "Hua Wu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.09052v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\19b4c2c4-42f6-595f-8a56-13b3d241ee6d.pdf",
+    "bibtex": "@misc{huang2022duvlgunifyingvisionandlanguagegenerationvia,\n    title = {DU-VLG: Unifying Vision-and-Language Generation via Dual Sequence-to-Sequence Pre-training},\n    author = {Luyang Huang and Guocheng Niu and Jiachen Liu and Xinyan Xiao and Hua Wu},\n    year = {2022},\n    eprint = {2203.09052},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2203.09052},\n}",
+    "abstract": "Due to the limitations of the model structure and pre-training objectives,\nexisting vision-and-language generation models cannot utilize pair-wise images\nand text through bi-directional generation. In this paper, we propose DU-VLG, a\nframework which unifies vision-and-language generation as sequence generation\nproblems. DU-VLG is trained with novel dual pre-training tasks: multi-modal\ndenoising autoencoder tasks and modality translation tasks. To bridge the gap\nbetween image understanding and generation, we further design a novel\ncommitment loss. We compare pre-training objectives on image captioning and\ntext-to-image generation datasets. Results show that DU-VLG yields better\nperformance than variants trained with uni-directional generation objectives or\nthe variant without the commitment loss. We also obtain higher scores compared\nto previous state-of-the-art systems on three vision-and-language generation\ntasks. In addition, human judges further confirm that our model generates real\nand relevant images as well as faithful and informative captions.",
+    "num_pages": 15
+}

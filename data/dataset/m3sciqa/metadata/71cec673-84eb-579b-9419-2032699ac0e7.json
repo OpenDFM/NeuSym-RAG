@@ -1,0 +1,21 @@
+{
+    "uuid": "71cec673-84eb-579b-9419-2032699ac0e7",
+    "title": "Time-Aware Language Models as Temporal Knowledge Bases",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Bhuwan Dhingra",
+        "Jeremy R. Cole",
+        "Julian Martin Eisenschlos",
+        "Daniel Gillick",
+        "Jacob Eisenstein",
+        "William W. Cohen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.15110v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\71cec673-84eb-579b-9419-2032699ac0e7.pdf",
+    "bibtex": "@misc{dhingra2022timeawarelanguagemodelsastemporal,\n    title = {Time-Aware Language Models as Temporal Knowledge Bases},\n    author = {Bhuwan Dhingra and Jeremy R. Cole and Julian Martin Eisenschlos and Daniel Gillick and Jacob Eisenstein and William W. Cohen},\n    year = {2022},\n    eprint = {2106.15110},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.15110},\n}",
+    "abstract": "Many facts come with an expiration date, from the name of the President to\nthe basketball team Lebron James plays for. But language models (LMs) are\ntrained on snapshots of data collected at a specific moment in time, and this\ncan limit their utility, especially in the closed-book setting where the\npretraining corpus must contain the facts the model should memorize. We\nintroduce a diagnostic dataset aimed at probing LMs for factual knowledge that\nchanges over time and highlight problems with LMs at either end of the spectrum\n-- those trained on specific slices of temporal data, as well as those trained\non a wide range of temporal data. To mitigate these problems, we propose a\nsimple technique for jointly modeling text with its timestamp. This improves\nmemorization of seen facts from the training time period, as well as\ncalibration on predictions about unseen facts from future time periods. We also\nshow that models trained with temporal context can be efficiently \"refreshed\"\nas new data arrives, without the need for retraining from scratch.",
+    "num_pages": 16
+}

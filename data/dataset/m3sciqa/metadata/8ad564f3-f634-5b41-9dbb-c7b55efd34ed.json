@@ -1,0 +1,19 @@
+{
+    "uuid": "8ad564f3-f634-5b41-9dbb-c7b55efd34ed",
+    "title": "Multitask Instruction-based Prompting for Fallacy Recognition",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Tariq Alhindi",
+        "Tuhin Chakrabarty",
+        "Elena Musi",
+        "Smaranda Muresan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2301.09992v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\8ad564f3-f634-5b41-9dbb-c7b55efd34ed.pdf",
+    "bibtex": "@misc{alhindi2023multitaskinstructionbasedpromptingforfallacy,\n    title = {Multitask Instruction-based Prompting for Fallacy Recognition},\n    author = {Tariq Alhindi and Tuhin Chakrabarty and Elena Musi and Smaranda Muresan},\n    year = {2023},\n    eprint = {2301.09992},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2301.09992},\n}",
+    "abstract": "Fallacies are used as seemingly valid arguments to support a position and\npersuade the audience about its validity. Recognizing fallacies is an\nintrinsically difficult task both for humans and machines. Moreover, a big\nchallenge for computational models lies in the fact that fallacies are\nformulated differently across the datasets with differences in the input format\n(e.g., question-answer pair, sentence with fallacy fragment), genre (e.g.,\nsocial media, dialogue, news), as well as types and number of fallacies (from 5\nto 18 types per dataset). To move towards solving the fallacy recognition task,\nwe approach these differences across datasets as multiple tasks and show how\ninstruction-based prompting in a multitask setup based on the T5 model improves\nthe results against approaches built for a specific dataset such as T5, BERT or\nGPT-3. We show the ability of this multitask prompting approach to recognize 28\nunique fallacies across domains and genres and study the effect of model size\nand prompt choice by analyzing the per-class (i.e., fallacy type) results.\nFinally, we analyze the effect of annotation quality on model performance, and\nthe feasibility of complementing this approach with external knowledge.",
+    "num_pages": 16
+}

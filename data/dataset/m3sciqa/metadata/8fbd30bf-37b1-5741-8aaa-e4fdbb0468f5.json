@@ -1,0 +1,20 @@
+{
+    "uuid": "8fbd30bf-37b1-5741-8aaa-e4fdbb0468f5",
+    "title": "How Good is Your Tokenizer? On the Monolingual Performance of Multilingual Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Phillip Rust",
+        "Jonas Pfeiffer",
+        "Ivan Vulić",
+        "Sebastian Ruder",
+        "Iryna Gurevych"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2012.15613v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\8fbd30bf-37b1-5741-8aaa-e4fdbb0468f5.pdf",
+    "bibtex": "@misc{rust2021howgoodisyourtokenizer,\n    title = {How Good is Your Tokenizer? On the Monolingual Performance of Multilingual Language Models},\n    author = {Phillip Rust and Jonas Pfeiffer and Ivan Vulić and Sebastian Ruder and Iryna Gurevych},\n    year = {2021},\n    eprint = {2012.15613},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2012.15613},\n}",
+    "abstract": "In this work, we provide a systematic and comprehensive empirical comparison\nof pretrained multilingual language models versus their monolingual\ncounterparts with regard to their monolingual task performance. We study a set\nof nine typologically diverse languages with readily available pretrained\nmonolingual models on a set of five diverse monolingual downstream tasks. We\nfirst aim to establish, via fair and controlled comparisons, if a gap between\nthe multilingual and the corresponding monolingual representation of that\nlanguage exists, and subsequently investigate the reason for any performance\ndifference. To disentangle conflating factors, we train new monolingual models\non the same data, with monolingually and multilingually trained tokenizers. We\nfind that while the pretraining data size is an important factor, a designated\nmonolingual tokenizer plays an equally important role in the downstream\nperformance. Our results show that languages that are adequately represented in\nthe multilingual model's vocabulary exhibit negligible performance decreases\nover their monolingual counterparts. We further find that replacing the\noriginal multilingual tokenizer with the specialized monolingual tokenizer\nimproves the downstream performance of the multilingual model for almost every\ntask and language.",
+    "num_pages": 18
+}

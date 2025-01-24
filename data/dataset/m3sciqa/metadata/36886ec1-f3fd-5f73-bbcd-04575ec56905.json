@@ -1,0 +1,23 @@
+{
+    "uuid": "36886ec1-f3fd-5f73-bbcd-04575ec56905",
+    "title": "Towards Continual Knowledge Learning of Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Joel Jang",
+        "Seonghyeon Ye",
+        "Sohee Yang",
+        "Joongbo Shin",
+        "Janghoon Han",
+        "Gyeonghun Kim",
+        "Stanley Jungkyu Choi",
+        "Minjoon Seo"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.03215v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\36886ec1-f3fd-5f73-bbcd-04575ec56905.pdf",
+    "bibtex": "@misc{jang2022towardscontinualknowledgelearningof,\n    title = {Towards Continual Knowledge Learning of Language Models},\n    author = {Joel Jang and Seonghyeon Ye and Sohee Yang and Joongbo Shin and Janghoon Han and Gyeonghun Kim and Stanley Jungkyu Choi and Minjoon Seo},\n    year = {2022},\n    eprint = {2110.03215},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2110.03215},\n}",
+    "abstract": "Large Language Models (LMs) are known to encode world knowledge in their\nparameters as they pretrain on a vast amount of web corpus, which is often\nutilized for performing knowledge-dependent downstream tasks such as question\nanswering, fact-checking, and open dialogue. In real-world scenarios, the world\nknowledge stored in the LMs can quickly become outdated as the world changes,\nbut it is non-trivial to avoid catastrophic forgetting and reliably acquire new\nknowledge while preserving invariant knowledge. To push the community towards\nbetter maintenance of ever-changing LMs, we formulate a new continual learning\n(CL) problem called Continual Knowledge Learning (CKL). We construct a new\nbenchmark and metric to quantify the retention of time-invariant world\nknowledge, the update of outdated knowledge, and the acquisition of new\nknowledge. We adopt applicable recent methods from literature to create several\nstrong baselines. Through extensive experiments, we find that CKL exhibits\nunique challenges that are not addressed in previous CL setups, where parameter\nexpansion is necessary to reliably retain and learn knowledge simultaneously.\nBy highlighting the critical causes of knowledge forgetting, we show that CKL\nis a challenging and important problem that helps us better understand and\ntrain ever-changing LMs. The benchmark datasets, evaluation script, and\nbaseline code to reproduce our results are available at\nhttps://github.com/joeljang/continual-knowledge-learning.",
+    "num_pages": 27
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "b82c062d-e25e-560b-9fe8-47a56901fc74",
+    "title": "Denoising Diffusion Probabilistic Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Jonathan Ho",
+        "Ajay Jain",
+        "Pieter Abbeel"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2006.11239v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\b82c062d-e25e-560b-9fe8-47a56901fc74.pdf",
+    "bibtex": "@misc{ho2020denoisingdiffusionprobabilisticmodels,\n    title = {Denoising Diffusion Probabilistic Models},\n    author = {Jonathan Ho and Ajay Jain and Pieter Abbeel},\n    year = {2020},\n    eprint = {2006.11239},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2006.11239},\n}",
+    "abstract": "We present high quality image synthesis results using diffusion probabilistic\nmodels, a class of latent variable models inspired by considerations from\nnonequilibrium thermodynamics. Our best results are obtained by training on a\nweighted variational bound designed according to a novel connection between\ndiffusion probabilistic models and denoising score matching with Langevin\ndynamics, and our models naturally admit a progressive lossy decompression\nscheme that can be interpreted as a generalization of autoregressive decoding.\nOn the unconditional CIFAR10 dataset, we obtain an Inception score of 9.46 and\na state-of-the-art FID score of 3.17. On 256x256 LSUN, we obtain sample quality\nsimilar to ProgressiveGAN. Our implementation is available at\nhttps://github.com/hojonathanho/diffusion",
+    "num_pages": 25
+}

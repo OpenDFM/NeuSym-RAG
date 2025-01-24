@@ -1,0 +1,17 @@
+{
+    "uuid": "c76b968a-995a-5109-a4eb-f329fa710f26",
+    "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Nils Reimers",
+        "Iryna Gurevych"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1908.10084v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\c76b968a-995a-5109-a4eb-f329fa710f26.pdf",
+    "bibtex": "@misc{reimers2019sentencebertsentenceembeddingsusingsiamese,\n    title = {Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks},\n    author = {Nils Reimers and Iryna Gurevych},\n    year = {2019},\n    eprint = {1908.10084},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1908.10084},\n}",
+    "abstract": "BERT (Devlin et al., 2018) and RoBERTa (Liu et al., 2019) has set a new\nstate-of-the-art performance on sentence-pair regression tasks like semantic\ntextual similarity (STS). However, it requires that both sentences are fed into\nthe network, which causes a massive computational overhead: Finding the most\nsimilar pair in a collection of 10,000 sentences requires about 50 million\ninference computations (~65 hours) with BERT. The construction of BERT makes it\nunsuitable for semantic similarity search as well as for unsupervised tasks\nlike clustering.\n  In this publication, we present Sentence-BERT (SBERT), a modification of the\npretrained BERT network that use siamese and triplet network structures to\nderive semantically meaningful sentence embeddings that can be compared using\ncosine-similarity. This reduces the effort for finding the most similar pair\nfrom 65 hours with BERT / RoBERTa to about 5 seconds with SBERT, while\nmaintaining the accuracy from BERT.\n  We evaluate SBERT and SRoBERTa on common STS tasks and transfer learning\ntasks, where it outperforms other state-of-the-art sentence embeddings methods.",
+    "num_pages": 11
+}

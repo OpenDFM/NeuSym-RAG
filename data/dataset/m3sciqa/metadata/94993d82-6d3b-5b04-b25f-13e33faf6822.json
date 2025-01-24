@@ -1,0 +1,17 @@
+{
+    "uuid": "94993d82-6d3b-5b04-b25f-13e33faf6822",
+    "title": "Generalization without systematicity: On the compositional skills of sequence-to-sequence recurrent networks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Brenden M. Lake",
+        "Marco Baroni"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1711.00350v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\94993d82-6d3b-5b04-b25f-13e33faf6822.pdf",
+    "bibtex": "@misc{lake2018generalizationwithoutsystematicityonthe,\n    title = {Generalization without systematicity: On the compositional skills of sequence-to-sequence recurrent networks},\n    author = {Brenden M. Lake and Marco Baroni},\n    year = {2018},\n    eprint = {1711.00350},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1711.00350},\n}",
+    "abstract": "Humans can understand and produce new utterances effortlessly, thanks to\ntheir compositional skills. Once a person learns the meaning of a new verb\n\"dax,\" he or she can immediately understand the meaning of \"dax twice\" or \"sing\nand dax.\" In this paper, we introduce the SCAN domain, consisting of a set of\nsimple compositional navigation commands paired with the corresponding action\nsequences. We then test the zero-shot generalization capabilities of a variety\nof recurrent neural networks (RNNs) trained on SCAN with sequence-to-sequence\nmethods. We find that RNNs can make successful zero-shot generalizations when\nthe differences between training and test commands are small, so that they can\napply \"mix-and-match\" strategies to solve the task. However, when\ngeneralization requires systematic compositional skills (as in the \"dax\"\nexample above), RNNs fail spectacularly. We conclude with a proof-of-concept\nexperiment in neural machine translation, suggesting that lack of systematicity\nmight be partially responsible for neural networks' notorious training data\nthirst.",
+    "num_pages": 12
+}

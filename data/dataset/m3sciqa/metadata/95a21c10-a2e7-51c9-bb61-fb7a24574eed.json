@@ -1,0 +1,18 @@
+{
+    "uuid": "95a21c10-a2e7-51c9-bb61-fb7a24574eed",
+    "title": "Distribution Density, Tails, and Outliers in Machine Learning: Metrics and Applications",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Nicholas Carlini",
+        "Úlfar Erlingsson",
+        "Nicolas Papernot"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1910.13427v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\95a21c10-a2e7-51c9-bb61-fb7a24574eed.pdf",
+    "bibtex": "@misc{carlini2019distributiondensitytailsandoutliers,\n    title = {Distribution Density, Tails, and Outliers in Machine Learning: Metrics and Applications},\n    author = {Nicholas Carlini and Úlfar Erlingsson and Nicolas Papernot},\n    year = {2019},\n    eprint = {1910.13427},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1910.13427},\n}",
+    "abstract": "We develop techniques to quantify the degree to which a given (training or\ntesting) example is an outlier in the underlying distribution. We evaluate five\nmethods to score examples in a dataset by how well-represented the examples\nare, for different plausible definitions of \"well-represented\", and apply these\nto four common datasets: MNIST, Fashion-MNIST, CIFAR-10, and ImageNet. Despite\nbeing independent approaches, we find all five are highly correlated,\nsuggesting that the notion of being well-represented can be quantified. Among\nother uses, we find these methods can be combined to identify (a) prototypical\nexamples (that match human expectations); (b) memorized training examples; and,\n(c) uncommon submodes of the dataset. Further, we show how we can utilize our\nmetrics to determine an improved ordering for curriculum learning, and impact\nadversarial robustness. We release all metric values on training and test sets\nwe studied.",
+    "num_pages": 64
+}

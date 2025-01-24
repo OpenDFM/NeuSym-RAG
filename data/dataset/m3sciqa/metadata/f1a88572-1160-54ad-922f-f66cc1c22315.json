@@ -1,0 +1,23 @@
+{
+    "uuid": "f1a88572-1160-54ad-922f-f66cc1c22315",
+    "title": "DSelect-k: Differentiable Selection in the Mixture of Experts with Applications to Multi-Task Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Hussein Hazimeh",
+        "Zhe Zhao",
+        "Aakanksha Chowdhery",
+        "Maheswaran Sathiamoorthy",
+        "Yihua Chen",
+        "Rahul Mazumder",
+        "Lichan Hong",
+        "Ed H. Chi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.03760v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\f1a88572-1160-54ad-922f-f66cc1c22315.pdf",
+    "bibtex": "@misc{hazimeh2021dselectkdifferentiableselectioninthe,\n    title = {DSelect-k: Differentiable Selection in the Mixture of Experts with Applications to Multi-Task Learning},\n    author = {Hussein Hazimeh and Zhe Zhao and Aakanksha Chowdhery and Maheswaran Sathiamoorthy and Yihua Chen and Rahul Mazumder and Lichan Hong and Ed H. Chi},\n    year = {2021},\n    eprint = {2106.03760},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2106.03760},\n}",
+    "abstract": "The Mixture-of-Experts (MoE) architecture is showing promising results in\nimproving parameter sharing in multi-task learning (MTL) and in scaling\nhigh-capacity neural networks. State-of-the-art MoE models use a trainable\nsparse gate to select a subset of the experts for each input example. While\nconceptually appealing, existing sparse gates, such as Top-k, are not smooth.\nThe lack of smoothness can lead to convergence and statistical performance\nissues when training with gradient-based methods. In this paper, we develop\nDSelect-k: a continuously differentiable and sparse gate for MoE, based on a\nnovel binary encoding formulation. The gate can be trained using first-order\nmethods, such as stochastic gradient descent, and offers explicit control over\nthe number of experts to select. We demonstrate the effectiveness of DSelect-k\non both synthetic and real MTL datasets with up to $128$ tasks. Our experiments\nindicate that DSelect-k can achieve statistically significant improvements in\nprediction and expert selection over popular MoE gates. Notably, on a\nreal-world, large-scale recommender system, DSelect-k achieves over $22\\%$\nimprovement in predictive performance compared to Top-k. We provide an\nopen-source implementation of DSelect-k.",
+    "num_pages": 21
+}

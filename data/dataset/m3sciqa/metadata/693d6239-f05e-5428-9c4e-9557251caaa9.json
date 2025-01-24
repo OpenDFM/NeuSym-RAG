@@ -1,0 +1,19 @@
+{
+    "uuid": "693d6239-f05e-5428-9c4e-9557251caaa9",
+    "title": "Controlled Text Generation as Continuous Optimization with Multiple Constraints",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Sachin Kumar",
+        "Eric Malmi",
+        "Aliaksei Severyn",
+        "Yulia Tsvetkov"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2108.01850v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\693d6239-f05e-5428-9c4e-9557251caaa9.pdf",
+    "bibtex": "@misc{kumar2021controlledtextgenerationascontinuous,\n    title = {Controlled Text Generation as Continuous Optimization with Multiple Constraints},\n    author = {Sachin Kumar and Eric Malmi and Aliaksei Severyn and Yulia Tsvetkov},\n    year = {2021},\n    eprint = {2108.01850},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2108.01850},\n}",
+    "abstract": "As large-scale language model pretraining pushes the state-of-the-art in text\ngeneration, recent work has turned to controlling attributes of the text such\nmodels generate. While modifying the pretrained models via fine-tuning remains\nthe popular approach, it incurs a significant computational cost and can be\ninfeasible due to lack of appropriate data. As an alternative, we propose\nMuCoCO -- a flexible and modular algorithm for controllable inference from\npretrained models. We formulate the decoding process as an optimization problem\nwhich allows for multiple attributes we aim to control to be easily\nincorporated as differentiable constraints to the optimization. By relaxing\nthis discrete optimization to a continuous one, we make use of Lagrangian\nmultipliers and gradient-descent based techniques to generate the desired text.\nWe evaluate our approach on controllable machine translation and style transfer\nwith multiple sentence-level attributes and observe significant improvements\nover baselines.",
+    "num_pages": 20
+}

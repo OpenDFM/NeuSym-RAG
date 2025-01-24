@@ -1,0 +1,19 @@
+{
+    "uuid": "c8cecaee-7c7e-5739-85b7-f0bafd7fbf99",
+    "title": "Sequence to General Tree: Knowledge-Guided Geometry Word Problem Solving",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Shih-hung Tsai",
+        "Chao-Chun Liang",
+        "Hsin-Min Wang",
+        "Keh-Yih Su"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.00990v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\c8cecaee-7c7e-5739-85b7-f0bafd7fbf99.pdf",
+    "bibtex": "@misc{tsai2021sequencetogeneraltreeknowledgeguided,\n    title = {Sequence to General Tree: Knowledge-Guided Geometry Word Problem Solving},\n    author = {Shih-hung Tsai and Chao-Chun Liang and Hsin-Min Wang and Keh-Yih Su},\n    year = {2021},\n    eprint = {2106.00990},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/2106.00990},\n}",
+    "abstract": "With the recent advancements in deep learning, neural solvers have gained\npromising results in solving math word problems. However, these SOTA solvers\nonly generate binary expression trees that contain basic arithmetic operators\nand do not explicitly use the math formulas. As a result, the expression trees\nthey produce are lengthy and uninterpretable because they need to use multiple\noperators and constants to represent one single formula. In this paper, we\npropose sequence-to-general tree (S2G) that learns to generate interpretable\nand executable operation trees where the nodes can be formulas with an\narbitrary number of arguments. With nodes now allowed to be formulas, S2G can\nlearn to incorporate mathematical domain knowledge into problem-solving, making\nthe results more interpretable. Experiments show that S2G can achieve a better\nperformance against strong baselines on problems that require domain knowledge.",
+    "num_pages": 9
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "79c6d4f0-99c6-5051-bc74-19bc136089f4",
+    "title": "Bridging Textual and Tabular Data for Cross-Domain Text-to-SQL Semantic Parsing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Xi Victoria Lin",
+        "Richard Socher",
+        "Caiming Xiong"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2012.12627v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\79c6d4f0-99c6-5051-bc74-19bc136089f4.pdf",
+    "bibtex": "@misc{lin2020bridgingtextualandtabulardata,\n    title = {Bridging Textual and Tabular Data for Cross-Domain Text-to-SQL Semantic Parsing},\n    author = {Xi Victoria Lin and Richard Socher and Caiming Xiong},\n    year = {2020},\n    eprint = {2012.12627},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2012.12627},\n}",
+    "abstract": "We present BRIDGE, a powerful sequential architecture for modeling\ndependencies between natural language questions and relational databases in\ncross-DB semantic parsing. BRIDGE represents the question and DB schema in a\ntagged sequence where a subset of the fields are augmented with cell values\nmentioned in the question. The hybrid sequence is encoded by BERT with minimal\nsubsequent layers and the text-DB contextualization is realized via the\nfine-tuned deep attention in BERT. Combined with a pointer-generator decoder\nwith schema-consistency driven search space pruning, BRIDGE attained\nstate-of-the-art performance on popular cross-DB text-to-SQL benchmarks, Spider\n(71.1\\% dev, 67.5\\% test with ensemble model) and WikiSQL (92.6\\% dev, 91.9\\%\ntest). Our analysis shows that BRIDGE effectively captures the desired\ncross-modal dependencies and has the potential to generalize to more text-DB\nrelated tasks. Our implementation is available at\n\\url{https://github.com/salesforce/TabularSemanticParsing}.",
+    "num_pages": 23
+}

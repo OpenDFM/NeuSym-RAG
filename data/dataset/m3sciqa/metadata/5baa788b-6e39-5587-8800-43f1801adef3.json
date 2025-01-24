@@ -1,0 +1,23 @@
+{
+    "uuid": "5baa788b-6e39-5587-8800-43f1801adef3",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Hongming Zhang",
+        "Jiaxin Bai",
+        "Yan Song",
+        "Kun Xu",
+        "Changlong Yu",
+        "Yangqiu Song",
+        "Wilfred Ng",
+        "Dong Yu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2001.02836v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\5baa788b-6e39-5587-8800-43f1801adef3.pdf",
+    "bibtex": "@misc{zhang2020multiplexwordembeddingsforselectional,\n    title = {Multiplex Word Embeddings for Selectional Preference Acquisition},\n    author = {Hongming Zhang and Jiaxin Bai and Yan Song and Kun Xu and Changlong Yu and Yangqiu Song and Wilfred Ng and Dong Yu},\n    year = {2020},\n    eprint = {2001.02836},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2001.02836},\n}",
+    "abstract": "Conventional word embeddings represent words with fixed vectors, which are\nusually trained based on co-occurrence patterns among words. In doing so,\nhowever, the power of such representations is limited, where the same word\nmight be functionalized separately under different syntactic relations. To\naddress this limitation, one solution is to incorporate relational dependencies\nof different words into their embeddings. Therefore, in this paper, we propose\na multiplex word embedding model, which can be easily extended according to\nvarious relations among words. As a result, each word has a center embedding to\nrepresent its overall semantics, and several relational embeddings to represent\nits relational dependencies. Compared to existing models, our model can\neffectively distinguish words with respect to different relations without\nintroducing unnecessary sparseness. Moreover, to accommodate various relations,\nwe use a small dimension for relational embeddings and our model is able to\nkeep their effectiveness. Experiments on selectional preference acquisition and\nword similarity demonstrate the effectiveness of the proposed model, and a\nfurther study of scalability also proves that our embeddings only need 1/20 of\nthe original embedding size to achieve better performance.",
+    "num_pages": 10
+}

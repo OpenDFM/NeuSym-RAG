@@ -1,0 +1,21 @@
+{
+    "uuid": "332d0f2a-9d5a-54b3-8d5e-e24081633c0e",
+    "title": "ZeroQ: A Novel Zero Shot Quantization Framework",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Yaohui Cai",
+        "Zhewei Yao",
+        "Zhen Dong",
+        "Amir Gholami",
+        "Michael W. Mahoney",
+        "Kurt Keutzer"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2001.00281v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\332d0f2a-9d5a-54b3-8d5e-e24081633c0e.pdf",
+    "bibtex": "@misc{cai2020zeroqanovelzeroshot,\n    title = {ZeroQ: A Novel Zero Shot Quantization Framework},\n    author = {Yaohui Cai and Zhewei Yao and Zhen Dong and Amir Gholami and Michael W. Mahoney and Kurt Keutzer},\n    year = {2020},\n    eprint = {2001.00281},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2001.00281},\n}",
+    "abstract": "Quantization is a promising approach for reducing the inference time and\nmemory footprint of neural networks. However, most existing quantization\nmethods require access to the original training dataset for retraining during\nquantization. This is often not possible for applications with sensitive or\nproprietary data, e.g., due to privacy and security concerns. Existing\nzero-shot quantization methods use different heuristics to address this, but\nthey result in poor performance, especially when quantizing to ultra-low\nprecision. Here, we propose ZeroQ , a novel zero-shot quantization framework to\naddress this. ZeroQ enables mixed-precision quantization without any access to\nthe training or validation data. This is achieved by optimizing for a Distilled\nDataset, which is engineered to match the statistics of batch normalization\nacross different layers of the network. ZeroQ supports both uniform and\nmixed-precision quantization. For the latter, we introduce a novel Pareto\nfrontier based method to automatically determine the mixed-precision bit\nsetting for all layers, with no manual search involved. We extensively test our\nproposed method on a diverse set of models, including ResNet18/50/152,\nMobileNetV2, ShuffleNet, SqueezeNext, and InceptionV3 on ImageNet, as well as\nRetinaNet-ResNet50 on the Microsoft COCO dataset. In particular, we show that\nZeroQ can achieve 1.71\\% higher accuracy on MobileNetV2, as compared to the\nrecently proposed DFQ method. Importantly, ZeroQ has a very low computational\noverhead, and it can finish the entire quantization process in less than 30s\n(0.5\\% of one epoch training time of ResNet50 on ImageNet). We have\nopen-sourced the ZeroQ\nframework\\footnote{https://github.com/amirgholami/ZeroQ}.",
+    "num_pages": 12
+}

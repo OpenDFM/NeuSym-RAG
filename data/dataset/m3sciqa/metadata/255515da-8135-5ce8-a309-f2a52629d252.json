@@ -1,0 +1,20 @@
+{
+    "uuid": "255515da-8135-5ce8-a309-f2a52629d252",
+    "title": "OPAL: Offline Primitive Discovery for Accelerating Offline Reinforcement Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Anurag Ajay",
+        "Aviral Kumar",
+        "Pulkit Agrawal",
+        "Sergey Levine",
+        "Ofir Nachum"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.13611v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\255515da-8135-5ce8-a309-f2a52629d252.pdf",
+    "bibtex": "@misc{ajay2021opalofflineprimitivediscoveryfor,\n    title = {OPAL: Offline Primitive Discovery for Accelerating Offline Reinforcement Learning},\n    author = {Anurag Ajay and Aviral Kumar and Pulkit Agrawal and Sergey Levine and Ofir Nachum},\n    year = {2021},\n    eprint = {2010.13611},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2010.13611},\n}",
+    "abstract": "Reinforcement learning (RL) has achieved impressive performance in a variety\nof online settings in which an agent's ability to query the environment for\ntransitions and rewards is effectively unlimited. However, in many practical\napplications, the situation is reversed: an agent may have access to large\namounts of undirected offline experience data, while access to the online\nenvironment is severely limited. In this work, we focus on this offline\nsetting. Our main insight is that, when presented with offline data composed of\na variety of behaviors, an effective way to leverage this data is to extract a\ncontinuous space of recurring and temporally extended primitive behaviors\nbefore using these primitives for downstream task learning. Primitives\nextracted in this way serve two purposes: they delineate the behaviors that are\nsupported by the data from those that are not, making them useful for avoiding\ndistributional shift in offline RL; and they provide a degree of temporal\nabstraction, which reduces the effective horizon yielding better learning in\ntheory, and improved offline RL in practice. In addition to benefiting offline\npolicy optimization, we show that performing offline primitive learning in this\nway can also be leveraged for improving few-shot imitation learning as well as\nexploration and transfer in online RL on a variety of benchmark domains.\nVisualizations are available at https://sites.google.com/view/opal-iclr",
+    "num_pages": 23
+}

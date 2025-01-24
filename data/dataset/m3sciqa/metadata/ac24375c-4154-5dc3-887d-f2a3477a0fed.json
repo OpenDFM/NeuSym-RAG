@@ -1,0 +1,19 @@
+{
+    "uuid": "ac24375c-4154-5dc3-887d-f2a3477a0fed",
+    "title": "Sequence Level Training with Recurrent Neural Networks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2016,
+    "authors": [
+        "Marc'Aurelio Ranzato",
+        "Sumit Chopra",
+        "Michael Auli",
+        "Wojciech Zaremba"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1511.06732v7",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2016\\ac24375c-4154-5dc3-887d-f2a3477a0fed.pdf",
+    "bibtex": "@misc{ranzato2016sequenceleveltrainingwithrecurrent,\n    title = {Sequence Level Training with Recurrent Neural Networks},\n    author = {Marc'Aurelio Ranzato and Sumit Chopra and Michael Auli and Wojciech Zaremba},\n    year = {2016},\n    eprint = {1511.06732},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1511.06732},\n}",
+    "abstract": "Many natural language processing applications use language models to generate\ntext. These models are typically trained to predict the next word in a\nsequence, given the previous words and some context such as an image. However,\nat test time the model is expected to generate the entire sequence from\nscratch. This discrepancy makes generation brittle, as errors may accumulate\nalong the way. We address this issue by proposing a novel sequence level\ntraining algorithm that directly optimizes the metric used at test time, such\nas BLEU or ROUGE. On three different tasks, our approach outperforms several\nstrong baselines for greedy generation. The method is also competitive when\nthese baselines employ beam search, while being several times faster.",
+    "num_pages": 16
+}

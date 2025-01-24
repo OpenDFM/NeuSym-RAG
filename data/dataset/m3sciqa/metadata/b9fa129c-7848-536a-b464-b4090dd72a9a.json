@@ -1,0 +1,20 @@
+{
+    "uuid": "b9fa129c-7848-536a-b464-b4090dd72a9a",
+    "title": "PTQ4ViT: Post-training quantization for vision transformers with twin uniform quantization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Zhihang Yuan",
+        "Chenhao Xue",
+        "Yiqi Chen",
+        "Qiang Wu",
+        "Guangyu Sun"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2111.12293v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\b9fa129c-7848-536a-b464-b4090dd72a9a.pdf",
+    "bibtex": "@misc{yuan2024ptq4vitposttrainingquantizationforvision,\n    title = {PTQ4ViT: Post-training quantization for vision transformers with twin uniform quantization},\n    author = {Zhihang Yuan and Chenhao Xue and Yiqi Chen and Qiang Wu and Guangyu Sun},\n    year = {2024},\n    eprint = {2111.12293},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2111.12293},\n}",
+    "abstract": "Quantization is one of the most effective methods to compress neural\nnetworks, which has achieved great success on convolutional neural networks\n(CNNs). Recently, vision transformers have demonstrated great potential in\ncomputer vision. However, previous post-training quantization methods performed\nnot well on vision transformer, resulting in more than 1% accuracy drop even in\n8-bit quantization. Therefore, we analyze the problems of quantization on\nvision transformers. We observe the distributions of activation values after\nsoftmax and GELU functions are quite different from the Gaussian distribution.\nWe also observe that common quantization metrics, such as MSE and cosine\ndistance, are inaccurate to determine the optimal scaling factor. In this\npaper, we propose the twin uniform quantization method to reduce the\nquantization error on these activation values. And we propose to use a Hessian\nguided metric to evaluate different scaling factors, which improves the\naccuracy of calibration at a small cost. To enable the fast quantization of\nvision transformers, we develop an efficient framework, PTQ4ViT. Experiments\nshow the quantized vision transformers achieve near-lossless prediction\naccuracy (less than 0.5% drop at 8-bit quantization) on the ImageNet\nclassification task.",
+    "num_pages": 20
+}

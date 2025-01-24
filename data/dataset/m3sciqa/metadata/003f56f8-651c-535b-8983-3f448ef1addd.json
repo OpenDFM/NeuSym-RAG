@@ -1,0 +1,22 @@
+{
+    "uuid": "003f56f8-651c-535b-8983-3f448ef1addd",
+    "title": "Hierarchical Curriculum Learning for AMR Parsing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Peiyi Wang",
+        "Liang Chen",
+        "Tianyu Liu",
+        "Damai Dai",
+        "Yunbo Cao",
+        "Baobao Chang",
+        "Zhifang Sui"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.07855v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\003f56f8-651c-535b-8983-3f448ef1addd.pdf",
+    "bibtex": "@misc{wang2022hierarchicalcurriculumlearningforamr,\n    title = {Hierarchical Curriculum Learning for AMR Parsing},\n    author = {Peiyi Wang and Liang Chen and Tianyu Liu and Damai Dai and Yunbo Cao and Baobao Chang and Zhifang Sui},\n    year = {2022},\n    eprint = {2110.07855},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2110.07855},\n}",
+    "abstract": "Abstract Meaning Representation (AMR) parsing aims to translate sentences to\nsemantic representation with a hierarchical structure, and is recently\nempowered by pretrained sequence-to-sequence models. However, there exists a\ngap between their flat training objective (i.e., equally treats all output\ntokens) and the hierarchical AMR structure, which limits the model\ngeneralization. To bridge this gap, we propose a Hierarchical Curriculum\nLearning (HCL) framework with Structure-level (SC) and Instance-level Curricula\n(IC). SC switches progressively from core to detail AMR semantic elements while\nIC transits from structure-simple to -complex AMR instances during training.\nThrough these two warming-up processes, HCL reduces the difficulty of learning\ncomplex structures, thus the flat model can better adapt to the AMR hierarchy.\nExtensive experiments on AMR2.0, AMR3.0, structure-complex and\nout-of-distribution situations verify the effectiveness of HCL.",
+    "num_pages": 7
+}

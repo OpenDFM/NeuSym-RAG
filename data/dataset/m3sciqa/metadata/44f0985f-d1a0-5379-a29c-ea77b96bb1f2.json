@@ -1,0 +1,21 @@
+{
+    "uuid": "44f0985f-d1a0-5379-a29c-ea77b96bb1f2",
+    "title": "A Distributional Lens for Multi-Aspect Controllable Text Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yuxuan Gu",
+        "Xiaocheng Feng",
+        "Sicheng Ma",
+        "Lingyuan Zhang",
+        "Heng Gong",
+        "Bing Qin"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.02889v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\44f0985f-d1a0-5379-a29c-ea77b96bb1f2.pdf",
+    "bibtex": "@misc{gu2022adistributionallensformultiaspect,\n    title = {A Distributional Lens for Multi-Aspect Controllable Text Generation},\n    author = {Yuxuan Gu and Xiaocheng Feng and Sicheng Ma and Lingyuan Zhang and Heng Gong and Bing Qin},\n    year = {2022},\n    eprint = {2210.02889},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.02889},\n}",
+    "abstract": "Multi-aspect controllable text generation is a more challenging and practical\ntask than single-aspect control. Existing methods achieve complex multi-aspect\ncontrol by fusing multiple controllers learned from single-aspect, but suffer\nfrom attribute degeneration caused by the mutual interference of these\ncontrollers. To address this, we provide observations on attribute fusion from\na distributional perspective and propose to directly search for the\nintersection areas of multiple attribute distributions as their combination for\ngeneration. Our method first estimates the attribute space with an autoencoder\nstructure. Afterward, we iteratively approach the intersections by jointly\nminimizing distances to points representing different attributes. Finally, we\nmap them to attribute-relevant sentences with a prefix-tuning-based decoder.\nExperiments on the three-aspect control task, including sentiment, topic, and\ndetoxification aspects, reveal that our method outperforms several strong\nbaselines on attribute relevance and text quality and achieves the SOTA.\nFurther analysis also supplies some explanatory support for the effectiveness\nof our approach.",
+    "num_pages": 21
+}

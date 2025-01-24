@@ -1,0 +1,20 @@
+{
+    "uuid": "6fb179b5-af16-5d8e-9b7f-531002a754ef",
+    "title": "Semantic Compression With Large Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Henry Gilbert",
+        "Michael Sandborn",
+        "Douglas C. Schmidt",
+        "Jesse Spencer-Smith",
+        "Jules White"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.12512v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\6fb179b5-af16-5d8e-9b7f-531002a754ef.pdf",
+    "bibtex": "@misc{gilbert2023semanticcompressionwithlargelanguage,\n    title = {Semantic Compression With Large Language Models},\n    author = {Henry Gilbert and Michael Sandborn and Douglas C. Schmidt and Jesse Spencer-Smith and Jules White},\n    year = {2023},\n    eprint = {2304.12512},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/2304.12512},\n}",
+    "abstract": "The rise of large language models (LLMs) is revolutionizing information\nretrieval, question answering, summarization, and code generation tasks.\nHowever, in addition to confidently presenting factually inaccurate information\nat times (known as \"hallucinations\"), LLMs are also inherently limited by the\nnumber of input and output tokens that can be processed at once, making them\npotentially less effective on tasks that require processing a large set or\ncontinuous stream of information. A common approach to reducing the size of\ndata is through lossless or lossy compression. Yet, in some cases it may not be\nstrictly necessary to perfectly recover every detail from the original data, as\nlong as a requisite level of semantic precision or intent is conveyed.\n  This paper presents three contributions to research on LLMs. First, we\npresent the results from experiments exploring the viability of approximate\ncompression using LLMs, focusing specifically on GPT-3.5 and GPT-4 via ChatGPT\ninterfaces. Second, we investigate and quantify the capability of LLMs to\ncompress text and code, as well as to recall and manipulate compressed\nrepresentations of prompts. Third, we present two novel metrics -- Exact\nReconstructive Effectiveness (ERE) and Semantic Reconstruction Effectiveness\n(SRE) -- that quantify the level of preserved intent between text compressed\nand decompressed by the LLMs we studied. Our initial results indicate that\nGPT-4 can effectively compress and reconstruct text while preserving the\nsemantic essence of the original text, providing a path to leverage\n$\\sim$5$\\times$ more tokens than present limits allow.",
+    "num_pages": 20
+}

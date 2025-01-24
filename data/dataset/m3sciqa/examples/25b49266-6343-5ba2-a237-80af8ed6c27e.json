@@ -1,0 +1,57 @@
+{
+    "uuid": "25b49266-6343-5ba2-a237-80af8ed6c27e",
+    "question": "Consider the paper that introduces the model that has the highest accuracy in the COGS-all dataset. What specific architectural change was made to the Transformer's layer normalization in the model proposed in the paper compared to its originally proposed form?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "image",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "6b729c10-15e8-5eaa-8b40-8c8eafbd3ddb"
+    ],
+    "reference_pdf": [
+        "eb603d6c-2a60-504d-93ed-aef55ff4655b",
+        "e1e2bf66-bde7-58c0-98f6-6414d50c1311",
+        "34417770-67d7-5cab-b9d4-76999c97bc02",
+        "776bb6da-c5c2-5c73-b8ac-f038fc55bb6a",
+        "9c9e036b-576a-5a70-923f-4d33da527760",
+        "1cbc9c7a-e562-5d6a-af83-4f9a1520dce2",
+        "ce99c350-ea64-53eb-b705-c33884619d64",
+        "53504791-99de-5143-a351-a080bdcc3bc8",
+        "1d0cd268-ff7e-55d2-8ee5-178092342836",
+        "a72dd3f5-dbd5-5512-a45a-9d31b8c6964b",
+        "696b4e72-71ad-5357-b60a-7cd5121619dc",
+        "a4c0cf83-a1d0-57b1-84d9-9b7d365f5ad9",
+        "9775a2f4-5880-5569-8cff-46fce5420bf0",
+        "09cd70b8-67ab-548a-ba13-90ea11ba2e24",
+        "2eaf2338-0cce-5f50-8917-338a927b7e1a",
+        "e45897f5-4429-5750-a8fb-dcfa9a904b5f",
+        "42fd3669-c60f-5d28-b51d-4523bebf0734",
+        "24c55b93-968f-5a40-8520-acfd6229bde6",
+        "ea02c473-42cb-5fbe-9287-aea0fa4a842e",
+        "e5036d4f-b1eb-5a28-b5e0-4887f14183d2",
+        "837e7fdc-f434-546f-9a83-81afc1529b90",
+        "ff84e2fe-51c3-5208-8002-402a7d477b19",
+        "94993d82-6d3b-5b04-b25f-13e33faf6822",
+        "4fe1db4a-687c-55c3-b8c1-3c6ca2a8b302",
+        "0ce323c7-bde8-560b-98c9-6c2c9b5cdf08",
+        "47cbfa6b-6a2f-521e-a7e2-19a3c3460b47",
+        "42fd3669-c60f-5d28-b51d-4523bebf0734"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the model that has the highest accuracy in the COGS-all dataset. What specific architectural change was made to the Transformer's layer normalization in the model proposed in the paper compared to its originally proposed form?",
+            "reference_answer": "a simplified version of layer normalization where the activations are only rescaled and no additive bias is applied."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.15040/accuracy_figure.png"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "02cd2589-363c-520c-9f1b-f06d6809acc4",
+    "title": "Parameter-efficient Multi-task Fine-tuning for Transformers via Shared Hypernetworks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Rabeeh Karimi Mahabadi",
+        "Sebastian Ruder",
+        "Mostafa Dehghani",
+        "James Henderson"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.04489v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\02cd2589-363c-520c-9f1b-f06d6809acc4.pdf",
+    "bibtex": "@misc{mahabadi2021parameterefficientmultitaskfinetuningfortransformers,\n    title = {Parameter-efficient Multi-task Fine-tuning for Transformers via Shared Hypernetworks},\n    author = {Rabeeh Karimi Mahabadi and Sebastian Ruder and Mostafa Dehghani and James Henderson},\n    year = {2021},\n    eprint = {2106.04489},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.04489},\n}",
+    "abstract": "State-of-the-art parameter-efficient fine-tuning methods rely on introducing\nadapter modules between the layers of a pretrained language model. However,\nsuch modules are trained separately for each task and thus do not enable\nsharing information across tasks. In this paper, we show that we can learn\nadapter parameters for all layers and tasks by generating them using shared\nhypernetworks, which condition on task, adapter position, and layer id in a\ntransformer model. This parameter-efficient multi-task learning framework\nallows us to achieve the best of both worlds by sharing knowledge across tasks\nvia hypernetworks while enabling the model to adapt to each individual task\nthrough task-specific adapters. Experiments on the well-known GLUE benchmark\nshow improved performance in multi-task learning while adding only 0.29%\nparameters per task. We additionally demonstrate substantial performance\nimprovements in few-shot domain generalization across a variety of tasks. Our\ncode is publicly available in https://github.com/rabeehk/hyperformer.",
+    "num_pages": 12
+}

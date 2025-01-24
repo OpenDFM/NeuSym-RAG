@@ -1,0 +1,17 @@
+{
+    "uuid": "295776b5-bd82-5def-96e7-ee7bb8cc6b99",
+    "title": "Improved Natural Language Generation via Loss Truncation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Daniel Kang",
+        "Tatsunori Hashimoto"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.14589v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\295776b5-bd82-5def-96e7-ee7bb8cc6b99.pdf",
+    "bibtex": "@misc{kang2020improvednaturallanguagegenerationvia,\n    title = {Improved Natural Language Generation via Loss Truncation},\n    author = {Daniel Kang and Tatsunori Hashimoto},\n    year = {2020},\n    eprint = {2004.14589},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2004.14589},\n}",
+    "abstract": "Neural language models are usually trained to match the distributional\nproperties of a large-scale corpus by minimizing the log loss. While\nstraightforward to optimize, this approach forces the model to reproduce all\nvariations in the dataset, including noisy and invalid references (e.g.,\nmisannotation and hallucinated facts). Worse, the commonly used log loss is\noverly sensitive to such phenomena and even a small fraction of noisy data can\ndegrade performance. In this work, we show that the distinguishability of the\nmodels and reference serves as a principled and robust alternative for handling\ninvalid references. To optimize distinguishability, we propose loss truncation,\nwhich adaptively removes high loss examples during training. We show this is as\neasy to optimize as log loss and tightly bounds distinguishability under noise.\nEmpirically, we demonstrate that loss truncation outperforms existing baselines\non distinguishability on a summarization task, and show that samples generated\nby the loss truncation model have factual accuracy ratings that exceed those of\nbaselines and match human references.",
+    "num_pages": 14
+}

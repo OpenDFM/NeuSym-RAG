@@ -1,0 +1,18 @@
+{
+    "uuid": "2e150e31-dca0-581d-97e1-f74e4efd24fb",
+    "title": "Distilling Reasoning Capabilities into Smaller Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Kumar Shridhar",
+        "Alessandro Stolfo",
+        "Mrinmaya Sachan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2212.00193v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\2e150e31-dca0-581d-97e1-f74e4efd24fb.pdf",
+    "bibtex": "@misc{shridhar2023distillingreasoningcapabilitiesintosmaller,\n    title = {Distilling Reasoning Capabilities into Smaller Language Models},\n    author = {Kumar Shridhar and Alessandro Stolfo and Mrinmaya Sachan},\n    year = {2023},\n    eprint = {2212.00193},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2212.00193},\n}",
+    "abstract": "Step-by-step reasoning approaches like chain of thought (CoT) have proved to\nbe very effective in inducing reasoning capabilities in large language models.\nHowever, the success of the CoT approach is fundamentally tied to the model\nsize, and billion parameter-scale models are often needed to get CoT to work.\nIn this paper, we propose a knowledge distillation approach that leverages the\nstep-by-step CoT reasoning capabilities of larger models and distills these\nabilities into smaller models.\n  In this work, we propose an alternative reasoning scheme, Socratic CoT, that\nlearns a decomposition of the original problem into a sequence of subproblems\nand uses it to guide the intermediate reasoning steps. We use Socratic CoT to\ntrain a combination of two small distilled models: a problem decomposer and a\nsubproblem solver. In practice, given a new problem, the two distilled models\nwork in sync to decompose and solve complex problems. On multiple reasoning\ndatasets (GSM8K, StrategyQA, and SVAMP), our proposed distillation strategies\nboosts the performance of smaller models over 70% compared to the baselines.\nFinally, we investigate when Socratic CoT is an effective alternative to CoT,\ndemonstrating cases where a much smaller model (GPT-2 large) can outperform a\n10X larger model (GPT-3 6B). Our code is available here:\nhttps://github.com/kumar-shridhar/Distiiling-LM",
+    "num_pages": 13
+}

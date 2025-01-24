@@ -1,0 +1,22 @@
+{
+    "uuid": "24589e0c-b589-5704-813b-5ddcc80ce624",
+    "title": "Tailor: A Prompt-Based Approach to Attribute-Based Controlled Text Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Kexin Yang",
+        "Dayiheng Liu",
+        "Wenqiang Lei",
+        "Baosong Yang",
+        "Mingfeng Xue",
+        "Boxing Chen",
+        "Jun Xie"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.13362v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\24589e0c-b589-5704-813b-5ddcc80ce624.pdf",
+    "bibtex": "@misc{yang2022tailorapromptbasedapproachto,\n    title = {Tailor: A Prompt-Based Approach to Attribute-Based Controlled Text Generation},\n    author = {Kexin Yang and Dayiheng Liu and Wenqiang Lei and Baosong Yang and Mingfeng Xue and Boxing Chen and Jun Xie},\n    year = {2022},\n    eprint = {2204.13362},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.13362},\n}",
+    "abstract": "Attribute-based Controlled Text Generation (CTG) refers to generating\nsentences that satisfy desirable attributes (e.g., emotions and topics).\nExisting works often utilize fine-tuning or resort to extra attribute\nclassifiers, yet suffer from storage and inference time increases. To address\nthese concerns, we explore attribute-based CTG in a prompt-based manner. In\nshort, the proposed Tailor represents each attribute as a pre-trained\ncontinuous vector (i.e., single-attribute prompt) and guides the generation of\na fixed PLM switch to a pre-specified attribute. We experimentally find that\nthese prompts can be simply concatenated as a whole to multi-attribute CTG\nwithout any re-training, yet raises problems of fluency decrease and position\nsensitivity. To this end, Tailor provides a multi-attribute prompt mask and a\nre-indexing position-ids sequence to bridge the gap between the training (one\nprompt for each task) and testing stage (concatenating more than one prompt).\nTo further enhance such single-attribute prompt combinations, Tailor also\nintroduces a trainable prompt connector, which can be concatenated with any two\nsingle-attribute prompts to multi-attribute text generation. Experiments on 11\nattribute-specific generation tasks demonstrate strong performances of Tailor\non both single-attribute and multi-attribute CTG, with 0.08\\% training\nparameters of a GPT-2.",
+    "num_pages": 12
+}

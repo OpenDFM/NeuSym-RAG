@@ -1,0 +1,21 @@
+{
+    "uuid": "2ee0ee87-1989-50b9-b896-742ee506c1cc",
+    "title": "RRHF: Rank Responses to Align Language Models with Human Feedback without tears",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Zheng Yuan",
+        "Hongyi Yuan",
+        "Chuanqi Tan",
+        "Wei Wang",
+        "Songfang Huang",
+        "Fei Huang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.05302v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\2ee0ee87-1989-50b9-b896-742ee506c1cc.pdf",
+    "bibtex": "@misc{yuan2023rrhfrankresponsestoalign,\n    title = {RRHF: Rank Responses to Align Language Models with Human Feedback without tears},\n    author = {Zheng Yuan and Hongyi Yuan and Chuanqi Tan and Wei Wang and Songfang Huang and Fei Huang},\n    year = {2023},\n    eprint = {2304.05302},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2304.05302},\n}",
+    "abstract": "Reinforcement Learning from Human Feedback (RLHF) facilitates the alignment\nof large language models with human preferences, significantly enhancing the\nquality of interactions between humans and models. InstructGPT implements RLHF\nthrough several stages, including Supervised Fine-Tuning (SFT), reward model\ntraining, and Proximal Policy Optimization (PPO). However, PPO is sensitive to\nhyperparameters and requires multiple models in its standard implementation,\nmaking it hard to train and scale up to larger parameter counts. In contrast,\nwe propose a novel learning paradigm called RRHF, which scores sampled\nresponses from different sources via a logarithm of conditional probabilities\nand learns to align these probabilities with human preferences through ranking\nloss. RRHF can leverage sampled responses from various sources including the\nmodel responses from itself, other large language model responses, and human\nexpert responses to learn to rank them. RRHF only needs 1 to 2 models during\ntuning and can efficiently align language models with human preferences\nrobustly without complex hyperparameter tuning. Additionally, RRHF can be\nconsidered an extension of SFT and reward model training while being simpler\nthan PPO in terms of coding, model counts, and hyperparameters. We evaluate\nRRHF on the Helpful and Harmless dataset, demonstrating comparable alignment\nperformance with PPO by reward model score and human labeling. Extensive\nexperiments show that the performance of RRHF is highly related to sampling\nquality which suggests RRHF is a best-of-n learner. Codes available at\nhttps://github.com/GanjinZero/RRHF.",
+    "num_pages": 16
+}

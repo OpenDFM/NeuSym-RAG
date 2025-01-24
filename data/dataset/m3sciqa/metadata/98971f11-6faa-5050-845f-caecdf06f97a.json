@@ -1,0 +1,19 @@
+{
+    "uuid": "98971f11-6faa-5050-845f-caecdf06f97a",
+    "title": "MegaBlocks: Efficient Sparse Training with Mixture-of-Experts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Trevor Gale",
+        "Deepak Narayanan",
+        "Cliff Young",
+        "Matei Zaharia"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2211.15841v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\98971f11-6faa-5050-845f-caecdf06f97a.pdf",
+    "bibtex": "@misc{gale2022megablocksefficientsparsetrainingwith,\n    title = {MegaBlocks: Efficient Sparse Training with Mixture-of-Experts},\n    author = {Trevor Gale and Deepak Narayanan and Cliff Young and Matei Zaharia},\n    year = {2022},\n    eprint = {2211.15841},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2211.15841},\n}",
+    "abstract": "We present MegaBlocks, a system for efficient Mixture-of-Experts (MoE)\ntraining on GPUs. Our system is motivated by the limitations of current\nframeworks, which restrict the dynamic routing in MoE layers to satisfy the\nconstraints of existing software and hardware. These formulations force a\ntradeoff between model quality and hardware efficiency, as users must choose\nbetween dropping tokens from the computation or wasting computation and memory\non padding. To address these limitations, we reformulate MoE computation in\nterms of block-sparse operations and develop new block-sparse GPU kernels that\nefficiently handle the dynamism present in MoEs. Our approach never drops\ntokens and maps efficiently to modern hardware, enabling end-to-end training\nspeedups of up to 40% over MoEs trained with the state-of-the-art Tutel library\nand 2.4x over DNNs trained with the highly-optimized Megatron-LM framework.",
+    "num_pages": 13
+}

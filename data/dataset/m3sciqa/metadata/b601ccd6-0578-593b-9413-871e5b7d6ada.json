@@ -1,0 +1,18 @@
+{
+    "uuid": "b601ccd6-0578-593b-9413-871e5b7d6ada",
+    "title": "Improving Continual Relation Extraction by Distinguishing Analogous Semantics",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Wenzheng Zhao",
+        "Yuanning Cui",
+        "Wei Hu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.06620v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\b601ccd6-0578-593b-9413-871e5b7d6ada.pdf",
+    "bibtex": "@misc{zhao2023improvingcontinualrelationextractionby,\n    title = {Improving Continual Relation Extraction by Distinguishing Analogous Semantics},\n    author = {Wenzheng Zhao and Yuanning Cui and Wei Hu},\n    year = {2023},\n    eprint = {2305.06620},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.06620},\n}",
+    "abstract": "Continual relation extraction (RE) aims to learn constantly emerging\nrelations while avoiding forgetting the learned relations. Existing works store\na small number of typical samples to re-train the model for alleviating\nforgetting. However, repeatedly replaying these samples may cause the\noverfitting problem. We conduct an empirical study on existing works and\nobserve that their performance is severely affected by analogous relations. To\naddress this issue, we propose a novel continual extraction model for analogous\nrelations. Specifically, we design memory-insensitive relation prototypes and\nmemory augmentation to overcome the overfitting problem. We also introduce\nintegrated training and focal knowledge distillation to enhance the performance\non analogous relations. Experimental results show the superiority of our model\nand demonstrate its effectiveness in distinguishing analogous relations and\novercoming overfitting.",
+    "num_pages": 12
+}

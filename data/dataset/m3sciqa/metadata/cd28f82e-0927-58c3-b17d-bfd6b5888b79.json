@@ -1,0 +1,22 @@
+{
+    "uuid": "cd28f82e-0927-58c3-b17d-bfd6b5888b79",
+    "title": "LongEval: Guidelines for Human Evaluation of Faithfulness in Long-form Summarization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Kalpesh Krishna",
+        "Erin Bransom",
+        "Bailey Kuehl",
+        "Mohit Iyyer",
+        "Pradeep Dasigi",
+        "Arman Cohan",
+        "Kyle Lo"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2301.13298v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\cd28f82e-0927-58c3-b17d-bfd6b5888b79.pdf",
+    "bibtex": "@misc{krishna2023longevalguidelinesforhumanevaluation,\n    title = {LongEval: Guidelines for Human Evaluation of Faithfulness in Long-form Summarization},\n    author = {Kalpesh Krishna and Erin Bransom and Bailey Kuehl and Mohit Iyyer and Pradeep Dasigi and Arman Cohan and Kyle Lo},\n    year = {2023},\n    eprint = {2301.13298},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2301.13298},\n}",
+    "abstract": "While human evaluation remains best practice for accurately judging the\nfaithfulness of automatically-generated summaries, few solutions exist to\naddress the increased difficulty and workload when evaluating long-form\nsummaries. Through a survey of 162 papers on long-form summarization, we first\nshed light on current human evaluation practices surrounding long-form\nsummaries. We find that 73% of these papers do not perform any human evaluation\non model-generated summaries, while other works face new difficulties that\nmanifest when dealing with long documents (e.g., low inter-annotator\nagreement). Motivated by our survey, we present LongEval, a set of guidelines\nfor human evaluation of faithfulness in long-form summaries that addresses the\nfollowing challenges: (1) How can we achieve high inter-annotator agreement on\nfaithfulness scores? (2) How can we minimize annotator workload while\nmaintaining accurate faithfulness scores? and (3) Do humans benefit from\nautomated alignment between summary and source snippets? We deploy LongEval in\nannotation studies on two long-form summarization datasets in different domains\n(SQuALITY and PubMed), and we find that switching to a finer granularity of\njudgment (e.g., clause-level) reduces inter-annotator variance in faithfulness\nscores (e.g., std-dev from 18.5 to 6.8). We also show that scores from a\npartial annotation of fine-grained units highly correlates with scores from a\nfull annotation workload (0.89 Kendall's tau using 50% judgments). We release\nour human judgments, annotation templates, and our software as a Python library\nfor future research.",
+    "num_pages": 21
+}

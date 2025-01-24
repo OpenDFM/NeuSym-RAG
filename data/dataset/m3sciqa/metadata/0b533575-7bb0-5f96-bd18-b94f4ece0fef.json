@@ -1,0 +1,21 @@
+{
+    "uuid": "0b533575-7bb0-5f96-bd18-b94f4ece0fef",
+    "title": "MathQA: Towards Interpretable Math Word Problem Solving with Operation-Based Formalisms",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Aida Amini",
+        "Saadia Gabriel",
+        "Peter Lin",
+        "Rik Koncel-Kedziorski",
+        "Yejin Choi",
+        "Hannaneh Hajishirzi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1905.13319v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\0b533575-7bb0-5f96-bd18-b94f4ece0fef.pdf",
+    "bibtex": "@misc{amini2019mathqatowardsinterpretablemathword,\n    title = {MathQA: Towards Interpretable Math Word Problem Solving with Operation-Based Formalisms},\n    author = {Aida Amini and Saadia Gabriel and Peter Lin and Rik Koncel-Kedziorski and Yejin Choi and Hannaneh Hajishirzi},\n    year = {2019},\n    eprint = {1905.13319},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1905.13319},\n}",
+    "abstract": "We introduce a large-scale dataset of math word problems and an interpretable\nneural math problem solver that learns to map problems to operation programs.\nDue to annotation challenges, current datasets in this domain have been either\nrelatively small in scale or did not offer precise operational annotations over\ndiverse problem types. We introduce a new representation language to model\nprecise operation programs corresponding to each math problem that aim to\nimprove both the performance and the interpretability of the learned models.\nUsing this representation language, our new dataset, MathQA, significantly\nenhances the AQuA dataset with fully-specified operational programs. We\nadditionally introduce a neural sequence-to-program model enhanced with\nautomatic problem categorization. Our experiments show improvements over\ncompetitive baselines in our MathQA as well as the AQuA dataset. The results\nare still significantly lower than human performance indicating that the\ndataset poses new challenges for future research. Our dataset is available at:\nhttps://math-qa.github.io/math-QA/",
+    "num_pages": 11
+}

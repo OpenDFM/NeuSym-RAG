@@ -1,0 +1,21 @@
+{
+    "uuid": "b0a79d1a-de14-5e2c-a2f8-c8e66f707a89",
+    "title": "Continual Pre-training of Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Zixuan Ke",
+        "Yijia Shao",
+        "Haowei Lin",
+        "Tatsuya Konishi",
+        "Gyuhak Kim",
+        "Bing Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.03241v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\b0a79d1a-de14-5e2c-a2f8-c8e66f707a89.pdf",
+    "bibtex": "@misc{ke2023continualpretrainingoflanguagemodels,\n    title = {Continual Pre-training of Language Models},\n    author = {Zixuan Ke and Yijia Shao and Haowei Lin and Tatsuya Konishi and Gyuhak Kim and Bing Liu},\n    year = {2023},\n    eprint = {2302.03241},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2302.03241},\n}",
+    "abstract": "Language models (LMs) have been instrumental for the rapid advance of natural\nlanguage processing. This paper studies continual pre-training of LMs, in\nparticular, continual domain-adaptive pre-training (or continual DAP-training).\nExisting research has shown that further pre-training an LM using a domain\ncorpus to adapt the LM to the domain can improve the end-task performance in\nthe domain. This paper proposes a novel method to continually DAP-train an LM\nwith a sequence of unlabeled domain corpora to adapt the LM to these domains to\nimprove their end-task performances. The key novelty of our method is a\nsoft-masking mechanism that directly controls the update to the LM. A novel\nproxy is also proposed to preserve the general knowledge in the original LM.\nAdditionally, it contrasts the representations of the previously learned domain\nknowledge (including the general knowledge in the pre-trained LM) and the\nknowledge from the current full network to achieve knowledge integration. The\nmethod not only overcomes catastrophic forgetting, but also achieves knowledge\ntransfer to improve end-task performances. Empirical evaluation demonstrates\nthe effectiveness of the proposed method.",
+    "num_pages": 16
+}

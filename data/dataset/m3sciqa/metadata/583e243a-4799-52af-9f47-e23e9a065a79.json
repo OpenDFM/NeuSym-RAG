@@ -1,0 +1,18 @@
+{
+    "uuid": "583e243a-4799-52af-9f47-e23e9a065a79",
+    "title": "Learning To Retrieve Prompts for In-Context Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Ohad Rubin",
+        "Jonathan Herzig",
+        "Jonathan Berant"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2112.08633v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\583e243a-4799-52af-9f47-e23e9a065a79.pdf",
+    "bibtex": "@misc{rubin2022learningtoretrievepromptsfor,\n    title = {Learning To Retrieve Prompts for In-Context Learning},\n    author = {Ohad Rubin and Jonathan Herzig and Jonathan Berant},\n    year = {2022},\n    eprint = {2112.08633},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2112.08633},\n}",
+    "abstract": "In-context learning is a recent paradigm in natural language understanding,\nwhere a large pre-trained language model (LM) observes a test instance and a\nfew training examples as its input, and directly decodes the output without any\nupdate to its parameters. However, performance has been shown to strongly\ndepend on the selected training examples (termed prompt). In this work, we\npropose an efficient method for retrieving prompts for in-context learning\nusing annotated data and a LM. Given an input-output pair, we estimate the\nprobability of the output given the input and a candidate training example as\nthe prompt, and label training examples as positive or negative based on this\nprobability. We then train an efficient dense retriever from this data, which\nis used to retrieve training examples as prompts at test time. We evaluate our\napproach on three sequence-to-sequence tasks where language utterances are\nmapped to meaning representations, and find that it substantially outperforms\nprior work and multiple baselines across the board.",
+    "num_pages": 17
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "f8d549ad-783d-591b-9ed4-4be9b95e7d9a",
+    "title": "Efficient Modeling of Future Context for Image Captioning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Zhengcong Fei",
+        "Junshi Huang",
+        "Xiaoming Wei",
+        "Xiaolin Wei"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2207.10897v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\f8d549ad-783d-591b-9ed4-4be9b95e7d9a.pdf",
+    "bibtex": "@misc{fei2022efficientmodelingoffuturecontext,\n    title = {Efficient Modeling of Future Context for Image Captioning},\n    author = {Zhengcong Fei and Junshi Huang and Xiaoming Wei and Xiaolin Wei},\n    year = {2022},\n    eprint = {2207.10897},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2207.10897},\n}",
+    "abstract": "Existing approaches to image captioning usually generate the sentence\nword-by-word from left to right, with the constraint of conditioned on local\ncontext including the given image and history generated words. There have been\nmany studies target to make use of global information during decoding, e.g.,\niterative refinement. However, it is still under-explored how to effectively\nand efficiently incorporate the future context. To respond to this issue,\ninspired by that Non-Autoregressive Image Captioning (NAIC) can leverage\ntwo-side relation with modified mask operation, we aim to graft this advance to\nthe conventional Autoregressive Image Captioning (AIC) model while maintaining\nthe inference efficiency without extra time cost. Specifically, AIC and NAIC\nmodels are first trained combined with shared visual encoders, forcing the\nvisual encoder to contain sufficient and valid future context; then the AIC\nmodel is encouraged to capture the causal dynamics of cross-layer interchanging\nfrom NAIC model on its unconfident words, which follows a teacher-student\nparadigm and optimized with the distribution calibration training objective.\nEmpirical evidences demonstrate that our proposed approach clearly surpass the\nstate-of-the-art baselines in both automatic metrics and human evaluations on\nthe MS COCO benchmark. The source code is available at:\nhttps://github.com/feizc/Future-Caption.",
+    "num_pages": 10
+}

@@ -1,0 +1,19 @@
+{
+    "uuid": "69728e8c-59e5-5c53-a3cc-f245d1f7af59",
+    "title": "Attention on Attention for Image Captioning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Lun Huang",
+        "Wenmin Wang",
+        "Jie Chen",
+        "Xiao-Yong Wei"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1908.06954v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\69728e8c-59e5-5c53-a3cc-f245d1f7af59.pdf",
+    "bibtex": "@misc{huang2019attentiononattentionforimage,\n    title = {Attention on Attention for Image Captioning},\n    author = {Lun Huang and Wenmin Wang and Jie Chen and Xiao-Yong Wei},\n    year = {2019},\n    eprint = {1908.06954},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1908.06954},\n}",
+    "abstract": "Attention mechanisms are widely used in current encoder/decoder frameworks of\nimage captioning, where a weighted average on encoded vectors is generated at\neach time step to guide the caption decoding process. However, the decoder has\nlittle idea of whether or how well the attended vector and the given attention\nquery are related, which could make the decoder give misled results. In this\npaper, we propose an Attention on Attention (AoA) module, which extends the\nconventional attention mechanisms to determine the relevance between attention\nresults and queries. AoA first generates an information vector and an attention\ngate using the attention result and the current context, then adds another\nattention by applying element-wise multiplication to them and finally obtains\nthe attended information, the expected useful knowledge. We apply AoA to both\nthe encoder and the decoder of our image captioning model, which we name as AoA\nNetwork (AoANet). Experiments show that AoANet outperforms all previously\npublished methods and achieves a new state-of-the-art performance of 129.8\nCIDEr-D score on MS COCO Karpathy offline test split and 129.6 CIDEr-D (C40)\nscore on the official online testing server. Code is available at\nhttps://github.com/husthuaan/AoANet.",
+    "num_pages": 12
+}

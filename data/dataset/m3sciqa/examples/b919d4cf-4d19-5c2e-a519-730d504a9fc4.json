@@ -1,0 +1,61 @@
+{
+    "uuid": "b919d4cf-4d19-5c2e-a519-730d504a9fc4",
+    "question": "Consider the paper that introduces the model that scores a 91.5 in the NER task. What specific aspect of its unified pre-training framework contributes to its effectiveness in reducing the gap between pre-training and fine-tuning phases for AMR tasks?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "eafc1f76-8bd5-594c-90b4-d91531781383"
+    ],
+    "reference_pdf": [
+        "5b3aeee6-b982-5fe7-b9b3-6e409408b8ff",
+        "c5534576-a4c3-5084-9038-2c4da11e73ea",
+        "8e6dbffb-603e-551d-8f75-08f37ca07b56",
+        "0a3d5361-f6a6-5a7a-8868-3a1b9387ba2a",
+        "003f56f8-651c-535b-8983-3f448ef1addd",
+        "59d1bdaa-0e54-5669-adad-dd225b6acdf5",
+        "1bc8e7cd-fc7a-568e-aa09-c80f67d1e15d",
+        "48eb0527-1a31-5dad-ae9b-832f6138c259",
+        "2ae30032-1e18-5733-b75f-f1d23053f7a2",
+        "8de2532b-6746-59ad-bb7d-7a42ce02682d",
+        "a451e98e-19c1-5141-98d9-bec4da2cb764",
+        "4837c79a-37bb-5d5c-9e26-57d3a5840ca0",
+        "86010c1c-ca15-5fb0-836e-878e2d5b16d5",
+        "c2e3ddd3-4f57-5c12-a0d9-89130bfbd6e6",
+        "f6e91a91-0b1e-5280-8522-a20492033f16",
+        "61675c6f-d249-51a5-b949-4ff32c8087d6",
+        "3aec6c04-8061-54a0-b7ec-0910254593e9",
+        "348e185c-b302-5857-bebc-3211c107e7aa",
+        "63813a1d-48c7-5be9-b6d2-ba1e463de539",
+        "96f67ba7-08ce-577a-b675-b560bb668e23",
+        "26e45afd-1c91-5f0f-bb47-33707acec072",
+        "dd22293d-9762-5675-9ef9-60d70e09600e",
+        "4f82b0a7-782b-5d83-abfc-146affe81aea",
+        "87303739-1cdc-53ae-9ca3-9e01d144cd12",
+        "ebaab94f-c9fb-5186-951c-d7259a580fde",
+        "28fbbed5-8ae5-55a0-82be-876292cf5d18",
+        "2bfb964e-fb62-59b5-bb75-05c7fe86ee62",
+        "81f14584-369f-51cd-b3ad-c34dcf1b45a1",
+        "59d1bdaa-0e54-5669-adad-dd225b6acdf5",
+        "6d8e0fc1-a6bb-5260-874f-59723d196b81",
+        "d1fe605a-9183-5991-aec7-b474cadcd387"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the model that scores a 91.5 in the NER task. What specific aspect of its unified pre-training framework contributes to its effectiveness in reducing the gap between pre-training and fine-tuning phases for AMR tasks?",
+            "reference_answer": "Dynamic masking rate"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.11964/comparison_table.png"
+    ]
+}

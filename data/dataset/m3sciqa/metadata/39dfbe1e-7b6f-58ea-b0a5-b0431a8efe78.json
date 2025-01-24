@@ -1,0 +1,29 @@
+{
+    "uuid": "39dfbe1e-7b6f-58ea-b0a5-b0431a8efe78",
+    "title": "Overcoming catastrophic forgetting in neural networks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "James Kirkpatrick",
+        "Razvan Pascanu",
+        "Neil Rabinowitz",
+        "Joel Veness",
+        "Guillaume Desjardins",
+        "Andrei A. Rusu",
+        "Kieran Milan",
+        "John Quan",
+        "Tiago Ramalho",
+        "Agnieszka Grabska-Barwinska",
+        "Demis Hassabis",
+        "Claudia Clopath",
+        "Dharshan Kumaran",
+        "Raia Hadsell"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1612.00796v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\39dfbe1e-7b6f-58ea-b0a5-b0431a8efe78.pdf",
+    "bibtex": "@misc{kirkpatrick2017overcomingcatastrophicforgettinginneural,\n    title = {Overcoming catastrophic forgetting in neural networks},\n    author = {James Kirkpatrick and Razvan Pascanu and Neil Rabinowitz and Joel Veness and Guillaume Desjardins and Andrei A. Rusu and Kieran Milan and John Quan and Tiago Ramalho and Agnieszka Grabska-Barwinska and Demis Hassabis and Claudia Clopath and Dharshan Kumaran and Raia Hadsell},\n    year = {2017},\n    eprint = {1612.00796},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1612.00796},\n}",
+    "abstract": "The ability to learn tasks in a sequential fashion is crucial to the\ndevelopment of artificial intelligence. Neural networks are not, in general,\ncapable of this and it has been widely thought that catastrophic forgetting is\nan inevitable feature of connectionist models. We show that it is possible to\novercome this limitation and train networks that can maintain expertise on\ntasks which they have not experienced for a long time. Our approach remembers\nold tasks by selectively slowing down learning on the weights important for\nthose tasks. We demonstrate our approach is scalable and effective by solving a\nset of classification tasks based on the MNIST hand written digit dataset and\nby learning several Atari 2600 games sequentially.",
+    "num_pages": 13
+}

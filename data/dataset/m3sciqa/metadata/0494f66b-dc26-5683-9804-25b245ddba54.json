@@ -1,0 +1,20 @@
+{
+    "uuid": "0494f66b-dc26-5683-9804-25b245ddba54",
+    "title": "Rethinking the Inception Architecture for Computer Vision",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2015,
+    "authors": [
+        "Christian Szegedy",
+        "Vincent Vanhoucke",
+        "Sergey Ioffe",
+        "Jonathon Shlens",
+        "Zbigniew Wojna"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1512.00567v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2015\\0494f66b-dc26-5683-9804-25b245ddba54.pdf",
+    "bibtex": "@misc{szegedy2015rethinkingtheinceptionarchitecturefor,\n    title = {Rethinking the Inception Architecture for Computer Vision},\n    author = {Christian Szegedy and Vincent Vanhoucke and Sergey Ioffe and Jonathon Shlens and Zbigniew Wojna},\n    year = {2015},\n    eprint = {1512.00567},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1512.00567},\n}",
+    "abstract": "Convolutional networks are at the core of most state-of-the-art computer\nvision solutions for a wide variety of tasks. Since 2014 very deep\nconvolutional networks started to become mainstream, yielding substantial gains\nin various benchmarks. Although increased model size and computational cost\ntend to translate to immediate quality gains for most tasks (as long as enough\nlabeled data is provided for training), computational efficiency and low\nparameter count are still enabling factors for various use cases such as mobile\nvision and big-data scenarios. Here we explore ways to scale up networks in\nways that aim at utilizing the added computation as efficiently as possible by\nsuitably factorized convolutions and aggressive regularization. We benchmark\nour methods on the ILSVRC 2012 classification challenge validation set\ndemonstrate substantial gains over the state of the art: 21.2% top-1 and 5.6%\ntop-5 error for single frame evaluation using a network with a computational\ncost of 5 billion multiply-adds per inference and with using less than 25\nmillion parameters. With an ensemble of 4 models and multi-crop evaluation, we\nreport 3.5% top-5 error on the validation set (3.6% error on the test set) and\n17.3% top-1 error on the validation set.",
+    "num_pages": 10
+}

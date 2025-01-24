@@ -1,0 +1,19 @@
+{
+    "uuid": "9bed7533-e4f6-580b-9e8d-7c996dbbc493",
+    "title": "RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Zhiqing Sun",
+        "Zhi-Hong Deng",
+        "Jian-Yun Nie",
+        "Jian Tang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1902.10197v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\9bed7533-e4f6-580b-9e8d-7c996dbbc493.pdf",
+    "bibtex": "@misc{sun2019rotateknowledgegraphembeddingby,\n    title = {RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space},\n    author = {Zhiqing Sun and Zhi-Hong Deng and Jian-Yun Nie and Jian Tang},\n    year = {2019},\n    eprint = {1902.10197},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1902.10197},\n}",
+    "abstract": "We study the problem of learning representations of entities and relations in\nknowledge graphs for predicting missing links. The success of such a task\nheavily relies on the ability of modeling and inferring the patterns of (or\nbetween) the relations. In this paper, we present a new approach for knowledge\ngraph embedding called RotatE, which is able to model and infer various\nrelation patterns including: symmetry/antisymmetry, inversion, and composition.\nSpecifically, the RotatE model defines each relation as a rotation from the\nsource entity to the target entity in the complex vector space. In addition, we\npropose a novel self-adversarial negative sampling technique for efficiently\nand effectively training the RotatE model. Experimental results on multiple\nbenchmark knowledge graphs show that the proposed RotatE model is not only\nscalable, but also able to infer and model various relation patterns and\nsignificantly outperform existing state-of-the-art models for link prediction.",
+    "num_pages": 18
+}

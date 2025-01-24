@@ -1,0 +1,26 @@
+{
+    "uuid": "35ec5422-c394-5eac-854d-28233a5f9f68",
+    "title": "Neural Networks and the Chomsky Hierarchy",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Grégoire Delétang",
+        "Anian Ruoss",
+        "Jordi Grau-Moya",
+        "Tim Genewein",
+        "Li Kevin Wenliang",
+        "Elliot Catt",
+        "Chris Cundy",
+        "Marcus Hutter",
+        "Shane Legg",
+        "Joel Veness",
+        "Pedro A. Ortega"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2207.02098v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\35ec5422-c394-5eac-854d-28233a5f9f68.pdf",
+    "bibtex": "@misc{deltang2023neuralnetworksandthechomsky,\n    title = {Neural Networks and the Chomsky Hierarchy},\n    author = {Grégoire Delétang and Anian Ruoss and Jordi Grau-Moya and Tim Genewein and Li Kevin Wenliang and Elliot Catt and Chris Cundy and Marcus Hutter and Shane Legg and Joel Veness and Pedro A. Ortega},\n    year = {2023},\n    eprint = {2207.02098},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2207.02098},\n}",
+    "abstract": "Reliable generalization lies at the heart of safe ML and AI. However,\nunderstanding when and how neural networks generalize remains one of the most\nimportant unsolved problems in the field. In this work, we conduct an extensive\nempirical study (20'910 models, 15 tasks) to investigate whether insights from\nthe theory of computation can predict the limits of neural network\ngeneralization in practice. We demonstrate that grouping tasks according to the\nChomsky hierarchy allows us to forecast whether certain architectures will be\nable to generalize to out-of-distribution inputs. This includes negative\nresults where even extensive amounts of data and training time never lead to\nany non-trivial generalization, despite models having sufficient capacity to\nfit the training data perfectly. Our results show that, for our subset of\ntasks, RNNs and Transformers fail to generalize on non-regular tasks, LSTMs can\nsolve regular and counter-language tasks, and only networks augmented with\nstructured memory (such as a stack or memory tape) can successfully generalize\non context-free and context-sensitive tasks.",
+    "num_pages": 32
+}

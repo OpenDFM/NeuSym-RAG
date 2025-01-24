@@ -1,0 +1,18 @@
+{
+    "uuid": "465bf5dc-d3c6-5cdb-a833-5a223ea9d0c4",
+    "title": "SummIt: Iterative Text Summarization via ChatGPT",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Haopeng Zhang",
+        "Xiao Liu",
+        "Jiawei Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.14835v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\465bf5dc-d3c6-5cdb-a833-5a223ea9d0c4.pdf",
+    "bibtex": "@misc{zhang2023summititerativetextsummarizationvia,\n    title = {SummIt: Iterative Text Summarization via ChatGPT},\n    author = {Haopeng Zhang and Xiao Liu and Jiawei Zhang},\n    year = {2023},\n    eprint = {2305.14835},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.14835},\n}",
+    "abstract": "Text summarization systems have made significant progress in recent years,\nbut typically generate summaries in one single step. However, the one-shot\nsummarization setting is sometimes inadequate, as the generated summary may\ncontain hallucinations or overlook essential details related to the reader's\ninterests. This paper addresses this limitation by proposing SummIt, an\niterative text summarization framework based on large language models like\nChatGPT. Our framework enables the model to refine the generated summary\niteratively through self-evaluation and feedback, resembling humans' iterative\nprocess when drafting and revising summaries. Furthermore, we explore the\npotential benefits of integrating knowledge and topic extractors into the\nframework to enhance summary faithfulness and controllability. We automatically\nevaluate the performance of our framework on three benchmark summarization\ndatasets. We also conduct a human evaluation to validate the effectiveness of\nthe iterative refinements and identify a potential issue of over-correction.",
+    "num_pages": 14
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "c023321f-ab7c-57f3-afd8-0f845bca0d1d",
+    "title": "Swiss-Judgment-Prediction: A Multilingual Legal Judgment Prediction Benchmark",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Joel Niklaus",
+        "Ilias Chalkidis",
+        "Matthias Stürmer"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.00806v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\c023321f-ab7c-57f3-afd8-0f845bca0d1d.pdf",
+    "bibtex": "@misc{niklaus2021swissjudgmentpredictionamultilinguallegaljudgment,\n    title = {Swiss-Judgment-Prediction: A Multilingual Legal Judgment Prediction Benchmark},\n    author = {Joel Niklaus and Ilias Chalkidis and Matthias Stürmer},\n    year = {2021},\n    eprint = {2110.00806},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2110.00806},\n}",
+    "abstract": "In many jurisdictions, the excessive workload of courts leads to high delays.\nSuitable predictive AI models can assist legal professionals in their work, and\nthus enhance and speed up the process. So far, Legal Judgment Prediction (LJP)\ndatasets have been released in English, French, and Chinese. We publicly\nrelease a multilingual (German, French, and Italian), diachronic (2000-2020)\ncorpus of 85K cases from the Federal Supreme Court of Switzerland (FSCS). We\nevaluate state-of-the-art BERT-based methods including two variants of BERT\nthat overcome the BERT input (text) length limitation (up to 512 tokens).\nHierarchical BERT has the best performance (approx. 68-70% Macro-F1-Score in\nGerman and French). Furthermore, we study how several factors (canton of\norigin, year of publication, text length, legal area) affect performance. We\nrelease both the benchmark dataset and our code to accelerate future research\nand ensure reproducibility.",
+    "num_pages": 17
+}

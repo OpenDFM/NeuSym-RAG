@@ -1,0 +1,21 @@
+{
+    "uuid": "3f69a541-b3b1-56ae-95dc-3586921121bb",
+    "title": "When Not to Trust Language Models: Investigating Effectiveness of Parametric and Non-Parametric Memories",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Alex Mallen",
+        "Akari Asai",
+        "Victor Zhong",
+        "Rajarshi Das",
+        "Daniel Khashabi",
+        "Hannaneh Hajishirzi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2212.10511v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\3f69a541-b3b1-56ae-95dc-3586921121bb.pdf",
+    "bibtex": "@misc{mallen2023whennottotrustlanguage,\n    title = {When Not to Trust Language Models: Investigating Effectiveness of Parametric and Non-Parametric Memories},\n    author = {Alex Mallen and Akari Asai and Victor Zhong and Rajarshi Das and Daniel Khashabi and Hannaneh Hajishirzi},\n    year = {2023},\n    eprint = {2212.10511},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2212.10511},\n}",
+    "abstract": "Despite their impressive performance on diverse tasks, large language models\n(LMs) still struggle with tasks requiring rich world knowledge, implying the\nlimitations of relying solely on their parameters to encode a wealth of world\nknowledge. This paper aims to understand LMs' strengths and limitations in\nmemorizing factual knowledge, by conducting large-scale knowledge probing\nexperiments of 10 models and 4 augmentation methods on PopQA, our new\nopen-domain QA dataset with 14k questions. We find that LMs struggle with less\npopular factual knowledge, and that scaling fails to appreciably improve\nmemorization of factual knowledge in the long tail. We then show that\nretrieval-augmented LMs largely outperform orders of magnitude larger LMs,\nwhile unassisted LMs remain competitive in questions about high-popularity\nentities. Based on those findings, we devise a simple, yet effective, method\nfor powerful and efficient retrieval-augmented LMs, which retrieves\nnon-parametric memories only when necessary. Experimental results show that\nthis significantly improves models' performance while reducing the inference\ncosts.",
+    "num_pages": 19
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "a0276631-f7d8-5743-8ef1-1dd78aa0f71a",
+    "title": "FEVEROUS: Fact Extraction and VERification Over Unstructured and Structured information",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Rami Aly",
+        "Zhijiang Guo",
+        "Michael Schlichtkrull",
+        "James Thorne",
+        "Andreas Vlachos",
+        "Christos Christodoulopoulos",
+        "Oana Cocarascu",
+        "Arpit Mittal"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.05707v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\a0276631-f7d8-5743-8ef1-1dd78aa0f71a.pdf",
+    "bibtex": "@misc{aly2021feverousfactextractionandverification,\n    title = {FEVEROUS: Fact Extraction and VERification Over Unstructured and Structured information},\n    author = {Rami Aly and Zhijiang Guo and Michael Schlichtkrull and James Thorne and Andreas Vlachos and Christos Christodoulopoulos and Oana Cocarascu and Arpit Mittal},\n    year = {2021},\n    eprint = {2106.05707},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.05707},\n}",
+    "abstract": "Fact verification has attracted a lot of attention in the machine learning\nand natural language processing communities, as it is one of the key methods\nfor detecting misinformation. Existing large-scale benchmarks for this task\nhave focused mostly on textual sources, i.e. unstructured information, and thus\nignored the wealth of information available in structured formats, such as\ntables. In this paper we introduce a novel dataset and benchmark, Fact\nExtraction and VERification Over Unstructured and Structured information\n(FEVEROUS), which consists of 87,026 verified claims. Each claim is annotated\nwith evidence in the form of sentences and/or cells from tables in Wikipedia,\nas well as a label indicating whether this evidence supports, refutes, or does\nnot provide enough information to reach a verdict. Furthermore, we detail our\nefforts to track and minimize the biases present in the dataset and could be\nexploited by models, e.g. being able to predict the label without using\nevidence. Finally, we develop a baseline for verifying claims against text and\ntables which predicts both the correct evidence and verdict for 18% of the\nclaims.",
+    "num_pages": 32
+}

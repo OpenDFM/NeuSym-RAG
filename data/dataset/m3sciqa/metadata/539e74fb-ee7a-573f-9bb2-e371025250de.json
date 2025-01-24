@@ -1,0 +1,22 @@
+{
+    "uuid": "539e74fb-ee7a-573f-9bb2-e371025250de",
+    "title": "Generate & Rank: A Multi-task Framework for Math Word Problems",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Jianhao Shen",
+        "Yichun Yin",
+        "Lin Li",
+        "Lifeng Shang",
+        "Xin Jiang",
+        "Ming Zhang",
+        "Qun Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.03034v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\539e74fb-ee7a-573f-9bb2-e371025250de.pdf",
+    "bibtex": "@misc{shen2021generaterankamultitask,\n    title = {Generate & Rank: A Multi-task Framework for Math Word Problems},\n    author = {Jianhao Shen and Yichun Yin and Lin Li and Lifeng Shang and Xin Jiang and Ming Zhang and Qun Liu},\n    year = {2021},\n    eprint = {2109.03034},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.03034},\n}",
+    "abstract": "Math word problem (MWP) is a challenging and critical task in natural\nlanguage processing. Many recent studies formalize MWP as a generation task and\nhave adopted sequence-to-sequence models to transform problem descriptions to\nmathematical expressions. However, mathematical expressions are prone to minor\nmistakes while the generation objective does not explicitly handle such\nmistakes. To address this limitation, we devise a new ranking task for MWP and\npropose Generate & Rank, a multi-task framework based on a generative\npre-trained language model. By joint training with generation and ranking, the\nmodel learns from its own mistakes and is able to distinguish between correct\nand incorrect expressions. Meanwhile, we perform tree-based disturbance\nspecially designed for MWP and an online update to boost the ranker. We\ndemonstrate the effectiveness of our proposed method on the benchmark and the\nresults show that our method consistently outperforms baselines in all\ndatasets. Particularly, in the classical Math23k, our method is 7% (78.4%\n$\\rightarrow$ 85.4%) higher than the state-of-the-art.",
+    "num_pages": 11
+}

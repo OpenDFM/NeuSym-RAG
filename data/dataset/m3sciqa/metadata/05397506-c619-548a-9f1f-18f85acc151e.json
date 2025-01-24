@@ -1,0 +1,18 @@
+{
+    "uuid": "05397506-c619-548a-9f1f-18f85acc151e",
+    "title": "ChemBERTa: Large-Scale Self-Supervised Pretraining for Molecular Property Prediction",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Seyone Chithrananda",
+        "Gabriel Grand",
+        "Bharath Ramsundar"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.09885v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\05397506-c619-548a-9f1f-18f85acc151e.pdf",
+    "bibtex": "@misc{chithrananda2020chembertalargescaleselfsupervisedpretrainingfor,\n    title = {ChemBERTa: Large-Scale Self-Supervised Pretraining for Molecular Property Prediction},\n    author = {Seyone Chithrananda and Gabriel Grand and Bharath Ramsundar},\n    year = {2020},\n    eprint = {2010.09885},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2010.09885},\n}",
+    "abstract": "GNNs and chemical fingerprints are the predominant approaches to representing\nmolecules for property prediction. However, in NLP, transformers have become\nthe de-facto standard for representation learning thanks to their strong\ndownstream task transfer. In parallel, the software ecosystem around\ntransformers is maturing rapidly, with libraries like HuggingFace and BertViz\nenabling streamlined training and introspection. In this work, we make one of\nthe first attempts to systematically evaluate transformers on molecular\nproperty prediction tasks via our ChemBERTa model. ChemBERTa scales well with\npretraining dataset size, offering competitive downstream performance on\nMoleculeNet and useful attention-based visualization modalities. Our results\nsuggest that transformers offer a promising avenue of future work for molecular\nrepresentation learning and property prediction. To facilitate these efforts,\nwe release a curated dataset of 77M SMILES from PubChem suitable for\nlarge-scale self-supervised pretraining.",
+    "num_pages": 7
+}

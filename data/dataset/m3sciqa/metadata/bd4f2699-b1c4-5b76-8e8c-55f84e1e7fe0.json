@@ -1,0 +1,20 @@
+{
+    "uuid": "bd4f2699-b1c4-5b76-8e8c-55f84e1e7fe0",
+    "title": "BioRED: A Rich Biomedical Relation Extraction Dataset",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Ling Luo",
+        "Po-Ting Lai",
+        "Chih-Hsuan Wei",
+        "Cecilia N Arighi",
+        "Zhiyong Lu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.04263v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\bd4f2699-b1c4-5b76-8e8c-55f84e1e7fe0.pdf",
+    "bibtex": "@misc{luo2022bioredarichbiomedicalrelation,\n    title = {BioRED: A Rich Biomedical Relation Extraction Dataset},\n    author = {Ling Luo and Po-Ting Lai and Chih-Hsuan Wei and Cecilia N Arighi and Zhiyong Lu},\n    year = {2022},\n    eprint = {2204.04263},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.04263},\n}",
+    "abstract": "Automated relation extraction (RE) from biomedical literature is critical for\nmany downstream text mining applications in both research and real-world\nsettings. However, most existing benchmarking datasets for bio-medical RE only\nfocus on relations of a single type (e.g., protein-protein interactions) at the\nsentence level, greatly limiting the development of RE systems in biomedicine.\nIn this work, we first review commonly used named entity recognition (NER) and\nRE datasets. Then we present BioRED, a first-of-its-kind biomedical RE corpus\nwith multiple entity types (e.g., gene/protein, disease, chemical) and relation\npairs (e.g., gene-disease; chemical-chemical) at the document level, on a set\nof 600 PubMed abstracts. Further, we label each relation as describing either a\nnovel finding or previously known background knowledge, enabling automated\nalgorithms to differentiate between novel and background information. We assess\nthe utility of BioRED by benchmarking several existing state-of-the-art\nmethods, including BERT-based models, on the NER and RE tasks. Our results show\nthat while existing approaches can reach high performance on the NER task\n(F-score of 89.3%), there is much room for improvement for the RE task,\nespecially when extracting novel relations (F-score of 47.7%). Our experiments\nalso demonstrate that such a rich dataset can successfully facilitate the\ndevelopment of more accurate, efficient, and robust RE systems for biomedicine.\nThe BioRED dataset and annotation guideline are freely available at\nhttps://ftp.ncbi.nlm.nih.gov/pub/lu/BioRED/.",
+    "num_pages": 23
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "afbe2f7a-2754-5da7-97f6-b56a58fe47a4",
+    "title": "StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Wei Wang",
+        "Bin Bi",
+        "Ming Yan",
+        "Chen Wu",
+        "Zuyi Bao",
+        "Jiangnan Xia",
+        "Liwei Peng",
+        "Luo Si"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1908.04577v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\afbe2f7a-2754-5da7-97f6-b56a58fe47a4.pdf",
+    "bibtex": "@misc{wang2019structbertincorporatinglanguagestructuresinto,\n    title = {StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding},\n    author = {Wei Wang and Bin Bi and Ming Yan and Chen Wu and Zuyi Bao and Jiangnan Xia and Liwei Peng and Luo Si},\n    year = {2019},\n    eprint = {1908.04577},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1908.04577},\n}",
+    "abstract": "Recently, the pre-trained language model, BERT (and its robustly optimized\nversion RoBERTa), has attracted a lot of attention in natural language\nunderstanding (NLU), and achieved state-of-the-art accuracy in various NLU\ntasks, such as sentiment classification, natural language inference, semantic\ntextual similarity and question answering. Inspired by the linearization\nexploration work of Elman [8], we extend BERT to a new model, StructBERT, by\nincorporating language structures into pre-training. Specifically, we pre-train\nStructBERT with two auxiliary tasks to make the most of the sequential order of\nwords and sentences, which leverage language structures at the word and\nsentence levels, respectively. As a result, the new model is adapted to\ndifferent levels of language understanding required by downstream tasks. The\nStructBERT with structural pre-training gives surprisingly good empirical\nresults on a variety of downstream tasks, including pushing the\nstate-of-the-art on the GLUE benchmark to 89.0 (outperforming all published\nmodels), the F1 score on SQuAD v1.1 question answering to 93.0, the accuracy on\nSNLI to 91.7.",
+    "num_pages": 9
+}

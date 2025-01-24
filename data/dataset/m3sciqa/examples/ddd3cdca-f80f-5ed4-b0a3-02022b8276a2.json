@@ -1,0 +1,51 @@
+{
+    "uuid": "ddd3cdca-f80f-5ed4-b0a3-02022b8276a2",
+    "question": "Consider the paper that introduces the dataset represented by the leftmost bar in the figure, GSM8K. What specific aspect of the token-level verifiers' training procedure is likely responsible for their initial uncertainty in solution correctness, as observed in the verifier visualization section?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "image",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "fa7d95d4-dd69-5849-8f0b-119726938dac"
+    ],
+    "reference_pdf": [
+        "3ea1a5e9-0057-54a5-b359-7d99fc882842",
+        "06e77679-09f0-5936-b00f-dcad7a604f75",
+        "a0a8ed85-32d4-58c2-b4b7-6a34ec125441",
+        "c7cf8100-fcbd-575b-a980-7f6d3c4f6761",
+        "b44607d8-7587-53ed-be67-22b3668a1644",
+        "591f54ea-2f59-5cdb-8117-74bd1028e5d1",
+        "34417770-67d7-5cab-b9d4-76999c97bc02",
+        "1b151a0b-8156-5a1d-9459-ba2037900807",
+        "bf80182b-c2b3-5553-bfcf-3d83d1c71d9d",
+        "f8035995-47e3-5210-81f7-1b74a2d93fc0",
+        "63ac5232-d7e8-5f0e-ab4c-f2378c7c2a8b",
+        "cb83c58c-fefc-566d-b291-b27faf9eec2b",
+        "9d19a76a-1f8e-5170-b5d7-b2d07ad1c2ec",
+        "23a2cf6d-2c8a-5b75-b4f1-29b2f64ee41c",
+        "8dde05d0-7798-5f9b-9f99-1d4823d4fbdd",
+        "ad5ecb28-5270-5e7b-b161-6d994db6c2f7",
+        "e05cbd04-192e-5761-97ce-7250058cf895",
+        "e69ef270-7428-50f6-b47b-63a2455841ac",
+        "7908763f-3a9d-5ce5-af59-f68888750583",
+        "1e7ec69a-1a58-5bc0-a94b-c2b907d6c59d",
+        "20847c00-ada9-56f4-aab2-d67eb2ace27b"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the dataset represented by the leftmost bar in the figure, GSM8K. What specific aspect of the token-level verifiers' training procedure is likely responsible for their initial uncertainty in solution correctness, as observed in the verifier visualization section?",
+            "reference_answer": "The token-level verifiers' training procedure likely causes initial uncertainty in solution correctness due to the large fraction of incorrect model-generated samples they are trained on, which makes them initially unsure about the correctness of a solution and gradually gain certainty as the solution progresses."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.14628/comparison_figure.png"
+    ]
+}

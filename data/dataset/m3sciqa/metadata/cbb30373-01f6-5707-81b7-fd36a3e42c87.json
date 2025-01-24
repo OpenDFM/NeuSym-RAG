@@ -1,0 +1,24 @@
+{
+    "uuid": "cbb30373-01f6-5707-81b7-fd36a3e42c87",
+    "title": "GIT: A Generative Image-to-text Transformer for Vision and Language",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Jianfeng Wang",
+        "Zhengyuan Yang",
+        "Xiaowei Hu",
+        "Linjie Li",
+        "Kevin Lin",
+        "Zhe Gan",
+        "Zicheng Liu",
+        "Ce Liu",
+        "Lijuan Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.14100v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\cbb30373-01f6-5707-81b7-fd36a3e42c87.pdf",
+    "bibtex": "@misc{wang2022gitagenerativeimagetotexttransformer,\n    title = {GIT: A Generative Image-to-text Transformer for Vision and Language},\n    author = {Jianfeng Wang and Zhengyuan Yang and Xiaowei Hu and Linjie Li and Kevin Lin and Zhe Gan and Zicheng Liu and Ce Liu and Lijuan Wang},\n    year = {2022},\n    eprint = {2205.14100},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2205.14100},\n}",
+    "abstract": "In this paper, we design and train a Generative Image-to-text Transformer,\nGIT, to unify vision-language tasks such as image/video captioning and question\nanswering. While generative models provide a consistent network architecture\nbetween pre-training and fine-tuning, existing work typically contains complex\nstructures (uni/multi-modal encoder/decoder) and depends on external modules\nsuch as object detectors/taggers and optical character recognition (OCR). In\nGIT, we simplify the architecture as one image encoder and one text decoder\nunder a single language modeling task. We also scale up the pre-training data\nand the model size to boost the model performance. Without bells and whistles,\nour GIT establishes new state of the arts on 12 challenging benchmarks with a\nlarge margin. For instance, our model surpasses the human performance for the\nfirst time on TextCaps (138.2 vs. 125.5 in CIDEr). Furthermore, we present a\nnew scheme of generation-based image classification and scene text recognition,\nachieving decent performance on standard benchmarks. Codes are released at\n\\url{https://github.com/microsoft/GenerativeImage2Text}.",
+    "num_pages": 49
+}

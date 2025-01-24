@@ -1,0 +1,18 @@
+{
+    "uuid": "dba5b637-a3a2-54f2-9284-034b062db02a",
+    "title": "DocNLI: A Large-scale Dataset for Document-level Natural Language Inference",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Wenpeng Yin",
+        "Dragomir Radev",
+        "Caiming Xiong"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.09449v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\dba5b637-a3a2-54f2-9284-034b062db02a.pdf",
+    "bibtex": "@misc{yin2021docnlialargescaledatasetfor,\n    title = {DocNLI: A Large-scale Dataset for Document-level Natural Language Inference},\n    author = {Wenpeng Yin and Dragomir Radev and Caiming Xiong},\n    year = {2021},\n    eprint = {2106.09449},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.09449},\n}",
+    "abstract": "Natural language inference (NLI) is formulated as a unified framework for\nsolving various NLP problems such as relation extraction, question answering,\nsummarization, etc. It has been studied intensively in the past few years\nthanks to the availability of large-scale labeled datasets. However, most\nexisting studies focus on merely sentence-level inference, which limits the\nscope of NLI's application in downstream NLP problems. This work presents\nDocNLI -- a newly-constructed large-scale dataset for document-level NLI.\nDocNLI is transformed from a broad range of NLP problems and covers multiple\ngenres of text. The premises always stay in the document granularity, whereas\nthe hypotheses vary in length from single sentences to passages with hundreds\nof words. Additionally, DocNLI has pretty limited artifacts which unfortunately\nwidely exist in some popular sentence-level NLI datasets. Our experiments\ndemonstrate that, even without fine-tuning, a model pretrained on DocNLI shows\npromising performance on popular sentence-level benchmarks, and generalizes\nwell to out-of-domain NLP tasks that rely on inference at document granularity.\nTask-specific fine-tuning can bring further improvements. Data, code, and\npretrained models can be found at https://github.com/salesforce/DocNLI.",
+    "num_pages": 10
+}

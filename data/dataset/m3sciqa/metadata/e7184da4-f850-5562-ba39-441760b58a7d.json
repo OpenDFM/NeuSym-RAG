@@ -1,0 +1,21 @@
+{
+    "uuid": "e7184da4-f850-5562-ba39-441760b58a7d",
+    "title": "Training data-efficient image transformers & distillation through attention",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Hugo Touvron",
+        "Matthieu Cord",
+        "Matthijs Douze",
+        "Francisco Massa",
+        "Alexandre Sablayrolles",
+        "Hervé Jégou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2012.12877v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\e7184da4-f850-5562-ba39-441760b58a7d.pdf",
+    "bibtex": "@misc{touvron2021trainingdataefficientimagetransformers,\n    title = {Training data-efficient image transformers & distillation through attention},\n    author = {Hugo Touvron and Matthieu Cord and Matthijs Douze and Francisco Massa and Alexandre Sablayrolles and Hervé Jégou},\n    year = {2021},\n    eprint = {2012.12877},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2012.12877},\n}",
+    "abstract": "Recently, neural networks purely based on attention were shown to address\nimage understanding tasks such as image classification. However, these visual\ntransformers are pre-trained with hundreds of millions of images using an\nexpensive infrastructure, thereby limiting their adoption.\n  In this work, we produce a competitive convolution-free transformer by\ntraining on Imagenet only. We train them on a single computer in less than 3\ndays. Our reference vision transformer (86M parameters) achieves top-1 accuracy\nof 83.1% (single-crop evaluation) on ImageNet with no external data.\n  More importantly, we introduce a teacher-student strategy specific to\ntransformers. It relies on a distillation token ensuring that the student\nlearns from the teacher through attention. We show the interest of this\ntoken-based distillation, especially when using a convnet as a teacher. This\nleads us to report results competitive with convnets for both Imagenet (where\nwe obtain up to 85.2% accuracy) and when transferring to other tasks. We share\nour code and models.",
+    "num_pages": 22
+}

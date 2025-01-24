@@ -1,0 +1,32 @@
+{
+    "uuid": "bf049c55-b17c-54f4-bcf7-7ae19d01c02d",
+    "question": "Consider the paper that introduces the method that exhibits the highest Accuracy@0.5 value on the RefCOCOg task. How does the introduction of the $\\tiny{<}obj\\tiny{>}$ token in the model's output sequence design proposed by the paper impact its performance on the referring expression comprehension task?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "0c01da61-e6d6-5664-a720-fe78fa8506f0"
+    ],
+    "reference_pdf": [
+        "2a0adc2f-455b-5d5a-9cf1-ac09f4347ff9",
+        "da9e1b4e-f0c6-5191-8a33-41b61efb4b0f"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method that exhibits the highest Accuracy@0.5 value on the RefCOCOg task. How does the introduction of the $\\tiny{<}obj\\tiny{>}$ token in the model's output sequence design proposed by the paper impact its performance on the referring expression comprehension task?",
+            "reference_answer": "Improves by around 1%"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2311.04067/result_table.png"
+    ]
+}

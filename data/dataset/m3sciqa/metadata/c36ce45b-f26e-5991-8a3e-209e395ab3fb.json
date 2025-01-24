@@ -1,0 +1,19 @@
+{
+    "uuid": "c36ce45b-f26e-5991-8a3e-209e395ab3fb",
+    "title": "Prototypical Contrastive Learning of Unsupervised Representations",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Junnan Li",
+        "Pan Zhou",
+        "Caiming Xiong",
+        "Steven C. H. Hoi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2005.04966v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\c36ce45b-f26e-5991-8a3e-209e395ab3fb.pdf",
+    "bibtex": "@misc{li2021prototypicalcontrastivelearningofunsupervised,\n    title = {Prototypical Contrastive Learning of Unsupervised Representations},\n    author = {Junnan Li and Pan Zhou and Caiming Xiong and Steven C. H. Hoi},\n    year = {2021},\n    eprint = {2005.04966},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2005.04966},\n}",
+    "abstract": "This paper presents Prototypical Contrastive Learning (PCL), an unsupervised\nrepresentation learning method that addresses the fundamental limitations of\ninstance-wise contrastive learning. PCL not only learns low-level features for\nthe task of instance discrimination, but more importantly, it implicitly\nencodes semantic structures of the data into the learned embedding space.\nSpecifically, we introduce prototypes as latent variables to help find the\nmaximum-likelihood estimation of the network parameters in an\nExpectation-Maximization framework. We iteratively perform E-step as finding\nthe distribution of prototypes via clustering and M-step as optimizing the\nnetwork via contrastive learning. We propose ProtoNCE loss, a generalized\nversion of the InfoNCE loss for contrastive learning, which encourages\nrepresentations to be closer to their assigned prototypes. PCL outperforms\nstate-of-the-art instance-wise contrastive learning methods on multiple\nbenchmarks with substantial improvement in low-resource transfer learning. Code\nand pretrained models are available at https://github.com/salesforce/PCL.",
+    "num_pages": 16
+}

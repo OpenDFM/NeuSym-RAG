@@ -1,0 +1,21 @@
+{
+    "uuid": "e3181c7f-c92f-5e72-8419-d97634cf5535",
+    "title": "Whose Opinions Do Language Models Reflect?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Shibani Santurkar",
+        "Esin Durmus",
+        "Faisal Ladhak",
+        "Cinoo Lee",
+        "Percy Liang",
+        "Tatsunori Hashimoto"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2303.17548v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\e3181c7f-c92f-5e72-8419-d97634cf5535.pdf",
+    "bibtex": "@misc{santurkar2023whoseopinionsdolanguagemodels,\n    title = {Whose Opinions Do Language Models Reflect?},\n    author = {Shibani Santurkar and Esin Durmus and Faisal Ladhak and Cinoo Lee and Percy Liang and Tatsunori Hashimoto},\n    year = {2023},\n    eprint = {2303.17548},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2303.17548},\n}",
+    "abstract": "Language models (LMs) are increasingly being used in open-ended contexts,\nwhere the opinions reflected by LMs in response to subjective queries can have\na profound impact, both on user satisfaction, as well as shaping the views of\nsociety at large. In this work, we put forth a quantitative framework to\ninvestigate the opinions reflected by LMs -- by leveraging high-quality public\nopinion polls and their associated human responses. Using this framework, we\ncreate OpinionsQA, a new dataset for evaluating the alignment of LM opinions\nwith those of 60 US demographic groups over topics ranging from abortion to\nautomation. Across topics, we find substantial misalignment between the views\nreflected by current LMs and those of US demographic groups: on par with the\nDemocrat-Republican divide on climate change. Notably, this misalignment\npersists even after explicitly steering the LMs towards particular demographic\ngroups. Our analysis not only confirms prior observations about the\nleft-leaning tendencies of some human feedback-tuned LMs, but also surfaces\ngroups whose opinions are poorly reflected by current LMs (e.g., 65+ and\nwidowed individuals). Our code and data are available at\nhttps://github.com/tatsu-lab/opinions_qa.",
+    "num_pages": 43
+}

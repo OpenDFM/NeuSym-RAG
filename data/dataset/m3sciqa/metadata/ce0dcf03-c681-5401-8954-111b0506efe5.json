@@ -1,0 +1,17 @@
+{
+    "uuid": "ce0dcf03-c681-5401-8954-111b0506efe5",
+    "title": "Exploiting Cloze Questions for Few Shot Text Classification and Natural Language Inference",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Timo Schick",
+        "Hinrich Schütze"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2001.07676v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\ce0dcf03-c681-5401-8954-111b0506efe5.pdf",
+    "bibtex": "@misc{schick2021exploitingclozequestionsforfew,\n    title = {Exploiting Cloze Questions for Few Shot Text Classification and Natural Language Inference},\n    author = {Timo Schick and Hinrich Schütze},\n    year = {2021},\n    eprint = {2001.07676},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2001.07676},\n}",
+    "abstract": "Some NLP tasks can be solved in a fully unsupervised fashion by providing a\npretrained language model with \"task descriptions\" in natural language (e.g.,\nRadford et al., 2019). While this approach underperforms its supervised\ncounterpart, we show in this work that the two ideas can be combined: We\nintroduce Pattern-Exploiting Training (PET), a semi-supervised training\nprocedure that reformulates input examples as cloze-style phrases to help\nlanguage models understand a given task. These phrases are then used to assign\nsoft labels to a large set of unlabeled examples. Finally, standard supervised\ntraining is performed on the resulting training set. For several tasks and\nlanguages, PET outperforms supervised training and strong semi-supervised\napproaches in low-resource settings by a large margin.",
+    "num_pages": 15
+}

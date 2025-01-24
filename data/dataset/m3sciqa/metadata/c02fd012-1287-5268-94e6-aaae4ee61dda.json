@@ -1,0 +1,21 @@
+{
+    "uuid": "c02fd012-1287-5268-94e6-aaae4ee61dda",
+    "title": "COSPLAY: Concept Set Guided Personalized Dialogue Generation Across Both Party Personas",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Chen Xu",
+        "Piji Li",
+        "Wei Wang",
+        "Haoran Yang",
+        "Siyun Wang",
+        "Chuangbai Xiao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.00872v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\c02fd012-1287-5268-94e6-aaae4ee61dda.pdf",
+    "bibtex": "@misc{xu2022cosplayconceptsetguidedpersonalized,\n    title = {COSPLAY: Concept Set Guided Personalized Dialogue Generation Across Both Party Personas},\n    author = {Chen Xu and Piji Li and Wei Wang and Haoran Yang and Siyun Wang and Chuangbai Xiao},\n    year = {2022},\n    eprint = {2205.00872},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.00872},\n}",
+    "abstract": "Maintaining a consistent persona is essential for building a human-like\nconversational model. However, the lack of attention to the partner makes the\nmodel more egocentric: they tend to show their persona by all means such as\ntwisting the topic stiffly, pulling the conversation to their own interests\nregardless, and rambling their persona with little curiosity to the partner. In\nthis work, we propose COSPLAY(COncept Set guided PersonaLized dialogue\ngeneration Across both partY personas) that considers both parties as a \"team\":\nexpressing self-persona while keeping curiosity toward the partner, leading\nresponses around mutual personas, and finding the common ground. Specifically,\nwe first represent self-persona, partner persona and mutual dialogue all in the\nconcept sets. Then, we propose the Concept Set framework with a suite of\nknowledge-enhanced operations to process them such as set algebras, set\nexpansion, and set distance. Based on these operations as medium, we train the\nmodel by utilizing 1) concepts of both party personas, 2) concept relationship\nbetween them, and 3) their relationship to the future dialogue. Extensive\nexperiments on a large public dataset, Persona-Chat, demonstrate that our model\noutperforms state-of-the-art baselines for generating less egocentric, more\nhuman-like, and higher quality responses in both automatic and human\nevaluations.",
+    "num_pages": 11
+}

@@ -1,0 +1,24 @@
+{
+    "uuid": "450c1e1c-8f69-5d85-9a26-df3a876f65e1",
+    "title": "Towards a Unified Multi-Dimensional Evaluator for Text Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Ming Zhong",
+        "Yang Liu",
+        "Da Yin",
+        "Yuning Mao",
+        "Yizhu Jiao",
+        "Pengfei Liu",
+        "Chenguang Zhu",
+        "Heng Ji",
+        "Jiawei Han"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.07197v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\450c1e1c-8f69-5d85-9a26-df3a876f65e1.pdf",
+    "bibtex": "@misc{zhong2022towardsaunifiedmultidimensionalevaluator,\n    title = {Towards a Unified Multi-Dimensional Evaluator for Text Generation},\n    author = {Ming Zhong and Yang Liu and Da Yin and Yuning Mao and Yizhu Jiao and Pengfei Liu and Chenguang Zhu and Heng Ji and Jiawei Han},\n    year = {2022},\n    eprint = {2210.07197},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.07197},\n}",
+    "abstract": "Multi-dimensional evaluation is the dominant paradigm for human evaluation in\nNatural Language Generation (NLG), i.e., evaluating the generated text from\nmultiple explainable dimensions, such as coherence and fluency. However,\nautomatic evaluation in NLG is still dominated by similarity-based metrics, and\nwe lack a reliable framework for a more comprehensive evaluation of advanced\nmodels. In this paper, we propose a unified multi-dimensional evaluator UniEval\nfor NLG. We re-frame NLG evaluation as a Boolean Question Answering (QA) task,\nand by guiding the model with different questions, we can use one evaluator to\nevaluate from multiple dimensions. Furthermore, thanks to the unified Boolean\nQA format, we are able to introduce an intermediate learning phase that enables\nUniEval to incorporate external knowledge from multiple related tasks and gain\nfurther improvement. Experiments on three typical NLG tasks show that UniEval\ncorrelates substantially better with human judgments than existing metrics.\nSpecifically, compared to the top-performing unified evaluators, UniEval\nachieves a 23% higher correlation on text summarization, and over 43% on\ndialogue response generation. Also, UniEval demonstrates a strong zero-shot\nlearning ability for unseen evaluation dimensions and tasks. Source code, data\nand all pre-trained evaluators are available on our GitHub repository\n(https://github.com/maszhongming/UniEval).",
+    "num_pages": 16
+}

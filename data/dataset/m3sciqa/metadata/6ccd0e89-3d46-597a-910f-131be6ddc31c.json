@@ -1,0 +1,20 @@
+{
+    "uuid": "6ccd0e89-3d46-597a-910f-131be6ddc31c",
+    "title": "Specializing Smaller Language Models towards Multi-Step Reasoning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yao Fu",
+        "Hao Peng",
+        "Litu Ou",
+        "Ashish Sabharwal",
+        "Tushar Khot"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2301.12726v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\6ccd0e89-3d46-597a-910f-131be6ddc31c.pdf",
+    "bibtex": "@misc{fu2023specializingsmallerlanguagemodelstowards,\n    title = {Specializing Smaller Language Models towards Multi-Step Reasoning},\n    author = {Yao Fu and Hao Peng and Litu Ou and Ashish Sabharwal and Tushar Khot},\n    year = {2023},\n    eprint = {2301.12726},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2301.12726},\n}",
+    "abstract": "The surprising ability of Large Language Models (LLMs) to perform well on\ncomplex reasoning with only few-shot chain-of-thought prompts is believed to\nemerge only in very large-scale models (100+ billion parameters). We show that\nsuch abilities can, in fact, be distilled down from GPT-3.5 ($\\ge$ 175B) to T5\nvariants ($\\le$ 11B). We propose model specialization, to specialize the\nmodel's ability towards a target task. The hypothesis is that large models\n(commonly viewed as larger than 100B) have strong modeling power, but are\nspread on a large spectrum of tasks. Small models (commonly viewed as smaller\nthan 10B) have limited model capacity, but if we concentrate their capacity on\na specific target task, the model can achieve a decent improved performance. We\nuse multi-step math reasoning as our testbed because it is a very typical\nemergent ability. We show two important aspects of model abilities: (1). there\nexists a very complex balance/ tradeoff between language models'\nmulti-dimensional abilities; (2). by paying the price of decreased generic\nability, we can clearly lift up the scaling curve of models smaller than 10B\ntowards a specialized multi-step math reasoning ability. We further give\ncomprehensive discussions about important design choices for better\ngeneralization, including the tuning data format, the start model checkpoint,\nand a new model selection method. We hope our practice and discoveries can\nserve as an important attempt towards specialized smaller models in the new\nresearch paradigm set by LLMs.",
+    "num_pages": 10
+}

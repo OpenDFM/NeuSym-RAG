@@ -1,0 +1,20 @@
+{
+    "uuid": "507be7a7-d7c2-5c15-8ffe-9e6bfe40e5b0",
+    "title": "PURR: Efficiently Editing Language Model Hallucinations by Denoising Language Model Corruptions",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Anthony Chen",
+        "Panupong Pasupat",
+        "Sameer Singh",
+        "Hongrae Lee",
+        "Kelvin Guu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.14908v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\507be7a7-d7c2-5c15-8ffe-9e6bfe40e5b0.pdf",
+    "bibtex": "@misc{chen2023purrefficientlyeditinglanguagemodel,\n    title = {PURR: Efficiently Editing Language Model Hallucinations by Denoising Language Model Corruptions},\n    author = {Anthony Chen and Panupong Pasupat and Sameer Singh and Hongrae Lee and Kelvin Guu},\n    year = {2023},\n    eprint = {2305.14908},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.14908},\n}",
+    "abstract": "The remarkable capabilities of large language models have been accompanied by\na persistent drawback: the generation of false and unsubstantiated claims\ncommonly known as \"hallucinations\". To combat this issue, recent research has\nintroduced approaches that involve editing and attributing the outputs of\nlanguage models, particularly through prompt-based editing. However, the\ninference cost and speed of using large language models for editing currently\nbottleneck prompt-based methods. These bottlenecks motivate the training of\ncompact editors, which is challenging due to the scarcity of training data for\nthis purpose. To overcome these challenges, we exploit the power of large\nlanguage models to introduce corruptions (i.e., noise) into text and\nsubsequently fine-tune compact editors to denoise the corruptions by\nincorporating relevant evidence. Our methodology is entirely unsupervised and\nprovides us with faux hallucinations for training in any domain. Our Petite\nUnsupervised Research and Revision model, PURR, not only improves attribution\nover existing editing methods based on fine-tuning and prompting, but also\nachieves faster execution times by orders of magnitude.",
+    "num_pages": 12
+}

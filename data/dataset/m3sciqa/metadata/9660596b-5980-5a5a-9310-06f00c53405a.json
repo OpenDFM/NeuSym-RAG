@@ -1,0 +1,20 @@
+{
+    "uuid": "9660596b-5980-5a5a-9310-06f00c53405a",
+    "title": "Improving the Gating Mechanism of Recurrent Neural Networks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Albert Gu",
+        "Caglar Gulcehre",
+        "Tom Le Paine",
+        "Matt Hoffman",
+        "Razvan Pascanu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1910.09890v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\9660596b-5980-5a5a-9310-06f00c53405a.pdf",
+    "bibtex": "@misc{gu2020improvingthegatingmechanismof,\n    title = {Improving the Gating Mechanism of Recurrent Neural Networks},\n    author = {Albert Gu and Caglar Gulcehre and Tom Le Paine and Matt Hoffman and Razvan Pascanu},\n    year = {2020},\n    eprint = {1910.09890},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.NE},\n    url = {http://arxiv.org/abs/1910.09890},\n}",
+    "abstract": "Gating mechanisms are widely used in neural network models, where they allow\ngradients to backpropagate more easily through depth or time. However, their\nsaturation property introduces problems of its own. For example, in recurrent\nmodels these gates need to have outputs near 1 to propagate information over\nlong time-delays, which requires them to operate in their saturation regime and\nhinders gradient-based learning of the gate mechanism. We address this problem\nby deriving two synergistic modifications to the standard gating mechanism that\nare easy to implement, introduce no additional hyperparameters, and improve\nlearnability of the gates when they are close to saturation. We show how these\nchanges are related to and improve on alternative recently proposed gating\nmechanisms such as chrono initialization and Ordered Neurons. Empirically, our\nsimple gating mechanisms robustly improve the performance of recurrent models\non a range of applications, including synthetic memorization tasks, sequential\nimage classification, language modeling, and reinforcement learning,\nparticularly when long-term dependencies are involved.",
+    "num_pages": 19
+}

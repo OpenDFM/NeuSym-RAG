@@ -1,0 +1,21 @@
+{
+    "uuid": "36cc30bc-1b33-5196-939c-bb007346957e",
+    "title": "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Guangxuan Xiao",
+        "Ji Lin",
+        "Mickael Seznec",
+        "Hao Wu",
+        "Julien Demouth",
+        "Song Han"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2211.10438v7",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\36cc30bc-1b33-5196-939c-bb007346957e.pdf",
+    "bibtex": "@misc{xiao2024smoothquantaccurateandefficientposttraining,\n    title = {SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models},\n    author = {Guangxuan Xiao and Ji Lin and Mickael Seznec and Hao Wu and Julien Demouth and Song Han},\n    year = {2024},\n    eprint = {2211.10438},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2211.10438},\n}",
+    "abstract": "Large language models (LLMs) show excellent performance but are compute- and\nmemory-intensive. Quantization can reduce memory and accelerate inference.\nHowever, existing methods cannot maintain accuracy and hardware efficiency at\nthe same time. We propose SmoothQuant, a training-free, accuracy-preserving,\nand general-purpose post-training quantization (PTQ) solution to enable 8-bit\nweight, 8-bit activation (W8A8) quantization for LLMs. Based on the fact that\nweights are easy to quantize while activations are not, SmoothQuant smooths the\nactivation outliers by offline migrating the quantization difficulty from\nactivations to weights with a mathematically equivalent transformation.\nSmoothQuant enables an INT8 quantization of both weights and activations for\nall the matrix multiplications in LLMs, including OPT, BLOOM, GLM, MT-NLG,\nLlama-1/2, Falcon, Mistral, and Mixtral models. We demonstrate up to 1.56x\nspeedup and 2x memory reduction for LLMs with negligible loss in accuracy.\nSmoothQuant enables serving 530B LLM within a single node. Our work offers a\nturn-key solution that reduces hardware costs and democratizes LLMs. Code is\navailable at https://github.com/mit-han-lab/smoothquant.",
+    "num_pages": 13
+}

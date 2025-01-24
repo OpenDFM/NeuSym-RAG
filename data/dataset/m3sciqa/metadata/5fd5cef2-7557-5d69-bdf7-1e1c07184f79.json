@@ -1,0 +1,19 @@
+{
+    "uuid": "5fd5cef2-7557-5d69-bdf7-1e1c07184f79",
+    "title": "Representer Point Selection for Explaining Deep Neural Networks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Chih-Kuan Yeh",
+        "Joon Sik Kim",
+        "Ian E. H. Yen",
+        "Pradeep Ravikumar"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1811.09720v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\5fd5cef2-7557-5d69-bdf7-1e1c07184f79.pdf",
+    "bibtex": "@misc{yeh2018representerpointselectionforexplaining,\n    title = {Representer Point Selection for Explaining Deep Neural Networks},\n    author = {Chih-Kuan Yeh and Joon Sik Kim and Ian E. H. Yen and Pradeep Ravikumar},\n    year = {2018},\n    eprint = {1811.09720},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1811.09720},\n}",
+    "abstract": "We propose to explain the predictions of a deep neural network, by pointing\nto the set of what we call representer points in the training set, for a given\ntest point prediction. Specifically, we show that we can decompose the\npre-activation prediction of a neural network into a linear combination of\nactivations of training points, with the weights corresponding to what we call\nrepresenter values, which thus capture the importance of that training point on\nthe learned parameters of the network. But it provides a deeper understanding\nof the network than simply training point influence: with positive representer\nvalues corresponding to excitatory training points, and negative values\ncorresponding to inhibitory points, which as we show provides considerably more\ninsight. Our method is also much more scalable, allowing for real-time feedback\nin a manner not feasible with influence functions.",
+    "num_pages": 15
+}

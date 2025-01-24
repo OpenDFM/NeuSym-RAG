@@ -1,0 +1,20 @@
+{
+    "uuid": "c2e3ddd3-4f57-5c12-a0d9-89130bfbd6e6",
+    "title": "Scalable Zero-shot Entity Linking with Dense Entity Retrieval",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Ledell Wu",
+        "Fabio Petroni",
+        "Martin Josifoski",
+        "Sebastian Riedel",
+        "Luke Zettlemoyer"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1911.03814v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\c2e3ddd3-4f57-5c12-a0d9-89130bfbd6e6.pdf",
+    "bibtex": "@misc{wu2020scalablezeroshotentitylinkingwith,\n    title = {Scalable Zero-shot Entity Linking with Dense Entity Retrieval},\n    author = {Ledell Wu and Fabio Petroni and Martin Josifoski and Sebastian Riedel and Luke Zettlemoyer},\n    year = {2020},\n    eprint = {1911.03814},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1911.03814},\n}",
+    "abstract": "This paper introduces a conceptually simple, scalable, and highly effective\nBERT-based entity linking model, along with an extensive evaluation of its\naccuracy-speed trade-off. We present a two-stage zero-shot linking algorithm,\nwhere each entity is defined only by a short textual description. The first\nstage does retrieval in a dense space defined by a bi-encoder that\nindependently embeds the mention context and the entity descriptions. Each\ncandidate is then re-ranked with a cross-encoder, that concatenates the mention\nand entity text. Experiments demonstrate that this approach is state of the art\non recent zero-shot benchmarks (6 point absolute gains) and also on more\nestablished non-zero-shot evaluations (e.g. TACKBP-2010), despite its relative\nsimplicity (e.g. no explicit entity embeddings or manually engineered mention\ntables). We also show that bi-encoder linking is very fast with nearest\nneighbour search (e.g. linking with 5.9 million candidates in 2 milliseconds),\nand that much of the accuracy gain from the more expensive cross-encoder can be\ntransferred to the bi-encoder via knowledge distillation. Our code and models\nare available at https://github.com/facebookresearch/BLINK.",
+    "num_pages": 11
+}

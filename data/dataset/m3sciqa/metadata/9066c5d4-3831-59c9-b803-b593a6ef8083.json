@@ -1,0 +1,19 @@
+{
+    "uuid": "9066c5d4-3831-59c9-b803-b593a6ef8083",
+    "title": "Depth-Adaptive Transformer",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Maha Elbayad",
+        "Jiatao Gu",
+        "Edouard Grave",
+        "Michael Auli"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1910.10073v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\9066c5d4-3831-59c9-b803-b593a6ef8083.pdf",
+    "bibtex": "@misc{elbayad2020depthadaptivetransformer,\n    title = {Depth-Adaptive Transformer},\n    author = {Maha Elbayad and Jiatao Gu and Edouard Grave and Michael Auli},\n    year = {2020},\n    eprint = {1910.10073},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1910.10073},\n}",
+    "abstract": "State of the art sequence-to-sequence models for large scale tasks perform a\nfixed number of computations for each input sequence regardless of whether it\nis easy or hard to process. In this paper, we train Transformer models which\ncan make output predictions at different stages of the network and we\ninvestigate different ways to predict how much computation is required for a\nparticular sequence. Unlike dynamic computation in Universal Transformers,\nwhich applies the same set of layers iteratively, we apply different layers at\nevery step to adjust both the amount of computation as well as the model\ncapacity. On IWSLT German-English translation our approach matches the accuracy\nof a well tuned baseline Transformer while using less than a quarter of the\ndecoder layers.",
+    "num_pages": 15
+}

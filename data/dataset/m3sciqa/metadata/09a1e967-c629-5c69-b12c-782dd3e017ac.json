@@ -1,0 +1,21 @@
+{
+    "uuid": "09a1e967-c629-5c69-b12c-782dd3e017ac",
+    "title": "Ordered Memory",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Yikang Shen",
+        "Shawn Tan",
+        "Arian Hosseini",
+        "Zhouhan Lin",
+        "Alessandro Sordoni",
+        "Aaron Courville"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1910.13466v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\09a1e967-c629-5c69-b12c-782dd3e017ac.pdf",
+    "bibtex": "@misc{shen2019orderedmemory,\n    title = {Ordered Memory},\n    author = {Yikang Shen and Shawn Tan and Arian Hosseini and Zhouhan Lin and Alessandro Sordoni and Aaron Courville},\n    year = {2019},\n    eprint = {1910.13466},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1910.13466},\n}",
+    "abstract": "Stack-augmented recurrent neural networks (RNNs) have been of interest to the\ndeep learning community for some time. However, the difficulty of training\nmemory models remains a problem obstructing the widespread use of such models.\nIn this paper, we propose the Ordered Memory architecture. Inspired by Ordered\nNeurons (Shen et al., 2018), we introduce a new attention-based mechanism and\nuse its cumulative probability to control the writing and erasing operation of\nthe memory. We also introduce a new Gated Recursive Cell to compose lower-level\nrepresentations into higher-level representation. We demonstrate that our model\nachieves strong performance on the logical inference task (Bowman et al.,\n2015)and the ListOps (Nangia and Bowman, 2018) task. We can also interpret the\nmodel to retrieve the induced tree structure, and find that these induced\nstructures align with the ground truth. Finally, we evaluate our model on the\nStanford SentimentTreebank tasks (Socher et al., 2013), and find that it\nperforms comparatively with the state-of-the-art methods in the literature.",
+    "num_pages": 14
+}

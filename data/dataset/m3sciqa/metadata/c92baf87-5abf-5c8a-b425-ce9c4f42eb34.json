@@ -1,0 +1,18 @@
+{
+    "uuid": "c92baf87-5abf-5c8a-b425-ce9c4f42eb34",
+    "title": "Hierarchical Reinforcement Learning for Zero-shot Generalization with Subtask Dependencies",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Sungryull Sohn",
+        "Junhyuk Oh",
+        "Honglak Lee"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1807.07665v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\c92baf87-5abf-5c8a-b425-ce9c4f42eb34.pdf",
+    "bibtex": "@misc{sohn2019hierarchicalreinforcementlearningforzeroshot,\n    title = {Hierarchical Reinforcement Learning for Zero-shot Generalization with Subtask Dependencies},\n    author = {Sungryull Sohn and Junhyuk Oh and Honglak Lee},\n    year = {2019},\n    eprint = {1807.07665},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1807.07665},\n}",
+    "abstract": "We introduce a new RL problem where the agent is required to generalize to a\npreviously-unseen environment characterized by a subtask graph which describes\na set of subtasks and their dependencies. Unlike existing hierarchical\nmultitask RL approaches that explicitly describe what the agent should do at a\nhigh level, our problem only describes properties of subtasks and relationships\namong them, which requires the agent to perform complex reasoning to find the\noptimal subtask to execute. To solve this problem, we propose a neural subtask\ngraph solver (NSGS) which encodes the subtask graph using a recursive neural\nnetwork embedding. To overcome the difficulty of training, we propose a novel\nnon-parametric gradient-based policy, graph reward propagation, to pre-train\nour NSGS agent and further finetune it through actor-critic method. The\nexperimental results on two 2D visual domains show that our agent can perform\ncomplex reasoning to find a near-optimal way of executing the subtask graph and\ngeneralize well to the unseen subtask graphs. In addition, we compare our agent\nwith a Monte-Carlo tree search (MCTS) method showing that our method is much\nmore efficient than MCTS, and the performance of NSGS can be further improved\nby combining it with MCTS.",
+    "num_pages": 22
+}

@@ -1,0 +1,17 @@
+{
+    "uuid": "9afe1729-262e-5611-97e6-20ff991d0f25",
+    "title": "A Unified Approach to Interpreting Model Predictions",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Scott Lundberg",
+        "Su-In Lee"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1705.07874v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\9afe1729-262e-5611-97e6-20ff991d0f25.pdf",
+    "bibtex": "@misc{lundberg2017aunifiedapproachtointerpreting,\n    title = {A Unified Approach to Interpreting Model Predictions},\n    author = {Scott Lundberg and Su-In Lee},\n    year = {2017},\n    eprint = {1705.07874},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/1705.07874},\n}",
+    "abstract": "Understanding why a model makes a certain prediction can be as crucial as the\nprediction's accuracy in many applications. However, the highest accuracy for\nlarge modern datasets is often achieved by complex models that even experts\nstruggle to interpret, such as ensemble or deep learning models, creating a\ntension between accuracy and interpretability. In response, various methods\nhave recently been proposed to help users interpret the predictions of complex\nmodels, but it is often unclear how these methods are related and when one\nmethod is preferable over another. To address this problem, we present a\nunified framework for interpreting predictions, SHAP (SHapley Additive\nexPlanations). SHAP assigns each feature an importance value for a particular\nprediction. Its novel components include: (1) the identification of a new class\nof additive feature importance measures, and (2) theoretical results showing\nthere is a unique solution in this class with a set of desirable properties.\nThe new class unifies six existing methods, notable because several recent\nmethods in the class lack the proposed desirable properties. Based on insights\nfrom this unification, we present new methods that show improved computational\nperformance and/or better consistency with human intuition than previous\napproaches.",
+    "num_pages": 10
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "e4664f86-db28-5fec-a1de-52cf5cc3bc4a",
+    "title": "MISA: Modality-Invariant and -Specific Representations for Multimodal Sentiment Analysis",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Devamanyu Hazarika",
+        "Roger Zimmermann",
+        "Soujanya Poria"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2005.03545v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\e4664f86-db28-5fec-a1de-52cf5cc3bc4a.pdf",
+    "bibtex": "@misc{hazarika2020misamodalityinvariantandspecificrepresentations,\n    title = {MISA: Modality-Invariant and -Specific Representations for Multimodal Sentiment Analysis},\n    author = {Devamanyu Hazarika and Roger Zimmermann and Soujanya Poria},\n    year = {2020},\n    eprint = {2005.03545},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2005.03545},\n}",
+    "abstract": "Multimodal Sentiment Analysis is an active area of research that leverages\nmultimodal signals for affective understanding of user-generated videos. The\npredominant approach, addressing this task, has been to develop sophisticated\nfusion techniques. However, the heterogeneous nature of the signals creates\ndistributional modality gaps that pose significant challenges. In this paper,\nwe aim to learn effective modality representations to aid the process of\nfusion. We propose a novel framework, MISA, which projects each modality to two\ndistinct subspaces. The first subspace is modality-invariant, where the\nrepresentations across modalities learn their commonalities and reduce the\nmodality gap. The second subspace is modality-specific, which is private to\neach modality and captures their characteristic features. These representations\nprovide a holistic view of the multimodal data, which is used for fusion that\nleads to task predictions. Our experiments on popular sentiment analysis\nbenchmarks, MOSI and MOSEI, demonstrate significant gains over state-of-the-art\nmodels. We also consider the task of Multimodal Humor Detection and experiment\non the recently proposed UR_FUNNY dataset. Here too, our model fares better\nthan strong baselines, establishing MISA as a useful multimodal framework.",
+    "num_pages": 12
+}

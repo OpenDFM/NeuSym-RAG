@@ -1,0 +1,17 @@
+{
+    "uuid": "3524af2f-8ff3-52a3-bc33-bdc29ff34c74",
+    "title": "Massive Multi-Document Summarization of Product Reviews with Weak Supervision",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Ori Shapira",
+        "Ran Levy"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2007.11348v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\3524af2f-8ff3-52a3-bc33-bdc29ff34c74.pdf",
+    "bibtex": "@misc{shapira2020massivemultidocumentsummarizationofproduct,\n    title = {Massive Multi-Document Summarization of Product Reviews with Weak Supervision},\n    author = {Ori Shapira and Ran Levy},\n    year = {2020},\n    eprint = {2007.11348},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2007.11348},\n}",
+    "abstract": "Product reviews summarization is a type of Multi-Document Summarization (MDS)\ntask in which the summarized document sets are often far larger than in\ntraditional MDS (up to tens of thousands of reviews). We highlight this\ndifference and coin the term \"Massive Multi-Document Summarization\" (MMDS) to\ndenote an MDS task that involves hundreds of documents or more. Prior work on\nproduct reviews summarization considered small samples of the reviews, mainly\ndue to the difficulty of handling massive document sets. We show that\nsummarizing small samples can result in loss of important information and\nprovide misleading evaluation results. We propose a schema for summarizing a\nmassive set of reviews on top of a standard summarization algorithm. Since\nwriting large volumes of reference summaries needed for advanced neural network\nmodels is impractical, our solution relies on weak supervision. Finally, we\npropose an evaluation scheme that is based on multiple crowdsourced reference\nsummaries and aims to capture the massive review collection. We show that an\ninitial implementation of our schema significantly improves over several\nbaselines in ROUGE scores, and exhibits strong coherence in a manual linguistic\nquality assessment.",
+    "num_pages": 12
+}

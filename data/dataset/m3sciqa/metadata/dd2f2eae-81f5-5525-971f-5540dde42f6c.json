@@ -1,0 +1,18 @@
+{
+    "uuid": "dd2f2eae-81f5-5525-971f-5540dde42f6c",
+    "title": "CMOT: Cross-modal Mixup via Optimal Transport for Speech Translation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yan Zhou",
+        "Qingkai Fang",
+        "Yang Feng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.14635v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\dd2f2eae-81f5-5525-971f-5540dde42f6c.pdf",
+    "bibtex": "@misc{zhou2023cmotcrossmodalmixupviaoptimal,\n    title = {CMOT: Cross-modal Mixup via Optimal Transport for Speech Translation},\n    author = {Yan Zhou and Qingkai Fang and Yang Feng},\n    year = {2023},\n    eprint = {2305.14635},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.14635},\n}",
+    "abstract": "End-to-end speech translation (ST) is the task of translating speech signals\nin the source language into text in the target language. As a cross-modal task,\nend-to-end ST is difficult to train with limited data. Existing methods often\ntry to transfer knowledge from machine translation (MT), but their performances\nare restricted by the modality gap between speech and text. In this paper, we\npropose Cross-modal Mixup via Optimal Transport CMOT to overcome the modality\ngap. We find the alignment between speech and text sequences via optimal\ntransport and then mix up the sequences from different modalities at a token\nlevel using the alignment. Experiments on the MuST-C ST benchmark demonstrate\nthat CMOT achieves an average BLEU of 30.0 in 8 translation directions,\noutperforming previous methods. Further analysis shows CMOT can adaptively find\nthe alignment between modalities, which helps alleviate the modality gap\nbetween speech and text. Code is publicly available at\nhttps://github.com/ictnlp/CMOT.",
+    "num_pages": 13
+}

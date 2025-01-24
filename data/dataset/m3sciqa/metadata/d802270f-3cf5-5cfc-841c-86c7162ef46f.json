@@ -1,0 +1,20 @@
+{
+    "uuid": "d802270f-3cf5-5cfc-841c-86c7162ef46f",
+    "title": "Sentiment Analysis in the Era of Large Language Models: A Reality Check",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Wenxuan Zhang",
+        "Yue Deng",
+        "Bing Liu",
+        "Sinno Jialin Pan",
+        "Lidong Bing"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.15005v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\d802270f-3cf5-5cfc-841c-86c7162ef46f.pdf",
+    "bibtex": "@misc{zhang2023sentimentanalysisintheera,\n    title = {Sentiment Analysis in the Era of Large Language Models: A Reality Check},\n    author = {Wenxuan Zhang and Yue Deng and Bing Liu and Sinno Jialin Pan and Lidong Bing},\n    year = {2023},\n    eprint = {2305.15005},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.15005},\n}",
+    "abstract": "Sentiment analysis (SA) has been a long-standing research area in natural\nlanguage processing. It can offer rich insights into human sentiments and\nopinions and has thus seen considerable interest from both academia and\nindustry. With the advent of large language models (LLMs) such as ChatGPT,\nthere is a great potential for their employment on SA problems. However, the\nextent to which existing LLMs can be leveraged for different sentiment analysis\ntasks remains unclear. This paper aims to provide a comprehensive investigation\ninto the capabilities of LLMs in performing various sentiment analysis tasks,\nfrom conventional sentiment classification to aspect-based sentiment analysis\nand multifaceted analysis of subjective texts. We evaluate performance across\n13 tasks on 26 datasets and compare the results against small language models\n(SLMs) trained on domain-specific datasets. Our study reveals that while LLMs\ndemonstrate satisfactory performance in simpler tasks, they lag behind in more\ncomplex tasks requiring deeper understanding or structured sentiment\ninformation. However, LLMs significantly outperform SLMs in few-shot learning\nsettings, suggesting their potential when annotation resources are limited. We\nalso highlight the limitations of current evaluation practices in assessing\nLLMs' SA abilities and propose a novel benchmark, \\textsc{SentiEval}, for a\nmore comprehensive and realistic evaluation. Data and code during our\ninvestigations are available at\n\\url{https://github.com/DAMO-NLP-SG/LLM-Sentiment}.",
+    "num_pages": 26
+}

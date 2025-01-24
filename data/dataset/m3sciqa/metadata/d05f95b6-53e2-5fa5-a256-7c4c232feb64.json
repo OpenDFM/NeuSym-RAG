@@ -1,0 +1,18 @@
+{
+    "uuid": "d05f95b6-53e2-5fa5-a256-7c4c232feb64",
+    "title": "Likelihood Regret: An Out-of-Distribution Detection Score For Variational Auto-encoder",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Zhisheng Xiao",
+        "Qing Yan",
+        "Yali Amit"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2003.02977v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\d05f95b6-53e2-5fa5-a256-7c4c232feb64.pdf",
+    "bibtex": "@misc{xiao2020likelihoodregretanoutofdistributiondetection,\n    title = {Likelihood Regret: An Out-of-Distribution Detection Score For Variational Auto-encoder},\n    author = {Zhisheng Xiao and Qing Yan and Yali Amit},\n    year = {2020},\n    eprint = {2003.02977},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2003.02977},\n}",
+    "abstract": "Deep probabilistic generative models enable modeling the likelihoods of very\nhigh dimensional data. An important application of generative modeling should\nbe the ability to detect out-of-distribution (OOD) samples by setting a\nthreshold on the likelihood. However, some recent studies show that\nprobabilistic generative models can, in some cases, assign higher likelihoods\non certain types of OOD samples, making the OOD detection rules based on\nlikelihood threshold problematic. To address this issue, several OOD detection\nmethods have been proposed for deep generative models. In this paper, we make\nthe observation that many of these methods fail when applied to generative\nmodels based on Variational Auto-encoders (VAE). As an alternative, we propose\nLikelihood Regret, an efficient OOD score for VAEs. We benchmark our proposed\nmethod over existing approaches, and empirical results suggest that our method\nobtains the best overall OOD detection performances when applied to VAEs.",
+    "num_pages": 19
+}

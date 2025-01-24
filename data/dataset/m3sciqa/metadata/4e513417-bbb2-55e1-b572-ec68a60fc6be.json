@@ -1,0 +1,26 @@
+{
+    "uuid": "4e513417-bbb2-55e1-b572-ec68a60fc6be",
+    "title": "Big Bird: Transformers for Longer Sequences",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Manzil Zaheer",
+        "Guru Guruganesh",
+        "Avinava Dubey",
+        "Joshua Ainslie",
+        "Chris Alberti",
+        "Santiago Ontanon",
+        "Philip Pham",
+        "Anirudh Ravula",
+        "Qifan Wang",
+        "Li Yang",
+        "Amr Ahmed"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2007.14062v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\4e513417-bbb2-55e1-b572-ec68a60fc6be.pdf",
+    "bibtex": "@misc{zaheer2021bigbirdtransformersforlonger,\n    title = {Big Bird: Transformers for Longer Sequences},\n    author = {Manzil Zaheer and Guru Guruganesh and Avinava Dubey and Joshua Ainslie and Chris Alberti and Santiago Ontanon and Philip Pham and Anirudh Ravula and Qifan Wang and Li Yang and Amr Ahmed},\n    year = {2021},\n    eprint = {2007.14062},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2007.14062},\n}",
+    "abstract": "Transformers-based models, such as BERT, have been one of the most successful\ndeep learning models for NLP. Unfortunately, one of their core limitations is\nthe quadratic dependency (mainly in terms of memory) on the sequence length due\nto their full attention mechanism. To remedy this, we propose, BigBird, a\nsparse attention mechanism that reduces this quadratic dependency to linear. We\nshow that BigBird is a universal approximator of sequence functions and is\nTuring complete, thereby preserving these properties of the quadratic, full\nattention model. Along the way, our theoretical analysis reveals some of the\nbenefits of having $O(1)$ global tokens (such as CLS), that attend to the\nentire sequence as part of the sparse attention mechanism. The proposed sparse\nattention can handle sequences of length up to 8x of what was previously\npossible using similar hardware. As a consequence of the capability to handle\nlonger context, BigBird drastically improves performance on various NLP tasks\nsuch as question answering and summarization. We also propose novel\napplications to genomics data.",
+    "num_pages": 42
+}

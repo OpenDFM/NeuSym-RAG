@@ -1,0 +1,21 @@
+{
+    "uuid": "e2cbc3e9-68fb-5796-b54d-738df1ac3b67",
+    "title": "Can Language Models be Biomedical Knowledge Bases?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Mujeen Sung",
+        "Jinhyuk Lee",
+        "Sean Yi",
+        "Minji Jeon",
+        "Sungdong Kim",
+        "Jaewoo Kang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.07154v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\e2cbc3e9-68fb-5796-b54d-738df1ac3b67.pdf",
+    "bibtex": "@misc{sung2021canlanguagemodelsbebiomedical,\n    title = {Can Language Models be Biomedical Knowledge Bases?},\n    author = {Mujeen Sung and Jinhyuk Lee and Sean Yi and Minji Jeon and Sungdong Kim and Jaewoo Kang},\n    year = {2021},\n    eprint = {2109.07154},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.07154},\n}",
+    "abstract": "Pre-trained language models (LMs) have become ubiquitous in solving various\nnatural language processing (NLP) tasks. There has been increasing interest in\nwhat knowledge these LMs contain and how we can extract that knowledge,\ntreating LMs as knowledge bases (KBs). While there has been much work on\nprobing LMs in the general domain, there has been little attention to whether\nthese powerful LMs can be used as domain-specific KBs. To this end, we create\nthe BioLAMA benchmark, which is comprised of 49K biomedical factual knowledge\ntriples for probing biomedical LMs. We find that biomedical LMs with recently\nproposed probing methods can achieve up to 18.51% Acc@5 on retrieving\nbiomedical knowledge. Although this seems promising given the task difficulty,\nour detailed analyses reveal that most predictions are highly correlated with\nprompt templates without any subjects, hence producing similar results on each\nrelation and hindering their capabilities to be used as domain-specific KBs. We\nhope that BioLAMA can serve as a challenging benchmark for biomedical factual\nprobing.",
+    "num_pages": 12
+}

@@ -1,0 +1,22 @@
+{
+    "uuid": "4d4ba218-3d96-5deb-b3c1-90589dfbf6d3",
+    "title": "DExperts: Decoding-Time Controlled Text Generation with Experts and Anti-Experts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Alisa Liu",
+        "Maarten Sap",
+        "Ximing Lu",
+        "Swabha Swayamdipta",
+        "Chandra Bhagavatula",
+        "Noah A. Smith",
+        "Yejin Choi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2105.03023v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\4d4ba218-3d96-5deb-b3c1-90589dfbf6d3.pdf",
+    "bibtex": "@misc{liu2021dexpertsdecodingtimecontrolledtextgeneration,\n    title = {DExperts: Decoding-Time Controlled Text Generation with Experts and Anti-Experts},\n    author = {Alisa Liu and Maarten Sap and Ximing Lu and Swabha Swayamdipta and Chandra Bhagavatula and Noah A. Smith and Yejin Choi},\n    year = {2021},\n    eprint = {2105.03023},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2105.03023},\n}",
+    "abstract": "Despite recent advances in natural language generation, it remains\nchallenging to control attributes of generated text. We propose DExperts:\nDecoding-time Experts, a decoding-time method for controlled text generation\nthat combines a pretrained language model with \"expert\" LMs and/or\n\"anti-expert\" LMs in a product of experts. Intuitively, under the ensemble,\ntokens only get high probability if they are considered likely by the experts,\nand unlikely by the anti-experts. We apply DExperts to language detoxification\nand sentiment-controlled generation, where we outperform existing controllable\ngeneration methods on both automatic and human evaluations. Moreover, because\nDExperts operates only on the output of the pretrained LM, it is effective with\n(anti-)experts of smaller size, including when operating on GPT-3. Our work\nhighlights the promise of tuning small LMs on text with (un)desirable\nattributes for efficient decoding-time steering.",
+    "num_pages": 16
+}

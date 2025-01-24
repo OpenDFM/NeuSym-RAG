@@ -1,0 +1,19 @@
+{
+    "uuid": "6305afda-1839-57a8-9f4c-aaa788f95912",
+    "title": "UniKGQA: Unified Retrieval and Reasoning for Solving Multi-hop Question Answering Over Knowledge Graph",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Jinhao Jiang",
+        "Kun Zhou",
+        "Wayne Xin Zhao",
+        "Ji-Rong Wen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2212.00959v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\6305afda-1839-57a8-9f4c-aaa788f95912.pdf",
+    "bibtex": "@misc{jiang2023unikgqaunifiedretrievalandreasoning,\n    title = {UniKGQA: Unified Retrieval and Reasoning for Solving Multi-hop Question Answering Over Knowledge Graph},\n    author = {Jinhao Jiang and Kun Zhou and Wayne Xin Zhao and Ji-Rong Wen},\n    year = {2023},\n    eprint = {2212.00959},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2212.00959},\n}",
+    "abstract": "Multi-hop Question Answering over Knowledge Graph~(KGQA) aims to find the\nanswer entities that are multiple hops away from the topic entities mentioned\nin a natural language question on a large-scale Knowledge Graph (KG). To cope\nwith the vast search space, existing work usually adopts a two-stage approach:\nit first retrieves a relatively small subgraph related to the question and then\nperforms the reasoning on the subgraph to find the answer entities accurately.\nAlthough these two stages are highly related, previous work employs very\ndifferent technical solutions for developing the retrieval and reasoning\nmodels, neglecting their relatedness in task essence. In this paper, we propose\nUniKGQA, a novel approach for multi-hop KGQA task, by unifying retrieval and\nreasoning in both model architecture and parameter learning. For model\narchitecture, UniKGQA consists of a semantic matching module based on a\npre-trained language model~(PLM) for question-relation semantic matching, and a\nmatching information propagation module to propagate the matching information\nalong the directed edges on KGs. For parameter learning, we design a shared\npre-training task based on question-relation matching for both retrieval and\nreasoning models, and then propose retrieval- and reasoning-oriented\nfine-tuning strategies. Compared with previous studies, our approach is more\nunified, tightly relating the retrieval and reasoning stages. Extensive\nexperiments on three benchmark datasets have demonstrated the effectiveness of\nour method on the multi-hop KGQA task. Our codes and data are publicly\navailable at~\\url{https://github.com/RUCAIBox/UniKGQA}.",
+    "num_pages": 18
+}

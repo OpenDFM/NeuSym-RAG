@@ -1,0 +1,23 @@
+{
+    "uuid": "63813a1d-48c7-5be9-b6d2-ba1e463de539",
+    "title": "Parameter-Efficient Transfer Learning for NLP",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Neil Houlsby",
+        "Andrei Giurgiu",
+        "Stanislaw Jastrzebski",
+        "Bruna Morrone",
+        "Quentin de Laroussilhe",
+        "Andrea Gesmundo",
+        "Mona Attariyan",
+        "Sylvain Gelly"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1902.00751v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\63813a1d-48c7-5be9-b6d2-ba1e463de539.pdf",
+    "bibtex": "@misc{houlsby2019parameterefficienttransferlearningfornlp,\n    title = {Parameter-Efficient Transfer Learning for NLP},\n    author = {Neil Houlsby and Andrei Giurgiu and Stanislaw Jastrzebski and Bruna Morrone and Quentin de Laroussilhe and Andrea Gesmundo and Mona Attariyan and Sylvain Gelly},\n    year = {2019},\n    eprint = {1902.00751},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1902.00751},\n}",
+    "abstract": "Fine-tuning large pre-trained models is an effective transfer mechanism in\nNLP. However, in the presence of many downstream tasks, fine-tuning is\nparameter inefficient: an entire new model is required for every task. As an\nalternative, we propose transfer with adapter modules. Adapter modules yield a\ncompact and extensible model; they add only a few trainable parameters per\ntask, and new tasks can be added without revisiting previous ones. The\nparameters of the original network remain fixed, yielding a high degree of\nparameter sharing. To demonstrate adapter's effectiveness, we transfer the\nrecently proposed BERT Transformer model to 26 diverse text classification\ntasks, including the GLUE benchmark. Adapters attain near state-of-the-art\nperformance, whilst adding only a few parameters per task. On GLUE, we attain\nwithin 0.4% of the performance of full fine-tuning, adding only 3.6% parameters\nper task. By contrast, fine-tuning trains 100% of the parameters per task.",
+    "num_pages": 13
+}

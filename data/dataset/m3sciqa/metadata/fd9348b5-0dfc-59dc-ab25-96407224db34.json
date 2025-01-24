@@ -1,0 +1,22 @@
+{
+    "uuid": "fd9348b5-0dfc-59dc-ab25-96407224db34",
+    "title": "Prompting GPT-3 To Be Reliable",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Chenglei Si",
+        "Zhe Gan",
+        "Zhengyuan Yang",
+        "Shuohang Wang",
+        "Jianfeng Wang",
+        "Jordan Boyd-Graber",
+        "Lijuan Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.09150v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\fd9348b5-0dfc-59dc-ab25-96407224db34.pdf",
+    "bibtex": "@misc{si2023promptinggpt3tobereliable,\n    title = {Prompting GPT-3 To Be Reliable},\n    author = {Chenglei Si and Zhe Gan and Zhengyuan Yang and Shuohang Wang and Jianfeng Wang and Jordan Boyd-Graber and Lijuan Wang},\n    year = {2023},\n    eprint = {2210.09150},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.09150},\n}",
+    "abstract": "Large language models (LLMs) show impressive abilities via few-shot\nprompting. Commercialized APIs such as OpenAI GPT-3 further increase their use\nin real-world language applications. However, the crucial problem of how to\nimprove the reliability of GPT-3 is still under-explored. While reliability is\na broad and vaguely defined term, we decompose reliability into four main\nfacets that correspond to the existing framework of ML safety and are\nwell-recognized to be important: generalizability, social biases, calibration,\nand factuality. Our core contribution is to establish simple and effective\nprompts that improve GPT-3's reliability as it: 1) generalizes\nout-of-distribution, 2) balances demographic distribution and uses natural\nlanguage instructions to reduce social biases, 3) calibrates output\nprobabilities, and 4) updates the LLM's factual knowledge and reasoning chains.\nWith appropriate prompts, GPT-3 is more reliable than smaller-scale supervised\nmodels on all these facets. We release all processed datasets, evaluation\nscripts, and model predictions. Our systematic empirical study not only sheds\nnew insights on the reliability of prompting LLMs, but more importantly, our\nprompting strategies can help practitioners more reliably use LLMs like GPT-3.",
+    "num_pages": 24
+}

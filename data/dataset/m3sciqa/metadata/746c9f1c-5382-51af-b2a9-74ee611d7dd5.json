@@ -1,0 +1,19 @@
+{
+    "uuid": "746c9f1c-5382-51af-b2a9-74ee611d7dd5",
+    "title": "Learning Latent Permutations with Gumbel-Sinkhorn Networks",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Gonzalo Mena",
+        "David Belanger",
+        "Scott Linderman",
+        "Jasper Snoek"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1802.08665v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\746c9f1c-5382-51af-b2a9-74ee611d7dd5.pdf",
+    "bibtex": "@misc{mena2018learninglatentpermutationswithgumbelsinkhorn,\n    title = {Learning Latent Permutations with Gumbel-Sinkhorn Networks},\n    author = {Gonzalo Mena and David Belanger and Scott Linderman and Jasper Snoek},\n    year = {2018},\n    eprint = {1802.08665},\n    archivePrefix = {arXiv},\n    primaryClass = {stat.ML},\n    url = {http://arxiv.org/abs/1802.08665},\n}",
+    "abstract": "Permutations and matchings are core building blocks in a variety of latent\nvariable models, as they allow us to align, canonicalize, and sort data.\nLearning in such models is difficult, however, because exact marginalization\nover these combinatorial objects is intractable. In response, this paper\nintroduces a collection of new methods for end-to-end learning in such models\nthat approximate discrete maximum-weight matching using the continuous Sinkhorn\noperator. Sinkhorn iteration is attractive because it functions as a simple,\neasy-to-implement analog of the softmax operator. With this, we can define the\nGumbel-Sinkhorn method, an extension of the Gumbel-Softmax method (Jang et al.\n2016, Maddison2016 et al. 2016) to distributions over latent matchings. We\ndemonstrate the effectiveness of our method by outperforming competitive\nbaselines on a range of qualitatively different tasks: sorting numbers, solving\njigsaw puzzles, and identifying neural signals in worms.",
+    "num_pages": 22
+}

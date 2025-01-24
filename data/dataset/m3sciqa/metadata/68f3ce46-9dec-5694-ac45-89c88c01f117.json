@@ -1,0 +1,20 @@
+{
+    "uuid": "68f3ce46-9dec-5694-ac45-89c88c01f117",
+    "title": "Recall and Learn: A Memory-augmented Solver for Math Word Problems",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Shifeng Huang",
+        "Jiawei Wang",
+        "Jiao Xu",
+        "Da Cao",
+        "Ming Yang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.13112v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\68f3ce46-9dec-5694-ac45-89c88c01f117.pdf",
+    "bibtex": "@misc{huang2021recallandlearnamemoryaugmented,\n    title = {Recall and Learn: A Memory-augmented Solver for Math Word Problems},\n    author = {Shifeng Huang and Jiawei Wang and Jiao Xu and Da Cao and Ming Yang},\n    year = {2021},\n    eprint = {2109.13112},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.13112},\n}",
+    "abstract": "In this article, we tackle the math word problem, namely, automatically\nanswering a mathematical problem according to its textual description. Although\nrecent methods have demonstrated their promising results, most of these methods\nare based on template-based generation scheme which results in limited\ngeneralization capability. To this end, we propose a novel human-like\nanalogical learning method in a recall and learn manner. Our proposed framework\nis composed of modules of memory, representation, analogy, and reasoning, which\nare designed to make a new exercise by referring to the exercises learned in\nthe past. Specifically, given a math word problem, the model first retrieves\nsimilar questions by a memory module and then encodes the unsolved problem and\neach retrieved question using a representation module. Moreover, to solve the\nproblem in a way of analogy, an analogy module and a reasoning module with a\ncopy mechanism are proposed to model the interrelationship between the problem\nand each retrieved question. Extensive experiments on two well-known datasets\nshow the superiority of our proposed algorithm as compared to other\nstate-of-the-art competitors from both overall performance comparison and\nmicro-scope studies.",
+    "num_pages": 11
+}

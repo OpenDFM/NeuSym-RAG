@@ -1,0 +1,18 @@
+{
+    "uuid": "26feec2d-e6df-532b-9f63-ab9b73e8266f",
+    "title": "P5: Plug-and-Play Persona Prompting for Personalized Response Selection",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Joosung Lee",
+        "Minsik Oh",
+        "Donghun Lee"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.06390v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\26feec2d-e6df-532b-9f63-ab9b73e8266f.pdf",
+    "bibtex": "@misc{lee2023p5plugandplaypersonapromptingfor,\n    title = {P5: Plug-and-Play Persona Prompting for Personalized Response Selection},\n    author = {Joosung Lee and Minsik Oh and Donghun Lee},\n    year = {2023},\n    eprint = {2310.06390},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.06390},\n}",
+    "abstract": "The use of persona-grounded retrieval-based chatbots is crucial for\npersonalized conversations, but there are several challenges that need to be\naddressed. 1) In general, collecting persona-grounded corpus is very expensive.\n2) The chatbot system does not always respond in consideration of persona at\nreal applications. To address these challenges, we propose a plug-and-play\npersona prompting method. Our system can function as a standard open-domain\nchatbot if persona information is not available. We demonstrate that this\napproach performs well in the zero-shot setting, which reduces the dependence\non persona-ground training data. This makes it easier to expand the system to\nother languages without the need to build a persona-grounded corpus.\nAdditionally, our model can be fine-tuned for even better performance. In our\nexperiments, the zero-shot model improved the standard model by 7.71 and 1.04\npoints in the original persona and revised persona, respectively. The\nfine-tuned model improved the previous state-of-the-art system by 1.95 and 3.39\npoints in the original persona and revised persona, respectively. To the best\nof our knowledge, this is the first attempt to solve the problem of\npersonalized response selection using prompt sequences. Our code is available\non github~\\footnote{https://github.com/rungjoo/plug-and-play-prompt-persona}.",
+    "num_pages": 12
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "42d7a286-5fb0-52be-bd7d-62dc2af2d1c2",
+    "title": "Guiding Pretraining in Reinforcement Learning with Large Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yuqing Du",
+        "Olivia Watkins",
+        "Zihan Wang",
+        "Cédric Colas",
+        "Trevor Darrell",
+        "Pieter Abbeel",
+        "Abhishek Gupta",
+        "Jacob Andreas"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.06692v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\42d7a286-5fb0-52be-bd7d-62dc2af2d1c2.pdf",
+    "bibtex": "@misc{du2023guidingpretraininginreinforcementlearning,\n    title = {Guiding Pretraining in Reinforcement Learning with Large Language Models},\n    author = {Yuqing Du and Olivia Watkins and Zihan Wang and Cédric Colas and Trevor Darrell and Pieter Abbeel and Abhishek Gupta and Jacob Andreas},\n    year = {2023},\n    eprint = {2302.06692},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2302.06692},\n}",
+    "abstract": "Reinforcement learning algorithms typically struggle in the absence of a\ndense, well-shaped reward function. Intrinsically motivated exploration methods\naddress this limitation by rewarding agents for visiting novel states or\ntransitions, but these methods offer limited benefits in large environments\nwhere most discovered novelty is irrelevant for downstream tasks. We describe a\nmethod that uses background knowledge from text corpora to shape exploration.\nThis method, called ELLM (Exploring with LLMs) rewards an agent for achieving\ngoals suggested by a language model prompted with a description of the agent's\ncurrent state. By leveraging large-scale language model pretraining, ELLM\nguides agents toward human-meaningful and plausibly useful behaviors without\nrequiring a human in the loop. We evaluate ELLM in the Crafter game environment\nand the Housekeep robotic simulator, showing that ELLM-trained agents have\nbetter coverage of common-sense behaviors during pretraining and usually match\nor improve performance on a range of downstream tasks. Code available at\nhttps://github.com/yuqingd/ellm.",
+    "num_pages": 21
+}

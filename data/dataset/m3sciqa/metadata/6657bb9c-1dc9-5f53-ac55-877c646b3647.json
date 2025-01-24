@@ -1,0 +1,18 @@
+{
+    "uuid": "6657bb9c-1dc9-5f53-ac55-877c646b3647",
+    "title": "Anticipation-Free Training for Simultaneous Machine Translation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Chih-Chiang Chang",
+        "Shun-Po Chuang",
+        "Hung-yi Lee"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2201.12868v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\6657bb9c-1dc9-5f53-ac55-877c646b3647.pdf",
+    "bibtex": "@misc{chang2022anticipationfreetrainingforsimultaneousmachine,\n    title = {Anticipation-Free Training for Simultaneous Machine Translation},\n    author = {Chih-Chiang Chang and Shun-Po Chuang and Hung-yi Lee},\n    year = {2022},\n    eprint = {2201.12868},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2201.12868},\n}",
+    "abstract": "Simultaneous machine translation (SimulMT) speeds up the translation process\nby starting to translate before the source sentence is completely available. It\nis difficult due to limited context and word order difference between\nlanguages. Existing methods increase latency or introduce adaptive read-write\npolicies for SimulMT models to handle local reordering and improve translation\nquality. However, the long-distance reordering would make the SimulMT models\nlearn translation mistakenly. Specifically, the model may be forced to predict\ntarget tokens when the corresponding source tokens have not been read. This\nleads to aggressive anticipation during inference, resulting in the\nhallucination phenomenon. To mitigate this problem, we propose a new framework\nthat decompose the translation process into the monotonic translation step and\nthe reordering step, and we model the latter by the auxiliary sorting network\n(ASN). The ASN rearranges the hidden states to match the order in the target\nlanguage, so that the SimulMT model could learn to translate more reasonably.\nThe entire model is optimized end-to-end and does not rely on external aligners\nor data. During inference, ASN is removed to achieve streaming. Experiments\nshow the proposed framework could outperform previous methods with less\nlatency.",
+    "num_pages": 20
+}

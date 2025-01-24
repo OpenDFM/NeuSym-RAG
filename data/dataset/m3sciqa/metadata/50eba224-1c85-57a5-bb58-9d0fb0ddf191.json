@@ -1,0 +1,19 @@
+{
+    "uuid": "50eba224-1c85-57a5-bb58-9d0fb0ddf191",
+    "title": "Can Rationalization Improve Robustness?",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Howard Chen",
+        "Jacqueline He",
+        "Karthik Narasimhan",
+        "Danqi Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.11790v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\50eba224-1c85-57a5-bb58-9d0fb0ddf191.pdf",
+    "bibtex": "@misc{chen2022canrationalizationimproverobustness,\n    title = {Can Rationalization Improve Robustness?},\n    author = {Howard Chen and Jacqueline He and Karthik Narasimhan and Danqi Chen},\n    year = {2022},\n    eprint = {2204.11790},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.11790},\n}",
+    "abstract": "A growing line of work has investigated the development of neural NLP models\nthat can produce rationales--subsets of input that can explain their model\npredictions. In this paper, we ask whether such rationale models can also\nprovide robustness to adversarial attacks in addition to their interpretable\nnature. Since these models need to first generate rationales (\"rationalizer\")\nbefore making predictions (\"predictor\"), they have the potential to ignore\nnoise or adversarially added text by simply masking it out of the generated\nrationale. To this end, we systematically generate various types of 'AddText'\nattacks for both token and sentence-level rationalization tasks, and perform an\nextensive empirical evaluation of state-of-the-art rationale models across five\ndifferent tasks. Our experiments reveal that the rationale models show the\npromise to improve robustness, while they struggle in certain scenarios--when\nthe rationalizer is sensitive to positional bias or lexical choices of attack\ntext. Further, leveraging human rationale as supervision does not always\ntranslate to better performance. Our study is a first step towards exploring\nthe interplay between interpretability and robustness in the\nrationalize-then-predict framework.",
+    "num_pages": 14
+}

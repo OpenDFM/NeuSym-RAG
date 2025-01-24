@@ -1,0 +1,17 @@
+{
+    "uuid": "eafc1f76-8bd5-594c-90b4-d91531781383",
+    "title": "AMR Parsing with Causal Hierarchical Attention and Pointers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Chao Lou",
+        "Kewei Tu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.11964v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\eafc1f76-8bd5-594c-90b4-d91531781383.pdf",
+    "bibtex": "@misc{lou2023amrparsingwithcausalhierarchical,\n    title = {AMR Parsing with Causal Hierarchical Attention and Pointers},\n    author = {Chao Lou and Kewei Tu},\n    year = {2023},\n    eprint = {2310.11964},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.11964},\n}",
+    "abstract": "Translation-based AMR parsers have recently gained popularity due to their\nsimplicity and effectiveness. They predict linearized graphs as free texts,\navoiding explicit structure modeling. However, this simplicity neglects\nstructural locality in AMR graphs and introduces unnecessary tokens to\nrepresent coreferences. In this paper, we introduce new target forms of AMR\nparsing and a novel model, CHAP, which is equipped with causal hierarchical\nattention and the pointer mechanism, enabling the integration of structures\ninto the Transformer decoder. We empirically explore various alternative\nmodeling options. Experiments show that our model outperforms baseline models\non four out of five benchmarks in the setting of no additional data.",
+    "num_pages": 14
+}

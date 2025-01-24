@@ -1,0 +1,25 @@
+{
+    "uuid": "91f2e795-bf7f-52df-bfae-2b6525a56d60",
+    "title": "Pix2Struct: Screenshot Parsing as Pretraining for Visual Language Understanding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Kenton Lee",
+        "Mandar Joshi",
+        "Iulia Turc",
+        "Hexiang Hu",
+        "Fangyu Liu",
+        "Julian Eisenschlos",
+        "Urvashi Khandelwal",
+        "Peter Shaw",
+        "Ming-Wei Chang",
+        "Kristina Toutanova"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.03347v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\91f2e795-bf7f-52df-bfae-2b6525a56d60.pdf",
+    "bibtex": "@misc{lee2023pix2structscreenshotparsingaspretraining,\n    title = {Pix2Struct: Screenshot Parsing as Pretraining for Visual Language Understanding},\n    author = {Kenton Lee and Mandar Joshi and Iulia Turc and Hexiang Hu and Fangyu Liu and Julian Eisenschlos and Urvashi Khandelwal and Peter Shaw and Ming-Wei Chang and Kristina Toutanova},\n    year = {2023},\n    eprint = {2210.03347},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.03347},\n}",
+    "abstract": "Visually-situated language is ubiquitous -- sources range from textbooks with\ndiagrams to web pages with images and tables, to mobile apps with buttons and\nforms. Perhaps due to this diversity, previous work has typically relied on\ndomain-specific recipes with limited sharing of the underlying data, model\narchitectures, and objectives. We present Pix2Struct, a pretrained\nimage-to-text model for purely visual language understanding, which can be\nfinetuned on tasks containing visually-situated language. Pix2Struct is\npretrained by learning to parse masked screenshots of web pages into simplified\nHTML. The web, with its richness of visual elements cleanly reflected in the\nHTML structure, provides a large source of pretraining data well suited to the\ndiversity of downstream tasks. Intuitively, this objective subsumes common\npretraining signals such as OCR, language modeling, image captioning. In\naddition to the novel pretraining strategy, we introduce a variable-resolution\ninput representation and a more flexible integration of language and vision\ninputs, where language prompts such as questions are rendered directly on top\nof the input image. For the first time, we show that a single pretrained model\ncan achieve state-of-the-art results in six out of nine tasks across four\ndomains: documents, illustrations, user interfaces, and natural images.",
+    "num_pages": 20
+}

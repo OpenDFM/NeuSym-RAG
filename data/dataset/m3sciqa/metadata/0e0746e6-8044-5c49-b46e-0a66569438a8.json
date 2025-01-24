@@ -1,0 +1,22 @@
+{
+    "uuid": "0e0746e6-8044-5c49-b46e-0a66569438a8",
+    "title": "Do Response Selection Models Really Know What's Next? Utterance Manipulation Strategies for Multi-turn Response Selection",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Taesun Whang",
+        "Dongyub Lee",
+        "Dongsuk Oh",
+        "Chanhee Lee",
+        "Kijong Han",
+        "Dong-hun Lee",
+        "Saebyeok Lee"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2009.04703v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\0e0746e6-8044-5c49-b46e-0a66569438a8.pdf",
+    "bibtex": "@misc{whang2020doresponseselectionmodelsreally,\n    title = {Do Response Selection Models Really Know What's Next? Utterance Manipulation Strategies for Multi-turn Response Selection},\n    author = {Taesun Whang and Dongyub Lee and Dongsuk Oh and Chanhee Lee and Kijong Han and Dong-hun Lee and Saebyeok Lee},\n    year = {2020},\n    eprint = {2009.04703},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2009.04703},\n}",
+    "abstract": "In this paper, we study the task of selecting the optimal response given a\nuser and system utterance history in retrieval-based multi-turn dialog systems.\nRecently, pre-trained language models (e.g., BERT, RoBERTa, and ELECTRA) showed\nsignificant improvements in various natural language processing tasks. This and\nsimilar response selection tasks can also be solved using such language models\nby formulating the tasks as dialog--response binary classification tasks.\nAlthough existing works using this approach successfully obtained\nstate-of-the-art results, we observe that language models trained in this\nmanner tend to make predictions based on the relatedness of history and\ncandidates, ignoring the sequential nature of multi-turn dialog systems. This\nsuggests that the response selection task alone is insufficient for learning\ntemporal dependencies between utterances. To this end, we propose utterance\nmanipulation strategies (UMS) to address this problem. Specifically, UMS\nconsist of several strategies (i.e., insertion, deletion, and search), which\naid the response selection model towards maintaining dialog coherence. Further,\nUMS are self-supervised methods that do not require additional annotation and\nthus can be easily incorporated into existing approaches. Extensive evaluation\nacross multiple languages and models shows that UMS are highly effective in\nteaching dialog consistency, which leads to models pushing the state-of-the-art\nwith significant margins on multiple public benchmark datasets.",
+    "num_pages": 9
+}

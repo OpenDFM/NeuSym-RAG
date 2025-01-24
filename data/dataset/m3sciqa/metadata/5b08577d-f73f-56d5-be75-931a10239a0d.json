@@ -1,0 +1,17 @@
+{
+    "uuid": "5b08577d-f73f-56d5-be75-931a10239a0d",
+    "title": "Neural Machine Translation with Phrase-Level Universal Visual Representations",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Qingkai Fang",
+        "Yang Feng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.10299v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\5b08577d-f73f-56d5-be75-931a10239a0d.pdf",
+    "bibtex": "@misc{fang2022neuralmachinetranslationwithphraselevel,\n    title = {Neural Machine Translation with Phrase-Level Universal Visual Representations},\n    author = {Qingkai Fang and Yang Feng},\n    year = {2022},\n    eprint = {2203.10299},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2203.10299},\n}",
+    "abstract": "Multimodal machine translation (MMT) aims to improve neural machine\ntranslation (NMT) with additional visual information, but most existing MMT\nmethods require paired input of source sentence and image, which makes them\nsuffer from shortage of sentence-image pairs. In this paper, we propose a\nphrase-level retrieval-based method for MMT to get visual information for the\nsource input from existing sentence-image data sets so that MMT can break the\nlimitation of paired sentence-image input. Our method performs retrieval at the\nphrase level and hence learns visual information from pairs of source phrase\nand grounded region, which can mitigate data sparsity. Furthermore, our method\nemploys the conditional variational auto-encoder to learn visual\nrepresentations which can filter redundant visual information and only retain\nvisual information related to the phrase. Experiments show that the proposed\nmethod significantly outperforms strong baselines on multiple MMT datasets,\nespecially when the textual context is limited.",
+    "num_pages": 12
+}

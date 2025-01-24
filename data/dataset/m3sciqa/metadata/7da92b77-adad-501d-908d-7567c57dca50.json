@@ -1,0 +1,20 @@
+{
+    "uuid": "7da92b77-adad-501d-908d-7567c57dca50",
+    "title": "Semantically Conditioned Dialog Response Generation via Hierarchical Disentangled Self-Attention",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Wenhu Chen",
+        "Jianshu Chen",
+        "Pengda Qin",
+        "Xifeng Yan",
+        "William Yang Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1905.12866v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\7da92b77-adad-501d-908d-7567c57dca50.pdf",
+    "bibtex": "@misc{chen2019semanticallyconditioneddialogresponsegeneration,\n    title = {Semantically Conditioned Dialog Response Generation via Hierarchical Disentangled Self-Attention},\n    author = {Wenhu Chen and Jianshu Chen and Pengda Qin and Xifeng Yan and William Yang Wang},\n    year = {2019},\n    eprint = {1905.12866},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1905.12866},\n}",
+    "abstract": "Semantically controlled neural response generation on limited-domain has\nachieved great performance. However, moving towards multi-domain large-scale\nscenarios are shown to be difficult because the possible combinations of\nsemantic inputs grow exponentially with the number of domains. To alleviate\nsuch scalability issue, we exploit the structure of dialog acts to build a\nmulti-layer hierarchical graph, where each act is represented as a root-to-leaf\nroute on the graph. Then, we incorporate such graph structure prior as an\ninductive bias to build a hierarchical disentangled self-attention network,\nwhere we disentangle attention heads to model designated nodes on the dialog\nact graph. By activating different (disentangled) heads at each layer,\ncombinatorially many dialog act semantics can be modeled to control the neural\nresponse generation. On the large-scale Multi-Domain-WOZ dataset, our model can\nyield a significant improvement over the baselines on various automatic and\nhuman evaluation metrics.",
+    "num_pages": 14
+}

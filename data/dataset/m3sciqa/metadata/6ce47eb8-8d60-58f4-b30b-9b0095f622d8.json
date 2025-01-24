@@ -1,0 +1,18 @@
+{
+    "uuid": "6ce47eb8-8d60-58f4-b30b-9b0095f622d8",
+    "title": "Mixture Content Selection for Diverse Sequence Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Jaemin Cho",
+        "Minjoon Seo",
+        "Hannaneh Hajishirzi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1909.01953v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\6ce47eb8-8d60-58f4-b30b-9b0095f622d8.pdf",
+    "bibtex": "@misc{cho2019mixturecontentselectionfordiverse,\n    title = {Mixture Content Selection for Diverse Sequence Generation},\n    author = {Jaemin Cho and Minjoon Seo and Hannaneh Hajishirzi},\n    year = {2019},\n    eprint = {1909.01953},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1909.01953},\n}",
+    "abstract": "Generating diverse sequences is important in many NLP applications such as\nquestion generation or summarization that exhibit semantically one-to-many\nrelationships between source and the target sequences. We present a method to\nexplicitly separate diversification from generation using a general\nplug-and-play module (called SELECTOR) that wraps around and guides an existing\nencoder-decoder model. The diversification stage uses a mixture of experts to\nsample different binary masks on the source sequence for diverse content\nselection. The generation stage uses a standard encoder-decoder model given\neach selected content from the source sequence. Due to the non-differentiable\nnature of discrete sampling and the lack of ground truth labels for binary\nmask, we leverage a proxy for ground truth mask and adopt stochastic hard-EM\nfor training. In question generation (SQuAD) and abstractive summarization\n(CNN-DM), our method demonstrates significant improvements in accuracy,\ndiversity and training efficiency, including state-of-the-art top-1 accuracy in\nboth datasets, 6% gain in top-5 accuracy, and 3.7 times faster training over a\nstate of the art model. Our code is publicly available at\nhttps://github.com/clovaai/FocusSeq2Seq.",
+    "num_pages": 11
+}

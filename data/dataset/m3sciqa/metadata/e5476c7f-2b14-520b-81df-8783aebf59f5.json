@@ -1,0 +1,19 @@
+{
+    "uuid": "e5476c7f-2b14-520b-81df-8783aebf59f5",
+    "title": "Revisiting Sparse Retrieval for Few-shot Entity Linking",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yulin Chen",
+        "Zhenran Xu",
+        "Baotian Hu",
+        "Min Zhang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.12444v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\e5476c7f-2b14-520b-81df-8783aebf59f5.pdf",
+    "bibtex": "@misc{chen2023revisitingsparseretrievalforfewshot,\n    title = {Revisiting Sparse Retrieval for Few-shot Entity Linking},\n    author = {Yulin Chen and Zhenran Xu and Baotian Hu and Min Zhang},\n    year = {2023},\n    eprint = {2310.12444},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.12444},\n}",
+    "abstract": "Entity linking aims to link ambiguous mentions to their corresponding\nentities in a knowledge base. One of the key challenges comes from insufficient\nlabeled data for specific domains. Although dense retrievers have achieved\nexcellent performance on several benchmarks, their performance decreases\nsignificantly when only a limited amount of in-domain labeled data is\navailable. In such few-shot setting, we revisit the sparse retrieval method,\nand propose an ELECTRA-based keyword extractor to denoise the mention context\nand construct a better query expression. For training the extractor, we propose\na distant supervision method to automatically generate training data based on\noverlapping tokens between mention contexts and entity descriptions.\nExperimental results on the ZESHEL dataset demonstrate that the proposed method\noutperforms state-of-the-art models by a significant margin across all test\ndomains, showing the effectiveness of keyword-enhanced sparse retrieval.",
+    "num_pages": 6
+}

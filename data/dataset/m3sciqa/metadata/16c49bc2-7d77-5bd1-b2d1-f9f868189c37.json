@@ -1,0 +1,19 @@
+{
+    "uuid": "16c49bc2-7d77-5bd1-b2d1-f9f868189c37",
+    "title": "Multi-Task Deep Neural Networks for Natural Language Understanding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Xiaodong Liu",
+        "Pengcheng He",
+        "Weizhu Chen",
+        "Jianfeng Gao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1901.11504v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\16c49bc2-7d77-5bd1-b2d1-f9f868189c37.pdf",
+    "bibtex": "@misc{liu2019multitaskdeepneuralnetworksfor,\n    title = {Multi-Task Deep Neural Networks for Natural Language Understanding},\n    author = {Xiaodong Liu and Pengcheng He and Weizhu Chen and Jianfeng Gao},\n    year = {2019},\n    eprint = {1901.11504},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1901.11504},\n}",
+    "abstract": "In this paper, we present a Multi-Task Deep Neural Network (MT-DNN) for\nlearning representations across multiple natural language understanding (NLU)\ntasks. MT-DNN not only leverages large amounts of cross-task data, but also\nbenefits from a regularization effect that leads to more general\nrepresentations in order to adapt to new tasks and domains. MT-DNN extends the\nmodel proposed in Liu et al. (2015) by incorporating a pre-trained\nbidirectional transformer language model, known as BERT (Devlin et al., 2018).\nMT-DNN obtains new state-of-the-art results on ten NLU tasks, including SNLI,\nSciTail, and eight out of nine GLUE tasks, pushing the GLUE benchmark to 82.7%\n(2.2% absolute improvement). We also demonstrate using the SNLI and SciTail\ndatasets that the representations learned by MT-DNN allow domain adaptation\nwith substantially fewer in-domain labels than the pre-trained BERT\nrepresentations. The code and pre-trained models are publicly available at\nhttps://github.com/namisan/mt-dnn.",
+    "num_pages": 10
+}

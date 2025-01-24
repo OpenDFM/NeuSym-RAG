@@ -1,0 +1,18 @@
+{
+    "uuid": "213e91d3-d0ba-517e-9eaa-9c30953f754b",
+    "title": "Asking and Answering Questions to Evaluate the Factual Consistency of Summaries",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Alex Wang",
+        "Kyunghyun Cho",
+        "Mike Lewis"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.04228v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\213e91d3-d0ba-517e-9eaa-9c30953f754b.pdf",
+    "bibtex": "@misc{wang2020askingandansweringquestionsto,\n    title = {Asking and Answering Questions to Evaluate the Factual Consistency of Summaries},\n    author = {Alex Wang and Kyunghyun Cho and Mike Lewis},\n    year = {2020},\n    eprint = {2004.04228},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2004.04228},\n}",
+    "abstract": "Practical applications of abstractive summarization models are limited by\nfrequent factual inconsistencies with respect to their input. Existing\nautomatic evaluation metrics for summarization are largely insensitive to such\nerrors. We propose an automatic evaluation protocol called QAGS (pronounced\n\"kags\") that is designed to identify factual inconsistencies in a generated\nsummary. QAGS is based on the intuition that if we ask questions about a\nsummary and its source, we will receive similar answers if the summary is\nfactually consistent with the source. To evaluate QAGS, we collect human\njudgments of factual consistency on model-generated summaries for the\nCNN/DailyMail (Hermann et al., 2015) and XSUM (Narayan et al., 2018)\nsummarization datasets. QAGS has substantially higher correlations with these\njudgments than other automatic evaluation metrics. Also, QAGS offers a natural\nform of interpretability: The answers and questions generated while computing\nQAGS indicate which tokens of a summary are inconsistent and why. We believe\nQAGS is a promising tool in automatically generating usable and factually\nconsistent text.",
+    "num_pages": 13
+}

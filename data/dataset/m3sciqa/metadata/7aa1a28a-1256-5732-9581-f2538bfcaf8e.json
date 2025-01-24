@@ -1,0 +1,22 @@
+{
+    "uuid": "7aa1a28a-1256-5732-9581-f2538bfcaf8e",
+    "title": "Empowering Molecule Discovery for Molecule-Caption Translation with Large Language Models: A ChatGPT Perspective",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Jiatong Li",
+        "Yunqing Liu",
+        "Wenqi Fan",
+        "Xiao-Yong Wei",
+        "Hui Liu",
+        "Jiliang Tang",
+        "Qing Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2306.06615v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\7aa1a28a-1256-5732-9581-f2538bfcaf8e.pdf",
+    "bibtex": "@misc{li2024empoweringmoleculediscoveryformoleculecaption,\n    title = {Empowering Molecule Discovery for Molecule-Caption Translation with Large Language Models: A ChatGPT Perspective},\n    author = {Jiatong Li and Yunqing Liu and Wenqi Fan and Xiao-Yong Wei and Hui Liu and Jiliang Tang and Qing Li},\n    year = {2024},\n    eprint = {2306.06615},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2306.06615},\n}",
+    "abstract": "Molecule discovery plays a crucial role in various scientific fields,\nadvancing the design of tailored materials and drugs. However, most of the\nexisting methods heavily rely on domain experts, require excessive\ncomputational cost, or suffer from sub-optimal performance. On the other hand,\nLarge Language Models (LLMs), like ChatGPT, have shown remarkable performance\nin various cross-modal tasks due to their powerful capabilities in natural\nlanguage understanding, generalization, and in-context learning (ICL), which\nprovides unprecedented opportunities to advance molecule discovery. Despite\nseveral previous works trying to apply LLMs in this task, the lack of\ndomain-specific corpus and difficulties in training specialized LLMs still\nremain challenges. In this work, we propose a novel LLM-based framework\n(MolReGPT) for molecule-caption translation, where an In-Context Few-Shot\nMolecule Learning paradigm is introduced to empower molecule discovery with\nLLMs like ChatGPT to perform their in-context learning capability without\ndomain-specific pre-training and fine-tuning. MolReGPT leverages the principle\nof molecular similarity to retrieve similar molecules and their text\ndescriptions from a local database to enable LLMs to learn the task knowledge\nfrom context examples. We evaluate the effectiveness of MolReGPT on\nmolecule-caption translation, including molecule understanding and text-based\nmolecule generation. Experimental results show that compared to fine-tuned\nmodels, MolReGPT outperforms MolT5-base and is comparable to MolT5-large\nwithout additional training. To the best of our knowledge, MolReGPT is the\nfirst work to leverage LLMs via in-context learning in molecule-caption\ntranslation for advancing molecule discovery. Our work expands the scope of LLM\napplications, as well as providing a new paradigm for molecule discovery and\ndesign.",
+    "num_pages": 13
+}

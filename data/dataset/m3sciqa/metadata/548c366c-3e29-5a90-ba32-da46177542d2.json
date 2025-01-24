@@ -1,0 +1,21 @@
+{
+    "uuid": "548c366c-3e29-5a90-ba32-da46177542d2",
+    "title": "BoolQ: Exploring the Surprising Difficulty of Natural Yes/No Questions",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Christopher Clark",
+        "Kenton Lee",
+        "Ming-Wei Chang",
+        "Tom Kwiatkowski",
+        "Michael Collins",
+        "Kristina Toutanova"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1905.10044v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\548c366c-3e29-5a90-ba32-da46177542d2.pdf",
+    "bibtex": "@misc{clark2019boolqexploringthesurprisingdifficulty,\n    title = {BoolQ: Exploring the Surprising Difficulty of Natural Yes/No Questions},\n    author = {Christopher Clark and Kenton Lee and Ming-Wei Chang and Tom Kwiatkowski and Michael Collins and Kristina Toutanova},\n    year = {2019},\n    eprint = {1905.10044},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1905.10044},\n}",
+    "abstract": "In this paper we study yes/no questions that are naturally occurring ---\nmeaning that they are generated in unprompted and unconstrained settings. We\nbuild a reading comprehension dataset, BoolQ, of such questions, and show that\nthey are unexpectedly challenging. They often query for complex, non-factoid\ninformation, and require difficult entailment-like inference to solve. We also\nexplore the effectiveness of a range of transfer learning baselines. We find\nthat transferring from entailment data is more effective than transferring from\nparaphrase or extractive QA data, and that it, surprisingly, continues to be\nvery beneficial even when starting from massive pre-trained language models\nsuch as BERT. Our best method trains BERT on MultiNLI and then re-trains it on\nour train set. It achieves 80.4% accuracy compared to 90% accuracy of human\nannotators (and 62% majority-baseline), leaving a significant gap for future\nwork.",
+    "num_pages": 13
+}

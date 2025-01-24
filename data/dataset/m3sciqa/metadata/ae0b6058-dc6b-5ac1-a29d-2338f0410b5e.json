@@ -1,0 +1,20 @@
+{
+    "uuid": "ae0b6058-dc6b-5ac1-a29d-2338f0410b5e",
+    "title": "Translating a Math Word Problem to an Expression Tree",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Lei Wang",
+        "Yan Wang",
+        "Deng Cai",
+        "Dongxiang Zhang",
+        "Xiaojiang Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1811.05632v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\ae0b6058-dc6b-5ac1-a29d-2338f0410b5e.pdf",
+    "bibtex": "@misc{wang2018translatingamathwordproblem,\n    title = {Translating a Math Word Problem to an Expression Tree},\n    author = {Lei Wang and Yan Wang and Deng Cai and Dongxiang Zhang and Xiaojiang Liu},\n    year = {2018},\n    eprint = {1811.05632},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1811.05632},\n}",
+    "abstract": "Sequence-to-sequence (SEQ2SEQ) models have been successfully applied to\nautomatic math word problem solving. Despite its simplicity, a drawback still\nremains: a math word problem can be correctly solved by more than one\nequations. This non-deterministic transduction harms the performance of maximum\nlikelihood estimation. In this paper, by considering the uniqueness of\nexpression tree, we propose an equation normalization method to normalize the\nduplicated equations. Moreover, we analyze the performance of three popular\nSEQ2SEQ models on the math word problem solving. We find that each model has\nits own specialty in solving problems, consequently an ensemble model is then\nproposed to combine their advantages. Experiments on dataset Math23K show that\nthe ensemble model with equation normalization significantly outperforms the\nprevious state-of-the-art methods.",
+    "num_pages": 6
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "b8ae7f68-6c06-57fa-bb82-5fb88f4cc45d",
+    "title": "Improving Continual Relation Extraction through Prototypical Contrastive Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Chengwei Hu",
+        "Deqing Yang",
+        "Haoliang Jin",
+        "Zhen Chen",
+        "Yanghua Xiao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.04513v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\b8ae7f68-6c06-57fa-bb82-5fb88f4cc45d.pdf",
+    "bibtex": "@misc{hu2022improvingcontinualrelationextractionthrough,\n    title = {Improving Continual Relation Extraction through Prototypical Contrastive Learning},\n    author = {Chengwei Hu and Deqing Yang and Haoliang Jin and Zhen Chen and Yanghua Xiao},\n    year = {2022},\n    eprint = {2210.04513},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.IR},\n    url = {http://arxiv.org/abs/2210.04513},\n}",
+    "abstract": "Continual relation extraction (CRE) aims to extract relations towards the\ncontinuous and iterative arrival of new data, of which the major challenge is\nthe catastrophic forgetting of old tasks. In order to alleviate this critical\nproblem for enhanced CRE performance, we propose a novel Continual Relation\nExtraction framework with Contrastive Learning, namely CRECL, which is built\nwith a classification network and a prototypical contrastive network to achieve\nthe incremental-class learning of CRE. Specifically, in the contrastive network\na given instance is contrasted with the prototype of each candidate relations\nstored in the memory module. Such contrastive learning scheme ensures the data\ndistributions of all tasks more distinguishable, so as to alleviate the\ncatastrophic forgetting further. Our experiment results not only demonstrate\nour CRECL's advantage over the state-of-the-art baselines on two public\ndatasets, but also verify the effectiveness of CRECL's contrastive learning on\nimproving CRE performance.",
+    "num_pages": 11
+}

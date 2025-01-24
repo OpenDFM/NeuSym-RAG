@@ -1,0 +1,21 @@
+{
+    "uuid": "be76575e-6c00-5476-88ea-0ee5ddb704e7",
+    "title": "Queens are Powerful too: Mitigating Gender Bias in Dialogue Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Emily Dinan",
+        "Angela Fan",
+        "Adina Williams",
+        "Jack Urbanek",
+        "Douwe Kiela",
+        "Jason Weston"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1911.03842v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\be76575e-6c00-5476-88ea-0ee5ddb704e7.pdf",
+    "bibtex": "@misc{dinan2020queensarepowerfultoomitigating,\n    title = {Queens are Powerful too: Mitigating Gender Bias in Dialogue Generation},\n    author = {Emily Dinan and Angela Fan and Adina Williams and Jack Urbanek and Douwe Kiela and Jason Weston},\n    year = {2020},\n    eprint = {1911.03842},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1911.03842},\n}",
+    "abstract": "Models often easily learn biases present in the training data, and their\npredictions directly reflect this bias. We analyze gender bias in dialogue\ndata, and examine how this bias is actually amplified in subsequent generative\nchit-chat dialogue models. We measure gender bias in six existing dialogue\ndatasets, and focus on the most biased one, the multi-player text-based fantasy\nadventure dataset LIGHT, as a testbed for our bias mitigation techniques. The\nLIGHT dataset is highly imbalanced with respect to gender, containing\npredominantly male characters, likely because it is entirely collected by\ncrowdworkers and reflects common biases that exist in fantasy or medieval\nsettings. We consider three techniques to mitigate gender bias: counterfactual\ndata augmentation, targeted data collection, and bias controlled training. We\nshow that our proposed techniques mitigate gender bias in LIGHT by balancing\nthe genderedness of generated dialogue utterances and are particularly\neffective in combination. We quantify performance using various evaluation\nmethods---such as quantity of gendered words, a dialogue safety classifier, and\nhuman studies---all of which show that our models generate less gendered, but\nequally engaging chit-chat responses.",
+    "num_pages": 14
+}

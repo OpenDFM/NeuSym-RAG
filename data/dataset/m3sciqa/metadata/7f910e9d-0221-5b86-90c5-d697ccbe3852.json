@@ -1,0 +1,21 @@
+{
+    "uuid": "7f910e9d-0221-5b86-90c5-d697ccbe3852",
+    "title": "You can't pick your neighbors, or can you? When and how to rely on retrieval in the $k$NN-LM",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Andrew Drozdov",
+        "Shufan Wang",
+        "Razieh Rahimi",
+        "Andrew McCallum",
+        "Hamed Zamani",
+        "Mohit Iyyer"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.15859v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\7f910e9d-0221-5b86-90c5-d697ccbe3852.pdf",
+    "bibtex": "@misc{drozdov2022youcantpickyourneighbors,\n    title = {You can't pick your neighbors, or can you? When and how to rely on retrieval in the $k$NN-LM},\n    author = {Andrew Drozdov and Shufan Wang and Razieh Rahimi and Andrew McCallum and Hamed Zamani and Mohit Iyyer},\n    year = {2022},\n    eprint = {2210.15859},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.15859},\n}",
+    "abstract": "Retrieval-enhanced language models (LMs), which condition their predictions\non text retrieved from large external datastores, have recently shown\nsignificant perplexity improvements compared to standard LMs. One such\napproach, the $k$NN-LM, interpolates any existing LM's predictions with the\noutput of a $k$-nearest neighbors model and requires no additional training. In\nthis paper, we explore the importance of lexical and semantic matching in the\ncontext of items retrieved by $k$NN-LM. We find two trends: (1) the presence of\nlarge overlapping $n$-grams between the datastore and evaluation set plays an\nimportant factor in strong performance, even when the datastore is derived from\nthe training data; and (2) the $k$NN-LM is most beneficial when retrieved items\nhave high semantic similarity with the query. Based on our analysis, we define\na new formulation of the $k$NN-LM that uses retrieval quality to assign the\ninterpolation coefficient. We empirically measure the effectiveness of our\napproach on two English language modeling datasets, Wikitext-103 and PG-19. Our\nre-formulation of the $k$NN-LM is beneficial in both cases, and leads to nearly\n4% improvement in perplexity on the Wikitext-103 test set.",
+    "num_pages": 11
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "a45441d6-e0fb-5dab-9da9-603663f3e3f3",
+    "title": "A Label Dependence-aware Sequence Generation Model for Multi-level Implicit Discourse Relation Recognition",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Changxing Wu",
+        "Liuwen Cao",
+        "Yubin Ge",
+        "Yang Liu",
+        "Min Zhang",
+        "Jinsong Su"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2112.11740v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\a45441d6-e0fb-5dab-9da9-603663f3e3f3.pdf",
+    "bibtex": "@misc{wu2021alabeldependenceawaresequencegeneration,\n    title = {A Label Dependence-aware Sequence Generation Model for Multi-level Implicit Discourse Relation Recognition},\n    author = {Changxing Wu and Liuwen Cao and Yubin Ge and Yang Liu and Min Zhang and Jinsong Su},\n    year = {2021},\n    eprint = {2112.11740},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2112.11740},\n}",
+    "abstract": "Implicit discourse relation recognition (IDRR) is a challenging but crucial\ntask in discourse analysis. Most existing methods train multiple models to\npredict multi-level labels independently, while ignoring the dependence between\nhierarchically structured labels. In this paper, we consider multi-level IDRR\nas a conditional label sequence generation task and propose a Label\nDependence-aware Sequence Generation Model (LDSGM) for it. Specifically, we\nfirst design a label attentive encoder to learn the global representation of an\ninput instance and its level-specific contexts, where the label dependence is\nintegrated to obtain better label embeddings. Then, we employ a label sequence\ndecoder to output the predicted labels in a top-down manner, where the\npredicted higher-level labels are directly used to guide the label prediction\nat the current level. We further develop a mutual learning enhanced training\nmethod to exploit the label dependence in a bottomup direction, which is\ncaptured by an auxiliary decoder introduced during training. Experimental\nresults on the PDTB dataset show that our model achieves the state-of-the-art\nperformance on multi-level IDRR. We will release our code at\nhttps://github.com/nlpersECJTU/LDSGM.",
+    "num_pages": 9
+}

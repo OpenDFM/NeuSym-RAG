@@ -1,0 +1,24 @@
+{
+    "uuid": "c20e9c12-7502-5cff-8f71-fd5857157068",
+    "title": "DeepHateExplainer: Explainable Hate Speech Detection in Under-resourced Bengali Language",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Md. Rezaul Karim",
+        "Sumon Kanti Dey",
+        "Tanhim Islam",
+        "Sagor Sarker",
+        "Mehadi Hasan Menon",
+        "Kabir Hossain",
+        "Bharathi Raja Chakravarthi",
+        "Md. Azam Hossain",
+        "Stefan Decker"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2012.14353v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\c20e9c12-7502-5cff-8f71-fd5857157068.pdf",
+    "bibtex": "@misc{karim2021deephateexplainerexplainablehatespeechdetection,\n    title = {DeepHateExplainer: Explainable Hate Speech Detection in Under-resourced Bengali Language},\n    author = {Md. Rezaul Karim and Sumon Kanti Dey and Tanhim Islam and Sagor Sarker and Mehadi Hasan Menon and Kabir Hossain and Bharathi Raja Chakravarthi and Md. Azam Hossain and Stefan Decker},\n    year = {2021},\n    eprint = {2012.14353},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2012.14353},\n}",
+    "abstract": "The exponential growths of social media and micro-blogging sites not only\nprovide platforms for empowering freedom of expressions and individual voices,\nbut also enables people to express anti-social behaviour like online\nharassment, cyberbullying, and hate speech. Numerous works have been proposed\nto utilize textual data for social and anti-social behaviour analysis, by\npredicting the contexts mostly for highly-resourced languages like English.\nHowever, some languages are under-resourced, e.g., South Asian languages like\nBengali, that lack computational resources for accurate natural language\nprocessing (NLP). In this paper, we propose an explainable approach for hate\nspeech detection from the under-resourced Bengali language, which we called\nDeepHateExplainer. Bengali texts are first comprehensively preprocessed, before\nclassifying them into political, personal, geopolitical, and religious hates\nusing a neural ensemble method of transformer-based neural architectures (i.e.,\nmonolingual Bangla BERT-base, multilingual BERT-cased/uncased, and\nXLM-RoBERTa). Important(most and least) terms are then identified using\nsensitivity analysis and layer-wise relevance propagation(LRP), before\nproviding human-interpretable explanations. Finally, we compute\ncomprehensiveness and sufficiency scores to measure the quality of explanations\nw.r.t faithfulness. Evaluations against machine learning~(linear and tree-based\nmodels) and neural networks (i.e., CNN, Bi-LSTM, and Conv-LSTM with word\nembeddings) baselines yield F1-scores of 78%, 91%, 89%, and 84%, for political,\npersonal, geopolitical, and religious hates, respectively, outperforming both\nML and DNN baselines.",
+    "num_pages": 13
+}

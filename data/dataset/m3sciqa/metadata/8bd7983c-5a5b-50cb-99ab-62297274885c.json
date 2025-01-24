@@ -1,0 +1,20 @@
+{
+    "uuid": "8bd7983c-5a5b-50cb-99ab-62297274885c",
+    "title": "Compression, Transduction, and Creation: A Unified Framework for Evaluating Natural Language Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Mingkai Deng",
+        "Bowen Tan",
+        "Zhengzhong Liu",
+        "Eric P. Xing",
+        "Zhiting Hu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2109.06379v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\8bd7983c-5a5b-50cb-99ab-62297274885c.pdf",
+    "bibtex": "@misc{deng2022compressiontransductionandcreationa,\n    title = {Compression, Transduction, and Creation: A Unified Framework for Evaluating Natural Language Generation},\n    author = {Mingkai Deng and Bowen Tan and Zhengzhong Liu and Eric P. Xing and Zhiting Hu},\n    year = {2022},\n    eprint = {2109.06379},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2109.06379},\n}",
+    "abstract": "Natural language generation (NLG) spans a broad range of tasks, each of which\nserves for specific objectives and desires different properties of generated\ntext. The complexity makes automatic evaluation of NLG particularly\nchallenging. Previous work has typically focused on a single task and developed\nindividual evaluation metrics based on specific intuitions. In this paper, we\npropose a unifying perspective that facilitates the design of metrics for a\nwide range of language generation tasks and quality aspects. Based on the\nnature of information change from input to output, we classify NLG tasks into\ncompression (e.g., summarization), transduction (e.g., text rewriting), and\ncreation (e.g., dialog). The information alignment, or overlap, between input,\ncontext, and output text plays a common central role in characterizing the\ngeneration. Using the uniform concept of information alignment, we develop a\nfamily of interpretable metrics for various NLG tasks and aspects, often\nwithout need of gold reference data. To operationalize the metrics, we train\nself-supervised models to approximate information alignment as a prediction\ntask. Experiments show the uniformly designed metrics achieve stronger or\ncomparable correlations with human judgement compared to state-of-the-art\nmetrics in each of diverse tasks, including text summarization, style transfer,\nand knowledge-grounded dialog. With information alignment as the intermediate\nrepresentation, we deliver a composable library for easy NLG evaluation and\nfuture metric design.",
+    "num_pages": 26
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "7072220d-1680-5120-b061-9c5d175922e2",
+    "title": "Did Aristotle Use a Laptop? A Question Answering Benchmark with Implicit Reasoning Strategies",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Mor Geva",
+        "Daniel Khashabi",
+        "Elad Segal",
+        "Tushar Khot",
+        "Dan Roth",
+        "Jonathan Berant"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2101.02235v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\7072220d-1680-5120-b061-9c5d175922e2.pdf",
+    "bibtex": "@misc{geva2021didaristotleusealaptop,\n    title = {Did Aristotle Use a Laptop? A Question Answering Benchmark with Implicit Reasoning Strategies},\n    author = {Mor Geva and Daniel Khashabi and Elad Segal and Tushar Khot and Dan Roth and Jonathan Berant},\n    year = {2021},\n    eprint = {2101.02235},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2101.02235},\n}",
+    "abstract": "A key limitation in current datasets for multi-hop reasoning is that the\nrequired steps for answering the question are mentioned in it explicitly. In\nthis work, we introduce StrategyQA, a question answering (QA) benchmark where\nthe required reasoning steps are implicit in the question, and should be\ninferred using a strategy. A fundamental challenge in this setup is how to\nelicit such creative questions from crowdsourcing workers, while covering a\nbroad range of potential strategies. We propose a data collection procedure\nthat combines term-based priming to inspire annotators, careful control over\nthe annotator population, and adversarial filtering for eliminating reasoning\nshortcuts. Moreover, we annotate each question with (1) a decomposition into\nreasoning steps for answering it, and (2) Wikipedia paragraphs that contain the\nanswers to each step. Overall, StrategyQA includes 2,780 examples, each\nconsisting of a strategy question, its decomposition, and evidence paragraphs.\nAnalysis shows that questions in StrategyQA are short, topic-diverse, and cover\na wide range of strategies. Empirically, we show that humans perform well (87%)\non this task, while our best baseline reaches an accuracy of $\\sim$66%.",
+    "num_pages": 15
+}

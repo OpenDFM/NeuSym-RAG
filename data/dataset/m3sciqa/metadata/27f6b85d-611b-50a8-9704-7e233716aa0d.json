@@ -1,0 +1,17 @@
+{
+    "uuid": "27f6b85d-611b-50a8-9704-7e233716aa0d",
+    "title": "Improving Social Meaning Detection with Pragmatic Masking and Surrogate Fine-Tuning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Chiyu Zhang",
+        "Muhammad Abdul-Mageed"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2108.00356v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\27f6b85d-611b-50a8-9704-7e233716aa0d.pdf",
+    "bibtex": "@misc{zhang2022improvingsocialmeaningdetectionwith,\n    title = {Improving Social Meaning Detection with Pragmatic Masking and Surrogate Fine-Tuning},\n    author = {Chiyu Zhang and Muhammad Abdul-Mageed},\n    year = {2022},\n    eprint = {2108.00356},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2108.00356},\n}",
+    "abstract": "Masked language models (MLMs) are pre-trained with a denoising objective that\nis in a mismatch with the objective of downstream fine-tuning. We propose\npragmatic masking and surrogate fine-tuning as two complementing strategies\nthat exploit social cues to drive pre-trained representations toward a broad\nset of concepts useful for a wide class of social meaning tasks. We test our\nmodels on $15$ different Twitter datasets for social meaning detection. Our\nmethods achieve $2.34\\%$ $F_1$ over a competitive baseline, while outperforming\ndomain-specific language models pre-trained on large datasets. Our methods also\nexcel in few-shot learning: with only $5\\%$ of training data (severely\nfew-shot), our methods enable an impressive $68.54\\%$ average $F_1$. The\nmethods are also language agnostic, as we show in a zero-shot setting involving\nsix datasets from three different languages.",
+    "num_pages": 16
+}

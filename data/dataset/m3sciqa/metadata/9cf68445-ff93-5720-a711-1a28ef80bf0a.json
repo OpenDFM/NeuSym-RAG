@@ -1,0 +1,20 @@
+{
+    "uuid": "9cf68445-ff93-5720-a711-1a28ef80bf0a",
+    "title": "Decouple knowledge from parameters for plug-and-play language modeling",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Xin Cheng",
+        "Yankai Lin",
+        "Xiuying Chen",
+        "Dongyan Zhao",
+        "Rui Yan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.11564v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\9cf68445-ff93-5720-a711-1a28ef80bf0a.pdf",
+    "bibtex": "@misc{cheng2023decoupleknowledgefromparametersfor,\n    title = {Decouple knowledge from parameters for plug-and-play language modeling},\n    author = {Xin Cheng and Yankai Lin and Xiuying Chen and Dongyan Zhao and Rui Yan},\n    year = {2023},\n    eprint = {2305.11564},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.11564},\n}",
+    "abstract": "Pre-trained language models(PLM) have made impressive results in various NLP\ntasks. It has been revealed that one of the key factors to their success is the\nparameters of these models implicitly learn all kinds of knowledge during\npre-training. However, encoding knowledge implicitly in the model parameters\nhas two fundamental drawbacks. First, the knowledge is neither editable nor\nscalable once the model is trained, which is especially problematic in that\nknowledge is consistently evolving. Second, it lacks interpretability and\nprevents humans from understanding which knowledge PLM requires for a certain\nproblem. In this paper, we introduce PlugLM, a pre-training model with\ndifferentiable plug-in memory(DPM). The key intuition is to decouple the\nknowledge storage from model parameters with an editable and scalable key-value\nmemory and leverage knowledge in an explainable manner by knowledge retrieval\nin the DPM. To justify this design choice, we conduct evaluations in three\nsettings including: (1) domain adaptation. PlugLM obtains 3.95 F1 improvements\nacross four domains on average without any in-domain pre-training. (2)\nknowledge update. PlugLM could absorb new knowledge in a training-free way\nafter pre-training is done. (3) in-task knowledge learning. PlugLM could be\nfurther improved by incorporating training samples into DPM with knowledge\nprompting.",
+    "num_pages": 19
+}

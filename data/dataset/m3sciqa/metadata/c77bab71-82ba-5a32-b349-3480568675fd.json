@@ -1,0 +1,23 @@
+{
+    "uuid": "c77bab71-82ba-5a32-b349-3480568675fd",
+    "title": "TemporalWiki: A Lifelong Benchmark for Training and Evaluating Ever-Evolving Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Joel Jang",
+        "Seonghyeon Ye",
+        "Changho Lee",
+        "Sohee Yang",
+        "Joongbo Shin",
+        "Janghoon Han",
+        "Gyeonghun Kim",
+        "Minjoon Seo"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.14211v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\c77bab71-82ba-5a32-b349-3480568675fd.pdf",
+    "bibtex": "@misc{jang2023temporalwikialifelongbenchmarkfor,\n    title = {TemporalWiki: A Lifelong Benchmark for Training and Evaluating Ever-Evolving Language Models},\n    author = {Joel Jang and Seonghyeon Ye and Changho Lee and Sohee Yang and Joongbo Shin and Janghoon Han and Gyeonghun Kim and Minjoon Seo},\n    year = {2023},\n    eprint = {2204.14211},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.14211},\n}",
+    "abstract": "Language Models (LMs) become outdated as the world changes; they often fail\nto perform tasks requiring recent factual information which was absent or\ndifferent during training, a phenomenon called temporal misalignment. This is\nespecially a challenging problem because the research community still lacks a\ncoherent dataset for assessing the adaptability of LMs to frequently-updated\nknowledge corpus such as Wikipedia. To this end, we introduce TemporalWiki, a\nlifelong benchmark for ever-evolving LMs that utilizes the difference between\nconsecutive snapshots of English Wikipedia and English Wikidata for training\nand evaluation, respectively. The benchmark hence allows researchers to\nperiodically track an LM's ability to retain previous knowledge and acquire\nupdated/new knowledge at each point in time. We also find that training an LM\non the diff data through continual learning methods achieves similar or better\nperplexity than on the entire snapshot in our benchmark with 12 times less\ncomputational cost, which verifies that factual knowledge in LMs can be safely\nupdated with minimal training data via continual learning. The dataset and the\ncode are available at https://github.com/joeljang/temporalwiki.",
+    "num_pages": 14
+}

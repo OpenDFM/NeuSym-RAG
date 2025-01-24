@@ -1,0 +1,20 @@
+{
+    "uuid": "25dfb38b-fc5c-50f0-aa8a-59e9fd41943f",
+    "title": "Semi-Amortized Variational Autoencoders",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Yoon Kim",
+        "Sam Wiseman",
+        "Andrew C. Miller",
+        "David Sontag",
+        "Alexander M. Rush"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1802.02550v7",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\25dfb38b-fc5c-50f0-aa8a-59e9fd41943f.pdf",
+    "bibtex": "@misc{kim2018semiamortizedvariationalautoencoders,\n    title = {Semi-Amortized Variational Autoencoders},\n    author = {Yoon Kim and Sam Wiseman and Andrew C. Miller and David Sontag and Alexander M. Rush},\n    year = {2018},\n    eprint = {1802.02550},\n    archivePrefix = {arXiv},\n    primaryClass = {stat.ML},\n    url = {http://arxiv.org/abs/1802.02550},\n}",
+    "abstract": "Amortized variational inference (AVI) replaces instance-specific local\ninference with a global inference network. While AVI has enabled efficient\ntraining of deep generative models such as variational autoencoders (VAE),\nrecent empirical work suggests that inference networks can produce suboptimal\nvariational parameters. We propose a hybrid approach, to use AVI to initialize\nthe variational parameters and run stochastic variational inference (SVI) to\nrefine them. Crucially, the local SVI procedure is itself differentiable, so\nthe inference network and generative model can be trained end-to-end with\ngradient-based optimization. This semi-amortized approach enables the use of\nrich generative models without experiencing the posterior-collapse phenomenon\ncommon in training VAEs for problems like text generation. Experiments show\nthis approach outperforms strong autoregressive and variational baselines on\nstandard text and image datasets.",
+    "num_pages": 13
+}

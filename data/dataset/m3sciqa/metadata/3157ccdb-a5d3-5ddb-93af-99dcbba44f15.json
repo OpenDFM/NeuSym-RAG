@@ -1,0 +1,19 @@
+{
+    "uuid": "3157ccdb-a5d3-5ddb-93af-99dcbba44f15",
+    "title": "Relational Knowledge Distillation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Wonpyo Park",
+        "Dongju Kim",
+        "Yan Lu",
+        "Minsu Cho"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1904.05068v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\3157ccdb-a5d3-5ddb-93af-99dcbba44f15.pdf",
+    "bibtex": "@misc{park2019relationalknowledgedistillation,\n    title = {Relational Knowledge Distillation},\n    author = {Wonpyo Park and Dongju Kim and Yan Lu and Minsu Cho},\n    year = {2019},\n    eprint = {1904.05068},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1904.05068},\n}",
+    "abstract": "Knowledge distillation aims at transferring knowledge acquired in one model\n(a teacher) to another model (a student) that is typically smaller. Previous\napproaches can be expressed as a form of training the student to mimic output\nactivations of individual data examples represented by the teacher. We\nintroduce a novel approach, dubbed relational knowledge distillation (RKD),\nthat transfers mutual relations of data examples instead. For concrete\nrealizations of RKD, we propose distance-wise and angle-wise distillation\nlosses that penalize structural differences in relations. Experiments conducted\non different tasks show that the proposed method improves educated student\nmodels with a significant margin. In particular for metric learning, it allows\nstudents to outperform their teachers' performance, achieving the state of the\narts on standard benchmark datasets.",
+    "num_pages": 10
+}

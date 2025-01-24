@@ -1,0 +1,19 @@
+{
+    "uuid": "1555e0fc-e455-507f-b280-3d779c708615",
+    "title": "Memorizing Transformers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yuhuai Wu",
+        "Markus N. Rabe",
+        "DeLesley Hutchins",
+        "Christian Szegedy"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.08913v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\1555e0fc-e455-507f-b280-3d779c708615.pdf",
+    "bibtex": "@misc{wu2022memorizingtransformers,\n    title = {Memorizing Transformers},\n    author = {Yuhuai Wu and Markus N. Rabe and DeLesley Hutchins and Christian Szegedy},\n    year = {2022},\n    eprint = {2203.08913},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2203.08913},\n}",
+    "abstract": "Language models typically need to be trained or finetuned in order to acquire\nnew knowledge, which involves updating their weights. We instead envision\nlanguage models that can simply read and memorize new data at inference time,\nthus acquiring new knowledge immediately. In this work, we extend language\nmodels with the ability to memorize the internal representations of past\ninputs. We demonstrate that an approximate kNN lookup into a non-differentiable\nmemory of recent (key, value) pairs improves language modeling across various\nbenchmarks and tasks, including generic webtext (C4), math papers (arXiv),\nbooks (PG-19), code (Github), as well as formal theorems (Isabelle). We show\nthat the performance steadily improves when we increase the size of memory up\nto 262K tokens. On benchmarks including code and mathematics, we find that the\nmodel is capable of making use of newly defined functions and theorems during\ntest time.",
+    "num_pages": 19
+}

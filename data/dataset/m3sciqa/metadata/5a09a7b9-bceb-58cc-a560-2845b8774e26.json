@@ -1,0 +1,20 @@
+{
+    "uuid": "5a09a7b9-bceb-58cc-a560-2845b8774e26",
+    "title": "FairFil: Contrastive Neural Debiasing Method for Pretrained Text Encoders",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Pengyu Cheng",
+        "Weituo Hao",
+        "Siyang Yuan",
+        "Shijing Si",
+        "Lawrence Carin"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2103.06413v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\5a09a7b9-bceb-58cc-a560-2845b8774e26.pdf",
+    "bibtex": "@misc{cheng2021fairfilcontrastiveneuraldebiasingmethod,\n    title = {FairFil: Contrastive Neural Debiasing Method for Pretrained Text Encoders},\n    author = {Pengyu Cheng and Weituo Hao and Siyang Yuan and Shijing Si and Lawrence Carin},\n    year = {2021},\n    eprint = {2103.06413},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2103.06413},\n}",
+    "abstract": "Pretrained text encoders, such as BERT, have been applied increasingly in\nvarious natural language processing (NLP) tasks, and have recently demonstrated\nsignificant performance gains. However, recent studies have demonstrated the\nexistence of social bias in these pretrained NLP models. Although prior works\nhave made progress on word-level debiasing, improved sentence-level fairness of\npretrained encoders still lacks exploration. In this paper, we proposed the\nfirst neural debiasing method for a pretrained sentence encoder, which\ntransforms the pretrained encoder outputs into debiased representations via a\nfair filter (FairFil) network. To learn the FairFil, we introduce a contrastive\nlearning framework that not only minimizes the correlation between filtered\nembeddings and bias words but also preserves rich semantic information of the\noriginal sentences. On real-world datasets, our FairFil effectively reduces the\nbias degree of pretrained text encoders, while continuously showing desirable\nperformance on downstream tasks. Moreover, our post-hoc method does not require\nany retraining of the text encoders, further enlarging FairFil's application\nspace.",
+    "num_pages": 12
+}

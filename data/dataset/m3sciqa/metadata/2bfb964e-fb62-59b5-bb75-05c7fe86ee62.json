@@ -1,0 +1,17 @@
+{
+    "uuid": "2bfb964e-fb62-59b5-bb75-05c7fe86ee62",
+    "title": "SGDR: Stochastic Gradient Descent with Warm Restarts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Ilya Loshchilov",
+        "Frank Hutter"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1608.03983v5",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\2bfb964e-fb62-59b5-bb75-05c7fe86ee62.pdf",
+    "bibtex": "@misc{loshchilov2017sgdrstochasticgradientdescentwith,\n    title = {SGDR: Stochastic Gradient Descent with Warm Restarts},\n    author = {Ilya Loshchilov and Frank Hutter},\n    year = {2017},\n    eprint = {1608.03983},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1608.03983},\n}",
+    "abstract": "Restart techniques are common in gradient-free optimization to deal with\nmultimodal functions. Partial warm restarts are also gaining popularity in\ngradient-based optimization to improve the rate of convergence in accelerated\ngradient schemes to deal with ill-conditioned functions. In this paper, we\npropose a simple warm restart technique for stochastic gradient descent to\nimprove its anytime performance when training deep neural networks. We\nempirically study its performance on the CIFAR-10 and CIFAR-100 datasets, where\nwe demonstrate new state-of-the-art results at 3.14% and 16.21%, respectively.\nWe also demonstrate its advantages on a dataset of EEG recordings and on a\ndownsampled version of the ImageNet dataset. Our source code is available at\nhttps://github.com/loshchil/SGDR",
+    "num_pages": 16
+}

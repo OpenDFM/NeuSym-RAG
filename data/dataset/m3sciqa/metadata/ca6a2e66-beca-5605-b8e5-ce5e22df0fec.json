@@ -1,0 +1,18 @@
+{
+    "uuid": "ca6a2e66-beca-5605-b8e5-ce5e22df0fec",
+    "title": "Towards one-shot learning for rare-word translation with external experts",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Ngoc-Quan Pham",
+        "Jan Niehues",
+        "Alex Waibel"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1809.03182v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2018\\ca6a2e66-beca-5605-b8e5-ce5e22df0fec.pdf",
+    "bibtex": "@misc{pham2018towardsoneshotlearningforrareword,\n    title = {Towards one-shot learning for rare-word translation with external experts},\n    author = {Ngoc-Quan Pham and Jan Niehues and Alex Waibel},\n    year = {2018},\n    eprint = {1809.03182},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1809.03182},\n}",
+    "abstract": "Neural machine translation (NMT) has significantly improved the quality of\nautomatic translation models. One of the main challenges in current systems is\nthe translation of rare words. We present a generic approach to address this\nweakness by having external models annotate the training data as Experts, and\ncontrol the model-expert interaction with a pointer network and reinforcement\nlearning. Our experiments using phrase-based models to simulate Experts to\ncomplement neural machine translation models show that the model can be trained\nto copy the annotations into the output consistently. We demonstrate the\nbenefit of our proposed framework in outof-domain translation scenarios with\nonly lexical resources, improving more than 1.0 BLEU point in both translation\ndirections English to Spanish and German to English",
+    "num_pages": 10
+}

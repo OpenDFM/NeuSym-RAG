@@ -1,0 +1,19 @@
+{
+    "uuid": "e677e145-f273-5788-b753-f2592858e1fb",
+    "title": "Mixture Models for Diverse Machine Translation: Tricks of the Trade",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Tianxiao Shen",
+        "Myle Ott",
+        "Michael Auli",
+        "Marc'Aurelio Ranzato"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1902.07816v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\e677e145-f273-5788-b753-f2592858e1fb.pdf",
+    "bibtex": "@misc{shen2019mixturemodelsfordiversemachine,\n    title = {Mixture Models for Diverse Machine Translation: Tricks of the Trade},\n    author = {Tianxiao Shen and Myle Ott and Michael Auli and Marc'Aurelio Ranzato},\n    year = {2019},\n    eprint = {1902.07816},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1902.07816},\n}",
+    "abstract": "Mixture models trained via EM are among the simplest, most widely used and\nwell understood latent variable models in the machine learning literature.\nSurprisingly, these models have been hardly explored in text generation\napplications such as machine translation. In principle, they provide a latent\nvariable to control generation and produce a diverse set of hypotheses. In\npractice, however, mixture models are prone to degeneracies---often only one\ncomponent gets trained or the latent variable is simply ignored. We find that\ndisabling dropout noise in responsibility computation is critical to successful\ntraining. In addition, the design choices of parameterization, prior\ndistribution, hard versus soft EM and online versus offline assignment can\ndramatically affect model performance. We develop an evaluation protocol to\nassess both quality and diversity of generations against multiple references,\nand provide an extensive empirical study of several mixture model variants. Our\nanalysis shows that certain types of mixture models are more robust and offer\nthe best trade-off between translation quality and diversity compared to\nvariational models and diverse decoding approaches.\\footnote{Code to reproduce\nthe results in this paper is available at\n\\url{https://github.com/pytorch/fairseq}}",
+    "num_pages": 12
+}

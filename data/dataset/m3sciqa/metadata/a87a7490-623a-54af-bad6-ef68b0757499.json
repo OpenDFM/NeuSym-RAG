@@ -1,0 +1,19 @@
+{
+    "uuid": "a87a7490-623a-54af-bad6-ef68b0757499",
+    "title": "CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Alon Talmor",
+        "Jonathan Herzig",
+        "Nicholas Lourie",
+        "Jonathan Berant"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1811.00937v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2019\\a87a7490-623a-54af-bad6-ef68b0757499.pdf",
+    "bibtex": "@misc{talmor2019commonsenseqaaquestionansweringchallenge,\n    title = {CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge},\n    author = {Alon Talmor and Jonathan Herzig and Nicholas Lourie and Jonathan Berant},\n    year = {2019},\n    eprint = {1811.00937},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1811.00937},\n}",
+    "abstract": "When answering a question, people often draw upon their rich world knowledge\nin addition to the particular context. Recent work has focused primarily on\nanswering questions given some relevant document or context, and required very\nlittle general background. To investigate question answering with prior\nknowledge, we present CommonsenseQA: a challenging new dataset for commonsense\nquestion answering. To capture common sense beyond associations, we extract\nfrom ConceptNet (Speer et al., 2017) multiple target concepts that have the\nsame semantic relation to a single source concept. Crowd-workers are asked to\nauthor multiple-choice questions that mention the source concept and\ndiscriminate in turn between each of the target concepts. This encourages\nworkers to create questions with complex semantics that often require prior\nknowledge. We create 12,247 questions through this procedure and demonstrate\nthe difficulty of our task with a large number of strong baselines. Our best\nbaseline is based on BERT-large (Devlin et al., 2018) and obtains 56% accuracy,\nwell below human performance, which is 89%.",
+    "num_pages": 10
+}

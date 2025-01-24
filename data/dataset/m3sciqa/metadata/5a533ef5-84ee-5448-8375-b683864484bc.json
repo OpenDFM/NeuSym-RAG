@@ -1,0 +1,20 @@
+{
+    "uuid": "5a533ef5-84ee-5448-8375-b683864484bc",
+    "title": "MPNet: Masked and Permuted Pre-training for Language Understanding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Kaitao Song",
+        "Xu Tan",
+        "Tao Qin",
+        "Jianfeng Lu",
+        "Tie-Yan Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.09297v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\5a533ef5-84ee-5448-8375-b683864484bc.pdf",
+    "bibtex": "@misc{song2020mpnetmaskedandpermutedpretraining,\n    title = {MPNet: Masked and Permuted Pre-training for Language Understanding},\n    author = {Kaitao Song and Xu Tan and Tao Qin and Jianfeng Lu and Tie-Yan Liu},\n    year = {2020},\n    eprint = {2004.09297},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2004.09297},\n}",
+    "abstract": "BERT adopts masked language modeling (MLM) for pre-training and is one of the\nmost successful pre-training models. Since BERT neglects dependency among\npredicted tokens, XLNet introduces permuted language modeling (PLM) for\npre-training to address this problem. However, XLNet does not leverage the full\nposition information of a sentence and thus suffers from position discrepancy\nbetween pre-training and fine-tuning. In this paper, we propose MPNet, a novel\npre-training method that inherits the advantages of BERT and XLNet and avoids\ntheir limitations. MPNet leverages the dependency among predicted tokens\nthrough permuted language modeling (vs. MLM in BERT), and takes auxiliary\nposition information as input to make the model see a full sentence and thus\nreducing the position discrepancy (vs. PLM in XLNet). We pre-train MPNet on a\nlarge-scale dataset (over 160GB text corpora) and fine-tune on a variety of\ndown-streaming tasks (GLUE, SQuAD, etc). Experimental results show that MPNet\noutperforms MLM and PLM by a large margin, and achieves better results on these\ntasks compared with previous state-of-the-art pre-trained methods (e.g., BERT,\nXLNet, RoBERTa) under the same model setting. The code and the pre-trained\nmodels are available at: https://github.com/microsoft/MPNet.",
+    "num_pages": 14
+}

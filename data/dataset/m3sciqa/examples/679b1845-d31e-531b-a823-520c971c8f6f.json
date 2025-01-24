@@ -1,0 +1,47 @@
+{
+    "uuid": "679b1845-d31e-531b-a823-520c971c8f6f",
+    "question": "Consider the paper that introduces the method which exhibits a score of 34.9 in the Acc-7 metric on MOSI. What specific feature of spoken language does the Spoken Language Embedding Subnetwork in the model focus on to handle the volatile nature of spoken opinions?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "5e8f8496-8deb-510a-aeb9-49ffff159e23"
+    ],
+    "reference_pdf": [
+        "61bb0ab8-4419-5a2c-a8a1-6ec9c8512d8a",
+        "3960e993-aece-5afc-a9d9-a232feae755a",
+        "f33376c4-1446-5591-8cd8-edaa162293c6",
+        "750c0d08-363e-59a3-8d37-6c5ad16551d8",
+        "d625e278-c235-5992-bfb7-2e447d365a2e",
+        "ee84be56-8306-5304-8a3a-3ad106e977f3",
+        "94a3a713-4b94-5cba-a2ff-d1d0e1b04fb7",
+        "6ea15eac-4060-5f1d-8629-76330e0b67c5",
+        "39651ad0-168e-5246-98c3-2f973f1202c4",
+        "ae7e311d-d5ed-5eec-a0c1-03cf2939de7f",
+        "e4664f86-db28-5fec-a1de-52cf5cc3bc4a",
+        "18ffe39d-717f-5eaa-b3d7-26da397a2650",
+        "f0216761-d251-530a-8ee6-a5884b0d15d2",
+        "9617d0cd-1ba2-55f5-ba67-079c53c46bba",
+        "256dfb2a-1c40-5a19-9d6f-c00877580cc4",
+        "eb603d6c-2a60-504d-93ed-aef55ff4655b",
+        "ac1b0430-6781-5539-9d45-5067c0c6ff3e"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the method which exhibits a score of 34.9 in the Acc-7 metric on MOSI. What specific feature of spoken language does the Spoken Language Embedding Subnetwork in the model focus on to handle the volatile nature of spoken opinions?",
+            "reference_answer": "focusing on important parts of speech"
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.05804/comparison_table.png"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "uuid": "df4d0a6f-162d-5a17-a7e2-c949dcb008fe",
+    "title": "Modelling Commonsense Properties using Pre-Trained Bi-Encoders",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Amit Gajbhiye",
+        "Luis Espinosa-Anke",
+        "Steven Schockaert"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.02771v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\df4d0a6f-162d-5a17-a7e2-c949dcb008fe.pdf",
+    "bibtex": "@misc{gajbhiye2022modellingcommonsensepropertiesusingpretrained,\n    title = {Modelling Commonsense Properties using Pre-Trained Bi-Encoders},\n    author = {Amit Gajbhiye and Luis Espinosa-Anke and Steven Schockaert},\n    year = {2022},\n    eprint = {2210.02771},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.02771},\n}",
+    "abstract": "Grasping the commonsense properties of everyday concepts is an important\nprerequisite to language understanding. While contextualised language models\nare reportedly capable of predicting such commonsense properties with\nhuman-level accuracy, we argue that such results have been inflated because of\nthe high similarity between training and test concepts. This means that models\nwhich capture concept similarity can perform well, even if they do not capture\nany knowledge of the commonsense properties themselves. In settings where there\nis no overlap between the properties that are considered during training and\ntesting, we find that the empirical performance of standard language models\ndrops dramatically. To address this, we study the possibility of fine-tuning\nlanguage models to explicitly model concepts and their properties. In\nparticular, we train separate concept and property encoders on two types of\nreadily available data: extracted hyponym-hypernym pairs and generic sentences.\nOur experimental results show that the resulting encoders allow us to predict\ncommonsense properties with much higher accuracy than is possible by directly\nfine-tuning language models. We also present experimental results for the\nrelated task of unsupervised hypernym discovery.",
+    "num_pages": 13
+}

@@ -1,0 +1,21 @@
+{
+    "uuid": "95286e49-8ec0-51d4-b4af-8a0cb4b59b63",
+    "title": "Describe, Explain, Plan and Select: Interactive Planning with Large Language Models Enables Open-World Multi-Task Agents",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Zihao Wang",
+        "Shaofei Cai",
+        "Guanzhou Chen",
+        "Anji Liu",
+        "Xiaojian Ma",
+        "Yitao Liang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2302.01560v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2024\\95286e49-8ec0-51d4-b4af-8a0cb4b59b63.pdf",
+    "bibtex": "@misc{wang2024describeexplainplanandselect,\n    title = {Describe, Explain, Plan and Select: Interactive Planning with Large Language Models Enables Open-World Multi-Task Agents},\n    author = {Zihao Wang and Shaofei Cai and Guanzhou Chen and Anji Liu and Xiaojian Ma and Yitao Liang},\n    year = {2024},\n    eprint = {2302.01560},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/2302.01560},\n}",
+    "abstract": "We investigate the challenge of task planning for multi-task embodied agents\nin open-world environments. Two main difficulties are identified: 1) executing\nplans in an open-world environment (e.g., Minecraft) necessitates accurate and\nmulti-step reasoning due to the long-term nature of tasks, and 2) as vanilla\nplanners do not consider how easy the current agent can achieve a given\nsub-task when ordering parallel sub-goals within a complicated plan, the\nresulting plan could be inefficient or even infeasible. To this end, we propose\n\"$\\underline{D}$escribe, $\\underline{E}$xplain, $\\underline{P}$lan and\n$\\underline{S}$elect\" ($\\textbf{DEPS}$), an interactive planning approach based\non Large Language Models (LLMs). DEPS facilitates better error correction on\ninitial LLM-generated $\\textit{plan}$ by integrating $\\textit{description}$ of\nthe plan execution process and providing self-$\\textit{explanation}$ of\nfeedback when encountering failures during the extended planning phases.\nFurthermore, it includes a goal $\\textit{selector}$, which is a trainable\nmodule that ranks parallel candidate sub-goals based on the estimated steps of\ncompletion, consequently refining the initial plan. Our experiments mark the\nmilestone of the first zero-shot multi-task agent that can robustly accomplish\n70+ Minecraft tasks and nearly double the overall performances. Further testing\nreveals our method's general effectiveness in popularly adopted non-open-ended\ndomains as well (i.e., ALFWorld and tabletop manipulation). The ablation and\nexploratory studies detail how our design beats the counterparts and provide a\npromising update on the $\\texttt{ObtainDiamond}$ grand challenge with our\napproach. The code is released at https://github.com/CraftJarvis/MC-Planner.",
+    "num_pages": 37
+}

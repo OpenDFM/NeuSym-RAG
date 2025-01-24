@@ -1,0 +1,23 @@
+{
+    "uuid": "dd073182-00f0-5a9f-800b-7779293ab2ae",
+    "title": "Fine-Tuning Language Models from Human Preferences",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Daniel M. Ziegler",
+        "Nisan Stiennon",
+        "Jeffrey Wu",
+        "Tom B. Brown",
+        "Alec Radford",
+        "Dario Amodei",
+        "Paul Christiano",
+        "Geoffrey Irving"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1909.08593v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\dd073182-00f0-5a9f-800b-7779293ab2ae.pdf",
+    "bibtex": "@misc{ziegler2020finetuninglanguagemodelsfromhuman,\n    title = {Fine-Tuning Language Models from Human Preferences},\n    author = {Daniel M. Ziegler and Nisan Stiennon and Jeffrey Wu and Tom B. Brown and Alec Radford and Dario Amodei and Paul Christiano and Geoffrey Irving},\n    year = {2020},\n    eprint = {1909.08593},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1909.08593},\n}",
+    "abstract": "Reward learning enables the application of reinforcement learning (RL) to\ntasks where reward is defined by human judgment, building a model of reward by\nasking humans questions. Most work on reward learning has used simulated\nenvironments, but complex information about values is often expressed in\nnatural language, and we believe reward learning for language is a key to\nmaking RL practical and safe for real-world tasks. In this paper, we build on\nadvances in generative pretraining of language models to apply reward learning\nto four natural language tasks: continuing text with positive sentiment or\nphysically descriptive language, and summarization tasks on the TL;DR and\nCNN/Daily Mail datasets. For stylistic continuation we achieve good results\nwith only 5,000 comparisons evaluated by humans. For summarization, models\ntrained with 60,000 comparisons copy whole sentences from the input but skip\nirrelevant preamble; this leads to reasonable ROUGE scores and very good\nperformance according to our human labelers, but may be exploiting the fact\nthat labelers rely on simple heuristics.",
+    "num_pages": 26
+}

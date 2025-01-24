@@ -1,0 +1,18 @@
+{
+    "uuid": "898bc717-52e1-5411-8586-93195ba0d116",
+    "title": "Prototype-based HyperAdapter for Sample-Efficient Multi-task Tuning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Hao Zhao",
+        "Jie Fu",
+        "Zhaofeng He"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.11670v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\898bc717-52e1-5411-8586-93195ba0d116.pdf",
+    "bibtex": "@misc{zhao2023prototypebasedhyperadapterforsampleefficientmultitask,\n    title = {Prototype-based HyperAdapter for Sample-Efficient Multi-task Tuning},\n    author = {Hao Zhao and Jie Fu and Zhaofeng He},\n    year = {2023},\n    eprint = {2310.11670},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.11670},\n}",
+    "abstract": "Parameter-efficient fine-tuning (PEFT) has shown its effectiveness in\nadapting the pre-trained language models to downstream tasks while only\nupdating a small number of parameters. Despite the success, most existing\nmethods independently adapt to each task without considering knowledge transfer\nbetween tasks and are limited to low-data regimes. To overcome this issue, we\npropose Prototype-based HyperAdapter (PHA), a novel framework built on the\nadapter-tuning and hypernetwork. It introduces an instance-dense retriever and\na prototypical hypernetwork to generate the conditional modules in a\nsample-efficient manner. This leads to comparable performance improvements\nagainst existing PEFT methods on multi-task learning and few-shot transfer\nlearning. More importantly, when the available data size gets smaller, our\nmethod outperforms other strong baselines by a large margin. Based on our\nextensive empirical experiments across various datasets, we demonstrate that\nPHA strikes a better trade-off between trainable parameters, accuracy on stream\ntasks, and sample efficiency.",
+    "num_pages": 13
+}

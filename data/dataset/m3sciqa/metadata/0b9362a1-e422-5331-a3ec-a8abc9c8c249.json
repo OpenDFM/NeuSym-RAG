@@ -1,0 +1,22 @@
+{
+    "uuid": "0b9362a1-e422-5331-a3ec-a8abc9c8c249",
+    "title": "Towards Robustness of Text-to-SQL Models against Synonym Substitution",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Yujian Gan",
+        "Xinyun Chen",
+        "Qiuping Huang",
+        "Matthew Purver",
+        "John R. Woodward",
+        "Jinxia Xie",
+        "Pengsheng Huang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2106.01065v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\0b9362a1-e422-5331-a3ec-a8abc9c8c249.pdf",
+    "bibtex": "@misc{gan2021towardsrobustnessoftexttosqlmodels,\n    title = {Towards Robustness of Text-to-SQL Models against Synonym Substitution},\n    author = {Yujian Gan and Xinyun Chen and Qiuping Huang and Matthew Purver and John R. Woodward and Jinxia Xie and Pengsheng Huang},\n    year = {2021},\n    eprint = {2106.01065},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2106.01065},\n}",
+    "abstract": "Recently, there has been significant progress in studying neural networks to\ntranslate text descriptions into SQL queries. Despite achieving good\nperformance on some public benchmarks, existing text-to-SQL models typically\nrely on the lexical matching between words in natural language (NL) questions\nand tokens in table schemas, which may render the models vulnerable to attacks\nthat break the schema linking mechanism. In this work, we investigate the\nrobustness of text-to-SQL models to synonym substitution. In particular, we\nintroduce Spider-Syn, a human-curated dataset based on the Spider benchmark for\ntext-to-SQL translation. NL questions in Spider-Syn are modified from Spider,\nby replacing their schema-related words with manually selected synonyms that\nreflect real-world question paraphrases. We observe that the accuracy\ndramatically drops by eliminating such explicit correspondence between NL\nquestions and table schemas, even if the synonyms are not adversarially\nselected to conduct worst-case adversarial attacks. Finally, we present two\ncategories of approaches to improve the model robustness. The first category of\napproaches utilizes additional synonym annotations for table schemas by\nmodifying the model input, while the second category is based on adversarial\ntraining. We demonstrate that both categories of approaches significantly\noutperform their counterparts without the defense, and the first category of\napproaches are more effective.",
+    "num_pages": 11
+}

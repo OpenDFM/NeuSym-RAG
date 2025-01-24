@@ -1,0 +1,58 @@
+{
+    "uuid": "eb092df1-0eaf-5de9-937a-8423c7aea78b",
+    "question": "Consider the paper that introduces the LLM model that corresponds to an r score of 0.813. What specific methodological difference in the evaluation setup for the model's performance on the USABO and SAT reading/writing exams contributed to a deviation from the standard approach used for other exams?",
+    "answer_format": "You should answer the question in a short-answer form. Do not provide long answers.",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "afd759ef-87a1-55e5-a5c5-b0102325830d"
+    ],
+    "reference_pdf": [
+        "17623cac-c243-591b-b7bc-d261f6ebd607",
+        "e43b9042-e85e-52ba-b1bb-bb5416f836fa",
+        "636b10fe-f0e5-50c6-b53a-1b9b5c636864",
+        "e3181c7f-c92f-5e72-8419-d97634cf5535",
+        "a4166c00-143a-57ce-8929-537667e11cc4",
+        "f992c4ad-ce9f-584d-b09e-80bcdf9589b2",
+        "2eaaf347-a894-5b0d-9d6b-39fe1f869854",
+        "5fe9c4e7-cf60-5a3a-8550-26c2aa1b910c",
+        "e62ca3c9-15fe-5a2f-8f57-5914991cbae4",
+        "1d1ff063-3059-5b5b-abe0-0e41a62ac920",
+        "f3728bd2-f6be-585c-8ced-36649229dde9",
+        "dc135cea-016f-534b-bfe5-39bb5aca25dc",
+        "c67a9286-46c2-57f7-9a58-2c7ab8755152",
+        "d99202a8-0fbe-5032-a962-e65c745d3595",
+        "cd07dec7-94b7-573f-abda-fa59cdcacf82",
+        "eb8ba2b8-b5a6-516b-b762-19465f9eaaed",
+        "8da0435b-edc5-55b1-8983-ba5e662a3d0c",
+        "2feed15d-e321-5ac8-8a27-568759e429dd",
+        "fafb5d80-163e-59f2-a365-16a37f4fd351",
+        "f23baff0-753e-5787-b392-d67f27d48d2c",
+        "1d259046-2a97-578c-a3f9-40fe2e138e73",
+        "00b65d5a-72d7-5d45-b93d-aed20dd49192",
+        "bfc4e2c5-a593-5974-bd48-8220a9ee00b7",
+        "f1071e3a-5534-5cf9-a612-30b6e7986a75",
+        "2077ab9c-e416-5734-b43b-df2a5d91ec67",
+        "1adb8a6f-ba9b-5307-8758-5fde1de8fc44",
+        "60088993-59e3-5ca4-8e90-cddaec9589ae",
+        "ac1b0430-6781-5539-9d45-5067c0c6ff3e"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_m3sciqa",
+        "eval_kwargs": {
+            "question": "Consider the paper that introduces the LLM model that corresponds to an r score of 0.813. What specific methodological difference in the evaluation setup for the model's performance on the USABO and SAT reading/writing exams contributed to a deviation from the standard approach used for other exams?",
+            "reference_answer": "The use of sampling a letter choice at temperature 0 using the already-sampled explanation for certain exams, rather than extracting the model's letter choice directly from the explanation."
+        }
+    },
+    "state": {},
+    "annotator": "m3sciqa",
+    "anchor_image": [
+        "data/dataset/m3sciqa/images/2310.17428/mse_table.png"
+    ]
+}

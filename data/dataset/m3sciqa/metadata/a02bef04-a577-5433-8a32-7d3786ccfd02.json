@@ -1,0 +1,24 @@
+{
+    "uuid": "a02bef04-a577-5433-8a32-7d3786ccfd02",
+    "title": "REVISE: A Tool for Measuring and Mitigating Bias in Visual Datasets",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Angelina Wang",
+        "Alexander Liu",
+        "Ryan Zhang",
+        "Anat Kleiman",
+        "Leslie Kim",
+        "Dora Zhao",
+        "Iroha Shirai",
+        "Arvind Narayanan",
+        "Olga Russakovsky"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2004.07999v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\a02bef04-a577-5433-8a32-7d3786ccfd02.pdf",
+    "bibtex": "@misc{wang2021reviseatoolformeasuring,\n    title = {REVISE: A Tool for Measuring and Mitigating Bias in Visual Datasets},\n    author = {Angelina Wang and Alexander Liu and Ryan Zhang and Anat Kleiman and Leslie Kim and Dora Zhao and Iroha Shirai and Arvind Narayanan and Olga Russakovsky},\n    year = {2021},\n    eprint = {2004.07999},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2004.07999},\n}",
+    "abstract": "Machine learning models are known to perpetuate and even amplify the biases\npresent in the data. However, these data biases frequently do not become\napparent until after the models are deployed. Our work tackles this issue and\nenables the preemptive analysis of large-scale datasets. REVISE (REvealing\nVIsual biaSEs) is a tool that assists in the investigation of a visual dataset,\nsurfacing potential biases along three dimensions: (1) object-based, (2)\nperson-based, and (3) geography-based. Object-based biases relate to the size,\ncontext, or diversity of the depicted objects. Person-based metrics focus on\nanalyzing the portrayal of people within the dataset. Geography-based analyses\nconsider the representation of different geographic locations. These three\ndimensions are deeply intertwined in how they interact to bias a dataset, and\nREVISE sheds light on this; the responsibility then lies with the user to\nconsider the cultural and historical context, and to determine which of the\nrevealed biases may be problematic. The tool further assists the user by\nsuggesting actionable steps that may be taken to mitigate the revealed biases.\nOverall, the key aim of our work is to tackle the machine learning bias problem\nearly in the pipeline. REVISE is available at\nhttps://github.com/princetonvisualai/revise-tool",
+    "num_pages": 22
+}

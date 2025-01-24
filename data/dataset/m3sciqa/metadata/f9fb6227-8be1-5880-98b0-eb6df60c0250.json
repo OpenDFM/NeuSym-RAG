@@ -1,0 +1,22 @@
+{
+    "uuid": "f9fb6227-8be1-5880-98b0-eb6df60c0250",
+    "title": "Learning Robust Representations for Continual Relation Extraction via Adversarial Class Augmentation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Peiyi Wang",
+        "Yifan Song",
+        "Tianyu Liu",
+        "Binghuai Lin",
+        "Yunbo Cao",
+        "Sujian Li",
+        "Zhifang Sui"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.04497v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\f9fb6227-8be1-5880-98b0-eb6df60c0250.pdf",
+    "bibtex": "@misc{wang2022learningrobustrepresentationsforcontinual,\n    title = {Learning Robust Representations for Continual Relation Extraction via Adversarial Class Augmentation},\n    author = {Peiyi Wang and Yifan Song and Tianyu Liu and Binghuai Lin and Yunbo Cao and Sujian Li and Zhifang Sui},\n    year = {2022},\n    eprint = {2210.04497},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2210.04497},\n}",
+    "abstract": "Continual relation extraction (CRE) aims to continually learn new relations\nfrom a class-incremental data stream. CRE model usually suffers from\ncatastrophic forgetting problem, i.e., the performance of old relations\nseriously degrades when the model learns new relations. Most previous work\nattributes catastrophic forgetting to the corruption of the learned\nrepresentations as new relations come, with an implicit assumption that the CRE\nmodels have adequately learned the old relations. In this paper, through\nempirical studies we argue that this assumption may not hold, and an important\nreason for catastrophic forgetting is that the learned representations do not\nhave good robustness against the appearance of analogous relations in the\nsubsequent learning process. To address this issue, we encourage the model to\nlearn more precise and robust representations through a simple yet effective\nadversarial class augmentation mechanism (ACA), which is easy to implement and\nmodel-agnostic. Experimental results show that ACA can consistently improve the\nperformance of state-of-the-art CRE models on two popular benchmarks.",
+    "num_pages": 15
+}

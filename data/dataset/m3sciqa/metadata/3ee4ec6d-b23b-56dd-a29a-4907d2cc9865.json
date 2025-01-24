@@ -1,0 +1,18 @@
+{
+    "uuid": "3ee4ec6d-b23b-56dd-a29a-4907d2cc9865",
+    "title": "Modular Multitask Reinforcement Learning with Policy Sketches",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2017,
+    "authors": [
+        "Jacob Andreas",
+        "Dan Klein",
+        "Sergey Levine"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1611.01796v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2017\\3ee4ec6d-b23b-56dd-a29a-4907d2cc9865.pdf",
+    "bibtex": "@misc{andreas2017modularmultitaskreinforcementlearningwith,\n    title = {Modular Multitask Reinforcement Learning with Policy Sketches},\n    author = {Jacob Andreas and Dan Klein and Sergey Levine},\n    year = {2017},\n    eprint = {1611.01796},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1611.01796},\n}",
+    "abstract": "We describe a framework for multitask deep reinforcement learning guided by\npolicy sketches. Sketches annotate tasks with sequences of named subtasks,\nproviding information about high-level structural relationships among tasks but\nnot how to implement them---specifically not providing the detailed guidance\nused by much previous work on learning policy abstractions for RL (e.g.\nintermediate rewards, subtask completion signals, or intrinsic motivations). To\nlearn from sketches, we present a model that associates every subtask with a\nmodular subpolicy, and jointly maximizes reward over full task-specific\npolicies by tying parameters across shared subpolicies. Optimization is\naccomplished via a decoupled actor--critic training objective that facilitates\nlearning common behaviors from multiple dissimilar reward functions. We\nevaluate the effectiveness of our approach in three environments featuring both\ndiscrete and continuous control, and with sparse rewards that can be obtained\nonly after completing a number of high-level subgoals. Experiments show that\nusing our approach to learn policies guided by sketches gives better\nperformance than existing techniques for learning task-specific or shared\npolicies, while naturally inducing a library of interpretable primitive\nbehaviors that can be recombined to rapidly adapt to new tasks.",
+    "num_pages": 11
+}

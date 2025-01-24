@@ -1,0 +1,20 @@
+{
+    "uuid": "293d5adc-aa34-5d98-b38c-29153c1715b8",
+    "title": "Improve Unsupervised Domain Adaptation with Mixup Training",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Shen Yan",
+        "Huan Song",
+        "Nanxiang Li",
+        "Lincan Zou",
+        "Liu Ren"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2001.00677v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\293d5adc-aa34-5d98-b38c-29153c1715b8.pdf",
+    "bibtex": "@misc{yan2020improveunsuperviseddomainadaptationwith,\n    title = {Improve Unsupervised Domain Adaptation with Mixup Training},\n    author = {Shen Yan and Huan Song and Nanxiang Li and Lincan Zou and Liu Ren},\n    year = {2020},\n    eprint = {2001.00677},\n    archivePrefix = {arXiv},\n    primaryClass = {stat.ML},\n    url = {http://arxiv.org/abs/2001.00677},\n}",
+    "abstract": "Unsupervised domain adaptation studies the problem of utilizing a relevant\nsource domain with abundant labels to build predictive modeling for an\nunannotated target domain. Recent work observe that the popular adversarial\napproach of learning domain-invariant features is insufficient to achieve\ndesirable target domain performance and thus introduce additional training\nconstraints, e.g. cluster assumption. However, these approaches impose the\nconstraints on source and target domains individually, ignoring the important\ninterplay between them. In this work, we propose to enforce training\nconstraints across domains using mixup formulation to directly address the\ngeneralization performance for target data. In order to tackle potentially huge\ndomain discrepancy, we further propose a feature-level consistency regularizer\nto facilitate the inter-domain constraint. When adding intra-domain mixup and\ndomain adversarial learning, our general framework significantly improves\nstate-of-the-art performance on several important tasks from both image\nclassification and human activity recognition.",
+    "num_pages": 5
+}

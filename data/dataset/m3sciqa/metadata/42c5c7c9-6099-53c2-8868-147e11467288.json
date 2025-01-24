@@ -1,0 +1,24 @@
+{
+    "uuid": "42c5c7c9-6099-53c2-8868-147e11467288",
+    "title": "Enhancing Chat Language Models by Scaling High-quality Instructional Conversations",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Ning Ding",
+        "Yulin Chen",
+        "Bokai Xu",
+        "Yujia Qin",
+        "Zhi Zheng",
+        "Shengding Hu",
+        "Zhiyuan Liu",
+        "Maosong Sun",
+        "Bowen Zhou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.14233v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\42c5c7c9-6099-53c2-8868-147e11467288.pdf",
+    "bibtex": "@misc{ding2023enhancingchatlanguagemodelsby,\n    title = {Enhancing Chat Language Models by Scaling High-quality Instructional Conversations},\n    author = {Ning Ding and Yulin Chen and Bokai Xu and Yujia Qin and Zhi Zheng and Shengding Hu and Zhiyuan Liu and Maosong Sun and Bowen Zhou},\n    year = {2023},\n    eprint = {2305.14233},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.14233},\n}",
+    "abstract": "Fine-tuning on instruction data has been widely validated as an effective\npractice for implementing chat language models like ChatGPT. Scaling the\ndiversity and quality of such data, although straightforward, stands a great\nchance of leading to improved performance. This paper aims to improve the upper\nbound of open-source models further. We first provide a systematically\ndesigned, diverse, informative, large-scale dataset of instructional\nconversations, UltraChat, which does not involve human queries. Our objective\nis to capture the breadth of interactions that a human might have with an AI\nassistant and employs a comprehensive framework to generate multi-turn\nconversation iteratively. UltraChat contains 1.5 million high-quality\nmulti-turn dialogues and covers a wide range of topics and instructions. Our\nstatistical analysis of UltraChat reveals its superiority in various key\nmetrics, including scale, average length, diversity, coherence, etc.,\nsolidifying its position as a leading open-source dataset. Building upon\nUltraChat, we fine-tune a LLaMA model to create a powerful conversational\nmodel, UltraLLaMA. Our evaluations indicate that UltraLLaMA consistently\noutperforms other open-source models, including Vicuna, the previously\nrecognized state-of-the-art open-source model. The dataset and the model will\nbe publicly released\\footnote{\\url{https://github.com/thunlp/UltraChat}}.",
+    "num_pages": 17
+}

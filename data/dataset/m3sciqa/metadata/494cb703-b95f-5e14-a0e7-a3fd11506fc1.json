@@ -1,0 +1,23 @@
+{
+    "uuid": "494cb703-b95f-5e14-a0e7-a3fd11506fc1",
+    "title": "Bootstrap Your Own Skills: Learning to Solve New Tasks with Large Language Model Guidance",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Jesse Zhang",
+        "Jiahui Zhang",
+        "Karl Pertsch",
+        "Ziyi Liu",
+        "Xiang Ren",
+        "Minsuk Chang",
+        "Shao-Hua Sun",
+        "Joseph J. Lim"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.10021v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\494cb703-b95f-5e14-a0e7-a3fd11506fc1.pdf",
+    "bibtex": "@misc{zhang2023bootstrapyourownskillslearning,\n    title = {Bootstrap Your Own Skills: Learning to Solve New Tasks with Large Language Model Guidance},\n    author = {Jesse Zhang and Jiahui Zhang and Karl Pertsch and Ziyi Liu and Xiang Ren and Minsuk Chang and Shao-Hua Sun and Joseph J. Lim},\n    year = {2023},\n    eprint = {2310.10021},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.RO},\n    url = {http://arxiv.org/abs/2310.10021},\n}",
+    "abstract": "We propose BOSS, an approach that automatically learns to solve new\nlong-horizon, complex, and meaningful tasks by growing a learned skill library\nwith minimal supervision. Prior work in reinforcement learning require expert\nsupervision, in the form of demonstrations or rich reward functions, to learn\nlong-horizon tasks. Instead, our approach BOSS (BOotStrapping your own Skills)\nlearns to accomplish new tasks by performing \"skill bootstrapping,\" where an\nagent with a set of primitive skills interacts with the environment to practice\nnew skills without receiving reward feedback for tasks outside of the initial\nskill set. This bootstrapping phase is guided by large language models (LLMs)\nthat inform the agent of meaningful skills to chain together. Through this\nprocess, BOSS builds a wide range of complex and useful behaviors from a basic\nset of primitive skills. We demonstrate through experiments in realistic\nhousehold environments that agents trained with our LLM-guided bootstrapping\nprocedure outperform those trained with naive bootstrapping as well as prior\nunsupervised skill acquisition methods on zero-shot execution of unseen,\nlong-horizon tasks in new environments. Website at clvrai.com/boss.",
+    "num_pages": 24
+}

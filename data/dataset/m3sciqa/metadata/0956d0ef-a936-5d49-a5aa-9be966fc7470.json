@@ -1,0 +1,18 @@
+{
+    "uuid": "0956d0ef-a936-5d49-a5aa-9be966fc7470",
+    "title": "Tree-structured composition in neural networks without tree-structured architectures",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2015,
+    "authors": [
+        "Samuel R. Bowman",
+        "Christopher D. Manning",
+        "Christopher Potts"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1506.04834v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2015\\0956d0ef-a936-5d49-a5aa-9be966fc7470.pdf",
+    "bibtex": "@misc{bowman2015treestructuredcompositioninneuralnetworks,\n    title = {Tree-structured composition in neural networks without tree-structured architectures},\n    author = {Samuel R. Bowman and Christopher D. Manning and Christopher Potts},\n    year = {2015},\n    eprint = {1506.04834},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1506.04834},\n}",
+    "abstract": "Tree-structured neural networks encode a particular tree geometry for a\nsentence in the network design. However, these models have at best only\nslightly outperformed simpler sequence-based models. We hypothesize that neural\nsequence models like LSTMs are in fact able to discover and implicitly use\nrecursive compositional structure, at least for tasks with clear cues to that\nstructure in the data. We demonstrate this possibility using an artificial data\ntask for which recursive compositional structure is crucial, and find an\nLSTM-based sequence model can indeed learn to exploit the underlying tree\nstructure. However, its performance consistently lags behind that of tree\nmodels, even on large training sets, suggesting that tree-structured models are\nmore effective at exploiting recursive structure.",
+    "num_pages": 6
+}

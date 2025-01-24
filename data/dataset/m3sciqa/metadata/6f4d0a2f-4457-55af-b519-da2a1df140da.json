@@ -1,0 +1,20 @@
+{
+    "uuid": "6f4d0a2f-4457-55af-b519-da2a1df140da",
+    "title": "Calibrate Before Use: Improving Few-Shot Performance of Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Tony Z. Zhao",
+        "Eric Wallace",
+        "Shi Feng",
+        "Dan Klein",
+        "Sameer Singh"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2102.09690v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\6f4d0a2f-4457-55af-b519-da2a1df140da.pdf",
+    "bibtex": "@misc{zhao2021calibratebeforeuseimprovingfewshot,\n    title = {Calibrate Before Use: Improving Few-Shot Performance of Language Models},\n    author = {Tony Z. Zhao and Eric Wallace and Shi Feng and Dan Klein and Sameer Singh},\n    year = {2021},\n    eprint = {2102.09690},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2102.09690},\n}",
+    "abstract": "GPT-3 can perform numerous tasks when provided a natural language prompt that\ncontains a few training examples. We show that this type of few-shot learning\ncan be unstable: the choice of prompt format, training examples, and even the\norder of the training examples can cause accuracy to vary from near chance to\nnear state-of-the-art. We demonstrate that this instability arises from the\nbias of language models towards predicting certain answers, e.g., those that\nare placed near the end of the prompt or are common in the pre-training data.\nTo mitigate this, we first estimate the model's bias towards each answer by\nasking for its prediction when given the training prompt and a content-free\ntest input such as \"N/A\". We then fit calibration parameters that cause the\nprediction for this input to be uniform across answers. On a diverse set of\ntasks, this contextual calibration procedure substantially improves GPT-3 and\nGPT-2's average accuracy (up to 30.0% absolute) and reduces variance across\ndifferent choices of the prompt.",
+    "num_pages": 15
+}

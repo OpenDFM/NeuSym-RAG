@@ -1,0 +1,20 @@
+{
+    "uuid": "0a58057a-a09f-5b93-9aeb-0243adcf3eef",
+    "title": "BERTScore: Evaluating Text Generation with BERT",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Tianyi Zhang",
+        "Varsha Kishore",
+        "Felix Wu",
+        "Kilian Q. Weinberger",
+        "Yoav Artzi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1904.09675v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\0a58057a-a09f-5b93-9aeb-0243adcf3eef.pdf",
+    "bibtex": "@misc{zhang2020bertscoreevaluatingtextgenerationwith,\n    title = {BERTScore: Evaluating Text Generation with BERT},\n    author = {Tianyi Zhang and Varsha Kishore and Felix Wu and Kilian Q. Weinberger and Yoav Artzi},\n    year = {2020},\n    eprint = {1904.09675},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1904.09675},\n}",
+    "abstract": "We propose BERTScore, an automatic evaluation metric for text generation.\nAnalogously to common metrics, BERTScore computes a similarity score for each\ntoken in the candidate sentence with each token in the reference sentence.\nHowever, instead of exact matches, we compute token similarity using contextual\nembeddings. We evaluate using the outputs of 363 machine translation and image\ncaptioning systems. BERTScore correlates better with human judgments and\nprovides stronger model selection performance than existing metrics. Finally,\nwe use an adversarial paraphrase detection task to show that BERTScore is more\nrobust to challenging examples when compared to existing metrics.",
+    "num_pages": 43
+}

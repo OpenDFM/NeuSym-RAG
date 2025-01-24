@@ -1,0 +1,19 @@
+{
+    "uuid": "874df9a4-8882-5470-b472-583f4db25491",
+    "title": "Modelling Hierarchical Structure between Dialogue Policy and Natural Language Generator with Option Framework for Task-oriented Dialogue System",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Jianhong Wang",
+        "Yuan Zhang",
+        "Tae-Kyun Kim",
+        "Yunjie Gu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2006.06814v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\874df9a4-8882-5470-b472-583f4db25491.pdf",
+    "bibtex": "@misc{wang2021modellinghierarchicalstructurebetweendialogue,\n    title = {Modelling Hierarchical Structure between Dialogue Policy and Natural Language Generator with Option Framework for Task-oriented Dialogue System},\n    author = {Jianhong Wang and Yuan Zhang and Tae-Kyun Kim and Yunjie Gu},\n    year = {2021},\n    eprint = {2006.06814},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2006.06814},\n}",
+    "abstract": "Designing task-oriented dialogue systems is a challenging research topic,\nsince it needs not only to generate utterances fulfilling user requests but\nalso to guarantee the comprehensibility. Many previous works trained end-to-end\n(E2E) models with supervised learning (SL), however, the bias in annotated\nsystem utterances remains as a bottleneck. Reinforcement learning (RL) deals\nwith the problem through using non-differentiable evaluation metrics (e.g., the\nsuccess rate) as rewards. Nonetheless, existing works with RL showed that the\ncomprehensibility of generated system utterances could be corrupted when\nimproving the performance on fulfilling user requests. In our work, we (1)\npropose modelling the hierarchical structure between dialogue policy and\nnatural language generator (NLG) with the option framework, called HDNO, where\nthe latent dialogue act is applied to avoid designing specific dialogue act\nrepresentations; (2) train HDNO via hierarchical reinforcement learning (HRL),\nas well as suggest the asynchronous updates between dialogue policy and NLG\nduring training to theoretically guarantee their convergence to a local\nmaximizer; and (3) propose using a discriminator modelled with language models\nas an additional reward to further improve the comprehensibility. We test HDNO\non MultiWoz 2.0 and MultiWoz 2.1, the datasets on multi-domain dialogues, in\ncomparison with word-level E2E model trained with RL, LaRL and HDSA, showing\nimprovements on the performance evaluated by automatic evaluation metrics and\nhuman evaluation. Finally, we demonstrate the semantic meanings of latent\ndialogue acts to show the explanability for HDNO.",
+    "num_pages": 20
+}

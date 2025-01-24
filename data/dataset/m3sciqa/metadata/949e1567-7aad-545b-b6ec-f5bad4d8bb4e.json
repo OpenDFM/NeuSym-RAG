@@ -1,0 +1,19 @@
+{
+    "uuid": "949e1567-7aad-545b-b6ec-f5bad4d8bb4e",
+    "title": "Say As You Wish: Fine-grained Control of Image Caption Generation with Abstract Scene Graphs",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Shizhe Chen",
+        "Qin Jin",
+        "Peng Wang",
+        "Qi Wu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2003.00387v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\949e1567-7aad-545b-b6ec-f5bad4d8bb4e.pdf",
+    "bibtex": "@misc{chen2020sayasyouwishfinegrained,\n    title = {Say As You Wish: Fine-grained Control of Image Caption Generation with Abstract Scene Graphs},\n    author = {Shizhe Chen and Qin Jin and Peng Wang and Qi Wu},\n    year = {2020},\n    eprint = {2003.00387},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2003.00387},\n}",
+    "abstract": "Humans are able to describe image contents with coarse to fine details as\nthey wish. However, most image captioning models are intention-agnostic which\ncan not generate diverse descriptions according to different user intentions\ninitiatively. In this work, we propose the Abstract Scene Graph (ASG) structure\nto represent user intention in fine-grained level and control what and how\ndetailed the generated description should be. The ASG is a directed graph\nconsisting of three types of \\textbf{abstract nodes} (object, attribute,\nrelationship) grounded in the image without any concrete semantic labels. Thus\nit is easy to obtain either manually or automatically. From the ASG, we propose\na novel ASG2Caption model, which is able to recognise user intentions and\nsemantics in the graph, and therefore generate desired captions according to\nthe graph structure. Our model achieves better controllability conditioning on\nASGs than carefully designed baselines on both VisualGenome and MSCOCO\ndatasets. It also significantly improves the caption diversity via\nautomatically sampling diverse ASGs as control signals.",
+    "num_pages": 14
+}

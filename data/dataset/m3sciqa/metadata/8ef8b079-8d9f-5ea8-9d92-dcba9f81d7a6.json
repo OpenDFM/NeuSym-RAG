@@ -1,0 +1,19 @@
+{
+    "uuid": "8ef8b079-8d9f-5ea8-9d92-dcba9f81d7a6",
+    "title": "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Samyam Rajbhandari",
+        "Jeff Rasley",
+        "Olatunji Ruwase",
+        "Yuxiong He"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1910.02054v3",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2020\\8ef8b079-8d9f-5ea8-9d92-dcba9f81d7a6.pdf",
+    "bibtex": "@misc{rajbhandari2020zeromemoryoptimizationstowardtraining,\n    title = {ZeRO: Memory Optimizations Toward Training Trillion Parameter Models},\n    author = {Samyam Rajbhandari and Jeff Rasley and Olatunji Ruwase and Yuxiong He},\n    year = {2020},\n    eprint = {1910.02054},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/1910.02054},\n}",
+    "abstract": "Large deep learning models offer significant accuracy gains, but training\nbillions to trillions of parameters is challenging. Existing solutions such as\ndata and model parallelisms exhibit fundamental limitations to fit these models\ninto limited device memory, while obtaining computation, communication and\ndevelopment efficiency. We develop a novel solution, Zero Redundancy Optimizer\n(ZeRO), to optimize memory, vastly improving training speed while increasing\nthe model size that can be efficiently trained. ZeRO eliminates memory\nredundancies in data- and model-parallel training while retaining low\ncommunication volume and high computational granularity, allowing us to scale\nthe model size proportional to the number of devices with sustained high\nefficiency. Our analysis on memory requirements and communication volume\ndemonstrates: ZeRO has the potential to scale beyond 1 Trillion parameters\nusing today's hardware.\n  We implement and evaluate ZeRO: it trains large models of over 100B parameter\nwith super-linear speedup on 400 GPUs, achieving throughput of 15 Petaflops.\nThis represents an 8x increase in model size and 10x increase in achievable\nperformance over state-of-the-art. In terms of usability, ZeRO can train large\nmodels of up to 13B parameters (e.g., larger than Megatron GPT 8.3B and T5 11B)\nwithout requiring model parallelism which is harder for scientists to apply.\nLast but not the least, researchers have used the system breakthroughs of ZeRO\nto create the world's largest language model (Turing-NLG, 17B parameters) with\nrecord breaking accuracy.",
+    "num_pages": 24
+}

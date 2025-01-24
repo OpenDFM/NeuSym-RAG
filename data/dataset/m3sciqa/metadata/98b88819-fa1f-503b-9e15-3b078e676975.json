@@ -1,0 +1,22 @@
+{
+    "uuid": "98b88819-fa1f-503b-9e15-3b078e676975",
+    "title": "Continuous-Time Meta-Learning with Forward Mode Differentiation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Tristan Deleu",
+        "David Kanaa",
+        "Leo Feng",
+        "Giancarlo Kerg",
+        "Yoshua Bengio",
+        "Guillaume Lajoie",
+        "Pierre-Luc Bacon"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2203.01443v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\98b88819-fa1f-503b-9e15-3b078e676975.pdf",
+    "bibtex": "@misc{deleu2022continuoustimemetalearningwithforwardmode,\n    title = {Continuous-Time Meta-Learning with Forward Mode Differentiation},\n    author = {Tristan Deleu and David Kanaa and Leo Feng and Giancarlo Kerg and Yoshua Bengio and Guillaume Lajoie and Pierre-Luc Bacon},\n    year = {2022},\n    eprint = {2203.01443},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2203.01443},\n}",
+    "abstract": "Drawing inspiration from gradient-based meta-learning methods with infinitely\nsmall gradient steps, we introduce Continuous-Time Meta-Learning (COMLN), a\nmeta-learning algorithm where adaptation follows the dynamics of a gradient\nvector field. Specifically, representations of the inputs are meta-learned such\nthat a task-specific linear classifier is obtained as a solution of an ordinary\ndifferential equation (ODE). Treating the learning process as an ODE offers the\nnotable advantage that the length of the trajectory is now continuous, as\nopposed to a fixed and discrete number of gradient steps. As a consequence, we\ncan optimize the amount of adaptation necessary to solve a new task using\nstochastic gradient descent, in addition to learning the initial conditions as\nis standard practice in gradient-based meta-learning. Importantly, in order to\ncompute the exact meta-gradients required for the outer-loop updates, we devise\nan efficient algorithm based on forward mode differentiation, whose memory\nrequirements do not scale with the length of the learning trajectory, thus\nallowing longer adaptation in constant memory. We provide analytical guarantees\nfor the stability of COMLN, we show empirically its efficiency in terms of\nruntime and memory usage, and we illustrate its effectiveness on a range of\nfew-shot image classification problems.",
+    "num_pages": 32
+}

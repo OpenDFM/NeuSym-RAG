@@ -1,0 +1,20 @@
+{
+    "uuid": "dcc6b113-fbd2-5f9d-a736-1b761489085f",
+    "title": "Eva-KELLM: A New Benchmark for Evaluating Knowledge Editing of LLMs",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Suhang Wu",
+        "Minlong Peng",
+        "Yue Chen",
+        "Jinsong Su",
+        "Mingming Sun"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2308.09954v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\dcc6b113-fbd2-5f9d-a736-1b761489085f.pdf",
+    "bibtex": "@misc{wu2023evakellmanewbenchmarkfor,\n    title = {Eva-KELLM: A New Benchmark for Evaluating Knowledge Editing of LLMs},\n    author = {Suhang Wu and Minlong Peng and Yue Chen and Jinsong Su and Mingming Sun},\n    year = {2023},\n    eprint = {2308.09954},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2308.09954},\n}",
+    "abstract": "Large language models (LLMs) possess a wealth of knowledge encoded in their\nparameters. However, this knowledge may become outdated or unsuitable over\ntime. As a result, there has been a growing interest in knowledge editing for\nLLMs and evaluating its effectiveness. Existing studies primarily focus on\nknowledge editing using factual triplets, which not only incur high costs for\ncollection but also struggle to express complex facts. Furthermore, these\nstudies are often limited in their evaluation perspectives. In this paper, we\npropose Eva-KELLM, a new benchmark for evaluating knowledge editing of LLMs.\nThis benchmark includes an evaluation framework and a corresponding dataset.\nUnder our framework, we first ask the LLM to perform knowledge editing using\nraw documents, which provides a more convenient and universal approach compared\nto using factual triplets. We then evaluate the updated LLM from multiple\nperspectives. In addition to assessing the effectiveness of knowledge editing\nand the retention of unrelated knowledge from conventional studies, we further\ntest the LLM's ability in two aspects: 1) Reasoning with the altered knowledge,\naiming for the LLM to genuinely learn the altered knowledge instead of simply\nmemorizing it. 2) Cross-lingual knowledge transfer, where the LLM updated with\nraw documents in one language should be capable of handling queries from\nanother language. To facilitate further research, we construct and release the\ncorresponding dataset. Using this benchmark, we investigate the effectiveness\nof several commonly-used knowledge editing methods. Experimental results\nindicate that the current methods for knowledge editing using raw documents are\nnot effective in yielding satisfactory results, particularly when it comes to\nreasoning with altered knowledge and cross-lingual knowledge transfer.",
+    "num_pages": 11
+}

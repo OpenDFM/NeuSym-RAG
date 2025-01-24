@@ -1,0 +1,19 @@
+{
+    "uuid": "1821bd0b-d55e-5dbf-bfcd-2fde02a07633",
+    "title": "GeoLM: Empowering Language Models for Geospatially Grounded Language Understanding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Zekun Li",
+        "Wenxuan Zhou",
+        "Yao-Yi Chiang",
+        "Muhao Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.14478v1",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2023\\1821bd0b-d55e-5dbf-bfcd-2fde02a07633.pdf",
+    "bibtex": "@misc{li2023geolmempoweringlanguagemodelsfor,\n    title = {GeoLM: Empowering Language Models for Geospatially Grounded Language Understanding},\n    author = {Zekun Li and Wenxuan Zhou and Yao-Yi Chiang and Muhao Chen},\n    year = {2023},\n    eprint = {2310.14478},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.14478},\n}",
+    "abstract": "Humans subconsciously engage in geospatial reasoning when reading articles.\nWe recognize place names and their spatial relations in text and mentally\nassociate them with their physical locations on Earth. Although pretrained\nlanguage models can mimic this cognitive process using linguistic context, they\ndo not utilize valuable geospatial information in large, widely available\ngeographical databases, e.g., OpenStreetMap. This paper introduces GeoLM, a\ngeospatially grounded language model that enhances the understanding of\ngeo-entities in natural language. GeoLM leverages geo-entity mentions as\nanchors to connect linguistic information in text corpora with geospatial\ninformation extracted from geographical databases. GeoLM connects the two types\nof context through contrastive learning and masked language modeling. It also\nincorporates a spatial coordinate embedding mechanism to encode distance and\ndirection relations to capture geospatial context. In the experiment, we\ndemonstrate that GeoLM exhibits promising capabilities in supporting toponym\nrecognition, toponym linking, relation extraction, and geo-entity typing, which\nbridge the gap between natural language processing and geospatial sciences. The\ncode is publicly available at https://github.com/knowledge-computing/geolm.",
+    "num_pages": 14
+}

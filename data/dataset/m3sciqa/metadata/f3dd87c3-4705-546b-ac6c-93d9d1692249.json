@@ -1,0 +1,19 @@
+{
+    "uuid": "f3dd87c3-4705-546b-ac6c-93d9d1692249",
+    "title": "Energy-based Out-of-distribution Detection",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Weitang Liu",
+        "Xiaoyun Wang",
+        "John D. Owens",
+        "Yixuan Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.03759v4",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\f3dd87c3-4705-546b-ac6c-93d9d1692249.pdf",
+    "bibtex": "@misc{liu2021energybasedoutofdistributiondetection,\n    title = {Energy-based Out-of-distribution Detection},\n    author = {Weitang Liu and Xiaoyun Wang and John D. Owens and Yixuan Li},\n    year = {2021},\n    eprint = {2010.03759},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2010.03759},\n}",
+    "abstract": "Determining whether inputs are out-of-distribution (OOD) is an essential\nbuilding block for safely deploying machine learning models in the open world.\nHowever, previous methods relying on the softmax confidence score suffer from\noverconfident posterior distributions for OOD data. We propose a unified\nframework for OOD detection that uses an energy score. We show that energy\nscores better distinguish in- and out-of-distribution samples than the\ntraditional approach using the softmax scores. Unlike softmax confidence\nscores, energy scores are theoretically aligned with the probability density of\nthe inputs and are less susceptible to the overconfidence issue. Within this\nframework, energy can be flexibly used as a scoring function for any\npre-trained neural classifier as well as a trainable cost function to shape the\nenergy surface explicitly for OOD detection. On a CIFAR-10 pre-trained\nWideResNet, using the energy score reduces the average FPR (at TPR 95%) by\n18.03% compared to the softmax confidence score. With energy-based training,\nour method outperforms the state-of-the-art on common benchmarks.",
+    "num_pages": 16
+}

@@ -1,0 +1,20 @@
+{
+    "uuid": "cac30ce0-51b1-54ef-bfc5-fa365d4131e4",
+    "title": "Prevent the Language Model from being Overconfident in Neural Machine Translation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Mengqi Miao",
+        "Fandong Meng",
+        "Yijin Liu",
+        "Xiao-Hua Zhou",
+        "Jie Zhou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2105.11098v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2021\\cac30ce0-51b1-54ef-bfc5-fa365d4131e4.pdf",
+    "bibtex": "@misc{miao2021preventthelanguagemodelfrom,\n    title = {Prevent the Language Model from being Overconfident in Neural Machine Translation},\n    author = {Mengqi Miao and Fandong Meng and Yijin Liu and Xiao-Hua Zhou and Jie Zhou},\n    year = {2021},\n    eprint = {2105.11098},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2105.11098},\n}",
+    "abstract": "The Neural Machine Translation (NMT) model is essentially a joint language\nmodel conditioned on both the source sentence and partial translation.\nTherefore, the NMT model naturally involves the mechanism of the Language Model\n(LM) that predicts the next token only based on partial translation. Despite\nits success, NMT still suffers from the hallucination problem, generating\nfluent but inadequate translations. The main reason is that NMT pays excessive\nattention to the partial translation while neglecting the source sentence to\nsome extent, namely overconfidence of the LM. Accordingly, we define the Margin\nbetween the NMT and the LM, calculated by subtracting the predicted probability\nof the LM from that of the NMT model for each token. The Margin is negatively\ncorrelated to the overconfidence degree of the LM. Based on the property, we\npropose a Margin-based Token-level Objective (MTO) and a Margin-based\nSentencelevel Objective (MSO) to maximize the Margin for preventing the LM from\nbeing overconfident. Experiments on WMT14 English-to-German, WMT19\nChinese-to-English, and WMT14 English-to-French translation tasks demonstrate\nthe effectiveness of our approach, with 1.36, 1.50, and 0.63 BLEU improvements,\nrespectively, compared to the Transformer baseline. The human evaluation\nfurther verifies that our approaches improve translation adequacy as well as\nfluency.",
+    "num_pages": 13
+}

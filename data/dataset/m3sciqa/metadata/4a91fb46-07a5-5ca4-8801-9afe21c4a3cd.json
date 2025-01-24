@@ -1,0 +1,19 @@
+{
+    "uuid": "4a91fb46-07a5-5ca4-8801-9afe21c4a3cd",
+    "title": "A Simple Contrastive Learning Objective for Alleviating Neural Text Degeneration",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Shaojie Jiang",
+        "Ruqing Zhang",
+        "Svitlana Vakulenko",
+        "Maarten de Rijke"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.02517v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\4a91fb46-07a5-5ca4-8801-9afe21c4a3cd.pdf",
+    "bibtex": "@misc{jiang2022asimplecontrastivelearningobjective,\n    title = {A Simple Contrastive Learning Objective for Alleviating Neural Text Degeneration},\n    author = {Shaojie Jiang and Ruqing Zhang and Svitlana Vakulenko and Maarten de Rijke},\n    year = {2022},\n    eprint = {2205.02517},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.02517},\n}",
+    "abstract": "The cross-entropy objective has proved to be an all-purpose training\nobjective for autoregressive language models (LMs). However, without\nconsidering the penalization of problematic tokens, LMs trained using\ncross-entropy exhibit text degeneration. To address this, unlikelihood training\nhas been proposed to reduce the probability of unlikely tokens predicted by\nLMs. But unlikelihood does not consider the relationship between the label\ntokens and unlikely token candidates, thus showing marginal improvements in\ndegeneration. We propose a new contrastive token learning objective that\ninherits the advantages of cross-entropy and unlikelihood training and avoids\ntheir limitations. The key idea is to teach a LM to generate high probabilities\nfor label tokens and low probabilities of negative candidates. Comprehensive\nexperiments on language modeling and open-domain dialogue generation tasks show\nthat the proposed contrastive token objective yields much less repetitive\ntexts, with a higher generation quality than baseline approaches, achieving the\nnew state-of-the-art performance on text degeneration.",
+    "num_pages": 22
+}

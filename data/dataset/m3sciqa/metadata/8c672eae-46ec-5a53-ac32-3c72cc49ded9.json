@@ -1,0 +1,18 @@
+{
+    "uuid": "8c672eae-46ec-5a53-ac32-3c72cc49ded9",
+    "title": "Automatic Noisy Label Correction for Fine-Grained Entity Typing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Weiran Pan",
+        "Wei Wei",
+        "Feida Zhu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.03011v2",
+    "pdf_path": "data\\dataset\\m3sciqa\\papers\\arxiv2022\\8c672eae-46ec-5a53-ac32-3c72cc49ded9.pdf",
+    "bibtex": "@misc{pan2022automaticnoisylabelcorrectionfor,\n    title = {Automatic Noisy Label Correction for Fine-Grained Entity Typing},\n    author = {Weiran Pan and Wei Wei and Feida Zhu},\n    year = {2022},\n    eprint = {2205.03011},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2205.03011},\n}",
+    "abstract": "Fine-grained entity typing (FET) aims to assign proper semantic types to\nentity mentions according to their context, which is a fundamental task in\nvarious entity-leveraging applications. Current FET systems usually establish\non large-scale weakly-supervised/distantly annotation data, which may contain\nabundant noise and thus severely hinder the performance of the FET task.\nAlthough previous studies have made great success in automatically identifying\nthe noisy labels in FET, they usually rely on some auxiliary resources which\nmay be unavailable in real-world applications (e.g. pre-defined hierarchical\ntype structures, human-annotated subsets). In this paper, we propose a novel\napproach to automatically correct noisy labels for FET without external\nresources. Specifically, it first identifies the potentially noisy labels by\nestimating the posterior probability of a label being positive or negative\naccording to the logits output by the model, and then relabel candidate noisy\nlabels by training a robust model over the remaining clean labels. Experiments\non two popular benchmarks prove the effectiveness of our method. Our source\ncode can be obtained from https://github.com/CCIIPLab/DenoiseFET.",
+    "num_pages": 8
+}
