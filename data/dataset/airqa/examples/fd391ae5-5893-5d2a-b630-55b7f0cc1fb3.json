@@ -1,0 +1,42 @@
+{
+    "uuid": "fd391ae5-5893-5d2a-b630-55b7f0cc1fb3",
+    "question": "According to Table 2 in the paper \"ACT-SQL: In-Context Learning for Text-to-SQL with Automatically-Generated Chain-of-Thought\", how many times does the LLM's API need to be called to generate a SQL query in the DIN-SQL approach? What modules in the DIN-SQL approach lead to those API calls?",
+    "answer_format": "Your answer should be a Python list like [integer, string1, string2, ...]. The first element should be an integer, representing the number of times the LLM's API needs to be called. Each subsequent element should be a string, representing a module name in the DIN-SQL approach. Note that the module names do not need to include the word \"module\".",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "0d110629-3064-59d4-8638-7edb53c01b9e"
+    ],
+    "reference_pdf": [
+        "bff546ba-646a-5bdf-b8e2-1f19e59d5162"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate Table 2 in the paper \"ACT-SQL: In-Context Learning for Text-to-SQL with Automatically-Generated Chain-of-Thought\".",
+        "Find the number of times the LLM's API needs to be called to generate a SQL query in the DIN-SQL approach.",
+        "Check what modules in the DIN-SQL approach lead to those API calls."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                4,
+                "schema linking",
+                "classification & decomposition",
+                "sql generation",
+                "self-correction"
+            ],
+            "ignore_order": true,
+            "lowercase": true,
+            "threshold": 95
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
