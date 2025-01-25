@@ -1,0 +1,33 @@
+{
+    "uuid": "ee44be40-1780-5f28-9fb4-7c2e626bc4a0",
+    "question": "In the experiment section of Anchor PDF, what is the detailed procedure of back-translation for sentence reconstruction?",
+    "answer_format": "Your answer should be a python strings.",
+    "tags": [
+        "multiple",
+        "subjective",
+        "text"
+    ],
+    "anchor_pdf": [
+        "0c64c0b5-4466-51d6-9e84-59fa73d8a450"
+    ],
+    "reference_pdf": [
+        "f43e23ff-de7a-5bd7-9c1d-6361ba9b5734"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the method of back-translation for sentence reconstruction in the experiment section of Anchor PDF.",
+        "Locate the relevant paper in the reference PDF.",
+        "Find the detailed procedure of back-translation, which is usually in the dataset section."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The procedure of back-translation is using a Czech-English NMT system to translate Czech sentences from the training data into English. Then pair the translations with the English references to form English-English paraphrase pairs. We used the pretrained Czech-English model from the NMT system.",
+            "question": "In the experiment section of Anchor PDF, what is the detailed procedure of back-translation for sentence reconstruction?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
