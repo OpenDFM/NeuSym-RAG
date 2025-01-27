@@ -1,0 +1,35 @@
+{
+    "uuid": "14225073-8616-578e-bef7-5b63cfdaa994",
+    "question": "In the prompt that Puzzler adopts, what's the exact context of Task Description for Event Detection?",
+    "answer_format": "Your answer should be a raw text.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "4b4c72af-427d-54d6-be22-0e56ec92ba14"
+    ],
+    "reference_pdf": [
+        "73ad76d7-eb4b-59a0-ae8f-d5df7afbe505"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the paper that introduces the prompt that Puzzler adopts.",
+        "Find the full prompt in the appendix of that paper",
+        "Identify the exact context of Task Description for Event Detection."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_fuzzy_match",
+        "eval_kwargs": {
+            "gold": "Task Description: Given an input list of words, identify all triggers in the list, and categorize each of them into the predefined set of event types. A trigger is the main word that most clearly expresses the occurrence of an event in the predefined set of event types.",
+            "fuzz_method": "partial_ratio",
+            "ignore_blank": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

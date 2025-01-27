@@ -1,0 +1,37 @@
+{
+    "uuid": "b2711e57-f28a-5955-9413-35717769b3c1",
+    "question": "For retrieval evaluation, what metrics applied by MTEB are not used by LocalRQA?",
+    "answer_format": "Your answer should be a python list of strings, each string is the name of a metric, as given in the MTEB paper.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "3e62472f-aacc-591c-bd3a-9d3e71b79363",
+        "be946a16-54d6-5d5c-82ac-8aba4b2952cc"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Read the section that introduces the retrieval evaluation to identify the metrics used by MTEB.",
+        "Read the section that introduces the retrieval evaluation to identify the metrics used by LocalRQA.",
+        "Identify the metrics used by MTEB that are not used by LocalRQA."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "MRR@k",
+                "MAP@k", 
+                "precision@k"
+            ],
+            "lowercase": true,
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

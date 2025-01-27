@@ -1,0 +1,36 @@
+{
+    "uuid": "2074d015-dc9a-5c20-aeba-2835003f4607",
+    "question": "In the related work mentioned in the Table 1 of the paper Reflect-RL, that is categorized as RL Fine-tuning and that doesn't involve vision modal, what's the token-level probability of a_k?",
+    "answer_format": "Your answer should be a formula in LaTeX format.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "5a11c640-e530-5c9e-b48c-d6130a4c4991"
+    ],
+    "reference_pdf": [
+        "f917a6ca-8134-57d1-9a6a-f28930a380d7",
+        "83cda339-482e-5c4c-aeaa-eb7e51dba851"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Lcoate table 1 and identify the papers that are categorized as RL Fine-tuning.",
+        "Read the papers to identify the one without vision modal.",
+        "Read the section that introduces the framework to find the corresponding formula."
+    ],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formula": "P_{\\text{token}}(a_k \\mid s) = P(w_k^1, \\ldots, w_k^{N_k} \\mid s) = \\prod_{i=1}^{N_k} P(w_k^i \\mid s, w_k^1, \\ldots, w_k^{i-1})",
+            "question": "What's the token-level probability of a_k?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
