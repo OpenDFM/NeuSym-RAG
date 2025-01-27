@@ -1,0 +1,37 @@
+{
+    "uuid": "b300fae4-e575-5062-9f11-2c8f320463cb",
+    "question": "How was the data for the latest text classification tasks used in the anchor pdf collected?",
+    "answer_format": "Your answer should be a python strings.",
+    "tags": [
+        "multiple",
+        "subjective",
+        "text"
+    ],
+    "anchor_pdf": [
+        "1a023c1a-97ca-5ba9-aea9-781f1cfbb346"
+    ],
+    "reference_pdf": [
+        "c8fca681-edde-571e-885c-e186e7b4ae80",
+        "64c155da-e4cc-5de8-95e9-4715738d5b1d",
+        "9ada7bff-c684-55ab-ae9b-04f836247ddc",
+        "ab8d017f-8645-5337-aa84-f52783391b99"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the text classification tasks in the experiment section of Anchor PDF.",
+        "Locate the relevant papers in the reference PDF.",
+        "Identify the latest paper about the mentioned text classification tasks.",
+        "Find the data collection methodology, which is in the corpus section."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The data collection methodology is to create each sentence pair by selecting a premise sentence from a preexisting text source and asking a human annotator to compose a novel sentence to pair with it as a hypothesis.",
+            "question": "How was the data for the latest text classification tasks used in the anchor pdf collected?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
