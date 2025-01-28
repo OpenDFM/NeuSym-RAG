@@ -1,0 +1,41 @@
+{
+    "uuid": "aadd5754-71f6-5b8d-ad9e-d7d8e24975ce",
+    "question": "Who is the first author of WebArena? How many papers of his/hers are cited in the paper? Which are they?",
+    "answer_format": "Your answer should be a Python list of 3 elements. The first one is a string serving as the first author name of WebArena. The second one is an interger indicating the number of self-referenced papers. The third one is a string list storing the titles of self-referenced papers.",
+    "tags": ["single", "text", "metadata", "objective"],
+    "anchor_pdf": ["5a2b0d5c-6b51-5bbd-a001-a15f19f65a98"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+		"Find the author list of the paper and locate the first author",
+		"Find the reference list of the paper",
+		"Search the first author name in the reference list and enumerate the paper with the first author in the co-author list"
+	],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+			"eval_func_list": [
+				"eval_string_exact_match",
+				"eval_int_exact_match",
+				"eval_structured_object_exact_match"
+			],
+			"eval_kwargs_list": [
+				{
+					"gold": "Shuyan Zhou"
+				},
+				{
+					"gold": 6
+				},
+				{
+					"gold": ["Pal: Program-aided language models", "Language models of code are few-shot commonsense learners", "Hierarchical prompting assists large language model on web navigation", "Execution-based evaluation for open-domain code generation", "Hierarchical control of situated agents through natural language", "Show me more details: Discovering hierarchies of procedures from semi-structured web data"],
+					"ignore_order": true,
+					"lowercase": true
+				}
+			]
+		}
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
