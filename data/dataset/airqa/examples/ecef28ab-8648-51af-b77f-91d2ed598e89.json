@@ -1,0 +1,24 @@
+{
+    "uuid": "ecef28ab-8648-51af-b77f-91d2ed598e89",
+    "question": "Which one of the prior works on state space models by the same team that published the Mamba paper proposes FlashConv for accelerating state space model training?",
+    "answer_format": "Your answer should be a python string, the full paper name of the prior work.",
+    "tags": ["multiple","text","objective"],
+    "anchor_pdf": ["618b736e-5c9f-5c00-8889-9589bdad0620","f9291deb-da46-5c68-8636-0d39ead63ea5","a2e013ab-e738-5c74-af0b-d1b313c31909","b3b6d154-6610-59f3-989a-06c84e5e22b3"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": ["First, identify the team that published the Mamba paper",
+                        "Second, find the prior works on state space models by the same team in the related work section",
+                        "Third, turn to the source paper of each prior work and check if the prior work proposes FlashConv for accelerating state space model training",
+                        "Finally, return the full paper name of the prior work that proposes FlashConv for accelerating state space model training"],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "Hungry Hungry Hippos: Towards Language Modeling with State Space Models",
+            "lowercase": false
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
