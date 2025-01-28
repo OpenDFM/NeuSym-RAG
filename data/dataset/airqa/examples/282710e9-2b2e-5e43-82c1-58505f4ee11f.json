@@ -1,0 +1,44 @@
+{
+    "uuid": "282710e9-2b2e-5e43-82c1-58505f4ee11f",
+    "question": "Which pre-trained model does the Index Generation Framework of the anchor paper use as backbone? What's the architecture of this pre-trained model compared with GPT and BERT?",
+    "answer_format": "Your answer should be a single python list, the first element is a string of the model name, the second element is s string about its special architecture.",
+    "tags": [
+        "text",
+        "image",
+        "multiple",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the section about the Index Generation Framework in the anchor paper.",
+        "Second, find the pre-trained model used and its source paper.",
+        "Finally, turn to the source paper and compare the architecture of this model with GPT and BERT."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": ["BART"],
+                    "lowercase": true
+                },
+                {
+                    "reference_answer":"For BART, Inputs to the encoder need not be aligned with decoder outputs, allowing arbitary noise transformations. Here, a document has been corrupted by replacing spans of text with mask symbols. The corrupted document is encoded with a bidirectional model, and then the likelihood of the original document is calculated with an autoregressive decoder. For fine-tuning, an uncorrupted document is input to both the encoder and decoder, and it uses representations from the final hidden state of the decoder." ,
+                    "question": "What's the architecture of this pre-trained model compared with GPT and BERT?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "7d92e1d8-9216-529b-87bc-34f7508ed2b7"
+    ],
+    "reference_pdf": ["f6e91a91-0b1e-5280-8522-a20492033f16"]
+}

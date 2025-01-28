@@ -1,0 +1,32 @@
+{
+    "uuid": "9ce8e94a-4eda-5f28-90cc-1342a03c3e51",
+    "question": "What dataset does the anchor paper use for evaluation? According to its source paper, how many structured annotations does this dataset collect in total? ",
+    "answer_format": "Your answer should be a single python list, the first element is the string of the dataset name, the second element is an integer number.",
+    "tags": [
+        "text",
+        "multiple",
+        "objective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the section about evaluation in the anchor paper.",
+        "Second, find the dataset used for evaluation and its source paper.",
+        "Finally, turn to the source paper to find the number of structured annotations collected by this dataset."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": ["SOCIAL-CHEM-101",365000],
+            "ignore_order": false,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "d7dc9bd8-6590-5278-8a64-b5a7e0f8f940"
+    ],
+    "reference_pdf": ["2e1fe5bd-29fb-536b-9c10-d2b296accf35"]
+}

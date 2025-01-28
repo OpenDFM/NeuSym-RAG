@@ -1,0 +1,33 @@
+{
+    "uuid": "330ec130-4467-529e-a5e3-83d9391863e7",
+    "question": "What dataset does the anchor paper use for Anomaly Detection?How many datasets is this dataset originally consist of?",
+    "answer_format": "Your answer should be a single python list, the first element is a string of the dataset name, the second element is an integer number.",
+    "tags": [
+        "text",
+        "table",
+        "multiple",
+        "objective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the table about the datasets used.",
+        "Second, find the dataset used for Anomaly Detection and its source paper.",
+        "Finally, find the number of datasets it originally consists of in the source paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": ["LogHub",19],
+            "ignore_order": false,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "f8a9f4e4-773f-5a07-8904-d6a265832d5e"
+    ],
+    "reference_pdf": ["95266489-4f59-58e1-badf-cbf53131c665"]
+}
