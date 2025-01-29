@@ -25,7 +25,7 @@
     "evaluator": {
         "eval_func": "eval_complex_math_formula_with_llm",
         "eval_kwargs": {
-            "formula": "P_{\\text{token}}(a_k \\mid s) = P(w_k^1, \\ldots, w_k^{N_k} \\mid s) = \\prod_{i=1}^{N_k} P(w_k^i \\mid s, w_k^1, \\ldots, w_k^{i-1})",
+            "formulas": "P_{\\text{token}}(a_k \\mid s) = P(w_k^1, \\ldots, w_k^{N_k} \\mid s) = \\prod_{i=1}^{N_k} P(w_k^i \\mid s, w_k^1, \\ldots, w_k^{i-1})",
             "question": "What's the token-level probability of a_k?"
         }
     },
