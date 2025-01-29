@@ -1,0 +1,35 @@
+{
+    "uuid": "5c4be3c8-e4ad-5154-83af-3e2ff896c210",
+    "question": "How many words are in the train splits of the oldest dataset used by GeNE to evaluate language modeling?",
+    "answer_format": "Your answer should be a Python integer.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "2d0a9f7f-6c7d-571d-90f4-8bafdbb97ce3"
+    ],
+    "reference_pdf": [
+        "d6b892b8-cf43-5b62-bde9-48c070c2e5dc",
+        "866c3296-5bb8-5010-89e5-89a849f6dda9",
+        "14a49a53-f223-549d-a025-d745f23f1adf"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Read the anchor PDF to find the datasets used.",
+        "Locate the oldest dataset for language modeling among them.",
+        "Find the number of words in the train splits of the dataset."
+    ],
+    "evaluator": {
+        "eval_func": "eval_int_exact_match",
+        "eval_kwargs": {
+            "gold": 1973136207
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

@@ -56,6 +56,8 @@ data/dataset/pdfvqa/processed_data/*
 data/dataset/airqa/examples/litsearch/raw
 data/dataset/airqa/examples/pasa/raw
 data/dataset/m3sciqa
+data/dataset/spiqa
+data/dataset/scidqa
 
 # third party repos
 third_party/*
@@ -72,3 +74,11 @@ data/dataset/airqa/examples/automation
 /tags
 /tags-opts
 /requirements.txt.bak
+
+git config user.name
+
+# wcr
+data/vectorstore/ai_research
+linshi.py
+data/dataset/airqa/airqa-100-gpt-4o
+.gitignore

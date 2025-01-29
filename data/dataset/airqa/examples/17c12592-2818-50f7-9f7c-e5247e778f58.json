@@ -1,0 +1,43 @@
+{
+    "uuid": "17c12592-2818-50f7-9f7c-e5247e778f58",
+    "question": "Which newest paper about fine-tuning strategies does the anchor paper mention in the troduction? What is the originality of this paper(I mean the paper mentioned in the anchor paper) compared to previous works?",
+    "answer_format": "Your answer should be a single python list, the first element is the string of the paper name, the second element is a string of the originality of this paper.",
+    "tags": [
+        "text",
+        "multiple",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, go to the introduction in the anchor paper to identify the newest paper about fine-tuning strategies.",
+        "Second, find the full name of this paper and turn to it.",
+        "Finally, read relevent section of the paper to find its originality."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": ["Delving Deeper into Cross-lingual Visual Question Answering"],
+                    "lowercase": true
+                },
+                {
+                    "reference_answer":"This paper is the first to provide a comprehensive analysis of multilingual VQA, with a focus on cross-lingual transfer." ,
+                    "question": "What is the originality of this paper compared to previous works?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "ce10ef41-538a-5958-b599-32431367af83"
+    ],
+    "reference_pdf": ["2ba6d2a8-a65f-51d1-9ac2-df80a3e865de"]
+}

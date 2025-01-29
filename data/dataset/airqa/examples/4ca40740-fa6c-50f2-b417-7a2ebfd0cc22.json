@@ -1,0 +1,33 @@
+{
+    "uuid": "4ca40740-fa6c-50f2-b417-7a2ebfd0cc22",
+    "question": "I would like to utilize the datasets introduced in the anchor PDF. Could you tell me in which format were the papers in the datasets retrieved from each data source?",
+    "answer_format": "Your answer should be a string, the name of the format, e.g. JSON, HTML, MARKDOWN.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "3e8c5246-a3d8-5d5e-9afc-98df4043e2ae"
+    ],
+    "reference_pdf": [
+        "81186251-6f85-50cb-a348-fc859162ba8a"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Read the section that introduces the datasets to identify the datasets used.",
+        "Find the paper that first proposed the datasets.",
+        "Identify the format of the papers retrieved from each data source."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "XML",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

@@ -1,0 +1,35 @@
+{
+    "uuid": "ec05c8e8-b789-514f-802e-7c710b0bec67",
+    "question": "In the main results of ShortGPT's source paper, which paper does the experimental results of several comparison methods come from? Does the method proposed in this paper require post-training?",
+    "answer_format": "Your answer should be a python list of two elements. The first element is a python string, the paper's full name. The second element is a python bool.",
+    "tags": ["multiple","table","text","objective"],
+    "anchor_pdf": ["48d9d307-c254-597f-9444-5c420a973c0d","017b741f-d588-5124-9971-af37b2f806ae"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": ["First, locate the main results table in the source paper of ShortGPT",
+                        "Second, find the source paper that provides the experimental results of comparison methods",
+                        "Third, turn to the paper and locate the methodology section to check if post-training is needed"],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_bool_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "LaCo: Large Language Model Pruning via Layer Collapse",
+                    "lowercase": false
+                },
+                {
+                    "gold": false
+                }
+            ]
+
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
