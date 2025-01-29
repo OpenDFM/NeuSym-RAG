@@ -1,0 +1,31 @@
+{
+    "uuid": "539593f7-e17a-57d2-9030-b8e6690c27e3",
+    "question": "Among the dataset cited in the anchor_pdf, how many were proposed in 2022?",
+    "answer_format": "Your answer should be a python int.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "79530cb7-2b29-5a81-8604-cba3eac7914",
+        "0edab682-4b9c-5017-a78a-65fa427ee35a"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "First, find the datasets used in the anchor_pdf.",
+        "Then, determine which datasets are proposed in 2022."
+    ],
+    "evaluator": {
+        "eval_func": "eval_int_exact_match",
+        "eval_kwargs": {
+            "gold": 4
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
