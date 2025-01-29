@@ -1,0 +1,33 @@
+{
+    "uuid": "780f0147-be99-5d8d-ab82-daec0d471510",
+    "question": "What's the type of Character Role Play in jailbreak prompts? How can we make role-playing models more responsible in the anchor_pdf?",
+    "answer_format": "Your answer should be ",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "b65bd6b5-e2bb-5f16-a805-055784527a16"
+    ],
+    "reference_pdf": [
+        "5844c6f9-3de6-551b-bc02-ba6bc65c02ef"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First of all, locate the paper related to jailbreak prompts and find the type of Character Role Play.",
+        "Then, find the measures that can make the models more responsible in the anchor_pdf."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer":"The type is \"Pretending\", and the measues: (1) Implement Advanced Moderation Tools. (2) Bias Detection and Mitigation. (3) Transparency in Development and Use. (4) Feedback Mechanism.",
+            "question":"What's the type of Character Role Play in jailbreak prompts? How can we make role-playing models more responsible in the anchor_pdf?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
