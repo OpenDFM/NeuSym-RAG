@@ -1,0 +1,29 @@
+{
+    "uuid": "d74c128e-d9ec-545c-b10b-d3d3116d9ec9",
+    "question": "How many samples are there in SeeClick's general vision-language instruction-following data?",
+    "answer_format": "Your answer should be a single number rounding to thousands, e.g. 15000.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "6e9001d2-7637-5049-ad35-2adfdfc9c8d1"
+    ],
+    "reference_pdf": [
+        "86922a0e-7874-5f9a-926b-0f886076d6e8"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Read the section that discusses data construction to find where general data comes from.",
+        "Read the corresponding paper to identify the number of samples."
+    ],
+    "evaluator": {
+        "eval_func": "eval_int_exact_match",
+        "eval_kwargs": {"gold": 158000}
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
