@@ -1,0 +1,34 @@
+{
+    "uuid": "9adcad9f-bd01-54de-a6cd-61d0a77e487d",
+    "question": "What are the three main flavours of GNN layers? What's the relationship between GTs and GNN?",
+    "answer_format": "Your answer should be a python strings",
+    "tags": [
+        "multiple",
+        "text",
+        "image",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "1f190ec5-f832-540b-a62f-6142eba5991a"
+    ],
+    "reference_pdf": [
+        "2bb974d2-1630-54c3-9eac-4ada100f56ec"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the paper about GNN and GTs.",
+        "Then, find the three flavours of GNN in the paper.",
+        "Ultimately, analyze the relationship between GTs and GNN."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer":"Convolutional, attentional and message-passing flavours are the three main flavours of GNN layers. GTs is a special type of GNN",
+            "question":"What are the three main flavours of GNN layers? What's the relationship between GTs and GNN?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
