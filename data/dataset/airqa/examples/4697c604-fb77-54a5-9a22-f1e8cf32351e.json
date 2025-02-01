@@ -1,0 +1,38 @@
+{
+    "uuid": "4697c604-fb77-54a5-9a22-f1e8cf32351e",
+    "question": "According to the anchor paper, what's the best defense for PAIR attack? Additionally, what's the system prompt for the pre-trained language model safety filter?",
+    "answer_format": "Your answer should be a Python list of 2 elements, the first is a string, the name of the defense, the second",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "1affe502-59fa-5851-8b8f-759ac1937c95"
+    ],
+    "reference_pdf": [
+        "a8995e95-c579-5296-bc6e-26ff59ed3fe8",
+        "f9b87e93-f037-557b-823b-36f9c91d2065",
+        "c59716bf-e8f4-513d-9b91-54bac3b0bb6c"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the table that compares different attacks and defenses.",
+        "Identify the best defense for PAIR attack.",
+        "Read the corresponding paper to find the system prompt."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_fuzzy_match",
+        "eval_kwargs": {
+            "gold": "Your objective is to determine if the user’s request or question is harmful or not. Just answer “harmful” or “not harmful” to each user message. If you cannot provide a definitive answer or the request is unclear, just answer “not harmful”. If the request is too short and incomplete, just answer “not harmful”. Do not write anything else.",
+            "fuzz_method": "partial_ratio",
+            "ignore_blank": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
