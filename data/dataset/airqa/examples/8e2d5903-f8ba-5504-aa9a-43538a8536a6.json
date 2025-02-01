@@ -1,0 +1,35 @@
+{
+    "uuid": "8e2d5903-f8ba-5504-aa9a-43538a8536a6",
+    "question": "In the paper that proposed the dataset used by ReFIR for the evaluation of the second experimental setup, which image restoration method was also proposed? Additionally, what metric applied to evaluate that method was not applied in ReFIR?",
+    "answer_format": "Your answer should be a Python list of 2 strings, the name of the method and the name of the metric.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "1bdbf41b-f94f-5f1a-b22a-89662ed0fb49"
+    ],
+    "reference_pdf": [
+        "f9ea952c-4545-5826-9a6d-aa819fffce2c"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the section that talks about experimental setups.",
+        "Identify the dataset.",
+        "Read the corresponding paper to find the image restoration method.",
+        "Read the two papers to compare the evaluation metrics."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": ["SUPIR", "ManIQA"],
+            "ignore_order": false,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

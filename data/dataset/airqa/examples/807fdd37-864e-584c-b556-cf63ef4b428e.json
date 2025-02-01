@@ -1,0 +1,35 @@
+{
+    "uuid": "807fdd37-864e-584c-b556-cf63ef4b428e",
+    "question": "For the latest two selected ML datasets of vision modality in Croissant, where did the raw images come from?",
+    "answer_format": "Your answer should be a single word, the name of the website where the images came from.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "1b46d3cd-bc8f-51ad-8c77-105312f6e952"
+    ],
+    "reference_pdf": [
+        "55fff8cb-7639-5bab-8c5c-ab352eb833ae",
+        "b80b94be-c4be-5423-989d-7135a38d729a"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the table that lists all selected datasets.",
+        "Find the latest two datasets of vision modality.",
+        "Read the sections in the corresponding papers that talk about the source of images."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "Flickr",
+            "lowercase": "true"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
