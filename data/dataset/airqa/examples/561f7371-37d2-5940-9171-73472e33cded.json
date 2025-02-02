@@ -1,0 +1,33 @@
+{
+    "uuid": "561f7371-37d2-5940-9171-73472e33cded",
+    "question": "Which core NLP problem is mentioned in the anchor_pdf, and how many class classification problems is it usually structured as?",
+    "answer_format": "Your answer should be a python strings.",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "283d3b36-27d2-5459-b625-f2496fa4c35f"
+    ],
+    "reference_pdf": [
+        "02048feb-ade8-5efc-9465-547e1969410d"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the core NLP problem mentioned in the anchor_pdf.",
+        "Then search the paper about the core NLP problem.",
+        "Finally, find its structure."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The core NLP problem is Natural Language Inference (NLI), and it  is usually structured as a two or three class classification problem.",
+            "question": "Which core NLP problem is mentioned in the anchor_pdf, and how many class classification problems is it usually structured as?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
