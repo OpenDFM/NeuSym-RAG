@@ -1,0 +1,38 @@
+{
+    "uuid": "ff50fbdd-645a-5d67-ae87-b02133b59ed6",
+    "question": "In the paper that proposes NoMAD-Attention, what do the authors choose as vector database? Additionally, in the paper that proposes that vector database, how to compute the number of distance computations and when it reaches a minimum?",
+    "answer_format": "Your answer should be a Python list of 2 strings, each string is a formula in LaTeX format, representing the equation of the number of distance computations and the condition when it reaches a minimum.",
+    "tags": [
+        "multiple",
+        "text",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "1ee0a3c2-c155-541c-aa3a-dd86cb24a4d8"
+    ],
+    "reference_pdf": [
+        "55f434b3-b41d-5f88-bf94-a6bff9a2f7f9"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the paragraph that discusses the experimental setup.",
+        "Identify the vector database applied.",
+        "Read the corresponding paper.",
+        "Locate the section discussing \"Non-exhaustive search\".",
+        "Identify the formulas."
+    ],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": [
+                "N_{\\text{distances}} = K_\\text{IVF} + P_\\text{IVF} \\times N/K_\\text{IVF}",
+                "K_\\text{IVF} = \\sqrt{P_\\text{IVF}N}"
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
