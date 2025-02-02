@@ -1,0 +1,30 @@
+{
+    "uuid": "231728d1-f6b7-5cd5-862e-ee831b2c4ed4",
+    "question": "In the paper that proposes the best-performing model on hMOF evaluated in LLM4Mat-Bench paper, which baseline that performs better than CGCNN both on validation and test sets is not evaluated in the LLM4Mat-Bench paper?",
+    "answer_format": "Your answer should be a string, the name of the baseline.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "1e9a0edd-23ba-5ff3-89bb-4ae4350753be"
+    ],
+    "reference_pdf": [
+        "da1d6ccd-43f9-5f7d-888a-084994068ecb"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "ALIGNN",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

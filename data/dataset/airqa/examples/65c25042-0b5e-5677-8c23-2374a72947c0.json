@@ -1,0 +1,34 @@
+{
+    "uuid": "65c25042-0b5e-5677-8c23-2374a72947c0",
+    "question": "In the existing deblurring dataset compared in GS-Blur paper, that contains both real and synthetic data, what's the average noise level estimated?",
+    "answer_format": "Your answer should be a float, rounding to 4 decimal places.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "1e8b1748-cb55-52a7-b27a-e38ccbee18a7"
+    ],
+    "reference_pdf": [
+        "dd0147e0-290b-59ea-8742-0be38bb795c7"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the table that compares different datasets.",
+        "Identify the dataset that contains both real and synthetic data.",
+        "Read the corresponding paper to find the average noise level estimated."
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 0.7736,
+            "ndigits": 4
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
