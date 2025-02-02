@@ -15,7 +15,13 @@
         "da1d6ccd-43f9-5f7d-888a-084994068ecb"
     ],
     "conference": [],
-    "reasoning_steps": [],
+    "reasoning_steps": [
+        "Find the table that compares different models on LLM4Mat-Bench.",
+        "Identify the best-performing model on hMOF.",
+        "Read the corresponding paper to find the table that evaluates different baselines.",
+        "Locate the baselines that perform better than CGCNN both on validation and test sets.",
+        "Compare with the methods applied in LLM4Mat-Bench to find the baseline that is not evaluated."
+    ],
     "evaluator": {
         "eval_func": "eval_string_exact_match",
         "eval_kwargs": {
