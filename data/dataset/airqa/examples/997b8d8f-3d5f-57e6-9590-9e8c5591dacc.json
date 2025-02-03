@@ -1,0 +1,42 @@
+{
+    "uuid": "997b8d8f-3d5f-57e6-9590-9e8c5591dacc",
+    "question": "What are the model architecture parameters (dim, n_layers, head_dim, hidden_dim, n_heads, n_kv_heads) of the automatic evaluation model used in the aspect evaluation section of the anchor pdf?",
+    "answer_format": "Your answer should be a python dictionary with the following keys: dim, n_layers, head_dim, hidden_dim, n_heads, n_kv_heads, e.g., {\"dim\": 768, \"n_layers\": 6, \"head_dim\": 64, \"hidden_dim\": 3072, \"n_heads\": 12, \"n_kv_heads\": 12}.",
+    "tags": [
+        "multiple",
+        "objective",
+        "table",
+        "text"
+    ],
+    "anchor_pdf": [
+        "4ac8bced-e49c-5417-b21f-edae07ae2ce2"
+    ],
+    "reference_pdf": [
+        "44e77de0-2982-575f-bf6e-f50ad597c4f6"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Retrieve the automatic evaluation model in the anchor PDF, which is mentioned in the aspect evaluation section.",
+        "Locate the related paper about the model.",
+        "Locate the model architecture parameters, which are mentioned in the architecture section in the form of a table."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": {
+                "dim": 4096,
+                "n_layers": 32,
+                "head_dim": 128,
+                "hidden_dim": 14336,
+                "n_heads": 32,
+                "n_kv_heads": 8
+            },
+            "ignore_order": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
