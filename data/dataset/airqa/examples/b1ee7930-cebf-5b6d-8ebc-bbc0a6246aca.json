@@ -1,0 +1,36 @@
+{
+    "uuid": "b1ee7930-cebf-5b6d-8ebc-bbc0a6246aca",
+    "question": "Which language model comparisons in paper \"On Robustness of Finetuned Transformer-based NLP Models\" are reflected in anchor_pdf?",
+    "answer_format": "Your answer should be a python list of string. The string should be language model name.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "fc6daddf-131f-59b0-adc2-85b97b4ecd82"
+    ],
+    "reference_pdf": [
+        "2773b9a9-f232-5acb-a1dd-a0168e52cf0c"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the language Models that the paper \"On Robustness of Finetuned Transformer-based NLP Models\" compares.",
+        "Retreive the language Models in the anchor_pdf and get the answer."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "GPT-2",
+                "BERT"
+            ],
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
