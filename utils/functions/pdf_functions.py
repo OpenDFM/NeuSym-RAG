@@ -240,7 +240,8 @@ def parse_pdf(
     json_mid_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_middle.json')
     json_con_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_content_list.json')
     if os.path.exists(json_mid_path) and os.path.exists(json_con_path):
-        logger.info(f"PDF {pdf_name} has been partially processed before.")
+        # logger.info(f"PDF {pdf_name} has been partially processed before.")
+        pass
     else:
         logger.info(f"Processing PDF {pdf_name} with MinerU.")
         command = [
@@ -441,7 +442,11 @@ def parse_pdf(
                             for span in line.get("spans", [])
                         )
                     elif sub_block.get("type") == "table_body":
-                        table_info["table_html"] = sub_block.get("lines", [{}])[0].get("spans", [{}])[0].get("html", "")
+                        sub_block_lines = sub_block.get("lines", [{}])
+                        if sub_block_lines == []: sub_block_lines=[{}]
+                        sub_block_spans = sub_block_lines[0].get("spans", [{}])
+                        if sub_block_spans == []: sub_block_spans=[{}]
+                        table_info["table_html"] = sub_block_spans[0].get("html", "")
                 
                 if table_info["table_html"]:
                     result["info_from_mineru"]["tables"].append(table_info)
@@ -464,10 +469,14 @@ def parse_pdf(
                             for span in line.get("spans", [])
                         )
                     elif sub_block.get("type") == "image_body":
-                        image_path = sub_block.get("lines", [{}])[0].get("spans", [{}])[0].get("image_path", "")
-                        figure_info["figure_path"] = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', 'images', image_path)
+                        sub_block_lines = sub_block.get("lines", [{}])
+                        if sub_block_lines == []: sub_block_lines=[{}]
+                        sub_block_spans = sub_block_lines[0].get("spans", [{}])
+                        if sub_block_spans == []: sub_block_spans=[{}]
+                        figure_info["figure_path"] = sub_block_spans[0].get("image_path", "")
 
                 if figure_info["figure_path"]:
+                    figure_info["figure_path"] = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', 'images', figure_info["figure_path"])
                     result["info_from_mineru"]["figures"].append(figure_info)
 
     # Extract information about equations
