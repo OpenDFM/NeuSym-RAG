@@ -9,8 +9,9 @@
                 "kwargs": {
                     "tldr_max_length": 80,
                     "tag_number": 5,
+                    "dataset_dir": "data/dataset/scidqa",
                     "parallel": {
-                        "write": "data/dataset/airqa/parallel/text_output.jsonl"
+                        "write": "data/dataset/scidqa/parallel/text_output.jsonl"
                     }
                 }
             }
@@ -22,7 +23,7 @@
                     "get_ai_research_metadata"
                 ],
                 "kwargs": {
-                    "processed_data_folder": "data/dataset/airqa/processed_data",
+                    "processed_data_folder": "data/dataset/scidqa/processed_data",
                     "TOC_threshold": 0.9
                 }
             }
@@ -37,7 +38,7 @@
                 "kwargs": {
                     "max_length": 50,
                     "parallel": {
-                        "write": "data/dataset/airqa/parallel/text_output.jsonl"
+                        "write": "data/dataset/scidqa/parallel/text_output.jsonl"
                     }
                 }
             }
@@ -52,7 +53,7 @@
                 "kwargs": {
                     "max_length": 50,
                     "parallel": {
-                        "write": "data/dataset/airqa/parallel/text_output.jsonl"
+                        "write": "data/dataset/scidqa/parallel/text_output.jsonl"
                     }
                 }
             }
@@ -67,7 +68,7 @@
                 "kwargs": {
                     "max_length": 50,
                     "parallel": {
-                        "write": "data/dataset/airqa/parallel/text_output.jsonl"
+                        "write": "data/dataset/scidqa/parallel/text_output.jsonl"
                     }
                 }
             }
@@ -82,7 +83,7 @@
                 "kwargs": {
                     "max_length": 50,
                     "parallel": {
-                        "write": "data/dataset/airqa/parallel/image_output.jsonl"
+                        "write": "data/dataset/scidqa/parallel/image_output.jsonl"
                     }
                 }
             }

@@ -9,8 +9,10 @@
                 "kwargs": {
                     "tldr_max_length": 80,
                     "tag_number": 5,
+                    "dataset_dir": "data/dataset/spiqa",
                     "parallel": {
-                        "write": "data/dataset/airqa/parallel/text_output.jsonl"
+                        "read": "./data/dataset/spiqa/parallel/text_input.json",
+                        "write": "./data/dataset/spiqa/parallel/additional_text_output.jsonl"
                     }
                 }
             }
@@ -22,7 +24,7 @@
                     "get_ai_research_metadata"
                 ],
                 "kwargs": {
-                    "processed_data_folder": "data/dataset/airqa/processed_data",
+                    "processed_data_folder": "data/dataset/spiqa/processed_data",
                     "TOC_threshold": 0.9
                 }
             }
@@ -37,7 +39,8 @@
                 "kwargs": {
                     "max_length": 50,
                     "parallel": {
-                        "write": "data/dataset/airqa/parallel/text_output.jsonl"
+                        "read": "./data/dataset/spiqa/parallel/text_input.json",
+                        "write": "./data/dataset/spiqa/parallel/additional_text_output.jsonl"
                     }
                 }
             }
@@ -52,7 +55,8 @@
                 "kwargs": {
                     "max_length": 50,
                     "parallel": {
-                        "write": "data/dataset/airqa/parallel/text_output.jsonl"
+                        "read": "./data/dataset/spiqa/parallel/text_input.json",
+                        "write": "./data/dataset/spiqa/parallel/additional_text_output.jsonl"
                     }
                 }
             }
@@ -67,7 +71,8 @@
                 "kwargs": {
                     "max_length": 50,
                     "parallel": {
-                        "write": "data/dataset/airqa/parallel/text_output.jsonl"
+                        "read": "./data/dataset/spiqa/parallel/text_input.json",
+                        "write": "./data/dataset/spiqa/parallel/additional_text_output.jsonl"
                     }
                 }
             }
@@ -82,7 +87,8 @@
                 "kwargs": {
                     "max_length": 50,
                     "parallel": {
-                        "write": "data/dataset/airqa/parallel/image_output.jsonl"
+                        "read": "./data/dataset/spiqa/parallel/image_input.json",
+                        "write": "./data/dataset/spiqa/parallel/additional_image_output.jsonl"
                     }
                 }
             }

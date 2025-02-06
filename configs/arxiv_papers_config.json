@@ -19,9 +19,7 @@
                     "volume_lines": 10,
                     "tldr_max_length": 80,
                     "tag_number": 5,
-                    "parallel": {
-                        "read": "data/dataset/airqa/parallel/text_input.json"
-                    }
+                    "dataset_dir": "data/dataset/spiqa"
                 }
             }
         },
@@ -32,7 +30,7 @@
                     "get_ai_research_metadata"
                 ],
                 "kwargs": {
-                    "processed_data_folder": "data/dataset/airqa/processed_data",
+                    "processed_data_folder": "data/dataset/spiqa/processed_data",
                     "TOC_threshold": 0.9
                 }
             }
@@ -48,10 +46,7 @@
                     "max_length": 50,
                     "model": "gpt-4o",
                     "temperature": 0.1,
-                    "top_p": 0.95,
-                    "parallel": {
-                        "read": "data/dataset/airqa/parallel/text_input.json"
-                    }
+                    "top_p": 0.95
                 }
             }
         },
@@ -79,10 +74,7 @@
                     "max_length": 50,
                     "model": "gpt-4o",
                     "temperature": 0.1,
-                    "top_p": 0.95,
-                    "parallel": {
-                        "read": "data/dataset/airqa/parallel/text_input.json"
-                    }
+                    "top_p": 0.95
                 }
             }
         },
@@ -97,10 +89,7 @@
                     "max_length": 50,
                     "model": "gpt-4o",
                     "temperature": 0.1,
-                    "top_p": 0.95,
-                    "parallel": {
-                        "read": "data/dataset/airqa/parallel/text_input.json"
-                    }
+                    "top_p": 0.95
                 }
             }
         },
@@ -115,10 +104,7 @@
                     "max_length": 50,
                     "model": "gpt-4o",
                     "temperature": 0.1,
-                    "top_p": 0.95,
-                    "parallel": {
-                        "read": "data/dataset/airqa/parallel/image_input.json"
-                    }
+                    "top_p": 0.95
                 }
             }
         },
@@ -156,7 +142,7 @@
                     "get_ai_research_per_page_image_info"
                 ],
                 "kwargs": {
-                    "processed_data_folder": "data/dataset/airqa/processed_data"
+                    "processed_data_folder": "data/dataset/spiqa/processed_data"
                 }
             }
         }
