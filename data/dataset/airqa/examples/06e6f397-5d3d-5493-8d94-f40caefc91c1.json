@@ -1,0 +1,36 @@
+{
+    "uuid": "06e6f397-5d3d-5493-8d94-f40caefc91c1",
+    "question": "Which implicit bias mentioned in the anchor PDF is not addressed in the works that directly overlap with the anchor work, particularly those exploring LLMs' capabilities as evaluators?",
+    "answer_format": "Your answer should be a string, the name of the implicit bias as mentioned in the anchod PDF.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "3d218d94-1aa0-5a70-b23e-accb254141bd"
+    ],
+    "reference_pdf": [
+        "16945bc4-e1c2-55bf-8bcd-7203262db0aa",
+        "95c4da59-2aea-5163-9044-3554ca09aa83"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Read the section that introduces the benchmark to identify the implicit biases mentioned.",
+        "Read the section that discusses the related works to identify the works that directly overlap with the anchor work.",
+        "Identify the implicit biase mentioned in the anchor PDF that is not addressed in the corresponding works."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_fuzzy_match",
+        "eval_kwargs": {
+            "gold": "Compassion Fade (Naming)",
+            "fuzz_method": "partial_ratio",
+            "ignore_blank": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

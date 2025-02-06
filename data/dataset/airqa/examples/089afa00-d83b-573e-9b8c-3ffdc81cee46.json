@@ -1,0 +1,34 @@
+{
+    "uuid": "089afa00-d83b-573e-9b8c-3ffdc81cee46",
+    "question": "In CSCD-NS, what's the base model of the detection model for data selection? How many hours does it roughly take for the base model to reach at least 85 on GLUE?",
+    "answer_format": "Your answer should be a Python list of 2 elements, the first is the name of the model, the second is the number of hours it takes.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "6b99b0a2-fb28-5266-8c2d-6581334ccbbf"
+    ],
+    "reference_pdf": [
+        "c4d02102-b1c7-5b72-a414-9c175a49be48"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Read the anchor paper to find the base model in the corresponding section.",
+        "Read the reference paper to find the table that discusses different models and setups."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": ["ELECTRA", 96],
+            "ignore_order": false,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

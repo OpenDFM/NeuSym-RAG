@@ -1,0 +1,28 @@
+{
+    "uuid": "16e480a8-eb0f-5ead-9ca2-cd7b4103d6e4",
+    "question": "Which stage of the two stage training mentioned in the paper is the labeled data used in?",
+    "answer_format": "Your answer should be plain text.",
+    "tags": [
+        "single",
+        "subjective",
+        "text"
+    ],
+    "anchor_pdf": ["0d99c5cf-d5f7-5fa6-9559-f88731d5fff1"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, locate the section(s) or page(s) about the description of the two stage training.",
+        "Then identify which stage the labeled data is used in."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer":"The labeled data is used in the fine-tuning stage",
+            "question":"Which stage of the two stage training mentioned in the paper is the labeled data used in?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

@@ -1,0 +1,34 @@
+{
+    "uuid": "a2f8cca9-a522-5fd2-bf2e-829fc82f749e",
+    "question": "What evaluation metric do the authors use to evaluate the unlearned model?",
+    "answer_format": "Your answer should be a python list, each element is a string.",
+    "tags": [
+        "single",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "2d09e6fb-e268-5d5d-a362-9effcfe79d9f"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the part mentioned the evaluation metric and unlearned model in the paper.",
+        "Extract the evaluation metric from the paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Performance on the Forget Set",
+                "Performance on the Retain Set",
+                "Performance on General Downstream Tasks"
+            ],
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

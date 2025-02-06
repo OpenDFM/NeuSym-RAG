@@ -1,0 +1,37 @@
+{
+    "uuid": "14ae4304-6dbf-539e-8e9a-db0dde3b4959",
+    "question": "How many websites are included in WebArena? Which are they?",
+    "answer_format": "Your answer should be a Python list of 2 elements. The first one is an integer indicating the number of the websites included in WebArena. The second one is a string list storing the website names.",
+    "tags": ["single", "text", "image", "objective"],
+    "anchor_pdf": ["5a2b0d5c-6b51-5bbd-a001-a15f19f65a98"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+		"Find a figure showing the environment's architecture or find the section w.r.t. the environment details",
+		"Locate in the figure of the section the parts describing the environment's websites",
+		"Count and emunerate the websites' names in WebArena"
+	],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+			"eval_func_list": [
+				"eval_int_exact_match",
+				"eval_structured_object_exact_match"
+			],
+			"eval_kwargs_list": [
+				{
+					"gold": 4
+				},
+				{
+					"gold": ["e-commerce platform", "social forum platform", "collaborative development platform", "content management system"],
+					"ignore_order": true,
+					"lowercase": true
+				}
+			]
+		}
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

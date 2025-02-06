@@ -1,0 +1,33 @@
+{
+    "uuid": "99d793f3-fa1b-5d68-a62b-ace9cdeca097",
+    "question": "How much higher is the percentage of \"食品#品质\" in Figure: Aspect category distributions(Test Set for Subtask3) in anchor_pdf than the percentage of \"食品#品质\" in Figure: training data category distributions of HITSZ-HLT?",
+    "answer_format": "Your answer should be a python float number with three decimal places, and the answer should be in the range of [0, 1]",
+    "tags": [
+        "multiple",
+        "text",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "defd3a4f-647b-500c-986d-b01341f1a543"
+    ],
+    "reference_pdf": [
+        "cb0bc639-0d1f-5d72-b108-e8ffc5aefbef"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, locate the two Figures.",
+        "After that, analyse the percentage of \"食品#品质\" in the Figures."
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 0.042,
+            "ndigits":3
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

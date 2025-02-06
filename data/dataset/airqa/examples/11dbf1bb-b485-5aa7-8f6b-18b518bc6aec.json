@@ -1,0 +1,33 @@
+{
+    "uuid": "11dbf1bb-b485-5aa7-8f6b-18b518bc6aec",
+    "question": "What's the relationship between MINT and MINT-1T?",
+    "answer_format": "Your answer should be a paragraph, illustrating the relationship between MINT and MINT-1T.",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "1e8d36fb-5a9a-5db1-9903-84d146d46376",
+        "09d48a2a-4ad0-5a7f-84ec-557ac57f5830"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Read both papers to understand the purposes of MINT and MINT-1T."
+    ],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "MINT and MINT-1T don't have direct relationship.",
+                "MINT is short for \"multi-turn interactions\", while MINT in MINT-1T is short for \"Multimodal INTerleaved\"."
+            ],
+            "question": "Can you explain the different types of machine learning?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

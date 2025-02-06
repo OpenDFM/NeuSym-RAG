@@ -1,0 +1,41 @@
+{
+    "uuid": "efb108ff-2ddd-5cb2-9408-afba55df144b",
+    "question": "How many tasks are in WebArena? Can they be categorized into classes? How many classes can they be categorized into? What are the classes? How many tasks are in theses classes, respectively?",
+    "answer_format": "Your answer should be a Python list. The first element is an integer indicating the total task number. The second one is a boolean indicating if the tasks can be categorized. If the second one is true, there should be more elements. The third element should be an integer indicating the class number. The fourth one should be a string list storing the class names. The fifth one should be an integer list storing the task numbers in each class. If any needed information cannot be specified through the paper, give an empty string as the answer for that item.",
+    "tags": ["single", "text", "table", "objective"],
+    "anchor_pdf": ["5a2b0d5c-6b51-5bbd-a001-a15f19f65a98"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+		"Find a table or the section containing the dataset statistics",
+		"Extract the total task number",
+		"Check if the tasks are categorized",
+		"If categorized, find out the class names"
+	],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+			"eval_func_list": [
+				"eval_int_exact_match",
+				"eval_bool_exact_match",
+				"eval_int_exact_match",
+				"eval_structured_object_exact_match",
+				"eval_string_exact_match"
+			],
+			"eval_kwargs_list": [
+				{"gold": 812},
+				{"gold": true},
+				{"gold": 3},
+				{
+					"gold": ["Information-seeking", "Site navigation", "Content and configuration operation"],
+					"lowercase": true
+				},
+				{"gold": ""}
+			]
+		}
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

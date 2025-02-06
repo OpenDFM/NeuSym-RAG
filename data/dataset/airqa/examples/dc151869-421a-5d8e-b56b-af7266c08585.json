@@ -1,0 +1,25 @@
+{
+    "uuid": "dc151869-421a-5d8e-b56b-af7266c08585",
+    "question": "What training acceleration methods are compared in the original paper that describes the methods used in training the FLM-101B model?",
+    "answer_format": "Your answer should be a python list of strings.",
+    "tags": ["multiple","objective","text","table"],
+    "anchor_pdf": ["0207c0f7-4f0a-5aca-a744-749680da8934", "58fb66aa-41bf-59a9-8e27-d9effa1f81aa"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "First, find the section on training methods in the FM-101B paper to learn about the training acceleration algorithms used.",
+        "Turn to the original paper describing the training acceleration algorithms.",
+        "Look for the related work section to find several training acceleration algorithms that are compared."
+    ],
+    "evaluator": {
+        "eval_func": "eval_element_list_included",
+        "eval_kwargs": {
+            "gold": ["Stacking", "CompoundGrow", "Staged", "Bert2BERT","LiGO"],
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

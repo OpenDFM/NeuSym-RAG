@@ -1,0 +1,36 @@
+{
+    "uuid": "67f33e3f-646d-5bac-8a18-5080e6a2563e",
+    "question": "How to calculate F1-score and kappa in this paper?",
+    "answer_format": "Your answer should be a python string, which is a formula in latex format to calculate a parameter.",
+    "tags": [
+        "single",
+        "text",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "2a5f542a-262f-5b41-80c5-429b7f88e312"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the part mentioned the F1-score and kappa in the paper.",
+        "Extract formulas related to F1-score and kappa from the paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas":[
+                "F_1\\text{-}Score = \\frac{2TP}{2TP + FN + FP}",
+                "K = \\frac{P_0 - P_e}{1 - P_e}",
+                "P_e = \\frac{1}{N^2} \\sum_T n_{T_1} \\times n_{T_2}"
+            ],
+            "question": "How to calculate F1-score and kappa in this paper?",
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

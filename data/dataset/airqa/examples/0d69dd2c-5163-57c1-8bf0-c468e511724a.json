@@ -1,0 +1,50 @@
+{
+    "uuid": "0d69dd2c-5163-57c1-8bf0-c468e511724a",
+    "question": "In the english dataset where HGALayoutLM reaches new SOTA, what's the evaluation metric for text recognition? Additionally, what's the formula for that metric?",
+    "answer_format": "Your answer should be a Python list of two strings, the evaluation metric and the formula for that metric. Note that you should output the formula in the LaTex format.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "5d57350d-12be-5f72-a9ac-fff26f9a1a9b"
+    ],
+    "reference_pdf": [
+        "2996caf3-f7a5-515a-ba60-091b02f7c9e5",
+        "ca763ccd-4ec8-5b90-9067-ada1af33f8be"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the dataset where HGALayoutLM reaches new SOTA.",
+        "Find the table that compares different datasets",
+        "Identify the dataset that fulfills the coditions.",
+        "Read the corresponding paper to find the metric and its formula."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_complex_math_formula_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "Levenshtein similarity",
+                    "ignore_blank": true,
+                    "lowercase": true
+                },
+                {
+                    "formulas": "S(w_p, w_{gt}) = 1 - \\frac{L(w_p, w_{gt})}{\\max(|w_p|, |w_{gt}|)}",
+                    "question": "What's the formula for Levenshtein similarity?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

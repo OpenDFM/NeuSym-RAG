@@ -1,0 +1,35 @@
+{
+    "uuid": "27bd3238-0bb7-540a-8e4f-5acc74fe7b92",
+    "question": "In the paper that proposed two existing remote sensing vision-language datasets listed in the VRSBench paper, which method reaches the highest score on area comparison tasks?",
+    "answer_format": "Your answer should be a single word, the name of the method.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "0ecb9fb6-f66a-519b-90de-10b955b8399d"
+    ],
+    "reference_pdf": [
+        "59bef33e-66e2-5e21-a026-d8e055da92f1",
+        "3a7ec7eb-f552-5dfa-8801-5b03df2abc46"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the table that lists all existing datasets.",
+        "Identify the paper that proposed two datasets.",
+        "Identify the corresponding method."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "InstructBLIP",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

@@ -1,0 +1,32 @@
+{
+    "uuid": "d5ea5e23-0a82-5621-9932-ff0f19a68885",
+    "question": "The anchor paper use two pre-trained models for experiment. For the newer one, what is its name and based on what task is it pre-trained?",
+    "answer_format": "Your answer should be a single python list, the first element is the name of the model, the second element is the task name it is pre-trained on.",
+    "tags": [
+        "text",
+        "multiple",
+        "objective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the section about experiment in the anchor paper.",
+        "Second, find the two pre-trained models used and the source paper.",
+        "Finally, find the pre-training task of the newer model."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": ["ELECTRA","replaced token detection"],
+            "ignore_order": false,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "3aaa5bca-d686-5f64-b1ef-92d8b28fb733"
+    ],
+    "reference_pdf": ["c4d02102-b1c7-5b72-a414-9c175a49be48"]
+}

@@ -25,12 +25,14 @@ __pycache__
 
 # ignore duckdb files
 data/database/*/*.duckdb
+data/database/*/*.duckdb.lock
 
 # ignore vectorstore files
 data/vectorstore/*/*.db
+data/vectorstore/*/.*.db.lock
+data/vectorstore/*/bm25.json
 data/vectorstore/milvus/*
 !data/vectorstore/milvus/.gitkeep
-data/vectorstore/*/.*.db.lock
 embedEtcd.yaml
 user.yaml
 volumes
@@ -40,6 +42,8 @@ data/dataset/*/raw_data/*
 !data/dataset/*/raw_data/.gitkeep
 data/dataset/pdfvqa/processed_data/bbox_images
 data/dataset/pdfvqa/processed_data/test_images
+data/dataset/pdfvqa/processed_data/*
+!data/dataset/pdfvqa/processed_data/.gitkeep
 data/dataset/tatdqa/processed_data/tat_docs
 data/dataset/tatdqa/processed_data/test
 data/dataset/tatdqa/processed_data/test_docs
@@ -51,8 +55,11 @@ data/dataset/airqa/processed_data/*
 !data/dataset/airqa/processed_data/.gitkeep
 data/dataset/airqa/metadata/*
 !data/dataset/airqa/metadata/.gitkeep
-data/dataset/pdfvqa/processed_data/*
-!data/dataset/pdfvqa/processed_data/.gitkeep
+data/dataset/airqa/examples/litsearch/raw
+data/dataset/airqa/examples/pasa/raw
+data/dataset/m3sciqa
+data/dataset/spiqa
+data/dataset/scidqa
 
 # third party repos
 third_party/*
@@ -60,13 +67,3 @@ third_party/*
 
 # auto annotation
 data/dataset/airqa/examples/automation
-
-# raw datasets
-data/dataset/airqa/examples/litsearch/raw
-data/dataset/airqa/examples/pasa/raw
-
-/journal.md
-/.stfolder
-/.stversions
-/version.folder
-/Session.vim

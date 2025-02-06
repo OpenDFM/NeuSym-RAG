@@ -1,0 +1,25 @@
+{
+    "uuid": "bf7fe85f-b409-5a58-ac9e-ba738e5390c7",
+    "question": "In FewRel's 10-way 5-shot setting, what is the maximum decrease of AOD+ROD between ConPL and AGCKD across all task indexes?",
+    "answer_format": "Your answer should be a positive floating-point number with two decimal place.",
+    "tags": ["single","image","objective"],
+    "anchor_pdf": ["3e92cc84-5991-5ac2-aa13-f92ccbfcb03b"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "First, get numbers from the tabular",
+        "Second, calculate decrease of AOD+ROD for each task index",
+        "Last, return the maximum decrease"
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 1.88,
+            "ndigits": 2
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

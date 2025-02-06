@@ -1,0 +1,37 @@
+{
+    "uuid": "a1bcf4ae-a49c-559d-83be-7e34162877d1",
+    "question": "What tasks were proposed in the paper of the dataset used in the experiment of the anchor PDF?",
+    "answer_format": "Your answer should be a python list of tasks, e.g. [\"task1\", \"task2\", ...]. YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "610d8e02-d6bb-52e3-801d-0dbcdb5310db"        
+    ],
+    "reference_pdf": [
+        "20ec131c-808d-59b3-8554-b5a68b02968e"        
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the name of the dataset used in the experiment in the anchor PDF.",
+        "Locate the relevant paper about the dataset.",
+        "Identify the tasks proposed in the paper of the dataset used in the experiment."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Grounding Span Prediction",
+                "Agent Response Generation"
+            ],
+            "ignore_order": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

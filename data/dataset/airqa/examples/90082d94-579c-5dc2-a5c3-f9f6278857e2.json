@@ -1,0 +1,23 @@
+{
+    "uuid": "90082d94-579c-5dc2-a5c3-f9f6278857e2",
+    "question": "On how many datasets was COSA evaluated for its performance in Object Discovery and Composition?",
+    "answer_format": "Your answer should be an integer.",
+    "tags": ["single","text","objective"],
+    "anchor_pdf": ["8c31b4d5-1f30-52a4-9870-482b7ec1c67c"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the part of text that discusses the ability of CoSA on Object Discovery and Composition", 
+        "Second, find all the datasets mentioned in this part of text, and count the total number."
+    ],
+    "evaluator": {
+        "eval_func": "eval_int_exact_match",
+        "eval_kwargs": {
+            "gold": 6
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

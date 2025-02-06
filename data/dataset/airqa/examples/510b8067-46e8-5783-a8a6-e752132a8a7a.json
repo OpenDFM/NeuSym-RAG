@@ -1,0 +1,33 @@
+{
+    "uuid": "510b8067-46e8-5783-a8a6-e752132a8a7a",
+    "question": "In the proxy task of exploring lexical semantics in anchor_pdf, how many instances are there in total?",
+    "answer_format": "Your answer should be a python int.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "f0d961d2-d190-5de7-874b-91a05aa91921"
+    ],
+    "reference_pdf": [
+        "6cb48d9e-f803-5274-8b12-b6ca17473e50"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the dataset used to construct the proxy task in the anchor_pdf.",
+        "locate the paper about the dataset.",
+        "Retreive the paper and compute the number of instances in the dataset."
+    ],
+    "evaluator": {
+        "eval_func": "eval_int_exact_match",
+        "eval_kwargs": {
+            "gold": 7466
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

@@ -1,0 +1,48 @@
+{
+    "uuid": "0612502c-5e7f-59c3-83d6-bd4a867c22d7",
+    "question": "Why the anchor PDF proposes a new Bias Score? What's the formula of the original Score?",
+    "answer_format": "Your answer should be Python list of two strings, the first is the reason why the authors propose a new Bias Score. The second is the formula in LaTeX format.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "2b640ff7-e466-55c9-821a-4a8e20189660"
+    ],
+    "reference_pdf": [
+        "2ef41545-f0f2-57cc-adc4-1313b5e4875a",
+        "4cd8cb70-48e8-51f7-ab8c-2ee1fc05ee56"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the section that introduces the Bias Score.",
+        "Find on which dataset the Bias Score is used.",
+        "Read the original dataset paper to identity the formula."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_reference_answer_with_llm",
+                "eval_complex_math_formula_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "reference_answer": "The CrowSPairs score represents the percentage of instance pairs in which the stereotypical sentence has lower perplexity than the anti-stereotypical sentence in the total number of instance pairs. Since it is not easy to understand that the scores closer to 50 indicate less bias, we instead utilized the Bias score, which is defined as equal to |CrowSPairs score −50|, to replace the CrowSPairs score. A lower score represents lower bias.",
+                    "question": "Why the anchor PDF proposes a new Bias Score?"
+                },
+                {
+                    "formulas": "\\text{score}(S) = \\sum_{i=0}^{|C|} \\log P(u_i \\in U \\mid U_{\\setminus u_i}, M, \\theta)",
+                    "question": "What's the formula of the original Score?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

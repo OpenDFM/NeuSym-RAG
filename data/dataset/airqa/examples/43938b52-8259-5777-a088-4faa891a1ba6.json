@@ -1,0 +1,43 @@
+{
+    "uuid": "43938b52-8259-5777-a088-4faa891a1ba6",
+    "question": "How does the anchor paper formulate the objective of OOD detection?If I want to contact the author(s) of the source paper of this formula, what is the email address I can refer to?",
+    "answer_format": "Your answer should be a single python list, the first element is a formula in latex format, the second element is a string of the email address.Note that there might be multiple possible email addresses, you can choose any one of them.",
+    "tags": [
+        "text",
+        "formula",
+        "multiple",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the section about the objective of OOD detection in the anchor paper.",
+        "Second, find the formula used to formulate the objective.",
+        "Finally, turn to the source paper to find the email address of the author(s)."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_complex_math_formula_with_llm",
+                "eval_element_included"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "formulas": "\\mathcal{H}_{0}: \boldsymbol{x} \\sim \\mathcal{P}_{\text {out }} \\quad \text { v.s. } \\quad \\mathcal{H}_{1}: \boldsymbol{x} \\sim \\mathcal{P}_{\text {in }}",
+                    "question": "How does the anchor paper formulate the objective of OOD detection?"
+                },
+                {
+                    "gold":["az381@cam.ac.uk","djw1005@cam.ac.uk"]
+                }
+            ]
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "e388e95f-db5f-541a-9a5b-2f2109375f61"
+    ],
+    "reference_pdf": ["9523ad64-fad9-5352-bc32-ceb1a8f5adbc"]
+}

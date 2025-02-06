@@ -1,0 +1,34 @@
+{
+    "uuid": "2abed84f-df45-53f5-8761-12df8c5f8185",
+    "question": "What is BLIP-2' s Trainable Params? Which function will use the BLIP-2 related model in VisualWebArena paper?",
+    "answer_format": "Your answer should be a python list of two strings, the first strings is Trainable Params and the second is a function name.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "fec0ffc9-d5d1-5cb3-ad3a-b39bb7017689",
+        "46cca6ed-363d-5bcf-8b04-6e8f56b1debb"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the paper about BLIP-2 and find its Trainable Params.",
+        "Then, retreive the function in VisualWebArena paper and find the function that uses BLIP-2 related model."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "188M",
+                "eval_vqa"
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

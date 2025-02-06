@@ -1,0 +1,34 @@
+{
+    "uuid": "5be96361-68a3-5b32-8d15-668f306d33e7",
+    "question": "According to the tables about Zero-shot performance, what is the range of accuracy of OPT-125M in different task tests (considering the data tested in all papers)?",
+    "answer_format": "Your answer should be a python float. Keep one decimal place.",
+    "tags": [
+        "multiple",
+        "objective",
+        "text",
+        "table"
+    ],
+    "anchor_pdf": [
+        "b9eb94b0-2d7a-5101-a3b4-8d0ee70b77ca"
+    ],
+    "reference_pdf": [
+        "3db38bf7-3168-5855-958a-c2fa458d33d8"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the table about Zero-shot performance in the papers.",
+        "Second, find the maximum and minimum values of the data.",
+        "Finally, subtract the two datas."
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 55.1,
+            "ndigits":1
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

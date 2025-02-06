@@ -1,0 +1,24 @@
+{
+    "uuid": "9640f248-b594-56b4-9cc6-9b242538ee40",
+    "question": "In the direct preceding work of H2O, are there any metrics tested other than perplexity?",
+    "answer_format": "Your answer should be a python boolean.",
+    "tags": ["multiple","objective","text","metadata"],
+    "anchor_pdf": ["5e63d90b-a1a4-5e6e-9845-5177eba99970","9f701072-7290-52f2-91fa-1b5fddbbd78e"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "In the H2O paper, locate the related work section and identify the most direct preceding work by examining the affiliations of the authors.",
+        "Turn to the original paper of the preceding work.",
+        "Find the section that records the experiments and check if there are any experimental data other than perplexity."
+    ],
+    "evaluator": {
+        "eval_func": "eval_bool_exact_match",
+        "eval_kwargs": {
+            "gold": false
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}   

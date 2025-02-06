@@ -1,0 +1,35 @@
+{
+    "uuid": "220ea46c-5777-52dd-a581-54513207a179",
+    "question": "How many thousand conversations are there in the datasets used to train CONVAUG in total?",
+    "answer_format": "Your answer should be a python float with one decimal places.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "259a072c-f5f0-594d-8018-e6fc4d528d07"
+    ],
+    "reference_pdf": [
+        "8acb57ed-7324-5327-8d39-f2c041ec6f2d",
+        "a9f80f03-a63b-564a-8789-70b7c7096819"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, find the datasets used to train CONVAUG.",
+        "Then, Locate the relevant paper about the datasets.",
+        "Finally, calculate the total number of conversations in the datasets."
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 17.5,
+            "ndigits": 1
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
