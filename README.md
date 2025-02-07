@@ -44,7 +44,7 @@ The documents for this project and fine-grained topics are discussed in the fold
 </p>
 
 <p align="center">
-  <img src="data/database/ai_research/ai_research.png" alt="Image Description" width="95%">
+  <img src="assets/db_visualization.png" alt="Image Description" width="95%">
   <br>
   <em>Figure 3: Database Schema for AI Research (AIR-QA)</em>
 </p>
