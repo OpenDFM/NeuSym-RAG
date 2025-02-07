@@ -20,7 +20,7 @@
         "Find the exact number of GPUs required to train the model, which is usually in the form of a table."
     ],
     "evaluator": {
-        "eval_func": "eval__int_exact_match",
+        "eval_func": "eval_int_exact_match",
         "eval_kwargs": {
             "gold": 4
         }
