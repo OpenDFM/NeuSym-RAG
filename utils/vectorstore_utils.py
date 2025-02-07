@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.database_utils import get_database_connection
 from utils.database_schema import DatabaseSchema
 from utils.vectorstore_schema import VectorstoreSchema, VectorstoreCollection
-from utils.functions.ai_research_metadata import get_airqa_paper_metadata
+from utils.functions.ai_research_metadata import get_airqa_paper_metadata, AIRQA_DIR
 
 
 logger = logging.getLogger(__name__)
@@ -289,6 +289,24 @@ def get_page_number_from_id(database_name: str, db_conn: duckdb.DuckDBPyConnecti
         return -1
 
 
+def get_database_to_dataset_mapping(database_or_vectorstore: str) -> str:
+    """ Get the mapping dataset name for the database / vectorstore.
+    @args:
+        database_or_vectorstore: str, the database name or vectorstore name
+    @return:
+        str, the dataset name
+    """
+    mappings = {
+        "biology_paper": "pdfvqa",
+        "financial_report": "tatdqa",
+        "ai_research": "airqa",
+        "emnlp_papers": "m3sciqa",
+        "arxiv_papers": "spiqa",
+        "openreview_papers": "scidqa"
+    }
+    return mappings[database_or_vectorstore]
+
+
 def get_image_or_pdf_path(database: str, pdf_id: str, page_number: int) -> str:
     """ Get the image or PDF path for the database.
     @args:
@@ -298,23 +316,7 @@ def get_image_or_pdf_path(database: str, pdf_id: str, page_number: int) -> str:
     @return:
         str: The file path for the PDF or image.
     """
-    if database == 'ai_research':
-        # Load the mapping file
-        uuid2papers = get_airqa_paper_metadata()
-
-        # Get the paper info
-        paper_info = uuid2papers.get(pdf_id)
-        if not paper_info:
-            raise ValueError(f"PDF ID '{pdf_id}' not found in the mapping file.")
-        
-        # Get the PDF path from the mapping
-        pdf_path = paper_info.get("pdf_path")
-        if not pdf_path or not os.path.exists(pdf_path):
-            raise FileNotFoundError(f"PDF file not found: {pdf_path}")
-        
-        return pdf_path
-
-    elif database == 'biology_paper':
+    if database == 'biology_paper':
         # Handle biology_paper database where images are stored per page
         return os.path.join(
             'data', 'dataset', 'pdfvqa', 'processed_data', 'test_images', 
@@ -329,7 +331,22 @@ def get_image_or_pdf_path(database: str, pdf_id: str, page_number: int) -> str:
         )
     
     else:
-        raise ValueError(f"Database '{database}' is not supported.")
+        # Load the mapping file
+        dataset = get_database_to_dataset_mapping(database)
+        dataset_dir = os.path.join(os.path.dirname(AIRQA_DIR), dataset)
+        uuid2papers = get_airqa_paper_metadata(dataset_dir=dataset_dir)
+
+        # Get the paper info
+        paper_info = uuid2papers.get(pdf_id)
+        if not paper_info:
+            raise ValueError(f"PDF ID '{pdf_id}' not found in the mapping file.")
+        
+        # Get the PDF path from the mapping
+        pdf_path = paper_info.get("pdf_path")
+        if not pdf_path or not os.path.exists(pdf_path):
+            raise FileNotFoundError(f"PDF file not found: {pdf_path}")
+        
+        return pdf_path
 
 
 def build_bm25_corpus(
@@ -441,7 +458,7 @@ def encode_database_content(
                     
                     if modality == 'text': # fill in 'text' field
                         text = str(row[0]).strip()
-                        if text is None or text == '': continue
+                        if text in ['', 'None']: continue
                         record['text'] = text
                         documents.append(text)
                         records.append(record)
@@ -551,8 +568,8 @@ if __name__ == '__main__':
     # pdf ids to encode, by default, all pdfs in the relational database if not specified
     pdf_ids = get_pdf_ids_to_encode(args.vectorstore, args.pdf_path) if args.pdf_path else None
     encode_database_content(
-        vs_conn, db_conn, vs_schema, db_schema,
-        pdf_id=pdf_ids, batch_size=args.batch_size, on_conflict=args.on_conflict, verbose=False
+        vs_conn, db_conn, vs_schema, db_schema, pdf_id=pdf_ids,
+        batch_size=args.batch_size, on_conflict=args.on_conflict, verbose=False
     )
 
     db_conn.close()
