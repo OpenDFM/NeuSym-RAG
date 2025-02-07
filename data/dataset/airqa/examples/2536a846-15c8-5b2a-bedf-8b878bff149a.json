@@ -1,0 +1,30 @@
+{
+    "uuid": "2536a846-15c8-5b2a-bedf-8b878bff149a",
+    "question": "Which institution is the corresponding author of the paper \"DVD: Dynamic Contrastive Decoding for Knowledge Amplification in Multi-Document Question Answering\" affiliated with?",
+    "answer_format": "Your answer should be a string containing the exact full name of the institution without changing CAPITALIZATION.",
+    "tags": [
+        "single",
+        "objective",
+        "text",
+        "metadata"
+    ],
+    "anchor_pdf": [
+        "92550830-406d-5c07-9eab-5e42dffbd632"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the corresponding author of the anchor paper.",
+        "Find the institution the corresponding author is affiliated with."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "National Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
