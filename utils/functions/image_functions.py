@@ -115,12 +115,13 @@ def get_image_summary(
             image=image_message,
             **kwargs
         )
-    else:
-        summary = call_llm(
-            template=system_template, 
-            model=model, 
-            top_p=top_p, 
-            temperature=temperature,
-            image=image_message
-        )
+        if summary is not None: return summary
+    
+    summary = call_llm(
+        template=system_template, 
+        model=model, 
+        top_p=top_p, 
+        temperature=temperature,
+        image=image_message
+    )
     return summary

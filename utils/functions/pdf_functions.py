@@ -93,9 +93,10 @@ Please directly return the summary without any extra information or formatting. 
     for text in texts:
         if len(text) > max_length:
             template = prompt_template.format(text=text, max_length=max_length)
+            response = None
             if kwargs.get("parallel"):
                 response = parallel_write_or_read(template=template, **kwargs)
-            else:
+            if response is None:
                 response = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
             summary.append(response)
         else:
@@ -117,8 +118,8 @@ Please generate a brief summary for the following table without any extra inform
     template = prompt_template.format(max_length=max_length, table_caption=table['table_caption'], table_html=table['table_html'])
     if kwargs.get("parallel"):
         table_summary = parallel_write_or_read(template=template, **kwargs)
-    else:
-        table_summary = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
+        if table_summary is not None: return table_summary
+    table_summary = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
     return table_summary
 
 def crop_pdf(

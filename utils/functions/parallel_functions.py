@@ -38,7 +38,8 @@ def parallel_write_or_read(
     if parallel.get("write"):
         with open(parallel["write"], "a", encoding='utf-8') as f:
             f.write(stringified_message + "\n")
-    return ""
+        return ""
+    return None
 
 def parallel_message_to_batch(
         message_group: List[List[Dict[str, str]]], 
