@@ -12,7 +12,7 @@
 | ---------- | ---- | --------- | ------------------------------------------------ |
 | ACL        | 2023 | 3083      | https://aclanthology.org/events/acl-2023/        |
 | ACL        | 2024 | 2708      | https://aclanthology.org/events/acl-2024/        |
-| EMNLP      | 2023 | 2804      | https://aclanthology.org/events/emnlp-2023/      |
+| EMNLP      | 2023 | 2803      | https://aclanthology.org/events/emnlp-2023/      |
 | EMNLP      | 2024 | 2950      | https://aclanthology.org/events/emnlp-2024/      |
 | ICLR       | 2023 | 1966      | https://api.openreview.net                       |
 | ICLR       | 2024 | 3301      | https://api2.openreview.net                      |
@@ -20,15 +20,16 @@
 | NeurIPS    | 2024 | 6857      | https://api2.openreview.net                      |
 | ICASSP     | 2023 | 2698      | https://dblp.org/db/conf/icassp/icassp2023.html  |
 | ICASSP     | 2024 | 2677      | https://dblp.org/db/conf/icassp/icassp2024.html  |
-| In total   | -    | 34554     | -                                                |
+| In total   | -    | 34553     | -                                                |
 
 
 ### Exclusion
 
-These papers are not included in our processed ICASSP paper list, since their PDFs are not found or we cannot parse text from their PDF documents.
+These papers are not included in our processed paper list, since their PDFs are not found or we cannot parse text from their PDF documents.
 
 | Conference | Year | Paper Title |
 | ---------- | ---- | ----------- |
+| EMNLP      | 2023 | Low-Resource Machine Translation Systems for Indic Languages |
 | ICASSP     | 2024 | A Multi-Carrier Information Hiding Algorithm Based on Layered Compression of 3d Point Cloud Model |
 | ICASSP     | 2024 | Mutual Information Based Noise Scale Optimization for Gradient Leakage Resistant Federated Learning |
 | ICASSP     | 2023 | Individual Sub-Band Estimation Approach to Bandwidth Extension and Enhancement of Coded Speech |

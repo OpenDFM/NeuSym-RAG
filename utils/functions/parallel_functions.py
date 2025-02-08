@@ -103,6 +103,7 @@ if __name__ == "__main__":
         message_group, hashed_group = [], []
         with open(args.input, "r", encoding="utf-8") as f:
             for line in f:
+                if line.strip() == "": continue
                 message_group.append(json.loads(line))
                 hashed_group.append(hashed(line.strip()))
         batch_group = parallel_message_to_batch(message_group, hashed_group, model=args.model)
@@ -113,6 +114,7 @@ if __name__ == "__main__":
         batch_group = []
         with open(args.input, "r", encoding="utf-8") as f:
             for line in f:
+                if line.strip() == "": continue
                 batch_group.append(json.loads(line))
         summary_dict = parallel_batch_to_dict(batch_group)
         with open(args.output, "w", encoding="utf-8") as of:
@@ -121,6 +123,7 @@ if __name__ == "__main__":
         input_group = []
         with open(args.input, "r", encoding="utf-8") as f:
             for line in f:
+                if line.strip() == "": continue
                 input_group.append(json.loads(line))
         output_group = serial_process_batch(input_group)
         with open(args.output, "w", encoding="utf-8") as of:
