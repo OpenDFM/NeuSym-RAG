@@ -1,0 +1,25 @@
+{
+    "uuid": "2351ad69-2ee2-5348-a305-1b7bc5a8fb3a",
+    "question": "Which paper first found that REINFORCE works better than actor critic algorithms like PPO for RL finetuning of pretrained chemistry language models (Transformers and RNNs)?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper first found that REINFORCE works better than actor critic algorithms like PPO for RL finetuning of pretrained chemistry language models (Transformers and RNNs)?",
+            "reference_answer": "Searching for High-Value Molecules Using Reinforcement Learning and Transformers"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

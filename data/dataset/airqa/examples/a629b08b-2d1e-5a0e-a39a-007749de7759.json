@@ -1,0 +1,25 @@
+{
+    "uuid": "a629b08b-2d1e-5a0e-a39a-007749de7759",
+    "question": "Is there a paper that uses the tree structure of math equations in autoregressive language models?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Is there a paper that uses the tree structure of math equations in autoregressive language models?",
+            "reference_answer": "Tree-Based Representation and Generation of Natural and Mathematical Language"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "75cd4886-f858-506d-ad37-85cc7c605b3f",
+    "question": "Which paper first introduced document content as an intermediate generation target and utilized textual document identifiers in generative retrieval?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper first introduced document content as an intermediate generation target and utilized textual document identifiers in generative retrieval?",
+            "reference_answer": "TOME: A Two-stage Approach for Model-based Retrieval"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

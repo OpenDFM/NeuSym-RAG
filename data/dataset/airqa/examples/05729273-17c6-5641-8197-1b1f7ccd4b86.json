@@ -1,0 +1,25 @@
+{
+    "uuid": "05729273-17c6-5641-8197-1b1f7ccd4b86",
+    "question": "Which paper first use the attention weights to guide the simultaneous inference of speech translation models?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper first use the attention weights to guide the simultaneous inference of speech translation models?",
+            "reference_answer": "Attention as a Guide for Simultaneous Speech Translation"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

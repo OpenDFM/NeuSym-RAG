@@ -1,0 +1,25 @@
+{
+    "uuid": "c181315e-0268-53f9-a982-60eb5747f0e5",
+    "question": "Which paper first attempts to take potential dependencies among same-level labels into account in Hierarchical Text Classification?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper first attempts to take potential dependencies among same-level labels into account in Hierarchical Text Classification?",
+            "reference_answer": "Peer-Label Assisted Hierarchical Text Classification"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "ea965a94-3dc2-58e6-93e6-6da8d839e7e8",
+    "question": "What is a large event-coverage general-domain event argument extraction dataset?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "What is a large event-coverage general-domain event argument extraction dataset?",
+            "reference_answer": "GENEVA: Benchmarking Generalizability for Event Argument Extraction with Hundreds of Event Types and Argument Roles"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

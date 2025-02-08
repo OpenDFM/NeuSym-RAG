@@ -1,0 +1,25 @@
+{
+    "uuid": "6b660c4a-c2a0-538f-b42a-bfe6337add99",
+    "question": "Could you recommend a dataset paper which presents relation extraction performance on translated data and compare it to English data?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Could you recommend a dataset paper which presents relation extraction performance on translated data and compare it to English data?",
+            "reference_answer": "MultiTACRED: A Multilingual Version of the TAC Relation Extraction Dataset"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

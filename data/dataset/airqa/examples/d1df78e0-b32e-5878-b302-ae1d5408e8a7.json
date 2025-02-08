@@ -1,0 +1,25 @@
+{
+    "uuid": "d1df78e0-b32e-5878-b302-ae1d5408e8a7",
+    "question": "What is a paper studying data being collected in bundles in reinforcement learning ?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "What is a paper studying data being collected in bundles in reinforcement learning ?",
+            "reference_answer": "Sample-Efficiency in Multi-Batch Reinforcement Learning: The Need for Dimension-Dependent Adaptivity"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

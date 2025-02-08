@@ -1,0 +1,25 @@
+{
+    "uuid": "5960606a-4a02-5726-8048-bc2c52ad726b",
+    "question": "Is there any paper that applies curriculum learning to various NLG tasks without depending on specific metrics?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Is there any paper that applies curriculum learning to various NLG tasks without depending on specific metrics?",
+            "reference_answer": "In-sample Curriculum Learning by Sequence Completion for Natural Language Generation"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

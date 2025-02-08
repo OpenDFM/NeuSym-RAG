@@ -1,0 +1,25 @@
+{
+    "uuid": "aa4ec90c-b162-5319-9a00-ca47101c24f8",
+    "question": "Which paper showed that social relationships were helpful for identifying inappropriate messages?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper showed that social relationships were helpful for identifying inappropriate messages?",
+            "reference_answer": "Your spouse needs professional help: Determining the Contextual Appropriateness of Messages through Modeling Social Relationships"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

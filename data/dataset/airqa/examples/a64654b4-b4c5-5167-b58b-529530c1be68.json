@@ -1,0 +1,25 @@
+{
+    "uuid": "a64654b4-b4c5-5167-b58b-529530c1be68",
+    "question": "Is there any paper about style transfer for stories?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Is there any paper about style transfer for stories?",
+            "reference_answer": "StoryTrans: Non-Parallel Story Author-Style Transfer with Discourse Representations and Content Enhancing"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

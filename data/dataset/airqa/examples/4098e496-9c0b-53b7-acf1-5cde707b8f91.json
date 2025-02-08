@@ -1,0 +1,25 @@
+{
+    "uuid": "4098e496-9c0b-53b7-acf1-5cde707b8f91",
+    "question": "Which paper proposed decomposing the logit update of each of the attention blocks’ inputs to analyze how the context influences the prediction?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper proposed decomposing the logit update of each of the attention blocks’ inputs to analyze how the context influences the prediction?",
+            "reference_answer": "Explaining How Transformers Use Context to Build Predictions"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

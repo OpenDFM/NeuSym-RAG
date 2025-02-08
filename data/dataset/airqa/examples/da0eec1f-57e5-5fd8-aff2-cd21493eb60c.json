@@ -1,0 +1,25 @@
+{
+    "uuid": "da0eec1f-57e5-5fd8-aff2-cd21493eb60c",
+    "question": "Has any study explored the zero-shot extraction of persona characteristics within conversational dialogues?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Has any study explored the zero-shot extraction of persona characteristics within conversational dialogues?",
+            "reference_answer": "PAED: Zero-Shot Persona Attribute Extraction in Dialogues"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_automatic"
+}

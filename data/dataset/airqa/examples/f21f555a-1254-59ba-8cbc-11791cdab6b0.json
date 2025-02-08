@@ -1,0 +1,25 @@
+{
+    "uuid": "f21f555a-1254-59ba-8cbc-11791cdab6b0",
+    "question": "Are there any papers that use a world model for planning to ensure that decisions meet constraints?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Are there any papers that use a world model for planning to ensure that decisions meet constraints?",
+            "reference_answer": "SAFEDREAMER: SAFE REINFORCEMENT LEARNING WITH WORLD MODELS"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "2a0aa66e-7f7a-5870-b5a3-935855255b31",
+    "question": "Is there any paper that combines causal inference and finetuning for language models?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Is there any paper that combines causal inference and finetuning for language models?",
+            "reference_answer": "Preserving Commonsense Knowledge from Pre-trained Language Models via Causal Inference"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

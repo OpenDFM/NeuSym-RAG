@@ -1,0 +1,25 @@
+{
+    "uuid": "7231e809-3ffe-5fb5-84b6-633ba6c788f5",
+    "question": "Are there datasets and benchmarks available for measuring LLM graph reasoning abilities?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Are there datasets and benchmarks available for measuring LLM graph reasoning abilities?",
+            "reference_answer": "TALK LIKE A GRAPH: ENCODING GRAPHS FOR LARGE LANGUAGE MODELS"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}
