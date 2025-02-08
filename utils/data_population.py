@@ -33,7 +33,8 @@ class DataPopulation():
                  vectorstore: Optional[str] = None,
                  launch_method: str = 'standalone',
                  docker_uri: str = 'http://127.0.0.1:19530',
-                 encoding: bool = True,
+                 connect_to_db: bool = True,
+                 connect_to_vs: bool = True,
                  from_scratch: bool = False
         ) -> None:
         """ Initialize the database/vectorstore population object.
@@ -42,14 +43,16 @@ class DataPopulation():
         assert database is not None or vectorstore is not None, "Database or vectorstore must be provided."
         self.database = database if database is not None else vectorstore
         self.vectorstore = vectorstore if vectorstore is not None else database
-        assert self.database == self.vectorstore, f"Database and vectorstore must be the same, but got {self.database} and {self.vectorstore}."
-        self.database_schema: DatabaseSchema = DatabaseSchema(self.database)
-        self.database_conn: duckdb.DuckDBPyConnection = get_database_connection(self.database, from_scratch=from_scratch)
-        self.vectorstore_schema: Optional[VectorstoreSchema] = VectorstoreSchema() if encoding else None # shared schema for all vectorstores
-        self.vectorstore_conn: Optional[MilvusClient] = get_vectorstore_connection(self.vectorstore, launch_method=launch_method, docker_uri=docker_uri, from_scratch=from_scratch) if encoding else None
+        if connect_to_db and connect_to_vs:
+            assert self.database == self.vectorstore, f"Database and vectorstore must be the same, but got {self.database} and {self.vectorstore}."
+        self.database_schema: DatabaseSchema = DatabaseSchema(self.database) if connect_to_db else None
+        self.database_conn: Optional[duckdb.DuckDBPyConnection] = get_database_connection(self.database, from_scratch=from_scratch) if connect_to_db else None
+        self.vectorstore_schema: Optional[VectorstoreSchema] = VectorstoreSchema() if connect_to_vs else None # shared VS schema
+        self.vectorstore_conn: Optional[MilvusClient] = get_vectorstore_connection(self.vectorstore, launch_method=launch_method, docker_uri=docker_uri, from_scratch=from_scratch) if connect_to_vs else None
         if from_scratch:
-            initialize_database(self.database_conn, self.database_schema)
-            if encoding:
+            if connect_to_db:
+                initialize_database(self.database_conn, self.database_schema)
+            if connect_to_vs:
                 initialize_vectorstore(self.vectorstore_conn, self.vectorstore_schema)
 
 
@@ -177,7 +180,7 @@ class DataPopulation():
             insert_sql = self.get_insert_sql(values, table_name, columns, on_conflict=on_conflict)
 
             # 3. insert cell values into the database
-            if write_to_db:
+            if write_to_db and self.database_conn is not None:
                 self.insert_values_to_database(insert_sql, values, verbose=verbose)
 
         if not write_to_vs or self.vectorstore_conn is None: return
