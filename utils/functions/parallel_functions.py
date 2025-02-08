@@ -10,7 +10,7 @@ def hashed(stringified_message: str) -> str:
 
 PARALLEL_DICT = {}
 
-def truncate_tokens(text: str, max_tokens: int = 30, encoding_model: str = 'cl100k_base') -> str:
+def truncate_tokens(text: str, max_tokens: int = 28, encoding_model: str = 'cl100k_base') -> str:
     """ Given a text string, truncate it to max_tokens using encoding_model tokenizer
     """
     encoding = tiktoken.get_encoding(encoding_model)

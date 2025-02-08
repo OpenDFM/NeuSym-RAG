@@ -10,7 +10,7 @@ from pdf2image import convert_from_path
 from pdfminer.layout import LTImage, LTFigure, LTRect
 
 from utils.functions.common_functions import call_llm, get_uuid, call_llm_with_message
-from utils.functions.parallel_functions import parallel_write_or_read
+from utils.functions.parallel_functions import parallel_write_or_read, truncate_tokens
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
@@ -97,6 +97,8 @@ Please directly return the summary without any extra information or formatting. 
             if kwargs.get("parallel"):
                 response = parallel_write_or_read(template=template, **kwargs)
             if response is None:
+                if len(text) >= 100000: # roughly 28k tokens
+                    template = truncate_tokens(template, max_tokens=28)
                 response = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
             summary.append(response)
         else:
@@ -119,6 +121,8 @@ Please generate a brief summary for the following table without any extra inform
     if kwargs.get("parallel"):
         table_summary = parallel_write_or_read(template=template, **kwargs)
         if table_summary is not None: return table_summary
+    if len(template) >= 100000: # roughly 28k tokens
+        template = truncate_tokens(template, max_tokens=28)
     table_summary = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
     return table_summary
 
@@ -505,6 +509,7 @@ def parse_pdf(
             if reference_list:
                 references.extend(reference_list)
 
+    # TODO: Need to improve the reference extraction logic, roughly 1/3 of the references are not extracted at all
     result["info_from_mineru"]["references"] = [{"reference_text": reference} for reference in references if reference]
 
     # Write each paper's data into a separate JSON file
