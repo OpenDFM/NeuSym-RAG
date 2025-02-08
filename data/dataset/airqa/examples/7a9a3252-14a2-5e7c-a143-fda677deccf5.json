@@ -1,0 +1,33 @@
+{
+    "uuid": "7a9a3252-14a2-5e7c-a143-fda677deccf5",
+    "question": "What is the lowest accuracy score achieved by RawNet2 on a dataset used in the paper \"Reliability Estimation for Synthetic Speech Detection\" but not in \"SAMO: Speaker Attractor Multi-Center One-Class Learning For Voice Anti-Spoofing\"?",
+    "answer_format": "Your answer should be a Python float.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "959d9fad-35a4-50a9-9f94-5e36279126eb",
+        "7bc08302-bd44-5dfa-9e04-d6c4d8ce8b06"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Read the Dataset sections in both papers to identify the datasets used.",
+        "Identify the datasets used only in \"Reliability Estimation for Synthetic Speech Detection\".",
+        "Find the experimental results section for \"Reliability Estimation for Synthetic Speech Detection\" and locate the column for RawNet2.",
+        "Identify the lowest accuracy score in the corresponding rows for the identified dataset."
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 0.98
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
