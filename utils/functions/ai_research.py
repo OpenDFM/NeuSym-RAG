@@ -350,8 +350,8 @@ def aggregate_ai_research_pages(metadata: Dict[str, Any], page_data: Dict[str, A
     for page_number in range(1, num_pages + 1):
         # Get the corresponding page from the PDF
         page = doc[page_number - 1]
-        page_width = page.rect.width
-        page_height = page.rect.height
+        page_width = page.mediabox.width
+        page_height = page.mediabox.height
         page_uuid = page_data["page_uuids"][page_number - 1]
         page_content = page_data["page_contents"][page_number - 1]
         page_summary = page_data["page_summaries"][page_number - 1]

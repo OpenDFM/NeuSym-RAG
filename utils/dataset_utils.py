@@ -266,8 +266,8 @@ def fuzzy_match_page(json_page_text: str, pdf_pages_text: List[str]) -> int:
 def get_page_width_and_height(pdf_path: str, page_number: int) -> Tuple[int, int]:
     doc = fitz.open(pdf_path)
     page = doc[page_number - 1]
-    width = page.rect.width
-    height = page.rect.height
+    width = page.mediabox.width
+    height = page.mediabox.height
     doc.close()
     return (width, height)
 
