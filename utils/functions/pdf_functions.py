@@ -200,7 +200,7 @@ def parse_pdf(
             ],
             "references": [
                 {
-                    "reference": <str>  # The content of the reference
+                    "reference_text": <str>  # The content of the reference
                 },
                 ...
             ],
