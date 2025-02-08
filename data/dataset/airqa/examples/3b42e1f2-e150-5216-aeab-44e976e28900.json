@@ -14,11 +14,10 @@
         "Firstly, locate the relevant section in the anchor paper to identify the operation employed on task vectors.",
         "Then turn to the source paper to find the section about the operations that can be performed on task vectors and their functions.(maybe a section like abstract, introduction or conclusion)"],
     "evaluator": {
-        "eval_func": "eval_partial_scoring_points_with_llm",
+        "eval_func": "eval_scoring_points_with_llm",
         "eval_kwargs": {
             "scoring_points": ["The anchor paper employs the negation of task vectors to effectively erase the harmful knowledge (to remove undesirable behaviors or unlearn tasks)", "Adding task vectors can also be performed, which leads to better multi-task models,or even improves performance on a single task", "When tasks form an analogy relationship, task vectors can be combined to improve performance on tasks where data is scarce."],
-            "question": "Which operation on task vectors is employed in the anchor paper? Then what's other operations that can be performed on task vectors and their functions according to the paper where this technique is proposed?",
-            "count": 3
+            "question": "Which operation on task vectors is employed in the anchor paper? Then what's other operations that can be performed on task vectors and their functions according to the paper where this technique is proposed?"
         }
     },
     "state": {

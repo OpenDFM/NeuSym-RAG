@@ -66,9 +66,8 @@ start_time = datetime.now()
 preds = []
 for data in test_data:
     logger.info(f"Processing question: {data['uuid']}")
-    question, answer_format = formulate_input(args.dataset, data)
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
-    result = agent.interact(question, database_prompt, answer_format, window_size=args.window_size, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, output_kwargs={'output_format': args.output_format})
+    result = agent.interact(args.dataset, data, database_prompt, window_size=args.window_size, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, output_kwargs={'output_format': args.output_format}, with_vision=True)
     preds.append({'uuid': data['uuid'], 'answer': result})
 logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 agent.close()

@@ -72,6 +72,7 @@ TWO_STAGE_TEXT2SQL_PROMPT = [
 --------
 
 [Question]: {question}
+{pdf_context}
 [Database Schema]: {database_schema}
 
 You can firstly give your reasoning process, followed by the SQL query in the following format (REMEMBER TO WRAP YOUR SQL IN THREE BACKTICKS):
@@ -88,6 +89,7 @@ Here is your response:
 --------
 
 [Question]: {question}
+{pdf_context}
 [SQL]: {sql}
 [Retrieved Context]: {context}
 [Answer Format]: {answer_format}
@@ -115,7 +117,7 @@ Here is a detailed specification of the `RetrieveFromVectorstore` action that yo
 The task input is:
 
 [Question]: {question}
-
+{pdf_context}
 [Vectorstore Schema]:
 {vectorstore_schema}
 
@@ -133,6 +135,7 @@ Here is your response:
 --------
 
 [Question]: {question}
+{pdf_context}
 [Retrieved Context]:\n{context}
 [Answer Format]: {answer_format}
 

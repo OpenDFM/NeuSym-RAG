@@ -5,6 +5,7 @@ from agents.envs import AgentEnv
 from agents.envs.actions import Action, Observation
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, HINT_PROMPTS, AGENT_PROMPTS
+from agents.prompts.task_prompt import formulate_input
 from agents.frameworks.agent_base import AgentBase
 
 
@@ -25,19 +26,21 @@ class Text2SQLRAGAgent(AgentBase):
 
 
     def interact(self,
-                 question: str,
+                 dataset: str,
+                 example: Dict[str, Any],
                  database_prompt: str,
-                 answer_format: str,
                  window_size: int = 3,
                  model: str = 'gpt-4o-mini',
                  temperature: float = 0.7,
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
                  output_path: Optional[str] = None,
-                 output_kwargs: Dict[str, Any] = {}
+                 output_kwargs: Dict[str, Any] = {},
+                 with_vision: bool = True,
     ) -> str:
         # construct the initial prompt messages
-        task_prompt = f'[Question]: {question}\n[Answer Format]: {answer_format}\n[Database Schema]:\n{database_prompt}'
+        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, with_vision=with_vision)
+        task_prompt = f'[Question]: {question}\n[Answer Format]: {answer_format}\n{pdf_context}[Database Schema]:\n{database_prompt}'
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
         # logger.info(f'[Database Schema]:\n{database_prompt}')
@@ -45,6 +48,8 @@ class Text2SQLRAGAgent(AgentBase):
             {'role': 'system', 'content': self.agent_prompt},
             {'role': 'user', 'content': task_prompt}
         ]
+        if image_message:
+            messages.append(image_message)
         answer = self.forward(
             messages,
             model=model,
