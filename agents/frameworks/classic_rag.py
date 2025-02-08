@@ -5,8 +5,8 @@ from agents.envs import Text2VecEnv
 from agents.envs.actions import Observation, RetrieveFromVectorstore
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
+from agents.prompts.task_prompt import formulate_input
 from agents.frameworks import AgentBase
-
 
 logger = logging.getLogger()
 
@@ -17,11 +17,10 @@ class ClassicRAGAgent(AgentBase):
 
 
     def interact(self,
-                 question: str,
-                 answer_format: str,
+                 dataset: str,
+                 example: Dict[str, Any],
                  table_name: Union[Optional[str], List[str]] = None,
                  column_name: Union[Optional[str], List[str]] = None,
-                 pdf_id: Optional[Union[str, List[str]]] = None,
                  page_number: Optional[Union[str, List[str]]] = None,
                  collection_name: str = 'text_bm25_en',
                  limit: int = 2,
@@ -29,8 +28,11 @@ class ClassicRAGAgent(AgentBase):
                  temperature: float = 0.7,
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
+                 with_vision: bool = True,
                  **kwargs
     ) -> str:
+        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, with_vision=with_vision)
+        pdf_id = example["anchor_pdf"] + example["reference_pdf"]
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
         prev_cost = self.model.get_cost()
@@ -76,6 +78,8 @@ class ClassicRAGAgent(AgentBase):
         ) # system prompt + task prompt + cot thought hints
         logger.info('[Stage 2]: Generate Answer ...')
         messages = [{'role': 'user', 'content': prompt}]
+        if image_message is not None:
+            messages.append(image_message)
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)

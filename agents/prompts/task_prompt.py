@@ -1,15 +1,29 @@
 #coding=utf8
 from typing import Any, Dict, Tuple
+import base64
+from utils.functions.image_functions import get_image_message
 
-def formulate_input(dataset: str, data: Dict[str, Any]) -> Tuple[str, str]:
+def formulate_input(dataset: str, data: Dict[str, Any], with_vision: bool = True) -> Tuple[str, str]:
     if dataset == 'airqa':
-        question, answer_format = data['question'], data['answer_format']
-        pdf_id = data.get('anchor_pdf', 'pdf_id')
-        assert isinstance(pdf_id, list), f"Example {data['uuid']} pdf_id should be a list."
-        if len(pdf_id) == 1:
-            question += f" (for PDF with id {pdf_id[0]})"
-        elif len(pdf_id) > 1:
-            question += f" (for PDFs with id in [{', '.join(pdf_id)}])"
+        question, answer_format, pdf_context, image_message = data['question'], data['answer_format'], "", None
+        anchor_pdf_id = data.get('anchor_pdf', 'pdf_id')
+        assert isinstance(anchor_pdf_id, list), f"Example {data['uuid']} anchor_pdf should be a list."
+        if len(anchor_pdf_id) == 1:
+            pdf_context += f"[Anchor PDF]: {anchor_pdf_id[0]}\n"
+        elif len(anchor_pdf_id) > 1:
+            pdf_context += f"[Anchor PDF]: [{', '.join(anchor_pdf_id)}]\n"
+        reference_pdf_id = data.get('reference_pdf', '')
+        assert isinstance(reference_pdf_id, list), f"Example {data['uuid']} reference_pdf should be a list."
+        if len(reference_pdf_id) == 1:
+            pdf_context += f"[Reference PDF]: {reference_pdf_id[0]}\n"
+        elif len(reference_pdf_id) > 1:
+            pdf_context += f" ([Reference PDF]: [{', '.join(reference_pdf_id)}]\n"
+        if with_vision and ('anchor_image' in data):
+            anchor_images = data['anchor_image']
+            assert isinstance(anchor_images, list) and len(anchor_images) == 1, f"Example {data['uuid']} anchor_image should be a list with exact one image path."
+            anchor_image_path = anchor_images[0]
+            image_message = get_image_message(base64_image=base64.b64encode(open(anchor_image_path, 'rb').read()).decode('utf-8'), template="[Anchor Image]: The image you must use to answer the question.")
+        return question, answer_format, pdf_context, image_message
     elif dataset == 'pdfvqa':
         question, page = data['question'], data['page_number']
         pdf_id = data['pdf_id']
