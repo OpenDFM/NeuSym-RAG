@@ -25,7 +25,7 @@ class HybridEnv(AgentEnv):
                 - database_type: str, the database type, default is 'duckdb'. Other types are not supported yet.
                 - database_path: str, the path to the database file, default is 'data/database/{database}/{database}.duckdb'.
                 - launch_method: str, the launch method of the Milvus vectorstore, default is 'standalone', chosen from ['standalone', 'docker'].
-                - vectorstore_path: str, the local path or uri to the Milvus vectorstore, default is path 'data/vectorstore/{vectorstore}/{vectorstore}.db' if launch_method is 'standalone', otherwise the uri 'http://127.0.0.1:19530'.
+                - docker_uri: str, URI to the docker, default is 'http://127.0.0.1:19530'.
         """
         super(HybridEnv, self).__init__(action_format=action_format, action_space=action_space, agent_method=agent_method, dataset=dataset)
         # database and vectorstore name must be the same
@@ -40,10 +40,8 @@ class HybridEnv(AgentEnv):
         self.database_path = kwargs.get('database_path', os.path.join('data', 'database', self.database, f'{self.database}.duckdb'))
         self.vectorstore_conn, self.embedder_dict = None, {}
         self.launch_method = kwargs.get('launch_method', 'standalone')
-        if self.launch_method == 'standalone':
-            self.vectorstore_path = kwargs.get('vectorstore_path', os.path.join('data', 'vectorstore', self.vectorstore, f'{self.vectorstore}.db'))
-        else:
-            self.vectorstore_path = kwargs.get('vectorstore_path', 'http://127.0.0.1:19530')
+        assert self.launch_method in ['docker', 'standalone'], f"Vectorstore launch method {self.launch_method} not supported."
+        self.docker_uri = kwargs.get('docker_uri', 'http://127.0.0.1:19530') if self.launch_method == 'docker' else None
         self.reset()
 
         self.table2pk, self.table2encodable = dict(), defaultdict(dict)
@@ -77,7 +75,12 @@ class HybridEnv(AgentEnv):
                 raise NotImplementedError(f"Database type {self.database_type} not supported.")
 
         if not isinstance(self.vectorstore_conn, MilvusClient):
-            self.vectorstore_conn = get_vectorstore_connection(self.vectorstore_path, self.vectorstore, from_scratch=False)
+            self.vectorstore_conn = get_vectorstore_connection(
+                self.vectorstore,
+                launch_method=self.launch_method,
+                docker_uri=self.docker_uri,
+                from_scratch=False
+            )
             time.sleep(3)
 
         embed_kwargs = get_embed_model_from_collection(client=self.vectorstore_conn)

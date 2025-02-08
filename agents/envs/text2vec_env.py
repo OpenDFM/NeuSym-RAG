@@ -19,10 +19,7 @@ class Text2VecEnv(AgentEnv):
         super(Text2VecEnv, self).__init__(action_format=action_format, action_space=action_space, agent_method=agent_method, dataset=dataset)
         self.vectorstore_conn, self.embedder_dict = None, {}
         self.vectorstore, self.launch_method = kwargs.get('vectorstore', None), kwargs.get('launch_method', 'standalone')
-        if self.launch_method == 'standalone':
-            self.vectorstore_path = kwargs.get('vectorstore_path', os.path.join('data', 'vectorstore', self.vectorstore, f'{self.vectorstore}.db'))
-        else:
-            self.vectorstore_path = kwargs.get('vectorstore_path', 'http://127.0.0.1:19530')
+        self.docker_uri = kwargs.get('docker_uri', 'http://127.0.0.1:19530') if self.launch_method == 'docker' else None
         self.reset()
 
         self.table2encodable = defaultdict(dict)
@@ -40,7 +37,12 @@ class Text2VecEnv(AgentEnv):
         """
         self.parsed_actions = []
         if not isinstance(self.vectorstore_conn, MilvusClient):
-            self.vectorstore_conn = get_vectorstore_connection(self.vectorstore_path, self.vectorstore, from_scratch=False)
+            self.vectorstore_conn = get_vectorstore_connection(
+                self.vectorstore,
+                launch_method=self.launch_method,
+                docker_uri=self.docker_uri,
+                from_scratch=False
+            )
             time.sleep(3)
 
         embed_kwargs = get_embed_model_from_collection(client=self.vectorstore_conn)
