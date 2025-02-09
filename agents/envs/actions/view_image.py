@@ -103,6 +103,6 @@ class ViewImage(Action):
             with open(image_file.name, 'rb') as f:
                 image_data = base64.b64encode(f.read()).decode('utf-8')
             image_file.close()
-            return Observation(image_data, 'image')
+            return Observation(image_data, 'image', mine_type='image/png')
         except Exception as e:
             return Observation(f'[Error]: {str(e)}')
