@@ -167,6 +167,7 @@ def convert_pdf_to_image(
 def add_reference_to_json(
         uuid: str,
         processed_data_folder: str = 'data/dataset/airqa/processed_data',
+        output_data_folder: Optional[str] = None
     ) -> Dict[str, Any]:
     # Load the flawed processed data
     processed_data_path = os.path.join(processed_data_folder, f'{uuid}.json')
@@ -201,7 +202,8 @@ def add_reference_to_json(
                 references.extend(reference_list)
 
     data["info_from_mineru"]["references"] = [{"reference_text": reference} for reference in references if reference]
-    with open(processed_data_path, 'w', encoding='utf-8') as f:
+    output_data_folder = output_data_folder if output_data_folder is not None else processed_data_folder
+    with open(output_data_folder, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
     return data
 
