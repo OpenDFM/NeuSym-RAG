@@ -387,6 +387,7 @@ def encode_database_content(
         vs_schema: VectorstoreSchema,
         db_schema: DatabaseSchema,
         pdf_id: Optional[Union[List[str], str]] = None,
+        target_collections: List[str] = [],
         batch_size: int = 128,
         on_conflict: str = 'ignore',
         verbose: bool = False
@@ -398,11 +399,13 @@ def encode_database_content(
         vs_schema: VectorstoreSchema, the schema of the vectorstore
         db_schema: DatabaseSchema, the schema of the relational database
         pdf_id: Optional[Union[List[str], str]], the PDF id or id list to encode, if None, encode all records in the DB
+        target_collections: List[str], the collections to encode, if empty, encode all collections in the vectorstore
         batch_size: int, the batch size for encoding
         on_conflict: str, if pdf_id is not None, the conflict resolution strategy, chosen from ['ignore', 'replace', 'raise']
         verbose: bool, whether to print the encoding process or not
     """
-    for collection_name in vs_schema.collections:
+    target_collections = vs_schema.collections if not target_collections else target_collections
+    for collection_name in target_collections:
         # get info of each collection
         collection: VectorstoreCollection = vs_schema.get_collection(collection_name)
         modality, et, em = collection.modality, collection.embed_type, collection.embed_model
@@ -459,7 +462,8 @@ def encode_database_content(
                     if modality == 'text': # fill in 'text' field
                         text = str(row[0]).strip()
                         if text in ['', 'None']: continue
-                        record['text'] = text
+                        # do not save the text field for the sake of space, sacrificing time
+                        # record['text'] = text
                         documents.append(text)
                         records.append(record)
                     else: # fill in 'bbox' field

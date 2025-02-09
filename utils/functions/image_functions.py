@@ -98,8 +98,10 @@ def get_image_message(
     ) -> Dict[str, Any]:
     """ Get the image message for LLM calling.
     @args:
-        image_path: str, path to the image file you want to summary.
         template: str, the description/instruction for the image.
+        image_path: str, path to the image file you want to summary (overwrite `base64_image`).
+        base64_image: str, base64 encoded image string. Either `image_path` or `base64_image` must be provided.
+        mine_type: str, the mine type of the image, should be specified if only `base64_image` is provided, default to 'image/jpeg'.
     @return:
         message: dict, a role-content message pair
     """

@@ -38,7 +38,7 @@ class ClassicRAGAgent(AgentBase):
         prev_cost = self.model.get_cost()
         self.env.reset()
 
-        assert collection_name in self.env.get_collection_names(), f'Collection {collection_name} not found in the vectorstore environment.'
+        assert collection_name in self.env.vectorstore_conn.list_collections(), f'Collection {collection_name} not found in the vectorstore environment.'
 
         # 1. Retrieve the result (hard coding)
         filter_conditions = []
@@ -62,8 +62,7 @@ class ClassicRAGAgent(AgentBase):
             column_name=column_name,
             collection_name=collection_name,
             filter=filter_str,
-            limit=limit,
-            output_fields=['text']
+            limit=limit
         )
         observation: Observation = action.execute(self.env)
         logger.info(f'[Stage 1]: Retrieve top {limit} context from {collection_name} with filter {filter_str} ...')

@@ -245,11 +245,27 @@ class DataPopulation():
         return insert_sql
 
 
+    def truncate_extremely_long_text_values(self, values: List[List[Any]], max_length: int = 16000) -> List[List[Any]]:
+        """ Truncate the extremely long text values in the database.
+        @args:
+            values: List[List[Any]], the values to truncate
+            max_length: int, the maximum char length of the text value, default to 16k
+        @return:
+            List[List[Any]], the truncated values
+        """
+        for row in values:
+            for i, val in enumerate(row):
+                if isinstance(val, str) and len(val) > max_length:
+                    row[i] = val[:max_length] + ' ...'
+        return values
+
+
     def insert_values_to_database(self, insert_sql: str, values: List[List[Any]], verbose: bool = False) -> None:
         """ Insert parsed cell values into the database.
         """
         try:
             # see https://duckdb.org/docs/api/python/conversion for type conversion
+            values = self.truncate_extremely_long_text_values(values)
             self.database_conn.executemany(insert_sql, values)
             if verbose: logger.info(f"Successfully executed SQL statement and insert {len(values)} rows: {insert_sql}")
         except Exception as e:
