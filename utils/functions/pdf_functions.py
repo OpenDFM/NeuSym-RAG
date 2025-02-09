@@ -185,6 +185,7 @@ def add_reference_to_json(
     with open(content_list_path, 'r', encoding='utf-8') as f:
         content_data = json.load(f)
     
+    record_reference = 0
     references = []
     for content in content_data:
         if content["type"] == "text" and content.get("text_level", None) == 1:
