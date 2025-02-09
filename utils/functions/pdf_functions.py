@@ -164,6 +164,46 @@ def convert_pdf_to_image(
     image = images[0]
     image.save(output_file, "PNG")
 
+def add_reference_to_json(
+        uuid: str,
+        processed_data_folder: str = 'data/dataset/airqa/processed_data',
+    ) -> Dict[str, Any]:
+    # Load the flawed processed data
+    processed_data_path = os.path.join(processed_data_folder, f'{uuid}.json')
+    if not os.path.exists(processed_data_path):
+        return None
+    with open(processed_data_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    # References already exist, just skip    
+    if data["info_from_mineru"].get("references", []) != []:
+        return data
+
+    content_list_path = os.path.join(processed_data_folder, f'{uuid}', 'auto', f'{uuid}_content_list.json')
+    if not os.path.exists(content_list_path):
+        return data
+    with open(content_list_path, 'r', encoding='utf-8') as f:
+        content_data = json.load(f)
+    
+    references = []
+    for content in content_data:
+        if content["type"] == "text" and content.get("text_level", None) == 1:
+            if "reference" in content["text"].lower():
+                record_reference = 1
+                continue
+            elif record_reference == 1:
+                record_reference = 0
+        if record_reference and content.get("text", None) != None:
+            reference_list = list(str(content["text"]).split("\n"))
+            reference_list = [reference.strip() for reference in reference_list if reference.strip()]
+            if reference_list:
+                references.extend(reference_list)
+
+    data["info_from_mineru"]["references"] = [{"reference_text": reference} for reference in references if reference]
+    with open(processed_data_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+    return data
+
 def parse_pdf(
         pdf_path: str,
         processed_data_folder: str = 'data/dataset/airqa/processed_data',
@@ -498,7 +538,7 @@ def parse_pdf(
             if equation_info["equation_text"]:
                 result["info_from_mineru"]["equations"].append(equation_info)
         if content["type"] == "text" and content.get("text_level", None) == 1:
-            if content["text"].lower().startswith("reference"):
+            if "reference" in content["text"].lower():
                 record_reference = 1
                 continue
             elif record_reference == 1:
