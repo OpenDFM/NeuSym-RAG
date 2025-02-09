@@ -555,6 +555,7 @@ if __name__ == '__main__':
     parser.add_argument('--launch_method', type=str, default='standalone', help='launch method for vectorstore, chosen from ["docker", "standalone"].')
     parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='host + port for milvus started from docker')
     parser.add_argument('--pdf_path', type=str, help='File containing the list of PDF ids to encode (pls. ensure they exist in the relational database)')
+    parser.add_argument('--target_collections', type=str, nargs='*', help='Target collections to encode content into.')
     parser.add_argument('--batch_size', type=int, default=128, help='batch size for pdf content retrieval')
     parser.add_argument('--on_conflict', type=str, default='ignore', choices=['replace', 'ignore', 'raise'], help='how to handle the database content insertion conflict (a.k.a., the PDF has been processed)')
     parser.add_argument('--from_scratch', action='store_true', help='remove the existed vectorstore or not')
@@ -572,7 +573,7 @@ if __name__ == '__main__':
     # pdf ids to encode, by default, all pdfs in the relational database if not specified
     pdf_ids = get_pdf_ids_to_encode(args.vectorstore, args.pdf_path) if args.pdf_path else None
     encode_database_content(
-        vs_conn, db_conn, vs_schema, db_schema, pdf_id=pdf_ids,
+        vs_conn, db_conn, vs_schema, db_schema, pdf_id=pdf_ids, target_collections=args.target_collections,
         batch_size=args.batch_size, on_conflict=args.on_conflict, verbose=False
     )
 
