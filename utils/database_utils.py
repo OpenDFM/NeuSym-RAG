@@ -1,7 +1,6 @@
 #coding=utf8
 import json, sys, os, re, logging
-from datetime import datetime
-import duckdb, tqdm
+import duckdb, tqdm, time
 from typing import List, Dict, Union, Optional, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.database_schema import DatabaseSchema
@@ -200,7 +199,7 @@ if __name__ == '__main__':
 
     count: int = 0
     for input_pdf in tqdm.tqdm(pdf_ids, disable=not sys.stdout.isatty()):
-        start_time = datetime.now()
+        start_time = time.time()
         try:
             populator.populate(
                 input_pdf, config,
@@ -209,7 +208,7 @@ if __name__ == '__main__':
                 verbose=False
             )
             count += 1
-            # logger.info(f"[Statistics]: Parsing time: {datetime.now() - start_time}s")
+            logger.info(f"Finished processing PDF {input_pdf} in {time.time() - start_time}s.")
         except Exception as e:
             logger.error(f"Error in parsing PDF {input_pdf}: {e}")
             continue

@@ -438,6 +438,15 @@ def encode_database_content(
             backup_json = os.path.join(VECTORSTORE_DIR, db_schema.database_name, 'bm25.json') if et == 'bm25' else None
             embedder: BaseEmbeddingFunction = get_milvus_embedding_function(et, em, backup_json=backup_json)
 
+            if modality == 'image' and hasattr(embedder, 'cache_pdf_to_images'):
+                embedder.cache_pdf_to_images(
+                    batch_pdf_ids,
+                    [
+                        get_image_or_pdf_path(db_schema.database_name, pid, -1)
+                        for pid in batch_pdf_ids
+                    ]
+                )
+
             # get the records to encode
             for table_name in db_schema.tables:
                 primary_keys = db_schema.get_primary_keys(table_name)
@@ -506,6 +515,8 @@ def encode_database_content(
                         record['vector'] = vectors[i] if et not in ['splade', 'bm25'] else vectors[i:i+1, :]
                     vs_conn.insert(collection_name=collection_name, data=records)
         
+            if modality == 'image' and hasattr(embedder, 'clear_cache'):
+                embedder.clear_cache()
     return
 
 
