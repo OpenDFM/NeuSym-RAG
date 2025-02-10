@@ -192,7 +192,7 @@ class DataPopulation():
         pdf_uuid_field = config['uuid'].get('field', None)
         assert pdf_uuid_field is not None, f"UUID field not found in the config JSON."
         pdf_id = outputs[func_name_dict[pdf_uuid_function]][pdf_uuid_field]
-        encode_database_content(self.vectorstore_conn, self.database_conn, self.vectorstore_schema, self.database_schema, pdf_id=pdf_id, on_conflict=on_conflict, verbose=verbose)
+        encode_database_content(self.vectorstore_conn, self.database_conn, self.vectorstore_schema, self.database_schema, pdf_ids=[pdf_id], on_conflict=on_conflict, verbose=verbose)
         return
 
 
@@ -304,7 +304,7 @@ if __name__ == '__main__':
         config = json.load(inf)
 
     count: int = 0
-    for input_pdf in tqdm.tqdm(pdf_ids):
+    for input_pdf in tqdm.tqdm(pdf_ids, disable=not sys.stdout.isatty()):
         start_time = datetime.now()
         try:
             populator.populate(

@@ -8,7 +8,6 @@ from tabulate import tabulate
 from contextlib import nullcontext
 from evaluation.evaluator import evaluate_airqa
 from agents.models import get_llm_single_instance
-from utils.functions.common_functions import call_llm
 
 
 def evaluate_dataset(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs) -> float:
@@ -25,9 +24,7 @@ def evaluate_dataset(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **k
         score = evaluate_pdfvqa(pred_ans, gold_data, **kwargs)
     elif dataset == 'tatdqa':
         score = evaluate_tatdqa(pred_ans, gold_data, **kwargs)
-    elif dataset == 'airqa':
-        score = evaluate_airqa(pred_ans, gold_data)
-    elif dataset == 'm3sciqa':
+    elif dataset == ['airqa', 'm3sciqa', 'scidqa', 'spiqa']:
         score = evaluate_airqa(pred_ans, gold_data)
     else:
         raise NotImplementedError(f"Dataset {dataset} not supported.")
@@ -284,7 +281,7 @@ if __name__ == '__main__':
 
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='airqa', choices=['airqa', 'pdfvqa', 'tatdqa'], help='Dataset name')
+    parser.add_argument('--dataset', type=str, default='airqa', choices=['airqa', 'pdfvqa', 'tatdqa', 'm3sciqa', 'scidqa', 'spiqa'], help='Dataset name')
     parser.add_argument('--pred', type=str, required=True, help='Path to predicted answer, .jsonl file')
     parser.add_argument('--gold', type=str, required=True, help='Path to gold answer, .jsonl file')
     args = parser.parse_args()

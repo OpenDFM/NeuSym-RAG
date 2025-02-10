@@ -126,6 +126,12 @@ class DatabaseSchema():
         return pdf_id_field, page_id_field
 
 
+    def get_metadata_table_name(self) -> str:
+        """ Get the metadata table name.
+        """
+        return 'metadata'
+
+
     def get_primary_keys(self, table_name: Union[int, str]) -> List[str]:
         """ Get the primary key list of the given table (name or id).
         """
