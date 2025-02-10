@@ -217,7 +217,7 @@ def add_reference_to_json(
 
     data["info_from_mineru"]["references"] = [{"reference_text": reference} for reference in references if reference]
     output_data_folder = output_data_folder if output_data_folder is not None else processed_data_folder
-    with open(output_data_folder, 'w', encoding='utf-8') as f:
+    with open(os.path.join(output_data_folder, f'{uuid}.json'), 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
     return data
 

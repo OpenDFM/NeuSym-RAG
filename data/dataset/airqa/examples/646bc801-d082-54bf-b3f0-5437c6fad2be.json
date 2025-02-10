@@ -1,0 +1,21 @@
+{
+    "uuid": "646bc801-d082-54bf-b3f0-5437c6fad2be",
+    "question": "On which downstream tasks did the authors experiment with their method, and by how much did it improve compared to the best existing methods?",
+    "answer_format": "Your answer should be a Python dictionary, where the keys represent the downstream tasks on which the authors conducted experiments, and value is the numerical part of a percentage, indicating the improvement compared to the best existing method.. e.g. {\\\"task1\\\": 1.9%, \\\"task2\\\": 3.5%, ...} .",
+    "tags": ["single", "text", "objective"],
+    "anchor_pdf": ["d7638fd4-69e4-5959-b0f5-84a4d53b1e3a"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": ["First, find the authors’ description of their contributions.",
+                        "Then, identify the downstream tasks they experimented on and the improvement of their proposed method compared to the best existing methods."],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {"gold": {"question answering": 10.6, "autofill forms": 9.5, "user services": 9.7},
+                        "lowercase": true,
+                        "ignore_order": true}
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

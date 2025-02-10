@@ -1,0 +1,31 @@
+{
+    "uuid": "e6fcc866-61ca-5cba-985b-e64ceefdf84c",
+    "question": "What are the 3 primary algorithmic strategies evaluated in the LLMC toolkit for quantizing large language models, and how do they differ in approach?",
+    "answer_format": "Your answer should be a string",
+    "tags": [
+        "multiple",
+        "objective",
+        "text"
+    ],
+    "anchor_pdf": ["9185e20f-3b22-57bf-8611-cc902a76ebf9"],
+    "reference_pdf": ["0b2c6ed9-5f67-57a6-97a8-492d2561011b"],
+    "conference": [],
+    "reasoning_steps": [
+        "In the anchor pdf, find the section that discusses the 3 primary algorithmic strategies evaluated in the LLMC toolkit for quantizing large language models.",
+        "Identify the 3 primary algorithmic strategies evaluated in the LLMC toolkit for quantizing large language models.",
+        "In the reference pdf, locate the section that discusses the 3 primary algorithmic strategies evaluated in the LLMC toolkit for quantizing large language models.",
+        "Identify the 3 primary algorithmic strategies evaluated in the LLMC toolkit for quantizing large language models."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "question": "What are the 3 primary algorithmic strategies evaluated in the LLMC toolkit for quantizing large language models, and how do they differ in approach?",
+            "reference_answer": "1. Transformation, which modifies the distribution of weights and activations to reduce outliers using techniques like scaling-based transformations (e.g., AWQ, SmoothQuant) and rotation-based methods (e.g., QuaRot); 2. Clipping, which limits extreme weight values through symmetric or asymmetric methods to manage outliers that impact quantization; 3. Reconstruction, which minimizes quantization error by iteratively adjusting unquantized weights, as exemplified by GPTQ, to closely replicate original model outputs."
+        }
+    },
+
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

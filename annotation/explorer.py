@@ -191,9 +191,12 @@ class SingleExplorer(BaseExplorer):
         env = gym.Env()
         env.dataset = "airqa" # fake an environment
         obs: Observation = action.execute(env)
-        base64_image: str = obs.obs_content
         
-        image_template = get_image_message(base64_image, IMAGE_PROMPT[self.exp_type])
+        image_template = get_image_message(
+            IMAGE_PROMPT[self.exp_type],
+            base64_image=obs.obs_content,
+            mine_type=obs.mine_type
+        )
         return self._explore_with_llm(template, image=image_template), tags
     
     # The question posed using formula is not satisfying, due to the wrong index.
@@ -336,8 +339,13 @@ class MultipleExplorer(BaseExplorer):
         for i in range(len(image_data)):
             action = ViewImage(paper_id=self.pid[i], page_number=image_data[i]["page_number"], bounding_box=transfer_bbox(image_data[i]["figure_bbox"]))
             obs: Observation = action.execute(env)
-            base64_image: str = obs.obs_content
-            image_template.append(get_image_message(base64_image, IMAGE_PROMPT[self.exp_type].format(index=i+1)))
+            image_template.append(
+                get_image_message(
+                    IMAGE_PROMPT[self.exp_type].format(index=i+1),
+                    base64_image=obs.obs_content,
+                    mine_type=obs.mine_type
+                )
+            )
         
         return self._explore_with_llm(template, image=image_template), tags
 
