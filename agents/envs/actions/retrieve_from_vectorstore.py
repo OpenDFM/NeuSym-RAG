@@ -176,7 +176,7 @@ class RetrieveFromVectorstore(Action):
                     break
                 row_text = "\n".join([f"{col}: {row[col]}" for col in row.index])
                 if modality == 'text':
-                    text_content = self._extract_text_content(row['primary_key'], env)
+                    text_content = self._extract_text_content(row['entity'].get('primary_key', ''), env)
                     row_text += f'\ntext: {text_content}'
                 row_tokens = len(llmencoder.encode(row_text))
 
