@@ -199,7 +199,7 @@ if __name__ == '__main__':
         config = json.load(inf)
 
     count: int = 0
-    for input_pdf in tqdm.tqdm(pdf_ids):
+    for input_pdf in tqdm.tqdm(pdf_ids, disable=not sys.stdout.isatty()):
         start_time = datetime.now()
         try:
             populator.populate(

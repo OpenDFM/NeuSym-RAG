@@ -68,7 +68,7 @@ def serial_process_batch(
         input_group: List[Dict[str, Any]],
     ):
     output_group = {}
-    for batch in tqdm(input_group):
+    for batch in tqdm(input_group, disable=not sys.stdout.isatty()):
         try:
             output_group[batch["custom_id"]] = call_llm_with_message(
                 batch["body"]["messages"], 
