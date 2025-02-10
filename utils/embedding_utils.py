@@ -1,5 +1,5 @@
 #coding=utf8
-import os, tempfile
+import os, tempfile, time
 import numpy as np
 from typing import List, Dict, Union, Any
 from towhee import DataCollection, ops, pipe
@@ -68,28 +68,30 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
 
     def cache_pdf_to_images(self, pdf_ids: List[str], pdf_paths: List[str]) -> List[str]:
         """ Cache PDF files to images."""
+        # start_time = time.time()
         for pdf_id, pdf_path in zip(pdf_ids, pdf_paths):
             if pdf_path.endswith('.pdf') and pdf_path not in self.pdf_to_images:
                 with open(pdf_path, 'rb') as fin:
                     pdf_reader = PdfReader(fin)
-                    mediabox = pdf_reader.pages[i].mediabox
-                    w, h = mediabox.width, mediabox.height
+                    width_height = [(p.mediabox.width, p.mediabox.height) for p in pdf_reader.pages]
                 with tempfile.TemporaryDirectory() as temp_dir:
                     images = convert_from_path(pdf_path, output_folder=temp_dir)
                     for i, image in enumerate(images):
-                        image_path = os.path.join(TEMP_PDF_TO_IMAGE_DIR, f"{pdf_id}_{i}.png")
                         image = image.convert('RGB')
-                        width_ratio, height_ratio = image.width / w, image.height / h
-                        image.save(image_path, 'PNG')
-                        self.pdf_to_images[pdf_path].append((image_path, width_ratio, height_ratio))
+                        width_ratio, height_ratio = image.width / width_height[i][0], image.height / width_height[i][1]
+                        self.pdf_to_images[pdf_path].append((image, width_ratio, height_ratio))
+                        # image_path = os.path.join(TEMP_PDF_TO_IMAGE_DIR, f"{pdf_id}_page_{i}.png")
+                        # image.save(image_path, 'PNG')
+                        # self.pdf_to_images[pdf_path].append((image_path, width_ratio, height_ratio))
+        # print(f'Caching {len(pdf_ids)} PDF images costs {time.time() - start_time}s')
         return self.pdf_to_images
 
 
     def clear_cache(self):
         # safer way
-        for pdf_path in self.pdf_to_images:
-            for filepath, _, _ in self.pdf_to_images[pdf_path]:
-                if os.path.exists(filepath): os.remove(filepath)
+        # for pdf_path in self.pdf_to_images:
+            # for filepath, _, _ in self.pdf_to_images[pdf_path]:
+                # if os.path.exists(filepath): os.remove(filepath)
         self.pdf_to_images = defaultdict(list)
         return
 
@@ -110,11 +112,15 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
                 image_path = image_obj["path"]
                 if image_path.endswith('.pdf'): # PDF path, must specify the page number
                     page_number = int(image_obj["page"])
-                    image_path, width_ratio, height_ratio = self.pdf_to_images[image_path][page_number - 1]
+                    image, width_ratio, height_ratio = self.pdf_to_images[image_path][page_number - 1]
+                    # image_path, width_ratio, height_ratio = self.pdf_to_images[image_path][page_number - 1]
                 else:
                     width_ratio = height_ratio = 1
+                    with Image.open(image_path, 'r') as image:
+                        image = image.convert('RGB')
 
-                with Image.open(image_path, 'r') as image:
+                # with Image.open(image_path, 'r') as image:
+                if True:
                     if len(image_obj.get("bbox", [])) == 4:
                         bbox = list(image_obj["bbox"])
                         bbox[2] = (bbox[0] + bbox[2]) * width_ratio
