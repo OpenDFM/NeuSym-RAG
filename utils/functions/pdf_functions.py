@@ -167,6 +167,7 @@ def convert_pdf_to_image(
 def add_reference_to_json(
         uuid: str,
         processed_data_folder: str = 'data/dataset/airqa/processed_data',
+        output_data_folder: Optional[str] = None
     ) -> Dict[str, Any]:
     # Load the flawed processed data
     processed_data_path = os.path.join(processed_data_folder, f'{uuid}.json')
@@ -200,8 +201,23 @@ def add_reference_to_json(
             if reference_list:
                 references.extend(reference_list)
 
+    if references == []:
+        record_reference = 0
+        for content in content_data:
+            if content["type"] == "text" and content.get("text_level", None) == 1 and record_reference == 1:
+                record_reference = 0
+            if content["type"] == "text" and content.get("text", None) != None:
+                line_list = list(str(content["text"]).split("\n"))
+                line_list = [line.strip() for line in line_list if line.strip()]
+                for line in line_list:
+                    if "reference" in line[:min(30, len(line))].lower():
+                        record_reference = 1
+                    if record_reference:
+                        references.append(line)
+
     data["info_from_mineru"]["references"] = [{"reference_text": reference} for reference in references if reference]
-    with open(processed_data_path, 'w', encoding='utf-8') as f:
+    output_data_folder = output_data_folder if output_data_folder is not None else processed_data_folder
+    with open(output_data_folder, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
     return data
 
@@ -549,6 +565,19 @@ def parse_pdf(
             reference_list = [reference.strip() for reference in reference_list if reference.strip()]
             if reference_list:
                 references.extend(reference_list)
+        if references == []:
+            record_reference = 0
+            for content in content_data:
+                if content["type"] == "text" and content.get("text_level", None) == 1 and record_reference == 1:
+                    record_reference = 0
+                if content["type"] == "text" and content.get("text", None) != None:
+                    line_list = list(str(content["text"]).split("\n"))
+                    line_list = [line.strip() for line in line_list if line.strip()]
+                    for line in line_list:
+                        if "reference" in line[:min(30, len(line))].lower():
+                            record_reference = 1
+                        if record_reference:
+                            references.append(line)
 
     # TODO: Need to improve the reference extraction logic, roughly 1/3 of the references are not extracted at all
     result["info_from_mineru"]["references"] = [{"reference_text": reference} for reference in references if reference]
