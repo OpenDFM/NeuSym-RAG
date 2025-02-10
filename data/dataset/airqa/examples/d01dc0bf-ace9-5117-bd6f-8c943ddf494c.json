@@ -1,0 +1,40 @@
+{
+    "uuid": "d01dc0bf-ace9-5117-bd6f-8c943ddf494c",
+    "question": "Among the several bias presented in the paper named \"Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena\", which one is considered and discussed in the paper named\"Humans or LLMs as the Judge? A Study on Judgement Bias\"? After the discussion, is this bias the main influencial factor in the paper(I mean the latter)?",
+    "answer_format": "Your answer should be a single list, the first string is the bias name, the second string is bool, e.g., [\"Verbosity bias\", false]",
+    "tags": [
+        "text",
+        "multiple",
+        "objective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the section about the bias in the paper named \"Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena\".",
+        "Second, find the bias considered and discussed in the paper named\"Humans or LLMs as the Judge? A Study on Judgement Bias\".",
+        "Finally, determine whether this bias is the main influencial factor in the paper named\"Humans or LLMs as the Judge? A Study on Judgement Bias\"."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_bool_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "Self-enhancement bias",
+                    "lowercase": true
+                },
+                {
+                    "gold": false                
+                }
+            ]
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": ["bdd90971-ecf1-5dcc-87cf-3b4a75ad4b01","3c73cc66-fb71-5c29-95c7-b2c887290e79"],
+    "reference_pdf": []
+}

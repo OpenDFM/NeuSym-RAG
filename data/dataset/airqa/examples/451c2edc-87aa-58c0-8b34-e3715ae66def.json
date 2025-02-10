@@ -1,0 +1,42 @@
+{
+    "uuid": "451c2edc-87aa-58c0-8b34-e3715ae66def",
+    "question": "For the evaluation on the FLORES+ Karakalpak devtest set, which model has the best sacreBLEU score on the language pair en-kaa? What's its difference with other similar models?",
+    "answer_format": "Your answer should be a single python list of two strings, the first string is the model name, the second string is about its feature.",
+    "tags": [
+        "table",
+        "text",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the table about the evaluation on the FLORES+ Karakalpak devtest set.",
+        "Second, find the model with the best sacreBLEU score on the language pair en-kaa.",
+        "Finally, find the difference between this model and other similar models in relevent section."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "dilmash-TIL",
+                    "lowercase": true
+                },
+                {
+                    "reference_answer":"This variant was trained on the same dataset and tokenizer configuration as the dilmash, but supplemented with a strategically sampled subset(additional multilingual data) from the TIL corpus." ,
+                    "question": "What's the difference between dilmash-TIL and other similar models?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": ["b279a477-a963-593d-958b-4b6ac285eb30"],
+    "reference_pdf": []
+}

@@ -1,0 +1,29 @@
+{
+    "uuid": "0f124236-4caf-52c1-ba48-da8daa67547a",
+    "question": "For the task of violence detection, the comments are classified into some distinct categories:Direct Violence, Passive Violence, NonViolence and so on. In the most relevant paper, how is Passive Violence defined?",
+    "answer_format": "Your answer should be a single python string.",
+    "tags": [
+        "text",
+        "multiple",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the section about task in the anchor paper.",
+        "Second, find task 1 and its source paper.",
+        "Finally, turn to the source paper to find the definition of Passive Violence."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "In this category, instances of violence are represented by the use of derogatory language, abusive remarks, or slang targeting individuals or communities. Additionally, any form of justification for violence is also classified under this category.",
+            "question": "For the task of violence detection, the comments are classified into some distinct categories:Direct Violence, Passive Violence, NonViolence and so on. In the most relevant paper, how is Passive Violence defined?"
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [],
+    "reference_pdf": ["deaa4c76-bf2a-5f57-a185-f177ff3327c8"]
+}
