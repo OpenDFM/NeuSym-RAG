@@ -6,7 +6,8 @@
         "single",
         "objective",
         "image",
-        "text"
+        "text",
+        "table"
     ],
     "anchor_pdf": [
         "8689853d-6fd5-5394-86e4-f836490e237c"
@@ -15,8 +16,8 @@
     "conference": [],
     "reasoning_steps": [
         "Identify the category of the puzzle in figure 1.",
-        "Find the section discussing which methods could solve which kind of puzzles.",
-        "Locate the methods mentioned that could be used to help solve the puzzle in figure 1."
+        "Find the table discussing which methods could solve which kind of puzzles.",
+        "Locate the methods in the table that could be used to help solve the puzzle in figure 1."
     ],
     "evaluator": {
         "eval_func": "eval_structured_object_exact_match",
@@ -31,7 +32,9 @@
                 "Fine-Tuning"
             ],
             "ignore_order": true,
-            "lowercase": true
+            "lowercase": true,
+            "threshold": 80,
+            "fuzz_method": "token_sort_ratio"
         }
     },
     "state": {
