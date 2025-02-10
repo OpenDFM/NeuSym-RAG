@@ -1,0 +1,37 @@
+{
+    "uuid": "c8457d49-b7c2-5ed3-880e-be91d064d1d8",
+    "question": "What baselines are used in this paper? Note that a baseline is counted only once, even if different variants are provided based on it.",
+    "answer_format": "Your answer should be a python list of strings, every element of the list is the name of a baseline directly mentionned in this paper.",
+    "tags": [
+        "objective",
+        "single",
+        "text"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, locate the section(s) or page(s) about the baselines.",
+        "Then identify the baselines used in this paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "NP-SpanBERT",
+                "QA-SRL Parser",
+                "TNE-Parser",
+                "Mistral"
+            ],
+            "lowercase": true,
+            "ignore_order": true,
+            "ignore_blank": true
+        }
+    },
+    "state": {
+        "gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "7eb41d67-59e3-542a-8f03-93ab8f53216a"
+    ],
+    "reference_pdf": []
+}

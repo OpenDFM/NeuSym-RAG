@@ -1,0 +1,38 @@
+{
+    "uuid": "7369f690-c9b9-52d7-8698-3b38d8c2baf1",
+    "question": "For dataset MultiDialog, what's the number of dialogues,the number of turns, total length in hours, number of speakers, and the name of source dataset of dialogue scripts?Please adopt the statistics the most accurate you can find in the paper.",
+    "answer_format": "Your answer should be a python list,of which the elements are in the following order: number of dialogues(int), number of turns(int), total length in hours(float), number of speakers(int), and the name of source dataset of dialogue scripts(str), every element of the list is an int or float or string representing the relevant dataset information.",
+    "tags": [
+        "objective",
+        "single",
+        "text"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the sections or tables in the specified PDF relevant to the basic information of MultiDialog.",
+        "Extract the exact number of dialogues, turns, total length in hours, number of speakers, and source dataset name.",
+        "Summarize the extracted information in the specified order."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                8733,
+                187859,
+                339.71,
+                12,
+                "TopicalChat"
+            ],
+            "ignore_order": false,
+            "threshold": 95
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "4beb073a-74b4-563a-82a7-da7513acaff0"
+    ],
+    "reference_pdf": []
+}

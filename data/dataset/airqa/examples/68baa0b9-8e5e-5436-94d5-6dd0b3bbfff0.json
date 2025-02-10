@@ -1,0 +1,39 @@
+{
+    "uuid": "68baa0b9-8e5e-5436-94d5-6dd0b3bbfff0",
+    "question": "On which datasets this study surpassed the SOTA?",
+    "answer_format": "Your answer should be a Python list of dataset, e.g., [\"dataset1\", \"dataset2\", ...]. YOU MUST USE THE EXACT TEXT FROM THE PAPER.",
+    "tags": [
+        "objective",
+        "single",
+        "table"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, find all sections in the paper that mentions SOTA.",
+        "Identify the part that compare the performance with SOTA.",
+        "Finally, list all the datasets that surpasse SOTA."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "DailyDialog",
+                "CMU_DoG",
+                "LIGHT",
+                "EmpathicDialogue",
+                "Wizard of Wikipedia",
+                "CommonsenseDialog"
+            ],
+            "ignore_order": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "3107f6a8-1939-5af0-b3d8-06d7aa66158d"
+    ],
+    "reference_pdf": []
+}

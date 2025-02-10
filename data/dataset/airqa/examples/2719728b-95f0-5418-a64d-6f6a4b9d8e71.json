@@ -1,0 +1,43 @@
+{
+    "uuid": "2719728b-95f0-5418-a64d-6f6a4b9d8e71",
+    "question": "In the two phase pre-training of this paper, what is the phase after the regular pretraining? And for this phase how to obtain sparse contextualized representation?",
+    "answer_format": "Your answer should be a list of two strings, the first element is the name(two words) of the phase, and the second element is the formula in latex format providing useful signal during the second phase of pre-training.",
+    "tags": [
+        "text",
+        "formula",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the relevant section to find the two phases of the pre-training.",
+        "Second, find the formula in latex format providing useful signal during the second phase of pre-training."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_complex_math_formula_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": ["Knowledge distillation"],
+                    "lowercase": true
+                },
+                {
+                    "formulas": "\\min _{\boldsymbol{\\alpha} \\in \\mathbb{R}_{\\geq 0}^{k}} \frac{1}{2}\\left\\|\boldsymbol{h}^{(l)}-\boldsymbol{D} \boldsymbol{\\alpha}\right\\|_{2}^{2}+\\lambda\\|\boldsymbol{\\alpha}\\|_{1}",
+                    "question": "For this phase, how to obtain sparse contextualized representation?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "be9dbf2b-6279-53cb-a9df-cd5d983b7192"
+    ],
+    "reference_pdf": []
+}

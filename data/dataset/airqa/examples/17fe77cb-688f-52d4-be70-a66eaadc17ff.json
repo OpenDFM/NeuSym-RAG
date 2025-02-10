@@ -1,0 +1,31 @@
+{
+    "uuid": "17fe77cb-688f-52d4-be70-a66eaadc17ff",
+    "question": "What are the main works at the table-level when performing data augmentation on the MMTab dataset in this paper?",
+    "answer_format": "Your answer should be a Python strings about the main works at the table-level when performing data augmentation on the MMTab dataset.",
+    "tags": [
+        "single",
+        "subjective",
+        "text"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the corresponding sections about the data augmentation on the MMTab dataset.",
+        "Retrieve for the texts discussing the main works of data augmentation at the table-level.",
+        "If there is no clear expression, try to summarize it from the main text."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The main work is to separately design scripts to render table images with three different styles: Web-page (70.8%), Excel (19.4%) and Markdown (9.8%). Fine-grained adjustments such as font type and cell colors are also considered",
+            "question": "What are the main works at the table-level when performing data augmentation on the MMTab dataset in this paper?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "a7f69ed5-2c8a-5892-bf66-c2599380f805"
+    ],
+    "reference_pdf": []
+}

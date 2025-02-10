@@ -1,0 +1,36 @@
+{
+    "uuid": "e8c52858-a386-5e87-a9ba-3a7ec32ae1e2",
+    "question": "What are the catogories of label biases in in-context learning for text classification and what are the definitions of these categories?",
+    "answer_format": "Your answer should be a Python list of text strings, with each element being one category that this paper defines, e.g., [\"category 1: define 1\", \"category 2: define 2\", ...].",
+    "tags": [
+        "single",
+        "subjective",
+        "text"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Usually, the definitions of main concepts are mentioned in the introduction section. Search the correpsonding paragraphs.",
+        "If the categories are organized as evident bullet points, directly use them as the answer.",
+        "Otherwise, try to summarize the definition of each category from the main text."
+    ],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "vanilla label bias: The model's non-contextualized preference for the label names (e.g., the common token bias caused by different frequencies of label names in the pretraining corpus).",
+                "context-label bias: The effects of the context prompt (e.g., LLMs tend to prefer the majority and last label of the in-context examples).",
+                "domain-label bias: The effects of the task corpus on the model's predictions."
+            ],
+            "question": "What are the catogories of label biases in in-context learning for text classification and what are the definitions of these categories?",
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "15f6962b-d927-5d71-b01e-f0664e09eeb5"
+    ],
+    "reference_pdf": []
+}

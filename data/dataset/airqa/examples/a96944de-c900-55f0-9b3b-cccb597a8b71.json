@@ -1,0 +1,29 @@
+{
+    "uuid": "a96944de-c900-55f0-9b3b-cccb597a8b71",
+    "question": "Which category of website takes up the most proportion in the dataset MC2?",
+    "answer_format": "Your answer should be a phrase indicating the category DIRECTLY FROM THE PDF WITHOUT ANY MODIFICATION OR EXPLANATION.",
+    "tags": [
+        "image",
+        "objective",
+        "single"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, locate the figure that shows the distribution of the dataset MC2.",
+        "Finally, answer the question."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "News"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "16142be2-ac28-58e5-9271-8af299b18d91"
+    ],
+    "reference_pdf": []
+}

@@ -1,0 +1,46 @@
+{
+    "uuid": "536d890f-e245-5bc4-9265-820664e843d6",
+    "question": "According to Figure 4, when generating Token 11, which tokens will the cache preserve, and what positions will be assigned to them?",
+    "answer_format": "Your answer should be a Python list containing two sublists. The first sublist should list the tokens that the cache preserves. The second sublist should contain the positions assigned to each corresponding token. Example format: [[0, 1, 2], [0, 1, 2]].",
+    "tags": [
+        "single",
+        "image",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "2d831b51-a802-51f4-9b55-39ab8c0ade5a"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the corresponding section mentioned in Figure 4.",
+        "Examine Figure 4 for the examples provided, and determine which tokens the cache will preserve during the generation of Token 11.",
+        "Find the section explaining how to determine the positions of the tokens in the cache.",
+        "Identify and record the positions assigned to each of the preserved tokens."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_structured_object_exact_match",
+                "eval_structured_object_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": [0, 1, 2, 3, 8, 9, 10],
+                    "ignore_order": true
+                },
+                {
+                    "gold": [0, 1, 2, 3, 4, 5, 6, 7],
+                    "ignore_order": true
+                }
+            ]
+
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

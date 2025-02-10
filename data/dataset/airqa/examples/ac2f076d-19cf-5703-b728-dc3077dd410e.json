@@ -1,0 +1,35 @@
+{
+    "uuid": "ac2f076d-19cf-5703-b728-dc3077dd410e",
+    "question": "The experiment section of the anchor PDF introduces a new metric, S^2MATCH, what is the main difference between it and the metric used in Appendix D? Answer with one formula.",
+    "answer_format": "You only need to provide one definition formula of S2MATCH in Python strings. You don't need to explain the formula or variables.",
+    "tags": [
+        "multiple",
+        "subjective",
+        "formula",
+        "text"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the name of the metric used in Appendix D in the anchor PDF.",
+        "Locate the experiment section to find information about the new metric S^2MATCH.",
+        "Locate the reference paper introducing S^2MATCH.",
+        "Find the main different formula between S^2MATCH and the metric used in Appendix D."
+    ],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": "softMATCH = 1 - d(\\mathbf{x} ,\\mathbf{y} )",
+            "question": "The experiment section of the anchor PDF introduces a new metric, S^2MATCH, what is the main difference between it and the metric used in Appendix D? Answer with one formula."
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "aad25ce3-2d26-5a48-9653-a41e0a749e55"
+    ],
+    "reference_pdf": [
+        "8a4a1a61-43e9-5e08-a31f-4b7c71754ae4"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "uuid": "235fcdd4-ea08-51ed-8a01-c9637eecfcab",
+    "question": "Which three VQA benchmarks does the paper use for evaluation? Among the training datasets, which has the largest number of images?",
+    "answer_format": "Your answer should be a list of four strings, the last element is the string of the name of the largest training dataset.",
+    "tags": [
+        "text",
+        "table",
+        "single",
+        "objective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, find the VQA benchmarks used for evaluation in the relevant section.",
+        "Second, find the section or table that lists the training datasets used in the paper.",
+        "Finally, identify the training dataset with the largest number of images."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": ["InfographicVQA","ChartQA","DocVQA", "WKVVQA"],
+            "ignore_order": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "2c222763-f33b-5cfa-8897-5d217aaf9142"
+    ],
+    "reference_pdf": []
+}

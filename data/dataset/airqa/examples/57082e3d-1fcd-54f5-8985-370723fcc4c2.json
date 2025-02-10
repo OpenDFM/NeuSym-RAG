@@ -1,0 +1,31 @@
+{
+    "uuid": "57082e3d-1fcd-54f5-8985-370723fcc4c2",
+    "question": "Which domain in the GRBench dataset has the most number of questions?",
+    "answer_format": "Your answer should be a single string representing the domain name.",
+    "tags": [
+        "objective",
+        "single",
+        "table"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the statistics table for the GRBench dataset.",
+        "Record or calculate the total number of questions in each domain.",
+        "Identify the domain with the highest number of questions."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "academic",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "fb154467-1ce1-5c1f-9d4f-b4f5c76312ee"
+    ],
+    "reference_pdf": []
+}

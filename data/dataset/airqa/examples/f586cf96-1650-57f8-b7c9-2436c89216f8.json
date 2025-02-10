@@ -1,0 +1,35 @@
+{
+    "uuid": "f586cf96-1650-57f8-b7c9-2436c89216f8",
+    "question": "When we utilize decoder-only language models in understanding word meaning, does prompting styles affect performance? If so, which technique outperforms the others? If not, what is the worst one?",
+    "answer_format": "Your answer should be a Python list of two elements, the first element is \"yes\" or \"no\", and the second element is the prompting style name string, don\"t reply abbreviations, e.g., [\"yes\", \"prompting_style_name\"].",
+    "tags": [
+        "image",
+        "objective",
+        "single",
+        "text"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Usually, the performance results are mentioned in the experiment or alation section, especially in the form of tables or figures. Search the correpsonding parts.",
+        "Find the figures or tables describing the performances of different prompting styles in understanding word meaning.",
+        "Finally, get the name of prompting styles based on comparison results."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "no",
+                "Sentence completion"
+            ],
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "ef699d3b-ffef-5b18-8527-826110f880fd"
+    ],
+    "reference_pdf": []
+}

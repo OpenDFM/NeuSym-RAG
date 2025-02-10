@@ -1,0 +1,29 @@
+{
+    "uuid": "ff40fb8f-a1d9-5598-91b2-2af15bbad92e",
+    "question": "Among the specific models tested, whose performance is closest to RePe on MixATIS++?",
+    "answer_format": "Your answer should be the name of model DIRECTLY FROM THE PDF WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "objective",
+        "single",
+        "table"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, locate the table that compares the performance of models.",
+        "Finally, identify the model whose performance is closest to RePe on MixATIS++."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "FC-MTLF"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "95e1644a-230b-5b28-a025-31992e32e3f0"
+    ],
+    "reference_pdf": []
+}

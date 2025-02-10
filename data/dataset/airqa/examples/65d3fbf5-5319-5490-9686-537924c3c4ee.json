@@ -1,0 +1,31 @@
+{
+    "uuid": "65d3fbf5-5319-5490-9686-537924c3c4ee",
+    "question": "I want to replicate the experiment in this paper. Please list all the datasets and baselines that I should prepare.",
+    "answer_format": "Your answer should be plain text",
+    "tags": [
+        "single",
+        "subjective",
+        "text"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, locate the experiment section.",
+        "Identify the datasets and baselines used in the experiment.",
+        "Finally, answer with the list of datasets and baselines."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "1. For datasets, this paper select five challenging logical reasoning benchmarks: (1)LogiQA (2)ProofWriter (3)FOLIO (4)PrOntoQA (5)LogicalDeduction(LD). 2. For baselines, (1)Standard prompting (2)Chain-of-Thought(CoT) (3)Chain-of-Thought with Self-Consistency(CoT-SC) (4)Selection-Inference(SI) (5)LAMBADA (6)Tree-of-Thought(ToT) (7)Cumulative Reasoning(CR).",
+            "question": "I want to replicate the experiment in this paper. Please list all the datasets and baselines that I should prepare."
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "4f88e7de-b217-5d6b-a315-a872e927bdfe"
+    ],
+    "reference_pdf": []
+}

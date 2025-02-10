@@ -1,0 +1,37 @@
+{
+    "uuid": "a927fcee-f0a7-50cd-b5a7-ca8ab5c8eb23",
+    "question": "What are the institutions of the first author and corresponding author of this paper?",
+    "answer_format": "Your answer should be a Python list of length 2 containing the institution names respectively, e.g., [\"first_author_institute\", \"corresponding_author_institute\"]. If there are multiple first authors or corresponding authors, please replace the corresponding institution name with a name list, e.g., [[\"first_author1_institute\", \"first_author2_institute\", ...], [\"corresponding_author1_institute\", \"corresponding_author2_institute\", ...]].",
+    "tags": [
+        "single",
+        "metadata",
+        "objective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "The authors and their institutions are usually listed in the first page.",
+        "And the co-first author or corresponding author information is usually marked with a symbol in the author region, and explained below in the footnote.",
+        "After selecting the relevant authors, you can extract their institution information from the first page, usually nearby the author list or in the footnote."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Beihang University",
+                [
+                    "The University of Sydney",
+                    "The Hong Kong Polytechnic University"
+                ]
+            ],
+            "ignore_order": false
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "3d2fcb43-2cda-5645-99aa-da78c6cfd23f"
+    ],
+    "reference_pdf": []
+}
