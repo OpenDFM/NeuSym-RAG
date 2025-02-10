@@ -1,0 +1,20 @@
+{
+    "uuid": "f61c9dbc-5058-5621-8aeb-bd83c90b296e",
+    "question": "How to find those question samples that the model considers to be ambiguous.",
+    "answer_format": "Your answer should be a single string",
+    "tags": ["single", "text", "subjective"],
+    "anchor_pdf": ["e6778360-e589-5ca8-84d1-2e19dd5d4172"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": ["First, locate the section in the paper that describes the model’s perception of ambiguity.",
+                        "Second, read it, and summarize the formulas and ideas presented by the author."],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {"reference_answer": "First, let the model generate an initial answer based on the question, then prompt the model to eliminate ambiguity and generate a second answer. If the model's average entropy of the two answers exceeds a threshold, it indicates that this question is ambiguous.",
+                        "question": "How to find those samples that the model considers to be ambiguous."}
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
