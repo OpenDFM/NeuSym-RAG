@@ -1,0 +1,30 @@
+{
+    "uuid": "6b2a09ee-5f74-57c7-a863-ebd390f89150",
+    "question": "In figure 3, there are three types of losses. What is the function for the first loss?",
+    "answer_format": "Your answer should be a formula in latex format extracted from the paper.",
+    "tags": [
+        "image",
+        "formula",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate figure 3 to identify the three types of losses.",
+        "Second, find the function for the first loss from the formula table.",
+        "Finally, write down the formula for the first loss."
+    ],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": "\\mathcal{L}_{\text {topk }}=\\sum_{i} \\sum_{j \\in N N_{k}(i)} \\sum_{m} \\mid \\operatorname{Sim}\\left(c e_{i}, c e_{j}\right)- \\operatorname{Sim}\\left(f\\left(c e_{i}\right)[: m], f\\left(c e_{j}\right)[: m]\right) \\mid",
+            "question": "In figure 3, there are three types of losses. What is the function for the first loss?"
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": ["bc299fb6-0440-5a26-a0dc-f63956b28e52"],
+    "reference_pdf": []
+}

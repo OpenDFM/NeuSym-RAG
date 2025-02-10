@@ -1,0 +1,29 @@
+{
+    "uuid": "366510d9-f1e1-51a7-987d-cb6e47c79812",
+    "question": "For the biggest dataset used in the anchor paper, what's its rhetorical role labels?",
+    "answer_format": "Your answer should be a single string about the labels.",
+    "tags": [
+        "text",
+        "multiple",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the section about dataset in the anchor paper.",
+        "Second, find the biggest dataset used in the anchor paper.",
+        "Finally, turn to relevant paper to find the rhetorical role labels of this dataset."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "12 Rhetorical Roles and 1 NONE: Preamble (PREAMBLE), Facts (FAC), Ruling by Lower Court (RLC), Issues (ISSUE), Argument by Petitioner(ARG PETITIONER), Argument by Respondent(ARG RESPONDENT), Analysis (ANALYSIS), Statute (STA), Precedent Relied (PRE RELIED), Precedent Not Relied (PRE NOT RELIED), Ratio of the decision (Ratio), Ruling by Present Court (RPC), NONE",
+            "question": "For the biggest dataset used in the anchor paper, what's its rhetorical role labels?"
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": ["ba1e34f8-995f-594a-a34f-531da14171b7"],
+    "reference_pdf": ["8bdcdbeb-dfb4-59a8-8438-0b7ce459d58c"]
+}
