@@ -1,11 +1,12 @@
 #coding=utf8
 import argparse, tqdm, os, sys, json, logging
 import duckdb
+from typing import List, Dict, Any
 from pymilvus import MilvusClient
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.database_utils import get_database_connection
 from utils.database_schema import DatabaseSchema
-from utils.vectorstore_utils import get_vectorstore_connection
+from utils.vectorstore_utils import get_vectorstore_connection, get_pdf_ids_to_encode
 
 
 logger = logging.getLogger(__name__)
@@ -25,12 +26,15 @@ def check_db_and_vs_consistency(
         db_conn: duckdb.DuckDBPyConnection,
         vs_conn: MilvusClient,
         db_schema: DatabaseSchema,
+        pdf_ids: List[str] = [],
         detailed: bool = False
     ) -> None:
-    metatable = db_schema.get_metadata_table_name()
-    pdf_field, _ = db_schema.get_pdf_and_page_fields(metatable)
-    pdf_ids = db_conn.execute(f"SELECT DISTINCT {pdf_field} FROM {metatable}").fetchall()
-    pdf_ids = [str(pdf_id[0]) for pdf_id in pdf_ids]
+    if not pdf_ids:
+        metatable = db_schema.get_metadata_table_name()
+        pdf_field, _ = db_schema.get_pdf_and_page_fields(metatable)
+        pdf_ids = db_conn.execute(f"SELECT DISTINCT {pdf_field} FROM {metatable}").fetchall()
+        pdf_ids = [str(pdf_id[0]) for pdf_id in pdf_ids]
+    if type(pdf_ids) != list: pdf_ids = [pdf_ids]
     vs_collections = vs_conn.list_collections()
     text_collections = list(filter(lambda x: x.startswith('text'), vs_collections))
     image_collections = list(filter(lambda x: x.startswith('image'), vs_collections))
@@ -74,6 +78,7 @@ if __name__ == '__main__':
     parser.add_argument('--database', type=str, required=True, help='which database to use')
     parser.add_argument('--launch_method', type=str, default='standalone', help='how to launch the vectorstore')
     parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='uri of the docker container')
+    parser.add_argument('--pdf_path', type=str, help='path to the PDF file or JSON line file')
     parser.add_argument('--detailed', action='store_true', help='whether to show detailed information')
     args = parser.parse_args()
 
@@ -81,4 +86,8 @@ if __name__ == '__main__':
     db_conn = get_database_connection(args.database, from_scratch=False)
     vs_conn = get_vectorstore_connection(args.database, launch_method=args.launch_method, docker_uri=args.docker_uri, from_scratch=False)
 
-    check_db_and_vs_consistency(db_conn, vs_conn, db_schema, detailed=args.detailed)
+    pdf_ids = get_pdf_ids_to_encode(args.database, args.pdf_path) if args.pdf_path else []
+    check_db_and_vs_consistency(db_conn, vs_conn, db_schema, pdf_ids=pdf_ids, detailed=args.detailed)
+
+    db_conn.close()
+    vs_conn.close()
