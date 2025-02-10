@@ -161,7 +161,7 @@ def get_milvus_embedding_function(
         )
     elif embed_type == 'clip':
         from utils.embedding_utils import ClipEmbeddingFunction
-        embed_func = ClipEmbeddingFunction(embed_model)
+        embed_func = ClipEmbeddingFunction(embed_model, device=device)
     else:
         raise ValueError(f"Unsupported embedding model type: {embed_type}. We only support {list(EMBED_TYPES.keys())}.")
 

@@ -1,5 +1,5 @@
 #coding=utf8
-import os, tempfile, shutil
+import os, tempfile
 import numpy as np
 from typing import List, Dict, Union, Any
 from towhee import DataCollection, ops, pipe
@@ -16,27 +16,27 @@ TEMP_PDF_TO_IMAGE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abs
 os.makedirs(TEMP_PDF_TO_IMAGE_DIR, exist_ok=True)
 
 
-def get_clip_image_embedding_pipeline(embed_model: str = 'clip-vit-base-patch32') -> RuntimePipeline:
+def get_clip_image_embedding_pipeline(embed_model: str = 'clip-vit-base-patch32', device = 'cpu') -> RuntimePipeline:
     """ Note that, we only support open-source embedding models w/o the need of API keys.
     """
     embed_model = detect_embedding_model_path(embed_model)
-    return pipe.input('path').map('path', 'image', ops.image_decode.cv2('rgb')).map('image', 'vector', ops.image_text_embedding.clip(model_name=embed_model, modality='image')).map('vector', 'vector', lambda x: x / np.linalg.norm(x)).output('vector')
+    return pipe.input('path').map('path', 'image', ops.image_decode.cv2('rgb')).map('image', 'vector', ops.image_text_embedding.clip(model_name=embed_model, modality='image', device=device)).map('vector', 'vector', lambda x: x / np.linalg.norm(x)).output('vector')
 
 
-def get_clip_text_embedding_pipeline(embed_model: str = 'clip-vit-base-patch32') -> RuntimePipeline:
+def get_clip_text_embedding_pipeline(embed_model: str = 'clip-vit-base-patch32', device = 'cpu') -> RuntimePipeline:
     """ Note that, we only support open-source embedding models w/o the need of API keys.
     """
     embed_model = detect_embedding_model_path(embed_model)
-    return pipe.input('text').map('text', 'vector', ops.image_text_embedding.clip(model_name=embed_model, modality='text')).map('vector', 'vector', lambda x: x / np.linalg.norm(x)).output('vector')
+    return pipe.input('text').map('text', 'vector', ops.image_text_embedding.clip(model_name=embed_model, modality='text', device=device)).map('vector', 'vector', lambda x: x / np.linalg.norm(x)).output('vector')
 
 
 class ClipEmbeddingFunction(BaseEmbeddingFunction):
 
-    def __init__(self, model_name: str = 'clip-vit-base-patch32', image_batch_size: int = 8):
+    def __init__(self, model_name: str = 'clip-vit-base-patch32', image_batch_size: int = 256, device = 'cpu'):
         self.model_name = os.path.basename(model_name.rstrip(os.sep))
         self.image_batch_size = image_batch_size
-        self.image_embedding_pipeline = get_clip_image_embedding_pipeline(self.model_name)
-        self.text_embedding_pipeline = get_clip_text_embedding_pipeline(self.model_name)
+        self.image_embedding_pipeline = get_clip_image_embedding_pipeline(self.model_name, device)
+        self.text_embedding_pipeline = get_clip_text_embedding_pipeline(self.model_name, device)
         self.pdf_to_images = defaultdict(list)
 
 
@@ -53,7 +53,11 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
 
 
     def encode_queries(self, texts: List[str]) -> List[np.ndarray]:
-        return [DataCollection(self.text_embedding_pipeline(query))[0]['vector'] for query in texts]
+        return [dq.get()[0] for dq in self.text_embedding_pipeline.batch(texts)]
+
+
+    def encode_query(self, text: str) -> np.ndarray:
+        return self.text_embedding_pipeline(text).get()[0]
 
 
     def encode_documents(self, documents: List[Dict[str, Any]]) -> List[np.ndarray]:
@@ -70,23 +74,22 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
                     pdf_reader = PdfReader(fin)
                     mediabox = pdf_reader.pages[i].mediabox
                     w, h = mediabox.width, mediabox.height
-                images = convert_from_path(pdf_path)
-                for i, image in enumerate(images):
-                    image_path = os.path.join(TEMP_PDF_TO_IMAGE_DIR, f"{pdf_id}_{i}.png")
-                    width_ratio, height_ratio = image.width / w, image.height / h
-                    image.save(image_path, 'PNG')
-                    self.pdf_to_images[pdf_path].append((image_path, width_ratio, height_ratio))
+                with tempfile.TemporaryDirectory() as temp_dir:
+                    images = convert_from_path(pdf_path, output_folder=temp_dir)
+                    for i, image in enumerate(images):
+                        image_path = os.path.join(TEMP_PDF_TO_IMAGE_DIR, f"{pdf_id}_{i}.png")
+                        image = image.convert('RGB')
+                        width_ratio, height_ratio = image.width / w, image.height / h
+                        image.save(image_path, 'PNG')
+                        self.pdf_to_images[pdf_path].append((image_path, width_ratio, height_ratio))
         return self.pdf_to_images
 
 
     def clear_cache(self):
-        # quicker way but disable parallelism and maybe dangerous
-        shutil.rmtree(TEMP_PDF_TO_IMAGE_DIR, ignore_errors=True)
-        os.makedirs(TEMP_PDF_TO_IMAGE_DIR, exist_ok=True)
         # safer way
-        # for pdf_path in self.pdf_to_images:
-        #     for filepath, _, _ in self.pdf_to_images[pdf_path]:
-        #         if os.path.exists(filepath): os.remove(filepath)
+        for pdf_path in self.pdf_to_images:
+            for filepath, _, _ in self.pdf_to_images[pdf_path]:
+                if os.path.exists(filepath): os.remove(filepath)
         self.pdf_to_images = defaultdict(list)
         return
 
@@ -111,7 +114,7 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
                 else:
                     width_ratio = height_ratio = 1
 
-                with Image.open(image_path) as image:
+                with Image.open(image_path, 'r') as image:
                     if len(image_obj.get("bbox", [])) == 4:
                         bbox = list(image_obj["bbox"])
                         bbox[2] = (bbox[0] + bbox[2]) * width_ratio
@@ -128,5 +131,5 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
             # image batch encoding
             vectors = self.image_embedding_pipeline.batch([t.name for t in temp_image_files])
             embeddings.extend([v.get()[0] for v in vectors])
-            for t in temp_image_files: t.close()
+            for t in temp_image_files: t.close() # close the temp files
         return embeddings
