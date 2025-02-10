@@ -1,0 +1,38 @@
+{
+    "uuid": "07f7da2d-c8d9-581d-bf9e-ba8f9a562968",
+    "question": "What are the meanings of different loss items in equation (9)? i.e. $\\mathcal{L}_{c}^{A}$, $\\mathcal{L}_{s}^{A}$, $\\mathcal{L}_{a}^{A}$, and $\\mathcal{L}_{c}^{B}$",
+    "answer_format": "Your answer should be a Python list of four elements, where each of the item represent the meaning of the corresponding loss item.",
+    "tags": [
+        "formula",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, get the content of equation (9).",
+        "Second, get the related content of each loss item in the paper.",
+        "Third, analyze the meaning of each loss item."
+    ],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "$\\mathcal{L}_{c}^{A}$: The content reconstruction loss, which ensures that the model can accurately reconstruct the input text from the latent representations.",
+                "$\\mathcal{L}_{s}^{A}$: The stance classification loss, which guides the model to predict the correct stance of the text. It typically uses cross-entropy loss to align predictions with true stance labels.",
+                "$\\mathcal{L}_{a}^{A}$: The aspect span reconstruction loss, which helps the model generate a specific aspect-related text span using a Gaussian negative log-likelihood (NLL) loss.",
+                "$\\mathcal{L}_{c}^{B}$: The swapped reconstruction loss, derived from a swapping autoencoder mechanism. It ensures that the disentanglement is maintained even after swapping aspect embeddings across samples with the same aspect but different stances."
+            ],
+            "question": "What are the meanings of different loss items in equation (9)? i.e. $\\mathcal{L}_{c}^{A}$, $\\mathcal{L}_{s}^{A}$, $\\mathcal{L}_{a}^{A}$, and $\\mathcal{L}_{c}^{B}$",
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false,
+        "gui-gpt-4o-2024-05-13": true
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "c51a33ed-cd35-5426-b37e-6864a1b66a35"
+    ],
+    "reference_pdf": []
+}

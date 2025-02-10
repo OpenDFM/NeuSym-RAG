@@ -1,0 +1,42 @@
+{
+    "uuid": "398ee3a7-26c8-5967-8b5b-196b5d7641b3",
+    "question": "According to Figure 1 in the \"Shoulders of Giants: A Look at the Degree and Utility of Openness in NLP Research\" paper, for TACL papers based on Spanish, where does their LMs mainly come from?",
+    "answer_format": "Your answer should be a phrase indicating the category DIRECTLY FROM THE PDF WITHOUT ANY MODIFICATION OR EXPLANATION.",
+    "tags": [
+        "image",
+        "multiple",
+        "objective",
+        "table",
+        "text"
+    ],
+    "anchor_pdf": [
+        "5e692b45-81a3-5edc-a464-5025866db42a"
+    ],
+    "reference_pdf": [
+        "4c29dcbb-73f5-575d-a928-f1029e56d7e5"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, locate and understand Figure 1.",
+        "Locate the Language Class and Main Conference/Journal information in the appendix.",
+        "Decide TACL belongs to which kind of Conference/Journal.",
+        "Try to decide Spanish belongs to which Language Class.",
+        "Locate the examples of Language Class in the \"The State and Fate of Linguistic Diversity and Inclusion in the NLP World\" paper.",
+        "Decide Spanish belongs to which Language Class.",
+        "Return to the \"Shoulders of Giants: A Look at the Degree and Utility of Openness in NLP Research\" paper Figure 1 and locate the corresponding sub-graph and column.",
+        "Finally, answer the question based on the label of the figure."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_fuzzy_match",
+        "eval_kwargs": {
+            "gold": "Used others' artefact + added their own part",
+            "threshold": 95,
+            "ignore_blank": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

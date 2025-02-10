@@ -1,0 +1,46 @@
+{
+    "uuid": "c1cbcf5c-632c-5424-a1ef-d9add6094746",
+    "question": "What are the Low resource languages in INDICGENBENCH?",
+    "answer_format": "Your answer should be a Python list, where each element is a string representing a language. e.g. [\"language1\", \"language2\", ...]",
+    "tags": [
+        "objective",
+        "single",
+        "text"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the section which introduces INDICGENBENCH.",
+        "Find the paragraph that talks about the divide of languages.",
+        "List the low resource languages."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Awadhi",
+                "Haryanvi",
+                "Tibetan",
+                "Garhwali",
+                "Konkani",
+                "Chhattisgarhi",
+                "Rajasthani",
+                "Maithili",
+                "Manipuri",
+                "Malvi",
+                "Marwari",
+                "Santali",
+                "Bodo"
+            ],
+            "ignore_order": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "1e6eeeab-ba5c-508e-a693-62a9b39f2d92"
+    ],
+    "reference_pdf": []
+}

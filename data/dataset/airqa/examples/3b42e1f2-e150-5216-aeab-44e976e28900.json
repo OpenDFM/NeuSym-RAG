@@ -1,0 +1,27 @@
+{
+    "uuid": "3b42e1f2-e150-5216-aeab-44e976e28900",
+    "question": "Which operation on task vectors is employed in the anchor paper named \"Towards Safer Large Language Models through Machine Unlearning\"? Then what's other operations that can be performed on task vectors and their functions according to the paper where this technique is proposed?",
+    "answer_format": "Your answer should be a single string about the operations used in the two papers.",
+    "tags": [
+        "subjective",
+        "multiple",
+        "text"
+    ],
+    "anchor_pdf": ["e1e05ea5-d527-5a3c-9e2b-e100a396b97f"],
+    "reference_pdf": ["7811d1d6-a569-5a9e-bf51-2971e3fdc7f8"],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, locate the relevant section in the anchor paper to identify the operation employed on task vectors.",
+        "Then turn to the source paper to find the section about the operations that can be performed on task vectors and their functions.(maybe a section like abstract, introduction or conclusion)"],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": ["The anchor paper employs the negation of task vectors to effectively erase the harmful knowledge (to remove undesirable behaviors or unlearn tasks)", "Adding task vectors can also be performed, which leads to better multi-task models,or even improves performance on a single task", "When tasks form an analogy relationship, task vectors can be combined to improve performance on tasks where data is scarce."],
+            "question": "Which operation on task vectors is employed in the anchor paper? Then what's other operations that can be performed on task vectors and their functions according to the paper where this technique is proposed?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

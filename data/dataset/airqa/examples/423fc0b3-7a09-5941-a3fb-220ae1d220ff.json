@@ -1,0 +1,31 @@
+{
+    "uuid": "423fc0b3-7a09-5941-a3fb-220ae1d220ff",
+    "question": "In terms of joint models for Hebrew parsing, compared to the new 'flipped pipeline' where decisions are made directly on the whole-token units by expert classifiers, what drawbacks does the model in the anchor paper named \"A truly joint neural architecture for segmentation and parsing\" have?",
+    "answer_format": "Your answer should be a single python string about the drawbacks of the model.",
+    "tags": [
+        "subjective",
+        "multiple",
+        "text"
+    ],
+    "anchor_pdf": ["6873b347-ad4a-544e-b24f-cce1668924b4"],
+    "reference_pdf": ["0bc1963c-47f0-5407-848e-223c1da2c0a5"],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, locate the two papers the models of which are mentioned in the question.",
+        "Then understand the architecture design of two models respectively",
+        "Compare and analyse the drawbacks of the previous model.",
+        "If possible, find relevant section in each paper mentioning other models to extract useful information for comparison."
+    ],
+    "evaluator": {
+        "eval_func": "eval_partial_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": ["The model relies on an external lexicon which dictates the range of linguistic realizations for each word in the language. This creates complications for practical integration of the systems.","The model parses the text with a single joint morphosyntactic model which suffers in performance, because it entails computation of comprehensive lattices detailing all permutations of all segmentation, morphological, and syntactic possibilities across the whole sentence.","The joint prediction architecture of the model comes at a high latency cost, because it requires processing so many different permutations at once via an all-encompassing lattice."],
+            "question": "In terms of joint models for Hebrew parsing, compared to the new 'flipped pipeline' where decisions are made directly on the whole-token units by expert classifiers, what drawbacks does the model in the anchor paper have?",
+            "count": 2
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

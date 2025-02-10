@@ -1,0 +1,24 @@
+{
+    "uuid": "ad6b9fa5-cac1-531f-8b8c-c82fe6665863",
+    "question": "For the VQA DOC task, what are the optimal values of alpha and beta?",
+    "answer_format": "Your answer should be a python list of two numbers",
+    "tags": ["single",
+            "objective",
+            "table"],
+    "anchor_pdf": ["60f440ff-3076-5b6e-96d7-0819845b691b"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": ["First, locate the table 4 and get the content of table 4",
+                        "Second, find the optimal values of alpha and beta in the content of table 4",
+                        "Third, get the final answer"],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold":[0,5]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

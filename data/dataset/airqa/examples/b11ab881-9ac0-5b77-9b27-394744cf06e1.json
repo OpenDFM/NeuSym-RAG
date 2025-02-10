@@ -1,0 +1,36 @@
+{
+    "uuid": "b11ab881-9ac0-5b77-9b27-394744cf06e1",
+    "question": "What are the most important optimizations of transformer network in this paper?",
+    "answer_format": "Your answer should be a Python list of text strings, with each element being one important optimization that this paper proposes, e.g., [\"optimization 1\", \"optimization 2\", ...].",
+    "tags": [
+        "single",
+        "subjective",
+        "text"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Usually, the most important optimization of network are proposed in the abstract, introduction or methodology. Search the correpsonding paragraphs of these parts.",
+        "If the optimiazations are organized as evident bullet points, directly use them as the answer.",
+        "Otherwise, try to summarize the core optimizations from the main text."
+    ],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "Removal of the one-to-one mapping constraint among queries and keys in multiple subspaces",
+                "Allowing each query to attend to multiple keys",
+                "Introduction of inner-subspace interaction and cross-subspace interaction to encourage consensus among heads"
+            ],
+            "question": "What are the most important optimizations of transformer network in this paper?",
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "e281fc3b-cdaa-5565-8997-6a6c8f198000"
+    ],
+    "reference_pdf": []
+}

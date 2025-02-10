@@ -1,0 +1,28 @@
+{
+    "uuid": "e010a084-060b-5edb-8ff5-9be8bc82f010",
+    "question": "Which baselines are chosen to study for Seperate Training based methods in the anchor paper named \"Benchmarking and Improving Compositional Generalization of Multi-aspect Controllable Text Generation\"? In the source paper of the baseline 'Prior', what control framework is proposed?",
+    "answer_format": "Your answer should be a single python list,the first element is a list of strings of the baselines, the second element is the string about the control framework.e.g.[[\"Prior\",\"Baseline2\"],\"The paper proposes a novel control framework that introduces...\"].",
+    "tags": [
+        "subjective",
+        "multiple",
+        "text"
+    ],
+    "anchor_pdf": ["e01387cf-ffe2-5a64-8f38-f9f07b77a4fa"],
+    "reference_pdf": ["58a12963-0058-5883-93d9-a0abc4b9cc63"],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, locate the relevant section in the anchor paper to identify the baselines selected.",
+        "Then turn to the source paper about the baseline 'Prior'.",
+        "Finally, locate the section in the paper about the control framework it proposed(usually in abstract, introduction or conclusion)."],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The paper proposes a novel framework that introduces a well-formed prior space for effective and flexible control via invertible transformation.",
+            "question": "For the source paper of the baseline 'Prior', what control framework is proposed?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

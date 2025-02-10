@@ -1,0 +1,34 @@
+{
+    "uuid": "26ec953d-2268-577d-a22e-7f8313b800d8",
+    "question": "Which testing dataset in the paper has the largest size(determined by counts of instances)?I want to read its source paper, can you give me the title?",
+    "answer_format": "Your answer should be a list of two strings, the first element is the name of the testing dataset, and the second element is the title of the source paper.",
+    "tags": [
+        "text",
+        "table",
+        "single",
+        "objective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the table about the testing datasets.",
+        "Second, determine the dataset with the most counts of instances and find some information about its source paper(often the author).",
+        "Finally, turn to reference section to find the title of the source paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": ["GENIA","The genia corpus: An annotated research abstract corpus in molecular biology domain"],
+            "ignore_order": false,
+            "lowercase": true,
+            "threshold": 90
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "ceae4995-2be0-5b0e-8cd2-014bebec7870"
+    ],
+    "reference_pdf": []
+}

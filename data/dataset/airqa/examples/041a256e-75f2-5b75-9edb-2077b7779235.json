@@ -1,0 +1,35 @@
+{
+    "uuid": "041a256e-75f2-5b75-9edb-2077b7779235",
+    "question": "What is the formula of the loss function used to align the feature spaces of the visual and text transformers in the anchor PDF?",
+    "answer_format": "Your answer should be a python strings about the exact formula given in the reference paper, you don't need to explain the variables in the formula, e.g., \"loss_formula\".",
+    "tags": [
+        "multiple",
+        "subjective",
+        "text",
+        "formula"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the section mentioned the loss function used to align the feature spaces of the visual and text transformers in the anchor PDF.",
+        "Locate the respective paper about the loss function",
+        "Find the definition formula of the loss function in the reference paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": "\\mathcal{L}_{itc} = \\frac{1}{2} \\mathbb{E}_{(I,T)\\sim D}[H(\\mathbf{y}^{i2t}(I), \\mathbf{p}^{i2t}(I)) + H(\\mathbf{y}^{t2i}(T), \\mathbf{p}^{t2i}(T))]",
+            "question": "What is the formula of the loss function used to align the feature spaces of the visual and text transformers in the anchor PDF?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "13a0c782-cda2-55db-b796-550f810c68c8"
+    ],
+    "reference_pdf": [
+        "5649e82f-57f5-5b42-960a-98ddc7716d45"
+
+    ]
+}

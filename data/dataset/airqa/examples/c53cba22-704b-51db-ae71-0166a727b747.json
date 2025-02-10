@@ -1,0 +1,31 @@
+{
+    "uuid": "c53cba22-704b-51db-ae71-0166a727b747",
+    "question": "How to calculate the Word-pair Representation matrix in Figure 4?",
+    "answer_format": "Your answer should be a list of formulas, representing the calculation of Word-pair Representation matrix.",
+    "tags": [
+        "image",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, get the content of Figure 4.",
+        "Second, get the content of Section 4.2, and summarize the answer."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The Word-pair Representation matrix in the described model is calculated through Conditional Layer Normalization (CLN). Here are the formulas representing the calculation:\n\n1. **Conditional Layer Normalization (CLN) for word-pair representation:**\n   $r_{i,j} = \\text{CLN}(h_i, h_j) = \\gamma_i \\odot \\left( \\frac{h_j - \\mu}{\\sigma} \\right) + \\lambda_i$\n\n2. **Scale factor $\\gamma_i$ and shift factor $\\lambda_i$ with additional contextual information:**\n   $\\gamma_i = W_\\gamma h_i + b_\\gamma$\n   $\\lambda_i = W_\\lambda h_i + b_\\lambda$\n\n3. **Mean $\\mu$ and standard deviation $\\sigma$ of $h_j$:**\n   $\\mu = \\frac{1}{d} \\sum_{k=1}^{d} h_{jk}$\n   $\\sigma = \\sqrt{\\frac{1}{d} \\sum_{k=1}^{d} (h_{jk} - \\mu)^2}$",
+            "question": "How to calculate the Word-pair Representation matrix in Figure 4?"
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false,
+        "gui-gpt-4o-2024-05-13": true
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "1191a3cb-63fe-560c-bbef-c7eee0dd61d6"
+    ],
+    "reference_pdf": []
+}

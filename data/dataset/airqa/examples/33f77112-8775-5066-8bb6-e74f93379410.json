@@ -1,0 +1,41 @@
+{
+    "uuid": "33f77112-8775-5066-8bb6-e74f93379410",
+    "question": "In the anchor paper named\"MBIAS: Mitigating Bias in Large Language Models While Retaining Context\", to develop MBIAS, which PEFT(Parameter Efficient Fine-tuning) technique is used to finetune the model?In the paper where this technique is proposed, what's the innovations introduced to save memory?",
+    "answer_format": "Your answer should be a single python list, containing two strings. The first string is the name(abbrievation) of the PEFT technique. The second string is the innovations introduced to save memory in the relevant paper.",
+    "tags": [
+        "subjective",
+        "multiple",
+        "text"
+    ],
+    "anchor_pdf": ["e49150c3-c433-515e-be7d-d3dc87048029"],
+    "reference_pdf": ["c7b3bb82-aadc-5ff3-80e5-6a87188c8e20"],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, locate and identify the PEFT technique used to finetune the model in the anchor paper.",
+        "Then turn to the source paper of this technique.",
+        "Finally, find the innovations introduced to save memory in the relevant paper(usually in abstract, introduction or conclusion)."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+          "eval_func_list": [
+            "eval_string_exact_match",
+            "eval_reference_answer_with_llm"
+          ],
+          "eval_kwargs_list": [
+            {
+              "gold": "QLoRA",
+              "lowercase": true
+            },
+            {
+              "reference_answer": "QLORA introduces a number of innovations to save memory without sacrificing performance: (a) 4-bit NormalFloat (NF4), a new data type that is information theoretically optimal for normally distributed weights (b) Double Quantization to reduce the average memory footprint by quantizing the quantization constants, and (c) Paged Optimizers to manage memory spikes.",
+              "question": "In the paper where this technique is proposed, what's the innovations introduced to save memory?"
+            }
+          ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

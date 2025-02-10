@@ -1,0 +1,58 @@
+{
+    "uuid": "a343069f-cdd9-58b2-9abb-afb91e8f5360",
+    "question": "In the paper \"Strengthened Symbol Binding Makes Large Language Models Reliable Multiple-Choice Selectors\", on which dataset does PIF method reach its highest accuracy? In the paper where that dataset is proposed, which LLM performed the best, and how to account for its performance?",
+    "answer_format": "Your answer should be a Python list of three strings. The first string indicating the full name of the dataset, the second indicating the name of the LLM that performed the best, and third indicating the reason. e.g. [\"dataset\", \"LLM\", \"reason\"].",
+    "tags": [
+        "multiple",
+        "subjective",
+        "table",
+        "text"
+    ],
+    "anchor_pdf": [
+        "0d85f51e-7304-5a37-8876-8b458b37d114"
+    ],
+    "reference_pdf": [
+        "c2c5bf1a-3d4a-508e-a217-b3e4b78ce7f7",
+        "a87a7490-623a-54af-bad6-ef68b0757499",
+        "6a224ba5-c711-5435-b425-9bacbcd552a6"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, find the table that discusses the accuracy of different methods on different datasets.",
+        "Identify the dataset.",
+        "Then, turn to the paper which proposed that dataset.",
+        "Locate the table that compares the performance of different models.",
+        "Identify the best-performing LLM.",
+        "Locate the section that discusses the reason."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_string_fuzzy_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "CommonsenseQA",
+                    "lowercase": true
+                },
+                {
+                    "gold": "BERT",
+                    "fuzz_method": "partial_ratio",
+                    "threshold": 95,
+                    "lowercase": true
+                },
+                {
+                    "reference_answer": "To understand the performance of BERT-LARGE, we analyzed 100 examples from the development set (Table 6). We labeled examples with categories (possibly more than one per example) and then computed the average accuracy of the model for each category. We found that the model does well (77.7% accuracy) on examples where surface clues hint to the correct answer. Examples that involve negation or understanding antonyms have lower accuracy (42.8%), similarly to examples that require factoid knowledge (38.4%). Accuracy is particularly low in questions where the correct answer has finer granularity compared to one of the distractors (35.4%), and in cases where the correct answer needs to meet a conjunction of conditions, and the distractor meets only one of them (23.8%).",
+                    "question": "How to account for BERT-Large's performance on CSQA?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

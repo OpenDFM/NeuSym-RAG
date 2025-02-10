@@ -1,0 +1,31 @@
+{
+    "uuid": "3cc9e70a-bd6b-525c-af61-4b66f9ef8a77",
+    "question": "Who is the corresponding author of this paper?",
+    "answer_format": "Your answer should be a python string about the name of the corresponding author.",
+    "tags": [
+        "single",
+        "metadata",
+        "objective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "To find the corresponding authors, we need to look at the first page of the paper.",
+        "Pay attention to the superscript symbols next to the author names, which usually indicate the author's affiliation and contribution (e.g., co-first or corresponding authors).",
+        "Find the footnote of the first page to see if there is any explanation of the superscript symbols, such that we can determine the corresponding author."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "Dongyan Zhao",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "122bad91-1e5a-554e-bf1b-7f1e375aaf71"
+    ],
+    "reference_pdf": []
+}

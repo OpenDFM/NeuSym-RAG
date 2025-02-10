@@ -1,0 +1,32 @@
+{
+    "uuid": "6bdd99b0-3976-5029-9b64-d82b7bfb4276",
+    "question": "What does formula (1) mean in the Methodology section?",
+    "answer_format": "Your answer should be a python strings of the detailed explanation of the formula.",
+    "tags": [
+        "formula",
+        "single",
+        "subjective",
+        "text"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the formula (1) in the Methodology section and the surrounding text to understand the meaning of the formula.",
+        "If the formula is fully explained in the text, directly use the explanation as the answer.",
+        "Otherwise, try to explain it based on the formula itself and the context."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The idea of this formula is decomposing token representations into their constituent vectors based on vector-based approaches. Decompose the i-th token representation in layer l into elemental vectors attributable to each of the N input tokens. So we can compute the norm of the attribution vector of the k-th input to quantify its total attribution to xi.",
+            "question": "What does formula (1) mean in the Methodology section?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "cd91a901-384e-597b-bb20-2d4f9fa0c4f9"
+    ],
+    "reference_pdf": []
+}

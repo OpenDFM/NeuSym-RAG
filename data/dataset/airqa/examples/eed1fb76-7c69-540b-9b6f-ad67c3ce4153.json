@@ -1,0 +1,39 @@
+{
+    "uuid": "eed1fb76-7c69-540b-9b6f-ad67c3ce4153",
+    "question": "According to Figure 3, what are the layers proposed by the paper(compared to existing methods) in the overall framework of AR quality predictions?",
+    "answer_format": "Your answer should be a python list, every element of the list is a string presented in the original figure of the paper. If there are multiple layers with the same name, they only need to be mentioned once.",
+    "tags": [
+        "image",
+        "objective",
+        "single"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate Figure 3 in the specified PDF.",
+        "Check the accompanying text for further clarification or naming of the layers.",
+        "Analyze the figure to identify layers unique to the proposed framework compared to existing methods."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Argumentative Context (AC) Generation",
+                "DistilRoBERTa Encoder",
+                "ChatGPT",
+                "2nd-pass Zero-Shot-CoT Prompt",
+                "1st-pass Zero-Shot-CoT Prompt"
+            ],
+            "threshold": 95,
+            "ignore_order": true,
+            "ignore_blank": true
+        }
+    },
+    "state": {
+        "gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "0ef0a82a-0e86-5c1b-87b1-36e05e15bd76"
+    ],
+    "reference_pdf": []
+}

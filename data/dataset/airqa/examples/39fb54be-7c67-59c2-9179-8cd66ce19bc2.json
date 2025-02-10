@@ -1,0 +1,35 @@
+{
+    "uuid": "39fb54be-7c67-59c2-9179-8cd66ce19bc2",
+    "question": "Considering the performance of ChatDev agent on DSEval-LeetCode benchmark, what is the most common cause of the errors?",
+    "answer_format": "Your answer should be a python list of elements, the first element is the string of the main verdict, the second element is the string of the sub-verdict, e.g., [\"verdict_name\", \"sub-verdict_name\"].",
+    "tags": [
+        "image",
+        "objective",
+        "single"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Usually, the performance results of agents on benchmarks are mentioned in the experiment or result section, especially in the form of tables or images. Search the correpsonding parts.",
+        "Find the error analysis about the performance of ChatDev agent on DSEval-LeetCode benchmark.",
+        "You can also retrieve the reference section for any additional information if you can't find in the main text.",
+        "Finally, find the most common cause of the errors based on the information from the corresponding charts and legends."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Presentation Error",
+                "Index Mismatch"
+            ],
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "0fe6d2d4-00e7-596b-a80c-ffe5a6d88b97"
+    ],
+    "reference_pdf": []
+}

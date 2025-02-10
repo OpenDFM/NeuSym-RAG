@@ -1,0 +1,39 @@
+{
+    "uuid": "26030580-cffa-5664-bd4d-4f9eab957b98",
+    "question": "In experiments with the similar two-stage framework as BalSum, are there any other available datasets besides the ones used in this paper?",
+    "answer_format": "Your answer should be a python list of elements, each element is the experiment dataset name string, e.g., [\"dataset1\", \"dataset2\", ...]. YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION.",
+    "tags": [
+        "multiple",
+        "objective",
+        "text"
+    ],
+    "anchor_pdf": [
+        "0f17ce7f-7a37-56d7-bc18-a38d4649fef0"
+    ],
+    "reference_pdf": [
+        "1e1fc69b-da77-5cec-b254-7c60bf226a84",
+        "ee3b5bf9-4c0f-5db3-ac89-6cde80f4789a",
+        "f462838f-7bca-547d-b577-7c1dc8ff7f64"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the section mentioned similar two-stage frameworks as BalSum, which is usually in experiment section.",
+        "Locate the respective papers.",
+        "Check these papers to find all the datasets used in the experiments.",
+        "Identify the datasets that are not used in the BalSum paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Reddit TIFU",
+                "NYT"
+            ],
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

@@ -1,0 +1,31 @@
+{
+    "uuid": "18b13577-3570-5e5f-be1c-77606cce3cf4",
+    "question": "When the authors use ChatGPT in generating data points, what is the templated prompt?",
+    "answer_format": "Your answer should be raw text directly demonstrating the used prompt template without any other context.",
+    "tags": [
+        "single",
+        "subjective",
+        "table",
+        "text"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the position about \"using ChatGPT in generating data points\".",
+        "Find any text or table content that contains the templated prompt, and directly return the raw templated prompt."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "I am creating a dataset and need to generate data that is similar but not identical to the following examples. Here are 5 examples from my dataset:\n1. [Example 1]\n2. [Example 2]\n3. [Example 3]\n4. [Example 4]\n5. [Example 5]\nPlease generate [Specified Number] new data points that are similar in style and structure to these examples but are unique in content. Format the responses as a numbered list, starting from 6 onwards. Each data point should start on a new line and be prefixed with its corresponding number followed by a period and a space.\nFor example:\n6. [New Data Point 1]\n7. [New Data Point 2]\n...",
+            "question": "When the authors use ChatGPT in generating data points, what is the templated prompt?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "09abed2f-a7af-56e5-8a34-3fc5e7130c6a"
+    ],
+    "reference_pdf": []
+}

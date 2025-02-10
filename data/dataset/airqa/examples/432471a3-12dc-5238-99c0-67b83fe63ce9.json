@@ -1,0 +1,38 @@
+{
+    "uuid": "432471a3-12dc-5238-99c0-67b83fe63ce9",
+    "question": "In the LMRL-Gym domain, besides the task mentioned in anchor PDF, what other interactive dialogue tasks are proposed in the paper?",
+    "answer_format": "Your answer should be a python list, each element is the name of the task, e.g.,[\"task1\", \"task2\", ...]. YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION AND INCLUDE THE FULL NAMES OF THE TASKS.",
+    "tags": [
+        "multiple",
+        "objective",
+        "text"
+    ],
+    "anchor_pdf": [
+        "e5838af7-f285-5a91-8e5a-d9d1370f97ab"
+    ],
+    "reference_pdf": [
+        "148a4beb-4abf-5a7b-bc09-32f8519520da"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the part mentioned the LMRL-Gym domain, which is in the Experimental Setup section.",
+        "Retrieve the name of the task mentioned in the anchor PDF.",
+        "Locate the respective paper proposing this LMRL-Gym domain.",
+        "Find the other interactive dialogue tasks proposed in the paper."
+
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Twenty Questions",
+                "Guess My City"
+            ],
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

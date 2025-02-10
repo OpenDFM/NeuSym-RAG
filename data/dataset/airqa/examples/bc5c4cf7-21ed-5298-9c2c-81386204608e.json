@@ -1,0 +1,42 @@
+{
+    "uuid": "bc5c4cf7-21ed-5298-9c2c-81386204608e",
+    "question": "In the paper \"Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture\", according to Figure 1, which two dimensions are mixed using Monarch matrices? In the source paper of Monarch matrices, what training settings can Monarch matrices be used for?",
+    "answer_format": "Your answer should be a python list containing two items. The first item is a python list with two strings. The second item is a python list with an indefinite number of strings.",
+    "tags": ["multiple","image","text","objective"],
+    "anchor_pdf": ["f3c0827e-c512-50bc-91f0-6d5a9e1177b6","0b29dca5-cb4a-5cdc-a8a6-eb852b9d0bb2"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": ["First, locate Figure 1 in the paper \"Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture\".",
+                        "Extract information from Figure 1 to answer which two dimensions are mixed using Monarch matrices.",
+                        "Jump to the original paper of Monarch matrices.",
+                        "Locate the Introduction section, and based on the Introduction, identify the different training settings."
+                    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_structured_object_exact_match",
+                "eval_structured_object_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": ["sequence", "channels"],
+                    "ignore_order": true,
+                    "lowercase": true,
+                    "threshold": 0.9
+                },
+                {
+                    "gold": ["E2E training", "S2D training", "D2S fine-tuning"],
+                    "ignore_order": true,
+                    "lowercase": true,
+                    "threshold": 0.9
+                }
+            ]
+
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

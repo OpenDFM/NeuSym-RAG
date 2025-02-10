@@ -1,0 +1,44 @@
+{
+    "uuid": "34031849-a464-5cf5-a3f4-c70b6dfb37e8",
+    "question": "Among the papers that proposed PopQA, KBP and ASQA, which one evaluates the most language models? What question does it want to answer by evaluating so many models?",
+    "answer_format": "Your answer should be a Python list of two strings, the first string is the name of the dataset, that evaluates the most models in its paper, and the second string is the question that it wants to answer.",
+    "tags": [
+        "text",
+        "multiple",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "08f0b49d-a02d-5eba-8fa3-51284c90822b",
+        "8ec52878-4dbf-52f2-9062-1225adff8e7b",
+        "ca66eda5-e6f7-5d97-b474-6f515c7754eb"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Read the experiment sections of the papers to locate the numbers of models evaluated.",
+        "Read the same section of the paper that evaluates the most models to find the question."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "PopQA",
+                    "lowercase": true
+                },
+                {
+                    "reference_answer": "How much factual knowledge is memorized by LMs and what factors affect the memorization?",
+                    "question": "What research question does the paper want to answer?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

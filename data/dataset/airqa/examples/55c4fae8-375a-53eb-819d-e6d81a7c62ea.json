@@ -1,0 +1,33 @@
+{
+    "uuid": "55c4fae8-375a-53eb-819d-e6d81a7c62ea",
+    "question": "In terms of experimental results when unigrams are used for evaluation, which model gets the highest F1-score among Mbase, Mclf, Mcxt and Mclfcxt? What's its added module compared with Mbase according to figure 2?",
+    "answer_format": "Your answer should be a list of two strings, the first element is the name of the model(chosen from Mbase, Mclf, Mcxt and Mclfcxt), and the second element is the name of the added module presented in figure 2.",
+    "tags": [
+        "figure",
+        "table",
+        "single",
+        "objective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the table about the results when unigrams are used for evaluation.",
+        "Second, find the model getting the highest F1-score among Mbase, Mclf, Mcxt and Mclfcxt.",
+        "Finally, turn to figure 2 to identify the added module of this model."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": ["Mcxt","Preceding Updates"],
+            "ignore_order": false,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "d99f2324-cddc-5bfe-adf4-10c6a05dbeb2"
+    ],
+    "reference_pdf": []
+}

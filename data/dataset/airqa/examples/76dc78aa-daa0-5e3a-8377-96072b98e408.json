@@ -1,0 +1,36 @@
+{
+    "uuid": "76dc78aa-daa0-5e3a-8377-96072b98e408",
+    "question": "Which PLM method achieve the best bias score in the experiment?",
+    "answer_format": "Your answer should be a single string representing the PLM method.",
+    "tags": [
+        "objective",
+        "single",
+        "table"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the main experiment table that compares the bias scores of different PLM methods.",
+        "Determine whether this metric is better when higher or lower.",
+        "Select the PLM method with the best bias score in the experiment."
+    ],
+    "evaluator": {
+        "eval_func": "eval_element_included",
+        "eval_kwargs": {
+            "gold": [
+                "PICARD(T5)",
+                "T5(PICARD)",
+                "PICARD",
+                "T5"
+            ],
+            "ignore_blank": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": true
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "15baba11-9239-54a7-a2fc-accae9d907df"
+    ],
+    "reference_pdf": []
+}

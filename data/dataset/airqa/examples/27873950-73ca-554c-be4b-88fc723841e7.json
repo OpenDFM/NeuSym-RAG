@@ -1,0 +1,31 @@
+{
+    "uuid": "27873950-73ca-554c-be4b-88fc723841e7",
+    "question": "How to calculate $l^{\\prime}(c,c^{\\prime})$ in the equation under Section 3.2?",
+    "answer_format": "",
+    "tags": [
+        "formula",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, get the content of the equation under 3.2.",
+        "Second, get the content of Section 3.1 and summarize the answer."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "$l^{\\prime}(c,c^{\\prime}) = \\mathbbm{1}(l(c) \\geq l(c^{\\prime}))$ is a pairwise comparator, which takes a pair of comparisons $(c,c^{\\prime})$ and determines the more consistent one. $l(c)$ evaluates the consistency of $c$, and a higher value of $l(c)$ indicates a greater degree of consistency.",
+            "question": "How to calculate $l^{\\prime}(c,c^{\\prime})$ in the equation under Section 3.2?"
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false,
+        "gui-gpt-4o-2024-05-13": true
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "d23ce539-adb7-5709-b341-169c0dcd5871"
+    ],
+    "reference_pdf": []
+}

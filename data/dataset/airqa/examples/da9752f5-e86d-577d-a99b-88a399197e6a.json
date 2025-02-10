@@ -1,0 +1,46 @@
+{
+    "uuid": "da9752f5-e86d-577d-a99b-88a399197e6a",
+    "question": "How many multi-modal baselines excluding the method this paper proposed do authors use? Among this baselines, who reaches the highest F1 score on Twitter2015 dataset? And what about Twitter2017 dataset?",
+    "answer_format": "Your answer should be a python list, the first item is the number of multi-modal baselines the paper used, the second item and the third item are the name of methods reaching the highest F1 score on Twitter2015 and Twitter2017 dataset respectively.",
+    "tags": [
+        "metadata",
+        "objective",
+        "single"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, get the content of Table 2.",
+        "Second, get the content of row 'Multimodal' and count the number of multi-modal baselines.",
+        "Third, check the 'F1' column under 'Twitter2015' and 'Twitter2017' multi-column and find the one reaching highest F1 score."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_int_exact_match",
+                "eval_string_exact_match",
+                "eval_string_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": 8
+                },
+                {
+                    "gold": "VLP-MABSA"
+                },
+                {
+                    "gold": "CMMT"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false,
+        "gui-gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "6a24d7f4-430d-5c92-b259-f62f76490147"
+    ],
+    "reference_pdf": []
+}

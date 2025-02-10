@@ -1,0 +1,42 @@
+{
+    "uuid": "d35568c3-eed9-5383-a49a-c363470c175d",
+    "question": "In the main evaluation results of the different baselines in the anchor PDF, both of which use CodeLLaMA as the base model, which one performs better? In the paper introducing this model, aside from the datasets mentioned in the anchor PDF, what other in-domain datasets are used?",
+    "answer_format": "Your answer should be a python list, the first element is the name of the baseline model, and the following elements are the in-domain datasets used in the paper, e.g.,[\"baseline_model_name\", \"dataset1\", \"dataset2\", ...]. YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION.",
+    "tags": [
+        "multiple",
+        "objective",
+        "text",
+        "table"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the section mentioned the main evaluation results of the different baselines in the anchor PDF, which is usually in the table of the experiments section.",
+        "Compare the performance of the two baselines that use CodeLLaMA as the base model to find the one that performs better.",
+        "Locate the respective paper introducing this model.",
+        "Find the section mentioned all the in-domain datasets used in the paper introducing this model, which is usually in the table of the experiments section.",
+        "Compare the datasets mentioned in the anchor PDF with the datasets mentioned in the paper introducing this model to identify the other in-domain datasets used in the paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "MAmmoTH-Coder",
+                "AQuA-RAT",
+                "NumGLUE"
+            ],
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "7d6f212e-3d4c-5cb2-877c-5d233ae46f3b"
+    ],
+    "reference_pdf": [
+        "ecba768d-4b87-58ca-968b-2a375793a798",
+        "b846c66a-a177-5119-af8d-ec4757d6a06c"
+
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "uuid": "2cd0cc5e-defb-51aa-b04d-1cfead682bda",
+    "question": "For handling hallucinations with auxiliary models, what is the model they use, and what are the metrics or measures to evaluate semantic similarity of two sentences?",
+    "answer_format": "Your answer should be a Python list of two elements, the first element is the model name string, and the second element is a list of metric names, e.g., [\"model_name\", [\"metric1\", \"metric2\", ...]].",
+    "tags": [
+        "objective",
+        "single",
+        "text"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, find all section titles in the paper to locate the section that discusses hallucinations.",
+        "Identify the finer requirements on external or auxiliary models for handling hallucinations.",
+        "Finally, retrieve the context for this subsection to find the model name and the concrete metrics."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "COMET-QE",
+                [
+                    "LASER",
+                    "LaBSE",
+                    "XNLI"
+                ]
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "b5062515-e162-5a98-a421-ab84dfe1d930"
+    ],
+    "reference_pdf": []
+}

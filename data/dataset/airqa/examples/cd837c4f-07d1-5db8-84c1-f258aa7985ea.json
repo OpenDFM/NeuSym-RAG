@@ -1,0 +1,30 @@
+{
+    "uuid": "cd837c4f-07d1-5db8-84c1-f258aa7985ea",
+    "question": "Considering both benefits and costs, what is the best size of generation pool for the proposed method?",
+    "answer_format": "Your answer should be a single integer number.",
+    "tags": [
+        "image",
+        "objective",
+        "single"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the experiment table or figure that shows the method performances with different sizes of generation pool.",
+        "Think about what 'best' means, considering both benefits and costs comprehensively.",
+        "Find out the best size of generation pool for the proposed method based on the experiment results."
+    ],
+    "evaluator": {
+        "eval_func": "eval_int_exact_match",
+        "eval_kwargs": {
+            "gold": 4
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "ca116924-bf11-5529-a43f-bf68e9745c5c"
+    ],
+    "reference_pdf": []
+}
