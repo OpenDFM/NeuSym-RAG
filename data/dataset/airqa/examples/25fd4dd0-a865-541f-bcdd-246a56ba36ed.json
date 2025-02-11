@@ -1,6 +1,6 @@
 {
     "uuid": "25fd4dd0-a865-541f-bcdd-246a56ba36ed",
-    "question": "Both anchor_pdf and reference_pdf use the Model Performance on EditEval to test their models. What existing models' data do they use in common?",
+    "question": "Both the anchor_pdfs use the Model Performance on EditEval to test their models. What existing models' data do they use in common?",
     "answer_format": "Your answer should be a python list, each elemet is a string , which refers to a model name.",
     "tags": [
         "multiple",
@@ -9,11 +9,10 @@
         "table"
     ],
     "anchor_pdf": [
-        "cabc7bed-6a8b-5030-a199-716eac881799"
-    ],
-    "reference_pdf": [
+        "cabc7bed-6a8b-5030-a199-716eac881799",
         "f9c34aba-31a0-5b67-83a6-3cde37f2aecb"
     ],
+    "reference_pdf": [],
     "conference": [],
     "reasoning_steps": [
         "First, find Model Performance on EditEval in the two papers.",

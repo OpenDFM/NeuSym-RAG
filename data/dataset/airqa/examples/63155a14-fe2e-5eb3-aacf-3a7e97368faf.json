@@ -1,6 +1,6 @@
 {
     "uuid": "63155a14-fe2e-5eb3-aacf-3a7e97368faf",
-    "question": "Among the tested models, which model is best for LLM to deal with code problems?",
+    "question": "Among the tested models, which model performs best on code problems?",
     "answer_format": "Your answer should be a python string of the name of the model.",
     "tags": [
         "objective",
@@ -14,7 +14,7 @@
     "conference": [],
     "reasoning_steps": [
         "Firstly, locate the table that contains the results of the tested models.",
-        "Then, find the model that is best for LLM to deal with code problems."
+        "Then, find the model that performs best on code problems."
     ],
     "evaluator": {
         "eval_func": "eval_string_exact_match",

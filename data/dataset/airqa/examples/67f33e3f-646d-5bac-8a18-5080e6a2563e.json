@@ -1,6 +1,6 @@
 {
     "uuid": "67f33e3f-646d-5bac-8a18-5080e6a2563e",
-    "question": "How to calculate F1-score and kappa in this paper?",
+    "question": "How to calculate final loss function(Loss) in this paper?",
     "answer_format": "Your answer should be a python string, which is a formula in latex format to calculate a parameter.",
     "tags": [
         "single",
@@ -14,18 +14,16 @@
     "reference_pdf": [],
     "conference": [],
     "reasoning_steps": [
-        "Find the part mentioned the F1-score and kappa in the paper.",
-        "Extract formulas related to F1-score and kappa from the paper."
+        "Find the part mentioned the loss function in the paper.",
+        "Extract formulas related to final loss function from the paper."
     ],
     "evaluator": {
         "eval_func": "eval_complex_math_formula_with_llm",
         "eval_kwargs": {
             "formulas":[
-                "F_1\\text{-}Score = \\frac{2TP}{2TP + FN + FP}",
-                "K = \\frac{P_0 - P_e}{1 - P_e}",
-                "P_e = \\frac{1}{N^2} \\sum_T n_{T_1} \\times n_{T_2}"
+                "\\textit{Loss} = -\\frac{1}{N} \\sum_{i=1}^{N} \\left( w_p y_i \\log(\\hat{y}_i) + w_n (1 - y_i) \\log(1 - \\hat{y}_i) \\right) -\frac{1}{N} \\sum_{i=1}^{N} \\log \\left( \\frac{\\exp(s(y_i)/\\tau)}{\\sum_j \\exp(s(y_j)/\\tau)} \\right)"
             ],
-            "question": "How to calculate F1-score and kappa in this paper?",
+            "question": "How to calculate final loss function(Loss) in this paper?",
             "ignore_order": true
         }
     },
