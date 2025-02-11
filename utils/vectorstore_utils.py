@@ -1,6 +1,6 @@
 #coding=utf8
 import numpy as np
-import duckdb, math, tqdm
+import duckdb, math, tqdm, time
 from scipy.sparse import csr_array
 import os, re, sys, json, logging, torch, time
 from pymilvus import MilvusClient, FieldSchema, CollectionSchema, DataType
@@ -112,7 +112,7 @@ def get_milvus_embedding_function(
     if (embed_type, embed_model, str(backup_json)) in GLOBAL_EMBEDDING_MODELS:
         return GLOBAL_EMBEDDING_MODELS[(embed_type, embed_model, str(backup_json))]
 
-    device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
     embed_model = detect_embedding_model_path(embed_model) if embed_type != 'bm25' else embed_model
 
     if embed_type == 'sentence_transformers':
@@ -430,6 +430,7 @@ def encode_database_content(
     if type(pdf_ids) != list: pdf_ids = [pdf_ids]
 
     for start_idx in tqdm.tqdm(range(0, len(pdf_ids), batch_size), disable=not sys.stdout.isatty()):
+        start_time = time.time()
         if logger: logger.info(f"Encoding PDFs from [{start_idx}/{len(pdf_ids)}] ...")
         batch_pdf_ids = pdf_ids[start_idx:start_idx + batch_size]
 
@@ -475,7 +476,7 @@ def encode_database_content(
                         pdf_and_page_fields=(pdf_id_field, page_id_field),
                         where_condition=where_condition
                     )
-                
+
                     # post-process each record
                     if len(result) == 0:
                         if logger: logger.warning(f"No records found for table=`{table_name}`, column=`{column_name}` among PDF ids: {batch_pdf_ids}.")
@@ -491,7 +492,7 @@ def encode_database_content(
                         else: # page_id field is None
                             record['pdf_id'] = str(row[1])
                             record['primary_key'] = ','.join([str(v) for v in row[2:]])
-                        
+
                         if modality == 'text': # fill in 'text' field
                             text = str(row[0]).strip()
                             if text in ['', 'None']: continue
@@ -509,7 +510,7 @@ def encode_database_content(
                             image_or_pdf_path = get_image_or_pdf_path(db_schema.database_name, record['pdf_id'], record['page_number'])
                             documents.append({"path": image_or_pdf_path, "page": record['page_number'], "bbox": bbox})
                             records.append(record)
-                    
+
                     # encode the records
                     if len(records) == 0: continue
                     if verbose: logger.info(f"Encode {len(records)} records into vectors with {et} model: {em} ...")
@@ -518,9 +519,10 @@ def encode_database_content(
                     for i, record in enumerate(records):
                         record['vector'] = vectors[i] if et not in ['splade', 'bm25'] else vectors[i:i+1, :]
                     vs_conn.insert(collection_name=collection_name, data=records)
-        
+
             if modality == 'image' and hasattr(embedder, 'clear_cache'):
                 embedder.clear_cache()
+        if verbose: logger.info(f'Finished encoding {len(batch_pdf_ids)} PDFs, costing {time.time() - start_time}s .')
     return
 
 

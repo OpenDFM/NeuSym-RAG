@@ -68,7 +68,7 @@ def check_db_and_vs_consistency(
             failed_pdf.append(pdf_id)
         else:
             logger.info(f"[PASSED] ✅ [{pdf_id}]")
-    logger.info(f"Failed PDF count: {len(failed_pdf)}")
+    logger.info(f"Failed PDF count: {len(failed_pdf)}\nPassed PDF count: {len(pdf_ids)}")
     return failed_pdf
 
 
