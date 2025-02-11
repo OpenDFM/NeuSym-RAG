@@ -19,13 +19,11 @@ class Text2SQLEnv(AgentEnv):
         @param:
             kwargs:
                 - database: str, the database name
-                - database_type: str, the database type, default is 'duckdb'. Other types are not supported yet.
                 - database_path: str, the path to the database file, default is 'data/database/{database}/{database}.duckdb'.
         """
         super(Text2SQLEnv, self).__init__(action_format=action_format, action_space=action_space, agent_method=agent_method, dataset=dataset)
         self.database_conn = None
         self.database = kwargs.get('database', None)
-        self.database_type = kwargs.get('database_type', 'duckdb')
         self.database_path = kwargs.get('database_path', None)
         self.reset()
 
@@ -40,7 +38,6 @@ class Text2SQLEnv(AgentEnv):
         self.database_conn = get_database_connection(
             self.database,
             database_path=self.database_path,
-            database_type=self.database_type,
             from_scratch=False
         )
         time.sleep(3)

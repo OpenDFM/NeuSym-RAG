@@ -44,8 +44,8 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
                 return False, "[Error]: Value of parameter `limit` should be a positive integer."
 
         db_conn: duckdb.DuckDBPyConnection = env.database_conn
-        if not db_conn or not isinstance(db_conn, duckdb.DuckDBPyConnection):
-            return False, f"[Error]: {env.database_type} database connection is not available."
+        if not db_conn:
+            return False, f"[Error]: Database connection is not available."
         if self.sql == '' or self.sql is None:
             return False, "[Error]: SQL string is empty."
         if self.table_name not in env.table2encodable or len(env.table2encodable[self.table_name]) == 0:
@@ -142,14 +142,14 @@ class RetrieveFromDatabaseWithVectorFilter(Action):
             create_sql += f"    PRIMARY KEY ({pk_names_str})\n)"
             db_conn.execute(create_sql)
         except Exception as e:
-            return Observation(msg + f"[Error]: When creating temporary {env.database_type} table `filtered_primary_keys`: {str(e)}")
+            return Observation(msg + f"[Error]: When creating temporary table `filtered_primary_keys`: {str(e)}")
         # insert the filtered primary key values
         try:
             insert_sql = f"INSERT INTO filtered_primary_keys({pk_names_str}) VALUES({', '.join(['?'] * len(env.table2pk[self.table_name]))})"
             db_conn.executemany(insert_sql, pk_values)
         except Exception as e:
             db_conn.execute("DROP TABLE IF EXISTS filtered_primary_keys;")
-            return Observation(msg + f"[Error]: When inserting values into temporary {env.database_type} table `filtered_primary_keys`: {str(e)}")
+            return Observation(msg + f"[Error]: When inserting values into temporary table `filtered_primary_keys`: {str(e)}")
 
         @func_set_timeout(0, allowOverride=True)
         def execute_sql(db_conn: duckdb.DuckDBPyConnection, sql: str, **kwargs) -> pd.DataFrame:

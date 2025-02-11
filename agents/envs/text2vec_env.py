@@ -23,7 +23,6 @@ class Text2VecEnv(AgentEnv):
             kwargs:
                 - database: str, the database name
                 - vectorstore: str, the vectorstore name, must be the same as the database name. Indeed, we only need to specify one of them.
-                - database_type: str, the database type, default is 'duckdb'. Other types are not supported yet.
                 - database_path: str, the path to the database file, default is 'data/database/{database}/{database}.duckdb'.
                 - launch_method: str, the launch method of the Milvus vectorstore, default is 'standalone', chosen from ['standalone', 'docker'].
                 - docker_uri: str, URI to the docker, default is 'http://127.0.0.1:19530'.
@@ -38,7 +37,6 @@ class Text2VecEnv(AgentEnv):
         assert self.database == self.vectorstore
 
         self.database_conn = None
-        self.database_type = kwargs.get('database_type', 'duckdb')
         self.database_path = kwargs.get('database_path', None)
         self.vectorstore_conn, self.embedder_dict = None, {}
         self.launch_method = kwargs.get('launch_method', 'standalone')
@@ -71,7 +69,6 @@ class Text2VecEnv(AgentEnv):
             self.database_conn = get_database_connection(
                 self.database,
                 database_path=self.database_path,
-                database_type=self.database_type,
                 from_scratch=False
             )
 

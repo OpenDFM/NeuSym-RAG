@@ -61,9 +61,9 @@ class DataPopulation():
     def close(self):
         """ Close the opened DB connnection for safety.
         """
-        if self.database_conn is not None and isinstance(self.database_conn, duckdb.DuckDBPyConnection):
+        if self.database_conn is not None and hasattr(self.database_conn, 'close'):
             self.database_conn.close()
-        if self.vectorstore_conn is not None and isinstance(self.vectorstore_conn, MilvusClient):
+        if self.vectorstore_conn is not None and hasattr(self.vectorstore_conn, 'close'):
             self.vectorstore_conn.close()
 
 

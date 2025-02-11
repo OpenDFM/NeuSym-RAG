@@ -124,7 +124,7 @@ def get_database_connection(
     @param:
         database_name: str, database name
         database_path: str, optional, by default, `DATABASE_DIR/database_name/database_name.duckdb`
-        database_type: str, database type, default is 'duckdb'
+        database_type: str, database type, default is 'duckdb' (other DBs are not supported yet)
         from_scratch: remove the existed database file or not
     @return:
         database connection
@@ -182,6 +182,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description='Database relevant utilities.')
     parser.add_argument('--database', type=str, required=True, help='Database name.')
+    parser.add_argument('--database_path', type=str, help='Path to the database file.')
     parser.add_argument('--pdf_path', type=str, required=True, help='Path to the PDF file or JSON line file.')
     parser.add_argument('--config_path', type=str, help='Path to the config file.')
     parser.add_argument('--on_conflict', type=str, default='ignore', choices=['replace', 'ignore', 'raise'], help='How to handle the database content insertion conflict.')
@@ -189,7 +190,12 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     from utils.data_population import DataPopulation
-    populator = DataPopulation(args.database, connect_to_vs=False, from_scratch=args.from_scratch)
+    populator = DataPopulation(
+        database=args.database,
+        database_path=args.database_path,
+        connect_to_vs=False,
+        from_scratch=args.from_scratch
+    )
 
     # parse PDF files into the database
     pdf_ids = get_pdf_ids_to_encode(args.database, args.pdf_path)
