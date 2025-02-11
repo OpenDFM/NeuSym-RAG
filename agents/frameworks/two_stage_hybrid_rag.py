@@ -49,7 +49,6 @@ class TwoStageHybridRAGAgent(AgentBase):
         messages = [{'role': 'user', 'content': prompt}]
         if image_message:
             messages.append(image_message)
-        print(messages[0]['content'])
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         _, action = Action.parse_action(response, action_types=[RetrieveFromVectorstore, RetrieveFromDatabase], action_format='json', agent_method='code_block')
@@ -79,7 +78,6 @@ class TwoStageHybridRAGAgent(AgentBase):
         messages = [{'role': 'user', 'content': prompt}]
         if image_message:
             messages.append(image_message)
-        print(messages[0]['content'])
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
