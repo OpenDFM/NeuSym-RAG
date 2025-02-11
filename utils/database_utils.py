@@ -116,22 +116,22 @@ def convert_json_to_create_sql(schema: Dict[str, Any], sql_path: Optional[str] =
 
 def get_database_connection(
         database_name: str,
+        database_path: Optional[str] = None,
         database_type: str = 'duckdb',
         from_scratch: bool = False
     ) -> duckdb.DuckDBPyConnection:
     """ Get the database connection from the database name.
     @param:
         database_name: str, database name
+        database_path: str, optional, by default, `DATABASE_DIR/database_name/database_name.duckdb`
         database_type: str, database type, default is 'duckdb'
         from_scratch: remove the existed database file or not
     @return:
         database connection
     """
     if database_type == 'duckdb':
-        if os.path.exists(database_name):
-            db_path = database_name
-        else:
-            db_path = os.path.join(DATABASE_DIR, database_name, database_name + '.duckdb')
+        db_path = database_path if database_path is not None else \
+            os.path.join(DATABASE_DIR, database_name, database_name + '.duckdb')
         if from_scratch and os.path.exists(db_path):
             os.remove(db_path)
         conn: duckdb.DuckDBPyConnection = duckdb.connect(db_path)

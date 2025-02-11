@@ -31,8 +31,10 @@ class DataPopulation():
     def __init__(self,
                  database: Optional[str] = None,
                  vectorstore: Optional[str] = None,
+                 database_path: Optional[str] = None,
                  launch_method: str = 'standalone',
                  docker_uri: str = 'http://127.0.0.1:19530',
+                 vectorstore_path: Optional[str] = None,
                  connect_to_db: bool = True,
                  connect_to_vs: bool = True,
                  from_scratch: bool = False
@@ -46,9 +48,9 @@ class DataPopulation():
         if connect_to_db and connect_to_vs:
             assert self.database == self.vectorstore, f"Database and vectorstore must be the same, but got {self.database} and {self.vectorstore}."
         self.database_schema: DatabaseSchema = DatabaseSchema(self.database) if connect_to_db else None
-        self.database_conn: Optional[duckdb.DuckDBPyConnection] = get_database_connection(self.database, from_scratch=from_scratch) if connect_to_db else None
+        self.database_conn: Optional[duckdb.DuckDBPyConnection] = get_database_connection(self.database, database_path=database_path,from_scratch=from_scratch) if connect_to_db else None
         self.vectorstore_schema: Optional[VectorstoreSchema] = VectorstoreSchema() if connect_to_vs else None # shared VS schema
-        self.vectorstore_conn: Optional[MilvusClient] = get_vectorstore_connection(self.vectorstore, launch_method=launch_method, docker_uri=docker_uri, from_scratch=from_scratch) if connect_to_vs else None
+        self.vectorstore_conn: Optional[MilvusClient] = get_vectorstore_connection(self.vectorstore, launch_method=launch_method, docker_uri=docker_uri, vectorstore_path=vectorstore_path, from_scratch=from_scratch) if connect_to_vs else None
         if from_scratch:
             if connect_to_db:
                 initialize_database(self.database_conn, self.database_schema)
@@ -280,8 +282,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Data population script.')
     parser.add_argument('--database', type=str, help='Database name.')
     parser.add_argument('--vectorstore', type=str, help='Vectorstore name.')
+    parser.add_argument('--database_path', type=str, help='Database path.')
     parser.add_argument('--launch_method', type=str, default='standalone', help='launch method for vectorstore, chosen from ["docker", "standalone"].')
     parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='host + port for milvus started from docker')
+    parser.add_argument('--vectorstore_path', type=str, help='Path to the vectorstore.')
     parser.add_argument('--pdf_path', type=str, required=True, help='Path to the PDF file or JSON line file.')
     parser.add_argument('--config_path', type=str, help='Path to the config file.')
     parser.add_argument('--on_conflict', type=str, default='ignore', choices=['replace', 'ignore', 'raise'], help='How to handle the database content insertion conflict.')
@@ -292,8 +296,10 @@ if __name__ == '__main__':
     populator = DataPopulation(
         database=args.database,
         vectorstore=args.vectorstore,
+        database_path=args.database_path,
         launch_method=args.launch_method,
         docker_uri=args.docker_uri,
+        vectorstore_path=args.vectorstore_path,
         from_scratch=args.from_scratch
     )
 
