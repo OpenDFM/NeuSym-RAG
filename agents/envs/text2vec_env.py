@@ -7,6 +7,7 @@ from milvus_model.base import BaseEmbeddingFunction
 from agents.envs.env_base import AgentEnv
 from typing import Optional, List, Tuple, Dict, Union, Any, Type
 from agents.envs.actions import Action, RetrieveFromVectorstore, CalculateExpr, ViewImage, GenerateAnswer
+from utils.database_utils import get_database_connection
 from utils.vectorstore_utils import get_vectorstore_connection, get_embed_model_from_collection, get_milvus_embedding_function
 
 
@@ -22,10 +23,10 @@ class Text2VecEnv(AgentEnv):
             kwargs:
                 - database: str, the database name
                 - vectorstore: str, the vectorstore name, must be the same as the database name. Indeed, we only need to specify one of them.
-                - database_type: str, the database type, default is 'duckdb'. Other types are not supported yet.
                 - database_path: str, the path to the database file, default is 'data/database/{database}/{database}.duckdb'.
                 - launch_method: str, the launch method of the Milvus vectorstore, default is 'standalone', chosen from ['standalone', 'docker'].
                 - docker_uri: str, URI to the docker, default is 'http://127.0.0.1:19530'.
+                - vectorstore_path: str, the path to the vectorstore, default is 'data/vectorstore/{vectorstore}/{vectorstore}.db'.
         """
         super(Text2VecEnv, self).__init__(action_format=action_format, action_space=action_space, agent_method=agent_method, dataset=dataset)
         # database and vectorstore name must be the same
@@ -36,12 +37,11 @@ class Text2VecEnv(AgentEnv):
         assert self.database == self.vectorstore
 
         self.database_conn = None
-        self.database_type = kwargs.get('database_type', 'duckdb')
-        self.database_path = kwargs.get('database_path', os.path.join('data', 'database', self.database, f'{self.database}.duckdb'))
+        self.database_path = kwargs.get('database_path', None)
         self.vectorstore_conn, self.embedder_dict = None, {}
         self.launch_method = kwargs.get('launch_method', 'standalone')
-        assert self.launch_method in ['docker', 'standalone'], f"Vectorstore launch method {self.launch_method} not supported."
-        self.docker_uri = kwargs.get('docker_uri', 'http://127.0.0.1:19530') if self.launch_method == 'docker' else None
+        self.docker_uri = kwargs.get('docker_uri', 'http://127.0.0.1:19530')
+        self.vectorstore_path = kwargs.get('vectorstore_path', None)
         self.reset()
 
         self.table2pk, self.table2encodable = dict(), defaultdict(dict)
@@ -66,18 +66,18 @@ class Text2VecEnv(AgentEnv):
         """
         self.parsed_actions = []
         if not isinstance(self.database_conn, duckdb.DuckDBPyConnection):
-            if not os.path.exists(self.database_path):
-                raise FileNotFoundError(f"Database {self.database_path} not found.")
-            if self.database_type == 'duckdb':
-                self.database_conn: duckdb.DuckDBPyConnection = duckdb.connect(self.database_path)
-            else:
-                raise NotImplementedError(f"Database type {self.database_type} not supported.")
+            self.database_conn = get_database_connection(
+                self.database,
+                database_path=self.database_path,
+                from_scratch=False
+            )
 
         if not isinstance(self.vectorstore_conn, MilvusClient):
             self.vectorstore_conn = get_vectorstore_connection(
                 self.vectorstore,
                 launch_method=self.launch_method,
                 docker_uri=self.docker_uri,
+                vectorstore_path=self.vectorstore_path,
                 from_scratch=False
             )
             time.sleep(3)

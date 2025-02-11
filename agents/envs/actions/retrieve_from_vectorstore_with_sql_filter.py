@@ -48,7 +48,7 @@ class RetrieveFromVectorstoreWithSQLFilter(Action):
 
         db_conn: duckdb.DuckDBPyConnection = env.database_conn
         if not db_conn:
-            return False, f"[Error]: {env.database_type} connection is not available."
+            return False, f"[Error]: Database connection is not available."
         if self.sql == '':
             return False, "[Error]: SQL string is empty."
         if self.table_name not in env.table2encodable or len(env.table2encodable[self.table_name]) == 0:

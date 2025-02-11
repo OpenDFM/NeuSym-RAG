@@ -146,3 +146,31 @@ You can firstly give your reasoning process, followed by the final answer in the
 Here is your response:
 """
 ]
+
+TWO_STAGE_HYBRID_PROMPT = """{system_prompt}
+
+--------
+
+Here is a detailed specification of the `RetrieveFromVectorstore` or `RetrieveFromDatabase` action that you need to predict:
+
+{action_prompt}
+
+--------
+
+The task input is:
+
+[Question]: {question}
+{pdf_context}
+[Database Schema]:
+{database_schema}
+[Vectorstore Schema]:
+{vectorstore_schema}
+
+You can firstly give your reasoning process, followed by the `RetrieveFromVectorstore` or `RetrieveFromDatabase` action with pre-defined JSON format (REMEMBER TO WRAP YOUR ACTION IN THREE BACKTICKS):
+
+```json\nconcrete JSON-format action\n```
+
+Note that you can ONLY predict one action.
+
+Here is your response:
+"""

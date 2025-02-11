@@ -76,15 +76,17 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--database', type=str, required=True, help='which database to use')
+    parser.add_argument('--database_path', type=str, help='path to the database file')
     parser.add_argument('--launch_method', type=str, default='standalone', help='how to launch the vectorstore')
     parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='uri of the docker container')
+    parser.add_argument('--vectorstore_path', type=str, help='path to the vectorstore')
     parser.add_argument('--pdf_path', type=str, help='path to the PDF file or JSON line file')
     parser.add_argument('--detailed', action='store_true', help='whether to show detailed information')
     args = parser.parse_args()
 
     db_schema = DatabaseSchema(args.database)
-    db_conn = get_database_connection(args.database, from_scratch=False)
-    vs_conn = get_vectorstore_connection(args.database, launch_method=args.launch_method, docker_uri=args.docker_uri, from_scratch=False)
+    db_conn = get_database_connection(args.database, database_path=args.database_path, from_scratch=False)
+    vs_conn = get_vectorstore_connection(args.database, launch_method=args.launch_method, docker_uri=args.docker_uri, vectorstore_path=args.vectorstore_path, from_scratch=False)
 
     pdf_ids = get_pdf_ids_to_encode(args.database, args.pdf_path) if args.pdf_path else []
     check_db_and_vs_consistency(db_conn, vs_conn, db_schema, pdf_ids=pdf_ids, detailed=args.detailed)

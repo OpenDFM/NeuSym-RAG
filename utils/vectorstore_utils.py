@@ -173,6 +173,7 @@ def get_vectorstore_connection(
         vectorstore_name: str,
         launch_method: str = 'standalone',
         docker_uri: str = 'http://127.0.0.1:19530',
+        vectorstore_path: Optional[str] = None,
         from_scratch: bool = False
     ) -> MilvusClient:
     """ Get the connection to the vectorstore, either from the local .db path (Milvus-lite) or from the remote server via Docker.
@@ -180,12 +181,15 @@ def get_vectorstore_connection(
         vectorstore_name: str, the database name to create/use
         launch_method: str, the launch method for the Milvus server, chosen from ['standalone', 'docker']
         docker_uri: str, the URI for the Milvus server if using Docker
+        vectorstore_path: str, the path to the vectorstore if using Milvus-lite
         from_scratch: bool, remove the existed vectorstore with `vectorstore_name` or not
     @return:
         conn: MilvusClient, the connection to the vectorstore
     """
+    assert launch_method in ['docker', 'standalone'], f"Vectorstore launch method {launch_method} not supported."
     if launch_method == 'standalone': # Milvus-lite
-        vs_path = os.path.join(VECTORSTORE_DIR, vectorstore_name, f'{vectorstore_name}.db')
+        vs_path = vectorstore_path if vectorstore_path is not None else \
+            os.path.join(VECTORSTORE_DIR, vectorstore_name, f'{vectorstore_name}.db')
         if from_scratch and os.path.exists(vs_path):
             os.remove(vs_path)
         client = MilvusClient(vs_path)
@@ -586,6 +590,8 @@ if __name__ == '__main__':
     parser.add_argument('--vectorstore', type=str, help='which vectorstore, indeed the database name.')
     parser.add_argument('--launch_method', type=str, default='standalone', help='launch method for vectorstore, chosen from ["docker", "standalone"].')
     parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='host + port for milvus started from docker')
+    parser.add_argument('--vectorstore_path', type=str, help='Path to the vectorstore if launch_method is "standalone".')
+    parser.add_argument('--database_path', type=str, help='Path to the relational database.')
     parser.add_argument('--pdf_path', type=str, help='File containing the list of PDF ids to encode (pls. ensure they exist in the relational database)')
     parser.add_argument('--target_collections', type=str, nargs='*', help='Target collections to encode content into.')
     parser.add_argument('--batch_size', type=int, default=128, help='batch size for pdf content retrieval')
@@ -594,9 +600,9 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # the schema of relational database records which column will be encoded into vectors
-    db_conn: duckdb.DuckDBPyConnection = get_database_connection(args.vectorstore)
+    db_conn: duckdb.DuckDBPyConnection = get_database_connection(args.vectorstore, database_path=args.database_path)
     db_schema: DatabaseSchema = DatabaseSchema(args.vectorstore)
-    vs_conn: MilvusClient = get_vectorstore_connection(args.vectorstore, launch_method=args.launch_method, docker_uri=args.docker_uri, from_scratch=args.from_scratch)
+    vs_conn: MilvusClient = get_vectorstore_connection(args.vectorstore, launch_method=args.launch_method, docker_uri=args.docker_uri, vectorstore_path=args.vectorstore_path, from_scratch=args.from_scratch)
     vs_schema: VectorstoreSchema = VectorstoreSchema()
 
     # initialize the vectorstore schema

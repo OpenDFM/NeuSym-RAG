@@ -24,7 +24,7 @@ def evaluate_dataset(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **k
         score = evaluate_pdfvqa(pred_ans, gold_data, **kwargs)
     elif dataset == 'tatdqa':
         score = evaluate_tatdqa(pred_ans, gold_data, **kwargs)
-    elif dataset == ['airqa', 'm3sciqa', 'scidqa', 'spiqa']:
+    elif dataset in ['airqa', 'm3sciqa', 'scidqa', 'spiqa']:
         score = evaluate_airqa(pred_ans, gold_data)
     else:
         raise NotImplementedError(f"Dataset {dataset} not supported.")
