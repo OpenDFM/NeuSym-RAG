@@ -49,7 +49,7 @@ class Text2SQLRAGAgent(AgentBase):
             {'role': 'user', 'content': task_prompt}
         ]
         if image_message is not None:
-            messages.append(image_message)
+            messages[-1] = {'role': 'user', 'content': [{'type': 'text', 'text': task_prompt}] + image_message['content']}
         answer = self.forward(
             messages,
             model=model,

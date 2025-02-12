@@ -1,5 +1,5 @@
 #coding=utf8
-from typing import Any, Dict, Tuple
+from typing import Any, List, Dict, Tuple, Optional
 import base64
 from utils.functions.image_functions import get_image_message
 
@@ -8,7 +8,7 @@ def formulate_input(
         data: Dict[str, Any],
         use_reference_pdf: bool = True,
         image_limit: int = 10
-) -> Tuple[str, str]:
+) -> Tuple[str, str, str, Optional[Dict[str, Any]]]:
     if dataset == 'pdfvqa':
         question, page = data['question'], data['page_number']
         pdf_id = data['pdf_id']
