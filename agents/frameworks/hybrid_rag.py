@@ -51,7 +51,7 @@ class HybridRAGAgent(AgentBase):
             {'role': 'user', 'content': task_prompt}
         ]
         if image_message is not None:
-            messages.append(image_limit)
+            messages.append(image_message)
         answer = self.forward(
             messages,
             model=model,
