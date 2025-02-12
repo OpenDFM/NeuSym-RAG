@@ -44,6 +44,7 @@ class LLMClient(abc.ABC):
         """ Get response function wrapper with LLM cache.
         """
         if self.no_llm_cache: # do not cache
+            messages = self.convert_message_from_gpt_format(messages, model)
             return self._get_response(messages, model, temperature, top_p, max_tokens)
 
         params = {
