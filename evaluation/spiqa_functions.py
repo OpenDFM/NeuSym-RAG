@@ -19,22 +19,24 @@ limitations under the License.
 from typing import Any
 from .eval_spiqa.llmlogscore import OpenAIClient as SpiQAEvalClient
 from .match_functions import eval_bool_exact_match
-from .llm_functions import DEFAULT_LLM_MODEL
+
 
 _SUFFIXES_TO_SCORE = [' yes', ' yeah']
 _COMPLEMENT_SUFFIXES = [' no']
-_SPIQA_EVAL_CLIENT = None
+_SPIQA_EVAL_CLIENT = {}
+
+DEFAULT_SPIQA_LLM_MODEL = 'gpt-4o-mini' # too many examples, thus cheaper models
+DEFAULT_SPIQA_TEMPERATURE = 0.0
 
 
 _PROMPT = 'You are given a question, ground-truth answer, and a candidate answer. Question: <question> \nGround-truth answer: <GT> \nCandidate answer: <answer> \n\
 Is the semantic meaning of the ground-truth and candidate answers similar? Answer in one word - Yes or No.'
 
 
-def get_spiqa_eval_client(model_name: str = DEFAULT_LLM_MODEL) -> SpiQAEvalClient:
-    global _SPIQA_EVAL_CLIENT
-    if _SPIQA_EVAL_CLIENT is None:
-        _SPIQA_EVAL_CLIENT = SpiQAEvalClient(model_name=model_name)
-    return _SPIQA_EVAL_CLIENT
+def get_spiqa_eval_client(model_name: str = DEFAULT_SPIQA_LLM_MODEL) -> SpiQAEvalClient:
+    if _SPIQA_EVAL_CLIENT.get(model_name, None) is None:
+        _SPIQA_EVAL_CLIENT[model_name] = SpiQAEvalClient(model_name=model_name)
+    return _SPIQA_EVAL_CLIENT[model_name]
 
 
 def eval_spiqa(
@@ -43,7 +45,8 @@ def eval_spiqa(
     question: str = '',
     task_type: str = 'taska',
     is_boolean: bool = False,
-    model_name: str = DEFAULT_LLM_MODEL
+    model_name: str = DEFAULT_SPIQA_LLM_MODEL,
+    temperature: float = DEFAULT_SPIQA_TEMPERATURE,
 ) -> float:
     if is_boolean:
         return eval_bool_exact_match(pred, reference_answer)
@@ -57,9 +60,10 @@ def eval_spiqa(
             prompt=prompt_current,
             suffixes=_SUFFIXES_TO_SCORE,
             complement_suffixes=_COMPLEMENT_SUFFIXES,
+            temperature=temperature,
             output_prefix=''
         )
-        score = prob_yes
+        score = round(float(prob_yes), 2)
     except:
         score = 0
         print('[ERROR]: Unexpected error occurred during the evaluation of SPIQA dataset.')
