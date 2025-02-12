@@ -29,7 +29,7 @@ class TwoStageHybridRAGAgent(AgentBase):
                  with_vision: bool = True,
                  **kwargs
     ) -> str:
-        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, with_vision=with_vision)
+        question, answer_format, pdf_context, image_messages = formulate_input(dataset, example, with_vision=with_vision)
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
         prev_cost = self.model.get_cost()
@@ -47,8 +47,8 @@ class TwoStageHybridRAGAgent(AgentBase):
         ) # system prompt + task prompt + cot thought hints
         logger.info('[Stage 1]: Generate Action ...')
         messages = [{'role': 'user', 'content': prompt}]
-        if image_message:
-            messages.append(image_message)
+        if image_messages:
+            messages.extend(image_messages)
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         _, action = Action.parse_action(response, action_types=[RetrieveFromVectorstore, RetrieveFromDatabase], action_format='json', agent_method='code_block')
@@ -76,8 +76,8 @@ class TwoStageHybridRAGAgent(AgentBase):
             ) # system prompt + task prompt (insert retrived observation) + cot thought hints
         logger.info(f'[Stage 2]: Generate Answer ...')
         messages = [{'role': 'user', 'content': prompt}]
-        if image_message:
-            messages.append(image_message)
+        if image_messages:
+            messages.extend(image_messages)
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)

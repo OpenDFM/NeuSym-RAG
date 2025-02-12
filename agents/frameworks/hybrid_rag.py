@@ -40,7 +40,7 @@ class HybridRAGAgent(AgentBase):
                  with_vision: bool = True,
     ) -> str:
         # construct the initial prompt messages
-        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, with_vision=with_vision)
+        question, answer_format, pdf_context, image_messages = formulate_input(dataset, example, with_vision=with_vision)
         task_prompt = f'[Question]: {question}\n[Answer Format]: {answer_format}\n{pdf_context}[Database Schema]: {database_prompt}\n[Vectorstore Schema]:\n{vectorstore_prompt}'
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
@@ -50,8 +50,8 @@ class HybridRAGAgent(AgentBase):
             {'role': 'system', 'content': self.agent_prompt},
             {'role': 'user', 'content': task_prompt}
         ]
-        if image_message:
-            messages.append(image_message)
+        if image_messages:
+            messages.extend(image_messages)
         answer = self.forward(
             messages,
             model=model,

@@ -54,8 +54,9 @@ def formulate_input(dataset: str, data: Dict[str, Any], with_vision: bool = True
             pdf_context += f" ([Reference PDF]: [{', '.join(reference_pdf_id)}]\n"
         if with_vision and ('anchor_image' in data):
             anchor_images = data['anchor_image']
-            assert isinstance(anchor_images, list) and len(anchor_images) == 1, f"Example {data['uuid']} anchor_image should be a list with exact one image path."
-            anchor_image_path = anchor_images[0]
-            image_message = get_image_message(template="[Anchor Image]: The image you must use to answer the question.", image_path=anchor_image_path)
-        return question, answer_format, pdf_context, image_message
+            image_messages = []
+            for anchor_image_path in anchor_images:
+                image_message = get_image_message(template="[Anchor Image]: The image you must use to answer the question.", image_path=anchor_image_path)
+                image_messages.append(image_message)
+        return question, answer_format, pdf_context, image_messages
     return question, answer_format

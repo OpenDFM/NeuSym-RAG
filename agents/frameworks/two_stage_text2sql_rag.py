@@ -28,7 +28,7 @@ class TwoStageText2SQLRAGAgent(AgentBase):
                  with_vision: bool = True,
                  **kwargs
     ) -> str:
-        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, with_vision=with_vision)
+        question, answer_format, pdf_context, image_messages = formulate_input(dataset, example, with_vision=with_vision)
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
         prev_cost = self.model.get_cost()
@@ -43,8 +43,8 @@ class TwoStageText2SQLRAGAgent(AgentBase):
         ) # system prompt + task prompt + cot thought hints
         logger.info('[Stage]: Generate SQL ...')
         messages = [{'role': 'user', 'content': prompt}]
-        if image_message:
-            messages.append(image_message)
+        if image_messages:
+            messages.extend(image_messages)
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         matched_list = re.findall(r"```(sql)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
@@ -67,8 +67,8 @@ class TwoStageText2SQLRAGAgent(AgentBase):
         ) # system prompt (without schema) + task prompt (insert SQL, observation) + cot thought hints
         logger.info(f'[Stage]: Generate Answer ...')
         messages = [{'role': 'user', 'content': prompt}]
-        if image_message:
-            messages.append(image_message)
+        if image_messages:
+            messages.extend(image_messages)
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
