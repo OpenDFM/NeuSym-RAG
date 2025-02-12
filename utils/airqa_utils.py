@@ -218,12 +218,13 @@ def make_airqa_dataset(airqa_dir: str = AIRQA_DIR, airqa_100: bool = False) -> s
     count = 0
     with open(output_path, 'w', encoding='utf8') as of:
         for fp in json_files:
-            fp = os.path.join(indir, fp)
-            with open(fp, 'r', encoding='utf8') as inf:
-                data = json.load(inf)
-            if airqa_100 and data['uuid'] not in uuids_to_include: continue
-            of.write(json.dumps(data, ensure_ascii=False) + '\n')
-            count += 1
+            if fp.endswith(".json"):
+                fp = os.path.join(indir, fp)
+                with open(fp, 'r', encoding='utf8') as inf:
+                    data = json.load(inf)
+                if airqa_100 and data['uuid'] not in uuids_to_include: continue
+                of.write(json.dumps(data, ensure_ascii=False) + '\n')
+                count += 1
     logger.info(f"Merge {count} AIR-QA examples into {output_path}.")
     return output_path
 
