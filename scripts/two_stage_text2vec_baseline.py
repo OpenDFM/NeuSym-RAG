@@ -10,8 +10,8 @@ from agents.prompts import convert_vectorstore_schema_to_prompt, formulate_input
 from utils.eval_utils import evaluate, print_result
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
-parser.add_argument('--vectorstore', type=str, default='ai_research', help='which vectorstore to use')
+parser.add_argument('--dataset', type=str, required=True, help='which dataset to use')
+parser.add_argument('--vectorstore', type=str, required=True, help='which vectorstore to use')
 parser.add_argument('--launch_method', type=str, default='standalone', choices=['standalone', 'docker'], help='launch method for vectorstore, chosen from ["docker", "standalone"].')
 parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='host + port for milvus started from docker')
 parser.add_argument('--vectorstore_path', type=str, help='Path to the vectorstore if launch_method is "standalone".')

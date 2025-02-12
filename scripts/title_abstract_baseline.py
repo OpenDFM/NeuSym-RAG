@@ -8,7 +8,7 @@ from utils.eval_utils import evaluate, print_result
 from utils.functions.ai_research_metadata import get_airqa_paper_metadata
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
+parser.add_argument('--dataset', type=str, required=True, help='which dataset to use')
 parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='test data file')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
 parser.add_argument('--temperature', type=float, default=0.7)
