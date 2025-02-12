@@ -68,9 +68,9 @@ You can firstly give your reasoning process, followed by the final answer in the
 ```txt\nfinal answer\n```
 """
 
-for data in test_data:
+for data_idx, data in enumerate(test_data):
     prev_cost = llm.get_cost()
-    logger.info(f"Processing question: {data['uuid']}")
+    logger.info(f"Processing question [{data_idx + 1}/{len(test_data)}]: {data['uuid']}")
     question, answer_format = data["question"], data["answer_format"]
     logger.info(f'[Question]: {question}')
     logger.info(f'[Answer Format]: {answer_format}')

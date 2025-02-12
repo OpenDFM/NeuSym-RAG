@@ -64,13 +64,13 @@ database_prompt = convert_database_schema_to_prompt(args.database, serialize_met
 
 start_time = datetime.now()
 preds = []
-for data in test_data:
-    logger.info(f"Processing question: {data['uuid']}")
+for data_idx, data in enumerate(test_data):
+    logger.info(f"Processing question [{data_idx + 1}/{len(test_data)}]: {data['uuid']}")
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
     try:
         result = agent.interact(args.dataset, data, database_prompt, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, image_limit=args.image_limit)
     except Exception as e:
-        logger.error(f"[Error]: {str(e)}")
+        logger.error(f"[❌Error❌]: ({data['uuid']}) {str(e)}")
         result = '[ERROR]: ' + str(e)
     preds.append({'uuid': data['uuid'], 'answer': result})
 logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
