@@ -1,5 +1,5 @@
 #coding=utf8
-import abc
+import abc, os
 from typing import Any, List, Dict, Tuple, Optional
 from agents.models.llm_cache import Sqlite3CacheProvider as LLMCache
 
@@ -15,7 +15,10 @@ class LLMClient(abc.ABC):
         self._completion_tokens: int = 0
         self._cost: float = 0.0
         self._call_times: int = 0
-        self.cache: LLMCache = LLMCache()
+        self.cache: Optional[LLMCache] = None
+        self.no_llm_cache: bool = os.environ.get('NO_LLM_CACHE', False)
+        if not self.no_llm_cache:
+            self.cache: LLMCache = LLMCache()
 
     def close(self):
         """ Close the LLM client, indeed the LLM cache.
@@ -40,6 +43,9 @@ class LLMClient(abc.ABC):
     ) -> str:
         """ Get response function wrapper with LLM cache.
         """
+        if self.no_llm_cache: # do not cache
+            return self._get_response(messages, model, temperature, top_p, max_tokens)
+
         params = {
             'messages': messages,
             'model': model,
