@@ -15,6 +15,7 @@ parser.add_argument('--temperature', type=float, default=0.7)
 parser.add_argument('--top_p', type=float, default=0.95)
 parser.add_argument('--max_tokens', type=int, default=1500)
 parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
+parser.add_argument('--no_eval', action='store_true', help='Whether not to evaluate the results')
 args = parser.parse_args()
 
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -112,6 +113,8 @@ with open(output_path, 'w', encoding='utf-8') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")
-result = evaluate(preds, test_data, args.dataset, output_path=os.path.join(result_dir, 'evaluation.txt'))
-result_table = print_result(result)
-logger.info(f"Final evaluation result on {args.dataset}:\n{result_table}")
+
+if not args.no_eval:
+    result = evaluate(preds, test_data, args.dataset, output_path=os.path.join(result_dir, 'evaluation.txt'))
+    result_table = print_result(result)
+    logger.info(f"Final evaluation result on {args.dataset}:\n{result_table}")
