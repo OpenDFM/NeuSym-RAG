@@ -45,5 +45,6 @@ def eval_m3sciqa(pred: Any, question: str, reference_answer: str, model: str = "
     response = call_llm(prompt, model=model, temperature=temperature)
     response = extract_response(response)
     response = json.loads(response)['selection']
-    return float(response)
+    
     # return 1.0 if float(response) > 0.9 else 0.0
+    return float(response)
