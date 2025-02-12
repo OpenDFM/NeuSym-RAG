@@ -15,6 +15,7 @@ parser.add_argument('--database', type=str, required=True, help='which database 
 parser.add_argument('--database_path', type=str, help='Database path.')
 parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='test data file')
 parser.add_argument('--db_format', type=str, choices=['create_sql', 'detailed_json'], default='create_sql', help='Database schema serialization format')
+parser.add_argument('--image_limit', type=int, default=10, help='Maximum number of images to be shown in the agents response')
 parser.add_argument('--agent_method', type=str, default='two_stage_text2sql', help='Agent method')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
 parser.add_argument('--temperature', type=float, default=0.7)
@@ -66,7 +67,11 @@ preds = []
 for data in test_data:
     logger.info(f"Processing question: {data['uuid']}")
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
-    result = agent.interact(args.dataset, data, database_prompt, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, with_vision=True)
+    try:
+        result = agent.interact(args.dataset, data, database_prompt, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, image_limit=args.image_limit)
+    except Exception as e:
+        logger.error(f"[Error]: {str(e)}")
+        result = '[ERROR]: ' + str(e)
     preds.append({'uuid': data['uuid'], 'answer': result})
 logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 agent.close()

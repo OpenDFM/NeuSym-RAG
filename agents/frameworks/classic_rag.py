@@ -28,10 +28,10 @@ class ClassicRAGAgent(AgentBase):
                  temperature: float = 0.7,
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
-                 with_vision: bool = True,
+                 image_limit: int = 10,
                  **kwargs
     ) -> str:
-        question, answer_format, pdf_context, image_messages = formulate_input(dataset, example, with_vision=with_vision)
+        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, image_limit=image_limit)
         pdf_id = example["anchor_pdf"] + example["reference_pdf"]
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
@@ -77,8 +77,8 @@ class ClassicRAGAgent(AgentBase):
         ) # system prompt + task prompt + cot thought hints
         logger.info('[Stage 2]: Generate Answer ...')
         messages = [{'role': 'user', 'content': prompt}]
-        if image_messages:
-            messages.extend(image_messages)
+        if image_message is not None:
+            messages.append(image_message)
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)

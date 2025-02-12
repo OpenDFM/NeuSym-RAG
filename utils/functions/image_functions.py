@@ -92,39 +92,55 @@ def get_image_mime_type(image_path: str) -> str:
 
 def get_image_message(
         template: str,
-        image_path: Optional[str] = None,
+        image_path: Optional[Union[List[str], str]] = None,
         base64_image: Optional[str] = None,
-        mine_type: str = 'image/jpeg'
+        mine_type: str = 'image/jpeg',
+        image_limit: int = 10
     ) -> Dict[str, Any]:
     """ Get the image message for LLM calling.
     @args:
         template: str, the description/instruction for the image.
-        image_path: str, path to the image file you want to summary (overwrite `base64_image`).
+        image_path: str or List[str], path(s) to the image file(s) you want to summary (overwrite `base64_image`).
         base64_image: str, base64 encoded image string. Either `image_path` or `base64_image` must be provided.
         mine_type: str, the mine type of the image, should be specified if only `base64_image` is provided, default to 'image/jpeg'.
     @return:
         message: dict, a role-content message pair
     """
     assert image_path is not None or base64_image is not None, "Either `image_path` or `base64_image` must be provided."
-    mine_type = get_image_mime_type(image_path) if image_path is not None else mine_type
-    if image_path is not None:
-        with open(image_path, 'rb') as f:
-            base64_image = base64.b64encode(f.read()).decode('utf-8')
     message = {
         "role": "user",
         "content": [
             {
                 'type': 'text',
                 'text': template
-            },
-            {
+            }
+        ]
+    }
+    if image_path is not None:
+        if not isinstance(image_path, list): # multiple images
+            image_path = [image_path]
+        for idx, img_path in enumerate(image_path):
+            if image_limit > 0 and idx >= image_limit:
+                print(f'[Warning]: exceeding the image count limit {image_limit}, only the first {image_limit} images will be used.')
+                break
+            if not os.path.exists(img_path):
+                raise FileNotFoundError(f"Image file {img_path} does not exist.")
+            mine_type = get_image_mime_type(img_path)
+            with open(img_path, 'rb') as f:
+                base64_image = base64.b64encode(f.read()).decode('utf-8')
+            message['content'].append({
                 'type': 'image_url',
                 "image_url": {
                     "url":  f"data:{mine_type};base64,{base64_image}"
                 }
+            })
+    else:
+        message['content'].append({
+            'type': 'image_url',
+            "image_url": {
+                "url":  f"data:{mine_type};base64,{base64_image}"
             }
-        ]
-    }
+        })
     
     return message
 

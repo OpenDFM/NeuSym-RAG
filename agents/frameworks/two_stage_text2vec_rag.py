@@ -25,10 +25,10 @@ class TwoStageText2VecRAGAgent(AgentBase):
                  temperature: float = 0.7,
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
-                 with_vision: bool = True,
+                 image_limit: int = 10,
                  **kwargs
     ) -> str:
-        question, answer_format, pdf_context, image_messages = formulate_input(dataset, example, with_vision=with_vision)
+        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, image_limit=image_limit)
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
         prev_cost = self.model.get_cost()
@@ -45,8 +45,8 @@ class TwoStageText2VecRAGAgent(AgentBase):
         ) # system prompt + action_prompt + task prompt + cot thought hints
         logger.info('[Stage 1]: Generate RetriveFromVectorstore action ...')
         messages = [{'role': 'user', 'content': prompt}]
-        if image_messages:
-            messages.extend(image_messages)
+        if image_message is not None:
+            messages.append(image_message)
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         _, action = Action.parse_action(response, action_types=[RetrieveFromVectorstore], action_format='json', agent_method='code_block')
@@ -63,8 +63,8 @@ class TwoStageText2VecRAGAgent(AgentBase):
         ) # system prompt + task prompt (insert retrived observation) + cot thought hints
         logger.info(f'[Stage 2]: Generate Answer ...')
         messages = [{'role': 'user', 'content': prompt}]
-        if image_messages:
-            messages.extend(image_messages)
+        if image_message is not None:
+            messages.append(image_message)
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)

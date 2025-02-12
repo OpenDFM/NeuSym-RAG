@@ -3,7 +3,12 @@ from typing import Any, Dict, Tuple
 import base64
 from utils.functions.image_functions import get_image_message
 
-def formulate_input(dataset: str, data: Dict[str, Any], with_vision: bool = True) -> Tuple[str, str]:
+def formulate_input(
+        dataset: str, 
+        data: Dict[str, Any],
+        use_reference_pdf: bool = True,
+        image_limit: int = 10
+) -> Tuple[str, str]:
     if dataset == 'pdfvqa':
         question, page = data['question'], data['page_number']
         pdf_id = data['pdf_id']
@@ -45,18 +50,22 @@ def formulate_input(dataset: str, data: Dict[str, Any], with_vision: bool = True
         if len(anchor_pdf_id) == 1:
             pdf_context += f"[Anchor PDF]: {anchor_pdf_id[0]}\n"
         elif len(anchor_pdf_id) > 1:
-            pdf_context += f"[Anchor PDF]: [{', '.join(anchor_pdf_id)}]\n"
-        reference_pdf_id = data.get('reference_pdf', '')
-        assert isinstance(reference_pdf_id, list), f"Example {data['uuid']} reference_pdf should be a list."
-        if len(reference_pdf_id) == 1:
-            pdf_context += f"[Reference PDF]: {reference_pdf_id[0]}\n"
-        elif len(reference_pdf_id) > 1:
-            pdf_context += f" ([Reference PDF]: [{', '.join(reference_pdf_id)}]\n"
-        if with_vision and ('anchor_image' in data):
-            anchor_images = data['anchor_image']
-            image_messages = []
-            for anchor_image_path in anchor_images:
-                image_message = get_image_message(template="[Anchor Image]: The image you must use to answer the question.", image_path=anchor_image_path)
-                image_messages.append(image_message)
-        return question, answer_format, pdf_context, image_messages
+            pdf_context += f"[Anchor PDFs]: [{', '.join(anchor_pdf_id)}]\n"
+        
+        if use_reference_pdf and data.get('reference_pdf', '') :
+            reference_pdf_id = data.get('reference_pdf', '')
+            assert isinstance(reference_pdf_id, list), f"Example {data['uuid']} reference_pdf should be a list."
+            if len(reference_pdf_id) == 1:
+                pdf_context += f"[Reference PDF]: {reference_pdf_id[0]}\n"
+            elif len(reference_pdf_id) > 1:
+                pdf_context += f" [Reference PDFs]: [{', '.join(reference_pdf_id)}]\n"
+
+        if image_limit > 0 and data.get('anchor_image', []):
+            template = "[Image]: Here are some images that you can use to answer the question:" if len(data['anchor_image']) > 1 else "[Image]: Here is one image you can use to answer the question:"
+            image_message = get_image_message(
+                template=template,
+                image_path=data['anchor_image'],
+                image_limit=image_limit
+            )
+        return question, answer_format, pdf_context, image_message
     return question, answer_format

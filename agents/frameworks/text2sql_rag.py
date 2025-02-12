@@ -36,10 +36,10 @@ class Text2SQLRAGAgent(AgentBase):
                  max_tokens: int = 1500,
                  output_path: Optional[str] = None,
                  output_kwargs: Dict[str, Any] = {},
-                 with_vision: bool = True,
+                 image_limit: int = 10,
     ) -> str:
         # construct the initial prompt messages
-        question, answer_format, pdf_context, image_messages = formulate_input(dataset, example, with_vision=with_vision)
+        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, image_limit=image_limit)
         task_prompt = f'[Question]: {question}\n[Answer Format]: {answer_format}\n{pdf_context}[Database Schema]:\n{database_prompt}'
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
@@ -48,8 +48,8 @@ class Text2SQLRAGAgent(AgentBase):
             {'role': 'system', 'content': self.agent_prompt},
             {'role': 'user', 'content': task_prompt}
         ]
-        if image_messages:
-            messages.extend(image_messages)
+        if image_message is not None:
+            messages.append(image_message)
         answer = self.forward(
             messages,
             model=model,

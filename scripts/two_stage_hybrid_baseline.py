@@ -20,6 +20,7 @@ parser.add_argument('--vectorstore_path', type=str, help='Path to the vectorstor
 parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='test data file')
 parser.add_argument('--db_format', type=str, choices=['create_sql', 'detailed_json'], default='create_sql', help='Database schema serialization format')
 parser.add_argument('--vs_format', type=str, choices=['detailed_json'], default='detailed_json', help='Vectorstore schema serialization format')
+parser.add_argument('--image_limit', type=int, default=10, help='Maximum number of images to be shown in the agents response')
 parser.add_argument('--action_format', type=str, default='markdown', choices=['markdown', 'json', 'xml', 'yaml'], help='Action format for the environment')
 parser.add_argument('--output_format', type=str, default='json', choices=['markdown', 'string', 'html', 'json'], help='Output format for the environment execution results')
 parser.add_argument('--agent_method', type=str, default='two_stage_hybrid', help='Agent method')
@@ -80,7 +81,11 @@ preds = []
 for data in test_data:
     logger.info(f"Processing question: {data['uuid']}")
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
-    result = agent.interact(args.dataset, data, database_prompt, vectorstore_prompt, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, output_kwargs={'output_format': args.output_format}, with_vision=True)
+    try:
+        result = agent.interact(args.dataset, data, database_prompt, vectorstore_prompt, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, output_kwargs={'output_format': args.output_format}, image_limit=args.image_limit)
+    except Exception as e:
+        logger.error(f"[Error]: {str(e)}")
+        result = '[ERROR]: ' + str(e)
     preds.append({'uuid': data['uuid'], 'answer': result})
 logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 agent.close()

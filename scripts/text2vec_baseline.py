@@ -26,6 +26,7 @@ parser.add_argument('--temperature', type=float, default=0.7)
 parser.add_argument('--top_p', type=float, default=0.95)
 parser.add_argument('--max_tokens', type=int, default=1500)
 parser.add_argument('--max_turn', type=int, default=20, help='Maximum turns for the agent to interact with the environment')
+parser.add_argument('--image_limit', type=int, default=10, help='Maximum number of images to be shown in the agents response')
 parser.add_argument('--window_size', type=int, default=20, help='History window size preserved in the prompt when calling LLMs')
 parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
 parser.add_argument('--no_eval', action='store_true', help='Whether not to evaluate the results')
@@ -72,7 +73,11 @@ preds = []
 for data in test_data:
     logger.info(f"Processing question: {data['uuid']}")
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
-    result = agent.interact(args.dataset, data, vectorstore_prompt, window_size=args.window_size, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, output_kwargs={'output_format': args.output_format}, with_vision=True)
+    try:
+        result = agent.interact(args.dataset, data, vectorstore_prompt, window_size=args.window_size, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, output_kwargs={'output_format': args.output_format}, image_limit=args.image_limit)
+    except Exception as e:
+        logger.error(f"[Error]: {str(e)}")
+        result = '[ERROR]: ' + str(e)
     preds.append({'uuid': data['uuid'], 'answer': result})
 logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 agent.close()

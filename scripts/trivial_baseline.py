@@ -63,12 +63,16 @@ for data in test_data:
     logger.info(f"Processing question: {data['uuid']}")
     question, answer_format = formulate_input(args.dataset, data)
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
-    result = agent.interact(
-        question, answer_format,
-        pdf_id=data['pdf_id'], page_number=data.get('page_number', None), max_length=args.max_length,
-        model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens,
-        output_path=output_path
-    )
+    try:
+        result = agent.interact(
+            question, answer_format,
+            pdf_id=data['pdf_id'], page_number=data.get('page_number', None), max_length=args.max_length,
+            model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens,
+            output_path=output_path
+        )
+    except Exception as e:
+        logger.error(f"[Error]: {str(e)}")
+        result = '[ERROR]: ' + str(e)
     preds.append({'uuid': data['uuid'], 'answer': result})
 logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 agent.close()
