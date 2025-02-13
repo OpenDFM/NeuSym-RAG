@@ -34,7 +34,7 @@ class LocalClient(LLMClient):
             Truncate the message according to token limit.
         """
         new_messages = copy.deepcopy(messages)
-        # if not model.lower().startswith('qwen2.5-vl'):
+        # if True: # only contain the last image in the message list and delete the rest
             # flag_image = False
             # for i in range(len(new_messages) - 1, -1, -1):
                 # if isinstance(new_messages[i]['content'], list):
