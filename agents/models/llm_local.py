@@ -34,14 +34,14 @@ class LocalClient(LLMClient):
             Truncate the message according to token limit.
         """
         new_messages = copy.deepcopy(messages)
-        if not model.lower().startswith('qwen2.5-vl'):
-            flag_image = False
-            for i in range(len(new_messages) - 1, -1, -1):
-                if isinstance(new_messages[i]['content'], list):
-                    if flag_image:
-                        new_messages[i]['content'] = '[Observation]: The extracted image is omitted.'
-                    else:
-                        flag_image = True
+        # if not model.lower().startswith('qwen2.5-vl'):
+            # flag_image = False
+            # for i in range(len(new_messages) - 1, -1, -1):
+                # if isinstance(new_messages[i]['content'], list):
+                    # if flag_image:
+                        # new_messages[i]['content'] = '[Observation]: The extracted image is omitted.'
+                    # else:
+                        # flag_image = True
 
         tokenizer = AutoTokenizer.from_pretrained(self.model_path[model])
         message_max_tokens = tokenizer.model_max_length
