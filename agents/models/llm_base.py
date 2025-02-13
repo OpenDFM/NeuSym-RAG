@@ -23,7 +23,8 @@ class LLMClient(abc.ABC):
     def close(self):
         """ Close the LLM client, indeed the LLM cache.
         """
-        self.cache.close()
+        if self.cache:
+            self.cache.close()
 
 
     @abc.abstractmethod
