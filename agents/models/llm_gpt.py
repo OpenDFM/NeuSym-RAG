@@ -12,6 +12,7 @@ GPT_PRICES = OD([
     ('gemini-1.5-pro', (1.25e-6, 5e-6)),
     ('gpt-4o-mini', (0.15e-6, 0.6e-6)),
     ('gpt-4o', (2.5e-6, 10e-6)),
+    ('gpt-4-0125-preview', (10e-6, 30e-6)),
     ('gpt-4-vision-preview', (10e-6, 30e-6)),
     ('o1-mini', (3e-6, 12e-6)),
     ('o1-preview', (15e-6, 60e-6))

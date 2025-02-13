@@ -9,7 +9,7 @@ from transformers import AutoTokenizer
 class LocalClient(LLMClient):
     """ Note that, in .cache/ folder, only download the tokenizer files to calculate the token length.
     """
-
+    # TODO: in the future, we may directly use the same tokenizer to avoid downloading so many fiels
     model_path: Dict[str, str] = {
         'qwen2-vl-72b-instruct': os.path.join('.cache', 'Qwen2-VL-72B-Instruct'),
         'qwen2.5-72b-instruct': os.path.join('.cache', 'Qwen2.5-72B-Instruct'),

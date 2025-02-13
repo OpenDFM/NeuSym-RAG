@@ -32,7 +32,7 @@ class ClassicRAGAgent(AgentBase):
                  **kwargs
     ) -> str:
         question, answer_format, pdf_context, image_message = formulate_input(dataset, example, image_limit=image_limit)
-        pdf_id = example["anchor_pdf"] + example["reference_pdf"]
+        pdf_id = example["anchor_pdf"] #+ example["reference_pdf"]
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
         prev_cost = self.model.get_cost()

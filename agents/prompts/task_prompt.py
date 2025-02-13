@@ -52,6 +52,7 @@ def formulate_input(
         elif len(anchor_pdf_id) > 1:
             pdf_context += f"[Anchor PDFs]: [{', '.join(anchor_pdf_id)}]\n"
         
+        use_reference_pdf = use_reference_pdf if dataset != 'm3sciqa' else False
         if use_reference_pdf and data.get('reference_pdf', '') :
             reference_pdf_id = data.get('reference_pdf', '')
             assert isinstance(reference_pdf_id, list), f"Example {data['uuid']} reference_pdf should be a list."

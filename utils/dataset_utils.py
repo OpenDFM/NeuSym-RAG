@@ -499,7 +499,8 @@ def classify_question_type(data: Dict[str, Any], dataset: str) -> str:
     elif dataset == 'tatdqa':
         return data['question_type']
     else:
-        raise NotImplementedError(f"Dataset {dataset} not supported for question type classification.")
+        return ','.join(sorted(data['tags']))
+        # raise NotImplementedError(f"Dataset {dataset} not supported for question type classification.")
 
 def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_file: str = None, random_seed: int = 2024):
     """ Sample the dataset for testing purposes.
@@ -508,7 +509,7 @@ def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_fil
         sample_size: int, the sample size for the dataset.
         output_file: str, the output file name for the sampling .jsonl file.
     """
-    dataset_path = os.path.join(DATASET_DIR, dataset, 'processed_data', 'test_data.jsonl')
+    dataset_path = os.path.join(DATASET_DIR, dataset, 'test_data.jsonl')
     with open(dataset_path, 'r', encoding='utf-8') as inf:
         data = [json.loads(line) for line in inf]
     typed_data = {}
@@ -532,7 +533,7 @@ def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_fil
         logger.info(f'Sample {typed_sample_size[tp]} test data for type {tp}.')
 
     sample_size = len(sampled_data)
-    output_path = os.path.join(DATASET_DIR, dataset, 'processed_data', output_file) if output_file is not None else dataset_path.replace('test_data.jsonl', f'test_data_sample_{sample_size}.jsonl')
+    output_path = os.path.join(DATASET_DIR, dataset, output_file) if output_file is not None else dataset_path.replace('test_data.jsonl', f'test_data_sample_{sample_size}.jsonl')
     with open(output_path, 'w', encoding='utf-8') as of:
         for d in sampled_data:
             of.write(json.dumps(d, ensure_ascii=False) + '\n')
