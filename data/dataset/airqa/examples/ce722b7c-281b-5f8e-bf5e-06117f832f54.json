@@ -1,0 +1,28 @@
+{
+    "uuid": "ce722b7c-281b-5f8e-bf5e-06117f832f54",
+    "question": "What is the iAA(inter-annotator agreement when AttentionXML) value of the correctly predicted results?",
+    "answer_format": "Your answer should be a floating-point number with two decimal place.",
+    "tags": [
+        "single",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": ["18d8e402-75a3-50e2-8f1c-e36f234617b0"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the results of the experiments.",
+        "Then, get the iAA value of the correctly predicted results from the results picture."
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": "0.48",
+            "ndigits": 2
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
