@@ -88,6 +88,24 @@ class RetrieveFromVectorstore(Action):
             if field not in valid_output_fields:
                 return False, "[Error]: Output field {} is not available in the collection {} of Milvus vectorstore. The available output fields include {}".format(repr(field), repr(self.collection_name), valid_output_fields)
         
+        # TODO: quick fix for some common errors in the filter condition
+        try:
+            # check if the filter condition is valid
+            vs_conn = env.vectorstore_conn
+            res = vs_conn.query(collection_name=self.collection_name, filter=self.filter, limit=1)
+        except Exception as e:
+            msg = []
+            for common_key in ['ref_paper_id', 'paper_id']:
+                if common_key in self.filter:
+                    msg.append(f"`{common_key}` is not a valid field name of stored data entries in the vectorstore, please use `pdf_id` instead")
+                    break
+            for common_key in ['page_id', 'ref_page_id', 'ref_page_number']:
+                if common_key in self.filter:
+                    msg.append(f"`{common_key}` is not a valid field name of stored data entries in the vectorstore, please use the integer `page_number` instead of UUID")
+                    break
+            error_msg = '; '.join(msg) + '.' if msg else str(e)
+            return False, "[Error]: Filter condition {} is not valid. {}".format(repr(self.filter), error_msg)
+
         if modality == 'text' and 'primary_key' not in self.output_fields:
             self.output_fields.append('primary_key') # we need this field to extract the text content
         return True, "No error."
