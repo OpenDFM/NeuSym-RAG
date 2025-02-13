@@ -9,4 +9,3 @@ class TrivialEnv(AgentEnv):
 
     def __init__(self, agent_method: Optional[str] = 'trivial', dataset: Optional[str] = None, **kwargs) -> None:
         super(TrivialEnv, self).__init__(agent_method=agent_method, dataset=dataset)
-        self.pdf_contents = dict()
