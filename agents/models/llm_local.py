@@ -14,6 +14,8 @@ class LocalClient(LLMClient):
         'qwen2-vl-72b-instruct': os.path.join('.cache', 'Qwen2-VL-72B-Instruct'),
         'qwen2.5-72b-instruct': os.path.join('.cache', 'Qwen2.5-72B-Instruct'),
         'qwen2.5-vl-72b-instruct': os.path.join('.cache', 'Qwen2.5-VL-72B-Instruct'),
+        'qwen2.5-vl-3b-instruct': os.path.join('.cache', 'Qwen2.5-VL-3B-Instruct'),
+        'qwen2.5-vl-7b-instruct': os.path.join('.cache', 'Qwen2.5-VL-7B-Instruct'),
         'llama-3.2-90b-vision-instruct': os.path.join('.cache', 'Llama-3.2-90B-Vision-Instruct'),
         'llama-3.3-70b-instruct': os.path.join('.cache', 'Llama-3.3-70B-Instruct')
     }
