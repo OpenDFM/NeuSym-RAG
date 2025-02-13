@@ -43,7 +43,7 @@ class LocalClient(LLMClient):
                     # else:
                         # flag_image = True
 
-        tokenizer = AutoTokenizer.from_pretrained(self.model_path[model])
+        tokenizer = AutoTokenizer.from_pretrained(self.model_path.get(model, self.model_path['qwen2.5-72b-instruct']))
         message_max_tokens = tokenizer.model_max_length
         if len(new_messages) > 2 :
             truncated_messages = new_messages[:2]
