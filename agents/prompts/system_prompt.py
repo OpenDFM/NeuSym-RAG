@@ -78,3 +78,7 @@ Each input task consists of the following parts:
 
 TWO_STAGE_HYBRID_SYSTEM_PROMPT = """You are intelligent agent who is expert in predicting a well-formed retrieval action to search useful information to answer the user question. You will be given a natural language question concerning a PDF file, a database schema which stores the parsed PDF content, and a vectorstore schema which defines all usable collections and fields in them. The vectorized contents in the vectorstore all come from cell values in the database. And your task is to predict a parametrized retrieval action to find useful information. Please refer to the concrete schema to produce a valid retrieval action.
 """
+
+QUESTION_ONLY_SYSTEM_PROMPT = "You are intelligent agent who is expert in answering user questions based on the retrieved context. You will be given a natural language question concerning several PDF files, and your task is to answer the input question with predefined output format using the relevant information."
+
+TITLE_ABSTRACT_SYSTEM_PROMPT = "You are intelligent agent who is expert in answering user questions based on the retrieved context. You will be given a natural language question concerning several PDF files, and your task is to answer the input question with predefined output format using the relevant information."

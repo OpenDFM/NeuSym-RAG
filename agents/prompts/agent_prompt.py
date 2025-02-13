@@ -174,3 +174,34 @@ Note that you can ONLY predict one action.
 
 Here is your response:
 """
+
+QUESTION_ONLY_PROMPT = """{system_prompt}
+
+--------
+
+Here is the task input:
+
+[Question]: {question}
+[Anchor PDFs]: {anchor_pdf}
+[Reference PDFs]: {reference_pdf}
+[Answer Format]: {answer_format}
+
+You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER WITH REQUIRED FORMAT IN THREE BACKTICKS):
+
+```txt\nfinal answer\n```
+"""
+
+TITLE_ABSTRACT_PROMPT = """{system_prompt}
+
+--------
+
+Here is the task input:
+
+[Question]: {question}
+[Answer Format]: {answer_format}
+{context}
+
+You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER WITH REQUIRED FORMAT IN THREE BACKTICKS):
+
+```txt\nfinal answer\n```
+"""

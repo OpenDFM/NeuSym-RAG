@@ -8,6 +8,8 @@ from agents.frameworks.two_stage_hybrid_rag import TwoStageHybridRAGAgent
 from agents.frameworks.trivial import TrivialAgent
 from agents.frameworks.classic_rag import ClassicRAGAgent
 from agents.frameworks.hybrid_rag import HybridRAGAgent
+from agents.frameworks.question_only import QuestionOnlyAgent
+from agents.frameworks.title_abstract import TitleAbstractAgent
 
 
 FRAMEWORKS = {
@@ -18,5 +20,7 @@ FRAMEWORKS = {
     'two_stage_hybrid': TwoStageHybridRAGAgent,
     'trivial': TrivialAgent,
     'classic_rag': ClassicRAGAgent,
-    'hybrid_rag': HybridRAGAgent
+    'hybrid_rag': HybridRAGAgent,
+    'question_only': QuestionOnlyAgent,
+    'title_abstract': TitleAbstractAgent
 }
