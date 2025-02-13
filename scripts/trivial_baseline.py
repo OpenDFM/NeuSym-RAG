@@ -19,6 +19,7 @@ parser.add_argument('--temperature', type=float, default=0.7)
 parser.add_argument('--top_p', type=float, default=0.95)
 parser.add_argument('--max_tokens', type=int, default=1500)
 parser.add_argument('--max_turn', type=int, default=1, help='Maximum turns for the agent to interact with the environment')
+parser.add_argument('--image_limit', type=int, default=10, help='Maximum number of images to be shown in the agents response')
 parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
 parser.add_argument('--no_eval', action='store_true', help='Whether not to evaluate the results')
 args = parser.parse_args()
@@ -61,14 +62,12 @@ start_time = datetime.now()
 preds = []
 for data_idx, data in enumerate(test_data):
     logger.info(f"Processing question [{data_idx + 1}/{len(test_data)}]: {data['uuid']}")
-    question, answer_format = formulate_input(args.dataset, data)
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
     try:
         result = agent.interact(
-            question, answer_format,
-            pdf_id=data['pdf_id'], page_number=data.get('page_number', None), max_length=args.max_length,
+            args.dataset, data, max_length=args.max_length,
             model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens,
-            output_path=output_path
+            output_path=output_path, image_limit=args.image_limit
         )
     except Exception as e:
         logger.error(f"[❌Error❌]: ({data['uuid']}) {str(e)}")
