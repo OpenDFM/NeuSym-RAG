@@ -34,14 +34,17 @@ class LocalClient(LLMClient):
             Truncate the message according to token limit.
         """
         new_messages = copy.deepcopy(messages)
-        # if True: # only contain the last image in the message list and delete the rest
-            # flag_image = False
-            # for i in range(len(new_messages) - 1, -1, -1):
-                # if isinstance(new_messages[i]['content'], list):
-                    # if flag_image:
-                        # new_messages[i]['content'] = '[Observation]: The extracted image is omitted.'
-                    # else:
-                        # flag_image = True
+        if model in ['qvq-72b-preview', 'llama-3.2-90b-vision-instruct']: # only contain the last image in the message list and delete the rest
+            flag_image = False
+            for i in range(len(new_messages) - 1, -1, -1):
+                if isinstance(new_messages[i]['content'], list):
+                    if flag_image:
+                        for msg in new_messages[i]['content']:
+                            if msg['type'] == 'image_url':
+                                msg['type'] = 'text'
+                                msg['text'] = 'The image stream is omitted due to the incapability of handling multiple images.'
+                    else:
+                        flag_image = True
 
         tokenizer = AutoTokenizer.from_pretrained(self.model_path.get(model, self.model_path['qwen2.5-72b-instruct']))
         message_max_tokens = tokenizer.model_max_length

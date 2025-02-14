@@ -100,6 +100,15 @@ def calculate_failed_ratio(result_folder: str):
     return failed_count / len(results)
 
 
+def calculate_interaction_turn(result_folder: str):
+    turns = []
+    for fp in os.listdir(result_folder):
+        if fp.endswith('.jsonl') and fp != 'result.jsonl':
+            data = load_jsonl(os.path.join(result_folder, fp))
+            turns.append(len(data) // 2 - 1)
+    print(f'Average interaction turn: {sum(turns) / len(turns)}')
+    return turns
+
 
 if __name__ == '__main__':
     
@@ -109,18 +118,19 @@ if __name__ == '__main__':
     parser.add_argument('--gold', type=str, help='The gold file path for sort.')
     parser.add_argument('--action_format', type=str, default='markdown', help='The format of the action.')
     parser.add_argument('--agent_method', type=str, default='react', help='The method of the agent.')
-    parser.add_argument('--failed_ratio', action='store_true', help='Calculate the failed ratio.')
+    parser.add_argument('--function', type=str, default='extract_answer', choices=['calc_error_ratio', 'calc_num_turns', 'extract_answer'], help='Calculate the failed ratio.')
     parser.add_argument('--force', action='store_true', help='Force to extract the result again.')
     args = parser.parse_args()
 
-    if args.failed_ratio:
+    if args.function == 'calc_error_ratio':
         calculate_failed_ratio(args.pred_folder)
-        sys.exit(0)
-
-    generate_result_from_trajectory(
-        args.pred_folder,
-        args.gold,
-        action_format=args.action_format,
-        agent_method=args.agent_method,
-        force=args.force
-    )
+    elif args.function == 'calc_num_turns':
+        calculate_interaction_turn(args.pred_folder)
+    else:
+        generate_result_from_trajectory(
+            args.pred_folder,
+            args.gold,
+            action_format=args.action_format,
+            agent_method=args.agent_method,
+            force=args.force
+        )

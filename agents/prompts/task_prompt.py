@@ -61,6 +61,7 @@ def formulate_input(
             elif len(reference_pdf_id) > 1:
                 pdf_context += f" [Reference PDFs]: [{', '.join(reference_pdf_id)}]\n"
 
+        image_limit = image_limit if dataset != 'spiqa' else 0
         if image_limit > 0 and data.get('anchor_image', []):
             template = "[Image]: Here are some images that you can use to answer the question:" if len(data['anchor_image']) > 1 else "[Image]: Here is one image you can use to answer the question:"
             image_message = get_image_message(
