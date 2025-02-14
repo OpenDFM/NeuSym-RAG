@@ -8,6 +8,7 @@ from tabulate import tabulate
 from contextlib import nullcontext
 from evaluation.evaluator import evaluate_airqa
 from agents.models import get_llm_single_instance
+from utils.functions.common_functions import is_valid_uuid
 
 
 def evaluate_dataset(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs) -> float:
@@ -266,6 +267,94 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
     return result
 
 
+def re_evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], eval_path: str, dataset: str, **kwargs) -> dict:
+    """ Re-evaluate AirQA dataset
+    """
+
+    # if dataset != 'airqa':
+    #     raise NotImplementedError(f"Dataset {dataset} not supported.")
+    
+    pred_data, gold_data = [], []
+    if isinstance(pred, str):
+        with open(pred, 'r', encoding='utf8') as f:
+            for line in f:
+                pred = json.loads(line)
+                pred_data.append(pred)
+    else: pred_data = pred
+    if isinstance(gold, str):
+        with open(gold, 'r', encoding='utf8') as f:
+            for line in f:
+                gold = json.loads(line)
+                gold_data.append(gold)
+    else: gold_data = gold
+    
+    error_uuids = []
+    block_lines = ""
+    result_lines = ""
+    with open(eval_path, 'r', encoding='utf8') as f:
+        text = ""
+        is_block = True
+        for line in f:
+            if line.startswith("+") and line.strip().endswith("+"):
+                is_block = False
+            if is_block: 
+                block_lines += line
+            else:
+                result_lines += line
+
+    block_lines += "\n[ERROR]\n"
+    
+    for block in block_lines.split('[ERROR]: data'):
+        block = block.strip()
+        if not block: continue
+        first_line = block.split('\n')[0]
+        uuid = first_line.split('with id ')[-1]
+        if is_valid_uuid(uuid):
+            error_uuids.append(uuid)
+        else:
+            print(f"Invalid block: {block}")
+    
+    print(len(error_uuids))
+    
+    result_lines = list(result_lines.strip().split("\n"))
+    result_dict = {}
+    for line in result_lines[3:-1]:
+        values = [value.strip() for value in line[1:-1].split("|")]
+        result_dict[values[0]] = [float(values[1]), int(values[2]), float(values[3])]
+        assert abs(float(values[1]) / int(values[2]) - float(values[3])) < 1e-6, f"Error in Original Result data:\n{line}"
+    
+    print(result_dict)
+
+    assert len(pred_data) == len(gold_data)
+    result = defaultdict(lambda: {'score': 0.0, 'count': 0, 'correct': 0}) # (score, count)
+    output_path = kwargs.get('output_path', None)
+    with open(output_path, 'w', encoding='utf-8') if output_path else nullcontext() as outfile:
+        for pred, gold in zip(pred_data, gold_data):
+            score = evaluate_dataset(dataset, pred['answer'], gold, **kwargs)
+            if score < 0.5 and output_path is not None:
+                outfile.write(f'\n[ERROR]: data (type={gold["question_type"] if "question_type" in gold else gold["tags"]}) with id {gold["uuid"]}\n')
+                outfile.write(f'Gold Answer: {resolve_gold_answer(gold)}\n')
+                outfile.write(f'Predicted Answer: {pred["answer"]}\n')
+            result['all']['count'] += 1
+            result['all']['correct'] += score
+            if 'question_type' in gold:
+                result[gold['question_type']]['count'] += 1
+                result[gold['question_type']]['correct'] += score
+            else:
+                for tag in gold['tags']:
+                    result[tag]['count'] += 1
+                    result[tag]['correct'] += score
+
+        for key in result.keys():
+            score, count = result[key]['correct'], result[key]['count']
+            result[key]['score'] = score / count if count > 0 else 0.0
+
+        if output_path is not None:
+            outfile.write('\n' + print_result(result))
+
+    return result
+
+
 def print_result(result: dict) -> str:
     """ Print the evaluation result.
     @args:
@@ -284,8 +373,14 @@ if __name__ == '__main__':
     parser.add_argument('--dataset', type=str, default='airqa', choices=['airqa', 'pdfvqa', 'tatdqa', 'm3sciqa', 'scidqa', 'spiqa'], help='Dataset name')
     parser.add_argument('--pred', type=str, required=True, help='Path to predicted answer, .jsonl file')
     parser.add_argument('--gold', type=str, required=True, help='Path to gold answer, .jsonl file')
+    parser.add_argument('--output', type=str, required=False, default=None, help='Path to save the evaluation result, .txt file')
+    parser.add_argument('--eval', type=str, required=False, default=None, help='Path to previous evaluation results, .txt file')
     args = parser.parse_args()
-
-    result = evaluate(args.pred, args.gold, args.dataset)
-    result_table = print_result(result)
-    print(f"Final evaluation result on {args.dataset}:\n{result_table}")
+    
+    if args.eval is not None:
+        result = re_evaluate(args.pred, args.gold, args.eval, args.dataset, output_path=args.output)
+    else:
+        result = evaluate(args.pred, args.gold, args.dataset, output_path=args.output)
+    if result:
+        result_table = print_result(result)
+        print(f"Final evaluation result on {args.dataset}:\n{result_table}")
