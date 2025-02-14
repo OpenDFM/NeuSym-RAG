@@ -257,4 +257,4 @@ def eval_paper_relevance_with_llm_and_reference_answer(pred: Any, question: str,
     if (isinstance(reference_answer, str) and fuzz.ratio(metadata["title"].lower(), reference_answer.lower()) >= threshold) or \
         (isinstance(reference_answer, list) and any(fuzz.ratio(metadata["title"].lower(), ra.lower()) >= threshold for ra in reference_answer)):
         return 1.0
-    return check_paper_relevance_with_llm(metadata, question, llm_model, temperature)
+    return 0.0
