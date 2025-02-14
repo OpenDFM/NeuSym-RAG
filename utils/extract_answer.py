@@ -1,6 +1,6 @@
 #coding=utf8
 import sys, os, json
-import tiktoken
+import tiktoken, re
 from tiktoken import Encoding
 from typing import List, Dict, Any, Optional
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
@@ -13,6 +13,13 @@ def load_jsonl(fp: str) -> list:
     with open(fp, 'r', encoding='utf8') as f:
         data = [json.loads(line) for line in f if line.strip()]
     return data
+
+
+def write_jsonl(data: List[Dict[str, Any]], file_path: str) -> None:
+    with open(file_path, 'w', encoding='utf8') as f:
+        for line in data:
+            f.write(json.dumps(line, ensure_ascii=False) + '\n')
+    return
 
 
 def truncate_tokens(text: str, max_tokens: int = 30, encoding_model: str = 'cl100k_base') -> str:
@@ -110,6 +117,35 @@ def calculate_interaction_turn(result_folder: str):
     return turns
 
 
+def extract_failed_uuids(result_folder: str) -> List[str]:
+    failed_uuids = []
+    with open(os.path.join(result_folder, 'evaluation.txt'), 'r', encoding='utf8') as f:
+        for line in f:
+            if '[ERROR]: data' in line:
+                # with id 00608f20-e3f5-5fdc-8979-4efeb0756d8e
+                uid = re.search(r'with id ([0-9a-z\-]+)\s*$')
+                if uid:
+                    failed_uuids.append(uid.group(1))
+                else:
+                    print(f'[ERROR]: Failed to extract uuid from {line}')
+    with open(result_folder, 'failed_uuids.json', 'w', encoding='utf8') as f:
+        json.dump(failed_uuids, f, indent=4)
+    return failed_uuids
+
+
+def extract_gold_result(result_folder: str, gold: str):
+    target_data = []
+    gold_data = load_jsonl(gold)
+    gold_uuids = [data['uuid'] for data in gold_data]
+    pred_data = load_jsonl(os.path.join(result_folder, 'result.jsonl'))
+    pred_data = {data['uuid']: data for data in pred_data}
+    for uid in gold_uuids:
+        assert uid in pred_data, f'[ERROR]: {uid} not found in {args.pred_folder}'
+        target_data.append(pred_data[uid])
+    write_jsonl(target_data, os.path.join(result_folder, 'new_result.jsonl'))
+    return
+
+
 if __name__ == '__main__':
     
     import argparse
@@ -118,7 +154,7 @@ if __name__ == '__main__':
     parser.add_argument('--gold', type=str, help='The gold file path for sort.')
     parser.add_argument('--action_format', type=str, default='markdown', help='The format of the action.')
     parser.add_argument('--agent_method', type=str, default='react', help='The method of the agent.')
-    parser.add_argument('--function', type=str, default='extract_answer', choices=['calc_error_ratio', 'calc_num_turns', 'extract_answer'], help='Calculate the failed ratio.')
+    parser.add_argument('--function', type=str, default='extract_answer', choices=['calc_error_ratio', 'calc_num_turns', 'extract_failed_uuids', 'extract_answer', 'extract_gold_result'], help='Calculate the failed ratio.')
     parser.add_argument('--force', action='store_true', help='Force to extract the result again.')
     args = parser.parse_args()
 
@@ -126,6 +162,10 @@ if __name__ == '__main__':
         calculate_failed_ratio(args.pred_folder)
     elif args.function == 'calc_num_turns':
         calculate_interaction_turn(args.pred_folder)
+    elif args.function == 'extract_failed_uuids':
+        extract_failed_uuids(args.pred_folder)
+    elif args.function == 'extract_gold_result':
+        extract_gold_result(args.pred_folder, args.gold)
     else:
         generate_result_from_trajectory(
             args.pred_folder,

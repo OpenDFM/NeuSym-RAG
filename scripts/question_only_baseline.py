@@ -20,6 +20,11 @@ parser.add_argument('--image_limit', type=int, default=10, help='Maximum number 
 parser.add_argument('--max_turn', type=int, default=1, help='Maximum turns for the agent to interact with the environment')
 parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
 parser.add_argument('--no_eval', action='store_true', help='Whether not to evaluate the results')
+parser.add_argument('--database', type=str, help='which database to use')
+parser.add_argument('--database_path', type=str, help='Database path.')
+parser.add_argument('--vectorstore', type=str, help='which vectorstore to use')
+parser.add_argument('--vectorstore_path', type=str, help='Path to the vectorstore.')
+parser.add_argument('--window_size', type=int, default=5, help='window size for the agent to interact with the environment')
 args = parser.parse_args()
 
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")

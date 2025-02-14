@@ -11,6 +11,7 @@ from utils.eval_utils import evaluate, print_result
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, required=True, help='which dataset to use')
+parser.add_argument('--database', type=str, help='which database to use')
 parser.add_argument('--vectorstore', type=str, required=True, help='which vectorstore to use')
 parser.add_argument('--launch_method', type=str, default='standalone', choices=['standalone', 'docker'], help='launch method for vectorstore, chosen from ["docker", "standalone"].')
 parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='host + port for milvus started from docker')
