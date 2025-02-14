@@ -86,6 +86,32 @@
             }
         ]
     },
+    "ClassicRetrieve": {
+        "action_type": "ClassicRetrieve",
+        "description": "Given a query text, retrieve relevant context from the Milvus vectorstore.",
+        "observation": "The observation space is the retrieved top-ranked entries from the Milvus vectorstore based on queries.",
+        "parameters": {
+            "query": {
+                "type": "str",
+                "required": true,
+                "description": "The query text will be encoded and used to search for relevant context. You can rephrase the original user question to obtain a more clear and structured query requirement."
+            }
+        },
+        "use_cases": [
+            {
+                "example": {
+                    "query": "Does this paper discuss LLM-based agent on its first page? (paper id is '12345678')"
+                },
+                "explanation": "Retrieve detailed information for paper with uuid=12345678."
+            },
+            {
+                "example": {
+                    "query": "Is there any work about the topic structured RAG?"
+                },
+                "explanation": "Retrieve works about certain topics."
+            }
+        ]
+    },
     "RetrieveFromDatabaseWithVectorFilter": {
         "action_type": "RetrieveFromDatabaseWithVectorFilter",
         "description": "This is a hybrid two-stage action. First, given a query text, retrieve relevant context from the Milvus vectorstore. The primary keys of the retrieved entries will be stored in a temporary table named `filtered_primary_keys` in the DuckDB database. The column names in this temporary table are the same as the primary key columns in the original table. Second, perform a SQL query to retrieve the desired information from the DuckDB database. The SQL query can use the `filtered_primary_keys` table to restrict its search space.",
