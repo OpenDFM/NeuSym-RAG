@@ -47,10 +47,10 @@ class ClassicRAGAgent(AgentBase):
                 pdf_id = pdf_id[0]
             if isinstance(pdf_id, str):
                 filter_conditions.append(f"pdf_id == '{pdf_id}'")
-            elif isinstance(pdf_id, list):
+            elif isinstance(pdf_id, list) and len(pdf_id) > 1:
                 filter_conditions.append(f"pdf_id in {sorted(pdf_id)}")
-            else:
-                raise ValueError('Invalid pdf_id type.')
+                batch_pdf_id_str = ', '.join([f"'{str(pid)}'" for pid in sorted(pdf_id)])
+                filter_conditions.append(f"pdf_id in [{batch_pdf_id_str}]")
         if page_number is not None and page_number != []:
             page_number_filter = f'page_number in {sorted(page_number)}' if isinstance(page_number, list) else \
                 f"page_number == {page_number}"
