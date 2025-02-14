@@ -1,5 +1,6 @@
 #coding=utf8
 import ast, json, math, os, re, sys
+from tqdm import tqdm
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from typing import Dict, Any, Optional, List, Union
 from collections import defaultdict
@@ -241,7 +242,10 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
     result = defaultdict(lambda: {'score': 0.0, 'count': 0, 'correct': 0}) # (score, count)
     output_path = kwargs.get('output_path', None)
     with open(output_path, 'w', encoding='utf-8') if output_path else nullcontext() as outfile:
+        cnt, tot = 0, len(pred_data)
         for pred, gold in zip(pred_data, gold_data):
+            cnt += 1
+            print(f"Evaluating {cnt}/{tot}...", end='\r')
             score = evaluate_dataset(dataset, pred['answer'], gold, **kwargs)
             if score < 0.5 and output_path is not None:
                 outfile.write(f'\n[ERROR]: data (type={gold["question_type"] if "question_type" in gold else gold["tags"]}) with id {gold["uuid"]}\n')
@@ -271,8 +275,8 @@ def re_evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], eval
     """ Re-evaluate AirQA dataset
     """
 
-    # if dataset != 'airqa':
-    #     raise NotImplementedError(f"Dataset {dataset} not supported.")
+    if dataset != 'airqa':
+        raise NotImplementedError(f"Dataset {dataset} not supported.")
     
     pred_data, gold_data = [], []
     if isinstance(pred, str):
@@ -314,23 +318,57 @@ def re_evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], eval
         else:
             print(f"Invalid block: {block}")
     
-    print(len(error_uuids))
-    
     result_lines = list(result_lines.strip().split("\n"))
-    result_dict = {}
+    result = {}
     for line in result_lines[3:-1]:
         values = [value.strip() for value in line[1:-1].split("|")]
-        result_dict[values[0]] = [float(values[1]), int(values[2]), float(values[3])]
+        result[values[0]] = {
+            "correct": float(values[1]), 
+            "count": int(values[2]), 
+            "score": float(values[3])
+        }
         assert abs(float(values[1]) / int(values[2]) - float(values[3])) < 1e-6, f"Error in Original Result data:\n{line}"
     
-    print(result_dict)
+    if result.get('figure'):
+        result['image']['correct'] += result['figure']['correct']
+        result['image']['count'] += result['figure']['count']
+        del result['figure']
+    result['all'] = result['total']
+    del result['total']
 
+    tot = 0
     assert len(pred_data) == len(gold_data)
-    result = defaultdict(lambda: {'score': 0.0, 'count': 0, 'correct': 0}) # (score, count)
     output_path = kwargs.get('output_path', None)
     with open(output_path, 'w', encoding='utf-8') if output_path else nullcontext() as outfile:
-        for pred, gold in zip(pred_data, gold_data):
-            score = evaluate_dataset(dataset, pred['answer'], gold, **kwargs)
+        for pred, gold in tqdm(zip(pred_data, gold_data)):
+            # Only Re-Evaluate LitSearch
+            if (gold["annotator"] == 'human') or ("retrieval" not in gold["tags"]):
+                continue
+            
+            tot += 1
+            assert gold["evaluator"]["eval_func"] == "eval_paper_relevance_with_llm_and_reference_answer", f"Eval Func `eval_paper_relevance_with_llm_and_reference_answer` expected, but {gold['evaluator']['eval_func']} found."
+            
+            pre_score = 0.0 if gold["uuid"] in error_uuids else 1.0
+            result['all']['count'] -= 1
+            result['all']['correct'] -= pre_score
+            if 'question_type' in gold:
+                result[gold['question_type']]['count'] -= 1
+                result[gold['question_type']]['correct'] -= pre_score
+            else:
+                for tag in gold['tags']:
+                    result[tag]['count'] -= 1
+                    result[tag]['correct'] -= pre_score
+            
+            assert ('subjective' in gold['tags']) and ('objective' not in gold['tags'])
+            gold['tags'].remove('subjective')
+            gold['tags'].append('objective')
+            
+            reference_answer = str(gold["evaluator"]["eval_kwargs"]["reference_answer"]).lower()
+            pred_answer = str(pred['answer']).lower()
+            score = 0.0
+            if fuzz.ratio(pred_answer, reference_answer) >= 90:
+                score = 1.0
+            
             if score < 0.5 and output_path is not None:
                 outfile.write(f'\n[ERROR]: data (type={gold["question_type"] if "question_type" in gold else gold["tags"]}) with id {gold["uuid"]}\n')
                 outfile.write(f'Gold Answer: {resolve_gold_answer(gold)}\n')
@@ -352,6 +390,7 @@ def re_evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], eval
         if output_path is not None:
             outfile.write('\n' + print_result(result))
 
+    print(f"Re-Evaluate {tot} examples.")
     return result
 
 
