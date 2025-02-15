@@ -1,5 +1,5 @@
 #coding=utf8
-import sys, os, json
+import sys, os, re, json
 import tiktoken, re, shutil
 from tiktoken import Encoding
 from typing import List, Dict, Any, Optional
@@ -146,42 +146,47 @@ def extract_gold_result(result_folder: str, gold: str):
     return
 
 
-def merge_result(dataset: str, gold: str, keywords: List[str] = [], result_folder: str = 'results/'):
+def merge_result(gold: str, keywords: List[str] = [], result_folder: str = 'results/'):
+    if not result_folder: result_folder = 'results/'
     filtered_folders = []
-    keywords = ['_split', dataset] + [k for k in keywords if k not in ['_split', dataset]]
+    keywords = ['_split'] + [k for k in keywords if k not in ['_split']]
     gold_data = load_jsonl(gold)
     for subfolder in os.listdir(result_folder):
-        for key in keywords:
-            if key not in subfolder:
-                break
-        else: # some keywords not found
-            continue
+        if any(k not in subfolder for k in keywords): continue
         filtered_folders.append(subfolder)
     try:
-        indexes = [int(re.search('_split(\d+)_', folder).group(1)) for folder in filtered_folders]
+        indexes = []
+        for folder in filtered_folders:
+            # print('Extract index for', folder)
+            sid = int(re.search(r'_split(\d+)_', folder).group(1))
+            indexes.append(sid)
     except Exception as e:
-        print('[ERROR]: Failed to extract index from subfolder.')
+        print(f'[ERROR]: Failed to extract index from subfolder: {e}')
         return
+
     sorted_indexes = sorted(indexes)
     if list(range(len(indexes))) != sorted_indexes:
-        print(f'[ERROR]: The indexes are not continuous or duplicate indexes occurred. Get {sorted_indexes}\nPlease delete redundant folders or add keywords to filter subfolders.')
+        print(f'[ERROR]: The indexes are not continuous (0,1,2,...) or duplicate indexes occurred. Get {sorted_indexes}\nPlease delete redundant folders or add morekeywords to filter subfolders.')
         return
-    target_folder = os.path.join(result_folder, f'merged{"_".join(keywords)}')
-    os.makedirs(target_folder, exist_ok=True)
     sorted_folders = sorted(zip(indexes, filtered_folders), key=lambda x: x[0])
     merged_data = []
     for _, subfolder in sorted_folders:
         data = load_jsonl(os.path.join(result_folder, subfolder, 'result.jsonl'))
         merged_data.extend(data)
-    
+
     # final check: uuid sorted
     merged_uuids = [data['uuid'] for data in merged_data]
     gold_uuids = [data['uuid'] for data in gold_data]
+    if len(merged_uuids) != len(gold_uuids):
+        print(f'[ERROR]: Total number of predicted examples are not correct! Get {len(merged_uuids)} pred v.s. {len(gold_uuids)} gold.')
+        return
     if merged_uuids != gold_uuids:
         print(f'[ERROR]: The uuids are not sorted according to {gold}. Please check the results.')
         return
 
     # safely move files
+    target_folder = os.path.join(result_folder, f'merged{"_".join(keywords)}')
+    os.makedirs(target_folder, exist_ok=True)
     for _, subfolder in sorted_folders:
         folder = os.path.join(result_folder, subfolder)
         for fp in os.listdir(folder):
@@ -189,36 +194,36 @@ def merge_result(dataset: str, gold: str, keywords: List[str] = [], result_folde
                 shutil.copy(os.path.join(folder, fp), os.path.join(target_folder, fp))
 
     write_jsonl(merged_data, os.path.join(target_folder, 'result.jsonl'))
-    print(f'Successfully merged {len(merged_data)} data in {len(sorted_folders)} sub-folders to {target_folder}!')
+    print(f'Successfully merged {len(merged_data)} data in {len(sorted_folders)} sub-folders to {target_folder} !')
     return
 
 
 if __name__ == '__main__':
-    
+
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--pred_folder', type=str, required=True, help='The folder containing the prediction files.')
+    parser.add_argument('--folder', type=str, help='The folder containing the prediction files.')
     parser.add_argument('--gold', type=str, help='The gold file path for sort.')
     parser.add_argument('--action_format', type=str, default='markdown', help='The format of the action.')
     parser.add_argument('--agent_method', type=str, default='react', help='The method of the agent.')
     parser.add_argument('--keywords', type=str, nargs='*', help='The keywords to filter subfolders.')
-    parser.add_argument('--function', type=str, default='extract_answer', choices=['calc_error_ratio', 'calc_num_turns', 'extract_failed_uuids', 'extract_answer', 'extract_gold_result'], help='Calculate the failed ratio.')
+    parser.add_argument('--function', type=str, default='extract_answer', choices=['calc_error_ratio', 'calc_num_turns', 'extract_failed_uuids', 'extract_answer', 'extract_gold_result', 'merge_result'], help='Calculate the failed ratio.')
     parser.add_argument('--force', action='store_true', help='Force to extract the result again.')
     args = parser.parse_args()
 
     if args.function == 'calc_error_ratio':
-        calculate_failed_ratio(args.pred_folder)
+        calculate_failed_ratio(args.folder)
     elif args.function == 'calc_num_turns':
-        calculate_interaction_turn(args.pred_folder)
+        calculate_interaction_turn(args.folder)
     elif args.function == 'extract_failed_uuids':
-        extract_failed_uuids(args.pred_folder)
+        extract_failed_uuids(args.folder)
     elif args.function == 'extract_gold_result':
-        extract_gold_result(args.pred_folder, args.gold)
+        extract_gold_result(args.folder, args.gold)
     elif args.function == 'merge_result':
-        merge_result(args.dataset, args.gold, args.keywords)
+        merge_result(args.gold, args.keywords, args.folder)
     else:
         generate_result_from_trajectory(
-            args.pred_folder,
+            args.folder,
             args.gold,
             action_format=args.action_format,
             agent_method=args.agent_method,
