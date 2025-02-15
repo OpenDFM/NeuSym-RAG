@@ -23,8 +23,6 @@ def infer_model_class(model_name: str) -> LLMClient:
     """
     if any(model_name.lower().startswith(prefix) for prefix in ['claude', 'gemini', 'gpt', 'o1']):
         return GPTClient
-    elif model_name.lower() in ['deepseek-r1', 'deepseek-v3']:
-        return HTTPClient
     elif any(model_name.lower().startswith(prefix) for prefix in ['llama', 'qwen', 'deepseek']):
         return LocalClient
     else:

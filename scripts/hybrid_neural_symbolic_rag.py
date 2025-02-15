@@ -38,8 +38,12 @@ if args.vectorstore is None: args.vectorstore = args.database
 if args.database is None: args.database = args.vectorstore
 assert args.database == args.vectorstore, f"Database and vectorstore must be the same, but got {args.database} and {args.vectorstore}, respectively."
 
+if 'split_' in args.test_data:
+    args.split_index = '_split' + args.test_data.split('.')[0].split('_')[-1]
+else: args.split_index = ''
+
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-filename = f'{args.dataset}_hybrid_rag_{args.agent_method}_{args.action_format}_{args.output_format}_{args.llm}-{start_time}'
+filename = f'{args.dataset}{args.split_index}_hybrid_rag_{args.agent_method}_{args.action_format}_{args.output_format}_{args.llm}-{start_time}'
 result_dir = os.path.join(args.result_dir, filename)
 os.makedirs(result_dir, exist_ok=True)
 

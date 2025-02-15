@@ -1,5 +1,5 @@
 #coding=utf8
-import copy, os
+import copy, os, json
 from typing import List, Dict, Tuple, Any, Optional
 from openai.types.chat.chat_completion import ChatCompletion
 from openai import OpenAI
@@ -19,7 +19,7 @@ class LocalClient(LLMClient):
         'qvq-72b-preview': os.path.join('.cache', 'QVQ-72B-Preview'),
         'qwq-32b-preview': os.path.join('.cache', 'QWQ-32B-Preview'),
         'llama-3.2-90b-vision-instruct': os.path.join('.cache', 'Llama-3.2-90B-Vision-Instruct'),
-        'llama-3.3-70b-instruct': os.path.join('.cache', 'Llama-3.3-70B-Instruct')
+        # 'llama-3.3-70b-instruct': os.path.join('.cache', 'Llama-3.3-70B-Instruct')
     }
 
     def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None) -> None:
@@ -50,6 +50,10 @@ class LocalClient(LLMClient):
 
         tokenizer = AutoTokenizer.from_pretrained(self.model_path.get(model, self.model_path['qwen2.5-72b-instruct']))
         message_max_tokens = tokenizer.model_max_length
+
+        if model.lower() == 'deepseek-v3-awq': # v3 is too slow
+            message_max_tokens = 16000
+
         if len(new_messages) > 2 :
             truncated_messages = new_messages[:2]
             current_tokens = sum(len(tokenizer.encode(str(message))) for message in truncated_messages)
@@ -87,6 +91,7 @@ class LocalClient(LLMClient):
     ) -> str:
         """ Get the response string from the local model.
         """
+        if model.lower().startswith('deepseek'): temperature = 0.6
         completion: ChatCompletion = self._client.chat.completions.create(
             messages=messages,
             model=model,

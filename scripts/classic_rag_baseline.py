@@ -36,8 +36,11 @@ args = parser.parse_args()
 
 assert args.table_name is not None and args.column_name is not None, "Table name and column name must be specified."
 
+if 'split_' in args.test_data:
+    args.split_index = '_split' + args.test_data.split('.')[0].split('_')[-1]
+else: args.split_index = ''
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-filename = f'{args.dataset}_{args.agent_method}_{args.llm}_{args.table_name}_{args.column_name}-{start_time}'
+filename = f'{args.dataset}{args.split_index}_{args.agent_method}_{args.llm}_{args.table_name}_{args.column_name}-{start_time}'
 result_dir = os.path.join(args.result_dir, filename)
 os.makedirs(result_dir, exist_ok=True)
 
