@@ -410,16 +410,27 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', type=str, default='airqa', choices=['airqa', 'pdfvqa', 'tatdqa', 'm3sciqa', 'scidqa', 'spiqa'], help='Dataset name')
-    parser.add_argument('--pred', type=str, required=True, help='Path to predicted answer, .jsonl file')
+    parser.add_argument('--folder', type=str, required=True, help='Folder to results & evaluations.')
+    parser.add_argument('--re', action='store_true', help='Whether to re-evaluate the results')
+    # parser.add_argument('--pred', type=str, required=True, help='Path to predicted answer, .jsonl file')
     parser.add_argument('--gold', type=str, required=True, help='Path to gold answer, .jsonl file')
-    parser.add_argument('--output', type=str, required=False, default=None, help='Path to save the evaluation result, .txt file')
-    parser.add_argument('--eval', type=str, required=False, default=None, help='Path to previous evaluation results, .txt file')
+    # parser.add_argument('--output', type=str, required=False, default=None, help='Path to save the evaluation result, .txt file')
+    # parser.add_argument('--eval', type=str, required=False, default=None, help='Path to previous evaluation results, .txt file')
     args = parser.parse_args()
     
-    if args.eval is not None:
-        result = re_evaluate(args.pred, args.gold, args.eval, args.dataset, output_path=args.output)
+    folder = args.folder
+    assert os.path.exists(folder), "[Error]: Folder not found."
+    result_path = os.path.join(folder, 'result.jsonl')
+    assert os.path.exists(result_path), "[Error]: Result file not found."
+    
+    if args.re:
+        eval_path = os.path.join(folder, 'evaluation.txt')
+        assert os.path.exists(eval_path), "[Error]: Eval file not found."
+        output_path = os.path.join(folder, 're_evaluation.txt')
+        result = re_evaluate(result_path, args.gold, eval_path, args.dataset, output_path=output_path)
     else:
-        result = evaluate(args.pred, args.gold, args.dataset, output_path=args.output)
+        output_path = os.path.join(folder, 'evaluation.txt')
+        result = evaluate(result_path, args.gold, args.dataset, output_path=output_path)
     if result:
         result_table = print_result(result)
         print(f"Final evaluation result on {args.dataset}:\n{result_table}")
