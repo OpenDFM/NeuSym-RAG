@@ -76,20 +76,21 @@ if os.path.exists(result_path):
     with open(result_path, 'r', encoding='utf-8') as inf:
         for line in inf:
             preds.append(json.loads(line))
-with open(result_path, 'w', encoding='utf-8') as ouf:
-    for data_idx, data in enumerate(test_data):
-        for pred in preds:
-            if pred['uuid'] == data['uuid']:
+for data_idx, data in enumerate(test_data):
+    for pred in preds:
+        if pred['uuid'] == data['uuid']:
+            with open(result_path, 'w', encoding='utf-8') as ouf:
                 ouf.write(json.dumps(pred) + '\n')
-                break
-        else:
-            logger.info(f"Processing question [{data_idx + 1}/{len(test_data)}]: {data['uuid']}")
-            output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
-            try:
-                result = agent.interact(args.dataset, data, database_prompt, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, image_limit=args.image_limit)
-            except Exception as e:
-                logger.error(f"[❌Error❌]: ({data['uuid']}) {str(e)}")
-                result = '[ERROR]: ' + str(e)
+            break
+    else:
+        logger.info(f"Processing question [{data_idx + 1}/{len(test_data)}]: {data['uuid']}")
+        output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
+        try:
+            result = agent.interact(args.dataset, data, database_prompt, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, image_limit=args.image_limit)
+        except Exception as e:
+            logger.error(f"[❌Error❌]: ({data['uuid']}) {str(e)}")
+            result = '[ERROR]: ' + str(e)
+        with open(result_path, 'w', encoding='utf-8') as ouf:
             ouf.write(json.dumps({'uuid': data['uuid'], 'answer': result}) + '\n')
 logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 agent.close()
