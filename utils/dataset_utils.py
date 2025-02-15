@@ -541,13 +541,32 @@ def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_fil
     return sampled_data
 
 
+def split_dataset(dataset: str = 'airqa', split_size: int = 12, test_data: str = 'test_data.jsonl'):
+    dataset_path = os.path.join(DATASET_DIR, dataset, test_data)
+    with open(dataset_path, 'r', encoding='utf-8') as inf:
+        data = [json.loads(line) for line in inf if line.strip()]
+    chunk_size = len(data) // split_size
+    base_filename = test_data.split('.')[0]
+    for i in range(split_size):
+        start = i * chunk_size
+        end = (i + 1) * chunk_size if i < split_size - 1 else len(data)
+        output_path = os.path.join(DATASET_DIR, dataset, f'{base_filename}_split_{i}.jsonl')
+        with open(output_path, 'w', encoding='utf-8') as of:
+            for d in data[start:end]:
+               of.write(json.dumps(d, ensure_ascii=False) + '\n')
+        logger.info(f"Split {i}: {min(len(data), end) - start} test data saved to {output_path} for dataset {dataset}.")
+    return
+
+
 if __name__ == '__main__':
 
     import argparse
     parser = argparse.ArgumentParser(description='Dataset relevant utilities.')
     parser.add_argument('--dataset', type=str, required=True, help='Dataset name.')
-    parser.add_argument('--function', type=str, default='preprocess', choices=['preprocess', 'sampling'], help='Function name.')
+    parser.add_argument('--function', type=str, default='preprocess', choices=['preprocess', 'sampling', 'split'], help='Function name.')
     parser.add_argument('--sample_size', type=int, default=300, help='Sample size for the dataset.')
+    parser.add_argument('--split_size', type=int, default=12, help='Number of splits for the dataset.')
+    parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='Test data file name for splitting.')
     parser.add_argument('--output_file', type=str, help='Output file name of the sampling .jsonl file.')
     parser.add_argument('--random_seed', type=int, default=2024, help='Random seed for sampling.')
     args = parser.parse_args()
@@ -559,10 +578,13 @@ if __name__ == '__main__':
             'airqa': process_airqa
         },
         'sampling': sampling_dataset,
+        'split': split_dataset
     }
     if args.function == 'preprocess':
         FUNCTIONS[args.function][args.dataset]()
     elif args.function == 'sampling':
         FUNCTIONS[args.function](args.dataset, sample_size=args.sample_size, output_file=args.output_file, random_seed=args.random_seed)
+    elif args.function == 'split':
+        FUNCTIONS[args.function](args.dataset, split_size=args.split_size, test_data=args.test_data)
     else:
         raise ValueError(f"Function {args.function} not supported for dataset {args.dataset}.")
