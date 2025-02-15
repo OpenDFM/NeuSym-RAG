@@ -14,7 +14,7 @@ def get_pdf_text(dataset: str, pdf_id: str) -> str:
 
 
 def get_graphrag_input(dataset: str, test_data: str):
-    graphrag_input_dir = os.path.join('graphrag', 'input')
+    graphrag_input_dir = os.path.join('graphrag', dataset, 'input')
     os.makedirs(graphrag_input_dir, exist_ok=True)
     with open(os.path.join('data', 'dataset', dataset, test_data), 'r', encoding='utf-8') as fin:
         for line in fin:
