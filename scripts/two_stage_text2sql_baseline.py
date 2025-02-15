@@ -79,8 +79,6 @@ if os.path.exists(result_path):
 for data_idx, data in enumerate(test_data):
     for pred in preds:
         if pred['uuid'] == data['uuid']:
-            with open(result_path, 'w', encoding='utf-8') as ouf:
-                ouf.write(json.dumps(pred) + '\n')
             break
     else:
         logger.info(f"Processing question [{data_idx + 1}/{len(test_data)}]: {data['uuid']}")
@@ -90,7 +88,7 @@ for data_idx, data in enumerate(test_data):
         except Exception as e:
             logger.error(f"[❌Error❌]: ({data['uuid']}) {str(e)}")
             result = '[ERROR]: ' + str(e)
-        with open(result_path, 'w', encoding='utf-8') as ouf:
+        with open(result_path, 'a', encoding='utf-8') as ouf:
             ouf.write(json.dumps({'uuid': data['uuid'], 'answer': result}) + '\n')
 logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 agent.close()
