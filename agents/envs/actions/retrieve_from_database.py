@@ -98,6 +98,10 @@ class RetrieveFromDatabase(Action):
             msg = output_formatter(self.sql, output_kwargs, forceTimeout=max_timeout)
         except FunctionTimedOut as e:
             msg = f"[TimeoutError]: The SQL execution is TIMEOUT given maximum {max_timeout} seconds."
+            env.close()
+            env.reset()
         except Exception as e:
             msg = f"[Error]: Runtime error during SQL execution and output formatting: {str(e)}"
+            env.close()
+            env.reset()
         return Observation(msg)

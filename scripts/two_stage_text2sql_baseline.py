@@ -31,7 +31,10 @@ args = parser.parse_args()
 
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 filename = f'{args.dataset}_{args.agent_method}_{args.llm}-{start_time}'
-result_dir = os.path.join(args.result_dir, filename)
+if args.result_dir == "results":
+    result_dir = os.path.join(args.result_dir, filename)
+else:
+    result_dir = args.result_dir
 os.makedirs(result_dir, exist_ok=True)
 
 logger = logging.getLogger()
@@ -67,23 +70,29 @@ database_prompt = convert_database_schema_to_prompt(args.database, serialize_met
 
 start_time = datetime.now()
 preds = []
-for data_idx, data in enumerate(test_data):
-    logger.info(f"Processing question [{data_idx + 1}/{len(test_data)}]: {data['uuid']}")
-    output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
-    try:
-        result = agent.interact(args.dataset, data, database_prompt, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, image_limit=args.image_limit)
-    except Exception as e:
-        logger.error(f"[❌Error❌]: ({data['uuid']}) {str(e)}")
-        result = '[ERROR]: ' + str(e)
-    preds.append({'uuid': data['uuid'], 'answer': result})
+
+result_path = os.path.join(result_dir, 'result.jsonl')
+if os.path.exists(result_path):
+    with open(result_path, 'r', encoding='utf-8') as inf:
+        for line in inf:
+            preds.append(json.loads(line))
+with open(result_path, 'w', encoding='utf-8') as ouf:
+    for data_idx, data in enumerate(test_data):
+        for pred in preds:
+            if pred['uuid'] == data['uuid']:
+                ouf.write(json.dumps(pred) + '\n')
+                break
+        else:
+            logger.info(f"Processing question [{data_idx + 1}/{len(test_data)}]: {data['uuid']}")
+            output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
+            try:
+                result = agent.interact(args.dataset, data, database_prompt, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, image_limit=args.image_limit)
+            except Exception as e:
+                logger.error(f"[❌Error❌]: ({data['uuid']}) {str(e)}")
+                result = '[ERROR]: ' + str(e)
+            ouf.write(json.dumps({'uuid': data['uuid'], 'answer': result}) + '\n')
 logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 agent.close()
-
-output_path = os.path.join(result_dir, 'result.jsonl')
-with open(output_path, 'w', encoding='utf-8') as ouf:
-    for pred in preds:
-        ouf.write(json.dumps(pred) + '\n')
-    logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")
 
 if not args.no_eval:
     result = evaluate(preds, test_data, args.dataset, output_path=os.path.join(result_dir, 'evaluation.txt'))
