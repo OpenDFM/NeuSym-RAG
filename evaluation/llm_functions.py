@@ -240,7 +240,7 @@ Now, let's start!
     return _eval_with_llm(template, llm_model, temperature)
 
 
-def eval_paper_relevance_with_llm_and_reference_answer(pred: Any, question: str, reference_answer: Union[str, List[str]], llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, dataset_dir: Optional[str] = None, threshold: int = 90, topk: int = 1) -> float:
+def eval_paper_relevance_with_llm_and_reference_answer(pred: Any, question: str, reference_answer: Union[str, List[str]], llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, dataset_dir: Optional[str] = None, threshold: int = 95, topk: int = 1) -> float:
     """Evaluate the relevance of the predicted paper with the question and reference answer.
     @param:
         pred: The predicted paper title.

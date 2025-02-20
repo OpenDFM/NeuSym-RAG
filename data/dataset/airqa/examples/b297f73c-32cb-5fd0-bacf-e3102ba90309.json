@@ -1,0 +1,38 @@
+{
+    "uuid": "b297f73c-32cb-5fd0-bacf-e3102ba90309",
+    "question": "Is there any newly proposed benchmark for the task of code generation, which focuses on the repository-level or project-level?",
+    "answer_format": "Your answer should be a list of two strings, with the first being the paper title and second being the raw benchmark name.",
+    "tags": [
+        "retrieval",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_paper_relevance_with_llm_and_reference_answer",
+                "eval_string_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "question": "Is there any newly proposed benchmark for the task of code generation, which focuses on the repository-level or project-level?",
+                    "reference_answer": "DevEval: A Manually-Annotated Code Generation Benchmark Aligned with Real-World Code Repositories"
+                },
+                {
+                    "gold": "DevEval"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
