@@ -165,7 +165,7 @@ def get_ccf_conference_name(conference_abbrev: str = None, conference_full: str 
 def infer_paper_title_from_pdf(
         pdf_path: str,
         first_lines: Optional[int] = None,
-        model: str = 'gpt-4o',
+        model: str = 'gpt-4o-mini',
         temperature: float = 0.0 # Use more deterministic decoding with temperature=0.0
     ) -> str:
     """ Use a language model to infer the title of a paper from the top `first_lines` lines of the first page in a PDF.
@@ -194,7 +194,7 @@ def infer_paper_volume_from_pdf(
         pdf_path: str,
         first_lines: Optional[int] = 10,
         last_lines: Optional[int] = 10,
-        model: str = 'gpt-4o',
+        model: str = 'gpt-4o-mini',
         temperature: float = 0.0, # Use more deterministic decoding with temperature=0.0
         **kwargs
     ) -> str:
@@ -243,7 +243,7 @@ def infer_paper_volume_from_pdf(
 
 def infer_paper_abstract_from_pdf(
         pdf_path: str,
-        model: str = 'gpt-4o',
+        model: str = 'gpt-4o-mini',
         temperature: float = 0.0, # Use more deterministic decoding with temperature=0.0
         **kwargs
     ) -> str:
@@ -268,7 +268,7 @@ def infer_paper_abstract_from_pdf(
 
 def infer_paper_authors_from_pdf(
         pdf_path: str,
-        model: str = 'gpt-4o',
+        model: str = 'gpt-4o-mini',
         temperature: float = 0.0 # Use more deterministic decoding with temperature=0.0
     ) -> List[str]:
     """ Use a language model to infer the authors of a paper from the first page in a PDF.
@@ -300,7 +300,7 @@ def infer_paper_tldr_from_metadata(
         pdf_title: str,
         pdf_abstract: str,
         max_length: int = 60,
-        model: str = 'gpt-4o',
+        model: str = 'gpt-4o-mini',
         temperature: float = 0.7,
         top_p: float = 0.95,
         **kwargs
@@ -320,7 +320,7 @@ def infer_paper_tags_from_metadata(
         pdf_title: str,
         pdf_abstract: str,
         tag_number: int = 5,
-        model: str = 'gpt-4o',
+        model: str = 'gpt-4o-mini',
         temperature: float = 0.7,
         top_p: float = 0.95,
         **kwargs
@@ -740,7 +740,7 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
 
 def add_ai_research_metadata(
         metadata: Dict[str, Any],
-        model: str = 'gpt-4o',
+        model: str = 'gpt-4o-mini',
         temperature: float = 0.7,
         tldr_max_length: int = 50,
         tag_number:int = 5,
@@ -769,7 +769,7 @@ def write_ai_research_metadata_to_json(metadata: Dict[str, Any], dataset_dir: Op
 
 def get_ai_research_metadata(
         pdf_path: str,
-        model: str = 'gpt-4o',
+        model: str = 'gpt-4o-mini',
         temperature: float = 0.0,
         api_tools: List[str] = ['arxiv', 'dblp', 'semantic-scholar'],
         write_to_json: bool = True,
