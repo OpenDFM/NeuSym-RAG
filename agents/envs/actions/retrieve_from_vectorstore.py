@@ -70,6 +70,7 @@ class RetrieveFromVectorstore(Action):
             #     valid_collections = []
             return False, f"[Error]: Column '{self.table_name}.{self.column_name}' should be encoded as {modality} vectors, but the collection name {repr(self.collection_name)} does not match the modality {repr(modality)}. Please choose from these collections: {valid_collections}."
 
+        # [Deprecated]: this argument is not required to set and it defaults to all fields
         is_valid_output_fields = lambda x: type(x) == list and all([type(field) == str for field in x])
         if not is_valid_output_fields(self.output_fields):
             try:
@@ -86,7 +87,47 @@ class RetrieveFromVectorstore(Action):
         for field in self.output_fields:
             if field not in valid_output_fields:
                 return False, "[Error]: Output field {} is not available in the collection {} of Milvus vectorstore. The available output fields include {}".format(repr(field), repr(self.collection_name), valid_output_fields)
+        
+        # TODO: quick fix for some common errors in the filter condition
+        try:
+            # check if the filter condition is valid
+            vs_conn = env.vectorstore_conn
+            res = vs_conn.query(collection_name=self.collection_name, filter=self.filter, limit=1)
+        except Exception as e:
+            msg = []
+            for common_key in ['ref_paper_id', 'paper_id']:
+                if common_key in self.filter:
+                    msg.append(f"`{common_key}` is not a valid field name of stored data entries in the vectorstore, please use `pdf_id` instead")
+                    break
+            for common_key in ['page_id', 'ref_page_id', 'ref_page_number']:
+                if common_key in self.filter:
+                    msg.append(f"`{common_key}` is not a valid field name of stored data entries in the vectorstore, please use the integer `page_number` instead of UUID")
+                    break
+            error_msg = '; '.join(msg) + '.' if msg else str(e)
+            return False, "[Error]: Filter condition {} is not valid. {}".format(repr(self.filter), error_msg)
+
+        if modality == 'text' and 'primary_key' not in self.output_fields:
+            self.output_fields.append('primary_key') # we need this field to extract the text content
         return True, "No error."
+
+
+    def _extract_text_content(self, pk_values: str, env: gym.Env) -> str:
+        """Extract the text content from the database for the given primary key values.
+        Note that, since the `pk_values` is the search result from the vectorstore (which should always be valid), we do not add `try ... except ...` here.
+        @return:
+            text_content: str, the text content extracted from the database.
+        """
+        database_conn = env.database_conn
+        pk_names = [col['name'] for col in env.table2pk[self.table_name]]
+        if len(pk_names) == 1:
+            stmt = f"SELECT {self.column_name} FROM {self.table_name} WHERE {pk_names[0]} = '{pk_values}'"
+        else:
+            pk_values = pk_values.split(',')
+            assert len(pk_values) == len(pk_names), f"[Error]: The number of primary key values ({len(pk_values)}) does not match the number of primary key fields ({len(pk_names)}) for table {repr(self.table_name)}."
+            pk_constraint = [f'{pk} = \'{pk_values[i]}\'' for i, pk in enumerate(pk_names)]
+            stmt = f"SELECT {self.column_name} FROM {self.table_name} WHERE {' AND '.join(pk_constraint)}"
+        text_content = str(database_conn.execute(stmt).fetchone()[0]).strip()
+        return text_content
 
 
     def execute(self, env: gym.Env, **kwargs) -> Observation:
@@ -140,23 +181,31 @@ class RetrieveFromVectorstore(Action):
 
             # post-process the search result
             df = pd.DataFrame(search_result)
-            cumulative_tokens = 0
-            filtered_rows = []
-            truncation_reason=''
+
+            # for the sake of space, we do not store the actual content in the vectorstore, thus we need to extract the text content from the database for modality = 'text'
+            modality = env.table2encodable[self.table_name][self.column_name]
+            cumulative_tokens, truncation_reason, filtered_rows = 0, '', []
             llmencoder = tiktoken.get_encoding("cl100k_base")
+            text_contents = []
             for index, row in df.iterrows():
-                row_text = "\n".join([f"{col}: {row[col]}" for col in row.index])
-                row_tokens = len(llmencoder.encode(row_text))
-                # Check if we exceeded either row or token limit
-                if len(filtered_rows) >= max_rows:
+                # check if we exceeded maximum rows
+                if index >= max_rows:
                     truncation_reason = f"based on max_rows ({max_rows})"
                     break
-                if cumulative_tokens + row_tokens > max_tokens:
+                row_text = "\n".join([f"{col}: {row[col]}" for col in row.index])
+                if modality == 'text':
+                    text_content = self._extract_text_content(row['entity'].get('primary_key', ''), env)
+                    row_text += f'\ntext: {text_content}'
+                row_tokens = len(llmencoder.encode(row_text))
+
+                # check if we exceeded token limit
+                cumulative_tokens = cumulative_tokens + row_tokens
+                if index != 0 and cumulative_tokens > max_tokens:
                     truncation_reason = f"based on max_tokens ({max_tokens})"
                     break
 
                 filtered_rows.append(row)
-                cumulative_tokens += row_tokens
+                if modality == 'text': text_contents.append(text_content)
 
             suffix = f'\n... # only display {len(filtered_rows)} rows in {output_format.upper()} format, more are truncated due to length constraint {truncation_reason}' if truncation_reason else f'\nIn total, {df.shape[0]} rows are displayed in {output_format.upper()} format.'
             df = pd.DataFrame(filtered_rows, columns=df.columns)  # Create filtered DataFrame
@@ -174,7 +223,10 @@ class RetrieveFromVectorstore(Action):
             else:
                 df['distance'] = df['distance'].round(4)
 
+            if modality == 'text': # add one extra field for text content
+                df['text'] = text_contents
             df = convert_to_utf8(df)
+
             if output_format == 'markdown':
                 # format_kwargs can also include argument `tablefmt` for to_markdown function, see doc https://pypi.org/project/tabulate/ for all options
                 msg = df.to_markdown(tablefmt=format_kwargs['tablefmt'], index=format_kwargs['index'])

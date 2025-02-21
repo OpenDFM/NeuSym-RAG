@@ -1,0 +1,25 @@
+{
+    "uuid": "3fe5526c-b647-51b0-9abb-6edd43c20f79",
+    "question": "Which paper is the first to model the helpfulness and harmlessness alignment of LLMs as a Constrained MDP problem?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper is the first to model the helpfulness and harmlessness alignment of LLMs as a Constrained MDP problem?",
+            "reference_answer": "SAFE RLHF: SAFE REINFORCEMENT LEARNING FROM HUMAN FEEDBACK"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

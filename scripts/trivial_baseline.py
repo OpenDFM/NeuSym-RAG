@@ -10,16 +10,23 @@ from agents.prompts import formulate_input
 from utils.eval_utils import evaluate, print_result
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
+parser.add_argument('--dataset', type=str, required=True, help='which dataset to use')
 parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='test data file')
 parser.add_argument('--agent_method', type=str, default='trivial', help='Agent method')
-parser.add_argument('--max_length', type=int, default=30, help='Maximum length (x 1000) of the input context or document, default is 32k')
+parser.add_argument('--max_length', type=int, default=16, help='Maximum length (x 1000) of the input context or document, default is 16k')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
 parser.add_argument('--temperature', type=float, default=0.7)
 parser.add_argument('--top_p', type=float, default=0.95)
 parser.add_argument('--max_tokens', type=int, default=1500)
 parser.add_argument('--max_turn', type=int, default=1, help='Maximum turns for the agent to interact with the environment')
+parser.add_argument('--image_limit', type=int, default=10, help='Maximum number of images to be shown in the agents response')
 parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
+parser.add_argument('--no_eval', action='store_true', help='Whether not to evaluate the results')
+parser.add_argument('--database', type=str, help='which database to use')
+parser.add_argument('--database_path', type=str, help='Database path.')
+parser.add_argument('--vectorstore', type=str, help='which vectorstore to use')
+parser.add_argument('--vectorstore_path', type=str, help='Path to the vectorstore.')
+parser.add_argument('--window_size', type=int, default=5, help='window size for the agent to interact with the environment')
 args = parser.parse_args()
 
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -58,16 +65,18 @@ with open(test_data_path, 'r', encoding='utf-8') as inf:
 
 start_time = datetime.now()
 preds = []
-for data in test_data:
-    logger.info(f"Processing question: {data['uuid']}")
-    question, answer_format = formulate_input(args.dataset, data)
+for data_idx, data in enumerate(test_data):
+    logger.info(f"Processing question [{data_idx + 1}/{len(test_data)}]: {data['uuid']}")
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
-    result = agent.interact(
-        question, answer_format,
-        pdf_id=data['pdf_id'], page_number=data.get('page_number', None), max_length=args.max_length,
-        model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens,
-        output_path=output_path
-    )
+    try:
+        result = agent.interact(
+            args.dataset, data, max_length=args.max_length,
+            model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens,
+            output_path=output_path, image_limit=args.image_limit
+        )
+    except Exception as e:
+        logger.error(f"[❌Error❌]: ({data['uuid']}) {str(e)}")
+        result = '[ERROR]: ' + str(e)
     preds.append({'uuid': data['uuid'], 'answer': result})
 logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 agent.close()
@@ -77,6 +86,8 @@ with open(output_path, 'w', encoding='utf-8') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")
-result = evaluate(preds, test_data, args.dataset, output_path=os.path.join(result_dir, 'evaluation.txt'))
-result_table = print_result(result)
-logger.info(f"Final evaluation result on {args.dataset}:\n{result_table}")
+
+if not args.no_eval:
+    result = evaluate(preds, test_data, args.dataset, output_path=os.path.join(result_dir, 'evaluation.txt'))
+    result_table = print_result(result)
+    logger.info(f"Final evaluation result on {args.dataset}:\n{result_table}")

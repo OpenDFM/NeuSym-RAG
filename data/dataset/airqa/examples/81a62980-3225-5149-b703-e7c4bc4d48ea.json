@@ -1,0 +1,25 @@
+{
+    "uuid": "81a62980-3225-5149-b703-e7c4bc4d48ea",
+    "question": "Is there such a reading comprehension dataset in understanding a snippet from a long story book, while it requires to integrate the necessary long history texts before the snippet to full understand it?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Is there such a reading comprehension dataset in understanding a snippet from a long story book, while it requires to integrate the necessary long history texts before the snippet to full understand it?",
+            "reference_answer": "Personality Understanding of Fictional Characters during Book Reading"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

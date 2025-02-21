@@ -1,7 +1,6 @@
 #coding=utf8
 import json, sys, os, re, logging
-from datetime import datetime
-import duckdb, tqdm
+import duckdb, tqdm, time
 from typing import List, Dict, Union, Optional, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.database_schema import DatabaseSchema
@@ -117,22 +116,22 @@ def convert_json_to_create_sql(schema: Dict[str, Any], sql_path: Optional[str] =
 
 def get_database_connection(
         database_name: str,
+        database_path: Optional[str] = None,
         database_type: str = 'duckdb',
         from_scratch: bool = False
     ) -> duckdb.DuckDBPyConnection:
     """ Get the database connection from the database name.
     @param:
         database_name: str, database name
-        database_type: str, database type, default is 'duckdb'
+        database_path: str, optional, by default, `DATABASE_DIR/database_name/database_name.duckdb`
+        database_type: str, database type, default is 'duckdb' (other DBs are not supported yet)
         from_scratch: remove the existed database file or not
     @return:
         database connection
     """
     if database_type == 'duckdb':
-        if os.path.exists(database_name):
-            db_path = database_name
-        else:
-            db_path = os.path.join(DATABASE_DIR, database_name, database_name + '.duckdb')
+        db_path = database_path if database_path is not None else \
+            os.path.join(DATABASE_DIR, database_name, database_name + '.duckdb')
         if from_scratch and os.path.exists(db_path):
             os.remove(db_path)
         conn: duckdb.DuckDBPyConnection = duckdb.connect(db_path)
@@ -183,6 +182,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description='Database relevant utilities.')
     parser.add_argument('--database', type=str, required=True, help='Database name.')
+    parser.add_argument('--database_path', type=str, help='Path to the database file.')
     parser.add_argument('--pdf_path', type=str, required=True, help='Path to the PDF file or JSON line file.')
     parser.add_argument('--config_path', type=str, help='Path to the config file.')
     parser.add_argument('--on_conflict', type=str, default='ignore', choices=['replace', 'ignore', 'raise'], help='How to handle the database content insertion conflict.')
@@ -190,7 +190,12 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     from utils.data_population import DataPopulation
-    populator = DataPopulation(args.database, encoding=False, from_scratch=args.from_scratch)
+    populator = DataPopulation(
+        database=args.database,
+        database_path=args.database_path,
+        connect_to_vs=False,
+        from_scratch=args.from_scratch
+    )
 
     # parse PDF files into the database
     pdf_ids = get_pdf_ids_to_encode(args.database, args.pdf_path)
@@ -199,8 +204,8 @@ if __name__ == '__main__':
         config = json.load(inf)
 
     count: int = 0
-    for input_pdf in tqdm.tqdm(pdf_ids):
-        start_time = datetime.now()
+    for input_pdf in tqdm.tqdm(pdf_ids, disable=not sys.stdout.isatty()):
+        start_time = time.time()
         try:
             populator.populate(
                 input_pdf, config,
@@ -209,7 +214,7 @@ if __name__ == '__main__':
                 verbose=False
             )
             count += 1
-            # logger.info(f"[Statistics]: Parsing time: {datetime.now() - start_time}s")
+            logger.info(f"Finished processing PDF {input_pdf} in {time.time() - start_time}s.")
         except Exception as e:
             logger.error(f"Error in parsing PDF {input_pdf}: {e}")
             continue

@@ -199,11 +199,25 @@ class Action(ABC):
         # currently only support react and code_block styles
         if agent_method not in ['react', 'code_block']: agent_method = 'react'
         if agent_method == 'react':
-            thought_pattern = r"\[?\bThought\b\]?:\s*(.*?)\s*\[?\bAction\b\]?:"
-            matched_thought = re.search(thought_pattern, text, re.DOTALL)
+            though_patterns = [
+                r"\[?\bThought\b\]?:\s*(.*?)\s*\[?\bAction\b\]?:",
+                r"\*\*Thought\*\*:\s*(.*?)\s*\*\*Action\*\*:",
+            ]
+            for thought_pattern in though_patterns:
+                matched_thought = re.search(thought_pattern, text, re.DOTALL)
+                if matched_thought:
+                    break
+            else: matched_thought = None
             thought = matched_thought.group(1) if matched_thought else None
-            action_pattern = r"\[?\bAction\b\]?:\s*(.*?)\s*(\[?\bObservation\b\]?:|$)"
-            matched_action = re.search(action_pattern, text, re.DOTALL)
+            action_patterns = [
+                r"\[?\bAction\b\]?:\s*(.*?)\s*(\[?\bObservation\b\]?:|$)",
+                r"\*\*Action\*\*:\s*(.*?)\s*(\*\*Observation\*\*:|$)"
+            ]
+            for action_pattern in action_patterns:
+                matched_action = re.search(action_pattern, text, re.DOTALL)
+                if matched_action:
+                    break
+            else: matched_action = None
             action_text = matched_action.group(1).strip() if matched_action else text.strip()
         elif agent_method == 'code_block':
             thought = None

@@ -5,7 +5,6 @@
         "embed_type": "xxx", // str, chosen from ['sentence_transformers', 'bge', 'instructor', 'mgte', 'bm25', 'splade', 'clip']
         "embed_model": "model_name", // str, embedding model name
         "description": "what is about this collection, which embedding model to use and which model is, as well as other meta information", // [Suggested] str, optional field, a brief description of the collection
-        "enable_dynamic_field": false, // bool, optional field, whether to enable dynamic field, default is false
         "fields": [
             {
                 "name": "field_name", // str, required field, the name of the field

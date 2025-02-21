@@ -5,8 +5,8 @@ from agents.envs import Text2VecEnv
 from agents.envs.actions import Observation, RetrieveFromVectorstore
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
+from agents.prompts.task_prompt import formulate_input
 from agents.frameworks import AgentBase
-
 
 logger = logging.getLogger()
 
@@ -17,11 +17,10 @@ class ClassicRAGAgent(AgentBase):
 
 
     def interact(self,
-                 question: str,
-                 answer_format: str,
+                 dataset: str,
+                 example: Dict[str, Any],
                  table_name: Union[Optional[str], List[str]] = None,
                  column_name: Union[Optional[str], List[str]] = None,
-                 pdf_id: Optional[Union[str, List[str]]] = None,
                  page_number: Optional[Union[str, List[str]]] = None,
                  collection_name: str = 'text_bm25_en',
                  limit: int = 2,
@@ -29,14 +28,17 @@ class ClassicRAGAgent(AgentBase):
                  temperature: float = 0.7,
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
+                 image_limit: int = 10,
                  **kwargs
     ) -> str:
+        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, image_limit=image_limit)
+        pdf_id = example["anchor_pdf"] #+ example["reference_pdf"]
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
         prev_cost = self.model.get_cost()
         self.env.reset()
 
-        assert collection_name in self.env.get_collection_names(), f'Collection {collection_name} not found in the vectorstore environment.'
+        assert collection_name in self.env.vectorstore_conn.list_collections(), f'Collection {collection_name} not found in the vectorstore environment.'
 
         # 1. Retrieve the result (hard coding)
         filter_conditions = []
@@ -45,10 +47,10 @@ class ClassicRAGAgent(AgentBase):
                 pdf_id = pdf_id[0]
             if isinstance(pdf_id, str):
                 filter_conditions.append(f"pdf_id == '{pdf_id}'")
-            elif isinstance(pdf_id, list):
+            elif isinstance(pdf_id, list) and len(pdf_id) > 1:
                 filter_conditions.append(f"pdf_id in {sorted(pdf_id)}")
-            else:
-                raise ValueError('Invalid pdf_id type.')
+                batch_pdf_id_str = ', '.join([f"'{str(pid)}'" for pid in sorted(pdf_id)])
+                filter_conditions.append(f"pdf_id in [{batch_pdf_id_str}]")
         if page_number is not None and page_number != []:
             page_number_filter = f'page_number in {sorted(page_number)}' if isinstance(page_number, list) else \
                 f"page_number == {page_number}"
@@ -60,8 +62,7 @@ class ClassicRAGAgent(AgentBase):
             column_name=column_name,
             collection_name=collection_name,
             filter=filter_str,
-            limit=limit,
-            output_fields=['text']
+            limit=limit
         )
         observation: Observation = action.execute(self.env)
         logger.info(f'[Stage 1]: Retrieve top {limit} context from {collection_name} with filter {filter_str} ...')
@@ -76,6 +77,8 @@ class ClassicRAGAgent(AgentBase):
         ) # system prompt + task prompt + cot thought hints
         logger.info('[Stage 2]: Generate Answer ...')
         messages = [{'role': 'user', 'content': prompt}]
+        if image_message is not None:
+            messages.append(image_message)
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)

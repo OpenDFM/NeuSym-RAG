@@ -1,0 +1,30 @@
+{
+    "uuid": "bff9b330-bcd6-547f-8a07-2af88d99540d",
+    "question": "Among the text-to-SQL papers in ACL 2023, which one achieves the best test set performance regarding testsuite accuracy on the famous Spider dataset? Tell me the paper title and the corresponding testsuite accuracy.",
+    "answer_format": "Your answer should be a Python list of length two, with the first one being the paper title string and the second one being a float number rounded to 3 decimals like 0.238 representing the testsuite accuracy on the Spider test set.",
+    "tags": [
+        "comprehensive",
+        "table",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "G3R: A Graph-Guided Generate-and-Rerank Framework for Complex and Cross-domain Text-to-SQL Generation",
+                0.729
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

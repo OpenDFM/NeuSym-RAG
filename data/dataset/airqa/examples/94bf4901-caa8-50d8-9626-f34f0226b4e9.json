@@ -1,0 +1,25 @@
+{
+    "uuid": "94bf4901-caa8-50d8-9626-f34f0226b4e9",
+    "question": "Is there research that investigates embedding multi-bit data into watermarks to improve resilience to text corruption, particularly aimed at safeguarding keywords and syntactic elements from modification?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Is there research that investigates embedding multi-bit data into watermarks to improve resilience to text corruption, particularly aimed at safeguarding keywords and syntactic elements from modification?",
+            "reference_answer": "Robust Multi-bit Natural Language Watermarking through Invariant Features"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_automatic"
+}

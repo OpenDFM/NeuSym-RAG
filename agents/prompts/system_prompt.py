@@ -17,7 +17,10 @@ Each task consists of the following parts:
 
 [Question]: User question regarding the PDF, e.g., Is there any ...?
 [Answer Format]: it describes the format of the final answer, e.g., the answer is "Yes" or "No" without punctuation.
+[Anchor PDF]: Optional, a python str or list, the PDF(s) you must use to answer the question.
+[Reference PDF]: Optional, a python str or list, the PDF(s) you may use to answer the question.
 [Database Schema]: detailed serialized database schema for reference to generate SQL.
+[Anchor Image]: Optional, the image you must use to answer the question, presented in base64 format.
 """
 
 
@@ -40,7 +43,10 @@ Each task consists of the following parts:
 
 [Question]: User question regarding the PDF, e.g., Is there any ...?
 [Answer Format]: it describes the format of the final answer, e.g., the answer is "Yes" or "No" without punctuation.
+[Anchor PDF]: Optional, a python str or list, the PDF(s) you must use to answer the question.
+[Reference PDF]: Optional, a python str or list, the PDF(s) you may use to answer the question.
 [Vectorstore Schema]: detailed serialized Milvus vectorstore schema for reference to generate executable retrieval actions with concrete parameters. It includes 1) collections, 2) fields, 3) encodable (table, column) pairs in the relational database where the vectorized content arises from, and 4) grammar for valid filter rules.
+[Anchor Image]: Optional, the image you must use to answer the question, presented in base64 format.
 """
 
 TWO_STAGE_TEXT2VEC_SYSTEM_PROMPT = [
@@ -63,6 +69,16 @@ Each input task consists of the following parts:
 
 [Question]: A natural language question from the user regarding PDF files, e.g., Is there any ...?
 [Answer Format]: Specifies the required format of the final answer, e.g., the answer is "Yes" or "No" without punctuation.
+[Anchor PDF]: Optional, a python str or list, the PDF(s) you must use to answer the question.
+[Reference PDF]: Optional, a python str or list, the PDF(s) you may use to answer the question.
 [Database Schema]: A detailed serialized schema of the DuckDB database for reference when generating SQL queries. It includes 1) tables, 2) columns and their data types, 3) descriptions for these schema items, and 4) primary key and foreign key constraints.
 [Vectorstore Schema]: A detailed serialized schema of the Milvus vectorstore for reference when generating executable retrieval actions with specific parameters. It includes 1) collections, 2) fields, 3) encodable (table, column) pairs in the relational database where the vectorized content originates, and 4) grammar for valid filter rules.
+[Anchor Image]: Optional, the image you must use to answer the question, presented in base64 format.
 """
+
+TWO_STAGE_HYBRID_SYSTEM_PROMPT = """You are intelligent agent who is expert in predicting a well-formed retrieval action to search useful information to answer the user question. You will be given a natural language question concerning a PDF file, a database schema which stores the parsed PDF content, and a vectorstore schema which defines all usable collections and fields in them. The vectorized contents in the vectorstore all come from cell values in the database. And your task is to predict a parametrized retrieval action to find useful information. Please refer to the concrete schema to produce a valid retrieval action.
+"""
+
+QUESTION_ONLY_SYSTEM_PROMPT = "You are intelligent agent who is expert in answering user questions based on the retrieved context. You will be given a natural language question concerning several PDF files, and your task is to answer the input question with predefined output format using the relevant information."
+
+TITLE_ABSTRACT_SYSTEM_PROMPT = "You are intelligent agent who is expert in answering user questions based on the retrieved context. You will be given a natural language question concerning several PDF files, and your task is to answer the input question with predefined output format using the relevant information."

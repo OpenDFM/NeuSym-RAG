@@ -1,0 +1,34 @@
+{
+    "uuid": "ebd5482c-b856-5427-876b-fcd24759d8d4",
+    "question": "MMD and xVal, a baseline in the anchor paper, both aim to solve the problem of embedding numbers in language models. Did the tasks focused on by the two papers belong to the same domain? If not, what types of tasks does xVal focus on?",
+    "answer_format": "Your answer should be brief text answering whether the tasks focused on by the two papers belong to the same domain, and if not, the domain of the task focused on by xVal.",
+    "tags": [
+        "multiple",
+        "subjective",
+        "text"
+    ],
+    "anchor_pdf": [
+        "58a12475-a7ce-5d3a-b75e-04814b025231",
+        "98849314-13f0-558a-adf7-f2764d2bf67b"
+    ],
+    "reference_pdf": [
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Identify the domain of the task focused on by MMD.",
+        "Locate the paper which proposed xVal.",
+        "Identify the domain of the task focused on by xVal.",
+        "Compare the domains of the tasks focused on by the two papers."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "No, they don't. xVal mainly focuses on prediction tasks involving numbers in the scientific domain.",
+            "question": "MMD and xVal, a baseline in the anchor paper, both aim to solve the problem of embedding numbers in language models. Did the tasks focused on by the two papers belong to the same domain? If not, what types of tasks does xVal focus on?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

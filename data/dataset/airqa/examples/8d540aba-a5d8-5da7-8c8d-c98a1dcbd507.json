@@ -1,0 +1,37 @@
+{
+    "uuid": "8d540aba-a5d8-5da7-8c8d-c98a1dcbd507",
+    "question": "The anchor paper mentioned a service which uses the methodology proposed in this paper. What is the name of the service? On which page of the paper can I find graphic information on this service?",
+    "answer_format": "Your answer should be a python list with 2 elements, the first element being the name of the service, and the second element being the page number. The first element should be a string and the second element should be an integer. Use the exact name of the service from the paper without changing CAPITALIZATION.",
+    "tags": [
+        "single",
+        "objective",
+        "text",
+        "image"
+    ],
+    "anchor_pdf": [
+        "0127a369-a186-55a5-bced-55942dcb5e9f"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the section which mentioned a service using the methodology proposed in the paper.",
+        "Find the name of the service.",
+        "Locate the page which contains figures related to the service."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Today’s Mini Diary",
+                17
+            ],
+            "ignore_order": false,
+            "threshold": 70,
+            "fuzz_method": "token_sort_ratio"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

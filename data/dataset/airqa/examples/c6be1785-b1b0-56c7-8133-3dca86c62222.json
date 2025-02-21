@@ -1,0 +1,29 @@
+{
+    "uuid": "c6be1785-b1b0-56c7-8133-3dca86c62222",
+    "question": "According to the paper, how to combine the two losses presented in figure 2?",
+    "answer_format": "Your answer should be a single formula in latex format extracted from the paper.",
+    "tags": [
+        "image",
+        "formula",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate figure 1 to identify the two losses.",
+        "Second, find the formula about these two losses from the formula table."
+    ],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": "\\begin{array}{l}\\mathcal{L}_{(\text {multi })}\\left(\\phi_{(s h)}, \\phi_{1}, \\phi_{2}\right)= \\delta_{1} \\mathcal{L}_{s a}\\left(\\phi_{(s h)}, \\phi_{1}\right)+\\delta_{2} \\mathcal{L}_{c l}\\left(\\phi_{(s h)}, \\phi_{2}\\right)\\end{array}",
+            "question": "According to the paper, how to combine the two losses presented in figure 2?"
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": ["30c390e3-630b-5592-a1be-2771d1aa15a9"],
+    "reference_pdf": []
+}

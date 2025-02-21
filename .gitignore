@@ -30,7 +30,7 @@ data/database/*/*.duckdb.lock
 # ignore vectorstore files
 data/vectorstore/*/*.db
 data/vectorstore/*/.*.db.lock
-data/vectorstore/*/bm25.json
+data/vectorstore/*/bm25*.json
 data/vectorstore/milvus/*
 !data/vectorstore/milvus/.gitkeep
 embedEtcd.yaml
@@ -39,6 +39,7 @@ volumes
 
 # raw dataset
 data/dataset/*/raw_data/*
+data/dataset/*/*.zip
 !data/dataset/*/raw_data/.gitkeep
 data/dataset/pdfvqa/processed_data/bbox_images
 data/dataset/pdfvqa/processed_data/test_images
@@ -47,19 +48,22 @@ data/dataset/pdfvqa/processed_data/*
 data/dataset/tatdqa/processed_data/tat_docs
 data/dataset/tatdqa/processed_data/test
 data/dataset/tatdqa/processed_data/test_docs
-data/dataset/airqa/papers/*
-!data/dataset/airqa/papers/.gitkeep
-!data/dataset/airqa/papers/README.md
-data/dataset/airqa/uuid2papers.json
-data/dataset/airqa/processed_data/*
-!data/dataset/airqa/processed_data/.gitkeep
-data/dataset/airqa/metadata/*
-!data/dataset/airqa/metadata/.gitkeep
+data/dataset/*/papers/*
+!data/dataset/*/papers/.gitkeep
+!data/dataset/*/papers/README.md
+data/dataset/*/parallel
+data/dataset/*/processed_data/*
+!data/dataset/*/processed_data/.gitkeep
+data/dataset/*/metadata/*
+!data/dataset/*/metadata/.gitkeep
+data/dataset/*/images/*
+!data/dataset/*/images/.gitkeep
 data/dataset/airqa/examples/litsearch/raw
 data/dataset/airqa/examples/pasa/raw
-data/dataset/m3sciqa
-data/dataset/spiqa
-data/dataset/scidqa
+data/dataset/m3sciqa/examples/*
+data/dataset/spiqa/examples/*
+data/dataset/scidqa/examples/*
+!data/dataset/*/examples/.gitkeep
 
 # third party repos
 third_party/*

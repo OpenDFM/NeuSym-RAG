@@ -1,6 +1,6 @@
 {
     "uuid": "a2f8cca9-a522-5fd2-bf2e-829fc82f749e",
-    "question": "What evaluation metric do the authors use to evaluate the unlearned model?",
+    "question": "What do the authors evaluate the unlearned model from?",
     "answer_format": "Your answer should be a python list, each element is a string.",
     "tags": [
         "single",
@@ -13,8 +13,7 @@
     "reference_pdf": [],
     "conference": [],
     "reasoning_steps": [
-        "Find the part mentioned the evaluation metric and unlearned model in the paper.",
-        "Extract the evaluation metric from the paper."
+        "Find the part mentioned the evaluation of unlearned model in the paper and get the answer."
     ],
     "evaluator": {
         "eval_func": "eval_structured_object_exact_match",

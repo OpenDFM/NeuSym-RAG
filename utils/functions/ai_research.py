@@ -61,6 +61,16 @@ def get_ai_research_page_info(
     if summary_data.get("page_summary", []):
         # logger.info("Using cached page summary ...")
         page_info["page_summaries"] = summary_data["page_summary"]
+        for page_number in range(1, num_pages + 1):
+            if page_info["page_summaries"][page_number - 1] == "NO SUMMARY":
+                page_info["page_summaries"][page_number - 1] = get_text_summary(
+                    content={"page_contents": page_info["page_contents"][page_number - 1]},
+                    max_length=max_length,
+                    model=model,
+                    temperature=temperature,
+                    top_p=top_p,
+                    **kwargs
+                ).get("text_summary", "")
     else:
         page_info["page_summaries"] = get_text_summary(
             content={"page_contents": page_info["page_contents"]},
@@ -130,7 +140,7 @@ def get_ai_research_section_info(
     for idx, section_data in enumerate(pdf_data["info_from_mineru"]["TOC"]):
         title = section_data["title"]
         section_text = section_data["text"]
-        if summary_data:
+        if summary_data and summary_data[idx] != "NO SUMMARY":
             # logger.info("Using cached section summary ...")
             section_summary = summary_data[idx]
         else:
@@ -188,7 +198,7 @@ def get_ai_research_per_page_table_info(
 
             for ordinal, table in enumerate(page_tables, start=1):
                 uuid = get_uuid(name=f"{pdf_name}_page_{page_num}_table_{ordinal}")
-                if summary_data:
+                if summary_data and summary_data[page_num-1][ordinal-1] != "NO SUMMARY":
                     # logger.info("Using cached table summary ...")
                     table_summary = summary_data[page_num-1][ordinal-1]
                 else:
@@ -250,7 +260,7 @@ def get_ai_research_per_page_image_info(
         result = []
         for ordinal, image in enumerate(images, start=1):
             uuid = get_uuid(name=f"{pdf_name}_page_{page_num}_image_{ordinal}")
-            if summary_data:
+            if summary_data and summary_data[page_num-1][ordinal-1] != "NO SUMMARY":
                 # logger.info("Using cached image summary ...")
                 image_summary = summary_data[page_num-1][ordinal-1]
             else:
@@ -350,8 +360,8 @@ def aggregate_ai_research_pages(metadata: Dict[str, Any], page_data: Dict[str, A
     for page_number in range(1, num_pages + 1):
         # Get the corresponding page from the PDF
         page = doc[page_number - 1]
-        page_width = page.rect.width
-        page_height = page.rect.height
+        page_width = page.mediabox.width
+        page_height = page.mediabox.height
         page_uuid = page_data["page_uuids"][page_number - 1]
         page_content = page_data["page_contents"][page_number - 1]
         page_summary = page_data["page_summaries"][page_number - 1]

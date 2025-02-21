@@ -1,0 +1,25 @@
+{
+    "uuid": "7f6dafa1-72c9-5c9b-a4bc-dbddaf15f4de",
+    "question": "Is there a paper illustrating that pre-trained transformers from LLMs can be used to encode visual information in a wide range of scenarios?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Is there a paper illustrating that pre-trained transformers from LLMs can be used to encode visual information in a wide range of scenarios?",
+            "reference_answer": "FROZEN TRANSFORMERS IN LANGUAGE MODELS ARE EFFECTIVE VISUAL ENCODER LAYERS"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

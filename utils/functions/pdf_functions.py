@@ -10,7 +10,7 @@ from pdf2image import convert_from_path
 from pdfminer.layout import LTImage, LTFigure, LTRect
 
 from utils.functions.common_functions import call_llm, get_uuid, call_llm_with_message
-from utils.functions.parallel_functions import parallel_write_or_read
+from utils.functions.parallel_functions import parallel_write_or_read, truncate_tokens
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
@@ -93,9 +93,12 @@ Please directly return the summary without any extra information or formatting. 
     for text in texts:
         if len(text) > max_length:
             template = prompt_template.format(text=text, max_length=max_length)
+            response = None
             if kwargs.get("parallel"):
                 response = parallel_write_or_read(template=template, **kwargs)
-            else:
+            if response is None:
+                if len(text) >= 100000: # roughly 28k tokens
+                    template = truncate_tokens(template, max_tokens=28)
                 response = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
             summary.append(response)
         else:
@@ -117,8 +120,10 @@ Please generate a brief summary for the following table without any extra inform
     template = prompt_template.format(max_length=max_length, table_caption=table['table_caption'], table_html=table['table_html'])
     if kwargs.get("parallel"):
         table_summary = parallel_write_or_read(template=template, **kwargs)
-    else:
-        table_summary = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
+        if table_summary is not None: return table_summary
+    if len(template) >= 100000: # roughly 28k tokens
+        template = truncate_tokens(template, max_tokens=28)
+    table_summary = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
     return table_summary
 
 def crop_pdf(
@@ -158,6 +163,63 @@ def convert_pdf_to_image(
     images = convert_from_path(input_file, dpi=dpi)
     image = images[0]
     image.save(output_file, "PNG")
+
+def add_reference_to_json(
+        uuid: str,
+        processed_data_folder: str = 'data/dataset/airqa/processed_data',
+        output_data_folder: Optional[str] = None
+    ) -> Dict[str, Any]:
+    # Load the flawed processed data
+    processed_data_path = os.path.join(processed_data_folder, f'{uuid}.json')
+    if not os.path.exists(processed_data_path):
+        return None
+    with open(processed_data_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    # References already exist, just skip    
+    if data["info_from_mineru"].get("references", []) != []:
+        return data
+
+    content_list_path = os.path.join(processed_data_folder, f'{uuid}', 'auto', f'{uuid}_content_list.json')
+    if not os.path.exists(content_list_path):
+        return data
+    with open(content_list_path, 'r', encoding='utf-8') as f:
+        content_data = json.load(f)
+    
+    record_reference = 0
+    references = []
+    for content in content_data:
+        if content["type"] == "text" and content.get("text_level", None) == 1:
+            if "reference" in content["text"].lower():
+                record_reference = 1
+                continue
+            elif record_reference == 1:
+                record_reference = 0
+        if record_reference and content.get("text", None) != None:
+            reference_list = list(str(content["text"]).split("\n"))
+            reference_list = [reference.strip() for reference in reference_list if reference.strip()]
+            if reference_list:
+                references.extend(reference_list)
+
+    if references == []:
+        record_reference = 0
+        for content in content_data:
+            if content["type"] == "text" and content.get("text_level", None) == 1 and record_reference == 1:
+                record_reference = 0
+            if content["type"] == "text" and content.get("text", None) != None:
+                line_list = list(str(content["text"]).split("\n"))
+                line_list = [line.strip() for line in line_list if line.strip()]
+                for line in line_list:
+                    if "reference" in line[:min(30, len(line))].lower():
+                        record_reference = 1
+                    if record_reference:
+                        references.append(line)
+
+    data["info_from_mineru"]["references"] = [{"reference_text": reference} for reference in references if reference]
+    output_data_folder = output_data_folder if output_data_folder is not None else processed_data_folder
+    with open(os.path.join(output_data_folder, f'{uuid}.json'), 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+    return data
 
 def parse_pdf(
         pdf_path: str,
@@ -199,7 +261,7 @@ def parse_pdf(
             ],
             "references": [
                 {
-                    "reference": <str>  # The content of the reference
+                    "reference_text": <str>  # The content of the reference
                 },
                 ...
             ],
@@ -240,7 +302,8 @@ def parse_pdf(
     json_mid_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_middle.json')
     json_con_path = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', f'{pdf_name}_content_list.json')
     if os.path.exists(json_mid_path) and os.path.exists(json_con_path):
-        logger.info(f"PDF {pdf_name} has been partially processed before.")
+        # logger.info(f"PDF {pdf_name} has been partially processed before.")
+        pass
     else:
         logger.info(f"Processing PDF {pdf_name} with MinerU.")
         command = [
@@ -441,7 +504,11 @@ def parse_pdf(
                             for span in line.get("spans", [])
                         )
                     elif sub_block.get("type") == "table_body":
-                        table_info["table_html"] = sub_block.get("lines", [{}])[0].get("spans", [{}])[0].get("html", "")
+                        sub_block_lines = sub_block.get("lines", [{}])
+                        if sub_block_lines == []: sub_block_lines=[{}]
+                        sub_block_spans = sub_block_lines[0].get("spans", [{}])
+                        if sub_block_spans == []: sub_block_spans=[{}]
+                        table_info["table_html"] = sub_block_spans[0].get("html", "")
                 
                 if table_info["table_html"]:
                     result["info_from_mineru"]["tables"].append(table_info)
@@ -464,10 +531,14 @@ def parse_pdf(
                             for span in line.get("spans", [])
                         )
                     elif sub_block.get("type") == "image_body":
-                        image_path = sub_block.get("lines", [{}])[0].get("spans", [{}])[0].get("image_path", "")
-                        figure_info["figure_path"] = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', 'images', image_path)
+                        sub_block_lines = sub_block.get("lines", [{}])
+                        if sub_block_lines == []: sub_block_lines=[{}]
+                        sub_block_spans = sub_block_lines[0].get("spans", [{}])
+                        if sub_block_spans == []: sub_block_spans=[{}]
+                        figure_info["figure_path"] = sub_block_spans[0].get("image_path", "")
 
                 if figure_info["figure_path"]:
+                    figure_info["figure_path"] = os.path.join(processed_data_folder, f'{pdf_name}', 'auto', 'images', figure_info["figure_path"])
                     result["info_from_mineru"]["figures"].append(figure_info)
 
     # Extract information about equations
@@ -484,7 +555,7 @@ def parse_pdf(
             if equation_info["equation_text"]:
                 result["info_from_mineru"]["equations"].append(equation_info)
         if content["type"] == "text" and content.get("text_level", None) == 1:
-            if content["text"].lower().startswith("reference"):
+            if "reference" in content["text"].lower():
                 record_reference = 1
                 continue
             elif record_reference == 1:
@@ -494,7 +565,21 @@ def parse_pdf(
             reference_list = [reference.strip() for reference in reference_list if reference.strip()]
             if reference_list:
                 references.extend(reference_list)
+        if references == []:
+            record_reference = 0
+            for content in content_data:
+                if content["type"] == "text" and content.get("text_level", None) == 1 and record_reference == 1:
+                    record_reference = 0
+                if content["type"] == "text" and content.get("text", None) != None:
+                    line_list = list(str(content["text"]).split("\n"))
+                    line_list = [line.strip() for line in line_list if line.strip()]
+                    for line in line_list:
+                        if "reference" in line[:min(30, len(line))].lower():
+                            record_reference = 1
+                        if record_reference:
+                            references.append(line)
 
+    # TODO: Need to improve the reference extraction logic, roughly 1/3 of the references are not extracted at all
     result["info_from_mineru"]["references"] = [{"reference_text": reference} for reference in references if reference]
 
     # Write each paper's data into a separate JSON file

@@ -20,6 +20,7 @@ logger.setLevel(logging.INFO)
 def evaluate_airqa(pred_answer: str, gold: Dict[str, Any]) -> float:
     """ Evaluate the predicted answer against the gold answer. The predicted answer is a string (from LLM response), and the gold answer is included in the gold data dictionary.
     """
+    if str(pred_answer).startswith('[ERROR]:'): return 0.
     function_name = gold['evaluator']['eval_func']
     eval_func = getattr(evaluation, function_name, None)
     assert eval_func is not None, f"Evaluation function `{function_name}` not found in the evaluation module. Remember to import it in the evaluation/__init__.py file."

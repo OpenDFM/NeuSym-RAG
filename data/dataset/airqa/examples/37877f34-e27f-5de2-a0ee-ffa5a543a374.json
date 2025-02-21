@@ -1,0 +1,25 @@
+{
+    "uuid": "37877f34-e27f-5de2-a0ee-ffa5a543a374",
+    "question": "Is there a paper that supports the use of automated coherence metrics in topic model evaluations?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Is there a paper that supports the use of automated coherence metrics in topic model evaluations?",
+            "reference_answer": "Large-Scale Correlation Analysis of Automated Metrics for Topic Models"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

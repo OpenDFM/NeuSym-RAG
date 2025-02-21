@@ -20,7 +20,7 @@
         "Identify the benchmark and tasks used for NLP in that paper."
     ],
     "evaluator": {
-        "eval_func": "eval_",
+        "eval_func": "eval_structured_object_exact_match",
         "eval_kwargs": {
             "gold": {
                 "benchmark": "GLUE",

@@ -1,0 +1,25 @@
+{
+    "uuid": "541382e2-2866-5c2c-9a53-36c96868b9f1",
+    "question": "Which paper proposed the integration of human translators' considerations, such as length control, rhyme type control and suggestion, and enhancing compatibility between translation output and unseen melodies, into the design of machine translation models when translating lyrics?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper proposed the integration of human translators' considerations, such as length control, rhyme type control and suggestion, and enhancing compatibility between translation output and unseen melodies, into the design of machine translation models when translating lyrics?",
+            "reference_answer": "Songs Across Borders: Singable and Controllable Neural Lyric Translation"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

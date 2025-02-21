@@ -1,0 +1,25 @@
+{
+    "uuid": "d0157667-a921-5e91-8948-4e0f31b3010c",
+    "question": "Is there a paper that uses an app for a popular tabletop game to gather real transcripts of gameplay with concrete values for players' and monsters' health?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Is there a paper that uses an app for a popular tabletop game to gather real transcripts of gameplay with concrete values for players' and monsters' health?",
+            "reference_answer": "FIREBALL: A Dataset of Dungeons and Dragons Actual-Play with Structured Game State Information"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

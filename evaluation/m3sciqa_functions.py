@@ -5,7 +5,12 @@ from typing import Any, Dict, List, Tuple, Optional, Union
 from utils.functions.common_functions import call_llm, call_llm_with_message
 from utils.airqa_utils import get_relevant_papers_by_title
 
-def eval_m3sciqa(pred: Any, question: str, reference_answer: str, model: str = "gpt-4-0125-preview", temperature: float = 0.0, **kwargs) -> float:
+
+DEFAULT_M3SCIQA_LLM_MODEL = 'gpt-4-0125-preview'
+DEFAULT_M3SCIQA_TEMPERATURE = 0.1
+
+
+def eval_m3sciqa(pred: Any, question: str, reference_answer: str, model: str = DEFAULT_M3SCIQA_LLM_MODEL, temperature: float = DEFAULT_M3SCIQA_TEMPERATURE, **kwargs) -> float:
     """ Evaluate the predicted answer for the M3SciQA dataset.
     @args:
         pred_ans: str, predicted answer
@@ -45,4 +50,6 @@ def eval_m3sciqa(pred: Any, question: str, reference_answer: str, model: str = "
     response = call_llm(prompt, model=model, temperature=temperature)
     response = extract_response(response)
     response = json.loads(response)['selection']
-    return 1.0 if float(response) > 0.9 else 0.0
+    
+    # return 1.0 if float(response) > 0.9 else 0.0
+    return float(response)

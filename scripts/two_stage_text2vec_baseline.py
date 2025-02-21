@@ -10,18 +10,25 @@ from agents.prompts import convert_vectorstore_schema_to_prompt, formulate_input
 from utils.eval_utils import evaluate, print_result
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
-parser.add_argument('--vectorstore', type=str, default='ai_research', help='which vectorstore to use')
-parser.add_argument('--launch_method', type=str, default='standalone', choices=['standalone', 'docker'], help='launch method for vectorstore, chosen from ["docker", "standalone"]. Note that, for Windows OS, can only choose "docker".')
+parser.add_argument('--dataset', type=str, required=True, help='which dataset to use')
+parser.add_argument('--database', type=str, help='which database to use')
+parser.add_argument('--vectorstore', type=str, required=True, help='which vectorstore to use')
+parser.add_argument('--launch_method', type=str, default='standalone', choices=['standalone', 'docker'], help='launch method for vectorstore, chosen from ["docker", "standalone"].')
+parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='host + port for milvus started from docker')
+parser.add_argument('--vectorstore_path', type=str, help='Path to the vectorstore if launch_method is "standalone".')
+parser.add_argument('--database_path', type=str, help='Database path.')
 parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='test data file')
 parser.add_argument('--vs_format', type=str, choices=['detailed_json'], default='detailed_json', help='Vectorstore schema serialization format')
+parser.add_argument('--image_limit', type=int, default=10, help='Maximum number of images to be shown in the agents response')
 parser.add_argument('--agent_method', type=str, default='two_stage_text2vec', help='Agent method')
 parser.add_argument('--llm', type=str, default='gpt-4o-mini')
 parser.add_argument('--temperature', type=float, default=0.7)
 parser.add_argument('--top_p', type=float, default=0.95)
 parser.add_argument('--max_tokens', type=int, default=1500)
+parser.add_argument('--window_size', type=int, default=5, help='Window size for the agent to interact with the environment')
 parser.add_argument('--max_turn', type=int, default=2, help='Maximum turns for the agent to interact with the environment')
 parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
+parser.add_argument('--no_eval', action='store_true', help='Whether not to evaluate the results')
 args = parser.parse_args()
 
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -44,7 +51,7 @@ logger.setLevel(logging.INFO)
 
 
 llm = infer_model_class(args.llm)()
-env = ENVIRONMENTS['text2vec'](dataset=args.dataset, vectorstore=args.vectorstore, launch_method=args.launch_method)
+env = ENVIRONMENTS['text2vec'](dataset=args.dataset, vectorstore=args.vectorstore, launch_method=args.launch_method, vectorstore_path=args.vectorstore_path, docker_uri=args.docker_uri, database_path=args.database_path)
 agent: TwoStageText2VecRAGAgent = FRAMEWORKS['two_stage_text2vec'](llm, env, agent_method=args.agent_method)
 
 test_data = []
@@ -62,11 +69,14 @@ vectorstore_prompt = convert_vectorstore_schema_to_prompt(args.vectorstore, seri
 
 start_time = datetime.now()
 preds = []
-for data in test_data:
-    logger.info(f"Processing question: {data['uuid']}")
-    question, answer_format = formulate_input(args.dataset, data)
+for data_idx, data in enumerate(test_data):
+    logger.info(f"Processing question [{data_idx + 1}/{len(test_data)}]: {data['uuid']}")
     output_path = os.path.join(result_dir, f'{data["uuid"]}.jsonl')
-    result = agent.interact(question, vectorstore_prompt, answer_format, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path)
+    try:
+        result = agent.interact(args.dataset, data, vectorstore_prompt, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, image_limit=args.image_limit)
+    except Exception as e:
+        logger.error(f"[❌Error❌]: ({data['uuid']}) {str(e)}")
+        result = '[ERROR]: ' + str(e)
     preds.append({'uuid': data['uuid'], 'answer': result})
 logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 agent.close()
@@ -76,6 +86,8 @@ with open(output_path, 'w', encoding='utf-8') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")
-result = evaluate(preds, test_data, args.dataset, output_path=os.path.join(result_dir, 'evaluation.txt'))
-result_table = print_result(result)
-logger.info(f"Final evaluation result on {args.dataset}:\n{result_table}")
+
+if not args.no_eval:
+    result = evaluate(preds, test_data, args.dataset, output_path=os.path.join(result_dir, 'evaluation.txt'))
+    result_table = print_result(result)
+    logger.info(f"Final evaluation result on {args.dataset}:\n{result_table}")

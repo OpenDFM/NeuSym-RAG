@@ -1,0 +1,25 @@
+{
+    "uuid": "35b4110d-486c-562f-b488-c8a8b417ef82",
+    "question": "Which paper first apply mixture of experts idea to large language models for domain adaptation?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper first apply mixture of experts idea to large language models for domain adaptation?",
+            "reference_answer": "Mixture-of-Domain-Adapters: Decoupling and Injecting Domain Knowledge to Pre-trained Language Models' Memories"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

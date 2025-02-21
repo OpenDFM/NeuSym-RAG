@@ -240,7 +240,7 @@ Now, let's start!
     return _eval_with_llm(template, llm_model, temperature)
 
 
-def eval_paper_relevance_with_llm_and_reference_answer(pred: Any, question: str, reference_answer: Union[str, List[str]], llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, dataset_dir: Optional[str] = None, threshold: int = 90, topk: int = 1) -> float:
+def eval_paper_relevance_with_llm_and_reference_answer(pred: Any, question: str, reference_answer: Union[str, List[str]], llm_model: str = DEFAULT_LLM_MODEL, temperature: float = DEFAULT_TEMPERATURE, dataset_dir: Optional[str] = None, threshold: int = 95, topk: int = 1) -> float:
     """Evaluate the relevance of the predicted paper with the question and reference answer.
     @param:
         pred: The predicted paper title.
@@ -257,4 +257,4 @@ def eval_paper_relevance_with_llm_and_reference_answer(pred: Any, question: str,
     if (isinstance(reference_answer, str) and fuzz.ratio(metadata["title"].lower(), reference_answer.lower()) >= threshold) or \
         (isinstance(reference_answer, list) and any(fuzz.ratio(metadata["title"].lower(), ra.lower()) >= threshold for ra in reference_answer)):
         return 1.0
-    return check_paper_relevance_with_llm(metadata, question, llm_model, temperature)
+    return 0.0

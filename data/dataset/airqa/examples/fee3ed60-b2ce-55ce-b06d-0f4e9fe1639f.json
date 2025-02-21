@@ -1,0 +1,25 @@
+{
+    "uuid": "fee3ed60-b2ce-55ce-b06d-0f4e9fe1639f",
+    "question": "Is there a paper comparing knowledge distillation and human annotation in terms of cost efficiency?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Is there a paper comparing knowledge distillation and human annotation in terms of cost efficiency?",
+            "reference_answer": "Distill or Annotate? Cost-Efficient Fine-Tuning of Compact Models"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

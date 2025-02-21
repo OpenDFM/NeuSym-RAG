@@ -1,0 +1,34 @@
+{
+    "uuid": "bbe726ca-1f0d-564d-b553-7bc625404d15",
+    "question": "What is the original dataset size (including all data splits) for each shared dataset used in both the works ABEX and MinPrompt according to its original papers?",
+    "answer_format": "Your answer should be a Python dictionary with the keys being the names (case-sensitive) of the shared datasets and the integer values being the corresponding dataset sizes.",
+    "tags": [
+        "multiple",
+        "table",
+        "metadata",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "6a4c6d28-2741-5161-a9cc-10b102d18561",
+        "0b77c64c-6b36-5501-848f-79a062be2a45"
+    ],
+    "reference_pdf": [
+        "9e459dc8-5a22-5cdb-b653-0321b2cdf6fb",
+        "9ada7bff-c684-55ab-ae9b-04f836247ddc"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": {
+                "NewsQA": 119633,
+                "SQuAD": 107785
+            }
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

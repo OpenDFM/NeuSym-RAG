@@ -1,0 +1,25 @@
+{
+    "uuid": "8e1ebc95-7523-5a09-b95c-85748f5825ae",
+    "question": "Which paper is among the earliest to train on extensive collection of signing video and subtitle pairs available from online platforms?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper is among the earliest to train on extensive collection of signing video and subtitle pairs available from online platforms?",
+            "reference_answer": "Gloss-Free End-to-End Sign Language Translation"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

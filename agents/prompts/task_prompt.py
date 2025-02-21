@@ -1,16 +1,15 @@
 #coding=utf8
-from typing import Any, Dict, Tuple
+from typing import Any, List, Dict, Tuple, Optional
+import base64
+from utils.functions.image_functions import get_image_message
 
-def formulate_input(dataset: str, data: Dict[str, Any]) -> Tuple[str, str]:
-    if dataset == 'airqa':
-        question, answer_format = data['question'], data['answer_format']
-        pdf_id = data.get('anchor_pdf', 'pdf_id')
-        assert isinstance(pdf_id, list), f"Example {data['uuid']} pdf_id should be a list."
-        if len(pdf_id) == 1:
-            question += f" (for PDF with id {pdf_id[0]})"
-        elif len(pdf_id) > 1:
-            question += f" (for PDFs with id in [{', '.join(pdf_id)}])"
-    elif dataset == 'pdfvqa':
+def formulate_input(
+        dataset: str, 
+        data: Dict[str, Any],
+        use_reference_pdf: bool = True,
+        image_limit: int = 10
+) -> Tuple[str, str, str, Optional[Dict[str, Any]]]:
+    if dataset == 'pdfvqa':
         question, page = data['question'], data['page_number']
         pdf_id = data['pdf_id']
         question += f" (for page {page} in PDF with id {pdf_id})" if page is not None else f" (for PDF with id {pdf_id})"
@@ -45,5 +44,30 @@ def formulate_input(dataset: str, data: Dict[str, Any]) -> Tuple[str, str]:
         else:
             raise NotImplementedError(f"Question type {question_type} not supported.")
     else:
-        raise NotImplementedError(f"Dataset {dataset} not supported.")
+        question, answer_format, pdf_context, image_message = data['question'], data['answer_format'], "", None
+        anchor_pdf_id = data.get('anchor_pdf', 'pdf_id')
+        assert isinstance(anchor_pdf_id, list), f"Example {data['uuid']} anchor_pdf should be a list."
+        if len(anchor_pdf_id) == 1:
+            pdf_context += f"[Anchor PDF]: {anchor_pdf_id[0]}\n"
+        elif len(anchor_pdf_id) > 1:
+            pdf_context += f"[Anchor PDFs]: [{', '.join(anchor_pdf_id)}]\n"
+        
+        use_reference_pdf = use_reference_pdf if dataset != 'm3sciqa' else False
+        if use_reference_pdf and data.get('reference_pdf', '') :
+            reference_pdf_id = data.get('reference_pdf', '')
+            assert isinstance(reference_pdf_id, list), f"Example {data['uuid']} reference_pdf should be a list."
+            if len(reference_pdf_id) == 1:
+                pdf_context += f"[Reference PDF]: {reference_pdf_id[0]}\n"
+            elif len(reference_pdf_id) > 1:
+                pdf_context += f" [Reference PDFs]: [{', '.join(reference_pdf_id)}]\n"
+
+        image_limit = image_limit if dataset != 'spiqa' else 0
+        if image_limit > 0 and data.get('anchor_image', []):
+            template = "[Image]: Here are some images that you can use to answer the question:" if len(data['anchor_image']) > 1 else "[Image]: Here is one image you can use to answer the question:"
+            image_message = get_image_message(
+                template=template,
+                image_path=data['anchor_image'],
+                image_limit=image_limit
+            )
+        return question, answer_format, pdf_context, image_message
     return question, answer_format

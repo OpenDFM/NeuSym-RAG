@@ -1,0 +1,34 @@
+{
+    "uuid": "8323e9b0-52be-5d8e-8c68-3975a4e1ecfe",
+    "question": "What new efficient pre-training method was used in the pre-training process of the model used to compute embedding representations in the Document Similarity section of the anchor PDF?",
+    "answer_format": "Your answer should be a python strings concisely summarizing the method.",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "2c47dd59-12dc-5da3-ac15-4f046cf45d6c"
+    ],
+    "reference_pdf": [
+        "058b61e1-dbec-5ca7-9603-d53c1e14e733"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the model used to compute embedding representations in the Document Similarity section of the anchor PDF.",
+        "Locate the relevant paper about the model in the reference PDF.",
+        "Identify the pre-training method used in the pre-training process of the model, which is mentioned in the Approach section.",
+        "Summarize the new efficient method concisely."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "They explored training a system to solve the potentially easier proxy task of predicting only which text as a whole is paired with which image and not the exact words of that text.",
+            "question": "What new efficient pre-training method was used in the pre-training process of the model used to compute embedding representations in the Document Similarity section of the anchor PDF?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

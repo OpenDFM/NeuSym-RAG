@@ -55,23 +55,24 @@ class RetrieveFromDatabase(Action):
             max_tokens = format_kwargs["max_tokens"]
 
             # Token&row-based filtering
-            cumulative_tokens = 0
-            filtered_rows = []
-            truncation_reason=''
+            cumulative_tokens, truncation_reason, filtered_rows = 0, '', []
             llmencoder = tiktoken.get_encoding("cl100k_base")
             for index, row in result.iterrows():
-                row_text = "\n".join([f"{col}: {row[col]}" for col in row.index])
-                row_tokens = len(llmencoder.encode(row_text))
-                # Check if we exceeded either row or token limit
-                if len(filtered_rows) >= max_rows:
+                # check if we exceeded maximum rows
+                if index >= max_rows:
                     truncation_reason = f"based on max_rows ({max_rows})"
                     break
-                if cumulative_tokens + row_tokens > max_tokens:
+
+                row_text = "\n".join([f"{col}: {row[col]}" for col in row.index])
+                row_tokens = len(llmencoder.encode(row_text))
+
+                # check if we exceeded token limit
+                cumulative_tokens += row_tokens
+                if index != 0 and cumulative_tokens > max_tokens:
                     truncation_reason = f"based on max_tokens ({max_tokens})"
                     break
 
                 filtered_rows.append(row)
-                cumulative_tokens += row_tokens
 
             # Determine suffix based on truncation reason
             suffix = f'\n... # only display {len(filtered_rows)} rows in {output_format.upper()} format, more are truncated due to length constraint {truncation_reason}' if truncation_reason else f'\nIn total, {result.shape[0]} rows are displayed in {output_format.upper()} format.'
@@ -97,6 +98,10 @@ class RetrieveFromDatabase(Action):
             msg = output_formatter(self.sql, output_kwargs, forceTimeout=max_timeout)
         except FunctionTimedOut as e:
             msg = f"[TimeoutError]: The SQL execution is TIMEOUT given maximum {max_timeout} seconds."
+            env.close()
+            env.reset()
         except Exception as e:
             msg = f"[Error]: Runtime error during SQL execution and output formatting: {str(e)}"
+            env.close()
+            env.reset()
         return Observation(msg)

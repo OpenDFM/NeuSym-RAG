@@ -1,0 +1,42 @@
+{
+    "uuid": "eea13a76-cf7b-533c-beb5-9c1c49a7bc9d",
+    "question": "Across different corpuses analysed in the paper, which one has the best word order monotonicity? What's its key feature?",
+    "answer_format": "Your answer should be a single python list of two strings, the first string is the name of the corpus, the second string is about the key feature.",
+    "tags": [
+        "table",
+        "text",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the table about the different corpuses analysed on word order monotonicity.",
+        "Second, find the best corpus in this table.",
+        "Finally, find the key feature of this corpus."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "Chunk-wise",
+                    "lowercase": true
+                },
+                {
+                    "reference_answer":"With fluency and adequacy verified by professional interpreters, Chunk-wise is manually created following Chunk-Wise Monotonic Translation guideline. A key feature of chunk-wise is its monotonic alignment with the source, maintaining the entire source content, making it well-suited for the goals of SiMT." ,
+                    "question": "What's the key feature of chunk-wise?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false
+    },
+    "annotator": "human",
+    "anchor_pdf": ["0cf397b9-1a03-5731-ba41-e0bc48b06c98"],
+    "reference_pdf": []
+}

@@ -11,7 +11,7 @@
     "reasoning_steps": ["First, locate Section 2.5 Current Limitations",
                         "Second, get the limitation about autoregressive decoding and get the answer"],
     "evaluator": {
-        "eval_func": "eval_eval_reference_answer_with_llm",
+        "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
             "question":"What is the reason why Soft MoE cannot be applied to autoregressive models currently?",
             "reference_answer":"Soft MoE cannot be applied to autoregressive models because it needs to merge all input tokens together, which would break the causality requirement between past and future tokens that must be maintained during training in autoregressive models."

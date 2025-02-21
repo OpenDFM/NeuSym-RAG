@@ -1,0 +1,25 @@
+{
+    "uuid": "63dc113b-0220-5cb4-9bd3-17ba26c310b0",
+    "question": "Which paper introduce a DRO (distribution robust optimization) like training objective for doing adversarial training without constructing adversarial samples.",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper introduce a DRO (distribution robust optimization) like training objective for doing adversarial training without constructing adversarial samples.",
+            "reference_answer": "DSRM: Boost Textual Adversarial Training with Distribution Shift Risk Minimization"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

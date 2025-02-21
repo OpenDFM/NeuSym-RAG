@@ -1,0 +1,25 @@
+{
+    "uuid": "1a8c2b00-29f9-5a58-83ab-6dbf7061a039",
+    "question": "Which paper considers both weights and activations when pruning large language models?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper considers both weights and activations when pruning large language models?",
+            "reference_answer": "A SIMPLE AND EFFECTIVE PRUNING APPROACH FOR LARGE LANGUAGE MODELS"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

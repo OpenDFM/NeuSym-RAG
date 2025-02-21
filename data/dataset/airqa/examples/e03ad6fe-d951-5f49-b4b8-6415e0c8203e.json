@@ -1,0 +1,25 @@
+{
+    "uuid": "e03ad6fe-d951-5f49-b4b8-6415e0c8203e",
+    "question": "Which paper produces a dataset for text simplification in over 12 languages and evaluates both finetuning and in context learning approaches to text simplification in those languages?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper produces a dataset for text simplification in over 12 languages and evaluates both finetuning and in context learning approaches to text simplification in those languages?",
+            "reference_answer": "Revisiting non-English Text Simplification: A Unified Multilingual Benchmark"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

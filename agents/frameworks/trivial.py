@@ -1,9 +1,10 @@
 #coding=utf8
-import logging, re
-from typing import List, Union, Optional
+import logging, re, os, json
+from typing import List, Dict, Any, Union, Tuple, Optional
 from agents.envs import TrivialEnv
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
+from agents.prompts.task_prompt import formulate_input
 from agents.frameworks import AgentBase
 
 
@@ -14,34 +15,37 @@ class TrivialAgent(AgentBase):
     def __init__(self, model: LLMClient, env: TrivialEnv, agent_method: str = 'trivial', max_turn: int = 1) -> None:
         super(TrivialAgent, self).__init__(model, env, agent_method, max_turn)
 
+    def get_pdf_content(self, idx: str) -> str:
+        processed_data_dirname = os.path.join('data', 'dataset', self.env.dataset, 'processed_data')
+        for filename in os.listdir(processed_data_dirname):
+            if filename == f'{idx}.json':
+                with open(os.path.join(processed_data_dirname, filename), 'r', encoding='utf-8') as fin:
+                    processed_data = json.load(fin)
+                return re.sub(r'\n+', '\n', '\n'.join(toc['title'].strip() + '\n' + toc['text'].strip() for toc in processed_data['info_from_mineru']['TOC']))
+        return 'No context provided.'
 
     def interact(self,
-                 question: str,
-                 answer_format: str,
-                 pdf_id: Optional[Union[str, List[str]]] = None,
-                 page_number: Optional[Union[str, List[str]]] = None,
-                 max_length: int = 30,
+                 dataset: str,
+                 example: Dict[str, Any],
+                 max_length: int = 16,
                  model: str = 'gpt-4o-mini',
                  temperature: float = 0.7,
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
+                 image_limit: int = 10,
                  **kwargs
     ) -> str:
+        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, image_limit=image_limit)
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
         prev_cost = self.model.get_cost()
         self.env.reset()
 
+        pdf_id = example["anchor_pdf"] + example["reference_pdf"]
+        
         # 1. Retrieve the PDF content (hard coding)
         if pdf_id is not None and pdf_id != []:
-            if self.env.dataset == 'airqa':
-                observation = '\n'.join(f"PDF {idx}:\n{self.env.pdf_contents[idx]}" for idx in pdf_id if idx in self.env.pdf_contents)
-            else:
-                if page_number is not None and page_number != []:
-                    page_number_list = sorted(page_number) if isinstance(page_number, list) else [page_number]
-                else:
-                    page_number_list = sorted(self.env.pdf_contents[pdf_id].keys())
-                observation = '\n'.join(f"PDF {pdf_id} page {idx}:\n{self.env.pdf_contents[pdf_id][idx]}" for idx in page_number_list if idx in self.env.pdf_contents[pdf_id])
+            observation = '\n'.join(f"PDF {idx}:\n{self.get_pdf_content(idx)}" for idx in pdf_id)
         else:
             observation = 'No context provided.'
         logger.info('[Stage 1]: Retrieve context ...')
@@ -57,6 +61,8 @@ class TrivialAgent(AgentBase):
         ) # system prompt + task prompt + cot thought hints
         logger.info('[Stage 2]: Generate Answer ...')
         messages = [{'role': 'user', 'content': prompt}]
+        if image_message is not None:
+            messages.append(image_message)
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)

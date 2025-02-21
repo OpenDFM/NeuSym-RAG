@@ -1,0 +1,44 @@
+{
+    "uuid": "bdcc2f81-9b12-56e3-90cc-23e6513985d4",
+    "question": "In the paper \"Training Trajectories of Language Models Across Scales\" (anchor_pdf), figure 17 and 18 can be used to provide a supportive reasoning on the conclusion, what is it? And is it giving a similar conclusion as the paper \"Are Emergent Abilities of Large Language Models a Mirage?\" did?",
+    "answer_format": "Your answer should be a Python list of two elements, where the first element is the supportive reasoning on the conclusion provided in figure 17 and 18, and the second is a boolean value indicating whether it is giving a similar conclusion as the paper \"Are Emergent Abilities of Large Language Models a Mirage?\" did.",
+    "tags": [
+        "multiple",
+        "objective",
+        "text"
+    ],
+    "anchor_pdf": ["98bec33d-6e48-56b3-90ff-5b896cf01e24"],
+    "reference_pdf": ["c302a979-c9a6-509a-a555-5fc9e5bb7bf8"],
+    "conference": [],
+    "reasoning_steps": [
+        "In the anchor pdf, find the section that discusses the conclusion of the paper.",
+        "Identify the supportive reasoning on the conclusion provided in figure 17 and 18.",
+        "In the reference pdf, locate the section that discusses the conclusion of the paper.",
+        "Identify the supportive reasoning on the conclusion provided in figure 17 and 18.",
+        "Compare the supportive reasoning on the conclusion provided in figure 17 and 18 with the conclusion of the paper \"Are Emergent Abilities of Large Language Models a Mirage?\"."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_reference_answer_with_llm",
+                "eval_bool_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "question": "In the paper \"Training Trajectories of Language Models Across Scales\" (anchor_pdf), figure 17 and 18 can be used to provide a supportive reasoning on the conclusion, what is it? And is it giving a similar conclusion as the paper \"Are Emergent Abilities of Large Language Models a Mirage?\" did?",
+                    "reference_answer": "Models get its abilitities on different tasks in a relative smooth way, instead of a emerging way, yes."
+                },
+                {
+                    "gold": true
+                }
+            ]
+        }
+    },
+
+
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

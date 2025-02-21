@@ -266,8 +266,8 @@ def fuzzy_match_page(json_page_text: str, pdf_pages_text: List[str]) -> int:
 def get_page_width_and_height(pdf_path: str, page_number: int) -> Tuple[int, int]:
     doc = fitz.open(pdf_path)
     page = doc[page_number - 1]
-    width = page.rect.width
-    height = page.rect.height
+    width = page.mediabox.width
+    height = page.mediabox.height
     doc.close()
     return (width, height)
 
@@ -499,7 +499,8 @@ def classify_question_type(data: Dict[str, Any], dataset: str) -> str:
     elif dataset == 'tatdqa':
         return data['question_type']
     else:
-        raise NotImplementedError(f"Dataset {dataset} not supported for question type classification.")
+        return ','.join(sorted(data['tags']))
+        # raise NotImplementedError(f"Dataset {dataset} not supported for question type classification.")
 
 def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_file: str = None, random_seed: int = 2024):
     """ Sample the dataset for testing purposes.
@@ -508,7 +509,7 @@ def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_fil
         sample_size: int, the sample size for the dataset.
         output_file: str, the output file name for the sampling .jsonl file.
     """
-    dataset_path = os.path.join(DATASET_DIR, dataset, 'processed_data', 'test_data.jsonl')
+    dataset_path = os.path.join(DATASET_DIR, dataset, 'test_data.jsonl')
     with open(dataset_path, 'r', encoding='utf-8') as inf:
         data = [json.loads(line) for line in inf]
     typed_data = {}
@@ -532,7 +533,7 @@ def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_fil
         logger.info(f'Sample {typed_sample_size[tp]} test data for type {tp}.')
 
     sample_size = len(sampled_data)
-    output_path = os.path.join(DATASET_DIR, dataset, 'processed_data', output_file) if output_file is not None else dataset_path.replace('test_data.jsonl', f'test_data_sample_{sample_size}.jsonl')
+    output_path = os.path.join(DATASET_DIR, dataset, output_file) if output_file is not None else dataset_path.replace('test_data.jsonl', f'test_data_sample_{sample_size}.jsonl')
     with open(output_path, 'w', encoding='utf-8') as of:
         for d in sampled_data:
             of.write(json.dumps(d, ensure_ascii=False) + '\n')
@@ -540,13 +541,32 @@ def sampling_dataset(dataset: str = 'pdfvqa', sample_size: int = 300, output_fil
     return sampled_data
 
 
+def split_dataset(dataset: str = 'airqa', split_size: int = 12, test_data: str = 'test_data.jsonl'):
+    dataset_path = os.path.join(DATASET_DIR, dataset, test_data)
+    with open(dataset_path, 'r', encoding='utf-8') as inf:
+        data = [json.loads(line) for line in inf if line.strip()]
+    chunk_size = len(data) // split_size
+    base_filename = test_data.split('.')[0]
+    for i in range(split_size):
+        start = i * chunk_size
+        end = (i + 1) * chunk_size if i < split_size - 1 else len(data)
+        output_path = os.path.join(DATASET_DIR, dataset, f'{base_filename}_split_{i}.jsonl')
+        with open(output_path, 'w', encoding='utf-8') as of:
+            for d in data[start:end]:
+               of.write(json.dumps(d, ensure_ascii=False) + '\n')
+        logger.info(f"Split {i}: {min(len(data), end) - start} test data saved to {output_path} for dataset {dataset}.")
+    return
+
+
 if __name__ == '__main__':
 
     import argparse
     parser = argparse.ArgumentParser(description='Dataset relevant utilities.')
     parser.add_argument('--dataset', type=str, required=True, help='Dataset name.')
-    parser.add_argument('--function', type=str, default='preprocess', choices=['preprocess', 'sampling'], help='Function name.')
+    parser.add_argument('--function', type=str, default='preprocess', choices=['preprocess', 'sampling', 'split'], help='Function name.')
     parser.add_argument('--sample_size', type=int, default=300, help='Sample size for the dataset.')
+    parser.add_argument('--split_size', type=int, default=12, help='Number of splits for the dataset.')
+    parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='Test data file name for splitting.')
     parser.add_argument('--output_file', type=str, help='Output file name of the sampling .jsonl file.')
     parser.add_argument('--random_seed', type=int, default=2024, help='Random seed for sampling.')
     args = parser.parse_args()
@@ -558,10 +578,13 @@ if __name__ == '__main__':
             'airqa': process_airqa
         },
         'sampling': sampling_dataset,
+        'split': split_dataset
     }
     if args.function == 'preprocess':
         FUNCTIONS[args.function][args.dataset]()
     elif args.function == 'sampling':
         FUNCTIONS[args.function](args.dataset, sample_size=args.sample_size, output_file=args.output_file, random_seed=args.random_seed)
+    elif args.function == 'split':
+        FUNCTIONS[args.function](args.dataset, split_size=args.split_size, test_data=args.test_data)
     else:
         raise ValueError(f"Function {args.function} not supported for dataset {args.dataset}.")

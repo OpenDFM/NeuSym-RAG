@@ -10,8 +10,11 @@ from agents.prompts import convert_database_schema_to_prompt, formulate_input
 from utils.eval_utils import evaluate, print_result
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', type=str, default='airqa', help='which dataset to use')
-parser.add_argument('--database', type=str, default='ai_research', help='which database to use')
+parser.add_argument('--dataset', type=str, required=True, help='which dataset to use')
+parser.add_argument('--database', type=str, required=True, help='which database to use')
+parser.add_argument('--database_path', type=str, help='Database path.')
+parser.add_argument('--vectorstore', type=str, help='which vectorstore to use')
+parser.add_argument('--vectorstore_path', type=str, help='Path to the vectorstore.')
 parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='test data file')
 parser.add_argument('--db_format', type=str, choices=['create_sql', 'detailed_json'], default='create_sql', help='Database schema serialization format')
 parser.add_argument('--action_format', type=str, default='markdown', choices=['markdown', 'json', 'xml', 'yaml'], help='Action format for the environment')
@@ -23,7 +26,9 @@ parser.add_argument('--top_p', type=float, default=0.95)
 parser.add_argument('--max_tokens', type=int, default=1500)
 parser.add_argument('--max_turn', type=int, default=20, help='Maximum turns for the agent to interact with the environment')
 parser.add_argument('--window_size', type=int, default=20, help='History window size preserved in the prompt when calling LLMs')
+parser.add_argument('--image_limit', type=int, default=10, help='Maximum number of images to be shown in the agents response')
 parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
+parser.add_argument('--no_eval', action='store_true', help='Whether not to evaluate the results')
 args = parser.parse_args()
 
 start_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -46,7 +51,7 @@ logger.setLevel(logging.INFO)
 
 
 llm = infer_model_class(args.llm)()
-env = ENVIRONMENTS['text2sql'](action_format=args.action_format, dataset=args.dataset, database=args.database)
+env = ENVIRONMENTS['text2sql'](action_format=args.action_format, dataset=args.dataset, database=args.database, database_path=args.database_path)
 agent = FRAMEWORKS['text2sql'](llm, env, agent_method=args.agent_method, max_turn=args.max_turn)
 
 test_data = []
@@ -64,11 +69,14 @@ database_prompt = convert_database_schema_to_prompt(args.database, serialize_met
 
 start_time = datetime.now()
 preds = []
-for data in test_data:
-    logger.info(f"Processing question: {data['uuid']}")
-    question, answer_format = formulate_input(args.dataset, data)
+for data_idx, data in enumerate(test_data):
+    logger.info(f"Processing question [{data_idx + 1}/{len(test_data)}]: {data['uuid']}")
     output_path = os.path.join(result_dir, f"{data['uuid']}.jsonl")
-    result = agent.interact(question, database_prompt, answer_format, window_size=args.window_size, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, output_kwargs={'output_format': args.output_format})
+    try:
+        result = agent.interact(args.dataset, data, database_prompt, window_size=args.window_size, model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, output_path=output_path, output_kwargs={'output_format': args.output_format}, image_limit=args.image_limit)
+    except Exception as e:
+        logger.error(f"[❌Error❌]: ({data['uuid']}) {str(e)}")
+        result = '[ERROR]: ' + str(e)
     preds.append({'uuid': data['uuid'], 'answer': result})
 logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 agent.close()
@@ -78,6 +86,8 @@ with open(output_path, 'w', encoding='utf-8') as ouf:
     for pred in preds:
         ouf.write(json.dumps(pred) + '\n')
     logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")
-result = evaluate(preds, test_data, args.dataset, output_path=os.path.join(result_dir, 'evaluation.txt'))
-result_table = print_result(result)
-logger.info(f"Final evaluation result on {args.dataset}:\n{result_table}")
+
+if not args.no_eval:
+    result = evaluate(preds, test_data, args.dataset, output_path=os.path.join(result_dir, 'evaluation.txt'))
+    result_table = print_result(result)
+    logger.info(f"Final evaluation result on {args.dataset}:\n{result_table}")

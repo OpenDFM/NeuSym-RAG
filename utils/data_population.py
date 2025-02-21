@@ -31,9 +31,12 @@ class DataPopulation():
     def __init__(self,
                  database: Optional[str] = None,
                  vectorstore: Optional[str] = None,
+                 database_path: Optional[str] = None,
                  launch_method: str = 'standalone',
                  docker_uri: str = 'http://127.0.0.1:19530',
-                 encoding: bool = True,
+                 vectorstore_path: Optional[str] = None,
+                 connect_to_db: bool = True,
+                 connect_to_vs: bool = True,
                  from_scratch: bool = False
         ) -> None:
         """ Initialize the database/vectorstore population object.
@@ -42,23 +45,25 @@ class DataPopulation():
         assert database is not None or vectorstore is not None, "Database or vectorstore must be provided."
         self.database = database if database is not None else vectorstore
         self.vectorstore = vectorstore if vectorstore is not None else database
-        assert self.database == self.vectorstore, f"Database and vectorstore must be the same, but got {self.database} and {self.vectorstore}."
-        self.database_schema: DatabaseSchema = DatabaseSchema(self.database)
-        self.database_conn: duckdb.DuckDBPyConnection = get_database_connection(self.database, from_scratch=from_scratch)
-        self.vectorstore_schema: Optional[VectorstoreSchema] = VectorstoreSchema() if encoding else None # shared schema for all vectorstores
-        self.vectorstore_conn: Optional[MilvusClient] = get_vectorstore_connection(self.vectorstore, launch_method=launch_method, docker_uri=docker_uri, from_scratch=from_scratch) if encoding else None
+        if connect_to_db and connect_to_vs:
+            assert self.database == self.vectorstore, f"Database and vectorstore must be the same, but got {self.database} and {self.vectorstore}."
+        self.database_schema: DatabaseSchema = DatabaseSchema(self.database) if connect_to_db else None
+        self.database_conn: Optional[duckdb.DuckDBPyConnection] = get_database_connection(self.database, database_path=database_path,from_scratch=from_scratch) if connect_to_db else None
+        self.vectorstore_schema: Optional[VectorstoreSchema] = VectorstoreSchema() if connect_to_vs else None # shared VS schema
+        self.vectorstore_conn: Optional[MilvusClient] = get_vectorstore_connection(self.vectorstore, launch_method=launch_method, docker_uri=docker_uri, vectorstore_path=vectorstore_path, from_scratch=from_scratch) if connect_to_vs else None
         if from_scratch:
-            initialize_database(self.database_conn, self.database_schema)
-            if encoding:
+            if connect_to_db:
+                initialize_database(self.database_conn, self.database_schema)
+            if connect_to_vs:
                 initialize_vectorstore(self.vectorstore_conn, self.vectorstore_schema)
 
 
     def close(self):
         """ Close the opened DB connnection for safety.
         """
-        if self.database_conn is not None and isinstance(self.database_conn, duckdb.DuckDBPyConnection):
+        if self.database_conn is not None and hasattr(self.database_conn, 'close'):
             self.database_conn.close()
-        if self.vectorstore_conn is not None and isinstance(self.vectorstore_conn, MilvusClient):
+        if self.vectorstore_conn is not None and hasattr(self.vectorstore_conn, 'close'):
             self.vectorstore_conn.close()
 
 
@@ -177,7 +182,7 @@ class DataPopulation():
             insert_sql = self.get_insert_sql(values, table_name, columns, on_conflict=on_conflict)
 
             # 3. insert cell values into the database
-            if write_to_db:
+            if write_to_db and self.database_conn is not None:
                 self.insert_values_to_database(insert_sql, values, verbose=verbose)
 
         if not write_to_vs or self.vectorstore_conn is None: return
@@ -189,7 +194,7 @@ class DataPopulation():
         pdf_uuid_field = config['uuid'].get('field', None)
         assert pdf_uuid_field is not None, f"UUID field not found in the config JSON."
         pdf_id = outputs[func_name_dict[pdf_uuid_function]][pdf_uuid_field]
-        encode_database_content(self.vectorstore_conn, self.database_conn, self.vectorstore_schema, self.database_schema, pdf_id=pdf_id, on_conflict=on_conflict, verbose=verbose)
+        encode_database_content(self.vectorstore_conn, self.database_conn, self.vectorstore_schema, self.database_schema, pdf_ids=[pdf_id], on_conflict=on_conflict, verbose=verbose)
         return
 
 
@@ -242,11 +247,27 @@ class DataPopulation():
         return insert_sql
 
 
+    def truncate_extremely_long_text_values(self, values: List[List[Any]], max_length: int = 16000) -> List[List[Any]]:
+        """ Truncate the extremely long text values in the database.
+        @args:
+            values: List[List[Any]], the values to truncate
+            max_length: int, the maximum char length of the text value, default to 16k
+        @return:
+            List[List[Any]], the truncated values
+        """
+        for row in values:
+            for i, val in enumerate(row):
+                if isinstance(val, str) and len(val) > max_length:
+                    row[i] = val[:max_length] + ' ...'
+        return values
+
+
     def insert_values_to_database(self, insert_sql: str, values: List[List[Any]], verbose: bool = False) -> None:
         """ Insert parsed cell values into the database.
         """
         try:
             # see https://duckdb.org/docs/api/python/conversion for type conversion
+            values = self.truncate_extremely_long_text_values(values)
             self.database_conn.executemany(insert_sql, values)
             if verbose: logger.info(f"Successfully executed SQL statement and insert {len(values)} rows: {insert_sql}")
         except Exception as e:
@@ -261,8 +282,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Data population script.')
     parser.add_argument('--database', type=str, help='Database name.')
     parser.add_argument('--vectorstore', type=str, help='Vectorstore name.')
+    parser.add_argument('--database_path', type=str, help='Database path.')
     parser.add_argument('--launch_method', type=str, default='standalone', help='launch method for vectorstore, chosen from ["docker", "standalone"].')
     parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='host + port for milvus started from docker')
+    parser.add_argument('--vectorstore_path', type=str, help='Path to the vectorstore.')
     parser.add_argument('--pdf_path', type=str, required=True, help='Path to the PDF file or JSON line file.')
     parser.add_argument('--config_path', type=str, help='Path to the config file.')
     parser.add_argument('--on_conflict', type=str, default='ignore', choices=['replace', 'ignore', 'raise'], help='How to handle the database content insertion conflict.')
@@ -273,8 +296,10 @@ if __name__ == '__main__':
     populator = DataPopulation(
         database=args.database,
         vectorstore=args.vectorstore,
+        database_path=args.database_path,
         launch_method=args.launch_method,
         docker_uri=args.docker_uri,
+        vectorstore_path=args.vectorstore_path,
         from_scratch=args.from_scratch
     )
 
@@ -285,7 +310,7 @@ if __name__ == '__main__':
         config = json.load(inf)
 
     count: int = 0
-    for input_pdf in tqdm.tqdm(pdf_ids):
+    for input_pdf in tqdm.tqdm(pdf_ids, disable=not sys.stdout.isatty()):
         start_time = datetime.now()
         try:
             populator.populate(

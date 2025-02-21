@@ -1,0 +1,25 @@
+{
+    "uuid": "99965706-7450-5c82-9db7-a9f9605c5fc6",
+    "question": "Which research paper leverages event structure information from Abstract Meaning Representation (AMR) graphs to aid in recognizing causal relations between events?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which research paper leverages event structure information from Abstract Meaning Representation (AMR) graphs to aid in recognizing causal relations between events?",
+            "reference_answer": "Semantic Structure Enhanced Event Causality Identification"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

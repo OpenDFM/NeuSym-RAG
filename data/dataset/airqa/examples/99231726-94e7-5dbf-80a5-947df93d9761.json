@@ -1,0 +1,33 @@
+{
+    "uuid": "99231726-94e7-5dbf-80a5-947df93d9761",
+    "question": "Several information extraction and natural language processing tools were used in the anchor paper. What is the major limitation of prior works that the entity and relationship extractor used in the anchor paper was designed to solve?",
+    "answer_format": "Your answer should be brief text explaining the limitation solved by the extractor's design.",
+    "tags": [
+        "multiple",
+        "subjective",
+        "text"
+    ],
+    "anchor_pdf": [
+        "4b1a5787-4c18-51d8-bd3e-8a036f750938"
+    ],
+    "reference_pdf": [
+        "0201fdd7-83db-53a2-b6a1-dc06e2b19cb6"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the section discussing information extraction and natural language processing tools in the anchor paper.",
+        "Locate the paper which proposed the entity and relationship extractor.",
+        "Identify the major limitation of prior works that the extractor was designed to solve."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The major limitation of prior works is that they ignore the interrelation between spans (pairs).",
+            "question": "Several information extraction and natural language processing tools were used in the anchor paper. What is the major limitation of prior works that the entity and relationship extractor used in the anchor paper was designed to solve?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

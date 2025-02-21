@@ -1,0 +1,27 @@
+{
+    "uuid": "1b94e7ef-ccfd-5ba0-a268-d053dbc1bd34",
+    "question": "Is there any oral work that is related to apply LORA to long context fine-tuning?",
+    "answer_format": "Your answer should be a text string representing the title of the work.",
+    "tags": [
+        "retrieval",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Is there any oral work that is related to apply LORA to long context fine-tuning?",
+            "reference_answer": "LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "c7fd4be1-7261-5b8c-bdb8-0da621536182",
+    "question": "Can we learn to represent an image with arbitary numbers of tokens?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Can we learn to represent an image with arbitary numbers of tokens?",
+            "reference_answer": "SparseFormer: Sparse Visual Recognition via Limited Latent Tokens"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

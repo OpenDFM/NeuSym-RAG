@@ -5,6 +5,7 @@ from agents.envs import AgentEnv
 from agents.envs.actions import RetrieveFromVectorstore, Action, Observation
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
+from agents.prompts.task_prompt import formulate_input
 from agents.frameworks.agent_base import AgentBase
 
 
@@ -17,15 +18,17 @@ class TwoStageText2VecRAGAgent(AgentBase):
 
 
     def interact(self,
-                 question: str,
+                 dataset: str,
+                 example: Dict[str, Any],
                  vectorstore_prompt: str,
-                 answer_format: str,
                  model: str = 'gpt-4o-mini',
                  temperature: float = 0.7,
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
+                 image_limit: int = 10,
                  **kwargs
     ) -> str:
+        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, image_limit=image_limit)
         logger.info(f'[Question]: {question}')
         logger.info(f'[Answer Format]: {answer_format}')
         prev_cost = self.model.get_cost()
@@ -37,10 +40,13 @@ class TwoStageText2VecRAGAgent(AgentBase):
             system_prompt = SYSTEM_PROMPTS[self.agent_method][0],
             action_prompt = action_prompt,
             question = question,
+            pdf_context = pdf_context,
             vectorstore_schema = vectorstore_prompt
         ) # system prompt + action_prompt + task prompt + cot thought hints
         logger.info('[Stage 1]: Generate RetriveFromVectorstore action ...')
         messages = [{'role': 'user', 'content': prompt}]
+        if image_message is not None:
+            messages.append(image_message)
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         _, action = Action.parse_action(response, action_types=[RetrieveFromVectorstore], action_format='json', agent_method='code_block')
@@ -51,11 +57,14 @@ class TwoStageText2VecRAGAgent(AgentBase):
         prompt = AGENT_PROMPTS[self.agent_method][1].format(
             system_prompt = SYSTEM_PROMPTS[self.agent_method][1],
             question = question,
+            pdf_context = pdf_context,
             context = observation.obs_content,
             answer_format = answer_format
         ) # system prompt + task prompt (insert retrived observation) + cot thought hints
         logger.info(f'[Stage 2]: Generate Answer ...')
         messages = [{'role': 'user', 'content': prompt}]
+        if image_message is not None:
+            messages.append(image_message)
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         logger.info(f'[Response]: {response}')
         matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)

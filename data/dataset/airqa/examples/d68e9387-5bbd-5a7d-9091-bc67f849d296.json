@@ -1,0 +1,25 @@
+{
+    "uuid": "d68e9387-5bbd-5a7d-9091-bc67f849d296",
+    "question": "Which paper first constructed a structured knowledge base to interconnect different human social roles and attributes?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper first constructed a structured knowledge base to interconnect different human social roles and attributes?",
+            "reference_answer": "PEACOK: Persona Commonsense Knowledge for Consistent and Engaging Narratives"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

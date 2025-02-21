@@ -81,11 +81,6 @@
                 "description": "True if a is greater than or equal to b."
             },
             {
-                "symbol": "like",
-                "example": "a like b",
-                "description": "True if a matches the pattern specified by b."
-            },
-            {
                 "symbol": "in",
                 "example": "a in [b, c, ...]",
                 "description": "True if a is equal to any of the values in the list."
@@ -103,16 +98,6 @@
                 "description": "This expression evaluates to true if array bbox contains element 100."
             },
             {
-                "symbol": "array_contains_all",
-                "example": "array_contains_all(int_array, [1, 2, 3])",
-                "description": "This expression evaluates to true if int_array contains all elements 1, 2, and 3."
-            },
-            {
-                "symbol": "array_contains_any",
-                "example": "array_contains_any(var_array, [\"a\", \"b\", \"c\"])",
-                "description": "This expression evaluates to true if var_array contains any element of 'a', 'b', and 'c'."
-            },
-            {
                 "symbol": "array_length",
                 "example": "array_length(int_array) == 4",
                 "description": "This expression evaluates to true if int_array contains exactly 4 elements."
@@ -127,10 +112,6 @@
         {
             "example": "table_name == 'chunks' and primary_key in ['123', '456', '789']",
             "description": "Filter the results with table_name equal to 'chunks' and primary_key equal to any of the values in the list ['123', '456', '789']."
-        },
-        {
-            "example": "(text like 'RAG%' or text like '%RAG') and text not like '%rag%'",
-            "description": "For text modality, filter results with text content containing 'RAG' but not containing 'rag' in the middle. Note that, the filter condition for string value is case-sensitive."
         },
         {
             "example": "bbox[0] + bbox[2] <= 100 and bbox[1] + bbox[3] <= 300 and pdf_id == '123456' and page_number == 1",

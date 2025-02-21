@@ -1,0 +1,25 @@
+{
+    "uuid": "7dee922c-95de-5d8e-8f03-4c27b84c7919",
+    "question": "Which paper formally defines the problem of model selection in llm agent for multi-modal reasoning?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper formally defines the problem of model selection in llm agent for multi-modal reasoning?",
+            "reference_answer": "TOWARDS ROBUST MULTI-MODAL REASONING VIA MODEL SELECTION"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}

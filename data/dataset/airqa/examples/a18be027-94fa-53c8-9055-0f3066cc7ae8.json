@@ -1,0 +1,31 @@
+{
+    "uuid": "a18be027-94fa-53c8-9055-0f3066cc7ae8",
+    "question": "In the paper \"Distributional Scaling Laws for Emergent Capabilities\", what empirical evidence supports the RASP-Generalization Conjecture in the context of transformers' length generalization?",
+    "answer_format": "Your answer should be a string",
+    "tags": [
+        "multiple",
+        "objective",
+        "text"
+    ],
+    "anchor_pdf": ["0e2b3701-18a7-55f9-9d0c-973133e59a85", "a75bc472-a98f-567f-af29-5df27fdff64b"],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "In the anchor pdf, find the section that discusses the RASP-Generalization Conjecture.",
+        "Identify the empirical evidence that supports the RASP-Generalization Conjecture.",
+        "In the reference pdf, locate the section that discusses the RASP-Generalization Conjecture.",
+        "Identify the empirical evidence that supports the RASP-Generalization Conjecture."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "question": "In the paper \"Distributional Scaling Laws for Emergent Capabilities\", what empirical evidence supports the RASP-Generalization Conjecture in the context of transformers' length generalization?",
+            "reference_answer": "The authors of \"What Algorithms can Transformers Learn? A Study in Length Generalization\" provide empirical evidence by demonstrating that transformers exhibit strong length generalization on tasks such as parity and addition when these tasks can be represented by short RASP programs. They show that by leveraging the RASP framework, transformers can generalize to sequences longer than those seen during training, supporting the conjecture that the simplicity of the RASP representation correlates with successful length generalization."
+        }
+    },
+
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

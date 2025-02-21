@@ -1,0 +1,25 @@
+{
+    "uuid": "247b6978-be01-50c8-92fb-e27122c244f0",
+    "question": "Is there any paper that explores using only an encoder-only masked language model for open-ended long text generation (such as story generation)?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_kwargs": {
+            "question": "Is there any paper that explores using only an encoder-only masked language model for open-ended long text generation (such as story generation)?",
+            "reference_answer": "Open-ended Long Text Generation via Masked Language Modeling"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}
