@@ -1,0 +1,26 @@
+{
+    "uuid": "ecea33d3-1013-5514-bfd6-a1c34401a85f",
+    "question": "How many papers are published as an oral in ICLR 2024 Workshop on Large Language Model (LLM) Agents?",
+    "answer_format": "Your answer should be a single Python integer.",
+    "tags": [
+        "comprehensive",
+        "metadata",
+        "objective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_int_exact_match",
+        "eval_kwargs": {
+            "gold": 6
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

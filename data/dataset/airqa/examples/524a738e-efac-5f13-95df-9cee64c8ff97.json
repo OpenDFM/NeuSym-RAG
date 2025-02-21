@@ -1,0 +1,47 @@
+{
+    "uuid": "524a738e-efac-5f13-95df-9cee64c8ff97",
+    "question": "I wonder if there are any datasets and benchmarks that are published as orals in ICLR 2024? Also tell me their respective dataset size (including all data splits).",
+    "answer_format": "Your answer should be a Python list of tuples (List[Tuple[str, int]]). For each tuple in the list, the first element is the paper title string and the second element is an integer representing the dataset size.",
+    "tags": [
+        "comprehensive",
+        "table",
+        "metadata",
+        "objective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                [
+                    "BooookScore: A systematic exploration of book-length summarization in the era of LLMs",
+                    100
+                ],
+                [
+                    "MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts",
+                    6141
+                ],
+                [
+                    "SWE-bench: Can Language Models Resolve Real-world Github Issues?",
+                    2294
+                ],
+                [
+                    "How Well Do Supervised 3D Models Transfer to Medical Imaging Tasks?",
+                    9262
+                ]
+            ],
+            "ignore_order": true,
+            "threshold": 95,
+            "fuzz_method": "ratio"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
