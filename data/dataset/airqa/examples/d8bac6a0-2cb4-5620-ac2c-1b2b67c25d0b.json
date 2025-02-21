@@ -1,0 +1,34 @@
+{
+    "uuid": "d8bac6a0-2cb4-5620-ac2c-1b2b67c25d0b",
+    "question": "Which two prompting methods in the two anchor_pdfs have similar principles?",
+    "answer_format": "Your answer should be a python list of two prompting method. You must use short name.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "eafdcc26-c44d-58fe-9b56-9870fd83c099",
+        "c753b4fe-fcc4-525c-9d1e-6a262354d28c"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Read the anchor_pdf and find the prompting methods.",
+        "Identify the prompting methods that have similar principles."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "ReAct",
+                "IMR-TIP"
+            ],
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

@@ -1,0 +1,36 @@
+{
+    "uuid": "08f5327e-584e-5c34-a092-a5dec11041dc",
+    "question": "What do γt and σ mean in the formula(2) in anchor_pdf?",
+    "answer_format": "Your answer should be ",
+    "tags": [
+        "multiple",
+        "text",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "e7497bf0-4e3d-5099-b9cc-9a61be4bd30f"
+    ],
+    "reference_pdf": [
+        "9bed7533-e4f6-580b-9e8d-7c996dbbc493"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Read the anchor_pdf and find the formula(2).",
+        "Find the source paper of the formula(2).",
+        "Find the definitions of γt and σ in the source paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "γt is a fixed triplet margin.",
+                "σ is the sigmoid function."
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

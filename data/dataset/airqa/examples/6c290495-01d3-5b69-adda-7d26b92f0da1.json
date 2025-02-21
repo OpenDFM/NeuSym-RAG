@@ -1,0 +1,34 @@
+{
+    "uuid": "6c290495-01d3-5b69-adda-7d26b92f0da1",
+    "question": "Which institution funded the model with worse debiasing ability in Post-hoc in anchor_pdf in anchor_pdf?",
+    "answer_format": "Your answer should be a python string of the institution name. You should use full name.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "c5ad3efd-da37-56a6-87b5-a066c4e0a74b"
+    ],
+    "reference_pdf": [
+        "50883e71-9f08-5539-b5f4-0acf05e9b597",
+        "dae50238-e4d1-5864-8b70-8666dc3b606d"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Read the anchor_pdf to find the model with worse debiasing ability in Post-hoc.",
+        "Locate the pdf about the model in the reference_pdf.",
+        "Retrieve the context for the model in the pdf to find the sponsor."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "Europoean Research Council",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
