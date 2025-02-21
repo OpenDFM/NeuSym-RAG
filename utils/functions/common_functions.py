@@ -6,7 +6,7 @@ from agents.models import get_llm_single_instance
 
 def call_llm_with_message(
         messages: List[Dict[str, Any]], 
-        model: str = 'gpt-4o', 
+        model: str = 'gpt-4o-mini', 
         top_p: float = 0.95, 
         temperature: float = 0.7
     ) -> str:
@@ -61,7 +61,7 @@ def convert_to_message(
 
 def call_llm(
         template: str, 
-        model: str = 'gpt-4o', 
+        model: str = 'gpt-4o-mini', 
         top_p: float = 0.95, 
         temperature: float = 0.7,
         **kwargs
@@ -75,7 +75,7 @@ def call_llm(
 def call_llm_with_pattern(
         template: str,
         pattern: str, 
-        model: str = 'gpt-4o', 
+        model: str = 'gpt-4o-mini',
         top_p: float = 0.95, 
         temperature: float = 0.7,
         **kwargs

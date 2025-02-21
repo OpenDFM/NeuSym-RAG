@@ -5,7 +5,7 @@ from agents.envs import TrivialEnv
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
 from agents.prompts.task_prompt import formulate_input
-from agents.frameworks import AgentBase
+from agents.frameworks import AgentBase, truncate_tokens
 from utils.functions.ai_research_metadata import get_airqa_paper_metadata
 
 
@@ -44,7 +44,7 @@ class TitleAbstractAgent(AgentBase):
             context += CONTEXT_PROMPT.format(index=f"Anchor PDF {idx}", title=get_airqa_paper_metadata(uuid, dataset_dir)['title'], abstract=get_airqa_paper_metadata(uuid, dataset_dir)['abstract']) + "\n"
         for idx, uuid in enumerate(reference_pdf, start=1):
             context += CONTEXT_PROMPT.format(index=f"Reference PDF {idx}", title=get_airqa_paper_metadata(uuid, dataset_dir)['title'], abstract=get_airqa_paper_metadata(uuid, dataset_dir)['abstract']) + "\n"
-        context = self.truncate_tokens(context, max_tokens=max_length)
+        context = truncate_tokens(context, max_tokens=max_length)
         
         # Answer the question
         prompt = AGENT_PROMPTS[self.agent_method].format(

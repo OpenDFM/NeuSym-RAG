@@ -1,5 +1,5 @@
 #coding=utf8
-from agents.frameworks.agent_base import AgentBase
+from agents.frameworks.agent_base import AgentBase, truncate_tokens
 from agents.frameworks.text2sql_rag import Text2SQLRAGAgent
 from agents.frameworks.text2vec_rag import Text2VecRAGAgent
 from agents.frameworks.two_stage_text2sql_rag import TwoStageText2SQLRAGAgent

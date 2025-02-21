@@ -4,21 +4,14 @@ from tqdm import tqdm
 from typing import List, Dict, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from utils.functions.common_functions import convert_to_message, call_llm_with_message
+from agents.frameworks import truncate_tokens
+
 
 def hashed(stringified_message: str) -> str:
     return hashlib.md5(stringified_message.encode("utf-8")).hexdigest()
 
 PARALLEL_DICT = {}
 
-def truncate_tokens(text: str, max_tokens: int = 28, encoding_model: str = 'cl100k_base') -> str:
-    """ Given a text string, truncate it to max_tokens using encoding_model tokenizer
-    """
-    encoding = tiktoken.get_encoding(encoding_model)
-    tokens = encoding.encode(text, disallowed_special=())
-    if len(tokens) > max_tokens * 1000:
-        tokens = tokens[:max_tokens * 1000]
-        text = encoding.decode(tokens)
-    return text
 
 def parallel_write_or_read(
         template: str,

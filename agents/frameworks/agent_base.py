@@ -8,7 +8,23 @@ from agents.models import LLMClient
 from typing import List, Dict, Any, Union, Tuple, Optional
 
 
-logger = logging.getLogger()
+logger = logging.getLogger(__name__)
+
+ENCODING_MODELS = dict()
+
+def truncate_tokens(text: str, max_tokens: int = 30, encoding_model: str = 'cl100k_base') -> str:
+    """ Given a text string, truncate it to max_tokens * 1000 using encoding_model tokenizer
+    """
+    if encoding_model not in ENCODING_MODELS:
+        encoding: Encoding = tiktoken.get_encoding(encoding_model)
+        ENCODING_MODELS[encoding_model] = encoding
+    encoding: Encoding = ENCODING_MODELS[encoding_model]
+    tokens = encoding.encode(text)
+    if len(tokens) > max_tokens * 1000:
+        tokens = tokens[:max_tokens * 1000]
+        text = encoding.decode(tokens)
+    return text
+
 
 class AgentBase(ABC):
 
@@ -16,7 +32,6 @@ class AgentBase(ABC):
         self.model, self.env = model, env
         self.agent_method, self.max_turn = agent_method, max_turn
         self.agent_prompt = ''
-        self.encoding_models = dict()
 
 
     def close(self):
@@ -27,20 +42,6 @@ class AgentBase(ABC):
     @abstractmethod
     def interact(self, *args, **kwargs) -> str:
         pass
-
-
-    def truncate_tokens(self, text: str, max_tokens: int = 30, encoding_model: str = 'cl100k_base') -> str:
-        """ Given a text string, truncate it to max_tokens using encoding_model tokenizer
-        """
-        if encoding_model not in self.encoding_models:
-            encoding: Encoding = tiktoken.get_encoding(encoding_model)
-            self.encoding_models[encoding_model] = encoding
-        encoding: Encoding = self.encoding_models[encoding_model]
-        tokens = encoding.encode(text)
-        if len(tokens) > max_tokens * 1000:
-            tokens = tokens[:max_tokens * 1000]
-            text = encoding.decode(tokens)
-        return text
 
 
     def forward(self, messages: List[Dict[str, Any]], model: str = '', temperature: float = 0.7, top_p: float = 0.95, max_tokens: int = 1500, window_size: int = 3, output_path: Optional[str] = None, output_kwargs: Dict[str, Any] = {}) -> str:
@@ -86,4 +87,4 @@ class AgentBase(ABC):
             with open(output_path, 'w', encoding='utf-8') as f:
                 for m in messages:
                     f.write(json.dumps(m, ensure_ascii=False) + '\n')
-        return self.truncate_tokens(str(obs.obs_content))
+        return truncate_tokens(str(obs.obs_content))

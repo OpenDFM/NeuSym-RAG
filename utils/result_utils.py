@@ -5,9 +5,8 @@ from tiktoken import Encoding
 from typing import List, Dict, Any, Optional
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from agents.envs.actions import GenerateAnswer, Action
+from agents.frameworks import truncate_tokens
 
-
-encoding_models = dict()
 
 def load_jsonl(fp: str) -> list:
     with open(fp, 'r', encoding='utf8') as f:
@@ -20,21 +19,6 @@ def write_jsonl(data: List[Dict[str, Any]], file_path: str) -> None:
         for line in data:
             f.write(json.dumps(line, ensure_ascii=False) + '\n')
     return
-
-
-def truncate_tokens(text: str, max_tokens: int = 30, encoding_model: str = 'cl100k_base') -> str:
-    """ Given a text string, truncate it to max_tokens using encoding_model tokenizer
-    """
-    global encoding_models
-    if encoding_model not in encoding_models:
-        encoding: Encoding = tiktoken.get_encoding(encoding_model)
-        encoding_models[encoding_model] = encoding
-    encoding: Encoding = encoding_models[encoding_model]
-    tokens = encoding.encode(text)
-    if len(tokens) > max_tokens * 1000:
-        tokens = tokens[:max_tokens * 1000]
-        text = encoding.decode(tokens)
-    return text
 
 
 def extract_answer_from_trajectory(data: List[Dict[str, Any]], action_format: str = 'markdown', agent_method: str = 'react') -> Any:

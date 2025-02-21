@@ -8,9 +8,9 @@ import PyPDF2
 from PyPDF2 import PdfWriter, PageObject
 from pdf2image import convert_from_path
 from pdfminer.layout import LTImage, LTFigure, LTRect
-
 from utils.functions.common_functions import call_llm, get_uuid, call_llm_with_message
-from utils.functions.parallel_functions import parallel_write_or_read, truncate_tokens
+from utils.functions.parallel_functions import parallel_write_or_read
+from agents.frameworks import truncate_tokens
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)

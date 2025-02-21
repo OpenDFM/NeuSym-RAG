@@ -5,7 +5,7 @@ from agents.envs import TrivialEnv
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
 from agents.prompts.task_prompt import formulate_input
-from agents.frameworks import AgentBase
+from agents.frameworks import AgentBase, truncate_tokens
 
 
 logger = logging.getLogger()
@@ -49,7 +49,7 @@ class TrivialAgent(AgentBase):
         else:
             observation = 'No context provided.'
         logger.info('[Stage 1]: Retrieve context ...')
-        observation = self.truncate_tokens(observation, max_tokens=max_length)
+        observation = truncate_tokens(observation, max_tokens=max_length)
         logger.info(f'[Retrieved Context]: {observation}')
 
         # 2. Answer the question
