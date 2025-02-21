@@ -1,8 +1,7 @@
 #coding=utf8
 from agents.models.llm_base import LLMClient
 from agents.models.llm_gpt import GPTClient
-from agents.models.llm_local import LocalClient
-from agents.models.llm_http import HTTPClient
+from agents.models.llm_vllm import VLLMClient
 
 
 LLM_MODELS = dict()
@@ -21,10 +20,10 @@ def get_llm_single_instance(model_name: str, **kwargs) -> LLMClient:
 def infer_model_class(model_name: str) -> LLMClient:
     """ Infer the LLM model class by the model name.
     """
-    if any(model_name.lower().startswith(prefix) for prefix in ['claude', 'gemini', 'gpt', 'o1']):
+    model_name = model_name.lower()
+    if any(model_name.startswith(prefix) for prefix in ['claude', 'gemini', 'gpt', 'o1']):
         return GPTClient
-    elif any(model_name.lower().startswith(prefix) for prefix in ['llama', 'qwen', 'deepseek']):
-        return LocalClient
+    elif any(model_name.startswith(prefix) for prefix in ['llama', 'qwen', 'deepseek', 'intern']):
+        return VLLMClient
     else:
-        # raise ValueError(f"Model name {model_name} is not supported.")
-        return LocalClient
+        raise ValueError(f"Model name {model_name} is not supported yet.")

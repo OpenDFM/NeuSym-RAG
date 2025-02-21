@@ -13,10 +13,23 @@ GPT_PRICES = OD([
     ('gpt-4o-mini', (0.15e-6, 0.6e-6)),
     ('gpt-4o', (2.5e-6, 10e-6)),
     ('gpt-4-0125-preview', (10e-6, 30e-6)),
+    ('gpt-4-1106-preview', (10e-6, 30e-6)),
     ('gpt-4-vision-preview', (10e-6, 30e-6)),
+    ('gpt-4-1106-vision-preview', (10e-6, 30e-6)),
     ('o1-mini', (3e-6, 12e-6)),
-    ('o1-preview', (15e-6, 60e-6))
+    ('o1', (15e-6, 60e-6)),
+    ('o3-mini', (1.1e-6, 4.4e-6)),
+    ('chatgpt-4o', (5e-6, 15e-6)),
+    ('gpt-4-turbo', (10e-6, 30e-6)),
+    ('gpt-4-32k', (60e-6, 120e-6)),
+    ('gpt-4', (30e-6, 60e-6)),
+    ('gpt-3.5-turbo', (0.5e-6, 1.5e-6)),
+    ('gpt-3.5-turbo-16k-0613', (3e-6, 4e-6)),
+    ('gpt-3.5-turbo-instruct', (1.5, 2)),
+    ('davinci-002', (2e-6, 2e-6)),
+    ('babbage-002', (0.4e-6, 0.4e-6))
 ])
+
 
 class GPTClient(LLMClient):
 
@@ -29,7 +42,7 @@ class GPTClient(LLMClient):
         self._client: OpenAI = OpenAI(api_key=api_key, base_url=base_url)
 
 
-    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: Optional[str] = None) -> List[Dict[str, str]]:
+    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: Optional[str] = None, image_limit: int = 10) -> List[Dict[str, str]]:
         """ Preserve the original GPT-style message format.
         """
         return messages
@@ -45,7 +58,7 @@ class GPTClient(LLMClient):
                 break
         else:
             print(f"Model {completion.model} not found in the OpenAI price dict: {list(GPT_PRICES.keys())}")
-            # pass
+            pass
         return
 
 
