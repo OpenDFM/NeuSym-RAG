@@ -5,25 +5,11 @@ from abc import ABC, abstractmethod
 from agents.envs import AgentEnv
 from agents.envs.actions import Action, Observation
 from agents.models import LLMClient
+from utils.functions.common_functions import truncate_tokens
 from typing import List, Dict, Any, Union, Tuple, Optional
 
 
 logger = logging.getLogger(__name__)
-
-ENCODING_MODELS = dict()
-
-def truncate_tokens(text: str, max_tokens: int = 30, encoding_model: str = 'cl100k_base') -> str:
-    """ Given a text string, truncate it to max_tokens * 1000 using encoding_model tokenizer
-    """
-    if encoding_model not in ENCODING_MODELS:
-        encoding: Encoding = tiktoken.get_encoding(encoding_model)
-        ENCODING_MODELS[encoding_model] = encoding
-    encoding: Encoding = ENCODING_MODELS[encoding_model]
-    tokens = encoding.encode(text)
-    if len(tokens) > max_tokens * 1000:
-        tokens = tokens[:max_tokens * 1000]
-        text = encoding.decode(tokens)
-    return text
 
 
 class AgentBase(ABC):

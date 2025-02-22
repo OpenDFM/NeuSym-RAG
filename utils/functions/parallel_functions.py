@@ -3,8 +3,7 @@ import json, hashlib, sys, os, tiktoken
 from tqdm import tqdm
 from typing import List, Dict, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from utils.functions.common_functions import convert_to_message, call_llm_with_message
-from agents.frameworks import truncate_tokens
+from utils.functions.common_functions import convert_to_message, call_llm_with_message, truncate_tokens
 
 
 def hashed(stringified_message: str) -> str:

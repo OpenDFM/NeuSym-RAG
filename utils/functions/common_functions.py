@@ -1,7 +1,24 @@
 #coding=utf8
-import time, uuid, re
+import time, uuid, re, tiktoken
+from tiktoken import Encoding
 from typing import List, Dict, Union, Optional, Any, Iterable
 from agents.models import get_llm_single_instance
+
+
+ENCODING_MODELS = dict()
+
+def truncate_tokens(text: str, max_tokens: int = 30, encoding_model: str = 'cl100k_base') -> str:
+    """ Given a text string, truncate it to max_tokens * 1000 using encoding_model tokenizer
+    """
+    if encoding_model not in ENCODING_MODELS:
+        encoding: Encoding = tiktoken.get_encoding(encoding_model)
+        ENCODING_MODELS[encoding_model] = encoding
+    encoding: Encoding = ENCODING_MODELS[encoding_model]
+    tokens = encoding.encode(text)
+    if len(tokens) > max_tokens * 1000:
+        tokens = tokens[:max_tokens * 1000]
+        text = encoding.decode(tokens)
+    return text
 
 
 def call_llm_with_message(
