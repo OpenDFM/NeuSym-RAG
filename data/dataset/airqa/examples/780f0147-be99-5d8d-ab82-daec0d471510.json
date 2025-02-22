@@ -1,7 +1,7 @@
 {
     "uuid": "780f0147-be99-5d8d-ab82-daec0d471510",
-    "question": "What's the type of Character Role Play in jailbreak prompts? How can we make role-playing models more responsible in the anchor_pdf?",
-    "answer_format": "Your answer should be a python strings.",
+    "question": "What's the type of Character Role Play in jailbreak prompts? How can we make role-playing models more responsible in the Jailbreaking paper?",
+    "answer_format": "Your answer should be a python list of two elemments. The first is a python string of a type name, and the second one is a list of several measures.",
     "tags": [
         "multiple",
         "text",
@@ -9,21 +9,38 @@
         "subjective"
     ],
     "anchor_pdf": [
-        "b65bd6b5-e2bb-5f16-a805-055784527a16"
-    ],
-    "reference_pdf": [
+        "b65bd6b5-e2bb-5f16-a805-055784527a16",
         "5844c6f9-3de6-551b-bc02-ba6bc65c02ef"
     ],
+    "reference_pdf": [],
     "conference": [],
     "reasoning_steps": [
         "First of all, locate the paper related to jailbreak prompts and find the type of Character Role Play.",
         "Then, find the measures that can make the models more responsible in the anchor_pdf."
     ],
     "evaluator": {
-        "eval_func": "eval_reference_answer_with_llm",
+        "eval_func": "eval_conjunction",
         "eval_kwargs": {
-            "reference_answer":"The type is \"Pretending\", and the measues: (1) Implement Advanced Moderation Tools. (2) Bias Detection and Mitigation. (3) Transparency in Development and Use. (4) Feedback Mechanism.",
-            "question":"What's the type of Character Role Play in jailbreak prompts? How can we make role-playing models more responsible in the anchor_pdf?"
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_scoring_points_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "Pretending",
+                    "lowercase": true
+                },
+                {
+                    "scoring_points": [
+                        "Implement Advanced Moderation Tools.",
+                        "Bias Detection and Mitigation.",
+                        "Transparency in Development and Use.",
+                        "Feedback Mechanism."
+                    ],
+                    "question": "What's the type of Character Role Play in jailbreak prompts? How can we make role-playing models more responsible in the Jailbreaking paper?",
+                    "ignore_order": true
+                }
+            ]
         }
     },
     "state": {
