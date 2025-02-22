@@ -1,6 +1,6 @@
 {
     "uuid": "a2f8cca9-a522-5fd2-bf2e-829fc82f749e",
-    "question": "What do the authors evaluate the unlearned model from?",
+    "question": "From which three aspects do the authors evaluate the unlearned model?",
     "answer_format": "Your answer should be a python list, each element is a string.",
     "tags": [
         "single",
@@ -16,13 +16,14 @@
         "Find the part mentioned the evaluation of unlearned model in the paper and get the answer."
     ],
     "evaluator": {
-        "eval_func": "eval_structured_object_exact_match",
+        "eval_func": "eval_scoring_points_with_llm",
         "eval_kwargs": {
-            "gold": [
+            "scoring_points": [
                 "Performance on the Forget Set",
                 "Performance on the Retain Set",
                 "Performance on General Downstream Tasks"
             ],
+            "question":"From which three aspects do the authors evaluate the unlearned model?",
             "ignore_order": true
         }
     },
