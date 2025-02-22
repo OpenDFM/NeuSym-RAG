@@ -1,0 +1,42 @@
+{
+    "uuid": "8d7e5c06-78b8-5454-849a-57140efaa80c",
+    "question": "According to the paper, which dataset also use a retrieval-based system for relevant files selecting?In that dataset, how many lines do the codebase contain on average?",
+    "answer_format": "Your answer should be a python list of 2 elements, the first is the name of the dataset, and the second is the number of lines in thousands, rounding to the nearest integer. e.g. [\"MMMU\", 9]",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "1c00c0f7-c403-58c7-9cc4-dc032888423f"
+    ],
+    "reference_pdf": [
+        "1c87084a-f8ae-5a28-a8bb-016316818e0c"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the section that discusses evaluation.",
+        "Find the dataset it follows.",
+        "Read the corresponding paper.",
+        "Locate the section that talks about retrieval settings.",
+        "Identify the number of lines in the codebase."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "SWE-bench",
+                438
+            ],
+            "fuzz_method": "partial_ratio",
+            "threshold": 100,
+            "ignore_order": false,
+            "ignore_blank": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

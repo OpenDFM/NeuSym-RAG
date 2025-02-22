@@ -1,0 +1,31 @@
+{
+    "uuid": "3fa1c7fc-1e4b-57f1-8aea-efac33cefb54",
+    "question": "How much higher is Octopus with resolution 336 than Kosmos-2 on RefCOCOg test set?",
+    "answer_format": "Your answer should be a float between 0 and 100, rounding to 2 decimal places.",
+    "tags": [
+        "multiple",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "eb4622eb-b4c7-5fae-b8e2-ff799aa81e4d",
+        "1d0c97b9-f24f-5651-83f1-5d6f37d431f0"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the tables that list performances on RefCOCOg.",
+        "Calculate the difference between Octopus and Kosmos-2."
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 24.54,
+            "ndigits": 2
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

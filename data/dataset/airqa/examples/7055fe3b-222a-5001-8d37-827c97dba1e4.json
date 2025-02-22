@@ -1,0 +1,34 @@
+{
+    "uuid": "7055fe3b-222a-5001-8d37-827c97dba1e4",
+    "question": "How much higher is the best EX score in the paper \"Synthetic SQL Column Descriptions and Their Impact on Text-to-SQL Performance\" than that in the original dataset applied? Assuming that both experiments are taken under no knowledge setting.",
+    "answer_format": "Your answer should be a float between 0 and 1, rounding to 4 decimal places.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "1cda8193-bb3e-5c71-9c34-a48959805b38"
+    ],
+    "reference_pdf": [
+        "22086214-ba3b-50f5-9a22-a247a50375fe"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Identify the original dataset applied.",
+        "Understand EX, find corresponding settings.",
+        "Compare the scores."
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 0.0588,
+            "ndigits": 4
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

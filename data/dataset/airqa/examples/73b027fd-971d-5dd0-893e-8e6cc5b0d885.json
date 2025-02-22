@@ -1,0 +1,42 @@
+{
+    "uuid": "73b027fd-971d-5dd0-893e-8e6cc5b0d885",
+    "question": "According to the DeepKKT paper, which method performs the best on CIFAR10 with 1 generated image per class under 50-shot setting? Additionally, in the paper that proposes that method, what's the latest dataset evaluated?",
+    "answer_format": "Your answer should be a Python list of 2 elements, the abbrevation of the method and the name of the dataset.",
+    "tags": [
+        "multiple",
+        "objective",
+        "table",
+        "metadata"
+    ],
+    "anchor_pdf": [
+        "1bd3021a-e648-5ed5-a5a4-0c835dc0f3cd"
+    ],
+    "reference_pdf": [
+        "22acb72e-f84b-5f76-82bf-3b0182e5a8da"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the table that compares different methods on CIFAR10.",
+        "Identify the corresponding method.",
+        "Find the paper that proposes the method.",
+        "Locate the latest dataset evaluated in the paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "DSA", 
+                "FashionMNIST"
+            ],
+            "fuzz_method": "partial_ratio",
+            "threshold": 100,
+            "ignore_order": false,
+            "ignore_blank": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
