@@ -1,6 +1,6 @@
 {
     "uuid": "539593f7-e17a-57d2-9030-b8e6690c27e3",
-    "question": "Among the dataset cited in the anchor_pdf, how many were proposed in 2022?",
+    "question": "Among the dataset used for experimentation in the TEXTEE paper and the \"Small Models, Big Insights\" paper, how many were proposed in 2022?",
     "answer_format": "Your answer should be a python int.",
     "tags": [
         "multiple",
@@ -15,7 +15,7 @@
     "reference_pdf": [],
     "conference": [],
     "reasoning_steps": [
-        "First, find the datasets used in the anchor_pdf.",
+        "First, find the datasets used in the papers.",
         "Then, determine which datasets are proposed in 2022."
     ],
     "evaluator": {
