@@ -1,0 +1,32 @@
+{
+    "uuid": "c820fec0-1295-5d70-b300-6feb9bc66d5a",
+    "question": "When the number of retrieved pairs is chosen empirically to be in the range of 3 to 5 for this data, which caption group of the testing set performs the best overall?",
+    "answer_format": "Your answer should be a python strings about the name of the caption group. YOU MUST USE THE EXACT NAME FROM THE PAPER.",
+    "tags": [
+        "single",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "000bebd2-6c2c-56dc-9709-cd228a417519"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the part about the impact of the number of retrieved audio-text pairs on audio generation performance, which is in the experiment section of the paper.",
+        "Get the values of the performance of each caption group when the number of retrieved pairs is in the range of 3 to 5, which are shown in an image.",
+        "Find the caption group with the best performance in general, which means it performs almost the best on different metrics."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "AC_cap5",
+            "lowercase": true,
+            "ignore_blank": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
