@@ -1,6 +1,6 @@
 {
     "uuid": "60ef8ee5-97de-59a7-8c22-9fa45df8d152",
-    "question": "Which subtask in NADI 2024 was the anchor_pdf related?",
+    "question": "Which subtask in NADI 2024 was the CUFE paper related to?",
     "answer_format": "Your answer should be a python string. The string should be \"Subtask 1\", \"Subtask 2\" and so on.",
     "tags": [
         "multiple",
@@ -17,7 +17,7 @@
     "reasoning_steps": [
         "Locate the paper about NADI 2024.",
         "Find the Subtasks in the paper.",
-        "Read the anchor_pdf and find the corresponding subtask."
+        "Read the the CUFE paper and find the corresponding subtask."
     ],
     "evaluator": {
         "eval_func": "eval_string_exact_match",
