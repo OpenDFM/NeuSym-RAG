@@ -1,7 +1,7 @@
 {
     "uuid": "a803c5e9-ad61-5580-8819-66875022e19b",
-    "question": "In order to improve Parrot's abilities, what is used in the paper \"Direct Preference Optimization: Your Language Model is Secretly a Reward Model\" to train the model? Which method is used to compare its performance under distribution shifts?",
-    "answer_format": "Your answer should be a Python list of two strings, answering the two questions respectively. You must use abbreviations.",
+    "question": "In order to improve Parrot's abilities, which method proposed in the paper \"Direct Preference Optimization: Your Language Model is Secretly a Reward Model\" is used to train the model? Which method is compared with it under distribution shifts?",
+    "answer_format": "Your answer should be a Python list of two strings, answering the two questions respectively. You must use abbreviations as given in the papers.",
     "tags": [
         "multiple",
         "text",
@@ -24,7 +24,9 @@
             "gold":[
                 "DPO",
                 "PPO"
-            ]
+            ],
+            "lowercase": false,
+            "ignore_order": false
         }
     },
     "state": {
