@@ -1,0 +1,34 @@
+{
+    "uuid": "a98997f3-d4ad-5739-91dd-4dc08fb626a6",
+    "question": "According to the paper that proposes the pixel-level similarity metrics that the LG-VQ paper employs, what's the metrics' value, given that it's a gray scale image 0f 8 bits, with MSE=1?",
+    "answer_format": "Your answer should be a float, rounding to 2 decimal places.",
+    "tags": [
+        "multiple",
+        "formula",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "1d9b8fd8-3443-5191-9f86-602a3e1c7e6b"
+    ],
+    "reference_pdf": [
+        "51490da9-141c-5d9f-bed1-fab6e93b7b65"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the section that dicusses evaluation metrics.",
+        "Identify the pixel-level similarity metrics.",
+        "Read the paper that proposes the metrics to find the formula.",
+        "Calculate the value given the image's properties."
+    ],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 96.26,
+            "ndigits": 2
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

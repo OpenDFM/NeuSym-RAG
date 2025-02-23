@@ -1,0 +1,43 @@
+{
+    "uuid": "234f08cf-8a52-53cc-947e-e508f711e87a",
+    "question": "Which model reaches the highest accuracy under zero-shot setting in CARES, considering the dimension shown in the bottom-middle of Figure 1? Additionally, in the paper that proposes the model, which dataset for pre-training is also released? What's the largest data source that CARES uses but this dataset doesn't?",
+    "answer_format": "Your answer should be a Python list of 3 elements, the first is the name of the model, the second and the third are the abbreviations of the datasets.",
+    "tags": [
+        "multiple",
+        "image",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "2b27f132-5f9d-5c96-a564-1edec3b3b008"
+    ],
+    "reference_pdf": [
+        "773f0d37-c822-54f5-a7f8-ddc93e70d845"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "View the image to identify the dimension in the bottom-middle of Figure 1.",
+        "Locate the section that dicusses performance on that dimension.",
+        "Find the model that reaches the highest accuracy under zero-shot setting.",
+        "Read the paper that proposes the model to find the pre-training dataset.",
+        "Locate the section that talks about data sources used by CARES and that dataset.",
+        "Identify the largest data source that CARES uses but this dataset doesn't."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "RadFM",
+                "MedMD",
+                "OmniMedVQA"
+            ],
+            "lowercase": true,
+            "ignore_order": false,
+            "ignore_blank": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

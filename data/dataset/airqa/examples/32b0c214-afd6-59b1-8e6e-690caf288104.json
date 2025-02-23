@@ -1,0 +1,42 @@
+{
+    "uuid": "32b0c214-afd6-59b1-8e6e-690caf288104",
+    "question": "In the overview figure of KG-FIT, which component is pointed by a red arrow at the bottom-left? In the paper that proposes this component, what's the algorithm with the theoretically highest worst-case complexity? What's its advantage over the other two faster algorithm, considering the update scheme?",
+    "answer_format": "Your answer should be a Python string, including the answers to the three questions.",
+    "tags": [
+        "multiple",
+        "text",
+        "image",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "1f950507-1856-5850-9d7d-fdc673e51367"
+    ],
+    "reference_pdf": [
+        "0375ee54-2513-5042-ac3a-3c43cf07183a"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Read the KG-FIT paper to find the overview figure.",
+        "Identify the component pointed by a red arrow at the bottom-left.",
+        "Find the paper that proposes this component.",
+        "Locate the section that compares performances of different algorithms.",
+        "Identify the algorithm with the theoretically highest worst-case complexity.",
+        "Read the section that introduces this algorithm to find the advantage."
+    ],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "The component is agglomerative hierarchical clustering.",
+                "The algorithm is the generic clustering algorithm.",
+                "It is the only algorithm among the three in this paper which can deal with inversions in the dendrogram. Consequentially, the \"centroid\" and \"median\" methods must use this algorithm."
+            ],
+            "question": "In the overview figure of KG-FIT, which component is pointed by a red arrow at the bottom-left? In the paper that proposes this component, what's the algorithm with the theoretically highest worst-case complexity? What's its advantage over the other two faster algorithm, considering the update scheme?",
+            "ignore_order": false
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

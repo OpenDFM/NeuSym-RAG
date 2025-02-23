@@ -1,0 +1,44 @@
+{
+    "uuid": "fbd10d75-9ede-5480-8312-08b7435413df",
+    "question": "In the GenRec paper, which dataset used in the experiment is not evaluated in Table 1? Additionally, what's the range of the clip length for that dataset?",
+    "answer_format": "Your answer should be a Python list of 2 elements, the first is a string, the name of the dataset, and the second is a Python list of 2 floats, the range of the clip length, rounded to 2 decimal places, in seconds, e.g. [\"dataset\", [1.01, 2.02]]",
+    "tags": [
+        "multiple",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "2abcf6e2-b4e3-5cf9-8c80-4497539805cc"
+    ],
+    "reference_pdf": [
+        "d47d8161-223d-5bc5-b4fb-d4f35c63b412"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the section that talks about datasets used.",
+        "Read table 1 to find datasets evaluated.",
+        "Identify the dataset that's not evaluated.",
+        "Locate the paper that proposes the dataset.",
+        "Find the range of clip length for that dataset."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "UCF-101",
+                [
+                    1.06,
+                    71.04
+                ]
+            ],
+            "fuzz_method": "partial_ratio",
+            "threshold": 95,
+            "lowercase": true,
+            "ignore_order": false
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
