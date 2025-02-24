@@ -13,7 +13,11 @@
     ],
     "reference_pdf": [],
     "conference": [],
-    "reasoning_steps": [],
+    "reasoning_steps": [
+        "Find the formula (3) in the paper and I_{container} in the formula (3).",
+        "Retrieve the relevant section to find the calculation approach of I_{container}.",
+        "Understand the calculation approach and formula of I_{container}."
+    ],
     "evaluator": {
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
