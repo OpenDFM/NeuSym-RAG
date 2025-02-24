@@ -13,7 +13,7 @@ logger = logging.getLogger()
 
 class HybridRAGAgent(AgentBase):
 
-    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'react', max_turn: int = 15) -> None:
+    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'neusym_rag', max_turn: int = 15) -> None:
         super(HybridRAGAgent, self).__init__(model, env, agent_method, max_turn)
 
         self.agent_prompt = AGENT_PROMPTS[agent_method].format(

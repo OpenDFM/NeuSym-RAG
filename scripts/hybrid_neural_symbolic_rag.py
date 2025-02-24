@@ -20,6 +20,8 @@ logger: Logger = get_result_logger(result_dir)
 llm: LLMClient = infer_model_class(args.llm)(image_limit=args.image_limit, length_limit=args.length_limit)
 env: AgentEnv = infer_env_class(args.agent_method)(
     dataset=args.dataset,
+    action_format=args.action_format,
+    interact_protocol=args.interact_protocol,
     database=args.database,
     vectorstore=args.vectorstore,
     database_path=args.database_path,

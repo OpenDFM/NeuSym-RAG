@@ -1,5 +1,4 @@
 #coding=utf8
-from abc import ABC, abstractmethod
 from typing import List, Dict, Tuple, Any, Union, Optional, Type
 import gymnasium as gym
 from agents.envs.actions import Action
@@ -7,19 +6,20 @@ from agents.envs.actions.observation import Observation
 from functools import cached_property
 
 
-class AgentEnv(gym.Env, ABC):
+class AgentEnv(gym.Env):
 
     action_space: List[Type] = []
 
     def __init__(self,
                  action_format: str = 'markdown',
                  action_space: Optional[List[Type]] = None,
-                 agent_method: Optional[str] = 'react',
-                 dataset: Optional[str] = None
+                 interact_protocol: Optional[str] = 'react',
+                 dataset: Optional[str] = None,
+                 **kwargs
     ) -> None:
         super(AgentEnv, self).__init__()
         self.action_format: str = action_format
-        self.agent_method: Optional[str] = agent_method
+        self.interact_protocol: Optional[str] = interact_protocol
         self.dataset: Optional[str] = dataset
         cls_space = self.__class__.action_space
         if action_space is not None and len(action_space) > 0:
@@ -60,7 +60,7 @@ class AgentEnv(gym.Env, ABC):
                 action,
                 action_types=self.__class__.action_space,
                 action_format=self.action_format,
-                agent_method=self.agent_method
+                interact_protocol=self.interact_protocol
             )
             if not flag: parse_error = True
         self.parsed_actions.append(action)
@@ -77,4 +77,4 @@ class AgentEnv(gym.Env, ABC):
     def action_space_prompt(self) -> str:
         """ Get the action space prompt.
         """
-        return Action.get_action_space_prompt(self.action_space, self.action_format)
+        return Action.get_action_space_prompt(self.action_space, self.action_format, self.interact_protocol)

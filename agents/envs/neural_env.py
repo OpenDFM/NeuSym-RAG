@@ -11,13 +11,18 @@ from utils.database_utils import get_database_connection
 from utils.vectorstore_utils import get_vectorstore_connection, get_embed_model_from_collection, get_milvus_embedding_function
 
 
-class Text2VecEnv(AgentEnv):
-    """ Responsible for managing the environment for the text-to-vec retrieval, which includes maintaining the connection to the Milvus vectorstore and the DuckDB database, executing the search query and formatting the output result.
+class NeuralRAGEnv(AgentEnv):
+    """ Responsible for managing the environment for the neural retrieval, which includes maintaining the connection to the Milvus vectorstore and the DuckDB database, executing the search query and formatting the output result.
     """
 
-    action_space: List[Type] = [RetrieveFromVectorstore, CalculateExpr, ViewImage, GenerateAnswer]
+    action_space: List[Type] = [
+        RetrieveFromVectorstore,
+        CalculateExpr,
+        ViewImage,
+        GenerateAnswer
+    ]
 
-    def __init__(self, action_format: str = 'markdown', action_space: Optional[List[Type]] = None, agent_method: Optional[str] = 'react', dataset: Optional[str] = None, **kwargs) -> None:
+    def __init__(self, action_format: str = 'markdown', action_space: Optional[List[Type]] = None, interact_protocol: Optional[str] = 'react', dataset: Optional[str] = None, **kwargs) -> None:
         """ Initialize the environment with the given action format, action space, agent method, dataset and other parameters.
         @param:
             kwargs:
@@ -28,7 +33,7 @@ class Text2VecEnv(AgentEnv):
                 - docker_uri: str, URI to the docker, default is 'http://127.0.0.1:19530'.
                 - vectorstore_path: str, the path to the vectorstore, default is 'data/vectorstore/{vectorstore}/{vectorstore}.db'.
         """
-        super(Text2VecEnv, self).__init__(action_format=action_format, action_space=action_space, agent_method=agent_method, dataset=dataset)
+        super(NeuralRAGEnv, self).__init__(action_format=action_format, action_space=action_space, interact_protocol=interact_protocol, dataset=dataset)
         # database and vectorstore name must be the same
         db, vs = kwargs.get('database', None), kwargs.get('vectorstore', None)
         assert db is not None or vs is not None

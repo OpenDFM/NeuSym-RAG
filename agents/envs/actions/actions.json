@@ -95,20 +95,27 @@
                 "type": "str",
                 "required": true,
                 "description": "The query text will be encoded and used to search for relevant context. You can rephrase the original user question to obtain a more clear and structured query requirement."
+            },
+            "limit": {
+                "type": "int",
+                "required": false,
+                "default": 5,
+                "description": "The number of top-ranked context to retrieve. Please set it to a positive integer to limit the number of returned results. Extremely large limit values may be truncated."
             }
         },
         "use_cases": [
             {
                 "example": {
-                    "query": "Does this paper discuss LLM-based agent on its first page? (paper id is '12345678')"
+                    "query": "Is there any work about the topic structured RAG?"
                 },
-                "explanation": "Retrieve detailed information for paper with uuid=12345678."
+                "explanation": "Retrieve top 5 pieces about a certain topic."
             },
             {
                 "example": {
-                    "query": "Is there any work about the topic structured RAG?"
+                    "query": "What's the learning rate for training the ResNet model?",
+                    "limit": 4
                 },
-                "explanation": "Retrieve works about certain topics."
+                "explanation": "Retrieve detailed information about the learning rate for training the ResNet model. The top 4 most relevant entries will be returned based on the query."
             }
         ]
     },

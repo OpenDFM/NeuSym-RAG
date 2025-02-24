@@ -1,7 +1,7 @@
 #coding=utf8
 import logging, re, os, json
 from typing import List, Dict, Any, Union, Tuple, Optional
-from agents.envs import TrivialEnv
+from agents.envs import AgentEnv
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
 from agents.prompts.task_prompt import formulate_input
@@ -17,7 +17,7 @@ abstract: ```{abstract}```"""
 
 class TitleAbstractAgent(AgentBase):
 
-    def __init__(self, model: LLMClient, env: TrivialEnv, agent_method: str = 'title_abstract', max_turn: int = 1) -> None:
+    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'title_abstract', max_turn: int = 1) -> None:
         super(TitleAbstractAgent, self).__init__(model, env, agent_method, max_turn)
 
     def interact(self,

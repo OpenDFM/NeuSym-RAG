@@ -23,8 +23,9 @@ def parse_args():
     parser.add_argument('--action_format', type=str, default='markdown', choices=['markdown', 'json', 'xml', 'yaml'], help='Action format for the environment acceptable inputs.')
     parser.add_argument('--output_format', type=str, default='json', choices=['markdown', 'json', 'html', 'string'], help='Output/Observation format of tables for the environment execution results.')
     parser.add_argument('--agent_method', type=str, default='neusym_rag', choices=[
-        'trivial_question_only', 'trivial_title_with_abstract', 'trivial_full_text_with_cutoff', 'classic_rag', 'two_stage_neu_rag', 'two_stage_sym_rag', 'two_stage_graph_rag', 'two_stage_hybrid_rag', 'iteractive_neu_rag', 'iteractive_sym_rag', 'iteractive_graph_rag', 'neusym_rag'
+        'trivial_question_only', 'trivial_title_with_abstract', 'trivial_full_text_with_cutoff', 'classic_rag', 'two_stage_neu_rag', 'two_stage_sym_rag', 'two_stage_graph_rag', 'two_stage_hybrid_rag', 'iterative_neu_rag', 'iterative_sym_rag', 'iterative_graph_rag', 'neusym_rag'
     ], help='Various agent / baseline method.')
+    parser.add_argument('--interact_protocol', type=str, default='react', choices=['react', 'code_block'], help='Interaction protocol for the agent method which is used to extract the parsable action text from LLM response, chosen from ["react", "code_block"].')
     parser.add_argument('--llm', type=str, default='gpt-4o-mini', help='LLM name to use. See agents/models for all supported LLMs.')
     parser.add_argument('--temperature', type=float, default=0.7, help='Temperature for sampling from the LLM.')
     parser.add_argument('--top_p', type=float, default=0.95, help='Top-p for sampling from the LLM.')
@@ -74,6 +75,9 @@ def validate_args(args):
         assert args.database is not None, "Database must be specified for Two-stage Sym-RAG or Iterative Sym-RAG agent."
     elif args.agent_method in ['two_stage_graph_rag', 'iterative_graph_rag']:
         assert args.graphrag_root and os.path.exists(args.graphrag_root) and os.path.isdir(args.graphrag_root), "Graph-RAG root folder must be specified and exist for Two-stage Graph-RAG or Iterative Graph-RAG agent."
+    
+    if args.agent_method.startswith('two_stage') or args.agent_method in ['classic_rag', 'iterative_graph_rag']:
+        assert args.interact_protocol == 'code_block', "Code blocks protocol is required for Two-stage Hybrid-RAG, Two-stage Neu-RAG, Two-stage Sym-RAG, Two-stage Graph-RAG, and Classic-RAG agent"
     return args
 
 

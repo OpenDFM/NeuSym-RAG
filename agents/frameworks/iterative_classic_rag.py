@@ -13,7 +13,7 @@ logger = logging.getLogger()
 
 class IterativeClassicRAGAgent(AgentBase):
 
-    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'react', max_turn: int = 10) -> None:
+    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'iterative_classic_rag', max_turn: int = 10) -> None:
         super(IterativeClassicRAGAgent, self).__init__(model, env, agent_method, max_turn)
 
         self.agent_prompt = AGENT_PROMPTS[agent_method].format(
