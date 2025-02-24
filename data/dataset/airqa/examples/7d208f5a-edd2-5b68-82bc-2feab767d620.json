@@ -1,0 +1,28 @@
+{
+    "uuid": "7d208f5a-edd2-5b68-82bc-2feab767d620",
+    "question": "In formula (3) of the paper, how is I_{container} calculated?",
+    "answer_format": "Your answer should be a python strings about the calculation approach and formula of I_{containe}.",
+    "tags": [
+        "single",
+        "formula",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "0c798051-97ee-52fe-b714-faf5ef1132c3"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "question": "In formula (3) of the paper, how is I_{container} calculated?",
+            "reference_answer": "I_{container} is calculated by an overflow sensitivity training method to help the Decoder to be more sensitive when facing edge range pixel value. The purpose of the design is that when decoding pixel values in the edge range, the feature extraction is only related to the template amplitude and has nothing to do with the positivity. Specifically, the approach is to add conditions to the additive operations. If the pixel value after superposition overflows, the addition operation of the pixel is converted into a subtraction operation. The formula is as follows: I_{container}= \\begin{cases} I_{host}-I{additive}, overflow \\ I_{host}+I{additive}, otherwise \\end{cases}"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
