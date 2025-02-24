@@ -9,9 +9,12 @@ from agents.envs.classic_env import ClassicEnv
 
 
 ENVIRONMENTS = {
+    'classic_rag': ClassicEnv,
     'trivial': TrivialEnv,
     'text2sql': Text2SQLEnv,
     'text2vec': Text2VecEnv,
     'hybrid': HybridEnv,
-    'classic': ClassicEnv
 }
+
+def infer_env_class(agent_method: str) -> AgentEnv:
+    return ENVIRONMENTS.get(agent_method, HybridEnv)

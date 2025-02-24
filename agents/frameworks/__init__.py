@@ -13,7 +13,7 @@ from agents.frameworks.question_only import QuestionOnlyAgent
 from agents.frameworks.title_abstract import TitleAbstractAgent
 
 
-FRAMEWORKS = {
+AGENT_FRAMEWORKS = {
     'text2sql': Text2SQLRAGAgent,
     'text2vec': Text2VecRAGAgent,
     'two_stage_text2sql': TwoStageText2SQLRAGAgent,
@@ -26,3 +26,6 @@ FRAMEWORKS = {
     'question_only': QuestionOnlyAgent,
     'title_abstract': TitleAbstractAgent
 }
+
+def infer_agent_class(agent_method: str) -> AgentBase:
+    return AGENT_FRAMEWORKS[agent_method]

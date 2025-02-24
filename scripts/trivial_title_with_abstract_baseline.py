@@ -12,7 +12,7 @@ from utils.eval_utils import evaluate, print_result, load_test_data, write_jsonl
 from utils.hyperparam_utils import parse_args, get_result_folder, get_result_logger
 
 args: Namespace = parse_args()
-assert args.agent_method == 'classic_rag', "This script is only for Classic-RAG agent."
+assert args.agent_method == 'trivial_title_with_abstract', "This script is only for trivial input of title with abstract agent."
 result_dir: str = get_result_folder(args)
 logger: Logger = get_result_logger(result_dir)
 
@@ -36,8 +36,7 @@ for data_idx, data in enumerate(test_data):
     try:
         result = agent.interact(
             args.dataset, data,
-            table_name=args.table_name, column_name=args.column_name,
-            collection_name=args.collection_name, limit=args.limit,
+            cutoff=args.cutoff,
             model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens,
             output_path=output_path
         )
