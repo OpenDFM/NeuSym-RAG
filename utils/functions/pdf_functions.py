@@ -9,7 +9,7 @@ from PyPDF2 import PdfWriter, PageObject
 from pdf2image import convert_from_path
 from pdfminer.layout import LTImage, LTFigure, LTRect
 from utils.functions.common_functions import call_llm, get_uuid, call_llm_with_message
-from utils.functions.parallel_functions import parallel_write_or_read
+from utils.functions.parallel_functions import parallel_extract_or_fill
 from agents.frameworks import truncate_tokens
 
 logger = logging.getLogger(__name__)
@@ -95,7 +95,7 @@ Please directly return the summary without any extra information or formatting. 
             template = prompt_template.format(text=text, max_length=max_length)
             response = None
             if kwargs.get("parallel"):
-                response = parallel_write_or_read(template=template, **kwargs)
+                response = parallel_extract_or_fill(template=template, **kwargs)
             if response is None:
                 if len(text) >= 100000: # roughly 28k tokens
                     template = truncate_tokens(template, max_tokens=28)
@@ -119,7 +119,7 @@ Please generate a brief summary for the following table without any extra inform
 """
     template = prompt_template.format(max_length=max_length, table_caption=table['table_caption'], table_html=table['table_html'])
     if kwargs.get("parallel"):
-        table_summary = parallel_write_or_read(template=template, **kwargs)
+        table_summary = parallel_extract_or_fill(template=template, **kwargs)
         if table_summary is not None: return table_summary
     if len(template) >= 100000: # roughly 28k tokens
         template = truncate_tokens(template, max_tokens=28)
