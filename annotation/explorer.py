@@ -6,7 +6,7 @@ from datetime import datetime
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 import gymnasium as gym
-import fitz
+import pymupdf
 
 from utils.airqa_utils import generate_airqa_example_template, check_airqa_examples
 from utils.functions.common_functions import call_llm_with_pattern, call_llm, convert_to_message, call_llm_with_message
@@ -107,7 +107,7 @@ class SingleExplorer(BaseExplorer):
         if not os.path.exists(pdf_path):
             raise FileNotFoundError(f"PDF File {pdf_path} not found.")
         self.page_data = []
-        doc = fitz.open(pdf_path)
+        doc = pymupdf.open(pdf_path)
         for page_number in range(doc.page_count):
             page = doc[page_number]
             text = page.get_text()

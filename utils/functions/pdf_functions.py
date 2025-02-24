@@ -3,8 +3,7 @@
 import os, openai, uuid, re, sys, logging, subprocess, tempfile, json
 from typing import List, Dict, Union, Optional, Any, Iterable, Tuple
 from difflib import SequenceMatcher
-import fitz  # PyMuPDF
-import PyPDF2
+import pymupdf
 from PyPDF2 import PdfWriter, PageObject
 from pdf2image import convert_from_path
 from pdfminer.layout import LTImage, LTFigure, LTRect
@@ -43,7 +42,7 @@ def get_pdf_page_text(
             - page_contents: List[str], the list of strings, each string represents the content of each page.
             - page_uuids: List[str], the list of UUIDs for each page if generate_uuid is True.
     """
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     file_name = os.path.basename(pdf_path)
     pdf_id = None
     if generate_uuid:
@@ -60,6 +59,7 @@ def get_pdf_page_text(
         if generate_uuid:
             page_uuids.append(get_uuid(name=text, uuid_type=uuid_type, uuid_namespace=uuid_namespace))
     output = {"pdf_id": pdf_id, "pdf_name": file_name, "pdf_path": pdf_path, "page_contents": page_contents, "page_uuids": page_uuids}
+    doc.close()
     return output
 
 
@@ -347,7 +347,7 @@ def parse_pdf(
     }
 
     # Extract Table of Contents using PyMuPDF
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     toc = doc.get_toc()
 
     if toc:  # The case when PyMuPDF can parse TOC

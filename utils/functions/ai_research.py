@@ -1,8 +1,7 @@
 #coding=utf8
 import json, uuid, sys, os, re, logging
 from typing import List, Union, Optional, Tuple, Any, Dict
-import fitz, pymupdf # PyMuPDF
-import PyPDF2
+import pymupdf
 from pdf2image import convert_from_path
 from pdfminer.high_level import extract_pages
 from pdfminer.layout import LTFigure, LTImage, LTRect
@@ -354,7 +353,7 @@ def aggregate_ai_research_pages(metadata: Dict[str, Any], page_data: Dict[str, A
     pdf_path = metadata["pdf_path"]
     pdf_name = metadata["uuid"]
     num_pages = metadata["num_pages"]
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     results = []
 
     for page_number in range(1, num_pages + 1):
