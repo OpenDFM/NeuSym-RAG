@@ -9,5 +9,3 @@ from agents.envs.actions.retrieve_from_vectorstore import RetrieveFromVectorstor
 from agents.envs.actions.calculate_expr import CalculateExpr
 from agents.envs.actions.view_image import ViewImage
 from agents.envs.actions.classic_retrieve import ClassicRetrieve
-# from agents.envs.actions.retrieve_from_database_with_vector_filter import RetrieveFromDatabaseWithVectorFilter
-# from agents.envs.actions.retrieve_from_vectorstore_with_sql_filter import RetrieveFromVectorstoreWithSQLFilter
