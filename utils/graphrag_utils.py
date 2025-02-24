@@ -1,5 +1,29 @@
-import argparse, json, os
+#coding=utf8
+import argparse, json, os, yaml, sys
+from typing import Any, Dict, List
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from PyPDF2 import PdfReader
+
+
+def load_yaml(file_path: str) -> Dict[str, Any]:
+    with open(file_path, 'r', encoding='utf-8') as fin:
+        data = yaml.load(fin, Loader=yaml.FullLoader)
+    return data
+
+
+def write_yaml(data: dict, file_path: str):
+    with open(file_path, 'w', encoding='utf-8') as fout:
+        yaml.dump(data, fout)
+    return
+
+
+def config_graphrag_settings(args: argparse.Namespace):
+    settings_path = os.path.join(args.graphrag_root, 'settings.yaml')
+    settings = load_yaml(settings_path)
+    settings['llm']['model'] = args.llm
+    settings['llm']['api_base'] = os.environ.get('OPENAI_BASE_URL', "").rstrip('/')
+    settings['llm']['api_key'] = os.environ['OPENAI_API_KEY']
+    return
 
 
 def get_pdf_text(dataset: str, pdf_id: str) -> str:

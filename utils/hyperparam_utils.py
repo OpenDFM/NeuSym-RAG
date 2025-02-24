@@ -40,6 +40,9 @@ def parse_args():
     parser.add_argument('--collection_name', type=str, default='text_bm25_en', help='For Classic-RAG, the collection name to retrieve context.')
     parser.add_argument('--limit', type=int, default=4, help='For Classic-RAG, the limit or top K of the retrieved chunks.')
     parser.add_argument('--cutoff', type=int, default=5, help='For full-text with cutoff baseline, restrict the length of tokens (multiply 1000) for the full-text.')
+    parser.add_argument('--graphrag_root', type=str, default='', help='For Graph-RAG and Iterative Graph-RAG, the root folder, which should contains settings.yaml.')
+    parser.add_argument('--graphrag_method', type=str, default='local', choices=['local', 'global'], help='For Graph-RAG and Iterative Graph-RAG, the method to use, chosen from ["local", "global"].')
+
     # output, result utils
     parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
     parser.add_argument('--no_eval', action='store_true', help='Whether not to evaluate the results, because subjective evaluation usually involves LLM-based judgement.')
@@ -69,6 +72,8 @@ def validate_args(args):
         assert args.vectorstore is not None, "Vectorstore must be specified for Two-stage Neu-RAG or Iterative Neu-RAG agent."
     elif args.agent_method in ['two_stage_sym_rag', 'iterative_sym_rag']:
         assert args.database is not None, "Database must be specified for Two-stage Sym-RAG or Iterative Sym-RAG agent."
+    elif args.agent_method in ['two_stage_graph_rag', 'iterative_graph_rag']:
+        assert args.graphrag_root and os.path.exists(args.graphrag_root) and os.path.isdir(args.graphrag_root), "Graph-RAG root folder must be specified and exist for Two-stage Graph-RAG or Iterative Graph-RAG agent."
     return args
 
 

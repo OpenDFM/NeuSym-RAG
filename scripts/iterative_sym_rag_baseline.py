@@ -23,7 +23,7 @@ env: AgentEnv = infer_env_class(args.agent_method)(
     database=args.database,
     database_path=args.database_path
 )
-agent: AgentBase = infer_agent_class(args.agent_method)(llm, env, agent_method=args.agent_method)
+agent: AgentBase = infer_agent_class(args.agent_method)(llm, env, agent_method=args.agent_method, max_turn=args.max_turn)
 test_data: List[Dict[str, Any]] = load_test_data(args.test_data, args.dataset)
 database_prompt = convert_database_schema_to_prompt(args.database, serialize_method=args.db_format)
 

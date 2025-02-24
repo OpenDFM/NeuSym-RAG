@@ -26,7 +26,7 @@ env: AgentEnv = infer_env_class(args.agent_method)(
     vectorstore_path=args.vectorstore_path,
     docker_uri=args.docker_uri
 )
-agent: AgentBase = infer_agent_class(args.agent_method)(llm, env, agent_method=args.agent_method)
+agent: AgentBase = infer_agent_class(args.agent_method)(llm, env, agent_method=args.agent_method, max_turn=args.max_turn)
 test_data: List[Dict[str, Any]] = load_test_data(args.test_data, args.dataset)
 vectorstore_prompt = convert_vectorstore_schema_to_prompt(args.vectorstore, serialize_method=args.vs_format)
 
