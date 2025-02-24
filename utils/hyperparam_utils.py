@@ -22,8 +22,8 @@ def parse_args():
     parser.add_argument('--vs_format', type=str, choices=['detailed_json'], default='detailed_json', help='Vectorstore schema serialization format. See agents/prompts/schema_prompt.py for details.')
     parser.add_argument('--action_format', type=str, default='markdown', choices=['markdown', 'json', 'xml', 'yaml'], help='Action format for the environment acceptable inputs.')
     parser.add_argument('--output_format', type=str, default='json', choices=['markdown', 'json', 'html', 'string'], help='Output/Observation format of tables for the environment execution results.')
-    parser.add_argument('--agent_method', type=str, default='react', choices=[
-        'trivial_question_only', 'trivial_title_with_abstract', 'trivial_full_text_with_cutoff', 'classic_rag', 'react'
+    parser.add_argument('--agent_method', type=str, default='neusym_rag', choices=[
+        'trivial_question_only', 'trivial_title_with_abstract', 'trivial_full_text_with_cutoff', 'classic_rag', 'two_stage_neu_rag', 'two_stage_sym_rag', 'two_stage_graph_rag', 'two_stage_hybrid_rag', 'iteractive_neu_rag', 'iteractive_sym_rag', 'iteractive_graph_rag', 'neusym_rag'
     ], help='Various agent / baseline method.')
     parser.add_argument('--llm', type=str, default='gpt-4o-mini', help='LLM name to use. See agents/models for all supported LLMs.')
     parser.add_argument('--temperature', type=float, default=0.7, help='Temperature for sampling from the LLM.')
@@ -54,11 +54,21 @@ def validate_args(args):
     """ Validate the argument consistency for different agent methods to ensure consistency.
     """
     if args.agent_method in ['trivial_title_with_abstract', 'trivial_full_text_with_cutoff']:
-        assert args.cutoff > 0, "Cutoff must be greater than 0 for trivial title with abstract and full-text with cutoff agent."
-    elif args.agent_method == 'classic_rag':
-        assert args.table_name is not None and args.column_name is not None, "Table name and column name must be specified for Classic-RAG agent."
-        assert args.collection_name is not None, "Collection name must be specified for Classic-RAG agent."
-        assert args.limit > 0, "Limit must be greater than 0 for Classic-RAG agent."
+        assert args.cutoff > 0, "Cutoff must be greater than 0 for trivial input of title with abstract or full-text with cutoff agent."
+    elif args.agent_method in ['classic_rag', 'iterative_classic_rag']:
+        assert args.vectorstore is not None, "Vectorstore must be specified for Classic-RAG or Iterative Classic-RAG agent."
+        assert args.table_name is not None and args.column_name is not None, "Table name and column name must be specified for Classic-RAG or Iterative Classic-RAG agent."
+        assert args.collection_name is not None, "Collection name must be specified for Classic-RAG or Iterative Classic-RAG agent."
+        assert args.limit > 0, "Limit must be greater than 0 for Classic-RAG or Iterative Classic-RAG agent."
+    elif args.agent_method in ['two_stage_hybrid_rag', 'neusym_rag']:
+        assert args.database or args.vectorstore, "At least database or vectorstore must be specified for Two-stage Hybrid-RAG or NeuSym-RAG agent."
+        if args.vectorstore is None: args.vectorstore = args.database
+        if args.database is None: args.database = args.vectorstore
+        assert args.database == args.vectorstore, f"Database and vectorstore must be the same, but got {args.database} and {args.vectorstore}, respectively."
+    elif args.agent_method in ['two_stage_neu_rag', 'iterative_neu_rag']:
+        assert args.vectorstore is not None, "Vectorstore must be specified for Two-stage Neu-RAG or Iterative Neu-RAG agent."
+    elif args.agent_method in ['two_stage_sym_rag', 'iterative_sym_rag']:
+        assert args.database is not None, "Database must be specified for Two-stage Sym-RAG or Iterative Sym-RAG agent."
     return args
 
 

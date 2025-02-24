@@ -17,7 +17,7 @@ result_dir: str = get_result_folder(args)
 logger: Logger = get_result_logger(result_dir)
 
 llm: LLMClient = infer_model_class(args.llm)(image_limit=args.image_limit, length_limit=args.length_limit)
-env: AgentEnv = infer_agent_class(args.agent_method)(
+env: AgentEnv = infer_env_class(args.agent_method)(
     dataset=args.dataset,
     vectorstore=args.vectorstore,
     database_path=args.database_path,
@@ -25,7 +25,7 @@ env: AgentEnv = infer_agent_class(args.agent_method)(
     vectorstore_path=args.vectorstore_path,
     docker_uri=args.docker_uri
 )
-agent: AgentBase = infer_env_class(args.agent_method)(llm, env, agent_method=args.agent_method)
+agent: AgentBase = infer_agent_class(args.agent_method)(llm, env, agent_method=args.agent_method)
 test_data: List[Dict[str, Any]] = load_test_data(args.test_data, args.dataset)
 
 start_time = datetime.now()
@@ -47,11 +47,11 @@ for data_idx, data in enumerate(test_data):
         logger.error(f"❌❌❌❌❌ -> [{data['uuid']}]: {str(e)}")
     preds.append({'uuid': data['uuid'], 'answer': result})
 
-logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
-
 output_path = os.path.join(result_dir, 'result.jsonl')
 write_jsonl(preds, output_path)
 logger.info(f"{len(preds)} predictions on {args.dataset} saved to {output_path}")
+
+logger.info(f"[Statistics]: Total Cost: {llm.get_cost()} | Total Time: {datetime.now() - start_time} | Total Tokens: prompt {llm._prompt_tokens}, completion {llm._completion_tokens}")
 
 if not args.no_eval:
     result = evaluate(preds, test_data, args.dataset, output_path=os.path.join(result_dir, 'evaluation.txt'))
