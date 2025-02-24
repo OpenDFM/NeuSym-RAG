@@ -11,7 +11,7 @@ def crop_image_count_in_messages(
         messages: List[Dict[str, Any]],
         image_limit: int = 10,
         keep_msg: int = 2,
-        in_place: bool = True
+        in_place: bool = False
 ) -> List[Dict[str, Any]]:
     """ Crop the image count in the messages.
     @param
@@ -23,18 +23,18 @@ def crop_image_count_in_messages(
         the cropped messages.
     """
     image_count = 0
-    if in_place: messages = copy.deepcopy(messages)
+    if not in_place: messages = copy.deepcopy(messages)
 
     # images in the first two messages are maintained in the original order (usually system/task prompt)
-    # for i in range(min(keep_msg, len(messages))):
-    #     if isinstance(messages[i]['content'], list):
-    #         for msg in messages[i]['content']:
-    #             if msg['type'] == 'image_url':
-    #                 image_count += 1
-    #                 if image_count > image_limit:
-    #                     msg['type'] = 'text'
-    #                     if 'image_url' in msg: del msg['image_url']
-    #                     msg['text'] = f'The image stream is omitted due to the incapability of handling >{image_limit} images.'
+    for i in range(min(keep_msg, len(messages))):
+        if isinstance(messages[i]['content'], list):
+            for msg in messages[i]['content']:
+                if msg['type'] == 'image_url':
+                    image_count += 1
+                    if image_count > image_limit:
+                        msg['type'] = 'text'
+                        if 'image_url' in msg: del msg['image_url']
+                        msg['text'] = f'The image stream is omitted due to the incapability of handling >{image_limit} images.'
 
     # images in the rest messages are preserved in the reverse order
     for msg in reversed(messages[keep_msg:]):
@@ -76,29 +76,32 @@ class VLLMClient(LLMClient):
         'llama-3.3-70b-instruct': os.path.join('.cache', 'Llama-3.3-70B-Instruct')
     }
 
-    def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None) -> None:
+    def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None, image_limit: int = 10, length_limit: int = 32, **kwargs) -> None:
         super(VLLMClient, self).__init__()
         if api_key is None:
             api_key = os.environ['VLLM_API_KEY']
         if base_url is None and os.environ.get('VLLM_BASE_URL', None) is not None:
             base_url = os.environ['VLLM_BASE_URL']
         self._client: OpenAI = OpenAI(api_key=api_key, base_url=base_url)
+        self.image_limit, self.length_limit = image_limit, length_limit
+        keys = list(kwargs.keys())
+        if keys: print(f'[WARNING]: Notice that, keyword arguments {keys} will not be used during constructing VLLMClient.')
 
 
-    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: Optional[str] = None, image_limit: int = 10) -> List[Dict[str, str]]:
+    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: Optional[str] = None) -> List[Dict[str, str]]:
         """ For VLLM-deployed open-source models, there are some limitations on:
         1. the input prompt length (e.g., 32k tokens)
         2. the number of images in the prompt (e.g., only one image)
         """
         keep_msg = 2 # one system message and one task message
-        messages = crop_image_count_in_messages(messages, image_limit=image_limit, keep_msg=keep_msg, in_place=True)
+        messages = crop_image_count_in_messages(messages, image_limit=self.image_limit, keep_msg=keep_msg, in_place=False)
 
         if len(messages) > keep_msg:
             model_dir = self.model_path.get(model, self.model_path['qwen2.5-72b-instruct'])
             if not os.path.exists(model_dir) or not os.path.isdir(model_dir):
                 raise FileNotFoundError(f"Tokenizer folder {model_dir} not found.")
             tokenizer = AutoTokenizer.from_pretrained(model_dir)
-            message_max_tokens = tokenizer.model_max_length # by default, qwen2.5-72b-instruct is 32k
+            message_max_tokens = min(self.length_limit * 1000, tokenizer.model_max_length) # by default, qwen2.5-72b-instruct is 32k
 
             truncated_messages = messages[:keep_msg]
             current_tokens = sum(len(tokenizer.encode(str(message))) for message in truncated_messages)
@@ -128,13 +131,13 @@ class VLLMClient(LLMClient):
 
     def _get_response(self,
         messages: List[Dict[str, str]],
-        model: str = 'qwen2-vl-72b-instruct',
+        model: str = 'qwen2.5-vl-72b-instruct',
         temperature: float = 0.7,
         top_p: float = 0.95,
         max_tokens: int = 1500,
         **kwargs
     ) -> str:
-        """ Get the response string from the local model.
+        """ Get the response string from the local model launched using vLLM.
         """
         if model.lower().startswith('deepseek'):
             messages, temperature = deepseek_fixup(messages, temperature)

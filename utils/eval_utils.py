@@ -12,6 +12,31 @@ from agents.models import get_llm_single_instance
 from utils.functions.common_functions import is_valid_uuid
 
 
+def load_jsonl(fp: str) -> List[Dict[str, Any]]:
+    with open(fp, 'r', encoding='utf8') as f:
+        data = [json.loads(line) for line in f if line.strip()]
+    return data
+
+
+def write_jsonl(data: List[Dict[str, Any]], file_path: str) -> None:
+    with open(file_path, 'w', encoding='utf8') as f:
+        for line in data:
+            f.write(json.dumps(line, ensure_ascii=False) + '\n')
+    return
+
+
+def load_test_data(test_data: str, dataset: str = 'ariqa') -> List[Dict[str, Any]]:
+    examples = []
+    if os.path.exists(test_data) and os.path.isfile(test_data):
+        test_data_path = test_data
+    else:
+        test_data_path = os.path.join('data', 'dataset', dataset, test_data)
+        if not os.path.exists(test_data_path):
+            raise ValueError('[ERROR]: Filepath for test data {} not found.'.format(test_data_path))
+    examples = load_jsonl(test_data_path)
+    return examples
+
+
 def evaluate_dataset(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs) -> float:
     """ Given the dataset name and question type, evaluate whether the predicted answer is consistent with the gold data (only comparing one data point).
     @args:

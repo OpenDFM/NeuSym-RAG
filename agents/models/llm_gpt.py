@@ -33,16 +33,18 @@ GPT_PRICES = OD([
 
 class GPTClient(LLMClient):
 
-    def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None) -> None:
+    def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None, **kwargs) -> None:
         super(GPTClient, self).__init__()
         if api_key is None:
             api_key = os.environ['OPENAI_API_KEY']
         if base_url is None and os.environ.get('OPENAI_BASE_URL', None) is not None:
             base_url = os.environ['OPENAI_BASE_URL']
         self._client: OpenAI = OpenAI(api_key=api_key, base_url=base_url)
+        keys = list(kwargs.keys())
+        if keys: print(f'[WARNING]: Notice that, keyword arguments {keys} will not be used during constructing GPTClient.')
 
 
-    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: Optional[str] = None, image_limit: int = 10) -> List[Dict[str, str]]:
+    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: Optional[str] = None) -> List[Dict[str, str]]:
         """ Preserve the original GPT-style message format.
         """
         return messages
