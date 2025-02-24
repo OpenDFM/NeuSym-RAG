@@ -33,19 +33,15 @@ Under each database folder, it at least contains the following three files:
     python utils/database_utils.py --database ai_research --config_path configs/ai_research_config.json --pdf_path data/dataset/airqa/used_uuids_100.json --from_scratch --on_conflict ignore
     ```
 - Parallel summary pre-processing
-    In the population pipeline, we constantly send http requests to LLM for summarying, which is time-consuming. Here, we propose summarying in a batch manner, especially when you have a large number of papers to populate.
+    In the population pipeline, we constantly send http requests to LLM for summarizing, which is time-consuming. Here, we propose summarizing in a batch manner, especially when you have a large number of papers to populate.
     ```sh
-    python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/some_uuids.json --config_path configs/ai_research_pw_config.json
-    python utils/functions/parallel_functions.py --function batch --input data/dataset/airqa/parallel/text_output.jsonl --output data/dataset/airqa/parallel/text_batch.jsonl --model qwen2.5-72b-instruct
-    python utils/functions/parallel_functions.py --function batch --input data/dataset/airqa/parallel/image_output.jsonl --output data/dataset/airqa/parallel/image_batch.jsonl --model qwen2-vl-72b-instruct
+    python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/some_uuids.json --config_path configs/ai_research_pe_config.json # `some_uuids.json` contains a list of UUIDs of PDFs to be processed
     ```
-    This will generate two OpenAI Batch API like input files, see [OpenAI official documents](https://platform.openai.com/docs/guides/batch) for more details.
-    You can process the summary in parallel, supposing you've already got `text_results.jsonl` and `image_results.jsonl` respectively.
+    This will generate two OpenAI Batch API like extraction files, `text_batch.jsonl` and `image_batch.jsonl`, see [OpenAI official documents](https://platform.openai.com/docs/guides/batch) for more details. Note that you can change the path to the files by modifying `ai_research_pe_config.json`, see [Database Content Population](#database-content-population) for more details.
+    
+    You can process the summary in parallel by feeding the two extraction files to any LLM that supports batch inference. Supposing you've already got the result files `text_results.jsonl` and `image_results.jsonl` respectively. You can now populate the database by executing:
     ```sh
-    python utils/functions/parallel_functions.py --function unbatch --input data/dataset/airqa/parallel/text_results.jsonl --output data/dataset/airqa/parallel/text_input.json
-    python utils/functions/parallel_functions.py --function unbatch --input data/dataset/airqa/parallel/image_results.jsonl --output data/dataset/airqa/parallel/image_input.json
-    python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/some_uuids.json --config_path configs/ai_research_pc_config.json # Optional, check whether the summaries are all generated.
-    python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/some_uuids.json --config_path configs/ai_research_pr_config.json
+    python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/some_uuids.json --config_path configs/ai_research_pf_config.json
     ```
     The whole population process is therefore finished.
 

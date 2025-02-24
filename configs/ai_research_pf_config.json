@@ -5,6 +5,26 @@
     },
     "pipeline": [
         {
+            "function": "parallel_batch_to_dict",
+            "args": {
+                "deps": [],
+                "kwargs": {
+                    "input_path": "data/dataset/airqa/parallel/text_results.jsonl",
+                    "output_path": "data/dataset/airqa/parallel/text_fill.json"
+                }
+            }
+        },
+        {
+            "function": "parallel_batch_to_dict",
+            "args": {
+                "deps": [],
+                "kwargs": {
+                    "input_path": "data/dataset/airqa/parallel/image_results.jsonl",
+                    "output_path": "data/dataset/airqa/parallel/image_fill.json"
+                }
+            }
+        },
+        {
             "function": "get_ai_research_metadata",
             "args": {
                 "deps": [
@@ -20,7 +40,7 @@
                     "tldr_max_length": 80,
                     "tag_number": 5,
                     "parallel": {
-                        "read": "data/dataset/airqa/parallel/text_input.json"
+                        "fill": "data/dataset/airqa/parallel/text_fill.json"
                     }
                 }
             }
@@ -50,7 +70,7 @@
                     "temperature": 0.1,
                     "top_p": 0.95,
                     "parallel": {
-                        "read": "data/dataset/airqa/parallel/text_input.json"
+                        "fill": "data/dataset/airqa/parallel/text_fill.json"
                     }
                 }
             }
@@ -81,7 +101,7 @@
                     "temperature": 0.1,
                     "top_p": 0.95,
                     "parallel": {
-                        "read": "data/dataset/airqa/parallel/text_input.json"
+                        "fill": "data/dataset/airqa/parallel/text_fill.json"
                     }
                 }
             }
@@ -99,7 +119,7 @@
                     "temperature": 0.1,
                     "top_p": 0.95,
                     "parallel": {
-                        "read": "data/dataset/airqa/parallel/text_input.json"
+                        "fill": "data/dataset/airqa/parallel/text_fill.json"
                     }
                 }
             }
@@ -117,7 +137,7 @@
                     "temperature": 0.1,
                     "top_p": 0.95,
                     "parallel": {
-                        "read": "data/dataset/airqa/parallel/image_input.json"
+                        "fill": "data/dataset/airqa/parallel/image_fill.json"
                     }
                 }
             }

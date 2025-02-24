@@ -34,6 +34,11 @@ from .ai_research_metadata import (
     aggregate_ai_research_metadata
 )
 
+from .parallel_functions import (
+    parallel_message_to_batch,
+    parallel_batch_to_dict
+)
+
 from .test_domain import (
     aggregate_test_domain_table_pdf_meta,
     aggregate_test_domain_table_pdf_pages

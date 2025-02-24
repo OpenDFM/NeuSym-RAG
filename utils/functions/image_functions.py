@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 import base64, os
 
 from utils.functions.common_functions import call_llm
-from utils.functions.parallel_functions import parallel_write_or_read
+from utils.functions.parallel_functions import parallel_extract_or_fill
 
 def draw_image_with_bbox(
         image_path: str,
@@ -164,7 +164,7 @@ def get_image_summary(
     
     image_message = get_image_message(image_template, image_path=image_path)
     if kwargs.get("parallel"):
-        summary = parallel_write_or_read(
+        summary = parallel_extract_or_fill(
             template=system_template, 
             image=image_message,
             **kwargs
