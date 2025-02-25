@@ -1,14 +1,14 @@
 #coding=utf8
 
-TRIVIAL_PROMPT = """ {system_prompt}
+
+CLASSIC_RAG_AGENT_PROMPT = """{system_prompt}
 
 --------
 
 Here is the task input:
 
-[Question]: {question}
-[Retrieved Context]: {context}
-[Answer Format]: {answer_format}
+{task_input}
+{context}
 
 You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER WITH REQUIRED FORMAT IN THREE BACKTICKS):
 
@@ -16,23 +16,7 @@ You can firstly give your reasoning process, followed by the final answer in the
 """
 
 
-CLASSIC_RAG_PROMPT = """ {system_prompt}
-
---------
-
-Here is the task input:
-
-[Question]: {question}
-[Retrieved Context]: {context}
-[Answer Format]: {answer_format}
-
-You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER WITH REQUIRED FORMAT IN THREE BACKTICKS):
-
-```txt\nfinal answer\n```
-"""
-
-
-REACT_PROMPT = """{system_prompt}
+ITERATIVE_RAG_AGENT_PROMPT = """{system_prompt}
 
 --------
 
@@ -66,7 +50,7 @@ Remember that, for each question, you only have {max_turn} interaction turns at 
 """
 
 
-TWO_STAGE_TEXT2SQL_PROMPT = [
+TWO_STAGE_SYM_RAG_AGENT_PROMPT = [
 """{system_prompt}
 
 --------
@@ -103,7 +87,7 @@ Here is your response:
 ]
 
 
-TWO_STAGE_TEXT2VEC_PROMPT = [
+TWO_STAGE_NEU_RAG_AGENT_PROMPT = [
 """{system_prompt}
 
 --------
@@ -147,7 +131,8 @@ Here is your response:
 """
 ]
 
-TWO_STAGE_HYBRID_PROMPT = """{system_prompt}
+
+TWO_STAGE_HYBRID_RAG_AGENT_PROMPT = """{system_prompt}
 
 --------
 
@@ -173,35 +158,4 @@ You can firstly give your reasoning process, followed by the `RetrieveFromVector
 Note that you can ONLY predict one action.
 
 Here is your response:
-"""
-
-QUESTION_ONLY_PROMPT = """{system_prompt}
-
---------
-
-Here is the task input:
-
-[Question]: {question}
-[Anchor PDFs]: {anchor_pdf}
-[Reference PDFs]: {reference_pdf}
-[Answer Format]: {answer_format}
-
-You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER WITH REQUIRED FORMAT IN THREE BACKTICKS):
-
-```txt\nfinal answer\n```
-"""
-
-TITLE_ABSTRACT_PROMPT = """{system_prompt}
-
---------
-
-Here is the task input:
-
-[Question]: {question}
-[Answer Format]: {answer_format}
-{context}
-
-You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER WITH REQUIRED FORMAT IN THREE BACKTICKS):
-
-```txt\nfinal answer\n```
 """

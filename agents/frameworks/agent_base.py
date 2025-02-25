@@ -17,7 +17,7 @@ class AgentBase(ABC):
     def __init__(self, model: LLMClient, env: AgentEnv, agent_method: Optional[str] = None, max_turn: int = 10):
         self.model, self.env = model, env
         self.agent_method, self.max_turn = agent_method, max_turn
-        self.agent_prompt = ''
+        self.agent_prompt, self.system_prompt = '', ''
 
 
     def close(self):

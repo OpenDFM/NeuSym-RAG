@@ -41,7 +41,7 @@ class IterativeClassicRAGAgent(AgentBase):
                  output_kwargs: Dict[str, Any] = {}
     ) -> str:
         # construct the initial prompt messages
-        task_prompt, image_messages = formulate_input(dataset, example, use_pdf_id=True)
+        task_prompt, image_messages = formulate_input(dataset, example, use_pdf_id=False)
         logger.info(f'[Task Input]: {task_prompt}')
 
         if image_messages:
@@ -50,11 +50,20 @@ class IterativeClassicRAGAgent(AgentBase):
             {'role': 'system', 'content': self.agent_prompt},
             {'role': 'user', 'content': task_prompt}
         ]
-
+        
+        filter_condition = ""
+        if len(example['anchor_pdf']) == 1:
+            pdf_string = repr(example['anchor_pdf'][0])
+            filter_condition = f"pdf_id == '{pdf_string}'"
+        elif len(example['anchor_pdf']) > 1:
+            pdf_string = ', '.join([repr(pid) for pid in example['anchor_pdf']])
+            filter_condition = f"pdf_id in [{pdf_string}]"
+        assert collection_name in self.env.vectorstore_conn.list_collections(), f'Collection {collection_name} not found in the vectorstore connection.'
         ClassicRetrieve.set_default(
             collection_name=collection_name,
             table_name=table_name,
-            column_name=column_name
+            column_name=column_name,
+            filter=filter_condition
         )
 
         return self.forward(

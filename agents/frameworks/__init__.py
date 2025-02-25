@@ -1,8 +1,6 @@
 #coding=utf8
 from agents.frameworks.agent_base import AgentBase, truncate_tokens
 from agents.frameworks.trivial_baseline import TrivialBaselineAgent
-# from agents.frameworks.question_only import QuestionOnlyAgent
-# from agents.frameworks.title_abstract import TitleAbstractAgent
 from agents.frameworks.classic_rag_agent import ClassicRAGAgent
 from agents.frameworks.iterative_classic_rag_agent import IterativeClassicRAGAgent
 from agents.frameworks.two_stage_sym_rag_agent import TwoStageSymRAGAgent
