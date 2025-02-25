@@ -33,17 +33,22 @@ Under each database folder, it at least contains the following three files:
     python utils/database_utils.py --database ai_research --config_path configs/ai_research_config.json --pdf_path data/dataset/airqa/used_uuids_100.json --from_scratch --on_conflict ignore
     ```
 - Parallel summary pre-processing
-    In the population pipeline, we constantly send http requests to LLM for summarizing, which is time-consuming. Here, we propose summarizing in a batch manner, especially when you have a large number of papers to populate.
+    In the population pipeline, we constantly send http requests to LLM for summarizing, which is time-consuming. Here, we propose summarizing in a batch manner, especially when you have a large number of papers to populate. Before this, you should get all metadata, parse all the PDFs with [MinerU](third_party_tools.md#mineru), and put the whole MinerU result folder under `processed_data` of the corresponding dataset.
     ```sh
     python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/some_uuids.json --config_path configs/ai_research_pe_config.json # `some_uuids.json` contains a list of UUIDs of PDFs to be processed
     ```
     This will generate two OpenAI Batch API like extraction files, `text_batch.jsonl` and `image_batch.jsonl`, see [OpenAI official documents](https://platform.openai.com/docs/guides/batch) for more details. Note that you can change the path to the files by modifying `ai_research_pe_config.json`, see [Database Content Population](#database-content-population) for more details.
     
-    You can process the summary in parallel by feeding the two extraction files to any LLM that supports batch inference. Supposing you've already got the result files `text_results.jsonl` and `image_results.jsonl` respectively. You can now populate the database by executing:
+    You can process the summary in parallel by feeding the two extraction files to any LLM that supports batch inference. Supposing you've already got the result files `text_results.jsonl` and `image_results.jsonl` respectively. 
     ```sh
     python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/some_uuids.json --config_path configs/ai_research_pf_config.json
     ```
+    This will fill all the summaries into `processed_data`. You can now populate the database by executing:
+    ```sh
+    python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/some_uuids.json --config_path configs/ai_research_config.json
+    ```
     The whole population process is therefore finished.
+    Note that, `ai_research_pe_config.json` and `ai_research_pf_config.json` should be used under the same environment, and the `ai_researh_config.json` should be used under an environment where LLMs are accessible.
 
 
 ## Database Schema File

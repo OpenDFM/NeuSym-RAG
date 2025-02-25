@@ -9,10 +9,8 @@
                 "kwargs": {
                     "tldr_max_length": 80,
                     "tag_number": 5,
-                    "dataset_dir": "data/dataset/scidqa",
                     "parallel": {
-                        "read": "data/dataset/scidqa/parallel/text_input.json",
-                        "write": "data/dataset/scidqa/parallel/additional_text_output.jsonl"
+                        "extract": "data/dataset/spiqa/parallel/text_extract.jsonl"
                     }
                 }
             }
@@ -24,7 +22,7 @@
                     "get_ai_research_metadata"
                 ],
                 "kwargs": {
-                    "processed_data_folder": "data/dataset/scidqa/processed_data",
+                    "processed_data_folder": "data/dataset/spiqa/processed_data",
                     "TOC_threshold": 0.9
                 }
             }
@@ -39,8 +37,7 @@
                 "kwargs": {
                     "max_length": 50,
                     "parallel": {
-                        "read": "data/dataset/scidqa/parallel/text_input.json",
-                        "write": "data/dataset/scidqa/parallel/additional_text_output.jsonl"
+                        "extract": "data/dataset/spiqa/parallel/text_extract.jsonl"
                     }
                 }
             }
@@ -55,8 +52,7 @@
                 "kwargs": {
                     "max_length": 50,
                     "parallel": {
-                        "read": "data/dataset/scidqa/parallel/text_input.json",
-                        "write": "data/dataset/scidqa/parallel/additional_text_output.jsonl"
+                        "extract": "data/dataset/spiqa/parallel/text_extract.jsonl"
                     }
                 }
             }
@@ -71,8 +67,7 @@
                 "kwargs": {
                     "max_length": 50,
                     "parallel": {
-                        "read": "data/dataset/scidqa/parallel/text_input.json",
-                        "write": "data/dataset/scidqa/parallel/additional_text_output.jsonl"
+                        "extract": "data/dataset/spiqa/parallel/text_extract.jsonl"
                     }
                 }
             }
@@ -87,9 +82,30 @@
                 "kwargs": {
                     "max_length": 50,
                     "parallel": {
-                        "read": "data/dataset/scidqa/parallel/image_input.json",
-                        "write": "data/dataset/scidqa/parallel/additional_image_output.jsonl"
+                        "extract": "data/dataset/spiqa/parallel/image_extract.jsonl"
                     }
+                }
+            }
+        },
+        {
+            "function": "parallel_message_to_batch",
+            "args": {
+                "deps": [],
+                "kwargs": {
+                    "input_path": "data/dataset/spiqa/parallel/text_extract.jsonl",
+                    "output_path": "data/dataset/spiqa/parallel/text_batch.jsonl",
+                    "model": "qwen2.5-72b-instruct"
+                }
+            }
+        },
+        {
+            "function": "parallel_message_to_batch",
+            "args": {
+                "deps": [],
+                "kwargs": {
+                    "input_path": "data/dataset/spiqa/parallel/image_extract.jsonl",
+                    "output_path": "data/dataset/spiqa/parallel/image_batch.jsonl",
+                    "model": "qwen2-vl-72b-instruct"
                 }
             }
         }

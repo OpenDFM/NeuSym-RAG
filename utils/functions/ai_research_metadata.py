@@ -311,8 +311,8 @@ def infer_paper_tldr_from_metadata(
     template = f"""You are an expert in academic papers. Your task is to write a TL;DR (Too Long; Didn't Read) summary for a research paper based on its title and abstract. The TL;DR should:\n1. Be concise and within {max_length} characters.\n2. Capture the main focus or contribution of the paper.\n3. Be written in a single line without extra formatting or context.\n\nHere are the title and abstract of the paper.\nTitle: {pdf_title}\nAbstract: {pdf_abstract}\n\nYour response is:"""
     if kwargs.get("parallel"):
         tldr = parallel_extract_or_fill(template, **kwargs).strip()
-        if tldr is not None: return tldr
-    tldr = call_llm(template, model=model, temperature=temperature, top_p=top_p).strip()
+    else:
+        tldr = call_llm(template, model=model, temperature=temperature, top_p=top_p).strip()
     return tldr
 
 
@@ -332,7 +332,7 @@ def infer_paper_tags_from_metadata(
     tags = None
     if kwargs.get("parallel"):
         tags = parallel_extract_or_fill(template, **kwargs).strip()
-    if tags is None:
+    else:
         tags = call_llm(template, model=model, temperature=temperature, top_p=top_p, **kwargs).strip()
     tag_list = [tag.strip() for tag in tags.split(',') if tag.strip()]
     return tag_list
