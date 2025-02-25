@@ -74,7 +74,7 @@ class ClassicRAGAgent(AgentBase):
             {'role': 'user', 'content': task_prompt}
         ]
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
-        answer = Action.extract_thought_and_action_text(response, interact_protocol=self.env.interact_protocol)
+        _, answer = Action.extract_thought_and_action_text(response, interact_protocol=self.env.interact_protocol)
         logger.info(f'[Response]: {response}')
         logger.info(f'[Answer]: {answer}')
 

@@ -38,7 +38,7 @@ for data_idx, data in enumerate(test_data):
         result = agent.interact(
             args.dataset, data, database_prompt,
             model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, 
-            output_path=output_path
+            output_kwargs={'output_format': args.output_format}, output_path=output_path
         )
         logger.info(f"✅✅✅✅✅ -> [{data['uuid']}]: {result}")
     except Exception as e:

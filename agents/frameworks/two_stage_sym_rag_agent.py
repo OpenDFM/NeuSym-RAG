@@ -2,7 +2,7 @@
 import logging, sys, os, re
 from typing import List, Dict, Any, Union, Tuple, Optional
 from agents.envs import AgentEnv
-from agents.envs.actions import RetrieveFromDatabase
+from agents.envs.actions import RetrieveFromDatabase, Action, Observation
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS
 from agents.prompts.task_prompt import formulate_input
@@ -11,10 +11,17 @@ from agents.frameworks.agent_base import AgentBase
 
 logger = logging.getLogger()
 
+
 class TwoStageSymRAGAgent(AgentBase):
 
-    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'two_stage_text2sql', max_turn: int = 2) -> None:
+    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'two_stage_sym_rag', max_turn: int = 2) -> None:
         super(TwoStageSymRAGAgent, self).__init__(model, env, agent_method, max_turn)
+        self.system_prompt = SYSTEM_PROMPTS[agent_method]
+        self.agent_prompt = AGENT_PROMPTS[agent_method]
+        logger.info(f'[System Prompt]: stage 1 -> {self.system_prompt[0]}')
+        logger.info(f'[System Prompt]: stage 2 -> {self.system_prompt[1]}')
+        logger.info(f'[Agent Prompt]: stage 1 -> {self.agent_prompt[0]}')
+        logger.info(f'[Agent Prompt]: stage 2 -> {self.agent_prompt[1]}')
 
 
     def interact(self,
@@ -25,59 +32,45 @@ class TwoStageSymRAGAgent(AgentBase):
                  temperature: float = 0.7,
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
-                 image_limit: int = 10,
+                 output_kwargs: Dict[str, Any] = {},
                  **kwargs
     ) -> str:
-        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, image_limit=image_limit)
-        logger.info(f'[Question]: {question}')
-        logger.info(f'[Answer Format]: {answer_format}')
-        prev_cost = self.model.get_cost()
         self.env.reset()
+        prev_cost = self.model.get_cost()
 
-        # 1. Generate SQL
-        prompt = AGENT_PROMPTS[self.agent_method][0].format(
-            system_prompt = SYSTEM_PROMPTS['two_stage_text2sql'][0],
-            question = question,
-            pdf_context = pdf_context,
-            database_schema = database_prompt
-        ) # system prompt + task prompt + cot thought hints
-        logger.info('[Stage]: Generate SQL ...')
-        messages = [{'role': 'user', 'content': prompt}]
-        if image_message is not None:
-            messages.append(image_message)
-        response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
+        # [Stage 1]: Generate SQL
+        logger.info('[Stage 1]: Generate SQL ...')
+        task_input, image_messages = formulate_input(dataset, example, use_pdf_id=True)
+        logger.info(f'[Task Input]: {task_input}')
+        task_input += f"\n[Database Schema]: {database_prompt}"
+        task_prompt = self.agent_prompt[0].format(
+            system_prompt=self.system_prompt[0],
+            task_input=task_input
+        )
+        if image_messages:
+            task_prompt = [{'type': 'text', 'text': task_prompt}] + image_messages
+        messages = [{'role': 'user', 'content': task_prompt}]
+        response = self.model.get_response(messages, model, temperature, top_p, max_tokens)
         logger.info(f'[Response]: {response}')
-        matched_list = re.findall(r"```(sql)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
-        if not matched_list:
-            sql = response.strip()
-        else:
-            sql = matched_list[-1][1].strip()
-            logger.info(f'[ParsedSQL]: {sql}')
+        _, sql = Action.extract_thought_and_action_text(response, self.env.interact_protocol)
+        logger.info(f'[Parsed SQL]: {sql}')
 
-        # 2. Answer question
+        # [Stage 2]: Answer question
+        logger.info(f'[Stage 2]: Generate Answer ...')
         action = RetrieveFromDatabase(sql=sql)
-        observation = action.execute(self.env)
-        prompt = AGENT_PROMPTS[self.agent_method][1].format(
-            system_prompt = SYSTEM_PROMPTS['two_stage_text2sql'][1],
-            question = question,
-            pdf_context = pdf_context,
-            sql = sql,
-            context = observation.obs_content,
-            answer_format = answer_format
-        ) # system prompt (without schema) + task prompt (insert SQL, observation) + cot thought hints
-        logger.info(f'[Stage]: Generate Answer ...')
-        messages = [{'role': 'user', 'content': prompt}]
-        if image_message is not None:
-            messages.append(image_message)
-        response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
+        observation: Observation = action.execute(self.env, **output_kwargs)
+        task_input, _ = formulate_input(dataset, example, use_pdf_id=False)
+        task_prompt = self.agent_prompt[1].format(
+            system_prompt=self.system_prompt[1],
+            task_input=task_input,
+            context=f"[Context]: {observation.obs_content}"
+        )
+        messages = [{'role': 'user', 'content': task_prompt}]
+        response = self.model.get_response(messages, model, temperature, top_p, max_tokens)
         logger.info(f'[Response]: {response}')
-        matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
-        if not matched_list:
-            answer = response.strip()
-        else:
-            answer = matched_list[-1][1].strip()
+        _, answer = Action.extract_thought_and_action_text(response, self.env.interact_protocol)
         logger.info(f'[Answer]: {answer}')
-        
+
         cost = self.model.get_cost() - prev_cost
-        logger.info(f'[Info]: LLM API call costs ${cost:.6f}.')
+        logger.info(f'[Cost]: LLM API call costs ${cost:.6f}.')
         return answer

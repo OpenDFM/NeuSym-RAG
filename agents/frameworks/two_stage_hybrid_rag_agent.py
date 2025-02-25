@@ -11,10 +11,17 @@ from agents.frameworks.agent_base import AgentBase
 
 logger = logging.getLogger()
 
+
 class TwoStageHybridRAGAgent(AgentBase):
 
-    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'two_stage_hybrid', max_turn: int = 2) -> None:
+    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'two_stage_hybrid_rag', max_turn: int = 2) -> None:
         super(TwoStageHybridRAGAgent, self).__init__(model, env, agent_method, max_turn)
+        self.system_prompt = SYSTEM_PROMPTS[agent_method]
+        self.agent_prompt = AGENT_PROMPTS[agent_method]
+        logger.info(f'[System Prompt]: stage 1 -> {self.system_prompt[0]}')
+        logger.info(f'[System Prompt]: stage 2 -> {self.system_prompt[1]}')
+        logger.info(f'[Agent Prompt]: stage 1 -> {self.agent_prompt[0]}')
+        logger.info(f'[Agent Prompt]: stage 2 -> {self.agent_prompt[1]}')
 
 
     def interact(self,
@@ -26,67 +33,59 @@ class TwoStageHybridRAGAgent(AgentBase):
                  temperature: float = 0.7,
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
-                 image_limit: int = 10,
+                 output_kwargs: Dict[str, Any] = {},
                  **kwargs
     ) -> str:
-        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, image_limit=image_limit)
-        logger.info(f'[Question]: {question}')
-        logger.info(f'[Answer Format]: {answer_format}')
-        prev_cost = self.model.get_cost()
         self.env.reset()
+        prev_cost = self.model.get_cost()
 
-        # 1. Generate Action
-        action_prompt = f"Action 1:\n{RetrieveFromVectorstore.specification(action_format='json')}\nAction 2:\n{RetrieveFromDatabase.specification()}\n"
-        prompt = AGENT_PROMPTS[self.agent_method].format(
-            system_prompt = SYSTEM_PROMPTS[self.agent_method],
-            action_prompt = action_prompt,
-            question = question,
-            pdf_context = pdf_context,
-            database_schema = database_prompt,
-            vectorstore_schema = vectorstore_prompt
-        ) # system prompt + task prompt + cot thought hints
-        logger.info('[Stage 1]: Generate Action ...')
-        messages = [{'role': 'user', 'content': prompt}]
-        if image_message is not None:
-            messages.append(image_message)
-        response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
+        # [Stage 1]: Generate RetriveFromVectorstore / RetrieveFromDatabase action
+        logger.info('[Stage 1]: Generate RetriveFromVectorstore / RetrieveFromDatabase action ...')
+        task_input, image_messages = formulate_input(dataset, example, use_pdf_id=True)
+        logger.info(f'[Task Input]: {task_input}')
+        task_input = "\n".join([
+            task_input,
+            f"[Database Schema]: {database_prompt}",
+            f"[Vectorstore Schema]: {vectorstore_prompt}"
+        ])
+        action_space_prompt = Action.get_action_space_prompt(
+            action_types=[RetrieveFromDatabase, RetrieveFromVectorstore],
+            action_format=self.env.action_format,
+            interact_protocol=self.env.interact_protocol
+        )
+        task_prompt = self.agent_prompt[0].format(
+            system_prompt=self.system_prompt[0],
+            action_space_prompt=action_space_prompt,
+            task_input=task_input
+        )
+        if image_messages:
+            task_prompt = [{'type': 'text', 'text': task_prompt}] + image_messages
+        messages = [{'role': 'user', 'content': task_prompt}]
+        response = self.model.get_response(messages, model, temperature, top_p, max_tokens)
         logger.info(f'[Response]: {response}')
-        _, action = Action.parse_action(response, action_types=[RetrieveFromVectorstore, RetrieveFromDatabase], action_format='json', agent_method='code_block')
+        _, action = Action.parse_action(
+            response,
+            action_types=[RetrieveFromDatabase, RetrieveFromVectorstore],
+            action_format=self.env.action_format,
+            agent_method=self.env.interact_protocol
+        )
         logger.info(f'[Action]: {repr(action)}')
-        
-        # 2. Answer question
-        observation: Observation = action.execute(self.env)
-        if isinstance(action, RetrieveFromDatabase):
-            sql = action.sql
-            prompt = AGENT_PROMPTS['two_stage_text2sql'][1].format(
-                system_prompt = SYSTEM_PROMPTS['two_stage_text2sql'][1],
-                question = question,
-                pdf_context = pdf_context,
-                sql = sql,
-                context = observation.obs_content,
-                answer_format = answer_format
-            ) # system prompt (without schema) + task prompt (insert SQL, observation) + cot thought hints
-        else:
-            prompt = AGENT_PROMPTS['two_stage_text2vec'][1].format(
-                system_prompt = SYSTEM_PROMPTS['two_stage_text2vec'][1],
-                question = question,
-                pdf_context = pdf_context,
-                context = observation.obs_content,
-                answer_format = answer_format
-            ) # system prompt + task prompt (insert retrived observation) + cot thought hints
+
+        # [Stage 2]: Answer question
         logger.info(f'[Stage 2]: Generate Answer ...')
-        messages = [{'role': 'user', 'content': prompt}]
-        if image_message is not None:
-            messages.append(image_message)
-        response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
+        observation: Observation = action.execute(self.env, **output_kwargs)
+        task_input, _ = formulate_input(dataset, example, use_pdf_id=False)
+        task_prompt = self.agent_prompt[1].format(
+            system_prompt=self.system_prompt[1],
+            task_input=task_input,
+            context=f"[Context]: {observation.obs_content}"
+        )
+        messages = [{'role': 'user', 'content': task_prompt}]
+        response = self.model.get_response(messages, model, temperature, top_p, max_tokens)
         logger.info(f'[Response]: {response}')
-        matched_list = re.findall(r"```(txt)?\s*(.*?)\s*```", response.strip(), flags=re.DOTALL)
-        if not matched_list:
-            answer = response.strip()
-        else:
-            answer = matched_list[-1][1].strip()
+        _, answer = Action.extract_thought_and_action_text(response, self.env.interact_protocol)
         logger.info(f'[Answer]: {answer}')
-        
+
         cost = self.model.get_cost() - prev_cost
-        logger.info(f'[Info]: LLM API call costs ${cost:.6f}.')
+        logger.info(f'[Cost]: LLM API call costs ${cost:.6f}.')
         return answer

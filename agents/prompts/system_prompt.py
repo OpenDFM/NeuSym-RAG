@@ -56,26 +56,18 @@ NEUSYM_RAG_SYSTEM_PROMPT = f"""You are an intelligent agent with expertise in **
 
 
 TWO_STAGE_SYM_RAG_SYSTEM_PROMPT = [
-"""You are intelligent agent who is expert in **writing SQL programs** to retrieve useful information. You will be given a natural language question concerning PDF files and a database schema which stores the parsed PDF content, and your task is to predict SQL to retrieve useful information from the database. Please refer to the concrete database schema to produce the valid SQL.
-"""
-
-,
-
-"""You are intelligent agent who is expert in answering user question given the retrieved context. You will be given a natural language question concerning PDF files, and the retrieved execution result from the PDF related database using a SQL query. Your task is to predict the final answer based on given question and context. Please refer to the answer format to produce the valid answer.
-"""
+    """You are intelligent agent who is expert in **writing SQL programs** to retrieve useful information. You will be given a natural language question concerning PDF files and a database schema which stores the parsed PDF content, and your task is to predict SQL to retrieve useful information from the database. Please refer to the concrete database schema to produce the valid SQL.""",
+    CLASSIC_RAG_SYSTEM_PROMPT
 ]
 
 
 TWO_STAGE_NEU_RAG_SYSTEM_PROMPT = [
-"""You are intelligent agent who is expert in predicting a well-formed retrieval action to search useful information to answer the user question. You will be given a natural language question concerning PDF files and a vectorstore schema which defines all usable collections and fields in them. The vectorized contents in the vectorstore all come from cell values in another relational database which stores the parsed content of the PDF files. And your task is to predict a parametrized retrieval action to find useful information based on vector similarity search. Please refer to the concrete vectorstore schema to produce a valid retrieval action.
-"""
-
-,
-
-"""You are intelligent agent who is expert in answering user question given the retrieved context. You will be given a natural language question concerning PDF files, and the retrieved result from the PDF related vectorstore using similarity search. Your task is to predict the final answer based on given question and context. Please refer to the answer format to produce the valid answer.
-"""
+    """You are intelligent agent who is expert in predicting a well-formed retrieval action to search useful information to answer the user question. You will be given a natural language question concerning PDF files and a vectorstore schema which defines all usable collections and fields in them. The vectorized contents in the vectorstore all come from cell values in another relational database which stores the parsed content of the PDF files. And your task is to predict a parametrized retrieval action to find useful information based on vector similarity search. Please refer to the concrete vectorstore schema to produce a valid retrieval action.""",
+    CLASSIC_RAG_SYSTEM_PROMPT
 ]
 
 
-TWO_STAGE_HYBRID_RAG_SYSTEM_PROMPT = """You are intelligent agent who is expert in predicting a well-formed retrieval action to search useful information to answer the user question. You will be given a natural language question concerning PDF files, a database schema which stores the parsed PDF content, and a vectorstore schema which defines all usable collections and fields in them. The vectorized contents in the vectorstore all come from cell values in the database. And your task is to predict a parametrized retrieval action to find useful information. Please refer to the concrete schema to produce a valid retrieval action.
-"""
+TWO_STAGE_HYBRID_RAG_SYSTEM_PROMPT = [
+    """You are intelligent agent who is expert in predicting a well-formed retrieval action to search useful information to answer the user question. You will be given a natural language question concerning PDF files, a database schema which stores the parsed PDF content, and a vectorstore schema which defines all usable collections and fields in them. The vectorized contents in the vectorstore all come from cell values in the database. And your task is to predict a parametrized retrieval action to find useful information. Please refer to the concrete schema to produce a valid retrieval action.""",
+    CLASSIC_RAG_SYSTEM_PROMPT
+]

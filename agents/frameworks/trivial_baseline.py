@@ -29,14 +29,20 @@ class TrivialBaselineAgent(AgentBase):
         logger.info(f"[Agent Prompt]: {self.agent_prompt}")
 
 
-    def get_pdf_content(self, idx: str) -> str:
-        processed_data_dirname = os.path.join('data', 'dataset', self.env.dataset, 'processed_data')
-        for filename in os.listdir(processed_data_dirname):
-            if filename == f'{idx}.json':
-                with open(os.path.join(processed_data_dirname, filename), 'r', encoding='utf-8') as fin:
-                    processed_data = json.load(fin)
-                return re.sub(r'\n+', '\n', '\n'.join(toc['title'].strip() + '\n' + toc['text'].strip() for toc in processed_data['info_from_mineru']['TOC']))
-        return 'No context provided.'
+    def get_pdf_context(self, pid: str, uuid2papers: Dict[str, Dict[str, Any]]) -> str:
+        if self.agent_method == 'trivial_title_with_abstract':
+            meta = uuid2papers[pid]
+            return f"[Title]: {meta['title']}\n[Abstract]: {meta['abstract']}"
+        else:
+            ppath = os.path.join('data', 'dataset', self.env.dataset, 'processed_data', f'{pid}.json')
+            if os.path.exists(ppath):
+                with open(ppath, 'r', encoding='utf-8') as fin:
+                    pdata = json.load(fin)
+                return '\n'.join(toc['title'] + '\n' + toc['text'] for toc in pdata['info_from_mineru']['TOC'])
+            else:
+                pdf_path = uuid2papers[pid]['pdf_path']
+                contents = get_pdf_page_text(pdf_path, generate_uuid=False)['page_contents']
+                return "\n\n".join(contents)
 
 
     def interact(self,
@@ -60,18 +66,11 @@ class TrivialBaselineAgent(AgentBase):
         else:
             dataset_dir = os.path.join(DATASET_DIR, dataset)
             uuid2papers = get_airqa_paper_metadata(dataset_dir=dataset_dir)
+            context_list = [self.get_pdf_context(pid, uuid2papers) for pid in example["anchor_pdf"]]
             if self.agent_method == 'trivial_title_with_abstract':
-                context_list = []
-                for pdf_id in example["anchor_pdf"]:
-                    meta = uuid2papers[pdf_id]
-                    context_list.append(f"[Title]: {meta['title']}\n[Abstract]: {meta['abstract']}")
-                context = 'Titles and abstracts for anchor PDFs:\n' + '\n\n'.join(context_list)
+                pdf_separator = '\n\n'
+                context = 'Titles and abstracts for anchor PDFs:\n' + pdf_separator.join(context_list)
             else: # trivial_full_text_with_cutoff
-                context_list = []
-                for pdf_id in example["anchor_pdf"]:
-                    pdf_path = uuid2papers[pdf_id]['pdf_path']
-                    contents = get_pdf_page_text(pdf_path, generate_uuid=False)['page_contents']
-                    context_list.append("\n\n".join(contents))
                 pdf_separator = '\n\n' + '-' * 10 + '\n\n'
                 context = f'Full text for anchor PDFs with {cutoff}k tokens cutoff:\n' + pdf_separator.join(context_list)
             context = truncate_tokens(context, max_tokens=cutoff)
@@ -89,7 +88,7 @@ class TrivialBaselineAgent(AgentBase):
         logger.info('[Stage 1]: Generate Answer ...')
         prev_cost = self.model.get_cost()
         response = self.model.get_response(messages, model=model, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
-        answer = Action.extract_thought_and_action_text(response, interact_protocol=self.env.interact_protocol)
+        _, answer = Action.extract_thought_and_action_text(response, interact_protocol=self.env.interact_protocol)
         logger.info(f'[Response]: {response}')
         logger.info(f'[Answer]: {answer}')
         cost = self.model.get_cost() - prev_cost
