@@ -7,7 +7,7 @@ from collections import defaultdict
 from fuzzywuzzy import fuzz, process
 from tabulate import tabulate
 from contextlib import nullcontext
-from evaluation.evaluator import evaluate_airqa
+from evaluation.evaluator import evaluate_airqa as evaluate_dataset
 from agents.models import get_llm_single_instance
 from utils.functions.common_functions import is_valid_uuid
 
@@ -37,195 +37,11 @@ def load_test_data(test_data: str, dataset: str = 'ariqa') -> List[Dict[str, Any
     return examples
 
 
-def evaluate_dataset(dataset: str, pred_ans: str, gold_data: Dict[str, Any], **kwargs) -> float:
-    """ Given the dataset name and question type, evaluate whether the predicted answer is consistent with the gold data (only comparing one data point).
-    @args:
-        dataset: str, dataset name
-        pred_ans: str, predicted answer
-        gold_data: Dict[str, Any], gold data
-    @return:
-        score: float, evaluation score
-    """
-
-    if dataset == 'pdfvqa':
-        score = evaluate_pdfvqa(pred_ans, gold_data, **kwargs)
-    elif dataset == 'tatdqa':
-        score = evaluate_tatdqa(pred_ans, gold_data, **kwargs)
-    elif dataset in ['airqa', 'm3sciqa', 'scidqa', 'spiqa']:
-        score = evaluate_airqa(pred_ans, gold_data)
-    else:
-        raise NotImplementedError(f"Dataset {dataset} not supported.")
-    return score
-
-
-def llm_semantic_equivalent(question: str, pred_ans: str, gold_ans: str, model: str = 'gpt-4o', temperature: float = 0.7, top_p: float = 0.95) -> float:
-    prompt = """You are given the following question and answer pair, please determine whether the predicted answer is semantically-equivalent to the gold answer. Your response should be a single integer number 0 or 1, with 1 for equivalent and 0 for not equivalent (no punctuation and formatting).
-Question: {question}
-Predicted Answer: {pred_ans}
-Gold Answer: {gold_ans}
-Response: 
-""".format(question=question, pred_ans=pred_ans, gold_ans=gold_ans)
-    messages = [{'role': 'user', 'content': prompt}]
-    model_client = get_llm_single_instance(model)
-    response = model_client.get_response(
-        messages=messages,
-        model=model,
-        temperature=temperature,
-        top_p=top_p
-    )
-    try:
-        score = float(response)
-    except Exception as e:
-        score = 0.0
-    return score
-
-
-def fuzzy_match_strs(question: str, pred_ans: str, gold_ans: str, threshold: float = 0.95) -> float:
-    normalize = lambda x: re.sub(r'\s+', ' ', str(x).strip())
-    q, pred, gold = normalize(question), normalize(pred_ans), normalize(gold_ans)
-    # allow pred to fully contain the gold answer (treated as true)
-    compare_function = fuzz.partial_ratio if len(pred) > len(gold) else fuzz.ratio
-    return 1.0 if compare_function(pred, gold) / 100.0 >= threshold else llm_semantic_equivalent(q, pred, gold)
-
-
-def fuzzy_match_lists(question: str, pred_ans: List[str], gold_ans: List[str], threshold: float = 0.95, require_order: int = 0) -> float:
-    if require_order:
-        if len(pred_ans) != len(gold_ans):
-            return 0.0
-        for i in range(len(pred_ans)):
-            if fuzzy_match_strs(question, pred_ans[i], gold_ans[i], threshold=threshold) < threshold:
-                return 0.0
-        return 1.0
-    else:
-        gold_ans_copy = gold_ans[:]
-        for ans in pred_ans:
-            if not gold_ans_copy:
-                return 0.0
-            best_match = process.extractOne(
-                ans,
-                gold_ans_copy,
-                scorer = lambda x, y: fuzzy_match_strs(question, x, y, threshold=threshold) * 100.0
-            )
-            if best_match and best_match[1] / 100.0 >= threshold:
-                gold_ans_copy.remove(best_match[0])
-            else:
-                return 0.0
-        return 1.0
-
-
-def extract_list_from_str(s: str):
-    match = re.search(r'(\[.*\])', s)
-    if match:
-        list_str = match.group(0)
-        try:
-            result = ast.literal_eval(list_str)
-            if isinstance(result, list):
-                return result
-        except (ValueError, SyntaxError):
-            return s
-    return s
-
-
-def evaluate_pdfvqa(pred_ans: Union[List[str], str], gold_data: Dict[str, Any], **kwargs) -> float:
-    """ Evaluate the predicted answer for the PDFVQA dataset.
-    @args:
-        pred_ans: str, predicted answer
-        gold_data: Dict[str, Any], gold data
-    @return:
-        score: float, evaluation score
-    """
-    question, question_type = gold_data['question'], gold_data['question_type']
-    assert question_type in ['existence', 'counting', 'object_recognition', 'structural_understanding', 'parent_relationship_understanding', 'child_relationship_understanding']
-
-    def exact_match(pred_ans: str, gold_ans: str) -> float:
-        return float(pred_ans == gold_ans)
-
-    if question_type in ['existence', 'counting']:
-        answer = str(gold_data['answer']).strip().lower()
-        pred_ans = str(pred_ans).strip().lower()
-        return exact_match(pred_ans, answer)
-    elif question_type in ['object_recognition', 'structural_understanding']: # mostly verbose section titles or recognized sentence, or special answer "No specific Section."
-        threshold = kwargs.pop('threshold', 0.95)
-        answer = str(gold_data['answer']).strip().lower()
-        pred_ans = str(pred_ans).strip().lower()
-        return fuzzy_match_strs(question, pred_ans, answer, threshold=threshold)
-    elif question_type in ['parent_relationship_understanding', 'child_relationship_understanding']:
-        threshold = kwargs.pop('threshold', 0.95)
-        pred_ans = extract_list_from_str(str(pred_ans))
-        if not isinstance(pred_ans, list):
-            pred_ans = [pred_ans]
-        return fuzzy_match_lists(question, pred_ans, gold_data['answer'], threshold=threshold)
-    else:
-        raise NotImplementedError(f"Question type {question_type} not supported.")
-
-
-def evaluate_tatdqa(pred_ans: Any, gold_data: Dict[str, Any], **kwargs) -> float:
-    """ Evaluate the predicted answer for the TATDQA dataset.
-    @args:
-        pred_ans: LLM predicted str, predicted answer
-        gold_data: Dict[str, Any], gold data containing 'uuid', 'question', 'question_type', 'answer', etc.
-    """
-
-    question, question_type, gold_scale, gold_answer = gold_data['question'], gold_data['question_type'], gold_data['answer'][1], gold_data['answer'][0]
-    pred_ans = extract_list_from_str(str(pred_ans))
-    if gold_scale == '' and question_type != 'arithmetic' or not isinstance(pred_ans, list):
-        pred_ans = [pred_ans, '']
-    if len(pred_ans) != 2:
-        return 0.0
-    pred_answer, pred_scale = pred_ans[0], pred_ans[1]
-
-    if pred_scale not in ['percent', 'thousand', 'million', '']:
-        return 0.0
-    assert question_type in ['span', 'multi-span', 'arithmetic', 'count']
-
-    def to_float(gold_ans: Any) -> float:
-        allowed_characters = "0123456789-."
-        gold_ans = str(gold_ans).strip().lower()
-        gold_ans = ''.join([ch for ch in gold_ans if ch in allowed_characters])
-        try:
-            return float(gold_ans)
-        except ValueError:
-            return math.nan
-
-    def exact_match(pred_ans: Any, gold_ans: Any) -> float:
-        pred_ans = to_float(pred_ans)
-        gold_ans = to_float(gold_ans)
-        if math.isnan(pred_ans) or math.isnan(gold_ans):
-            return 0.0
-        return float(round(pred_ans) == round(gold_ans))
-
-    if question_type in ['arithmetic', 'count']:
-        return exact_match(pred_answer, gold_answer) * float(gold_scale == str(pred_scale))
-    elif question_type in ['span', 'multi-span']:
-        if gold_scale == '':
-            threshold = kwargs.pop('threshold', 0.95)
-            if question_type == 'span':
-                pred_answer = [str(pred_answer)]
-            return fuzzy_match_lists(question, pred_answer, gold_answer, threshold=threshold, require_order=1)
-        elif gold_scale in ['percent', 'thousand', 'million']:
-            threshold = kwargs.pop('threshold', 0.95)
-            if question_type == 'multi-span':
-                if len(pred_answer) != len(gold_answer):
-                    return 0.0
-                for i in range(len(pred_answer)):
-                    if exact_match(pred_answer[i], gold_answer[i]) < threshold:
-                        return 0.0
-                return float(gold_scale == str(pred_scale))
-            else:
-                return exact_match(str(pred_answer), gold_answer) * float(gold_scale == str(pred_scale))
-        else:
-            raise NotImplementedError(f"Gold scale {gold_scale} not supported.")
-    else:
-        raise NotImplementedError(f"Question type {question_type} not supported.")
-
-
 def resolve_gold_answer(gold: Dict[str, Any]) -> str:
-    if 'answer' in gold:
-        return gold['answer']
     assert 'evaluator' in gold and 'eval_kwargs' in gold['evaluator'], f"Please check the data format for {gold['uuid']}."
-    if 'answer' in gold['evaluator']['eval_kwargs']:
-        return gold['evaluator']['eval_kwargs']['answer']
-    # raise ValueError(f"Gold answer not found in evaluator: {str(gold['evaluator'])}.")
+    for k in ['answer', 'reference', 'reference_answer', 'gold']:
+        if k in gold['evaluator']['eval_kwargs']:
+            return gold['evaluator']['eval_kwargs'][k]
     return str(json.dumps(gold['evaluator'], ensure_ascii=False))
 
 
@@ -238,13 +54,12 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
         dataset: str, dataset name
         kwargs: dict, additional arguments, e.g.,
             output_path: str, path to save the evaluation result
-            threshold: float, threshold for fuzzy matching for pdfvqa and tatdqa, default 0.95
     @return:
         result: dict, each key contains the count, correct count, and score. The special key 'all' contains the overall evaluation score, e.g.,
             {
                 "all": {"score": 0.8, "count": 100, "correct": 80},
-                "existence": {"score": 0.9, "count": 20, "correct": 18},
-                "counting": {"score": 0.7, "count": 20, "correct": 14},
+                "text": {"score": 0.9, "count": 20, "correct": 18},
+                "image": {"score": 0.7, "count": 20, "correct": 14},
                 ...
             }
     """
@@ -271,7 +86,7 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
         for pred, gold in zip(pred_data, gold_data):
             cnt += 1
             print(f"Evaluating {cnt}/{tot}...", end='\r')
-            score = evaluate_dataset(dataset, pred['answer'], gold, **kwargs)
+            score = evaluate_dataset(pred['answer'], gold)
             if score < 0.5 and output_path is not None:
                 outfile.write(f'\n[ERROR]: data (type={gold["question_type"] if "question_type" in gold else gold["tags"]}) with id {gold["uuid"]}\n')
                 outfile.write(f'Gold Answer: {resolve_gold_answer(gold)}\n')
@@ -434,28 +249,27 @@ if __name__ == '__main__':
 
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='airqa', choices=['airqa', 'pdfvqa', 'tatdqa', 'm3sciqa', 'scidqa', 'spiqa'], help='Dataset name')
-    parser.add_argument('--folder', type=str, required=True, help='Folder to results & evaluations.')
-    parser.add_argument('--re', action='store_true', help='Whether to re-evaluate the results')
-    # parser.add_argument('--pred', type=str, required=True, help='Path to predicted answer, .jsonl file')
-    parser.add_argument('--gold', type=str, required=True, help='Path to gold answer, .jsonl file')
-    # parser.add_argument('--output', type=str, required=False, default=None, help='Path to save the evaluation result, .txt file')
-    # parser.add_argument('--eval', type=str, required=False, default=None, help='Path to previous evaluation results, .txt file')
+    parser.add_argument('--dataset', type=str, default='airqa', choices=['airqa', 'm3sciqa', 'scidqa', 'spiqa'], help='Dataset name')
+    parser.add_argument('--pred', type=str, help='Path to predicted answer, .jsonl file')
+    parser.add_argument('--gold', type=str, help='Path to gold answer, .jsonl file')
+    # parser.add_argument('--folder', type=str, required=True, help='Folder to results & evaluations.')
+    # parser.add_argument('--re', action='store_true', help='Whether to re-evaluate the results')
+    parser.add_argument('--output', type=str, default=None, help='Path to save the evaluation result, .txt file')
     args = parser.parse_args()
     
-    folder = args.folder
-    assert os.path.exists(folder), "[Error]: Folder not found."
-    result_path = os.path.join(folder, 'result.jsonl')
-    assert os.path.exists(result_path), "[Error]: Result file not found."
-    
-    if args.re:
-        eval_path = os.path.join(folder, 'evaluation.txt')
-        assert os.path.exists(eval_path), "[Error]: Eval file not found."
-        output_path = os.path.join(folder, 're_evaluation.txt')
-        result = re_evaluate(result_path, args.gold, eval_path, args.dataset, output_path=output_path)
-    else:
-        output_path = os.path.join(folder, 'evaluation.txt')
-        result = evaluate(result_path, args.gold, args.dataset, output_path=output_path)
-    if result:
-        result_table = print_result(result)
-        print(f"Final evaluation result on {args.dataset}:\n{result_table}")
+    # folder = args.folder
+    # assert os.path.exists(folder), "[Error]: Folder not found."
+    # result_path = os.path.join(folder, 'result.jsonl')
+    # assert os.path.exists(result_path), "[Error]: Result file not found."
+    # if args.re:
+    #     eval_path = os.path.join(folder, 'evaluation.txt')
+    #     assert os.path.exists(eval_path), "[Error]: Eval file not found."
+    #     output_path = os.path.join(folder, 're_evaluation.txt')
+    #     result = re_evaluate(result_path, args.gold, eval_path, args.dataset, output_path=output_path)
+    #     exit(0)
+
+    assert args.pred, "[Error]: Path to predicted answer .jsonl is required."
+    assert args.gold, "[Error]: Path to gold answer .jsonl is required."
+    result = evaluate(args.pred, args.gold, args.dataset, output_path=args.output_path)
+    result_table = print_result(result)
+    print(f"Final evaluation result on {args.dataset}:\n{result_table}")

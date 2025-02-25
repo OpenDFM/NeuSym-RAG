@@ -278,7 +278,7 @@ def retrieve_cell_values(
 
 
 def get_page_number_from_id(database_name: str, db_conn: duckdb.DuckDBPyConnection, pdf_id: str, page_id: str) -> int:
-    """ Get the page number from the relational database (only used for biology_paper, financial_report and ai_research).
+    """ Get the page number from the relational database.
     @args:
         database_name: str, the relational database name
         db_conn: duckdb.DuckDBPyConnection, the connection to the relational database
@@ -288,8 +288,6 @@ def get_page_number_from_id(database_name: str, db_conn: duckdb.DuckDBPyConnecti
         int, the page number (-1 means not found)
     """
     sql_query = {
-        'biology_paper': f"SELECT page_number FROM pages WHERE ref_paper_id = '{pdf_id}' AND page_id = '{page_id}';",
-        'financial_report': f"SELECT page_number FROM pages WHERE ref_report_id = '{pdf_id}' AND page_id = '{page_id}';",
         'ai_research': f"SELECT page_number FROM pages WHERE ref_paper_id = '{pdf_id}' AND page_id = '{page_id}';"
     }
     select = sql_query.get(database_name, sql_query['ai_research'])
@@ -309,8 +307,6 @@ def get_database_to_dataset_mapping(database_or_vectorstore: str) -> str:
         str, the dataset name
     """
     mappings = {
-        "biology_paper": "pdfvqa",
-        "financial_report": "tatdqa",
         "ai_research": "airqa",
         "emnlp_papers": "m3sciqa",
         "arxiv_papers": "spiqa",
@@ -319,46 +315,30 @@ def get_database_to_dataset_mapping(database_or_vectorstore: str) -> str:
     return mappings[database_or_vectorstore]
 
 
-def get_image_or_pdf_path(database: str, pdf_id: str, page_number: int) -> str:
+def get_image_or_pdf_path(database: str, pdf_id: str) -> str:
     """ Get the image or PDF path for the database.
     @args:
         database: str, the database name
         pdf_id: str, the PDF id
-        page_number: int, the page number
     @return:
         str: The file path for the PDF or image.
     """
-    if database == 'biology_paper':
-        # Handle biology_paper database where images are stored per page
-        return os.path.join(
-            'data', 'dataset', 'pdfvqa', 'processed_data', 'test_images', 
-            f"{pdf_id}.pdf_{page_number - 1}.png"
-        )
-    
-    elif database == 'financial_report':
-        # Handle financial_report database
-        return os.path.join(
-            'data', 'dataset', 'tatdqa', 'processed_data', 'test_docs', 
-            f"{pdf_id}.pdf"
-        )
-    
-    else:
-        # Load the mapping file
-        dataset = get_database_to_dataset_mapping(database)
-        dataset_dir = os.path.join(os.path.dirname(AIRQA_DIR), dataset)
-        uuid2papers = get_airqa_paper_metadata(dataset_dir=dataset_dir)
+    # Load the mapping file
+    dataset = get_database_to_dataset_mapping(database)
+    dataset_dir = os.path.join(os.path.dirname(AIRQA_DIR), dataset)
+    uuid2papers = get_airqa_paper_metadata(dataset_dir=dataset_dir)
 
-        # Get the paper info
-        paper_info = uuid2papers.get(pdf_id)
-        if not paper_info:
-            raise ValueError(f"PDF ID '{pdf_id}' not found in the mapping file.")
-        
-        # Get the PDF path from the mapping
-        pdf_path = paper_info.get("pdf_path")
-        if not pdf_path or not os.path.exists(pdf_path):
-            raise FileNotFoundError(f"PDF file not found: {pdf_path}")
-        
-        return pdf_path
+    # Get the paper info
+    paper_info = uuid2papers.get(pdf_id)
+    if not paper_info:
+        raise ValueError(f"PDF ID '{pdf_id}' not found in the mapping file.")
+    
+    # Get the PDF path from the mapping
+    pdf_path = paper_info.get("pdf_path")
+    if not pdf_path or not os.path.exists(pdf_path):
+        raise FileNotFoundError(f"PDF file not found: {pdf_path}")
+    
+    return pdf_path
 
 
 def build_bm25_corpus(
@@ -447,7 +427,7 @@ def encode_database_content(
                 embedder.cache_pdf_to_images(
                     batch_pdf_ids,
                     [
-                        get_image_or_pdf_path(db_schema.database_name, pid, -1)
+                        get_image_or_pdf_path(db_schema.database_name, pid)
                         for pid in batch_pdf_ids
                     ]
                 )
@@ -507,7 +487,7 @@ def encode_database_content(
                                 bbox = [math.floor(bbox[0]), math.floor(bbox[1]), math.ceil(bbox[2]), math.ceil(bbox[3])]
                             except Exception as e: continue
                             record['bbox'] = bbox
-                            image_or_pdf_path = get_image_or_pdf_path(db_schema.database_name, record['pdf_id'], record['page_number'])
+                            image_or_pdf_path = get_image_or_pdf_path(db_schema.database_name, record['pdf_id'])
                             documents.append({"path": image_or_pdf_path, "page": record['page_number'], "bbox": bbox})
                             records.append(record)
 
@@ -563,8 +543,6 @@ def get_pdf_ids_to_encode(vectorstore: str, pdf_path_or_id: str) -> List[str]:
             else:
                 pdf_ids = f.readlines()
                 pdf_ids = [pdf_id.strip() for pdf_id in pdf_ids if pdf_id.strip()]
-        if vectorstore in ['biology_paper', 'financial_report']:
-            pdf_ids = [json.loads(pdf_json)['pdf_id'] for pdf_json in pdf_ids]
         return pdf_ids
     else:
         from utils.functions import is_valid_uuid
@@ -605,7 +583,7 @@ if __name__ == '__main__':
     db_conn: duckdb.DuckDBPyConnection = get_database_connection(args.vectorstore, database_path=args.database_path)
     db_schema: DatabaseSchema = DatabaseSchema(args.vectorstore)
     vs_conn: MilvusClient = get_vectorstore_connection(args.vectorstore, launch_method=args.launch_method, docker_uri=args.docker_uri, vectorstore_path=args.vectorstore_path, from_scratch=args.from_scratch)
-    vs_schema: VectorstoreSchema = VectorstoreSchema()
+    vs_schema: VectorstoreSchema = VectorstoreSchema(args.vectorstore)
 
     # initialize the vectorstore schema
     initialize_vectorstore(vs_conn, vs_schema)

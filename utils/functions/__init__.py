@@ -3,6 +3,7 @@
 from .common_functions import (
     get_uuid,
     is_valid_uuid,
+    truncate_tokens
 )
 
 from .pdf_functions import (

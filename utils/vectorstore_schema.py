@@ -134,9 +134,15 @@ class VectorstoreCollection(object):
 class VectorstoreSchema(object):
 
 
-    def __init__(self, vectorstore_path: Optional[str] = None):
+    def __init__(self, vectorstore: Optional[str] = None):
         super(VectorstoreSchema, self).__init__()
-        self.vectorstore_path = vectorstore_path if vectorstore_path is not None else os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'vectorstore', 'vectorstore_schema.json')
+        self.vectorstore_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'vectorstore', 'vectorstore_schema.json')
+        if vectorstore is not None: # overwrite the general vectorstore path
+            vs_folder = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'vectorstore', vectorstore)
+            if os.path.exists(os.path.join(vs_folder, 'vectorstore_schema.json')) and os.path.isfile(os.path.join(vs_folder, 'vectorstore_schema.json')):
+                self.vectorstore_path = os.path.join(vs_folder, 'vectorstore_schema.json')
+            elif os.path.exists(os.path.join(vs_folder, vectorstore + '.json')) and os.path.isfile(os.path.join(vs_folder, vectorstore + '.json')):
+                self.vectorstore_path = os.path.join(vs_folder, vectorstore + '.json')
         self.vectorstore_schema: Dict[str, VectorstoreCollection] = self._load_schema()   
 
 

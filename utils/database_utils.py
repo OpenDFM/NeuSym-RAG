@@ -157,7 +157,7 @@ def initialize_database(db_conn: duckdb.DuckDBPyConnection, db_schema: DatabaseS
     return
 
 
-def get_pdf_ids_to_encode(database: str, pdf_path: str) -> List[Any]:
+def get_pdf_ids_to_encode(pdf_path: str) -> List[Any]:
     """ Get the PDF IDs or json data to encode.
     """
     if not os.path.exists(pdf_path):
@@ -172,9 +172,7 @@ def get_pdf_ids_to_encode(database: str, pdf_path: str) -> List[Any]:
         else:
             json_data = [line.strip() for line in inf if line.strip()]
     
-    if database == 'ai_research':
-        return [data.get('pdf_path', 'uuid') if type(data) == dict else data for data in json_data]
-    return json_data
+    return [data['uuid'] if type(data) == dict else data for data in json_data]
 
 
 if __name__ == '__main__':
@@ -198,7 +196,7 @@ if __name__ == '__main__':
     )
 
     # parse PDF files into the database
-    pdf_ids = get_pdf_ids_to_encode(args.database, args.pdf_path)
+    pdf_ids = get_pdf_ids_to_encode(args.pdf_path)
     config_path = args.config_path if args.config_path is not None else os.path.join('configs', f'{args.database}_config.json')
     with open(config_path, 'r', encoding='utf-8') as inf:
         config = json.load(inf)

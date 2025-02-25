@@ -49,7 +49,7 @@ class DataPopulation():
             assert self.database == self.vectorstore, f"Database and vectorstore must be the same, but got {self.database} and {self.vectorstore}."
         self.database_schema: DatabaseSchema = DatabaseSchema(self.database) if connect_to_db else None
         self.database_conn: Optional[duckdb.DuckDBPyConnection] = get_database_connection(self.database, database_path=database_path,from_scratch=from_scratch) if connect_to_db else None
-        self.vectorstore_schema: Optional[VectorstoreSchema] = VectorstoreSchema() if connect_to_vs else None # shared VS schema
+        self.vectorstore_schema: Optional[VectorstoreSchema] = VectorstoreSchema(self.vectorstore) if connect_to_vs else None # shared VS schema
         self.vectorstore_conn: Optional[MilvusClient] = get_vectorstore_connection(self.vectorstore, launch_method=launch_method, docker_uri=docker_uri, vectorstore_path=vectorstore_path, from_scratch=from_scratch) if connect_to_vs else None
         if from_scratch:
             if connect_to_db:
@@ -304,7 +304,7 @@ if __name__ == '__main__':
     )
 
     # parse PDF files into the database
-    pdf_ids = get_pdf_ids_to_encode(populator.database, args.pdf_path)
+    pdf_ids = get_pdf_ids_to_encode(args.pdf_path)
     config_path = args.config_path if args.config_path is not None else os.path.join('configs', f'{args.database}_config.json')
     with open(config_path, 'r', encoding='utf-8') as inf:
         config = json.load(inf)
