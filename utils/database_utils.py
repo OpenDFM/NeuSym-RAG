@@ -160,7 +160,7 @@ def initialize_database(db_conn: duckdb.DuckDBPyConnection, db_schema: DatabaseS
 def get_pdf_ids_to_encode(pdf_path: str) -> List[Any]:
     """ Get the PDF IDs or json data to encode.
     """
-    if not os.path.exists(pdf_path):
+    if (os.path.exists(pdf_path) and pdf_path.endswith('.pdf')) or (not os.path.exists(pdf_path)):
         return [pdf_path]
 
     with open(pdf_path, 'r', encoding='utf-8') as inf:
@@ -172,7 +172,7 @@ def get_pdf_ids_to_encode(pdf_path: str) -> List[Any]:
         else:
             json_data = [line.strip() for line in inf if line.strip()]
     
-    return [data['uuid'] if type(data) == dict else data for data in json_data]
+    return [data.get('pdf_path', 'uuid') if type(data) == dict else data for data in json_data]
 
 
 if __name__ == '__main__':

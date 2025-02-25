@@ -529,7 +529,7 @@ def check_vectorstore_conflict(
     return
 
 
-def get_pdf_ids_to_encode(vectorstore: str, pdf_path_or_id: str) -> List[str]:
+def get_pdf_ids_to_encode(pdf_path_or_id: str) -> List[str]:
     """ Get the list of valid PDF ids to encode.
     @args:
         pdf_path_or_id: str, the path to the PDF file or the PDF id [list].
@@ -551,7 +551,7 @@ def get_pdf_ids_to_encode(vectorstore: str, pdf_path_or_id: str) -> List[str]:
                 return [pdf_path_or_id]
             elif ',' in pdf_path_or_id:
                 pdf_ids = pdf_path_or_id.split(',')
-                return get_pdf_ids_to_encode(vectorstore, pdf_ids)
+                return get_pdf_ids_to_encode(pdf_ids)
             else:
                 raise ValueError(f"Invalid PDF path or PDF id: {pdf_path_or_id}.")
         elif type(pdf_path_or_id) in [list, tuple]:
@@ -589,7 +589,7 @@ if __name__ == '__main__':
     initialize_vectorstore(vs_conn, vs_schema)
 
     # pdf ids to encode, by default, all pdfs in the relational database if not specified
-    pdf_ids = get_pdf_ids_to_encode(args.vectorstore, args.pdf_path) if args.pdf_path else []
+    pdf_ids = get_pdf_ids_to_encode(args.pdf_path) if args.pdf_path else []
     encode_database_content(
         vs_conn, db_conn, vs_schema, db_schema,
         pdf_ids=pdf_ids, target_collections=args.target_collections,
