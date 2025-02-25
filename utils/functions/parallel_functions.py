@@ -36,6 +36,7 @@ def parallel_extract_or_fill(
             return parallel_dict[hashed_message]
         print(f"Message {hashed_message} not found in the parallel file.")
     if parallel.get("extract"):
+        os.makedirs(os.path.dirname(parallel["extract"]), exist_ok=True)
         with open(parallel["extract"], "a", encoding='utf-8') as f:
             f.write(stringified_message + "\n")
         return ""
