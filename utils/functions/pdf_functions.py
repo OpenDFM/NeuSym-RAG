@@ -7,9 +7,9 @@ import pymupdf
 from PyPDF2 import PdfWriter, PageObject
 from pdf2image import convert_from_path
 from pdfminer.layout import LTImage, LTFigure, LTRect
-from utils.functions.common_functions import call_llm, get_uuid, call_llm_with_message
+from utils.functions.common_functions import call_llm, get_uuid, truncate_tokens
 from utils.functions.parallel_functions import parallel_extract_or_fill
-from agents.frameworks import truncate_tokens
+
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
@@ -20,6 +20,7 @@ formatter = logging.Formatter(
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.setLevel(logging.INFO)
+
 
 def get_pdf_page_text(
         pdf_path: str,

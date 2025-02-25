@@ -2,53 +2,62 @@
 import logging, sys, os
 from typing import List, Dict, Any, Union, Tuple, Optional
 from agents.envs import AgentEnv
-from agents.envs.actions import Action, Observation
 from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, HINT_PROMPTS, AGENT_PROMPTS
 from agents.prompts.task_prompt import formulate_input
 from agents.frameworks.agent_base import AgentBase
+from agents.envs.actions import ClassicRetrieve
 
 
 logger = logging.getLogger()
 
+
 class IterativeClassicRAGAgent(AgentBase):
 
-    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'iterative_classic_rag', max_turn: int = 10) -> None:
+    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'iterative_classic_rag', max_turn: int = 20) -> None:
         super(IterativeClassicRAGAgent, self).__init__(model, env, agent_method, max_turn)
 
         self.agent_prompt = AGENT_PROMPTS[agent_method].format(
-            system_prompt=SYSTEM_PROMPTS['text2vec'],
+            system_prompt=SYSTEM_PROMPTS[agent_method],
             action_space_prompt=env.action_space_prompt,
-            max_turn=max_turn,
-            hint_prompt=HINT_PROMPTS['text2vec']
+            hint_prompt=HINT_PROMPTS[agent_method],
+            max_turn=max_turn
         )
-        logger.info(f'[AgentPrompt]: {self.agent_prompt}')
+        logger.info(f'[Agent Prompt]: {self.agent_prompt}')
 
 
     def interact(self,
                  dataset: str, 
                  example: Dict[str, Any],
-                 window_size: int = 3,
+                 collection_name: Optional[str] = None,
+                 table_name: Optional[str] = None,
+                 column_name: Optional[str] = None,
+                 window_size: int = 5,
                  model: str = 'gpt-4o-mini',
                  temperature: float = 0.7,
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
                  output_path: Optional[str] = None,
-                 output_kwargs: Dict[str, Any] = {},
-                 image_limit: int = 10,
+                 output_kwargs: Dict[str, Any] = {}
     ) -> str:
         # construct the initial prompt messages
-        question, answer_format, pdf_context, image_message = formulate_input(dataset, example, image_limit=image_limit)
-        task_prompt = f'[Question]: {question}\n[Answer Format]: {answer_format}\n{pdf_context}'
-        logger.info(f'[Question]: {question}')
-        logger.info(f'[Answer Format]: {answer_format}')
+        task_prompt, image_messages = formulate_input(dataset, example, use_pdf_id=True)
+        logger.info(f'[Task Input]: {task_prompt}')
+
+        if image_messages:
+            task_prompt = [{'type': 'text', 'text': task_prompt}] + image_messages
         messages = [
             {'role': 'system', 'content': self.agent_prompt},
             {'role': 'user', 'content': task_prompt}
         ]
-        if image_message is not None:
-            messages[-1] = {'role': 'user', 'content': [{'type': 'text', 'text': task_prompt}] + image_message['content']}
-        answer = self.forward(
+
+        ClassicRetrieve.set_default(
+            collection_name=collection_name,
+            table_name=table_name,
+            column_name=column_name
+        )
+
+        return self.forward(
             messages,
             model=model,
             temperature=temperature,
@@ -58,4 +67,3 @@ class IterativeClassicRAGAgent(AgentBase):
             output_path=output_path,
             output_kwargs=output_kwargs
         )
-        return answer

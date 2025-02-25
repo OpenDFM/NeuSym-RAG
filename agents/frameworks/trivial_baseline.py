@@ -10,10 +10,10 @@ from agents.frameworks import AgentBase, truncate_tokens
 
 logger = logging.getLogger()
 
-class TrivialAgent(AgentBase):
+class TrivialBaselineAgent(AgentBase):
 
     def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'trivial', max_turn: int = 1) -> None:
-        super(TrivialAgent, self).__init__(model, env, agent_method, max_turn)
+        super(TrivialBaselineAgent, self).__init__(model, env, agent_method, max_turn)
 
     def get_pdf_content(self, idx: str) -> str:
         processed_data_dirname = os.path.join('data', 'dataset', self.env.dataset, 'processed_data')

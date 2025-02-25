@@ -38,8 +38,7 @@ for data_idx, data in enumerate(test_data):
     try:
         result = agent.interact(
             args.dataset, data,
-            table_name=args.table_name, column_name=args.column_name,
-            collection_name=args.collection_name, limit=args.limit,
+            collection_name=args.collection_name, table_name=args.table_name, column_name=args.column_name,
             window_size=args.window_size,
             model=args.llm, temperature=args.temperature, top_p=args.top_p, max_tokens=args.max_tokens, 
             output_kwargs={'output_format': args.output_format}, output_path=output_path

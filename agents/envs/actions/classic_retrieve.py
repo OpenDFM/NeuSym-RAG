@@ -24,6 +24,13 @@ class ClassicRetrieve(Action):
         "max_timeout": 600 # the maximum timeout for the vectorstore search is 10 minutes
     }, repr=False)
 
+
+    @classmethod
+    def set_default(cls, **kwargs) -> None:
+        for key in kwargs:
+            cls.__annotations__[key] = kwargs[key]
+
+
     def execute(self, env: gym.Env, **kwargs) -> Observation:
         """ Execute the action of retrieving the context from the environment.
         """

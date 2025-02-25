@@ -2,9 +2,9 @@
 from typing import List, Tuple, Dict, Union, Optional, Any, Callable
 from PIL import Image, ImageDraw, ImageFont
 import base64, os
-
 from utils.functions.common_functions import call_llm
 from utils.functions.parallel_functions import parallel_extract_or_fill
+
 
 def draw_image_with_bbox(
         image_path: str,
@@ -95,7 +95,7 @@ def get_image_message(
         image_path: Optional[Union[List[str], str]] = None,
         base64_image: Optional[str] = None,
         mine_type: str = 'image/jpeg',
-        image_limit: int = 10
+        image_limit: int = -1
     ) -> Dict[str, Any]:
     """ Get the image message for LLM calling.
     @args:
@@ -103,6 +103,7 @@ def get_image_message(
         image_path: str or List[str], path(s) to the image file(s) you want to summary (overwrite `base64_image`).
         base64_image: str, base64 encoded image string. Either `image_path` or `base64_image` must be provided.
         mine_type: str, the mine type of the image, should be specified if only `base64_image` is provided, default to 'image/jpeg'.
+        image_limit: int, the maximum number of images to use, default to -1 (no limit).
     @return:
         message: dict, a role-content message pair
     """
@@ -143,6 +144,7 @@ def get_image_message(
         })
     
     return message
+
 
 def get_image_summary(
         image_path: str,
