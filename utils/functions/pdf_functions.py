@@ -4,7 +4,6 @@ import os, openai, uuid, re, sys, logging, subprocess, tempfile, json
 from typing import List, Dict, Union, Optional, Any, Iterable, Tuple
 from difflib import SequenceMatcher
 import pymupdf
-from PyPDF2 import PdfWriter, PageObject
 from pdf2image import convert_from_path
 from pdfminer.layout import LTImage, LTFigure, LTRect
 from utils.functions.common_functions import call_llm, get_uuid, truncate_tokens
@@ -106,6 +105,7 @@ Please directly return the summary without any extra information or formatting. 
             summary.append(text)
     return {'text_summary': summary if type(content[key]) == list else summary[0]}
 
+
 def get_table_summary(
         table: Dict[str, Any],
         max_length: int = 50,
@@ -127,26 +127,6 @@ Please generate a brief summary for the following table without any extra inform
     table_summary = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
     return table_summary
 
-def crop_pdf(
-        element: Union[LTFigure, LTImage],
-        page_obj: PageObject,
-        output_file: str
-    ):
-    """Crop a PDF file according to the bounding box of the element and save it to a new PDF file.
-
-    @args:
-        element: Union[LTFigure, LTImage], the element to be cropped.
-        page_obj: PageObject, PDF-page object resolved from PyPDF2.
-        output_file: str, path to output PDF file. 
-    """
-    [image_left, image_top, image_right, image_bottom] = [element.x0, element.y0, element.x1, element.y1]
-    page_obj.mediabox.upper_left = (image_left, image_top)
-    page_obj.mediabox.lower_right = (image_right, image_bottom)
-    cropped_pdf_writer = PdfWriter()
-    cropped_pdf_writer.add_page(page_obj)
-    with open(output_file, 'wb') as cropped_pdf_file:
-        cropped_pdf_writer.write(cropped_pdf_file)
-    cropped_pdf_writer.close()
 
 def convert_pdf_to_image(
         input_file: str,
@@ -164,6 +144,7 @@ def convert_pdf_to_image(
     images = convert_from_path(input_file, dpi=dpi)
     image = images[0]
     image.save(output_file, "PNG")
+
 
 def add_reference_to_json(
         uuid: str,
@@ -221,6 +202,7 @@ def add_reference_to_json(
     with open(os.path.join(output_data_folder, f'{uuid}.json'), 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
     return data
+
 
 def parse_pdf(
         pdf_path: str,
@@ -588,6 +570,7 @@ def parse_pdf(
         json.dump(result, f, ensure_ascii=False, indent=4)
     
     return result
+
 
 def load_json_from_processed_data(
         pdf_path: str, 

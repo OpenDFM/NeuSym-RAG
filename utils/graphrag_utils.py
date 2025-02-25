@@ -2,7 +2,8 @@
 import argparse, json, os, yaml, sys
 from typing import Any, Dict, List
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from PyPDF2 import PdfReader
+from utils.functions import get_pdf_page_text
+from utils.airqa_utils import get_airqa_paper_metadata, AIRQA_DIR
 
 
 def load_yaml(file_path: str) -> Dict[str, Any]:
@@ -23,17 +24,15 @@ def config_graphrag_settings(args: argparse.Namespace):
     settings['llm']['model'] = args.llm
     settings['llm']['api_base'] = os.environ.get('OPENAI_BASE_URL', "").rstrip('/')
     settings['llm']['api_key'] = os.environ['OPENAI_API_KEY']
+    write_yaml(settings, settings_path)
     return
 
 
 def get_pdf_text(dataset: str, pdf_id: str) -> str:
-    with open(os.path.join('data', 'dataset', dataset, 'metadata', pdf_id + '.json'), 'r', encoding='utf-8') as fin:
-        metadata = json.load(fin)
-    pdf_text = ''
-    with open(os.path.join('data', 'dataset', dataset, 'papers', metadata['conference'].lower() + str(metadata['year']), pdf_id + '.pdf'), 'rb') as fin:
-        pdf_reader = PdfReader(fin)
-        for page in pdf_reader.pages:
-            pdf_text += page.extract_text()
+    uuid2papers = get_airqa_paper_metadata(dataset_dir=os.path.join(os.path.dirname(AIRQA_DIR), dataset))
+    pdf_path = uuid2papers[pdf_id]['pdf_path']
+    pdf_text = get_pdf_page_text(pdf_path, generate_uuid=False)['page_contents']
+    pdf_text = "\n\n".join(pdf_text)
     return pdf_text.strip()
 
 

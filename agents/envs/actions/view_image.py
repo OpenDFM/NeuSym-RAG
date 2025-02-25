@@ -8,7 +8,6 @@ import gymnasium as gym
 import os
 import tempfile
 from typing import Optional, List, Tuple, Dict, Union, Any
-from PIL import Image
 from PyPDF2 import PdfReader
 from pdf2image import convert_from_path
 
