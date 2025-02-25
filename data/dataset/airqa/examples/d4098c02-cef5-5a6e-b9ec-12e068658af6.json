@@ -1,0 +1,38 @@
+{
+    "uuid": "d4098c02-cef5-5a6e-b9ec-12e068658af6",
+    "question": "Which datasets are used in the experiments of the paper proposing the previous best RGB-based method CorrNet that are not used in the anchor PDF?",
+    "answer_format": "Your answer should be a python list about the names of the datasets, e.g., ['dataset1', 'dataset2']. YOU MUST USE THE EXACT NAMES FORM THE PAPER.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "06ba9b19-1c5a-5765-aafb-16345a42de99"
+    ],
+    "reference_pdf": [
+        "b43645ca-00f6-568b-a9d3-de859a91f1d9"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Determine the datasets used in the anchor pdf, which are usually in the experiment section.",
+        "Locate the paper proposing the previous best RGB-based method CorrNet.",
+        "Find the datasets used in the experiments of the paper proposing CorrNet.",
+        "Compare the datasets used in the experiments of the paper proposing CorrNet with the datasets used in the anchor pdf to find the datasets that are used in the experiments of the paper proposing CorrNet but not used in the anchor pdf."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "CSL-Daily",
+                "CSL"
+            ],
+            "ignore_order": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
