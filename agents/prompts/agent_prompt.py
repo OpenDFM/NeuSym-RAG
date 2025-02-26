@@ -55,36 +55,14 @@ TWO_STAGE_SYM_RAG_AGENT_PROMPT = [
 
 --------
 
-[Question]: {question}
-{pdf_context}
-[Database Schema]: {database_schema}
+{task_input}
 
 You can firstly give your reasoning process, followed by the SQL query in the following format (REMEMBER TO WRAP YOUR SQL IN THREE BACKTICKS):
 
 ```sql\nconcrete sql query\n```
 
-Here is your response:
-"""
-
-,
-
-"""{system_prompt}
-
---------
-
-[Question]: {question}
-{pdf_context}
-[SQL]: {sql}
-[Retrieved Context]: {context}
-[Answer Format]: {answer_format}
-
-You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER IN THREE BACKTICKS):
-
-```txt\nfinal answer\n```
-
-Here is your response:
-"""
-]
+Remember that, for each question, you only have one chance to predict the SQL. And your response is:
+""", CLASSIC_RAG_AGENT_PROMPT]
 
 
 TWO_STAGE_NEU_RAG_AGENT_PROMPT = [
@@ -94,68 +72,32 @@ TWO_STAGE_NEU_RAG_AGENT_PROMPT = [
 
 Here is a detailed specification of the `RetrieveFromVectorstore` action that you need to predict:
 
-{action_prompt}
+{action_space_prompt}
 
 --------
 
-The task input is:
-
-[Question]: {question}
-{pdf_context}
-[Vectorstore Schema]:
-{vectorstore_schema}
+{task_input}
 
 You can firstly give your reasoning process, followed by the `RetrieveFromVectorstore` action with pre-defined JSON format (REMEMBER TO WRAP YOUR ACTION IN THREE BACKTICKS):
 
 ```json\nconcrete JSON-format action\n```
 
-Here is your response:
-"""
+Remember that, for each question, you only have one chance to predict the `RetrieveFromVectorstore` action. And your response is:""", CLASSIC_RAG_AGENT_PROMPT]
 
-,
 
+TWO_STAGE_HYBRID_RAG_AGENT_PROMPT = [
 """{system_prompt}
 
 --------
 
-[Question]: {question}
-{pdf_context}
-[Retrieved Context]:\n{context}
-[Answer Format]: {answer_format}
-
-You can firstly give your reasoning process, followed by the final answer in the following format (REMEMBER TO WRAP YOUR ANSWER IN THREE BACKTICKS):
-
-```txt\nfinal answer\n```
-
-Here is your response:
-"""
-]
-
-
-TWO_STAGE_HYBRID_RAG_AGENT_PROMPT = """{system_prompt}
+{action_space_prompt}
 
 --------
 
-Here is a detailed specification of the `RetrieveFromVectorstore` or `RetrieveFromDatabase` action that you need to predict:
-
-{action_prompt}
-
---------
-
-The task input is:
-
-[Question]: {question}
-{pdf_context}
-[Database Schema]:
-{database_schema}
-[Vectorstore Schema]:
-{vectorstore_schema}
+{task_input}
 
 You can firstly give your reasoning process, followed by the `RetrieveFromVectorstore` or `RetrieveFromDatabase` action with pre-defined JSON format (REMEMBER TO WRAP YOUR ACTION IN THREE BACKTICKS):
 
 ```json\nconcrete JSON-format action\n```
 
-Note that you can ONLY predict one action.
-
-Here is your response:
-"""
+Remember that, for each question, you can ONLY predict one action and ONLY have one chance. And your response is:""", CLASSIC_RAG_AGENT_PROMPT]

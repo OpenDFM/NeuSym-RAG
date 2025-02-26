@@ -1,5 +1,5 @@
 #coding=utf8
-from agents.envs.actions import Action
+from agents.envs.actions import Action, Observation
 from agents.envs.env_base import AgentEnv
 from agents.envs.symbolic_env import SymbolicRAGEnv
 from agents.envs.neural_env import NeuralRAGEnv

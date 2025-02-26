@@ -75,8 +75,13 @@ def validate_args(args):
     elif args.agent_method in ['two_stage_graph_rag', 'iterative_graph_rag']:
         assert args.graphrag_root and os.path.exists(args.graphrag_root) and os.path.isdir(args.graphrag_root), "Graph-RAG root folder must be specified and exist for Two-stage Graph-RAG or Iterative Graph-RAG agent."
     
-    if args.agent_method.startswith('two_stage') or args.agent_method in ['classic_rag', 'iterative_graph_rag']:
-        assert args.interact_protocol == 'code_block', "`code_block` interact protocol is required for Two-stage Hybrid-RAG, Two-stage Neu-RAG, Two-stage Sym-RAG, Two-stage Graph-RAG, Classic-RAG and Iterative Graph-RAG agents."
+    if args.agent_method.startswith('trivial') or args.agent_method.startswith('two_stage') or args.agent_method in ['classic_rag', 'iterative_graph_rag']:
+        # assert args.interact_protocol == 'code_block', "`code_block` interact protocol is required for Trivial Baselines, Two-stage Hybrid-RAG, Two-stage Neu-RAG, Two-stage Sym-RAG, Two-stage Graph-RAG, Classic-RAG and Iterative Graph-RAG agents."
+        args.interact_protocol = 'code_block'
+    if args.agent_method in ['iterative_classic_rag', 'iterative_neu_rag', 'iterative_sym_rag', 'neusym_rag']:
+        args.interact_protocol = 'react'
+    if args.agent_method.startswith('two_stage'):
+        args.action_format = 'json' # for easier parsing
     return args
 
 
