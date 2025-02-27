@@ -1,6 +1,7 @@
 #coding=utf8
 from typing import List, Dict, Any, Optional
-import os, json, sys, datetime
+import os, json, sys
+from datetime import datetime
 import argparse, logging
 
 

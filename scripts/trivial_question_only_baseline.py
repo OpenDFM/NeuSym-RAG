@@ -20,12 +20,7 @@ llm: LLMClient = infer_model_class(args.llm)(image_limit=args.image_limit, lengt
 env: AgentEnv = infer_env_class(args.agent_method)(
     dataset=args.dataset,
     action_format=args.action_format,
-    interact_protocol=args.interact_protocol,
-    vectorstore=args.vectorstore,
-    database_path=args.database_path,
-    launch_method=args.launch_method,
-    vectorstore_path=args.vectorstore_path,
-    docker_uri=args.docker_uri
+    interact_protocol=args.interact_protocol
 )
 agent: AgentBase = infer_agent_class(args.agent_method)(llm, env, agent_method=args.agent_method)
 test_data: List[Dict[str, Any]] = load_test_data(args.test_data, args.dataset)
