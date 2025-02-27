@@ -41,7 +41,7 @@ class TwoStageSymRAGAgent(AgentBase):
         # [Stage 1]: Generate SQL
         logger.info('[Stage 1]: Generate SQL ...')
         task_input, image_messages = formulate_input(dataset, example, use_pdf_id=True)
-        logger.info(f'[Task Input]: {task_input}')
+        logger.info(f'[Task Input]: stage 1 -> {task_input}')
         task_input += f"\n[Database Schema]: {database_prompt}"
         task_prompt = self.agent_prompt[0].format(
             system_prompt=self.system_prompt[0],
@@ -65,6 +65,7 @@ class TwoStageSymRAGAgent(AgentBase):
             task_input=task_input,
             context=f"[Context]: {observation.obs_content}"
         )
+        logger.info(f"[Task Input]: stage 2 -> {task_prompt}")
         messages = [{'role': 'user', 'content': task_prompt}]
         response = self.model.get_response(messages, model, temperature, top_p, max_tokens)
         logger.info(f'[Response]: {response}')

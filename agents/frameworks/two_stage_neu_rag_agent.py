@@ -41,7 +41,7 @@ class TwoStageNeuRAGAgent(AgentBase):
         # [Stage 1]: Generate RetriveFromVectorstore action
         logger.info('[Stage 1]: Generate RetriveFromVectorstore action ...')
         task_input, image_messages = formulate_input(dataset, example, use_pdf_id=True)
-        logger.info(f'[Task Input]: {task_input}')
+        logger.info(f'[Task Input]: stage 1 -> {task_input}')
         task_input += f"\n[Vectorstore Schema]: {vectorstore_prompt}"
         action_space_prompt = RetrieveFromVectorstore.specification(self.env.action_format)
         task_prompt = self.agent_prompt[0].format(
@@ -58,7 +58,7 @@ class TwoStageNeuRAGAgent(AgentBase):
             response,
             action_types=[RetrieveFromVectorstore],
             action_format=self.env.action_format,
-            agent_method=self.env.interact_protocol
+            interact_protocol=self.env.interact_protocol
         )
         logger.info(f'[Action]: {repr(action)}')
 
@@ -71,6 +71,7 @@ class TwoStageNeuRAGAgent(AgentBase):
             task_input=task_input,
             context=f"[Context]: {observation.obs_content}"
         )
+        logger.info(f'[Task Input]: stage 2 -> {task_prompt}')
         messages = [{'role': 'user', 'content': task_prompt}]
         response = self.model.get_response(messages, model, temperature, top_p, max_tokens)
         logger.info(f'[Response]: {response}')
