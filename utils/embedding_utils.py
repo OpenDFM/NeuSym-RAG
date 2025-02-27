@@ -2,7 +2,7 @@
 import os, tempfile, time
 import numpy as np
 from typing import List, Dict, Union, Any
-from towhee import DataCollection, ops, pipe
+from towhee import ops, pipe
 from towhee.runtime.runtime_pipeline import RuntimePipeline
 from milvus_model.base import BaseEmbeddingFunction
 from utils.vectorstore_utils import detect_embedding_model_path

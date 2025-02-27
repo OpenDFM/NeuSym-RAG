@@ -5,7 +5,7 @@ from agents.models.llm_cache import Sqlite3CacheProvider as LLMCache
 
 
 class LLMClient(abc.ABC):
-    """ Abstract class for the LLM client.
+    """ Abstract class for the LLM client. Notice that, by default we cache the LLM responses into a local database under `.cache/llm_cache.sqlite` for the purpose of saving the API cost. To avoid conflicts in writing to DB if multiple processes run, you can set the environment variable `NO_LLM_CACHE` to `True`.
     """
     
     def __init__(self, *args, **kwargs) -> None:
@@ -28,7 +28,7 @@ class LLMClient(abc.ABC):
 
 
     @abc.abstractmethod
-    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: Optional[str] = None, image_limit: int = 10) -> List[Dict[str, str]]:
+    def convert_message_from_gpt_format(self, messages: List[Dict[str, str]], model: Optional[str] = None) -> List[Dict[str, str]]:
         """ Convert the messages to the format that the LLM model can understand.
         """
         pass
@@ -40,13 +40,12 @@ class LLMClient(abc.ABC):
         temperature: float = 0.7,
         top_p: float = 0.95,
         max_tokens: int = 1500,
-        image_limit: int = 10,
         **kwargs
     ) -> str:
         """ Get response function wrapper with LLM cache.
         """
         if self.no_llm_cache: # do not cache
-            messages = self.convert_message_from_gpt_format(messages, model, image_limit=image_limit)
+            messages = self.convert_message_from_gpt_format(messages, model)
             return self._get_response(messages, model, temperature, top_p, max_tokens)
 
         params = {
@@ -62,7 +61,7 @@ class LLMClient(abc.ABC):
         if cached_response is not None: # hit cache
             return cached_response
         else:
-            messages = self.convert_message_from_gpt_format(messages, model, image_limit=image_limit)
+            messages = self.convert_message_from_gpt_format(messages, model)
             response = self._get_response(messages, model, temperature, top_p, max_tokens)
             self.cache.insert(hashed_key, params, response)
             return response

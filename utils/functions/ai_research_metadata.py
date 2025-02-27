@@ -4,13 +4,13 @@ import urllib, urllib.request
 import xmltodict
 from bs4 import BeautifulSoup
 from typing import List, Union, Optional, Tuple, Any, Dict
-import fitz, pymupdf # PyMuPDF
+import pymupdf
 from fuzzywuzzy import fuzz
 import pandas as pd
 from urllib.parse import urlencode, quote
 
 from utils.functions.common_functions import is_valid_uuid, get_uuid, call_llm, call_llm_with_message, convert_to_message
-from utils.functions.parallel_functions import parallel_write_or_read
+from utils.functions.parallel_functions import parallel_extract_or_fill
 
 
 logger = logging.getLogger(__name__)
@@ -125,12 +125,12 @@ def repair_pdf_with_qpdf(pdf_path: str) -> str:
 def get_num_pages(pdf_path: str) -> int:
     """ Get the number of pages in a PDF file.
     """
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     num_pages = doc.page_count
     doc.close()
     if num_pages == 0:
         repair_pdf_with_qpdf(pdf_path)
-        doc = fitz.open(pdf_path)
+        doc = pymupdf.open(pdf_path)
         num_pages = len(doc)
         doc.close()
     return num_pages
@@ -170,7 +170,7 @@ def infer_paper_title_from_pdf(
     ) -> str:
     """ Use a language model to infer the title of a paper from the top `first_lines` lines of the first page in a PDF.
     """
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     first_page = doc[0]
     if first_lines is not None:
         first_page_text = '\n'.join(first_page.get_text().split('\n')[:first_lines])
@@ -207,7 +207,7 @@ def infer_paper_volume_from_pdf(
     VOLUME_SYSTEM_PROMPT = VOLUME_PROMPTS["VOLUME_SYSTEM_PROMPT"]
     VOLUME_USER_PROMPT = VOLUME_PROMPTS["VOLUME_USER_PROMPT"]
     VOLUME_FEW_SHOTS = VOLUME_PROMPTS["VOLUME_FEW_SHOTS"]
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     first_page = doc[0]
     first_lines_text = '\n'.join(first_page.get_text().split('\n')[:first_lines])
     last_lines_text = '\n'.join(first_page.get_text().split('\n')[-last_lines:])
@@ -250,7 +250,7 @@ def infer_paper_abstract_from_pdf(
     """ Use a language model to infer the abstract of a paper from the first page in a PDF.
     """
     if kwargs.get("ignore_llm"): return None
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
 
     template = """You are an expert in academic papers. Your task is to identify the abstract of a research paper based on the text from the first {page_num} page(s) in the PDF, extracted using PyMuPDF. Please ensure the following:\n1. Directly return the abstract without adding any extra context, explanations, or formatting.\n2. Do not modify the abstract, retain its original capitalization and punctuation exactly as presented.\n3. If the abstract spans multiple lines, concatenate them into a single line and return it.\n4. If you are certain that the provided text does not contain the paper's abstract, respond only with "abstract not found".\n\nHere is the extracted text:\n\n```txt\n{page_content}\n```\n\nYour response is:\n"""
     
@@ -273,7 +273,7 @@ def infer_paper_authors_from_pdf(
     ) -> List[str]:
     """ Use a language model to infer the authors of a paper from the first page in a PDF.
     """
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     first_page = doc[0]
     first_page_text = first_page.get_text()
     doc.close()
@@ -310,9 +310,9 @@ def infer_paper_tldr_from_metadata(
     # Call the language model to infer the TL;DR
     template = f"""You are an expert in academic papers. Your task is to write a TL;DR (Too Long; Didn't Read) summary for a research paper based on its title and abstract. The TL;DR should:\n1. Be concise and within {max_length} characters.\n2. Capture the main focus or contribution of the paper.\n3. Be written in a single line without extra formatting or context.\n\nHere are the title and abstract of the paper.\nTitle: {pdf_title}\nAbstract: {pdf_abstract}\n\nYour response is:"""
     if kwargs.get("parallel"):
-        tldr = parallel_write_or_read(template, **kwargs).strip()
-        if tldr is not None: return tldr
-    tldr = call_llm(template, model=model, temperature=temperature, top_p=top_p).strip()
+        tldr = parallel_extract_or_fill(template, **kwargs).strip()
+    else:
+        tldr = call_llm(template, model=model, temperature=temperature, top_p=top_p).strip()
     return tldr
 
 
@@ -331,8 +331,8 @@ def infer_paper_tags_from_metadata(
     template = f"""You are an expert in academic papers. Your task is to generate a list of {tag_number} relevant tags (keywords) for a research paper based on its title and abstract. The tags should:\n1. Be concise and relevant to the paper's main focus.\n2. Be unique (avoid duplicates).\n3. Be written as a comma-separated list.\n\nHere are the title and abstract of the paper.\nTitle: {pdf_title}\nAbstract: {pdf_abstract}\nYour response is:\n"""
     tags = None
     if kwargs.get("parallel"):
-        tags = parallel_write_or_read(template, **kwargs).strip()
-    if tags is None:
+        tags = parallel_extract_or_fill(template, **kwargs).strip()
+    else:
         tags = call_llm(template, model=model, temperature=temperature, top_p=top_p, **kwargs).strip()
     tag_list = [tag.strip() for tag in tags.split(',') if tag.strip()]
     return tag_list

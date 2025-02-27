@@ -12,33 +12,63 @@ def hashed(stringified_message: str) -> str:
 PARALLEL_DICT = {}
 
 
-def parallel_write_or_read(
+def parallel_extract_or_fill(
         template: str,
         **kwargs
     ) -> str:
+    """Extract the message to a batch file, or Fill the response of the message.
+
+    @args:
+        template (str): the template of the message
+
+    @returns:
+        str: the response of the message
+    """
     stringified_message = json.dumps(convert_to_message(truncate_tokens(template), **kwargs), separators=(",", ":"))
     hashed_message = hashed(stringified_message.strip())
     parallel = kwargs.get("parallel")
     parallel_dict = {}
-    if parallel.get("read"):
-        if PARALLEL_DICT.get(parallel["read"], {}) == {}:
-            PARALLEL_DICT[parallel["read"]] = json.load(open(parallel["read"], "r", encoding='utf-8'))
-        parallel_dict = PARALLEL_DICT[parallel["read"]]
+    if parallel.get("fill"):
+        if PARALLEL_DICT.get(parallel["fill"], {}) == {}:
+            PARALLEL_DICT[parallel["fill"]] = json.load(open(parallel["fill"], "r", encoding='utf-8'))
+        parallel_dict = PARALLEL_DICT[parallel["fill"]]
         if parallel_dict.get(hashed_message):
             return parallel_dict[hashed_message]
         print(f"Message {hashed_message} not found in the parallel file.")
-    if parallel.get("write"):
-        with open(parallel["write"], "a", encoding='utf-8') as f:
+    if parallel.get("extract"):
+        os.makedirs(os.path.dirname(parallel["extract"]), exist_ok=True)
+        with open(parallel["extract"], "a", encoding='utf-8') as f:
             f.write(stringified_message + "\n")
         return ""
     return "NO SUMMARY"
 
 def parallel_message_to_batch(
-        message_group: List[List[Dict[str, str]]], 
-        hashed_group: List[str],
+        input_path: str,
+        output_path: str,
         model: str = 'qwen2-vl-72b-instruct',
         max_tokens: int = 1500
     ):
+    """Construct a batch inference group in OpenAI style from a list of messages.
+
+    @args:
+        input_path (str): The path to the input message file.
+        output_path (str): The path to the output batch file.
+        model (str, optional): LLM used for batch inference. Defaults to 'qwen2-vl-72b-instruct'.
+        max_tokens (int, optional): Max tokens for the response. Defaults to 1500.
+
+    @returns:
+        batch_group (List[Dict[str, Any]]): The batch group.
+    """
+    
+    # Read messages from input file and hash the messages
+    message_group, hashed_group = [], []
+    with open(input_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip() == "": continue
+            message_group.append(json.loads(line))
+            hashed_group.append(hashed(line.strip()))
+    
+    # Construct the OpenAI style batch
     batch_group = []
     for message, hashed_message in zip(message_group, hashed_group):
         batch_group.append(
@@ -53,12 +83,25 @@ def parallel_message_to_batch(
                 }
             }
         )
+    
+    # Write batch to the output file
+    with open(output_path, "w", encoding="utf-8") as of:
+        for message in batch_group:
+            of.write(json.dumps(message) + "\n")
+    
     return batch_group
 
 
 def serial_process_batch(
-        input_group: List[Dict[str, Any]],
+        input_path: str,
+        output_path: str
     ):
+    input_group = []
+    with open(input_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip() == "": continue
+            input_group.append(json.loads(line))
+    
     output_group = {}
     for batch in tqdm(input_group, disable=not sys.stdout.isatty()):
         try:
@@ -68,17 +111,45 @@ def serial_process_batch(
             )
         except Exception as e:
             print(f"Error in processing batch {batch['custom_id']}: {e}")
+            
+    with open(output_path, "w", encoding="utf-8") as of:
+        json.dump(output_group, of, ensure_ascii=False, indent=4)
+    
     return output_group
 
 
 def parallel_batch_to_dict(
-        batch_group: List[Dict[str, Any]],
+        input_path: str,
+        output_path: str
     ):
+    """Restore the { hash_value -> response } mapping from the batch inference output.
+
+    @args:
+        input_path (str): The path to the input result file.
+        output_path (str): The path to the output mapping file.
+
+    @returns:
+        summary_dict (Dict[str, str]): The mapping.
+    """
+    
+    # Read batch results from input file
+    batch_group = []
+    with open(input_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip() == "": continue
+            batch_group.append(json.loads(line))
+    
+    # Restore the hash_value -> response mapping
     summary_dict = {}
     for batch in batch_group:
         response_body = batch["response"]["body"]
         if response_body:
             summary_dict[batch["custom_id"]] = batch["response"]["body"]["choices"][0]["message"]["content"]
+    
+    # Write the mapping to the output file
+    with open(output_path, "w", encoding="utf-8") as of:
+        json.dump(summary_dict, of, ensure_ascii=False, indent=4)
+    
     return summary_dict
 
 
@@ -92,33 +163,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.function == "batch":
-        message_group, hashed_group = [], []
-        with open(args.input, "r", encoding="utf-8") as f:
-            for line in f:
-                if line.strip() == "": continue
-                message_group.append(json.loads(line))
-                hashed_group.append(hashed(line.strip()))
-        batch_group = parallel_message_to_batch(message_group, hashed_group, model=args.model)
-        with open(args.output, "w", encoding="utf-8") as of:
-            for message in batch_group:
-                of.write(json.dumps(message) + "\n")
+        batch_group = parallel_message_to_batch(args.input, args.output, model=args.model)
     elif args.function == "unbatch":
-        batch_group = []
-        with open(args.input, "r", encoding="utf-8") as f:
-            for line in f:
-                if line.strip() == "": continue
-                batch_group.append(json.loads(line))
-        summary_dict = parallel_batch_to_dict(batch_group)
-        with open(args.output, "w", encoding="utf-8") as of:
-            json.dump(summary_dict, of, ensure_ascii=False, indent=4)
+        summary_dict = parallel_batch_to_dict(args.input, args.output)
     elif args.function == "process":
-        input_group = []
-        with open(args.input, "r", encoding="utf-8") as f:
-            for line in f:
-                if line.strip() == "": continue
-                input_group.append(json.loads(line))
-        output_group = serial_process_batch(input_group)
-        with open(args.output, "w", encoding="utf-8") as of:
-            json.dump(output_group, of, ensure_ascii=False, indent=4)
+        output_group = serial_process_batch(args.input, args.output)
     else:
         raise NotImplementedError(f"Function {args.function} is not supported.")

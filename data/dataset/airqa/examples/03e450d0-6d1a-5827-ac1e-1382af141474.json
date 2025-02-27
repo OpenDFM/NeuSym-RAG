@@ -1,0 +1,36 @@
+{
+    "uuid": "03e450d0-6d1a-5827-ac1e-1382af141474",
+    "question": "What are the proportions of the training and test sets for the two benchmark datasets used in the anchor PDF?",
+    "answer_format": "Your answer should be a python dictionary as {\"dataset1\": proportion1, \"dataset2\": proportion2}. The proportions should be rounded to two decimal places.",
+    "tags": [
+        "single",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "8bb134d7-cd12-5752-84df-c77cc3d6363d"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the two benchmark datasets used for evaluation in the anchor PDF, which are mentioned in the experiments section.",
+        "Retrieve the exact numbers of the training and test sets for the two datasets.",
+        "Calculate the proportions of the training and test sets for the two datasets, which is the ratio of the number of training to the number of test sets."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": {
+                "CUFS": 0.79,
+                "CUFSF": 0.26
+            },
+            "lowercase": true,
+            "ignore_order": true,
+            "tolerance": 0.01
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

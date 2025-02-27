@@ -13,7 +13,7 @@ class ErrorAction(Action):
     error: str = field(default='', repr=False) # error message, optional
 
 
-    def convert_to_message(self, action_format: Optional[str] = None) -> Dict[str, str]:
+    def convert_to_message(self, action_format: Optional[str] = None, interact_protocol: Optional[str] = None) -> Dict[str, str]:
         return {'role': 'assistant', 'content': self.response}
 
 

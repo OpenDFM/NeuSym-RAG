@@ -3,6 +3,7 @@
 from .common_functions import (
     get_uuid,
     is_valid_uuid,
+    truncate_tokens
 )
 
 from .pdf_functions import (
@@ -32,6 +33,11 @@ from .ai_research import (
 from .ai_research_metadata import (
     get_ai_research_metadata,
     aggregate_ai_research_metadata
+)
+
+from .parallel_functions import (
+    parallel_message_to_batch,
+    parallel_batch_to_dict
 )
 
 from .test_domain import (

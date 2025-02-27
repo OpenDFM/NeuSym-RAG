@@ -3,14 +3,12 @@
 import os, openai, uuid, re, sys, logging, subprocess, tempfile, json
 from typing import List, Dict, Union, Optional, Any, Iterable, Tuple
 from difflib import SequenceMatcher
-import fitz  # PyMuPDF
-import PyPDF2
-from PyPDF2 import PdfWriter, PageObject
+import pymupdf
 from pdf2image import convert_from_path
 from pdfminer.layout import LTImage, LTFigure, LTRect
-from utils.functions.common_functions import call_llm, get_uuid, call_llm_with_message
-from utils.functions.parallel_functions import parallel_write_or_read
-from agents.frameworks import truncate_tokens
+from utils.functions.common_functions import call_llm, get_uuid, truncate_tokens
+from utils.functions.parallel_functions import parallel_extract_or_fill
+
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
@@ -21,6 +19,7 @@ formatter = logging.Formatter(
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.setLevel(logging.INFO)
+
 
 def get_pdf_page_text(
         pdf_path: str,
@@ -43,7 +42,7 @@ def get_pdf_page_text(
             - page_contents: List[str], the list of strings, each string represents the content of each page.
             - page_uuids: List[str], the list of UUIDs for each page if generate_uuid is True.
     """
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     file_name = os.path.basename(pdf_path)
     pdf_id = None
     if generate_uuid:
@@ -60,6 +59,7 @@ def get_pdf_page_text(
         if generate_uuid:
             page_uuids.append(get_uuid(name=text, uuid_type=uuid_type, uuid_namespace=uuid_namespace))
     output = {"pdf_id": pdf_id, "pdf_name": file_name, "pdf_path": pdf_path, "page_contents": page_contents, "page_uuids": page_uuids}
+    doc.close()
     return output
 
 
@@ -95,8 +95,8 @@ Please directly return the summary without any extra information or formatting. 
             template = prompt_template.format(text=text, max_length=max_length)
             response = None
             if kwargs.get("parallel"):
-                response = parallel_write_or_read(template=template, **kwargs)
-            if response is None:
+                response = parallel_extract_or_fill(template=template, **kwargs)
+            else:
                 if len(text) >= 100000: # roughly 28k tokens
                     template = truncate_tokens(template, max_tokens=28)
                 response = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
@@ -104,6 +104,7 @@ Please directly return the summary without any extra information or formatting. 
         else:
             summary.append(text)
     return {'text_summary': summary if type(content[key]) == list else summary[0]}
+
 
 def get_table_summary(
         table: Dict[str, Any],
@@ -119,33 +120,13 @@ Please generate a brief summary for the following table without any extra inform
 """
     template = prompt_template.format(max_length=max_length, table_caption=table['table_caption'], table_html=table['table_html'])
     if kwargs.get("parallel"):
-        table_summary = parallel_write_or_read(template=template, **kwargs)
-        if table_summary is not None: return table_summary
-    if len(template) >= 100000: # roughly 28k tokens
-        template = truncate_tokens(template, max_tokens=28)
-    table_summary = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
+        table_summary = parallel_extract_or_fill(template=template, **kwargs)
+    else:
+        if len(template) >= 100000: # roughly 28k tokens
+            template = truncate_tokens(template, max_tokens=28)
+        table_summary = call_llm(template=template, model=model, top_p=top_p, temperature=temperature)
     return table_summary
 
-def crop_pdf(
-        element: Union[LTFigure, LTImage],
-        page_obj: PageObject,
-        output_file: str
-    ):
-    """Crop a PDF file according to the bounding box of the element and save it to a new PDF file.
-
-    @args:
-        element: Union[LTFigure, LTImage], the element to be cropped.
-        page_obj: PageObject, PDF-page object resolved from PyPDF2.
-        output_file: str, path to output PDF file. 
-    """
-    [image_left, image_top, image_right, image_bottom] = [element.x0, element.y0, element.x1, element.y1]
-    page_obj.mediabox.upper_left = (image_left, image_top)
-    page_obj.mediabox.lower_right = (image_right, image_bottom)
-    cropped_pdf_writer = PdfWriter()
-    cropped_pdf_writer.add_page(page_obj)
-    with open(output_file, 'wb') as cropped_pdf_file:
-        cropped_pdf_writer.write(cropped_pdf_file)
-    cropped_pdf_writer.close()
 
 def convert_pdf_to_image(
         input_file: str,
@@ -163,6 +144,7 @@ def convert_pdf_to_image(
     images = convert_from_path(input_file, dpi=dpi)
     image = images[0]
     image.save(output_file, "PNG")
+
 
 def add_reference_to_json(
         uuid: str,
@@ -220,6 +202,7 @@ def add_reference_to_json(
     with open(os.path.join(output_data_folder, f'{uuid}.json'), 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
     return data
+
 
 def parse_pdf(
         pdf_path: str,
@@ -347,7 +330,7 @@ def parse_pdf(
     }
 
     # Extract Table of Contents using PyMuPDF
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     toc = doc.get_toc()
 
     if toc:  # The case when PyMuPDF can parse TOC
@@ -587,6 +570,7 @@ def parse_pdf(
         json.dump(result, f, ensure_ascii=False, indent=4)
     
     return result
+
 
 def load_json_from_processed_data(
         pdf_path: str, 

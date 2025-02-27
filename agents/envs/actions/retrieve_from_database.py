@@ -2,7 +2,7 @@
 from agents.envs.actions.action import Action
 from agents.envs.actions.observation import Observation
 from dataclasses import dataclass, field
-import duckdb,tiktoken
+import duckdb, tiktoken
 import pandas as pd
 import gymnasium as gym
 from typing import Optional, List, Tuple, Dict, Union, Any

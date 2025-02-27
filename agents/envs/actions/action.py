@@ -73,7 +73,7 @@ class Action(ABC):
 
 
     @classmethod
-    def specification(cls, action_format: str = 'markdown') -> str:
+    def specification(cls, action_format: str = 'markdown', interact_protocol: str = 'react') -> str:
         """ Return a human-readable specification of the action according to the argument `action_format`.
         This specification is usually inserted into the action space of the system prompt. The checklist of all actions is defined in file `actions.json`, each as a json dict like the following example: (will be automatically converted into the specified `action_format`)
         {
@@ -164,67 +164,45 @@ class Action(ABC):
 
 
     @classmethod
-    def get_action_space_prompt(cls, action_types: List[type], action_format: str = 'markdown') -> str:
-        """ Return the entire action space prompt for all given action types (using function `_specification`) based on the `action_format`.
+    def get_action_space_prompt(cls, action_types: List[type], action_format: str = 'markdown', interact_protocol: str = 'react') -> str:
+        """ Return the entire action space prompt for all given action types (using function `specification`) based on the `action_format`.
         """
         assert action_format in ACTION_FORMATS, f"Action format {action_format} not supported."
         action_names = [action_cls.__name__ for action_cls in action_types]
         action_space_prompt = f"## Action and Observation Space\nAll allowable action types include {str(action_names)}. Here is the detailed specification in {action_format.upper()} format:\n"
         actions = []
         for action_cls in action_types:
-            actions.append(action_cls.specification(action_format))
+            actions.append(action_cls.specification(action_format, interact_protocol))
         return action_space_prompt + '\n----\n'.join(actions)
 
 
     @classmethod
-    def parse_action(cls, text: str, action_types: List[type], action_format: str = 'markdown', agent_method: str = 'react') -> Tuple[bool, 'Action']:
+    def parse_action(cls, text: str, action_types: List[type], action_format: str = 'markdown', interact_protocol: str = 'react') -> Tuple[bool, 'Action']:
         """ Parse the raw LLM response text into one concrete Action object based on the allowable action types and the specified action `format`.
         @args:
             text: str, the raw LLM response text
             action_types: List[type], a list of allowable action types, depending on the environment
             action_format: str, the format of the action text, chosen from ['markdown', 'json', 'xml', 'yaml']
-            agent_method: str, the agent method for the response, used to extract the parsable action_text from raw LLM response text, chosen from ['react', 'code_block'], default to 'react'
+            interact_protocol: str, the protocol for the extracting response, used to extract the parsable action_text from raw LLM response text, chosen from ['react', 'code_block'], default to 'react'
                 - react: each action should be wrapped in the framework below (`Thought` is optional)
                     [Thought]: ...
                     [Action]: ...
                     [Observation]: ...
-                - code_block: each action should be wrapped in the 3 backticks
+                - code_block: each action should be wrapped in the 3 backticks like
+                    ```json
+                    {
+                        "action_type": "GenerateAnswer",
+                        "parameters": {
+                            "answer": 42
+                        }
+                    }
+                    ```
         @return:
             flag: bool, whether the action is successfully parsed
             action_obj: Action, the parsed action object
         """
         assert action_format in ACTION_FORMATS, f"Action format `{action_format}` is not supported."
-
-        # extract the real action_text from raw LLM response, maybe dependent on agent frameworks
-        # currently only support react and code_block styles
-        if agent_method not in ['react', 'code_block']: agent_method = 'react'
-        if agent_method == 'react':
-            though_patterns = [
-                r"\[?\bThought\b\]?:\s*(.*?)\s*\[?\bAction\b\]?:",
-                r"\*\*Thought\*\*:\s*(.*?)\s*\*\*Action\*\*:",
-            ]
-            for thought_pattern in though_patterns:
-                matched_thought = re.search(thought_pattern, text, re.DOTALL)
-                if matched_thought:
-                    break
-            else: matched_thought = None
-            thought = matched_thought.group(1) if matched_thought else None
-            action_patterns = [
-                r"\[?\bAction\b\]?:\s*(.*?)\s*(\[?\bObservation\b\]?:|$)",
-                r"\*\*Action\*\*:\s*(.*?)\s*(\*\*Observation\*\*:|$)"
-            ]
-            for action_pattern in action_patterns:
-                matched_action = re.search(action_pattern, text, re.DOTALL)
-                if matched_action:
-                    break
-            else: matched_action = None
-            action_text = matched_action.group(1).strip() if matched_action else text.strip()
-        elif agent_method == 'code_block':
-            thought = None
-            matching_list = re.findall(r"```(\S*)\s*(.*?)\s*```", text.strip(), flags=re.DOTALL)
-            action_text = matching_list[-1][1].strip() if len(matching_list) > 0 else text.strip()
-        else:
-            raise ValueError(f"Agent method `{agent_method}` not supported yet.")
+        thought, action_text = cls.extract_thought_and_action_text(text, interact_protocol)
 
         from .error_action import ErrorAction
         action_names = [action_cls.__name__ for action_cls in action_types]
@@ -243,6 +221,39 @@ class Action(ABC):
             except Exception as e:
                 continue # try next action type
         return False, ErrorAction(response=text, error=f"Failed to parse a valid action from the response. Please check the specification for these actions {str(action_names)}.")
+
+
+    @classmethod
+    def extract_thought_and_action_text(cls, text: str, interact_protocol: str = 'react') -> Tuple[Optional[str], str]:
+        """ Extract the `thought` and `action_text` from raw LLM response depending on the interact protocol. Currently, we only support `react` and `code_block` styles.
+        """
+        if interact_protocol == 'react':
+            though_patterns = [
+                r"\[?\b(?:Thought|thinking|think)\b\]?:\s*(.*?)\s*\[?\bAction\b\]?:",
+                r"\*\*(?:Thought|thinking|think)\*\*:\s*(.*?)\s*\*\*Action\*\*:",
+            ]
+            for thought_pattern in though_patterns:
+                matched_thought = re.search(thought_pattern, text, re.IGNORECASE | re.DOTALL)
+                if matched_thought:
+                    break
+            else: matched_thought = None
+            thought = matched_thought.group(1) if matched_thought else None
+            action_patterns = [
+                r"\[?\bAction\b\]?:\s*(.*?)\s*(\[?\bObservation\b\]?:|$)",
+                r"\*\*Action\*\*:\s*(.*?)\s*(\*\*Observation\*\*:|$)"
+            ]
+            for action_pattern in action_patterns:
+                matched_action = re.search(action_pattern, text, re.IGNORECASE | re.DOTALL)
+                if matched_action: break
+            else: matched_action = None
+            action_text = matched_action.group(1).strip() if matched_action else text.strip()
+        elif interact_protocol == 'code_block':
+            thought = None
+            matching_list = re.findall(r"```(\S*)\s*(.*?)\s*```", text.strip(), flags=re.DOTALL)
+            action_text = matching_list[-1][1].strip() if len(matching_list) > 0 else text.strip()
+        else:
+            raise ValueError(f"Interact protocol `{interact_protocol}` not supported yet.")
+        return thought, action_text
 
 
     @classmethod
@@ -318,7 +329,7 @@ class Action(ABC):
             raise ValueError(f"Action format {action_format} not supported for {class_name} action yet.")
 
 
-    def convert_to_message(self, action_format: str = 'markdown') -> Dict[str, str]:
+    def convert_to_message(self, action_format: str = 'markdown', interact_protocol: str = 'react') -> Dict[str, str]:
         """ Convert the Action object into a message according to the specified format.
         This message is used to record the interaction history.
         """
@@ -326,7 +337,10 @@ class Action(ABC):
         if hasattr(self, 'thought') and self.thought is not None:
             action_str += f'[Thought]: {self.thought}\n'
 
-        action_str += '[Action]: '
+        action_str += '[Action]:\n'
+        if interact_protocol == 'code_block':
+            action_str += f"```{action_format}\n"
+
         cls_type, cls_name = self.__class__, self.__class__.__name__
         if action_format == 'markdown':
             action_str += repr(self) # directly use the repr() function for dataclass
@@ -365,4 +379,7 @@ class Action(ABC):
             action_str = '\n' + yaml.dump(json_dict, default_flow_style=False, allow_unicode=True, sort_keys=False, indent=4)
         else:
             raise ValueError(f"Action format {action_format} not supported for {cls_name}.")
+
+        if interact_protocol == 'code_block':
+            action_str += f"\n```"
         return {'role': 'assistant', 'content': action_str}

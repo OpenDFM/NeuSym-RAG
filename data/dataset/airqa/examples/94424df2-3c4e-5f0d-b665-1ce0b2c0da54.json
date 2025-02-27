@@ -1,0 +1,32 @@
+{
+    "uuid": "94424df2-3c4e-5f0d-b665-1ce0b2c0da54",
+    "question": "Among the baseline TTE approaches for the code-based task on Celiac Disease, which method achieves the best performance, excluding the new method proposed in this paper?",
+    "answer_format": "Your answer should be a python strings about the approach name. YOU MUST USE THE EXACT NAME FROM THE PAPER.",
+    "tags": [
+        "single",
+        "objective",
+        "text",
+        "table"
+    ],
+    "anchor_pdf": [
+        "4c5fce26-2c1e-55c2-b4de-b1a11a58d66f"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the performance of the baseline TTE approaches for the code-based task in the table.",
+        "Identify the methods proposed in the paper.",
+        "Determine the method that achieves the best performance on Celiac Disease excluding the new method proposed in the paper."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "RSF",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

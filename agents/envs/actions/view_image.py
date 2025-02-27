@@ -8,7 +8,6 @@ import gymnasium as gym
 import os
 import tempfile
 from typing import Optional, List, Tuple, Dict, Union, Any
-from PIL import Image
 from PyPDF2 import PdfReader
 from pdf2image import convert_from_path
 
@@ -43,52 +42,24 @@ class ViewImage(Action):
             return Observation('[Error]: bounding box must be a list of 0 or 4 floats.')
 
         dataset = env.dataset.lower()
-        if dataset == 'pdfvqa':
-            pdf_page_dirname = os.path.join('data', 'dataset', 'pdfvqa', 'processed_data', 'test_images')
-            if not any(fn.startswith(f'{self.paper_id}.pdf') for fn in os.listdir(pdf_page_dirname)):
-                return Observation(f'[Error]: paper id {self.paper_id} does not exist.')
-            pdf_page_filename = os.path.join(pdf_page_dirname, f'{self.paper_id}.pdf_{self.page_number - 1}.png')
-            if not os.path.exists(pdf_page_filename):
-                return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
-            try:
-                image = Image.open(pdf_page_filename)
-                width_ratio = height_ratio = 1
-            except Exception as e:
-                return Observation(f'[Error]: {str(e)}')
-        elif dataset == 'tatdqa':
-            pdf_filename = os.path.join('data', 'dataset', 'tatdqa', 'processed_data', 'test_docs', f'{self.paper_id}.pdf')
-            if not os.path.exists(pdf_filename):
-                return Observation(f'[Error]: paper id {self.paper_id} does not exist.')
-            try:
-                with open(pdf_filename, 'rb') as fin:
-                    pdf_reader = PdfReader(fin)
-                    mediabox = pdf_reader.pages[self.page_number - 1].mediabox
-                    w, h = mediabox.width, mediabox.height
-                image = convert_from_path(pdf_filename)[self.page_number - 1]
-                width_ratio, height_ratio = image.width / w, image.height / h
-            except IndexError:
-                return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
-            except Exception as e:
-                return Observation(f'[Error]: {str(e)}')
-        else: # other ai research datasets
-            pdf_dirname = os.path.join('data', 'dataset', dataset, 'papers')
-            for conference in os.listdir(pdf_dirname):
-                pdf_filename = os.path.join(pdf_dirname, conference, f'{self.paper_id}.pdf')
-                if os.path.exists(pdf_filename):
-                    break
-            else:
-                return Observation(f'[Error]: paper id {self.paper_id} does not exist.')
-            try:
-                with open(pdf_filename, 'rb') as fin:
-                    pdf_reader = PdfReader(fin)
-                    mediabox = pdf_reader.pages[self.page_number - 1].mediabox
-                    w, h = mediabox.width, mediabox.height
-                image = convert_from_path(pdf_filename)[self.page_number - 1]
-                width_ratio, height_ratio = float(image.width) / float(w), float(image.height) / float(h)
-            except IndexError:
-                return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
-            except Exception as e:
-                return Observation(f'[Error]: {str(e)}')
+        pdf_dirname = os.path.join('data', 'dataset', dataset, 'papers')
+        for conference in os.listdir(pdf_dirname):
+            pdf_filename = os.path.join(pdf_dirname, conference, f'{self.paper_id}.pdf')
+            if os.path.exists(pdf_filename):
+                break
+        else:
+            return Observation(f'[Error]: paper id {self.paper_id} does not exist.')
+        try:
+            with open(pdf_filename, 'rb') as fin:
+                pdf_reader = PdfReader(fin)
+                mediabox = pdf_reader.pages[self.page_number - 1].mediabox
+                w, h = mediabox.width, mediabox.height
+            image = convert_from_path(pdf_filename)[self.page_number - 1]
+            width_ratio, height_ratio = float(image.width) / float(w), float(image.height) / float(h)
+        except IndexError:
+            return Observation(f'[Error]: page {self.page_number} of paper id {self.paper_id} does not exist.')
+        except Exception as e:
+            return Observation(f'[Error]: {str(e)}')
 
         try:
             if self.bounding_box:

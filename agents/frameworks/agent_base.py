@@ -14,10 +14,10 @@ logger = logging.getLogger(__name__)
 
 class AgentBase(ABC):
 
-    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: str = 'react', max_turn: int = 10):
+    def __init__(self, model: LLMClient, env: AgentEnv, agent_method: Optional[str] = None, max_turn: int = 10):
         self.model, self.env = model, env
         self.agent_method, self.max_turn = agent_method, max_turn
-        self.agent_prompt = ''
+        self.agent_prompt, self.system_prompt = '', ''
 
 
     def close(self):
@@ -46,7 +46,7 @@ class AgentBase(ABC):
 
             obs, reward, flag, info = self.env.step(response, **output_kwargs)
             action: Action = self.env.parsed_actions[-1]
-            action_msg = action.convert_to_message(self.env.action_format)
+            action_msg = action.convert_to_message(self.env.action_format, self.env.interact_protocol)
             logger.info(action_msg['content'])
 
             obs: Observation

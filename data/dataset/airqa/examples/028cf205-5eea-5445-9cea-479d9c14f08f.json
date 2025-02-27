@@ -1,0 +1,32 @@
+{
+    "uuid": "028cf205-5eea-5445-9cea-479d9c14f08f",
+    "question": "What is the meaning of formula (1) in the paper?",
+    "answer_format": "Your answer should be a python strings concisely explaining the meaning of the formula.",
+    "tags": [
+        "single",
+        "formula",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "4cb24634-a638-51e8-be8d-a15e108c945a"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the formula (1) and the relevant context in the paper.",
+        "Understand the context and the meaning of the formula.",
+        "Write a concise explanation of the meaning of the formula."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "Formula (1) is the frame-by-frame concatenation operation that concatenates the encoding results of Whisper and BEATs along the feature dimension. The Whisper model is trained for speech recognition and translation based on a large amount of weakly supervised data, whose encoder output features are suitable to model speech and include information about the background noises. BEATs is trained to extract high-level non-speech audio semantics information using iterative self-supervised learning. The input audio is first tokenised then masked and predicted in training. The tokeniser is updated by distilling the semantic knowledge of the audio tokens. Therefore, the resulting auditory features of these two encoders are complementary and suitable for general audio inputs with both speech and non-speech information.",
+            "question": "What is the meaning of formula (1) in the paper?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
