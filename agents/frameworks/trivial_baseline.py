@@ -41,7 +41,7 @@ class TrivialBaselineAgent(AgentBase):
                 return '\n'.join(toc['title'] + '\n' + toc['text'] for toc in pdata['info_from_mineru']['TOC'])
             else:
                 pdf_path = uuid2papers[pid]['pdf_path']
-                contents = get_pdf_page_text(pdf_path, generate_uuid=False)['page_contents']
+                contents = get_pdf_page_text(pdf_path, generate_uuid=False, normalize_blank=False)['page_contents']
                 return "\n\n".join(contents)
 
 
@@ -62,24 +62,26 @@ class TrivialBaselineAgent(AgentBase):
         task_input, image_messages = formulate_input(dataset, example, use_pdf_id=False)
         if self.agent_method == 'trivial_question_only':
             task_input = f"[Question]: {example['question']}\n[Answer Format]: {example['answer_format']}"
-            context = 'No context provided.'
+            context = ''
         else:
             dataset_dir = os.path.join(DATASET_DIR, dataset)
             uuid2papers = get_airqa_paper_metadata(dataset_dir=dataset_dir)
             context_list = [self.get_pdf_context(pid, uuid2papers) for pid in example["anchor_pdf"]]
-            if self.agent_method == 'trivial_title_with_abstract':
-                pdf_separator = '\n\n'
-                context = 'Titles and abstracts for anchor PDFs:\n' + pdf_separator.join(context_list)
-            else: # trivial_full_text_with_cutoff
-                pdf_separator = '\n\n' + '-' * 10 + '\n\n'
-                context = f'Full text for anchor PDFs with {cutoff}k tokens cutoff:\n' + pdf_separator.join(context_list)
-            context = truncate_tokens(context, max_tokens=cutoff)
+            if len(context_list) > 0:
+                if self.agent_method == 'trivial_title_with_abstract':
+                    pdf_separator = '\n\n'
+                    context = 'Titles and abstracts for anchor PDFs:\n' + pdf_separator.join(context_list)
+                else: # trivial_full_text_with_cutoff
+                    pdf_separator = '\n\n' + '-' * 10 + '\n\n'
+                    context = f'Full text for anchor PDFs with {cutoff}k tokens cutoff:\n' + pdf_separator.join(context_list)
+            else: context = 'No context provided.'
+            context = '[Context]: ' + truncate_tokens(context, max_tokens=cutoff)
         task_prompt = self.agent_prompt.format(
+            system_prompt=self.system_prompt,
             task_input=task_input,
-            context=f"[Context]: {context}"
+            context=context
         )
-        logger.info(f"[Task Input]: {task_input}")
-        logger.info(f'[Context]: {context}')
+        logger.info(f"[Task Input]: {task_input}\n{context}")
         if image_messages:
             task_prompt = [{'type': 'text', 'text': task_prompt}] + image_messages
         messages = [{'role': 'user', 'content': task_prompt}]

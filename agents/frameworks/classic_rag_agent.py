@@ -42,7 +42,7 @@ class ClassicRAGAgent(AgentBase):
         filter_condition = ""
         if len(example['anchor_pdf']) == 1:
             pdf_string = repr(example['anchor_pdf'][0])
-            filter_condition = f"pdf_id == '{pdf_string}'"
+            filter_condition = f"pdf_id == {pdf_string}"
         elif len(example['anchor_pdf']) > 1:
             pdf_string = ', '.join([repr(pid) for pid in example['anchor_pdf']])
             filter_condition = f"pdf_id in [{pdf_string}]"

@@ -37,7 +37,7 @@ def parse_args():
     parser.add_argument('--length_limit', type=int, default=32, help='The total length limit of the prompt (multiplied by 1000). By default, 32k.')
 
     # method specific hyperparams
-    parser.add_argument('--collection_name', type=str, default='text_bm25_en', help='For Classic-RAG and Iterative Classic-RAG methods, the collection name to retrieve context.')
+    parser.add_argument('--collection_name', type=str, default='text_sentence_transformers_all_minilm_l6_v2', help='For Classic-RAG and Iterative Classic-RAG methods, the collection name to retrieve context.')
     parser.add_argument('--table_name', type=str, default='chunks', help='For Classic-RAG and Iterative Classic-RAG methods, the table name to retrieve context.')
     parser.add_argument('--column_name', type=str, default='text_content', help='For Classic-RAG and Iterative Classic-RAG methods, the column name to retrieve context.')
     parser.add_argument('--limit', type=int, default=4, help='For Classic-RAG, the limit or top K of the retrieved chunks.')
