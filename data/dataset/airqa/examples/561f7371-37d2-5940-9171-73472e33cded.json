@@ -1,7 +1,7 @@
 {
     "uuid": "561f7371-37d2-5940-9171-73472e33cded",
-    "question": "Which core NLP problem is mentioned in the anchor_pdf, and how many class classification problems is it usually structured as?",
-    "answer_format": "Your answer should be a python strings.",
+    "question": "Which core NLP problem is mentioned in the paper \"Are Machines Better at Complex Reasoning? Unveiling Human-Machine Inference Gaps in Entailment Verification\", and what is it usually structured as?",
+    "answer_format": "Your answer should be a python list of two elements. The first one is a core NLP problem name and you should use abbreviation as given in the papers. The second one is a python strings, describing how the problem is usually structured.",
     "tags": [
         "multiple",
         "text",
@@ -15,15 +15,27 @@
     ],
     "conference": [],
     "reasoning_steps": [
-        "Find the core NLP problem mentioned in the anchor_pdf.",
+        "Find the core NLP problem mentioned in the paper \"Are Machines Better at Complex Reasoning? Unveiling Human-Machine Inference Gaps in Entailment Verification\".",
         "Then search the paper about the core NLP problem.",
-        "Finally, find its structure."
+        "Finally, find its structure in the papers."
     ],
     "evaluator": {
-        "eval_func": "eval_reference_answer_with_llm",
+        "eval_func": "eval_conjunction",
         "eval_kwargs": {
-            "reference_answer": "The core NLP problem is Natural Language Inference (NLI), and it  is usually structured as a two or three class classification problem.",
-            "question": "Which core NLP problem is mentioned in the anchor_pdf, and how many class classification problems is it usually structured as?"
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list":[
+                {
+                    "gold": "NLI",
+                    "lowercase": true
+                },
+                {
+                    "reference_answer": "It is usually structured as a two or three class classification problem.",
+                    "question": "what is NLI usually structured as?"
+                }
+            ]
         }
     },
     "state": {

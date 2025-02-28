@@ -1,0 +1,35 @@
+{
+    "uuid": "66c0154e-799f-5095-9de0-36d41967dfe9",
+    "question": "What are the advantages of the transformer-based architecture proposed in the paper?",
+    "answer_format": "Your answer should be a python strings about the obvious advantages.",
+    "tags": [
+        "single",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "7cf3e986-7a71-5481-b217-d72c32335d09"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the transformer-based architecture proposed in the paper.",
+        "Retrieve the advantages of the transformer-based architecture proposed in the paper.",
+        "Explain the advantages concisely and clearly."
+    ],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_point": [
+                "The Rough Transformer is independent of the sequence length of input data.",
+                "The Rough Transformer is robust to irregular sampling",
+                "The Rough Transformer decreases the memory and computational bottleneck inherent to the vanilla Transformer."
+            ],
+            "question": "What are the advantages of the transformer-based architecture proposed in the paper?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
