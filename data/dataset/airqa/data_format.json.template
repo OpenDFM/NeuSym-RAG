@@ -1,23 +1,18 @@
 {
-    "uuid": "xxxx-xxxx-xxxx", // unique identifier for the data or task sample
+    "uuid": "xxxx-xxxx-xxxx", // unique identifier for this data sample
     "question": "user question about ai research papers", // user question
-    "answer_format": "specify answer format, e.g., a single float number, a list of strings", // text description on how to format the answer, can be inserted into prompt
+    "answer_format": "text description on answer format, e.g., a single float number, a list of strings", // can be inserted into prompt
     "tags": [
         "tag1",
         "tag2"
-    ], // different tags for the data or task sample, see documents/airqa_tags.md for reference
+    ], // different tags for the data or task sample, see below for definition
     "anchor_pdf": [
-    ], // paper ids that must be used in the current question
+    ], // UUIDs of the papers that are explicitly mentioned in the question
     "reference_pdf": [
-    ], // often in "multiple" category to define the list of papers that may be used
+    ], // in "multiple" category, UUIDs of papers that may be used but not provided in the question
     "conference": [
         "acl2023"
-    ], // in "retrieval" or "comprehensive" category to define the set of papers, usually volume
-    "reasoning_steps": [
-        "find the table related to xxx",
-        "check the table content about method A and method B",
-        "perform calculation with result(A) - result(B)"
-    ], // thought process or how to obtain the target answer
+    ], // in "retrieval" or "comprehensive" category, define the search space of papers, usually conference+year
     "evaluator": {
         "eval_func": "function_name_to_call", // all eval functions are defined under `evaluation/` folder
         "eval_kwargs": {
@@ -27,9 +22,5 @@
             ]
         } // the gold answer or how to get the gold answer should be included in `eval_kwargs` dict. Other optional keyword arguments can be used for customization and function re-use, e.g., `lowercase=True` and `threshold=0.95`.
     }, // A complex dict specifying the evaluation function and its parameters. The first parameter of the `eval_func` must be LLM predicted string.
-    "state": {
-        "gpt-4o-2024-05-13": false,
-        "gui-gpt-4o-2024-05-13": true
-    }, // true or false represents whether this question can be resolved by the keyword model; the `gui-` prefix represents using the web browser interface instead of api
-    "annotator": "human" // whether annotated by human or machine
+    "annotator": "human" // whether annotated by human, machine, or adapted from other datasets
 }

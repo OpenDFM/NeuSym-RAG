@@ -32,12 +32,14 @@
     ```sh
     mkdir -p .cache/ && cd .cache/
     git clone https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
-    ... # download other vector encoding models
+    git clone https://huggingface.co/BAAI/bge-large-en-v1.5
+    git clone https://huggingface.co/openai/clip-vit-base-patch32
+    ... # download other vector encoding models if needed
     ```
-3. Download the dataset-related files into the folder `data/dataset`:
-    - `AirQA-Real`: including the metadata, papers, and processed_data 👉🏻 GoogleDrive | HuggingFace
-    - `M3SciQA`: including the metadata, papers, images, and processed_data 👉🏻 GoogleDrive | HuggingFace
-    - `SciDQA`: including the metadata, papers, and processed_data 👉🏻 GoogleDrive | HuggingFace
+3. Download the dataset-related files into the folder `data/dataset` 👉🏻 [HuggingFace](todo)
+    - `AirQA-Real`: including the `metadata/`, `papers/`, and `processed_data/`
+    - `M3SciQA`: including the `metadata/`, `papers/`, `images/`, and `processed_data/`
+    - `SciDQA`: including the `metadata/`, `papers/`, and `processed_data/`
   
     <details>
     <summary>Organize them into the following folder structure 👇🏻</summary>
@@ -152,7 +154,21 @@
 
 ## Experiment Results
 
+
+
 ### Evaluation
+
+The instance-specific evaluation metric is defined in the field `evaluator` for each data sample (see [Data Format](./documents/airqa_format.md#data-format-of-airqa)). For evaluation, create a `.jsonl` file for each testing sample and store the predicted string or object in the field `answer` as well as its `uuid` like:
+```jsonl
+{"uuid": "00608f20-e3f5-5fdc-8979-4efeb0756d8e", "answer": "True"}
+{"uuid": "00b28687-3ea1-5974-a1ec-80d7f6cd3424", "answer": "3.14"}
+...
+```
+
+Then, you can run the following command to evaluate the performance:
+```sh
+python utils/eval_utils.py --gold data/dataset/airqa/test_data_553.jsonl --pred test_data_553_pred.jsonl --dataset airqa --output evaluation.log
+```
 
 
 ## PDF Parsing and Encoding

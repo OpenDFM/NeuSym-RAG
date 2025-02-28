@@ -1,6 +1,6 @@
-# PDF-based Question Answering on Artificial Intelligence Research Papers (AIR-QA)
+## AirQA Benchmark
 
-## Folder Structure
+### Folder Structure
 
 ```txt
 - data/dataset/airqa/ # root folder
@@ -24,12 +24,43 @@
         - ...
 ```
 
+### Data Format of AirQA
 
-## AIR-QA Tags
+```json
+{
+    "uuid": "xxxx-xxxx-xxxx", // unique identifier for this data sample
+    "question": "user question about ai research papers", // user question
+    "answer_format": "text description on answer format, e.g., a single float number, a list of strings", // can be inserted into prompt
+    "tags": [
+        "tag1",
+        "tag2"
+    ], // different tags for the data or task sample, see below for definition
+    "anchor_pdf": [
+    ], // UUIDs of the papers that are explicitly mentioned in the question
+    "reference_pdf": [
+    ], // in "multiple" category, UUIDs of papers that may be used but not provided in the question
+    "conference": [
+        "acl2023"
+    ], // in "retrieval" category, define the search space of papers, usually conference+year
+    "evaluator": {
+        "eval_func": "function_name_to_call", // all eval functions are defined under `evaluation/` folder
+        "eval_kwargs": {
+            "scoring_points": [
+                "1.score point1",
+                "2.score point1"
+            ]
+        } // the gold answer or how to get the gold answer should be included in `eval_kwargs` dict. Other optional keyword arguments can be used for customization and function re-use, e.g., `lowercase=True` and `threshold=0.95`.
+    }, // A complex dict specifying the evaluation function and its parameters. The first parameter of the `eval_func` must be LLM predicted string.
+    "annotator": "human" // whether annotated by human, machine, or adapted from other datasets
+}
+```
+
+
+### Tags of AirQA
 
 This section describes different question categories (or tags) for classification.
 
-### Category 1: Task Goals
+#### Category 1: Task Goals
 
 - `single`: ask technical details of one single paper, e.g.,
     - list 3 major contributions of this work
@@ -37,11 +68,9 @@ This section describes different question categories (or tags) for classificatio
     - which agent framework performs better on a popular benchmark
 - `retrieval`: retrieve papers with constraints, e.g.,
     - papers published by a specific author or institute
-- `comprehensive`: if the task does not belong to any category above or requires integration of multiple task types, e.g.,
-    - for papers including experiments on a specific benchmark in neurips 2023, what's the top performance
 
 
-### Category 2: Key Capabilities
+#### Category 2: Key Capabilities
 
 - `text`: Q&A that focuses on text understanding and reasoning
 - `table`: Q&A that requires identifying tables and their contents
@@ -50,19 +79,10 @@ This section describes different question categories (or tags) for classificatio
 - `metadata`: metadata includes authors, institutes, e-mails, conferences, years and other information that does not appear in the main text (e.g., page header and footer)
 
 
-### Category 3: Evaluation Types
+#### Category 3: Evaluation Types
 
 - `subjective`: answers that require LLM or model-based evaluation
-- `objective`: answers that can be evaluated with objective metrics
-
-
-### Category 4: Hardness Level
-
-TODO: this category will be automatically determined by the number of reasoning steps in the annotated `.json` data (field `reasoning_steps`). Annotators only need to write the `reasoning_steps`.
-- `easy`
-- `medium`
-- `hard`
-- `extra`
+- `objective`: answers that can be evaluated with objective metrics defined in [`evaluation/`](../evaluation/__init__.py)
 
 
 ### Paper Metadata Format

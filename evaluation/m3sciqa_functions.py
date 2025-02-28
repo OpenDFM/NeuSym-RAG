@@ -1,11 +1,34 @@
 #coding=utf8
 import re, json, os, sys
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from typing import Any, Dict, List, Tuple, Optional, Union
-from utils.functions.common_functions import call_llm, call_llm_with_message
-from utils.airqa_utils import get_relevant_papers_by_title
+from typing import Any
+try:
+    from utils.functions.common_functions import call_llm_with_message
+except:
+    import openai, os
+    from openai.types.chat.chat_completion import ChatCompletion
+
+    def call_llm_with_message(
+            messages: Any, 
+            model: str = 'gpt-4o-mini', 
+            top_p: float = 0.95, 
+            temperature: float = 0.7
+        ) -> str:
+        """ Call LLM to generate the response directly using the message list.
+        """
+        api_key = os.getenv('OPENAI_API_KEY', None)
+        base_url = os.getenv('OPENAI_BASE_URL', None)
+        client = openai.OpenAI(api_key=api_key, base_url=base_url)
+        completion: ChatCompletion = client.chat.completions.create(
+            messages,
+            model=model,
+            temperature=temperature,
+            top_p=top_p
+        )
+        return completion.choices[0].message.content.strip()
 
 
+DEFAULT_M3SCIQA_SYSTEM_PROMPT = "You are the sole expert in this field and you can understand scientific papers."
 DEFAULT_M3SCIQA_LLM_MODEL = 'gpt-4-0125-preview'
 DEFAULT_M3SCIQA_TEMPERATURE = 0.1
 
@@ -26,9 +49,7 @@ def eval_m3sciqa(pred: Any, question: str, reference_answer: str, model: str = D
         match = re.search(pattern, text, re.DOTALL)
         return match.group(0) if match else None
     
-    prompt = f"""You are the sole expert in this field and you can understand scientific papers.
-    
-    I am testing a model performance on open-ended questions, I want you to help me in checking if the candidate answer has the same meaning with the reference answer given the question. If you think the reference answer and the candidate answer have the same meaning, respond {{"selection": "1"}}; else, respond by {{"selection": "0"}}; if you think the candidate is partially correct, respond by {{"selection": "0.5"}}.
+    prompt = f"""I am testing a model performance on open-ended questions, I want you to help me in checking if the candidate answer has the same meaning with the reference answer given the question. If you think the reference answer and the candidate answer have the same meaning, respond {{"selection": "1"}}; else, respond by {{"selection": "0"}}; if you think the candidate is partially correct, respond by {{"selection": "0.5"}}.
 
     <QUESTION>
     {question}
@@ -47,7 +68,14 @@ def eval_m3sciqa(pred: Any, question: str, reference_answer: str, model: str = D
     Do not use other format.
 """
     
-    response = call_llm(prompt, model=model, temperature=temperature)
+    response = call_llm_with_message(
+        messages=[
+            {"role": "system", "content": DEFAULT_M3SCIQA_SYSTEM_PROMPT},
+            {"role": "user", "content": prompt}
+        ],
+        model=model,
+        temperature=temperature
+    )
     response = extract_response(response)
     response = json.loads(response)['selection']
     
