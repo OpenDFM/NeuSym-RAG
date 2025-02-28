@@ -505,7 +505,7 @@ def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
     if kwargs.get('fields_of_study', None) is not None:
         query_params['fieldsOfStudy'] = ",".join(kwargs['fields_of_study'])
     if kwargs.get('start_year', None) is not None:
-        query_params['year'] = f'{year}-'
+        query_params['year'] = f'{kwargs["start_year"]}-'
     hits = []
     try:
         response = requests.get(url, headers=headers, json=query_params, timeout=60)
