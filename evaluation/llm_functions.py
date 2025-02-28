@@ -250,7 +250,7 @@ def eval_paper_relevance_with_llm_and_reference_answer(pred: Any, question: str,
     @return:
         The evaluation score, 0.0 or 1.0.
     """
-    results = get_relevant_papers_by_title(pred, dataset_dir=dataset_dir, threshold=threshold, topk=topk)
+    results = []
     if len(results) == 0:
         return 0.0
     metadata = results[0]
