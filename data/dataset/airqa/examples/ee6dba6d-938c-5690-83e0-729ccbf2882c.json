@@ -1,0 +1,36 @@
+{
+    "uuid": "ee6dba6d-938c-5690-83e0-729ccbf2882c",
+    "question": "What are the selected questionnaires or scales on personality trait domain in the PsychoBench framework?",
+    "answer_format": "Your answer should be a python list of the abbreviations of the questionnaires names, e.g., ['NEO-FFI', 'IPIP']",
+    "tags": [
+        "single",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "9b3a636d-5184-58d5-9333-49a304ad2f68"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the section in the anchor PDF that describes the questionnaires or scales used in the PsychoBench framework.",
+        "Identify the names of the questionnaires or scales on the personality trait domain, which are mentioned in a figure.",
+        "List the abbreviations of the questionnaires or scales mentioned in the section."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "BFI",
+                "EPQ-R",
+                "DTDD"
+            ],
+            "lowercase": true,
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
