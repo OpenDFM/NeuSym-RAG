@@ -1,0 +1,27 @@
+{
+    "uuid": "6b4e8ab7-8482-55dc-ba84-ebc606c19f27",
+    "question": "Please give me the github link of this work.",
+    "answer_format": "Your answer should be a single string of the github link.",
+    "tags": [
+        "text",
+        "single",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "0a95099e-2121-5136-b03f-d9232413cc31"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold":"https://github.com/ZexuSun/OILCA-NeurIPS23" ,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
