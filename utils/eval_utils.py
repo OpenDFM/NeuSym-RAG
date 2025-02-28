@@ -8,7 +8,6 @@ from fuzzywuzzy import fuzz
 from tabulate import tabulate
 from contextlib import nullcontext
 from evaluation.evaluator import evaluate_airqa as evaluate_dataset
-from utils.functions.common_functions import is_valid_uuid
 
 
 def load_jsonl(fp: str) -> List[Dict[str, Any]]:
@@ -85,7 +84,10 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
         for pred, gold in zip(pred_data, gold_data):
             cnt += 1
             print(f"Evaluating {cnt}/{tot}...", end='\r')
-            score = evaluate_dataset(pred['answer'], gold)
+            if str(pred['answer']).upper().startswith('[ERROR]:'):
+                score = 0.0
+            else:
+                score = evaluate_dataset(pred['answer'], gold)
             if score < 0.5 and output_path is not None:
                 outfile.write(f'\n[ERROR]: data (type={gold["question_type"] if "question_type" in gold else gold["tags"]}) with id {gold["uuid"]}\n')
                 outfile.write(f'Gold Answer: {resolve_gold_answer(gold)}\n')
@@ -107,129 +109,6 @@ def evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], dataset
         if output_path is not None:
             outfile.write('\n' + print_result(result))
 
-    return result
-
-
-def re_evaluate(pred: Union[List[dict], str], gold: Union[List[dict], str], eval_path: str, dataset: str, **kwargs) -> dict:
-    """ Re-evaluate AirQA dataset
-    """
-
-    if dataset != 'airqa':
-        raise NotImplementedError(f"Dataset {dataset} not supported.")
-    
-    pred_data, gold_data = [], []
-    if isinstance(pred, str):
-        with open(pred, 'r', encoding='utf8') as f:
-            for line in f:
-                pred = json.loads(line)
-                pred_data.append(pred)
-    else: pred_data = pred
-    if isinstance(gold, str):
-        with open(gold, 'r', encoding='utf8') as f:
-            for line in f:
-                gold = json.loads(line)
-                gold_data.append(gold)
-    else: gold_data = gold
-    
-    error_uuids = []
-    block_lines = ""
-    result_lines = ""
-    with open(eval_path, 'r', encoding='utf8') as f:
-        text = ""
-        is_block = True
-        for line in f:
-            if line.startswith("+") and line.strip().endswith("+"):
-                is_block = False
-            if is_block: 
-                block_lines += line
-            else:
-                result_lines += line
-
-    block_lines += "\n[ERROR]\n"
-    
-    for block in block_lines.split('[ERROR]: data'):
-        block = block.strip()
-        if not block: continue
-        first_line = block.split('\n')[0]
-        uuid = first_line.split('with id ')[-1]
-        if is_valid_uuid(uuid):
-            error_uuids.append(uuid)
-        else:
-            print(f"Invalid block: {block}")
-    
-    result_lines = list(result_lines.strip().split("\n"))
-    result = {}
-    for line in result_lines[3:-1]:
-        values = [value.strip() for value in line[1:-1].split("|")]
-        result[values[0]] = {
-            "correct": float(values[1]), 
-            "count": int(values[2]), 
-            "score": float(values[3])
-        }
-        assert abs(float(values[1]) / int(values[2]) - float(values[3])) < 1e-6, f"Error in Original Result data:\n{line}"
-    
-    if result.get('figure'):
-        result['image']['correct'] += result['figure']['correct']
-        result['image']['count'] += result['figure']['count']
-        del result['figure']
-    result['all'] = result['total']
-    del result['total']
-
-    tot = 0
-    assert len(pred_data) == len(gold_data)
-    output_path = kwargs.get('output_path', None)
-    with open(output_path, 'w', encoding='utf-8') if output_path else nullcontext() as outfile:
-        for pred, gold in tqdm(zip(pred_data, gold_data)):
-            # Only Re-Evaluate LitSearch
-            if (gold["annotator"] == 'human') or ("retrieval" not in gold["tags"]):
-                continue
-            
-            tot += 1
-            assert gold["evaluator"]["eval_func"] == "eval_paper_relevance_with_llm_and_reference_answer", f"Eval Func `eval_paper_relevance_with_llm_and_reference_answer` expected, but {gold['evaluator']['eval_func']} found."
-            
-            pre_score = 0.0 if gold["uuid"] in error_uuids else 1.0
-            result['all']['count'] -= 1
-            result['all']['correct'] -= pre_score
-            if 'question_type' in gold:
-                result[gold['question_type']]['count'] -= 1
-                result[gold['question_type']]['correct'] -= pre_score
-            else:
-                for tag in gold['tags']:
-                    result[tag]['count'] -= 1
-                    result[tag]['correct'] -= pre_score
-            
-            assert ('subjective' in gold['tags']) and ('objective' not in gold['tags'])
-            gold['tags'].remove('subjective')
-            gold['tags'].append('objective')
-            
-            reference_answer = str(gold["evaluator"]["eval_kwargs"]["reference_answer"]).lower()
-            pred_answer = str(pred['answer']).lower()
-            score = 0.0
-            if fuzz.ratio(pred_answer, reference_answer) >= 90:
-                score = 1.0
-            
-            if score < 0.5 and output_path is not None:
-                outfile.write(f'\n[ERROR]: data (type={gold["question_type"] if "question_type" in gold else gold["tags"]}) with id {gold["uuid"]}\n')
-                outfile.write(f'Gold Answer: {resolve_gold_answer(gold)}\n')
-                outfile.write(f'Predicted Answer: {pred["answer"]}\n')
-            result['all']['count'] += 1
-            result['all']['correct'] += score
-            if 'question_type' in gold:
-                result[gold['question_type']]['count'] += 1
-                result[gold['question_type']]['correct'] += score
-            else:
-                for tag in gold['tags']:
-                    result[tag]['count'] += 1
-                    result[tag]['correct'] += score
-
-        for key in result.keys():
-            score, count = result[key]['correct'], result[key]['count']
-            result[key]['score'] = score / count if count > 0 else 0.0
-
-        if output_path is not None:
-            outfile.write('\n' + print_result(result))
-
-    print(f"Re-Evaluate {tot} examples.")
     return result
 
 
@@ -251,21 +130,8 @@ if __name__ == '__main__':
     parser.add_argument('--dataset', type=str, default='airqa', choices=['airqa', 'm3sciqa', 'scidqa', 'spiqa'], help='Dataset name')
     parser.add_argument('--pred', type=str, help='Path to predicted answer, .jsonl file')
     parser.add_argument('--gold', type=str, help='Path to gold answer, .jsonl file')
-    # parser.add_argument('--folder', type=str, required=True, help='Folder to results & evaluations.')
-    # parser.add_argument('--re', action='store_true', help='Whether to re-evaluate the results')
     parser.add_argument('--output', type=str, default=None, help='Path to save the evaluation result, .txt file')
     args = parser.parse_args()
-    
-    # folder = args.folder
-    # assert os.path.exists(folder), "[Error]: Folder not found."
-    # result_path = os.path.join(folder, 'result.jsonl')
-    # assert os.path.exists(result_path), "[Error]: Result file not found."
-    # if args.re:
-    #     eval_path = os.path.join(folder, 'evaluation.txt')
-    #     assert os.path.exists(eval_path), "[Error]: Eval file not found."
-    #     output_path = os.path.join(folder, 're_evaluation.txt')
-    #     result = re_evaluate(result_path, args.gold, eval_path, args.dataset, output_path=output_path)
-    #     exit(0)
 
     assert args.pred, "[Error]: Path to predicted answer .jsonl is required."
     assert args.gold, "[Error]: Path to gold answer .jsonl is required."
