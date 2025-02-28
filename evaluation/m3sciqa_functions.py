@@ -1,31 +1,7 @@
 #coding=utf8
-import re, json, os, sys
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from typing import Any
-try:
-    from utils.functions.common_functions import call_llm_with_message
-except:
-    import openai, os
-    from openai.types.chat.chat_completion import ChatCompletion
-
-    def call_llm_with_message(
-            messages: Any, 
-            model: str = 'gpt-4o-mini', 
-            top_p: float = 0.95, 
-            temperature: float = 0.7
-        ) -> str:
-        """ Call LLM to generate the response directly using the message list.
-        """
-        api_key = os.getenv('OPENAI_API_KEY', None)
-        base_url = os.getenv('OPENAI_BASE_URL', None)
-        client = openai.OpenAI(api_key=api_key, base_url=base_url)
-        completion: ChatCompletion = client.chat.completions.create(
-            messages,
-            model=model,
-            temperature=temperature,
-            top_p=top_p
-        )
-        return completion.choices[0].message.content.strip()
+import re, json, os, sys
+from .llm_functions import call_llm_with_message
 
 
 DEFAULT_M3SCIQA_SYSTEM_PROMPT = "You are the sole expert in this field and you can understand scientific papers."

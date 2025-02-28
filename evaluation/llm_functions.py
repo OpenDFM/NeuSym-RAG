@@ -1,20 +1,20 @@
 #coding=utf8
+import openai, os
 import re, json, os, sys
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from typing import Any, Dict, List, Tuple, Optional, Union
 import fuzzywuzzy.fuzz as fuzz
+from typing import Any, Dict, List, Tuple, Optional, Union
+from openai.types.chat.chat_completion import ChatCompletion
+
 try:
+    sys.path.append(os.path.dirname(os.path.dirname(__file__)))
     from utils.functions.common_functions import call_llm_with_message
 except:
-    import openai, os
-    from openai.types.chat.chat_completion import ChatCompletion
-
     def call_llm_with_message(
-            messages: Any, 
-            model: str = 'gpt-4o-mini', 
-            top_p: float = 0.95, 
-            temperature: float = 0.7
-        ) -> str:
+        messages: Any, 
+        model: str = 'gpt-4o-mini', 
+        top_p: float = 0.95, 
+        temperature: float = 0.7
+    ) -> str:
         """ Call LLM to generate the response directly using the message list.
         """
         api_key = os.getenv('OPENAI_API_KEY', None)
