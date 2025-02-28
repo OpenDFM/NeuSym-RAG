@@ -493,8 +493,8 @@ def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
     @return: metadata dict
         see doc in `get_ai_research_metadata`
     """
-    # api_key = os.environ.get('S2_API_KEY', None)
-    # headers = {"x-api-key": api_key} if api_key is not None else {}
+    api_key = os.environ.get('S2_API_KEY', None)
+    headers = {"x-api-key": api_key} if api_key is not None else None
     url = "http://api.semanticscholar.org/graph/v1/paper/search/bulk"
     query_params = {
         "query": title,
@@ -508,8 +508,7 @@ def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
         query_params['year'] = f'{year}-'
     hits = []
     try:
-        # requests.get(url, headers=headers, json=query_params, timeout=60)
-        response = requests.get(url, json=query_params, timeout=60)
+        response = requests.get(url, headers=headers, json=query_params, timeout=60)
         response.raise_for_status()
         response = response.json()
         if response['total'] > 1000:

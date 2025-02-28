@@ -65,9 +65,9 @@ TODO: this category will be automatically determined by the number of reasoning 
 - `extra`
 
 
-### Get PDF Metadata
+### Paper Metadata Format
 
-This is also the first function that will be invoked in the pipeline function when populating database content.
+This is also the first function that will be invoked in the PDF pipeline function when populating database content.
 ```python
 from utils.functions import get_ai_research_metadata
 output_json = get_ai_research_metadata(input_pdf)

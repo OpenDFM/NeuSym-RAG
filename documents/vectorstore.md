@@ -126,3 +126,13 @@ python utils/data_population.py --database ai_research --vectorstore ai_research
     "page_number": 1 // optional, quickly filter search space
 }
 ```
+
+
+### Build BM25 Vocabulary
+
+The Python script below aims to build the BM25 vocabulary over the entire paper corpus and generate the `bm25.json` file under the `data/vectorstore/${vectorstore}/` directory. Take the `airqa` dataset and the `ai_research` vectorstore as an example:
+```py
+from utils.vectorstore_utils import build_bm25_corpus
+
+build_bm25_corpus(paper_dir='data/dataset/airqa/papers/', save_path='data/vectorstore/ai_research/bm25.json')
+```

@@ -29,7 +29,7 @@ def extract_answer_from_trajectory(data: List[Dict[str, Any]], action_format: st
                 msg['content'],
                 action_types=[GenerateAnswer], # only one action type
                 action_format=action_format,
-                agent_method=agent_method
+                interact_protocol=agent_method
             )
             if flag:
                 result = action.execute(None).obs_content
