@@ -103,12 +103,12 @@ export S2_API_KEY="your_semantic_scholar_api_key"
         ```json
         {
             ...
-            "models-dir": "/path/to/.cache/huggingface/hub/models--opendatalab--PDF-Extract-Kit-1.0/snapshots/60416a2cabad3f7b7284b43ce3   7a99864484fba2/models",
-            "layoutreader-model-dir": "/path/to/.cache/huggingface/hub/models--hantian--layoutreader/snapshots/641226775a0878b1014a96ad0   1b964291513685",
+            "models-dir": "/path/to/.cache/huggingface/hub/models--opendatalab--PDF-Extract-Kit-1.0/snapshots/60416a2cabad3f7b7284b43ce37a99864484fba2/models",
+            "layoutreader-model-dir": "/path/to/.cache/huggingface/hub/models--hantian--layoutreader/snapshots/641226775a0878b1014a96ad01b964291513685",
             ...
         }
         ```
-    - Change and ensure that the functions for `formula-config` and `table-config` are both set to `true`. If CUDA is available, also change the field `device-mode` to your cuda device (e.g., `cuda:0`) for acceleration
+    - Change and ensure that the functions for `formula-config` and `table-config` are both set to `true`. If CUDA is available, also change the field `device-mode` to your cuda device (e.g., `cuda:0`) for acceleration.
         ```json
         {
             ...
