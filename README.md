@@ -11,11 +11,11 @@
 
 ## Quick Start 🔍
 
-1. Create the conda environment:
-  - Install [`poppler`](https://pdf2image.readthedocs.io/en/latest/installation.html#installing-poppler) on your system
-  - Follow the [Official Guide](https://github.com/opendatalab/MinerU) to install **MinerU** based on your OS platform
-  - Check our [TroubleShooting](./documents/third_party_tools.md#mineru-installation) tips to ensure the installation of MinerU is successful
-  - Install other pip requirements
+1. Create the conda environment and install dependencies:
+    - Install [`poppler`](https://pdf2image.readthedocs.io/en/latest/installation.html#installing-poppler) on your system
+    - Follow the [Official Guide](https://github.com/opendatalab/MinerU) to install **MinerU** based on your OS platform
+    - Check our [TroubleShooting](./documents/third_party_tools.md#mineru-installation) tips to ensure the installation of MinerU is successful
+    - Install other pip requirements
     ```sh
     conda create neusymrag python=3.10
     conda activate neusymrag
@@ -25,127 +25,128 @@
     pip install -r requirements.txt
     ```
 2. Prepare the following models for vector encoding:
-  - [`sentence-transformers/all-MiniLM-L6-v2`](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
-  - [`BAAI/bge-large-en-v1.5`](https://huggingface.co/BAAI/bge-large-en-v1.5)
-  - [`openai/clip-vit-base-patch32`](https://huggingface.co/openai/clip-vit-base-patch32)
-  - For embedding model customization, refer to [vectorstore doc](./documents/vectorstore.md)
+    - [`sentence-transformers/all-MiniLM-L6-v2`](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
+    - [`BAAI/bge-large-en-v1.5`](https://huggingface.co/BAAI/bge-large-en-v1.5)
+    - [`openai/clip-vit-base-patch32`](https://huggingface.co/openai/clip-vit-base-patch32)
+    - For embedding model customization, refer to [vectorstore doc](./documents/vectorstore.md)
     ```sh
     mkdir -p .cache/ && cd .cache/
     git clone https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
     ... # download other vector encoding models
     ```
 3. Download the dataset-related files into the folder `data/dataset`:
-  - `AirQA-Real`: including the metadata, papers, and processed_data 👉🏻 GoogleDrive | HuggingFace
-  - `M3SciQA`: including the metadata, papers, images, and processed_data 👉🏻 GoogleDrive | HuggingFace
-  - `SciDQA`: including the metadata, papers, and processed_data 👉🏻 GoogleDrive | HuggingFace
+    - `AirQA-Real`: including the metadata, papers, and processed_data 👉🏻 GoogleDrive | HuggingFace
+    - `M3SciQA`: including the metadata, papers, images, and processed_data 👉🏻 GoogleDrive | HuggingFace
+    - `SciDQA`: including the metadata, papers, and processed_data 👉🏻 GoogleDrive | HuggingFace
     <details>
     <summary>Organize them into the following folder structure 👇🏻</summary>
 
-    ```
-    data/dataset/
-    ├── airqa/
-    │   ├── ccf_catalog.csv
-    │   ├── data_format.json.template
-    │   ├── metadata/ # metadata for all PDFs
-    |   |   |   ├── aa0e0451-f10a-539b-9c6c-0be53800b94f.json
-    |   |   |   ├── ... # more metadata for PDFs in ACL 2023
-    │   ├── papers/
-    |   |   ├── acl2023/
-    |   |   |   ├── aa0e0451-f10a-539b-9c6c-0be53800b94f.pdf
-    |   |   |   ├── ... # more PDFs in ACL 2023
-    |   |   ├── iclr2024/
-    |   |   |   ├── aa071344-e514-52f9-b9cf-9bea681a68c2.pdf
-    |   |   |   ├── ... # more PDFs in ICLR 2024
-    |   |   ├── ... # more conference + year subfolders
-    │   ├── processed_data/
-    |   |   |   ├── aa0e0451-f10a-539b-9c6c-0be53800b94f.json
-    |   |   |   ├── ... # more processed data for PDFs in ACL 2023
-    │   ├── test_data_553.jsonl # one line for each example
-    │   ├── test_data_ablation.jsonl
-    │   ├── uuids.json # uuids for all PDFs
-    ├── m3sciqa/
-    │   ├── images/
-    |   |   ├── 2310.04988/
-    |   |   |   ├── HVI_figure.png
-    |   |   ├── ... # more image subfolders
-    │   ├── metadata/
-    │   ├── papers/
-    │   ├── processed_data/
-    │   ├── test_data.jsonl
-    │   ├── mappings.json
-    │   └── uuids.json
-    ├── scidqa/
-    │   ├── metadata/
-    │   ├── papers/
-    │   ├── processed_data/
-    │   ├── test_data.jsonl
-    │   ├── test_data_775.jsonl
-    │   ├── mappings.json
-    │   └── uuids.json
-    └── test_pdf.pdf
-    ```
-    - 
+      ```
+      data/dataset/
+      ├── airqa/
+      │   ├── ccf_catalog.csv
+      │   ├── data_format.json.template
+      │   ├── metadata/ # metadata for all PDFs
+      |   |   |   ├── aa0e0451-f10a-539b-9c6c-0be53800b94f.json
+      |   |   |   ├── ... # more metadata for PDFs in ACL 2023
+      │   ├── papers/
+      |   |   ├── acl2023/
+      |   |   |   ├── aa0e0451-f10a-539b-9c6c-0be53800b94f.pdf
+      |   |   |   ├── ... # more PDFs in ACL 2023
+      |   |   ├── iclr2024/
+      |   |   |   ├── aa071344-e514-52f9-b9cf-9bea681a68c2.pdf
+      |   |   |   ├── ... # more PDFs in ICLR 2024
+      |   |   ├── ... # more conference + year subfolders
+      │   ├── processed_data/
+      |   |   |   ├── aa0e0451-f10a-539b-9c6c-0be53800b94f.json
+      |   |   |   ├── ... # more processed data for PDFs in ACL 2023
+      │   ├── test_data_553.jsonl # one line for each example
+      │   ├── test_data_ablation.jsonl
+      │   ├── uuids.json # uuids for all PDFs
+      ├── m3sciqa/
+      │   ├── images/
+      |   |   ├── 2310.04988/
+      |   |   |   ├── HVI_figure.png
+      |   |   ├── ... # more image subfolders
+      │   ├── metadata/
+      │   ├── papers/
+      │   ├── processed_data/
+      │   ├── test_data.jsonl
+      │   ├── mappings.json
+      │   └── uuids.json
+      ├── scidqa/
+      │   ├── metadata/
+      │   ├── papers/
+      │   ├── processed_data/
+      │   ├── test_data.jsonl
+      │   ├── test_data_775.jsonl
+      │   ├── mappings.json
+      │   └── uuids.json
+      └── test_pdf.pdf
+      ```
+
     </details>
 
-4. Download the pre-constructed databases (`.duckdb`) and vectorstores (`.db` and `bm25.json`) into the folders `data/database/` and `data/vectorstore/`, respectively (👉🏻 [HuggingFace 🔗](TODO)). Otherwise, you can construct them by yourself (see [PDF Parsing and Encoding](#pdf-parsing-and-encoding)).
-  - The 3 dataset name to database / vectorstore name mappings are:
-    - `airqa -> ai_research`
-    - `m3sciqa -> emnlp_papers`
-    - `scidqa -> openreview_papers`
+4. Download our constructed databases (`.duckdb`) and vectorstores (`.db` and `bm25.json`) into the folders `data/database/` and `data/vectorstore/`, respectively (👉🏻 [HuggingFace 🔗](TODO)). Otherwise, you can construct them by yourself (see [PDF Parsing and Encoding](#pdf-parsing-and-encoding)).
+    - The 3 dataset name to database / vectorstore name mappings are:
+      - `airqa -> ai_research`
+      - `m3sciqa -> emnlp_papers`
+      - `scidqa -> openreview_papers`
     <details><summary>Folder structures for databases and vectorstores 👇🏻</summary>
 
-    ```txt
-    data/
-    ├── database/
-    │   ├── ai_research/
-    │   │   ├── ai_research.duckdb
-    │   │   ├── ai_research.json
-    │   │   ├── ai_research.sql
-    │   ├── emnlp_papers/
-    │   │   ├── emnlp_papers.duckdb
-    │   │   ├── emnlp_papers.json
-    │   │   └── emnlp_papers.sql
-    │   ├── openreview_papers/
-    │   │   ├── openreview_papers.duckdb
-    │   │   ├── openreview_papers.json
-    │   │   └── openreview_papers.sql
-    ├── vectorstore/
-    │   ├── milvus/ # this universal folder is for Milvus launched via Docker containers
-    │   │   ├── standalone_embed.sh
-    │   ├── ai_research/ # other folders are for Milvus launched standalone xxx.db
-    │   │   ├── ai_research.db
-    │   │   ├── bm25.json
-    │   ├── emnlp_papers/
-    │   │   ├── emnlp_papers.db
-    │   │   ├── bm25.json
-    │   ├── openreview_papers/
-    │   │   ├── openreview_papers.db
-    │   │   ├── bm25.json
-    │   ├── filter_rules.json
-    │   ├── vectorstore_schema.json
-    │   ├── vectorstore_schema.json.template
-    ```
+      ```txt
+      data/
+      ├── database/
+      │   ├── ai_research/
+      │   │   ├── ai_research.duckdb
+      │   │   ├── ai_research.json
+      │   │   ├── ai_research.sql
+      │   ├── emnlp_papers/
+      │   │   ├── emnlp_papers.duckdb
+      │   │   ├── emnlp_papers.json
+      │   │   └── emnlp_papers.sql
+      │   ├── openreview_papers/
+      │   │   ├── openreview_papers.duckdb
+      │   │   ├── openreview_papers.json
+      │   │   └── openreview_papers.sql
+      ├── vectorstore/
+      │   ├── milvus/ # this universal folder is for Milvus launched via Docker containers
+      │   │   ├── standalone_embed.sh
+      │   ├── ai_research/ # other folders are for Milvus launched standalone xxx.db
+      │   │   ├── ai_research.db
+      │   │   ├── bm25.json
+      │   ├── emnlp_papers/
+      │   │   ├── emnlp_papers.db
+      │   │   ├── bm25.json
+      │   ├── openreview_papers/
+      │   │   ├── openreview_papers.db
+      │   │   ├── bm25.json
+      │   ├── filter_rules.json
+      │   ├── vectorstore_schema.json
+      │   ├── vectorstore_schema.json.template
+      ```
+      
     </details>
 
 5. Run the following commands to compare the performance of our NeuSym-RAG framework with the Classic RAG approach: (the evaluation is also included at the end)
-  - Congigure the `OPENAI_API_KEY` and `OPENAI_BASE_URL` (if needed)
-  ```sh
-  export OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxx"
-  export OPENAI_BASE_URL="https://api.openai.com/v1"
-  ```
-  - For more methods, refer to [agents](./documents/agent.md)
+    - Congigure the `OPENAI_API_KEY` and `OPENAI_BASE_URL` (if needed)
+    ```sh
+    export OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxx"
+    export OPENAI_BASE_URL="https://api.openai.com/v1"
+    ```
+    - For more methods, refer to [agents](./documents/agent.md)
 
-```sh
-# Classic RAG baseline
-$ python scripts/classic_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl --vectorstore ai_research --agent_method classic_rag
-$ python scripts/classic_rag_baseline.py --dataset m3sciqa --test_data test_data.jsonl --vectorstore emnlp_papers --agent_method classic_rag
-$ python scripts/classic_rag_baseline.py --dataset scidqa --test_data test_data_775.jsonl --vectorstore openreview_papers --agent_method classic_rag
+    ```sh
+    # Classic RAG baseline
+    $ python scripts/classic_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl --vectorstore ai_research --agent_method classic_rag
+    $ python scripts/classic_rag_baseline.py --dataset m3sciqa --test_data test_data.jsonl --vectorstore emnlp_papers --agent_method classic_rag
+    $ python scripts/classic_rag_baseline.py --dataset scidqa --test_data test_data_775.jsonl --vectorstore openreview_papers --agent_method classic_rag
 
-# NeuSym-RAG framework
-$ python scripts/hybrid_neural_symbolic_rag.py --dataset airqa --test_data test_data_553.jsonl --database ai_research --agent_method neusym_rag
-$ python scripts/hybrid_neural_symbolic_rag.py --dataset m3sciqa --test_data test_data.jsonl --database emnlp_papers --agent_method neusym_rag
-$ python scripts/hybrid_neural_symbolic_rag.py --dataset scidqa --test_data test_data_775.jsonl --database openreview_papers --agent_method neusym_rag
-```
+    # NeuSym-RAG framework
+    $ python scripts/hybrid_neural_symbolic_rag.py --dataset airqa --test_data test_data_553.jsonl --database ai_research --agent_method neusym_rag
+    $ python scripts/hybrid_neural_symbolic_rag.py --dataset m3sciqa --test_data test_data.jsonl --database emnlp_papers --agent_method neusym_rag
+    $ python scripts/hybrid_neural_symbolic_rag.py --dataset scidqa --test_data test_data_775.jsonl --database openreview_papers --agent_method neusym_rag
+    ```
 
 ## Experiment Results
 
