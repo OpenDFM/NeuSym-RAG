@@ -15,14 +15,16 @@ from .set_functions import (
     eval_element_list_overlap
 )
 
+from .retrieval_functions import (
+    eval_paper_relevance_with_reference_answer
+)
+
 from .llm_functions import (
     eval_candidate_reference_answer_with_llm,
     eval_partial_scoring_points_with_llm,
     eval_reference_answer_with_llm,
     eval_scoring_points_with_llm,
-    eval_reference_answer_and_scoring_points_with_llm,
-    eval_paper_relevance_with_llm,
-    eval_paper_relevance_with_llm_and_reference_answer
+    eval_reference_answer_and_scoring_points_with_llm
 )
 
 from .formula_functions import (
