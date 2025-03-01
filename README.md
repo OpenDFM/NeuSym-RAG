@@ -4,6 +4,18 @@
   <img src="assets/rag-framework.png" alt="our-framework">
 </p>
 
+<details>
+  <summary> 💫 Table of Contents (Click to expand)</summary>
+
+- [💡 Main contributions](#-main-contributions)
+- [🔍 Quick Start](#-quick-start)
+- [📊 Experiment Results](#-experiment-results)
+- [📖 PDF Parsing and Encoding](#-pdf-parsing-and-encoding)
+- [📚 Detailed Documents and Tutorials](#-detailed-documents-and-tutorials)
+- [✍🏻 Citation](#-citation)
+
+</details>
+
 ## 💡 Main contributions
 - We are the first to integrate both **vector-based neural retrieval** and **SQL-based symbolic retrieval** into a unified and interactive **NeuSym-RAG** framework through executable [actions](./agents/envs/actions/actions.json).
 - We incorporate **multiple views** for parsing and vectorizing PDF documents, and adopt a [**structured database schema**](./data/database/ai_research/ai_research.sql) to systematically organize both text tokens and encoded vectors.
@@ -152,7 +164,7 @@
     $ python scripts/hybrid_neural_symbolic_rag.py --dataset scidqa --test_data test_data_775.jsonl --database openreview_papers --agent_method neusym_rag
     ```
 
-## 📊📊 Experiment Results
+## 📊 Experiment Results
 
 We compare our NeuSym-RAG with Classic-RAG on $3$ full-PDF-based academic research Q&A datasets using $5$ LLMs/VLMs:
 
