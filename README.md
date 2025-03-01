@@ -298,10 +298,13 @@ Here are some useful scripts that can help you quickly parse and encode new pape
     - Please ensure that the `bm25.json` file exists under the path `data/vectorstore/${vectorstore}/bm25.json` if you want to use BM25 collection. Otherwise, create the [BM25 vocabulary](./documents/vectorstore.md#build-bm25-vocabulary) firstly
     - The default VS is `data/vectorstore/${vectorstore}/${vectorstore}.db` unless you specify args `--vectorstore_path /path/to/vs.db`
     - The default launch method for VS is `standalone` unless you specify args like `--launch_method docker` and `--docker_uri http://127.0.0.1:19530`
+    - If your OS is Windows, please follow the guide on [Run Milvus in Docker (Windows)](https://milvus.io/docs/v2.4.x/install_standalone-windows.md)
 
     ```sh
-    $ python utils/vectorstore_utils.py --vectorstore ai_research --pdf_path pdf_uuids_to_encode.json # by default, --launch_method=standalone
+    # By default, using standalone mode (*.db)
+    $ python utils/vectorstore_utils.py --vectorstore ai_research --pdf_path pdf_uuids_to_encode.json # --launch_method=standalone
 
+    # Or, using Docker containers
     $ cd data/dataset/vectorstore/milvus && bash standalone_embed.sh start # start Milvus containers
     $ cd - # return to the project root
     $ python utils/vectorstore_utils.py --vectorstore ai_research --pdf_path pdf_uuids_to_encode.txt --launch_method docker --docker_uri http://127.0.0.1:19530
