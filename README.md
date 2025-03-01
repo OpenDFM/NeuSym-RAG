@@ -4,12 +4,12 @@
   <img src="assets/rag-framework.png" alt="our-framework">
 </p>
 
-## Main contributions
+## 💡 Main contributions
 - We are the first to integrate both **vector-based neural retrieval** and **SQL-based symbolic retrieval** into a unified and interactive **NeuSym-RAG** framework through executable [actions](./agents/envs/actions/actions.json).
 - We incorporate **multiple views** for parsing and vectorizing PDF documents, and adopt a [**structured database schema**](./data/database/ai_research/ai_research.sql) to systematically organize both text tokens and encoded vectors.
 - Experiments on three realistic full PDF-based QA datasets w.r.t. academic research (AirQA-Real, [M3SciQA](https://github.com/yale-nlp/M3SciQA) and [SciDQA](https://github.com/yale-nlp/SciDQA)) validate the superiority over various neural and symbolic baselines.
 
-## Quick Start 🔍
+## 🔍 Quick Start
 
 1. Create the conda environment and install dependencies:
     - Install [`poppler`](https://pdf2image.readthedocs.io/en/latest/installation.html#installing-poppler) on your system
@@ -152,7 +152,9 @@
     $ python scripts/hybrid_neural_symbolic_rag.py --dataset scidqa --test_data test_data_775.jsonl --database openreview_papers --agent_method neusym_rag
     ```
 
-## Experiment Results
+## 📊📊 Experiment Results
+
+We compare our NeuSym-RAG with Classic-RAG on $3$ full-PDF-based academic research Q&A datasets using $5$ LLMs/VLMs:
 
 <table>
     <tr>
@@ -194,9 +196,6 @@
         <td>62.4</td>
     </tr>
     <tr>
-        <td colspan="5" style="border-top: 1px solid black;"></td>
-    </tr>
-    <tr>
         <th rowspan="5">NeuSym-RAG</th>
         <td>GPT-4o-mini</td>
         <td>30.7</td>
@@ -212,12 +211,12 @@
     <tr>
         <td>Llama-3.3-70B-Instruct</td>
         <td>29.3</td>
-        <td>23.6</td>
+        <td><b>23.6</b></td>
         <td>56.4</td>
     </tr>
     <tr>
         <td>Qwen2.5-VL-72B-Instruct</td>
-        <td>39.6</td>
+        <td><b>39.6</b></td>
         <td>21.1</td>
         <td>60.5</td>
     </tr>
@@ -225,12 +224,12 @@
         <td>DeepSeek-R1</td>
         <td>32.4</td>
         <td>17.4</td>
-        <td>64.5</td>
+        <td><b>64.5</b></td>
     </tr>
 </table>
 
 
-### Evaluation
+### 📈 Evaluation
 
 The instance-specific evaluation metric is defined in the field `evaluator` for each data sample (see [Data Format](./documents/airqa_format.md#data-format-of-airqa)). For evaluation, create a `.jsonl` file for each testing sample and store the predicted string or object in the field `answer` as well as its `uuid` like:
 ```jsonl
@@ -245,7 +244,7 @@ python utils/eval_utils.py --gold data/dataset/airqa/test_data_553.jsonl --pred 
 ```
 
 
-## PDF Parsing and Encoding
+## 📖 PDF Parsing and Encoding
 
 Here are some useful scripts that can help you quickly parse and encode new paper PDFs into existing DB and VS. We take the dataset `airqa` (and DB / VS `ai_research`) as an example.
 > **📌 NOTE:**
@@ -311,12 +310,13 @@ Here are some useful scripts that can help you quickly parse and encode new pape
 > - If you want to customize your own papers collection, database, and vectorstore, please refer to [customization doc](./documents/customization.md).
 
 
-## Detailed Documents and Tutorials
+## 📚 Detailed Documents and Tutorials
 
-The fine-grained documents or topics for this project  are detailed in the folder `documents/`. Here is the checklist:
+Fine-grained documents in this project are detailed in `documents/`. Here is the checklist:
 
 - [`documents/dataset.md`](documents/dataset.md):
-  - The source of the datasets we choose in this project;
+  - The source of the datasets we use and convert in this project;
+  - Where to download the datasets and resources.
 - [`documents/database.md`](documents/database.md):
   - Folder structure of `data/database/`;
   - How to define database schema and its format;
@@ -338,3 +338,13 @@ The fine-grained documents or topics for this project  are detailed in the folde
   - Different agent baselines and running scripts.
 - [`documents/third_party.md`](documents/third_party_tools.md)
   - How to install and use some third-party tools
+
+
+## ✍🏻 Citation
+
+If you find this project useful, please cite our work:
+```txt
+{
+  "TO BE RELEASED"
+}
+```
