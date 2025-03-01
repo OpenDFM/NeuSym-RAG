@@ -154,6 +154,80 @@
 
 ## Experiment Results
 
+<table>
+    <tr>
+        <th>Method</th>
+        <th>Model</th>
+        <th>Dataset AVG</th>
+        <th>M3SciQA AVG</th>
+        <th>SciDQA AVG</th>
+    </tr>
+    <tr>
+        <td rowspan="5">Classic-RAG</th>
+        <td>GPT-4o-mini</td>
+        <td>13.4</td>
+        <td>15.6</td>
+        <td>59.8</td>
+    </tr>
+    <tr>
+        <td>GPT-4V</td>
+        <td>14.7</td>
+        <td>11.1</td>
+        <td>57.4</td>
+    </tr>
+    <tr>
+        <td>Llama-3.3-70B-Instruct</td>
+        <td>10.0</td>
+        <td>11.3</td>
+        <td>58.0</td>
+    </tr>
+    <tr>
+        <td>Qwen2.5-VL-72B-Instruct</td>
+        <td>10.5</td>
+        <td>11.6</td>
+        <td>56.2</td>
+    </tr>
+    <tr>
+        <td>DeepSeek-R1</td>
+        <td>13.9</td>
+        <td>11.2</td>
+        <td>62.4</td>
+    </tr>
+    <tr>
+        <td colspan="5" style="border-top: 1px solid black;"></td>
+    </tr>
+    <tr>
+        <th rowspan="5">NeuSym-RAG</th>
+        <td>GPT-4o-mini</td>
+        <td>30.7</td>
+        <td>18.0</td>
+        <td>63.0</td>
+    </tr>
+    <tr>
+        <td>GPT-4V</td>
+        <td>37.3</td>
+        <td>13.6</td>
+        <td>63.1</td>
+    </tr>
+    <tr>
+        <td>Llama-3.3-70B-Instruct</td>
+        <td>29.3</td>
+        <td>23.6</td>
+        <td>56.4</td>
+    </tr>
+    <tr>
+        <td>Qwen2.5-VL-72B-Instruct</td>
+        <td>39.6</td>
+        <td>21.1</td>
+        <td>60.5</td>
+    </tr>
+    <tr>
+        <td>DeepSeek-R1</td>
+        <td>32.4</td>
+        <td>17.4</td>
+        <td>64.5</td>
+    </tr>
+</table>
 
 
 ### Evaluation
