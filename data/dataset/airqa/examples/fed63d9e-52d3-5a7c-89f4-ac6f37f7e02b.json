@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper explored training a GPT-2 for automatic diagnosis, emphasizing efficient data augmentation for symptom prediction and disease identification?",
             "reference_answer": "CoAD: Automatic Diagnosis through Symptom and Disease Collaborative Generation"

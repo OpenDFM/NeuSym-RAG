@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that leverages graph neural network by integrating label information for multi-label low-resource intent classification?",
             "reference_answer": "Dual Class Knowledge Propagation Network for Multi-label Few-shot Intent Detection"

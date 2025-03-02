@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "In video diffusion models, is there any paper that tried decomposing video instruction into sub instructions of different time?",
             "reference_answer": "Seer: Language Instructed Video Prediction with Latent Diffusion Models"

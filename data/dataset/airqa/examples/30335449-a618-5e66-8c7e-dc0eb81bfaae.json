@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which neural theorem proving paper first attempted to prove theorems in a block-by-block manner?",
             "reference_answer": "LEGO-PROVER: NEURAL THEOREM PROVING WITH GROWING LIBRARIES"

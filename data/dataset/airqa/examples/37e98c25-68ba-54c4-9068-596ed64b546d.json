@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there an evaluation metric for natural language generation that predicts the factual consistency score through a mean-max aggregation method?",
             "reference_answer": "ALIGNSCORE: Evaluating Factual Consistency with A Unified Alignment Function"

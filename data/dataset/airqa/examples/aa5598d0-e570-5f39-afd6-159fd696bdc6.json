@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "What paper mitigates language model sampling errors due to the softmax bottleneck?",
             "reference_answer": "CLOSING THE CURIOUS CASE OF NEURAL TEXT DEGENERATION"

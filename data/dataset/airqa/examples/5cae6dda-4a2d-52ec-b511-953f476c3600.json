@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that proposes a new multimodal video dataset that image-level multimodal models do not work well?",
             "reference_answer": "Revealing Single Frame Bias for Video-and-Language Learning"

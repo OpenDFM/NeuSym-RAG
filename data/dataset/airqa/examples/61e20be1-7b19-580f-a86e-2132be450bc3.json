@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper examined the scalability of instruction-tuning with respect to Mixture of Expert models?",
             "reference_answer": "Mixture-of-Experts Meets Instruction Tuning: A Winning Combination for Large Language Models"

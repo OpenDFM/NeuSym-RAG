@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any research paper that can extract attributes from both a predefined label set and the surrounding context?",
             "reference_answer": "AtTGen: Attribute Tree Generation for Real-World Attribute Joint Extraction"

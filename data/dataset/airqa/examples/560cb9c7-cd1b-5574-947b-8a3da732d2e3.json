@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper first aggregates statements to represent political actors and learns the mapping from languages to representation via pre-training?",
             "reference_answer": "UPPAM: A Unified Pre-training Architecture for Political Actor Modeling based on Language"

@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper first found that when transformers are trained to in-context learn function classes, they might exhibit generalization followed by memorization, in certain settings?",
             "reference_answer": "In-Context Learning through the Bayesian Prism"

@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which vision-language model paper in 2023 developed techniques that reduce input tokens to improve model inference speed?",
             "reference_answer": "PuMer: Pruning and Merging Tokens for Efficient Vision Language Models"

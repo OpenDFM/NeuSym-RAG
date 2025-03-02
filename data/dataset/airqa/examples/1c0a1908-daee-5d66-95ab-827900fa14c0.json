@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "What paper investigated the effect of the relative position (closer or further away) of the most pertinent retrieved code snippets on repository-level code completion performance?",
             "reference_answer": "RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems"

@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper produces a dataset for text simplification in over 12 languages and evaluates both finetuning and in context learning approaches to text simplification in those languages?",
             "reference_answer": "Revisiting non-English Text Simplification: A Unified Multilingual Benchmark"

@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that constructs augmented training data based on the entity-to-entity correlations?",
             "reference_answer": "PeerDA: Data Augmentation via Modeling Peer Relation for Span Identification Tasks *"

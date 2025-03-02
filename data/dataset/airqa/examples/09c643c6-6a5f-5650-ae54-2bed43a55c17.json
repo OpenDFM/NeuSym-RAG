@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "What paper first adapted ControlNet to generate continuous videos in a training-free manner?",
             "reference_answer": "ControlVideo: Training-free Controllable Text-to-Video Generation"

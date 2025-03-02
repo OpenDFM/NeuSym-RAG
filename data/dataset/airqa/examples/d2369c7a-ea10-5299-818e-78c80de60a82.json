@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there a single GNN model that can inductively generalize to any knowledge graph?;What is the method to generalize knowledge graph reasoning to graphs with new entities and relations?;Is there a foundation model for knowledge graphs that does not learn embeddings for each node and relation type?",
             "reference_answer": "TOWARDS FOUNDATION MODELS FOR KNOWLEDGE GRAPH REASONING"

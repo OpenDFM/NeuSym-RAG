@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper is the first to model the helpfulness and harmlessness alignment of LLMs as a Constrained MDP problem?",
             "reference_answer": "SAFE RLHF: SAFE REINFORCEMENT LEARNING FROM HUMAN FEEDBACK"

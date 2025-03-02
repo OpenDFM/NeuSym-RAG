@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Are there any papers that build dense retrievers with mixture-of-experts architecture where each expert is responsible for different types of queries?",
             "reference_answer": "Chain-of-Skills: A Configurable Model for Open-Domain Question Answering"

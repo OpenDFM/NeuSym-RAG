@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper first combines rewriting and expansion methods to reformulate a query for conversational search?",
             "reference_answer": "ConvGQR: Generative Query Reformulation for Conversational Search"

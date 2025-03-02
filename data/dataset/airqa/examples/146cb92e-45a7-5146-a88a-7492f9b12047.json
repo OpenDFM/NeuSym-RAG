@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "What paper proposes breaking down programming problems by predicting the objects that a solution would create?",
             "reference_answer": "ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis"

@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that uses data collected from the Dark Web, specifically onion domains, to pretrain a language model?",
             "reference_answer": "DarkBERT: A Language Model for the Dark Side of the Internet"

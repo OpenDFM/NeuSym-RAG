@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that automatically creates a dataset for summarizing text from one language to another for a large collection of languages?",
             "reference_answer": "CrossSum: Beyond English-Centric Cross-Lingual Summarization for 1,500+ Language Pairs"

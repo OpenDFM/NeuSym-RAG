@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that reveals annotation problems in cross-lingual summarization caused by decomposing the task into translation and summarization?",
             "reference_answer": "Revisiting Cross-Lingual Summarization: A Corpus-based Study and A New Benchmark with Improved Annotation"

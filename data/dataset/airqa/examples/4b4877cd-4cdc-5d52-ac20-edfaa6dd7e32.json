@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper leverages knowledge distillation of language models for textual out-of-distribution detection or anomaly detection?",
             "reference_answer": "Multi-Level Knowledge Distillation for Out-of-Distribution Detection in Text"

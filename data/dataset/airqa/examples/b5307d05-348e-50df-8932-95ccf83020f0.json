@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper investigates the influence of the diversity of source tasks on the performance of target tasks in prompt tuning using CrossFit?",
             "reference_answer": "Learning to Initialize: Can Meta Learning Improve Cross-task Generalization in Prompt Tuning?"

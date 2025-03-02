@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper about parameter-efficient finetuning first proposes to feed the pretrained weight instead of the activation to an adapter?",
             "reference_answer": "Parameter-Efficient Fine-Tuning without Introducing New Latency"

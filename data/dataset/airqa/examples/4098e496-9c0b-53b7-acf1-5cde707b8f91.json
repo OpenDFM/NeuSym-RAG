@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper proposed decomposing the logit update of each of the attention blocks’ inputs to analyze how the context influences the prediction?",
             "reference_answer": "Explaining How Transformers Use Context to Build Predictions"

@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that attempts to evaluate the similarity of meaning representations without using annotated data?",
             "reference_answer": "Evaluate AMR Graph Similarity via Self-supervised Learning"

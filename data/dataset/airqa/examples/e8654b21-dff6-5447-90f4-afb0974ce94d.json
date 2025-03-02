@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which backdoor paper first used the CLIP to suppress benign features and enhance poisoning features to design triggers?",
             "reference_answer": "Efficient Backdoor Attacks for Deep Neural Networks in Real-world Scenarios"

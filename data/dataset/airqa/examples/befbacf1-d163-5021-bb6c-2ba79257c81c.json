@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which was the first paper to explore the online adaptation of neural MT metrics for use during the inference stage?",
             "reference_answer": "Test-time Adaptation for Machine Translation Evaluation by Uncertainty Minimization"

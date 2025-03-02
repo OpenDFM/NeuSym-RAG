@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that utilizes masked language modeling to defend against word-level adversarial attacks?",
             "reference_answer": "RMLM: A Flexible Defense Framework for Proactively Mitigating Word-level Adversarial Attacks"

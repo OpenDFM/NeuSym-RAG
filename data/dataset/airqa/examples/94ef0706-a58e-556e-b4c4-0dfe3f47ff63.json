@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any work that allows large numbers of model outputs to be encoded and compared by causal language models in a single forward pass?",
             "reference_answer": "EEL: Efficiently Encoding Lattices for Reranking"

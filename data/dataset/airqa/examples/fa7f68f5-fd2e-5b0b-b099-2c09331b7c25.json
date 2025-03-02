@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which papers develop methods to make in-context learning more computationally efficient?",
             "reference_answer": "FiD-ICL: A Fusion-in-Decoder Approach for Efficient In-Context Learning"

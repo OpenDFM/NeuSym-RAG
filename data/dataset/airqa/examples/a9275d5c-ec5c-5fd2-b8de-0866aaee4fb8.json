@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper combines the advantages of different frameworks for grammar error correction (GEC) and achieves good performance?",
             "reference_answer": "TemplateGEC: Improving Grammatical Error Correction with Detection Template"

@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that address attacks on code models by leveraging the semantic information of the source code through attention scores, while also guaranteeing that the generated adversarial examples can always be compiled successfully?",
             "reference_answer": "DIP: Dead code Insertion based Black-box Attack for Programming Language Model"

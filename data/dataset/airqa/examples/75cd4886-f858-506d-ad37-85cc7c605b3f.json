@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper first introduced document content as an intermediate generation target and utilized textual document identifiers in generative retrieval?",
             "reference_answer": "TOME: A Two-stage Approach for Model-based Retrieval"

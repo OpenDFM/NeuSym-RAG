@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper proposes to use rewriting based approaches to defending against adversarial attacks in text classification?",
             "reference_answer": "Don't Retrain, Just Rewrite: Countering Adversarial Perturbations by Rewriting Text"

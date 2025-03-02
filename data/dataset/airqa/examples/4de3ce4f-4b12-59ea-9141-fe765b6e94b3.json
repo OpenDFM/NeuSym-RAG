@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Are there sequential learning guarantees for configuring a linear system solver under a distributional assumption on the systems' target vectors?",
             "reference_answer": "LEARNING TO RELAX: SETTING SOLVER PARAMETERS ACROSS A SEQUENCE OF LINEAR SYSTEM INSTANCES"

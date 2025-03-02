@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper proposes the two-stage training method, i.e., task-specific fine-tuning and cross-domain pre-training, to train an open-domain dialogue evaluator using the self-collected dataset.",
             "reference_answer": "RADE: Reference-Assisted Dialogue Evaluation for Open-Domain Dialogue"

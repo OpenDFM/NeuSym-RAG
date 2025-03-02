@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there a dataset that allows to perform aspect-based sentiment classification on French news?",
             "reference_answer": "MAD-TSC: A Multilingual Aligned News Dataset for Target-dependent Sentiment Classification"

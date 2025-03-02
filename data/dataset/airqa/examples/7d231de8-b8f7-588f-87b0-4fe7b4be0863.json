@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which knowledge graph completion method focuses on reducing memory usage by pruning features?",
             "reference_answer": "GreenKGC: A Lightweight Knowledge Graph Completion Method"

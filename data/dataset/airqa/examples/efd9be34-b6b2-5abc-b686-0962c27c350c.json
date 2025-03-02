@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Provide an example of a paper which proposes a method to learn a dynamic (conditioned on the input) sequence tokenizer (segmenter) via standard gradient backpropagation.",
             "reference_answer": "Efficient Transformers with Dynamic Token Pooling"

@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that employs code LLMs to iteratively generate and refine code with execution results to improve the performance?",
             "reference_answer": "Self-Edit: Fault-Aware Code Editor for Code Generation"

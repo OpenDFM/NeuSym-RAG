@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper presents an easy to implement and high performing method for OOD detection with language models?",
             "reference_answer": "Is Fine-tuning Needed? Pre-trained Language Models Are Near Perfect for Out-of-Domain Detection"

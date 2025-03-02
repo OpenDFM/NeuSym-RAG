@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper enables interactive semantic parsing by training an error correction model with simulated human feedback instead of human annotations?",
             "reference_answer": "Learning to Simulate Natural Language Feedback for Interactive Semantic Parsing"

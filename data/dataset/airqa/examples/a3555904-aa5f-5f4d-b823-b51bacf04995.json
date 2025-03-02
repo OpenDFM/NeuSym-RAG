@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper introduced the human-evaluated timeliness metric for misinformation detection?",
             "reference_answer": "Human-in-the-loop Evaluation for Early Misinformation Detection: A Case Study of COVID-19 Treatments"

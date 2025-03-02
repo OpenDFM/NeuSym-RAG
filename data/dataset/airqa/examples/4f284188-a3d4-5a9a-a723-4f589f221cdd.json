@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper systematically examed the input mismatch between training and sampling in diffusion models",
             "reference_answer": "ELUCIDATING THE EXPOSURE BIAS IN DIFFUSION MODELS"

@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "If one would like to train (or evaluate) a helpful assistant agent that can converse with humans while the humans traverse an environment, which work has the most suitable resource?",
             "reference_answer": "SIMMC-VR: A Task-oriented Multimodal Dialog Dataset with Situated and Immersive VR Streams"

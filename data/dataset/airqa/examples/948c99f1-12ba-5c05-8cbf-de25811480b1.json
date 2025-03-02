@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there a dialogue dataset where a speaker's utterance is grounded in their persona, consisting of image-text pairs representing their episodic memories?",
             "reference_answer": "MPCHAT: Towards Multimodal Persona-Grounded Conversation"

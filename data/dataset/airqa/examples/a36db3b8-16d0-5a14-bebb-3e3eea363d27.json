@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "What are some evaluation benchmarks for LLM privacy at inference time, targeted towards model input and NOT the training data.",
             "reference_answer": "CAN LLMS KEEP A SECRET? TESTING PRIVACY IMPLICATIONS OF LANGUAGE MODELS VIA CONTEXTUAL INTEGRITY THEORY"

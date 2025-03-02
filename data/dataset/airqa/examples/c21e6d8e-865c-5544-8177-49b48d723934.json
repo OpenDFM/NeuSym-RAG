@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that applies symbolic distillation on black-box generalist language models to harvest high-quality counterfactual data for out-of-distribution generalization?",
             "reference_answer": "DISCO: Distilling Counterfactuals with Large Language Models"

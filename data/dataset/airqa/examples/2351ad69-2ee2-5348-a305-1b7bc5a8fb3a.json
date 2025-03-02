@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper first found that REINFORCE works better than actor critic algorithms like PPO for RL finetuning of pretrained chemistry language models (Transformers and RNNs)?",
             "reference_answer": "Searching for High-Value Molecules Using Reinforcement Learning and Transformers"

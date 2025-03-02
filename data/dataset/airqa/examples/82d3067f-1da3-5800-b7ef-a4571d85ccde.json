@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "What paper is the first to prove finetuned LLM can be a reliable judge?",
             "reference_answer": "PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization"

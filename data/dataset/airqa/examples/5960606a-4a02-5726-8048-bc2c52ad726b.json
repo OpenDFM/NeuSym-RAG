@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that applies curriculum learning to various NLG tasks without depending on specific metrics?",
             "reference_answer": "In-sample Curriculum Learning by Sequence Completion for Natural Language Generation"

@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that explores using only an encoder-only masked language model for open-ended long text generation (such as story generation)?",
             "reference_answer": "Open-ended Long Text Generation via Masked Language Modeling"

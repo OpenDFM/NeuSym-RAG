@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there an existing dataset of images with alt-text that also includes the text the image was originally posted with?",
             "reference_answer": "ALT-TEXT WITH CONTEXT: IMPROVING ACCESSIBILITY FOR IMAGES ON TWITTER"

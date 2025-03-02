@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Could you recommend a dataset paper which presents relation extraction performance on translated data and compare it to English data?",
             "reference_answer": "MultiTACRED: A Multilingual Version of the TAC Relation Extraction Dataset"

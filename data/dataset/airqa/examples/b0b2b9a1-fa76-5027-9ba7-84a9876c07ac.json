@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there any paper that uses token-level loss to enhance sentence-level embedding learning?",
             "reference_answer": "Dual-Alignment Pre-training for Cross-lingual Sentence Embedding"

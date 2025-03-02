@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Are there any papers that use a world model for planning to ensure that decisions meet constraints?",
             "reference_answer": "SAFEDREAMER: SAFE REINFORCEMENT LEARNING WITH WORLD MODELS"

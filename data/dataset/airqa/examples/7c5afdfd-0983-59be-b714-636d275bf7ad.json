@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper used both automatically generated and manual templates with word tuples to adapt language models from one timestamp to another?",
             "reference_answer": "Learning Dynamic Contextualised Word Embeddings via Template-based Temporal Adaptation"

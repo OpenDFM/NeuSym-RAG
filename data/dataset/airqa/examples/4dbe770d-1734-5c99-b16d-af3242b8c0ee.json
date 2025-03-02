@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Give me a paper proposing to circumvent a single-truth target in training generative language models.",
             "reference_answer": "Soft Alignment Objectives for Robust Adaptation of Language Generation"

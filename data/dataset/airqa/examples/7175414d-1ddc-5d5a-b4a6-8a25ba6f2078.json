@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there a decoder-only language model that does not use a tokenizer and operates on raw text bytes?",
             "reference_answer": "ByGPT5: End-to-End Style-conditioned Poetry Generation with Token-free Language Models"

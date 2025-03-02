@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper shows that in instruction tuning, the instructions can be compressed to small supporting sets of words that provide useful information?",
             "reference_answer": "Did You Read the Instructions? Rethinking the Effectiveness of Task Definitions in Instruction Learning"

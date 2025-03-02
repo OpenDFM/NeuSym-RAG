@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper first propose to mask positions to pre-train multi-modal document transformer？",
             "reference_answer": "LayoutMask: Enhance Text-Layout Interaction in Multi-modal Pre-training for Document Understanding"

@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "What paper first used the technique of prompt engineering to generate adversarial prompts that can fool LLMs into making wrong predictions in prompt-based learning?",
             "reference_answer": "AN LLM CAN FOOL ITSELF: A PROMPT-BASED ADVERSARIAL ATTACK"

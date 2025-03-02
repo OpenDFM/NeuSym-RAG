@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which machine learning paper proposed certified robustness in the malware detection domain?",
             "reference_answer": "DRSM: DE-RANDOMIZED SMOOTHING ON MALWARE CLASSIFIER PROVIDING CERTIFIED ROBUSTNESS"

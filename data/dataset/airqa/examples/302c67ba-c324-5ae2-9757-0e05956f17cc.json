@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper first explored In-context learning in a cross lingual setup and made use of alignment to better it's performance?",
             "reference_answer": "Multilingual LLMs are Better Cross-lingual In-context Learners with Alignment"

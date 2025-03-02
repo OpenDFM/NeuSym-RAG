@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper first proved that wide-enough transformer architectures trained with gradient methods on enough data would learn to solve relational reasoning tasks?",
             "reference_answer": "When can transformers reason with abstract symbols?"

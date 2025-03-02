@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there research that investigates embedding multi-bit data into watermarks to improve resilience to text corruption, particularly aimed at safeguarding keywords and syntactic elements from modification?",
             "reference_answer": "Robust Multi-bit Natural Language Watermarking through Invariant Features"

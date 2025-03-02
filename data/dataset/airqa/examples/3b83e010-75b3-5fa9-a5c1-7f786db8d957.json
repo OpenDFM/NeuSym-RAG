@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper proposes an alignment framework that steers language models to preferences of individual groups in a few-shot manner through augmenting the LLM with a transformer module?",
             "reference_answer": "GROUP PREFERENCE OPTIMIZATION: FEW-SHOT ALIGNMENT OF LARGE LANGUAGE MODELS"

@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper studies how difficult is a policy learning problem under non-additive rewards in terms of theoretical lower bounds, and what could be a potential strategy to solve it empirically while recovering some specialized guarantees?",
             "reference_answer": "Submodular Reinforcement Learning"

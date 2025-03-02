@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there a paper comparing knowledge distillation and human annotation in terms of cost efficiency?",
             "reference_answer": "Distill or Annotate? Cost-Efficient Fine-Tuning of Compact Models"

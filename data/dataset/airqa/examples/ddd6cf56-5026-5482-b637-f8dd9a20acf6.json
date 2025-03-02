@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Is there a theory paper that explains why sometimes tuning momentum does not boost performance for training a neural network?",
             "reference_answer": "The Marginal Value of Momentum for Small Learning Rate SGD"

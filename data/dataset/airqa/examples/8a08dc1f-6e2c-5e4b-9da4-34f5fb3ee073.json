@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "Which paper contains quantitative results demonstrating taking VQ tokens as inputs is inferior to pixel images for dense recognition tasks?",
             "reference_answer": "ADDP: Learning General Representations for Image Recognition and Generation with Alternating Denoising Diffusion Process"

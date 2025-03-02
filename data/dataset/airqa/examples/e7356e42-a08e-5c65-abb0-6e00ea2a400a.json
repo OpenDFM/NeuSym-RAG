@@ -14,7 +14,7 @@
     ],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_paper_relevance_with_llm_and_reference_answer",
+        "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
             "question": "What paper first proposes that simply reversing the output can significantly enhance the sample efficiency and the performance of the arithmetic capability of a decoder-only Transformer model?",
             "reference_answer": "Teaching Arithmetic to Small Transformers"
