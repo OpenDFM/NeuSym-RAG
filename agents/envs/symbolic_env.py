@@ -30,6 +30,18 @@ class SymbolicRAGEnv(AgentEnv):
         self.database_path = kwargs.get('database_path', None)
         self.reset()
 
+    def reset_database_connection(self) -> None:
+        """ Reset the connection to the DuckDB database.
+        """
+        if self.database_conn is not None and hasattr(self.database_conn, 'close'):
+            self.database_conn.interrupt()
+            self.database_conn.close()
+        self.database_conn = get_database_connection(
+            self.database,
+            database_path=self.database_path,
+            from_scratch=False
+        )
+        return
 
     def reset(self) -> None:
         """ Reset the environment.

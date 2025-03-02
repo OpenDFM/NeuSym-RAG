@@ -65,7 +65,20 @@ class NeuralRAGEnv(AgentEnv):
                             break
                     else:
                         raise ValueError(f"Primary key {pk_name} not found in table {table_name}.")
-
+    
+    def reset_database_connection(self) -> None:
+        """ Reset the connection to the DuckDB database.
+        """
+        if self.database_conn is not None and hasattr(self.database_conn, 'close'):
+            self.database_conn.interrupt()
+            self.database_conn.close()
+        self.database_conn = get_database_connection(
+            self.database,
+            database_path=self.database_path,
+            from_scratch=False
+        )
+        return
+    
     def reset(self) -> None:
         """ Reset the environment, including the connection to the Milvus vectorstore and the text/image embedder.
         """

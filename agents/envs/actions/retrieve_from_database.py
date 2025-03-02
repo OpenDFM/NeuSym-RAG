@@ -46,7 +46,12 @@ class RetrieveFromDatabase(Action):
             assert output_format in ['markdown', 'string', 'html', 'json'], "SQL execution output format must be chosen from ['markdown', 'string', 'html', 'json']."
 
             conn: duckdb.DuckDBPyConnection = env.database_conn # get the database connection
-            result: pd.DataFrame = conn.execute(sql).fetchdf() # execute the SQL query and fetch the result
+            # result: pd.DataFrame = conn.execute(sql).fetchdf() # execute the SQL query and fetch the result
+            try:
+                result: pd.DataFrame = conn.sql(sql).fetchdf() # execute the SQL query and fetch the result
+            except duckdb.InterruptException as e:
+                # The query is interrupted, no return value.
+                return None
 
             if result.empty:
                 return "[Warning]: The SQL execution result is empty, please check the SQL first."
@@ -98,10 +103,8 @@ class RetrieveFromDatabase(Action):
             msg = output_formatter(self.sql, output_kwargs, forceTimeout=max_timeout)
         except FunctionTimedOut as e:
             msg = f"[TimeoutError]: The SQL execution is TIMEOUT given maximum {max_timeout} seconds."
-            env.close()
-            env.reset()
+            env.reset_database_connection()
         except Exception as e:
             msg = f"[Error]: Runtime error during SQL execution and output formatting: {str(e)}"
-            env.close()
-            env.reset()
+            env.reset_database_connection()
         return Observation(msg)
