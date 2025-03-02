@@ -1,0 +1,43 @@
+{
+    "uuid": "fd98767f-44ef-5721-8fff-3fb1d8eca4b3",
+    "question": "According to the MathCAMPS paper, among the models evaluated, which one performs the second best on MathCAMPS grade 8? In the paper that proposed the model, how is the output y computed, given an input token x?",
+    "answer_format": "Your answer should be a Python list of 2 elements, the first is the name of the model along with its parameter size as given in the paper, and the second is the formula in LaTeX format.",
+    "tags": [
+        "multiple",
+        "table",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "2e59e537-6583-5f0c-b01d-e4963325edc4"
+    ],
+    "reference_pdf": [
+        "44e77de0-2982-575f-bf6e-f50ad597c4f6"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_complex_math_formula_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "Mixtral 8x22B",
+                    "lowercase": true,
+                    "ignore_blank": true
+                },
+                {
+                    "formulas": "y = \\sum_{i=0}^{n-1} \\text{Softmax}(\\text{Top2}(x \\cdot W_g))_i \\cdot \\text{SwiGLU}_i(x)",
+                    "question": "How is the output y computed, given an input token x?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

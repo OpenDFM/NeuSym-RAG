@@ -1,0 +1,31 @@
+{
+    "uuid": "4e44b819-6129-5b0f-a6cd-935f2eb6bb85",
+    "question": "In the NeurIPS paper, mentioned in the RestoreAgent paper, that utilizes uniquely designed prompts to guide the network, what formula can the module in light yellow in Figure 3 be summaried as?",
+    "answer_format": "Your answer should be a string, the formula in LaTeX format.",
+    "tags": [
+        "multiple",
+        "metadata",
+        "image",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "2d89f467-4b56-59df-a146-38cc4bd1db14"
+    ],
+    "reference_pdf": [
+        "999c5d22-9897-5ab0-877c-52fb6af0b2d2"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": "\\mathbf{P} = \\text{Conv}_{3\\times3} \\left( \\sum_{c=1}^{N} w_c \\mathbf{P}_c \\right), \\quad w = \\text{Softmax} \\left( \\text{Conv}_{1\\times1} (\\text{GAP}(\\mathbf{F}_1)) \\right)",
+            "question": "In the PromptIR paper, the PGM process is summarized as?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
