@@ -1,0 +1,35 @@
+{
+    "uuid": "afe1dc15-35c0-54fb-8934-356aa8803efe",
+    "question": "In the paper that proposes GLPFT, which training dataset is larger? In that dataset, what's the format of the data?",
+    "answer_format": "Your answer should be a Python list of 2 elements, the first is the name of the dataset, the second is the format of the data in \"A-B pairs\" format, as given in the paper. e.g. [\"MMLU\", \"question-answer pairs\"].",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "8e85718a-1210-52bf-9aee-9b2bb2d0ae59"
+    ],
+    "reference_pdf": [
+        "1dffea3e-12d5-5a96-82db-480f1579040e",
+        "02c95246-2bbb-510a-b674-6d7a1fe35ef5"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "ToolBench",
+                "instruction-solution pairs"
+            ],
+            "ignore_order": false,
+            "ignore_blank": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

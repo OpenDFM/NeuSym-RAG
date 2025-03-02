@@ -1,0 +1,29 @@
+{
+    "uuid": "3c3f8ba1-26de-54c9-84d9-6d66dc664a8d",
+    "question": "In the paper that SaulLM-141B paper follows the most in data cleaning, how much higher is the balanced accuracy of the final checkpoint of the proposed model than that of the initial checkpoint?",
+    "answer_format": "Your answer should be a float, rounding to 2 decimal places.",
+    "tags": [
+        "multiple",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "2b253037-612f-5426-9621-ec645237513c"
+    ],
+    "reference_pdf": [
+        "4c3fac90-3fef-50ed-884e-9a6fa46332a5"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 4.22,
+            "ndigits": 2
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

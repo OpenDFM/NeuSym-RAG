@@ -1,0 +1,34 @@
+{
+    "uuid": "093b9ce2-d120-5bda-99da-75a89d7ccc7d",
+    "question": "In the AgentTuning paper, what does the reward r stand for? What role does it play in the subsequent process? Does it stand for the same meaning in the AgentBank paper? Does it play the same role?",
+    "answer_format": "Your answer should be a string, containing the answers to the 4 sub-questions.",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "4633aa65-6b6f-5716-bb51-b686db19b3f6",
+        "914d6f7e-dfc0-57c0-8400-4503aaa93efd"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "According to the AgentTuning paper, each trajectory has a final reward r ∈ [0, 1], reflecting the completion status of the task.",
+                "Recall that each interaction trajectory receives a reward r, this allows us to automatically select high-quality trajectories based on the reward.",
+                "Yes. According to the AgentBank paper, finally, a final reward r ∈ [0, 1] is returned depending on the task completion status.",
+                "No. The AgentBank paper does not use the reward r to do anything."
+            ],
+            "question": "In the AgentTuning paper, what does the reward r stand for? What role does it play in the subsequent process? Does it stand for the same meaning in the AgentBank paper? Does it play the same role?",
+            "ignore_order": false
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
