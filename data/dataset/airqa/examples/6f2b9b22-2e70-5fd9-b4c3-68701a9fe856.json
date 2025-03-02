@@ -1,0 +1,25 @@
+{
+    "uuid": "6f2b9b22-2e70-5fd9-b4c3-68701a9fe856",
+    "question": "Which paper first used language models to emulate tool executions for studying the risks of language model agents?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "neurips2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper first used language models to emulate tool executions for studying the risks of language model agents?",
+            "reference_answer": "Identifying the Risks of LM Agents with an LM-Emulated Sandbox"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual"
+}
