@@ -3,7 +3,8 @@ import argparse, json, os, yaml, sys
 from typing import Any, Dict, List
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.functions import get_pdf_page_text
-from utils.airqa_utils import get_airqa_paper_metadata, AIRQA_DIR
+from utils.config import DATASET_DIR
+from utils.airqa_utils import get_airqa_paper_metadata
 
 
 def load_yaml(file_path: str) -> Dict[str, Any]:
@@ -29,7 +30,7 @@ def config_graphrag_settings(args: argparse.Namespace):
 
 
 def get_pdf_text(dataset: str, pdf_id: str) -> str:
-    uuid2papers = get_airqa_paper_metadata(dataset_dir=os.path.join(os.path.dirname(AIRQA_DIR), dataset))
+    uuid2papers = get_airqa_paper_metadata(dataset_dir=os.path.join(DATASET_DIR, dataset))
     pdf_path = uuid2papers[pdf_id]['pdf_path']
     pdf_text = get_pdf_page_text(pdf_path, generate_uuid=False)['page_contents']
     pdf_text = "\n\n".join(pdf_text)
@@ -39,7 +40,7 @@ def get_pdf_text(dataset: str, pdf_id: str) -> str:
 def get_graphrag_input(dataset: str, test_data: str):
     graphrag_input_dir = os.path.join('graphrag', dataset, 'input')
     os.makedirs(graphrag_input_dir, exist_ok=True)
-    with open(os.path.join('data', 'dataset', dataset, test_data), 'r', encoding='utf-8') as fin:
+    with open(os.path.join(DATASET_DIR, dataset, test_data), 'r', encoding='utf-8') as fin:
         for line in fin:
             example = json.loads(line)
             for pdf_id in example['anchor_pdf'] + example['reference_pdf']:

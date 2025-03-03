@@ -3,7 +3,7 @@ import os
 from typing import Any, List, Dict, Tuple, Optional
 from utils.functions.image_functions import get_image_message
 from utils.airqa_utils import get_airqa_paper_metadata
-from utils.dataset_utils import DATASET_DIR
+from utils.config import DATASET_DIR
 
 
 def formulate_input(

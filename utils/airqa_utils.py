@@ -9,7 +9,8 @@ from tenacity import retry, stop_after_attempt, wait_exponential, RetryError
 from typing import Dict, Any, Optional, List, Tuple, Union
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from agents.models import get_llm_single_instance
-from utils.functions.ai_research_metadata import AIRQA_DIR, get_airqa_paper_uuid, get_airqa_paper_metadata, get_num_pages, download_paper_pdf, get_airqa_relative_path, add_ai_research_metadata, write_ai_research_metadata_to_json, infer_paper_abstract_from_pdf, infer_paper_authors_from_pdf
+from utils.config import DATASET_DIR
+from utils.functions.ai_research_metadata import get_airqa_paper_uuid, get_airqa_paper_metadata, get_num_pages, download_paper_pdf, get_airqa_relative_path, add_ai_research_metadata, write_ai_research_metadata_to_json, infer_paper_abstract_from_pdf, infer_paper_authors_from_pdf
 from utils.functions.common_functions import get_uuid
 from bs4 import BeautifulSoup
 from fuzzywuzzy import fuzz
@@ -40,10 +41,10 @@ abbrev_mappings = {
 
 
 def get_all_used_paper_uuids(
-        example_dir: str = os.path.join(AIRQA_DIR, 'examples'),
-        output_file: str = os.path.join(AIRQA_DIR, 'used_paper_uuids.json')
+        example_dir: str = os.path.join(DATASET_DIR, 'airqa', 'examples'),
+        output_file: str = os.path.join(DATASET_DIR, 'airqa', 'used_paper_uuids.json')
     ) -> List[str]:
-    """ Extract all used paper UUIDs from the AIR-QA examples.
+    """ Extract all used paper UUIDs from the AirQA examples.
     """
     uuids = set()
     for file in os.listdir(example_dir):
@@ -60,7 +61,7 @@ def get_all_used_paper_uuids(
 
 
 def get_all_example_uuids(
-        example_dir: str = os.path.join(AIRQA_DIR, 'examples')
+        example_dir: str = os.path.join(DATASET_DIR, 'airqa', 'examples')
     ) -> List[str]:
     """ Extract all example UUIDs from the AIR-QA examples.
     """
@@ -86,8 +87,8 @@ def get_relevant_papers_by_title(
     return list(map(lambda x: uuid2papers[x[0]], relevant_papers))[:topk]
 
 
-def generate_airqa_example_template(dataset_dir: str = AIRQA_DIR, **kwargs) -> Dict[str, Any]:
-    """ Generate an AIR-QA example template.
+def generate_airqa_example_template(dataset_dir: str = os.path.join(DATASET_DIR, 'airqa'), **kwargs) -> Dict[str, Any]:
+    """ Generate an AirQA example template.
     """
     flag, existing_uids = True, get_all_example_uuids()
     while flag:
@@ -124,8 +125,8 @@ def generate_airqa_example_template(dataset_dir: str = AIRQA_DIR, **kwargs) -> D
     return example_template
 
 
-def check_airqa_examples(dataset_dir: str = AIRQA_DIR) -> Dict[str, Any]:
-    """ Check AIR-QA examples.
+def check_airqa_examples(dataset_dir: str = os.path.join(DATASET_DIR, 'airqa')) -> Dict[str, Any]:
+    """ Check AirQA examples.
     """
     tag, example_dir = True, os.path.join(dataset_dir, 'examples')
     uuids = get_all_example_uuids()
@@ -167,7 +168,7 @@ def check_airqa_examples(dataset_dir: str = AIRQA_DIR) -> Dict[str, Any]:
     return tag
 
 
-def get_answer_from_llm(question_uuid: Optional[str] = None, question: Optional[str] = None, dataset_dir: str = AIRQA_DIR, add_answer_format: bool = True, model: str = 'gpt-4o', temperature: float = 0.7, top_p: float = 0.95) -> str:
+def get_answer_from_llm(question_uuid: Optional[str] = None, question: Optional[str] = None, dataset_dir: str = os.path.join(DATASET_DIR, 'airqa'), add_answer_format: bool = True, model: str = 'gpt-4o', temperature: float = 0.7, top_p: float = 0.95) -> str:
     """ Get the answer from the LLM model.
     @param:
         question_uuid: str, the UUID of the question
@@ -199,12 +200,13 @@ def get_answer_from_llm(question_uuid: Optional[str] = None, question: Optional[
     return response
 
 
-def make_airqa_dataset(airqa_dir: str = AIRQA_DIR, airqa_100: bool = False) -> str:
+def make_airqa_dataset(airqa_dir: str = os.path.join(DATASET_DIR, 'airqa'), split: str = 'ablation') -> str:
     """ Given all examples UUID json files, merge them into a single JSONL file.
     """
+    assert split in ['553', 'ablation', 'all'], "The split must be one of 'real', 'ablation', or 'all'."
     uuids_to_include = []
-    if airqa_100:
-        output_path = os.path.join(airqa_dir, 'test_data_airqa100.jsonl')
+    if split != 'all':
+        output_path = os.path.join(airqa_dir, f"test_data_{split}.jsonl")
         if os.path.exists(output_path):
             with open(output_path, 'r', encoding='utf8') as inf:
                 for line in inf:
@@ -222,21 +224,21 @@ def make_airqa_dataset(airqa_dir: str = AIRQA_DIR, airqa_100: bool = False) -> s
                 fp = os.path.join(indir, fp)
                 with open(fp, 'r', encoding='utf8') as inf:
                     data = json.load(inf)
-                if airqa_100 and data['uuid'] not in uuids_to_include: continue
+                if split != 'all' and data['uuid'] not in uuids_to_include: continue
                 of.write(json.dumps(data, ensure_ascii=False) + '\n')
                 count += 1
     logger.info(f"Merge {count} AIR-QA examples into {output_path}.")
     return output_path
 
 
-def make_airqa_metadata(airqa_dir: str = AIRQA_DIR):
+def make_airqa_metadata(airqa_dir: str = os.path.join(DATASET_DIR, 'airqa')) -> str:
     """ Given all metadata JSON files, merge them into a single JSON file.
     """
     output_path = os.path.join(airqa_dir, 'uuid2papers.json')
     uuid2papers = get_airqa_paper_metadata(dataset_dir=airqa_dir)
     with open(output_path, 'w', encoding='utf8') as ouf:
         json.dump(uuid2papers, ouf, ensure_ascii=False, indent=4)
-    logger.info(f"Merge {len(uuid2papers)} AIR-QA metadata into {output_path}.")
+    logger.info(f"Merge {len(uuid2papers)} AirQA metadata into {output_path}.")
     return output_path
 
 
@@ -259,7 +261,7 @@ def crawl_acl_anthology_papers(
         temperature: float = 0.0,
         tldr_max_length: int = 80,
         tag_number: int = 5,
-        dataset_dir: str = AIRQA_DIR
+        dataset_dir: str = os.path.join(DATASET_DIR, 'airqa')
 ) -> Dict[str, dict]:
     """ Crawl papers from ACL Anthology website. Use `get_airqa_paper_uuid` to generate UUIDs and rename the output PDFs under `output_dir`. Save the meta data dict with its UUID into metadata folder.
     @param:
@@ -376,7 +378,7 @@ def crawl_openreview_papers(
         tldr_max_length: int = 80,
         tag_number: int = 5,
         num_processes: Optional[int] = None,
-        dataset_dir: str = AIRQA_DIR
+        dataset_dir: str = os.path.join(DATASET_DIR, 'airqa')
     ) -> Dict[str, dict]:
     """ Refer to blogs and doc:
         - https://blog.csdn.net/qq_39517117/article/details/142959952

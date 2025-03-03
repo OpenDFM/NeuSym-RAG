@@ -3,6 +3,7 @@
 import json, os
 from functools import cached_property
 from typing import List, Dict, Union, Optional, Any, Tuple
+from utils.config import DATABASE_DIR
 
 
 class DatabaseSchema():
@@ -52,8 +53,7 @@ class DatabaseSchema():
             ]
         }
         """
-        db_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'database')
-        json_path = os.path.join(db_dir, database_name, database_name + '.json')
+        json_path = os.path.join(DATABASE_DIR, database_name, database_name + '.json')
         if os.path.exists(json_path):
             with open(json_path, 'r') as f:
                 schema = json.load(f)

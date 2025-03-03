@@ -8,6 +8,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from agents.envs import infer_env_class, AgentEnv
 from agents.models import infer_model_class, LLMClient
 from agents.frameworks import infer_agent_class, AgentBase
+from utils.config import DATASET_DIR
 from utils.eval_utils import evaluate, print_result, load_test_data, write_jsonl
 from utils.hyperparam_utils import parse_args, get_result_folder, get_result_logger
 from utils.graphrag_utils import load_yaml, write_yaml
@@ -42,7 +43,7 @@ for data_idx, data in enumerate(test_data):
         # if len(data['anchor_pdf']) > 0:
         #     anchor_pdf_titles = []
         #     for anchor_pdf_id in data['anchor_pdf']:
-        #         with open(os.path.join('data', 'dataset', args.dataset, 'metadata', anchor_pdf_id + '.json'), 'r', encoding='utf-8') as inf:
+        #         with open(os.path.join(DATASET_DIR, args.dataset, 'metadata', anchor_pdf_id + '.json'), 'r', encoding='utf-8') as inf:
         #             anchor_pdf_titles.append(json.load(inf)['title'].replace('\n', ' ').strip())
         #     anchor_pdf_titles_str = '\n'.join(anchor_pdf_titles)
         #     graphrag_query += f"\n[Related Paper Titles]:\n{anchor_pdf_titles_str}"

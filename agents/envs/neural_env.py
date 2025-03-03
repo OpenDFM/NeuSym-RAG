@@ -7,6 +7,7 @@ from milvus_model.base import BaseEmbeddingFunction
 from agents.envs.env_base import AgentEnv
 from typing import Optional, List, Tuple, Dict, Union, Any, Type
 from agents.envs.actions import Action, RetrieveFromVectorstore, CalculateExpr, ViewImage, GenerateAnswer
+from utils.config import DATABASE_DIR, VECTORSTORE_DIR
 from utils.database_utils import get_database_connection
 from utils.vectorstore_utils import get_vectorstore_connection, get_embed_model_from_collection, get_milvus_embedding_function
 
@@ -50,7 +51,7 @@ class NeuralRAGEnv(AgentEnv):
         self.reset()
 
         self.table2pk, self.table2encodable = dict(), defaultdict(dict)
-        with open(os.path.join('data', 'database', self.vectorstore, f'{self.vectorstore}.json'), 'r', encoding='utf-8') as fin:
+        with open(os.path.join(DATABASE_DIR, self.vectorstore, f'{self.vectorstore}.json'), 'r', encoding='utf-8') as fin:
             db_schema = json.load(fin)['database_schema']
             for table in db_schema:
                 table_name = table['table']['table_name']
@@ -107,7 +108,7 @@ class NeuralRAGEnv(AgentEnv):
             embed['embedder'] = get_milvus_embedding_function(
                 embed['embed_type'],
                 embed['embed_model'],
-                backup_json=os.path.join('data', 'vectorstore', self.vectorstore, f'bm25.json')
+                backup_json=os.path.join(VECTORSTORE_DIR, self.vectorstore, f'bm25.json')
             )
             self.embedder_dict[collection] = embed
         return (self.database_conn, self.vectorstore_conn, self.embedder_dict)

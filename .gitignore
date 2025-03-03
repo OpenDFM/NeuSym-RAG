@@ -4,6 +4,9 @@
 # workspace vscode settings
 .vscode
 
+# ignore sensitive files
+.env
+
 # common log and cache folders
 logs
 tmp
@@ -54,10 +57,9 @@ data/dataset/*/images/*
 !data/dataset/*/images/.gitkeep
 data/dataset/airqa/examples/litsearch/raw
 data/dataset/airqa/examples/pasa/raw
-data/dataset/m3sciqa/examples/*
-data/dataset/spiqa/examples/*
-data/dataset/scidqa/examples/*
-!data/dataset/*/examples/.gitkeep
+data/dataset/m3sciqa/examples
+data/dataset/scidqa/examples
+data/dataset/spiqa
 
 # third party repos
 third_party/*

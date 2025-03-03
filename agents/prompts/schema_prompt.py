@@ -1,6 +1,7 @@
 #coding=utf8
 import os, json
 from typing import Dict, List, Union, Tuple, Any, Optional
+from utils.config import DATABASE_DIR, VECTORSTORE_DIR
 
 
 def convert_database_schema_to_dbml(database: str, output_file: Optional[str] = None) -> str:
@@ -14,7 +15,7 @@ def convert_database_schema_to_dbml(database: str, output_file: Optional[str] = 
     """
     dbml_text = ''
     if not os.path.exists(database):
-        database = os.path.join('data', 'database', database, f'{database}.json')
+        database = os.path.join(DATABASE_DIR, database, f'{database}.json')
         if not os.path.exists(database):
             raise FileNotFoundError(f"Database schema file {database} not found!")
     with open(database, 'r', encoding='utf-8') as f:
@@ -55,7 +56,7 @@ def convert_database_schema_to_prompt(database: str, serialize_method: str = 'cr
     """
     if serialize_method == 'create_sql':
         if not os.path.exists(database):
-            database = os.path.join('data', 'database', database, f'{database}.sql')
+            database = os.path.join(DATABASE_DIR, database, f'{database}.sql')
             if not os.path.exists(database):
                 raise FileNotFoundError(f"Database schema file {database} not found")
         prompt = f"The database schema for {database} is as follows:\n"
@@ -63,7 +64,7 @@ def convert_database_schema_to_prompt(database: str, serialize_method: str = 'cr
             prompt += f.read().strip()
     elif serialize_method == 'detailed_json': # JSON format with detailed description for each table/column
         if not os.path.exists(database):
-            database = os.path.join('data', 'database', database, f'{database}.json')
+            database = os.path.join(DATABASE_DIR, database, f'{database}.json')
             if not os.path.exists(database):
                 raise FileNotFoundError(f"Database schema file {database} not found")
         prompt = f"The database schema for {database} is as follows:\n"
@@ -84,14 +85,14 @@ def convert_vectorstore_schema_to_prompt(vectorstore: str, serialize_method: str
     @return:
         prompt: str, prompt
     """
-    vs_schema = os.path.join('data', 'vectorstore', 'vectorstore_schema.json')
+    vs_schema = os.path.join(VECTORSTORE_DIR, 'vectorstore_schema.json')
     with open(vs_schema, 'r') as f:
         vs_schema = json.load(f) # get all collections and their corresponding fields (indexes can be ignored)
-    db_schema = os.path.join('data', 'database', vectorstore, f'{vectorstore}.json')
+    db_schema = os.path.join(DATABASE_DIR, vectorstore, f'{vectorstore}.json')
     with open(db_schema, 'r') as f:
         db_schema = json.load(f)['database_schema'] # extract encodable table-column pairs (encodable: true)
     # the filter condition or syntax can be referenced to https://milvus.io/docs/boolean.md#Scalar-Filtering-Rules
-    filter_rules = os.path.join('data', 'vectorstore', 'filter_rules.json')
+    filter_rules = os.path.join(VECTORSTORE_DIR, 'filter_rules.json')
     with open(filter_rules, 'r') as f:
         filter_rules = json.load(f) # get all filter rules
 

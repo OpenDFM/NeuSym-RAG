@@ -1,19 +1,14 @@
-# Database
+# PDF Parsing into Database
 
-The database folder should be organized into the following structure under `data/database`, with each database assigned a separate folder. The utility functions are provided in path `utils/database_utils.py` and we use [DuckDB](https://duckdb.org/) for efficiency and simplicity.
-```txt
-- data/
-    - database/
-        - financial_report/
-            - financial_report.json
-            - financial_report.sql
-            - financial_report.duckdb
-        - biology_paper/
-            - biology_paper.json
-            - biology_paper.sql
-            - biology_paper.duckdb
-        - ... other databases ...
-```
+The `data/database` folder is organized into the following structure, with each database assigned a separate sub-folder:
+
+<details> 
+
+</details>
+
+
+The utility functions are provided in path `utils/database_utils.py` and we use [DuckDB](https://duckdb.org/) for efficiency and simplicity.
+
 
 Under each database folder, it at least contains the following three files:
 - `{database_name}.json`: the database schema file
@@ -114,9 +109,9 @@ The database schema file is structured into:
 After running the `create_db` script above, we will get the `.sql` DDL file under database folder. We can use free online tools (e.g., [DrawSQL](https://drawsql.app/diagrams)) to import this DDL file and obtain the visualization graph (choose `PostgreSQL` as the database type). For example:
 
 <p align="center">
-  <img src="../data/database/biology_paper/biology_paper.png" alt="Image Description" width="95%">
+  <img src="../assets/db_visualization.png" alt="Image Description" width="95%">
   <br>
-  <em>Database Schema for Biology Paper (PDFVQA)</em>
+  <em>An Illustration of Database Schema for AI Research Papers</em>
 </p>
 
 

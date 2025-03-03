@@ -2,7 +2,7 @@
 import os, json, sys, logging, math, random
 from typing import Dict, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
+from utils.config import DATASET_DIR
 
 
 logger = logging.getLogger(__name__)
@@ -14,9 +14,6 @@ formatter = logging.Formatter(
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.setLevel(logging.INFO)
-
-
-DATASET_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'dataset')
 
 
 def classify_question_type(data: Dict[str, Any]) -> str:

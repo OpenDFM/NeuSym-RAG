@@ -11,6 +11,12 @@ from typing import Optional, List, Tuple, Dict, Union, Any
 from PyPDF2 import PdfReader
 from pdf2image import convert_from_path
 
+try:
+    from utils.config import DATASET_DIR, TMP_DIR
+except ImportError:
+    DATASET_DIR = os.getenv('DATASET_DIR', os.path.join(os.getcwd(), 'data', 'dataset'))
+    TMP_DIR = os.getenv('TMP_DIR', os.path.join(os.getcwd(), 'tmp'))
+
 
 @dataclass
 class ViewImage(Action):
@@ -42,7 +48,7 @@ class ViewImage(Action):
             return Observation('[Error]: bounding box must be a list of 0 or 4 floats.')
 
         dataset = env.dataset.lower()
-        pdf_dirname = os.path.join('data', 'dataset', dataset, 'papers')
+        pdf_dirname = os.path.join(DATASET_DIR, dataset, 'papers')
         for conference in os.listdir(pdf_dirname):
             pdf_filename = os.path.join(pdf_dirname, conference, f'{self.paper_id}.pdf')
             if os.path.exists(pdf_filename):
@@ -69,7 +75,7 @@ class ViewImage(Action):
                 box[0] *= width_ratio
                 box[1] *= height_ratio
                 image = image.crop(box)
-            image_file = tempfile.NamedTemporaryFile(suffix='.png', dir=os.path.join(os.getcwd(), '.cache'))
+            image_file = tempfile.NamedTemporaryFile(suffix='.png', dir=TMP_DIR)
             image.save(image_file.name, 'PNG')
             with open(image_file.name, 'rb') as f:
                 image_data = base64.b64encode(f.read()).decode('utf-8')

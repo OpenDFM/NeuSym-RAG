@@ -9,6 +9,11 @@ from tabulate import tabulate
 from contextlib import nullcontext
 from evaluation.evaluator import evaluate_airqa as evaluate_dataset
 
+try:
+    from .config import DATASET_DIR
+except ImportError:
+    DATASET_DIR = os.getenv('DATASET_DIR', os.path.join(os.getcwd(), 'data', 'dataset'))
+
 
 def load_jsonl(fp: str) -> List[Dict[str, Any]]:
     with open(fp, 'r', encoding='utf8') as f:
@@ -28,7 +33,7 @@ def load_test_data(test_data: str, dataset: str = 'ariqa') -> List[Dict[str, Any
     if os.path.exists(test_data) and os.path.isfile(test_data):
         test_data_path = test_data
     else:
-        test_data_path = os.path.join('data', 'dataset', dataset, test_data)
+        test_data_path = os.path.join(DATASET_DIR, dataset, test_data)
         if not os.path.exists(test_data_path):
             raise ValueError('[ERROR]: Filepath for test data {} not found.'.format(test_data_path))
     examples = load_jsonl(test_data_path)

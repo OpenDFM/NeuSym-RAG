@@ -6,6 +6,11 @@ from openai import OpenAI
 from agents.models.llm_base import LLMClient
 from transformers import AutoTokenizer
 
+try:
+    from utils.config import CACHE_DIR
+except ImportError:
+    CACHE_DIR = os.getenv('CACHE_DIR', os.path.join(os.getcwd(), '.cache'))
+
 
 def crop_image_count_in_messages(
         messages: List[Dict[str, Any]],
@@ -65,15 +70,15 @@ class VLLMClient(LLMClient):
     """ Note that, in .cache/ folder, only download the tokenizer-related files to calculate the maximum token length.
     """
     model_path: Dict[str, str] = {
-        'qwen2-vl-72b-instruct': os.path.join('.cache', 'Qwen2-VL-72B-Instruct'),
-        'qwen2.5-72b-instruct': os.path.join('.cache', 'Qwen2.5-72B-Instruct'),
-        'qwen2.5-vl-72b-instruct': os.path.join('.cache', 'Qwen2.5-VL-72B-Instruct'),
-        'qwen2.5-vl-3b-instruct': os.path.join('.cache', 'Qwen2.5-VL-3B-Instruct'),
-        'qwen2.5-vl-7b-instruct': os.path.join('.cache', 'Qwen2.5-VL-7B-Instruct'),
-        'qvq-72b-preview': os.path.join('.cache', 'QVQ-72B-Preview'),
-        'qwq-32b-preview': os.path.join('.cache', 'QWQ-32B-Preview'),
-        'llama-3.2-90b-vision-instruct': os.path.join('.cache', 'Llama-3.2-90B-Vision-Instruct'),
-        'llama-3.3-70b-instruct': os.path.join('.cache', 'Llama-3.3-70B-Instruct')
+        'qwen2-vl-72b-instruct': os.path.join(CACHE_DIR, 'Qwen2-VL-72B-Instruct'),
+        'qwen2.5-72b-instruct': os.path.join(CACHE_DIR, 'Qwen2.5-72B-Instruct'),
+        'qwen2.5-vl-72b-instruct': os.path.join(CACHE_DIR, 'Qwen2.5-VL-72B-Instruct'),
+        'qwen2.5-vl-3b-instruct': os.path.join(CACHE_DIR, 'Qwen2.5-VL-3B-Instruct'),
+        'qwen2.5-vl-7b-instruct': os.path.join(CACHE_DIR, 'Qwen2.5-VL-7B-Instruct'),
+        'qvq-72b-preview': os.path.join(CACHE_DIR, 'QVQ-72B-Preview'),
+        'qwq-32b-preview': os.path.join(CACHE_DIR, 'QWQ-32B-Preview'),
+        'llama-3.2-90b-vision-instruct': os.path.join(CACHE_DIR, 'Llama-3.2-90B-Vision-Instruct'),
+        'llama-3.3-70b-instruct': os.path.join(CACHE_DIR, 'Llama-3.3-70B-Instruct')
     }
 
     def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None, image_limit: int = 10, length_limit: int = 32, **kwargs) -> None:

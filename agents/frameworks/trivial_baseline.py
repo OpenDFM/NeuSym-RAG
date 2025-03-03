@@ -6,7 +6,7 @@ from agents.models import LLMClient
 from agents.prompts import SYSTEM_PROMPTS, AGENT_PROMPTS, formulate_input
 from agents.frameworks import AgentBase
 from utils.airqa_utils import get_airqa_paper_metadata
-from utils.dataset_utils import DATASET_DIR
+from utils.config import DATASET_DIR
 from utils.functions import get_pdf_page_text, truncate_tokens
 
 
@@ -34,7 +34,7 @@ class TrivialBaselineAgent(AgentBase):
             meta = uuid2papers[pid]
             return f"[Title]: {meta['title']}\n[Abstract]: {meta['abstract']}"
         else:
-            ppath = os.path.join('data', 'dataset', self.env.dataset, 'processed_data', f'{pid}.json')
+            ppath = os.path.join(DATASET_DIR, self.env.dataset, 'processed_data', f'{pid}.json')
             if os.path.exists(ppath):
                 with open(ppath, 'r', encoding='utf-8') as fin:
                     pdata = json.load(fin)

@@ -3,6 +3,7 @@ import os, json, re
 from functools import cached_property
 from typing import Dict, Any, Optional, List
 from pymilvus import DataType
+from utils.config import VECTORSTORE_DIR
 
 
 def get_collection_name(
@@ -136,9 +137,9 @@ class VectorstoreSchema(object):
 
     def __init__(self, vectorstore: Optional[str] = None):
         super(VectorstoreSchema, self).__init__()
-        self.vectorstore_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'vectorstore', 'vectorstore_schema.json')
+        self.vectorstore_path = os.path.join(VECTORSTORE_DIR, 'vectorstore_schema.json')
         if vectorstore is not None: # overwrite the general vectorstore path
-            vs_folder = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'vectorstore', vectorstore)
+            vs_folder = os.path.join(VECTORSTORE_DIR, vectorstore)
             if os.path.exists(os.path.join(vs_folder, 'vectorstore_schema.json')) and os.path.isfile(os.path.join(vs_folder, 'vectorstore_schema.json')):
                 self.vectorstore_path = os.path.join(vs_folder, 'vectorstore_schema.json')
             elif os.path.exists(os.path.join(vs_folder, vectorstore + '.json')) and os.path.isfile(os.path.join(vs_folder, vectorstore + '.json')):

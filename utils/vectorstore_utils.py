@@ -7,10 +7,11 @@ from pymilvus import MilvusClient, FieldSchema, CollectionSchema, DataType
 from milvus_model.base import BaseEmbeddingFunction
 from typing import List, Tuple, Dict, Any, Union, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from utils.config import DATASET_DIR, VECTORSTORE_DIR, CACHE_DIR
 from utils.database_utils import get_database_connection
 from utils.database_schema import DatabaseSchema
 from utils.vectorstore_schema import VectorstoreSchema, VectorstoreCollection
-from utils.functions.ai_research_metadata import get_airqa_paper_metadata, AIRQA_DIR
+from utils.functions.ai_research_metadata import get_airqa_paper_metadata
 
 
 logger = logging.getLogger(__name__)
@@ -29,8 +30,6 @@ EMBED_TYPES = {
     'image': ['clip']
 }
 
-VECTORSTORE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'vectorstore')
-
 
 GLOBAL_EMBEDDING_MODELS = dict()
 
@@ -40,22 +39,21 @@ def detect_embedding_model_path(model_name: str) -> str:
     """
     if os.path.exists(model_name) and os.path.isdir(model_name):
         return model_name
-    cached_folder = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.cache')
-    files = os.listdir(cached_folder)
+    files = os.listdir(CACHE_DIR)
     model_name = os.path.basename(model_name.rstrip(os.sep).strip())
     if model_name in files:
-        return os.path.join(cached_folder, model_name)
+        return os.path.join(CACHE_DIR, model_name)
     else:
         normed_model_name = re.sub(r'[^a-z0-9_]', '_', model_name.lower())
         normed_files = {
             re.sub(r'[^a-z0-9_]', '_', m.lower().rstrip(os.sep).strip()): m
-            for m in files if os.path.isdir(os.path.join(cached_folder, m))
+            for m in files if os.path.isdir(os.path.join(CACHE_DIR, m))
         }
         detect_model_name = normed_files.get(normed_model_name, None)
         if detect_model_name is None:
             raise ValueError(f"[Error]: Embedding model {model_name} not found in the .cache/ folder.")
         # logger.info(f"Found cached embedding model `{detect_model_name}` for `{model_name}`.")
-        return os.path.join(cached_folder, detect_model_name)
+        return os.path.join(CACHE_DIR, detect_model_name)
 
 
 def get_embed_model_from_collection(
@@ -325,7 +323,7 @@ def get_image_or_pdf_path(database: str, pdf_id: str) -> str:
     """
     # Load the mapping file
     dataset = get_database_to_dataset_mapping(database)
-    dataset_dir = os.path.join(os.path.dirname(AIRQA_DIR), dataset)
+    dataset_dir = os.path.join(DATASET_DIR, dataset)
     uuid2papers = get_airqa_paper_metadata(dataset_dir=dataset_dir)
 
     # Get the paper info
@@ -342,8 +340,8 @@ def get_image_or_pdf_path(database: str, pdf_id: str) -> str:
 
 
 def build_bm25_corpus(
-        paper_dir: str = os.path.join('data', 'dataset', 'airqa', 'papers'),
-        save_path: str = os.path.join('data', 'vectorstore', 'ai_research', 'bm25.json')
+        paper_dir: str = os.path.join(DATASET_DIR, 'airqa', 'papers'),
+        save_path: str = os.path.join(VECTORSTORE_DIR, 'ai_research', 'bm25.json')
 ):
     """ Build the BM25 corpus for the vectorstore. Indeed, generate the backup JSON file for BM25 model.
     Directly load the PDF files and extract the text content for all preprocessed papers.

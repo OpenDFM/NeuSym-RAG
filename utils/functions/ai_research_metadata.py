@@ -8,7 +8,7 @@ import pymupdf
 from fuzzywuzzy import fuzz
 import pandas as pd
 from urllib.parse import urlencode, quote
-
+from utils.config import DATASET_DIR, TMP_DIR
 from utils.functions.common_functions import is_valid_uuid, get_uuid, call_llm, call_llm_with_message, convert_to_message
 from utils.functions.parallel_functions import parallel_extract_or_fill
 
@@ -22,17 +22,6 @@ formatter = logging.Formatter(
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.setLevel(logging.INFO)
-
-
-AIRQA_DIR = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-    'data', 'dataset', 'airqa'
-)
-
-TMP_DIR = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-    'tmp'
-)
 
 
 UUID2PAPERS: Dict[str, Any] = {}
@@ -59,7 +48,7 @@ def get_airqa_paper_metadata(uuid_str: Optional[str] = None, dataset_dir: Option
         if not os.path.exists(dataset_dir):
             logger.error(f"[Error]: The dataset directory {dataset_dir} does not exist.")
             return None
-    else: dataset_dir = AIRQA_DIR
+    else: dataset_dir = os.path.join(DATASET_DIR, 'airqa')
     global UUID2PAPERS
     if not UUID2PAPERS.get(dataset_dir):
         UUID2PAPERS[dataset_dir] = {}
@@ -144,7 +133,7 @@ def get_ccf_conference_name(conference_abbrev: str = None, conference_full: str 
 
     global CCF_CONFERENCES
     if CCF_CONFERENCES is None:
-        ccf_file: str = os.path.join(AIRQA_DIR, 'ccf_catalog.csv')
+        ccf_file: str = os.path.join(DATASET_DIR, 'ccf_catalog.csv')
         ccf_pd = pd.read_csv(ccf_file)
 
         CCF_CONFERENCES = {
@@ -375,7 +364,7 @@ def arxiv_scholar_api(arxiv_id_or_title: str, **kwargs) -> Tuple[bool, Dict[str,
         **kwargs: Dict[str, Any], other arguments that will be directly passed to the arxiv API
             - limit: int, the maximum number of search results to return, by default 10
             - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 90
-            - dataset_dir: str, folder path to the dataset, by default AIRQA_DIR
+            - dataset_dir: str, folder path to the dataset, by default os.path.join(DATASET_DIR, 'airqa')
     @return: metadata dict
         see doc in `get_ai_research_metadata`
     """
@@ -439,7 +428,7 @@ def arxiv_scholar_api(arxiv_id_or_title: str, **kwargs) -> Tuple[bool, Dict[str,
     if kwargs.get('dataset_dir', None) is not None:
         assert os.path.exists(kwargs['dataset_dir']), f"Invalid dataset directory: {kwargs['dataset_dir']}."
         dataset_dir = kwargs['dataset_dir']
-    else: dataset_dir = AIRQA_DIR
+    else: dataset_dir = os.path.join(DATASET_DIR, 'airqa')
     pdf_path = os.path.join(dataset_dir, 'papers', subfolder, f'{paper_uuid}.pdf')
     pdf_url = data['id'].replace('/abs/', '/pdf/') # do not use arxiv id, directly use the pdf link in the returned id
     authors = [data["author"]["name"]] if type(data["author"]) == dict and 'name' in data["author"] else [author["name"] for author in data["author"]]
@@ -489,7 +478,7 @@ def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 90
             - fields_of_study: List[str], the list of fields of study to filter the search results, e.g., ['Computer Science', 'Linguistics']. By default, no filter
             - start_year: int, the start year of the publication, used to narrow down search result. By default, None
-            - dataset_dir: str, folder path to the dataset, by default AIRQA_DIR
+            - dataset_dir: str, folder path to the dataset, by default os.path.join(DATASET_DIR, 'airqa')
     @return: metadata dict
         see doc in `get_ai_research_metadata`
     """
@@ -548,7 +537,7 @@ def semantic_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             if kwargs.get('dataset_dir', None) is not None:
                 assert os.path.exists(kwargs['dataset_dir']), f"Invalid dataset directory: {kwargs['dataset_dir']}."
                 dataset_dir = kwargs['dataset_dir']
-            else: dataset_dir = AIRQA_DIR
+            else: dataset_dir = os.path.join(DATASET_DIR, 'airqa')
             metadata_dict = {
                 "uuid": paper_uid,
                 "title": data['title'],
@@ -578,7 +567,7 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             - limit: int, the maximum number of search results to return, by default 10
             - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 90
             - allow_arxiv: bool, whether to allow arxiv papers in the search results, by default False
-            - dataset_dir: str, folder path to the dataset, by default AIRQA_DIR
+            - dataset_dir: str, folder path to the dataset, by default os.path.join(DATASET_DIR, 'airqa')
     @return: metadata dict
         see doc in `get_ai_research_metadata`
     """
@@ -711,7 +700,7 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             if kwargs.get('dataset_dir', None) is not None:
                 assert os.path.exists(kwargs['dataset_dir']), f"Invalid dataset directory: {kwargs['dataset_dir']}."
                 dataset_dir = kwargs['dataset_dir']
-            else: dataset_dir = AIRQA_DIR
+            else: dataset_dir = os.path.join(DATASET_DIR, 'airqa')
             pdf_path = os.path.join(dataset_dir, 'papers', subfolder, f'{paper_uuid}.pdf')
             pdf_url, bibtex = get_dblp_pdf_url(hit['info']['ee']), get_dblp_bibtex(hit['info']['url'])
             if pdf_url is None: # unable to find download link, try the next candidate
@@ -759,7 +748,7 @@ def add_ai_research_metadata(
 def write_ai_research_metadata_to_json(metadata: Dict[str, Any], dataset_dir: Optional[str] = None) -> str:
     if dataset_dir is not None:
         assert os.path.exists(dataset_dir), f"Invalid dataset directory: {dataset_dir}."
-    else: dataset_dir = AIRQA_DIR
+    else: dataset_dir = os.path.join(DATASET_DIR, 'airqa')
     metadata_path = os.path.join(dataset_dir, 'metadata', f"{metadata['uuid']}.json")
     with open(metadata_path, 'w', encoding='utf8') as of:
         json.dump(metadata, of, indent=4, ensure_ascii=False)
@@ -788,7 +777,7 @@ def get_ai_research_metadata(
         model and temperature: str, float, the language model and temperature for title inference
         api_tools: List[str], the list of scholar APIs to use, see function `extract_metadata_from_scholar_api`
         **kwargs: Dict[str, Any], other arguments that will be directly passed to the scholar API functions
-            - dataset_dir: str, the directory to save the metadata and papers PDF, by default AIRQA_DIR
+            - dataset_dir: str, the directory to save the metadata and papers PDF, by default os.path.join(DATASET_DIR, 'airqa')
             - see `extract_metadata_from_scholar_api` for more arguments
     @return: metadata dict (metadata)
         {

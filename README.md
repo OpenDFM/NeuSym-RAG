@@ -149,31 +149,37 @@
 
 5. Run the following commands to compare the performance of our NeuSym-RAG framework with the Classic RAG approach: (the evaluation is also included at the end)
     - Congigure the `OPENAI_API_KEY` and `OPENAI_BASE_URL` (if needed)
-    ```sh
-    export OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxx"
-    export OPENAI_BASE_URL="https://api.openai.com/v1"
-    ```
-    - For more baseline methods and parameters (e.g., using open-source LLMs like Qwen2.5-VL-Instruct), refer to [Agent Doc](./documents/agent.md#usage)
 
-    ```sh
-    # Classic RAG baseline
-    $ python scripts/classic_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl --vectorstore ai_research --agent_method classic_rag --llm gpt-4o-mini
-    $ python scripts/classic_rag_baseline.py --dataset m3sciqa --test_data test_data.jsonl --vectorstore emnlp_papers --agent_method classic_rag --llm gpt-4o-mini
-    $ python scripts/classic_rag_baseline.py --dataset scidqa --test_data test_data_775.jsonl --vectorstore openreview_papers --agent_method classic_rag --llm gpt-4o-mini
+  ```sh
+  export OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxx"
+  export OPENAI_BASE_URL="https://api.openai.com/v1"
 
-    # NeuSym-RAG framework
-    $ python scripts/hybrid_neural_symbolic_rag.py --dataset airqa --test_data test_data_553.jsonl --database ai_research --agent_method neusym_rag --llm gpt-4o-mini
-    $ python scripts/hybrid_neural_symbolic_rag.py --dataset m3sciqa --test_data test_data.jsonl --database emnlp_papers --agent_method neusym_rag --llm gpt-4o-mini
-    $ python scripts/hybrid_neural_symbolic_rag.py --dataset scidqa --test_data test_data_775.jsonl --database openreview_papers --agent_method neusym_rag --llm gpt-4o-mini
-    ```
+  # Classic RAG baseline
+  $ python scripts/classic_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl --vectorstore ai_research --agent_method classic_rag --llm gpt-4o-mini
+  $ python scripts/classic_rag_baseline.py --dataset m3sciqa --test_data test_data.jsonl --vectorstore emnlp_papers --agent_method classic_rag --llm gpt-4o-mini
+  $ python scripts/classic_rag_baseline.py --dataset scidqa --test_data test_data_775.jsonl --vectorstore openreview_papers --agent_method classic_rag --llm gpt-4o-mini
+
+  # NeuSym-RAG framework
+  $ python scripts/hybrid_neural_symbolic_rag.py --dataset airqa --test_data test_data_553.jsonl --database ai_research --agent_method neusym_rag --llm gpt-4o-mini
+  $ python scripts/hybrid_neural_symbolic_rag.py --dataset m3sciqa --test_data test_data.jsonl --database emnlp_papers --agent_method neusym_rag --llm gpt-4o-mini
+  $ python scripts/hybrid_neural_symbolic_rag.py --dataset scidqa --test_data test_data_775.jsonl --database openreview_papers --agent_method neusym_rag --llm gpt-4o-mini
+  ```
+
+> **🚀 NOTE:** For more agent baselines (e.g., `iterative_neu_rag` and `two_stage_hybrid_rag`) and variable parameters (e.g., using open-source LLMs like Qwen2.5-VL-Instruct), please refer to [📘 Agent Baselines](./documents/agent.md).
 
 
 ## 📖 PDF Parsing and Encoding
 
-Here are some useful scripts that can help you quickly parse and encode new paper PDFs into existing DB and VS. We take the dataset `airqa` (and DB / VS `ai_research`) as an example.
+We also provide the scripts to quickly **parse and encode new paper PDFs into existing DB and VS**. Take the dataset `airqa` (and DB / VS `ai_research`) as an example:
 > **📌 NOTE:**
 > - If DB and VS do not exist, they will be created automatically
 > - Add the argument `--from_scratch` for any script below will delete existing ones firstly
+
+<p align="center">
+  <img src="assets/pdf_parsing_encoding.png" alt="Image Description" width="95%">
+  <br>
+  <em>PDF Parsing and Encoding for In-coming Requests</em>
+</p>
 
 1. **Multiview Document Parsing:** This step accepts various input types and store the parsed PDF content into the DuckDB database.
     - The default DB is `data/database/${database}/${database}.duckdb` unless you specify args `--database_path /path/to/db.duckdb`
@@ -341,20 +347,15 @@ Fine-grained documents in this project are detailed in `documents/`. Here is the
   - How to define database schema and its format;
   - How to fill in database content with generic Python class `DatabasePopulation` and module `utils.functions`;
   - Scripts of creating database schema and populating database content.
-<p align="center">
-  <img src="assets/db_visualization.png" alt="Image Description" width="95%">
-  <br>
-  <em>An Illustration of Database Schema for AI Research Papers</em>
-</p>
-
 - [`documents/vectorstore.md`](documents/vectorstore.md):
   - Folder structure of `data/vectorstore/`;
   - How to launch the Milvus vector database;
   - How to obtain the encoded vectors;
   - Scripts on filling in the vectorstore.
 - [`documents/agent.md`](documents/agent.md):
-  - Folder structure of `agents/`;
-  - Different agent baselines and running scripts.
+  - Folder structure and different sub-modules of `agents`;
+  - Different agent baselines and running scripts;
+  - The checklist of optional arguments.
 - [`documents/third_party.md`](documents/third_party_tools.md)
   - How to install and use some third-party tools
 

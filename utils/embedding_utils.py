@@ -5,6 +5,7 @@ from typing import List, Dict, Union, Any
 from towhee import ops, pipe
 from towhee.runtime.runtime_pipeline import RuntimePipeline
 from milvus_model.base import BaseEmbeddingFunction
+from utils.config import CACHE_DIR, TMP_DIR
 from utils.vectorstore_utils import detect_embedding_model_path
 from PIL import Image
 from PyPDF2 import PdfReader
@@ -12,8 +13,8 @@ from pdf2image import convert_from_path
 from collections import defaultdict
 
 
-TEMP_PDF_TO_IMAGE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.cache', 'pdf_to_images')
-os.makedirs(TEMP_PDF_TO_IMAGE_DIR, exist_ok=True)
+PDF_TO_IMAGE_CACHE_DIR = os.path.join(CACHE_DIR, 'pdf_to_images')
+os.makedirs(PDF_TO_IMAGE_CACHE_DIR, exist_ok=True)
 
 
 def get_clip_image_embedding_pipeline(embed_model: str = 'clip-vit-base-patch32', device = 'cpu') -> RuntimePipeline:
@@ -80,7 +81,7 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
                         image = image.convert('RGB')
                         width_ratio, height_ratio = image.width / width_height[i][0], image.height / width_height[i][1]
                         self.pdf_to_images[pdf_path].append((image, width_ratio, height_ratio))
-                        # image_path = os.path.join(TEMP_PDF_TO_IMAGE_DIR, f"{pdf_id}_page_{i}.png")
+                        # image_path = os.path.join(PDF_TO_IMAGE_CACHE_DIR, f"{pdf_id}_page_{i}.png")
                         # image.save(image_path, 'PNG')
                         # self.pdf_to_images[pdf_path].append((image_path, width_ratio, height_ratio))
         # print(f'Caching {len(pdf_ids)} PDF images costs {time.time() - start_time}s')
@@ -130,7 +131,7 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
                         cropped_image = image.crop(bbox) # (x0, y0, x1, y1)
                     else: cropped_image = image
                     temp_image_files.append(
-                        tempfile.NamedTemporaryFile(suffix='.png', dir=TEMP_PDF_TO_IMAGE_DIR)
+                        tempfile.NamedTemporaryFile(suffix='.png', dir=TMP_DIR)
                     )
                     cropped_image.save(temp_image_files[-1].name, 'PNG')
 
