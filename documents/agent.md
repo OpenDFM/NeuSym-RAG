@@ -71,74 +71,104 @@ The entire `agents` package can be splitted into 4 sub-modules:
   <em>The Comparison of Different Agent Baselines</em>
 </p>
 
-Here are the checklist of all different agent baselines:
+Here is the checklist of all different agent baselines:
 
-| method                         | neural | symbolic | multi-view | multi-turn | scripts (`scripts`) | environments (`agents.envs`) | frameworks (`agents.frameworks`) |
-|:------------------------------ |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| Trivial: question only         | ❌ | ❌ | ❌ | ❌ | [`trivial_question_only_baseline`](../scripts/trivial_question_only_baseline.py) | [`AgentEnv`](../agents/envs/env_base.py) | [`TrivialBaselineAgent`](../agents/frameworks/trivial_baseline.py) |
-| Trivial: title + abstract      | ❌ | ❌ | ❌ | ❌ | [`trivial_title_with_abstract_baseline`](../scripts/trivial_title_with_abstract_baseline.py) | [`AgentEnv`](../agents/envs/env_base.py) | [`TrivialBaselineAgent`](../agents/frameworks/trivial_baseline.py) |
-| Trivial: full-text with cutoff | ❌ | ❌ | ❌ | ❌ | [`trivial_full_text_with_cutoff_baseline`](../scripts/trivial_full_text_with_cutoff_baseline.py) | [`AgentEnv`](../agents/envs/env_base.py) | [`TrivialBaselineAgent`](../agents/frameworks/trivial_baseline.py) |
-| Classic-RAG                    | ✅ | ❌ | ❌ | ❌ | [`classic_rag_baseline`](../scripts/classic_rag_baseline.py) | [`ClassicRAGEnv`](../agents/envs/classic_env.py) | [`ClassicRAGAgent`](../agents/frameworks/classic_rag_agent.py) |
-
-| Iterative Classic-RAG          | ✅ | ❌ | ❌ | ✅ |
-| Two-stage Neu-RAG              | ✅ | ❌ | ✅ | ❌ |
-| Iterative Neu-RAG              | ✅ | ❌ | ✅ | ✅ |
-| Two-stage Sym-RAG              | ❌ | ✅ | ✅ | ❌ |
-| Iterative Sym-RAG              | ❌ | ✅ | ✅ | ✅ |
-| Two-stage Graph-RAG            | ✅ | ❌ | ✅ | ❌ |
-| Iterative Graph-RAG            | ✅ | ❌ | ✅ | ✅ |
-| Two-stage Hybrid-RAG           | ✅ | ✅ | ✅ | ❌ |
-| **NeuSym-RAG**                 | ✅ | ✅ | ✅ | ✅ |
+| method name                    | neural | symbolic | multi-view | multi-turn | agent method |
+|:------------------------------ |:----:|:----:|:----:|:----:|:----:|
+| Trivial: question only         | ❌ | ❌ | ❌ | ❌ | [`trivial_question_only`](../scripts/trivial_question_only_baseline.py) |
+| Trivial: title + abstract      | ❌ | ❌ | ❌ | ❌ | [`trivial_title_with_abstract`](../scripts/trivial_title_with_abstract_baseline.py) |
+| Trivial: full-text with cutoff | ❌ | ❌ | ❌ | ❌ | [`trivial_full_text_with_cutoff`](../scripts/trivial_full_text_with_cutoff_baseline.py) |
+| Classic-RAG                    | ✅ | ❌ | ❌ | ❌ | [`classic_rag`](../scripts/classic_rag_baseline.py) |
+| Iterative Classic-RAG          | ✅ | ❌ | ❌ | ✅ | [`iterative_classic_rag`](../scripts/iterative_classic_rag_baseline.py) |
+| Two-stage Neu-RAG              | ✅ | ❌ | ✅ | ❌ | [`two_stage_neu_rag`](../scripts/two_stage_neu_rag_baseline.py) |
+| Iterative Neu-RAG              | ✅ | ❌ | ✅ | ✅ | [`iterative_neu_rag`](../scripts/iterative_neu_rag_baseline.py) |
+| Two-stage Sym-RAG              | ❌ | ✅ | ✅ | ❌ | [`two_stage_sym_rag`](../scripts/two_stage_sym_rag_baseline.py) |
+| Iterative Sym-RAG              | ❌ | ✅ | ✅ | ✅ | [`iterative_sym_rag`](../scripts/iterative_sym_rag_baseline.py) |
+| Two-stage Graph-RAG            | ✅ | ❌ | ✅ | ❌ | [`two_stage_graph_rag`](../scripts/two_stage_graph_rag_baseline.py) |
+| Iterative Graph-RAG            | ✅ | ❌ | ✅ | ✅ | [`iterative_graph_rag`](../scripts/iterative_graph_rag_baseline.py) |
+| Two-stage Hybrid-RAG           | ✅ | ✅ | ✅ | ❌ | [`two_stage_hybrid_rag`](../scripts/two_stage_hybrid_rag_baseline.py) |
+| **NeuSym-RAG**                 | ✅ | ✅ | ✅ | ✅ | [`neusym_rag`](../scripts/hybrid_neural_symbolic_rag.py) |
 
 > **❗️ Note:** Code for Two-stage Graph-RAG and Iterative Graph-RAG are preparing.
 
 
-Here are some common arguments:
-- dataset and database:
-    - `pdfvqa` -> `biology_paper`
-    - `tatdqa` -> `financial_report`
-    - `airqa` -> `ai_research`
-- the predicted result and log history are both saved in folder `results/`
-- `action_format`: chosen from [`json`, `markdown`, `xml`, `yaml`], by default is `markdown`
-- `output_format`: only used in actions `RetrieveFrom*`, chosen from [`markdown`, `json`, `html`, `string`], by default is `json`. Currently, you need to modify this parameter in the action file, e.g., `agents/envs/actions/retrieve_from_database.py`
+## Usage
 
-0. Hybrid neural symbolic interactive retrieval framework:
-```sh
-python scripts/hybrid_neural_symbolic_rag.py --dataset pdfvqa --database biology_paper --vectorstore biology_paper --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 15
-python scripts/hybrid_neural_symbolic_rag.py --dataset tatdqa --database financial_report --vectorstore financial_report --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 15
-```
+- All dataset and database/vectorstore names are:
 
-1. Text-to-SQL with interactive database environment baseline:
-```sh
-python scripts/text2sql_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 10
-python scripts/text2sql_baseline.py --dataset tatdqa --database financial_report --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 10
-```
+    | Dataset    | Dataset Name  | Database Name       | Vectorstore Name    |
+    |:----------:|:-------------:|:-------------------:|:-------------------:|
+    | AirQA-Real | `airqa`       | `ai_research`       | `ai_research`       |
+    | M3SciQA    | `m3sciqa`     | `emnlp_papers`      | `emnlp_papers`      |
+    | SciDQA     | `scidqa`      | `openreview_papers` | `openreview_papers` |
 
-2. Text-to-vector with interactive vectorstore environment baseline:
-```sh
-python scripts/text2vec_baseline.py --dataset pdfvqa --vectorstore biology_paper --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 10
-python scripts/text2vec_baseline.py --dataset tatdqa --vectorstore financial_report --test_data test_data_sample.jsonl --action_format markdown --agent_method 'react' --llm gpt-4o-mini --max_turn 10
-```
+- We take the dataset `airqa` and database/vectorstore `ai_research` as an example:
+    - Before running, please set the environment variable `OPENAI_API_KEY` to your OpenAI API key
+    - If you want to use open-source LLMs (e.g., `--llm qwen2.5-vl-72b-instruct`) launched with vLLM, please set the environment variable like:
 
-3. Two stage text-to-SQL (non-interactive) baseline:
+        ```sh
+        export VLLM_API_KEY="EMPTY"
+        export VLLM_BASE_URL="http://localhost:8000/v1/"
+        ```
+
+    - For other agent baselines, please use the corresponding column [agent method](#overview-of-agent-baselines) above
 
 ```sh
-python scripts/two_stage_text2sql_baseline.py --dataset pdfvqa --database biology_paper --test_data test_data_sample.jsonl --agent_method 'two_stage_text2sql' --llm gpt-4o-mini --max_turn 2
-python scripts/two_stage_text2sql_baseline.py --dataset tatdqa --database financial_report --test_data test_data_sample.jsonl --agent_method 'two_stage_text2sql' --llm gpt-4o-mini --max_turn 2
+# NeuSym-RAG framework
+python scripts/hybrid_neural_symbolic_rag.py --dataset airqa --database ai_research --vectorstore ai_research --test_data test_data_553.jsonl --agent_method neusym_rag --llm gpt-4o-mini --max_turn 20
+
+# Other agent baseline methods
+agent_method=classic_rag # trivial_question_only, iterative_neu_rag, two_stage_hybrid_rag, etc.
+python scripts/${agent_method}_baseline.py --dataset airqa --database ai_research --vectorstore ai_research --test_data test_data_553.jsonl --agent_method ${agent_method} --llm gpt-4o-mini # ... optional arguments
 ```
 
-4. Two stage text-to-vector (non-interactive) baseline:
+## Optional Arguments
 
-```sh
-python scripts/two_stage_text2vec_baseline.py --dataset pdfvqa --vectorstore biology_paper --test_data test_data_sample.jsonl --agent_method 'two_stage_text2vec' --llm gpt-4o-mini --max_turn 2
-python scripts/two_stage_text2vec_baseline.py --dataset tatdqa --vectorstore financial_report --test_data test_data_sample.jsonl --agent_method 'two_stage_text2vec' --llm gpt-4o-mini --max_turn 2
-```
+### Input / Output Arguments
 
-5. Classic RAG (pre-fetch the context and call LLM once) baseline:
-- `--collection_name` can be changed to any other embedding models (see `data/vectorstore/*/*.json` for all available collections)
-- the arguments `--table_name` and `--column_name` must be specified (see `data/database/*/*.json` for all available encodable columns)
-- `--limit` restricts the number of returned chunks
-```sh
-python scripts/classic_rag_baseline.py --dataset pdfvqa --vectorstore biology_paper --test_data test_data_sample.jsonl --agent_method classic_rag --llm gpt-4o-mini --max_turn 1 --collection_name text_sentence_transformers_all_minilm_l6_v2 --table_name chunks --column_name text_content --limit 2
-python scripts/classic_rag_baseline.py --dataset tatdqa --vectorstore financial_report --test_data test_data_sample.jsonl --agent_method classic_rag --llm gpt-4o-mini --max_turn 1 --collection_name text_sentence_transformers_all_minilm_l6_v2 --table_name chunks --column_name text_content --limit 2
-```
+| Argument             | Default Value | Description               |
+|:---------------------|:--------------|:--------------------------|
+| `--test_data`        | test_data.jsonl | The test data file in `.jsonl` format.      |
+| `--result_dir`       | results/        | Which folder to record the log and results. |
+| `--database_path`    | data/database/${database}.duckdb          | Specify the DuckDB path of the `.duckdb` file. |
+| `--vectorstore_path` | data/vectorstore/${vectorstore}.db        | Specify the Milvus VS path of the `.db` file if `--launch_method=standalone`. |
+| `--launch_method`    | standalone                                | How to launch the Milvus vectorstore. Choices: `['standalone', 'docker']` |
+| `--docker_uri`       | 127.0.0.1:19530                           | The URI of the Milvus server if `--launch_method=docker`. |
+
+
+### Method Arguments
+
+| Argument              | Default Value | Description |
+|:----------------------|:--------------|:------------|
+| `--collection_name`   | text_sentence_transformers_all_minilm_l6_v2 | The collection name of the Milvus vectorstore. By default, use sentence-transformers/all-MiniLM-L6-v2. For agent method `classic_rag` and `iterative_classic_rag`. |
+| `--table_name`        | chunks        | The table name (which chunking view) to retrieve. For agent method `classic_rag` and `iterative_classic_rag`. |
+| `--column_name`       | text_content  | The column name (which chunking view) to retrieve. For agent method `classic_rag` and `iterative_classic_rag`. |
+| `--limit`             | 4             | The number of chunks to retrieve from the VS. Only for agent method `classic_rag`. |
+| `--cutoff`            | 5             | The maximum number of tokens (x 1000) for input context. For agent method `trivial_title_with_abstract` and `trivial_full_text_with_cutoff`. |
+| `--graphrag_root`     | data/graphrag/ | The root directory for Two-stage Graph-RAG and Iterative Graph-RAG. |
+| `--graphrag_method`   | local         | The method for Two-stage Graph-RAG and Iterative Graph-RAG. Choices: `['local', 'global']`. |
+
+
+### Prompt Arguments
+
+| Argument              | Default Value | Description |
+|:----------------------|:--------------|:------------|
+| `--action_format`     | markdown      | The format of the serialized action. Choices: `['json', 'markdown', 'xml', 'yaml']` |
+| `--output_format`     | json          | The format of the output observation. Choices: `['markdown', 'json', 'html', 'string']`. It will affect the [`RetrieveFromDatabase`](../agents/envs/actions/retrieve_from_database.py) and [`RetrieveFromVectorstore`](../agents/envs/actions/retrieve_from_vectorstore.py) actions. |
+| `--db_format`         | create_sql    | How to serialize the database schema. Choices: `['create_sql', 'detailed_json']`. |
+| `--vs_format`         | detailed_json | How to serialize the vectorstore schema. Currently, only `detailed_json` is supported. |
+| `--interact_protocol` | react         | How to extract the action text from raw LLM responses. Choices: `['react', 'code_block']`. Currently, this field is fixed. For Iterative Classic-RAG/Neu-RAG/Sym-RAG and NeuSym-RAG, it must be `react`, while `code_block` for the others. |
+| `--window_size`      | 5             | The history trajectory size of the sliding window for iterative agents. |
+| `--max_turn`         | 20            | The maximum number of turns in the interaction. |
+
+
+### LLM Arguments
+
+| Argument              | Default Value | Description |
+|:----------------------|:--------------|:------------|
+| `--llm`               | gpt-4o-mini   | The LLM model name to use.  |
+| `--temperature`       | 0.7           | The temperature of the LLM. |
+| `--top_p`             | 0.95          | The top-p of the LLM.       |
+| `--max_tokens`        | 1500          | The maximum number of tokens to generate each turn. |
+| `--image_limit`      | 10            | The maximum number of images which can be inserted into messages. For non-VLLMs, set it to $0$. |
+| `--length_limit`     | 32            | The maximum number of tokens (x 1000, prompt + completion).           |

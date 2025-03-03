@@ -153,7 +153,7 @@
     export OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxx"
     export OPENAI_BASE_URL="https://api.openai.com/v1"
     ```
-    - For more baseline methods and parameters (e.g., using open-source LLMs like Qwen2.5-VL-Instruct), refer to [Agent Doc](./documents/agent.md)
+    - For more baseline methods and parameters (e.g., using open-source LLMs like Qwen2.5-VL-Instruct), refer to [Agent Doc](./documents/agent.md#usage)
 
     ```sh
     # Classic RAG baseline
