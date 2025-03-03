@@ -1,0 +1,47 @@
+{
+    "uuid": "9373ac34-dd22-52b3-80da-16d94b2bcff7",
+    "question": "According to the paper \"Full-Atom Peptide Design with Geometric Latent Diffusion\", which model has the lowest success rate on PepBDB? In the paper that proposes the model, how is the overview of the proposed method given in form?",
+    "answer_format": "Your answer should be a Python list of 2 elements, the first is the name of the model, the second is a Python list of formula in LaTeX format. e.g. [\"method\", [\"formula_1\", ..., \"formula_n\"]]",
+    "tags": [
+        "multiple",
+        "formula",
+        "table",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "2ed12ce6-ae87-53be-b0fd-5abb6a163932"
+    ],
+    "reference_pdf": [
+        "5be68cd0-04a9-5464-906e-d6cc4a2f76fe"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_complex_math_formula_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "dyMEAN",
+                    "lowercase": true
+                },
+                {
+                    "formulas": [
+                        "\\mathcal{G}_A = \\text{SI}(\\{s_i\\}_{i \\in \\mathcal{V}_A, i \\notin \\mathcal{V}_P}), i \\in \\mathcal{V}_A",
+                        "\\mathcal{G}_S = \\text{SP}(\\mathcal{G}_E, \\mathcal{G}_P)",
+                        "h_i, X_i = \\text{AME}(\\mathcal{G}_E, \\mathcal{G}_S, \\mathcal{G}_A), i \\in \\mathcal{V}_E \\cup \\mathcal{V}_S \\cup \\mathcal{V}_A",
+                        "p_i = \\text{Predict}(h_i), i \\in \\mathcal{V}_P",
+                        "\\tilde{X}_i = \\text{Dock}(\\mathcal{G}_A, \\mathcal{G}_S), i \\in \\mathcal{V}_A"
+                    ]
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
