@@ -1,44 +1,97 @@
-## Agent Framework for PDF Understanding and QA
+# Agent Baselines
 
 
-### Framework
+## Folder Structure
 
-The entire agent framework can be splitted into 4 parts under folder `agents/`:
+<details><summary>👇🏻 Click to preview the <code>agents</code> module</summary>
 
 ```txt
-- agents/
-    - envs/ # responsible for gym-like environments and action specification/parse/serialization/execution
-        - actions/
-            - action.py # base Action class, which implements `get_action_space_prompt`, `parse_action` and `convert_to_message` functions
-            - actions.json # define each action type, description, parameters and use cases in JSON format
-            - observation.py # Observation class, which wraps the action execution result
-            - ... # one .py file for each distinct action sub-class, must define all parameter fields and implement the `execute` function
-        - env_base.py # wrapper for OpenAI gym, automatically parse input text based on allowable actions
-        - text2sql_env.py # maintain connection to database
-        - text2vec_env.py # maintain connection to vectorstore
-        - hybrid_env.py # maintain connections to both database and vectorstore
-    - models/ # responsible for calling LLMs
-        - llm_cache.py # record LLM cache to save budget and time
-        - llm_base.py # basic class for different llm clients, each sub-class must implement pre-defined interfaces
-        - llm_gpt.py # maintain OpenAI API calls
-    - prompts/ # different prompt templates
-        - agent_prompt.py # different agent/interaction method, e.g., ReAct
-        - system_prompt.py # for different interactive environments and task input
-        - hint_prompt.py # suggestions or hints for interactive agent framework
-        - schema_prompt.py # for database and vectorstore serialization
-        - task_prompt.py # for concrete datasets, specify the output formatting requirements
-    - frameworks/ # agent frameworks which combine all stuff above, e.g., environments, models, and prompts
-        - agent_base.py # base class
-        - hybrid_rag.py # final agentic framework: hybrid neural and symbolic retrieval
-        - text2sql_rag.py # agentic baseline: text-to-SQL symbolic retrieval
-        - text2vec_rag.py # agentic baseline: text-to-vector neural retrieval
-        - two_stage_text2sql_rag.py # baseline: first generate SQL, then generate answer
-        - two_stage_text2vec_rag.py # baseline: first generate RetrieveFromVectorstore action, then generate answer
-        - classic_rag.py # baseline: pre-fetch the relevant context, then generate the answer based on retrieved docs (calling LLM once)
+agents/
+├── envs/
+│   ├── __init__.py
+│   ├── actions/
+│   │   ├── __init__.py
+│   │   ├── action.py
+│   │   ├── actions.json
+│   │   ├── calculate_expr.py
+│   │   ├── classic_retrieve.py
+│   │   ├── error_action.py
+│   │   ├── generate_answer.py
+│   │   ├── observation.py
+│   │   ├── retrieve_from_database.py
+│   │   ├── retrieve_from_vectorstore.py
+│   │   └── view_image.py
+│   ├── classic_env.py
+│   ├── env_base.py
+│   ├── graph_env.py
+│   ├── hybrid_env.py
+│   ├── neural_env.py
+│   └── symbolic_env.py
+├── frameworks/
+│   ├── __init__.py
+│   ├── agent_base.py
+│   ├── classic_rag_agent.py
+│   ├── iterative_classic_rag_agent.py
+│   ├── iterative_neu_rag_agent.py
+│   ├── iterative_sym_rag_agent.py
+│   ├── neusym_rag_agent.py
+│   ├── trivial_baseline.py
+│   ├── two_stage_hybrid_rag_agent.py
+│   ├── two_stage_neu_rag_agent.py
+│   └── two_stage_sym_rag_agent.py
+├── models/
+│   ├── __init__.py
+│   ├── llm_base.py
+│   ├── llm_cache.py
+│   ├── llm_gpt.py
+│   └── llm_vllm.py
+└── prompts/
+    ├── __init__.py
+    ├── agent_prompt.py
+    ├── hint_prompt.py
+    ├── schema_prompt.py
+    ├── system_prompt.py
+    └── task_prompt.py
 ```
 
+</details>
 
-### Running scripts
+The entire `agents` package can be splitted into 4 sub-modules:
+- 🌏 `envs`: responsible for `gym`-like environments and action/observation space management (e.g., action specification, action parsing, serialization to messages, and execution upon the backend)
+- 📭 `models`: responsible for calling LLMs. We implement the unified interface for both closed-source ([`GPTClient`](../agents/models/llm_gpt.py)) and open-source LLMs ([`VLLMClient`](../agents/models/llm_vllm.py)), along with a SQLite cache ([`Sqlite3CacheProvider`](../agents/models/llm_cache.py)) to store historical responses
+- 📜 `prompts`: responsible for different prompt templates, e.g., system prompt, agent prompt, task prompt, schema prompt and hint prompt.
+- ⛩️ `frameworks`: responsible for different agentic frameworks. Each baseline method inherits from the base `AgentBase` class and implements the `interact` function.
+
+
+## Overview of Agent Baselines
+
+<p align="center">
+  <img src="../assets/agent_baselines.png" alt="Agent Baselines" width="95%">
+  <br>
+  <em>The Comparison of Different Agent Baselines</em>
+</p>
+
+Here are the checklist of all different agent baselines:
+
+| method                         | neural | symbolic | multi-view | multi-turn | scripts (`scripts`) | environments (`agents.envs`) | frameworks (`agents.frameworks`) |
+|:------------------------------ |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| Trivial: question only         | ❌ | ❌ | ❌ | ❌ | [`trivial_question_only_baseline`](../scripts/trivial_question_only_baseline.py) | [`AgentEnv`](../agents/envs/env_base.py) | [`TrivialBaselineAgent`](../agents/frameworks/trivial_baseline.py) |
+| Trivial: title + abstract      | ❌ | ❌ | ❌ | ❌ | [`trivial_title_with_abstract_baseline`](../scripts/trivial_title_with_abstract_baseline.py) | [`AgentEnv`](../agents/envs/env_base.py) | [`TrivialBaselineAgent`](../agents/frameworks/trivial_baseline.py) |
+| Trivial: full-text with cutoff | ❌ | ❌ | ❌ | ❌ | [`trivial_full_text_with_cutoff_baseline`](../scripts/trivial_full_text_with_cutoff_baseline.py) | [`AgentEnv`](../agents/envs/env_base.py) | [`TrivialBaselineAgent`](../agents/frameworks/trivial_baseline.py) |
+| Classic-RAG                    | ✅ | ❌ | ❌ | ❌ | [`classic_rag_baseline`](../scripts/classic_rag_baseline.py) | [`ClassicRAGEnv`](../agents/envs/classic_env.py) | [`ClassicRAGAgent`](../agents/frameworks/classic_rag_agent.py) |
+
+| Iterative Classic-RAG          | ✅ | ❌ | ❌ | ✅ |
+| Two-stage Neu-RAG              | ✅ | ❌ | ✅ | ❌ |
+| Iterative Neu-RAG              | ✅ | ❌ | ✅ | ✅ |
+| Two-stage Sym-RAG              | ❌ | ✅ | ✅ | ❌ |
+| Iterative Sym-RAG              | ❌ | ✅ | ✅ | ✅ |
+| Two-stage Graph-RAG            | ✅ | ❌ | ✅ | ❌ |
+| Iterative Graph-RAG            | ✅ | ❌ | ✅ | ✅ |
+| Two-stage Hybrid-RAG           | ✅ | ✅ | ✅ | ❌ |
+| **NeuSym-RAG**                 | ✅ | ✅ | ✅ | ✅ |
+
+> **❗️ Note:** Code for Two-stage Graph-RAG and Iterative Graph-RAG are preparing.
+
 
 Here are some common arguments:
 - dataset and database:

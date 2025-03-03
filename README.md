@@ -9,8 +9,8 @@
 
 - [💡 Main contributions](#-main-contributions)
 - [🔍 Quick Start](#-quick-start)
-- [📊 Experiment Results](#-experiment-results)
 - [📖 PDF Parsing and Encoding](#-pdf-parsing-and-encoding)
+- [📊 Experiment Results](#-experiment-results)
 - [📚 Detailed Documents and Tutorials](#-detailed-documents-and-tutorials)
 - [✍🏻 Citation](#-citation)
 
@@ -19,7 +19,7 @@
 ## 💡 Main contributions
 - We are the first to integrate both **vector-based neural retrieval** and **SQL-based symbolic retrieval** into a unified and interactive **NeuSym-RAG** framework through executable [actions](./agents/envs/actions/actions.json).
 - We incorporate **multiple views** for parsing and vectorizing PDF documents, and adopt a [**structured database schema**](./data/database/ai_research/ai_research.sql) to systematically organize both text tokens and encoded vectors.
-- Experiments on three realistic full PDF-based QA datasets w.r.t. academic research (AirQA-Real, [M3SciQA](https://github.com/yale-nlp/M3SciQA) and [SciDQA](https://github.com/yale-nlp/SciDQA)) validate the superiority over various neural and symbolic baselines.
+- Experiments on three realistic full PDF-based QA datasets w.r.t. academic research (AirQA-Real, [M3SciQA](https://aclanthology.org/2024.findings-emnlp.904.pdf) and [SciDQA](https://aclanthology.org/2024.emnlp-main.1163v2.pdf)) validate the superiority over various neural and symbolic baselines.
 
 ## 🔍 Quick Start
 
@@ -48,10 +48,10 @@
     git clone https://huggingface.co/openai/clip-vit-base-patch32
     ... # download other vector encoding models if needed
     ```
-3. Download the dataset-related files into the folder `data/dataset` 👉🏻 [HuggingFace](todo)
-    - `AirQA-Real`: including the `metadata/`, `papers/`, and `processed_data/`
-    - `M3SciQA`: including the `metadata/`, `papers/`, `images/`, and `processed_data/`
-    - `SciDQA`: including the `metadata/`, `papers/`, and `processed_data/`
+3. Download the dataset-related files into the folder `data/dataset` 👉🏻 [HuggingFace](todo) (to be released after anonymous review)
+    - `AirQA-Real`: this work, including the `metadata/`, `papers/`, and `processed_data/`
+    - [`M3SciQA`](https://github.com/yale-nlp/M3SciQA): including the `metadata/`, `papers/`, `images/`, and `processed_data/`
+    - [`SciDQA`](https://github.com/yale-nlp/SciDQA): including the `metadata/`, `papers/`, and `processed_data/`
   
     <details>
     <summary>Organize them into the following folder structure 👇🏻</summary>
@@ -104,9 +104,12 @@
 
 4. Download our constructed databases (`.duckdb`) and vectorstores (`.db` and `bm25.json`) into the folders `data/database/` and `data/vectorstore/`, respectively (👉🏻 [HuggingFace 🔗](TODO)). Otherwise, you can construct them by yourself (see [PDF Parsing and Encoding](#pdf-parsing-and-encoding)).
     - The 3 dataset name to database / vectorstore name mappings are:
-      - `airqa -> ai_research`
-      - `m3sciqa -> emnlp_papers`
-      - `scidqa -> openreview_papers`
+
+      | Dataset    | Dataset Name  | Database Name       | Vectorstore Name    |
+      |:----------:|:-------------:|:-------------------:|:-------------------:|
+      | AirQA-Real | `airqa`       | `ai_research`       | `ai_research`       |
+      | M3SciQA    | `m3sciqa`     | `emnlp_papers`      | `emnlp_papers`      |
+      | SciDQA     | `scidqa`      | `openreview_papers` | `openreview_papers` |
 
     <details><summary>Folder structures for databases and vectorstores 👇🏻</summary>
 
@@ -150,19 +153,89 @@
     export OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxx"
     export OPENAI_BASE_URL="https://api.openai.com/v1"
     ```
-    - For more baseline methods, refer to [agents doc](./documents/agent.md)
+    - For more baseline methods and parameters (e.g., using open-source LLMs like Qwen2.5-VL-Instruct), refer to [Agent Doc](./documents/agent.md)
 
     ```sh
     # Classic RAG baseline
-    $ python scripts/classic_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl --vectorstore ai_research --agent_method classic_rag
-    $ python scripts/classic_rag_baseline.py --dataset m3sciqa --test_data test_data.jsonl --vectorstore emnlp_papers --agent_method classic_rag
-    $ python scripts/classic_rag_baseline.py --dataset scidqa --test_data test_data_775.jsonl --vectorstore openreview_papers --agent_method classic_rag
+    $ python scripts/classic_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl --vectorstore ai_research --agent_method classic_rag --llm gpt-4o-mini
+    $ python scripts/classic_rag_baseline.py --dataset m3sciqa --test_data test_data.jsonl --vectorstore emnlp_papers --agent_method classic_rag --llm gpt-4o-mini
+    $ python scripts/classic_rag_baseline.py --dataset scidqa --test_data test_data_775.jsonl --vectorstore openreview_papers --agent_method classic_rag --llm gpt-4o-mini
 
     # NeuSym-RAG framework
-    $ python scripts/hybrid_neural_symbolic_rag.py --dataset airqa --test_data test_data_553.jsonl --database ai_research --agent_method neusym_rag
-    $ python scripts/hybrid_neural_symbolic_rag.py --dataset m3sciqa --test_data test_data.jsonl --database emnlp_papers --agent_method neusym_rag
-    $ python scripts/hybrid_neural_symbolic_rag.py --dataset scidqa --test_data test_data_775.jsonl --database openreview_papers --agent_method neusym_rag
+    $ python scripts/hybrid_neural_symbolic_rag.py --dataset airqa --test_data test_data_553.jsonl --database ai_research --agent_method neusym_rag --llm gpt-4o-mini
+    $ python scripts/hybrid_neural_symbolic_rag.py --dataset m3sciqa --test_data test_data.jsonl --database emnlp_papers --agent_method neusym_rag --llm gpt-4o-mini
+    $ python scripts/hybrid_neural_symbolic_rag.py --dataset scidqa --test_data test_data_775.jsonl --database openreview_papers --agent_method neusym_rag --llm gpt-4o-mini
     ```
+
+
+## 📖 PDF Parsing and Encoding
+
+Here are some useful scripts that can help you quickly parse and encode new paper PDFs into existing DB and VS. We take the dataset `airqa` (and DB / VS `ai_research`) as an example.
+> **📌 NOTE:**
+> - If DB and VS do not exist, they will be created automatically
+> - Add the argument `--from_scratch` for any script below will delete existing ones firstly
+
+1. **Multiview Document Parsing:** This step accepts various input types and store the parsed PDF content into the DuckDB database.
+    - The default DB is `data/database/${database}/${database}.duckdb` unless you specify args `--database_path /path/to/db.duckdb`
+    - The config file `ai_research_config.json` defines the pipeline functions of parsing PDFs, which can be customized according to our pre-defined [rules](./documents/database.md#database-content-population)
+    ```sh
+    $ python utils/database_utils.py --database ai_research --config_path configs/ai_research_config.json --pdf_path ${pdf_to_parse}
+    ```
+
+    Valid input types of args `--pdf_path ${pdf_to_parse}` include:
+    1. PDF UUID: For example, `16142be2-ac28-58e5-9271-8af299b18d91`. In this case, the metadata of the PDF is pre-processed (that is `metadata/${uuid}.json` already exists, see [Metadata Format](./documents/airqa_format.md#paper-metadata-format)), and the raw PDF file has been downloaded into the `papers/subfolder/${uuid}.pdf` folder following the `pdf_path` field in the metadata.
+    2. Local PDF path to the file (if the PDF file basename is a valid UUID, it reduces to the former case), e.g., `~/Downloads/2005.14165.pdf` or `data/dataset/airqa/papers/iclr2024/aa071344-e514-52f9-b9cf-9bea681a68c2.pdf`
+    3. Web URL of the PDF file which is downloadable, e.g., `https://arxiv.org/abs/2005.14165`
+    4. Title or arxiv id of the paper, e.g., `Language Models are Few-Shot Learners` or `2005.14165`
+    5. A filepath (`.json` list or `.txt` per line) containing the list of any 4 types above, e.g., `pdfs_to_parse.json` or `pdfs_to_parse.txt`.
+
+        ```sh
+          $ cat pdfs_to_parse.json
+          [
+            "16142be2-ac28-58e5-9271-8af299b18d91",
+            "9c5c3a63-3042-582a-9358-d0c61de3330d"
+            ...
+          ]
+          $ cat pdfs_to_parse.txt
+          16142be2-ac28-58e5-9271-8af299b18d91
+          9c5c3a63-3042-582a-9358-d0c61de3330d
+          ...
+        ```
+
+    > **📌 NOTE:** Sometimes, the function to obtain paper metadata via scholar APIs may fail (see [Scholar APIs](./documents/third_party_tools.md#scholar-apis)). For papers published in a conference or venue, we recommend centrally processing the metadata in advance and downloading the PDF files beforehand.
+
+2. **Multimodal Vector Encoding:** Before vector encoding, please ensure that the PDF content has already been parsed into the corresponding DB, and the metadata `${uuid}.json` and raw file `${uuid}.pdf` already exist under the `metadata/` and `papers/` folders. Attention that:
+    - **We only accept PDF UUIDs as the input PDF(s)**
+    - Please ensure the embedding models exist under `.cache/` and the corresponding collection name exactly follows our [VS naming convention](./documents/vectorstore.md) defined in the [vectorstore schema](./data/vectorstore/vectorstore_schema.json)
+    - Please ensure that the `bm25.json` file exists under the path `data/vectorstore/${vectorstore}/bm25.json` if you want to use BM25 collection. Otherwise, create the [BM25 vocabulary](./documents/vectorstore.md#build-bm25-vocabulary) firstly
+    - The default VS is launched from `data/vectorstore/${vectorstore}/${vectorstore}.db` (standalone mode). This file path can be specified via args `--vectorstore_path /path/to/vs.db`
+    - The default launch method for VS is `standalone` unless you specify args like `--launch_method docker` and `--docker_uri http://127.0.0.1:19530`
+    - If your OS is Windows, please follow the guide on [Run Milvus in Docker (Windows)](https://milvus.io/docs/v2.4.x/install_standalone-windows.md)
+
+    ```sh
+    # By default, using standalone mode (*.db)
+    $ python utils/vectorstore_utils.py --vectorstore ai_research --pdf_path pdf_uuids_to_encode.json # --launch_method=standalone
+
+    # Or, using Docker containers
+    $ cd data/dataset/vectorstore/milvus && bash standalone_embed.sh start # start Milvus containers
+    $ cd - # return to the project root
+    $ python utils/vectorstore_utils.py --vectorstore ai_research --pdf_path pdf_uuids_to_encode.txt --launch_method docker --docker_uri http://127.0.0.1:19530
+    $ cd data/dataset/vectorstore/milvus && bash standalone_embed.sh stop # stop Milvus containers
+    ```
+
+3. **The Complete Parsing and Encoding Pipeline:** If you want to parse and encode new PDFs in one step, use the following command:
+    - Please ensure that `database` and `vectorstore` names are the same
+    - `pdf_path` and `config_path`: these arguments are the same with those in **Multiview Document Parsing**
+    - If you want to launch the vectorstore via Docker containers, see **Multimodal Vector Encoding**
+
+    ```sh
+    python utils/data_population.py --database ai_researh --vectorstore ai_research --pdf_path pdfs.json --config_path configs/ai_research_config.json
+    ```
+
+> **💡 TIP:**
+> - If you want to accelerate or parallelize the parsing and encoding process, please refer to ....
+> - If you want to customize your own papers collection, database, and vectorstore, please refer to [customization doc](./documents/customization.md).
+
 
 ## 📊 Experiment Results
 
@@ -250,79 +323,10 @@ The instance-specific evaluation metric is defined in the field `evaluator` for 
 ...
 ```
 
-Then, you can run the following command to evaluate the performance:
+Then, you can run the following command to evaluate the performance: (Take dataset `airqa` as an example)
 ```sh
 python utils/eval_utils.py --gold data/dataset/airqa/test_data_553.jsonl --pred test_data_553_pred.jsonl --dataset airqa --output evaluation.log
 ```
-
-
-## 📖 PDF Parsing and Encoding
-
-Here are some useful scripts that can help you quickly parse and encode new paper PDFs into existing DB and VS. We take the dataset `airqa` (and DB / VS `ai_research`) as an example.
-> **📌 NOTE:**
-> - If DB and VS do not exist, they will be created automatically
-> - Add the argument `--from_scratch` for any script below will delete existing ones firstly
-
-1. **Multiview Document Parsing:** This step accepts various input types and store the parsed PDF content into the DuckDB database.
-    - The default DB is `data/database/${database}/${database}.duckdb` unless you specify args `--database_path /path/to/db.duckdb`
-    - The config file `ai_research_config.json` defines the pipeline functions of parsing PDFs, which can be customized according to our pre-defined [rules](./documents/database.md#database-content-population)
-    ```sh
-    $ python utils/database_utils.py --database ai_research --config_path configs/ai_research_config.json --pdf_path ${pdf_to_parse}
-    ```
-
-    Valid input types of args `--pdf_path ${pdf_to_parse}` include:
-    1. PDF UUID: For example, `16142be2-ac28-58e5-9271-8af299b18d91`. In this case, the metadata of the PDF is pre-processed (that is `metadata/${uuid}.json` already exists, see [Metadata Format](./documents/airqa_format.md#paper-metadata-format)), and the raw PDF file has been downloaded into the `papers/subfolder/${uuid}.pdf` folder following the `pdf_path` field in the metadata.
-    2. Local PDF path to the file (if the PDF file basename is a valid UUID, it reduces to the former case), e.g., `~/Downloads/2005.14165.pdf` or `data/dataset/airqa/papers/iclr2024/aa071344-e514-52f9-b9cf-9bea681a68c2.pdf`
-    3. Web URL of the PDF file which is downloadable, e.g., `https://arxiv.org/abs/2005.14165`
-    4. Title or arxiv id of the paper, e.g., `Language Models are Few-Shot Learners` or `2005.14165`
-    5. A filepath (`.json` list or `.txt` per line) containing the list of any 4 types above, e.g., `pdfs_to_parse.json` or `pdfs_to_parse.txt`.
-
-        ```sh
-          $ cat pdfs_to_parse.json
-          [
-            "16142be2-ac28-58e5-9271-8af299b18d91",
-            "9c5c3a63-3042-582a-9358-d0c61de3330d"
-            ...
-          ]
-          $ cat pdfs_to_parse.txt
-          16142be2-ac28-58e5-9271-8af299b18d91
-          9c5c3a63-3042-582a-9358-d0c61de3330d
-          ...
-        ```
-
-    > **📌 NOTE:** Sometimes, the function to obtain paper metadata via scholar APIs may fail (see [Scholar APIs](./documents/third_party_tools.md#scholar-apis)). For papers published in a conference or venue, we recommend centrally processing the metadata in advance and downloading the PDF files beforehand.
-
-2. **Multimodal Vector Encoding:** Before vector encoding, please ensure that the PDF content has already been parsed into the corresponding DB, and the metadata `${uuid}.json` and raw file `${uuid}.pdf` already exist under the `metadata/` and `papers/` folders. Attention that:
-    - **We only accept PDF UUIDs as the input PDF(s)**
-    - Please ensure the embedding models exist under `.cache/` and the corresponding collection name exactly follows our [VS naming convention](./documents/vectorstore.md) defined in the [vectorstore schema](./data/vectorstore/vectorstore_schema.json)
-    - Please ensure that the `bm25.json` file exists under the path `data/vectorstore/${vectorstore}/bm25.json` if you want to use BM25 collection. Otherwise, create the [BM25 vocabulary](./documents/vectorstore.md#build-bm25-vocabulary) firstly
-    - The default VS is launched from `data/vectorstore/${vectorstore}/${vectorstore}.db` (standalone mode). This file path can be specified via args `--vectorstore_path /path/to/vs.db`
-    - The default launch method for VS is `standalone` unless you specify args like `--launch_method docker` and `--docker_uri http://127.0.0.1:19530`
-    - If your OS is Windows, please follow the guide on [Run Milvus in Docker (Windows)](https://milvus.io/docs/v2.4.x/install_standalone-windows.md)
-
-    ```sh
-    # By default, using standalone mode (*.db)
-    $ python utils/vectorstore_utils.py --vectorstore ai_research --pdf_path pdf_uuids_to_encode.json # --launch_method=standalone
-
-    # Or, using Docker containers
-    $ cd data/dataset/vectorstore/milvus && bash standalone_embed.sh start # start Milvus containers
-    $ cd - # return to the project root
-    $ python utils/vectorstore_utils.py --vectorstore ai_research --pdf_path pdf_uuids_to_encode.txt --launch_method docker --docker_uri http://127.0.0.1:19530
-    $ cd data/dataset/vectorstore/milvus && bash standalone_embed.sh stop # stop Milvus containers
-    ```
-
-3. **The Complete Parsing and Encoding Pipeline:** If you want to parse and encode new PDFs in one step, use the following command:
-    - Please ensure that `database` and `vectorstore` names are the same
-    - `pdf_path` and `config_path`: these arguments are the same with those in **Multiview Document Parsing**
-    - If you want to launch the vectorstore via Docker containers, see **Multimodal Vector Encoding**
-
-    ```sh
-    python utils/data_population.py --database ai_researh --vectorstore ai_research --pdf_path pdfs.json --config_path configs/ai_research_config.json
-    ```
-
-> **💡 TIP:**
-> - If you want to accelerate or parallelize the parsing and encoding process, please refer to ....
-> - If you want to customize your own papers collection, database, and vectorstore, please refer to [customization doc](./documents/customization.md).
 
 
 ## 📚 Detailed Documents and Tutorials
