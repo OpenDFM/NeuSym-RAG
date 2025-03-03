@@ -21,3 +21,5 @@ DATASET2DATABASE = {
     "m3sciqa": "emnlp_papers",
     "scidqa": "openreview_papers"
 }
+
+DATABASE2DATASET = {v: k for k, v in DATASET2DATABASE.items()}

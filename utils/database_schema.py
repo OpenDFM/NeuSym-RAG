@@ -116,7 +116,7 @@ class DatabaseSchema():
         """
         columns = self.table2column(table_name)
         pdf_id_field, page_id_field = None, None
-        candidate_pdf_names = ['paper_id', 'pdf_id', 'report_id', 'ref_paper_id', 'ref_pdf_id', 'ref_report_id']
+        candidate_pdf_names = ['paper_id', 'pdf_id', 'report_id', 'ref_paper_id', 'ref_pdf_id', 'ref_report_id', 'paperid', 'pdfid', 'reportid', 'ref_paperid', 'ref_pdfid', 'ref_reportid']
         candidate_page_names = ['page_id', 'ref_page_id', 'pageid', 'ref_pageid']
         for column in columns:
             if column in candidate_pdf_names:
@@ -128,8 +128,11 @@ class DatabaseSchema():
 
     def get_metadata_table_name(self) -> str:
         """ Get the metadata table name.
+        If table called 'metadata' exists, return it, otherwise return the first table in the database.
         """
-        return 'metadata'
+        if 'metadata' in self.tables:
+            return 'metadata'
+        return self.tables[0]
 
 
     def get_primary_keys(self, table_name: Union[int, str]) -> List[str]:

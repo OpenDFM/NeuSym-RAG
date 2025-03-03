@@ -4,13 +4,18 @@ import sqlite3
 import json, os
 from typing import TypedDict, Optional, List, Union
 
+try:
+    from utils.config import CACHE_DIR
+except ImportError:
+    CACHE_DIR = os.getenv('CACHE_DIR', os.path.join(os.getcwd(), '.cache'))
+
 
 class CacheSettings(TypedDict):
     db_loc: str
 
 
 DEFAULT_CACHE_SETTINGS: CacheSettings = {
-    "db_loc": os.path.join(".cache", "llm_cache.sqlite"),
+    "db_loc": os.path.join(CACHE_DIR, "llm_cache.sqlite"),
 }
 
 

@@ -7,7 +7,7 @@ from pymilvus import MilvusClient, FieldSchema, CollectionSchema, DataType
 from milvus_model.base import BaseEmbeddingFunction
 from typing import List, Tuple, Dict, Any, Union, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.config import DATASET_DIR, VECTORSTORE_DIR, CACHE_DIR
+from utils.config import DATASET_DIR, DATABASE2DATASET, VECTORSTORE_DIR, CACHE_DIR
 from utils.database_utils import get_database_connection
 from utils.database_schema import DatabaseSchema
 from utils.vectorstore_schema import VectorstoreSchema, VectorstoreCollection
@@ -297,22 +297,6 @@ def get_page_number_from_id(database_name: str, db_conn: duckdb.DuckDBPyConnecti
         return -1
 
 
-def get_database_to_dataset_mapping(database_or_vectorstore: str) -> str:
-    """ Get the mapping dataset name for the database / vectorstore.
-    @args:
-        database_or_vectorstore: str, the database name or vectorstore name
-    @return:
-        str, the dataset name
-    """
-    mappings = {
-        "ai_research": "airqa",
-        "emnlp_papers": "m3sciqa",
-        "arxiv_papers": "spiqa",
-        "openreview_papers": "scidqa"
-    }
-    return mappings[database_or_vectorstore]
-
-
 def get_image_or_pdf_path(database: str, pdf_id: str) -> str:
     """ Get the image or PDF path for the database.
     @args:
@@ -322,7 +306,7 @@ def get_image_or_pdf_path(database: str, pdf_id: str) -> str:
         str: The file path for the PDF or image.
     """
     # Load the mapping file
-    dataset = get_database_to_dataset_mapping(database)
+    dataset = DATABASE2DATASET[database]
     dataset_dir = os.path.join(DATASET_DIR, dataset)
     uuid2papers = get_airqa_paper_metadata(dataset_dir=dataset_dir)
 
