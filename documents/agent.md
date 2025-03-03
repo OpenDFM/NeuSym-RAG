@@ -128,7 +128,7 @@ python scripts/${agent_method}_baseline.py --dataset airqa --test_data test_data
 
 ## Optional Arguments
 
-For all arguments, they applies to all agent baselines (see [`utils/hyperparam_utils.py`](../utils/hyperparam_utils.py)).
+For all arguments below, they apply to all agent baselines (see [`utils/hyperparam_utils.py`](../utils/hyperparam_utils.py)).
 
 ### Input / Output Arguments
 
