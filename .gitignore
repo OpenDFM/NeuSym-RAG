@@ -41,6 +41,9 @@ embedEtcd.yaml
 user.yaml
 volumes
 
+# ignore all graph files
+data/graph
+
 # raw dataset
 data/dataset/*/raw_data/*
 data/dataset/*/*.zip

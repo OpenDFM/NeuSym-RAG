@@ -5,7 +5,7 @@ from typing import List, Dict, Union, Any
 from towhee import ops, pipe
 from towhee.runtime.runtime_pipeline import RuntimePipeline
 from milvus_model.base import BaseEmbeddingFunction
-from utils.config import CACHE_DIR, TMP_DIR
+from utils.config import TMP_DIR
 from utils.vectorstore_utils import detect_embedding_model_path
 from PIL import Image
 from PyPDF2 import PdfReader
@@ -13,8 +13,8 @@ from pdf2image import convert_from_path
 from collections import defaultdict
 
 
-PDF_TO_IMAGE_CACHE_DIR = os.path.join(CACHE_DIR, 'pdf_to_images')
-os.makedirs(PDF_TO_IMAGE_CACHE_DIR, exist_ok=True)
+PDF_TO_IMAGE_TMP_DIR = os.path.join(TMP_DIR, 'pdf_to_images')
+os.makedirs(PDF_TO_IMAGE_TMP_DIR, exist_ok=True)
 
 
 def get_clip_image_embedding_pipeline(embed_model: str = 'clip-vit-base-patch32', device = 'cpu') -> RuntimePipeline:
@@ -81,7 +81,7 @@ class ClipEmbeddingFunction(BaseEmbeddingFunction):
                         image = image.convert('RGB')
                         width_ratio, height_ratio = image.width / width_height[i][0], image.height / width_height[i][1]
                         self.pdf_to_images[pdf_path].append((image, width_ratio, height_ratio))
-                        # image_path = os.path.join(PDF_TO_IMAGE_CACHE_DIR, f"{pdf_id}_page_{i}.png")
+                        # image_path = os.path.join(PDF_TO_IMAGE_TMP_DIR, f"{pdf_id}_page_{i}.png")
                         # image.save(image_path, 'PNG')
                         # self.pdf_to_images[pdf_path].append((image_path, width_ratio, height_ratio))
         # print(f'Caching {len(pdf_ids)} PDF images costs {time.time() - start_time}s')

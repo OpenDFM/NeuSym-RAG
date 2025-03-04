@@ -1,5 +1,5 @@
 #coding=utf8
-import logging, sys, os, re
+import logging, json, sys, os, re
 from typing import List, Dict, Any, Union, Tuple, Optional
 from agents.envs import AgentEnv
 from agents.envs.actions import RetrieveFromDatabase, RetrieveFromVectorstore, Action, Observation
@@ -34,10 +34,12 @@ class TwoStageHybridRAGAgent(AgentBase):
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
                  output_kwargs: Dict[str, Any] = {},
+                 output_path: Optional[str] = None,
                  **kwargs
     ) -> str:
         self.env.reset()
         prev_cost = self.model.get_cost()
+        messages = []
 
         # [Stage 1]: Generate RetriveFromVectorstore / RetrieveFromDatabase action
         logger.info('[Stage 1]: Generate RetriveFromVectorstore / RetrieveFromDatabase action ...')
@@ -60,8 +62,9 @@ class TwoStageHybridRAGAgent(AgentBase):
         )
         if image_messages:
             task_prompt = [{'type': 'text', 'text': task_prompt}] + image_messages
-        messages = [{'role': 'user', 'content': task_prompt}]
-        response = self.model.get_response(messages, model, temperature, top_p, max_tokens)
+        current_messages = [{'role': 'user', 'content': task_prompt}]
+        messages.extend(current_messages)
+        response = self.model.get_response(current_messages, model, temperature, top_p, max_tokens)
         logger.info(f'[Response]: {response}')
         _, action = Action.parse_action(
             response,
@@ -70,6 +73,7 @@ class TwoStageHybridRAGAgent(AgentBase):
             interact_protocol=self.env.interact_protocol
         )
         logger.info(f'[Action]: {repr(action)}')
+        messages.append(action.convert_to_message(self.env.action_format, self.env.interact_protocol))
 
         # [Stage 2]: Answer question
         logger.info(f'[Stage 2]: Generate Answer ...')
@@ -81,11 +85,18 @@ class TwoStageHybridRAGAgent(AgentBase):
             context=f"[Context]: {observation.obs_content}"
         )
         logger.info(f"[Task Input]: stage 2 -> {task_prompt}")
-        messages = [{'role': 'user', 'content': task_prompt}]
-        response = self.model.get_response(messages, model, temperature, top_p, max_tokens)
+        current_messages = [{'role': 'user', 'content': task_prompt}]
+        messages.extend(current_messages)
+        response = self.model.get_response(current_messages, model, temperature, top_p, max_tokens)
         logger.info(f'[Response]: {response}')
         _, answer = Action.extract_thought_and_action_text(response, self.env.interact_protocol)
         logger.info(f'[Answer]: {answer}')
+        messages.append({'role': 'assistant', 'content': answer})
+
+        if output_path is not None:
+            with open(output_path, 'w', encoding='utf-8') as of:
+                for msg in messages:
+                    of.write(json.dumps(msg, ensure_ascii=False) + '\n')
 
         cost = self.model.get_cost() - prev_cost
         logger.info(f'[Cost]: LLM API call costs ${cost:.6f}.')

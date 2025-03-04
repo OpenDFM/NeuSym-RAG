@@ -5,7 +5,6 @@ from agents.envs.symbolic_env import SymbolicRAGEnv
 from agents.envs.neural_env import NeuralRAGEnv
 from agents.envs.hybrid_env import HybridRAGEnv
 from agents.envs.classic_env import ClassicRAGEnv
-from agents.envs.graph_env import GraphRAGEnv
 
 
 ENVIRONMENTS = {
@@ -18,8 +17,8 @@ ENVIRONMENTS = {
     'iterative_neu_rag': NeuralRAGEnv,
     'two_stage_sym_rag': SymbolicRAGEnv,
     'iterative_sym_rag': SymbolicRAGEnv,
-    'two_stage_graph_rag': GraphRAGEnv,
-    'iterative_graph_rag': GraphRAGEnv,
+    'two_stage_graph_rag': AgentEnv,
+    'iterative_graph_rag': AgentEnv,
     'two_stage_hybrid_rag': HybridRAGEnv,
     'neusym_rag': HybridRAGEnv
 }

@@ -35,7 +35,8 @@ class IterativeSymRAGAgent(AgentBase):
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
                  output_path: Optional[str] = None,
-                 output_kwargs: Dict[str, Any] = {}
+                 output_kwargs: Dict[str, Any] = {},
+                 **kwargs
     ) -> str:
         # construct the initial prompt messages
         task_prompt, image_messages = formulate_input(dataset, example, use_pdf_id=True)

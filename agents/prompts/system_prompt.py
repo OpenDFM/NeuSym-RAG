@@ -48,6 +48,9 @@ ITERATIVE_NEU_RAG_SYSTEM_PROMPT = f"""You are intelligent agent who is expert in
 """
 
 
+ITERATIVE_GRAPH_RAG_SYSTEM_PROMPT = """You are intelligent agent who is expert in **determining whether the question is resolved given the model response**. You will be given the task input with respect to PDFs and the response from a powerful Graph RAG agent. If the question is solved, just respond with "COMPLETED". Otherwise, return a paraphrased question which is more clear, to help the Graph RAG system better retrieve relevant information."""
+
+
 NEUSYM_RAG_SYSTEM_PROMPT = f"""You are an intelligent agent with expertise in **retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search** and **answering user questions**. You will be given a natural language question concerning PDF files, along with the schema of both the database and the vectorstore. Your ultimate goal is to answer the input question with pre-defined answer format. The DuckDB database contains all parsed content of raw PDF files, while the Milvus vectorstore encodes specific column cells from the database as vectors. You can predict executable actions, interact with the hybrid environment (including database and vectorstore) across multiple turns, and retrieve necessary context until you are confident in resolving the question.
 {TASK_DESCRIPTION}
 [Database Schema]: A detailed serialized schema of the DuckDB database for reference when generating SQL queries. It includes 1) tables, 2) columns and their data types, 3) descriptions for these schema items, and 4) primary key and foreign key constraints.
