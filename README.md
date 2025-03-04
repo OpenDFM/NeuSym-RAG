@@ -335,13 +335,26 @@ python utils/eval_utils.py --gold data/dataset/airqa/test_data_553.jsonl --pred 
 ```
 
 
+
 ## 📚 Detailed Documents and Tutorials
 
-Fine-grained documents in this project are detailed in `documents/`. Here is the checklist:
+Fine-grained documents in this project are detailed in folder `documents/`. Here is the checklist:
+
+| Documents | Description |
+| :--- | :--- |
+| [📓 `documents/dataset.md`](documents/dataset.md)         |  |
+| [📔 `documents/airqa_format.md`](documents/airqa_format.md)   |  |
+| [📕 `documents/database.md`](documents/database.md)       |  |
+| [📗 `documents/vectorstore.md`](documents/vectorstore.md) |  |
+| [📘 `documents/agent.md`](documents/agent.md)             |  |
+| [📙 `documents/customization.md`](documents/customization.md) |  |
+| [📒 `documents/third_party_tools.md`](documents/third_party_tools.md) |  |
+
 
 - [`documents/dataset.md`](documents/dataset.md):
-  - The source of the datasets we use and convert in this project;
-  - Where to download the datasets and resources.
+  - The source of the datasets we use in this project;
+  - Where to download the datasets and resources;
+  - How to prepare the data by yourself;
 - [`documents/database.md`](documents/database.md):
   - Folder structure of `data/database/`;
   - How to define database schema and its format;
@@ -356,6 +369,8 @@ Fine-grained documents in this project are detailed in `documents/`. Here is the
   - Folder structure and different sub-modules of `agents`;
   - Different agent baselines and running scripts;
   - The checklist of optional arguments.
+- [`documents/customization.md`](documents/customization.md):
+  - How to 
 - [`documents/third_party.md`](documents/third_party_tools.md)
   - How to install and use some third-party tools
 

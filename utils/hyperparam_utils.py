@@ -3,6 +3,7 @@ from typing import List, Dict, Any, Optional
 import os, json, sys
 from datetime import datetime
 import argparse, logging
+from config import DATASET_DIR, DATABASE_DIR, VECTORSTORE_DIR
 
 
 def parse_args():
@@ -10,13 +11,13 @@ def parse_args():
     # dataset, database, vectorstore utils
     parser.add_argument('--dataset', type=str, required=True, help='Which dataset to use.')
     parser.add_argument('--database', type=str, help='Which database to use, i.e., the name of the DB.')
-    parser.add_argument('--database_path', type=str, help='Database path.')
+    parser.add_argument('--database_path', type=str, help=f'Database path. The default path is `${DATABASE_DIR}/${{dataset}}/${{database}}.db`.')
     parser.add_argument('--database_type', type=str, default='duckdb', help='Which database type to use. We only support DuckDB currently.')
     parser.add_argument('--vectorstore', type=str, help='Which vectorstore to use, usually the same name with the database.')
     parser.add_argument('--launch_method', type=str, default='standalone', choices=['standalone', 'docker'], help='Launch method for vectorstore, chosen from ["docker", "standalone"]. `standalone` -> from `.db` file; `docker` -> from docker containers.')
     parser.add_argument('--docker_uri', type=str, default='http://127.0.0.1:19530', help='The host:port for vectorstore started from docker.')
-    parser.add_argument('--vectorstore_path', type=str, help='Path to the vectorstore if launched from method `standalone`.')
-    parser.add_argument('--test_data', type=str, default='test_data.jsonl', help='Test data file or path. If file name, search the default filepath `data/dataset/${dataset}/${test_data}`.')
+    parser.add_argument('--vectorstore_path', type=str, help=f'Path to the vectorstore if launched from method `standalone`. The default path is `${VECTORSTORE_DIR}/${{dataset}}/${{vectorstore}}.db`.')
+    parser.add_argument('--test_data', type=str, default='test_data.jsonl', help=f'Test data file or path. If file name, search the default filepath `${DATASET_DIR}/${{dataset}}/${{test_data}}`.')
 
     # agent, llm, env utils
     parser.add_argument('--db_format', type=str, choices=['create_sql', 'detailed_json'], default='create_sql', help='Database schema serialization format. See agents/prompts/schema_prompt.py for details.')
@@ -42,8 +43,8 @@ def parse_args():
     parser.add_argument('--column_name', type=str, default='text_content', help='For Classic-RAG and Iterative Classic-RAG methods, the column name to retrieve context.')
     parser.add_argument('--limit', type=int, default=4, help='For Classic-RAG, the limit or top K of the retrieved chunks.')
     parser.add_argument('--cutoff', type=int, default=5, help='For title with abstract and full-text with cutoff baseline, restrict the length of tokens (multiply 1000) for the full-text.')
-    parser.add_argument('--graphrag_root', type=str, default='', help='For Graph-RAG and Iterative Graph-RAG, the root folder, which should contains settings.yaml.')
     parser.add_argument('--graphrag_method', type=str, default='local', choices=['local', 'global'], help='For Graph-RAG and Iterative Graph-RAG, the method to use, chosen from ["local", "global"].')
+    parser.add_argument('--graphrag_embed', type=str, default='text-embedding-3-small', help='For Graph-RAG and Iterative Graph-RAG, the embedding model to use.')
 
     # output, result utils
     parser.add_argument('--result_dir', type=str, default='results', help='Directory to save the results')
@@ -73,9 +74,7 @@ def validate_args(args):
         assert args.vectorstore is not None, "Vectorstore must be specified for Two-stage Neu-RAG or Iterative Neu-RAG agent."
     elif args.agent_method in ['two_stage_sym_rag', 'iterative_sym_rag']:
         assert args.database is not None, "Database must be specified for Two-stage Sym-RAG or Iterative Sym-RAG agent."
-    elif args.agent_method in ['two_stage_graph_rag', 'iterative_graph_rag']:
-        assert args.graphrag_root and os.path.exists(args.graphrag_root) and os.path.isdir(args.graphrag_root), "Graph-RAG root folder must be specified and exist for Two-stage Graph-RAG or Iterative Graph-RAG agent."
-    
+
     if args.agent_method.startswith('trivial') or args.agent_method.startswith('two_stage') or args.agent_method in ['classic_rag', 'iterative_graph_rag']:
         # assert args.interact_protocol == 'code_block', "`code_block` interact protocol is required for Trivial Baselines, Two-stage Hybrid-RAG, Two-stage Neu-RAG, Two-stage Sym-RAG, Two-stage Graph-RAG, Classic-RAG and Iterative Graph-RAG agents."
         args.interact_protocol = 'code_block'
@@ -104,7 +103,7 @@ def get_result_folder(args) -> str:
         if args.agent_method == 'classic_rag':
             result_dir += f"_limit-{args.limit}"
     elif 'graphrag' in args.agent_method:
-        result_dir += f"_{args.graphrag_method}"
+        result_dir += f"_embed_{args.graphrag_embed}_method_{args.graphrag_method}"
     if args.agent_method.startswith('iterative') or args.agent_method == 'neusym_rag':
         result_dir += f"_action_{args.action_format}_output_{args.output_format}"
         result_dir += f"_turn_{args.max_turn}_window_{args.window_size}"

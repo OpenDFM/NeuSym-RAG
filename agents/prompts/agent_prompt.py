@@ -15,6 +15,32 @@ You can firstly give your reasoning process, followed by the final answer in the
 ```txt\nfinal answer\n```
 """
 
+TWO_STAGE_GRAPH_RAG_AGENT_PROMPT = """{task_input}
+
+You should wrap your answer in three backticks:
+```txt
+final answer following the answer format
+```
+"""
+
+ITERATIVE_GRAPH_RAG_AGENT_PROMPT = [
+    TWO_STAGE_GRAPH_RAG_AGENT_PROMPT,
+    """{system_prompt}
+
+Here is the task input:
+{task_input}
+
+Here is the model response:
+{response}
+
+----
+
+You should wrap your response in three backticks:
+```txt
+COMPLETED or rephrased question
+```
+"""
+]
 
 ITERATIVE_RAG_AGENT_PROMPT = """{system_prompt}
 

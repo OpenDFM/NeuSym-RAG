@@ -89,8 +89,6 @@ Here is the checklist of all different agent baselines:
 | Two-stage Hybrid-RAG           | ✅ | ✅ | ✅ | ❌ | [`two_stage_hybrid_rag`](../scripts/two_stage_hybrid_rag_baseline.py) |
 | **NeuSym-RAG**                 | ✅ | ✅ | ✅ | ✅ | [`neusym_rag`](../scripts/hybrid_neural_symbolic_rag.py) |
 
-> **❗️ Note:** Code for Two-stage Graph-RAG and Iterative Graph-RAG are preparing.
-
 
 ## Usage
 
@@ -109,6 +107,7 @@ Here is the checklist of all different agent baselines:
         ```sh
         export VLLM_API_KEY="EMPTY"
         export VLLM_BASE_URL="http://localhost:8000/v1/"
+        # export VLLM_EMBED_BASE_URL="http://localhost:8001/v1/" # for Graph-RAG methods
         ```
 
     - For other agent baselines, please use the corresponding [agent method](#overview-of-agent-baselines)
@@ -125,6 +124,10 @@ python scripts/${agent_method}_baseline.py --dataset airqa --test_data test_data
     --database ai_research --vectorstore ai_research --agent_method ${agent_method} \
     --llm gpt-4o-mini # ... optional arguments, see below
 ```
+
+> **❗️ NOTE:** For `two_stage_graph_rag` and `iterative_graph_rag`, the main body is the invocation of the official [GraphRAG](https://microsoft.github.io/graphrag/) script. Currently, we only support that the LLM (`--llm`) and embedding model (`--graphrag_embed`)  are both models from the OpenAI API base, or both from the vLLM API. If local servers are used, please also set the environment variable `VLLM_EMBED_BASE_URL` (e.g., `VLLM_EMBED_BASE_URL="http://localhost:8001/v1/"`) to the launched embedding server.
+> **⭐️ TIP:** For different datasets, we set the default graphrag root to `data/graph/${dataset}/`. This folder can be changed by modifying the function `get_graphrag_root` in [`utils/config.py`](../utils/config.py).
+
 
 ## Optional Arguments
 
@@ -151,8 +154,8 @@ For all arguments below, they apply to all agent baselines (see [`utils/hyperpar
 | `‑‑table_name`        | chunks        | The table name (which chunking view) to retrieve. For agent method `classic_rag` and `iterative_classic_rag`. |
 | `‑‑column_name`       | text_content  | The column name (which chunking view) to retrieve. For agent method `classic_rag` and `iterative_classic_rag`. |
 | `‑‑limit`             | 4             | The number of chunks to retrieve from the VS. Only used for agent method `classic_rag`. |
-| `‑‑graphrag_root`     | data/graphrag/ | The root directory to store parsed KGs for agent method `two_stage_graph_rag` and `iterative_graph_rag`. |
 | `‑‑graphrag_method`   | local         | The retrieval method for agent method `two_stage_graph_rag` and `iterative_graph_rag`. Choices: `['local', 'global']`. |
+| `--graphrag_embed`    | text-embedding-3-small | The embedding model name for Graph-RAG methods `two_stage_graph_rag` and `iterative_graph_rag`. |
 
 
 ### Prompt Arguments

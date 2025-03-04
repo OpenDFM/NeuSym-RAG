@@ -53,6 +53,7 @@ class TrivialBaselineAgent(AgentBase):
                  temperature: float = 0.7,
                  top_p: float = 0.95,
                  max_tokens: int = 1500,
+                 output_path: Optional[str] = None,
                  **kwargs
     ) -> str:
         self.env.reset()
@@ -93,6 +94,13 @@ class TrivialBaselineAgent(AgentBase):
         _, answer = Action.extract_thought_and_action_text(response, interact_protocol=self.env.interact_protocol)
         logger.info(f'[Response]: {response}')
         logger.info(f'[Answer]: {answer}')
+
+        messages.append({'role': 'assistant', 'content': answer})
+        if output_path is not None:
+            with open(output_path, 'w', encoding='utf-8') as of:
+                for msg in messages:
+                    of.write(json.dumps(msg, ensure_ascii=False) + '\n')
+
         cost = self.model.get_cost() - prev_cost
         logger.info(f'[Cost]: LLM API call costs ${cost:.6f}.')
         return answer

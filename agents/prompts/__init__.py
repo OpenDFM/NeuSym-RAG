@@ -5,6 +5,7 @@ from agents.prompts.system_prompt import (
     ITERATIVE_CLASSIC_RAG_SYSTEM_PROMPT,
     ITERATIVE_NEU_RAG_SYSTEM_PROMPT,
     ITERATIVE_SYM_RAG_SYSTEM_PROMPT,
+    ITERATIVE_GRAPH_RAG_SYSTEM_PROMPT,
     NEUSYM_RAG_SYSTEM_PROMPT,
     TWO_STAGE_SYM_RAG_SYSTEM_PROMPT,
     TWO_STAGE_NEU_RAG_SYSTEM_PROMPT,
@@ -13,6 +14,8 @@ from agents.prompts.system_prompt import (
 
 from agents.prompts.agent_prompt import (
     CLASSIC_RAG_AGENT_PROMPT,
+    TWO_STAGE_GRAPH_RAG_AGENT_PROMPT,
+    ITERATIVE_GRAPH_RAG_AGENT_PROMPT,
     ITERATIVE_RAG_AGENT_PROMPT,
     TWO_STAGE_NEU_RAG_AGENT_PROMPT,
     TWO_STAGE_SYM_RAG_AGENT_PROMPT,
@@ -39,8 +42,7 @@ SYSTEM_PROMPTS = {
     'iterative_neu_rag': ITERATIVE_NEU_RAG_SYSTEM_PROMPT,
     'two_stage_sym_rag': TWO_STAGE_SYM_RAG_SYSTEM_PROMPT,
     'iterative_sym_rag': ITERATIVE_SYM_RAG_SYSTEM_PROMPT,
-    # 'two_stage_graph_rag': TWO_STAGE_GRAPH_RAG_SYSTEM_PROMPT,
-    # 'iterative_graph_rag': ITERATIVE_GRAPH_RAG_SYSTEM_PROMPT,
+    'iterative_graph_rag': ITERATIVE_GRAPH_RAG_SYSTEM_PROMPT,
     'two_stage_hybrid_rag': TWO_STAGE_HYBRID_RAG_SYSTEM_PROMPT,
     'neusym_rag': NEUSYM_RAG_SYSTEM_PROMPT
 }
@@ -50,7 +52,6 @@ HINT_PROMPTS = {
     "iterative_classic_rag": ITERATIVE_CLASSIC_RAG_HINT_PROMPT,
     "iterative_neu_rag": ITERATIVE_NEU_RAG_HINT_PROMPT,
     "iterative_sym_rag": ITERATIVE_SYM_RAG_HINT_PROMPT,
-    # "iterative_graph_rag": ITERATIVE_GRAPH_RAG_HINT_PROMPT,
     "neusym_rag": NEUSYM_RAG_HINT_PROMPT
 }
 
@@ -64,8 +65,8 @@ AGENT_PROMPTS = {
     'iterative_neu_rag': ITERATIVE_RAG_AGENT_PROMPT,
     'two_stage_sym_rag': TWO_STAGE_SYM_RAG_AGENT_PROMPT,
     'iterative_sym_rag': ITERATIVE_RAG_AGENT_PROMPT,
-    # 'two_stage_graph_rag': TWO_STAGE_GRAPH_RAG_AGENT_PROMPT,
-    # 'iterative_graph_rag': ITERATIVE_RAG_AGENT_PROMPT,
+    'two_stage_graph_rag': TWO_STAGE_GRAPH_RAG_AGENT_PROMPT,
+    'iterative_graph_rag': ITERATIVE_GRAPH_RAG_AGENT_PROMPT,
     'two_stage_hybrid_rag': TWO_STAGE_HYBRID_RAG_AGENT_PROMPT,
     'neusym_rag': ITERATIVE_RAG_AGENT_PROMPT
 }
