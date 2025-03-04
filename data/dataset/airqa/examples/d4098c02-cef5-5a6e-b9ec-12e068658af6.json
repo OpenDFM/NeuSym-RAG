@@ -1,6 +1,6 @@
 {
     "uuid": "d4098c02-cef5-5a6e-b9ec-12e068658af6",
-    "question": "Which datasets are used in the experiments of the paper proposing the previous best RGB-based method that are not used in the anchor PDF?",
+    "question": "Which datasets are used in the experiments of the paper proposing the previous best RGB-based method that are not used in this paper?",
     "answer_format": "Your answer should be a python list about the names of the datasets, e.g., ['dataset1', 'dataset2']. YOU MUST USE THE EXACT NAMES FORM THE PAPER.",
     "tags": [
         "multiple",
@@ -15,7 +15,7 @@
     ],
     "conference": [],
     "reasoning_steps": [
-        "Determine the datasets used in the anchor pdf, which are usually in the experiment section.",
+        "Determine the datasets used in the paper, which are usually in the experiment section.",
         "Find the name of the previous best RGB-based method in the anchor pdf, which is usually in the experiment section.",
         "Locate the paper proposing the previous best RGB-based method.",
         "Find the datasets used in the experiments of the paper proposing CorrNet.",
