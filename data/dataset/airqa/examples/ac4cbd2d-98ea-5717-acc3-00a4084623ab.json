@@ -1,6 +1,6 @@
 {
     "uuid": "ac4cbd2d-98ea-5717-acc3-00a4084623ab",
-    "question": "What baselines (excluding MLP) are used in the paper proposing the model zoo in the anchor PDF?",
+    "question": "What baselines (excluding MLP) are used in the paper proposing the model zoo in the paper?",
     "answer_format": "Your answer should be a python list about the exact names of the baselines, e.g., ['baseline1', 'baseline2', ...]. YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION.",
     "tags": [
         "multiple",
@@ -15,8 +15,8 @@
     ],
     "conference": [],
     "reasoning_steps": [
-        "Find the model zoo used in the anchor PDF, which is usually in the experiment section.",
-        "Locate the relevant paper about the model zoo in the reference PDF.",
+        "Find the model zoo used in the paper, which is usually in the experiment section.",
+        "Locate the relevant paper about the model zoo in the reference papers.",
         "Find the exact names of baselines used in the paper excluding MLP, which are mentioned in the experiment section."
     ],
     "evaluator": {
