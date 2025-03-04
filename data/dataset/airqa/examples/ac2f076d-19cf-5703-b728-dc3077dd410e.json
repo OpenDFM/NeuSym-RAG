@@ -1,6 +1,6 @@
 {
     "uuid": "ac2f076d-19cf-5703-b728-dc3077dd410e",
-    "question": "The experiment section of the anchor PDF introduces a new metric, S^2MATCH, what is the main difference between it and the metric used in Appendix D? Answer with one formula.",
+    "question": "The experiment section of this paper introduces a new metric, S^2MATCH, what is the main difference between it and the metric used in Appendix D? Answer with one formula.",
     "answer_format": "You only need to provide one definition formula of S2MATCH in Python strings. You don't need to explain the formula or variables.",
     "tags": [
         "multiple",
@@ -10,7 +10,7 @@
     ],
     "conference": [],
     "reasoning_steps": [
-        "Find the name of the metric used in Appendix D in the anchor PDF.",
+        "Find the name of the metric used in Appendix D in the paper.",
         "Locate the experiment section to find information about the new metric S^2MATCH.",
         "Locate the reference paper introducing S^2MATCH.",
         "Find the main different formula between S^2MATCH and the metric used in Appendix D."
@@ -19,7 +19,7 @@
         "eval_func": "eval_complex_math_formula_with_llm",
         "eval_kwargs": {
             "formulas": "softMATCH = 1 - d(\\mathbf{x} ,\\mathbf{y} )",
-            "question": "The experiment section of the anchor PDF introduces a new metric, S^2MATCH, what is the main difference between it and the metric used in Appendix D? Answer with one formula."
+            "question": "The experiment section of this paper introduces a new metric, S^2MATCH, what is the main difference between it and the metric used in Appendix D? Answer with one formula."
         }
     },
     "state": {

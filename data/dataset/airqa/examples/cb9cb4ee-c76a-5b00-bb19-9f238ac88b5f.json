@@ -1,6 +1,6 @@
 {
     "uuid": "cb9cb4ee-c76a-5b00-bb19-9f238ac88b5f",
-    "question": "When discussing \"Engagingness\" in the anchor PDF, what is the definition of engagingness with interestingness from prior research?",
+    "question": "When discussing \"Engagingness\" in the paper, what is the definition of engagingness with interestingness from prior research?",
     "answer_format": "Your answer should be a python strings.",
     "tags": [
         "multiple",
@@ -17,7 +17,7 @@
     ],
     "conference": [],
     "reasoning_steps": [
-        "Find the section discussing engagingness in the anchor PDF, especially engagingness with interestingness from prior research.",
+        "Find the section discussing engagingness in the paper, especially engagingness with interestingness from prior research.",
         "Locate the related pdf in the reference PDFs.",
         "Find the detailed definition of engagingness with interestingness in the reference PDF."
     ],
@@ -25,7 +25,7 @@
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
             "reference_answer": "The definition of engagingness should engage the partner in conversation, such as presenting an interesting factTherefore, an engaging response y should provide high volume of information that acknowledges both the history x to engage the partner and the context c which we assume contains relevant facts. This naturally leads to the following metric definition: ENGAGINGNESS (\\mathbf{y} , \\mathbf{x} , \\mathbf{c} ) = sum (align(\\mathbf{y} \\to [\\mathbf{x} , \\mathbf{c} ])), where we concatenate the history x and knowledge context c, and measure the extent of response y's acknowledgement of the information.",
-            "question": "When discussing \"Engagingness\" in the anchor PDF, what is the definition of engagingness with interestingness from prior research?"
+            "question": "When discussing \"Engagingness\" in the paper, what is the definition of engagingness with interestingness from prior research?"
         }
     },
     "state": {

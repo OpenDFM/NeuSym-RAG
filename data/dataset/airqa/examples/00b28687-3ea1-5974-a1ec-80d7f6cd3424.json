@@ -1,6 +1,6 @@
 {
     "uuid": "00b28687-3ea1-5974-a1ec-80d7f6cd3424",
-    "question": "What datasets were used to train the default embedding model for the retriever in the experiment of the anchor PDF?",
+    "question": "What datasets were used to train the default embedding model for the retriever in the experiment of the paper?",
     "answer_format": "Your answer should be a python list of the dataset names, e.g. [\"dataset1\", \"dataset2\", ...]. YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION.",
     "tags": [
         "multiple",
@@ -15,7 +15,7 @@
     ],
     "conference": [],
     "reasoning_steps": [
-        "Retrieve the default embedding model for the retriever in the experiment section of the anchor PDF.",
+        "Retrieve the default embedding model for the retriever in the experiment section of the paper.",
         "Locate the relevant paper about the model.",
         "Identify the datasets on which the model was trained, which are usually mentioned in the dataset section."
     ],

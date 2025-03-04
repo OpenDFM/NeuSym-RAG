@@ -1,6 +1,6 @@
 {
     "uuid": "d60762bb-75c6-57d0-918b-9df1525d7269",
-    "question": "In the introduction of the anchor paper, five tracks are mentioned. What are the detailed definitions of Track 2 and Track 3?",
+    "question": "In the introduction of this paper, five tracks are mentioned. What are the detailed definitions of Track 2 and Track 3?",
     "answer_format": "Your answer should be a python strings about the detailed definition of Track2 and Track3.",
     "tags": [
         "multiple",
@@ -9,7 +9,7 @@
     ],
     "conference": [],
     "reasoning_steps": [
-        "Find five tracks mentioned in the introduction of the anchor paper.",
+        "Find five tracks mentioned in the introduction of this paper.",
         "Locate the reference paper which introduces the five tracks.",
         "Retrieve the detailed definitions of Track 2 and Track 3."       
     ],
@@ -17,7 +17,7 @@
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
             "reference_answer": "The formulation of this track2 is to predict, for each essay, Batson's empathic concern (\"feeling for someone\") and personal distress (\"suffering with someone\") scores. Teams are expected to develop models that predict the empathy score for each essay (self-report data from the essay writer). Both empathy and distress scores are real values between 1 and 7. Empathy score is an average of 7-point scale ratings, representing each of the following states (warm, tender, sympathetic, softhearted, moved, compassionate); distress score is an average of 7-point scale ratings, representing each of the following states (worried, upset, troubled, perturbed, grieved, disturbed, alarmed, distressed). These are state measures: measures that vary within people across time. The formulation of track3 is to predict, for each essay, one or more emotion labels from the following Ekman's six basic emotions (sadness, joy, disgust, surprise, anger, or fear) as well as neutral, and we also added hope.",
-            "question": "In the introduction of the anchor paper, five tracks are mentioned. What are the detailed definitions of Track 2 and Track 3, and how do they differ from each other?"
+            "question": "In the introduction of this paper, five tracks are mentioned. What are the detailed definitions of Track 2 and Track 3, and how do they differ from each other?"
         }
     },
     "state": {

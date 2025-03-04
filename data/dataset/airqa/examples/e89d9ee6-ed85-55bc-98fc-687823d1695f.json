@@ -1,6 +1,6 @@
 {
     "uuid": "e89d9ee6-ed85-55bc-98fc-687823d1695f",
-    "question": "What data augmentation strategies are used in the recently proposed dataset used in the anchor PDF?",
+    "question": "What data augmentation strategies are used in the recently proposed dataset used in this paper?",
     "answer_format": "Your answer should be a python strings about the detailed data augmentation strategies.",
     "tags": [
         "multiple",
@@ -9,7 +9,7 @@
     ],
     "conference": [],
     "reasoning_steps": [
-        "Find the recently proposed dataset used in the anchor PDF, which is usually in the experimental section.",
+        "Find the recently proposed dataset used in the paper, which is usually in the experimental section.",
         "Locate the relative papers about the dataset.",
         "Find the data augumentation strategies in the paper."
         
@@ -18,7 +18,7 @@
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
             "reference_answer": "To achieve the balance between the two-way translation in language pairs, two data augmentation strategies were utilized to enrich the corpus if necessary: In cases where the number of parallel corpus falls below 1 million, we flip the entire corpus to create the corpus for the opposite translation direction. In contrast, for corpora with more than 1 million instances, we randomly flip half the amount of corpus to generate the corresponding corpus. After data augmenting, the initial corpus of 142 translation directions is substantially enriched, expanding to a significantly larger corpus of 242 translation directions.",
-            "question": "What data augmentation strategies are used in the recently proposed dataset used in the anchor PDF?"
+            "question": "What data augmentation strategies are used in the recently proposed dataset used in this paper?"
         }
     },
     "state": {
