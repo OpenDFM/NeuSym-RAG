@@ -6,8 +6,8 @@ WORK_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 load_dotenv(dotenv_path=os.path.join(WORK_DIR, '.env'))
 
-TMP_DIR = os.getenv('TMP_DIR', os.path.join(WORK_DIR, 'data', 'tmp'))
-CACHE_DIR = os.getenv('CACHE_DIR', os.path.join(WORK_DIR, 'data', '.cache'))
+TMP_DIR = os.getenv('TMP_DIR', os.path.join(WORK_DIR, 'tmp'))
+CACHE_DIR = os.getenv('CACHE_DIR', os.path.join(WORK_DIR, '.cache'))
 DATASET_DIR = os.getenv('DATASET_DIR', os.path.join(WORK_DIR, 'data', 'dataset'))
 DATABASE_DIR = os.getenv('DATABASE_DIR', os.path.join(WORK_DIR, 'data', 'database'))
 VECTORSTORE_DIR = os.getenv('VECTORSTORE_DIR', os.path.join(WORK_DIR, 'data', 'vectorstore'))

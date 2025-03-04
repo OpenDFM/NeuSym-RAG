@@ -51,7 +51,7 @@ def detect_embedding_model_path(model_name: str) -> str:
         }
         detect_model_name = normed_files.get(normed_model_name, None)
         if detect_model_name is None:
-            raise ValueError(f"[Error]: Embedding model {model_name} not found in the .cache/ folder.")
+            raise ValueError(f"[Error]: Embedding model {model_name} not found in the {CACHE_DIR} folder.")
         # logger.info(f"Found cached embedding model `{detect_model_name}` for `{model_name}`.")
         return os.path.join(CACHE_DIR, detect_model_name)
 
