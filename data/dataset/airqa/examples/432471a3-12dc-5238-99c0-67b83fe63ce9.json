@@ -1,6 +1,6 @@
 {
     "uuid": "432471a3-12dc-5238-99c0-67b83fe63ce9",
-    "question": "In the LMRL-Gym domain, besides the task mentioned in anchor PDF, what other interactive dialogue tasks are proposed in the paper?",
+    "question": "In the LMRL-Gym domain, besides the task mentioned in the paper, what other interactive dialogue tasks are proposed here?",
     "answer_format": "Your answer should be a python list, each element is the name of the task, e.g.,[\"task1\", \"task2\", ...]. YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION AND INCLUDE THE FULL NAMES OF THE TASKS.",
     "tags": [
         "multiple",
@@ -16,7 +16,7 @@
     "conference": [],
     "reasoning_steps": [
         "Find the part mentioned the LMRL-Gym domain, which is in the Experimental Setup section.",
-        "Retrieve the name of the task mentioned in the anchor PDF.",
+        "Retrieve the name of the task mentioned in the paper.",
         "Locate the respective paper proposing this LMRL-Gym domain.",
         "Find the other interactive dialogue tasks proposed in the paper."
 
