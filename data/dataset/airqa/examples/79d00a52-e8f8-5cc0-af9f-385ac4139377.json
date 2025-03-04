@@ -1,6 +1,6 @@
 {
     "uuid": "79d00a52-e8f8-5cc0-af9f-385ac4139377",
-    "question": "Which languages are included in the evaluation dataset used in the anchor PDF?",
+    "question": "Which languages are included in the evaluation dataset used in the paper?",
     "answer_format": "Your answer should be a list of languages, e.g., [\"Language1\", \"Language2\"].",
     "tags": [
         "multiple",
@@ -15,7 +15,7 @@
     ],
     "conference": [],
     "reasoning_steps": [
-        "Retrieve the evaluation dataset in the anchor PDF, which is in the data & evaluation section.",
+        "Retrieve the evaluation dataset in the paper, which is in the data & evaluation section.",
         "Locate the related paper about the datasets.",
         "Locate the languages included in the evaluation datasets, which are mentioned in the Languages and Corpora section."
     ],

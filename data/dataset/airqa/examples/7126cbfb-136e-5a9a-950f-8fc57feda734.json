@@ -1,6 +1,6 @@
 {
     "uuid": "7126cbfb-136e-5a9a-950f-8fc57feda734",
-    "question": "How does the latest Wellness Descriptions dataset used in the anchor pdf address the ambiguity issue in the task of annotating text for wellness dimensions?",
+    "question": "How does the latest Wellness Descriptions dataset used in the paper address the ambiguity issue in the task of annotating text for wellness dimensions?",
     "answer_format": "Your answer should be a python strings concisely summarizing the method.",
     "tags": [
         "multiple",
@@ -15,7 +15,7 @@
     ],
     "conference": [],
     "reasoning_steps": [
-        "Find the latest Wellness Descriptions dataset in the anchor PDF.",
+        "Find the latest Wellness Descriptions dataset in the paper.",
         "Locate the relevant paper in the reference PDF.",
         "Identify how the dataset addresses the ambiguity issue in the task of annotating text for wellness dimensions, which is mentioned in the Corpus Construction section."
     ],
@@ -23,7 +23,7 @@
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
             "reference_answer": "They address the ambiguity issue by providing a set of perplexity guidelines. The major perplexity guidelines are as follows. 1. Presence of Multiple Aspects: Social media posts often express feelings due to various reasons. To address this, specific text spans contributing to the more focused health consequences can be identified and associated with corresponding wellness dimensions. 2. Annotation Ambiguity: Although there may be multiple aspects in the post, we must consider the holistic aspect as per the experts' opinion. 3. Reading between the lines: The text may contain implicit or subtle hints that suggest a particular wellness dimension. But clear and meaningful words that suggest one of the four wellness dimensions should be annotated accordingly.",
-            "question": "How does the latest Wellness Descriptions dataset used in the anchor pdf address the ambiguity issue in the task of annotating text for wellness dimensions?"
+            "question": "How does the latest Wellness Descriptions dataset used in the paper address the ambiguity issue in the task of annotating text for wellness dimensions?"
         }
     },
     "state": {
