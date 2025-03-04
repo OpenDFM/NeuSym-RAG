@@ -89,8 +89,6 @@ Here is the checklist of all different agent baselines:
 | Two-stage Hybrid-RAG           | ✅ | ✅ | ✅ | ❌ | [`two_stage_hybrid_rag`](../scripts/two_stage_hybrid_rag_baseline.py) |
 | **NeuSym-RAG**                 | ✅ | ✅ | ✅ | ✅ | [`neusym_rag`](../scripts/hybrid_neural_symbolic_rag.py) |
 
-> **❗️ Note:** Code for Two-stage Graph-RAG and Iterative Graph-RAG are preparing.
-
 
 ## Usage
 
