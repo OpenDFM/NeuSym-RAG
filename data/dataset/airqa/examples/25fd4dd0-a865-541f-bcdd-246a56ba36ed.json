@@ -1,6 +1,6 @@
 {
     "uuid": "25fd4dd0-a865-541f-bcdd-246a56ba36ed",
-    "question": "Both the anchor_pdfs use the Model Performance on EditEval to test their models. What existing models' data do they use in common?",
+    "question": "Both the papers use the Model Performance on EditEval to test their models. What existing models' data do they use in common?",
     "answer_format": "Your answer should be a python list, each elemet is a string , which refers to a model name.",
     "tags": [
         "multiple",
@@ -29,7 +29,8 @@
                 "Tk",
                 "PaLM 2"
             ],
-            "ignore_order": true
+            "ignore_order": true,
+            "lowercase": true
         }
     },
     "state": {

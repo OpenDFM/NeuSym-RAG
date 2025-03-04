@@ -1,7 +1,7 @@
 {
     "uuid": "08f5327e-584e-5c34-a092-a5dec11041dc",
-    "question": "What do γt and σ mean in the formula(2) in anchor_pdf?",
-    "answer_format": "Your answer should be ",
+    "question": "What do γt and σ mean in the formula(2) in RulE paper?",
+    "answer_format": "Your answer should be a python list of two strings, explaining the meaning of γt and σ respectively",
     "tags": [
         "multiple",
         "text",
@@ -15,18 +15,15 @@
         "9bed7533-e4f6-580b-9e8d-7c996dbbc493"
     ],
     "conference": [],
-    "reasoning_steps": [
-        "Read the anchor_pdf and find the formula(2).",
-        "Find the source paper of the formula(2).",
-        "Find the definitions of γt and σ in the source paper."
-    ],
+    "reasoning_steps": [],
     "evaluator": {
         "eval_func": "eval_scoring_points_with_llm",
         "eval_kwargs": {
             "scoring_points": [
                 "γt is a fixed triplet margin.",
                 "σ is the sigmoid function."
-            ]
+            ],
+            "question": "What do γt and σ mean in the formula(2) in RulE paper?"
         }
     },
     "state": {

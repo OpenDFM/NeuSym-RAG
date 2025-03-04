@@ -1,6 +1,6 @@
 {
     "uuid": "3272942c-5db5-5122-b612-f09332a27a5a",
-    "question": "Is the data in table 5 in the anchor_pdf obtained using the valid dataset or the test dataset?",
+    "question": "How are the data in Table 5 in the paper \"Overview of the 9th Social Media Mining for Health Applications\" obtained, from the valid dataset or test dataset?",
     "answer_format": "Your answer should be a python strings of \"valid\" or \"test\".",
     "tags": [
         "multiple",
@@ -15,11 +15,7 @@
         "fe31ca58-7239-5d36-b623-2540d7b9b01a"
     ],
     "conference": [],
-    "reasoning_steps": [
-        "Locate table 5 in the anchor_pdf.",
-        "Retreive the reference_pdf and find the corresponding table in the reference_pdf.",
-        "Compare the two tables and find the answer."
-    ],
+    "reasoning_steps": [],
     "evaluator": {
         "eval_func": "eval_string_exact_match",
         "eval_kwargs": {

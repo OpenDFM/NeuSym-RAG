@@ -1,6 +1,6 @@
 {
     "uuid": "8a732ed7-85bc-5355-aec7-97434295b153",
-    "question": "For the PLM with the lowest number of synset candidates under synset retrieval in anchor_pdf, what negative impact will it have if it randomly blocks a certain percentage of input tokens during pre-training?",
+    "question": "For the PLM with the lowest number of synset candidates under synset retrieval in the paper \"Predicate Sense Disambiguation for UMR Annotation of Latin: Challenges and Insights\", what negative impact will it have if it randomly blocks a certain percentage of input tokens during pre-training?",
     "answer_format": "Your answer should be a python strings.",
     "tags": [
         "multiple",
@@ -14,16 +14,12 @@
         "ac1b0430-6781-5539-9d45-5067c0c6ff3e"
     ],
     "conference": [],
-    "reasoning_steps": [
-        "Read the anchor_pdf and find the statistics of synset candidates under synset retrieval to find the PLM.",
-        "Locate the paper about the PLM.",
-        "Retreive the paper's section about pre-training and infer the answer."
-    ],
+    "reasoning_steps": [],
     "evaluator": {
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
             "reference_answer": "It creates a mismatch between pre-training and fine-tuning.",
-            "question": "For the PLM with the lowest number of synset candidates under synset retrieval in anchor_pdf, what negative impact will it have if it randomly blocks a certain percentage of input tokens during pre-training?"
+            "question":"For the PLM with the lowest number of synset candidates under synset retrieval in the paper \"Predicate Sense Disambiguation for UMR Annotation of Latin: Challenges and Insights\", what negative impact will it have if it randomly blocks a certain percentage of input tokens during pre-training?"
         }
     },
     "state": {

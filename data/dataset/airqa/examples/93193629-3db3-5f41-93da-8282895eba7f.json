@@ -1,6 +1,6 @@
 {
     "uuid": "93193629-3db3-5f41-93da-8282895eba7f",
-    "question": "What is the relationship between the two paper (in anchor_pdf) in terms of datasets?",
+    "question": "What is the relationship between the two papers in terms of datasets?",
     "answer_format": "Your answer should be a python strings.",
     "tags": [
         "multiple",
@@ -13,9 +13,7 @@
     ],
     "reference_pdf": [],
     "conference": [],
-    "reasoning_steps": [
-        "Read both papers' section of datasets and understand the relationship."
-    ],
+    "reasoning_steps": [],
     "evaluator": {
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {

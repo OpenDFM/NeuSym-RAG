@@ -1,6 +1,6 @@
 {
     "uuid": "6c290495-01d3-5b69-adda-7d26b92f0da1",
-    "question": "Which institution funded the model with worse debiasing ability in Post-hoc in anchor_pdf in anchor_pdf?",
+    "question": "Which institution funded the model with worse debiasing ability in Post-hoc in \"A Parameter-Efficient Multi-Objective Approach to Mitigate Stereotypical Bias in Language Models\"?",
     "answer_format": "Your answer should be a python string of the institution name. You should use full name.",
     "tags": [
         "multiple",
@@ -15,11 +15,7 @@
         "dae50238-e4d1-5864-8b70-8666dc3b606d"
     ],
     "conference": [],
-    "reasoning_steps": [
-        "Read the anchor_pdf to find the model with worse debiasing ability in Post-hoc.",
-        "Locate the pdf about the model in the reference_pdf.",
-        "Retrieve the context for the model in the pdf to find the sponsor."
-    ],
+    "reasoning_steps": [],
     "evaluator": {
         "eval_func": "eval_string_exact_match",
         "eval_kwargs": {
