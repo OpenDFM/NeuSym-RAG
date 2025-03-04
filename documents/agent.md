@@ -125,7 +125,41 @@ python scripts/${agent_method}_baseline.py --dataset airqa --test_data test_data
     --llm gpt-4o-mini # ... optional arguments, see below
 ```
 
-> **❗️ NOTE:** For `two_stage_graph_rag` and `iterative_graph_rag`, the main body is the invocation of the official [GraphRAG](https://microsoft.github.io/graphrag/) script. Currently, we only support that the LLM (`--llm`) and embedding model (`--graphrag_embed`)  are both models from the OpenAI API base, or both from the vLLM API. If local servers are used, please also set the environment variable `VLLM_EMBED_BASE_URL` (e.g., `VLLM_EMBED_BASE_URL="http://localhost:8001/v1/"`) to the launched embedding server.
+### Graph-RAG Baselines
+
+For `two_stage_graph_rag` and `iterative_graph_rag`, the main body is the invocation of the official [GraphRAG](https://microsoft.github.io/graphrag/) script. Currently, we only support that the LLM (`--llm`) and embedding model (`--graphrag_embed`)  are both models from the OpenAI API base, or both from the vLLM API. If local servers (that is, vLLM) are used, please also set the environment variable `VLLM_EMBED_BASE_URL` (e.g., `VLLM_EMBED_BASE_URL="http://localhost:8001/v1/"`) to the launched embedding server.
+
+We take the dataset `airqa` as an example to show how to build the graph and use it:
+1. Initialize the `graphrag_root` folder for Graph-RAG:
+```bash
+python utils/graphrag_utils.py --function init_graph --dataset airqa
+```
+
+2. Extract all PDF content that will be used in the test data into `.txt` files:
+```bash
+python utils/graphrag_utils.py --function gather_input --dataset airqa --test_data test_data_553.jsonl
+```
+
+3. Build the graph from documents in step 2:
+    - set the environment variable `OPENAI_API_KEY` and `OPENAI_BASE_URL` firstly
+
+```bash
+python utils/graphrag_utils.py --function build_graph --dataset airqa --llm gpt-4o-mini --graphrag_embed text-embedding-3-small
+```
+
+4. Run the agent method:
+    - must use the same LLM and embedding model as step 3
+
+```bash
+# Two-stage Graph-RAG baseline
+python scripts/two_stage_graph_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl \
+    --agent_method two_stage_graph_rag --llm gpt-4o-mini --graphrag_embed text-embedding-3-small
+
+# Iterative Graph-RAG baseline
+python scripts/iterative_graph_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl \
+    --agent_method iterative_graph_rag --llm gpt-4o-mini --graphrag_embed text-embedding-3-small
+```
+
 > **⭐️ TIP:** For different datasets, we set the default graphrag root to `data/graph/${dataset}/`. This folder can be changed by modifying the function `get_graphrag_root` in [`utils/config.py`](../utils/config.py).
 
 
