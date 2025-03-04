@@ -1,6 +1,6 @@
 {
     "uuid": "a93430e0-ae3b-585d-8622-ed9b5844da8c",
-    "question": "In Experiment Section of the anchor PDF, what is the overall framework of the baseline model achieving the second best BERTScore on the dataset LOCOMO?",
+    "question": "In Experiment Section of the paper, what is the overall framework of the baseline model achieving the second best BERTScore on the dataset LOCOMO?",
     "answer_format": "Your answer should be a python strings about the detailed overall framework of the baseline model.",
     "tags": [
         "multiple",
@@ -25,7 +25,7 @@
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
             "reference_answer": "The overall framework of MemoChat pipeline is a memorization-retrieval-response loop inner thinking. Very different from traditional methods that retrieve directly on these accumulated dialogues, the chatbot will automatically builds and updates a structured on-the-fly memo, storing past dialogues in categories. Then, the retrieval is conducted over all recordings according to their topics and summaries",
-            "question": "In Experiment Section of the anchor PDF, what is the overall framework of the baseline model achieving the second best BERTScore on the dataset LOCOMO?"
+            "question": "In Experiment Section of the paper, what is the overall framework of the baseline model achieving the second best BERTScore on the dataset LOCOMO?"
         }
     },
     "state": {
