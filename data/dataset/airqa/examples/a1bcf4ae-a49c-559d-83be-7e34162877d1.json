@@ -1,6 +1,6 @@
 {
     "uuid": "a1bcf4ae-a49c-559d-83be-7e34162877d1",
-    "question": "What tasks were proposed in the paper of the dataset used in the experiment of the anchor PDF?",
+    "question": "What tasks were proposed in the paper of the dataset used in the experiment of the paper?",
     "answer_format": "Your answer should be a python list of tasks, e.g. [\"task1\", \"task2\", ...]. YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION.",
     "tags": [
         "multiple",
@@ -15,7 +15,7 @@
     ],
     "conference": [],
     "reasoning_steps": [
-        "Find the name of the dataset used in the experiment in the anchor PDF.",
+        "Find the name of the dataset used in the experiment in the paper.",
         "Locate the relevant paper about the dataset.",
         "Identify the tasks proposed in the paper of the dataset used in the experiment."
     ],
