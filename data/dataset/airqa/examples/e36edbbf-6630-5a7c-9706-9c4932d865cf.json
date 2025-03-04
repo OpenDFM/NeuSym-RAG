@@ -1,6 +1,6 @@
 {
     "uuid": "e36edbbf-6630-5a7c-9706-9c4932d865cf",
-    "question": "How many GPUs would be required to train a 70M model used in Anchor PDF if we had used the batch sizes from the GPT-3 suite?",
+    "question": "How many GPUs would be required to train a 70M model used in this paper if we had used the batch sizes from the GPT-3 suite?",
     "answer_format": "Your answer should be a single integer.",
     "tags": [
         "multiple",
@@ -15,7 +15,7 @@
     ],
     "conference": [],
     "reasoning_steps": [
-        "Find the model used in the Anchor PDF, which is usually in the Model section.",
+        "Find the model used in the paper, which is usually in the Model section.",
         "Locate the relevant paper in the Reference PDF.",
         "Find the exact number of GPUs required to train the model, which is usually in the form of a table."
     ],
