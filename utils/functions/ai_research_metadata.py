@@ -747,7 +747,16 @@ def openreview_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
     """
     assert os.environ['OPENREVIEW_USERNAME'] and os.environ['OPENREVIEW_PASSWORD'], "Please set the environment variable `OPENREVIEW_USERNAME` and `OPENREVIEW_PASSWORD` first before using the OpenReview API."
     threshold, allow_arxiv, allow_reject = kwargs.get('threshold', 90), kwargs.get('allow_arxiv', False), kwargs.get('allow_reject', False)
-    
+
+    def get_year(venueid, venue) -> Optional[int]:
+        match = re.search(r'/(\d{4})($|/)', venueid)
+        if match:
+            return int(match.group(1))
+        match = re.search(r'\s(\d{4})($|\s)', venue)
+        if match:
+            return int(match.group(1))
+        return None
+
     def search_note(api_v2: bool = True) -> Dict[str, Any]:
         if api_v2:
             OPENREVIEW_BASE_URL_V2 = 'https://api2.openreview.net' # use the APIv2
@@ -769,7 +778,8 @@ def openreview_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             if not venueid: continue
             venueid = venueid['value'] if type(venueid) == dict else venueid
             pdf_url = data['content'].get('pdf', None)
-            if not pdf_url: continue # pdf link is not available, skip
+            year = get_year(venueid, venue)
+            if not pdf_url or not year: continue # pdf link or year is not available, skip
 
             # skip rejected papers
             if (not allow_reject) and ('submitted to' in venue.lower() or 'reject' in venue.lower()):
@@ -807,28 +817,28 @@ def openreview_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
     assert pdf_url is not None and 'pdf' in str(pdf_url).lower(), f"PDF link is not available in Note: {note}."
 
     # 1. get the year
-    def get_year(venueid, venue) -> int:
-        match = re.search(r'/(\d{4})($|/)', venueid)
-        if match:
-            return int(match.group(1))
-        match = re.search(r'\s(\d{4})($|\s)', venue)
-        if match:
-            return int(match.group(1))
-        raise ValueError(f'Year information not found in Note: {note}')
-
     venue, venueid = content['venue'], content['venueid']
     year = get_year(venueid, venue)
 
     # 2. get the conference abbrev
     def get_conference(venueid, venue):
-        match = re.search(r'^(.*?)\.cc/\d{4}/', venueid)
-        if match:
-            conference_abbrev = match.group(1)
-            _, conference_full = get_ccf_conference_name(conference_abbrev=conference_abbrev)
-            if conference_full == conference_abbrev:
-                conference_full = venue
-            return match.group(1), conference_full
-        raise ValueError(f"Invalid venueid: {venueid}")
+        patterns = [
+            (r'^([^\.]*?)\.cc/\d{4}/', 1),
+            (r'\.([a-zA-Z]*?)/(.*?)/\d{4}', 2),
+            (r'^([^\.]*?)\.([a-zA-Z]*?)/\d{4}', 1),
+            (r'^([^\.]*?)/\d{4}', 1)
+        ]
+        for pat, idx in patterns:
+            match = re.search(pat, venueid)
+            if match:
+                conference_abbrev = match.group(idx)
+                break
+        else: # directly use venue name
+            conference_abbrev = venue
+        _, conference_full = get_ccf_conference_name(conference_abbrev=conference_abbrev)
+        if conference_full == conference_abbrev:
+            conference_full = venue # abbrevation not found, use venue name instead
+        return conference_abbrev, conference_full
 
     conference_abbrev, conference_full = get_conference(venueid, venue)
     if not non_arxiv:
