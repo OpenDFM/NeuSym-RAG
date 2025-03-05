@@ -350,6 +350,7 @@ def extract_metadata_from_scholar_api(
         "arxiv": arxiv_scholar_api,
         "semantic-scholar": semantic_scholar_api,
     }
+    if 'arxiv' in api_tools: kwargs['allow_arxiv'] = False
     # Call the scholar API to extract the metadata
     metadata_dict = {}
     for tool in api_tools:

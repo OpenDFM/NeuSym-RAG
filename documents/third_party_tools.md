@@ -1,16 +1,16 @@
-## Third Party Tools Guideline
+# Third Party Tools Guideline
 
 This document describes the detailed installation, use case, and useful links to third party tools that may be utilized in this project, especially during PDF/image parsing.
 
 
-### Processing Logic of `get_ai_research_metadata`
+## Processing Logic of `get_ai_research_metadata`
 
 This function will return the metadata JSON dict of the input `pdf_path` (see [Metadata Format](../documents/airqa_format.md#paper-metadata-format)). The core input argument `pdf_path` can accept the 4 types below:
 - **Paper UUID**:
     - In this case, the metadata dict should be pre-processed and stored in folder `data/dataset/${dataset}/metadata/`, directly return that dict.
     - If not found in processed paper dict, raise ValueError.
 - **Local PDF Path**:
-    - Case 1: `data/dataset/${dataset}/papers/subfolder/{uuid}.pdf`. We will directly extract the UUID and reduce to the case **Paper UUID**.
+    - Case 1: `data/dataset/${dataset}/papers/subfolder/${uuid}.pdf`. We will directly extract the UUID and reduce to the case **Paper UUID**.
     - Case 2: `/path/to/any/folder/anyfilename.pdf`. Firstly, we assume the paper title MUST occur in top lines of the first page. We use LLM to infer the paper title from these texts. Then, we resort to scholar APIs to extract the paper metadata. After processing, the original local file will be moved and renamed to the field `pdf_path` in the metadata dict.
 - **Web URL of the PDF**
     - In this case, we will firstly download the PDF file to `TMP_DIR` (by default, ./tmp/). Then, it degenerates to the case **Local PDF Path**.
@@ -20,12 +20,33 @@ This function will return the metadata JSON dict of the input `pdf_path` (see [M
     - After getting the metadata, we will also download and rename the PDF file according to fields `pdf_url` and `pdf_path` in the metadata dict.
 > **📝 Attention**: after calling `get_ai_research_metadata`, a new metadata dict `${uuid}.json` of the paper UUID will be saved into `data/dataset/${dataset}/metadata/` folder by default. If you want to prohibit the writing operation, add keyword argument `write_to_json=False`.
 
+### Use case
+```py
+import json
+from utils.functions import get_ai_research_metadata
 
-### Scholar APIs
+metadata = get_ai_research_metadata(
+    title = "Attention is all you need",
+    model = 'gpt-4o-mini',
+    temperature = 0.1,
+    api_tools = ['openreview', 'dblp', 'arxiv', 'semantic-scholar'],
+    write_to_json = True, # the metadata will be written to a json file under dataset_dir/metadata/
+    title_lines = 20,
+    tldr_max_length = 80,
+    tag_number = 5,
+    dataset_dir = 'data/dataset/airqa',
+    threshold = 95,
+    limit = 10
+)
+print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
+```
+
+
+## Scholar APIs
 
 We investigate and implement the following scholar APIs to get the metadata of papers from their titles:
 
-#### DBLP Scholar API
+### DBLP Scholar API
 
 - No extra libs needed, `requests` + `urllib` + `bs4` is enough
 - Code snippets:
@@ -44,7 +65,7 @@ print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii
 ```
 
 
-#### Arxiv API
+### Arxiv API
 
 - No extra libs needed
 - Code snippets:
@@ -62,7 +83,7 @@ print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii
 ```
 
 
-#### OpenReview API
+### OpenReview API
 
 - Need to install the following library:
 ```sh
@@ -86,7 +107,7 @@ print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii
 > **💡 Note:** Before using the OpenReview API, please set the environment variable `OPENREVIEW_USERNAME` and `OPENREVIEW_PASSWORD` firstly.
 
 
-#### Semantic Scholar API
+### Semantic Scholar API
 
 - No extra libs needed
 - Code snippets:
@@ -110,7 +131,7 @@ export S2_API_KEY="your_semantic_scholar_api_key"
 ```
 
 
-### MinerU Installation
+## MinerU Installation
 
 - Precautions when installing MinerU:
     - Please ensure that the created Python environment is of version `3.10`
