@@ -1,15 +1,25 @@
 {
     "uuid": "cecfb20f-ebba-5f01-98c1-5259abb28f74",
-    "question": "",
-    "answer_format": "Your answer should be ",
+    "question": "Which model did the authors use to fine-tune the pre-detector gϕ and conflict disambiguator gψ? How many times more param does ELMo have than this model?",
+    "answer_format": "Your answer should be a python list of two elements. The first element is a string of a name of a model, and the second element is an int with two decimal places.",
     "tags": [],
-    "anchor_pdf": [],
-    "reference_pdf": [],
+    "anchor_pdf": [
+        "eb149271-ff42-5bcb-b891-b8c3fb6a02d3"
+    ],
+    "reference_pdf": [
+        "7efa89b4-4460-5eed-b6f0-62238a690c9b"
+    ],
     "conference": [],
     "reasoning_steps": [],
     "evaluator": {
-        "eval_func": "eval_",
-        "eval_kwargs": {}
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "DistilBERT",
+                2.73
+            ],
+            "lowercase": true
+        }
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
