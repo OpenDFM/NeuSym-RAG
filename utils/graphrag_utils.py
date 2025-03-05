@@ -34,7 +34,7 @@ def config_graphrag_settings(dataset: str, llm: str, embed_model: str):
 
     # configure settings.yaml
     model_cls = infer_model_class(llm)
-    if isinstance(model_cls, GPTClient):
+    if issubclass(model_cls, GPTClient):
         openai_api_base = os.environ.get('OPENAI_BASE_URL', "https://api.openai.com/v1").rstrip('/')
         api_key = os.environ['OPENAI_API_KEY']
         # summary llm
