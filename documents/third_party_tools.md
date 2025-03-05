@@ -2,6 +2,7 @@
 
 This document describes the detailed installation, use case, and useful links to third party tools that may be utilized in this project, especially during PDF/image parsing.
 
+
 ### Processing Logic of `get_ai_research_metadata`
 
 This function will return the metadata JSON dict of the input `pdf_path` (see [Metadata Format](../documents/airqa_format.md#paper-metadata-format)). The core input argument `pdf_path` can accept the 4 types below:
@@ -63,7 +64,26 @@ print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii
 
 #### OpenReview API
 
-TODO: to be added here
+- Need to install the following library:
+```sh
+pip install openreview-api
+```
+
+- Code snippets:
+```py
+import json
+from utils.functions.ai_research_metadata import openreview_scholar_api
+metadata = openreview_scholar_api(
+    title="Spider2-V: How Far Are Multimodal Agents From Automating Data Science and Engineering Workflows?",
+    limit=10,
+    threshold=90,
+    allow_arxiv=False,
+    allow_reject=False,
+    dataset_dir="data/dataset/airqa"
+)
+print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
+```
+> **💡 Note:** Before using the OpenReview API, please set the environment variable `OPENREVIEW_USERNAME` and `OPENREVIEW_PASSWORD` firstly.
 
 
 #### Semantic Scholar API
@@ -84,7 +104,7 @@ metadata = semantic_scholar_api(
 )
 print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
 ```
-- Note that, this API is not stable and may prevent frequent calls in a limited period of time. Thus, it is suggested to set the API key if you have one.
+> **💡 Note:** This API is not stable and may prevent frequent calls in a limited period of time. Thus, it is suggested to set the API key if you have one.
 ```sh
 export S2_API_KEY="your_semantic_scholar_api_key"
 ```

@@ -2,6 +2,8 @@
 import html, json, requests, shutil, uuid, tempfile, subprocess, sys, os, re, logging, time
 import urllib, urllib.request
 import xmltodict
+import openreview
+from openreview.api import OpenReviewClient, Note
 from bs4 import BeautifulSoup
 from typing import List, Union, Optional, Tuple, Any, Dict
 import pymupdf
@@ -329,7 +331,7 @@ def infer_paper_tags_from_metadata(
 
 def extract_metadata_from_scholar_api(
         title: str,
-        api_tools: List[str] = ['arxiv', 'dblp', 'semantic-scholar'],
+        api_tools: List[str] = ['dblp', 'openreview', 'arxiv', 'semantic-scholar'],
         **kwargs
     ) -> Dict[str, Any]:
     """ Given the title or the arxiv id of one paper, extract its metadata from provided scholar APIs.
@@ -339,18 +341,22 @@ def extract_metadata_from_scholar_api(
             ['dblp', 'semantic-scholar', 'arxiv']
     """
     for tool in api_tools:
-        assert tool in ['arxiv', 'dblp', 'semantic-scholar'], f"Invalid scholar API tool: {tool}."
+        assert tool in ['openreview', 'dblp', 'arxiv', 'semantic-scholar'], f"Invalid scholar API tool: {tool}."
     if not api_tools: # try sequentially with pre-defined orders
-        api_tools = ['arxiv', 'dblp', 'semantic-scholar']
+        api_tools = ['openreview', 'dblp', 'arxiv', 'semantic-scholar']
     functions = {
-        "arxiv": arxiv_scholar_api,
+        "openreview": openreview_scholar_api,
         "dblp": dblp_scholar_api,
+        "arxiv": arxiv_scholar_api,
         "semantic-scholar": semantic_scholar_api,
     }
     # Call the scholar API to extract the metadata
     metadata_dict = {}
     for tool in api_tools:
-        metadata_dict = functions[tool](title, **kwargs)
+        try:
+            metadata_dict = functions[tool](title, **kwargs)
+        except:
+            metadata_dict = None
         if metadata_dict is not None:
             return metadata_dict
     logger.error(f'[Error]: failed to extract the metadata information for paper `{title}` from these provided scholar APIs: {api_tools}.')
@@ -389,7 +395,7 @@ def arxiv_scholar_api(arxiv_id_or_title: str, **kwargs) -> Tuple[bool, Dict[str,
     except Exception as e:
         logger.error(f"An unexpected error occurred during calling ARXIV API to search `{arxiv_id_or_title}`: {e}")
         return None
-    
+
     data = xmltodict.parse(xml_response).get("feed", {}).get("entry", {})
     if data == {} or data == []:
         logger.error(f"Failed to find paper {arxiv_id_or_title} using ARXIV API.")
@@ -726,6 +732,145 @@ def dblp_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
     return None
 
 
+def openreview_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
+    """ Given the title of one paper, extract its metadata from DBLP API.
+    @param:
+        title: str, the title of the paper
+        **kwargs: Dict[str, Any], other arguments that will be directly passed to the DBLP API
+            - limit: int, the maximum number of search results to return, by default 10
+            - threshold: int, the threshold of the fuzzy ratio to filter the search results, by default 90
+            - allow_arxiv: bool, whether to allow arxiv papers in the search results, by default False
+            - allow_reject: bool, whether to allow rejected papers in the search results, by default False
+            - dataset_dir: str, folder path to the dataset, by default os.path.join(DATASET_DIR, 'airqa')
+    @return: metadata dict
+        see doc in `get_ai_research_metadata`
+    """
+    assert os.environ['OPENREVIEW_USERNAME'] and os.environ['OPENREVIEW_PASSWORD'], "Please set the environment variable `OPENREVIEW_USERNAME` and `OPENREVIEW_PASSWORD` first before using the OpenReview API."
+    threshold, allow_arxiv, allow_reject = kwargs.get('threshold', 90), kwargs.get('allow_arxiv', False), kwargs.get('allow_reject', False)
+    
+    def search_note(api_v2: bool = True) -> Dict[str, Any]:
+        if api_v2:
+            OPENREVIEW_BASE_URL_V2 = 'https://api2.openreview.net' # use the APIv2
+            client: OpenReviewClient = OpenReviewClient(baseurl=OPENREVIEW_BASE_URL_V2)
+        else:
+            OPENREVIEW_BASE_URL = 'https://api.openreview.net'
+            client: openreview.Client = openreview.Client(baseurl=OPENREVIEW_BASE_URL)
+        # use Elastic search, fast but not accurate
+        notes: List[Note] = client.search_notes(term=title, content='title', source='papers', limit=kwargs.get('limit', 10))
+        notes: List[Note] = [n.to_json() for n in notes]
+        filtered_notes: List[Note] = []
+        for data in notes:
+            # api_v2: type(data['content']['venue']) == dict -> {'value': 'xxx'}
+            # api_v1: data['content']['venue'] == str
+            venue = data['content'].get('venue', None)
+            if not venue: continue
+            venue = venue['value'] if type(venue) == dict else venue
+            venueid = data['content'].get('venueid', None)
+            if not venueid: continue
+            venueid = venueid['value'] if type(venueid) == dict else venueid
+            pdf_url = data['content'].get('pdf', None)
+            if not pdf_url: continue # pdf link is not available, skip
+
+            # skip rejected papers
+            if (not allow_reject) and ('submitted to' in venue.lower() or 'reject' in venue.lower()):
+                continue
+
+            # skip arxiv papers
+            is_arxiv = venue.startswith('CoRR ') or '/CORR/' in venueid.upper()
+            if is_arxiv and not allow_arxiv: continue
+
+            # normalize the JSON format (remove the {'value': xxx} wrapper)
+            for k in data['content']:
+                if type(data['content'][k]) == dict and 'value' in data['content'][k]:
+                    data['content'][k] = data['content'][k]['value']
+
+            fuzzy_score = fuzz.ratio(title, data['content']['title'])
+            if fuzzy_score >= threshold:
+                filtered_notes.append((fuzzy_score, data, not is_arxiv))
+
+        if len(filtered_notes) == 0: return None, None, None
+        # only return the top-ranked one
+        note = sorted(filtered_notes, key=lambda x: (x[0], x[2]), reverse=True)[0]
+        return note
+
+    # select the most likely Note via title fuzzy matching
+    _, note, non_arxiv = search_note(api_v2=True)
+    if note is None:
+        _, note, non_arxiv = search_note(api_v2=False)
+        if note is None: return None
+
+    # process each field in the found Note
+    content = note['content']
+    # 0. download PDF link must be available
+    pdf_url = content['pdf']
+    if str(pdf_url).startswith('/pdf'): pdf_url = 'https://openreview.net' + pdf_url
+    assert pdf_url is not None and 'pdf' in str(pdf_url).lower(), f"PDF link is not available in Note: {note}."
+
+    # 1. get the year
+    def get_year(venueid, venue) -> int:
+        match = re.search(r'/(\d{4})($|/)', venueid)
+        if match:
+            return int(match.group(1))
+        match = re.search(r'\s(\d{4})($|\s)', venue)
+        if match:
+            return int(match.group(1))
+        raise ValueError(f'Year information not found in Note: {note}')
+
+    venue, venueid = content['venue'], content['venueid']
+    year = get_year(venueid, venue)
+
+    # 2. get the conference abbrev
+    def get_conference(venueid, venue):
+        match = re.search(r'^(.*?)\.cc/\d{4}/', venueid)
+        if match:
+            conference_abbrev = match.group(1)
+            _, conference_full = get_ccf_conference_name(conference_abbrev=conference_abbrev)
+            if conference_full == conference_abbrev:
+                conference_full = venue
+            return match.group(1), conference_full
+        raise ValueError(f"Invalid venueid: {venueid}")
+
+    conference_abbrev, conference_full = get_conference(venueid, venue)
+    if not non_arxiv:
+        conference_abbrev, conference_full = 'arxiv', 'ArXiv'
+        subfolder = f'arxiv{year}'
+    else:
+        if re.match(r'^[\da-zA-Z]+$', conference_abbrev):
+            subfolder = f'{conference_abbrev.lower()}{year}'
+        else:
+            subfolder = 'uncategorized'
+
+    paper_uuid = get_airqa_paper_uuid(title, subfolder)
+    dataset_dir = kwargs.get('dataset_dir', os.path.join(DATASET_DIR, 'airqa'))
+    
+    def get_tags(content) -> Optional[List[str]]:
+        tags = content.get('keywords', None)
+        if not tags: return None
+        if type(tags) == list and len(tags) == 1: tags = tags[0] # convert to string
+        if type(tags) == str:
+            if ';' in tags: tags = [t.strip() for t in tags.split(';')]
+            elif ',' in tags: tags = [t.strip() for t in tags.split(',')]
+            else: tags = [tags]
+        return tags
+
+    metadata = {
+        "uuid": paper_uuid,
+        "title": title,
+        "conference": conference_abbrev,
+        "conference_full": conference_full,
+        "volume": venue,
+        "year": year,
+        "authors": content.get('authors', None),
+        "pdf_url": pdf_url,
+        "pdf_path": os.path.join(dataset_dir, 'papers', subfolder, f"{paper_uuid}.pdf"),
+        "bibtex": content.get('_bibtex', ''),
+        "abstract": content.get('abstract', None),
+        "tldr": content.get('TLDR', None),
+        "tags": get_tags(content) # may need to split by ; or ,
+    }
+    return metadata
+
+
 def add_ai_research_metadata(
         metadata: Dict[str, Any],
         model: str = 'gpt-4o-mini',
@@ -759,7 +904,7 @@ def get_ai_research_metadata(
         pdf_path: str,
         model: str = 'gpt-4o-mini',
         temperature: float = 0.0,
-        api_tools: List[str] = ['arxiv', 'dblp', 'semantic-scholar'],
+        api_tools: List[str] = ['openreview', 'dblp', 'arxiv', 'semantic-scholar'],
         write_to_json: bool = True,
         title_lines: int = 20,
         volume_lines: int = 10,
