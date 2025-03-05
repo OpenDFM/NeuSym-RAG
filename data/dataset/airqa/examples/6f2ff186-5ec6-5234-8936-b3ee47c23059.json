@@ -1,0 +1,34 @@
+{
+    "uuid": "6f2ff186-5ec6-5234-8936-b3ee47c23059",
+    "question": "According to the paper that proposes ExpressivityArena, what's the notable example that uses human feedback to manually evaluate the model? In that arena, which model has a 0.72 win-rate against llama-2-7b-chat at the time when that paper was written?",
+    "answer_format": "Your answer should be a Python list of 2 strings, the name of the example, and the name of the model as given in the paper.",
+    "tags": [
+        "multiple",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "3c2d2b4e-b5d2-569f-ae9f-96d8ff6247de"
+    ],
+    "reference_pdf": [
+        "ebbedf80-733c-5a43-ba59-855bcfacda12"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Chatbot Arena",
+                "gpt-3.5-turbo-0613"
+            ],
+            "ignore_order": false,
+            "lowercase": true,
+            "ignore_blank": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

@@ -1,0 +1,41 @@
+{
+    "uuid": "1d245f04-b2e6-56a5-b835-ca02401943aa",
+    "question": "According to the EBD paper, which model's forward process is based on the PDE $\\frac{\\partial}{\\partial t} \\mathbf{x}(i,j,t) = \\Delta \\mathbf{x}(i,j,t)$? In the paper that proposes that model, how is $\\tilde{u}$ calculated?",
+    "answer_format": "Your answer should be a Python list of 2 elements. The first is the abbreviation of model, the second is a string, the formula in LaTeX format.",
+    "tags": [
+        "multiple",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "03f5c8ae-47ce-5312-b368-7fe6a4088e58"
+    ],
+    "reference_pdf": [
+        "01bde459-5e5e-5471-949d-cd6204a4ed64"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_complex_math_formula_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "IHDM",
+                    "lowercase": true
+                },
+                {
+                    "formulas": "\\tilde{u} = V^T u = \\text{DCT}(u)",
+                    "question": "In the paper that proposes IHDM, how is $\\tilde{u}$ calculated?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

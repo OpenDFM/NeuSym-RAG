@@ -1,0 +1,34 @@
+{
+    "uuid": "359cb240-d14a-55b3-a0d9-2652c02ac278",
+    "question": "In the dataset listed in the paper \"A Benchmark Dataset for Event-Guided Human Pose Estimation and Tracking in Extreme Conditions0\", that has the number of boxes closest to EHPT-XC, what are the two largest categories under daytime roadscene?",
+    "answer_format": "Your answer should be a Python list of the names of the two categories.",
+    "tags": [
+        "multiple",
+        "table",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "2faea412-dbba-52ba-8fa0-84d4a5ee85e9"
+    ],
+    "reference_pdf": [
+        "6caa8f4a-5809-5352-8868-05aab6f361b1"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Building",
+                "Shrub"
+            ],
+            "ignore_order": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
