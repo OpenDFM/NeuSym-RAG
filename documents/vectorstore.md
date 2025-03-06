@@ -19,7 +19,7 @@ data/vectorstore/
 │   └── openreview_papers.db
 ├── milvus/ # for Milvus launched from docker containers
 │   └──  standalone_embed.sh
-├── filter_rules.json # filter rules for retrieval
+├── filter_rules.json # filter rules when searching the VS
 ├── vectorstore_schema.json # shared vectorstore schema
 └── vectorstore_schema.json.template # template for vectorstore schema
 ```
@@ -67,7 +67,7 @@ Each inserted data entry is in the format below:
     "column_name": "text_content",
     "primary_key": "ff030b3f-2fe7-5d66-9260-b5aa1cff1ad6", // this is the primary key in relational DB for the current text content
     "pdf_id": "aa071344-e514-52f9-b9cf-9bea681a68c2", // quickly filter search space and check conflict
-    "page_number": 1 // optional, quickly filter search space
+    "page_number": 1 // optional, quickly filter search space, default to -1
 }
 ```
 
@@ -76,10 +76,10 @@ Each inserted data entry is in the format below:
 
 This vectorstore schema `data/vectorstore/vectorstore_schema.json` is shared across all vectorstores. It defines:
 - All **collection** names and their encoding modalities, embedding types, and embedding model names;
-    - **💥 NOTE:** The naming convention for a VS collection is lowercased `${modality}_${embed_type}_${embed_model}`, e.g., `text_sentence_transformers_all_minilm_l6_v2`. And all non-digit/letter/underscore characters are replaced with an underscore `_`;
-    - All available `${embed_type}` includes `['sentence_transformers', 'bge', 'instructor', 'mgte', 'bm25', 'splade', 'clip']`, see [official doc](https://milvus.io/docs/embeddings.md) for reference. We also add a special [`ClipEmbeddingFunction`](../utils/embedding_utils.py) for image embedding type.
+    - **💥 NOTE:** The naming convention for a VS collection is lowercased `${modality}_${embed_type}_${embed_model}`, e.g., `text_sentence_transformers_all_minilm_l6_v2`. All non-digit/letter/underscore chars are replaced with an underscore `_`;
+    - All available `${embed_type}` includes `['sentence_transformers', 'bge', 'instructor', 'mgte', 'bm25', 'splade', 'clip']`, see [official doc](https://milvus.io/docs/embeddings.md) for reference. We also add a special [`ClipEmbeddingFunction`](../utils/embedding_utils.py#ClipEmbeddingFunction) for image embedding type.
     - Cached embedding models should be pre-downloaded to the `.cache/` folder;
-- The **fields** for each collection which compose the [inserted data entry](#inserted-data-entries) afore-mentioned;
+- The **fields** for each collection which compose the [inserted data entry](#inserted-data-entries) aforementioned;
     - Pay attention to the `vector` field especially the dimension and optional parameters for ARRAY types;
     - Refer to [Manage Schema](https://milvus.io/docs/v2.4.x/schema.md) for field definition;
 - The **indexes** for each collection which help to speed up the search and define the metric type for vectors.
@@ -120,30 +120,32 @@ build_bm25_corpus(paper_dir='data/dataset/airqa/papers/', save_path='data/vector
 
 ### Running scripts
 
-- We include the following embedding modality/type/model: 
+- We include the following encoding modality / embedding type / embedding model: 
     - `('text', 'bm25', 'en')`
     - `('text', 'sentence_transformers', 'all-MiniLM-L6-v2')`
     - `('text', 'sentence_transformers', 'BAAI/bge-large-en-v1.5')`
     - `('image', 'clip', 'clip-vit-base-patch32')`
 - Optional input arguments:
-    - `‑‑from_scratch`: add this argument if the VS is not created yet or we want to re-construct it;
+    - `‑‑from_scratch`: add this argument if the VS is not created yet or you want to re-construct it;
     - `‑‑pdf_path`: str, optional. If not specified, encode all database content into the vectorstore;
-    - `‑‑on_conflict [ignore|replace|raise]`: by default, `ignore`. Check whether the any data entry in the VS already has the same `pdf_id`, and take the corresponding action like that in DuckDB `ON CONFLICT` clause.
+    - `‑‑on_conflict [ignore|replace|raise]`: by default, `ignore`. Check whether any data entry in the VS already has the same `pdf_id`, and take the corresponding action like that in DuckDB `ON CONFLICT` clause.
 - For Milvus launched from **standalone** `.db` file:
 ```sh
 vectorstore=ai_research # emnlp_papers, openreview_papers
-python utils/vectorstore_utils.py --vectorstore ${vectorstore} --launch_method standalone --on_conflict ignore --from_scratch
+python utils/vectorstore_utils.py --vectorstore ${vectorstore} --launch_method standalone \
+    --on_conflict ignore --from_scratch
 ```
 - For Milvus launched from **docker** containers:
 ```sh
 vectorstore=ai_research # emnlp_papers, openreview_papers
-python utils/vectorstore_utils.py --vectorstore ${vectorstore} --launch_method docker --docker_uri http://127.0.0.1:19530 --on_conflict ignore --from_scratch
+python utils/vectorstore_utils.py --vectorstore ${vectorstore} --launch_method docker \
+    --docker_uri http://127.0.0.1:19530 --on_conflict ignore --from_scratch
 ```
 
 
 ## The Complete Data Population Process
 
-- The complete data population process including both **Multi-view PDF Parsing** and **Multi-modal Vector Encoding**.
+- The complete data population process includes both **Multi-view PDF Parsing** and **Multi-modal Vector Encoding**.
 - Either `‑‑database` or `‑‑vectorstore` should be specified. If both are set, they must be the same;
 - The input argument `‑‑pdf_path` is exactly the same as that in [database population](database.md#️-quick-start).
 - The running script is:
@@ -153,8 +155,12 @@ dataset=airqa # m3sciqa, scidqa
 vectorstore=ai_research # emnlp_papers, openreview_papers
 
 # standalone mode
-python utils/data_population.py --database $vectorstore --vectorstore $vectorstore --pdf_path data/dataset/$dataset/uuids.json --launch_method standalone --on_conflict ignore --from_scratch
+python utils/data_population.py --database $vectorstore --vectorstore $vectorstore \
+    --pdf_path data/dataset/$dataset/uuids.json --launch_method standalone \
+    --on_conflict ignore --from_scratch
 
 # or, docker mode
-python utils/data_population.py --database $vectorstore --vectorstore $vectorstore --pdf_path data/dataset/$dataset/uuids.json --launch_method docker --docker_uri http://127.0.0.1:19530 --on_conflict ignore --from_scratch
+python utils/data_population.py --database $vectorstore --vectorstore $vectorstore \
+    --pdf_path data/dataset/$dataset/uuids.json --launch_method docker --docker_uri http://127.0.0.1:19530 \
+    --on_conflict ignore --from_scratch
 ```
