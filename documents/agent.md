@@ -189,7 +189,7 @@ For all arguments below, they apply to all agent baselines (see [`utils/hyperpar
 | `‑‑column_name`       | text_content  | The column name (which chunking view) to retrieve. For agent method `classic_rag` and `iterative_classic_rag`. |
 | `‑‑limit`             | 4             | The number of chunks to retrieve from the VS. Only used for agent method `classic_rag`. |
 | `‑‑graphrag_method`   | local         | The retrieval method for agent method `two_stage_graph_rag` and `iterative_graph_rag`. Choices: `['local', 'global']`. |
-| `--graphrag_embed`    | text-embedding-3-small | The embedding model name for Graph-RAG methods `two_stage_graph_rag` and `iterative_graph_rag`. |
+| `‑‑graphrag_embed`    | text-embedding-3-small | The embedding model name for Graph-RAG methods `two_stage_graph_rag` and `iterative_graph_rag`. |
 
 
 ### Prompt Arguments

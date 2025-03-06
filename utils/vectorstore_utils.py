@@ -425,7 +425,9 @@ def encode_database_content(
                     if not db_schema.is_encodable(table_name, column_name, modality): continue
 
                     # check conflict if batch_pdf_id is specified, i.e., whether PDF content has been encoded or not
-                    check_vectorstore_conflict(vs_conn, collection_name, batch_pdf_ids, on_conflict=on_conflict)
+                    batch_pdf_ids = check_vectorstore_conflict(vs_conn, collection_name, batch_pdf_ids, on_conflict=on_conflict)
+
+                    if not batch_pdf_ids: continue
 
                     if verbose: logger.info(f"Extract cell values for table=`{table_name}`, column=`{column_name}` ...")
                     if len(batch_pdf_ids) > 1:
@@ -495,20 +497,35 @@ def check_vectorstore_conflict(
         on_conflict: str = 'ignore',
         pdf_field: str = 'pdf_id',
         batch_size: int = 128
-    ) -> None:
-    if on_conflict not in ['replace', 'raise'] or not pdf_ids: return
+    ) -> List[str]:
+    if not pdf_ids: return pdf_ids
     if type(pdf_ids) == str: pdf_ids = [pdf_ids]
 
+    def search_each_pdf_id(batch_ids: List[str]) -> List[str]:
+        tmp_pdf_ids = []
+        for pid in batch_ids:
+            filter_condition = f"{pdf_field} == '{str(pid)}'"
+            result = vs_conn.query(collection_name=collection_name, filter=filter_condition, limit=1)
+            if len(result) == 0:
+                tmp_pdf_ids.append(pid)
+        return tmp_pdf_ids
+
+    output_pdfs = []
     for start_idx in range(0, len(pdf_ids), batch_size):
-        batch_pdf_id_str = ', '.join([f"'{str(pid)}'" for pid in pdf_ids[start_idx:start_idx + batch_size]])
+        batch_ids = pdf_ids[start_idx:start_idx + batch_size]
+        batch_pdf_id_str = ', '.join([f"'{str(pid)}'" for pid in batch_ids])
         filter_condition = f"{pdf_field} in [{batch_pdf_id_str}]"
         if on_conflict == 'replace':
             vs_conn.delete(collection_name=collection_name, filter=filter_condition)
+        elif on_conflict == 'ignore':
+            result = vs_conn.query(collection_name=collection_name, filter=filter_condition, limit=1)
+            batch_ids = search_each_pdf_id(batch_ids) if len(result) > 0 else batch_ids
+            output_pdfs.extend(batch_ids)
         else:
-            result = vs_conn.query(collection_name=collection_name, filter=filter_condition)
+            result = vs_conn.query(collection_name=collection_name, filter=filter_condition, limit=1)
             if len(result) > 0:
-                raise ValueError(f"PDF id(s) in [{batch_pdf_id_str}] already exist in collection {collection_name}.")
-    return
+                raise ValueError(f"PDF id(s) in {search_each_pdf_id(batch_ids)} already exist in collection {collection_name}.")
+    return pdf_ids if on_conflict != 'ignore' else output_pdfs
 
 
 def get_pdf_ids_to_encode(pdf_path_or_id: str) -> List[str]:

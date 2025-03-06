@@ -40,7 +40,7 @@
     - [`sentence-transformers/all-MiniLM-L6-v2`](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
     - [`BAAI/bge-large-en-v1.5`](https://huggingface.co/BAAI/bge-large-en-v1.5)
     - [`openai/clip-vit-base-patch32`](https://huggingface.co/openai/clip-vit-base-patch32)
-    - For embedding model customization, refer to [vectorstore doc](./documents/vectorstore.md)
+    - For embedding model customization, refer to [vectorstore doc](./documents/vectorstore.md#vectorstore-schema-format)
     ```sh
     mkdir -p .cache/ && cd .cache/
     git clone https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
@@ -211,7 +211,7 @@ We also provide the scripts to quickly **parse and encode new paper PDFs into ex
 
 2. **Multimodal Vector Encoding:** Before vector encoding, please ensure that the PDF content has already been parsed into the corresponding DB, and the metadata `${uuid}.json` and raw file `${uuid}.pdf` already exist under the `metadata/` and `papers/` folders. Attention that:
     - **We only accept PDF UUIDs as the input PDF(s)**
-    - Please ensure the embedding models exist under `.cache/` and the corresponding collection name exactly follows our [VS naming convention](./documents/vectorstore.md) defined in the [vectorstore schema](./data/vectorstore/vectorstore_schema.json)
+    - Please ensure the embedding models exist under `.cache/` and the corresponding collection name exactly follows our [VS naming convention](./documents/vectorstore.md#vectorstore-schema-format) defined in the [vectorstore schema](./data/vectorstore/vectorstore_schema.json)
     - Please ensure that the `bm25.json` file exists under the path `data/vectorstore/${vectorstore}/bm25.json` if you want to use BM25 collection. Otherwise, create the [BM25 vocabulary](./documents/vectorstore.md#build-bm25-vocabulary) firstly
     - The default VS is launched from `data/vectorstore/${vectorstore}/${vectorstore}.db` (standalone mode). This file path can be specified via args `--vectorstore_path /path/to/vs.db`
     - The default launch method for VS is `standalone` unless you specify args like `--launch_method docker` and `--docker_uri http://127.0.0.1:19530`
@@ -237,9 +237,7 @@ We also provide the scripts to quickly **parse and encode new paper PDFs into ex
     python utils/data_population.py --database ai_researh --vectorstore ai_research --pdf_path pdfs.json --config_path configs/ai_research_config.json
     ```
 
-> **💡 TIP:**
-> - If you want to accelerate or parallelize the parsing and encoding process, please refer to ....
-> - If you want to customize your own papers collection, database, and vectorstore, please refer to [customization doc](./documents/customization.md).
+> **💡 TIP:** If you want to accelerate the PDF parsing process given abundant papers, please refer to [Database Population Acceleration](./documents/database.md#parallel-processing-for-acceleration).
 
 
 ## 📊 Experiment Results
@@ -342,11 +340,10 @@ Fine-grained documents in this project are detailed in folder `documents/`. Here
 | :--- | :--- |
 | [📓 `documents/dataset.md`](documents/dataset.md)         | Dataset folder structure, statistics, download links, and utility functions |
 | [📔 `documents/airqa_format.md`](documents/airqa_format.md) | Data format and paper metadata format. |
-| [📕 `documents/database.md`](documents/database.md)       |  |
-| [📗 `documents/vectorstore.md`](documents/vectorstore.md) |  |
+| [📕 `documents/database.md`](documents/database.md)       | Database folder structure, database population framework, database schema format and parallel processing tricks. |
+| [📗 `documents/vectorstore.md`](documents/vectorstore.md) | Vectorstore folder structure, JSON formats of inserted data entries and the vectorstore schema, vector encoding framework, and the complate data population process. |
 | [📘 `documents/agent.md`](documents/agent.md)             | Details on different agent methods, as well as the running scripts and arguments. |
-| [📙 `documents/customization.md`](documents/customization.md) |  |
-| [📒 `documents/third_party_tools.md`](documents/third_party_tools.md) | Scholar APIs to get the paper metadata and MinerU library for PDF parsing. |
+| [📙 `documents/third_party_tools.md`](documents/third_party_tools.md) | Scholar APIs to get the paper metadata and MinerU library for PDF parsing. |
 
 
 ## ✍🏻 Citation
