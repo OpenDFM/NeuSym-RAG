@@ -48,41 +48,39 @@
     git clone https://huggingface.co/openai/clip-vit-base-patch32
     ... # download other vector encoding models if needed
     ```
-3. Download the dataset-related files into the folder `data/dataset` 👉🏻 [HuggingFace](todo) (to be released after anonymous review)
+3. Download the dataset-related files into the folder `data/dataset` 👉🏻 [HuggingFace](todo) (to be released)
     - `AirQA-Real`: this work, including the `metadata/`, `papers/`, and `processed_data/`
     - [`M3SciQA`](https://github.com/yale-nlp/M3SciQA): including the `metadata/`, `papers/`, `images/`, and `processed_data/`
     - [`SciDQA`](https://github.com/yale-nlp/SciDQA): including the `metadata/`, `papers/`, and `processed_data/`
-  
-    <details>
-    <summary>Organize them into the following folder structure 👇🏻</summary>
+
+    <details><summary>Organize them into the following folder structure 👇🏻</summary>
 
       ```
       data/dataset/
       ├── airqa/
-      │   ├── ccf_catalog.csv
       │   ├── data_format.json.template
       │   ├── metadata/ # metadata for all PDFs
       |   |   |   ├── aa0e0451-f10a-539b-9c6c-0be53800b94f.json
-      |   |   |   ├── ... # more metadata for PDFs in ACL 2023
+      |   |   |   └── ... # more metadata for PDFs in ACL 2023
       │   ├── papers/
       |   |   ├── acl2023/
       |   |   |   ├── aa0e0451-f10a-539b-9c6c-0be53800b94f.pdf
-      |   |   |   ├── ... # more PDFs in ACL 2023
+      |   |   |   └── ... # more PDFs in ACL 2023
       |   |   ├── iclr2024/
       |   |   |   ├── aa071344-e514-52f9-b9cf-9bea681a68c2.pdf
-      |   |   |   ├── ... # more PDFs in ICLR 2024
-      |   |   ├── ... # more conference + year subfolders
+      |   |   |   └── ... # more PDFs in ICLR 2024
+      |   |   └── ... # more conference + year subfolders
       │   ├── processed_data/
       |   |   |   ├── aa0e0451-f10a-539b-9c6c-0be53800b94f.json
-      |   |   |   ├── ... # more processed data for PDFs in ACL 2023
+      |   |   |   └── ... # more processed data for PDFs in ACL 2023
       │   ├── test_data_553.jsonl # one line for each example
       │   ├── test_data_ablation.jsonl
-      │   ├── uuids.json # uuids for all PDFs
+      │   └── uuids.json # uuids for all PDFs
       ├── m3sciqa/
       │   ├── images/
       |   |   ├── 2310.04988/
-      |   |   |   ├── HVI_figure.png
-      |   |   ├── ... # more image subfolders
+      |   |   |   └── HVI_figure.png
+      |   |   └── ... # more image subfolders
       │   ├── metadata/
       │   ├── papers/
       │   ├── processed_data/
@@ -97,7 +95,8 @@
       │   ├── test_data_775.jsonl
       │   ├── mappings.json
       │   └── uuids.json
-      └── test_pdf.pdf
+      |── test_pdf.pdf
+      └── ccf_catalog.csv
       ```
 
     </details>
@@ -119,7 +118,7 @@
       │   ├── ai_research/
       │   │   ├── ai_research.duckdb
       │   │   ├── ai_research.json
-      │   │   ├── ai_research.sql
+      │   │   └── ai_research.sql
       │   ├── emnlp_papers/
       │   │   ├── emnlp_papers.duckdb
       │   │   ├── emnlp_papers.json
@@ -130,19 +129,19 @@
       │   │   └── openreview_papers.sql
       ├── vectorstore/
       │   ├── milvus/ # this universal folder is for Milvus launched via Docker containers
-      │   │   ├── standalone_embed.sh
+      │   │   └── standalone_embed.sh
       │   ├── ai_research/ # other folders are for Milvus launched standalone xxx.db
       │   │   ├── ai_research.db
-      │   │   ├── bm25.json
+      │   │   └── bm25.json
       │   ├── emnlp_papers/
       │   │   ├── emnlp_papers.db
-      │   │   ├── bm25.json
+      │   │   └── bm25.json
       │   ├── openreview_papers/
       │   │   ├── openreview_papers.db
-      │   │   ├── bm25.json
+      │   │   └── bm25.json
       │   ├── filter_rules.json
       │   ├── vectorstore_schema.json
-      │   ├── vectorstore_schema.json.template
+      │   └── vectorstore_schema.json.template
       ```
       
     </details>
@@ -335,44 +334,19 @@ python utils/eval_utils.py --gold data/dataset/airqa/test_data_553.jsonl --pred 
 ```
 
 
-
 ## 📚 Detailed Documents and Tutorials
 
 Fine-grained documents in this project are detailed in folder `documents/`. Here is the checklist:
 
 | Documents | Description |
 | :--- | :--- |
-| [📓 `documents/dataset.md`](documents/dataset.md)         |  |
-| [📔 `documents/airqa_format.md`](documents/airqa_format.md)   |  |
+| [📓 `documents/dataset.md`](documents/dataset.md)         | Dataset folder structure, statistics, download links, and utility functions |
+| [📔 `documents/airqa_format.md`](documents/airqa_format.md) | Data format and paper metadata format. |
 | [📕 `documents/database.md`](documents/database.md)       |  |
 | [📗 `documents/vectorstore.md`](documents/vectorstore.md) |  |
-| [📘 `documents/agent.md`](documents/agent.md)             |  |
+| [📘 `documents/agent.md`](documents/agent.md)             | Details on different agent methods, as well as the running scripts and arguments. |
 | [📙 `documents/customization.md`](documents/customization.md) |  |
-| [📒 `documents/third_party_tools.md`](documents/third_party_tools.md) |  |
-
-
-- [`documents/dataset.md`](documents/dataset.md):
-  - The source of the datasets we use in this project;
-  - Where to download the datasets and resources;
-  - How to prepare the data by yourself;
-- [`documents/database.md`](documents/database.md):
-  - Folder structure of `data/database/`;
-  - How to define database schema and its format;
-  - How to fill in database content with generic Python class `DatabasePopulation` and module `utils.functions`;
-  - Scripts of creating database schema and populating database content.
-- [`documents/vectorstore.md`](documents/vectorstore.md):
-  - Folder structure of `data/vectorstore/`;
-  - How to launch the Milvus vector database;
-  - How to obtain the encoded vectors;
-  - Scripts on filling in the vectorstore.
-- [`documents/agent.md`](documents/agent.md):
-  - Folder structure and different sub-modules of `agents`;
-  - Different agent baselines and running scripts;
-  - The checklist of optional arguments.
-- [`documents/customization.md`](documents/customization.md):
-  - How to 
-- [`documents/third_party.md`](documents/third_party_tools.md)
-  - How to install and use some third-party tools
+| [📒 `documents/third_party_tools.md`](documents/third_party_tools.md) | Scholar APIs to get the paper metadata and MinerU library for PDF parsing. |
 
 
 ## ✍🏻 Citation

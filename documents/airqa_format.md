@@ -1,30 +1,6 @@
-## AirQA Benchmark
+# Data Format and Paper Metadata Format
 
-### Folder Structure
-
-```txt
-- data/dataset/airqa/ # root folder
-    - test_data.jsonl # JSON line file where each line represents one test data
-    - data_format.json.template # template file for each data point
-    - papers/ # stores all PDF files of papers, organized by lowercase {conference}{year} sub-folder and renamed by paper UUIDs
-        - acl2024/
-            - 0a1e5410-f9f1-5877-ae3a-151c214762e1.pdf
-            - ...
-        - acl2023/
-            - ...
-        ...
-    - processed_data/ # folder used to store pre-processed result for each PDF file, e.g., chunked sections or LLM-generated page summaries
-        - 0a1e5410-f9f1-5877-ae3a-151c214762e1.json
-        - ...
-    - metadata/ # folder used to store paper metadata
-        - 0a1e5410-f9f1-5877-ae3a-151c214762e1.json
-        - ...
-    - examples/ # during annotation, each data is stored as a separate file ${question_uuid}.json following `data_format.json.template`
-        - 0dadc5c6-a5f7-572b-9a20-fc9b907eddb9.json
-        - ...
-```
-
-### Data Format of AirQA
+## Data Format of AirQA
 
 ```json
 {
@@ -45,10 +21,8 @@
     "evaluator": {
         "eval_func": "function_name_to_call", // all eval functions are defined under `evaluation/` folder
         "eval_kwargs": {
-            "scoring_points": [
-                "1.score point1",
-                "2.score point1"
-            ]
+            "gold": "ground truth answer",
+            "lowercase": true
         } // the gold answer or how to get the gold answer should be included in `eval_kwargs` dict. Other optional keyword arguments can be used for customization and function re-use, e.g., `lowercase=True` and `threshold=0.95`.
     }, // A complex dict specifying the evaluation function and its parameters. The first parameter of the `eval_func` must be LLM predicted string.
     "annotator": "human" // whether annotated by human, machine, or adapted from other datasets
@@ -56,11 +30,11 @@
 ```
 
 
-### Tags of AirQA
+## Tags of AirQA
 
 This section describes different question categories (or tags) for classification.
 
-#### Category 1: Task Goals
+### Category 1: Task Goals
 
 - `single`: ask technical details of one single paper, e.g.,
     - list 3 major contributions of this work
@@ -70,7 +44,7 @@ This section describes different question categories (or tags) for classificatio
     - papers published by a specific author or institute
 
 
-#### Category 2: Key Capabilities
+### Category 2: Key Capabilities
 
 - `text`: Q&A that focuses on text understanding and reasoning
 - `table`: Q&A that requires identifying tables and their contents
@@ -79,24 +53,35 @@ This section describes different question categories (or tags) for classificatio
 - `metadata`: metadata includes authors, institutes, e-mails, conferences, years and other information that does not appear in the main text (e.g., page header and footer)
 
 
-#### Category 3: Evaluation Types
+### Category 3: Evaluation Types
 
 - `subjective`: answers that require LLM or model-based evaluation
-- `objective`: answers that can be evaluated with objective metrics defined in [`evaluation/`](../evaluation/__init__.py)
+- `objective`: answers that can be evaluated with objective metrics defined in the module [`evaluation/`](../evaluation/__init__.py)
 
 
-### Paper Metadata Format
+## Paper Metadata Format
 
-This is also the first function that will be invoked in the PDF pipeline function when populating database content.
-```python
+The first function [`get_ai_research_metadata`](../utils/functions/ai_research_metadata.py#get_ai_research_metadata) that will be invoked in the pipeline function when parsing PDF aims to get the metadata of the paper.
+
+```py
 from utils.functions import get_ai_research_metadata
-output_json = get_ai_research_metadata(input_pdf)
+
+output_json = get_ai_research_metadata(
+    title = "Attention is all you need",
+    model = 'gpt-4o-mini',
+    temperature = 0.1,
+    api_tools = ['openreview', 'dblp', 'arxiv', 'semantic-scholar'],
+    write_to_json = True, # the metadata will be written to a json file under dataset_dir/metadata/
+    title_lines = 20,
+    tldr_max_length = 80,
+    tag_number = 5,
+    dataset_dir = 'data/dataset/airqa',
+    threshold = 95,
+    limit = 10
+)
 ```
 
-- input_pdf:
-    - pdf_path/download_url/paper_title/paper_uuid (str)
-- output_json:
-    - metadata_dict (Dict[str, Any]): the output dict has the following fields
+The template of the output metadata is:
 
 ```json
 {
