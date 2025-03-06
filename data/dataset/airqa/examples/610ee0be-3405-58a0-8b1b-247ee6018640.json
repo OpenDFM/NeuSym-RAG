@@ -1,0 +1,37 @@
+{
+    "uuid": "610ee0be-3405-58a0-8b1b-247ee6018640",
+    "question": "The article \"DISTINGUISHED IN UNIFORM: SELF-ATTENTION VS. VIRTUAL NODES\" employed certain datasets from the recent LRGB collection paper. Please specify which benchmarking datasets included in that paper were not utilized in this study.",
+    "answer_format": "Your answer should be a python list of strings, e.g., [\"dataset1\", \"dataset2\"].",
+    "tags": [
+        "multiple",
+        "objective",
+        "text"
+    ],
+    "anchor_pdf": [
+        "709faba9-ce93-5d4d-a1d5-ce25e9bad2ba"
+    ],
+    "reference_pdf": [
+        "03b8c99e-6f8a-5ceb-908f-8a46e2977091"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the paper proposing the recent LRGB collection mentioned in the article \"DISTINGUISHED IN UNIFORM: SELF-ATTENTION VS. VIRTUAL NODES\".",
+        "Identify the benchmarking datasets included in the recent LRGB collection paper.",
+        "Identify the benchmarking datasets utilized in the article \"DISTINGUISHED IN UNIFORM: SELF-ATTENTION VS. VIRTUAL NODES\".",
+        "List the benchmarking datasets included in the LRGB collection paper but not utilized in the article."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "PCQM-Contact"
+            ],
+            "lowercase": true,
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
