@@ -29,7 +29,7 @@ data/vectorstore/
 </details>
 
 
-## Launch Milvus
+## 🪛 Launch Milvus
 
 > **💡 NOTE:** For Windows OS, please enable WSL 2 backend, see [Software Requirements](https://milvus.io/docs/prerequisite-docker.md#Software-requirements).
 
@@ -50,11 +50,11 @@ bash standalone_embed.sh start
 # bash data/vectorstore/milvus/standalone_embed.sh stop # stop the service
 ```
 
-## Inserted Data Entries
+## 📋 Inserted Data Entries
 
 Each inserted data entry is in the format below:
 - The fields `id` and `vector` are compulsory fields, and the primary key field `id` is auto incremented when new data is inserted;
-- The field `text` is fixed for cells whose column is `"encodable": "text"`, while `bbox` for cells whose column is `encodable: "image"` according to the [database schema](database.md#database-schema-format);
+- The field `text` is fixed for cells whose column is `"encodable": "text"`, while `bbox` for cells whose column is `encodable: "image"` according to the [database schema](database.md#-database-schema-format);
     - For the sake of space, we do not store the real text content, and use the triple (table_name, column_name, primary_key) to recover it from the database on-the-fly;
     - For image modality, the field `bbox` is an array of 4 integers `[x0, y0, width, height]`;
 - The fields (`table_name`, `column_name`, `primary_key`) can build a one-to-one mapping between each encodable cell value in the database and each data entry in the vectorstore;
@@ -74,14 +74,14 @@ Each inserted data entry is in the format below:
 ```
 
 
-## Vectorstore Schema Format
+## 📜 Vectorstore Schema Format
 
 This vectorstore schema `data/vectorstore/vectorstore_schema.json` is shared across all vectorstores. It defines:
 - All **collection** names and their encoding modalities, embedding types, and embedding model names;
     - **💥 NOTE:** The naming convention for a VS collection is lowercased `${modality}_${embed_type}_${embed_model}`, e.g., `text_sentence_transformers_all_minilm_l6_v2`. All non-digit/letter/underscore chars are replaced with an underscore `_`;
     - All available `${embed_type}` includes `['sentence_transformers', 'bge', 'instructor', 'mgte', 'bm25', 'splade', 'clip']`, see [official doc](https://milvus.io/docs/embeddings.md) for reference. We also add a special [`ClipEmbeddingFunction`](../utils/embedding_utils.py#ClipEmbeddingFunction) for image embedding type.
     - Cached embedding models should be pre-downloaded to the `.cache/` folder;
-- The **fields** for each collection which compose the [inserted data entry](#inserted-data-entries) aforementioned;
+- The **fields** for each collection which compose the [inserted data entry](#-inserted-data-entries) aforementioned;
     - Pay attention to the `vector` field especially the dimension and optional parameters for ARRAY types;
     - Refer to [Manage Schema](https://milvus.io/docs/v2.4.x/schema.md) for field definition;
 - The **indexes** for each collection which help to speed up the search and define the metric type for vectors.
@@ -89,7 +89,7 @@ This vectorstore schema `data/vectorstore/vectorstore_schema.json` is shared acr
 - Check our [`vectorstore_schema.json.template`](../data/vectorstore/vectorstore_schema.json.template) about the definition of vectorstore schema.
 
 
-## Build BM25 Vocabulary
+## 📚 Build BM25 Vocabulary
 
 The Python script below aims to build the BM25 vocabulary over the entire paper corpus and generate the `bm25.json` file under the `data/vectorstore/${vectorstore}/` directory. Take the `airqa` dataset and the `ai_research` vectorstore as an example:
 ```py
@@ -99,11 +99,11 @@ build_bm25_corpus(paper_dir='data/dataset/airqa/papers/', save_path='data/vector
 ```
 
 
-## Write Vectors Into Vectorstore
+## 📝 Write Vectors Into Vectorstore
 
 > **❗️ NOTE:** Please ensure that, the parsed target PDF content has been populated into the database before vector encoding! Since all PDF content to encode is firstly retrieved from the corresponding relational database.
 
-### Download Embedding Models
+### 📥 Download Embedding Models
 
 - Please download the following embedding models into the `.cache/` folder:
     - [`sentence-transformers/all-MiniLM-L6-v2`](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
@@ -117,10 +117,10 @@ build_bm25_corpus(paper_dir='data/dataset/airqa/papers/', save_path='data/vector
 └── clip-vit-base-patch32
 ```
 
-> **💡 NOTE:** If you want to use another embedding model, please modify the [vetorstore schema](#vectorstore-schema-format) firstly to include one collection for it.
+> **💡 NOTE:** If you want to use another embedding model, please modify the [vetorstore schema](#-vectorstore-schema-format) firstly to include one collection for it.
 
 
-### Running scripts
+### 💻 Running scripts
 
 - We include the following encoding modality / embedding type / embedding model: 
     - `('text', 'bm25', 'en')`
@@ -145,7 +145,7 @@ python utils/vectorstore_utils.py --vectorstore ${vectorstore} --launch_method d
 ```
 
 
-## The Complete Data Population Process
+## ⚙️ The Complete Data Population Process
 
 - The complete data population process includes both **Multi-view PDF Parsing** and **Multi-modal Vector Encoding**.
 - Either `‑‑database` or `‑‑vectorstore` should be specified. If both are set, they must be the same;

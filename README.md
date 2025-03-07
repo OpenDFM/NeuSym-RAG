@@ -40,7 +40,7 @@
     - [`sentence-transformers/all-MiniLM-L6-v2`](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
     - [`BAAI/bge-large-en-v1.5`](https://huggingface.co/BAAI/bge-large-en-v1.5)
     - [`openai/clip-vit-base-patch32`](https://huggingface.co/openai/clip-vit-base-patch32)
-    - For embedding model customization, refer to [vectorstore doc](./documents/vectorstore.md#vectorstore-schema-format)
+    - For embedding model customization, refer to [vectorstore doc](./documents/vectorstore.md#-vectorstore-schema-format)
     ```sh
     mkdir -p .cache/ && cd .cache/
     git clone https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
@@ -182,7 +182,7 @@ We also provide the scripts to quickly **parse and encode new paper PDFs into ex
 
 1. **Multiview Document Parsing:** This step accepts various input types and store the parsed PDF content into the DuckDB database.
     - The default DB is `data/database/${database}/${database}.duckdb` unless you specify args `--database_path /path/to/db.duckdb`
-    - The config file `ai_research_config.json` defines the pipeline functions of parsing PDFs, which can be customized according to our pre-defined [rules](./documents/database.md#database-content-population)
+    - The config file `ai_research_config.json` defines the pipeline functions of parsing PDFs, which can be customized according to our pre-defined [rules](./documents/database.md#️-configuration-for-pdf-parsing)
     ```sh
     $ python utils/database_utils.py --database ai_research --config_path configs/ai_research_config.json --pdf_path ${pdf_to_parse}
     ```
@@ -211,8 +211,8 @@ We also provide the scripts to quickly **parse and encode new paper PDFs into ex
 
 2. **Multimodal Vector Encoding:** Before vector encoding, please ensure that the PDF content has already been parsed into the corresponding DB, and the metadata `${uuid}.json` and raw file `${uuid}.pdf` already exist under the `metadata/` and `papers/` folders. Attention that:
     - **We only accept PDF UUIDs as the input PDF(s)**
-    - Please ensure the embedding models exist under `.cache/` and the corresponding collection name exactly follows our [VS naming convention](./documents/vectorstore.md#vectorstore-schema-format) defined in the [vectorstore schema](./data/vectorstore/vectorstore_schema.json)
-    - Please ensure that the `bm25.json` file exists under the path `data/vectorstore/${vectorstore}/bm25.json` if you want to use BM25 collection. Otherwise, create the [BM25 vocabulary](./documents/vectorstore.md#build-bm25-vocabulary) firstly
+    - Please ensure the embedding models exist under `.cache/` and the corresponding collection name exactly follows our [VS naming convention](./documents/vectorstore.md#-vectorstore-schema-format) defined in the [vectorstore schema](./data/vectorstore/vectorstore_schema.json)
+    - Please ensure that the `bm25.json` file exists under the path `data/vectorstore/${vectorstore}/bm25.json` if you want to use BM25 collection. Otherwise, create the [BM25 vocabulary](./documents/vectorstore.md#-build-bm25-vocabulary) firstly
     - The default VS is launched from `data/vectorstore/${vectorstore}/${vectorstore}.db` (standalone mode). This file path can be specified via args `--vectorstore_path /path/to/vs.db`
     - The default launch method for VS is `standalone` unless you specify args like `--launch_method docker` and `--docker_uri http://127.0.0.1:19530`
     - If your OS is Windows, please follow the guide on [Run Milvus in Docker (Windows)](https://milvus.io/docs/v2.4.x/install_standalone-windows.md)
@@ -237,7 +237,7 @@ We also provide the scripts to quickly **parse and encode new paper PDFs into ex
     python utils/data_population.py --database ai_researh --vectorstore ai_research --pdf_path pdfs.json --config_path configs/ai_research_config.json
     ```
 
-> **💡 TIP:** If you want to accelerate the PDF parsing process given abundant papers, please refer to [Database Population Acceleration](./documents/database.md#parallel-processing-for-acceleration).
+> **💡 TIP:** If you want to accelerate the PDF parsing process given abundant papers, please refer to [Database Population Acceleration](./documents/database.md#-parallel-processing-for-acceleration).
 
 
 ## 📊 Experiment Results

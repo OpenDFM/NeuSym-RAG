@@ -58,7 +58,7 @@ $ python utils/database_utils.py --database ai_research --config_path configs/ai
 > **🤗 Note:** For all input types except PDF UUID, we will resort to real-time scholar APIs during PDF parsing to obtain the metadata of the paper (e.g., published conference and year, see [Scholar APIs](third_party_tools.md#scholar-apis) for available tools). Sadly, the scholar API may be unstable and fail to fetch the desired information. Therefore, **it is strongly recommended that we pre-fetch the metadata of each paper and use PDF UUID as input when processing abundant papers from an entire venue**.
 
 
-## Database Schema Format
+## 🔖 Database Schema Format
 
 - The database schema file `${database_name}.json` is structured into:
 ```json
@@ -123,7 +123,7 @@ $ python utils/database_utils.py --database ai_research --config_path configs/ai
 > **💡 Note:** we only support DuckDB currently. Other database types are left as future work.
 
 
-## Database Schema Visualization
+## 🏙️ Database Schema Visualization
 
 When we run the PDF parsing script above for the first time (`--from_scratch`), we will automatically get the `.sql` DDL file under the corresponding database folder. We can use free online tools (e.g., [DrawSQL](https://drawsql.app/diagrams) with database type `PostgreSQL`) to import this DDL file and obtain the visualization graph. The illustration of the `ai_research` database schema is:
 
@@ -134,7 +134,7 @@ When we run the PDF parsing script above for the first time (`--from_scratch`), 
 </p>
 
 
-## Configuration for PDF Parsing
+## 🛠️ Configuration for PDF Parsing
 
 To populate the database content given an input PDF, we may utilize various database- or domain-specific functions to extract certain cell values and then aggregate them into the database. We propose a [`DataPopulation`](../utils/data_population.py#DataPopulation) framework to formalize the workflow. The entrance for this class is the function `populate`:
 
