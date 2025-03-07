@@ -22,7 +22,7 @@
     "evaluator": {
         "eval_func": "eval_scoring_points_with_llm",
         "eval_kwargs": {
-            "scoring_points" : "The authors add a new token, the distillation token, to the initial embeddings. It interacts with other embeddings through self-attention, and is output by the network after the last layer. Its target objective is given by the distillation component of the loss. The distillation embedding allows the model to learn from the output of the teacher, as in a regular distillation, while remaining complementary to the class embedding.",
+            "scoring_points" : ["The authors add a new token, the distillation token, to the initial embeddings. It interacts with other embeddings through self-attention, and is output by the network after the last layer. Its target objective is given by the distillation component of the loss. The distillation embedding allows the model to learn from the output of the teacher, as in a regular distillation, while remaining complementary to the class embedding."],
             "question" : "What is the main innovation in the distillation methods employed by the models in the experimental section of the article \"BEYOND UNIFORM SCALING: EXPLORING DEPTH HETEROGENEITY IN NEURAL ARCHITECTURES\"?"
         }
     },

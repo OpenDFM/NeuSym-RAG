@@ -1,0 +1,30 @@
+{
+    "uuid": "2136d7bb-b74a-5176-8a1c-4b521df0603c",
+    "question": "What's the formula of Subset consistency accuracy?",
+    "answer_format": "Your answer should be a single latex formula extracted from the source paper of this metric.",
+    "tags": [
+        "multiple",
+        "formula",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "21b6b251-b7cd-5d0b-9dfd-19fe0e2efc1f"
+    ],
+    "reference_pdf": [
+        "eeb9e55e-68db-5b52-a5e7-e8a212c9e7d4"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": "\\operatorname{ACC}(I) \\stackrel{\text { def }}{ = } \\sum_{m_{1}, m_{2} \\in \\mathcal{M}} \frac{\\mathbb{1}\\left[\\left(m_{1}>_{I} m_{2}\right) \\Leftrightarrow\\left(a_{m_{1}}>a_{m_{2}}\right)\right]}{|\\mathcal{M}|^{2}}",
+            "question": "What's the formula of Subset consistency accuracy?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

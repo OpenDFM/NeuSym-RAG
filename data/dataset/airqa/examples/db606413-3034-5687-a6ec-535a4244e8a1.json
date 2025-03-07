@@ -1,0 +1,45 @@
+{
+    "uuid": "db606413-3034-5687-a6ec-535a4244e8a1",
+    "question": "For Zero-shot performance on unseen languages, which model in the experiment of the paper(titled \"Zero-Shot Cross-Lingual NER Using Phonemic Representations for Low-Resource Languages\") gets the highest F1 score? In the source paper of this model, which languages is it evaluated on?",
+    "answer_format": "Your answer should be a python list like [\"string1\", [\"string2\", \"string3\", ...]]. The first element should be a string, representing the name of the model. The second element should be a list of strings, representing the languages.NOTE that the languages should be in the format of ISO 639-3 code.",
+    "tags": [
+        "multiple",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "9ae69811-4079-58ad-97ed-57697f78c878"
+    ],
+    "reference_pdf": [
+        "511235b6-d1dd-5f1b-b274-317b7f89c254"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_structured_object_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "XPhoneBERT",
+                    "lowercase": true
+                },
+                {
+                    "gold": [
+                        "eng-us",
+                        "vie-n"
+                    ],
+                    "ignore_order": true,
+                    "lowercase": true
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
