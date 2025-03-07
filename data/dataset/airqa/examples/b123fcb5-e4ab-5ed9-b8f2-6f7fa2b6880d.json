@@ -1,0 +1,34 @@
+{
+    "uuid": "b123fcb5-e4ab-5ed9-b8f2-6f7fa2b6880d",
+    "question": "Which model uses Llama2-7B as the LLM base model in Table 1 in paper 'DeepStack: Deeply Stacking Visual Tokens is Surprisingly Simple and Effective for LMMs' and in this model's original paper, how many models are compared in Table 4 in total?",
+    "answer_format": "Your answer should be a Python list of 2 strings, the name of the model, and the number of compared models.",
+    "tags": [
+        "multiple",
+        "table",
+        "objective",
+        "text"
+    ],
+    "anchor_pdf": [
+        "10e2193c-2fa2-5cf8-9b5d-bc0c32fe856a"
+    ],
+    "reference_pdf": [
+        "cb1c4dda-3e6e-5dd1-a4e2-215e3009c106"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "VILA",
+                "12"
+            ],
+            "ignore_order": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
