@@ -99,7 +99,7 @@ build_bm25_corpus(paper_dir='data/dataset/airqa/papers/', save_path='data/vector
 
 ## Write Vectors Into Vectorstore
 
-> **❗️ NOTE:** Please ensure that, the parsed target PDF content has been populated into the database before vector encoding! Since all encodable content will be retrieved from the corresponding relational database.
+> **❗️ NOTE:** Please ensure that, the parsed target PDF content has been populated into the database before vector encoding! Since all PDF content to encode is firstly retrieved from the corresponding relational database.
 
 ### Download Embedding Models
 

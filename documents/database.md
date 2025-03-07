@@ -53,7 +53,7 @@ $ python utils/database_utils.py --database ai_research --config_path configs/ai
 $ python utils/database_utils.py --database ai_research --config_path configs/ai_research_config.json --pdf_path ${pdf_file} --on_conflict ignore
 ```
 
-> **🤗 Note:** For all input types except PDF UUID, we will resort to scholar APIs during PDF parsing to obtain the metadata of the paper (e.g., published conference and year, see [Scholar APIs](third_party_tools.md#scholar-apis) for available tools). Sadly, the scholar API may be unstable and fail to fetch the desired information. Therefore, **it is strongly recommended that we pre-fetch the metadata of each paper and use PDF UUID as input when processing abundant papers from an entire venue**.
+> **🤗 Note:** For all input types except PDF UUID, we will resort to real-time scholar APIs during PDF parsing to obtain the metadata of the paper (e.g., published conference and year, see [Scholar APIs](third_party_tools.md#scholar-apis) for available tools). Sadly, the scholar API may be unstable and fail to fetch the desired information. Therefore, **it is strongly recommended that we pre-fetch the metadata of each paper and use PDF UUID as input when processing abundant papers from an entire venue**.
 
 
 ## Database Schema Format
@@ -102,8 +102,8 @@ $ python utils/database_utils.py --database ai_research --config_path configs/ai
 }
 ```
 
-- For available data types, please refer to [DuckDB Data Types](https://duckdb.org/docs/sql/data_types/overview). Here are some basic types you should prioritize and use for the json field `column_type`:
-    - basic types:
+- For available data types, please refer to [DuckDB Data Types](https://duckdb.org/docs/sql/data_types/overview). Here are some data types you can use in the json field `column_type`:
+    - Basic Types:
         - `BOOLEAN`: boolean value, true/false;
         - `INTEGER`: int4;
         - `FLOAT`: float4;
@@ -114,9 +114,9 @@ $ python utils/database_utils.py --database ai_research --config_path configs/ai
         - `TIMESTAMPTZ`: timestamp with time zone information, usually in the format `YYYY-MM-DD HH:MM:SS±HH:MM`, e.g., `2024-08-11 14:30:00+02:00` represents August 11, 2024, at 14:30 in a time zone that is 2 hours ahead of UTC;
         - `VARCHAR`: actually, this is an alias of `STRING`, `CHAR` and `TEXT`. Please use `VARCHAR` for consistency;
         - `UUID`: only used as primary keys, can be converted or interpreted as `VARCHAR`.
-    - advanced types:
-        - there are some advanced and structured data types such as `ARRAY`, `LIST`, `MAP`, `STRUCT`, and `UNION`. Please refer to the [official document](https://duckdb.org/docs/sql/data_types/overview#nested--composite-types) for use cases;
-        - when specifying these advanced column types, you should pay attention to the format when filling the `column_types` field, e.g., `INTEGER[3]` for `ARRAY`, `INTEGER[]` for `LIST`, and `MAP(INTEGER, VARCHAR)` for `MAP`.
+    - Advanced Types:
+        - structured data types such as `ARRAY`, `LIST`, `MAP`, `STRUCT`, and `UNION`;
+        - when specifying these advanced column types, pay attention to the format when filling the `column_types` field, e.g., `INTEGER[3]` for `ARRAY`, `INTEGER[]` for `LIST`, and `MAP(INTEGER, VARCHAR)` for `MAP`.
 
 > **💡 Note:** we only support DuckDB currently. Other database types are left as future work.
 
@@ -158,15 +158,11 @@ We take a small testing database `test_domain` as an example to demonstrate how 
 
 This `config` dict contains three JSON keys, `uuid`, `pipeline`, and `aggregation`, where:
 - Field `pipeline` defines how to get cell values for each column in a function pipeline;
-- Field `aggregation` indicates how to aggregate the output of `pipeline` functions into row entries for each table.
-- Field `uuid` tells how to get the unique UUID of the input PDF. This unique PDF indentifier will be passed to the [vectorstore encoding](../documents/vectorstore.md) part.
+- Field `aggregation` indicates how to aggregate the output of `pipeline` functions into row entries for each table;
+- Field `uuid` tells how to get the unique UUID of the input PDF. This UUID will be passed to the [vectorstore encoding](../documents/vectorstore.md) module.
 
 ```json
 {
-    "uuid": {
-        "function": "get_pdf_page_text",
-        "field": "pdf_id"
-    },
     "pipeline": [
         {
             "function": "get_pdf_page_text",
@@ -218,7 +214,11 @@ This `config` dict contains three JSON keys, `uuid`, `pipeline`, and `aggregatio
                 "kwargs": {}
             }
         }
-    ]
+    ],
+    "uuid": {
+        "function": "get_pdf_page_text",
+        "field": "pdf_id"
+    }
 }
 ```
 
@@ -239,11 +239,9 @@ This `config` dict contains three JSON keys, `uuid`, `pipeline`, and `aggregatio
 ```
 
 Each `pipeline` dict contains three fields:
-- Field `function`: str, required. It denotes the pipeline function name in module `utils.functions`;
-- Field `args -> deps`: List[str], optional. It denotes the input positional parameters of the pipeline function. For example, `deps = ["input_pdf"]` means we use exactly the input parameter `input_pdf` of function `populate` as the first positional argument for function `get_pdf_page_text`. As for the second pipeline function `get_text_summary`, `deps = ["get_pdf_page_text"]` means it takes the output of the first function `get_pdf_page_text` as the first positional input argument;
-- Field `args -> kwargs`: Dict[str, Any], optional. For other keyword arguments, they are directly passed into the `kwargs` dict.
-
-> **🤗 TIP:** see [customization tutorial](../documents/customization.md) for tips on defining personal functions.
+- Field `function`: str, required. It denotes the pipeline function name in module [`utils.functions`](../utils/functions/__init__.py);
+- Field `args -> deps`: List[str], optional. It denotes the input positional parameters of the pipeline function. For example, `deps = ["input_pdf"]` means we use exactly the input parameter `input_pdf` of function `populate` as the first positional argument for function [`get_pdf_page_text`](../utils/functions/pdf_functions.py#get_pdf_page_text). As for the second pipeline function [`get_text_summary`](../utils/functions/pdf_functions.py#get_text_summary), `deps = ["get_pdf_page_text"]` means it takes the output of the first function `get_pdf_page_text` as the first positional input argument;
+- Field `args -> kwargs`: Dict[str, Any], optional. It stores other keyword arguments for the current function.
 
 2. **Aggregate and Inset Cell Values**: Values of different columns may be processed in distinct pipeline functions. Thus, we need some instruction to put them together into a single table. This is exactly what the `aggregation` dict list does. For example,
 ```json
@@ -265,9 +263,9 @@ Each `pipeline` dict contains three fields:
 ```
 
 Each `aggregation` dict follows almost the same format as `pipeline` functions:
-- Field `function`: str, required. It denotes the aggregation function name in module `utils.functions`;
+- Field `function`: str, required. It denotes the aggregation function name in module [`utils.functions`](../utils/functions/__init__.py);
 - Field `args -> deps`: List[str], optional, for input-output dependencies or positional arguments;
-- Field `args -> kwargs`: Dict[str, Any], optional, for keyword arguments;
+- Field `args -> kwargs`: Dict[str, Any], optional, for keyword arguments of the current aggregation function;
 - Field `table`: str, required. It denotes the table name to insert row values;
 - Field `columns`: Optional[List[str]], optional. It represents the list of column names in the field `table` to insert entries. If omitted, we insert values for all columns following the default column order in the specified `table` based on the database schema.
 
@@ -277,20 +275,28 @@ Each `aggregation` dict follows almost the same format as `pipeline` functions:
 
 To test the config above, you can run this simple demo script:
 ```sh
-python utils/database_utils.py --database test_domain --config_path configs/test_domain_config.json --pdf_path data/dataset/test_pdf.pdf --on_conflict replace
+python utils/database_utils.py --database test_domain --config_path configs/test_domain_config.json \
+    --pdf_path data/dataset/test_pdf.pdf --on_conflict replace
 ```
+
+> **🌟 Best Practice:** Here are some tips on customizing your personal pipeline and aggregation functions:
+> - Both `pipeline` and `aggregation` functions should be defined in the Python module `utils.functions`. Remember to import them in the [`__init__.py`](../utils/functions/__init__.py) file;
+> - The first pipeline function should take the raw input `input_pdf` as one of its position argument;
+> - **🥀 Suggestion:** Consider using a JSON Dict[str, Any] as the output type for each `pipeline` function, such that it will be easier to chain the functions.
+> - **🧠 Obligation:** The output of aggregation functions **MUST BE** of type List[List[Any]], with each element being an entry row (List[Any]) to insert. Such that the follow-up population can automatically create the INSERT SQL statements and execute them via `duckdb.DuckDBPyConnection.executemany()`.
 
 
 ## 🚀 Parallel Processing for Acceleration
 
-We rely on:
+During multi-view PDF parsing, we rely on:
 - the third party tool [MinerU](https://github.com/opendatalab/MinerU) to perform the major PDF parsing (e.g., table recognition and formula detection), and
 - LLMs/VLMs for PDF content refinement (both text and image modalities).
+
 To speed up the database population, we can improve the efficiency at two steps.
 
 ### ⛓️ Parallel MinerU Parsing via GPU
 
-1. Firstly, we can enable the [GPU acceleration of MinerU](https://github.com/opendatalab/MinerU?tab=readme-ov-file#using-gpu) and set the `device-mode` in MinerU configuration file `magic-pdf.json` to `cuda`. 
+1. Firstly, we can enable the [GPU acceleration of MinerU](https://github.com/opendatalab/MinerU?tab=readme-ov-file#using-gpu) and set the `device-mode` in MinerU configuration `magic-pdf.json` to `cuda`. 
 2. Besides, we can pre-process the PDFs with official MinerU command `magic-pdf -p pdf_filepath -o output_folder -m auto` and cache the output results in the output folder `${dataset_dir}/${dataset}/processed_data/`.
     - Each processed PDF will be cached in `processed_data/` as a separate folder with the same name as the base filename.
 
@@ -301,7 +307,7 @@ data/dataset/airqa/papers/acl2023/a04766c4-db6f-58b8-867f-07385a5890e3.pdf
 ...
 $ bash mineru.sh airqa uuids.txt
 ```
-Then, during the PDF parsing process in function `populate`, it will automatically detect and utilize the cached results to accelerate the pipeline functions. For large quantities of papers, we can further launch multiple processes to `magic-pdf` different PDFs partitions.
+Then, during the PDF parsing in function `populate`, it will automatically detect and utilize the cached results to accelerate the pipeline. For large quantities of papers, we can further launch multiple processes to `magic-pdf` different PDFs partitions.
 
 
 ### 🗃️ Batched LLM Summarization
@@ -314,7 +320,8 @@ In the population pipeline, we constantly send http requests to LLM for summariz
 
 ```sh
 # batch_uuids.json contains a list of PDF UUIDs
-$ python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/batch_uuids.json --config_path configs/ai_research_pe_config.json
+$ python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/batch_uuids.json \
+    --config_path configs/ai_research_pe_config.json
 ```
 
 2. **Batch API Calls:** Now, we can send the two files (`text_batch.jsonl` and `image_batch.jsonl`) to LLMs/VLMs that support batch inference. Suppose we have obtained the result files `text_results.jsonl` and `image_results.jsonl` respectively. 
@@ -323,12 +330,14 @@ $ python utils/database_utils.py --database ai_research --pdf_path data/dataset/
 
 ```sh
 # batch_uuids.json should be exactly the same file in step 1
-python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/batch_uuids.json --config_path configs/ai_research_pf_config.json
+python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/batch_uuids.json \
+    --config_path configs/ai_research_pf_config.json
 ```
 
 Finally, we can now populate the database and complete the whole database population:
 ```sh
-python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/batch_uuids.json --config_path configs/ai_research_config.json --on_conflict ignore
+python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/batch_uuids.json \
+    --config_path configs/ai_research_config.json --on_conflict ignore
 ```
 
-> **❗️ Attention:** the Parallel Extraction and Parallel Filling should be conducted on the same server or laptop, because the hash value of the same LLM message may be different across OS platforms. Moreover, we found that the LLM batch API may fail to generate minor part of the results. Thus, it is suggested to maintain the connection to LLMs/VLMs even when performing the final population using `ai_researh_config.json`.
+> **❗️ Attention:** the Parallel Extraction and Parallel Filling should be conducted on the same server or laptop, because the hash value of the same LLM message may be different across OS platforms. Moreover, we found that the LLM batch API may fail to generate part of the results. Thus, it is suggested to maintain the HTTP connection to LLMs/VLMs even when performing the final population using `ai_researh_config.json`.
