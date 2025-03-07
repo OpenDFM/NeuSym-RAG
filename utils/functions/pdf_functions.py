@@ -1,11 +1,10 @@
 #coding=utf8
-
-import os, openai, uuid, re, sys, logging, subprocess, tempfile, json
+import os, re, sys, logging, subprocess, json
 from typing import List, Dict, Union, Optional, Any, Iterable, Tuple
 from difflib import SequenceMatcher
 import pymupdf
 from pdf2image import convert_from_path
-from pdfminer.layout import LTImage, LTFigure, LTRect
+from utils.config import DATASET_DIR
 from utils.functions.common_functions import call_llm, get_uuid, truncate_tokens
 from utils.functions.parallel_functions import parallel_extract_or_fill
 
@@ -26,15 +25,17 @@ def get_pdf_page_text(
         generate_uuid: bool = True,
         uuid_type: str = 'uuid5',
         uuid_namespace: str = 'dns',
-        normalize_blank: bool = True
+        normalize_blank: bool = True,
+        page_range: Optional[Iterable] = None
     ) -> Dict[str, Union[str, List[str]]]:
     """ Extract the content of each page from the PDF file.
     @args:
         pdf_path: str, the path to the PDF file.
-        generate_uuid: bool, whether to generate the UUID for each page, default to False.
+        generate_uuid: bool, whether to generate the UUID for each page, default to True.
         uuid_type: str, chosen from uuid3, uuid4, uuid5, default to uuid5.
         uuid_namespace: str, chosen from dns, url, oid, x500, default to dns.
         normalize_blank: bool, whether to normalize the blank lines, default to True.
+        page_range: Optional[Iterable], the range of pages to extract, default to None (extract all pages).
     @return:
         output: Dict[str, Union[str, List[str]]], the output dictionary containing the following keys:
             - pdf_name: str, the name of the PDF file.
@@ -48,7 +49,8 @@ def get_pdf_page_text(
     if generate_uuid:
         pdf_id = get_uuid(name=pdf_path, uuid_type=uuid_type, uuid_namespace=uuid_namespace)
     page_contents, page_uuids = [], []
-    for page_number in range(doc.page_count):
+    if not page_range: page_range = range(doc.page_count)
+    for page_number in page_range:
         page = doc[page_number]
         text = page.get_text()
         
@@ -148,7 +150,7 @@ def convert_pdf_to_image(
 
 def add_reference_to_json(
         uuid: str,
-        processed_data_folder: str = 'data/dataset/airqa/processed_data',
+        processed_data_folder: str = os.path.join(DATASET_DIR, 'airqa', 'processed_data'),
         output_data_folder: Optional[str] = None
     ) -> Dict[str, Any]:
     # Load the flawed processed data
@@ -206,7 +208,7 @@ def add_reference_to_json(
 
 def parse_pdf(
         pdf_path: str,
-        processed_data_folder: str = 'data/dataset/airqa/processed_data',
+        processed_data_folder: str = os.path.join(DATASET_DIR, 'airqa', 'processed_data'),
         TOC_threshold: float = 0.9
     ) -> bool:
     """Parse a PDF file with MinerU.

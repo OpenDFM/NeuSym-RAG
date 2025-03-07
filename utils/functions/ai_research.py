@@ -2,12 +2,10 @@
 import json, uuid, sys, os, re, logging
 from typing import List, Union, Optional, Tuple, Any, Dict
 import pymupdf
-from pdf2image import convert_from_path
-from pdfminer.high_level import extract_pages
-from pdfminer.layout import LTFigure, LTImage, LTRect
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from utils.functions.common_functions import get_uuid, call_llm, call_llm_with_message
+from utils.functions.common_functions import get_uuid
 from utils.functions.pdf_functions import get_pdf_page_text, load_json_from_processed_data, get_table_summary, get_text_summary
+from utils.config import DATASET_DIR
 from utils.functions.image_functions import get_image_summary
 from fuzzywuzzy.fuzz import partial_ratio
 
@@ -25,7 +23,7 @@ logger.setLevel(logging.INFO)
 
 def get_ai_research_pdf_data(
         metadata: Dict[str, Any], 
-        processed_data_folder: str = 'data/dataset/airqa/processed_data',
+        processed_data_folder: str = os.path.join(DATASET_DIR, 'airqa', 'processed_data'),
         TOC_threshold: float = 0.9
     ) -> Dict[str, Any]:
     """ Load the parsed JSON data from a PDF file. See `utils.function.pdf_functions.parse_pdf` for more details.
@@ -575,7 +573,7 @@ def write_summary_json(
         section_data: List[Dict[str, Union[str, List[int]]]],
         table_data: List[List[Dict[str, Any]]],
         image_data: List[List[Dict[str, Any]]],
-        processed_data_folder: str = 'data/dataset/airqa/processed_data'
+        processed_data_folder: str = os.path.join(DATASET_DIR, 'airqa', 'processed_data')
     ):
     pdf_path = metadata["pdf_path"]
     pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]

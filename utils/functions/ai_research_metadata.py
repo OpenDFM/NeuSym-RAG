@@ -11,7 +11,7 @@ from fuzzywuzzy import fuzz
 import pandas as pd
 from urllib.parse import urlencode, quote
 from utils.config import DATASET_DIR, TMP_DIR
-from utils.functions.common_functions import is_valid_uuid, get_uuid, call_llm, call_llm_with_message, convert_to_message
+from utils.functions.common_functions import is_valid_uuid, get_uuid, call_llm, call_llm_with_message
 from utils.functions.parallel_functions import parallel_extract_or_fill
 
 
@@ -55,6 +55,7 @@ def get_airqa_paper_metadata(uuid_str: Optional[str] = None, dataset_dir: Option
     if not UUID2PAPERS.get(dataset_dir):
         UUID2PAPERS[dataset_dir] = {}
         metadata_dir = os.path.join(dataset_dir, 'metadata')
+        if not os.path.exists(metadata_dir): os.makedirs(metadata_dir)
         files = os.listdir(metadata_dir)
         for f in files:
             fp = os.path.join(metadata_dir, f)
@@ -248,6 +249,7 @@ def infer_paper_abstract_from_pdf(
     page_content = ""
     for page_num in range(0, min(4, len(doc))):
         page_content += doc[page_num].get_text()
+        if not page_content or len(page_content) < 10: continue
         abstract = call_llm(template.format(page_num=page_num+1, page_content=page_content), model=model, temperature=temperature).strip()
         if not abstract.startswith("abstract not found"):
             doc.close()
