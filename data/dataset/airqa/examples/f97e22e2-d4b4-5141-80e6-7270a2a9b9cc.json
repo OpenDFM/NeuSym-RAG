@@ -1,0 +1,43 @@
+{
+    "uuid": "f97e22e2-d4b4-5141-80e6-7270a2a9b9cc",
+    "question": "What are the sources of the pre-training data for the latest LLM used in the experiment section of the paper \"AN UNFORGEABLE PUBLICLY VERIFIABLE WATERMARK FOR LARGE LANGUAGE MODELS\"?",
+    "answer_format": "Your answer should be a python list of strings, e.g., [\"source1\", \"source2\"].",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "236f9dfc-a8eb-5ed3-a11d-df5835802ab2"
+    ],
+    "reference_pdf": [
+        "34417770-67d7-5cab-b9d4-76999c97bc02"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the latest LLM used in the experiment section of the paper \"AN UNFORGEABLE PUBLICLY VERIFIABLE WATERMARK FOR LARGE LANGUAGE MODELS\".",
+        "Locate the related paper about the latest LLM.",
+        "Find the sources of the pre-training data for the latest LLM."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold":[
+                "CommonCrawl",
+                "C4",
+                "Github",
+                "Wikipedia",
+                "Books",
+                "ArXiv",
+                "StackExchange"
+            ],
+            "ignore_order": true,
+            "lowercase": true,
+            "ignore_blank": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
