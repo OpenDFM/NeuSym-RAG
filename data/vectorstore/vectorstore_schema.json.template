@@ -1,29 +1,60 @@
 [
     {
-        "collection_name": "collection_name", // str, required field, naming convention: {modality}_{embed_type}_{model_name}, e.g., text_sentence_transformers_all_minilM_l6_v2, note that non letter/number/underscore chars are replaced into _ in lower case
-        "modality": "text", // str, chosen from 'text', 'image'
-        "embed_type": "xxx", // str, chosen from ['sentence_transformers', 'bge', 'instructor', 'mgte', 'bm25', 'splade', 'clip']
-        "embed_model": "model_name", // str, embedding model name
-        "description": "what is about this collection, which embedding model to use and which model is, as well as other meta information", // [Suggested] str, optional field, a brief description of the collection
+        // str, required. Naming convention: lowercased {modality}_{embed_type}_{model_name}, e.g.,
+        // text_sentence_transformers_all_minilM_l6_v2
+        // Note: any non-digit/letter/underscore char will be replaced with an underscore _
+        "collection_name": "collection_name",
+        // str, required, chosen from ['text', 'image']
+        "modality": "text",
+        // str, required, chosen from ['sentence_transformers', 'bge', 'instructor', 'mgte', 'bm25', 'splade', 'clip'], see utils/vectorstore_utils.py#get_milvus_embedding_function for details
+        "embed_type": "xxx",
+        // str, required, embedding model name, e.g., all-MiniLM-L6-v2, bge-large-en-v1.5, clip-vit-base-patch32, etc.
+        "embed_model": "model_name",
+        // str, optional, a brief description of the collection
+        "description": "what is about this collection, which embedding model to use and which model is, as well as other meta information",
+        // List[Dict[str, Any]], required, all fields of the current collection
         "fields": [
+            // For the list of fields, these 3 field names must exist: `id`, `vector`, `text` or `bbox`.
             {
-                "name": "field_name", // str, required field, the name of the field
-                "dtype": "field_type", // str, required field, the type of the field, chosen from upper-cased string in doc "https://milvus.io/docs/schema.md", e.g., 'VARCHAR', 'INT64', 'FLOAT_VECTOR'
-                "description": "description", // [Suggested] str, optional field, a brief description of the field
-                "is_primary": false, // bool, optional field, whether is the primary key, default is `false`. Note that, if `is_primary=true`, we set `auto_id=true` automatically for the field type.
-                "dim": 384, // int, request field for VECTOR field type, not used for other field types
-                "max_length": 65535, // int, optional field, used for VARCHAR field type, by default is 65535
-                "etype": "INT16", // str, optional field, used for DataType.ARRAY field type
-                "max_capacity": 5 // int, used for DataType.ARRAY field type
-            } // more field dict can be added to the fields list. Note that, these 3 fields must exist: id, vector, [text|bbox].
-        ], // required field, the fields of the collection schema
+                // str, required. The name of the field
+                "name": "field_name",
+                // str, required. The type of the field, chosen from upper-cased string in doc https://milvus.io/docs/schema.md, e.g., 'VARCHAR', 'INT64', 'FLOAT_VECTOR'
+                "dtype": "field_type",
+                // str, optional, a brief description of the field
+                "description": "description",
+                // bool, optional. Whether it is the primary key, by default `false`
+                // Note: if `is_primary=true`, we set `auto_id=true` automatically
+                "is_primary": false,
+                // int, required for VECTOR dtype
+                "dim": 384,
+                // int, optional. Only used for VARCHAR and ARRAY dtypes, by default is 65535
+                "max_length": 65535,
+                // str, required only for ARRAY dtype. The data type string of each element in the array
+                "etype": "INT16",
+                // int, optional. Only for ARRAY dtype, by default is 20
+                "max_capacity": 4
+            },
+            ...
+        ],
+        // List[str, Any], required, all indexes of the current collection
+        // At least contain one index about the vector field to encode and specify the `metric_type`
+        // Note: we can not define a index for fields of ARRAY dtype
         "indexes": [
             {
-                "field_name": "field_name_to_index", // required field, the name of the field to index
-                "metric_type": "COSINE", // optional field, the metric type of the index, default is "COSINE". Note that, the metric type is only valid for vector type fields
-                "index_type": "FLAT", // optional field, see doc "https://milvus.io/docs/index-vector-fields.md" for details. By default, vector fields are indexed by 'FLAT', while other field types are indexed by 'INVERTED'.
-                "index_name": "alias_name" // optional field, the alias name of the index, by default "{field_name}_index"
-            } // more index dict can be added to the indexes array
-        ] // required field, the indexes of the collection schema, at least contain one index about the vector field to encode
-    } // more collection dict can be added to the collection schema
+                // str, required. The field name to build index
+                "field_name": "field_name_to_index",
+                // str, required for VECTOR dtype field
+                // By default: for non-sparse vectors -> "COSINE", o.w., inner product "IP"
+                "metric_type": "COSINE",
+                // str, optional, see doc https://milvus.io/docs/index-vector-fields.md for details
+                // By default: non-sparse vector fields -> "FLAT", sparse vector fields -> "SPARSE_INVERTED_INDEX", o.w., indexed by "INVERTED"
+                "index_type": "FLAT",
+                // str, optional. The alias of the index, by default {field_name}_index
+                "index_name": "alias_name"
+            },
+            ...
+        ]
+    },
+    // more collection dicts can be added into the vectorstore schema
+    ...
 ]

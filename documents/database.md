@@ -42,7 +42,8 @@ Take the dataset `airqa` and the corresponding DB `ai_research` as an example:
     - Paper title, e.g., `Attention is all you need`.
 
 ```sh
-$ python utils/database_utils.py --database ai_research --config_path configs/ai_research_config.json --pdf_path ${pdf_to_parse} --on_conflict ignore
+$ python utils/database_utils.py --database ai_research --config_path configs/ai_research_config.json \
+    --pdf_path ${pdf_to_parse} --on_conflict ignore
 ```
 
 2. For a list of PDFs, we can pass the `.txt` or `.json` file name as the input:
@@ -50,7 +51,8 @@ $ python utils/database_utils.py --database ai_research --config_path configs/ai
     - The argument `--on_conflict [raise|ignore|replace]` can take three values to handle primary key conflicts when inserting new rows into the database.
 
 ```sh
-$ python utils/database_utils.py --database ai_research --config_path configs/ai_research_config.json --pdf_path ${pdf_file} --on_conflict ignore
+$ python utils/database_utils.py --database ai_research --config_path configs/ai_research_config.json \
+    --pdf_path ${pdf_file} --on_conflict ignore
 ```
 
 > **🤗 Note:** For all input types except PDF UUID, we will resort to real-time scholar APIs during PDF parsing to obtain the metadata of the paper (e.g., published conference and year, see [Scholar APIs](third_party_tools.md#scholar-apis) for available tools). Sadly, the scholar API may be unstable and fail to fetch the desired information. Therefore, **it is strongly recommended that we pre-fetch the metadata of each paper and use PDF UUID as input when processing abundant papers from an entire venue**.
@@ -195,7 +197,11 @@ This `config` dict contains three JSON keys, `uuid`, `pipeline`, and `aggregatio
         {
             "function": "aggregate_test_domain_table_pdf_meta",
             "table": "pdf_meta",
-            "columns": ["pdf_id", "pdf_name", "pdf_path"],
+            "columns": [
+                "pdf_id",
+                "pdf_name",
+                "pdf_path"
+            ],
             "args": {
                 "deps": [
                     "get_pdf_page_text"

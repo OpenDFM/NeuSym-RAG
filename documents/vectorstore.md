@@ -2,7 +2,9 @@
 
 ----
 
-In this project, we use [Milvus](https://milvus.io/docs/v2.4.x/quickstart.md) (the lite version) as the backend vectorstore to encode and save vectors. 
+In this project, we use [Milvus](https://milvus.io/docs/v2.4.x/quickstart.md) (the lite version) as the backend vectorstore to encode and save vectors.
+
+> **💡 Note:** please use lowercased and underscore splitted (Pythonic) convention to name your vectorstore. And it should be the same as the database name.
 
 <details><summary>👇🏻 Click to view the vectorstore folder structure</summary>
 
@@ -29,7 +31,7 @@ data/vectorstore/
 
 ## Launch Milvus
 
-> **💡 NOTE:** For Windows OS, please enable WSL 2 backend, see [official doc](https://milvus.io/docs/prerequisite-docker.md#Software-requirements).
+> **💡 NOTE:** For Windows OS, please enable WSL 2 backend, see [Software Requirements](https://milvus.io/docs/prerequisite-docker.md#Software-requirements).
 
 We support launching Milvus using standalone `.db` file for each vectorstore, or through Docker containers in the shared folder `data/vectorstore/milvus/`.
 
@@ -84,7 +86,7 @@ This vectorstore schema `data/vectorstore/vectorstore_schema.json` is shared acr
     - Refer to [Manage Schema](https://milvus.io/docs/v2.4.x/schema.md) for field definition;
 - The **indexes** for each collection which help to speed up the search and define the metric type for vectors.
     - Refer to [Index Vector Fields](https://milvus.io/docs/v2.4.x/index-vector-fields.md?tab=floating) and [Index Scalar Fields](https://milvus.io/docs/v2.4.x/index-scalar-fields.md) for index definition.
-- Please refer to [`vectorstore_schema.json.template`](../data/vectorstore/vectorstore_schema.json.template) about the definition of vectorstore schema.
+- Check our [`vectorstore_schema.json.template`](../data/vectorstore/vectorstore_schema.json.template) about the definition of vectorstore schema.
 
 
 ## Build BM25 Vocabulary

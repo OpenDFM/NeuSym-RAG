@@ -28,11 +28,11 @@ class VectorstoreField(object):
 
     def __init__(self, field_obj: Dict[str, Any]):
         super(VectorstoreField, self).__init__()
-        self.name: str = field_obj.get('name', 'field_name')
-        dtype: str = field_obj.get('dtype', 'type')
+        self.name: str = field_obj.get('name', field_obj['field_name'])
+        dtype: str = field_obj.get('dtype', field_obj['type'])
         self.dtype = eval(f'DataType.{dtype}')
         self.is_primary: bool = field_obj.get('is_primary', False)
-        self.description: str = field_obj.get('description', f"Field name: {field_obj['name']}; Data Type: {field_obj['dtype'].upper()}")
+        self.description: str = field_obj.get('description', f"Field name: {self.name}; Data Type: {dtype.upper()}")
 
         if self.is_primary:
             assert self.dtype in [DataType.INT64, DataType.STRING, DataType.VARCHAR], f"Primary key field must be of type INT64, STRING or VARCHAR, but got {self.dtype}."
@@ -46,7 +46,7 @@ class VectorstoreField(object):
             self.max_length: int = int(field_obj.get('max_length', 65535))
 
         if dtype == 'ARRAY': # ARRAY DataType for bbox images
-            etype: str = field_obj.get('etype', 'element_type').upper()
+            etype: str = field_obj['etype'].upper()
             self.element_type = eval(f"DataType.{etype}")
             self.max_capacity: int = int(field_obj.get('max_capacity', 20))
             if etype in ['VARCHAR', 'STRING']:
@@ -71,9 +71,9 @@ class VectorstoreIndex(object):
         default_index_type = 'FLAT' if 'VECTOR' in field_type and 'SPARSE' not in field_type \
             else 'SPARSE_INVERTED_INDEX' if 'VECTOR' in field_type and 'SPARSE' in field_type \
             else 'INVERTED'
-        self.field_name: str = index_obj['field_name']
+        self.field_name: str = index_obj.get('field_name', index_obj['name'])
         self.index_type: str = index_obj.get('index_type', default_index_type)
-        self.index_name: str = index_obj.get('index_name', f"{index_obj['field_name']}_index")
+        self.index_name: str = index_obj.get('index_name', f"{self.field_name}_index")
 
         if 'VECTOR' in field_type:
             default_metric_type = 'IP' if 'SPARSE' in field_type else 'COSINE'
