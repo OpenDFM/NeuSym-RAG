@@ -1,0 +1,32 @@
+{
+    "uuid": "460ddccb-d53b-5ec2-9a20-6739ce65da29",
+    "question": "How many labels are in the dataset used in the experiments section of the paper \"DYST: TOWARDS DYNAMIC NEURAL SCENE REPRESENTATIONS ON REAL-WORLD VIDEOS\"?",
+    "answer_format": "Your answer should be a single integer.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "2741edcf-ad85-5b48-a794-2326f4fc7ade"
+    ],
+    "reference_pdf": [
+        "418d865f-6a7a-55ef-b6b8-dcb2f99939cb"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the dataset used in the experiments section of the paper \"DYST: TOWARDS DYNAMIC NEURAL SCENE REPRESENTATIONS ON REAL-WORLD VIDEOS\".",
+        "Locate the related paper about the dataset.",
+        "Find the number of labels in the dataset."
+    ],
+    "evaluator": {
+        "eval_func": "eval_int_exact_match",
+        "eval_kwargs": {
+            "gold" : 174
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
