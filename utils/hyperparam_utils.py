@@ -3,7 +3,7 @@ from typing import List, Dict, Any, Optional
 import os, json, sys
 from datetime import datetime
 import argparse, logging
-from config import DATASET_DIR, DATABASE_DIR, VECTORSTORE_DIR
+from utils.config import DATASET_DIR, DATABASE_DIR, VECTORSTORE_DIR
 
 
 def parse_args():
