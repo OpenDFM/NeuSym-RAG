@@ -1,0 +1,34 @@
+{
+    "uuid": "d53db8ce-5380-58fc-be67-409a729fb21f",
+    "question": "Provide a brief introduction to the task in the SuperGLUE benchmark that were not used in the paper \"CUSTOMIZABLE COMBINATION OF PARAMETER-EFFICIENT MODULES FOR MULTI-TASK LEARNING\".",
+    "answer_format": "Your answer should be a python strings.",
+    "tags": [
+        "multiple",
+        "image",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "51052be9-02de-56d2-b1c3-556ca1e66166"
+    ],
+    "reference_pdf": [
+        "81c6be03-577c-51d5-8e65-f63b3e709112"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the tasks in the SuperGLUE benchmark that were used in the paper \"CUSTOMIZABLE COMBINATION OF PARAMETER-EFFICIENT MODULES FOR MULTI-TASK LEARNING\", which are in the form of image.",
+        "Locate the related paper about the SuperGLUE benchmark.",
+        "Read the paper and find the tasks in the SuperGLUE benchmark that were not used in the paper \"CUSTOMIZABLE COMBINATION OF PARAMETER-EFFICIENT MODULES FOR MULTI-TASK LEARNING\".",
+        "Provide a brief introduction to the task."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer":"ReCoRD is a multiple-choice QA task. Each example consists of a news article and a Cloze-style question about the article in which one entity is masked out. The system must predict the masked out entity from a list of possible entities in the provided passage, where the same entity may be expressed with multiple different surface forms, which are all considered correct. Articles are from CNN and Daily Mail.",
+            "question":"Provide a brief introduction to the tasks in the SuperGLUE benchmark that were not used in the paper \"CUSTOMIZABLE COMBINATION OF PARAMETER-EFFICIENT MODULES FOR MULTI-TASK LEARNING\"."
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
