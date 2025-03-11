@@ -1,0 +1,29 @@
+{
+    "uuid": "48dc6ebe-9dc2-5a7b-8f78-9030ab6ec5a1",
+    "question": "What's the original form of the metrics \"w(S) = \\frac{1}{2} \\mathbb{E} \\sup_{x, y \\in S} \\langle g, x - y \\rangle\"?",
+    "answer_format": "Your answer should be a Python string, the formula in LaTeX format.",
+    "tags": [
+        "multiple",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "3d972caa-a02a-5eb5-b483-d0c721952aaf"
+    ],
+    "reference_pdf": [
+        "78937c61-6763-5f90-bd00-65492a914c93"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": "w(K) := \\mathbb{E} \\sup_{u \\in K - K} \\langle g, u \\rangle",
+            "question": "What's the original form of Gaussian mean width?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

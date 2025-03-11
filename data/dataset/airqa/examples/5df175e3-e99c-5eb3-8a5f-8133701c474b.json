@@ -1,0 +1,38 @@
+{
+    "uuid": "5df175e3-e99c-5eb3-8a5f-8133701c474b",
+    "question": "According to the paper that enhances traditional input transformations by mixing the input image with images from other categories to create admixed images, what're the related adversarial attacks?",
+    "answer_format": "Your answer should be a Python list of abbreviations of the attacks.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "3d007608-c976-5f84-9235-80e865a993ed"
+    ],
+    "reference_pdf": [
+        "ca05d6c7-0b31-5aa3-847d-baa44be86e72"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "FGSM",
+                "I-FGSM",
+                "MI-FGSM",
+                "DIM",
+                "TIM",
+                "SIM"
+            ],
+            "ignore_order": true,
+            "ignore_blank": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
