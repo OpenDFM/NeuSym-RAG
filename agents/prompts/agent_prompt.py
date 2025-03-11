@@ -35,7 +35,7 @@ Here is the model response:
 
 ----
 
-You should wrap your response in three backticks:
+If the question is solved, just respond with "COMPLETED". You should wrap your response in three backticks:
 ```txt
 COMPLETED or rephrased question
 ```
