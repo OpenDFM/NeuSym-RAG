@@ -1,0 +1,36 @@
+{
+    "uuid": "17638abc-7058-5c53-97e7-99ee69763f57",
+    "question": "To investigate the problem \"Can the generative model be used to effectively leverage (small amounts of) human data, and also combine it with simulated agents?\", which baseline is applied? In the paper that proposes the baseline, what's the average learning rate for the baseline?",
+    "answer_format": "Your answer should be a Python list of 2 elements, the first is a string, the name of the baseline, the second is a float, the average learning rate, rounded to 4 decimal places.",
+    "tags": [
+        "multiple",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "3f602bc4-14ba-5c76-81e6-89fb1ea38c1b"
+    ],
+    "reference_pdf": [
+        "3b2a0e14-91d6-5b05-aaa1-a7684ce731cd"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "PPO-BC",
+                0.0012
+            ],
+            "lowercase": true,
+            "fuzz_method": "partial_ratio",
+            "threshold": 95,
+            "ignore_order": false,
+            "ndigits": 4
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
