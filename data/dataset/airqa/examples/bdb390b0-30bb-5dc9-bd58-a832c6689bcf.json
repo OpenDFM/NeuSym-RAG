@@ -1,0 +1,48 @@
+{
+    "uuid": "bdb390b0-30bb-5dc9-bd58-a832c6689bcf",
+    "question": "Which speech encoder does the paper(\"Advancing Large Language Models to Capture Varied Speaking Styles and Respond Properly in Spoken Conversations\") choose to extract universal paralinguistic and prosody embeddings?In the proposal of this encoder, which datasets are used in both pre-training and downstream tasks?",
+    "answer_format": "Your answer should be a list like [\"encoder_name\", [\"dataset1\", \"dataset2\",...]].",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "0b80e514-9214-551f-9ae6-1da04c308007"
+    ],
+    "reference_pdf": [
+        "c271cbdd-7d2f-5504-b148-903ff4c2af06"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_structured_object_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "emotion2vec",
+                    "lowercase": true
+                },
+                {
+                    "gold": [
+                        "OIEMOCAP",
+                        "MELD",
+                        "CMU-MOSEI"
+                    ],
+                    "ignore_order": true,
+                    "ignore_blank:": true,
+                    "lowercase": true
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

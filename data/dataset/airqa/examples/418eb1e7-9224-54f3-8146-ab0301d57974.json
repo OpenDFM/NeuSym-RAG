@@ -1,0 +1,33 @@
+{
+    "uuid": "418eb1e7-9224-54f3-8146-ab0301d57974",
+    "question": "Which encoder is used in the architecture of the paper titled \"Self-Distilled Depth Refinement with Noisy Poisson Fusion\"? In the source paper of this encoder, How many models are proposed with it as a series?",
+    "answer_format": "Your answer should be a single python list of two elements, the first is a string of the encoder name(abbreviation), the second is an integer.For example, [\"encoderx\",3].",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "b5643cac-00cf-54f7-8e7a-e56869e9a3ee"
+    ],
+    "reference_pdf": [
+        "22cef4e4-6977-5817-9d3f-dc3e60f287db"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Mit-b0",
+                6
+            ],
+            "ignore_order": false,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
