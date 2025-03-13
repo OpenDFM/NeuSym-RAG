@@ -1,0 +1,33 @@
+{
+    "uuid": "a1cc17f0-fd10-5273-abc3-f291526bf741",
+    "question": "In the test of Qwen2-72B-Instruct, Qwen2.5-Turbo, Qwen2-0.5B-Instruct, Qwen2-57B-A14B-Instruct based on the context length of a given document and the ability of document depth retrieval, what is the difference in the retrieved Context Length?",
+    "answer_format": "Your answer should be a python lidt of four strings, explaining the retrieval content length of the four models respectively. eg \" model name: range from 0 to roughly 20k tokens\".",
+    "tags": [
+        "multiple",
+        "subjective",
+        "text",
+        "image"
+    ],
+    "anchor_pdf": [
+        "c5a533f3-bffe-5e8f-9630-6aa650fce333",
+        "970c51eb-6f19-5ec1-9ab8-3eea43ca1edb"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "Qwen2-72B-Instruct: range from 0 to roughly 128k tokens",
+                "Qwen2.5-Turbo: range from 0 to 1000k tokens",
+                "Qwen2-0.5B-Instruct: range from 0 to 32k tokens",
+                "Qwen2-57B-A14B-Instruct: range from 0 to 64k tokens"
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
