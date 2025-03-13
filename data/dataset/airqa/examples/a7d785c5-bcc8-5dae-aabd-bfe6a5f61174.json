@@ -1,0 +1,39 @@
+{
+    "uuid": "a7d785c5-bcc8-5dae-aabd-bfe6a5f61174",
+    "question": "What is the difference between using two open-source LLMs in the experiments of the paper \"ARE LARGE LANGUAGE MODELS BAYESIAN? A MARTINGALE PERSPECTIVE ON IN-CONTEXT LEARNING\"?",
+    "answer_format": "Your answer should be a python strings.",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "bdd54ef7-963a-5aac-b825-751cd425a114"
+    ],
+    "reference_pdf": [
+        "6b887e82-ca3f-59e1-ae8a-f528919c1334",
+        "7bf2a9fc-a2da-5668-b577-9026e3464117"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the two open-source LLMs in the experiment section of the paper \"ARE LARGE LANGUAGE MODELS BAYESIAN? A MARTINGALE PERSPECTIVE ON IN-CONTEXT LEARNING\".",
+        "Locate the related papers about the two open-source LLMs.",
+        "Find the context describing the difference between the two open-source LLMs."
+    ],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points" : [
+                "Sliding Window Attention. Mistral-7B exploits the stacked layers of a transformer to attend information beyond the window size W . The hidden state in position i of the layer k, h_i, attends to all hidden states from the previous layer with positions between i-W and i.",
+                "Rolling Buffer Cache. A fixed attention span means that mistral-7B can limit our cache size using a rolling buffer cache. The cache has a fixed size of W , and the keys and values for the timestep i are stored in position i mod W of the cache. As a result, when the position i is larger than W , past values in the cache are overwritten, and the size of the cache stops increasing.",
+                "Pre-fill and Chunking. Mistral-7B can pre-fill the (k, v) cache with the prompt. If the prompt is very large, we can chunk it into smaller pieces, and pre-fill the cache with each chunk. For this purpose, we can select the window size as our chunk size. For each chunk, mistral-7B thus need to compute the attention over the cache and over the chunk."
+            ],
+            "question" : "What is the difference between using two open-source LLMs in the experiments of the paper \"ARE LARGE LANGUAGE MODELS BAYESIAN? A MARTINGALE PERSPECTIVE ON IN-CONTEXT LEARNING\"?"
+
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
