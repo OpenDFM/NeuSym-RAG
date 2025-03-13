@@ -1,0 +1,35 @@
+{
+    "uuid": "089ad273-aa2e-5b15-9d0f-cbcb8472e227",
+    "question": "For the model used in the paper's experiments that achieved the best results on authoritative Chinese and English benchmarks of the same size, which categories of data accounted for more than 9% of the model's training data?",
+    "answer_format": "Your answer should be a python list of strings and the strings should be categorie names. The specific name are based on the relevant paper.",
+    "tags": [
+        "multiple",
+        "objective",
+        "text",
+        "image"
+    ],
+    "anchor_pdf": [
+        "c6f05196-8a7d-56a1-9da6-73e748546b99"
+    ],
+    "reference_pdf": [
+        "92cc9292-4745-5478-8917-df13ddf07aaa"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "techonology",
+                "business",
+                "entertainment"
+            ],
+            "lowercase": true,
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
