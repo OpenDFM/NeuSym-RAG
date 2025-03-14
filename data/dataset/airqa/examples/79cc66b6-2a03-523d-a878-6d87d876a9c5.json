@@ -1,0 +1,29 @@
+{
+    "uuid": "79cc66b6-2a03-523d-a878-6d87d876a9c5",
+    "question": "Which national project supports both the BeamAggR and SpikeVoice paper?", 
+    "answer_format": "Your answer should be a python string of the project name. You should use full name as given in the papers and don't add \"the\" before the project name.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective",
+        "metadata"
+    ],
+    "anchor_pdf": [
+        "bc194ba1-6d56-55ef-9570-392491216f84",
+        "bb0b4e96-b900-5f7a-a46d-8f831bca8f1b"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "National Science Foundation of China",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}
