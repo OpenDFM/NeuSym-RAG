@@ -1,7 +1,7 @@
 # Multi-view Parsing into Database
 
 For each database, it is assigned a separate sub-folder under `data/database`, which contains:
-- `${database_name}.json`: the database schema file, see the [schema format](#database-schema-file);
+- `${database_name}.json`: the database schema file, see the [schema format](../documents/database.md#database-schema-file);
 - `${database_name}.sql`: SQL CREATE statement to build the database (**automatically generated from `.json` file**);
 - `${database_name}.duckdb`: The [DuckDB](https://duckdb.org/) type database which stores the cell content.
 
@@ -249,7 +249,7 @@ Each `pipeline` dict contains three fields:
 - Field `args -> deps`: List[str], optional. It denotes the input positional parameters of the pipeline function. For example, `deps = ["input_pdf"]` means we use exactly the input parameter `input_pdf` of function `populate` as the first positional argument for function [`get_pdf_page_text`](../utils/functions/pdf_functions.py#get_pdf_page_text). As for the second pipeline function [`get_text_summary`](../utils/functions/pdf_functions.py#get_text_summary), `deps = ["get_pdf_page_text"]` means it takes the output of the first function `get_pdf_page_text` as the first positional input argument;
 - Field `args -> kwargs`: Dict[str, Any], optional. It stores other keyword arguments for the current function.
 
-2. **Aggregate and Inset Cell Values**: Values of different columns may be processed in distinct pipeline functions. Thus, we need some instruction to put them together into a single table. This is exactly what the `aggregation` dict list does. For example,
+2. **Aggregate and Insert Cell Values**: Values of different columns may be processed in distinct pipeline functions. Thus, we need some instruction to put them together into a single table. This is exactly what the `aggregation` dict list does. For example,
 ```json
 {
     "function": "aggregate_test_domain_table_pdf_meta",
