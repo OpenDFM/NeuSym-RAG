@@ -26,7 +26,7 @@ import json
 from utils.functions import get_ai_research_metadata
 
 metadata = get_ai_research_metadata(
-    title = "Attention is all you need",
+    title = "Retrieval-Augmented Generation for Large Language Models: A Survey",
     model = 'gpt-4o-mini',
     temperature = 0.1,
     api_tools = ['openreview', 'dblp', 'arxiv', 'semantic-scholar'],
@@ -55,7 +55,7 @@ import json
 from utils.functions.ai_research_metadata import dblp_scholar_api
 
 metadata = dblp_scholar_api(
-    title="Spider2-V: How Far Are Multimodal Agents From Automating Data Science and Engineering Workflows?",
+    title="Retrieval-Augmented Generation for Large Language Models: A Survey",
     limit=10, # restrict the maximum number of hits by DBLP API
     threshold=90, # DBLP search uses very weak matching criterion, we use fuzz.ratio to re-order the results ( only ratio score > threshold will be maintained )
     allow_arxiv=True, # by default, False, since we implement another arxiv scholar API, but can be changed to True, such that arxiv version of papers will not be ignored
@@ -74,7 +74,7 @@ import json
 from utils.functions.ai_research_metadata import arxiv_scholar_api
 
 metadata = arxiv_scholar_api(
-    arxiv_id_or_title="Spider2-V: How Far Are Multimodal Agents From Automating Data Science and Engineering Workflows?",
+    arxiv_id_or_title="ReAct: Synergizing Reasoning and Acting in Language Models",
     limit=10,
     threshold=90,
     dataset_dir="data/dataset/airqa/"
@@ -95,7 +95,7 @@ pip install openreview-api
 import json
 from utils.functions.ai_research_metadata import openreview_scholar_api
 metadata = openreview_scholar_api(
-    title="Spider2-V: How Far Are Multimodal Agents From Automating Data Science and Engineering Workflows?",
+    title="ReAct: Synergizing Reasoning and Acting in Language Models",
     limit=10,
     threshold=90,
     allow_arxiv=False,
@@ -116,11 +116,11 @@ import json
 from utils.functions.ai_research_metadata import semantic_scholar_api
 
 metadata = semantic_scholar_api(
-    title="Spider2-V: How Far Are Multimodal Agents From Automating Data Science and Engineering Workflows?",
+    title="ReAct: Synergizing Reasoning and Acting in Language Models",
     limit=10,
     threshold=90,
-    fields_of_study=['Computer Science', 'Linguistics'], # further restrict the search fields, by default, empty
-    start_year=2023, # further restrict the search year, by default, None
+    fields_of_study=['Computer Science'], # further restrict the search fields, by default, empty
+    start_year=2016, # further restrict the search year, by default, None
     dataset_dir="data/dataset/airqa/"
 )
 print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))

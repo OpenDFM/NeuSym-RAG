@@ -768,7 +768,7 @@ def openreview_scholar_api(title: str, **kwargs) -> Tuple[bool, Dict[str, Any]]:
             OPENREVIEW_BASE_URL = 'https://api.openreview.net'
             client: openreview.Client = openreview.Client(baseurl=OPENREVIEW_BASE_URL)
         # use Elastic search, fast but not accurate
-        notes: List[Note] = client.search_notes(term=title, content='title', source='papers', limit=kwargs.get('limit', 10))
+        notes: List[Note] = client.search_notes(term=title, content='title', source='forum', limit=kwargs.get('limit', 10))
         notes: List[Note] = [n.to_json() for n in notes]
         filtered_notes: List[Note] = []
         for data in notes:
