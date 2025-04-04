@@ -140,6 +140,6 @@ if __name__ == '__main__':
 
     assert args.pred, "[Error]: Path to predicted answer .jsonl is required."
     assert args.gold, "[Error]: Path to gold answer .jsonl is required."
-    result = evaluate(args.pred, args.gold, args.dataset, output_path=args.output_path)
+    result = evaluate(args.pred, args.gold, args.dataset, output_path=args.output)
     result_table = print_result(result)
     print(f"Final evaluation result on {args.dataset}:\n{result_table}")
