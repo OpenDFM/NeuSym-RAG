@@ -394,7 +394,7 @@ def encode_database_content(
     for start_idx in tqdm.tqdm(range(0, len(pdf_ids), batch_size), disable=not sys.stdout.isatty()):
         start_time = time.time()
         if logger: logger.info(f"Encoding PDFs from [{start_idx}/{len(pdf_ids)}] ...")
-        batch_pdf_ids = pdf_ids[start_idx:start_idx + batch_size]
+        original_batch_pdf_ids = pdf_ids[start_idx:start_idx + batch_size]
 
         for cid, collection_name in enumerate(target_collections):
             if verbose: logger.info(f"[{cid}]: Encoding collection {collection_name}...")
@@ -404,6 +404,11 @@ def encode_database_content(
             modality, et, em = collection.modality, collection.embed_type, collection.embed_model
             backup_json = os.path.join(VECTORSTORE_DIR, db_schema.database_name, 'bm25.json') if et == 'bm25' else None
             embedder: BaseEmbeddingFunction = get_milvus_embedding_function(et, em, backup_json=backup_json)
+            
+            # check conflict if batch_pdf_id is specified, i.e., whether PDF content has been encoded or not
+            batch_pdf_ids = check_vectorstore_conflict(vs_conn, collection_name, original_batch_pdf_ids, on_conflict=on_conflict)
+            
+            if not batch_pdf_ids: continue
 
             if modality == 'image' and hasattr(embedder, 'cache_pdf_to_images'):
                 embedder.cache_pdf_to_images(
@@ -423,11 +428,6 @@ def encode_database_content(
                 for column_name in db_schema.table2column(table_name):
                     # only encode encodable columns
                     if not db_schema.is_encodable(table_name, column_name, modality): continue
-
-                    # check conflict if batch_pdf_id is specified, i.e., whether PDF content has been encoded or not
-                    batch_pdf_ids = check_vectorstore_conflict(vs_conn, collection_name, batch_pdf_ids, on_conflict=on_conflict)
-
-                    if not batch_pdf_ids: continue
 
                     if verbose: logger.info(f"Extract cell values for table=`{table_name}`, column=`{column_name}` ...")
                     if len(batch_pdf_ids) > 1:
@@ -486,7 +486,7 @@ def encode_database_content(
 
             if modality == 'image' and hasattr(embedder, 'clear_cache'):
                 embedder.clear_cache()
-        if verbose: logger.info(f'Finished encoding {len(batch_pdf_ids)} PDFs, costing {time.time() - start_time}s .')
+        if verbose: logger.info(f'Finished encoding {len(original_batch_pdf_ids)} PDFs, costing {time.time() - start_time}s .')
     return
 
 

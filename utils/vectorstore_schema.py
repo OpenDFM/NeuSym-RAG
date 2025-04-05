@@ -28,8 +28,8 @@ class VectorstoreField(object):
 
     def __init__(self, field_obj: Dict[str, Any]):
         super(VectorstoreField, self).__init__()
-        self.name: str = field_obj.get('name', field_obj['field_name'])
-        dtype: str = field_obj.get('dtype', field_obj['type'])
+        self.name: str = field_obj['name'] if 'name' in field_obj else field_obj['field_name']
+        dtype: str = field_obj['dtype'] if 'dtype' in field_obj else field_obj['type']
         self.dtype = eval(f'DataType.{dtype}')
         self.is_primary: bool = field_obj.get('is_primary', False)
         self.description: str = field_obj.get('description', f"Field name: {self.name}; Data Type: {dtype.upper()}")
@@ -71,7 +71,7 @@ class VectorstoreIndex(object):
         default_index_type = 'FLAT' if 'VECTOR' in field_type and 'SPARSE' not in field_type \
             else 'SPARSE_INVERTED_INDEX' if 'VECTOR' in field_type and 'SPARSE' in field_type \
             else 'INVERTED'
-        self.field_name: str = index_obj.get('field_name', index_obj['name'])
+        self.field_name: str = index_obj['field_name'] if 'field_name' in index_obj else index_obj['name']
         self.index_type: str = index_obj.get('index_type', default_index_type)
         self.index_name: str = index_obj.get('index_name', f"{self.field_name}_index")
 
