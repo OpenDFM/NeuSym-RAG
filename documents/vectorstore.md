@@ -37,18 +37,18 @@ We support launching Milvus using standalone `.db` file for each vectorstore, or
 
 1. **[standalone]** Install Milvus-lite:
     - In this mode, each vectorstore is assigned a separate sub-folder under `data/vectorstore/`
-```sh
-pip install "pymilvus[model]==2.4.8"
-```
+    ```sh
+    pip install "pymilvus[model]==2.4.8"
+    ```
 
 2. **[docker]** Download the running script into `data/vectorstore/milvus/` and start it:
     - To ensure replication and version conflict, you may change the docker image to `milvusdb/milvus:v2.4.x` in `standalone_embed.sh`. We use `milvusdb/milvus:v2.4.15` in our project.
-```sh
-curl -sfL https://raw.githubusercontent.com/milvus-io/milvus/master/scripts/standalone_embed.sh -o data/vectorstore/milvus/standalone_embed.sh
-cd data/vectorstore/milvus/
-bash standalone_embed.sh start
-# bash data/vectorstore/milvus/standalone_embed.sh stop # stop the service
-```
+    ```sh
+    curl -sfL https://raw.githubusercontent.com/milvus-io/milvus/master/scripts/standalone_embed.sh -o data/vectorstore/milvus/standalone_embed.sh
+    cd data/vectorstore/milvus/
+    bash standalone_embed.sh start
+    # bash data/vectorstore/milvus/standalone_embed.sh stop # stop the service
+    ```
 
 ## 📋 Inserted Data Entries
 
@@ -110,12 +110,12 @@ build_bm25_corpus(paper_dir='data/dataset/airqa/papers/', save_path='data/vector
     - [`BAAI/bge-large-en-v1.5`](https://huggingface.co/BAAI/bge-large-en-v1.5)
     - [`openai/clip-vit-base-patch32`](https://huggingface.co/openai/clip-vit-base-patch32)
 
-```txt
-.cache/
-├── all-MiniLM-L6-v2
-├── bge-large-en-v1.5
-└── clip-vit-base-patch32
-```
+    ```txt
+    .cache/
+    ├── all-MiniLM-L6-v2
+    ├── bge-large-en-v1.5
+    └── clip-vit-base-patch32
+    ```
 
 > **💡 NOTE:** If you want to use another embedding model, please modify the [vetorstore schema](#-vectorstore-schema-format) firstly to include one collection for it.
 
@@ -132,17 +132,17 @@ build_bm25_corpus(paper_dir='data/dataset/airqa/papers/', save_path='data/vector
     - `‑‑pdf_path`: str, optional. If not specified, encode all database content into the vectorstore;
     - `‑‑on_conflict [ignore|replace|raise]`: by default, `ignore`. Check whether any data entry in the VS already has the same `pdf_id`, and take the corresponding action like that in DuckDB `ON CONFLICT` clause.
 - For Milvus launched from **standalone** `.db` file:
-```sh
-vectorstore=ai_research # emnlp_papers, openreview_papers
-python utils/vectorstore_utils.py --vectorstore ${vectorstore} --launch_method standalone \
-    --on_conflict ignore --from_scratch
-```
+    ```sh
+    vectorstore=ai_research # emnlp_papers, openreview_papers
+    python utils/vectorstore_utils.py --vectorstore ${vectorstore} --launch_method standalone \
+        --on_conflict ignore --from_scratch
+    ```
 - For Milvus launched from **docker** containers:
-```sh
-vectorstore=ai_research # emnlp_papers, openreview_papers
-python utils/vectorstore_utils.py --vectorstore ${vectorstore} --launch_method docker \
-    --docker_uri http://127.0.0.1:19530 --on_conflict ignore --from_scratch
-```
+    ```sh
+    vectorstore=ai_research # emnlp_papers, openreview_papers
+    python utils/vectorstore_utils.py --vectorstore ${vectorstore} --launch_method docker \
+        --docker_uri http://127.0.0.1:19530 --on_conflict ignore --from_scratch
+    ```
 
 
 ## ⚙️ The Complete Data Population Process
@@ -152,17 +152,17 @@ python utils/vectorstore_utils.py --vectorstore ${vectorstore} --launch_method d
 - The input argument `‑‑pdf_path` is exactly the same as that in [database population](database.md#️-quick-start).
 - The running script is:
 
-```sh
-dataset=airqa # m3sciqa, scidqa
-vectorstore=ai_research # emnlp_papers, openreview_papers
+    ```sh
+    dataset=airqa # m3sciqa, scidqa
+    vectorstore=ai_research # emnlp_papers, openreview_papers
 
-# standalone mode
-python utils/data_population.py --database $vectorstore --vectorstore $vectorstore \
-    --pdf_path data/dataset/$dataset/uuids.json --launch_method standalone \
-    --on_conflict ignore --from_scratch
+    # standalone mode
+    python utils/data_population.py --database $vectorstore --vectorstore $vectorstore \
+        --pdf_path data/dataset/$dataset/uuids.json --launch_method standalone \
+        --on_conflict ignore --from_scratch
 
-# or, docker mode
-python utils/data_population.py --database $vectorstore --vectorstore $vectorstore \
-    --pdf_path data/dataset/$dataset/uuids.json --launch_method docker --docker_uri http://127.0.0.1:19530 \
-    --on_conflict ignore --from_scratch
-```
+    # or, docker mode
+    python utils/data_population.py --database $vectorstore --vectorstore $vectorstore \
+        --pdf_path data/dataset/$dataset/uuids.json --launch_method docker --docker_uri http://127.0.0.1:19530 \
+        --on_conflict ignore --from_scratch
+    ```

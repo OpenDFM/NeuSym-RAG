@@ -50,60 +50,60 @@ We investigate and implement the following scholar APIs to get the metadata of p
 
 - No extra libs needed, `requests` + `urllib` + `bs4` is enough
 - Code snippets:
-```py
-import json
-from utils.functions.ai_research_metadata import dblp_scholar_api
+    ```py
+    import json
+    from utils.functions.ai_research_metadata import dblp_scholar_api
 
-metadata = dblp_scholar_api(
-    title="Retrieval-Augmented Generation for Large Language Models: A Survey",
-    limit=10, # restrict the maximum number of hits by DBLP API
-    threshold=90, # DBLP search uses very weak matching criterion, we use fuzz.ratio to re-order the results ( only ratio score > threshold will be maintained )
-    allow_arxiv=True, # by default, False, since we implement another arxiv scholar API, but can be changed to True, such that arxiv version of papers will not be ignored
-    dataset_dir='data/dataset/airqa/'
-)
-print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
-```
+    metadata = dblp_scholar_api(
+        title="Retrieval-Augmented Generation for Large Language Models: A Survey",
+        limit=10, # restrict the maximum number of hits by DBLP API
+        threshold=90, # DBLP search uses very weak matching criterion, we use fuzz.ratio to re-order the results ( only ratio score > threshold will be maintained )
+        allow_arxiv=True, # by default, False, since we implement another arxiv scholar API, but can be changed to True, such that arxiv version of papers will not be ignored
+        dataset_dir='data/dataset/airqa/'
+    )
+    print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
+    ```
 
 
 ### Arxiv API
 
 - No extra libs needed
 - Code snippets:
-```py
-import json
-from utils.functions.ai_research_metadata import arxiv_scholar_api
+    ```py
+    import json
+    from utils.functions.ai_research_metadata import arxiv_scholar_api
 
-metadata = arxiv_scholar_api(
-    arxiv_id_or_title="ReAct: Synergizing Reasoning and Acting in Language Models",
-    limit=10,
-    threshold=90,
-    dataset_dir="data/dataset/airqa/"
-)
-print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
-```
+    metadata = arxiv_scholar_api(
+        arxiv_id_or_title="ReAct: Synergizing Reasoning and Acting in Language Models",
+        limit=10,
+        threshold=90,
+        dataset_dir="data/dataset/airqa/"
+    )
+    print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
+    ```
 
 
 ### OpenReview API
 
 - Need to install the following library:
-```sh
-pip install openreview-api
-```
+    ```sh
+    pip install openreview-api
+    ```
 
 - Code snippets:
-```py
-import json
-from utils.functions.ai_research_metadata import openreview_scholar_api
-metadata = openreview_scholar_api(
-    title="ReAct: Synergizing Reasoning and Acting in Language Models",
-    limit=10,
-    threshold=90,
-    allow_arxiv=False,
-    allow_reject=False,
-    dataset_dir="data/dataset/airqa"
-)
-print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
-```
+    ```py
+    import json
+    from utils.functions.ai_research_metadata import openreview_scholar_api
+    metadata = openreview_scholar_api(
+        title="ReAct: Synergizing Reasoning and Acting in Language Models",
+        limit=10,
+        threshold=90,
+        allow_arxiv=False,
+        allow_reject=False,
+        dataset_dir="data/dataset/airqa"
+    )
+    print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
+    ```
 > **💡 Note:** Before using the OpenReview API, please set the environment variable `OPENREVIEW_USERNAME` and `OPENREVIEW_PASSWORD` firstly.
 
 
@@ -111,20 +111,20 @@ print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii
 
 - No extra libs needed
 - Code snippets:
-```py
-import json
-from utils.functions.ai_research_metadata import semantic_scholar_api
+    ```py
+    import json
+    from utils.functions.ai_research_metadata import semantic_scholar_api
 
-metadata = semantic_scholar_api(
-    title="ReAct: Synergizing Reasoning and Acting in Language Models",
-    limit=10,
-    threshold=90,
-    fields_of_study=['Computer Science'], # further restrict the search fields, by default, empty
-    start_year=2016, # further restrict the search year, by default, None
-    dataset_dir="data/dataset/airqa/"
-)
-print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
-```
+    metadata = semantic_scholar_api(
+        title="ReAct: Synergizing Reasoning and Acting in Language Models",
+        limit=10,
+        threshold=90,
+        fields_of_study=['Computer Science'], # further restrict the search fields, by default, empty
+        start_year=2016, # further restrict the search year, by default, None
+        dataset_dir="data/dataset/airqa/"
+    )
+    print("Metadata of the paper is:\n", json.dumps(metadata, indent=4, ensure_ascii=False))
+    ```
 > **💡 Note:** This API is not stable and may prevent frequent calls in a limited period of time. Thus, it is suggested to set the API key if you have one.
 ```sh
 export S2_API_KEY="your_semantic_scholar_api_key"
@@ -136,9 +136,9 @@ export S2_API_KEY="your_semantic_scholar_api_key"
 - Precautions when installing MinerU:
     - Please ensure that the created Python environment is of version `3.10`
     - Install the latest version of `magic-pdf` to get more advanced features via
-    ```bash
-    pip install -U "magic-pdf[full]" --extra-index-url https://wheels.myhloli.com
-    ```
+        ```bash
+        pip install -U "magic-pdf[full]" --extra-index-url https://wheels.myhloli.com
+        ```
     - It is suggested to pre-download the OCR [models](https://github.com/opendatalab/MinerU/blob/master/docs/how_to_download_models_en.md) from Huggingface for MinerU (which contain [`opendatalab/PDF-Extract-Kit-1.0`](https://huggingface.co/opendatalab/PDF-Extract-Kit-1.0) and [`hantian/layoutreader`](https://huggingface.co/hantian/layoutreader)) to your Hugging Face models cache (by default, `~/.cache/huggingface/hub`).
     - Modify the fields of two model dirs in config file [`magic-pdf.json`](https://github.com/opendatalab/MinerU/tree/master?tab=readme-ov-file#3-modify-the-configuration-file-for-additional-configuration) to your local paths (`models-dir` and `layoutreader-model-dir`). For example,
         ```json

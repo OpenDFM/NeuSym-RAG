@@ -306,14 +306,14 @@ To speed up the database population, we can improve the efficiency at two steps.
 2. Besides, we can pre-process the PDFs with official MinerU command `magic-pdf -p pdf_filepath -o output_folder -m auto` and cache the output results in the output folder `${dataset_dir}/${dataset}/processed_data/`.
     - Each processed PDF will be cached in `processed_data/` as a separate folder with the same name as the base filename.
 
-```sh
-$ cat uuids.txt
-data/dataset/airqa/papers/acl2023/a02e3a4b-1dfb-5f4b-b654-4855a1a7f7bf.pdf
-data/dataset/airqa/papers/acl2023/a04766c4-db6f-58b8-867f-07385a5890e3.pdf
-...
-$ bash mineru.sh airqa uuids.txt
-```
-Then, during the PDF parsing in function `populate`, it will automatically detect and utilize the cached results to accelerate the pipeline. For large quantities of papers, we can further launch multiple processes to `magic-pdf` different PDFs partitions.
+    ```sh
+    $ cat uuids.txt
+    data/dataset/airqa/papers/acl2023/a02e3a4b-1dfb-5f4b-b654-4855a1a7f7bf.pdf
+    data/dataset/airqa/papers/acl2023/a04766c4-db6f-58b8-867f-07385a5890e3.pdf
+    ...
+    $ bash mineru.sh airqa uuids.txt
+    ```
+    Then, during the PDF parsing in function `populate`, it will automatically detect and utilize the cached results to accelerate the pipeline. For large quantities of papers, we can further launch multiple processes to `magic-pdf` different PDFs partitions.
 
 
 ### 🗃️ Batched LLM Summarization
@@ -324,26 +324,26 @@ In the population pipeline, we constantly send http requests to LLM for summariz
 
 1. **Parallel Extraction:** This script generates two files, `text_batch.jsonl` and `image_batch.jsonl`, following the standard format (see [OpenAI Batch API](https://platform.openai.com/docs/guides/batch)). The default output path `data/dataset/airqa/parallel/` can be changed in `ai_research_pe_config.json`.
 
-```sh
-# batch_uuids.json contains a list of PDF UUIDs
-$ python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/batch_uuids.json \
-    --config_path configs/ai_research_pe_config.json
-```
+    ```sh
+    # batch_uuids.json contains a list of PDF UUIDs
+    $ python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/batch_uuids.json \
+        --config_path configs/ai_research_pe_config.json
+    ```
 
 2. **Batch API Calls:** Now, we can send the two files (`text_batch.jsonl` and `image_batch.jsonl`) to LLMs/VLMs that support batch inference. Suppose we have obtained the result files `text_results.jsonl` and `image_results.jsonl` respectively. 
 
 3. **Parallel Filling:** Next, we can fill the missing summaries into `processed_data/` with the following command.
 
-```sh
-# batch_uuids.json should be exactly the same file in step 1
-python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/batch_uuids.json \
-    --config_path configs/ai_research_pf_config.json
-```
+    ```sh
+    # batch_uuids.json should be exactly the same file in step 1
+    python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/batch_uuids.json \
+        --config_path configs/ai_research_pf_config.json
+    ```
 
-Finally, we can now populate the database and complete the whole database population:
-```sh
-python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/batch_uuids.json \
-    --config_path configs/ai_research_config.json --on_conflict ignore
-```
+    Finally, we can now populate the database and complete the whole database population:
+    ```sh
+    python utils/database_utils.py --database ai_research --pdf_path data/dataset/airqa/batch_uuids.json \
+        --config_path configs/ai_research_config.json --on_conflict ignore
+    ```
 
 > **❗️ Attention:** the Parallel Extraction and Parallel Filling should be conducted on the same server or laptop, because the hash value of the same LLM message may be different across OS platforms. Moreover, we found that the LLM batch API may fail to generate part of the results. Thus, it is suggested to maintain the HTTP connection to LLMs/VLMs even when performing the final population using `ai_researh_config.json`.

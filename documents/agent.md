@@ -112,18 +112,18 @@ Here is the checklist of all different agent baselines:
 
     - For other agent baselines, please use the corresponding [agent method](#overview-of-agent-baselines)
 
-```sh
-# NeuSym-RAG framework
-python scripts/hybrid_neural_symbolic_rag.py --dataset airqa --test_data test_data_553.jsonl \
-    --database ai_research --vectorstore ai_research --agent_method neusym_rag \
-    --llm gpt-4o-mini --max_turn 20 # ... optional arguments, see below
+    ```sh
+    # NeuSym-RAG framework
+    python scripts/hybrid_neural_symbolic_rag.py --dataset airqa --test_data test_data_553.jsonl \
+        --database ai_research --vectorstore ai_research --agent_method neusym_rag \
+        --llm gpt-4o-mini --max_turn 20 # ... optional arguments, see below
 
-# Other agent baseline methods
-agent_method=classic_rag # trivial_question_only, iterative_neu_rag, two_stage_hybrid_rag, etc.
-python scripts/${agent_method}_baseline.py --dataset airqa --test_data test_data_553.jsonl \
-    --database ai_research --vectorstore ai_research --agent_method ${agent_method} \
-    --llm gpt-4o-mini # ... optional arguments, see below
-```
+    # Other agent baseline methods
+    agent_method=classic_rag # trivial_question_only, iterative_neu_rag, two_stage_hybrid_rag, etc.
+    python scripts/${agent_method}_baseline.py --dataset airqa --test_data test_data_553.jsonl \
+        --database ai_research --vectorstore ai_research --agent_method ${agent_method} \
+        --llm gpt-4o-mini # ... optional arguments, see below
+    ```
 
 ### Graph-RAG Baselines
 
@@ -131,34 +131,34 @@ For `two_stage_graph_rag` and `iterative_graph_rag`, the main body is the invoca
 
 We take the dataset `airqa` as an example to show how to build the graph and use it:
 1. Initialize the `graphrag_root` folder for Graph-RAG:
-```bash
-python utils/graphrag_utils.py --function init_graph --dataset airqa
-```
+    ```bash
+    python utils/graphrag_utils.py --function init_graph --dataset airqa
+    ```
 
 2. Extract all PDF content that will be used in the test data into `.txt` files:
-```bash
-python utils/graphrag_utils.py --function gather_input --dataset airqa --test_data test_data_553.jsonl
-```
+    ```bash
+    python utils/graphrag_utils.py --function gather_input --dataset airqa --test_data test_data_553.jsonl
+    ```
 
 3. Build the graph from documents in step 2:
     - set the environment variable `OPENAI_API_KEY` and `OPENAI_BASE_URL` firstly
 
-```bash
-python utils/graphrag_utils.py --function build_graph --dataset airqa --llm gpt-4o-mini --graphrag_embed text-embedding-3-small
-```
+    ```bash
+    python utils/graphrag_utils.py --function build_graph --dataset airqa --llm gpt-4o-mini --graphrag_embed text-embedding-3-small
+    ```
 
 4. Run the agent method:
     - must use the same LLM and embedding model as step 3
 
-```bash
-# Two-stage Graph-RAG baseline
-python scripts/two_stage_graph_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl \
-    --agent_method two_stage_graph_rag --llm gpt-4o-mini --graphrag_embed text-embedding-3-small
+    ```bash
+    # Two-stage Graph-RAG baseline
+    python scripts/two_stage_graph_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl \
+        --agent_method two_stage_graph_rag --llm gpt-4o-mini --graphrag_embed text-embedding-3-small
 
-# Iterative Graph-RAG baseline
-python scripts/iterative_graph_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl \
-    --agent_method iterative_graph_rag --llm gpt-4o-mini --graphrag_embed text-embedding-3-small
-```
+    # Iterative Graph-RAG baseline
+    python scripts/iterative_graph_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl \
+        --agent_method iterative_graph_rag --llm gpt-4o-mini --graphrag_embed text-embedding-3-small
+    ```
 
 > **⭐️ TIP:** For different datasets, we set the default graphrag root to `data/graph/${dataset}/`. This folder can be changed by modifying the function `get_graphrag_root` in [`utils/config.py`](../utils/config.py).
 

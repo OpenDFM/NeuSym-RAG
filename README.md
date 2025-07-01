@@ -7,7 +7,7 @@
 <details>
   <summary> 💫 Table of Contents (Click to expand)</summary>
 
-- [💡 Main contributions](#-main-contributions)
+- [💡 Main Contributions](#-main-contributions)
 - [🔍 Quick Start](#-quick-start)
 - [📖 PDF Parsing and Encoding](#-pdf-parsing-and-encoding)
 - [📊 Experiment Results](#-experiment-results)
@@ -16,7 +16,7 @@
 
 </details>
 
-## 💡 Main contributions
+## 💡 Main Contributions
 - We are the first to integrate both **vector-based neural retrieval** and **SQL-based symbolic retrieval** into a unified and interactive **NeuSym-RAG** framework through executable [actions](./agents/envs/actions/actions.json).
 - We incorporate **multiple views** for parsing and vectorizing PDF documents, and adopt a [**structured database schema**](./data/database/ai_research/ai_research.sql) to systematically organize both text tokens and encoded vectors.
 - Experiments on three realistic full PDF-based QA datasets w.r.t. academic research (AirQA-Real, [M3SciQA](https://aclanthology.org/2024.findings-emnlp.904.pdf) and [SciDQA](https://aclanthology.org/2024.emnlp-main.1163v2.pdf)) validate the superiority over various neural and symbolic baselines.
@@ -48,7 +48,7 @@
     git clone https://huggingface.co/openai/clip-vit-base-patch32
     ... # download other vector encoding models if needed
     ```
-3. Download the dataset-related files into the folder `data/dataset` 👉🏻 [HuggingFace](todo) (to be released)
+3. Download the dataset-related files into the folder `data/dataset` 👉🏻 [HuggingFace](https://huggingface.co/datasets/OpenDFM/AirQA-Real)
     - `AirQA-Real`: this work, including the `metadata/`, `papers/`, and `processed_data/`
     - [`M3SciQA`](https://github.com/yale-nlp/M3SciQA): including the `metadata/`, `papers/`, `images/`, and `processed_data/`
     - [`SciDQA`](https://github.com/yale-nlp/SciDQA): including the `metadata/`, `papers/`, and `processed_data/`
@@ -101,7 +101,7 @@
 
     </details>
 
-4. Download our constructed databases (`.duckdb`) and vectorstores (`.db` and `bm25.json`) into the folders `data/database/` and `data/vectorstore/`, respectively (👉🏻 [HuggingFace 🔗](TODO)). Otherwise, you can construct them by yourself (see [PDF Parsing and Encoding](#pdf-parsing-and-encoding)).
+4. Download our constructed databases (`.duckdb`) and vectorstores (`.db` and `bm25.json`) into the folders `data/database/` and `data/vectorstore/`, respectively (👉🏻 [HuggingFace 🔗](https://huggingface.co/datasets/OpenDFM/AirQA-Real)). Otherwise, you can construct them by yourself (see [PDF Parsing and Encoding](#pdf-parsing-and-encoding)).
     - The 3 dataset name to database / vectorstore name mappings are:
 
       | Dataset    | Dataset Name  | Database Name       | Vectorstore Name    |
@@ -350,7 +350,13 @@ Fine-grained documents in this project are detailed in folder `documents/`. Here
 
 If you find this project useful, please cite our work:
 ```txt
-{
-  "TO BE RELEASED"
+@misc{cao2025neusymraghybridneuralsymbolic,
+      title={NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering}, 
+      author={Ruisheng Cao and Hanchong Zhang and Tiancheng Huang and Zhangyi Kang and Yuxin Zhang and Liangtai Sun and Hanqi Li and Yuxun Miao and Shuai Fan and Lu Chen and Kai Yu},
+      year={2025},
+      eprint={2505.19754},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.19754}, 
 }
 ```

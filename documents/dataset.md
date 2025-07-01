@@ -52,39 +52,29 @@ We choose and experiment on these three datasets:
 
 ## Dataset Download Links
 
-- M3SciQA dataset: 👉🏻 to be released
+- M3SciQA dataset: 👉🏻 [link](https://huggingface.co/datasets/OpenDFM/AirQA-Real/blob/main/m3sciqa/m3sciqa.zip)
     - `.zip` file includes `metadata/`, `images/`, `papers/` and `processed_data/`
 
-```sh
-mkdir -p data/dataset/m3sciqa/
-unzip -o m3sciqa.zip -d data/dataset/m3sciqa/
-```
+    ```sh
+    mkdir -p data/dataset/m3sciqa/
+    unzip -o m3sciqa.zip -d data/dataset/m3sciqa/
+    ```
 
-- SciDQA dataset: 👉🏻 to be released
+- SciDQA dataset: 👉🏻 [link](https://huggingface.co/datasets/OpenDFM/AirQA-Real/blob/main/scidqa/scidqa.zip)
     - `.zip` file includes `metadata/`, `papers/` and `processed_data/`
 
-```sh
-mkdir -p data/dataset/scidqa/
-unzip -o scidqa.zip -d data/dataset/scidqa/
-```
+    ```sh
+    mkdir -p data/dataset/scidqa/
+    unzip -o scidqa.zip -d data/dataset/scidqa/
+    ```
 
 - AirQA-Real dataset: 👉🏻 to be released
-    - including `metadata/` and `processed_data/`
+    - `.zip` file includes `metadata/`, `papers/` and `processed_data/`
 
-```sh
-mkdir -p data/dataset/airqa/
-unzip -o airqa.zip -d data/dataset/airqa/
-```
-
-- AirQA-Real papers: 👉🏻 to be released
-    - including `acl2023.zip`, `iclr2024.zip` and `paper_others.zip`
-
-```sh
-mkdir -p data/dataset/airqa/papers/
-unzip -o acl2023.zip -d data/dataset/airqa/papers/
-unzip -o iclr2024.zip -d data/dataset/airqa/papers/
-unzip -o paper_others.zip -d data/dataset/airqa/papers/
-```
+    ```sh
+    mkdir -p data/dataset/airqa/
+    unzip -o airqa.zip -d data/dataset/airqa/
+    ```
 
 
 ## Dataset Sampling
