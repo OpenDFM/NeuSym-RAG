@@ -147,24 +147,24 @@
     </details>
 
 5. Run the following commands to compare the performance of our NeuSym-RAG framework with the Classic RAG approach: (the evaluation is also included at the end)
-    - Congigure the `OPENAI_API_KEY` and `OPENAI_BASE_URL` (if needed)
+    - Configure the `OPENAI_API_KEY` and `OPENAI_BASE_URL` (if needed)
 
-  ```sh
-  export OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxx"
-  export OPENAI_BASE_URL="https://api.openai.com/v1"
+    ```sh
+    export OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxx"
+    export OPENAI_BASE_URL="https://api.openai.com/v1"
 
-  # Classic RAG baseline
-  $ python scripts/classic_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl --vectorstore ai_research --agent_method classic_rag --llm gpt-4o-mini
-  $ python scripts/classic_rag_baseline.py --dataset m3sciqa --test_data test_data.jsonl --vectorstore emnlp_papers --agent_method classic_rag --llm gpt-4o-mini
-  $ python scripts/classic_rag_baseline.py --dataset scidqa --test_data test_data_775.jsonl --vectorstore openreview_papers --agent_method classic_rag --llm gpt-4o-mini
+    # Classic RAG baseline
+    $ python scripts/classic_rag_baseline.py --dataset airqa --test_data test_data_553.jsonl --vectorstore ai_research --agent_method classic_rag --llm gpt-4o-mini
+    $ python scripts/classic_rag_baseline.py --dataset m3sciqa --test_data test_data.jsonl --vectorstore emnlp_papers --agent_method classic_rag --llm gpt-4o-mini
+    $ python scripts/classic_rag_baseline.py --dataset scidqa --test_data test_data_775.jsonl --vectorstore openreview_papers --agent_method classic_rag --llm gpt-4o-mini
 
-  # NeuSym-RAG framework
-  $ python scripts/hybrid_neural_symbolic_rag.py --dataset airqa --test_data test_data_553.jsonl --database ai_research --agent_method neusym_rag --llm gpt-4o-mini
-  $ python scripts/hybrid_neural_symbolic_rag.py --dataset m3sciqa --test_data test_data.jsonl --database emnlp_papers --agent_method neusym_rag --llm gpt-4o-mini
-  $ python scripts/hybrid_neural_symbolic_rag.py --dataset scidqa --test_data test_data_775.jsonl --database openreview_papers --agent_method neusym_rag --llm gpt-4o-mini
-  ```
+    # NeuSym-RAG framework
+    $ python scripts/hybrid_neural_symbolic_rag.py --dataset airqa --test_data test_data_553.jsonl --database ai_research --agent_method neusym_rag --llm gpt-4o-mini
+    $ python scripts/hybrid_neural_symbolic_rag.py --dataset m3sciqa --test_data test_data.jsonl --database emnlp_papers --agent_method neusym_rag --llm gpt-4o-mini
+    $ python scripts/hybrid_neural_symbolic_rag.py --dataset scidqa --test_data test_data_775.jsonl --database openreview_papers --agent_method neusym_rag --llm gpt-4o-mini
+    ```
 
-> **🚀 NOTE:** For more agent baselines (e.g., `iterative_neu_rag` and `two_stage_hybrid_rag`) and variable parameters (e.g., using open-source LLMs like Qwen2.5-VL-Instruct), please refer to [📘 Agent Baselines](./documents/agent.md).
+    > **🚀 NOTE:** For more agent baselines (e.g., `iterative_neu_rag` and `two_stage_hybrid_rag`) and variable parameters (e.g., using open-source LLMs like Qwen2.5-VL-Instruct), please refer to [📘 Agent Baselines](./documents/agent.md).
 
 
 ## 📖 PDF Parsing and Encoding
