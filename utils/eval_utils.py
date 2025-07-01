@@ -132,7 +132,7 @@ if __name__ == '__main__':
 
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='airqa', choices=['airqa', 'm3sciqa', 'scidqa', 'spiqa'], help='Dataset name')
+    parser.add_argument('--dataset', type=str, default='airqa', choices=['airqa', 'm3sciqa', 'scidqa'], help='Dataset name')
     parser.add_argument('--pred', type=str, help='Path to predicted answer, .jsonl file')
     parser.add_argument('--gold', type=str, help='Path to gold answer, .jsonl file')
     parser.add_argument('--output', type=str, default=None, help='Path to save the evaluation result, .txt file')

@@ -41,10 +41,6 @@ from .m3sciqa_functions import (
     eval_m3sciqa
 )
 
-from .spiqa_functions import (
-    eval_spiqa
-)
-
 from .scidqa_functions import (
     eval_scidqa
 )
