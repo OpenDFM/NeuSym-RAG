@@ -1,4 +1,10 @@
-# Project for Hybrid Neural Symbolic Retrieval
+# <div align="center">NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering<br>ACL 2025 (Main)</div>
+<div align="center">
+
+[![arXiv](https://img.shields.io/badge/arXiv-2505.19754-red)](https://www.arxiv.org/abs/2505.19754)
+[![Data](https://img.shields.io/badge/data-AirQA--Real-blue)](https://huggingface.co/datasets/OpenDFM/AirQA-Real)
+
+</div>
 
 <p align="center">
   <img src="assets/rag-framework.png" alt="our-framework">
