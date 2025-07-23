@@ -1031,7 +1031,7 @@
       <h2 class="title is-3">Task Demonstration</h2>
       <md-block>
         We demonstrate NeuSym-RAG's capabilities through the AirQA-Real dataset, showing how the agent processes questions, retrieves information, and generates answers.
-        For more exmaples, please refer to the [<b>Task Viewer</b>](explorer.html) page.
+        
       </md-block>
 
       <div class="tabs">
@@ -1147,6 +1147,61 @@
           NeuSym-RAG implements instance-specific, execution-based evaluation through 18 carefully designed evaluation functions with optional parameters. These functions are categorized as either subjective or objective, depending on whether they involve judgment from LLMs. For more details about the evaluation framework and available metrics, please visit our <a href="https://github.com/X-LANCE/NeuSym-RAG/tree/main/evaluation" target="_blank">evaluation repository</a>.
         </md-block>
       </div>
+
+      <!-- Agent Demo Videos: Start -->
+      <div style="margin-top:2.5em;">
+        <div style="margin-bottom:1.2em;font-size:1rem;color:#4a4a4a;">Below are three simulated agent demonstration cases, each showing how the agent solves a different type of question through multi-step reasoning and retrieval. For more examples, please refer to the <a href="explorer.html" target="_blank"><b>Task Viewer</b></a> page.</div>
+        <div class="tabs is-toggle is-centered" id="agent-demo-tabs" style="font-size:1rem;font-family:'Noto Sans',sans-serif;">
+          <ul>
+            <li class="is-active"><a data-video="agent-demo-1">Example 1</a></li>
+            <li><a data-video="agent-demo-2">Example 2</a></li>
+            <li><a data-video="agent-demo-3">Example 3</a></li>
+          </ul>
+        </div>
+        <div id="agent-demo-1" class="agent-demo-video is-active">
+          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;">
+            <source src="static/videos/example1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div style="margin-top:0.7em;font-size:1rem;font-family:'Noto Sans',sans-serif;color:#4a4a4a;">Case 1: The agent answers a complex single-document question, demonstrating multi-step reasoning and integration of multimodal information.</div>
+        </div>
+        <div id="agent-demo-2" class="agent-demo-video" style="display:none;">
+          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;">
+            <source src="static/videos/example2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div style="margin-top:0.7em;font-size:1rem;font-family:'Noto Sans',sans-serif;color:#4a4a4a;">Case 2: The agent answers a paper retrieval question, showing its ability to search and filter across multiple papers.</div>
+        </div>
+        <div id="agent-demo-3" class="agent-demo-video" style="display:none;">
+          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;">
+            <source src="static/videos/example3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div style="margin-top:0.7em;font-size:1rem;font-family:'Noto Sans',sans-serif;color:#4a4a4a;">Case 3: The agent answers a multi-document question, highlighting its ability to integrate and reason over information from multiple sources.</div>
+        </div>
+      </div>
+      <script>
+        // Agent Demo Tabs
+        document.addEventListener('DOMContentLoaded', function() {
+          const demoTabs = document.querySelectorAll('#agent-demo-tabs li');
+          const demoVideos = document.querySelectorAll('.agent-demo-video');
+          demoTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+              demoTabs.forEach(t => t.classList.remove('is-active'));
+              tab.classList.add('is-active');
+              const target = tab.querySelector('a').getAttribute('data-video');
+              demoVideos.forEach(v => v.style.display = 'none');
+              demoVideos.forEach(v => v.classList.remove('is-active'));
+              const show = document.getElementById(target);
+              if (show) {
+                show.style.display = 'block';
+                show.classList.add('is-active');
+              }
+            });
+          });
+        });
+      </script>
+      <!-- Agent Demo Videos: End -->
     </div>
   </section>
 
