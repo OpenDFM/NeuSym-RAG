@@ -1,0 +1,25 @@
+{
+    "uuid": "e59dad76-a2c8-56a7-8a17-8e60ea99f4b0",
+    "title": "SmoothLLM: Defending Large Language Models Against Jailbreaking Attacks",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "R0-FoMo Poster",
+    "bibtex": "@inproceedings{\nrobey2023smoothllm,\ntitle={Smooth{LLM}: Defending Large Language Models Against Jailbreaking Attacks},\nauthor={Alexander Robey and Eric Wong and Hamed Hassani and George Pappas},\nbooktitle={R0-FoMo:Robustness of Few-shot and Zero-shot Learning in Large Foundation Models},\nyear={2023},\nurl={https://openreview.net/forum?id=msOSDvY4Ss}\n}",
+    "authors": [
+        "Alexander Robey",
+        "Eric Wong",
+        "Hamed Hassani",
+        "George Pappas"
+    ],
+    "pdf_url": "https://openreview.net/pdf/18c7519ace9487e4de152928c7550ba67ad6d0df.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/e59dad76-a2c8-56a7-8a17-8e60ea99f4b0.pdf",
+    "num_pages": 39,
+    "abstract": "Despite efforts to align large language models (LLMs), widely-used LLMs such as GPT and Claude are susceptible to jailbreaking attacks, wherein an adversary fools a targeted LLM into generating objectionable content.  To address this vulnerability, we propose SmoothLLM, the first algorithm designed to mitigate jailbreaking attacks on LLMs.  Based on our finding that adversarially-generated prompts are brittle to character-level changes, our defense first randomly perturbs multiple copies of a given input prompt, and then aggregates the corresponding predictions to detect adversarial inputs.  SmoothLLM reduces the attack success rate on numerous popular LLMs to below one percentage point, avoids unnecessary conservatism, and admits provable guarantees on attack mitigation.  Moreover, our defense uses exponentially fewer queries than existing attacks and is compatible with any LLM.",
+    "tldr": "We propose the first defense against adversarial-prompting-based jailbreaking attacks on LLMs.",
+    "tags": [
+        "Jailbreak",
+        "LLMs",
+        "adversarial defense"
+    ]
+}

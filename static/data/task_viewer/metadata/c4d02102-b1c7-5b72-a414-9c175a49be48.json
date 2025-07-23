@@ -1,0 +1,27 @@
+{
+    "uuid": "c4d02102-b1c7-5b72-a414-9c175a49be48",
+    "title": "ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Kevin Clark",
+        "Minh-Thang Luong",
+        "Quoc V. Le",
+        "Christopher D. Manning"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2003.10555v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2020/c4d02102-b1c7-5b72-a414-9c175a49be48.pdf",
+    "bibtex": "@misc{clark2020electrapretrainingtextencodersas,\n    title = {ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators},\n    author = {Kevin Clark and Minh-Thang Luong and Quoc V. Le and Christopher D. Manning},\n    year = {2020},\n    eprint = {2003.10555},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2003.10555},\n}",
+    "abstract": "Masked language modeling (MLM) pre-training methods such as BERT corrupt the\ninput by replacing some tokens with [MASK] and then train a model to\nreconstruct the original tokens. While they produce good results when\ntransferred to downstream NLP tasks, they generally require large amounts of\ncompute to be effective. As an alternative, we propose a more sample-efficient\npre-training task called replaced token detection. Instead of masking the\ninput, our approach corrupts it by replacing some tokens with plausible\nalternatives sampled from a small generator network. Then, instead of training\na model that predicts the original identities of the corrupted tokens, we train\na discriminative model that predicts whether each token in the corrupted input\nwas replaced by a generator sample or not. Thorough experiments demonstrate\nthis new pre-training task is more efficient than MLM because the task is\ndefined over all input tokens rather than just the small subset that was masked\nout. As a result, the contextual representations learned by our approach\nsubstantially outperform the ones learned by BERT given the same model size,\ndata, and compute. The gains are particularly strong for small models; for\nexample, we train a model on one GPU for 4 days that outperforms GPT (trained\nusing 30x more compute) on the GLUE natural language understanding benchmark.\nOur approach also works well at scale, where it performs comparably to RoBERTa\nand XLNet while using less than 1/4 of their compute and outperforms them when\nusing the same amount of compute.",
+    "num_pages": 18,
+    "tldr": "ELECTRA pre-training method outperforms MLM by using replaced token detection.",
+    "tags": [
+        "ELECTRA",
+        "pre-training",
+        "replaced token detection",
+        "discriminative model",
+        "NLP efficiency"
+    ]
+}

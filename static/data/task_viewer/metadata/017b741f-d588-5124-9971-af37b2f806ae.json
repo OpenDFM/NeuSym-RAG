@@ -1,0 +1,31 @@
+{
+    "uuid": "017b741f-d588-5124-9971-af37b2f806ae",
+    "title": "ShortGPT: Layers in Large Language Models are More Redundant Than You Expect",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Xin Men",
+        "Mingyu Xu",
+        "Qingyu Zhang",
+        "Bingning Wang",
+        "Hongyu Lin",
+        "Yaojie Lu",
+        "Xianpei Han",
+        "Weipeng Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2403.03853v3",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2024/017b741f-d588-5124-9971-af37b2f806ae.pdf",
+    "bibtex": "@misc{men2024shortgptlayersinlargelanguage,\n    title = {ShortGPT: Layers in Large Language Models are More Redundant Than You Expect},\n    author = {Xin Men and Mingyu Xu and Qingyu Zhang and Bingning Wang and Hongyu Lin and Yaojie Lu and Xianpei Han and Weipeng Chen},\n    year = {2024},\n    eprint = {2403.03853},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2403.03853},\n}",
+    "abstract": "As Large Language Models (LLMs) continue to advance in performance, their\nsize has escalated significantly, with current LLMs containing billions or even\ntrillions of parameters. However, in this study, we discovered that many layers\nof LLMs exhibit high similarity, and some layers play a negligible role in\nnetwork functionality. Based on this observation, we define a metric called\nBlock Influence (BI) to gauge the significance of each layer in LLMs. We then\npropose a straightforward pruning approach: layer removal, in which we directly\ndelete the redundant layers in LLMs based on their BI scores. Experiments\ndemonstrate that our method, which we call ShortGPT, significantly outperforms\nprevious state-of-the-art (SOTA) methods in model pruning. Moreover, ShortGPT\nis orthogonal to quantization-like methods, enabling further reduction in\nparameters and computation. The ability to achieve better results through\nsimple layer removal, as opposed to more complex pruning techniques, suggests a\nhigh degree of redundancy in the model architecture.",
+    "num_pages": 18,
+    "tldr": "ShortGPT prunes LLMs by removing redundant layers, improving efficiency.",
+    "tags": [
+        "Large Language Models",
+        "Model Pruning",
+        "Block Influence",
+        "Redundancy",
+        "ShortGPT"
+    ]
+}

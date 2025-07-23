@@ -1,0 +1,31 @@
+{
+    "uuid": "f9c34aba-31a0-5b67-83a6-3cde37f2aecb",
+    "title": "RewriteLM: An Instruction-Tuned Large Language Model for Text Rewriting",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Lei Shu",
+        "Liangchen Luo",
+        "Jayakumar Hoskere",
+        "Yun Zhu",
+        "Yinxiao Liu",
+        "Simon Tong",
+        "Jindong Chen",
+        "Lei Meng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.15685v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/f9c34aba-31a0-5b67-83a6-3cde37f2aecb.pdf",
+    "bibtex": "@misc{shu2023rewritelmaninstructiontunedlargelanguage,\n    title = {RewriteLM: An Instruction-Tuned Large Language Model for Text Rewriting},\n    author = {Lei Shu and Liangchen Luo and Jayakumar Hoskere and Yun Zhu and Yinxiao Liu and Simon Tong and Jindong Chen and Lei Meng},\n    year = {2023},\n    eprint = {2305.15685},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2305.15685},\n}",
+    "abstract": "Large Language Models (LLMs) have demonstrated impressive capabilities in\ncreative tasks such as storytelling and E-mail generation. However, as LLMs are\nprimarily trained on final text results rather than intermediate revisions, it\nmight be challenging for them to perform text rewriting tasks. Most studies in\nthe rewriting tasks focus on a particular transformation type within the\nboundaries of single sentences. In this work, we develop new strategies for\ninstruction tuning and reinforcement learning to better align LLMs for\ncross-sentence rewriting tasks using diverse wording and structures expressed\nthrough natural languages including 1) generating rewriting instruction data\nfrom Wiki edits and public corpus through instruction generation and\nchain-of-thought prompting; 2) collecting comparison data for reward model\ntraining through a new ranking function. To facilitate this research, we\nintroduce OpenRewriteEval, a novel benchmark covers a wide variety of rewriting\ntypes expressed through natural language instructions. Our results show\nsignificant improvements over a variety of baselines. The public repository is\navailable on GitHub under Google Research\n(https://github.com/google-research/google-research/tree/master/rewritelm).",
+    "num_pages": 20,
+    "tldr": "Instruction-tuned LLM excels in cross-sentence text rewriting tasks.",
+    "tags": [
+        "text rewriting",
+        "large language models",
+        "instruction tuning",
+        "reinforcement learning",
+        "natural language processing"
+    ]
+}

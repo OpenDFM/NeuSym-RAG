@@ -1,0 +1,32 @@
+{
+    "uuid": "92a36b43-491e-5143-8319-e630273ccb0a",
+    "title": "RE-Matching: A Fine-Grained Semantic Matching Method for Zero-Shot Relation Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhao-etal-2023-matching,\n    title = \"{RE}-Matching: A Fine-Grained Semantic Matching Method for Zero-Shot Relation Extraction\",\n    author = \"Zhao, Jun  and\n      Zhan, WenYu  and\n      Zhao, Xin  and\n      Zhang, Qi  and\n      Gui, Tao  and\n      Wei, Zhongyu  and\n      Wang, Junzhe  and\n      Peng, Minlong  and\n      Sun, Mingming\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.369\",\n    doi = \"10.18653/v1/2023.acl-long.369\",\n    pages = \"6680--6691\",\n    abstract = \"Semantic matching is a mainstream paradigm of zero-shot relation extraction, which matches a given input with a corresponding label description. The entities in the input should exactly match their hypernyms in the description, while the irrelevant contexts should be ignored when matching. However, general matching methods lack explicit modeling of the above matching pattern. In this work, we propose a fine-grained semantic matching method tailored for zero-shot relation extraction. Guided by the above matching pattern, we decompose the sentence-level similarity score into the entity matching score and context matching score. Considering that not all contextual words contribute equally to the relation semantics, we design a context distillation module to reduce the negative impact of irrelevant components on context matching. Experimental results show that our method achieves higher matching accuracy and more than 10 times faster inference speed, compared with the state-of-the-art methods.\",\n}\n",
+    "authors": [
+        "Jun Zhao",
+        "WenYu Zhan",
+        "Xin Zhao",
+        "Qi Zhang",
+        "Tao Gui",
+        "Zhongyu Wei",
+        "Junzhe Wang",
+        "Minlong Peng",
+        "Mingming Sun"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.369.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/92a36b43-491e-5143-8319-e630273ccb0a.pdf",
+    "abstract": "Semantic matching is a mainstream paradigm of zero-shot relation extraction, which matches a given input with a corresponding label description. The entities in the input should exactly match their hypernyms in the description, while the irrelevant contexts should be ignored when matching. However, general matching methods lack explicit modeling of the above matching pattern. In this work, we propose a fine-grained semantic matching method tailored for zero-shot relation extraction. Guided by the above matching pattern, we decompose the sentence-level similarity score into the entity matching score and context matching score. Considering that not all contextual words contribute equally to the relation semantics, we design a context distillation module to reduce the negative impact of irrelevant components on context matching. Experimental results show that our method achieves higher matching accuracy and more than 10 times faster inference speed, compared with the state-of-the-art methods.",
+    "num_pages": 12,
+    "tldr": "Proposes a method enhancing zero-shot relation extraction with fine-grained matching.",
+    "tags": [
+        "zero-shot relation extraction",
+        "semantic matching",
+        "fine-grained matching",
+        "context distillation",
+        "entity matching"
+    ]
+}

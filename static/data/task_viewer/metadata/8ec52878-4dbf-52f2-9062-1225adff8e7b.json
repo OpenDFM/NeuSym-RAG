@@ -1,0 +1,33 @@
+{
+    "uuid": "8ec52878-4dbf-52f2-9062-1225adff8e7b",
+    "title": "Large Language Models as Source Planner for Personalized Knowledge-grounded Dialogues",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    "bibtex": "@inproceedings{wang-etal-2023-large,\n    title = \"Large Language Models as Source Planner for Personalized Knowledge-grounded Dialogues\",\n    author = \"Wang, Hongru  and\n      Hu, Minda  and\n      Deng, Yang  and\n      Wang, Rui  and\n      Mi, Fei  and\n      Wang, Weichao  and\n      Wang, Yasheng  and\n      Kwan, Wai-Chung  and\n      King, Irwin  and\n      Wong, Kam-Fai\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2023\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-emnlp.641\",\n    doi = \"10.18653/v1/2023.findings-emnlp.641\",\n    pages = \"9556--9569\",\n    abstract = \"Open-domain dialogue system usually requires different sources of knowledge to generate more informative and evidential responses. However, existing knowledge-grounded dialogue systems either focus on a single knowledge source or overlook the dependency between multiple sources of knowledge, which may result in generating inconsistent or even paradoxical responses. To incorporate multiple knowledge sources and dependencies between them, we propose SAFARI, a novel framework that leverages the exceptional capabilities of large language models (LLMs) in planning, understanding, and incorporating under both supervised and unsupervised settings. Specifically, SAFARI decouples the knowledge grounding into multiple sources and response generation, which allows easy extension to various knowledge sources including the possibility of not using any sources. To study the problem, we construct a personalized knowledge-grounded dialogue dataset Knowledge Behind Persona (KBP), which is the first to consider the dependency between persona and implicit knowledge. Experimental results on the KBP dataset demonstrate that the SAFARI framework can effectively produce persona-consistent and knowledge-enhanced responses.\",\n}\n",
+    "authors": [
+        "Hongru Wang",
+        "Minda Hu",
+        "Yang Deng",
+        "Rui Wang",
+        "Fei Mi",
+        "Weichao Wang",
+        "Yasheng Wang",
+        "Wai-Chung Kwan",
+        "Irwin King",
+        "Kam-Fai Wong"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-emnlp.641.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/8ec52878-4dbf-52f2-9062-1225adff8e7b.pdf",
+    "num_pages": 14,
+    "abstract": "Open-domain dialogue system usually requires different sources of knowledge to generate more informative and evidential responses. However, existing knowledge-grounded dialogue systems either focus on a single knowledge source or overlook the dependency between multiple sources of knowledge, which may result in generating inconsistent or even paradoxical responses. To incorporate multiple knowledge sources and dependencies between them, we propose SAFARI, a novel framework that leverages the exceptional capabilities of large language models (LLMs) in planning, understanding, and incorporating under both supervised and unsupervised settings. Specifically, SAFARI decouples the knowledge grounding into multiple sources and response generation, which allows easy extension to various knowledge sources including the possibility of not using any sources. To study the problem, we construct a personalized knowledge-grounded dialogue dataset Knowledge Behind Persona (KBP), which is the first to consider the dependency between persona and implicit knowledge. Experimental results on the KBP dataset demonstrate that the SAFARI framework can effectively produce persona-consistent and knowledge-enhanced responses.",
+    "tldr": "SAFARI framework uses LLMs for personalized, multi-source knowledge dialogue planning.",
+    "tags": [
+        "large language models",
+        "knowledge grounding",
+        "dialogue systems",
+        "personalized dialogues",
+        "framework development"
+    ]
+}

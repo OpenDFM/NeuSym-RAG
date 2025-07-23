@@ -1,0 +1,42 @@
+{
+    "uuid": "e5838af7-f285-5a91-8e5a-d9d1370f97ab",
+    "title": "Multi-turn Reinforcement Learning with Preference Human Feedback",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nshani2024multiturn,\ntitle={Multi-turn Reinforcement Learning with Preference Human Feedback},\nauthor={Lior Shani and Aviv Rosenberg and Asaf Cassel and Oran Lang and Daniele Calandriello and Avital Zipori and Hila Noga and Orgad Keller and Bilal Piot and Idan Szpektor and Avinatan Hassidim and Yossi Matias and Remi Munos},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=rVSc3HIZS4}\n}",
+    "authors": [
+        "Lior Shani",
+        "Aviv Rosenberg",
+        "Asaf Cassel",
+        "Oran Lang",
+        "Daniele Calandriello",
+        "Avital Zipori",
+        "Hila Noga",
+        "Orgad Keller",
+        "Bilal Piot",
+        "Idan Szpektor",
+        "Avinatan Hassidim",
+        "Yossi Matias",
+        "Remi Munos"
+    ],
+    "pdf_url": "https://openreview.net/pdf/4b797018cf3a0b6670839025a87efe1cbd4ef3e4.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/e5838af7-f285-5a91-8e5a-d9d1370f97ab.pdf",
+    "num_pages": 41,
+    "abstract": "Reinforcement Learning from Human Feedback (RLHF) has become the standard approach for aligning Large Language Models (LLMs) with human preferences, allowing LLMs to demonstrate remarkable abilities in various tasks.  Existing methods work by emulating the human preference at the single decision (turn) level, limiting their capabilities in settings that require planning or multi-turn interactions to achieve a long-term goal. In this paper, we address this issue by developing novel methods for Reinforcement Learning (RL) from preference feedback between two full multi-turn conversations.  In the tabular setting, we present a novel mirror-descent-based policy optimization algorithm for the general multi-turn preference-based RL problem, and prove its convergence to Nash equilibrium.  To evaluate performance, we create a new environment, Education Dialogue, where a teacher agent  guides  a  student  in  learning  a  random  topic,  and  show  that  a  deep  RL variant of our algorithm outperforms RLHF baselines. Finally, we show that in an environment with explicit rewards, our algorithm recovers the same performance as a reward-based RL baseline, despite relying solely on a weaker preference signal.",
+    "tldr": "Novel multi-turn RL methods enhance LLMs using preference human feedback.",
+    "tags": [
+        "Reinforcement Learning",
+        "RLHF",
+        "Human Feedback",
+        "Preferences",
+        "Optimization",
+        "LLMs",
+        "Large Language Models",
+        "Natural Language Processing",
+        "NLP",
+        "Learning Theory",
+        "RL"
+    ]
+}

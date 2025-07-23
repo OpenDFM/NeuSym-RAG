@@ -1,0 +1,24 @@
+{
+    "uuid": "1e8b1748-cb55-52a7-b27a-e38ccbee18a7",
+    "title": "GS-Blur: A 3D Scene-Based Dataset for Realistic Image Deblurring",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+    "bibtex": "@inproceedings{\nlee2024gsblur,\ntitle={{GS}-Blur: A 3D Scene-Based Dataset for Realistic Image Deblurring},\nauthor={Dongwoo Lee and JoonKyu Park and Kyoung Mu Lee},\nbooktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},\nyear={2024},\nurl={https://openreview.net/forum?id=Awu8YlEofZ}\n}",
+    "authors": [
+        "Dongwoo Lee",
+        "JoonKyu Park",
+        "Kyoung Mu Lee"
+    ],
+    "pdf_url": "https://openreview.net/pdf/76e6d48a2ade728442abe73f5a4ed53c114df549.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/1e8b1748-cb55-52a7-b27a-e38ccbee18a7.pdf",
+    "num_pages": 22,
+    "abstract": "To train a deblurring network, an appropriate dataset with paired blurry and sharp images is essential.\nExisting datasets collect blurry images either synthetically by aggregating consecutive sharp frames or using sophisticated camera systems to capture real blur.\nHowever, these methods offer limited diversity in blur types (blur trajectories) or require extensive human effort to reconstruct large-scale datasets, failing to fully reflect real-world blur scenarios.\nTo address this, we propose GS-Blur, a dataset of synthesized realistic blurry images created using a novel approach.\nTo this end, we first reconstruct 3D scenes from multi-view images using 3D Gaussian Splatting~(3DGS), then render blurry images by moving the camera view along the randomly generated motion trajectories.\nBy adopting various camera trajectories in reconstructing our GS-Blur, our dataset contains realistic and diverse types of blur, offering a large-scale dataset that generalizes well to real-world blur.\nUsing GS-Blur with various deblurring methods, we demonstrate its ability to generalize effectively compared to previous synthetic or real blur datasets, showing significant improvements in deblurring performance.\nWe will publicly release our dataset.",
+    "tldr": "We propose the first deblurring dataset synthesized from 3D reconstruction of 3D Gaussian-splatting.",
+    "tags": [
+        "Image Deblurring",
+        "3D Gaussian Splatting",
+        "Synthetic Dataset"
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "uuid": "6df0f3f3-e2e1-5d7a-9d70-3114ceac5939",
+    "title": "Enhancing Uncertainty-Based Hallucination Detection with Stronger Focus",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{zhang-etal-2023-enhancing-uncertainty,\n    title = \"Enhancing Uncertainty-Based Hallucination Detection with Stronger Focus\",\n    author = \"Zhang, Tianhang  and\n      Qiu, Lin  and\n      Guo, Qipeng  and\n      Deng, Cheng  and\n      Zhang, Yue  and\n      Zhang, Zheng  and\n      Zhou, Chenghu  and\n      Wang, Xinbing  and\n      Fu, Luoyi\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.emnlp-main.58\",\n    doi = \"10.18653/v1/2023.emnlp-main.58\",\n    pages = \"915--932\",\n    abstract = \"Large Language Models (LLMs) have gained significant popularity for their impressive performance across diverse fields. However, LLMs are prone to hallucinate untruthful or nonsensical outputs that fail to meet user expectations in many real-world applications. Existing works for detecting hallucinations in LLMs either rely on external knowledge for reference retrieval or require sampling multiple responses from the LLM for consistency verification, making these methods costly and inefficient. In this paper, we propose a novel reference-free, uncertainty-based method for detecting hallucinations in LLMs. Our approach imitates human focus in factuality checking from three aspects: 1) focus on the most informative and important keywords in the given text; 2) focus on the unreliable tokens in historical context which may lead to a cascade of hallucinations; and 3) focus on the token properties such as token type and token frequency. Experimental results on relevant datasets demonstrate the effectiveness of our proposed method, which achieves state-of-the-art performance across all the evaluation metrics and eliminates the need for additional information.\",\n}\n",
+    "authors": [
+        "Tianhang Zhang",
+        "Lin Qiu",
+        "Qipeng Guo",
+        "Cheng Deng",
+        "Yue Zhang",
+        "Zheng Zhang",
+        "Chenghu Zhou",
+        "Xinbing Wang",
+        "Luoyi Fu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.emnlp-main.58.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/6df0f3f3-e2e1-5d7a-9d70-3114ceac5939.pdf",
+    "num_pages": 18,
+    "abstract": "Large Language Models (LLMs) have gained significant popularity for their impressive performance across diverse fields. However, LLMs are prone to hallucinate untruthful or nonsensical outputs that fail to meet user expectations in many real-world applications. Existing works for detecting hallucinations in LLMs either rely on external knowledge for reference retrieval or require sampling multiple responses from the LLM for consistency verification, making these methods costly and inefficient. In this paper, we propose a novel reference-free, uncertainty-based method for detecting hallucinations in LLMs. Our approach imitates human focus in factuality checking from three aspects: 1) focus on the most informative and important keywords in the given text; 2) focus on the unreliable tokens in historical context which may lead to a cascade of hallucinations; and 3) focus on the token properties such as token type and token frequency. Experimental results on relevant datasets demonstrate the effectiveness of our proposed method, which achieves state-of-the-art performance across all the evaluation metrics and eliminates the need for additional information.",
+    "tldr": "Novel uncertainty-based method enhances hallucination detection in LLMs efficiently.",
+    "tags": [
+        "LLMs",
+        "hallucination detection",
+        "uncertainty-based method",
+        "factuality checking",
+        "reference-free approach"
+    ]
+}

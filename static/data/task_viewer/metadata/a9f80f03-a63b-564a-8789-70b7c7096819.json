@@ -1,0 +1,28 @@
+{
+    "uuid": "a9f80f03-a63b-564a-8789-70b7c7096819",
+    "title": "TopiOCQA: Open-domain Conversational Question Answering with Topic Switching",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Vaibhav Adlakha",
+        "Shehzaad Dhuliawala",
+        "Kaheer Suleman",
+        "Harm de Vries",
+        "Siva Reddy"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.00768v3",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2022/a9f80f03-a63b-564a-8789-70b7c7096819.pdf",
+    "bibtex": "@misc{adlakha2022topiocqaopendomainconversationalquestionanswering,\n    title = {TopiOCQA: Open-domain Conversational Question Answering with Topic Switching},\n    author = {Vaibhav Adlakha and Shehzaad Dhuliawala and Kaheer Suleman and Harm de Vries and Siva Reddy},\n    year = {2022},\n    eprint = {2110.00768},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2110.00768},\n}",
+    "abstract": "In a conversational question answering scenario, a questioner seeks to\nextract information about a topic through a series of interdependent questions\nand answers. As the conversation progresses, they may switch to related topics,\na phenomenon commonly observed in information-seeking search sessions. However,\ncurrent datasets for conversational question answering are limiting in two\nways: 1) they do not contain topic switches; and 2) they assume the reference\ntext for the conversation is given, i.e., the setting is not open-domain. We\nintroduce TopiOCQA (pronounced Tapioca), an open-domain conversational dataset\nwith topic switches on Wikipedia. TopiOCQA contains 3,920 conversations with\ninformation-seeking questions and free-form answers. On average, a conversation\nin our dataset spans 13 question-answer turns and involves four topics\n(documents). TopiOCQA poses a challenging test-bed for models, where efficient\nretrieval is required on multiple turns of the same conversation, in\nconjunction with constructing valid responses using conversational history. We\nevaluate several baselines, by combining state-of-the-art document retrieval\nmethods with neural reader models. Our best model achieves F1 of 55.8, falling\nshort of human performance by 14.2 points, indicating the difficulty of our\ndataset. Our dataset and code is available at\nhttps://mcgill-nlp.github.io/topiocqa",
+    "num_pages": 16,
+    "tldr": "New dataset TopiOCQA adds topic switching to open-domain QA challenges.",
+    "tags": [
+        "open-domain question answering",
+        "conversational AI",
+        "topic switching",
+        "information retrieval",
+        "neural networks"
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "uuid": "4f88e7de-b217-5d6b-a315-a872e927bdfe",
+    "title": "DetermLR: Augmenting LLM-based Logical Reasoning from Indeterminacy to Determinacy",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{sun-etal-2024-determlr,\n    title = \"{D}eterm{LR}: Augmenting {LLM}-based Logical Reasoning from Indeterminacy to Determinacy\",\n    author = \"Sun, Hongda  and\n      Xu, Weikai  and\n      Liu, Wei  and\n      Luan, Jian  and\n      Wang, Bin  and\n      Shang, Shuo  and\n      Wen, Ji-Rong  and\n      Yan, Rui\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.531\",\n    doi = \"10.18653/v1/2024.acl-long.531\",\n    pages = \"9828--9862\",\n    abstract = \"Recent advances in large language models (LLMs) have revolutionized the landscape of reasoning tasks. To enhance the capabilities of LLMs to emulate human reasoning, prior studies have focused on modeling reasoning steps using various thought structures like chains, trees, or graphs. However, LLM-based reasoning still encounters the following challenges: (1) Limited adaptability of preset structures to diverse tasks; (2) Insufficient precision in exploiting known conditions to derive new ones; and (3) Inadequate consideration of historical reasoning experiences for subsequent reasoning steps. To this end, we propose DetermLR, a novel perspective that rethinks the reasoning process as an evolution from indeterminacy to determinacy. First, we categorize known conditions into two types: determinate and indeterminate premises, facilitating the transformation process. Subsequently, we leverage quantitative measurements to prioritize more relevant premises to explore new insights. Furthermore, we automate the storage and extraction of available premises and reasoning paths with reasoning memory, preserving historical reasoning details for subsequent reasoning steps. Comprehensive experimental results demonstrate that DetermLR surpasses all baselines on various logical reasoning benchmarks: LogiQA, ProofWriter, FOLIO, PrOntoQA, and LogicalDeduction. Compared to previous multi-step reasoning methods, DetermLR achieves higher accuracy with fewer reasoning steps, highlighting its superior efficiency and effectiveness in solving logical reasoning tasks.\",\n}\n",
+    "authors": [
+        "Hongda Sun",
+        "Weikai Xu",
+        "Wei Liu",
+        "Jian Luan",
+        "Bin Wang",
+        "Shuo Shang",
+        "Ji-Rong Wen",
+        "Rui Yan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.531.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/4f88e7de-b217-5d6b-a315-a872e927bdfe.pdf",
+    "abstract": "Recent advances in large language models (LLMs) have revolutionized the landscape of reasoning tasks. To enhance the capabilities of LLMs to emulate human reasoning, prior studies have focused on modeling reasoning steps using various thought structures like chains, trees, or graphs. However, LLM-based reasoning still encounters the following challenges: (1) Limited adaptability of preset structures to diverse tasks; (2) Insufficient precision in exploiting known conditions to derive new ones; and (3) Inadequate consideration of historical reasoning experiences for subsequent reasoning steps. To this end, we propose DetermLR, a novel perspective that rethinks the reasoning process as an evolution from indeterminacy to determinacy. First, we categorize known conditions into two types: determinate and indeterminate premises, facilitating the transformation process. Subsequently, we leverage quantitative measurements to prioritize more relevant premises to explore new insights. Furthermore, we automate the storage and extraction of available premises and reasoning paths with reasoning memory, preserving historical reasoning details for subsequent reasoning steps. Comprehensive experimental results demonstrate that DetermLR surpasses all baselines on various logical reasoning benchmarks: LogiQA, ProofWriter, FOLIO, PrOntoQA, and LogicalDeduction. Compared to previous multi-step reasoning methods, DetermLR achieves higher accuracy with fewer reasoning steps, highlighting its superior efficiency and effectiveness in solving logical reasoning tasks.",
+    "num_pages": 35,
+    "tldr": "DetermLR enhances LLM reasoning by evolving from indeterminacy to determinacy.",
+    "tags": [
+        "Logical Reasoning",
+        "Large Language Models",
+        "Indeterminacy",
+        "Determinacy",
+        "Reasoning Memory"
+    ]
+}

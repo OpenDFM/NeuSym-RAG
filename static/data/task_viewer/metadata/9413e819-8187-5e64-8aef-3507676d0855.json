@@ -1,0 +1,30 @@
+{
+    "uuid": "9413e819-8187-5e64-8aef-3507676d0855",
+    "title": "Not only Look, but also Listen: Learning Multimodal Violence Detection under Weak Supervision",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Peng Wu",
+        "Jing Liu",
+        "Yujia Shi",
+        "Yujia Sun",
+        "Fangtao Shao",
+        "Zhaoyang Wu",
+        "Zhiwei Yang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2007.04687v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2020/9413e819-8187-5e64-8aef-3507676d0855.pdf",
+    "bibtex": "@misc{wu2020notonlylookbutalso,\n    title = {Not only Look, but also Listen: Learning Multimodal Violence Detection under Weak Supervision},\n    author = {Peng Wu and Jing Liu and Yujia Shi and Yujia Sun and Fangtao Shao and Zhaoyang Wu and Zhiwei Yang},\n    year = {2020},\n    eprint = {2007.04687},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2007.04687},\n}",
+    "abstract": "Violence detection has been studied in computer vision for years. However,\nprevious work are either superficial, e.g., classification of short-clips, and\nthe single scenario, or undersupplied, e.g., the single modality, and\nhand-crafted features based multimodality. To address this problem, in this\nwork we first release a large-scale and multi-scene dataset named XD-Violence\nwith a total duration of 217 hours, containing 4754 untrimmed videos with audio\nsignals and weak labels. Then we propose a neural network containing three\nparallel branches to capture different relations among video snippets and\nintegrate features, where holistic branch captures long-range dependencies\nusing similarity prior, localized branch captures local positional relation\nusing proximity prior, and score branch dynamically captures the closeness of\npredicted score. Besides, our method also includes an approximator to meet the\nneeds of online detection. Our method outperforms other state-of-the-art\nmethods on our released dataset and other existing benchmark. Moreover,\nextensive experimental results also show the positive effect of multimodal\n(audio-visual) input and modeling relationships. The code and dataset will be\nreleased in https://roc-ng.github.io/XD-Violence/.",
+    "num_pages": 23,
+    "tldr": "New method improves multimodal violence detection using weakly supervised data.",
+    "tags": [
+        "multimodal learning",
+        "violence detection",
+        "weak supervision",
+        "audio-visual integration",
+        "neural networks"
+    ]
+}

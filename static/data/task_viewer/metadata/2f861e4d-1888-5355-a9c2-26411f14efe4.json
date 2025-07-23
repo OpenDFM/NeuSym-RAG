@@ -1,0 +1,27 @@
+{
+    "uuid": "2f861e4d-1888-5355-a9c2-26411f14efe4",
+    "title": "Think Twice: Perspective-Taking Improves Large Language Models’ Theory-of-Mind Capabilities",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wilf-etal-2024-think,\n    title = \"Think Twice: Perspective-Taking Improves Large Language Models{'} Theory-of-Mind Capabilities\",\n    author = \"Wilf, Alex  and\n      Lee, Sihyun  and\n      Liang, Paul Pu  and\n      Morency, Louis-Philippe\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.451\",\n    doi = \"10.18653/v1/2024.acl-long.451\",\n    pages = \"8292--8308\",\n    abstract = \"Human interactions are deeply rooted in the interplay of thoughts, beliefs, and desires made possible by Theory of Mind (ToM): our cognitive ability to understand the mental states of ourselves and others. Although ToM may come naturally to us, emulating it presents a challenge to even the most advanced Large Language Models (LLMs). Recent improvements to LLMs{'} reasoning capabilities from simple yet effective prompting techniques such as Chain-of-Thought (CoT) have seen limited applicability to ToM. In this paper, we turn to the prominent cognitive science theory {``}Simulation Theory{''} to bridge this gap. We introduce SimToM, a novel two-stage prompting framework inspired by Simulation Theory{'}s notion of perspective-taking. To implement this idea on current ToM benchmarks, SimToM first filters context based on what the character in question knows before answering a question about their mental state. Our approach, which requires no additional training and minimal prompt-tuning, shows substantial improvement over existing methods, and our analysis reveals the importance of perspective-taking to Theory-of-Mind capabilities. Our findings suggest perspective-taking as a promising direction for future research into improving LLMs{'} ToM capabilities.\",\n}\n",
+    "authors": [
+        "Alex Wilf",
+        "Sihyun Lee",
+        "Paul Pu Liang",
+        "Louis-Philippe Morency"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.451.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/2f861e4d-1888-5355-a9c2-26411f14efe4.pdf",
+    "abstract": "Human interactions are deeply rooted in the interplay of thoughts, beliefs, and desires made possible by Theory of Mind (ToM): our cognitive ability to understand the mental states of ourselves and others. Although ToM may come naturally to us, emulating it presents a challenge to even the most advanced Large Language Models (LLMs). Recent improvements to LLMs’ reasoning capabilities from simple yet effective prompting techniques such as Chain-of-Thought (CoT) have seen limited applicability to ToM. In this paper, we turn to the prominent cognitive science theory “Simulation Theory” to bridge this gap. We introduce SimToM, a novel two-stage prompting framework inspired by Simulation Theory’s notion of perspective-taking. To implement this idea on current ToM benchmarks, SimToM first filters context based on what the character in question knows before answering a question about their mental state. Our approach, which requires no additional training and minimal prompt-tuning, shows substantial improvement over existing methods, and our analysis reveals the importance of perspective-taking to Theory-of-Mind capabilities. Our findings suggest perspective-taking as a promising direction for future research into improving LLMs’ ToM capabilities.",
+    "num_pages": 17,
+    "tldr": "SimToM enhances LLMs' Theory-of-Mind by using perspective-taking prompts.",
+    "tags": [
+        "Theory of Mind",
+        "perspective-taking",
+        "large language models",
+        "simulation theory",
+        "cognitive reasoning"
+    ]
+}

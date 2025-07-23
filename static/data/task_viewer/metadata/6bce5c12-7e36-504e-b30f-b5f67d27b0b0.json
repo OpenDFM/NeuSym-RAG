@@ -1,0 +1,34 @@
+{
+    "uuid": "6bce5c12-7e36-504e-b30f-b5f67d27b0b0",
+    "title": "Solving Challenging Math Word Problems Using GPT-4 Code Interpreter with Code-based Self-Verification",
+    "conference_full": "International Conference on Learning Representations",
+    "conference": "ICLR",
+    "year": 2024,
+    "volume": "ICLR 2024 poster",
+    "bibtex": "@inproceedings{\nzhou2024solving,\ntitle={Solving Challenging Math Word Problems Using {GPT}-4 Code Interpreter with Code-based Self-Verification},\nauthor={Aojun Zhou and Ke Wang and Zimu Lu and Weikang Shi and Sichun Luo and Zipeng Qin and Shaoqing Lu and Anya Jia and Linqi Song and Mingjie Zhan and Hongsheng Li},\nbooktitle={The Twelfth International Conference on Learning Representations},\nyear={2024},\nurl={https://openreview.net/forum?id=c8McWs4Av0}\n}",
+    "authors": [
+        "Aojun Zhou",
+        "Ke Wang",
+        "Zimu Lu",
+        "Weikang Shi",
+        "Sichun Luo",
+        "Zipeng Qin",
+        "Shaoqing Lu",
+        "Anya Jia",
+        "Linqi Song",
+        "Mingjie Zhan",
+        "Hongsheng Li"
+    ],
+    "pdf_url": "https://openreview.net/pdf/7a0ce47f38250355696b43a1ea87a852922f5741.pdf",
+    "pdf_path": "data/dataset/airqa/papers/iclr2024/6bce5c12-7e36-504e-b30f-b5f67d27b0b0.pdf",
+    "num_pages": 27,
+    "abstract": "Recent progress in large language models (LLMs) like GPT-4 and PaLM-2 has brought significant advancements in addressing math reasoning problems. In particular, OpenAI's latest version of GPT-4, known as GPT-4 Code Interpreter, shows remarkable performance on challenging math datasets. In this paper, we explore the effect of code on enhancing LLMs' reasoning capability by introducing different constraints on the Code Usage Frequency of GPT-4 Code Interpreter. We found that its success can be largely attributed to its powerful skills in generating and executing code, evaluating the output of code execution, and rectifying its solution when receiving unreasonable outputs. Based on this insight, we propose a novel and effective prompting method, explicit $\\underline{\\text{c}}$ode-based $\\underline{\\text{s}}$elf-$\\underline{\\text{v}}$erification (CSV), to further boost the mathematical reasoning potential of GPT-4 Code Interpreter. This method employs a zero-shot prompt on GPT-4 Code Interpreter to encourage it to use code to self-verify its answers. In instances where the verification state registers as \"False\", the model shall automatically amend its solution, analogous to our approach of rectifying errors during a mathematics examination. Furthermore, we recognize that the states of the verification result indicate the confidence of a solution, which can improve the effectiveness of majority voting. With GPT-4 Code Interpreter and CSV, we achieve an impressive zero-shot accuracy on MATH dataset.",
+    "tldr": "We propose a zero-shot prompt that elicits effective code-based self-verification for mathematical reasoning.",
+    "tags": [
+        "mathematical reasoning",
+        "large language models",
+        "zero-shot learning",
+        "code generation",
+        "prompting"
+    ]
+}

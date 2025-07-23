@@ -1,0 +1,27 @@
+{
+    "uuid": "db340dc7-ff3c-591a-81a6-88243bf559df",
+    "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Shunyu Yao",
+        "Howard Chen",
+        "John Yang",
+        "Karthik Narasimhan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2207.01206v4",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/db340dc7-ff3c-591a-81a6-88243bf559df.pdf",
+    "bibtex": "@misc{yao2023webshoptowardsscalablerealworldweb,\n    title = {WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents},\n    author = {Shunyu Yao and Howard Chen and John Yang and Karthik Narasimhan},\n    year = {2023},\n    eprint = {2207.01206},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2207.01206},\n}",
+    "abstract": "Existing benchmarks for grounding language in interactive environments either\nlack real-world linguistic elements, or prove difficult to scale up due to\nsubstantial human involvement in the collection of data or feedback signals. To\nbridge this gap, we develop WebShop -- a simulated e-commerce website\nenvironment with $1.18$ million real-world products and $12,087$ crowd-sourced\ntext instructions. Given a text instruction specifying a product requirement,\nan agent needs to navigate multiple types of webpages and issue diverse actions\nto find, customize, and purchase an item. WebShop provides several challenges\nfor language grounding including understanding compositional instructions,\nquery (re-)formulation, comprehending and acting on noisy text in webpages, and\nperforming strategic exploration. We collect over $1,600$ human demonstrations\nfor the task, and train and evaluate a diverse range of agents using\nreinforcement learning, imitation learning, and pre-trained image and language\nmodels. Our best model achieves a task success rate of $29\\%$, which\noutperforms rule-based heuristics ($9.6\\%$) but is far lower than human expert\nperformance ($59\\%$). We also analyze agent and human trajectories and ablate\nvarious model components to provide insights for developing future agents with\nstronger language understanding and decision making abilities. Finally, we show\nthat agents trained on WebShop exhibit non-trivial sim-to-real transfer when\nevaluated on amazon.com and ebay.com, indicating the potential value of WebShop\nin developing practical web-based agents that can operate in the wild.",
+    "num_pages": 28,
+    "tldr": "WebShop: scalable e-commerce web interaction model for grounded language agents.",
+    "tags": [
+        "language grounding",
+        "web interaction",
+        "reinforcement learning",
+        "e-commerce simulation",
+        "sim-to-real transfer"
+    ]
+}

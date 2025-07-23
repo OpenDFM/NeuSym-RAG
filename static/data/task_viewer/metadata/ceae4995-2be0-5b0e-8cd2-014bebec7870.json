@@ -1,0 +1,27 @@
+{
+    "uuid": "ceae4995-2be0-5b0e-8cd2-014bebec7870",
+    "title": "CoRec: An Easy Approach for Coordination Recognition",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{wang-etal-2023-corec,\n    title = \"{C}o{R}ec: An Easy Approach for Coordination Recognition\",\n    author = \"Wang, Qing  and\n      Jia, Haojie  and\n      Song, Wenfei  and\n      Li, Qi\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.emnlp-main.934\",\n    doi = \"10.18653/v1/2023.emnlp-main.934\",\n    pages = \"15112--15120\",\n    abstract = \"In this paper, we observe and address the challenges of the coordination recognition task. Most existing methods rely on syntactic parsers to identify the coordinators in a sentence and detect the coordination boundaries. However, state-of-the-art syntactic parsers are slow and suffer from errors, especially for long and complicated sentences. To better solve the problems, we propose a pipeline model COordination RECognizer (CoRec). It consists of two components: coordinator identifier and conjunct boundary detector. The experimental results on datasets from various domains demonstrate the effectiveness and efficiency of the proposed method. Further experiments show that CoRec positively impacts downstream tasks, improving the yield of state-of-the-art Open IE models.\",\n}\n",
+    "authors": [
+        "Qing Wang",
+        "Haojie Jia",
+        "Wenfei Song",
+        "Qi Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.emnlp-main.934.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/ceae4995-2be0-5b0e-8cd2-014bebec7870.pdf",
+    "num_pages": 9,
+    "abstract": "In this paper, we observe and address the challenges of the coordination recognition task. Most existing methods rely on syntactic parsers to identify the coordinators in a sentence and detect the coordination boundaries. However, state-of-the-art syntactic parsers are slow and suffer from errors, especially for long and complicated sentences. To better solve the problems, we propose a pipeline model COordination RECognizer (CoRec). It consists of two components: coordinator identifier and conjunct boundary detector. The experimental results on datasets from various domains demonstrate the effectiveness and efficiency of the proposed method. Further experiments show that CoRec positively impacts downstream tasks, improving the yield of state-of-the-art Open IE models.",
+    "tldr": "CoRec improves coordination recognition efficiency and accuracy for downstream tasks.",
+    "tags": [
+        "coordination recognition",
+        "syntactic parsers",
+        "pipeline model",
+        "conjunct boundaries",
+        "Open IE models"
+    ]
+}

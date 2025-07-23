@@ -1,0 +1,25 @@
+{
+    "uuid": "b9eb94b0-2d7a-5101-a3b4-8d0ee70b77ca",
+    "title": "Baby Llama: knowledge distillation from an ensemble of teachers trained on a small dataset with no performance penalty",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the BabyLM Challenge at the 27th Conference on Computational Natural Language Learning",
+    "bibtex": "@inproceedings{timiryasov-tastet-2023-baby,\n    title = \"Baby Llama: knowledge distillation from an ensemble of teachers trained on a small dataset with no performance penalty\",\n    author = \"Timiryasov, Inar  and\n      Tastet, Jean-Loup\",\n    editor = \"Warstadt, Alex  and\n      Mueller, Aaron  and\n      Choshen, Leshem  and\n      Wilcox, Ethan  and\n      Zhuang, Chengxu  and\n      Ciro, Juan  and\n      Mosquera, Rafael  and\n      Paranjabe, Bhargavi  and\n      Williams, Adina  and\n      Linzen, Tal  and\n      Cotterell, Ryan\",\n    booktitle = \"Proceedings of the BabyLM Challenge at the 27th Conference on Computational Natural Language Learning\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.conll-babylm.24\",\n    doi = \"10.18653/v1/2023.conll-babylm.24\",\n    pages = \"279--289\",\n}\n",
+    "authors": [
+        "Inar Timiryasov",
+        "Jean-Loup Tastet"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.conll-babylm.24.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/b9eb94b0-2d7a-5101-a3b4-8d0ee70b77ca.pdf",
+    "num_pages": 11,
+    "abstract": "We present our submission1 to the BabyLM challenge, whose goal was to improve the sample efficiency of language models. We trained an ensemble consisting of a GPT-2 and small LLaMA models on the developmentallyplausible, 10M-word BabyLM dataset, then distilled it into a small, 58M-parameter LLaMA model, which exceeds in performance both of its teachers as well as a similar model trained without distillation. This suggests that distillation can not only retain the full performance of the teacher model when the latter is trained on a sufficiently small dataset; it can exceed it, and lead to significantly better performance than direct training.",
+    "tldr": "Distillation from a teacher ensemble outperforms direct training on small datasets.",
+    "tags": [
+        "knowledge distillation",
+        "ensemble learning",
+        "sample efficiency",
+        "language models",
+        "BabyLM"
+    ]
+}

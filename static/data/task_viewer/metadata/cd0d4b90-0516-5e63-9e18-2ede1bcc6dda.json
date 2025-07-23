@@ -1,0 +1,31 @@
+{
+    "uuid": "cd0d4b90-0516-5e63-9e18-2ede1bcc6dda",
+    "title": "DuoAttention: Efficient Long-Context LLM Inference with Retrieval and Streaming Heads",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Guangxuan Xiao",
+        "Jiaming Tang",
+        "Jingwei Zuo",
+        "Junxian Guo",
+        "Shang Yang",
+        "Haotian Tang",
+        "Yao Fu",
+        "Song Han"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2410.10819v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2024/cd0d4b90-0516-5e63-9e18-2ede1bcc6dda.pdf",
+    "bibtex": "@misc{xiao2024duoattentionefficientlongcontextllminference,\n    title = {DuoAttention: Efficient Long-Context LLM Inference with Retrieval and Streaming Heads},\n    author = {Guangxuan Xiao and Jiaming Tang and Jingwei Zuo and Junxian Guo and Shang Yang and Haotian Tang and Yao Fu and Song Han},\n    year = {2024},\n    eprint = {2410.10819},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2410.10819},\n}",
+    "abstract": "Deploying long-context large language models (LLMs) is essential but poses\nsignificant computational and memory challenges. Caching all Key and Value (KV)\nstates across all attention heads consumes substantial memory. Existing KV\ncache pruning methods either damage the long-context capabilities of LLMs or\noffer only limited efficiency improvements. In this paper, we identify that\nonly a fraction of attention heads, a.k.a, Retrieval Heads, are critical for\nprocessing long contexts and require full attention across all tokens. In\ncontrast, all other heads, which primarily focus on recent tokens and attention\nsinks--referred to as Streaming Heads--do not require full attention. Based on\nthis insight, we introduce DuoAttention, a framework that only applies a full\nKV cache to retrieval heads while using a light-weight, constant-length KV\ncache for streaming heads, which reduces both LLM's decoding and pre-filling\nmemory and latency without compromising its long-context abilities.\nDuoAttention uses a lightweight, optimization-based algorithm with synthetic\ndata to identify retrieval heads accurately. Our method significantly reduces\nlong-context inference memory by up to 2.55x for MHA and 1.67x for GQA models\nwhile speeding up decoding by up to 2.18x and 1.50x and accelerating\npre-filling by up to 1.73x and 1.63x for MHA and GQA models, respectively, with\nminimal accuracy loss compared to full attention. Notably, combined with\nquantization, DuoAttention enables Llama-3-8B decoding with 3.3 million context\nlength on a single A100 GPU. Code is provided in\nhttps://github.com/mit-han-lab/duo-attention.",
+    "num_pages": 20,
+    "tldr": "DuoAttention improves long-context LLM efficiency using optimized KV caching.",
+    "tags": [
+        "long-context",
+        "large language models",
+        "memory optimization",
+        "DuoAttention",
+        "efficient inference"
+    ]
+}

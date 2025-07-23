@@ -1,0 +1,28 @@
+{
+    "uuid": "02f7fff5-cec7-5ac8-a037-f5eb117b9547",
+    "title": "HaluEval: A Large-Scale Hallucination Evaluation Benchmark for Large Language Models",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{li-etal-2023-halueval,\n    title = \"{H}alu{E}val: A Large-Scale Hallucination Evaluation Benchmark for Large Language Models\",\n    author = \"Li, Junyi  and\n      Cheng, Xiaoxue  and\n      Zhao, Xin  and\n      Nie, Jian-Yun  and\n      Wen, Ji-Rong\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.emnlp-main.397\",\n    doi = \"10.18653/v1/2023.emnlp-main.397\",\n    pages = \"6449--6464\",\n    abstract = \"Large language models (LLMs), such as ChatGPT, are prone to generate hallucinations, i.e., content that conflicts with the source or cannot be verified by the factual knowledge. To understand what types of content and to which extent LLMs are apt to hallucinate, we introduce the Hallucination Evaluation for Large Language Models (HaluEval) benchmark, a large collection of generated and human-annotated hallucinated samples for evaluating the performance of LLMs in recognizing hallucination. To generate these samples, we propose a ChatGPT-based two-step framework, i.e., sampling-then-filtering. Besides, we also hire some human labelers to annotate the hallucinations in ChatGPT responses. The empirical results suggest that ChatGPT is likely to generate hallucinated content in specific topics by fabricating unverifiable information (i.e., about 19.5{\\%} user queries). Moreover, existing LLMs face great challenges in recognizing the hallucinations in texts. While, our experiments also prove that the hallucination recognition can be improved by providing external knowledge or adding reasoning steps.\",\n}\n",
+    "authors": [
+        "Junyi Li",
+        "Xiaoxue Cheng",
+        "Xin Zhao",
+        "Jian-Yun Nie",
+        "Ji-Rong Wen"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.emnlp-main.397.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/02f7fff5-cec7-5ac8-a037-f5eb117b9547.pdf",
+    "num_pages": 16,
+    "abstract": "Large language models (LLMs), such as ChatGPT, are prone to generate hallucinations, i.e., content that conflicts with the source or cannot be verified by the factual knowledge. To understand what types of content and to which extent LLMs are apt to hallucinate, we introduce the Hallucination Evaluation for Large Language Models (HaluEval) benchmark, a large collection of generated and human-annotated hallucinated samples for evaluating the performance of LLMs in recognizing hallucination. To generate these samples, we propose a ChatGPT-based two-step framework, i.e., sampling-then-filtering. Besides, we also hire some human labelers to annotate the hallucinations in ChatGPT responses. The empirical results suggest that ChatGPT is likely to generate hallucinated content in specific topics by fabricating unverifiable information (i.e., about 19.5% user queries). Moreover, existing LLMs face great challenges in recognizing the hallucinations in texts. While, our experiments also prove that the hallucination recognition can be improved by providing external knowledge or adding reasoning steps.",
+    "tldr": "HaluEval benchmark evaluates hallucinations in large language models' outputs.",
+    "tags": [
+        "hallucination evaluation",
+        "large language models",
+        "ChatGPT",
+        "content verification",
+        "benchmark development"
+    ]
+}

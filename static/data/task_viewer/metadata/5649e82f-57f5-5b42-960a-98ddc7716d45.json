@@ -1,0 +1,29 @@
+{
+    "uuid": "5649e82f-57f5-5b42-960a-98ddc7716d45",
+    "title": "Align before Fuse: Vision and Language Representation Learning with Momentum Distillation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Junnan Li",
+        "Ramprasaath R. Selvaraju",
+        "Akhilesh Deepak Gotmare",
+        "Shafiq Joty",
+        "Caiming Xiong",
+        "Steven Hoi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2107.07651v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2021/5649e82f-57f5-5b42-960a-98ddc7716d45.pdf",
+    "bibtex": "@misc{li2021alignbeforefusevisionand,\n    title = {Align before Fuse: Vision and Language Representation Learning with Momentum Distillation},\n    author = {Junnan Li and Ramprasaath R. Selvaraju and Akhilesh Deepak Gotmare and Shafiq Joty and Caiming Xiong and Steven Hoi},\n    year = {2021},\n    eprint = {2107.07651},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2107.07651},\n}",
+    "abstract": "Large-scale vision and language representation learning has shown promising\nimprovements on various vision-language tasks. Most existing methods employ a\ntransformer-based multimodal encoder to jointly model visual tokens\n(region-based image features) and word tokens. Because the visual tokens and\nword tokens are unaligned, it is challenging for the multimodal encoder to\nlearn image-text interactions. In this paper, we introduce a contrastive loss\nto ALign the image and text representations BEfore Fusing (ALBEF) them through\ncross-modal attention, which enables more grounded vision and language\nrepresentation learning. Unlike most existing methods, our method does not\nrequire bounding box annotations nor high-resolution images. In order to\nimprove learning from noisy web data, we propose momentum distillation, a\nself-training method which learns from pseudo-targets produced by a momentum\nmodel. We provide a theoretical analysis of ALBEF from a mutual information\nmaximization perspective, showing that different training tasks can be\ninterpreted as different ways to generate views for an image-text pair. ALBEF\nachieves state-of-the-art performance on multiple downstream vision-language\ntasks. On image-text retrieval, ALBEF outperforms methods that are pre-trained\non orders of magnitude larger datasets. On VQA and NLVR$^2$, ALBEF achieves\nabsolute improvements of 2.37% and 3.84% compared to the state-of-the-art,\nwhile enjoying faster inference speed. Code and pre-trained models are\navailable at https://github.com/salesforce/ALBEF/.",
+    "num_pages": 16,
+    "tldr": "Align before fuse improves vision-language tasks using momentum distillation.",
+    "tags": [
+        "vision-language learning",
+        "contrastive loss",
+        "cross-modal attention",
+        "momentum distillation",
+        "mutual information maximization"
+    ]
+}

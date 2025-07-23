@@ -1,0 +1,424 @@
+/* Academic-specific styles for Neusym project */
+
+/* Common Card Styles */
+.container-t {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto
+}
+
+.infoCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+
+.infoBody {
+  padding: 2rem;
+}
+
+/* Tabs Styles */
+.tabs {
+  margin-bottom: 2rem;
+}
+
+.tabs ul {
+  border-bottom: 2px solid #e8e8e8;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tabs li {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.tabs a {
+  color: #4a4a4a;
+  cursor: pointer;
+  padding: 0.75em 1.25em;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tabs a:hover {
+  color: #3273dc;
+  border-bottom-color: #3273dc;
+}
+
+.tabs li.is-active a {
+  color: #3273dc;
+  border-bottom-color: #3273dc;
+  font-weight: 600;
+}
+
+/* Content Area Styles */
+.lib_examples {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.highlight-quote {
+  background-color: #f8f9fa;
+  border-left: 4px solid #3273dc;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+.highlight-quote-title {
+  color: #3273dc;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.highlight-quote-content {
+  color: #2c3e50;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Dataset Section Styles */
+.dataset-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dataset-header {
+  margin-bottom: 0.75rem;
+}
+
+.dataset-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.25rem;
+}
+
+.dataset-description {
+  color: #4a5568;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.dataset-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.stat-item {
+  background: #f8fafc;
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a73e8;
+  margin-bottom: 0.1rem;
+}
+
+.stat-label {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.task-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+}
+
+.task-type {
+  background: #e8f0fe;
+  color: #1a73e8;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.dataset-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+}
+
+.category-tag {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.dataset-evaluation {
+  margin: 0.5rem 0;
+}
+
+.evaluation-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.evaluation-genre {
+  background: #f0fdf4;
+  color: #166534;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .container-t {
+    padding: 0 20px;
+  }
+  
+  .infoCard {
+    margin: 1rem 0;
+  }
+  
+  .infoBody {
+    padding: 1.5rem;
+  }
+  
+  .tabs ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tabs li {
+    margin: 0.25rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .dataset-card {
+    padding: 0.75rem;
+  }
+  
+  .dataset-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stat-item {
+    padding: 0.4rem;
+  }
+  
+  .task-types,
+  .dataset-categories,
+  .evaluation-item {
+    gap: 0.3rem;
+  }
+  
+  .task-type,
+  .category-tag,
+  .evaluation-genre {
+    padding: 0.15rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Table Styles */
+.table-container {
+  width: 100%;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  overflow-y: visible;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.results-table {
+  min-width: 1000px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  font-size: 0.85rem;
+}
+
+/* Dataset column groups */
+.results-table th[colspan="6"], /* AirQA-Real */
+.results-table th[colspan="3"], /* M3SciQA */
+.results-table th[colspan="4"] { /* SciDQA */
+  background: #f1f5f9;
+  border-left: 2px solid #e2e8f0;
+  border-right: 2px solid #e2e8f0;
+}
+
+
+/* Ensure sticky header has proper background */
+.results-table th:first-child {
+  background: #f8fafc;
+  z-index: 3;
+}
+
+/* Add shadow to indicate scroll */
+
+/* Ensure model group cells maintain background */
+.results-table tr.model-group td:first-child {
+  background: #f0f2f5;
+}
+
+/* Ensure hover state works with sticky column */
+.results-table tr:hover td:first-child {
+  background: #f8fafc;
+}
+
+.results-table tr.model-group:hover td:first-child {
+  background: #f0f2f5;
+}
+
+.results-table th {
+  background: #f8fafc;
+  color: #2d3748;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.results-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4a5568;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Add subtle background to alternate datasets */
+.results-table td:nth-child(n+2):nth-child(-n+7) { /* AirQA-Real columns */
+  background-color: #fafafa;
+}
+
+.results-table td:nth-child(n+8):nth-child(-n+10) { /* M3SciQA columns */
+  background-color: #f8fafc;
+}
+
+.results-table td:nth-child(n+11) { /* SciDQA columns */
+  background-color: #fafafa;
+}
+
+.results-table tr:hover td {
+  background-color: #f0f7ff !important; /* Override dataset backgrounds on hover */
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+.results-table tr.model-group td {
+  background-color: #f0f2f5 !important; /* Override dataset backgrounds for model groups */
+  font-weight: 600;
+  text-align: left;
+  padding: 0.4rem 0.75rem;
+}
+
+.results-table td.highlight {
+  color: #1a73e8;
+  font-weight: 600;
+}
+
+/* Custom scrollbar for horizontal scrolling */
+.table-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .table-container {
+    margin: 1rem 0;
+    border-radius: 4px;
+  }
+  
+  .results-table {
+    min-width: 800px;
+    font-size: 0.8rem;
+  }
+  
+  .results-table th,
+  .results-table td {
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+} 
+
+/* 只固定表头第一行的第一列 */
+.results-table thead tr:first-child th[rowspan] {
+  position: sticky;
+  left: 0;
+  background: #fff;
+  z-index: 3;
+}
+/* 固定数据区的第一列 */
+.results-table tbody td:first-child {
+  position: sticky;
+  left: 0;
+  background: #fff;
+  z-index: 2;
+} 
+
+/* 仅为三大块最后一列加右分隔线 */
+.results-table th.col-airqa-avg,
+.results-table td.col-airqa-avg,
+.results-table th.col-m3sciqa-avg,
+.results-table td.col-m3sciqa-avg,
+.results-table th.col-scidqa-avg,
+.results-table td.col-scidqa-avg {
+  border-right: 2px solid #e0e0e0; /* 颜色改浅，线条改细 */
+} 
+
+
+
+/* Table: Method Ablation 分组分隔线 */
+.results-table th.group-1,
+.results-table td.group-1 {
+  border-right: 2px solid #e0e0e0;
+}
+/* 只给 group-2 的最后一列（obj.）加分隔 */
+.results-table th.col-obj.group-2,
+.results-table td.col-obj.group-2 {
+  border-right: 2px solid #e0e0e0;
+}

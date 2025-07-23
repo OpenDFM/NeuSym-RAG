@@ -1,0 +1,27 @@
+{
+    "uuid": "813a0918-58f6-57fa-aa79-e3065a5ff88a",
+    "title": "Parsel🐍: Algorithmic Reasoning with Language Models by Composing Decompositions",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 spotlight",
+    "bibtex": "@inproceedings{\nzelikman2023parsel,\ntitle={Parsel🐍: Algorithmic Reasoning with Language Models by Composing Decompositions},\nauthor={Eric Zelikman and Qian Huang and Gabriel Poesia and Noah Goodman and Nick Haber},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=qd9qcbVAwQ}\n}",
+    "authors": [
+        "Eric Zelikman",
+        "Qian Huang",
+        "Gabriel Poesia",
+        "Noah Goodman",
+        "Nick Haber"
+    ],
+    "pdf_url": "https://openreview.net/pdf/71fdc840d8db15ba5f93d82efbe8c173c6bfefac.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/813a0918-58f6-57fa-aa79-e3065a5ff88a.pdf",
+    "num_pages": 58,
+    "abstract": "Despite recent success in large language model (LLM) reasoning, LLMs struggle with hierarchical multi-step reasoning tasks like generating complex programs. For these tasks, humans often start with a high-level algorithmic design and implement each part gradually. We introduce Parsel, a framework enabling automatic implementation and validation of complex algorithms with code LLMs. With Parsel, we automatically decompose algorithmic tasks into hierarchical natural language function descriptions and then search over combinations of possible function implementations using tests. We show that Parsel can be used across domains requiring hierarchical reasoning, including program synthesis and robotic planning. We find that, using Parsel, LLMs solve more competition-level problems in the APPS dataset, resulting in pass rates over 75\\% higher than prior results from directly sampling AlphaCode and Codex, while often using a smaller sample budget. Moreover, with automatically generated tests, we find that Parsel can improve the state-of-the-art pass@1 performance on HumanEval from 67\\% to 85\\%. We also find that LLM-generated robotic plans using Parsel are more than twice as likely to be considered accurate than directly generated plans. Lastly, we explore how Parsel addresses LLM limitations and discuss how Parsel may be useful for human programmers. We release our code at https://github.com/ezelikman/parsel.",
+    "tldr": "Language models can solve algorithmic reasoning tasks by decomposing them, solving subparts, and composing them.",
+    "tags": [
+        "reasoning",
+        "language models",
+        "code synthesis",
+        "decomposition"
+    ]
+}

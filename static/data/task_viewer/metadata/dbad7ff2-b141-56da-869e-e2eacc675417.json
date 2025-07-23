@@ -1,0 +1,34 @@
+{
+    "uuid": "dbad7ff2-b141-56da-869e-e2eacc675417",
+    "title": "SeCom: On Memory Construction and Retrieval for Personalized Conversational Agents",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "AFM 2024 Poster",
+    "bibtex": "@inproceedings{\npan2024secom,\ntitle={SeCom: On Memory Construction and Retrieval for Personalized Conversational Agents},\nauthor={Zhuoshi Pan and Qianhui Wu and Huiqiang Jiang and Xufang Luo and Hao Cheng and Dongsheng Li and Yuqing Yang and Chin-Yew Lin and H. Vicky Zhao and Lili Qiu and Jianfeng Gao},\nbooktitle={Adaptive Foundation Models: Evolving AI for Personalized and Efficient Learning},\nyear={2024},\nurl={https://openreview.net/forum?id=z8dzEojgvN}\n}",
+    "authors": [
+        "Zhuoshi Pan",
+        "Qianhui Wu",
+        "Huiqiang Jiang",
+        "Xufang Luo",
+        "Hao Cheng",
+        "Dongsheng Li",
+        "Yuqing Yang",
+        "Chin-Yew Lin",
+        "H. Vicky Zhao",
+        "Lili Qiu",
+        "Jianfeng Gao"
+    ],
+    "pdf_url": "https://openreview.net/pdf/7576665c7fa192f9bce276b7b280e6ab592af38c.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/dbad7ff2-b141-56da-869e-e2eacc675417.pdf",
+    "num_pages": 19,
+    "abstract": "To deliver coherent and personalized experiences in long-term conversations, existing approaches typically perform retrieval augmented response generation by constructing memory banks from conversation history at either the turn-level, session-level, or through summarization techniques. In this paper, we explore the impact of different memory granularities and present two key findings: (1) Turn-level, session-level, and summarization-based methods all exhibit limitations in terms of the accuracy of the retrieval and the semantics of the retrieved content, ultimately leading to sub-optimal responses. (2) The redundancy in natural language introduces noise, hindering precise retrieval. We demonstrate that *LLMLingua-2*, originally designed for prompt compression to accelerate LLM inference, can serve as an effective denoising method to enhance memory retrieval accuracy.\n\nBuilding on these insights, we propose **SeCom**, a method that constructs the memory bank at segment level by introducing a **Se**gmentation model that partitions long-term conversations into topically coherent segments, while applying **Com**pression based denoising on memory units to enhance memory retrieval. Experimental results show that **SeCom** exhibits superior performance over baselines on long-term conversation benchmarks *LOCOMO* and *Long-MT-Bench+*.",
+    "tldr": "A system facilitates long-term conversational agents by constructing a memory bank at segment level while applying compression-based denoising to enhance memory retrieval.",
+    "tags": [
+        "memory management",
+        "conversational agent",
+        "RAG",
+        "text segmentation",
+        "prompt compression"
+    ]
+}

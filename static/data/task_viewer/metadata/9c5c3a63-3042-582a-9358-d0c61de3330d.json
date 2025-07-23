@@ -1,0 +1,35 @@
+{
+    "uuid": "9c5c3a63-3042-582a-9358-d0c61de3330d",
+    "title": "ContraCLM: Contrastive Learning For Causal Language Model",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{jain-etal-2023-contraclm,\n    title = \"{C}ontra{CLM}: Contrastive Learning For Causal Language Model\",\n    author = \"Jain, Nihal  and\n      Zhang, Dejiao  and\n      Ahmad, Wasi Uddin  and\n      Wang, Zijian  and\n      Nan, Feng  and\n      Li, Xiaopeng  and\n      Tan, Ming  and\n      Nallapati, Ramesh  and\n      Ray, Baishakhi  and\n      Bhatia, Parminder  and\n      Ma, Xiaofei  and\n      Xiang, Bing\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.355\",\n    doi = \"10.18653/v1/2023.acl-long.355\",\n    pages = \"6436--6459\",\n    abstract = \"Despite exciting progress in causal language models, the expressiveness of their representations is largely limited due to poor discrimination ability. To remedy this issue, we present CONTRACLM, a novel contrastive learning framework at both the token-level and the sequence-level. We assess CONTRACLM on a variety of downstream tasks. We show that CONTRACLM enhances the discrimination of representations and bridges the gap with encoder-only models, which makes causal language models better suited for tasks beyond language generation. Specifically, we attain 44{\\%} relative improvement on the Semantic Textual Similarity tasks and 34{\\%} on Code-to-Code Search tasks. Furthermore, by improving the expressiveness of representations, CONTRACLM also boosts the source code generation capability with 9{\\%} relative improvement on execution accuracy on the HumanEval benchmark.\",\n}\n",
+    "authors": [
+        "Nihal Jain",
+        "Dejiao Zhang",
+        "Wasi Uddin Ahmad",
+        "Zijian Wang",
+        "Feng Nan",
+        "Xiaopeng Li",
+        "Ming Tan",
+        "Ramesh Nallapati",
+        "Baishakhi Ray",
+        "Parminder Bhatia",
+        "Xiaofei Ma",
+        "Bing Xiang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.355.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/9c5c3a63-3042-582a-9358-d0c61de3330d.pdf",
+    "abstract": "Despite exciting progress in causal language models, the expressiveness of their representations is largely limited due to poor discrimination ability. To remedy this issue, we present CONTRACLM, a novel contrastive learning framework at both the token-level and the sequence-level. We assess CONTRACLM on a variety of downstream tasks. We show that CONTRACLM enhances the discrimination of representations and bridges the gap with encoder-only models, which makes causal language models better suited for tasks beyond language generation. Specifically, we attain 44% relative improvement on the Semantic Textual Similarity tasks and 34% on Code-to-Code Search tasks. Furthermore, by improving the expressiveness of representations, CONTRACLM also boosts the source code generation capability with 9% relative improvement on execution accuracy on the HumanEval benchmark.",
+    "num_pages": 24,
+    "tldr": "CONTRACLM improves causal language models' discrimination and task performance.",
+    "tags": [
+        "contrastive learning",
+        "causal language models",
+        "token-level representation",
+        "sequence-level representation",
+        "downstream tasks"
+    ]
+}

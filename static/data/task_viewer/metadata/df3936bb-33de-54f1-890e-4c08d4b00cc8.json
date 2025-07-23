@@ -1,0 +1,25 @@
+{
+    "uuid": "df3936bb-33de-54f1-890e-4c08d4b00cc8",
+    "title": "Language Model Unalignment: Parametric Red-Teaming to Expose Hidden Harms and Biases",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Rishabh Bhardwaj",
+        "Soujanya Poria"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.14303v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/df3936bb-33de-54f1-890e-4c08d4b00cc8.pdf",
+    "bibtex": "@misc{bhardwaj2023languagemodelunalignmentparametricredteaming,\n    title = {Language Model Unalignment: Parametric Red-Teaming to Expose Hidden Harms and Biases},\n    author = {Rishabh Bhardwaj and Soujanya Poria},\n    year = {2023},\n    eprint = {2310.14303},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.14303},\n}",
+    "abstract": "Red-teaming has been a widely adopted way to evaluate the harmfulness of\nLarge Language Models (LLMs). It aims to jailbreak a model's safety behavior to\nmake it act as a helpful agent disregarding the harmfulness of the query.\nExisting methods are primarily based on input text-based red-teaming such as\nadversarial prompts, low-resource prompts, or contextualized prompts to\ncondition the model in a way to bypass its safe behavior. Bypassing the\nguardrails uncovers hidden harmful information and biases in the model that are\nleft untreated or newly introduced by its safety training. However,\nprompt-based attacks fail to provide such a diagnosis owing to their low attack\nsuccess rate, and applicability to specific models. In this paper, we present a\nnew perspective on LLM safety research i.e., parametric red-teaming through\nUnalignment. It simply (instruction) tunes the model parameters to break model\nguardrails that are not deeply rooted in the model's behavior. Unalignment\nusing as few as 100 examples can significantly bypass commonly referred to as\nCHATGPT, to the point where it responds with an 88% success rate to harmful\nqueries on two safety benchmark datasets. On open-source models such as\nVICUNA-7B and LLAMA-2-CHAT 7B AND 13B, it shows an attack success rate of more\nthan 91%. On bias evaluations, Unalignment exposes inherent biases in\nsafety-aligned models such as CHATGPT and LLAMA- 2-CHAT where the model's\nresponses are strongly biased and opinionated 64% of the time.",
+    "num_pages": 17,
+    "tldr": "New parametric red-teaming method unveils biases in language models with high success rates.",
+    "tags": [
+        "language models",
+        "red-teaming",
+        "model safety",
+        "model biases",
+        "adversarial attacks"
+    ]
+}

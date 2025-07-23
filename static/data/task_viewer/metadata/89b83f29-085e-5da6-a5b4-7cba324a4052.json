@@ -1,0 +1,32 @@
+{
+    "uuid": "89b83f29-085e-5da6-a5b4-7cba324a4052",
+    "title": "Active Retrieval Augmented Generation",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{jiang-etal-2023-active,\n    title = \"Active Retrieval Augmented Generation\",\n    author = \"Jiang, Zhengbao  and\n      Xu, Frank  and\n      Gao, Luyu  and\n      Sun, Zhiqing  and\n      Liu, Qian  and\n      Dwivedi-Yu, Jane  and\n      Yang, Yiming  and\n      Callan, Jamie  and\n      Neubig, Graham\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.emnlp-main.495\",\n    doi = \"10.18653/v1/2023.emnlp-main.495\",\n    pages = \"7969--7992\",\n    abstract = \"Despite the remarkable ability of large language models (LMs) to comprehend and generate language, they have a tendency to hallucinate and create factually inaccurate output. Augmenting LMs by retrieving information from external knowledge resources is one promising solution. Most existing retrieval augmented LMs employ a retrieve-and-generate setup that only retrieves information once based on the input. This is limiting, however, in more general scenarios involving generation of long texts, where continually gathering information throughout generation is essential. In this work, we provide a generalized view of active retrieval augmented generation, methods that actively decide when and what to retrieve across the course of the generation. We propose Forward-Looking Active REtrieval augmented generation (FLARE), a generic method which iteratively uses a prediction of the upcoming sentence to anticipate future content, which is then utilized as a query to retrieve relevant documents to regenerate the sentence if it contains low-confidence tokens. We test FLARE along with baselines comprehensively over 4 long-form knowledge-intensive generation tasks/datasets. FLARE achieves superior or competitive performance on all tasks, demonstrating the effectiveness of our method.\",\n}\n",
+    "authors": [
+        "Zhengbao Jiang",
+        "Frank Xu",
+        "Luyu Gao",
+        "Zhiqing Sun",
+        "Qian Liu",
+        "Jane Dwivedi-Yu",
+        "Yiming Yang",
+        "Jamie Callan",
+        "Graham Neubig"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.emnlp-main.495.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/89b83f29-085e-5da6-a5b4-7cba324a4052.pdf",
+    "num_pages": 24,
+    "abstract": "Despite the remarkable ability of large language models (LMs) to comprehend and generate language, they have a tendency to hallucinate and create factually inaccurate output. Augmenting LMs by retrieving information from external knowledge resources is one promising solution. Most existing retrieval augmented LMs employ a retrieve-and-generate setup that only retrieves information once based on the input. This is limiting, however, in more general scenarios involving generation of long texts, where continually gathering information throughout generation is essential. In this work, we provide a generalized view of active retrieval augmented generation, methods that actively decide when and what to retrieve across the course of the generation. We propose Forward-Looking Active REtrieval augmented generation (FLARE), a generic method which iteratively uses a prediction of the upcoming sentence to anticipate future content, which is then utilized as a query to retrieve relevant documents to regenerate the sentence if it contains low-confidence tokens. We test FLARE along with baselines comprehensively over 4 long-form knowledge-intensive generation tasks/datasets. FLARE achieves superior or competitive performance on all tasks, demonstrating the effectiveness of our method.",
+    "tldr": "FLARE enhances language models by actively retrieving info during long text generation.",
+    "tags": [
+        "Active Retrieval",
+        "Language Models",
+        "Knowledge Augmentation",
+        "Text Generation",
+        "Information Retrieval"
+    ]
+}

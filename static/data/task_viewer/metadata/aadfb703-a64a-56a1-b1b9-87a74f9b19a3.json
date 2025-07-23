@@ -1,0 +1,32 @@
+{
+    "uuid": "aadfb703-a64a-56a1-b1b9-87a74f9b19a3",
+    "title": "Large Language Models are Better Reasoners with Self-Verification",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    "bibtex": "@inproceedings{weng-etal-2023-large,\n    title = \"Large Language Models are Better Reasoners with Self-Verification\",\n    author = \"Weng, Yixuan  and\n      Zhu, Minjun  and\n      Xia, Fei  and\n      Li, Bin  and\n      He, Shizhu  and\n      Liu, Shengping  and\n      Sun, Bin  and\n      Liu, Kang  and\n      Zhao, Jun\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2023\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-emnlp.167\",\n    doi = \"10.18653/v1/2023.findings-emnlp.167\",\n    pages = \"2550--2575\",\n    abstract = \"Recently, with the chain of thought (CoT) prompting, large language models (LLMs), e.g., GPT-3, have shown strong reasoning ability in several natural language processing tasks such as arithmetic, commonsense, and logical reasoning. However, LLMs with CoT require multi-step prompting and multi-token prediction, which is highly sensitive to individual mistakes and vulnerable to error accumulation. The above issues make the LLMs need the ability to verify the answers. In fact, after inferring conclusions in some thinking decision tasks, people often check them by re-verifying steps to avoid some mistakes. In this paper, we propose and prove that LLMs also have similar self-verification abilities. We take the conclusion obtained by CoT as one of the conditions for solving the original problem. By performing a backward verification of the answers that LLM deduced for itself, we can obtain interpretable answer validation scores to select the candidate answer with the highest score. Experimental results demonstrate that the proposed method can improve the reasoning performance on various arithmetic, commonsense, and logical reasoning datasets. Our code is publicly available at: https://github.com/WENGSYX/Self-Verification.\",\n}\n",
+    "authors": [
+        "Yixuan Weng",
+        "Minjun Zhu",
+        "Fei Xia",
+        "Bin Li",
+        "Shizhu He",
+        "Shengping Liu",
+        "Bin Sun",
+        "Kang Liu",
+        "Jun Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-emnlp.167.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/aadfb703-a64a-56a1-b1b9-87a74f9b19a3.pdf",
+    "num_pages": 26,
+    "abstract": "Recently, with the chain of thought (CoT) prompting, large language models (LLMs), e.g., GPT-3, have shown strong reasoning ability in several natural language processing tasks such as arithmetic, commonsense, and logical reasoning. However, LLMs with CoT require multi-step prompting and multi-token prediction, which is highly sensitive to individual mistakes and vulnerable to error accumulation. The above issues make the LLMs need the ability to verify the answers. In fact, after inferring conclusions in some thinking decision tasks, people often check them by re-verifying steps to avoid some mistakes. In this paper, we propose and prove that LLMs also have similar self-verification abilities. We take the conclusion obtained by CoT as one of the conditions for solving the original problem. By performing a backward verification of the answers that LLM deduced for itself, we can obtain interpretable answer validation scores to select the candidate answer with the highest score. Experimental results demonstrate that the proposed method can improve the reasoning performance on various arithmetic, commonsense, and logical reasoning datasets. Our code is publicly available at: https://github.com/WENGSYX/Self-Verification.",
+    "tldr": "LLMs improve reasoning by self-verification, enhancing accuracy in tasks.",
+    "tags": [
+        "large language models",
+        "self-verification",
+        "reasoning ability",
+        "chain of thought",
+        "error accumulation"
+    ]
+}

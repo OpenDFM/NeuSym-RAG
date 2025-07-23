@@ -1,0 +1,26 @@
+{
+    "uuid": "e73a34ee-536b-5ea4-8de4-b2fb39b30042",
+    "title": "A Dataset for Answering Time-Sensitive Questions",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Wenhu Chen",
+        "Xinyi Wang",
+        "William Yang Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2108.06314v5",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2021/e73a34ee-536b-5ea4-8de4-b2fb39b30042.pdf",
+    "bibtex": "@misc{chen2021adatasetforansweringtimesensitive,\n    title = {A Dataset for Answering Time-Sensitive Questions},\n    author = {Wenhu Chen and Xinyi Wang and William Yang Wang},\n    year = {2021},\n    eprint = {2108.06314},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2108.06314},\n}",
+    "abstract": "Time is an important dimension in our physical world. Lots of facts can\nevolve with respect to time. For example, the U.S. President might change every\nfour years. Therefore, it is important to consider the time dimension and\nempower the existing QA models to reason over time. However, the existing QA\ndatasets contain rather few time-sensitive questions, hence not suitable for\ndiagnosing or benchmarking the model's temporal reasoning capability. In order\nto promote research in this direction, we propose to construct a time-sensitive\nQA dataset. The dataset is constructed by 1) mining time-evolving facts from\nWikiData and aligning them to their corresponding Wikipedia page, 2) employing\ncrowd workers to verify and calibrate these noisy facts, 3) generating\nquestion-answer pairs based on the annotated time-sensitive facts. Our dataset\nposes challenges in the aspect of both temporal understanding and temporal\nreasoning. We evaluate different SoTA long-document QA systems like BigBird and\nFiD on our dataset. The best-performing model FiD can only achieve 46\\%\naccuracy, still far behind the human performance of 87\\%. We demonstrate that\nthese models are still lacking the ability to perform consistent temporal\nreasoning. Therefore, we believe that our dataset could serve as a benchmark to\ndevelop NLP models more sensitive to temporal shifts. The dataset and code are\nreleased in~\\url{https://github.com/wenhuchen/Time-Sensitive-QA}.",
+    "num_pages": 17,
+    "tldr": "Created a dataset to improve QA models' understanding and reasoning of time-based data.",
+    "tags": [
+        "time-sensitive questions",
+        "temporal reasoning",
+        "QA dataset",
+        "WikiData",
+        "natural language processing"
+    ]
+}

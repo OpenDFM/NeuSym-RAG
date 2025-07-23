@@ -1,0 +1,26 @@
+{
+    "uuid": "c7b3bb82-aadc-5ff3-80e5-6a87188c8e20",
+    "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 oral",
+    "bibtex": "@inproceedings{\ndettmers2023qlora,\ntitle={{QL}o{RA}: Efficient Finetuning of Quantized {LLM}s},\nauthor={Tim Dettmers and Artidoro Pagnoni and Ari Holtzman and Luke Zettlemoyer},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=OUIFPHEgJU}\n}",
+    "authors": [
+        "Tim Dettmers",
+        "Artidoro Pagnoni",
+        "Ari Holtzman",
+        "Luke Zettlemoyer"
+    ],
+    "pdf_url": "https://openreview.net/pdf/2ec2f739340ddea41364c1b8e9c386c36f96da8a.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/c7b3bb82-aadc-5ff3-80e5-6a87188c8e20.pdf",
+    "num_pages": 28,
+    "abstract": "We present QLoRA, an efficient finetuning approach that reduces memory usage enough to finetune a 65B parameter model on a single 48GB GPU while preserving full 16-bit finetuning task performance. QLoRA backpropagates gradients through a frozen, 4-bit quantized pretrained language model into Low Rank Adapters~(LoRA). Our best model family, which we name Guanaco, outperforms all previous openly released models on the Vicuna benchmark, reaching 99.3% of the performance level of ChatGPT while only requiring 24 hours of finetuning on a single GPU. QLoRA introduces a number of innovations to save memory without sacrificing performance: (a) 4-bit NormalFloat (NF4), a new data type that is information-theoretically optimal for normally distributed weights (b) Double Quantization to reduce the average memory footprint by quantizing the quantization constants, and (c) Paged Optimziers to manage memory spikes. We use QLoRA to finetune more than 1,000 models, providing a detailed analysis of instruction following and chatbot performance across 8 instruction datasets, multiple model types (LLaMA, T5), and model scales that would be infeasible to run with regular finetuning (e.g. 33B and 65B parameter models). Our results show that QLoRA finetuning on a small, high-quality dataset leads to state-of-the-art results, even when using smaller models than the previous SoTA. We provide a detailed analysis of chatbot performance based on both human and GPT-4 evaluations, showing that GPT-4 evaluations are a cheap and reasonable alternative to human evaluation. Furthermore, we find that current chatbot benchmarks are not trustworthy to accurately evaluate the performance levels of chatbots. A lemon-picked analysis demonstrates where Guanaco fails compared to ChatGPT. We release all of our models and code, including CUDA kernels for 4-bit training.",
+    "tldr": "We develop a method that enabling the finetuning of a 65B model on a single GPU without performance degradation achieving ChatGPT-quaity results on the Vicuna benchmark.",
+    "tags": [
+        "finetuning",
+        "llama",
+        "instructions",
+        "quantization"
+    ]
+}

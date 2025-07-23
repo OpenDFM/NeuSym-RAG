@@ -1,0 +1,31 @@
+{
+    "uuid": "966deaf9-83fe-5f5b-8b30-06c8e350375a",
+    "question": "In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?",
+    "answer_format": "Your answer should be a single python list of strings, each string is a baseline name.e.g. [\"baseline1_name\", \"baseline2_name\"]. Note that for the names, the abbreviation is enough.",
+    "tags": [
+        "comprehensive",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "Voila-A: Aligning Vision-Language Models with User's Gaze Attention"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Otter",
+                "Kosmos-2"
+            ],
+            "ignore_order": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}

@@ -1,0 +1,35 @@
+{
+    "uuid": "3db38bf7-3168-5855-958a-c2fa458d33d8",
+    "title": "MobileLLM: Optimizing Sub-billion Parameter Language Models for On-Device Use Cases",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Zechun Liu",
+        "Changsheng Zhao",
+        "Forrest Iandola",
+        "Chen Lai",
+        "Yuandong Tian",
+        "Igor Fedorov",
+        "Yunyang Xiong",
+        "Ernie Chang",
+        "Yangyang Shi",
+        "Raghuraman Krishnamoorthi",
+        "Liangzhen Lai",
+        "Vikas Chandra"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2402.14905v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2024/3db38bf7-3168-5855-958a-c2fa458d33d8.pdf",
+    "bibtex": "@misc{liu2024mobilellmoptimizingsubbillionparameterlanguage,\n    title = {MobileLLM: Optimizing Sub-billion Parameter Language Models for On-Device Use Cases},\n    author = {Zechun Liu and Changsheng Zhao and Forrest Iandola and Chen Lai and Yuandong Tian and Igor Fedorov and Yunyang Xiong and Ernie Chang and Yangyang Shi and Raghuraman Krishnamoorthi and Liangzhen Lai and Vikas Chandra},\n    year = {2024},\n    eprint = {2402.14905},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2402.14905},\n}",
+    "abstract": "This paper addresses the growing need for efficient large language models\n(LLMs) on mobile devices, driven by increasing cloud costs and latency\nconcerns. We focus on designing top-quality LLMs with fewer than a billion\nparameters, a practical choice for mobile deployment. Contrary to prevailing\nbelief emphasizing the pivotal role of data and parameter quantity in\ndetermining model quality, our investigation underscores the significance of\nmodel architecture for sub-billion scale LLMs. Leveraging deep and thin\narchitectures, coupled with embedding sharing and grouped-query attention\nmechanisms, we establish a strong baseline network denoted as MobileLLM, which\nattains a remarkable 2.7%/4.3% accuracy boost over preceding 125M/350M\nstate-of-the-art models. Additionally, we propose an immediate block-wise\nweight-sharing approach with no increase in model size and only marginal\nlatency overhead. The resultant models, denoted as MobileLLM-LS, demonstrate a\nfurther accuracy enhancement of 0.7%/0.8% than MobileLLM 125M/350M. Moreover,\nMobileLLM model family shows significant improvements compared to previous\nsub-billion models on chat benchmarks, and demonstrates close correctness to\nLLaMA-v2 7B in API calling tasks, highlighting the capability of small models\nfor common on-device use cases.",
+    "num_pages": 24,
+    "tldr": "Efficient under-1B LLMs for mobile use with enhanced architecture and accuracy.",
+    "tags": [
+        "mobile language models",
+        "sub-billion parameters",
+        "on-device optimization",
+        "model architecture",
+        "weight-sharing mechanism"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "uuid": "97121a3c-fe43-541b-8a54-ae6f7eb19b58",
+    "title": "AlignRE: An Encoding and Semantic Alignment Approach for Zero-Shot Relation Extraction",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{li-etal-2024-alignre,\n    title = \"{A}lign{RE}: An Encoding and Semantic Alignment Approach for Zero-Shot Relation Extraction\",\n    author = \"Li, Zehan  and\n      Zhang, Fu  and\n      Cheng, Jingwei\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.174\",\n    doi = \"10.18653/v1/2024.findings-acl.174\",\n    pages = \"2957--2966\",\n    abstract = \"Zero-shot Relation Extraction (ZSRE) aims to predict unseen relations between entity pairs from input sentences. Existing prototype-based ZSRE methods encode relation descriptions into prototype embeddings and predict by measuring the similarity between sentence embeddings and prototype embeddings. However, these methods often overlook abundant side information of relations and suffer from a significant encoding gap between prototypes and sentences, limiting performance. To this end, we propose a framework named AlignRE, based on two Alignment methods for ZSRE. Specifically, we present a novel perspective centered on encoding schema alignment to enhance prototype-based ZSRE methods. We utilize well-designed prompt-tuning to bridge the encoding gap. To improve prototype quality, we explore and leverage multiple side information and propose a prototype aggregation method based on semantic alignment to create comprehensive relation prototype representations. We conduct experiments on FewRel and Wiki-ZSL datasets and consistently outperform state-of-the-art methods. Moreover, our method exhibits substantially faster performance and reduces the need for extensive manual labor in prototype construction. Code is available at https://github.com/lizehan1999/AlignRE.\",\n}\n",
+    "authors": [
+        "Zehan Li",
+        "Fu Zhang",
+        "Jingwei Cheng"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.174.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/97121a3c-fe43-541b-8a54-ae6f7eb19b58.pdf",
+    "abstract": "Zero-shot Relation Extraction (ZSRE) aims to predict unseen relations between entity pairs from input sentences. Existing prototype-based ZSRE methods encode relation descriptions into prototype embeddings and predict by measuring the similarity between sentence embeddings and prototype embeddings. However, these methods often overlook abundant side information of relations and suffer from a significant encoding gap between prototypes and sentences, limiting performance. To this end, we propose a framework named AlignRE, based on two Alignment methods for ZSRE. Specifically, we present a novel perspective centered on encoding schema alignment to enhance prototype-based ZSRE methods. We utilize well-designed prompt-tuning to bridge the encoding gap. To improve prototype quality, we explore and leverage multiple side information and propose a prototype aggregation method based on semantic alignment to create comprehensive relation prototype representations. We conduct experiments on FewRel and Wiki-ZSL datasets and consistently outperform state-of-the-art methods. Moreover, our method exhibits substantially faster performance and reduces the need for extensive manual labor in prototype construction. Code is available at https://github.com/lizehan1999/AlignRE.",
+    "num_pages": 10,
+    "tldr": "AlignRE improves zero-shot relation extraction via encoding and semantic alignment.",
+    "tags": [
+        "Zero-shot relation extraction",
+        "Prototype embeddings",
+        "Encoding schema alignment",
+        "Semantic alignment",
+        "Prompt-tuning"
+    ]
+}

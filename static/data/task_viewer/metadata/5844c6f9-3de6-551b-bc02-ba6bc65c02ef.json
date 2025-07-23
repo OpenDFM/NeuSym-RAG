@@ -1,0 +1,40 @@
+{
+    "uuid": "5844c6f9-3de6-551b-bc02-ba6bc65c02ef",
+    "title": "RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{wang-etal-2024-rolellm,\n    title = \"{R}ole{LLM}: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models\",\n    author = \"Wang, Noah  and\n      Peng, Z.y.  and\n      Que, Haoran  and\n      Liu, Jiaheng  and\n      Zhou, Wangchunshu  and\n      Wu, Yuhan  and\n      Guo, Hongcheng  and\n      Gan, Ruitong  and\n      Ni, Zehao  and\n      Yang, Jian  and\n      Zhang, Man  and\n      Zhang, Zhaoxiang  and\n      Ouyang, Wanli  and\n      Xu, Ke  and\n      Huang, Wenhao  and\n      Fu, Jie  and\n      Peng, Junran\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.878\",\n    doi = \"10.18653/v1/2024.findings-acl.878\",\n    pages = \"14743--14777\",\n    abstract = \"The advent of Large Language Models (LLMs) has paved the way for complex tasks such as role-playing, which enhances user interactions by enabling models to imitate various characters. However, the closed-source nature of state-of-the-art LLMs and their general-purpose training limit role-playing optimization. In this paper, we introduce RoleLLM, a framework to benchmark, elicit, and enhance role-playing abilities in LLMs. RoleLLM comprises four stages: (1) Role Profile Construction for 100 roles; (2) Context-Based Instruction Generation (Context-Instruct) for role-specific knowledge extraction; (3) Role Prompting using GPT (RoleGPT) for speaking style imitation; and (4) Role-Conditioned Instruction Tuning (RoCIT) for fine-tuning open-source models along with role customization. By Context-Instruct and RoleGPT, we create RoleBench, the first systematic and fine-grained character-level benchmark dataset for role-playing with 168,093 samples. Moreover, RoCIT on RoleBench yields RoleLLaMA (English) and RoleGLM (Chinese), significantly enhancing role-playing abilities and even achieving comparable results with RoleGPT (using GPT-4).\",\n}\n",
+    "authors": [
+        "Noah Wang",
+        "Z.y. Peng",
+        "Haoran Que",
+        "Jiaheng Liu",
+        "Wangchunshu Zhou",
+        "Yuhan Wu",
+        "Hongcheng Guo",
+        "Ruitong Gan",
+        "Zehao Ni",
+        "Jian Yang",
+        "Man Zhang",
+        "Zhaoxiang Zhang",
+        "Wanli Ouyang",
+        "Ke Xu",
+        "Wenhao Huang",
+        "Jie Fu",
+        "Junran Peng"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.878.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/5844c6f9-3de6-551b-bc02-ba6bc65c02ef.pdf",
+    "abstract": "The advent of Large Language Models (LLMs) has paved the way for complex tasks such as role-playing, which enhances user interactions by enabling models to imitate various characters. However, the closed-source nature of state-of-the-art LLMs and their general-purpose training limit role-playing optimization. In this paper, we introduce RoleLLM, a framework to benchmark, elicit, and enhance role-playing abilities in LLMs. RoleLLM comprises four stages: (1) Role Profile Construction for 100 roles; (2) Context-Based Instruction Generation (Context-Instruct) for role-specific knowledge extraction; (3) Role Prompting using GPT (RoleGPT) for speaking style imitation; and (4) Role-Conditioned Instruction Tuning (RoCIT) for fine-tuning open-source models along with role customization. By Context-Instruct and RoleGPT, we create RoleBench, the first systematic and fine-grained character-level benchmark dataset for role-playing with 168,093 samples. Moreover, RoCIT on RoleBench yields RoleLLaMA (English) and RoleGLM (Chinese), significantly enhancing role-playing abilities and even achieving comparable results with RoleGPT (using GPT-4).",
+    "num_pages": 35,
+    "tldr": "RoleLLM enhances and benchmarks LLM role-playing with a new framework and dataset.",
+    "tags": [
+        "Role-playing LLMs",
+        "benchmarking LLMs",
+        "instruction tuning",
+        "character imitation",
+        "dataset creation"
+    ]
+}

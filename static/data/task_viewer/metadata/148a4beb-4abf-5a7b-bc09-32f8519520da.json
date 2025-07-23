@@ -1,0 +1,31 @@
+{
+    "uuid": "148a4beb-4abf-5a7b-bc09-32f8519520da",
+    "title": "LMRL Gym: Benchmarks for Multi-Turn Reinforcement Learning with Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Marwa Abdulhai",
+        "Isadora White",
+        "Charlie Snell",
+        "Charles Sun",
+        "Joey Hong",
+        "Yuexiang Zhai",
+        "Kelvin Xu",
+        "Sergey Levine"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2311.18232v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/148a4beb-4abf-5a7b-bc09-32f8519520da.pdf",
+    "bibtex": "@misc{abdulhai2023lmrlgymbenchmarksformultiturn,\n    title = {LMRL Gym: Benchmarks for Multi-Turn Reinforcement Learning with Language Models},\n    author = {Marwa Abdulhai and Isadora White and Charlie Snell and Charles Sun and Joey Hong and Yuexiang Zhai and Kelvin Xu and Sergey Levine},\n    year = {2023},\n    eprint = {2311.18232},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2311.18232},\n}",
+    "abstract": "Large language models (LLMs) provide excellent text-generation capabilities,\nbut standard prompting and generation methods generally do not lead to\nintentional or goal-directed agents and might necessitate considerable prompt\ntuning. This becomes particularly apparent in multi-turn conversations: even\nthe best current LLMs rarely ask clarifying questions, engage in explicit\ninformation gathering, or take actions now that lead to better decisions after\nmultiple turns. Reinforcement learning has the potential to leverage the\npowerful modeling capabilities of LLMs, as well as their internal\nrepresentation of textual interactions, to create capable goal-directed\nlanguage agents. This can enable intentional and temporally extended\ninteractions, such as with humans, through coordinated persuasion and carefully\ncrafted questions, or in goal-directed play through text games to bring about\ndesired final outcomes. However, enabling this requires the community to\ndevelop stable and reliable reinforcement learning algorithms that can\neffectively train LLMs. Developing such algorithms requires tasks that can\ngauge progress on algorithm design, provide accessible and reproducible\nevaluations for multi-turn interactions, and cover a range of task properties\nand challenges in improving reinforcement learning algorithms. Our paper\nintroduces the LMRL-Gym benchmark for evaluating multi-turn RL for LLMs,\ntogether with an open-source research framework containing a basic toolkit for\ngetting started on multi-turn RL with offline value-based and policy-based RL\nmethods. Our benchmark consists of 8 different language tasks, which require\nmultiple rounds of language interaction and cover a range of tasks in\nopen-ended dialogue and text games.",
+    "num_pages": 27,
+    "tldr": "LMRL-Gym: A benchmark for evaluating multi-turn reinforcement learning with LLMs.",
+    "tags": [
+        "multi-turn reinforcement learning",
+        "large language models",
+        "language agents",
+        "RL benchmarks",
+        "text interaction"
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "uuid": "7efe0293-9ecd-5386-b1c5-a851c7a0fdf1",
+    "title": "Editing models with task arithmetic",
+    "conference_full": "International Conference on Learning Representations",
+    "conference": "ICLR",
+    "year": 2023,
+    "volume": "ICLR 2023 poster",
+    "bibtex": "@inproceedings{\nilharco2023editing,\ntitle={Editing models with task arithmetic},\nauthor={Gabriel Ilharco and Marco Tulio Ribeiro and Mitchell Wortsman and Ludwig Schmidt and Hannaneh Hajishirzi and Ali Farhadi},\nbooktitle={The Eleventh International Conference on Learning Representations },\nyear={2023},\nurl={https://openreview.net/forum?id=6t0Kwf8-jrj}\n}",
+    "authors": [
+        "Gabriel Ilharco",
+        "Marco Tulio Ribeiro",
+        "Mitchell Wortsman",
+        "Ludwig Schmidt",
+        "Hannaneh Hajishirzi",
+        "Ali Farhadi"
+    ],
+    "pdf_url": "https://openreview.net/pdf/0776550849b74d70586738db037bf1c9e9707c63.pdf",
+    "pdf_path": "data/dataset/airqa/papers/iclr2023/7efe0293-9ecd-5386-b1c5-a851c7a0fdf1.pdf",
+    "num_pages": 31,
+    "abstract": "Changing how pre-trained models behave---e.g., improving their performance on a downstream task or mitigating biases learned during pre-training---is a common practice when developing machine learning systems. In this work, we propose a new paradigm for steering the behavior of neural networks, centered around task vectors. A task vector specifies a direction in the weight space of a pre-trained model, such that movement in that direction improves performance on the task. We build task vectors by subtracting the weights of a pre-trained model from the weights of the same model after fine-tuning on a task. We show that these task vectors can be modified and combined together through arithmetic operations such as negation and addition, and the behavior of the resulting model is steered accordingly. Moreover, task vectors can be added together to improve performance on multiple tasks at once. Finally, when tasks are linked by an analogy relationship of the form ``A is to B as C is to D\", combining task vectors from three of the tasks can improve performance on the fourth, even when no data from the fourth task is used for training.",
+    "tldr": "Introducing task vectors to steer neural network behavior via arithmetic operations.",
+    "tags": [
+        "pre-trained models",
+        "model editing",
+        "model patching",
+        "fine-tuning",
+        "transfer learning",
+        "weight interpolation",
+        "merging models"
+    ]
+}

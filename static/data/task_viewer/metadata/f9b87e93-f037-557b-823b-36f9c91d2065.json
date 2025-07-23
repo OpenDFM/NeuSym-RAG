@@ -1,0 +1,33 @@
+{
+    "uuid": "f9b87e93-f037-557b-823b-36f9c91d2065",
+    "title": "Baseline Defenses for Adversarial Attacks Against Aligned Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Neel Jain",
+        "Avi Schwarzschild",
+        "Yuxin Wen",
+        "Gowthami Somepalli",
+        "John Kirchenbauer",
+        "Ping-yeh Chiang",
+        "Micah Goldblum",
+        "Aniruddha Saha",
+        "Jonas Geiping",
+        "Tom Goldstein"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2309.00614v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/f9b87e93-f037-557b-823b-36f9c91d2065.pdf",
+    "bibtex": "@misc{jain2023baselinedefensesforadversarialattacks,\n    title = {Baseline Defenses for Adversarial Attacks Against Aligned Language Models},\n    author = {Neel Jain and Avi Schwarzschild and Yuxin Wen and Gowthami Somepalli and John Kirchenbauer and Ping-yeh Chiang and Micah Goldblum and Aniruddha Saha and Jonas Geiping and Tom Goldstein},\n    year = {2023},\n    eprint = {2309.00614},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2309.00614},\n}",
+    "abstract": "As Large Language Models quickly become ubiquitous, it becomes critical to\nunderstand their security vulnerabilities. Recent work shows that text\noptimizers can produce jailbreaking prompts that bypass moderation and\nalignment. Drawing from the rich body of work on adversarial machine learning,\nwe approach these attacks with three questions: What threat models are\npractically useful in this domain? How do baseline defense techniques perform\nin this new domain? How does LLM security differ from computer vision?\n  We evaluate several baseline defense strategies against leading adversarial\nattacks on LLMs, discussing the various settings in which each is feasible and\neffective. Particularly, we look at three types of defenses: detection\n(perplexity based), input preprocessing (paraphrase and retokenization), and\nadversarial training. We discuss white-box and gray-box settings and discuss\nthe robustness-performance trade-off for each of the defenses considered. We\nfind that the weakness of existing discrete optimizers for text, combined with\nthe relatively high costs of optimization, makes standard adaptive attacks more\nchallenging for LLMs. Future research will be needed to uncover whether more\npowerful optimizers can be developed, or whether the strength of filtering and\npreprocessing defenses is greater in the LLMs domain than it has been in\ncomputer vision.",
+    "num_pages": 19,
+    "tldr": "Evaluates baseline defenses against adversarial attacks on large language models.",
+    "tags": [
+        "adversarial attacks",
+        "language models",
+        "baseline defenses",
+        "text optimization",
+        "security vulnerabilities"
+    ]
+}

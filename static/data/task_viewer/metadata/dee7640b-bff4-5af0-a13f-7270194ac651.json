@@ -1,0 +1,35 @@
+{
+    "uuid": "dee7640b-bff4-5af0-a13f-7270194ac651",
+    "title": "MAVEN-ERE: A Unified Large-scale Dataset for Event Coreference, Temporal, Causal, and Subevent Relation Extraction",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Xiaozhi Wang",
+        "Yulin Chen",
+        "Ning Ding",
+        "Hao Peng",
+        "Zimu Wang",
+        "Yankai Lin",
+        "Xu Han",
+        "Lei Hou",
+        "Juanzi Li",
+        "Zhiyuan Liu",
+        "Peng Li",
+        "Jie Zhou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2211.07342v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2022/dee7640b-bff4-5af0-a13f-7270194ac651.pdf",
+    "bibtex": "@misc{wang2022mavenereaunifiedlargescaledataset,\n    title = {MAVEN-ERE: A Unified Large-scale Dataset for Event Coreference, Temporal, Causal, and Subevent Relation Extraction},\n    author = {Xiaozhi Wang and Yulin Chen and Ning Ding and Hao Peng and Zimu Wang and Yankai Lin and Xu Han and Lei Hou and Juanzi Li and Zhiyuan Liu and Peng Li and Jie Zhou},\n    year = {2022},\n    eprint = {2211.07342},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2211.07342},\n}",
+    "abstract": "The diverse relationships among real-world events, including coreference,\ntemporal, causal, and subevent relations, are fundamental to understanding\nnatural languages. However, two drawbacks of existing datasets limit event\nrelation extraction (ERE) tasks: (1) Small scale. Due to the annotation\ncomplexity, the data scale of existing datasets is limited, which cannot well\ntrain and evaluate data-hungry models. (2) Absence of unified annotation.\nDifferent types of event relations naturally interact with each other, but\nexisting datasets only cover limited relation types at once, which prevents\nmodels from taking full advantage of relation interactions. To address these\nissues, we construct a unified large-scale human-annotated ERE dataset\nMAVEN-ERE with improved annotation schemes. It contains 103,193 event\ncoreference chains, 1,216,217 temporal relations, 57,992 causal relations, and\n15,841 subevent relations, which is larger than existing datasets of all the\nERE tasks by at least an order of magnitude. Experiments show that ERE on\nMAVEN-ERE is quite challenging, and considering relation interactions with\njoint learning can improve performances. The dataset and source codes can be\nobtained from https://github.com/THU-KEG/MAVEN-ERE.",
+    "num_pages": 16,
+    "tldr": "MAVEN-ERE: A large-scale dataset unifying event coreference and relations.",
+    "tags": [
+        "event coreference",
+        "temporal relations",
+        "causal relations",
+        "subevent relations",
+        "dataset annotation"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "uuid": "3a7ec7eb-f552-5dfa-8801-5b03df2abc46",
+    "title": "RSVG: Exploring Data and Models for Visual Grounding on Remote Sensing Data",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Yang Zhan",
+        "Zhitong Xiong",
+        "Yuan Yuan"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2210.12634v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2022/3a7ec7eb-f552-5dfa-8801-5b03df2abc46.pdf",
+    "bibtex": "@misc{zhan2022rsvgexploringdataandmodels,\n    title = {RSVG: Exploring Data and Models for Visual Grounding on Remote Sensing Data},\n    author = {Yang Zhan and Zhitong Xiong and Yuan Yuan},\n    year = {2022},\n    eprint = {2210.12634},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2210.12634},\n}",
+    "abstract": "In this paper, we introduce the task of visual grounding for remote sensing\ndata (RSVG). RSVG aims to localize the referred objects in remote sensing (RS)\nimages with the guidance of natural language. To retrieve rich information from\nRS imagery using natural language, many research tasks, like RS image visual\nquestion answering, RS image captioning, and RS image-text retrieval have been\ninvestigated a lot. However, the object-level visual grounding on RS images is\nstill under-explored. Thus, in this work, we propose to construct the dataset\nand explore deep learning models for the RSVG task. Specifically, our\ncontributions can be summarized as follows. 1) We build the new large-scale\nbenchmark dataset of RSVG, termed RSVGD, to fully advance the research of RSVG.\nThis new dataset includes image/expression/box triplets for training and\nevaluating visual grounding models. 2) We benchmark extensive state-of-the-art\n(SOTA) natural image visual grounding methods on the constructed RSVGD dataset,\nand some insightful analyses are provided based on the results. 3) A novel\ntransformer-based Multi-Level Cross-Modal feature learning (MLCM) module is\nproposed. Remotely-sensed images are usually with large scale variations and\ncluttered backgrounds. To deal with the scale-variation problem, the MLCM\nmodule takes advantage of multi-scale visual features and multi-granularity\ntextual embeddings to learn more discriminative representations. To cope with\nthe cluttered background problem, MLCM adaptively filters irrelevant noise and\nenhances salient features. In this way, our proposed model can incorporate more\neffective multi-level and multi-modal features to boost performance.\nFurthermore, this work also provides useful insights for developing better RSVG\nmodels. The dataset and code will be publicly available at\nhttps://github.com/ZhanYang-nwpu/RSVG-pytorch.",
+    "num_pages": 12,
+    "tldr": "Introduces visual grounding for remote sensing, providing a new dataset and model.",
+    "tags": [
+        "visual grounding",
+        "remote sensing",
+        "deep learning",
+        "transformer models",
+        "multi-modal learning"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "44ea9e05-6b8f-555d-b68d-ccc7fac68de7",
+    "title": "Sharper Model-free Reinforcement Learning for Average-reward Markov Decision Processes",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Zihan Zhang",
+        "Qiaomin Xie"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2306.16394v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/44ea9e05-6b8f-555d-b68d-ccc7fac68de7.pdf",
+    "bibtex": "@misc{zhang2023sharpermodelfreereinforcementlearningfor,\n    title = {Sharper Model-free Reinforcement Learning for Average-reward Markov Decision Processes},\n    author = {Zihan Zhang and Qiaomin Xie},\n    year = {2023},\n    eprint = {2306.16394},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2306.16394},\n}",
+    "abstract": "We develop several provably efficient model-free reinforcement learning (RL)\nalgorithms for infinite-horizon average-reward Markov Decision Processes\n(MDPs). We consider both online setting and the setting with access to a\nsimulator. In the online setting, we propose model-free RL algorithms based on\nreference-advantage decomposition. Our algorithm achieves\n$\\widetilde{O}(S^5A^2\\mathrm{sp}(h^*)\\sqrt{T})$ regret after $T$ steps, where\n$S\\times A$ is the size of state-action space, and\n  $\\mathrm{sp}(h^*)$ the span of the optimal bias function. Our results are the\nfirst to achieve optimal dependence in $T$ for weakly communicating MDPs.\n  In the simulator setting, we propose a model-free RL algorithm that finds an\n$\\epsilon$-optimal policy using $\\widetilde{O}\n\\left(\\frac{SA\\mathrm{sp}^2(h^*)}{\\epsilon^2}+\\frac{S^2A\\mathrm{sp}(h^*)}{\\epsilon}\n\\right)$ samples, whereas the minimax lower bound is\n$\\Omega\\left(\\frac{SA\\mathrm{sp}(h^*)}{\\epsilon^2}\\right)$.\n  Our results are based on two new techniques that are unique in the\naverage-reward setting: 1) better discounted approximation by value-difference\nestimation; 2) efficient construction of confidence region for the optimal bias\nfunction with space complexity $O(SA)$.",
+    "num_pages": 54,
+    "tldr": "Efficient model-free RL algorithms for average-reward Markov Decision Processes.",
+    "tags": [
+        "model-free reinforcement learning",
+        "average-reward MDPs",
+        "regret bounds",
+        "value-difference estimation",
+        "optimal policy computation"
+    ]
+}

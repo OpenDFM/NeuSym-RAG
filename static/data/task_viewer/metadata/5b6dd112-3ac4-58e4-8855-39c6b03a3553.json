@@ -1,0 +1,29 @@
+{
+    "uuid": "5b6dd112-3ac4-58e4-8855-39c6b03a3553",
+    "title": "WellDunn: On the Robustness and Explainability of Language Models and Large Language Models in Identifying Wellness Dimensions",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the 7th BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP",
+    "bibtex": "@inproceedings{mohammadi-etal-2024-welldunn,\n    title = \"{W}ell{D}unn: On the Robustness and Explainability of Language Models and Large Language Models in Identifying Wellness Dimensions\",\n    author = \"Mohammadi, Seyedali  and\n      Raff, Edward  and\n      Malekar, Jinendra  and\n      Palit, Vedant  and\n      Ferraro, Francis  and\n      Gaur, Manas\",\n    editor = \"Belinkov, Yonatan  and\n      Kim, Najoung  and\n      Jumelet, Jaap  and\n      Mohebbi, Hosein  and\n      Mueller, Aaron  and\n      Chen, Hanjie\",\n    booktitle = \"Proceedings of the 7th BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, US\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.blackboxnlp-1.23/\",\n    doi = \"10.18653/v1/2024.blackboxnlp-1.23\",\n    pages = \"364--388\",\n    abstract = \"Language Models (LMs) are being proposed for mental health applications where the heightened risk of adverse outcomes means predictive performance may not be a sufficient litmus test of a model's utility in clinical practice. A model that can be trusted for practice should have a correspondence between explanation and clinical determination, yet no prior research has examined the attention fidelity of these models and their effect on ground truth explanations. We introduce an evaluation design that focuses on the robustness and explainability of LMs in identifying Wellness Dimensions (WDs). We focus on two existing mental health and well-being datasets: (a) Multi-label Classification-based MultiWD, and (b) WellXplain for evaluating attention mechanism veracity against expert-labeled explanations. The labels are based on Halbert Dunn's theory of wellness, which gives grounding to our evaluation. We reveal four surprising results about LMs/LLMs: (1) Despite their human-like capabilities, GPT-3.5/4 lag behind RoBERTa, and MedAlpaca, a fine-tuned LLM on WellXplain fails to deliver any remarkable improvements in performance or explanations. (2) Re-examining LMs' predictions based on a confidence-oriented loss function reveals a significant performance drop. (3) Across all LMs/LLMs, the alignment between attention and explanations remains low, with LLMs scoring a dismal 0.0. (4) Most mental health-specific LMs/LLMs overlook domain-specific knowledge and undervalue explanations, causing these discrepancies. This study highlights the need for further research into their consistency and explanations in mental health and well-being.\"\n}\n",
+    "authors": [
+        "Seyedali Mohammadi",
+        "Edward Raff",
+        "Jinendra Malekar",
+        "Vedant Palit",
+        "Francis Ferraro",
+        "Manas Gaur"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.blackboxnlp-1.23.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/5b6dd112-3ac4-58e4-8855-39c6b03a3553.pdf",
+    "num_pages": 25,
+    "abstract": "Language Models (LMs) are being proposed for mental health applications where the heightened risk of adverse outcomes means predictive performance may not be a sufficient litmus test of a model’s utility in clinical practice. A model that can be trusted for practice should have a correspondence between explanation and clinical determination, yet no prior research has examined the attention fidelity of these models and their effect on ground truth explanations. We introduce an evaluation design that focuses on the robustness and explainability of LMs in identifying Wellness Dimensions (WDs). We focus on two existing mental health and well-being datasets: (a) Multi-label Classification-based MultiWD, and (b) WellXplain for evaluating attention mechanism veracity against expert-labeled explanations. The labels are based on Halbert Dunn’s theory of wellness, which gives grounding to our evaluation. We reveal four surprising results about LMs/LLMs: (1) Despite their human-like capabilities, GPT-3.5/4 lag behind RoBERTa, and MedAlpaca, a fine-tuned LLM on WellXplain fails to deliver any remarkable improvements in performance or explanations. (2) Re-examining LMs’ predictions based on a confidence-oriented loss function reveals a significant performance drop. (3) Across all LMs/LLMs, the alignment between attention and explanations remains low, with LLMs scoring a dismal 0.0. (4) Most mental health-specific LMs/LLMs overlook domain-specific knowledge and undervalue explanations, causing these discrepancies. This study highlights the need for further research into their consistency and explanations in mental health and well-being.",
+    "tldr": "Language models struggle with robustness and explainability in mental health applications.",
+    "tags": [
+        "language models",
+        "mental health",
+        "explainability",
+        "wellness dimensions",
+        "robustness"
+    ]
+}

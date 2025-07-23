@@ -1,0 +1,31 @@
+{
+    "uuid": "f917a6ca-8134-57d1-9a6a-f28930a380d7",
+    "title": "Large Language Models as Generalizable Policies for Embodied Tasks",
+    "conference_full": "International Conference on Learning Representations",
+    "conference": "ICLR",
+    "year": 2024,
+    "volume": "ICLR 2024 poster",
+    "bibtex": "@inproceedings{\nszot2024large,\ntitle={Large Language Models as Generalizable Policies for Embodied Tasks},\nauthor={Andrew Szot and Max Schwarzer and Harsh Agrawal and Bogdan Mazoure and Rin Metcalf and Walter Talbott and Natalie Mackraz and R Devon Hjelm and Alexander T Toshev},\nbooktitle={The Twelfth International Conference on Learning Representations},\nyear={2024},\nurl={https://openreview.net/forum?id=u6imHU4Ebu}\n}",
+    "authors": [
+        "Andrew Szot",
+        "Max Schwarzer",
+        "Harsh Agrawal",
+        "Bogdan Mazoure",
+        "Rin Metcalf",
+        "Walter Talbott",
+        "Natalie Mackraz",
+        "R Devon Hjelm",
+        "Alexander T Toshev"
+    ],
+    "pdf_url": "https://openreview.net/pdf/1ff0314a1b06bd6ce9cddb6dd452e4cf2e8f4ee7.pdf",
+    "pdf_path": "data/dataset/airqa/papers/iclr2024/f917a6ca-8134-57d1-9a6a-f28930a380d7.pdf",
+    "num_pages": 33,
+    "abstract": "We show that large language models (LLMs) can be adapted to be generalizable policies for embodied visual tasks. Our approach, called Large LAnguage model Reinforcement Learning Policy (LLaRP), adapts a pre-trained frozen LLM to take as input text instructions and visual egocentric observations and output actions directly in the environment. Using reinforcement learning, we train LLaRP to see and act solely through environmental interactions. We show that LLaRP is robust to complex paraphrasings of task instructions and can generalize to new tasks that require novel optimal behavior. In particular, on 1,000 unseen tasks it achieves 42% success rate, 1.7x the success rate of other common learned baselines or zero-shot applications of LLMs. Finally, to aid the community in studying language conditioned, massively multi-task, embodied AI problems we release a novel benchmark, Language Rearrangement, consisting of 150,000 training and 1,000 testing tasks for language-conditioned rearrangement.",
+    "tldr": "Reinforcement Learned Policies for multi-task embodied AI problems, when initialized from LLMs, demonstrate strong generalization properties across novel task and novel ways of describing tasks.",
+    "tags": [
+        "Embodied AI",
+        "Reinforcement Learning",
+        "Large Language Models",
+        "Foundational Models"
+    ]
+}

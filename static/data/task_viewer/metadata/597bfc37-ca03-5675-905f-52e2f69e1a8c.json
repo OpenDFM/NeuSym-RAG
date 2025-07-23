@@ -1,0 +1,30 @@
+{
+    "uuid": "597bfc37-ca03-5675-905f-52e2f69e1a8c",
+    "title": "PSST: A Benchmark for Evaluation-driven Text Public-Speaking Style Transfer",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    "bibtex": "@inproceedings{sun-etal-2024-psst,\n    title = \"{PSST}: A Benchmark for Evaluation-driven Text Public-Speaking Style Transfer\",\n    author = \"Sun, Huashan  and\n      Wu, Yixiao  and\n      Yang, Yizhe  and\n      Li, Yinghao  and\n      Li, Jiawei  and\n      Ye, Yuhao  and\n      Gao, Yang\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2024\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-emnlp.495/\",\n    doi = \"10.18653/v1/2024.findings-emnlp.495\",\n    pages = \"8438--8471\",\n    abstract = \"Language style is necessary for AI systems to accurately understand and generate diverse human language. However, previous text style transfer primarily focused on sentence-level data-driven approaches, limiting exploration of potential problems in large language models (LLMs) and the ability to meet complex application needs. To overcome these limitations, we introduce a novel task called Public-Speaking Style Transfer (PSST), which aims to simulate humans to transform passage-level, official texts into a public-speaking style. Grounded in the analysis of real-world data from a linguistic perspective, we decompose public-speaking style into key sub-styles to pose challenges and quantify the style modeling capability of LLMs. For such intricate text style transfer, we further propose a fine-grained evaluation framework to analyze the characteristics and identify the problems of stylized texts. Comprehensive experiments suggest that current LLMs struggle to generate public speaking texts that align with human preferences, primarily due to excessive stylization and loss of semantic information. We will release our data, code, and model upon acceptance.\"\n}\n",
+    "authors": [
+        "Huashan Sun",
+        "Yixiao Wu",
+        "Yizhe Yang",
+        "Yinghao Li",
+        "Jiawei Li",
+        "Yuhao Ye",
+        "Yang Gao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-emnlp.495.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/597bfc37-ca03-5675-905f-52e2f69e1a8c.pdf",
+    "num_pages": 34,
+    "abstract": "Language style is necessary for AI systems to accurately understand and generate diverse human language. However, previous text style transfer primarily focused on sentence-level data-driven approaches, limiting exploration of potential problems in large language models (LLMs) and the ability to meet complex application needs. To overcome these limitations, we introduce a novel task called Public-Speaking Style Transfer (PSST), which aims to simulate humans to transform passage-level, official texts into a public-speaking style. Grounded in the analysis of real-world data from a linguistic perspective, we decompose public-speaking style into key sub-styles to pose challenges and quantify the style modeling capability of LLMs. For such intricate text style transfer, we further propose a fine-grained evaluation framework to analyze the characteristics and identify the problems of stylized texts. Comprehensive experiments suggest that current LLMs struggle to generate public speaking texts that align with human preferences, primarily due to excessive stylization and loss of semantic information. We will release our data, code, and model upon acceptance.",
+    "tldr": "PSST benchmarks public-speaking style transfer to enhance LLMs' text generation.",
+    "tags": [
+        "Public-Speaking",
+        "Text Style Transfer",
+        "Language Models",
+        "Evaluation Framework",
+        "Semantic Information"
+    ]
+}

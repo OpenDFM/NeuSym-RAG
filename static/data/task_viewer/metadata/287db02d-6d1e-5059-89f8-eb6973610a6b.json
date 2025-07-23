@@ -1,0 +1,28 @@
+{
+    "uuid": "287db02d-6d1e-5059-89f8-eb6973610a6b",
+    "title": "Retrieval Head Mechanistically Explains Long-Context Factuality",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Wenhao Wu",
+        "Yizhong Wang",
+        "Guangxuan Xiao",
+        "Hao Peng",
+        "Yao Fu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2404.15574v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2024/287db02d-6d1e-5059-89f8-eb6973610a6b.pdf",
+    "bibtex": "@misc{wu2024retrievalheadmechanisticallyexplainslongcontext,\n    title = {Retrieval Head Mechanistically Explains Long-Context Factuality},\n    author = {Wenhao Wu and Yizhong Wang and Guangxuan Xiao and Hao Peng and Yao Fu},\n    year = {2024},\n    eprint = {2404.15574},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2404.15574},\n}",
+    "abstract": "Despite the recent progress in long-context language models, it remains\nelusive how transformer-based models exhibit the capability to retrieve\nrelevant information from arbitrary locations within the long context. This\npaper aims to address this question. Our systematic investigation across a wide\nspectrum of models reveals that a special type of attention heads are largely\nresponsible for retrieving information, which we dub retrieval heads. We\nidentify intriguing properties of retrieval heads:(1) universal: all the\nexplored models with long-context capability have a set of retrieval heads; (2)\nsparse: only a small portion (less than 5\\%) of the attention heads are\nretrieval. (3) intrinsic: retrieval heads already exist in models pretrained\nwith short context. When extending the context length by continual pretraining,\nit is still the same set of heads that perform information retrieval. (4)\ndynamically activated: take Llama-2 7B for example, 12 retrieval heads always\nattend to the required information no matter how the context is changed. The\nrest of the retrieval heads are activated in different contexts. (5) causal:\ncompletely pruning retrieval heads leads to failure in retrieving relevant\ninformation and results in hallucination, while pruning random non-retrieval\nheads does not affect the model's retrieval ability. We further show that\nretrieval heads strongly influence chain-of-thought (CoT) reasoning, where the\nmodel needs to frequently refer back the question and previously-generated\ncontext. Conversely, tasks where the model directly generates the answer using\nits intrinsic knowledge are less impacted by masking out retrieval heads. These\nobservations collectively explain which internal part of the model seeks\ninformation from the input tokens. We believe our insights will foster future\nresearch on reducing hallucination, improving reasoning, and compressing the KV\ncache.",
+    "num_pages": 10,
+    "tldr": "Retrieval heads crucial for long-context information retrieval in transformers.",
+    "tags": [
+        "retrieval heads",
+        "long-context language models",
+        "transformer-based models",
+        "attention mechanism",
+        "information retrieval"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "uuid": "153d1505-a286-5ceb-9858-c272e31a7d7e",
+    "title": "TIES-Merging: Resolving Interference When Merging Models",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 poster",
+    "bibtex": "@inproceedings{\nyadav2023tiesmerging,\ntitle={{TIES}-Merging: Resolving Interference When Merging Models},\nauthor={Prateek Yadav and Derek Tam and Leshem Choshen and Colin Raffel and Mohit Bansal},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=xtaX3WyCj1}\n}",
+    "authors": [
+        "Prateek Yadav",
+        "Derek Tam",
+        "Leshem Choshen",
+        "Colin Raffel",
+        "Mohit Bansal"
+    ],
+    "pdf_url": "https://openreview.net/pdf/8b27b1948a638a16f60124aefbee3c9b1f9f3920.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/153d1505-a286-5ceb-9858-c272e31a7d7e.pdf",
+    "num_pages": 23,
+    "abstract": "Transfer learning – i.e., further fine-tuning a pre-trained model on a downstream task – can confer significant advantages, including improved downstream performance, faster convergence, and better sample efficiency. These advantages have led to a proliferation of task-specific fine-tuned models, which typically can only perform a single task and do not benefit from one another. Recently, model merging techniques have emerged as a solution to combine multiple task-specific models into a single multitask model without performing additional training. However, existing merging methods often ignore the interference between parameters of different models, resulting in large performance drops when merging multiple models. In this paper, we demonstrate that prior merging techniques inadvertently lose valuable information due to two major sources of interference: (a) interference due to redundant parameter values and (b) disagreement on the sign of a given parameter’s values across models. To address this, we propose our method, TrIm, Elect Sign & Merge (TIES-Merging), which introduces three novel steps when merging models: (1) resetting parameters that only changed a small amount during fine-tuning, (2) resolving sign conflicts, and (3) merging only the parameters that are in alignment with the final agreed-upon sign. We find that TIES-Merging outperforms existing methods in diverse settings covering a range of modalities, domains, number of tasks, model sizes, architectures, and fine-tuning settings. We further analyze the impact of different types of interference on model parameters, highlight the importance of signs, and show that estimating the signs using the validation data could further improve performance.",
+    "tldr": "Different tasks might prefer different directions in the weight space and this can lead to conflicts when merging models. We identify this problem and propose an extremely lightweight dataless merging method.",
+    "tags": [
+        "Model Merging",
+        "Fusing",
+        "Collaborative Training",
+        "Robust Fine-tuning",
+        "Federated Learning"
+    ]
+}

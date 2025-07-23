@@ -1,0 +1,25 @@
+{
+    "uuid": "1a823707-4dc8-5954-8fe1-de9ba161f77a",
+    "title": "Emergent Inabilities? Inverse Scaling Over the Course of Pretraining",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    "bibtex": "@inproceedings{michaelov-bergen-2023-emergent,\n    title = \"Emergent Inabilities? Inverse Scaling Over the Course of Pretraining\",\n    author = \"Michaelov, James  and\n      Bergen, Ben\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2023\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-emnlp.973\",\n    doi = \"10.18653/v1/2023.findings-emnlp.973\",\n    pages = \"14607--14615\",\n    abstract = \"Does inverse scaling only occur as a function of model size, or can it also occur over the course of training? We carry out an exploratory study investigating whether the performance of language models on specific tasks can decrease (while general performance remains high) during training on the language modeling task. We find 8 tasks on which Pythia 12B (Biderman et al., 2023) shows decreased performance over the course of training. Five of these tasks (TruthfulQA-MC1, TruthfulQA-MC2, Hindsight Neglect, Memo Trap, and Pattern Match Suppression) additionally show a consistent relationship whereby larger language models show a greater decrease in performance the more they are trained, despite showing standard (positive) scaling overall. This highlights the importance of testing performance at all relevant benchmarks any time models are trained on additional data, even if their overall performance improves.\",\n}\n",
+    "authors": [
+        "James Michaelov",
+        "Ben Bergen"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-emnlp.973.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/1a823707-4dc8-5954-8fe1-de9ba161f77a.pdf",
+    "num_pages": 9,
+    "abstract": "Does inverse scaling only occur as a function of model size, or can it also occur over the course of training? We carry out an exploratory study investigating whether the performance of language models on specific tasks can decrease (while general performance remains high) during training on the language modeling task. We find 8 tasks on which Pythia 12B (Biderman et al., 2023) shows decreased performance over the course of training. Five of these tasks (TruthfulQA-MC1, TruthfulQA-MC2, Hindsight Neglect, Memo Trap, and Pattern Match Suppression) additionally show a consistent relationship whereby larger language models show a greater decrease in performance the more they are trained, despite showing standard (positive) scaling overall. This highlights the importance of testing performance at all relevant benchmarks any time models are trained on additional data, even if their overall performance improves.",
+    "tldr": "Language models may show decreased performance on specific tasks during training.",
+    "tags": [
+        "inverse scaling",
+        "pretraining",
+        "language models",
+        "performance evaluation",
+        "model size"
+    ]
+}

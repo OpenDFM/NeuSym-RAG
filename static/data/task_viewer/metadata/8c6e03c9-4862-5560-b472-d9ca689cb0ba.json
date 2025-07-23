@@ -1,0 +1,27 @@
+{
+    "uuid": "8c6e03c9-4862-5560-b472-d9ca689cb0ba",
+    "title": "Train-Attention: Meta-Learning Where to Focus in Continual Knowledge Learning",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nyeongbin2024trainattention,\ntitle={Train-Attention: Meta-Learning Where to Focus in Continual Knowledge Learning},\nauthor={Seo Yeongbin and Dongha Lee and Jinyoung Yeo},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=pwLdvYIMrF}\n}",
+    "authors": [
+        "Seo Yeongbin",
+        "Dongha Lee",
+        "Jinyoung Yeo"
+    ],
+    "pdf_url": "https://openreview.net/pdf/2d2fc4beb4ba2418dd2a4c680959b5708e85b13e.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/8c6e03c9-4862-5560-b472-d9ca689cb0ba.pdf",
+    "num_pages": 25,
+    "abstract": "Previous studies on continual knowledge learning (CKL) in large language models (LLMs) have predominantly focused on approaches such as regularization, architectural modifications, and rehearsal techniques to mitigate catastrophic forgetting. However, these methods naively inherit the inefficiencies of standard training procedures, indiscriminately applying uniform weight across all tokens, which can lead to unnecessary parameter updates and increased forgetting. To address these shortcomings, we propose a novel CKL approach termed Train-Attention-Augmented Language Model (TAALM), which enhances learning efficiency by dynamically predicting and applying weights to tokens based on their usefulness. This method employs a meta-learning framework that optimizes token importance predictions, facilitating targeted knowledge updates and minimizing forgetting. Also, we observe that existing benchmarks do not clearly exhibit the trade-off between learning and retaining, therefore we propose a new benchmark, LAMA-ckl, to address this issue. Through experiments conducted on both newly introduced and established CKL benchmarks, TAALM proves the state-of-the-art performance upon the baselines, and also shows synergistic compatibility when integrated with previous CKL approaches. The code and the dataset are available online.",
+    "tldr": "enhancing continual knowledge learning performance through meta-learning based token weighted learning method",
+    "tags": [
+        "continual learning",
+        "continual knowledge learning",
+        "large language models",
+        "meta-learning",
+        "train-attention",
+        "token weight"
+    ]
+}

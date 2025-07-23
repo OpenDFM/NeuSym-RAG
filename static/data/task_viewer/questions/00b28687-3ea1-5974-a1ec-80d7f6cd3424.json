@@ -1,0 +1,38 @@
+{
+    "uuid": "00b28687-3ea1-5974-a1ec-80d7f6cd3424",
+    "question": "What datasets were used to train the default embedding model for the retriever in the experiment of the paper?",
+    "answer_format": "Your answer should be a python list of the dataset names, e.g. [\"dataset1\", \"dataset2\", ...]. YOU MUST USE THE EXACT NAMES FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "7e09164d-5713-56a1-8210-d92aa98d512a"
+    ],
+    "reference_pdf": [
+        "413e7de9-03c4-5c1f-9e42-cd48030c9369"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Retrieve the default embedding model for the retriever in the experiment section of the paper.",
+        "Locate the relevant paper about the model.",
+        "Identify the datasets on which the model was trained, which are usually mentioned in the dataset section."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Wikipedia",
+                "CCNet"
+            ],
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "status": "failure",
+    "test_result": "[Observation]: ['TruthfulQA', 'WikiQA', 'CommonsenseQA', 'MedQA-US', 'MMLU-Med', 'MedMCQA', 'PubMedQA', 'BioASQY/N']"
+}

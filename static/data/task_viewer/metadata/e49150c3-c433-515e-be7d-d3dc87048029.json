@@ -1,0 +1,26 @@
+{
+    "uuid": "e49150c3-c433-515e-be7d-d3dc87048029",
+    "title": "MBIAS: Mitigating Bias in Large Language Models While Retaining Context",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 14th Workshop on Computational Approaches to Subjectivity, Sentiment, & Social Media Analysis",
+    "bibtex": "@inproceedings{raza-etal-2024-mbias,\n    title = \"{MBIAS}: Mitigating Bias in Large Language Models While Retaining Context\",\n    author = \"Raza, Shaina  and\n      Raval, Ananya  and\n      Chatrath, Veronica\",\n    editor = \"De Clercq, Orph{\\'e}e  and\n      Barriere, Valentin  and\n      Barnes, Jeremy  and\n      Klinger, Roman  and\n      Sedoc, Jo{\\~a}o  and\n      Tafreshi, Shabnam\",\n    booktitle = \"Proceedings of the 14th Workshop on Computational Approaches to Subjectivity, Sentiment, {\\&} Social Media Analysis\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.wassa-1.9\",\n    doi = \"10.18653/v1/2024.wassa-1.9\",\n    pages = \"97--111\",\n    abstract = \"The deployment of Large Language Models (LLMs) in diverse applications necessitates an assurance of safety without compromising the contextual integrity of the generated content. Traditional approaches, including safety-specific fine-tuning or adversarial testing, often yield safe outputs at the expense of contextual meaning. This can result in a diminished capacity to handle nuanced aspects of bias and toxicity, such as underrepresentation or negative portrayals across various demographics. To address these challenges, we introduce MBIAS, an LLM framework carefully instruction fine-tuned on a custom dataset designed specifically for safety interventions. MBIAS is designed to significantly reduce biases and toxic elements in LLM outputs while preserving the main information. This work also details our further use of LLMs: as annotator under human supervision and as evaluator of generated content. Empirical analysis reveals that MBIAS achieves a reduction in bias and toxicity by over 30{\\%} in standard evaluations, and by more than 90{\\%} in diverse demographic tests, highlighting the robustness of our approach. We make the dataset and the fine-tuned MBIAS model available to the research community for further investigation and to ensure reproducibility. The code for this project can be accessed here https://github.com/shainarazavi/MBIAS.\",\n}\n",
+    "authors": [
+        "Shaina Raza",
+        "Ananya Raval",
+        "Veronica Chatrath"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.wassa-1.9.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e49150c3-c433-515e-be7d-d3dc87048029.pdf",
+    "abstract": "The deployment of Large Language Models (LLMs) in diverse applications necessitates an assurance of safety without compromising the contextual integrity of the generated content. Traditional approaches, including safety-specific fine-tuning or adversarial testing, often yield safe outputs at the expense of contextual meaning. This can result in a diminished capacity to handle nuanced aspects of bias and toxicity, such as underrepresentation or negative portrayals across various demographics. To address these challenges, we introduce MBIAS, an LLM framework carefully instruction fine-tuned on a custom dataset designed specifically for safety interventions. MBIAS is designed to significantly reduce biases and toxic elements in LLM outputs while preserving the main information. This work also details our further use of LLMs: as annotator under human supervision and as evaluator of generated content. Empirical analysis reveals that MBIAS achieves a reduction in bias and toxicity by over 30% in standard evaluations, and by more than 90% in diverse demographic tests, highlighting the robustness of our approach. We make the dataset and the fine-tuned MBIAS model available to the research community for further investigation and to ensure reproducibility. The code for this project can be accessed here https://github.com/shainarazavi/MBIAS.",
+    "num_pages": 15,
+    "tldr": "MBIAS reduces LLM bias/toxicity while preserving context, with open-source resources.",
+    "tags": [
+        "Large Language Models",
+        "Bias Mitigation",
+        "Contextual Integrity",
+        "Safety Interventions",
+        "Empirical Analysis"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "ebf4682e-2653-5589-9458-da26d00d9f5b",
+    "title": "Does GPT-3 Grasp Metaphors? Identifying Metaphor Mappings with Generative Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{wachowiak-gromann-2023-gpt,\n    title = \"Does {GPT}-3 Grasp Metaphors? Identifying Metaphor Mappings with Generative Language Models\",\n    author = \"Wachowiak, Lennart  and\n      Gromann, Dagmar\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.58\",\n    doi = \"10.18653/v1/2023.acl-long.58\",\n    pages = \"1018--1032\",\n    abstract = \"Conceptual metaphors present a powerful cognitive vehicle to transfer knowledge structures from a source to a target domain. Prior neural approaches focus on detecting whether natural language sequences are metaphoric or literal. We believe that to truly probe metaphoric knowledge in pre-trained language models, their capability to detect this transfer should be investigated. To this end, this paper proposes to probe the ability of GPT-3 to detect metaphoric language and predict the metaphor{'}s source domain without any pre-set domains. We experiment with different training sample configurations for fine-tuning and few-shot prompting on two distinct datasets. When provided 12 few-shot samples in the prompt, GPT-3 generates the correct source domain for a new sample with an accuracy of 65.15{\\%} in English and 34.65{\\%} in Spanish. GPT{'}s most common error is a hallucinated source domain for which no indicator is present in the sentence. Other common errors include identifying a sequence as literal even though a metaphor is present and predicting the wrong source domain based on specific words in the sequence that are not metaphorically related to the target domain.\",\n}\n",
+    "authors": [
+        "Lennart Wachowiak",
+        "Dagmar Gromann"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.58.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/ebf4682e-2653-5589-9458-da26d00d9f5b.pdf",
+    "abstract": "Conceptual metaphors present a powerful cognitive vehicle to transfer knowledge structures from a source to a target domain. Prior neural approaches focus on detecting whether natural language sequences are metaphoric or literal. We believe that to truly probe metaphoric knowledge in pre-trained language models, their capability to detect this transfer should be investigated. To this end, this paper proposes to probe the ability of GPT-3 to detect metaphoric language and predict the metaphor’s source domain without any pre-set domains. We experiment with different training sample configurations for fine-tuning and few-shot prompting on two distinct datasets. When provided 12 few-shot samples in the prompt, GPT-3 generates the correct source domain for a new sample with an accuracy of 65.15% in English and 34.65% in Spanish. GPT’s most common error is a hallucinated source domain for which no indicator is present in the sentence. Other common errors include identifying a sequence as literal even though a metaphor is present and predicting the wrong source domain based on specific words in the sequence that are not metaphorically related to the target domain.",
+    "num_pages": 15,
+    "tldr": "GPT-3 detects metaphors and predicts source domains with moderate accuracy.",
+    "tags": [
+        "metaphor detection",
+        "GPT-3",
+        "language models",
+        "cognitive linguistics",
+        "few-shot learning"
+    ]
+}

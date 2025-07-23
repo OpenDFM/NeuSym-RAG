@@ -1,0 +1,29 @@
+{
+    "uuid": "75494679-b547-5df0-a83a-75410da0f379",
+    "title": "ALFWorld: Aligning Text and Embodied Environments for Interactive Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Mohit Shridhar",
+        "Xingdi Yuan",
+        "Marc-Alexandre Côté",
+        "Yonatan Bisk",
+        "Adam Trischler",
+        "Matthew Hausknecht"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.03768v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2021/75494679-b547-5df0-a83a-75410da0f379.pdf",
+    "bibtex": "@misc{shridhar2021alfworldaligningtextandembodied,\n    title = {ALFWorld: Aligning Text and Embodied Environments for Interactive Learning},\n    author = {Mohit Shridhar and Xingdi Yuan and Marc-Alexandre Côté and Yonatan Bisk and Adam Trischler and Matthew Hausknecht},\n    year = {2021},\n    eprint = {2010.03768},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2010.03768},\n}",
+    "abstract": "Given a simple request like Put a washed apple in the kitchen fridge, humans\ncan reason in purely abstract terms by imagining action sequences and scoring\ntheir likelihood of success, prototypicality, and efficiency, all without\nmoving a muscle. Once we see the kitchen in question, we can update our\nabstract plans to fit the scene. Embodied agents require the same abilities,\nbut existing work does not yet provide the infrastructure necessary for both\nreasoning abstractly and executing concretely. We address this limitation by\nintroducing ALFWorld, a simulator that enables agents to learn abstract, text\nbased policies in TextWorld (C\\^ot\\'e et al., 2018) and then execute goals from\nthe ALFRED benchmark (Shridhar et al., 2020) in a rich visual environment.\nALFWorld enables the creation of a new BUTLER agent whose abstract knowledge,\nlearned in TextWorld, corresponds directly to concrete, visually grounded\nactions. In turn, as we demonstrate empirically, this fosters better agent\ngeneralization than training only in the visually grounded environment.\nBUTLER's simple, modular design factors the problem to allow researchers to\nfocus on models for improving every piece of the pipeline (language\nunderstanding, planning, navigation, and visual scene understanding).",
+    "num_pages": 21,
+    "tldr": "ALFWorld aligns text-based and visual environments for better agent generalization.",
+    "tags": [
+        "Interactive Learning",
+        "Embodied Agents",
+        "TextWorld",
+        "Visual Environment",
+        "Generalization"
+    ]
+}

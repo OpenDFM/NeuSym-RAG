@@ -1,0 +1,26 @@
+{
+    "uuid": "379352ef-2540-5680-821a-2a9ef5ef979f",
+    "title": "Task Arithmetic in the Tangent Space: Improved Editing of Pre-Trained Models",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 oral",
+    "bibtex": "@inproceedings{\nortiz-jimenez2023task,\ntitle={Task Arithmetic in the Tangent Space: Improved Editing of Pre-Trained Models},\nauthor={Guillermo Ortiz-Jimenez and Alessandro Favero and Pascal Frossard},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=0A9f2jZDGW}\n}",
+    "authors": [
+        "Guillermo Ortiz-Jimenez",
+        "Alessandro Favero",
+        "Pascal Frossard"
+    ],
+    "pdf_url": "https://openreview.net/pdf/1e605936d9544b6e5e448363572bb06fcdf70f57.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/379352ef-2540-5680-821a-2a9ef5ef979f.pdf",
+    "num_pages": 28,
+    "abstract": "Task arithmetic has recently emerged as a cost-effective and scalable approach to edit pre-trained models directly in weight space: By adding the fine-tuned weights of different tasks, the model's performance can be improved on these tasks, while negating them leads to task forgetting. Yet, our understanding of the effectiveness of task arithmetic and its underlying principles remains limited. We present a comprehensive study of task arithmetic in vision-language models and show that weight disentanglement is the crucial factor that makes it effective. This property arises during pre-training and manifests when distinct directions in weight space govern separate, localized regions in function space associated with the tasks. Notably, we show that fine-tuning models in their tangent space by linearizing them amplifies weight disentanglement. This leads to substantial performance improvements across multiple task arithmetic benchmarks and diverse models. Building on these findings, we provide theoretical and empirical analyses of the neural tangent kernel (NTK) of these models and establish a compelling link between task arithmetic and the spatial localization of the NTK eigenfunctions. Overall, our work uncovers novel insights into the fundamental mechanisms of task arithmetic and offers a more reliable and effective approach to edit pre-trained models through the NTK linearization.",
+    "tldr": "We present a comprehensive study of task arithmetic and find that linearizing models before fine-tuning improves their performance after editing.",
+    "tags": [
+        "model editing",
+        "transfer learning",
+        "neural tangent kernel",
+        "vision-language pre-training",
+        "deep learning science"
+    ]
+}

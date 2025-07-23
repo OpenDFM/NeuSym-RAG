@@ -1,0 +1,28 @@
+{
+    "uuid": "0d110629-3064-59d4-8638-7edb53c01b9e",
+    "title": "ACT-SQL: In-Context Learning for Text-to-SQL with Automatically-Generated Chain-of-Thought",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    "bibtex": "@inproceedings{zhang-etal-2023-act,\n    title = \"{ACT}-{SQL}: In-Context Learning for Text-to-{SQL} with Automatically-Generated Chain-of-Thought\",\n    author = \"Zhang, Hanchong  and\n      Cao, Ruisheng  and\n      Chen, Lu  and\n      Xu, Hongshen  and\n      Yu, Kai\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2023\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-emnlp.227\",\n    doi = \"10.18653/v1/2023.findings-emnlp.227\",\n    pages = \"3501--3532\",\n    abstract = \"Recently Large Language Models (LLMs) have been proven to have strong abilities in various domains and tasks. We study the problem of prompt designing in the text-to-SQL task and attempt to improve the LLMs{'} reasoning ability when generating SQL queries. Besides the trivial few-shot in-context learning setting, we design our chain-of-thought (CoT) prompt with a similar method to schema linking. We provide a method named ACT-SQL to automatically generate auto-CoT exemplars and thus the whole process doesn{'}t need manual labeling. Our approach is cost-saving since we only use the LLMs{'} API call once when generating one SQL query. Furthermore, we extend our in-context learning method to the multi-turn text-to-SQL task. The experiment results show that the LLMs{'} performance can benefit from our ACT-SQL approach. Our approach achieves SOTA performance on the Spider dev set among existing in-context learning approaches.\",\n}\n",
+    "authors": [
+        "Hanchong Zhang",
+        "Ruisheng Cao",
+        "Lu Chen",
+        "Hongshen Xu",
+        "Kai Yu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-emnlp.227.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/0d110629-3064-59d4-8638-7edb53c01b9e.pdf",
+    "num_pages": 32,
+    "abstract": "Recently Large Language Models (LLMs) have been proven to have strong abilities in various domains and tasks. We study the problem of prompt designing in the text-to-SQL task and attempt to improve the LLMs’ reasoning ability when generating SQL queries. Besides the trivial few-shot in-context learning setting, we design our chain-of-thought (CoT) prompt with a similar method to schema linking. We provide a method named ACT-SQL to automatically generate auto-CoT exemplars and thus the whole process doesn’t need manual labeling. Our approach is cost-saving since we only use the LLMs’ API call once when generating one SQL query. Furthermore, we extend our in-context learning method to the multi-turn text-to-SQL task. The experiment results show that the LLMs’ performance can benefit from our ACT-SQL approach. Our approach achieves SOTA performance on the Spider dev set among existing in-context learning approaches.",
+    "tldr": "ACT-SQL enhances text-to-SQL with automated chain-of-thought for better reasoning.",
+    "tags": [
+        "text-to-SQL",
+        "in-context learning",
+        "chain-of-thought",
+        "large language models",
+        "automated schema linking"
+    ]
+}

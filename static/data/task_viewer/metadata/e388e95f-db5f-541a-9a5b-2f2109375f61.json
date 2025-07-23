@@ -1,0 +1,25 @@
+{
+    "uuid": "e388e95f-db5f-541a-9a5b-2f2109375f61",
+    "title": "FLatS: Principled Out-of-Distribution Detection with Feature-Based Likelihood Ratio Score",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{lin-gu-2023-flats,\n    title = \"{FL}at{S}: Principled Out-of-Distribution Detection with Feature-Based Likelihood Ratio Score\",\n    author = \"Lin, Haowei  and\n      Gu, Yuntian\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.emnlp-main.554\",\n    doi = \"10.18653/v1/2023.emnlp-main.554\",\n    pages = \"8956--8963\",\n    abstract = \"Detecting out-of-distribution (OOD) instances is crucial for NLP models in practical applications. Although numerous OOD detection methods exist, most of them are empirical. Backed by theoretical analysis, this paper advocates for the measurement of the {``}OOD-ness{''} of a test case $\\boldsymbol{x}$ through the \\textit{likelihood ratio} between out-distribution $\\mathcal P_{\\textit{out}}$ and in-distribution $\\mathcal P_{\\textit{in}}$. We argue that the state-of-the-art (SOTA) feature-based OOD detection methods, such as Maha and KNN, are suboptimal since they only estimate in-distribution density $p_{\\textit{in}}(\\boldsymbol{x})$. To address this issue, we propose \\textbf{FLATS}, a principled solution for OOD detection based on likelihood ratio. Moreover, we demonstrate that FLATS can serve as a general framework capable of enhancing other OOD detection methods by incorporating out-distribution density $p_{\\textit{out}}(\\boldsymbol{x})$ estimation. Experiments show that FLATS establishes a new SOTA on popular benchmarks.\",\n}\n",
+    "authors": [
+        "Haowei Lin",
+        "Yuntian Gu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.emnlp-main.554.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/e388e95f-db5f-541a-9a5b-2f2109375f61.pdf",
+    "num_pages": 8,
+    "abstract": "Detecting out-of-distribution (OOD) instances is crucial for NLP models in practical applications. Although numerous OOD detection methods exist, most of them are empirical. Backed by theoretical analysis, this paper advocates for the measurement of the “OOD-ness” of a test case x through the likelihood ratio between out-distribution \\mathcal Pout and in-distribution \\mathcal Pin. We argue that the state-of-the-art (SOTA) feature-based OOD detection methods, such as Maha and KNN, are suboptimal since they only estimate in-distribution density pin(x). To address this issue, we propose FLATS, a principled solution for OOD detection based on likelihood ratio. Moreover, we demonstrate that FLATS can serve as a general framework capable of enhancing other OOD detection methods by incorporating out-distribution density pout(x) estimation. Experiments show that FLATS establishes a new SOTA on popular benchmarks.",
+    "tldr": "FLatS improves OOD detection using feature-based likelihood ratio scores.",
+    "tags": [
+        "Out-of-Distribution Detection",
+        "Likelihood Ratio",
+        "NLP Models",
+        "Feature-Based Methods",
+        "Theoretical Analysis"
+    ]
+}

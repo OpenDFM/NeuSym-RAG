@@ -1,0 +1,27 @@
+{
+    "uuid": "60f440ff-3076-5b6e-96d7-0819845b691b",
+    "title": "Seeing the Image: Prioritizing Visual Correlation by Contrastive Alignment",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nxiao2024seeing,\ntitle={Seeing the Image: Prioritizing Visual Correlation by Contrastive Alignment},\nauthor={Xin Xiao and Bohong Wu and Jiacong Wang and Chunyuan Li and zhou Xun and Haoyuan Guo},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=NsxthTVpqA}\n}",
+    "authors": [
+        "Xin Xiao",
+        "Bohong Wu",
+        "Jiacong Wang",
+        "Chunyuan Li",
+        "zhou Xun",
+        "Haoyuan Guo"
+    ],
+    "pdf_url": "https://openreview.net/pdf/17bb2dfb15592564079e52c0c9bb07a6ef695e7e.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/60f440ff-3076-5b6e-96d7-0819845b691b.pdf",
+    "num_pages": 26,
+    "abstract": "Existing image-text modality alignment in Vision Language Models (VLMs) treats each text token equally in an autoregressive manner. Despite being simple and effective, this method results in sub-optimal cross-modal alignment by over-emphasizing the text tokens that are less correlated with or even contradictory with the input images. In this paper, we advocate for distinct contributions for each text token based on its visual correlation. Specifically, we present by contrasting image inputs, the difference in prediction logits on each text token provides strong guidance of visual correlation. We therefore introduce Contrastive Alignment (CAL), a simple yet effective re-weighting strategy that prioritizes training visually correlated tokens. Our experimental results demonstrate that CAL consistently improves different types of VLMs across different resolutions and model sizes on various benchmark datasets. Importantly, our method incurs minimal additional computational overhead, rendering it highly efficient compared to alternative data scaling strategies.",
+    "tldr": "Introducing Contrastive Alignment (CAL) to enhance visual-text alignment in VLMs.",
+    "tags": [
+        "Vision Language Model",
+        "Contrastive Alignment",
+        "Selective Token Re-weighting"
+    ]
+}

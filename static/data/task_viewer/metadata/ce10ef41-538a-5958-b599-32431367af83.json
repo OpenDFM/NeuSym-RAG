@@ -1,0 +1,24 @@
+{
+    "uuid": "ce10ef41-538a-5958-b599-32431367af83",
+    "title": "ICU: Conquering Language Barriers in Vision-and-Language Modeling by Dividing the Tasks into Image Captioning and Language Understanding",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    "bibtex": "@inproceedings{wu-2023-icu,\n    title = \"{ICU}: Conquering Language Barriers in Vision-and-Language Modeling by Dividing the Tasks into Image Captioning and Language Understanding\",\n    author = \"Wu, Guojun\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2023\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-emnlp.982\",\n    doi = \"10.18653/v1/2023.findings-emnlp.982\",\n    pages = \"14740--14746\",\n    abstract = \"Most multilingual vision-and-language (V{\\&}L) research aims to accomplish multilingual and multimodal capabilities within one model. However, the scarcity of multilingual captions for images has hindered the development. To overcome this obstacle, we propose ICU, Image Caption Understanding, which divides a V{\\&}L task into two stages: a V{\\&}L model performs image captioning in English, and a multilingual language model (mLM), in turn, takes the caption as the alt text and performs cross-lingual language understanding. The burden of multilingual processing is lifted off V{\\&}L model and placed on mLM. Since the multilingual text data is relatively of higher abundance and quality, ICU can facilitate the conquering of language barriers for V{\\&}L models. In experiments on two tasks across 9 languages in the IGLUE benchmark, we show that ICU can achieve new state-of-the-art results for five languages, and comparable results for the rest.\",\n}\n",
+    "authors": [
+        "Guojun Wu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-emnlp.982.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/ce10ef41-538a-5958-b599-32431367af83.pdf",
+    "num_pages": 7,
+    "abstract": "Most multilingual vision-and-language (V&L) research aims to accomplish multilingual and multimodal capabilities within one model. However, the scarcity of multilingual captions for images has hindered the development. To overcome this obstacle, we propose ICU, Image Caption Understanding, which divides a V&L task into two stages: a V&L model performs image captioning in English, and a multilingual language model (mLM), in turn, takes the caption as the alt text and performs cross-lingual language understanding. The burden of multilingual processing is lifted off V&L model and placed on mLM. Since the multilingual text data is relatively of higher abundance and quality, ICU can facilitate the conquering of language barriers for V&L models. In experiments on two tasks across 9 languages in the IGLUE benchmark, we show that ICU can achieve new state-of-the-art results for five languages, and comparable results for the rest.",
+    "tldr": "ICU improves vision-language modeling by separating image captioning and language tasks.",
+    "tags": [
+        "multilingual vision-and-language",
+        "image captioning",
+        "language understanding",
+        "cross-lingual processing",
+        "IGLUE benchmark"
+    ]
+}

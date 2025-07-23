@@ -1,0 +1,29 @@
+{
+    "uuid": "2f2e4311-fc9b-5e36-bb18-7c3fee141713",
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "conference_full": "International Conference on Learning Representations",
+    "conference": "ICLR",
+    "year": 2023,
+    "volume": "ICLR 2023 notable top 5%",
+    "bibtex": "@inproceedings{\nyao2023react,\ntitle={ReAct: Synergizing Reasoning and Acting in Language Models},\nauthor={Shunyu Yao and Jeffrey Zhao and Dian Yu and Nan Du and Izhak Shafran and Karthik R Narasimhan and Yuan Cao},\nbooktitle={The Eleventh International Conference on Learning Representations },\nyear={2023},\nurl={https://openreview.net/forum?id=WE_vluYUL-X}\n}",
+    "authors": [
+        "Shunyu Yao",
+        "Jeffrey Zhao",
+        "Dian Yu",
+        "Nan Du",
+        "Izhak Shafran",
+        "Karthik R Narasimhan",
+        "Yuan Cao"
+    ],
+    "pdf_url": "https://openreview.net/pdf/bc117919562a4ccddbe5c5b24ee364d14289cdee.pdf",
+    "pdf_path": "data/dataset/airqa/papers/iclr2023/2f2e4311-fc9b-5e36-bb18-7c3fee141713.pdf",
+    "num_pages": 33,
+    "abstract": "While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with external sources, such as knowledge bases or environments, to gather additional information. We apply our approach, named ReAct, to a diverse set of language and decision making tasks and demonstrate its effectiveness over state-of-the-art baselines, as well as improved human interpretability and trustworthiness over methods without reasoning or acting components. Concretely, on question answering (HotpotQA) and fact verification (Fever), ReAct overcomes issues of hallucination and error propagation prevalent in chain-of-thought reasoning by interacting with a simple Wikipedia API, and generates human-like task-solving trajectories that are more interpretable than baselines without reasoning traces. On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples.",
+    "tldr": "ReAct synergizes reasoning and acting in LLMs for improved task performance.",
+    "tags": [
+        "Language model",
+        "agent",
+        "reasoning",
+        "decision making"
+    ]
+}

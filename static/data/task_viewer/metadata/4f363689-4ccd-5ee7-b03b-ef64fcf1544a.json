@@ -1,0 +1,27 @@
+{
+    "uuid": "4f363689-4ccd-5ee7-b03b-ef64fcf1544a",
+    "title": "Learning Infinite-horizon Average-reward MDPs with Linear Function Approximation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Chen-Yu Wei",
+        "Mehdi Jafarnia-Jahromi",
+        "Haipeng Luo",
+        "Rahul Jain"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2007.11849v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2021/4f363689-4ccd-5ee7-b03b-ef64fcf1544a.pdf",
+    "bibtex": "@misc{wei2021learninginfinitehorizonaveragerewardmdpswith,\n    title = {Learning Infinite-horizon Average-reward MDPs with Linear Function Approximation},\n    author = {Chen-Yu Wei and Mehdi Jafarnia-Jahromi and Haipeng Luo and Rahul Jain},\n    year = {2021},\n    eprint = {2007.11849},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2007.11849},\n}",
+    "abstract": "We develop several new algorithms for learning Markov Decision Processes in\nan infinite-horizon average-reward setting with linear function approximation.\nUsing the optimism principle and assuming that the MDP has a linear structure,\nwe first propose a computationally inefficient algorithm with optimal\n$\\widetilde{O}(\\sqrt{T})$ regret and another computationally efficient variant\nwith $\\widetilde{O}(T^{3/4})$ regret, where $T$ is the number of interactions.\nNext, taking inspiration from adversarial linear bandits, we develop yet\nanother efficient algorithm with $\\widetilde{O}(\\sqrt{T})$ regret under a\ndifferent set of assumptions, improving the best existing result by Hao et al.\n(2020) with $\\widetilde{O}(T^{2/3})$ regret. Moreover, we draw a connection\nbetween this algorithm and the Natural Policy Gradient algorithm proposed by\nKakade (2002), and show that our analysis improves the sample complexity bound\nrecently given by Agarwal et al. (2020).",
+    "num_pages": 31,
+    "tldr": "New algorithms for learning average-reward MDPs with linear function approximation.",
+    "tags": [
+        "Markov Decision Processes",
+        "infinite-horizon",
+        "average-reward",
+        "linear function approximation",
+        "regret bounds"
+    ]
+}

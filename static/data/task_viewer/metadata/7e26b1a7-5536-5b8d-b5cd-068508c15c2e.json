@@ -1,0 +1,25 @@
+{
+    "uuid": "7e26b1a7-5536-5b8d-b5cd-068508c15c2e",
+    "title": "Quantifying Uncertainty in Answers from any Language Model and Enhancing their Trustworthiness",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-mueller-2024-quantifying,\n    title = \"Quantifying Uncertainty in Answers from any Language Model and Enhancing their Trustworthiness\",\n    author = \"Chen, Jiuhai  and\n      Mueller, Jonas\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.283\",\n    doi = \"10.18653/v1/2024.acl-long.283\",\n    pages = \"5186--5200\",\n    abstract = \"We introduce BSDetector, a method for detecting bad and speculative answers from a pretrained Large Language Model by estimating a numeric confidence score for any output it generated. Our uncertainty quantification technique works for any LLM accessible only via a black-box API, whose training data remains unknown. By expending a bit of extra computation, users of any LLM API can now get the same response as they would ordinarily, as well as a confidence estimate that cautions when not to trust this response. Experiments on both closed and open-form Question-Answer benchmarks reveal that BSDetector more accurately identifies incorrect LLM responses than alternative uncertainty estimation procedures (for both GPT-3 and ChatGPT). By sampling multiple responses from the LLM and considering the one with the highest confidence score, we can additionally obtain more accurate responses from the same LLM, without extra training steps. In applications involving automated evaluation with LLMs, accounting for our confidence scores leads to more reliable evaluation in both human-in-the-loop and fully-automated settings (across both GPT 3.5 and 4).\",\n}\n",
+    "authors": [
+        "Jiuhai Chen",
+        "Jonas Mueller"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.283.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/7e26b1a7-5536-5b8d-b5cd-068508c15c2e.pdf",
+    "abstract": "We introduce BSDetector, a method for detecting bad and speculative answers from a pretrained Large Language Model by estimating a numeric confidence score for any output it generated. Our uncertainty quantification technique works for any LLM accessible only via a black-box API, whose training data remains unknown. By expending a bit of extra computation, users of any LLM API can now get the same response as they would ordinarily, as well as a confidence estimate that cautions when not to trust this response. Experiments on both closed and open-form Question-Answer benchmarks reveal that BSDetector more accurately identifies incorrect LLM responses than alternative uncertainty estimation procedures (for both GPT-3 and ChatGPT). By sampling multiple responses from the LLM and considering the one with the highest confidence score, we can additionally obtain more accurate responses from the same LLM, without extra training steps. In applications involving automated evaluation with LLMs, accounting for our confidence scores leads to more reliable evaluation in both human-in-the-loop and fully-automated settings (across both GPT 3.5 and 4).",
+    "num_pages": 15,
+    "tldr": "BSDetector improves LLM answer trustworthiness via effective uncertainty scoring.",
+    "tags": [
+        "uncertainty quantification",
+        "large language models",
+        "confidence estimation",
+        "black-box APIs",
+        "automated evaluation"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "uuid": "0e1f319d-ad46-5528-9559-9208708536e9",
+    "title": "RECOST: External Knowledge Guided Data-efficient Instruction Tuning",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zhang-etal-2024-recost,\n    title = \"{RECOST}: External Knowledge Guided Data-efficient Instruction Tuning\",\n    author = \"Zhang, Qi  and\n      Zhang, Yiming  and\n      Wang, Haobo  and\n      Zhao, Junbo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.648\",\n    doi = \"10.18653/v1/2024.findings-acl.648\",\n    pages = \"10911--10921\",\n    abstract = \"In the current landscape of large language models (LLMs), the process of instruction tuning serves as an essential step. Considering the high computing power overhead, data-efficient instruction tuning was proposed to reduce the training data size in this process, aiming at selecting high-quality instructional data. Nevertheless, we argue that most current data-efficient instruction-tuning methods are highly dependent on the quality of the original instruction-tuning dataset. When it comes to datasets synthesized by LLMs, a common scenario in this field, dirty samples will even be selected with a higher probability than other samples. To address these challenges, we utilized external knowledge (relevant examples or paragraphs) to evaluate those samples synthesized by LLMs with an in-context-based relative predictive entropy. Based on the new metric, we proposed a framework, dubbed as \\textbf{RECOST}, which integrates external-knowledge-base re-ranking and diversity-consistent sampling into a single pipeline. Through extensive experiments on several synthetic datasets (Alpaca and Alpaca-gpt4), we demonstrate the effectiveness of our method and achieve even better results with only \\textbf{1{\\%}} of the full dataset.\",\n}\n",
+    "authors": [
+        "Qi Zhang",
+        "Yiming Zhang",
+        "Haobo Wang",
+        "Junbo Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.648.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0e1f319d-ad46-5528-9559-9208708536e9.pdf",
+    "abstract": "In the current landscape of large language models (LLMs), the process of instruction tuning serves as an essential step. Considering the high computing power overhead, data-efficient instruction tuning was proposed to reduce the training data size in this process, aiming at selecting high-quality instructional data. Nevertheless, we argue that most current data-efficient instruction-tuning methods are highly dependent on the quality of the original instruction-tuning dataset. When it comes to datasets synthesized by LLMs, a common scenario in this field, dirty samples will even be selected with a higher probability than other samples. To address these challenges, we utilized external knowledge (relevant examples or paragraphs) to evaluate those samples synthesized by LLMs with an in-context-based relative predictive entropy. Based on the new metric, we proposed a framework, dubbed as RECOST, which integrates external-knowledge-base re-ranking and diversity-consistent sampling into a single pipeline. Through extensive experiments on several synthetic datasets (Alpaca and Alpaca-gpt4), we demonstrate the effectiveness of our method and achieve even better results with only 1% of the full dataset.",
+    "num_pages": 11,
+    "tldr": "RECOST enhances data-efficient instruction tuning using external knowledge.",
+    "tags": [
+        "instruction tuning",
+        "data efficiency",
+        "external knowledge",
+        "large language models",
+        "synthetic datasets"
+    ]
+}

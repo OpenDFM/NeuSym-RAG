@@ -1,0 +1,24 @@
+{
+    "uuid": "0a38545d-1e82-5713-ae3f-157bb8623bc0",
+    "title": "Kernel-Based Function Approximation for Average Reward Reinforcement Learning: An Optimist No-Regret Algorithm",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nvakili2024kernelbased,\ntitle={Kernel-Based Function Approximation for Average Reward Reinforcement Learning: An Optimist No-Regret Algorithm},\nauthor={Sattar Vakili and Julia Olkhovskaya},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=VwUTz2pOnD}\n}",
+    "authors": [
+        "Sattar Vakili",
+        "Julia Olkhovskaya"
+    ],
+    "pdf_url": "https://openreview.net/pdf/0c1fea247b79746ce21fa0d29b2c2a588cf514c0.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/0a38545d-1e82-5713-ae3f-157bb8623bc0.pdf",
+    "num_pages": 25,
+    "abstract": "Reinforcement Learning (RL) utilizing kernel ridge regression to predict the expected value function represents a powerful method with great representational capacity. This setting is a highly versatile framework amenable to analytical results. We consider kernel-based function approximation for RL in the infinite horizon average reward setting, also referred to as the undiscounted setting. We propose an *optimistic* algorithm, similar to acquisition function based algorithms in the special case of bandits. We establish novel *no-regret* performance guarantees for our algorithm, under kernel-based modelling assumptions. Additionally, we derive a novel confidence interval for the kernel-based prediction of the expected value function, applicable across various RL problems.",
+    "tldr": "We propose an optimisitc kernel-based RL algorithm for the infinite horizon average reward setting and prove no-regret performance guarantees.",
+    "tags": [
+        "Reinforcement learning",
+        "infinite horizon average reward setting",
+        "no-regret algorithm",
+        "kernel-based model"
+    ]
+}

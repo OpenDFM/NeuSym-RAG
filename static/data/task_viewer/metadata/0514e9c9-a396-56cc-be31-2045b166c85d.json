@@ -1,0 +1,29 @@
+{
+    "uuid": "0514e9c9-a396-56cc-be31-2045b166c85d",
+    "title": "What do you MEME? Generating Explanations for Visual Semantic Role Labelling in Memes",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Shivam Sharma",
+        "Siddhant Agarwal",
+        "Tharun Suresh",
+        "Preslav Nakov",
+        "Md. Shad Akhtar",
+        "Tanmoy Chakraborty"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2212.00715v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2022/0514e9c9-a396-56cc-be31-2045b166c85d.pdf",
+    "bibtex": "@misc{sharma2022whatdoyoumemegenerating,\n    title = {What do you MEME? Generating Explanations for Visual Semantic Role Labelling in Memes},\n    author = {Shivam Sharma and Siddhant Agarwal and Tharun Suresh and Preslav Nakov and Md. Shad Akhtar and Tanmoy Chakraborty},\n    year = {2022},\n    eprint = {2212.00715},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CY},\n    url = {http://arxiv.org/abs/2212.00715},\n}",
+    "abstract": "Memes are powerful means for effective communication on social media. Their\neffortless amalgamation of viral visuals and compelling messages can have\nfar-reaching implications with proper marketing. Previous research on memes has\nprimarily focused on characterizing their affective spectrum and detecting\nwhether the meme's message insinuates any intended harm, such as hate, offense,\nracism, etc. However, memes often use abstraction, which can be elusive. Here,\nwe introduce a novel task - EXCLAIM, generating explanations for visual\nsemantic role labeling in memes. To this end, we curate ExHVV, a novel dataset\nthat offers natural language explanations of connotative roles for three types\nof entities - heroes, villains, and victims, encompassing 4,680 entities\npresent in 3K memes. We also benchmark ExHVV with several strong unimodal and\nmultimodal baselines. Moreover, we posit LUMEN, a novel multimodal, multi-task\nlearning framework that endeavors to address EXCLAIM optimally by jointly\nlearning to predict the correct semantic roles and correspondingly to generate\nsuitable natural language explanations. LUMEN distinctly outperforms the best\nbaseline across 18 standard natural language generation evaluation metrics. Our\nsystematic evaluation and analyses demonstrate that characteristic multimodal\ncues required for adjudicating semantic roles are also helpful for generating\nsuitable explanations.",
+    "num_pages": 9,
+    "tldr": "Explains visual roles in memes with EXCLAIM task and LUMEN framework.",
+    "tags": [
+        "memes",
+        "visual semantic role labeling",
+        "natural language explanations",
+        "multimodal learning",
+        "dataset creation"
+    ]
+}

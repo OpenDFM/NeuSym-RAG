@@ -1,0 +1,27 @@
+{
+    "uuid": "da1d6ccd-43f9-5f7d-888a-084994068ecb",
+    "title": "LLM-Prop: Predicting Physical And Electronic Properties Of Crystalline Solids From Their Text Descriptions",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Andre Niyongabo Rubungo",
+        "Craig Arnold",
+        "Barry P. Rand",
+        "Adji Bousso Dieng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.14029v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/da1d6ccd-43f9-5f7d-888a-084994068ecb.pdf",
+    "bibtex": "@misc{rubungo2023llmproppredictingphysicalandelectronic,\n    title = {LLM-Prop: Predicting Physical And Electronic Properties Of Crystalline Solids From Their Text Descriptions},\n    author = {Andre Niyongabo Rubungo and Craig Arnold and Barry P. Rand and Adji Bousso Dieng},\n    year = {2023},\n    eprint = {2310.14029},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2310.14029},\n}",
+    "abstract": "The prediction of crystal properties plays a crucial role in the crystal\ndesign process. Current methods for predicting crystal properties focus on\nmodeling crystal structures using graph neural networks (GNNs). Although GNNs\nare powerful, accurately modeling the complex interactions between atoms and\nmolecules within a crystal remains a challenge. Surprisingly, predicting\ncrystal properties from crystal text descriptions is understudied, despite the\nrich information and expressiveness that text data offer. One of the main\nreasons is the lack of publicly available data for this task. In this paper, we\ndevelop and make public a benchmark dataset (called TextEdge) that contains\ntext descriptions of crystal structures with their properties. We then propose\nLLM-Prop, a method that leverages the general-purpose learning capabilities of\nlarge language models (LLMs) to predict the physical and electronic properties\nof crystals from their text descriptions. LLM-Prop outperforms the current\nstate-of-the-art GNN-based crystal property predictor by about 4% in predicting\nband gap, 3% in classifying whether the band gap is direct or indirect, and 66%\nin predicting unit cell volume. LLM-Prop also outperforms a finetuned MatBERT,\na domain-specific pre-trained BERT model, despite having 3 times fewer\nparameters. Our empirical results may highlight the current inability of GNNs\nto capture information pertaining to space group symmetry and Wyckoff sites for\naccurate crystal property prediction.",
+    "num_pages": 16,
+    "tldr": "LLM-Prop uses text descriptions to outperform GNNs in predicting crystal properties.",
+    "tags": [
+        "crystal property prediction",
+        "large language models",
+        "text-based prediction",
+        "benchmark dataset",
+        "GNN comparison"
+    ]
+}

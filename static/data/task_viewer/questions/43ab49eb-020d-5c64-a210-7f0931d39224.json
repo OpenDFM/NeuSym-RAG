@@ -1,0 +1,33 @@
+{
+    "uuid": "43ab49eb-020d-5c64-a210-7f0931d39224",
+    "question": "How can I get $h_i$ or $h_j$ in Equation (1)?",
+    "answer_format": "",
+    "tags": [
+        "formula",
+        "single",
+        "subjective"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "First, get the content of Equation (1).",
+        "Second, get the content of Section 3.1, and summarize the answer."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "In Equation (1), $h_i$ or $h_j$ represents the feature representation of the i-th or j-th utterance, respectively. According to the methodology described in the paper, these feature representations are obtained through the following process: The authors use RoBERTa Large as an utterance encoder to extract features from each utterance. For each utterance $u_i$, a special token \u201c[CLS]\u201d is prepended to its tokens, forming an input like $\\{[CLS], w_1,\\dots,w_{ni}\\}$, where $ni$ is the number of tokens in $u_i$. After passing this input through RoBERTa, the output activations corresponding to the \u201c[CLS]\u201d token from the last layer of RoBERTa are extracted. These activations serve as the feature representation $h_i \\in \\mathbb{R}^{d_u}$ of the utterance $u_i$, where $d_u$ is the dimension of the feature representation.",
+            "question": "How can I get $h_i$ or $h_j$ in Equation (1)?"
+        }
+    },
+    "state": {
+        "gpt-4o-2024-05-13": false,
+        "gui-gpt-4o-2024-05-13": true
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "32d1e04a-e87c-5179-8b13-4ad86585c55f"
+    ],
+    "reference_pdf": [],
+    "status": "success",
+    "test_result": "[Observation]: You can obtain $h_i$ or $h_j$ by initializing them as the feature representations of the corresponding utterances $u_i$ and $u_j$. These are derived using the RoBERTa model during the feature extraction step. Then, they are updated through message propagation in the DisGAT and SpkGAT modules, which aggregate information from neighboring nodes in the discourse dependency graph and speaker dependency graph respectively."
+}

@@ -1,0 +1,30 @@
+{
+    "uuid": "4f6a36fe-eac7-58cf-81e9-584f786b2f38",
+    "title": "MetaReflection: Learning Instructions for Language Agents using Past Reflections",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{gupta-etal-2024-metareflection,\n    title = \"{M}eta{R}eflection: Learning Instructions for Language Agents using Past Reflections\",\n    author = \"Gupta, Priyanshu  and\n      Kirtania, Shashank  and\n      Singha, Ananya  and\n      Gulwani, Sumit  and\n      Radhakrishna, Arjun  and\n      Soares, Gustavo  and\n      Shi, Sherry\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.emnlp-main.477\",\n    doi = \"10.18653/v1/2024.emnlp-main.477\",\n    pages = \"8369--8385\",\n    abstract = \"The popularity of Large Language Models (LLMs) have unleashed a new age of Language Agents for solving a diverse range of tasks. While contemporary frontier LLMs are capable enough to power reasonably good Language agents, the closed-API model makes it hard to improve in cases they perform sub-optimally. To address this, recent works have explored techniques to improve their performance using self reflection and prompt optimization techniques. While techniques like self reflection work well in an online setup, contemporary prompt optimization techniques are designed to work on simpler tasks. To address this, we introduce METAREFLECTION, a novel offline reinforcement learning technique that enhances the performance of Language Agents by augmenting a semantic memory based on experiential learnings from past trials. We demonstrate the efficacy of METAREFLECTION by evaluating across multiple domains, including complex logical reasoning, biomedical semantic similarity, open world question answering, and vulnerability threat detection, in Infrastructure-as-Code, with different agent design. METAREFLECTION boosts Language agents{'} performance by 4 {\\%} to 16.82 {\\%} over the raw GPT-4 baseline and performs on par with existing state-of-the-art prompt optimization techniques while requiring fewer LLM calls.\",\n}\n",
+    "authors": [
+        "Priyanshu Gupta",
+        "Shashank Kirtania",
+        "Ananya Singha",
+        "Sumit Gulwani",
+        "Arjun Radhakrishna",
+        "Gustavo Soares",
+        "Sherry Shi"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.emnlp-main.477.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/4f6a36fe-eac7-58cf-81e9-584f786b2f38.pdf",
+    "num_pages": 17,
+    "abstract": "The popularity of Large Language Models (LLMs) have unleashed a new age of Language Agents for solving a diverse range of tasks. While contemporary frontier LLMs are capable enough to power reasonably good Language agents, the closed-API model makes it hard to improve in cases they perform sub-optimally. To address this, recent works have explored techniques to improve their performance using self reflection and prompt optimization techniques. While techniques like self reflection work well in an online setup, contemporary prompt optimization techniques are designed to work on simpler tasks. To address this, we introduce METAREFLECTION, a novel offline reinforcement learning technique that enhances the performance of Language Agents by augmenting a semantic memory based on experiential learnings from past trials. We demonstrate the efficacy of METAREFLECTION by evaluating across multiple domains, including complex logical reasoning, biomedical semantic similarity, open world question answering, and vulnerability threat detection, in Infrastructure-as-Code, with different agent design. METAREFLECTION boosts Language agents’ performance by 4 % to 16.82 % over the raw GPT-4 baseline and performs on par with existing state-of-the-art prompt optimization techniques while requiring fewer LLM calls.",
+    "tldr": "MetaReflection improves Language Agents using past experiences for better performance.",
+    "tags": [
+        "Language Agents",
+        "Reinforcement Learning",
+        "Semantic Memory",
+        "Prompt Optimization",
+        "Performance Enhancement"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "uuid": "22a670fd-c1d3-50d9-9c10-7ef49a3a2c24",
+    "title": "Not All Tokens Are What You Need for Pretraining",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 oral",
+    "bibtex": "@inproceedings{\nlin2024not,\ntitle={Not All Tokens Are What You Need for Pretraining},\nauthor={Zhenghao Lin and Zhibin Gou and Yeyun Gong and Xiao Liu and yelong shen and Ruochen Xu and Chen Lin and Yujiu Yang and Jian Jiao and Nan Duan and Weizhu Chen},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=0NMzBwqaAJ}\n}",
+    "authors": [
+        "Zhenghao Lin",
+        "Zhibin Gou",
+        "Yeyun Gong",
+        "Xiao Liu",
+        "yelong shen",
+        "Ruochen Xu",
+        "Chen Lin",
+        "Yujiu Yang",
+        "Jian Jiao",
+        "Nan Duan",
+        "Weizhu Chen"
+    ],
+    "pdf_url": "https://openreview.net/pdf/479db135fe05befa88285a35b9f23c2e1122fa8f.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/22a670fd-c1d3-50d9-9c10-7ef49a3a2c24.pdf",
+    "num_pages": 34,
+    "abstract": "Previous language model pre-training methods have uniformly applied a next-token prediction loss to all training tokens. Challenging this norm, we posit that ''Not all tokens in a corpus are equally important for language model training''. Our initial analysis examines token-level training dynamics of language model, revealing distinct loss patterns for different tokens. Leveraging these insights, we introduce a new language model called Rho-1. Unlike traditional LMs that learn to predict every next token in a corpus, Rho-1 employs Selective Language Modeling (SLM), which selectively trains on useful tokens that aligned with the desired distribution. This approach involves scoring training tokens using a reference model, and then training the language model with a focused loss on tokens with higher scores. When continual continual pretraining on 15B OpenWebMath corpus, Rho-1 yields an absolute improvement in few-shot accuracy of up to 30% in 9 math tasks. After fine-tuning, Rho-1-1B and 7B achieved state-of-the-art results of 40.6% and 51.8% on MATH dataset, respectively - matching DeepSeekMath with only 3% of the pretraining tokens. Furthermore, when continual pretraining on 80B general tokens, Rho-1 achieves 6.8% average enhancement across 15 diverse tasks, increasing both data efficiency and performance of the language model pre-training.",
+    "tldr": "We introduce Selective Language Modeling (SLM), a method for token-level pretraining data selection.",
+    "tags": [
+        "pre-training",
+        "next token prediction",
+        "data optimization",
+        "data selection"
+    ]
+}

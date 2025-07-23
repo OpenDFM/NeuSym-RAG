@@ -1,0 +1,35 @@
+{
+    "uuid": "ad5ecb28-5270-5e7b-b161-6d994db6c2f7",
+    "title": "Training Verifiers to Solve Math Word Problems",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Karl Cobbe",
+        "Vineet Kosaraju",
+        "Mohammad Bavarian",
+        "Mark Chen",
+        "Heewoo Jun",
+        "Lukasz Kaiser",
+        "Matthias Plappert",
+        "Jerry Tworek",
+        "Jacob Hilton",
+        "Reiichiro Nakano",
+        "Christopher Hesse",
+        "John Schulman"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2110.14168v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2021/ad5ecb28-5270-5e7b-b161-6d994db6c2f7.pdf",
+    "bibtex": "@misc{cobbe2021trainingverifierstosolvemath,\n    title = {Training Verifiers to Solve Math Word Problems},\n    author = {Karl Cobbe and Vineet Kosaraju and Mohammad Bavarian and Mark Chen and Heewoo Jun and Lukasz Kaiser and Matthias Plappert and Jerry Tworek and Jacob Hilton and Reiichiro Nakano and Christopher Hesse and John Schulman},\n    year = {2021},\n    eprint = {2110.14168},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2110.14168},\n}",
+    "abstract": "State-of-the-art language models can match human performance on many tasks,\nbut they still struggle to robustly perform multi-step mathematical reasoning.\nTo diagnose the failures of current models and support research, we introduce\nGSM8K, a dataset of 8.5K high quality linguistically diverse grade school math\nword problems. We find that even the largest transformer models fail to achieve\nhigh test performance, despite the conceptual simplicity of this problem\ndistribution. To increase performance, we propose training verifiers to judge\nthe correctness of model completions. At test time, we generate many candidate\nsolutions and select the one ranked highest by the verifier. We demonstrate\nthat verification significantly improves performance on GSM8K, and we provide\nstrong empirical evidence that verification scales more effectively with\nincreased data than a finetuning baseline.",
+    "num_pages": 22,
+    "tldr": "Training verifiers boosts math word problem-solving in language models.",
+    "tags": [
+        "math word problems",
+        "language models",
+        "mathematical reasoning",
+        "verifier training",
+        "dataset analysis"
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "uuid": "0d42a5b9-4dcb-5ac1-829f-e198d8f942c1",
+    "question": "Which dataset is the downstream task with the largest training set in BigDocs-Bench curated from, and where do the samples originally come from?",
+    "answer_format": "Your answer should be a Python list of two strings, the first is a single word, the name of the dataset, the second is a sentence or a phrase, the source of the samples.",
+    "tags": [
+        "multiple",
+        "text",
+        "table",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "0ccddb86-7696-59b3-af01-b2df817a0714"
+    ],
+    "reference_pdf": [
+        "087bf567-2de0-5bc6-844d-24a7dc515ee6",
+        "54f49a23-5197-5991-bb84-3a6e9a7eafc6"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Locate the table that compares the size of downstream tasks.",
+        "Identify the task with the largest training set.",
+        "Read the corresponding section to find the dataset.",
+        "Read the reference papers to find where the samples come from."
+    ],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "SVG-Stack",
+                    "lowercase": true
+                },
+                {
+                    "reference_answer": "These samples come from publicly available repositories on GitHub.",
+                    "question": "Where do the samples originally come from?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "status": "failure",
+    "test_result": "[Observation]: ['BigDocs', 'curated from publicly available vision-language datasets and newly crawled data.']"
+}

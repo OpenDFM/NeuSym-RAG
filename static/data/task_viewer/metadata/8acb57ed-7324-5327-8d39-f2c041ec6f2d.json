@@ -1,0 +1,29 @@
+{
+    "uuid": "8acb57ed-7324-5327-8d39-f2c041ec6f2d",
+    "title": "Open-Domain Question Answering Goes Conversational via Question Rewriting",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Raviteja Anantha",
+        "Svitlana Vakulenko",
+        "Zhucheng Tu",
+        "Shayne Longpre",
+        "Stephen Pulman",
+        "Srinivas Chappidi"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2010.04898v3",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2021/8acb57ed-7324-5327-8d39-f2c041ec6f2d.pdf",
+    "bibtex": "@misc{anantha2021opendomainquestionansweringgoesconversational,\n    title = {Open-Domain Question Answering Goes Conversational via Question Rewriting},\n    author = {Raviteja Anantha and Svitlana Vakulenko and Zhucheng Tu and Shayne Longpre and Stephen Pulman and Srinivas Chappidi},\n    year = {2021},\n    eprint = {2010.04898},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.IR},\n    url = {http://arxiv.org/abs/2010.04898},\n}",
+    "abstract": "We introduce a new dataset for Question Rewriting in Conversational Context\n(QReCC), which contains 14K conversations with 80K question-answer pairs. The\ntask in QReCC is to find answers to conversational questions within a\ncollection of 10M web pages (split into 54M passages). Answers to questions in\nthe same conversation may be distributed across several web pages. QReCC\nprovides annotations that allow us to train and evaluate individual subtasks of\nquestion rewriting, passage retrieval and reading comprehension required for\nthe end-to-end conversational question answering (QA) task. We report the\neffectiveness of a strong baseline approach that combines the state-of-the-art\nmodel for question rewriting, and competitive models for open-domain QA. Our\nresults set the first baseline for the QReCC dataset with F1 of 19.10, compared\nto the human upper bound of 75.45, indicating the difficulty of the setup and a\nlarge room for improvement.",
+    "num_pages": 15,
+    "tldr": "New dataset QReCC enables and benchmarks conversational question answering via rewriting.",
+    "tags": [
+        "conversational question answering",
+        "question rewriting",
+        "open-domain QA",
+        "dataset creation",
+        "passage retrieval"
+    ]
+}

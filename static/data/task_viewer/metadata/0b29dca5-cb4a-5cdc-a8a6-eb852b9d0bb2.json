@@ -1,0 +1,33 @@
+{
+    "uuid": "0b29dca5-cb4a-5cdc-a8a6-eb852b9d0bb2",
+    "title": "Monarch: Expressive Structured Matrices for Efficient and Accurate Training",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Tri Dao",
+        "Beidi Chen",
+        "Nimit Sohoni",
+        "Arjun Desai",
+        "Michael Poli",
+        "Jessica Grogan",
+        "Alexander Liu",
+        "Aniruddh Rao",
+        "Atri Rudra",
+        "Christopher Ré"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.00595v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2022/0b29dca5-cb4a-5cdc-a8a6-eb852b9d0bb2.pdf",
+    "bibtex": "@misc{dao2022monarchexpressivestructuredmatricesfor,\n    title = {Monarch: Expressive Structured Matrices for Efficient and Accurate Training},\n    author = {Tri Dao and Beidi Chen and Nimit Sohoni and Arjun Desai and Michael Poli and Jessica Grogan and Alexander Liu and Aniruddh Rao and Atri Rudra and Christopher Ré},\n    year = {2022},\n    eprint = {2204.00595},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2204.00595},\n}",
+    "abstract": "Large neural networks excel in many domains, but they are expensive to train\nand fine-tune. A popular approach to reduce their compute or memory\nrequirements is to replace dense weight matrices with structured ones (e.g.,\nsparse, low-rank, Fourier transform). These methods have not seen widespread\nadoption (1) in end-to-end training due to unfavorable efficiency--quality\ntradeoffs, and (2) in dense-to-sparse fine-tuning due to lack of tractable\nalgorithms to approximate a given dense weight matrix. To address these issues,\nwe propose a class of matrices (Monarch) that is hardware-efficient (they are\nparameterized as products of two block-diagonal matrices for better hardware\nutilization) and expressive (they can represent many commonly used transforms).\nSurprisingly, the problem of approximating a dense weight matrix with a Monarch\nmatrix, though nonconvex, has an analytical optimal solution. These properties\nof Monarch matrices unlock new ways to train and fine-tune sparse and dense\nmodels. We empirically validate that Monarch can achieve favorable\naccuracy-efficiency tradeoffs in several end-to-end sparse training\napplications: speeding up ViT and GPT-2 training on ImageNet classification and\nWikitext-103 language modeling by 2x with comparable model quality, and\nreducing the error on PDE solving and MRI reconstruction tasks by 40%. In\nsparse-to-dense training, with a simple technique called \"reverse\nsparsification,\" Monarch matrices serve as a useful intermediate representation\nto speed up GPT-2 pretraining on OpenWebText by 2x without quality drop. The\nsame technique brings 23% faster BERT pretraining than even the very optimized\nimplementation from Nvidia that set the MLPerf 1.1 record. In dense-to-sparse\nfine-tuning, as a proof-of-concept, our Monarch approximation algorithm speeds\nup BERT fine-tuning on GLUE by 1.7x with comparable accuracy.",
+    "num_pages": 37,
+    "tldr": "Monarch improves neural network training efficiency with expressive matrices.",
+    "tags": [
+        "efficient training",
+        "structured matrices",
+        "Monarch matrices",
+        "sparse training",
+        "dense-to-sparse fine-tuning"
+    ]
+}

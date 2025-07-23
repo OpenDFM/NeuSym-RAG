@@ -1,0 +1,36 @@
+{
+    "uuid": "54f49a23-5197-5991-bb84-3a6e9a7eafc6",
+    "title": "The Stack: 3 TB of permissively licensed source code",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Denis Kocetkov",
+        "Raymond Li",
+        "Loubna Ben Allal",
+        "Jia Li",
+        "Chenghao Mou",
+        "Carlos Muñoz Ferrandis",
+        "Yacine Jernite",
+        "Margaret Mitchell",
+        "Sean Hughes",
+        "Thomas Wolf",
+        "Dzmitry Bahdanau",
+        "Leandro von Werra",
+        "Harm de Vries"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2211.15533v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2022/54f49a23-5197-5991-bb84-3a6e9a7eafc6.pdf",
+    "bibtex": "@misc{kocetkov2022thestack3tbof,\n    title = {The Stack: 3 TB of permissively licensed source code},\n    author = {Denis Kocetkov and Raymond Li and Loubna Ben Allal and Jia Li and Chenghao Mou and Carlos Muñoz Ferrandis and Yacine Jernite and Margaret Mitchell and Sean Hughes and Thomas Wolf and Dzmitry Bahdanau and Leandro von Werra and Harm de Vries},\n    year = {2022},\n    eprint = {2211.15533},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2211.15533},\n}",
+    "abstract": "Large Language Models (LLMs) play an ever-increasing role in the field of\nArtificial Intelligence (AI)--not only for natural language processing but also\nfor code understanding and generation. To stimulate open and responsible\nresearch on LLMs for code, we introduce The Stack, a 3.1 TB dataset consisting\nof permissively licensed source code in 30 programming languages. We describe\nhow we collect the full dataset, construct a permissively licensed subset,\npresent a data governance plan, discuss limitations, and show promising results\non text2code benchmarks by training 350M-parameter decoders on different Python\nsubsets. We find that (1) near-deduplicating the data significantly boosts\nperformance across all experiments, and (2) it is possible to match previously\nreported HumanEval and MBPP performance using only permissively licensed data.\nWe make the dataset available at https://hf.co/BigCode, provide a tool called\n\"Am I in The Stack\" (https://hf.co/spaces/bigcode/in-the-stack) for developers\nto search The Stack for copies of their code, and provide a process for code to\nbe removed from the dataset by following the instructions at\nhttps://www.bigcode-project.org/docs/about/the-stack/.",
+    "num_pages": 27,
+    "tldr": "3.1 TB open dataset for LLM code research in 30 languages with data governance.",
+    "tags": [
+        "Large Language Models",
+        "permissively licensed source code",
+        "dataset construction",
+        "code generation",
+        "data governance"
+    ]
+}

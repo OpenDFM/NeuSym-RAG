@@ -1,0 +1,36 @@
+{
+    "uuid": "95c4da59-2aea-5163-9044-3554ca09aa83",
+    "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 Datasets and Benchmarks Poster",
+    "bibtex": "@inproceedings{\nzheng2023judging,\ntitle={Judging {LLM}-as-a-Judge with {MT}-Bench and Chatbot Arena},\nauthor={Lianmin Zheng and Wei-Lin Chiang and Ying Sheng and Siyuan Zhuang and Zhanghao Wu and Yonghao Zhuang and Zi Lin and Zhuohan Li and Dacheng Li and Eric Xing and Hao Zhang and Joseph E. Gonzalez and Ion Stoica},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track},\nyear={2023},\nurl={https://openreview.net/forum?id=uccHPGDlao}\n}",
+    "authors": [
+        "Lianmin Zheng",
+        "Wei-Lin Chiang",
+        "Ying Sheng",
+        "Siyuan Zhuang",
+        "Zhanghao Wu",
+        "Yonghao Zhuang",
+        "Zi Lin",
+        "Zhuohan Li",
+        "Dacheng Li",
+        "Eric Xing",
+        "Hao Zhang",
+        "Joseph E. Gonzalez",
+        "Ion Stoica"
+    ],
+    "pdf_url": "https://openreview.net/pdf/80e04a34fbef8a96cdfaab0b53ea226666f3a373.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/95c4da59-2aea-5163-9044-3554ca09aa83.pdf",
+    "num_pages": 29,
+    "abstract": "Evaluating large language model (LLM) based chat assistants is challenging due to their broad capabilities and the inadequacy of existing benchmarks in measuring human preferences.\nTo address this, we explore using strong LLMs as judges to evaluate these models on more open-ended questions.\nWe examine the usage and limitations of LLM-as-a-judge, including position, verbosity, and self-enhancement biases, as well as limited reasoning ability, and propose solutions to mitigate some of them.\nWe then verify the agreement between LLM judges and human preferences by introducing two benchmarks: MT-bench, a multi-turn question set; and Chatbot Arena, a crowdsourced battle platform.\nOur results reveal that strong LLM judges like GPT-4 can match both controlled and crowdsourced human preferences well, achieving over 80\\% agreement, the same level of agreement between humans.\nHence, LLM-as-a-judge is a scalable and explainable way to approximate human preferences, which are otherwise very expensive to obtain.\nAdditionally, we show our benchmark and traditional benchmarks complement each other by evaluating several variants of LLaMA and Vicuna.\nThe MT-bench questions, 3K expert votes, and 30K conversations with human preferences are publicly available at https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge.",
+    "tldr": "We explore the use of LLM-as-a-judge for evaluating chat assistants and show it matches human preferences with an agreement over 80%.",
+    "tags": [
+        "large language models",
+        "human preference",
+        "llm-as-a-judge",
+        "benchmark",
+        "evaluation"
+    ]
+}

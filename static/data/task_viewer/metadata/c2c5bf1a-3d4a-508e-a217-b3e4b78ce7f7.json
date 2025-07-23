@@ -1,0 +1,30 @@
+{
+    "uuid": "c2c5bf1a-3d4a-508e-a217-b3e4b78ce7f7",
+    "title": "Measuring Massive Multitask Language Understanding",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Dan Hendrycks",
+        "Collin Burns",
+        "Steven Basart",
+        "Andy Zou",
+        "Mantas Mazeika",
+        "Dawn Song",
+        "Jacob Steinhardt"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2009.03300v3",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2021/c2c5bf1a-3d4a-508e-a217-b3e4b78ce7f7.pdf",
+    "bibtex": "@misc{hendrycks2021measuringmassivemultitasklanguageunderstanding,\n    title = {Measuring Massive Multitask Language Understanding},\n    author = {Dan Hendrycks and Collin Burns and Steven Basart and Andy Zou and Mantas Mazeika and Dawn Song and Jacob Steinhardt},\n    year = {2021},\n    eprint = {2009.03300},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CY},\n    url = {http://arxiv.org/abs/2009.03300},\n}",
+    "abstract": "We propose a new test to measure a text model's multitask accuracy. The test\ncovers 57 tasks including elementary mathematics, US history, computer science,\nlaw, and more. To attain high accuracy on this test, models must possess\nextensive world knowledge and problem solving ability. We find that while most\nrecent models have near random-chance accuracy, the very largest GPT-3 model\nimproves over random chance by almost 20 percentage points on average. However,\non every one of the 57 tasks, the best models still need substantial\nimprovements before they can reach expert-level accuracy. Models also have\nlopsided performance and frequently do not know when they are wrong. Worse,\nthey still have near-random accuracy on some socially important subjects such\nas morality and law. By comprehensively evaluating the breadth and depth of a\nmodel's academic and professional understanding, our test can be used to\nanalyze models across many tasks and to identify important shortcomings.",
+    "num_pages": 27,
+    "tldr": "New test evaluates language models on 57 tasks, revealing their significant limitations.",
+    "tags": [
+        "multitask learning",
+        "text models",
+        "GPT-3",
+        "model evaluation",
+        "academic performance"
+    ]
+}

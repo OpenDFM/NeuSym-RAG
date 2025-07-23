@@ -1,0 +1,27 @@
+{
+    "uuid": "0b35eefa-16ce-5586-9a5b-5ce712108204",
+    "title": "MemeMQA: Multimodal Question Answering for Memes via Rationale-Based Inferencing",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{agarwal-etal-2024-mememqa,\n    title = \"{M}eme{MQA}: Multimodal Question Answering for Memes via Rationale-Based Inferencing\",\n    author = \"Agarwal, Siddhant  and\n      Sharma, Shivam  and\n      Nakov, Preslav  and\n      Chakraborty, Tanmoy\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.300\",\n    doi = \"10.18653/v1/2024.findings-acl.300\",\n    pages = \"5042--5078\",\n    abstract = \"Memes have evolved as a prevalent medium for diverse communication, ranging from humour to propaganda. With the rising popularity of image-focused content, there is a growing need to explore its potential harm from different aspects. Previous studies have analyzed memes in closed settings - detecting harm, applying semantic labels, and offering natural language explanations. To extend this research, we introduce MemeMQA, a multimodal question-answering framework aiming to solicit accurate responses to structured questions while providing coherent explanations. We curate MemeMQACorpus, a new dataset featuring 1,880 questions related to 1,122 memes with corresponding answer-explanation pairs. We further propose ARSENAL, a novel two-stage multimodal framework that leverages the reasoning capabilities of LLMs to address MemeMQA. We benchmark MemeMQA using competitive baselines and demonstrate its superiority - {\\textasciitilde}18{\\%} enhanced answer prediction accuracy and distinct text generation lead across various metrics measuring lexical and semantic alignment over the best baseline. We analyze ARSENAL{'}s robustness through diversification of question-set, confounder-based evaluation regarding MemeMQA{'}s generalizability, and modality-specific assessment, enhancing our understanding of meme interpretation in the multimodal communication landscape.\",\n}\n",
+    "authors": [
+        "Siddhant Agarwal",
+        "Shivam Sharma",
+        "Preslav Nakov",
+        "Tanmoy Chakraborty"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.300.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0b35eefa-16ce-5586-9a5b-5ce712108204.pdf",
+    "abstract": "Memes have evolved as a prevalent medium for diverse communication, ranging from humour to propaganda. With the rising popularity of image-focused content, there is a growing need to explore its potential harm from different aspects. Previous studies have analyzed memes in closed settings - detecting harm, applying semantic labels, and offering natural language explanations. To extend this research, we introduce MemeMQA, a multimodal question-answering framework aiming to solicit accurate responses to structured questions while providing coherent explanations. We curate MemeMQACorpus, a new dataset featuring 1,880 questions related to 1,122 memes with corresponding answer-explanation pairs. We further propose ARSENAL, a novel two-stage multimodal framework that leverages the reasoning capabilities of LLMs to address MemeMQA. We benchmark MemeMQA using competitive baselines and demonstrate its superiority - ~18% enhanced answer prediction accuracy and distinct text generation lead across various metrics measuring lexical and semantic alignment over the best baseline. We analyze ARSENAL’s robustness through diversification of question-set, confounder-based evaluation regarding MemeMQA’s generalizability, and modality-specific assessment, enhancing our understanding of meme interpretation in the multimodal communication landscape.",
+    "num_pages": 37,
+    "tldr": "MemeMQA enhances meme analysis with a novel multimodal question-answering framework.",
+    "tags": [
+        "multimodal question answering",
+        "memes",
+        "rationale-based inferencing",
+        "dataset creation",
+        "large language models"
+    ]
+}

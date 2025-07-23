@@ -1,0 +1,30 @@
+{
+    "uuid": "7e09164d-5713-56a1-8210-d92aa98d512a",
+    "title": "Do You Know What You Are Talking About? Characterizing Query-Knowledge Relevance For Reliable Retrieval Augmented Generation",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{li-etal-2024-know,\n    title = \"Do You Know What You Are Talking About? Characterizing Query-Knowledge Relevance For Reliable Retrieval Augmented Generation\",\n    author = \"Li, Zhuohang  and\n      Zhang, Jiaxin  and\n      Yan, Chao  and\n      Das, Kamalika  and\n      Kumar, Sricharan  and\n      Kantarcioglu, Murat  and\n      Malin, Bradley A.\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.emnlp-main.353\",\n    doi = \"10.18653/v1/2024.emnlp-main.353\",\n    pages = \"6130--6151\",\n    abstract = \"Language models (LMs) are known to suffer from hallucinations and misinformation. Retrieval augmented generation (RAG) that retrieves verifiable information from an external knowledge corpus to complement the parametric knowledge in LMs provides a tangible solution to these problems. However, the generation quality of RAG is highly dependent on the relevance between a user{'}s query and the retrieved documents. Inaccurate responses may be generated when the query is outside of the scope of knowledge represented in the external knowledge corpus or if the information in the corpus is out-of-date. In this work, we establish a statistical framework that assesses how well a query can be answered by an RAG system by capturing the relevance of knowledge. We introduce an online testing procedure that employs goodness-of-fit (GoF) tests to inspect the relevance of each user query to detect out-of-knowledge queries with low knowledge relevance. Additionally, we develop an offline testing framework that examines a collection of user queries, aiming to detect significant shifts in the query distribution which indicates the knowledge corpus is no longer sufficiently capable of supporting the interests of the users. We demonstrate the capabilities of these strategies through a systematic evaluation on eight question-answering (QA) datasets, the results of which indicate that the new testing framework is an efficient solution to enhance the reliability of existing RAG systems.\",\n}\n",
+    "authors": [
+        "Zhuohang Li",
+        "Jiaxin Zhang",
+        "Chao Yan",
+        "Kamalika Das",
+        "Sricharan Kumar",
+        "Murat Kantarcioglu",
+        "Bradley A. Malin"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.emnlp-main.353.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/7e09164d-5713-56a1-8210-d92aa98d512a.pdf",
+    "num_pages": 22,
+    "abstract": "Language models (LMs) are known to suffer from hallucinations and misinformation. Retrieval augmented generation (RAG) that retrieves verifiable information from an external knowledge corpus to complement the parametric knowledge in LMs provides a tangible solution to these problems. However, the generation quality of RAG is highly dependent on the relevance between a user’s query and the retrieved documents. Inaccurate responses may be generated when the query is outside of the scope of knowledge represented in the external knowledge corpus or if the information in the corpus is out-of-date. In this work, we establish a statistical framework that assesses how well a query can be answered by an RAG system by capturing the relevance of knowledge. We introduce an online testing procedure that employs goodness-of-fit (GoF) tests to inspect the relevance of each user query to detect out-of-knowledge queries with low knowledge relevance. Additionally, we develop an offline testing framework that examines a collection of user queries, aiming to detect significant shifts in the query distribution which indicates the knowledge corpus is no longer sufficiently capable of supporting the interests of the users. We demonstrate the capabilities of these strategies through a systematic evaluation on eight question-answering (QA) datasets, the results of which indicate that the new testing framework is an efficient solution to enhance the reliability of existing RAG systems.",
+    "tldr": "New framework improves query-knowledge relevance for reliable retrieval in RAG systems.",
+    "tags": [
+        "Query relevance",
+        "Retrieval augmented generation",
+        "Knowledge corpus",
+        "Language models",
+        "Information retrieval"
+    ]
+}

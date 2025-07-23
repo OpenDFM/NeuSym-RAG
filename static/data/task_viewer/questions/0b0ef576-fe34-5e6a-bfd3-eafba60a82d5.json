@@ -1,0 +1,27 @@
+{
+    "uuid": "0b0ef576-fe34-5e6a-bfd3-eafba60a82d5",
+    "question": "What work first uses LLM to code robotic simulation tasks and show sim-to-real benefits with policy pre-training in simulation?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "iclr2024"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_reference_answer",
+        "eval_kwargs": {
+            "question": "What work first uses LLM to code robotic simulation tasks and show sim-to-real benefits with policy pre-training in simulation?",
+            "reference_answer": "GENSIM: GENERATING ROBOTIC SIMULATION TASKS VIA LARGE LANGUAGE MODELS"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual",
+    "status": "success",
+    "test_result": "[Observation]: GenSim: Generating Robotic Simulation Tasks via Large Language Models"
+}

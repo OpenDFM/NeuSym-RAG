@@ -1,0 +1,32 @@
+{
+    "uuid": "9f22287f-4186-5f55-8b2c-620b02f89b82",
+    "title": "Verus: Verifying Rust Programs using Linear Ghost Types (extended version)",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Andrea Lattuada",
+        "Travis Hance",
+        "Chanhee Cho",
+        "Matthias Brun",
+        "Isitha Subasinghe",
+        "Yi Zhou",
+        "Jon Howell",
+        "Bryan Parno",
+        "Chris Hawblitzel"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2303.05491v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/9f22287f-4186-5f55-8b2c-620b02f89b82.pdf",
+    "bibtex": "@misc{lattuada2023verusverifyingrustprogramsusing,\n    title = {Verus: Verifying Rust Programs using Linear Ghost Types (extended version)},\n    author = {Andrea Lattuada and Travis Hance and Chanhee Cho and Matthias Brun and Isitha Subasinghe and Yi Zhou and Jon Howell and Bryan Parno and Chris Hawblitzel},\n    year = {2023},\n    eprint = {2303.05491},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LO},\n    url = {http://arxiv.org/abs/2303.05491},\n}",
+    "abstract": "The Rust programming language provides a powerful type system that checks\nlinearity and borrowing, allowing code to safely manipulate memory without\ngarbage collection and making Rust ideal for developing low-level,\nhigh-assurance systems. For such systems, formal verification can be useful to\nprove functional correctness properties beyond type safety. This paper presents\nVerus, an SMT-based tool for formally verifying Rust programs. With Verus,\nprogrammers express proofs and specifications using the Rust language, allowing\nproofs to take advantage of Rust's linear types and borrow checking. We show\nhow this allows proofs to manipulate linearly typed permissions that let Rust\ncode safely manipulate memory, pointers, and concurrent resources. Verus\norganizes proofs and specifications using a novel mode system that\ndistinguishes specifications, which are not checked for linearity and\nborrowing, from executable code and proofs, which are checked for linearity and\nborrowing. We formalize Verus' linearity, borrowing, and modes in a small\nlambda calculus, for which we prove type safety and termination of\nspecifications and proofs. We demonstrate Verus on a series of examples,\nincluding pointer-manipulating code (an xor-based doubly linked list), code\nwith interior mutability, and concurrent code.",
+    "num_pages": 33,
+    "tldr": "Verus: SMT-based Rust program verification using linear ghost types.",
+    "tags": [
+        "Rust programming",
+        "formal verification",
+        "linear ghost types",
+        "SMT solver",
+        "memory safety"
+    ]
+}

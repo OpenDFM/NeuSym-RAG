@@ -1,0 +1,28 @@
+{
+    "uuid": "2773b9a9-f232-5acb-a1dd-a0168e52cf0c",
+    "title": "On Robustness of Finetuned Transformer-based NLP Models",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    "bibtex": "@inproceedings{neerudu-etal-2023-robustness,\n    title = \"On Robustness of Finetuned Transformer-based {NLP} Models\",\n    author = \"Neerudu, Pavan Kalyan Reddy  and\n      Oota, Subba  and\n      Marreddy, Mounika  and\n      Kagita, Venkateswara  and\n      Gupta, Manish\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2023\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-emnlp.477\",\n    doi = \"10.18653/v1/2023.findings-emnlp.477\",\n    pages = \"7180--7195\",\n    abstract = \"Transformer-based pretrained models like BERT, GPT-2 and T5 have been finetuned for a large number of natural language processing (NLP) tasks, and have been shown to be very effective. However, while finetuning, what changes across layers in these models with respect to pretrained checkpoints is under-studied. Further, how robust are these models to perturbations in input text? Does the robustness vary depending on the NLP task for which the models have been finetuned? While there exists some work on studying robustness of BERT finetuned for a few NLP tasks, there is no rigorous study which compares this robustness across encoder only, decoder only and encoder-decoder models. In this paper, we characterize changes between pretrained and finetuned language model representations across layers using two metrics: CKA and STIR. Further, we study the robustness of three language models (BERT, GPT-2 and T5) with eight different text perturbations on classification tasks from General Language Understanding Evaluation (GLUE) benchmark, and generation tasks like summarization, free-form generation and question generation. GPT-2 representations are more robust than BERT and T5 across multiple types of input perturbation. Although models exhibit good robustness broadly, dropping nouns, verbs or changing characters are the most impactful. Overall, this study provides valuable insights into perturbation-specific weaknesses of popular Transformer-based models which should be kept in mind when passing inputs.\",\n}\n",
+    "authors": [
+        "Pavan Kalyan Reddy Neerudu",
+        "Subba Oota",
+        "Mounika Marreddy",
+        "Venkateswara Kagita",
+        "Manish Gupta"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-emnlp.477.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/2773b9a9-f232-5acb-a1dd-a0168e52cf0c.pdf",
+    "num_pages": 16,
+    "abstract": "Transformer-based pretrained models like BERT, GPT-2 and T5 have been finetuned for a large number of natural language processing (NLP) tasks, and have been shown to be very effective. However, while finetuning, what changes across layers in these models with respect to pretrained checkpoints is under-studied. Further, how robust are these models to perturbations in input text? Does the robustness vary depending on the NLP task for which the models have been finetuned? While there exists some work on studying robustness of BERT finetuned for a few NLP tasks, there is no rigorous study which compares this robustness across encoder only, decoder only and encoder-decoder models. In this paper, we characterize changes between pretrained and finetuned language model representations across layers using two metrics: CKA and STIR. Further, we study the robustness of three language models (BERT, GPT-2 and T5) with eight different text perturbations on classification tasks from General Language Understanding Evaluation (GLUE) benchmark, and generation tasks like summarization, free-form generation and question generation. GPT-2 representations are more robust than BERT and T5 across multiple types of input perturbation. Although models exhibit good robustness broadly, dropping nouns, verbs or changing characters are the most impactful. Overall, this study provides valuable insights into perturbation-specific weaknesses of popular Transformer-based models which should be kept in mind when passing inputs.",
+    "tldr": "This study analyzes robustness and layer changes in finetuned Transformer NLP models.",
+    "tags": [
+        "finetuning",
+        "transformer models",
+        "NLP robustness",
+        "layer representation",
+        "text perturbations"
+    ]
+}

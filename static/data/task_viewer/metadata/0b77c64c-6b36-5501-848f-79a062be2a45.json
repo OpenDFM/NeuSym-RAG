@@ -1,0 +1,29 @@
+{
+    "uuid": "0b77c64c-6b36-5501-848f-79a062be2a45",
+    "title": "MinPrompt: Graph-based Minimal Prompt Data Augmentation for Few-shot Question Answering",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{chen-etal-2024-minprompt,\n    title = \"{M}in{P}rompt: Graph-based Minimal Prompt Data Augmentation for Few-shot Question Answering\",\n    author = \"Chen, Xiusi  and\n      Jiang, Jyun-Yu  and\n      Chang, Wei-Cheng  and\n      Hsieh, Cho-Jui  and\n      Yu, Hsiang-Fu  and\n      Wang, Wei\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.16\",\n    doi = \"10.18653/v1/2024.acl-long.16\",\n    pages = \"254--266\",\n    abstract = \"Recent advances in few-shot question answering (QA) mostly rely on the power of pre-trained large language models (LLMs) and fine-tuning in specific settings. Although the pre-training stage has already equipped LLMs with powerful reasoning capabilities, LLMs still need to be fine-tuned to adapt to specific domains to achieve the best results. In this paper, we propose to select the most informative data for fine-tuning, thereby improving the efficiency of the fine-tuning process with comparative or even better accuracy on the open-domain QA task. We present MinPrompt, a minimal data augmentation framework for open-domain QA based on an approximate graph algorithm and unsupervised question generation. We transform the raw text into a graph structure to build connections between different factual sentences, then apply graph algorithms to identify the minimal set of sentences needed to cover the most information in the raw text. We then generate QA pairs based on the identified sentence subset and train the model on the selected sentences to obtain the final model. Empirical results on several benchmark datasets and theoretical analysis show that MinPrompt is able to achieve comparable or better results than baselines with a high degree of efficiency, bringing consistent improvements in F-1 scores.\",\n}\n",
+    "authors": [
+        "Xiusi Chen",
+        "Jyun-Yu Jiang",
+        "Wei-Cheng Chang",
+        "Cho-Jui Hsieh",
+        "Hsiang-Fu Yu",
+        "Wei Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.16.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0b77c64c-6b36-5501-848f-79a062be2a45.pdf",
+    "abstract": "Recent advances in few-shot question answering (QA) mostly rely on the power of pre-trained large language models (LLMs) and fine-tuning in specific settings. Although the pre-training stage has already equipped LLMs with powerful reasoning capabilities, LLMs still need to be fine-tuned to adapt to specific domains to achieve the best results. In this paper, we propose to select the most informative data for fine-tuning, thereby improving the efficiency of the fine-tuning process with comparative or even better accuracy on the open-domain QA task. We present MinPrompt, a minimal data augmentation framework for open-domain QA based on an approximate graph algorithm and unsupervised question generation. We transform the raw text into a graph structure to build connections between different factual sentences, then apply graph algorithms to identify the minimal set of sentences needed to cover the most information in the raw text. We then generate QA pairs based on the identified sentence subset and train the model on the selected sentences to obtain the final model. Empirical results on several benchmark datasets and theoretical analysis show that MinPrompt is able to achieve comparable or better results than baselines with a high degree of efficiency, bringing consistent improvements in F-1 scores.",
+    "num_pages": 13,
+    "tldr": "MinPrompt enhances few-shot QA by efficient graph-based data augmentation.",
+    "tags": [
+        "few-shot learning",
+        "question answering",
+        "data augmentation",
+        "graph algorithms",
+        "language models"
+    ]
+}

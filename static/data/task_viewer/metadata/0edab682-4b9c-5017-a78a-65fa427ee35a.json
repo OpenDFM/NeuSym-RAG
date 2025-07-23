@@ -1,0 +1,29 @@
+{
+    "uuid": "0edab682-4b9c-5017-a78a-65fa427ee35a",
+    "title": "Small Models, Big Insights: Leveraging Slim Proxy Models To Decide When and What to Retrieve for LLMs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{tan-etal-2024-small,\n    title = \"Small Models, Big Insights: Leveraging Slim Proxy Models To Decide When and What to Retrieve for {LLM}s\",\n    author = \"Tan, Jiejun  and\n      Dou, Zhicheng  and\n      Zhu, Yutao  and\n      Guo, Peidong  and\n      Fang, Kun  and\n      Wen, Ji-Rong\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.242\",\n    doi = \"10.18653/v1/2024.acl-long.242\",\n    pages = \"4420--4436\",\n    abstract = \"The integration of large language models (LLMs) and search engines represents a significant evolution in knowledge acquisition methodologies. However, determining the knowledge that an LLM already possesses and the knowledge that requires the help of a search engine remains an unresolved issue. Most existing methods solve this problem through the results of preliminary answers or reasoning done by the LLM itself, but this incurs excessively high computational costs. This paper introduces a novel collaborative approach, namely SlimPLM, that detects missing knowledge in LLMs with a slim proxy model, to enhance the LLM{'}s knowledge acquisition process. We employ a proxy model which has far fewer parameters, and take its answers as heuristic answers. Heuristic answers are then utilized to predict the knowledge required to answer the user question, as well as the known and unknown knowledge within the LLM. We only conduct retrieval for the missing knowledge in questions that the LLM does not know. Extensive experimental results on five datasets with two LLMs demonstrate a notable improvement in the end-to-end performance of LLMs in question-answering tasks, achieving or surpassing current state-of-the-art models with lower LLM inference costs.\",\n}\n",
+    "authors": [
+        "Jiejun Tan",
+        "Zhicheng Dou",
+        "Yutao Zhu",
+        "Peidong Guo",
+        "Kun Fang",
+        "Ji-Rong Wen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.242.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/0edab682-4b9c-5017-a78a-65fa427ee35a.pdf",
+    "abstract": "The integration of large language models (LLMs) and search engines represents a significant evolution in knowledge acquisition methodologies. However, determining the knowledge that an LLM already possesses and the knowledge that requires the help of a search engine remains an unresolved issue. Most existing methods solve this problem through the results of preliminary answers or reasoning done by the LLM itself, but this incurs excessively high computational costs. This paper introduces a novel collaborative approach, namely SlimPLM, that detects missing knowledge in LLMs with a slim proxy model, to enhance the LLM’s knowledge acquisition process. We employ a proxy model which has far fewer parameters, and take its answers as heuristic answers. Heuristic answers are then utilized to predict the knowledge required to answer the user question, as well as the known and unknown knowledge within the LLM. We only conduct retrieval for the missing knowledge in questions that the LLM does not know. Extensive experimental results on five datasets with two LLMs demonstrate a notable improvement in the end-to-end performance of LLMs in question-answering tasks, achieving or surpassing current state-of-the-art models with lower LLM inference costs.",
+    "num_pages": 17,
+    "tldr": "SlimPLM enhances LLM retrieval efficiency using slim proxy models for knowledge gaps.",
+    "tags": [
+        "Slim Proxy Models",
+        "Knowledge Retrieval",
+        "Large Language Models",
+        "Heuristic Answers",
+        "Computational Efficiency"
+    ]
+}

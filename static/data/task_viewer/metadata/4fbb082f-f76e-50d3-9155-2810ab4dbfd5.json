@@ -1,0 +1,27 @@
+{
+    "uuid": "4fbb082f-f76e-50d3-9155-2810ab4dbfd5",
+    "title": "Leveraging Large Language Models for Automated Proof Synthesis in Rust",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Jianan Yao",
+        "Ziqiao Zhou",
+        "Weiteng Chen",
+        "Weidong Cui"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2311.03739v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/4fbb082f-f76e-50d3-9155-2810ab4dbfd5.pdf",
+    "bibtex": "@misc{yao2023leveraginglargelanguagemodelsfor,\n    title = {Leveraging Large Language Models for Automated Proof Synthesis in Rust},\n    author = {Jianan Yao and Ziqiao Zhou and Weiteng Chen and Weidong Cui},\n    year = {2023},\n    eprint = {2311.03739},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.FL},\n    url = {http://arxiv.org/abs/2311.03739},\n}",
+    "abstract": "Formal verification can provably guarantee the correctness of critical system\nsoftware, but the high proof burden has long hindered its wide adoption.\nRecently, Large Language Models (LLMs) have shown success in code analysis and\nsynthesis. In this paper, we present a combination of LLMs and static analysis\nto synthesize invariants, assertions, and other proof structures for a\nRust-based formal verification framework called Verus. In a few-shot setting,\nLLMs demonstrate impressive logical ability in generating postconditions and\nloop invariants, especially when analyzing short code snippets. However, LLMs\nlack the ability to retain and propagate context information, a strength of\ntraditional static analysis. Based on these observations, we developed a\nprototype based on OpenAI's GPT-4 model. Our prototype decomposes the\nverification task into multiple smaller ones, iteratively queries GPT-4, and\ncombines its output with lightweight static analysis. We evaluated the\nprototype with a developer in the automation loop on 20 vector-manipulating\nprograms. The results demonstrate that it significantly reduces human effort in\nwriting entry-level proof code.",
+    "num_pages": 7,
+    "tldr": "LLMs and static analysis aid Rust verification, reducing proof-writing effort.",
+    "tags": [
+        "Formal verification",
+        "Large Language Models",
+        "Rust",
+        "proof synthesis",
+        "static analysis"
+    ]
+}

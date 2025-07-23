@@ -1,0 +1,30 @@
+{
+    "uuid": "be088b19-03fb-584b-a62d-2ab4b5d7fdd8",
+    "title": "Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Peter Clark",
+        "Isaac Cowhey",
+        "Oren Etzioni",
+        "Tushar Khot",
+        "Ashish Sabharwal",
+        "Carissa Schoenick",
+        "Oyvind Tafjord"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1803.05457v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2018/be088b19-03fb-584b-a62d-2ab4b5d7fdd8.pdf",
+    "bibtex": "@misc{clark2018thinkyouhavesolvedquestion,\n    title = {Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge},\n    author = {Peter Clark and Isaac Cowhey and Oren Etzioni and Tushar Khot and Ashish Sabharwal and Carissa Schoenick and Oyvind Tafjord},\n    year = {2018},\n    eprint = {1803.05457},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.AI},\n    url = {http://arxiv.org/abs/1803.05457},\n}",
+    "abstract": "We present a new question set, text corpus, and baselines assembled to\nencourage AI research in advanced question answering. Together, these\nconstitute the AI2 Reasoning Challenge (ARC), which requires far more powerful\nknowledge and reasoning than previous challenges such as SQuAD or SNLI. The ARC\nquestion set is partitioned into a Challenge Set and an Easy Set, where the\nChallenge Set contains only questions answered incorrectly by both a\nretrieval-based algorithm and a word co-occurence algorithm. The dataset\ncontains only natural, grade-school science questions (authored for human\ntests), and is the largest public-domain set of this kind (7,787 questions). We\ntest several baselines on the Challenge Set, including leading neural models\nfrom the SQuAD and SNLI tasks, and find that none are able to significantly\noutperform a random baseline, reflecting the difficult nature of this task. We\nare also releasing the ARC Corpus, a corpus of 14M science sentences relevant\nto the task, and implementations of the three neural baseline models tested.\nCan your model perform better? We pose ARC as a challenge to the community.",
+    "num_pages": 10,
+    "tldr": "ARC: A new AI reasoning challenge with tough grade-school science questions.",
+    "tags": [
+        "AI2 Reasoning Challenge",
+        "Question Answering",
+        "Natural Language Processing",
+        "Dataset",
+        "Baseline Models"
+    ]
+}

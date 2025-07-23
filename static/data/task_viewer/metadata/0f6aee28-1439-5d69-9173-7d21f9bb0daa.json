@@ -1,0 +1,31 @@
+{
+    "uuid": "0f6aee28-1439-5d69-9173-7d21f9bb0daa",
+    "title": "Instance-adaptive Zero-shot Chain-of-Thought Prompting",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nyuan2024instanceadaptive,\ntitle={Instance-adaptive Zero-shot Chain-of-Thought Prompting},\nauthor={Xiaosong Yuan and Chen Shen and Shaotian Yan and Xiao Feng Zhang and Liang Xie and Wenxiao Wang and Renchu Guan and Ying Wang and Jieping Ye},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=31xWlIdxTm}\n}",
+    "authors": [
+        "Xiaosong Yuan",
+        "Chen Shen",
+        "Shaotian Yan",
+        "Xiao Feng Zhang",
+        "Liang Xie",
+        "Wenxiao Wang",
+        "Renchu Guan",
+        "Ying Wang",
+        "Jieping Ye"
+    ],
+    "pdf_url": "https://openreview.net/pdf/290c16523447118548214c3bcfc0c9f3ea7cb967.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/0f6aee28-1439-5d69-9173-7d21f9bb0daa.pdf",
+    "num_pages": 18,
+    "abstract": "Zero-shot Chain-of-Thought (CoT) prompting emerges as a simple and effective strategy for enhancing the performance of large language models (LLMs) in real-world reasoning tasks. Nonetheless, the efficacy of a singular, task-level prompt uniformly applied across the whole of instances is inherently limited since one prompt cannot be a good partner for all, a more appropriate approach should consider the interaction between the prompt and each instance meticulously. This work introduces an instance-adaptive prompting algorithm as an alternative zero-shot CoT reasoning scheme by adaptively differentiating good and bad prompts. Concretely, we first employ analysis on LLMs through the lens of information flow to detect the mechanism under zero-shot CoT reasoning, in which we discover that information flows from question to prompt and question to rationale jointly influence the reasoning results most. We notice that a better zero-shot CoT reasoning needs the prompt to obtain semantic information from the question then the rationale aggregates sufficient information from the question directly and via the prompt indirectly. On the contrary, lacking any of those would probably lead to a bad one. Stem from that, we further propose an instance-adaptive prompting strategy (IAP) for zero-shot CoT reasoning. Experiments conducted with LLaMA-2, LLaMA-3, and Qwen on math, logic, and commonsense reasoning tasks (e.g., GSM8K, MMLU, Causal Judgement) obtain consistent improvement, demonstrating that the instance-adaptive zero-shot CoT prompting performs better than other task-level methods with some curated prompts or sophisticated procedures, showing the significance of our findings in the zero-shot CoT reasoning mechanism.",
+    "tldr": "This paper conducts analysis on LLM's zero-shot CoT, discovering an information flow pattern, furthermore, this paper proposes an instance-adaptive zero-shot prompting strategy to improve LLM's performance on several reasoning tasks.",
+    "tags": [
+        "Large Language Models",
+        "Chain-of-Thought Reasoning",
+        "Instance-adaptive",
+        "Zero-shot"
+    ]
+}

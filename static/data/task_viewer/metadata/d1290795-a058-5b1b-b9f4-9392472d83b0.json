@@ -1,0 +1,42 @@
+{
+    "uuid": "d1290795-a058-5b1b-b9f4-9392472d83b0",
+    "title": "Uncovering What, Why and How: A Comprehensive Benchmark for Causation Understanding of Video Anomaly",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Hang Du",
+        "Sicheng Zhang",
+        "Binzhu Xie",
+        "Guoshun Nan",
+        "Jiayang Zhang",
+        "Junrui Xu",
+        "Hangyu Liu",
+        "Sicong Leng",
+        "Jiangming Liu",
+        "Hehe Fan",
+        "Dajiu Huang",
+        "Jing Feng",
+        "Linli Chen",
+        "Can Zhang",
+        "Xuhuan Li",
+        "Hao Zhang",
+        "Jianhang Chen",
+        "Qimei Cui",
+        "Xiaofeng Tao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2405.00181v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2024/d1290795-a058-5b1b-b9f4-9392472d83b0.pdf",
+    "bibtex": "@misc{du2024uncoveringwhatwhyandhow,\n    title = {Uncovering What, Why and How: A Comprehensive Benchmark for Causation Understanding of Video Anomaly},\n    author = {Hang Du and Sicheng Zhang and Binzhu Xie and Guoshun Nan and Jiayang Zhang and Junrui Xu and Hangyu Liu and Sicong Leng and Jiangming Liu and Hehe Fan and Dajiu Huang and Jing Feng and Linli Chen and Can Zhang and Xuhuan Li and Hao Zhang and Jianhang Chen and Qimei Cui and Xiaofeng Tao},\n    year = {2024},\n    eprint = {2405.00181},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2405.00181},\n}",
+    "abstract": "Video anomaly understanding (VAU) aims to automatically comprehend unusual\noccurrences in videos, thereby enabling various applications such as traffic\nsurveillance and industrial manufacturing. While existing VAU benchmarks\nprimarily concentrate on anomaly detection and localization, our focus is on\nmore practicality, prompting us to raise the following crucial questions: \"what\nanomaly occurred?\", \"why did it happen?\", and \"how severe is this abnormal\nevent?\". In pursuit of these answers, we present a comprehensive benchmark for\nCausation Understanding of Video Anomaly (CUVA). Specifically, each instance of\nthe proposed benchmark involves three sets of human annotations to indicate the\n\"what\", \"why\" and \"how\" of an anomaly, including 1) anomaly type, start and end\ntimes, and event descriptions, 2) natural language explanations for the cause\nof an anomaly, and 3) free text reflecting the effect of the abnormality. In\naddition, we also introduce MMEval, a novel evaluation metric designed to\nbetter align with human preferences for CUVA, facilitating the measurement of\nexisting LLMs in comprehending the underlying cause and corresponding effect of\nvideo anomalies. Finally, we propose a novel prompt-based method that can serve\nas a baseline approach for the challenging CUVA. We conduct extensive\nexperiments to show the superiority of our evaluation metric and the\nprompt-based approach. Our code and dataset are available at\nhttps://github.com/fesvhtr/CUVA.",
+    "num_pages": 19,
+    "tldr": "Comprehensive benchmark for video anomaly causation with novel metrics and methods.",
+    "tags": [
+        "video anomaly understanding",
+        "causation analysis",
+        "benchmark development",
+        "human annotations",
+        "evaluation metric"
+    ]
+}

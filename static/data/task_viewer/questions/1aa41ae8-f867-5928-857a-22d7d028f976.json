@@ -1,0 +1,32 @@
+{
+    "uuid": "1aa41ae8-f867-5928-857a-22d7d028f976",
+    "question": "According to Table 1, which setup (including its corresponding parameters) achieves the highest precision on the test set?",
+    "answer_format": "Your answer should be a string, with the format of 'setup_name: parameter_value'.",
+    "tags": [
+        "single",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "0f6af664-5af4-5274-bda9-66734c7fa9ef"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate the part of text that discusses the ability of CoSA on Object Discovery and Composition",
+        "Second, find all the benchmarks mentioned in this part of text, and count the total number."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "question": "According to Table 1, which setup (including its corresponding parameters) achieves the highest precision on the test set?",
+            "reference_answer": "Roberta: 1500"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "status": "success",
+    "test_result": "[Observation]: Roberta 1500: 1500"
+}

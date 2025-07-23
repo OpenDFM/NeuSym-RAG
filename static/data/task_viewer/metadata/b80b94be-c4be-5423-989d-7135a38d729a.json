@@ -1,0 +1,35 @@
+{
+    "uuid": "b80b94be-c4be-5423-989d-7135a38d729a",
+    "title": "Visual Genome: Connecting Language and Vision Using Crowdsourced Dense Image Annotations",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2016,
+    "authors": [
+        "Ranjay Krishna",
+        "Yuke Zhu",
+        "Oliver Groth",
+        "Justin Johnson",
+        "Kenji Hata",
+        "Joshua Kravitz",
+        "Stephanie Chen",
+        "Yannis Kalantidis",
+        "Li-Jia Li",
+        "David A. Shamma",
+        "Michael S. Bernstein",
+        "Fei-Fei Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1602.07332v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2016/b80b94be-c4be-5423-989d-7135a38d729a.pdf",
+    "bibtex": "@misc{krishna2016visualgenomeconnectinglanguageand,\n    title = {Visual Genome: Connecting Language and Vision Using Crowdsourced Dense Image Annotations},\n    author = {Ranjay Krishna and Yuke Zhu and Oliver Groth and Justin Johnson and Kenji Hata and Joshua Kravitz and Stephanie Chen and Yannis Kalantidis and Li-Jia Li and David A. Shamma and Michael S. Bernstein and Fei-Fei Li},\n    year = {2016},\n    eprint = {1602.07332},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/1602.07332},\n}",
+    "abstract": "Despite progress in perceptual tasks such as image classification, computers\nstill perform poorly on cognitive tasks such as image description and question\nanswering. Cognition is core to tasks that involve not just recognizing, but\nreasoning about our visual world. However, models used to tackle the rich\ncontent in images for cognitive tasks are still being trained using the same\ndatasets designed for perceptual tasks. To achieve success at cognitive tasks,\nmodels need to understand the interactions and relationships between objects in\nan image. When asked \"What vehicle is the person riding?\", computers will need\nto identify the objects in an image as well as the relationships riding(man,\ncarriage) and pulling(horse, carriage) in order to answer correctly that \"the\nperson is riding a horse-drawn carriage\".\n  In this paper, we present the Visual Genome dataset to enable the modeling of\nsuch relationships. We collect dense annotations of objects, attributes, and\nrelationships within each image to learn these models. Specifically, our\ndataset contains over 100K images where each image has an average of 21\nobjects, 18 attributes, and 18 pairwise relationships between objects. We\ncanonicalize the objects, attributes, relationships, and noun phrases in region\ndescriptions and questions answer pairs to WordNet synsets. Together, these\nannotations represent the densest and largest dataset of image descriptions,\nobjects, attributes, relationships, and question answers.",
+    "num_pages": 44,
+    "tldr": "Visual Genome: A large dataset for modeling relationships in images.",
+    "tags": [
+        "Visual Genome",
+        "image annotations",
+        "cognitive tasks",
+        "object relationships",
+        "dataset"
+    ]
+}

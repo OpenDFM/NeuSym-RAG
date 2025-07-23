@@ -1,0 +1,27 @@
+{
+    "uuid": "aeb01ff1-2543-50db-89d5-f33c70f77e96",
+    "title": "MetaGPT: Merging Large Language Models Using Model Exclusive Task Arithmetic",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{zhou-etal-2024-metagpt,\n    title = \"{M}eta{GPT}: Merging Large Language Models Using Model Exclusive Task Arithmetic\",\n    author = \"Zhou, Yuyan  and\n      Song, Liang  and\n      Wang, Bingning  and\n      Chen, Weipeng\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.emnlp-main.102\",\n    doi = \"10.18653/v1/2024.emnlp-main.102\",\n    pages = \"1711--1724\",\n    abstract = \"The advent of large language models (LLMs) like GPT-4 has catalyzed the exploration of multi-task learning (MTL), in which a single model demonstrates proficiency across diverse tasks. Task arithmetic has emerged as a cost-effective approach for MTL. It enables performance enhancement across multiple tasks by adding their corresponding task vectors to a pre-trained model. However, the current lack of a method that can simultaneously achieve optimal performance, computational efficiency, and data privacy limits their application to LLMs. In this paper, we propose \\textbf{M}odel \\textbf{E}xclusive \\textbf{T}ask \\textbf{A}rithmetic for merging \\textbf{GPT}-scale models (MetaGPT) which formalizes the objective of model merging into a multi-task learning framework, aiming to minimize the average loss difference between the merged model and each individual task model. Since data privacy limits the use of multi-task training data, we leverage LLMs{'} local linearity and task vectors{'} orthogonality to separate the data term and scaling coefficients term and derive a model-exclusive task arithmetic method. Our proposed MetaGPT is data-agnostic and bypasses the heavy search process, making it cost-effective and easy to implement for LLMs. Extensive experiments demonstrate that MetaGPT leads to improvement of task arithmetic and achieves state-of-the-art performance on multiple tasks.\",\n}\n",
+    "authors": [
+        "Yuyan Zhou",
+        "Liang Song",
+        "Bingning Wang",
+        "Weipeng Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.emnlp-main.102.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/aeb01ff1-2543-50db-89d5-f33c70f77e96.pdf",
+    "num_pages": 14,
+    "abstract": "The advent of large language models (LLMs) like GPT-4 has catalyzed the exploration of multi-task learning (MTL), in which a single model demonstrates proficiency across diverse tasks. Task arithmetic has emerged as a cost-effective approach for MTL. It enables performance enhancement across multiple tasks by adding their corresponding task vectors to a pre-trained model. However, the current lack of a method that can simultaneously achieve optimal performance, computational efficiency, and data privacy limits their application to LLMs. In this paper, we propose Model Exclusive Task Arithmetic for merging GPT-scale models (MetaGPT) which formalizes the objective of model merging into a multi-task learning framework, aiming to minimize the average loss difference between the merged model and each individual task model. Since data privacy limits the use of multi-task training data, we leverage LLMs’ local linearity and task vectors’ orthogonality to separate the data term and scaling coefficients term and derive a model-exclusive task arithmetic method. Our proposed MetaGPT is data-agnostic and bypasses the heavy search process, making it cost-effective and easy to implement for LLMs. Extensive experiments demonstrate that MetaGPT leads to improvement of task arithmetic and achieves state-of-the-art performance on multiple tasks.",
+    "tldr": "MetaGPT improves task merging in LLMs using efficient, privacy-preserving methods.",
+    "tags": [
+        "MetaGPT",
+        "large language models",
+        "multi-task learning",
+        "model merging",
+        "task arithmetic"
+    ]
+}

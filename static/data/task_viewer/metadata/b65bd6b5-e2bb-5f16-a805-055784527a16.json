@@ -1,0 +1,33 @@
+{
+    "uuid": "b65bd6b5-e2bb-5f16-a805-055784527a16",
+    "title": "Jailbreaking ChatGPT via Prompt Engineering: An Empirical Study",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Yi Liu",
+        "Gelei Deng",
+        "Zhengzi Xu",
+        "Yuekang Li",
+        "Yaowen Zheng",
+        "Ying Zhang",
+        "Lida Zhao",
+        "Tianwei Zhang",
+        "Kailong Wang",
+        "Yang Liu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.13860v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2024/b65bd6b5-e2bb-5f16-a805-055784527a16.pdf",
+    "bibtex": "@misc{liu2024jailbreakingchatgptviapromptengineering,\n    title = {Jailbreaking ChatGPT via Prompt Engineering: An Empirical Study},\n    author = {Yi Liu and Gelei Deng and Zhengzi Xu and Yuekang Li and Yaowen Zheng and Ying Zhang and Lida Zhao and Tianwei Zhang and Kailong Wang and Yang Liu},\n    year = {2024},\n    eprint = {2305.13860},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.SE},\n    url = {http://arxiv.org/abs/2305.13860},\n}",
+    "abstract": "Large Language Models (LLMs), like ChatGPT, have demonstrated vast potential\nbut also introduce challenges related to content constraints and potential\nmisuse. Our study investigates three key research questions: (1) the number of\ndifferent prompt types that can jailbreak LLMs, (2) the effectiveness of\njailbreak prompts in circumventing LLM constraints, and (3) the resilience of\nChatGPT against these jailbreak prompts. Initially, we develop a classification\nmodel to analyze the distribution of existing prompts, identifying ten distinct\npatterns and three categories of jailbreak prompts. Subsequently, we assess the\njailbreak capability of prompts with ChatGPT versions 3.5 and 4.0, utilizing a\ndataset of 3,120 jailbreak questions across eight prohibited scenarios.\nFinally, we evaluate the resistance of ChatGPT against jailbreak prompts,\nfinding that the prompts can consistently evade the restrictions in 40 use-case\nscenarios. The study underscores the importance of prompt structures in\njailbreaking LLMs and discusses the challenges of robust jailbreak prompt\ngeneration and prevention.",
+    "num_pages": 12,
+    "tldr": "Study examines prompt engineering techniques to jailbreak and assess ChatGPT's defenses.",
+    "tags": [
+        "prompt engineering",
+        "jailbreaking",
+        "large language models",
+        "ChatGPT",
+        "content constraints"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "uuid": "83cda339-482e-5c4c-aeaa-eb7e51dba851",
+    "title": "True Knowledge Comes from Practice: Aligning LLMs with Embodied Environments via Reinforcement Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Weihao Tan",
+        "Wentao Zhang",
+        "Shanqi Liu",
+        "Longtao Zheng",
+        "Xinrun Wang",
+        "Bo An"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2401.14151v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2024/83cda339-482e-5c4c-aeaa-eb7e51dba851.pdf",
+    "bibtex": "@misc{tan2024trueknowledgecomesfrompractice,\n    title = {True Knowledge Comes from Practice: Aligning LLMs with Embodied Environments via Reinforcement Learning},\n    author = {Weihao Tan and Wentao Zhang and Shanqi Liu and Longtao Zheng and Xinrun Wang and Bo An},\n    year = {2024},\n    eprint = {2401.14151},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2401.14151},\n}",
+    "abstract": "Despite the impressive performance across numerous tasks, large language\nmodels (LLMs) often fail in solving simple decision-making tasks due to the\nmisalignment of the knowledge in LLMs with environments. On the contrary,\nreinforcement learning (RL) agents learn policies from scratch, which makes\nthem always align with environments but difficult to incorporate prior\nknowledge for efficient explorations. To narrow the gap, we propose TWOSOME, a\nnovel general online framework that deploys LLMs as decision-making agents to\nefficiently interact and align with embodied environments via RL without\nrequiring any prepared datasets or prior knowledge of the environments.\nFirstly, we query the joint probabilities of each valid action with LLMs to\nform behavior policies. Then, to enhance the stability and robustness of the\npolicies, we propose two normalization methods and summarize four prompt design\nprinciples. Finally, we design a novel parameter-efficient training\narchitecture where the actor and critic share one frozen LLM equipped with\nlow-rank adapters (LoRA) updated by PPO. We conduct extensive experiments to\nevaluate TWOSOME. i) TWOSOME exhibits significantly better sample efficiency\nand performance compared to the conventional RL method, PPO, and prompt tuning\nmethod, SayCan, in both classical decision-making environment, Overcooked, and\nsimulated household environment, VirtualHome. ii) Benefiting from LLMs'\nopen-vocabulary feature, TWOSOME shows superior generalization ability to\nunseen tasks. iii) Under our framework, there is no significant loss of the\nLLMs' original ability during online PPO finetuning.",
+    "num_pages": 48,
+    "tldr": "TWOSOME aligns LLMs with environments using RL for better decision-making.",
+    "tags": [
+        "large language models",
+        "reinforcement learning",
+        "decision-making",
+        "embodied environments",
+        "TWOSOME framework"
+    ]
+}

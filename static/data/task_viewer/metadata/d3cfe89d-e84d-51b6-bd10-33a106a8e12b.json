@@ -1,0 +1,31 @@
+{
+    "uuid": "d3cfe89d-e84d-51b6-bd10-33a106a8e12b",
+    "title": "Reasoning Over Semantic-Level Graph for Fact Checking",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2020,
+    "authors": [
+        "Wanjun Zhong",
+        "Jingjing Xu",
+        "Duyu Tang",
+        "Zenan Xu",
+        "Nan Duan",
+        "Ming Zhou",
+        "Jiahai Wang",
+        "Jian Yin"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1909.03745v3",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2020/d3cfe89d-e84d-51b6-bd10-33a106a8e12b.pdf",
+    "bibtex": "@misc{zhong2020reasoningoversemanticlevelgraphfor,\n    title = {Reasoning Over Semantic-Level Graph for Fact Checking},\n    author = {Wanjun Zhong and Jingjing Xu and Duyu Tang and Zenan Xu and Nan Duan and Ming Zhou and Jiahai Wang and Jian Yin},\n    year = {2020},\n    eprint = {1909.03745},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1909.03745},\n}",
+    "abstract": "Fact checking is a challenging task because verifying the truthfulness of a\nclaim requires reasoning about multiple retrievable evidence. In this work, we\npresent a method suitable for reasoning about the semantic-level structure of\nevidence. Unlike most previous works, which typically represent evidence\nsentences with either string concatenation or fusing the features of isolated\nevidence sentences, our approach operates on rich semantic structures of\nevidence obtained by semantic role labeling. We propose two mechanisms to\nexploit the structure of evidence while leveraging the advances of pre-trained\nmodels like BERT, GPT or XLNet. Specifically, using XLNet as the backbone, we\nfirst utilize the graph structure to re-define the relative distances of words,\nwith the intuition that semantically related words should have short distances.\nThen, we adopt graph convolutional network and graph attention network to\npropagate and aggregate information from neighboring nodes on the graph. We\nevaluate our system on FEVER, a benchmark dataset for fact checking, and find\nthat rich structural information is helpful and both our graph-based mechanisms\nimprove the accuracy. Our model is the state-of-the-art system in terms of both\nofficial evaluation metrics, namely claim verification accuracy and FEVER\nscore.",
+    "num_pages": 11,
+    "tldr": "Utilizing semantic graphs and pre-trained models improves fact-checking accuracy.",
+    "tags": [
+        "Fact checking",
+        "Semantic role labeling",
+        "Graph convolutional network",
+        "Pre-trained models",
+        "FEVER dataset"
+    ]
+}

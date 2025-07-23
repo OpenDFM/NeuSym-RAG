@@ -1,0 +1,28 @@
+{
+    "uuid": "2ba6d2a8-a65f-51d1-9ac2-df80a3e865de",
+    "title": "Delving Deeper into Cross-lingual Visual Question Answering",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Chen Liu",
+        "Jonas Pfeiffer",
+        "Anna Korhonen",
+        "Ivan Vulić",
+        "Iryna Gurevych"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2202.07630v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/2ba6d2a8-a65f-51d1-9ac2-df80a3e865de.pdf",
+    "bibtex": "@misc{liu2023delvingdeeperintocrosslingualvisual,\n    title = {Delving Deeper into Cross-lingual Visual Question Answering},\n    author = {Chen Liu and Jonas Pfeiffer and Anna Korhonen and Ivan Vulić and Iryna Gurevych},\n    year = {2023},\n    eprint = {2202.07630},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2202.07630},\n}",
+    "abstract": "Visual question answering (VQA) is one of the crucial vision-and-language\ntasks. Yet, existing VQA research has mostly focused on the English language,\ndue to a lack of suitable evaluation resources. Previous work on cross-lingual\nVQA has reported poor zero-shot transfer performance of current multilingual\nmultimodal Transformers with large gaps to monolingual performance, without any\ndeeper analysis. In this work, we delve deeper into the different aspects of\ncross-lingual VQA, aiming to understand the impact of 1) modeling methods and\nchoices, including architecture, inductive bias, fine-tuning; 2) learning\nbiases: including question types and modality biases in cross-lingual setups.\nThe key results of our analysis are: 1) We show that simple modifications to\nthe standard training setup can substantially reduce the transfer gap to\nmonolingual English performance, yielding +10 accuracy points over existing\nmethods. 2) We analyze cross-lingual VQA across different question types of\nvarying complexity for different multilingual multimodal Transformers, and\nidentify question types that are the most difficult to improve on. 3) We\nprovide an analysis of modality biases present in training data and models,\nrevealing why zero-shot performance gaps remain for certain question types and\nlanguages.",
+    "num_pages": 16,
+    "tldr": "Analyzes improvements and biases in cross-lingual Visual Question Answering.",
+    "tags": [
+        "Cross-lingual VQA",
+        "multilingual multimodal transformers",
+        "zero-shot performance",
+        "training biases",
+        "question complexity"
+    ]
+}

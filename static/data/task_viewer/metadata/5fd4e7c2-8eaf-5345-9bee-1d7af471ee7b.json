@@ -1,0 +1,27 @@
+{
+    "uuid": "5fd4e7c2-8eaf-5345-9bee-1d7af471ee7b",
+    "title": "Is Your Toxicity My Toxicity? Exploring the Impact of Rater Identity on Toxicity Annotation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Nitesh Goyal",
+        "Ian Kivlichan",
+        "Rachel Rosen",
+        "Lucy Vasserman"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2205.00501v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2022/5fd4e7c2-8eaf-5345-9bee-1d7af471ee7b.pdf",
+    "bibtex": "@misc{goyal2022isyourtoxicitymytoxicity,\n    title = {Is Your Toxicity My Toxicity? Exploring the Impact of Rater Identity on Toxicity Annotation},\n    author = {Nitesh Goyal and Ian Kivlichan and Rachel Rosen and Lucy Vasserman},\n    year = {2022},\n    eprint = {2205.00501},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.HC},\n    url = {http://arxiv.org/abs/2205.00501},\n}",
+    "abstract": "Machine learning models are commonly used to detect toxicity in online\nconversations. These models are trained on datasets annotated by human raters.\nWe explore how raters' self-described identities impact how they annotate\ntoxicity in online comments. We first define the concept of specialized rater\npools: rater pools formed based on raters' self-described identities, rather\nthan at random. We formed three such rater pools for this study--specialized\nrater pools of raters from the U.S. who identify as African American, LGBTQ,\nand those who identify as neither. Each of these rater pools annotated the same\nset of comments, which contains many references to these identity groups. We\nfound that rater identity is a statistically significant factor in how raters\nwill annotate toxicity for identity-related annotations. Using preliminary\ncontent analysis, we examined the comments with the most disagreement between\nrater pools and found nuanced differences in the toxicity annotations. Next, we\ntrained models on the annotations from each of the different rater pools, and\ncompared the scores of these models on comments from several test sets.\nFinally, we discuss how using raters that self-identify with the subjects of\ncomments can create more inclusive machine learning models, and provide more\nnuanced ratings than those by random raters.",
+    "num_pages": 17,
+    "tldr": "Rater identity affects toxicity annotation; specialized pools improve model inclusivity.",
+    "tags": [
+        "toxicity detection",
+        "rater identity",
+        "online conversations",
+        "specialized rater pools",
+        "inclusive machine learning models"
+    ]
+}

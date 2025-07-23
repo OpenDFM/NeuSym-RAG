@@ -1,0 +1,31 @@
+{
+    "uuid": "5e63d90b-a1a4-5e6e-9845-5177eba99970",
+    "title": "H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 poster",
+    "bibtex": "@inproceedings{\nzhang2023ho,\ntitle={H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models},\nauthor={Zhenyu Zhang and Ying Sheng and Tianyi Zhou and Tianlong Chen and Lianmin Zheng and Ruisi Cai and Zhao Song and Yuandong Tian and Christopher Re and Clark Barrett and Zhangyang Wang and Beidi Chen},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=RkRrPp7GKO}\n}",
+    "authors": [
+        "Zhenyu Zhang",
+        "Ying Sheng",
+        "Tianyi Zhou",
+        "Tianlong Chen",
+        "Lianmin Zheng",
+        "Ruisi Cai",
+        "Zhao Song",
+        "Yuandong Tian",
+        "Christopher Re",
+        "Clark Barrett",
+        "Zhangyang Wang",
+        "Beidi Chen"
+    ],
+    "pdf_url": "https://openreview.net/pdf/934ca6abe99adb31703f60a596d52f7465c97276.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/5e63d90b-a1a4-5e6e-9845-5177eba99970.pdf",
+    "num_pages": 50,
+    "abstract": "Large Language Models (LLMs), despite their recent impressive accomplishments, are notably cost-prohibitive to deploy, particularly for applications involving long-content generation, such as dialogue systems and story writing. Often, a large amount of transient state information, referred to as the $\\mathsf{KV}$ $\\mathsf{cache}$, is stored in GPU memory in addition to model parameters, scaling linearly with the sequence length and batch size. In this paper, we introduce a novel approach for implementing the  $\\mathsf{KV}$ $\\mathsf{cache}$ which significantly reduces its memory footprint.  Our approach is based on the noteworthy observation that a small portion of tokens contributes most of the value when computing attention scores. \n We call these tokens Heavy Hitters ($\\mathsf{H_2}$). Through a comprehensive investigation, we find that ($i$) the emergence of $\\mathsf{H_2}$ is natural and strongly correlates with the frequent co-occurrence of tokens in the text, and ($ii$) removing them results in significant performance degradation. Based on these insights, we propose Heavy Hitter Oracle ($\\mathsf{H_2O}$), a $\\mathsf{KV}$ $\\mathsf{cache}$ eviction policy that dynamically retains a balance of recent and $\\mathsf{H_2}$ tokens.\n We formulate the $\\mathsf{KV}$ $\\mathsf{cache}$ eviction as a dynamic submodular problem and prove (under mild assumptions) a theoretical guarantee for our novel eviction algorithm which could help guide future work. We validate the accuracy of our algorithm with OPT, LLaMA, and GPT-NeoX across a wide range of tasks. Our implementation of $\\mathsf{H_2O}$ with 20\\% heavy hitters improves the throughput over three leading inference systems DeepSpeed Zero-Inference, Hugging Face Accelerate, and FlexGen by up to $29\\times$, $29\\times$, and $3\\times$ on OPT-6.7B and OPT-30B. With the same batch size, $\\mathsf{H_2O}$ can reduce the latency by up to $1.9\\times$.",
+    "tldr": "H2O reduces memory usage in LLMs by optimizing cache retention of critical tokens.",
+    "tags": [
+        "Large Language Models; Efficient Generative Inference"
+    ]
+}

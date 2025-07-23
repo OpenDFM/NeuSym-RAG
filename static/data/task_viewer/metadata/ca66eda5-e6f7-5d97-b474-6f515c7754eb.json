@@ -1,0 +1,27 @@
+{
+    "uuid": "ca66eda5-e6f7-5d97-b474-6f515c7754eb",
+    "title": "ASQA: Factoid Questions Meet Long-Form Answers",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Ivan Stelmakh",
+        "Yi Luan",
+        "Bhuwan Dhingra",
+        "Ming-Wei Chang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2204.06092v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/ca66eda5-e6f7-5d97-b474-6f515c7754eb.pdf",
+    "bibtex": "@misc{stelmakh2023asqafactoidquestionsmeetlongform,\n    title = {ASQA: Factoid Questions Meet Long-Form Answers},\n    author = {Ivan Stelmakh and Yi Luan and Bhuwan Dhingra and Ming-Wei Chang},\n    year = {2023},\n    eprint = {2204.06092},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2204.06092},\n}",
+    "abstract": "An abundance of datasets and availability of reliable evaluation metrics have\nresulted in strong progress in factoid question answering (QA). This progress,\nhowever, does not easily transfer to the task of long-form QA, where the goal\nis to answer questions that require in-depth explanations. The hurdles include\n(i) a lack of high-quality data, and (ii) the absence of a well-defined notion\nof the answer's quality. In this work, we address these problems by (i)\nreleasing a novel dataset and a task that we call ASQA (Answer Summaries for\nQuestions which are Ambiguous); and (ii) proposing a reliable metric for\nmeasuring performance on ASQA. Our task focuses on factoid questions that are\nambiguous, that is, have different correct answers depending on interpretation.\nAnswers to ambiguous questions should synthesize factual information from\nmultiple sources into a long-form summary that resolves the ambiguity. In\ncontrast to existing long-form QA tasks (such as ELI5), ASQA admits a clear\nnotion of correctness: a user faced with a good summary should be able to\nanswer different interpretations of the original ambiguous question. We use\nthis notion of correctness to define an automated metric of performance for\nASQA. Our analysis demonstrates an agreement between this metric and human\njudgments, and reveals a considerable gap between human performance and strong\nbaselines.",
+    "num_pages": 16,
+    "tldr": "Introduces ASQA for resolving ambiguous factoid questions with long-form answers.",
+    "tags": [
+        "factoid question answering",
+        "long-form QA",
+        "ambiguous questions",
+        "dataset release",
+        "performance metric"
+    ]
+}

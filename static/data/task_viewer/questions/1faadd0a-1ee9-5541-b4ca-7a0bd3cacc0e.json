@@ -1,0 +1,37 @@
+{
+    "uuid": "1faadd0a-1ee9-5541-b4ca-7a0bd3cacc0e",
+    "question": "RRCP is a new pipeline proposed to recognize retrieval complexity, on which complex QA datasets does it significantly outperform the LLM baseline, with a clear improvement in Accuracy or F1 Score of at least 0.1?",
+    "answer_format": "Your answer should be a list of elements, each element is the QA dataset name string, e.g., [\"QA dataset1\", \"QA dataset2\", ...].",
+    "tags": [
+        "objective",
+        "single",
+        "table"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Usually, the comparison between new design and baseline are proposed in the experiment or result section, especially in the form of tables. Search the correpsonding parts.",
+        "Find the exact values of Accuracy and F1 Score on RRCP and baseline for differnt QA dataset.",
+        "Finally, compare and calculate the values to find the datasets satisfying the requirements of outperforming."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "CWQ",
+                "StrategyQA",
+                "MuSiQue"
+            ],
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "anchor_pdf": [
+        "7640a304-546b-5aa9-8111-8a56b9b06861"
+    ],
+    "reference_pdf": [],
+    "status": "failure",
+    "test_result": "[Observation]: ['CWQ', 'HotPotQA', 'MuSiQue', 'Natural Questions']"
+}

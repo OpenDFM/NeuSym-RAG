@@ -1,0 +1,25 @@
+{
+    "uuid": "0c4fa692-c546-5576-8020-4a2a41c3c1f7",
+    "title": "Identifying Conspiracy Theories News based on Event Relation Graph",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    "bibtex": "@inproceedings{lei-huang-2023-identifying,\n    title = \"Identifying Conspiracy Theories News based on Event Relation Graph\",\n    author = \"Lei, Yuanyuan  and\n      Huang, Ruihong\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2023\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-emnlp.656\",\n    doi = \"10.18653/v1/2023.findings-emnlp.656\",\n    pages = \"9811--9822\",\n    abstract = \"Conspiracy theories, as a type of misinformation, are narratives that explains an event or situation in an irrational or malicious manner. While most previous work examined conspiracy theory in social media short texts, limited attention was put on such misinformation in long news documents. In this paper, we aim to identify whether a news article contains conspiracy theories. We observe that a conspiracy story can be made up by mixing uncorrelated events together, or by presenting an unusual distribution of relations between events. Achieving a contextualized understanding of events in a story is essential for detecting conspiracy theories. Thus, we propose to incorporate an event relation graph for each article, in which events are nodes, and four common types of event relations, coreference, temporal, causal, and subevent relations, are considered as edges. Then, we integrate the event relation graph into conspiracy theory identification in two ways: an event-aware language model is developed to augment the basic language model with the knowledge of events and event relations via soft labels; further, a heterogeneous graph attention network is designed to derive a graph embedding based on hard labels. Experiments on a large benchmark dataset show that our approach based on event relation graph improves both precision and recall of conspiracy theory identification, and generalizes well for new unseen media sources.\",\n}\n",
+    "authors": [
+        "Yuanyuan Lei",
+        "Ruihong Huang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-emnlp.656.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/0c4fa692-c546-5576-8020-4a2a41c3c1f7.pdf",
+    "num_pages": 12,
+    "abstract": "Conspiracy theories, as a type of misinformation, are narratives that explains an event or situation in an irrational or malicious manner. While most previous work examined conspiracy theory in social media short texts, limited attention was put on such misinformation in long news documents. In this paper, we aim to identify whether a news article contains conspiracy theories. We observe that a conspiracy story can be made up by mixing uncorrelated events together, or by presenting an unusual distribution of relations between events. Achieving a contextualized understanding of events in a story is essential for detecting conspiracy theories. Thus, we propose to incorporate an event relation graph for each article, in which events are nodes, and four common types of event relations, coreference, temporal, causal, and subevent relations, are considered as edges. Then, we integrate the event relation graph into conspiracy theory identification in two ways: an event-aware language model is developed to augment the basic language model with the knowledge of events and event relations via soft labels; further, a heterogeneous graph attention network is designed to derive a graph embedding based on hard labels. Experiments on a large benchmark dataset show that our approach based on event relation graph improves both precision and recall of conspiracy theory identification, and generalizes well for new unseen media sources.",
+    "tldr": "New method uses event relation graphs to detect conspiracy theories in news articles.",
+    "tags": [
+        "conspiracy theories",
+        "event relation graph",
+        "misinformation detection",
+        "language model",
+        "graph attention network"
+    ]
+}

@@ -1,0 +1,14 @@
+% Overall Prompt Composition
+
+\begin{tcolorbox}[title={Overall Prompt Composition}, colback=white,colframe=black,arc=1mm,boxrule=1pt,left=1mm,right=1mm,top=1mm,bottom=1mm]
+\small
+\textcolor{1}{\textbf{[System Prompt]}: Defines the agent's role and describes the task to tackle, clarifying the context of the task.}\\
+\ - - - -\newline 
+\textcolor{2}{ \textbf{[Action and Observation Space Prompt]}: Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type. The detailed specification varies depending on the action format.}\\
+\ - - - -\newline 
+\textcolor{4}{ \textbf{[Interaction Framework Prompt]}: Outlines the main interaction procedure and template.}\\
+\ - - - -\newline 
+\textcolor{5}{\textbf{[Hint Prompt]}: Provides hints or suggestions to help the agent refine its planning and reasoning process.}\\
+\ - - - -\newline 
+\textcolor{3}{ \textbf{[Task Prompt]}: Defines the task input, usually including the input question, required answer format, retrieved context, database schema, vectorstore schema and operators.}
+\end{tcolorbox}

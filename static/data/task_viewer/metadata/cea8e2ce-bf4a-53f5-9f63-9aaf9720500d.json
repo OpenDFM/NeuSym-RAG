@@ -1,0 +1,32 @@
+{
+    "uuid": "cea8e2ce-bf4a-53f5-9f63-9aaf9720500d",
+    "title": "TheoremQA: A Theorem-driven Question Answering Dataset",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{chen-etal-2023-theoremqa,\n    title = \"{T}heorem{QA}: A Theorem-driven Question Answering Dataset\",\n    author = \"Chen, Wenhu  and\n      Yin, Ming  and\n      Ku, Max  and\n      Lu, Pan  and\n      Wan, Yixin  and\n      Ma, Xueguang  and\n      Xu, Jianyu  and\n      Wang, Xinyi  and\n      Xia, Tony\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.emnlp-main.489\",\n    doi = \"10.18653/v1/2023.emnlp-main.489\",\n    pages = \"7889--7901\",\n    abstract = \"The recent LLMs like GPT-4 and PaLM-2 have made tremendous progress in solving fundamental math problems like GSM8K by achieving over 90{\\%} accuracy. However, their capabilities to solve more challenging math problems which require domain-specific knowledge (i.e. theorem) have yet to be investigated. In this paper, we introduce TheoremQA, the first theorem-driven question-answering dataset designed to evaluate AI models{'} capabilities to apply theorems to solve challenging science problems. TheoremQA is curated by domain experts containing 800 high-quality questions covering 350 theorems from Math, Physics, EE{\\&}CS, and Finance. We evaluate a wide spectrum of 16 large language and code models with different prompting strategies like Chain-of-Thoughts and Program-of-Thoughts. We found that GPT-4{'}s capabilities to solve these problems are unparalleled, achieving an accuracy of 51{\\%} with Program-of-Thoughts Prompting. All the existing open-sourced models are below 15{\\%}, barely surpassing the random-guess baseline. Given the diversity and broad coverage of TheoremQA, we believe it can be used as a better benchmark to evaluate LLMs{'} capabilities to solve challenging science problems.\",\n}\n",
+    "authors": [
+        "Wenhu Chen",
+        "Ming Yin",
+        "Max Ku",
+        "Pan Lu",
+        "Yixin Wan",
+        "Xueguang Ma",
+        "Jianyu Xu",
+        "Xinyi Wang",
+        "Tony Xia"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.emnlp-main.489.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/cea8e2ce-bf4a-53f5-9f63-9aaf9720500d.pdf",
+    "num_pages": 13,
+    "abstract": "The recent LLMs like GPT-4 and PaLM-2 have made tremendous progress in solving fundamental math problems like GSM8K by achieving over 90% accuracy. However, their capabilities to solve more challenging math problems which require domain-specific knowledge (i.e. theorem) have yet to be investigated. In this paper, we introduce TheoremQA, the first theorem-driven question-answering dataset designed to evaluate AI models’ capabilities to apply theorems to solve challenging science problems. TheoremQA is curated by domain experts containing 800 high-quality questions covering 350 theorems from Math, Physics, EE&CS, and Finance. We evaluate a wide spectrum of 16 large language and code models with different prompting strategies like Chain-of-Thoughts and Program-of-Thoughts. We found that GPT-4’s capabilities to solve these problems are unparalleled, achieving an accuracy of 51% with Program-of-Thoughts Prompting. All the existing open-sourced models are below 15%, barely surpassing the random-guess baseline. Given the diversity and broad coverage of TheoremQA, we believe it can be used as a better benchmark to evaluate LLMs’ capabilities to solve challenging science problems.",
+    "tldr": "TheoremQA dataset evaluates AI's theorem application in complex math problems.",
+    "tags": [
+        "TheoremQA",
+        "question answering",
+        "large language models",
+        "theorem application",
+        "benchmark evaluation"
+    ]
+}

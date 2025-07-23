@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering">
+  <meta name="keywords" content="Neural Symbolic Retrieval, PDF Question Answering, RAG, Multiview Structuring, AI Research">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering</title>
+  <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="static/images/favicon.png">
+
+  <link rel="stylesheet" href="./stylesheets/layout.css">
+  <link rel="stylesheet" href="./stylesheets/index.css">
+  <link rel="stylesheet" href="./bowe_componets/css/bootstrap.table.min.css">
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script> -->
+  <style>
+    pre {
+      max-height: 500px; /* Adjust as needed */
+      overflow: auto;
+    }
+  </style>
+  <style>
+    .highlight-quote {
+      background-color: #f9f9f9; /* Light background color */
+      border-left: 4px solid #007BFF; /* Blue left border */
+      padding: 10px 15px; /* Padding inside the block */
+      margin: 15px 0; /* Margin around the block */
+      color: #333; /* Text color */
+    }
+    .highlight-quote-title {
+      font-weight: bold; /* Bold font for title */
+      margin-top: 0; /* Remove top margin */
+      margin-bottom: 10px; /* Space between title and content */
+      color: #007BFF; /* Same color as the border */
+    }
+    .highlight-quote-content {
+      font-style: italic; /* Italic font style for content */
+    }
+    .highlight-quote-content pre {
+      overflow: auto; /* Ensure the content is scrollable if it's too wide */
+    }
+  </style>
+  <style>
+    .two-column-container {
+      display: flex;
+      gap: 10px; /* Optional: space between columns */
+    }
+    .two-column {
+      flex: 1;
+      background-color: #f9f9f9;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .two-column pre {
+      max-height: 200px;
+      max-width: 100%;
+      overflow: auto; /* Ensure the code block is scrollable if it's too wide */
+      box-sizing: border-box;
+    }
+    .two-column boldtitle {
+      font-weight: bold;
+      font-size: 1.5em; /* Adjust as needed */
+      margin: 10px 0; /* Optional: add some margin */
+    }
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* Optional: space between images */
+    }
+    .right-column img {
+      flex: 1;
+      width: 100%;
+      object-fit: contain;
+    }
+</style>
+  <style>
+    .highlight-box {
+      background-color: #f8f9fa;
+      border-left: 4px solid #007bff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .method-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 15px 0;
+    }
+    .result-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .result-table th, .result-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    .result-table th {
+      background-color: #f5f5f5;
+    }
+    .demo-container {
+      display: flex;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .demo-item {
+      flex: 1;
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+    }
+  </style>
+  <style>
+    /* Task Demonstration Styles */
+    .cover {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    .container-t {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .infoBody {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .tabs {
+      margin-bottom: 20px;
+    }
+
+    .tabs ul {
+      border-bottom-color: #dbdbdb;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      padding-left: 0;
+    }
+
+    .tabs li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .tabs a {
+      color: #4a4a4a;
+      cursor: pointer;
+      padding: 0.5em 1em;
+      text-decoration: none;
+    }
+
+    .tabs li.is-active a {
+      border-bottom-color: #3273dc;
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+      color: #3273dc;
+    }
+
+    .lib_examples {
+      display: none;
+      padding: 20px 0;
+    }
+
+    .highlight-quote {
+      background-color: #f8f9fa;
+      border-left: 4px solid #3273dc;
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    .highlight-quote-title {
+      color: #3273dc;
+      margin-bottom: 10px;
+    }
+
+    .highlight-quote-content {
+      font-style: italic;
+    }
+
+    .left-aligned {
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    /* Method Section Styles */
+    .method-tabs {
+      margin: 20px 0;
+    }
+
+    .method-tabs ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-bottom: 1px solid #dbdbdb;
+    }
+
+    .method-tabs li {
+      margin: 0 10px;
+    }
+
+    .method-tabs a {
+      display: block;
+      padding: 10px 20px;
+      color: #4a4a4a;
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .method-tabs li.is-active a {
+      color: #3273dc;
+      border-bottom-color: #3273dc;
+    }
+
+    .method-content {
+      display: none;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+
+    .method-content.is-active {
+      display: block;
+    }
+
+    /* Experiment Results Styles */
+    .dataset-tabs {
+      margin: 30px 0;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .dataset-tabs ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .dataset-tabs li {
+      margin: 0 15px;
+      position: relative;
+    }
+
+    .dataset-tabs a {
+      display: block;
+      padding: 12px 24px;
+      color: #666;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
+    }
+
+    .dataset-tabs li.is-active a {
+      color: #3273dc;
+      border-bottom-color: #3273dc;
+    }
+
+    .dataset-tabs a:hover {
+      color: #3273dc;
+    }
+
+    .results-content {
+      display: none;
+      margin-top: 30px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    .results-content.is-active {
+      display: block;
+    }
+
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin: 0;
+      font-size: 0.95em;
+      table-layout: auto; /* 修复错位：允许自动分配列宽 */
+      WORD-BREAK: break-all;
+    }
+
+    .results-table th,
+    .results-table td {
+      padding: 15px;
+      text-align: center;
+      border: none;
+      border-bottom: 1px solid #f0f0f0;
+      min-width: 60px; /* 修复错位：防止列宽过窄 */
+    }
+
+    .results-table th {
+      box-shadow: 0 1px 0 #f0f0f0;
+    }
+
+
+    .results-table th {
+      background-color: #f8f9fa;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .results-table th[rowspan="2"] {
+      background-color: #f0f4f8;
+      color: #3273dc;
+      font-weight: 700;
+    }
+
+    .results-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .results-table tr:nth-child(even) {
+      background-color: #fafbfc;
+    }
+
+    .results-table tr:hover {
+      background-color: #f5f7fa;
+    }
+
+    .results-table td:first-child {
+      font-weight: 500;
+      color: #444;
+      text-align: left;
+    }
+
+    .results-table .bold {
+      font-weight: 700;
+      color: #3273dc;
+      background-color: #f0f4f8;
+    }
+
+    .results-table .highlight {
+      background-color: #fff8e1;
+      color: #ff8f00;
+      font-weight: 600;
+    }
+
+    .results-table .model-group {
+      background-color: #f8f9fa;
+    }
+
+    .results-table .model-group td {
+      border-top: 2px solid #e0e0e0;
+    }
+
+    .results-table .model-group td:first-child {
+      color: #3273dc;
+      font-weight: 600;
+    }
+
+    /* Add a subtle animation for tab switching */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .results-content.is-active {
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    /* Add a scrollbar style for the table container */
+    .results-content::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .results-content::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+
+    .results-content::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 4px;
+    }
+
+    .results-content::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8;
+    }
+
+    /* Dataset Description Styles */
+    .dataset-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .dataset-card h3 {
+      color: #3273dc;
+      margin-bottom: 15px;
+    }
+
+    .dataset-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .feature-tag {
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 0.9em;
+      color: #4a4a4a;
+    }
+
+    .feature-tag.highlight {
+      background-color: #3273dc;
+      color: #fff;
+    }
+
+    .dataset-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .stat-item {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #3273dc;
+    }
+
+    .stat-label {
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+  <link rel="stylesheet" href="static/css/academic.css">
+  <style>
+    .container {
+      max-width: 1152px;  /* Bulma's is-max-desktop width */
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .card {
+      background-color: #fff;
+      border-radius: 0.25rem;
+      box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+      color: #4a4a4a;
+      max-width: 100%;
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .method-content {
+      padding: 1.5rem;
+      background-color: #fff;
+      border-radius: 0.25rem;
+      box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+      margin-bottom: 1.5rem;
+    }
+
+    .task-demo {
+      background-color: #fff;
+      border-radius: 0.25rem;
+      box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        padding: 0 0.75rem;
+      }
+      
+      .card-content,
+      .method-content,
+      .task-demo {
+        padding: 1rem;
+      }
+    }
+  </style>
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .task-demo {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .tabs {
+      margin: 1.5rem 0;
+    }
+
+    .tabs ul {
+      border-bottom-color: #dbdbdb;
+    }
+
+    .tabs li.is-active a {
+      border-bottom-color: #3273dc;
+      color: #3273dc;
+    }
+
+    .tabs a {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      color: #4a4a4a;
+    }
+
+    .tabs a:hover {
+      border-bottom-color: #3273dc;
+      color: #3273dc;
+    }
+
+    .lib_examples {
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+    }
+
+    .code-section {
+      margin: 1rem 0;
+    }
+
+    .code-section pre {
+      max-height: 500px;
+      overflow: auto;
+      background-color: #f8f8f8;
+      border-radius: 6px;
+      padding: 1rem;
+    }
+
+    .code-section code {
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .highlight-quote {
+      background-color: #f9f9f9;
+      border-left: 4px solid #3273dc;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .highlight-quote-title {
+      font-weight: bold;
+      color: #3273dc;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-quote-content {
+      font-style: italic;
+    }
+
+    .two-column-container {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .two-column {
+      flex: 1;
+      background-color: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .right-column img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .two-column-container {
+        flex-direction: column;
+      }
+      
+      .code-section pre {
+        max-height: 300px;
+      }
+    }
+</style>
+  <style>
+    .field-tag {
+      display: inline-block;
+      background: #e3eafc;
+      color: #2056a5;
+      border-radius: 6px;
+      padding: 2px 10px;
+      margin: 4px 8px 4px 0;
+      font-size: 0.98em;
+      font-weight: 500;
+      vertical-align: middle;
+    }
+    .field-desc {
+      display: inline-block;
+      margin-bottom: 6px;
+      color: #444;
+      font-size: 0.97em;
+      vertical-align: middle;
+    }
+    .prompt-tag {
+      display: inline-block;
+      background: #f3e9e3;
+      color: #a55b20;
+      border-radius: 6px;
+      padding: 2px 10px;
+      margin: 4px 8px 4px 0;
+      font-size: 0.98em;
+      font-weight: 500;
+      vertical-align: middle;
+    }
+    .prompt-block {
+      background: #f9f9f9;
+      border-left: 4px solid #e0c3a5;
+      border-radius: 4px;
+      margin: 12px 0 18px 0;
+      padding: 10px 18px 10px 14px;
+    }
+    .prompt-desc {
+      color: #666;
+      font-size: 0.97em;
+      margin-bottom: 4px;
+      margin-top: 2px;
+    }
+    .prompt-content {
+      color: #222;
+      font-size: 0.97em;
+      margin-top: 2px;
+      overflow: hidden;
+      position: relative;
+      transition: max-height 0.2s;
+    }
+    .prompt-content.expanded {
+      max-height: 1000px !important;
+    }
+    .show-more-link {
+      color: #a55b20;
+      cursor: pointer;
+      font-size: 0.95em;
+      margin-left: 8px;
+      text-decoration: underline;
+      user-select: none;
+    }
+  </style>
+  <style>
+    .table-wrapper {
+      width: 100%;
+      min-width: 0;
+      overflow-x: auto;
+    }
+  </style>
+  <style>
+    /* 只固定表头第一行的第一列 */
+    .results-table thead tr:first-child th[rowspan] {
+      position: sticky;
+      left: 0;
+      background: #fff;
+      z-index: 3;
+    }
+    /* 固定数据区的第一列 */
+    .results-table tbody td:first-child {
+      position: sticky;
+      left: 0;
+      background: #fff;
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://x-lance.sjtu.edu.cn/">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://TODO">
+              TODO
+            </a>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://rhythmcao.github.io">Ruisheng Cao</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=4xNsDNgAAAAJ&hl=en">Hanchong Zhang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/htc981">Tiancheng Huang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/Narcisssk">Zhangyi Kang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/YuuXiin">Yuxin Zhang</a><sup>1</sup>,</span>
+              <br>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=XCIZlWIAAAAJ&hl=en">Liangtai Sun</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/daqige">Hanqi Li</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/miaoyuxun">Yuxun Miao</a><sup>1</sup>,</span>
+              <span class="author-block">
+                Shuai Fan<sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://coai-sjtu.github.io/">Lu Chen</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://x-lance.github.io/kaiyu/">Kai Yu</a><sup>1</sup>,</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>SJTU X-LANCE Lab,</span>
+              <span class="author-block"><sup>2</sup>AISPEECH,</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2505.19754" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/X-LANCE/NeuSym-RAG"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/OpenDFM/AirQA-Real"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+                </span>
+                <!-- Virtual Machine Link. -->
+                <!--<span class="link-block">
+                  <a href="https://huggingface.co/datasets/xlangai/ubuntu_spider2v/tree/main"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-desktop"></i>
+                    </span>
+                    <span>VM Snapshots</span>
+                  </a>
+                </span> -->
+                <!-- Tool Documents Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://drive.usercontent.google.com/download?id=1aGaHXDkBeoUZ9EOIPj7iIRFra_2FjJoZ&export=download&authuser=0&confirm=t" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-robot"></i>
+                    </span>
+                    <span>Tool Docs</span>
+                  </a>
+                </span> -->
+                <!-- Twitter Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://twitter.com/TianbaoX/status/1778781521253667267" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                    </span>
+                    <span>Twitter</span>
+                  </a>
+                </span> -->
+                <!-- Data Viewer. -->
+                <span class="link-block">
+                  <a href="explorer.html" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-search"></i>
+                    </span>
+                    <span>Task Viewer</span>
+                  </a>
+                </span>
+                <!--<span class="link-block">
+                  <a href="#leaderboard" class="button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-trophy"></i>
+                    </span>
+                    <span>Leaderboard</span>
+                  </a>
+                </span>-->
+
+                <!-- Slides Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://docs.google.com/presentation/d/1-r889Nb9n7SeZqrj-ryNqJLoMzp7aGNU2ihO8nUdEcE/edit?usp=sharing"
+                    target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-google"></i>
+                    </span>
+                    <span>Slides</span>
+                  </a>
+                </span> -->
+                <!-- Discord Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://discord.gg/4Gnw7eTEZR" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-discord"></i>
+                    </span>
+                    <span>Discord</span>
+                  </a>
+                </span> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The increasing number of academic papers poses significant challenges for researchers to efficiently acquire key details.
+              While retrieval augmented generation (RAG) shows great promise in large language model (LLM) based automated question answering,
+              previous works often isolate neural and symbolic retrieval despite their complementary strengths.
+              Moreover, conventional single-view chunking neglects the rich structure and layout of PDFs, e.g., sections and tables.
+              In this work, we propose NeuSym-RAG, a hybrid neural symbolic retrieval framework which combines both paradigms in an interactive process. 
+              By leveraging multi-view chunking and schema-based parsing, NeuSym-RAG organizes semi-structured PDF content into both the relational database and vectorstore, 
+              enabling LLM agents to iteratively gather context until sufficient to generate answers.
+              Experiments on three full PDF-based QA datasets, including a self-annotated one AirQA-Real, show that NeuSym-RAG stably defeats both the vector-based RAG 
+              and various structured baselines, highlighting its capacity to unify both retrieval schemes and utilize multiple views.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Framework of NeuSym-RAG</h2>
+      <div class="content has-text-justified">
+        <img src="static/images/overview.png" alt="Overall Framework" class="responsive-image">
+        <md-block>
+          The entire workflow proceeds as follows: 
+            - **Parsing**: Firstly, we parse the raw PDF file into a pipeline of functions to segment it in multi-view, extract non-textual elements, and store them in a schema-constrained database (DB).
+            - **Encoding**: Next, we identify those encodable columns in the DB, and utilize embedding models for different modalities to obtain and insert vectors of cell values into the vectorstore (VS).
+            - **Interaction**: Finally, we build an iterative Q&A agent which can predict executable actions to retrieve context from the backend environment (either DB or VS) and answer the input question.
+        </md-block>
+
+        <div class="method-tabs">
+          <ul>
+            <li class="is-active"><a data-tab="parsing">Multiview Document Parsing</a></li>
+            <li><a data-tab="encoding">Multimodal Vector Encoding</a></li>
+            <li><a data-tab="interaction">Iterative Agent Interaction</a></li>
+          </ul>
+        </div>
+  
+        <div id="parsing" class="method-content is-active">
+          <p>
+            The multiview document parsing process transforms raw PDF files into a structured database (DuckDB) through a comprehensive pipeline:
+          </p>
+          <ol style="list-style-type: decimal; padding-left: 1.5rem;">
+            <li>Querying scholar APIs (e.g., arXiv) to obtain paper metadata, enabling metadata-based filtering during retrieval</li>
+            <li>Using PyMuPDF to split text at different granularities (pages, sections, fixed-length tokens)</li>
+            <li>Leveraging OCR models (MinerU) to extract tables, figures, and other visual elements</li>
+            <li>Employing LLMs/VLMs to generate concise summaries of parsed texts, tables, and images</li>
+          </ol>
+          <p>
+            All extracted elements are populated into the symbolic DB. The DB schema is carefully designed in advance to capture the rich structure of PDF documents.
+          </p>
+        </div>
+  
+        <div id="encoding" class="method-content">
+          <p>
+            The multimodal vector encoding process transforms structured database content into vector representations:
+          </p>
+          <ol style="list-style-type: decimal; padding-left: 1.5rem;">
+            <li>Labeling columns suitable for vectorization (e.g., long text summaries, image bounding boxes)</li>
+            <li>Encoding models of both modalities to vectorize text snippets or cropped images</li>
+            <li>Creating a one-to-one mapping between database cells and vector entries, supplemented with metadata for efficient retrieval</li>
+          </ol>
+          <p>
+            This stage enables semantic search capabilities while maintaining the connection to the structured database.
+          </p>
+        </div>
+  
+        <div id="interaction" class="method-content">
+          <p>
+            The iterative agent interaction process enables dynamic interaction with both the database and vectorstore through five parameterized actions:
+          </p>
+          <ul>
+            <li><strong>RetrieveFromVectorstore:</strong> Dynamic neural retrieval with customizable parameters (query, collection, filters) for semantic search</li>
+            <li><strong>RetrieveFromDatabase:</strong> Symbolic retrieval through SQL queries, enabling precise structured data access</li>
+            <li><strong>ViewImage:</strong> Extracting and analyzing specific regions of PDF pages using bounding box coordinates</li>
+            <li><strong>CalculateExpr:</strong> Mathematical computation for handling numerical questions and reducing hallucination</li>
+            <li><strong>GenerateAnswer:</strong> Terminal action that produces the final answer when sufficient context is gathered</li>
+          </ul>
+          <p>
+            The agent follows a thought, action, and observation loop until it can confidently generate an answer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Task Demonstration</h2>
+      <md-block>
+        We demonstrate NeuSym-RAG's capabilities through the AirQA-Real dataset, showing how the agent processes questions, retrieves information, and generates answers.
+        For more exmaples, please refer to the [<b>Task Viewer</b>](explorer.html) page.
+      </md-block>
+
+      <div class="tabs">
+        <ul>
+          <li class="is-active"><a data-tab="Data Format">Data Format</a></li>
+          <li><a data-tab="Prompt">Prompt</a></li>
+          <li><a data-tab="Interaction">Interaction</a></li>
+          <li><a data-tab="Evaluation">Evaluation</a></li>
+        </ul>
+      </div>
+
+      <div class="lib_examples" title="Data Format">
+        <md-block>
+          <b>The data format of AirQA-Real is as follows:</b>
+          <div>
+            <span class="field-tag">uuid</span>
+            <span class="field-desc">Unique identifier for each question instance.</span>
+          </div>
+          <div>
+            <span class="field-tag">question</span>
+            <span class="field-desc">The natural language question about a PDF or set of PDFs.</span>
+          </div>
+          <div>
+            <span class="field-tag">answer_format</span>
+            <span class="field-desc">Specifies the required format for the answer (e.g., list, string, number).</span>
+          </div>
+          <div>
+            <span class="field-tag">tags</span>
+            <span class="field-desc">Labels describing the question type, content modality, and evaluation genre.</span>
+          </div>
+          <div>
+            <span class="field-tag">anchor_pdf</span>
+            <span class="field-desc">The PDF(s) that must be referenced to answer the question.</span>
+          </div>
+          <div>
+            <span class="field-tag">reference_pdf</span>
+            <span class="field-desc">Additional PDF(s) that may be used for context.</span>
+          </div>
+          <div>
+            <span class="field-tag">conference</span>
+            <span class="field-desc">Conference(s) and year(s) related to the question or source paper(s).</span>
+          </div>
+          <div>
+            <span class="field-tag">evaluator</span>
+            <span class="field-desc">The evaluation function and parameters used to assess the answer.</span>
+          </div>
+          <div>
+            <span class="field-tag">state</span>
+            <span class="field-desc">The status of the question if directly answered by some LLM services.</span>
+          </div>
+          <div>
+            <span class="field-tag">annotator</span>
+            <span class="field-desc">The human annotator who created the question or the source dataset of the question.</span>
+          </div>
+        </md-block>
+      </div>
+
+      <div class="lib_examples" title="Prompt">
+        <md-block>
+          <div class="prompt-block">
+            <span class="prompt-tag">[System Prompt]</span>
+            <div class="prompt-desc">Defines the agent's role and describes the task to tackle, clarifying the context of the task.</div>
+            <div class="prompt-content">You are an intelligent agent with expertise in retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search and answering user questions. You will be given a natural language question concerning PDF files, along with the schema of both the database and the vectorstore. Your ultimate goal is to answer the input question with pre-defined answer format. The DuckDB database contains all parsed content of raw PDF files, while the Milvus vectorstore encodes specific column cells from the database as vectors. You can predict executable actions, interact with the hybrid environment (including database and vectorstore) across multiple turns, and retrieve necessary context until you are confident in resolving the question.</div>
+          </div>
+          <div class="prompt-block">
+            <span class="prompt-tag">[Action and Observation Space Prompt]</span>
+            <div class="prompt-desc">Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type.</div>
+            <div class="prompt-content">All allowable action types include ['RetrieveFromDatabase', 'RetrieveFromVectorstore', 'CalculateExpr', 'ViewImage', 'GenerateAnswer']. Here is the detailed specification in MARKDOWN format...</div>
+          </div>
+          <div class="prompt-block">
+            <span class="prompt-tag">[Interaction Framework Prompt]</span>
+            <div class="prompt-desc">Outlines the main interaction procedure and template.</div>
+            <div class="prompt-content">The main interaction procedure proceeds like this:
+              <br>
+              [Thought]: ... reasoning process, why to take this action ...
+              <br>
+              [Action]: ... which action to take, please strictly conform to the action specification ...
+              <br>
+              [Observation]: ... execution results or error message after taking the action ...
+              <br>
+              In general, the main interaction loop consists of an interleaved of triplets ([Thought], [Action], [Observation]), except the last GenerateAnswer action which does not have [Observation]. You need to predict the [Thought] followed by the [Action] for each turn, and we will execute your action in the environment and provide the [Observation] for the previous action.</div>
+          </div>
+          <div class="prompt-block">
+            <span class="prompt-tag">[Hint Prompt]</span>
+            <div class="prompt-desc">Provides hints or suggestions to help the agent refine its planning and reasoning process.</div>
+            <div class="prompt-content">1. Explore multiple retrieval strategies. For example... 2. Combine both structured and unstructured data. Concretely... 3. Iterate and refine... 4. Ensure confidence. That is, only make a final decision when you are confident that the retrieved information fully addresses the user's query. Remember that, for each question, you only have 20 interaction turns at most. Now, let's start!</div>
+          </div>
+          <div class="prompt-block">
+            <span class="prompt-tag">[Task Prompt]</span>
+            <div class="prompt-desc">Defines the task input, including the input question, required answer format, and relevant schemas.</div>
+            <div class="prompt-content">[Question], [Answer Format], [Anchor PDF], [Reference PDF], [Conference], [Database Schema], [Vectorstore Schema]</div>
+          </div>
+        </md-block>
+      </div>
+
+      <div class="lib_examples" title="Interaction">
+        <md-block>
+          <ul>
+            <li>The agent receives a question and relevant context (schemas, PDFs, etc.).</li>
+            <li>It enters a loop of <b>Thought → Action → Observation</b>:</li>
+            <ul>
+              <li><b>Thought</b>: The agent reasons about what to do next.</li>
+              <li><b>Action</b>: The agent issues a retrieval or answer-generation command.</li>
+              <li><b>Observation</b>: The environment returns results or feedback.</li>
+            </ul>
+            <li>This loop continues, possibly across multiple turns, until the agent is confident enough to output the final answer using <b>GenerateAnswer</b>.</li>
+          </ul>
+        </md-block>
+      </div>
+
+      <div class="lib_examples" title="Evaluation">
+        <md-block>
+          NeuSym-RAG implements instance-specific, execution-based evaluation through 18 carefully designed evaluation functions with optional parameters. These functions are categorized as either subjective or objective, depending on whether they involve judgment from LLMs. For more details about the evaluation framework and available metrics, please visit our <a href="https://github.com/X-LANCE/NeuSym-RAG/tree/main/evaluation" target="_blank">evaluation repository</a>.
+        </md-block>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Data and Experiment</h2>
+      
+      <!-- Dataset Description -->
+      <h3 class="title is-4" style="margin-top: 40px;">Datasets</h3>
+      <div class="dataset-card">
+        <div class="dataset-header">
+          <h4 class="dataset-title">AirQA-Real</h4>
+          <md-block class="dataset-description">
+            A human-labeled Q&A dataset on AI research papers, featuring complex questions that require understanding of text, tables, images, formulas, and metadata. The dataset includes 553 questions apanning across 3 types, annotated by 16 researchers.
+          </md-block>
+        </div>
+        
+        <div class="dataset-stats">
+          <div class="stat-item">
+            <div class="stat-label">Total Questions</div>
+            <div class="stat-value">553</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Types</div>
+            <div class="stat-value">3</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Categories</div>
+            <div class="stat-value">5</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Evaluation Genres</div>
+            <div class="stat-value">2</div>
+          </div>
+        </div>
+
+        <div class="task-types">
+          <span class="task-type">Single-doc details</span>
+          <span class="task-type">Multi-doc analysis</span>
+          <span class="task-type">Paper retrieval</span>
+        </div>
+
+        <div class="dataset-categories">
+          <span class="category-tag">Text</span>
+          <span class="category-tag">Table</span>
+          <span class="category-tag">Image</span>
+          <span class="category-tag">Formula</span>
+          <span class="category-tag">Metadata</span>
+        </div>
+
+        <div class="dataset-evaluation">
+          <div class="evaluation-item">
+            <div class="evaluation-genre">hard-coding objective metrics</div>
+            <div class="evaluation-genre">LLM-based subjective assessment</div>
+          </div>
+        </div>
+
+        <div class="dataset-header">
+          <h4 class="dataset-title">Other Benchmarks</h4>
+          <md-block class="dataset-description">
+            M3SciQA and SciDQA are two other benchmarks that we converted to the same format as AirQA-Real to evaluate the performance of NeuSym-RAG.
+          </md-block>
+        </div>
+        <div class="dataset-stats">
+          <div class="stat-item">
+            <div class="stat-label">452 test samples</div>
+            <div class="stat-value">M3SciQA</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">2,937 test samples</div>
+            <div class="stat-value">SciDQA</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experiment Results -->
+      <h3 class="title is-4" style="margin-top: 40px;">Experiment Results</h3>
+      <div class="content has-text-justified" style="margin-bottom: 1em;">
+        <p>
+          <b>Main Results.</b> We evaluate NeuSym-RAG and Classic-RAG on three full-PDF QA datasets using various LLMs. NeuSym-RAG consistently outperforms Classic-RAG across all datasets and models. Notably:
+        </p>
+        <div>
+          <div class="table-wrapper">
+            <table class="results-table">
+              <colgroup>
+                <col class="col-model">
+                <col class="col-airqa-text">
+                <col class="col-airqa-table">
+                <col class="col-airqa-image">
+                <col class="col-airqa-formula">
+                <col class="col-airqa-metadata">
+                <col class="col-airqa-avg">
+                <col class="col-m3sciqa-table">
+                <col class="col-m3sciqa-image">
+                <col class="col-m3sciqa-avg">
+                <col class="col-scidqa-table">
+                <col class="col-scidqa-image">
+                <col class="col-scidqa-formula">
+                <col class="col-scidqa-avg">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="col-model" rowspan="2">Model</th>
+                  <th colspan="6">AirQA-Real</th>
+                  <th colspan="3">M3SciQA</th>
+                  <th colspan="4">SciDQA</th>
+                </tr>
+                <tr>
+                  <th class="col-airqa-text">text</th>
+                  <th class="col-airqa-table">table</th>
+                  <th class="col-airqa-image">image</th>
+                  <th class="col-airqa-formula">formula</th>
+                  <th class="col-airqa-metadata">metadata</th>
+                  <th class="col-airqa-avg">AVG</th>
+                  <th class="col-m3sciqa-table">table</th>
+                  <th class="col-m3sciqa-image">image</th>
+                  <th class="col-m3sciqa-avg">AVG</th>
+                  <th class="col-scidqa-table">table</th>
+                  <th class="col-scidqa-image">image</th>
+                  <th class="col-scidqa-formula">formula</th>
+                  <th class="col-scidqa-avg">AVG</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Classic-RAG Group -->
+                <tr class="model-group">
+                  <td class="col-model" colspan="14">Classic-RAG</td>
+                </tr>
+                <!-- GPT-4o-mini -->
+                <tr>
+                  <td class="col-model">GPT-4o-mini</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">12.3</td>
+                  <td class="col-airqa-table">11.9</td>
+                  <td class="col-airqa-image">12.5</td>
+                  <td class="col-airqa-formula">16.7</td>
+                  <td class="col-airqa-metadata">13.6</td>
+                  <td class="col-airqa-avg">13.4</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">17.9</td>
+                  <td class="col-m3sciqa-image">10.6</td>
+                  <td class="col-m3sciqa-avg">15.6</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">59.4</td>
+                  <td class="col-scidqa-image">60.4</td>
+                  <td class="col-scidqa-formula">59.3</td>
+                  <td class="col-scidqa-avg">59.8</td>
+                </tr>
+                <!-- GPT-4V -->
+                <tr>
+                  <td class="col-model">GPT-4V</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">13.2</td>
+                  <td class="col-airqa-table">13.9</td>
+                  <td class="col-airqa-image">10.0</td>
+                  <td class="col-airqa-formula">13.9</td>
+                  <td class="col-airqa-metadata">13.6</td>
+                  <td class="col-airqa-avg">14.7</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">12.1</td>
+                  <td class="col-m3sciqa-image">8.8</td>
+                  <td class="col-m3sciqa-avg">11.1</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">56.6</td>
+                  <td class="col-scidqa-image">56.8</td>
+                  <td class="col-scidqa-formula">58.1</td>
+                  <td class="col-scidqa-avg">57.4</td>
+                </tr>
+                <!-- Llama-3.3-70B-Instruct -->
+                <tr>
+                  <td class="col-model">Llama-3.3-70B-Instruct</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">8.7</td>
+                  <td class="col-airqa-table">7.9</td>
+                  <td class="col-airqa-image">9.5</td>
+                  <td class="col-airqa-formula">16.7</td>
+                  <td class="col-airqa-metadata">0.0</td>
+                  <td class="col-airqa-avg">10.0</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">12.7</td>
+                  <td class="col-m3sciqa-image">8.1</td>
+                  <td class="col-m3sciqa-avg">11.3</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">56.8</td>
+                  <td class="col-scidqa-image">58.8</td>
+                  <td class="col-scidqa-formula">58.9</td>
+                  <td class="col-scidqa-avg">58.0</td>
+                </tr>
+                <!-- Qwen2.5-VL-72B-Instruct -->
+                <tr>
+                  <td class="col-model">Qwen2.5-VL-72B-Instruct</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">9.6</td>
+                  <td class="col-airqa-table">5.9</td>
+                  <td class="col-airqa-image">11.9</td>
+                  <td class="col-airqa-formula">11.1</td>
+                  <td class="col-airqa-metadata">13.6</td>
+                  <td class="col-airqa-avg">10.5</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">11.6</td>
+                  <td class="col-m3sciqa-image">11.6</td>
+                  <td class="col-m3sciqa-avg">11.6</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">54.8</td>
+                  <td class="col-scidqa-image">56.9</td>
+                  <td class="col-scidqa-formula">56.3</td>
+                  <td class="col-scidqa-avg">56.2</td>
+                </tr>
+                <!-- DeepSeek-R1 -->
+                <tr>
+                  <td class="col-model">DeepSeek-R1</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">11.7</td>
+                  <td class="col-airqa-table">13.9</td>
+                  <td class="col-airqa-image">9.5</td>
+                  <td class="col-airqa-formula">30.6</td>
+                  <td class="col-airqa-metadata">9.1</td>
+                  <td class="col-airqa-avg">13.9</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">11.9</td>
+                  <td class="col-m3sciqa-image">9.5</td>
+                  <td class="col-m3sciqa-avg">11.2</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">63.9</td>
+                  <td class="col-scidqa-image">61.3</td>
+                  <td class="col-scidqa-formula">61.7</td>
+                  <td class="col-scidqa-avg">62.4</td>
+                </tr>
+                <!-- NeuSym-RAG Group -->
+                <tr class="model-group">
+                  <td class="col-model" colspan="14">NeuSym-RAG</td>
+                </tr>
+                <!-- GPT-4o-mini -->
+                <tr>
+                  <td class="col-model">GPT-4o-mini</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">33.0</td>
+                  <td class="col-airqa-table">12.9</td>
+                  <td class="col-airqa-image">11.9</td>
+                  <td class="col-airqa-formula">19.4</td>
+                  <td class="col-airqa-metadata">18.2</td>
+                  <td class="col-airqa-avg">30.7</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">18.7</td>
+                  <td class="col-m3sciqa-image">16.6</td>
+                  <td class="col-m3sciqa-avg">18.0</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">63.0</td>
+                  <td class="col-scidqa-image">63.6</td>
+                  <td class="col-scidqa-formula">62.5</td>
+                  <td class="col-scidqa-avg">63.0</td>
+                </tr>
+                <!-- GPT-4V -->
+                <tr>
+                  <td class="col-model">GPT-4V</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">38.9</td>
+                  <td class="col-airqa-table highlight">18.8</td>
+                  <td class="col-airqa-image highlight">23.8</td>
+                  <td class="col-airqa-formula highlight">38.9</td>
+                  <td class="col-airqa-metadata highlight">27.3</td>
+                  <td class="col-airqa-avg">37.3</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">13.7</td>
+                  <td class="col-m3sciqa-image">13.4</td>
+                  <td class="col-m3sciqa-avg">13.6</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">62.6</td>
+                  <td class="col-scidqa-image">63.5</td>
+                  <td class="col-scidqa-formula">63.2</td>
+                  <td class="col-scidqa-avg">63.1</td>
+                </tr>
+                <!-- Llama-3.3-70B-Instruct -->
+                <tr>
+                  <td class="col-model">Llama-3.3-70B-Instruct</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">30.6</td>
+                  <td class="col-airqa-table">11.9</td>
+                  <td class="col-airqa-image">16.7</td>
+                  <td class="col-airqa-formula">16.7</td>
+                  <td class="col-airqa-metadata highlight">27.3</td>
+                  <td class="col-airqa-avg">29.3</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table highlight">26.3</td>
+                  <td class="col-m3sciqa-image">17.6</td>
+                  <td class="col-m3sciqa-avg highlight">23.6</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">55.5</td>
+                  <td class="col-scidqa-image">57.3</td>
+                  <td class="col-scidqa-formula">56.6</td>
+                  <td class="col-scidqa-avg">56.4</td>
+                </tr>
+                <!-- Qwen2.5-VL-72B-Instruct -->
+                <tr>
+                  <td class="col-model">Qwen2.5-VL-72B-Instruct</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text highlight">43.4</td>
+                  <td class="col-airqa-table">15.8</td>
+                  <td class="col-airqa-image">11.9</td>
+                  <td class="col-airqa-formula">25.0</td>
+                  <td class="col-airqa-metadata highlight">27.3</td>
+                  <td class="col-airqa-avg highlight">39.6</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">20.2</td>
+                  <td class="col-m3sciqa-image highlight">22.7</td>
+                  <td class="col-m3sciqa-avg">21.1</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">60.2</td>
+                  <td class="col-scidqa-image">60.6</td>
+                  <td class="col-scidqa-formula">61.8</td>
+                  <td class="col-scidqa-avg">60.5</td>
+                </tr>
+                <!-- DeepSeek-R1 -->
+                <tr>
+                  <td class="col-model">DeepSeek-R1</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">33.2</td>
+                  <td class="col-airqa-table">16.8</td>
+                  <td class="col-airqa-image">11.9</td>
+                  <td class="col-airqa-formula">27.8</td>
+                  <td class="col-airqa-metadata">18.2</td>
+                  <td class="col-airqa-avg">32.4</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">19.0</td>
+                  <td class="col-m3sciqa-image">13.7</td>
+                  <td class="col-m3sciqa-avg">17.4</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table highlight">64.3</td>
+                  <td class="col-scidqa-image highlight">64.6</td>
+                  <td class="col-scidqa-formula highlight">63.9</td>
+                  <td class="col-scidqa-avg highlight">64.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <ul style="margin-left:1.2em;">
+          <li><b>1)</b> NeuSym-RAG achieves significant improvements over Classic-RAG for all LLMs, benefiting from more flexible actions and iterative retrieval.</li>
+          <li><b>2)</b> Vision-language models (VLMs) excel in tasks requiring image understanding, such as M3SciQA.</li>
+          <li><b>3)</b> Strong open-source LLMs (e.g., Qwen2.5-VL-72B-Instruct) can even surpass closed-source models in this complex agentic QA setting.</li>
+        </ul>
+        <p style="margin-top:0.5em;">These results highlight the universality and robustness of NeuSym-RAG for PDF-based question answering.</p>
+      </div>
+
+      
+      
+      <div class="content has-text-justified" style="margin:2.5em 0 1em 0;">
+        <p>
+          <b>Method Ablation.</b> To further analyze the contribution of each component, we compare NeuSym-RAG with a series of structured agent baselines. The illustration below summarizes all baselines compared in the ablation study, differing in retrieval paradigm, multi-view support, and whether iterative interaction is allowed.
+        </p>
+        <div style="text-align:center;margin:1em 0 1.5em 0;">
+          <img src="static/images/baseline.png" alt="Baselines Illustration" style="max-width:90%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:0.5em;">
+          <div style="color:#555;font-size:0.98em;">Illustration of all baseline agent methods compared in the ablation study. </div>
+        </div>
+        <p style="margin-top:0.5em;">The detailed results are shown in the table below.</p>
+        <div>
+          <div class="table-wrapper">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th rowspan="2">Method</th>
+                  <th class="col-neural group-1" style="min-width: 80px;">Neural</th>
+                  <th class="col-symbolic group-1">Symbolic</th>
+                  <th class="col-multiview group-1">Multi-view</th>
+                  <th class="col-interaction group-1"># Interaction(s)</th>
+                  <th class="group-2">sgl.</th>
+                  <th class="group-2">multi.</th>
+                  <th class="group-2">retr.</th>
+                  <th class="group-2">subj.</th>
+                  <th class="col-obj group-2">obj.</th>
+                  <th class="group-3">AVG</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Question only</td><td rowspan="3" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="3" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="3" class="group-1 group-1-end" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td>1</td><td>5.7</td><td>8.0</td><td>0.4</td><td>9.4</td><td class="col-obj group-2 group-2-end"  >2.7</td><td>4.0</td></tr>
+                <tr><td>Title + Abstract</td><td>1</td><td>5.7</td><td>14.0</td><td>0.0</td><td>13.1</td><td class="col-obj group-2 group-2-end">3.6</td><td>5.4</td></tr>
+                <tr><td>Full-text w/. cutoff</td><td>1</td><td>28.3</td><td>10.7</td><td>0.4</td><td>26.2</td><td class="col-obj group-2 group-2-end">7.6</td><td>11.2</td></tr>
+                <tr><td>Classic RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td>1</td><td>18.2</td><td>4.0</td><td>9.4</td><td>8.4</td><td class="col-obj group-2 group-2-end">11.0</td><td>10.5</td></tr>
+                <tr><td>Iterative Classic RAG</td><td>&ge;2</td><td>8.2</td><td>10.0</td><td>15.2</td><td>5.6</td><td class="col-obj group-2 group-2-end">13.2</td><td>11.8</td></tr>
+                <tr><td>Two-stage Neu-RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td>2</td><td>19.5</td><td>10.0</td><td>5.3</td><td>15.9</td><td class="col-obj group-2 group-2-end">9.4</td><td>10.7</td></tr>
+                <tr><td>Iterative Neu-RAG</td><td>&ge;2</td><td class="bold">37.7</td><td>18.7</td><td>48.4</td><td class="bold">32.7</td><td class="col-obj group-2 group-2-end">38.3</td><td>37.3</td></tr>
+                <tr><td>Graph-RAG</td><td class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td>2</td><td>22.2</td><td>11.1</td><td>0.0</td><td>21.1</td><td class="col-obj group-2 group-2-end">11.5</td><td>15.6</td></tr>
+                <tr><td>Two-stage Sym-RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #27ae60; font-size: 1.3em;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td>2</td><td>12.2</td><td>5.4</td><td>9.4</td><td>10.6</td><td class="col-obj group-2 group-2-end">8.7</td><td>9.1</td></tr>
+                <tr><td>Iterative Sym-RAG</td><td>&ge;2</td><td>32.1</td><td>14.7</td><td>33.6</td><td>27.1</td><td class="col-obj group-2 group-2-end">28.3</td><td>28.0</td></tr>
+                <tr><td>Hybrid-RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #27ae60; font-size: 1.3em;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td>2</td><td>23.3</td><td>9.3</td><td>5.7</td><td>16.8</td><td class="col-obj group-2 group-2-end">10.5</td><td>11.8</td></tr>
+                <tr><td class="bold">NeuSym-RAG(Ours)</td><td>&ge;2</td><td>28.3</td><td class="bold group-2">32.3</td><td class="bold group-2">58.2</td><td class="group-2">27.1</td><td class="bold col-obj group-2 group-2-end">42.6</td><td class="bold group-3">39.6</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <ul style="margin-left:1.2em;">
+          <li><b>1)</b> Two-stage Neu-RAG outperforms Classic-RAG, and Hybrid-RAG achieves further gains by combining neural and symbolic retrieval.</li>
+          <li><b>2)</b> Iterative retrieval (multi-turn) is superior to two-stage (single-turn), as agents can explore and adaptively select the most relevant context.</li>
+          <li><b>3)</b> As the number of interactions increases, objective scores rise faster than subjective scores, indicating more rational answer generation.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Citation</h2>
+      <pre><code>@misc{cao2025neusymraghybridneuralsymbolic,
+        title={NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering}, 
+        author={Ruisheng Cao and Hanchong Zhang and Tiancheng Huang and Zhangyi Kang and Yuxin Zhang and Liangtai Sun and Hanqi Li and Yuxun Miao and Shuai Fan and Lu Chen and Kai Yu},
+        year={2025},
+        eprint={2505.19754},
+        archivePrefix={arXiv},
+        primaryClass={cs.CL},
+        url={https://arxiv.org/abs/2505.19754}, 
+      }</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          This website is maintained by the NeuSym-RAG team.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Method Section Tabs
+    document.querySelectorAll('.method-tabs a').forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        // Remove active class from all tabs and contents
+        document.querySelectorAll('.method-tabs li').forEach(li => li.classList.remove('is-active'));
+        document.querySelectorAll('.method-content').forEach(content => content.classList.remove('is-active'));
+        
+        // Add active class to clicked tab and corresponding content
+        e.target.parentElement.classList.add('is-active');
+        const contentId = e.target.getAttribute('data-tab');
+        document.getElementById(contentId).classList.add('is-active');
+      });
+    });
+
+    // Dataset Tabs
+    document.querySelectorAll('.dataset-tabs a').forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = tab.getAttribute('data-dataset');
+        
+        // Update active tab
+        document.querySelectorAll('.dataset-tabs li').forEach(li => li.classList.remove('is-active'));
+        tab.parentElement.classList.add('is-active');
+        
+        // Show target content
+        document.querySelectorAll('.results-content').forEach(content => {
+          content.classList.remove('is-active');
+        });
+        document.getElementById(targetId).classList.add('is-active');
+      });
+    });
+
+    // Task Demonstration Tabs
+    document.querySelectorAll('.example_lst1 li').forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        const tabTitle = e.target.innerText;
+        
+        // Update active tab
+        document.querySelectorAll('.example_lst1 li').forEach(li => {
+          li.classList.toggle('is-active', li.querySelector('a').innerText === tabTitle);
+        });
+        
+        // Show corresponding content
+        document.querySelectorAll('.lib_examples').forEach(content => {
+          if (content.id.includes('Task')) {
+            content.style.display = content.title === tabTitle ? 'block' : 'none';
+          }
+        });
+      });
+    });
+
+    // Add smooth scrolling for table container
+    document.querySelectorAll('.results-content').forEach(content => {
+      content.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+          e.preventDefault();
+          content.scrollLeft += e.deltaY;
+        }
+      });
+    });
+
+    // Add hover effect for table rows
+    document.querySelectorAll('.results-table tr').forEach(row => {
+      row.addEventListener('mouseenter', () => {
+        row.style.transition = 'background-color 0.2s ease';
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Tab switching functionality
+      const tabLinks = document.querySelectorAll('.tabs a[data-tab]');
+      const tabContents = document.querySelectorAll('.lib_examples');
+
+      tabLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          // Remove active class from all tabs
+          tabLinks.forEach(l => l.parentElement.classList.remove('is-active'));
+          // Add active class to clicked tab
+          link.parentElement.classList.add('is-active');
+
+          // Hide all tab contents
+          tabContents.forEach(content => content.style.display = 'none');
+          
+          // Show selected tab content
+          const targetId = link.getAttribute('data-tab');
+          const targetContent = document.querySelector(`.lib_examples[title="${targetId}"]`);
+          if (targetContent) {
+            targetContent.style.display = 'block';
+          }
+        });
+      });
+    });
+
+    // Simple markdown to HTML: **bold**, - list, \n to <br>
+    function simpleMarkdownToHtml(md) {
+      let html = md
+        .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
+        .replace(/\n|\\n|\r\n/g, '<br>');
+      // unordered list: lines starting with -
+      if (/^- /m.test(md)) {
+        html = html.replace(/(?:^|<br>)- (.*?)(?=<br>|$)/g, function(_, item) {
+          return '<li>' + item + '</li>';
+        });
+        // wrap <li> in <ul>
+        html = html.replace(/(<li>[\s\S]*<\/li>)/g, '<ul>$1</ul>');
+      }
+      return html;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.prompt-content').forEach(function(block) {
+        // Convert markdown to HTML
+        const raw = block.textContent;
+        const html = simpleMarkdownToHtml(raw);
+        block.innerHTML = html;
+        // Two-line truncation logic
+        // Split by <br> or auto line breaks
+        const temp = document.createElement('div');
+        temp.style.position = 'absolute';
+        temp.style.visibility = 'hidden';
+        temp.style.width = block.offsetWidth + 'px';
+        temp.innerHTML = html;
+        document.body.appendChild(temp);
+        // Get all line break positions
+        let lines = [];
+        let childNodes = Array.from(temp.childNodes);
+        let lineCount = 0;
+        let htmlSoFar = '';
+        for (let i = 0; i < childNodes.length && lineCount < 2; i++) {
+          const node = childNodes[i];
+          if (node.nodeType === 3) { // text
+            let text = node.textContent;
+            // Split by \n or wrap
+            let textLines = text.split(/\n/);
+            for (let j = 0; j < textLines.length && lineCount < 2; j++) {
+              htmlSoFar += textLines[j];
+              if (j < textLines.length - 1) {
+                htmlSoFar += '<br>';
+                lineCount++;
+              }
+            }
+          } else if (node.nodeType === 1 && node.tagName === 'BR') {
+            htmlSoFar += '<br>';
+            lineCount++;
+          } else if (node.nodeType === 1 && node.tagName === 'UL') {
+            // For lists, count each <li> as a line
+            let lis = node.querySelectorAll('li');
+            for (let k = 0; k < lis.length && lineCount < 2; k++) {
+              htmlSoFar += '<ul><li>' + lis[k].innerHTML + '</li></ul>';
+              lineCount++;
+            }
+          } else {
+            htmlSoFar += node.outerHTML;
+          }
+        }
+        document.body.removeChild(temp);
+        // If more than 2 lines, show truncated with Show more
+        if (lineCount >= 2 || html.length > htmlSoFar.length) {
+          block.innerHTML = htmlSoFar + '...';
+          const showMore = document.createElement('span');
+          showMore.className = 'show-more-link';
+          showMore.textContent = 'Show more';
+          showMore.onclick = function() {
+            if (block.classList.contains('expanded')) {
+              block.classList.remove('expanded');
+              block.innerHTML = htmlSoFar + '...';
+              block.appendChild(showMore);
+              showMore.textContent = 'Show more';
+            } else {
+              block.classList.add('expanded');
+              block.innerHTML = html;
+              block.appendChild(showMore);
+              showMore.textContent = 'Show less';
+            }
+          };
+          block.appendChild(showMore);
+        } else {
+          block.innerHTML = html;
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

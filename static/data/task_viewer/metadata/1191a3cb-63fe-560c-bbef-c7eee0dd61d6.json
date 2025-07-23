@@ -1,0 +1,27 @@
+{
+    "uuid": "1191a3cb-63fe-560c-bbef-c7eee0dd61d6",
+    "title": "USSA: A Unified Table Filling Scheme for Structured Sentiment Analysis",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2023,
+    "volume": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zhai-etal-2023-ussa,\n    title = \"{USSA}: A Unified Table Filling Scheme for Structured Sentiment Analysis\",\n    author = \"Zhai, Zepeng  and\n      Chen, Hao  and\n      Li, Ruifan  and\n      Wang, Xiaojie\",\n    editor = \"Rogers, Anna  and\n      Boyd-Graber, Jordan  and\n      Okazaki, Naoaki\",\n    booktitle = \"Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = jul,\n    year = \"2023\",\n    address = \"Toronto, Canada\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.acl-long.802\",\n    doi = \"10.18653/v1/2023.acl-long.802\",\n    pages = \"14340--14353\",\n    abstract = \"Most previous studies on Structured Sentiment Analysis (SSA) have cast it as a problem of bi-lexical dependency parsing, which cannot address issues of overlap and discontinuity simultaneously. In this paper, we propose a niche-targeting and effective solution. Our approach involves creating a novel bi-lexical dependency parsing graph, which is then converted to a unified 2D table-filling scheme, namely USSA. The proposed scheme resolves the kernel bottleneck of previous SSA methods by utilizing 13 different types of relations. In addition, to closely collaborate with the USSA scheme, we have developed a model that includes a proposed bi-axial attention module to effectively capture the correlations among relations in the rows and columns of the table. Extensive experimental results on benchmark datasets demonstrate the effectiveness and robustness of our proposed framework, outperforming state-of-the-art methods consistently.\",\n}\n",
+    "authors": [
+        "Zepeng Zhai",
+        "Hao Chen",
+        "Ruifan Li",
+        "Xiaojie Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.acl-long.802.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2023/1191a3cb-63fe-560c-bbef-c7eee0dd61d6.pdf",
+    "abstract": "Most previous studies on Structured Sentiment Analysis (SSA) have cast it as a problem of bi-lexical dependency parsing, which cannot address issues of overlap and discontinuity simultaneously. In this paper, we propose a niche-targeting and effective solution. Our approach involves creating a novel bi-lexical dependency parsing graph, which is then converted to a unified 2D table-filling scheme, namely USSA. The proposed scheme resolves the kernel bottleneck of previous SSA methods by utilizing 13 different types of relations. In addition, to closely collaborate with the USSA scheme, we have developed a model that includes a proposed bi-axial attention module to effectively capture the correlations among relations in the rows and columns of the table. Extensive experimental results on benchmark datasets demonstrate the effectiveness and robustness of our proposed framework, outperforming state-of-the-art methods consistently.",
+    "num_pages": 14,
+    "tldr": "Unified table filling scheme improves structured sentiment analysis accuracy.",
+    "tags": [
+        "Structured Sentiment Analysis",
+        "Table Filling Scheme",
+        "Bi-lexical Dependency Parsing",
+        "Bi-axial Attention Module",
+        "Relation Correlations"
+    ]
+}

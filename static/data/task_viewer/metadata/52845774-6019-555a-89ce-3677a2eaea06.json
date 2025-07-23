@@ -1,0 +1,28 @@
+{
+    "uuid": "52845774-6019-555a-89ce-3677a2eaea06",
+    "title": "Retrieve Anything To Augment Large Language Models",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Peitian Zhang",
+        "Shitao Xiao",
+        "Zheng Liu",
+        "Zhicheng Dou",
+        "Jian-Yun Nie"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2310.07554v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/52845774-6019-555a-89ce-3677a2eaea06.pdf",
+    "bibtex": "@misc{zhang2023retrieveanythingtoaugmentlarge,\n    title = {Retrieve Anything To Augment Large Language Models},\n    author = {Peitian Zhang and Shitao Xiao and Zheng Liu and Zhicheng Dou and Jian-Yun Nie},\n    year = {2023},\n    eprint = {2310.07554},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.IR},\n    url = {http://arxiv.org/abs/2310.07554},\n}",
+    "abstract": "Large language models (LLMs) face significant challenges stemming from their\ninherent limitations in knowledge, memory, alignment, and action. These\nchallenges cannot be addressed by LLMs alone, but should rely on assistance\nfrom the external world, such as knowledge base, memory store, demonstration\nexamples, and tools. Retrieval augmentation stands as a vital mechanism for\nbridging the gap between LLMs and the external assistance. However,\nconventional methods encounter two pressing issues. On the one hand, the\ngeneral-purpose retrievers are not properly optimized for the retrieval\naugmentation of LLMs. On the other hand, the task-specific retrievers lack the\nrequired versatility, hindering their performance across the diverse retrieval\naugmentation scenarios.\n  In this work, we present a novel approach, the LLM-Embedder, which\ncomprehensively supports the diverse retrieval augmentation needs of LLMs with\none unified embedding model. Training such a unified model is non-trivial, as\nvarious retrieval tasks aim to capture distinct semantic relationships, often\nsubject to mutual interference. To address this challenge, we systematically\noptimize our training methodology. This includes reward formulation based on\nLLMs' feedback, the stabilization of knowledge distillation, multi-task\nfine-tuning with explicit instructions, and homogeneous in-batch negative\nsampling. These optimization strategies contribute to the outstanding empirical\nperformance of the LLM-Embedder. Notably, it yields remarkable enhancements in\nretrieval augmentation for LLMs, surpassing both general-purpose and\ntask-specific retrievers in various evaluation scenarios. Our checkpoint and\nsource code are publicly available at\nhttps://github.com/FlagOpen/FlagEmbedding.",
+    "num_pages": 16,
+    "tldr": "Unified LLM-Embedder improves LLMs' retrieval using optimized multi-task training.",
+    "tags": [
+        "retrieval augmentation",
+        "large language models",
+        "LLM-Embedder",
+        "semantic relationships",
+        "optimization strategies"
+    ]
+}

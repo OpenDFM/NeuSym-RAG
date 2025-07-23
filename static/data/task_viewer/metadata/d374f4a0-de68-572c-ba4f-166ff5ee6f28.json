@@ -1,0 +1,27 @@
+{
+    "uuid": "d374f4a0-de68-572c-ba4f-166ff5ee6f28",
+    "title": "Adversarial Diversity in Hanabi",
+    "conference_full": "International Conference on Learning Representations",
+    "conference": "ICLR",
+    "year": 2023,
+    "volume": "ICLR 2023 notable top 25%",
+    "bibtex": "@inproceedings{\ncui2023adversarial,\ntitle={Adversarial Diversity in Hanabi},\nauthor={Brandon Cui and Andrei Lupu and Samuel Sokota and Hengyuan Hu and David J Wu and Jakob Nicolaus Foerster},\nbooktitle={The Eleventh International Conference on Learning Representations },\nyear={2023},\nurl={https://openreview.net/forum?id=uLE3WF3-H_5}\n}",
+    "authors": [
+        "Brandon Cui",
+        "Andrei Lupu",
+        "Samuel Sokota",
+        "Hengyuan Hu",
+        "David J Wu",
+        "Jakob Nicolaus Foerster"
+    ],
+    "pdf_url": "https://openreview.net/pdf/87e565d42543f1efac5413ce0bdc2276e4f99253.pdf",
+    "pdf_path": "data/dataset/airqa/papers/iclr2023/d374f4a0-de68-572c-ba4f-166ff5ee6f28.pdf",
+    "num_pages": 16,
+    "abstract": "Many Dec-POMDPs admit a qualitatively diverse set of ''reasonable'' joint policies, where reasonableness is indicated by symmetry equivariance, non-sabotaging behaviour and the graceful degradation of performance when paired with ad-hoc partners. Some of the work in diversity literature is concerned with generating these policies. Unfortunately, existing methods fail to produce teams of agents that are simultaneously diverse, high performing, and reasonable. In this work, we propose a novel approach, adversarial diversity (ADVERSITY), which is designed for turn-based Dec-POMDPs with public actions. ADVERSITY relies on off-belief learning to encourage reasonableness and skill, and on ''repulsive'' fictitious transitions to encourage diversity. We use this approach to generate new agents with distinct but reasonable play styles for the card game Hanabi and open-source our agents to be used for future research on (ad-hoc) coordination.",
+    "tldr": "Introducing ADVERSITY for diverse, reasonable agent teams in Hanabi via off-belief learning.",
+    "tags": [
+        "coordination",
+        "diversity",
+        "multi-agent reinforcement learning"
+    ]
+}

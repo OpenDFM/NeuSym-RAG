@@ -1,0 +1,26 @@
+{
+    "uuid": "7d92e1d8-9216-529b-87bc-34f7508ed2b7",
+    "title": "Generative Emotion Cause Triplet Extraction in Conversations with Commonsense Knowledge",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    "bibtex": "@inproceedings{wang-etal-2023-generative-emotion,\n    title = \"Generative Emotion Cause Triplet Extraction in Conversations with Commonsense Knowledge\",\n    author = \"Wang, Fanfan  and\n      Yu, Jianfei  and\n      Xia, Rui\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2023\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-emnlp.260\",\n    doi = \"10.18653/v1/2023.findings-emnlp.260\",\n    pages = \"3952--3963\",\n    abstract = \"Emotion Cause Triplet Extraction in Conversations (ECTEC) aims to simultaneously extract emotion utterances, emotion categories, and cause utterances from conversations. However, existing studies mainly decompose the ECTEC task into multiple subtasks and solve them in a pipeline manner. Moreover, since conversations tend to contain many informal and implicit expressions, it often requires external knowledge and reasoning-based inference to accurately identify emotional and causal clues implicitly mentioned in the context, which are ignored by previous work. To address these limitations, in this paper, we propose a commonSense knowledge-enHanced generAtive fRameworK named SHARK, which formulates the ECTEC task as an index generation problem and generates the emotion-cause-category triplets in an end-to-end manner with a sequence-to-sequence model. Furthermore, we propose to incorporate both retrieved and generated commonsense knowledge into the generative model via a dual-view gate mechanism and a graph attention layer. Experimental results show that our SHARK model consistently outperforms several competitive systems on two benchmark datasets. Our source codes are publicly released at https://github.com/NUSTM/SHARK.\",\n}\n",
+    "authors": [
+        "Fanfan Wang",
+        "Jianfei Yu",
+        "Rui Xia"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-emnlp.260.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/7d92e1d8-9216-529b-87bc-34f7508ed2b7.pdf",
+    "num_pages": 12,
+    "abstract": "Emotion Cause Triplet Extraction in Conversations (ECTEC) aims to simultaneously extract emotion utterances, emotion categories, and cause utterances from conversations. However, existing studies mainly decompose the ECTEC task into multiple subtasks and solve them in a pipeline manner. Moreover, since conversations tend to contain many informal and implicit expressions, it often requires external knowledge and reasoning-based inference to accurately identify emotional and causal clues implicitly mentioned in the context, which are ignored by previous work. To address these limitations, in this paper, we propose a commonSense knowledge-enHanced generAtive fRameworK named SHARK, which formulates the ECTEC task as an index generation problem and generates the emotion-cause-category triplets in an end-to-end manner with a sequence-to-sequence model. Furthermore, we propose to incorporate both retrieved and generated commonsense knowledge into the generative model via a dual-view gate mechanism and a graph attention layer. Experimental results show that our SHARK model consistently outperforms several competitive systems on two benchmark datasets. Our source codes are publicly released at https://github.com/NUSTM/SHARK.",
+    "tldr": "SHARK enhances emotion cause triplet extraction in conversations using commonsense knowledge.",
+    "tags": [
+        "emotion cause extraction",
+        "commonsense knowledge",
+        "sequence-to-sequence model",
+        "conversational AI",
+        "generative frameworks"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "uuid": "c3936fc4-4cf3-5550-b694-4cdc10986752",
+    "title": "VoxtLM: Unified Decoder-Only Models for Consolidating Speech Recognition, Synthesis and Speech, Text Continuation Tasks",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2024,
+    "volume": "ICASSP session SS: Signal Separation",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/MaitiPCJC024,\n  author       = {Soumi Maiti and\n                  Yifan Peng and\n                  Shukjae Choi and\n                  Jee{-}Weon Jung and\n                  Xuankai Chang and\n                  Shinji Watanabe},\n  title        = {VoxtLM: Unified Decoder-Only Models for Consolidating Speech Recognition,\n                  Synthesis and Speech, Text Continuation Tasks},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing,\n                  {ICASSP} 2024, Seoul, Republic of Korea, April 14-19, 2024},\n  pages        = {13326--13330},\n  publisher    = {{IEEE}},\n  year         = {2024},\n  url          = {https://doi.org/10.1109/ICASSP48485.2024.10447112},\n  doi          = {10.1109/ICASSP48485.2024.10447112},\n  timestamp    = {Wed, 07 Aug 2024 12:26:13 +0200},\n  biburl       = {https://dblp.org/rec/conf/icassp/MaitiPCJC024.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Soumi Maiti",
+        "Yifan Peng",
+        "Shukjae Choi",
+        "Jee-Weon Jung",
+        "Xuankai Chang",
+        "Shinji Watanabe"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP48485.2024.10447112",
+    "pdf_path": "data/dataset/airqa/papers/icassp2024/c3936fc4-4cf3-5550-b694-4cdc10986752.pdf",
+    "num_pages": 5,
+    "abstract": "We propose a decoder-only language model, VoxtLM, that can perform four tasks: speech recognition, speech synthesis, text generation, and speech continuation. VoxtLM integrates text vocabulary with discrete speech tokens from self-supervised speech features and uses special tokens to enable multitask learning. Compared to a single-task model, VoxtLM exhibits a significant improvement in speech synthesis, with improvements in both speech intelligibility from 28.9 to 5.6 and objective quality from 2.68 to 3.90. VoxtLM also improves speech generation and speech recognition performance over the single-task counterpart. Further, VoxtLM is trained with publicly available data and training recipes and model checkpoints are open-sourced to make fully reproducible work.",
+    "tldr": "VoxtLM is a unified model for enhancing speech tasks and text generation.",
+    "tags": [
+        "speech recognition",
+        "speech synthesis",
+        "text generation",
+        "multitask learning",
+        "decoder-only models"
+    ]
+}

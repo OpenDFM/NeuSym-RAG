@@ -1,0 +1,25 @@
+{
+    "uuid": "bff546ba-646a-5bdf-b8e2-1f19e59d5162",
+    "title": "DIN-SQL: Decomposed In-Context Learning of Text-to-SQL with Self-Correction",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 poster",
+    "bibtex": "@inproceedings{\npourreza2023dinsql,\ntitle={{DIN}-{SQL}: Decomposed In-Context Learning of Text-to-{SQL} with Self-Correction},\nauthor={Mohammadreza Pourreza and Davood Rafiei},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=p53QDxSIc5}\n}",
+    "authors": [
+        "Mohammadreza Pourreza",
+        "Davood Rafiei"
+    ],
+    "pdf_url": "https://openreview.net/pdf/8414ae7bd036d4cb1c1511c524c7267ecfd3b2a7.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/bff546ba-646a-5bdf-b8e2-1f19e59d5162.pdf",
+    "num_pages": 10,
+    "abstract": "There is currently a significant gap between the performance of fine-tuned models and prompting approaches using Large Language Models (LLMs) on the challenging task of text-to-SQL, as evaluated on datasets such as Spider. To improve the performance of LLMs in the reasoning process, we study how decomposing the task into smaller sub-tasks can be effective. In particular, we show that breaking down the generation problem into sub-problems and feeding the solutions of those sub-problems into LLMs can be an effective approach for significantly improving their performance.  Our experiments with three LLMs show that this approach consistently improves their simple few-shot performance by roughly 10%, pushing the accuracy of LLMs towards SOTA or surpassing it. On the holdout test set of Spider, the SOTA, in terms of execution accuracy, was 79.9 and the new SOTA at the time of  this writing using our approach is 85.3. Our approach with in-context learning beats many heavily fine-tuned models by at least 5%. Additionally, when evaluated on the BIRD benchmark, our approach achieved an execution accuracy of 55.9%, setting a new SOTA on its holdout test set.",
+    "tldr": "Significantly improving the performance of in-context learning approaches on the challenging task of text-to-sql through problem decomposition",
+    "tags": [
+        "In-Context Learning",
+        "Text-to-SQL",
+        "Task Decomposition",
+        "Spider Challenge",
+        "Natural Language Interfaces to Databases"
+    ]
+}

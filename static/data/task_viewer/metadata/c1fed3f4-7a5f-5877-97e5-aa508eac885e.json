@@ -1,0 +1,32 @@
+{
+    "uuid": "c1fed3f4-7a5f-5877-97e5-aa508eac885e",
+    "title": "CERT: Continual Pre-Training on Sketches for Library-Oriented Code Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Daoguang Zan",
+        "Bei Chen",
+        "Dejian Yang",
+        "Zeqi Lin",
+        "Minsu Kim",
+        "Bei Guan",
+        "Yongji Wang",
+        "Weizhu Chen",
+        "Jian-Guang Lou"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2206.06888v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2022/c1fed3f4-7a5f-5877-97e5-aa508eac885e.pdf",
+    "bibtex": "@misc{zan2022certcontinualpretrainingonsketches,\n    title = {CERT: Continual Pre-Training on Sketches for Library-Oriented Code Generation},\n    author = {Daoguang Zan and Bei Chen and Dejian Yang and Zeqi Lin and Minsu Kim and Bei Guan and Yongji Wang and Weizhu Chen and Jian-Guang Lou},\n    year = {2022},\n    eprint = {2206.06888},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.SE},\n    url = {http://arxiv.org/abs/2206.06888},\n}",
+    "abstract": "Code generation is a longstanding challenge, aiming to generate a code\nsnippet based on a natural language description. Usually, expensive text-code\npaired data is essential for training a code generation model. Recently, thanks\nto the success of pre-training techniques, large language models are trained on\nlarge-scale unlabelled code corpora and perform well in code generation. In\nthis paper, we investigate how to leverage an unlabelled code corpus to train a\nmodel for library-oriented code generation. Since it is a common practice for\nprogrammers to reuse third-party libraries, in which case the text-code paired\ndata are harder to obtain due to the huge number of libraries. We observe that\nlibrary-oriented code snippets are more likely to share similar code sketches.\nHence, we present CERT with two steps: a sketcher generates the sketch, then a\ngenerator fills the details in the sketch. Both the sketcher and the generator\nare continually pre-trained upon a base model using unlabelled data.\nFurthermore, we craft two benchmarks named PandasEval and NumpyEval to evaluate\nlibrary-oriented code generation. Experimental results demonstrate the\nimpressive performance of CERT. For example, it surpasses the base model by an\nabsolute 15.67% improvement in terms of pass@1 on PandasEval. Our work is\navailable at https://github.com/microsoft/PyCodeGPT.",
+    "num_pages": 9,
+    "tldr": "CERT improves library-oriented code generation using continual pre-training on sketches.",
+    "tags": [
+        "code generation",
+        "continual pre-training",
+        "library-oriented programming",
+        "unlabelled code corpus",
+        "performance benchmarks"
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "uuid": "4cd8cb70-48e8-51f7-ab8c-2ee1fc05ee56",
+    "title": "BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Jwala Dhamala",
+        "Tony Sun",
+        "Varun Kumar",
+        "Satyapriya Krishna",
+        "Yada Pruksachatkun",
+        "Kai-Wei Chang",
+        "Rahul Gupta"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2101.11718v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2021/4cd8cb70-48e8-51f7-ab8c-2ee1fc05ee56.pdf",
+    "bibtex": "@misc{dhamala2021bolddatasetandmetricsfor,\n    title = {BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation},\n    author = {Jwala Dhamala and Tony Sun and Varun Kumar and Satyapriya Krishna and Yada Pruksachatkun and Kai-Wei Chang and Rahul Gupta},\n    year = {2021},\n    eprint = {2101.11718},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2101.11718},\n}",
+    "abstract": "Recent advances in deep learning techniques have enabled machines to generate\ncohesive open-ended text when prompted with a sequence of words as context.\nWhile these models now empower many downstream applications from conversation\nbots to automatic storytelling, they have been shown to generate texts that\nexhibit social biases. To systematically study and benchmark social biases in\nopen-ended language generation, we introduce the Bias in Open-Ended Language\nGeneration Dataset (BOLD), a large-scale dataset that consists of 23,679\nEnglish text generation prompts for bias benchmarking across five domains:\nprofession, gender, race, religion, and political ideology. We also propose new\nautomated metrics for toxicity, psycholinguistic norms, and text gender\npolarity to measure social biases in open-ended text generation from multiple\nangles. An examination of text generated from three popular language models\nreveals that the majority of these models exhibit a larger social bias than\nhuman-written Wikipedia text across all domains. With these results we\nhighlight the need to benchmark biases in open-ended language generation and\ncaution users of language generation models on downstream tasks to be cognizant\nof these embedded prejudices.",
+    "num_pages": 16,
+    "tldr": "BOLD benchmarks social biases in open-ended text generation using new metrics.",
+    "tags": [
+        "bias benchmarking",
+        "open-ended text generation",
+        "social biases",
+        "language models",
+        "automated metrics"
+    ]
+}

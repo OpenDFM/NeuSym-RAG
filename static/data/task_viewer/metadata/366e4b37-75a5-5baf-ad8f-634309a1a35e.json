@@ -1,0 +1,30 @@
+{
+    "uuid": "366e4b37-75a5-5baf-ad8f-634309a1a35e",
+    "title": "UKP-Athene: Multi-Sentence Textual Entailment for Claim Verification",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2019,
+    "authors": [
+        "Andreas Hanselowski",
+        "Hao Zhang",
+        "Zile Li",
+        "Daniil Sorokin",
+        "Benjamin Schiller",
+        "Claudia Schulz",
+        "Iryna Gurevych"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1809.01479v5",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2019/366e4b37-75a5-5baf-ad8f-634309a1a35e.pdf",
+    "bibtex": "@misc{hanselowski2019ukpathenemultisentencetextualentailmentfor,\n    title = {UKP-Athene: Multi-Sentence Textual Entailment for Claim Verification},\n    author = {Andreas Hanselowski and Hao Zhang and Zile Li and Daniil Sorokin and Benjamin Schiller and Claudia Schulz and Iryna Gurevych},\n    year = {2019},\n    eprint = {1809.01479},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.IR},\n    url = {http://arxiv.org/abs/1809.01479},\n}",
+    "abstract": "The Fact Extraction and VERification (FEVER) shared task was launched to\nsupport the development of systems able to verify claims by extracting\nsupporting or refuting facts from raw text. The shared task organizers provide\na large-scale dataset for the consecutive steps involved in claim verification,\nin particular, document retrieval, fact extraction, and claim classification.\nIn this paper, we present our claim verification pipeline approach, which,\naccording to the preliminary results, scored third in the shared task, out of\n23 competing systems. For the document retrieval, we implemented a new entity\nlinking approach. In order to be able to rank candidate facts and classify a\nclaim on the basis of several selected facts, we introduce two extensions to\nthe Enhanced LSTM (ESIM).",
+    "num_pages": 6,
+    "tldr": "UKP-Athene improves claim verification with new entity linking and ESIM extensions.",
+    "tags": [
+        "Fact verification",
+        "Textual entailment",
+        "Document retrieval",
+        "Entity linking",
+        "Enhanced LSTM"
+    ]
+}

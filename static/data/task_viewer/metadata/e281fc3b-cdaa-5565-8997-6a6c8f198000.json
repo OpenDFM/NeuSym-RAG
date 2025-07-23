@@ -1,0 +1,28 @@
+{
+    "uuid": "e281fc3b-cdaa-5565-8997-6a6c8f198000",
+    "title": "EIT: Enhanced Interactive Transformer",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zheng-etal-2024-eit,\n    title = \"{EIT}: Enhanced Interactive Transformer\",\n    author = \"Zheng, Tong  and\n      Li, Bei  and\n      Bao, Huiwen  and\n      Xiao, Tong  and\n      Zhu, JingBo\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.418\",\n    doi = \"10.18653/v1/2024.acl-long.418\",\n    pages = \"7734--7751\",\n    abstract = \"Two principles: the complementary principle and the consensus principle are widely acknowledged in the literature of multi-view learning. However, the current design of multi-head self-attention, an instance of multi-view learning, prioritizes the complementarity while ignoring the consensus. To address this problem, we propose an enhanced multi-head self-attention (EMHA). First, to satisfy the complementary principle, EMHA removes the one-to-one mapping constraint among queries and keys in multiple subspaces and allows each query to attend to multiple keys. On top of that, we develop a method to fully encourage consensus among heads by introducing two interaction models, namely inner-subspace interaction and cross-subspace interaction. Extensive experiments on a wide range of language tasks (e.g., machine translation, abstractive summarization and grammar correction, language modeling), show its superiority, with a very modest increase in model size. Our code would be available at: https://github.com/zhengkid/EIT-Enhanced-Interactive-Transformer.\",\n}\n",
+    "authors": [
+        "Tong Zheng",
+        "Bei Li",
+        "Huiwen Bao",
+        "Tong Xiao",
+        "JingBo Zhu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.418.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/e281fc3b-cdaa-5565-8997-6a6c8f198000.pdf",
+    "abstract": "Two principles: the complementary principle and the consensus principle are widely acknowledged in the literature of multi-view learning. However, the current design of multi-head self-attention, an instance of multi-view learning, prioritizes the complementarity while ignoring the consensus. To address this problem, we propose an enhanced multi-head self-attention (EMHA). First, to satisfy the complementary principle, EMHA removes the one-to-one mapping constraint among queries and keys in multiple subspaces and allows each query to attend to multiple keys. On top of that, we develop a method to fully encourage consensus among heads by introducing two interaction models, namely inner-subspace interaction and cross-subspace interaction. Extensive experiments on a wide range of language tasks (e.g., machine translation, abstractive summarization and grammar correction, language modeling), show its superiority, with a very modest increase in model size. Our code would be available at: https://github.com/zhengkid/EIT-Enhanced-Interactive-Transformer.",
+    "num_pages": 18,
+    "tldr": "Enhanced Transformer improves multi-head attention with consensus and complementarity.",
+    "tags": [
+        "multi-view learning",
+        "self-attention",
+        "consensus principle",
+        "language tasks",
+        "transformer model"
+    ]
+}

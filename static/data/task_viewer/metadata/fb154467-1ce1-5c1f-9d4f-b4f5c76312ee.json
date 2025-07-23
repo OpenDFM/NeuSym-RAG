@@ -1,0 +1,34 @@
+{
+    "uuid": "fb154467-1ce1-5c1f-9d4f-b4f5c76312ee",
+    "title": "Graph Chain-of-Thought: Augmenting Large Language Models by Reasoning on Graphs",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{jin-etal-2024-graph,\n    title = \"Graph Chain-of-Thought: Augmenting Large Language Models by Reasoning on Graphs\",\n    author = \"Jin, Bowen  and\n      Xie, Chulin  and\n      Zhang, Jiawei  and\n      Roy, Kashob Kumar  and\n      Zhang, Yu  and\n      Li, Zheng  and\n      Li, Ruirui  and\n      Tang, Xianfeng  and\n      Wang, Suhang  and\n      Meng, Yu  and\n      Han, Jiawei\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.11\",\n    doi = \"10.18653/v1/2024.findings-acl.11\",\n    pages = \"163--184\",\n    abstract = \"Large language models (LLMs), while exhibiting exceptional performance, suffer from hallucinations, especially on knowledge-intensive tasks. Existing works propose to augment LLMs with individual text units retrieved from external knowledge corpora to alleviate the issue. However, in many domains, texts are interconnected (e.g., academic papers in a bibliographic graph are linked by citations and co-authorships) which form a (text-attributed) graph. The knowledge in such graphs is encoded not only in single texts/nodes but also in their associated connections. To facilitate the research of augmenting LLMs with graphs, we manually construct a Graph Reasoning Benchmark dataset called GRBench, containing 1,740 questions that can be answered with the knowledge from 10 domain graphs. Then, we propose a simple and effective framework called Graph Chain-of-thought (Graph-CoT) to augment LLMs with graphs by encouraging LLMs to reason on the graph iteratively. Each Graph-CoT iteration consists of three sub-steps: LLM reasoning, LLM-graph interaction, and graph execution. We conduct systematic experiments with three LLM backbones on GRBench, where Graph-CoT outperforms the baselines consistently. The code is available at https://github.com/PeterGriffinJin/Graph-CoT/.\",\n}\n",
+    "authors": [
+        "Bowen Jin",
+        "Chulin Xie",
+        "Jiawei Zhang",
+        "Kashob Kumar Roy",
+        "Yu Zhang",
+        "Zheng Li",
+        "Ruirui Li",
+        "Xianfeng Tang",
+        "Suhang Wang",
+        "Yu Meng",
+        "Jiawei Han"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.11.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/fb154467-1ce1-5c1f-9d4f-b4f5c76312ee.pdf",
+    "abstract": "Large language models (LLMs), while exhibiting exceptional performance, suffer from hallucinations, especially on knowledge-intensive tasks. Existing works propose to augment LLMs with individual text units retrieved from external knowledge corpora to alleviate the issue. However, in many domains, texts are interconnected (e.g., academic papers in a bibliographic graph are linked by citations and co-authorships) which form a (text-attributed) graph. The knowledge in such graphs is encoded not only in single texts/nodes but also in their associated connections. To facilitate the research of augmenting LLMs with graphs, we manually construct a Graph Reasoning Benchmark dataset called GRBench, containing 1,740 questions that can be answered with the knowledge from 10 domain graphs. Then, we propose a simple and effective framework called Graph Chain-of-thought (Graph-CoT) to augment LLMs with graphs by encouraging LLMs to reason on the graph iteratively. Each Graph-CoT iteration consists of three sub-steps: LLM reasoning, LLM-graph interaction, and graph execution. We conduct systematic experiments with three LLM backbones on GRBench, where Graph-CoT outperforms the baselines consistently. The code is available at https://github.com/PeterGriffinJin/Graph-CoT/.",
+    "num_pages": 22,
+    "tldr": "Graph-CoT enhances LLMs by iterative reasoning on graph-structured data.",
+    "tags": [
+        "graph reasoning",
+        "large language models",
+        "knowledge graphs",
+        "chain-of-thought",
+        "GRBench dataset"
+    ]
+}

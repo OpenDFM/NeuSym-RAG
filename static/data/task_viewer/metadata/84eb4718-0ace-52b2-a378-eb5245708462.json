@@ -1,0 +1,36 @@
+{
+    "uuid": "84eb4718-0ace-52b2-a378-eb5245708462",
+    "title": "Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Stella Biderman",
+        "Hailey Schoelkopf",
+        "Quentin Anthony",
+        "Herbie Bradley",
+        "Kyle O'Brien",
+        "Eric Hallahan",
+        "Mohammad Aflah Khan",
+        "Shivanshu Purohit",
+        "USVSN Sai Prashanth",
+        "Edward Raff",
+        "Aviya Skowron",
+        "Lintang Sutawika",
+        "Oskar van der Wal"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2304.01373v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/84eb4718-0ace-52b2-a378-eb5245708462.pdf",
+    "bibtex": "@misc{biderman2023pythiaasuiteforanalyzing,\n    title = {Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling},\n    author = {Stella Biderman and Hailey Schoelkopf and Quentin Anthony and Herbie Bradley and Kyle O'Brien and Eric Hallahan and Mohammad Aflah Khan and Shivanshu Purohit and USVSN Sai Prashanth and Edward Raff and Aviya Skowron and Lintang Sutawika and Oskar van der Wal},\n    year = {2023},\n    eprint = {2304.01373},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2304.01373},\n}",
+    "abstract": "How do large language models (LLMs) develop and evolve over the course of\ntraining? How do these patterns change as models scale? To answer these\nquestions, we introduce \\textit{Pythia}, a suite of 16 LLMs all trained on\npublic data seen in the exact same order and ranging in size from 70M to 12B\nparameters. We provide public access to 154 checkpoints for each one of the 16\nmodels, alongside tools to download and reconstruct their exact training\ndataloaders for further study. We intend \\textit{Pythia} to facilitate research\nin many areas, and we present several case studies including novel results in\nmemorization, term frequency effects on few-shot performance, and reducing\ngender bias. We demonstrate that this highly controlled setup can be used to\nyield novel insights toward LLMs and their training dynamics. Trained models,\nanalysis code, training code, and training data can be found at\n\\url{https://github.com/EleutherAI/pythia}.",
+    "num_pages": 34,
+    "tldr": "Pythia provides 16 LLMs for analyzing training dynamics and scaling effects.",
+    "tags": [
+        "Large Language Models",
+        "Training Dynamics",
+        "Scaling Effects",
+        "Model Analysis",
+        "Gender Bias"
+    ]
+}

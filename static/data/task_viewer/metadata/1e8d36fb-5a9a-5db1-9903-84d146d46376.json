@@ -1,0 +1,34 @@
+{
+    "uuid": "1e8d36fb-5a9a-5db1-9903-84d146d46376",
+    "title": "MINT-1T: Scaling Open-Source Multimodal Data by 10x: A Multimodal Dataset with One Trillion Tokens",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+    "bibtex": "@inproceedings{\nawadalla2024mintt,\ntitle={{MINT}-1T: Scaling Open-Source Multimodal Data by 10x: A Multimodal Dataset with One Trillion Tokens},\nauthor={Anas Awadalla and Le Xue and Oscar Lo and Manli Shu and Hannah Lee and Etash Kumar Guha and Sheng Shen and Mohamed Awadalla and Silvio Savarese and Caiming Xiong and Ran Xu and Yejin Choi and Ludwig Schmidt},\nbooktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},\nyear={2024},\nurl={https://openreview.net/forum?id=HdIiSPLgzC}\n}",
+    "authors": [
+        "Anas Awadalla",
+        "Le Xue",
+        "Oscar Lo",
+        "Manli Shu",
+        "Hannah Lee",
+        "Etash Kumar Guha",
+        "Sheng Shen",
+        "Mohamed Awadalla",
+        "Silvio Savarese",
+        "Caiming Xiong",
+        "Ran Xu",
+        "Yejin Choi",
+        "Ludwig Schmidt"
+    ],
+    "pdf_url": "https://openreview.net/pdf/016e50b6fe9a4d21d0f24728bb0f6c7b791fcf26.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/1e8d36fb-5a9a-5db1-9903-84d146d46376.pdf",
+    "num_pages": 24,
+    "abstract": "Multimodal interleaved datasets featuring free-form interleaved sequences of images and text are crucial for training frontier large multimodal models (LMMs). Despite the rapid progression of open-source LMMs, there remains a pronounced scarcity of large-scale, open-source multimodal interleaved datasets.\nIn response, we introduce MINT-1T, the most extensive and diverse open-source Multimodal INTerleaved dataset to date. MINT-1T comprises of one trillion text tokens and 3.4 billion images, a 10x scale-up from existing open-source datasets. Additionally, we include previously untapped sources such as PDFs and ArXiv papers. As scaling multimodal interleaved datasets requires substantial engineering effort, sharing the data curation process and releasing the dataset greatly benefits the community. Our experiments show that LMMs trained on MINT-1T rival the performance of models trained on the previous leading dataset, OBELICS. We release our data at https://github.com/mlfoundations/MINT-1T.",
+    "tldr": "MINT-1T is the first open-source trillion token multimodal interleaved dataset from diverse sources.",
+    "tags": [
+        "multimodal data",
+        "open-source",
+        "vision-language models"
+    ]
+}

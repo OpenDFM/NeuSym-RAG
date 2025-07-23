@@ -1,0 +1,29 @@
+{
+    "uuid": "dd0147e0-290b-59ea-8742-0be38bb795c7",
+    "title": "Realistic Blur Synthesis for Learning Image Deblurring",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Jaesung Rim",
+        "Geonung Kim",
+        "Jungeon Kim",
+        "Junyong Lee",
+        "Seungyong Lee",
+        "Sunghyun Cho"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2202.08771v3",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2022/dd0147e0-290b-59ea-8742-0be38bb795c7.pdf",
+    "bibtex": "@misc{rim2022realisticblursynthesisforlearning,\n    title = {Realistic Blur Synthesis for Learning Image Deblurring},\n    author = {Jaesung Rim and Geonung Kim and Jungeon Kim and Junyong Lee and Seungyong Lee and Sunghyun Cho},\n    year = {2022},\n    eprint = {2202.08771},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2202.08771},\n}",
+    "abstract": "Training learning-based deblurring methods demands a tremendous amount of\nblurred and sharp image pairs. Unfortunately, existing synthetic datasets are\nnot realistic enough, and deblurring models trained on them cannot handle real\nblurred images effectively. While real datasets have recently been proposed,\nthey provide limited diversity of scenes and camera settings, and capturing\nreal datasets for diverse settings is still challenging. To resolve this, this\npaper analyzes various factors that introduce differences between real and\nsynthetic blurred images. To this end, we present RSBlur, a novel dataset with\nreal blurred images and the corresponding sharp image sequences to enable a\ndetailed analysis of the difference between real and synthetic blur. With the\ndataset, we reveal the effects of different factors in the blur generation\nprocess. Based on the analysis, we also present a novel blur synthesis pipeline\nto synthesize more realistic blur. We show that our synthesis pipeline can\nimprove the deblurring performance on real blurred images.",
+    "num_pages": 37,
+    "tldr": "Introduces RSBlur dataset and pipeline for realistic blur synthesis in deblurring.",
+    "tags": [
+        "image deblurring",
+        "blur synthesis",
+        "dataset creation",
+        "realistic blur",
+        "synthetic vs real blur"
+    ]
+}

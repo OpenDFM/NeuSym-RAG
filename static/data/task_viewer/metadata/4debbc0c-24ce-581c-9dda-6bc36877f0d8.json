@@ -1,0 +1,32 @@
+{
+    "uuid": "4debbc0c-24ce-581c-9dda-6bc36877f0d8",
+    "title": "LLaVA-Med: Training a Large Language-and-Vision Assistant for Biomedicine in One Day",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Chunyuan Li",
+        "Cliff Wong",
+        "Sheng Zhang",
+        "Naoto Usuyama",
+        "Haotian Liu",
+        "Jianwei Yang",
+        "Tristan Naumann",
+        "Hoifung Poon",
+        "Jianfeng Gao"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2306.00890v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/4debbc0c-24ce-581c-9dda-6bc36877f0d8.pdf",
+    "bibtex": "@misc{li2023llavamedtrainingalargelanguageandvision,\n    title = {LLaVA-Med: Training a Large Language-and-Vision Assistant for Biomedicine in One Day},\n    author = {Chunyuan Li and Cliff Wong and Sheng Zhang and Naoto Usuyama and Haotian Liu and Jianwei Yang and Tristan Naumann and Hoifung Poon and Jianfeng Gao},\n    year = {2023},\n    eprint = {2306.00890},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2306.00890},\n}",
+    "abstract": "Conversational generative AI has demonstrated remarkable promise for\nempowering biomedical practitioners, but current investigations focus on\nunimodal text. Multimodal conversational AI has seen rapid progress by\nleveraging billions of image-text pairs from the public web, but such\ngeneral-domain vision-language models still lack sophistication in\nunderstanding and conversing about biomedical images. In this paper, we propose\na cost-efficient approach for training a vision-language conversational\nassistant that can answer open-ended research questions of biomedical images.\nThe key idea is to leverage a large-scale, broad-coverage biomedical\nfigure-caption dataset extracted from PubMed Central, use GPT-4 to\nself-instruct open-ended instruction-following data from the captions, and then\nfine-tune a large general-domain vision-language model using a novel curriculum\nlearning method. Specifically, the model first learns to align biomedical\nvocabulary using the figure-caption pairs as is, then learns to master\nopen-ended conversational semantics using GPT-4 generated instruction-following\ndata, broadly mimicking how a layperson gradually acquires biomedical\nknowledge. This enables us to train a Large Language and Vision Assistant for\nBioMedicine (LLaVA-Med) in less than 15 hours (with eight A100s). LLaVA-Med\nexhibits excellent multimodal conversational capability and can follow\nopen-ended instruction to assist with inquiries about a biomedical image. On\nthree standard biomedical visual question answering datasets, LLaVA-Med\noutperforms previous supervised state-of-the-art on certain metrics. To\nfacilitate biomedical multimodal research, we will release our\ninstruction-following data and the LLaVA-Med model.",
+    "num_pages": 17,
+    "tldr": "Efficiently trained LLaVA-Med enhances biomedical image understanding in one day.",
+    "tags": [
+        "multimodal AI",
+        "biomedical images",
+        "vision-language model",
+        "curriculum learning",
+        "conversational assistant"
+    ]
+}

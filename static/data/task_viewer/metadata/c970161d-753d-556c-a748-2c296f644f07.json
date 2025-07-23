@@ -1,0 +1,26 @@
+{
+    "uuid": "c970161d-753d-556c-a748-2c296f644f07",
+    "title": "Bottom-Up Abstractive Summarization",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2018,
+    "authors": [
+        "Sebastian Gehrmann",
+        "Yuntian Deng",
+        "Alexander M. Rush"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/1808.10792v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2018/c970161d-753d-556c-a748-2c296f644f07.pdf",
+    "bibtex": "@misc{gehrmann2018bottomupabstractivesummarization,\n    title = {Bottom-Up Abstractive Summarization},\n    author = {Sebastian Gehrmann and Yuntian Deng and Alexander M. Rush},\n    year = {2018},\n    eprint = {1808.10792},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/1808.10792},\n}",
+    "abstract": "Neural network-based methods for abstractive summarization produce outputs\nthat are more fluent than other techniques, but which can be poor at content\nselection. This work proposes a simple technique for addressing this issue: use\na data-efficient content selector to over-determine phrases in a source\ndocument that should be part of the summary. We use this selector as a\nbottom-up attention step to constrain the model to likely phrases. We show that\nthis approach improves the ability to compress text, while still generating\nfluent summaries. This two-step process is both simpler and higher performing\nthan other end-to-end content selection models, leading to significant\nimprovements on ROUGE for both the CNN-DM and NYT corpus. Furthermore, the\ncontent selector can be trained with as little as 1,000 sentences, making it\neasy to transfer a trained summarizer to a new domain.",
+    "num_pages": 12,
+    "tldr": "Bottom-up approach improves neural summarization with efficient content selection.",
+    "tags": [
+        "abstractive summarization",
+        "neural networks",
+        "content selection",
+        "ROUGE metric",
+        "domain transferability"
+    ]
+}

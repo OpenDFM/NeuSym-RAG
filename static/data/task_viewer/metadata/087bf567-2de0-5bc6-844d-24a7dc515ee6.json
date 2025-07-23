@@ -1,0 +1,32 @@
+{
+    "uuid": "087bf567-2de0-5bc6-844d-24a7dc515ee6",
+    "title": "StarVector: Generating Scalable Vector Graphics Code from Images and Text",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Juan A. Rodriguez",
+        "Abhay Puri",
+        "Shubham Agarwal",
+        "Issam H. Laradji",
+        "Pau Rodriguez",
+        "Sai Rajeswar",
+        "David Vazquez",
+        "Christopher Pal",
+        "Marco Pedersoli"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2312.11556v3",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2024/087bf567-2de0-5bc6-844d-24a7dc515ee6.pdf",
+    "bibtex": "@misc{rodriguez2024starvectorgeneratingscalablevectorgraphics,\n    title = {StarVector: Generating Scalable Vector Graphics Code from Images and Text},\n    author = {Juan A. Rodriguez and Abhay Puri and Shubham Agarwal and Issam H. Laradji and Pau Rodriguez and Sai Rajeswar and David Vazquez and Christopher Pal and Marco Pedersoli},\n    year = {2024},\n    eprint = {2312.11556},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2312.11556},\n}",
+    "abstract": "Scalable Vector Graphics (SVGs) are vital for modern image rendering due to\ntheir scalability and versatility. Previous SVG generation methods have focused\non curve-based vectorization, lacking semantic understanding, often producing\nartifacts, and struggling with SVG primitives beyond path curves. To address\nthese issues, we introduce StarVector, a multimodal large language model for\nSVG generation. It performs image vectorization by understanding image\nsemantics and using SVG primitives for compact, precise outputs. Unlike\ntraditional methods, StarVector works directly in the SVG code space,\nleveraging visual understanding to apply accurate SVG primitives. To train\nStarVector, we create SVG-Stack, a diverse dataset of 2M samples that enables\ngeneralization across vectorization tasks and precise use of primitives like\nellipses, polygons, and text. We address challenges in SVG evaluation, showing\nthat pixel-based metrics like MSE fail to capture the unique qualities of\nvector graphics. We introduce SVG-Bench, a benchmark across 10 datasets, and 3\ntasks: Image-to-SVG, Text-to-SVG generation, and diagram generation. Using this\nsetup, StarVector achieves state-of-the-art performance, producing more compact\nand semantically rich SVGs.",
+    "num_pages": 41,
+    "tldr": "StarVector generates precise SVGs from images and text using a multimodal model.",
+    "tags": [
+        "SVG generation",
+        "image vectorization",
+        "multimodal model",
+        "SVG primitives",
+        "semantic understanding"
+    ]
+}

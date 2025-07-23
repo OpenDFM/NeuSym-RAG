@@ -1,0 +1,25 @@
+{
+    "uuid": "1ff930b7-3ecb-50ee-bfb4-777d7d8636ad",
+    "title": "Textual Time Travel: A Temporally Informed Approach to Theory of Mind",
+    "conference": "EMNLP",
+    "conference_full": "Conference on Empirical Methods in Natural Language Processing",
+    "volume": null,
+    "year": 2021,
+    "authors": [
+        "Akshatha Arodi",
+        "Jackie Chi Kit Cheung"
+    ],
+    "pdf_url": "https://aclanthology.org/2021.findings-emnlp.351.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2021/1ff930b7-3ecb-50ee-bfb4-777d7d8636ad.pdf",
+    "bibtex": "@inproceedings{DBLP:conf/emnlp/ArodiC21,\n  author       = {Akshatha Arodi and\n                  Jackie Chi Kit Cheung},\n  editor       = {Marie{-}Francine Moens and\n                  Xuanjing Huang and\n                  Lucia Specia and\n                  Scott Wen{-}tau Yih},\n  title        = {Textual Time Travel: {A} Temporally Informed Approach to Theory of\n                  Mind},\n  booktitle    = {Findings of the Association for Computational Linguistics: {EMNLP}\n                  2021, Virtual Event / Punta Cana, Dominican Republic, 16-20 November,\n                  2021},\n  pages        = {4162--4172},\n  publisher    = {Association for Computational Linguistics},\n  year         = {2021},\n  url          = {https://doi.org/10.18653/v1/2021.findings-emnlp.351},\n  doi          = {10.18653/V1/2021.FINDINGS-EMNLP.351},\n  timestamp    = {Fri, 16 Feb 2024 08:27:36 +0100},\n  biburl       = {https://dblp.org/rec/conf/emnlp/ArodiC21.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}\n\n",
+    "abstract": "Natural language processing systems such as dialogue agents should be able to reason about other people’s beliefs, intentions and desires. This capability, called theory of mind (ToM), is crucial, as it allows a model to predict and interpret the needs of users based on their mental states. A recent line of research evaluates the ToM capability of existing memory-augmented neural models through question-answering. These models perform poorly on false belief tasks where beliefs differ from reality, especially when the dataset contains distracting sentences. In this paper, we propose a new temporally informed approach for improving the ToM capability of memory-augmented neural models. Our model incorporates priors about the entities’ minds and tracks their mental states as they evolve over time through an extended passage. It then responds to queries through textual time travel—i.e., by accessing the stored memory of an earlier time step. We evaluate our model on ToM datasets and find that this approach improves performance, particularly by correcting the predicted mental states to match the false belief.",
+    "num_pages": 11,
+    "tldr": "Temporally informed model improves theory of mind in memory-augmented neural networks.",
+    "tags": [
+        "Theory of Mind",
+        "Natural Language Processing",
+        "Memory-Augmented Models",
+        "False Belief Tasks",
+        "Temporal Reasoning"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "866c3296-5bb8-5010-89e5-89a849f6dda9",
+    "title": "Random-Access Infinite Context Length for Transformers",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 poster",
+    "bibtex": "@inproceedings{\nmohtashami2023randomaccess,\ntitle={Random-Access Infinite Context Length for Transformers},\nauthor={Amirkeivan Mohtashami and Martin Jaggi},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=7eHn64wOVy}\n}",
+    "authors": [
+        "Amirkeivan Mohtashami",
+        "Martin Jaggi"
+    ],
+    "pdf_url": "https://openreview.net/pdf/73370e13aaf4cb728c7987eaf77a8db5a6cf097a.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/866c3296-5bb8-5010-89e5-89a849f6dda9.pdf",
+    "num_pages": 19,
+    "abstract": "While Transformers have shown remarkable success in natural language processing, their attention mechanism's large memory requirements have limited their ability to handle longer contexts. Prior approaches, such as recurrent memory or retrieval-based augmentation, have either compromised the random-access flexibility of attention (i.e., the capability to select any token in the entire context) or relied on separate mechanisms for relevant context retrieval, which may not be compatible with the model's attention. In this paper, we present a novel approach that allows access to the complete context while retaining random-access flexibility, closely resembling running attention on the entire context. Our method uses a landmark token to represent each block of the input and trains the attention to use it for selecting relevant blocks, enabling retrieval of blocks directly through the attention mechanism instead of by relying on a separate mechanism. Our approach seamlessly integrates with specialized data structures and the system's memory hierarchy, enabling processing of arbitrarily long context lengths. We demonstrate that our method can obtain comparable performance with Transformer-XL while significantly reducing the number of retrieved tokens in each step. Finally, we show that fine-tuning LLaMA 7B with our method successfully extends its context length capacity to over 32k tokens, allowing for inference at the context lengths of GPT-4. We release the implementation of landmark attention and the code to reproduce our experiments at https://github.com/epfml/landmark-attention/.",
+    "tldr": "New method enables Transformers to access longer contexts with efficient random access.",
+    "tags": [
+        "large language models",
+        "memory",
+        "context length"
+    ]
+}

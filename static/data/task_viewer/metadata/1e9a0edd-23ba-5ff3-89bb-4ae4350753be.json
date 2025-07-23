@@ -1,0 +1,26 @@
+{
+    "uuid": "1e9a0edd-23ba-5ff3-89bb-4ae4350753be",
+    "title": "LLM4Mat-Bench: Benchmarking Large Language Models for Materials Property Prediction",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "AI4Mat-NeurIPS-2024",
+    "bibtex": "@inproceedings{\nrubungo2024llmmatbench,\ntitle={{LLM}4Mat-Bench: Benchmarking Large Language Models for Materials Property Prediction},\nauthor={Andre Niyongabo Rubungo and Kangming Li and Jason Hattrick-Simpers and Adji Bousso Dieng},\nbooktitle={AI for Accelerated Materials Design - NeurIPS 2024},\nyear={2024},\nurl={https://openreview.net/forum?id=TSAeQSv9RI}\n}",
+    "authors": [
+        "Andre Niyongabo Rubungo",
+        "Kangming Li",
+        "Jason Hattrick-Simpers",
+        "Adji Bousso Dieng"
+    ],
+    "pdf_url": "https://openreview.net/pdf/0b9cf5410abb38cd850d7c74c82b4a18b29e0fb6.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/1e9a0edd-23ba-5ff3-89bb-4ae4350753be.pdf",
+    "num_pages": 27,
+    "abstract": "Large language models (LLMs) are increasingly being used in materials science. However, little attention has been given to benchmarking and standardized evaluation for LLM-based materials property prediction, which hinders progress. We present LLM4Mat-Bench, the largest benchmark to date for evaluating the performance of LLMs in predicting the properties of crystalline materials. LLM4Mat-Bench contains about 1.9M crystal structures in total, collected from 10 publicly available materials data sources, and 45 distinct properties. LLM4Mat-Bench features different input modalities: crystal composition, CIF, and crystal text description, with 4.7M, 615.5M, and 3.1B tokens in total for each modality, respectively. We use LLM4Mat-Bench to fine-tune models with different sizes, including LLM-Prop and MatBERT, and provide zero-shot and few-shot prompts to evaluate the property prediction capabilities of LLM-chat-like models, including Llama, Gemma, and Mistral. The results highlight the challenges of general-purpose LLMs in materials science and the need for task-specific predictive models and task-specific instruction-tuned LLMs in materials property prediction.",
+    "tldr": "We propose a benchmark dataset for evaluating large language models in predicting the properties of crystalline materials",
+    "tags": [
+        "large language models",
+        "materials property prediction",
+        "crystalline materials",
+        "benchmarks"
+    ]
+}

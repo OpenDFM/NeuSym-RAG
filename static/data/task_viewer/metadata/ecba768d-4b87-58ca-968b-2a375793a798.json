@@ -1,0 +1,31 @@
+{
+    "uuid": "ecba768d-4b87-58ca-968b-2a375793a798",
+    "title": "MAmmoTH: Building Math Generalist Models through Hybrid Instruction Tuning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Xiang Yue",
+        "Xingwei Qu",
+        "Ge Zhang",
+        "Yao Fu",
+        "Wenhao Huang",
+        "Huan Sun",
+        "Yu Su",
+        "Wenhu Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2309.05653v3",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/ecba768d-4b87-58ca-968b-2a375793a798.pdf",
+    "bibtex": "@misc{yue2023mammothbuildingmathgeneralistmodels,\n    title = {MAmmoTH: Building Math Generalist Models through Hybrid Instruction Tuning},\n    author = {Xiang Yue and Xingwei Qu and Ge Zhang and Yao Fu and Wenhao Huang and Huan Sun and Yu Su and Wenhu Chen},\n    year = {2023},\n    eprint = {2309.05653},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2309.05653},\n}",
+    "abstract": "We introduce MAmmoTH, a series of open-source large language models (LLMs)\nspecifically tailored for general math problem-solving. The MAmmoTH models are\ntrained on MathInstruct, our meticulously curated instruction tuning dataset.\nMathInstruct is compiled from 13 math datasets with intermediate rationales,\nsix of which have rationales newly curated by us. It presents a unique hybrid\nof chain-of-thought (CoT) and program-of-thought (PoT) rationales, and also\nensures extensive coverage of diverse fields in math. The hybrid of CoT and PoT\nnot only unleashes the potential of tool use but also allows different thought\nprocesses for different math problems. As a result, the MAmmoTH series\nsubstantially outperform existing open-source models on nine mathematical\nreasoning datasets across all scales with an average accuracy gain between 16%\nand 32%. Remarkably, our MAmmoTH-7B model reaches 33% on MATH (a\ncompetition-level dataset), which exceeds the best open-source 7B model\n(WizardMath) by 23%, and the MAmmoTH-34B model achieves 44% accuracy on MATH,\neven surpassing GPT-4's CoT result. Our work underscores the importance of\ndiverse problem coverage and the use of hybrid rationales in developing\nsuperior math generalist models.",
+    "num_pages": 19,
+    "tldr": "MAmmoTH models excel in math problem-solving using hybrid instruction tuning.",
+    "tags": [
+        "math problem-solving",
+        "large language models",
+        "hybrid instruction tuning",
+        "chain-of-thought",
+        "program-of-thought"
+    ]
+}

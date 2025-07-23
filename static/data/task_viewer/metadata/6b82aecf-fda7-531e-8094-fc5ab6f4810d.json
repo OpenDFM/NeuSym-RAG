@@ -1,0 +1,27 @@
+{
+    "uuid": "6b82aecf-fda7-531e-8094-fc5ab6f4810d",
+    "title": "PAGED: A Benchmark for Procedural Graphs Extraction from Documents",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{du-etal-2024-paged,\n    title = \"{PAGED}: A Benchmark for Procedural Graphs Extraction from Documents\",\n    author = \"Du, Weihong  and\n      Liao, Wenrui  and\n      Liang, Hongru  and\n      Lei, Wenqiang\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.583\",\n    doi = \"10.18653/v1/2024.acl-long.583\",\n    pages = \"10829--10846\",\n    abstract = \"Automatic extraction of procedural graphs from documents creates a low-cost way for users to easily understand a complex procedure by skimming visual graphs. Despite the progress in recent studies, it remains unanswered: whether the existing studies have well solved this task (Q1) and whether the emerging large language models (LLMs) can bring new opportunities to this task (Q2). To this end, we propose a new benchmark PAGED, equipped with a large high-quality dataset and standard evaluations. It investigates five state-of-the-art baselines, revealing that they fail to extract optimal procedural graphs well because of their heavy reliance on hand-written rules and limited available data. We further involve three advanced LLMs in PAGED and enhance them with a novel self-refine strategy. The results point out the advantages of LLMs in identifying textual elements and their gaps in building logical structures. We hope PAGED can serve as a major landmark for automatic procedural graph extraction and the investigations in PAGED can offer insights into the research on logic reasoning among non-sequential elements.\",\n}\n",
+    "authors": [
+        "Weihong Du",
+        "Wenrui Liao",
+        "Hongru Liang",
+        "Wenqiang Lei"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.583.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/6b82aecf-fda7-531e-8094-fc5ab6f4810d.pdf",
+    "abstract": "Automatic extraction of procedural graphs from documents creates a low-cost way for users to easily understand a complex procedure by skimming visual graphs. Despite the progress in recent studies, it remains unanswered: whether the existing studies have well solved this task (Q1) and whether the emerging large language models (LLMs) can bring new opportunities to this task (Q2). To this end, we propose a new benchmark PAGED, equipped with a large high-quality dataset and standard evaluations. It investigates five state-of-the-art baselines, revealing that they fail to extract optimal procedural graphs well because of their heavy reliance on hand-written rules and limited available data. We further involve three advanced LLMs in PAGED and enhance them with a novel self-refine strategy. The results point out the advantages of LLMs in identifying textual elements and their gaps in building logical structures. We hope PAGED can serve as a major landmark for automatic procedural graph extraction and the investigations in PAGED can offer insights into the research on logic reasoning among non-sequential elements.",
+    "num_pages": 18,
+    "tldr": "Paged benchmark assesses procedural graph extraction from documents, finds LLMs beneficial.",
+    "tags": [
+        "procedural graphs",
+        "document analysis",
+        "large language models",
+        "benchmark dataset",
+        "logic reasoning"
+    ]
+}

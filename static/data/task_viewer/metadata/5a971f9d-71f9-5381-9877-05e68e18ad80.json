@@ -1,0 +1,29 @@
+{
+    "uuid": "5a971f9d-71f9-5381-9877-05e68e18ad80",
+    "title": "Evidence Retrieval is almost All You Need for Fact Verification",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: ACL 2024",
+    "bibtex": "@inproceedings{zheng-etal-2024-evidence,\n    title = \"Evidence Retrieval is almost All You Need for Fact Verification\",\n    author = \"Zheng, Liwen  and\n      Li, Chaozhuo  and\n      Zhang, Xi  and\n      Shang, Yu-Ming  and\n      Huang, Feiran  and\n      Jia, Haoran\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Findings of the Association for Computational Linguistics: ACL 2024\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-acl.551\",\n    doi = \"10.18653/v1/2024.findings-acl.551\",\n    pages = \"9274--9281\",\n    abstract = \"Current fact verification methods generally follow the two-stage training paradigm: evidence retrieval and claim verification. While existing works focus on developing sophisticated claim verification modules, the fundamental importance of evidence retrieval is largely ignored. Existing approaches usually adopt the heuristic semantic similarity-based retrieval strategy, resulting in the task-irrelevant evidence and undesirable performance. In this paper, we concentrate on evidence retrieval and propose a Retrieval-Augmented Verification framework RAV, consisting of two major modules: the hybrid evidence retrieval and the joint fact verification. Hybrid evidence retrieval module incorporates an efficient retriever for preliminary pruning of candidate evidence, succeeded by a ranker that generates more precise sorting results. Under this end-to-end training paradigm, gradients from the claim verification can be back-propagated to enhance evidence selection. Experimental results on FEVER dataset demonstrate the superiority of RAV.\",\n}\n",
+    "authors": [
+        "Liwen Zheng",
+        "Chaozhuo Li",
+        "Xi Zhang",
+        "Yu-Ming Shang",
+        "Feiran Huang",
+        "Haoran Jia"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-acl.551.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/5a971f9d-71f9-5381-9877-05e68e18ad80.pdf",
+    "abstract": "Current fact verification methods generally follow the two-stage training paradigm: evidence retrieval and claim verification. While existing works focus on developing sophisticated claim verification modules, the fundamental importance of evidence retrieval is largely ignored. Existing approaches usually adopt the heuristic semantic similarity-based retrieval strategy, resulting in the task-irrelevant evidence and undesirable performance. In this paper, we concentrate on evidence retrieval and propose a Retrieval-Augmented Verification framework RAV, consisting of two major modules: the hybrid evidence retrieval and the joint fact verification. Hybrid evidence retrieval module incorporates an efficient retriever for preliminary pruning of candidate evidence, succeeded by a ranker that generates more precise sorting results. Under this end-to-end training paradigm, gradients from the claim verification can be back-propagated to enhance evidence selection. Experimental results on FEVER dataset demonstrate the superiority of RAV.",
+    "num_pages": 8,
+    "tldr": "Enhanced evidence retrieval boosts fact verification accuracy significantly.",
+    "tags": [
+        "evidence retrieval",
+        "fact verification",
+        "semantic similarity",
+        "FEVER dataset",
+        "retrieval-augmented verification"
+    ]
+}

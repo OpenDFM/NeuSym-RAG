@@ -1,0 +1,27 @@
+{
+    "uuid": "0d99c5cf-d5f7-5fa6-9559-f88731d5fff1",
+    "title": "Text Representation Distillation via Information Bottleneck Principle",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{zhang-etal-2023-text,\n    title = \"Text Representation Distillation via Information Bottleneck Principle\",\n    author = \"Zhang, Yanzhao  and\n      Long, Dingkun  and\n      Li, Zehan  and\n      Xie, Pengjun\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.emnlp-main.888\",\n    doi = \"10.18653/v1/2023.emnlp-main.888\",\n    pages = \"14372--14383\",\n    abstract = \"Pre-trained language models (PLMs) have recently shown great success in text representation field. However, the high computational cost and high-dimensional representation of PLMs pose significant challenges for practical applications. To make models more accessible, an effective method is to distill large models into smaller representation models. In order to relieve the issue of performance degradation after distillation, we propose a novel Knowledge Distillation method called \\textbf{IBKD}. This approach is motivated by the Information Bottleneck principle and aims to maximize the mutual information between the final representation of the teacher and student model, while simultaneously reducing the mutual information between the student model{'}s representation and the input data. This enables the student model to preserve important learned information while avoiding unnecessary information, thus reducing the risk of over-fitting. Empirical studies on two main downstream applications of text representation (Semantic Textual Similarity and Dense Retrieval tasks) demonstrate the effectiveness of our proposed approach.\",\n}\n",
+    "authors": [
+        "Yanzhao Zhang",
+        "Dingkun Long",
+        "Zehan Li",
+        "Pengjun Xie"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.emnlp-main.888.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/0d99c5cf-d5f7-5fa6-9559-f88731d5fff1.pdf",
+    "num_pages": 12,
+    "abstract": "Pre-trained language models (PLMs) have recently shown great success in text representation field. However, the high computational cost and high-dimensional representation of PLMs pose significant challenges for practical applications. To make models more accessible, an effective method is to distill large models into smaller representation models. In order to relieve the issue of performance degradation after distillation, we propose a novel Knowledge Distillation method called IBKD. This approach is motivated by the Information Bottleneck principle and aims to maximize the mutual information between the final representation of the teacher and student model, while simultaneously reducing the mutual information between the student model’s representation and the input data. This enables the student model to preserve important learned information while avoiding unnecessary information, thus reducing the risk of over-fitting. Empirical studies on two main downstream applications of text representation (Semantic Textual Similarity and Dense Retrieval tasks) demonstrate the effectiveness of our proposed approach.",
+    "tldr": "Proposes IBKD for effective text representation distillation using Information Bottleneck.",
+    "tags": [
+        "Knowledge Distillation",
+        "Information Bottleneck",
+        "Text Representation",
+        "Pre-trained Language Models",
+        "Semantic Similarity"
+    ]
+}

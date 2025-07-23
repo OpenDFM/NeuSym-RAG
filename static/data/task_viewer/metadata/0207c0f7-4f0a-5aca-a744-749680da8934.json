@@ -1,0 +1,36 @@
+{
+    "uuid": "0207c0f7-4f0a-5aca-a744-749680da8934",
+    "title": "FLM-101B: An Open LLM and How to Train It with $100K Budget",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2025,
+    "authors": [
+        "Xiang Li",
+        "Yiqun Yao",
+        "Xin Jiang",
+        "Xuezhi Fang",
+        "Xuying Meng",
+        "Siqi Fan",
+        "Peng Han",
+        "Jing Li",
+        "Li Du",
+        "Bowen Qin",
+        "Zheng Zhang",
+        "Aixin Sun",
+        "Yequan Wang"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2309.03852v3",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2025/0207c0f7-4f0a-5aca-a744-749680da8934.pdf",
+    "bibtex": "@misc{li2025flm101banopenllmand,\n    title = {FLM-101B: An Open LLM and How to Train It with $100K Budget},\n    author = {Xiang Li and Yiqun Yao and Xin Jiang and Xuezhi Fang and Xuying Meng and Siqi Fan and Peng Han and Jing Li and Li Du and Bowen Qin and Zheng Zhang and Aixin Sun and Yequan Wang},\n    year = {2025},\n    eprint = {2309.03852},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2309.03852},\n}",
+    "abstract": "Large language models (LLMs) are considered important approaches towards\nfoundational machine intelligence, achieving remarkable success in Natural\nLanguage Processing and multimodal tasks, among others. However, the carbon\nfootprints and financial costs originating from heavy pre-training computation\nis a non-negligible issue. Progressive training methods, inspired by the\nneurogenesis process that grows neural structures, have shown potential to\naccelerate LLM pre-training. However, the algorithms, implementation, and\npractices for progressively training LLMs beyond 100B parameters remain\nunderexplored. In this paper, we show that our model, namely FLM-101B, trained\nwith our growth strategy under a budget of \\$100K, reaches 80\\% of the\nbaselines' performances with only 10\\% of their floating-point operations. We\nbelieve that further studies on progressive training will benefit the community\nby cutting down the costs and promoting green AI. The checkpoint of FLM-101B is\nreleased at https://huggingface.co/CofeAI/FLM-101B.",
+    "num_pages": 11,
+    "tldr": "Efficiently trained a 101B parameter LLM on a $100K budget using progressive training.",
+    "tags": [
+        "Large Language Models",
+        "Progressive Training",
+        "Cost-efficient Training",
+        "Neural Network Growth",
+        "Green AI"
+    ]
+}

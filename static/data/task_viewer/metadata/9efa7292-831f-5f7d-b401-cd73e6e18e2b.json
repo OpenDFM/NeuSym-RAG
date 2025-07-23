@@ -1,0 +1,26 @@
+{
+    "uuid": "9efa7292-831f-5f7d-b401-cd73e6e18e2b",
+    "title": "Increasing The Performance of Cognitively Inspired Data-Efficient Language Models via Implicit Structure Building",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the BabyLM Challenge at the 27th Conference on Computational Natural Language Learning",
+    "bibtex": "@inproceedings{momen-etal-2023-increasing,\n    title = \"Increasing The Performance of Cognitively Inspired Data-Efficient Language Models via Implicit Structure Building\",\n    author = \"Momen, Omar  and\n      Arps, David  and\n      Kallmeyer, Laura\",\n    editor = \"Warstadt, Alex  and\n      Mueller, Aaron  and\n      Choshen, Leshem  and\n      Wilcox, Ethan  and\n      Zhuang, Chengxu  and\n      Ciro, Juan  and\n      Mosquera, Rafael  and\n      Paranjabe, Bhargavi  and\n      Williams, Adina  and\n      Linzen, Tal  and\n      Cotterell, Ryan\",\n    booktitle = \"Proceedings of the BabyLM Challenge at the 27th Conference on Computational Natural Language Learning\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.conll-babylm.29\",\n    doi = \"10.18653/v1/2023.conll-babylm.29\",\n    pages = \"327--338\",\n}\n",
+    "authors": [
+        "Omar Momen",
+        "David Arps",
+        "Laura Kallmeyer"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.conll-babylm.29.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/9efa7292-831f-5f7d-b401-cd73e6e18e2b.pdf",
+    "num_pages": 12,
+    "abstract": "In this paper, we describe our submission to the BabyLM Challenge 2023 shared task on data-efficient language model (LM) pretraining (Warstadt et al., 2023). We train transformerbased masked language models that incorporate unsupervised predictions about hierarchical sentence structure into the model architecture. Concretely, we use the Structformer architecture (Shen et al., 2021) and variants thereof. StructFormer models have been shown to perform well on unsupervised syntactic induction based on limited pretraining data and to yield performance improvements over a vanilla transformer architecture (Shen et al., 2021). Evaluation of our models on 39 tasks provided by the BabyLM challenge shows promising improvements of models that integrate a hierarchical bias into the architecture at some particular tasks, even though they fail to consistently outperform the baseline model on all tasks.1",
+    "tldr": "Improving data-efficient language models with hierarchical structure integration.",
+    "tags": [
+        "data-efficient language models",
+        "hierarchical structure",
+        "transformer architecture",
+        "unsupervised learning",
+        "syntactic induction"
+    ]
+}

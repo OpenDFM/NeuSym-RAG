@@ -1,0 +1,29 @@
+{
+    "uuid": "b7f2cb42-c26b-5b4d-b8dd-6365498dbd01",
+    "title": "Personalized Large Language Model Assistant with Evolving Conditional Memory",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Ruifeng Yuan",
+        "Shichao Sun",
+        "Yongqi Li",
+        "Zili Wang",
+        "Ziqiang Cao",
+        "Wenjie Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2312.17257v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2024/b7f2cb42-c26b-5b4d-b8dd-6365498dbd01.pdf",
+    "bibtex": "@misc{yuan2024personalizedlargelanguagemodelassistant,\n    title = {Personalized Large Language Model Assistant with Evolving Conditional Memory},\n    author = {Ruifeng Yuan and Shichao Sun and Yongqi Li and Zili Wang and Ziqiang Cao and Wenjie Li},\n    year = {2024},\n    eprint = {2312.17257},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2312.17257},\n}",
+    "abstract": "With the rapid development of large language models, AI assistants like\nChatGPT have become increasingly integrated into people's works and lives but\nare limited in personalized services. In this paper, we present a plug-and-play\nframework that could facilitate personalized large language model assistants\nwith evolving conditional memory. The personalized assistant focuses on\nintelligently preserving the knowledge and experience from the history dialogue\nwith the user, which can be applied to future tailored responses that better\nalign with the user's preferences. Generally, the assistant generates a set of\nrecords from the dialogue dialogue, stores them in a memory bank, and retrieves\nrelated memory to improve the quality of the response. For the crucial memory\ndesign, we explore different ways of constructing the memory and propose a new\nmemorizing mechanism named conditional memory. We also investigate the\nretrieval and usage of memory in the generation process. We build the first\nbenchmark to evaluate personalized assistants' ability from three aspects. The\nexperimental results illustrate the effectiveness of our method.",
+    "num_pages": 14,
+    "tldr": "Personalized AI assistants use evolving conditional memory for tailored responses.",
+    "tags": [
+        "Personalized AI",
+        "Conditional Memory",
+        "Language Model",
+        "Dialogue Systems",
+        "Memory Retrieval"
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "uuid": "6590d875-4982-56a0-8bd7-e67f4bc777c9",
+    "title": "Efficient Training of Language Models to Fill in the Middle",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Mohammad Bavarian",
+        "Heewoo Jun",
+        "Nikolas Tezak",
+        "John Schulman",
+        "Christine McLeavey",
+        "Jerry Tworek",
+        "Mark Chen"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2207.14255v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2022/6590d875-4982-56a0-8bd7-e67f4bc777c9.pdf",
+    "bibtex": "@misc{bavarian2022efficienttrainingoflanguagemodels,\n    title = {Efficient Training of Language Models to Fill in the Middle},\n    author = {Mohammad Bavarian and Heewoo Jun and Nikolas Tezak and John Schulman and Christine McLeavey and Jerry Tworek and Mark Chen},\n    year = {2022},\n    eprint = {2207.14255},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2207.14255},\n}",
+    "abstract": "We show that autoregressive language models can learn to infill text after we\napply a straightforward transformation to the dataset, which simply moves a\nspan of text from the middle of a document to its end. While this data\naugmentation has garnered much interest in recent years, we provide extensive\nevidence that training models with a large fraction of data transformed in this\nway does not harm the original left-to-right generative capability, as measured\nby perplexity and sampling evaluations across a wide range of scales. Given the\nusefulness, simplicity, and efficiency of training models to fill-in-the-middle\n(FIM), we suggest that future autoregressive language models be trained with\nFIM by default. To this end, we run a series of ablations on key\nhyperparameters, such as the data transformation frequency, the structure of\nthe transformation, and the method of selecting the infill span. We use these\nablations to prescribe strong default settings and best practices to train FIM\nmodels. We have released our best infilling model trained with best practices\nin our API, and release our infilling benchmarks to aid future research.",
+    "num_pages": 30,
+    "tldr": "Training language models to fill in text gaps improves efficiency without loss.",
+    "tags": [
+        "Language Models",
+        "Text Infill",
+        "Data Augmentation",
+        "Autoregressive Models",
+        "Training Efficiency"
+    ]
+}

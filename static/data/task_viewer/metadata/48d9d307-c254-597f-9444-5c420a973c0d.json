@@ -1,0 +1,26 @@
+{
+    "uuid": "48d9d307-c254-597f-9444-5c420a973c0d",
+    "title": "LaCo: Large Language Model Pruning via Layer Collapse",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    "bibtex": "@inproceedings{yang-etal-2024-laco,\n    title = \"{L}a{C}o: Large Language Model Pruning via Layer Collapse\",\n    author = \"Yang, Yifei  and\n      Cao, Zouying  and\n      Zhao, Hai\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2024\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-emnlp.372/\",\n    doi = \"10.18653/v1/2024.findings-emnlp.372\",\n    pages = \"6401--6417\"\n}\n",
+    "authors": [
+        "Yifei Yang",
+        "Zouying Cao",
+        "Hai Zhao"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-emnlp.372.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/48d9d307-c254-597f-9444-5c420a973c0d.pdf",
+    "num_pages": 17,
+    "abstract": "Large language models (LLMs) based on transformer are witnessing a notable trend of size expansion, which brings considerable costs to both model training and inference. However, existing methods such as model quantization, knowledge distillation, and model pruning are constrained by various issues, including hardware support limitations, the need for extensive training, and alterations to the model internal structure. In this paper, we propose a concise layer-wise structured pruner called Layer Collapse (LaCo), in which rear model layers collapse into a prior layer, enabling a rapid reduction in model size while preserving the model structure. Comprehensive experiments show that our method maintains an average task performance of over 80% at pruning ratios of 25-30%, significantly outperforming existing state-of-the-art structured pruning methods. We also conduct post-training experiments to confirm that the LaCo effectively inherits the parameters of the original model. Additionally, we perform ablation studies on various settings of LaCo. Finally, we discuss our motivation from the perspective of layer-wise similarity and evaluate the performance of the pruned LLMs across various pruning ratios1.",
+    "tldr": "LaCo reduces large language models' size effectively while maintaining performance.",
+    "tags": [
+        "Large Language Models",
+        "Model Pruning",
+        "Layer Collapse",
+        "Transformer Architecture",
+        "Task Performance"
+    ]
+}

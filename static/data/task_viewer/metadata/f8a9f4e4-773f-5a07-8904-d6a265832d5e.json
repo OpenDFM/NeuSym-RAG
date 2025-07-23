@@ -1,0 +1,31 @@
+{
+    "uuid": "f8a9f4e4-773f-5a07-8904-d6a265832d5e",
+    "title": "Semi-Structured Object Sequence Encoders",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    "bibtex": "@inproceedings{murthy-etal-2023-semi,\n    title = \"Semi-Structured Object Sequence Encoders\",\n    author = \"Murthy, Rudra  and\n      Bhat, Riyaz  and\n      Gunasekara, Chulaka  and\n      Patel, Siva  and\n      Wan, Hui  and\n      Dhamecha, Tejas  and\n      Contractor, Danish  and\n      Danilevsky, Marina\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2023\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-emnlp.605\",\n    doi = \"10.18653/v1/2023.findings-emnlp.605\",\n    pages = \"9026--9039\",\n    abstract = \"In this paper we explore the task of modeling semi-structured object sequences; in particular, we focus our attention on the problem of developing a structure-aware input representation for such sequences. Examples of such data include user activity on websites, machine logs, and many others. This type of data is often represented as a sequence of sets of key-value pairs over time and can present modeling challenges due to an ever-increasing sequence length. We propose a two-part approach, which first considers each key independently and encodes a representation of its values over time; we then self-attend over these value-aware key representations to accomplish a downstream task. This allows us to operate on longer object sequences than existing methods. We introduce a novel shared-attention-head architecture between the two modules and present an innovative training schedule that interleaves the training of both modules with shared weights for some attention heads. Our experiments on multiple prediction tasks using real-world data demonstrate that our approach outperforms a unified network with hierarchical encoding, as well as other methods including a \\textit{record-centric} representation and a \\textit{flattened} representation of the sequence.\",\n}\n",
+    "authors": [
+        "Rudra Murthy",
+        "Riyaz Bhat",
+        "Chulaka Gunasekara",
+        "Siva Patel",
+        "Hui Wan",
+        "Tejas Dhamecha",
+        "Danish Contractor",
+        "Marina Danilevsky"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-emnlp.605.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/f8a9f4e4-773f-5a07-8904-d6a265832d5e.pdf",
+    "num_pages": 14,
+    "abstract": "In this paper we explore the task of modeling semi-structured object sequences; in particular, we focus our attention on the problem of developing a structure-aware input representation for such sequences. Examples of such data include user activity on websites, machine logs, and many others. This type of data is often represented as a sequence of sets of key-value pairs over time and can present modeling challenges due to an ever-increasing sequence length. We propose a two-part approach, which first considers each key independently and encodes a representation of its values over time; we then self-attend over these value-aware key representations to accomplish a downstream task. This allows us to operate on longer object sequences than existing methods. We introduce a novel shared-attention-head architecture between the two modules and present an innovative training schedule that interleaves the training of both modules with shared weights for some attention heads. Our experiments on multiple prediction tasks using real-world data demonstrate that our approach outperforms a unified network with hierarchical encoding, as well as other methods including a record-centric representation and a flattened representation of the sequence.",
+    "tldr": "Develops a novel encoding method for modeling long semi-structured object sequences.",
+    "tags": [
+        "semi-structured data",
+        "object sequence modeling",
+        "attention mechanisms",
+        "key-value pairs",
+        "predictive modeling"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "1f190ec5-f832-540b-a62f-6142eba5991a",
+    "title": "Graph Language Models",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{plenz-frank-2024-graph,\n    title = \"Graph Language Models\",\n    author = \"Plenz, Moritz  and\n      Frank, Anette\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.245\",\n    doi = \"10.18653/v1/2024.acl-long.245\",\n    pages = \"4477--4494\",\n    abstract = \"While Language Models (LMs) are the workhorses of NLP, their interplay with structured knowledge graphs (KGs) is still actively researched. Current methods for encoding such graphs typically either (i) linearize them for embedding with LMs {--} which underutilize structural information, or (ii) use Graph Neural Networks (GNNs) to preserve the graph structure {--} but GNNs cannot represent text features as well as pretrained LMs. In our work we introduce a novel LM type, the Graph Language Model (GLM), that integrates the strengths of both approaches and mitigates their weaknesses. The GLM parameters are initialized from a pretrained LM to enhance understanding of individual graph concepts and triplets. Simultaneously, we design the GLM{'}s architecture to incorporate graph biases, thereby promoting effective knowledge distribution within the graph. This enables GLMs to process graphs, texts, and interleaved inputs of both. Empirical evaluations on relation classification tasks show that GLM embeddings surpass both LM- and GNN-based baselines in supervised and zero-shot setting, demonstrating their versatility.\",\n}\n",
+    "authors": [
+        "Moritz Plenz",
+        "Anette Frank"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.245.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/1f190ec5-f832-540b-a62f-6142eba5991a.pdf",
+    "abstract": "While Language Models (LMs) are the workhorses of NLP, their interplay with structured knowledge graphs (KGs) is still actively researched. Current methods for encoding such graphs typically either (i) linearize them for embedding with LMs – which underutilize structural information, or (ii) use Graph Neural Networks (GNNs) to preserve the graph structure – but GNNs cannot represent text features as well as pretrained LMs. In our work we introduce a novel LM type, the Graph Language Model (GLM), that integrates the strengths of both approaches and mitigates their weaknesses. The GLM parameters are initialized from a pretrained LM to enhance understanding of individual graph concepts and triplets. Simultaneously, we design the GLM’s architecture to incorporate graph biases, thereby promoting effective knowledge distribution within the graph. This enables GLMs to process graphs, texts, and interleaved inputs of both. Empirical evaluations on relation classification tasks show that GLM embeddings surpass both LM- and GNN-based baselines in supervised and zero-shot setting, demonstrating their versatility.",
+    "num_pages": 18,
+    "tldr": "New Graph Language Model (GLM) merges LMs and GNNs for improved graph embeddings.",
+    "tags": [
+        "Graph Language Models",
+        "Knowledge Graphs",
+        "Graph Neural Networks",
+        "Language Models",
+        "Relation Classification"
+    ]
+}

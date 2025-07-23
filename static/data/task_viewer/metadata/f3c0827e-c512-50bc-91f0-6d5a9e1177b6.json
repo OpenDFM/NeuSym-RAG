@@ -1,0 +1,31 @@
+{
+    "uuid": "f3c0827e-c512-50bc-91f0-6d5a9e1177b6",
+    "title": "Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 oral",
+    "bibtex": "@inproceedings{\nfu2023monarch,\ntitle={Monarch Mixer: A Simple Sub-Quadratic {GEMM}-Based Architecture},\nauthor={Daniel Y Fu and Simran Arora and Jessica Grogan and Isys Johnson and Sabri Eyuboglu and Armin W Thomas and Benjamin Frederick Spector and Michael Poli and Atri Rudra and Christopher Re},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=cB0BImqSS9}\n}",
+    "authors": [
+        "Daniel Y Fu",
+        "Simran Arora",
+        "Jessica Grogan",
+        "Isys Johnson",
+        "Sabri Eyuboglu",
+        "Armin W Thomas",
+        "Benjamin Frederick Spector",
+        "Michael Poli",
+        "Atri Rudra",
+        "Christopher Re"
+    ],
+    "pdf_url": "https://openreview.net/pdf/a3bd2e3687826e8e82ec585d32dc63ca32ae9b46.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/f3c0827e-c512-50bc-91f0-6d5a9e1177b6.pdf",
+    "num_pages": 58,
+    "abstract": "Machine learning models are increasingly being scaled in both sequence length and model dimension to reach longer contexts and better performance. However, existing architectures such as Transformers scale quadratically along both these axes. We ask: are there performant architectures that can scale sub-quadratically along sequence length and model dimension? We introduce Monarch Mixer (M2), a new architecture that uses the same sub-quadratic primitive along both sequence length and model dimension: Monarch matrices, a simple class of expressive structured matrices that captures many linear transforms, achieves high hardware efficiency on GPUs, and scales sub-quadratically. As a proof of concept, we explore the performance of M2 in three domains: non-causal BERT-style language modeling, ViT-style image classification, and causal GPT-style language modeling. For non-causal BERT-style modeling, M2 matches BERT-base and BERT-large in downstream GLUE quality with up to 27% fewer parameters, and achieves up to 9.1$\\times$ higher throughput at sequence length 4K. On ImageNet, M2 outperforms ViT-b by 1% in accuracy, with only half the parameters. Causal GPT-style models introduce a technical challenge: enforcing causality via masking introduces a quadratic bottleneck. To alleviate this bottleneck, we develop a novel theoretical view of Monarch matrices based on multivariate polynomial evaluation and interpolation, which lets us parameterize M2 to be causal while remaining sub-quadratic. Using this parameterization, M2 matches GPT-style Transformers at 360M parameters in pretraining perplexity on The PILE—showing for the first time that it may be possible to match Transformer quality without attention or MLPs.",
+    "tldr": "We present Monarch Mixer, a new simple architecture that scales sub-quadratically in sequence length and model dimension.",
+    "tags": [
+        "structured matrices",
+        "transformers",
+        "efficiency"
+    ]
+}

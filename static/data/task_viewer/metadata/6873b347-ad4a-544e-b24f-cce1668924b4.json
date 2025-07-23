@@ -1,0 +1,25 @@
+{
+    "uuid": "6873b347-ad4a-544e-b24f-cce1668924b4",
+    "title": "A Truly Joint Neural Architecture for Segmentation and Parsing",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2024,
+    "authors": [
+        "Danit Yshaayahu Levi",
+        "Reut Tsarfaty"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2402.02564v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2024/6873b347-ad4a-544e-b24f-cce1668924b4.pdf",
+    "bibtex": "@misc{levi2024atrulyjointneuralarchitecture,\n    title = {A Truly Joint Neural Architecture for Segmentation and Parsing},\n    author = {Danit Yshaayahu Levi and Reut Tsarfaty},\n    year = {2024},\n    eprint = {2402.02564},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2402.02564},\n}",
+    "abstract": "Contemporary multilingual dependency parsers can parse a diverse set of\nlanguages, but for Morphologically Rich Languages (MRLs), performance is\nattested to be lower than other languages. The key challenge is that, due to\nhigh morphological complexity and ambiguity of the space-delimited input\ntokens, the linguistic units that act as nodes in the tree are not known in\nadvance. Pre-neural dependency parsers for MRLs subscribed to the joint\nmorpho-syntactic hypothesis, stating that morphological segmentation and\nsyntactic parsing should be solved jointly, rather than as a pipeline where\nsegmentation precedes parsing. However, neural state-of-the-art parsers to date\nuse a strict pipeline. In this paper we introduce a joint neural architecture\nwhere a lattice-based representation preserving all morphological ambiguity of\nthe input is provided to an arc-factored model, which then solves the\nmorphological segmentation and syntactic parsing tasks at once. Our experiments\non Hebrew, a rich and highly ambiguous MRL, demonstrate state-of-the-art\nperformance on parsing, tagging and segmentation of the Hebrew section of UD,\nusing a single model. This proposed architecture is LLM-based and language\nagnostic, providing a solid foundation for MRLs to obtain further performance\nimprovements and bridge the gap with other languages.",
+    "num_pages": 13,
+    "tldr": "Joint neural model enhances parsing and segmentation for Morphologically Rich Languages.",
+    "tags": [
+        "morphologically rich languages",
+        "joint neural architecture",
+        "syntactic parsing",
+        "morphological segmentation",
+        "lattice-based representation"
+    ]
+}

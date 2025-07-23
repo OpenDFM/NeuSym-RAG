@@ -1,0 +1,35 @@
+{
+    "uuid": "1affe502-59fa-5851-8b8f-759ac1937c95",
+    "title": "JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large Language Models",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+    "bibtex": "@inproceedings{\nchao2024jailbreakbench,\ntitle={JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large Language Models},\nauthor={Patrick Chao and Edoardo Debenedetti and Alexander Robey and Maksym Andriushchenko and Francesco Croce and Vikash Sehwag and Edgar Dobriban and Nicolas Flammarion and George J. Pappas and Florian Tram{\\`e}r and Hamed Hassani and Eric Wong},\nbooktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},\nyear={2024},\nurl={https://openreview.net/forum?id=urjPCYZt0I}\n}",
+    "authors": [
+        "Patrick Chao",
+        "Edoardo Debenedetti",
+        "Alexander Robey",
+        "Maksym Andriushchenko",
+        "Francesco Croce",
+        "Vikash Sehwag",
+        "Edgar Dobriban",
+        "Nicolas Flammarion",
+        "George J. Pappas",
+        "Florian Tramèr",
+        "Hamed Hassani",
+        "Eric Wong"
+    ],
+    "pdf_url": "https://openreview.net/pdf/97755e4f10afdedc0b664eb9140699f413cb977d.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/1affe502-59fa-5851-8b8f-759ac1937c95.pdf",
+    "num_pages": 25,
+    "abstract": "Jailbreak attacks cause large language models (LLMs) to generate harmful, unethical, or otherwise objectionable content. Evaluating these attacks presents a number of challenges, which the current collection of benchmarks and evaluation techniques do not adequately address. First, there is no clear standard of practice regarding jailbreaking evaluation. Second, existing works compute costs and success rates in incomparable ways. And third, numerous works are not reproducible, as they withhold adversarial prompts, involve closed-source code, or rely on evolving proprietary APIs. To address these challenges, we introduce JailbreakBench, an open-sourced benchmark with the following components: (1) an evolving repository of state-of-the-art adversarial prompts, which we refer to as *jailbreak artifacts*; (2) a jailbreaking dataset comprising 100 behaviors---both original and sourced from prior work---which align with OpenAI's usage policies; (3) a standardized evaluation framework at https://github.com/JailbreakBench/jailbreakbench that includes a clearly defined threat model, system prompts, chat templates, and scoring functions; and (4) a leaderboard at https://jailbreakbench.github.io/ that tracks the performance of attacks and defenses for various LLMs. We have carefully considered the potential ethical implications of releasing this benchmark, and believe that it will be a net positive for the community.",
+    "tldr": "JailbreakBench introduces a standard for evaluating jailbreak attacks on LLMs.",
+    "tags": [
+        "jailbreaks",
+        "robustness",
+        "alignment",
+        "large language models",
+        "AI safety"
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "uuid": "a7f69ed5-2c8a-5892-bf66-c2599380f805",
+    "title": "Multimodal Table Understanding",
+    "conference_full": "Annual Meeting of the Association for Computational Linguistics",
+    "conference": "ACL",
+    "year": 2024,
+    "volume": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "bibtex": "@inproceedings{zheng-etal-2024-multimodal,\n    title = \"Multimodal Table Understanding\",\n    author = \"Zheng, Mingyu  and\n      Feng, Xinwei  and\n      Si, Qingyi  and\n      She, Qiaoqiao  and\n      Lin, Zheng  and\n      Jiang, Wenbin  and\n      Wang, Weiping\",\n    editor = \"Ku, Lun-Wei  and\n      Martins, Andre  and\n      Srikumar, Vivek\",\n    booktitle = \"Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)\",\n    month = aug,\n    year = \"2024\",\n    address = \"Bangkok, Thailand\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.acl-long.493\",\n    doi = \"10.18653/v1/2024.acl-long.493\",\n    pages = \"9102--9124\",\n    abstract = \"Although great progress has been made by previous table understanding methods including recent approaches based on large language models (LLMs), they rely heavily on the premise that given tables must be converted into a certain text sequence (such as Markdown or HTML) to serve as model input. However, it is difficult to access such high-quality textual table representations in some real-world scenarios, and table images are much more accessible. Therefore, how to directly understand tables using intuitive visual information is a crucial and urgent challenge for developing more practical applications. In this paper, we propose a new problem, multimodal table understanding, where the model needs to generate correct responses to various table-related requests based on the given table image. To facilitate both the model training and evaluation, we construct a large-scale dataset named MMTab, which covers a wide spectrum of table images, instructions and tasks. On this basis, we develop Table-LLaVA, a generalist tabular multimodal large language model (MLLM), which significantly outperforms recent open-source MLLM baselines on 23 benchmarks under held-in and held-out settings.\",\n}\n",
+    "authors": [
+        "Mingyu Zheng",
+        "Xinwei Feng",
+        "Qingyi Si",
+        "Qiaoqiao She",
+        "Zheng Lin",
+        "Wenbin Jiang",
+        "Weiping Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.acl-long.493.pdf",
+    "pdf_path": "data/dataset/airqa/papers/acl2024/a7f69ed5-2c8a-5892-bf66-c2599380f805.pdf",
+    "abstract": "Although great progress has been made by previous table understanding methods including recent approaches based on large language models (LLMs), they rely heavily on the premise that given tables must be converted into a certain text sequence (such as Markdown or HTML) to serve as model input. However, it is difficult to access such high-quality textual table representations in some real-world scenarios, and table images are much more accessible. Therefore, how to directly understand tables using intuitive visual information is a crucial and urgent challenge for developing more practical applications. In this paper, we propose a new problem, multimodal table understanding, where the model needs to generate correct responses to various table-related requests based on the given table image. To facilitate both the model training and evaluation, we construct a large-scale dataset named MMTab, which covers a wide spectrum of table images, instructions and tasks. On this basis, we develop Table-LLaVA, a generalist tabular multimodal large language model (MLLM), which significantly outperforms recent open-source MLLM baselines on 23 benchmarks under held-in and held-out settings.",
+    "num_pages": 23,
+    "tldr": "New model excels in understanding tables from images using multimodal data.",
+    "tags": [
+        "multimodal table understanding",
+        "table images",
+        "large language models",
+        "dataset construction",
+        "visual information processing"
+    ]
+}

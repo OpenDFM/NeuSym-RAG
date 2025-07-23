@@ -1,0 +1,30 @@
+{
+    "uuid": "3d698feb-d3ae-5d15-b469-580dfae393a3",
+    "title": "Fewer-Token Neural Speech Codec with Time-Invariant Codes",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2024,
+    "volume": "ICASSP session SLP: Speech & Language Processing",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/RenWYX0ZZ24,\n  author       = {Yong Ren and\n                  Tao Wang and\n                  Jiangyan Yi and\n                  Le Xu and\n                  Jianhua Tao and\n                  Chu Yuan Zhang and\n                  Junzuo Zhou},\n  title        = {Fewer-Token Neural Speech Codec with Time-Invariant Codes},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing,\n                  {ICASSP} 2024, Seoul, Republic of Korea, April 14-19, 2024},\n  pages        = {12737--12741},\n  publisher    = {{IEEE}},\n  year         = {2024},\n  url          = {https://doi.org/10.1109/ICASSP48485.2024.10448454},\n  doi          = {10.1109/ICASSP48485.2024.10448454},\n  timestamp    = {Tue, 24 Dec 2024 22:38:47 +0100},\n  biburl       = {https://dblp.org/rec/conf/icassp/RenWYX0ZZ24.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Yong Ren",
+        "Tao Wang",
+        "Jiangyan Yi",
+        "Le Xu",
+        "Jianhua Tao",
+        "Chu Yuan Zhang",
+        "Junzuo Zhou"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP48485.2024.10448454",
+    "pdf_path": "data/dataset/airqa/papers/icassp2024/3d698feb-d3ae-5d15-b469-580dfae393a3.pdf",
+    "num_pages": 5,
+    "abstract": "Language model based text-to-speech (TTS) models, like VALL-E, have gained attention for their outstanding in-context learning capability in zero-shot scenarios. Neural speech codec is a critical component of these models, which can convert speech into discrete token representations. However, excessive token sequences from the codec may negatively affect prediction accuracy and restrict the progression of Language model based TTS models. To address this issue, this paper proposes a novel neural speech codec with time-invariant codes named TiCodec. By encoding and quantizing time-invariant information into a separate code, TiCodec can reduce the amount of frame-level information that needs encoding, effectively decreasing the number of tokens as codes of speech. Furthermore, this paper introduces a time-invariant encoding consistency loss to enhance the consistency of time-invariant code within an utterance, which can benefit the zero-shot TTS task. Experimental results demonstrate that TiCodec can not only enhance the quality of reconstruction speech with fewer tokens but also increase the similarity and naturalness, as well as reduce the word error rate of the synthesized speech by the TTS model. The code is publicly available at https://github.com/y-ren16/TiCodec.",
+    "tldr": "TiCodec reduces token usage in TTS while enhancing speech quality and accuracy.",
+    "tags": [
+        "neural speech codec",
+        "text-to-speech",
+        "time-invariant codes",
+        "zero-shot learning",
+        "token reduction"
+    ]
+}

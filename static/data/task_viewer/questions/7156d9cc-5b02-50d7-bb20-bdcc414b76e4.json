@@ -1,0 +1,37 @@
+{
+    "uuid": "7156d9cc-5b02-50d7-bb20-bdcc414b76e4",
+    "question": "Among the diverse interactive domains used to test SOFT-SC, which one is the first parallel interactive text-based and embodied environment?",
+    "answer_format": "Your answer should be a python string, and it should be a diverse interactive domain name.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "feee5f2e-295c-5232-9c77-cb3a13763f65"
+    ],
+    "reference_pdf": [
+        "db340dc7-ff3c-591a-81a6-88243bf559df",
+        "75494679-b547-5df0-a83a-75410da0f379",
+        "25ffe76f-9274-56ea-b07f-4086da57bb65"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the diverse interactive domains",
+        "Find the papers about the diverse interactive domains.",
+        "Retrieve the papers about the diverse interactive domains to find the answer."
+    ],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "ALFWorld",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human",
+    "status": "success",
+    "test_result": "[Observation]: ALFWorld"
+}

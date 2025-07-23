@@ -1,0 +1,30 @@
+{
+    "uuid": "413e7de9-03c4-5c1f-9e42-cd48030c9369",
+    "title": "Unsupervised Dense Information Retrieval with Contrastive Learning",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2022,
+    "authors": [
+        "Gautier Izacard",
+        "Mathilde Caron",
+        "Lucas Hosseini",
+        "Sebastian Riedel",
+        "Piotr Bojanowski",
+        "Armand Joulin",
+        "Edouard Grave"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2112.09118v4",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2022/413e7de9-03c4-5c1f-9e42-cd48030c9369.pdf",
+    "bibtex": "@misc{izacard2022unsuperviseddenseinformationretrievalwith,\n    title = {Unsupervised Dense Information Retrieval with Contrastive Learning},\n    author = {Gautier Izacard and Mathilde Caron and Lucas Hosseini and Sebastian Riedel and Piotr Bojanowski and Armand Joulin and Edouard Grave},\n    year = {2022},\n    eprint = {2112.09118},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.IR},\n    url = {http://arxiv.org/abs/2112.09118},\n}",
+    "abstract": "Recently, information retrieval has seen the emergence of dense retrievers,\nusing neural networks, as an alternative to classical sparse methods based on\nterm-frequency. These models have obtained state-of-the-art results on datasets\nand tasks where large training sets are available. However, they do not\ntransfer well to new applications with no training data, and are outperformed\nby unsupervised term-frequency methods such as BM25. In this work, we explore\nthe limits of contrastive learning as a way to train unsupervised dense\nretrievers and show that it leads to strong performance in various retrieval\nsettings. On the BEIR benchmark our unsupervised model outperforms BM25 on 11\nout of 15 datasets for the Recall@100. When used as pre-training before\nfine-tuning, either on a few thousands in-domain examples or on the large\nMS~MARCO dataset, our contrastive model leads to improvements on the BEIR\nbenchmark. Finally, we evaluate our approach for multi-lingual retrieval, where\ntraining data is even scarcer than for English, and show that our approach\nleads to strong unsupervised performance. Our model also exhibits strong\ncross-lingual transfer when fine-tuned on supervised English data only and\nevaluated on low resources language such as Swahili. We show that our\nunsupervised models can perform cross-lingual retrieval between different\nscripts, such as retrieving English documents from Arabic queries, which would\nnot be possible with term matching methods.",
+    "num_pages": 21,
+    "tldr": "Contrastive learning enhances unsupervised dense retrieval across languages.",
+    "tags": [
+        "unsupervised learning",
+        "dense retrieval",
+        "contrastive learning",
+        "cross-lingual retrieval",
+        "information retrieval"
+    ]
+}

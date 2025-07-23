@@ -1,0 +1,27 @@
+{
+    "uuid": "0b1dbace-15fd-53b8-bf52-2bf158ceea33",
+    "question": "Which paper first proposes to mask positions to pre-train multi-modal document transformer\uff1f",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [
+        "acl2023"
+    ],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper first propose to mask positions to pre-train multi-modal document transformer\uff1f",
+            "reference_answer": "LayoutMask: Enhance Text-Layout Interaction in Multi-modal Pre-training for Document Understanding"
+        }
+    },
+    "state": {},
+    "annotator": "litsearch_manual",
+    "status": "success",
+    "test_result": "[Observation]: LayoutMask: Enhance Text-Layout Interaction in Multi-modal Pre-training for Document Understanding"
+}

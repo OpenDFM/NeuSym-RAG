@@ -1,0 +1,33 @@
+{
+    "uuid": "cabc7bed-6a8b-5030-a199-716eac881799",
+    "title": "Towards an On-device Agent for Text Rewriting",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yun Zhu",
+        "Yinxiao Liu",
+        "Felix Stahlberg",
+        "Shankar Kumar",
+        "Yu-hui Chen",
+        "Liangchen Luo",
+        "Lei Shu",
+        "Renjie Liu",
+        "Jindong Chen",
+        "Lei Meng"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2308.11807v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/cabc7bed-6a8b-5030-a199-716eac881799.pdf",
+    "bibtex": "@misc{zhu2023towardsanondeviceagentfor,\n    title = {Towards an On-device Agent for Text Rewriting},\n    author = {Yun Zhu and Yinxiao Liu and Felix Stahlberg and Shankar Kumar and Yu-hui Chen and Liangchen Luo and Lei Shu and Renjie Liu and Jindong Chen and Lei Meng},\n    year = {2023},\n    eprint = {2308.11807},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2308.11807},\n}",
+    "abstract": "Large Language Models (LLMs) have demonstrated impressive capabilities for\ntext rewriting. Nonetheless, the large sizes of these models make them\nimpractical for on-device inference, which would otherwise allow for enhanced\nprivacy and economical inference. Creating a smaller yet potent language model\nfor text rewriting presents a formidable challenge because it requires\nbalancing the need for a small size with the need to retain the emergent\ncapabilities of the LLM, that requires costly data collection. To address the\nabove challenge, we introduce a new instruction tuning approach for building a\nmobile-centric text rewriting model. Our strategies enable the generation of\nhigh quality training data without any human labeling. In addition, we propose\na heuristic reinforcement learning framework which substantially enhances\nperformance without requiring preference data. To further bridge the\nperformance gap with the larger server-side model, we propose an effective\napproach that combines the mobile rewrite agent with the server model using a\ncascade. To tailor the text rewriting tasks to mobile scenarios, we introduce\nMessageRewriteEval, a benchmark that focuses on text rewriting for messages\nthrough natural language instructions. Through empirical experiments, we\ndemonstrate that our on-device model surpasses the current state-of-the-art\nLLMs in text rewriting while maintaining a significantly reduced model size.\nNotably, we show that our proposed cascading approach improves model\nperformance.",
+    "num_pages": 20,
+    "tldr": "On-device text rewriting via instruction tuning and cascade improves efficiency.",
+    "tags": [
+        "on-device inference",
+        "language models",
+        "text rewriting",
+        "reinforcement learning",
+        "model compression"
+    ]
+}

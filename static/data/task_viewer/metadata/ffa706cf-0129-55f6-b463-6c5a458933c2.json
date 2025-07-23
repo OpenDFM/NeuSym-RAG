@@ -1,0 +1,31 @@
+{
+    "uuid": "ffa706cf-0129-55f6-b463-6c5a458933c2",
+    "title": "MemoChat: Tuning LLMs to Use Memos for Consistent Long-Range Open-Domain Conversation",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Junru Lu",
+        "Siyu An",
+        "Mingbao Lin",
+        "Gabriele Pergola",
+        "Yulan He",
+        "Di Yin",
+        "Xing Sun",
+        "Yunsheng Wu"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2308.08239v2",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/ffa706cf-0129-55f6-b463-6c5a458933c2.pdf",
+    "bibtex": "@misc{lu2023memochattuningllmstouse,\n    title = {MemoChat: Tuning LLMs to Use Memos for Consistent Long-Range Open-Domain Conversation},\n    author = {Junru Lu and Siyu An and Mingbao Lin and Gabriele Pergola and Yulan He and Di Yin and Xing Sun and Yunsheng Wu},\n    year = {2023},\n    eprint = {2308.08239},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CL},\n    url = {http://arxiv.org/abs/2308.08239},\n}",
+    "abstract": "We propose MemoChat, a pipeline for refining instructions that enables large\nlanguage models (LLMs) to effectively employ self-composed memos for\nmaintaining consistent long-range open-domain conversations. We demonstrate a\nlong-range open-domain conversation through iterative\n\"memorization-retrieval-response\" cycles. This requires us to carefully design\ntailored tuning instructions for each distinct stage. The instructions are\nreconstructed from a collection of public datasets to teach the LLMs to\nmemorize and retrieve past dialogues with structured memos, leading to enhanced\nconsistency when participating in future conversations. We invite experts to\nmanually annotate a test set designed to evaluate the consistency of long-range\nconversations questions. Experiments on three testing scenarios involving both\nopen-source and API-accessible chatbots at scale verify the efficacy of\nMemoChat, which outperforms strong baselines. Our codes, data and models are\navailable here: https://github.com/LuJunru/MemoChat.",
+    "num_pages": 16,
+    "tldr": "MemoChat boosts LLMs' consistency in long-range conversations using memos.",
+    "tags": [
+        "large language models",
+        "long-range conversation",
+        "memory retrieval",
+        "conversational consistency",
+        "open-domain dialogue"
+    ]
+}

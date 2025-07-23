@@ -1,0 +1,32 @@
+{
+    "uuid": "1cf7ea57-d128-5619-9361-6b35db040c25",
+    "title": "ConvBench: A Multi-Turn Conversation Evaluation Benchmark with Hierarchical Ablation Capability for Large Vision-Language Models",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 Track Datasets and Benchmarks Spotlight",
+    "bibtex": "@inproceedings{\nliu2024convbench,\ntitle={ConvBench: A Multi-Turn Conversation Evaluation Benchmark with Hierarchical Ablation Capability for Large Vision-Language Models},\nauthor={Shuo Liu and Kaining Ying and Hao Zhang and Yue Yang and Yuqi Lin and Tianle Zhang and Chuanhao Li and Yu Qiao and Ping Luo and Wenqi Shao and Kaipeng Zhang},\nbooktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},\nyear={2024},\nurl={https://openreview.net/forum?id=PyTf2jj0SH}\n}",
+    "authors": [
+        "Shuo Liu",
+        "Kaining Ying",
+        "Hao Zhang",
+        "Yue Yang",
+        "Yuqi Lin",
+        "Tianle Zhang",
+        "Chuanhao Li",
+        "Yu Qiao",
+        "Ping Luo",
+        "Wenqi Shao",
+        "Kaipeng Zhang"
+    ],
+    "pdf_url": "https://openreview.net/pdf/331be0d41fa3aa1023727d33c6077a3f1d1eb748.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/1cf7ea57-d128-5619-9361-6b35db040c25.pdf",
+    "num_pages": 49,
+    "abstract": "Multi-turn visual conversation is an important ability of real-world AI assistants. However,  the related evaluation benchmark is missed. This paper presents ConvBench, a multi-turn conversation benchmark with hierarchical capabilities ablation evaluation for Large Vision-Language Models (LVLMs). ConvBench comprises 577 curated multi-turn conversations, encompassing 215 tasks. These tasks are broad and open-ended, which resemble real-world user behaviors. ConvBench progressively examines the LVLMs' perception, reasoning, and creativity capabilities in each conversation and can decouple these capabilities in evaluations and thus perform reliable error attribution. Besides, considering the diversity of open-ended questions, we introduce an efficient and reliable automatic evaluation framework. Experimental results reveal that ConvBench is a significant challenge for current LVLMs, even for GPT4V, which achieves only a 39.51% score. Besides, we have some insightful findings, such as the weak perception of LVLMs inhibits authentic strengths in reasoning and creation. We believe our design of hierarchical capabilities, decoupling capabilities evaluation, and multi-turn conversation can blaze a new trail in LVLMs evaluation. Code and benchmark are released at https://github.com/shirlyliu64/ConvBench.",
+    "tldr": "A multi-turn conversation evaluation benchmark with error analysis ability for large vision-language models",
+    "tags": [
+        "Multi-Turn Conversation Evaluation",
+        "Progressive Evaluation",
+        "Large Vision-Language Model"
+    ]
+}

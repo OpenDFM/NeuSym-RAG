@@ -1,0 +1,31 @@
+{
+    "uuid": "9156c181-6be2-5e8a-ba2e-4658dce594e7",
+    "title": "AlpacaFarm: A Simulation Framework for Methods that Learn from Human Feedback",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 spotlight",
+    "bibtex": "@inproceedings{\ndubois2023alpacafarm,\ntitle={AlpacaFarm: A Simulation Framework for Methods that Learn from Human Feedback},\nauthor={Yann Dubois and Xuechen Li and Rohan Taori and Tianyi Zhang and Ishaan Gulrajani and Jimmy Ba and Carlos Guestrin and Percy Liang and Tatsunori Hashimoto},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=4hturzLcKX}\n}",
+    "authors": [
+        "Yann Dubois",
+        "Xuechen Li",
+        "Rohan Taori",
+        "Tianyi Zhang",
+        "Ishaan Gulrajani",
+        "Jimmy Ba",
+        "Carlos Guestrin",
+        "Percy Liang",
+        "Tatsunori Hashimoto"
+    ],
+    "pdf_url": "https://openreview.net/pdf/7d610f4f6ca0eb994463a59a2d6d9d87aff743db.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/9156c181-6be2-5e8a-ba2e-4658dce594e7.pdf",
+    "num_pages": 31,
+    "abstract": "Large language models (LLMs) such as ChatGPT have seen widespread adoption due to their ability to follow user instructions well.\nDeveloping these LLMs involves a complex yet poorly understood workflow requiring training with human feedback. Replicating and understanding this instruction-following process faces three major challenges: the high cost of data collection, the lack of trustworthy evaluation, and the absence of reference method implementations. We address these bottlenecks with AlpacaFarm, a simulator that enables research and development for learning from feedback at a low cost. First, we design LLM based simulator for human feedback that is 45x cheaper than crowdworkers and displays high agreement with humans. Second, we identify an evaluation dataset representative of real-world instructions and propose an automatic evaluation procedure. Third, we contribute reference implementations for several methods (PPO, best-of-n, expert iteration, among others) that learn from pairwise feedback. Finally, as an end-to-end validation of AlpacaFarm, we train and evaluate eleven models on 10k pairs of human feedback and show that rankings of models trained in AlpacaFarm match rankings of models trained on human data. As a demonstration of the research possible in AlpacaFarm, we find that methods that use a reward model can substantially improve over supervised fine-tuning and that our reference PPO implementation leads to a +10% win-rate improvement against Davinci003.",
+    "tldr": "We propose and validate a simulator that enables research on learning from human feedback at a low cost.",
+    "tags": [
+        "Instruction-Following",
+        "Reinforcement Learning from Human Feedback",
+        "Artificial General Intelligence",
+        "Large Language Models"
+    ]
+}

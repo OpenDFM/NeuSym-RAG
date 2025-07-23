@@ -1,0 +1,33 @@
+{
+    "uuid": "80b0a0f4-7247-5b9e-8782-0a4dd4a2ae4b",
+    "title": "Let's Verify Step by Step",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Hunter Lightman",
+        "Vineet Kosaraju",
+        "Yura Burda",
+        "Harri Edwards",
+        "Bowen Baker",
+        "Teddy Lee",
+        "Jan Leike",
+        "John Schulman",
+        "Ilya Sutskever",
+        "Karl Cobbe"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2305.20050v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/80b0a0f4-7247-5b9e-8782-0a4dd4a2ae4b.pdf",
+    "bibtex": "@misc{lightman2023letsverifystepbystep,\n    title = {Let's Verify Step by Step},\n    author = {Hunter Lightman and Vineet Kosaraju and Yura Burda and Harri Edwards and Bowen Baker and Teddy Lee and Jan Leike and John Schulman and Ilya Sutskever and Karl Cobbe},\n    year = {2023},\n    eprint = {2305.20050},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.LG},\n    url = {http://arxiv.org/abs/2305.20050},\n}",
+    "abstract": "In recent years, large language models have greatly improved in their ability\nto perform complex multi-step reasoning. However, even state-of-the-art models\nstill regularly produce logical mistakes. To train more reliable models, we can\nturn either to outcome supervision, which provides feedback for a final result,\nor process supervision, which provides feedback for each intermediate reasoning\nstep. Given the importance of training reliable models, and given the high cost\nof human feedback, it is important to carefully compare the both methods.\nRecent work has already begun this comparison, but many questions still remain.\nWe conduct our own investigation, finding that process supervision\nsignificantly outperforms outcome supervision for training models to solve\nproblems from the challenging MATH dataset. Our process-supervised model solves\n78% of problems from a representative subset of the MATH test set.\nAdditionally, we show that active learning significantly improves the efficacy\nof process supervision. To support related research, we also release PRM800K,\nthe complete dataset of 800,000 step-level human feedback labels used to train\nour best reward model.",
+    "num_pages": 29,
+    "tldr": "Process supervision improves model reasoning and accuracy on complex MATH problems.",
+    "tags": [
+        "large language models",
+        "process supervision",
+        "outcome supervision",
+        "active learning",
+        "MATH dataset"
+    ]
+}

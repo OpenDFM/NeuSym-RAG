@@ -1,0 +1,25 @@
+{
+    "uuid": "0597ce2b-cd8c-5b5b-b692-e8042d8548de",
+    "title": "The Internal State of an LLM Knows When It’s Lying",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    "bibtex": "@inproceedings{azaria-mitchell-2023-internal,\n    title = \"The Internal State of an {LLM} Knows When It{'}s Lying\",\n    author = \"Azaria, Amos  and\n      Mitchell, Tom\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2023\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-emnlp.68\",\n    doi = \"10.18653/v1/2023.findings-emnlp.68\",\n    pages = \"967--976\",\n    abstract = \"While Large Language Models (LLMs) have shown exceptional performance in various tasks, one of their most prominent drawbacks is generating inaccurate or false information with a confident tone. In this paper, we provide evidence that the LLM{'}s internal state can be used to reveal the truthfulness of statements. This includes both statements provided to the LLM, and statements that the LLM itself generates. Our approach is to train a classifier that outputs the probability that a statement is truthful, based on the hidden layer activations of the LLM as it reads or generates the statement. Experiments demonstrate that given a set of test sentences, of which half are true and half false, our trained classifier achieves an average of 71{\\%} to 83{\\%} accuracy labeling which sentences are true versus false, depending on the LLM base model. Furthermore, we explore the relationship between our classifier{'}s performance and approaches based on the probability assigned to the sentence by the LLM. We show that while LLM-assigned sentence probability is related to sentence truthfulness, this probability is also dependent on sentence length and the frequencies of words in the sentence, resulting in our trained classifier providing a more reliable approach to detecting truthfulness, highlighting its potential to enhance the reliability of LLM-generated content and its practical applicability in real-world scenarios.\",\n}\n",
+    "authors": [
+        "Amos Azaria",
+        "Tom Mitchell"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-emnlp.68.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/0597ce2b-cd8c-5b5b-b692-e8042d8548de.pdf",
+    "num_pages": 10,
+    "abstract": "While Large Language Models (LLMs) have shown exceptional performance in various tasks, one of their most prominent drawbacks is generating inaccurate or false information with a confident tone. In this paper, we provide evidence that the LLM’s internal state can be used to reveal the truthfulness of statements. This includes both statements provided to the LLM, and statements that the LLM itself generates. Our approach is to train a classifier that outputs the probability that a statement is truthful, based on the hidden layer activations of the LLM as it reads or generates the statement. Experiments demonstrate that given a set of test sentences, of which half are true and half false, our trained classifier achieves an average of 71% to 83% accuracy labeling which sentences are true versus false, depending on the LLM base model. Furthermore, we explore the relationship between our classifier’s performance and approaches based on the probability assigned to the sentence by the LLM. We show that while LLM-assigned sentence probability is related to sentence truthfulness, this probability is also dependent on sentence length and the frequencies of words in the sentence, resulting in our trained classifier providing a more reliable approach to detecting truthfulness, highlighting its potential to enhance the reliability of LLM-generated content and its practical applicability in real-world scenarios.",
+    "tldr": "LLM's internal state can reveal the truthfulness of its generated statements.",
+    "tags": [
+        "Large Language Models",
+        "truthfulness detection",
+        "classifier performance",
+        "hidden layer activations",
+        "false information"
+    ]
+}

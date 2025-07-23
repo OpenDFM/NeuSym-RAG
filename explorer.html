@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NeuSym-RAG Task Explorer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/explorer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <style>
+        .is-halfheight {
+            height: 50vh;
+            overflow-y: scroll;
+        }
+
+        .category {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .task-list {
+            border: none;
+        }
+
+        .task-list:hover {
+            background-color: #f2f0f0;
+        }
+
+        .active,
+        .category:hover {
+            background-color: #ccc;
+        }
+
+        .task-active {
+            background-color: #f3f0f0;
+        }
+
+        .category:after {
+            content: "\002B";
+            color: #000000;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .categorycontainer {
+            max-height: 180vh;
+            overflow-y: scroll;
+        }
+
+        .taskid-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .taskid-label {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .highlight-quote {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007BFF;
+            padding: 10px 15px;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .highlight-quote-title {
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        .highlight-quote-content {
+            font-style: italic;
+            max-height: 180px;
+            overflow: auto;
+        }
+
+        .tag-container {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .tag-group {
+            margin-bottom: 15px;
+        }
+        .tag-group-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .tag-button {
+            margin: 2px;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            background: #f5f5f5;
+            cursor: pointer;
+        }
+        .tag-button.selected {
+            background: #3273dc;
+            color: white;
+        }
+        .trajectory-turn {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .turn-header {
+            font-weight: bold;
+            color: #3273dc;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #3273dc;
+        }
+        .turn-content {
+            margin-left: 15px;
+        }
+        .status-tag {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            margin: 5px;
+        }
+        .status-tag.success {
+            background-color: #48c774;
+            color: white;
+        }
+        .status-tag.failure {
+            background-color: #f14668;
+            color: white;
+        }
+        .task-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            margin: 2px;
+            font-size: 0.9em;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+        }
+        .task-tag.task-type {
+            background-color: #3273dc;
+            color: white;
+        }
+        .task-tag.content-type {
+            background-color: #00d1b2;
+            color: white;
+        }
+        .task-tag.question-type {
+            background-color: #ffdd57;
+            color: #363636;
+        }
+        .highlight-quote {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007BFF;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .task-id-display {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .observation-scrollbox {
+            max-height: 240px;
+            max-width: 100%;
+            overflow: auto;
+            padding: 10px;
+            margin: 8px 0;
+            background: #f8f8f8;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            font-size: 0.98em;
+            white-space: pre-wrap;
+        }
+        .observation-table-wrap { 
+            overflow-x: auto; 
+            margin-bottom: 6px; 
+            max-width: 100%;
+            min-width: 0;
+        }
+        .observation-table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            font-size: 0.97em; 
+            background: #fff; 
+            table-layout: auto; 
+            min-width: fit-content;
+        }
+        .observation-table th, .observation-table td { 
+            border: 1px solid #e0e0e0; 
+            padding: 4px 8px; 
+            text-align: left; 
+            max-width: 320px; 
+            word-break: break-all; 
+        }
+        .observation-table th { background: #f5f7fa; font-weight: 600; }
+        .observation-table-outer { max-width: 100%; max-height: 320px; overflow-y: auto; margin-bottom: 6px; }
+        .observation-extra { margin-top: 8px; color: #555; font-size: 0.96em; background: #f8f8f8; border-radius: 4px; padding: 6px 10px; }
+    </style>
+</head>
+
+<body>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
+    <section class="section is-max-desktop">
+        <div class="container">
+            <h2 class="title is-3" style="display: inline-block; vertical-align: middle;">NeuSym-RAG Task Explorer</h2>
+            <div class="notification is-info">
+                <md-block>
+                    This page displays a subset of AirQA-Real examples. You can filter examples by tags and view their details.<br>
+                    For each example, you can examine its complete interaction trajectory.
+                </md-block>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load task data
+            Promise.all([
+                fetch('./static/data/task_viewer/correct/task_ids.json').then(response => response.json()),
+                fetch('./static/data/task_viewer/incorrect/task_ids.json').then(response => response.json())
+            ]).then(([correctTasks, incorrectTasks]) => {
+                const container = document.getElementById('categoriesContainer');
+                
+                // Create categories
+                const categories = {
+                    'Correct Tasks': correctTasks,
+                    'Incorrect Tasks': incorrectTasks
+                };
+
+                Object.entries(categories).forEach(([category, tasks]) => {
+                    // Create category button
+                    const catButton = document.createElement('button');
+                    catButton.textContent = category;
+                    catButton.classList.add('category');
+                    container.appendChild(catButton);
+
+                    // Create task list
+                    const taskList = document.createElement('ul');
+                    taskList.classList.add('panel');
+                    
+                    tasks.forEach((taskId, index) => {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('task-list');
+                        listItem.textContent = `Task ${index + 1}`;
+
+                        listItem.addEventListener('click', () => {
+                            // Load task data
+                            Promise.all([
+                                fetch(`./static/data/task_viewer/questions/${taskId}.json`).then(response => response.json()),
+                                fetch(`./static/data/task_viewer/${category.toLowerCase().includes('correct') ? 'correct' : 'incorrect'}/${taskId}.jsonl`)
+                                    .then(response => response.text())
+                                    .then(text => {
+                                        // Parse JSONL file
+                                        const lines = text.trim().split('\n');
+                                        return lines.map(line => JSON.parse(line));
+                                    })
+                            ]).then(([taskData, trajectory]) => {
+                                // Update UI
+                                document.getElementById('taskid-text').textContent = taskId;
+                                document.getElementById('question-text').textContent = taskData.question;
+                                
+                                // Update status
+                                const statusFlag = document.getElementById('status-flag');
+                                statusFlag.innerHTML = `<b>Status:</b> <span class="tag-${category.toLowerCase().includes('correct') ? 'success' : 'failure'}">${category.toLowerCase().includes('correct') ? 'success' : 'failure'}</span>`;
+                                
+                                // Update tags
+                                const tagList = document.getElementById('tag-list');
+                                tagList.innerHTML = '<b>Tags:</b> ' + taskData.tags.map(tag => 
+                                    `<span class="tag-${tag.toLowerCase()}">${tag}</span>`
+                                ).join(' ');
+                                
+                                // Update trajectory
+                                const formattedTrajectory = trajectory.map((step, index) => {
+                                    return `## Step ${index + 1}\n${JSON.stringify(step, null, 2)}`;
+                                }).join('\n\n');
+                                document.getElementById('trajectory-text').textContent = formattedTrajectory;
+                                
+                                // Highlight active task
+                                document.querySelectorAll('.task-list').forEach(item => item.classList.remove('task-active'));
+                                listItem.classList.add('task-active');
+                            });
+                        });
+
+                        taskList.appendChild(listItem);
+                    });
+
+                    container.appendChild(taskList);
+
+                    // Toggle category
+                    catButton.addEventListener('click', () => {
+                        catButton.classList.toggle('active');
+                        if (taskList.style.maxHeight) {
+                            taskList.style.maxHeight = null;
+                        } else {
+                            taskList.style.maxHeight = taskList.scrollHeight + "px";
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <section class="section">
+        <div class="container is-fluid">
+            <!-- 上下布局：Task Explorer 在上，Task Details 在下 -->
+            <div class="box" style="margin-bottom: 2rem;">
+                <h1 class="title is-4">Task Explorer</h1>
+                <p class="subtitle is-6">Filter and explore tasks</p>
+                <div class="field">
+                    <label class="label">Task Type</label>
+                    <div class="buttons">
+                        <button class="button tag-button" data-type="task" data-value="single">Single</button>
+                        <button class="button tag-button" data-type="task" data-value="multiple">Multiple</button>
+                        <button class="button tag-button" data-type="task" data-value="retrieval">Retrieval</button>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Task Categories</label>
+                    <div class="buttons">
+                        <button class="button tag-button" data-type="content" data-value="text">Text</button>
+                        <button class="button tag-button" data-type="content" data-value="table">Table</button>
+                        <button class="button tag-button" data-type="content" data-value="image">Image</button>
+                        <button class="button tag-button" data-type="content" data-value="formula">Formula</button>
+                        <button class="button tag-button" data-type="content" data-value="metadata">Metadata</button>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Evaluation Genre</label>
+                    <div class="buttons">
+                        <button class="button tag-button" data-type="question" data-value="subjective">Subjective</button>
+                        <button class="button tag-button" data-type="question" data-value="objective">Objective</button>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <p class="control">
+                        <button class="button is-primary" id="filterButton">
+                            <span class="icon">
+                                <i class="fas fa-filter"></i>
+                            </span>
+                            <span>Filter</span>
+                        </button>
+                    </p>
+                    <p class="control">
+                        <button class="button is-info" id="randomButton">
+                            <span class="icon">
+                                <i class="fas fa-random"></i>
+                            </span>
+                            <span>Random</span>
+                        </button>
+                    </p>
+                </div>
+            </div>
+            <div id="noMatchSection" class="box" style="display: none;">
+                <h2 class="title is-4">No Matching Tasks Found</h2>
+                <p class="subtitle is-6">Try adjusting your filters</p>
+                <div class="content">
+                    <p>Selected filters:</p>
+                    <ul id="selectedFiltersList"></ul>
+                </div>
+            </div>
+            <div id="resultsSection" class="box" style="display: none;">
+                <h2 class="title is-4">Task Details</h2>
+                <div class="content">
+                    <p><strong>Task ID:</strong> <span id="taskId"></span></p>
+                    <div class="field">
+                        <p class="has-text-weight-bold">Status:</p>
+                        <span id="taskStatus" class="tag status-tag"></span>
+                    </div>
+                    <div class="field">
+                        <p class="has-text-weight-bold">Tags:</p>
+                        <div id="taskTags" class="tags"></div>
+                    </div>
+                    <div class="field">
+                        <p class="has-text-weight-bold">Question:</p>
+                        <div class="highlight-quote" id="taskQuestion"></div>
+                    </div>
+                    <div class="highlight-quote" id="anchorPdfSection" style="display: none;">
+                        <p class="has-text-weight-bold">Anchor PDFs:</p>
+                        <div id="anchorPdfList"></div>
+                    </div>
+                    <div class="highlight-quote" id="referencePdfSection" style="display: none;">
+                        <p class="has-text-weight-bold">Reference PDFs:</p>
+                        <div id="referencePdfList"></div>
+                    </div>
+                    <div class="highlight-quote" id="conferenceSection" style="display: none;">
+                        <p class="has-text-weight-bold">Conference:</p>
+                        <p id="conferenceInfo"></p>
+                    </div>
+                    <div class="field">
+                        <p class="has-text-weight-bold">Trajectory:</p>
+                        <div id="trajectoryList" class="trajectory-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let allTasks = [];
+        let selectedFilters = {
+            task: new Set(),
+            content: new Set(),
+            question: new Set()
+        };
+
+        // Load all tasks
+        async function loadTasks() {
+            try {
+                // First get the list of all task IDs
+                const response = await fetch('./static/data/task_viewer/questions/task_ids.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const taskIds = await response.json();
+                console.log('Loaded task IDs:', taskIds); // Debug log
+                
+                // Then load each task's data
+                const taskPromises = taskIds.map(async (taskId) => {
+                    try {
+                        const taskResponse = await fetch(`./static/data/task_viewer/questions/${taskId}.json`);
+                        if (!taskResponse.ok) {
+                            console.error(`Failed to load task ${taskId}: ${taskResponse.status}`);
+                            return null;
+                        }
+                        return taskResponse.json();
+                    } catch (error) {
+                        console.error(`Error loading task ${taskId}:`, error);
+                        return null;
+                    }
+                });
+                
+                const tasks = await Promise.all(taskPromises);
+                allTasks = tasks.filter(task => task !== null); // Remove any failed loads
+                console.log('Loaded tasks:', allTasks.length); // Debug log
+
+                if (allTasks.length === 0) {
+                    throw new Error('No tasks were loaded successfully');
+                }
+            } catch (error) {
+                console.error('Error loading tasks:', error);
+                alert('Error loading tasks. Please check the console for details.');
+            }
+        }
+
+        // Initialize tag buttons
+        function initializeTagButtons() {
+            document.querySelectorAll('.tag-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const type = button.dataset.type;
+                    const value = button.dataset.value;
+                    
+                    // Handle different selection rules for different tag types
+                    if (type === 'task' || type === 'question') {
+                        // For task type and question type, only one can be selected
+                        if (button.classList.contains('selected')) {
+                            button.classList.remove('selected');
+                            selectedFilters[type].delete(value);
+                        } else {
+                            // Deselect other buttons in the same group
+                            document.querySelectorAll(`.tag-button[data-type="${type}"]`).forEach(btn => {
+                                btn.classList.remove('selected');
+                                selectedFilters[type].delete(btn.dataset.value);
+                            });
+                            // Select the clicked button
+                            button.classList.add('selected');
+                            selectedFilters[type].add(value);
+                        }
+                    } else {
+                        // For content type, multiple selections are allowed
+                        if (button.classList.contains('selected')) {
+                            button.classList.remove('selected');
+                            selectedFilters[type].delete(value);
+                        } else {
+                            button.classList.add('selected');
+                            selectedFilters[type].add(value);
+                        }
+                    }
+                });
+            });
+        }
+
+        // Filter tasks based on selected tags
+        function filterTasks() {
+            return allTasks.filter(task => {
+                const taskTags = new Set(task.tags);
+                
+                // Check task type (must match exactly)
+                if (selectedFilters.task.size > 0) {
+                    const hasTaskType = Array.from(selectedFilters.task).some(type => taskTags.has(type));
+                    if (!hasTaskType) return false;
+                }
+
+                // Check content type (must match all selected)
+                if (selectedFilters.content.size > 0) {
+                    const hasAllContentTypes = Array.from(selectedFilters.content).every(type => taskTags.has(type));
+                    if (!hasAllContentTypes) return false;
+                }
+
+                // Check question type (must match exactly)
+                if (selectedFilters.question.size > 0) {
+                    const hasQuestionType = Array.from(selectedFilters.question).some(type => taskTags.has(type));
+                    if (!hasQuestionType) return false;
+                }
+
+                return true;
+            });
+        }
+
+        // Helper to extract [Thought], [Action], [Observation] from content string
+        function extractSections(content) {
+            // If content is an object with 'content' field, use that
+            if (typeof content === 'object' && content.content) {
+                content = content.content;
+            }
+            if (typeof content !== 'string') return {};
+            const result = {};
+            // Extract [Thought]
+            const thoughtMatch = content.match(/\[Thought\]\s*:?[ \t]?(.*?)(?=\[Action\]|$)/s);
+            if (thoughtMatch) result.thought = thoughtMatch[1].trim();
+            // Extract [Action]
+            const actionMatch = content.match(/\[Action\]\s*:?[ \t]?(.*?)(?=\[Observation\]|$)/s);
+            if (actionMatch) result.action = actionMatch[1].trim();
+            // Extract [Observation]
+            const obsMatch = content.match(/\[Observation\]\s*:?[ \t]?(.*)/s);
+            if (obsMatch) result.observation = obsMatch[1].trim();
+            return result;
+        }
+
+        // Helper to check if a string is a JSON object or array, or lines of JSON objects
+        function parseObservationJson(str) {
+            // Try as a single JSON object/array
+            try {
+                const obj = JSON.parse(str);
+                if (typeof obj === 'object' && obj !== null) {
+                    return Array.isArray(obj) ? obj : [obj];
+                }
+            } catch (e) {}
+            // Try as multiple lines of JSON objects
+            const lines = str.split(/\r?\n/).map(l => l.trim()).filter(l => l.startsWith('{') && l.endsWith('}'));
+            if (lines.length > 0) {
+                let arr = [];
+                for (const line of lines) {
+                    try {
+                        arr.push(JSON.parse(line));
+                    } catch (e) {}
+                }
+                if (arr.length > 0) return arr;
+            }
+            return null;
+        }
+
+        // Helper to render JSON object(s) as a table
+        function renderJsonTable(obj, extraText) {
+            let arr = Array.isArray(obj) ? obj : [obj];
+            // Collect all unique keys
+            let keys = Array.from(new Set(arr.flatMap(o => Object.keys(o))));
+            let html = '<div class="observation-table-outer"><div class="observation-table-wrap"><table class="observation-table"><thead><tr>';
+            keys.forEach(k => { html += `<th>${k}</th>`; });
+            html += '</tr></thead><tbody>';
+            arr.forEach(row => {
+                html += '<tr>';
+                keys.forEach(k => {
+                    let v = row[k];
+                    if (typeof v === 'object' && v !== null) v = JSON.stringify(v);
+                    // Always show full value in the cell, no matter how long
+                    html += `<td>${v === undefined ? '' : v}</td>`;
+                });
+                html += '</tr>';
+            });
+            html += '</tbody></table></div></div>';
+            if (extraText) {
+                html += `<div class=\"observation-extra\">${extraText}</div>`;
+            }
+            return html;
+        }
+
+        // Load trajectory for a task
+        async function loadTrajectory(taskId) {
+            try {
+                const response = await fetch(`./static/data/task_viewer/trajectory/${taskId}.jsonl`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const text = await response.text();
+                const lines = text.trim().split('\n');
+                
+                // Skip the first two lines (environment prompts)
+                const steps = lines.slice(2).map(line => JSON.parse(line));
+                
+                // Group steps into turns (every two steps)
+                const turns = [];
+                for (let i = 0; i < steps.length; i += 2) {
+                    if (i + 1 < steps.length) {
+                        turns.push([steps[i], steps[i + 1]]);
+                    }
+                }
+                
+                const trajectoryList = document.getElementById('trajectoryList');
+                trajectoryList.innerHTML = ''; // Clear previous content
+
+                // Create a timeline for the trajectory
+                const timeline = document.createElement('div');
+                timeline.className = 'timeline';
+
+                // Add each turn to the timeline
+                turns.forEach((turn, index) => {
+                    const turnDiv = document.createElement('div');
+                    turnDiv.className = 'timeline-item';
+                    const marker = document.createElement('div');
+                    marker.className = 'timeline-marker';
+                    const content = document.createElement('div');
+                    content.className = 'timeline-content';
+                    const header = document.createElement('p');
+                    header.className = 'has-text-weight-bold';
+                    header.textContent = `Turn ${index + 1}`;
+                    content.appendChild(header);
+                    const details = document.createElement('div');
+                    details.className = 'content';
+                    // Extract and display [Thought] and [Action] from turn[0]
+                    const t0 = extractSections(turn[0]);
+                    if (t0.thought) {
+                        const thoughtDiv = document.createElement('div');
+                        thoughtDiv.className = 'highlight-quote';
+                        thoughtDiv.innerHTML = `<p class="has-text-weight-bold">Thought:</p><div>${t0.thought}</div>`;
+                        details.appendChild(thoughtDiv);
+                    }
+                    if (t0.action) {
+                        const actionDiv = document.createElement('div');
+                        actionDiv.className = 'highlight-quote';
+                        actionDiv.innerHTML = `<p class="has-text-weight-bold">Action:</p><div>${t0.action}</div>`;
+                        details.appendChild(actionDiv);
+                    }
+                    // Extract and display [Observation] from turn[1]
+                    const t1 = extractSections(turn[1]);
+                    if (t1.observation) {
+                        const obsDiv = document.createElement('div');
+                        obsDiv.className = 'highlight-quote';
+                        let obsContent = t1.observation;
+                        let parsed = null, extraText = '';
+                        if (typeof obsContent === 'string') {
+                            // Split out JSON lines and extra text
+                            const lines = obsContent.split(/\r?\n/);
+                            const jsonLines = lines.filter(l => l.trim().startsWith('{') && l.trim().endsWith('}'));
+                            const nonJsonLines = lines.filter(l => !(l.trim().startsWith('{') && l.trim().endsWith('}')) && l.trim() !== '');
+                            if (jsonLines.length > 0) {
+                                parsed = jsonLines.map(l => { try { return JSON.parse(l); } catch (e) { return null; } }).filter(x => x);
+                                if (parsed.length > 0) {
+                                    extraText = nonJsonLines.join('<br>');
+                                }
+                            } else {
+                                parsed = parseObservationJson(obsContent);
+                            }
+                        }
+                        if (parsed && parsed.length > 0) {
+                            obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p>` + renderJsonTable(parsed, extraText);
+                        } else {
+                            obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p><div class=\"observation-scrollbox\">${obsContent}</div>`;
+                        }
+                        details.appendChild(obsDiv);
+                    } else if (turn[1] && turn[1].content) {
+                        const obsDiv = document.createElement('div');
+                        obsDiv.className = 'highlight-quote';
+                        let obsContent = turn[1].content;
+                        let parsed = null, extraText = '';
+                        if (typeof obsContent === 'string') {
+                            const lines = obsContent.split(/\r?\n/);
+                            const jsonLines = lines.filter(l => l.trim().startsWith('{') && l.trim().endsWith('}'));
+                            const nonJsonLines = lines.filter(l => !(l.trim().startsWith('{') && l.trim().endsWith('}')) && l.trim() !== '');
+                            if (jsonLines.length > 0) {
+                                parsed = jsonLines.map(l => { try { return JSON.parse(l); } catch (e) { return null; } }).filter(x => x);
+                                if (parsed.length > 0) {
+                                    extraText = nonJsonLines.join('<br>');
+                                }
+                            } else {
+                                parsed = parseObservationJson(obsContent);
+                            }
+                        }
+                        if (parsed && parsed.length > 0) {
+                            obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p>` + renderJsonTable(parsed, extraText);
+                        } else {
+                            obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p><div class=\"observation-scrollbox\">${obsContent}</div>`;
+                        }
+                        details.appendChild(obsDiv);
+                    }
+                    content.appendChild(details);
+                    turnDiv.appendChild(marker);
+                    turnDiv.appendChild(content);
+                    timeline.appendChild(turnDiv);
+                });
+                
+                trajectoryList.appendChild(timeline);
+                
+                // Apply syntax highlighting
+                Prism.highlightAll();
+            } catch (error) {
+                console.error('Error loading trajectory:', error);
+                const trajectoryList = document.getElementById('trajectoryList');
+                trajectoryList.innerHTML = '<div class="notification is-warning">Failed to load trajectory</div>';
+            }
+        }
+
+        // Load PDF metadata
+        async function loadPdfMetadata(pdfName) {
+            try {
+                const response = await fetch(`./static/data/task_viewer/metadata/${pdfName}.json`);
+                const metadata = await response.json();
+                return metadata; // Return the full metadata object
+            } catch (error) {
+                console.error(`Error loading PDF metadata for ${pdfName}:`, error);
+                return null;
+            }
+        }
+
+        // Display task details
+        async function displayTask(task) {
+            document.getElementById('taskId').textContent = task.uuid;
+            
+            // Update status with styled tag
+            const statusTag = document.getElementById('taskStatus');
+            statusTag.textContent = task.status;
+            statusTag.className = `tag status-tag ${task.status.toLowerCase()}`;
+            
+            // Update tags with styled tags
+            const tagList = document.getElementById('taskTags');
+            tagList.innerHTML = task.tags.map(tag => {
+                let tagClass = 'task-tag';
+                if (['single', 'multiple', 'retrieval'].includes(tag)) {
+                    tagClass += ' task-type';
+                } else if (['text', 'table', 'image', 'formula', 'metadata'].includes(tag)) {
+                    tagClass += ' content-type';
+                } else if (['subjective', 'objective'].includes(tag)) {
+                    tagClass += ' question-type';
+                }
+                return `<span class="${tagClass}">${tag}</span>`;
+            }).join('');
+            
+            document.getElementById('taskQuestion').textContent = task.question;
+            
+            // Handle anchor PDFs
+            const anchorPdfSection = document.getElementById('anchorPdfSection');
+            const anchorPdfList = document.getElementById('anchorPdfList');
+            if (task.anchor_pdf && Array.isArray(task.anchor_pdf) && task.anchor_pdf.length > 0) {
+                anchorPdfSection.style.display = 'block';
+                const pdfPromises = task.anchor_pdf.map(async (pdfName) => {
+                    const metadata = await loadPdfMetadata(pdfName);
+                    return metadata && metadata.pdf_url && metadata.title ? `<a href="${metadata.pdf_url}" target="_blank">${metadata.title}</a>` : pdfName;
+                });
+                const pdfLinks = await Promise.all(pdfPromises);
+                anchorPdfList.innerHTML = pdfLinks.join('<br>');
+            } else {
+                anchorPdfSection.style.display = 'none';
+            }
+
+            // Handle reference PDFs
+            const referencePdfSection = document.getElementById('referencePdfSection');
+            const referencePdfList = document.getElementById('referencePdfList');
+            if (task.reference_pdf && Array.isArray(task.reference_pdf) && task.reference_pdf.length > 0) {
+                referencePdfSection.style.display = 'block';
+                const pdfPromises = task.reference_pdf.map(async (pdfName) => {
+                    const metadata = await loadPdfMetadata(pdfName);
+                    return metadata && metadata.pdf_url && metadata.title ? `<a href="${metadata.pdf_url}" target="_blank">${metadata.title}</a>` : pdfName;
+                });
+                const pdfLinks = await Promise.all(pdfPromises);
+                referencePdfList.innerHTML = pdfLinks.join('<br>');
+            } else {
+                referencePdfSection.style.display = 'none';
+            }
+
+            // Handle conference information
+            const conferenceSection = document.getElementById('conferenceSection');
+            const conferenceInfo = document.getElementById('conferenceInfo');
+            if (task.conference && (typeof task.conference === 'string' || 
+                (Array.isArray(task.conference) && task.conference.length > 0))) {
+                conferenceSection.style.display = 'block';
+                conferenceInfo.textContent = Array.isArray(task.conference) ? 
+                    task.conference.join(', ') : task.conference;
+            } else {
+                conferenceSection.style.display = 'none';
+            }
+            
+            await loadTrajectory(task.uuid);
+            
+            document.getElementById('resultsSection').style.display = 'block';
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                await loadTasks();
+                if (allTasks.length === 0) {
+                    throw new Error('No tasks were loaded');
+                }
+                initializeTagButtons();
+
+                // Filter button click handler
+                document.getElementById('filterButton').addEventListener('click', () => {
+                    const filteredTasks = filterTasks();
+                    if (filteredTasks.length > 0) {
+                        document.getElementById('noMatchSection').style.display = 'none';
+                        document.getElementById('resultsSection').style.display = 'block';
+                        const randomTask = filteredTasks[Math.floor(Math.random() * filteredTasks.length)];
+                        displayTask(randomTask);
+                    } else {
+                        // Show no match message in a card
+                        document.getElementById('resultsSection').style.display = 'none';
+                        const noMatchSection = document.getElementById('noMatchSection');
+                        noMatchSection.style.display = 'block';
+                        
+                        // Update the list of selected filters
+                        const selectedTypes = {
+                            task: Array.from(selectedFilters.task),
+                            content: Array.from(selectedFilters.content),
+                            question: Array.from(selectedFilters.question)
+                        };
+                        
+                        const filtersList = document.getElementById('selectedFiltersList');
+                        filtersList.innerHTML = '';
+                        
+                        if (selectedTypes.task.length > 0) {
+                            const li = document.createElement('li');
+                            li.textContent = `Task Type: ${selectedTypes.task.join(', ')}`;
+                            filtersList.appendChild(li);
+                        }
+                        if (selectedTypes.content.length > 0) {
+                            const li = document.createElement('li');
+                            li.textContent = `Task Categories: ${selectedTypes.content.join(', ')}`;
+                            filtersList.appendChild(li);
+                        }
+                        if (selectedTypes.question.length > 0) {
+                            const li = document.createElement('li');
+                            li.textContent = `Evaluation Genre: ${selectedTypes.question.join(', ')}`;
+                            filtersList.appendChild(li);
+                        }
+                    }
+                });
+
+                // Random button click handler
+                document.getElementById('randomButton').addEventListener('click', () => {
+                    document.getElementById('noMatchSection').style.display = 'none';
+                    document.getElementById('resultsSection').style.display = 'block';
+                    const randomTask = allTasks[Math.floor(Math.random() * allTasks.length)];
+                    displayTask(randomTask);
+                });
+            } catch (error) {
+                console.error('Initialization error:', error);
+                alert('Error initializing the application. Please check the console for details.');
+            }
+        });
+
+        // Add timeline styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .timeline {
+                position: relative;
+                padding: 1rem 0;
+            }
+            
+            .timeline::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 1rem;
+                height: 100%;
+                width: 2px;
+                background: #dbdbdb;
+            }
+            
+            .timeline-item {
+                position: relative;
+                margin-left: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .timeline-marker {
+                position: absolute;
+                left: -2rem;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                background: #3273dc;
+                border: 2px solid #fff;
+            }
+            
+            .timeline-content {
+                padding: 1rem;
+                background: #f5f5f5;
+                border-radius: 4px;
+            }
+            
+            .timeline-content .highlight-quote {
+                margin-top: 0.5rem;
+                padding: 0.5rem;
+                background: #fff;
+                border-left: 3px solid #3273dc;
+            }
+            
+            .timeline-content pre {
+                margin-top: 0.5rem;
+                background: #f8f8f8;
+                padding: 0.5rem;
+                border-radius: 4px;
+                overflow-x: auto;
+            }
+            
+            .timeline-content code {
+                font-family: 'Fira Code', monospace;
+                font-size: 0.9em;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>

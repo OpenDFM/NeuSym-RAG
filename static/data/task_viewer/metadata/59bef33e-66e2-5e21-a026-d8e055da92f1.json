@@ -1,0 +1,28 @@
+{
+    "uuid": "59bef33e-66e2-5e21-a026-d8e055da92f1",
+    "title": "RSGPT: A Remote Sensing Vision Language Model and Benchmark",
+    "conference": "arxiv",
+    "conference_full": "ArXiv",
+    "volume": null,
+    "year": 2023,
+    "authors": [
+        "Yuan Hu",
+        "Jianlong Yuan",
+        "Congcong Wen",
+        "Xiaonan Lu",
+        "Xiang Li"
+    ],
+    "pdf_url": "http://arxiv.org/pdf/2307.15266v1",
+    "pdf_path": "data/dataset/airqa/papers/arxiv2023/59bef33e-66e2-5e21-a026-d8e055da92f1.pdf",
+    "bibtex": "@misc{hu2023rsgptaremotesensingvision,\n    title = {RSGPT: A Remote Sensing Vision Language Model and Benchmark},\n    author = {Yuan Hu and Jianlong Yuan and Congcong Wen and Xiaonan Lu and Xiang Li},\n    year = {2023},\n    eprint = {2307.15266},\n    archivePrefix = {arXiv},\n    primaryClass = {cs.CV},\n    url = {http://arxiv.org/abs/2307.15266},\n}",
+    "abstract": "The emergence of large-scale large language models, with GPT-4 as a prominent\nexample, has significantly propelled the rapid advancement of artificial\ngeneral intelligence and sparked the revolution of Artificial Intelligence 2.0.\nIn the realm of remote sensing (RS), there is a growing interest in developing\nlarge vision language models (VLMs) specifically tailored for data analysis in\nthis domain. However, current research predominantly revolves around visual\nrecognition tasks, lacking comprehensive, large-scale image-text datasets that\nare aligned and suitable for training large VLMs, which poses significant\nchallenges to effectively training such models for RS applications. In computer\nvision, recent research has demonstrated that fine-tuning large vision language\nmodels on small-scale, high-quality datasets can yield impressive performance\nin visual and language understanding. These results are comparable to\nstate-of-the-art VLMs trained from scratch on massive amounts of data, such as\nGPT-4. Inspired by this captivating idea, in this work, we build a high-quality\nRemote Sensing Image Captioning dataset (RSICap) that facilitates the\ndevelopment of large VLMs in the RS field. Unlike previous RS datasets that\neither employ model-generated captions or short descriptions, RSICap comprises\n2,585 human-annotated captions with rich and high-quality information. This\ndataset offers detailed descriptions for each image, encompassing scene\ndescriptions (e.g., residential area, airport, or farmland) as well as object\ninformation (e.g., color, shape, quantity, absolute position, etc). To\nfacilitate the evaluation of VLMs in the field of RS, we also provide a\nbenchmark evaluation dataset called RSIEval. This dataset consists of\nhuman-annotated captions and visual question-answer pairs, allowing for a\ncomprehensive assessment of VLMs in the context of RS.",
+    "num_pages": 15,
+    "tldr": "RSGPT: Introduces RSICap dataset for developing and evaluating VLMs in remote sensing.",
+    "tags": [
+        "Remote Sensing",
+        "Vision Language Models",
+        "Image Captioning",
+        "RSICap Dataset",
+        "Benchmark Evaluation"
+    ]
+}
