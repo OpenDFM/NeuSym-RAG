@@ -422,3 +422,15 @@
 .results-table td.col-obj.group-2 {
   border-right: 2px solid #e0e0e0;
 }
+
+/* 只给 group-1 的最后一列加分隔 */
+.results-table th.group-1-end,
+.results-table td.group-1-end {
+  border-right: 2px solid #e0e0e0;
+}
+
+/* 给class= col-obj group-1 group-1-end的列加分隔 */
+.results-table th.col-obj.group-1.group-1-end,
+.results-table td.col-obj.group-1.group-1-end {
+  border-right: 2px solid #e0e0e0;
+}

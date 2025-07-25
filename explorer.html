@@ -6,19 +6,32 @@
     <title>NeuSym-RAG Task Explorer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./static/css/explorer.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
 
     <style>
         .is-halfheight {
             height: 50vh;
             overflow-y: scroll;
         }
-
+        .explorer-main-container {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .explorer-panel {
+            max-width: 100%;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+            border: none;
+        }
         .category {
-            background-color: #eee;
+            background-color: #e9ecf3;
             color: #444;
             cursor: pointer;
             padding: 10px;
@@ -29,24 +42,19 @@
             font-size: 15px;
             transition: 0.4s;
         }
-
         .task-list {
             border: none;
         }
-
         .task-list:hover {
-            background-color: #f2f0f0;
+            background-color: #f4f6fa;
         }
-
         .active,
         .category:hover {
-            background-color: #ccc;
+            background-color: #e5e7eb;
         }
-
         .task-active {
-            background-color: #f3f0f0;
+            background-color: #e5e7eb;
         }
-
         .category:after {
             content: "\002B";
             color: #000000;
@@ -54,62 +62,53 @@
             float: right;
             margin-left: 5px;
         }
-
         .active:after {
             content: "\2212";
         }
-
         .panel {
             padding: 0 18px;
-            background-color: white;
+            background-color: #fff;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.2s ease-out;
         }
-
         .categorycontainer {
             max-height: 180vh;
             overflow-y: scroll;
         }
-
         .taskid-container {
             display: flex;
             align-items: center;
         }
-
         .taskid-label {
             margin-left: 10px;
             padding: 5px 10px;
-            background-color: #f2f2f2;
+            background-color: #e5e7eb;
             border-radius: 4px;
             font-size: 1rem;
         }
-
         .highlight-quote {
-            background-color: #f9f9f9;
-            border-left: 4px solid #007BFF;
+            background-color: #fafdff;
+            border-left: 4px solid #c8d3e0;
             padding: 10px 15px;
             margin: 15px 0;
             color: #333;
         }
-
         .highlight-quote-title {
             font-weight: bold;
             margin-top: 0;
             margin-bottom: 10px;
-            color: #007BFF;
+            color: #2d3a4a;
         }
-
         .highlight-quote-content {
             font-style: italic;
             max-height: 180px;
             overflow: auto;
         }
-
         .tag-container {
             margin: 10px 0;
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #e5e7eb;
             border-radius: 4px;
         }
         .tag-group {
@@ -121,22 +120,31 @@
         }
         .tag-button {
             margin: 2px;
-            padding: 5px 10px;
-            border: 1px solid #ddd;
+            padding: 5px 14px;
+            border: 1.5px solid #c8d3e0;
             border-radius: 15px;
-            background: #f5f5f5;
+            background: #fafdff;
+            color: #42506a;
+            font-weight: 500;
             cursor: pointer;
+            transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s;
         }
         .tag-button.selected {
-            background: #3273dc;
-            color: white;
+            background: #b5c7de;
+            color: #2d3a4a;
+            border: 1.5px solid #3b6ea8;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+        }
+        .tag-button:hover {
+            background: #e6ecf5;
+            color: #2d3a4a;
         }
         .trajectory-turn {
             margin: 20px 0;
             padding: 15px;
-            background: #f8f9fa;
+            background: #f4f6fa;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: none;
         }
         .turn-header {
             font-weight: bold;
@@ -156,12 +164,12 @@
             margin: 5px;
         }
         .status-tag.success {
-            background-color: #48c774;
-            color: white;
+            background-color: #3ba878;
+            color: #fff;
         }
         .status-tag.failure {
-            background-color: #f14668;
-            color: white;
+            background-color: #d9534f;
+            color: #fff;
         }
         .task-tag {
             display: inline-block;
@@ -169,34 +177,27 @@
             border-radius: 12px;
             margin: 2px;
             font-size: 0.9em;
-            background-color: #f5f5f5;
-            border: 1px solid #ddd;
+            background-color: #e9ecf3;
+            border: 1px solid #e5e7eb;
         }
         .task-tag.task-type {
-            background-color: #3273dc;
-            color: white;
+            background-color: #c8d3e0;
+            color: #2d3a4a;
         }
         .task-tag.content-type {
-            background-color: #00d1b2;
-            color: white;
+            background-color: #d0e0d3;
+            color: #2d3a4a;
         }
         .task-tag.question-type {
-            background-color: #ffdd57;
-            color: #363636;
-        }
-        .highlight-quote {
-            background-color: #f9f9f9;
-            border-left: 4px solid #007BFF;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 4px;
+            background-color: #e0d6d0;
+            color: #2d3a4a;
         }
         .task-id-display {
             font-family: monospace;
-            background-color: #f5f5f5;
+            background-color: #e9ecf3;
             padding: 5px 10px;
             border-radius: 4px;
-            border: 1px solid #ddd;
+            border: 1px solid #e5e7eb;
         }
         .observation-scrollbox {
             max-height: 240px;
@@ -204,9 +205,9 @@
             overflow: auto;
             padding: 10px;
             margin: 8px 0;
-            background: #f8f8f8;
+            background: #fafdff;
             border-radius: 4px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #e5e7eb;
             font-size: 0.98em;
             white-space: pre-wrap;
         }
@@ -225,15 +226,20 @@
             min-width: fit-content;
         }
         .observation-table th, .observation-table td { 
-            border: 1px solid #e0e0e0; 
+            border: 1px solid #c8d3e0; 
             padding: 4px 8px; 
             text-align: left; 
             max-width: 320px; 
             word-break: break-all; 
         }
-        .observation-table th { background: #f5f7fa; font-weight: 600; }
+        .observation-table th { background: #fafdff; font-weight: 600; }
         .observation-table-outer { max-width: 100%; max-height: 320px; overflow-y: auto; margin-bottom: 6px; }
-        .observation-extra { margin-top: 8px; color: #555; font-size: 0.96em; background: #f8f8f8; border-radius: 4px; padding: 6px 10px; }
+        .observation-extra { margin-top: 8px; color: #555; font-size: 0.96em; background: #e9ecf3; border-radius: 4px; padding: 6px 10px; }
+    </style>
+    <style>
+      body, html, .title, .subtitle, .label, .button, .tag, .field, .content, .notification, .box, .panel, .category, .task-list, .task-tag, .status-tag, .observation-scrollbox, .observation-table, .timeline-content, .highlight-quote {
+        font-family: 'Lato', Arial, sans-serif !important;
+      }
     </style>
 </head>
 
@@ -241,13 +247,17 @@
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 
     <section class="section is-max-desktop">
-        <div class="container">
-            <h2 class="title is-3" style="display: inline-block; vertical-align: middle;">NeuSym-RAG Task Explorer</h2>
-            <div class="notification is-info">
-                <md-block>
-                    This page displays a subset of AirQA-Real examples. You can filter examples by tags and view their details.<br>
-                    For each example, you can examine its complete interaction trajectory.
-                </md-block>
+        <div class="container is-fluid explorer-main-container" style="padding-left:32px; padding-right:32px; margin-bottom:0.2rem;">
+            <h2 class="title is-3" style="display: flex; align-items: center; gap: 0.6em; vertical-align: middle;">
+                <span style="display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;background:#3b6ea8;border-radius:0.35em;margin-right:0.1em;">
+                    <i class="fas fa-compass" style="color:#fff;font-size:1.1em;"></i>
+                </span>
+                NeuSym-RAG Task Explorer
+            </h2>
+            <div style="background: #fafdff; color: #2d3a4a; padding: 1.1em 1.5em; margin-bottom: 0.7em; border-radius: 0 8px 8px 0; box-shadow: 0 2px 8px rgba(44,62,80,0.04); font-size:1.08em;">
+                <div style="font-weight:500;">
+                    This page displays a subset of AirQA-Real task examples. You can filter tasks by tags and view their details, or randomly explore a task without filtering. For each task, you can examine its complete interaction trajectory.
+                </div>
             </div>
         </div>
     </section>
@@ -341,11 +351,11 @@
     </script>
 
     <section class="section">
-        <div class="container is-fluid">
+        <div class="container is-fluid explorer-main-container" style="padding-left:32px; padding-right:32px;">
             <!-- 上下布局：Task Explorer 在上，Task Details 在下 -->
-            <div class="box" style="margin-bottom: 2rem;">
+            <div class="box explorer-panel" style="margin-bottom: 0.2rem; background:#fff; box-shadow:0 2px 8px rgba(44,62,80,0.08); border:none;">
                 <h1 class="title is-4">Task Explorer</h1>
-                <p class="subtitle is-6">Filter and explore tasks</p>
+                <p class="subtitle is-6">Filter and explore tasks, or random select a task without filtering</p>
                 <div class="field">
                     <label class="label">Task Type</label>
                     <div class="buttons">
@@ -355,7 +365,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">Task Categories</label>
+                    <label class="label">Question Categories</label>
                     <div class="buttons">
                         <button class="button tag-button" data-type="content" data-value="text">Text</button>
                         <button class="button tag-button" data-type="content" data-value="table">Table</button>
@@ -372,20 +382,12 @@
                     </div>
                 </div>
                 <div class="field is-grouped">
-                    <p class="control">
-                        <button class="button is-primary" id="filterButton">
-                            <span class="icon">
+                    <p class="control" style="width:100%;">
+                        <button class="button is-primary" id="filterButton" style="display:flex;align-items:center;justify-content:center;background:#3b6ea8;border:none;margin-top:1.2rem;min-width:180px;max-width:320px;box-shadow:0 2px 8px rgba(44,62,80,0.08);font-weight:600;transition:background 0.18s;padding-left:1.2em;padding-right:1.2em;">
+                            <span class="icon" style="flex:0 0 auto; margin-right:0.5em;">
                                 <i class="fas fa-filter"></i>
                             </span>
-                            <span>Filter</span>
-                        </button>
-                    </p>
-                    <p class="control">
-                        <button class="button is-info" id="randomButton">
-                            <span class="icon">
-                                <i class="fas fa-random"></i>
-                            </span>
-                            <span>Random</span>
+                            <span style="flex:1 1 0;text-align:center;">Filter & Explore</span>
                         </button>
                     </p>
                 </div>
@@ -398,7 +400,7 @@
                     <ul id="selectedFiltersList"></ul>
                 </div>
             </div>
-            <div id="resultsSection" class="box" style="display: none;">
+            <div id="resultsSection" class="box explorer-panel" style="display: none; background:#fff; box-shadow:0 2px 8px rgba(44,62,80,0.08); border:none;">
                 <h2 class="title is-4">Task Details</h2>
                 <div class="content">
                     <p><strong>Task ID:</strong> <span id="taskId"></span></p>
@@ -410,19 +412,19 @@
                         <p class="has-text-weight-bold">Tags:</p>
                         <div id="taskTags" class="tags"></div>
                     </div>
-                    <div class="field">
+                    <div class="field" style="margin-top:1.8rem;">
                         <p class="has-text-weight-bold">Question:</p>
-                        <div class="highlight-quote" id="taskQuestion"></div>
+                        <div class="highlight-quote" id="taskQuestion" style="border-left: 4px solid #3273dc;"></div>
                     </div>
-                    <div class="highlight-quote" id="anchorPdfSection" style="display: none;">
+                    <div class="highlight-quote" id="anchorPdfSection" style="display: none; border-left: 4px solid #3273dc;">
                         <p class="has-text-weight-bold">Anchor PDFs:</p>
                         <div id="anchorPdfList"></div>
                     </div>
-                    <div class="highlight-quote" id="referencePdfSection" style="display: none;">
+                    <div class="highlight-quote" id="referencePdfSection" style="display: none; border-left: 4px solid #3273dc;">
                         <p class="has-text-weight-bold">Reference PDFs:</p>
                         <div id="referencePdfList"></div>
                     </div>
-                    <div class="highlight-quote" id="conferenceSection" style="display: none;">
+                    <div class="highlight-quote" id="conferenceSection" style="display: none; border-left: 4px solid #3273dc;">
                         <p class="has-text-weight-bold">Conference:</p>
                         <p id="conferenceInfo"></p>
                     </div>
@@ -832,6 +834,10 @@
                 }
                 initializeTagButtons();
 
+                // 页面加载时自动随机显示一个案例
+                const randomTask = allTasks[Math.floor(Math.random() * allTasks.length)];
+                displayTask(randomTask);
+
                 // Filter button click handler
                 document.getElementById('filterButton').addEventListener('click', () => {
                     const filteredTasks = filterTasks();
@@ -845,17 +851,14 @@
                         document.getElementById('resultsSection').style.display = 'none';
                         const noMatchSection = document.getElementById('noMatchSection');
                         noMatchSection.style.display = 'block';
-                        
                         // Update the list of selected filters
                         const selectedTypes = {
                             task: Array.from(selectedFilters.task),
                             content: Array.from(selectedFilters.content),
                             question: Array.from(selectedFilters.question)
                         };
-                        
                         const filtersList = document.getElementById('selectedFiltersList');
                         filtersList.innerHTML = '';
-                        
                         if (selectedTypes.task.length > 0) {
                             const li = document.createElement('li');
                             li.textContent = `Task Type: ${selectedTypes.task.join(', ')}`;
@@ -874,13 +877,9 @@
                     }
                 });
 
-                // Random button click handler
-                document.getElementById('randomButton').addEventListener('click', () => {
-                    document.getElementById('noMatchSection').style.display = 'none';
-                    document.getElementById('resultsSection').style.display = 'block';
-                    const randomTask = allTasks[Math.floor(Math.random() * allTasks.length)];
-                    displayTask(randomTask);
-                });
+                // 移除Random按钮和功能
+                const randomBtn = document.getElementById('randomButton');
+                if (randomBtn) randomBtn.parentElement.remove();
             } catch (error) {
                 console.error('Initialization error:', error);
                 alert('Error initializing the application. Please check the console for details.');

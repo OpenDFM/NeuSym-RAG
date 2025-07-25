@@ -452,6 +452,17 @@
       margin-bottom: 15px;
     }
 
+    .dataset-card h4 {
+      font-size: 1.15em;
+      color: #3273dc;
+      margin-bottom: 10px;
+    }
+
+    .dataset-card .dataset-description {
+      font-size: 1em;
+      color: inherit;
+    }
+
     .dataset-features {
       display: flex;
       flex-wrap: wrap;
@@ -751,6 +762,35 @@
       background: #fff;
       z-index: 2;
     }
+    /*在表头第一行的第一列的右侧添加分隔*/
+    .results-table thead tr:first-child th[rowspan]:first-child {
+      border-right: 2px solid #e0e0e0;
+    }
+    /*在数据区的第一列的右侧添加分隔*/
+    .results-table tbody td:first-child {
+      border-right: 2px solid #e0e0e0;
+    }
+  </style>
+  <style>
+    body {
+      font-family: 'Lato', Arial, sans-serif;
+    }
+    .publication-title {
+      font-family: 'Lato', sans-serif !important;
+      color: #222;
+      font-weight: bold;
+      font-size: 2.5rem;
+      line-height: 1.15;
+      margin-bottom: 0.5em;
+    }
+    @media screen and (max-width: 768px) {
+      .publication-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <style>
+    .author-block { margin-bottom: 0; }
   </style>
 </head>
 
@@ -776,8 +816,8 @@
             More Research
           </a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://TODO">
-              TODO
+            <a class="navbar-item" href="https://spider2-v.github.io/">
+              Spider2-V
             </a>
 
 
@@ -798,47 +838,51 @@
             </h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://rhythmcao.github.io">Ruisheng Cao</a><sup>1</sup>,</span>
+    <a href="https://rhythmcao.github.io">Ruisheng Cao</a><sup>1,2</sup>,</span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=4xNsDNgAAAAJ&hl=en">Hanchong Zhang</a><sup>1</sup>,</span>
+    <a href="https://scholar.google.com/citations?user=4xNsDNgAAAAJ&hl=en">Hanchong Zhang</a><sup>1,2</sup>,</span>
               <span class="author-block">
-                <a href="https://github.com/htc981">Tiancheng Huang</a><sup>1</sup>,</span>
+    <a href="https://github.com/htc981">Tiancheng Huang</a><sup>1,2</sup>,</span>
               <span class="author-block">
-                <a href="https://github.com/Narcisssk">Zhangyi Kang</a><sup>1</sup>,</span>
+    <a href="https://github.com/Narcisssk">Zhangyi Kang</a><sup>1,2</sup>,</span>
               <span class="author-block">
-                <a href="https://github.com/YuuXiin">Yuxin Zhang</a><sup>1</sup>,</span>
+    <a href="https://github.com/YuuXiin">Yuxin Zhang</a><sup>1,2</sup>,</span>
               <br>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=XCIZlWIAAAAJ&hl=en">Liangtai Sun</a><sup>1</sup>,</span>
+    <a href="https://scholar.google.com/citations?user=XCIZlWIAAAAJ&hl=en">Liangtai Sun</a><sup>1,2</sup>,</span>
               <span class="author-block">
-                <a href="https://github.com/daqige">Hanqi Li</a><sup>1</sup>,</span>
+    <a href="https://github.com/daqige">Hanqi Li</a><sup>1,2,4</sup>,</span>
               <span class="author-block">
-                <a href="https://github.com/miaoyuxun">Yuxun Miao</a><sup>1</sup>,</span>
+    <a href="https://github.com/miaoyuxun">Yuxun Miao</a><sup>1,2</sup>,</span>
               <span class="author-block">
-                Shuai Fan<sup>2</sup>,</span>
+    Shuai Fan<sup>2,3</sup>,</span>
               <span class="author-block">
-                <a href="https://coai-sjtu.github.io/">Lu Chen</a><sup>1</sup>,</span>
+    <a href="https://coai-sjtu.github.io/">Lu Chen</a><sup>1,2,4</sup>,</span>
               <span class="author-block">
-                <a href="https://x-lance.github.io/kaiyu/">Kai Yu</a><sup>1</sup>,</span>
+    <a href="https://x-lance.github.io/kaiyu/">Kai Yu</a><sup>1,2,4</sup></span>
             </div>
 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>SJTU X-LANCE Lab,</span>
-              <span class="author-block"><sup>2</sup>AISPEECH,</span>
+<div class="is-size-5 publication-authors mt-3">
+  <span class="author-block"><sup>1</sup>MoE Key Lab of Artificial Intelligence, Shanghai, China<br>
+    X-LANCE Lab, School of Computer Science, Shanghai Jiao Tong University, Shanghai, China</span><br>
+  <span class="author-block"><sup>2</sup>Jiangsu Key Lab of Language Computing, Suzhou, China</span><br>
+  <span class="author-block"><sup>3</sup>AISpeech Co., Ltd., Suzhou, China</span>  <span class="author-block" style="margin-left:2em;"><sup>4</sup>Suzhou Laboratory, Suzhou, China</span>
+  <div style="margin-top:0.2em; font-family:'Lato',Arial,sans-serif;color:#4a4a4a;font-size:1em;"><b>Email to:</b> {htc981,narcisss,chenlusz,kai.yu}@sjtu.edu.cn</div>
             </div>
+
 
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2505.19754" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://aclanthology.org/2025.acl-long.311.pdf" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>arXiv</span>
+                    <span>Paper</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://github.com/X-LANCE/NeuSym-RAG"
+                  <a href="https://github.com/OpenDFM/NeuSym-RAG"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -969,7 +1013,7 @@
             - **Interaction**: Finally, we build an iterative Q&A agent which can predict executable actions to retrieve context from the backend environment (either DB or VS) and answer the input question.
         </md-block>
 
-        <div class="method-tabs">
+        <div class="method-tabs" style="background:#fff;border-radius:8px 8px 0 0;padding:0.5em 0 0.5em 0;margin-bottom:1.5em;box-shadow:0 4px 12px -8px rgba(60,60,60,0.10);">
           <ul>
             <li class="is-active"><a data-tab="parsing">Multiview Document Parsing</a></li>
             <li><a data-tab="encoding">Multimodal Vector Encoding</a></li>
@@ -977,22 +1021,28 @@
           </ul>
         </div>
   
-        <div id="parsing" class="method-content is-active">
+        <div id="parsing" class="method-content is-active" style="background:#f5f5f5;border-radius:10px;padding:2em 2em 1.5em 2em;margin-bottom:1.5em;box-shadow:none;">
+          <div style="text-align:center;margin-bottom:1em;">
+            <img src="static/images/MultiviewDocumentParsing.png" alt="Multiview Document Parsing" style="max-width:90%;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+          </div>
           <p>
             The multiview document parsing process transforms raw PDF files into a structured database (DuckDB) through a comprehensive pipeline:
           </p>
           <ol style="list-style-type: decimal; padding-left: 1.5rem;">
-            <li>Querying scholar APIs (e.g., arXiv) to obtain paper metadata, enabling metadata-based filtering during retrieval</li>
-            <li>Using PyMuPDF to split text at different granularities (pages, sections, fixed-length tokens)</li>
+            <li>Querying scholar APIs (e.g., arXiv) to obtain the metadata such as the authors and published conference, such that we can support metadata-based filtering during retrieval.</li>
+            <li>Splitting the text based on different granularities with tool PyMuPDF (Artifex Software, 2023), e.g., pages, sections, and fixed-length continuous tokens.</li>
             <li>Leveraging OCR models (MinerU) to extract tables, figures, and other visual elements</li>
-            <li>Employing LLMs/VLMs to generate concise summaries of parsed texts, tables, and images</li>
+            <li>Asking large language models (LLMs) or vision language models (VLMs) to generate concise summaries of the parsed texts, tables, and images.</li>
           </ol>
           <p>
-            All extracted elements are populated into the symbolic DB. The DB schema is carefully designed in advance to capture the rich structure of PDF documents.
+            The retrieved metadata, parsed elements and predicted summaries will all be populated into the symbolic DB. We handcraft the DB schema in advance, which is carefully designed and universal for PDF documents.
           </p>
         </div>
   
-        <div id="encoding" class="method-content">
+        <div id="encoding" class="method-content" style="background:#f5f5f5;border-radius:10px;padding:2em 2em 1.5em 2em;margin-bottom:1.5em;box-shadow:none;">
+          <div style="text-align:center;margin-bottom:1em;">
+            <img src="static/images/MultimodalVectorEncoding.png" alt="Multimodal Vector Encoding" style="max-width:90%;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+          </div>
           <p>
             The multimodal vector encoding process transforms structured database content into vector representations:
           </p>
@@ -1002,24 +1052,84 @@
             <li>Creating a one-to-one mapping between database cells and vector entries, supplemented with metadata for efficient retrieval</li>
           </ol>
           <p>
-            This stage enables semantic search capabilities while maintaining the connection to the structured database.
+            These data entries will be inserted into the VS, categorized into different collections based on the encoding model and modality.
           </p>
         </div>
   
-        <div id="interaction" class="method-content">
+  
+        <div id="interaction" class="method-content" style="background:#f5f5f5;border-radius:10px;padding:2em 2em 1.5em 2em;margin-bottom:1.5em;box-shadow:none;">
           <p>
-            The iterative agent interaction process enables dynamic interaction with both the database and vectorstore through five parameterized actions:
+            After the population of the database and vectorstore, we can start the iterative agent interaction process. The RAG agent can proactively retrieves context from both the DB and VS. In each turn, agents predict one action to interact with the environment and obtain the real-time observation. <b>Five parameterized actions</b> are supported during the interaction, including:
           </p>
-          <ul>
-            <li><strong>RetrieveFromVectorstore:</strong> Dynamic neural retrieval with customizable parameters (query, collection, filters) for semantic search</li>
-            <li><strong>RetrieveFromDatabase:</strong> Symbolic retrieval through SQL queries, enabling precise structured data access</li>
-            <li><strong>ViewImage:</strong> Extracting and analyzing specific regions of PDF pages using bounding box coordinates</li>
-            <li><strong>CalculateExpr:</strong> Mathematical computation for handling numerical questions and reducing hallucination</li>
-            <li><strong>GenerateAnswer:</strong> Terminal action that produces the final answer when sufficient context is gathered</li>
-          </ul>
-          <p>
-            The agent follows a thought, action, and observation loop until it can confidently generate an answer.
-          </p>
+          <div class="columns is-multiline" style="margin-top:2em;">
+            <div class="column is-6">
+              <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #c8d3e0;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+                <div style="font-family:'Lato', Arial,sans-serif;font-size:1.04em;font-weight:600;color:#2d2d2d;margin-top:0.2em;margin-bottom:0.3em;">RetrieveFromDatabase</div>
+                <div style="font-family:'Lato', Arial,sans-serif;font-size:1em;color:#3a3a3a;margin-bottom:0.7em;">Generate an SQL query to retrieve the desired information from the DuckDB database.</div>
+                <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+  "action_type": "RetrieveFromDatabase",
+  "parameters": {
+    "sql": "SELECT ..." // str, required
+  }
+}</code></pre>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #d0e0d3;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+                <div style="font-family:'Lato', Arial,sans-serif;font-size:1.04em;font-weight:600;color:#2d2d2d;margin-top:0.2em;margin-bottom:0.3em;">RetrieveFromVectorstore</div>
+                <div style="font-family:'Lato', Arial,sans-serif;font-size:1em;color:#3a3a3a;margin-bottom:0.7em;">Given a query text, retrieve relevant context from the Milvus vectorstore.</div>
+                <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+  "action_type": "RetrieveFromVectorstore",
+  "parameters": {
+    "query": "...",           // str, required
+    "collection_name": "...", // str, required
+    "table_name": "...",      // str, required
+    "column_name": "...",     // str, required
+    "filter": "",             // str, optional
+    "limit": 5                 // int, optional
+  }
+}</code></pre>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #d6d0e0;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+                <div style="font-family:'Lato', Arial,sans-serif;font-size:1.04em;font-weight:600;color:#2d2d2d;margin-top:0.2em;margin-bottom:0.3em;">CalculateExpr</div>
+                <div style="font-family:'Lato', Arial,sans-serif;font-size:1em;color:#3a3a3a;margin-bottom:0.7em;">Calculate the expression and return the result.</div>
+                <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+  "action_type": "CalculateExpr",
+  "parameters": {
+    "expr": "2 + 3 * 4" // str, required
+  }
+}</code></pre>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #d0d6e0;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+                <div style="font-family:'Lato', Arial,sans-serif;font-size:1.04em;font-weight:600;color:#2d2d2d;margin-top:0.2em;margin-bottom:0.3em;">ViewImage</div>
+                <div style="font-family:'Lato', Arial,sans-serif;font-size:1em;color:#3a3a3a;margin-bottom:0.7em;">Retrieve the visual information of the paper by specifying paper id, page number, and optional bounding box.</div>
+                <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+  "action_type": "ViewImage",
+  "parameters": {
+    "paper_id": "...",         // str, required
+    "page_number": 1,           // int, required
+    "bounding_box": []          // List[float], optional
+  }
+}</code></pre>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #e0d6d0;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+                <div style="font-family:'Lato', Arial,sans-serif;font-size:1.04em;font-weight:600;color:#2d2d2d;margin-top:0.2em;margin-bottom:0.3em;">GenerateAnswer</div>
+                <div style="font-family:'Lato', Arial,sans-serif;font-size:1em;color:#3a3a3a;margin-bottom:0.7em;">Terminate the interaction when the retrieved results suffice to answer the user question.</div>
+                <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+  "action_type": "GenerateAnswer",
+  "parameters": {
+    "answer": ... // Any, required
+  }
+}</code></pre>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1030,7 +1140,7 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3">Task Demonstration</h2>
       <md-block>
-        We demonstrate NeuSym-RAG's capabilities through the AirQA-Real dataset, showing how the agent processes questions, retrieves information, and generates answers.
+        We demonstrate NeuSym-RAG's capabilities through the AirQA-Real dataset, showing how the agent processes questions, retrieves information, and generates answers. For more examples, please visit our <a href="explorer.html" target="_blank"><b>Task Viewer</b></a> page.
         
       </md-block>
 
@@ -1038,12 +1148,13 @@
         <ul>
           <li class="is-active"><a data-tab="Data Format">Data Format</a></li>
           <li><a data-tab="Prompt">Prompt</a></li>
-          <li><a data-tab="Interaction">Interaction</a></li>
-          <li><a data-tab="Evaluation">Evaluation</a></li>
+          <li><a data-tab="Example1">Example 1</a></li>
+          <li><a data-tab="Example2">Example 2</a></li>
+          <li><a data-tab="Example3">Example 3</a></li>
         </ul>
       </div>
 
-      <div class="lib_examples" title="Data Format">
+      <div class="lib_examples" title="Data Format" style="display:block;">
         <md-block>
           <b>The data format of AirQA-Real is as follows:</b>
           <div>
@@ -1089,21 +1200,21 @@
         </md-block>
       </div>
 
-      <div class="lib_examples" title="Prompt">
+      <div class="lib_examples" title="Prompt" style="display:none;">
         <md-block>
-          <div class="prompt-block">
-            <span class="prompt-tag">[System Prompt]</span>
-            <div class="prompt-desc">Defines the agent's role and describes the task to tackle, clarifying the context of the task.</div>
+          <div class="prompt-block" style="border-left:7px solid #c8d3e0;background:#fafdff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+            <span class="prompt-tag" style="background:#c8d3e0;color:#2d3a4a;">[System Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#888;">Defines the agent's role and describes the task to tackle, clarifying the context of the task.</div>
             <div class="prompt-content">You are an intelligent agent with expertise in retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search and answering user questions. You will be given a natural language question concerning PDF files, along with the schema of both the database and the vectorstore. Your ultimate goal is to answer the input question with pre-defined answer format. The DuckDB database contains all parsed content of raw PDF files, while the Milvus vectorstore encodes specific column cells from the database as vectors. You can predict executable actions, interact with the hybrid environment (including database and vectorstore) across multiple turns, and retrieve necessary context until you are confident in resolving the question.</div>
           </div>
-          <div class="prompt-block">
-            <span class="prompt-tag">[Action and Observation Space Prompt]</span>
-            <div class="prompt-desc">Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type.</div>
+          <div class="prompt-block" style="border-left:7px solid #d0e0d3;background:#fafdff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+            <span class="prompt-tag" style="background:#d0e0d3;color:#2d3a2d;">[Action and Observation Space Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#888;">Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type.</div>
             <div class="prompt-content">All allowable action types include ['RetrieveFromDatabase', 'RetrieveFromVectorstore', 'CalculateExpr', 'ViewImage', 'GenerateAnswer']. Here is the detailed specification in MARKDOWN format...</div>
           </div>
-          <div class="prompt-block">
-            <span class="prompt-tag">[Interaction Framework Prompt]</span>
-            <div class="prompt-desc">Outlines the main interaction procedure and template.</div>
+          <div class="prompt-block" style="border-left:7px solid #d6d0e0;background:#fafdff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+            <span class="prompt-tag" style="background:#d6d0e0;color:#3a2d4a;">[Interaction Framework Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#888;">Outlines the main interaction procedure and template.</div>
             <div class="prompt-content">The main interaction procedure proceeds like this:
               <br>
               [Thought]: ... reasoning process, why to take this action ...
@@ -1114,137 +1225,115 @@
               <br>
               In general, the main interaction loop consists of an interleaved of triplets ([Thought], [Action], [Observation]), except the last GenerateAnswer action which does not have [Observation]. You need to predict the [Thought] followed by the [Action] for each turn, and we will execute your action in the environment and provide the [Observation] for the previous action.</div>
           </div>
-          <div class="prompt-block">
-            <span class="prompt-tag">[Hint Prompt]</span>
-            <div class="prompt-desc">Provides hints or suggestions to help the agent refine its planning and reasoning process.</div>
+          <div class="prompt-block" style="border-left:7px solid #d0d6e0;background:#fafdff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+            <span class="prompt-tag" style="background:#d0d6e0;color:#2d344a;">[Hint Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#888;">Provides hints or suggestions to help the agent refine its planning and reasoning process.</div>
             <div class="prompt-content">1. Explore multiple retrieval strategies. For example... 2. Combine both structured and unstructured data. Concretely... 3. Iterate and refine... 4. Ensure confidence. That is, only make a final decision when you are confident that the retrieved information fully addresses the user's query. Remember that, for each question, you only have 20 interaction turns at most. Now, let's start!</div>
           </div>
-          <div class="prompt-block">
-            <span class="prompt-tag">[Task Prompt]</span>
-            <div class="prompt-desc">Defines the task input, including the input question, required answer format, and relevant schemas.</div>
+          <div class="prompt-block" style="border-left:7px solid #e0d6d0;background:#fafdff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+            <span class="prompt-tag" style="background:#e0d6d0;color:#4a3a2d;">[Task Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#888;">Defines the task input, including the input question, required answer format, and relevant schemas.</div>
             <div class="prompt-content">[Question], [Answer Format], [Anchor PDF], [Reference PDF], [Conference], [Database Schema], [Vectorstore Schema]</div>
           </div>
         </md-block>
       </div>
 
-      <div class="lib_examples" title="Interaction">
+      <div class="lib_examples" title="Example1" style="display:none;">
         <md-block>
-          <ul>
-            <li>The agent receives a question and relevant context (schemas, PDFs, etc.).</li>
-            <li>It enters a loop of <b>Thought → Action → Observation</b>:</li>
-            <ul>
-              <li><b>Thought</b>: The agent reasons about what to do next.</li>
-              <li><b>Action</b>: The agent issues a retrieval or answer-generation command.</li>
-              <li><b>Observation</b>: The environment returns results or feedback.</li>
-            </ul>
-            <li>This loop continues, possibly across multiple turns, until the agent is confident enough to output the final answer using <b>GenerateAnswer</b>.</li>
-          </ul>
-        </md-block>
-      </div>
-
-      <div class="lib_examples" title="Evaluation">
-        <md-block>
-          NeuSym-RAG implements instance-specific, execution-based evaluation through 18 carefully designed evaluation functions with optional parameters. These functions are categorized as either subjective or objective, depending on whether they involve judgment from LLMs. For more details about the evaluation framework and available metrics, please visit our <a href="https://github.com/X-LANCE/NeuSym-RAG/tree/main/evaluation" target="_blank">evaluation repository</a>.
-        </md-block>
-      </div>
-
-      <!-- Agent Demo Videos: Start -->
-      <div style="margin-top:2.5em;">
-        <div style="margin-bottom:1.2em;font-size:1rem;color:#4a4a4a;">Below are three simulated agent demonstration cases, each showing how the agent solves a different type of question through multi-step reasoning and retrieval. For more examples, please refer to the <a href="explorer.html" target="_blank"><b>Task Viewer</b></a> page.</div>
-        <div class="tabs is-toggle is-centered" id="agent-demo-tabs" style="font-size:1rem;font-family:'Noto Sans',sans-serif;">
-          <ul>
-            <li class="is-active"><a data-video="agent-demo-1">Example 1</a></li>
-            <li><a data-video="agent-demo-2">Example 2</a></li>
-            <li><a data-video="agent-demo-3">Example 3</a></li>
-          </ul>
-        </div>
-        <div id="agent-demo-1" class="agent-demo-video is-active">
-          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;">
+          <b>Example 1:</b> <br> 
+          <div style="margin-top:0.7em;color:#3a3a3a;font-size:1em;">A complex single-document question, demonstrating multi-step reasoning and integration of multimodal information.</div>
+          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;margin-top:0.7em;">
             <source src="static/videos/example1.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <div style="margin-top:0.7em;font-size:1rem;font-family:'Noto Sans',sans-serif;color:#4a4a4a;">Case 1: The agent answers a complex single-document question, demonstrating multi-step reasoning and integration of multimodal information.</div>
-        </div>
-        <div id="agent-demo-2" class="agent-demo-video" style="display:none;">
-          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;">
+        </md-block>
+      </div>
+      <div class="lib_examples" title="Example2" style="display:none;">
+        <md-block>
+          <b>Example 2:</b> <br>
+          <div style="margin-top:0.7em;color:#3a3a3a;font-size:1em;">A paper retrieval question, showing its ability to search and filter across a collection of papers.</div>
+          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;margin-top:0.7em;">
             <source src="static/videos/example2.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <div style="margin-top:0.7em;font-size:1rem;font-family:'Noto Sans',sans-serif;color:#4a4a4a;">Case 2: The agent answers a paper retrieval question, showing its ability to search and filter across multiple papers.</div>
-        </div>
-        <div id="agent-demo-3" class="agent-demo-video" style="display:none;">
-          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;">
+        </md-block>
+      </div>
+      <div class="lib_examples" title="Example3" style="display:none;">
+        <md-block>
+          <b>Example 3:</b> <br>
+          <div style="margin-top:0.7em;color:#3a3a3a;font-size:1em;">A multi-document question, highlighting its ability to integrate and reason over information from multiple sources.</div>
+
+          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;margin-top:0.7em;">
             <source src="static/videos/example3.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <div style="margin-top:0.7em;font-size:1rem;font-family:'Noto Sans',sans-serif;color:#4a4a4a;">Case 3: The agent answers a multi-document question, highlighting its ability to integrate and reason over information from multiple sources.</div>
-        </div>
+        </md-block>
       </div>
+
       <script>
-        // Agent Demo Tabs
+        // Task Demonstration Tabs
         document.addEventListener('DOMContentLoaded', function() {
-          const demoTabs = document.querySelectorAll('#agent-demo-tabs li');
-          const demoVideos = document.querySelectorAll('.agent-demo-video');
-          demoTabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-              demoTabs.forEach(t => t.classList.remove('is-active'));
-              tab.classList.add('is-active');
-              const target = tab.querySelector('a').getAttribute('data-video');
-              demoVideos.forEach(v => v.style.display = 'none');
-              demoVideos.forEach(v => v.classList.remove('is-active'));
-              const show = document.getElementById(target);
-              if (show) {
-                show.style.display = 'block';
-                show.classList.add('is-active');
+          const tabLinks = document.querySelectorAll('.tabs a[data-tab]');
+          const tabContents = document.querySelectorAll('.lib_examples');
+          tabLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault();
+              tabLinks.forEach(l => l.parentElement.classList.remove('is-active'));
+              link.parentElement.classList.add('is-active');
+              tabContents.forEach(content => content.style.display = 'none');
+              const targetId = link.getAttribute('data-tab');
+              const targetContent = document.querySelector(`.lib_examples[title="${targetId}"]`);
+              if (targetContent) {
+                targetContent.style.display = 'block';
               }
             });
           });
+          // 默认显示Example1
+          const defaultTab = document.querySelector('.tabs a[data-tab="Example1"]');
+          if (defaultTab) {
+            defaultTab.click();
+          }
         });
       </script>
-      <!-- Agent Demo Videos: End -->
     </div>
   </section>
 
 
-  <section class="section">
+  <!-- Datasets Section -->
+  <section class="section" id="datasets">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Data and Experiment</h2>
-      
-      <!-- Dataset Description -->
-      <h3 class="title is-4" style="margin-top: 40px;">Datasets</h3>
+      <h2 class="title is-3">Datasets</h2>
       <div class="dataset-card">
+        <div class="dataset-description">We employ three Q&A datasets on AI research papers to evaluate the performance of NeuSym-RAG. You can download them from our <a href="https://huggingface.co/datasets/OpenDFM/AirQA-Real">Hugging Face page</a>.</div>
         <div class="dataset-header">
           <h4 class="dataset-title">AirQA-Real</h4>
           <md-block class="dataset-description">
-            A human-labeled Q&A dataset on AI research papers, featuring complex questions that require understanding of text, tables, images, formulas, and metadata. The dataset includes 553 questions apanning across 3 types, annotated by 16 researchers.
+            We construct a human-labeled Q&A dataset on AI research papers, featuring complex questions that require understanding of text, tables, images, formulas, and metadata. The dataset includes 553 questions apanning across 3 types, annotated by 16 researchers.
           </md-block>
         </div>
-        
         <div class="dataset-stats">
           <div class="stat-item">
             <div class="stat-label">Total Questions</div>
             <div class="stat-value">553</div>
           </div>
           <div class="stat-item">
-            <div class="stat-label">Types</div>
+            <div class="stat-label">Task Types</div>
             <div class="stat-value">3</div>
           </div>
           <div class="stat-item">
-            <div class="stat-label">Categories</div>
+            <div class="stat-label">Question Categories</div>
             <div class="stat-value">5</div>
           </div>
           <div class="stat-item">
-            <div class="stat-label">Evaluation Genres</div>
-            <div class="stat-value">2</div>
+            <div class="stat-label">Evaluation functions</div>
+            <div class="stat-value">18</div>
           </div>
         </div>
-
         <div class="task-types">
           <span class="task-type">Single-doc details</span>
           <span class="task-type">Multi-doc analysis</span>
           <span class="task-type">Paper retrieval</span>
         </div>
-
         <div class="dataset-categories">
           <span class="category-tag">Text</span>
           <span class="category-tag">Table</span>
@@ -1252,14 +1341,12 @@
           <span class="category-tag">Formula</span>
           <span class="category-tag">Metadata</span>
         </div>
-
         <div class="dataset-evaluation">
           <div class="evaluation-item">
             <div class="evaluation-genre">hard-coding objective metrics</div>
             <div class="evaluation-genre">LLM-based subjective assessment</div>
           </div>
         </div>
-
         <div class="dataset-header">
           <h4 class="dataset-title">Other Benchmarks</h4>
           <md-block class="dataset-description">
@@ -1277,12 +1364,17 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Experiment Results -->
-      <h3 class="title is-4" style="margin-top: 40px;">Experiment Results</h3>
+  <!-- Experiment Section -->
+  <section class="section" id="experiment">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Experiment</h2>
       <div class="content has-text-justified" style="margin-bottom: 1em;">
+        <h3 class="title is-4">Main Results</h3>
         <p>
-          <b>Main Results.</b> We evaluate NeuSym-RAG and Classic-RAG on three full-PDF QA datasets using various LLMs. NeuSym-RAG consistently outperforms Classic-RAG across all datasets and models. Notably:
+          We evaluate NeuSym-RAG and Classic-RAG on three full-PDF QA datasets using various LLMs. NeuSym-RAG consistently outperforms Classic-RAG across all datasets and models. Notably:
         </p>
         <div>
           <div class="table-wrapper">
@@ -1540,24 +1632,21 @@
           </div>
         </div>
         <ul style="margin-left:1.2em;">
-          <li><b>1)</b> NeuSym-RAG achieves significant improvements over Classic-RAG for all LLMs, benefiting from more flexible actions and iterative retrieval.</li>
-          <li><b>2)</b> Vision-language models (VLMs) excel in tasks requiring image understanding, such as M3SciQA.</li>
-          <li><b>3)</b> Strong open-source LLMs (e.g., Qwen2.5-VL-72B-Instruct) can even surpass closed-source models in this complex agentic QA setting.</li>
+          <li><b>1)</b> NeuSym-RAG remarkably outperforms the Classic-RAG baseline across all datasets, with a minimal 17.3% improvement on AIRQA-Real for all LLMs, benefiting from more flexible actions and iterative retrieval.</li>
+          <li><b>2)</b> VLMs perform better in tasks that require vision capability, e.g., in M3SciQA where LLMs have to view an anchor image in the first place.</li>
+          <li><b>3)</b> Open-source LLMs are capable of handling this complicated interactive procedure in a zero-shot paradigm, and even better than closed-source LLMs.</li>
         </ul>
-        <p style="margin-top:0.5em;">These results highlight the universality and robustness of NeuSym-RAG for PDF-based question answering.</p>
       </div>
-
-      
-      
       <div class="content has-text-justified" style="margin:2.5em 0 1em 0;">
+        <h3 class="title is-4">Method Ablation</h3>
         <p>
-          <b>Method Ablation.</b> To further analyze the contribution of each component, we compare NeuSym-RAG with a series of structured agent baselines. The illustration below summarizes all baselines compared in the ablation study, differing in retrieval paradigm, multi-view support, and whether iterative interaction is allowed.
+          To further analyze the contribution of each component, we compare NeuSym-RAG with a series of structured agent baselines. The illustration below summarizes all baselines compared in the ablation study, differing in retrieval paradigm, multi-view support, and whether iterative interaction is allowed.
         </p>
         <div style="text-align:center;margin:1em 0 1.5em 0;">
           <img src="static/images/baseline.png" alt="Baselines Illustration" style="max-width:90%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:0.5em;">
           <div style="color:#555;font-size:0.98em;">Illustration of all baseline agent methods compared in the ablation study. </div>
         </div>
-        <p style="margin-top:0.5em;">The detailed results are shown in the table below.</p>
+        <p style="margin-top:0.5em;">On the whole, NeuSym-RAG defeats all adversaries. It verifies that multiple views and combining two retrieval strategies both contribute to the eventual performance. Notably:</p>
         <div>
           <div class="table-wrapper">
             <table class="results-table">
@@ -1577,62 +1666,80 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Question only</td><td rowspan="3" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="3" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="3" class="group-1 group-1-end" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td>1</td><td>5.7</td><td>8.0</td><td>0.4</td><td>9.4</td><td class="col-obj group-2 group-2-end"  >2.7</td><td>4.0</td></tr>
-                <tr><td>Title + Abstract</td><td>1</td><td>5.7</td><td>14.0</td><td>0.0</td><td>13.1</td><td class="col-obj group-2 group-2-end">3.6</td><td>5.4</td></tr>
-                <tr><td>Full-text w/. cutoff</td><td>1</td><td>28.3</td><td>10.7</td><td>0.4</td><td>26.2</td><td class="col-obj group-2 group-2-end">7.6</td><td>11.2</td></tr>
-                <tr><td>Classic RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td>1</td><td>18.2</td><td>4.0</td><td>9.4</td><td>8.4</td><td class="col-obj group-2 group-2-end">11.0</td><td>10.5</td></tr>
-                <tr><td>Iterative Classic RAG</td><td>&ge;2</td><td>8.2</td><td>10.0</td><td>15.2</td><td>5.6</td><td class="col-obj group-2 group-2-end">13.2</td><td>11.8</td></tr>
-                <tr><td>Two-stage Neu-RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td>2</td><td>19.5</td><td>10.0</td><td>5.3</td><td>15.9</td><td class="col-obj group-2 group-2-end">9.4</td><td>10.7</td></tr>
-                <tr><td>Iterative Neu-RAG</td><td>&ge;2</td><td class="bold">37.7</td><td>18.7</td><td>48.4</td><td class="bold">32.7</td><td class="col-obj group-2 group-2-end">38.3</td><td>37.3</td></tr>
-                <tr><td>Graph-RAG</td><td class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td>2</td><td>22.2</td><td>11.1</td><td>0.0</td><td>21.1</td><td class="col-obj group-2 group-2-end">11.5</td><td>15.6</td></tr>
-                <tr><td>Two-stage Sym-RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #27ae60; font-size: 1.3em;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td>2</td><td>12.2</td><td>5.4</td><td>9.4</td><td>10.6</td><td class="col-obj group-2 group-2-end">8.7</td><td>9.1</td></tr>
-                <tr><td>Iterative Sym-RAG</td><td>&ge;2</td><td>32.1</td><td>14.7</td><td>33.6</td><td>27.1</td><td class="col-obj group-2 group-2-end">28.3</td><td>28.0</td></tr>
-                <tr><td>Hybrid-RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #27ae60; font-size: 1.3em;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td>2</td><td>23.3</td><td>9.3</td><td>5.7</td><td>16.8</td><td class="col-obj group-2 group-2-end">10.5</td><td>11.8</td></tr>
-                <tr><td class="bold">NeuSym-RAG(Ours)</td><td>&ge;2</td><td>28.3</td><td class="bold group-2">32.3</td><td class="bold group-2">58.2</td><td class="group-2">27.1</td><td class="bold col-obj group-2 group-2-end">42.6</td><td class="bold group-3">39.6</td></tr>
+                <tr><td>Question only</td><td rowspan="3" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="3" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="3" class="group-1 group-1-end" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td class="col-obj group-1 group-1-end">1</td><td>5.7</td><td>8.0</td><td>0.4</td><td>9.4</td><td class="col-obj group-2 group-2-end"  >2.7</td><td>4.0</td></tr>
+                <tr><td>Title + Abstract</td><td class="col-obj group-1 group-1-end">1</td><td>5.7</td><td>14.0</td><td>0.0</td><td>13.1</td><td class="col-obj group-2 group-2-end">3.6</td><td>5.4</td></tr>
+                <tr><td>Full-text w/. cutoff</td><td class="col-obj group-1 group-1-end">1</td><td>28.3</td><td>10.7</td><td>0.4</td><td>26.2</td><td class="col-obj group-2 group-2-end">7.6</td><td>11.2</td></tr>
+                <tr><td>Classic RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td class="col-obj group-1 group-1-end">1</td><td>18.2</td><td>4.0</td><td>9.4</td><td>8.4</td><td class="col-obj group-2 group-2-end">11.0</td><td>10.5</td></tr>
+                <tr><td>Iterative Classic RAG</td><td class="col-obj group-1 group-1-end">&ge;2</td><td>8.2</td><td>10.0</td><td>15.2</td><td>5.6</td><td class="col-obj group-2 group-2-end">13.2</td><td>11.8</td></tr>
+                <tr><td>Two-stage Neu-RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td class="col-obj group-1 group-1-end">2</td><td>19.5</td><td>10.0</td><td>5.3</td><td>15.9</td><td class="col-obj group-2 group-2-end">9.4</td><td>10.7</td></tr>
+                <tr><td>Iterative Neu-RAG</td><td class="col-obj group-1 group-1-end">&ge;2</td><td class="bold">37.7</td><td>18.7</td><td>48.4</td><td class="bold">32.7</td><td class="col-obj group-2 group-2-end">38.3</td><td>37.3</td></tr>
+                <tr><td>Two-stage Sym-RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #27ae60; font-size: 1.3em;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td class="col-obj group-1 group-1-end">2</td><td>12.2</td><td>5.4</td><td>9.4</td><td>10.6</td><td class="col-obj group-2 group-2-end">8.7</td><td>9.1</td></tr>
+                <tr><td>Iterative Sym-RAG</td><td class="col-obj group-1 group-1-end">&ge;2</td><td>32.1</td><td>14.7</td><td>33.6</td><td>27.1</td><td class="col-obj group-2 group-2-end">28.3</td><td>28.0</td></tr>
+                <tr><td>Graph-RAG</td><td class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td class="col-obj group-1 group-1-end">2</td><td>22.2</td><td>11.1</td><td>0.0</td><td>21.1</td><td class="col-obj group-2 group-2-end">11.5</td><td>15.6</td></tr>
+                <tr><td>Hybrid-RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #27ae60; font-size: 1.3em;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td class="col-obj group-1 group-1-end">2</td><td>23.3</td><td>9.3</td><td>5.7</td><td>16.8</td><td class="col-obj group-2 group-2-end">10.5</td><td>11.8</td></tr>
+                <tr><td class="bold">NeuSym-RAG(Ours)</td><td class="col-obj group-1 group-1-end">&ge;2</td><td>28.3</td><td class="bold group-2">32.3</td><td class="bold group-2">58.2</td><td class="group-2">27.1</td><td class="bold col-obj group-2 group-2-end">42.6</td><td class="bold group-3">39.6</td></tr>
               </tbody>
             </table>
           </div>
         </div>
         <ul style="margin-left:1.2em;">
-          <li><b>1)</b> Two-stage Neu-RAG outperforms Classic-RAG, and Hybrid-RAG achieves further gains by combining neural and symbolic retrieval.</li>
-          <li><b>2)</b> Iterative retrieval (multi-turn) is superior to two-stage (single-turn), as agents can explore and adaptively select the most relevant context.</li>
-          <li><b>3)</b> As the number of interactions increases, objective scores rise faster than subjective scores, indicating more rational answer generation.</li>
+          <li><b>1)</b> Two-stage Neu-RAG outperforms Classic-RAG, while Hybrid-RAG achieves even further improvements, which can be attributed to the fact that agents can adaptively determine the parameters of actions.</li>
+          <li><b>2)</b> Iterative retrievals are superior to their two-stage variants. Through multi-turn interaction, the agent can explore the backend environment and select the most relevant information to answer the question.</li>  
+          <li><b>3)</b> As the number of interactions increases, objective scores rise faster than subjective scores, indicating that with more retrievals, LLMs generate more rational answers.</li>
         </ul>
       </div>
-
     </div>
   </section>
+
+
 
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">Citation</h2>
-      <pre><code>@inproceedings{cao-etal-2025-neusym,
-      title = "{N}eu{S}ym-{RAG}: Hybrid Neural Symbolic Retrieval with Multiview Structuring for {PDF} Question Answering",
-      author = "Cao, Ruisheng  and
-        Zhang, Hanchong  and
-        Huang, Tiancheng  and
-        Kang, Zhangyi  and
-        Zhang, Yuxin  and
-        Sun, Liangtai  and
-        Li, Hanqi  and
-        Miao, Yuxun  and
-        Fan, Shuai  and
-        Chen, Lu  and
-        Yu, Kai",
-      editor = "Che, Wanxiang  and
-        Nabende, Joyce  and
-        Shutova, Ekaterina  and
-        Pilehvar, Mohammad Taher",
-      booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
-      month = jul,
-      year = "2025",
-      address = "Vienna, Austria",
-      publisher = "Association for Computational Linguistics",
-      url = "https://aclanthology.org/2025.acl-long.311/",
-      pages = "6211--6239",
-      ISBN = "979-8-89176-251-0"
-  }</code></pre>
+      <button id="copy-bibtex-btn" style="margin-bottom:10px;float:right;" class="button is-small is-link">Copy</button>
+      <pre id="bibtex-pre" style="max-height:250px;overflow:auto;background:#f8f8f8;border-radius:6px;padding:1em 1.2em 1em 1em;font-size:0.97em;"><code>@inproceedings{cao-etal-2025-neusym,
+    title = "{N}eu{S}ym-{RAG}: Hybrid Neural Symbolic Retrieval with Multiview Structuring for {PDF} Question Answering",
+    author = "Cao, Ruisheng  and
+      Zhang, Hanchong  and
+      Huang, Tiancheng  and
+      Kang, Zhangyi  and
+      Zhang, Yuxin  and
+      Sun, Liangtai  and
+      Li, Hanqi  and
+      Miao, Yuxun  and
+      Fan, Shuai  and
+      Chen, Lu  and
+      Yu, Kai",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-long.311/",
+    pages = "6211--6239",
+    ISBN = "979-8-89176-251-0"
+}
+</code></pre>
+      <script>
+        document.getElementById('copy-bibtex-btn').onclick = function() {
+          const bibtex = document.getElementById('bibtex-pre').innerText;
+          navigator.clipboard.writeText(bibtex).then(function() {
+            const btn = document.getElementById('copy-bibtex-btn');
+            const old = btn.textContent;
+            btn.textContent = 'Copied!';
+            btn.classList.add('is-success');
+            setTimeout(function(){
+              btn.textContent = old;
+              btn.classList.remove('is-success');
+            }, 1200);
+          });
+        };
+      </script>
     </div>
   </section>
 
@@ -1833,5 +1940,7 @@
     });
   </script>
 </body>
+
+</html>
 
 </html>
