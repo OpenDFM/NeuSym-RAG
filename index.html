@@ -819,8 +819,18 @@
             <a class="navbar-item" href="https://spider2-v.github.io/">
               Spider2-V
             </a>
-
-
+            <a class="navbar-item" href="https://opendfm.github.io/ChemDFM/">
+              ChemDFM
+            </a>
+            <a class="navbar-item" href="https://bai-scieval.duiopen.com/#/">
+              SciEval
+            </a>
+            <a class="navbar-item" href="https://opendfm.github.io/ibsen/">
+              IBSEN
+            </a>
+            <a class="navbar-item" href="https://bai-scieval.duiopen.com/#/">
+              SciEval
+            </a>
           </div>
         </div>
       </div>
@@ -855,7 +865,7 @@
               <span class="author-block">
     <a href="https://github.com/miaoyuxun">Yuxun Miao</a><sup>1,2</sup>,</span>
               <span class="author-block">
-    Shuai Fan<sup>2,3</sup>,</span>
+    <a href="https://openreview.net/profile?id=%7EShuai_Fan1">Shuai Fan</a><sup>2,3</sup>,</span>
               <span class="author-block">
     <a href="https://coai-sjtu.github.io/">Lu Chen</a><sup>1,2,4</sup>,</span>
               <span class="author-block">
@@ -864,10 +874,11 @@
 
 <div class="is-size-5 publication-authors mt-3">
   <span class="author-block"><sup>1</sup>MoE Key Lab of Artificial Intelligence, Shanghai, China<br>
-    X-LANCE Lab, School of Computer Science, Shanghai Jiao Tong University, Shanghai, China</span><br>
+    <a href="https://x-lance.sjtu.edu.cn/">X-LANCE Lab</a>, School of Computer Science, Shanghai Jiao Tong University, Shanghai, China</span><br>
   <span class="author-block"><sup>2</sup>Jiangsu Key Lab of Language Computing, Suzhou, China</span><br>
   <span class="author-block"><sup>3</sup>AISpeech Co., Ltd., Suzhou, China</span>  <span class="author-block" style="margin-left:2em;"><sup>4</sup>Suzhou Laboratory, Suzhou, China</span>
-  <div style="margin-top:0.2em; font-family:'Lato',Arial,sans-serif;color:#4a4a4a;font-size:1em;"><b>Email to:</b> {htc981,narcisss,chenlusz,kai.yu}@sjtu.edu.cn</div>
+  <br>
+  <span class="author-email"><b>Email to: </b><a href="mailto:htc981@sjtu.edu.cn" style="text-decoration: underline;">htc981@sjtu.edu.cn</a> , <a href="mailto:narcisss@sjtu.edu.cn" style="text-decoration: underline;">narcisss@sjtu.edu.cn</a> , <a href="mailto:chenlusz@sjtu.edu.cn" style="text-decoration: underline;">chenlusz@sjtu.edu.cn</a> , <a href="mailto:kai.yu@sjtu.edu.cn" style="text-decoration: underline;">kai.yu@sjtu.edu.cn</a></span>
             </div>
 
 
@@ -976,6 +987,20 @@
     </div>
   </section>
 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="column is-full">
+        <div class="image-container">
+              <img src="static/images/overview.png" width="100%" alt="NeuSym-RAG Overview" class="responsive-image">
+        </div>
+        <div class="columns is-centered">
+          <md-block>
+            **NeuSym-RAG** is a hybrid neural symbolic retrieval framework for PDF question answering.
+          </md-block>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section" id="abstract">
     <div class="container is-max-desktop">
@@ -1005,7 +1030,6 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3">Framework of NeuSym-RAG</h2>
       <div class="content has-text-justified">
-        <img src="static/images/overview.png" alt="Overall Framework" class="responsive-image">
         <md-block>
           The entire workflow proceeds as follows: 
             - **Parsing**: Firstly, we parse the raw PDF file into a pipeline of functions to segment it in multi-view, extract non-textual elements, and store them in a schema-constrained database (DB).
