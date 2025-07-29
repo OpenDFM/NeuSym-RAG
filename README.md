@@ -1,8 +1,9 @@
 # <div align="center">NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering<br>ACL 2025 (Main)</div>
 <div align="center">
 
+[![website](https://img.shields.io/badge/website-NeuSym--RAG-purple)](https://opendfm.github.io/NeuSym-RAG/)
 [![arXiv](https://img.shields.io/badge/arXiv-2505.19754-red)](https://www.arxiv.org/abs/2505.19754)
-[![Data](https://img.shields.io/badge/data-AirQA--Real-blue)](https://huggingface.co/datasets/OpenDFM/AirQA-Real)
+[![data](https://img.shields.io/badge/data-AirQA--Real-blue)](https://huggingface.co/datasets/OpenDFM/AirQA-Real)
 
 </div>
 
@@ -356,13 +357,30 @@ Fine-grained documents in this project are detailed in folder `documents/`. Here
 
 If you find this project useful, please cite our work:
 ```txt
-@misc{cao2025neusymraghybridneuralsymbolic,
-      title={NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering}, 
-      author={Ruisheng Cao and Hanchong Zhang and Tiancheng Huang and Zhangyi Kang and Yuxin Zhang and Liangtai Sun and Hanqi Li and Yuxun Miao and Shuai Fan and Lu Chen and Kai Yu},
-      year={2025},
-      eprint={2505.19754},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2505.19754}, 
+@inproceedings{cao-etal-2025-neusym,
+    title = "{N}eu{S}ym-{RAG}: Hybrid Neural Symbolic Retrieval with Multiview Structuring for {PDF} Question Answering",
+    author = "Cao, Ruisheng  and
+      Zhang, Hanchong  and
+      Huang, Tiancheng  and
+      Kang, Zhangyi  and
+      Zhang, Yuxin  and
+      Sun, Liangtai  and
+      Li, Hanqi  and
+      Miao, Yuxun  and
+      Fan, Shuai  and
+      Chen, Lu  and
+      Yu, Kai",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-long.311/",
+    pages = "6211--6239",
+    ISBN = "979-8-89176-251-0"
 }
 ```
